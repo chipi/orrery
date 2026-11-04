@@ -21,7 +21,7 @@ for (const f of walk(`i18n-src/en-US/${tree}`)) {
       JSON.parse(readFileSync(f, 'utf8')),
       JSON.parse(readFileSync(tf, 'utf8')),
       '',
-      f.slice("i18n-src/en-US/".length),
+      f.slice('i18n-src/en-US/'.length),
     );
 }
 let s = +seed;

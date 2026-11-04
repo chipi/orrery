@@ -18,5 +18,13 @@
   "flyby": "Uma passagem próxima por um planeta, lua ou outro corpo, sem inserção orbital ao redor dele nem pouso.",
   "orbit insertion": "A queima do motor que desacelera uma espaçonave o bastante para que seja capturada em órbita ao redor do destino.",
   "entry": "A passagem de uma espaçonave para a atmosfera de um planeta, onde o arrasto e o aquecimento a desaceleram.",
-  "descent": "O caminho para baixo até uma superfície, a partir da órbita ou da atmosfera até o toque."
+  "descent": "O caminho para baixo até uma superfície, a partir da órbita ou da atmosfera até o toque.",
+  "orbiter": "Uma nave espacial que entra em órbita ao redor de um planeta, uma lua ou outro corpo para estudá-lo de cima, muitas vezes por anos.",
+  "lander": "Uma nave espacial que pousa na superfície de um planeta, uma lua ou um corpo menor e trabalha onde pousou.",
+  "rover": "Um veículo que percorre a superfície de outro mundo e leva seus instrumentos de um lugar para outro.",
+  "capsule": "A parte de uma nave espacial que traz a tripulação ou a carga de volta pela atmosfera, protegida por um escudo térmico.",
+  "upper stage": "O estágio superior de um foguete, que completa a subida até a órbita ou envia a carga útil rumo ao destino.",
+  "heat shield": "A camada que protege uma nave espacial do calor da entrada na atmosfera, geralmente carbonizando-se e desgastando-se aos poucos.",
+  "airlock": "Uma pequena câmara entre a cabine pressurizada de uma nave e o vácuo de fora, esvaziada e enchida de ar de novo para que a tripulação possa sair e voltar.",
+  "spacewalk": "O trabalho de um astronauta fora da nave, de traje espacial; também chamado de EVA (atividade extraveicular)."
 }

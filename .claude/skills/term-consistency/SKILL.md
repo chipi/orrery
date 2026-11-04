@@ -25,6 +25,9 @@ question in two rounds. Every rule below comes from a mistake made in those roun
 | `scripts/i18n-tools/term-contexts.mjs` | how the site writes a term now (counts + sample pairs) |
 | `scripts/i18n-tools/term-widen-check.mjs <old-glossary>` | after widening stems: every field that passes only under the new stems and nobody reviewed, grouped by the matched word |
 | `scripts/i18n-tools/term-census.mjs` | which candidate terms the English uses most and which are covered (✓) |
+| `scripts/i18n-tools/term-candidates.mjs` | each locale's majority form for a term and its coverage; `--misses=` ranks the forms inside missed fields (stem gaps) |
+| `scripts/i18n-tools/term-misses.mjs show --brief` | the English sentence with the term + the translation's matching sentence: reading a round at about a fifth of the text |
+| `scripts/i18n-tools/term-finds.mjs` | changes written as `{loc, term, find, replace}` → term-apply edit files (the field is found among the misses) |
 | `scripts/i18n-tools/term-glossary.test.ts` | every entry complete, stems compile, binding matches its own stems; keeps well-formed |
 | `research-brief.md`, `fix-brief.md` (this folder) | subagent briefs for the two kinds of round |
 | `lessons.md` (this folder) | per-language lessons from earlier rounds; give it to every fix reviewer with the brief, and extend it after each round |
@@ -36,6 +39,32 @@ Every `term` entry appears on `/science/glossary` (PRD-038). Adding a term means
 one-sentence definition to `i18n-src/<loc>/glossary/terms.json` in all 14 locales, and its
 `_read_more` science page if one exists; `scripts/build-glossary.test.ts` fails until they are
 there. `npm run build-glossary -- --check` reports what is missing.
+
+## A0. Add terms inline, from the site's own majority (0.9.6 chunks — no subagents)
+
+Proven on chunk 1 (2026-11-04, `maps/2026-11-04-terms-chunk1/`): 8 terms × 13 locales, 812
+misses → 0 unreviewed, 66 real errors fixed, all by hand in one session.
+
+1. `term-candidates.mjs <terms>`: the binding is each locale's majority form when it is a
+   standard term (no research round). Write the entries as a script in `maps/<date>-<arc>/`.
+   Mission and fleet names carry the English word ("Mars Reconnaissance Orbiter", "Viking
+   Lander"): set `_en_cs: true` with a lowercase `_en`, and exclude hyphenated compounds
+   (`(?<![\w-])landers?(?![\w-])`).
+2. `term-drift --terms=<new> --misses=…`, then `term-candidates --misses=…`: widen the stems
+   for every standard variant it surfaces (plurals, a name between the words, plain
+   renderings such as ru «выход в космос»). Repeat until the forms it lists are wrong or
+   generic.
+3. Read the rest with `term-misses show --brief --term=<t>`; write the real errors as
+   `{loc, term, find, replace}` in `finds.json`; `term-finds.mjs` → `term-apply --dry` →
+   apply → `term-apply-check`. Natural omissions and other senses become keeps with one
+   reason per term.
+4. Definitions in 14 locales by hand (`add-definitions.mjs`), `build-glossary --check`, the
+   two tests, `term-drift --gate`.
+
+Error classes chunk 1 found (look for them first next time): a near word for the craft (ar
+مدار "orbit" and مهبط "landing site", pt-BR «pouso» "landing"), a loanword from another
+language (it «eclusa», pt-BR «ecluses»), English left in (de «Spacewalk», pt-BR «Lunar
+Module» for any lander), garbled taglines.
 
 ## A. Add terms (the next batch)
 

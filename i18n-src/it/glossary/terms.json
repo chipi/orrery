@@ -18,5 +18,13 @@
   "flyby": "Un passaggio ravvicinato a un pianeta, una luna o un altro corpo senza inserimento in orbita attorno ad esso né atterraggio.",
   "orbit insertion": "L'accensione del motore che rallenta un veicolo spaziale quanto basta perché sia catturato in orbita attorno alla sua destinazione.",
   "entry": "Il passaggio di un veicolo spaziale nell'atmosfera di un pianeta, dove resistenza e riscaldamento lo rallentano.",
-  "descent": "Il percorso verso il basso fino a una superficie, dall'orbita o dall'atmosfera fino al contatto col suolo."
+  "descent": "Il percorso verso il basso fino a una superficie, dall'orbita o dall'atmosfera fino al contatto col suolo.",
+  "orbiter": "Un veicolo spaziale che entra in orbita attorno a un pianeta, una luna o un altro corpo per studiarlo dall'alto, spesso per anni.",
+  "lander": "Un veicolo spaziale che si posa sulla superficie di un pianeta, di una luna o di un corpo minore e lavora dove è atterrato.",
+  "rover": "Un veicolo che si muove sulla superficie di un altro mondo e porta i suoi strumenti da un luogo all'altro.",
+  "capsule": "La parte di un veicolo spaziale che riporta a casa l'equipaggio o il carico attraverso l'atmosfera, protetta da uno scudo termico.",
+  "upper stage": "Lo stadio superiore di un razzo, che completa la salita in orbita o invia il carico utile verso la sua destinazione.",
+  "heat shield": "Lo strato che protegge un veicolo spaziale dal calore del rientro atmosferico, di solito carbonizzandosi e consumandosi poco a poco.",
+  "airlock": "Una piccola camera tra la cabina pressurizzata di un veicolo spaziale e il vuoto esterno, che viene svuotata e riempita d'aria perché l'equipaggio possa uscire e rientrare.",
+  "spacewalk": "Il lavoro di un astronauta fuori dal veicolo spaziale, in tuta; si chiama anche EVA (attività extraveicolare)."
 }

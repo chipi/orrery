@@ -134,8 +134,25 @@ names. No change that rewrites a locale's voice across the site — how the read
    17 files per locale at most, all harmless (English grammar fixes, empty hotspot lists); no
    translation is behind its English. Not a gate: an English typo fix would fail it.
 
-**Step 3 — glossary:** 162 of 192 census terms not yet in the glossary (`term-census.mjs`); term
-links from article text to `/science/glossary`.
+**Step 3 — glossary** (operator, 2026-11-04: chunks of ~8, inline, follow the existing
+entries' patterns; not all 162 census terms — generic words like launch, landing, fuel, probe
+only if the site renders them inconsistently).
+
+- **Chunk 1 done** (2026-11-04, `scripts/i18n-tools/maps/2026-11-04-terms-chunk1/`): orbiter,
+  lander, rover, capsule, upper stage, heat shield, airlock, spacewalk — glossary 20 → 28 terms.
+  Binding = each locale's majority form (`term-candidates.mjs`). Misses 812 → 401 → 337 by
+  widening stems, then all read: 66 real errors fixed in 10 locales (ar مدار "orbit" and مهبط
+  "landing site" for the craft, pt-BR «pouso» and English «Lunar Module» for any lander, it
+  «eclusa» / «portello stagno», pt-BR «ecluses», nl «Saturnusbaan», de «Spacewalk», garbled
+  ko / ar taglines), 119 keeps. `term-drift --gate`: unreviewed misses 0. Definitions in 14
+  locales. **Serbian forms for your read:** орбитер, лендер, ровер, капсула, горњи степен,
+  топлотни штит, ваздушна комора, излазак у свемир, and the eight sr definitions.
+- Next chunks: 2 return & surface (re-entry, splashdown, sample return, regolith,
+  microgravity); 3 orbits (low Earth orbit, geostationary, polar orbit, perihelion, aphelion,
+  eccentricity, launch window, escape velocity); 4 transfers (Hohmann transfer, Lagrange point,
+  C3, rocket equation, free-return, sun-synchronous, halo orbit); 5 astronomy (exoplanet,
+  light-year, habitable zone, asteroid belt, solar wind, magnetosphere). Then term links from
+  article text to `/science/glossary`.
 
 **Step 4 — known issues in sections (user-visible):**
 

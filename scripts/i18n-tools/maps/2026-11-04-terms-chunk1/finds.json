@@ -1,0 +1,330 @@
+[
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "فتؤدي المدارات الصناعية حول المريخ",
+    "replace": "فتؤدي المركبات المدارية حول المريخ"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "وصول أربعة مدارات جديدة",
+    "replace": "وصول أربع مركبات مدارية جديدة"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "المدارات العاملة بحسب الكوكب",
+    "replace": "المركبات المدارية العاملة بحسب الكوكب"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "التقطتها المدارات والمركبات الجوالة",
+    "replace": "التقطتها المركبات المدارية والمركبات الجوالة"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "أثناء حركة المدار،",
+    "replace": "أثناء حركة المركبة المدارية،"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "على المدار الياباني Kaguya (SELENE)، الذي رسم",
+    "replace": "على المركبة المدارية اليابانية Kaguya (SELENE)، التي رسمت"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "رسم مداريا Viking معًا خريطة 97% من المريخ بدقة ~300 م وساعدا",
+    "replace": "رسمت المركبتان المداريتان Viking معًا خريطة 97% من المريخ بدقة ~300 م وساعدتا"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "مسبار قمري حول المدار",
+    "replace": "مسبار مداري قمري"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "(مدار المريخ + مركبة Zhurong",
+    "replace": "(مركبة مدارية حول المريخ + مركبة Zhurong"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "ينفصل المداران العلميان",
+    "replace": "تنفصل المركبتان المداريتان العلميتان"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "بلغ مدارُها القمر ولا يزال يعمل ويرسل",
+    "replace": "بلغت مركبتها المدارية القمر ولا تزال تعمل وترسل"
+  },
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "وهو مدار قمري لم تكتمل مهمته",
+    "replace": "وهو مسبار مداري قمري لم تكتمل مهمته"
+  },
+  {
+    "loc": "nl",
+    "term": "orbiter",
+    "find": "Saturnusbaan; Huygens",
+    "replace": "Saturnusorbiter; Huygens"
+  },
+  {
+    "loc": "ko",
+    "term": "orbiter",
+    "find": "첫번째 목성 궤도; 측정의 8 년",
+    "replace": "최초의 목성 궤도선; 8년간의 측정"
+  },
+
+  { "loc": "ar", "term": "lander", "find": "أول مهبط صيني", "replace": "أول مركبة هبوط صينية" },
+  {
+    "loc": "ar",
+    "term": "lander",
+    "find": "Phoenix هو مهبط كوكبي",
+    "replace": "Phoenix هو مركبة هبوط كوكبية"
+  },
+  {
+    "loc": "ar",
+    "term": "lander",
+    "find": "حمل مهبط Huygens",
+    "replace": "حمل مركبة الهبوط Huygens"
+  },
+  {
+    "loc": "ar",
+    "term": "lander",
+    "find": "مهبط Surveyor 1",
+    "replace": "مركبة الهبوط Surveyor 1"
+  },
+  {
+    "loc": "ar",
+    "term": "lander",
+    "find": "مرافق لمهبط Viking-1",
+    "replace": "مرافق لمركبة الهبوط Viking-1"
+  },
+  { "loc": "zh-CN", "term": "lander", "find": "登陆器被宣布丧失", "replace": "着陆器被宣布丧失" },
+  { "loc": "zh-CN", "term": "lander", "find": "Huygens登陆器", "replace": "Huygens着陆器" },
+  {
+    "loc": "ko",
+    "term": "lander",
+    "find": "첫 번째 중국 달 착륙",
+    "replace": "중국 최초의 달 착륙선"
+  },
+  {
+    "loc": "fr",
+    "term": "lander",
+    "find": "Premier atterrissage lunaire chinois",
+    "replace": "Premier atterrisseur lunaire chinois"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "Cada pouso em Marte até agora",
+    "replace": "Cada módulo de pouso em Marte até agora"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "SAMPLE RETURN é o pico: pouso +",
+    "replace": "SAMPLE RETURN é o pico: módulo de pouso +"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "levanta o pouso que levanta",
+    "replace": "levanta o módulo de pouso que levanta"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "orbitador → pouso → rover",
+    "replace": "orbitador → módulo de pouso → rover"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "cada Lunar Module de Apollo até hoje pousou",
+    "replace": "cada módulo de pouso lunar, do Apollo até hoje, pousou"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "ajudar um Lunar Module leve com paraquedas",
+    "replace": "ajudar um módulo de pouso leve com paraquedas"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "Na Lua um Lunar Module deve eliminar toda sua velocidade orbital ou de aproximação no motor, é por isso que tanta massa de um Lunar Module é combustível.",
+    "replace": "Na Lua um módulo de pouso deve eliminar toda sua velocidade orbital ou de aproximação no motor, é por isso que tanta massa de um módulo de pouso lunar é combustível."
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "massa em um pouso em Marte é disputada",
+    "replace": "massa em um módulo de pouso em Marte é disputada"
+  },
+
+  { "loc": "ja", "term": "rover", "find": "月の裏側初の探査機", "replace": "月の裏側初のローバー" },
+  {
+    "loc": "ar",
+    "term": "rover",
+    "find": "أول مسبّار عند القطب الجنوبي للقمر",
+    "replace": "أول مركبة جوالة عند القطب الجنوبي للقمر"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "term": "rover",
+    "find": "марсовским роувером",
+    "replace": "марсовским ровером"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "rover",
+    "find": "para os rovôs de superfície",
+    "replace": "para os rovers de superfície"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "rover",
+    "find": "Um bundle de um rovô em Marte",
+    "replace": "Um bundle de um rover em Marte"
+  },
+
+  { "loc": "zh-CN", "term": "upper stage", "find": "PAM-S上级阶段", "replace": "PAM-S上面级" },
+  {
+    "loc": "ar",
+    "term": "upper stage",
+    "find": "مرحلة Centaur D-1A الأولى بالهيدروجين فتحت",
+    "replace": "مرحلة Centaur D-1A، أول مرحلة عليا تعمل بالهيدروجين، فتحت"
+  },
+  {
+    "loc": "nl",
+    "term": "upper stage",
+    "find": "met een capabelere bovenstap",
+    "replace": "met een capabelere bovenste trap"
+  },
+  {
+    "loc": "nl",
+    "term": "upper stage",
+    "find": "PAM-S bovenstrappen",
+    "replace": "PAM-S bovenste trappen"
+  },
+
+  {
+    "loc": "ar",
+    "term": "airlock",
+    "find": "عبر ساد هوائي علمي صغير",
+    "replace": "عبر حجرة معادلة ضغط علمية صغيرة"
+  },
+  {
+    "loc": "ar",
+    "term": "airlock",
+    "find": "عبر أقفال هوائية مخصّصة للبذلات",
+    "replace": "عبر غرف معادلة ضغط مخصّصة للبذلات"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "inceppava i portelli stagni",
+    "replace": "inceppava le camere di equilibrio"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "ripetuti cicli del portello stagno",
+    "replace": "ripetuti cicli della camera di equilibrio"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "classe HEPA su ogni portello stagno",
+    "replace": "classe HEPA su ogni camera di equilibrio"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "galleggiò fuori da un'eclusa gonfiabile",
+    "replace": "galleggiò fuori da una camera di equilibrio gonfiabile"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "attraverso un'eclusa gonfiabile Volga pressurizzata",
+    "replace": "attraverso una camera di equilibrio gonfiabile Volga pressurizzata"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "esce dall'eclusa Volga",
+    "replace": "esce dalla camera di equilibrio Volga"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "rientrare attraverso il portello stagno",
+    "replace": "rientrare attraverso la camera di equilibrio"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "un portello stagno gonfiabile imbullonato",
+    "replace": "una camera di equilibrio gonfiabile imbullonata"
+  },
+  {
+    "loc": "it",
+    "term": "airlock",
+    "find": "imbullonare un portello stagno su una capsula",
+    "replace": "imbullonare una camera di equilibrio su una capsula"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "airlock",
+    "find": "travou ecluses de ar",
+    "replace": "travou eclusas de ar"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "airlock",
+    "find": "para a escotilha Wentian do Tiangong",
+    "replace": "para a eclusa do módulo Wentian do Tiangong"
+  },
+
+  {
+    "loc": "de",
+    "term": "spacewalk",
+    "find": "erster kommerzieller Spacewalk",
+    "replace": "erster kommerzieller Weltraumausstieg"
+  },
+  {
+    "loc": "it",
+    "term": "spacewalk",
+    "find": "con il suo braccio e i suoi spacewalker",
+    "replace": "con il suo braccio e i suoi astronauti in attività extraveicolare"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "spacewalk",
+    "find": "Um spacewalk é um evento",
+    "replace": "Uma caminhada espacial é um evento"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "spacewalk",
+    "find": "realizou o primeiro spacewalk e quase o transformou no primeiro morte no espaço",
+    "replace": "realizou a primeira caminhada espacial e quase a transformou na primeira morte no espaço"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "spacewalk",
+    "find": "primeira atividade extravehicular comercial",
+    "replace": "primeira atividade extraveicular comercial"
+  }
+]

@@ -18,5 +18,13 @@
   "flyby": "Un passage rapproché près d'une planète, d'une lune ou d'un autre corps, sans insertion en orbite autour de lui ni atterrissage.",
   "orbit insertion": "L'allumage du moteur qui ralentit suffisamment un engin spatial pour qu'il soit capturé en orbite autour de sa destination.",
   "entry": "Le passage d'un engin spatial dans l'atmosphère d'une planète, où la traînée et l'échauffement le ralentissent.",
-  "descent": "Le trajet vers le bas jusqu'à une surface, depuis l'orbite ou depuis l'atmosphère jusqu'au toucher du sol."
+  "descent": "Le trajet vers le bas jusqu'à une surface, depuis l'orbite ou depuis l'atmosphère jusqu'au toucher du sol.",
+  "orbiter": "Un engin spatial qui se place en orbite autour d'une planète, d'une lune ou d'un autre corps pour l'étudier d'en haut, souvent pendant des années.",
+  "lander": "Un engin spatial qui se pose à la surface d'une planète, d'une lune ou d'un petit corps et travaille là où il s'est posé.",
+  "rover": "Un véhicule qui roule à la surface d'un autre monde et transporte ses instruments d'un endroit à l'autre.",
+  "capsule": "La partie d'un vaisseau spatial qui ramène l'équipage ou la cargaison à travers l'atmosphère, protégée par un bouclier thermique.",
+  "upper stage": "L'étage supérieur d'une fusée, qui achève la montée en orbite ou envoie la charge utile vers sa destination.",
+  "heat shield": "La couche qui protège un engin spatial de la chaleur de l'entrée atmosphérique, le plus souvent en se carbonisant et en s'érodant peu à peu.",
+  "airlock": "Une petite chambre entre la cabine pressurisée d'un vaisseau et le vide extérieur, vidée puis remplie d'air pour que l'équipage puisse sortir et rentrer.",
+  "spacewalk": "Le travail d'un astronaute hors du vaisseau, en scaphandre ; on parle aussi d'EVA (activité extravéhiculaire)."
 }

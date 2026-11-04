@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "tagline",
+    "old": "月の裏側初の探査機；Chang'e-4",
+    "new": "月の裏側初のローバー；Chang'e-4"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "best_known_for",
+    "old": "月の裏側初の探査機；Chang'e-4",
+    "new": "月の裏側初のローバー；Chang'e-4"
+  }
+]

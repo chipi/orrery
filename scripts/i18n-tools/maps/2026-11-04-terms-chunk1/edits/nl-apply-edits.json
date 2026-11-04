@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "tagline",
+    "old": "Saturnusbaan; Huygens landde op Titan",
+    "new": "Saturnusorbiter; Huygens landde op Titan"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "best_known_for",
+    "old": "Saturnusbaan; Huygens landde op Titan",
+    "new": "Saturnusorbiter; Huygens landde op Titan"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "old": "De Soyuz 11A511 was de R-7-variant gebouwd om het eerste Soyuz 7K-OK-ruimtevaartuig van de eerste generatie te lanceren, met een capabelere bovenstap toegevoegd aan de Vostok/Voskhod-lanceerderlijn. Drietraps vloeibare stuwstof (LOX + kerosine), ~50 meter hoog, ~308 ton lanceergewicht. Het lanceerde de vroegste vluchten van het bemande Soyuz-programma, waaronder zijn twee fatale missies — Soyuz 1 (1967), verloren toen de recuperatieparachutes verstrikt raakten, en Soyuz 11 (1971), waarvan de bemanning stierf aan decompressie tijdens de afdaling. De 11A511 werd in 1973 opgevolgd door de Soyuz-U; dezelfde R-7-lijn brengt als Soyuz-2 nog steeds bemanningen naar de ruimte.",
+    "new": "De Soyuz 11A511 was de R-7-variant gebouwd om het eerste Soyuz 7K-OK-ruimtevaartuig van de eerste generatie te lanceren, met een capabelere bovenste trap toegevoegd aan de Vostok/Voskhod-lanceerderlijn. Drietraps vloeibare stuwstof (LOX + kerosine), ~50 meter hoog, ~308 ton lanceergewicht. Het lanceerde de vroegste vluchten van het bemande Soyuz-programma, waaronder zijn twee fatale missies — Soyuz 1 (1967), verloren toen de recuperatieparachutes verstrikt raakten, en Soyuz 11 (1971), waarvan de bemanning stierf aan decompressie tijdens de afdaling. De 11A511 werd in 1973 opgevolgd door de Soyuz-U; dezelfde R-7-lijn brengt als Soyuz-2 nog steeds bemanningen naar de ruimte."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.0.note",
+    "old": "STS-41 Discovery ontplooit Ulysses + IUS / PAM-S bovenstrappen.",
+    "new": "STS-41 Discovery ontplooit Ulysses + IUS / PAM-S bovenste trappen."
+  }
+]

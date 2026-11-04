@@ -1,0 +1,92 @@
+[
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.4",
+    "old": "EDL — Entrada, Descida, Pouso — é o gargalo que ninguém resolveu em escala humana. A atmosfera de Marte é densa o suficiente para exigir proteção de escudo térmico na entrada (~3-5 km/s velocidade de entrada), mas muito rarefeita para desacelerar um veículo para velocidades de pouso aerodinamicamente. Cada pouso em Marte até agora — Viking até Perseverance — foi de ~1 tonelada ou menos. Um pouso em Marte tripulado tem que entregar ~20-30 toneladas na superfície. As técnicas disponíveis são retropropulsão supersônica (pioneira da SpaceX, usada em pouso terrestre, escalável em princípio), desaceleradores aerodinâmicos infláveis supersônicos (demonstradores NASA HIAD testados em voo) e descida propulsiva contínua (arquitetura Starship). Nenhum foi demonstrado na escala de Marte de classe humana. A primeira demonstração de EDL em Marte sem tripulação em escala de massa está na frente da lista de caminho crítico de cada arquitetura, juntamente com a usina ISRU e a pilha de suporte à vida em espaço profundo.",
+    "new": "EDL — Entrada, Descida, Pouso — é o gargalo que ninguém resolveu em escala humana. A atmosfera de Marte é densa o suficiente para exigir proteção de escudo térmico na entrada (~3-5 km/s velocidade de entrada), mas muito rarefeita para desacelerar um veículo para velocidades de pouso aerodinamicamente. Cada módulo de pouso em Marte até agora — Viking até Perseverance — foi de ~1 tonelada ou menos. Um pouso em Marte tripulado tem que entregar ~20-30 toneladas na superfície. As técnicas disponíveis são retropropulsão supersônica (pioneira da SpaceX, usada em pouso terrestre, escalável em princípio), desaceleradores aerodinâmicos infláveis supersônicos (demonstradores NASA HIAD testados em voo) e descida propulsiva contínua (arquitetura Starship). Nenhum foi demonstrado na escala de Marte de classe humana. A primeira demonstração de EDL em Marte sem tripulação em escala de massa está na frente da lista de caminho crítico de cada arquitetura, juntamente com a usina ISRU e a pilha de suporte à vida em espaço profundo."
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "old": "SAMPLE RETURN é o pico: pouso + estágio de ascensão da superfície + retorno para casa + EDL na Terra. Hayabusa-2, OSIRIS-REx, Chang'e 5, os voos Apollo à Lua. A razão de massa-até-partida-da-Terra é brutal — Mars Sample Return está em desenvolvimento agora e é uma das missões robóticas mais difíceis já tentadas.",
+    "new": "SAMPLE RETURN é o pico: módulo de pouso + estágio de ascensão da superfície + retorno para casa + EDL na Terra. Hayabusa-2, OSIRIS-REx, Chang'e 5, os voos Apollo à Lua. A razão de massa-até-partida-da-Terra é brutal — Mars Sample Return está em desenvolvimento agora e é uma das missões robóticas mais difíceis já tentadas."
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.4",
+    "old": "Retorno de amostras é o pico. A massa que tem de sair da Terra escala como ~10× a massa de retorno de amostras para uma viagem de ida e volta para Marte — você está pagando pelo foguete que levanta o foguete que levanta o pouso que levanta o recipiente de amostra que levanta o estágio de cruzeiro que traz as amostras para casa. Hayabusa-2 retornou ~5g do asteroide Ryugu em uma cápsula que cabia na palma da mão.",
+    "new": "Retorno de amostras é o pico. A massa que tem de sair da Terra escala como ~10× a massa de retorno de amostras para uma viagem de ida e volta para Marte — você está pagando pelo foguete que levanta o foguete que levanta o módulo de pouso que levanta o recipiente de amostra que levanta o estágio de cruzeiro que traz as amostras para casa. Hayabusa-2 retornou ~5g do asteroide Ryugu em uma cápsula que cabia na palma da mão."
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "diagram_caption",
+    "old": "Cinco arquétipos de missão dispostos por complexidade crescente: sobrevoo → orbitador → pouso → rover → retorno de amostras.",
+    "new": "Cinco arquétipos de missão dispostos por complexidade crescente: sobrevoo → orbitador → módulo de pouso → rover → retorno de amostras."
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "old": "Em um mundo sem ar, não há nada para um paraquedas agarrar. A única forma de desacelerar é apontar um motor para o solo e queimar — convertendo propelente em cada metro por segundo de velocidade que você precisa cancelar. Este é o pouso propulsivo, e é assim que cada Lunar Module de Apollo até hoje pousou: uma longa queima de frenagem, depois um hover suave e controlado até a superfície.",
+    "new": "Em um mundo sem ar, não há nada para um paraquedas agarrar. A única forma de desacelerar é apontar um motor para o solo e queimar — convertendo propelente em cada metro por segundo de velocidade que você precisa cancelar. Este é o pouso propulsivo, e é assim que cada módulo de pouso lunar, do Apollo até hoje, pousou: uma longa queima de frenagem, depois um hover suave e controlado até a superfície."
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.2",
+    "old": "Marte fica no meio. Sua atmosfera é fina — o suficiente para ajudar um Lunar Module leve com paraquedas, mas inútil para um veículo tão massivo quanto o Starship da SpaceX. Para esses, o plano é propulsivo do começo ao fim: uma entrada hipersônica para dissipar a maior parte da velocidade no escudo térmico, depois uma queima de pouso até a superfície, sem paraquedas nenhum — muito parecido com pouso na Lua, mas chegando através de um sussurro de atmosfera.",
+    "new": "Marte fica no meio. Sua atmosfera é fina — o suficiente para ajudar um módulo de pouso leve com paraquedas, mas inútil para um veículo tão massivo quanto o Starship da SpaceX. Para esses, o plano é propulsivo do começo ao fim: uma entrada hipersônica para dissipar a maior parte da velocidade no escudo térmico, depois uma queima de pouso até a superfície, sem paraquedas nenhum — muito parecido com pouso na Lua, mas chegando através de um sussurro de atmosfera."
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.0",
+    "old": "O custo em propelente é definido pela equação de foguete e a velocidade a cancelar. Na Lua um Lunar Module deve eliminar toda sua velocidade orbital ou de aproximação no motor, é por isso que tanta massa de um Lunar Module é combustível. Em Marte a atmosfera faz a primeira metade cara gratuitamente (o escudo térmico), deixando o motor para lidar apenas com os últimos quilómetros lentos — mas para um veículo pesado até isso é uma queima volumosa.",
+    "new": "O custo em propelente é definido pela equação de foguete e a velocidade a cancelar. Na Lua um módulo de pouso deve eliminar toda sua velocidade orbital ou de aproximação no motor, é por isso que tanta massa de um módulo de pouso lunar é combustível. Em Marte a atmosfera faz a primeira metade cara gratuitamente (o escudo térmico), deixando o motor para lidar apenas com os últimos quilómetros lentos — mas para um veículo pesado até isso é uma queima volumosa."
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "narrative_101.2",
+    "old": "Números de referência rápida para internalizar: sair da Terra em órbita leva ~9,4 km/s. De órbita para uma transferência de Hohmann para Marte adiciona ~3,6. Inserção em Marte adiciona mais ~2. Isso são cerca de 15 km/s para chegar ao sistema marciano e frear na órbita — a fina atmosfera de Marte então faz a maior parte do pouso. É por isso que pousar em Marte é tão mais difícil do que pousar na Lua, e por que cada grama de massa em um pouso em Marte é disputada.",
+    "new": "Números de referência rápida para internalizar: sair da Terra em órbita leva ~9,4 km/s. De órbita para uma transferência de Hohmann para Marte adiciona ~3,6. Inserção em Marte adiciona mais ~2. Isso são cerca de 15 km/s para chegar ao sistema marciano e frear na órbita — a fina atmosfera de Marte então faz a maior parte do pouso. É por isso que pousar em Marte é tão mais difícil do que pousar na Lua, e por que cada grama de massa em um módulo de pouso em Marte é disputada."
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.2",
+    "old": "DTN já é operacional, não experimental. A EEI executa um nó DTN desde 2016, demonstrando a arquitetura em um ambiente real de enlace limitado. No espaço profundo, orbitadores de Marte atuam como a camada de retransmissão: o Mars Reconnaissance Orbiter da NASA, MAVEN e o Trace Gas Orbiter da ESA cada um carrega capacidade de retransmissão com armazenamento-e-encaminhamento, passando bundles da órbita para os rovôs de superfície e de volta para a Terra. Os rovôs não falam diretamente com a Terra para dados de alto volume — a retransmissão orbital o faz, armazenando o enlace de descida até uma janela de contato com uma antena DSN abrir.",
+    "new": "DTN já é operacional, não experimental. A EEI executa um nó DTN desde 2016, demonstrando a arquitetura em um ambiente real de enlace limitado. No espaço profundo, orbitadores de Marte atuam como a camada de retransmissão: o Mars Reconnaissance Orbiter da NASA, MAVEN e o Trace Gas Orbiter da ESA cada um carrega capacidade de retransmissão com armazenamento-e-encaminhamento, passando bundles da órbita para os rovers de superfície e de volta para a Terra. Os rovôs não falam diretamente com a Terra para dados de alto volume — a retransmissão orbital o faz, armazenando o enlace de descida até uma janela de contato com uma antena DSN abrir."
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.3",
+    "old": "DTN não vence a velocidade da luz. Um bundle de um rovô em Marte ainda leva 4–24 minutos para alcançar a Terra; DTN apenas garante que chegará eventualmente, sem perder dados durante as inevitáveis lacunas. O que adiciona é confiabilidade e assincronia: dados científicos enfileirados em um rovô durante uma tempestade de poeira ou uma ocultação são entregues intactos quando o enlace reabre, sem exigir que um operador humano agende manualmente retransmissões.",
+    "new": "DTN não vence a velocidade da luz. Um bundle de um rover em Marte ainda leva 4–24 minutos para alcançar a Terra; DTN apenas garante que chegará eventualmente, sem perder dados durante as inevitáveis lacunas. O que adiciona é confiabilidade e assincronia: dados científicos enfileirados em um rovô durante uma tempestade de poeira ou uma ocultação são entregues intactos quando o enlace reabre, sem exigir que um operador humano agende manualmente retransmissões."
+  },
+  {
+    "rel": "science/life-in-space/lunar-habitat-design.json",
+    "at": "body_paragraphs.3",
+    "old": "Dois problemas estruturais dominam o design de habitats — tanto a Lua quanto Marte os compartilham, mas a Lua os enfrenta primeiro. Radiação: raios cósmicos galácticos + eventos episódicos de partículas solares entregam aproximadamente 1,4 mSv/dia na superfície lunar (medido pelo instrumento LND do Chang'e-4), vs ~0,5–0,7 mSv/dia na EEI dentro do blindagem magnetosférica parcial da Terra — aproximadamente 2–2,5× dose mais alta. As estratégias de mitigação sob design: diques de regolito empurrados ao redor de habitats fixos (1-2 m de regolito bloqueia ~80% da dose), interiores de tubos de lava (~80-100 m abaixo da superfície, em tubos detectados por Selene / LRO a partir de claraboias colapsadas — as fossas das colinas Marius e do Mare Tranquillitatis são os sítios canônicos), ou escudos de parede de água pré-posicionados. Poeira: as tripulações do Apollo relataram que a poeira lunar degradou fatos de EVA em ~10 EVAs, travou ecluses de ar, abrasou selos, teve cheiro de pólvora, e desencadeou respostas alérgicas dentro do LM. Os designs de habitat de superfície todos incorporam suitlocks com ecluses de ar de poeira (fatos armazenados do lado de fora, tripulação entra de dentro sem trazer poeira para o volume pressurizado) — a mesma arquitetura usada em fatos Artemis EVA e plano ILRS.",
+    "new": "Dois problemas estruturais dominam o design de habitats — tanto a Lua quanto Marte os compartilham, mas a Lua os enfrenta primeiro. Radiação: raios cósmicos galácticos + eventos episódicos de partículas solares entregam aproximadamente 1,4 mSv/dia na superfície lunar (medido pelo instrumento LND do Chang'e-4), vs ~0,5–0,7 mSv/dia na EEI dentro do blindagem magnetosférica parcial da Terra — aproximadamente 2–2,5× dose mais alta. As estratégias de mitigação sob design: diques de regolito empurrados ao redor de habitats fixos (1-2 m de regolito bloqueia ~80% da dose), interiores de tubos de lava (~80-100 m abaixo da superfície, em tubos detectados por Selene / LRO a partir de claraboias colapsadas — as fossas das colinas Marius e do Mare Tranquillitatis são os sítios canônicos), ou escudos de parede de água pré-posicionados. Poeira: as tripulações do Apollo relataram que a poeira lunar degradou fatos de EVA em ~10 EVAs, travou eclusas de ar, abrasou selos, teve cheiro de pólvora, e desencadeou respostas alérgicas dentro do LM. Os designs de habitat de superfície todos incorporam suitlocks com ecluses de ar de poeira (fatos armazenados do lado de fora, tripulação entra de dentro sem trazer poeira para o volume pressurizado) — a mesma arquitetura usada em fatos Artemis EVA e plano ILRS."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.4",
+    "old": "Feitian ('céu voador') é o traje EVA chinês, que estreou no Shenzhou 7 (2008) para o primeiro EVA do país, e agora em sua variante de segunda geração Feitian-2 no Tiangong. Feitian é derivado de Orlan — entrada traseira de uma única peça, geometria interna similar, pressão de operação similar — mas construído domesticamente com materiais de origem chinesa e controle térmico desenvolvido pela China. A linhagem é admitida abertamente: o ACC (Centro de Astronautas da China) tinha engenheiros treinados pela Roscosmos como consultores no primeiro Feitian, e o traje de segunda geração customizou ainda mais o design para a escotilha Wentian do Tiangong. A ironia geopolítica é que Feitian — um traje de linhagem russa — representa a única capacidade EVA operacional no momento fora da parceria EEI EUA-Rússia. AxEMU (americana, com alvo lunar) está em desenvolvimento. Além desses três, não existe nenhum outro traje EVA operacional no mundo hoje; o mercado de IVA é mais diversificado (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, Gaganyaan IVA planejado da Índia), mas EVA permanece um mundo de três trajes.",
+    "new": "Feitian ('céu voador') é o traje EVA chinês, que estreou no Shenzhou 7 (2008) para o primeiro EVA do país, e agora em sua variante de segunda geração Feitian-2 no Tiangong. Feitian é derivado de Orlan — entrada traseira de uma única peça, geometria interna similar, pressão de operação similar — mas construído domesticamente com materiais de origem chinesa e controle térmico desenvolvido pela China. A linhagem é admitida abertamente: o ACC (Centro de Astronautas da China) tinha engenheiros treinados pela Roscosmos como consultores no primeiro Feitian, e o traje de segunda geração customizou ainda mais o design para a eclusa do módulo Wentian do Tiangong. A ironia geopolítica é que Feitian — um traje de linhagem russa — representa a única capacidade EVA operacional no momento fora da parceria EEI EUA-Rússia. AxEMU (americana, com alvo lunar) está em desenvolvimento. Além desses três, não existe nenhum outro traje EVA operacional no mundo hoje; o mercado de IVA é mais diversificado (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, Gaganyaan IVA planejado da Índia), mas EVA permanece um mundo de três trajes."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "intro_sentence",
+    "old": "Um spacewalk é um evento de resistência de 6–8 horas em um traje pressurizado com oxigênio a 1/3 de atmosfera — precedido por horas de pré-respiração para evitar descompressão.",
+    "new": "Uma caminhada espacial é um evento de resistência de 6–8 horas em um traje pressurizado com oxigênio a 1/3 de atmosfera — precedido por horas de pré-respiração para evitar descompressão."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "dispatch",
+    "old": "Voskhod 2 realizou o primeiro spacewalk e quase o transformou no primeiro morte no espaço. Aleksei Leonov flutuou para fora de um compartimento de ar inflável para o vácuo, o primeiro ser humano completamente fora de uma nave — e então seu traje inchado ficou tão rígido que ele não conseguia se dobrar para voltar. Ele teve que abrir uma válvula e deixar seu próprio ar escapar, correndo o risco de embolia, apenas para encolher o suficiente para passar pela escotilha. Não acabou aí: a reentrada automática falhou, a tripulação desceu manualmente, e pousaram centenas de quilômetros fora do curso na floresta gelada siberiana, onde esperaram por duas noites entre lobos antes que os resgatadores os alcançassem de esqui. O público viu doze minutos triunfantes; o quão perto chegou permaneceu secreto por anos.",
+    "new": "Voskhod 2 realizou a primeira caminhada espacial e quase a transformou na primeira morte no espaço. Aleksei Leonov flutuou para fora de um compartimento de ar inflável para o vácuo, o primeiro ser humano completamente fora de uma nave — e então seu traje inchado ficou tão rígido que ele não conseguia se dobrar para voltar. Ele teve que abrir uma válvula e deixar seu próprio ar escapar, correndo o risco de embolia, apenas para encolher o suficiente para passar pela escotilha. Não acabou aí: a reentrada automática falhou, a tripulação desceu manualmente, e pousaram centenas de quilômetros fora do curso na floresta gelada siberiana, onde esperaram por duas noites entre lobos antes que os resgatadores os alcançassem de esqui. O público viu doze minutos triunfantes; o quão perto chegou permaneceu secreto por anos."
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.2.note",
+    "old": "Isaacman + Gillis saíram pela escotilha da cabine para o vácuo — primeira atividade extravehicular comercial.",
+    "new": "Isaacman + Gillis saíram pela escotilha da cabine para o vácuo — primeira atividade extraveicular comercial."
+  }
+]

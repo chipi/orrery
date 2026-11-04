@@ -1,0 +1,18 @@
+[
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "tagline",
+    "term": "lander",
+    "decision": "change",
+    "find": "Premier atterrissage lunaire chinois",
+    "replace": "Premier atterrisseur lunaire chinois"
+  },
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "best_known_for",
+    "term": "lander",
+    "decision": "change",
+    "find": "Premier atterrissage lunaire chinois",
+    "replace": "Premier atterrisseur lunaire chinois"
+  }
+]

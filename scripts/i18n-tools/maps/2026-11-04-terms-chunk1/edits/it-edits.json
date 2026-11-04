@@ -1,0 +1,82 @@
+[
+  {
+    "rel": "science/life-in-space/lunar-habitat-design.json",
+    "at": "body_paragraphs.3",
+    "term": "airlock",
+    "decision": "change",
+    "find": "inceppava i portelli stagni",
+    "replace": "inceppava le camere di equilibrio"
+  },
+  {
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.2",
+    "term": "airlock",
+    "decision": "change",
+    "find": "ripetuti cicli del portello stagno",
+    "replace": "ripetuti cicli della camera di equilibrio"
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "body_paragraphs.2",
+    "term": "airlock",
+    "decision": "change",
+    "find": "classe HEPA su ogni portello stagno",
+    "replace": "classe HEPA su ogni camera di equilibrio"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "dispatch",
+    "term": "airlock",
+    "decision": "change",
+    "find": "galleggiò fuori da un'eclusa gonfiabile",
+    "replace": "galleggiò fuori da una camera di equilibrio gonfiabile"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "term": "airlock",
+    "decision": "change",
+    "find": "attraverso un'eclusa gonfiabile Volga pressurizzata",
+    "replace": "attraverso una camera di equilibrio gonfiabile Volga pressurizzata"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.2.note",
+    "term": "airlock",
+    "decision": "change",
+    "find": "esce dall'eclusa Volga",
+    "replace": "esce dalla camera di equilibrio Volga"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "outcome.1.md",
+    "term": "airlock",
+    "decision": "change",
+    "find": "rientrare attraverso il portello stagno",
+    "replace": "rientrare attraverso la camera di equilibrio"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "narrative.0.md",
+    "term": "airlock",
+    "decision": "change",
+    "find": "un portello stagno gonfiabile imbullonato",
+    "replace": "una camera di equilibrio gonfiabile imbullonata"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "lessons.0.md",
+    "term": "airlock",
+    "decision": "change",
+    "find": "imbullonare un portello stagno su una capsula",
+    "replace": "imbullonare una camera di equilibrio su una capsula"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "term": "spacewalk",
+    "decision": "change",
+    "find": "con il suo braccio e i suoi spacewalker",
+    "replace": "con il suo braccio e i suoi astronauti in attività extraveicolare"
+  }
+]

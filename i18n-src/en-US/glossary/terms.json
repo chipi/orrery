@@ -18,5 +18,13 @@
   "flyby": "A close pass by a planet, moon or other body without going into orbit around it or landing.",
   "orbit insertion": "The engine burn that slows a spacecraft enough to be captured into orbit around its destination.",
   "entry": "A spacecraft's passage into a planet's atmosphere, where drag and heating slow it down.",
-  "descent": "The way down to a surface, from orbit or from the atmosphere to touchdown."
+  "descent": "The way down to a surface, from orbit or from the atmosphere to touchdown.",
+  "orbiter": "A spacecraft that goes into orbit around a planet, moon or other body to study it from above, often for years.",
+  "lander": "A spacecraft that sets down on the surface of a planet, moon or small body and works where it lands.",
+  "rover": "A vehicle that drives across the surface of another world, carrying its instruments from place to place.",
+  "capsule": "The part of a spacecraft that brings the crew or the cargo home through the atmosphere, protected by a heat shield.",
+  "upper stage": "The top stage of a rocket, which finishes the climb to orbit or sends the payload on towards its destination.",
+  "heat shield": "The layer that protects a spacecraft from the heat of atmospheric entry, usually by charring and wearing away.",
+  "airlock": "A small chamber between a spacecraft's pressurised cabin and the vacuum outside, emptied and refilled with air so that crews can go out and come back in.",
+  "spacewalk": "Work done by an astronaut outside a spacecraft, in a spacesuit; also called EVA (extravehicular activity)."
 }

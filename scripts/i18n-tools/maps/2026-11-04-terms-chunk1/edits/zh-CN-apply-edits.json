@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.4.note",
+    "old": "预期的首次信号未被接收；登陆器被宣布丧失。",
+    "new": "预期的首次信号未被接收；着陆器被宣布丧失。"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "description",
+    "old": "土星轨道器（2004–2017），携带ESA的Huygens登陆器前往土卫六——至今仍是唯一在外行星卫星上的着陆。发现了土卫二活跃的间歇泉羽流，以及其冰冻地壳下的全球大洋。最终按计划坠入土星大气层。",
+    "new": "土星轨道器（2004–2017），携带ESA的Huygens着陆器前往土卫六——至今仍是唯一在外行星卫星上的着陆。发现了土卫二活跃的间歇泉羽流，以及其冰冻地壳下的全球大洋。最终按计划坠入土星大气层。"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.0.note",
+    "old": "STS-41 Discovery部署Ulysses + IUS / PAM-S上级阶段。",
+    "new": "STS-41 Discovery部署Ulysses + IUS / PAM-S上面级。"
+  }
+]

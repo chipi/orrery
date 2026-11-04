@@ -1,0 +1,835 @@
+[
+  {
+    "term": "orbiter",
+    "loc": "ru",
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.2.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ru",
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ru",
+    "rel": "missions/mars/mars3.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ru",
+    "rel": "missions/moon/luna10.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ru",
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ru",
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ja",
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ko",
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "hi",
+    "rel": "missions/jupiter/juno.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "hi",
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ar",
+    "rel": "missions/moon/luna10.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ar",
+    "rel": "missions/venus/akatsuki.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ar",
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "ar",
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "sr-Cyrl",
+    "rel": "missions/moon/luna10.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "sr-Cyrl",
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "sr-Cyrl",
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "de",
+    "rel": "missions/saturn/cassini.json",
+    "at": "dispatch",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "de",
+    "rel": "programs/buran.json",
+    "at": "link_labels./fleet?id=buran",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "es",
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "es",
+    "rel": "fleet/orbiter/juice.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "it",
+    "rel": "missions/moon/luna10.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "it",
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "orbiter",
+    "loc": "nl",
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ru",
+    "rel": "missions/venus/venera-13.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ru",
+    "rel": "programs/jaxa-robotic.json",
+    "at": "goals.1.caption",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ja",
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ja",
+    "rel": "fleet/lander/viking2-lander.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ja",
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "zh-CN",
+    "rel": "fleet/lander/viking-1.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "zh-CN",
+    "rel": "fleet/lander/viking-1.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ko",
+    "rel": "missions/moon/luna9.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ko",
+    "rel": "fleet/lander/viking-1.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ko",
+    "rel": "fleet/lander/viking-1.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ar",
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ar",
+    "rel": "missions/mars/phoenix.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ar",
+    "rel": "missions/mars/starship-demo.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ar",
+    "rel": "missions/moon/luna9.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ar",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "ar",
+    "rel": "fleet/lander/viking-1.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "de",
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "de",
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "de",
+    "rel": "missions/moon/luna9.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "fr",
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "fr",
+    "rel": "missions/moon/luna9.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "fr",
+    "rel": "missions/moon/luna9.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "es",
+    "rel": "missions/moon/luna9.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "es",
+    "rel": "missions/moon/luna9.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "es",
+    "rel": "fleet/lander/beresheet.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "es",
+    "rel": "fleet/launcher/long-march-3b.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "es",
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "es",
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "it",
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "nl",
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.3",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "missions/mars/viking1.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "missions/moon/luna9.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "missions/moon/luna9.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "fleet/lander/viking-1.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "programs/jaxa-robotic.json",
+    "at": "the_land.1.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "programs/jaxa-robotic.json",
+    "at": "goals.1.caption",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "lander",
+    "loc": "pt-BR",
+    "rel": "programs/jaxa-robotic.json",
+    "at": "legacy.0.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ja",
+    "rel": "science/_landing.json",
+    "at": "chapters.5.paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ja",
+    "rel": "science/_landing.json",
+    "at": "tools.4.text",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ja",
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.1",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ja",
+    "rel": "missions/mars/curiosity.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "zh-CN",
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/edl.json",
+    "at": "narrative_101.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/edl.json",
+    "at": "narrative_101.2",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "zh-CN",
+    "rel": "missions/mars/mmx.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "zh-CN",
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "zh-CN",
+    "rel": "programs/hayabusa.json",
+    "at": "outcome.2.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "hi",
+    "rel": "programs/mars-rovers.json",
+    "at": "narrative.1.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ar",
+    "rel": "missions/moon/luna17.json",
+    "at": "events.4.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ar",
+    "rel": "fleet/rover/curiosity.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ar",
+    "rel": "fleet/rover/curiosity.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ar",
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ar",
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ar",
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "ar",
+    "rel": "programs/mars-rovers.json",
+    "at": "legacy.1.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "rover",
+    "loc": "pt-BR",
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "ru",
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "intro_sentence",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "ru",
+    "rel": "missions/earth/vostok-3.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "ru",
+    "rel": "missions/earth/vostok-4.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "ja",
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "diagram_caption",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "zh-CN",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.3",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "zh-CN",
+    "rel": "missions/earth/aurora-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "zh-CN",
+    "rel": "missions/earth/faith-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "zh-CN",
+    "rel": "missions/earth/sigma-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "ar",
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "ar",
+    "rel": "fleet/station/salyut-5.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "capsule",
+    "loc": "ar",
+    "rel": "programs/tiangong.json",
+    "at": "the_land.0.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "ru",
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.3",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "ru",
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "ru",
+    "rel": "missions/moon/luna21.json",
+    "at": "events.1.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "ar",
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "sr-Cyrl",
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.3",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "de",
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.0.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "es",
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "es",
+    "rel": "missions/mars/mars3.json",
+    "at": "events.0.note",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "upper stage",
+    "loc": "it",
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "heat shield",
+    "loc": "de",
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "airlock",
+    "loc": "ru",
+    "rel": "missions/earth/skylab-2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "airlock",
+    "loc": "ja",
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "diagram_caption",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "airlock",
+    "loc": "ar",
+    "rel": "missions/earth/skylab-2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "airlock",
+    "loc": "it",
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "airlock",
+    "loc": "pt-BR",
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "airlock",
+    "loc": "pt-BR",
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.2",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "spacewalk",
+    "loc": "ru",
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.2",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "spacewalk",
+    "loc": "ja",
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "title",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "spacewalk",
+    "loc": "zh-CN",
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "title",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "spacewalk",
+    "loc": "fr",
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "spacewalk",
+    "loc": "es",
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "spacewalk",
+    "loc": "it",
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  },
+  {
+    "term": "spacewalk",
+    "loc": "pt-BR",
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "why": "read 2026-11-04 (chunk 1): natural rendering — a generic craft/probe word, a natural omission, another sense (Shuttle orbiter, orbital section, hatch, suitlock) or a name"
+  }
+]

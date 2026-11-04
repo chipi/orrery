@@ -15,6 +15,8 @@ describe('nativeName', () => {
     expect(nativeName('ru', 'Soyuz MS')).toBe('Союз МС');
     expect(nativeName('ru', 'Proton-M')).toBe('Протон-М');
     expect(nativeName('ru', 'Soyuz TMA')).toBe('Союз ТМА');
+    // GRAU indexes in the bracket are Cyrillic too.
+    expect(nativeName('ru', 'Vostok-K (8K72K)')).toBe('Восток-К (8К72К)');
     expect(nativeName('ru', 'Salyut 3 (OPS-2)')).toBe('Салют-3 (OPS-2)');
     expect(nativeName('ru', 'Soyuz XYZ')).toBeNull();
     // Shared bases convert only for the Soviet names; English prose after a serial does not.

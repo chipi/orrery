@@ -1,7 +1,7 @@
 {
   "anatomy_art": {
     "/images/anatomy/akatsuki_webp": {
-      "title": "Akatsuki"
+      "title": "あかつき"
     },
     "/images/anatomy/antares_webp": {
       "title": "アンタレス"
@@ -133,10 +133,10 @@
       "title": "はやぶさ2"
     },
     "/images/anatomy/hayabusa_webp": {
-      "title": "Hayabusa"
+      "title": "はやぶさ"
     },
     "/images/anatomy/hitomi_webp": {
-      "title": "Hitomi (ASTRO-H)"
+      "title": "ひとみ (ASTRO-H)"
     },
     "/images/anatomy/hope_webp": {
       "title": "Hope (EMM)"
@@ -145,7 +145,7 @@
       "title": "HTV-X"
     },
     "/images/anatomy/htv_webp": {
-      "title": "HTV (Kounotori)"
+      "title": "HTV (こうのとり)"
     },
     "/images/anatomy/hubble_webp": {
       "title": "Hubble 宇宙望遠鏡"
@@ -1269,7 +1269,7 @@
     },
     "/images/colophon/model-launcher-m-v_webp": {
       "title": "M-V",
-      "what": "JAXAの全固体3段式ロケット（Hayabusa）。",
+      "what": "JAXAの全固体3段式ロケット（はやぶさ）。",
       "where": "飛行 · 打ち上げ/上昇"
     },
     "/images/colophon/model-launcher-h3_webp": {
@@ -1548,7 +1548,7 @@
       "where": "飛行・往路/接近"
     },
     "/images/colophon/model-cruise-hayabusa1_webp": {
-      "title": "Hayabusa往路",
+      "title": "はやぶさ往路",
       "what": "JAXA試料回収バス—太陽電池翼、サンプラー・ホルン、イオンエンジン。",
       "where": "飛行・往路/接近"
     },

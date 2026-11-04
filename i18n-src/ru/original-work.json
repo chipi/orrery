@@ -40,7 +40,7 @@
       "title": "Blue Moon Mk1"
     },
     "/images/anatomy/buran_webp": {
-      "title": "Buran"
+      "title": "Буран"
     },
     "/images/anatomy/cargo-dragon-2_webp": {
       "title": "Cargo Dragon 2"
@@ -88,7 +88,7 @@
       "title": "Delta II"
     },
     "/images/anatomy/energia_webp": {
-      "title": "Energia"
+      "title": "Энергия"
     },
     "/images/anatomy/euclid_webp": {
       "title": "Euclid"
@@ -226,7 +226,7 @@
       "title": "Mariner 9"
     },
     "/images/anatomy/mars-3_webp": {
-      "title": "Mars 3"
+      "title": "Марс-3"
     },
     "/images/anatomy/mars-express_webp": {
       "title": "Mars Express"
@@ -253,7 +253,7 @@
       "title": "Mars Reconnaissance Orbiter"
     },
     "/images/anatomy/n1_webp": {
-      "title": "N1"
+      "title": "Н1"
     },
     "/images/anatomy/new-glenn_webp": {
       "title": "New Glenn"
@@ -289,16 +289,16 @@
       "title": "Pragyan"
     },
     "/images/anatomy/progress-m_webp": {
-      "title": "Progress M"
+      "title": "Прогресс М"
     },
     "/images/anatomy/progress-ms_webp": {
-      "title": "Progress MS"
+      "title": "Прогресс МС"
     },
     "/images/anatomy/proton-k_webp": {
       "title": "Протон-К"
     },
     "/images/anatomy/proton-m_webp": {
-      "title": "Proton-M"
+      "title": "Протон-М"
     },
     "/images/anatomy/pslv-xl_webp": {
       "title": "PSLV-XL"
@@ -361,7 +361,7 @@
       "title": "Союз ТМА"
     },
     "/images/anatomy/soyuz_webp": {
-      "title": "Союз (11A511)"
+      "title": "Союз (11А511)"
     },
     "/images/anatomy/space-shuttle-orbiter_webp": {
       "title": "Space Shuttle Orbiter"
@@ -415,7 +415,7 @@
       "title": "Венера-13"
     },
     "/images/anatomy/venera-7_webp": {
-      "title": "Venera 7-class"
+      "title": "Венера-7"
     },
     "/images/anatomy/viking-1_webp": {
       "title": "Viking 1"
@@ -424,10 +424,10 @@
       "title": "Vikram (Chandrayaan-3)"
     },
     "/images/anatomy/voskhod-11a57_webp": {
-      "title": "Voskhod (11A57)"
+      "title": "Восход (11А57)"
     },
     "/images/anatomy/vostok-k_webp": {
-      "title": "Vostok-K (8K72K)"
+      "title": "Восток-К (8К72К)"
     },
     "/images/anatomy/vostok_webp": {
       "title": "Восток"
@@ -529,10 +529,10 @@
       "title": "Mars Polar Lander"
     },
     "/images/anatomy/mars2-orbiter_webp": {
-      "title": "Mars 2 Orbiter"
+      "title": "Орбитальный аппарат «Марс-2»"
     },
     "/images/anatomy/mars3-orbiter_webp": {
-      "title": "Mars 3 Orbiter"
+      "title": "Орбитальный аппарат «Марс-3»"
     },
     "/images/anatomy/mars6_webp": {
       "title": "Марс-6"
@@ -845,7 +845,7 @@
       "title": "История Principia Ньютона"
     },
     "/diagrams/science/history-sputnik_webp": {
-      "title": "История Sputnik"
+      "title": "История «Спутника»"
     },
     "/diagrams/science/history-tsiolkovsky_webp": {
       "title": "История: Циолковский"
@@ -1188,7 +1188,7 @@
       "where": "Полёт · запуск/подъём"
     },
     "/images/colophon/model-launcher-vostok-k_webp": {
-      "title": "Soyuz / R-7",
+      "title": "Союз / Р-7",
       "what": "Ядро в виде креста Королёва с четырьмя суженными боковыми ускорителями.",
       "where": "Полёт · запуск/подъём"
     },
@@ -1219,7 +1219,7 @@
     },
     "/images/colophon/model-launcher-atlas-v_webp": {
       "title": "Atlas V",
-      "what": "Широкое ядро с двигателем RD-180, луковицеобразным обтекателем полезного груза и дополнительными твёрдотопливными ускорителями.",
+      "what": "Широкое ядро с двигателем РД-180, луковицеобразным обтекателем полезного груза и дополнительными твёрдотопливными ускорителями.",
       "where": "Полёт · запуск/набор высоты"
     },
     "/images/colophon/model-launcher-proton-k_webp": {
@@ -1299,7 +1299,7 @@
     },
     "/images/colophon/model-moon-luna-sample-return_webp": {
       "title": "Luna — образцы с возвращением",
-      "what": "Ракета подъёма на платформе снижения (Luna 16 / 20 / 24).",
+      "what": "Ракета подъёма на платформе снижения («Луна-16» / 20 / 24).",
       "where": "Места посадки на Луне"
     },
     "/images/colophon/model-moon-lunokhod_webp": {
@@ -1368,7 +1368,7 @@
       "where": "Посадочные площадки на Марсе"
     },
     "/images/colophon/model-mars-mars-3_webp": {
-      "title": "Mars 3",
+      "title": "Марс-3",
       "what": "Советский лепестковый посадочный аппарат — первая мягкая посадка на Марсе.",
       "where": "Посадочные площадки на Марсе"
     },
@@ -1414,7 +1414,7 @@
     },
     "/images/colophon/model-descent-venus-aeroshell_webp": {
       "title": "Аэродинамический щит Венеры",
-      "what": "Сферо-конический спускаемый аппарат с тормозным диском для плотной атмосферы (Venera / Вега).",
+      "what": "Сферо-конический спускаемый аппарат с тормозным диском для плотной атмосферы («Венера» / «Вега»).",
       "where": "Полёт · спуск/посадка"
     },
     "/images/colophon/model-descent-asteroid-sampler_webp": {
@@ -1483,7 +1483,7 @@
       "where": "Полёт · крейсерская/маршевая фаза"
     },
     "/images/colophon/model-cruise-mars3_webp": {
-      "title": "Аппарат Mars 3",
+      "title": "Аппарат «Марс-3»",
       "what": "Советский автобус М-71 с посадочной капсулой и солнечными панелями.",
       "where": "Полёт · крейсерский полёт/подход"
     },
@@ -1503,18 +1503,18 @@
       "where": "Полёт · крейсерский полёт/подход"
     },
     "/images/colophon/model-cruise-luna9_webp": {
-      "title": "Luna 9 прямой полёт",
+      "title": "Луна-9 прямой полёт",
       "what": "Советский прямой автобус со сферической посадочной капсулой на вершине.",
       "where": "Полёт · крейсерский полёт/подход"
     },
     "/images/colophon/model-cruise-luna16_webp": {
       "title": "Luna образец с возвратом",
-      "what": "Ступень спуска со сферическими баками, ступень подъёма и возвратная капсула (Luna 16 / 24).",
+      "what": "Ступень спуска со сферическими баками, ступень подъёма и возвратная капсула («Луна-16» / 24).",
       "where": "Полёт · крейсерский полёт/подход"
     },
     "/images/colophon/model-cruise-luna17_webp": {
-      "title": "Носитель Lunokhod",
-      "what": "Автобус ступени спуска, несущий луноход Lunokhod (Luna 17 / 21).",
+      "title": "Носитель «Лунохода»",
+      "what": "Автобус ступени спуска, несущий «Луноход» («Луна-17» / 21).",
       "where": "Полёт · крейсерский полёт/подход"
     },
     "/images/colophon/model-cruise-change3_webp": {
@@ -1604,7 +1604,7 @@
     },
     "/images/colophon/model-sat-nav-constellation_webp": {
       "title": "Навигационная группировка",
-      "what": "Кластер спутников GPS-класса (GPS / Galileo / GLONASS / BeiDou).",
+      "what": "Кластер спутников GPS-класса (GPS / Galileo / ГЛОНАСС / BeiDou).",
       "where": "Маркеры земной орбиты"
     },
     "/images/colophon/model-sat-generic-orbiter_webp": {
@@ -2238,7 +2238,7 @@
       "title": "SLS Block 1"
     },
     "/images/anatomy-exploded/soyuz_webp": {
-      "title": "Soyuz (11A511)"
+      "title": "Союз (11А511)"
     },
     "/images/anatomy-exploded/soyuz-2_webp": {
       "title": "Союз-2"
@@ -2259,10 +2259,10 @@
       "title": "Titan II GLV"
     },
     "/images/anatomy-exploded/voskhod-11a57_webp": {
-      "title": "Voskhod (11A57)"
+      "title": "Восход (11А57)"
     },
     "/images/anatomy-exploded/vostok-k_webp": {
-      "title": "Восток-К (8K72K)"
+      "title": "Восток-К (8К72К)"
     },
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"

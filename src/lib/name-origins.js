@@ -344,7 +344,11 @@ export function nativeName(locale, en) {
     // ("Mars 3 Orbiter"): no native form for the whole.
     const m = rest.match(/^([A-Za-z0-9][A-Za-z0-9.-]*)((?: \([^)]*\))?)$/);
     if (!m) return null;
-    const [, code, tail] = m;
+    const [, code, rawTail] = m;
+    // A GRAU index in the bracket is written in Cyrillic: (8K72K) → (8К72К), (11A57) → (11А57).
+    const tail = rawTail.replace(/\b\d+[AK]\d+[AKM]?\b/g, (g) =>
+      g.replace(/A/g, 'А').replace(/K/g, 'К').replace(/M/g, 'М'),
+    );
     const sep = en[base.length]; // "Proton-M" keeps the hyphen, "Soyuz MS" the space
     // A plain serial takes the Russian hyphen: "Luna 9" → "Луна-9".
     if (/^\d+$/.test(code)) return `${nat}-${code}${tail}`;

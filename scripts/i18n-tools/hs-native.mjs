@@ -2,7 +2,7 @@
 // so the overlay converter skipped them). Same rules: whole words, ru vehicles in «», checked.
 import fs from 'node:fs';
 import { designations, knownNamesIn, problems } from '../lib/translate-quality.mjs';
-import { ORIGIN_NAMES, nativeName } from '../lib/name-origins.mjs';
+import { ORIGIN_NAMES, nativeName } from '../../src/lib/name-origins.js';
 const R = 'i18n-src';
 const side = JSON.parse(fs.readFileSync('static/data/surface-hotspots.json', 'utf8')).entries;
 const QUOTED = new Set([

@@ -19,6 +19,12 @@ describe('parseInline', () => {
     ]);
   });
 
+  it('takes a target starting with / as a site path (no doubled /science/)', () => {
+    expect(parseInline('[Isp](/science/propulsion/specific-impulse)')).toEqual([
+      { kind: 'link', text: 'Isp', href: '/de/science/propulsion/specific-impulse' },
+    ]);
+  });
+
   it('leaves brackets that are not a link alone', () => {
     expect(parseInline('a [note] (aside)')).toEqual([{ kind: 'text', value: 'a [note] (aside)' }]);
   });

@@ -6,7 +6,8 @@ export type InlineSegment =
 
 /**
  * Split /science prose into text and links. `[text](app:/route?query)` links an
- * app route; any other target is a /science section (`tab/section`). Both go
+ * app route, a target starting with `/` is a site path as written (some overlays
+ * write `/science/tab/section`), anything else is a /science section (`tab/section`). Both go
  * through localHref so the reader stays in their locale. Translators keep the
  * parenthesised target as written.
  */
@@ -20,7 +21,9 @@ export function parseInline(para: string): InlineSegment[] {
     const target = match[2];
     const href = target.startsWith('app:/')
       ? localHref(target.slice(4))
-      : localHref(`/science/${target}`);
+      : target.startsWith('/')
+        ? localHref(target)
+        : localHref(`/science/${target}`);
     segs.push({ kind: 'link', text: match[1], href });
     last = match.index + match[0].length;
   }

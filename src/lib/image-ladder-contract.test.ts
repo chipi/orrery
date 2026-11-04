@@ -179,6 +179,27 @@ describe('posters + hotspots stay full-res JPEG, excluded from the ladder', () =
   });
 });
 
+describe('route tiles are credited and described', () => {
+  // Apollo 16/17 tiles shipped with no provenance (Apollo 17) and no alt text
+  // (both) and nothing caught it; every laddered tile needs both.
+  it('every laddered route tile has a provenance row and en-US alt text', () => {
+    const prov = new Set(
+      (
+        JSON.parse(readFileSync(path.join(STATIC, 'data', 'image-provenance.json'), 'utf8')) as {
+          entries: { path: string }[];
+        }
+      ).entries.map((e) => e.path),
+    );
+    const alt = JSON.parse(
+      readFileSync(path.join(STATIC, 'data', 'image-alt-text', 'en-US.json'), 'utf8'),
+    ) as Record<string, string>;
+    const tiles = entries.filter(([k]) => TILE.test(k.slice(1))).map(([k]) => `${k}.webp`);
+    expect(tiles.length).toBeGreaterThan(0);
+    expect(tiles.filter((t) => !prov.has(t))).toEqual([]);
+    expect(tiles.filter((t) => !alt[t])).toEqual([]);
+  });
+});
+
 describe('context crops (surface-context.ts)', () => {
   it('every hotspot_context_source is a laddered WebP on disk, at most 4096 wide', () => {
     const hs = JSON.parse(

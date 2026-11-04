@@ -34,8 +34,10 @@ the tools cannot measure is quality; the 4.3% BROKEN figure (2026-10-19, 741-str
 - Unit symbols: sr-Cyrl `км/с` (13 in `messages/sr-Cyrl.json`), zh-CN 公里 — deferred, decide.
 - nl: 2 `englishProse` strings (`i18n-detect.mjs`).
 
-**Step 2 — read and fix the trees nobody has read in full** (in-session subagents, hand fixes; size
-the run — fields, agents, tokens — and get a go before fanning out):
+**Step 2 — read and fix the trees nobody has read in full.** How (operator, 2026-11-04): inline in
+the main session, by hand, spending as few tokens as possible — no subagent fan-outs unless the
+operator asks. One small cell per round; each round ends with a measurement, and what it taught
+becomes a tool or a check before the next round:
 
 1. **Science articles in 10 locales** (de, nl, es, it, pt-BR, ja, ko, hi, ar, sr-Cyrl), about
    14,330 fields. Full reads of ru, zh-CN and fr found 19%, 12% and 16% BROKEN — two to three
@@ -54,6 +56,9 @@ links from article text to `/science/glossary`.
 
 **Step 4 — known issues in sections (user-visible):**
 
+- **Nav overflows at tablet width (found 2026-11-04):** at 760 px the nav's right-hand button
+  group (`div.right`, `Nav.svelte`) runs past the viewport — page scrollWidth 889–981 px on
+  `/essays`, `/fleet`, en and ar alike; fine at 375 px. Measured with a Playwright scrollWidth check.
 - **Mobile at 375 px — re-check, no evidence either way:** toggle-set parity on earth/moon/mars/
   venus; the 2D/3D toggle shows its target state; breadcrumb compaction and the right-edge label
   clamp; `/fly` "Eart" truncation; `/explore` zoom-out label overflow.

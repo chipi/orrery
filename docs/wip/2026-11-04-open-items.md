@@ -243,7 +243,20 @@ only if the site renders them inconsistently).
   ceiling 379). #550 needs per-image operator approval and removes slots — asked.
 - PWA: verified on prod 2026-11-04 — `/_app/env.js`, `/sw.js`, `/_app/version.json` answer
   `cache-control: no-cache`, `cf-cache-status: DYNAMIC` on repeat requests (not CDN-cached).
-- Traverses (Opportunity, Spirit, Zhurong): not started — asked.
+- Earth 2D stays off; no sky view on Venus (operator, 2026-11-04). CelesTrak `used_on` also lists
+  moon, mars, explore (the sky AR places the stations; `60529e5514b`).
+- Traverses (Opportunity, Spirit, Zhurong) — operator's order: (1) find the team-localized paths
+  by web search (budget raised to 400 in `/work/orrery/main/.claude/settings.local.json`, takes
+  effect on a new session); (2) else the PDS drive logs pinned to HiRISE landmarks, credited as our
+  reconstruction; (3) last resort, fix only the clear errors. Found so far:
+  - NASA MMGIS has MSL/M2020 traverse JSON only; MER paths there 403.
+  - PDS `pds-geosciences.wustl.edu/mer/mer{1,2}-m-eng-6-rmc-ops-v1/mer?rm_0xxx/data/` holds
+    `mer?_master.svf` (site offsets, x north / y east metres, chained from the landing site) and
+    per-site `.rvf` drive positions. All solutions are `telemetry` (onboard odometry, uncorrected):
+    Opportunity's chain is ~2.3 km off Victoria and ends ~2.9 km inside Endeavour.
+  - The V1 stubs are wrong too: Opportunity ends near Endeavour's centre (354.77°E), Marathon
+    Valley stop inside the crater, Victoria stop 5.41°W vs 5.50°W.
+  - Write the converter as a kept tool (the MSL/M2020 MMGIS converter was never committed).
 
 **Not in 0.9.6 unless the operator says so:** Hebrew (pilot only, `18dc87c2bff`; `he` not in
 `native-terms.json`, `RTL_LOCALES` is `['ar']`); the /fly items below; mobile store publishing;

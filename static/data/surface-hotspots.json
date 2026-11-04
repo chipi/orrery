@@ -1767,15 +1767,15 @@
       "hotspot_model": "launchpad-generic",
       "hotspot_tier_max": 2,
       "hotspot_tier2_source": "/images/hotspots/earth/rocket-lab-lc-1/tier2-detail.jpg",
-      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/rocket-lab-lc-1/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
       "location_uncertainty_m": 10,
       "region_bounds": {
-        "lat_min": -39.273,
-        "lat_max": -39.25,
-        "lon_min": 177.85035,
-        "lon_max": 177.88005
+        "lat_min": -39.2638,
+        "lat_max": -39.2592,
+        "lon_min": 177.86223,
+        "lon_max": 177.86817
       },
       "region_kind": "roi_quad",
       "hotspot_context_source": "/images/hotspots/earth/rocket-lab-lc-1/context.webp",

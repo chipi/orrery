@@ -596,6 +596,11 @@
   // failover set. Drives the on-canvas "Detail view" credit honestly.
   const KAGUYA_DETAIL_MOON_SITES = new Set(['luna9']);
   const GSI_DETAIL_EARTH_PADS = new Set(['tanegashima-yoshinobu', 'uchinoura']);
+  /** LINZ 0.1 m aerial survey, read to 0.25 m/px (fetch-earth-pads.ts LINZ_SURVEY). */
+  const LINZ_DETAIL_EARTH_PADS = new Set(['rocket-lab-lc-1']);
+  const EOX_CLOUDLESS_TITLE = 'EOxCloudless Sentinel-2 cloudless 2025';
+  const EOX_CLOUDLESS_AUTHOR =
+    'EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2025)';
   /** Sphere's current km/px at the deepest-zoom HiRISE distance.
    *  Computed each animate frame and passed into SurfaceFlatPatch as
    *  the entry zoom so the photo content stays at the *same pixel
@@ -3994,21 +3999,21 @@
               // but wider window — see scripts/hotspots/fetch-moon-regional.ts.
               if (hasRegional) {
                 if (config.planet === 'earth') {
-                  // Earth pads (#546) — regional is Copernicus Sentinel-2
-                  // L2A for every pad; the detail branch below dispatches
-                  // per-pad source. Same false-provenance trap as the 2026-06
-                  // Mars fix: without this branch earth read LROC credit.
+                  // Earth pads (#546) — regional is the EOX Sentinel-2
+                  // cloudless 2025 mosaic for every pad (fetch-earth-pads.ts);
+                  // the detail branch below dispatches per-pad source. Same
+                  // false-provenance trap as the 2026-06 Mars fix.
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
-                    sourceTitle: 'Copernicus Sentinel-2 L2A',
-                    sourceAuthor: 'Contains modified Copernicus Sentinel data',
+                    sourceTitle: EOX_CLOUDLESS_TITLE,
+                    sourceAuthor: EOX_CLOUDLESS_AUTHOR,
                     resolutionText: m.surface_res_crop({
                       res: m.unit_mpx_value({ value: '10' }),
                       crop: '1600',
                       km: m.mp_flight_unit_km({ value: '16' }),
                     }),
-                    sourceUrl: 'https://dataspace.copernicus.eu/',
-                    licenseShort: 'COPERNICUS-S2',
+                    sourceUrl: 'https://cloudless.eox.at/',
+                    licenseShort: 'CC-BY-NC-SA-4.0',
                   });
                 } else if (config.planet === 'mars') {
                   layers.push({
@@ -4078,14 +4083,26 @@
                   if ((site.hotspot_tier2_ground_m ?? 512) >= 2560) {
                     layers.push({
                       layerLabel: m.surface_layer_detail(),
-                      sourceTitle: 'Copernicus Sentinel-2 L2A',
-                      sourceAuthor: 'Contains modified Copernicus Sentinel data',
+                      sourceTitle: EOX_CLOUDLESS_TITLE,
+                      sourceAuthor: EOX_CLOUDLESS_AUTHOR,
                       resolutionText: m.surface_res_window_nosub({
                         res: m.unit_mpx_value({ value: '10' }),
                         window: m.mp_flight_unit_km({ value: '2.56' }),
                       }),
-                      sourceUrl: 'https://dataspace.copernicus.eu/',
-                      licenseShort: 'COPERNICUS-S2',
+                      sourceUrl: 'https://cloudless.eox.at/',
+                      licenseShort: 'CC-BY-NC-SA-4.0',
+                    });
+                  } else if (LINZ_DETAIL_EARTH_PADS.has(site.id)) {
+                    layers.push({
+                      layerLabel: m.surface_layer_detail(),
+                      sourceTitle: 'LINZ aerial imagery',
+                      sourceAuthor: "Hawke's Bay Regional Council · Toitū Te Whenua LINZ",
+                      resolutionText: m.surface_res_window({
+                        res: m.unit_mpx_value({ value: '0.25' }),
+                        window: m.unit_m_value({ value: '512' }),
+                      }),
+                      sourceUrl: 'https://data.linz.govt.nz/',
+                      licenseShort: 'CC-BY-4.0',
                     });
                   } else if (GSI_DETAIL_EARTH_PADS.has(site.id)) {
                     layers.push({

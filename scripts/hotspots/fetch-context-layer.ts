@@ -356,7 +356,7 @@ async function main() {
   }
   const kmPerDeg = (RADIUS_KM[BODY] * Math.PI) / 180;
   /** An earlier site's crop whose box holds this site with SHARE_MARGIN_KM to spare. */
-  const shareFrom = (s: { lat: number; lon: number }) =>
+  const shareFrom = (s: { id: string; lat: number; lon: number }) =>
     Object.entries(
       hs.entries as Record<
         string,

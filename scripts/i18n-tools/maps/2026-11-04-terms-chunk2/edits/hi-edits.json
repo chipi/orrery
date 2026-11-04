@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "tagline",
+    "term": "sample return",
+    "decision": "change",
+    "find": "1976 के बाद पहला चंद्र नमूना रिटर्न",
+    "replace": "1976 के बाद पहली चंद्र नमूना वापसी"
+  },
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "best_known_for",
+    "term": "sample return",
+    "decision": "change",
+    "find": "1976 के बाद पहला चंद्र नमूना रिटर्न",
+    "replace": "1976 के बाद पहली चंद्र नमूना वापसी"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "USS Essex द्वारा प्रायः निकाला गया।",
+    "replace": "USS Essex ने उसे समुद्र से निकाला।"
+  }
+]

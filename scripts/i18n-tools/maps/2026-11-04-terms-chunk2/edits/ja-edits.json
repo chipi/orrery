@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "intro_sentence",
+    "term": "microgravity",
+    "decision": "change",
+    "find": "アストロノウトは、1ヶ月あたり約1〜2%の骨量をマイクログラビティで失います。高齢者の骨粗鬆症と同じレートですが、圧縮され、再燃性が向上します。",
+    "replace": "宇宙飛行士は微小重力のもとで、1か月あたり約1〜2%の骨量を失います。高齢者の骨粗鬆症と同じ速さですが、短期間に起こり、ほぼ元に戻ります。"
+  }
+]

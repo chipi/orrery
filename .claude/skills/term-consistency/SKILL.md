@@ -91,6 +91,8 @@ Module» for any lander), garbled taglines.
      ru/sr (use a stem, e.g. `периге` not `перигей`), Korean particles, Arabic article
      and prefixes (`ل`, `ال`), compounds (nl `-baan`, `-trap`).
    - Never put JavaScript `\b` next to a non-ASCII letter: it is ASCII-only.
+   - In Hindi, write `[\p{L}\p{M}]*`, never `\p{L}*`: Devanagari vowel signs are combining
+     marks, so `नमून\p{L}*` cannot match «नमूना» (chunk 2 found a 0 % cell this way).
    - Run `term-drift.mjs --terms=<new>` and read ~10 misses per cell. A cell under ~70%
      means either real drift or a too-narrow entry. Widen the entry first. In round 1,
      narrow entries made reviewers "fix" correct Dutch and Serbian.

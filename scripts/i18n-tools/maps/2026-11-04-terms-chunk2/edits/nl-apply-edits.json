@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "tagline",
+    "old": "Eerste robot maanmonster terugkeer",
+    "new": "Eerste robotische maanmonsterterugkeer"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "best_known_for",
+    "old": "Eerste robot maanmonster terugkeer",
+    "new": "Eerste robotische maanmonsterterugkeer"
+  }
+]

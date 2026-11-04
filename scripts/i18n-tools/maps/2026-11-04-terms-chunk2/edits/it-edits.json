@@ -1,0 +1,66 @@
+[
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "title",
+    "term": "sample return",
+    "decision": "change",
+    "find": "Tipi di missione — Sorvolo, Orbiter, Lander, Rover, Sample Return",
+    "replace": "Tipi di missione — Sorvolo, Orbiter, Lander, Rover, Ritorno di campioni"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.0",
+    "term": "sample return",
+    "decision": "change",
+    "find": "il sample return il più costoso",
+    "replace": "il ritorno di campioni il più costoso"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "term": "sample return",
+    "decision": "change",
+    "find": "SAMPLE RETURN è l'apice",
+    "replace": "Il RITORNO DI CAMPIONI è l'apice"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.4",
+    "term": "sample return",
+    "decision": "change",
+    "find": "Il sample return è l'apice.",
+    "replace": "Il ritorno di campioni è l'apice."
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "diagram_caption",
+    "term": "sample return",
+    "decision": "change",
+    "find": "→ rover → sample return.",
+    "replace": "→ rover → ritorno di campioni."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "type",
+    "term": "sample return",
+    "decision": "change",
+    "find": "SAMPLE RITORNO · COMPLETATA",
+    "replace": "RITORNO DI CAMPIONI · COMPLETATA"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "tagline",
+    "term": "sample return",
+    "decision": "change",
+    "find": "Primo ritorno robot del campione lunare",
+    "replace": "Primo ritorno robotico di campioni lunari"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "best_known_for",
+    "term": "sample return",
+    "decision": "change",
+    "find": "Primo ritorno robot del campione lunare",
+    "replace": "Primo ritorno robotico di campioni lunari"
+  }
+]

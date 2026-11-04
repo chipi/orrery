@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "title",
+    "old": "Tipos de Missão — Sobrevoo, Orbiter, Lander, Rover, Sample Return",
+    "new": "Tipos de Missão — Sobrevoo, Orbitador, Módulo de pouso, Rover, Retorno de amostras"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "old": "SAMPLE RETURN é o pico: módulo de pouso + estágio de ascensão da superfície + retorno para casa + EDL na Terra. Hayabusa-2, OSIRIS-REx, Chang'e 5, os voos Apollo à Lua. A razão de massa-até-partida-da-Terra é brutal — Mars Sample Return está em desenvolvimento agora e é uma das missões robóticas mais difíceis já tentadas.",
+    "new": "O RETORNO DE AMOSTRAS é o pico: módulo de pouso + estágio de ascensão da superfície + retorno para casa + EDL na Terra. Hayabusa-2, OSIRIS-REx, Chang'e 5, os voos Apollo à Lua. A razão de massa-até-partida-da-Terra é brutal — Mars Sample Return está em desenvolvimento agora e é uma das missões robóticas mais difíceis já tentadas."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "type",
+    "old": "AMOSTRA DE RETORNO · REALIZADA",
+    "new": "RETORNO DE AMOSTRAS · REALIZADA"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.6.note",
+    "old": "Orion cai no Oceano Pacífico.",
+    "new": "Orion amerissa no Oceano Pacífico."
+  }
+]

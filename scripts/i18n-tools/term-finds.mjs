@@ -17,7 +17,12 @@ const finds = JSON.parse(fs.readFileSync(findFile, 'utf8'));
 const byLoc = {};
 let bad = 0;
 for (const f of finds) {
-  const hits = misses.filter((m) => m.loc === f.loc && m.term === f.term && m.tr.includes(f.find));
+  // `exact: true`: only fields whose whole text is the find (a short label that also occurs inside
+  // longer fields).
+  const hits = misses.filter(
+    (m) =>
+      m.loc === f.loc && m.term === f.term && (f.exact ? m.tr === f.find : m.tr.includes(f.find)),
+  );
   // Several fields are fine when they hold the same text (a fleet tagline and its
   // best_known_for): the one decision covers them all.
   if (!hits.length || hits.some((h) => h.tr !== hits[0].tr)) {

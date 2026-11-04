@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "old": "4일 / 62개 궤도 후 대서양 귀환.",
+    "new": "4일 / 62개 궤도 후 대서양 착수."
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "events.3.note",
+    "old": "CSM-116이 1973-06-22 13:50 UTC에 태평양에 물착륙했습니다.",
+    "new": "CSM-116이 1973-06-22 13:50 UTC에 태평양에 착수했습니다."
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.3.note",
+    "old": "MMX가 포보스에 착지; 레고리스 약 10g 채취.",
+    "new": "MMX가 포보스에 착지; 레골리스 약 10g 채취."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.3.note",
+    "old": "후면 레고리스에서 1.935 kg.",
+    "new": "후면 레골리스에서 1.935 kg 채취."
+  }
+]

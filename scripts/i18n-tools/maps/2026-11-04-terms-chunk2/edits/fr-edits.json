@@ -1,0 +1,42 @@
+[
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Le CM s'est amaré dans l'Atlantique Nord",
+    "replace": "Le CM a amerri dans l'Atlantique Nord"
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Resilience s'est amarée au large",
+    "replace": "Resilience a amerri au large"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.6.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Orion s'écrase dans l'océan Pacifique",
+    "replace": "Orion amerrit dans l'océan Pacifique"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "outcome.1.md",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "à l'amérissage",
+    "replace": "à l'amerrissage"
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "term": "regolith",
+    "decision": "change",
+    "find": "170 g de régolite de Mare Crisium",
+    "replace": "170 g de régolithe de Mare Crisium"
+  }
+]

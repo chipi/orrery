@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "dispatch",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Приземлился почти прямо над кораблём-носителем.",
+    "replace": "Приводнился почти прямо у корабля-спасателя."
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "description",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Приземлились 1973-09-25",
+    "replace": "Приводнились 1973-09-25"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "dispatch",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "затонула при посадке",
+    "replace": "затонула после приводнения"
+  }
+]

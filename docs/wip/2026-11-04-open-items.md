@@ -152,8 +152,19 @@ only if the site renders them inconsistently).
   removed); keeps now carry one reason per field. Definitions in 14
   locales. **Serbian forms for your read:** орбитер, лендер, ровер, капсула, горњи степен,
   топлотни штит, ваздушна комора, излазак у свемир, and the eight sr definitions.
-- Next chunks: 2 return & surface (re-entry, splashdown, sample return, regolith,
-  microgravity); 3 orbits (low Earth orbit, geostationary, polar orbit, perihelion, aphelion,
+- **Chunk 2 done** (2026-11-04, `maps/2026-11-04-terms-chunk2/`): splashdown, sample return,
+  regolith, microgravity, life support, solar array — glossary 28 → 34 (re-entry is covered by
+  `entry`, so not a term of its own). Misses 541 → 320 → 266 → 67 by widening; every miss
+  read: 58 real errors fixed in 13 locales — nl «steekproef» (a statistical sample) for
+  "sample" ×6 plus garbled labels and a factual error (apollo8 "North Atlantic" for North
+  Pacific), «noodwatering» (irrigation); fr «s'est amaré» (moored) and «s'écrase» (crashes);
+  ru «приземлился» for a splashdown; English left in it / pt-BR / nl; ar, hi, ko, zh, de,
+  pt-BR wrong words; a garbled ja intro. Tool bug fixed on the way: hi stems used `\p{L}*`,
+  which never matches Devanagari vowel signs (combining marks) — all hi stems now
+  `[\p{L}\p{M}]*`. Widen check (414 fields by group) and the glossary page (en, hi) checked in
+  the same round. Gate 0. **Serbian for your read:** спуштање у океан, повратак узорака,
+  реголит, микрогравитација, одржавање живота, соларни панели, and the six sr definitions.
+- Next chunks: 3 orbits (low Earth orbit, geostationary, polar orbit, perihelion, aphelion,
   eccentricity, launch window, escape velocity); 4 transfers (Hohmann transfer, Lagrange point,
   C3, rocket equation, free-return, sun-synchronous, halo orbit); 5 astronomy (exoplanet,
   light-year, habitable zone, asteroid belt, solar wind, magnetosphere). Then term links from

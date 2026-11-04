@@ -1,0 +1,471 @@
+[
+  {
+    "term": "splashdown",
+    "loc": "hi",
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "hi",
+    "rel": "missions/earth/freedom-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "hi",
+    "rel": "missions/earth/freedom-7.json",
+    "at": "events.2.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "hi",
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "hi",
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "hi",
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "hi",
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.10.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "ar",
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.label",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "ar",
+    "rel": "missions/earth/sigma-7.json",
+    "at": "dispatch",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "sr-Cyrl",
+    "rel": "missions/earth/friendship-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "de",
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "de",
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "de",
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.10.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "de",
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.6.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "fr",
+    "rel": "missions/earth/freedom-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "fr",
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "nl",
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "nl",
+    "rel": "missions/earth/inspiration4.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "nl",
+    "rel": "programs/mercury.json",
+    "at": "outcome.1.md",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "pt-BR",
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "pt-BR",
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.7.note",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "pt-BR",
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "splashdown",
+    "loc": "pt-BR",
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "sample return",
+    "loc": "ru",
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.20.md",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ru",
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "payload",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ru",
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ru",
+    "rel": "missions/moon/luna16.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ru",
+    "rel": "fleet/lander/luna-16.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ru",
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ja",
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "hi",
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "hi",
+    "rel": "missions/moon/luna16.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "hi",
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ar",
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.22.caption",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ar",
+    "rel": "missions/moon/luna16.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ar",
+    "rel": "fleet/lander/luna-16.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "ar",
+    "rel": "fleet/lander/luna-16.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "sr-Cyrl",
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "sr-Cyrl",
+    "rel": "missions/moon/change1.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "sr-Cyrl",
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "de",
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "fr",
+    "rel": "missions/mars/mmx.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "fr",
+    "rel": "missions/moon/change6.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "fr",
+    "rel": "missions/moon/luna16.json",
+    "at": "type",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "fr",
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "fr",
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "es",
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "es",
+    "rel": "programs/jaxa-robotic.json",
+    "at": "link_labels./programs/hayabusa",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "it",
+    "rel": "missions/mars/mmx.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "it",
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "it",
+    "rel": "fleet/lander/change6.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "it",
+    "rel": "fleet/lander/change6.json",
+    "at": "best_known_for",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "it",
+    "rel": "fleet/lander/luna-16.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "it",
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "nl",
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "nl",
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "nl",
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "nl",
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "nl",
+    "rel": "programs/jaxa-robotic.json",
+    "at": "link_labels./programs/hayabusa",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "pt-BR",
+    "rel": "missions/mars/mmx.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "pt-BR",
+    "rel": "missions/moon/change5.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "sample return",
+    "loc": "pt-BR",
+    "rel": "missions/moon/change6.json",
+    "at": "first",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "regolith",
+    "loc": "ja",
+    "rel": "science/life-in-space/lunar-suits.json",
+    "at": "intro_sentence",
+    "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out"
+  },
+  {
+    "term": "regolith",
+    "loc": "ja",
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out"
+  },
+  {
+    "term": "regolith",
+    "loc": "zh-CN",
+    "rel": "science/life-in-space/lunar-suits.json",
+    "at": "intro_sentence",
+    "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out"
+  },
+  {
+    "term": "microgravity",
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.26.md",
+    "why": "read 2026-11-04 (chunk 2): the everyday word, weightlessness"
+  }
+]

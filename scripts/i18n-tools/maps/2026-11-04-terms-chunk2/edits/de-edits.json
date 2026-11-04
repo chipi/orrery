@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.6.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Orion platscht im Pazifischen Ozean.",
+    "replace": "Orion wassert im Pazifischen Ozean."
+  }
+]

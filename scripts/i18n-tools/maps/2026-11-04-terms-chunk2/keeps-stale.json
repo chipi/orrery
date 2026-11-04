@@ -1,0 +1,9 @@
+[
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "missions/earth/sigma-7.json",
+    "at": "dispatch",
+    "why": "variant: виток (count of revolutions)"
+  }
+]

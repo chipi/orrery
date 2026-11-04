@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "old": "Le CM s'est amaré dans l'Atlantique Nord le 1968-10-22 à 11:11 UTC après 163 orbites / 7,4 millions km / 10 j 20 h. Récupération par l'USS Essex.",
+    "new": "Le CM a amerri dans l'Atlantique Nord le 1968-10-22 à 11:11 UTC après 163 orbites / 7,4 millions km / 10 j 20 h. Récupération par l'USS Essex."
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "events.3.note",
+    "old": "Resilience s'est amarée au large de la côte de la Floride le 2021-09-18 à 23:06 UTC.",
+    "new": "Resilience a amerri au large de la côte de la Floride le 2021-09-18 à 23:06 UTC."
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.6.note",
+    "old": "Orion s'écrase dans l'océan Pacifique.",
+    "new": "Orion amerrit dans l'océan Pacifique."
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "outcome.1.md",
+    "old": "Six Américains ont piloté Mercury entre 1961 et 1963. Alan Shepard partit le premier, un saut suborbital de quinze minutes trois semaines après que Gagarine eut déjà orbité — plus court et plus bas que le vol soviétique, mais suffisant. Gus Grissom le répéta et manqua de se noyer quand son écoutille s'ouvrit à l'amérissage. Puis, en février 1962, John Glenn enfourcha un Atlas jusqu'à l'orbite et rentra après trois tours de la planète, et les États-Unis avaient enfin une réponse à Gagarine. Scott Carpenter, Wally Schirra et Gordon Cooper étendirent les vols de trois orbites à une journée complète — Faith 7 de Cooper tourna autour de la Terre vingt-deux fois en mai 1963 et ferma le programme.",
+    "new": "Six Américains ont piloté Mercury entre 1961 et 1963. Alan Shepard partit le premier, un saut suborbital de quinze minutes trois semaines après que Gagarine eut déjà orbité — plus court et plus bas que le vol soviétique, mais suffisant. Gus Grissom le répéta et manqua de se noyer quand son écoutille s'ouvrit à l'amerrissage. Puis, en février 1962, John Glenn enfourcha un Atlas jusqu'à l'orbite et rentra après trois tours de la planète, et les États-Unis avaient enfin une réponse à Gagarine. Scott Carpenter, Wally Schirra et Gordon Cooper étendirent les vols de trois orbites à une journée complète — Faith 7 de Cooper tourna autour de la Terre vingt-deux fois en mai 1963 et ferma le programme."
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "old": "Dernier succès lunaire soviétique — 170 g de régolite de Mare Crisium ramenés le 1976-08-22 ; dernier retour avant Chang'e 5",
+    "new": "Dernier succès lunaire soviétique — 170 g de régolithe de Mare Crisium ramenés le 1976-08-22 ; dernier retour avant Chang'e 5"
+  }
+]

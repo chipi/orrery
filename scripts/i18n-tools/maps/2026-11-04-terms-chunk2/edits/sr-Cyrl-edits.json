@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.label",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "ХИТНО ВОДНО САЛЕТАЊЕ",
+    "replace": "ХИТНО ВОДНО СЛЕТАЊЕ"
+  }
+]

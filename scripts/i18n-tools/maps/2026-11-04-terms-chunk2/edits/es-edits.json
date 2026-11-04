@@ -1,0 +1,18 @@
+[
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "description",
+    "term": "sample return",
+    "decision": "change",
+    "find": "módulo de aterrizaje lunar de recogida de muestras",
+    "replace": "módulo de aterrizaje lunar de retorno de muestras"
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "best_known_for",
+    "term": "sample return",
+    "decision": "change",
+    "find": "última recogida de muestras lunares antes de",
+    "replace": "último retorno de muestras lunares antes de"
+  }
+]

@@ -51,6 +51,8 @@ const SCALE = [
     /^(trillion|billionen|billion de|bilión|billones|trilhão|trilhões|biljoen|трлн\.?|триллион[аов]*|трилион[аи]?|تريليون)(?![\p{L}])/iu,
     1e12,
   ],
+  [/^(quadrillion)(?![\p{L}])/iu, 1e15],
+  [/^(quintillion)(?![\p{L}])/iu, 1e18],
   [/^(लाख)/u, 1e5],
   [/^(करोड़|करोड)/u, 1e7],
 ];
@@ -58,8 +60,8 @@ const MYRIAD = { 万: 1e4, 萬: 1e4, 만: 1e4, 亿: 1e8, 億: 1e8, 억: 1e8 };
 
 // Every number as a canonical value string. Grouping separators (, . space thin-space) between
 // groups of three are dropped; a remaining single , or . is a decimal point.
-// fr / de / nl use the long scale: billion / Billion / biljoen = 10^12.
-const LONG_SCALE = new Set(['fr', 'de', 'nl']);
+// fr / de / nl / sr-Cyrl use the long scale: billion = 10^12, trillion = 10^18 (sr трилион).
+const LONG_SCALE = new Set(['fr', 'de', 'nl', 'sr-Cyrl']);
 function numbers(s, loc = 'en-US') {
   const out = [];
   const t = ascii(s)
@@ -79,7 +81,10 @@ function numbers(s, loc = 'en-US') {
     const rest = after.replace(/^[\s\u00a0-]+/, '');
     const scale = SCALE.find(([re]) => re.test(rest));
     let unit = MYRIAD[after[0]] ?? (scale && rest !== after ? scale[1] : 1);
-    if (LONG_SCALE.has(loc) && /^(billions?|billionen?|biljoen)\b/i.test(rest)) unit = 1e12;
+    if (LONG_SCALE.has(loc)) {
+      if (/^(billions?|billionen?|biljoen|билион[аи]?)(?![\p{L}])/iu.test(rest)) unit = 1e12;
+      if (/^(trillions?|trillionen?|triljoen|трилион[аи]?)(?![\p{L}])/iu.test(rest)) unit = 1e18;
+    }
     const v = Math.round(Number(n) * unit * 1e6) / 1e6;
     // 1億5000万: a 億 value followed directly by a 万 value is one number.
     const prev = out.length && t.slice(0, m.index).match(/[億亿억]$/) ? out.pop() : null;

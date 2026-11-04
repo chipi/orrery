@@ -202,7 +202,7 @@ Adjusted:
 - An ar stem that matched «التقاط» (capture) was narrowed.
 
 **Fleet: 0 unreviewed, gated.** The reviewers also reported a lot of garble outside the
-terms, worst in nl fleet. It is collected in `2026-10-31-fleet-garble-findings.md` for a
+terms, worst in nl fleet. It is collected in `git show d11a0df6db6:docs/wip/2026-10-31-fleet-garble-findings.md` for a
 separate pass.
 
 All trees after essays: 2,142 unreviewed (missions 1,378, fleet 538, programs 226).
@@ -238,7 +238,7 @@ Totals for the 20-term pilot: about 2,200 field edits and 1,122 recorded keeps; 
 Found on the way, not part of the term work:
 - English fact, fixed: Pioneer 10's RTG power read "25 W at launch"; it is ~155 W (NASA PDS Pioneer 10 spacecraft description). Corrected in all 14 locales and `static/data`.
 - Garble and grammar slips outside the terms, collected in
-  `2026-10-31-fleet-garble-findings.md`.
+  `git show d11a0df6db6:docs/wip/2026-10-31-fleet-garble-findings.md`.
 
 Next: the /science/glossary page (PRD-038, done), the garble pass, a plan for the next term
 batch from `term-census.mjs`, and last, term links from the article text to the glossary.

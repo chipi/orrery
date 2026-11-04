@@ -7,7 +7,7 @@
  * captures such as Dawn and Psyche) keep the callout without a burn.
  *
  * Engine labels are designations or thrusts — no prose — so they read the same in
- * every locale. Research notes: docs/wip/2026-11-02-fly-flight-and-descent-analysis.md.
+ * every locale. Research notes: git show d11a0df6db6:docs/wip/2026-11-02-fly-flight-and-descent-analysis.md.
  */
 
 export type OrbitInsertionEngineKind = 'main' | 'solid' | 'rcs';

@@ -67,7 +67,7 @@ Length: **~1,800–2,800 words.** Long enough to cover ground; short enough to f
 
 ## How to use this
 
-- **Prototype first.** The [Navigation essay](../wip/the-long-view-navigation-prototype.md) is the calibration piece — the reference the way Apollo is for programs. Read it before writing another.
+- **Prototype first.** The [Navigation essay](../../static/data/essays/navigation.json) is the calibration piece — the reference the way Apollo is for programs. Read it before writing another.
 - **Reviewing.** Same single-author test as the programs guide: could a paragraph sit inside the Navigation essay without a seam? The banned-word list (Field Historian §3) is the fast first pass. Extra essay tests: *Is there one thesis, and does every section serve it? Does it connect at least three atlas entries the reader wouldn't have connected themselves? Is there a real turn?*
 - **Translation.** English source register only; the i18n style guide governs the 14-locale pipeline, same as everywhere.
 

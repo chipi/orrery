@@ -4,7 +4,7 @@
 
 Operator, 2026-10-31: "we need to understand the garble before we go fix it", and the fix must
 not undo the term work of the past days. Findings that started this:
-[2026-10-31-fleet-garble-findings.md](2026-10-31-fleet-garble-findings.md).
+`git show d11a0df6db6:docs/wip/2026-10-31-fleet-garble-findings.md`.
 
 ## 1 · Origin
 

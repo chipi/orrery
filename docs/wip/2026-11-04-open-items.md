@@ -138,7 +138,7 @@ v1.0.
   there); App Store privacy answers not applied; iOS build and the iCloud flag untested on a
   device.
 - Crash reporting: a forced native crash, dSYM upload and the Play mapping upload need a device;
-  `2026-07-23-mobile-crash-observability.md` drifted from the code (`platform` tag, Sentry 10.69.0)
+  the old runbook (`git show d11a0df6db6:docs/wip/2026-07-23-mobile-crash-observability.md`) drifted from the code (`platform` tag, Sentry 10.69.0)
   — fix the doc when the device steps are done.
 
 ### a11y (beyond step 4)

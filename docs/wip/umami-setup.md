@@ -5,7 +5,7 @@
 Self-hosted Umami **v3.3.0** on homelab, shared with podcast_scraper (Player, Operator
 viewer). Orrery prod website_id `4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce`. Admin UI:
 `https://umami.tail6d0ed4.ts.net` (tailnet, operator login). DB access +
-query recipes: `docs/wip/2026-08-31-prod-observability-sweep.md`.
+query recipes: `git show d11a0df6db6:docs/wip/2026-08-31-prod-observability-sweep.md`.
 
 **Shared-infra rule:** additive/Orrery-scoped changes are safe; **never restart the
 shared Umami container without operator approval** (briefly drops analytics for all

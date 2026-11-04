@@ -8,7 +8,7 @@ picture and then improve user flows toward desired outcomes (explore more, disco
 (roughly weekly). Keep raw numbers + the *behavioral read* + *hypotheses to test*.
 
 Data sources + how to pull: `reference_homelab_observability_access` (memory) and
-`docs/wip/2026-08-31-prod-observability-sweep.md` (method). Umami prod website_id
+`git show d11a0df6db6:docs/wip/2026-08-31-prod-observability-sweep.md` (method). Umami prod website_id
 `4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce`.
 
 **Caveat on every entry:** numbers are small (new site) and include some operator/dev
@@ -21,7 +21,7 @@ audio-tour sessions). Treat as directional. Real-user counts are slightly lower.
 
 1. **Language:** do non-EN users arrive and stay in their language? (Currently no —
    ~99.5% EN. Levers: multilingual SEO + on-site language suggestion. See
-   `multilingual-seo-analysis.md`.)
+   `git show d11a0df6db6:docs/wip/multilingual-seo-analysis.md`.)
 2. **/fly discovery:** does the flagship cinematic simulator get found & completed?
    (Currently almost never — 4 sessions/30d. Lever: discoverability / entry points.)
 3. **Depth & retention:** do people explore beyond the landing page? (Half bounce,
@@ -71,7 +71,7 @@ sitemap submission + a LinkedIn/social wave.
 - **H1 (language):** localized pages are technically well-formed but unindexed; non-EN
   organic will appear as Google indexes (weeks). *Watch:* first non-EN organic session
   + GSC per-locale impressions. *Act:* sitemap hreflang annotations + language-suggestion
-  banner (see multilingual-seo-analysis.md).
+  banner (see `git show d11a0df6db6:docs/wip/multilingual-seo-analysis.md`).
 - **H2 (/fly):** people don't reach /fly because it's not surfaced from where they are
   (home, science, mission pages). *Watch:* mission-load sessions. *Act:* add prominent
   entry points; measure lift.

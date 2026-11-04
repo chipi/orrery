@@ -60,9 +60,13 @@ by hand against the English (`sample-pair` seeds 53 / 9001, 120–420-character 
 | de science | 20 | 18 | 2 | 0 | du and Sie mixed (317 du-forms, 24 files with both) |
 
 So far the unread locales are far better than ru / zh-CN / fr were before their full reads
-(12–19% BROKEN). Full reads are not justified by this; targeted fixes are: German register
-(du or Sie — operator to decide, like ja/ko plain register), Portuguese terminology (UA,
-periápside), and the remaining locales measured the same way (nl, it, ja, ko, hi, ar, sr-Cyrl).
+(12–19% BROKEN). Full reads are not justified by this; targeted fixes are: Portuguese
+terminology (UA, periápside), and the remaining locales measured the same way (nl, it, ja, ko,
+hi, ar, sr-Cyrl).
+
+**Scope (operator, 2026-11-04): fix-ups only.** Wrong meaning, wrong facts, garbled text, wrong
+names. No change that rewrites a locale's voice across the site — how the reader is addressed
+(German du / Sie stays mixed) and the ja / ko plain register (item 3 below) are out of 0.9.6.
 
 1. **Science articles in 10 locales** (de, nl, es, it, pt-BR, ja, ko, hi, ar, sr-Cyrl), about
    14,330 fields. Full reads of ru, zh-CN and fr found 19%, 12% and 16% BROKEN — two to three
@@ -70,8 +74,8 @@ periápside), and the remaining locales measured the same way (nl, it, ja, ko, h
    BROKEN, and it is the only large locale with no science garble pass.
 2. **Essays and programs, all locales.** Never read in full; spot checks: essays 1 BROKEN + 14
    MINOR of 104, programs 1 BROKEN + 28 MINOR of 104. Programs was never sampled for quality.
-3. **Plain register in ja / ko** (である / 한다) — decided, not done: ja 710 + ko 948 fields in
-   science, missions, fleet. Needs the `register-scan.mjs` tool first (it does not exist).
+3. ~~**Plain register in ja / ko**~~ — out of 0.9.6 (operator: no site-wide voice changes). Was:
+   ja 710 + ko 948 fields, needs a `register-scan.mjs` tool that does not exist.
 4. **The ~580 `name` / title fields**, read one by one; the ~35 science and 14 essay MINOR
    strings left from the spot checks.
 5. **Guard:** a staleness lint — fail when the en-US overlay changed and a locale overlay did not.

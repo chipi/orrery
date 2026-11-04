@@ -41,7 +41,9 @@ the tools cannot measure is quality; the 4.3% BROKEN figure (2026-10-19, 741-str
 - ~~Unit symbols~~ — done 2026-11-04 (operator's rules): sr-Cyrl SI symbols in Latin (38 fields,
   км → km, км/с → km/s); zh-CN a number takes km / km/s / km/h, prose 公里, 千米 → 公里 (299
   fields). `scripts/i18n-tools/unit-symbols.mjs`; re-run finds 0.
-- nl: 2 `englishProse` strings (`i18n-detect.mjs`).
+- ~~nl: 2 `englishProse` strings~~ — done 2026-11-04: two English inscriptions quoted in Dutch
+  text (the LC-34 plaque, Duke's family photo) translated, as de/fr/es already had them;
+  `i18n-detect.mjs` nl 0.
 
 **Step 2 — read and fix the trees nobody has read in full.** How (operator, 2026-11-04): inline in
 the main session, by hand, spending as few tokens as possible — no subagent fan-outs unless the

@@ -245,7 +245,9 @@ only if the site renders them inconsistently).
   `cache-control: no-cache`, `cf-cache-status: DYNAMIC` on repeat requests (not CDN-cached).
 - Earth 2D stays off; no sky view on Venus (operator, 2026-11-04). CelesTrak `used_on` also lists
   moon, mars, explore (the sky AR places the stations; `60529e5514b`).
-- Traverses (Opportunity, Spirit, Zhurong) — operator's order: (1) find the team-localized paths
+- **Step 4 is complete for 0.9.6.** Deferred: #550 (later); traverses to **0.9.7** (operator,
+  2026-11-04; start that work in a fresh session so the raised search budget applies).
+- Traverses (0.9.7; Opportunity, Spirit, Zhurong) — operator's order: (1) find the team-localized paths
   by web search (budget raised to 400 in `/work/orrery/main/.claude/settings.local.json`, takes
   effect on a new session); (2) else the PDS drive logs pinned to HiRISE landmarks, credited as our
   reconstruction; (3) last resort, fix only the clear errors. Found so far:

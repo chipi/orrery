@@ -3,7 +3,7 @@
 Written 2026-11-04, when 0.9.5 went to PR #639. Built from an audit of every note in `docs/wip/`
 against the code and git history (each claim below was checked there; "not verified" says so).
 This note replaces the inventories, handovers and plans that used to live here; a note that was
-deleted can be read with `git show 116258425fd:docs/wip/<name>` (the last commit that had all of
+deleted can be read with `git show d11a0df6db6:docs/wip/<name>` (the last commit that had all of
 them). What stays in `docs/wip/` beside this note is listed at the end.
 
 Rules that still hold: no paid LLM or translation runs (the Hebrew run is the one exception the
@@ -109,7 +109,7 @@ v1.0.
   reports but files nothing.
 - Learn-more links: about 20 backlog items (none closed).
 
-### /fly (detail: `git show 116258425fd:docs/wip/2026-11-03-0.9.5-fly-handover.md`)
+### /fly (detail: `git show d11a0df6db6:docs/wip/2026-11-03-0.9.5-fly-handover.md`)
 
 - Earth capsules: Apollo 8 lunar-return entry, Gemini 7/12 peaks (parked on #522); Skylab 2–4,
   Gemini 3, Soyuz 11, Shenzhou 1 have no usable sourced values.

@@ -28,12 +28,12 @@
   "firsts": [
     {
       "year": 1966,
-      "label": "Luna 10 — 최초의 인공 달 궤도선 (USSR)",
+      "label": "Luna 10 — 최초의 인공 달 궤도선 (소련)",
       "mission_id": "luna10"
     },
     {
       "year": 1968,
-      "label": "Apollo 8 — 최초의 유인 달 궤도 (USA)",
+      "label": "Apollo 8 — 최초의 유인 달 궤도 (미국)",
       "mission_id": "apollo8"
     }
   ],

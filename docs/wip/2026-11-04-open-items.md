@@ -97,6 +97,12 @@ periápside, Operation Paperclip), which a term check finds across the whole loc
   plus four labels (ja DMO, ja / hi Chang'e 4 "basin", ru "холм холм"). New
   `english-in-labels.mjs`: the 7–8 hits left per locale are surface feature names kept in
   English everywhere (Home Plate, Three Forks, Genesis Rock).
+- **English country tags** (title sample zh-CN / hi / ar, seed 11): "(USA)", "(USSR)",
+  "(China)" after orbit-regime residents were left in English in 12 locales — 215 set to each
+  locale's own `country_*` message (ソ連, 苏联, URSS, VS …). zh-CN event labels "ZHURONG" /
+  "YUTU-2" → 祝融号 / 玉兔二号 (the name-drift gate missed all-caps names against the native
+  table; fixed in `name-origins.js`). hi "Gagarin's Start" was "Gagarin's beginning", now
+  गगारिन प्रक्षेपण पैड (overlay, hotspot, alt text).
 - **Doubled words** (one-off grep, all locales): ~370 hits, almost all legitimate (de "die die",
   fr "vous vous", es / it "primer primer plano" = first close-up, it "via via", ru "что что-то").
   4 real, fixed: es "del del", pt-BR "plano plano" and "mais mais", sr-Cyrl "првих првих" (the

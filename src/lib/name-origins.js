@@ -406,6 +406,21 @@ export function nameRendered(locale, en, out, norm = (x) => x) {
     [...en].every((ch) => !/[A-Z]/.test(ch) || RU_LETTER[ch])
   )
     if (out.includes(en.replace(/[A-Z]/g, (ch) => RU_LETTER[ch]))) return true;
-  const re = nativePattern(locale, en);
+  const re = nativePattern(locale, tableCase(locale, en));
   return !!re && re.test(out);
+}
+
+/** Mission event labels are in capitals ("YUTU-2 DEPLOYED"): look the name up in the
+ *  table's own spelling ("Yutu-2"). */
+/**
+ * @param {string} locale
+ * @param {string} en
+ * @returns {string}
+ */
+function tableCase(locale, en) {
+  if (en !== en.toUpperCase()) return en;
+  const key = Object.keys(ORIGIN_NAMES[locale] ?? {}).find(
+    (k) => en.startsWith(k.toUpperCase()) && /^([ -]|$)/.test(en.slice(k.length)),
+  );
+  return key ? key + en.slice(key.length) : en;
 }

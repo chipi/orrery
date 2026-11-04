@@ -31,7 +31,7 @@ Not part of the app or CI; excluded from the coverage gate (`vite.config.ts`).
 | `classify.mjs` | Latin-script words left in each locale: vehicle / acronym / other. |
 | `partial-titles.mjs` | Science titles in non-Latin locales that are still partly English. |
 | `apply-hand.mjs`, `apply-arrays.mjs`, `apply-hs.mjs`, `apply-labels.mjs`, `apply-generic.mjs`, `apply-notes.mjs`, `apply-stories.mjs`, `apply-traverses.mjs` | Writers for the 2026-10-17 clean-up items (hand rewrites, paragraph lists, hotspot overlays, event labels, notes, site stories, traverse stops). |
-| `convert-native.mjs` (+ `-lib`), `hs-native.mjs` | Origin-language name conversion (step 0). |
+| `convert-native.mjs` (+ `-lib`), `hs-native.mjs` | Origin-language name conversion (step 0). `convert-native.mjs [--write] [--samples=<file>]`: read the `--write` diff, hand-fix what it cannot judge, re-run until the dry run changes nothing. What it leaves English (Latin phrases, CJK glosses, `sourcing/`) lives in `scripts/lib/native-skip.mjs`, shared with `i18n-coverage-scan.mjs`'s `nativeNameMissing` count so both agree. |
 | `cjk-spaces.mjs` | Removes spaces left between CJK characters after a Latin name was replaced. |
 | `add-msgs.mjs`, `galaxy-msgs.mjs` | Add UI message keys to every `messages/<loc>.json`. |
 | `ui-label-audit.mjs <loc\|all> [--prune]` | UI-string checks per locale: `problems(…, { ui: true })` on every key, plus short English labels translated more than one way, plus labels whose whole English is a glossary term but whose value lacks the glossary form. Compared with `ui-label-baseline.json` (known defects of locales not audited yet, and label variants with a reason); `ui-label-audit.test.ts` fails on a new entry and on one that was fixed, so `--prune` after fixing. |

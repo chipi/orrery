@@ -26,8 +26,9 @@ the tools cannot measure is quality; the 4.3% BROKEN figure (2026-10-19, 741-str
   launch pads have no annotations at all (`hotspot_annotations: []` in en-US and in
   `surface-hotspots.json`). `i18n-coverage-scan.mjs` counted the empty en-US list as missing;
   it now counts a missing list only when the English one holds text (missingKey 6 → 0 per locale).
-- Native names missing (`nativeNameMissing`): ru 52, zh-CN 22, hi 14, ja 13, ar 1 — mostly
-  `/colophon` model titles and video titles.
+- ~~Native names missing~~ — done 2026-11-04 (`c0c5e3c9ce5`): ru 52, zh-CN 22, hi 14, ja 13,
+  ar 1 → 0 in every locale; `convert-native.mjs` fixed (it could not run) and taught three
+  rules (`scripts/lib/native-skip.mjs`).
 - Same-as-English fields: 64 (zh-CN) to 130 (nl) per locale, mostly `/colophon` anatomy titles
   (973 over all locales), site stories (67), deep-sky (55). Read them; many are kept names, the
   rest get translated.

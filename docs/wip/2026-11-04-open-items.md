@@ -83,6 +83,12 @@ periápside, Operation Paperclip), which a term check finds across the whole loc
   a unit conversion (Goddard's feet and pounds), a decade written as a word, or a rounding (ja
   33万 for 333,000) — no changed fact. Remaining flags are notation the tool does not parse yet
   (English "100M", "36k"; hi मिलियन; Arabic duals).
+- **Dropped sentences** — `dropped-sentences.mjs` over all science: 4 real drops (it ×2, pt-BR ×2),
+  restored (`7851c902b3a`); the rest merged sentences. Essays and programs: none.
+- **Programs** (seed 2718, 8 per locale; ja 20): 0 meaning errors in es fr it nl ru sr-Cyrl zh-CN
+  ar de pt-BR; **ja and ko shared two literal errors** ("standing water" as water standing
+  upright, "logistically" as "physically") — a common source; ja also put the Pioneers through
+  the radiation belt instead of the asteroid belt; hi "logically" for logistically. All fixed.
 - **Not a pattern:** it "SSI" (288 uses, the site's form), pt-BR "EEI" (294); de / es / nl
   "Periapsis" is the native technical term there.
 

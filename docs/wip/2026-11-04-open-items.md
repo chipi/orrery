@@ -34,7 +34,10 @@ the tools cannot measure is quality; the 4.3% BROKEN figure (2026-10-19, 741-str
   to their locale's /fleet name (`original-work-fleet-names.mjs --sync-english`), 2 fleet names
   fixed (it Spirit, ja Spektr-RG), Pale Blue Dot in es and sr-Cyrl. Triage: `translate: 0` in
   every locale.
-- Latin+Cyrillic hyphen hybrids left: sr-Cyrl 119, ru 95 (were 1,449 and 120).
+- ~~Latin+Cyrillic hyphen hybrids~~ — read 2026-11-04: what is left is correct usage (decades
+  `1970-их`, classes `C-типа`, acronym compounds `HD-кадры`, and Serbian declension of a Latin
+  name, `Thor-а`, as the Pravopis prescribes). Fixed: ru `ЛМ`/`КСМ` → `LM`/`CSM` (9 + 1, the
+  origin rule and the form used 54/71 times), `UV-камера` → `УФ-камера`.
 - Unit symbols: sr-Cyrl `км/с` (13 in `messages/sr-Cyrl.json`), zh-CN 公里 — deferred, decide.
 - nl: 2 `englishProse` strings (`i18n-detect.mjs`).
 

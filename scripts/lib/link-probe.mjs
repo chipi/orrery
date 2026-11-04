@@ -23,8 +23,9 @@ export function classifyResponse(res) {
   if (res.status >= 502 && res.status <= 504) return 'timeout';
   if (res.status >= 300 && res.status < 400) return 'redirect';
   // 401/403 login walls, and the codes some sites give scripts instead of a page
-  // (418 ieeexplore, 999 LinkedIn): the link says nothing about the page.
-  if ([401, 403, 418, 999].includes(res.status)) return 'forbidden';
+  // (402 globalsecurity.org — 200 to a browser, 418 ieeexplore, 999 LinkedIn): the
+  // link says nothing about the page.
+  if ([401, 402, 403, 418, 999].includes(res.status)) return 'forbidden';
   return 'dead';
 }
 

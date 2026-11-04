@@ -2,14 +2,14 @@
   "title": "火星表面影像——图层是如何工作的",
   "intro_sentence": "从整颗行星一路放大到火星车的车辙，你看到的是来自轨道器和火星车的六层影像，它们层层叠放，随着你靠近而逐层切换。",
   "narrative_101": [
-    "没有哪一台相机能同时让你看到整个火星和一辆火星车。拍下整个球体的影像，分辨率是每像素几千米；轨道上最清晰的相机能分辨四分之一米，却只能看到几千米宽的一条带。因此地图保留多层影像，每一层都比下面一层更清晰、覆盖范围更小，并根据当前视野显示合适的那一层，就像地球上的在线地图一样。",
+    "没有哪一台相机能同时让你看到整个火星和一辆火星车。拍下整个球体的影像，分辨率是每像素几公里；轨道上最清晰的相机能分辨四分之一米，却只能看到几公里宽的一条带。因此地图保留多层影像，每一层都比下面一层更清晰、覆盖范围更小，并根据当前视野显示合适的那一层，就像地球上的在线地图一样。",
     "把它想象成一叠一片片悬浮、上下相隔的薄片。最下面一片是整颗行星的一张图像。往上每一片覆盖的地面更少，细节更丰富。到了最顶端，你就站在火星表面，通过火星车自己的相机向外看。",
     "每一片都出自不同的任务，合在一起跨越了五十多年。[Mariner 9](app:/missions?id=mariner9) 在 1971 年成为第一个环绕另一颗行星运行的航天器，并从轨道上测绘了火星：它拍摄了约 85% 的表面。两个 Viking 轨道器，从 1976 年的 [Viking 1](app:/fleet?id=viking1-orbiter) 开始，拍遍了整颗行星，成为首批全球镶嵌图的基础。如今，欧洲的 [Mars Express](app:/missions?id=mars-express)、中国的[天问一号](app:/missions?id=tianwen1)，以及 NASA 的 [Mars Odyssey](app:/fleet?id=mars-odyssey) 和 [Mars Reconnaissance Orbiter](app:/fleet?id=mro) 仍在继续拍摄；后两者提供了这里的大部分图层。"
   ],
   "body_paragraphs": [
     "第 0 级是球体：包裹在球面上的一张 4096 像素的全球纹理。火星赤道长约 21,300 km，因此每个像素约跨越 5 km。这足以显示火山、峡谷和极冠，却看不清任何一个着陆点。第 1 级是背景层。在你选定的着陆点周围，取一块宽 400 km 的白天红外镶嵌图，它由 Mars Odyssey 轨道器上的 THEMIS（热辐射成像系统，Thermal Emission Imaging System）制作，分辨率约每像素 100 m，按真实的纬度和经度铺在球体上。THEMIS 看到的是热，而不是光：白天，朝向太阳的坡面比背向太阳的坡面更暖，所以红外镶嵌图读起来很像一张晕渲地形图，每一道陨石坑边缘和河道都清晰可见。它本身没有颜色，因此该图层的颜色和亮度取自球体，只有锐利的细节来自 THEMIS，边缘也柔和地融入球体。",
     "第 2 级是区域视图，覆盖着陆点周围约 15 km 的地面，来自 Mars Reconnaissance Orbiter 上的背景相机（Context Camera，CTX）。CTX 是一台推扫式相机（pushbroom camera）：随着轨道器移动，一行像素扫过地面，拼出一条宽约 30 km、分辨率约每像素 6 m 的条带。自 2006 年以来，这些条带已覆盖几乎整个火星，Caltech 的 Murray Lab 把它们拼成了全球镶嵌图，这一图层就裁自其中。第 3 级是细节视图：着陆器周围 512 m，来自同一轨道器上的望远镜相机 HiRISE，其半米口径的镜面可分辨每像素 0.25 至 0.3 m。两台相机都运行在[太阳同步轨道](orbits/sun-synchronous)上，每次都在同一地方时飞越同一地点，因此相隔数年拍摄的照片光照条件相同。",
-    "第 4 级是路线图块。沿着 [Spirit](app:/fleet?id=spirit)、[Opportunity](app:/fleet?id=opportunity)、[Curiosity](app:/fleet?id=curiosity) 和 [Perseverance](app:/fleet?id=perseverance) 的行驶路线，HiRISE 影像在重要停靠点被切成 512 m 的图块，对于 Curiosity 和 Perseverance，行驶途中每隔半千米也会再切一块，让你可以近距离追踪整条路线。HiRISE 足够清晰，能看到着陆器、降落伞和隔热罩；2012 年它甚至拍到了 Curiosity 在下降途中悬挂在降落伞下的画面。第 5 级是全景：来自地面的视角，由火星车和着陆器自己的相机拼接而成，从 Spirit 和 Opportunity 的 Pancam，到 Curiosity 的 Mastcam 和 Perseverance 的 Mastcam-Z，还有 [Phoenix](app:/fleet?id=phoenix) 着陆器的立体相机和中国的[祝融号](app:/fleet?id=zhurong)。",
+    "第 4 级是路线图块。沿着 [Spirit](app:/fleet?id=spirit)、[Opportunity](app:/fleet?id=opportunity)、[Curiosity](app:/fleet?id=curiosity) 和 [Perseverance](app:/fleet?id=perseverance) 的行驶路线，HiRISE 影像在重要停靠点被切成 512 m 的图块，对于 Curiosity 和 Perseverance，行驶途中每隔半公里也会再切一块，让你可以近距离追踪整条路线。HiRISE 足够清晰，能看到着陆器、降落伞和隔热罩；2012 年它甚至拍到了 Curiosity 在下降途中悬挂在降落伞下的画面。第 5 级是全景：来自地面的视角，由火星车和着陆器自己的相机拼接而成，从 Spirit 和 Opportunity 的 Pancam，到 Curiosity 的 Mastcam 和 Perseverance 的 Mastcam-Z，还有 [Phoenix](app:/fleet?id=phoenix) 着陆器的立体相机和中国的[祝融号](app:/fleet?id=zhurong)。",
     "图层如何衔接。每一层都比下面一层略高一点，所以两者同时存在的地方，总是更清晰的图像胜出；每一层按相机距离渐显，而不是突然冒出来。在中等缩放时，区域、细节和路线图块会被绘制得比真实尺寸更大，否则根本看不见；影像卡片会注明这一点。继续放大后，视图会切换为按真实比例的平面图块。角落里的影像卡片始终会写明屏幕上每一层的相机、分辨率和许可，并链接到来源。",
     "图片如何到达你这里。原始裁切图原封不动地保存在项目的档案中。你的浏览器下载的是几种尺寸的副本，宽度从 512 到 4096 像素不等，具体尺寸由你设备的画质设置决定：网速慢的手机得到小的，选择电影级画质的桌面电脑得到最大的。月球也是用同样的方式绘制的，只是由其他航天器完成：参见[月球表面影像](planets/moon-surface-imagery)。"
   ],

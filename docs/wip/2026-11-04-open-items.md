@@ -38,7 +38,9 @@ the tools cannot measure is quality; the 4.3% BROKEN figure (2026-10-19, 741-str
   `1970-их`, classes `C-типа`, acronym compounds `HD-кадры`, and Serbian declension of a Latin
   name, `Thor-а`, as the Pravopis prescribes). Fixed: ru `ЛМ`/`КСМ` → `LM`/`CSM` (9 + 1, the
   origin rule and the form used 54/71 times), `UV-камера` → `УФ-камера`.
-- Unit symbols: sr-Cyrl `км/с` (13 in `messages/sr-Cyrl.json`), zh-CN 公里 — deferred, decide.
+- ~~Unit symbols~~ — done 2026-11-04 (operator's rules): sr-Cyrl SI symbols in Latin (38 fields,
+  км → km, км/с → km/s); zh-CN a number takes km / km/s / km/h, prose 公里, 千米 → 公里 (299
+  fields). `scripts/i18n-tools/unit-symbols.mjs`; re-run finds 0.
 - nl: 2 `englishProse` strings (`i18n-detect.mjs`).
 
 **Step 2 — read and fix the trees nobody has read in full.** How (operator, 2026-11-04): inline in

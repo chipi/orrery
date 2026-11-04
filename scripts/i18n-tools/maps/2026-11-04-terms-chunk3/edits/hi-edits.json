@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.2.label",
+    "term": "perihelion",
+    "decision": "change",
+    "find": "P1 — पहली परिहेलियन",
+    "replace": "P1 — पहला उपसौर"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "term": "perihelion",
+    "decision": "change",
+    "find": "ने पेरिहेलियन को 0",
+    "replace": "ने उपसौर को 0"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "term": "perihelion",
+    "decision": "change",
+    "find": "पहला पेरिहेलियन 2020-06-15",
+    "replace": "पहला उपसौर 2020-06-15"
+  }
+]

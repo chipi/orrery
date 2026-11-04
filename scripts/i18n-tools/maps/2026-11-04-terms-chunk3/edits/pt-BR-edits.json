@@ -1,0 +1,18 @@
+[
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "term": "aphelion",
+    "decision": "change",
+    "find": "e cujo apélio toca",
+    "replace": "e cujo afélio toca"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "diagram_caption",
+    "term": "aphelion",
+    "decision": "change",
+    "find": "e apélio em Marte",
+    "replace": "e afélio em Marte"
+  }
+]

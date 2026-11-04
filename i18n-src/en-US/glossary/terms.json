@@ -32,5 +32,13 @@
   "regolith": "The layer of loose, broken rock and dust that covers the Moon, Mars and asteroids, ground up by billions of years of impacts.",
   "microgravity": "The near-weightless state of everything in orbit, which is falling around the Earth together with its spacecraft.",
   "life support": "The systems that keep a crew alive: breathable air, water, the right temperature and the removal of carbon dioxide and waste.",
-  "solar array": "The panels of solar cells that turn sunlight into electricity for a spacecraft or a station."
+  "solar array": "The panels of solar cells that turn sunlight into electricity for a spacecraft or a station.",
+  "low Earth orbit": "An orbit from about 160 to 2,000 km above the Earth, where the ISS and most satellites fly, circling the planet in about 90 minutes.",
+  "geostationary": "The circular orbit 35,786 km above the equator in which a satellite goes round once a day and so stays over the same spot on the ground.",
+  "polar orbit": "An orbit that passes over or near both poles, so the ground turns beneath it and the spacecraft sees the whole surface in time.",
+  "perihelion": "The point of an orbit around the Sun that is closest to the Sun.",
+  "aphelion": "The point of an orbit around the Sun that is farthest from the Sun.",
+  "eccentricity": "How stretched an orbit is: 0 is a circle, values between 0 and 1 are ever longer ellipses, 1 and above are open paths that never return.",
+  "launch window": "The period in which a launch can reach its target with the propellant on board, set by where the Earth and the target are.",
+  "escape velocity": "The speed an object needs to leave a body for good without further thrust: about 11.2 km/s from the Earth's surface."
 }

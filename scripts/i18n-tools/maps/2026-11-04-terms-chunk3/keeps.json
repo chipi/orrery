@@ -1,0 +1,107 @@
+[
+  {
+    "term": "polar orbit",
+    "loc": "es",
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "title",
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'"
+  },
+  {
+    "term": "polar orbit",
+    "loc": "it",
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "title",
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'"
+  },
+  {
+    "term": "polar orbit",
+    "loc": "it",
+    "rel": "programs/ros.json",
+    "at": "goals.0.md",
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'"
+  },
+  {
+    "term": "polar orbit",
+    "loc": "nl",
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'"
+  },
+  {
+    "term": "perihelion",
+    "loc": "ja",
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 3): the general periapsis word (ja 近点) in the eccentricity article, or the closest-point phrase"
+  },
+  {
+    "term": "perihelion",
+    "loc": "ja",
+    "rel": "science/orbits/eccentricity.json",
+    "at": "formula_caption",
+    "why": "read 2026-11-04 (chunk 3): the general periapsis word (ja 近点) in the eccentricity article, or the closest-point phrase"
+  },
+  {
+    "term": "perihelion",
+    "loc": "hi",
+    "rel": "missions/comet/rosetta.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 3): the general periapsis word (ja 近点) in the eccentricity article, or the closest-point phrase"
+  },
+  {
+    "term": "aphelion",
+    "loc": "ja",
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 3): the general apoapsis word (ja 遠点) in the eccentricity article"
+  },
+  {
+    "term": "aphelion",
+    "loc": "ja",
+    "rel": "science/orbits/eccentricity.json",
+    "at": "formula_caption",
+    "why": "read 2026-11-04 (chunk 3): the general apoapsis word (ja 遠点) in the eccentricity article"
+  },
+  {
+    "term": "eccentricity",
+    "loc": "de",
+    "rel": "science/orbits/eccentricity.json",
+    "at": "diagram_caption",
+    "why": "read 2026-11-04 (chunk 3): written as the symbol e in a caption"
+  },
+  {
+    "term": "launch window",
+    "loc": "ru",
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)"
+  },
+  {
+    "term": "launch window",
+    "loc": "ru",
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "intro_sentence",
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)"
+  },
+  {
+    "term": "launch window",
+    "loc": "ru",
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.1",
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)"
+  },
+  {
+    "term": "launch window",
+    "loc": "ru",
+    "rel": "essays/delta-v.json",
+    "at": "body.2.md",
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)"
+  },
+  {
+    "term": "launch window",
+    "loc": "es",
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "body_paragraphs.0",
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)"
+  }
+]

@@ -67,7 +67,14 @@ misses → 0 unreviewed, 66 real errors fixed, all by hand in one session.
 5. Definitions in 14 locales by hand (`add-definitions.mjs`), `build-glossary` and **look at
    `/science/glossary`** (the "used on" list showed Buran first for orbiter), the two tests,
    `term-drift --gate`.
-6. A word with another sense throughout some pages (the Shuttle and Buran "orbiter") gets
+6. **Sweep the wrong forms everywhere.** Add every wrong form the round fixed to
+   `scripts/i18n-tools/wrong-forms.json` and run `node scripts/i18n-tools/wrong-forms.mjs`:
+   it searches all overlays, the UI messages and the alt text, where term-drift does not look
+   (one-word titles, other trees, fields whose English uses another word). The chunk 1–3
+   sweep found 30 more fields this way, among them two factual errors (hi Mercury with
+   perihelion and aphelion reversed, Mars "genetically 20 % farther"). Read each hit: a form
+   can be right in context (it «eliocentriche» for heliocentric) — then `allow` the file.
+7. A word with another sense throughout some pages (the Shuttle and Buran "orbiter") gets
    `_en_skip` (path prefixes): those fields are not checked and not counted as "used on".
    Keep one reason per kept field, not one per term.
 

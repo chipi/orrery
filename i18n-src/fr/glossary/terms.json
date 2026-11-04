@@ -32,5 +32,13 @@
   "regolith": "La couche de roches brisées et de poussière qui recouvre la Lune, Mars et les astéroïdes, broyée par des milliards d'années d'impacts.",
   "microgravity": "L'état de quasi-apesanteur de tout ce qui est en orbite et tombe autour de la Terre en même temps que son vaisseau.",
   "life support": "Les systèmes qui maintiennent l'équipage en vie : air respirable, eau, température adaptée, élimination du dioxyde de carbone et des déchets.",
-  "solar array": "Les panneaux de cellules solaires qui transforment la lumière du Soleil en électricité pour un engin spatial ou une station."
+  "solar array": "Les panneaux de cellules solaires qui transforment la lumière du Soleil en électricité pour un engin spatial ou une station.",
+  "low Earth orbit": "Une orbite située entre environ 160 et 2 000 km au-dessus de la Terre, où volent l'ISS et la plupart des satellites, qui font le tour de la planète en environ 90 minutes.",
+  "geostationary": "L'orbite circulaire à 35 786 km au-dessus de l'équateur, où un satellite fait un tour par jour et reste donc au-dessus du même point du sol.",
+  "polar orbit": "Une orbite qui passe au-dessus des pôles ou près d'eux : la Terre tourne en dessous, et l'engin finit par voir toute la surface.",
+  "perihelion": "Le point d'une orbite autour du Soleil le plus proche du Soleil.",
+  "aphelion": "Le point d'une orbite autour du Soleil le plus éloigné du Soleil.",
+  "eccentricity": "L'allongement d'une orbite : 0 est un cercle, les valeurs entre 0 et 1 des ellipses de plus en plus étirées, 1 et au-delà des trajectoires ouvertes sans retour.",
+  "launch window": "La période pendant laquelle un lancement peut atteindre sa cible avec les ergols embarqués, fixée par les positions de la Terre et de la cible.",
+  "escape velocity": "La vitesse qu'il faut à un objet pour quitter définitivement un corps sans poussée supplémentaire : environ 11,2 km/s depuis la surface de la Terre."
 }

@@ -32,5 +32,13 @@
   "regolith": "Die Schicht aus losem, zertrümmertem Gestein und Staub, die Mond, Mars und Asteroiden bedeckt, zermahlen von Milliarden Jahren Einschlägen.",
   "microgravity": "Der fast schwerelose Zustand von allem in der Umlaufbahn, das zusammen mit seinem Raumfahrzeug um die Erde fällt.",
   "life support": "Die Systeme, die eine Besatzung am Leben halten: Atemluft, Wasser, die richtige Temperatur und das Entfernen von Kohlendioxid und Abfall.",
-  "solar array": "Die Flächen aus Solarzellen, die Sonnenlicht in Strom für ein Raumfahrzeug oder eine Station umwandeln."
+  "solar array": "Die Flächen aus Solarzellen, die Sonnenlicht in Strom für ein Raumfahrzeug oder eine Station umwandeln.",
+  "low Earth orbit": "Eine Umlaufbahn etwa 160 bis 2000 km über der Erde, in der die ISS und die meisten Satelliten fliegen und die Erde in rund 90 Minuten umrunden.",
+  "geostationary": "Die Kreisbahn 35 786 km über dem Äquator, auf der ein Satellit einmal am Tag umläuft und so über demselben Punkt der Erde stehen bleibt.",
+  "polar orbit": "Eine Umlaufbahn über oder nahe den Polen: Die Erde dreht sich darunter weg, sodass die Raumsonde mit der Zeit die ganze Oberfläche sieht.",
+  "perihelion": "Der sonnennächste Punkt einer Bahn um die Sonne.",
+  "aphelion": "Der sonnenfernste Punkt einer Bahn um die Sonne.",
+  "eccentricity": "Wie gestreckt eine Bahn ist: 0 ist ein Kreis, Werte zwischen 0 und 1 sind immer längere Ellipsen, ab 1 offene Bahnen ohne Wiederkehr.",
+  "launch window": "Der Zeitraum, in dem ein Start sein Ziel mit dem mitgeführten Treibstoff erreichen kann – bestimmt durch die Stellung von Erde und Ziel.",
+  "escape velocity": "Die Geschwindigkeit, mit der ein Körper einen Himmelskörper ohne weiteren Schub für immer verlässt: rund 11,2 km/s von der Erdoberfläche."
 }

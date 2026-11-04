@@ -164,8 +164,17 @@ only if the site renders them inconsistently).
   `[\p{L}\p{M}]*`. Widen check (414 fields by group) and the glossary page (en, hi) checked in
   the same round. Gate 0. **Serbian for your read:** спуштање у океан, повратак узорака,
   реголит, микрогравитација, одржавање живота, соларни панели, and the six sr definitions.
-- Next chunks: 3 orbits (low Earth orbit, geostationary, polar orbit, perihelion, aphelion,
-  eccentricity, launch window, escape velocity); 4 transfers (Hohmann transfer, Lagrange point,
+- **Chunk 3 done** (2026-11-04, `maps/2026-11-04-terms-chunk3/`): low Earth orbit,
+  geostationary, polar orbit, perihelion, aphelion, eccentricity, launch window, escape
+  velocity — glossary 34 → 42. Misses 183 → 88 → 16 by widening; 20 errors fixed (ar
+  eccentricity as «الشذوذ المداري» "orbital anomaly" ×10 incl. the article title, it
+  "Sun-synchronous" as «eliocentriche», an it caption cut in half, hi transliterations, pt-BR
+  «apélio», fr / nl / ja escape-velocity words). **Sweep of every wrong form from chunks 1–3
+  across all overlays, the UI and the alt text: 30 more fields**, among them hi Mercury with
+  perihelion and aphelion reversed (factual), hi Mars "genetically 20 % farther", fr UI
+  «vitesse d'échappement» for both escape and exhaust velocity. New guard:
+  `wrong-forms.json` + `wrong-forms.mjs` + `wrong-forms.test.ts` (mutation-checked).
+- Next chunks: 4 transfers (Hohmann transfer, Lagrange point,
   C3, rocket equation, free-return, sun-synchronous, halo orbit); 5 astronomy (exoplanet,
   light-year, habitable zone, asteroid belt, solar wind, magnetosphere). Then term links from
   article text to `/science/glossary`.

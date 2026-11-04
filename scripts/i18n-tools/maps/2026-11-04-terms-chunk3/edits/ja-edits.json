@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "escape velocity",
+    "decision": "change",
+    "find": "惑星の局所逃出速度を下回る",
+    "replace": "惑星のその場所での脱出速度を下回る"
+  }
+]

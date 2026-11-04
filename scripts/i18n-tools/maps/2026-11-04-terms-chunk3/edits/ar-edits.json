@@ -1,0 +1,74 @@
+[
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "description",
+    "term": "geostationary",
+    "decision": "change",
+    "find": "في مدار النقل الثابت — أول نجاح صيني في مدار النقل الثابت.",
+    "replace": "في مدار النقل إلى المدار الثابت بالنسبة للأرض (GTO) — أول نجاح صيني في هذا المدار."
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "narrative_101.0",
+    "term": "eccentricity",
+    "decision": "change",
+    "find": "فالشذوذ المداري هو المقبض الثاني",
+    "replace": "فالاختلاف المركزي هو المقبض الثاني"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "narrative_101.2",
+    "term": "eccentricity",
+    "decision": "change",
+    "find": "يقلّ شذوذه المداري عن 0",
+    "replace": "يقلّ اختلافه المركزي عن 0"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.0",
+    "term": "eccentricity",
+    "decision": "change",
+    "find": "الشذوذ المداري (`e`) هو رقم الشكل",
+    "replace": "الاختلاف المركزي (`e`) هو رقم الشكل"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.2",
+    "term": "eccentricity",
+    "decision": "change",
+    "find": "عند شذوذ مداري منخفض",
+    "replace": "عند اختلاف مركزي منخفض"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "formula_caption",
+    "term": "eccentricity",
+    "decision": "change",
+    "find": "الشذوذ المداري محسوبًا",
+    "replace": "الاختلاف المركزي محسوبًا"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "diagram_caption",
+    "term": "eccentricity",
+    "decision": "change",
+    "find": "لكن شذوذها المداري e",
+    "replace": "لكن اختلافها المركزي e"
+  },
+  {
+    "rel": "science/orbits/keplerian-orbit.json",
+    "at": "body_paragraphs.1",
+    "term": "eccentricity",
+    "decision": "change",
+    "find": "(الشذوذ المركزي)",
+    "replace": "(الاختلاف المركزي)"
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.1",
+    "term": "eccentricity",
+    "decision": "change",
+    "find": "إذ يجعلها الشذوذ المداري تتفاوت",
+    "replace": "إذ يجعلها الاختلاف المركزي تتفاوت"
+  }
+]

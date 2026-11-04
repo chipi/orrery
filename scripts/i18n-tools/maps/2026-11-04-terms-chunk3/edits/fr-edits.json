@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "narrative_101.1",
+    "term": "escape velocity",
+    "decision": "change",
+    "find": "Exactement à la vitesse d'échappement ?",
+    "replace": "Exactement à la vitesse de libération ?"
+  }
+]

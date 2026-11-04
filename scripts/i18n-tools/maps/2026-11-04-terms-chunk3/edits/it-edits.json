@@ -1,0 +1,18 @@
+[
+  {
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "title",
+    "term": "polar orbit",
+    "decision": "change",
+    "find": "Orbite eliocentriche + polari",
+    "replace": "Orbite eliosincrone + polari"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "diagram_caption",
+    "term": "perihelion",
+    "decision": "change",
+    "find": "Aree uguali in tempi uguali.",
+    "replace": "Aree uguali in tempi uguali: l'arco più corto vicino al perielio spazza la stessa area dell'arco più lungo vicino all'afelio."
+  }
+]

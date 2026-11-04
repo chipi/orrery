@@ -1,0 +1,18 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.2",
+    "term": "aphelion",
+    "decision": "change",
+    "find": "De Aarde bij afhelium",
+    "replace": "De Aarde bij aphelium"
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.2",
+    "term": "escape velocity",
+    "decision": "change",
+    "find": "naar ontsnapsnelheid (~11,2 km/s)",
+    "replace": "naar ontsnappingssnelheid (~11,2 km/s)"
+  }
+]

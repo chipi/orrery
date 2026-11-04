@@ -32,5 +32,13 @@
   "regolith": "De laag los, verbrijzeld gesteente en stof die de Maan, Mars en planetoïden bedekt, vermalen door miljarden jaren inslagen.",
   "microgravity": "De bijna gewichtloze toestand van alles in een baan, dat samen met zijn ruimtevaartuig rond de Aarde valt.",
   "life support": "De systemen die een bemanning in leven houden: ademlucht, water, de juiste temperatuur en het afvoeren van koolstofdioxide en afval.",
-  "solar array": "De panelen van zonnecellen die zonlicht omzetten in stroom voor een ruimtevaartuig of station."
+  "solar array": "De panelen van zonnecellen die zonlicht omzetten in stroom voor een ruimtevaartuig of station.",
+  "low Earth orbit": "Een baan op ongeveer 160 tot 2000 km boven de Aarde, waar het ISS en de meeste satellieten vliegen en de planeet in zo’n 90 minuten rondgaan.",
+  "geostationary": "De cirkelvormige baan 35.786 km boven de evenaar waarin een satelliet eenmaal per dag rondgaat en zo boven hetzelfde punt op de grond blijft staan.",
+  "polar orbit": "Een baan over of vlak langs beide polen: de Aarde draait eronder door, zodat het ruimtevaartuig na verloop van tijd het hele oppervlak ziet.",
+  "perihelion": "Het punt van een baan om de Zon dat het dichtst bij de Zon ligt.",
+  "aphelion": "Het punt van een baan om de Zon dat het verst van de Zon ligt.",
+  "eccentricity": "Hoe uitgerekt een baan is: 0 is een cirkel, waarden tussen 0 en 1 zijn steeds langere ellipsen, 1 en hoger open banen die niet terugkeren.",
+  "launch window": "De periode waarin een lancering haar doel kan bereiken met de stuwstof aan boord, bepaald door de stand van de Aarde en het doel.",
+  "escape velocity": "De snelheid die een voorwerp nodig heeft om een hemellichaam zonder verdere stuwkracht voorgoed te verlaten: zo’n 11,2 km/s vanaf het aardoppervlak."
 }

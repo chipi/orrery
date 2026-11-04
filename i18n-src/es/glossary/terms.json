@@ -32,5 +32,13 @@
   "regolith": "La capa de roca fragmentada y polvo que cubre la Luna, Marte y los asteroides, triturada por miles de millones de años de impactos.",
   "microgravity": "El estado casi ingrávido de todo lo que está en órbita, que cae alrededor de la Tierra junto con su nave.",
   "life support": "Los sistemas que mantienen viva a la tripulación: aire respirable, agua, la temperatura adecuada y la eliminación del dióxido de carbono y los residuos.",
-  "solar array": "Los paneles de células solares que convierten la luz del Sol en electricidad para una nave o una estación."
+  "solar array": "Los paneles de células solares que convierten la luz del Sol en electricidad para una nave o una estación.",
+  "low Earth orbit": "Una órbita entre unos 160 y 2000 km sobre la Tierra, donde vuelan la ISS y la mayoría de los satélites, que dan la vuelta al planeta en unos 90 minutos.",
+  "geostationary": "La órbita circular a 35 786 km sobre el ecuador en la que un satélite da una vuelta al día y por eso se queda sobre el mismo punto del suelo.",
+  "polar orbit": "Una órbita que pasa sobre los polos o cerca de ellos: la Tierra gira debajo y la nave acaba viendo toda la superficie.",
+  "perihelion": "El punto de una órbita alrededor del Sol más cercano al Sol.",
+  "aphelion": "El punto de una órbita alrededor del Sol más alejado del Sol.",
+  "eccentricity": "Cuánto se estira una órbita: 0 es un círculo, los valores entre 0 y 1 son elipses cada vez más alargadas y 1 o más son trayectorias abiertas que no vuelven.",
+  "launch window": "El periodo en el que un lanzamiento puede alcanzar su objetivo con el propelente que lleva, fijado por las posiciones de la Tierra y del destino.",
+  "escape velocity": "La velocidad que necesita un objeto para abandonar para siempre un cuerpo sin más empuje: unos 11,2 km/s desde la superficie de la Tierra."
 }

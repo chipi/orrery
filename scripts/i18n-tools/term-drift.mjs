@@ -3,7 +3,7 @@
 // that the same field in each locale uses the binding form or an accepted variant
 // (`_match[loc]`, regex stems that cover inflection). Read-only.
 //   node scripts/i18n-tools/term-drift.mjs [--terms=burn,orbit] [--locales=fr,ru]
-//        [--trees=science,essays,missions,fleet,programs] [--misses=<file.json>] [--gate]
+//        [--trees=science,essays,missions,fleet,programs,glossary] [--misses=<file.json>] [--gate]
 // Prints a term × locale table: share of aligned fields that use the binding form or are a
 // reviewed keep (term-keeps.json), and the count of unreviewed misses.
 // --misses writes every unreviewed miss (stale keeps included, marked), for fixing.

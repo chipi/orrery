@@ -103,6 +103,9 @@ periápside, Operation Paperclip), which a term check finds across the whole loc
   "YUTU-2" → 祝融号 / 玉兔二号 (the name-drift gate missed all-caps names against the native
   table; fixed in `name-origins.js`). hi "Gagarin's Start" was "Gagarin's beginning", now
   गगारिन प्रक्षेपण पैड (overlay, hotspot, alt text).
+- **Titles, second round** (seed 13, 22 each in ru, sr-Cyrl, de, es; 88 read): 0 errors. With
+  ja / ko / zh-CN / hi / ar above, every locale group has had a title sample; the stop rule (no
+  new error class) is met for item 4's title fields.
 - **Doubled words** (one-off grep, all locales): ~370 hits, almost all legitimate (de "die die",
   fr "vous vous", es / it "primer primer plano" = first close-up, it "via via", ru "что что-то").
   4 real, fixed: es "del del", pt-BR "plano plano" and "mais mais", sr-Cyrl "првих првих" (the

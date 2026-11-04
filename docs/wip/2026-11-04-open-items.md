@@ -108,7 +108,9 @@ names. No change that rewrites a locale's voice across the site — how the read
    ja 710 + ko 948 fields, needs a `register-scan.mjs` tool that does not exist.
 4. **The ~580 `name` / title fields**, read one by one; the ~35 science and 14 essay MINOR
    strings left from the spot checks.
-5. **Guard:** a staleness lint — fail when the en-US overlay changed and a locale overlay did not.
+5. ~~**Guard:** a staleness lint~~ — built as a finder (2026-11-04): `stale-overlays.mjs`. Today it flags
+   17 files per locale at most, all harmless (English grammar fixes, empty hotspot lists); no
+   translation is behind its English. Not a gate: an English typo fix would fail it.
 
 **Step 3 — glossary:** 162 of 192 census terms not yet in the glossary (`term-census.mjs`); term
 links from article text to `/science/glossary`.

@@ -16,6 +16,21 @@ remains.
 say so. GitHub issues have their own inventory:
 [`2026-11-02-open-issues-inventory.md`](2026-11-02-open-issues-inventory.md).
 
+**Status 2026-11-04:** audited against branch `tech-debt/0.9.5` (77 commits over `origin/main`,
+PR #639). Rows counted: 51 done, 1 dropped (/privacy page), 32 open or partly done, 2 n/a
+(measurement limits); every "done on `tech-debt/0.9.3` / `0.9.4`" row is in main (0.9.4 is the
+squash `ab91f9a1b21`; the branch shas cited are not ancestors, check by content). **The 0.9.5
+branch closed none of the open rows**: it is the `/fly`, surface-imagery and `/fleet` line-up arc.
+Related 0.9.5 work that moves a row without finishing it: hard-coded English / label maps
+(`18b4f28359f` 22 small-body descriptions in 13 locales, `42e31a97058`, `e82faded78a` 28 flight
+events in 13 locales, `e0d67eb24a5`); `6db5a0996f6` fixed the 7 dead links the weekly
+`link-check.yml` found. Re-verified open today: `PLACEHOLDER_CEILING` 380 (`npx tsx
+scripts/validate-gallery-credits.ts`: "380 placeholder credits (ceiling 380)", `KNOWN_MISSING`
+empty); `static/data/site-stories` 55 files; no `register-scan.mjs`; `ios/App/Podfile` still
+there (no `CapApp-SPM`); no `build.prev` in `.github`, `ops` or `scripts`; no 0.9.5 commit touches
+glossary files, site stories or Galileo provenance rows, and no commit message mentions Hebrew or register.
+Version in `package.json` is 0.9.5 (no 1.0.0).
+
 Sources: the arc plan (operator memory note), the phase plans (deleted with `docs/wip/_archive/` in `2f710bdd67e`; read them with `git show 2f710bdd67e^:docs/wip/_archive/<file>`:
 `2026-10-30-i18n-phase-plan.md`, `2026-10-30-phase5-bundle-size-plan.md` = "Phase 5 doc",
 `2026-10-31-phase6-robustness-plan.md` = "Phase 6 doc"), `2026-10-31-garble-pass.md`,

@@ -1,6 +1,8 @@
 # Surface object index — searchable orbit/land list (Mars / Moon / Earth)
 
-**Status:** implemented (0.7.2), uncommitted. Design note for the searchable
+**Status 2026-11-04:** finished, archive candidate. Implemented as described: `src/lib/surface-map/surface-index.ts`, `src/lib/surface-scene/SurfaceIndexPanel.svelte`, `tests/e2e/surface-index.spec.ts` all exist. Later changes: INDEX became a left pullout tab on mobile too (`c7d2e1e76a7`, `c5cfa3c763b`, 2026-08-02) and landscape scroll fixed (`b07d1db0db3`). The 'uncommitted, 0.7.2' line below is stale.
+
+**Status:** implemented (0.7.2), ~~uncommitted~~ — committed (files present on main). Design note for the searchable
 index feature added to the three surface routes.
 
 ## Context / need

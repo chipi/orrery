@@ -1,5 +1,7 @@
 # Overnight handover — 2026-07-14
 
+**Status 2026-11-04:** finished handover, archive candidate. Programs fact-check and the navigation essay visual pass landed in `d13c1ee992b` (2026-07-14) and `42692a7cd81` (all six essays illustrated); the `figure` block type is in `src/types/essay.ts:32`; navigation art is in `static/images/essays/navigation/`. The 'other essays not yet written' item is superseded: 13 essays now exist in `static/data/essays/`. OPEN: essay figure captions in other locales not verified; image swap for the two reused photos is an operator call.
+
 Two work blocks landed while you slept. Nothing pushed, nothing committed —
 all changes sit in the working tree on `content` for your review.
 
@@ -54,5 +56,5 @@ The `navigation` essay ("Finding Mars in the Dark") now has full art.
 ### Open / next (your call)
 - Essay captions are English-only (essays are still English-first exempt); translate
   once the essay shape is locked.
-- Other essays (delta-v, reusable launchers, propulsion, comms) not yet written.
+- ~~Other essays (delta-v, reusable launchers, propulsion, comms) not yet written.~~ — done: `delta-v`, `reusable-launchers`, `new-propulsion`, `comms` all exist in `static/data/essays/` (illustrated in `42692a7cd81`).
 - Dev server left running on :5599 for your review (yours on :5373 untouched).

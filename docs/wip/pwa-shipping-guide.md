@@ -1,5 +1,7 @@
 # Shipping a Good PWA — a battle-tested guide
 
+**Status 2026-11-04:** reference (generic guide), keep. Not a plan; no items to strike. Drift to know before reusing it as Orrery doc: the example `navigateFallback: '/'` differs from Orrery, whose config comments say the fallback is a neutral shell, not home (`vite.config.ts:237-240`, and `docs/wip/2026-07-22-prod-validator.md` asserts `/404.html`); Orrery's precache now prunes i18n bundles to en-US only (`vite.config.ts:286`, `8915eaf2f99` #518) while the guide's example precaches `**/i18n/*.json`. Orrery-specific PWA follow-ups live in the 2026-08-31 observability sweep (#518 SW install failures, ~8% at the time).
+
 A practical, opinionated checklist for shipping a Progressive Web App that
 actually installs, works offline, and — the hard part — **updates cleanly**.
 Grounded in real production scars (image-precache breaking iOS install, an

@@ -1,5 +1,7 @@
 # The Long View — series roadmap
 
+**Status 2026-11-04:** live backlog, mostly shipped. 13 essays exist in `static/data/essays/`: navigation, delta-v, comms, reusable-launchers, new-propulsion, seven-minutes, going-to-the-moon, going-to-mars, interstellar-exploration, generational-starships, asteroid-mining, space-comm-arrays, the-body-in-the-dark. Not found in the repo: 'Power in the dark' and the capstone 'The whole journey so far' (the two open rows). The label wall status icons below are all stale. Roadmap says 'July 2026 draft'.
+
 *The editorial arc + idea backlog for Orrery's essay section. A living document: dump labels in §3, shape them into the spiral in §2. Companion to [essay-voice.md](../guides/essay-voice.md). Draft · July 2026*
 
 ---

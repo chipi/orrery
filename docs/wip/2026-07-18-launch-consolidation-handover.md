@@ -1,5 +1,7 @@
 # Handover — Consolidate launch/ascent into one extensible `/fly` system (delete dev workbenches)
 
+**Status 2026-11-04:** finished, archive candidate (the 'PLAN APPROVED, not yet implemented' line below is stale). S1-S7 shipped in `0bfc0452a09` (2026-07-18): `src/routes/dev/ascent` and `src/routes/dev/launch` are gone, `src/lib/three/flight-phase-scene.ts` exists, `thrust`/`drag`/`ascent-losses` layers at `src/lib/science-layers.ts:25-27`, `AscentLosses.svelte` exists, WebGL builders in the `vite.config.ts:623-635` coverage exclude, clock `Phase` widened to `'ascent'|'cruise'|'descent'` (`src/lib/orbital/ascent-clock.ts:14`), `/fly` uses `makeTimeline` (`src/routes/fly/+page.svelte:1673`), RFC-034 carries the FlightPhaseScene addendum. NOT verified: the five new `/science` articles of S8 — `thrust-and-twr`, `tsiolkovsky`, `rocket-stages` predate the epic (May 2026); no `rocket-equation` or `staging-mass-ratio` slug exists; `max-q` and `gravity-turn` exist but I did not trace when they were added.
+
 *2026-07-18 · status: PLAN APPROVED, not yet implemented · pick up at S1*
 
 This note is self-contained: the approved plan + the exact working-tree state + gotchas, so a fresh session can execute without re-deriving anything. (Original plan file: `~/.claude/plans/cozy-herding-token.md`.)
@@ -51,12 +53,12 @@ Verified green as of this session: `typecheck` 0 errors, full `vitest` 197 files
 
 ## The plan — S1…S8 (each ships + verifies)
 
-### S1 — Formalize the phase-scene contract
+### ~~S1 — Formalize the phase-scene contract~~ — done in `0bfc0452a09`
 - NEW `src/lib/three/flight-phase-scene.ts`: `interface FlightPhaseScene { scene; camera; setState(s); setAspect(a); setForceVisible(f: ForceKey, on); setForcesVisible(on); snapCamera(); reset(); dispose() }` + `type ForceKey = 'thrust'|'weight'|'drag'|'velocity'`. Pure types.
 - `ascent-scene.ts`: `AscentScene extends FlightPhaseScene`; add per-vector `setForceVisible(force, on)` next to the existing group `setForcesVisible`. Force arrows already exist individually: `arrThrust/arrWeight/arrDrag/arrVel` (ascent-scene.ts ~L397-401), grouped in `forces` (L386), `showForces` flag (L403), `updateForces` (L442), `setForcesVisible` (L561). Per-vector = track a visibility bool per arrow + set `arr.visible`.
 - `ascent-renderer.ts`: change the param type `AscentScene` → `FlightPhaseScene` (it only touches `.scene/.camera/.setAspect`).
 
-### S2 — Force-vectors become Science-Lens layers (RFC-034 §11.2)
+### ~~S2 — Force-vectors become Science-Lens layers (RFC-034 §11.2)~~ — done in `0bfc0452a09`
 - `science-layers.ts`: add `thrust` + `drag` LayerKeys (reuse `gravity`=weight, `velocity`); add to `LAYER_ORDER`, `LAYER_DEFAULTS` (off), `metaFor()`; `/fly`-only like `coast`/`conics`.
 - `science-layers.test.ts`: bump the `29`→`31` count assertion; union/order/defaults exhaustiveness stays green.
 - NEW pure `LAYER→ForceKey` map (`{thrust→thrust, gravity→weight, drag→drag, velocity→velocity}`) + unit test.
@@ -70,10 +72,10 @@ Verified green as of this session: `typecheck` 0 errors, full `vitest` 197 files
   - `<AscentCameraDebug>` already renders under debugMode — keep.
 - These let `/dev/ascent` be deleted with no loss even before S7.
 
-### S4 — Delete the dev workbenches
+### ~~S4 — Delete the dev workbenches~~ — done in `0bfc0452a09`
 - `rm -rf src/routes/dev/ascent src/routes/dev/launch`. Fix stale `/dev/ascent` doc-comments in `ascent-scene.ts`, `ascent-renderer.ts`, `ascent-hud.ts`, `LaunchScene`, `LaunchTelemetry`.
 
-### S5 — Tests + coverage policy
+### ~~S5 — Tests + coverage policy~~ — done in `0bfc0452a09` (vite.config.ts exclude list present)
 - Add WebGL builders to `vite.config.ts` coverage `exclude[]` (`ascent-scene.ts`, `ascent-renderer.ts`, `launcher-models.ts`, `launch-ground.ts`) with the `explore-scene.ts`-style rationale comment. `flight-phase-scene.ts` (pure) + all `ascent-*` lib stay counted.
 - Tests: `ascent-clock` `defaultRegimeFor` (the one lib coverage gap), science-layers (+layers), force-layer map.
 - `npm run test:coverage` stays green.
@@ -81,7 +83,7 @@ Verified green as of this session: `typecheck` 0 errors, full `vitest` 197 files
 ### S6 — Document the extension path
 - RFC-034 §9 addendum (or ADR): `FlightPhaseScene` + headless physics core + clock `Phase` union are the descent/arrival seams. Name future files (`descent-physics.ts`, `descent-scene.ts`, `DescentScene.svelte`) + `Phase = 'ascent'|'cruise'|'arrival'|'descent'` widening. Keep TA.md honest.
 
-### S7 — Unified pad→arrival scrubber (RFC-034 §4/§11/S6) — the capstone (HIGHEST RISK)
+### ~~S7 — Unified pad→arrival scrubber (RFC-034 §4/§11/S6) — the capstone (HIGHEST RISK)~~ — done (unified clock in `/fly`, `Phase` union in ascent-clock.ts:14; shipped with the launch epic, `c46f4bad5bc` extends it to coast)
 Replaces today's split (launch autoplay + SKIP button; separate cruise scrubber) with ONE continuous timeline. Pure clock math already exists + tested in `ascent-clock.ts` (`makeTimeline`, `scrubberToPoint`, `pointToScrubber`, `advanceClock`, `ASCENT_SPEED_MULTIPLIERS`, `CRUISE_DAYS_PER_SEC`, `defaultRegimeFor`, `Phase='ascent'|'cruise'`).
 - `/fly` master clock: `timeline = makeTimeline(summary.totalDurationS, cruiseDurationDays, 0.15)`. Existing `/fly` scrubber becomes `u∈[0,1]`; `pt = scrubberToPoint(u, timeline)`. Play advances via `advanceClock`. Seam `u = ascentScrubberFraction` = injection/handoff.
 - LaunchScene becomes clock-driven: `t`/`playing`/`speed` move from internal state to **props/bindings** fed by the master clock (`ascentT`). Keeps its render rAF; no longer self-advances. `showLaunch = pt.phase === 'ascent'`. This is the extensibility payoff — a future DescentScene is driven the same way.

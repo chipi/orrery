@@ -1,5 +1,7 @@
 # Missions + Science + Fleet fact-check — master index (2026-07-14)
 
+**Status 2026-11-04:** the "worst offenders" list was applied (spot-verified: Blue Moon Mk1 PLANNED/NET 2027, OTV-3 and Vostok-6 inventions gone, NRHO 6.5 d, Hill sphere 46,000x, LRV 35.7/92 km, Apollo 13 record qualified by Artemis II, Chandrayaan-1 "5th", Antares/H-IIA RETIRED, Atlas V = ULA, LVM3 2017, Saturn ~274 moons) via d13c1ee992b (2026-07-14), bab97e3b2db (2026-08-02), b3ee7406353 (2026-08-05), 49b9fb29c1f (2026-10-31, fleet templates). The line "Nothing edited yet" is stale. Not verified: the remaining ~250 per-file findings in the 55 detail files, one by one.
+
 The `science-reviewer` swept all **123 mission editorials** + **130 science
 overlays** (253 items), batched across 25 reviewer agents. Each batch's detail
 (exact quote → correction + source) is in its own file below. Nothing edited yet

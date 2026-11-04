@@ -1,5 +1,7 @@
 # Finding Mars in the Dark
 
+**Status 2026-11-04:** finished, archive candidate. The prototype shipped as the `navigation` essay (`static/data/essays/navigation.json`, `i18n-src/en-US/essays/navigation.json`, illustrated in `42692a7cd81`); the 'not yet productionised / awaiting voice sign-off' footer is stale. The 'Sources & further reading' placeholder in this draft was not checked against the shipped essay.
+
 *How do you steer to a moving planet across a hundred million kilometres of nothing, with no map, no horizon, and a twenty-minute lag on every instruction? The seventy-year answer is stranger, and more human, than the machines suggest.*
 
 ---

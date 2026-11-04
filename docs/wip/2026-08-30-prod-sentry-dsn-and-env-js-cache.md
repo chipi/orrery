@@ -1,5 +1,7 @@
 # Prod error tracking fix + `/_app/env.js` edge-cache — handover (2026-08-30)
 
+**Status 2026-11-04:** handover, one step unverified. DONE and in code: prod project 18 DSN in `src/lib/target-env.ts:55`, nginx `no-cache` for `/_app/env.js` and `/_app/version.json` (`ops/docker/nginx.conf:163,169`), validate-prod WARN guard (`scripts/validate-prod.mjs:254`). OPEN / NOT VERIFIED: the Cloudflare cache-bypass rule for `/_app/env.js` (and `sw.js`). Nothing in the repo or git records it as done, and I did not probe the live edge (no remote access this pass). Check with the curl in 'Verify' below. Because #517/#518 notes (2026-08-31 sweep) lean on the same rule, this is the one open item that affects users (stale config up to 4 h after a deploy). Archive once the CF rule is confirmed.
+
 Status at handover: **error tracking is LIVE again; the cache-hardening is half-done**
 (origin correct, Cloudflare override still in place). One dashboard action remains.
 
@@ -41,7 +43,7 @@ edge-cached, so a rotated DSN takes up to 4h to reach clients.
 MISS** (fresh from origin). So the nginx `no-cache` on `env.js` is correct but **ineffective** —
 CF rewrites it. The 4h stale-config-on-deploy window remains.
 
-### Do this tomorrow (Cloudflare dashboard — `orrerylearn.com` zone)
+### Do this tomorrow (Cloudflare dashboard — `orrerylearn.com` zone) — NOT VERIFIED as done
 1. **Caching → Cache Rules → Create rule**
    - When: `URI Path` `equals` `/_app/env.js` (add `/_app/version.json` too — as a 2nd rule or an OR)
    - Then: **Bypass cache** + **Browser Cache TTL → Respect origin**

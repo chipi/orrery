@@ -1,6 +1,8 @@
 # Tier-1 Earth-orbit capsules — pad → orbit-coast → re-entry (handover)
 
-**Status:** built + browser-verified, UNCOMMITTED (awaiting review). 2026-07-19.
+**Status 2026-11-04:** finished, archive candidate (handover says UNCOMMITTED; it landed in `c46f4bad5bc`, 2026-07-19). The one remaining gap, the 2-DOF descent model, closed in `4f2da108ffa` (2026-08-05, 'closes #419 gap A'); Earth FPAs are now re-authored (`apollo7.json` 2.072 deg, `friendship-7.json` 1.46 deg) and Apollo/Gemini/ASTP/Dragon re-entries were fitted to mission reports in `a6602e741a3` (2026-11-03). `window.__flyReentryDebug` still exists (`src/routes/fly/+page.svelte:2423`). NOT verified: state of GH #419 (not queried); orbital apo/peri and landing coordinates remain approximate per the note.
+
+**Status:** built + browser-verified, ~~UNCOMMITTED (awaiting review)~~ — committed in `c46f4bad5bc`. 2026-07-19.
 **Plan:** `~/.claude/plans/enumerated-doodling-ember.md` (approved). RFC-034 §13. Tracking: GH #419 (parent epic #412).
 
 ## What this adds
@@ -104,7 +106,7 @@ honest captions for `soyuz-1` (parachute failure, Komarov) and `soyuz-11`
 
 ## NOT done / the one remaining gap (the deep one)
 
-- **Descent cinematography / 2-DOF model.** The 1-DOF shallow-corridor model
+- ~~**Descent cinematography / 2-DOF model.**~~ — 2-DOF model done in `4f2da108ffa`; event-weighted playback not verified. The 1-DOF shallow-corridor model
   can't give realistic *duration* and *peak-g* together (a physics sweep showed
   steeper FPA spikes peak-g to 24 → 5728 g), so re-entries have a long slow-glide
   shape and the uniform playback compression makes the in-scene BLACKOUT/DROGUE/

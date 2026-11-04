@@ -1,5 +1,7 @@
 # Provenance + credits backlog
 
+**Status 2026-11-04:** all items OPEN or unverified. Confirmed absent: CODEOWNERS, check-provenance-drift script, per-locale staleness lint (translation-related), overlay_locale field (static/data/schemas/text-sources.schema.json has only translation_reviewer at line 91, no values backfilled verified), per-mission text-sources coverage (static/data/text-sources.json has 19 ids vs the ~100 entities the item asks for). /credits has a single filter/search hit (not a filter UI verified). Weekly link-check is covered by .github/workflows/link-check.yml (report-only).
+
 This file is the rolling backlog for **provenance, attribution, and credits** ideas that are not yet shipped. ADR-047 ("Provenance manifests + license stewardship") locked the data model and pipeline; this list keeps the **next-step ideas** in one place so they don't get lost as scattered TODOs across the codebase.
 
 > Add new ideas here rather than as inline `// TODO`s. When an item ships, move its bullet into the relevant ADR (047 or a successor) and delete it here.

@@ -1,5 +1,7 @@
 # Garble pass — origin, measurement, fix (2026-10-31)
 
+**Status 2026-11-04:** DONE (commit refs in §4-9 and `git log --grep "garble pass"`): origin traced; nl/it/ko/ja/zh-CN/hi/ar/fr/ru fleet+missions cells, es/fr/it/ja/hi/ar cells of round 2 (6,106 fields read), 12 catalogue/places/universe cells (7,287 fields), science ru/zh-CN/fr (`6a39098ca60`, `dfc1c43f377`, `65febd95c76`), pattern scans (`771ba507907`), generator no longer cuts or drops text (`918deb1285f`), tools kept (`85ebcc15865`); shipped in v0.9.2 (`d28002f3639`). OPEN (the "Not covered" lists above, none worked since 2026-10-31): science in de, nl, es, it, pt-BR, ja, ko, hi, ar, sr-Cyrl (about 14,330 fields; ru/zh-CN/fr full reads found 19/12/16 % BROKEN); essays and programs not read in full; the 14 cells with 0 BROKEN in 60; about 10 % MINOR fields; the ~580 name/title cells.
+
 Operator, 2026-10-31: "we need to understand the garble before we go fix it", and the fix must
 not undo the term work of the past days. Findings that started this:
 [2026-10-31-fleet-garble-findings.md](2026-10-31-fleet-garble-findings.md).

@@ -1,5 +1,7 @@
 # Fleet and programs translations: garble found during the term rounds (2026-10-31)
 
+**Status 2026-11-04:** CLOSED for the listed defects: word- and sentence-level items fixed by hand 2026-11-01 (sections above), mission type labels fixed in 13 locales, and the nl/it/hi/ar/fr/es/ja/ko/zh-CN fleet and missions cells retranslated in full by the garble pass (`2026-10-31-garble-pass.md`). OPEN: the ko starbase note-style mix is "left to the plain-register run"; that run (ja である / ko 한다 conversion, ~1,660 fields, decided 2026-11-01 in the tech-debt inventory) has no commit and no `register-scan.mjs` in `scripts/i18n-tools/` as of today.
+
 The term reviewers (glossary pilot, `2026-10-31-space-terms-glossary-pilot.md`) read every
 fleet and programs field that missed a term. They did not edit anything outside the term,
 but they listed the other defects they saw. None of these is caught by the existing

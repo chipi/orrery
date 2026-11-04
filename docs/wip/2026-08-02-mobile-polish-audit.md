@@ -1,5 +1,7 @@
 # Mobile polish audit — 375px, release-grade sweep (2026-08-02)
 
+**Status 2026-11-04:** mostly done. Verified in git (2026-08-02): A1 `c5cfa3c763b`+`c7d2e1e76a7`+`2d008bc0d7f`, A2 `1d54ef550a0`, A3 chips `ce901ac137f`, B2 SPIN label `bb8e3cd71a2`, B3 slots `24d08a10b0d`, D1 `bbd6da440ec` (hint localized; position judged intentional), typography `fc5b9b6daab`/`ea755626891`/`43a1f2d9e39`. NOT verified (no commit or code check found): B1 toggle-set parity across earth/moon/mars/venus, B2 2D/3D target-state labelling, A3 breadcrumb compaction and right-edge label clamp, C1 `/fly` 'Eart' truncation, C2 `/explore` zoom-out label overflow, section F final read. Those are the user-visible mobile leftovers; re-check at 375px before archiving.
+
 Branch: `mobile-fixes`. Method: dev server on `:5401`, headless chromium at
 375×812 (@2x, isMobile), screen-by-screen. Screenshots in `/tmp/mobile-audit/`.
 
@@ -10,7 +12,7 @@ creative decision — the question is stated). Nothing here is optional.
 
 ## A. `/explore` — the three seeds + what the sweep confirmed
 
-### A1. Solar-system INDEX is a bottom button, not the left pullout tab **[INPUT]**
+### ~~A1. Solar-system INDEX is a bottom button, not the left pullout tab~~ **[INPUT]** — done in `c5cfa3c763b`, `c7d2e1e76a7`
 - Evidence: in the **zoomed-out Stellar-Neighborhood context**, `INDEX` is
   ALREADY a vertical **left pullout tab**. In the default **solar-system**
   context it's a bottom-row button (`RULER · CONTROLS · ▶MISSIONS · INDEX`).
@@ -22,7 +24,7 @@ creative decision — the question is stated). Nothing here is optional.
   apply on the body-scene pages (earth/moon/mars/venus), which today also have a
   bottom `INDEX` button?
 
-### A2. Distance card overlaps the bottom bars **[AUTO]**
+### ~~A2. Distance card overlaps the bottom bars~~ **[AUTO]** — done in `1d54ef550a0`
 - The bottom of solar-system view is two stacked bars (button row + SCALE/time
   playback). The selected-body distance card floats over them. Fix = reposition
   / raise above the bars / respect safe-area. I'll reproduce the exact selection
@@ -58,7 +60,7 @@ creative decision — the question is stated). Nothing here is optional.
   "Flatten/Globe"? Is it "SPIN" or "PAUSE SPIN" (state vs action naming)? I'll
   standardize once you choose.
 
-### B3. Bottom-bar action sets differ by scene **[INPUT]**
+### ~~B3. Bottom-bar action sets differ by scene~~ **[INPUT]** — done in `24d08a10b0d`
 - solar `RULER · CONTROLS · ▶MISSIONS · INDEX`; body `RULER · LAYERS · SCAN ·
   NATIONS · INDEX`; station `LIST · ASSEMBLY · MODULES`. Some divergence is
   legitimate (different content), but the shared actions (INDEX, RULER) should
@@ -81,7 +83,7 @@ creative decision — the question is stated). Nothing here is optional.
 
 ## D. Minor / verify
 
-### D1. `/plan` — "Touch & hold to peek" hint overlaps porkchop corner **[AUTO/verify]**
+### ~~D1. `/plan` — "Touch & hold to peek" hint overlaps porkchop corner~~ **[AUTO/verify]** — closed in `bbd6da440ec` (position intentional, string localized)
 - Floats over the plot's bottom-right axis area. May be intentional; verify then
   clamp inside the plot or move to a caption.
 

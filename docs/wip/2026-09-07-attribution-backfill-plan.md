@@ -1,5 +1,7 @@
 # Slice I — Attribution / credits backfill (v0.9 arc) — plan
 
+**Status 2026-11-04:** slice I shipped in bee0df29b7d (2026-09-07). Items 1 (data-sources entry only), 3, 4, 5, 6, 9 DONE; 7, 8, 10 DROPPED by operator decision (stated in the commit body). OPEN: item 2 (no MCP SDK entry in static/data/data-sources.json — it is only in tech-bom.json) and the inline CelesTrak credit on /iss and /tiangong (grep finds no "celestrak" in src/routes; only src/lib/lab/Notebook.svelte). tech-bom.json now reads app version 0.9.5 (regenerated since).
+
 *2026-09-07 · operator-flagged gap: "everything we integrate with / base upon →
 references & credits; all our original work → the colophon." Audit (Explore,
 2026-09-07) found 10 gaps. This slice closes them BEFORE the epic-close so v0.9
@@ -25,12 +27,12 @@ ships fully attributed.*
    /iss + /tiangong. License: free-use-with-attribution (celestrak.org/faq).
 2. **MCP / @modelcontextprotocol/sdk (Anthropic)** → data-sources.json entry
    (category `protocol`, `used_on:["lab"]`).
-3. **tech-bom.json regen** — stale at v0.8; missing `jose` + the MCP SDK.
+3. ~~**tech-bom.json regen** — stale at v0.8; missing `jose` + the MCP SDK.~~ — done in bee0df29b7d
    Re-run `npm run build-tech-bom`.
-4. **Colophon `lab_illustrations` render** — the key exists in original-work.json
+4. ~~**Colophon `lab_illustrations` render** — the key exists in original-work.json~~ — done in bee0df29b7d
    + build script but colophon's `Manifest` type omits it and no section
    renders it (G-arc gap). Add type + section; block-note names the platform.
-5. **Lab original work in the colophon `writing` array** — the 64 formulas,
+5. ~~**Lab original work in the colophon `writing` array** — the 64 formulas,~~ — done in bee0df29b7d
    25 goals, and the ×14 Lab i18n corpus are unlisted. Add entries in
    build-original-work.mjs + re-run.
 6. **TLE-propagation citationKey** — iss-pass has no `citationKey`; add one
@@ -39,16 +41,16 @@ ships fully attributed.*
    documented in propagate.ts but not surfaced).
 
 ### Editorial calls (operator lean = credit them, per your "everything we base upon")
-7. **LLM stack (LiteLLM · OpenRouter · DeepSeek v4 Flash)** — the ask box
+7. DROPPED by operator (bee0df29b7d) — **LLM stack (LiteLLM · OpenRouter · DeepSeek v4 Flash)** — the ask box
    narrates via it; only the model string shows per-answer. Add an "AI / LLM
    services" block to /credits naming the gateway + provider + model.
-8. **Google Identity (OAuth IdP)** — sign-in uses Google; only the button
+8. DROPPED by operator (bee0df29b7d) — **Google Identity (OAuth IdP)** — sign-in uses Google; only the button
    text credits it. Add a services line on /credits.
 9. **IAU / JPL Standish / EGM96 / IUGG constants** — the kernel's authoritative
    constants are cited in code comments only. Elevate the catalogue-grade ones
    (JPL Standish planetary tables, IAU constants) to data-sources.json
    `used_on:["lab"]`, matching how GRAVITY/EHT papers are already credited.
-10. **Higgsfield naming for EXISTING AI art** (posters, anatomy) — currently
+10. DROPPED by operator (bee0df29b7d) — **Higgsfield naming for EXISTING AI art** (posters, anatomy) — currently
     "AI-generated" with no platform. Optional consistency fix while we're here.
 
 ## Sequencing

@@ -1,5 +1,7 @@
 # Mobile crash observability — Capacitor → GlitchTip + store consoles (#428)
 
+**Status 2026-11-04:** reference with open operator actions. Layers 1-2 are in code (`97ac4febe71`, `25bf957ae03`, `36c66163457`): `@sentry/capacitor` 4.3.0 in package.json:197, SentryCapacitor pod at `ios/App/Podfile:22`, `sentry-capacitor` in `android/capacitor.settings.gradle:29`. Doc drift: events are NOT reported under a `mobile-<platform>` environment any more; `src/lib/observability/sentry.ts:19-20` says they ride the same environment tier with a `platform` tag, and the `@sentry/*` stack is pinned at 10.69.0 not 10.60.0; DSN baking is now documented in `docs/guides/mobile-build-and-deploy.md:120`. OPEN, not verified (needs a device): forced native crash reaching GlitchTip, dSYM upload, Play mapping upload (Layer 3).
+
 Unifies crash/error signal from the Capacitor iOS/Android/TV shells so GlitchTip
 is the single correlation view (web + mobile JS + native events), with the store
 consoles as the symbolicated native detail. Three layers.
@@ -60,4 +62,4 @@ Free, fully symbolicated, authoritative for native. Enable in the consoles:
 - **Store consoles:** the *readable* native stack traces.
 - Split/filter in GlitchTip by `platform` / `environment:mobile-*`.
 
-Tracking: [#428](https://github.com/chipi/orrery/issues/428).
+Tracking: [#428](https://github.com/chipi/orrery/issues/428). (Code half done in `25bf957ae03`; the device/console steps above are still operator actions.)

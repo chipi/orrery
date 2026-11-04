@@ -1,5 +1,7 @@
 # Essays + science translations — spot check (2026-10-31)
 
+**Status 2026-11-04:** 4 of the 5 confirmed BROKEN strings and the escaped quotes were fixed in 3d8948f8a4d (2026-10-31); the fr oberth-effect "freinage" is gone too (0 grep hits; most likely the fr science garble pass 65febd95c76, not confirmed); zh-CN ASCII punctuation now 0 hits (grep, commit not identified); glossary term for "burn" added in a1edd3f7d7a. OPEN: re-translation of pt-BR science (verdict 7/8 MINOR+BROKEN) — no pt-BR science garble-pass commit found (fr 65febd95c76, ru 6a39098ca60, zh-CN dfc1c43f377 exist); the ~35 MINOR science strings and 14 MINOR essay strings were not fixed; register mixes (ja, ko) and pt-BR/ru decimal points not verified; Programs still not sampled.
+
 The optional end-of-Phase-6 item (operator, 2026-10-31: "let's do some spot checks
 and assess"). Read-only; nothing was fixed. Method: `i18n-audit` — detectors on
 every locale, then a seeded sample (`i18n-segment-sample.mjs`, seed 31,
@@ -35,15 +37,15 @@ MINOR per locale. Science is the weak segment: 4 BROKEN and 35 MINOR of 104.
 
 BROKEN, confirmed against the files:
 
-- fr `science/history/keplers-laws-1609.json` body_paragraphs.3 — "infrarcseconde"
+- ~~fr `science/history/keplers-laws-1609.json` body_paragraphs.3 — "infrarcseconde"~~ — done in 3d8948f8a4d
   (non-word) for *sub-arcminute*.
 - fr `science/propulsion/oberth-effect.json` narrative_101.1 — every *burn* is
   "freinage" (braking): the meaning is inverted.
 - fr `science/life-in-space/suit-lineage.json` intro_sentence — last sentence
   dropped.
-- pt-BR `science/life-in-space/suit-lineage.json` intro_sentence — "American
+- ~~pt-BR `science/life-in-space/suit-lineage.json` intro_sentence — "American~~ — done in 3d8948f8a4d
   Apollo-derivado, Soviet/Russian …, Chinese Feitian" left in English.
-- sr-Cyrl `essays/space-comm-arrays.json` body.12 — "тек десетак метара" (about
+- ~~sr-Cyrl `essays/space-comm-arrays.json` body.12 — "тек десетак метара" (about~~ — done in 3d8948f8a4d
   ten metres) for *tens of metres*.
 
 ## Patterns (more than one locale)

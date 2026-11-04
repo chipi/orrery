@@ -1,5 +1,7 @@
 # /lab formula → learn-more link map (2026-09-07)
 
+**Status 2026-11-04:** DONE in dbeea83ac66 (2026-09-07; learnMore field and card row), field extended by d0d62e83ab5 (2026-09-08) and the registry split in 86f421e86a4. Verified: 53 citationKey lines and 64 learnMore entries in src/lib/physics/registry/*.ts, guard test src/lib/physics/registry/citations.test.ts. Not re-verified: the curl-swept 200 status of the external URLs today (weekly link-check runs in .github/workflows/link-check.yml).
+
 Closes the two linkages the operator asked for on the Physics Lab cards:
 
 1. **Internal** — every formula card deep-links to the matching **/science encyclopedia**

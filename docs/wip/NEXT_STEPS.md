@@ -5,6 +5,8 @@ their open items are in the inventory (git keeps them). `docs/wip/_archive/` was
 2026-11-01 in `2f710bdd67e`; a reference to `docs/wip/_archive/<file>` reads from
 `git show 2f710bdd67e^:docs/wip/_archive/<file>`.
 
+**Status 2026-11-04:** the "Where things stand" block below is as of 2026-11-02 and is stale: 0.9.4 shipped (squash `ab91f9a1b21`, PR #636, on main with `a2b70026bc0`) and work now lands on branch `tech-debt/0.9.5` (PR #639 open; 77 commits over `origin/main`; `package.json` is 0.9.5, CHANGELOG dated 2026-11-04 in `7fb4b291cb2`). The 0.9.5 arc was `/fly` end to end, surface imagery, the `/fleet` line-up and rover tracks (see the fly handover); none of the tech-debt or translation items listed below were closed by it (see the dated status lines in the two inventories). Open GitHub issues: 28 (25 from the 2026-11-02 review plus #635, #637, #638 from the triage fleet). Not verified: what prod runs today.
+
 ## Where things stand
 
 - **Prod runs 0.9.3** at `b4ddf1e1d96` (Deploy to prod VPS run 41412677296, deploy + validate

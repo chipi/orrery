@@ -1,5 +1,7 @@
 # Orrery prod — observability + UX analytics sweep (2026-08-31)
 
+**Status 2026-11-04:** point-in-time snapshot (2026-08-31), finished; archive candidate once the method section is kept somewhere. Follow-ups landed: #517 bundle-load resilience, #518 precache prune and #519 multilingual SEO in `8915eaf2f99` (2026-09-11), #521 measurement blind spots in `80cc692100a`, SW install-failure reporting in `bc4e99473be` (#588), language suggestion UI `c177e50eb2c`. NOT verified: whether #517/#518 are closed on GitHub, and whether the Cloudflare `sw.js`/`env.js` bypass (recommendation 1) was ever applied (see the 2026-08-30 note). Counts and the 'only DOWN target' claim are not re-measured.
+
 Cross-source review of production: VictoriaMetrics (metrics), VictoriaLogs (nginx),
 GlitchTip (errors), Umami (analytics) — all self-hosted on homelab. Windows: 24h /
 7d / 30d as noted. Numbers are small (new site); **some traffic is operator/dev**
@@ -84,12 +86,12 @@ Only DOWN scrape target is `vllm`/`dgx-llm-1` — the GPU box, unrelated to Orre
 
 ## Recommendations (priority order)
 
-1. Ship the Cloudflare `sw.js`/`env.js` cache-bypass (already planned) — fixes config
+1. [NOT VERIFIED as done] Ship the Cloudflare `sw.js`/`env.js` cache-bypass (already planned) — fixes config
    freshness + helps #518 and #517 at once.
 2. Improve **/fly discoverability** — the flagship is barely found. Surface it from
    home + mission detail + relevant science pages.
 3. **Lean into science deep-content** for SEO/social — it's the proven pull.
-4. **Pause additional translation spend** until non-EN traffic materializes; the
+4. [not followed: 2026-10 i18n audit and fix commits exist, e.g. `808082a7452`] **Pause additional translation spend** until non-EN traffic materializes; the
    plumbing (hreflang, bundles) is already in place to catch it when it does.
 5. Make #517/#518 failures observable at the source (emit a Sentry event on bundle-
    load / SW-install failure) so the real rate is measured, not inferred.

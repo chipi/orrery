@@ -1,5 +1,7 @@
 # /programs peer-review — full 42-program fact-check (July 2026)
 
+**Status 2026-11-04:** DONE. All 14 errors and the overreach/nit items were applied across en-US and the 13 locales in d13c1ee992b (2026-07-14); residuals in 0f427438894 (2026-10-20); Artemis rework in 1142532d8a7 (English) + 84af4aca122 (13 locales). Spot-verified by grep of ~70 replacement strings, all present. The "No fixes applied yet" line below is stale. Not verified: every minor nit one by one.
+
 Independent science review of every program editorial (`i18n-src/en-US/programs/{id}.json`)
 + base data (`static/data/programs/{id}.json`), run through the `science-reviewer`
 agent. Each claim assumed wrong until a web/source check confirmed it. Findings by

@@ -1,5 +1,7 @@
 # Umami — behavioral analytics setup & operations (Orrery)
 
+**Status 2026-11-04:** reference/runbook with two operator actions. Funnels and goals exist per the note's own 2026-10-20 API check; #521 code blind-spots shipped in `80cc692100a`; `/privacy` opt-out cookie exists (`src/lib/analytics-optout.ts`). OPEN, not verifiable from the repo: the operator's per-device opt-out, the optional historical cleanup of synthetic sessions (destructive, needs per-instance approval), and `IGNORE_IPS` (still unset per the note). Keep as reference.
+
 Self-hosted Umami **v3.3.0** on homelab, shared with podcast_scraper (Player, Operator
 viewer). Orrery prod website_id `4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce`. Admin UI:
 `https://umami.tail6d0ed4.ts.net` (tailnet, operator login). DB access +
@@ -117,7 +119,7 @@ exclusion toggle. Keep event names in sync between #521 and the funnels/goals ab
 - [x] Exclusion method verified + documented (operator to run the one-liner per browser).
 - [x] UTM URLs generated (share them).
 - [x] Report recipes documented (operator/pickup-agent to click, ~2 min; or API w/ token).
-- [x] Code blind-spots filed as #521.
+- [x] Code blind-spots filed as #521 (code shipped in `80cc692100a`).
 - [ ] Operator: switch analytics off on each device you test with — the toggle on
       `/privacy` (sets the `orrery_analytics_optout` cookie; works on phones and PWA
       installs, no devtools needed), or the `umami.disabled` one-liner above.

@@ -1,5 +1,7 @@
 # Image sources to integrate (2026-07-06)
 
+**Status 2026-11-04:** DONE. All five adapters exist in scripts/lib/sources/ (esa-portal.ts, flickr-spacex.ts, nasa-gallery.ts, unsplash.ts, index.ts), added a9d0540f046, 8a19c02a895, 79045e3b6dc, 0928dc17820 (2026-07-06); Unsplash License is in scripts/license-allowlist.ts:126. Not verified: the Blue Moon / ksc-history standouts specifically, or how many images each adapter landed.
+
 First-party / official image sources Marko found during the off-subject
 re-source effort. These beat Commons keyword-search (which poisoned `juice` →
 orange juice). Goal: add each as a **primary source adapter** in

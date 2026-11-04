@@ -1,5 +1,7 @@
 # Encyclopedia article-gap audit — Physics Lab spaceflight/systems concepts (#32)
 
+**Status 2026-11-04:** all 6 ranked gaps DONE: the six articles (lifting-entry, skip-entry, entry-footprint, ascent-guidance, escape-velocity, synodic-period) shipped with 14-locale prose in 3ae23d6ff73 (2026-09-01); no gaps open. Open follow-up lives in 2026-09-01-science-articles-handover.md (diagrams are still the interim SVG sketches).
+
 **Date:** 2026-08-31 · **Method:** every concept the Physics Lab now teaches (formulas + goals in
 `src/lib/physics/registry/`) grepped against the `/science` corpus (`static/data/science/**`).
 
@@ -10,22 +12,22 @@ are concepts the Lab teaches (often as a whole lesson) with **no** matching arti
 
 ## Ranked gaps (0 articles found)
 
-1. **Lifting entry / lift-vector (bank-angle) steering** — the entry computer's core (ADR-088,
+1. ~~**Lifting entry / lift-vector (bank-angle) steering** — the entry computer's core (ADR-088,~~ — done in 3ae23d6ff73
    `entry-steering`). A capsule's one control on re-entry is bank; lift roughly doubles the
    survivable-angle corridor. **Nothing** in `/science`. *(the flagged #1.)* Category:
    `mission-phases`.
-2. **Skip entry / super-circular atmospheric skip** — lunar-return entry at ~11 km/s (ADR-089,
+2. ~~**Skip entry / super-circular atmospheric skip** — lunar-return entry at ~11 km/s (ADR-089,~~ — done in 3ae23d6ff73
    `apollo8`): the craft dips, skips back out of the atmosphere, re-enters. No article.
    Category: `mission-phases`.
-3. **Entry footprint / range control** — the reachable landing-range band and the g each range costs
+3. ~~**Entry footprint / range control** — the reachable landing-range band and the g each range costs~~ — done in 3ae23d6ff73
    (`entry-range-control`). No article. Category: `mission-phases`.
-4. **Powered Explicit Guidance (PEG) / closed-loop ascent guidance** — "the flying computer"
+4. ~~**Powered Explicit Guidance (PEG) / closed-loop ascent guidance** — "the flying computer"~~ — done in 3ae23d6ff73
    (`ascent-guidance`). `mission-phases` has `gravity-turn`, `launch`, `max-q`, `orbit-insertion`,
    but nothing on the *guidance loop* that flies a low-TWR upper stage to orbit. Category:
    `mission-phases` or `propulsion`.
-5. **Escape velocity** — taught in `leave-the-solar-system`; it's implicit in `vis-viva`/`keplerian`
+5. ~~**Escape velocity** — taught in `leave-the-solar-system`; it's implicit in `vis-viva`/`keplerian`~~ — done in 3ae23d6ff73
    but has no standalone article. Category: `orbits`.
-6. **Synodic period / launch windows** — the `launch-window` lesson teaches phasing + the synodic
+6. ~~**Synodic period / launch windows** — the `launch-window` lesson teaches phasing + the synodic~~ — done in 3ae23d6ff73
    recurrence; the `porkchop` category covers the *plot* (`what-is-a-porkchop`, `dv-heatmap`, axes)
    but not the synodic-period concept itself. Category: `orbits` or `porkchop`.
 

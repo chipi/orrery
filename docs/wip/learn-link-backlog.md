@@ -1,5 +1,7 @@
 # LEARN-link + /library backlog
 
+**Status 2026-11-04:** mostly OPEN. Partly done: a weekly link-check Action exists (.github/workflows/link-check.yml, report-only: no tracking issue, no docs/provenance/link-checks commit) and ru/zh link entries exist in static/data/link-provenance.json (60 ru, 21 zh, 2 hi, 0 CNSA/ISRO Hindi pages verified). Not found: CODEOWNERS, PR-template link-provenance checkbox (.github/PULL_REQUEST_TEMPLATE.md), check-link-provenance-drift script, /library search or ?source= deep links, JSON-LD sameAs, per-locale label staleness check (open, translation-related). Items below are not struck because none is fully shipped.
+
 This file is the rolling backlog for **outbound LEARN-link stewardship and the
 public `/library` page** that are not yet shipped. ADR-051 ("Outbound
 learn-link stewardship") locks the data model, pipeline, and rendering rules;

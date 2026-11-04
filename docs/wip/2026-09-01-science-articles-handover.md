@@ -1,5 +1,7 @@
 # Handover — 6 new /science articles (#32) + Higgsfield diagram polish
 
+**Status 2026-11-04:** content, translations x13, schema, index and tests DONE and committed in 3ae23d6ff73 (the "nothing committed" line below is stale). OPEN: the Higgsfield WIRED restyle of the 6 diagrams — `static/diagrams/science/<id>.webp` has no commit after 3ae23d6ff73, so they are still the SVG-sketch placeholders; the diagram text is English-only (baked into the image). Also stale: the 6 ORPHAN_ALLOWLIST entries in src/lib/science-orphan-detector.test.ts:176-198 still say "Lab→article deep-link pending", but formulas now link to them via citationKey (dbeea83ac66, 2026-09-07); not verified whether the allowlist can shrink.
+
 **Date:** 2026-09-01 · **Branch:** `mobile-fixes` · **Worktree:** `orrery-fixes-311982/1/orrery-fixes`
 **Status:** content 100% done + `validate-data` all-green; **only the Higgsfield diagram restyle + final
 preflight + commit remain.** Nothing from this batch is committed yet (112 uncommitted files).

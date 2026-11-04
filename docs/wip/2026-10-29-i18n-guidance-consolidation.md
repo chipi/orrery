@@ -1,5 +1,7 @@
 # i18n guidance — inventory and consolidation plan (2026-10-29)
 
+**Status 2026-11-04:** the plan was carried out in part. DONE: one rules document `docs/guides/i18n-style-guide.md` v1 (`36b612edf31`); AGENTS.md/CONTRIBUTING drift fixed incl. model name now `claude-haiku-5-5` (`fd65ed99c08`, `translate-model.mjs:15`); AU/UA/AE forms unified to `au` in fr/es/it/pt-BR (`db988ce0771`); glossary got a `term` class (`a1edd3f7d7a`) and a UI-label gate that checks glossary forms (`ca92310b2cd`, `9162f8bb7aa`); tools inventory (`b582764cbea`). OPEN: `he` still absent from `native-terms.json`; `NAME_POLICY`/`BASE_RULES`/`LOCALE_RULES` are still hand-written string literals in `translate-quality.mjs` (not generated from the guide); whether every contradiction in this note is closed: not verified.
+
 Step 0 of the i18n phase that follows tech-debt Phase 4 (operator, 2026-10-29):
 before hand-translating the remaining hard-coded UI text, consolidate all
 translation guidance into one authoritative source. This note is the

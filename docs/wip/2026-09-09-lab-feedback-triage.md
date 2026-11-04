@@ -1,5 +1,7 @@
 # /lab feedback triage — prod testing notes → improvement arc (2026-09-09)
 
+**Status 2026-11-04:** FB1a 33425399f15, FB1b 60e228144dc, FB2 5d3444304e7 + 6c2b582eb59 (glossary x64), FB3 75945ad6754, FB4 5357511e74d, FB5 0edbcbd4a18, FB6 8cd6d0e3a2d all DONE (2026-09-09/10). Not verified: T7 cross-lesson result cells for reach-orbit, T8 mini-capstones per goal, the reach-orbit Earth+forces diagram, the reach-moon opening diagram. 3D re-entry corridor was deliberately deferred (2D first, 5357511e74d) and is still open. Reach-Mars -> /plan link exists (src/lib/physics/registry/goals.ts:413).
+
 Operator tested **prod as it is now** and captured field notes. This organizes them into
 themes + per-goal items, flags what the **un-deployed local batch already fixes**, lists the
 clarifications needed, and proposes the mini-arc. Ships together with the LLM epic (#539).

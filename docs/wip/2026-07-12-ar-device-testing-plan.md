@@ -1,5 +1,7 @@
 # AR device-testing plan — #150 Immersive Mode (for the home session)
 
+**Status 2026-11-04:** mostly finished; Path A (Android) and the follow-up epic slices are still open. iPhone side done: ar-bridge wired into the iOS target and hit-test fixed (`5697fdbf656`), device AR working with camera passthrough (`286550ca5d6`), the AR chip moved into the always-on control row so it shows on phones (`422fb21ed59`, fixes Blocker A), explore index handle unified (`7f6bd64ec50`, fixes Thread B). OPEN: Android Moto Nav / WebXR pass not verified anywhere in git; `APP_STORE_URL` is still `null` at `src/lib/components/EnterArButton.svelte:40` (#217); #216 parity test and #195 `reinit()` decisions not verified; `AZIMUTH_CALIBRATION_RAD` still `0` at `src/lib/ar/sky-orientation.ts:26` (no device result recorded). Fastlane TestFlight pipeline exists (`552c1b3b5c0`, `3c0e927c22c`).
+
 *Written 2026-07-12 after merging `three-upgrade` → `main` (`9d455af4f5`). Everything
 here is the stuff CI/jsdom **cannot** validate — the real XR session, on-surface
 placement, spatial-audio pan, and the ARKit Swift path that never compiled on this
@@ -166,10 +168,10 @@ step N" per route is enough to turn into fixes.
 **Done + working:**
 - `build:mobile` (49.4 MB) → `cap sync ios` → app **builds + installs + launches on the
   iPhone 15 Pro** (Developer Mode on). Flat scenes render fine.
-- **#206 wired**: added the 6 `ar-bridge` files to the App target (2nd time, WITHOUT
+- ~~**#206 wired**~~ — done in `5697fdbf656`: added the 6 `ar-bridge` files to the App target (2nd time, WITHOUT
   "Copy items" — the 1st add duplicated them to `ios/App/` and compiled the buggy copies;
   now one clean set under `App/Plugins/ar-bridge/`). Xcode created `App-Bridging-Header.h`.
-- **Fixed 1 real Swift bug** (`ArHitTester.swift:28`): `frame.raycastQuery(...)` is
+- ~~**Fixed 1 real Swift bug**~~ — committed in `5697fdbf656`: (`ArHitTester.swift:28`): `frame.raycastQuery(...)` is
   non-optional in current ARKit → dropped the `guard let`. Verified `xcodebuild … BUILD
   SUCCEEDED` (simulator).
 - Signing set to Marko's team; app category Education; status-bar Light; display name Orrery.
@@ -178,7 +180,7 @@ step N" per route is enough to turn into fixes.
 `ios/App/App-Bridging-Header.h` (new), `project.pbxproj` (target+signing), `Info.plist`,
 `Plugins/ar-bridge/ArHitTester.swift` (the fix). main is 0/0 vs origin, untouched.
 
-**BLOCKER A — "View in AR" button not showing on /explore.** The button component IS in
+~~**BLOCKER A — "View in AR" button not showing on /explore.**~~ — done in `422fb21ed59` (chip moved to the always-on control row; device AR working in `286550ca5d6`). The button component IS in
 the DOM (explore/+page.svelte:5219, ungated) but renders nothing → its internal state
 resolved to `hidden`. On a wrapped iPhone that only happens if `detectArPlatform()` falls
 to `unsupported`, i.e. Capacitor isn't reporting native-iOS.
@@ -195,7 +197,7 @@ classifyArPlatform). If both are right → the bug is elsewhere in EnterArButton
 onMount gate; add a temp console.log of `detectArPlatform()` (logs surface in the Xcode
 console, e.g. the ⚡️ lines) and rebuild.
 
-**THREAD B (separate layout bug Marko spotted)** — the `ExploreBodyIndex` toggle
+~~**THREAD B (separate layout bug Marko spotted)**~~ — done in `7f6bd64ec50` (explore body index is now a left edge handle like the surface routes). — the `ExploreBodyIndex` toggle
 (`.body-index-toggle`, explore/+page.svelte:5557) sits "up" instead of grouped with the
 other buttons. Check on the deployed **PWA** too, and on the surface routes where the
 same index pattern was added (**moon / mars / earth** via SurfaceScene). Not AR-related.

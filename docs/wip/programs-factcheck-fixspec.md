@@ -1,5 +1,7 @@
 # /programs fact-check — exact fix spec (apply all tiers)
 
+**Status 2026-11-04:** DONE (see programs-factcheck-2026-07.md): ~70 replacement strings checked present in i18n-src/en-US/programs and static/data/programs; the other 13 locales were changed in the same commit d13c1ee992b. One item deliberately NOT applied: Apollo 13 "320,000 km" stays (0f427438894 explains why). Mangalyaan: Europe dropped from the failers list; "Beagle 2" is not named.
+
 Per-program edits from the full 42-program `science-reviewer` sweep. Each entry:
 **file** · exact source substring → replacement (or instruction). `en` =
 `i18n-src/en-US/programs/{id}.json` (prose overlay). `base` =

@@ -1,5 +1,7 @@
 # Prod deployment validator — `scripts/validate-prod.mjs`
 
+**Status 2026-11-04:** reference/runbook, live and still accurate in structure. Tool and both workflows exist (`scripts/validate-prod.mjs`, `.github/workflows/validate-prod.yml`, `deploy-prod.yml`). Doc drift: the schedule is no longer every 6 h; `validate-prod.yml` now runs on deploy-prod completion (`workflow_run`, line 22) plus a daily cron `0 6 * * *` (line 31), changed in `6aa2d113449`. The env.js no-cache check exists as a WARN (`scripts/validate-prod.mjs:254-270`). Not verified (no remote access): whether the Tailscale/CF DNS gotcha still applies.
+
 `npm run validate-prod` — a detailed, repeatable, browser-based validator for a
 live Orrery deployment. Elevated from the ad-hoc post-deploy spot-checks used to
 verify the 2026-07-22 prod fixes; those one-off Playwright snippets are now a
@@ -72,14 +74,14 @@ regression guard here in the same change.
   to end (VPS serving layer: nginx CSP + headers, the `/data` overlay, the
   service worker, real telemetry). Run it **after every prod deploy**.
 
-## Automated runs (wired 2026-07-22)
+## Automated runs (wired 2026-07-22; schedule since changed to deploy-completion + daily cron 06:00 UTC in `6aa2d113449`)
 
 - **Post-deploy** — a `validate` job in `.github/workflows/deploy-prod.yml`
   (`needs: deploy`, skipped when the deploy itself no-op'd) runs it against the
   public URL from a GH runner right after each deploy. A red job = "deployed but
   the public site is broken."
-- **Scheduled** — `.github/workflows/validate-prod.yml` runs it every 6 h
-  (`cron: 0 */6 * * *`) + `workflow_dispatch`, as a synthetic correctness
+- **Scheduled** — `.github/workflows/validate-prod.yml` runs it ~~every 6 h
+  (`cron: 0 */6 * * *`)~~ (now daily, see above) + `workflow_dispatch`, as a synthetic correctness
   monitor (deeper than an UptimeRobot ping, coarser cadence). Catches edge/cert/
   data-overlay/telemetry drift a green deploy can't.
 - Both use `vars.PROD_PUBLIC_URL` (fallback `https://www.orrerylearn.com`) and

@@ -1,5 +1,7 @@
 # Multilingual SEO — get indexed & ranked in each language
 
+**Status 2026-11-04:** the three boosters are DONE: sitemap `xhtml:link` hreflang alternates (`src/routes/sitemap.xml/+server.ts:30`, test `server.test.ts`), `og:locale` + `og:locale:alternate` (`src/routes/+layout.svelte:514-516`), language-suggestion banner (`locale.ts:170` uses `navigator.languages`; `c177e50eb2c`, `ff2e60682d9`); all in `8915eaf2f99` (2026-09-11, #519). #517/#518 also in that commit. Not verified: per-locale sitemap index (the sitemap is still a single route `sitemap.xml/+server.ts`), Search Console results, any non-EN traffic.
+
 **Goal (operator, 2026-08-31):** when someone in Russia googles in Russian (or
 Italian/Spanish/Dutch/…), Google should surface the **Russian** version of Orrery
 and drop them onto the localized page already in their language — not the English

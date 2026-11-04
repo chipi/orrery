@@ -5,6 +5,8 @@ insertion, descents and landings, returns and re-entry. **Standard:** each missi
 real flight (the bar the launch pass just met). This is a survey of what the app plays today
 against that bar; nothing here is fixed yet.
 
+**Status 2026-11-04:** audited against `tech-debt/0.9.5`. Survey items: 1 returns — dropped (operator scope rule, 2026-11-02); 2 orbit-insertion burns — heliocentric orbiters done (`orbit-insertion-burns.ts` exists), lunar orbiters (LRO, Chandrayaan-1, Clementine) and the planned arrivals still open; 3 Moon cruise events — done (`51a77829590`), Clementine TCM days still unsourced; 4 generic stand-ins — Zhurong and small bodies done (`db32e7fecc1`), EDL model accuracy not checked; 5 missing descents — Beagle 2 (`2f5c52f28ad`) and DART (`0feeb5337e0`) done, Vega balloons and Starship Mars dropped (operator, 2026-11-03), MMX rover/sample not verified; 6 arrival drift — done (`descent-arrival.test.ts`); 7 docs/debug/e2e — done (`tests/e2e/fly-descent.spec.ts` on main); 8 Mars, 9 Moon, 10 other profiles — done; "not checked yet": Earth capsules partly (`a6602e741a3`, `f4abb19f465`, `b0a4b9b90c2`; open ones in the handover), flyby geometry partly (25 of 27 dates in `0ded63cf840`/`8cf3d3efa2b`, 6 distances in `a45393ca7a5`; the 86-flyby and TCM time check is not complete), browser flight of flyby beats and model accuracy not verified.
+
 ## How it works today
 
 - **Acts.** `src/routes/fly/+page.svelte` runs one act machine (`flyAct`: opening → ascent →

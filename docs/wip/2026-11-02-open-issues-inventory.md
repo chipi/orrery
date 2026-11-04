@@ -7,6 +7,8 @@ done: #612, #617, #320, #319, #607, #538, #622, #620, #632.
 38 issues were open at the time of the check. After the operator's review: 25 stay open, 13 were
 closed (stale, duplicated, superseded or not actionable).
 
+**Status 2026-11-04:** checked against `tech-debt/0.9.5` (PR #639) and `gh issue list` (28 open). Of the 25 below, 24 are still open; 1 is partly fixed: #362 (rover traverses) — Curiosity and Perseverance now on the rover teams' tracks (`2914e8d5cc3`), Opportunity, Spirit and Zhurong still say "simplified hand-vendored polyline" in `static/data/mars-traverses/*.json`. Opened since this inventory by the triage fleet (all three events are `environment=dev`, filed 2026-11-02/03): #635 `hud_spacecraft_sep` is not a function on /fly, #637 `LANDMARK_NAME[...]` is not a function in FleetLineup, #638 `surface_tier_scale_note` is not a function on /moon. The keys exist at HEAD (`messages/en-US.json` has both message keys; `FleetLineup.svelte:70` defines `LANDMARK_NAME` as a map of functions); not reproduced in a browser, so not verified fixed. 0.9.5 fully fixes none of the 25; the `/fly`, surface-imagery and line-up work has no issue in this list. #289 got a related fix only (`fe6c6ee0dba`: partial Moon panoramas open on their photograph; the synthetic wedge is not built).
+
 ## Open (25)
 
 ### Needs the operator, a device or a decision
@@ -43,7 +45,7 @@ closed (stale, duplicated, superseded or not actionable).
 | 414 | Launchers missing from /fleet: Delta IV, Titan III/IV, M-V, Athena | none of the 5 exist |
 | 417 | Video follow-ups: webcast embed, ISS liveness, LM-10B | webcasts still link out; no long-march-10 entry |
 | 411 | /explore grand-tour narration | not started |
-| 362 | Rover traverses: per-sol coordinates | all 5 still "simplified hand-vendored" |
+| 362 | Rover traverses: per-sol coordinates | all 5 still "simplified hand-vendored" — 2026-11-04: Curiosity and Perseverance done (`2914e8d5cc3`, MMGIS tracks, stops at their sols); Opportunity, Spirit, Zhurong still open. Moon rovers (Apollo 15/16, Lunokhod, Yutu-2) also got LROC tracks in `6c78030f575` (not part of this issue) |
 | 291 | Higher-resolution tier-2 surface patches | still 2048² crops |
 | 289 | Panorama: synthetic-wedge rendering | still flat fill |
 | 262 | Published state vectors (`tier_2_published`) | tier unused in data |

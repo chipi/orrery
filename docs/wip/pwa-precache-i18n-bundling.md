@@ -1,5 +1,7 @@
 # PWA stuck-on-old-version — root cause + fix (2026-07-01)
 
+**Status 2026-11-04:** DONE and shipped long ago (`11756fe426c`, 2026-07-01): 14 i18n bundles via `scripts/build-i18n-bundles.mjs`, bundle loader in `src/lib/data.ts`, shell-only precache. SUPERSEDED since: precache now holds only the en-US chunks (`vite.config.ts:277-283`, `8915eaf2f99` #518, 2026-09-11), and `navigateFallback` is `/404.html` (`vite.config.ts:484`), not the home page. Follow-ups: pruning raw per-topic `data/i18n/<locale>/` is done for the mobile build only (`scripts/mobile/prune-streamed-assets.mjs:25`; web deploy not verified); tier-3 locale prefetch not found (no `prefetch` in `src/lib/data.ts`); the harness is not in `scripts/` (only guardrail `scripts/check-precache-budget.mjs`, `c6b0dc195b0`). The "not yet deployed" line above is out of date.
+
 **Status:** implemented, harness-green locally, not yet deployed. No push without approval.
 
 Supersedes the diagnosis half of `_archive/pwa-upgrade-path-handover.md`.

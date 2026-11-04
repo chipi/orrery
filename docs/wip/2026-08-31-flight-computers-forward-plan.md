@@ -1,5 +1,7 @@
 # Flight computers — forward plan (post Fable-5 adversarial review)
 
+**Status 2026-11-04:** finished, archive candidate. All phases landed 2026-08-31: Phase 0 base fixes (Earth entry angles now 1.46-2.07 deg in `static/data/descent-profiles/*.json`; `solveEntryBankForRange` is used by `src/lib/physics/descent/descent-physics.ts`), Phase 1 skip model (`b015ba81614`, `7936699bd33`, ADR-089), Phase 2 Mars guided entries (`98fbc9f0d2c`; Curiosity/Perseverance/Tianwen-1 have `liftToDragRatio`), Phase 3 lunar return and Apollo capstone (`44295d519a5`, `e731c2d9da3`), Phase 4 Lab range-control lesson (`a89f468adc0`), #32 lifting-entry article exists (`static/data/science/mission-phases/lifting-entry.json`). NOT verified item by item: 0b-0f sub-fixes (M1/M3/M4 bug fixes, validate-data check, M6 perf) and whether the 4 deg to 1.5 deg re-author was the 'full' option for all 31 profiles (sampled 2 files).
+
 > 2026-08-31 · sequences the ADR-088 review fixes ahead of the new entry work
 > (Mars guided-lifting → #29 skip → lunar return → Lab range-control lesson).
 > Rationale: #29 EXTENDS the same entry model the review found mis-calibrated;
@@ -20,7 +22,7 @@ buried in the engine, breaking the ADR-087 architecture the feature is named for
 Plus real bugs: capsule L/D applied to parachute drag (M1), no post-solve
 residual guard (M3), silent-garbage path when a target has no lift (M4).
 
-## Phase 0 — Fix the base (BLOCKS everything else)
+## ~~Phase 0 — Fix the base (BLOCKS everything else)~~ — done (sampled; see status)
 
 The calibration + entry-angle work is a prerequisite for #29: Mars and lunar
 return re-use the same γ/lift/downrange integration, and the same peak-g bands.
@@ -61,7 +63,7 @@ return re-use the same γ/lift/downrange integration, and the same peak-g bands.
 Gate: preflight green + the corrected peak-g band + a fresh /fly screenshot
 showing the honest numbers.
 
-## Phase 1 — #29 super-circular skip model (UNBLOCKS Mars + lunar)
+## ~~Phase 1 — #29 super-circular skip model (UNBLOCKS Mars + lunar)~~ — done in `b015ba81614`, `7936699bd33`
 
 The one model extension both Mars-guided and lunar-return need. Per the earlier
 advisor guidance:
@@ -75,7 +77,7 @@ advisor guidance:
   integrator-quality check.
 - Write ADR-089 (super-circular lifting entry + skip).
 
-## Phase 2 — Mars guided-lifting entries
+## ~~Phase 2 — Mars guided-lifting entries~~ — done in `98fbc9f0d2c`
 
 On the Phase-1 model: author `liftToDragRatio` (~0.24) + guided targets for the
 real guided lifting entries — Curiosity/MSL (the FIRST guided Mars entry),
@@ -83,7 +85,7 @@ Perseverance, Tianwen-1. Keep Viking small-lift; MER/Phoenix/InSight stay
 ballistic (correct). Bank-reversal is still out of scope (planar) — disclose.
 Surface in the /fly Mars EDL dossier.
 
-## Phase 3 — Lunar return (11 km/s) + the Apollo round-trip capstone (#29 core)
+## ~~Phase 3 — Lunar return (11 km/s) + the Apollo round-trip capstone (#29 core)~~ — done in `44295d519a5`, `e731c2d9da3`
 
 The marquee case: Apollo CM entering Earth's atmosphere from the Moon at 11 km/s,
 where the corridor is a knife-edge and the skip (Apollo 4 double-g-pulse) is the
@@ -92,7 +94,7 @@ capstone goal (ascent PEG → TLI → LOI → powered descent → lunar ascent �
 11 km/s guided skip entry) end-to-end through all three computers + stage
 formulas. This is the original #29 deliverable.
 
-## Phase 4 — Lab range-control lesson
+## ~~Phase 4 — Lab range-control lesson~~ — done in `a89f468adc0`
 
 The "entry-computer" education deliverable. A Lab goal + formula that consumes
 `solveEntryBankForRange` (given a real home in Phase 0d): user sets a target

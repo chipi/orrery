@@ -261,9 +261,12 @@ const prose = (v, at, out) => {
   return out;
 };
 const base = [];
-for (const n of fs.readdirSync(DATA).sort()) {
+for (const d of fs
+  .readdirSync(DATA, { withFileTypes: true })
+  .sort((a, b) => (a.name < b.name ? -1 : 1))) {
+  const n = d.name;
   const p = path.join(DATA, n);
-  if (n === 'i18n' || !n.endsWith('.json') || !fs.statSync(p).isFile()) continue;
+  if (n === 'i18n' || !n.endsWith('.json') || !d.isFile()) continue;
   const name = n.replace(/\.json$/, '');
   if (overlayNames.has(name)) continue;
   let j;

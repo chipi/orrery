@@ -31,8 +31,13 @@ let n = 0;
 for (const loc of ['ru', 'zh-CN', 'ja', 'ko', 'hi']) {
   for (const [site, e] of Object.entries(side)) {
     const p = `${R}/${loc}/hotspot-metadata/${site}.json`;
-    if (!fs.existsSync(p)) continue;
-    const t = JSON.parse(fs.readFileSync(p, 'utf8'));
+    let t;
+    try {
+      t = JSON.parse(fs.readFileSync(p, 'utf8'));
+    } catch (err) {
+      if (err.code === 'ENOENT') continue;
+      throw err;
+    }
     const pairs = [];
     if (t.panorama_caption)
       pairs.push([

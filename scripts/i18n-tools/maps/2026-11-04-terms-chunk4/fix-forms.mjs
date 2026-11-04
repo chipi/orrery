@@ -26,8 +26,13 @@ for (const [loc, pairs] of Object.entries(SETS)) {
   ];
   let n = 0;
   for (const f of files) {
-    if (!fs.existsSync(f)) continue;
-    let s = fs.readFileSync(f, 'utf8');
+    let s;
+    try {
+      s = fs.readFileSync(f, 'utf8');
+    } catch (err) {
+      if (err.code === 'ENOENT') continue;
+      throw err;
+    }
     const before = s;
     for (const [a, b] of pairs) {
       n += s.split(a).length - 1;

@@ -88,14 +88,20 @@ interface ThemisItem {
 }
 
 async function themisItems(): Promise<ThemisItem[]> {
-  let raw: string;
-  if (existsSync(THEMIS_CACHE)) raw = await fs.readFile(THEMIS_CACHE, 'utf8');
-  else {
+  // Read the cache and fall back on ENOENT (no exists-then-read race).
+  let raw = await fs.readFile(THEMIS_CACHE, 'utf8').catch((e: NodeJS.ErrnoException) => {
+    if (e.code === 'ENOENT') return null;
+    throw e;
+  });
+  if (raw === null) {
     const res = await fetch(THEMIS_STAC);
     if (!res.ok) throw new Error(`THEMIS STAC ${res.status}`);
     raw = await res.text();
     await fs.mkdir(path.dirname(THEMIS_CACHE), { recursive: true });
-    await fs.writeFile(THEMIS_CACHE, raw);
+    // Exclusive create: a parallel run that cached it first wins, no overwrite.
+    await fs.writeFile(THEMIS_CACHE, raw, { flag: 'wx' }).catch((err: NodeJS.ErrnoException) => {
+      if (err.code !== 'EEXIST') throw err;
+    });
   }
   const deg = (m: number) => (m / THEMIS_R) * (180 / Math.PI);
   return (

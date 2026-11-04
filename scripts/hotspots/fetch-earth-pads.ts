@@ -34,7 +34,7 @@
  * without it "Zoom to detail" flies the camera but the true-scale ground
  * view never engages (the 2026-09-10 all-pads bug).
  */
-import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import gdal from 'gdal-async';
@@ -601,10 +601,30 @@ interface LinzItem {
   href: string;
   bbox: number[];
 }
+/** A cached file's bytes, or null when it is not there (read, not exists-then-read). */
+function readCache(file: string): Buffer | null {
+  try {
+    return readFileSync(file);
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === 'ENOENT') return null;
+    throw e;
+  }
+}
+/** Write a cache file only if no other run created it first (exclusive create). */
+function writeCache(file: string, data: string | Buffer): void {
+  mkdirSync(path.dirname(file), { recursive: true });
+  try {
+    writeFileSync(file, data, { flag: 'wx' });
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code !== 'EEXIST') throw e;
+  }
+}
+
 /** Footprints of a LINZ survey's COG tiles, fetched once and cached. */
 async function linzItems(survey: string): Promise<LinzItem[]> {
   const cache = `.image-cache/linz/${survey.replace(/\//g, '__')}.json`;
-  if (existsSync(cache)) return JSON.parse(readFileSync(cache, 'utf8'));
+  const cached = readCache(cache);
+  if (cached) return JSON.parse(cached.toString('utf8'));
   const base = `${LINZ_BUCKET}/${survey}/rgb/2193/`;
   const col = (await (await fetch(`${base}collection.json`)).json()) as {
     links: { rel: string; href: string }[];
@@ -628,8 +648,7 @@ async function linzItems(survey: string): Promise<LinzItem[]> {
     );
     for (const b of batch) if (b) out.push(b);
   }
-  mkdirSync(path.dirname(cache), { recursive: true });
-  writeFileSync(cache, JSON.stringify(out));
+  writeCache(cache, JSON.stringify(out));
   return out;
 }
 
@@ -688,11 +707,10 @@ async function fetchDetailLinz(site: PadSite): Promise<boolean> {
   const comps: { input: Buffer; left: number; top: number }[] = [];
   for (const h of hits) {
     const file = `.image-cache/linz/${path.basename(h.href)}`;
-    if (!existsSync(file)) {
+    if (!readCache(file)) {
       const res = await fetch(h.href);
       if (!res.ok) throw new Error(`LINZ ${h.href}: HTTP ${res.status}`);
-      mkdirSync(path.dirname(file), { recursive: true });
-      writeFileSync(file, Buffer.from(await res.arrayBuffer()));
+      writeCache(file, Buffer.from(await res.arrayBuffer()));
     }
     const g = linzGeo(file);
     if (Math.abs(g.px - SRC_PX) > 1e-6)

@@ -13,7 +13,7 @@
  * fixes.json: [{ "mission": "mercury/messenger", "label": "Mercury #1 — gravity assist",
  *               "realDate": "2008-01-14", "source": { "l": "…", "u": "…" } }, …]
  */
-import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 interface Fix {
@@ -82,9 +82,14 @@ for (const [mission, list] of byMission) {
   // events[].met (the HUD's NEXT line reads it).
   for (const loc of locales) {
     const op = resolve(ROOT, `i18n-src/${loc}/missions/${mission}.json`);
-    if (!existsSync(op)) continue;
     // Edited in place, not re-serialised: overlays keep their one-line event objects.
-    const text = readFileSync(op, 'utf8');
+    let text: string;
+    try {
+      text = readFileSync(op, 'utf8');
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code === 'ENOENT') continue;
+      throw e;
+    }
     let n = 0;
     const out = text.replace(
       /("met"\s*:\s*)(-?\d+(?:\.\d+)?)/g,

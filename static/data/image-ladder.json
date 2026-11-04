@@ -10923,6 +10923,7 @@
   ],
   "/images/moon-sites/apollo15/01": [
     320,
+    640,
     1263
   ],
   "/images/moon-sites/apollo15/02": [
@@ -16983,30 +16984,1773 @@
     800
   ],
   "/images/small-bodies/bennu/01": [
+    320,
+    640,
     960
   ],
   "/images/small-bodies/bennu/02": [
     960
   ],
   "/images/small-bodies/eros/01": [
+    320,
+    640,
     760
   ],
   "/images/small-bodies/eros/02": [
     960
   ],
   "/images/small-bodies/itokawa/01": [
+    320,
+    640,
     960
   ],
   "/images/small-bodies/itokawa/02": [
     960
   ],
   "/images/small-bodies/ryugu/01": [
+    320,
+    640,
     960
   ],
   "/images/small-bodies/ryugu/02": [
     721
   ],
   "/images/small-bodies/vesta/01": [
+    320,
+    640,
     960
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-01": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-02": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-03": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-04": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-05": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-06": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-07": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-08": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-09": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-10": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-11": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-12": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-13": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-14": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-15": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-16": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-17": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-18": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-19": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-20": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-21": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-22": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-23": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-24": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-25": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-26": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-27": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-28": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-29": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-30": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-31": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-32": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-33": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-34": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-35": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-36": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-37": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-38": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-39": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-40": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-41": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-42": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-43": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-44": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-45": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-46": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-47": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-48": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-49": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-50": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-51": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-52": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-53": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-54": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-55": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-56": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-57": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/km-58": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-1232": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-1820": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-3010": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-4500": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-56": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/km-01": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/km-02": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/km-03": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/km-04": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/km-05": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/km-06": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/km-07": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-1000": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-1500": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-2210": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-590": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-90": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/zhurong/traverse/km-01": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/zhurong/traverse/km-02": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/zhurong/traverse/sol-103": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/zhurong/traverse/sol-347": [
+    512,
+    1024
+  ],
+  "/images/hotspots/mars/zhurong/traverse/sol-60": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo16/traverse/end": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-01": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-02": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-03": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-04": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-05": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-06": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-07": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-08": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-09": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-10": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-11": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-12": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-13": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-14": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-15": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-16": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-17": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-18": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-19": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-21": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-22": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-23": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-24": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-25": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-26": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-27": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-28": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-29": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-30": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-31": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-32": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-33": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-34": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-35": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-36": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-37": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-38": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-39": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-40": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-41": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-42": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-43": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-44": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-45": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-46": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-47": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-48": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-49": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-50": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-51": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-52": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-53": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-54": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/km-55": [
+    256
+  ],
+  "/images/hotspots/moon/apollo16/traverse/start": [
+    256
+  ],
+  "/images/hotspots/moon/apollo17/traverse/end": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-01": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-02": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-03": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-04": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-05": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-06": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-07": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-08": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-09": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-10": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-11": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-12": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-13": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-14": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-15": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-16": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-17": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-18": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-19": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-20": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-21": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-22": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-23": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-24": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-25": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-26": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-27": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-28": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-29": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-30": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-31": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-32": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-33": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-34": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-35": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-36": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-37": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-38": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-39": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-40": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-41": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-42": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-43": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-44": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-45": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-46": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-47": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-48": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-49": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-50": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-51": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-52": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-53": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-54": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-55": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-56": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-57": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-58": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-59": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-60": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-61": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-62": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-63": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-64": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-65": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-66": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-67": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-68": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-69": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-70": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-71": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/km-72": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/apollo17/traverse/start": [
+    512,
+    1024
+  ],
+  "/images/hotspots/moon/chandrayaan3/traverse/end": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/chandrayaan3/traverse/start": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/change3/traverse/start": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/change4/traverse/end": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/change4/traverse/km-01": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/change4/traverse/km-02": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/change4/traverse/km-03": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/change4/traverse/km-04": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/change4/traverse/start": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna17/traverse/end": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna17/traverse/km-01": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna17/traverse/km-02": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna17/traverse/km-03": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna17/traverse/km-04": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna17/traverse/start": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna21/traverse/end": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna21/traverse/km-01": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna21/traverse/km-02": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna21/traverse/km-03": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna21/traverse/km-04": [
+    512,
+    768
+  ],
+  "/images/hotspots/moon/luna21/traverse/start": [
+    512,
+    768
+  ],
+  "/diagrams/science/mars-surface-imagery": [
+    320,
+    640,
+    1600
+  ],
+  "/diagrams/science/moon-surface-imagery": [
+    320,
+    640,
+    1600
+  ],
+  "/images/hotspots/moon/apollo17/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/curiosity/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/beagle2/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/insight/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/mars-pathfinder/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/mars3/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/opportunity/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/perseverance/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/schiaparelli/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/spirit/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/viking1-lander/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/viking2-lander/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/zhurong/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/apollo11/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/apollo12/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/apollo14/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/apollo15/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/apollo16/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/beresheet/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/chandrayaan3/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/change3/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/change4/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/change5/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/change6/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/luna16/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/luna17/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/luna21/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/luna24/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/luna9/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/moon/slim/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/diagrams/science/earth-surface-imagery": [
+    320,
+    640,
+    1600
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-01": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-02": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-03": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-04": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-05": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-06": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-07": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-08": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-09": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-10": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-11": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-12": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-13": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-14": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-15": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-16": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-17": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-18": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-19": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-20": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-21": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-22": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-23": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-24": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-25": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-26": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-27": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-28": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-29": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-30": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-31": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-32": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-33": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-34": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-36": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-37": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-38": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-39": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-40": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-41": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-42": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-43": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-44": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-45": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-46": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-47": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-48": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-49": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/km-50": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/sol-1451": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/sol-1805": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/sol-182": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/sol-3413": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/curiosity/traverse/sol-992": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-01": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-02": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-03": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-04": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-05": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-06": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-07": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-08": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-09": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-10": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-11": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-12": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-13": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-14": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-15": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-16": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-17": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-18": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-19": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-20": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-21": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-22": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-23": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-24": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-25": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-26": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-27": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-28": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-29": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-30": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-31": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-32": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-33": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-34": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-35": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-36": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-37": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-38": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-39": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-40": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-41": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-42": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-43": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-44": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-45": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-46": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-47": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-48": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-49": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-50": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-51": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-52": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-53": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-54": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-55": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-56": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/km-57": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/sol-190": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/sol-440": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/sol-58": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/sol-653": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/perseverance/traverse/sol-915": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/earth/alcantara/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/baikonur-1-5/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/cape-canaveral-lc-17/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/hammaguir/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/jiuquan-slc-43/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/kourou-ela-2/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/naro-space-center/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/palmachim/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/plesetsk-41-1/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/rocket-lab-lc-1/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/san-marco/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/semnan-imam-khomeini/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/sohae/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/sriharikota-slp/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/starbase-orbital-a/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/taiyuan-lc-9/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/tanegashima-yoshinobu/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/uchinoura/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/vandenberg-slc-4e/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/vostochny-1s/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/wallops-lc-0/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/wenchang-lc-101/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/woomera/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/earth/xichang-lc-2/context": [
+    1024,
+    2048,
+    4096
   ]
 }

@@ -34,12 +34,15 @@
  * without it "Zoom to detail" flies the camera but the true-scale ground
  * view never engages (the 2026-09-10 all-pads bug).
  */
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import gdal from 'gdal-async';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
 import {
+  buildEoxCloudlessProvenanceEntry,
   buildGsiProvenanceEntry,
+  buildLinzProvenanceEntry,
   buildIgnProvenanceEntry,
   buildNaipProvenanceEntry,
   buildSentinel2ProvenanceEntry,
@@ -54,12 +57,18 @@ import {
  *                 so the Kourou pads use s2-fallback; kept for metropolitan France.
  *   gsi-tiles   — GSI Japan seamlessphoto XYZ tiles (GSI terms, attribution).
  *                 Covers Tanegashima. Probed 2026-09-10, real imagery.
- *   s2-fallback — no open sub-meter source (KZ / RU / CN / IN): a TIGHTER
+ *   linz        — LINZ NZ aerial imagery COGs (CC BY 4.0), 0.1 m survey read
+ *                 down to ~0.25 m/px. Rocket Lab LC-1 (Mahia).
+ *   eox         — no open sub-meter source: a 2.56 km crop of the EOX Sentinel-2
+ *                 cloudless mosaic (10 m, CC BY-NC-SA 4.0 — Orrery is
+ *                 non-commercial). Cloud-free, unlike a single scene; replaced
+ *                 s2-fallback on 2026-11-04 (seven pads had cloud in the detail).
+ *   s2-fallback — (kept for --regional s2) no open sub-meter source: a TIGHTER
  *                 Sentinel-2 crop stands in as the detail patch — the Moon
  *                 Kaguya-failover doctrine (softer but real, never the wrong
  *                 subject), disclosed in provenance.
  */
-type DetailStrategy = 'naip' | 'ign-wms' | 'gsi-tiles' | 's2-fallback';
+type DetailStrategy = 'naip' | 'ign-wms' | 'gsi-tiles' | 'linz' | 'eox' | 's2-fallback';
 const PAD_STRATEGY: Record<string, DetailStrategy> = {
   // US — NAIP
   'cape-canaveral-lc-36b': 'naip',
@@ -75,43 +84,43 @@ const PAD_STRATEGY: Record<string, DetailStrategy> = {
   'wallops-lc-0': 'naip',
   // Vandenberg SFB — NAIP has no coverage there (identify returns NoData, a
   // 512 m export is all black; probed 2026-10-23). Sentinel-2 fallback instead.
-  'vandenberg-slc-4e': 's2-fallback',
+  'vandenberg-slc-4e': 'eox',
   // French Guiana — IGN's WMS serves only 10–20 m imagery over Kourou (every
   // ortho layer probed 2026-10-22, incl. BD ORTHO and the dated layers), so a
   // 512 m IGN window was 10 m pixels upscaled. Sentinel-2 fallback instead.
-  'kourou-ela-2': 's2-fallback',
-  'kourou-ela-3': 's2-fallback',
-  'kourou-ela-4': 's2-fallback',
-  'kourou-els': 's2-fallback',
-  'kourou-zlv': 's2-fallback',
+  'kourou-ela-2': 'eox',
+  'kourou-ela-3': 'eox',
+  'kourou-ela-4': 'eox',
+  'kourou-els': 'eox',
+  'kourou-zlv': 'eox',
   // Japan — GSI seamlessphoto
   'tanegashima-yoshinobu': 'gsi-tiles',
   uchinoura: 'gsi-tiles',
   // Kazakhstan / Russia / China / India — no open sub-meter source
-  'baikonur-1-5': 's2-fallback',
-  'baikonur-200': 's2-fallback',
-  'baikonur-31-6': 's2-fallback',
-  'plesetsk-41-1': 's2-fallback',
-  'plesetsk-43': 's2-fallback',
-  'jiuquan-slc-43': 's2-fallback',
-  'taiyuan-lc-9': 's2-fallback',
-  'wenchang-lc-101': 's2-fallback',
-  'xichang-lc-2': 's2-fallback',
-  'xichang-lc-3': 's2-fallback',
-  'sriharikota-slp': 's2-fallback',
-  'baikonur-81': 's2-fallback',
-  'vostochny-1s': 's2-fallback',
-  'wenchang-lc-201': 's2-fallback',
+  'baikonur-1-5': 'eox',
+  'baikonur-200': 'eox',
+  'baikonur-31-6': 'eox',
+  'plesetsk-41-1': 'eox',
+  'plesetsk-43': 'eox',
+  'jiuquan-slc-43': 'eox',
+  'taiyuan-lc-9': 'eox',
+  'wenchang-lc-101': 'eox',
+  'xichang-lc-2': 'eox',
+  'xichang-lc-3': 'eox',
+  'sriharikota-slp': 'eox',
+  'baikonur-81': 'eox',
+  'vostochny-1s': 'eox',
+  'wenchang-lc-201': 'eox',
   // Pads beyond the big programmes — Sentinel-2 only.
-  'rocket-lab-lc-1': 's2-fallback',
-  'naro-space-center': 's2-fallback',
-  sohae: 's2-fallback',
-  'semnan-imam-khomeini': 's2-fallback',
-  palmachim: 's2-fallback',
-  woomera: 's2-fallback',
-  hammaguir: 's2-fallback',
-  'san-marco': 's2-fallback',
-  alcantara: 's2-fallback',
+  'rocket-lab-lc-1': 'linz',
+  'naro-space-center': 'eox',
+  sohae: 'eox',
+  'semnan-imam-khomeini': 'eox',
+  palmachim: 'eox',
+  woomera: 'eox',
+  hammaguir: 'eox',
+  'san-marco': 'eox',
+  alcantara: 'eox',
 };
 const ALL_PAD_IDS = Object.keys(PAD_STRATEGY);
 
@@ -132,6 +141,19 @@ const DETAIL_SIZE_PX = 2048;
 const GSI_OUT_PX = 1024;
 const S2_FALLBACK_WINDOW_M = 2560; // 256 px @ 10 m — the honest coarse detail window
 const GSI_ZOOM = 18; // ~0.5 m/px at Tanegashima's latitude
+const EOX_WMS = 'https://tiles.maps.eox.at/wms';
+const EOX_YEAR = 2025;
+const EOX_LAYER = `s2cloudless-${EOX_YEAR}`;
+const EOX_DETAIL_PX = 512; // 2.56 km of 10 m data, shown as the patch (×2, like s2-fallback)
+/** LINZ aerial surveys per pad (nz-imagery bucket, NZTM 2193 COGs, CC BY 4.0). */
+const LINZ_SURVEY: Record<string, string> = {
+  'rocket-lab-lc-1': 'hawkes-bay/hawkes-bay-coast_2024_0.1m',
+};
+const LINZ_BUCKET = 'https://nz-imagery.s3-ap-southeast-2.amazonaws.com';
+/** The survey's licensor and producer, from its STAC collection providers. */
+const LINZ_CREDIT: Record<string, string> = {
+  'rocket-lab-lc-1': "Hawke's Bay Regional Council (licensor) · SKYCAN (producer)",
+};
 
 interface StacFeature {
   id: string;
@@ -531,6 +553,217 @@ async function fetchDetailS2Fallback(site: PadSite, scene: StacFeature): Promise
   return true;
 }
 
+/** EOX Sentinel-2 cloudless WMS GetMap over a square window of ground. */
+function eoxUrl(site: PadSite, windowM: number, px: number): string {
+  const { dLat, dLon } = bboxDeg(site, windowM);
+  const bbox = [site.lon - dLon, site.lat - dLat, site.lon + dLon, site.lat + dLat].join(',');
+  return `${EOX_WMS}?service=WMS&version=1.1.1&request=GetMap&layers=${EOX_LAYER}&styles=&srs=EPSG:4326&bbox=${bbox}&width=${px}&height=${px}&format=image/jpeg`;
+}
+
+async function fetchEox(
+  site: PadSite,
+  tier: 'regional' | 'detail',
+  windowM: number,
+  px: number,
+): Promise<boolean> {
+  const outputPath = `static/images/hotspots/earth/${site.id}/tier2-${tier}.jpg`;
+  const url = eoxUrl(site, windowM, px);
+  let buf: Buffer | null = null;
+  for (let attempt = 1; attempt <= 3 && !buf; attempt++) {
+    try {
+      const res = await fetch(url);
+      if (res.ok) buf = Buffer.from(await res.arrayBuffer());
+      else console.log(`  … ${site.id} ${tier}: EOX HTTP ${res.status} (attempt ${attempt})`);
+    } catch (err) {
+      console.log(`  … ${site.id} ${tier}: EOX ${(err as Error).message} (attempt ${attempt})`);
+    }
+  }
+  if (!buf || !writeJpeg(outputPath, buf, `${site.id} ${tier} (EOX)`)) return false;
+  if (!(await coveredOrLog(outputPath, `${site.id} ${tier} (EOX)`))) return false;
+  await upsertProvenanceEntries([
+    buildEoxCloudlessProvenanceEntry({
+      outputPath,
+      sourceUrl: url,
+      year: EOX_YEAR,
+      siteName: site.name,
+      centerLat: site.lat,
+      centerLon: site.lon,
+      windowM,
+      sizePx: px,
+      layer: tier === 'regional' ? 'regional patch' : 'detail patch',
+    }),
+  ]);
+  console.log(`  ✓ ${site.id} ${tier}: EOX cloudless ${EOX_YEAR} ${windowM} m → ${px} px`);
+  return true;
+}
+
+interface LinzItem {
+  href: string;
+  bbox: number[];
+}
+/** Footprints of a LINZ survey's COG tiles, fetched once and cached. */
+async function linzItems(survey: string): Promise<LinzItem[]> {
+  const cache = `.image-cache/linz/${survey.replace(/\//g, '__')}.json`;
+  if (existsSync(cache)) return JSON.parse(readFileSync(cache, 'utf8'));
+  const base = `${LINZ_BUCKET}/${survey}/rgb/2193/`;
+  const col = (await (await fetch(`${base}collection.json`)).json()) as {
+    links: { rel: string; href: string }[];
+  };
+  const hrefs = col.links
+    .filter((l) => l.rel === 'item')
+    .map((l) => base + l.href.replace(/^\.\//, ''));
+  const out: LinzItem[] = [];
+  for (let i = 0; i < hrefs.length; i += 32) {
+    const batch = await Promise.all(
+      hrefs.slice(i, i + 32).map(async (h) => {
+        const it = (await (await fetch(h)).json()) as {
+          bbox: number[];
+          assets: Record<string, { href: string }>;
+        };
+        const a = Object.values(it.assets).find(
+          (x) => x.href.endsWith('.tiff') || x.href.endsWith('.tif'),
+        );
+        return a ? { href: new URL(a.href, h).toString(), bbox: it.bbox } : null;
+      }),
+    );
+    for (const b of batch) if (b) out.push(b);
+  }
+  mkdirSync(path.dirname(cache), { recursive: true });
+  writeFileSync(cache, JSON.stringify(out));
+  return out;
+}
+
+/** GeoTIFF origin (NZTM metres) + pixel size of a LINZ tile, from its tags.
+ *  The tiles are WebP-compressed, which the bundled GDAL cannot open (no WEBP
+ *  codec), so libtiff's tiffinfo reads the tags and sharp (libvips) decodes. */
+function linzGeo(file: string): { x0: number; y0: number; px: number } {
+  const info = execFileSync('tiffinfo', [file], {
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'ignore'],
+  });
+  const scale = /Tag 33550: ([\d.]+),/.exec(info);
+  const tie = /Tag 33922: [\d.]+,[\d.]+,[\d.]+,([\d.]+),([\d.]+),/.exec(info);
+  if (!scale || !tie) throw new Error(`${file}: no GeoTIFF tiepoint / pixel scale`);
+  return { x0: Number(tie[1]), y0: Number(tie[2]), px: Number(scale[1]) };
+}
+
+/** LINZ aerial: download the survey tiles over the window (cached), place them
+ *  on one NZTM canvas, bring it to 0.25 m/px, turn it by the local grid
+ *  convergence so true north is up, and cut the pad's square window. */
+async function fetchDetailLinz(site: PadSite): Promise<boolean> {
+  const outputPath = `static/images/hotspots/earth/${site.id}/tier2-detail.jpg`;
+  const survey = LINZ_SURVEY[site.id];
+  const { dLat, dLon } = bboxDeg(site, DETAIL_WINDOW_M);
+  const w = [site.lon - dLon, site.lat - dLat, site.lon + dLon, site.lat + dLat];
+  const hits = (await linzItems(survey)).filter(
+    (it) => it.bbox[0] < w[2] && it.bbox[2] > w[0] && it.bbox[1] < w[3] && it.bbox[3] > w[1],
+  );
+  if (!hits.length) {
+    console.log(`  ✗ ${site.id} detail: no LINZ tile in ${survey} covers the pad`);
+    return false;
+  }
+  const sharp = (await import('sharp')).default;
+  const geo = gdal.SpatialReference.fromEPSG(4326);
+  const nztm = gdal.SpatialReference.fromEPSG(2193);
+  const ct = new gdal.CoordinateTransformation(geo, nztm);
+  // GDAL 3 authority axis order: EPSG:4326 is (lat, lon) and EPSG:2193 is
+  // (northing, easting) — both swapped from x/y.
+  const toNztm = (lat: number, lon: number) => {
+    const p = geo.EPSGTreatsAsLatLong() ? ct.transformPoint(lat, lon) : ct.transformPoint(lon, lat);
+    return nztm.EPSGTreatsAsNorthingEasting() ? { e: p.y, n: p.x } : { e: p.x, n: p.y };
+  };
+  const c = toNztm(site.lat, site.lon);
+  const north = toNztm(site.lat + 0.001, site.lon);
+  // Grid convergence: how far true north leans from grid north here.
+  const convergenceDeg = (Math.atan2(north.e - c.e, north.n - c.n) * 180) / Math.PI;
+  const half =
+    (DETAIL_WINDOW_M / 2) *
+      (Math.abs(Math.cos((convergenceDeg * Math.PI) / 180)) +
+        Math.abs(Math.sin((convergenceDeg * Math.PI) / 180))) +
+    20;
+  const SRC_PX = 0.1;
+  const size = Math.ceil((2 * half) / SRC_PX);
+  const left0 = c.e - half;
+  const top0 = c.n + half;
+  const comps: { input: Buffer; left: number; top: number }[] = [];
+  for (const h of hits) {
+    const file = `.image-cache/linz/${path.basename(h.href)}`;
+    if (!existsSync(file)) {
+      const res = await fetch(h.href);
+      if (!res.ok) throw new Error(`LINZ ${h.href}: HTTP ${res.status}`);
+      mkdirSync(path.dirname(file), { recursive: true });
+      writeFileSync(file, Buffer.from(await res.arrayBuffer()));
+    }
+    const g = linzGeo(file);
+    if (Math.abs(g.px - SRC_PX) > 1e-6)
+      throw new Error(`${file}: pixel ${g.px} m, expected ${SRC_PX}`);
+    const meta = await sharp(file).metadata();
+    // Overlap of this tile with the canvas, in tile pixels.
+    const tx = Math.round((left0 - g.x0) / SRC_PX);
+    const ty = Math.round((g.y0 - top0) / SRC_PX);
+    const sx = Math.max(0, tx);
+    const sy = Math.max(0, ty);
+    const ex = Math.min(meta.width!, tx + size);
+    const ey = Math.min(meta.height!, ty + size);
+    if (ex <= sx || ey <= sy) continue;
+    const piece = await sharp(file)
+      .extract({ left: sx, top: sy, width: ex - sx, height: ey - sy })
+      .removeAlpha()
+      .raw()
+      .toBuffer();
+    comps.push({
+      input: await sharp(piece, { raw: { width: ex - sx, height: ey - sy, channels: 3 } })
+        .png()
+        .toBuffer(),
+      left: sx - tx,
+      top: sy - ty,
+    });
+  }
+  const outScale = DETAIL_WINDOW_M / DETAIL_SIZE_PX; // 0.25 m/px
+  const scaled = Math.round((size * SRC_PX) / outScale);
+  const canvas = await sharp({
+    create: { width: size, height: size, channels: 3, background: '#000' },
+  })
+    .composite(comps)
+    .png()
+    .toBuffer();
+  const turned = await sharp(
+    await sharp(canvas).resize(scaled, scaled, { kernel: 'lanczos3' }).png().toBuffer(),
+  )
+    .rotate(-convergenceDeg, { background: '#000' })
+    .png()
+    .toBuffer();
+  const tm = await sharp(turned).metadata();
+  const jpg = await sharp(turned)
+    .extract({
+      left: Math.round((tm.width! - DETAIL_SIZE_PX) / 2),
+      top: Math.round((tm.height! - DETAIL_SIZE_PX) / 2),
+      width: DETAIL_SIZE_PX,
+      height: DETAIL_SIZE_PX,
+    })
+    .jpeg({ quality: 88 })
+    .toBuffer();
+  if (!writeJpeg(outputPath, jpg, `${site.id} detail (LINZ)`)) return false;
+  if (!(await coveredOrLog(outputPath, `${site.id} detail (LINZ)`))) return false;
+  await upsertProvenanceEntries([
+    buildLinzProvenanceEntry({
+      outputPath,
+      sourceUrl: hits[0].href,
+      survey,
+      siteName: site.name,
+      centerLat: site.lat,
+      centerLon: site.lon,
+      windowM: DETAIL_WINDOW_M,
+      sizePx: DETAIL_SIZE_PX,
+      credit: LINZ_CREDIT[site.id],
+    }),
+  ]);
+  console.log(
+    `  ✓ ${site.id} detail: LINZ ${survey} (${hits.length} tiles, convergence ${convergenceDeg.toFixed(2)}°) ${DETAIL_WINDOW_M} m → ${DETAIL_SIZE_PX} px`,
+  );
+  return true;
+}
+
 async function main(): Promise<void> {
   const argv = process.argv.slice(2);
   // --detail-only: re-fetch the detail layer without touching the regional —
@@ -538,7 +771,10 @@ async function main(): Promise<void> {
   // would silently swap operator-APPROVED imagery. Not valid for s2-fallback
   // pads (their detail reuses the regional's winning scene).
   const detailOnly = argv.includes('--detail-only');
-  const only = argv.filter((a) => !a.startsWith('--'));
+  // Regional source: the EOX cloudless mosaic by default (no clouds, one
+  // consistent look); --regional s2 re-picks a single Sentinel-2 scene.
+  const regionalS2 = argv.includes('--regional') && argv[argv.indexOf('--regional') + 1] === 's2';
+  const only = argv.filter((a, i) => !a.startsWith('--') && argv[i - 1] !== '--regional');
   const ids = only.length ? only.filter((id) => ALL_PAD_IDS.includes(id)) : ALL_PAD_IDS;
   const pads = loadPads(ids);
   console.log(`fetch-earth-pads: ${pads.length} pad(s)${detailOnly ? ' [detail-only]' : ''}`);
@@ -550,14 +786,24 @@ async function main(): Promise<void> {
       console.log(`  ✗ ${site.id}: --detail-only cannot re-derive an s2-fallback detail`);
       continue;
     }
-    const scene = detailOnly ? null : await fetchRegional(site);
+    let regionalOk = detailOnly;
+    let scene: StacFeature | null = null;
+    if (!detailOnly) {
+      if (regionalS2 || strategy === 's2-fallback') {
+        scene = await fetchRegional(site);
+        regionalOk = scene != null;
+      } else regionalOk = await fetchEox(site, 'regional', REGIONAL_CROP_PX * 10, REGIONAL_CROP_PX);
+    }
     let d = false;
     if (strategy === 'naip') d = await fetchDetailNaip(site);
     else if (strategy === 'ign-wms') d = await fetchDetailIgn(site);
     else if (strategy === 'gsi-tiles') d = await fetchDetailGsi(site);
+    else if (strategy === 'linz') d = await fetchDetailLinz(site);
+    else if (strategy === 'eox')
+      d = await fetchEox(site, 'detail', S2_FALLBACK_WINDOW_M, EOX_DETAIL_PX);
     else if (scene) d = await fetchDetailS2Fallback(site, scene);
     else console.log(`  ✗ ${site.id} detail: no regional scene to fall back to`);
-    if ((detailOnly || scene) && d) ok += 1;
+    if (regionalOk && d) ok += 1;
   }
   console.log(`\nDONE ${ok}/${pads.length} pads fully fetched`);
   if (ok < pads.length) process.exitCode = 1;

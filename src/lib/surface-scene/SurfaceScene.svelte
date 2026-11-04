@@ -55,6 +55,8 @@
   import { createSurfacePicking } from '$lib/surface-scene/surface-picking';
   import { createSurface2dMap } from '$lib/surface-scene/surface-2d-map';
   import { createSurfaceTraverses, type TraverseLine } from '$lib/surface-scene/surface-traverses';
+  import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
+  import { ladderRungUrl, loadLadder, type LadderManifest } from '$lib/image-srcset';
   import { createSurfaceMarkers, type MarkerObj } from '$lib/surface-scene/surface-markers';
   import { bindSurfaceCamTour } from '$lib/surface-scene/surface-cam-tour';
   import { buildClimateBands } from '$lib/surface-scene/surface-climate-layers';
@@ -144,6 +146,12 @@
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { type SiteStory } from '$lib/data';
   import { localeFromPage, localHref } from '$lib/locale';
+  /** The /science page that explains each body's imagery layers ("How this works"). */
+  const HOW_IMAGERY_WORKS: Partial<Record<string, string>> = {
+    moon: '/science/planets/moon-surface-imagery',
+    mars: '/science/planets/mars-surface-imagery',
+    earth: '/science/planets/earth-surface-imagery',
+  };
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import {
@@ -1798,6 +1806,13 @@
     // #360: per-rover camera target = the magnified traverse midpoint, so
     // selecting a rover frames the whole route. Populated by rebuildTraverses.
     const routeViewCenters = new Map<string, { lat: number; lon: number }>();
+    // Context layer (surface-context.ts): true-scale ~150-200 m/px cap per site,
+    // built on first selection, faded in by camera distance for the selected site.
+    const contextCaps = new Map<string, THREE.Mesh>();
+    // WebP ladder (image-ladder.json) for the context images' rungs; until it
+    // loads a cap takes its base image (the largest rung).
+    let ladderManifest: LadderManifest = {};
+    void loadLadder().then((m) => (ladderManifest = m));
     // #380 — cached camR that frames each rover's whole route (see frameCamRForRoute).
     const routeFrameCamR = new Map<string, number>();
     // Per-rover deferred route-imagery builders (#363 perf) — populated by
@@ -2142,6 +2157,7 @@
       routeViewCenters,
       routeFrameCamR,
       routePatchBuilders,
+      routeTileMaxPx: quality.routeTileMaxPx,
     });
 
     // Initial traverse load + reactive rebuild on data change.
@@ -3549,6 +3565,31 @@
               : camR <= regionalFadeEnd
                 ? 1
                 : 1 - (camR - regionalFadeEnd) / (regionalFadeStart - regionalFadeEnd);
+          // Context layer: the selected site's true-scale cap, built lazily.
+          if (
+            selected?.hotspot_context_source &&
+            selected.hotspot_context_bounds &&
+            !contextCaps.has(selected.id)
+          ) {
+            const cap = buildContextCap({
+              siteId: selected.id,
+              textureUrl: ladderRungUrl(
+                selected.hotspot_context_source,
+                ladderManifest[selected.hotspot_context_source.replace(/\.[^.]+$/, '')],
+                quality.routeTileMaxPx * 2,
+              ),
+              bounds: selected.hotspot_context_bounds,
+              planetRadius,
+            });
+            planetMesh.add(cap);
+            contextCaps.set(selected.id, cap);
+          }
+          const ctxOp = contextOpacity(camR);
+          for (const [id, cap] of contextCaps) {
+            const op = id === selected?.id ? ctxOp : 0;
+            (cap.material as THREE.Material & { opacity: number }).opacity = op;
+            cap.visible = op > 0.01;
+          }
           // #380 — route-view force-reveals the FOCUSED rover's route line +
           // DETAIL tiles even when pulled back past the reveal band. Landing-site
           // tier2 patches keep the global ramp (untouched). Once the user zooms in
@@ -4848,7 +4889,13 @@ sample      ${debugInfo.projectedPxSample}`}
        agency chip in a smaller surface card that ALSO collides with
        the OrbitRuler's lower-left footprint. -->
   {#if tierCardShown && tierContext}
-    <TierContextCard {tierContext} scaleNote={m.surface_tier_scale_note()} />
+    <TierContextCard
+      {tierContext}
+      scaleNote={m.surface_tier_scale_note()}
+      howItWorksHref={HOW_IMAGERY_WORKS[config.planet]
+        ? localHref(HOW_IMAGERY_WORKS[config.planet]!)
+        : undefined}
+    />
   {/if}
 
   <!-- Hover tooltip — small floating card beside the cursor.

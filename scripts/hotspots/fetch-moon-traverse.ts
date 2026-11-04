@@ -117,6 +117,11 @@ const SITE_ORTHOMOSAIC: Record<string, string> = {
  *  native resolution is preserved) for consistent, light delivery. */
 async function normalizeInPlace(outputPath: string): Promise<void> {
   const buf = await fs.readFile(outputPath);
+  // The crop as cut is the master (Git LFS, masters/ tree) — the WebP ladder
+  // (RFC-030 D5 amendment) is built from it; static/ gets the normalised tile.
+  const masterPath = path.join('masters', path.relative('static/images', outputPath));
+  await fs.mkdir(path.dirname(masterPath), { recursive: true });
+  await fs.writeFile(masterPath, buf);
   const meta = await sharp(buf).metadata();
   const target = Math.min(DETAIL_PX, meta.width ?? DETAIL_PX);
   await fs.writeFile(
@@ -232,7 +237,9 @@ async function cropFromOde(lat: number, lon: number, outputPath: string): Promis
         };
       } catch (err) {
         if (err instanceof CropError) break;
-        console.warn(`    read failed (${p.pdsid}, attempt ${attempt}/3): ${(err as Error).message}`);
+        console.warn(
+          `    read failed (${p.pdsid}, attempt ${attempt}/3): ${(err as Error).message}`,
+        );
         await new Promise((r) => setTimeout(r, 5000 * attempt));
       }
     }

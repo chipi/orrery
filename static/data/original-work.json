@@ -1468,6 +1468,11 @@
       "cover": false
     },
     {
+      "title": "Earth Surface Imagery",
+      "file": "/diagrams/science/earth-surface-imagery.webp",
+      "cover": false
+    },
+    {
       "title": "Eccentricity",
       "file": "/diagrams/science/eccentricity.webp",
       "cover": false
@@ -1708,6 +1713,11 @@
       "cover": false
     },
     {
+      "title": "Mars Surface Imagery",
+      "file": "/diagrams/science/mars-surface-imagery.webp",
+      "cover": false
+    },
+    {
       "title": "MET",
       "file": "/diagrams/science/met.webp",
       "cover": false
@@ -1720,6 +1730,11 @@
     {
       "title": "Mission Types",
       "file": "/diagrams/science/mission-types.webp",
+      "cover": false
+    },
+    {
+      "title": "Moon Surface Imagery",
+      "file": "/diagrams/science/moon-surface-imagery.webp",
       "cover": false
     },
     {
@@ -3480,7 +3495,7 @@
     "anatomy_art": 197,
     "exploded_art": 40,
     "lab_illustrations": 25,
-    "diagrams_science": 114,
+    "diagrams_science": 117,
     "posters": 27,
     "models3d": 179,
     "capsules": 8,

@@ -122,6 +122,7 @@ If something *can't* be expressed in this contract, that's a signal — file an 
 | `moon-lens-layers.ts`, `mars-lens-layers.ts`, `surface-sun-layers.ts`, `surface-climate-layers.ts` | Science-lens layers, per body or shared |
 | `register-{moon,mars,earth,venus}-hotspot-builders.ts` | Each body's Tier 1 model registration bundle |
 | `surface-picking.ts`, `surface-2d-map.ts`, `surface-traverses.ts`, `surface-markers.ts`, `surface-cam-tour.ts` | Extracted from SurfaceScene's `onMount` closure: 3D raycast picking + click dispatch, the flat 2D map (lunar discs / equirectangular) + its click handler, traverse rebuild, site + orbiter marker rebuild, audio-tour camera demos. Each takes a context object (`get*` getters for reactive/reassigned state, shared arrays by reference) |
+| `surface-context.ts`, `context-bounds.ts` | Context layer: a true-scale cap of a ~100 m/px mosaic crop over the selected site, child of the planet mesh, same material + texture decoding as the globe, feathered edge, opacity by camera distance (`contextOpacity`). `context-bounds.ts` has no imports so `scripts/hotspots/fetch-context-layer.ts` shares the box maths |
 | `debug-info.ts`, `status-tone.ts` | Shared debug overlay shape + factory; site status badge mapping |
 | `README.md` | This file — the contract |
 

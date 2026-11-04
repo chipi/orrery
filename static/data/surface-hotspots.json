@@ -82,7 +82,14 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo11/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240
+      "hotspot_tier2_ground_m": 10240,
+      "hotspot_context_source": "/images/hotspots/moon/apollo11/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -5.9256,
+        "lat_max": 7.2656,
+        "lon_min": 16.874,
+        "lon_max": 30.066
+      }
     },
     "apollo12": {
       "hotspot_tier_max": 3,
@@ -93,7 +100,14 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo12/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240
+      "hotspot_tier2_ground_m": 10240,
+      "hotspot_context_source": "/images/hotspots/moon/apollo12/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -9.6056,
+        "lat_max": 3.5856,
+        "lon_min": -30.0247,
+        "lon_max": -16.8153
+      }
     },
     "apollo14": {
       "hotspot_tier_max": 3,
@@ -107,6 +121,13 @@
       "hotspot_tier2_ground_m": 10240,
       "panorama_metadata": {
         "entry_yaw_deg": 179
+      },
+      "hotspot_context_source": "/images/hotspots/moon/apollo14/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -10.2456,
+        "lat_max": 2.9456,
+        "lon_min": -24.079,
+        "lon_max": -10.861
       }
     },
     "apollo15": {
@@ -118,7 +139,14 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo15/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240
+      "hotspot_tier2_ground_m": 10240,
+      "hotspot_context_source": "/images/hotspots/moon/apollo15/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 19.5344,
+        "lat_max": 32.7256,
+        "lon_min": -3.7164,
+        "lon_max": 10.9764
+      }
     },
     "apollo16": {
       "hotspot_tier_max": 3,
@@ -132,6 +160,13 @@
       "hotspot_tier2_ground_m": 10240,
       "panorama_metadata": {
         "entry_yaw_deg": 135
+      },
+      "hotspot_context_source": "/images/hotspots/moon/apollo16/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -15.5656,
+        "lat_max": -2.3744,
+        "lon_min": 8.8228,
+        "lon_max": 22.1772
       }
     },
     "apollo17": {
@@ -175,7 +210,14 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo17/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240
+      "hotspot_tier2_ground_m": 10240,
+      "hotspot_context_source": "/images/hotspots/moon/apollo17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 13.5944,
+        "lat_max": 26.7856,
+        "lon_min": 23.7426,
+        "lon_max": 37.7974
+      }
     },
     "viking1-lander": {
       "hotspot_tier_max": 3,
@@ -187,7 +229,14 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/viking1-lander/tier2-ctx.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/viking1-lander/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 19.1048,
+        "lat_max": 25.8664,
+        "lon_min": 308.3639,
+        "lon_max": 315.6817
+      }
     },
     "viking2-lander": {
       "hotspot_tier_max": 3,
@@ -198,7 +247,14 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/viking2-lander/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/viking2-lander/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 44.2922,
+        "lat_max": 51.0538,
+        "lon_min": 129.2792,
+        "lon_max": 139.3208
+      }
     },
     "mars-pathfinder": {
       "hotspot_tier_max": 3,
@@ -209,7 +265,14 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/mars-pathfinder/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/mars-pathfinder/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 15.7141,
+        "lat_max": 22.4757,
+        "lon_min": 323.1997,
+        "lon_max": 330.3549
+      }
     },
     "spirit": {
       "hotspot_tier_max": 3,
@@ -230,7 +293,14 @@
       },
       "traverse_stop_link": "sol-590",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/spirit/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -17.9508,
+        "lat_max": -11.1892,
+        "lon_min": 171.9769,
+        "lon_max": 178.9631
+      }
     },
     "opportunity": {
       "hotspot_tier_max": 3,
@@ -251,7 +321,14 @@
       },
       "traverse_stop_link": "sol-56",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/opportunity/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -5.3308,
+        "lat_max": 1.4308,
+        "lon_min": -8.9127,
+        "lon_max": -2.1473
+      }
     },
     "curiosity": {
       "hotspot_tier_max": 3,
@@ -309,7 +386,14 @@
       ],
       "traverse_stop_link": "sol-3500",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/curiosity/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -7.9708,
+        "lat_max": -1.2092,
+        "lon_min": 134.0483,
+        "lon_max": 140.8317
+      }
     },
     "perseverance": {
       "hotspot_tier_max": 3,
@@ -367,7 +451,14 @@
       ],
       "traverse_stop_link": "sol-58",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/perseverance/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 15.0592,
+        "lat_max": 21.8208,
+        "lon_min": 73.8862,
+        "lon_max": 81.0138
+      }
     },
     "phoenix": {
       "hotspot_tier_max": 3,
@@ -389,7 +480,14 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/insight/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/insight/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/insight/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 1.1192,
+        "lat_max": 7.8808,
+        "lon_min": 132.2288,
+        "lon_max": 139.0112
+      }
     },
     "luna9": {
       "hotspot_tier_max": 3,
@@ -400,6 +498,13 @@
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna9/tier2-regional.jpg",
       "panorama_metadata": {
         "entry_yaw_deg": 240
+      },
+      "hotspot_context_source": "/images/hotspots/moon/luna9/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 0.4844,
+        "lat_max": 13.6756,
+        "lon_min": -71.0163,
+        "lon_max": -57.7237
       }
     },
     "luna16": {
@@ -418,6 +523,13 @@
         "caption": "Luna 16 sent back no panorama of its landing site. This is LRO's view of the lander from orbit, taken in 2010.",
         "credit_team": "NASA / GSFC / Arizona State University",
         "entry_yaw_deg": 240
+      },
+      "hotspot_context_source": "/images/hotspots/moon/luna16/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -7.1093,
+        "lat_max": 6.0819,
+        "lon_min": 49.768,
+        "lon_max": 62.9596
       }
     },
     "luna17": {
@@ -432,6 +544,13 @@
       "hotspot_tier2_ground_m": 1500,
       "panorama_metadata": {
         "entry_yaw_deg": 150
+      },
+      "hotspot_context_source": "/images/hotspots/moon/luna17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 31.642,
+        "lat_max": 44.8332,
+        "lon_min": -43.3988,
+        "lon_max": -26.6044
       }
     },
     "luna21": {
@@ -442,7 +561,14 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna21/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16128,
-      "hotspot_tier2_ground_m": 1500
+      "hotspot_tier2_ground_m": 1500,
+      "hotspot_context_source": "/images/hotspots/moon/luna21/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 19.4038,
+        "lat_max": 32.595,
+        "lon_min": 23.0694,
+        "lon_max": 37.7458
+      }
     },
     "luna24": {
       "hotspot_tier_max": 3,
@@ -459,6 +585,13 @@
         "caption": "Luna 24 sent back no panorama of its landing site. This is LRO's view of the lander from orbit.",
         "credit_team": "NASA / GSFC / Arizona State University",
         "entry_yaw_deg": 240
+      },
+      "hotspot_context_source": "/images/hotspots/moon/luna24/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 6.1186,
+        "lat_max": 19.3098,
+        "lon_min": 55.4515,
+        "lon_max": 68.9743
       }
     },
     "mars3": {
@@ -485,7 +618,14 @@
       },
       "panorama_annotations": [],
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/mars3/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -48.4308,
+        "lat_max": -41.6692,
+        "lon_min": 197.2147,
+        "lon_max": 206.7853
+      }
     },
     "change3": {
       "hotspot_tier_max": 3,
@@ -496,7 +636,14 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/change3/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change3/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25856,
-      "hotspot_tier2_ground_m": 1500
+      "hotspot_tier2_ground_m": 1500,
+      "hotspot_context_source": "/images/hotspots/moon/change3/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 37.5244,
+        "lat_max": 50.7156,
+        "lon_min": -28.6975,
+        "lon_max": -10.3225
+      }
     },
     "change4": {
       "hotspot_tier_max": 3,
@@ -539,7 +686,14 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change4/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 26613,
-      "hotspot_tier2_ground_m": 1500
+      "hotspot_tier2_ground_m": 1500,
+      "hotspot_context_source": "/images/hotspots/moon/change4/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -52.0517,
+        "lat_max": -38.8605,
+        "lon_min": 168.1858,
+        "lon_max": 186.9912
+      }
     },
     "change5": {
       "hotspot_tier_max": 3,
@@ -553,6 +707,13 @@
       "hotspot_tier2_ground_m": 1000,
       "panorama_metadata": {
         "entry_yaw_deg": 173
+      },
+      "hotspot_context_source": "/images/hotspots/moon/change5/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 36.462,
+        "lat_max": 49.6532,
+        "lon_min": -60.9429,
+        "lon_max": -42.8893
       }
     },
     "change6": {
@@ -567,6 +728,13 @@
       "hotspot_tier2_ground_m": 1500,
       "panorama_metadata": {
         "entry_yaw_deg": 176
+      },
+      "hotspot_context_source": "/images/hotspots/moon/change6/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -48.2341,
+        "lat_max": -35.0429,
+        "lon_min": -162.8105,
+        "lon_max": -145.1599
       }
     },
     "zhurong": {
@@ -578,7 +746,14 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/zhurong/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/zhurong/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 21.6852,
+        "lat_max": 28.4468,
+        "lon_min": 106.1927,
+        "lon_max": 113.6573
+      }
     },
     "chandrayaan3": {
       "hotspot_tier_max": 3,
@@ -615,7 +790,14 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/chandrayaan3/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 24576,
-      "hotspot_tier2_ground_m": 1738
+      "hotspot_tier2_ground_m": 1738,
+      "hotspot_context_source": "/images/hotspots/moon/chandrayaan3/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -75.9697,
+        "lat_max": -62.7785,
+        "lon_min": 13.5966,
+        "lon_max": 51.0434
+      }
     },
     "slim": {
       "hotspot_tier_max": 3,
@@ -626,7 +808,14 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/slim/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/slim/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 1000
+      "hotspot_tier2_ground_m": 1000,
+      "hotspot_context_source": "/images/hotspots/moon/slim/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -19.9116,
+        "lat_max": -6.7204,
+        "lon_min": 18.4732,
+        "lon_max": 32.0288
+      }
     },
     "beresheet": {
       "hotspot_tier_max": 3,
@@ -644,6 +833,13 @@
         "caption": "Beresheet crashed while landing, so no view from the surface exists. This is its last image, taken about 22 km above Mare Serenitatis before contact was lost.",
         "credit_team": "SpaceIL · Israel Aerospace Industries",
         "entry_yaw_deg": 230
+      },
+      "hotspot_context_source": "/images/hotspots/moon/beresheet/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 25.9984,
+        "lat_max": 39.1896,
+        "lon_min": 11.5195,
+        "lon_max": 27.1765
       }
     },
     "schiaparelli": {
@@ -656,7 +852,14 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/schiaparelli/tier2-ctx.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/schiaparelli/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -5.4508,
+        "lat_max": 1.3108,
+        "lon_min": -9.593,
+        "lon_max": -2.827
+      }
     },
     "beagle2": {
       "hotspot_tier_max": 2,
@@ -666,7 +869,14 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/beagle2/tier2-ctx.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_context_source": "/images/hotspots/mars/beagle2/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 8.1492,
+        "lat_max": 14.9108,
+        "lon_min": 86.9796,
+        "lon_max": 93.8804
+      }
     },
     "cape-canaveral-lc-36b": {
       "hotspot_model": "launchpad-generic",
@@ -677,12 +887,19 @@
       "hotspot_tier2_regional_ground_m": 16000,
       "location_uncertainty_m": 10,
       "region_bounds": {
-        "lat_min": 28.4671,
-        "lat_max": 28.4717,
-        "lon_min": -80.54732,
-        "lon_max": -80.54208
+        "lat_min": 28.4693,
+        "lat_max": 28.4739,
+        "lon_min": -80.54072,
+        "lon_max": -80.53548
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "cape-canaveral-slc-40": {
       "hotspot_model": "launchpad-generic",
@@ -698,7 +915,14 @@
         "lon_min": -80.57982,
         "lon_max": -80.57458
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "cape-canaveral-slc-41": {
       "hotspot_model": "launchpad-generic",
@@ -714,7 +938,14 @@
         "lon_min": -80.58562,
         "lon_max": -80.58038
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "lc-14": {
       "hotspot_model": "launchpad-generic",
@@ -730,7 +961,14 @@
         "lon_min": -80.54792,
         "lon_max": -80.54268
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "lc-34": {
       "hotspot_model": "launchpad-generic",
@@ -746,7 +984,14 @@
         "lon_min": -80.56402,
         "lon_max": -80.55878
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "lc-39a": {
       "hotspot_model": "launchpad-generic",
@@ -762,7 +1007,14 @@
         "lon_min": -80.60672,
         "lon_max": -80.60148
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "lc-39b": {
       "hotspot_model": "launchpad-generic",
@@ -778,7 +1030,14 @@
         "lon_min": -80.62342,
         "lon_max": -80.61818
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "lc-5": {
       "hotspot_model": "launchpad-generic",
@@ -794,7 +1053,14 @@
         "lon_min": -80.57542,
         "lon_max": -80.57018
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "starbase-orbital-a": {
       "hotspot_model": "launchpad-generic",
@@ -810,7 +1076,14 @@
         "lon_min": -97.15856,
         "lon_max": -97.15344
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/starbase-orbital-a/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 24.1984,
+        "lat_max": 27.7956,
+        "lon_min": -99.1571,
+        "lon_max": -95.1549
+      }
     },
     "vandenberg-slc-4e": {
       "hotspot_model": "launchpad-generic",
@@ -847,7 +1120,14 @@
         "lon_min": -120.62467,
         "lon_max": -120.59673
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/vandenberg-slc-4e/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 32.8334,
+        "lat_max": 36.4306,
+        "lon_min": -122.7967,
+        "lon_max": -118.4247
+      }
     },
     "kourou-ela-2": {
       "hotspot_model": "launchpad-generic",
@@ -863,7 +1143,14 @@
         "lon_min": -52.78755,
         "lon_max": -52.76445
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/kourou-ela-2/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 3.4334,
+        "lat_max": 7.0306,
+        "lon_min": -54.5822,
+        "lon_max": -50.9698
+      }
     },
     "kourou-ela-3": {
       "hotspot_model": "launchpad-generic",
@@ -879,7 +1166,14 @@
         "lon_min": -52.78055,
         "lon_max": -52.75745
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/kourou-ela-2/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 3.4334,
+        "lat_max": 7.0306,
+        "lon_min": -54.5822,
+        "lon_max": -50.9698
+      }
     },
     "kourou-ela-4": {
       "hotspot_model": "launchpad-generic",
@@ -895,7 +1189,14 @@
         "lon_min": -52.80225,
         "lon_max": -52.77915
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/kourou-ela-2/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 3.4334,
+        "lat_max": 7.0306,
+        "lon_min": -54.5822,
+        "lon_max": -50.9698
+      }
     },
     "tanegashima-yoshinobu": {
       "hotspot_model": "launchpad-generic",
@@ -911,7 +1212,14 @@
         "lon_min": 130.97283,
         "lon_max": 130.97817
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/tanegashima-yoshinobu/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 28.6021,
+        "lat_max": 32.1993,
+        "lon_min": 128.8901,
+        "lon_max": 133.0609
+      }
     },
     "baikonur-1-5": {
       "hotspot_model": "launchpad-generic",
@@ -948,7 +1256,14 @@
         "lon_min": 63.32547,
         "lon_max": 63.35853
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/baikonur-1-5/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 44.1214,
+        "lat_max": 47.7186,
+        "lon_min": 60.7565,
+        "lon_max": 65.9275
+      }
     },
     "baikonur-200": {
       "hotspot_model": "launchpad-generic",
@@ -964,7 +1279,14 @@
         "lon_min": 63.01344,
         "lon_max": 63.04656
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/baikonur-1-5/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 44.1214,
+        "lat_max": 47.7186,
+        "lon_min": 60.7565,
+        "lon_max": 65.9275
+      }
     },
     "baikonur-31-6": {
       "hotspot_model": "launchpad-generic",
@@ -1001,7 +1323,14 @@
         "lon_min": 63.54765,
         "lon_max": 63.58075
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/baikonur-1-5/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 44.1214,
+        "lat_max": 47.7186,
+        "lon_min": 60.7565,
+        "lon_max": 65.9275
+      }
     },
     "plesetsk-41-1": {
       "hotspot_model": "launchpad-generic",
@@ -1017,7 +1346,14 @@
         "lon_min": 40.42473,
         "lon_max": 40.47527
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/plesetsk-41-1/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 61.1314,
+        "lat_max": 64.7286,
+        "lon_min": 36.4976,
+        "lon_max": 44.4024
+      }
     },
     "plesetsk-43": {
       "hotspot_model": "launchpad-generic",
@@ -1033,7 +1369,14 @@
         "lon_min": 40.54974,
         "lon_max": 40.60026
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/plesetsk-41-1/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 61.1314,
+        "lat_max": 64.7286,
+        "lon_min": 36.4976,
+        "lon_max": 44.4024
+      }
     },
     "jiuquan-slc-43": {
       "hotspot_model": "launchpad-generic",
@@ -1070,7 +1413,14 @@
         "lon_min": 100.28337,
         "lon_max": 100.31383
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/jiuquan-slc-43/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 39.1617,
+        "lat_max": 42.7589,
+        "lon_min": 97.9168,
+        "lon_max": 102.6804
+      }
     },
     "taiyuan-lc-9": {
       "hotspot_model": "launchpad-generic",
@@ -1086,7 +1436,14 @@
         "lon_min": 111.59324,
         "lon_max": 111.62276
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/taiyuan-lc-9/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 37.0504,
+        "lat_max": 40.6476,
+        "lon_min": 109.2985,
+        "lon_max": 113.9175
+      }
     },
     "wenchang-lc-101": {
       "hotspot_model": "launchpad-generic",
@@ -1123,7 +1480,14 @@
         "lon_min": 110.93919,
         "lon_max": 110.96361
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/wenchang-lc-101/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 17.8161,
+        "lat_max": 21.4133,
+        "lon_min": 109.042,
+        "lon_max": 112.8608
+      }
     },
     "xichang-lc-2": {
       "hotspot_model": "launchpad-generic",
@@ -1134,12 +1498,19 @@
       "hotspot_tier2_regional_ground_m": 16000,
       "location_uncertainty_m": 10,
       "region_bounds": {
-        "lat_min": 28.2345,
-        "lat_max": 28.2575,
-        "lon_min": 102.01395,
-        "lon_max": 102.04005
+        "lat_min": 28.234,
+        "lat_max": 28.257,
+        "lon_min": 102.01365,
+        "lon_max": 102.03975
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/xichang-lc-2/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.4469,
+        "lat_max": 30.0441,
+        "lon_min": 99.9849,
+        "lon_max": 104.0685
+      }
     },
     "xichang-lc-3": {
       "hotspot_model": "launchpad-generic",
@@ -1150,12 +1521,19 @@
       "hotspot_tier2_regional_ground_m": 16000,
       "location_uncertainty_m": 10,
       "region_bounds": {
-        "lat_min": 28.2345,
-        "lat_max": 28.2575,
-        "lon_min": 102.01395,
-        "lon_max": 102.04005
+        "lat_min": 28.2355,
+        "lat_max": 28.2585,
+        "lon_min": 102.01605,
+        "lon_max": 102.04215
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/xichang-lc-2/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.4469,
+        "lat_max": 30.0441,
+        "lon_min": 99.9849,
+        "lon_max": 104.0685
+      }
     },
     "sriharikota-slp": {
       "hotspot_model": "launchpad-generic",
@@ -1192,7 +1570,14 @@
         "lon_min": 80.22356,
         "lon_max": 80.24724
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/sriharikota-slp/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 11.9375,
+        "lat_max": 15.5347,
+        "lon_min": 78.3838,
+        "lon_max": 82.087
+      }
     },
     "kourou-zlv": {
       "hotspot_model": "launchpad-generic",
@@ -1208,7 +1593,14 @@
         "lon_min": -52.78685,
         "lon_max": -52.76375
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/kourou-ela-2/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 3.4334,
+        "lat_max": 7.0306,
+        "lon_min": -54.5822,
+        "lon_max": -50.9698
+      }
     },
     "kourou-els": {
       "hotspot_model": "launchpad-generic",
@@ -1224,7 +1616,14 @@
         "lon_min": -52.84615,
         "lon_max": -52.82305
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/kourou-ela-2/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 3.4334,
+        "lat_max": 7.0306,
+        "lon_min": -54.5822,
+        "lon_max": -50.9698
+      }
     },
     "cape-canaveral-lc-17": {
       "hotspot_model": "launchpad-generic",
@@ -1240,7 +1639,14 @@
         "lon_min": -80.56872,
         "lon_max": -80.56348
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/cape-canaveral-lc-17/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 26.6481,
+        "lat_max": 30.2453,
+        "lon_min": -82.6117,
+        "lon_max": -78.5205
+      }
     },
     "wallops-lc-0": {
       "hotspot_model": "launchpad-generic",
@@ -1256,7 +1662,14 @@
         "lon_min": -75.49071,
         "lon_max": -75.48489
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/wallops-lc-0/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 36.0354,
+        "lat_max": 39.6326,
+        "lon_min": -77.7652,
+        "lon_max": -73.2104
+      }
     },
     "uchinoura": {
       "hotspot_model": "launchpad-generic",
@@ -1272,7 +1685,14 @@
         "lon_min": 131.07581,
         "lon_max": 131.08119
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/uchinoura/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 29.4537,
+        "lat_max": 33.0509,
+        "lon_min": 128.9746,
+        "lon_max": 133.1824
+      }
     },
     "baikonur-81": {
       "hotspot_model": "launchpad-generic",
@@ -1288,7 +1708,14 @@
         "lon_min": 62.96813,
         "lon_max": 63.00127
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/baikonur-1-5/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 44.1214,
+        "lat_max": 47.7186,
+        "lon_min": 60.7565,
+        "lon_max": 65.9275
+      }
     },
     "vostochny-1s": {
       "hotspot_model": "launchpad-generic",
@@ -1304,7 +1731,14 @@
         "lon_min": 128.31417,
         "lon_max": 128.35143
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/vostochny-1s/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 50.0842,
+        "lat_max": 53.6814,
+        "lon_min": 125.4189,
+        "lon_max": 131.2467
+      }
     },
     "wenchang-lc-201": {
       "hotspot_model": "launchpad-generic",
@@ -1320,7 +1754,14 @@
         "lon_min": 110.94349,
         "lon_max": 110.96791
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/wenchang-lc-101/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 17.8161,
+        "lat_max": 21.4133,
+        "lon_min": 109.042,
+        "lon_max": 112.8608
+      }
     },
     "rocket-lab-lc-1": {
       "hotspot_model": "launchpad-generic",
@@ -1336,7 +1777,14 @@
         "lon_min": 177.85035,
         "lon_max": 177.88005
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/rocket-lab-lc-1/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -41.0601,
+        "lat_max": -37.4629,
+        "lon_min": 175.5422,
+        "lon_max": 180.1882
+      }
     },
     "naro-space-center": {
       "hotspot_model": "launchpad-generic",
@@ -1352,7 +1800,14 @@
         "lon_min": 127.52106,
         "lon_max": 127.54894
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/naro-space-center/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 32.6333,
+        "lat_max": 36.2305,
+        "lon_min": 125.3543,
+        "lon_max": 129.7157
+      }
     },
     "sohae": {
       "hotspot_model": "launchpad-generic",
@@ -1368,7 +1823,14 @@
         "lon_min": 124.69026,
         "lon_max": 124.72014
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/sohae/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 37.8615,
+        "lat_max": 41.4587,
+        "lon_min": 122.3688,
+        "lon_max": 127.0416
+      }
     },
     "semnan-imam-khomeini": {
       "hotspot_model": "launchpad-generic",
@@ -1384,7 +1846,14 @@
         "lon_min": 53.90802,
         "lon_max": 53.93618
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/semnan-imam-khomeini/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 33.436,
+        "lat_max": 37.0332,
+        "lon_min": 51.72,
+        "lon_max": 56.1242
+      }
     },
     "palmachim": {
       "hotspot_model": "launchpad-generic",
@@ -1400,7 +1869,14 @@
         "lon_min": 34.66676,
         "lon_max": 34.69384
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/palmachim/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 30.0858,
+        "lat_max": 33.683,
+        "lon_min": 32.562,
+        "lon_max": 36.7986
+      }
     },
     "woomera": {
       "hotspot_model": "launchpad-generic",
@@ -1416,7 +1892,14 @@
         "lon_min": 136.46222,
         "lon_max": 136.48904
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/woomera/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -32.7704,
+        "lat_max": -29.1731,
+        "lon_min": 134.3779,
+        "lon_max": 138.5734
+      }
     },
     "hammaguir": {
       "hotspot_model": "launchpad-generic",
@@ -1432,7 +1915,14 @@
         "lon_min": -3.06728,
         "lon_max": -3.04052
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/hammaguir/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": 28.9795,
+        "lat_max": 32.5767,
+        "lon_min": -5.1474,
+        "lon_max": -0.9604
+      }
     },
     "san-marco": {
       "hotspot_model": "launchpad-generic",
@@ -1448,7 +1938,14 @@
         "lon_min": 40.20099,
         "lon_max": 40.22401
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/san-marco/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -4.7369,
+        "lat_max": -1.1397,
+        "lon_min": 38.4115,
+        "lon_max": 42.0135
+      }
     },
     "alcantara": {
       "hotspot_model": "launchpad-generic",
@@ -1464,7 +1961,14 @@
         "lon_min": -44.37931,
         "lon_max": -44.35629
       },
-      "region_kind": "roi_quad"
+      "region_kind": "roi_quad",
+      "hotspot_context_source": "/images/hotspots/earth/alcantara/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -4.1163,
+        "lat_max": -0.5191,
+        "lon_min": -46.1679,
+        "lon_max": -42.5677
+      }
     }
   }
 }

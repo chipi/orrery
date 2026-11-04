@@ -31,7 +31,9 @@ describe('surface hotspot tiles (#482)', () => {
     const dir = 'static/data/mars-traverses';
     const paths = new Set<string>();
     for (const f of readdirSync(dir).filter((n) => n.endsWith('.route-patches.json')))
-      for (const m of readFileSync(`${dir}/${f}`, 'utf8').matchAll(/"(\/images\/[^"]+\.jpg)"/g))
+      for (const m of readFileSync(`${dir}/${f}`, 'utf8').matchAll(
+        /"(\/images\/[^"]+\.(?:jpg|webp))"/g,
+      ))
         paths.add(m[1]);
     expect(paths.size).toBeGreaterThan(100);
     const missing = [...paths].filter(

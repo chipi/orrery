@@ -11,6 +11,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
+  import { parseInline } from '$lib/science-inline';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetOrigin } from '$lib/asset-url';
@@ -21,29 +22,6 @@
   let { data }: Props = $props();
 
   let landing = $derived(data.landing);
-
-  /** Render an inline link from `[text](target)` syntax to an `<a>` element.
-   * Targets starting with `app:/` map to `${base}/<route>`; otherwise treated
-   * as `${base}/science/<tab>/<section>`. */
-  type Segment = { kind: 'text'; value: string } | { kind: 'link'; text: string; href: string };
-  function parseInline(para: string): Segment[] {
-    const segs: Segment[] = [];
-    const re = /\[([^\]]+)\]\(([^)]+)\)/g;
-    let last = 0;
-    let match: RegExpExecArray | null;
-    while ((match = re.exec(para)) !== null) {
-      if (match.index > last) segs.push({ kind: 'text', value: para.slice(last, match.index) });
-      const text = match[1];
-      const target = match[2];
-      const href = target.startsWith('app:/')
-        ? localHref(target.slice(4))
-        : localHref(`/science/${target}`);
-      segs.push({ kind: 'link', text, href });
-      last = match.index + match[0].length;
-    }
-    if (last < para.length) segs.push({ kind: 'text', value: para.slice(last) });
-    return segs;
-  }
 </script>
 
 <svelte:head>

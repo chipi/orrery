@@ -16,6 +16,7 @@ import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import * as m from '$lib/paraglide/messages';
 import { getLocale } from '$lib/paraglide/runtime';
 import { formatNumber } from '$lib/format';
+import { ladderRungUrl } from '$lib/image-srcset';
 import type { LocaleCode } from '$lib/locale';
 import { disposeObject3d } from '$lib/three/dispose-object3d';
 import { createMarkerHalo } from '$lib/three/marker-halo';
@@ -218,6 +219,8 @@ export interface SurfaceTraversesContext {
   routeViewCenters: Map<string, { lat: number; lon: number }>;
   routeFrameCamR: Map<string, number>;
   routePatchBuilders: Map<string, () => void>;
+  /** Largest route-tile ladder rung to load (quality tier routeTileMaxPx). */
+  routeTileMaxPx?: number;
 }
 
 export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
@@ -603,7 +606,7 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
             const wrap = new THREE.Group();
             placeOnSphereTangent(wrap, mUnit, rDet);
             const patchGroup = buildHotspotSurfacePatch({
-              textureUrl: rp.image,
+              textureUrl: ladderRungUrl(rp.image, rp.rungs, ctx.routeTileMaxPx ?? 1024),
               accentColor: color,
               siteId: tr.rover_id,
               orientationDeg: azimuthToAlignDir(pathDirAt(rp.lat, rp.lon), wrap.quaternion),

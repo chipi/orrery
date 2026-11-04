@@ -157,6 +157,11 @@ async function main() {
         // unchanged; just lighter pixels). Read to a buffer first since
         // sharp can't read+write the same path.
         const full = await fs.readFile(outputPath);
+        // Keep the full-resolution crop as the master (Git LFS, masters/ tree),
+        // like every other site image; static/ gets the display size.
+        const masterPath = path.join('masters', path.relative('static/images', outputPath));
+        await fs.mkdir(path.dirname(masterPath), { recursive: true });
+        await fs.writeFile(masterPath, full);
         await fs.writeFile(
           outputPath,
           await sharp(full)
@@ -205,10 +210,7 @@ async function main() {
     patches = prev.patches.map((p) => fresh.get(p.id) ?? p);
     for (const m of manifest) if (!prev.patches.some((p) => p.id === m.id)) patches.push(m);
   }
-  await fs.writeFile(
-    manifestPath,
-    JSON.stringify({ rover_id: rover, patches }, null, 2) + '\n',
-  );
+  await fs.writeFile(manifestPath, JSON.stringify({ rover_id: rover, patches }, null, 2) + '\n');
   console.log(`\n${manifest.length}/${samples.length} crops written → ${manifestPath}`);
 
   // Self-credit (#360 / credits): upsert an image-provenance entry for each

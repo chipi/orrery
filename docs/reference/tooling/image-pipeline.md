@@ -124,7 +124,7 @@ Served display images are WebP, derived from the git-LFS `masters/` store — sm
 ### `build-display-ladder.mjs` — WebP responsive ladder **(STANDING)**
 
 - **Command** `node scripts/vision/build-display-ladder.mjs [--force]`
-- **What** Walks `masters/**`, emits per image `static/images/<stem>.webp` (base ≤3072/q80) + `NN-<w>.webp` rungs (1280/2048/3072) + rewrites `static/data/image-ladder.json`. Excludes `hotspots/` + `posters/`.
+- **What** Walks `masters/**`, emits per image `static/images/<stem>.webp` (base ≤3072/q80) + `NN-<w>.webp` rungs (1280/2048/3072) + rewrites `static/data/image-ladder.json`. Excludes `hotspots/` + `posters/` — except rover-route tiles (`hotspots/<body>/<site>/traverse/`: rungs 512/1024/2048, the scene picks one by quality tier; RFC-030 D5 amendment). For route tiles: re-cut (the fetchers write the master), `--only hotspots/<body>/<site>/traverse`, remove the served `.jpg`, then `scripts/hotspots/phash-route-tiles.ts` + `build-credit-thumbs.mjs` + `build-offline-manifest.mjs`.
 - **When** After adding/replacing a master, or a bulk re-encode.
 - **Gotchas** Refuses to run against unsmudged LFS stubs. Rewrites the WHOLE `image-ladder.json` from a full masters walk — all masters must be smudged, or do a targeted regen that merges into the existing manifest.
 - **State** STANDING.

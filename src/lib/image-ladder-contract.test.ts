@@ -31,6 +31,12 @@ const manifest: LadderManifest = JSON.parse(
   readFileSync(path.join(STATIC, 'data', 'image-ladder.json'), 'utf8'),
 );
 const entries = Object.entries(manifest);
+// Rover-route tiles (RFC-030 D5 amendment) — the one laddered hotspot path.
+const TILE = /^images\/hotspots\/[^/]+\/[^/]+\/traverse\//;
+// Context crops (surface-context.ts, same amendment): one true-scale crop per
+// site, laddered 1024 / 2048 / 4096 — a texture picked at routeTileMaxPx × 2.
+const CONTEXT = /^images\/hotspots\/[^/]+\/[^/]+\/context(?:-\d+)?(?:\.webp)?$/;
+const CONTEXT_TOP = 4096;
 
 /** `/images/<stem>` (+ optional suffix) → absolute path under `static/`. */
 const onDisk = (imagePath: string) => path.join(STATIC, imagePath.replace(/^\//, ''));
@@ -67,7 +73,7 @@ describe('image-ladder manifest ↔ disk (producer output integrity)', () => {
       }
       const ascending = widths.every((w, i) => i === 0 || w > widths[i - 1]);
       if (!ascending) bad.push(`${key}: widths not strictly ascending [${widths}]`);
-      if (widths[widths.length - 1] > MAX_TOP) {
+      if (widths[widths.length - 1] > (CONTEXT.test(key.slice(1)) ? CONTEXT_TOP : MAX_TOP)) {
         bad.push(`${key}: base width ${widths[widths.length - 1]} exceeds ${MAX_TOP}`);
       }
     }
@@ -146,11 +152,56 @@ describe('posters + hotspots stay full-res JPEG, excluded from the ladder', () =
 
   it('hotspot zoom tiers are JPEG and excluded from the ladder', () => {
     const hotspotJpg = imageFiles(
-      (rel) => rel.startsWith('images/hotspots/') && rel.endsWith('.jpg'),
+      (rel) => rel.startsWith('images/hotspots/') && rel.endsWith('.jpg') && !TILE.test(rel),
     );
-    const hotspotKeys = entries.filter(([k]) => k.startsWith('/images/hotspots/'));
+    const hotspotKeys = entries.filter(
+      ([k]) =>
+        k.startsWith('/images/hotspots/') && !TILE.test(k.slice(1)) && !CONTEXT.test(k.slice(1)),
+    );
     expect(hotspotJpg.length).toBeGreaterThan(0);
     expect(hotspotKeys.map(([k]) => k)).toEqual([]);
+  });
+
+  // RFC-030 D5 amendment (2026-11-04): rover-route tiles ARE laddered (512 /
+  // 1024 / 2048 WebP, picked per quality tier as textures, D4) and ship WebP-only.
+  it('route tiles are laddered WebP: no served JPEG, every tile in the manifest', () => {
+    const tileJpg = imageFiles((rel) => TILE.test(rel) && rel.endsWith('.jpg'));
+    expect(tileJpg).toEqual([]);
+    const tileBases = imageFiles(
+      (rel) => TILE.test(rel) && rel.endsWith('.webp') && !/-\d+\.webp$/.test(rel),
+    );
+    expect(tileBases.length).toBeGreaterThan(0);
+    const missing = tileBases.filter((rel) => !manifest[`/${rel.replace(/\.webp$/, '')}`]);
+    expect(missing).toEqual([]);
+    for (const [k, widths] of entries.filter(([k]) => TILE.test(k.slice(1)))) {
+      expect(Math.max(...widths), k).toBeLessThanOrEqual(2048);
+    }
+  });
+});
+
+describe('context crops (surface-context.ts)', () => {
+  it('every hotspot_context_source is a laddered WebP on disk, at most 4096 wide', () => {
+    const hs = JSON.parse(
+      readFileSync(path.join(STATIC, 'data', 'surface-hotspots.json'), 'utf8'),
+    ) as {
+      entries: Record<string, { hotspot_context_source?: string; hotspot_context_bounds?: object }>;
+    };
+    const sources = Object.values(hs.entries)
+      .filter((e) => e.hotspot_context_source)
+      .map((e) => e.hotspot_context_source as string);
+    expect(sources.length).toBeGreaterThan(0);
+    const bad: string[] = [];
+    for (const [id, e] of Object.entries(hs.entries)) {
+      if (!e.hotspot_context_source) continue;
+      const src = e.hotspot_context_source;
+      if (!e.hotspot_context_bounds) bad.push(`${id}: source without bounds`);
+      if (!CONTEXT.test(src.slice(1))) bad.push(`${id}: ${src} is not a context path`);
+      if (!existsSync(onDisk(src))) bad.push(`${id}: ${src} missing on disk`);
+      const widths = manifest[src.replace(/\.webp$/, '')];
+      if (!widths) bad.push(`${id}: ${src} not in the ladder`);
+      else if (Math.max(...widths) > CONTEXT_TOP) bad.push(`${id}: rung above ${CONTEXT_TOP}`);
+    }
+    expect(bad).toEqual([]);
   });
 });
 

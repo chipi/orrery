@@ -189,6 +189,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'CC-BY-NC-SA-4.0',
+    display: 'Creative Commons Attribution-NonCommercial-ShareAlike 4.0',
+    url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+    rationale:
+      'Reuse with attribution, non-commercial only; derivatives under the same licence. Orrery is a non-commercial, open-source project (operator, 2026-11-04), so it qualifies. Used for the EOX Sentinel-2 cloudless mosaic behind the /earth launch-pad context, regional and fallback-detail tiers; the crops made from it carry this licence in their provenance.',
+    requires_attribution: true,
+    share_alike: true,
+  },
+  {
     short: 'BSD-3-Clause',
     display: 'BSD 3-Clause License',
     url: 'https://opensource.org/license/bsd-3-clause',

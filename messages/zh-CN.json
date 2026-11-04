@@ -3527,6 +3527,7 @@
   "surface_altitude": "高度 {value}",
   "surface_layer_regional": "区域视图",
   "surface_tier_scale_note": "在此缩放级别下，图像块被画得比实际更大，以便看清。继续放大可进入真实比例的平面视图。",
+  "surface_how_this_works": "工作原理",
   "surface_layer_detail": "细节视图",
   "surface_res_crop": "~{res}（{crop}² 裁切 · 约 {km}）",
   "surface_res_window": "~{res}（{window} 范围）",

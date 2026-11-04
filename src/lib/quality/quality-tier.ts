@@ -97,6 +97,10 @@ export interface QualityConfig {
    *  per-frame screen-space math is the kind of thing the runtime
    *  adaptive layer would notice. */
   lensFlareEnabled: boolean;
+  /** Largest route-tile ladder rung (px) the surface scenes load as a texture
+   *  (RFC-030 D4): the rover-route HiRISE / LROC tiles come in 512 / 1024 /
+   *  2048 WebP rungs and each tier takes the largest within this cap. */
+  routeTileMaxPx: number;
 }
 
 const CONFIGS: Record<QualityTier, QualityConfig> = {
@@ -121,6 +125,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     skydomeEnabled: false,
     iblEnabled: false,
     lensFlareEnabled: false,
+    routeTileMaxPx: 512,
   },
   low: {
     tier: 'low',
@@ -143,6 +148,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     skydomeEnabled: false,
     iblEnabled: false,
     lensFlareEnabled: false,
+    routeTileMaxPx: 512,
   },
   medium: {
     tier: 'medium',
@@ -165,6 +171,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     skydomeEnabled: false,
     iblEnabled: false,
     lensFlareEnabled: false,
+    routeTileMaxPx: 1024,
   },
   high: {
     tier: 'high',
@@ -187,6 +194,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     skydomeEnabled: true,
     iblEnabled: true,
     lensFlareEnabled: false,
+    routeTileMaxPx: 2048,
   },
   cinematic: {
     tier: 'cinematic',
@@ -209,6 +217,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     skydomeEnabled: true,
     iblEnabled: true,
     lensFlareEnabled: true,
+    routeTileMaxPx: 2048,
   },
 };
 

@@ -169,6 +169,19 @@ export interface SurfaceSite {
    */
   hotspot_tier2_regional_ground_m?: number;
   /**
+   * Context layer (surface-context.ts): a true-scale ~150–200 m/px crop of a
+   * global mosaic around the site, draped on the globe between the globe
+   * texture and the stylised regional patch. Path of the served image and the
+   * lat/lon box it covers (simple-cylindrical, same as the globe texture).
+   */
+  hotspot_context_source?: string;
+  hotspot_context_bounds?: {
+    lat_min: number;
+    lat_max: number;
+    lon_min: number;
+    lon_max: number;
+  };
+  /**
    * Operator override for the auto-pick HiRISE product. When set,
    * the fetch pipeline skips the catalog candidate ranking and
    * pulls this specific product ID. Also surfaced in the info card
@@ -380,4 +393,9 @@ export interface RouteHirisePatch {
   resolution_m_per_px: number;
   /** True ground width (m) of the crop — drives literal co-scale. */
   ground_m: number;
+  /**
+   * WebP ladder widths for this tile (image-ladder.json), filled at load. The
+   * scene loads the largest rung within the quality tier's routeTileMaxPx.
+   */
+  rungs?: number[];
 }

@@ -459,10 +459,10 @@
     "lat": -4.59,
     "lon": 137.44,
     "region_bounds": {
-      "lat_min": -4.7,
-      "lat_max": -4.5,
-      "lon_min": 137.35,
-      "lon_max": 137.55
+      "lat_min": -4.85,
+      "lat_max": -4.57,
+      "lon_min": 137.33,
+      "lon_max": 137.47
     },
     "region_kind": "traverse_bbox",
     "crewed": false,
@@ -588,10 +588,10 @@
     "lat": 18.44,
     "lon": 77.45,
     "region_bounds": {
-      "lat_min": 18.3,
-      "lat_max": 18.55,
-      "lon_min": 77.3,
-      "lon_max": 77.6
+      "lat_min": 18.4,
+      "lat_max": 18.52,
+      "lon_min": 77.2,
+      "lon_max": 77.48
     },
     "region_kind": "traverse_bbox",
     "crewed": false,

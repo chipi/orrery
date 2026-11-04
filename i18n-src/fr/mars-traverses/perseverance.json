@@ -1,23 +1,23 @@
 {
   "stops": [
     {
-      "id": "sol-38",
+      "id": "sol-58",
       "label": "Vol 1 d'Ingenuity"
     },
     {
-      "id": "sol-200",
-      "label": "Échantillon 1 — Rochette"
+      "id": "sol-190",
+      "label": "Première carotte de roche — Rochette"
     },
     {
-      "id": "sol-421",
+      "id": "sol-653",
       "label": "Dépôt d'échantillons de Three Forks"
     },
     {
-      "id": "sol-750",
+      "id": "sol-440",
       "label": "Hawksbill Gap"
     },
     {
-      "id": "sol-1000",
+      "id": "sol-915",
       "label": "Traversée de l'unité Margin"
     }
   ]

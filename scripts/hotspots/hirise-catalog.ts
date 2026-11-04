@@ -122,10 +122,21 @@ export async function ensureHiriseIndex(opts: { cacheRefreshDays?: number } = {}
   if (!res.ok || !res.body) {
     throw new Error(`Failed to download HiRISE index: HTTP ${res.status}`);
   }
+  // Write to .tmp and rename: a run stopped mid-download used to leave a
+  // truncated index at the final path, which later runs trusted — 20 MB of
+  // 164 MB, images only up to 2010, so newer coverage looked absent
+  // (2026-11-04, Perseverance sol-915 "no covering product").
+  const tmpPath = `${INDEX_CACHE_PATH}.tmp`;
   await pipeline(
     Readable.fromWeb(res.body as unknown as import('node:stream/web').ReadableStream),
-    createWriteStream(INDEX_CACHE_PATH),
+    createWriteStream(tmpPath),
   );
+  const expected = Number(res.headers.get('content-length') ?? 0);
+  const { size } = await fs.stat(tmpPath);
+  if (expected && size !== expected) {
+    throw new Error(`HiRISE index download incomplete: ${size} of ${expected} bytes`);
+  }
+  await fs.rename(tmpPath, INDEX_CACHE_PATH);
   return INDEX_CACHE_PATH;
 }
 

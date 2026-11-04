@@ -91,6 +91,19 @@ periápside, Operation Paperclip), which a term check finds across the whole loc
   the radiation belt instead of the asteroid belt; hi "logically" for logistically. All fixed.
 - **Essays** (seed 1618, 8 per locale in ja, ko, pt-BR, hi — the weakest so far): 32 read, 0
   errors; tools: no changed number, no dropped sentence. Stop rule met — no new error class.
+- **English left in short labels** (title sample, ja / ko seed 5): site status lines
+  (`mission_type`) kept "Active Orbiter", "Mission Complete", "Rover" in ja ko hi ar ru — 27
+  set to each locale's own forms (ar "مدار نشط", an active *orbit*, now "مركبة مدارية نشطة"),
+  plus four labels (ja DMO, ja / hi Chang'e 4 "basin", ru "холм холм"). New
+  `english-in-labels.mjs`: the 7–8 hits left per locale are surface feature names kept in
+  English everywhere (Home Plate, Three Forks, Genesis Rock).
+- **Doubled words** (one-off grep, all locales): ~370 hits, almost all legitimate (de "die die",
+  fr "vous vous", es / it "primer primer plano" = first close-up, it "via via", ru "что что-то").
+  4 real, fixed: es "del del", pt-BR "plano plano" and "mais mais", sr-Cyrl "првих првих" (the
+  English pun "first firsts" → "првих подвига"). Too low a yield for a tool. **The English has
+  one:** `science/life-in-space/pre-flight-training` "Houston-Cologne-Tsukuba-Tsukuba", copied
+  into the translations. The same article later lists the four training sites as Houston, Star City,
+  Cologne, Tsukuba; the fix is an English fact edit in 14 locales, so it waits for a go.
 - **Not a pattern:** it "SSI" (288 uses, the site's form), pt-BR "EEI" (294); de / es / nl
   "Periapsis" is the native technical term there.
 

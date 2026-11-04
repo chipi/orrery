@@ -245,7 +245,7 @@
   }
 
   // ─── Mobile nav drawer ─────────────────────────────────────────
-  // On viewports ≤640px the horizontal .center scroller can't fit
+  // On viewports ≤1219px (see the media rule) the inline .center row can't fit
   // all 12 nav links and the locale-picker + 2 toggles next to it,
   // so a hamburger toggle exposes the full list as a vertical drawer.
   let mobileMenuOpen = $state(false);
@@ -1319,12 +1319,16 @@
   }
 
   /* Surface the full menu via the hamburger drawer instead of the inline
-     strip when it can't fit / doesn't belong: narrow desktop windows (< 640)
-     OR any touch device (a landscape phone is wide but still wants the touch
-     menu, and its inline strip was a cramped horizontal scroller). Keyed on
-     capability, not width, so the footer-in-drawer section reaches every
-     touch size (0.7.2 model). */
-  @media (max-width: 640px), (pointer: coarse) {
+     strip when it can't fit / doesn't belong: desktop windows too narrow for
+     the whole bar OR any touch device (a landscape phone is wide but still
+     wants the touch menu, and its inline strip was a cramped horizontal
+     scroller). Keyed on capability, not width, so the footer-in-drawer section
+     reaches every touch size (0.7.2 model).
+     Width: the inline bar (brand + links + the seven-control cluster) needs
+     1210 px in the widest locale (ru; fr / es 1165, en 1038 — measured
+     2026-11-04). The old 640 px break left 641–1209 px with the cluster running
+     off the right edge (page scrollWidth up to 1032 at 760 px). */
+  @media (max-width: 1219px), (pointer: coarse) {
     .center {
       display: none;
     }
@@ -1401,6 +1405,11 @@
          hiding the nav under the iOS status bar). */
       padding: var(--safe-area-inset-top, env(safe-area-inset-top)) 6px 0;
     }
+  }
+
+  /* Up to 600 px the full seven-control cluster + the hamburger (≈591 px with the
+     brand, measured 2026-11-04) does not fit, so three controls move to the drawer. */
+  @media (max-width: 600px) {
     /* Keep every target at 44 px on a 375 px bar by moving the locale picker +
        high-contrast into the hamburger drawer on phones (see .drawer-controls).
        The lens toggle stays as a primary feature; the unified settings ⚙ stays

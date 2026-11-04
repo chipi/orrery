@@ -100,8 +100,12 @@ function buildSamples(tr: RoverTraverse, intervalM: number): Sample[] {
 
 async function main() {
   const args = process.argv.slice(2);
-  const rover = args[args.indexOf('--rover') + 1] ?? 'curiosity';
-  const intervalKm = parseFloat(args[args.indexOf('--interval-km') + 1] ?? '2');
+  // indexOf −1 + 1 would read args[0] (`--rover`) and parse to NaN — only the
+  // stops got sampled. Absent flag → default.
+  const flag = (name: string): string | undefined =>
+    args.includes(name) ? args[args.indexOf(name) + 1] : undefined;
+  const rover = flag('--rover') ?? 'curiosity';
+  const intervalKm = parseFloat(flag('--interval-km') ?? '2');
   const intervalM = intervalKm * 1000;
 
   const trPath = path.join('static/data/mars-traverses', `${rover}.json`);

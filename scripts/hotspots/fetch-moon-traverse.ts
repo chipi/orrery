@@ -208,25 +208,33 @@ async function cropFromOde(lat: number, lon: number, outputPath: string): Promis
     if (prods.length >= 12) break;
   }
   for (const p of prods.slice(0, 12)) {
-    try {
-      const crop = await cropRemoteRasterToLatLon({
-        localRasterPath: `/vsicurl/${p.imgUrl}`,
-        targetLat: lat,
-        targetLon: lon,
-        outputPath,
-        cropSize: NAC_SDP_CROP_PX,
-        jpegQuality: 92,
-        bandIndex: 1,
-      });
-      await normalizeInPlace(outputPath);
-      return {
-        productId: p.pdsid,
-        resolutionMPerPx: crop.resolutionMPerPx,
-        sourceUrl: p.imgUrl,
-        groundM: Math.round(NAC_SDP_CROP_PX * crop.resolutionMPerPx),
-      };
-    } catch (err) {
-      if (!(err instanceof CropError)) throw err;
+    // Download the IMG once into the raster cache (sourceUrl) rather than
+    // reading it range by range over /vsicurl/: the range reads drew HTTP 429
+    // from ODE and a dropped range ended the whole run (Apollo 16, 2026-11-04).
+    // A failed product is retried, then the next one is tried.
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const crop = await cropRemoteRasterToLatLon({
+          sourceUrl: p.imgUrl,
+          targetLat: lat,
+          targetLon: lon,
+          outputPath,
+          cropSize: NAC_SDP_CROP_PX,
+          jpegQuality: 92,
+          bandIndex: 1,
+        });
+        await normalizeInPlace(outputPath);
+        return {
+          productId: p.pdsid,
+          resolutionMPerPx: crop.resolutionMPerPx,
+          sourceUrl: p.imgUrl,
+          groundM: Math.round(NAC_SDP_CROP_PX * crop.resolutionMPerPx),
+        };
+      } catch (err) {
+        if (err instanceof CropError) break;
+        console.warn(`    read failed (${p.pdsid}, attempt ${attempt}/3): ${(err as Error).message}`);
+        await new Promise((r) => setTimeout(r, 5000 * attempt));
+      }
     }
   }
   return null;

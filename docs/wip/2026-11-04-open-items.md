@@ -50,6 +50,20 @@ the main session, by hand, spending as few tokens as possible — no subagent fa
 operator asks. One small cell per round; each round ends with a measurement, and what it taught
 becomes a tool or a check before the next round:
 
+**Measure first (operator, 2026-11-04).** Before any full read, a random sample per locale read
+by hand against the English (`sample-pair` seeds 53 / 9001, 120–420-character prose fields):
+
+| Locale | Read | OK | MINOR | BROKEN | Notes |
+| --- | --- | --- | --- | --- | --- |
+| pt-BR science | 39 | 29 | 8 | 2 (fixed) | "quintal de 20 cm" for a backyard telescope; "nobody has been observed"; AU not UA, periapsis, Operation Paperclip left English |
+| es science | 20 | 19 | 1 | 0 | reads as edited text |
+| de science | 20 | 18 | 2 | 0 | du and Sie mixed (317 du-forms, 24 files with both) |
+
+So far the unread locales are far better than ru / zh-CN / fr were before their full reads
+(12–19% BROKEN). Full reads are not justified by this; targeted fixes are: German register
+(du or Sie — operator to decide, like ja/ko plain register), Portuguese terminology (UA,
+periápside), and the remaining locales measured the same way (nl, it, ja, ko, hi, ar, sr-Cyrl).
+
 1. **Science articles in 10 locales** (de, nl, es, it, pt-BR, ja, ko, hi, ar, sr-Cyrl), about
    14,330 fields. Full reads of ru, zh-CN and fr found 19%, 12% and 16% BROKEN — two to three
    times what samples showed. Start with **pt-BR**: 7 of 8 sampled science strings MINOR or

@@ -24,6 +24,10 @@
  *   tier_2_published is reserved for direct ingest from JPL Horizons /
  *   ESA SPICE state-vector tables.
  *
+ * The cruise is the Lambert conic Earth → target in transit_days (see below).
+ * Direct transfers only: a mission with flybys keeps its hand-pinned path —
+ * this would replace it with one Earth → target arc.
+ *
  * Idempotent: re-running on the same mission produces identical
  * waypoints (subject to JS number serialization).
  */
@@ -35,6 +39,8 @@ import {
   type Vec3Au,
 } from '../../src/lib/interplanetary-geometry.ts';
 import type { DestinationId } from '../../src/lib/physics/transfer/lambert-grid.constants.ts';
+import { earthPos, destinationPos } from '../../src/lib/physics/transfer/mission-arc.ts';
+import { lambertLeg } from '../lib/conic-leg.ts';
 
 const TARGET_WAYPOINTS = 100;
 
@@ -92,13 +98,43 @@ const depDaySim = json.departure_date
 
 const isReturnTrip = false; // Mars / outer-system missions are predominantly one-way today
 
-// Build the analytic Tier 1 trajectory.
-const trajectory = buildInterplanetaryTrajectory(flight.interplanetary_profile, {
+// Build the analytic Tier 1 trajectory. Without the existing waypoints: given
+// them, the builder returns them unchanged and a re-run only resampled the old
+// path (MMX's moved launch date never reached its cruise, 2026-11-04).
+const { waypoints_helio_au: _old, ...analyticProfile } = flight.interplanetary_profile;
+void _old;
+const trajectory = buildInterplanetaryTrajectory(analyticProfile, {
   dep_day_sim: depDaySim,
   transit_days: transitDays,
   is_return_trip: isReturnTrip,
   arrival_vinf_kms: flight.arrival?.v_infinity_km_s ?? null,
 });
+
+// The builder's cruise is an endpoint-pinned ellipse with a = (r1 + r2) / 2 that
+// ignores the time of flight; on long transfer angles it swung inside Earth's
+// orbit (Mangalyaan to 0.48 AU). Replace it with the conic that flies Earth →
+// target in exactly transit_days (Lambert, scripts/lib/conic-leg.ts), sampled
+// evenly in time; keep the estimate only where no single-revolution conic fits.
+// The conic starts at the injection burn: a craft that waits in Earth orbit
+// first (Mangalyaan, 25 days of perigee raising) rides with Earth until then.
+const arrivalBody = (analyticProfile.arrival_body ?? 'mars') as DestinationId;
+const injectionMet = Math.max(
+  0,
+  flight.events?.find((e) => e.type === 'tli_or_tmi')?.met_days ?? 0,
+);
+const r1 = earthPos(depDaySim + injectionMet);
+const r2 = destinationPos(depDaySim + transitDays, arrivalBody);
+const leg = lambertLeg(r1, r2, transitDays - injectionMet);
+const cruise = trajectory.phases.find((ph) => ph.type === 'helio_cruise');
+if (leg && cruise) {
+  const n = 128;
+  cruise.points = Array.from({ length: n + 1 }, (_, i) => {
+    const t = (transitDays * i) / n;
+    const p = t < injectionMet ? earthPos(depDaySim + t) : leg(t - injectionMet);
+    return { x: p.x, y: 0, z: p.z };
+  });
+}
+console.log(`${file}: cruise ${leg ? 'Lambert conic' : 'ESTIMATE (no single-revolution conic)'}`);
 
 // Flatten phases into a single (met, point) timeline.
 const timeline: Array<{ met: number; pt: Vec3Au }> = [];

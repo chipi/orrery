@@ -10,7 +10,7 @@
 // --gate exits 1 when any unreviewed miss is left.
 import fs from 'node:fs';
 import path from 'node:path';
-import { enPattern, keepKey, locPattern, textHash } from './term-match.mjs';
+import { enPattern, keepKey, locPattern, senseSkipped, textHash } from './term-match.mjs';
 
 const arg = (name, dflt) => {
   const a = process.argv.find((x) => x.startsWith(`--${name}=`));
@@ -95,6 +95,7 @@ for (const term of terms) {
       ok = 0,
       open = 0;
     for (const [rel, enLeaves] of EN) {
+      if (senseSkipped(entry, rel)) continue;
       const ll = locLeaves(loc, rel);
       if (!ll) continue;
       for (const [key, en] of enLeaves) {

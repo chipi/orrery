@@ -58,8 +58,18 @@ misses → 0 unreviewed, 66 real errors fixed, all by hand in one session.
    `{loc, term, find, replace}` in `finds.json`; `term-finds.mjs` → `term-apply --dry` →
    apply → `term-apply-check`. Natural omissions and other senses become keeps with one
    reason per term.
-4. Definitions in 14 locales by hand (`add-definitions.mjs`), `build-glossary --check`, the
-   two tests, `term-drift --gate`.
+4. **Widen check for the new terms.** `term-widen-check` needs a baseline that has the
+   terms: restore the previous glossary, run the add-terms script, save that as the old
+   file, restore the current one, then `term-widen-check <old> --out=widen.json` and read
+   every risky group in context (a bare verb, a generic noun, English). On chunk 1 it found a
+   too-wide ar verb stem («تدور حول» matched "moons that orbit") hiding one more مدار error,
+   and English «lander» accepted in pt-BR.
+5. Definitions in 14 locales by hand (`add-definitions.mjs`), `build-glossary` and **look at
+   `/science/glossary`** (the "used on" list showed Buran first for orbiter), the two tests,
+   `term-drift --gate`.
+6. A word with another sense throughout some pages (the Shuttle and Buran "orbiter") gets
+   `_en_skip` (path prefixes): those fields are not checked and not counted as "used on".
+   Keep one reason per kept field, not one per term.
 
 Error classes chunk 1 found (look for them first next time): a near word for the craft (ar
 مدار "orbit" and مهبط "landing site", pt-BR «pouso» "landing"), a loanword from another

@@ -24,6 +24,10 @@ export function enRegex(term, entry, flags = 'i') {
     : new RegExp(`\\b${esc}(?:s|es|ed|ing)?\\b`, flags);
 }
 
+/** `_en_skip`: overlay path prefixes where the English word has another sense throughout
+ *  ("orbiter" on the Shuttle and Buran pages): not checked, not counted as "used on". */
+export const senseSkipped = (entry, rel) => (entry._en_skip ?? []).some((p) => rel.startsWith(p));
+
 export function enPattern(term, entry) {
   const re = enRegex(term, entry);
   return { test: (s) => isText(s) && re.test(prose(s)) };

@@ -144,7 +144,12 @@ only if the site renders them inconsistently).
   widening stems, then all read: 66 real errors fixed in 10 locales (ar مدار "orbit" and مهبط
   "landing site" for the craft, pt-BR «pouso» and English «Lunar Module» for any lander, it
   «eclusa» / «portello stagno», pt-BR «ecluses», nl «Saturnusbaan», de «Spacewalk», garbled
-  ko / ar taglines), 119 keeps. `term-drift --gate`: unreviewed misses 0. Definitions in 14
+  ko / ar taglines), 119 keeps. `term-drift --gate`: unreviewed misses 0.
+  Follow-up checks the same day: the widen check against the initial entries (589 fields read
+  by group in context) found a too-wide ar verb stem hiding one more مدار error and English
+  «lander» in 6 pt-BR fields — fixed (7 edits); `/science/glossary` viewed in en / ar / sr —
+  orbiter's "used on" led with Buran (Shuttle sense), fixed with `_en_skip` (7 dead keeps
+  removed); keeps now carry one reason per field. Definitions in 14
   locales. **Serbian forms for your read:** орбитер, лендер, ровер, капсула, горњи степен,
   топлотни штит, ваздушна комора, излазак у свемир, and the eight sr definitions.
 - Next chunks: 2 return & surface (re-entry, splashdown, sample return, regolith,

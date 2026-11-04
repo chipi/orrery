@@ -1,0 +1,44 @@
+[
+  {
+    "loc": "ar",
+    "term": "orbiter",
+    "find": "ستة مدارات نشطة تابعة لعدة وكالات",
+    "replace": "ست مركبات مدارية نشطة تابعة لعدة وكالات"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "latitudes norte pelo lander Phoenix",
+    "replace": "latitudes norte pelo módulo de pouso Phoenix"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "retornadas pelo lander Phoenix (2008)",
+    "replace": "retornadas pelo módulo de pouso Phoenix (2008)"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "Phoenix lander (2008) confirmou",
+    "replace": "O módulo de pouso Phoenix (2008) confirmou"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "A estrutura de um lander é dimensionada",
+    "replace": "A estrutura de um módulo de pouso é dimensionada"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "lander declarado perdido",
+    "replace": "módulo de pouso declarado perdido"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "lander",
+    "find": "O lander Viking 1 pousou",
+    "replace": "O módulo de pouso Viking 1 pousou"
+  }
+]

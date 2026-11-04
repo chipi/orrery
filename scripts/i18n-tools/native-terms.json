@@ -11328,13 +11328,11 @@
         "ar": [
           "مركب\\p{L}* (?:ال)?مداري",
           "مسبار (?:ال)?مداري",
-          "تدور حول",
           "مكوك",
           "مسبار\\p{L}*(?: [\\p{L}\\w.-]+){0,3} (?:ال)?مداري",
           "مركب\\p{L}*(?: [\\p{L}\\w.-]+){0,3} (?:ال)?مداري",
-          "يدور حول",
-          "دارت حول",
-          "تدخل مدار"
+          "مركب\\p{L}*(?: [\\p{L}\\w.-]+){0,2} (?:تدور|يدور|دارت|تدخل) (?:حول|مدار)",
+          "مسبار\\p{L}*(?: [\\p{L}\\w.-]+){0,2} (?:تدور|يدور|دار|يدخل) (?:حول|مدار)"
         ],
         "sr-Cyrl": ["орбитер", "орбиталн\\p{L}* (?:летелиц|сонд)"],
         "de": ["Orbiter"],
@@ -11371,7 +11369,19 @@
       "es": "orbitador",
       "it": "orbiter",
       "nl": "orbiter",
-      "pt-BR": "orbitador"
+      "pt-BR": "orbitador",
+      "_en_skip": [
+        "fleet/crewed-spacecraft/atlantis.json",
+        "fleet/crewed-spacecraft/buran",
+        "fleet/crewed-spacecraft/challenger.json",
+        "fleet/crewed-spacecraft/columbia.json",
+        "fleet/crewed-spacecraft/discovery.json",
+        "fleet/crewed-spacecraft/endeavour.json",
+        "fleet/crewed-spacecraft/enterprise.json",
+        "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+        "programs/buran.json",
+        "programs/space-shuttle.json"
+      ]
     },
     "lander": {
       "_sense": "a spacecraft that lands on a surface (not mission names)",
@@ -11427,14 +11437,7 @@
         ],
         "it": ["lander", "modul\\p{L}* di atterraggio", "modul\\p{L}* di allunaggio"],
         "nl": ["lander", "maanlander", "marslander", "landingsvaartuig"],
-        "pt-BR": [
-          "módulos? de pouso",
-          "sondas? de pouso",
-          "pousador",
-          "módulos? lunar",
-          "lander",
-          "módulo"
-        ]
+        "pt-BR": ["módulos? de pouso", "sondas? de pouso", "pousador", "módulos? lunar", "módulo"]
       },
       "_confidence": {
         "ru": "high",

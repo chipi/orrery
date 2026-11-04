@@ -1,0 +1,50 @@
+[
+  {
+    "rel": "science/life-in-space/isru-resource-utilization.json",
+    "at": "body_paragraphs.2",
+    "term": "lander",
+    "decision": "change",
+    "find": "latitudes norte pelo lander Phoenix",
+    "replace": "latitudes norte pelo módulo de pouso Phoenix"
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "body_paragraphs.2",
+    "term": "lander",
+    "decision": "change",
+    "find": "retornadas pelo lander Phoenix (2008)",
+    "replace": "retornadas pelo módulo de pouso Phoenix (2008)"
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.2",
+    "term": "lander",
+    "decision": "change",
+    "find": "Phoenix lander (2008) confirmou",
+    "replace": "O módulo de pouso Phoenix (2008) confirmou"
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.0",
+    "term": "lander",
+    "decision": "change",
+    "find": "A estrutura de um lander é dimensionada",
+    "replace": "A estrutura de um módulo de pouso é dimensionada"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.4.note",
+    "term": "lander",
+    "decision": "change",
+    "find": "lander declarado perdido",
+    "replace": "módulo de pouso declarado perdido"
+  },
+  {
+    "rel": "programs/viking.json",
+    "at": "outcome.0.md",
+    "term": "lander",
+    "decision": "change",
+    "find": "O lander Viking 1 pousou",
+    "replace": "O módulo de pouso Viking 1 pousou"
+  }
+]

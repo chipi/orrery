@@ -7,7 +7,7 @@
 //   node scripts/build-glossary.mjs [--check]   (--check: report problems, write nothing)
 import fs from 'node:fs';
 import path from 'node:path';
-import { enRegex, isText, prose } from './i18n-tools/term-match.mjs';
+import { enRegex, isText, prose, senseSkipped } from './i18n-tools/term-match.mjs';
 
 export const LOCALES = [
   'en-US',
@@ -100,6 +100,7 @@ export function usedOn(terms) {
     const g = enRegex(term, e, 'gi');
     const scored = [];
     for (const p of pages) {
+      if (senseSkipped(e, p.rel)) continue;
       const n = p.text.reduce((s, t) => s + (t.match(g)?.length ?? 0), 0);
       if (n) scored.push([p.rel, n]);
     }

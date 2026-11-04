@@ -106,6 +106,13 @@ describe('problems — a unit symbol in the locale’s own case', () => {
     expect(latin('Earth sits at 1 AU from the Sun.', '地球は太陽から1 auの距離にある。')).toBe(
       false,
     ));
+  it('accepts "km" where the English spells out kilometres or writes Mkm', () => {
+    const km = (src: string, out: string) =>
+      problems('zh-CN', src, out).some((p) => /Latin-script words/.test(p));
+    expect(km('It flies at 2.9 kilometres per second.', '它以每秒2.9 km飞行。')).toBe(false);
+    expect(km('About 1.5 Mkm from Earth.', '距地球约150万km。')).toBe(false);
+    expect(km('It flies at 2.9 miles per second.', '它以每秒2.9 km飞行。')).toBe(true);
+  });
   it('still flags a word that is not a unit symbol, whatever its case', () =>
     expect(latin('The Vendor list.', 'vendor のリスト。')).toBe(true));
 });

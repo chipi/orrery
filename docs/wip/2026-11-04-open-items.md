@@ -57,12 +57,21 @@ by hand against the English (`sample-pair` seeds 53 / 9001, 120–420-character 
 | --- | --- | --- | --- | --- | --- |
 | pt-BR science | 39 | 29 | 8 | 2 (fixed) | "quintal de 20 cm" for a backyard telescope; "nobody has been observed"; AU not UA, periapsis, Operation Paperclip left English |
 | es science | 20 | 19 | 1 | 0 | reads as edited text |
-| de science | 20 | 18 | 2 | 0 | du and Sie mixed (317 du-forms, 24 files with both) |
+| de science | 20 | 18 | 2 | 0 | du and Sie mixed (317 du-forms, 24 files with both) — out of scope |
+| nl science | 20 | 20 | 0 | 0 | |
+| it science | 20 | 18 | 2 | 0 | "SSI" for the ISS; "most important graph in astronomy" drops "stellar" |
+| ja science | 20 | 14 | 6 | 0 | スレッド (software "thread") for cosmic threads; 異種エンジン for exotic engines; one clause dropped; "in time for the storm to subside" → "by the time" |
+| ko science | 20 | 20 | 0 | 0 | |
+| hi science | 20 | 19 | 1 | 0 | "the answer is still no" → "no answer yet" |
+| ar science | 20 | 19 | 1 | 0 | one doubled phrase |
+| sr-Cyrl science | 20 | 18 | 2 | 0 | Шварцшилдов / Шварцшилд both used; "ровери под притиском" |
 
-So far the unread locales are far better than ru / zh-CN / fr were before their full reads
-(12–19% BROKEN). Full reads are not justified by this; targeted fixes are: Portuguese
-terminology (UA, periápside), and the remaining locales measured the same way (nl, it, ja, ko,
-hi, ar, sr-Cyrl).
+All ten unread locales read (seed 53, the same 20 paragraphs; pt-BR also seed 9001): 2 BROKEN in
+219 fields, both pt-BR, both fixed; 0 in the other nine (180 fields — by the rule of three, a
+locale's BROKEN rate above ~14% would show in 20 with 95% odds, and the nine together above
+~1.7%). Far better than ru / zh-CN / fr were before their full reads (12–19% BROKEN). **No full
+reads needed.** The fix-ups are the MINOR items above plus Portuguese terminology (UA,
+periápside, Operation Paperclip), which a term check finds across the whole locale.
 
 **Scope (operator, 2026-11-04): fix-ups only.** Wrong meaning, wrong facts, garbled text, wrong
 names. No change that rewrites a locale's voice across the site — how the reader is addressed

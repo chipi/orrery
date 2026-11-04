@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "description",
+    "old": "Dawn provou a propulsão iônica em escala planetária: combinou as órbitas com a massiva Vesta, partiu, e desceu em espiral até o planeta anão Ceres - o maior objeto no cinturão de asteróides. Os pontos brilhantes na cratera Occator tornaram-se um dos mistérios icônicos da missão, mais tarde ligados a erupções salgadas de um reservatório profundo. Esta entrada de catálogo usa Ceres como destino principal; Vesta é abordada na narrativa acima.",
+    "new": "Dawn provou a propulsão iônica em escala planetária: combinou as órbitas com a massiva Vesta, partiu, e desceu em espiral até o planeta anão Ceres - o maior objeto do cinturão de asteroides. Os pontos brilhantes na cratera Occator tornaram-se um dos mistérios icônicos da missão, mais tarde ligados a erupções salgadas de um reservatório profundo. Esta entrada de catálogo usa Ceres como destino principal; Vesta é abordada na narrativa acima."
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "tagline",
+    "old": "Primeira espaçonave a atravessar a Cintura de asteroides",
+    "new": "Primeira espaçonave a atravessar o cinturão de asteroides"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "best_known_for",
+    "old": "Primeira espaçonave a atravessar a Cintura de asteroides",
+    "new": "Primeira espaçonave a atravessar o cinturão de asteroides"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "description",
+    "old": "A primeira nave espacial a atravessar a Cintura de asteroides e a primeira a sobrevoar Júpiter (dezembro de 1973). Levava a placa Pioneer — o desenho gravado em alumínio anodizado dourado, com figuras humanas + o Sistema Solar, que Carl Sagan e Frank Drake criaram em três semanas.",
+    "new": "A primeira nave espacial a atravessar o cinturão de asteroides e a primeira a sobrevoar Júpiter (dezembro de 1973). Levava a placa Pioneer — o desenho gravado em alumínio anodizado dourado, com figuras humanas + o Sistema Solar, que Carl Sagan e Frank Drake criaram em três semanas."
+  }
+]

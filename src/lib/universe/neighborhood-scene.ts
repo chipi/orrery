@@ -219,6 +219,19 @@ function makeLabelSprite(text: string): { sprite: THREE.Sprite; texture: THREE.C
 /** Named stars brighter than this always show their label; the rest label on hover/select. */
 const ALWAYS_LABEL_MAG = 1.6;
 
+/** A label's rectangle on screen, in normalised device coordinates (−1…1). */
+interface ScreenRect {
+  l: number;
+  r: number;
+  b: number;
+  t: number;
+}
+
+/** Two label rectangles overlap (touching edges count as apart). */
+export function overlaps(a: ScreenRect, b: ScreenRect): boolean {
+  return a.l < b.r && b.l < a.r && a.b < b.t && b.b < a.t;
+}
+
 interface StarMarker {
   id: string;
   group: THREE.Group;
@@ -227,6 +240,8 @@ interface StarMarker {
   label: THREE.Sprite;
   labelAspect: number;
   alwaysLabel: boolean;
+  /** Label priority when labels collide: lower wins (Sol, then the brightest). */
+  rank: number;
 }
 
 /** A small soft filled dot — the idle marker for a named star (the ring only shows
@@ -395,6 +410,7 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       label,
       labelAspect: label.userData.aspect,
       alwaysLabel,
+      rank: s.mag,
     });
     pickables.push(halo);
   }
@@ -440,6 +456,7 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       label: solLabel,
       labelAspect: solLabel.userData.aspect,
       alwaysLabel: true,
+      rank: -100,
     });
   }
   scene.add(markerGroup);
@@ -493,6 +510,7 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
   const _lblPos = new THREE.Vector3();
   function applyMarkerScale(camera?: THREE.Camera) {
     if (camera) camera.getWorldPosition(_camPos);
+    const shown: Array<{ m: StarMarker; rect: ScreenRect | null; hi: boolean }> = [];
     for (const m of markers) {
       // Scale each marker by ITS distance to the camera → constant screen size
       // whatever the star's true distance (they span ~1–150 pc).
@@ -514,14 +532,55 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       m.label.scale.set(lh * m.labelAspect, lh, 1);
       m.label.position.set(0, halo * 1.1, 0);
       m.label.visible = m.alwaysLabel || hi;
+      if (camera && m.label.visible) shown.push({ m, rect: keepInView(m.label, camera), hi });
+    }
+    // Declutter: around Sol at the default zoom "Proxima Centauri", "Rigil Kentaurus" and
+    // "Sol" printed over each other. Place labels in priority order (the hovered / selected
+    // star, Sol, then the brightest) and hide one that would overlap a label already placed;
+    // its name still shows on hover / select.
+    shown.sort((a, b) => Number(b.hi) - Number(a.hi) || a.m.rank - b.m.rank);
+    const placed: ScreenRect[] = [];
+    for (const { m, rect, hi } of shown) {
+      if (!rect) continue;
+      if (!hi && placed.some((p) => overlaps(p, rect))) {
+        m.label.visible = false;
+        continue;
+      }
+      placed.push(rect);
     }
     // Reference-ring labels: constant screen size, pinned to each shell's +X edge.
     if (camera) {
       for (const lbl of referenceLabels) {
         const s = Math.max(0.01, _camPos.distanceTo(lbl.getWorldPosition(_lblPos))) * 0.03;
         lbl.scale.set(s * ((lbl.userData.aspect as number) ?? 3), s, 1);
+        keepInView(lbl, camera);
       }
     }
+  }
+
+  /**
+   * A label centred on its star runs off the screen edge when the star is near it (at 375 px
+   * "10 LY" read "10 L", Lalande 21185 lost its name under the INDEX tab). When it would, the
+   * label is anchored on its other side so the text extends inward — it stays attached to its
+   * star, only the side changes. Stars that are themselves off-screen are left alone.
+   */
+  const _ndc = new THREE.Vector3();
+  /** Returns the label's rectangle on screen (normalised device coordinates), or null. */
+  function keepInView(lbl: THREE.Sprite, camera: THREE.Camera): ScreenRect | null {
+    lbl.center.set(0.5, 0.5);
+    const cam = camera as THREE.PerspectiveCamera;
+    if (!cam.isPerspectiveCamera) return null;
+    lbl.getWorldPosition(_ndc);
+    const dist = Math.max(0.01, _camPos.distanceTo(_ndc));
+    _ndc.project(cam);
+    if (_ndc.z > 1 || Math.abs(_ndc.x) > 1 || Math.abs(_ndc.y) > 1) return null;
+    const tanHalf = Math.tan((cam.fov * Math.PI) / 360);
+    const w = lbl.scale.x / (dist * tanHalf * cam.aspect);
+    const h = lbl.scale.y / (dist * tanHalf);
+    if (_ndc.x + w / 2 > 1) lbl.center.set(1, 0.5);
+    else if (_ndc.x - w / 2 < -1) lbl.center.set(0, 0.5);
+    const left = _ndc.x - lbl.center.x * w;
+    return { l: left, r: left + w, b: _ndc.y - h / 2, t: _ndc.y + h / 2 };
   }
 
   return {

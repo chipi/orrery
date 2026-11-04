@@ -10787,23 +10787,23 @@
   {
    "id": "a89136bd664fa362",
    "path": "/images/fleet-galleries/galileo/01.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — galileo / \"fleet galileo\"",
+   "source_type": "wikimedia-commons",
+   "title": "File:Galileo spacecraft model.png",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=fleet+galileo&media_type=image&keywords=galileo",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Galileo_spacecraft_model.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Galileo_spacecraft_model.png",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-nasa-images-api",
     "reencoded-jpeg"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 58300745,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.880Z"
+   "fetched_at": "2026-11-04T21:23:43.847Z"
   },
   {
    "id": "09af396f62556163",

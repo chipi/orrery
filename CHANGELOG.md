@@ -8,6 +8,38 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [0.9.6] — 2026-11-04
+
+A translation and glossary release: the science, essays and program texts are read and fixed in
+every locale, the glossary grows into a checked term list that links from article text, and a
+round of navigation, label and accessibility fixes.
+
+### Added
+
+- **Glossary terms link from science articles.** Terms in article text open their glossary entry
+  (a quiet dotted link, at most two per paragraph), in every locale.
+- **Glossary terms in five chunks.** Orbit, transfer, spacecraft, mission and astronomy terms with
+  each locale's binding form and definitions; the glossary lists the pages each term is used on.
+- **Essay sections open like chapters.** Running number, display title and the movement's accent
+  colour.
+
+### Fixed
+
+- **Translations.** Science, essays and programs sampled and fixed in all 13 locales: dropped
+  sentences restored, wrong terms (orbit, landing, eccentricity, escape velocity, perihelion and
+  aphelion and more) corrected, English left in labels and status lines translated, the
+  astronomical unit and the kilometre written in each locale's own form, country tags and native
+  names in each locale's form.
+- **Navigation.** No horizontal overflow from 501 to 1219 px; the menu button covers tablets and
+  touch screens, and the locale and contrast controls move into the menu on small screens.
+- **`/explore` star labels** stay on screen and no longer print over each other.
+- **Accessibility.** A skip-to-content link; page headings on `/missions`, `/fleet`, `/plan`,
+  `/explore` and `/fly`; panels honour reduced motion; dimmed text has more contrast; the `/fly`
+  timeline announces the mission day; formulas are readable by screen readers; the landing image
+  and the gallery viewer describe their images in each locale.
+- **Credits.** CelesTrak listed on every page that uses its station data; the Galileo gallery
+  render credited to its source.
+
 ## [0.9.5] — 2026-11-04
 
 A `/fly` and surfaces release: the 3D models fly every mission, flight events and paths follow

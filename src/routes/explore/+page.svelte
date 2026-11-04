@@ -122,6 +122,7 @@
   import { getOrbitRegimesExplore } from '$lib/data';
   import type { OrbitRegime } from '$types/orbit-regime';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { onLayerChange, setLayer } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
@@ -1701,6 +1702,7 @@
 </script>
 
 <svelte:head><title>{m.explore_page_title()}</title></svelte:head>
+<VisuallyHiddenH1 title={m.explore_page_title()} />
 
 {#if liveRenderer && liveQuality}
   <RenderingDebugRegistrar

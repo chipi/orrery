@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.1.md",
+    "term": "rover",
+    "decision": "change",
+    "find": "марсовским роувером",
+    "replace": "марсовским ровером"
+  }
+]

@@ -16,6 +16,8 @@
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import { getImageAlt } from '$lib/image-alt';
+  import { getLocale } from '$lib/paraglide/runtime';
   import { holdSceneCover } from '$lib/three/animate-loop';
 
   interface Props {
@@ -147,7 +149,7 @@
         <img
           class="lightbox-img"
           {...responsive(current, IMAGE_SIZES.full)}
-          alt=""
+          alt={getImageAlt(current.slice(Math.max(0, current.indexOf('/images/'))), getLocale())}
           decoding="async"
         />
       {/key}

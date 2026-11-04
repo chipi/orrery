@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "science/planets/_intro.json",
+    "at": "paragraphs.1",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "ستة مدارات نشطة تابعة لعدة وكالات",
+    "replace": "ست مركبات مدارية نشطة تابعة لعدة وكالات"
+  }
+]

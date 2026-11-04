@@ -128,10 +128,11 @@
   {#if section.narrative_101 && section.narrative_101.length > 0}
     <section class="narrative-101" aria-label={m.science_focused_101_aria()}>
       <p class="badge">{m.science_101_badge()}</p>
-      {#each section.narrative_101 as para (para)}
+      {#each section.narrative_101 as para, i (para)}
         <p>
-          {#each parseInline(para) as seg, k (k)}{#if seg.kind === 'link'}<a href={seg.href}
-                >{seg.text}</a
+          {#each parseInline(para, data.termLinks[`narrative_101.${i}`]) as seg, k (k)}{#if seg.kind === 'link'}<a
+                href={seg.href}>{seg.text}</a
+              >{:else if seg.kind === 'term'}<a class="term" href={seg.href}>{seg.text}</a
               >{:else}{seg.value}{/if}{/each}
         </p>
       {/each}
@@ -149,10 +150,11 @@
   {/if}
 
   <div class="body">
-    {#each section.body_paragraphs as para (para)}
+    {#each section.body_paragraphs as para, i (para)}
       <p>
-        {#each parseInline(para) as seg, k (k)}{#if seg.kind === 'link'}<a href={seg.href}
-              >{seg.text}</a
+        {#each parseInline(para, data.termLinks[`body_paragraphs.${i}`]) as seg, k (k)}{#if seg.kind === 'link'}<a
+              href={seg.href}>{seg.text}</a
+            >{:else if seg.kind === 'term'}<a class="term" href={seg.href}>{seg.text}</a
             >{:else}{seg.value}{/if}{/each}
       </p>
     {/each}
@@ -222,6 +224,20 @@
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 12px;
+  }
+  /* Glossary term links (PRD-038 §5): the word keeps the body colour with a dotted underline,
+     so it reads as "defined in the glossary", not as a link to another article. */
+  .term {
+    color: inherit;
+    text-decoration: underline dotted;
+    text-decoration-color: rgba(78, 205, 196, 0.75);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .term:hover,
+  .term:focus-visible {
+    color: #4ecdc4;
+    text-decoration-style: solid;
   }
   .crumb a {
     color: rgba(255, 255, 255, 0.7);

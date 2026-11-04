@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "tagline",
+    "old": "첫번째 목성 궤도; 측정의 8 년",
+    "new": "최초의 목성 궤도선; 8년간의 측정"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "best_known_for",
+    "old": "첫번째 목성 궤도; 측정의 8 년",
+    "new": "최초의 목성 궤도선; 8년간의 측정"
+  },
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "tagline",
+    "old": "첫 번째 중국 달 착륙",
+    "new": "중국 최초의 달 착륙선"
+  },
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "best_known_for",
+    "old": "첫 번째 중국 달 착륙",
+    "new": "중국 최초의 달 착륙선"
+  }
+]

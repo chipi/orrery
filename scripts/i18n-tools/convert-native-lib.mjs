@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { designations, knownNamesIn, problems } from '../lib/translate-quality.mjs';
-import { ORIGIN_NAMES, nativeName } from '../lib/name-origins.mjs';
+import { ORIGIN_NAMES, nativeName } from '../../src/lib/name-origins.js';
 const ROOT = process.cwd();
 const R = `${ROOT}/i18n-src`;
 const WRITE = process.argv.includes('--write');

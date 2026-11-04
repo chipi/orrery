@@ -15,7 +15,7 @@
  * UI messages (messages/<loc>.json vs messages/en-US.json): missingKey, empty,
  *   extraKey, sameAsEnglish, placeholder ({x} sets differ).
  * nativeNameMissing: in a name's origin locale the English form is still used
- *   (Soyuz in ru where «Союз» belongs — scripts/lib/name-origins.mjs).
+ *   (Soyuz in ru where «Союз» belongs — src/lib/name-origins.js).
  * Base data (static/data/*.json not under i18n/): prose strings in data sets
  *   that have no en-US overlay directory or file — English with no translation path.
  */
@@ -24,6 +24,7 @@ import path from 'node:path';
 import { SKIP_KEY } from './i18n-manifest.mjs';
 import { designations, knownNamesIn } from './lib/translate-quality.mjs';
 import { ORIGIN_NAMES, nativeName } from '../src/lib/name-origins.js';
+import { KEEP_ENGLISH_FILES, keepEnglish } from './lib/native-skip.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SRC = path.join(ROOT, 'i18n-src');
@@ -106,14 +107,24 @@ const add = (loc, kindName, where) => {
   if (k.ex.length < EX) k.ex.push(where);
 };
 
+/** True when a value holds at least one non-empty string. */
+const hasText = (v) =>
+  typeof v === 'string'
+    ? v.trim() !== ''
+    : v && typeof v === 'object'
+      ? Object.values(v).some(hasText)
+      : false;
+
 function compare(loc, rel, en, tr, at = '') {
   const ke = kind(en);
   const kt = kind(tr);
   if (kt === 'undefined') {
     if (ke === 'string' && en.trim() && !SKIP_KEY.test(at))
       add(loc, 'missingKey', `${rel} :: ${at}`);
-    else if (ke === 'list' || ke === 'object') {
-      // Count the strings inside a missing container once, as one missing key.
+    else if ((ke === 'list' || ke === 'object') && hasText(en)) {
+      // Count the strings inside a missing container once, as one missing key. An empty
+      // en-US list (six launch pads carry `hotspot_annotations: []`) has nothing to
+      // translate, so a locale without it shows no English.
       add(loc, 'missingKey', `${rel} :: ${at} (whole ${ke})`);
     }
     return;
@@ -125,7 +136,7 @@ function compare(loc, rel, en, tr, at = '') {
     if (SKIP_KEY.test(at)) return;
     // Origin-language rule: in a name's own locale the native form is used, so the
     // English form left in the text is a miss (link labels are English source titles).
-    if (!/(^|\.)(l|u)$/.test(at))
+    if (!/(^|\.)(l|u)$/.test(at) && !KEEP_ENGLISH_FILES.test(rel))
       for (const n of [
         ...new Set([
           ...designations(en),
@@ -136,8 +147,13 @@ function compare(loc, rel, en, tr, at = '') {
         ]),
       ]) {
         const esc = n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        if (nativeName(loc, n) && new RegExp(`(^|[^A-Za-z0-9])${esc}(?![A-Za-z0-9])`).test(tr))
-          add(loc, 'nativeNameMissing', `${rel} :: ${at} — ${n} → ${nativeName(loc, n)}`);
+        const nat = nativeName(loc, n);
+        if (!nat) continue;
+        // Count only uses convert-native would change (not Latin phrases or CJK glosses).
+        const hit = [...tr.matchAll(new RegExp(`(?<![A-Za-z0-9])${esc}(?![A-Za-z0-9])`, 'g'))].some(
+          (m) => !keepEnglish(tr.slice(0, m.index), tr.slice(m.index + n.length), nat),
+        );
+        if (hit) add(loc, 'nativeNameMissing', `${rel} :: ${at} — ${n} → ${nat}`);
       }
     if (en.trim() && !tr.trim()) add(loc, 'empty', `${rel} :: ${at}`);
     else if (tr === en) {
@@ -245,9 +261,12 @@ const prose = (v, at, out) => {
   return out;
 };
 const base = [];
-for (const n of fs.readdirSync(DATA).sort()) {
+for (const d of fs
+  .readdirSync(DATA, { withFileTypes: true })
+  .sort((a, b) => (a.name < b.name ? -1 : 1))) {
+  const n = d.name;
   const p = path.join(DATA, n);
-  if (n === 'i18n' || !n.endsWith('.json') || !fs.statSync(p).isFile()) continue;
+  if (n === 'i18n' || !n.endsWith('.json') || !d.isFile()) continue;
   const name = n.replace(/\.json$/, '');
   if (overlayNames.has(name)) continue;
   let j;

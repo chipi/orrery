@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "type",
+    "old": "مهمة مأهولة · مفهوم",
+    "new": "إعادة عينات بطاقم · مفهوم"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "tagline",
+    "old": "أول عينة روبوتية",
+    "new": "أول إعادة آلية للعينات من القمر"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "best_known_for",
+    "old": "أول عينة روبوتية",
+    "new": "أول إعادة آلية للعينات من القمر"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.4.label",
+    "old": "الهبوط (Apollo)",
+    "new": "الهبوط المائي (Apollo)"
+  }
+]

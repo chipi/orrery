@@ -15,6 +15,8 @@ describe('nativeName', () => {
     expect(nativeName('ru', 'Soyuz MS')).toBe('Союз МС');
     expect(nativeName('ru', 'Proton-M')).toBe('Протон-М');
     expect(nativeName('ru', 'Soyuz TMA')).toBe('Союз ТМА');
+    // GRAU indexes in the bracket are Cyrillic too.
+    expect(nativeName('ru', 'Vostok-K (8K72K)')).toBe('Восток-К (8К72К)');
     expect(nativeName('ru', 'Salyut 3 (OPS-2)')).toBe('Салют-3 (OPS-2)');
     expect(nativeName('ru', 'Soyuz XYZ')).toBeNull();
     // Shared bases convert only for the Soviet names; English prose after a serial does not.
@@ -80,6 +82,8 @@ describe('nativePattern / nameRendered', () => {
     expect(nameRendered('de', 'Mir', 'die Station Мир')).toBe(false);
     expect(nameRendered('ru', 'Tiangong', 'станция Тяньгун')).toBe(false);
     expect(nameRendered('zh-CN', "Chang'e 5", '嫦娥五号着陆')).toBe(true);
+    expect(nameRendered('zh-CN', 'YUTU-2', '玉兔二号已部署')).toBe(true);
+    expect(nameRendered('zh-CN', 'YUTU-2', '玉兔三号已部署')).toBe(false);
     expect(nativePattern('de', 'Mir')).toBeNull();
     expect(nameRendered('ru', 'MS-15', 'вплоть до «Союз МС-15»')).toBe(true);
     expect(nameRendered('de', 'MS-15', 'bis МС-15')).toBe(false);

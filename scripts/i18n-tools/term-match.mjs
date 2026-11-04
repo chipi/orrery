@@ -13,13 +13,20 @@ export const normalize = (loc, s) => (loc === 'ar' ? s.replace(AR_MARKS, '') : s
 export const prose = (s) => s.replace(/\]\([^)\s]*\)/g, ']');
 export const isText = (s) => /\s/.test(prose(s).trim());
 
-/** The English sense pattern as a RegExp (flags as given, e.g. 'gi' to count uses). */
+/** The English sense pattern as a RegExp (flags as given, e.g. 'gi' to count uses).
+ *  `_en_cs`: the pattern is case-sensitive, so a capitalised name ("Mars Reconnaissance
+ *  Orbiter", "Viking Lander") is not the common noun. */
 export function enRegex(term, entry, flags = 'i') {
   const esc = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (entry._en_cs) flags = flags.replace('i', '');
   return entry._en
     ? new RegExp(entry._en, flags)
     : new RegExp(`\\b${esc}(?:s|es|ed|ing)?\\b`, flags);
 }
+
+/** `_en_skip`: overlay path prefixes where the English word has another sense throughout
+ *  ("orbiter" on the Shuttle and Buran pages): not checked, not counted as "used on". */
+export const senseSkipped = (entry, rel) => (entry._en_skip ?? []).some((p) => rel.startsWith(p));
 
 export function enPattern(term, entry) {
   const re = enRegex(term, entry);

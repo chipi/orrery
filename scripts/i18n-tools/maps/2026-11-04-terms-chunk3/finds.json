@@ -1,0 +1,117 @@
+[
+  {
+    "loc": "it",
+    "term": "polar orbit",
+    "find": "Orbite eliocentriche + polari",
+    "replace": "Orbite eliosincrone + polari"
+  },
+  {
+    "loc": "it",
+    "term": "perihelion",
+    "find": "Aree uguali in tempi uguali.",
+    "replace": "Aree uguali in tempi uguali: l'arco più corto vicino al perielio spazza la stessa area dell'arco più lungo vicino all'afelio."
+  },
+  {
+    "loc": "ar",
+    "term": "geostationary",
+    "find": "في مدار النقل الثابت — أول نجاح صيني في مدار النقل الثابت.",
+    "replace": "في مدار النقل إلى المدار الثابت بالنسبة للأرض (GTO) — أول نجاح صيني في هذا المدار."
+  },
+  {
+    "loc": "ar",
+    "term": "eccentricity",
+    "find": "فالشذوذ المداري هو المقبض الثاني",
+    "replace": "فالاختلاف المركزي هو المقبض الثاني"
+  },
+  {
+    "loc": "ar",
+    "term": "eccentricity",
+    "find": "يقلّ شذوذه المداري عن 0",
+    "replace": "يقلّ اختلافه المركزي عن 0"
+  },
+  {
+    "loc": "ar",
+    "term": "eccentricity",
+    "find": "الشذوذ المداري (`e`) هو رقم الشكل",
+    "replace": "الاختلاف المركزي (`e`) هو رقم الشكل"
+  },
+  {
+    "loc": "ar",
+    "term": "eccentricity",
+    "find": "عند شذوذ مداري منخفض",
+    "replace": "عند اختلاف مركزي منخفض"
+  },
+  {
+    "loc": "ar",
+    "term": "eccentricity",
+    "find": "الشذوذ المداري محسوبًا",
+    "replace": "الاختلاف المركزي محسوبًا"
+  },
+  {
+    "loc": "ar",
+    "term": "eccentricity",
+    "find": "لكن شذوذها المداري e",
+    "replace": "لكن اختلافها المركزي e"
+  },
+  {
+    "loc": "ar",
+    "term": "eccentricity",
+    "find": "(الشذوذ المركزي)",
+    "replace": "(الاختلاف المركزي)"
+  },
+  {
+    "loc": "ar",
+    "term": "eccentricity",
+    "find": "إذ يجعلها الشذوذ المداري تتفاوت",
+    "replace": "إذ يجعلها الاختلاف المركزي تتفاوت"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "aphelion",
+    "find": "e cujo apélio toca",
+    "replace": "e cujo afélio toca"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "aphelion",
+    "find": "e apélio em Marte",
+    "replace": "e afélio em Marte"
+  },
+  {
+    "loc": "nl",
+    "term": "aphelion",
+    "find": "De Aarde bij afhelium",
+    "replace": "De Aarde bij aphelium"
+  },
+  {
+    "loc": "hi",
+    "term": "perihelion",
+    "find": "P1 — पहली परिहेलियन",
+    "replace": "P1 — पहला उपसौर"
+  },
+  { "loc": "hi", "term": "perihelion", "find": "ने पेरिहेलियन को 0", "replace": "ने उपसौर को 0" },
+  {
+    "loc": "hi",
+    "term": "perihelion",
+    "find": "पहला पेरिहेलियन 2020-06-15",
+    "replace": "पहला उपसौर 2020-06-15"
+  },
+  {
+    "loc": "ja",
+    "term": "escape velocity",
+    "find": "惑星の局所逃出速度を下回る",
+    "replace": "惑星のその場所での脱出速度を下回る"
+  },
+  {
+    "loc": "fr",
+    "term": "escape velocity",
+    "find": "Exactement à la vitesse d'échappement ?",
+    "replace": "Exactement à la vitesse de libération ?"
+  },
+  {
+    "loc": "nl",
+    "term": "escape velocity",
+    "find": "naar ontsnapsnelheid (~11,2 km/s)",
+    "replace": "naar ontsnappingssnelheid (~11,2 km/s)"
+  }
+]

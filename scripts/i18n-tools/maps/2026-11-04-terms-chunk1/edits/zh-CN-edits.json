@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.4.note",
+    "term": "lander",
+    "decision": "change",
+    "find": "登陆器被宣布丧失",
+    "replace": "着陆器被宣布丧失"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "description",
+    "term": "lander",
+    "decision": "change",
+    "find": "Huygens登陆器",
+    "replace": "Huygens着陆器"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.0.note",
+    "term": "upper stage",
+    "decision": "change",
+    "find": "PAM-S上级阶段",
+    "replace": "PAM-S上面级"
+  }
+]

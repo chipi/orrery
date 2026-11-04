@@ -1,0 +1,195 @@
+{
+  "_comment": "Wrong forms found by the glossary fix rounds (0.9.6). wrong-forms.mjs searches every overlay, the UI messages and the alt text for them; wrong-forms.test.ts fails when one comes back. `allow`: file paths (prefixes) where the form is right in context.",
+  "forms": [
+    {
+      "loc": "ar",
+      "re": "مهبط",
+      "why": "a landing site, not a lander (مركبة الهبوط)"
+    },
+    {
+      "loc": "ar",
+      "re": "الشذوذ المداري",
+      "why": "an orbital anomaly, not eccentricity (الاختلاف المركزي)"
+    },
+    {
+      "loc": "ar",
+      "re": "ساد هوائي",
+      "why": "garbled airlock (حجرة معادلة الضغط)"
+    },
+    {
+      "loc": "it",
+      "re": "eclusa",
+      "why": "not Italian; airlock is camera di equilibrio"
+    },
+    {
+      "loc": "it",
+      "re": "portell[oi] stagn",
+      "why": "a watertight hatch, not an airlock"
+    },
+    {
+      "loc": "pt-BR",
+      "re": "ecluses",
+      "why": "French; eclusas"
+    },
+    {
+      "loc": "pt-BR",
+      "re": "apélio",
+      "why": "misspelling of afélio"
+    },
+    {
+      "loc": "pt-BR",
+      "re": "rovôs?(?!\\p{L})",
+      "why": "not a word; rover"
+    },
+    {
+      "loc": "nl",
+      "re": "steekproef",
+      "why": "a statistical sample, not a material sample (monster)"
+    },
+    {
+      "loc": "nl",
+      "re": "Saturnusbaan;",
+      "why": "Saturn's orbit used for a Saturn orbiter"
+    },
+    {
+      "loc": "nl",
+      "re": "afhelium",
+      "why": "misspelling of aphelium"
+    },
+    {
+      "loc": "nl",
+      "re": "ontsnapsnelheid",
+      "why": "ontsnappingssnelheid"
+    },
+    {
+      "loc": "nl",
+      "re": "noodwatering",
+      "why": "watering is irrigation; noodlanding op zee"
+    },
+    {
+      "loc": "nl",
+      "re": "splashte",
+      "why": "anglicism; plonsde neer"
+    },
+    {
+      "loc": "fr",
+      "re": "vitesse d'échappement",
+      "why": "vitesse de libération (escape) or vitesse d'éjection (exhaust)"
+    },
+    {
+      "loc": "fr",
+      "re": "s'est amaré",
+      "why": "amarrer is to moor; a splashdown is amerrir"
+    },
+    {
+      "loc": "fr",
+      "re": "s'écrase dans l'océan",
+      "why": "crashes; amerrit"
+    },
+    {
+      "loc": "fr",
+      "re": "amérissage",
+      "why": "amerrissage"
+    },
+    {
+      "loc": "fr",
+      "re": "régolite(?!s)",
+      "why": "the site writes régolithe"
+    },
+    {
+      "loc": "de",
+      "re": "Spacewalk",
+      "why": "English; Weltraumausstieg"
+    },
+    {
+      "loc": "de",
+      "re": "platscht",
+      "why": "colloquial; wassert"
+    },
+    {
+      "loc": "ja",
+      "re": "逃出速度",
+      "why": "Chinese-style; 脱出速度"
+    },
+    {
+      "loc": "ja",
+      "re": "マイクログラビティ",
+      "why": "katakana English; 微小重力"
+    },
+    {
+      "loc": "ko",
+      "re": "레고리스",
+      "why": "the site writes 레골리스"
+    },
+    {
+      "loc": "hi",
+      "re": "पेरिहेलियन|परिहेलियन|अपहेलियन",
+      "why": "transliterated English; उपसौर / अपसौर"
+    },
+    {
+      "loc": "hi",
+      "re": "नमूना रिटर्न",
+      "why": "English loan; नमूना वापसी"
+    },
+    {
+      "loc": "hi",
+      "re": "आनुवंशिकीय रूप से",
+      "why": "'genetically' in a sentence about distances"
+    },
+    {
+      "loc": "zh-CN",
+      "re": "登陆器",
+      "why": "着陆器"
+    },
+    {
+      "loc": "sr-Cyrl",
+      "re": "САЛЕТАЊЕ|салетање",
+      "why": "typo; слетање"
+    },
+    {
+      "loc": "sr-Cyrl",
+      "re": "роувер",
+      "why": "ровер"
+    },
+    {
+      "loc": "nl",
+      "re": "Hohmann-overdracht",
+      "why": "overdracht is a handover of ownership; Hohmann-transferbaan"
+    },
+    {
+      "loc": "ru",
+      "re": "бесплатн\\p{L}* возврат",
+      "why": "free of charge; свободный возврат (free-return)"
+    },
+    {
+      "loc": "ja",
+      "re": "遊離帰還",
+      "why": "遊離 is chemical dissociation; 自由帰還"
+    },
+    {
+      "loc": "hi",
+      "re": "मुक्त-रिटर्न",
+      "why": "English \"return\" transliterated; मुक्त-वापसी"
+    },
+    {
+      "loc": "pt-BR",
+      "re": "asteróide",
+      "why": "pre-2009 spelling; asteroide"
+    },
+    {
+      "loc": "pt-BR",
+      "re": "[Cc]intura de asteroides",
+      "why": "European Portuguese; cinturão de asteroides"
+    },
+    {
+      "loc": "fr",
+      "re": "Light-(?:Year|Minute)",
+      "why": "English; année-lumière / minute-lumière"
+    },
+    {
+      "loc": "es",
+      "re": "[Aa]ños? de luz(?! solar)",
+      "why": "año luz (años de luz solar = years of sunlight is fine)"
+    }
+  ]
+}

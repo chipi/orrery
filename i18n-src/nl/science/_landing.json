@@ -13,7 +13,7 @@
       "paragraphs": [
         "Vergeet raketten even. Sta op de Aarde en gooi een honkbal zo hard als je kunt. Hij komt terug naar beneden. Gooi harder, en hij landt verder weg. Gooi zo hard dat de grond sneller wegkromt dan de bal valt, en de bal mist de planeet — voor altijd. Dat is een [baan](orbits/keplerian-orbit). Elk ruimtevaartuig, elke planeet, elke rots in de planetoïdengordel doet deze truc rond iets zwaarders.",
         "Een baan is een ellips. Hij heeft een [grootte](orbits/semi-major-axis), een [vorm](orbits/eccentricity) (rond versus uitgerekt), een [helling](orbits/inclination), en een fase die je vertelt waar op de ellips het ruimtevaartuig zich nu bevindt ([ware anomalie](orbits/true-anomaly)). Vijf getallen en je kunt de positie van elk object in het zonnestelsel voorspellen, voor altijd, zonder andere gegevens. Dat zijn [Keplers drie wetten](orbits/keplers-laws), opgeschreven in 1609 — ze werken nog steeds.",
-        "De nuttigste vergelijking die je hier tegenkomt is [vis-viva](orbits/vis-viva). Vul je straal in, de grootte van je baan, en eruit komt je snelheid. Dat is alles. De Aarde bij perihelium: 30,3 km/s. De Aarde bij afhelium: 29,3 km/s. Dezelfde baan, dezelfde energie, een andere snelheid."
+        "De nuttigste vergelijking die je hier tegenkomt is [vis-viva](orbits/vis-viva). Vul je straal in, de grootte van je baan, en eruit komt je snelheid. Dat is alles. De Aarde bij perihelium: 30,3 km/s. De Aarde bij aphelium: 29,3 km/s. Dezelfde baan, dezelfde energie, een andere snelheid."
       ]
     },
     {
@@ -35,7 +35,7 @@
       "diagram_caption": "Twee ontstekingen, één ellips. De goedkoopste manier om van baan te veranderen.",
       "paragraphs": [
         "Robert Heinlein schreef het: \"Zodra je in een baan bent, ben je halverwege naar overal in het zonnestelsel.\" Hij grapte niet. Het bereiken van een lage aardbaan kost ~9,4 km/s aan ∆v. Van daaruit naar Mars gaan kost nog eens ~3,6 km/s. Het moeilijkste deel ligt al achter je.",
-        "De goedkoopste interplanetaire route is een [Hohmann-overdracht](transfers/hohmann-transfer): een ellips die de baan van de Aarde aan het ene uiteinde net raakt en die van de bestemming aan het andere. Twee ontstekingen, geen verspilde brandstof. Naar Mars duurt het ~8,5 maanden. Langzaam, maar optimaal.",
+        "De goedkoopste interplanetaire route is een [Hohmann-transferbaan](transfers/hohmann-transfer): een ellips die de baan van de Aarde aan het ene uiteinde net raakt en die van de bestemming aan het andere. Twee ontstekingen, geen verspilde brandstof. Naar Mars duurt het ~8,5 maanden. Langzaam, maar optimaal.",
         "Wil je sneller gaan? Los een [Lambert-probleem](transfers/lambert-problem) op — kies je vertrekdatum en je reistijd, en Lambert vertelt je de unieke [transferellips](transfers/transfer-ellipse) die ze verbindt. Dat is precies wat Orrery's [/plan](app:/plan)-scherm doet, tienduizend keer parallel, om een porkchop-grafiek te tekenen.",
         "Moet je nog verder? Steel snelheid van een planeet. Een [zwaartekrachtassistentie](transfers/gravity-assist) gebruikt een voorbijvlucht om je baan te veranderen zonder brandstofkosten — Voyager 2 gebruikte er vier om Neptunus te bereiken. Het hele zonnestelsel wordt aan elkaar gestikt als [aaneengeschakelde kegelsneden](transfers/patched-conics): een reeks bogen van [kegelsneden](transfers/conic-sections), doorgegeven tussen zwaartekrachtgebieden als estafettestokjes in een estafetteloop."
       ]

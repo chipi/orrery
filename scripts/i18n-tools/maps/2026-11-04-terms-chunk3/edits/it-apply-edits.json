@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "title",
+    "old": "Orbite eliocentriche + polari — la spina dorsale dell'osservazione terrestre",
+    "new": "Orbite eliosincrone + polari — la spina dorsale dell'osservazione terrestre"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "diagram_caption",
+    "old": "Aree uguali in tempi uguali.",
+    "new": "Aree uguali in tempi uguali: l'arco più corto vicino al perielio spazza la stessa area dell'arco più lungo vicino all'afelio."
+  }
+]

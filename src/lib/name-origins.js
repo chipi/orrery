@@ -344,7 +344,11 @@ export function nativeName(locale, en) {
     // ("Mars 3 Orbiter"): no native form for the whole.
     const m = rest.match(/^([A-Za-z0-9][A-Za-z0-9.-]*)((?: \([^)]*\))?)$/);
     if (!m) return null;
-    const [, code, tail] = m;
+    const [, code, rawTail] = m;
+    // A GRAU index in the bracket is written in Cyrillic: (8K72K) → (8К72К), (11A57) → (11А57).
+    const tail = rawTail.replace(/\b\d+[AK]\d+[AKM]?\b/g, (g) =>
+      g.replace(/A/g, 'А').replace(/K/g, 'К').replace(/M/g, 'М'),
+    );
     const sep = en[base.length]; // "Proton-M" keeps the hyphen, "Soyuz MS" the space
     // A plain serial takes the Russian hyphen: "Luna 9" → "Луна-9".
     if (/^\d+$/.test(code)) return `${nat}-${code}${tail}`;
@@ -402,6 +406,21 @@ export function nameRendered(locale, en, out, norm = (x) => x) {
     [...en].every((ch) => !/[A-Z]/.test(ch) || RU_LETTER[ch])
   )
     if (out.includes(en.replace(/[A-Z]/g, (ch) => RU_LETTER[ch]))) return true;
-  const re = nativePattern(locale, en);
+  const re = nativePattern(locale, tableCase(locale, en));
   return !!re && re.test(out);
+}
+
+/** Mission event labels are in capitals ("YUTU-2 DEPLOYED"): look the name up in the
+ *  table's own spelling ("Yutu-2"). */
+/**
+ * @param {string} locale
+ * @param {string} en
+ * @returns {string}
+ */
+function tableCase(locale, en) {
+  if (en !== en.toUpperCase()) return en;
+  const key = Object.keys(ORIGIN_NAMES[locale] ?? {}).find(
+    (k) => en.startsWith(k.toUpperCase()) && /^([ -]|$)/.test(en.slice(k.length)),
+  );
+  return key ? key + en.slice(key.length) : en;
 }

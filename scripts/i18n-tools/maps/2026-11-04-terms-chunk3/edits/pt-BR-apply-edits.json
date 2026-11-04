@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "old": "Imagine que você está em uma órbita circular ao redor do Sol e deseja alcançar uma mais alta — digamos, Terra-Marte. A forma mais barata é uma transferência de Hohmann: uma elipse cujo periélio toca tangencialmente sua órbita de partida e cujo apélio toca tangencialmente a órbita de destino. Duas queimas do motor o levarão lá. Uma no periélio para sair da órbita terrestre e ingressar na elipse. Outra no apélio para circularizar-se na órbita de destino.",
+    "new": "Imagine que você está em uma órbita circular ao redor do Sol e deseja alcançar uma mais alta — digamos, Terra-Marte. A forma mais barata é uma transferência de Hohmann: uma elipse cujo periélio toca tangencialmente sua órbita de partida e cujo afélio toca tangencialmente a órbita de destino. Duas queimas do motor o levarão lá. Uma no periélio para sair da órbita terrestre e ingressar na elipse. Outra no apélio para circularizar-se na órbita de destino."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "diagram_caption",
+    "old": "Órbita terrestre (interna) · Órbita marciana (externa) · Elipse de transferência de Hohmann com periélio na Terra e apélio em Marte.",
+    "new": "Órbita terrestre (interna) · Órbita marciana (externa) · Elipse de transferência de Hohmann com periélio na Terra e afélio em Marte."
+  }
+]

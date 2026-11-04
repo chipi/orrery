@@ -1,0 +1,34 @@
+[
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "4일 / 62개 궤도 후 대서양 귀환.",
+    "replace": "4일 / 62개 궤도 후 대서양 착수."
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "태평양에 물착륙했습니다",
+    "replace": "태평양에 착수했습니다"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.3.note",
+    "term": "regolith",
+    "decision": "change",
+    "find": "레고리스 약 10g 채취",
+    "replace": "레골리스 약 10g 채취"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.3.note",
+    "term": "regolith",
+    "decision": "change",
+    "find": "후면 레고리스에서 1.935 kg.",
+    "replace": "후면 레골리스에서 1.935 kg 채취."
+  }
+]

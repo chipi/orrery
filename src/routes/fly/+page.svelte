@@ -198,6 +198,7 @@
   import { classifyConic } from '$lib/orbit-overlays';
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
   import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { isLayerOn, onLayerChange, type LayerKey } from '$lib/science-layers';
   import {
     reduceFlyAct,
@@ -3137,6 +3138,7 @@
 </script>
 
 <svelte:head><title>{m.fly_page_title()}</title></svelte:head>
+<VisuallyHiddenH1 title={m.fly_page_title()} />
 
 <!-- Launch pre-roll overlay (opt-in ?launch=1). Self-contained; dismisses to reveal the transfer scene. -->
 {#if showLaunch && launchProfile}
@@ -4241,6 +4243,7 @@
         onpointercancel={onScrubEnd}
         class="scrub"
         aria-label={m.fly_scrub_label()}
+        aria-valuetext={m.fly_hud_met_value({ day: Math.round(met).toString() })}
       />
       {#if arcTotalDays > 0 && mission.flight?.events && !showLaunch}
         <div class="milestone-track" data-testid="milestone-track">

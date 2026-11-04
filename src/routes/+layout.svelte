@@ -520,13 +520,15 @@
 </svelte:head>
 
 {#key activeLocale}
+  <!-- Keyboard / screen-reader users jump past the nav (WCAG 2.4.1); visible on focus only. -->
+  <a class="skip-link" href="#main-content">{m.skip_to_content()}</a>
   <Nav />
   <LanguageSuggestion />
   <CommandPalette items={commandItems} open={commandOpen} onClose={() => (commandOpen = false)} />
   <AudioOverlay />
   <ExhibitOverlay />
   <DebugPanel />
-  <main>
+  <main id="main-content" tabindex="-1">
     {@render children?.()}
   </main>
   <footer
@@ -599,6 +601,30 @@
 {/key}
 
 <style>
+  .skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 200;
+    padding: 10px 16px;
+    background: var(--color-nav-bg, #04040c);
+    color: var(--color-text, #fff);
+    border: 2px solid var(--color-accent, #4466ff);
+    border-radius: 4px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 14px;
+    text-decoration: none;
+    transform: translateY(-200%);
+  }
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    transform: none;
+    outline: none;
+  }
+  /* The skip target takes focus programmatically; no outline box around the page. */
+  main:focus {
+    outline: none;
+  }
   main {
     min-height: calc(100vh - var(--nav-height));
   }

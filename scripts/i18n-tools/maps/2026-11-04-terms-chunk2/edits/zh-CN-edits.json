@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "在太平洋着陆——最后一次Skylab着陆",
+    "replace": "在太平洋溅落——最后一次Skylab溅落"
+  }
+]

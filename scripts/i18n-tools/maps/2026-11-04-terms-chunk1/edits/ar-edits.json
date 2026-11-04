@@ -1,0 +1,194 @@
+[
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.2",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "فتؤدي المدارات الصناعية حول المريخ",
+    "replace": "فتؤدي المركبات المدارية حول المريخ"
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.2",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "وصول أربعة مدارات جديدة",
+    "replace": "وصول أربع مركبات مدارية جديدة"
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "diagram_caption",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "المدارات العاملة بحسب الكوكب",
+    "replace": "المركبات المدارية العاملة بحسب الكوكب"
+  },
+  {
+    "rel": "science/planets/mars-surface-imagery.json",
+    "at": "intro_sentence",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "التقطتها المدارات والمركبات الجوالة",
+    "replace": "التقطتها المركبات المدارية والمركبات الجوالة"
+  },
+  {
+    "rel": "science/planets/mars-surface-imagery.json",
+    "at": "body_paragraphs.1",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "أثناء حركة المدار،",
+    "replace": "أثناء حركة المركبة المدارية،"
+  },
+  {
+    "rel": "science/planets/moon-surface-imagery.json",
+    "at": "body_paragraphs.1",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "على المدار الياباني Kaguya (SELENE)، الذي رسم",
+    "replace": "على المركبة المدارية اليابانية Kaguya (SELENE)، التي رسمت"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "description",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "رسم مداريا Viking معًا خريطة 97% من المريخ بدقة ~300 م وساعدا",
+    "replace": "رسمت المركبتان المداريتان Viking معًا خريطة 97% من المريخ بدقة ~300 م وساعدتا"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "description",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "مسبار قمري حول المدار",
+    "replace": "مسبار مداري قمري"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "description",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "(مدار المريخ + مركبة Zhurong",
+    "replace": "(مركبة مدارية حول المريخ + مركبة Zhurong"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "ينفصل المداران العلميان",
+    "replace": "تنفصل المركبتان المداريتان العلميتان"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "outcome.0.md",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "بلغ مدارُها القمر ولا يزال يعمل ويرسل",
+    "replace": "بلغت مركبتها المدارية القمر ولا تزال تعمل وترسل"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-17.json",
+    "at": "description",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "وهو مدار قمري لم تكتمل مهمته",
+    "replace": "وهو مسبار مداري قمري لم تكتمل مهمته"
+  },
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "tagline",
+    "term": "lander",
+    "decision": "change",
+    "find": "أول مهبط صيني",
+    "replace": "أول مركبة هبوط صينية"
+  },
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "best_known_for",
+    "term": "lander",
+    "decision": "change",
+    "find": "أول مهبط صيني",
+    "replace": "أول مركبة هبوط صينية"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "term": "lander",
+    "decision": "change",
+    "find": "Phoenix هو مهبط كوكبي",
+    "replace": "Phoenix هو مركبة هبوط كوكبية"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "description",
+    "term": "lander",
+    "decision": "change",
+    "find": "حمل مهبط Huygens",
+    "replace": "حمل مركبة الهبوط Huygens"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "description",
+    "term": "lander",
+    "decision": "change",
+    "find": "مهبط Surveyor 1",
+    "replace": "مركبة الهبوط Surveyor 1"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "tagline",
+    "term": "lander",
+    "decision": "change",
+    "find": "مرافق لمهبط Viking-1",
+    "replace": "مرافق لمركبة الهبوط Viking-1"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "best_known_for",
+    "term": "lander",
+    "decision": "change",
+    "find": "مرافق لمهبط Viking-1",
+    "replace": "مرافق لمركبة الهبوط Viking-1"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "tagline",
+    "term": "rover",
+    "decision": "change",
+    "find": "أول مسبّار عند القطب الجنوبي للقمر",
+    "replace": "أول مركبة جوالة عند القطب الجنوبي للقمر"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "best_known_for",
+    "term": "rover",
+    "decision": "change",
+    "find": "أول مسبّار عند القطب الجنوبي للقمر",
+    "replace": "أول مركبة جوالة عند القطب الجنوبي للقمر"
+  },
+  {
+    "rel": "fleet/launcher/atlas-slv-3d.json",
+    "at": "best_known_for",
+    "term": "upper stage",
+    "decision": "change",
+    "find": "مرحلة Centaur D-1A الأولى بالهيدروجين فتحت",
+    "replace": "مرحلة Centaur D-1A، أول مرحلة عليا تعمل بالهيدروجين، فتحت"
+  },
+  {
+    "rel": "programs/skylab.json",
+    "at": "outcome.2.md",
+    "term": "airlock",
+    "decision": "change",
+    "find": "عبر ساد هوائي علمي صغير",
+    "replace": "عبر حجرة معادلة ضغط علمية صغيرة"
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.2",
+    "term": "airlock",
+    "decision": "change",
+    "find": "عبر أقفال هوائية مخصّصة للبذلات",
+    "replace": "عبر غرف معادلة ضغط مخصّصة للبذلات"
+  }
+]

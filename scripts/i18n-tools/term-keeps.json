@@ -1,4 +1,36 @@
 {
+  "airlock|ar|missions/earth/skylab-2.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "97b5a3c361"
+  },
+  "airlock|it|science/life-in-space/lunar-surface-ops.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "ad0353fba8"
+  },
+  "airlock|ja|science/life-in-space/surface-dust-mitigation.json :: diagram_caption": {
+    "why": "read 2026-11-04 (chunk 1): a suitlock: written as its own device",
+    "tr": "a020a34dbc"
+  },
+  "airlock|pt-BR|science/life-in-space/lunar-surface-ops.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "a2a06f1a27"
+  },
+  "airlock|pt-BR|science/life-in-space/lunar-surface-ops.json :: body_paragraphs.2": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "72cb81ac0e"
+  },
+  "airlock|ru|missions/earth/skylab-2.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "cf89ffe766"
+  },
+  "aphelion|ja|science/orbits/eccentricity.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 3): the general apoapsis word (ja 遠点) in the eccentricity article",
+    "tr": "40818e371d"
+  },
+  "aphelion|ja|science/orbits/eccentricity.json :: formula_caption": {
+    "why": "read 2026-11-04 (chunk 3): the general apoapsis word (ja 遠点) in the eccentricity article",
+    "tr": "847fb8ec2a"
+  },
   "apogee|de|missions/mars/mangalyaan.json :: events.3.note": {
     "why": "engine name: Liquid Apogee Motor",
     "tr": "31b9b9beda"
@@ -2059,6 +2091,54 @@
     "why": "combustion / fuel consumption, not an engine firing",
     "tr": "b6564d9d47"
   },
+  "capsule|ar|fleet/station/salyut-5.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "ff0ee1cc57"
+  },
+  "capsule|ar|programs/tiangong.json :: the_land.0.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "5583ee3747"
+  },
+  "capsule|ar|science/orbits/space-debris.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "f82dc60ac5"
+  },
+  "capsule|ja|science/mission-phases/comms-blackout.json :: diagram_caption": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "4b834bb938"
+  },
+  "capsule|ru|missions/earth/vostok-3.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "08e8ea1ed0"
+  },
+  "capsule|ru|missions/earth/vostok-4.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "2508b7cc61"
+  },
+  "capsule|ru|science/mission-phases/entry-footprint.json :: intro_sentence": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "fa93aca4c2"
+  },
+  "capsule|zh-CN|missions/earth/aurora-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "b0a718f6b4"
+  },
+  "capsule|zh-CN|missions/earth/faith-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "5141d01b92"
+  },
+  "capsule|zh-CN|missions/earth/sigma-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "09347f7361"
+  },
+  "capsule|zh-CN|science/life-in-space/crew-selection.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "3e91dc9444"
+  },
+  "capsule|zh-CN|science/propulsion/fusion-propulsion.json :: body_paragraphs.3": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "e114fdbc30"
+  },
   "delta-v|hi|essays/interstellar-exploration.json :: body.10.md": {
     "why": "term not in this sentence of the English",
     "tr": "5b478e433d"
@@ -2169,7 +2249,7 @@
   },
   "descent|zh-CN|missions/earth/vostok-1.json :: description": {
     "why": "variant: 返回舱 (descent module)",
-    "tr": "232bd04c67"
+    "tr": "6032c28922"
   },
   "descent|zh-CN|missions/earth/vostok-1.json :: payload": {
     "why": "variant: 返回舱 (descent module)",
@@ -2194,6 +2274,10 @@
   "docking|ko|science/space-stations/node-module.json :: body_paragraphs.4": {
     "why": "Chinese Docking Mechanism is a proper name left in English",
     "tr": "7a82c63b61"
+  },
+  "eccentricity|de|science/orbits/eccentricity.json :: diagram_caption": {
+    "why": "read 2026-11-04 (chunk 3): written as the symbol e in a caption",
+    "tr": "bd46456464"
   },
   "entry|ar|essays/reusable-launchers.json :: body.9.md": {
     "why": "variant: العودة = reentry (the atmospheric reentry of a returning stage)",
@@ -2393,7 +2477,11 @@
   },
   "entry|zh-CN|science/orbits/cislunar-orbits.json :: body_paragraphs.4": {
     "why": "re-entry rendered 返回地球; natural",
-    "tr": "5a18d6b6d5"
+    "tr": "83d2d58f78"
+  },
+  "exoplanet|nl|science/observation/coronagraphs.json :: body_paragraphs.2": {
+    "why": "read 2026-11-04 (chunk 5): 'gas giants around nearby stars' — the word left out, the meaning kept",
+    "tr": "f1e9c7a970"
   },
   "flyby|ar|programs/pioneer.json :: outcome.1.md": {
     "why": "variant: مرور قريب",
@@ -2426,6 +2514,22 @@
   "gravity assist|sr-Cyrl|science/transfers/_intro.json :: paragraphs.1": {
     "why": "'гравитационим маневрима' is the binding word inflected (stem check misses the case ending)",
     "tr": "5a3f03d319"
+  },
+  "halo orbit|hi|science/mission-phases/nrho.json :: narrative_101.0": {
+    "why": "read 2026-11-04 (chunk 4): the acronym NRHO spelled out in English (Near-Rectilinear Halo Orbit), kept as the name",
+    "tr": "c720c007f9"
+  },
+  "halo orbit|ja|science/mission-phases/nrho.json :: narrative_101.0": {
+    "why": "read 2026-11-04 (chunk 4): the acronym NRHO spelled out in English (Near-Rectilinear Halo Orbit), kept as the name",
+    "tr": "f0d8b502ed"
+  },
+  "halo orbit|sr-Cyrl|science/mission-phases/nrho.json :: narrative_101.0": {
+    "why": "read 2026-11-04 (chunk 4): the acronym NRHO spelled out in English (Near-Rectilinear Halo Orbit), kept as the name",
+    "tr": "0e8f78eb7e"
+  },
+  "heat shield|de|science/mission-phases/edl.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "6a8b463ee3"
   },
   "inclination|de|programs/ros.json :: goals.0.md": {
     "why": "stem gap: hochgeneigte",
@@ -2470,6 +2574,202 @@
   "inclination|ko|science/_landing.json :: chapters.0.paragraphs.1": {
     "why": "English says tilt; 기울기 matches source",
     "tr": "13aad2f738"
+  },
+  "lander|ar|fleet/lander/venera-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "d8f2cea00e"
+  },
+  "lander|ar|fleet/lander/viking-1.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "6b414719be"
+  },
+  "lander|ar|missions/mars/phoenix.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "9afcfc2adb"
+  },
+  "lander|ar|missions/mars/starship-demo.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "9c25116b2b"
+  },
+  "lander|ar|missions/moon/luna9.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "1393bdf8f4"
+  },
+  "lander|ar|science/mission-phases/skycrane.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "8455eb37eb"
+  },
+  "lander|de|missions/moon/blue-moon-mk1.json :: events.1.note": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "50ffe5b423"
+  },
+  "lander|de|missions/moon/luna9.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "981c32cc69"
+  },
+  "lander|de|science/mission-phases/skycrane.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "aec25eedb3"
+  },
+  "lander|es|fleet/lander/beresheet.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "e2380aec46"
+  },
+  "lander|es|fleet/launcher/long-march-3b.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "64def08700"
+  },
+  "lander|es|fleet/orbiter/viking1-orbiter.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "3047174dd3"
+  },
+  "lander|es|fleet/orbiter/viking1-orbiter.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "9cb16df84f"
+  },
+  "lander|es|missions/moon/luna9.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "d7e4b56979"
+  },
+  "lander|es|missions/moon/luna9.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "d7c0472cdf"
+  },
+  "lander|fr|missions/moon/luna9.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "cc77dc544b"
+  },
+  "lander|fr|missions/moon/luna9.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "10b1c1685b"
+  },
+  "lander|fr|science/mission-phases/skycrane.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "b57f444b39"
+  },
+  "lander|it|science/mission-phases/skycrane.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "91c0b4ac76"
+  },
+  "lander|ja|fleet/lander/viking2-lander.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "9513c7064c"
+  },
+  "lander|ja|fleet/lander/vikram-cy3.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "1c7576f497"
+  },
+  "lander|ja|missions/moon/blue-moon-mk1.json :: events.1.note": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "f11e71c3fb"
+  },
+  "lander|ko|fleet/lander/viking-1.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "5c1f8731dd"
+  },
+  "lander|ko|fleet/lander/viking-1.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "5c1f8731dd"
+  },
+  "lander|ko|missions/moon/luna9.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "43b66b9eaa"
+  },
+  "lander|nl|science/mission-phases/skycrane.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "29784f6ee3"
+  },
+  "lander|pt-BR|fleet/lander/venera-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "689f39c259"
+  },
+  "lander|pt-BR|fleet/lander/viking-1.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "45ac0cafb1"
+  },
+  "lander|pt-BR|missions/mars/viking1.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "5c97ecd53d"
+  },
+  "lander|pt-BR|missions/mars/viking1.json :: events.2.note": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "4381d24211"
+  },
+  "lander|pt-BR|missions/moon/luna9.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "66b565d366"
+  },
+  "lander|pt-BR|missions/moon/luna9.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "d34fb5152c"
+  },
+  "lander|pt-BR|programs/jaxa-robotic.json :: goals.1.caption": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "87ab492ae0"
+  },
+  "lander|pt-BR|programs/jaxa-robotic.json :: legacy.0.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "497eb1c91c"
+  },
+  "lander|pt-BR|programs/jaxa-robotic.json :: the_land.1.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "1187f8b7a9"
+  },
+  "lander|pt-BR|science/life-in-space/vestibular-adaptation.json :: body_paragraphs.3": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "2febeb4fdf"
+  },
+  "lander|pt-BR|science/mission-phases/skycrane.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "d64b44a1db"
+  },
+  "lander|ru|missions/venus/venera-13.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "9d744af361"
+  },
+  "lander|ru|programs/jaxa-robotic.json :: goals.1.caption": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "ee0cecb166"
+  },
+  "lander|zh-CN|fleet/lander/viking-1.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "30800ecba7"
+  },
+  "lander|zh-CN|fleet/lander/viking-1.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "30800ecba7"
+  },
+  "launch window|es|science/life-in-space/mars-habitat-design.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)",
+    "tr": "3a60d28759"
+  },
+  "launch window|ru|essays/delta-v.json :: body.2.md": {
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)",
+    "tr": "96a31c6096"
+  },
+  "launch window|ru|science/life-in-space/mars-human-architecture.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)",
+    "tr": "e823a5595d"
+  },
+  "launch window|ru|science/porkchop/what-is-a-porkchop.json :: intro_sentence": {
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)",
+    "tr": "df15e6b231"
+  },
+  "launch window|ru|science/scales-time/_intro.json :: paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)",
+    "tr": "cac259da32"
+  },
+  "magnetosphere|ar|essays/the-body-in-the-dark.json :: body.1.md": {
+    "why": "read 2026-11-04 (chunk 5): ar المجال المغناطيسي (magnetic field) where the sentence is about leaving Earth's protection, or a sentence-split artefact of the brief view",
+    "tr": "9c58d27f60"
+  },
+  "magnetosphere|ar|science/life-in-space/mars-human-architecture.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 5): ar المجال المغناطيسي (magnetic field) where the sentence is about leaving Earth's protection, or a sentence-split artefact of the brief view",
+    "tr": "4a28304dd9"
+  },
+  "microgravity|ar|essays/asteroid-mining.json :: body.26.md": {
+    "why": "read 2026-11-04 (chunk 2): the everyday word, weightlessness",
+    "tr": "3df812810c"
   },
   "orbit insertion|ar|science/mission-phases/orbit-insertion.json :: body_paragraphs.1": {
     "why": "\"إدخال ... في مدار\" matches the accepted pattern with a name inserted",
@@ -2606,6 +2906,10 @@
   "orbit|ar|science/orbits/apsides.json :: body_paragraphs.1": {
     "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
     "tr": "af98a8b85a"
+  },
+  "orbit|ar|science/orbits/eccentricity.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 3): 'the orbiting body' as الجرم الدائر (the revolving body); the field passed before only through the eccentricity wording الشذوذ المداري, now الاختلاف المركزي",
+    "tr": "f6fb29ee69"
   },
   "orbit|ar|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
     "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
@@ -3273,7 +3577,7 @@
   },
   "orbit|ru|missions/earth/sigma-7.json :: dispatch": {
     "why": "variant: виток (count of revolutions)",
-    "tr": "a09d23c2a0"
+    "tr": "3eba8787d7"
   },
   "orbit|ru|missions/earth/sigma-7.json :: events.2.note": {
     "why": "variant: виток (count of revolutions)",
@@ -3609,15 +3913,15 @@
   },
   "orbit|zh-CN|missions/earth/aurora-7.json :: description": {
     "why": "variant: 圈 (laps)",
-    "tr": "98c6a5e720"
+    "tr": "b0a718f6b4"
   },
   "orbit|zh-CN|missions/earth/aurora-7.json :: first": {
     "why": "variant: 圈 (laps)",
-    "tr": "bc6c240d01"
+    "tr": "8d6e7fe0e7"
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: description": {
     "why": "variant: 圈 (laps)",
-    "tr": "be2848d538"
+    "tr": "5141d01b92"
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: dispatch": {
     "why": "variant: 圈 (laps)",
@@ -3625,7 +3929,7 @@
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 圈 (laps)",
-    "tr": "1e2a645352"
+    "tr": "fface8b8b5"
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: first": {
     "why": "variant: 圈 (laps)",
@@ -3633,7 +3937,7 @@
   },
   "orbit|zh-CN|missions/earth/friendship-7.json :: events.3.note": {
     "why": "variant: 圈 (laps)",
-    "tr": "007fbf6c09"
+    "tr": "05afbbb0f2"
   },
   "orbit|zh-CN|missions/earth/vostok-1.json :: events.2.note": {
     "why": "variant: 降轨 (de-orbit)",
@@ -3641,7 +3945,7 @@
   },
   "orbit|zh-CN|missions/earth/vostok-2.json :: events.3.note": {
     "why": "variant: 降轨 (de-orbit)",
-    "tr": "cceab04f7b"
+    "tr": "111d63e764"
   },
   "orbit|zh-CN|missions/earth/vostok-2.json :: first": {
     "why": "variant: 圈 (laps)",
@@ -3778,6 +4082,74 @@
   "orbit|zh-CN|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
     "tr": "1a1fe7044c"
+  },
+  "orbiter|ar|fleet/orbiter/change-2.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "5fb80a80a5"
+  },
+  "orbiter|ar|fleet/orbiter/clementine.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "3d2892f5b4"
+  },
+  "orbiter|ar|missions/moon/luna10.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "08689eff88"
+  },
+  "orbiter|ar|missions/venus/akatsuki.json :: first": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "6452a896d3"
+  },
+  "orbiter|de|missions/saturn/cassini.json :: dispatch": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "00c9b42ec5"
+  },
+  "orbiter|es|fleet/orbiter/juice.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "09702460d5"
+  },
+  "orbiter|hi|fleet/orbiter/messenger.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "ff567589b2"
+  },
+  "orbiter|hi|missions/jupiter/juno.json :: first": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "bd174f1c0f"
+  },
+  "orbiter|it|missions/moon/luna10.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "7db997db4a"
+  },
+  "orbiter|ko|missions/mars/mars-express.json :: events.3.note": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "4e93e02cb9"
+  },
+  "orbiter|nl|fleet/orbiter/mars3-orbiter.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "3654546096"
+  },
+  "orbiter|ru|fleet/orbiter/lunar-prospector.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): the Shuttle / Buran orbiter: another sense than the binding (a robotic orbiter)",
+    "tr": "63d513e0d7"
+  },
+  "orbiter|ru|missions/mars/mars-express.json :: events.2.note": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "23e7f8b6df"
+  },
+  "orbiter|ru|missions/mars/mars-express.json :: events.3.note": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "a7fd5826c4"
+  },
+  "orbiter|ru|missions/mars/mars3.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "d57146cd88"
+  },
+  "orbiter|ru|missions/moon/luna10.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "35c3336613"
+  },
+  "orbiter|sr-Cyrl|missions/moon/luna10.json :: payload": {
+    "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
+    "tr": "2d9ccacecd"
   },
   "payload|de|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "part of proper name Vega Secondary Payload Adapter",
@@ -3993,7 +4365,7 @@
   },
   "payload|zh-CN|fleet/orbiter/lro.json :: description": {
     "why": "natural omission: 搭载的7台仪器",
-    "tr": "e8e949e553"
+    "tr": "b9996d5e40"
   },
   "payload|zh-CN|fleet/orbiter/smart-1.json :: description": {
     "why": "recast: 搭乘 (rideshare)",
@@ -4010,6 +4382,34 @@
   "payload|zh-CN|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
     "tr": "8ca1f489b3"
+  },
+  "perihelion|hi|missions/comet/rosetta.json :: description": {
+    "why": "read 2026-11-04 (chunk 3): the general periapsis word (ja 近点) in the eccentricity article, or the closest-point phrase",
+    "tr": "152e6f1139"
+  },
+  "perihelion|ja|science/orbits/eccentricity.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 3): the general periapsis word (ja 近点) in the eccentricity article, or the closest-point phrase",
+    "tr": "40818e371d"
+  },
+  "perihelion|ja|science/orbits/eccentricity.json :: formula_caption": {
+    "why": "read 2026-11-04 (chunk 3): the general periapsis word (ja 近点) in the eccentricity article, or the closest-point phrase",
+    "tr": "847fb8ec2a"
+  },
+  "polar orbit|es|science/orbits/sun-synchronous.json :: title": {
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'",
+    "tr": "b63a5b8e36"
+  },
+  "polar orbit|it|programs/ros.json :: goals.0.md": {
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'",
+    "tr": "99a2698a2d"
+  },
+  "polar orbit|it|science/orbits/sun-synchronous.json :: title": {
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'",
+    "tr": "79fc4e58e6"
+  },
+  "polar orbit|nl|missions/venus/magellan.json :: events.3.note": {
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'",
+    "tr": "0dda04dbdc"
   },
   "propellant|ar|essays/asteroid-mining.json :: body.15.caption": {
     "why": "variant: وقود الصواريخ (rocket propellant)",
@@ -4099,6 +4499,18 @@
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
     "tr": "080f3933a3"
   },
+  "regolith|ja|missions/itokawa/hayabusa1.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out",
+    "tr": "562b84b359"
+  },
+  "regolith|ja|science/life-in-space/lunar-suits.json :: intro_sentence": {
+    "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out",
+    "tr": "38a7e08d4b"
+  },
+  "regolith|zh-CN|science/life-in-space/lunar-suits.json :: intro_sentence": {
+    "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out",
+    "tr": "7992545533"
+  },
   "rendezvous|ar|programs/gemini.json :: goals.1.md": {
     "why": "variant: اللقاء المداري",
     "tr": "8ede5d816d"
@@ -4143,6 +4555,270 @@
     "why": "variant: састане у орбити (accepted сусрет у орбити)",
     "tr": "e1790d38fe"
   },
+  "rover|ar|fleet/rover/curiosity.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "5b2aa27971"
+  },
+  "rover|ar|fleet/rover/curiosity.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "af6c119b62"
+  },
+  "rover|ar|fleet/rover/exomars-rosalind-franklin.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "8f71567cb9"
+  },
+  "rover|ar|fleet/rover/exomars-rosalind-franklin.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "efe18d681f"
+  },
+  "rover|ar|fleet/rover/exomars-rosalind-franklin.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "35d5b81581"
+  },
+  "rover|ar|missions/moon/luna17.json :: events.4.note": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "00f126ed8f"
+  },
+  "rover|ar|programs/mars-rovers.json :: legacy.1.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "851aa45227"
+  },
+  "rover|hi|programs/mars-rovers.json :: narrative.1.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "3b534fd23a"
+  },
+  "rover|ja|missions/mars/curiosity.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "b038e7ee2d"
+  },
+  "rover|ja|science/_landing.json :: chapters.5.paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "c7826f8d8b"
+  },
+  "rover|ja|science/_landing.json :: tools.4.text": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "5083ff6449"
+  },
+  "rover|ja|science/scales-time/_intro.json :: paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "28e64ae07e"
+  },
+  "rover|pt-BR|missions/asteroid/hayabusa2.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "ab963358c0"
+  },
+  "rover|zh-CN|missions/mars/mmx.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "45387192db"
+  },
+  "rover|zh-CN|missions/mars/perseverance.json :: events.3.note": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "d44dfaff9c"
+  },
+  "rover|zh-CN|programs/hayabusa.json :: outcome.2.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "c947f431c5"
+  },
+  "rover|zh-CN|science/life-in-space/surface-mobility-rovers.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "2e8dc76564"
+  },
+  "rover|zh-CN|science/mission-phases/edl.json :: narrative_101.0": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "d63b4b7863"
+  },
+  "rover|zh-CN|science/mission-phases/edl.json :: narrative_101.2": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "fb53a183af"
+  },
+  "sample return|ar|essays/asteroid-mining.json :: body.22.caption": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "352bf64074"
+  },
+  "sample return|ar|fleet/lander/luna-16.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "44392db092"
+  },
+  "sample return|ar|fleet/lander/luna-16.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "44392db092"
+  },
+  "sample return|ar|missions/moon/luna16.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "2f8fa851e4"
+  },
+  "sample return|ar|science/life-in-space/surface-dust-mitigation.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "39aa1daf93"
+  },
+  "sample return|de|science/life-in-space/surface-dust-mitigation.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "3438fd3b17"
+  },
+  "sample return|es|fleet/lander/luna24.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "54749a404d"
+  },
+  "sample return|es|programs/jaxa-robotic.json :: link_labels./programs/hayabusa": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "94f09f3cff"
+  },
+  "sample return|fr|fleet/lander/luna24.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "ca00efaa47"
+  },
+  "sample return|fr|missions/mars/mmx.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "e7a41befb1"
+  },
+  "sample return|fr|missions/moon/change6.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "6a1cc17301"
+  },
+  "sample return|fr|missions/moon/luna16.json :: type": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "ed7fdce764"
+  },
+  "sample return|fr|missions/moon/slim.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "712d3a0eb8"
+  },
+  "sample return|hi|fleet/orbiter/hayabusa-2.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "218a9fcb23"
+  },
+  "sample return|hi|missions/moon/luna16.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "d446fb19e9"
+  },
+  "sample return|hi|science/life-in-space/surface-dust-mitigation.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "2528dc0cf7"
+  },
+  "sample return|it|fleet/lander/change6.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "6ebdde3133"
+  },
+  "sample return|it|fleet/lander/change6.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "c5472a48be"
+  },
+  "sample return|it|fleet/lander/luna-16.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "7b015a176e"
+  },
+  "sample return|it|fleet/lander/luna24.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "e501bbdf2f"
+  },
+  "sample return|it|missions/mars/mmx.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "874d59ce8d"
+  },
+  "sample return|it|missions/moon/slim.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "d0092db1b3"
+  },
+  "sample return|ja|science/life-in-space/surface-dust-mitigation.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "cbba4a9c06"
+  },
+  "sample return|nl|fleet/orbiter/osiris-rex.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "2d4007b872"
+  },
+  "sample return|nl|missions/asteroid/hayabusa2.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "c137ce5df8"
+  },
+  "sample return|nl|missions/bennu/osiris-rex.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "9f0af7873c"
+  },
+  "sample return|nl|programs/jaxa-robotic.json :: link_labels./programs/hayabusa": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "25bcaaeceb"
+  },
+  "sample return|nl|science/life-in-space/surface-dust-mitigation.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "bdd0386eaa"
+  },
+  "sample return|pt-BR|missions/mars/mmx.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "1e200f6038"
+  },
+  "sample return|pt-BR|missions/moon/change5.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "36a2255128"
+  },
+  "sample return|pt-BR|missions/moon/change6.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "b675e26cc8"
+  },
+  "sample return|ru|essays/going-to-the-moon.json :: body.20.md": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "00a0c380a3"
+  },
+  "sample return|ru|fleet/lander/luna-16.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "387959fb6b"
+  },
+  "sample return|ru|fleet/orbiter/hayabusa-2.json :: best_known_for": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "db26ab15bf"
+  },
+  "sample return|ru|missions/asteroid/hayabusa2.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "d45d83ac37"
+  },
+  "sample return|ru|missions/asteroid/hayabusa2.json :: payload": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "f268b57d6f"
+  },
+  "sample return|ru|missions/moon/luna16.json :: first": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "d66c8ffb96"
+  },
+  "sample return|sr-Cyrl|fleet/lander/luna24.json :: tagline": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "e05fc8f430"
+  },
+  "sample return|sr-Cyrl|missions/asteroid/hayabusa2.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "201570e26c"
+  },
+  "sample return|sr-Cyrl|missions/moon/change1.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
+    "tr": "f627c7ef7d"
+  },
+  "spacewalk|es|programs/space-shuttle.json :: goals.2.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "78231379a3"
+  },
+  "spacewalk|fr|programs/space-shuttle.json :: goals.2.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "b807cf2b31"
+  },
+  "spacewalk|it|fleet/space-suit/sokol-kv-2.json :: description": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "3fb0d59a02"
+  },
+  "spacewalk|ja|science/life-in-space/eva-suits.json :: title": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "9d97fe2511"
+  },
+  "spacewalk|pt-BR|programs/space-shuttle.json :: goals.2.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "f54092f780"
+  },
+  "spacewalk|ru|science/life-in-space/eva-physiology.json :: body_paragraphs.2": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "36e3d49eaf"
+  },
+  "spacewalk|zh-CN|science/life-in-space/eva-suits.json :: title": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "e8fcba1394"
+  },
   "specific impulse|ar|science/propulsion/antimatter-propulsion.json :: body_paragraphs.0": {
     "why": "\"للدفع النوعي\" = ل + الدفع النوعي, binding form",
     "tr": "dce97bc449"
@@ -4150,6 +4826,98 @@
   "specific impulse|ar|science/propulsion/engine-types.json :: body_paragraphs.2": {
     "why": "\"دفعه النوعي\" is the binding form with pronoun",
     "tr": "59e147f936"
+  },
+  "splashdown|ar|missions/earth/gemini8.json :: events.3.label": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "ec36c41b82"
+  },
+  "splashdown|ar|missions/earth/sigma-7.json :: dispatch": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "04b009afec"
+  },
+  "splashdown|de|missions/earth/polaris-dawn.json :: events.3.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "0b0d0a0c0b"
+  },
+  "splashdown|de|missions/moon/apollo15.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "953c84b1e3"
+  },
+  "splashdown|de|missions/moon/apollo16.json :: events.10.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "15d04789fa"
+  },
+  "splashdown|de|missions/moon/apollo8.json :: events.6.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "6b0c2deff5"
+  },
+  "splashdown|fr|missions/earth/freedom-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "8737aa750b"
+  },
+  "splashdown|fr|missions/moon/apollo15.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "025a484fe2"
+  },
+  "splashdown|hi|missions/earth/apollo7.json :: events.3.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "dd33f29a00"
+  },
+  "splashdown|hi|missions/earth/freedom-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "4eda91e68f"
+  },
+  "splashdown|hi|missions/earth/freedom-7.json :: events.2.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "5a3d8a65ca"
+  },
+  "splashdown|hi|missions/moon/apollo12.json :: events.8.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "4a7b225c08"
+  },
+  "splashdown|hi|missions/moon/apollo13.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "b6f86c1ebe"
+  },
+  "splashdown|hi|missions/moon/apollo15.json :: events.10.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "8bf720c063"
+  },
+  "splashdown|hi|missions/moon/apollo16.json :: events.10.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "2382b13050"
+  },
+  "splashdown|nl|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "222f9e85e4"
+  },
+  "splashdown|nl|missions/earth/inspiration4.json :: events.3.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "5cb39b169c"
+  },
+  "splashdown|nl|programs/mercury.json :: outcome.1.md": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "e9d2d7590b"
+  },
+  "splashdown|pt-BR|missions/earth/liberty-bell-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "6b25b02186"
+  },
+  "splashdown|pt-BR|missions/moon/apollo10.json :: events.7.note": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "c936fbe27e"
+  },
+  "splashdown|pt-BR|missions/moon/apollo13.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "cc48fd4715"
+  },
+  "splashdown|pt-BR|missions/moon/apollo15.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "0cade6b7c9"
+  },
+  "splashdown|sr-Cyrl|missions/earth/friendship-7.json :: description": {
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
+    "tr": "69eb8b4e69"
   },
   "stage|ar|missions/venus/magellan.json :: vehicle": {
     "why": "proper name Inertial Upper Stage left in English",
@@ -4494,5 +5262,41 @@
   "trajectory|zh-CN|science/mission-phases/entry-heating.json :: body_paragraphs.1": {
     "why": "the flight path is described (飞过最炽热的一段), no trajectory noun in the sentence",
     "tr": "60ece7da1c"
+  },
+  "upper stage|ar|science/orbits/space-debris.json :: body_paragraphs.0": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "cc0321c642"
+  },
+  "upper stage|de|missions/jupiter/galileo.json :: events.0.note": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "a2aeb30449"
+  },
+  "upper stage|es|essays/reusable-launchers.json :: body.14.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "9bfe9e9fde"
+  },
+  "upper stage|es|missions/mars/mars3.json :: events.0.note": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "ef3f056c4d"
+  },
+  "upper stage|it|essays/reusable-launchers.json :: body.14.md": {
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "6c26667ba3"
+  },
+  "upper stage|ru|essays/reusable-launchers.json :: body.14.md": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "bb139f7298"
+  },
+  "upper stage|ru|missions/moon/luna21.json :: events.1.note": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "e113ceba6a"
+  },
+  "upper stage|ru|science/propulsion/engine-clustering.json :: body_paragraphs.3": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "d41916dccb"
+  },
+  "upper stage|sr-Cyrl|science/propulsion/engine-clustering.json :: body_paragraphs.3": {
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
+    "tr": "674c774f8e"
   }
 }

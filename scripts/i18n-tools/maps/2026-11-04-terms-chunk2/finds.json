@@ -1,0 +1,295 @@
+[
+  {
+    "loc": "nl",
+    "term": "sample return",
+    "find": "STEEKPROEFRETOUR · GEVLOGEN",
+    "replace": "MONSTERTERUGKEER · GEVLOGEN"
+  },
+  {
+    "loc": "nl",
+    "term": "sample return",
+    "exact": true,
+    "find": "STEEKPROEFRETOUR",
+    "replace": "MONSTERTERUGKEER"
+  },
+  {
+    "loc": "nl",
+    "term": "sample return",
+    "find": "MONSTERHAAKMONSTER-TERUGGEKEERDE · GEVLOGEN",
+    "replace": "MONSTERTERUGKEER · GEVLOGEN"
+  },
+  {
+    "loc": "nl",
+    "term": "sample return",
+    "find": "Eerste maanmonsterbemonstering sinds 1976",
+    "replace": "Eerste maanmonsterterugkeer sinds 1976"
+  },
+  {
+    "loc": "nl",
+    "term": "sample return",
+    "find": "De eerste steekproefterugbrengmissie van de maanverre zijde",
+    "replace": "De eerste monsterterugkeermissie van de achterkant van de Maan"
+  },
+  {
+    "loc": "nl",
+    "term": "sample return",
+    "find": "(2013 oppervaktelandig) en Chang'e 5 (2020 monsterafname)",
+    "replace": "(2013 oppervlaktelanding) en Chang'e 5 (2020 monsterterugkeer)"
+  },
+  {
+    "loc": "it",
+    "term": "sample return",
+    "find": "Tipi di missione — Sorvolo, Orbiter, Lander, Rover, Sample Return",
+    "replace": "Tipi di missione — Sorvolo, Orbiter, Lander, Rover, Ritorno di campioni"
+  },
+  {
+    "loc": "it",
+    "term": "sample return",
+    "find": "il sample return il più costoso",
+    "replace": "il ritorno di campioni il più costoso"
+  },
+  {
+    "loc": "it",
+    "term": "sample return",
+    "find": "SAMPLE RETURN è l'apice",
+    "replace": "Il RITORNO DI CAMPIONI è l'apice"
+  },
+  {
+    "loc": "it",
+    "term": "sample return",
+    "find": "Il sample return è l'apice.",
+    "replace": "Il ritorno di campioni è l'apice."
+  },
+  {
+    "loc": "it",
+    "term": "sample return",
+    "find": "→ rover → sample return.",
+    "replace": "→ rover → ritorno di campioni."
+  },
+  {
+    "loc": "it",
+    "term": "sample return",
+    "find": "SAMPLE RITORNO · COMPLETATA",
+    "replace": "RITORNO DI CAMPIONI · COMPLETATA"
+  },
+  {
+    "loc": "it",
+    "term": "sample return",
+    "find": "Primo ritorno robot del campione lunare",
+    "replace": "Primo ritorno robotico di campioni lunari"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "sample return",
+    "find": "Tipos de Missão — Sobrevoo, Orbiter, Lander, Rover, Sample Return",
+    "replace": "Tipos de Missão — Sobrevoo, Orbitador, Módulo de pouso, Rover, Retorno de amostras"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "sample return",
+    "find": "SAMPLE RETURN é o pico",
+    "replace": "O RETORNO DE AMOSTRAS é o pico"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "sample return",
+    "find": "AMOSTRA DE RETORNO · REALIZADA",
+    "replace": "RETORNO DE AMOSTRAS · REALIZADA"
+  },
+  {
+    "loc": "ar",
+    "term": "sample return",
+    "find": "مهمة مأهولة · مفهوم",
+    "replace": "إعادة عينات بطاقم · مفهوم"
+  },
+  {
+    "loc": "ar",
+    "term": "sample return",
+    "find": "أول عينة روبوتية",
+    "replace": "أول إعادة آلية للعينات من القمر"
+  },
+  {
+    "loc": "hi",
+    "term": "sample return",
+    "find": "1976 के बाद पहला चंद्र नमूना रिटर्न",
+    "replace": "1976 के बाद पहली चंद्र नमूना वापसी"
+  },
+  {
+    "loc": "es",
+    "term": "sample return",
+    "find": "módulo de aterrizaje lunar de recogida de muestras",
+    "replace": "módulo de aterrizaje lunar de retorno de muestras"
+  },
+  {
+    "loc": "es",
+    "term": "sample return",
+    "find": "última recogida de muestras lunares antes de",
+    "replace": "último retorno de muestras lunares antes de"
+  },
+
+  {
+    "loc": "fr",
+    "term": "splashdown",
+    "find": "Le CM s'est amaré dans l'Atlantique Nord",
+    "replace": "Le CM a amerri dans l'Atlantique Nord"
+  },
+  {
+    "loc": "fr",
+    "term": "splashdown",
+    "find": "Resilience s'est amarée au large",
+    "replace": "Resilience a amerri au large"
+  },
+  {
+    "loc": "fr",
+    "term": "splashdown",
+    "find": "Orion s'écrase dans l'océan Pacifique",
+    "replace": "Orion amerrit dans l'océan Pacifique"
+  },
+  { "loc": "fr", "term": "splashdown", "find": "à l'amérissage", "replace": "à l'amerrissage" },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "Splashdown 24 juli.",
+    "replace": "Waterlanding op 24 juli."
+  },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "NEERKOMING (Apollo)",
+    "replace": "WATERLANDING (Apollo)"
+  },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC.",
+    "replace": "CM landde op 1972-04-27 19:45 UTC in de centrale Stille Oceaan."
+  },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "CM splash-down in Zuid-Stille Oceaan",
+    "replace": "CM waterlanding in de zuidelijke Stille Oceaan"
+  },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "CM splashte neer in de Noord-Atlantische Oceaan",
+    "replace": "CM plonsde neer in de Noord-Atlantische Oceaan"
+  },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "CSM-117 splashte neer in de Stille Oceaan",
+    "replace": "CSM-117 plonsde neer in de Stille Oceaan"
+  },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "CM waterlandde in de Noord-Atlantische Oceaan op 1968-12-27",
+    "replace": "CM waterlandde in de noordelijke Stille Oceaan op 1968-12-27"
+  },
+  { "loc": "nl", "term": "splashdown", "find": "NOODWATERING", "replace": "NOODLANDING OP ZEE" },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "Noodwatering in de Stille Oceaan",
+    "replace": "Noodlanding op zee in de Stille Oceaan"
+  },
+  {
+    "loc": "nl",
+    "term": "splashdown",
+    "find": "Resilience landde af op 2021-09-18",
+    "replace": "Resilience landde op 2021-09-18"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "term": "splashdown",
+    "find": "ХИТНО ВОДНО САЛЕТАЊЕ",
+    "replace": "ХИТНО ВОДНО СЛЕТАЊЕ"
+  },
+  {
+    "loc": "ru",
+    "term": "splashdown",
+    "find": "Приземлился почти прямо над кораблём-носителем.",
+    "replace": "Приводнился почти прямо у корабля-спасателя."
+  },
+  {
+    "loc": "ru",
+    "term": "splashdown",
+    "find": "Приземлились 1973-09-25",
+    "replace": "Приводнились 1973-09-25"
+  },
+  {
+    "loc": "ru",
+    "term": "splashdown",
+    "find": "затонула при посадке",
+    "replace": "затонула после приводнения"
+  },
+  {
+    "loc": "zh-CN",
+    "term": "splashdown",
+    "find": "在太平洋着陆——最后一次Skylab着陆",
+    "replace": "在太平洋溅落——最后一次Skylab溅落"
+  },
+  {
+    "loc": "ko",
+    "term": "splashdown",
+    "find": "4일 / 62개 궤도 후 대서양 귀환.",
+    "replace": "4일 / 62개 궤도 후 대서양 착수."
+  },
+  {
+    "loc": "ko",
+    "term": "splashdown",
+    "find": "태평양에 물착륙했습니다",
+    "replace": "태평양에 착수했습니다"
+  },
+  {
+    "loc": "de",
+    "term": "splashdown",
+    "find": "Orion platscht im Pazifischen Ozean.",
+    "replace": "Orion wassert im Pazifischen Ozean."
+  },
+  {
+    "loc": "pt-BR",
+    "term": "splashdown",
+    "find": "Orion cai no Oceano Pacífico.",
+    "replace": "Orion amerissa no Oceano Pacífico."
+  },
+  {
+    "loc": "hi",
+    "term": "splashdown",
+    "find": "USS Essex द्वारा प्रायः निकाला गया।",
+    "replace": "USS Essex ने उसे समुद्र से निकाला।"
+  },
+  {
+    "loc": "ar",
+    "term": "splashdown",
+    "find": "الهبوط (Apollo)",
+    "replace": "الهبوط المائي (Apollo)"
+  },
+
+  {
+    "loc": "fr",
+    "term": "regolith",
+    "find": "170 g de régolite de Mare Crisium",
+    "replace": "170 g de régolithe de Mare Crisium"
+  },
+  {
+    "loc": "ko",
+    "term": "regolith",
+    "find": "레고리스 약 10g 채취",
+    "replace": "레골리스 약 10g 채취"
+  },
+  {
+    "loc": "ko",
+    "term": "regolith",
+    "find": "후면 레고리스에서 1.935 kg.",
+    "replace": "후면 레골리스에서 1.935 kg 채취."
+  },
+  {
+    "loc": "ja",
+    "term": "microgravity",
+    "find": "アストロノウトは、1ヶ月あたり約1〜2%の骨量をマイクログラビティで失います。高齢者の骨粗鬆症と同じレートですが、圧縮され、再燃性が向上します。",
+    "replace": "宇宙飛行士は微小重力のもとで、1か月あたり約1〜2%の骨量を失います。高齢者の骨粗鬆症と同じ速さですが、短期間に起こり、ほぼ元に戻ります。"
+  }
+]

@@ -2,7 +2,7 @@
 // so the overlay converter skipped them). Same rules: whole words, ru vehicles in «», checked.
 import fs from 'node:fs';
 import { designations, knownNamesIn, problems } from '../lib/translate-quality.mjs';
-import { ORIGIN_NAMES, nativeName } from '../lib/name-origins.mjs';
+import { ORIGIN_NAMES, nativeName } from '../../src/lib/name-origins.js';
 const R = 'i18n-src';
 const side = JSON.parse(fs.readFileSync('static/data/surface-hotspots.json', 'utf8')).entries;
 const QUOTED = new Set([
@@ -31,8 +31,13 @@ let n = 0;
 for (const loc of ['ru', 'zh-CN', 'ja', 'ko', 'hi']) {
   for (const [site, e] of Object.entries(side)) {
     const p = `${R}/${loc}/hotspot-metadata/${site}.json`;
-    if (!fs.existsSync(p)) continue;
-    const t = JSON.parse(fs.readFileSync(p, 'utf8'));
+    let t;
+    try {
+      t = JSON.parse(fs.readFileSync(p, 'utf8'));
+    } catch (err) {
+      if (err.code === 'ENOENT') continue;
+      throw err;
+    }
     const pairs = [];
     if (t.panorama_caption)
       pairs.push([

@@ -22,7 +22,9 @@ export function renderKatex(latex: string, displayMode = true): string {
   return katex.renderToString(latex, {
     displayMode,
     throwOnError: true,
-    output: 'html',
+    // MathML for screen readers (KaTeX's own CSS hides it visually and marks the HTML copy
+    // aria-hidden); 'html' alone left formulas silent to assistive tech.
+    output: 'htmlAndMathml',
     strict: 'warn',
   });
 }

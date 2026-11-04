@@ -26,7 +26,7 @@ const IMAGES = 'static/images';
 const KNOWN_MISSING = new Set<string>([]);
 
 /** Placeholder credits in galleries. 411 on 2026-11-01; on 2026-11-02 412 (MMX 01 honest placeholder), 409 (Galileo), 380 (credit-placeholders-find batch 1). Ratchet: lower it as they are fixed. */
-const PLACEHOLDER_CEILING = 380;
+const PLACEHOLDER_CEILING = 379;
 
 interface Row {
   path: string;

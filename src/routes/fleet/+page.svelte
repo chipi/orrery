@@ -18,6 +18,7 @@
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { LINEUP_LIVE, lineupKindFor, type LineupKind } from '$lib/three/lineup/lineup-kind';
   import { handleGridKeydown } from '$lib/grid-keyboard-nav';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
@@ -441,6 +442,7 @@
   <title>{m.fleet_page_title()}</title>
   <meta name="description" content={m.fleet_meta_description()} />
 </svelte:head>
+<VisuallyHiddenH1 title={m.fleet_page_title()} />
 
 <div class="fleet entity-browse-page">
   {#if !isSuccess(entriesRequest) && !isError(entriesRequest)}

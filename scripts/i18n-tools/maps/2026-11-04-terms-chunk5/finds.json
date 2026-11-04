@@ -1,0 +1,32 @@
+[
+  {
+    "loc": "fr",
+    "term": "light-year",
+    "find": "Light-Minute et Light-Year",
+    "replace": "Minute-lumière et année-lumière"
+  },
+  {
+    "loc": "es",
+    "term": "light-year",
+    "find": "Minuto de luz y año de luz",
+    "replace": "Minuto luz y año luz"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "asteroid belt",
+    "find": "o maior objeto no cinturão de asteróides",
+    "replace": "o maior objeto do cinturão de asteroides"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "asteroid belt",
+    "find": "Primeira espaçonave a atravessar a Cintura de asteroides",
+    "replace": "Primeira espaçonave a atravessar o cinturão de asteroides"
+  },
+  {
+    "loc": "pt-BR",
+    "term": "asteroid belt",
+    "find": "a atravessar a Cintura de asteroides e a primeira",
+    "replace": "a atravessar o cinturão de asteroides e a primeira"
+  }
+]

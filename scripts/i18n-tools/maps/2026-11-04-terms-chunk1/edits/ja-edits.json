@@ -1,0 +1,18 @@
+[
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "tagline",
+    "term": "rover",
+    "decision": "change",
+    "find": "月の裏側初の探査機",
+    "replace": "月の裏側初のローバー"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "best_known_for",
+    "term": "rover",
+    "decision": "change",
+    "find": "月の裏側初の探査機",
+    "replace": "月の裏側初のローバー"
+  }
+]

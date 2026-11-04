@@ -5,7 +5,7 @@
 //   node scripts/i18n-tools/term-widen-check.mjs /tmp/old.json [--trees=…] [--out=f.json]
 import fs from 'node:fs';
 import path from 'node:path';
-import { enPattern, keepKey, locPattern, textHash } from './term-match.mjs';
+import { enPattern, keepKey, locPattern, senseSkipped, textHash } from './term-match.mjs';
 
 const [oldFile] = process.argv.slice(2);
 const arg = (n, d) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? d;
@@ -45,7 +45,7 @@ for (const tree of trees)
       if (!tr) continue;
       for (const [term, e] of Object.entries(NEW)) {
         const o = OLD[term];
-        if (!o) continue;
+        if (!o || senseSkipped(e, rel)) continue;
         const enRe = enPattern(term, e);
         const now = locPattern(e, loc);
         const before = locPattern(o, loc);

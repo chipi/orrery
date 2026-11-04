@@ -96,6 +96,39 @@ test.describe('/science', () => {
  * panels across /missions, /fly, /explore, /plan and link to the matching
  * /science/[tab]/[section].
  */
+test.describe('/science glossary term links (PRD-038 §5)', () => {
+  for (const [prefix, name] of [
+    ['', 'English'],
+    ['/de', 'German'],
+    ['/ar', 'Arabic'],
+  ] as const) {
+    test(`a term in the text links to its glossary entry (${name})`, async ({ page }) => {
+      await page.goto(`${prefix}/science/orbits/eccentricity`);
+      await waitForHydration(page);
+      const term = page.locator('a.term').first();
+      await expect(term).toBeVisible();
+      const href = await term.getAttribute('href');
+      expect(href).toMatch(new RegExp(`^${prefix}/science/glossary#[a-z0-9-]+$`));
+      const id = href!.split('#')[1];
+      await term.click();
+      await expect(page).toHaveURL(new RegExp(`/science/glossary#${id}$`));
+      await expect(page.locator(`[id="${id}"]`)).toBeVisible();
+    });
+  }
+
+  test('a term is linked once per article and never on its own read-more page', async ({
+    page,
+  }) => {
+    await page.goto('/science/orbits/eccentricity');
+    const hrefs = await page
+      .locator('a.term')
+      .evaluateAll((as) => as.map((a) => a.getAttribute('href')));
+    expect(hrefs.length).toBeGreaterThan(0);
+    expect(new Set(hrefs).size).toBe(hrefs.length);
+    expect(hrefs).not.toContain('/science/glossary#eccentricity');
+  });
+});
+
 test.describe('/science Phase 2 chips', () => {
   test('/plan educational primer surfaces porkchop chips that navigate to /science', async ({
     page,

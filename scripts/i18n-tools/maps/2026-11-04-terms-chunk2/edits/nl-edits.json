@@ -1,0 +1,154 @@
+[
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "type",
+    "term": "sample return",
+    "decision": "change",
+    "find": "STEEKPROEFRETOUR · GEVLOGEN",
+    "replace": "MONSTERTERUGKEER · GEVLOGEN"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "type",
+    "term": "sample return",
+    "decision": "change",
+    "find": "STEEKPROEFRETOUR · GEVLOGEN",
+    "replace": "MONSTERTERUGKEER · GEVLOGEN"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.5.label",
+    "term": "sample return",
+    "decision": "change",
+    "find": "STEEKPROEFRETOUR",
+    "replace": "MONSTERTERUGKEER"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.6.label",
+    "term": "sample return",
+    "decision": "change",
+    "find": "STEEKPROEFRETOUR",
+    "replace": "MONSTERTERUGKEER"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "type",
+    "term": "sample return",
+    "decision": "change",
+    "find": "MONSTERHAAKMONSTER-TERUGGEKEERDE · GEVLOGEN",
+    "replace": "MONSTERTERUGKEER · GEVLOGEN"
+  },
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "tagline",
+    "term": "sample return",
+    "decision": "change",
+    "find": "Eerste maanmonsterbemonstering sinds 1976",
+    "replace": "Eerste maanmonsterterugkeer sinds 1976"
+  },
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "best_known_for",
+    "term": "sample return",
+    "decision": "change",
+    "find": "Eerste maanmonsterbemonstering sinds 1976",
+    "replace": "Eerste maanmonsterterugkeer sinds 1976"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "sample return",
+    "decision": "change",
+    "find": "De eerste steekproefterugbrengmissie van de maanverre zijde",
+    "replace": "De eerste monsterterugkeermissie van de achterkant van de Maan"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "description",
+    "term": "sample return",
+    "decision": "change",
+    "find": "(2013 oppervaktelandig) en Chang'e 5 (2020 monsterafname)",
+    "replace": "(2013 oppervlaktelanding) en Chang'e 5 (2020 monsterterugkeer)"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "narrative_101.1",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Splashdown 24 juli.",
+    "replace": "Waterlanding op 24 juli."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.4.label",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "NEERKOMING (Apollo)",
+    "replace": "WATERLANDING (Apollo)"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.10.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC.",
+    "replace": "CM landde op 1972-04-27 19:45 UTC in de centrale Stille Oceaan."
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.9.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "CM splash-down in Zuid-Stille Oceaan",
+    "replace": "CM waterlanding in de zuidelijke Stille Oceaan"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "CM splashte neer in de Noord-Atlantische Oceaan",
+    "replace": "CM plonsde neer in de Noord-Atlantische Oceaan"
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "CSM-117 splashte neer in de Stille Oceaan",
+    "replace": "CSM-117 plonsde neer in de Stille Oceaan"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.6.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "CM waterlandde in de Noord-Atlantische Oceaan op 1968-12-27",
+    "replace": "CM waterlandde in de noordelijke Stille Oceaan op 1968-12-27"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.label",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "NOODWATERING",
+    "replace": "NOODLANDING OP ZEE"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Noodwatering in de Stille Oceaan",
+    "replace": "Noodlanding op zee in de Stille Oceaan"
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "events.3.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Resilience landde af op 2021-09-18",
+    "replace": "Resilience landde op 2021-09-18"
+  }
+]

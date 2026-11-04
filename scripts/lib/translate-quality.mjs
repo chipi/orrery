@@ -658,13 +658,15 @@ export function problems(locale, src, out, { ui = false } = {}) {
       ]),
     );
     // A unit symbol the source has in another case is the locale's own form of it
-    // (style guide 1a: ja writes "au" where the English has "AU").
+    // (style guide 1a: ja writes "au" where the English has "AU"). sr-Cyrl and zh-CN write the
+    // kilometre as the SI symbol "km" where the English spells it out or writes "Mkm".
     const srcLower = new Set([...srcWords].map((w) => w.toLowerCase()));
     const altered = [...new Set(out.match(/[A-Za-z][A-Za-z'’]*/g) || [])].filter(
       (w) =>
         w.length > 1 &&
         !srcWords.has(w) &&
         !(LATIN_KEEP.test(w) && srcLower.has(w.toLowerCase())) &&
+        !(w === 'km' && /kilomet|\bMkm\b/i.test(src)) &&
         !srcWords.has(w.replace(/'/g, '’')) && // Chang'e == Chang’e
         !/^[IVXLCDM]+$/.test(w), // Roman numerals (centuries in ru: XXI)
     );

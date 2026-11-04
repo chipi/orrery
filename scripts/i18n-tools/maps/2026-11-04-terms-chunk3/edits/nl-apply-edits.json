@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.2",
+    "old": "De nuttigste vergelijking die je hier tegenkomt is [vis-viva](orbits/vis-viva). Vul je straal in, de grootte van je baan, en eruit komt je snelheid. Dat is alles. De Aarde bij perihelium: 30,3 km/s. De Aarde bij afhelium: 29,3 km/s. Dezelfde baan, dezelfde energie, een andere snelheid.",
+    "new": "De nuttigste vergelijking die je hier tegenkomt is [vis-viva](orbits/vis-viva). Vul je straal in, de grootte van je baan, en eruit komt je snelheid. Dat is alles. De Aarde bij perihelium: 30,3 km/s. De Aarde bij aphelium: 29,3 km/s. Dezelfde baan, dezelfde energie, een andere snelheid."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.2",
+    "old": "Waarom de logaritmische schaal ertoe doet: ∆v verdubbelen vereist de massaverhouding in het kwadraat. Verdrievoudigen vereist de derde macht. Om van 0 naar ontsnapsnelheid (~11,2 km/s) te gaan met een typische chemische uitlaatsnelheid van 4,4 km/s, is de massaverhouding = e^(11,2/4,4) ≈ 13. Een lading van 1 ton vereist dus 12 ton drijfstof, plus de constructie om die te dragen.",
+    "new": "Waarom de logaritmische schaal ertoe doet: ∆v verdubbelen vereist de massaverhouding in het kwadraat. Verdrievoudigen vereist de derde macht. Om van 0 naar ontsnappingssnelheid (~11,2 km/s) te gaan met een typische chemische uitlaatsnelheid van 4,4 km/s, is de massaverhouding = e^(11,2/4,4) ≈ 13. Een lading van 1 ton vereist dus 12 ton drijfstof, plus de constructie om die te dragen."
+  }
+]

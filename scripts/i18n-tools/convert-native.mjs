@@ -3,10 +3,18 @@
 // table bases); replaced only as whole words; ru vehicle names in running text get «» quotes
 // (standard Russian style, and quoted names do not decline). Fleet `name` overrides are added
 // for entries whose base name has a native form. Dry run unless --write.
+//
+//   node scripts/i18n-tools/convert-native.mjs [--write] [--samples=<file>]
+//
+// Left alone (2026-11-04 round, each found by reading a --write diff): a name inside a
+// Latin phrase (Sputnik Planitia, Alpha Persei), an English gloss in brackets after a CJK
+// name (长征三号乙(Long March 3B)); in zh-CN/ja the spaces that set a Latin name off from
+// CJK text are dropped with it.
 import fs from 'node:fs';
 import path from 'node:path';
 import { designations, knownNamesIn, problems } from '../lib/translate-quality.mjs';
-import { ORIGIN_NAMES, nativeName } from '../lib/name-origins.mjs';
+import { ORIGIN_NAMES, nativeName } from '../../src/lib/name-origins.js';
+import { KEEP_ENGLISH_FILES, keepEnglish } from '../lib/native-skip.mjs';
 const ROOT = process.cwd();
 const R = `${ROOT}/i18n-src`;
 const WRITE = process.argv.includes('--write');
@@ -89,11 +97,22 @@ function convert(loc, en, tr, at) {
     const needle = caps ? n.toUpperCase() : n;
     if (caps) nat = nat.toUpperCase();
     const re = new RegExp(`(«)?(?<![A-Za-z0-9])${esc(needle)}(?![A-Za-z0-9])(»)?`, 'g');
-    out = out.replace(re, (m, q1, q2) => {
+    out = out.replace(re, (m, q1, q2, off, s) => {
+      if (keepEnglish(s.slice(0, off), s.slice(off + m.length), nat)) return m;
       if (q1 || q2) return `${q1 ?? ''}${nat}${q2 ?? ''}`;
       if (loc === 'ru' && !heading && !caps && QUOTED.has(base)) return `«${nat}»`;
       return nat;
     });
+  }
+  if ((loc === 'zh-CN' || loc === 'ja') && out !== tr) {
+    // A Latin name sat between spaces in CJK text; its native form needs none.
+    const cjk = '[\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}]';
+    for (const n of candidates(loc, en)) {
+      const nat = esc(nativeName(loc, n));
+      out = out
+        .replace(new RegExp(`(${cjk}) (${nat})`, 'gu'), '$1$2')
+        .replace(new RegExp(`(${nat}) (${cjk})`, 'gu'), '$1$2');
+    }
   }
   return out;
 }
@@ -123,6 +142,7 @@ for (const loc of LOCS) {
     names = 0;
   for (const p of walk(`${R}/${loc}`)) {
     const rel = path.relative(`${R}/${loc}`, p);
+    if (KEEP_ENGLISH_FILES.test(rel)) continue;
     const ep = `${R}/en-US/${rel}`;
     if (!fs.existsSync(ep)) continue;
     const en = JSON.parse(fs.readFileSync(ep, 'utf8'));
@@ -168,9 +188,11 @@ for (const loc of LOCS) {
   stats[loc] = { changed, names, files, refused };
 }
 console.log(stats);
-fs.writeFileSync(
-  `${process.argv[2]}`,
-  Object.entries(samples)
-    .map(([l, s]) => `#### ${l}\n${s.join('\n')}`)
-    .join('\n\n'),
-);
+const SAMPLES = process.argv.find((a) => a.startsWith('--samples='))?.slice(10);
+if (SAMPLES)
+  fs.writeFileSync(
+    SAMPLES,
+    Object.entries(samples)
+      .map(([l, s]) => `#### ${l}\n${s.join('\n')}`)
+      .join('\n\n'),
+  );

@@ -1,0 +1,122 @@
+[
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.4",
+    "term": "lander",
+    "decision": "change",
+    "find": "Cada pouso em Marte até agora",
+    "replace": "Cada módulo de pouso em Marte até agora"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "term": "lander",
+    "decision": "change",
+    "find": "SAMPLE RETURN é o pico: pouso +",
+    "replace": "SAMPLE RETURN é o pico: módulo de pouso +"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.4",
+    "term": "lander",
+    "decision": "change",
+    "find": "levanta o pouso que levanta",
+    "replace": "levanta o módulo de pouso que levanta"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "diagram_caption",
+    "term": "lander",
+    "decision": "change",
+    "find": "orbitador → pouso → rover",
+    "replace": "orbitador → módulo de pouso → rover"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "term": "lander",
+    "decision": "change",
+    "find": "cada Lunar Module de Apollo até hoje pousou",
+    "replace": "cada módulo de pouso lunar, do Apollo até hoje, pousou"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.2",
+    "term": "lander",
+    "decision": "change",
+    "find": "ajudar um Lunar Module leve com paraquedas",
+    "replace": "ajudar um módulo de pouso leve com paraquedas"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.0",
+    "term": "lander",
+    "decision": "change",
+    "find": "Na Lua um Lunar Module deve eliminar toda sua velocidade orbital ou de aproximação no motor, é por isso que tanta massa de um Lunar Module é combustível.",
+    "replace": "Na Lua um módulo de pouso deve eliminar toda sua velocidade orbital ou de aproximação no motor, é por isso que tanta massa de um módulo de pouso lunar é combustível."
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "narrative_101.2",
+    "term": "lander",
+    "decision": "change",
+    "find": "massa em um pouso em Marte é disputada",
+    "replace": "massa em um módulo de pouso em Marte é disputada"
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.2",
+    "term": "rover",
+    "decision": "change",
+    "find": "para os rovôs de superfície",
+    "replace": "para os rovers de superfície"
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.3",
+    "term": "rover",
+    "decision": "change",
+    "find": "Um bundle de um rovô em Marte",
+    "replace": "Um bundle de um rover em Marte"
+  },
+  {
+    "rel": "science/life-in-space/lunar-habitat-design.json",
+    "at": "body_paragraphs.3",
+    "term": "airlock",
+    "decision": "change",
+    "find": "travou ecluses de ar",
+    "replace": "travou eclusas de ar"
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.4",
+    "term": "airlock",
+    "decision": "change",
+    "find": "para a escotilha Wentian do Tiangong",
+    "replace": "para a eclusa do módulo Wentian do Tiangong"
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "intro_sentence",
+    "term": "spacewalk",
+    "decision": "change",
+    "find": "Um spacewalk é um evento",
+    "replace": "Uma caminhada espacial é um evento"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "dispatch",
+    "term": "spacewalk",
+    "decision": "change",
+    "find": "realizou o primeiro spacewalk e quase o transformou no primeiro morte no espaço",
+    "replace": "realizou a primeira caminhada espacial e quase a transformou na primeira morte no espaço"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.2.note",
+    "term": "spacewalk",
+    "decision": "change",
+    "find": "primeira atividade extravehicular comercial",
+    "replace": "primeira atividade extraveicular comercial"
+  }
+]

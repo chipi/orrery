@@ -1,0 +1,50 @@
+[
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "title",
+    "old": "Tipi di missione — Sorvolo, Orbiter, Lander, Rover, Sample Return",
+    "new": "Tipi di missione — Sorvolo, Orbiter, Lander, Rover, Ritorno di campioni"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.0",
+    "old": "Ogni missione robotica verso un altro mondo sceglie una di cinque strategie. Questa scelta determina quasi tutto il resto — quanto grande deve essere il razzo, come si piega la traiettoria, cosa porta il veicolo spaziale, che scienza fa, e se sopravvive. La tassonomia corrisponde esattamente a una scala di ∆v: il sorvolo è il più economico, il sample return il più costoso.",
+    "new": "Ogni missione robotica verso un altro mondo sceglie una di cinque strategie. Questa scelta determina quasi tutto il resto — quanto grande deve essere il razzo, come si piega la traiettoria, cosa porta il veicolo spaziale, che scienza fa, e se sopravvive. La tassonomia corrisponde esattamente a una scala di ∆v: il sorvolo è il più economico, il ritorno di campioni il più costoso."
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "old": "SAMPLE RETURN è l'apice: lander + stadio di risalita dalla superficie + crociera di ritorno + EDL sulla Terra. Hayabusa-2, OSIRIS-REx, Chang'e 5, i voli lunari Apollo. Il rapporto tra la massa e la partenza dalla Terra è brutale — Mars Sample Return è ora in sviluppo ed è una delle missioni robotiche più difficili mai tentate.",
+    "new": "Il RITORNO DI CAMPIONI è l'apice: lander + stadio di risalita dalla superficie + crociera di ritorno + EDL sulla Terra. Hayabusa-2, OSIRIS-REx, Chang'e 5, i voli lunari Apollo. Il rapporto tra la massa e la partenza dalla Terra è brutale — Mars Sample Return è ora in sviluppo ed è una delle missioni robotiche più difficili mai tentate."
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.4",
+    "old": "Il sample return è l'apice. La massa che deve partire dalla Terra equivale a circa 10 volte la massa del campione riportato, per un viaggio di andata e ritorno su Marte — paghi per il razzo che solleva il razzo che solleva il lander che solleva il contenitore del campione che solleva lo stadio di crociera che riporta i campioni a casa. Hayabusa-2 ha riportato ~5g dell'asteroide Ryugu in una capsula che stava nel palmo di una mano.",
+    "new": "Il ritorno di campioni è l'apice. La massa che deve partire dalla Terra equivale a circa 10 volte la massa del campione riportato, per un viaggio di andata e ritorno su Marte — paghi per il razzo che solleva il razzo che solleva il lander che solleva il contenitore del campione che solleva lo stadio di crociera che riporta i campioni a casa. Hayabusa-2 ha riportato ~5g dell'asteroide Ryugu in una capsula che stava nel palmo di una mano."
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "diagram_caption",
+    "old": "Cinque archetipi di missione disposti per complessità crescente: sorvolo → orbiter → lander → rover → sample return.",
+    "new": "Cinque archetipi di missione disposti per complessità crescente: sorvolo → orbiter → lander → rover → ritorno di campioni."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "type",
+    "old": "SAMPLE RITORNO · COMPLETATA",
+    "new": "RITORNO DI CAMPIONI · COMPLETATA"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "tagline",
+    "old": "Primo ritorno robot del campione lunare",
+    "new": "Primo ritorno robotico di campioni lunari"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "best_known_for",
+    "old": "Primo ritorno robot del campione lunare",
+    "new": "Primo ritorno robotico di campioni lunari"
+  }
+]

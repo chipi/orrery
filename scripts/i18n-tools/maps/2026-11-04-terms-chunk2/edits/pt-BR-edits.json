@@ -1,0 +1,34 @@
+[
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "title",
+    "term": "sample return",
+    "decision": "change",
+    "find": "Tipos de Missão — Sobrevoo, Orbiter, Lander, Rover, Sample Return",
+    "replace": "Tipos de Missão — Sobrevoo, Orbitador, Módulo de pouso, Rover, Retorno de amostras"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "term": "sample return",
+    "decision": "change",
+    "find": "SAMPLE RETURN é o pico",
+    "replace": "O RETORNO DE AMOSTRAS é o pico"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "type",
+    "term": "sample return",
+    "decision": "change",
+    "find": "AMOSTRA DE RETORNO · REALIZADA",
+    "replace": "RETORNO DE AMOSTRAS · REALIZADA"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.6.note",
+    "term": "splashdown",
+    "decision": "change",
+    "find": "Orion cai no Oceano Pacífico.",
+    "replace": "Orion amerissa no Oceano Pacífico."
+  }
+]

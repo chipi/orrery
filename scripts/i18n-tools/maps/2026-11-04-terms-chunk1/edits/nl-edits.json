@@ -1,0 +1,34 @@
+[
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "tagline",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "Saturnusbaan; Huygens",
+    "replace": "Saturnusorbiter; Huygens"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "best_known_for",
+    "term": "orbiter",
+    "decision": "change",
+    "find": "Saturnusbaan; Huygens",
+    "replace": "Saturnusorbiter; Huygens"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "term": "upper stage",
+    "decision": "change",
+    "find": "met een capabelere bovenstap",
+    "replace": "met een capabelere bovenste trap"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.0.note",
+    "term": "upper stage",
+    "decision": "change",
+    "find": "PAM-S bovenstrappen",
+    "replace": "PAM-S bovenste trappen"
+  }
+]

@@ -272,7 +272,7 @@
   "panel_orbit_shape_slightly": "Licht elliptisch",
   "panel_orbit_shape_notably": "Duidelijk elliptisch",
   "panel_orbit_shape_highly": "Sterk elliptisch",
-  "panel_orbit_shape_meta": "BAANVORM · e={e} · perihelium vs afhelium ×{ratio}",
+  "panel_orbit_shape_meta": "BAANVORM · e={e} · perihelium vs aphelium ×{ratio}",
   "panel_dist_row": "{mkm} M km vanaf de Zon · rotatie {rot} dagen",
   "panel_source_iau": "Bron: IAU · JPL Planetary Fact Sheets · J2000-epoche",
   "panel_plan_mission_cta": "▶ PLAN EEN MISSIE NAAR {name}",
@@ -498,7 +498,7 @@
   "why_semi_major_axis_title": "Waarom de halve grote as?",
   "why_semi_major_axis_body": "De helft van de lange as van een elliptische baan — de belangrijkste afzonderlijke baanparameter. Hij legt de gemiddelde afstand tot de Zon vast en (via Keplers derde wet) de baanperiode. Als je maar één getal van een baan kent, wil je dit getal.",
   "why_eccentricity_title": "Waarom excentriciteit?",
-  "why_eccentricity_body": "Hoe afgeplat de ellips is. e=0 is een perfecte cirkel; e→1 is een mes-scherpe ellips. Hoge excentriciteit betekent grote schommelingen in afstand en snelheid tussen perihelium (dichtbij, snel) en afhelium (ver weg, langzaam) — de baan voelt scheef aan.",
+  "why_eccentricity_body": "Hoe afgeplat de ellips is. e=0 is een perfecte cirkel; e→1 is een mes-scherpe ellips. Hoge excentriciteit betekent grote schommelingen in afstand en snelheid tussen perihelium (dichtbij, snel) en aphelium (ver weg, langzaam) — de baan voelt scheef aan.",
   "why_inclination_title": "Waarom inclinatie?",
   "why_inclination_body": "De helling van de baan ten opzichte van het referentievlak (ecliptica voor heliocentrische banen, evenaar voor Aardbanen). Banen met hoge inclinatie kosten meer ∆v om te bereiken, maar openen unieke geometrieën — polaire beeldvorming, zonsynchrone belichting, noord-zuid dekking.",
   "why_orbital_period_title": "Waarom omlooptijd?",
@@ -510,7 +510,7 @@
   "why_axial_tilt_title": "Waarom ashelling?",
   "why_axial_tilt_body": "De hoek tussen de rotatieas van een lichaam en de loodlijn op zijn baan. De 23,4° van de Aarde geven ons seizoenen. De 98° van Uranus betekent dat hij op zijn zij langs zijn baan rolt. De kanteling bepaalt ook waar de zon op- en ondergaat op landingsplaatsen — cruciaal voor zonne-energie-planning.",
   "why_mean_velocity_title": "Waarom gemiddelde snelheid?",
-  "why_mean_velocity_body": "De gemiddelde baansnelheid. Dichterbij gelegen lichamen bewegen snel (Mercurius gemiddeld 47 km/s); buitenste lichamen kruipen (Neptunus gemiddeld 5,4 km/s). Vis-viva verbindt snelheid met positie op de ellips — perihelium is snel, afhelium is langzaam.",
+  "why_mean_velocity_body": "De gemiddelde baansnelheid. Dichterbij gelegen lichamen bewegen snel (Mercurius gemiddeld 47 km/s); buitenste lichamen kruipen (Neptunus gemiddeld 5,4 km/s). Vis-viva verbindt snelheid met positie op de ellips — perihelium is snel, aphelium is langzaam.",
   "why_solar_mass_title": "Waarom zonnemassa?",
   "why_solar_mass_body": "Massa bepaalt zwaartekracht, zwaartekracht bepaalt elke baan. De Zon is 333.000× de massa van de Aarde en domineert het zonnestelsel; dat ene getal voorspelt, samen met Keplers wetten, waar elke planeet op elk moment staat.",
   "why_peak_speed_title": "Waarom de maximale heliocentrische snelheid?",
@@ -606,7 +606,7 @@
   "conics_shape_parabola": "Parabool",
   "conics_shape_hyperbola": "Hyperbool",
   "conics_blurb_circle": "Effectief constante straal — snelheid en afstand veranderen nooit.",
-  "conics_blurb_ellipse": "Gebonden baan. Zon in één brandpunt; snelheid piekt op perihelium, daalt op afhelium.",
+  "conics_blurb_ellipse": "Gebonden baan. Zon in één brandpunt; snelheid piekt op perihelium, daalt op aphelium.",
   "conics_blurb_parabola": "Mes-scherpe ontsnapping — precies genoeg snelheid om weg te gaan, nooit om terug te keren.",
   "conics_blurb_hyperbola": "Ongebonden. Oversnelheid voorbij ontsnapping; het lichaam blijft eeuwig doorgaan.",
   "earth_panel_alt": "HOOGTE",
@@ -3619,5 +3619,6 @@
   "layout_footer_glossary": "Woordenlijst",
   "science_tab_glossary": "Woordenlijst",
   "glossary_jump": "Ga naar letter",
-  "hud_flight_plan": "VLUCHTPLAN"
+  "hud_flight_plan": "VLUCHTPLAN",
+  "skip_to_content": "Naar de inhoud"
 }

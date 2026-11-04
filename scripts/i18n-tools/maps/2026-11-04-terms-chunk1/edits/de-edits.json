@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.2.note",
+    "term": "spacewalk",
+    "decision": "change",
+    "find": "erster kommerzieller Spacewalk",
+    "replace": "erster kommerzieller Weltraumausstieg"
+  }
+]

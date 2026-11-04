@@ -1,0 +1,34 @@
+[
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "description",
+    "term": "asteroid belt",
+    "decision": "change",
+    "find": "o maior objeto no cinturão de asteróides",
+    "replace": "o maior objeto do cinturão de asteroides"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "tagline",
+    "term": "asteroid belt",
+    "decision": "change",
+    "find": "Primeira espaçonave a atravessar a Cintura de asteroides",
+    "replace": "Primeira espaçonave a atravessar o cinturão de asteroides"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "best_known_for",
+    "term": "asteroid belt",
+    "decision": "change",
+    "find": "Primeira espaçonave a atravessar a Cintura de asteroides",
+    "replace": "Primeira espaçonave a atravessar o cinturão de asteroides"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "description",
+    "term": "asteroid belt",
+    "decision": "change",
+    "find": "a atravessar a Cintura de asteroides e a primeira",
+    "replace": "a atravessar o cinturão de asteroides e a primeira"
+  }
+]

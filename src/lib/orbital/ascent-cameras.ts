@@ -62,7 +62,10 @@ export interface ScheduleInputs {
   endT?: number;
 }
 
-const TOWER_CLEAR_END = 12;
+/** The ground camera holds until here: with a camera that rides along from liftoff, the
+ *  horizon cut through the rocket and nothing below it moved, so the climb read as flying
+ *  sideways (operator, 0.9.4). */
+const TOWER_CLEAR_END = 22;
 const PAD_END = 3;
 const STAGING_HOLD = 5;
 const FAIRING_HOLD = 6.5; // matches FAIRING_SEP_S (item 4) — camera holds the reveal
@@ -311,17 +314,16 @@ export function composeShot(
       break;
     }
     case 'tower_clear': {
-      // PUSH-IN + crane up as it clears the tower — vehicle fills the frame.
-      const rad = vehLen * (2.7 - 0.6 * e);
-      out = pose(
-        dr - rad * 0.5,
-        alt + vehLen * (0.35 + 0.6 * e),
-        rad,
-        dr,
-        alt + vehLen * 0.5,
-        0,
-        44,
-      );
+      // A long-lens camera FIXED ON THE GROUND near the pad: the rocket rises up and away
+      // out of it, the camera tilts up to follow and the lens tightens so the vehicle keeps
+      // its size — the climb reads as a climb.
+      const cx = -vehLen * 1.3;
+      const cy = vehLen * 0.25;
+      const cz = vehLen * 3.0;
+      const ty = alt + vehLen * 0.5;
+      const dist = Math.hypot(dr - cx, ty - cy, cz);
+      const fov = (2 * Math.atan((vehLen * 1.7) / dist) * 180) / Math.PI;
+      out = pose(cx, cy, cz, dr, ty, 0, Math.min(50, Math.max(22, fov)));
       break;
     }
     case 'ascent': {

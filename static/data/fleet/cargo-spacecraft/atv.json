@@ -27,5 +27,9 @@
       "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/ATV",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 10.3,
+    "diameter_m": 4.5
+  }
 }

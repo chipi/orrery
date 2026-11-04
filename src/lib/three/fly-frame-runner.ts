@@ -222,6 +222,18 @@ export interface FlyFrameRefs extends Pick<
   FLYBY_PEAK_DAYS: number;
 }
 
+/** MET (days) of a mission's kinetic-impact event (DART), or null. */
+function impactEventOf(mission: {
+  flight?: { events?: { type: string; met_days?: number; label?: string; label_en?: string }[] };
+}): number | null {
+  const e = mission.flight?.events?.find(
+    (x) => x.type === 'edl_or_oi' && /kinetic impact/i.test(x.label_en ?? x.label ?? ''),
+  );
+  return e?.met_days ?? null;
+}
+/** Scene radius of the impact shot's primary (Didymos's DEST_STYLE size in fly-helio-scene). */
+const IMPACT_PRIMARY_R = 0.4;
+
 export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs) {
   const {
     scene,
@@ -295,6 +307,46 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
   // Null while the helio frame branch hasn't computed it yet (e.g.
   // during the cislunar phase).
   let scLastWorld: THREE.Vector3 | null = null;
+  // The destination planet turned for a lander's arrival (its site in daylight); reset after.
+  let landerTurned = false;
+  // A kinetic-impact arrival (DART): its moonlet target and the impact flash, shown in the shot.
+  let impactShown = false;
+  let impactMoonletMesh: THREE.Mesh | null = null;
+  const impactMoonlet = (bodyR: number): THREE.Mesh => {
+    if (!impactMoonletMesh) {
+      impactMoonletMesh = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(1, 2),
+        new THREE.MeshStandardMaterial({ color: 0x9a8f80, roughness: 0.95, flatShading: true }),
+      );
+      scene.add(impactMoonletMesh);
+    }
+    // Dimorphos is ~150 m against Didymos's ~780 m: a fifth of the primary.
+    impactMoonletMesh.scale.setScalar(bodyR * 0.2);
+    return impactMoonletMesh;
+  };
+  const impactFlash = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: (() => {
+        const c = document.createElement('canvas');
+        c.width = c.height = 64;
+        const g = c.getContext('2d')!;
+        const grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+        grad.addColorStop(0, 'rgba(255,250,235,1)');
+        grad.addColorStop(0.35, 'rgba(255,200,120,0.75)');
+        grad.addColorStop(1, 'rgba(255,140,60,0)');
+        g.fillStyle = grad;
+        g.fillRect(0, 0, 64, 64);
+        return new THREE.CanvasTexture(c);
+      })(),
+      transparent: true,
+      depthWrite: false,
+      depthTest: false,
+      blending: THREE.AdditiveBlending,
+    }),
+  );
+  impactFlash.visible = false;
+  impactFlash.renderOrder = 1000;
+  scene.add(impactFlash);
   // bind:this'd before onMount runs, so it is set by the time the runner is built.
   const c2 = bridge.canvas2d as HTMLCanvasElement;
   const _maybeCtx = c2.getContext('2d');
@@ -820,7 +872,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     const activeFlybyEvtForHold = bridge.mission.flight?.events?.find(
       (e: { met_days?: number }) => e.met_days === currentFrameFlybyMet,
     );
-    const isEarthHold = (activeFlybyEvtForHold?.label ?? '').toLowerCase().includes('earth');
+    const isEarthHold = (activeFlybyEvtForHold?.label_en ?? activeFlybyEvtForHold?.label ?? '')
+      .toLowerCase()
+      .includes('earth');
     const cineOut = runCinematicFrame(
       cine,
       {
@@ -1326,6 +1380,10 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // waypoint anchor, the camera-elevation angle could still put
     // the model behind the planet's z-range and the planet's
     // opaque MeshPhongMaterial occludes it.
+    const wasTurned = landerTurned;
+    landerTurned = false;
+    const wasImpact = impactShown;
+    impactShown = false;
     if (flyCam.lastHelioSubPhase?.startsWith('flyby-')) {
       // Push the ship toward the camera by the flyby body's radius
       // — enough to clear the planet's front face. activeFlybyMet
@@ -1351,6 +1409,50 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       if (dist > 0.01 && !montageNonHero) {
         camToShip.multiplyScalar((bodyR * overrideCamR) / dist);
         scSprite.position.add(camToShip);
+        // An arrival's trajectory ends at the planet's centre (the camera target here), so the
+        // push above can leave the ship inside the body, hidden: Curiosity was never seen at Mars.
+        // Keep it in front of the face, 1.3 radii from the centre toward the camera.
+        const fromCentre = scSprite.position.clone().sub(flyCam.camTarget);
+        if (fromCentre.length() < bodyR * 1.3) {
+          const toCam = camera.position.clone().sub(flyCam.camTarget).normalize();
+          scSprite.position.copy(flyCam.camTarget).addScaledVector(toCam, bodyR * 1.3);
+        }
+        // A lander's arrival frames its landing site, not the planet's centre (operator,
+        // 2026-11-03): the ship sits above the site and the camera looks down on it from that
+        // side. The /fly planets are unrotated spheres with an equirectangular map, so the site
+        // is at u = (lon + 180) / 360 on three's SphereGeometry.
+        const dp = bridge.descentProfile;
+        if (dp && dp.body === flybyDbg?.flybyId) {
+          const lat = (dp.landingSite.lat * Math.PI) / 180;
+          const phi = ((dp.landingSite.lon + 180) / 360) * 2 * Math.PI;
+          const siteDir = new THREE.Vector3(
+            -Math.cos(phi) * Math.cos(lat),
+            Math.sin(lat),
+            Math.sin(phi) * Math.cos(lat),
+          );
+          // The planet itself (the camera target eases toward it and is not its centre mid-shot).
+          const centre = marsMesh.position;
+          // /fly does not spin its planets, so a site can face the night side (Gale was black).
+          // Landings were made in daylight: turn the planet so the site sits in mid-afternoon,
+          // 45° past local noon.
+          const az = (v: THREE.Vector3): number => Math.atan2(-v.z, v.x);
+          const sunDir = centre.clone().multiplyScalar(-1);
+          const turn = az(sunDir) + Math.PI / 4 - az(siteDir);
+          marsMesh.rotation.y = turn;
+          siteDir.applyAxisAngle(new THREE.Vector3(0, 1, 0), turn);
+          landerTurned = true;
+          scSprite.position.copy(centre).addScaledVector(siteDir, bodyR * 1.25);
+          const camDist = camera.position.distanceTo(centre);
+          const side = new THREE.Vector3(0, 1, 0).cross(siteDir);
+          if (side.lengthSq() < 1e-6) side.set(1, 0, 0);
+          const view = siteDir
+            .clone()
+            .addScaledVector(side.normalize(), 0.25)
+            .add(new THREE.Vector3(0, 0.18, 0))
+            .normalize();
+          camera.position.copy(centre).addScaledVector(view, camDist);
+          camera.lookAt(centre.clone().addScaledVector(siteDir, bodyR * 0.7));
+        }
         if (helioMission.scModel) helioMission.scModel.position.copy(scSprite.position);
       }
       // Scale the ship to read as a foreground hero without
@@ -1365,7 +1467,10 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         toCameraR: 1.4,
       };
       scSprite.scale.set(overrides.spriteScale, overrides.spriteScale, 1);
-      if (helioMission.scModel) helioMission.scModel.scale.setScalar(overrides.modelScale);
+      // A foreground accent, never a rival to the planet: at most 0.22 of the body's radius
+      // (Curiosity's cruise stack drew half the size of Mars once it was no longer hidden).
+      if (helioMission.scModel)
+        helioMission.scModel.scale.setScalar(Math.min(overrides.modelScale, bodyR * 0.22));
       // Boom orientation: rotate the 3D model so its iconic-front
       // axis faces (roughly) the camera and the long magnetometer
       // boom angles AWAY from the planet's limb. Each builder model
@@ -1389,6 +1494,49 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         // along the trajectory without the cinema-specific tilt.
         helioMission.scModel.rotation.set(0, 0, 0);
       }
+    }
+
+    // A kinetic impact (DART into Dimorphos): from a day before to just after the impact, the
+    // moonlet beside its primary, the craft closing on it, then a flash and nothing (loss of
+    // signal). Any shot — the arrival hero and the wide "arrived" frame alike.
+    {
+      const impact = impactEventOf(bridge.mission);
+      const met = bridge.simDay - bridge.arcTimeline.dep_day;
+      if (impact != null && met > impact - 1 && met < impact + 0.6) {
+        const bodyR = IMPACT_PRIMARY_R;
+        const centre = marsMesh.position;
+        const toCam = camera.position.clone().sub(centre).normalize();
+        const right = new THREE.Vector3(0, 1, 0).cross(toCam).normalize();
+        const target = centre
+          .clone()
+          .addScaledVector(right, -bodyR * 1.35)
+          .addScaledVector(toCam, bodyR * 0.5);
+        const moonlet = impactMoonlet(bodyR);
+        moonlet.position.copy(target);
+        moonlet.visible = true;
+        const approach = Math.min(1, Math.max(0, met - (impact - 1)));
+        const standoff = target.clone().addScaledVector(right, -bodyR * 1.3);
+        scSprite.position.copy(standoff).lerp(target, approach);
+        const hit = met >= impact;
+        if (helioMission.scModel) {
+          helioMission.scModel.position.copy(scSprite.position);
+          helioMission.scModel.visible = !hit;
+        }
+        scSprite.visible = false;
+        impactFlash.position.copy(target);
+        const since = met - impact;
+        impactFlash.visible = hit;
+        impactFlash.scale.setScalar(bodyR * (0.8 + since * 8));
+        (impactFlash.material as THREE.SpriteMaterial).opacity = Math.max(0, 1 - since / 0.6);
+        impactShown = true;
+      }
+    }
+
+    if (wasTurned && !landerTurned) marsMesh.rotation.y = 0;
+    if (wasImpact && !impactShown) {
+      if (impactMoonletMesh) impactMoonletMesh.visible = false;
+      impactFlash.visible = false;
+      if (helioMission.scModel) helioMission.scModel.visible = true;
     }
 
     // Orbit-insertion capture burn: the engine fires retrograde, so the plume exhausts
@@ -1691,7 +1839,10 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // marsSoI is also gated on activeDestination === 'mars' so it
     // doesn't render at the wrong scale for outer-planet missions.
     marsSoI.visible =
-      helioReactive.soiLayerOn && !bridge.isMoonMission && bridge.activeDestination === 'mars';
+      helioReactive.soiLayerOn &&
+      !bridge.isMoonMission &&
+      bridge.activeDestination === 'mars' &&
+      !bridge.mission.sunTarget;
     moonSoI.visible = helioReactive.soiLayerOn && bridge.isMoonMission;
     if (earthSoI.visible) earthSoI.position.copy(earthWorld);
     if (marsSoI.visible) marsSoI.position.copy(marsWorld);

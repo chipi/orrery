@@ -26,13 +26,13 @@
       "type": "info"
     },
     {
-      "met": 1000,
+      "met": 937,
       "label": "VGA-2",
       "note": "2022-09-04. Début de la montée en inclinaison hors de l'écliptique.",
       "type": "info"
     },
     {
-      "met": 1075,
+      "met": 975,
       "label": "P4 — LE PLUS PROCHE À CE JOUR",
       "note": "12/10/2022, 0,29 au. À l'intérieur du périhélie de Mercure.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "étage supérieur Centaur (Atlas V 411)",
   "flight_events": [
     {
-      "met": 1750,
+      "met": 1835,
       "label": "Assistance gravitationnelle de Vénus n° 4",
       "description": "2025-02. La quatrième assistance de Vénus continue d'élever la latitude héliographique vers ~17° (objectif de la mission prolongée : ~33°)."
     }

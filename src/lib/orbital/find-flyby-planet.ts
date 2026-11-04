@@ -91,6 +91,9 @@ export const PLANET_SIZES: Record<string, number> = {
   orus: 0.4,
   patroclus: 0.55,
   menoetius: 0.5,
+  // Ryugu (0.9 km) like Itokawa; Eros (34 km) like Eurybates.
+  ryugu: 0.35,
+  eros: 0.45,
 };
 
 export interface FlybyPlanet {
@@ -162,10 +165,13 @@ export function findFlybyPlanetFromLabel(label: string | undefined | null): Flyb
     'orus',
     'patroclus',
     'menoetius',
+    'ryugu',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return { id: p, size: PLANET_SIZES[p] ?? 2.0 };
   }
+  // Whole word: "aerosol" or "zeros" must not resolve to Eros.
+  if (/\beros\b/.test(lower)) return { id: 'eros', size: PLANET_SIZES.eros };
   // Churyumov synonym → 67P
   if (lower.includes('churyumov')) return { id: '67p', size: PLANET_SIZES['67p'] };
   // Earth is checked LAST + separately so labels like "Earth-Moon LEGA"
@@ -213,6 +219,8 @@ export function findClosestPlanetToShip(
     'orus',
     'patroclus',
     'menoetius',
+    'ryugu',
+    'eros',
   ];
   let closest: FlybyPlanetId | null = null;
   let closestSize = 1;

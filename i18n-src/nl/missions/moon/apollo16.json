@@ -15,25 +15,25 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.107,
       "label": "TLI",
       "note": "Translunaire injectie.",
       "type": "nominal"
     },
     {
-      "met": 3.3,
+      "met": 3.103,
       "label": "LOI",
       "note": "Lunar orbit insertion. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.174,
       "label": "SPS-AFWIJKING",
       "note": "Voor de afdaling: een oscillatie van de backup SPS-gimbal dwong een 6-uur durende engineering review over landen versus abort in real time. Landing uiteindelijk goedgekeurd.",
       "type": "warning"
     },
     {
-      "met": 5.04,
+      "met": 4.354,
       "label": "NEERKOMST",
       "note": "Orion lands at Descartes-hoogland 1972-04-21 02:23 UTC — eerste highland (non-mare) landing.",
       "type": "nominal"
@@ -57,22 +57,39 @@
       "type": "info"
     },
     {
-      "met": 7.81,
+      "met": 7.314,
       "label": "OPSTIJGING",
       "note": "Orion stijgt op na 71 u 02 m op het oppervlak. 95,7 kg monsters teruggevoerd — zwaarste Apollo-lading tot die datum.",
       "type": "nominal"
     },
     {
-      "met": 8.5,
+      "met": 8.348,
       "label": "TEI",
       "note": "Trans-Earth injection. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 11.07,
+      "met": 11.077,
       "label": "WATERLANDING",
       "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Bergingoperatie door USS Ticonderoga.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.277,
+      "label": "Koerscorrectie",
+      "description": "Brandstap van de SPS bij GET 30:39:01 (1972-04-18 00:33 UTC), 2,0 s en 12,5 ft/s (3,8 m/s), de enige correctie op weg naar de maan."
+    },
+    {
+      "met": 8.941,
+      "label": "Koerscorrectie op de terugweg",
+      "description": "RCS-correctie van 8,0 seconden bij GET 214:35:03 (1972-04-25 16:29 UTC), 3,4 ft/s; een tweede bijstelling van 3,2 seconden volgt bij GET 262:37:21."
+    },
+    {
+      "met": 10.943,
+      "label": "Koerscorrectie op de terugweg",
+      "description": "Laatste bijstelling van de terugkeercorridor bij GET 262:37:21 (1972-04-27 16:31 UTC), 1,4 ft/s."
     }
   ]
 }

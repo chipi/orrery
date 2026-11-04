@@ -36,6 +36,8 @@ references remain authoritative for end-to-end flow:
 | Review + promote staged images | `/dev/staging` (dev route) | [image-pipeline](image-pipeline.md) |
 | Re-credit after promoting | `npm run build-image-provenance -- --offline` | [image-pipeline](image-pipeline.md) |
 | Add surface (Mars/Moon) detail imagery | `npm run images:hotspots` (Node 22 + gdal) | [image-pipeline](image-pipeline.md) |
+| See what a descent profile flies / fit one to a mission report | `npx tsx scripts/descent-report.ts`, `scripts/fit-earth-capsule.ts` | [content-pipelines](content-pipelines.md) |
+| Give a flyby mission its /fly path (through its flyby bodies) | `npx tsx scripts/generate-fly-trajectory.ts <id>…` | [content-pipelines](content-pipelines.md) |
 | Compile messages for dev/build | `npm run i18n:compile` | [content-pipelines](content-pipelines.md) |
 | Translate to all 14 locales | `scripts/wave23/` toolchain | [content-pipelines](content-pipelines.md) |
 | Generate narration audio | `npm run audio:generate -- --episode <id>` | [content-pipelines](content-pipelines.md) |

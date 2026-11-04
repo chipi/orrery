@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 414,
+      "met": 412.531,
       "label": "MAANCAPTURE",
       "note": "Door maanzwaartekracht ingevangen 2004-11-15 — eerste Europees ruimtevaartuig bij de Maan.",
       "type": "nominal"
@@ -36,6 +36,23 @@
       "label": "LACUS EXCELLENTIAE INSLAG",
       "note": "Opzettelijke inslag op 34,4° Z, 46,2° W op 2006-09-03 05:42 UTC. Inslagflits waargenomen vanaf CFHT.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 378.531,
+      "label": "Laatste boog met voortdurende stuwkracht",
+      "description": "Na maanresonantiemanoeuvres in augustus, september en oktober 2004 tilt een laatste boog van 100 uur voortdurende ionenstuwing (10-14 oktober 2004) het apogeum op tot de afstand van de maan."
+    },
+    {
+      "met": 414.256,
+      "label": "Ionenmotor start om de maanbaan te verlagen",
+      "description": "2004-11-15 05:24 UT. De ionenmotor begint een stuwperiode van 4,5 dagen om de baan te verlagen van de aanvankelijke invangbaan van 4.962 x 51.477 km, 81 graden, naar een poolbaan van 300 x 3.000 km."
+    },
+    {
+      "met": 414.773,
+      "label": "Eerste perilunium — in een baan om de maan",
+      "description": "2004-11-15 17:48 UT. SMART-1 passeert zijn eerste perilunium op ongeveer 5.000 km boven het oppervlak; ESA beschouwt 15 november 2004 als de aankomst in de maanbaan, 415 dagen na de lancering."
     }
   ]
 }

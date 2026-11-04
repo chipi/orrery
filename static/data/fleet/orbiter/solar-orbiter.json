@@ -26,9 +26,19 @@
       "l": "Solar Orbiter — NASA",
       "u": "https://science.nasa.gov/mission/solar-orbiter/",
       "t": "deep"
+    },
+    {
+      "l": "Solar Orbiter factsheet — ESA (body 2.5 x 3.1 x 2.7 m)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_factsheet",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "solar-orbiter"
-  ]
+  ],
+  "specs": {
+    "length_m": 3.1,
+    "width_m": 2.5,
+    "diameter_m": 2.5
+  }
 }

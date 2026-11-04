@@ -6,6 +6,13 @@
   "type": "LANDER SENZA EQUIPAGGIO + ROVER · COMPLETATA",
   "first": "Primo allunaggio controllato cinese sulla Luna; ha dispiegato Yutu, il primo rover lunare cinese",
   "description": "Chang'e 3 è stato il terzo lander del programma Chang'e della CNSA e il primo atterraggio morbido riuscito sulla Luna dalla sovietica Luna 24 nel 1976 — un intervallo di 37 anni. Il Long March 3B è stato lanciato su una traiettoria lunare diretta nel dicembre 2013, con una sola correzione di rotta intermedia prima dell'inserimento in orbita lunare. Il lander si è posato nel Mare Imbrium il 14 dicembre e ha dispiegato il rover Yutu (Coniglio di Giada), che ha operato per 31 mesi nonostante un guasto alla mobilità ne avesse fermato gli spostamenti già nel giorno lunare 2. Il lander di Chang'e 3 ha continuato a effettuare riprese per anni dopo.",
+  "flight_events": [
+    {
+      "met": 14,
+      "label": "Operazioni in superficie del rover Yutu",
+      "description": "Yutu («Coniglio di giada») è sceso dalla rampa del lander il 15 dicembre 2013 e ha percorso circa 114 m prima che un guasto meccanico lo fermasse al 42° giorno. Il lander ha proseguito la scienza in superficie per anni; Yutu ha continuato a trasmettere dal punto in cui si era fermato."
+    }
+  ],
   "events": [
     { "met": 0, "label": "LANCIO", "note": "Long March 3B da Xichang, 2013-12-01.", "type": "nominal" },
     { "met": 0.01, "label": "TLI", "note": "Iniezione trans-lunare diretta con lo stadio superiore dell'LM-3B.", "type": "nominal" },

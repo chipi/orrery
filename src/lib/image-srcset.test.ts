@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { srcsetFor, loadLadder, ladderSources } from './image-srcset';
+import { srcsetFor, loadLadder, ladderSources, ladderRungUrl } from './image-srcset';
 
 describe('srcsetFor', () => {
   const manifest = {
@@ -42,6 +42,26 @@ describe('srcsetFor', () => {
 
   it('returns null for a non-image URL', () => {
     expect(srcsetFor('/data/foo.json', manifest)).toBeNull();
+  });
+});
+
+describe('ladderRungUrl (route-tile textures)', () => {
+  const tile = '/images/hotspots/mars/curiosity/traverse/km-01.jpg';
+  const stem = '/images/hotspots/mars/curiosity/traverse/km-01';
+  it('takes the largest rung within the cap', () => {
+    expect(ladderRungUrl(tile, [512, 1024, 2048], 1024)).toBe(`${stem}-1024.webp`);
+    expect(ladderRungUrl(tile, [512, 1024, 2048], 1500)).toBe(`${stem}-1024.webp`);
+  });
+  it('the top rung is the unsuffixed base', () => {
+    expect(ladderRungUrl(tile, [512, 1024, 2048], 2048)).toBe(`${stem}.webp`);
+    expect(ladderRungUrl(tile, [256], 2048)).toBe(`${stem}.webp`);
+  });
+  it('falls back to the smallest rung when every rung exceeds the cap', () => {
+    expect(ladderRungUrl(tile, [1024, 2048], 512)).toBe(`${stem}-1024.webp`);
+  });
+  it('keeps the URL when the image has no ladder entry', () => {
+    expect(ladderRungUrl(tile, undefined, 1024)).toBe(tile);
+    expect(ladderRungUrl(tile, [], 1024)).toBe(tile);
   });
 });
 

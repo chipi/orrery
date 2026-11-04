@@ -73,9 +73,9 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   // Voskhod) read ~7.6–7.7 g — matching flown ~7.8 g. LIFTING capsules read ~4.2–5.6 g (flown guided
   // 3.3–4 g) — the ~1–1.5 g residual is a fixed-bank vs active-bank-modulation gap, NOT the γ-floor
   // (measured irrelevant at LEO energy) and NOT closed by the naive decel-hold controller (measured:
-  // overshoots). Suborbital Mercury-Redstone (freedom-7/liberty-bell-7, 18°/2.3 km/s) read ~8.7 g vs
-  // flown ~11 g — an unclosed gap (their 18° + drag are model estimates). Band [3, 9.5] brackets all.
-  earth: [3, 9.5],
+  // overshoots). Suborbital Mercury-Redstone (freedom-7/liberty-bell-7) fly their sourced 11.0 /
+  // 11.1 g since the 2026-11-03 fit (scripts/fit-earth-capsule.ts). Band [3, 11.5] brackets all.
+  earth: [3, 11.5],
   // Phase 2 (RFC-034 §12): micro-g asteroids barely decelerate; the Galileo
   // Jupiter probe hits the fiercest entry of any probe (~200–260 g published).
   itokawa: [0, 2],
@@ -137,7 +137,8 @@ describe('every descent profile expands + flies to its honest outcome', () => {
  * the flown guided value for the low-L/D capsules because our range-control solve flies a single
  * FIXED bank; the real vehicles ACTIVELY modulate bank to hold a lower g-limit (and, at lunar-
  * return energy, loft) — neither is in this planar fixed-bank model. Honest gap, not faked. Band
- * [3.5, 6] brackets the model; a ballistic (lift-free) regression would spike ~11 g and fail here.
+ * [3, 6] brackets the model (Apollo 7 and 9, fitted to their reports in 0.9.5, read 3.4–3.9 g against
+ * the flown 3.33/3.35); a ballistic (lift-free) regression would spike ~11 g and fail here.
  */
 describe('lifting re-entries fly the calibrated lifting band (all capsules)', () => {
   // EARTH LEO capsule returns only (~7.8 km/s). apollo8 (LUNAR return, 10.8 km/s skip) and the Mars
@@ -159,7 +160,7 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
     it(`${id} rides its lift vector, peak-g in the lifting band`, () => {
       const raw = loadRaw(id);
       const { s } = flight(id);
-      expectInRange(s.peakDecel.g, 3.5, 6, `${id} lifting peak decel (g)`);
+      expectInRange(s.peakDecel.g, 3, 6, `${id} lifting peak decel (g)`);
       if (raw.targetDownrangeKm != null) {
         expect(s.guidance?.targetReachable).toBe(true);
         expectInRange(

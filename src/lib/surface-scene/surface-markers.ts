@@ -276,7 +276,8 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       const group = new THREE.Group();
       const tier0Group = ctx.config.landerModelBuilder(
         site.id,
-        site.mission_type,
+        // The language-neutral category; the translated type only as a fallback.
+        site.marker ?? site.mission_type,
         colorFor(site),
         site.agency,
       );

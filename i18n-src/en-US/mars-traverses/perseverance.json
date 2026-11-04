@@ -1,23 +1,23 @@
 {
   "stops": [
     {
-      "id": "sol-38",
+      "id": "sol-58",
       "label": "Ingenuity Flight 1"
     },
     {
-      "id": "sol-200",
-      "label": "Sample 1 — Rochette"
+      "id": "sol-190",
+      "label": "First rock core — Rochette"
     },
     {
-      "id": "sol-421",
+      "id": "sol-653",
       "label": "Three Forks sample depot"
     },
     {
-      "id": "sol-750",
+      "id": "sol-440",
       "label": "Hawksbill Gap"
     },
     {
-      "id": "sol-1000",
+      "id": "sol-915",
       "label": "Margin unit traverse"
     }
   ]

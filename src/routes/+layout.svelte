@@ -741,6 +741,18 @@
     pointer-events: none;
     transition: opacity 0.12s ease;
   }
+  /* Bridges the 4px gap above the label: without it the pointer crosses
+     <main> on the way up, :hover drops and the menu closes before it can be
+     reached. Inherits the menu's pointer-events, so it only catches the
+     pointer while the menu is open. */
+  .footer-about-menu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 6px;
+  }
   .footer-about-group:hover .footer-about-menu,
   .footer-about-group:focus-within .footer-about-menu {
     opacity: 1;

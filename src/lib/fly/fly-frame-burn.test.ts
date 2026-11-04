@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { findActiveBurn, burnExhaustDir, BURN_TABLE } from './fly-frame-burn';
+import { findActiveBurn, burnExhaustDir, BURN_TABLE, isCaptureBurn } from './fly-frame-burn';
 import type { FlightTimelineEvent } from '$types/mission';
 
 // Pure engine-plume burn logic (RFC-036 WS-B/B4). Locks the in-window burn
@@ -65,5 +65,32 @@ describe('BURN_TABLE', () => {
     expect(BURN_TABLE.launch.mode).toBe('inward');
     expect(BURN_TABLE.launch.windowDays).toBe(5);
     expect(BURN_TABLE.edl_or_oi.mode).toBe('pro');
+  });
+});
+
+describe('isCaptureBurn', () => {
+  it('fires the capture plume for orbit insertions and rendezvous, not entries or impacts', () => {
+    const e = (label: string) => ({ type: 'edl_or_oi' as const, label });
+    expect(isCaptureBurn(e('Saturn orbit insertion'))).toBe(true);
+    expect(isCaptureBurn(e('67P/Churyumov–Gerasimenko rendezvous + Philae landing'))).toBe(true);
+    expect(isCaptureBurn(e('Mars EDL — sky-crane landing in Gale Crater'))).toBe(false);
+    expect(isCaptureBurn(e('Dimorphos kinetic impact'))).toBe(false);
+    expect(isCaptureBurn(e('First corona entry (P8)'))).toBe(false);
+    expect(isCaptureBurn({ type: 'tcm' as const, label: 'TCM-1' })).toBe(true);
+  });
+
+  it('decides on the English base label in a translated locale', () => {
+    const ja = {
+      type: 'edl_or_oi' as const,
+      label: '土星周回軌道投入',
+      label_en: 'Saturn orbit insertion',
+    };
+    expect(isCaptureBurn(ja)).toBe(true);
+  });
+
+  it('findActiveBurn skips an EDL event', () => {
+    expect(
+      findActiveBurn([{ type: 'edl_or_oi', met_days: 254, label: 'Mars EDL' } as never], 253.5),
+    ).toBeNull();
   });
 });

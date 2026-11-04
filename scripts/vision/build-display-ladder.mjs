@@ -11,7 +11,9 @@
  * downscale from source, not a re-encode of the capped derivative — best quality
  * at every size. `withoutEnlargement` never upscales a smaller master.
  *
- * Excludes `hotspots/` (zoom-critical 3D tiers, RFC-030 D5) and the thumbnail
+ * Excludes `hotspots/` (zoom-critical 3D tiers, RFC-030 D5) — except the rover-route
+ * tiles, hotspots/<body>/<site>/traverse/ (D5 amendment 2026-11-04: 512/1024/2048
+ * rungs, picked per quality tier as textures) — and the thumbnail
  * variants (`.1x1` handled by crop-variants, Slice 0).
  *
  * Requires masters smudged: `git lfs pull -I 'masters/**'`. Idempotent — skips
@@ -51,6 +53,16 @@ const EXCLUDE_TOP = new Set([
   'originals',
 ]);
 const IS_THUMB = /\.(1x1|4x3|16x9)\./;
+// Rover-route tiles (RFC-030 D5 amendment): textures, not <img>, so the scene
+// picks one rung by quality tier (D4 / routeTileMaxPx) — 512 / 1024 / 2048.
+const IS_TILE = /^hotspots\/[^/]+\/[^/]+\/traverse\/[^/]+$/;
+const TOWARD_TILES = /^hotspots(\/[^/]+(\/[^/]+(\/traverse)?)?)?$/;
+const TILE_RUNGS = [512, 1024, 2048];
+// Context layer (surface-context.ts): one true-scale ~100 m/px crop per site,
+// hotspots/<body>/<site>/context — a texture like the tiles, a rung up
+// (routeTileMaxPx × 2): 1024 / 2048 / 4096.
+const IS_CONTEXT = /^hotspots\/[^/]+\/[^/]+\/context\.[a-z]+$/;
+const CONTEXT_RUNGS = [1024, 2048, 4096];
 const IS_IMG = /\.(jpe?g|png|webp)$/i;
 const FORCE = process.argv.includes('--force');
 // `--only museums,fleet-galleries/lc-39a`: build just these masters/ folders
@@ -66,10 +78,19 @@ async function* walk(dir, top = '', rel = '') {
     const full = path.join(dir, e.name);
     const r = rel ? `${rel}/${e.name}` : e.name;
     if (e.isDirectory()) {
-      if (!top && EXCLUDE_TOP.has(e.name)) continue;
+      // hotspots/ stays out (RFC-030 D5) except the rover-route tiles,
+      // hotspots/<body>/<site>/traverse/ (D5 amendment, 2026-11-04), and the
+      // context crops hotspots/<body>/<site>/context.*.
+      if (!top && EXCLUDE_TOP.has(e.name) && e.name !== 'hotspots') continue;
+      if ((top || e.name) === 'hotspots' && !TOWARD_TILES.test(r)) continue;
       if (ONLY && !inOnly(r) && !towardOnly(r)) continue;
       yield* walk(full, top || e.name, r);
-    } else if (IS_IMG.test(e.name) && !IS_THUMB.test(e.name) && (!ONLY || inOnly(r))) {
+    } else if (
+      IS_IMG.test(e.name) &&
+      !IS_THUMB.test(e.name) &&
+      (top !== 'hotspots' || IS_TILE.test(r) || IS_CONTEXT.test(r)) &&
+      (!ONLY || inOnly(r))
+    ) {
       yield full;
     }
   }
@@ -121,8 +142,11 @@ for await (const master of walk(MASTERS)) {
   const srcLong = Math.max(meta.width ?? 0, meta.height ?? 0);
   // Target long-sides: each ladder rung below the source (real downscale) plus
   // the source's own size capped at MAX_TOP (its native top rung). No upscale.
-  const targets = new Set(RUNGS.filter((r) => r < srcLong));
-  targets.add(Math.min(srcLong, MAX_TOP));
+  const tile = IS_TILE.test(rel);
+  const rungSet = tile ? TILE_RUNGS : IS_CONTEXT.test(rel) ? CONTEXT_RUNGS : RUNGS;
+  const top = tile || IS_CONTEXT.test(rel) ? rungSet[rungSet.length - 1] : MAX_TOP;
+  const targets = new Set(rungSet.filter((r) => r < srcLong));
+  targets.add(Math.min(srcLong, top));
 
   const sorted = [...targets].sort((a, b) => a - b);
   const widths = [];
@@ -163,10 +187,10 @@ for await (const master of walk(MASTERS)) {
 if (ONLY)
   for (const k of Object.keys(manifest))
     if (inOnly(k.replace(/^\/images\//, '')) && !seen.has(k)) delete manifest[k];
-await writeFile(MANIFEST_PATH, JSON.stringify(manifest) + '\n');
+await writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');
 
 const mb = (b) => (b / 1024 / 1024).toFixed(1);
 console.log(
   `[ladder] ${sources} sources → ${rungs} WebP rungs written (${mb(bytes)} MB) · ${skipped} existing · ` +
-    `manifest ${MANIFEST_PATH} · hotspots excluded`,
+    `manifest ${MANIFEST_PATH} · hotspots excluded except route tiles + context crops`,
 );

@@ -27,5 +27,9 @@
       "u": "https://en.wikipedia.org/wiki/List_of_Soyuz_missions",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "height_m": 50.7,
+    "diameter_m": 2.95
+  }
 }

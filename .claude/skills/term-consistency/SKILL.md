@@ -128,7 +128,7 @@ one nl field fails the test with "unreviewed misses: 1".
   minority (nl zwaartekrachtassist 42× vs slinger 8×): no third spelling.
 
 - Reviewers report garble outside the term (non-words, wrong gender, cut sentences). Collect
-  it in a wip findings file, not in the term edits: `docs/wip/2026-10-31-fleet-garble-findings.md`.
+  it in a wip findings file, not in the term edits: `docs/wip/2026-11-04-open-items.md` (translations).
 - A stem must not swallow an unrelated word: ar `لتق` also matched «التقاط» (capture), so
   rendezvous lists the verb forms one by one.
 

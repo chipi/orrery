@@ -43,6 +43,7 @@
     type LoadedMission,
     type MissionApplyDefaults,
     type TrajectoryOverride,
+    flyDestinationOf,
   } from '$lib/fly-mission-apply';
   import {
     CINEMATIC_TIMINGS,
@@ -162,6 +163,7 @@
   import DescentScene from '$lib/components/DescentScene.svelte';
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
+  import { preloadFlyCraft } from '$lib/three/fly-craft';
   import { LOOP_CAP as LEO_LOOP_CAP } from '$lib/three/fly-leo-coast-scene';
   import {
     loadLaunchProfile,
@@ -214,7 +216,7 @@
   import defaultScenarioBase from '$data/scenarios/orrery-1.json';
   import defaultScenarioOverlay from '$i18nSrc/en-US/scenarios/orrery-1.json';
   import { dataLoadFailed } from '$lib/data/core';
-  import { hasTrajectory } from '$lib/data/interstellar';
+  import { flyTrajectoryPath } from '$lib/data/interstellar';
 
   const FLEET_ROLE_LABEL: Record<string, () => string> = {
     launcher: m.fly_opening_role_launcher,
@@ -300,6 +302,14 @@
     );
   }
   let launchProfile = $state<LaunchProfile | null>(null);
+  // The launcher's real height (fleet specs), so a showcase craft rides it at true scale.
+  let launcherHeightM = $state<number | undefined>(undefined);
+  async function loadLauncherHeight(): Promise<void> {
+    const ref = mission.fleet_refs?.find((r) => r.role === 'launcher');
+    const entry = ref ? await getFleet(ref.id, 'launcher').catch(() => null) : null;
+    const h = entry?.specs?.height_m;
+    launcherHeightM = typeof h === 'number' ? h : undefined;
+  }
   // Master-clock state for the unified pad→arrival scrubber (RFC-034 §4/§11).
   // `launchT` is the ascent MET (s) the /fly rAF loop advances during the launch
   // phase and binds into LaunchScene (which renders but no longer self-advances);
@@ -331,6 +341,7 @@
     site: launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
+    launcherHeightM,
     injectionBurn: launchInjectionBurn,
   });
   function startLaunch() {
@@ -338,8 +349,14 @@
     if (!launcher) return;
     // Load the profile first, THEN swap the opening for the launch overlay — no
     // flash of the cruise scene during the fetch.
-    void loadLaunchProfile(launcher.id, fetch, base, launcher.name)
-      .then((p) => {
+    // The showcase craft (CSM, Soyuz, Dragon, probes) loads with the profile, so the ascent
+    // and coast scenes can build it synchronously.
+    void Promise.all([
+      loadLaunchProfile(launcher.id, fetch, base, launcher.name),
+      preloadFlyCraft(mission.id ?? ''),
+      loadLauncherHeight(),
+    ])
+      .then(([p]) => {
         if (!p) return;
         launchProfile = p;
         dispatchPhase({ type: 'startLaunch' });
@@ -1192,7 +1209,11 @@
     const arrLabelData = mission.arr_label || '—';
     const isRoundTrip = retPts.length > 0;
     if (!flyUpdaters) return;
-    const arrColor = moonMode ? DESTINATION_LABEL_COLORS.moon : DESTINATION_LABEL_COLORS[dest];
+    const arrColor = moonMode
+      ? DESTINATION_LABEL_COLORS.moon
+      : mission.sunTarget
+        ? DESTINATION_LABEL_COLORS.sun
+        : DESTINATION_LABEL_COLORS[dest];
     // For round-trips the ARRIVAL ring sits at the destination's
     // flyby/arrival position while a separate RETURN ring sits at
     // Earth-on-return-day. Override the per-mission arr_label data
@@ -1295,8 +1316,32 @@
   // FROM EARTH + signal delay. FROM MARS is hidden in Moon-mode.
   const MOON_FAKE_TO_REAL_AU = 384_400 / AU_TO_KM / (MOON_VISUAL_DISTANCE / SCALE_3D);
   let scR = $derived(isMoonMission ? R_EARTH_AU : Math.hypot(scState.pos.x, scState.pos.z));
+  // The body the HUD measures to: the mission's own target (a /plan selection is its
+  // activeDestination). Null for Moon mode and for missions /fly has no body for (Sun
+  // missions ending at a perihelion), whose scene keeps Mars only as a stand-in.
+  let hudTarget = $derived(
+    isMoonMission
+      ? null
+      : mission.dest
+        ? flyDestinationOf({ id: mission.id ?? '', dest: mission.dest })
+        : activeDestination,
+  );
+  // Vis-viva on the Hohmann ellipse from Earth to the target's orbit (an Earth–Mars ellipse
+  // for every mission put Cassini on Mars's orbit). No target: the Earth–Mars stand-in.
+  let transferA = $derived.by(() => {
+    if (!hudTarget) return (R_EARTH_AU + R_MARS_AU) / 2;
+    const t = destinationPos(arcTimeline.arr_day, hudTarget);
+    return (R_EARTH_AU + Math.hypot(t.x, t.z)) / 2;
+  });
+  // A timed spline: the ship's own motion over a day, centred on now.
+  let arcSpeedKms = $derived.by(() => {
+    if (!mission.arcTimed || scState.phase !== 'outbound') return null;
+    const a = spacecraftPos(simDay - 0.5, arcTimeline, outPts, retPts).pos;
+    const b = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+    return (Math.hypot(b.x - a.x, b.z - a.z) * AU_TO_KM) / 86400;
+  });
   let heliocentricKms = $derived(
-    flyHeliocentricSpeed(scR, isMoonMission ? R_EARTH_AU : (R_EARTH_AU + R_MARS_AU) / 2),
+    arcSpeedKms ?? flyHeliocentricSpeed(scR, isMoonMission ? R_EARTH_AU : transferA),
   );
 
   let earthNow = $derived(earthPos(simDay));
@@ -1312,7 +1357,10 @@
   // render-state hook stays parseable.
   let distFromMarsAu = $derived(distanceBetween(scState.pos, marsNow));
   let distFromEarthMkm = $derived(auToMkm(distFromEarthAu));
-  let distFromMarsMkm = $derived(auToMkm(distFromMarsAu));
+  let distFromTargetAu = $derived(
+    hudTarget ? distanceBetween(scState.pos, destinationPos(simDay, hudTarget)) : null,
+  );
+  let distFromTargetMkm = $derived(distFromTargetAu === null ? null : auToMkm(distFromTargetAu));
   let signalDelayMin = $derived(flySignalDelayMin(distFromEarthAu));
 
   // ─── Render-state hash (Layer 2 of /fly validation strategy) ─────
@@ -1357,7 +1405,7 @@
   $effect(() => {
     if (mission?.id && arcProgress >= 0.999 && completedForId !== mission.id) {
       completedForId = mission.id;
-      trackMissionComplete(mission.id, activeDestination);
+      trackMissionComplete(mission.id, mission.sunTarget ? 'sun' : activeDestination);
     }
   });
 
@@ -1508,6 +1556,24 @@
   // on-canvas chip with an HUD line; the pulsing diamond on the path
   // is the graphic correlation. Null when no milestone is active.
   let activeMilestone = $derived(milestoneScreens.find((m) => m.state === 'active') ?? null);
+  // Milestone labels that land on each other (Curiosity's cruise-stage separation and EDL sit
+  // 7 minutes apart, the same spot on the arc) stack one line down instead of overprinting.
+  const MILESTONE_LINE_PX = 13;
+  let milestoneLabelDy = $derived.by(() => {
+    const placed: { x: number; y: number }[] = [];
+    return milestoneScreens.map((m) => {
+      if (!m.screen.onScreen) return 0;
+      let y = m.screen.y + 12;
+      while (
+        placed.some(
+          (p) => Math.abs(p.x - m.screen.x) < 140 && Math.abs(p.y - y) < MILESTONE_LINE_PX,
+        )
+      )
+        y += MILESTONE_LINE_PX;
+      placed.push({ x: m.screen.x, y });
+      return y - m.screen.y;
+    });
+  });
 
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
@@ -2222,11 +2288,12 @@
         // through the waypoints instead of the single Keplerian
         // ellipse — the trajectory then actually passes through each
         // flyby planet at the event MET. Fetched only for missions in
-        // TRAJECTORY_IDS; the rest use the fallback without a request.
+        // TRAJECTORY_IDS or the /fly-only FLY_TRAJECTORY_IDS; the rest use the fallback.
         let trajectoryOverride: TrajectoryOverride | undefined;
-        if (hasTrajectory(id)) {
+        const trajPath = flyTrajectoryPath(id);
+        if (trajPath) {
           try {
-            const tres = await fetch(`${base}/data/trajectories/${id}.json`);
+            const tres = await fetch(`${base}/data/${trajPath}`);
             if (myLoadId !== currentLoadId) return;
             if (tres.ok) {
               const traj = (await tres.json()) as { waypoints?: TrajectoryWaypoint[] };
@@ -2294,6 +2361,13 @@
       // shares its browser with another agent that would otherwise race
       // pause/click events. Whatever the scene composes here is also what
       // the user sees, minus the input animations.
+      // Launch-phase seek for automated checks: ascent MET in seconds (negative = countdown),
+      // paused there, so a check can look at staging beats without racing the clock.
+      window.__flyLaunchT = (t: number) => {
+        if (!Number.isFinite(t)) return;
+        launchT = t;
+        isPlaying = false;
+      };
       window.__flySetSimDay = (met: number) => {
         if (!Number.isFinite(met) || met < 0) return;
         simDay = mission.timeline.dep_day + met;
@@ -2624,7 +2698,10 @@
         updateMagnetosphereForBody: helioHandles.updateMagnetosphereForBody,
         setMoonsVisible: helioHandles.setMoonsVisible,
         updateMoonsForParent: helioHandles.updateMoonsForParent,
-        setSpacecraftModel: helioMission.applyMissionSpacecraftModel,
+        setSpacecraftModel: (id: string) => {
+          helioMission.applyMissionSpacecraftModel(id);
+          cisReactive.setCislunarSpacecraftModel(id);
+        },
         refreshLabelSprites: helioMission.refreshSpriteTextures,
       },
       cislunar: {
@@ -3281,7 +3358,7 @@
     {#if defaultEvent}
       {@const peakMet = defaultEvent.met_days ?? 0}
       {@const planetIdGuess = (() => {
-        const label = (defaultEvent.label ?? '').toLowerCase();
+        const label = (defaultEvent.label_en ?? defaultEvent.label ?? '').toLowerCase();
         const ids: FlybyPlanetId[] = [
           'mercury',
           'venus',
@@ -3306,8 +3383,10 @@
           'orus',
           'patroclus',
           'menoetius',
+          'ryugu',
         ];
         for (const p of ids) if (label.includes(p)) return p;
+        if (/\beros\b/.test(label)) return 'eros' as FlybyPlanetId;
         return 'venus' as FlybyPlanetId;
       })()}
       {@const planetPosForDebug =
@@ -3587,7 +3666,7 @@
             class:active={m.state === 'active'}
             class:past={m.state === 'past'}
             class:future={m.state === 'future'}
-            style="left: {m.screen.x}px; top: {m.screen.y + 12}px;"
+            style="left: {m.screen.x}px; top: {m.screen.y + (milestoneLabelDy[idx] ?? 12)}px;"
             aria-hidden="true">{m.label}</span
           >
         {/if}
@@ -3978,10 +4057,15 @@
           >
         </span>
       </div>
-      {#if !isMoonMission}
+      {#if distFromTargetMkm !== null}
         <div class="hud-row">
-          <span class="hud-key">{m.fly_hud_dist_mars()}</span>
-          <span class="hud-val">{m.fly_hud_mkm({ value: distFromMarsMkm.toFixed(0) })}</span>
+          <span class="hud-key">{m.hud_from_target()}</span>
+          <span class="hud-val"
+            >{m.fly_hud_mkm({
+              value:
+                distFromTargetMkm < 1 ? distFromTargetMkm.toFixed(2) : distFromTargetMkm.toFixed(0),
+            })}</span
+          >
         </div>
       {/if}
     </aside>
@@ -4114,7 +4198,7 @@
          'hover' layer gated. Sits as the bottom-most left-rail panel
          under hud-systems so it shares the column with identity /
          navigation / flight-params / systems. -->
-    <SpacecraftInfoCard {heliocentricKms} {distFromEarthAu} {distFromMarsAu} metDays={met} />
+    <SpacecraftInfoCard {heliocentricKms} {distFromEarthAu} {distFromTargetAu} metDays={met} />
   </div>
 
   <!-- Timeline scrubber (bottom-left) -->

@@ -28,6 +28,7 @@ per section. Day-to-day rules live in [AGENTS.md §"i18n rules"](../../../AGENTS
 | Tech BOM | `npm run build-tech-bom` / `check-tech-bom` | Regenerate / CI-verify license BOM |
 | Site-stories index | `tsx scripts/build-site-stories-index.ts` | After authoring a new site story |
 | Colophon original-work | `node scripts/build-original-work.mjs` | After adding an original diagram |
+| Model references | `tsx scripts/build-model-references.ts` | After a showcase model, fleet link or landmark source changes |
 | Cislunar waypoints | `tsx scripts/cislunar/generate-*-waypoints.ts` | Bake Tier 1.5 trajectory for a mission |
 | Fleet link repair | `tsx scripts/migrate-fleet-linked-*.ts` | When `validate-data` emits the fix-hint |
 
@@ -258,6 +259,19 @@ thumbnail, so those link to the drawing route).
 **When** — After adding an original diagram. **Standing tool** (not archived).
 **State** — healthy.
 
+### `scripts/build-model-references.ts`
+
+**Command** — `tsx scripts/build-model-references.ts`
+**What** — Credits the public pages Orrery's original 3D models took their sizes and shapes from:
+each showcase model's `refs`, the `links` of every fleet entry the /fleet line-ups draw, and the
+landmark and cartoon-cast sources in the header comments of `lineup/scale-figures.ts` and
+`cartoon-figures.ts`. Rewrites the `models-ref-*` entries of `static/data/data-sources.json` (one
+per publisher, with a `references` list) shown in /credits "Data & catalogues"; other entries are
+untouched. Their per-locale descriptions live in `i18n-src/<locale>/data-sources.json`.
+**When** — After adding or changing a showcase model, a fleet link, or a landmark/cast source.
+**Gotchas** — A page from a publisher not listed in the script's `PUBLISHERS` fails the run.
+**State** — healthy.
+
 ### `scripts/cislunar/`
 
 - **`generate-hybrid-waypoints.ts`** — `tsx scripts/cislunar/generate-hybrid-waypoints.ts <mission.json>`.
@@ -289,3 +303,58 @@ as standing repair tools — don't move them to `_archive/`.
 *See also: [README.md](README.md) (tooling index) · [data-validation.md](data-validation.md) ·
 [image-pipeline.md](image-pipeline.md) · [ADR-051](../../adr/ADR-051.md) ·
 [ADR-069](../../adr/ADR-069.md) · [TA.md §pipelines](../../adr/TA.md#pipelines).*
+
+## Descent profiles — measure and fit (`scripts/descent-report.ts`, `descent-trace.ts`, `fit-earth-capsule.ts`)
+
+**Command** —
+- `npx tsx scripts/descent-report.ts [--body earth] [ids…] [--json]` — what the model flies per
+  profile: duration from entry interface, peak g, every beat's time and altitude, touchdown speed.
+- `npx tsx scripts/descent-trace.ts <id> [stepS]` — one profile's trajectory every N s, with the
+  peak g of each phase (tells an entry pulse from a chute-opening spike).
+- `npx tsx scripts/fit-earth-capsule.ts <targets.json> [--write] [--only a,b]` — fit an
+  `EARTH_CAPSULE_REENTRY` profile to a sourced timeline: sourced values (chute altitudes, entry
+  state) are set; only estimates are searched — entry angle vs peak g (or guidance downrange vs
+  entry→drogue time), drogue Cd·A vs drogue→main, main Cd·A vs main→touchdown (or vs the
+  touchdown speed, with the main altitude fitted to the interval when it is not sourced) — and
+  each searched field is added to `estimatedFields`. Targets carry `provenance` entries that are
+  merged into the profile.
+**When** — Checking or refitting a descent against mission reports (the 0.9.4/0.9.5 method:
+research JSON with sources → fit estimates → `npx tsx scripts/backfill-descent-arrival.ts` →
+`npx vitest run src/lib/physics/descent`).
+**State** — healthy (2026-11-03).
+
+## Cislunar waypoints — audit (`scripts/audit-cislunar.ts`)
+
+**Command** — `npx tsx scripts/audit-cislunar.ts [id…]`
+**What** — For every Moon mission with `cislunar_profile.waypoints_km`: where the craft is at each
+lunar event (LOI, descent, ascent, TEI within 30,000 km of the Moon; splashdown within 30,000 km of
+Earth) and whether the waypoints run on past splashdown back to the Moon. Waypoints are authored
+for a departure at sim-day 0 (the renderer turns them to the real date), so the audit checks them
+in that frame. Ends `audit-cislunar: N mission(s) flagged`.
+**When** — After regenerating waypoints (`npx tsx scripts/cislunar/generate-hybrid-waypoints.ts
+<mission.json>`, which now times the phases from the flight's events) or editing Moon events.
+**State** — healthy (2026-11-03: 0 flagged, was 22).
+
+## /fly flight paths — generate (`scripts/generate-fly-trajectory.ts`, `scripts/lib/conic-leg.ts`)
+
+**Command** — `npx tsx scripts/generate-fly-trajectory.ts <id>…` → `static/data/fly-trajectories/<id>.json`,
+then add the id to `FLY_TRAJECTORY_IDS` (`src/lib/data/interstellar.ts`; `fly-trajectories.test.ts`
+checks every listed file).
+**What** — A heliocentric path for `/fly` built from the mission's own `flight.events`: a labelled
+waypoint at launch, at each flyby / arrival of a body `/fly` knows (`labelToPlanetId`), and
+between them:
+- with the body, after an orbit insertion or arrival at the same body (NEAR at Eros, Dawn at Ceres);
+- on the coasting conic between the two encounters in the flown time when it is under one
+  revolution — Lambert's problem by p-iteration, ellipse or escape hyperbola, checked by
+  propagation (`conic-leg.ts`, `conic-leg.test.ts`);
+- else (resonant multi-revolution legs, ion-propulsion cruises) the coasting estimate.
+
+Sun missions end at their first perihelion (`SUN_PERIHELION_AU`, sourced): a real Kepler fall from
+the last anchor, marked `ends_at_perihelion_au`. The script prints per mission how many legs are
+conics and how many estimates. `/fly` moves labelled waypoints onto the body's position at that
+date; the `/explore` files in `static/data/trajectories/` are a stylised layout (cruise points
+near longitude 0°) and `/fly` no longer flies them.
+**When** — A flyby mission's events change, a body is added (a new `DestinationId`), or `/fly`
+shows the craft away from a body at its event.
+**State** — healthy (2026-11-03: 25 missions; no return legs — operator scope rule 2026-11-02).
+

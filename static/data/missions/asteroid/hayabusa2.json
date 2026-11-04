@@ -10,6 +10,7 @@
   "departure_date": "2014-12-03",
   "arrival_date": "2018-06-27",
   "transit_days": 1302,
+  "round_trip": true,
   "vehicle": "H-IIA 202",
   "payload": "609 kg dry, ion-electric propulsion (4×μ10 thrusters) + chemical bipropellant + 1.6 m HGA. Onboard payload — Small Carry-on Impactor (SCI, 2.5 kg shaped charge), MASCOT lander (10 kg, DLR/CNES), 3× MINERVA-II rovers (~1 kg each), sample return capsule (16 kg, parachute reentry).",
   "delta_v": "~2 km/s (ion engine cumulative)",
@@ -79,7 +80,7 @@
         "description": "Arrived at asteroid Ryugu on 2018-06-27. Held station at 20 km for 18 months of mapping. Deployed three rovers (MASCOT and two MINERVA-II hoppers) that landed on the surface and operated in Ryugu's ~0.0001 g gravity — the first wheeled exploration of any asteroid. Two touchdown sampling operations followed, including one inside an artificial crater made by a copper impactor."
       },
       {
-        "met_days": 1880,
+        "met_days": 2194,
         "type": "earth_return",
         "label": "Earth re-entry — sample return capsule",
         "description": "Sample capsule re-entered over Woomera, Australia, 2020-12-05 (UTC; recovered 2020-12-06 local/JST), parachuting down with 5.4 grams of Ryugu material — vastly exceeding the 0.1 g minimum. The mother spacecraft continued on an extended mission: flyby of 98943 Torifune (2001 CC21) in 2026-07, then rendezvous with asteroid 1998 KY26 planned for 2031-07. Ryugu samples already revealed amino acids and water-bearing minerals, supporting the asteroid-delivery model of early-Earth volatiles."

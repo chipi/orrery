@@ -25,5 +25,9 @@
   ],
   "linked_missions": [
     "chandrayaan3"
-  ]
+  ],
+  "specs": {
+    "height_m": 43.5,
+    "diameter_m": 4
+  }
 }

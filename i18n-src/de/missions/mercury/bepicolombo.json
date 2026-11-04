@@ -32,13 +32,13 @@
       "type": "nominal"
     },
     {
-      "met": 1133,
+      "met": 1077,
       "label": "MERKUR-VORBEIFLUG #1",
       "note": "Erster von sechs Merkur-Gravitationsunterstützungen.",
       "type": "nominal"
     },
     {
-      "met": 2968,
+      "met": 2954,
       "label": "EINSCHWENKEN IN DIE MERKURUMLAUFBAHN",
       "note": "MTM-Trennung + Orbiter-Separation; wissenschaftliche Operationen beginnen Anfang 2027.",
       "type": "info"
@@ -46,27 +46,27 @@
   ],
   "flight_events": [
     {
-      "met": 1432,
+      "met": 1342,
       "label": "Merkur Nr. 2 — Swing-by",
       "description": "Größte Annäherung 200 km am 2022-06-23. Die aus Swing-bys gewonnene ∆v übersteigt bei diesem Vorbeiflug 6 km/s — eine Leistung, die chemisches Triebwerk und elektrische Triebwerke allein mit dem Treibstoffvorrat nicht hätten erbringen können."
     },
     {
-      "met": 1819,
+      "met": 1703,
       "label": "Merkur Nr. 3 — Swing-by",
       "description": "Größte Annäherung 236 km am 2023-06-19. Kontrollpunkt zur Flugmitte — die Inbetriebnahme der Instrumente geht auf den Bahnabschnitten in großer Höhe weiter."
     },
     {
-      "met": 2055,
+      "met": 2146,
       "label": "Merkur Nr. 4 — Swing-by",
       "description": "Größte Annäherung 165 km am 2024-09-04. Der bislang engste Vorbeiflug der BepiColombo-Serie; die Nähe bringt eine erhebliche Brems-∆v."
     },
     {
-      "met": 2294,
+      "met": 2234,
       "label": "Merkur Nr. 5 — Swing-by",
       "description": "Größte Annäherung geplant für 2024-12-01. Vorletzter Merkur-Vorbeiflug — die letzten beiden Swing-bys verkleinern die Bahn auf die für den Einfang nötige Geometrie."
     },
     {
-      "met": 2421,
+      "met": 2272,
       "label": "Merkur Nr. 6 — Swing-by",
       "description": "Letzter Vorbeiflug geplant für 2025-01-08 — die Umlaufzeit der Sonde passt dann gut genug zu der des Merkur, dass der Einfang beim nächsten Fenster der Sonnenkonjunktion möglich ist."
     }

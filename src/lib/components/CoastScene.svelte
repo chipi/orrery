@@ -23,6 +23,7 @@
   import { onLayerChange } from '$lib/science-layers';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
   import { buildCapsuleById } from '$lib/three/capsule-models';
+  import { fitCraft, flyCraftInOrbit } from '$lib/three/fly-craft';
   import { coastAltitudeKm, type EarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 
   interface Props {
@@ -114,7 +115,13 @@
       inclinationDeg: coast.inclinationDeg,
       totalRevs: coast.revolutions,
       suborbital: coast.suborbital,
-      buildCapsule: () => buildCapsuleById(coast.capsuleId),
+      buildCapsule: () => {
+        // The full showcase craft (CSM, Soyuz, Dragon) when /fly preloaded one; else the capsule.
+        const craft = flyCraftInOrbit(coast.missionId);
+        return craft
+          ? fitCraft(craft, craft.children.length > 1 ? 3 : 1.6)
+          : buildCapsuleById(coast.capsuleId);
+      },
       earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg`,
     });
     ar = createAscentRenderer(container, sceneObj);

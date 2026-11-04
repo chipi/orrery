@@ -32,7 +32,7 @@
       "type": "info"
     },
     {
-      "met": 1830,
+      "met": 1835,
       "label": "VGA-6",
       "note": "Sexta assistência gravitacional de Vênus 2023-08-21.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "terceiro estágio sólido Star 48BV (Delta IV Heavy: núcleo + 2 propulsores)",
   "flight_events": [
     {
-      "met": 985,
+      "met": 923,
       "label": "Assistência gravitacional de Vênus nº 4",
       "description": "2021-02-20. A quarta assistência de Vênus reduz ainda mais o periélio rumo à meta de 9,86 R☉."
     }

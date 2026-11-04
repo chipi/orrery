@@ -1,5 +1,7 @@
 # Museum research for PRD-027 / #617 — state on 2026-10-22
 
+**Status 2026-11-04:** the museum data went live (static/data/museums.json, 38 museums, 38 overlays in all 14 locales; 22 are US, 0 India; commits 2267de51099, 0ebbac5587c, b4ddf1e1d96) and the observatories shipped (34, in all 14 locales; f2acb642ed2). OPEN: "What is left" item 2, pass 4 geography (no raw/out4_*.json exists; research table lists 79 museums, only 38 are in the data) — translation-relevant because every added museum needs 13 locale overlays. Item 1 operator ticks were applied in 0ebbac5587c; not verified that every ticked row landed.
+
 Where the "See it in a museum" research stands, so the next session can pick it up cold.
 The plan and rules are in [PRD-027](../../prd/PRD-027.md) (accepted 2026-10-22, option A:
 museums become a fleet category `museum`).

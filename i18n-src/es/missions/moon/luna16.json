@@ -10,8 +10,8 @@
     { "met": 0, "label": "LANZAMIENTO", "note": "Proton-K desde Baikonur, 1970-09-12.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Inyección translunar en la etapa superior Blok-D.", "type": "nominal" },
     { "met": 5, "label": "TCM", "note": "Corrección de trayectoria durante el viaje de 4,5 días.", "type": "info" },
-    { "met": 5.1, "label": "ATERRIZAJE", "note": "Alunizaje suave en Mare Fecunditatis 1970-09-20. Operaciones en superficie + núcleo perforado (101 g).", "type": "nominal" },
-    { "met": 8, "label": "RETORNO DE MUESTRAS", "note": "Cápsula recuperada en Kazajistán el 1970-09-24. Primer retorno de muestras lunares sin tripulación.", "type": "nominal" }
+    { "met": 8, "label": "ATERRIZAJE", "note": "Alunizaje suave en Mare Fecunditatis 1970-09-20. Operaciones en superficie + núcleo perforado (101 g).", "type": "nominal" },
+    { "met": 9, "label": "RETORNO DE MUESTRAS", "note": "Cápsula recuperada en Kazajistán el 1970-09-24. Primer retorno de muestras lunares sin tripulación.", "type": "nominal" }
   ],
   "vehicle_stage": "etapa superior Blok-D"
 }

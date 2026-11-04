@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Translunare Injektionszündung — erste bemannte Flucht aus der Erdgravitation. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
-      "met": 2.79,
+      "met": 2.881,
       "label": "LOI",
       "note": "Mondorbitale Einschwenkung hinter dem Mond, außerhalb des Funkkontakts. SPS-Zündung ~0,91 km/s. Erste Menschen, die einen anderen Himmelskörper umkreisen.",
       "type": "nominal"
@@ -39,16 +39,33 @@
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.722,
       "label": "TEI",
       "note": "Trans-Earth injection hinter dem Mond (1968-12-25 06:10 UTC). SPS ∆v ~1,07 km/s.",
       "type": "nominal"
     },
     {
-      "met": 6.13,
+      "met": 6.125,
       "label": "WASSERUNG",
       "note": "CM landete am 1968-12-27 im Nordpazifik. Bergung durch USS Yorktown.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 0.458,
+      "label": "Kurskorrektur",
+      "description": "SPS-Zündung bei GET 10:59:59 (1968-12-21 23:50 UTC), 24,8 ft/s (7,6 m/s); der geplante Perizynthion sank von 459 auf 66,3 nmi."
+    },
+    {
+      "met": 2.542,
+      "label": "Kurskorrektur",
+      "description": "RCS-Korrektur bei GET 60:59:56 (1968-12-24 01:50 UTC), 1,4 ft/s (0,4 m/s), verfeinert die Bedingungen für das Einschwenken in die Mondumlaufbahn."
+    },
+    {
+      "met": 4.333,
+      "label": "Kurskorrektur auf dem Rückflug zur Erde",
+      "description": "Die einzige Korrektur auf dem Rückflug (der Bericht nennt sie die dritte), 4,8 ft/s (1,5 m/s) bei GET 103:59:54, 1968-12-25 20:50 UTC."
     }
   ]
 }

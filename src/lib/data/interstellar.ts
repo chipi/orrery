@@ -41,6 +41,58 @@ export const TRAJECTORY_IDS = [
 const TRAJECTORY_ID_SET: ReadonlySet<string> = new Set(TRAJECTORY_IDS);
 export const hasTrajectory = (id: string): boolean => TRAJECTORY_ID_SET.has(id);
 
+/** /fly-only trajectories, generated from the mission's events
+ *  (scripts/generate-fly-trajectory.ts → static/data/fly-trajectories/). They win over the
+ *  /explore file: /explore's cruise points are a stylised layout (most sit near longitude 0°
+ *  whatever the date), and /fly's spline through them looped BepiColombo through the Sun. */
+export const FLY_TRAJECTORY_IDS = [
+  'messenger',
+  'osiris-rex',
+  'hera',
+  'lucy',
+  'hayabusa1',
+  'europa-clipper',
+  'psyche-mission',
+  'mariner10',
+  'bepicolombo',
+  'cassini',
+  'dawn',
+  'galileo',
+  'juice',
+  'juno',
+  'new-horizons',
+  'rosetta',
+  'giotto',
+  'pioneer-11',
+  'ulysses',
+  'voyager-1',
+  'voyager-2',
+  'hayabusa2',
+  'near-shoemaker',
+  'parker-solar-probe',
+  'solar-orbiter',
+] as const;
+const FLY_TRAJECTORY_ID_SET: ReadonlySet<string> = new Set(FLY_TRAJECTORY_IDS);
+/** Missions that fly another's path (Huygens rode Cassini). */
+const FLY_TRAJECTORY_ALIAS: Record<string, string> = { huygens: 'cassini' };
+/** Direct transfers with an /explore file: /fly flies its transfer ellipse instead of the
+ *  stylised cruise points. */
+const FLY_DIRECT_IDS: ReadonlySet<string> = new Set([
+  'pioneer-10',
+  'vega-1',
+  'vega-2',
+  'venera-13',
+]);
+
+/** The data path of the trajectory /fly flies for a mission, or null (the ellipse fallback). */
+export function flyTrajectoryPath(id: string): string | null {
+  const own = FLY_TRAJECTORY_ALIAS[id] ?? id;
+  if (FLY_TRAJECTORY_ID_SET.has(own)) return `fly-trajectories/${own}.json`;
+  if (FLY_DIRECT_IDS.has(own)) return null;
+  if (TRAJECTORY_ID_SET.has(own)) return `trajectories/${own}.json`;
+  return null;
+}
+
 /** A trajectory with its locale overlay applied (display text only; see
  *  localizeTrajectory). Null when the trajectory is missing. */
 export async function getTrajectory(

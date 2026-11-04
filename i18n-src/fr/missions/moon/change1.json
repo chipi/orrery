@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.13,
+      "met": 6.965,
       "label": "TLI",
       "note": "Injection trans-lunaire via orbite de stationnement terrestre et orbites de phase.",
       "type": "nominal"
     },
     {
-      "met": 14.2,
+      "met": 11.715,
       "label": "LOI",
       "note": "Insertion en orbite lunaire le 2007-11-07 — premier engin spatial chinois à la Lune.",
       "type": "nominal"
@@ -38,5 +38,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "troisième étage de Long March 3A (H-18)"
+  "vehicle_stage": "troisième étage de Long March 3A (H-18)",
+  "flight_events": [
+    {
+      "met": 12.719,
+      "label": "LOI-2 — orbite lunaire abaissée",
+      "description": "2007-11-06 03:21 UT. Un second allumage de freinage de 14 minutes (jusqu'à 03:35 UT) abaisse l'orbite à 3,5 heures, 213 x 1 700 km."
+    },
+    {
+      "met": 13.596,
+      "label": "LOI-3 — orbite scientifique lunaire de 200 km atteinte",
+      "description": "2007-11-07 00:24 UT. Un dernier allumage de 10 minutes (jusqu'à 00:34 UT) ralentit la sonde à 1,59 km/s et la place sur l'orbite scientifique circulaire de 200 km, de 127 minutes, à forte inclinaison."
+    }
+  ]
 }

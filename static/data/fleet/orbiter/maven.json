@@ -26,6 +26,15 @@
       "l": "MAVEN at University of Colorado LASP",
       "u": "https://lasp.colorado.edu/maven/",
       "t": "deep"
+    },
+    {
+      "l": "MAVEN — NASA NSSDCA (bus 2.3 x 2.3 x 2 m)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-063A",
+      "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 3.47,
+    "diameter_m": 2.29
+  }
 }

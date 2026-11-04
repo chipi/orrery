@@ -106,6 +106,17 @@ disk paths + the validate-data lockstep is in
 
 ---
 
+### Adding a few gallery images (the 2026-11-03 small-body pass)
+
+With `masters/` not smudged, never full-rebuild. Per entity:
+`npx tsx scripts/fetch-assets.ts --small-bodies-only --only=<ids>` (staged; leaves the counts) →
+review → promote via `/dev/staging` (or its API) → `node scripts/hotspots/regenerate-tier3-variants.mjs
+static/images/<rel>/NN.jpg` (centred `.1x1`, no vision cost) → move each `NN.jpg` to
+`masters/<rel>/` (LFS) → `node scripts/vision/build-display-ladder.mjs --only <rel>` (merges; then
+re-indent `image-ladder.json` to the committed 2-space form) → provenance rows surgically through
+`buildWikimediaEntry` (exported by `build-image-provenance.ts`) → `npm run build-cards -- <ids>`
+→ `npm run validate-data`. Unwanted fetches stay in `_staging/` (git-ignored); nothing is pruned.
+
 ## Display ladder (WebP) — RFC-030 / ADR-080
 
 Served display images are WebP, derived from the git-LFS `masters/` store — smudge first: `git lfs pull -I 'masters/**'`. Never hand-place a display `.jpg` under `static/images/`; a source `.jpg` goes to `masters/<rel>/`, the served tree gets `.webp`. Full detail: [`scripts/vision/README.md`](../../../scripts/vision/README.md).
@@ -113,7 +124,7 @@ Served display images are WebP, derived from the git-LFS `masters/` store — sm
 ### `build-display-ladder.mjs` — WebP responsive ladder **(STANDING)**
 
 - **Command** `node scripts/vision/build-display-ladder.mjs [--force]`
-- **What** Walks `masters/**`, emits per image `static/images/<stem>.webp` (base ≤3072/q80) + `NN-<w>.webp` rungs (1280/2048/3072) + rewrites `static/data/image-ladder.json`. Excludes `hotspots/` + `posters/`.
+- **What** Walks `masters/**`, emits per image `static/images/<stem>.webp` (base ≤3072/q80) + `NN-<w>.webp` rungs (1280/2048/3072) + rewrites `static/data/image-ladder.json`. Excludes `hotspots/` + `posters/` — except rover-route tiles (`hotspots/<body>/<site>/traverse/`: rungs 512/1024/2048, the scene picks one by quality tier; RFC-030 D5 amendment). For route tiles: re-cut (the fetchers write the master), `--only hotspots/<body>/<site>/traverse`, remove the served `.jpg`, then `scripts/hotspots/phash-route-tiles.ts` + `build-credit-thumbs.mjs` + `build-offline-manifest.mjs`.
 - **When** After adding/replacing a master, or a bulk re-encode.
 - **Gotchas** Refuses to run against unsmudged LFS stubs. Rewrites the WHOLE `image-ladder.json` from a full masters walk — all masters must be smudged, or do a targeted regen that merges into the existing manifest.
 - **State** STANDING.
@@ -295,6 +306,18 @@ co-registration helpers `coreg-*.mjs` / `verify-coreg-geometry.mjs` /
 - **What** Re-runs `generateVariants()` (centred focal point) for a base without a vision-API pass. Despite the `tier3` name, regenerates the `.1x1` variant (the only ratio since 2026-06-26).
 - **When** **After ANY hotspot base re-fetch/re-point.** Gated by `validate-data` #8.
 - **Gotchas** No vision cost, no manifest rewrite — manifest already references the path. Don't `--no-verify` past the gate; run the command it prints.
+- **State** STANDING.
+
+### `panorama-entry-yaw.mjs` — where a partial panorama opens **(STANDING, after any re-pad)**
+
+- **Command** `node scripts/hotspots/panorama-entry-yaw.mjs` (report) / `--write`
+- **What** A panorama opens at yaw 0, which faces texture u = 0.75. Ten Moon panoramas are a
+  photograph padded into one slice of the canvas, so they opened on black sky over grey fill
+  (also at the end of every `/fly` descent, `?from=descent`). The script finds each image's
+  content (lit sky, or textured ground under the Moon's black sky) and writes
+  `panorama_metadata.entry_yaw_deg` = 360·(0.75 − u) into `surface-hotspots.json`; full
+  panoramas get none.
+- **When** After re-padding or replacing any `tier3-pan.jpg`.
 - **State** STANDING.
 
 **One-shot hotspot backfills (KEPT):** `backfill-imagery-provenance.ts` (mints

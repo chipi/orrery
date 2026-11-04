@@ -1,5 +1,7 @@
 # Sensory feedback — cue vocabulary (taste definition)
 
+**Status 2026-11-04:** reference (locked spec 2026-07-11), still accurate: `select` is wired in 37 call sites; `confirm`/`threshold`/`warning` remain defined in `src/lib/sensory/feedback.ts:12` but no non-test caller uses them (grep of `src` found none), matching the note's own 'defined but unwired' section. Heading 'The five cues' lists four cues. Hero sonifications (/fly velocity, /explore Kepler) not checked here.
+
 *Draft for Marko's review. Defines how the sensory layer's **discrete event cues**
 feel — the sound each one makes, when it's allowed to fire, and what must stay
 silent. Once you've marked this up, I sweep `cue()` across the routes from it.

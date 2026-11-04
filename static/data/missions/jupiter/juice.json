@@ -74,13 +74,13 @@
         "description": "August 2025. Closest approach ~5,088 km from Venus. The encounter raises Juice's aphelion enough that two more Earth assists in 2026 + 2029 will reach Jupiter. The Venus thermal environment is the hottest the spacecraft will face — passive thermal control was designed around this pass."
       },
       {
-        "met_days": 1265,
+        "met_days": 1263,
         "type": "flyby",
         "label": "Earth #2 — gravity assist",
         "description": "September 2026. Adds energy for the third leg of the cruise to Jupiter."
       },
       {
-        "met_days": 2103,
+        "met_days": 2106,
         "type": "flyby",
         "label": "Earth #3 — gravity assist",
         "description": "January 2029. Final gravity assist before the direct trajectory to Jupiter — adds the last ~5 km/s needed for the long cruise to arrival in 2031."

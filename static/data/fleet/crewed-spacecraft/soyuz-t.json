@@ -26,6 +26,11 @@
       "l": "Soyuz T-1 — NASA NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1979-103A",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Soyuz (spacecraft) comparison table — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -53,5 +58,9 @@
       "mission_id": "soyuz-t-15",
       "flight_designation": "Soyuz T-15 (1986-03-13) · Kizim + Solovyov — last Soyuz T; first crew to dock with both Mir and Salyut 7 in one flight"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.48,
+    "diameter_m": 2.72
+  }
 }

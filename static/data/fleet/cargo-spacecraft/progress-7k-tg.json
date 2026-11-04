@@ -27,5 +27,9 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1978-008A",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.94,
+    "diameter_m": 2.72
+  }
 }

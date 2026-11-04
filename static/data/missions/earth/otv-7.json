@@ -10,6 +10,7 @@
   "departure_date": "2023-12-29",
   "arrival_date": "2025-03-07",
   "transit_days": 434,
+  "round_trip": true,
   "vehicle": "Falcon Heavy",
   "payload": "USA-358 / USSF-52; X-37B Orbital Test Vehicle (~5000 kg). Payloads largely classified.",
   "delta_v": "~9.4 km/s (LEO)",

@@ -223,7 +223,7 @@ function slug(s: string): string {
  * through to the generic model with no strap-on staging (e.g. Chandrayaan-1's
  * "pslv-xl" showed no PSOM separation).
  */
-const LAUNCHER_ID_CANON: Record<string, string> = {
+export const LAUNCHER_ID_CANON: Record<string, string> = {
   'pslv-xl': 'pslv',
   'soyuz-fg': 'soyuz',
   'r-7-vostok': 'vostok-k',

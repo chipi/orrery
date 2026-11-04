@@ -9,22 +9,32 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "flightPathAngleDeg": 1.11
   },
   "entryMassKg": 1350,
   "entryCdA": 3,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 90,
-    "terminalCdA": 338
+    "chuteDeployAltM": 7770,
+    "terminalHandoffAltM": 2900,
+    "parachuteCdA": 5.6,
+    "terminalCdA": 202
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "aurora-7 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "MA-7 report: 7.5 g, drogue ~25,500 ft 04:50:54, main ~9,500 ft 04:51:48, landing 04:55:57",
+      "u": "https://ntrs.nasa.gov/api/citations/19620004691/downloads/19620004691.pdf"
     }
   ]
 }

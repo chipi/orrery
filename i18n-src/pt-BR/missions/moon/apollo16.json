@@ -15,25 +15,25 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.107,
       "label": "TLI",
       "note": "Injeção translunar.",
       "type": "nominal"
     },
     {
-      "met": 3.3,
+      "met": 3.103,
       "label": "LOI",
       "note": "Inserção em órbita lunar. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.174,
       "label": "ANOMALIA DO SPS",
       "note": "Pré-descida: uma oscilação de gimbal do SPS de backup forçou uma análise técnica em tempo real de 6 horas entre pouso e aborto. O pouso foi finalmente aprovado.",
       "type": "warning"
     },
     {
-      "met": 5.04,
+      "met": 4.354,
       "label": "TOQUE NO SOLO",
       "note": "Orion pousa no Terras Altas de Descartes em 1972-04-21 02:23 UTC — primeiro pouso em terras altas (fora de mare).",
       "type": "nominal"
@@ -57,22 +57,39 @@
       "type": "info"
     },
     {
-      "met": 7.81,
+      "met": 7.314,
       "label": "SUBIDA",
       "note": "Orion decola após 71 h 02 m na superfície. 95,7 kg de amostras retornadas — o maior carregamento do Apollo até aquela data.",
       "type": "nominal"
     },
     {
-      "met": 8.5,
+      "met": 8.348,
       "label": "TEI",
       "note": "Injeção trans-Terra. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 11.07,
+      "met": 11.077,
       "label": "AMERISSAGEM",
       "note": "Módulo de Comando amerissou no Pacífico Central em 1972-04-27 19:45 UTC. Recuperação por USS Ticonderoga.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.277,
+      "label": "Correção de trajetória",
+      "description": "Queima do SPS em GET 30:39:01 (1972-04-18 00:33 UTC), 2,0 s e 12,5 ft/s (3,8 m/s), a única correção translunar."
+    },
+    {
+      "met": 8.941,
+      "label": "Correção de trajetória no trecho de volta",
+      "description": "Correção de 8,0 segundos com o RCS em GET 214:35:03 (1972-04-25 16:29 UTC), 3,4 ft/s; um segundo ajuste de 3,2 segundos vem em GET 262:37:21."
+    },
+    {
+      "met": 10.943,
+      "label": "Correção de trajetória no trecho de volta",
+      "description": "Último ajuste do corredor de reentrada em GET 262:37:21 (1972-04-27 16:31 UTC), 1,4 ft/s."
     }
   ]
 }

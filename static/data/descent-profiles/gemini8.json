@@ -12,21 +12,32 @@
     "flightPathAngleDeg": 1.5
   },
   "entryMassKg": 2000,
-  "entryCdA": 6.0,
+  "entryCdA": 6,
   "liftToDragRatio": 0.19,
   "targetDownrangeKm": 2700,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 133,
-    "terminalCdA": 501
+    "chuteDeployAltM": 15240,
+    "terminalHandoffAltM": 3050,
+    "parachuteCdA": 6,
+    "terminalCdA": 227
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "gemini8 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "Gemini VIII Technical Debriefing: ~6 g (pilot estimate), drogue ~50,000 ft, main 10,000 ft",
+      "u": "https://web.archive.org/web/2023id_/https://www.hq.nasa.gov/alsj/57115999-Gemini-VIII-Technical-Debriefing.pdf"
     }
   ]
 }

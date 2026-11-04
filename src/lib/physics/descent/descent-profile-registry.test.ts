@@ -26,7 +26,7 @@ const apollo11 = loadRaw('apollo11');
 describe('hasDescentProfile gate', () => {
   it('covers the landers + Tier-1 Earth re-entry (incl. apollo8 lunar-return skip), rejects the rest', () => {
     // Moon/Mars/Venus + outer/small-body + Earth-orbit capsules + apollo8 (10.8 km/s lunar return).
-    expect(DESCENT_MISSION_IDS.size).toBe(76);
+    expect(DESCENT_MISSION_IDS.size).toBe(77);
     expect(hasDescentProfile('apollo11')).toBe(true);
     expect(hasDescentProfile('curiosity')).toBe(true);
     expect(hasDescentProfile('friendship-7')).toBe(true);

@@ -14,7 +14,7 @@ import {
 } from '$lib/orbital/cislunar/cislunar-geometry';
 import { R_EARTH_AU, type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 import type { CislunarSceneHandles } from '$lib/three/fly-cislunar-scene';
-import { SCALE_3D, cameraDistanceFor } from '$lib/fly-scene-constants';
+import { SCALE_3D, SUN_SCENE_RADIUS, cameraDistanceFor } from '$lib/fly-scene-constants';
 import { moonHelioPos } from '$lib/fly-moon-arc';
 import { earthPos, destinationPos, spacecraftPos } from '$lib/physics/transfer/mission-arc';
 import {
@@ -303,7 +303,10 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     // Arrokoth past Pluto) renders the destinationMesh at the right
     // heliocentric position. deps.getCurrentDestMeshId() resets back to
     // deps.getActiveDestination() when the flyby window closes.
-    const dPosLive = destinationPos(deps.getSimDay(), deps.getCurrentDestMeshId());
+    const sunTarget = !!deps.getMission().sunTarget;
+    const dPosLive = sunTarget
+      ? { x: 0, z: 0 }
+      : destinationPos(deps.getSimDay(), deps.getCurrentDestMeshId());
     const destScene = new THREE.Vector3(dPosLive.x * SCALE_3D, 0, dPosLive.z * SCALE_3D);
     // Live spacecraft scene position (AU × SCALE_3D).
     const scScene = new THREE.Vector3(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
@@ -353,9 +356,10 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       // "Venus #1 — gravity assist" → Venus). Fallback for
       // unlabeled missions: closest planet to spacecraft.
       const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
+      // A Sun mission's perihelion has no body: the nearest planet would steal the shot.
       const flyby =
-        findFlybyPlanetFromLabel(activeEvt?.label) ??
-        findClosestPlanetToShip(sc.pos, deps.getSimDay());
+        findFlybyPlanetFromLabel(activeEvt?.label_en ?? activeEvt?.label) ??
+        (sunTarget ? null : findClosestPlanetToShip(sc.pos, deps.getSimDay()));
       // Debug exposure. Builder lives in $lib/orbital/fly-debug-snapshot
       // so the DEV-vs-prod payload shape is unit-tested. flybyId +
       // flybySize ship in BOTH modes (the foreground ship-offset
@@ -411,6 +415,8 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
           'orus',
           'patroclus',
           'menoetius',
+          'ryugu',
+          'eros',
         ]);
         if (
           flyby.id !== 'earth' &&
@@ -600,7 +606,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       earthScene,
       epilogueActive: deps.getEpilogueActive(),
       endAtEarth: deps.getRetPts().length > 0,
-      destSize: PLANET_SIZES[deps.getActiveDestination()] ?? 0,
+      destSize: sunTarget ? SUN_SCENE_RADIUS : (PLANET_SIZES[deps.getActiveDestination()] ?? 0),
       inOpeningWide,
       rEarthAu: R_EARTH_AU,
       scale3d: SCALE_3D,

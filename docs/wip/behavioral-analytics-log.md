@@ -1,12 +1,14 @@
 # Orrery — behavioral analytics running log
 
+**Status 2026-11-04:** live log, but only one entry (2026-08-31); no review appended in 2 months. The 'Open data-quality to-dos' are partly closed: operator-exclusion toggle exists (`src/lib/analytics-optout.ts`, `/privacy`), #521 events landed (`80cc692100a`). Standing question 1 lever (language suggestion) shipped (`src/lib/components/LanguageSuggestion.svelte`, `c177e50eb2c`); #519 multilingual SEO in `8915eaf2f99`. No new data pulled this pass (remote access out of scope), so none of the baseline numbers are re-measured. OPEN: next weekly entry; whether the `search` event fires on prod.
+
 A living log of what real users do on prod, so over the first 1-2 months we build a
 picture and then improve user flows toward desired outcomes (explore more, discover
 /fly, use their own language, complete tours). **Append a dated entry per review**
 (roughly weekly). Keep raw numbers + the *behavioral read* + *hypotheses to test*.
 
 Data sources + how to pull: `reference_homelab_observability_access` (memory) and
-`docs/wip/2026-08-31-prod-observability-sweep.md` (method). Umami prod website_id
+`git show d11a0df6db6:docs/wip/2026-08-31-prod-observability-sweep.md` (method). Umami prod website_id
 `4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce`.
 
 **Caveat on every entry:** numbers are small (new site) and include some operator/dev
@@ -19,7 +21,7 @@ audio-tour sessions). Treat as directional. Real-user counts are slightly lower.
 
 1. **Language:** do non-EN users arrive and stay in their language? (Currently no —
    ~99.5% EN. Levers: multilingual SEO + on-site language suggestion. See
-   `multilingual-seo-analysis.md`.)
+   `git show d11a0df6db6:docs/wip/multilingual-seo-analysis.md`.)
 2. **/fly discovery:** does the flagship cinematic simulator get found & completed?
    (Currently almost never — 4 sessions/30d. Lever: discoverability / entry points.)
 3. **Depth & retention:** do people explore beyond the landing page? (Half bounce,
@@ -69,7 +71,7 @@ sitemap submission + a LinkedIn/social wave.
 - **H1 (language):** localized pages are technically well-formed but unindexed; non-EN
   organic will appear as Google indexes (weeks). *Watch:* first non-EN organic session
   + GSC per-locale impressions. *Act:* sitemap hreflang annotations + language-suggestion
-  banner (see multilingual-seo-analysis.md).
+  banner (see `git show d11a0df6db6:docs/wip/multilingual-seo-analysis.md`).
 - **H2 (/fly):** people don't reach /fly because it's not surfaced from where they are
   (home, science, mission pages). *Watch:* mission-load sessions. *Act:* add prominent
   entry points; measure lift.
@@ -80,9 +82,9 @@ sitemap submission + a LinkedIn/social wave.
   once operator traffic is excluded.
 
 ### Open data-quality to-dos
-- Tag/exclude operator/dev traffic (a self-hosted Umami exclusion or a known-session
-  filter) so real-user numbers are clean.
-- The `search` event fires 0 — confirm it's genuinely unused vs not wired on prod.
+- ~~Tag/exclude operator/dev traffic (a self-hosted Umami exclusion or a known-session
+  filter) so real-user numbers are clean.~~ — mechanism done (`umami.disabled` flag, `/privacy` opt-out cookie, `src/lib/analytics-optout.ts`); whether the operator set it on every device is not verified.
+- The `search` event fires 0 — confirm it's genuinely unused vs not wired on prod. [`80cc692100a` (#521) reworked search reachability; prod effect not verified]
 
 ---
 

@@ -226,7 +226,11 @@ export function buildMilestoneScreens(o: MilestoneScreensOpts): MilestoneRender[
   const cwMs = o.container.clientWidth;
   const chMs = o.container.clientHeight;
   const currentMet = o.simDay - o.arcTimeline.dep_day;
-  const picked = pickVisibleMilestones(o.mission.flight?.events ?? [], currentMet, {
+  // Events after the flown window (Solar Orbiter's later Venus passes) have no point on the
+  // path: spacecraftPos clamps them to its end, where they piled onto the arrival chip.
+  const lastMet = o.arcTimeline.arr_day - o.arcTimeline.dep_day + 1;
+  const events = (o.mission.flight?.events ?? []).filter((e) => (e.met_days ?? 0) <= lastMet);
+  const picked = pickVisibleMilestones(events, currentMet, {
     approachDays: ACTIVE_APPROACH_DAYS,
     departDays: ACTIVE_DEPART_DAYS,
   });

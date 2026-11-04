@@ -10,8 +10,8 @@
     { "met": 0, "label": "START", "note": "Proton-K von Baikonur, 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Trans-Lunar-Injection auf der Blok-D-Oberstufe.", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "Kursmittenkorrektur während des Reiseflugs.", "type": "info" },
-    { "met": 4.5, "label": "LANDUNG", "note": "Sanfte Landung im Le Monnier-Krater 1973-01-15. Lunokhod 2 rollte wenige Stunden später die Rampen hinab.", "type": "nominal" },
-    { "met": 7, "label": "ROVER AKTIV", "note": "Fünfköpfiges Bodenteam auf der Krim begann die Fahroperationen. Gesamtstrecke: ~39 km.", "type": "nominal" }
+    { "met": 7, "label": "LANDUNG", "note": "Sanfte Landung im Le Monnier-Krater 1973-01-15. Lunokhod 2 rollte wenige Stunden später die Rampen hinab.", "type": "nominal" },
+    { "met": 8, "label": "ROVER AKTIV", "note": "Fünfköpfiges Bodenteam auf der Krim begann die Fahroperationen. Gesamtstrecke: ~39 km.", "type": "nominal" }
   ],
   "vehicle_stage": "Oberstufe Blok-D"
 }

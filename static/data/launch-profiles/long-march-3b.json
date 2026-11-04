@@ -7,7 +7,7 @@
   "fairingJettisonAltM": 115000,
   "refAreaM2": 16,
   "cd": 0.3,
-  "launchSite": { "lat": 28.246, "lon": 102.027, "name": "LC-2 · Xichang" },
+  "launchSite": { "lat": 28.2455, "lon": 102.0267, "name": "LC-2 · Xichang" },
   "pitchProgram": [[0, 90], [12, 88], [50, 68], [120, 46], [200, 26], [320, 10], [460, 0]],
   "boosters": {
     "name": "L-41 strap-on (YF-25)",

@@ -10,6 +10,7 @@
   "departure_date": "1967-02-21",
   "arrival_date": "1967-02-21",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Saturn IB (AS-204) — never launched",
   "payload": "Apollo CSM-012 (Block I) — burned on pad",
   "delta_v": "0 km/s (mission cancelled before flight)",

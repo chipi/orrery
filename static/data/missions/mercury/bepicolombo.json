@@ -85,43 +85,43 @@
         "description": "Closest approach 552 km on 2021-08-10 — much closer than Venus #1. The deeper flyby drops aphelion further, setting up the first of six Mercury flybys 11 months later."
       },
       {
-        "met_days": 1133,
+        "met_days": 1077,
         "type": "flyby",
         "label": "Mercury #1 — gravity assist",
         "description": "Closest approach 199 km from Mercury's surface on 2021-10-01 — the first BepiColombo Mercury observation, four years before formal orbit insertion. Each successive Mercury flyby brakes the spacecraft further, shrinking its orbit closer to Mercury's."
       },
       {
-        "met_days": 1432,
+        "met_days": 1342,
         "type": "flyby",
         "label": "Mercury #2 — gravity assist",
         "description": "Closest approach 200 km on 2022-06-23. Cumulative ∆v from gravity assists exceeds 6 km/s by this pass — work the chemical engine + electric thrusters can't have done alone within the propellant budget."
       },
       {
-        "met_days": 1819,
+        "met_days": 1703,
         "type": "flyby",
         "label": "Mercury #3 — gravity assist",
         "description": "Closest approach 236 km on 2023-06-19. Mid-cruise checkpoint — instruments continue commissioning over the high-altitude legs."
       },
       {
-        "met_days": 2055,
+        "met_days": 2146,
         "type": "flyby",
         "label": "Mercury #4 — gravity assist",
         "description": "Closest approach 165 km on 2024-09-04. Closest flyby to date in the BepiColombo sequence; the proximity adds substantial braking ∆v."
       },
       {
-        "met_days": 2294,
+        "met_days": 2234,
         "type": "flyby",
         "label": "Mercury #5 — gravity assist",
         "description": "Closest approach planned for 2024-12-01. Penultimate Mercury flyby — the final two assists shrink the orbit to the geometry required for capture."
       },
       {
-        "met_days": 2421,
+        "met_days": 2272,
         "type": "flyby",
         "label": "Mercury #6 — gravity assist",
         "description": "Final flyby planned for 2025-01-08 — the spacecraft's orbital period matches Mercury's well enough that orbital capture is feasible at the next solar conjunction window."
       },
       {
-        "met_days": 2968,
+        "met_days": 2954,
         "type": "edl_or_oi",
         "label": "Mercury orbit insertion + spacecraft separation",
         "description": "Planned 2026-11. The Mercury Transfer Module separates and the two orbiters (ESA MPO + JAXA Mio) split into their respective science orbits. MPO maps the surface geology + interior structure; Mio characterises Mercury's tenuous magnetosphere. First two-orbiter Mercury mission ever flown."

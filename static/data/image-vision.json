@@ -9826,70 +9826,6 @@
       "scoring_cost_usd": 0.007569
     },
     "/images/moon-sites/apollo15/01.jpg": {
-      "score": 9,
-      "subject": "Apollo astronaut saluting the American flag on the lunar surface with the Lunar Module and Lunar Roving Vehicle visible against a mountain backdrop.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo15/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:02.296Z",
-      "scoring_cost_usd": 0.0066359999999999995
-    },
-    "/images/moon-sites/apollo15/02.jpg": {
-      "score": 8,
-      "subject": "Apollo Lunar Roving Vehicle parked on the lunar surface with an astronaut working in the background near a crater slope.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.62,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo15/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:05.715Z",
-      "scoring_cost_usd": 0.007581
-    },
-    "/images/moon-sites/apollo15/03.jpg": {
-      "score": 4,
-      "subject": "Apollo lunar surface panorama composite labeled 'Rover RIP Pan 2' showing stitched black-and-white photographs of the Moon's regolith and hills.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo15/03.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:10.220Z",
-      "scoring_cost_usd": 0.0066
-    },
-    "/images/moon-sites/apollo15/04.jpg": {
-      "score": 4,
-      "subject": "Apollo Lunar Roving Vehicle parked on the lunar surface with the Lunar Module visible in the background, presented as a labeled photographic panorama composite titled 'Rover RIP Pan'.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.72,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo15/04.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:14.744Z",
-      "scoring_cost_usd": 0.006507
-    },
-    "/images/moon-sites/apollo15/05.jpg": {
       "score": 8,
       "subject": "Apollo astronaut carrying equipment on the lunar surface with the Lunar Roving Vehicle prominently visible in the foreground right, against a stark black sky and crater-pocked regolith.",
       "category": "surface",
@@ -9898,7 +9834,7 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/moon-sites/apollo15/05.1x1.jpg"
+        "1x1": "/images/moon-sites/apollo15/01.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -9920,23 +9856,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T10:59:17.819Z",
       "scoring_cost_usd": 0.003291
-    },
-    "/images/moon-sites/apollo16/02.jpg": {
-      "score": 5,
-      "subject": "Lunar surface overhead view showing the Apollo 16 landing site with a white arrow pointing to the descent stage hardware on the Moon, labeled 'Apollo 16'.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo16/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.004836,
-      "subject_match": true
     },
     "/images/moon-sites/apollo16/03.jpg": {
       "score": 6,
@@ -9972,7 +9891,7 @@
       "scoring_cost_usd": 0.008784,
       "subject_match": true
     },
-    "/images/moon-sites/apollo16/05.jpg": {
+    "/images/moon-sites/apollo16/02.jpg": {
       "score": 7,
       "subject": "Apollo astronaut and lunar roving vehicle on the Moon's surface with rolling hills and black sky in the background.",
       "category": "surface",
@@ -9981,7 +9900,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/moon-sites/apollo16/05.1x1.jpg"
+        "1x1": "/images/moon-sites/apollo16/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -32731,7 +32650,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.006822
     },
-    "/images/moon-sites/apollo15/06.jpg": {
+    "/images/moon-sites/apollo15/02.jpg": {
       "score": 9,
       "subject": "An Apollo 15 astronaut seated on the Lunar Roving Vehicle on the lunar surface with the Moon's hills visible in the background and the photographer's shadow in the foreground.",
       "category": "surface",
@@ -32744,7 +32663,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.008901000000000001
     },
-    "/images/moon-sites/apollo15/07.jpg": {
+    "/images/moon-sites/apollo15/03.jpg": {
       "score": 8,
       "subject": "An Apollo astronaut in a spacesuit uses a core tube or drill tool on the lunar surface with a hill visible in the background, consistent with Apollo 15 EVA activities.",
       "category": "surface",
@@ -32757,7 +32676,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.005097
     },
-    "/images/moon-sites/apollo15/08.jpg": {
+    "/images/moon-sites/apollo15/04.jpg": {
       "score": 8,
       "subject": "An Apollo 15 astronaut seated on the Lunar Roving Vehicle parked beside the Lunar Module on the lunar surface, with a steep hill in the background.",
       "category": "surface",
@@ -32770,7 +32689,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.007359
     },
-    "/images/moon-sites/apollo15/09.jpg": {
+    "/images/moon-sites/apollo15/05.jpg": {
       "score": 9,
       "subject": "Apollo 15 astronaut saluting the American flag on the lunar surface with the Lunar Module and Lunar Roving Vehicle visible against the Hadley Delta mountain backdrop.",
       "category": "surface",

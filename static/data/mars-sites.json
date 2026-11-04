@@ -1,6 +1,7 @@
 [
   {
     "id": "mars2",
+    "marker": "soviet-petal",
     "kind": "surface",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -51,6 +52,7 @@
   },
   {
     "id": "mars3",
+    "marker": "soviet-petal",
     "kind": "surface",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -100,6 +102,7 @@
   },
   {
     "id": "mars6",
+    "marker": "soviet-petal",
     "kind": "surface",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -141,6 +144,7 @@
   },
   {
     "id": "viking1-lander",
+    "marker": "lander",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -184,6 +188,7 @@
   },
   {
     "id": "viking2-lander",
+    "marker": "lander",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -230,6 +235,7 @@
   },
   {
     "id": "mars-pathfinder",
+    "marker": "rover",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -273,6 +279,7 @@
   },
   {
     "id": "beagle2",
+    "marker": "lander",
     "kind": "surface",
     "agency": "ESA",
     "nation": "Europe",
@@ -314,6 +321,7 @@
   },
   {
     "id": "spirit",
+    "marker": "rover",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -356,6 +364,7 @@
   },
   {
     "id": "opportunity",
+    "marker": "rover",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -398,6 +407,7 @@
   },
   {
     "id": "phoenix",
+    "marker": "lander",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -440,6 +450,7 @@
   },
   {
     "id": "curiosity",
+    "marker": "rover",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -448,10 +459,10 @@
     "lat": -4.59,
     "lon": 137.44,
     "region_bounds": {
-      "lat_min": -4.7,
-      "lat_max": -4.5,
-      "lon_min": 137.35,
-      "lon_max": 137.55
+      "lat_min": -4.85,
+      "lat_max": -4.57,
+      "lon_min": 137.33,
+      "lon_max": 137.47
     },
     "region_kind": "traverse_bbox",
     "crewed": false,
@@ -482,6 +493,7 @@
   },
   {
     "id": "schiaparelli",
+    "marker": "lander",
     "kind": "surface",
     "agency": "ESA",
     "nation": "Europe",
@@ -523,6 +535,7 @@
   },
   {
     "id": "insight",
+    "marker": "lander",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -566,6 +579,7 @@
   },
   {
     "id": "perseverance",
+    "marker": "rover",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -574,10 +588,10 @@
     "lat": 18.44,
     "lon": 77.45,
     "region_bounds": {
-      "lat_min": 18.3,
-      "lat_max": 18.55,
-      "lon_min": 77.3,
-      "lon_max": 77.6
+      "lat_min": 18.4,
+      "lat_max": 18.52,
+      "lon_min": 77.2,
+      "lon_max": 77.48
     },
     "region_kind": "traverse_bbox",
     "crewed": false,
@@ -608,6 +622,7 @@
   },
   {
     "id": "zhurong",
+    "marker": "rover",
     "kind": "surface",
     "agency": "CNSA",
     "nation": "China",
@@ -656,17 +671,18 @@
   },
   {
     "id": "exomars-rosalind-franklin",
+    "marker": "rover",
     "kind": "surface",
     "agency": "ESA",
     "nation": "Europe",
     "year": 2028,
-    "lat": 18.2,
-    "lon": -35.05,
+    "lat": 18.275,
+    "lon": -24.632,
     "region_bounds": {
-      "lat_min": 17.5,
-      "lat_max": 18.9,
-      "lon_min": -35.7,
-      "lon_max": -34.4
+      "lat_min": 17.575,
+      "lat_max": 18.975,
+      "lon_min": -25.282,
+      "lon_max": -23.982
     },
     "region_kind": "roi_quad",
     "crewed": false,
@@ -696,6 +712,7 @@
   },
   {
     "id": "mariner9",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "NASA",
     "nation": "USA",
@@ -728,6 +745,7 @@
   },
   {
     "id": "mars3-orbiter",
+    "marker": "soviet-petal",
     "kind": "orbiter",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -761,6 +779,7 @@
   },
   {
     "id": "viking1-orbiter",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "NASA",
     "nation": "USA",
@@ -789,6 +808,7 @@
   },
   {
     "id": "mars-odyssey",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "NASA",
     "nation": "USA",
@@ -821,6 +841,7 @@
   },
   {
     "id": "mars-express",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "ESA",
     "nation": "Europe",
@@ -854,6 +875,7 @@
   },
   {
     "id": "mro",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "NASA",
     "nation": "USA",
@@ -886,6 +908,7 @@
   },
   {
     "id": "maven",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "NASA",
     "nation": "USA",
@@ -913,6 +936,7 @@
   },
   {
     "id": "mangalyaan",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "ISRO",
     "nation": "India",
@@ -951,6 +975,7 @@
   },
   {
     "id": "tgo",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "ESA",
     "nation": "Europe",
@@ -977,6 +1002,7 @@
   },
   {
     "id": "tianwen1-orbiter",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "CNSA",
     "nation": "China",
@@ -1009,6 +1035,7 @@
   },
   {
     "id": "hope",
+    "marker": "lander",
     "kind": "orbiter",
     "agency": "UAESA",
     "nation": "UAE",

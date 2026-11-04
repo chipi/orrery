@@ -32,7 +32,7 @@
       "type": "info"
     },
     {
-      "met": 1830,
+      "met": 1835,
       "label": "VGA-6",
       "note": "Zesde Venus-manoeuvre 2023-08-21.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "derde vastestoftrap Star 48BV (Delta IV Heavy: kern + 2 boosters)",
   "flight_events": [
     {
-      "met": 985,
+      "met": 923,
       "label": "Zwaartekrachtassist bij Venus nr. 4",
       "description": "2021-02-20. De vierde Venus-assist verkleint het perihelium verder, richting het doel van 9,86 R☉."
     }

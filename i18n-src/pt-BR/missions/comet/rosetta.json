@@ -26,7 +26,7 @@
       "type": "nominal"
     },
     {
-      "met": 1671,
+      "met": 1648,
       "label": "ASTEROIDE 2867 ŠTEINS",
       "note": "Primeira imagem aproximada de um asteroide do tipo E.",
       "type": "nominal"
@@ -46,12 +46,12 @@
   ],
   "flight_events": [
     {
-      "met": 1349,
+      "met": 1351,
       "label": "Terra nº 2 — assistência gravitacional",
       "description": "Máxima aproximação de 5.295 km em 2007-11-13. Por um tempo foi confundida com um asteroide próximo da Terra (designado 2007 VN84), até que os observadores perceberam que era a Rosetta se afastando."
     },
     {
-      "met": 2058,
+      "met": 2082,
       "label": "Terra nº 3 — assistência gravitacional",
       "description": "Último sobrevoo da Terra em 2009-11-13, máxima aproximação de 2.481 km. O ganho de energia leva a Rosetta até o afélio necessário para igualar a órbita de 67P; depois disso a sonda entrou em hibernação no espaço profundo."
     }

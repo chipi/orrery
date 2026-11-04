@@ -49,7 +49,7 @@
   });
 
   let captionText = $derived(metadata?.caption ?? fallbackCaption);
-  let credit = $derived(metadata?.credit_team ?? `${agency} · Surface panorama`);
+  let credit = $derived(metadata?.credit_team ?? m.panorama_credit_fallback({ agency }));
 </script>
 
 {#if active && !dismissed}

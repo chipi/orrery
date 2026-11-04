@@ -2,7 +2,7 @@
  * Perceptual difference hash for matching a shipped image to its source.
  * 64-bit dHash: grayscale, 9×8, one bit per horizontal neighbour comparison.
  * Distance ≤ 8 (of 64) is the credits plan's "same picture" threshold
- * (docs/wip/2026-10-31-tech-debt-open-inventory.md, gallery credits).
+ * (docs/wip/2026-11-04-open-items.md, credits).
  */
 import sharp from 'sharp';
 

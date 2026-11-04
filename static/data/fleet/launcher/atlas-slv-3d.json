@@ -26,10 +26,19 @@
       "l": "Gunter's Space Page — Atlas SLV-3D Centaur launch history",
       "u": "https://space.skyrocket.de/doc_lau/atlas_centaur.htm",
       "t": "deep"
+    },
+    {
+      "l": "Encyclopedia Astronautica Atlas SLV-3D Centaur key facts: Height 38.00 m, Diameter 3.05 m — dimensions",
+      "u": "https://www.astronautix.com/a/atlasslv-3dcentaur.html",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "pioneer-11",
     "mariner10"
-  ]
+  ],
+  "specs": {
+    "height_m": 38,
+    "diameter_m": 3.05
+  }
 }

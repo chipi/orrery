@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 366,
+      "met": 376,
       "label": "ASSISTÊNCIA GRAVITACIONAL TERRESTRE",
       "note": "2004-05-19.",
       "type": "info"
@@ -27,13 +27,13 @@
       "type": "info"
     },
     {
-      "met": 857.01,
+      "met": 925.67,
       "label": "POUSOS",
       "note": "Dois contatos com a superfície em 2005-11-20 e 25. Projéteis coletores de amostra não dispararam conforme o comando.",
       "type": "warning"
     },
     {
-      "met": 920,
+      "met": 944,
       "label": "TENTATIVA DE RECUPERAÇÃO",
       "note": "Vazamento de hidrazina, 2 rodas de reação inoperantes, comunicações perdidas por 7 semanas.",
       "type": "warning"

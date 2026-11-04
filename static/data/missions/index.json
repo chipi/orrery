@@ -27,7 +27,7 @@
     "year": 1966,
     "sector": "gov",
     "color": "#cc4444",
-    "crewed": true
+    "crewed": false
   },
   {
     "id": "apollo11",
@@ -107,7 +107,7 @@
     "year": 1973,
     "sector": "gov",
     "color": "#cc4444",
-    "crewed": true
+    "crewed": false
   },
   {
     "id": "pioneer-11",
@@ -287,7 +287,7 @@
     "year": 2013,
     "sector": "gov",
     "color": "#DE2910",
-    "crewed": true
+    "crewed": false
   },
   {
     "id": "mangalyaan",
@@ -443,7 +443,7 @@
     "id": "mmx",
     "agency": "JAXA",
     "dest": "MARS",
-    "status": "PLANNED",
+    "status": "ACTIVE",
     "year": 2026,
     "sector": "gov",
     "color": "#003087",
@@ -453,11 +453,11 @@
     "id": "starship-demo",
     "agency": "SpaceX",
     "dest": "MARS",
-    "status": "PLANNED",
+    "status": "CANCELLED",
     "year": 2026,
     "sector": "private",
     "color": "#005288",
-    "crewed": true
+    "crewed": false
   },
   {
     "id": "artemis3",

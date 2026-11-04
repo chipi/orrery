@@ -14,6 +14,7 @@
 // external data dependency the kernel purity gate permits besides $types.
 import planetsData from '$data/planets.json';
 import smallBodiesData from '$data/small-bodies.json';
+import type { InclinedOrbit } from './inclined-orbit';
 
 type PlanetEntry = {
   name: string;
@@ -99,7 +100,10 @@ export type DestinationId =
   | 'leucus'
   | 'orus'
   | 'patroclus'
-  | 'menoetius';
+  | 'menoetius'
+  // Rendezvous asteroids of Hayabusa2 and NEAR Shoemaker.
+  | 'ryugu'
+  | 'eros';
 
 /**
  * Geocentric (planet-orbiting) destinations. These have NO heliocentric orbit,
@@ -169,6 +173,9 @@ export interface DestinationConstants {
    *  perihelion sits at ϖ, not at ecliptic longitude 0 (S2). Inert when e is
    *  0/omitted (circular model). Sourced from the data layer. */
   varpi?: number;
+  /** Full elements, for a body the in-plane model can't place (Halley is retrograde).
+   *  When set, positions come from these and e/a/meanMotion; a0 and varpi are unused. */
+  orbit?: InclinedOrbit;
 }
 
 function buildPlanetDestination(id: DestinationId, name: string): DestinationConstants {
@@ -219,16 +226,24 @@ function buildCometDestination(id: 'halley' | '67p'): DestinationConstants {
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
     varpi: p.varpi,
-    /** Halley (e=0.967) and 67P (e=0.64) are highly eccentric. For
-     *  /fly's flyby-cinema purpose we only need their heliocentric
-     *  position at the flyby moment (1986-03-14 for Halley, 2014-08-06
-     *  for 67P rendezvous), which the circular model approximates
-     *  well enough since data designers tune trajectory.json to land
-     *  the spacecraft at the same spot. Lambert porkchop grids for
-     *  these aren't shipped (no /plan entries), so the eccentric-
-     *  convergence concern doesn't apply. */
+    /** Halley (e=0.967) and 67P (e=0.64) need their eccentricity: a circle at
+     *  a put Halley at 17.8 AU on Giotto's encounter day (it was ~0.9 AU) and
+     *  pulled /fly's labelled waypoints out there. Lambert porkchop grids for
+     *  these aren't shipped (no /plan entries), so the eccentric-convergence
+     *  concern doesn't apply. */
+    e: p.e,
+    ...(id === 'halley' ? { orbit: HALLEY_ORBIT } : {}),
   };
 }
+
+/** 1P/Halley, JPL SBDB solution of 2025-11-21 (ssd-api.jpl.nasa.gov/sbdb.api?sstr=1P):
+ *  Ω 59.0989°, ω 112.2414°, i 162.1905°, perihelion JD 2446469.9736 (1986-02-09). */
+const HALLEY_ORBIT: InclinedOrbit = {
+  node: (59.098947 * Math.PI) / 180,
+  argPeri: (112.241431 * Math.PI) / 180,
+  incl: (162.19053 * Math.PI) / 180,
+  tpDay: 2446469.973616 - 2451544.5,
+};
 
 function buildAsteroidDestination(id: 'vesta' | 'psyche' | 'bennu'): DestinationConstants {
   const p = smallBody(id);
@@ -255,7 +270,9 @@ type SmallBodyDestId =
   | 'leucus'
   | 'orus'
   | 'patroclus'
-  | 'menoetius';
+  | 'menoetius'
+  | 'ryugu'
+  | 'eros';
 
 /** Builder for #341 Batch 5 small-body destinations (Itokawa, the
  *  Didymos-Dimorphos binary, Lucy's Trojan itinerary). All use the
@@ -310,4 +327,6 @@ export const DESTINATIONS: Record<DestinationId, DestinationConstants> = {
   orus: buildSmallBodyDestination('orus'),
   patroclus: buildSmallBodyDestination('patroclus'),
   menoetius: buildSmallBodyDestination('menoetius'),
+  ryugu: buildSmallBodyDestination('ryugu'),
+  eros: buildSmallBodyDestination('eros'),
 };

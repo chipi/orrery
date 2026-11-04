@@ -1,23 +1,23 @@
 {
   "stops": [
     {
-      "id": "sol-38",
+      "id": "sol-58",
       "label": "Voo 1 do Ingenuity"
     },
     {
-      "id": "sol-200",
-      "label": "Amostra 1 — Rochette"
+      "id": "sol-190",
+      "label": "Primeiro testemunho de rocha — Rochette"
     },
     {
-      "id": "sol-421",
+      "id": "sol-653",
       "label": "Depósito de amostras Three Forks"
     },
     {
-      "id": "sol-750",
+      "id": "sol-440",
       "label": "Hawksbill Gap"
     },
     {
-      "id": "sol-1000",
+      "id": "sol-915",
       "label": "Travessia da unidade Margin"
     }
   ]

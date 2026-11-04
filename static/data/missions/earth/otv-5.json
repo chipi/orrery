@@ -10,6 +10,7 @@
   "departure_date": "2017-09-07",
   "arrival_date": "2019-10-27",
   "transit_days": 780,
+  "round_trip": true,
   "vehicle": "Falcon 9 Block 4",
   "payload": "USA-277; X-37B Orbital Test Vehicle (~5000 kg). Payloads largely classified.",
   "delta_v": "~9.4 km/s (LEO)",

@@ -10,6 +10,7 @@
   "departure_date": "1966-11-11",
   "arrival_date": "1966-11-11",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Titan II GLV (GT-12)",
   "payload": "Gemini 12; Jim Lovell & Buzz Aldrin",
   "delta_v": "~7.8 km/s (LEO)",

@@ -1,0 +1,51 @@
+{
+  "id": "mars-surface-imagery",
+  "tab": "planets",
+  "order": 13,
+  "see_in_app": [
+    {
+      "route": "/mars",
+      "query": "?site=curiosity",
+      "context_key": "Zoom from the whole planet down to Gale Crater and follow Curiosity's drive tile by tile; the imagery card names the camera behind every layer"
+    },
+    {
+      "route": "/fleet",
+      "query": "?id=mro",
+      "context_key": "Mars Reconnaissance Orbiter, which carries both CTX and HiRISE"
+    },
+    {
+      "route": "/fleet",
+      "query": "?id=mars-odyssey",
+      "context_key": "Mars Odyssey, whose THEMIS camera made the infrared mosaic behind the context layer"
+    },
+    {
+      "route": "/missions",
+      "query": "?id=curiosity",
+      "context_key": "Curiosity's mission and its drive, followed tile by tile"
+    }
+  ],
+  "links": [
+    {
+      "l": "HiRISE · High Resolution Imaging Science Experiment (University of Arizona)",
+      "u": "https://www.uahirise.org/",
+      "t": "intro"
+    },
+    {
+      "l": "MSSS · Context Camera (CTX)",
+      "u": "https://www.msss.com/all_projects/mro-ctx.php",
+      "t": "intro"
+    },
+    {
+      "l": "ASU · THEMIS, the Thermal Emission Imaging System on Mars Odyssey",
+      "u": "https://themis.asu.edu/",
+      "t": "deep"
+    },
+    {
+      "l": "Wikipedia · Level of detail (computer graphics)",
+      "u": "https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics)",
+      "t": "deep"
+    }
+  ],
+  "diagram": "mars-surface-imagery.webp",
+  "diagram_quality": "polished"
+}

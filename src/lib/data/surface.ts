@@ -1,4 +1,5 @@
 import { get } from './core';
+import { loadLadder } from '$lib/image-srcset';
 import type { MoonSite } from '$types/moon-site';
 import type { MarsSite, Traverse, RouteHirisePatch } from '$types/mars-site';
 
@@ -283,9 +284,19 @@ export async function getMarsTraverse(
     const rp = await get<{ patches: RouteHirisePatch[] }>(
       `mars-traverses/${roverId}.route-patches.json`,
     ).catch(() => null);
-    if (rp?.patches?.length) t.route_patches = rp.patches;
+    if (rp?.patches?.length) t.route_patches = await withRungs(rp.patches);
   }
   return t;
+}
+
+/** Attach each route tile's WebP ladder widths (image-ladder.json), so the scene
+ *  can load the rung its quality tier allows (RFC-030 D4 for route tiles). */
+async function withRungs(patches: RouteHirisePatch[]): Promise<RouteHirisePatch[]> {
+  const ladder = await loadLadder();
+  return patches.map((p) => {
+    const rungs = ladder[p.image.replace(/\.[^.]+$/, '')];
+    return rungs?.length ? { ...p, rungs } : p;
+  });
 }
 
 /** Moon rover traverse polylines (#361 follow-on) — Lunokhod 1/2, Yutu,
@@ -303,7 +314,7 @@ export async function getMoonTraverse(
     const rp = await get<{ patches: RouteHirisePatch[] }>(
       `moon-traverses/${roverId}.route-patches.json`,
     ).catch(() => null);
-    if (rp?.patches?.length) t.route_patches = rp.patches;
+    if (rp?.patches?.length) t.route_patches = await withRungs(rp.patches);
   }
   return t;
 }

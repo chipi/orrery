@@ -15,19 +15,19 @@
       "type": "warning"
     },
     {
-      "met": 0.12,
+      "met": 0.116,
       "label": "TLI",
       "note": "Iniezione trans-lunare — ripristino dai colpi di fulmine verificato; missione GO per la Luna.",
       "type": "nominal"
     },
     {
-      "met": 3.39,
+      "met": 3.476,
       "label": "LOI",
       "note": "Inserimento in orbita lunare. SPS ∆v ≈0,89 km/s.",
       "type": "nominal"
     },
     {
-      "met": 5.43,
+      "met": 4.607,
       "label": "ATTERRAGGIO",
       "note": "L'Intrepid si posa nell'Oceanus Procellarum (Statio Cognitum) il 1969-11-19 06:54 UTC — a 163 m da Surveyor 3 (l'allunaggio più preciso fino ad allora).",
       "type": "nominal"
@@ -39,7 +39,7 @@
       "type": "info"
     },
     {
-      "met": 6.74,
+      "met": 5.919,
       "label": "ASCESA",
       "note": "L'Intrepid decolla dopo 31 h 31 m sulla superficie. 34 kg di campioni riportati.",
       "type": "nominal"
@@ -51,16 +51,33 @@
       "type": "info"
     },
     {
-      "met": 7.92,
+      "met": 7.186,
       "label": "TEI",
       "note": "Iniezione trans-terrestre. SPS ∆v ≈1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 10.18,
+      "met": 10.192,
       "label": "AMMARAGGIO",
       "note": "Il CM è ammarato nel Pacifico meridionale il 1969-11-24 alle 20:58 UTC. Recupero da parte della USS Hornet.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.287,
+      "label": "MCC-2 — correzione di traiettoria",
+      "description": "Accensione dell'SPS a GET 30:52:44 (1969-11-15 23:14 UTC), 61,8 ft/s (18,8 m/s), che portò l'Apollo 12 dal ritorno libero alla traiettoria ibrida senza ritorno libero necessaria per l'allunaggio di precisione."
+    },
+    {
+      "met": 7.852,
+      "label": "Correzione di traiettoria sulla via del ritorno 1",
+      "description": "Piccola correzione a GET 188:27:16 (1969-11-22 12:49 UTC); una seconda segue a GET 241:22:00."
+    },
+    {
+      "met": 10.057,
+      "label": "Correzione di traiettoria sulla via del ritorno 2",
+      "description": "Ultimo ritocco del corridoio di rientro a GET 241:22:00 (1969-11-24 17:44 UTC), circa 3 h prima della separazione del modulo di comando."
     }
   ]
 }

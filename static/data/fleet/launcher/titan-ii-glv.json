@@ -35,5 +35,9 @@
     "gemini7",
     "gemini8",
     "gemini12"
-  ]
+  ],
+  "specs": {
+    "height_m": 33,
+    "diameter_m": 3.05
+  }
 }

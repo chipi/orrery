@@ -1641,6 +1641,356 @@
       "title": "Trajectoires de missions emblématiques",
       "what": "Trajectoires de vol Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn.",
       "where": "Exploration"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "Premier et deuxième étages à séparation à chaud sur un treillis ouvert, sous un troisième étage cryogénique et une coiffe de 3,35 m, sans propulseurs d’appoint (Chang’e 1).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "La fusée à kérosène de 3,35 m de la CALT pour les cargos Tianzhou : un corps central, un deuxième étage et quatre propulseurs d’appoint de 2,25 m.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "Premier étage turquoise dérivé de Thor, entouré de neuf propulseurs à poudre blancs, sous une coiffe de 2,9 m à rétreint.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "Atlas à réservoir d’acier autoporteur et un étage et demi sous l’étage supérieur Centaur blanc et sa coiffe (Mariner 9 et 10, Pioneer 10 et 11).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "Le même Atlas sous un étage supérieur Agena D élancé et une petite coiffe (Mariner 4).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "Deux étages du corps Titan sous une coiffe de charge utile (Clementine).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "Corps Titan avec deux propulseurs à poudre de cinq segments, un interétage et le Centaur sous sa coiffe (Viking, Voyager).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "Corps Titan avec deux longs moteurs à poudre sous une coiffe de 20 m qui enveloppe le Centaur (Cassini).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "Trois corps Falcon 9 côte à côte : propulseurs latéraux à ogive, ailerons de grille et jambes, et un corps central portant l’étage supérieur et la coiffe.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "Empilement entièrement à poudre : deux étages Castor 120, un troisième étage et une coiffe effilée (Lunar Prospector).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "Trois corps de propulsion communs côte à côte, celui du milieu portant l’étage supérieur cryogénique et une coiffe de 19 m (Parker Solar Probe).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "Un seul fût de 7 m : premier étage à sept moteurs avec jambes et strakes, sous une coiffe ogivale de 7 m (Blue Moon MK1).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "Corps central entouré de six réservoirs extérieurs, deux étages de plus et un étage supérieur Briz-M sous une coiffe de 4,35 m.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "Étage central orange en mousse à quatre RS-25, deux propulseurs blancs de cinq segments, l’adaptateur et l’étage supérieur sous Orion et sa tour de sauvetage (Artemis).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "R-7 à quatre étages : le Blok I sur son treillis, l’étage d’évasion Blok L et la sonde sous une coiffe cylindro-conique (Luna 9, Luna 10).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "Le R-7 et son étage supérieur surmontés du trapu Fregat et de la sonde sous une coiffe plus large (Mars Express).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "Le R-7 à deux étages qui a lancé Sputnik 1 : pas de troisième étage, le satellite sous l’ogive du corps central.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "Le R-7 modernisé de 46,3 m : quatre propulseurs autour du corps central, un étage supérieur sur un treillis ouvert et une longue coiffe.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "Le lanceur du Cygnus de Northrop Grumman : premier étage à kérosène de 3,9 m sur deux RD-181 sous un deuxième étage à poudre et sa coiffe.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "Le corps cryogénique européen de 5,4 m et l’étage supérieur Vinci sous une coiffe de 20 m, avec quatre propulseurs à poudre (A64).",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "Premier étage au méthane de 5,4 m d’ULA sur deux BE-4, le Centaur V et une coiffe de 5,4 m, avec des propulseurs à poudre GEM 63XL.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "Le corps central à hydrogène de 7,75 m avec quatre propulseurs RD-170 et l’orbiteur Buran sur son flanc.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "La fusée lunaire soviétique : cinq étages en cône, trente moteurs au premier, sous la coiffe L3 et la tour de sauvetage.",
+      "where": "Voler · lancement/ascension"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "Le Soyuz de première génération, de 7,95 m : modules orbital, de descente et de service, ailes solaires de 9,8 m et antennes de rendez-vous Igla.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS (4 variantes)",
+      "what": "Le Soyuz de 7,48 m en quatre générations : antennes Igla sur le T, Kurs sur le TM et le TMA, Kurs-NA et un bouclier anti-micrométéorites sur le MS.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "L’ensemble capsule et trunk de 8,1 m avec ses hublots, ses modules SuperDraco et son trunk à cellules solaires.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "La capsule et le module de service de Boeing, de 5,03 m : la bande bleue et les modules de propulseurs.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "Le module d’équipage de 5,58 m de l’ISRO sur son module de service, avec des ailes solaires déployables.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "Le module d’équipage d’Artemis, de 7,9 m, avec le module de service européen et ses panneaux solaires.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "Le véhicule suborbital de 19,2 m : un propulseur de 3,8 m sous la capsule d’équipage et ses grands hublots.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II (2 variantes)",
+      "what": "Le module de commande et de service de 10,6 et 11 m : le module de commande conique sur le module de service cylindrique et sa tuyère.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "Le vaisseau chinois de 9,25 m à trois modules, de lignée Soyuz : module orbital, module de rentrée et module de service avec ses ailes solaires.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Orbiteur du Space Shuttle",
+      "what": "Un orbiteur de 37,2 m dessiné une seule fois pour les quatre sœurs — Atlantis, Challenger, Discovery et Endeavour — couché sur la piste.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "Le premier orbiteur : le seul aux arêtes noires, avec le bloc d’instruments sur la dérive.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "L’orbiteur d’essais atmosphériques : sans moteurs principaux, sans modules OMS, avec des tuiles simulées.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "L’orbiteur soviétique de 36,4 m : une aile à double delta de 24 m, ses moteurs principaux restés sur le corps d’Energia.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "Le véhicule d’essais atmosphériques à la forme et à la masse de Buran : quatre turboréacteurs AL-31 à l’arrière.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "L’avion spatial inhabité de 8,92 m de la Force spatiale américaine, d’une envergure de 4,55 m.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS (3 variantes)",
+      "what": "Le cargo dérivé du Soyuz, de 7,23 à 7,94 m : module de service, section de ravitaillement et module cargo ; le 7K-TG sans ailes solaires.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "Le Dragon 2 inhabité et sans hublots sur son trunk de 8,1 m : le cargo de l’ISS.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "Le Dragon cargo d’origine, de 6,1 m : une capsule de 3,7 m sur son trunk avec deux panneaux solaires.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced (2 variantes)",
+      "what": "Le cargo de station de Northrop Grumman, de 5,14 et 6,39 m : un module cargo pressurisé sur le module de service avec des panneaux solaires circulaires.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "Le cargo de station japonais de 9,8 m : un module pressurisé et une palette ouverte sur la section de service.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "Le cargo successeur japonais de 8 m : un module cargo pressurisé sur le module de service avec ses ailes solaires.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "Le véhicule de transfert automatique de l’ESA, de 10,3 m : un cargo cylindrique à quatre ailes solaires en X.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "Le cargo chinois de 10,6 m : un long module cargo sur le module de service et ses ailes solaires.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "Comparaison des lanceurs",
+      "what": "Chaque fusée dotée d’un modèle, de Starship à Mercury-Redstone, alignée à sa hauteur réelle à côté d’une personne de 1,75 m.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "Comparaison des capsules et vaisseaux",
+      "what": "Capsules, cargos et orbiteurs à taille réelle : les orbiteurs couchés sur la piste, les capsules debout comme sur leurs fusées.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "Monuments à leur hauteur réelle",
+      "what": "Seize monuments et icônes dessinés à la main à leurs hauteurs documentées, de la tour Eiffel et de la statue de la Liberté au David de Michel-Ange, un Routemaster londonien et une Coccinelle Volkswagen.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "Personnages de dessin animé",
+      "what": "Une distribution en aplats de couleur à taille réelle — homme, femme, enfant, chien, chat, guerrier de terre cuite, panda géant, ours brun, girafe et éléphant — entre les vaisseaux.",
+      "where": "Flotte · comparaison à l’échelle"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "Le frôleur de Soleil de 3 m — un bouclier thermique en composite de carbone de 2,3 m au-dessus d’un bus mince, avec deux petits panneaux solaires refroidis.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "L’observateur du Soleil de l’ESA, 3,1 m — un bouclier thermique côté Soleil, six panneaux solaires sur 18 m d’envergure et un mât d’instruments de 4,4 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "L’orbiteur de Mercure derrière son pare-soleil en tissu céramique de 2,5 m, avec deux panneaux solaires et un mât de magnétomètre de 3,6 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "Le cartographe radar de Vénus de 6,4 m — un bus à dix côtés, le moteur Star 48B et une antenne à grand gain de 3,7 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "Akatsuki",
+      "what": "L’orbiteur vénusien de la JAXA, une boîte de 1,45 m avec deux panneaux solaires et une antenne plate à balayage électronique.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "La sonde d’impact sur astéroïde de 2,6 m, avec deux panneaux solaires de 8,5 m, le moteur ionique NEXT-C et la caméra DRACO.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "L’explorateur des astéroïdes troyens, 16 m d’une extrémité à l’autre — deux panneaux solaires circulaires d’environ 7 m de diamètre et une antenne à grand gain de 2 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "L’orbiteur de l’astéroïde métallique — un engin de 7,3 m avec 25 m de panneaux solaires déployés et des mâts d’instruments de 2 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "L’orbiteur de 5 m des lunes de Jupiter, avec des panneaux solaires de 30,5 m, une antenne à grand gain de 3,1 m et un mât de magnétomètre de 8,5 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "Le bus en forme de boîte de 1,8 m de l’ESA, avec deux ailes solaires de 2,5 m (environ 12 m d’un bout à l’autre) et une antenne à grand gain de 1,6 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "L’orbiteur atmosphérique martien de la NASA, 3,47 m — un bus cubique de 2,3 m, deux panneaux solaires en aile de mouette avec des magnétomètres à leurs extrémités et une antenne de 2 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "La Mars Orbiter Mission de l’ISRO — un cube de 1,5 m enveloppé d’or, avec un panneau solaire à trois éléments et un réflecteur de 2,2 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "Hope",
+      "what": "L’orbiteur de la mission Emirates Mars des Émirats arabes unis — un bus hexagonal de 2,9 m avec deux ailes solaires et une antenne de 1,85 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4, 9 et 10 (3 variantes)",
+      "what": "La famille octogonale Mariner de la NASA — quatre panneaux solaires à volets d’extrémité sur Mariner 4 et 9 ; deux panneaux, un pare-soleil et un mât de magnétomètre de 5,8 m sur Mariner 10.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "Le cartographe lunaire de la NASA, 3,9 m — un bus en boîte avec un seul panneau solaire de 10,7 m² et une antenne orientable.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "La première station spatiale américaine — l’atelier orbital, le sas et l’adaptateur d’amarrage, le support du télescope solaire avec son moulin à vent de panneaux, et le pare-soleil.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-probe-clementine_webp": {
+      "title": "Clementine, SMART-1, Chang’e 1 et Chandrayaan-1 (4 variantes)",
+      "what": "Un seul modèle de bus en boîte en quatre tailles — le bus de 1,9 m de Clementine, le cube de 1 m de SMART-1, Chang’e 1 et Chandrayaan-1 enveloppée d’or — chacun avec ses ailes solaires et son antenne.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-probe-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "Le tambour de 1,36 m couvert de cellules solaires, avec trois mâts d’instruments de 2,5 m.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-probe-luna-10_webp": {
+      "title": "Luna 10",
+      "what": "Le cylindre pressurisé soviétique de 1,5 m avec quatre antennes fouets et un mât — le premier engin en orbite autour de la Lune.",
+      "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "La sphère polie de 58 cm, avec le joint entre ses deux hémisphères, 36 boulons et quatre antennes fouets inclinées vers l’arrière de 2,4 et 2,9 m.",
+      "where": "Voler + Explorer"
     }
   },
   "capsules": {

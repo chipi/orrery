@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 414,
+      "met": 412.531,
       "label": "CAPTURE LUNAIRE",
       "note": "Capturé par la gravité lunaire 2004-11-15 — premier engin spatial européen à la Lune.",
       "type": "nominal"
@@ -36,6 +36,23 @@
       "label": "IMPACT LACUS EXCELLENTIAE",
       "note": "Impact délibéré à 34,4° S, 46,2° W le 2006-09-03 05:42 UTC. Éclair d'impact observé depuis le CFHT.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 378.531,
+      "label": "Dernier arc à poussée continue",
+      "description": "Après des manœuvres de résonance lunaire en août, septembre et octobre 2004, un dernier arc de 100 heures de poussée ionique continue (10-14 octobre 2004) porte l'apogée à la distance de la Lune."
+    },
+    {
+      "met": 414.256,
+      "label": "Le moteur ionique s'allume pour abaisser l'orbite lunaire",
+      "description": "2004-11-15 05:24 UT. Le moteur ionique entame une période de poussée de 4,5 jours pour abaisser l'orbite, de l'orbite de capture initiale de 4 962 x 51 477 km à 81 degrés vers une orbite polaire de 300 x 3 000 km."
+    },
+    {
+      "met": 414.773,
+      "label": "Premier périlune — en orbite lunaire",
+      "description": "2004-11-15 17:48 UT. SMART-1 passe son premier périlune à environ 5 000 km au-dessus de la surface ; l'ESA fait du 15 novembre 2004 la date d'arrivée en orbite lunaire, 415 jours après le lancement."
     }
   ]
 }

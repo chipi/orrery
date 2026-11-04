@@ -55,6 +55,8 @@
   import { createSurfacePicking } from '$lib/surface-scene/surface-picking';
   import { createSurface2dMap } from '$lib/surface-scene/surface-2d-map';
   import { createSurfaceTraverses, type TraverseLine } from '$lib/surface-scene/surface-traverses';
+  import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
+  import { ladderRungUrl, loadLadder, type LadderManifest } from '$lib/image-srcset';
   import { createSurfaceMarkers, type MarkerObj } from '$lib/surface-scene/surface-markers';
   import { bindSurfaceCamTour } from '$lib/surface-scene/surface-cam-tour';
   import { buildClimateBands } from '$lib/surface-scene/surface-climate-layers';
@@ -144,6 +146,12 @@
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { type SiteStory } from '$lib/data';
   import { localeFromPage, localHref } from '$lib/locale';
+  /** The /science page that explains each body's imagery layers ("How this works"). */
+  const HOW_IMAGERY_WORKS: Partial<Record<string, string>> = {
+    moon: '/science/planets/moon-surface-imagery',
+    mars: '/science/planets/mars-surface-imagery',
+    earth: '/science/planets/earth-surface-imagery',
+  };
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import {
@@ -588,6 +596,11 @@
   // failover set. Drives the on-canvas "Detail view" credit honestly.
   const KAGUYA_DETAIL_MOON_SITES = new Set(['luna9']);
   const GSI_DETAIL_EARTH_PADS = new Set(['tanegashima-yoshinobu', 'uchinoura']);
+  /** LINZ 0.1 m aerial survey, read to 0.25 m/px (fetch-earth-pads.ts LINZ_SURVEY). */
+  const LINZ_DETAIL_EARTH_PADS = new Set(['rocket-lab-lc-1']);
+  const EOX_CLOUDLESS_TITLE = 'EOxCloudless Sentinel-2 cloudless 2025';
+  const EOX_CLOUDLESS_AUTHOR =
+    'EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2025)';
   /** Sphere's current km/px at the deepest-zoom HiRISE distance.
    *  Computed each animate frame and passed into SurfaceFlatPatch as
    *  the entry zoom so the photo content stays at the *same pixel
@@ -819,6 +832,14 @@
     if (legendH) root.style.setProperty('--legend-top', `${48 + legendH + 8}px`);
     else root.style.removeProperty('--legend-top');
     return () => root.style.removeProperty('--legend-top');
+  });
+  // Also on <html>: the host route hides its globe-only controls (the locate
+  // button) while the panorama owns the screen.
+  $effect(() => {
+    const root = document.documentElement;
+    if (panoramaActive) root.dataset.surfacePanorama = '';
+    else delete root.dataset.surfacePanorama;
+    return () => delete root.dataset.surfacePanorama;
   });
   // The imagery card sits in the lower-left corner; the INDEX pull tab
   // (left edge, centred) moves up while the card is there so the two never
@@ -1790,6 +1811,13 @@
     // #360: per-rover camera target = the magnified traverse midpoint, so
     // selecting a rover frames the whole route. Populated by rebuildTraverses.
     const routeViewCenters = new Map<string, { lat: number; lon: number }>();
+    // Context layer (surface-context.ts): true-scale ~150-200 m/px cap per site,
+    // built on first selection, faded in by camera distance for the selected site.
+    const contextCaps = new Map<string, THREE.Mesh>();
+    // WebP ladder (image-ladder.json) for the context images' rungs; until it
+    // loads a cap takes its base image (the largest rung).
+    let ladderManifest: LadderManifest = {};
+    void loadLadder().then((m) => (ladderManifest = m));
     // #380 — cached camR that frames each rover's whole route (see frameCamRForRoute).
     const routeFrameCamR = new Map<string, number>();
     // Per-rover deferred route-imagery builders (#363 perf) — populated by
@@ -2134,6 +2162,7 @@
       routeViewCenters,
       routeFrameCamR,
       routePatchBuilders,
+      routeTileMaxPx: quality.routeTileMaxPx,
     });
 
     // Initial traverse load + reactive rebuild on data change.
@@ -2476,12 +2505,14 @@
         // pitch +90 = up, 0 = horizon → camP = π/2 - pitch_rad
         camP = Math.PI / 2 - (urlState.pitchDeg * Math.PI) / 180;
       } else {
-        // Open centred on the panorama's forward direction (yaw 0 =
-        // panorama centre, pitch 0 = horizon) instead of inheriting the
-        // oblique orbital camera angle — otherwise the view lands tilted
-        // and the user has to drag to re-centre (2026-06-28 user
-        // direction: "camera was tilted ... recenter to be screen-centred").
-        camT = 0;
+        // Open level at the horizon instead of inheriting the oblique
+        // orbital camera angle — otherwise the view lands tilted and the
+        // user has to drag to re-centre (2026-06-28 user direction:
+        // "camera was tilted ... recenter to be screen-centred"). Yaw 0
+        // faces texture u = 0.75; a partial panorama names the yaw that
+        // faces its photograph, or the view opens on padding.
+        const entryYaw = site?.panorama_metadata?.entry_yaw_deg ?? 0;
+        camT = (entryYaw * Math.PI) / 180;
         camP = Math.PI / 2;
       }
       updateCam();
@@ -3539,6 +3570,31 @@
               : camR <= regionalFadeEnd
                 ? 1
                 : 1 - (camR - regionalFadeEnd) / (regionalFadeStart - regionalFadeEnd);
+          // Context layer: the selected site's true-scale cap, built lazily.
+          if (
+            selected?.hotspot_context_source &&
+            selected.hotspot_context_bounds &&
+            !contextCaps.has(selected.id)
+          ) {
+            const cap = buildContextCap({
+              siteId: selected.id,
+              textureUrl: ladderRungUrl(
+                selected.hotspot_context_source,
+                ladderManifest[selected.hotspot_context_source.replace(/\.[^.]+$/, '')],
+                quality.routeTileMaxPx * 2,
+              ),
+              bounds: selected.hotspot_context_bounds,
+              planetRadius,
+            });
+            planetMesh.add(cap);
+            contextCaps.set(selected.id, cap);
+          }
+          const ctxOp = contextOpacity(camR);
+          for (const [id, cap] of contextCaps) {
+            const op = id === selected?.id ? ctxOp : 0;
+            (cap.material as THREE.Material & { opacity: number }).opacity = op;
+            cap.visible = op > 0.01;
+          }
           // #380 — route-view force-reveals the FOCUSED rover's route line +
           // DETAIL tiles even when pulled back past the reveal band. Landing-site
           // tier2 patches keep the global ramp (untouched). Once the user zooms in
@@ -3902,7 +3958,10 @@
               bestH = { siteId: selectedH.siteId };
             }
           }
-          if (!bestH) {
+          // With a site selected the card names that site or nothing, never
+          // another promoted hotspot (a selected site without imagery used to
+          // borrow a far-away lander's card).
+          if (!bestH && !selected) {
             let bestTier = 0;
             for (const h of hotspots) {
               if (h.currentTier > bestTier) {
@@ -3940,26 +3999,26 @@
               // but wider window — see scripts/hotspots/fetch-moon-regional.ts.
               if (hasRegional) {
                 if (config.planet === 'earth') {
-                  // Earth pads (#546) — regional is Copernicus Sentinel-2
-                  // L2A for every pad; the detail branch below dispatches
-                  // per-pad source. Same false-provenance trap as the 2026-06
-                  // Mars fix: without this branch earth read LROC credit.
+                  // Earth pads (#546) — regional is the EOX Sentinel-2
+                  // cloudless 2025 mosaic for every pad (fetch-earth-pads.ts);
+                  // the detail branch below dispatches per-pad source. Same
+                  // false-provenance trap as the 2026-06 Mars fix.
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
-                    sourceTitle: 'Copernicus Sentinel-2 L2A',
-                    sourceAuthor: 'Contains modified Copernicus Sentinel data',
+                    sourceTitle: EOX_CLOUDLESS_TITLE,
+                    sourceAuthor: EOX_CLOUDLESS_AUTHOR,
                     resolutionText: m.surface_res_crop({
                       res: m.unit_mpx_value({ value: '10' }),
                       crop: '1600',
                       km: m.mp_flight_unit_km({ value: '16' }),
                     }),
-                    sourceUrl: 'https://dataspace.copernicus.eu/',
-                    licenseShort: 'COPERNICUS-S2',
+                    sourceUrl: 'https://cloudless.eox.at/',
+                    licenseShort: 'CC-BY-NC-SA-4.0',
                   });
                 } else if (config.planet === 'mars') {
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
-                    sourceTitle: 'MRO CTX context mosaic',
+                    sourceTitle: 'Murray Lab Global CTX Mosaic',
                     sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
                     resolutionText: m.surface_res_crop({
                       res: m.unit_mpx_value({ value: '5' }),
@@ -3980,7 +4039,7 @@
                   // window-cropped via USGS Astrogeology ARD.
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
-                    sourceTitle: 'Kaguya (SELENE) TC regional context',
+                    sourceTitle: 'Kaguya (SELENE) TC',
                     sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
                     resolutionText: m.surface_res_crop({
                       res: m.unit_mpx_value({ value: '6' }),
@@ -3995,7 +4054,7 @@
                   // cropped at a wider 3072² window (~15 km).
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
-                    sourceTitle: 'LROC NAC ROI regional mosaic',
+                    sourceTitle: 'LROC NAC ROI',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
                     resolutionText: m.surface_res_crop({
                       res: m.unit_mpx_value({ value: '5' }),
@@ -4024,19 +4083,31 @@
                   if ((site.hotspot_tier2_ground_m ?? 512) >= 2560) {
                     layers.push({
                       layerLabel: m.surface_layer_detail(),
-                      sourceTitle: 'Copernicus Sentinel-2 L2A (coarse fallback)',
-                      sourceAuthor: 'Contains modified Copernicus Sentinel data',
+                      sourceTitle: EOX_CLOUDLESS_TITLE,
+                      sourceAuthor: EOX_CLOUDLESS_AUTHOR,
                       resolutionText: m.surface_res_window_nosub({
                         res: m.unit_mpx_value({ value: '10' }),
                         window: m.mp_flight_unit_km({ value: '2.56' }),
                       }),
-                      sourceUrl: 'https://dataspace.copernicus.eu/',
-                      licenseShort: 'COPERNICUS-S2',
+                      sourceUrl: 'https://cloudless.eox.at/',
+                      licenseShort: 'CC-BY-NC-SA-4.0',
+                    });
+                  } else if (LINZ_DETAIL_EARTH_PADS.has(site.id)) {
+                    layers.push({
+                      layerLabel: m.surface_layer_detail(),
+                      sourceTitle: 'LINZ aerial imagery',
+                      sourceAuthor: "Hawke's Bay Regional Council · Toitū Te Whenua LINZ",
+                      resolutionText: m.surface_res_window({
+                        res: m.unit_mpx_value({ value: '0.25' }),
+                        window: m.unit_m_value({ value: '512' }),
+                      }),
+                      sourceUrl: 'https://data.linz.govt.nz/',
+                      licenseShort: 'CC-BY-4.0',
                     });
                   } else if (GSI_DETAIL_EARTH_PADS.has(site.id)) {
                     layers.push({
                       layerLabel: m.surface_layer_detail(),
-                      sourceTitle: 'GSI seamlessphoto aerial',
+                      sourceTitle: 'GSI seamlessphoto',
                       sourceAuthor: 'Geospatial Information Authority of Japan',
                       resolutionText: m.surface_res_window({
                         res: m.unit_mpx_value({ value: '0.5' }),
@@ -4048,7 +4119,7 @@
                   } else {
                     layers.push({
                       layerLabel: m.surface_layer_detail(),
-                      sourceTitle: 'USGS NAIP aerial',
+                      sourceTitle: 'USGS NAIP',
                       sourceAuthor: 'USDA / USGS National Agriculture Imagery Program',
                       resolutionText: m.surface_res_window({
                         res: m.unit_mpx_value({ value: '0.5' }),
@@ -4062,7 +4133,7 @@
                 } else if (config.planet === 'mars') {
                   layers.push({
                     layerLabel: m.surface_layer_detail(),
-                    sourceTitle: 'HiRISE detail patch',
+                    sourceTitle: 'MRO HiRISE',
                     sourceAuthor: 'NASA / JPL / UArizona / HiRISE team',
                     // We serve 2048² JPEG crops of HiRISE products, which
                     // works out to ~7 m/px on a typical landing-region
@@ -4100,7 +4171,7 @@
                   });
                 }
               }
-              tierContext = buildTierContext({ site, agencyChip, layers });
+              tierContext = layers.length ? buildTierContext({ site, agencyChip, layers }) : null;
             }
           } else if (tierContext !== null) {
             tierContext = null;
@@ -4837,7 +4908,10 @@ sample      ${debugInfo.projectedPxSample}`}
   {#if tierCardShown && tierContext}
     <TierContextCard
       {tierContext}
-      scaleNote="Tier-2 rectangles on the sphere are stylized — true ground extent is sub-pixel at this zoom. Zoom further in to enter the flat-patch view (true scale)."
+      scaleNote={m.surface_tier_scale_note()}
+      howItWorksHref={HOW_IMAGERY_WORKS[config.planet]
+        ? localHref(HOW_IMAGERY_WORKS[config.planet]!)
+        : undefined}
     />
   {/if}
 
@@ -4900,7 +4974,7 @@ sample      ${debugInfo.projectedPxSample}`}
       metadata={activePanoramaMetadata}
       agency={selected.agency}
       agencyColor={colorFor(selected)}
-      fallbackCaption={`Surface panorama at ${selected.name ?? selected.id}.`}
+      fallbackCaption={m.panorama_caption_fallback({ name: selected.name ?? selected.id })}
     />
   {/if}
 

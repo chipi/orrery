@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 414,
+      "met": 412.531,
       "label": "MONDEINFANG",
       "note": "Von Mondgravitation eingefangen 2004-11-15 — erstes europäisches Raumschiff am Mond.",
       "type": "nominal"
@@ -36,6 +36,23 @@
       "label": "LACUS-EXCELLENTIAE-AUFPRALL",
       "note": "Absichtlicher Aufprall bei 34,4° S, 46,2° W am 2006-09-03 05:42 UTC. Aufprallblitz vom CFHT beobachtet.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 378.531,
+      "label": "Letzter Dauerschub-Bogen",
+      "description": "Nach Mondresonanz-Manövern im August, September und Oktober 2004 hebt ein letzter, 100 Stunden langer Dauerschub-Bogen des Ionentriebwerks (10.–14. Oktober 2004) das Apogäum auf die Entfernung des Mondes."
+    },
+    {
+      "met": 414.256,
+      "label": "Ionentriebwerk zündet zur Absenkung der Mondumlaufbahn",
+      "description": "2004-11-15 05:24 UT. Das Ionentriebwerk beginnt eine 4,5 Tage lange Schubphase, die die Umlaufbahn von der anfänglichen Einfangbahn (4.962 x 51.477 km, 81 Grad) auf eine polare Bahn von 300 x 3.000 km absenken soll."
+    },
+    {
+      "met": 414.773,
+      "label": "Erstes Perilunium — in der Mondumlaufbahn",
+      "description": "2004-11-15 17:48 UT. SMART-1 passiert sein erstes Perilunium in etwa 5.000 km Höhe über der Oberfläche; die ESA wertet den 15. November 2004 als Ankunft in der Mondumlaufbahn, 415 Tage nach dem Start."
     }
   ]
 }

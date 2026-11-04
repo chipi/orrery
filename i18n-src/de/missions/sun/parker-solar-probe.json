@@ -32,7 +32,7 @@
       "type": "info"
     },
     {
-      "met": 1830,
+      "met": 1835,
       "label": "VGA-6",
       "note": "Sechste Venusgravitationshilfe 2023-08-21.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "dritte Feststoffstufe Star 48BV (Delta IV Heavy: Zentralstufe + 2 Booster)",
   "flight_events": [
     {
-      "met": 985,
+      "met": 923,
       "label": "Swing-by an der Venus Nr. 4",
       "description": "2021-02-20. Der vierte Venus-Swing-by verringert das Perihel weiter in Richtung des Ziels von 9,86 R☉."
     }

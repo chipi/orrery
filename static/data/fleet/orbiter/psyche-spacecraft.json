@@ -11,7 +11,13 @@
   "epoch": "commercial-era",
   "best_known_for": "First mission to a metal-rich M-class asteroid; Hall-effect ion-thruster cruise to a 2029 Psyche rendezvous",
   "credit": "Added with /fly mission JSON (#341 batch 3 — sample-return pair). Spacecraft id 'psyche-spacecraft' to avoid colliding with the asteroid id 'psyche' (a DestinationId / small-body).",
+  "specs": { "length_m": 7.3, "diameter_m": 2.4 },
   "links": [
+    {
+      "l": "Psyche spacecraft — NASA (25 x 7.3 m arrays; bus 4.9 m incl. booms)",
+      "u": "https://science.nasa.gov/mission/psyche/spacecraft/",
+      "t": "core"
+    },
     {
       "l": "Psyche (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Psyche_(spacecraft)",

@@ -26,6 +26,11 @@
       "l": "Vostok 1 mission overview (NASA)",
       "u": "https://www.nasa.gov/image-article/april-1961-first-human-entered-space/",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Vostok (spacecraft) — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Vostok_(spacecraft)",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -61,5 +66,10 @@
     "vostok-4",
     "vostok-5",
     "vostok-6"
-  ]
+  ],
+  "specs": {
+    "length_m": 4.55,
+    "diameter_m": 2.43,
+    "capsule_height_m": 2.3
+  }
 }

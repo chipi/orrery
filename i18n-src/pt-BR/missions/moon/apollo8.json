@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Queima de injeção translunar — primeira fuga tripulada da gravidade terrestre. ∆v do S-IVB ~3,05 km/s.",
       "type": "nominal"
     },
     {
-      "met": 2.79,
+      "met": 2.881,
       "label": "LOI",
       "note": "Inserção em órbita lunar atrás da Lua, fora do contato por rádio. Queima do SPS ~0,91 km/s. Primeiros humanos a orbitar outro corpo celeste.",
       "type": "nominal"
@@ -39,16 +39,33 @@
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.722,
       "label": "TEI",
       "note": "Injeção Trans-Terra atrás da Lua (1968-12-25 06:10 UTC). ∆v do SPS ~1,07 km/s.",
       "type": "nominal"
     },
     {
-      "met": 6.13,
+      "met": 6.125,
       "label": "AMERISSAGEM",
       "note": "O CM amerissou no Pacífico Norte em 1968-12-27. Recuperação pelo USS Yorktown.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 0.458,
+      "label": "Correção de trajetória",
+      "description": "Queima do SPS em GET 10:59:59 (1968-12-21 23:50 UTC), 24,8 ft/s (7,6 m/s), que reduziu o pericíntio planejado de 459 para 66,3 nmi."
+    },
+    {
+      "met": 2.542,
+      "label": "Correção de trajetória",
+      "description": "Ajuste com o RCS em GET 60:59:56 (1968-12-24 01:50 UTC), 1,4 ft/s (0,4 m/s), que refinou as condições de inserção em órbita lunar."
+    },
+    {
+      "met": 4.333,
+      "label": "Correção de trajetória no trecho de volta",
+      "description": "A única correção do trecho de volta (o relatório a chama de terceira), 4,8 ft/s (1,5 m/s) em GET 103:59:54, 1968-12-25 20:50 UTC."
     }
   ]
 }

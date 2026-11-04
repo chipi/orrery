@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 366,
+      "met": 376,
       "label": "FIONDA GRAVITAZIONALE TERRESTRE",
       "note": "2004-05-19.",
       "type": "info"
@@ -26,13 +26,13 @@
       "type": "info"
     },
     {
-      "met": 857.01,
+      "met": 925.67,
       "label": "ATTERRAGGI",
       "note": "Due contatti con la superficie 2005-11-20 e 25. I proiettili per la raccolta di campioni non partono al comando.",
       "type": "warning"
     },
     {
-      "met": 920,
+      "met": 944,
       "label": "TENTATIVO DI RECUPERO",
       "note": "Perdita di idrazina, 2 ruote di reazione non funzionanti, comunicazioni perse 7 settimane.",
       "type": "warning"

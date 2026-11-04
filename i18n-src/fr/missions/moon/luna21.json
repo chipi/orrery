@@ -10,8 +10,8 @@
     { "met": 0, "label": "LANCEMENT", "note": "Proton-K depuis Baïkonour, 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Injection translunairepar l'étage supérieur Blok-D.", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "Correction de trajectoire en cours de croisière.", "type": "info" },
-    { "met": 4.5, "label": "ATTERRISSAGE", "note": "Atterrissage en douceur dans le cratère Le Monnier le 15-01-1973. Lunokhod 2 a débarqué des rampes quelques heures plus tard.", "type": "nominal" },
-    { "met": 7, "label": "ROVER EN SERVICE", "note": "Une équipe au sol de cinq personnes, en Crimée, commence les opérations de pilotage. Parcours total : ~39 km.", "type": "nominal" }
+    { "met": 7, "label": "ATTERRISSAGE", "note": "Atterrissage en douceur dans le cratère Le Monnier le 15-01-1973. Lunokhod 2 a débarqué des rampes quelques heures plus tard.", "type": "nominal" },
+    { "met": 8, "label": "ROVER EN SERVICE", "note": "Une équipe au sol de cinq personnes, en Crimée, commence les opérations de pilotage. Parcours total : ~39 km.", "type": "nominal" }
   ],
   "vehicle_stage": "étage supérieur Blok-D"
 }

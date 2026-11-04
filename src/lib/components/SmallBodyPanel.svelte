@@ -162,7 +162,11 @@
         ? m.sbp_kind_dwarf()
         : body.type === 'comet'
           ? m.sbp_kind_comet()
-          : m.sbp_kind_interstellar(),
+          : body.type === 'asteroid'
+            ? m.card_kind_asteroid()
+            : body.type === 'kbo'
+              ? m.card_kind_kbo()
+              : m.sbp_kind_interstellar(),
   );
 </script>
 
@@ -196,8 +200,8 @@
 
     <div class="tab-content" role="tabpanel" id="sbp-tabpanel" aria-labelledby="sbp-tab-{tab}">
       {#if tab === 'overview'}
-        {#if body.description}
-          <p class="editorial">{body.description}</p>
+        {#if overlay?.description ?? body.description}
+          <p class="editorial">{overlay?.description ?? body.description}</p>
         {:else}
           <p class="editorial empty">{m.sbp_empty_description()}</p>
         {/if}

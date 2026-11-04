@@ -17,8 +17,10 @@
   interface Props {
     tierContext: TierContext;
     scaleNote?: string;
+    /** /science page that explains the imagery layers (Moon / Mars only). */
+    howItWorksHref?: string;
   }
-  let { tierContext, scaleNote }: Props = $props();
+  let { tierContext, scaleNote, howItWorksHref }: Props = $props();
 </script>
 
 <div class="tier-context-card" aria-live="polite">
@@ -55,6 +57,9 @@
   {/each}
   {#if scaleNote}
     <div class="tcc-scale-note">{scaleNote}</div>
+  {/if}
+  {#if howItWorksHref}
+    <a class="tcc-how" href={howItWorksHref}>{m.surface_how_this_works()}</a>
   {/if}
 </div>
 
@@ -145,6 +150,16 @@
     text-decoration: none;
   }
   .tcc-link:hover {
+    text-decoration: underline;
+  }
+  .tcc-how {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 10px;
+    color: rgba(78, 205, 196, 0.85);
+    text-decoration: none;
+  }
+  .tcc-how:hover {
     text-decoration: underline;
   }
   .tcc-scale-note {

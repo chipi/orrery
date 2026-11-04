@@ -41,6 +41,21 @@ export function srcsetFor(
   return { src, srcset };
 }
 
+/**
+ * One rung for a texture (no `<img srcset>` in a WebGL scene): the largest
+ * ladder width ≤ `maxPx`, or the smallest when every rung is larger. Returns
+ * the URL unchanged when the image has no ladder entry. Route tiles use it
+ * with the quality tier's routeTileMaxPx (RFC-030 D4).
+ */
+export function ladderRungUrl(url: string, widths: number[] | undefined, maxPx: number): string {
+  if (!widths?.length) return url;
+  const stem = url.replace(/\.(?:jpe?g|png|webp)$/i, '');
+  const maxW = widths[widths.length - 1];
+  const fit = widths.filter((w) => w <= maxPx);
+  const w = fit.length ? fit[fit.length - 1] : widths[0];
+  return `${stem}${w === maxW ? '' : `-${w}`}.webp`;
+}
+
 let cache: LadderManifest | null = null;
 let inflight: Promise<LadderManifest> | null = null;
 

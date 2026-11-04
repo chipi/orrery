@@ -58,9 +58,9 @@ export function surfaceSiteToIndexItem(site: SurfaceSite, body: IndexBody): Inde
     domain: site.kind === 'orbiter' ? 'orbit' : 'land',
     category:
       body === 'mars'
-        ? categoriseMarsMarker(site.mission_type, site.agency)
+        ? categoriseMarsMarker(site.marker ?? site.mission_type, site.agency)
         : body === 'moon'
-          ? categoriseMoonMarker(site.mission_type)
+          ? categoriseMoonMarker(site.marker ?? site.mission_type)
           : // Earth's surface sites are launch pads/spaceports today.
             'launch-site',
     year: site.year,

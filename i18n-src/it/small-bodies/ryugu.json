@@ -1,0 +1,10 @@
+{
+  "description": "Asteroide near-Earth scuro e ricco di carbonio (tipo C), a forma di trottola, largo circa 900 m. Hayabusa2 della JAXA è arrivata nel giugno 2018, ha rilasciato rover sulla superficie, ha sparato un proiettile di rame per creare un cratere artificiale e si è posata due volte nel 2019. La sua capsula ha riportato sulla Terra 5,4 g di Ryugu nel dicembre 2020: materiale contenente acqua quasi immutato dalla formazione del Sistema solare.",
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ryugu è un asteroide Apollo vicino alla Terra — semiasse maggiore 1,19 au, abbastanza vicino all'orbita terrestre perché Hayabusa2 lo raggiungesse, vi restasse 17 mesi e riportasse campioni nel 2020."
+    }
+  ]
+}

@@ -9,6 +9,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
+  import { parseInline } from '$lib/science-inline';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
@@ -128,7 +129,11 @@
     <section class="narrative-101" aria-label={m.science_focused_101_aria()}>
       <p class="badge">{m.science_101_badge()}</p>
       {#each section.narrative_101 as para (para)}
-        <p>{para}</p>
+        <p>
+          {#each parseInline(para) as seg, k (k)}{#if seg.kind === 'link'}<a href={seg.href}
+                >{seg.text}</a
+              >{:else}{seg.value}{/if}{/each}
+        </p>
       {/each}
     </section>
   {/if}
@@ -145,7 +150,11 @@
 
   <div class="body">
     {#each section.body_paragraphs as para (para)}
-      <p>{para}</p>
+      <p>
+        {#each parseInline(para) as seg, k (k)}{#if seg.kind === 'link'}<a href={seg.href}
+              >{seg.text}</a
+            >{:else}{seg.value}{/if}{/each}
+      </p>
     {/each}
   </div>
 

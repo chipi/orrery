@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.07,
+      "met": 0.039,
       "label": "TLI",
       "note": "Injection trans-lunaire.",
       "type": "nominal"
     },
     {
-      "met": 4.1,
+      "met": 4.386,
       "label": "LOI",
       "note": "Insertion en orbite lunaire le 1998-01-11 — orbite polaire initiale de 100 × 100 km.",
       "type": "nominal"
@@ -38,5 +38,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "module d'injection translunaire (Star-37) de la sonde"
+  "vehicle_stage": "module d'injection translunaire (Star-37) de la sonde",
+  "flight_events": [
+    {
+      "met": 0.394,
+      "label": "TCM-1",
+      "description": "1998-01-07 11:55 GMT, environ 8,5 heures après la TLI. Une correction de 50,2 m/s répartie en allumages de propulseurs axiaux et tangentiels, achevée à 12:27 GMT."
+    },
+    {
+      "met": 1.248,
+      "label": "TCM-2",
+      "description": "1998-01-08 08:25 GMT. Une retouche de 7,4 m/s affine l'arrivée lunaire ; la troisième correction prévue n'a pas été nécessaire."
+    }
+  ]
 }

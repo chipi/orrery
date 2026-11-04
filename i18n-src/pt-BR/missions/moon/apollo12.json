@@ -15,19 +15,19 @@
       "type": "warning"
     },
     {
-      "met": 0.12,
+      "met": 0.116,
       "label": "TLI",
       "note": "Injeção translunar — recuperação dos raios verificada; missão GO para a Lua.",
       "type": "nominal"
     },
     {
-      "met": 3.39,
+      "met": 3.476,
       "label": "LOI",
       "note": "Inserção em órbita lunar. SPS ∆v ~0,89 km/s.",
       "type": "nominal"
     },
     {
-      "met": 5.43,
+      "met": 4.607,
       "label": "POUSO",
       "note": "Intrepid pousa em Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — a 163 m da Surveyor 3 (o pouso lunar mais preciso até então).",
       "type": "nominal"
@@ -39,7 +39,7 @@
       "type": "info"
     },
     {
-      "met": 6.74,
+      "met": 5.919,
       "label": "ASCENSÃO",
       "note": "Intrepid decola após 31 h 31 m na superfície. 34 kg de amostras retornadas.",
       "type": "nominal"
@@ -51,16 +51,33 @@
       "type": "info"
     },
     {
-      "met": 7.92,
+      "met": 7.186,
       "label": "TEI",
       "note": "Injeção transTerrestre. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 10.18,
+      "met": 10.192,
       "label": "AMERISSAGEM",
       "note": "CM amerissou no Pacífico Sul 1969-11-24 20:58 UTC. Recuperação pelo USS Hornet.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.287,
+      "label": "MCC-2 — correção de trajetória",
+      "description": "Queima do SPS em GET 30:52:44 (1969-11-15 23:14 UTC), 61,8 ft/s (18,8 m/s), que tirou a Apollo 12 do retorno livre e a colocou na trajetória híbrida sem retorno livre necessária para o pouso de precisão."
+    },
+    {
+      "met": 7.852,
+      "label": "Correção de trajetória no trecho de volta 1",
+      "description": "Pequena correção em GET 188:27:16 (1969-11-22 12:49 UTC); uma segunda vem em GET 241:22:00."
+    },
+    {
+      "met": 10.057,
+      "label": "Correção de trajetória no trecho de volta 2",
+      "description": "Último ajuste do corredor de reentrada em GET 241:22:00 (1969-11-24 17:44 UTC), cerca de 3 h antes da separação do módulo de comando."
     }
   ]
 }

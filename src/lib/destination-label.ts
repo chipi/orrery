@@ -57,6 +57,10 @@ export function destinationLabel(id: PlanDestinationId): string {
       return m.plan_destination_patroclus();
     case 'menoetius':
       return m.plan_destination_menoetius();
+    case 'ryugu':
+      return m.plan_destination_ryugu();
+    case 'eros':
+      return m.plan_destination_eros();
     // ADR-086 planetary moons.
     case 'phobos':
       return m.plan_destination_phobos();

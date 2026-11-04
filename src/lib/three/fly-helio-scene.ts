@@ -18,7 +18,7 @@ import {
   R_MARS_AU,
   type DestinationId,
 } from '$lib/physics/transfer/lambert-grid.constants';
-import { SCALE_3D } from '$lib/fly-scene-constants';
+import { SCALE_3D, SUN_SCENE_RADIUS } from '$lib/fly-scene-constants';
 
 /**
  * Static heliocentric-scene builder. Extracted from
@@ -244,6 +244,8 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
   orus: { size: 0.4, color: 0x5a4030 },
   patroclus: { size: 0.55, color: 0x4a3a30 },
   menoetius: { size: 0.5, color: 0x4a3a30 },
+  ryugu: { size: 0.35, color: 0x5a524a },
+  eros: { size: 0.45, color: 0xb08a62 },
 };
 
 /** Earth radius in /fly heliocentric units (tuned smaller than
@@ -478,7 +480,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // detail (granules, sunspots) without needing to be re-lit by an
   // external light. The additive halo stays unchanged.
   const sunCore = new THREE.Mesh(
-    new THREE.SphereGeometry(8, 64, 64),
+    new THREE.SphereGeometry(SUN_SCENE_RADIUS, 64, 64),
     new THREE.MeshBasicMaterial({
       map: sunTex,
       color: 0xffffff,

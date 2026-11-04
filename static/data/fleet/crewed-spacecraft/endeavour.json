@@ -31,6 +31,11 @@
       "l": "Endeavour at the California Science Center",
       "u": "https://californiasciencecenter.org/exhibits/air-and-space/space-shuttle",
       "t": "core"
+    },
+    {
+      "l": "Wikipedia — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+      "t": "deep"
     }
   ],
   "linked_missions": [],
@@ -65,5 +70,10 @@
       "mission_id": "sts-134",
       "flight_designation": "STS-134 (2011-05-16) · final Endeavour flight; installed AMS-02 cosmic-ray detector on ISS"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 37.237,
+    "wingspan_m": 23.79,
+    "payload_bay_diameter_m": 4.6
+  }
 }

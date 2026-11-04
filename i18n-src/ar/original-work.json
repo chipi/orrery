@@ -1641,6 +1641,356 @@
       "title": "مسارات المهام الأيقونية",
       "what": "مسارات الرحلات Voyager و Pioneer و New Horizons و Cassini و Juno و Dawn.",
       "where": "استكشاف"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "المرحلتان الأولى والثانية بانفصال ساخن فوق هيكل شبكي مفتوح، تحتهما مرحلة ثالثة مبردة وغطاء حمولة بقطر 3.35 م، دون معززات جانبية (Chang’e 1).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "صاروخ CALT العامل بالكيروسين بقطر 3.35 م لإطلاق سفن الشحن Tianzhou — نواة ومرحلة ثانية وأربعة معززات جانبية بقطر 2.25 م.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "مرحلة أولى فيروزية مشتقة من Thor تحيط بها تسعة معززات صلبة بيضاء، تحت غطاء حمولة بقطر 2.9 م بتضيّق عند قاعدته.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "صاروخ Atlas بخزان فولاذي منتفخ ومرحلة ونصف، تعلوه المرحلة العليا البيضاء Centaur وغطاء الحمولة (Mariner 9 و10، Pioneer 10 و11).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "صاروخ Atlas نفسه تعلوه مرحلة عليا نحيلة Agena D وغطاء صغير (Mariner 4).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "مرحلتان من نواة Titan تحت غطاء الحمولة (Clementine).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "نواة Titan مع معززين صلبين من خمسة أجزاء ومرحلة ربط وCentaur داخل غطائه (Viking وVoyager).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "نواة Titan مع محركين صلبين طويلين تحت غطاء بطول 20 م يحيط بـ Centaur (Cassini).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "ثلاث نوى Falcon 9 جنبًا إلى جنب — معززات جانبية بمخاريط أنفية وزعانف شبكية وأرجل، ونواة وسطى تحمل المرحلة العليا والغطاء.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "مجموعة صلبة بالكامل — مرحلتان Castor 120 ومرحلة ثالثة وغطاء مستدق (Lunar Prospector).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "ثلاث نوى دفع متماثلة جنبًا إلى جنب، تحمل الوسطى منها المرحلة العليا المبردة وغطاء بطول 19 م (Parker Solar Probe).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "عمود واحد بقطر 7 م — مرحلة أولى بسبعة محركات وأرجل وزعانف تحت غطاء مدبب بقطر 7 م (Blue Moon MK1).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "نواة مركزية تحيط بها ستة خزانات وقود خارجية، ومرحلتان أخريان ومرحلة عليا Briz-M تحت غطاء بقطر 4.35 م.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "مرحلة مركزية برتقالية من الرغوة بأربعة محركات RS-25، ومعززان أبيضان من خمسة أجزاء، ومحوّل المراحل والمرحلة العليا تحت Orion وبرج الإنقاذ (Artemis).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "صاروخ R-7 رباعي المراحل — Blok I على هيكله الشبكي ومرحلة الإفلات Blok L والمسبار تحت غطاء أسطواني مخروطي (Luna 9 وLuna 10).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "صاروخ R-7 ومرحلته العليا يعلوهما Fregat القصير والمسبار تحت غطاء أعرض (Mars Express).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "صاروخ R-7 ثنائي المراحل الذي أطلق Sputnik 1 — بلا مرحلة ثالثة، والقمر الصناعي تحت مخروط أنف النواة.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "صاروخ R-7 المحدَّث بارتفاع 46.3 م — أربعة معززات حول النواة ومرحلة عليا على هيكل شبكي مفتوح وغطاء طويل.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "صاروخ Northrop Grumman لإطلاق Cygnus — مرحلة أولى بالكيروسين بقطر 3.9 م بمحركين RD-181 تحتها مرحلة ثانية صلبة وغطاء.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "النواة الأوروبية المبردة بقطر 5.4 م والمرحلة العليا Vinci تحت غطاء بطول 20 م، مع أربعة معززات صلبة (A64).",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "مرحلة ULA الأولى العاملة بالميثان بقطر 5.4 م بمحركين BE-4 وCentaur V وغطاء بقطر 5.4 م، مع معززات صلبة GEM 63XL.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "نواة الهيدروجين بقطر 7.75 م مع أربعة معززات RD-170 ومركبة Buran المدارية على جانبها.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "صاروخ القمر السوفييتي — خمس مراحل على شكل مخروط، ثلاثون محركًا في الأولى، تحت غطاء L3 وبرج الإنقاذ.",
+      "where": "الطيران · الإطلاق/الصعود"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "Soyuz الجيل الأول بطول 7.95 م — وحدات مدارية وهبوط وخدمة، وأجنحة شمسية بطول 9.8 م وهوائيات الالتقاء Igla.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS (4 طرازات)",
+      "what": "Soyuz بطول 7.48 م عبر أربعة أجيال — هوائيات Igla في T وKurs في TM وTMA وKurs-NA ودرع للنيازك الدقيقة في MS.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "مجموعة الكبسولة والصندوق الخلفي بطول 8.1 م بنوافذها ووحدات SuperDraco وصندوق الخلايا الشمسية.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "كبسولة Boeing ووحدة الخدمة بطول 5.03 م — الحزام الأزرق ووحدات الدافعات.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "وحدة طاقم ISRO بطول 5.58 م على وحدة الخدمة، مع أجنحة شمسية قابلة للفرد.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "وحدة طاقم Artemis بطول 7.9 م مع وحدة الخدمة الأوروبية ولوحاتها الشمسية.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "مركبة دون مدارية بارتفاع 19.2 م — معزز بقطر 3.8 م تحت كبسولة الطاقم ذات النوافذ الكبيرة.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II (طرازان)",
+      "what": "وحدة القيادة والخدمة بطول 10.6 م و11 م — وحدة القيادة المخروطية فوق وحدة الخدمة الأسطوانية وفوهة محركها.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "المركبة الصينية ثلاثية الوحدات بطول 9.25 م من سلالة Soyuz — وحدة مدارية ووحدة عودة ووحدة خدمة بأجنحة شمسية.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "المركبة المدارية لـ Space Shuttle",
+      "what": "مركبة مدارية بطول 37.2 م رُسمت مرة واحدة للأخوات الأربع — Atlantis وChallenger وDiscovery وEndeavour — ممددة على المدرج.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "أول مركبة مدارية — الوحيدة ذات الحواف السوداء وحاوية الأجهزة على زعنفة الذيل.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "المركبة المدارية لاختبارات الغلاف الجوي — بلا محركات رئيسية ولا وحدات OMS، وببلاطات محاكاة.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "المركبة المدارية السوفييتية بطول 36.4 م — جناح دلتا مزدوج بباع 24 م، وبقيت محركاتها الرئيسية على نواة Energia.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "مركبة اختبار الغلاف الجوي بشكل Buran وكتلتها — أربعة محركات توربينية AL-31 عند الذيل.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "الطائرة الفضائية غير المأهولة بطول 8.92 م التابعة لقوة الفضاء الأمريكية، بباع جناحين 4.55 م.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS (3 طرازات)",
+      "what": "سفينة الشحن المشتقة من Soyuz بطول 7.23 إلى 7.94 م — وحدة خدمة وقسم تزويد بالوقود ووحدة شحن؛ وطراز 7K-TG بلا أجنحة شمسية.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "Dragon 2 غير المأهولة وبلا نوافذ على صندوقها الخلفي بطول 8.1 م — سفينة الشحن إلى محطة الفضاء الدولية.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "Dragon الشحن الأصلية بطول 6.1 م — كبسولة بقطر 3.7 م على صندوقها الخلفي بلوحين شمسيين.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced (طرازان)",
+      "what": "سفينة شحن المحطة من Northrop Grumman بطول 5.14 م و6.39 م — وحدة شحن مضغوطة فوق وحدة الخدمة بألواح شمسية دائرية.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "سفينة شحن المحطة اليابانية بطول 9.8 م — وحدة مضغوطة ولوح شحن مكشوف على قسم الخدمة.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "سفينة الشحن اليابانية الخلف بطول 8 م — وحدة شحن مضغوطة فوق وحدة الخدمة بأجنحتها الشمسية.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "مركبة النقل الآلية التابعة لـ ESA بطول 10.3 م — سفينة شحن أسطوانية بأربعة أجنحة شمسية على شكل X.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "سفينة الشحن الصينية بطول 10.6 م — وحدة شحن طويلة فوق وحدة الخدمة وأجنحتها الشمسية.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "مقارنة الصواريخ الحاملة",
+      "what": "كل صاروخ له نموذج، من Starship إلى Mercury-Redstone، جنبًا إلى جنب بارتفاعه الحقيقي بجانب شخص طوله 1.75 م.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "مقارنة الكبسولات والمركبات الفضائية",
+      "what": "كبسولات وسفن شحن ومركبات مدارية بحجمها الحقيقي — المركبات المدارية ممددة على المدرج والكبسولات واقفة كما على صواريخها.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "المعالم بارتفاعها الحقيقي",
+      "what": "ستة عشر معلمًا وأيقونة رُسمت يدويًا بارتفاعاتها الموثقة — من برج إيفل وتمثال الحرية إلى تمثال داود لمايكل أنجلو وحافلة Routemaster اللندنية وسيارة Volkswagen Beetle.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "شخصيات كرتونية",
+      "what": "شخصيات بألوان مسطحة بحجمها الحقيقي — رجل وامرأة وطفل وكلب وقطة ومحارب من التراكوتا وباندا عملاقة ودب بني وزرافة وفيل — بين المركبات.",
+      "where": "الأسطول · مقارنة بالحجم الحقيقي"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "مسبار يلامس الشمس بطول 3 م — درع حراري من مركّب الكربون بقطر 2.3 م فوق هيكل نحيل، مع لوحين شمسيين صغيرين مبرَّدين.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "مرصد ESA الشمسي بطول 3.1 م — درع حراري في الجهة المواجهة للشمس وستة ألواح شمسية بامتداد 18 م وذراع أدوات بطول 4.4 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "مدار عطارد خلف مظلة شمسية من نسيج خزفي بارتفاع 2.5 م، مع لوحين شمسيين وذراع مقياس مغناطيسي بطول 3.6 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "مخطِّط رادار الزهرة بطول 6.4 م — هيكل عشري الأضلاع ومحرك Star 48B وطبق عالي الكسب بقطر 3.7 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "Akatsuki",
+      "what": "مدار JAXA حول الزهرة على شكل صندوق بارتفاع 1.45 م، بلوحين شمسيين وهوائي مسطح بمصفوفة طورية.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "مركبة الاصطدام بالكويكب بطول 2.6 م، بلوحين شمسيين طول كل منهما 8.5 م ومحرك أيوني NEXT-C وكاميرا DRACO.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "مستكشف الكويكبات الطروادية، 16 م من الطرف إلى الطرف — لوحان شمسيان دائريان بقطر نحو 7 م وطبق عالي الكسب بقطر 2 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "مدار الكويكب المعدني — مركبة بارتفاع 7.3 م مع 25 م من الألواح الشمسية المنشورة وأذرع أدوات بطول 2 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "مدار أقمار المشتري بارتفاع 5 م، بألواح شمسية بطول 30.5 م وهوائي عالي الكسب بقطر 3.1 م وذراع مقياس مغناطيسي بطول 8.5 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "هيكل ESA على شكل صندوق بارتفاع 1.8 م، بجناحين شمسيين طول كل منهما 2.5 م (نحو 12 م من الطرف إلى الطرف) وطبق عالي الكسب بقطر 1.6 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "مدار NASA لجو المريخ بارتفاع 3.47 م — هيكل مكعب بطول 2.3 م ولوحان شمسيان على شكل جناحي نورس بمقياسين مغناطيسيين عند الطرفين وطبق بقطر 2 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "مهمة ISRO المدارية حول المريخ (Mars Orbiter Mission) — مكعب بطول 1.5 م ملفوف بالذهبي، بلوح شمسي من ثلاثة أجزاء وعاكس بقطر 2.2 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "الأمل",
+      "what": "مسبار الأمل، مدار بعثة الإمارات إلى المريخ (Emirates Mars Mission) — هيكل سداسي بطول 2.9 م بجناحين شمسيين وطبق بقطر 1.85 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4 و9 و10 (3 طرازات)",
+      "what": "عائلة Mariner الثمانية الأضلاع من NASA — أربعة ألواح شمسية بأجنحة عند الأطراف في Mariner 4 و9؛ ولوحان ومظلة شمسية وذراع مقياس مغناطيسي بطول 5.8 م في Mariner 10.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "راسم خرائط القمر التابع لـNASA بارتفاع 3.9 م — هيكل صندوقي بلوح شمسي واحد مساحته 10.7 م² وطبق قابل للتوجيه.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "أول محطة فضائية أمريكية — ورشة المدار وغرفة الضغط ومهايئ الالتحام، وحامل التلسكوب الشمسي بطاحونة ألواحه، والمظلة الشمسية.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-probe-clementine_webp": {
+      "title": "Clementine وSMART-1 وChang’e 1 وChandrayaan-1 (4 طرازات)",
+      "what": "بنّاء واحد لهيكل صندوقي بأربعة أحجام — هيكل Clementine بطول 1.9 م ومكعب SMART-1 بطول 1 م وChang’e 1 وChandrayaan-1 الملفوفة بالذهبي — لكلٍّ أجنحته الشمسية وطبقه.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-probe-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "أسطوانة بقطر 1.36 م مغطاة بالخلايا الشمسية، مع ثلاثة أذرع أدوات بطول 2.5 م.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-probe-luna-10_webp": {
+      "title": "Luna 10",
+      "what": "أسطوانة سوفيتية مضغوطة بطول 1.5 م بأربعة هوائيات سوطية وذراع — أول مركبة تدور حول القمر.",
+      "where": "الطيران + الاستكشاف"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "كرة مصقولة بقطر 58 سم مع درز التقاء نصفيها و36 مسمارًا وأربعة هوائيات سوطية مائلة إلى الخلف بطول 2.4 م و2.9 م.",
+      "where": "الطيران + الاستكشاف"
     }
   },
   "capsules": {

@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 366,
+      "met": 376,
       "label": "ASSISTANCE GRAVITATIONNELLE TERRESTRE",
       "note": "2004-05-19.",
       "type": "info"
@@ -26,13 +26,13 @@
       "type": "info"
     },
     {
-      "met": 857.01,
+      "met": 925.67,
       "label": "POSES DE CONTACT",
       "note": "Deux contacts avec la surface les 2005-11-20 et 25. Les projectiles de prélèvement ne se déclenchent pas sur commande.",
       "type": "warning"
     },
     {
-      "met": 920,
+      "met": 944,
       "label": "TENTATIVE DE RÉCUPÉRATION",
       "note": "Fuite d'hydrazine, 2 roues de réaction hors service, communications perdues 7 semaines.",
       "type": "warning"

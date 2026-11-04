@@ -10,11 +10,12 @@
   "departure_date": "2031-09-15",
   "arrival_date": "2032-04-15",
   "transit_days": 213,
+  "round_trip": true,
   "vehicle": "Starship (Super Heavy + Starship + on-orbit refilling tanker fleet)",
   "payload": "Crew of ~10 + ISRU equipment + return propellant production hardware",
   "delta_v": "~21 km/s (round trip with Mars surface refuelling)",
   "data_quality": "partial",
-  "credit": "© SpaceX — Long-term crewed Mars architecture per Elon Musk's IAC presentations (2016 / 2017 / 2024) and SpaceX Mars program statements. Round-trip enabled by ISRU propellant production on the Mars surface (CH₄ + LOX from CO₂ + H₂O). Date is illustrative — the 2031 Mars launch window is one of several long-term targets discussed by SpaceX; actual schedule depends on Starship maturation, prior cargo missions, and ISRU validation. Round-trip arc is the conceptual architecture, not a flight plan.",
+  "credit": "© SpaceX — Long-term crewed Mars architecture per Elon Musk's IAC presentations (2016 / 2017 / 2024) and SpaceX Mars program statements. Round-trip enabled by ISRU propellant production on the Mars surface (CH₄ + LOX from CO₂ + H₂O). Date is illustrative — the 2031 Mars launch window is one of several long-term targets discussed by SpaceX; actual schedule depends on Starship maturation, prior cargo missions, and ISRU validation. Round-trip arc is the conceptual architecture, not a flight plan. On 2026-02-08 Musk said work on Mars would start in about five to seven years (CNN); the 2031 date predates that and no new date has been set.",
   "links": [
     {
       "l": "SpaceX Mars program — Wikipedia",
@@ -25,6 +26,11 @@
       "l": "Starship overview (SpaceX)",
       "u": "https://www.spacex.com/vehicles/starship/",
       "t": "intro"
+    },
+    {
+      "l": "Musk clips his Mars settlement ambition, aims for the moon instead — CNN (2026-02-09)",
+      "u": "https://www.cnn.com/2026/02/08/science/elon-musk-spacex-priorities-moon-intl-hnk",
+      "t": "core"
     }
   ],
   "flight_data_quality": "unknown",

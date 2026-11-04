@@ -15,19 +15,19 @@
       "type": "warning"
     },
     {
-      "met": 0.12,
+      "met": 0.116,
       "label": "TLI",
       "note": "Inyección translunar — verificada la recuperación tras los impactos de rayos; misión GO para la Luna.",
       "type": "nominal"
     },
     {
-      "met": 3.39,
+      "met": 3.476,
       "label": "LOI",
       "note": "Inserción en órbita lunar. SPS ∆v ≈0,89 km/s.",
       "type": "nominal"
     },
     {
-      "met": 5.43,
+      "met": 4.607,
       "label": "ALUNIZAJE",
       "note": "El Intrepid aluniza en Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — a 163 m del Surveyor 3 (el alunizaje lunar más preciso hasta la fecha).",
       "type": "nominal"
@@ -39,7 +39,7 @@
       "type": "info"
     },
     {
-      "met": 6.74,
+      "met": 5.919,
       "label": "ASCENSO",
       "note": "El Intrepid despega después de 31 h 31 m en la superficie. 34 kg de muestras recuperadas.",
       "type": "nominal"
@@ -51,16 +51,33 @@
       "type": "info"
     },
     {
-      "met": 7.92,
+      "met": 7.186,
       "label": "TEI",
       "note": "Inyección transterrestre. ∆v del SPS ≈1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 10.18,
+      "met": 10.192,
       "label": "AMERIZAJE",
       "note": "El módulo de comando amerizó en el Pacífico Sur 1969-11-24 20:58 UTC. Recuperación por el USS Hornet.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.287,
+      "label": "MCC-2 — corrección de trayectoria",
+      "description": "Encendido del SPS a GET 30:52:44 (1969-11-15 23:14 UTC), 61,8 ft/s (18,8 m/s), que sacó al Apollo 12 de la trayectoria de retorno libre y lo puso en la trayectoria híbrida sin retorno libre necesaria para el alunizaje de precisión."
+    },
+    {
+      "met": 7.852,
+      "label": "Corrección de trayectoria en el trayecto de regreso 1",
+      "description": "Pequeña corrección a GET 188:27:16 (1969-11-22 12:49 UTC); una segunda sigue a GET 241:22:00."
+    },
+    {
+      "met": 10.057,
+      "label": "Corrección de trayectoria en el trayecto de regreso 2",
+      "description": "Último ajuste del corredor de reentrada a GET 241:22:00 (1969-11-24 17:44 UTC), unas 3 h antes de la separación del módulo de mando."
     }
   ]
 }

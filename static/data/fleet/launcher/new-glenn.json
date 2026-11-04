@@ -20,5 +20,9 @@
   ],
   "linked_missions": [
     "blue-moon-mk1"
-  ]
+  ],
+  "specs": {
+    "height_m": 98,
+    "diameter_m": 7
+  }
 }

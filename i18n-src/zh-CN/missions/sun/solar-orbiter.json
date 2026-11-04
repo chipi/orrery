@@ -26,13 +26,13 @@
       "type": "info"
     },
     {
-      "met": 1000,
+      "met": 937,
       "label": "VGA-2",
       "note": "2022-09-04。开始倾角爬升脱离黄道面。",
       "type": "info"
     },
     {
-      "met": 1075,
+      "met": 975,
       "label": "P4 — 迄今最近距离",
       "note": "2022-10-12，0.29 AU。位于水星近日点内侧。",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "Centaur 上面级（Atlas V 411）",
   "flight_events": [
     {
-      "met": 1750,
+      "met": 1835,
       "label": "金星引力辅助 第4次",
       "description": "2025-02。第四次金星引力辅助继续把日面纬度提升到约17°（延伸任务目标约33°）。"
     }

@@ -15,11 +15,17 @@
   "entryCdA": 15.5,
   "liftToDragRatio": 0.18,
   "targetDownrangeKm": 2900,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 514,
+    "chuteDeployAltM": 5490,
+    "terminalHandoffAltM": 1830,
+    "parachuteCdA": 19.1,
     "terminalCdA": 1927
   },
   "source_tier": "flagship",
@@ -27,6 +33,10 @@
     {
       "l": "polaris-dawn — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "NASA, Demo-2 return: Crew Dragon drogues at ~18,000 ft, mains at ~6,000 ft (generic Crew Dragon figures)",
+      "u": "https://www.nasa.gov/feature/top-10-things-to-know-for-nasa-s-spacex-demo-2-return"
     }
   ]
 }

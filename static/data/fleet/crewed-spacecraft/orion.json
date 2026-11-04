@@ -21,6 +21,16 @@
       "l": "Orion Spacecraft — NASA",
       "u": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
       "t": "core"
+    },
+    {
+      "l": "NASA Orion by the numbers 2026 — dimensions",
+      "u": "https://www.nasa.gov/wp-content/uploads/2026/01/orion-by-the-numbers-2026b.pdf",
+      "t": "deep"
+    },
+    {
+      "l": "European Service Module Wikipedia — dimensions (4 m, 19 m array span)",
+      "u": "https://en.wikipedia.org/wiki/European_Service_Module",
+      "t": "deep"
     }
   ],
   "linked_missions": [
@@ -71,5 +81,10 @@
         }
       ]
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.9,
+    "diameter_m": 5,
+    "capsule_height_m": 3.35
+  }
 }

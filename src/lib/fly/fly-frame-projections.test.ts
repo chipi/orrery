@@ -160,4 +160,29 @@ describe('buildMilestoneScreens', () => {
     expect(out![0].state).toBe('active');
     expect(out![0].active).toBe(true);
   });
+
+  it('leaves out events after the flown window', () => {
+    const out = buildMilestoneScreens({
+      viewMode: 'heliocentric',
+      container,
+      factory: makeProjectorFactory(container),
+      camera: cam(),
+      mission: {
+        flight: {
+          events: [
+            { label: 'Perihelion', met_days: 100 },
+            { label: 'Venus flyby 2', met_days: 900 },
+          ],
+        },
+      } as never,
+      simDay: 100,
+      arcTimeline,
+      outPts: [
+        { x: 0, z: 0 },
+        { x: 5, z: 5 },
+      ],
+      retPts: [],
+    });
+    expect(out!.map((m) => m.label)).toEqual(['Perihelion']);
+  });
 });

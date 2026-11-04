@@ -10,8 +10,8 @@
     { "met": 0, "label": "打ち上げ", "note": "バイコヌールから Proton-K で打ち上げ、1973-01-08。", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Blok-D上段による月遷移軌道への投入。", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "航行中の中途軌道修正。", "type": "info" },
-    { "met": 4.5, "label": "着陸", "note": "1973-01-15、ル・モニエ・クレーターに軟着陸。数時間後、Lunokhod 2がスロープを降りて走行を開始した。", "type": "nominal" },
-    { "met": 7, "label": "ローバー稼働", "note": "クリミアの5人の地上管制官が操縦作業を開始。総走行距離:約39 km。", "type": "nominal" }
+    { "met": 7, "label": "着陸", "note": "1973-01-15、ル・モニエ・クレーターに軟着陸。数時間後、Lunokhod 2がスロープを降りて走行を開始した。", "type": "nominal" },
+    { "met": 8, "label": "ローバー稼働", "note": "クリミアの5人の地上管制官が操縦作業を開始。総走行距離:約39 km。", "type": "nominal" }
   ],
   "vehicle_stage": "Blok-D 上段"
 }

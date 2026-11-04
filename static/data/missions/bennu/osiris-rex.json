@@ -10,6 +10,7 @@
   "departure_date": "2016-09-08",
   "arrival_date": "2018-12-03",
   "transit_days": 816,
+  "round_trip": true,
   "vehicle": "Atlas V 411",
   "payload": "2110 kg launch mass (1075 kg dry)",
   "delta_v": "~1.4 km/s",

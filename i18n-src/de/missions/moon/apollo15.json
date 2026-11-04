@@ -15,19 +15,19 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Trans-Lunar-Injection.",
       "type": "nominal"
     },
     {
-      "met": 3.25,
+      "met": 3.272,
       "label": "LOI",
       "note": "Einschwenken in die Mondumlaufbahn. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.363,
       "label": "LANDUNG",
       "note": "Falcon landet in Hadley-Apenninen 1971-07-30 22:16 UTC — erste Landung an einer Non-Mare-Hochland-Stelle.",
       "type": "nominal"
@@ -51,13 +51,13 @@
       "type": "info"
     },
     {
-      "met": 6.25,
+      "met": 7.151,
       "label": "AUFSTIEG",
       "note": "Falcon hebt nach 66 h 55 m Oberflächenaufenthalt ab. 77 kg Proben + erster von der LRV-montierten Kamera aus im Fernsehen übertragener Aufstieg (ferngesteuert von Houston).",
       "type": "nominal"
     },
     {
-      "met": 8.2,
+      "met": 9.326,
       "label": "TEI",
       "note": "Trans-Earth-Injection. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
@@ -69,10 +69,27 @@
       "type": "info"
     },
     {
-      "met": 12.31,
+      "met": 12.3,
       "label": "WASSERLANDUNG",
       "note": "CM wasserte im Nordpazifik 1971-08-07 20:46 UTC. Einer von drei Hauptfallschirmen entfaltete sich nicht vollständig; harte aber sichere Landung. Bergung durch USS Okinawa.",
       "type": "warning"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.195,
+      "label": "Kurskorrektur",
+      "description": "SPS-Zündung bei GET 28:40:22 (1971-07-27 18:14 UTC), 0,8 s und 5,3 ft/s (1,6 m/s), zugleich ein Test des SPS-Triebwerks."
+    },
+    {
+      "met": 3.063,
+      "label": "Kurskorrektur",
+      "description": "SPS-Zündung bei GET 73:31:15 (1971-07-29 15:05 UTC), 0,9 s und 5,4 ft/s (1,6 m/s), die letzte translunare Korrektur vor dem Einschwenken in die Mondumlaufbahn."
+    },
+    {
+      "met": 12.164,
+      "label": "Kurskorrektur auf dem Rückflug zur Erde",
+      "description": "22,3 Sekunden lange RCS-Korrektur bei GET 291:56:50 (1971-08-07 17:30 UTC), 5,6 ft/s, drei Stunden vor dem Wiedereintritt."
     }
   ]
 }

@@ -58,6 +58,10 @@ export interface CropInput {
    *  writing a crop that is not centred on the target. Earth pad tiers
    *  set it; a slid crop put Wenchang's pads in a corner or off-crop. */
   requireCentered?: boolean;
+  /** Reject the crop when more than this fraction is no-data (default
+   *  POST_CROP_BLACK_FRAC, 0.4). Route tiles pass a stricter value so a
+   *  frame edge cutting through the tile sends the picker to the next scene. */
+  maxBlackFrac?: number;
 }
 
 export interface CropResult {
@@ -242,7 +246,7 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
     // the assembled output catches the sliver case before we commit
     // the JPEG to its final path.
     const blackFrac = blackRatio(bandData[0]);
-    if (blackFrac > POST_CROP_BLACK_FRAC) {
+    if (blackFrac > (input.maxBlackFrac ?? POST_CROP_BLACK_FRAC)) {
       throw new CropError(
         'CROP_MOSTLY_BLACK',
         `Crop is ${(blackFrac * 100).toFixed(0)}% no-data — frame footprint barely overlaps target`,

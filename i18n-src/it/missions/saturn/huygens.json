@@ -21,7 +21,7 @@
       "type": "nominal"
     },
     {
-      "met": 2617,
+      "met": 2628,
       "label": "RILASCIO DI HUYGENS",
       "note": "Sonda rilasciata da Cassini il 2004-12-25; 20 giorni di volo balistico verso Titano.",
       "type": "nominal"
@@ -43,7 +43,7 @@
     {
       "met": 617,
       "label": "Venere n. 2 — fionda gravitazionale",
-      "description": "Secondo sorvolo di Venere (1999-06-24, 600 km). Insieme alla prima fionda, prepara il sorvolo della Terra 55 giorni dopo."
+      "description": "Secondo sorvolo di Venere (1999-06-24, 623 km). Insieme alla prima fionda, prepara il sorvolo della Terra 55 giorni dopo."
     },
     {
       "met": 672,
@@ -53,7 +53,7 @@
     {
       "met": 1172,
       "label": "Giove — fionda gravitazionale",
-      "description": "9,7 milioni di km da Giove (2000-12-30). La fionda finale fornisce la velocità restante per l'arrivo a Saturno."
+      "description": "9,85 milioni di km da Giove (2000-12-30). La fionda finale fornisce la velocità restante per l'arrivo a Saturno."
     }
   ]
 }

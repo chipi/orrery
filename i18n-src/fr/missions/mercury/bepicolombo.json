@@ -32,13 +32,13 @@
       "type": "nominal"
     },
     {
-      "met": 1133,
+      "met": 1077,
       "label": "SURVOL MERCURE #1",
       "note": "Premier des six survols avec assistance gravitationnelle mercurienne.",
       "type": "nominal"
     },
     {
-      "met": 2968,
+      "met": 2954,
       "label": "INSERTION EN ORBITE MERCURE",
       "note": "Éjection du MTM + séparation des orbiteurs ; les opérations scientifiques commencent début 2027.",
       "type": "info"
@@ -46,27 +46,27 @@
   ],
   "flight_events": [
     {
-      "met": 1432,
+      "met": 1342,
       "label": "Mercure n° 2 — assistance gravitationnelle",
       "description": "Approche minimale de 200 km le 2022-06-23. Le ∆v cumulé des assistances gravitationnelles dépasse 6 km/s à ce passage — un travail que le moteur chimique et les propulseurs électriques n'auraient pu fournir seuls avec le budget d'ergols."
     },
     {
-      "met": 1819,
+      "met": 1703,
       "label": "Mercure n° 3 — assistance gravitationnelle",
       "description": "Approche minimale de 236 km le 2023-06-19. Point d'étape à mi-croisière — la mise en service des instruments se poursuit sur les arcs à haute altitude."
     },
     {
-      "met": 2055,
+      "met": 2146,
       "label": "Mercure n° 4 — assistance gravitationnelle",
       "description": "Approche minimale de 165 km le 2024-09-04. Le survol le plus rapproché à ce jour de la séquence de BepiColombo ; cette proximité apporte un ∆v de freinage important."
     },
     {
-      "met": 2294,
+      "met": 2234,
       "label": "Mercure n° 5 — assistance gravitationnelle",
       "description": "Approche minimale prévue le 2024-12-01. Avant-dernier survol de Mercure — les deux dernières assistances réduisent l'orbite à la géométrie requise pour la capture."
     },
     {
-      "met": 2421,
+      "met": 2272,
       "label": "Mercure n° 6 — assistance gravitationnelle",
       "description": "Dernier survol prévu le 2025-01-08 — la période orbitale de la sonde est alors assez proche de celle de Mercure pour que la capture en orbite soit possible à la prochaine fenêtre de conjonction solaire."
     }

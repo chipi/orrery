@@ -26,6 +26,15 @@
       "l": "Dragon CRS-1 mission summary (NASA)",
       "u": "https://www.nasa.gov/news-release/first-contracted-spacex-resupply-mission-launches-with-nasa-cargo-to-space-station/",
       "t": "deep"
+    },
+    {
+      "l": "Dragon 1 Wikipedia — dimensions",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_1",
+      "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 6.1,
+    "diameter_m": 3.7
+  }
 }

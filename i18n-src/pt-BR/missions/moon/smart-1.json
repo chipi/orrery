@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 414,
+      "met": 412.531,
       "label": "CAPTURA LUNAR",
       "note": "Capturada pela gravidade lunar em 2004-11-15 — primeira sonde espacial europeia na Lua.",
       "type": "nominal"
@@ -36,6 +36,23 @@
       "label": "IMPACTO EM LACUS EXCELLENTIAE",
       "note": "Impacto deliberado em 34,4° S, 46,2° W em 2006-09-03 05:42 UTC. Clarão de impacto observado do CFHT.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 378.531,
+      "label": "Último arco de empuxo contínuo",
+      "description": "Depois das manobras de ressonância lunar em agosto, setembro e outubro de 2004, um último arco de 100 horas de empuxo iônico contínuo (10 a 14 de outubro de 2004) eleva o apogeu até a distância da Lua."
+    },
+    {
+      "met": 414.256,
+      "label": "Motor iônico é ligado para reduzir a órbita lunar",
+      "description": "2004-11-15 05:24 UT. O motor iônico inicia um período de empuxo de 4,5 dias para reduzir a órbita, da órbita de captura inicial de 4.962 x 51.477 km, 81 graus, rumo a uma órbita polar de 300 x 3.000 km."
+    },
+    {
+      "met": 414.773,
+      "label": "Primeiro perilúnio — em órbita lunar",
+      "description": "2004-11-15 17:48 UT. A SMART-1 passa pelo primeiro perilúnio a cerca de 5.000 km acima da superfície; a ESA marca 15 de novembro de 2004 como a chegada à órbita lunar, 415 dias após o lançamento."
     }
   ]
 }

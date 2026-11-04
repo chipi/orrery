@@ -10,6 +10,7 @@
   "departure_date": "1961-05-05",
   "arrival_date": "1961-05-05",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Mercury-Redstone 3 (MR-3)",
   "payload": "Mercury capsule #7 'Freedom 7' (1832 kg); Alan Shepard",
   "delta_v": "~2.3 km/s (suborbital)",

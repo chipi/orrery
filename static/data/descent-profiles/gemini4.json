@@ -12,21 +12,32 @@
     "flightPathAngleDeg": 1.5
   },
   "entryMassKg": 2000,
-  "entryCdA": 6.0,
+  "entryCdA": 6,
   "liftToDragRatio": 0.19,
   "targetDownrangeKm": 2700,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
+    "chuteDeployAltM": 12190,
     "terminalHandoffAltM": 3000,
-    "parachuteCdA": 133,
-    "terminalCdA": 501
+    "parachuteCdA": 6,
+    "terminalCdA": 268
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "gemini4 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "Gemini IV Mission Report (MSC-G-R-65-3): 7.7 g; drogue 97:50:53 at 40,000 ft, main 97:52:11, landing 97:56:12",
+      "u": "https://ntrs.nasa.gov/api/citations/19670095754/downloads/19670095754.pdf"
     }
   ]
 }

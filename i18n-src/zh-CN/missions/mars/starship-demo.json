@@ -3,14 +3,34 @@
   "vehicle": "Starship（Super Heavy + Starship 上面级，一次性使用）",
   "payload": "~100000 kg（采用在轨加注方案的目标值）",
   "delta_v": "~13 km/s",
-  "type": "无人火星演示 · 计划中",
+  "type": "无人火星演示 · 已取消",
   "first": "首个尝试火星登陆的完全可重复使用运载系统",
-  "description": "Starship火星架构的无人验证：由Super Heavy发射，在近地轨道由加油型Starship补充推进剂，然后让加满推进剂的Starship进行火星转移注入，并动力下降到火星表面。SpaceX公布的目标是2026–2027年的发射窗口；但从工程现实看（Starship仍在攻克轨道飞行的可靠性，在轨加注也尚未得到验证），2028年或更晚的可能性更大。如果成功，它将颠覆火星载荷的经济学——从每次着陆数千 kg提高到一百吨。",
+  "description": "Starship火星架构的无人验证：由Super Heavy发射，在近地轨道由加油型Starship补充推进剂，然后让加满推进剂的Starship进行火星转移注入，并动力下降到火星表面。SpaceX原以2026年底的发射窗口为目标。2026年2月，埃隆·马斯克把重心转向月球，并表示火星方面的工作将在大约五到七年后开始，2026年底的目标随之放弃；目前没有新的日期。火星型Starship每次着陆可运送约100吨，而现有着陆器只有数千千克。",
   "events": [
-    { "met": 0, "label": "发射", "note": "来自Boca Chica或卡纳维拉尔角的Starship——首次超重型行星际发射。", "type": "nominal" },
-    { "met": 1, "label": "在轨加注", "note": "多次飞行中在近地轨道进行油箱交会和推进剂转移。", "type": "nominal" },
-    { "met": 2, "label": "TMI 点火", "note": "从完全加满燃料的近地轨道状态进行火星转移注入。", "type": "nominal" },
-    { "met": 274, "label": "火星着陆", "note": "动力下降到火星表面——无降落伞、无气囊、无空中吊车。", "type": "info" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "来自Boca Chica或卡纳维拉尔角的Starship——首次超重型行星际发射。",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "在轨加注",
+      "note": "多次飞行中在近地轨道进行油箱交会和推进剂转移。",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "TMI 点火",
+      "note": "从完全加满燃料的近地轨道状态进行火星转移注入。",
+      "type": "nominal"
+    },
+    {
+      "met": 274,
+      "label": "火星着陆",
+      "note": "动力下降到火星表面——无降落伞、无气囊、无空中吊车。",
+      "type": "info"
+    }
   ],
   "vehicle_stage": "Starship 上面级"
 }

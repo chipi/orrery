@@ -47,6 +47,7 @@
   import { BODY_LABEL } from '$lib/physics/descent/descent-physics-constants';
   import { onLayerChange } from '$lib/science-layers';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import FlightPlan from '$lib/components/FlightPlan.svelte';
   import { DESCENT_FORCE_LAYER_ENTRIES } from '$lib/orbital/descent-force-layers';
 
   interface DescentDossier {
@@ -143,12 +144,7 @@
           ],
         ] as [string, string][])
       : []),
-    // Earth re-entry shows the nominal ~14 min entry→splashdown, not the 1-DOF
-    // model's inflated path time (RFC-034 §13).
-    [
-      m.hud_descent(),
-      m.unit_s_value({ value: Math.round(profile.body === 'earth' ? 840 : duration) }),
-    ],
+    [m.hud_descent(), m.unit_s_value({ value: Math.round(duration) })],
   ]);
 
   let container: HTMLDivElement;
@@ -174,6 +170,11 @@
   const retroOn = $derived(
     liveState.phaseKind === 'powered_retro' || liveState.phaseKind === 'skycrane',
   );
+  // The RETRO lamp only for a descent that fires engines: Huygens, Galileo's probe, the
+  // Veneras and Beagle 2 had none, and a lamp that never lights reads as a failed burn.
+  const hasRetro = $derived(
+    profile.phases.some((ph) => ph.kind === 'powered_retro' || ph.kind === 'skycrane'),
+  );
   // Earth capsule re-entry indicators (RFC-034 §13): the plasma comms-blackout
   // during the hypersonic entry, and the drogue → main canopy sequence.
   const isEarthReentry = $derived(profile.body === 'earth');
@@ -197,16 +198,10 @@
   const unwarpDescentTime = (trajT: number): number =>
     unwarpTime(trajT, duration, terminalStartT, ENTRY_TIMELINE_FRAC);
 
-  // The 1-DOF shallow-corridor model yields an unphysically long path (~100 min);
-  // a real capsule entry-interface → splashdown is ~14 min. For Earth we display a
-  // clock scaled to that nominal so the E+ readout is realistic (the underlying
-  // physics — peak-g, sequence, outcome — is unchanged). RFC-034 §13.
-  const NOMINAL_EARTH_REENTRY_S = 840;
-  const clockT = $derived(
-    isEarthReentry && duration > 0
-      ? warpDescentTime(t) * (NOMINAL_EARTH_REENTRY_S / duration)
-      : warpDescentTime(t),
-  );
+  // The E+ clock is real seconds since the entry interface. (Earth re-entries used to be
+  // scaled to a fixed 840 s because the model's path ran ~100 min; the profiles now fly their
+  // sourced timelines — 8 min for Freedom 7, 31 min for Apollo 8's skip — so no scaling.)
+  const clockT = $derived(warpDescentTime(t));
 
   // Begin the touchdown flash. The real handoff (onComplete) fires when it ends.
   const complete = () => {
@@ -343,13 +338,15 @@
       <span class="lamp" class:on={mainOut}>{m.hud_main()}</span>
     {:else}
       <span class="lamp" class:on={chuteOut}>{m.hud_chute()}</span>
-      <span class="lamp" class:on={retroOn}
-        >{m.hud_retro()}<ScienceChip
-          tab="mission-phases"
-          section="propulsive-landing"
-          label={m.chip_label_propulsive_landing()}
-        /></span
-      >
+      {#if hasRetro}
+        <span class="lamp" class:on={retroOn}
+          >{m.hud_retro()}<ScienceChip
+            tab="mission-phases"
+            section="propulsive-landing"
+            label={m.chip_label_propulsive_landing()}
+          /></span
+        >
+      {/if}
     {/if}
   </div>
 
@@ -380,6 +377,9 @@
         <dd>{v}</dd>
       {/each}
     </dl>
+    <div class="plan">
+      <FlightPlan {beats} t={clockT} clock={formatDescentClock} />
+    </div>
   </div>
 
   <div class="timeline">
@@ -666,6 +666,10 @@
     border: 1px solid rgba(127, 212, 255, 0.4);
     border-radius: 3px;
     padding: 1px 4px;
+  }
+  .dossier .plan {
+    margin: 16px -14px 0 0;
+    text-align: left;
   }
   .dossier dl {
     display: grid;

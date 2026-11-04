@@ -26,6 +26,11 @@
       "l": "Rogers Commission Report (NASA)",
       "u": "https://history.nasa.gov/rogersrep/genindex.htm",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+      "t": "deep"
     }
   ],
   "linked_missions": [],
@@ -46,5 +51,10 @@
       "mission_id": "sts-51-l",
       "flight_designation": "STS-51-L (1986-01-28) · LOST 73 s after launch — right SRB O-ring failure in unprecedented cold (−1°C); all 7 crew (Scobee, Smith, Resnik, Onizuka, McNair, Jarvis, McAuliffe) perished"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 37.237,
+    "wingspan_m": 23.79,
+    "payload_bay_diameter_m": 4.6
+  }
 }

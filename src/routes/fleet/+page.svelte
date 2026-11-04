@@ -18,6 +18,7 @@
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
+  import { LINEUP_LIVE, lineupKindFor, type LineupKind } from '$lib/three/lineup/lineup-kind';
   import { handleGridKeydown } from '$lib/grid-keyboard-nav';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
@@ -86,6 +87,13 @@
   let statusFilter: FleetStatus | 'ALL' = $state('ALL');
   let sortMode: 'chrono-desc' | 'chrono-asc' | 'alpha' | 'category' = $state('chrono-desc');
   let listView = $state(false);
+  /** True-scale line-up (`?view=lineup`), for launchers or capsules and spacecraft. */
+  let lineupView = $state(false);
+  let lineupFocus = $state<string | null>(null);
+  const lineupKind = $derived.by(() => {
+    const k = lineupKindFor(categoryFilter);
+    return k && LINEUP_LIVE.includes(k) ? k : null;
+  });
   /** RFC-027 — free-text search across name + agency + category + tagline + country. */
   let query = $state('');
 
@@ -233,6 +241,8 @@
     agencyFilter = ag ?? 'ALL';
     sortMode = so === 'chrono-asc' || so === 'alpha' || so === 'category' ? so : 'chrono-desc';
     listView = view === 'list';
+    lineupView = view === 'lineup';
+    lineupFocus = url.searchParams.get('focus');
     query = url.searchParams.get('q') ?? '';
   }
 
@@ -269,8 +279,10 @@
     else params.set('status', statusFilter);
     if (sortMode === 'chrono-desc') params.delete('sort');
     else params.set('sort', sortMode);
-    if (!listView) params.delete('view');
-    else params.set('view', 'list');
+    if (lineupView) params.set('view', 'lineup');
+    else if (listView) params.set('view', 'list');
+    else params.delete('view');
+    if (!lineupView) params.delete('focus');
     // Write the raw query (not trimmed): the URL→state effect re-reads `q`
     // on every goto, so a trimmed write would strip the trailing space the
     // instant it's typed — making " " un-typeable in the search box (e.g.
@@ -282,6 +294,13 @@
       keepFocus: true,
       noScroll: true,
     });
+  }
+
+  function openLineup(kind: LineupKind | null) {
+    if (kind) categoryFilter = kind === 'launchers' ? 'launcher' : 'crewed-spacecraft';
+    lineupView = kind != null;
+    listView = false;
+    syncUrl();
   }
 
   function setCategory(v: FleetCategory | 'ALL') {
@@ -586,7 +605,48 @@
       </nav>
     {/if}
 
-    {#if filtered.length === 0}
+    <div class="lineup-bar" role="group" aria-label={m.fleet_lineup_toggle_aria()}>
+      <span class="filter-label">{m.fleet_lineup_toggle()}</span>
+      <button
+        type="button"
+        class="pill"
+        class:active={lineupView && lineupKind === 'launchers'}
+        aria-pressed={lineupView && lineupKind === 'launchers'}
+        onclick={() => openLineup('launchers')}>{m.fleet_lineup_launchers()}</button
+      >
+      {#if LINEUP_LIVE.includes('spacecraft')}
+        <button
+          type="button"
+          class="pill"
+          class:active={lineupView && lineupKind === 'spacecraft'}
+          aria-pressed={lineupView && lineupKind === 'spacecraft'}
+          onclick={() => openLineup('spacecraft')}>{m.fleet_lineup_spacecraft()}</button
+        >
+      {/if}
+      {#if lineupView}
+        <button type="button" class="pill" onclick={() => openLineup(null)}
+          >{m.fleet_lineup_back()}</button
+        >
+      {/if}
+    </div>
+
+    {#if lineupView && lineupKind}
+      {#key lineupKind + localeFromPage(page)}
+        <!-- Loaded only when a line-up opens: its landmark/cast lists and labels stay off the grid. -->
+        {#await import('$lib/components/FleetLineup.svelte') then { default: FleetLineup }}
+          <FleetLineup
+            kind={lineupKind}
+            {entries}
+            locale={localeFromPage(page)}
+            focusId={lineupFocus}
+            onOpen={(id) => {
+              const e = entries.find((x) => x.id === id);
+              if (e) openEntry(e);
+            }}
+          />
+        {/await}
+      {/key}
+    {:else if filtered.length === 0}
       <p class="status">{m.fleet_empty()}</p>
     {:else if listView}
       <ul class="fleet-list">

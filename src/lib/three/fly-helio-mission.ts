@@ -4,6 +4,7 @@ import { SCALE_3D } from '$lib/fly-scene-constants';
 import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+import { fitCraft, flyCraft, flyCraftSource, preloadFlyCraft } from '$lib/three/fly-craft';
 import type { OrbitInsertionEngineKind } from '$lib/physics/transfer/orbit-insertion-burns';
 import {
   buildTubeGeometry,
@@ -87,13 +88,25 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
   scene.add(retLine);
 
   let scModel: THREE.Group | null = null;
+  let currentModelId = '';
   function applyMissionSpacecraftModel(missionId: string): void {
+    currentModelId = missionId;
     if (scModel) {
       scene.remove(scModel);
       (scModel.userData.dispose as (() => void) | undefined)?.();
       scModel = null;
     }
-    scModel = buildInterplanetarySpacecraft(missionId) ?? buildLanderCruiseCraft(missionId);
+    const craft = flyCraft(missionId);
+    scModel =
+      buildInterplanetarySpacecraft(missionId) ??
+      buildLanderCruiseCraft(missionId) ??
+      (craft ? fitCraft(craft, 2) : null);
+    // A showcase craft loads lazily: draw it once its family chunk is in.
+    if (!scModel && flyCraftSource(missionId)) {
+      void preloadFlyCraft(missionId).then((ok) => {
+        if (ok && currentModelId === missionId) applyMissionSpacecraftModel(missionId);
+      });
+    }
     if (scModel) {
       scModel.scale.setScalar(1.5);
       scModel.renderOrder = 999;
@@ -161,19 +174,20 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
   };
   const plumeOf = (r: number, h: number): THREE.Group => {
     const g = new THREE.Group();
-    g.add(flame(r, h, 0xff8a3c, 0.55), flame(r * 0.45, h * 0.6, 0xfff1d6, 0.9));
+    g.add(flame(r, h, 0xff8a3c, 0.45), flame(r * 0.45, h * 0.6, 0xfff1d6, 0.6));
     return g;
   };
   const oiPlumes: Record<OrbitInsertionEngineKind, THREE.Group> = {
-    main: plumeOf(0.32, 3.2),
+    // About one craft length: a capture burn is a modest engine, not a planet-sized flame.
+    main: plumeOf(0.22, 1.5),
     // A solid motor: a fatter, brighter, longer flame.
-    solid: plumeOf(0.6, 5.5),
+    solid: plumeOf(0.36, 2.4),
     // Four attitude thrusters around the body: thin jets.
     rcs: (() => {
       const g = new THREE.Group();
       for (let i = 0; i < 4; i++) {
         const a = (i / 4) * Math.PI * 2;
-        const jet = plumeOf(0.07, 1.4);
+        const jet = plumeOf(0.05, 0.7);
         jet.position.set(Math.cos(a) * 0.45, 0, Math.sin(a) * 0.45);
         g.add(jet);
       }

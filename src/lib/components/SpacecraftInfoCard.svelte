@@ -22,12 +22,12 @@
     heliocentricKms: number;
     /** Distance from Earth in AU. */
     distFromEarthAu: number;
-    /** Distance from Mars (or destination) in AU. */
-    distFromMarsAu: number;
+    /** Distance from the mission's target in AU; null when /fly has no body for it. */
+    distFromTargetAu: number | null;
     /** Mission elapsed time in days. */
     metDays: number;
   };
-  let { heliocentricKms, distFromEarthAu, distFromMarsAu, metDays }: Props = $props();
+  let { heliocentricKms, distFromEarthAu, distFromTargetAu, metDays }: Props = $props();
 
   let layerOn = $state(false);
   let stop: (() => void) | undefined;
@@ -70,10 +70,12 @@
           })}
         </dd>
       </div>
-      <div class="row">
-        <dt>{m.hud_from_target()}</dt>
-        <dd>{m.unit_au_value({ value: distFromMarsAu.toFixed(3) })}</dd>
-      </div>
+      {#if distFromTargetAu !== null}
+        <div class="row">
+          <dt>{m.hud_from_target()}</dt>
+          <dd>{m.unit_au_value({ value: distFromTargetAu.toFixed(3) })}</dd>
+        </div>
+      {/if}
       <div class="row">
         <dt>
           MET<ScienceChip tab="mission-phases" section="met" label={m.chip_label_met()} />

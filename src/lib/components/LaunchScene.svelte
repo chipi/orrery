@@ -20,6 +20,7 @@
   import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
   import LaunchTelemetry from '$lib/components/LaunchTelemetry.svelte';
+  import FlightPlan from '$lib/components/FlightPlan.svelte';
   import AscentLosses from '$lib/components/AscentLosses.svelte';
   import {
     integrateAscent,
@@ -62,6 +63,7 @@
     destination: string;
     /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
     spacecraftId?: string;
+    launcherHeightM?: number;
     /** The post-SECO injection burn (RFC-034 §3.1); null when the mission has no
      *  kick/upper injection stage — the beat is then absent. */
     injectionBurn?: InjectionBurnParams | null;
@@ -170,6 +172,27 @@
   ]);
 
   const beats = $derived(buildAscentBeats(summary));
+  // The flight plan: liftoff, the ascent beats, then the parking orbit, injection burn and
+  // spacecraft separation when the mission leaves orbit.
+  const planBeats = $derived([
+    { label: 'LIFTOFF', t: 0 },
+    // ORBIT and SECO land on the same second: the cutoff is the beat.
+    ...beats.filter(
+      (b) =>
+        !(b.label === 'ORBIT' && beats.some((x) => x.label === 'SECO' && Math.abs(x.t - b.t) < 2)),
+    ),
+    ...(injection
+      ? [
+          { label: 'PARKING ORBIT', t: duration, untimed: true },
+          {
+            label: injectionBurnLabel(injection.burnType),
+            t: injectionBurnStart,
+            untimed: true,
+          },
+          { label: 'SPACECRAFT SEP', t: injectionBurnEnd, untimed: true },
+        ]
+      : []),
+  ]);
 
   let container: HTMLDivElement;
 
@@ -266,6 +289,7 @@
       tuning,
       events: summary.events,
       spacecraftId: mission.spacecraftId,
+      launcherHeightM: mission.launcherHeightM,
       launcherId: dbg?.get('launcher') || profile.id,
       boosterCount: profile.boosters?.count ?? 0,
       boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
@@ -455,6 +479,9 @@
   <div class="clock">
     <span class="met">{hud.met}</span>
     <span class="status" class:hot={t >= IGNITION_T_S && t < 6}>{hudLabel(status)}</span>
+    <span class="plan-next"
+      ><FlightPlan beats={planBeats} {t} clock={formatAscentClock} compact /></span
+    >
   </div>
 
   <!-- Post-SECO injection-burn callout (RFC-034 §3.1): the kick/upper stage
@@ -513,6 +540,9 @@
         <dd>{v}</dd>
       {/each}
     </dl>
+    <div class="plan">
+      <FlightPlan beats={planBeats} {t} clock={formatAscentClock} />
+    </div>
   </div>
 
   <div class="timeline">
@@ -587,6 +617,9 @@
   .stage {
     position: absolute;
     inset: 0;
+  }
+  .plan-next {
+    display: none;
   }
   /* Legibility scrim — corner-weighted so the centre (the vehicle) stays clear
      while the frame edges where the HUD lives get a soft darken. Sits above the
@@ -715,6 +748,11 @@
     .launch.hud-hidden .met {
       font-size: 22px;
       letter-spacing: 2px;
+    }
+    /* With the dossier collapsed, the flight plan shrinks to its next beat under the clock. */
+    .launch.hud-hidden .plan-next {
+      display: block;
+      margin-top: 4px;
     }
     .launch.hud-hidden .readouts {
       bottom: calc(104px + env(safe-area-inset-bottom, 0px));
@@ -943,6 +981,10 @@
     grid-template-columns: 1fr auto;
     gap: 4px 10px;
     margin: 0;
+  }
+  .dossier .plan {
+    margin: 16px -14px 0 0;
+    text-align: left;
   }
   .dossier dt {
     font-size: 10px;

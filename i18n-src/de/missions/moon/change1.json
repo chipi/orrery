@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.13,
+      "met": 6.965,
       "label": "TLI",
       "note": "Translunar-Injektion über Erd-Parkorbit + Phasenorbits.",
       "type": "nominal"
     },
     {
-      "met": 14.2,
+      "met": 11.715,
       "label": "LOI",
       "note": "Mondumlaufbahneinschuss am 2007-11-07 — erstes chinesisches Raumfahrzeug am Mond.",
       "type": "nominal"
@@ -39,5 +39,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "dritte Stufe der Long March 3A (H-18)"
+  "vehicle_stage": "dritte Stufe der Long March 3A (H-18)",
+  "flight_events": [
+    {
+      "met": 12.719,
+      "label": "LOI-2 — Mondumlaufbahn abgesenkt",
+      "description": "2007-11-06 03:21 UT. Eine 14-minütige zweite Bremszündung (bis 03:35 UT) senkt die Umlaufbahn auf 3,5 Stunden Umlaufzeit, 213 x 1.700 km."
+    },
+    {
+      "met": 13.596,
+      "label": "LOI-3 — 200-km-Wissenschaftsumlaufbahn um den Mond erreicht",
+      "description": "2007-11-07 00:24 UT. Eine letzte 10-minütige Zündung (bis 00:34 UT) bremst die Sonde auf 1,59 km/s ab und bringt sie in die kreisförmige, stark geneigte Wissenschaftsumlaufbahn in 200 km Höhe mit 127 Minuten Umlaufzeit."
+    }
+  ]
 }

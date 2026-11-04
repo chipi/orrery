@@ -98,6 +98,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'Facts-only',
+    display: 'Factual measurements only (no content reproduced)',
+    url: 'https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction',
+    rationale:
+      'Only facts — dimensions, counts, shapes and proportions — were read from the credited pages; facts are not eligible for copyright and no text, photograph or drawing was copied. Used for the model-reference credits of agency, manufacturer and reference-site pages.',
+    requires_attribution: false,
+    share_alike: false,
+  },
+  {
     short: 'PD-self',
     display: 'Public domain (released by author)',
     url: 'https://creativecommons.org/publicdomain/mark/1.0/',
@@ -178,6 +187,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     rationale: 'Reuse with attribution.',
     requires_attribution: true,
     share_alike: false,
+  },
+  {
+    short: 'CC-BY-NC-SA-4.0',
+    display: 'Creative Commons Attribution-NonCommercial-ShareAlike 4.0',
+    url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+    rationale:
+      'Reuse with attribution, non-commercial only; derivatives under the same licence. Orrery is a non-commercial, open-source project (operator, 2026-11-04), so it qualifies. Used for the EOX Sentinel-2 cloudless mosaic behind the /earth launch-pad context, regional and fallback-detail tiers; the crops made from it carry this licence in their provenance.',
+    requires_attribution: true,
+    share_alike: true,
   },
   {
     short: 'BSD-3-Clause',

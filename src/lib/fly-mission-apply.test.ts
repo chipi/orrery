@@ -4,6 +4,7 @@ import {
   computeScenarioApply,
   computePlanApply,
   FLYBY_OFFSET_FRACTION,
+  flyDestinationOf,
   type MissionApplyDefaults,
   type TrajectoryOverride,
 } from './fly-mission-apply';
@@ -55,18 +56,42 @@ describe('computeMissionApply', () => {
       expect(r.isReturnTrip).toBe(false);
     });
 
-    it('round-trip missions (CREWED / SAMPLE RETURN): arr_day = dep + 2 × transit', () => {
-      const m = makeMission({ type: 'sample return', transit_days: 100, dest: 'MARS' });
+    it('round-trip missions: arr_day = dep + 2 × transit', () => {
+      const m = makeMission({ round_trip: true, transit_days: 100, dest: 'MARS' });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.timeline.flyby_day - r.timeline.dep_day).toBe(100);
       expect(r.timeline.arr_day - r.timeline.dep_day).toBe(200);
       expect(r.isReturnTrip).toBe(true);
     });
 
-    it('CREWED missions detected (Apollo-shape)', () => {
-      const m = makeMission({ type: 'crewed lunar landing', dest: 'MOON' });
+    it('round trips are read from the record, not the translated type', () => {
+      // German Apollo 11: "LANDER MIT BESATZUNG" never contained "CREWED".
+      const de = makeMission({
+        round_trip: true,
+        type: 'LANDER MIT BESATZUNG · GEFLOGEN',
+        dest: 'MOON',
+      });
+      expect(computeMissionApply(de, DEFAULTS).isReturnTrip).toBe(true);
+      // "UNCREWED LANDER" contained "CREWED": Luna 9 came back to Earth on /fly.
+      const luna9 = makeMission({ type: 'UNCREWED LANDER · FLOWN', dest: 'MOON' });
+      expect(computeMissionApply(luna9, DEFAULTS).isReturnTrip).toBe(false);
+    });
+
+    it('a heliocentric round trip ends at its own Earth return, not at twice the outbound', () => {
+      const m = makeMission({
+        round_trip: true,
+        dest: 'ASTEROID',
+        transit_days: 1302,
+        flight: {
+          events: [
+            { met_days: 0, type: 'launch', label: 'Launch' },
+            { met_days: 1302, type: 'arrival', label: 'Ryugu rendezvous' },
+            { met_days: 2194, type: 'earth_return', label: 'Earth re-entry' },
+          ],
+        },
+      } as Partial<Mission>);
       const r = computeMissionApply(m, DEFAULTS);
-      expect(r.isReturnTrip).toBe(true);
+      expect(r.timeline.arr_day - r.timeline.dep_day).toBe(2194);
     });
 
     it('falls back to defaults.depFallback when departure_date is unparseable', () => {
@@ -102,14 +127,14 @@ describe('computeMissionApply', () => {
 
   describe('trajectory + arcs', () => {
     it('Moon mission: cislunarTrajectory present, interplanetaryTrajectory null', () => {
-      const m = makeMission({ dest: 'MOON', type: 'crewed lunar landing', transit_days: 4 });
+      const m = makeMission({ dest: 'MOON', round_trip: true, transit_days: 4 });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.cislunarTrajectory).not.toBeNull();
       expect(r.interplanetaryTrajectory).toBeNull();
     });
 
     it('Moon round-trip: outPts + retPts both ARC_STEPS+1 long', () => {
-      const m = makeMission({ dest: 'MOON', type: 'crewed lunar landing', transit_days: 4 });
+      const m = makeMission({ dest: 'MOON', round_trip: true, transit_days: 4 });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.outPts.length).toBe(ARC_STEPS + 1);
       expect(r.retPts.length).toBe(ARC_STEPS + 1);
@@ -131,7 +156,7 @@ describe('computeMissionApply', () => {
     });
 
     it('Mars round-trip (sample return): retPts is a returnArc to Earth', () => {
-      const m = makeMission({ dest: 'MARS', type: 'sample return', transit_days: 250 });
+      const m = makeMission({ dest: 'MARS', round_trip: true, transit_days: 250 });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.outPts.length).toBe(ARC_STEPS + 1);
       expect(r.retPts.length).toBe(ARC_STEPS + 1);
@@ -507,5 +532,32 @@ describe('computeMissionApply — labelToPlanetId coverage via waypoint labels',
       },
     );
     expect(r.outPts.length).toBe(500);
+  });
+});
+
+describe('computeMissionApply — Sun-target missions', () => {
+  it('flags a mission /fly has no body for, and only that one', () => {
+    const sun = computeMissionApply(
+      makeMission({ id: 'parker-solar-probe', dest: 'SUN' }),
+      DEFAULTS,
+    );
+    expect(sun.missionMeta.sunTarget).toBe(true);
+    expect(sun.activeDestination).toBe('mars'); // the scene's stand-in, never framed
+    const ulysses = computeMissionApply(makeMission({ id: 'ulysses', dest: 'SUN' }), DEFAULTS);
+    expect(ulysses.missionMeta.sunTarget).toBe(false);
+    expect(ulysses.activeDestination).toBe('jupiter');
+    expect(computeMissionApply(makeMission(), DEFAULTS).missionMeta.sunTarget).toBe(false);
+  });
+});
+
+describe('flyDestinationOf', () => {
+  it('is the dest body, the comet or Jupiter for Ulysses, and null where /fly has no body', () => {
+    expect(flyDestinationOf({ id: 'cassini', dest: 'SATURN' })).toBe('saturn');
+    expect(flyDestinationOf({ id: 'giotto', dest: 'COMET' })).toBe('halley');
+    expect(flyDestinationOf({ id: 'rosetta', dest: 'COMET' })).toBe('67p');
+    expect(flyDestinationOf({ id: 'ulysses', dest: 'SUN' })).toBe('jupiter');
+    expect(flyDestinationOf({ id: 'parker-solar-probe', dest: 'SUN' })).toBeNull();
+    expect(flyDestinationOf({ id: 'hayabusa2', dest: 'ASTEROID' })).toBe('ryugu');
+    expect(flyDestinationOf({ id: 'near-shoemaker', dest: 'ASTEROID' })).toBe('eros');
   });
 });

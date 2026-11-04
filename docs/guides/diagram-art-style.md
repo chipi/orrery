@@ -4,7 +4,7 @@ The house style for editorial diagrams across Orrery — **The Long View essays*
 now, and the **/science** section later (same pipeline, same look, so the whole
 atlas reads as one hand). Locked with Marko, July 2026.
 
-Reference implementations: the [Navigation essay](../wip/the-long-view-navigation-prototype.md)
+Reference implementations: the [Navigation essay](../../static/data/essays/navigation.json)
 (first pass) and **delta-v** (first pass in this style). The sources live under
 `docs/wip/essay-diagram-sources/<slug>/*.svg`.
 

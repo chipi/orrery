@@ -94,7 +94,7 @@
         "description": "2018-11-05. First close approach to the Sun: 0.16 AU (35 R☉). Parker became the closest spacecraft to the Sun ever flown, beating Helios 2's 1976 record."
       },
       {
-        "met_days": 985,
+        "met_days": 923,
         "type": "flyby",
         "label": "Venus gravity assist 4",
         "description": "2021-02-20. Fourth VGA tightens perihelion further toward the 9.86 R☉ target."
@@ -106,7 +106,7 @@
         "description": "2021-04-28. Perihelion 8 dipped below the Alfvén critical surface — the formal boundary of the Sun's corona. Parker became the first spacecraft to enter the Sun's atmosphere."
       },
       {
-        "met_days": 1830,
+        "met_days": 1835,
         "type": "flyby",
         "label": "Venus gravity assist 6",
         "description": "2023-08-21. Sixth VGA prepares the final two record-setting perihelia."

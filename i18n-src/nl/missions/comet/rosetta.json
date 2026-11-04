@@ -26,7 +26,7 @@
       "type": "nominal"
     },
     {
-      "met": 1671,
+      "met": 1648,
       "label": "ASTEROÏDE 2867 ŠTEINS",
       "note": "Allereerste close-up van een asteroïde van type E.",
       "type": "nominal"
@@ -46,12 +46,12 @@
   ],
   "flight_events": [
     {
-      "met": 1349,
+      "met": 1351,
       "label": "Aarde nr. 2 — zwaartekrachtassist",
       "description": "Dichtste nadering 5.295 km op 2007-11-13. Kort aangezien voor een aardscheerder (aanduiding 2007 VN84), tot waarnemers doorhadden dat het Rosetta was, op weg naar buiten."
     },
     {
-      "met": 2058,
+      "met": 2082,
       "label": "Aarde nr. 3 — zwaartekrachtassist",
       "description": "Laatste flyby van de aarde op 2009-11-13, dichtste nadering 2.481 km. De extra energie brengt Rosetta naar het aphelium dat nodig is om de baan van 67P te bereiken; daarna ging de sonde in de diepe ruimte in winterslaap."
     }

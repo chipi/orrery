@@ -11,7 +11,13 @@
   "epoch": "commercial-era",
   "best_known_for": "Largest planetary spacecraft ever launched (6065 kg); first mission dedicated to characterising the habitability of Jupiter's moon Europa",
   "credit": "Added with /fly mission JSON (#341 batch 5). 100-m² solar arrays — the largest interplanetary photovoltaic system at the time. Designed for 49 close Europa flybys after Jupiter orbit insertion.",
+  "specs": { "length_m": 5, "diameter_m": 1.8 },
   "links": [
+    {
+      "l": "Europa Clipper mission overview — NASA (5 m tall, 30.5 m arrays)",
+      "u": "https://science.nasa.gov/mission/europa-clipper/mission-overview/",
+      "t": "core"
+    },
     {
       "l": "Europa Clipper — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Europa_Clipper",

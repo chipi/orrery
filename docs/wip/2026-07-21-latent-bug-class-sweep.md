@@ -1,5 +1,7 @@
 # Latent bug-class sweep — 2026-07-21
 
+**Status 2026-11-04:** reference (rules live in AGENTS.md 'Recurring bug-classes', AGENTS.md:772), mostly closed. Class 3 DECIDE resolved by option (b): IBL is tier-gated (`2f768f913d5`, `quality.iblEnabled` at `src/lib/three/fly-helio-scene.ts:352`, `ascent-renderer.ts:63`). Class 2: the `toHaveCount(125)` totals are gone from missions/list-search/fly specs; still hardcoded: `tests/e2e/missions.spec.ts:59,70,96` (20/32/5), `launches-timeline.spec.ts:48` (7 decade pills), `landing.spec.ts:28` (22 cards). Class 1 WATCH items unchanged: `src/routes/library/episodes/+page.svelte:185` still keyed by `src.label`, `src/lib/components/LaunchTelemetry.svelte:174` by `st.name`. Class 4 not re-checked. Keep as live watch-list; not an archive candidate until Class 1/2 WATCH rows are fixed or dropped.
+
 After the launch-epic merge surfaced regressions in CI docker-e2e, a read-only
 sweep looked for adjacent instances of the same bug-classes. Concrete inventory
 below; the permanent rules live in **AGENTS.md → "Recurring bug-classes"**.
@@ -44,7 +46,7 @@ upper bound, or read the count from the data in setup.
 The exact class we removed from SurfaceScene (IBL starved rAF on GPU-less CI).
 
 - **FIXED** `src/lib/surface-scene/SurfaceScene.svelte` — IBL removed.
-- **DECIDE** `src/lib/three/fly-helio-scene.ts:347` — `scene.environment = heroEnvironment(renderer)`
+- ~~**DECIDE** `src/lib/three/fly-helio-scene.ts:347`~~ — resolved by tier-gating the IBL in `2f768f913d5` (option b); original text: — `scene.environment = heroEnvironment(renderer)`
   on the **/fly heliocentric** scene, which HAS user wheel/pinch zoom + orbit drag +
   a per-rAF loop. Same latent software-GL risk as SurfaceScene. **BUT** /fly docker-e2e
   is green (its zoom tests may not stress timing the way surface-flat-patch does), AND

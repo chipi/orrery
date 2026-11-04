@@ -100,13 +100,23 @@ function buildSamples(tr: RoverTraverse, intervalM: number): Sample[] {
 
 async function main() {
   const args = process.argv.slice(2);
-  const rover = args[args.indexOf('--rover') + 1] ?? 'curiosity';
-  const intervalKm = parseFloat(args[args.indexOf('--interval-km') + 1] ?? '2');
+  // indexOf −1 + 1 would read args[0] (`--rover`) and parse to NaN — only the
+  // stops got sampled. Absent flag → default.
+  const flag = (name: string): string | undefined =>
+    args.includes(name) ? args[args.indexOf(name) + 1] : undefined;
+  const rover = flag('--rover') ?? 'curiosity';
+  const intervalKm = parseFloat(flag('--interval-km') ?? '2');
   const intervalM = intervalKm * 1000;
+  // --only km-06,sol-915: re-cut just these tiles and merge them into the
+  // existing manifest (a tile with no acceptable scene keeps its entry).
+  // --max-black 0.05: reject crops with more no-data than this (frame edge
+  // through the tile) instead of the 40 % default.
+  const only = flag('--only')?.split(',').filter(Boolean) ?? null;
+  const maxBlack = flag('--max-black') ? parseFloat(flag('--max-black') as string) : undefined;
 
   const trPath = path.join('static/data/mars-traverses', `${rover}.json`);
   const tr = JSON.parse(await fs.readFile(trPath, 'utf8')) as RoverTraverse;
-  const samples = buildSamples(tr, intervalM);
+  const samples = buildSamples(tr, intervalM).filter((s) => !only || only.includes(s.id));
   console.log(
     `${rover}: ${tr.points.length} points, ${tr.stops?.length ?? 0} stops → ${samples.length} HiRISE samples (interval ${intervalKm} km)`,
   );
@@ -141,11 +151,17 @@ async function main() {
           targetLon: s.lon,
           outputPath,
           cropSize: CROP_PX,
+          maxBlackFrac: maxBlack,
         });
         // Downsample the 2048² crop → OUTPUT_PX in place (ground extent
         // unchanged; just lighter pixels). Read to a buffer first since
         // sharp can't read+write the same path.
         const full = await fs.readFile(outputPath);
+        // Keep the full-resolution crop as the master (Git LFS, masters/ tree),
+        // like every other site image; static/ gets the display size.
+        const masterPath = path.join('masters', path.relative('static/images', outputPath));
+        await fs.mkdir(path.dirname(masterPath), { recursive: true });
+        await fs.writeFile(masterPath, full);
         await fs.writeFile(
           outputPath,
           await sharp(full)
@@ -185,10 +201,16 @@ async function main() {
   }
 
   const manifestPath = path.join('static/data/mars-traverses', `${rover}.route-patches.json`);
-  await fs.writeFile(
-    manifestPath,
-    JSON.stringify({ rover_id: rover, patches: manifest }, null, 2) + '\n',
-  );
+  let patches = manifest;
+  if (only) {
+    const prev = JSON.parse(await fs.readFile(manifestPath, 'utf8')) as {
+      patches: Array<Record<string, unknown>>;
+    };
+    const fresh = new Map(manifest.map((m) => [m.id, m]));
+    patches = prev.patches.map((p) => fresh.get(p.id) ?? p);
+    for (const m of manifest) if (!prev.patches.some((p) => p.id === m.id)) patches.push(m);
+  }
+  await fs.writeFile(manifestPath, JSON.stringify({ rover_id: rover, patches }, null, 2) + '\n');
   console.log(`\n${manifest.length}/${samples.length} crops written → ${manifestPath}`);
 
   // Self-credit (#360 / credits): upsert an image-provenance entry for each

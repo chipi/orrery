@@ -60,6 +60,7 @@ export async function getMission(
           return {
             ...evt,
             label: own.label ?? evt.label,
+            label_en: evt.label,
             description: own.description ?? evt.description,
           };
         const ov = atMet(overlayEvents, evt.met_days);
@@ -67,6 +68,7 @@ export async function getMission(
         return {
           ...evt,
           label: ov.label ?? evt.label,
+          label_en: evt.label,
           description: ov.note ?? evt.description,
         };
       });

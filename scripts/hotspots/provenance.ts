@@ -370,6 +370,92 @@ export function buildSentinel2ProvenanceEntry(input: {
 }
 
 /**
+ * EOX Sentinel-2 cloudless mosaic crop (EOxCloudless, CC BY-NC-SA 4.0; Orrery is
+ * non-commercial). Used for the /earth pad regional + fallback-detail tiers and
+ * the Earth context layer. The attribution string is EOX's required wording.
+ */
+export function buildEoxCloudlessProvenanceEntry(input: {
+  outputPath: string;
+  /** The exact WMS GetMap request. */
+  sourceUrl: string;
+  year: number;
+  siteName: string;
+  centerLat: number;
+  centerLon: number;
+  windowM: number;
+  sizePx: number;
+  layer: string;
+}): ProvenanceEntry {
+  const provenancePath = input.outputPath.replace(/^static/, '');
+  const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  return {
+    id,
+    path: provenancePath,
+    source_type: 'derived-mosaic',
+    title: `EOxCloudless Sentinel-2 cloudless ${input.year} — ${input.layer} over ${input.siteName} (${input.centerLat.toFixed(4)}°, ${input.centerLon.toFixed(4)}°)`,
+    author: `EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data ${input.year})`,
+    agency: 'ESA',
+    source_url: 'https://cloudless.eox.at/',
+    image_url: input.sourceUrl,
+    license_short: 'CC-BY-NC-SA-4.0',
+    license_url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+    license_rationale:
+      'EOX Sentinel-2 cloudless mosaic, CC BY-NC-SA 4.0 for non-commercial use; Orrery is non-commercial. This crop is a derivative and is shared under the same licence. Underlying data: Copernicus Sentinel-2 (ESA).',
+    modifications: [
+      `wms-crop-${input.windowM}m-to-${input.sizePx}px-around-site-coords`,
+      'reencoded-jpeg-q88',
+    ],
+    revid: null,
+    pageid: null,
+    nasa_id: null,
+    fetched_at: new Date().toISOString(),
+    spacecraft_name: 'Sentinel-2',
+    instrument: 'Sentinel-2 MSI',
+  };
+}
+
+/** LINZ New Zealand aerial imagery crop (CC BY 4.0, LINZ Data Service). */
+export function buildLinzProvenanceEntry(input: {
+  outputPath: string;
+  sourceUrl: string;
+  survey: string;
+  siteName: string;
+  centerLat: number;
+  centerLon: number;
+  windowM: number;
+  sizePx: number;
+  /** The survey's licensor + producer (STAC providers), e.g. a regional council. */
+  credit: string;
+}): ProvenanceEntry {
+  const provenancePath = input.outputPath.replace(/^static/, '');
+  const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  return {
+    id,
+    path: provenancePath,
+    source_type: 'direct-agency',
+    title: `LINZ aerial imagery ${input.survey} — ${input.windowM} m over ${input.siteName}`,
+    author: `${input.credit} · sourced from the LINZ Data Service and licensed for reuse under CC BY 4.0`,
+    agency: 'Toitū Te Whenua Land Information New Zealand',
+    source_url: 'https://data.linz.govt.nz/',
+    image_url: input.sourceUrl,
+    license_short: 'CC-BY-4.0',
+    license_url: 'https://creativecommons.org/licenses/by/4.0/',
+    license_rationale:
+      'LINZ aerial imagery is published as open data under CC BY 4.0; attribution "Sourced from the LINZ Data Service and licensed for reuse under CC BY 4.0". Read as cloud-optimized GeoTIFF from the public nz-imagery bucket.',
+    modifications: [
+      `reprojected-nztm-to-${input.windowM}m-window`,
+      `resampled-to-${input.sizePx}px`,
+      'reencoded-jpeg-q88',
+    ],
+    revid: null,
+    pageid: null,
+    nasa_id: null,
+    fetched_at: new Date().toISOString(),
+    instrument: 'aerial survey',
+  };
+}
+
+/**
  * Build an image-provenance entry for an LROC-derived Moon hotspot
  * patch. Same shape as HiRISE; different attribution + URLs.
  */

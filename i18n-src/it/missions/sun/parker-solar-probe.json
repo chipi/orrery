@@ -32,7 +32,7 @@
       "type": "info"
     },
     {
-      "met": 1830,
+      "met": 1835,
       "label": "VGA-6",
       "note": "Sesta fionda gravitazionale di Venere 2023-08-21.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "terzo stadio a propellente solido Star 48BV (Delta IV Heavy: corpo centrale + 2 booster)",
   "flight_events": [
     {
-      "met": 985,
+      "met": 923,
       "label": "Fionda gravitazionale di Venere n. 4",
       "description": "2021-02-20. La quarta fionda di Venere riduce ancora il perielio verso l'obiettivo di 9,86 R☉."
     }

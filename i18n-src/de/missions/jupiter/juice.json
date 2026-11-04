@@ -34,12 +34,12 @@
   ],
   "flight_events": [
     {
-      "met": 1265,
+      "met": 1263,
       "label": "Erde Nr. 2 — Swing-by",
       "description": "September 2026. Liefert Energie für den dritten Abschnitt des Flugs zum Jupiter."
     },
     {
-      "met": 2103,
+      "met": 2106,
       "label": "Erde Nr. 3 — Swing-by",
       "description": "Januar 2029. Letzter Swing-by vor der direkten Bahn zum Jupiter — er liefert die letzten ~5 km/s für den langen Flug bis zur Ankunft 2031."
     }

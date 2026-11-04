@@ -26,6 +26,15 @@
       "l": "Progress MS-01 — NASA NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2015-082A",
       "t": "deep"
+    },
+    {
+      "l": "NASA 'About the Russian Progress Spacecraft': Length 7.4 m, Diameter 2.7 m — dimensions",
+      "u": "https://www.nasa.gov/wp-json/wp/v2/migration/167910?_fields=content",
+      "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.4,
+    "diameter_m": 2.7
+  }
 }

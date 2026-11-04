@@ -1,0 +1,46 @@
+{
+  "id": "moon-surface-imagery",
+  "tab": "planets",
+  "order": 12,
+  "see_in_app": [
+    {
+      "route": "/moon",
+      "query": "?site=apollo17",
+      "context_key": "Zoom from the whole Moon down to Taurus-Littrow and watch each layer fade in; the imagery card names the camera behind every one"
+    },
+    {
+      "route": "/fleet",
+      "query": "?id=lro",
+      "context_key": "Lunar Reconnaissance Orbiter, whose Narrow and Wide Angle Cameras supply the context, detail and route layers"
+    },
+    {
+      "route": "/missions",
+      "query": "?id=lro",
+      "context_key": "LRO's mission, mapping the Moon from a low polar orbit since 2009"
+    }
+  ],
+  "links": [
+    {
+      "l": "LROC · Lunar Reconnaissance Orbiter Camera (Arizona State University)",
+      "u": "https://lroc.im-ldi.com/",
+      "t": "intro"
+    },
+    {
+      "l": "JAXA · Kaguya (SELENE)",
+      "u": "https://www.kaguya.jaxa.jp/",
+      "t": "intro"
+    },
+    {
+      "l": "USGS Astropedia · LRO LROC WAC Global Morphology Mosaic 100 m",
+      "u": "https://astrogeology.usgs.gov/search/map/moon_lro_lroc_wac_global_morphology_mosaic_100m",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Level of detail (computer graphics)",
+      "u": "https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics)",
+      "t": "deep"
+    }
+  ],
+  "diagram": "moon-surface-imagery.webp",
+  "diagram_quality": "polished"
+}

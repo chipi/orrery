@@ -1641,6 +1641,356 @@
       "title": "상징적인 임무 궤적",
       "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn 비행 경로.",
       "where": "탐사"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "열린 트러스 위에서 핫 스테이징하는 코어와 2단, 그 위에 극저온 3단과 3.35 m 페어링. 스트랩온 없음 (Chang’e 1).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "CALT의 3.35 m 등유 로켓으로 Tianzhou 화물선을 발사 — 코어, 2단, 2.25 m 스트랩온 부스터 4기.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "Thor에서 유래한 청록색 1단을 흰색 고체 부스터 9기가 둘러싸고, 잘록한 2.9 m 페어링을 얹은 모습.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "강철 풍선 탱크의 1.5단 Atlas 위에 흰색 Centaur 상단과 페어링 (Mariner 9·10, Pioneer 10·11).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "같은 Atlas 위에 날씬한 Agena D 상단과 작은 슈라우드 (Mariner 4).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "Titan 코어 2단 위에 탑재체 페어링 (Clementine).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "5분할 고체 부스터 2기를 단 Titan 코어, 단간 어댑터, 페어링 안의 Centaur (Viking, Voyager).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "긴 고체 모터 2기를 단 Titan 코어 위에 Centaur를 감싸는 20 m 페어링 (Cassini).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "Falcon 9 코어 3개를 나란히 — 측면 부스터에는 노즈콘, 그리드 핀, 다리가 있고 중앙 코어가 상단과 페어링을 실음.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "전 단 고체 구성 — Castor 120 2단, 3단, 끝이 가늘어지는 페어링 (Lunar Prospector).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "공통 부스터 코어 3개를 나란히, 가운데 코어가 극저온 상단과 19 m 페어링을 실음 (Parker Solar Probe).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "지름 7 m의 단일 기둥 — 엔진 7기와 다리, 꼬리날개를 가진 1단 위에 7 m 오자이브 페어링 (Blue Moon MK1).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "중앙 코어를 외부 연료 탱크 6개가 둘러싸고, 2개 단과 Briz-M 상단, 4.35 m 페어링.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "RS-25 4기를 단 주황색 폼 코어 스테이지, 흰색 5분할 부스터 2기, 단 어댑터와 상단, 그 위에 Orion과 비상 탈출탑 (Artemis).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "4단 R-7 — 트러스 위의 Blok I, 탈출 단 Blok L, 원통과 원뿔 슈라우드 안의 탐사선 (Luna 9, Luna 10).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "R-7과 그 상단 위에 뭉툭한 Fregat과 탐사선을 얹고 더 넓은 슈라우드로 덮음 (Mars Express).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "Sputnik 1을 발사한 2단 R-7 — 3단이 없고 위성은 코어의 노즈콘 아래에 실림.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "높이 46.3 m의 개량형 R-7 — 코어 둘레의 부스터 4기, 열린 트러스 위의 상단, 긴 페어링.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "Northrop Grumman의 Cygnus 발사체 — RD-181 2기를 단 3.9 m 등유 1단 위에 고체 2단과 페어링.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "유럽의 5.4 m 극저온 코어와 Vinci 상단 위에 20 m 페어링, 고체 부스터 4기 (A64).",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "ULA의 BE-4 2기를 단 5.4 m 메탄 1단, Centaur V, 5.4 m 페어링, GEM 63XL 고체 부스터.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "지름 7.75 m 수소 코어에 RD-170 스트랩온 4기, 옆구리에 Buran 궤도선을 업은 모습.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "소련의 달 로켓 — 원뿔형으로 쌓은 5단, 1단에 엔진 30기, 그 위에 L3 슈라우드와 탈출탑.",
+      "where": "비행 · 발사/상승"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "1세대 Soyuz, 길이 7.95 m — 궤도·귀환·서비스 모듈, 9.8 m 태양 전지판, Igla 랑데부 안테나.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS (4개 형식)",
+      "what": "길이 7.48 m의 Soyuz를 4세대에 걸쳐 — T형은 Igla 안테나, TM과 TMA는 Kurs, MS는 Kurs-NA와 미소 운석 방호막.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "길이 8.1 m의 캡슐과 트렁크 조합 — 창문, SuperDraco 포드, 태양 전지가 붙은 트렁크.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "Boeing의 5.03 m 캡슐과 서비스 모듈 — 파란 띠와 추력기 포드.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "ISRO의 길이 5.58 m 승무원 모듈과 서비스 모듈, 펼쳐지는 태양 전지판.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "길이 7.9 m의 Artemis 승무원 모듈과 유럽 서비스 모듈, 태양 전지판.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "높이 19.2 m의 준궤도 비행체 — 3.8 m 부스터 위에 큰 창이 달린 승무원 캡슐.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II (2개 형식)",
+      "what": "길이 10.6 m와 11 m의 사령·기계선 — 원통형 기계선 위에 원뿔형 사령선, 엔진 노즐 포함.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "Soyuz 계보를 잇는 중국의 길이 9.25 m 3모듈 우주선 — 궤도·귀환·추진 모듈과 태양 전지판.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle 궤도선",
+      "what": "37.2 m 궤도선을 네 자매 — Atlantis, Challenger, Discovery, Endeavour — 를 대표해 한 번만 그리고, 활주로에 눕힌 모습.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "최초의 궤도선 — 검은 모서리를 가진 유일한 기체로, 수직 꼬리날개에 계측 포드가 붙어 있음.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "대기권 시험용 궤도선 — 주 엔진도 OMS 포드도 없고 타일은 모조품.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "소련의 궤도선, 길이 36.4 m — 날개폭 24 m의 이중 델타 날개, 주 엔진은 Energia 코어에 남겨 둠.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "Buran과 같은 형상과 질량의 대기권 시험기 — 꼬리에 AL-31 터보팬 4기.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "미 우주군의 길이 8.92 m 무인 우주 비행기, 날개폭 4.55 m.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS (3개 형식)",
+      "what": "Soyuz에서 파생된 화물선, 길이 7.23~7.94 m — 서비스 모듈, 연료 보급 구역, 화물 모듈. 7K-TG는 태양 전지판 없음.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "창문 없는 무인 Dragon 2와 8.1 m 트렁크 — ISS 화물선.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "최초의 길이 6.1 m 화물 Dragon — 3.7 m 캡슐과 트렁크, 태양 전지판 2장.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced (2개 형식)",
+      "what": "Northrop Grumman의 우주 정거장 화물선, 길이 5.14 m와 6.39 m — 서비스 모듈 위의 여압 화물 모듈과 원형 태양 전지판.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "일본의 길이 9.8 m 정거장 화물선 — 서비스부 위의 여압 모듈과 개방형 팔레트.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "일본의 길이 8 m 후속 화물선 — 서비스 모듈 위의 여압 화물 모듈과 태양 전지판.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "ESA의 길이 10.3 m 자동 화물 수송선 — 원통형 화물선에 X자형 태양 전지판 4장.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "중국의 길이 10.6 m 화물선 — 서비스 모듈 위의 긴 화물 모듈과 태양 전지판.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "발사체 크기 비교",
+      "what": "모델이 있는 모든 로켓을 Starship부터 Mercury-Redstone까지 실제 높이로 나란히 세우고 1.75 m 사람과 비교.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "캡슐과 우주선 크기 비교",
+      "what": "캡슐, 화물선, 궤도선을 실제 크기로 — 궤도선은 활주로에 눕고 캡슐은 로켓 위에서처럼 세워서.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "명소의 실제 높이",
+      "what": "16개의 명소와 상징물을 근거 있는 높이로 손으로 그림 — 에펠탑과 자유의 여신상부터 미켈란젤로의 다비드, 런던 루트마스터, 폭스바겐 비틀까지.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "만화 등장인물",
+      "what": "실제 크기로 그린 단색 인물들 — 남자, 여자, 어린이, 개, 고양이, 병마용, 자이언트 판다, 불곰, 기린, 코끼리 — 를 기체 사이에 배치.",
+      "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "길이 3 m의 태양 근접 탐사선 — 가느다란 본체 위에 지름 2.3 m의 탄소 복합재 열 차폐막, 냉각식 소형 태양 전지판 2장.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "ESA의 길이 3.1 m 태양 관측선 — 태양 쪽의 열 차폐막, 폭 18 m의 태양 전지판 6장, 길이 4.4 m의 관측 장비 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "높이 2.5 m의 세라믹 천 햇빛가리개 뒤에 숨은 수성 궤도선. 태양 전지판 2장과 길이 3.6 m의 자력계 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "길이 6.4 m의 금성 레이더 지도 제작선 — 10각형 본체, Star 48B 모터, 지름 3.7 m의 고이득 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "Akatsuki",
+      "what": "JAXA의 높이 1.45 m 상자형 금성 궤도선. 태양 전지판 2장과 평판형 위상배열 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "길이 2.6 m의 소행성 충돌선 — 8.5 m 태양 전지판 2장, NEXT-C 이온 엔진, DRACO 카메라.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "트로이 소행성 탐사선, 끝에서 끝까지 16 m — 지름 약 7 m의 원형 태양 전지판 2장과 지름 2 m의 고이득 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "금속 소행성 궤도선 — 높이 7.3 m, 펼친 태양 전지판 25 m, 길이 2 m의 관측 장비 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "높이 5 m의 목성 위성 궤도선. 30.5 m 태양 전지판, 지름 3.1 m의 고이득 안테나, 길이 8.5 m의 자력계 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "ESA의 높이 1.8 m 상자형 본체. 길이 2.5 m의 태양 전지 날개 2장(끝에서 끝까지 약 12 m)과 지름 1.6 m의 고이득 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "NASA의 높이 3.47 m 화성 대기 궤도선 — 2.3 m 정육면체 본체, 끝에 자력계를 단 갈매기 날개형 태양 전지판 2장, 지름 2 m의 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "ISRO의 화성 궤도선 임무(Mars Orbiter Mission) — 금색으로 감싼 1.5 m 정육면체, 3단 태양 전지판, 지름 2.2 m의 반사경.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "Hope",
+      "what": "UAE의 Emirates Mars Mission 궤도선 — 길이 2.9 m의 육각형 본체, 태양 전지 날개 2장, 지름 1.85 m의 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4·9·10 (3개 형식)",
+      "what": "NASA의 팔각형 Mariner 계열 — Mariner 4와 9는 끝에 날개편이 달린 태양 전지판 4장, Mariner 10은 전지판 2장과 햇빛가리개, 길이 5.8 m의 자력계 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "NASA의 높이 3.9 m 달 지도 제작선 — 상자형 본체, 10.7 m²의 태양 전지판 1장, 방향 조절 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "미국 최초의 우주 정거장 — 궤도 작업실, 에어록과 도킹 어댑터, 전지판 풍차를 단 태양 망원경 거치대, 햇빛가리개.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-probe-clementine_webp": {
+      "title": "Clementine, SMART-1, Chang’e 1, Chandrayaan-1 (4개 형식)",
+      "what": "상자형 본체 하나를 네 가지 크기로 — Clementine의 1.9 m 본체, SMART-1의 1 m 정육면체, Chang’e 1, 금색으로 감싼 Chandrayaan-1 — 각각 고유의 태양 전지 날개와 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-probe-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "태양 전지 셀로 덮인 지름 1.36 m의 드럼과 길이 2.5 m의 관측 장비 붐 3개.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-probe-luna-10_webp": {
+      "title": "Luna 10",
+      "what": "소련의 길이 1.5 m 가압 원통 — 안테나 채찍 4개와 붐 1개. 달 궤도를 돈 최초의 우주선.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "반구 이음매와 볼트 36개, 뒤로 젖혀진 길이 2.4 m와 2.9 m의 채찍 안테나 4개를 갖춘 지름 58 cm의 매끈한 구.",
+      "where": "비행 + 탐험"
     }
   },
   "capsules": {

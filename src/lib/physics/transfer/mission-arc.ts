@@ -24,6 +24,7 @@ import {
   type DestinationId,
 } from './lambert-grid.constants';
 import { eccentricAnomaly } from '../ephemeris/kepler';
+import { inclinedOrbitXY } from './inclined-orbit';
 import { MU_SUN_AU3_YR2, AUPYR_TO_KMS } from '../util/constants';
 
 /** Mars-specific Hohmann transfer constants — kept as named exports for
@@ -67,6 +68,10 @@ export function destinationPos(day: number, id: DestinationId): Vec2 {
   // [a·cos L, a·sin L] — byte-identical to the pre-ϖ model, so every giant-planet
   // arc (and its hand-tuned trajectory.json) is untouched. Kept in lockstep with
   // lambert-grid.destinationHelioXY so /fly render and /plan porkchop agree.
+  if (d.orbit) {
+    const [x, z] = inclinedOrbitXY(day, d.a, e, d.meanMotionRadPerDay, d.orbit);
+    return { x, z };
+  }
   const L = d.a0 + d.meanMotionRadPerDay * day;
   if (e === 0) return { x: Math.cos(L) * d.a, z: Math.sin(L) * d.a };
   const varpi = d.varpi ?? 0;

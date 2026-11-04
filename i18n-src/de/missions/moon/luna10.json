@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.331,
       "label": "LOI",
       "note": "Mondumlaufbahn-Einschwenkung 1966-04-03 — erster künstlicher Satellit eines anderen Himmelskörpers als der Erde.",
       "type": "nominal"
@@ -38,5 +38,12 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Oberstufe Block-L der Molniya-M"
+  "vehicle_stage": "Oberstufe Block-L der Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.05,
+      "label": "Kurskorrektur",
+      "description": "Eine einzelne Kurskorrektur am 1. April 1966 verfeinert den Anflug auf den Mond, etwa einen Tag nach dem Start."
+    }
+  ]
 }

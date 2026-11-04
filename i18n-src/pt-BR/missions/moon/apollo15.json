@@ -15,19 +15,19 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Trans-lunar injection (Injeção translunar).",
       "type": "nominal"
     },
     {
-      "met": 3.25,
+      "met": 3.272,
       "label": "LOI",
       "note": "Lunar orbit insertion (Inserção em órbita lunar). SPS ∆v ≈0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.363,
       "label": "POUSO",
       "note": "Falcon pousa em Hadley-Apennine 1971-07-30 22:16 UTC — primeiro pouso numa área de terras altas não-mare.",
       "type": "nominal"
@@ -51,13 +51,13 @@
       "type": "info"
     },
     {
-      "met": 6.25,
+      "met": 7.151,
       "label": "ASCENSÃO",
       "note": "Falcon decola após 66 h 55 m na superfície. 77 kg de amostras + primeira ascensão televisionada pela câmera montada no LRV (operada remotamente por Houston).",
       "type": "nominal"
     },
     {
-      "met": 8.2,
+      "met": 9.326,
       "label": "TEI",
       "note": "Trans-Earth injection (Injeção transplanetária). SPS ∆v ≈1,0 km/s.",
       "type": "nominal"
@@ -69,10 +69,27 @@
       "type": "info"
     },
     {
-      "met": 12.31,
+      "met": 12.3,
       "label": "AMARAGEM",
       "note": "CM pousou no Oceano Pacífico Norte 1971-08-07 20:46 UTC. Um dos três paraquedas principais falhou em abrir completamente; pouso com impacto forte, mas seguro. Recuperação pelo USS Okinawa.",
       "type": "warning"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.195,
+      "label": "Correção de trajetória",
+      "description": "Queima do SPS em GET 28:40:22 (1971-07-27 18:14 UTC), 0,8 s e 5,3 ft/s (1,6 m/s), que também serviu de teste do motor SPS."
+    },
+    {
+      "met": 3.063,
+      "label": "Correção de trajetória",
+      "description": "Queima do SPS em GET 73:31:15 (1971-07-29 15:05 UTC), 0,9 s e 5,4 ft/s (1,6 m/s), a última correção translunar antes da inserção em órbita lunar."
+    },
+    {
+      "met": 12.164,
+      "label": "Correção de trajetória no trecho de volta",
+      "description": "Correção de 22,3 segundos com o RCS em GET 291:56:50 (1971-08-07 17:30 UTC), 5,6 ft/s, três horas antes da reentrada."
     }
   ]
 }

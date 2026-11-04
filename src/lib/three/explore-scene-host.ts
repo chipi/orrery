@@ -107,6 +107,8 @@ const SMALL_BODY_NAME_2D: Record<string, () => string> = {
   itokawa: m.plan_destination_itokawa,
   psyche: m.plan_destination_psyche,
   didymos: m.plan_destination_didymos,
+  ryugu: m.plan_destination_ryugu,
+  eros: m.plan_destination_eros,
 };
 const planetName2d = (id: string, fallback: string): string => PLANET_NAME_2D[id]?.() ?? fallback;
 const smallBodyName2d = (id: string, fallback: string): string =>

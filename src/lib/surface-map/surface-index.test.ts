@@ -105,6 +105,15 @@ describe('surfaceSiteToIndexItem', () => {
     expect(surfaceSiteToIndexItem(moonCrewed, 'moon').category).toBe('crewed');
   });
 
+  it('reads the language-neutral marker, not the translated mission_type', () => {
+    // German Apollo 11 ("Bemannte Mondlandefähre") categorised as a plain lander.
+    const deApollo = { ...moonCrewed, mission_type: 'Bemannte Mondlandefähre', marker: 'crewed' };
+    expect(surfaceSiteToIndexItem(deApollo as SurfaceSite, 'moon').category).toBe('crewed');
+    // Japanese Mars rover ("無人ローバー") categorised as a lander.
+    const jaRover = { ...marsRover, mission_type: '無人ローバー · 運用中', marker: 'rover' };
+    expect(surfaceSiteToIndexItem(jaRover as SurfaceSite, 'mars').category).toBe('rover');
+  });
+
   it('falls back to the id when no overlay name is present', () => {
     const noName = { ...marsRover, name: undefined } as SurfaceSite;
     expect(surfaceSiteToIndexItem(noName, 'mars').name).toBe('curiosity');

@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.13,
+      "met": 6.965,
       "label": "TLI",
       "note": "Injeção translunar via órbita de estacionamento terrestre + órbitas de alinhamento.",
       "type": "nominal"
     },
     {
-      "met": 14.2,
+      "met": 11.715,
       "label": "LOI",
       "note": "Inserção em órbita lunar em 7 de novembro de 2007 — primeiro veículo espacial chinês na Lua.",
       "type": "nominal"
@@ -38,5 +38,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "terceiro estágio do Long March 3A (H-18)"
+  "vehicle_stage": "terceiro estágio do Long March 3A (H-18)",
+  "flight_events": [
+    {
+      "met": 12.719,
+      "label": "LOI-2 — órbita lunar reduzida",
+      "description": "2007-11-06 03:21 UT. Uma segunda queima de frenagem de 14 minutos (até 03:35 UT) reduz a órbita para 3,5 horas, 213 x 1.700 km."
+    },
+    {
+      "met": 13.596,
+      "label": "LOI-3 — órbita científica lunar de 200 km alcançada",
+      "description": "2007-11-07 00:24 UT. Uma última queima de 10 minutos (até 00:34 UT) reduz a velocidade da sonda para 1,59 km/s e a coloca na órbita científica circular de 200 km, de 127 minutos, de alta inclinação."
+    }
+  ]
 }

@@ -1,5 +1,7 @@
 # Space terminology glossary — pilot (2026-10-31)
 
+**Status 2026-11-04:** pilot DONE and gated: 20 terms x 13 locales, all five trees at 0 unreviewed misses (`node scripts/i18n-tools/term-drift.mjs --gate` run 2026-11-04 prints `unreviewed misses: 0`; every cell 100 %), `/science/glossary` page shipped (`768f3ecba39`, `3d0f01cd640`), tools committed (`a1edd3f7d7a`, `96c417d7fc2`). OPEN: next term batch, `term-census.mjs` run 2026-11-04 lists 162 of 192 candidate terms not yet in the glossary (launch 707, landing 427, orbiter 306, lander 292, rover 243, module 206, EVA 187, capsule 159, fuel 155, probe 121 …); term links from article text to the glossary; visual per term.
+
 Operator, 2026-10-31: the spot check showed *burn* rendered as braking, combustion
 or ceramic firing; "are there more words like that?" There were.
 
@@ -200,7 +202,7 @@ Adjusted:
 - An ar stem that matched «التقاط» (capture) was narrowed.
 
 **Fleet: 0 unreviewed, gated.** The reviewers also reported a lot of garble outside the
-terms, worst in nl fleet. It is collected in `2026-10-31-fleet-garble-findings.md` for a
+terms, worst in nl fleet. It is collected in `git show d11a0df6db6:docs/wip/2026-10-31-fleet-garble-findings.md` for a
 separate pass.
 
 All trees after essays: 2,142 unreviewed (missions 1,378, fleet 538, programs 226).
@@ -236,7 +238,7 @@ Totals for the 20-term pilot: about 2,200 field edits and 1,122 recorded keeps; 
 Found on the way, not part of the term work:
 - English fact, fixed: Pioneer 10's RTG power read "25 W at launch"; it is ~155 W (NASA PDS Pioneer 10 spacecraft description). Corrected in all 14 locales and `static/data`.
 - Garble and grammar slips outside the terms, collected in
-  `2026-10-31-fleet-garble-findings.md`.
+  `git show d11a0df6db6:docs/wip/2026-10-31-fleet-garble-findings.md`.
 
 Next: the /science/glossary page (PRD-038, done), the garble pass, a plan for the next term
 batch from `term-census.mjs`, and last, term links from the article text to the glossary.

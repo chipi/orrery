@@ -138,8 +138,10 @@ test.describe('/earth tier ladder — panel wiring', () => {
       page.getByTestId('exit-zoom').or(page.getByTestId('zoom-floating-exit')).first(),
     ).toBeVisible({ timeout: 15_000 });
     // Honest per-planet attribution (the moon-labels-on-earth regression).
-    await expect(page.locator('body')).toContainText('USGS NAIP aerial');
-    await expect(page.locator('body')).toContainText('Copernicus Sentinel-2');
+    await expect(page.locator('body')).toContainText('USGS NAIP');
+    // Regional view is EOX's cloudless mosaic (non-commercial licence), not raw Sentinel-2.
+    await expect(page.locator('body')).toContainText('Sentinel-2 cloudless 2025');
+    await expect(page.locator('body')).toContainText('CC-BY-NC-SA-4.0');
     await expect(page.locator('body')).not.toContainText('LROC');
   });
 });

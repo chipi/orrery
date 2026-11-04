@@ -4,7 +4,8 @@
     "fly_event_tcm": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts",
     "fly_event_edl_or_oi": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts",
     "fly_event_loi": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts",
-    "fly_event_tei": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts"
+    "fly_event_tei": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts",
+    "fleet_lineup_landmark_columbus": "Christopher Columbus's monument (Colón, Kolumbus …), not the ISS module; same reviewed exception as ALLOW in name-drift-scan.mjs"
   },
   "locales": {
     "es": {

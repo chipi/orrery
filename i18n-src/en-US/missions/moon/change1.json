@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.13,
+      "met": 6.965,
       "label": "TLI",
       "note": "Trans-lunar injection via Earth parking-orbit + phasing orbits.",
       "type": "nominal"
     },
     {
-      "met": 14.2,
+      "met": 11.715,
       "label": "LOI",
       "note": "Lunar orbit insertion 2007-11-07 — first Chinese spacecraft at the Moon.",
       "type": "nominal"

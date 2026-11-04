@@ -1641,6 +1641,356 @@
       "title": "象徴的なミッション軌跡",
       "what": "Voyager、Pioneer、New Horizons、Cassini、Juno、Dawn 飛行経路。",
       "where": "探索"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "開放トラスの上でホットステージングするコアと2段目、その上に低温第3段と直径3.35 mのフェアリング。ストラップオンなし（Chang’e 1）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "CALTの直径3.35 mの灯油ロケット。Tianzhou貨物船を打ち上げる — コア、2段目、2.25 mのストラップオン・ブースター4基。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "Thor由来のターコイズの1段目を白い固体ブースター9基が囲み、くびれのある2.9 mのフェアリングを載せる。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "鋼製バルーンタンクの1.5段式Atlasに、白いCentaur上段とフェアリング（Mariner 9・10、Pioneer 10・11）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "同じAtlasに、細身のAgena D上段と小さなシュラウド（Mariner 4）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "Titanのコア2段に、ペイロード・フェアリング（Clementine）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "5分割の固体ブースター2基を付けたTitanコアに、段間部とフェアリング内のCentaur（Viking、Voyager）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "長い固体モーター2基を付けたTitanコアに、Centaurを包む20 mのフェアリング（Cassini）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "Falcon 9のコア3本を並べた構成 — 側面ブースターはノーズコーン、グリッドフィン、着陸脚付き、中央コアに上段とフェアリング。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "全段固体のスタック — Castor 120が2段、第3段、先細りのフェアリング（Lunar Prospector）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "共通ブースター・コア3本が横並びで、中央に低温上段と19 mのフェアリングを載せる（Parker Solar Probe）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "直径7 mの1本柱 — エンジン7基と着陸脚・尾翼を持つ1段目に、7 mのオジャイブ型フェアリング（Blue Moon MK1）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "中央コアを6本の外付け燃料タンクが囲み、さらに2段とBriz-M上段、4.35 mのフェアリング。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "RS-25を4基備えたオレンジ色のフォーム製コア段、白い5分割ブースター2基、段間アダプターと上段、その上にOrionと脱出塔（Artemis）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "4段式R-7 — トラス上のBlok I、脱出段Blok L、円筒と円錐のシュラウド内の探査機（Luna 9、Luna 10）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "R-7とその上段の上に、ずんぐりしたFregatと探査機を載せ、より太いシュラウドで覆う（Mars Express）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "Sputnik 1を打ち上げた2段式R-7 — 第3段はなく、衛星はコアのノーズコーンの下に収まる。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "全長46.3 mの改良型R-7 — コアの周りに4基のブースター、開放トラス上の上段、長いフェアリング。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "Northrop GrummanのCygnus用ロケット — RD-181を2基備えた直径3.9 mの灯油1段目に、固体2段目とフェアリング。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "欧州の直径5.4 m極低温コアとVinci上段に20 mのフェアリング、固体ブースター4基（A64）。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "ULAのBE-4を2基備えた直径5.4 mのメタン1段目、Centaur V、5.4 mのフェアリング、GEM 63XL固体ブースター。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "直径7.75 mの水素コアにRD-170ストラップオン4基、側面にBuranオービターを背負う。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "ソ連の月ロケット — 円錐状に積んだ5段、1段目にエンジン30基、その上にL3シュラウドと脱出塔。",
+      "where": "飛行 · 打上げ/上昇"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "第1世代のSoyuz、全長7.95 m — 軌道・帰還・機械の各モジュール、9.8 mの太陽電池翼、Igla会合アンテナ。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS（4型）",
+      "what": "全長7.48 mのSoyuzを4世代にわたって — T型はIglaアンテナ、TMとTMAはKurs、MS型はKurs-NAと微小隕石防護シールド。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "全長8.1 mのカプセルとトランクの組み合わせ。窓、SuperDracoポッド、太陽電池付きのトランク。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "Boeingの5.03 mのカプセルとサービスモジュール — 青い帯とスラスターポッド。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "ISROの全長5.58 mの有人モジュールとサービスモジュール、展開式の太陽電池翼付き。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "全長7.9 mのArtemis有人モジュールと欧州サービスモジュール、太陽電池パドル付き。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "全長19.2 mの弾道飛行機 — 直径3.8 mのブースターの上に、大きな窓を持つ乗員カプセル。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II（2型）",
+      "what": "全長10.6 mと11 mの司令・機械船 — 円筒形の機械船の上に円錐形の司令船、エンジンノズル付き。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "全長9.25 m、Soyuzの系譜をひく中国の3モジュール宇宙船 — 軌道・帰還・推進の各モジュールと太陽電池翼。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Space Shuttleオービター",
+      "what": "全長37.2 mのオービターを、4機の姉妹 — Atlantis、Challenger、Discovery、Endeavour — に共通の1つとして描き、滑走路に横たえる。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "最初のオービター — 黒い縁を持つ唯一の機体で、垂直尾翼に計測ポッドを載せる。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "大気圏試験用オービター — 主エンジンもOMSポッドもなく、タイルは模擬品。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "ソ連のオービター、全長36.4 m — 翼幅24 mのダブルデルタ翼で、主エンジンはEnergiaのコアに残した。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "Buranの形状と質量を持つ大気圏試験機 — 後部にAL-31ターボファン4基。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "米宇宙軍の全長8.92 mの無人スペースプレーン、翼幅4.55 m。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS（3型）",
+      "what": "Soyuz由来の貨物船、全長7.23〜7.94 m — サービスモジュール、補給区画、貨物モジュール。7K-TGは太陽電池翼なし。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "窓のない無人のDragon 2と全長8.1 mのトランク — ISSの貨物船。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "最初の全長6.1 mの貨物版Dragon — 直径3.7 mのカプセルとトランク、2枚の太陽電池パネル。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced（2型）",
+      "what": "Northrop Grummanの補給船、全長5.14 mと6.39 m — サービスモジュールの上に与圧貨物モジュール、円形の太陽電池パネル。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "日本の全長9.8 mの補給船 — サービス部の上に与圧モジュールと曝露パレット。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "日本の後継補給船、全長8 m — サービスモジュールの上に与圧貨物モジュール、太陽電池翼付き。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "ESAの全長10.3 mの欧州補給機 — 円筒形の貨物船で、X字形の太陽電池翼4枚。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "中国の全長10.6 mの貨物船 — サービスモジュールの上の長い貨物モジュールと太陽電池翼。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "ロケットの実寸比較",
+      "what": "モデルを持つすべてのロケットを、StarshipからMercury-Redstoneまで、実際の高さで横に並べ、1.75 mの人物と比較。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "カプセルと宇宙船の実寸比較",
+      "what": "カプセル、貨物船、オービターを実寸で — オービターは滑走路に横たわり、カプセルはロケット上と同じく直立。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "名所の実寸比較",
+      "what": "16の名所とアイコンを、裏付けのある高さで手描き — エッフェル塔と自由の女神からミケランジェロのダビデ像、ロンドンのルートマスター、フォルクスワーゲン・ビートルまで。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "カートゥーンの登場人物",
+      "what": "実寸で描いたベタ塗りの登場人物 — 男性、女性、子ども、犬、猫、兵馬俑、ジャイアントパンダ、ヒグマ、キリン、ゾウ — を機体の間に配置。",
+      "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "全長3 mの太陽接近探査機 — 細身のバスの上に直径2.3 mの炭素複合材の熱シールド、冷却式の小型太陽電池パドル2枚。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "ESAの全長3.1 mの太陽観測機 — 太陽側の熱シールド、全幅18 mの太陽電池パネル6枚、長さ4.4 mの観測機器ブーム。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "高さ2.5 mのセラミック布製サンシェードの陰に入る水星周回機。太陽電池パドル2枚と長さ3.6 mの磁力計ブーム付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "全長6.4 mの金星レーダー地図作成機 — 10角形のバス、Star 48Bモーター、直径3.7 mの高利得アンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "あかつき",
+      "what": "JAXAの高さ1.45 mの箱形金星周回機。太陽電池パドル2枚と平面型フェーズドアレイアンテナ付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "全長2.6 mの小惑星衝突機 — 8.5 mの太陽電池パドル2枚、NEXT-Cイオンエンジン、DRACOカメラ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "トロヤ群小惑星探査機。両端で16 m — 直径約7 mの円形太陽電池パドル2枚と直径2 mの高利得アンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "金属小惑星の周回機 — 全高7.3 m、展開時25 mの太陽電池パドルと長さ2 mの観測機器ブーム。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "木星の衛星を巡る全高5 mの周回機。30.5 mの太陽電池パドル、直径3.1 mの高利得アンテナ、長さ8.5 mの磁力計ブーム付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "ESAの高さ1.8 mの箱形バス。長さ2.5 mの太陽電池翼2枚（両端で約12 m）と直径1.6 mの高利得アンテナ付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "NASAの全高3.47 mの火星大気周回機 — 2.3 mの立方体バス、先端に磁力計を備えたガルウィング形の太陽電池パドル2枚、直径2 mのアンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "ISROのMars Orbiter Mission（火星周回機）— 金色に包まれた1.5 mの立方体、3枚構成の太陽電池パドルと直径2.2 mの反射鏡。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "Hope",
+      "what": "UAEのEmirates Mars Mission周回機 — 全長2.9 mの六角形バス、太陽電池翼2枚と直径1.85 mのアンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4・9・10（3型）",
+      "what": "NASAの八角形Marinerシリーズ — Mariner 4と9は先端に羽根を持つ太陽電池パネル4枚、Mariner 10はパネル2枚とサンシェード、長さ5.8 mの磁力計ブーム。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "NASAの全高3.9 mの月地図作成機 — 箱形バスと10.7 m²の太陽電池パドル1枚、可動式アンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "アメリカ初の宇宙ステーション — 軌道ワークショップ、エアロックとドッキングアダプター、パネルの風車を備えた太陽望遠鏡マウント、サンシェード。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-probe-clementine_webp": {
+      "title": "Clementine・SMART-1・Chang’e 1・Chandrayaan-1（4型）",
+      "what": "箱形バスのひとつの作り方を4つの大きさで — Clementineの1.9 mバス、SMART-1の1 m立方体、Chang’e 1、金色に包まれたChandrayaan-1。それぞれ固有の太陽電池翼とアンテナ付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-probe-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "太陽電池セルで覆われた直径1.36 mのドラムと、長さ2.5 mの観測機器ブーム3本。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-probe-luna-10_webp": {
+      "title": "Luna 10",
+      "what": "ソ連の全長1.5 mの与圧円筒 — アンテナ4本とブーム1本付き。月を周回した最初の探査機。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "磨き上げた直径58 cmの球体。半球の継ぎ目、36本のボルト、後方へ傾いた長さ2.4 mと2.9 mのホイップアンテナ4本。",
+      "where": "飛行・探査"
     }
   },
   "capsules": {

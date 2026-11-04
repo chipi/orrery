@@ -21,6 +21,11 @@
       "l": "Ariane 5 — ESA",
       "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_5",
       "t": "core"
+    },
+    {
+      "l": "ESA Ariane 5 media kit - ECA launch vehicle — dimensions",
+      "u": "https://esamultimedia.esa.int/docs/space_transportation/ariane-5_media-kit.pdf",
+      "t": "deep"
     }
   ],
   "linked_missions": [
@@ -28,5 +33,9 @@
     "rosetta",
     "bepicolombo",
     "juice"
-  ]
+  ],
+  "specs": {
+    "height_m": 52.5,
+    "diameter_m": 5.4
+  }
 }

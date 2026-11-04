@@ -2005,3 +2005,23 @@ function buildVisitingFleet(root: THREE.Group) {
     root.add(line);
   }
 }
+
+/** One visiting vehicle on its own (the /fleet line-up draws them standing, true to scale). */
+export function buildIssVisitor(id: IssVisitorId): THREE.Group {
+  switch (id) {
+    case 'soyuz_ms':
+      return buildSoyuz();
+    case 'progress_ms':
+      return buildProgress();
+    case 'crew_dragon':
+      return buildDragon(true);
+    case 'cargo_dragon':
+      return buildDragon(false);
+    case 'cygnus':
+      return buildCygnus();
+    case 'htv_x':
+      return buildHtvX();
+    case 'starliner':
+      return buildStarliner();
+  }
+}

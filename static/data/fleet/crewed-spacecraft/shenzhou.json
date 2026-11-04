@@ -64,5 +64,10 @@
   ],
   "linked_missions": [
     "shenzhou-1"
-  ]
+  ],
+  "specs": {
+    "length_m": 9.25,
+    "diameter_m": 2.8,
+    "capsule_height_m": 2.5
+  }
 }

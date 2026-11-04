@@ -35,6 +35,7 @@ import {
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildCapsuleById } from '$lib/three/capsule-models';
 import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+import { flyCraft } from '$lib/three/fly-craft';
 import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 import { buildLauncherModel } from '$lib/three/launcher-models';
 import { clusterOffsets } from '$lib/three/launcher-detail';
@@ -67,6 +68,9 @@ export interface AscentSceneOptions {
   events?: AscentEvent[];
   /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
   spacecraftId?: string;
+  /** The launcher's real height (fleet specs.height_m): a showcase craft is drawn to true
+   *  scale against it. */
+  launcherHeightM?: number;
   /** Launcher id → the rocket's dedicated procedural model (else a generic body). */
   launcherId?: string;
   /** Strap-on booster count (Atlas V's variable AJ-60A count) — drawn on the
@@ -229,18 +233,32 @@ export function buildPayload(
   spacecraftId: string | undefined,
   vehLen: number,
   bodyRadius?: number,
+  launcherHeightM?: number,
+  stageTopRadius?: number,
 ): THREE.Group {
   const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
+  // The /fleet showcase craft (preloaded by /fly) — the full CSM, Soyuz, Dragon, X-37B or probe.
+  const craft = probe ? null : flyCraft(spacecraftId);
   const capsuleId =
     !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId)?.capsuleId : undefined;
   // Artemis flights ride Orion (crew module + service module + wings): the cruise model, not
   // the generic bus every SLS flight showed before.
   const orion =
-    !probe && !capsuleId && spacecraftId && ORION_MISSIONS.test(spacecraftId)
+    !probe && !craft && !capsuleId && spacecraftId && ORION_MISSIONS.test(spacecraftId)
       ? buildLanderCruiseCraft('artemis4')
       : null;
+  // Landers and Moon craft ride their cruise model (else they showed the generic bus).
+  const cruise =
+    !probe && !craft && !capsuleId && !orion && spacecraftId
+      ? buildLanderCruiseCraft(spacecraftId)
+      : null;
   const model =
-    probe ?? (capsuleId ? buildCapsuleById(capsuleId) : null) ?? orion ?? buildGenericPayload();
+    probe ??
+    craft ??
+    (capsuleId ? buildCapsuleById(capsuleId) : null) ??
+    orion ??
+    cruise ??
+    buildGenericPayload();
   // Orion's four array wings (the box meshes) ride folded and open in Earth orbit.
   if (orion) {
     for (const c of orion.children) {
@@ -256,10 +274,15 @@ export function buildPayload(
   // adapter — never WIDER). Scale a capsule by its WIDTH against the body radius,
   // not its largest dimension, so it can never end up fatter than the rocket
   // (the Gemini-wider-than-Titan bug). Satellites still normalise to the fairing.
+  // A showcase craft gives its body diameter (its arrays and wings would read as width).
+  const capsuleWidth =
+    (craft?.userData.bodyDiameterM as number | undefined) ?? Math.max(size.x, size.z);
   const k =
-    capsuleId && bodyRadius && bodyRadius > 0
-      ? (bodyRadius * 2 * 0.92) / (Math.max(size.x, size.z) || 1)
-      : (vehLen * 0.19) / (Math.max(size.x, size.y, size.z) || 1);
+    craft && launcherHeightM && launcherHeightM > 0
+      ? vehLen / launcherHeightM // metres → scene units: true scale against the rocket
+      : capsuleId && bodyRadius && bodyRadius > 0
+        ? (bodyRadius * 2 * 0.92) / (capsuleWidth || 1)
+        : (vehLen * 0.19) / (Math.max(size.x, size.y, size.z) || 1);
   const center = new THREE.Vector3();
   box.getCenter(center);
   model.scale.setScalar(k);
@@ -269,6 +292,61 @@ export function buildPayload(
   if (capsuleId) model.position.y += (size.y * k) / 2;
   const holder = new THREE.Group();
   holder.add(model);
+  // A true-scale craft narrower than its stage rides on a tapered adapter (Saturn's SLA,
+  // ~3 × the radius step tall), not perched on the flat stage top.
+  const craftR = ((craft?.userData.bodyDiameterM as number | undefined) ?? 0) * k * 0.5;
+  const topR = stageTopRadius ?? bodyRadius ?? 0;
+  if (craft && capsuleId && launcherHeightM && craftR > 0 && craftR < topR * 0.9) {
+    const taperH = (topR - craftR) * 6;
+    const taper = new THREE.Mesh(
+      new THREE.CylinderGeometry(craftR, topR, taperH, 32, 1, false),
+      new THREE.MeshStandardMaterial({ color: 0xe8e6df, roughness: 0.55, metalness: 0.15 }),
+    );
+    taper.position.y = taperH / 2;
+    // Seat the full-width body (the SM, not its engine bell) on the taper top: the adapter
+    // encloses whatever hangs below it, as the SLA did.
+    const diaM = craft.userData.bodyDiameterM as number;
+    let bodyBaseM = Infinity;
+    craft.updateMatrixWorld(true);
+    const rootInv = craft.matrixWorld.clone().invert();
+    craft.traverse((o) => {
+      if (!(o as THREE.Mesh).isMesh) return;
+      const b = new THREE.Box3().setFromObject(o).applyMatrix4(rootInv);
+      if (Math.max(b.max.x - b.min.x, b.max.z - b.min.z) >= diaM * 0.85)
+        bodyBaseM = Math.min(bodyBaseM, b.min.y);
+    });
+    const baseOffset = Number.isFinite(bodyBaseM) ? bodyBaseM * k : 0;
+    model.position.y += taperH - baseOffset;
+    holder.add(taper);
+  }
+  // Apollo CSMs fly under the launch escape tower (~10 m, a 0.66 m motor on a truss), jettisoned
+  // early in the ascent with the boost protective cover.
+  if (craft && launcherHeightM && spacecraftId && APOLLO_CSM_MISSIONS.has(spacecraftId)) {
+    const top = new THREE.Box3().setFromObject(holder).max.y;
+    const les = new THREE.Group();
+    const white = new THREE.MeshStandardMaterial({ color: 0xe9e7e1, roughness: 0.5 });
+    const red = new THREE.MeshStandardMaterial({ color: 0x9c2a22, roughness: 0.6 });
+    const m = k; // metres → scene units
+    const truss = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.33 * m, 0.95 * m, 3 * m, 4, 1, true),
+      red,
+    );
+    truss.position.y = 1.5 * m;
+    truss.rotation.y = Math.PI / 4;
+    const motor = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.33 * m, 0.33 * m, 4.7 * m, 20),
+      white,
+    );
+    motor.position.y = 5.35 * m;
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(0.33 * m, 1.6 * m, 20), white);
+    nose.position.y = 8.5 * m;
+    const canard = new THREE.Mesh(new THREE.CylinderGeometry(0.06 * m, 0.06 * m, 0.6 * m, 8), red);
+    canard.position.y = 9.6 * m;
+    les.add(truss, motor, nose, canard);
+    les.position.y = top - 0.4 * m;
+    holder.add(les);
+    holder.userData.les = les;
+  }
   // Orion flies under the launch-abort tower and panels, not a payload fairing: once they
   // jettison it rides in the open, so the scene shows it rather than a stowed shroud.
   if (orion) holder.userData.exposedAfterFairing = true;
@@ -283,6 +361,16 @@ export function buildPayload(
   }
   return holder;
 }
+
+/** Missions whose payload is a full Apollo CSM (with its launch escape tower). */
+const APOLLO_CSM_MISSIONS = new Set([
+  'apollo7',
+  'apollo9',
+  'skylab-2',
+  'skylab-3',
+  'skylab-4',
+  'apollo-soyuz',
+]);
 
 /** Missions whose payload is Orion. */
 const ORION_MISSIONS = /^artemis\d+$/;
@@ -527,6 +615,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Its centre along the body axis — the camera frames the stage + spacecraft between them
   // while the two coast and burn together after SECO.
   const upperStageCenterY = _usBox.getCenter(new THREE.Vector3()).y;
+  // The radius of the stage's topmost part (the S-IVB, not the flared interstage below it).
+  let stageTopRadius = upperStageRadius;
+  let stageTopY = -Infinity;
+  upperStage.updateMatrixWorld(true);
+  upperStage.traverse((o) => {
+    if (!(o as THREE.Mesh).isMesh) return;
+    const b = new THREE.Box3().setFromObject(o);
+    if (b.max.y > stageTopY + 1e-6) {
+      stageTopY = b.max.y;
+      stageTopRadius = Math.max(b.max.x - b.min.x, b.max.z - b.min.z) / 2;
+    }
+  });
 
   // Payload — TWO forms (#2 / operator decision 2026-07-29): a compact STOWED
   // shroud while it rides the exposed stage (fairing gone → SECO), then the real
@@ -534,9 +634,20 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // wings unfolding at separation. Real payloads ride folded under the fairing
   // and deploy AFTER sep — showing the deployed model bolted to the rocket read
   // wrong.
-  const payload = buildPayload(opts.spacecraftId, vehLen, upperStageRadius);
+  const payload = buildPayload(
+    opts.spacecraftId,
+    vehLen,
+    upperStageRadius,
+    opts.launcherHeightM,
+    stageTopRadius,
+  );
   // Crewed capsules ride exposed on top — no fairing, stowed shroud, or deploy.
   const isCapsulePayload = payload.userData.isCapsule === true;
+  // A showcase craft's solar arrays (tagged by the family builders), stowed until separation.
+  const payloadArrays: THREE.Object3D[] = [];
+  payload.traverse((o) => {
+    if (o.userData.solarArray) payloadArrays.push(o);
+  });
   // …except the Soviet/Chinese capsules, which rode under a nose fairing that
   // jettisoned once past the atmosphere. They still separate at SECO like any
   // capsule — they just wear a shroud on the way up.
@@ -888,6 +999,16 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // A fourth serial part (Proton-M's third stage under Briz-M) drops at the third core staging.
   const lastCoreStageSepT = coreStagingTimes[2] ?? secoT;
   const BOOSTER_SEP_S = 5;
+  // A stage dropped near orbital speed (SLS's core at T+8 min, any drop past ~4 min) leaves on
+  // springs at ~1 m/s: it slides back slowly (0.6 lengths in 60 s) and stays in frame. The 5 s / 3-length drift
+  // above made Artemis II's core vanish between two frames.
+  const VACUUM_SEP_AFTER_S = 240;
+  const VACUUM_SEP_S = 60;
+  /** Progress, and drift length in vehicle lengths, of a serial stage dropped at `sepT`. */
+  const stageDrop = (t: number, sepT: number | null | undefined): [number, number] =>
+    sepT != null && sepT > VACUUM_SEP_AFTER_S
+      ? [sepProgress(t, sepT, VACUUM_SEP_S), 0.6]
+      : [sepProgress(t, sepT ?? undefined, BOOSTER_SEP_S), 3];
   // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
   // the payload is revealed — a held beat, not a snap-away.
   const FAIRING_SEP_S = 6.5;
@@ -961,9 +1082,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // ── Separations — every offset is a pure function of the mission time vs
     //    the event METs, so scrubbing the timeline back and forth is exact.
     // Booster: drifts back down the body axis, tumbles, recedes away.
-    const bp = sepProgress(s.t, stagingT, BOOSTER_SEP_S);
+    const [bp, bLen] = stageDrop(s.t, stagingT);
     booster.visible = bp < 1;
-    booster.position.y = -bp * vehLen * 3;
+    booster.position.y = -bp * vehLen * bLen;
     booster.rotation.set(bp * 2.4, 0, bp * 1.2);
     // Only a gentle shrink (item 4) — the drift-away already recedes it via
     // perspective; keep it big enough to read as a distinct spent stage.
@@ -973,17 +1094,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // core staging — after the booster is gone and its own burn is spent, before
     // the final upper stage. Same drift as the booster, from a higher sep plane.
     if (midStageGroup) {
-      const mp = sepProgress(s.t, midStageSepT, BOOSTER_SEP_S);
+      const [mp, mLen] = stageDrop(s.t, midStageSepT);
       midStageGroup.visible = mp < 1;
-      midStageGroup.position.y = -mp * vehLen * 3;
+      midStageGroup.position.y = -mp * vehLen * mLen;
       midStageGroup.rotation.set(mp * 2.4, 0, mp * 1.2);
       midStageGroup.scale.setScalar(1 - 0.18 * mp);
     }
     // A fourth serial part (Proton-M's third stage under Briz-M) drops the same way.
     if (model.lastCoreStage && lastCoreStageSepT != null) {
-      const sp = sepProgress(s.t, lastCoreStageSepT, BOOSTER_SEP_S);
+      const [sp, sLen] = stageDrop(s.t, lastCoreStageSepT);
       model.lastCoreStage.visible = sp < 1;
-      model.lastCoreStage.position.y = -sp * vehLen * 3;
+      model.lastCoreStage.position.y = -sp * vehLen * sLen;
       model.lastCoreStage.rotation.set(sp * 2.4, 0, sp * 1.2);
       model.lastCoreStage.scale.setScalar(1 - 0.18 * sp);
     }
@@ -1011,6 +1132,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // Payload separation. Two regimes: crewed capsules ride exposed on top;
     // everything else rides folded under a jettisonable fairing.
     const pp = sepProgress(s.t, payloadSepT, PAYLOAD_SEP_HOLD_S);
+    // A showcase craft's arrays open in orbit, after separation — never on the climb.
+    for (const a of payloadArrays) a.visible = pp > 0;
     stowedPayload.position.y = payloadBaseY;
     if (isFairedCapsule) {
       // Nose-fairing capsule (Vostok/Voskhod/Soyuz/Shenzhou): a shroud covers the
@@ -1036,6 +1159,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       // no solar-wing deploy). At SECO it separates from the spent upper stage,
       // which drifts back the other way (below).
       fairingGroup.visible = false;
+      const les = payload.userData.les as THREE.Object3D | undefined;
+      if (les) les.visible = s.t < (fairingT ?? (secoT != null ? secoT * 0.35 : Infinity));
       stowedPayload.visible = false;
       payload.visible = true;
       payload.position.y = payloadBaseY + pp * vehLen * 1.1;

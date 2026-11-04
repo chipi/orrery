@@ -116,6 +116,8 @@ export interface SurfaceSite {
   /** Editorial overlay fields merged at fetch time */
   name?: string;
   mission_type?: string;
+  /** Marker category, language-neutral (see moon-/mars-marker-category). */
+  marker?: string;
   site_name?: string;
   crew?: string[];
   left?: string;
@@ -166,6 +168,19 @@ export interface SurfaceSite {
    * fetch pipeline. See `hotspot_tier2_ground_m`.
    */
   hotspot_tier2_regional_ground_m?: number;
+  /**
+   * Context layer (surface-context.ts): a true-scale ~150–200 m/px crop of a
+   * global mosaic around the site, draped on the globe between the globe
+   * texture and the stylised regional patch. Path of the served image and the
+   * lat/lon box it covers (simple-cylindrical, same as the globe texture).
+   */
+  hotspot_context_source?: string;
+  hotspot_context_bounds?: {
+    lat_min: number;
+    lat_max: number;
+    lon_min: number;
+    lon_max: number;
+  };
   /**
    * Operator override for the auto-pick HiRISE product. When set,
    * the fetch pipeline skips the catalog candidate ranking and
@@ -241,6 +256,14 @@ export interface PanoramaMetadata {
    * hidden when absent (no false orientation claim).
    */
   compass_zero_direction?: string;
+  /**
+   * Camera yaw (degrees, same convention as the `?yaw=` deep link) the
+   * panorama opens at. Set only on partial panoramas, whose photograph
+   * fills a slice of the padded canvas: the default yaw 0 faces
+   * u = 0.75, which is padding on those. Measured from the image by
+   * `scripts/hotspots/panorama-entry-yaw.mjs`.
+   */
+  entry_yaw_deg?: number;
 }
 
 /**
@@ -370,4 +393,9 @@ export interface RouteHirisePatch {
   resolution_m_per_px: number;
   /** True ground width (m) of the crop — drives literal co-scale. */
   ground_m: number;
+  /**
+   * WebP ladder widths for this tile (image-ladder.json), filled at load. The
+   * scene loads the largest rung within the quality tier's routeTileMaxPx.
+   */
+  rungs?: number[];
 }

@@ -15,19 +15,19 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Trans-maanvlucht injectie.",
       "type": "nominal"
     },
     {
-      "met": 3.25,
+      "met": 3.272,
       "label": "LOI",
       "note": "Maanbaaninsertie. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.363,
       "label": "LANDING",
       "note": "Falcon landt op 1971-07-30 22:16 UTC bij Hadley-Apennine — eerste landing op een hooglandlocatie die geen mare is.",
       "type": "nominal"
@@ -51,13 +51,13 @@
       "type": "info"
     },
     {
-      "met": 6.25,
+      "met": 7.151,
       "label": "OPSTIJGING",
       "note": "Falcon stijgt op na 66 u 55 m op het oppervlak. 77 kg monsters + eerste opstijging die op televisie werd uitgezonden via de op de LRV gemonteerde camera (op afstand bediend door Houston).",
       "type": "nominal"
     },
     {
-      "met": 8.2,
+      "met": 9.326,
       "label": "TEI",
       "note": "Trans-aarde injectie. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
@@ -69,10 +69,27 @@
       "type": "info"
     },
     {
-      "met": 12.31,
+      "met": 12.3,
       "label": "SPLASH-DOWN",
       "note": "De CM maakt een waterlanding in de noordelijke Stille Oceaan 1971-08-07 20:46 UTC. Een van de drie hoofdparachutes gaat niet volledig open; harde maar veilige landing. Berging door de USS Okinawa.",
       "type": "warning"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.195,
+      "label": "Koerscorrectie",
+      "description": "Brandstap van de SPS bij GET 28:40:22 (1971-07-27 18:14 UTC), 0,8 s en 5,3 ft/s (1,6 m/s), tegelijk een test van de SPS-motor."
+    },
+    {
+      "met": 3.063,
+      "label": "Koerscorrectie",
+      "description": "Brandstap van de SPS bij GET 73:31:15 (1971-07-29 15:05 UTC), 0,9 s en 5,4 ft/s (1,6 m/s), de laatste correctie op weg naar de maan vóór de intrede in de maanbaan."
+    },
+    {
+      "met": 12.164,
+      "label": "Koerscorrectie op de terugweg",
+      "description": "RCS-correctie van 22,3 seconden bij GET 291:56:50 (1971-08-07 17:30 UTC), 5,6 ft/s, drie uur voor de terugkeer in de atmosfeer."
     }
   ]
 }

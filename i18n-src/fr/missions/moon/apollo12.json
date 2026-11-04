@@ -15,19 +15,19 @@
       "type": "warning"
     },
     {
-      "met": 0.12,
+      "met": 0.116,
       "label": "TLI",
       "note": "Injection trans-lunaire — rétablissement après les coups de foudre vérifié ; la mission est GO pour la Lune.",
       "type": "nominal"
     },
     {
-      "met": 3.39,
+      "met": 3.476,
       "label": "LOI",
       "note": "Insertion en orbite lunaire. ∆v du SPS ≈ 0,89 km/s.",
       "type": "nominal"
     },
     {
-      "met": 5.43,
+      "met": 4.607,
       "label": "ATTERRISSAGE",
       "note": "Intrepid se pose à Océan des Tempêtes (Statio Cognitum) 1969-11-19 06:54 UTC — à 163 m de Surveyor 3 (l'alunissage le plus précis à ce jour).",
       "type": "nominal"
@@ -39,7 +39,7 @@
       "type": "info"
     },
     {
-      "met": 6.74,
+      "met": 5.919,
       "label": "DÉCOLLAGE",
       "note": "Intrepid décolle après 31 h 31 m en surface. 34 kg d'échantillons ramenés.",
       "type": "nominal"
@@ -51,16 +51,33 @@
       "type": "info"
     },
     {
-      "met": 7.92,
+      "met": 7.186,
       "label": "TEI",
       "note": "Injection trans-terrienne. ∆v du SPS ≈ 1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 10.18,
+      "met": 10.192,
       "label": "AMERRISSAGE",
       "note": "Le module de commande a amerri dans le Pacifique Sud 1969-11-24 20:58 UTC. Récupération par l'USS Hornet.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.287,
+      "label": "MCC-2 — correction de trajectoire",
+      "description": "Allumage du SPS à GET 30:52:44 (1969-11-15 23:14 UTC), 61,8 ft/s (18,8 m/s), faisant passer Apollo 12 de la trajectoire de retour libre à la trajectoire hybride, sans retour libre, nécessaire à l'alunissage de précision."
+    },
+    {
+      "met": 7.852,
+      "label": "Correction de trajectoire sur le trajet de retour 1",
+      "description": "Petite correction à GET 188:27:16 (1969-11-22 12:49 UTC) ; une seconde suit à GET 241:22:00."
+    },
+    {
+      "met": 10.057,
+      "label": "Correction de trajectoire sur le trajet de retour 2",
+      "description": "Dernière retouche du corridor de rentrée à GET 241:22:00 (1969-11-24 17:44 UTC), environ 3 h avant la séparation du module de commande."
     }
   ]
 }

@@ -773,3 +773,8 @@ export function buildTiangongProxyStation(): THREE.Group {
 
   return root;
 }
+
+/** One visiting vehicle on its own (the /fleet line-up draws them standing, true to scale). */
+export function buildTiangongVisitor(id: TiangongVisitorId): THREE.Group {
+  return id === 'shenzhou' ? buildShenzhou() : buildTianzhou();
+}

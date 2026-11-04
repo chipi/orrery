@@ -41,5 +41,10 @@
   "linked_missions": [
     "voskhod-1",
     "voskhod-2"
-  ]
+  ],
+  "specs": {
+    "length_m": 5,
+    "diameter_m": 2.43,
+    "capsule_height_m": 2.3
+  }
 }

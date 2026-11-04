@@ -1,0 +1,10 @@
+{
+  "description": "Asteroide cercano a la Tierra, oscuro y rico en carbono (tipo C), con forma de peonza y unos 900 m de diámetro. La Hayabusa2 de la JAXA llegó en junio de 2018, dejó róveres en la superficie, disparó un impactador de cobre para abrir un cráter artificial y tocó la superficie dos veces en 2019. Su cápsula trajo a la Tierra 5,4 g de Ryugu en diciembre de 2020: material con agua apenas alterado desde la formación del sistema solar.",
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ryugu es un asteroide Apollo cercano a la Tierra — semieje mayor 1,19 au, lo bastante cerca de la órbita terrestre para que Hayabusa2 lo alcanzara, se quedara 17 meses y trajera muestras en 2020."
+    }
+  ]
+}

@@ -26,6 +26,11 @@
       "l": "Buran programme — Roscosmos",
       "u": "https://www.roscosmos.ru/30025/",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Buran_(spacecraft)",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -33,5 +38,10 @@
       "mission_id": "buran-1k1",
       "flight_designation": "Buran 1K1 (1988-11-15) · UNCREWED · only Buran orbital flight ever; 2 orbits / 206 min; automatic landing in 17 m/s crosswind — programme cancelled after Soviet collapse; OK-1K1 destroyed when its Baikonur hangar roof collapsed 2002"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 36.37,
+    "wingspan_m": 23.92,
+    "payload_bay_diameter_m": 4.65
+  }
 }

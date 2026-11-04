@@ -4,6 +4,8 @@ import { buildMoonLanderModel } from '../moon-lander-models';
 import { buildMarsLanderModel } from '../mars-lander-models';
 import { buildCapsuleById } from './capsule-models';
 import { getEarthOrbitCoast } from '../orbital/earth-orbit-registry';
+import { buildLanderCruiseCraft } from './lander-cruise-models';
+import { buildInterplanetarySpacecraft } from './interplanetary-spacecraft-models';
 
 /**
  * Per-mission procedural EDL-stack models for /fly's descent act (RFC-034 §9) —
@@ -350,19 +352,38 @@ function buildVenusDescentLander(): THREE.Group {
   return g;
 }
 
+// Earth re-entries with no LEO coast entry (lunar returns) name their capsule here.
+const LUNAR_RETURN_CAPSULE: Record<string, string> = { apollo8: 'apollo-cm' };
+
 /** Resolve the terminal landed craft for a mission (the reused surface model). */
 function resolveLander(siteId: string, body: DescentBody): THREE.Group {
   if (body === 'moon') return buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
   if (body === 'venus') return buildVenusDescentLander();
-  if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros')
-    return buildAsteroidSamplerBus();
+  if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros') {
+    // The mission's own craft (Hayabusa, Hayabusa2, NEAR, OSIRIS-REx), at the generic sampler's size.
+    const generic = buildAsteroidSamplerBus();
+    const own = buildLanderCruiseCraft(siteId) ?? buildInterplanetarySpacecraft(siteId);
+    if (!own) return generic;
+    const size = (o: THREE.Object3D): number => {
+      const v = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());
+      return Math.max(v.x, v.y, v.z) || 1;
+    };
+    const box = new THREE.Box3().setFromObject(own);
+    const k = size(generic) / size(own);
+    own.scale.setScalar(k);
+    own.position.y = -box.min.y * k; // base on the surface, like the sampler bus
+    const holder = new THREE.Group();
+    holder.add(own);
+    return holder;
+  }
   if (body === 'jupiter') return buildJupiterDescentModule();
   if (body === 'titan') return buildHuygensProbe();
   if (body === 'comet_67p') return buildPhilaeLander();
   // Tier-1: the earth descent profile's siteId is the mission id — look up its
   // capsule family from the coast registry (falls back to Mercury).
   if (body === 'earth') {
-    const capsuleId = getEarthOrbitCoast(siteId)?.capsuleId ?? 'mercury';
+    const capsuleId =
+      getEarthOrbitCoast(siteId)?.capsuleId ?? LUNAR_RETURN_CAPSULE[siteId] ?? 'mercury';
     const cap = buildCapsuleById(capsuleId);
     cap.userData.capsuleId = capsuleId; // read by buildEarthCapsuleStack for chute count
     return cap;

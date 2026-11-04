@@ -36,9 +36,20 @@ let sourceBytes = 0;
 const missing = [];
 for (const { path: p } of entries) {
   if (!/\.(jpe?g|png|webp)$/i.test(p)) continue;
-  if (ladder[p.replace(/\.[^.]+$/, '')]) continue; // responsive() serves a ladder rung
-  const src = path.join(STATIC, p);
-  if (!existsSync(src)) {
+  // responsive() serves a ladder rung — except route tiles and context crops, whose smallest rung
+  // (512 px; 1024 for the context crops) is too heavy for a /credits list of
+  // hundreds; they keep a thumb,
+  // built from the master once the served JPEG gives way to WebP rungs.
+  const tile = /\/hotspots\/[^/]+\/[^/]+\/(traverse\/|context\.)/.test(p);
+  if (ladder[p.replace(/\.[^.]+$/, '')] && !tile) continue;
+  const served = path.join(STATIC, p);
+  const master = path.join('masters', path.relative('/images', p)).replace(/\.webp$/, '.jpg');
+  const src = tile && !existsSync(served) ? master : served;
+  const lfsStub =
+    src === master &&
+    existsSync(src) &&
+    readFileSync(src).subarray(0, 40).toString('utf8').startsWith('version https://git-lfs');
+  if (!existsSync(src) || lfsStub) {
     missing.push(p);
     continue;
   }

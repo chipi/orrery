@@ -1,0 +1,51 @@
+{
+  "id": "earth-surface-imagery",
+  "tab": "planets",
+  "order": 14,
+  "see_in_app": [
+    {
+      "route": "/earth",
+      "query": "?site=lc-39a",
+      "context_key": "Zoom from the whole Earth down to Launch Complex 39A and watch each layer fade in; the imagery card names the source of every one"
+    },
+    {
+      "route": "/fleet",
+      "query": "?id=sentinel-copernicus",
+      "context_key": "The Sentinel satellites, whose Sentinel-2 pair supplies the cloud-free layers"
+    },
+    {
+      "route": "/fleet",
+      "query": "?id=landsat",
+      "context_key": "Landsat, imaging Earth from orbit since 1972"
+    }
+  ],
+  "links": [
+    {
+      "l": "EOxCloudless · Sentinel-2 cloudless mosaic (EOX IT Services)",
+      "u": "https://cloudless.eox.at/",
+      "t": "intro"
+    },
+    {
+      "l": "ESA · Sentinel-2",
+      "u": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2",
+      "t": "intro"
+    },
+    {
+      "l": "USGS · National Agriculture Imagery Program (NAIP)",
+      "u": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip",
+      "t": "core"
+    },
+    {
+      "l": "LINZ Data Service · New Zealand aerial imagery",
+      "u": "https://data.linz.govt.nz/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Level of detail (computer graphics)",
+      "u": "https://en.wikipedia.org/wiki/Level_of_detail_(computer_graphics)",
+      "t": "deep"
+    }
+  ],
+  "diagram": "earth-surface-imagery.webp",
+  "diagram_quality": "polished"
+}

@@ -1,39 +1,39 @@
 {
   "name": "MMX",
   "vehicle": "H3-24L",
-  "payload": "~4000 kg (prévu)",
+  "payload": "4480 kg",
   "delta_v": "~5 km/s",
-  "type": "RETOUR D'ÉCHANTILLON PHOBOS · PRÉVUE",
+  "type": "RETOUR D'ÉCHANTILLON PHOBOS · ACTIVE",
   "first": "Retour du premier échantillon d'une lune martienne",
-  "description": "L'exploration des lunes martiennes est le plan de JAXA pour atterrir sur Phobos, récupérer environ 10 g de régolithe et le ramener à la maison. Les échantillons pourraient résoudre une question longtemps débattue : Phobos et Déimos sont-ils des astéroïdes capturés ou des fragments d'un ancien impact sur Mars lui-même ? La mission comprend également un rover franco-allemand pour la mobilité de surface de Phobos – un modèle opérationnel totalement différent de tout ce que les missions Hayabusa ont réalisé à Itokawa ou Ryugu. Le lancement était prévu pour 2024 mais a été reporté à 2026 en raison de retards dans le lanceur H3 de JAXA.",
+  "description": "L'exploration des lunes martiennes est le plan de JAXA pour atterrir sur Phobos, récupérer environ 10 g de régolithe et le ramener à la maison. Les échantillons pourraient résoudre une question longtemps débattue : Phobos et Déimos sont-ils des astéroïdes capturés ou des fragments d'un ancien impact sur Mars lui-même ? La mission comprend également un rover franco-allemand pour la mobilité de surface de Phobos – un modèle opérationnel totalement différent de tout ce que les missions Hayabusa ont réalisé à Itokawa ou Ryugu. Les retards du lanceur H3 de la JAXA ont repoussé le lancement de 2024 à 2026 ; MMX a décollé le 19 octobre 2026 et doit se placer en orbite martienne en août 2027.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "H3-24L depuis Tanegashima — le nouveau lanceur lourd de la JAXA.",
+      "note": "Vol 10 du H3 depuis Tanegashima, 19 octobre 2026 — le premier H3 à envoyer une sonde vers une autre planète.",
       "type": "nominal"
     },
     {
-      "met": 334,
+      "met": 286,
       "label": "INSERTION EN ORBITE DE MARS",
       "note": "Capture en orbite de Mars ; transfert vers la quasi-orbite de Phobos au cours des mois suivants.",
       "type": "nominal"
     },
     {
-      "met": 600,
+      "met": 986,
       "label": "DÉPLOIEMENT DU ROVER",
       "note": "Rover DLR/CNES (~25 kg) lâché sur la surface de Phobos pour des études in situ.",
       "type": "info"
     },
     {
-      "met": 1100,
+      "met": 1351,
       "label": "ÉCHANTILLON DE PHOBOS",
       "note": "MMX atterrit sur Phobos ; ~10 g de régolithe collecté.",
       "type": "info"
     },
     {
-      "met": 1500,
-      "label": "RETOUR DE LA TERRE",
+      "met": 1716,
+      "label": "RETOUR SUR TERRE",
       "note": "La capsule de rentrée contenant l'échantillon arrive sur Terre vers 2031.",
       "type": "info"
     }
@@ -56,7 +56,7 @@
       "description": "Affinage à mi-croisière."
     },
     {
-      "met": 320,
+      "met": 275,
       "label": "TCM-4 — dernière avant l'insertion en orbite martienne",
       "description": "Visée d'approche finale."
     }

@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.331,
       "label": "LOI",
       "note": "Inserción en órbita lunar 1966-04-03 — primer satélite artificial de cualquier cuerpo que no sea la Tierra.",
       "type": "nominal"
@@ -38,5 +38,12 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "etapa superior Block-L del Molniya-M"
+  "vehicle_stage": "etapa superior Block-L del Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.05,
+      "label": "Corrección de trayectoria",
+      "description": "Una única corrección de trayectoria el 1 de abril de 1966 afina la aproximación a la Luna, aproximadamente un día después del lanzamiento."
+    }
+  ]
 }

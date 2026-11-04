@@ -1,0 +1,10 @@
+{
+  "description": "Asteroide rocoso (tipo S) cercano a la Tierra, de 34 × 11 × 11 km, el primer asteroide cercano a la Tierra descubierto (1898). La NEAR Shoemaker de la NASA entró en órbita a su alrededor el 14 de febrero de 2000 —la primera nave en orbitar un asteroide—, lo cartografió durante un año y se posó en él el 12 de febrero de 2001, aunque nunca fue diseñada para ello.",
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Eros es un asteroide Amor cercano a la Tierra — semieje mayor 1,46 au, con toda su órbita por fuera de la terrestre. En 2000 NEAR Shoemaker igualó esa órbita y fue la primera nave en orbitar un asteroide."
+    }
+  ]
+}

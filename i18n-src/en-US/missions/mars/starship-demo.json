@@ -3,14 +3,34 @@
   "vehicle": "Starship (Super Heavy + Starship upper stage, expended)",
   "payload": "~100000 kg (target with on-orbit refilling architecture)",
   "delta_v": "~13 km/s",
-  "type": "UNCREWED MARS DEMO · PLANNED",
+  "type": "UNCREWED MARS DEMO · CANCELLED",
   "first": "First fully reusable launch system to attempt Mars landing",
-  "description": "An uncrewed demonstration of the Starship Mars architecture: launch on Super Heavy, refill in LEO from a tanker variant, then trans-Mars injection of a fully-fuelled Starship and powered descent to the Martian surface. SpaceX's stated target is a 2026-2027 launch window; engineering reality (Starship still working through orbital flight reliability and on-orbit refilling has not been demonstrated) makes 2028 or later more likely. If it succeeds, it inverts the Mars payload economics — from thousands of kg to one hundred tonnes per landing.",
+  "description": "An uncrewed demonstration of the Starship Mars architecture: launch on Super Heavy, refill in LEO from a tanker variant, then trans-Mars injection of a fully-fuelled Starship and powered descent to the Martian surface. SpaceX aimed for the late-2026 Mars window. In February 2026 Elon Musk put the Moon first and said work on Mars would start in about five to seven years, dropping the late-2026 target; no new date has been set. A Mars Starship would land about a hundred tonnes at a time, against a few thousand kilograms for today's landers.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Starship from Boca Chica or Cape Canaveral — first super-heavy interplanetary launch.", "type": "nominal" },
-    { "met": 1, "label": "ORBITAL REFILLING", "note": "Tanker rendezvous and propellant transfer in LEO over multiple flights.", "type": "nominal" },
-    { "met": 2, "label": "TMI BURN", "note": "Trans-Mars injection from fully-fuelled LEO state.", "type": "nominal" },
-    { "met": 274, "label": "MARS LANDING", "note": "Powered descent to Mars surface — no parachutes, no airbags, no sky-crane.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Starship from Boca Chica or Cape Canaveral — first super-heavy interplanetary launch.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "ORBITAL REFILLING",
+      "note": "Tanker rendezvous and propellant transfer in LEO over multiple flights.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "TMI BURN",
+      "note": "Trans-Mars injection from fully-fuelled LEO state.",
+      "type": "nominal"
+    },
+    {
+      "met": 274,
+      "label": "MARS LANDING",
+      "note": "Powered descent to Mars surface — no parachutes, no airbags, no sky-crane.",
+      "type": "info"
+    }
   ],
   "vehicle_stage": "Starship upper stage"
 }

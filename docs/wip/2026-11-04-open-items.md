@@ -73,6 +73,19 @@ locale's BROKEN rate above ~14% would show in 20 with 95% odds, and the nine tog
 reads needed.** The fix-ups are the MINOR items above plus Portuguese terminology (UA,
 periápside, Operation Paperclip), which a term check finds across the whole locale.
 
+**Patterns, checked locale-wide (2026-11-04):**
+
+- **The English "AU" left behind** — done (`7c68430abad`): 99 in nine locales, now each
+  locale's form from the style guide (`au-forms.mjs`).
+- **Changed numbers** — none found. New `number-drift.mjs` compares the numbers of every science
+  field with the English (separators, Arabic and Devanagari digits, CJK 万/亿, scale words in
+  each language, long-scale billion in fr/de/nl). Every flagged field read so far was notation,
+  a unit conversion (Goddard's feet and pounds), a decade written as a word, or a rounding (ja
+  33万 for 333,000) — no changed fact. Remaining flags are notation the tool does not parse yet
+  (English "100M", "36k"; hi मिलियन; Arabic duals).
+- **Not a pattern:** it "SSI" (288 uses, the site's form), pt-BR "EEI" (294); de / es / nl
+  "Periapsis" is the native technical term there.
+
 **Scope (operator, 2026-11-04): fix-ups only.** Wrong meaning, wrong facts, garbled text, wrong
 names. No change that rewrites a locale's voice across the site — how the reader is addressed
 (German du / Sie stays mixed) and the ja / ko plain register (item 3 below) are out of 0.9.6.

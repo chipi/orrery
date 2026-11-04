@@ -106,14 +106,24 @@ const add = (loc, kindName, where) => {
   if (k.ex.length < EX) k.ex.push(where);
 };
 
+/** True when a value holds at least one non-empty string. */
+const hasText = (v) =>
+  typeof v === 'string'
+    ? v.trim() !== ''
+    : v && typeof v === 'object'
+      ? Object.values(v).some(hasText)
+      : false;
+
 function compare(loc, rel, en, tr, at = '') {
   const ke = kind(en);
   const kt = kind(tr);
   if (kt === 'undefined') {
     if (ke === 'string' && en.trim() && !SKIP_KEY.test(at))
       add(loc, 'missingKey', `${rel} :: ${at}`);
-    else if (ke === 'list' || ke === 'object') {
-      // Count the strings inside a missing container once, as one missing key.
+    else if ((ke === 'list' || ke === 'object') && hasText(en)) {
+      // Count the strings inside a missing container once, as one missing key. An empty
+      // en-US list (six launch pads carry `hotspot_annotations: []`) has nothing to
+      // translate, so a locale without it shows no English.
       add(loc, 'missingKey', `${rel} :: ${at} (whole ${ke})`);
     }
     return;

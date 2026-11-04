@@ -22,9 +22,10 @@ the tools cannot measure is quality; the 4.3% BROKEN figure (2026-10-19, 741-str
 
 **Step 1 — user-visible gaps the tools found (small, mechanical):**
 
-- 6 surface sites show English annotation labels in every locale: their `hotspot_annotations`
-  lists are missing from all 13 locale overlays (78 files; `src/lib/data/surface.ts:92` falls back
-  to English when the overlay list is empty).
+- ~~6 surface sites show English annotation labels~~ — not a gap (checked 2026-11-04): the six
+  launch pads have no annotations at all (`hotspot_annotations: []` in en-US and in
+  `surface-hotspots.json`). `i18n-coverage-scan.mjs` counted the empty en-US list as missing;
+  it now counts a missing list only when the English one holds text (missingKey 6 → 0 per locale).
 - Native names missing (`nativeNameMissing`): ru 52, zh-CN 22, hi 14, ja 13, ar 1 — mostly
   `/colophon` model titles and video titles.
 - Same-as-English fields: 64 (zh-CN) to 130 (nl) per locale, mostly `/colophon` anatomy titles

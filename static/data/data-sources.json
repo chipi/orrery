@@ -130,7 +130,10 @@
       "license_rationale": "The underlying element sets originate from US Space Command (public domain); CelesTrak redistributes them and requests attribution as the source, which we give here.",
       "used_on": [
         "lab",
-        "earth"
+        "earth",
+        "moon",
+        "mars",
+        "explore"
       ]
     },
     {

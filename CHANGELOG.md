@@ -8,6 +8,63 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [0.9.5] — 2026-11-04
+
+A `/fly` and surfaces release: the 3D models fly every mission, flight events and paths follow
+the record, `/fleet` gets true-scale line-ups, rovers drive their mapped tracks, and the Moon,
+Mars and Earth surfaces gain a context layer with pages that explain how the imagery is stacked.
+
+### Added
+
+- **Line-ups on `/fleet`.** Every modelled launcher, and every crewed and cargo craft, side by
+  side at true scale, with people and landmarks from around the world for scale. Loaded only
+  when a line-up opens.
+- **The models fly.** Showcase craft at launch, in orbit and in cruise, 20 new craft; the Apollo
+  stack in flight order with its launch escape tower; Zhurong and the small-body landers fly their
+  own craft; every mission has its own model.
+- **Flight plan on `/fly`.** Every launch and descent beat on a time axis, the active one lit.
+- **New flights and beats.** DART's impact on Dimorphos; Beagle 2's descent from Mars Express;
+  the Sun as the arrival target for Parker and Solar Orbiter; flyby missions without an
+  `/explore` trajectory fly past their flyby bodies; a lander's arrival frames its landing site in
+  daylight; sourced flight events for 10 Moon missions and Mariner 10.
+- **Surface imagery context layer.** A wider image of the ground around every Moon, Mars and Earth
+  site, between the globe and the regional view, and three science pages (Moon, Mars, Earth) on
+  how the layers work, which missions and instruments made them, with diagrams. A "How this
+  works" link on the imagery card opens them.
+- **Photos** for Ryugu, Eros, Itokawa, Bennu and Vesta.
+
+### Fixed
+
+- **Flights follow the record.** Cruise legs fly the real coasting conic (Lambert) from the
+  injection burn, including escape orbits; 18 direct Mars transfers regenerated; Moon flights
+  reach the Moon on the real date; 25 flyby events, six flyby distances and several landings and
+  returns moved to their sourced dates; real targets and paths for comet, asteroid, Sun and
+  multi-flyby missions.
+- **Re-entries fitted to mission reports.** Mercury, Vostok, Voskhod, Apollo, Gemini, ASTP and
+  Dragon; the Earth E+ clock counts real seconds; Apollo 8 re-enters in the Apollo CM.
+- **Launch and staging.** The first 22 s read as a climb from a camera fixed on the ground; stages
+  dropped near orbit slide away in view; arrays stay stowed until separation; orbit-insertion
+  plumes about one craft length.
+- **Rover tracks.** Apollo 15 and 16, Lunokhod 1 and 2 and Yutu-2 follow the tracks the LRO Camera
+  team mapped; Curiosity and Perseverance follow NASA's localized drive paths, with stops at their
+  sourced sols. Route tiles re-cut along them, laddered, credited and described.
+- **Sites.** Landing coordinates from LRO-located positions; partial Moon panoramas open on their
+  photograph; Earth launch pads on a cloud-free 2025 mosaic, with the imagery card naming each
+  source and licence.
+- **Records.** MMX launched (active, 14 locales); Starship's Mars demo cancelled and the crewed
+  concept deferred; asteroids and Kuiper-belt objects no longer labelled "interstellar visitor".
+- **Logic that read translated text** (round trips, flight events, site marker categories) now
+  reads the English source.
+- **Translations.** New flight events, small-body descriptions, panoramas, traverse captions and
+  photo alt text in every locale.
+- **Accessibility and links.** The footer ABOUT menu stays open on the way up to its items;
+  browse-page filter labels and pills pass AA contrast; the weekly link check's dead links fixed.
+
+### Changed
+
+- **Every Grafana panel** on the Orrery dashboards has a description.
+- Earth pad imagery is CC BY-NC-SA (EOX); the project is non-commercial.
+
 ## [0.9.4] — 2026-11-03
 
 A `/fly` realism release: every launch flies its real rocket and staging, orbiters fire the

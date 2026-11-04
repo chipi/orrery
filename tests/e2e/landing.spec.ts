@@ -80,6 +80,33 @@ test.describe('landing page (/)', () => {
     await expect(page).toHaveURL(/\/explore$/);
   });
 
+  test('footer ABOUT menu stays open while the pointer moves up to its items', async ({
+    page,
+    isMobile,
+  }) => {
+    test.skip(isMobile, 'the footer is hidden on touch devices');
+    await page.goto('/', { waitUntil: 'networkidle' });
+    const label = page.locator('.footer-about-label');
+    const menu = page.locator('.footer-about-menu');
+    const privacy = menu.locator('a[href$="/privacy"]');
+    const lb = (await label.boundingBox())!;
+    const x = lb.x + lb.width / 2;
+    await page.mouse.move(x, lb.y + lb.height / 2);
+    await expect(menu).toHaveCSS('pointer-events', 'auto');
+    // 1 px steps from the label to Privacy: the gap between them used to hit <main>,
+    // which dropped :hover and closed the menu before it could be reached.
+    const pb = (await privacy.boundingBox())!;
+    const target = pb.y + pb.height / 2;
+    for (let y = lb.y; y >= target; y -= 1) {
+      await page.mouse.move(x, y);
+      expect(await menu.evaluate((el) => getComputedStyle(el).pointerEvents), `y=${y}`).toBe(
+        'auto',
+      );
+    }
+    await page.mouse.click(x, target);
+    await expect(page).toHaveURL(/\/privacy$/);
+  });
+
   test('cards navigate to their canonical routes', async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
     // Science is the last card, under the LEARN section.

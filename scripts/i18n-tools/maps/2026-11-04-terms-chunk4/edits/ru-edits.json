@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "title",
+    "term": "free-return",
+    "decision": "change",
+    "find": "Траектория с бесплатным возвратом",
+    "replace": "Траектория свободного возврата"
+  }
+]

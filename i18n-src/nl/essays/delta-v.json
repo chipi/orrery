@@ -27,17 +27,17 @@
     },
     {
       "type": "prose",
-      "md": "Een [delta-v-budget](/science/propulsion/dv-budget) is wat missieplanners het werkblad noemen waarin elke snelheidsverandering staat die een missie moet uitvoeren, van de parkeerbaan om de Aarde tot de eindbestemming. Het is het meest bepalende document in het missieontwerp: het beslist of de missie überhaupt mogelijk is. Een ruimtevaartuig uit een lage baan om de Aarde via een Hohmann-overdracht naar Mars en in een baan om Mars brengen kost ruwweg in totaal **5,6 km/s** — een getal dat bescheiden klinkt tot je bedenkt dat elke decimaal in tonnen brandstof wordt betaald, en dat de raketvergelijking ervoor zorgt dat de wisselkoers slechter wordt naarmate je meer uitgeeft."
+      "md": "Een [delta-v-budget](/science/propulsion/dv-budget) is wat missieplanners het werkblad noemen waarin elke snelheidsverandering staat die een missie moet uitvoeren, van de parkeerbaan om de Aarde tot de eindbestemming. Het is het meest bepalende document in het missieontwerp: het beslist of de missie überhaupt mogelijk is. Een ruimtevaartuig uit een lage baan om de Aarde via een Hohmann-transferbaan naar Mars en in een baan om Mars brengen kost ruwweg in totaal **5,6 km/s** — een getal dat bescheiden klinkt tot je bedenkt dat elke decimaal in tonnen brandstof wordt betaald, en dat de raketvergelijking ervoor zorgt dat de wisselkoers slechter wordt naarmate je meer uitgeeft."
     },
     {
       "type": "prose",
-      "md": "Een [Hohmann-overdracht](/science/transfers/hohmann-transfer) is de boog met minimale energie tussen twee banen — het pad dat het minste delta-v kost om van A naar B te komen. Het is niet recht; het is een ellips die de binnenbaan aan het ene uiteinde en de buitenbaan aan het andere raakt en de hele weg alleen op traagheid voortglijdt. De truc is dat je de motor twee keer ontsteekt: één keer om de vertrekbaan te verlaten, één keer om de aankomstbaan te bereiken. Tussen die twee ontstekingen — doorgaans 259 dagen van de Aarde naar Mars — geef je niets uit. De zwaartekracht van het zonnestelsel doet het dragen gratis, mits je aan het begin de juiste kant op wist te richten."
+      "md": "Een [Hohmann-transferbaan](/science/transfers/hohmann-transfer) is de boog met minimale energie tussen twee banen — het pad dat het minste delta-v kost om van A naar B te komen. Het is niet recht; het is een ellips die de binnenbaan aan het ene uiteinde en de buitenbaan aan het andere raakt en de hele weg alleen op traagheid voortglijdt. De truc is dat je de motor twee keer ontsteekt: één keer om de vertrekbaan te verlaten, één keer om de aankomstbaan te bereiken. Tussen die twee ontstekingen — doorgaans 259 dagen van de Aarde naar Mars — geef je niets uit. De zwaartekracht van het zonnestelsel doet het dragen gratis, mits je aan het begin de juiste kant op wist te richten."
     },
     {
       "type": "figure",
       "image": "essays/delta-v/hohmann-transfer",
       "kind": "diagram",
-      "caption": "Het goedkoopste pad tussen twee banen is nooit de rechte lijn — een Hohmann-overdracht glijdt langs een ellips die elke baan net raakt en de motor maar twee keer ontsteekt: één keer om te vertrekken, één keer om aan te komen.",
+      "caption": "Het goedkoopste pad tussen twee banen is nooit de rechte lijn — een Hohmann-transferbaan glijdt langs een ellips die elke baan net raakt en de motor maar twee keer ontsteekt: één keer om te vertrekken, één keer om aan te komen.",
       "align": "wide"
     },
     {

@@ -87,7 +87,9 @@ export function usedOn(terms) {
   for (const tree of TREES)
     for (const f of walk(`i18n-src/en-US/${tree}`)) {
       const rel = path.relative('i18n-src/en-US', f);
-      if (!routeOf(rel)) continue;
+      // A section intro (science/<section>/_intro) has no page title and only points onwards:
+      // "used on" links go to the articles themselves.
+      if (!routeOf(rel) || rel.endsWith('/_intro.json')) continue;
       pages.push({
         rel,
         text: strings(JSON.parse(fs.readFileSync(f, 'utf8')))

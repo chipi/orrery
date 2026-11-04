@@ -2511,6 +2511,18 @@
     "why": "'гравитационим маневрима' is the binding word inflected (stem check misses the case ending)",
     "tr": "5a3f03d319"
   },
+  "halo orbit|hi|science/mission-phases/nrho.json :: narrative_101.0": {
+    "why": "read 2026-11-04 (chunk 4): the acronym NRHO spelled out in English (Near-Rectilinear Halo Orbit), kept as the name",
+    "tr": "c720c007f9"
+  },
+  "halo orbit|ja|science/mission-phases/nrho.json :: narrative_101.0": {
+    "why": "read 2026-11-04 (chunk 4): the acronym NRHO spelled out in English (Near-Rectilinear Halo Orbit), kept as the name",
+    "tr": "f0d8b502ed"
+  },
+  "halo orbit|sr-Cyrl|science/mission-phases/nrho.json :: narrative_101.0": {
+    "why": "read 2026-11-04 (chunk 4): the acronym NRHO spelled out in English (Near-Rectilinear Halo Orbit), kept as the name",
+    "tr": "0e8f78eb7e"
+  },
   "heat shield|de|science/mission-phases/edl.json :: body_paragraphs.1": {
     "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
     "tr": "6a8b463ee3"

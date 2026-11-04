@@ -1,0 +1,14 @@
+[
+  {
+    "loc": "ru",
+    "term": "free-return",
+    "find": "Траектория с бесплатным возвратом",
+    "replace": "Траектория свободного возврата"
+  },
+  {
+    "loc": "nl",
+    "term": "Hohmann transfer",
+    "find": "de goedkoopste overdrachten (laagste ΔV) van het Hohmann-type",
+    "replace": "de goedkoopste Hohmann-transferbanen (laagste ΔV)"
+  }
+]

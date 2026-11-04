@@ -40,5 +40,12 @@
   "aphelion": "Il punto di un'orbita intorno al Sole più lontano dal Sole.",
   "eccentricity": "Quanto è allungata un'orbita: 0 è un cerchio, i valori tra 0 e 1 sono ellissi sempre più allungate, 1 e oltre sono traiettorie aperte senza ritorno.",
   "launch window": "Il periodo in cui un lancio può raggiungere il suo obiettivo con il propellente a bordo, fissato dalle posizioni della Terra e della destinazione.",
-  "escape velocity": "La velocità che serve a un oggetto per lasciare per sempre un corpo senza ulteriore spinta: circa 11,2 km/s dalla superficie terrestre."
+  "escape velocity": "La velocità che serve a un oggetto per lasciare per sempre un corpo senza ulteriore spinta: circa 11,2 km/s dalla superficie terrestre.",
+  "Hohmann transfer": "La via più economica tra due orbite circolari: un'accensione verso mezza ellisse tangente a entrambe e una seconda all'altro capo per circolarizzare.",
+  "Lagrange point": "Uno dei cinque punti in cui l'attrazione di due grandi corpi e il moto orbitale si bilanciano, così che un piccolo oggetto mantiene la sua posizione rispetto a entrambi.",
+  "C3": "Energia caratteristica: il quadrato della velocità che resta a una sonda una volta sfuggita alla Terra, in km²/s² — il valore che un lanciatore deve raggiungere per un dato viaggio.",
+  "rocket equation": "L'equazione di Ciolkovskij, Δv = vₑ · ln(m₀/m₁): la variazione di velocità che un razzo può ottenere dalla velocità di scarico e dalla parte della sua massa fatta di propellente.",
+  "free-return": "Una traiettoria verso la Luna che gira attorno alla faccia nascosta e ricade verso la Terra senza altre accensioni, così l'equipaggio rientra anche se il motore si guasta.",
+  "sun-synchronous": "Un'orbita quasi polare il cui piano ruota con il moto annuo della Terra, così il satellite passa ogni giorno sopra ogni latitudine alla stessa ora solare locale.",
+  "halo orbit": "Un'orbita ad anello attorno a un punto di Lagrange, tenuta lì dall'equilibrio della gravità di due corpi: JWST ne percorre una attorno a L2, Gateway era previsto su un'altra."
 }

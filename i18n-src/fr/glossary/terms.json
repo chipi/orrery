@@ -40,5 +40,12 @@
   "aphelion": "Le point d'une orbite autour du Soleil le plus éloigné du Soleil.",
   "eccentricity": "L'allongement d'une orbite : 0 est un cercle, les valeurs entre 0 et 1 des ellipses de plus en plus étirées, 1 et au-delà des trajectoires ouvertes sans retour.",
   "launch window": "La période pendant laquelle un lancement peut atteindre sa cible avec les ergols embarqués, fixée par les positions de la Terre et de la cible.",
-  "escape velocity": "La vitesse qu'il faut à un objet pour quitter définitivement un corps sans poussée supplémentaire : environ 11,2 km/s depuis la surface de la Terre."
+  "escape velocity": "La vitesse qu'il faut à un objet pour quitter définitivement un corps sans poussée supplémentaire : environ 11,2 km/s depuis la surface de la Terre.",
+  "Hohmann transfer": "Le chemin le plus économique entre deux orbites circulaires : une poussée vers une demi-ellipse tangente aux deux, puis une seconde à l'autre bout pour circulariser.",
+  "Lagrange point": "L'un des cinq points où l'attraction de deux grands corps et le mouvement orbital s'équilibrent, si bien qu'un petit objet garde sa place par rapport aux deux.",
+  "C3": "L'énergie caractéristique : le carré de la vitesse qui reste à un engin une fois libéré de la Terre, en km²/s² — la valeur qu'un lanceur doit atteindre pour un voyage donné.",
+  "rocket equation": "L'équation de Tsiolkovski, Δv = vₑ · ln(m₀/m₁) : le changement de vitesse qu'une fusée peut obtenir de sa vitesse d'éjection et de la part d'ergols dans sa masse.",
+  "free-return": "Une trajectoire vers la Lune qui contourne sa face cachée et retombe vers la Terre sans nouvelle poussée, si bien que l'équipage rentre même en cas de panne moteur.",
+  "sun-synchronous": "Une orbite quasi polaire dont le plan tourne avec la course annuelle de la Terre, si bien que le satellite passe chaque jour au-dessus de chaque latitude à la même heure solaire locale.",
+  "halo orbit": "Une orbite en boucle autour d'un point de Lagrange, maintenue par l'équilibre de la gravité de deux corps — JWST en décrit une autour de L2, Gateway était prévu sur une autre."
 }

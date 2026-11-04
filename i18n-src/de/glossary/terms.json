@@ -40,5 +40,12 @@
   "aphelion": "Der sonnenfernste Punkt einer Bahn um die Sonne.",
   "eccentricity": "Wie gestreckt eine Bahn ist: 0 ist ein Kreis, Werte zwischen 0 und 1 sind immer längere Ellipsen, ab 1 offene Bahnen ohne Wiederkehr.",
   "launch window": "Der Zeitraum, in dem ein Start sein Ziel mit dem mitgeführten Treibstoff erreichen kann – bestimmt durch die Stellung von Erde und Ziel.",
-  "escape velocity": "Die Geschwindigkeit, mit der ein Körper einen Himmelskörper ohne weiteren Schub für immer verlässt: rund 11,2 km/s von der Erdoberfläche."
+  "escape velocity": "Die Geschwindigkeit, mit der ein Körper einen Himmelskörper ohne weiteren Schub für immer verlässt: rund 11,2 km/s von der Erdoberfläche.",
+  "Hohmann transfer": "Der günstigste Weg zwischen zwei Kreisbahnen: eine Zündung auf eine halbe Ellipse, die beide berührt, und eine zweite am fernen Ende, um die Bahn wieder kreisförmig zu machen.",
+  "Lagrange point": "Einer von fünf Punkten, an denen sich die Anziehung zweier großer Körper und die Bahnbewegung ausgleichen, sodass ein kleiner Körper seinen Platz relativ zu beiden hält.",
+  "C3": "Charakteristische Energie: das Quadrat der Geschwindigkeit, die einer Raumsonde nach dem Verlassen der Erde bleibt, in km²/s² – der Wert, den eine Rakete für eine Reise liefern muss.",
+  "rocket equation": "Die Ziolkowski-Gleichung Δv = vₑ · ln(m₀/m₁): die Geschwindigkeitsänderung, die eine Rakete aus ihrer Ausströmgeschwindigkeit und ihrem Treibstoffanteil gewinnen kann.",
+  "free-return": "Eine Bahn zum Mond, die um seine Rückseite schwingt und ohne weitere Zündung zur Erde zurückfällt, sodass die Besatzung auch bei einem Triebwerksausfall heimkommt.",
+  "sun-synchronous": "Eine fast polare Umlaufbahn, deren Ebene sich mit dem Jahreslauf der Erde dreht, sodass der Satellit jeden Breitengrad täglich zur selben Ortszeit überfliegt.",
+  "halo orbit": "Eine schleifenförmige Bahn um einen Lagrange-Punkt, gehalten vom Gleichgewicht der Schwerkraft zweier Körper – JWST umkreist so L2, Gateway war für einen anderen geplant."
 }

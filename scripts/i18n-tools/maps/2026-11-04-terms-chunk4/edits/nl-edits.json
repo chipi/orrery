@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.0",
+    "term": "Hohmann transfer",
+    "decision": "change",
+    "find": "de goedkoopste overdrachten (laagste ΔV) van het Hohmann-type",
+    "replace": "de goedkoopste Hohmann-transferbanen (laagste ΔV)"
+  }
+]

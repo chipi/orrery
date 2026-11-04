@@ -174,8 +174,14 @@ only if the site renders them inconsistently).
   perihelion and aphelion reversed (factual), hi Mars "genetically 20 % farther", fr UI
   «vitesse d'échappement» for both escape and exhaust velocity. New guard:
   `wrong-forms.json` + `wrong-forms.mjs` + `wrong-forms.test.ts` (mutation-checked).
-- Next chunks: 4 transfers (Hohmann transfer, Lagrange point,
-  C3, rocket equation, free-return, sun-synchronous, halo orbit); 5 astronomy (exoplanet,
+- **Chunk 4 done** (2026-11-04, `maps/2026-11-04-terms-chunk4/`): Hohmann transfer, Lagrange
+  point, C3, rocket equation, free-return, sun-synchronous, halo orbit — glossary 42 → 49.
+  Misses 76 → 33 → 3. Fixed: nl «Hohmann-overdracht» (overdracht = a handover of ownership)
+  ×23 across overlays and UI → «Hohmann-transferbaan»; ru free-return article title
+  «с бесплатным возвратом» (free of charge); ja «遊離帰還» (遊離 = chemical dissociation) →
+  自由帰還; hi «मुक्त-रिटर्न». Four new wrong forms in the guard. build-glossary: section intros
+  (no page title) no longer appear under "used on".
+- Next chunks: 5 astronomy (exoplanet,
   light-year, habitable zone, asteroid belt, solar wind, magnetosphere). Then term links from
   article text to `/science/glossary`.
 

@@ -40,5 +40,12 @@
   "aphelion": "El punto de una órbita alrededor del Sol más alejado del Sol.",
   "eccentricity": "Cuánto se estira una órbita: 0 es un círculo, los valores entre 0 y 1 son elipses cada vez más alargadas y 1 o más son trayectorias abiertas que no vuelven.",
   "launch window": "El periodo en el que un lanzamiento puede alcanzar su objetivo con el propelente que lleva, fijado por las posiciones de la Tierra y del destino.",
-  "escape velocity": "La velocidad que necesita un objeto para abandonar para siempre un cuerpo sin más empuje: unos 11,2 km/s desde la superficie de la Tierra."
+  "escape velocity": "La velocidad que necesita un objeto para abandonar para siempre un cuerpo sin más empuje: unos 11,2 km/s desde la superficie de la Tierra.",
+  "Hohmann transfer": "El camino más barato entre dos órbitas circulares: un encendido hacia media elipse que toca ambas y otro en el extremo opuesto para circularizar.",
+  "Lagrange point": "Uno de los cinco puntos donde la atracción de dos grandes cuerpos y el movimiento orbital se equilibran, de modo que un objeto pequeño mantiene su lugar respecto a ambos.",
+  "C3": "Energía característica: el cuadrado de la velocidad que le queda a una nave tras escapar de la Tierra, en km²/s²; la cifra que un lanzador debe alcanzar para un viaje dado.",
+  "rocket equation": "La ecuación de Tsiolkovski, Δv = vₑ · ln(m₀/m₁): el cambio de velocidad que un cohete puede lograr a partir de la velocidad de salida de los gases y de la parte de su masa que es propelente.",
+  "free-return": "Una trayectoria a la Luna que rodea su cara oculta y cae de vuelta a la Tierra sin más encendidos, de modo que la tripulación vuelve aunque falle el motor.",
+  "sun-synchronous": "Una órbita casi polar cuyo plano gira con el recorrido anual de la Tierra, de modo que el satélite pasa cada día por cada latitud a la misma hora solar local.",
+  "halo orbit": "Una órbita en bucle alrededor de un punto de Lagrange, sostenida por el equilibrio de la gravedad de dos cuerpos: JWST describe una en torno a L2 y Gateway se planeó para otra."
 }

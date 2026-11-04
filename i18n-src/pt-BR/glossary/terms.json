@@ -40,5 +40,12 @@
   "aphelion": "O ponto de uma órbita ao redor do Sol mais distante do Sol.",
   "eccentricity": "O quanto uma órbita é alongada: 0 é um círculo, valores entre 0 e 1 são elipses cada vez mais alongadas, e 1 ou mais são trajetórias abertas que não voltam.",
   "launch window": "O período em que um lançamento pode alcançar seu alvo com o propelente a bordo, definido pelas posições da Terra e do destino.",
-  "escape velocity": "A velocidade de que um objeto precisa para deixar um corpo para sempre sem mais empuxo: cerca de 11,2 km/s a partir da superfície da Terra."
+  "escape velocity": "A velocidade de que um objeto precisa para deixar um corpo para sempre sem mais empuxo: cerca de 11,2 km/s a partir da superfície da Terra.",
+  "Hohmann transfer": "O caminho mais barato entre duas órbitas circulares: uma queima para meia elipse que toca as duas e outra na ponta oposta para circularizar.",
+  "Lagrange point": "Um dos cinco pontos onde a atração de dois grandes corpos e o movimento orbital se equilibram, de modo que um objeto pequeno mantém sua posição em relação a ambos.",
+  "C3": "Energia característica: o quadrado da velocidade que sobra para uma nave depois de escapar da Terra, em km²/s² — o valor que um lançador precisa atingir para uma viagem.",
+  "rocket equation": "A equação de Tsiolkovsky, Δv = vₑ · ln(m₀/m₁): a mudança de velocidade que um foguete consegue a partir da velocidade de exaustão e da parte de sua massa que é propelente.",
+  "free-return": "Uma trajetória para a Lua que contorna seu lado oculto e cai de volta para a Terra sem nova queima, de modo que a tripulação volta mesmo se o motor falhar.",
+  "sun-synchronous": "Uma órbita quase polar cujo plano gira com o percurso anual da Terra, de modo que o satélite passa por cada latitude todo dia na mesma hora solar local.",
+  "halo orbit": "Uma órbita em laço em torno de um ponto de Lagrange, mantida ali pelo equilíbrio da gravidade de dois corpos — o JWST percorre uma em torno de L2, e o Gateway estava planejado para outra."
 }

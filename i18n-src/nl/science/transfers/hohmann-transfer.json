@@ -1,5 +1,5 @@
 {
-  "title": "Hohmann-overdracht",
+  "title": "Hohmann-transferbaan",
   "intro_sentence": "De goedkoopste reis met twee motorontstekingen tussen twee coplanaire cirkelbanen — en de maatstaf waaraan missieplanners al het andere afmeten.",
   "narrative_101": [
     "Je bevindt je in de baan van de Aarde. Je wilt in de baan van Mars komen. Beide banen zijn bij benadering cirkels om de Zon. Hoe kom je van de ene naar de andere met zo min mogelijk brandstof?",
@@ -7,9 +7,9 @@
     "Het is de goedkoopste mogelijke reis — maar ook de langzaamste. Die 8,5 maanden zijn niet onderhandelbaar; de natuurkunde bepaalt de timer. Sneller willen? Dat kan, maar je betaalt ervoor: een steilere ellips, een snellere oversteek, een veel zwaardere remming aan het andere uiteinde. Dit is de afweging die je terugziet in elke porkchop-plot in /plan."
   ],
   "body_paragraphs": [
-    "Stel je voor dat je in een cirkelbaan om de Zon zit en een hogere baan wilt bereiken — zeg van Aarde naar Mars. De goedkoopste manier is een Hohmann-overdracht: een ellips waarvan het perihelium je startbaan raakt en waarvan het aphelium de doelbaan raakt. Twee motorontstekingen brengen je daar. Eén in het perihelium om de baan van de Aarde te verlaten en de ellips op te gaan. Eén in het aphelium om in de doelbaan weer een cirkelbaan te krijgen.",
-    "Het is het goedkoopste pad met impulsmanoeuvres, maar ook het langzaamste. Aarde-naar-Mars duurt met een Hohmann-overdracht ongeveer 259 dagen. Sneller willen? Geef harder gas en vlieg een uitgerekte ellips met een hogere snelheid in het perihelium. De aankomst-V∞ stijgt, de remming bij de bestemming wordt groter en je totale ∆v-kosten lopen steil op.",
+    "Stel je voor dat je in een cirkelbaan om de Zon zit en een hogere baan wilt bereiken — zeg van Aarde naar Mars. De goedkoopste manier is een Hohmann-transferbaan: een ellips waarvan het perihelium je startbaan raakt en waarvan het aphelium de doelbaan raakt. Twee motorontstekingen brengen je daar. Eén in het perihelium om de baan van de Aarde te verlaten en de ellips op te gaan. Eén in het aphelium om in de doelbaan weer een cirkelbaan te krijgen.",
+    "Het is het goedkoopste pad met impulsmanoeuvres, maar ook het langzaamste. Aarde-naar-Mars duurt met een Hohmann-transferbaan ongeveer 259 dagen. Sneller willen? Geef harder gas en vlieg een uitgerekte ellips met een hogere snelheid in het perihelium. De aankomst-V∞ stijgt, de remming bij de bestemming wordt groter en je totale ∆v-kosten lopen steil op.",
     "Op de porkchop-plot van Orrery op `/plan` zie je dit direct: rond het natuurlijke Hohmann-venster, voor Mars elke 26 maanden, ligt een rustig dal van koele blauwgroene cellen, met steeds duurdere contouren naarmate je naar kortere reistijden gaat."
   ],
-  "diagram_caption": "Baan van de Aarde (binnen) · baan van Mars (buiten) · Hohmann-overdrachtsellips met het perihelium bij de Aarde en het aphelium bij Mars."
+  "diagram_caption": "Baan van de Aarde (binnen) · baan van Mars (buiten) · Hohmann-transferellips met het perihelium bij de Aarde en het aphelium bij Mars."
 }

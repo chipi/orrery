@@ -29,9 +29,11 @@ the tools cannot measure is quality; the 4.3% BROKEN figure (2026-10-19, 741-str
 - ~~Native names missing~~ — done 2026-11-04 (`c0c5e3c9ce5`): ru 52, zh-CN 22, hi 14, ja 13,
   ar 1 → 0 in every locale; `convert-native.mjs` fixed (it could not run) and taught three
   rules (`scripts/lib/native-skip.mjs`).
-- Same-as-English fields: 64 (zh-CN) to 130 (nl) per locale, mostly `/colophon` anatomy titles
-  (973 over all locales), site stories (67), deep-sky (55). Read them; many are kept names, the
-  rest get translated.
+- ~~Same-as-English fields~~ — done 2026-11-04: of 64–130 per locale, all but a few are names the
+  origin rule keeps. New `same-as-english-triage.mjs` separates them; 45 /colophon titles synced
+  to their locale's /fleet name (`original-work-fleet-names.mjs --sync-english`), 2 fleet names
+  fixed (it Spirit, ja Spektr-RG), Pale Blue Dot in es and sr-Cyrl. Triage: `translate: 0` in
+  every locale.
 - Latin+Cyrillic hyphen hybrids left: sr-Cyrl 119, ru 95 (were 1,449 and 120).
 - Unit symbols: sr-Cyrl `км/с` (13 in `messages/sr-Cyrl.json`), zh-CN 公里 — deferred, decide.
 - nl: 2 `englishProse` strings (`i18n-detect.mjs`).

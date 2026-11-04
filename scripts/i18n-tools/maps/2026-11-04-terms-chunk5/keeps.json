@@ -1,0 +1,23 @@
+[
+  {
+    "term": "exoplanet",
+    "loc": "nl",
+    "rel": "science/observation/coronagraphs.json",
+    "at": "body_paragraphs.2",
+    "why": "read 2026-11-04 (chunk 5): 'gas giants around nearby stars' — the word left out, the meaning kept"
+  },
+  {
+    "term": "magnetosphere",
+    "loc": "ar",
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.1",
+    "why": "read 2026-11-04 (chunk 5): ar المجال المغناطيسي (magnetic field) where the sentence is about leaving Earth's protection, or a sentence-split artefact of the brief view"
+  },
+  {
+    "term": "magnetosphere",
+    "loc": "ar",
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.1.md",
+    "why": "read 2026-11-04 (chunk 5): ar المجال المغناطيسي (magnetic field) where the sentence is about leaving Earth's protection, or a sentence-split artefact of the brief view"
+  }
+]

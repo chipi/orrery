@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "science/scales-time/light-minute.json",
+    "at": "title",
+    "term": "light-year",
+    "decision": "change",
+    "find": "Minuto de luz y año de luz",
+    "replace": "Minuto luz y año luz"
+  }
+]

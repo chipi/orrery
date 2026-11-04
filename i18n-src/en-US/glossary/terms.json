@@ -47,5 +47,11 @@
   "rocket equation": "Tsiolkovsky's equation, Δv = vₑ · ln(m₀/m₁): the change in speed a rocket can make from its exhaust velocity and how much of its mass is propellant.",
   "free-return": "A path to the Moon that swings round its far side and falls back to Earth with no further burn, so a crew can come home even if the engine fails.",
   "sun-synchronous": "A near-polar orbit whose plane turns with the Earth's yearly path, so the satellite crosses each latitude at the same local solar time every day.",
-  "halo orbit": "A looping orbit around a Lagrange point, held there by the balance of two bodies' gravity — JWST circles one at L2, Gateway was planned for another."
+  "halo orbit": "A looping orbit around a Lagrange point, held there by the balance of two bodies' gravity — JWST circles one at L2, Gateway was planned for another.",
+  "exoplanet": "A planet that orbits a star other than the Sun; more than 5,000 are known, most found by the dip in light as they cross their star.",
+  "light-year": "The distance light travels in one year, about 9.46 trillion km — a measure of distance, not of time.",
+  "habitable zone": "The range of distances from a star where a planet could keep liquid water on its surface: not too hot, not too cold.",
+  "asteroid belt": "The wide ring of rocky and metallic bodies between the orbits of Mars and Jupiter, so thinly spread that spacecraft cross it without trouble.",
+  "solar wind": "The stream of charged particles that flows out from the Sun in every direction at hundreds of kilometres per second.",
+  "magnetosphere": "The region around a planet ruled by its magnetic field, which turns the solar wind aside and traps charged particles in belts."
 }

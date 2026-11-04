@@ -181,9 +181,14 @@ only if the site renders them inconsistently).
   «с бесплатным возвратом» (free of charge); ja «遊離帰還» (遊離 = chemical dissociation) →
   自由帰還; hi «मुक्त-रिटर्न». Four new wrong forms in the guard. build-glossary: section intros
   (no page title) no longer appear under "used on".
-- Next chunks: 5 astronomy (exoplanet,
-  light-year, habitable zone, asteroid belt, solar wind, magnetosphere). Then term links from
-  article text to `/science/glossary`.
+- **Chunk 5 done** (2026-11-04, `maps/2026-11-04-terms-chunk5/`): exoplanet, light-year,
+  habitable zone, asteroid belt, solar wind, magnetosphere — glossary 49 → 55. Misses 41 →
+  26 → 3 (an nl light-year stem bug of mine fixed on the way). Fixed: fr light-minute article
+  title left in English («Light-Minute et Light-Year»), es «año de luz», pt-BR European
+  «Cintura de asteroides» ×4 and the pre-2009 «asteróide(s)» ×6 (the site writes asteroide
+  317×). Four new forms in the guard.
+- **Planned glossary chunks done: 20 → 55 terms**, each with definitions in 14 locales and
+  0 unreviewed misses. Next in step 3: term links from article text to `/science/glossary`.
 
 **Step 4 — known issues in sections (user-visible):**
 

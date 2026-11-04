@@ -47,5 +47,11 @@
   "rocket equation": "La ecuación de Tsiolkovski, Δv = vₑ · ln(m₀/m₁): el cambio de velocidad que un cohete puede lograr a partir de la velocidad de salida de los gases y de la parte de su masa que es propelente.",
   "free-return": "Una trayectoria a la Luna que rodea su cara oculta y cae de vuelta a la Tierra sin más encendidos, de modo que la tripulación vuelve aunque falle el motor.",
   "sun-synchronous": "Una órbita casi polar cuyo plano gira con el recorrido anual de la Tierra, de modo que el satélite pasa cada día por cada latitud a la misma hora solar local.",
-  "halo orbit": "Una órbita en bucle alrededor de un punto de Lagrange, sostenida por el equilibrio de la gravedad de dos cuerpos: JWST describe una en torno a L2 y Gateway se planeó para otra."
+  "halo orbit": "Una órbita en bucle alrededor de un punto de Lagrange, sostenida por el equilibrio de la gravedad de dos cuerpos: JWST describe una en torno a L2 y Gateway se planeó para otra.",
+  "exoplanet": "Un planeta en órbita alrededor de una estrella distinta del Sol; se conocen más de 5000, la mayoría hallados por la caída de luz cuando pasan por delante de su estrella.",
+  "light-year": "La distancia que recorre la luz en un año, unos 9,46 billones de km: una medida de distancia, no de tiempo.",
+  "habitable zone": "La franja de distancias alrededor de una estrella en la que un planeta podría conservar agua líquida en la superficie: ni demasiado caliente ni demasiado frío.",
+  "asteroid belt": "El amplio anillo de cuerpos rocosos y metálicos entre las órbitas de Marte y Júpiter, tan disperso que las naves lo cruzan sin dificultad.",
+  "solar wind": "El flujo de partículas cargadas que sale del Sol en todas direcciones a cientos de kilómetros por segundo.",
+  "magnetosphere": "La región alrededor de un planeta dominada por su campo magnético, que desvía el viento solar y atrapa partículas cargadas en cinturones de radiación."
 }

@@ -47,5 +47,11 @@
   "rocket equation": "L'equazione di Ciolkovskij, Δv = vₑ · ln(m₀/m₁): la variazione di velocità che un razzo può ottenere dalla velocità di scarico e dalla parte della sua massa fatta di propellente.",
   "free-return": "Una traiettoria verso la Luna che gira attorno alla faccia nascosta e ricade verso la Terra senza altre accensioni, così l'equipaggio rientra anche se il motore si guasta.",
   "sun-synchronous": "Un'orbita quasi polare il cui piano ruota con il moto annuo della Terra, così il satellite passa ogni giorno sopra ogni latitudine alla stessa ora solare locale.",
-  "halo orbit": "Un'orbita ad anello attorno a un punto di Lagrange, tenuta lì dall'equilibrio della gravità di due corpi: JWST ne percorre una attorno a L2, Gateway era previsto su un'altra."
+  "halo orbit": "Un'orbita ad anello attorno a un punto di Lagrange, tenuta lì dall'equilibrio della gravità di due corpi: JWST ne percorre una attorno a L2, Gateway era previsto su un'altra.",
+  "exoplanet": "Un pianeta che orbita attorno a una stella diversa dal Sole; se ne conoscono più di 5000, quasi tutti scoperti dal calo di luce quando passano davanti alla loro stella.",
+  "light-year": "La distanza che la luce percorre in un anno, circa 9460 miliardi di km: una misura di distanza, non di tempo.",
+  "habitable zone": "L'intervallo di distanze da una stella in cui un pianeta potrebbe mantenere acqua liquida in superficie: né troppo caldo né troppo freddo.",
+  "asteroid belt": "L'ampio anello di corpi rocciosi e metallici tra le orbite di Marte e Giove, così rado che le sonde lo attraversano senza difficoltà.",
+  "solar wind": "Il flusso di particelle cariche che esce dal Sole in ogni direzione a centinaia di chilometri al secondo.",
+  "magnetosphere": "La regione attorno a un pianeta dominata dal suo campo magnetico, che devia il vento solare e intrappola le particelle cariche in fasce di radiazione."
 }

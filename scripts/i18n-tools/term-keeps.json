@@ -2479,6 +2479,10 @@
     "why": "re-entry rendered 返回地球; natural",
     "tr": "83d2d58f78"
   },
+  "exoplanet|nl|science/observation/coronagraphs.json :: body_paragraphs.2": {
+    "why": "read 2026-11-04 (chunk 5): 'gas giants around nearby stars' — the word left out, the meaning kept",
+    "tr": "f1e9c7a970"
+  },
   "flyby|ar|programs/pioneer.json :: outcome.1.md": {
     "why": "variant: مرور قريب",
     "tr": "624b839251"
@@ -2754,6 +2758,14 @@
   "launch window|ru|science/scales-time/_intro.json :: paragraphs.1": {
     "why": "read 2026-11-04 (chunk 3): 'window' with launch implied by the sentence (the next window, every 26 months)",
     "tr": "cac259da32"
+  },
+  "magnetosphere|ar|essays/the-body-in-the-dark.json :: body.1.md": {
+    "why": "read 2026-11-04 (chunk 5): ar المجال المغناطيسي (magnetic field) where the sentence is about leaving Earth's protection, or a sentence-split artefact of the brief view",
+    "tr": "9c58d27f60"
+  },
+  "magnetosphere|ar|science/life-in-space/mars-human-architecture.json :: body_paragraphs.1": {
+    "why": "read 2026-11-04 (chunk 5): ar المجال المغناطيسي (magnetic field) where the sentence is about leaving Earth's protection, or a sentence-split artefact of the brief view",
+    "tr": "4a28304dd9"
   },
   "microgravity|ar|essays/asteroid-mining.json :: body.26.md": {
     "why": "read 2026-11-04 (chunk 2): the everyday word, weightlessness",

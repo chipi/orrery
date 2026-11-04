@@ -46,6 +46,7 @@
       "id": 1,
       "type": "stat",
       "title": "Requests \u00b7 6h",
+      "description": "Shows the total number of HTTP/1 requests received by the web surface of the Orrery application over the last 6 hours. A higher count indicates more activity, while a sudden drop may suggest reduced traffic or a service issue.",
       "gridPos": {
         "x": 0,
         "y": 0,
@@ -78,6 +79,7 @@
       "id": 2,
       "type": "stat",
       "title": "4xx \u00b7 6h",
+      "description": "Shows the number of 4xx HTTP client error responses from the web surface in the last 6 hours. A higher count indicates more client-side issues with requests, such as missing resources or invalid input.",
       "gridPos": {
         "x": 5,
         "y": 0,
@@ -128,6 +130,7 @@
       "id": 3,
       "type": "stat",
       "title": "5xx \u00b7 6h",
+      "description": "Shows the total number of 5xx HTTP error responses from the web surface in the last 6 hours. A higher count indicates more server-side errors, while a stable or decreasing count suggests improved reliability.",
       "gridPos": {
         "x": 10,
         "y": 0,
@@ -174,6 +177,7 @@
       "id": 4,
       "type": "stat",
       "title": "Bytes served \u00b7 6h",
+      "description": "This panel shows the total number of bytes served by the web interface over the last 6 hours. A higher value indicates more data being delivered, while a sudden increase may suggest heavier traffic or larger responses.",
       "gridPos": {
         "x": 15,
         "y": 0,
@@ -208,6 +212,7 @@
       "id": 5,
       "type": "stat",
       "title": "stderr \u00b7 6h",
+      "description": "Lines the orrery-web container wrote to stderr in the last 6 hours. Not every stderr line is an error, but a jump is worth a look in the logs.",
       "gridPos": {
         "x": 20,
         "y": 0,
@@ -258,6 +263,7 @@
       "id": 6,
       "type": "timeseries",
       "title": "Requests / min by status",
+      "description": "Shows the number of HTTP requests per minute grouped by response status code. A higher number of requests with 5xx status codes indicates more server errors, while a rise in 4xx codes may suggest client-side issues.",
       "gridPos": {
         "x": 0,
         "y": 6,
@@ -291,6 +297,7 @@
       "id": 7,
       "type": "timeseries",
       "title": "Bytes / min",
+      "description": "Bytes served by Orrery's web surface per minute, from its access log.",
       "gridPos": {
         "x": 12,
         "y": 6,
@@ -324,6 +331,7 @@
       "id": 8,
       "type": "table",
       "title": "Top paths \u00b7 6h",
+      "description": "Shows the 20 most frequently accessed paths on the web surface over the last 6 hours, measured in number of requests. A higher count indicates more traffic to that path, with the top paths being the most popular endpoints.",
       "gridPos": {
         "x": 0,
         "y": 14,
@@ -349,6 +357,7 @@
       "id": 9,
       "type": "logs",
       "title": "4xx / 5xx requests (recent)",
+      "description": "Orrery's web requests answered 4xx or 5xx, newest first. Read it to see which paths failed and how.",
       "gridPos": {
         "x": 12,
         "y": 14,
@@ -376,6 +385,7 @@
       "id": 10,
       "type": "logs",
       "title": "Recent access log",
+      "description": "Orrery's web access log (HTTP/1 request lines) in this environment, newest first.",
       "gridPos": {
         "x": 0,
         "y": 23,

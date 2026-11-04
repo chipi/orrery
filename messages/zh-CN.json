@@ -3108,6 +3108,8 @@
   "traverse_final_rover_position": "巡视器最终位置",
   "traverse_current_position": "当前位置",
   "traverse_sol": "火星日 {sol}",
+  "traverse_end_active": "{km} 千米 · 第{days}天",
+  "traverse_end_ended": "{km} 千米 · {days}天",
   "galaxy_name_andromeda": "仙女座星系 (M31)",
   "galaxy_name_triangulum": "三角座星系 (M33)",
   "galaxy_name_lmc": "大麦哲伦星系",

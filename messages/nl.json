@@ -3108,6 +3108,8 @@
   "traverse_final_rover_position": "Laatste positie van de rover",
   "traverse_current_position": "Huidige positie",
   "traverse_sol": "Sol {sol}",
+  "traverse_end_active": "{km} KM · DAG {days}",
+  "traverse_end_ended": "{km} KM · {days} DAGEN",
   "galaxy_name_andromeda": "Andromedanevel (M31)",
   "galaxy_name_triangulum": "Driehoeknevel (M33)",
   "galaxy_name_lmc": "Grote Magelhaense Wolk",

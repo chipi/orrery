@@ -271,7 +271,7 @@ describe('rebuildTraverses end marker', () => {
 });
 
 describe('rebuildTraverses captions', () => {
-  it('writes LANDED <date> and "<km> KM · <days> D" for a finished rover', () => {
+  it('writes LANDED <date> and "<km> KM · <days> DAYS" for a finished rover', () => {
     const pts: Array<[number, number]> = [
       [18.4, 77.4],
       [18.5, 77.5],
@@ -285,7 +285,7 @@ describe('rebuildTraverses captions', () => {
     const km = traversePathKm(pts, RADIUS_KM);
     expect(km).toBeLessThan(100);
     expect(texts).toContain('LANDED 2021-02-18');
-    expect(texts).toContain(`${km.toFixed(1)} KM · 11 D`);
+    expect(texts).toContain(`${km.toFixed(1)} KM · 11 DAYS`);
   });
 
   it('active rover caption reads "DAY n" and uses whole km at 100+ km', () => {

@@ -3108,6 +3108,8 @@
   "traverse_final_rover_position": "Последњи положај ровера",
   "traverse_current_position": "Тренутни положај",
   "traverse_sol": "Сол {sol}",
+  "traverse_end_active": "{km} KM · ДАН {days}",
+  "traverse_end_ended": "{km} KM · {days} ДАНА",
   "galaxy_name_andromeda": "Галаксија Андромеда (M31)",
   "galaxy_name_triangulum": "Галаксија Троугао (M33)",
   "galaxy_name_lmc": "Велики Магеланов облак",

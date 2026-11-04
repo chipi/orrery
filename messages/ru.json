@@ -3108,6 +3108,8 @@
   "traverse_final_rover_position": "Последнее положение ровера",
   "traverse_current_position": "Текущее положение",
   "traverse_sol": "Сол {sol}",
+  "traverse_end_active": "{km} КМ · ДЕНЬ {days}",
+  "traverse_end_ended": "{km} КМ · {days} ДН.",
   "galaxy_name_andromeda": "Галактика Андромеды (M31)",
   "galaxy_name_triangulum": "Галактика Треугольника (M33)",
   "galaxy_name_lmc": "Большое Магелланово Облако",

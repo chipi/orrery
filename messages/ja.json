@@ -3108,6 +3108,8 @@
   "traverse_final_rover_position": "ローバーの最終位置",
   "traverse_current_position": "現在位置",
   "traverse_sol": "ソル {sol}",
+  "traverse_end_active": "{km} KM · {days}日目",
+  "traverse_end_ended": "{km} KM · {days}日間",
   "galaxy_name_andromeda": "アンドロメダ銀河 (M31)",
   "galaxy_name_triangulum": "さんかく座銀河 (M33)",
   "galaxy_name_lmc": "大マゼラン雲",

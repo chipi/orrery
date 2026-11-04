@@ -3108,6 +3108,8 @@
   "traverse_final_rover_position": "Letzte Rover-Position",
   "traverse_current_position": "Aktuelle Position",
   "traverse_sol": "Sol {sol}",
+  "traverse_end_active": "{km} KM · TAG {days}",
+  "traverse_end_ended": "{km} KM · {days} TAGE",
   "galaxy_name_andromeda": "Andromedagalaxie (M31)",
   "galaxy_name_triangulum": "Dreiecksnebel (M33)",
   "galaxy_name_lmc": "Große Magellansche Wolke",

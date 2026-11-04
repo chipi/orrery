@@ -3108,6 +3108,8 @@
   "traverse_final_rover_position": "Posición final del rover",
   "traverse_current_position": "Posición actual",
   "traverse_sol": "Sol {sol}",
+  "traverse_end_active": "{km} KM · DÍA {days}",
+  "traverse_end_ended": "{km} KM · {days} DÍAS",
   "galaxy_name_andromeda": "Galaxia de Andrómeda (M31)",
   "galaxy_name_triangulum": "Galaxia del Triángulo (M33)",
   "galaxy_name_lmc": "Gran Nube de Magallanes",

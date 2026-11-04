@@ -14,6 +14,9 @@ import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import * as m from '$lib/paraglide/messages';
+import { getLocale } from '$lib/paraglide/runtime';
+import { formatNumber } from '$lib/format';
+import type { LocaleCode } from '$lib/locale';
 import { disposeObject3d } from '$lib/three/dispose-object3d';
 import { createMarkerHalo } from '$lib/three/marker-halo';
 import {
@@ -429,10 +432,12 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       const pathKm = traversePathKm(tr.points, ctx.radiusKm);
       const endIso = isActive ? new Date().toISOString() : tr.snapshot_date;
       const days = site?.landing_date ? daysBetween(site.landing_date, endIso) : 0;
-      const kmText = pathKm >= 100 ? pathKm.toFixed(0) : pathKm.toFixed(1);
+      const loc = getLocale() as LocaleCode;
+      const kmText = formatNumber(pathKm, loc, pathKm >= 100 ? 0 : 1);
+      const daysText = formatNumber(days, loc);
       const endLabelText = isActive
-        ? `${kmText} KM · DAY ${days.toLocaleString()}`
-        : `${kmText} KM · ${days.toLocaleString()} D`;
+        ? m.traverse_end_active({ km: kmText, days: daysText })
+        : m.traverse_end_ended({ km: kmText, days: daysText });
       const endBuilt = buildTraverseCaption(endLabelText, isActive ? '#ef4444' : '#f59e0b', 0.34);
       endBuilt.group.position.copy(placeCaption(endPosWorld, tangent));
       planetMesh.add(endBuilt.group);

@@ -219,6 +219,22 @@ only if the site renders them inconsistently).
 - **PWA:** the Cloudflare cache bypass for `/_app/env.js` and `sw.js` is not verified; without it
   stale config can last up to 4 h after a deploy (also #517, #518).
 
+**Step 4 progress (2026-11-04):**
+
+- Nav: fixed (`bb5432bfd49`) — hamburger up to 1219 px; locale/contrast/debug move into the
+  drawer at ≤600 px.
+- Mobile: `/explore` label clamp + declutter fixed (`2e365a637a0`, explore e2e 24 passed). "Earth
+  dep" on `/fly` is a deliberate short label. Open for the operator: Earth has no 2D view (disabled
+  on purpose in `ecbbf98f183`), Venus has no sky scene (`AR_BODIES` = earth, moon, mars).
+- a11y: fixed in `e32ee4c7fa7` — skip link, sr-only h1 on the five routes, reduced-motion guard,
+  `--color-text-dim` 0.55, scrubber `aria-valuetext`, KaTeX MathML, landing hero and lightbox alt.
+  Closed without change: live region (layer toggles use `aria-pressed`; a locale change reloads),
+  canvas labels (each scene has a parallel list), the other 57 `alt=""` (decorative). Widening the
+  axe scope is a separate decision. Axe on the dev server: 40 passed, `/library` and `/credits`
+  timed out at 90 s (re-run on a production build).
+- Fleet #635/#637/#638: do not reproduce at HEAD (dev server, `/fly`, `/moon`, both line-ups en/de:
+  0 page errors). Issues left open; not commented.
+
 **Not in 0.9.6 unless the operator says so:** Hebrew (pilot only, `18dc87c2bff`; `he` not in
 `native-terms.json`, `RTL_LOCALES` is `['ar']`); the /fly items below; mobile store publishing;
 v1.0.

@@ -234,6 +234,16 @@ only if the site renders them inconsistently).
   timed out at 90 s (re-run on a production build).
 - Fleet #635/#637/#638: do not reproduce at HEAD (dev server, `/fly`, `/moon`, both line-ups en/de:
   0 page errors). Issues left open; not commented.
+- a11y on a production build: `/library` and `/credits` 0 violations (`-g "library|credits"`, 3
+  passed). The dev-server timeouts were dev-only.
+- Credits: `/iss` and `/tiangong` do not use TLEs — the CelesTrak data drives the Lab and the
+  `/earth` AR station markers, so `used_on` gained `earth` (`e0496fdd14f`). The MCP SDK is credited
+  in `tech-bom.json` (software, not data) — no change. `fleet-galleries/galileo/01` credited to
+  Commons `Galileo_spacecraft_model.png` (same picture, alpha flattened; `0786055cdc0`, placeholder
+  ceiling 379). #550 needs per-image operator approval and removes slots — asked.
+- PWA: verified on prod 2026-11-04 — `/_app/env.js`, `/sw.js`, `/_app/version.json` answer
+  `cache-control: no-cache`, `cf-cache-status: DYNAMIC` on repeat requests (not CDN-cached).
+- Traverses (Opportunity, Spirit, Zhurong): not started — asked.
 
 **Not in 0.9.6 unless the operator says so:** Hebrew (pilot only, `18dc87c2bff`; `he` not in
 `native-terms.json`, `RTL_LOCALES` is `['ar']`); the /fly items below; mobile store publishing;

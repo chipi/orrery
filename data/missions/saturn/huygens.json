@@ -66,7 +66,7 @@
         "met_days": 617,
         "type": "flyby",
         "label": "Venus #2 — gravity assist",
-        "description": "Second Venus flyby (1999-06-24, 600 km). Together with the first assist, sets up the Earth flyby 55 days later."
+        "description": "Second Venus flyby (1999-06-24, 623 km). Together with the first assist, sets up the Earth flyby 55 days later."
       },
       {
         "met_days": 672,
@@ -78,7 +78,7 @@
         "met_days": 1172,
         "type": "flyby",
         "label": "Jupiter — gravity assist",
-        "description": "9.7 million km from Jupiter (2000-12-30). Final assist delivers the remaining velocity for Saturn arrival."
+        "description": "9.85 million km from Jupiter (2000-12-30). Final assist delivers the remaining velocity for Saturn arrival."
       },
       {
         "met_days": 2451,
@@ -87,7 +87,7 @@
         "description": "Cassini's main-engine burn (2004-07-01) captures the stack into Saturn orbit. Huygens remains dormant, attached to Cassini, for the next six months while the orbiter homes in on a Titan flyby geometry."
       },
       {
-        "met_days": 2617,
+        "met_days": 2628,
         "type": "separation",
         "label": "Huygens release",
         "description": "Huygens released from Cassini on 2004-12-25, coasting toward Titan on a ballistic trajectory with no propulsion. The probe then hibernated for 20 days."

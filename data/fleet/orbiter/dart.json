@@ -11,6 +11,7 @@
   "epoch": "commercial-era",
   "best_known_for": "First planetary defense impactor (Dimorphos)",
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "specs": { "length_m": 2.6, "diameter_m": 1.9, "width_m": 1.8 },
   "links": [
     {
       "l": "DART — Wikipedia",

@@ -1,6 +1,10 @@
 {
   "id": "rosetta",
-  "videos": [{ "id": "vid-30d2195a63fa" }],
+  "videos": [
+    {
+      "id": "vid-30d2195a63fa"
+    }
+  ],
   "agency": "ESA",
   "agency_full": "European Space Agency (lead) — DLR (Philae lander) / CNES / ASI / NASA (DSN tracking + 3 instruments)",
   "sector": "gov",
@@ -85,19 +89,19 @@
         "description": "Closest approach 250 km above the Martian surface on 2007-02-25 — only 15 minutes inside Mars's eclipse. The spacecraft was put into hibernation mode during the brief eclipse to conserve power, then commanded back to operation immediately on emergence."
       },
       {
-        "met_days": 1349,
+        "met_days": 1351,
         "type": "flyby",
         "label": "Earth #2 — gravity assist",
         "description": "Closest approach 5,295 km on 2007-11-13. Briefly mistaken for a near-Earth asteroid (designated 2007 VN84) before observers realised it was Rosetta heading out."
       },
       {
-        "met_days": 1671,
+        "met_days": 1648,
         "type": "flyby",
         "label": "Steins (2867) — asteroid flyby",
         "description": "Closest approach 800 km from main-belt asteroid 2867 Steins on 2008-09-05. Steins's diamond-shaped 6 km E-type body provided the first close-up confirmation of an enstatite-chondrite parent body's surface morphology."
       },
       {
-        "met_days": 2058,
+        "met_days": 2082,
         "type": "flyby",
         "label": "Earth #3 — gravity assist",
         "description": "Final Earth flyby on 2009-11-13, closest approach 2,481 km. The boost takes Rosetta out to the aphelion needed to match 67P's orbit, after which the spacecraft entered deep-space hibernation."

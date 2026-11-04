@@ -27,5 +27,9 @@
       "u": "https://en.wikipedia.org/wiki/Soyuz_(rocket_family)",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "height_m": 46.3,
+    "diameter_m": 2.95
+  }
 }

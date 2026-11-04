@@ -10,6 +10,7 @@
   "departure_date": "1963-05-15",
   "arrival_date": "1963-05-15",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Atlas LV-3B (MA-9)",
   "payload": "Mercury capsule #20 (1376 kg dry); Gordon Cooper",
   "delta_v": "~9.4 km/s (LEO)",

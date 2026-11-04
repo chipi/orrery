@@ -27,5 +27,9 @@
       "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Europe_s_new_Ariane_6_rocket_powers_into_space",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "height_m": 63,
+    "diameter_m": 5.4
+  }
 }

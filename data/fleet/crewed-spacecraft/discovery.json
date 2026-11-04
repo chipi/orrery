@@ -31,6 +31,11 @@
       "l": "NASA — Discovery orbiter overview",
       "u": "https://www.nasa.gov/centers/kennedy/shuttleoperations/orbiters/discovery-info.html",
       "t": "core"
+    },
+    {
+      "l": "Wikipedia — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+      "t": "deep"
     }
   ],
   "linked_missions": [],
@@ -64,5 +69,10 @@
       "mission_id": "sts-133",
       "flight_designation": "STS-133 (2011-02-24) · final Discovery flight (39 total — most of any orbiter) · delivered Leonardo PMM to ISS"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 37.237,
+    "wingspan_m": 23.79,
+    "payload_bay_diameter_m": 4.6
+  }
 }

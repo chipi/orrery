@@ -2,24 +2,40 @@
   "missionId": "apollo7",
   "siteId": "apollo7",
   "body": "earth",
-  "landingSite": { "lat": 27.53, "lon": -64.17 },
-  "entryState": { "altitudeM": 122000, "velocityMs": 7820, "flightPathAngleDeg": 1.5 },
+  "landingSite": {
+    "lat": 27.53,
+    "lon": -64.17
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7878,
+    "flightPathAngleDeg": 2.072
+  },
   "entryMassKg": 5560,
   "entryCdA": 17.7,
   "liftToDragRatio": 0.3,
-  "targetDownrangeKm": 3000,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "targetDownrangeKm": 2532,
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7300,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 367,
-    "terminalCdA": 1392
+    "chuteDeployAltM": 7160,
+    "terminalHandoffAltM": 3140,
+    "parachuteCdA": 35.5,
+    "terminalCdA": 949
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "Apollo 7 Mission Report (NASA MSC-PA-R-68-15)",
       "u": "https://www.nasa.gov/history/afj/ap07fj/"
+    },
+    {
+      "l": "Apollo 7 Mission Report (MSC-PA-R-68-15): entry 259:53:26 at 25,846 ft/s, -2.07°; 3.33 g; drogue 260:03:17 ~23,500 ft; main 260:04:14 ~10,300 ft; landing 260:09:03",
+      "u": "https://archive.org/details/apollo-7-mission-report"
     }
   ]
 }

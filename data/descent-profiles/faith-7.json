@@ -13,18 +13,29 @@
   },
   "entryMassKg": 1350,
   "entryCdA": 3,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA",
+    "terminalHandoffAltM"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 90,
-    "terminalCdA": 338
+    "chuteDeployAltM": 12800,
+    "terminalHandoffAltM": 2308,
+    "parachuteCdA": 4.4,
+    "terminalCdA": 262
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "faith-7 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "SP-45 (MA-9): drogue at 42,000 ft (34:14:31), main 34:16:03, landing 34:19:49 at 30 ft/s",
+      "u": "https://ntrs.nasa.gov/api/citations/19630012071/downloads/19630012071.pdf"
     }
   ]
 }

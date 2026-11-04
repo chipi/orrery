@@ -30,5 +30,9 @@
   ],
   "linked_missions": [
     "magellan"
-  ]
+  ],
+  "specs": {
+    "length_m": 6.4,
+    "diameter_m": 4.6
+  }
 }

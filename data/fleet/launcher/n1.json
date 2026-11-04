@@ -27,5 +27,9 @@
       "u": "https://history.nasa.gov/SP-4225/nomenclature/N1.htm",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "height_m": 105.3,
+    "diameter_m": 17
+  }
 }

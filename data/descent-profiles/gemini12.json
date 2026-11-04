@@ -12,21 +12,32 @@
     "flightPathAngleDeg": 1.5
   },
   "entryMassKg": 2000,
-  "entryCdA": 6.0,
+  "entryCdA": 6,
   "liftToDragRatio": 0.19,
-  "targetDownrangeKm": 2700,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "targetDownrangeKm": 2800,
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 133,
-    "terminalCdA": 501
+    "chuteDeployAltM": 16800,
+    "terminalHandoffAltM": 3231,
+    "parachuteCdA": 4.2,
+    "terminalCdA": 227
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "gemini12 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "Gemini XII Mission Report (MSC-G-R-67-1): 6.4 g; 400K ft ~94:20:12; drogue 94:29:10 at ~55,000 ft, main 94:30:35 at 10,600 ft, landing 94:34:30",
+      "u": "https://www.ibiblio.org/apollo/Documents/Gemini12MissionReport.pdf"
     }
   ]
 }

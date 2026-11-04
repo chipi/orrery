@@ -26,6 +26,11 @@
       "l": "On the Shoulders of Titans: A History of Project Gemini (NASA SP-4203)",
       "u": "https://history.nasa.gov/SP-4203/toc.htm",
       "t": "deep"
+    },
+    {
+      "l": "NASA NSSDCA Gemini 3 spacecraft description — dimensions",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-024A",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -77,5 +82,10 @@
     "gemini7",
     "gemini8",
     "gemini12"
-  ]
+  ],
+  "specs": {
+    "length_m": 5.736,
+    "diameter_m": 3.048,
+    "capsule_height_m": 3.45
+  }
 }

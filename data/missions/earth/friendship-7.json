@@ -10,6 +10,7 @@
   "departure_date": "1962-02-20",
   "arrival_date": "1962-02-20",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Atlas LV-3B (MA-6)",
   "payload": "Mercury capsule #13 (1955 kg); John Glenn",
   "delta_v": "~9.4 km/s (LEO)",

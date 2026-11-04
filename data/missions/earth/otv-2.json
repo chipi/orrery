@@ -10,6 +10,7 @@
   "departure_date": "2011-03-05",
   "arrival_date": "2012-06-16",
   "transit_days": 469,
+  "round_trip": true,
   "vehicle": "Atlas V 501 (AV-026)",
   "payload": "USA-226; X-37B Orbital Test Vehicle (~5000 kg). Payloads largely classified.",
   "delta_v": "~9.4 km/s (LEO)",

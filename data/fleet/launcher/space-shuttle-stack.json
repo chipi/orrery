@@ -21,11 +21,20 @@
       "l": "Space Shuttle Era (NASA)",
       "u": "https://www.nasa.gov/space-shuttle/",
       "t": "core"
+    },
+    {
+      "l": "NASA The Space Shuttle reference page: Shuttle Basics Length 184 feet — dimensions",
+      "u": "https://www.nasa.gov/reference/the-space-shuttle/",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "galileo",
     "magellan",
     "ulysses"
-  ]
+  ],
+  "specs": {
+    "height_m": 56.1,
+    "diameter_m": 8.4
+  }
 }

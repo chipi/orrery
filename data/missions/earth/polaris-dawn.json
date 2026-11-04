@@ -10,6 +10,7 @@
   "departure_date": "2024-09-10",
   "arrival_date": "2024-09-15",
   "transit_days": 5,
+  "round_trip": true,
   "vehicle": "Falcon 9 Block 5 (B1083.4) + Crew Dragon C207 (Resilience)",
   "payload": "~12500 kg LEO; 4 crew, first commercial EVA suits",
   "delta_v": "~10.5 km/s (1408 km initial apogee, then 730 km circular)",

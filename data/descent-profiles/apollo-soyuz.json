@@ -14,19 +14,29 @@
   "entryMassKg": 5560,
   "entryCdA": 17.7,
   "liftToDragRatio": 0.3,
-  "targetDownrangeKm": 3000,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "targetDownrangeKm": 3725,
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "flightPathAngleDeg",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 371,
-    "terminalCdA": 1392
+    "chuteDeployAltM": 5655,
+    "terminalHandoffAltM": 2180,
+    "parachuteCdA": 19.3,
+    "terminalCdA": 823
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "apollo-soyuz — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "ASTP Mission Evaluation Report (JSC-10607): entry 224:39:00 at 122 km; drogue 224:54:37 at 5,655 m (manual), main 224:55:17 at 2,180 m, landing 224:58:24",
+      "u": "https://ntrs.nasa.gov/api/citations/19760023154/downloads/19760023154.pdf"
     }
   ]
 }

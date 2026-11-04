@@ -23,6 +23,13 @@
       "t": "core"
     }
   ],
-  "linked_missions": ["soyuz-1", "soyuz-11"],
-  "linked_sites": []
+  "linked_missions": [
+    "soyuz-1",
+    "soyuz-11"
+  ],
+  "linked_sites": [],
+  "specs": {
+    "height_m": 50.7,
+    "diameter_m": 2.95
+  }
 }

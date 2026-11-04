@@ -21,11 +21,25 @@
       "l": "Skylab — NASA",
       "u": "https://www.nasa.gov/skylab/",
       "t": "core"
+    },
+    {
+      "l": "Skylab: A Guidebook (NASA EP-107, 1973) — NTRS",
+      "u": "https://ntrs.nasa.gov/citations/19730025070",
+      "t": "deep"
+    },
+    {
+      "l": "The Skylab Parasol (NASA, 1976) — NTRS",
+      "u": "https://ntrs.nasa.gov/citations/19760012092",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "skylab-2",
     "skylab-3",
     "skylab-4"
-  ]
+  ],
+  "specs": {
+    "length_m": 25.1,
+    "diameter_m": 6.6
+  }
 }

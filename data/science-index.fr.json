@@ -827,6 +827,13 @@
   },
   {
     "tab": "planets",
+    "section": "earth-surface-imagery",
+    "title": "Imagerie de la surface de la Terre — comment fonctionnent les couches",
+    "intro": "Zoomez de la Terre entière jusqu'à un pas de tir et vous regardez cinq couches d'imagerie, issues de satellites et d'avions, empilées les unes sur les autres et remplacées à mesure que vous vous approchez.",
+    "haystack": "imagerie de la surface de la terre — comment fonctionnent les couches zoomez de la terre entière jusqu'à un pas de tir et vous regardez cinq couches d'imagerie, issues de satellites et d'avions, empilées les unes sur les autres et remplacées à mesure que vous vous approchez. le niveau 0 est le globe : une texture globale de 4096 pixels enroulée autour de la sphère. l'équateur terrestre mesure environ 40 000 km, si bien que chaque pixel couvre à peu près 10 km — assez pour les continents, les déserts et les calottes glaciaires, mais pas pour un seul site de lancement. le niveau 1 est la couche de contexte : autour du pas de tir sélectionné, un morceau de 400 km d'une mosaïque sans nuages, d'environ 100 m par pixel, est drapé sur le globe à sa vraie latitude et longitude. la couche est dessinée à l'échelle réelle et se fond doucement dans le globe sur les bords ; sa luminosité générale est ajustée à celle du globe pour que les deux se rejoignent sans raccord. earth surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
     "section": "kuiper-belt",
     "title": "La Ceinture de Kuiper",
     "intro": "Un disque de corps glacés au-delà de Neptune — prédit en 1951, confirmé en 1992, et source de toutes les comètes de courte période qui passent près de la Terre.",
@@ -845,6 +852,20 @@
     "title": "Champs magnétiques",
     "intro": "La magnétosphère de chaque planète est différente. Celle de Saturne est parfaitement alignée, celle d'Uranus est chaotique, et Vénus et Mars n'en ont pas du tout.",
     "haystack": "champs magnétiques la magnétosphère de chaque planète est différente. celle de saturne est parfaitement alignée, celle d'uranus est chaotique, et vénus et mars n'en ont pas du tout. inclinaison de l'axe magnétique (angle entre le dipôle et l'axe de rotation) pour chaque planète dotée d'une dynamo connue : mercure 0,7°, terre 10,5°, jupiter 9,6°, saturne ~0°, uranus 58,6°, neptune 46,9°. vénus, mars et pluton ne possèdent pas de dipôle globalement significatif aujourd'hui. les dipôles d'uranus et de neptune, fortement désaxés, sont en outre décalés par rapport au centre de la planète — celui d'uranus d'environ 1/3 du rayon planétaire. la dynamo conventionnelle (noyau de fer) ne peut pas facilement produire cette géométrie ; l'explication privilégiée est qu'uranus et neptune abritent leurs dynamos dans une couche externe du manteau composée d'eau ionique, d'ammoniac et de méthane, et non dans un noyau profond. magnetic fields"
+  },
+  {
+    "tab": "planets",
+    "section": "mars-surface-imagery",
+    "title": "Imagerie de la surface de Mars — comment fonctionnent les couches",
+    "intro": "Zoomez de la planète entière jusqu'aux traces de roues d'un rover et vous regardez six couches d'imagerie issues d'orbiteurs et de rovers, empilées les unes sur les autres et remplacées à mesure que vous vous approchez.",
+    "haystack": "imagerie de la surface de mars — comment fonctionnent les couches zoomez de la planète entière jusqu'aux traces de roues d'un rover et vous regardez six couches d'imagerie issues d'orbiteurs et de rovers, empilées les unes sur les autres et remplacées à mesure que vous vous approchez. le niveau 0 est le globe : une texture globale de 4096 pixels enroulée autour de la sphère. l'équateur de mars mesure environ 21 300 km, si bien que chaque pixel couvre à peu près 5 km — assez pour les volcans, les canyons et les calottes polaires, mais pas pour un seul site d'atterrissage. le niveau 1 est la couche de contexte : autour du site sélectionné, un morceau de 400 km de la mosaïque infrarouge de jour réalisée par themis, le thermal emission imaging system de mars odyssey, est drapé sur la planète à sa vraie latitude et longitude, à environ 100 m par pixel. themis voit la chaleur, pas la lumière : de jour, les pentes face au soleil sont plus chaudes que celles qui lui tournent le dos, si bien que la mosaïque infrarouge se lit en grande partie comme une carte en relief ombré de chaque bord de cratère et de chaque chenal. elle n'a pas de couleur propre ; la couche emprunte donc sa couleur et sa luminosité au globe et ne tient de themis que ses détails nets, et elle se fond doucement dans le globe sur les bords. mars surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
+    "section": "moon-surface-imagery",
+    "title": "Imagerie de la surface lunaire — comment fonctionnent les couches",
+    "intro": "Zoomez de la Lune entière jusqu'à un site d'atterrissage : vous ne voyez pas une image mais six, prises par différentes caméras à bord de différents vaisseaux, empilées et remplacées à mesure que vous approchez.",
+    "haystack": "imagerie de la surface lunaire — comment fonctionnent les couches zoomez de la lune entière jusqu'à un site d'atterrissage : vous ne voyez pas une image mais six, prises par différentes caméras à bord de différents vaisseaux, empilées et remplacées à mesure que vous approchez. le niveau 0 est le globe : une texture globale de 4096 pixels enroulée autour de la sphère. l'équateur lunaire mesure environ 10 900 km, si bien que chaque pixel couvre à peu près 2,7 km. c'est largement suffisant depuis l'orbite, mais beaucoup trop grossier pour voir où quelqu'un a atterri. le niveau 1 est la couche de contexte : autour du site sélectionné, un morceau de 400 km de la mosaïque de la wide angle camera du lunar reconnaissance orbiter, d'environ 100 m par pixel, est drapé sur le globe à sa latitude et sa longitude réelles. la wide angle camera image une bande de 60 km de large en sept bandes de couleur ; à mesure que la lune tourne sous l'orbite polaire de lro, les bandes s'additionnent pour couvrir tout le globe, et les longues ombres de la lumière rasante près du [terminateur](planets/sub-solar-and-terminator) font ressortir les cratères. la couche est dessinée à l'échelle réelle, tire sa couleur et sa luminosité du globe et s'y fond doucement sur les bords. moon surface imagery — how the layers work"
   },
   {
     "tab": "planets",

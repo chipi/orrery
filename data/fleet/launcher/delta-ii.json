@@ -40,5 +40,9 @@
     "messenger",
     "dawn",
     "phoenix"
-  ]
+  ],
+  "specs": {
+    "height_m": 38.9,
+    "diameter_m": 2.44
+  }
 }

@@ -827,6 +827,13 @@
   },
   {
     "tab": "planets",
+    "section": "earth-surface-imagery",
+    "title": "Earth surface imagery — how the layers work",
+    "intro": "Zoom from the whole Earth down to a launch pad and you are looking at five layers of imagery, from satellites and from aircraft, stacked on top of each other and swapped in as you get closer.",
+    "haystack": "earth surface imagery — how the layers work zoom from the whole earth down to a launch pad and you are looking at five layers of imagery, from satellites and from aircraft, stacked on top of each other and swapped in as you get closer. level 0 is the globe: a 4096-pixel global texture wrapped around the sphere. earth's equator is about 40,000 km long, so each pixel spans roughly 10 km — enough for continents, deserts and ice caps, not for a single launch site. level 1 is the context layer: around the pad you have selected, a 400 km piece of a cloud-free mosaic is draped over the globe at its true latitude and longitude, about 100 m per pixel. the layer is drawn at true scale and fades softly into the globe at its edges; its broad brightness is matched to the globe so the two meet without a seam."
+  },
+  {
+    "tab": "planets",
     "section": "kuiper-belt",
     "title": "The Kuiper Belt",
     "intro": "A disc of icy bodies beyond Neptune — predicted in 1951, confirmed in 1992, and the source of every short-period comet that flies past Earth.",
@@ -845,6 +852,20 @@
     "title": "Magnetic Fields",
     "intro": "Every planet's magnetosphere is different. Saturn's is uniquely aligned, Uranus's is chaotic, Venus and Mars don't have one at all.",
     "haystack": "magnetic fields every planet's magnetosphere is different. saturn's is uniquely aligned, uranus's is chaotic, venus and mars don't have one at all. magnetic-axis tilt (angle between the dipole and the rotation axis) for each planet with a known dynamo: mercury 0.7°, earth 10.5°, jupiter 9.6°, saturn ~0°, uranus 58.6°, neptune 46.9°. venus, mars, and pluto have no globally significant dipole today. uranus and neptune's wildly off-axis dipoles are also offset from the planet's centre — uranus's by about 1/3 of the planet's radius. the conventional dynamo (iron core) can't easily produce that geometry; the favoured explanation is that uranus and neptune host their dynamos in an outer mantle layer of ionic water + ammonia + methane, not in a deep core."
+  },
+  {
+    "tab": "planets",
+    "section": "mars-surface-imagery",
+    "title": "Mars surface imagery — how the layers work",
+    "intro": "Zoom from the whole planet down to a rover's wheel tracks and you are looking at six layers of imagery from orbiters and rovers, stacked on top of each other and swapped in as you get closer.",
+    "haystack": "mars surface imagery — how the layers work zoom from the whole planet down to a rover's wheel tracks and you are looking at six layers of imagery from orbiters and rovers, stacked on top of each other and swapped in as you get closer. level 0 is the globe: a 4096-pixel global texture wrapped around the sphere. mars's equator is about 21,300 km long, so each pixel spans roughly 5 km — enough for the volcanoes, canyons and polar caps, not for a single landing site. level 1 is the context layer: around the site you have selected, a 400 km piece of the daytime infrared mosaic made by themis, the thermal emission imaging system on mars odyssey, is draped over the planet at its true latitude and longitude, about 100 m per pixel. themis sees heat, not light: by day, slopes facing the sun are warmer than slopes facing away, so the infrared mosaic reads largely like a shaded relief map of every crater rim and channel. it has no colour of its own, so the layer takes its colour and brightness from the globe and only its sharp detail from themis, and it fades softly into the globe at the edges."
+  },
+  {
+    "tab": "planets",
+    "section": "moon-surface-imagery",
+    "title": "Moon surface imagery — how the layers work",
+    "intro": "Zoom from the whole Moon down to a landing site and you are not looking at one picture but at six, from different cameras on different spacecraft, stacked on top of each other and swapped in as you get closer.",
+    "haystack": "moon surface imagery — how the layers work zoom from the whole moon down to a landing site and you are not looking at one picture but at six, from different cameras on different spacecraft, stacked on top of each other and swapped in as you get closer. level 0 is the globe: a 4096-pixel global texture wrapped around the sphere. the moon's equator is about 10,900 km long, so each pixel spans roughly 2.7 km — plenty from orbit, far too coarse to see where anyone landed. level 1 is the context layer: around the site you have selected, a 400 km piece of the mosaic made by lro's wide angle camera, about 100 m per pixel, is draped over the globe at its true latitude and longitude. the wide angle camera images a strip 60 km wide in seven colour bands; as the moon turns beneath lro's polar orbit, the strips add up to the whole globe, and the long shadows of low sunlight near the [terminator](planets/sub-solar-and-terminator) are what make craters stand out. the layer is drawn at true scale, takes its colour and brightness from the globe, and fades softly into it at the edges."
   },
   {
     "tab": "planets",

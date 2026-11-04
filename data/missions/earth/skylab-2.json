@@ -10,6 +10,7 @@
   "departure_date": "1973-05-25",
   "arrival_date": "1973-06-22",
   "transit_days": 28,
+  "round_trip": true,
   "vehicle": "Saturn IB (SA-206)",
   "payload": "20121 kg launch mass; CSM-116 + 3-person crew",
   "delta_v": "~9.4 km/s (LEO)",

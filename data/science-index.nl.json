@@ -827,6 +827,13 @@
   },
   {
     "tab": "planets",
+    "section": "earth-surface-imagery",
+    "title": "Beelden van het aardoppervlak — hoe de lagen werken",
+    "intro": "Zoom je van de hele Aarde in tot een lanceerplatform, dan kijk je naar vijf lagen beeldmateriaal, van satellieten en vliegtuigen, op elkaar gestapeld en verwisseld naarmate je dichterbij komt.",
+    "haystack": "beelden van het aardoppervlak — hoe de lagen werken zoom je van de hele aarde in tot een lanceerplatform, dan kijk je naar vijf lagen beeldmateriaal, van satellieten en vliegtuigen, op elkaar gestapeld en verwisseld naarmate je dichterbij komt. niveau 0 is de bol: een globale textuur van 4096 pixels om de bol gewikkeld. de evenaar van de aarde is ongeveer 40.000 km lang, dus elke pixel beslaat zo'n 10 km — genoeg voor continenten, woestijnen en ijskappen, maar niet voor één enkele lanceerplaats. niveau 1 is de contextlaag: rond het geselecteerde platform wordt een stuk van 400 km van een wolkenvrij mozaïek, ongeveer 100 m per pixel, op zijn ware breedte- en lengtegraad over de bol gelegd. de laag is op ware schaal getekend en vervaagt aan de randen zacht in de bol; haar globale helderheid is afgestemd op de bol, zodat beide zonder naad op elkaar aansluiten. earth surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
     "section": "kuiper-belt",
     "title": "De Kuipergordel",
     "intro": "Een schijf van ijslichamen voorbij Neptunus — voorspeld in 1951, bevestigd in 1992, en de bron van elke kortperiodieke komeet die langs de Aarde vliegt.",
@@ -845,6 +852,20 @@
     "title": "Magnetische velden",
     "intro": "De magnetosfeer van elke planeet is anders. Die van Saturnus is uniek uitgelijnd, die van Uranus is chaotisch, Venus en Mars hebben er helemaal geen.",
     "haystack": "magnetische velden de magnetosfeer van elke planeet is anders. die van saturnus is uniek uitgelijnd, die van uranus is chaotisch, venus en mars hebben er helemaal geen. de kanteling van de magnetische as (de hoek tussen de dipool en de rotatieas) voor elke planeet met een bekende dynamo: mercurius 0,7°, aarde 10,5°, jupiter 9,6°, saturnus ~0°, uranus 58,6°, neptunus 46,9°. venus, mars en pluto hebben momenteel geen globaal significante dipool. de sterk van de as afwijkende dipolen van uranus en neptunus zijn ook verschoven ten opzichte van het middelpunt van de planeet — die van uranus met ongeveer 1/3 van de planeetstraal. de conventionele dynamo (ijzeren kern) kan die geometrie niet gemakkelijk voortbrengen; de voorkeursverklaring is dat uranus en neptunus hun dynamo's herbergen in een buitenste mantellaag van ionisch water + ammoniak + methaan, en niet in een diepe kern. magnetic fields"
+  },
+  {
+    "tab": "planets",
+    "section": "mars-surface-imagery",
+    "title": "Beelden van het Marsoppervlak — hoe de lagen werken",
+    "intro": "Zoom je van de hele planeet in tot de wieltracks van een rover, dan kijk je naar zes lagen beeldmateriaal van orbiters en rovers, op elkaar gestapeld en verwisseld naarmate je dichterbij komt.",
+    "haystack": "beelden van het marsoppervlak — hoe de lagen werken zoom je van de hele planeet in tot de wieltracks van een rover, dan kijk je naar zes lagen beeldmateriaal van orbiters en rovers, op elkaar gestapeld en verwisseld naarmate je dichterbij komt. niveau 0 is de bol: een globale textuur van 4096 pixels om de bol gewikkeld. de evenaar van mars is ongeveer 21.300 km lang, dus elke pixel beslaat zo'n 5 km — genoeg voor de vulkanen, canyons en poolkappen, maar niet voor één enkele landingsplaats. niveau 1 is de contextlaag: rond de gekozen plaats wordt een stuk van 400 km van het infraroodmozaïek van overdag, gemaakt door themis, het thermal emission imaging system op mars odyssey, op zijn ware breedte- en lengtegraad over de planeet gelegd, met ongeveer 100 m per pixel. themis ziet warmte, geen licht: overdag zijn hellingen die naar de zon gericht zijn warmer dan hellingen die ervan af wijzen, dus het infraroodmozaïek leest grotendeels als een gearceerde reliëfkaart van elke kraterrand en elke geul. het heeft geen eigen kleur, dus de laag ontleent kleur en helderheid aan de bol en alleen het scherpe detail aan themis, en aan de randen vervaagt ze zacht in de bol. mars surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
+    "section": "moon-surface-imagery",
+    "title": "Beeldmateriaal van het maanoppervlak — hoe de lagen werken",
+    "intro": "Als je van de hele Maan inzoomt op een landingsplaats, kijk je niet naar één afbeelding maar naar zes, gemaakt door verschillende camera's op verschillende ruimtevaartuigen, op elkaar gestapeld en verwisseld naarmate je dichterbij komt.",
+    "haystack": "beeldmateriaal van het maanoppervlak — hoe de lagen werken als je van de hele maan inzoomt op een landingsplaats, kijk je niet naar één afbeelding maar naar zes, gemaakt door verschillende camera's op verschillende ruimtevaartuigen, op elkaar gestapeld en verwisseld naarmate je dichterbij komt. niveau 0 is de bol: een globale textuur van 4096 pixels rond de bol gewikkeld. de evenaar van de maan is ongeveer 10.900 km lang, dus elke pixel beslaat zo'n 2,7 km. vanuit een baan is dat ruim voldoende, maar veel te grof om te zien waar iemand is geland. niveau 1 is de contextlaag: rond de geselecteerde plek ligt een stuk van 400 km van het mozaïek van de wide angle camera van de lunar reconnaissance orbiter, ongeveer 100 m per pixel, over de bol heen op zijn ware breedte- en lengtegraad. de wide angle camera beeldt een strook van 60 km breed af in zeven kleurbanden; terwijl de maan onder de poolbaan van lro draait, vormen de stroken samen de hele bol, en de lange schaduwen van laagstaand zonlicht bij de [terminator](planets/sub-solar-and-terminator) laten kraters opvallen. de laag is op ware schaal getekend, ontleent kleur en helderheid aan de bol en vervaagt aan de randen zacht in de bol. moon surface imagery — how the layers work"
   },
   {
     "tab": "planets",

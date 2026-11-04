@@ -10,6 +10,7 @@
   "departure_date": "1962-10-03",
   "arrival_date": "1962-10-03",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Atlas LV-3B (MA-8)",
   "payload": "Mercury capsule #16 (1962 kg); Wally Schirra",
   "delta_v": "~9.4 km/s (LEO)",

@@ -1,0 +1,1 @@
+var e=[`crewed`,`sample-return`,`rover`,`orbiter`,`lander`];function t(t){if(!t)return`lander`;if(e.includes(t))return t;let n=t.toUpperCase();return/\bCREWED\b/.test(n)?`crewed`:n.includes(`SAMPLE RETURN`)?`sample-return`:n.includes(`ROVER`)?`rover`:n.includes(`ORBITER`)?`orbiter`:`lander`}export{t};

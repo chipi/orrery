@@ -8,25 +8,35 @@
   },
   "entryState": {
     "altitudeM": 122000,
-    "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "velocityMs": 7430,
+    "flightPathAngleDeg": 1.42
   },
   "entryMassKg": 2000,
-  "entryCdA": 6.0,
+  "entryCdA": 6,
   "liftToDragRatio": 0.19,
-  "targetDownrangeKm": 2700,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "targetDownrangeKm": 2225,
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 133,
-    "terminalCdA": 501
+    "chuteDeployAltM": 15240,
+    "terminalHandoffAltM": 3231,
+    "parachuteCdA": 6,
+    "terminalCdA": 227
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "gemini6a — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "Gemini 6/7 re-entry reconstruction (IBM): 400,000 ft at ~7,430 m/s, -1.42°; drogue 50,000 ft, main 10,600 ft",
+      "u": "https://www.ibiblio.org/apollo/Documents/Gemini-6-7-PostFlightReports.pdf"
     }
   ]
 }

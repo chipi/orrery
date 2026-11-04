@@ -26,9 +26,18 @@
       "l": "R-7 family — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/R-7_(rocket_family)",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Vostok-L infobox: 30.84 m; Astronautix vostok8k72 30.84 m x 2.99 m — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Vostok-L",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "sputnik1"
-  ]
+  ],
+  "specs": {
+    "height_m": 30.84,
+    "diameter_m": 2.99
+  }
 }

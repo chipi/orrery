@@ -10,6 +10,7 @@
   "departure_date": "1962-05-24",
   "arrival_date": "1962-05-24",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Atlas LV-3B (MA-7)",
   "payload": "Mercury capsule #18 (1956 kg); Scott Carpenter",
   "delta_v": "~9.4 km/s (LEO)",

@@ -9,11 +9,15 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "flightPathAngleDeg": 1.93
   },
   "entryMassKg": 2460,
   "entryCdA": 5,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,
@@ -25,6 +29,10 @@
     {
       "l": "vostok-6 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "Astronautix, Vostok 6: Tereshkova 'I took 8 G's on reentry'",
+      "u": "http://www.astronautix.com/v/vostok6.html"
     }
   ]
 }

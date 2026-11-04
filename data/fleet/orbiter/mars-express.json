@@ -36,5 +36,9 @@
       "type": "mars",
       "site_id": "mars-express"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 1.8,
+    "diameter_m": 1.5
+  }
 }

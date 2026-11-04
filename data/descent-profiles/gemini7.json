@@ -8,25 +8,35 @@
   },
   "entryState": {
     "altitudeM": 122000,
-    "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "velocityMs": 7433,
+    "flightPathAngleDeg": 1.4
   },
   "entryMassKg": 2000,
-  "entryCdA": 6.0,
+  "entryCdA": 6,
   "liftToDragRatio": 0.19,
-  "targetDownrangeKm": 2700,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "targetDownrangeKm": 2225,
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 133,
-    "terminalCdA": 501
+    "chuteDeployAltM": 15240,
+    "terminalHandoffAltM": 3231,
+    "parachuteCdA": 6,
+    "terminalCdA": 227
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "gemini7 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "Gemini VII Mission Report (MSC-G-R-66-1): 4.5 g; drogue 330:29:30 at 50,000 ft, main 330:31:03 at 10,600 ft, landing 330:35:01; entry ~7,433 m/s, -1.40° (IBM reconstruction)",
+      "u": "https://www.ibiblio.org/apollo/Documents/Gemini7MissionReport.pdf"
     }
   ]
 }

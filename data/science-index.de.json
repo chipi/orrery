@@ -827,6 +827,13 @@
   },
   {
     "tab": "planets",
+    "section": "earth-surface-imagery",
+    "title": "Bilder der Erdoberfläche — wie die Ebenen funktionieren",
+    "intro": "Zoomst du von der ganzen Erde bis zu einer Startrampe hinein, siehst du fünf Bildebenen von Satelliten und aus Flugzeugen, übereinandergelegt und beim Näherkommen ausgetauscht.",
+    "haystack": "bilder der erdoberfläche — wie die ebenen funktionieren zoomst du von der ganzen erde bis zu einer startrampe hinein, siehst du fünf bildebenen von satelliten und aus flugzeugen, übereinandergelegt und beim näherkommen ausgetauscht. ebene 0 ist der globus: eine globale textur mit 4096 pixeln, die um die kugel gelegt ist. der erdäquator ist etwa 40.000 km lang, sodass jedes pixel rund 10 km umfasst — genug für kontinente, wüsten und eiskappen, aber nicht für einen einzelnen startplatz. ebene 1 ist die kontextebene: rund um die ausgewählte rampe wird ein 400 km großer ausschnitt eines wolkenfreien mosaiks mit etwa 100 m pro pixel auf seiner wahren geografischen breite und länge über den globus gelegt. die ebene ist im wahren maßstab gezeichnet und blendet an den rändern sanft in den globus über; ihre grobe helligkeit ist auf den globus abgestimmt, sodass beide nahtlos aneinandergrenzen. earth surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
     "section": "kuiper-belt",
     "title": "Der Kuipergürtel",
     "intro": "Eine Scheibe aus Eiskörpern jenseits von Neptun — vorhergesagt 1951, bestätigt 1992, und Quelle aller kurzperiodischen Kometen, die an der Erde vorbeifliegen.",
@@ -845,6 +852,20 @@
     "title": "Magnetfelder",
     "intro": "Die Magnetosphäre jedes Planeten ist anders: Die des Saturn ist einzigartig ausgerichtet, die des Uranus chaotisch, Venus und Mars haben überhaupt keine.",
     "haystack": "magnetfelder die magnetosphäre jedes planeten ist anders: die des saturn ist einzigartig ausgerichtet, die des uranus chaotisch, venus und mars haben überhaupt keine. neigung der magnetachse (winkel zwischen dem dipol und der rotationsachse) für jeden planeten mit einem bekannten dynamo: merkur 0,7°, erde 10,5°, jupiter 9,6°, saturn ~0°, uranus 58,6°, neptun 46,9°. venus, mars und pluto haben heute keinen global bedeutsamen dipol. die stark außermittigen dipole von uranus und neptun sind zudem gegenüber dem planetenzentrum versetzt — bei uranus um etwa 1/3 des planetenradius. der konventionelle dynamo (eisenkern) kann diese geometrie nicht ohne weiteres erzeugen; die bevorzugte erklärung lautet, dass uranus und neptun ihre dynamos in einer äußeren mantelschicht aus ionischem wasser + ammoniak + methan beherbergen, nicht in einem tiefen kern. magnetic fields"
+  },
+  {
+    "tab": "planets",
+    "section": "mars-surface-imagery",
+    "title": "Bilder der Marsoberfläche — wie die Ebenen funktionieren",
+    "intro": "Wer vom ganzen Planeten bis zu den Radspuren eines Rovers hineinzoomt, sieht sechs Bildebenen von Orbitern und Rovern, die übereinanderliegen und beim Näherkommen ausgetauscht werden.",
+    "haystack": "bilder der marsoberfläche — wie die ebenen funktionieren wer vom ganzen planeten bis zu den radspuren eines rovers hineinzoomt, sieht sechs bildebenen von orbitern und rovern, die übereinanderliegen und beim näherkommen ausgetauscht werden. ebene 0 ist der globus: eine globale textur mit 4096 pixeln, die um die kugel gelegt ist. der äquator des mars ist etwa 21.300 km lang, sodass jedes pixel rund 5 km umfasst — genug für die vulkane, canyons und polkappen, aber nicht für einen einzigen landeplatz. ebene 1 ist die kontextebene: rund um den gewählten landeplatz wird ein 400 km großer ausschnitt des tages-infrarotmosaiks von themis, dem thermal emission imaging system an bord von mars odyssey, auf seiner wahren geografischen breite und länge über den planeten gelegt, mit etwa 100 m pro pixel. themis sieht wärme, nicht licht: tagsüber sind der sonne zugewandte hänge wärmer als abgewandte, sodass das infrarotmosaik weitgehend wie eine schattierte reliefkarte jedes kraterrands und jedes kanals aussieht. es hat keine eigene farbe, deshalb übernimmt die ebene farbe und helligkeit vom globus und nur ihre scharfen details von themis, und an den rändern blendet sie sanft in den globus über. mars surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
+    "section": "moon-surface-imagery",
+    "title": "Mondoberflächen-Bildmaterial — wie die Ebenen funktionieren",
+    "intro": "Zoomst du vom ganzen Mond bis zu einem Landeplatz, siehst du nicht ein Bild, sondern sechs: von verschiedenen Kameras auf verschiedenen Raumsonden, übereinandergelegt und beim Näherkommen nacheinander eingeblendet.",
+    "haystack": "mondoberflächen-bildmaterial — wie die ebenen funktionieren zoomst du vom ganzen mond bis zu einem landeplatz, siehst du nicht ein bild, sondern sechs: von verschiedenen kameras auf verschiedenen raumsonden, übereinandergelegt und beim näherkommen nacheinander eingeblendet. ebene 0 ist der globus: eine globale textur mit 4096 pixeln, die um die kugel gelegt wird. der mondäquator ist etwa 10.900 km lang, sodass jedes pixel rund 2,7 km umfasst. aus dem orbit reicht das völlig, doch um zu sehen, wo jemand gelandet ist, ist es viel zu grob. ebene 1 ist die kontextebene: rund um den ausgewählten landeplatz wird ein 400 km großer ausschnitt des mosaiks der wide angle camera des lunar reconnaissance orbiter mit etwa 100 m pro pixel in echter breite und länge über den globus gelegt. die wide angle camera nimmt einen 60 km breiten streifen in sieben farbbändern auf; während sich der mond unter der polarbahn von lro dreht, summieren sich die streifen zum ganzen globus, und die langen schatten des flachen sonnenlichts nahe dem [terminator](planets/sub-solar-and-terminator) lassen die krater erst hervortreten. die ebene ist im richtigen maßstab gezeichnet, übernimmt farbe und helligkeit vom globus und blendet an den rändern sanft in ihn über. moon surface imagery — how the layers work"
   },
   {
     "tab": "planets",

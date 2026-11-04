@@ -10,6 +10,7 @@
   "departure_date": "1971-06-06",
   "arrival_date": "1971-06-30",
   "transit_days": 24,
+  "round_trip": true,
   "vehicle": "Soyuz (11A511)",
   "payload": "Soyuz 7K-OKS; Dobrovolsky, Volkov, Patsayev",
   "delta_v": "~7.8 km/s (LEO)",

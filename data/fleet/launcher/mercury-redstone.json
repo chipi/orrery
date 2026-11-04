@@ -21,11 +21,20 @@
       "l": "Project Mercury — NASA history",
       "u": "https://www.nasa.gov/project-mercury/",
       "t": "core"
+    },
+    {
+      "l": "NASA MSFC Mercury-Redstone Launch Vehicle: Height 59 feet (83 w/spacecraft), Diameter 5.9 feet — dimensions",
+      "u": "https://www.nasa.gov/centers-and-facilities/marshall/mercury-redstone-launch-vehicle/",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "freedom-7",
     "liberty-bell-7"
   ],
-  "linked_sites": []
+  "linked_sites": [],
+  "specs": {
+    "height_m": 25.3,
+    "diameter_m": 1.8
+  }
 }

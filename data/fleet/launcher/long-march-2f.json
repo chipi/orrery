@@ -30,5 +30,9 @@
   ],
   "linked_missions": [
     "shenzhou-1"
-  ]
+  ],
+  "specs": {
+    "height_m": 58.34,
+    "diameter_m": 3.35
+  }
 }

@@ -10,6 +10,7 @@
   "departure_date": "1975-07-15",
   "arrival_date": "1975-07-17",
   "transit_days": 2,
+  "round_trip": true,
   "vehicle": "Saturn IB (AS-210) + Soyuz-U",
   "payload": "Apollo CSM-111 (last Apollo CSM ever) + Soyuz 19 (modified 7K-TM); 14.4 t Apollo + 6.8 t Soyuz",
   "delta_v": "~9.4 km/s (LEO each)",

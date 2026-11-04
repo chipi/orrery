@@ -145,6 +145,1198 @@
       "used_on": [
         "lab"
       ]
+    },
+    {
+      "id": "models-ref-wikipedia",
+      "name": "3D model references — Wikipedia",
+      "catalog": "136 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "Wikipedia articles (English, Russian and Chinese) that gave the lengths, diameters and proportions of the launcher and spacecraft models and the heights of the landmarks, statues and animals drawn beside them in the /fleet line-ups. The models and outlines are our own; only measurements were read.",
+      "source_url": "https://www.wikipedia.org/",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Wikipedia text is published under Creative Commons Attribution-ShareAlike. Only measurements were read; none of the article text is reproduced, and each page is credited here.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "AEC Routemaster — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/AEC_Routemaster"
+        },
+        {
+          "l": "African bush elephant — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/African_bush_elephant"
+        },
+        {
+          "l": "Antares (rocket) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Antares_(rocket)"
+        },
+        {
+          "l": "Apollo Command and Service Module — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module#Block_I"
+        },
+        {
+          "l": "Apollo Lunar Module — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module"
+        },
+        {
+          "l": "Approach and Landing Tests (ALT) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Approach_and_Landing_Tests"
+        },
+        {
+          "l": "Ariane 1 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Ariane_1"
+        },
+        {
+          "l": "Ariane 5 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Ariane_5"
+        },
+        {
+          "l": "Ariane 6 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Ariane_6"
+        },
+        {
+          "l": "Atlas LV-3B — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Atlas_LV-3B"
+        },
+        {
+          "l": "Atlas SLV-3D Centaur — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Atlas-Centaur"
+        },
+        {
+          "l": "Atlas V — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Atlas_V"
+        },
+        {
+          "l": "Boeing Starliner — Wikipedia (5.03 m capsule + SM, 4.56 m; module split estimate)",
+          "u": "https://en.wikipedia.org/wiki/Boeing_Starliner"
+        },
+        {
+          "l": "Boeing X-37 — Wikipedia (length 8.92 m, wingspan 4.55 m, height 2.90 m, bay 2.1 × 1.2 m)",
+          "u": "https://en.wikipedia.org/wiki/Boeing_X-37"
+        },
+        {
+          "l": "Brandenburg Gate — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Brandenburg_Gate"
+        },
+        {
+          "l": "Brown bear — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Brown_bear"
+        },
+        {
+          "l": "Buran (spacecraft) — Wikipedia (length 36.37 m, wingspan 23.92 m, payload bay 18.55 × 4.65 m)",
+          "u": "https://en.wikipedia.org/wiki/Buran_(spacecraft)"
+        },
+        {
+          "l": "Buran programme — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Buran_programme"
+        },
+        {
+          "l": "Buran-class orbiter — Wikipedia (main engines were on Energia)",
+          "u": "https://en.wikipedia.org/wiki/Buran-class_orbiter"
+        },
+        {
+          "l": "Centaur (rocket stage) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Centaur_(rocket_stage)"
+        },
+        {
+          "l": "Chang'e 3 launch (Long March 3B/E) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Chang%27e_3"
+        },
+        {
+          "l": "Columbus Monument, Barcelona — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Columbus_Monument,_Barcelona"
+        },
+        {
+          "l": "David (Michelangelo) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/David_(Michelangelo)"
+        },
+        {
+          "l": "Delta II — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Delta_II"
+        },
+        {
+          "l": "Eiffel Tower — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+        },
+        {
+          "l": "Energia (rocket) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Energia_(rocket)"
+        },
+        {
+          "l": "European Service Module — Wikipedia (4 m long, 4.1 m, 4 wings x 7.375 m, 19 m deployed; wing width estimate)",
+          "u": "https://en.wikipedia.org/wiki/European_Service_Module"
+        },
+        {
+          "l": "Falcon 9 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Falcon_9"
+        },
+        {
+          "l": "Falcon Heavy — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Falcon_Heavy"
+        },
+        {
+          "l": "Gaganyaan — Wikipedia (crew module 3.5 m x 3.58 m; SM length and arrays estimate)",
+          "u": "https://en.wikipedia.org/wiki/Gaganyaan"
+        },
+        {
+          "l": "Giant panda — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Giant_panda"
+        },
+        {
+          "l": "Giant Wild Goose Pagoda — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Giant_Wild_Goose_Pagoda"
+        },
+        {
+          "l": "Giraffe — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Giraffe"
+        },
+        {
+          "l": "H-IIA — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/H-IIA"
+        },
+        {
+          "l": "H3 (rocket) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/H3_(rocket)"
+        },
+        {
+          "l": "Itsukushima Shrine — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Itsukushima_Shrine"
+        },
+        {
+          "l": "Leaning Tower of Pisa — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa"
+        },
+        {
+          "l": "Leshan Giant Buddha — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Leshan_Giant_Buddha"
+        },
+        {
+          "l": "Long March 2F — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Long_March_2F"
+        },
+        {
+          "l": "Long March 2F flight history (Wikipedia)",
+          "u": "https://en.wikipedia.org/wiki/List_of_Long_March_launches"
+        },
+        {
+          "l": "Long March 3B — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Long_March_3B"
+        },
+        {
+          "l": "Long March 5 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Long_March_5"
+        },
+        {
+          "l": "Long March 7 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Long_March_7"
+        },
+        {
+          "l": "LVM3 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/LVM3"
+        },
+        {
+          "l": "Mercury-Redstone — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Mercury-Redstone_Launch_Vehicle"
+        },
+        {
+          "l": "Monument to the Conquerors of Space — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Monument_to_the_Conquerors_of_Space"
+        },
+        {
+          "l": "N1 (rocket) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/N1_(rocket)"
+        },
+        {
+          "l": "New Glenn — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/New_Glenn"
+        },
+        {
+          "l": "New Shepard — Wikipedia (19.2 m, booster 3.8 m, 6 windows; booster/capsule split estimate)",
+          "u": "https://en.wikipedia.org/wiki/New_Shepard"
+        },
+        {
+          "l": "OK-GLI — Wikipedia (four AL-31 turbofans at the rear)",
+          "u": "https://en.wikipedia.org/wiki/OK-GLI"
+        },
+        {
+          "l": "Orion (spacecraft) — Wikipedia (crew module 5.02 m x 3.3 m)",
+          "u": "https://en.wikipedia.org/wiki/Orion_(spacecraft)"
+        },
+        {
+          "l": "Osborne bull — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Osborne_bull"
+        },
+        {
+          "l": "Progress-M — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Progress-M"
+        },
+        {
+          "l": "Project Gemini — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Project_Gemini"
+        },
+        {
+          "l": "Project Mercury — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Project_Mercury"
+        },
+        {
+          "l": "Proton (rocket family) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Proton_(rocket_family)"
+        },
+        {
+          "l": "Proton-K — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Proton-K"
+        },
+        {
+          "l": "Proton-M — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Proton-M"
+        },
+        {
+          "l": "Proton-M flight history (Wikipedia)",
+          "u": "https://en.wikipedia.org/wiki/List_of_Proton_launches"
+        },
+        {
+          "l": "PSLV-XL — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Polar_Satellite_Launch_Vehicle#PSLV-XL"
+        },
+        {
+          "l": "R-7 family — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/R-7_(rocket_family)"
+        },
+        {
+          "l": "Saturn IB — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Saturn_IB"
+        },
+        {
+          "l": "Saturn V — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Saturn_V"
+        },
+        {
+          "l": "Soyuz (rocket) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz_(rocket)"
+        },
+        {
+          "l": "Soyuz 7K-OK — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz_7K-OK"
+        },
+        {
+          "l": "Soyuz MS — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz_MS"
+        },
+        {
+          "l": "Soyuz user manual (Roscosmos / TsSKB Progress)",
+          "u": "https://en.wikipedia.org/wiki/Soyuz_(rocket_family)"
+        },
+        {
+          "l": "Soyuz-2 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz-2"
+        },
+        {
+          "l": "Soyuz-FG — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz-FG"
+        },
+        {
+          "l": "Soyuz-FG flight history (Wikipedia)",
+          "u": "https://en.wikipedia.org/wiki/Soyuz-FG#Launch_history"
+        },
+        {
+          "l": "Soyuz-T — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz-T"
+        },
+        {
+          "l": "Soyuz-TM — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz-TM"
+        },
+        {
+          "l": "Soyuz-TMA — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz-TMA"
+        },
+        {
+          "l": "Soyuz-U — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Soyuz-U"
+        },
+        {
+          "l": "Soyuz-U launch history (Wikipedia)",
+          "u": "https://en.wikipedia.org/wiki/List_of_Soyuz_missions"
+        },
+        {
+          "l": "Space Launch System — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Space_Launch_System"
+        },
+        {
+          "l": "Space Shuttle — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle"
+        },
+        {
+          "l": "Space Shuttle Atlantis — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis"
+        },
+        {
+          "l": "Space Shuttle Challenger — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger"
+        },
+        {
+          "l": "Space Shuttle Columbia — Wikipedia (only orbiter with black chines; SILTS pod on the fin)",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Columbia"
+        },
+        {
+          "l": "Space Shuttle Discovery — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery"
+        },
+        {
+          "l": "Space Shuttle Endeavour — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour"
+        },
+        {
+          "l": "Space Shuttle Enterprise — Wikipedia (no engines, no OMS pods, simulated tiles, fibreglass leading edges)",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise"
+        },
+        {
+          "l": "Space Shuttle orbiter — Wikipedia (length 37.237 m, wingspan 23.79 m, height 17.86 m, payload bay 18.3 × 4.6 m)",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter"
+        },
+        {
+          "l": "SpaceX Dragon — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon"
+        },
+        {
+          "l": "SpaceX Dragon 1 — Wikipedia (6.1 m, 3.7 m, trunk 2.3 m; array span estimate)",
+          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_1"
+        },
+        {
+          "l": "SpaceX Dragon 2 — Wikipedia (capsule 4.5 m, 4 m across, 8.1 m with trunk)",
+          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2"
+        },
+        {
+          "l": "Starship — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/SpaceX_Starship"
+        },
+        {
+          "l": "STS-31 (Hubble deployment) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/STS-31"
+        },
+        {
+          "l": "STS-51-L (Challenger disaster) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster"
+        },
+        {
+          "l": "STS-61 (Hubble first servicing) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/STS-61"
+        },
+        {
+          "l": "STS-88 (ISS first assembly) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/STS-88"
+        },
+        {
+          "l": "STS-107 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/STS-107"
+        },
+        {
+          "l": "STS-125 (final Hubble servicing) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/STS-125"
+        },
+        {
+          "l": "STS-135 (final Shuttle flight) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/STS-135"
+        },
+        {
+          "l": "Terracotta Army — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Terracotta_Army"
+        },
+        {
+          "l": "The Motherland Calls — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Motherland_Calls"
+        },
+        {
+          "l": "Titan II GLV — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Titan_II_GLV"
+        },
+        {
+          "l": "Tsar Bell — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Tsar_Bell"
+        },
+        {
+          "l": "Ushiku Daibutsu — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Ushiku_Daibutsu"
+        },
+        {
+          "l": "Volkswagen Beetle — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Volkswagen_Beetle"
+        },
+        {
+          "l": "Voskhod (rocket) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Voskhod_(rocket)"
+        },
+        {
+          "l": "Voskhod (spacecraft) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Voskhod_(spacecraft)"
+        },
+        {
+          "l": "Vostok-K — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Vostok-K"
+        },
+        {
+          "l": "Vulcan Centaur — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        },
+        {
+          "l": "Wikipedia — ATV: 10.3 m, 4.5 m, 22.3 m array span",
+          "u": "https://en.wikipedia.org/wiki/Automated_Transfer_Vehicle"
+        },
+        {
+          "l": "Wikipedia — CSM: SM 4.52 m, 3.91 m diameter, SPS nozzle 3.88 m; Block I has no docking probe",
+          "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module"
+        },
+        {
+          "l": "Wikipedia — Cygnus: 5.14 m length, 3.07 m diameter, Standard variant",
+          "u": "https://en.wikipedia.org/wiki/Cygnus_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — HTV-X: 8 m, 4.4 m, 18.2 m array span, 2.7 m service and 3.5 m pressurised module",
+          "u": "https://en.wikipedia.org/wiki/HTV-X"
+        },
+        {
+          "l": "Wikipedia — HTV: about 9.8 m incl. thrusters, 4.4 m diameter",
+          "u": "https://en.wikipedia.org/wiki/H-II_Transfer_Vehicle"
+        },
+        {
+          "l": "Wikipedia — Shenzhou: 9.25 m, orbital 2.8 m, re-entry 2.5 m, service 2.94 m, 17 m span",
+          "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Tianzhou: 10.6 m, 3.35 m, 14.9 m array span",
+          "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia (fallback source), Emirates Mars Mission — 2.37 m wide x 2.90 m long body (length_m = 2.90 m), 1.85 m high-gain dish (the article also says 1.5 m), two solar panels",
+          "u": "https://en.wikipedia.org/wiki/Emirates_Mars_Mission"
+        },
+        {
+          "l": "Wikipedia (fallback source), Lunar Reconnaissance Orbiter — launch configuration 390 x 270 x 260 cm (length_m = the 3.9 m side, stood upright)",
+          "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter"
+        },
+        {
+          "l": "Wikipedia (fallback source), Mars Express — main body 1.5 x 1.8 x 1.4 m (length_m = the 1.8 m side, stood upright), ~12 m tip-to-tip arrays, 1.6 m high-gain dish",
+          "u": "https://en.wikipedia.org/wiki/Mars_Express"
+        },
+        {
+          "l": "Wikipedia (fallback source), Mars Orbiter Mission — 1.5 m cube bus (length_m = cube edge, no dish counted), single 2.2 m reflector high-gain, I-1K bus",
+          "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
+        },
+        {
+          "l": "Wikipedia (fallback source), MAVEN — 2 m high-gain dish (dish diameter only; not on the NASA pages)",
+          "u": "https://en.wikipedia.org/wiki/MAVEN"
+        },
+        {
+          "l": "Wikipedia (fallback) — Akatsuki: 1.45 x 1.04 x 1.44 m box, two arrays of about 1.4 m^2 each (1.45 m used as height)",
+          "u": "https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia (fallback) — component table (EP-107 data): 82.4 ft (25.1 m) without CSM, MDA 17.3 ft x 10.5 ft, AM 17.6 ft, ATM 14.7 ft, 55.8 ft width with one wing, 36.3 ft height with ATM",
+          "u": "https://en.wikipedia.org/wiki/Skylab"
+        },
+        {
+          "l": "Wikipedia (fallback) — Magellan: 10-sided bus, 6.4 m tall x 4.6 m diameter, 3.7 m high-gain antenna, Star 48B motor",
+          "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia (fallback): 3.1 m high-gain antenna, 8.5 m magnetometer boom",
+          "u": "https://en.wikipedia.org/wiki/Europa_Clipper"
+        },
+        {
+          "l": "Wikipedia (fallback): array diameter 7.3 m",
+          "u": "https://en.wikipedia.org/wiki/Lucy_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia (fallback): DART 1.8 x 1.9 x 2.6 m, ROSA 8.5 x 2.4 m each; NEXT-C ion engine, DRACO camera",
+          "u": "https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test"
+        },
+        {
+          "l": "Wikipedia Dragon 2 infobox — dimensions",
+          "u": "https://en.wikipedia.org/wiki/Dragon_2"
+        },
+        {
+          "l": "Wikipedia Vostok (spacecraft) — dimensions",
+          "u": "https://en.wikipedia.org/wiki/Vostok_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia Vostok-L infobox: 30.84 m; Astronautix vostok8k72 30.84 m x 2.99 m — dimensions",
+          "u": "https://en.wikipedia.org/wiki/Vostok-L"
+        },
+        {
+          "l": "Wikipedia, Progress (spacecraft) — variant comparison: length, diameter, array span",
+          "u": "https://en.wikipedia.org/wiki/Progress_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, Progress-MS — 7.4 m x 2.7 m, 10.7 m array, Kurs-NA antennas, added MMOD shielding",
+          "u": "https://en.wikipedia.org/wiki/Progress-MS"
+        },
+        {
+          "l": "Wikipedia, Soyuz (spacecraft) — variant comparison table: lengths, diameters, array spans, module L/D",
+          "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)"
+        },
+        {
+          "l": "Буран (космический корабль) — русская Википедия",
+          "u": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%80%D0%B0%D0%BD_(%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D1%8C)"
+        },
+        {
+          "l": "Восток (космический корабль) — русская Википедия",
+          "u": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D1%82%D0%BE%D0%BA_(%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D1%8C)"
+        },
+        {
+          "l": "Восток (ракета-носитель) — русская Википедия",
+          "u": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D1%82%D0%BE%D0%BA_(%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D0%B0-%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C)"
+        },
+        {
+          "l": "Н-1 (ракета-носитель) — русская Википедия",
+          "u": "https://ru.wikipedia.org/wiki/%D0%9D-1_(%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D0%B0-%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C)"
+        },
+        {
+          "l": "Союз МС — русская Википедия",
+          "u": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%8E%D0%B7_%D0%9C%D0%A1"
+        },
+        {
+          "l": "神舟飞船 — 中文维基百科",
+          "u": "https://zh.wikipedia.org/wiki/%E7%A5%9E%E8%88%9F%E9%A3%9E%E8%88%B9"
+        },
+        {
+          "l": "长征五号 — 中文维基百科",
+          "u": "https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BE%81%E4%BA%94%E5%8F%B7%E7%B3%BB%E5%88%97%E7%81%AB%E7%AE%AD"
+        }
+      ]
+    },
+    {
+      "id": "models-ref-nssdca",
+      "name": "3D model references — NASA NSSDCA",
+      "catalog": "22 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "NASA Space Science Data Coordinated Archive (NSSDCA) spacecraft and launch-vehicle pages that gave the masses, lengths and diameters of the craft and rockets modelled for /fly and the /fleet line-ups.",
+      "source_url": "https://nssdc.gsfc.nasa.gov/",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced material is generally not copyrighted (17 U.S.C. §105). Only measurements were read.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "Apollo 7 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1968-089A"
+        },
+        {
+          "l": "Long March 5 launch history (NASA NSSDCA)",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/displayDispatch.action?searchTerm=long+march+5"
+        },
+        {
+          "l": "Mercury-Atlas 6 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-003A"
+        },
+        {
+          "l": "NASA NSSDCA — MESSENGER: bus 1.27 x 1.42 x 1.85 m, sunshade about 2.5 m tall x 2 m wide (2.5 m used as height), arrays about 6 m tip to tip, 3.6 m magnetometer boom",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-030A"
+        },
+        {
+          "l": "NASA NSSDCA — Parker Solar Probe: 3 m bus, 1 m diameter, TPS end 2.3 m diameter, 11.43 cm thick; arrays 1.12 x 0.69 m; 0.6 m high-gain antenna",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-065A"
+        },
+        {
+          "l": "NASA NSSDCA Gemini 3 spacecraft description — dimensions",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-024A"
+        },
+        {
+          "l": "NASA NSSDCA, LRO — single 10.7 m2 solar array",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2009-031A"
+        },
+        {
+          "l": "NASA NSSDCA, Mariner 4 — octagon 127 cm across the diagonal, 45.7 cm high; 4 panels 176 x 90 cm, 688 cm tip-to-tip with vanes; 116.8 cm high-gain; 223.5 cm mast; overall height 289 cm (length_m)",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-077A"
+        },
+        {
+          "l": "NASA NSSDCA, Mariner 9 — octagon 138.4 cm across the diagonal, 45.7 cm deep; 4 panels 215 x 90 cm, 6.89 m per pair; 1.44 m low-gain mast; overall height 2.28 m (length_m)",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-051A"
+        },
+        {
+          "l": "NASA NSSDCA, MAVEN — cubic 2.3 x 2.3 m, 2 m high bus; 1.3 m central propellant tank",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-063A"
+        },
+        {
+          "l": "NSSDCA — Apollo 11 CSM: 11.0 m long, CM 3.65 m high",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059A"
+        },
+        {
+          "l": "Polyus / Energia 1987 launch (NSSDCA)",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1987-044A"
+        },
+        {
+          "l": "Progress 1 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1978-008A"
+        },
+        {
+          "l": "Progress M-01M — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2008-060A"
+        },
+        {
+          "l": "Progress MS-01 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2015-082A"
+        },
+        {
+          "l": "Soyuz 1 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-037A"
+        },
+        {
+          "l": "Soyuz T-1 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1979-103A"
+        },
+        {
+          "l": "Soyuz TM-1 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1986-035A"
+        },
+        {
+          "l": "Soyuz TMA-1 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2002-050A"
+        },
+        {
+          "l": "Tianzhou-1 — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2017-021A"
+        },
+        {
+          "l": "Voskhod 2 (first spacewalk) — NASA NSSDCA",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-022A"
+        },
+        {
+          "l": "Vostok 1 mission (NASA NSSDCA)",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1961-012A"
+        }
+      ]
+    },
+    {
+      "id": "models-ref-nasa",
+      "name": "3D model references — NASA",
+      "catalog": "43 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "NASA mission, vehicle and history pages (nasa.gov, history.nasa.gov, science.nasa.gov) that gave the dimensions of the crewed capsules, cargo craft, Shuttle orbiters and launchers modelled for /fly and the /fleet line-ups.",
+      "source_url": "https://www.nasa.gov/",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced material is generally not copyrighted (17 U.S.C. §105). Only measurements were read.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "Apollo 204 Accident Review Board report (NASA)",
+          "u": "https://history.nasa.gov/Apollo204/"
+        },
+        {
+          "l": "Apollo by the Numbers (NASA NTRS, Orloff 2000)",
+          "u": "https://history.nasa.gov/SP-4029/SP-4029.htm"
+        },
+        {
+          "l": "Artemis HLS contract award (NASA)",
+          "u": "https://www.nasa.gov/news-release/as-artemis-moves-forward-nasa-picks-spacex-to-land-next-americans-on-moon/"
+        },
+        {
+          "l": "Boeing Crew Flight Test Press Kit (NASA)",
+          "u": "https://www.nasa.gov/commercial-crew/"
+        },
+        {
+          "l": "Chariots for Apollo (NASA SP-4205)",
+          "u": "https://history.nasa.gov/SP-4205/cover.html"
+        },
+        {
+          "l": "Columbia Accident Investigation Board — CAIB report (NASA)",
+          "u": "https://www.nasa.gov/columbia/home/CAIB_Vol1.html"
+        },
+        {
+          "l": "Commercial Resupply Services — NASA",
+          "u": "https://www.nasa.gov/international-space-station/commercial-resupply/"
+        },
+        {
+          "l": "COTS programme — NASA",
+          "u": "https://www.nasa.gov/commercial-resupply-services-overview/"
+        },
+        {
+          "l": "CSM News Reference (NASA Apollo Program)",
+          "u": "https://www.hq.nasa.gov/alsj/CSM06_Command_Module_Overview_pp7-19.pdf"
+        },
+        {
+          "l": "Cygnus on the ISS — NASA",
+          "u": "https://www.nasa.gov/humans-in-space/spaceships-and-rockets/commercial-cargo-spacecraft/"
+        },
+        {
+          "l": "Cygnus Orb-D1 — NASA",
+          "u": "https://www.nasa.gov/history/10-years-ago-the-first-operational-cygnus-cargo-mission-to-the-space-station/"
+        },
+        {
+          "l": "Dragon CRS-1 mission summary (NASA)",
+          "u": "https://www.nasa.gov/news-release/first-contracted-spacex-resupply-mission-launches-with-nasa-cargo-to-space-station/"
+        },
+        {
+          "l": "Gemini-Titan launch history (NASA)",
+          "u": "https://history.nasa.gov/SP-4203/toc.htm"
+        },
+        {
+          "l": "Lunar Module News Reference (Grumman)",
+          "u": "https://www.hq.nasa.gov/alsj/LM_News_Reference.pdf"
+        },
+        {
+          "l": "NASA — Columbia orbiter overview",
+          "u": "https://www.nasa.gov/history/20-years-ago-remembering-columbia-and-her-crew/"
+        },
+        {
+          "l": "NASA — Delta II launch service summary",
+          "u": "https://www.nasa.gov/centers-and-facilities/kennedy/delta-ii-added-to-historic-line-up-at-kennedy-space-center-visitor-complex-rocket-garden/"
+        },
+        {
+          "l": "NASA — Discovery orbiter overview",
+          "u": "https://www.nasa.gov/centers/kennedy/shuttleoperations/orbiters/discovery-info.html"
+        },
+        {
+          "l": "NASA 'What Was the Saturn V?' - 111 meters (363 feet) tall — dimensions",
+          "u": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-was-the-saturn-v-grades-5-8/"
+        },
+        {
+          "l": "NASA Commercial Crew Program Press Kit, SpaceX Falcon 9 technical overview — dimensions",
+          "u": "https://www.nasa.gov/commercial-crew-program-press-kit/"
+        },
+        {
+          "l": "NASA DART mission page",
+          "u": "https://science.nasa.gov/mission/dart/"
+        },
+        {
+          "l": "NASA EP-107 Skylab: A Guidebook (NTRS) — OWS 6.7 m x 14.6 m, wing 9 m / 27 m tip to tip, ATM rack 3.3 x 3.6 m, canister 2.1 x 3 m, 110 m2 per array system, four-blade windmill, MDA axial port at the forward end",
+          "u": "https://ntrs.nasa.gov/citations/19730025070"
+        },
+        {
+          "l": "NASA Europa Clipper mission overview: about 5 m tall, arrays span 30.5 m, 5 m is the height used",
+          "u": "https://science.nasa.gov/mission/europa-clipper/mission-overview/"
+        },
+        {
+          "l": "NASA Lucy spacecraft: 16 m tip to tip with arrays deployed (the model stands on that axis), UltraFlex arrays ~7 m diameter each, 2 m high-gain antenna",
+          "u": "https://science.nasa.gov/mission/lucy/spacecraft/"
+        },
+        {
+          "l": "NASA MSFC Mercury-Redstone Launch Vehicle: Height 59 feet (83 w/spacecraft), Diameter 5.9 feet — dimensions",
+          "u": "https://www.nasa.gov/centers-and-facilities/marshall/mercury-redstone-launch-vehicle/"
+        },
+        {
+          "l": "NASA Orion by the numbers (7.9 m overall)",
+          "u": "https://www.nasa.gov/wp-content/uploads/2026/01/orion-by-the-numbers-2026b.pdf"
+        },
+        {
+          "l": "NASA Psyche spacecraft: 25 x 7.3 m with arrays deployed (7.3 m is the height used), bus 4.9 m tall incl. 2 m booms, 2.2 x 2.4 m",
+          "u": "https://science.nasa.gov/mission/psyche/spacecraft/"
+        },
+        {
+          "l": "NASA Science, MAVEN key facts — length 11.4 m (array tip to tip), width 2.29 m, height 3.47 m (length_m here is the 3.47 m height, bus on its base, dish up)",
+          "u": "https://science.nasa.gov/mission/maven/"
+        },
+        {
+          "l": "NASA SLS reference page — dimensions",
+          "u": "https://www.nasa.gov/reference/space-launch-system/"
+        },
+        {
+          "l": "NASA The Space Shuttle reference page: Shuttle Basics Length 184 feet — dimensions",
+          "u": "https://www.nasa.gov/reference/the-space-shuttle/"
+        },
+        {
+          "l": "NASA, About the Russian Progress Spacecraft — length 7.4 m, diameter 2.7 m",
+          "u": "https://www.nasa.gov/wp-json/wp/v2/migration/167910?_fields=content"
+        },
+        {
+          "l": "NASA, The Skylab Parasol (NTRS) — 6.7 x 7.3 m canopy, sun-facing side, 8 in above the OWS skin",
+          "u": "https://ntrs.nasa.gov/citations/19760012092"
+        },
+        {
+          "l": "Orion Spacecraft — NASA",
+          "u": "https://www.nasa.gov/humans-in-space/orion-spacecraft/"
+        },
+        {
+          "l": "Project Gemini launches — NASA",
+          "u": "https://www.nasa.gov/gemini/"
+        },
+        {
+          "l": "Project Mercury launches — NASA",
+          "u": "https://www.nasa.gov/project-mercury/"
+        },
+        {
+          "l": "Rogers Commission Report (NASA)",
+          "u": "https://history.nasa.gov/rogersrep/genindex.htm"
+        },
+        {
+          "l": "Saturn V Reference (NASA Marshall)",
+          "u": "https://science.nasa.gov/3d-resources/saturn-v-rocket/"
+        },
+        {
+          "l": "SLS — NASA",
+          "u": "https://www.nasa.gov/humans-in-space/space-launch-system/"
+        },
+        {
+          "l": "SLS Reference Guide (NASA)",
+          "u": "https://www.nasa.gov/wp-content/uploads/2022/03/sls-reference-guide-2022-v2-508-0.pdf"
+        },
+        {
+          "l": "Soviet N-1 lunar program (NASA history)",
+          "u": "https://history.nasa.gov/SP-4225/nomenclature/N1.htm"
+        },
+        {
+          "l": "Space Shuttle Era (NASA)",
+          "u": "https://www.nasa.gov/space-shuttle/"
+        },
+        {
+          "l": "This New Ocean: A History of Project Mercury (NASA SP-4201)",
+          "u": "https://history.nasa.gov/SP-4201/toc.htm"
+        },
+        {
+          "l": "Vostok 1 mission overview (NASA)",
+          "u": "https://www.nasa.gov/image-article/april-1961-first-human-entered-space/"
+        },
+        {
+          "l": "Wings in Orbit: Scientific and Engineering Legacies of the Space Shuttle (NASA SP-2010-3409)",
+          "u": "https://www.nasa.gov/wp-content/uploads/2023/06/stages-to-saturn-sp-4206.pdf"
+        }
+      ]
+    },
+    {
+      "id": "models-ref-nps",
+      "name": "3D model references — U.S. National Park Service",
+      "catalog": "1 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "The National Park Service “Statue Statistics” page for the Statue of Liberty: its 92.99 m height from the ground to the torch tip, with the pedestal and the statue itself — the scale figure beside the rockets in the /fleet launcher line-up.",
+      "source_url": "https://www.nps.gov/",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.usa.gov/government-works",
+      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "Statue Statistics — National Park Service",
+          "u": "https://www.nps.gov/stli/learn/historyculture/statue-statistics.htm"
+        }
+      ]
+    },
+    {
+      "id": "models-ref-esa",
+      "name": "3D model references — ESA",
+      "catalog": "9 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "European Space Agency pages (ATV, Ariane, Rosetta and others) that gave the dimensions of the European craft and launchers modelled for /fly and the /fleet line-ups.",
+      "source_url": "https://www.esa.int/",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
+      "license_rationale": "ESA publishes most of its material under CC BY-SA 3.0 IGO. Only measurements were read.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "Ariane 5 — ESA",
+          "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_5"
+        },
+        {
+          "l": "Ariane 6 — ESA",
+          "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_6"
+        },
+        {
+          "l": "Ariane 6 maiden flight VA262 (ESA)",
+          "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Europe_s_new_Ariane_6_rocket_powers_into_space"
+        },
+        {
+          "l": "ATV — ESA",
+          "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/ATV/ATV_history"
+        },
+        {
+          "l": "ATV programme retrospective (ESA)",
+          "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/ATV"
+        },
+        {
+          "l": "ESA - Ariane 1, 2, 3 (Height 47.4 m, Diameter 3.8 m) — dimensions",
+          "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane_1_2_32"
+        },
+        {
+          "l": "ESA — Ariane history",
+          "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane"
+        },
+        {
+          "l": "ESA — Solar Orbiter factsheet: body 2.5 x 3.1 x 2.7 m (3.1 m used as height), six 2.1 x 1.2 m panels, 18 m span, 4.4 m instrument boom",
+          "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_factsheet"
+        },
+        {
+          "l": "ESA Ariane 5 media kit - ECA launch vehicle — dimensions",
+          "u": "https://esamultimedia.esa.int/docs/space_transportation/ariane-5_media-kit.pdf"
+        }
+      ]
+    },
+    {
+      "id": "models-ref-jaxa",
+      "name": "3D model references — JAXA",
+      "catalog": "8 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "JAXA pages on the H-IIA, H3, M-V and the HTV / HTV-X transfer vehicles that gave the dimensions of the Japanese launchers and cargo craft modelled for /fly and the /fleet line-ups.",
+      "source_url": "https://global.jaxa.jp/",
+      "license_short": "JAXA-OPEN",
+      "license_url": "https://global.jaxa.jp/policy.html",
+      "license_rationale": "JAXA permits non-commercial reuse with attribution under its open distribution policy. Only measurements were read.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "H-IIA — JAXA",
+          "u": "https://global.jaxa.jp/projects/rockets/h2a/"
+        },
+        {
+          "l": "H-IIA technical overview (JAXA)",
+          "u": "https://www.jaxa.jp/projects/rockets/h2a/"
+        },
+        {
+          "l": "H3 — JAXA",
+          "u": "https://global.jaxa.jp/projects/rockets/h3/"
+        },
+        {
+          "l": "H3 development history (JAXA)",
+          "u": "https://www.jaxa.jp/projects/rockets/h3/"
+        },
+        {
+          "l": "HTV programme summary (JAXA)",
+          "u": "https://global.jaxa.jp/projects/rockets/htv/"
+        },
+        {
+          "l": "HTV-X — JAXA",
+          "u": "https://global.jaxa.jp/projects/iss_human/htv-x/index.html"
+        },
+        {
+          "l": "HTV-X technical overview (JAXA)",
+          "u": "https://humans-in-space.jaxa.jp/en/htv-x/"
+        },
+        {
+          "l": "こうのとり — JAXA",
+          "u": "https://www.jaxa.jp/projects/rockets/htv/"
+        }
+      ]
+    },
+    {
+      "id": "models-ref-isro",
+      "name": "3D model references — ISRO",
+      "catalog": "5 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "ISRO launcher and Gaganyaan pages (PSLV, GSLV Mk III / LVM3, the crew module) that gave the dimensions of the Indian vehicles modelled for /fly and the /fleet line-ups.",
+      "source_url": "https://www.isro.gov.in/",
+      "license_short": "ISRO-EDU",
+      "license_url": "https://www.isro.gov.in/",
+      "license_rationale": "ISRO publishes for educational, non-commercial use with attribution. Only measurements were read.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "Chandrayaan-1 (PSLV-XL maiden) — ISRO mission archive",
+          "u": "https://www.isro.gov.in/Chandrayaan_1.html"
+        },
+        {
+          "l": "Human Space Flight — ISRO",
+          "u": "https://www.isro.gov.in/Gaganyaan.html"
+        },
+        {
+          "l": "LVM3 — ISRO",
+          "u": "https://www.isro.gov.in/GSLVmk3_CON.html"
+        },
+        {
+          "l": "Mars Orbiter Mission launch (PSLV-C25 / XL) — ISRO",
+          "u": "https://www.isro.gov.in/MarsOrbiterMissionSpacecraft.html"
+        },
+        {
+          "l": "PSLV — ISRO",
+          "u": "https://www.isro.gov.in/PSLV_CON.html"
+        }
+      ]
+    },
+    {
+      "id": "models-ref-agencies",
+      "name": "3D model references — agencies and manufacturers",
+      "catalog": "25 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "Official pages of space agencies and manufacturers (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, the China Manned Space Agency and CASC, the U.S. Space Force) that gave vehicle dimensions for the launcher and spacecraft models.",
+      "source_url": "https://www.roscosmos.ru/",
+      "license_short": "Facts-only",
+      "license_url": "https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction",
+      "license_rationale": "Only individual measurements (lengths, diameters, heights, stage and engine counts) were read from these pages; facts are not eligible for copyright, and no text, photograph or drawing was copied.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "Antares — Northrop Grumman",
+          "u": "https://www.northropgrumman.com/space/antares-rocket"
+        },
+        {
+          "l": "Antares 330 development with Firefly",
+          "u": "https://fireflyspace.com/mlv/"
+        },
+        {
+          "l": "Arianespace — Ariane heritage",
+          "u": "https://www.arianespace.com/legacy/"
+        },
+        {
+          "l": "Atlas V — United Launch Alliance",
+          "u": "https://www.ulalaunch.com/rockets/atlas-v"
+        },
+        {
+          "l": "Atlas V Launch Services User Guide (ULA)",
+          "u": "https://www.ulalaunch.com/docs/default-source/rockets/atlasvusersguide2010.pdf"
+        },
+        {
+          "l": "Boeing X-37 product page",
+          "u": "https://www.boeing.com/features/2026/04/x-37b-keeps-pushing-the-edge-of-on-orbit-testing"
+        },
+        {
+          "l": "Delta II Payload Planners Guide (Boeing, 2006)",
+          "u": "https://www.ulalaunch.com/docs/default-source/rockets/deltaiipayloadplannersguide2007.pdf"
+        },
+        {
+          "l": "Dragon — SpaceX",
+          "u": "https://www.spacex.com/vehicles/dragon/"
+        },
+        {
+          "l": "Falcon 9 — SpaceX",
+          "u": "https://www.spacex.com/vehicles/falcon-9/"
+        },
+        {
+          "l": "Falcon Heavy — SpaceX",
+          "u": "https://www.spacex.com/vehicles/falcon-heavy/"
+        },
+        {
+          "l": "Falcon User's Guide (SpaceX)",
+          "u": "https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf"
+        },
+        {
+          "l": "Long March family — China Aerospace Science and Technology",
+          "u": "http://www.spacechina.com/n25/n2014789/n2014804/index.html"
+        },
+        {
+          "l": "Soyuz — Roscosmos (Russian)",
+          "u": "https://www.roscosmos.ru/22336/"
+        },
+        {
+          "l": "Soyuz MS — Roscosmos",
+          "u": "https://www.roscosmos.ru/24181/"
+        },
+        {
+          "l": "Starliner — Boeing",
+          "u": "https://www.boeing.com/space/starliner"
+        },
+        {
+          "l": "Starship — SpaceX",
+          "u": "https://www.spacex.com/vehicles/starship/"
+        },
+        {
+          "l": "Starship User's Guide v1.0 (SpaceX)",
+          "u": "https://www.spacex.com/vehicles/starship"
+        },
+        {
+          "l": "Vostok rocket — Roscosmos history",
+          "u": "https://www.roscosmos.ru/24180/"
+        },
+        {
+          "l": "Vulcan — United Launch Alliance",
+          "u": "https://www.ulalaunch.com/rockets/vulcan-centaur"
+        },
+        {
+          "l": "Vulcan certification announcement (Space Force)",
+          "u": "https://www.spaceforce.mil/News/Article/4111330/"
+        },
+        {
+          "l": "X-37B Orbital Test Vehicle — USSF",
+          "u": "https://www.spaceforce.mil/About-Us/Fact-Sheets/Article/2197756/x-37b-orbital-test-vehicle/"
+        },
+        {
+          "l": "Восход — Роскосмос",
+          "u": "https://www.roscosmos.ru/24178/"
+        },
+        {
+          "l": "Программа «Энергия» — Роскосмос",
+          "u": "https://www.roscosmos.ru/30025/"
+        },
+        {
+          "l": "Протон-М — Роскосмос",
+          "u": "https://www.roscosmos.ru/24171/"
+        },
+        {
+          "l": "长征二号F — CMSA",
+          "u": "http://en.cmse.gov.cn/"
+        }
+      ]
+    },
+    {
+      "id": "models-ref-independent",
+      "name": "3D model references — reference sites and museums",
+      "catalog": "13 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "Independent spaceflight references and museum pages (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, the Smithsonian National Air and Space Museum, the Technik Museum Speyer and others) that gave the sizes of the Soviet, Shuttle and Buran-era vehicles.",
+      "source_url": "https://space.skyrocket.de/",
+      "license_short": "Facts-only",
+      "license_url": "https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction",
+      "license_rationale": "Only individual measurements (lengths, diameters, heights, stage and engine counts) were read from these pages; facts are not eligible for copyright, and no text, photograph or drawing was copied.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "Atlantis at Kennedy Space Center",
+          "u": "https://www.kennedyspacecenter.com/explore-attractions/space-shuttle-atlantis/"
+        },
+        {
+          "l": "buran-energia.com — OK-GLI (AL-31F, same aerodynamics and mass properties as Buran)",
+          "u": "https://www.buran-energia.com/bourane-buran/bourane-modele-gli.php"
+        },
+        {
+          "l": "Discovery at Udvar-Hazy — National Air and Space Museum",
+          "u": "https://airandspace.si.edu/collection-objects/orbiter-space-shuttle-ov-103-discovery/nasm_A20120325000"
+        },
+        {
+          "l": "Encyclopedia Astronautica Atlas SLV-3D Centaur key facts: Height 38.00 m, Diameter 3.05 m — dimensions",
+          "u": "https://www.astronautix.com/a/atlasslv-3dcentaur.html"
+        },
+        {
+          "l": "Endeavour at the California Science Center",
+          "u": "https://californiasciencecenter.org/exhibits/air-and-space/space-shuttle"
+        },
+        {
+          "l": "Enterprise at Intrepid Museum (NYC)",
+          "u": "https://intrepidmuseum.org/space-shuttle-pavilion"
+        },
+        {
+          "l": "Gunter's Space Page — Ariane 1 launch history",
+          "u": "https://space.skyrocket.de/doc_lau/ariane.htm"
+        },
+        {
+          "l": "Gunter's Space Page — Atlas SLV-3D Centaur launch history",
+          "u": "https://space.skyrocket.de/doc_lau/atlas_centaur.htm"
+        },
+        {
+          "l": "Gunter's Space Page — Proton-K launch history",
+          "u": "https://space.skyrocket.de/doc_lau/proton-k.htm"
+        },
+        {
+          "l": "Gunter's Space Page — X-37B mission log",
+          "u": "https://space.skyrocket.de/doc_sdat/x-37.htm"
+        },
+        {
+          "l": "OK-GLI at Technik Museum Sinsheim",
+          "u": "https://www.technik-museum.de/en/discover/exhibits/space-shuttle-buran/"
+        },
+        {
+          "l": "RussianSpaceWeb — Proton history",
+          "u": "https://www.russianspaceweb.com/proton.html"
+        },
+        {
+          "l": "Spaceflight Now — Delta II final launch (ICESat-2, 2018-09-15)",
+          "u": "https://spaceflightnow.com/2018/09/14/delta-2-icesat-2-mission-status-center/"
+        }
+      ]
     }
   ]
 }

@@ -827,6 +827,13 @@
   },
   {
     "tab": "planets",
+    "section": "earth-surface-imagery",
+    "title": "Immagini della superficie terrestre — come funzionano gli strati",
+    "intro": "Se ingrandisci dalla Terra intera fino a una rampa di lancio, stai guardando cinque strati di immagini, da satelliti e da aerei, sovrapposti l'uno all'altro e sostituiti man mano che ti avvicini.",
+    "haystack": "immagini della superficie terrestre — come funzionano gli strati se ingrandisci dalla terra intera fino a una rampa di lancio, stai guardando cinque strati di immagini, da satelliti e da aerei, sovrapposti l'uno all'altro e sostituiti man mano che ti avvicini. il livello 0 è il globo: una texture globale da 4096 pixel avvolta attorno alla sfera. l'equatore terrestre è lungo circa 40.000 km, quindi ogni pixel copre all'incirca 10 km: abbastanza per i continenti, i deserti e le calotte polari, ma non per un singolo sito di lancio. il livello 1 è lo strato di contesto: attorno alla rampa selezionata, un pezzo di 400 km di un mosaico privo di nubi, a circa 100 m per pixel, viene steso sul globo alla sua vera latitudine e longitudine. lo strato è disegnato in scala reale e ai bordi sfuma dolcemente nel globo; la sua luminosità generale è adattata a quella del globo, così i due si incontrano senza giunture. earth surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
     "section": "kuiper-belt",
     "title": "La Fascia di Kuiper",
     "intro": "Un disco di corpi ghiacciati al di là di Nettuno — previsto nel 1951, confermato nel 1992, e fonte di ogni cometa a breve periodo che transita accanto alla Terra.",
@@ -845,6 +852,20 @@
     "title": "Campi Magnetici",
     "intro": "La magnetosfera di ogni pianeta è diversa. Quella di Saturno è allineata in modo unico, quella di Urano è caotica, Venere e Marte non ne hanno affatto una.",
     "haystack": "campi magnetici la magnetosfera di ogni pianeta è diversa. quella di saturno è allineata in modo unico, quella di urano è caotica, venere e marte non ne hanno affatto una. inclinazione dell'asse magnetico (angolo tra il dipolo e l'asse di rotazione) per ogni pianeta con una dinamo nota: mercurio 0,7°, terra 10,5°, giove 9,6°, saturno ~0°, urano 58,6°, nettuno 46,9°. venere, marte e plutone non hanno oggi un dipolo globalmente significativo. i dipoli fortemente fuori asse di urano e nettuno sono inoltre discentrati rispetto al centro del pianeta — quello di urano di circa 1/3 del raggio planetario. la dinamo convenzionale (nucleo di ferro) non riesce a produrre facilmente una simile geometria; la spiegazione più accreditata è che urano e nettuno ospitino le proprie dinamo in uno strato del mantello esterno composto da acqua ionica + ammoniaca + metano, e non in un nucleo profondo. magnetic fields"
+  },
+  {
+    "tab": "planets",
+    "section": "mars-surface-imagery",
+    "title": "Immagini della superficie di Marte — come funzionano gli strati",
+    "intro": "Se ingrandisci dall'intero pianeta fino alle tracce delle ruote di un rover, stai guardando sei strati di immagini di orbiter e rover, sovrapposti l'uno all'altro e sostituiti man mano che ti avvicini.",
+    "haystack": "immagini della superficie di marte — come funzionano gli strati se ingrandisci dall'intero pianeta fino alle tracce delle ruote di un rover, stai guardando sei strati di immagini di orbiter e rover, sovrapposti l'uno all'altro e sostituiti man mano che ti avvicini. il livello 0 è il globo: una texture globale da 4096 pixel avvolta attorno alla sfera. l'equatore di marte è lungo circa 21.300 km, quindi ogni pixel copre all'incirca 5 km: abbastanza per i vulcani, i canyon e le calotte polari, ma non per un singolo sito di atterraggio. il livello 1 è lo strato di contesto: attorno al sito selezionato, un pezzo di 400 km del mosaico a infrarossi diurno realizzato da themis, il thermal emission imaging system di mars odyssey, viene steso sul pianeta alla sua vera latitudine e longitudine, a circa 100 m per pixel. themis vede il calore, non la luce: di giorno i versanti rivolti verso il sole sono più caldi di quelli rivolti dall'altra parte, quindi il mosaico a infrarossi si legge in gran parte come una carta in rilievo ombreggiato di ogni bordo di cratere e di ogni canale. non ha un colore proprio, perciò lo strato prende colore e luminosità dal globo e da themis solo il dettaglio nitido, e ai bordi sfuma dolcemente nel globo. mars surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
+    "section": "moon-surface-imagery",
+    "title": "Immagini della superficie lunare — come funzionano i livelli",
+    "intro": "Ingrandisci dalla Luna intera fino a un sito di allunaggio e non vedi un'immagine sola ma sei, riprese da fotocamere diverse su veicoli spaziali diversi, sovrapposte e sostituite man mano che ti avvicini.",
+    "haystack": "immagini della superficie lunare — come funzionano i livelli ingrandisci dalla luna intera fino a un sito di allunaggio e non vedi un'immagine sola ma sei, riprese da fotocamere diverse su veicoli spaziali diversi, sovrapposte e sostituite man mano che ti avvicini. il livello 0 è il globo: una texture globale di 4096 pixel avvolta attorno alla sfera. l'equatore lunare è lungo circa 10.900 km, quindi ogni pixel copre circa 2,7 km. è più che sufficiente dall'orbita e troppo grossolano per vedere dove sia atterrato qualcuno. il livello 1 è lo strato di contesto: attorno al sito selezionato, un pezzo di 400 km del mosaico della wide angle camera del lunar reconnaissance orbiter, di circa 100 m per pixel, è steso sul globo alla sua latitudine e longitudine reali. la wide angle camera riprende una striscia larga 60 km in sette bande di colore; mentre la luna ruota sotto l'orbita polare di lro, le strisce si sommano fino a coprire l'intero globo, e le lunghe ombre della luce radente vicino al [terminatore](planets/sub-solar-and-terminator) fanno risaltare i crateri. lo strato è disegnato in scala reale, prende colore e luminosità dal globo e vi sfuma dolcemente ai bordi. moon surface imagery — how the layers work"
   },
   {
     "tab": "planets",

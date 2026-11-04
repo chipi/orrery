@@ -31,9 +31,19 @@
       "l": "Solomon et al. (2018) — Mercury: The View After MESSENGER (Cambridge Press)",
       "u": "https://www.cambridge.org/core/books/abs/mercury/mercury/1C617F27989BB2E3003461D6D8B594F9",
       "t": "deep"
+    },
+    {
+      "l": "MESSENGER — NASA NSSDCA (bus 1.27 x 1.42 x 1.85 m, sunshade 2.5 x 2 m)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-030A",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "messenger"
-  ]
+  ],
+  "specs": {
+    "length_m": 2.5,
+    "width_m": 2,
+    "diameter_m": 1.42
+  }
 }

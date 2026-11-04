@@ -1,6 +1,10 @@
 {
   "id": "falcon-heavy",
-  "videos": [{ "id": "vid-252b199e2149" }],
+  "videos": [
+    {
+      "id": "vid-252b199e2149"
+    }
+  ],
   "name": "Falcon Heavy",
   "category": "launcher",
   "agency": "SpaceX",
@@ -33,5 +37,9 @@
     "otv-7",
     "psyche-mission",
     "europa-clipper"
-  ]
+  ],
+  "specs": {
+    "height_m": 70,
+    "diameter_m": 3.7
+  }
 }

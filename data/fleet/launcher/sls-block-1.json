@@ -14,7 +14,8 @@
     "height_m": 98,
     "mass_kg": 2608000,
     "thrust_n": 39100000,
-    "stages": 2
+    "stages": 2,
+    "diameter_m": 8.4
   },
   "credit": "Builder + agency + first-flight per public sources. Specs from the NASA SLS fact sheet (Dec 2025): 322 ft tall, 5.75 million lb fueled, 8.8 million lbf maximum thrust at liftoff; core stage + ICPS with two five-segment solid boosters. Gallery TBD.",
   "links": [
@@ -31,6 +32,11 @@
     {
       "l": "SLS Reference Guide (NASA)",
       "u": "https://www.nasa.gov/wp-content/uploads/2022/03/sls-reference-guide-2022-v2-508-0.pdf",
+      "t": "deep"
+    },
+    {
+      "l": "NASA SLS reference page — dimensions",
+      "u": "https://www.nasa.gov/reference/space-launch-system/",
       "t": "deep"
     }
   ],

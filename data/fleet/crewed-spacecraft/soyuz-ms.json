@@ -26,6 +26,11 @@
       "l": "Soyuz MS — Roscosmos",
       "u": "https://www.roscosmos.ru/24181/",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Soyuz (spacecraft) comparison table, Soyuz MS column — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -57,5 +62,10 @@
       "mission_id": "soyuz-ms-23",
       "flight_designation": "Soyuz MS-23 (2023-02-24) · UNCREWED · launched to replace leaky MS-22; brought MS-22 crew home 2023-09-27"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.48,
+    "diameter_m": 2.72,
+    "capsule_height_m": 2.24
+  }
 }

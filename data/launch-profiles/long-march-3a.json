@@ -7,7 +7,7 @@
   "fairingJettisonAltM": 115000,
   "refAreaM2": 8.8,
   "cd": 0.3,
-  "launchSite": { "lat": 28.246, "lon": 102.027, "name": "LC-3 · Xichang" },
+  "launchSite": { "lat": 28.247, "lon": 102.0291, "name": "LC-3 · Xichang" },
   "pitchProgram": [[0, 90], [12, 88], [50, 66], [120, 44], [200, 24], [320, 8], [460, 0]],
   "stages": [
     {

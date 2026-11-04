@@ -33,5 +33,9 @@
       "type": "moon",
       "site_id": "lro"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 3.9,
+    "diameter_m": 2.7
+  }
 }

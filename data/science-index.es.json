@@ -827,6 +827,13 @@
   },
   {
     "tab": "planets",
+    "section": "earth-surface-imagery",
+    "title": "Imágenes de la superficie de la Tierra — cómo funcionan las capas",
+    "intro": "Si haces zoom desde la Tierra entera hasta una plataforma de lanzamiento, estás viendo cinco capas de imágenes de satélites y de aviones, apiladas unas sobre otras y sustituidas a medida que te acercas.",
+    "haystack": "imágenes de la superficie de la tierra — cómo funcionan las capas si haces zoom desde la tierra entera hasta una plataforma de lanzamiento, estás viendo cinco capas de imágenes de satélites y de aviones, apiladas unas sobre otras y sustituidas a medida que te acercas. el nivel 0 es el globo: una textura global de 4096 píxeles envuelta alrededor de la esfera. el ecuador de la tierra mide unos 40 000 km, así que cada píxel abarca aproximadamente 10 km: suficiente para los continentes, los desiertos y los casquetes polares, pero no para un solo lugar de lanzamiento. el nivel 1 es la capa de contexto: alrededor de la plataforma seleccionada, un fragmento de 400 km de un mosaico sin nubes, de unos 100 m por píxel, se coloca sobre el globo en su latitud y longitud reales. la capa se dibuja a escala real y se desvanece suavemente en el globo por los bordes; su brillo general se ajusta al del globo para que ambos se unan sin costura. earth surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
     "section": "kuiper-belt",
     "title": "El cinturón de Kuiper",
     "intro": "Un disco de cuerpos helados más allá de Neptuno —predicho en 1951, confirmado en 1992 y la fuente de todos los cometas de período corto que cruzan la órbita terrestre.",
@@ -845,6 +852,20 @@
     "title": "Campos magnéticos",
     "intro": "La magnetosfera de cada planeta es diferente. La de Saturno es excepcionalmente alineada, la de Urano es caótica, y Venus y Marte no tienen ninguna.",
     "haystack": "campos magnéticos la magnetosfera de cada planeta es diferente. la de saturno es excepcionalmente alineada, la de urano es caótica, y venus y marte no tienen ninguna. inclinación del eje magnético (ángulo entre el dipolo y el eje de rotación) para cada planeta con un dínamo conocido: mercurio 0,7°, tierra 10,5°, júpiter 9,6°, saturno ~0°, urano 58,6°, neptuno 46,9°. venus, marte y plutón no presentan hoy un dipolo globalmente significativo. los dipolos de urano y neptuno, enormemente desviados del eje, también están desplazados del centro del planeta — el de urano aproximadamente 1/3 del radio planetario. el dínamo convencional (núcleo de hierro) no puede producir fácilmente esa geometría; la explicación más aceptada es que urano y neptuno albergan sus dínamos en una capa exterior del manto formada por agua iónica + amoníaco + metano, y no en un núcleo profundo. magnetic fields"
+  },
+  {
+    "tab": "planets",
+    "section": "mars-surface-imagery",
+    "title": "Imágenes de la superficie de Marte — cómo funcionan las capas",
+    "intro": "Si haces zoom desde el planeta entero hasta las huellas de las ruedas de un róver, estás viendo seis capas de imágenes de orbitadores y róveres, apiladas unas sobre otras y sustituidas a medida que te acercas.",
+    "haystack": "imágenes de la superficie de marte — cómo funcionan las capas si haces zoom desde el planeta entero hasta las huellas de las ruedas de un róver, estás viendo seis capas de imágenes de orbitadores y róveres, apiladas unas sobre otras y sustituidas a medida que te acercas. el nivel 0 es el globo: una textura global de 4096 píxeles envuelta alrededor de la esfera. el ecuador de marte mide unos 21 300 km, así que cada píxel abarca aproximadamente 5 km: suficiente para los volcanes, los cañones y los casquetes polares, pero no para un solo lugar de aterrizaje. el nivel 1 es la capa de contexto: alrededor del lugar seleccionado, un fragmento de 400 km del mosaico infrarrojo diurno elaborado por themis, el thermal emission imaging system de mars odyssey, se extiende sobre el planeta en su latitud y longitud reales, con unos 100 m por píxel. themis ve calor, no luz: de día, las laderas orientadas al sol están más calientes que las que le dan la espalda, así que el mosaico infrarrojo se lee en gran parte como un mapa de relieve sombreado de cada borde de cráter y cada canal. no tiene color propio, por lo que la capa toma su color y su brillo del globo y de themis solo el detalle nítido, y en los bordes se desvanece suavemente en el globo. mars surface imagery — how the layers work"
+  },
+  {
+    "tab": "planets",
+    "section": "moon-surface-imagery",
+    "title": "Imágenes de la superficie lunar — cómo funcionan las capas",
+    "intro": "Cuando haces zoom desde la Luna entera hasta un lugar de alunizaje, no estás viendo una sola imagen sino seis, tomadas por cámaras distintas en naves distintas, apiladas unas sobre otras y reemplazadas a medida que te acercas.",
+    "haystack": "imágenes de la superficie lunar — cómo funcionan las capas cuando haces zoom desde la luna entera hasta un lugar de alunizaje, no estás viendo una sola imagen sino seis, tomadas por cámaras distintas en naves distintas, apiladas unas sobre otras y reemplazadas a medida que te acercas. el nivel 0 es el globo: una textura global de 4096 píxeles envuelta alrededor de la esfera. el ecuador de la luna mide unos 10 900 km, así que cada píxel abarca aproximadamente 2,7 km. eso es más que suficiente desde la órbita y demasiado grueso para ver dónde alunizó nadie. el nivel 1 es la capa de contexto: alrededor del sitio seleccionado, un fragmento de 400 km del mosaico de la wide angle camera del lunar reconnaissance orbiter, de unos 100 m por píxel, se coloca sobre el globo en su latitud y longitud reales. la wide angle camera capta una franja de 60 km de ancho en siete bandas de color; a medida que la luna gira bajo la órbita polar de lro, las franjas se suman hasta cubrir todo el globo, y las largas sombras de la luz rasante cerca del [terminador](planets/sub-solar-and-terminator) son lo que hace destacar los cráteres. la capa se dibuja a escala real, toma su color y su brillo del globo y se desvanece suavemente en él por los bordes. moon surface imagery — how the layers work"
   },
   {
     "tab": "planets",

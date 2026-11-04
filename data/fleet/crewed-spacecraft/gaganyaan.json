@@ -22,5 +22,9 @@
       "u": "https://www.isro.gov.in/Gaganyaan.html",
       "t": "core"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 5.58,
+    "diameter_m": 3.5
+  }
 }

@@ -528,6 +528,92 @@
       ]
     },
     {
+      "id": "ryugu",
+      "name": "162173 Ryugu",
+      "type": "asteroid",
+      "a": 1.1909,
+      "e": 0.1911,
+      "T": 474.7,
+      "L0": 0.7405,
+      "varpi": 1.79592,
+      "incl": 5.87,
+      "color": "#5a524a",
+      "radius_km": 0.448,
+      "discovered": "1999",
+      "mission_visited": "Hayabusa2 (JAXA, 2018–2019 + sample return 2020)",
+      "description": "Dark, carbon-rich (C-type) near-Earth asteroid shaped like a spinning top, about 900 m across. JAXA's Hayabusa2 arrived in June 2018, dropped rovers on the surface, fired a copper impactor to make an artificial crater and touched down twice in 2019. Its capsule brought 5.4 g of Ryugu back to Earth in December 2020 — water-bearing material little changed since the solar system formed.",
+      "wiki": "https://en.wikipedia.org/wiki/162173_Ryugu",
+      "mission_visits": [
+        "Hayabusa2 — JAXA, 2018–2019 rendezvous, two touchdowns and an artificial crater; 2020 sample return"
+      ],
+      "library": [
+        {
+          "id": "ryugu-wiki",
+          "label": "Wikipedia — 162173 Ryugu",
+          "url": "https://en.wikipedia.org/wiki/162173_Ryugu",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "ryugu-jaxa",
+          "label": "JAXA Hayabusa2 project",
+          "url": "https://www.hayabusa2.jaxa.jp/en/",
+          "tier": "intro",
+          "kind": "jaxa"
+        },
+        {
+          "id": "ryugu-sbdb",
+          "label": "JPL Small-Body Database — 162173 Ryugu",
+          "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=162173",
+          "tier": "core",
+          "kind": "nasa"
+        }
+      ]
+    },
+    {
+      "id": "eros",
+      "name": "433 Eros",
+      "type": "asteroid",
+      "a": 1.4582,
+      "e": 0.2229,
+      "T": 643.2,
+      "L0": 3.1624,
+      "varpi": 2.15,
+      "incl": 10.83,
+      "color": "#b08a62",
+      "radius_km": 8.42,
+      "discovered": "1898",
+      "mission_visited": "NEAR Shoemaker (NASA, 2000–2001)",
+      "description": "Stony (S-type) near-Earth asteroid, 34 × 11 × 11 km, the first near-Earth asteroid ever found (1898). NASA's NEAR Shoemaker went into orbit around it on 14 February 2000 — the first spacecraft to orbit an asteroid — mapped it for a year, then landed on it on 12 February 2001, though it was never designed to.",
+      "wiki": "https://en.wikipedia.org/wiki/433_Eros",
+      "mission_visits": [
+        "NEAR Shoemaker — NASA, 2000 orbit insertion (first asteroid orbiter); 2001 landing"
+      ],
+      "library": [
+        {
+          "id": "eros-wiki",
+          "label": "Wikipedia — 433 Eros",
+          "url": "https://en.wikipedia.org/wiki/433_Eros",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "eros-nasa",
+          "label": "NASA — NEAR Shoemaker",
+          "url": "https://science.nasa.gov/mission/near-shoemaker/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "eros-sbdb",
+          "label": "JPL Small-Body Database — 433 Eros",
+          "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=433",
+          "tier": "core",
+          "kind": "nasa"
+        }
+      ]
+    },
+    {
       "id": "didymos",
       "name": "65803 Didymos",
       "type": "asteroid",

@@ -10,6 +10,7 @@
   "departure_date": "1968-10-11",
   "arrival_date": "1968-10-11",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Saturn IB (AS-205)",
   "payload": "14781 kg launched (Apollo 7 CSM (CSM-101), no LM)",
   "delta_v": "~9.5 km/s (to LEO)",

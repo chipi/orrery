@@ -26,6 +26,11 @@
       "l": "Soyuz 1 — NASA NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-037A",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Soyuz (spacecraft) comparison table — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -58,5 +63,9 @@
     "soyuz-1",
     "soyuz-11",
     "apollo-soyuz"
-  ]
+  ],
+  "specs": {
+    "length_m": 7.95,
+    "diameter_m": 2.72
+  }
 }

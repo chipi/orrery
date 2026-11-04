@@ -1,0 +1,44 @@
+{
+  "missionId": "mars-express",
+  "siteId": "beagle2",
+  "body": "mars",
+  "landingSite": {
+    "lat": 11.53,
+    "lon": 90.43
+  },
+  "entryState": {
+    "altitudeM": 120000,
+    "velocityMs": 5500,
+    "flightPathAngleDeg": 16.5
+  },
+  "entryMassKg": 69,
+  "entryCdA": 1.0,
+  "dynamicGamma": true,
+  "retroPropellantKg": 0,
+  "archetype": "MARS_CHUTE_AIRBAG",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "finalPhaseAltM": 200,
+    "parachuteCdA": 43,
+    "heatshieldKg": 24
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "altitudeM",
+    "flightPathAngleDeg",
+    "entryCdA",
+    "chuteDeployAltM",
+    "parachuteCdA",
+    "heatshieldKg"
+  ],
+  "provenance": [
+    {
+      "l": "Beagle 2 ESA/UK Commission of Inquiry report (5 April 2004) §3: entry at 5.5 km/s; Mach 1 in under 3 min, pilot chute; front shield and back cover released, main chute; altimeter; air-bags inflated at 200 m; rebounds up to 28 m (risk of bouncing into the main parachute). Entry angle, chute size and the shield/cover mass split are not given — estimated",
+      "u": "https://web.archive.org/web/20090327001136/http://www.bnsc.gov.uk/assets/channels/resources/press/report.pdf"
+    },
+    {
+      "l": "NASA — Beagle 2 in depth: 69 kg at launch, 33.2 kg lander at touchdown; landed 25 Dec 2003, found partly deployed by MRO in 2015",
+      "u": "https://web.archive.org/web/20190508192843/https://solarsystem.nasa.gov/missions/beagle-2/in-depth/"
+    }
+  ]
+}

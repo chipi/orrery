@@ -31,9 +31,18 @@
       "l": "Gunter's Space Page — Ariane 1 launch history",
       "u": "https://space.skyrocket.de/doc_lau/ariane.htm",
       "t": "deep"
+    },
+    {
+      "l": "ESA - Ariane 1, 2, 3 (Height 47.4 m, Diameter 3.8 m) — dimensions",
+      "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane_1_2_32",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "giotto"
-  ]
+  ],
+  "specs": {
+    "height_m": 47.4,
+    "diameter_m": 3.8
+  }
 }

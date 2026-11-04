@@ -42,5 +42,9 @@
     "venera-13",
     "vega-1",
     "vega-2"
-  ]
+  ],
+  "specs": {
+    "height_m": 50,
+    "diameter_m": 7.4
+  }
 }

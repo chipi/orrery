@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import type { HotspotAnnotation, RegionBounds } from '$types/surface-site';
 import { streamedUrl } from './asset-url';
+import { featherMask } from './three/feather-mask';
 
 /**
  * Surface-patch quad component (PRD-014 / RFC-017 §ADR-060).
@@ -174,6 +175,7 @@ export function buildRegionalPatch(input: {
   const mat = createPatchMaterial(input.textureUrl, {
     polygonOffsetFactor: -1,
     polygonOffsetUnits: -1,
+    feather: true,
   });
   const mesh = new THREE.Mesh(geom, mat);
   mesh.position.y = Z_FIGHT_OFFSET_Y;
@@ -210,6 +212,7 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
     const regMat = createPatchMaterial(input.regionalTextureUrl, {
       polygonOffsetFactor: -1,
       polygonOffsetUnits: -1,
+      feather: true,
     });
     const regMesh = new THREE.Mesh(regGeom, regMat);
     regMesh.position.y = Z_FIGHT_OFFSET_Y;
@@ -451,21 +454,32 @@ interface PatchMaterialOptions {
    *  -1 (weaker) so the detail layer above it wins. */
   polygonOffsetFactor?: number;
   polygonOffsetUnits?: number;
+  /** Fade the outer edge to transparent (the regional layer, #641): the
+   *  magnified CTX square then melts into the context map under it
+   *  instead of ending on a hard line across the screen. */
+  feather?: boolean;
 }
 
+/** Edge fade of a feathered patch, as a fraction of its width. */
+const PATCH_FEATHER_EDGE = 0.12;
+
+// Patches shade and decode exactly like the planet sphere (SurfaceScene
+// planetMaterial: Phong, shininess 4, texture without a colour space) and the
+// context cap, so imagery meets the globe at the same brightness. A Standard
+// material with an sRGB-decoded texture read as a darker square (#641).
 function createPatchMaterial(
   textureUrl: string | undefined,
   opts: PatchMaterialOptions = {},
-): THREE.MeshStandardMaterial {
+): THREE.MeshPhongMaterial {
   const pof = opts.polygonOffsetFactor ?? -2;
   const pou = opts.polygonOffsetUnits ?? -2;
   if (!textureUrl) {
-    return new THREE.MeshStandardMaterial({
+    return new THREE.MeshPhongMaterial({
       color: 0x9a9a90,
-      metalness: 0.0,
-      roughness: 0.95,
+      shininess: 4,
       emissive: 0x111111,
       emissiveIntensity: 0.05,
+      ...(opts.feather ? { alphaMap: featherMask(PATCH_FEATHER_EDGE), transparent: true } : {}),
       polygonOffset: true,
       polygonOffsetFactor: pof,
       polygonOffsetUnits: pou,
@@ -478,11 +492,11 @@ function createPatchMaterial(
   // would orphan it on the GPU (no later dispose pass reaches it). We
   // flip `disposed` in an overridden dispose() and drop a late texture.
   let disposed = false;
-  const mat = new THREE.MeshStandardMaterial({
+  const mat = new THREE.MeshPhongMaterial({
     color: 0xffffff,
-    metalness: 0.0,
-    roughness: 0.95,
+    shininess: 4,
     map: null,
+    ...(opts.feather ? { alphaMap: featherMask(PATCH_FEATHER_EDGE), transparent: true } : {}),
     // polygonOffset pulls the patch toward the camera in depth-buffer
     // space without changing its world position. Combined with a tiny
     // surface offset (Z_FIGHT_OFFSET_Y) this keeps the patch flush on
@@ -508,9 +522,6 @@ function createPatchMaterial(
         tex.dispose();
         return;
       }
-      // Three.js r128 colour space API (PRD-019 §S1 will upgrade to
-      // r140+ where this becomes tex.colorSpace = SRGBColorSpace).
-      tex.colorSpace = THREE.SRGBColorSpace;
       // Patch textures are 1:1 already (per RFC-022 §6.1 variant set);
       // disable wrapping so an undersize source doesn't tile.
       tex.wrapS = THREE.ClampToEdgeWrapping;

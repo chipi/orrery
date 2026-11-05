@@ -89,24 +89,24 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'apollo14',
+    // 2026-11-05 (#641 review) — NASA's seamless 360° landing-site panorama
+    // replaces the 180° LM 12 O'clock pan: Antares, the flag, the
+    // photographer's shadow, the Sun. 15000×1800 at 360° → 43° tall, horizon
+    // 42 % from the top.
     sourceUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/c/cc/' +
-      'Apollo_14_-_LM_12_O%27clock_Pan_Hi-Res.jpg',
-    sourceLabel: "Apollo 14 LM 12 O'clock Pan Hi-Res",
-    attribution: 'NASA / Alan Shepard / Edgar Mitchell · via Apollo Lunar Surface Journal',
+      'https://upload.wikimedia.org/wikipedia/commons/a/a1/Apollo_14_landing_site_panorama.jpg',
+    sourceLabel: 'Apollo 14 landing site panorama (NASA)',
+    attribution: 'NASA / Alan Shepard / Edgar Mitchell · via Wikimedia Commons',
     license: 'PD-NASA',
-    // 12893×3185 ≈ 4.05:1 — at 180° hAz the implied vFOV is 44°
-    // (180/4.05). Earlier 14+14=28° configuration squished the
-    // source vertically by 1.57x and shrank the LM ascent stage
-    // + ALSEP equipment into a thin band. 22+22=44 matches the
-    // source aspect ratio so 1px ≈ 1px angular size on output.
-    srcAzimuthDeg: 180,
-    srcElevationTopDeg: 22,
-    srcElevationBottomDeg: 22,
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 18,
+    srcElevationBottomDeg: 25,
+    recolourBlackThreshold: 0,
+    outWidth: 8192,
+    outHeight: 4096,
     caption:
-      "Fra Mauro panorama looking forward of Antares LM (12 o'clock position). " +
-      'Cone Crater rim visible in distance; ALSEP package + MET (Modular Equipment Transporter) tracks. ' +
-      'Apollo 14, Feb 5–6 1971. NASA / Shepard / Mitchell via ALSJ.',
+      'Apollo 14 landing site at Fra Mauro, full-circle (Feb 1971): Antares LM, the flag, ' +
+      "the photographer's shadow, the Sun low over the plain. NASA / Shepard / Mitchell.",
   },
   {
     siteId: 'change4',

@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "용어집",
   "glossary_jump": "첫 글자로 이동",
   "hud_flight_plan": "비행 계획",
-  "skip_to_content": "본문으로 건너뛰기"
+  "skip_to_content": "본문으로 건너뛰기",
+  "panel_rover_distance": "주행 거리",
+  "panel_rover_latest_drive": "최근 주행",
+  "panel_rover_last_contact": "마지막 교신",
+  "panel_rover_still_driving": "주행 중",
+  "panel_rover_stops": "지도 위 지점",
+  "panel_rover_km": "{value}km",
+  "panel_rover_days_on_mars": "화성에서 보낸 날",
+  "panel_rover_contact_sol": "{date} · 솔 {sol}",
+  "traverse_hover_detail": "≈ {date} · 착륙 지점에서 {km}km",
+  "panel_tab_journey": "여정",
+  "journey_replay_play": "주행 다시 보기",
+  "journey_replay_pause": "일시 정지",
+  "journey_replay_scrub": "주행 솔",
+  "journey_elevation": "주행 경로의 고도",
+  "journey_elevation_range": "{min}~{max}m · 고도차 {climb}m"
 }

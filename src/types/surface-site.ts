@@ -361,6 +361,16 @@ export interface Traverse {
   point_sols?: number[];
   /** True when `point_sols` are interpolated rather than recorded. */
   point_sols_approx?: boolean;
+  /** Elevation at each point, m above the areoid (#641 profile). */
+  point_elev_m?: number[];
+  /** Where `point_elev_m` comes from (rover waypoints / DEM). */
+  elev_source?: string;
+  /** Distance driven — the mission's own figure, not the simplified polyline's length. */
+  length_km?: number;
+  /** Last sol with contact (ENDED) or of the latest drive (ACTIVE). */
+  last_sol?: number;
+  /** Sol number of landing day (MER 1, MSL / M2020 0) — sol → date. */
+  landing_sol?: number;
   /** Curated notable stops along the traverse. Optional. */
   stops?: TraverseStop[];
   /**
@@ -378,6 +388,25 @@ export interface Traverse {
    * rendered as a detail patch on the magnified traverse.
    */
   route_patches?: RouteHirisePatch[];
+  /** True when a `<rover>.route-photos.json` sidecar exists (#641). */
+  has_route_photos?: boolean;
+  /** The rover's own photos, placed on the path at their sol (#641). */
+  route_photos?: RoutePhoto[];
+}
+
+/** A photo the rover took, pinned on its traverse (#641). Caption = the
+ *  image's alt text in the page locale; credit lives in image provenance. */
+export interface RoutePhoto {
+  id: string;
+  sol: number;
+  /** True when the sol is converted from a date, not recorded. */
+  sol_approx?: boolean;
+  lat: number;
+  lon: number;
+  /** Served image path (/images/…webp). */
+  image: string;
+  /** 512 px preview for the hover card / Journey row. */
+  thumb: string;
 }
 
 /** One along-route HiRISE detail crop (#360). */

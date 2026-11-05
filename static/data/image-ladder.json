@@ -18627,5 +18627,169 @@
     512,
     1024,
     2048
+  ],
+  "/images/mars-sites/opportunity/route/endurance-layers": [
+    320,
+    640,
+    1024
+  ],
+  "/images/mars-sites/opportunity/route/erebus-horizon": [
+    320,
+    640,
+    1280,
+    2048,
+    2154
+  ],
+  "/images/mars-sites/opportunity/route/marathon-valley-pan": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/opportunity/route/perseverance-valley": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/opportunity/route/victoria-lip": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/spirit/route/beside-home-plate": [
+    320,
+    640,
+    1280,
+    2048,
+    2601
+  ],
+  "/images/mars-sites/spirit/route/bonneville-approach": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/spirit/route/bonneville-rim": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/spirit/route/larrys-lookout": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/spirit/route/troy": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/curiosity/route/gediz-vallis": [
+    320,
+    640,
+    1280,
+    2048,
+    2924
+  ],
+  "/images/mars-sites/curiosity/route/glen-torridon": [
+    320,
+    640,
+    1280,
+    1328
+  ],
+  "/images/mars-sites/curiosity/route/marias-pass": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/curiosity/route/murray-buttes": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/curiosity/route/vera-rubin-ridge": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/curiosity/route/yellowknife-overlook": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/bright-angel": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/delta-approach": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/landing-pan": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/south-seitah": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/toward-crater-rim": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/van-zyl-overlook": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/zhurong/route/parachute-backshell": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/zhurong/route/selfie-with-lander": [
+    320,
+    640,
+    1280,
+    1818
   ]
 }

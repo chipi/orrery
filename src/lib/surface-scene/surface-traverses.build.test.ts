@@ -238,7 +238,51 @@ describe('rebuildTraverses basics', () => {
     expect(segments(tl.casing as Line2)).toBe(4);
     // lastSol 120 → minor every 25, major every 100: ticks at 25, 50, 75 (minor) and 100 (major).
     expect(tl.ticks).toHaveLength(2);
-    expect(tl.tickLabels).toHaveLength(1);
+    const kinds = (tl.tickLabels ?? []).map((l) => l.userData.kind);
+    expect(kinds.filter((k) => k === 'traverse-tick-label')).toHaveLength(1);
+    // ~19 km of path → a milestone every 5 km: 5, 10, 15.
+    expect(kinds.filter((k) => k === 'traverse-km-label')).toHaveLength(3);
+    // Landing ring on the first point, pickable as the landing site.
+    expect(tl.stopPins[0].userData.kind).toBe('traverse-landing');
+    // Hover data: one km per point, starting at 0.
+    expect(tl.pointKm?.[0]).toBe(0);
+    expect(tl.pathWorld).toHaveLength(5);
+  });
+
+  it('route photos (#641): one camera pin each, pickable, carrying image + sol', () => {
+    const { rebuildTraverses, ctx } = setup({
+      traverses: {
+        r: traverse({
+          rover_id: 'r',
+          route_photos: [
+            {
+              id: 'a',
+              sol: 10,
+              lat: 18.45,
+              lon: 77.45,
+              image: '/images/a.webp',
+              thumb: '/images/a-320.webp',
+            },
+            {
+              id: 'b',
+              sol: 20,
+              sol_approx: true,
+              lat: 18.5,
+              lon: 77.5,
+              image: '/images/b.webp',
+              thumb: '/images/b-320.webp',
+            },
+          ],
+        }),
+      },
+    });
+    rebuildTraverses();
+    const photos = ctx.traverseLines[0].stopPins.filter(
+      (p) => p.userData.kind === 'traverse-photo',
+    );
+    expect(photos.map((p) => p.userData.image)).toEqual(['/images/a.webp', '/images/b.webp']);
+    expect(photos[1].userData.stopSolApprox).toBe(true);
+    expect(photos[0].userData.thumb).toBe('/images/a-320.webp');
   });
 
   it('falls back to a white path for a rover with no site', () => {

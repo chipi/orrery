@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "Glossary",
   "glossary_jump": "Jump to letter",
   "hud_flight_plan": "FLIGHT PLAN",
-  "skip_to_content": "Skip to content"
+  "skip_to_content": "Skip to content",
+  "panel_rover_distance": "Distance driven",
+  "panel_rover_latest_drive": "Latest drive",
+  "panel_rover_last_contact": "Last contact",
+  "panel_rover_still_driving": "Still driving",
+  "panel_rover_stops": "Stops on the map",
+  "panel_rover_km": "{value} km",
+  "panel_rover_days_on_mars": "Days on Mars",
+  "panel_rover_contact_sol": "{date} · Sol {sol}",
+  "traverse_hover_detail": "≈ {date} · {km} km from landing",
+  "panel_tab_journey": "JOURNEY",
+  "journey_replay_play": "Replay the drive",
+  "journey_replay_pause": "Pause",
+  "journey_replay_scrub": "Sol on the drive",
+  "journey_elevation": "Elevation along the drive",
+  "journey_elevation_range": "{min} to {max} m · {climb} m of relief"
 }

@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "Glossario",
   "glossary_jump": "Vai alla lettera",
   "hud_flight_plan": "PIANO DI VOLO",
-  "skip_to_content": "Vai al contenuto"
+  "skip_to_content": "Vai al contenuto",
+  "panel_rover_distance": "Distanza percorsa",
+  "panel_rover_latest_drive": "Ultimo tragitto",
+  "panel_rover_last_contact": "Ultimo contatto",
+  "panel_rover_still_driving": "Ancora in marcia",
+  "panel_rover_stops": "Tappe sulla mappa",
+  "panel_rover_km": "{value} km",
+  "panel_rover_days_on_mars": "Giorni su Marte",
+  "panel_rover_contact_sol": "{date} · Sol {sol}",
+  "traverse_hover_detail": "≈ {date} · a {km} km dall’atterraggio",
+  "panel_tab_journey": "PERCORSO",
+  "journey_replay_play": "Rivedi il percorso",
+  "journey_replay_pause": "Pausa",
+  "journey_replay_scrub": "Sol del percorso",
+  "journey_elevation": "Quota lungo il percorso",
+  "journey_elevation_range": "da {min} a {max} m · {climb} m di dislivello"
 }

@@ -1,4 +1,4 @@
-import { createReadStream, existsSync, promises as fs } from 'node:fs';
+import { createReadStream, existsSync, mkdirSync, writeFileSync, promises as fs } from 'node:fs';
 import path from 'node:path';
 import { spawnSync, spawn } from 'node:child_process';
 
@@ -183,6 +183,38 @@ async function flattenSingleSubdir(tileDir: string, tileName: string): Promise<v
   void tileName;
 }
 
+// murray-lab.caltech.edu sends the wrong intermediate: its certificate is
+// issued by "InCommon RSA OV SSL CA 3" but the server presents the older
+// "InCommon RSA Server CA", so curl on Linux can't build a chain (exit 60;
+// macOS fetches the missing one itself). Fix without turning verification
+// off: fetch the right intermediate from the leaf's AIA "CA Issuers" URL
+// and hand curl the system roots + that intermediate — it must still chain
+// to a trusted root (Sectigo R46). Built once, cached next to the tiles.
+const AIA_INTERMEDIATE_URL = 'http://crt.sectigo.com/InCommonRSAOVSSLCA3.crt';
+const SYSTEM_CA_BUNDLES = [
+  '/etc/ssl/certs/ca-certificates.crt',
+  '/etc/ca-certificates/extracted/tls-ca-bundle.pem',
+  '/etc/pki/tls/certs/ca-bundle.crt',
+  '/etc/ssl/cert.pem',
+];
+function ensureCaBundle(): string | null {
+  const bundle = path.join(TILE_CACHE_DIR, 'ca-bundle.pem');
+  if (existsSync(bundle)) return bundle;
+  mkdirSync(TILE_CACHE_DIR, { recursive: true });
+  const system = SYSTEM_CA_BUNDLES.find((b) => existsSync(b));
+  if (!system) return null;
+  const der = path.join(TILE_CACHE_DIR, 'aia-intermediate.der');
+  const pem = path.join(TILE_CACHE_DIR, 'aia-intermediate.pem');
+  const dl = spawnSync('curl', ['-sS', '--fail', '-o', der, AIA_INTERMEDIATE_URL]);
+  if (dl.status !== 0) return null;
+  const conv = spawnSync('openssl', ['x509', '-inform', 'DER', '-in', der, '-out', pem]);
+  if (conv.status !== 0) return null;
+  const sysPem = spawnSync('cat', [system, pem], { encoding: 'buffer', maxBuffer: 64 << 20 });
+  if (sysPem.status !== 0) return null;
+  writeFileSync(bundle, sysPem.stdout);
+  return bundle;
+}
+
 async function downloadWithRetry(url: string, outPath: string): Promise<void> {
   // Node fetch chokes on Caltech's TLS chain (InCommon → USERTrust)
   // with UNABLE_TO_VERIFY_LEAF_SIGNATURE; the host's system trust
@@ -192,6 +224,7 @@ async function downloadWithRetry(url: string, outPath: string): Promise<void> {
   // retries gracefully). `--retry`/`--retry-delay` give us free
   // exponential-ish backoff for resumable failures.
   let lastErr: unknown = null;
+  let caBundle: string | null = null;
   for (let attempt = 1; attempt <= DOWNLOAD_MAX_ATTEMPTS; attempt++) {
     const label = attempt > 1 ? ` (attempt ${attempt}/${DOWNLOAD_MAX_ATTEMPTS})` : '';
     console.log(`  downloading ${url.slice(0, 80)}…${label}`);
@@ -208,6 +241,7 @@ async function downloadWithRetry(url: string, outPath: string): Promise<void> {
             '30',
             '--max-time',
             '1800', // 30 min ceiling per attempt for a ~1.7GB file
+            ...(caBundle ? ['--cacert', caBundle] : []),
             '-o',
             outPath,
             url,
@@ -230,6 +264,8 @@ async function downloadWithRetry(url: string, outPath: string): Promise<void> {
       return;
     } catch (err) {
       lastErr = err;
+      // curl 60 = chain not verifiable (the server's wrong intermediate).
+      if (!caBundle && /curl exit 60/.test((err as Error).message)) caBundle = ensureCaBundle();
       const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
       console.log(
         `  download attempt ${attempt} failed after ${elapsed}s: ${(err as Error).message}`,

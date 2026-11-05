@@ -56,6 +56,9 @@ interface StopSpec {
 }
 
 interface RoverSpec {
+  /** Distance driven (mission figure) and last sol with contact, both sourced. */
+  lengthKm: number;
+  lastSol: number;
   file: string;
   toLatLon: (x: number, y: number) => [number, number];
   /** Rover positions measured on HiRISE, by sol (ascending). */
@@ -71,6 +74,9 @@ const OPP_LON0 = 354.4734 - 360;
 const ROVERS: Record<string, RoverSpec> = {
   spirit: {
     file: 'MERA_traverse.csv',
+    // JPL, "NASA's Spirit rover completes mission on Mars" (2011): 7.73 km; last contact sol 2210.
+    lengthKm: 7.73,
+    lastSol: 2210,
     toLatLon: (x, y) => [(y / IAU_MARS_RADIUS_M) * DEG, 175.5 + (x / IAU_MARS_RADIUS_M) * DEG],
     // The lander beside Sleepy Hollow on PSP_003689_1650.
     ties: [{ sol: 1, lat: -14.57337, lon: 175.47763 }],
@@ -86,6 +92,9 @@ const ROVERS: Record<string, RoverSpec> = {
   },
   opportunity: {
     file: 'MERB_traverse_5130.csv',
+    // PIA23178 (final traverse map): 45.16 km; last contact sol 5111 (10 June 2018).
+    lengthKm: 45.16,
+    lastSol: 5111,
     toLatLon: (x, y) => [
       OPP_LAT0 + (y / IAU_MARS_RADIUS_M) * DEG,
       OPP_LON0 + (x / (IAU_MARS_RADIUS_M * Math.cos(OPP_LAT0 / DEG))) * DEG,
@@ -267,6 +276,10 @@ async function main() {
   const out = {
     ...prev,
     credit: spec.credit(km, points.length, url),
+    length_km: spec.lengthKm,
+    last_sol: spec.lastSol,
+    // MER sols count from 1 on landing day.
+    landing_sol: 1,
     points,
     point_sols: pointSols,
     stops,

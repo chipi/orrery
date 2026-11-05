@@ -6,4 +6,4 @@
  * routes so PanelTabRow + downstream consumers can share it.
  */
 
-export type PanelTab = 'overview' | 'gallery' | 'story' | 'learn';
+export type PanelTab = 'overview' | 'gallery' | 'story' | 'journey' | 'learn';

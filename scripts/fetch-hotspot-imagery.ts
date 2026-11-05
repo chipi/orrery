@@ -258,19 +258,20 @@ async function main(): Promise<void> {
             sourceUrl: f.sourceUrl,
             tileName: f.tileName,
             siteId: f.siteId,
-            centerLat: site.lat,
-            centerLon: site.lon,
+            centerLat: f.centre.lat,
+            centerLon: f.centre.lon,
           });
         })
         .filter((e) => e !== null);
       await upsertProvenanceEntries(provenanceEntries);
       console.log(`  Provenance: ${provenanceEntries.length} CTX entries upserted`);
 
-      // True regional ground extent (#309 step 2). 3072 px is the CTX crop
-      // size (fetch-mars-ctx.ts); ground = crop px × source res (5 m/px).
+      // True regional ground extent (#309 step 2): crop px × source res. The
+      // crop grows past 3072 px for rovers whose traverse needs it (#641).
       for (const f of ctxResult.fetched) {
         const e = sidecar.entries[f.siteId];
-        if (e) e.hotspot_tier2_regional_ground_m = Math.round(3072 * f.cropMeta.resolutionMPerPx);
+        if (e)
+          e.hotspot_tier2_regional_ground_m = Math.round(f.cropPx * f.cropMeta.resolutionMPerPx);
       }
       await fs.writeFile(SIDECAR_PATH, JSON.stringify(sidecar, null, 2) + '\n');
       console.log(`  Sidecar: regional ground extents written`);

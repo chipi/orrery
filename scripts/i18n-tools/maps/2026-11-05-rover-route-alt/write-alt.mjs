@@ -592,7 +592,7 @@ const AT = {
   },
   victoria: {
     'en-US': 'at Victoria Crater',
-    ar: 'عند فوهة فيكتوريا',
+    ar: 'عند فوهة فكتوريا',
     de: 'am Victoria-Krater',
     es: 'en el cráter Victoria',
     fr: 'au cratère Victoria',
@@ -619,8 +619,8 @@ const AT = {
     nl: 'bij Spirit Point op de rand van de Endeavour-krater',
     'pt-BR': 'em Spirit Point, na borda da cratera Endeavour',
     ru: 'у Spirit Point на краю кратера Индевор',
-    'sr-Cyrl': 'код Spirit Point на ободу кратера Ендевор',
-    'zh-CN': '上的奋进撞击坑边缘的 Spirit Point',
+    'sr-Cyrl': 'код Spirit Point на ободу кратера Индевор',
+    'zh-CN': '上的奋斗撞击坑边缘的 Spirit Point',
   },
   marathon: {
     'en-US': 'at Marathon Valley on Endeavour Crater’s rim',
@@ -635,8 +635,8 @@ const AT = {
     nl: 'in Marathon Valley op de rand van de Endeavour-krater',
     'pt-BR': 'em Marathon Valley, na borda da cratera Endeavour',
     ru: 'в Marathon Valley на краю кратера Индевор',
-    'sr-Cyrl': 'у Marathon Valley на ободу кратера Ендевор',
-    'zh-CN': '上的奋进撞击坑边缘的 Marathon Valley',
+    'sr-Cyrl': 'у Marathon Valley на ободу кратера Индевор',
+    'zh-CN': '上的奋斗撞击坑边缘的 Marathon Valley',
   },
   bonneville: {
     'en-US': 'at Bonneville Crater’s rim',

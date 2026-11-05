@@ -2,6 +2,9 @@ import { describe, expect, it } from 'vitest';
 import * as THREE from 'three';
 import {
   daysBetween,
+  distanceMilestoneStepKm,
+  solToDate,
+  routeMidpoint,
   greatCircleKm,
   solRampColor,
   solTickIndices,
@@ -94,5 +97,46 @@ describe('daysBetween', () => {
   it('returns 0 for reversed or unparsable dates', () => {
     expect(daysBetween('2021-03-01', '2021-02-01')).toBe(0);
     expect(daysBetween('not-a-date', '2021-02-01')).toBe(0);
+  });
+});
+
+describe('routeMidpoint (#641)', () => {
+  it('is half way along the path by length, not by point count', () => {
+    // 3 points, the second leg 3× the first: midpoint lies inside leg 2.
+    const [lat, lon] = routeMidpoint([
+      [0, 0],
+      [0, 1],
+      [0, 4],
+    ]);
+    expect(lat).toBeCloseTo(0, 9);
+    expect(lon).toBeCloseTo(2, 9);
+  });
+
+  it('a single point is its own midpoint', () => {
+    expect(routeMidpoint([[5, 6]])).toEqual([5, 6]);
+  });
+});
+
+describe('solToDate (#641)', () => {
+  it('counts from the landing sol', () => {
+    // Spirit: sol 1 = 2004-01-04; last contact sol 2210 = 2010-03-22 (JPL).
+    expect(solToDate('2004-01-04', 1, 2210)).toBe('2010-03-22');
+    // Opportunity reached Endeavour on sol 2681 = 2011-08-09 (JPL).
+    expect(solToDate('2004-01-25', 1, 2681)).toBe('2011-08-09');
+    // MSL counts landing day as sol 0.
+    expect(solToDate('2012-08-06', 0, 0)).toBe('2012-08-06');
+  });
+
+  it('returns empty for a bad landing date', () => {
+    expect(solToDate('not a date', 1, 5)).toBe('');
+  });
+});
+
+describe('distanceMilestoneStepKm (#641)', () => {
+  it('picks a handful of labels per route', () => {
+    expect(distanceMilestoneStepKm(1.9)).toBe(0.5);
+    expect(distanceMilestoneStepKm(7.7)).toBe(1);
+    expect(distanceMilestoneStepKm(45.2)).toBe(5);
+    expect(distanceMilestoneStepKm(120)).toBe(10);
   });
 });

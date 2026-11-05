@@ -353,6 +353,14 @@ export interface Traverse {
   credit: string;
   /** Polyline vertices: [lat, lon] pairs in degrees. */
   points: Array<[number, number]>;
+  /**
+   * The sol each point was reached on, one per point (#641) — from the team
+   * tables (MER), MMGIS waypoints (MSL/M2020) or interpolated milestones
+   * (Zhurong, `point_sols_approx`). Drives the sol colour ramp and sol ticks.
+   */
+  point_sols?: number[];
+  /** True when `point_sols` are interpolated rather than recorded. */
+  point_sols_approx?: boolean;
   /** Curated notable stops along the traverse. Optional. */
   stops?: TraverseStop[];
   /**

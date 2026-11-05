@@ -284,14 +284,14 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/spirit/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/spirit/tier3-pan.jpg",
       "panorama_metadata": {
-        "sol": 590,
-        "date": "2005-08-23",
+        "sol": 932,
+        "date": "2006-08-17",
         "instrument": "Pancam",
-        "caption": "Spirit's view from the summit of Husband Hill — first Martian summit reached by a rover. Looking south across the Inner Basin of Gusev Crater toward the Columbia Hills.",
+        "caption": "Spirit's McMurdo panorama, taken from Low Ridge beside Home Plate while the rover sat out the 2006 Martian winter (sols 814–932). Husband Hill on the horizon, the rippled El Dorado dunes at its foot.",
         "credit_team": "NASA/JPL-Caltech/Cornell",
         "nasa_id": "PIA01906"
       },
-      "traverse_stop_link": "sol-590",
+      "traverse_stop_link": "sol-744",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_ground_m": 15360,
       "hotspot_context_source": "/images/hotspots/mars/spirit/context.webp",
@@ -315,7 +315,7 @@
         "sol": 56,
         "date": "2004-03-21",
         "instrument": "Pancam",
-        "caption": "Opportunity's view from inside Eagle Crater, the airbag-bounce landing site — the layered Burns Cliff outcrop visible across the crater wall would become the rover's first major science target.",
+        "caption": "Opportunity's view from inside Eagle Crater, the airbag-bounce landing site — the layered Opportunity Ledge outcrop visible across the crater wall would become the rover's first major science target.",
         "credit_team": "NASA/JPL-Caltech/Cornell",
         "nasa_id": "PIA05783"
       },

@@ -25,6 +25,14 @@
   import type { SurfaceSite, Traverse } from '$types/surface-site';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { formatNumber } from '$lib/format';
+  import type { LocaleCode } from '$lib/locale';
+  import {
+    solRampColor,
+    solTickIndices,
+    solTickSpacing,
+  } from '$lib/surface-scene/surface-traverses';
   import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
 
@@ -461,39 +469,47 @@
     if (!traverses) return;
     const tr = traverses[selected.id];
     if (!tr || tr.points.length < 2) return;
-    const color = colorFor(selected);
-    // Bold polyline (Slice 5 §"traverse polyline as first-class primitive").
-    // Outer 4 px white glow + inner 2.5 px agency-tinted line.
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
-    ctx.lineWidth = 4;
-    ctx.globalAlpha = tr.status === 'ACTIVE' ? 0.95 : 0.75;
-    ctx.beginPath();
-    for (let i = 0; i < tr.points.length; i++) {
-      const [lat, lon] = tr.points[i];
-      const p = project(lat, lon, W, H);
-      if (i === 0) ctx.moveTo(p.x, p.y);
-      else ctx.lineTo(p.x, p.y);
+    const pts = tr.points.map(([lat, lon]) => project(lat, lon, W, H));
+    const sols = tr.point_sols?.length === tr.points.length ? tr.point_sols : undefined;
+    const stroke = () => {
+      ctx.beginPath();
+      pts.forEach((q, i) => (i ? ctx.lineTo(q.x, q.y) : ctx.moveTo(q.x, q.y)));
+      ctx.stroke();
+    };
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    if (sols) {
+      // #641 — same look as the 3D route: dark casing, line coloured by sol
+      // over the whole mission, sol ticks across the path.
+      const last = sols[sols.length - 1];
+      ctx.strokeStyle = 'rgba(6, 8, 11, 0.75)';
+      ctx.lineWidth = 8;
+      stroke();
+      ctx.lineWidth = 3.5;
+      for (let i = 1; i < pts.length; i++) {
+        ctx.strokeStyle = `#${solRampColor(last > 1 ? (sols[i] - 1) / (last - 1) : 0).getHexString()}`;
+        ctx.beginPath();
+        ctx.moveTo(pts[i - 1].x, pts[i - 1].y);
+        ctx.lineTo(pts[i].x, pts[i].y);
+        ctx.stroke();
+      }
+      drawSolTicks(ctx, pts, sols, solTickSpacing(last), W, H);
+    } else {
+      // Outer 4 px white glow + inner 2 px agency-tinted line.
+      ctx.globalAlpha = tr.status === 'ACTIVE' ? 0.95 : 0.75;
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+      ctx.lineWidth = 4;
+      stroke();
+      ctx.strokeStyle = colorFor(selected);
+      ctx.lineWidth = 2;
+      stroke();
+      ctx.globalAlpha = 1;
     }
-    ctx.stroke();
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    for (let i = 0; i < tr.points.length; i++) {
-      const [lat, lon] = tr.points[i];
-      const p = project(lat, lon, W, H);
-      if (i === 0) ctx.moveTo(p.x, p.y);
-      else ctx.lineTo(p.x, p.y);
-    }
-    ctx.stroke();
-    ctx.globalAlpha = 1;
     // Start dot (lander = 5 m footprint) + end dot (rover = 3 m).
     // Scale-aware: tracks true scale at deep zoom, floors at clickable
-    // size at wide zoom. Rover gets the smaller dot per its smaller
-    // physical footprint.
-    const start = tr.points[0];
-    const end = tr.points[tr.points.length - 1];
-    const sp = project(start[0], start[1], W, H);
-    const ep = project(end[0], end[1], W, H);
+    // size at wide zoom.
+    const sp = pts[0];
+    const ep = pts[pts.length - 1];
     const startR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
     const endR = scaleAwareRadius(ROVER_FOOTPRINT_KM);
     ctx.fillStyle = '#22c55e';
@@ -509,20 +525,61 @@
     ctx.beginPath();
     ctx.arc(ep.x, ep.y, endR + 0.5, 0, Math.PI * 2);
     ctx.stroke();
-    // Curated stops along the path (sample / drill / panorama / etc.).
-    // Drawn as tube pins (kind-coloured drop shapes with white outline)
-    // — distinct from the start (green) and end (red/amber) markers.
     if (tr.stops) drawTraverseStops(ctx, tr.stops, W, H);
   }
 
+  /** Minor + labelled major sol ticks, perpendicular to the path (#641).
+   *  Major labels closer than ~44 px to the last one drawn are skipped. */
+  function drawSolTicks(
+    ctx: CanvasRenderingContext2D,
+    pts: Array<{ x: number; y: number }>,
+    sols: number[],
+    spacing: { minor: number; major: number },
+    W: number,
+    H: number,
+  ) {
+    const loc = getLocale() as LocaleCode;
+    let lastLabel: { x: number; y: number } | null = null;
+    ctx.strokeStyle = '#ffffff';
+    ctx.font = "600 12px 'Space Mono', monospace";
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    for (const { sol, i } of solTickIndices(sols, spacing.minor)) {
+      const q = pts[i];
+      if (q.x < -20 || q.x > W + 20 || q.y < -20 || q.y > H + 20) continue;
+      let k = i - 1;
+      while (k > 0 && pts[k].x === q.x && pts[k].y === q.y) k--;
+      const dx = q.x - pts[k].x;
+      const dy = q.y - pts[k].y;
+      const len = Math.hypot(dx, dy) || 1;
+      const [nx, ny] = [-dy / len, dx / len];
+      const major = sol % spacing.major === 0;
+      const h = major ? 9 : 6;
+      ctx.lineWidth = major ? 2.5 : 1.5;
+      ctx.beginPath();
+      ctx.moveTo(q.x - nx * h, q.y - ny * h);
+      ctx.lineTo(q.x + nx * h, q.y + ny * h);
+      ctx.stroke();
+      if (!major) continue;
+      const lx = q.x + nx * 22;
+      const ly = q.y + ny * 22;
+      if (lastLabel && Math.hypot(lx - lastLabel.x, ly - lastLabel.y) < 44) continue;
+      lastLabel = { x: lx, y: ly };
+      const text = formatNumber(sol, loc);
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = 'rgba(6, 8, 11, 0.9)';
+      ctx.strokeText(text, lx, ly);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText(text, lx, ly);
+      ctx.strokeStyle = '#ffffff';
+    }
+  }
+
   /**
-   * Drop-shape tube pins for curated traverse stops. Color by `kind`:
-   *   sample      — orange (#fb923c) drill core retrieval
-   *   drill       — red-orange (#f97316) wet science
-   *   panorama    — cyan (#22d3ee) photo waypoint
-   *   helicopter  — magenta (#e879f9) Ingenuity flight site
-   *   feature     — yellow (#fde047) named terrain feature
-   * Each pin shows a small label above with sol number + name.
+   * Stops as a white ring with a kind-coloured core + a "name · Sol N"
+   * pill (#641), same as the 3D route. Kind colours:
+   *   sample orange · drill red-orange · panorama cyan · helicopter
+   *   magenta · feature yellow.
    */
   function drawTraverseStops(
     ctx: CanvasRenderingContext2D,
@@ -537,44 +594,37 @@
       helicopter: '#e879f9',
       feature: '#fde047',
     };
-    // 2026-06-03: inline "SOL N · label" text removed so the
-    // flat-patch pin style matches the 3D balloon-pin handoff —
-    // both show just a kind-tinted tear-drop with a white centre
-    // dot, sol/label info is surfaced via the hover tooltip on
-    // 3D, and on the flat-patch users can read it from the
-    // detail panel + stop chip cross-link. Avoids the perceived
-    // "traverse vanishes at deepest zoom" jolt during the
-    // sphere → flat-patch 600 ms cross-fade.
+    ctx.font = "600 12px 'Space Mono', monospace";
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
     for (const stop of stops) {
       const p = project(stop.lat, stop.lon, W, H);
-      if (p.x < -50 || p.x > W + 50 || p.y < -50 || p.y > H + 50) continue;
+      if (p.x < -200 || p.x > W + 50 || p.y < -50 || p.y > H + 50) continue;
       const color = KIND_COLOR[stop.kind] ?? '#fde047';
-      // Match the 3D pin's tear-drop proportions — head 22 / tip 38
-      // → ratio 4:7. Anchor `p` at the tip so the bottom of the
-      // glyph sits on the surface point (same anchoring rule as
-      // sprite.center = (0.5, 0) in the 3D path).
-      const headR = 9; // ≈ 26 px head/2 - outline; comparable to 3D pin
-      const tipDrop = headR * 2; // pointer length from head centre
-      const headY = p.y - tipDrop;
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.55)';
-      ctx.shadowBlur = 4;
-      ctx.shadowOffsetY = 1;
+      ctx.lineWidth = 4.5;
+      ctx.strokeStyle = 'rgba(6, 8, 11, 0.8)';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#ffffff';
+      ctx.stroke();
       ctx.fillStyle = color;
       ctx.beginPath();
-      ctx.arc(p.x, headY, headR, Math.PI * 0.78, Math.PI * 0.22, false);
-      ctx.lineTo(p.x, p.y);
-      ctx.closePath();
+      ctx.arc(p.x, p.y, 3.5, 0, Math.PI * 2);
       ctx.fill();
-      ctx.shadowColor = 'transparent';
-      ctx.shadowBlur = 0;
-      ctx.shadowOffsetY = 0;
-      ctx.strokeStyle = '#ffffff';
+      const text = `${stop.label} · ${m.traverse_sol({ sol: stop.sol })}`;
+      const w = ctx.measureText(text).width + 20;
+      const [x, y, h] = [p.x + 14, p.y - 20, 22];
+      ctx.beginPath();
+      ctx.roundRect(x, y - h / 2, w, h, h / 2);
+      ctx.fillStyle = 'rgba(11, 18, 32, 0.86)';
+      ctx.fill();
       ctx.lineWidth = 1.5;
+      ctx.strokeStyle = color;
       ctx.stroke();
       ctx.fillStyle = '#ffffff';
-      ctx.beginPath();
-      ctx.arc(p.x, headY, headR * 0.35, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.fillText(text, x + 10, y + 1);
     }
   }
 

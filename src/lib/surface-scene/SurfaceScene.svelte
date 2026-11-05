@@ -3731,7 +3731,9 @@
         // Per-frame tier selection based on screen-projected marker size.
         // For S1, only Apollo 11 swaps Tier 0 → Tier 1; other hotspots
         // join the dispatcher as their sub-issues land.
-        if (hotspots.length) {
+        // Runs with no imagery hotspots too (Venus): marker / label scaling and
+        // the scale bar live here (#641).
+        {
           // Selected-site clamp (port of /mars). Without a selection
           // every hotspot uses its data-driven maxTier; with one,
           // non-selected sites clamp to ≤ Tier 1 so adjacent discs

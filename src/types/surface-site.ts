@@ -140,6 +140,9 @@ export interface SurfaceSite {
   hotspot_model?: string;
   hotspot_annotations?: HotspotAnnotation[];
   location_uncertainty_m?: number;
+  /** The landing spot has never been confirmed in orbital imagery (Luna 9):
+   *  the card says so instead of an uncertainty figure (#641). */
+  location_unconfirmed?: boolean;
   /**
    * Path (provenance-style, e.g. /images/hotspots/moon/apollo11/tier2-lroc.jpg)
    * to the source LROC NAC / HiRISE patch for this site. Frontend

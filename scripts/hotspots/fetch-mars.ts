@@ -257,6 +257,9 @@ async function fetchOne(
         outputPath,
         cropSize: 2048,
         jpegQuality: 88,
+        // A landing patch must be whole: InSight's first pick passed the 40 %
+        // default with a quarter of the crop past the frame edge (#641).
+        maxBlackFrac: 0.05,
       });
       return {
         siteId: hotspot.id,

@@ -17,6 +17,7 @@ these first before hand-rolling raf loops, listener registries, or
 | Standard canvas input listeners | `bindCanvasInputs` (existing) | mouse / touch / wheel + hover; returns the matching `removeEventListener` chain |
 | Closest 2D NDC hit testing | `pickClosest2D` (existing) | screen-space pick fallback for routes that don't run a full Three.js raycast |
 | Object3D disposal walk | `disposeObject3D` (existing) | recursive geometry / material / texture dispose |
+| Soft-edged alpha mask for a square patch | `featherMask(edge)` | smoothstep fade over the outer `edge` fraction; each call returns its own texture over one cached buffer, so `disposeObject3D` on one patch never strips the mask from the others (#641) |
 
 ## Critical contract — `document.hidden` pause
 

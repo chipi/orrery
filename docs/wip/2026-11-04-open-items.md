@@ -15,27 +15,24 @@ the tooling every round.
 
 Branch `tech-debt/0.9.7`. Order proposed 2026-11-05; the operator picks what goes in.
 
-**1. Rover traverses — Opportunity, Spirit, Zhurong** (operator, 2026-11-04). Start in a fresh
-session: the WebSearch budget was raised to 400 in `/work/orrery/main/.claude/settings.local.json`
-and only applies to a new session. Operator's order of methods:
+**1. Rover traverses — done (#641, 2026-11-05).** Spirit / Opportunity on the science team's
+localized paths, Zhurong traced on HiRISE, every Mars rover with sols, photos, Journey tab, replay and
+elevation; then a zoom review of every landing site on Mars (16), Venus (3), the Moon (19) and Earth
+(42) with `scripts/hotspots/zoom-sweep.mjs`, fixing each defect found (TA.md § Scene 6, "Zoom bands").
+Luna 9 keeps its regional image only: no map-projected LRO close-up exists and its landing spot is
+unconfirmed (option B, operator 2026-11-05).
 
-1. find the team-localized paths by web search (MER: the localized traverses behind the Analyst's
-   Notebook; Zhurong: the published per-sol localization);
-2. else the PDS drive logs pinned to landmarks located on HiRISE, credited as our reconstruction;
-3. last resort, fix only the clear errors.
+**Next, in the operator's order (2026-11-05):**
 
-Found so far (2026-11-04):
-
-- NASA MMGIS has MSL/M2020 traverse JSON only; the MER paths there answer 403.
-- PDS `pds-geosciences.wustl.edu/mer/mer{1,2}-m-eng-6-rmc-ops-v1/mer?rm_0xxx/data/` holds
-  `mer?_master.svf` (site offsets, x north / y east metres, chained from the landing site) and
-  per-site `.rvf` drive positions. Every solution is `telemetry` (onboard odometry, uncorrected):
-  Opportunity's chain is ~2.3 km off Victoria and ends ~2.9 km inside Endeavour.
-- The V1 stubs are wrong too: Opportunity ends near Endeavour's centre (354.77°E), the Marathon
-  Valley stop sits inside the crater, Victoria is at 5.41°W against 5.50°W.
-- Write the converter as a kept tool with a README row (the MSL/M2020 MMGIS converter used for
-  0.9.5 was never committed). Then re-cut the route HiRISE patches along the new paths
-  (`fetch-mars-traverse.ts`), alt text in 14 locales, credits, and drop the "V1 stub" caveat.
+- **1b. Panorama review** — every landing site's Tier-3 panorama: how it looks; for the poor ones,
+  find better sources.
+- **Left from the zoom review:** Artemis 4 (89.5°S, planned) has no imagery and the globe texture
+  pinches into radial streaks at the pole at every close zoom — needs a polar image (LRO WAC / NAC
+  polar mosaic, south-polar stereographic) as its context or regional layer. Chandrayaan-3 (69°S)
+  looks stretched north–south at 100 km; the context crop's geometry checks out (4096×1443 for a
+  13.2° × 37.5° box), so it may be the terrain — not confirmed either way.
+- **1c. Markers and pins** — the small 3D rover / lander models read as childish; rethink the site
+  markers on Mars and the Moon and the museum / launch-pad pins on Earth.
 
 **2. The deploy gaps 0.9.6 hit** (small; they stop the same failures):
 

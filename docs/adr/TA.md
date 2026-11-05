@@ -1009,7 +1009,7 @@ Threaded through ~9 chokepoints (`pickHero`, `data.ts` gallery builders + `loadI
 
 ## §sensory — Sensory layer (sound · vibration · tilt · v0.8)
 
-PRD-017 / RFC-020 (#147), **replanned 2026-07-11** ("good simple" reframe — see `docs/wip/sensory-cue-vocabulary.md`). Cross-platform: desktop gets sound; mobile adds vibration + tilt. All modules under `src/lib/sensory/`. Opt-in — master defaults OFF, in-memory only (ADR-057, resets on reload).
+PRD-017 / RFC-020 (#147), **replanned 2026-07-11** ("good simple" reframe — see `docs/reference/sensory-cue-vocabulary.md`). Cross-platform: desktop gets sound; mobile adds vibration + tilt. All modules under `src/lib/sensory/`. Opt-in — master defaults OFF, in-memory only (ADR-057, resets on reload).
 
 **State + shell.** `state.svelte.ts` — `sensory` rune singleton: master `on`, per-channel `*Wanted` flags, `active(ch)` = master ∧ wanted ∧ capable. `capabilities.ts` (pure, unit-tested per RFC-020 §7.3): desktop → Sound only; iOS-web hides Vibration (no API); reduced-motion hides Vibration + Tilt. UI: one nav `sensory-toggle` opens `SensorySheet.svelte` (dropdown desktop / bottom-sheet mobile) with the master + capability-gated Sound/Vibration/Tilt switches; first-time hint toast in `Nav.svelte`.
 

@@ -1,6 +1,6 @@
 // Garble pass, step 2 (measure): a graded-sample work file per locale × tree, drawn only from
 // translated fields whose text was last written on or before a cut-off date (default
-// 2026-07-14, the last run without quality checks; see docs/wip/2026-10-31-garble-pass.md).
+// 2026-07-14, the last run without quality checks; see git show 5cf9491e398:docs/wip/2026-10-31-garble-pass.md).
 // Read-only on the repo.
 //   node scripts/i18n-tools/garble-sample.mjs <outdir> [--trees=fleet,missions] [--per=25|all]
 //        [--before=2026-07-14] [--locales=…] [--seed=31]

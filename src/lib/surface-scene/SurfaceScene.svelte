@@ -486,7 +486,12 @@
   // Apollo LRV traverses keep the EVA / samples / crew tiles).
   const roverTr = $derived.by((): Traverse | null => {
     const s = selected as SurfaceSite | null;
-    return s && !s.crew?.length ? (traverses[s.id] ?? null) : null;
+    // Mars rovers with mission sols only: the tiles read "Days on Mars" and
+    // "Sol N", and without last_sol "last contact" fell back to the data
+    // snapshot date (Lunokhod 1: "2026-11-04", 20,441 days). Moon rovers keep
+    // the generic surface-time cells.
+    const tr = s && !s.crew?.length ? (traverses[s.id] ?? null) : null;
+    return config.planet === 'mars' && tr?.last_sol != null ? tr : null;
   });
   const locale = $derived(getLocale() as LocaleCode);
   // #641 — Journey tab: landing, every stop, last position, in sol order, with
@@ -1028,6 +1033,9 @@
   // Globe colour at the flat-patch site (Mars): its greyscale imagery is
   // tinted to it, like the 3D patches (#641).
   let flatPatchTint = $state<[number, number, number] | undefined>();
+  // Bodies whose greyscale imagery takes the globe's colour: Mars (reddish) and
+  // the Moon (its tan-grey globe). Earth imagery is colour already.
+  const TINT_BODIES = new Set(['mars', 'moon']);
   const LEGEND_MIN_SITES = 4;
   const legendScratchA = new THREE.Vector3();
   const legendScratchB = new THREE.Vector3();
@@ -3365,7 +3373,7 @@
         // All three are mutually exclusive per-frame: fly-in supersedes
         // zoom + inertia; zoom + inertia run together when fly isn't.
         // Greyscale patches take the globe's hue once their texture is in (#641).
-        if (config.planet === 'mars' && globeColourAt && now - lastTintPass > 500) {
+        if (TINT_BODIES.has(config.planet) && globeColourAt && now - lastTintPass > 500) {
           lastTintPass = now;
           planetMesh.traverse((o) => {
             const mat = (o as THREE.Mesh).material as THREE.MeshPhongMaterial | undefined;
@@ -4017,6 +4025,13 @@
             h.tier2Group.visible = regionalOpacity > 0.01 || detailOpacity > 0.01;
             h.tier2Group.traverse((obj) => {
               if (!(obj instanceof THREE.Mesh)) return;
+              // Annotation pins (Apollo 11 flag, LRRR, EASEP …) hold their
+              // on-screen size: at a fixed world size the five, metres apart,
+              // stacked into one ring filling the view near the floor (#641).
+              if (obj.userData?.annotationId) {
+                obj.scale.setScalar(Math.min(1, Math.max(0.02, camR - 30)));
+                return;
+              }
               const layer = obj.userData?.layer;
               if (layer !== 'detail' && layer !== 'regional') return;
               // #360: for traverse rovers the landing regional CTX is replaced
@@ -4867,7 +4882,7 @@
             flatPatchTarget = target;
             const ft = target ?? selected;
             flatPatchTint =
-              config.planet === 'mars' && globeColourAt && ft.lat != null && ft.lon != null
+              TINT_BODIES.has(config.planet) && globeColourAt && ft.lat != null && ft.lon != null
                 ? globeColourAt(ft.lat, ft.lon)
                 : undefined;
             if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);

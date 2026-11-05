@@ -1,4 +1,5 @@
 // @vitest-environment jsdom
+import { liftForDark } from '$lib/three-label';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import * as THREE from 'three';
 import { Line2 } from 'three/examples/jsm/lines/Line2.js';
@@ -152,16 +153,19 @@ describe('rebuildTraverses basics', () => {
     expect(tl.isActive).toBe(false);
     expect(tl.surfaceRadius).toBeCloseTo(R + 0.05, 10);
 
-    // line + startDot + endDot + 2 caption groups
-    expect(planetMesh.children).toHaveLength(5);
+    // casing + line + startDot + endDot + 2 caption groups
+    expect(planetMesh.children).toHaveLength(6);
+    expect(tl.casing?.parent).toBe(planetMesh);
     expect(tl.line).toBeInstanceOf(Line2);
     expect(tl.line.userData).toEqual({ roverId: 'perseverance', kind: 'traverse' });
     expect(tl.line.renderOrder).toBe(6);
     // first point equals the site → nothing prepended → 3 points = 2 segments
     expect(segments(tl.line)).toBe(2);
 
-    // path colour comes from the nation palette, ended = 0.7 opacity
-    expect(tl.lineMaterial.color.getHexString()).toBe(colorFor(rover).slice(1).toLowerCase());
+    // path colour: the nation palette lifted for dark ground, ended = 0.7 opacity
+    expect(tl.lineMaterial.color.getHexString()).toBe(
+      liftForDark(colorFor(rover)).slice(1).toLowerCase(),
+    );
     expect(tl.lineMaterial.opacity).toBe(0.7);
     expect(tl.lineMaterial.linewidth).toBe(4);
     expect(tl.lineMaterial.depthTest).toBe(false);

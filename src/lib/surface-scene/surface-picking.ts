@@ -274,11 +274,14 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
     if (!hit) return pickPathAt(clientX, clientY, rect);
     const ud = hit.object.userData;
     if (ud.kind === 'traverse-stop') {
-      return {
-        title: m.traverse_sol({ sol: ud.stopSol }),
-        sol: ud.stopSol,
-        label: ud.stopLabel,
-      };
+      // "Sol N" once, as the title (the card's sol line repeated it); a stop
+      // without a sol (the Moon's stations) is titled by its name.
+      return Number.isFinite(ud.stopSol)
+        ? {
+            title: m.traverse_sol({ sol: formatNumber(ud.stopSol, getLocale() as LocaleCode) }),
+            label: ud.stopLabel,
+          }
+        : { title: ud.stopLabel ?? '', label: undefined };
     }
     if (ud.kind === 'traverse-photo') {
       return {

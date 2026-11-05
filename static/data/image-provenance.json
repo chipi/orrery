@@ -31039,21 +31039,21 @@
    "path": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
    "source_type": "wikimedia-commons",
    "title": "Taurus-Littrow Valley ALSEP panorama, EVA-1. Jack Schmitt assembled colour pan, Lunar Roving Vehicle and Lunar Module Challenger visible. Captured Dec 12 1972; USGS-prepared composite via NASA Apollo Lunar Surface Journal.",
-   "author": "NASA / Gene Cernan / Jack Schmitt / USGS · via Apollo Lunar Surface Journal",
+   "author": "NASA / Gene Cernan / Jack Schmitt · via Wikimedia Commons",
    "agency": "NASA",
-   "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/019_Jack's_Color_ALSEP_Pan_USGS.jpg",
-   "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/019_Jack's_Color_ALSEP_Pan_USGS.jpg",
+   "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/020_Jack%27s_Color_ALSEP_Pan_North.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/020_Jack%27s_Color_ALSEP_Pan_North.jpg",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
    "modifications": [
-    "padded-to-4096x2048-equirectangular",
+    "padded-to-8192x4096-equirectangular",
     "reencoded-jpeg-q88"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": "Jack's Color ALSEP Pan (USGS)",
-   "fetched_at": "2026-06-28T17:07:10.233Z"
+   "nasa_id": "Jack's Color ALSEP Pan North",
+   "fetched_at": "2026-11-05T18:46:35.694Z"
   },
   {
    "id": "80eb0edd5a42cca4",

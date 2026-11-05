@@ -1,18 +1,7 @@
 {
   "hotspot_annotations": [],
-  "panorama_caption": "Taurus-Littrow-Tal, Station 5. Schmitt + Cernan arbeiteten hier am Camelot Crater und am South Massif. Das letzte Panorama eines Mondausstiegs im Apollo-Programm.",
-  "compass_zero_direction": "LRV-Vorderseite (laut Panorama-Ausrichtung des ALSJ)",
+  "panorama_caption": "Der ALSEP-Standort im Taurus-Littrow-Tal, EVA-1 (12. Dezember 1972): das Experimentpaket, das Mondauto (LRV) und die Bergmassive des Tals, Jack Schmitts Farbpanorama. Die letzte Apollo-Landung.",
   "panorama_annotations": [
-    {
-      "id": "south-massif",
-      "label": "South Massif",
-      "body": "2,3 km hohes gehobenes Hochland, beprobt an Station 2 (dem Fundort der orangefarbenen Erde)."
-    },
-    {
-      "id": "camelot-crater",
-      "label": "Rand des Camelot Crater",
-      "body": "Großer, älterer Einschlagkrater nahe der Mondlandefähre; das Blockfeld von Station 5 liegt auf seinem Rand."
-    },
     {
       "id": "lrv",
       "label": "Mondauto (LRV)",

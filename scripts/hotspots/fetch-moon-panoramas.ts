@@ -215,16 +215,22 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'apollo17',
+    // 2026-11-05 (#641 review) — the north half of the same ALSEP pan at full
+    // resolution (12412×4308) replaces the 3249×651 USGS composite. Width from
+    // the frames: one 60 mm Hasselblad frame (~49°) is ~20 % of the strip →
+    // ~240°; 85° tall, horizon at 50 %. The south half is not stitched in.
     sourceUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/' +
-      "019_Jack's_Color_ALSEP_Pan_USGS.jpg",
-    sourceLabel: "Jack's Color ALSEP Pan (USGS)",
-    attribution: 'NASA / Gene Cernan / Jack Schmitt / USGS · via Apollo Lunar Surface Journal',
+      'https://upload.wikimedia.org/wikipedia/commons/6/63/' +
+      '020_Jack%27s_Color_ALSEP_Pan_North.jpg',
+    sourceLabel: "Jack's Color ALSEP Pan North",
+    attribution: 'NASA / Gene Cernan / Jack Schmitt · via Wikimedia Commons',
     license: 'PD-NASA',
-    // 3249×651 ≈ 5:1 aspect — roughly 180° wide, ~36° vertical.
-    srcAzimuthDeg: 180,
-    srcElevationTopDeg: 18,
-    srcElevationBottomDeg: 18,
+    srcAzimuthDeg: 240,
+    srcElevationTopDeg: 42,
+    srcElevationBottomDeg: 43,
+    recolourBlackThreshold: 0,
+    outWidth: 8192,
+    outHeight: 4096,
     caption:
       'Taurus-Littrow Valley ALSEP panorama, EVA-1. Jack Schmitt assembled colour pan, ' +
       'Lunar Roving Vehicle and Lunar Module Challenger visible. ' +

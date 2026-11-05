@@ -1,18 +1,7 @@
 {
   "hotspot_annotations": [],
-  "panorama_caption": "타우루스-리트로 계곡, 스테이션 5. 슈미트 + 서넌이 이곳에서 Camelot Crater와 South Massif를 조사했다. Apollo 프로그램 마지막 달 선외활동 파노라마다.",
-  "compass_zero_direction": "월면차 정면 (ALSJ 파노라마 방향 기준)",
+  "panorama_caption": "타우루스-리트로 계곡의 ALSEP 설치 지점, EVA-1(1972년 12월 12일). 실험 장비 묶음과 월면 로빙 차량, 계곡의 산괴가 보이는 잭 슈미트의 컬러 파노라마. 아폴로의 마지막 착륙.",
   "panorama_annotations": [
-    {
-      "id": "south-massif",
-      "label": "South Massif",
-      "body": "높이 2.3 km로 솟은 고지대로, 스테이션 2(주황색 흙이 발견된 곳)에서 시료를 채취했다."
-    },
-    {
-      "id": "camelot-crater",
-      "label": "Camelot Crater 가장자리",
-      "body": "달 착륙선 근처의 오래된 대형 충돌 크레이터로, 스테이션 5의 바위 지대가 가장자리에 있다."
-    },
     {
       "id": "lrv",
       "label": "월면차",

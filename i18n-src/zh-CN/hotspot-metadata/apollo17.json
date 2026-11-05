@@ -1,18 +1,7 @@
 {
   "hotspot_annotations": [],
-  "panorama_caption": "陶拉斯-利特罗谷山谷，第 5 站。施密特 + 塞尔南在这里考察了 Camelot Crater 和 South Massif。这是 Apollo 计划最后一次月面出舱活动的全景图。",
-  "compass_zero_direction": "月球车正前方（依据 ALSJ 全景方位）",
+  "panorama_caption": "陶拉斯-利特罗谷的 ALSEP 布设点，EVA-1（1972 年 12 月 12 日）：实验装置组、月球车和山谷周围的山体，杰克·施密特拍摄的彩色全景图。阿波罗最后一次登月。",
   "panorama_annotations": [
-    {
-      "id": "south-massif",
-      "label": "South Massif",
-      "body": "高 2.3 km的隆起高地，在第 2 站（发现橙色土壤的地点）采集了样品。"
-    },
-    {
-      "id": "camelot-crater",
-      "label": "Camelot Crater 边缘",
-      "body": "登月舱附近一个较古老的大型撞击坑；第 5 站的巨石区就在其边缘。"
-    },
     {
       "id": "lrv",
       "label": "月球车",

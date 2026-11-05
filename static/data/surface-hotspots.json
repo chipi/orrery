@@ -186,30 +186,15 @@
       "panorama_metadata": {
         "date": "1972-12-12",
         "instrument": "Hasselblad 70mm",
-        "caption": "Taurus-Littrow valley, Station 5. Schmitt + Cernan worked Camelot Crater and the South Massif here. Final lunar EVA panorama in the Apollo programme.",
+        "caption": "The ALSEP site in the Taurus-Littrow valley, EVA-1 (12 December 1972): the experiment package, the Lunar Roving Vehicle and the valley's massifs, Jack Schmitt's colour pan. The last Apollo landing.",
         "credit_team": "NASA · Apollo 17 / ALSJ",
-        "real_extent_pct_vertical": 40,
-        "compass_zero_direction": "LRV forward (per ALSJ panorama orientation)"
+        "entry_yaw_deg": 131
       },
       "panorama_annotations": [
         {
-          "id": "south-massif",
-          "yaw_deg": -75,
-          "pitch_deg": 3,
-          "label": "South Massif",
-          "body": "2.3 km uplifted highland, sampled at Station 2 (the orange-soil discovery site)."
-        },
-        {
-          "id": "camelot-crater",
-          "yaw_deg": 55,
-          "pitch_deg": -2,
-          "label": "Camelot Crater rim",
-          "body": "Large pre-existing impact crater near the Lunar Module; Station 5 boulder field is on the rim."
-        },
-        {
           "id": "lrv",
-          "yaw_deg": 10,
-          "pitch_deg": -12,
+          "yaw_deg": 131,
+          "pitch_deg": -3,
           "label": "Lunar Roving Vehicle",
           "body": "The third LRV used on the Moon. Total traverse this mission: 35.7 km — still the record."
         }

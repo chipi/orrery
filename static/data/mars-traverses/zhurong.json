@@ -222,32 +222,6 @@
       109.93026
     ]
   ],
-  "stops": [
-    {
-      "sol": 60,
-      "lat": 25.056471,
-      "lon": 109.924625,
-      "label": "450 m due south",
-      "kind": "feature",
-      "id": "sol-60"
-    },
-    {
-      "sol": 97,
-      "lat": 25.048274,
-      "lon": 109.925138,
-      "label": "100 days on Mars",
-      "kind": "panorama",
-      "id": "sol-97"
-    },
-    {
-      "sol": 347,
-      "lat": 25.04116,
-      "lon": 109.93026,
-      "label": "Final position · winter dormancy",
-      "kind": "feature",
-      "id": "sol-347"
-    }
-  ],
   "has_route_patches": true,
   "point_sols": [
     1,
@@ -305,5 +279,92 @@
     285,
     347
   ],
-  "point_sols_approx": true
+  "point_sols_approx": true,
+  "length_km": 1.921,
+  "last_sol": 347,
+  "landing_sol": 1,
+  "has_route_photos": true,
+  "point_elev_m": [
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4101,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4101,
+    -4101,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4102,
+    -4103,
+    -4103,
+    -4103,
+    -4103,
+    -4103,
+    -4103,
+    -4103,
+    -4103,
+    -4104,
+    -4104,
+    -4104,
+    -4104,
+    -4104,
+    -4105,
+    -4105,
+    -4105,
+    -4105,
+    -4105,
+    -4105,
+    -4106
+  ],
+  "elev_source": "USGS HRSC + MOLA blended DEM v2, 200 m/px",
+  "stops": [
+    {
+      "sol": 60,
+      "lat": 25.056471,
+      "lon": 109.924625,
+      "label": "450 m due south",
+      "kind": "feature",
+      "id": "sol-60"
+    },
+    {
+      "sol": 97,
+      "lat": 25.048274,
+      "lon": 109.925138,
+      "label": "100 days on Mars",
+      "kind": "panorama",
+      "id": "sol-97"
+    },
+    {
+      "sol": 347,
+      "lat": 25.04116,
+      "lon": 109.93026,
+      "label": "Final position · winter dormancy",
+      "kind": "feature",
+      "id": "sol-347"
+    }
+  ]
 }

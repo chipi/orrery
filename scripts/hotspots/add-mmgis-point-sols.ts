@@ -59,7 +59,19 @@ async function main() {
     sols.push(wps[j].sol);
   }
   const { stops, ...rest } = tr;
-  await fs.writeFile(outPath, JSON.stringify({ ...rest, point_sols: sols, stops }, null, 2) + '\n');
+  // Latest drive: total distance + its sol (the rovers are active). MSL and
+  // M2020 count landing day as sol 0.
+  const last = wps[wps.length - 1] as Waypoint & { dist_total_m?: number };
+  const length_km =
+    last.dist_total_m != null ? Math.round(last.dist_total_m) / 1000 : rest.length_km;
+  await fs.writeFile(
+    outPath,
+    JSON.stringify(
+      { ...rest, length_km, last_sol: last.sol, landing_sol: 0, point_sols: sols, stops },
+      null,
+      2,
+    ) + '\n',
+  );
   console.log(
     `${rover}: ${sols.length} points ← ${wps.length} waypoints; sols ${sols[0]}–${sols.at(-1)}`,
   );

@@ -321,7 +321,7 @@
       },
       "traverse_stop_link": "sol-56",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_tier2_regional_ground_m": 29700,
       "hotspot_context_source": "/images/hotspots/mars/opportunity/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -5.3308,
@@ -386,7 +386,7 @@
       ],
       "traverse_stop_link": "sol-3500",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_tier2_regional_ground_m": 18435,
       "hotspot_context_source": "/images/hotspots/mars/curiosity/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -7.9708,
@@ -451,7 +451,7 @@
       ],
       "traverse_stop_link": "sol-58",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_tier2_regional_ground_m": 17410,
       "hotspot_context_source": "/images/hotspots/mars/perseverance/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 15.0592,

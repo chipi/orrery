@@ -29,6 +29,7 @@
   import { formatNumber } from '$lib/format';
   import type { LocaleCode } from '$lib/locale';
   import {
+    routeMidpoint,
     solRampColor,
     solTickIndices,
     solTickSpacing,
@@ -360,14 +361,25 @@
     // Centring on lat/lon ± half-extent keeps every site's regional
     // layer at a consistent honest 1:1 ground scale.
     if (selected.lat == null || selected.lon == null) return;
+    // The crop's own ground extent when the sidecar records it (#641: rover
+    // crops grow to cover the whole traverse), else the default sizes.
     const regionalExtentKm =
-      config.planet === 'mars' ? 15.4 : config.planet === 'earth' ? 5.0 : 15.4;
+      selected.hotspot_tier2_regional_ground_m != null
+        ? selected.hotspot_tier2_regional_ground_m / 1000
+        : config.planet === 'earth'
+          ? 5.0
+          : 15.4;
+    // Rovers' regional CTX is cut around the traverse midpoint (fetch-mars-ctx),
+    // not the landing site — draw it where it was cut.
+    const tr = config.planet === 'mars' ? traverses?.[selected.id] : undefined;
+    const [cLat, cLon] =
+      tr && tr.points.length > 1 ? routeMidpoint(tr.points) : [selected.lat, selected.lon];
     const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
-    const cosLat = Math.cos((selected.lat * Math.PI) / 180);
+    const cosLat = Math.cos((cLat * Math.PI) / 180);
     const halfLat = regionalExtentKm / 2 / kmPerDegLat;
     const halfLon = regionalExtentKm / 2 / (kmPerDegLat * cosLat);
-    const tl = project(selected.lat + halfLat, selected.lon - halfLon, W, H);
-    const br = project(selected.lat - halfLat, selected.lon + halfLon, W, H);
+    const tl = project(cLat + halfLat, cLon - halfLon, W, H);
+    const br = project(cLat - halfLat, cLon + halfLon, W, H);
     const x = tl.x;
     const y = tl.y;
     const w = br.x - tl.x;

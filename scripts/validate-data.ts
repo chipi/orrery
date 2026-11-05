@@ -249,6 +249,7 @@ const validateCislunarPhaseScienceMap = ajv.compile(
 );
 const validateTraverse = ajv.compile(loadSchema('traverse.schema.json'));
 const validateTraverseRoutePatches = ajv.compile(loadSchema('traverse-route-patches.schema.json'));
+const validateTraverseRoutePhotos = ajv.compile(loadSchema('traverse-route-photos.schema.json'));
 const validateSiteStory = ajv.compile(loadSchema('site-story.schema.json'));
 const validateSiteStoriesIndex = ajv.compile(loadSchema('site-stories-index.schema.json'));
 
@@ -720,7 +721,11 @@ for (const dir of ['mars-traverses', 'moon-traverses']) {
   for (const file of listJson(join(DATA_ROOT, dir))) {
     validateFile(
       file,
-      file.endsWith('.route-patches.json') ? validateTraverseRoutePatches : validateTraverse,
+      file.endsWith('.route-patches.json')
+        ? validateTraverseRoutePatches
+        : file.endsWith('.route-photos.json')
+          ? validateTraverseRoutePhotos
+          : validateTraverse,
     );
   }
 }

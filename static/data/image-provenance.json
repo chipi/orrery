@@ -29210,7 +29210,7 @@
    "id": "0b71a0381769e585",
    "path": "/images/hotspots/mars/curiosity/tier2-ctx.jpg",
    "source_type": "derived-mosaic",
-   "title": "Murray Lab Global CTX Mosaic V01 tile E136_N-08 — regional patch centred at -4.590°N 137.440°E",
+   "title": "Murray Lab Global CTX Mosaic V01 tile E136_N-08 — regional patch centred at -4.724°N 137.379°E",
    "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
    "agency": "NASA",
    "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E136_N-08.zip",
@@ -29226,7 +29226,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "E136_N-08",
-   "fetched_at": "2026-06-24T11:12:50.839Z",
+   "fetched_at": "2026-11-05T11:05:18.338Z",
    "spacecraft_id": "mro",
    "spacecraft_name": "Mars Reconnaissance Orbiter",
    "instrument": "CTX"
@@ -29853,7 +29853,7 @@
    "id": "9def57576bf2807d",
    "path": "/images/hotspots/mars/opportunity/tier2-ctx.jpg",
    "source_type": "derived-mosaic",
-   "title": "Murray Lab Global CTX Mosaic V01 tile E-008_N-04 — regional patch centred at -1.950°N -5.530°E",
+   "title": "Murray Lab Global CTX Mosaic V01 tile E-008_N-04 — regional patch centred at -2.165°N -5.505°E",
    "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
    "agency": "NASA",
    "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E-008_N-04.zip",
@@ -29869,7 +29869,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "E-008_N-04",
-   "fetched_at": "2026-06-24T13:55:09.903Z",
+   "fetched_at": "2026-11-05T10:57:17.448Z",
    "spacecraft_id": "mro",
    "spacecraft_name": "Mars Reconnaissance Orbiter",
    "instrument": "CTX"
@@ -29923,7 +29923,7 @@
    "id": "e2f1e63c80039a93",
    "path": "/images/hotspots/mars/perseverance/tier2-ctx.jpg",
    "source_type": "derived-mosaic",
-   "title": "Murray Lab Global CTX Mosaic V01 tile E076_N16 — regional patch centred at 18.440°N 77.450°E",
+   "title": "Murray Lab Global CTX Mosaic V01 tile E076_N16 — regional patch centred at 18.496°N 77.348°E",
    "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
    "agency": "NASA",
    "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E076_N16.zip",
@@ -29939,7 +29939,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "E076_N16",
-   "fetched_at": "2026-06-24T12:21:51.260Z",
+   "fetched_at": "2026-11-05T11:14:16.080Z",
    "spacecraft_id": "mro",
    "spacecraft_name": "Mars Reconnaissance Orbiter",
    "instrument": "CTX"
@@ -95526,6 +95526,486 @@
    "spacecraft_id": "mro",
    "spacecraft_name": "Mars Reconnaissance Orbiter",
    "instrument": "HiRISE"
+  },
+  {
+   "id": "b7d8848ae485a1c6",
+   "path": "/images/mars-sites/opportunity/route/endurance-layers.webp",
+   "source_type": "nasa-images-api",
+   "title": "Layers Inside 'Endurance' (PIA06263)",
+   "author": "NASA/JPL-Caltech",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA06263",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA06263",
+   "fetched_at": "2026-11-05T11:09:26.357Z"
+  },
+  {
+   "id": "ae374bd628dbccda",
+   "path": "/images/mars-sites/opportunity/route/erebus-horizon.webp",
+   "source_type": "nasa-images-api",
+   "title": "'Erebus Crater' on the Horizon (PIA06341)",
+   "author": "NASA/JPL-Caltech/Cornell",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA06341",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA06341",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "f618e79d4c151a9e",
+   "path": "/images/mars-sites/opportunity/route/victoria-lip.webp",
+   "source_type": "nasa-images-api",
+   "title": "Forty Meters from Entry to Victoria Crater (PIA09971)",
+   "author": "NASA/JPL-Caltech",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA09971",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA09971",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "319538efe34e1f82",
+   "path": "/images/mars-sites/opportunity/route/marathon-valley-pan.webp",
+   "source_type": "nasa-images-api",
+   "title": "Mars Rover Opportunity Panorama of Marathon Valley (PIA20749)",
+   "author": "NASA/JPL-Caltech/Cornell Univ./Arizona State Univ.",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA20749",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA20749",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "cbf0a193c773123c",
+   "path": "/images/mars-sites/opportunity/route/perseverance-valley.webp",
+   "source_type": "nasa-images-api",
+   "title": "View From Within 'Perseverance Valley' on Mars (PIA22074)",
+   "author": "NASA/JPL-Caltech/Cornell Univ./Arizona State Univ.",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA22074",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA22074",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "9ad22de83ff2fe07",
+   "path": "/images/mars-sites/spirit/route/bonneville-approach.webp",
+   "source_type": "nasa-images-api",
+   "title": "Spirit Spies \"Bonneville\" (PIA05314)",
+   "author": "NASA/JPL/Cornell",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA05314",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA05314",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "f5d7c5acd6c82c61",
+   "path": "/images/mars-sites/spirit/route/bonneville-rim.webp",
+   "source_type": "nasa-images-api",
+   "title": "Bonneville (PIA05570)",
+   "author": "NASA/JPL/Cornell",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA05570",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA05570",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "81a7a8fa8bcf7bd5",
+   "path": "/images/mars-sites/spirit/route/larrys-lookout.webp",
+   "source_type": "nasa-images-api",
+   "title": "Lookout Panorama from Spirit (PIA07882)",
+   "author": "NASA/JPL/Cornell",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA07882",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA07882",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "3eb1fa6df5127322",
+   "path": "/images/mars-sites/spirit/route/beside-home-plate.webp",
+   "source_type": "nasa-images-api",
+   "title": "Spirit Beside Home Plate, Sol 1809 (PIA11804)",
+   "author": "NASA/JPL-Caltech",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA11804",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA11804",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "23441bc6d521c034",
+   "path": "/images/mars-sites/spirit/route/troy.webp",
+   "source_type": "nasa-images-api",
+   "title": "Spirit View from Troy (PIA12142)",
+   "author": "NASA/JPL-Caltech",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA12142",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA12142",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "6fb027d7e77a8d6e",
+   "path": "/images/mars-sites/curiosity/route/yellowknife-overlook.webp",
+   "source_type": "nasa-images-api",
+   "title": "Panoramic View From Near Point (PIA16563)",
+   "author": "NASA/JPL-Caltech/Malin Space Science Systems",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA16563",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA16563",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "c44b4364dc5b2d57",
+   "path": "/images/mars-sites/curiosity/route/marias-pass.webp",
+   "source_type": "nasa-images-api",
+   "title": "Geological Contact Zone Near Marias Pass on Mars (PIA19676)",
+   "author": "NASA/JPL-Caltech/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA19676",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA19676",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "6ea52b962f5c3ed2",
+   "path": "/images/mars-sites/curiosity/route/murray-buttes.webp",
+   "source_type": "nasa-images-api",
+   "title": "Rover Panorama Taken Amid Murray Buttes on Mars (PIA20840)",
+   "author": "NASA/JPL-Caltech/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA20840",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA20840",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "c6f214fb3e607dd0",
+   "path": "/images/mars-sites/curiosity/route/vera-rubin-ridge.webp",
+   "source_type": "nasa-images-api",
+   "title": "Martian Ridge Looming Above Curiosity Prior to Ascent (PIA21850)",
+   "author": "NASA/JPL-Caltech/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA21850",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA21850",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "8948252697424a56",
+   "path": "/images/mars-sites/curiosity/route/glen-torridon.webp",
+   "source_type": "nasa-images-api",
+   "title": "Curiosity on the Clay Unit (PIA23047)",
+   "author": "NASA/JPL-Caltech/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA23047",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA23047",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "705138da350f5465",
+   "path": "/images/mars-sites/curiosity/route/gediz-vallis.webp",
+   "source_type": "nasa-images-api",
+   "title": "Curiosity's View Within Gediz Vallis Channel (PIA26410)",
+   "author": "NASA/JPL-Caltech/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA26410",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA26410",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "f0609fc061456aff",
+   "path": "/images/mars-sites/perseverance/route/landing-pan.webp",
+   "source_type": "nasa-images-api",
+   "title": "Mastcam-Z's First 360-Degree Panorama (PIA24264)",
+   "author": "NASA/JPL-Caltech/MSSS/ASU",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA24264",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA24264",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "acb0f95944ce7293",
+   "path": "/images/mars-sites/perseverance/route/van-zyl-overlook.webp",
+   "source_type": "nasa-images-api",
+   "title": "Mastcam-Z's 360-degree View of Van Zyl Overlook (PIA24663)",
+   "author": "NASA/JPL-Caltech/ASU/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA24663",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA24663",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "aaaaabe4b634a070",
+   "path": "/images/mars-sites/perseverance/route/south-seitah.webp",
+   "source_type": "nasa-images-api",
+   "title": "Perseverance Rover's View of South Séítah (PIA24816)",
+   "author": "NASA/JPL-Caltech/ASU/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA24816",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA24816",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "710df4c8c4e0da9f",
+   "path": "/images/mars-sites/perseverance/route/delta-approach.webp",
+   "source_type": "nasa-images-api",
+   "title": "Jezero Crater's Delta Is Getting Closer (PIA25212)",
+   "author": "NASA/JPL-Caltech/ASU/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA25212",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA25212",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "7ee4d5ed7214c0b6",
+   "path": "/images/mars-sites/perseverance/route/bright-angel.webp",
+   "source_type": "nasa-images-api",
+   "title": "Perseverance Captures 'Bright Angel' in 360 Degrees (PIA26369)",
+   "author": "NASA/JPL-Caltech/ASU/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA26369",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA26369",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "e983fea1a47132b0",
+   "path": "/images/mars-sites/perseverance/route/toward-crater-rim.webp",
+   "source_type": "nasa-images-api",
+   "title": "Perseverance Rover's View Up Crater (PIA26373)",
+   "author": "NASA/JPL-Caltech/ASU/MSSS",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA26373",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA26373",
+   "fetched_at": "2026-11-05T11:09:26.358Z"
+  },
+  {
+   "id": "0864276e31e73ad3",
+   "path": "/images/mars-sites/zhurong/route/parachute-backshell.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Zhurong backshell and parachute from rear Hazcam.jpg",
+   "author": "CNSA",
+   "agency": "CNSA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Zhurong_backshell_and_parachute_from_rear_Hazcam.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Zhurong_backshell_and_parachute_from_rear_Hazcam.jpg",
+   "license_short": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "license_rationale": "Creative Commons Zero, Public Domain Dedication",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 187446400,
+   "nasa_id": null,
+   "fetched_at": "2026-11-05T11:09:32.198Z"
+  },
+  {
+   "id": "e669552e28da592b",
+   "path": "/images/mars-sites/zhurong/route/selfie-with-lander.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Zhurong-with-lander-selfie-flat.jpg",
+   "author": "中国新闻网",
+   "agency": "中国新闻网",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Zhurong-with-lander-selfie-flat.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Zhurong-with-lander-selfie-flat.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 129295051,
+   "nasa_id": null,
+   "fetched_at": "2026-11-05T11:09:33.448Z"
   }
  ]
 }

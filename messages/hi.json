@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "शब्दावली",
   "glossary_jump": "अक्षर पर जाएँ",
   "hud_flight_plan": "उड़ान योजना",
-  "skip_to_content": "मुख्य सामग्री पर जाएँ"
+  "skip_to_content": "मुख्य सामग्री पर जाएँ",
+  "panel_rover_distance": "तय की गई दूरी",
+  "panel_rover_latest_drive": "अंतिम यात्रा",
+  "panel_rover_last_contact": "अंतिम संपर्क",
+  "panel_rover_still_driving": "अब भी चल रहा है",
+  "panel_rover_stops": "नक्शे पर पड़ाव",
+  "panel_rover_km": "{value} किमी",
+  "panel_rover_days_on_mars": "मंगल पर दिन",
+  "panel_rover_contact_sol": "{date} · सोल {sol}",
+  "traverse_hover_detail": "≈ {date} · लैंडिंग से {km} किमी",
+  "panel_tab_journey": "यात्रा",
+  "journey_replay_play": "यात्रा दोबारा चलाएँ",
+  "journey_replay_pause": "रोकें",
+  "journey_replay_scrub": "यात्रा का सोल",
+  "journey_elevation": "यात्रा के साथ ऊँचाई",
+  "journey_elevation_range": "{min} से {max} मी · {climb} मी का उतार-चढ़ाव"
 }

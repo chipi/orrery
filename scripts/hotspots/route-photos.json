@@ -1,0 +1,224 @@
+[
+  {
+    "rover": "opportunity",
+    "id": "endurance-layers",
+    "nasa_id": "PIA06263",
+    "url": "https://images-assets.nasa.gov/image/PIA06263/PIA06263~orig.jpg",
+    "sol": 134,
+    "sol_source": "navigation camera ... during Opportunity's 134th sol on June 9, 2004",
+    "place": "Endurance Crater"
+  },
+  {
+    "rover": "opportunity",
+    "id": "erebus-horizon",
+    "nasa_id": "PIA06341",
+    "url": "https://images-assets.nasa.gov/image/PIA06341/PIA06341~orig.jpg",
+    "sol": 590,
+    "sol_source": "panoramic camera on Opportunity during the rover's 590th sol (Sept. 21, 2005)",
+    "place": "Erebus Crater"
+  },
+  {
+    "rover": "opportunity",
+    "id": "victoria-lip",
+    "nasa_id": "PIA09971",
+    "url": "https://images-assets.nasa.gov/image/PIA09971/PIA09971~orig.jpg",
+    "sol": 1278,
+    "sol_source": "navigation camera during the rover 1,278th Martian day, or sol, Aug. 28, 2007 ... perched at the lip of Victoria Crater",
+    "place": "Victoria Crater"
+  },
+  {
+    "rover": "opportunity",
+    "id": "marathon-valley-pan",
+    "nasa_id": "PIA20749",
+    "url": "https://images-assets.nasa.gov/image/PIA20749/PIA20749~orig.jpg",
+    "sol": 4347,
+    "sol_source": "April 16 through May 15, 2016, corresponding to sols 4,347 through 4,375 (first sol used)",
+    "place": "Marathon Valley"
+  },
+  {
+    "rover": "opportunity",
+    "id": "perseverance-valley",
+    "nasa_id": "PIA22074",
+    "url": "https://images-assets.nasa.gov/image/PIA22074/PIA22074~orig.jpg",
+    "sol": 4840,
+    "sol_source": "Sept. 4 through Oct. 6, 2017, corresponding to sols 4840 through 4871 (first sol used)",
+    "place": "Perseverance Valley"
+  },
+
+  {
+    "rover": "spirit",
+    "id": "bonneville-approach",
+    "nasa_id": "PIA05314",
+    "url": "https://images-assets.nasa.gov/image/PIA05314/PIA05314~orig.jpg",
+    "sol": 43,
+    "sol_source": "after its record 27.5 meters drive on Sol 43, which ended February 16, 2004",
+    "place": "Bonneville Crater"
+  },
+  {
+    "rover": "spirit",
+    "id": "bonneville-rim",
+    "nasa_id": "PIA05570",
+    "url": "https://images-assets.nasa.gov/image/PIA05570/PIA05570~orig.jpg",
+    "sol": 68,
+    "sol_source": "recorded this view on the rover's 68th sol, March 12, 2004",
+    "place": "Bonneville Crater"
+  },
+  {
+    "rover": "spirit",
+    "id": "larrys-lookout",
+    "nasa_id": "PIA07882",
+    "url": "https://images-assets.nasa.gov/image/PIA07882/PIA07882~orig.jpg",
+    "sol": 410,
+    "sol_source": "'Lookout' panorama, acquired on the rover's 410th to 413th martian days (Feb. 27 to Mar. 2, 2005)",
+    "place": "Husband Hill"
+  },
+  {
+    "rover": "spirit",
+    "id": "beside-home-plate",
+    "nasa_id": "PIA11804",
+    "url": "https://images-assets.nasa.gov/image/PIA11804/PIA11804~orig.jpg",
+    "sol": 1809,
+    "sol_source": "title 'Spirit Beside Home Plate, Sol 1809'",
+    "place": "Home Plate"
+  },
+  {
+    "rover": "spirit",
+    "id": "troy",
+    "nasa_id": "PIA12142",
+    "url": "https://images-assets.nasa.gov/image/PIA12142/PIA12142~orig.jpg",
+    "sol": 1891,
+    "sol_source": "navigation camera ... during the 1,891st Martian day, or sol ... April 28, 2009",
+    "place": "Troy"
+  },
+
+  {
+    "rover": "curiosity",
+    "id": "yellowknife-overlook",
+    "nasa_id": "PIA16563",
+    "url": "https://images-assets.nasa.gov/image/PIA16563/PIA16563~orig.jpg",
+    "sol": 106,
+    "sol_source": "On Nov. 22, 2012, or sol 106 ... near a location called Point Lake for an overlook of ... Yellowknife Bay",
+    "place": "Yellowknife Bay"
+  },
+  {
+    "rover": "curiosity",
+    "id": "marias-pass",
+    "nasa_id": "PIA19676",
+    "url": "https://images-assets.nasa.gov/image/PIA19676/PIA19676~orig.jpg",
+    "sol": 995,
+    "sol_source": "Mastcam on May 25, 2015, during the 995th Martian day, or sol",
+    "place": "Marias Pass"
+  },
+  {
+    "rover": "curiosity",
+    "id": "murray-buttes",
+    "nasa_id": "PIA20840",
+    "url": "https://images-assets.nasa.gov/image/PIA20840/PIA20840~orig.jpg",
+    "sol": 1451,
+    "sol_source": "Sept. 4, 2016, during the 1,451st Martian day, or sol",
+    "place": "Murray Buttes"
+  },
+  {
+    "rover": "curiosity",
+    "id": "vera-rubin-ridge",
+    "nasa_id": "PIA21850",
+    "url": "https://images-assets.nasa.gov/image/PIA21850/PIA21850~orig.jpg",
+    "sol": 1785,
+    "sol_source": "Aug. 13, 2017, during the 1,785th Martian day, or sol",
+    "place": "Vera Rubin Ridge"
+  },
+  {
+    "rover": "curiosity",
+    "id": "glen-torridon",
+    "nasa_id": "PIA23047",
+    "url": "https://images-assets.nasa.gov/image/PIA23047/PIA23047~orig.jpg",
+    "sol": 2316,
+    "sol_source": "Mastcam on Feb. 10, 2019 (Sol 2316) ... 'Glen Torridon'",
+    "place": "Glen Torridon"
+  },
+  {
+    "rover": "curiosity",
+    "id": "gediz-vallis",
+    "nasa_id": "PIA26410",
+    "url": "https://images-assets.nasa.gov/image/PIA26410/PIA26410~orig.jpg",
+    "sol": 4311,
+    "sol_source": "Sept. 21 and 22, 2024, the 4,311st and 4,312nd Martian days, or sols",
+    "place": "Gediz Vallis"
+  },
+
+  {
+    "rover": "perseverance",
+    "id": "landing-pan",
+    "nasa_id": "PIA24264",
+    "url": "https://images-assets.nasa.gov/image/PIA24264/PIA24264~orig.jpg",
+    "sol": 3,
+    "sol_source": "142 individual images taken on Sol 3 (Feb. 21, 2021)",
+    "place": "Octavia E. Butler Landing"
+  },
+  {
+    "rover": "perseverance",
+    "id": "van-zyl-overlook",
+    "nasa_id": "PIA24663",
+    "url": "https://images-assets.nasa.gov/image/PIA24663/PIA24663~orig.jpg",
+    "sol": 53,
+    "sol_source": "between April 15 and 26, 2021, or the 53rd and 64th Martian days (first sol used)",
+    "place": "Van Zyl Overlook"
+  },
+  {
+    "rover": "perseverance",
+    "id": "south-seitah",
+    "nasa_id": "PIA24816",
+    "url": "https://images-assets.nasa.gov/image/PIA24816/PIA24816~orig.jpg",
+    "sol": 201,
+    "sol_source": "Sept. 12, 2021 (the 201st Martian day, or sol)",
+    "place": "Séítah"
+  },
+  {
+    "rover": "perseverance",
+    "id": "delta-approach",
+    "nasa_id": "PIA25212",
+    "url": "https://images-assets.nasa.gov/image/PIA25212/PIA25212~orig.jpg",
+    "sol": 406,
+    "sol_source": "April 11, 2022, the 406th Martian day, or sol",
+    "place": "Jezero delta"
+  },
+  {
+    "rover": "perseverance",
+    "id": "bright-angel",
+    "nasa_id": "PIA26369",
+    "url": "https://images-assets.nasa.gov/image/PIA26369/PIA26369~orig.jpg",
+    "sol": 1178,
+    "sol_source": "June 12, 2024, the 1,178th Martian day, or sol",
+    "place": "Bright Angel"
+  },
+  {
+    "rover": "perseverance",
+    "id": "toward-crater-rim",
+    "nasa_id": "PIA26373",
+    "url": "https://images-assets.nasa.gov/image/PIA26373/PIA26373~orig.jpg",
+    "sol": 1229,
+    "sol_source": "Aug. 4, 2024, the 1,229th Martian day, or sol",
+    "place": "Jezero crater rim"
+  },
+
+  {
+    "rover": "zhurong",
+    "id": "parachute-backshell",
+    "commons_file": "File:Zhurong backshell and parachute from rear Hazcam.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Zhurong_backshell_and_parachute_from_rear_Hazcam.jpg",
+    "sol": 67,
+    "approx": true,
+    "sol_source": "Commons date 2021-07-21 (may be the CNSA release date) → sol ≈ 67",
+    "place": "parachute and backshell"
+  },
+  {
+    "rover": "zhurong",
+    "id": "selfie-with-lander",
+    "commons_file": "File:Zhurong-with-lander-selfie-flat.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Zhurong-with-lander-selfie-flat.jpg",
+    "sol": 18,
+    "approx": true,
+    "sol_source": "taken in early June 2021 (released 11 June) by the wireless camera the rover set down 10 m south of the platform → sol ≈ 18; not the rover's own camera",
+    "place": "landing site"
+  }
+]

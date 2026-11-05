@@ -54,7 +54,17 @@
   import { buildSubSolarPoint } from '$lib/surface-scene/surface-sun-layers';
   import { createSurfacePicking } from '$lib/surface-scene/surface-picking';
   import { createSurface2dMap } from '$lib/surface-scene/surface-2d-map';
-  import { createSurfaceTraverses, type TraverseLine } from '$lib/surface-scene/surface-traverses';
+  import {
+    createSurfaceTraverses,
+    traversePathKm,
+    daysBetween,
+    greatCircleKm,
+    solToDate,
+    type TraverseLine,
+  } from '$lib/surface-scene/surface-traverses';
+  import { formatNumber } from '$lib/format';
+  import { getImageAlt } from '$lib/image-alt';
+  import { getLocale } from '$lib/paraglide/runtime';
   import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
   import { ladderRungUrl, loadLadder, type LadderManifest } from '$lib/image-srcset';
   import { createSurfaceMarkers, type MarkerObj } from '$lib/surface-scene/surface-markers';
@@ -145,7 +155,7 @@
   import { buildSurfacePanelTabs } from '$lib/surface-map/build-panel-tabs';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { type SiteStory } from '$lib/data';
-  import { localeFromPage, localHref } from '$lib/locale';
+  import { localeFromPage, localHref, type LocaleCode } from '$lib/locale';
   /** The /science page that explains each body's imagery layers ("How this works"). */
   const HOW_IMAGERY_WORKS: Partial<Record<string, string>> = {
     moon: '/science/planets/moon-surface-imagery',
@@ -469,6 +479,184 @@
   // prop in onMount. Empty record when the route doesn't pass that prop
   // (Moon today). Keyed by rover_id.
   let traverses: Record<string, Traverse> = $state({});
+  // #641 — the selected site's traverse when it is an uncrewed rover (crewed
+  // Apollo LRV traverses keep the EVA / samples / crew tiles).
+  const roverTr = $derived.by((): Traverse | null => {
+    const s = selected as SurfaceSite | null;
+    return s && !s.crew?.length ? (traverses[s.id] ?? null) : null;
+  });
+  const locale = $derived(getLocale() as LocaleCode);
+  // #641 — Journey tab: landing, every stop, last position, in sol order, with
+  // the ≈ date, km from landing (scaled to the mission's distance driven) and
+  // the stop's own route tile as a thumbnail. Needs a sol-carrying traverse.
+  type JourneyRow = {
+    key: string;
+    label: string;
+    sol: number;
+    lat: number;
+    lon: number;
+    km: number;
+    date: string;
+    thumb?: string;
+    /** Photo rows open the photo instead of flying the camera. */
+    photo?: string;
+  };
+  const journeyRows = $derived.by((): JourneyRow[] => {
+    const tr = roverTr;
+    const site = selected as SurfaceSite | null;
+    if (!tr?.point_sols || tr.point_sols.length !== tr.points.length || !site) return [];
+    const pts = tr.points;
+    const cum = [0];
+    for (let i = 1; i < pts.length; i++)
+      cum.push(cum[i - 1] + greatCircleKm(pts[i - 1], pts[i], config.radiusKm));
+    const scale = tr.length_km && cum[cum.length - 1] > 0 ? tr.length_km / cum[cum.length - 1] : 1;
+    const nearest = (lat: number, lon: number) => {
+      let bi = 0;
+      let bd = Infinity;
+      for (let i = 0; i < pts.length; i++) {
+        const d = (pts[i][0] - lat) ** 2 + (pts[i][1] - lon) ** 2;
+        if (d < bd) {
+          bd = d;
+          bi = i;
+        }
+      }
+      return bi;
+    };
+    const landingSol = tr.landing_sol ?? 1;
+    const dateOf = (sol: number) =>
+      site.landing_date ? solToDate(site.landing_date, landingSol, sol) : '';
+    const row = (key: string, label: string, sol: number, lat: number, lon: number): JourneyRow => {
+      const tile = tr.route_patches?.find((rp) => rp.id === key);
+      return {
+        key,
+        label,
+        sol,
+        lat,
+        lon,
+        km: cum[nearest(lat, lon)] * scale,
+        date: dateOf(sol),
+        thumb: tile ? ladderRungUrl(tile.image, tile.rungs, 512) : undefined,
+      };
+    };
+    const [l0, l1] = pts[0];
+    const [e0, e1] = pts[pts.length - 1];
+    const rows: JourneyRow[] = [row('landing', m.surface_landing_site(), landingSol, l0, l1)];
+    const middle: JourneyRow[] = (tr.stops ?? []).map((st) =>
+      row(st.id, st.label, st.sol, st.lat, st.lon),
+    );
+    for (const ph of tr.route_photos ?? []) {
+      const r = row(ph.id, getImageAlt(ph.image, locale), ph.sol, ph.lat, ph.lon);
+      r.thumb = ph.thumb;
+      r.photo = ph.image;
+      middle.push(r);
+    }
+    rows.push(...middle.sort((a, b) => a.sol - b.sol));
+    const end = row(
+      'end',
+      tr.status === 'ACTIVE'
+        ? m.traverse_current_rover_position()
+        : m.traverse_final_rover_position(),
+      tr.last_sol ?? tr.point_sols[tr.point_sols.length - 1],
+      e0,
+      e1,
+    );
+    end.km = tr.length_km ?? end.km;
+    rows.push(end);
+    return rows;
+  });
+  // #641 — replay: the sol the path is drawn up to (null = whole route).
+  let replaySol = $state<number | null>(null);
+  let replayPlaying = $state(false);
+  const replayRange = $derived.by((): [number, number] | null => {
+    const s = roverTr?.point_sols;
+    return s?.length ? [s[0], s[s.length - 1]] : null;
+  });
+  // Live counters under the scrubber: sol · ≈ date · km at the drawn tip.
+  const replayAt = $derived.by(() => {
+    const tr = roverTr;
+    const site = selected as SurfaceSite | null;
+    if (replaySol == null || !tr?.point_sols || !site) return null;
+    let idx = 0;
+    while (idx + 1 < tr.point_sols.length && tr.point_sols[idx + 1] <= replaySol) idx++;
+    let km = 0;
+    for (let i = 1; i <= idx; i++)
+      km += greatCircleKm(tr.points[i - 1], tr.points[i], config.radiusKm);
+    const total = traversePathKm(tr.points, config.radiusKm);
+    if (tr.length_km && total > 0) km *= tr.length_km / total;
+    return {
+      sol: Math.round(replaySol),
+      km,
+      date: site.landing_date
+        ? solToDate(site.landing_date, tr.landing_sol ?? 1, Math.round(replaySol))
+        : '',
+    };
+  });
+  // ~24 s for any mission, whatever its length; pauses at the end.
+  $effect(() => {
+    if (!replayPlaying || !replayRange) return;
+    const [a, b] = replayRange;
+    const step = (b - a) / (24 * 30);
+    const id = setInterval(() => {
+      const next = (replaySol ?? a) + step;
+      if (next >= b) {
+        replaySol = b;
+        replayPlaying = false;
+      } else replaySol = next;
+    }, 1000 / 30);
+    return () => clearInterval(id);
+  });
+  // A different site, or a site without sols, drops the replay.
+  $effect(() => {
+    void selected?.id;
+    replaySol = null;
+    replayPlaying = false;
+  });
+  function toggleReplay() {
+    if (!replayRange || !selected) return;
+    if (replayPlaying) {
+      replayPlaying = false;
+      return;
+    }
+    if (replaySol == null || replaySol >= replayRange[1]) replaySol = replayRange[0];
+    if (!routeViewActive) enterRouteView(selected);
+    replayPlaying = true;
+  }
+  // #641 — elevation profile: km along the drive (scaled to the mission's
+  // distance) against elevation, ≤ 240 samples, as an SVG path in a 300 × 64
+  // box; plus where the replay tip sits on it.
+  const PROFILE_W = 300;
+  const PROFILE_H = 64;
+  const profile = $derived.by(() => {
+    const tr = roverTr;
+    const elev = tr?.point_elev_m;
+    if (!tr || !elev || elev.length !== tr.points.length || elev.length < 2) return null;
+    const km = [0];
+    for (let i = 1; i < tr.points.length; i++) {
+      km.push(km[i - 1] + greatCircleKm(tr.points[i - 1], tr.points[i], config.radiusKm));
+    }
+    const scale = tr.length_km && km[km.length - 1] > 0 ? tr.length_km / km[km.length - 1] : 1;
+    const total = km[km.length - 1] * scale;
+    const lo = Math.min(...elev);
+    const hi = Math.max(...elev);
+    const span = Math.max(1, hi - lo);
+    const step = Math.max(1, Math.floor(elev.length / 240));
+    const x = (k: number) => (k * scale * PROFILE_W) / (total || 1);
+    const y = (e: number) => PROFILE_H - 4 - ((e - lo) / span) * (PROFILE_H - 8);
+    let d = '';
+    for (let i = 0; i < elev.length; i += step)
+      d += `${d ? 'L' : 'M'}${x(km[i]).toFixed(1)},${y(elev[i]).toFixed(1)}`;
+    d += `L${x(km[km.length - 1]).toFixed(1)},${y(elev[elev.length - 1]).toFixed(1)}`;
+    return {
+      d,
+      area: `${d}L${PROFILE_W},${PROFILE_H}L0,${PROFILE_H}Z`,
+      lo,
+      hi,
+      total,
+      source: tr.elev_source ?? '',
+    };
+  });
+  /** Fly to a Journey row: assigned in onMount (needs the traverse lines). */
+  let focusJourney: ((lat: number, lon: number) => void) | undefined;
 
   // Earth-orbital handles (#290 Slice 6) — populated async inside
   // onMount once eol.satellites.loadObjects resolves. The animate loop
@@ -825,6 +1013,32 @@
   // Nation legend height: the imagery card and the right-edge readouts stack
   // above the strip (--legend-top) instead of overlapping its wrapped rows.
   let legendH = $state(0);
+  let legendEl = $state<HTMLDivElement | undefined>();
+  // Measured a frame after the resize, not inside the observer callback:
+  // `bind:clientHeight` updated legendH mid-delivery, and the --legend-top /
+  // --card-bottom writes it triggers re-laid-out observed elements in the same
+  // pass ("ResizeObserver loop completed with undelivered notifications").
+  $effect(() => {
+    const el = legendEl;
+    if (!el) {
+      legendH = 0;
+      return;
+    }
+    let raf = 0;
+    const measure = () => {
+      if (el.clientHeight !== legendH) legendH = el.clientHeight;
+    };
+    measure();
+    const ro = new ResizeObserver(() => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(measure);
+    });
+    ro.observe(el);
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+    };
+  });
   // On <html> so the host route's locate button (outside this component)
   // can sit on the same line.
   $effect(() => {
@@ -956,6 +1170,8 @@
     label?: string;
     lat?: number;
     lon?: number;
+    image?: string;
+    thumb?: string;
     clientX: number;
     clientY: number;
   } | null>(null);
@@ -1135,7 +1351,8 @@
   // hidden until the user manually drags the moon — issue #227).
   // Click handlers don't pass `face` so picking a marker on screen
   // doesn't lurch the camera off whatever the user was looking at.
-  let faceCameraAtSite: ((site: SurfaceSite, targetR?: number) => void) | undefined;
+  let faceCameraAtSite:
+    ((site: SurfaceSite, targetR?: number, exact?: boolean) => void) | undefined;
   // Fly the camera to face an arbitrary lat/lon (#48 — /earth "center on my
   // location"). Mirrors faceCameraAtSite's tween without a site lookup. Assigned
   // in onMount (captures the fly-tween vars); exposed via the faceLatLon handle.
@@ -1837,13 +2054,24 @@
     // CTX) ~64% revealed and already framed by the brackets; leaning in
     // sharpens to the HiRISE/LROC detail. Paired with regionalFadeStart
     // 50→44 below so the ramp tracks the closer landing (#361).
-    faceCameraAtSite = (site: SurfaceSite, targetR = 37) => {
+    focusJourney = (lat: number, lon: number) => {
+      const site = selected;
+      if (!site || !faceCameraAtSite) return;
+      // Route view on: the line + stops show at once (routeDetailOpacity 1)
+      // instead of waiting for the detail band at this altitude.
+      routeViewActive = true;
+      const tl = traverseLines.find((t) => t.roverId === site.id);
+      const [dLat, dLon] = tl?.toDrawn?.(lat, lon) ?? [lat, lon];
+      faceCameraAtSite({ ...site, lat: dLat, lon: dLon }, 31, true);
+    };
+    faceCameraAtSite = (site: SurfaceSite, targetR = 37, exact = false) => {
       if (site.lat == null || site.lon == null) return;
       // #360: rovers with a traverse frame on the route's CENTRE (the
       // magnified midpoint) rather than the landing, so the whole drive +
       // its midpoint-centred CTX sit centred in view. routeViewCenters is
-      // populated by rebuildTraverses.
-      const ctr = routeViewCenters.get(site.id);
+      // populated by rebuildTraverses. `exact` (#641) skips that: a stop /
+      // Journey row must land on ITS point, not the route centre.
+      const ctr = exact ? undefined : routeViewCenters.get(site.id);
       const v = latLonToUnitSphere(ctr?.lat ?? site.lat, ctr?.lon ?? site.lon);
       planetMesh.updateMatrixWorld(true);
       const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld);
@@ -2195,11 +2423,12 @@
               const stop = traverse?.stops?.find((s) => s.id === stopId);
               const site = sites.find((s) => s.id === siteId);
               if (stop && site && faceCameraAtSite) {
-                // Face the stop's coords using the real site record (traverses
-                // are keyed by site id, so `site` is always present here). No
-                // fabricated/cast placeholder — if the site is somehow missing
-                // we fall through rather than face a fake SurfaceSite.
-                faceCameraAtSite({ ...site, lat: stop.lat, lon: stop.lon });
+                // Face where the stop is DRAWN: the route is magnified around
+                // the landing site, so its true lat/lon points elsewhere (#641).
+                // The real site record carries the rest (no fake SurfaceSite).
+                const tl = traverseLines.find((t) => t.roverId === siteId);
+                const [lat, lon] = tl?.toDrawn?.(stop.lat, stop.lon) ?? [stop.lat, stop.lon];
+                faceCameraAtSite({ ...site, lat, lon }, 31, true);
               } else if (site && faceCameraAtSite) {
                 // Stop not found — graceful fallback to facing the site.
                 faceCameraAtSite(site);
@@ -2815,7 +3044,10 @@
       // counts as a pan, not a pick — otherwise Shift+click selects a
       // hotspot instead of doing nothing.
       if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') {
-        tryPick3d(e.clientX, e.clientY);
+        // A photo pin opens its photo (#641); anything else picks as before.
+        const photo = pickStopAt(e.clientX, e.clientY)?.image;
+        if (photo) panelLightbox = photo;
+        else tryPick3d(e.clientX, e.clientY);
       }
     };
     // Suppress the browser context menu on right-click so right-drag
@@ -2945,7 +3177,10 @@
         e.changedTouches.length === 1 &&
         e.touches.length === 0
       ) {
-        tryPick3d(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+        const t = e.changedTouches[0];
+        const photo = pickStopAt(t.clientX, t.clientY)?.image;
+        if (photo) panelLightbox = photo;
+        else tryPick3d(t.clientX, t.clientY);
       }
     };
 
@@ -3483,6 +3718,14 @@
             });
           }
           const selectedSiteId = selected?.id;
+          // The 0.65 floor froze the label's WORLD size below camR ≈ 47 while
+          // the camera kept closing in, so a neighbour's name grew to fill the
+          // view at regional zoom (#641: "SCHIAPARELLI EDM" over Opportunity).
+          // Below that point it shrinks with surface distance — on-screen size
+          // held where the floor starts.
+          const LABEL_FLOOR_SURF = 47.1 - 30;
+          const siteLabelScale =
+            Math.max(0.65, zoomScale) * Math.min(1, Math.max(0.05, camR - 30) / LABEL_FLOOR_SURF);
           for (const mk of markers) {
             if (!mk.labelGroup) continue;
             const t = tierByIdForLabels.get(mk.siteId) ?? 0;
@@ -3497,7 +3740,7 @@
               continue;
             }
             mk.labelGroup.visible = true;
-            mk.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
+            mk.labelGroup.scale.setScalar(siteLabelScale);
             if (fade < 0.99) {
               mk.labelGroup.traverse((obj) => {
                 if (obj instanceof THREE.Sprite) {
@@ -3833,11 +4076,12 @@
               tl.endDot.visible = tlShow;
               if (tl.startLabel) tl.startLabel.visible = tlShow;
               if (tl.endLabel) tl.endLabel.visible = tlShow;
-              tl.lineMaterial.opacity = detailOpacity * (tl.casing || tl.isActive ? 0.95 : 0.7);
+              tl.lineMaterial.opacity =
+                routeDetailOpacity * (tl.casing || tl.isActive ? 0.95 : 0.7);
               const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
               // No pulse — flat 95% opacity for active rovers, 85% for ended (was
               // `tl.isActive ? pulse : 0.85` with pulse = sin(now*0.006)*0.25+0.7).
-              dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
+              dotMat.opacity = routeDetailOpacity * (tl.isActive ? 0.95 : 0.85);
               tl.endDot.scale.setScalar(endDotScale);
               // Reposition captions each frame so they sit ~70 px
               // tangentially + ~30 px outward from the anchor dot
@@ -3856,46 +4100,70 @@
                 tl.startLabel.traverse((o) => {
                   if (o instanceof THREE.Sprite) {
                     const m2 = o.material as THREE.SpriteMaterial;
-                    m2.opacity = detailOpacity;
+                    m2.opacity = routeDetailOpacity;
                   }
                 });
               }
               if (tl.endLabel) {
                 tl.endLabel.scale.setScalar(captionScale);
-                const endCaptionPos = tl.endAnchor
-                  .clone()
-                  .addScaledVector(tl.tangent, tangentOffsetWorld)
-                  .normalize()
-                  .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
-                tl.endLabel.position.copy(endCaptionPos);
+                const place = (sign: number) =>
+                  tl.endAnchor
+                    .clone()
+                    .addScaledVector(tl.tangent, sign * tangentOffsetWorld)
+                    .normalize()
+                    .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
+                tl.endLabel.position.copy(place(1));
+                // #641 — swap to the other side of the end dot when the caption
+                // would sit under the scale bar / altitude readout boxes.
+                if (tl.endLabel.visible) {
+                  const host = renderer.domElement.getBoundingClientRect();
+                  const huds = sceneRoot
+                    ? [...sceneRoot.querySelectorAll('.distance-scale, .altitude-indicator')].map(
+                        (e) => e.getBoundingClientRect(),
+                      )
+                    : [];
+                  const v = tl.endLabel.getWorldPosition(new THREE.Vector3()).project(camera);
+                  const cx = host.left + (v.x * 0.5 + 0.5) * host.width;
+                  const cy = host.top + (-v.y * 0.5 + 0.5) * host.height;
+                  const hw = captionWidthPx / 2;
+                  const under = huds.some(
+                    (r) =>
+                      cx + hw > r.left &&
+                      cx - hw < r.right &&
+                      cy + 14 > r.top &&
+                      cy - 14 < r.bottom,
+                  );
+                  if (under) tl.endLabel.position.copy(place(-1));
+                }
                 tl.endLabel.traverse((o) => {
                   if (o instanceof THREE.Sprite) {
                     const m2 = o.material as THREE.SpriteMaterial;
-                    m2.opacity = detailOpacity;
+                    m2.opacity = routeDetailOpacity;
                   }
                 });
               }
+              // (route view: routeDetailOpacity is 1 — the whole drive shows.)
               // Gate the in-between stop pins on a tighter threshold
               // than the line — pins only make sense once HiRISE detail
-              // is substantially in (detailOpacity > 0.6 ≈ camR < ~31.5),
+              // is substantially in (routeDetailOpacity > 0.6 ≈ camR < ~31.5),
               // otherwise they read as confetti scattered across an
               // un-textured rectangle (image 21 feedback, 2026-06-03).
               // Line + start/end + captions stay on the wider gate so
               // the user gets a path-preview earlier in the zoom.
-              const stopPinsVisible = tlShow && detailOpacity > 0.6;
+              const stopPinsVisible = tlShow && routeDetailOpacity > 0.6;
               for (const sp of tl.stopPins) {
                 sp.visible = stopPinsVisible;
                 sp.scale.set(pinWorldW, pinWorldH, 1);
-                (sp.material as THREE.SpriteMaterial).opacity = detailOpacity;
+                (sp.material as THREE.SpriteMaterial).opacity = routeDetailOpacity;
               }
               // #641 — casing + sol ticks follow the line; labels are sized
               // to a fixed on-screen height (worldPerPx) like the captions.
               if (tl.casing) {
                 tl.casing.visible = tlShow;
-                if (tl.casingMaterial) tl.casingMaterial.opacity = detailOpacity * 0.75;
+                if (tl.casingMaterial) tl.casingMaterial.opacity = routeDetailOpacity * 0.75;
               }
-              for (const tk of tl.ticks ?? []) tk.visible = tlShow && detailOpacity > 0.3;
-              for (const tm of tl.tickMaterials ?? []) tm.opacity = detailOpacity;
+              for (const tk of tl.ticks ?? []) tk.visible = tlShow && routeDetailOpacity > 0.3;
+              for (const tm of tl.tickMaterials ?? []) tm.opacity = routeDetailOpacity;
               const tickLabelH = 15 * worldPerPx;
               // Thin by screen distance: drop a label within ~44 px of one
               // already shown (the rover's long stays bunch major ticks).
@@ -3903,27 +4171,125 @@
               const scr = new THREE.Vector3();
               const vw = renderer.domElement.clientWidth || window.innerWidth;
               const vh = renderer.domElement.clientHeight || window.innerHeight;
+              const toScreen = (o: THREE.Object3D): [number, number] => {
+                o.getWorldPosition(scr).project(camera);
+                return [(scr.x * 0.5 + 0.5) * vw, (-scr.y * 0.5 + 0.5) * vh];
+              };
+              // Screen rectangles the tick labels must stay out of: the start /
+              // end captions (centred, captionWidthPx wide) and the stop pills
+              // (left edge 16 px right of the ring, 22 px tall).
+              const blocked: Array<[number, number, number, number]> = [];
+              for (const cap of [tl.startLabel, tl.endLabel]) {
+                if (!cap?.visible) continue;
+                const [x, y] = toScreen(cap);
+                const hw = captionWidthPx / 2 + 8;
+                blocked.push([x - hw, y - 20, x + hw, y + 20]);
+              }
+              if (stopPinsVisible) {
+                for (const lb of tl.stopLabels ?? []) {
+                  const [x, y] = toScreen(lb);
+                  blocked.push([x - 12, y - 18, x + 22 * (lb.userData.aspect ?? 4) + 24, y + 18]);
+                }
+              }
               for (const lb of tl.tickLabels ?? []) {
-                let show = tlShow && detailOpacity > 0.3;
+                let show = tlShow && routeDetailOpacity > 0.3;
                 if (show) {
-                  lb.getWorldPosition(scr).project(camera);
-                  const sx = (scr.x * 0.5 + 0.5) * vw;
-                  const sy = (-scr.y * 0.5 + 0.5) * vh;
-                  if (shownPx.some(([x, y]) => Math.hypot(sx - x, sy - y) < 44)) show = false;
+                  const [sx, sy] = toScreen(lb);
+                  if (
+                    shownPx.some(([x, y]) => Math.hypot(sx - x, sy - y) < 44) ||
+                    blocked.some(([x0, y0, x1, y1]) => sx > x0 && sx < x1 && sy > y0 && sy < y1)
+                  )
+                    show = false;
                   else shownPx.push([sx, sy]);
                 }
                 lb.visible = show;
                 lb.scale.set(tickLabelH * (lb.userData.aspect ?? 2), tickLabelH, 1);
-                (lb.material as THREE.SpriteMaterial).opacity = detailOpacity;
+                (lb.material as THREE.SpriteMaterial).opacity = routeDetailOpacity;
               }
               const stopLabelH = 22 * worldPerPx;
+              // Pills hide when they would overlap an earlier one (Home Plate
+              // and Troy sit ~80 m apart); the ring stays, the tooltip names it.
+              // Start / end captions claim their space first: a pill that
+              // would sit under one hides (the ring stays).
+              const pillRects: Array<[number, number, number, number]> = [];
+              for (const cap of [tl.startLabel, tl.endLabel]) {
+                if (!cap?.visible) continue;
+                cap.getWorldPosition(scr).project(camera);
+                const cx = (scr.x * 0.5 + 0.5) * vw;
+                const cy = (-scr.y * 0.5 + 0.5) * vh;
+                pillRects.push([
+                  cx - captionWidthPx / 2,
+                  cy - 14,
+                  cx + captionWidthPx / 2,
+                  cy + 14,
+                ]);
+              }
+              // Pills that would run under the open side panel flip to the
+              // left of their ring.
+              const rightEdge =
+                panelOpen && (tl.stopLabels?.length ?? 0) > 0
+                  ? vw -
+                    (parseFloat(
+                      getComputedStyle(renderer.domElement).getPropertyValue('--panel-width'),
+                    ) || 0)
+                  : vw;
               for (const lb of tl.stopLabels ?? []) {
-                lb.visible = stopPinsVisible;
                 const wPx = 22 * (lb.userData.aspect ?? 4);
-                // Left edge 16 px right of the ring centre, whatever the width.
-                lb.center.x = -16 / wPx;
+                let pillShow = stopPinsVisible;
+                let flip = false;
+                if (pillShow) {
+                  lb.getWorldPosition(scr).project(camera);
+                  const px = (scr.x * 0.5 + 0.5) * vw;
+                  const py = (-scr.y * 0.5 + 0.5) * vh;
+                  flip = px + 16 + wPx > rightEdge - 8;
+                  const r: [number, number, number, number] = flip
+                    ? [px - 16 - wPx, py - 12, px - 16, py + 12]
+                    : [px + 16, py - 12, px + 16 + wPx, py + 12];
+                  if (
+                    pillRects.some((q) => r[0] < q[2] && r[2] > q[0] && r[1] < q[3] && r[3] > q[1])
+                  )
+                    pillShow = false;
+                  else pillRects.push(r);
+                }
+                lb.visible = pillShow;
+                // Near edge 16 px from the ring centre, whatever the width.
+                lb.center.x = flip ? 1 + 16 / wPx : -16 / wPx;
                 lb.scale.set(stopLabelH * (lb.userData.aspect ?? 4), stopLabelH, 1);
-                (lb.material as THREE.SpriteMaterial).opacity = detailOpacity;
+                (lb.material as THREE.SpriteMaterial).opacity = routeDetailOpacity;
+              }
+              // #641 — "Replay the drive": draw the path up to replaySol, the
+              // rover marker at its tip, nothing from later sols.
+              const rs = tl.roverId === focusedSiteId ? replaySol : null;
+              const lineGeo = tl.line.geometry as THREE.InstancedBufferGeometry;
+              const casingGeo = tl.casing?.geometry as THREE.InstancedBufferGeometry | undefined;
+              if (rs != null && tl.pointSols && tl.pathWorld) {
+                let idx = 0;
+                while (idx + 1 < tl.pointSols.length && tl.pointSols[idx + 1] <= rs) idx++;
+                lineGeo.instanceCount = idx;
+                if (casingGeo) casingGeo.instanceCount = idx;
+                for (const tk of tl.ticks ?? []) tk.visible = false;
+                for (const lb of [...(tl.tickLabels ?? []), ...(tl.stopLabels ?? [])]) {
+                  if ((lb.userData.sol ?? 0) > rs) lb.visible = false;
+                }
+                for (const sp of tl.stopPins) {
+                  const k = sp.userData.kind;
+                  if (
+                    (k === 'traverse-stop' || k === 'traverse-photo') &&
+                    (sp.userData.stopSol ?? 0) > rs
+                  ) {
+                    sp.visible = false;
+                  }
+                }
+                tl.endDot.visible = tl.endDot.visible && idx >= tl.pointSols.length - 1;
+                if (tl.replayMarker) {
+                  tl.replayMarker.visible = tlShow;
+                  tl.replayMarker.position.copy(tl.pathWorld[idx]);
+                  tl.replayMarker.scale.set(pinWorldW * 1.3, pinWorldH * 1.3, 1);
+                }
+              } else {
+                lineGeo.instanceCount = Infinity;
+                if (casingGeo) casingGeo.instanceCount = Infinity;
+                if (tl.replayMarker) tl.replayMarker.visible = false;
               }
             }
           }
@@ -4055,14 +4421,22 @@
                     licenseShort: 'CC-BY-NC-SA-4.0',
                   });
                 } else if (config.planet === 'mars') {
+                  // Crop size follows the site's recorded ground extent: rover
+                  // crops grow to cover the traverse (#641; Opportunity 29.7 km
+                  // = 5 940 px, shown as a 4 096 px texture ≈ 7 m/px).
+                  const regGroundM = site.hotspot_tier2_regional_ground_m ?? 15360;
+                  const regCropPx = Math.round(regGroundM / 5);
+                  const regShownMPerPx = regGroundM / Math.min(regCropPx, 4096);
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'Murray Lab Global CTX Mosaic',
                     sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
                     resolutionText: m.surface_res_crop({
-                      res: m.unit_mpx_value({ value: '5' }),
-                      crop: '3072',
-                      km: m.mp_flight_unit_km({ value: '15' }),
+                      res: m.unit_mpx_value({ value: formatNumber(regShownMPerPx, locale, 0) }),
+                      crop: String(regCropPx),
+                      km: m.mp_flight_unit_km({
+                        value: formatNumber(regGroundM / 1000, locale, 0),
+                      }),
                     }),
                     sourceUrl: 'https://www.msss.com/all_projects/mro-ctx.php',
                     licenseShort: 'PD-NASA',
@@ -4966,6 +5340,9 @@ sample      ${debugInfo.projectedPxSample}`}
       style="left: {hoveredStopInfo.clientX + 16}px; top: {hoveredStopInfo.clientY + 18}px"
       data-testid="traverse-stop-tooltip"
     >
+      {#if hoveredStopInfo.image}
+        <img class="photo-thumb" src={hoveredStopInfo.thumb ?? hoveredStopInfo.image} alt="" />
+      {/if}
       <span class="sol mono">{hoveredStopInfo.title}</span>
       {#if hoveredStopInfo.label}
         <span class="label">{hoveredStopInfo.label}</span>
@@ -5154,7 +5531,7 @@ sample      ${debugInfo.projectedPxSample}`}
     <div
       class="legend-3d"
       class:beside-panel={panelOpen}
-      bind:clientHeight={legendH}
+      bind:this={legendEl}
       role="group"
       aria-label={m.moon_legend_nation_aria()}
     >
@@ -5319,6 +5696,7 @@ sample      ${debugInfo.projectedPxSample}`}
           hasGallery: panelGallery.length > 0 || panelVideos.length > 0,
           hasStory: !!panelStory,
           hasLinks: panelHasLinks,
+          hasJourney: journeyRows.length > 1,
         })}
         bind:active={panelTab}
       />
@@ -5385,49 +5763,106 @@ sample      ${debugInfo.projectedPxSample}`}
                 {selected.lon != null ? m.moon_lon_deg({ value: selected.lon.toFixed(2) }) : '—'}
               </div>
             </div>
-            <div class="cell">
-              <div class="cell-label">
-                {m.moon_panel_duration()}<WhyPopover
-                  title={m.why_surface_time_title()}
-                  body={m.why_surface_time_body()}
-                />
+            {#if roverTr}
+              <!-- #641 — uncrewed rovers: what the rover did, not crewed-mission
+                   fields (EVA / samples / crew read "—" / "0 kg" for them). -->
+              <div class="cell" data-testid="rover-distance">
+                <div class="cell-label">{m.panel_rover_distance()}</div>
+                <div class="cell-value">
+                  {m.panel_rover_km({
+                    value: formatNumber(
+                      roverTr.length_km ?? traversePathKm(roverTr.points, config.radiusKm),
+                      locale,
+                      (roverTr.length_km ?? 10) >= 10 ? 1 : 2,
+                    ),
+                  })}
+                </div>
               </div>
-              <div class="cell-value">
-                {selected.surface_duration_days
-                  ? m.moon_days({ value: selected.surface_duration_days.toString() })
-                  : '—'}
+              <div class="cell">
+                <div class="cell-label">
+                  {roverTr.status === 'ACTIVE'
+                    ? m.panel_rover_latest_drive()
+                    : m.panel_rover_days_on_mars()}
+                </div>
+                <div class="cell-value">
+                  {#if roverTr.status === 'ACTIVE'}
+                    {roverTr.last_sol != null
+                      ? m.traverse_sol({ sol: formatNumber(roverTr.last_sol, locale) })
+                      : '—'}
+                  {:else}
+                    {formatNumber(
+                      selected.landing_date
+                        ? daysBetween(selected.landing_date, roverTr.snapshot_date)
+                        : (selected.surface_duration_days ?? 0),
+                      locale,
+                    )}
+                  {/if}
+                </div>
               </div>
-            </div>
-            <div class="cell">
-              <div class="cell-label">
-                {m.moon_panel_eva()}<WhyPopover
-                  title={m.why_eva_time_title()}
-                  body={m.why_eva_time_body()}
-                />
+              <div class="cell">
+                <div class="cell-label">{m.panel_rover_last_contact()}</div>
+                <div class="cell-value">
+                  {#if roverTr.status === 'ACTIVE'}
+                    {m.panel_rover_still_driving()}
+                  {:else if roverTr.last_sol != null}
+                    {m.panel_rover_contact_sol({
+                      date: roverTr.snapshot_date,
+                      sol: formatNumber(roverTr.last_sol, locale),
+                    })}
+                  {:else}
+                    {roverTr.snapshot_date}
+                  {/if}
+                </div>
               </div>
-              <div class="cell-value">
-                {selected.eva_duration_hours
-                  ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
-                  : '—'}
+              <div class="cell">
+                <div class="cell-label">{m.panel_rover_stops()}</div>
+                <div class="cell-value">{formatNumber(roverTr.stops?.length ?? 0, locale)}</div>
               </div>
-            </div>
-            <div class="cell">
-              <div class="cell-label">
-                {m.moon_panel_samples()}<WhyPopover
-                  title={m.why_samples_title()}
-                  body={m.why_samples_body()}
-                />
+            {:else}
+              <div class="cell">
+                <div class="cell-label">
+                  {m.moon_panel_duration()}<WhyPopover
+                    title={m.why_surface_time_title()}
+                    body={m.why_surface_time_body()}
+                  />
+                </div>
+                <div class="cell-value">
+                  {selected.surface_duration_days
+                    ? m.moon_days({ value: selected.surface_duration_days.toString() })
+                    : '—'}
+                </div>
               </div>
-              <div class="cell-value">
-                {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
+              <div class="cell">
+                <div class="cell-label">
+                  {m.moon_panel_eva()}<WhyPopover
+                    title={m.why_eva_time_title()}
+                    body={m.why_eva_time_body()}
+                  />
+                </div>
+                <div class="cell-value">
+                  {selected.eva_duration_hours
+                    ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
+                    : '—'}
+                </div>
               </div>
-            </div>
-            <div class="cell">
-              <div class="cell-label">{m.moon_panel_crew()}</div>
-              <div class="cell-value short">
-                {selected.crew && selected.crew.length > 0 ? selected.crew.join(', ') : '—'}
+              <div class="cell">
+                <div class="cell-label">
+                  {m.moon_panel_samples()}<WhyPopover
+                    title={m.why_samples_title()}
+                    body={m.why_samples_body()}
+                  />
+                </div>
+                <div class="cell-value">
+                  {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
+                </div>
               </div>
-            </div>
+              <div class="cell">
+                <div class="cell-label">{m.moon_panel_crew()}</div>
+                <div class="cell-value short">
+                  {selected.crew && selected.crew.length > 0 ? selected.crew.join(', ') : '—'}
+                </div>
+              </div>
+            {/if}
           {/if}
         </div>
 
@@ -5532,6 +5967,109 @@ sample      ${debugInfo.projectedPxSample}`}
             if (selected) trackGalleryImageOpen('site', selected.id);
           }}
         />
+      {:else if panelTab === 'journey'}
+        {#if replayRange}
+          <div class="replay" data-testid="journey-replay">
+            <button
+              type="button"
+              class="replay-play"
+              data-testid="journey-replay-play"
+              aria-pressed={replayPlaying}
+              onclick={toggleReplay}
+            >
+              {replayPlaying ? m.journey_replay_pause() : m.journey_replay_play()}
+            </button>
+            <input
+              id="journey-replay-scrub"
+              class="replay-scrub"
+              type="range"
+              min={replayRange[0]}
+              max={replayRange[1]}
+              step="1"
+              value={replaySol ?? replayRange[1]}
+              aria-label={m.journey_replay_scrub()}
+              oninput={(e) => {
+                replayPlaying = false;
+                replaySol = Number((e.currentTarget as HTMLInputElement).value);
+                if (!routeViewActive && selected) enterRouteView(selected);
+              }}
+            />
+            {#if replayAt}
+              <p class="replay-at mono" aria-live="polite">
+                {m.traverse_sol({ sol: formatNumber(replayAt.sol, locale) })} ·
+                {m.traverse_hover_detail({
+                  date: replayAt.date,
+                  km: formatNumber(replayAt.km, locale, replayAt.km < 10 ? 2 : 1),
+                })}
+              </p>
+            {/if}
+          </div>
+        {/if}
+        {#if profile}
+          <figure class="profile" data-testid="journey-profile">
+            <figcaption class="profile-cap">
+              <span>{m.journey_elevation()}</span>
+              <span class="mono" title={profile.source}>
+                {m.journey_elevation_range({
+                  min: formatNumber(profile.lo, locale),
+                  max: formatNumber(profile.hi, locale),
+                  climb: formatNumber(profile.hi - profile.lo, locale),
+                })}
+              </span>
+            </figcaption>
+            <svg
+              class="profile-svg"
+              viewBox="0 0 {PROFILE_W} {PROFILE_H}"
+              preserveAspectRatio="none"
+              role="img"
+              aria-label={m.journey_elevation()}
+            >
+              <path class="profile-area" d={profile.area} />
+              <path class="profile-line" d={profile.d} vector-effect="non-scaling-stroke" />
+              {#if replayAt}
+                <line
+                  class="profile-cursor"
+                  x1={(replayAt.km / (profile.total || 1)) * PROFILE_W}
+                  x2={(replayAt.km / (profile.total || 1)) * PROFILE_W}
+                  y1="0"
+                  y2={PROFILE_H}
+                  vector-effect="non-scaling-stroke"
+                />
+              {/if}
+            </svg>
+          </figure>
+        {/if}
+        <ol class="journey" data-testid="panel-journey">
+          {#each journeyRows as row (row.key)}
+            <li>
+              <button
+                type="button"
+                class="journey-row"
+                class:journey-row--photo={!!row.photo}
+                onclick={() =>
+                  row.photo ? (panelLightbox = row.photo) : focusJourney?.(row.lat, row.lon)}
+              >
+                {#if row.thumb}
+                  <img class="journey-thumb" src={row.thumb} alt="" loading="lazy" />
+                {:else}
+                  <span class="journey-thumb journey-thumb--none" aria-hidden="true"></span>
+                {/if}
+                <span class="journey-text">
+                  <span class="journey-sol mono"
+                    >{m.traverse_sol({ sol: formatNumber(row.sol, locale) })}</span
+                  >
+                  <span class="journey-label">{row.label}</span>
+                  <span class="journey-meta mono">
+                    {m.traverse_hover_detail({
+                      date: row.date,
+                      km: formatNumber(row.km, locale, row.km < 10 ? 2 : 1),
+                    })}
+                  </span>
+                </span>
+              </button>
+            </li>
+          {/each}
+        </ol>
       {:else if panelTab === 'learn'}
         {#if !panelHasLinks}
           <p class="empty-tab">{m.panel_no_links()}</p>
@@ -6006,6 +6544,142 @@ sample      ${debugInfo.projectedPxSample}`}
     display: none;
   }
 
+  /* #641 — Journey tab: the traverse as a timeline. A thin rule down the
+     thumbnails' left edge reads as the route; each row flies to its point. */
+  .replay {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    margin-top: 12px;
+  }
+  .replay-play {
+    padding: 5px 10px;
+    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
+    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 70%, transparent);
+    border-radius: 3px;
+    color: #fff;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .replay-play:focus-visible {
+    outline: 2px solid var(--body-tint, #4ecdc4);
+    outline-offset: 2px;
+  }
+  .replay-scrub {
+    flex: 1 1 160px;
+    min-width: 0;
+    accent-color: var(--body-tint, #4ecdc4);
+  }
+  .replay-at {
+    flex: 1 1 100%;
+    margin: 0;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .traverse-stop-tooltip .photo-thumb {
+    display: block;
+    width: 200px;
+    max-width: 60vw;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+  .profile {
+    margin: 12px 0 0;
+  }
+  .profile-cap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 10px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: 4px;
+  }
+  .profile-svg {
+    display: block;
+    width: 100%;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+  .profile-area {
+    fill: color-mix(in srgb, var(--body-tint, #4ecdc4) 22%, transparent);
+  }
+  .profile-line {
+    fill: none;
+    stroke: color-mix(in srgb, var(--body-tint, #4ecdc4) 60%, #ffffff);
+    stroke-width: 1.5;
+  }
+  .profile-cursor {
+    stroke: #ffffff;
+    stroke-width: 1.5;
+  }
+  .journey {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .journey-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.92);
+    text-align: left;
+    cursor: pointer;
+  }
+  .journey-row:hover,
+  .journey-row:focus-visible {
+    border-color: var(--body-tint, #4ecdc4);
+    background: rgba(255, 255, 255, 0.07);
+    outline: none;
+  }
+  .journey-row--photo .journey-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .journey-thumb {
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .journey-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .journey-sol {
+    font-size: 11px;
+    color: var(--body-tint, #4ecdc4);
+    letter-spacing: 0.6px;
+  }
+  .journey-label {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  .journey-meta {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
   .sr-only {
     position: absolute;
     width: 1px;
@@ -6035,9 +6709,9 @@ sample      ${debugInfo.projectedPxSample}`}
        Relaxed back at @min-width: 501. */
     min-width: 78px;
     padding: 0 6px;
-    background: rgba(8, 10, 22, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.55);
+    background: rgba(8, 10, 22, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.78);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8.5px;
     letter-spacing: 1.5px;
@@ -6065,11 +6739,13 @@ sample      ${debugInfo.projectedPxSample}`}
     border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 55%, transparent);
     outline: none;
   }
+  /* Active: tinted over a DARK base (was tint-on-transparent — rust text on
+     a rust wash over orange terrain read at ~1.5:1, #641). */
   .hud-controls :global(.chip.active),
   .ctrl-row.chips :global(.chip.active) {
-    background: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 18%, transparent);
-    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 70%, transparent);
-    color: var(--body-tint, #c8cdda);
+    background: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 22%, rgba(8, 10, 22, 0.82));
+    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 75%, transparent);
+    color: color-mix(in srgb, var(--body-tint, #c8cdda) 45%, #ffffff);
   }
   .hud-controls :global(.toggle) {
     min-width: 44px;
@@ -6352,11 +7028,12 @@ sample      ${debugInfo.projectedPxSample}`}
     line-height: 1;
     margin: 0 0 4px;
   }
+  /* #641 contrast: was 8 px at 40 % — unreadable on the dark panel. */
   .type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.72);
     margin: 0;
   }
   .grid {
@@ -6374,11 +7051,12 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 4px;
     padding: 8px 10px;
   }
+  /* #641 contrast: was 6 px at 25 %. */
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 3px;
   }
   .cell-value {

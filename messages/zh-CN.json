@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "术语表",
   "glossary_jump": "按首字跳转",
   "hud_flight_plan": "飞行计划",
-  "skip_to_content": "跳到主要内容"
+  "skip_to_content": "跳到主要内容",
+  "panel_rover_distance": "行驶里程",
+  "panel_rover_latest_drive": "最近一次行驶",
+  "panel_rover_last_contact": "最后通信",
+  "panel_rover_still_driving": "仍在行驶",
+  "panel_rover_stops": "地图上的站点",
+  "panel_rover_km": "{value} 公里",
+  "panel_rover_days_on_mars": "在火星上的天数",
+  "panel_rover_contact_sol": "{date} · 火星日 {sol}",
+  "traverse_hover_detail": "≈ {date} · 距着陆点 {km} 公里",
+  "panel_tab_journey": "旅程",
+  "journey_replay_play": "回放行驶路线",
+  "journey_replay_pause": "暂停",
+  "journey_replay_scrub": "行驶的火星日",
+  "journey_elevation": "沿途海拔",
+  "journey_elevation_range": "{min} 至 {max} 米 · 落差 {climb} 米"
 }

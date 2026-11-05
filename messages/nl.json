@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "Woordenlijst",
   "glossary_jump": "Ga naar letter",
   "hud_flight_plan": "VLUCHTPLAN",
-  "skip_to_content": "Naar de inhoud"
+  "skip_to_content": "Naar de inhoud",
+  "panel_rover_distance": "Gereden afstand",
+  "panel_rover_latest_drive": "Laatste rit",
+  "panel_rover_last_contact": "Laatste contact",
+  "panel_rover_still_driving": "Rijdt nog",
+  "panel_rover_stops": "Stops op de kaart",
+  "panel_rover_km": "{value} km",
+  "panel_rover_days_on_mars": "Dagen op Mars",
+  "panel_rover_contact_sol": "{date} · Sol {sol}",
+  "traverse_hover_detail": "≈ {date} · {km} km van de landingsplek",
+  "panel_tab_journey": "REIS",
+  "journey_replay_play": "Rit afspelen",
+  "journey_replay_pause": "Pauze",
+  "journey_replay_scrub": "Sol van de rit",
+  "journey_elevation": "Hoogte langs de rit",
+  "journey_elevation_range": "{min} tot {max} m · {climb} m hoogteverschil"
 }

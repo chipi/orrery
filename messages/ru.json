@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "Глоссарий",
   "glossary_jump": "Перейти к букве",
   "hud_flight_plan": "ПЛАН ПОЛЁТА",
-  "skip_to_content": "Перейти к содержимому"
+  "skip_to_content": "Перейти к содержимому",
+  "panel_rover_distance": "Пройдено",
+  "panel_rover_latest_drive": "Последний выезд",
+  "panel_rover_last_contact": "Последняя связь",
+  "panel_rover_still_driving": "Ещё в пути",
+  "panel_rover_stops": "Точки на карте",
+  "panel_rover_km": "{value} км",
+  "panel_rover_days_on_mars": "Дней на Марсе",
+  "panel_rover_contact_sol": "{date} · Сол {sol}",
+  "traverse_hover_detail": "≈ {date} · {km} км от места посадки",
+  "panel_tab_journey": "ПУТЬ",
+  "journey_replay_play": "Повторить путь",
+  "journey_replay_pause": "Пауза",
+  "journey_replay_scrub": "Сол на маршруте",
+  "journey_elevation": "Высота по маршруту",
+  "journey_elevation_range": "от {min} до {max} м · перепад {climb} м"
 }

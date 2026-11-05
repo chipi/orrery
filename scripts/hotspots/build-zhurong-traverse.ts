@@ -212,7 +212,18 @@ async function main() {
   };
   const pointSols = cum.map(solAt);
   const credit = `© CNSA/PEC — Zhurong rover traverse, Utopia Planitia landing site (15 May 2021) to winter dormancy (18 May 2022): traced by Orrery from the rover's wheel tracks on HiRISE ${PRODUCT} (NASA/JPL/University of Arizona, 11 March 2022), ~20 m accuracy; its drives after that date left no visible tracks and are drawn as a straight line to where it parked, seen on HiRISE ESP_077511_2055 (7 February 2023). China's first Mars rover, and the first non-NASA rover to drive on Mars.`;
-  const out = { ...prev, credit, points, point_sols: pointSols, point_sols_approx: true, stops };
+  // CNSA odometry at hibernation: 1 921 m; active 347 sols.
+  const out = {
+    ...prev,
+    credit,
+    length_km: ODOMETER_TOTAL_M / 1000,
+    last_sol: 347,
+    landing_sol: 1,
+    points,
+    point_sols: pointSols,
+    point_sols_approx: true,
+    stops,
+  };
   await fs.writeFile(outPath, JSON.stringify(out, null, 2) + '\n');
   console.log(`zhurong: ${points.length} points, ${lengthM.toFixed(0)} m traced → ${outPath}`);
   for (const s of stops)

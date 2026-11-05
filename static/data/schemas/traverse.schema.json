@@ -40,6 +40,10 @@
     "has_route_patches": {
       "type": "boolean"
     },
+    "has_route_photos": {
+      "description": "A <rover>.route-photos.json sidecar exists (#641).",
+      "type": "boolean"
+    },
     "points": {
       "type": "array",
       "minItems": 1,
@@ -69,6 +73,31 @@
         "type": "integer",
         "minimum": 0
       }
+    },
+    "length_km": {
+      "description": "Distance driven, the mission's own figure (#641).",
+      "type": "number",
+      "minimum": 0
+    },
+    "last_sol": {
+      "description": "Last sol with contact (ended) or of the latest drive (active).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "landing_sol": {
+      "description": "The sol number of landing day: 1 for MER, 0 for MSL / M2020.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "point_elev_m": {
+      "description": "Elevation (m above the areoid) at each point (#641).",
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "elev_source": {
+      "description": "Where point_elev_m comes from (rover waypoints or a DEM).",
+      "type": "string"
     },
     "point_sols_approx": {
       "description": "True when point_sols are interpolated, not recorded.",

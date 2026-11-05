@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "用語集",
   "glossary_jump": "頭文字へ移動",
   "hud_flight_plan": "飛行計画",
-  "skip_to_content": "本文へスキップ"
+  "skip_to_content": "本文へスキップ",
+  "panel_rover_distance": "走行距離",
+  "panel_rover_latest_drive": "最新の走行",
+  "panel_rover_last_contact": "最終交信",
+  "panel_rover_still_driving": "走行中",
+  "panel_rover_stops": "地図上の地点",
+  "panel_rover_km": "{value} km",
+  "panel_rover_days_on_mars": "火星での日数",
+  "panel_rover_contact_sol": "{date} · ソル {sol}",
+  "traverse_hover_detail": "≈ {date} · 着陸地点から {km} km",
+  "panel_tab_journey": "旅路",
+  "journey_replay_play": "走行を再生",
+  "journey_replay_pause": "一時停止",
+  "journey_replay_scrub": "走行のソル",
+  "journey_elevation": "走行ルートの標高",
+  "journey_elevation_range": "{min}〜{max} m・高低差 {climb} m"
 }

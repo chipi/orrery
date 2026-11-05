@@ -3620,5 +3620,20 @@
   "science_tab_glossary": "المسرد",
   "glossary_jump": "انتقل إلى الحرف",
   "hud_flight_plan": "خطة الطيران",
-  "skip_to_content": "انتقل إلى المحتوى"
+  "skip_to_content": "انتقل إلى المحتوى",
+  "panel_rover_distance": "المسافة المقطوعة",
+  "panel_rover_latest_drive": "آخر رحلة",
+  "panel_rover_last_contact": "آخر اتصال",
+  "panel_rover_still_driving": "لا تزال تسير",
+  "panel_rover_stops": "محطات على الخريطة",
+  "panel_rover_km": "{value} كم",
+  "panel_rover_days_on_mars": "أيام على المريخ",
+  "panel_rover_contact_sol": "{date} · اليوم المريخي {sol}",
+  "traverse_hover_detail": "≈ {date} · {km} كم من موقع الهبوط",
+  "panel_tab_journey": "الرحلة",
+  "journey_replay_play": "إعادة الرحلة",
+  "journey_replay_pause": "إيقاف مؤقت",
+  "journey_replay_scrub": "اليوم المريخي في الرحلة",
+  "journey_elevation": "الارتفاع على طول الرحلة",
+  "journey_elevation_range": "من {min} إلى {max} م · تضاريس {climb} م"
 }

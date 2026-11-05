@@ -1,0 +1,53 @@
+{
+  "rover_id": "perseverance",
+  "photos": [
+    {
+      "id": "landing-pan",
+      "sol": 3,
+      "lat": 18.444627,
+      "lon": 77.450886,
+      "image": "/images/mars-sites/perseverance/route/landing-pan.webp",
+      "thumb": "/images/mars-sites/perseverance/route/landing-pan-320.webp"
+    },
+    {
+      "id": "van-zyl-overlook",
+      "sol": 53,
+      "lat": 18.444831,
+      "lon": 77.452135,
+      "image": "/images/mars-sites/perseverance/route/van-zyl-overlook.webp",
+      "thumb": "/images/mars-sites/perseverance/route/van-zyl-overlook-320.webp"
+    },
+    {
+      "id": "south-seitah",
+      "sol": 201,
+      "lat": 18.437101,
+      "lon": 77.450568,
+      "image": "/images/mars-sites/perseverance/route/south-seitah.webp",
+      "thumb": "/images/mars-sites/perseverance/route/south-seitah-320.webp"
+    },
+    {
+      "id": "delta-approach",
+      "sol": 406,
+      "lat": 18.456364,
+      "lon": 77.420236,
+      "image": "/images/mars-sites/perseverance/route/delta-approach.webp",
+      "thumb": "/images/mars-sites/perseverance/route/delta-approach-320.webp"
+    },
+    {
+      "id": "bright-angel",
+      "sol": 1178,
+      "lat": 18.496434,
+      "lon": 77.30393,
+      "image": "/images/mars-sites/perseverance/route/bright-angel.webp",
+      "thumb": "/images/mars-sites/perseverance/route/bright-angel-320.webp"
+    },
+    {
+      "id": "toward-crater-rim",
+      "sol": 1229,
+      "lat": 18.492766,
+      "lon": 77.301243,
+      "image": "/images/mars-sites/perseverance/route/toward-crater-rim.webp",
+      "thumb": "/images/mars-sites/perseverance/route/toward-crater-rim-320.webp"
+    }
+  ]
+}

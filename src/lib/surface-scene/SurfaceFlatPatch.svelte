@@ -27,6 +27,7 @@
   import { statusTone } from '$lib/surface-scene/status-tone';
   import { getLocale } from '$lib/paraglide/runtime';
   import { formatNumber } from '$lib/format';
+  import { imageStats, tintFromMean, tintedCopy } from '$lib/surface-scene/globe-tint';
   import type { LocaleCode } from '$lib/locale';
   import {
     routeMidpoint,
@@ -51,8 +52,16 @@
      *  button / wheel-out exit). Receives the current kmPerPx so the
      *  sphere can resume at a camera distance that matches. */
     onClose: (exitKmPerPx?: number) => void;
+    /** Globe colour (0–1) at the site: greyscale imagery is tinted to it,
+     *  matching the 3D patches (#641, Mars). */
+    tint?: [number, number, number];
   }
-  let { selected, config, traverses, entryKmPerPx, onClose }: Props = $props();
+  let { selected, config, traverses, entryKmPerPx, onClose, tint }: Props = $props();
+  const tinted = (img: HTMLImageElement): HTMLImageElement | HTMLCanvasElement => {
+    if (!tint) return img;
+    const st = imageStats(img);
+    return (st?.grey && tintedCopy(img, tintFromMean(tint, st.luma))) || img;
+  };
 
   let canvas: HTMLCanvasElement | undefined = $state();
 
@@ -69,8 +78,8 @@
   // the Image Vision manifest (lazy 1:1 variant lookup). Soft-fail to
   // the raw path if the manifest doesn't have an entry yet. Mirrors the
   // pattern SurfaceScene uses for the sphere's Tier-2 patch.
-  let regionalImage: HTMLImageElement | null = $state(null);
-  let detailImage: HTMLImageElement | null = $state(null);
+  let regionalImage: HTMLImageElement | HTMLCanvasElement | null = $state(null);
+  let detailImage: HTMLImageElement | HTMLCanvasElement | null = $state(null);
   let regionalReady = $state(false);
   let detailReady = $state(false);
 
@@ -92,7 +101,7 @@
       const url = hotspotTileTexture(tier2Source, getImageEntry(tier2Source));
       const img = new Image();
       img.onload = () => {
-        detailImage = img;
+        detailImage = tinted(img);
         detailReady = true;
       };
       img.onerror = () => {
@@ -106,7 +115,7 @@
       const rUrl = hotspotTileTexture(regionalSource, getImageEntry(regionalSource));
       const rImg = new Image();
       rImg.onload = () => {
-        regionalImage = rImg;
+        regionalImage = tinted(rImg);
         regionalReady = true;
       };
       rImg.onerror = () => {

@@ -26,7 +26,7 @@ test.describe('Moon — Tier 2 patch + Tier 3 button smoke', () => {
     await expect(page.getByRole('tab', { name: 'OVERVIEW' })).toBeVisible({ timeout: 20_000 });
     // Stand-at-site button renders only when hotspot_tier3_panorama is
     // set on the site's sidecar entry.
-    await expect(page.getByRole('button', { name: /stand at site/i })).toBeVisible({
+    await expect(page.getByRole('button', { name: /stand here/i })).toBeVisible({
       timeout: 5_000,
     });
   });

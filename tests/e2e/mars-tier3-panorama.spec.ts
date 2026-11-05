@@ -39,7 +39,7 @@ test.describe('Mars Tier 3 panorama — Curiosity full lifecycle', () => {
     // to mount, sites JSON to load, and the panel to render.
     const stand = page.getByTestId('stand-at-site');
     await expect(stand).toBeVisible({ timeout: 30_000 });
-    await expect(stand).toContainText(/stand at site/i);
+    await expect(stand).toContainText(/stand here/i);
 
     // Enter the panorama. Dispatch the click directly — on mobile widths the
     // bottom drawer / detail-panel chrome can overlap the button's hit area.

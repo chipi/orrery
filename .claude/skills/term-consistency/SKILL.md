@@ -6,7 +6,7 @@ when_to_use: Use when asked about "terminology", "space terms", "the glossary", 
 
 # term-consistency
 
-Built in the 2026-10-31 pilot (`docs/wip/2026-10-31-space-terms-glossary-pilot.md`):
+Built in the 2026-10-31 pilot (`git show 5cf9491e398:git show 5cf9491e398:docs/wip/2026-10-31-space-terms-glossary-pilot.md`):
 20 terms × 13 locales, science first. Science went from 1,317 misses to 1 open
 question in two rounds. Every rule below comes from a mistake made in those rounds.
 

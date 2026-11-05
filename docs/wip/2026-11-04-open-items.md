@@ -148,7 +148,7 @@ Decided, not open: Earth has no 2D view (`ecbbf98f183`); no sky view on Venus (o
 - Tests that hard-code counts: `missions.spec.ts:59,70,96`, `launches-timeline.spec.ts:48`,
   `landing.spec.ts:28`; non-unique `{#each}` keys in `library/episodes/+page.svelte:185` and
   `LaunchTelemetry.svelte:174`.
-- Umami: analytics opt-out and historical cleanup are operator actions (`umami-setup.md`);
+- Umami: analytics opt-out and historical cleanup are operator actions (`docs/ops/umami-setup.md`);
   `behavioral-analytics-log.md` has had no weekly entry since 2026-08-31.
 
 ### v1.0
@@ -158,17 +158,18 @@ Decided, not open: Earth has no 2D view (`ecbbf98f183`); no sky view on Venus (o
 
 ## What else stays in `docs/wip/`
 
-Working material and references, not open-item lists:
+Only open work and the material it needs:
 
-- `essay-diagram-sources/` — sketch sources for the science and essay diagrams (scripts write here).
 - `factcheck/` — the fact-check findings (open, see above).
-- `2026-10-22-museum-research/` — the research for museum pass 4.
-- `2026-07-16-launch-mockups/` — locked reference frames for the launch view.
+- `2026-10-22-museum-research/` — the research for museum pass 4 (open).
 - `2026-09-01-higgsfield-diagram-prompts.md` — prompts for the open diagram restyle.
-- `a11y-gap-2026-05-15.md` — the 18-dimension a11y audit the a11y items above come from.
-- `2026-10-31-space-terms-glossary-pilot.md`, `2026-10-31-garble-pass.md` — the glossary and
-  garble-pass methods the translation steps reuse (linked from skills and guides).
-- `2026-07-21-latent-bug-class-sweep.md` — watch-list.
-- `sensory-cue-vocabulary.md`, `pwa-shipping-guide.md`, `umami-setup.md`,
-  `2026-07-22-prod-validator.md` — references and runbooks.
-- `behavioral-analytics-log.md` — the analytics review log.
+- `a11y-gap-2026-05-15.md` — the a11y backlog; its status line says what is still open.
+- `2026-07-21-latent-bug-class-sweep.md` — the watch list AGENTS.md links to (WATCH items open).
+- `behavioral-analytics-log.md` — the analytics review log (no entry since 2026-08-31).
+- `essay-diagram-sources/` — sketch sources the diagram scripts write into.
+- `2026-07-16-launch-mockups/` — locked reference frames for the launch view (images, kept).
+
+Moved out 2026-11-05: `docs/ops/prod-validator.md`, `docs/ops/umami-setup.md` (runbooks);
+`docs/reference/pwa-shipping-guide.md`, `docs/reference/sensory-cue-vocabulary.md` (references).
+Deleted 2026-11-05 (finished; read with `git show 5cf9491e398:docs/wip/<name>`):
+`2026-10-31-garble-pass.md`, `2026-10-31-space-terms-glossary-pilot.md`.

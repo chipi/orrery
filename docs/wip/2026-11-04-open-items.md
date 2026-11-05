@@ -1,268 +1,69 @@
-# Open items after 0.9.5 — the one list
+# Open items after 0.9.6 — the one list, and the 0.9.7 plan
 
-Written 2026-11-04, when 0.9.5 went to PR #639. Built from an audit of every note in `docs/wip/`
-against the code and git history (each claim below was checked there; "not verified" says so).
-This note replaces the inventories, handovers and plans that used to live here; a note that was
-deleted can be read with `git show d11a0df6db6:docs/wip/<name>` (the last commit that had all of
-them). What stays in `docs/wip/` beside this note is listed at the end.
+Rewritten 2026-11-05, after 0.9.6 shipped (PR #640, prod `e2d8acc17c1`, tag `v0.9.6`). It keeps only
+what is open now. The 0.9.6 plan and its step-by-step record (glossary chunks, the translation
+samples, step 4) are done; read them with `git show 73aaccec30c:docs/wip/2026-11-04-open-items.md`.
+Older notes that were folded into this list: `git show d11a0df6db6:docs/wip/<name>`. What else
+stays in `docs/wip/` is listed at the end.
 
 Rules that still hold: no paid LLM or translation runs (the Hebrew run is the one exception the
 operator allowed); every translation fix round ends with a measurement; a new error class is the
-stop rule; never list native-speaker review as a gap.
+stop rule; never list native-speaker review as a gap; work inline by hand, fewest tokens, and evolve
+the tooling every round.
 
-## 0.9.6 — proposed, translation first
+## 0.9.7 — tentative plan
 
-The operator wants 0.9.6 to lead with translation gaps and the known issues in some sections.
-Measured 2026-11-04 with the repo's own free tools (`scripts/i18n-coverage-scan.mjs`,
-`i18n-detect.mjs`, `term-drift.mjs --gate`, `ui-label-audit.mjs`, `hardcoded-english.mjs`,
-`term-census.mjs`): structure is complete — every locale has all 1,149 overlay files, 13,282 string
-leaves and 3,620 message keys, 0 missing or empty; detector defects 0.0%; term drift 0 misses. What
-the tools cannot measure is quality; the 4.3% BROKEN figure (2026-10-19, 741-string sample,
-`6f30def577c`) came from in-session graders and needs graders again to re-measure.
+Branch `tech-debt/0.9.7`. Order proposed 2026-11-05; the operator picks what goes in.
 
-**Step 1 — user-visible gaps the tools found (small, mechanical):**
+**1. Rover traverses — Opportunity, Spirit, Zhurong** (operator, 2026-11-04). Start in a fresh
+session: the WebSearch budget was raised to 400 in `/work/orrery/main/.claude/settings.local.json`
+and only applies to a new session. Operator's order of methods:
 
-- ~~6 surface sites show English annotation labels~~ — not a gap (checked 2026-11-04): the six
-  launch pads have no annotations at all (`hotspot_annotations: []` in en-US and in
-  `surface-hotspots.json`). `i18n-coverage-scan.mjs` counted the empty en-US list as missing;
-  it now counts a missing list only when the English one holds text (missingKey 6 → 0 per locale).
-- ~~Native names missing~~ — done 2026-11-04 (`c0c5e3c9ce5`): ru 52, zh-CN 22, hi 14, ja 13,
-  ar 1 → 0 in every locale; `convert-native.mjs` fixed (it could not run) and taught three
-  rules (`scripts/lib/native-skip.mjs`).
-- ~~Same-as-English fields~~ — done 2026-11-04: of 64–130 per locale, all but a few are names the
-  origin rule keeps. New `same-as-english-triage.mjs` separates them; 45 /colophon titles synced
-  to their locale's /fleet name (`original-work-fleet-names.mjs --sync-english`), 2 fleet names
-  fixed (it Spirit, ja Spektr-RG), Pale Blue Dot in es and sr-Cyrl. Triage: `translate: 0` in
-  every locale.
-- ~~Latin+Cyrillic hyphen hybrids~~ — read 2026-11-04: what is left is correct usage (decades
-  `1970-их`, classes `C-типа`, acronym compounds `HD-кадры`, and Serbian declension of a Latin
-  name, `Thor-а`, as the Pravopis prescribes). Fixed: ru `ЛМ`/`КСМ` → `LM`/`CSM` (9 + 1, the
-  origin rule and the form used 54/71 times), `UV-камера` → `УФ-камера`.
-- ~~Unit symbols~~ — done 2026-11-04 (operator's rules): sr-Cyrl SI symbols in Latin (38 fields,
-  км → km, км/с → km/s); zh-CN a number takes km / km/s / km/h, prose 公里, 千米 → 公里 (299
-  fields). `scripts/i18n-tools/unit-symbols.mjs`; re-run finds 0.
-- ~~nl: 2 `englishProse` strings~~ — done 2026-11-04: two English inscriptions quoted in Dutch
-  text (the LC-34 plaque, Duke's family photo) translated, as de/fr/es already had them;
-  `i18n-detect.mjs` nl 0.
+1. find the team-localized paths by web search (MER: the localized traverses behind the Analyst's
+   Notebook; Zhurong: the published per-sol localization);
+2. else the PDS drive logs pinned to landmarks located on HiRISE, credited as our reconstruction;
+3. last resort, fix only the clear errors.
 
-**Step 2 — read and fix the trees nobody has read in full.** How (operator, 2026-11-04): inline in
-the main session, by hand, spending as few tokens as possible — no subagent fan-outs unless the
-operator asks. One small cell per round; each round ends with a measurement, and what it taught
-becomes a tool or a check before the next round:
+Found so far (2026-11-04):
 
-**Measure first (operator, 2026-11-04).** Before any full read, a random sample per locale read
-by hand against the English (`sample-pair` seeds 53 / 9001, 120–420-character prose fields):
+- NASA MMGIS has MSL/M2020 traverse JSON only; the MER paths there answer 403.
+- PDS `pds-geosciences.wustl.edu/mer/mer{1,2}-m-eng-6-rmc-ops-v1/mer?rm_0xxx/data/` holds
+  `mer?_master.svf` (site offsets, x north / y east metres, chained from the landing site) and
+  per-site `.rvf` drive positions. Every solution is `telemetry` (onboard odometry, uncorrected):
+  Opportunity's chain is ~2.3 km off Victoria and ends ~2.9 km inside Endeavour.
+- The V1 stubs are wrong too: Opportunity ends near Endeavour's centre (354.77°E), the Marathon
+  Valley stop sits inside the crater, Victoria is at 5.41°W against 5.50°W.
+- Write the converter as a kept tool with a README row (the MSL/M2020 MMGIS converter used for
+  0.9.5 was never committed). Then re-cut the route HiRISE patches along the new paths
+  (`fetch-mars-traverse.ts`), alt text in 14 locales, credits, and drop the "V1 stub" caveat.
 
-| Locale | Read | OK | MINOR | BROKEN | Notes |
-| --- | --- | --- | --- | --- | --- |
-| pt-BR science | 39 | 29 | 8 | 2 (fixed) | "quintal de 20 cm" for a backyard telescope; "nobody has been observed"; AU not UA, periapsis, Operation Paperclip left English |
-| es science | 20 | 19 | 1 | 0 | reads as edited text |
-| de science | 20 | 18 | 2 | 0 | du and Sie mixed (317 du-forms, 24 files with both) — out of scope |
-| nl science | 20 | 20 | 0 | 0 | |
-| it science | 20 | 18 | 2 | 0 | "SSI" for the ISS; "most important graph in astronomy" drops "stellar" |
-| ja science | 20 | 14 | 6 | 0 | スレッド (software "thread") for cosmic threads; 異種エンジン for exotic engines; one clause dropped; "in time for the storm to subside" → "by the time" |
-| ko science | 20 | 20 | 0 | 0 | |
-| hi science | 20 | 19 | 1 | 0 | "the answer is still no" → "no answer yet" |
-| ar science | 20 | 19 | 1 | 0 | one doubled phrase |
-| sr-Cyrl science | 20 | 18 | 2 | 0 | Шварцшилдов / Шварцшилд both used; "ровери под притиском" |
+**2. The deploy gaps 0.9.6 hit** (small; they stop the same failures):
 
-All ten unread locales read (seed 53, the same 20 paragraphs; pt-BR also seed 9001): 2 BROKEN in
-219 fields, both pt-BR, both fixed; 0 in the other nine (180 fields — by the rule of three, a
-locale's BROKEN rate above ~14% would show in 20 with 95% odds, and the nine together above
-~1.7%). Far better than ru / zh-CN / fr were before their full reads (12–19% BROKEN). **No full
-reads needed.** The fix-ups are the MINOR items above plus Portuguese terminology (UA,
-periápside, Operation Paperclip), which a term check finds across the whole locale.
+- The route budget runs without the prod build env locally and in preflight, so `/fleet` passed at
+  ~99 KB locally and failed the prod deploy at 105.45 KB (Sentry debug ids add ~6 KB across
+  /fleet's chunks). Measure the budget with the prod env (preflight, or a CI job before deploy).
+- Headroom: `/fleet` 101.9 / 105 KB, `/missions` 128.5 / 130 KB (prod env). Click-only code still
+  loads up front: `CollectibleCard` + `card-spec` 12.7 KB on /fleet.
+- Keep the per-route chunk report (which sources fill a route's JS, brotli KB) as a repo tool —
+  it lived in the session scratchpad as `.route-chunks.mjs`.
+- `deploy-verify` cannot prove MCP tracing without a client: `mcp.orrerylearn.com` needs an OAuth
+  bearer and there is no probe credential. Decide on a probe path (an internal token, or a trace on
+  `/health`).
+- CodeQL on a PR touching more than 300 files reports "Cannot retrieve the full diff": its PR-only
+  filter may miss alerts in big release PRs. Check the open alert list on main after each release.
 
-**Patterns, checked locale-wide (2026-11-04):**
+**3. One content track** — proposed: re-verify the fact-check findings (`factcheck/`, 55 files,
+~250 findings), since they are about the correctness of what is live. Alternatives are in "Content
+and accuracy" below.
 
-- **The English "AU" left behind** — done (`7c68430abad`): 99 in nine locales, now each
-  locale's form from the style guide (`au-forms.mjs`).
-- **Changed numbers** — none found. New `number-drift.mjs` compares the numbers of every science
-  field with the English (separators, Arabic and Devanagari digits, CJK 万/亿, scale words in
-  each language, long-scale billion in fr/de/nl). Every flagged field read so far was notation,
-  a unit conversion (Goddard's feet and pounds), a decade written as a word, or a rounding (ja
-  33万 for 333,000) — no changed fact. Remaining flags are notation the tool does not parse yet
-  (English "100M", "36k"; hi मिलियन; Arabic duals).
-- **Dropped sentences** — `dropped-sentences.mjs` over all science: 4 real drops (it ×2, pt-BR ×2),
-  restored (`7851c902b3a`); the rest merged sentences. Essays and programs: none.
-- **Programs** (seed 2718, 8 per locale; ja 20): 0 meaning errors in es fr it nl ru sr-Cyrl zh-CN
-  ar de pt-BR; **ja and ko shared two literal errors** ("standing water" as water standing
-  upright, "logistically" as "physically") — a common source; ja also put the Pioneers through
-  the radiation belt instead of the asteroid belt; hi "logically" for logistically. All fixed.
-- **Essays** (seed 1618, 8 per locale in ja, ko, pt-BR, hi — the weakest so far): 32 read, 0
-  errors; tools: no changed number, no dropped sentence. Stop rule met — no new error class.
-- **English left in short labels** (title sample, ja / ko seed 5): site status lines
-  (`mission_type`) kept "Active Orbiter", "Mission Complete", "Rover" in ja ko hi ar ru — 27
-  set to each locale's own forms (ar "مدار نشط", an active *orbit*, now "مركبة مدارية نشطة"),
-  plus four labels (ja DMO, ja / hi Chang'e 4 "basin", ru "холм холм"). New
-  `english-in-labels.mjs`: the 7–8 hits left per locale are surface feature names kept in
-  English everywhere (Home Plate, Three Forks, Genesis Rock).
-- **English country tags** (title sample zh-CN / hi / ar, seed 11): "(USA)", "(USSR)",
-  "(China)" after orbit-regime residents were left in English in 12 locales — 215 set to each
-  locale's own `country_*` message (ソ連, 苏联, URSS, VS …). zh-CN event labels "ZHURONG" /
-  "YUTU-2" → 祝融号 / 玉兔二号 (the name-drift gate missed all-caps names against the native
-  table; fixed in `name-origins.js`). hi "Gagarin's Start" was "Gagarin's beginning", now
-  गगारिन प्रक्षेपण पैड (overlay, hotspot, alt text).
-- **Titles, second round** (seed 13, 22 each in ru, sr-Cyrl, de, es; 88 read): 0 errors. With
-  ja / ko / zh-CN / hi / ar above, every locale group has had a title sample; the stop rule (no
-  new error class) is met for item 4's title fields.
-- **Doubled words** (one-off grep, all locales): ~370 hits, almost all legitimate (de "die die",
-  fr "vous vous", es / it "primer primer plano" = first close-up, it "via via", ru "что что-то").
-  4 real, fixed: es "del del", pt-BR "plano plano" and "mais mais", sr-Cyrl "првих првих" (the
-  English pun "first firsts" → "првих подвига"). Too low a yield for a tool. **The English has
-  one:** `science/life-in-space/pre-flight-training` "Houston-Cologne-Tsukuba-Tsukuba", copied
-  into the translations. The same article later lists the four training sites as Houston, Star City,
-  Cologne, Tsukuba; the fix is an English fact edit in 14 locales, so it waits for a go.
-- **Not a pattern:** it "SSI" (288 uses, the site's form), pt-BR "EEI" (294); de / es / nl
-  "Periapsis" is the native technical term there.
+**Waiting on the operator:** #550 gallery sourcing (later; per-image approval, removes slots);
+#635 / #637 / #638 do not reproduce at HEAD (dev server, 0 page errors on `/fly`, `/moon`, both
+line-ups in en and de) — close them or keep them open; widening the axe gate beyond the overview tab
+and serious/critical; Hebrew (pilot only, `18dc87c2bff`; `he` not in `native-terms.json`,
+`RTL_LOCALES` is `['ar']`); mobile store publishing; v1.0.
 
-**Scope (operator, 2026-11-04): fix-ups only.** Wrong meaning, wrong facts, garbled text, wrong
-names. No change that rewrites a locale's voice across the site — how the reader is addressed
-(German du / Sie stays mixed) and the ja / ko plain register (item 3 below) are out of 0.9.6.
-
-1. **Science articles in 10 locales** (de, nl, es, it, pt-BR, ja, ko, hi, ar, sr-Cyrl), about
-   14,330 fields. Full reads of ru, zh-CN and fr found 19%, 12% and 16% BROKEN — two to three
-   times what samples showed. Start with **pt-BR**: 7 of 8 sampled science strings MINOR or
-   BROKEN, and it is the only large locale with no science garble pass.
-2. **Essays and programs, all locales.** Never read in full; spot checks: essays 1 BROKEN + 14
-   MINOR of 104, programs 1 BROKEN + 28 MINOR of 104. Programs was never sampled for quality.
-3. ~~**Plain register in ja / ko**~~ — out of 0.9.6 (operator: no site-wide voice changes). Was:
-   ja 710 + ko 948 fields, needs a `register-scan.mjs` tool that does not exist.
-4. **The ~580 `name` / title fields**, read one by one; the ~35 science and 14 essay MINOR
-   strings left from the spot checks.
-5. ~~**Guard:** a staleness lint~~ — built as a finder (2026-11-04): `stale-overlays.mjs`. Today it flags
-   17 files per locale at most, all harmless (English grammar fixes, empty hotspot lists); no
-   translation is behind its English. Not a gate: an English typo fix would fail it.
-
-**Step 3 — glossary** (operator, 2026-11-04: chunks of ~8, inline, follow the existing
-entries' patterns; not all 162 census terms — generic words like launch, landing, fuel, probe
-only if the site renders them inconsistently).
-
-- **Chunk 1 done** (2026-11-04, `scripts/i18n-tools/maps/2026-11-04-terms-chunk1/`): orbiter,
-  lander, rover, capsule, upper stage, heat shield, airlock, spacewalk — glossary 20 → 28 terms.
-  Binding = each locale's majority form (`term-candidates.mjs`). Misses 812 → 401 → 337 by
-  widening stems, then all read: 66 real errors fixed in 10 locales (ar مدار "orbit" and مهبط
-  "landing site" for the craft, pt-BR «pouso» and English «Lunar Module» for any lander, it
-  «eclusa» / «portello stagno», pt-BR «ecluses», nl «Saturnusbaan», de «Spacewalk», garbled
-  ko / ar taglines), 119 keeps. `term-drift --gate`: unreviewed misses 0.
-  Follow-up checks the same day: the widen check against the initial entries (589 fields read
-  by group in context) found a too-wide ar verb stem hiding one more مدار error and English
-  «lander» in 6 pt-BR fields — fixed (7 edits); `/science/glossary` viewed in en / ar / sr —
-  orbiter's "used on" led with Buran (Shuttle sense), fixed with `_en_skip` (7 dead keeps
-  removed); keeps now carry one reason per field. Definitions in 14
-  locales. **Serbian forms for your read:** орбитер, лендер, ровер, капсула, горњи степен,
-  топлотни штит, ваздушна комора, излазак у свемир, and the eight sr definitions.
-- **Chunk 2 done** (2026-11-04, `maps/2026-11-04-terms-chunk2/`): splashdown, sample return,
-  regolith, microgravity, life support, solar array — glossary 28 → 34 (re-entry is covered by
-  `entry`, so not a term of its own). Misses 541 → 320 → 266 → 67 by widening; every miss
-  read: 58 real errors fixed in 13 locales — nl «steekproef» (a statistical sample) for
-  "sample" ×6 plus garbled labels and a factual error (apollo8 "North Atlantic" for North
-  Pacific), «noodwatering» (irrigation); fr «s'est amaré» (moored) and «s'écrase» (crashes);
-  ru «приземлился» for a splashdown; English left in it / pt-BR / nl; ar, hi, ko, zh, de,
-  pt-BR wrong words; a garbled ja intro. Tool bug fixed on the way: hi stems used `\p{L}*`,
-  which never matches Devanagari vowel signs (combining marks) — all hi stems now
-  `[\p{L}\p{M}]*`. Widen check (414 fields by group) and the glossary page (en, hi) checked in
-  the same round. Gate 0. **Serbian for your read:** спуштање у океан, повратак узорака,
-  реголит, микрогравитација, одржавање живота, соларни панели, and the six sr definitions.
-- **Chunk 3 done** (2026-11-04, `maps/2026-11-04-terms-chunk3/`): low Earth orbit,
-  geostationary, polar orbit, perihelion, aphelion, eccentricity, launch window, escape
-  velocity — glossary 34 → 42. Misses 183 → 88 → 16 by widening; 20 errors fixed (ar
-  eccentricity as «الشذوذ المداري» "orbital anomaly" ×10 incl. the article title, it
-  "Sun-synchronous" as «eliocentriche», an it caption cut in half, hi transliterations, pt-BR
-  «apélio», fr / nl / ja escape-velocity words). **Sweep of every wrong form from chunks 1–3
-  across all overlays, the UI and the alt text: 30 more fields**, among them hi Mercury with
-  perihelion and aphelion reversed (factual), hi Mars "genetically 20 % farther", fr UI
-  «vitesse d'échappement» for both escape and exhaust velocity. New guard:
-  `wrong-forms.json` + `wrong-forms.mjs` + `wrong-forms.test.ts` (mutation-checked).
-- **Chunk 4 done** (2026-11-04, `maps/2026-11-04-terms-chunk4/`): Hohmann transfer, Lagrange
-  point, C3, rocket equation, free-return, sun-synchronous, halo orbit — glossary 42 → 49.
-  Misses 76 → 33 → 3. Fixed: nl «Hohmann-overdracht» (overdracht = a handover of ownership)
-  ×23 across overlays and UI → «Hohmann-transferbaan»; ru free-return article title
-  «с бесплатным возвратом» (free of charge); ja «遊離帰還» (遊離 = chemical dissociation) →
-  自由帰還; hi «मुक्त-रिटर्न». Four new wrong forms in the guard. build-glossary: section intros
-  (no page title) no longer appear under "used on".
-- **Chunk 5 done** (2026-11-04, `maps/2026-11-04-terms-chunk5/`): exoplanet, light-year,
-  habitable zone, asteroid belt, solar wind, magnetosphere — glossary 49 → 55. Misses 41 →
-  26 → 3 (an nl light-year stem bug of mine fixed on the way). Fixed: fr light-minute article
-  title left in English («Light-Minute et Light-Year»), es «año de luz», pt-BR European
-  «Cintura de asteroides» ×4 and the pre-2009 «asteróide(s)» ×6 (the site writes asteroide
-  317×). Four new forms in the guard.
-- **Planned glossary chunks done: 20 → 55 terms**, each with definitions in 14 locales and
-  0 unreviewed misses.
-- **Term links done** (2026-11-04, PRD-038 §5): /science articles link each term's first
-  mention to its entry, at most 2 per paragraph, a quiet dotted link (operator's choices).
-  ~480–580 links per locale. Checked: unit + rule tests (mutation-checked), e2e en/de/ar on
-  desktop and mobile (8 passed), screenshots en / ar / hi-375. Not yet: essays, missions and
-  fleet text (PRD-038 §5 "not linked yet"); the full build's route budget and the a11y gate
-  run at preflight.
-- **Step 3 is complete.** Next: step 4.
-
-**Step 4 — known issues in sections (user-visible):**
-
-- **Nav overflows at tablet width (found 2026-11-04):** at 760 px the nav's right-hand button
-  group (`div.right`, `Nav.svelte`) runs past the viewport — page scrollWidth 889–981 px on
-  `/essays`, `/fleet`, en and ar alike; fine at 375 px. Measured with a Playwright scrollWidth check.
-- **Mobile at 375 px — re-check, no evidence either way:** toggle-set parity on earth/moon/mars/
-  venus; the 2D/3D toggle shows its target state; breadcrumb compaction and the right-edge label
-  clamp; `/fly` "Eart" truncation; `/explore` zoom-out label overflow.
-- **a11y, confirmed in code:** no skip link; no `<h1>` on `/missions`, `/fleet`, `/plan`,
-  `/explore`, `/fly`; `--color-text-dim` at 0.35 alpha (`tokens.css:21`); `Panel.svelte:142`
-  fly transition without a reduced-motion guard; no `aria-valuetext` on the `/fly` scrubber;
-  KaTeX `output: 'html'` (no MathML); 59 `alt=""`; static canvas labels; no live region for layer
-  or locale changes. axe gates only the overview tab and only serious/critical.
-- **Fleet:** #635, #637, #638 (dev-environment errors; keys exist at HEAD — reproduce in a browser
-  before calling them fixed).
-- **Credits:** no CelesTrak credit on `/iss` and `/tiangong`; MCP SDK missing from
-  `data-sources.json`; 380 placeholder gallery credits (ceiling, `validate-gallery-credits.ts`);
-  `fleet-galleries/galileo/01` without a source; #550 (Chang'e 6, Voskhod 11A57 galleries).
-- **Traverses:** Opportunity, Spirit and Zhurong are still hand-drawn (#362, partly fixed).
-- **PWA:** the Cloudflare cache bypass for `/_app/env.js` and `sw.js` is not verified; without it
-  stale config can last up to 4 h after a deploy (also #517, #518).
-
-**Step 4 progress (2026-11-04):**
-
-- Nav: fixed (`bb5432bfd49`) — hamburger up to 1219 px; locale/contrast/debug move into the
-  drawer at ≤600 px.
-- Mobile: `/explore` label clamp + declutter fixed (`2e365a637a0`, explore e2e 24 passed). "Earth
-  dep" on `/fly` is a deliberate short label. Open for the operator: Earth has no 2D view (disabled
-  on purpose in `ecbbf98f183`), Venus has no sky scene (`AR_BODIES` = earth, moon, mars).
-- a11y: fixed in `e32ee4c7fa7` — skip link, sr-only h1 on the five routes, reduced-motion guard,
-  `--color-text-dim` 0.55, scrubber `aria-valuetext`, KaTeX MathML, landing hero and lightbox alt.
-  Closed without change: live region (layer toggles use `aria-pressed`; a locale change reloads),
-  canvas labels (each scene has a parallel list), the other 57 `alt=""` (decorative). Widening the
-  axe scope is a separate decision. Axe on the dev server: 40 passed, `/library` and `/credits`
-  timed out at 90 s (re-run on a production build).
-- Fleet #635/#637/#638: do not reproduce at HEAD (dev server, `/fly`, `/moon`, both line-ups en/de:
-  0 page errors). Issues left open; not commented.
-- a11y on a production build: `/library` and `/credits` 0 violations (`-g "library|credits"`, 3
-  passed). The dev-server timeouts were dev-only.
-- Credits: `/iss` and `/tiangong` do not use TLEs — the CelesTrak data drives the Lab and the
-  `/earth` AR station markers, so `used_on` gained `earth` (`e0496fdd14f`). The MCP SDK is credited
-  in `tech-bom.json` (software, not data) — no change. `fleet-galleries/galileo/01` credited to
-  Commons `Galileo_spacecraft_model.png` (same picture, alpha flattened; `0786055cdc0`, placeholder
-  ceiling 379). #550 needs per-image operator approval and removes slots — asked.
-- PWA: verified on prod 2026-11-04 — `/_app/env.js`, `/sw.js`, `/_app/version.json` answer
-  `cache-control: no-cache`, `cf-cache-status: DYNAMIC` on repeat requests (not CDN-cached).
-- Earth 2D stays off; no sky view on Venus (operator, 2026-11-04). CelesTrak `used_on` also lists
-  moon, mars, explore (the sky AR places the stations; `60529e5514b`).
-- **Step 4 is complete for 0.9.6.** Deferred: #550 (later); traverses to **0.9.7** (operator,
-  2026-11-04; start that work in a fresh session so the raised search budget applies).
-- Traverses (0.9.7; Opportunity, Spirit, Zhurong) — operator's order: (1) find the team-localized paths
-  by web search (budget raised to 400 in `/work/orrery/main/.claude/settings.local.json`, takes
-  effect on a new session); (2) else the PDS drive logs pinned to HiRISE landmarks, credited as our
-  reconstruction; (3) last resort, fix only the clear errors. Found so far:
-  - NASA MMGIS has MSL/M2020 traverse JSON only; MER paths there 403.
-  - PDS `pds-geosciences.wustl.edu/mer/mer{1,2}-m-eng-6-rmc-ops-v1/mer?rm_0xxx/data/` holds
-    `mer?_master.svf` (site offsets, x north / y east metres, chained from the landing site) and
-    per-site `.rvf` drive positions. All solutions are `telemetry` (onboard odometry, uncorrected):
-    Opportunity's chain is ~2.3 km off Victoria and ends ~2.9 km inside Endeavour.
-  - The V1 stubs are wrong too: Opportunity ends near Endeavour's centre (354.77°E), Marathon
-    Valley stop inside the crater, Victoria stop 5.41°W vs 5.50°W.
-  - Write the converter as a kept tool (the MSL/M2020 MMGIS converter was never committed).
-
-**Not in 0.9.6 unless the operator says so:** Hebrew (pilot only, `18dc87c2bff`; `he` not in
-`native-terms.json`, `RTL_LOCALES` is `['ar']`); the /fly items below; mobile store publishing;
-v1.0.
+Decided, not open: Earth has no 2D view (`ecbbf98f183`); no sky view on Venus (operator,
+2026-11-04).
 
 ## Everything else open, by area
 
@@ -330,7 +131,7 @@ v1.0.
   the old runbook (`git show d11a0df6db6:docs/wip/2026-07-23-mobile-crash-observability.md`) drifted from the code (`platform` tag, Sentry 10.69.0)
   — fix the doc when the device steps are done.
 
-### a11y (beyond step 4)
+### a11y
 
 - #375 (TV / D-pad); no `lang` spans on proper nouns; screen-reader narration (`role="log"`) on
   `/fly`; dimensions 2, 9, 10, 14, 15, 17 of the 2026-05-15 audit not re-verified.

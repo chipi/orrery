@@ -222,6 +222,21 @@ describe('pickStopAt (#641 kinds)', () => {
     expect(hit?.title).toContain('≈18');
   });
 
+  it('a stop shows its sol once; a Moon stop without a sol is titled by its name', () => {
+    const pick = (ud: Record<string, unknown>) => {
+      const { ctx } = makeCtx({
+        traverseLines: [{ stopPins: [mesh(ud) as unknown as THREE.Sprite], endDot: hidden() }],
+      });
+      return createSurfacePicking(ctx).pickStopAt(CX, CY);
+    };
+    const mars = pick({ kind: 'traverse-stop', stopSol: 952, stopLabel: 'Victoria Crater' });
+    expect(mars).toMatchObject({ title: 'Sol 952', label: 'Victoria Crater' });
+    expect(mars?.sol).toBeUndefined();
+    expect(pick({ kind: 'traverse-stop', stopLabel: 'Station 5' })).toMatchObject({
+      title: 'Station 5',
+    });
+  });
+
   it('the landing ring returns the landing-site card', () => {
     const pin = mesh({ kind: 'traverse-landing', stopLabel: 'Landed', stopLat: 3, stopLon: 4 });
     const { ctx } = makeCtx({

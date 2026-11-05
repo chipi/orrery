@@ -28,6 +28,7 @@ import {
   azimuthToAlignDir,
 } from '$lib/three/place-on-sphere';
 import { colorFor } from '$lib/surface-map/nation-palette';
+import { liftForDark } from '$lib/three-label';
 import { latLonToUnitSphere } from '$lib/moon-projection';
 import {
   buildHotspotSurfacePatch,
@@ -620,7 +621,7 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       // Dark casing under the line so it reads on bright and dark terrain alike.
       let casing: Line2 | undefined;
       let casingMaterial: LineMaterial | undefined;
-      if (sols) {
+      {
         const casingGeo = new LineGeometry();
         casingGeo.setPositions(verts);
         casingMaterial = new LineMaterial({
@@ -637,7 +638,9 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         planetMesh.add(casing);
       }
       const lineMaterial = new LineMaterial({
-        color: sols ? 0xffffff : new THREE.Color(color).getHex(),
+        // Site colour lifted toward white without sols (Moon): Lunokhod's
+        // Soviet red read as a dark thread on grey regolith (#641).
+        color: sols ? 0xffffff : new THREE.Color(liftForDark(color)).getHex(),
         vertexColors: !!sols,
         // 3 → 4: with the smaller balloon pins + endDot the line
         // now reads as the primary trail with the markers
@@ -787,7 +790,12 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       // A sol, not a day count (#641): the recorded last sol when the data has
       // one, else days since landing (Moon traverses, which count days).
       const endSol =
-        tr.last_sol ?? (site?.landing_date ? daysBetween(site.landing_date, endIsoForUserData) : 0);
+        tr.last_sol ??
+        (!isActive && site?.surface_duration_days != null
+          ? Math.round(site.surface_duration_days)
+          : site?.landing_date
+            ? daysBetween(site.landing_date, endIsoForUserData)
+            : 0);
       endDot.userData = {
         siteId: tr.rover_id,
         kind: 'traverse-end',
@@ -822,10 +830,17 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       // simplified polyline runs 5-11 % short of the odometry.
       const pathKm = tr.length_km ?? traversePathKm(tr.points, ctx.radiusKm);
       const endIso = isActive ? new Date().toISOString() : tr.snapshot_date;
-      const days = site?.landing_date ? daysBetween(site.landing_date, endIso) : 0;
+      // A finished mission counts its recorded time on the surface, not landing
+      // to the data snapshot (Lunokhod 1 read 20,441 days, Apollo 15 20,186).
+      const days =
+        !isActive && site?.surface_duration_days != null
+          ? site.surface_duration_days
+          : site?.landing_date
+            ? daysBetween(site.landing_date, endIso)
+            : 0;
       const loc = getLocale() as LocaleCode;
       const kmText = formatNumber(pathKm, loc, pathKm >= 100 ? 0 : 1);
-      const daysText = formatNumber(days, loc);
+      const daysText = formatNumber(days, loc, days < 10 && days % 1 ? 1 : 0);
       const endLabelText = isActive
         ? m.traverse_end_active({ km: kmText, days: daysText })
         : m.traverse_end_ended({ km: kmText, days: daysText });
@@ -915,7 +930,11 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
           // animate loop sizes it and keeps it clear of the ring.
           if (stop.label) {
             const kindHex = STOP_KIND_COLOR[stop.kind] ?? 0xfde047;
-            const pill = buildTraverseText(`${stop.label} · ${m.traverse_sol({ sol: stop.sol })}`, {
+            // Moon stops carry no sol (Apollo 17's stations read "Sol undefined").
+            const pillText = Number.isFinite(stop.sol)
+              ? `${stop.label} · ${m.traverse_sol({ sol: formatNumber(stop.sol, getLocale() as LocaleCode) })}`
+              : stop.label;
+            const pill = buildTraverseText(pillText, {
               pill: `#${kindHex.toString(16).padStart(6, '0')}`,
               center: [0, 0.5],
             });

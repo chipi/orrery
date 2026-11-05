@@ -55,6 +55,9 @@ interface MoonPanoramaConfig {
   caption: string;
   palette?: Partial<MarsColourPalette>;
   recolourBlackThreshold?: number;
+  /** Output size; default 4096×2048. Large full-circle sources ship at 8K. */
+  outWidth?: number;
+  outHeight?: number;
 }
 
 const PANORAMAS: MoonPanoramaConfig[] = [
@@ -138,20 +141,25 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'apollo15',
+    // 2026-11-05 (#641 review) — the full-circle VIP Site pan (AS15-88-11895
+    // to 11925, Dave Scott, end of EVA-3) replaces Jim's 200° ALSEP strip
+    // (4167×605). 33982×5964 at 360° → 63° tall; the flat horizon sits 31 %
+    // from the top. USGS Astrogeology: "Apollo 15 Panorama - VIP Site".
     sourceUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/d/d4/' +
-      'Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp',
-    sourceLabel: "Apollo 15 Jim's ALSEP Pan EVA-2",
-    attribution: 'NASA / Dave Scott / Jim Irwin · assembled by Dave Byrne · via ALSJ',
+      'https://upload.wikimedia.org/wikipedia/commons/6/6f/' +
+      'Apollo_15_-_As15-88-11895-11925_Panorama.jpg',
+    sourceLabel: 'AS15-88-11895-11925 (VIP Site pan)',
+    attribution: 'NASA / Dave Scott / Jim Irwin · assembled by Kev Holmes · via Wikimedia Commons',
     license: 'PD-NASA',
-    // 4167×605 ≈ 6.9:1 — roughly 200° wide, ~30° vertical.
-    srcAzimuthDeg: 200,
-    srcElevationTopDeg: 15,
-    srcElevationBottomDeg: 15,
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 20,
+    srcElevationBottomDeg: 43,
+    outWidth: 8192,
+    outHeight: 4096,
     caption:
-      'Hadley Rille ALSEP panorama, end of EVA-2. Falcon LM + Lunar Roving Vehicle + ' +
-      'ALSEP central station; Mount Hadley massif visible. Apollo 15, Aug 1 1971. ' +
-      'NASA / Scott / Irwin via Apollo Lunar Surface Journal.',
+      'Apollo 15 VIP Site panorama, the Lunar Roving Vehicle at its last parking spot, end of ' +
+      'EVA-3 (2 Aug 1971): Mount Hadley, the Apennine Front, the Falcon LM in the distance ' +
+      'with Jim Irwin. NASA / Scott / Irwin, assembled by Kev Holmes.',
   },
   {
     siteId: 'apollo16',
@@ -450,6 +458,8 @@ async function processOne(cfg: MoonPanoramaConfig, missingOnly: boolean): Promis
       // NASA Apollo panoramas often have rover-deck cutouts padded
       // with black; recolour to lunar grey so they blend.
       recolourBlackThreshold: cfg.recolourBlackThreshold ?? 60,
+      outWidth: cfg.outWidth,
+      outHeight: cfg.outHeight,
     });
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     await fs.writeFile(outPath, padded);
@@ -501,6 +511,8 @@ export async function fetchMoonPanoramas(args: Args): Promise<void> {
         attribution: r.cfg.attribution,
         license: r.cfg.license,
         caption: r.cfg.caption,
+        outWidth: r.cfg.outWidth,
+        outHeight: r.cfg.outHeight,
       }),
     );
     await upsertProvenanceEntries(entries);

@@ -30912,22 +30912,22 @@
    "id": "25d8f4ce079a76f7",
    "path": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
    "source_type": "wikimedia-commons",
-   "title": "Hadley Rille ALSEP panorama, end of EVA-2. Falcon LM + Lunar Roving Vehicle + ALSEP central station; Mount Hadley massif visible. Apollo 15, Aug 1 1971. NASA / Scott / Irwin via Apollo Lunar Surface Journal.",
-   "author": "NASA / Dave Scott / Jim Irwin · assembled by Dave Byrne · via ALSJ",
+   "title": "Apollo 15 VIP Site panorama, the Lunar Roving Vehicle at its last parking spot, end of EVA-3 (2 Aug 1971): Mount Hadley, the Apennine Front, the Falcon LM in the distance with Jim Irwin. NASA / Scott / Irwin, assembled by Kev Holmes.",
+   "author": "NASA / Dave Scott / Jim Irwin · assembled by Kev Holmes · via Wikimedia Commons",
    "agency": "NASA",
-   "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp",
-   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp",
+   "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Apollo_15_-_As15-88-11895-11925_Panorama.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Apollo_15_-_As15-88-11895-11925_Panorama.jpg",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
    "modifications": [
-    "padded-to-4096x2048-equirectangular",
+    "padded-to-8192x4096-equirectangular",
     "reencoded-jpeg-q88"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": "Apollo 15 Jim's ALSEP Pan EVA-2",
-   "fetched_at": "2026-06-28T17:07:10.233Z"
+   "nasa_id": "AS15-88-11895-11925 (VIP Site pan)",
+   "fetched_at": "2026-11-05T18:36:07.749Z"
   },
   {
    "id": "d0a8d11b632efa48",

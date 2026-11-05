@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
-import { buildLabel } from './three-label';
+import { buildLabel, liftForDark } from './three-label';
 
 /**
  * jsdom is required: the helper paints text into an
@@ -82,5 +82,14 @@ describe('buildLabel', () => {
   it('returns a Texture handle for later disposal', () => {
     const { texture } = buildLabel({ text: 'X', color: '#fff' });
     expect(texture).toBeInstanceOf(THREE.Texture);
+  });
+});
+
+describe('liftForDark', () => {
+  it('mixes a hex colour 45 % toward white and passes other forms through', () => {
+    expect(liftForDark('#000000')).toBe('#737373');
+    expect(liftForDark('#ffffff')).toBe('#ffffff');
+    expect(liftForDark('#0b3d91')).toBe('#7994c3');
+    expect(liftForDark('rgb(1,2,3)')).toBe('rgb(1,2,3)');
   });
 });

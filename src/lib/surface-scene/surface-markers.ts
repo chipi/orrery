@@ -127,6 +127,8 @@ export type MarkerObj = {
   halo?: THREE.Object3D;
   hoverHalo?: THREE.Object3D;
   labelGroup?: THREE.Group;
+  /** The marker model (tier 0); hotspot sites scale it through their LOD entry. */
+  body?: THREE.Group;
 };
 
 /** Pre-pass for label de-overlap (Florida cluster on /earth: SLC-40,
@@ -475,7 +477,14 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       }
 
       planetMesh.add(group);
-      markers.push({ group, siteId: site.id, halo, hoverHalo, labelGroup: label.group });
+      markers.push({
+        group,
+        siteId: site.id,
+        halo,
+        hoverHalo,
+        labelGroup: label.group,
+        body: tier0Group,
+      });
     }
   }
 

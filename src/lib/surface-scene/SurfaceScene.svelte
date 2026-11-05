@@ -164,6 +164,7 @@
   };
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
+  import { REGIONAL_PATCH_DIAMETER_WORLD_UNITS } from '$lib/hotspot-surface-patch';
   import {
     getHotspotMode,
     setHotspotMode,
@@ -3060,6 +3061,11 @@
     // Suppress the browser context menu on right-click so right-drag
     // pan stays usable (no menu pop interrupting the gesture).
     const onContextMenu = (e: MouseEvent) => e.preventDefault();
+    // Closest zoom. A selected site with no imagery (Mars 2, Mars 6) stops at
+    // camR 31 (~110 km on Mars), where the globe texture still reads; below
+    // that there is only blur and no flat view to hand over to (#641).
+    const zoomFloor = () =>
+      selected && !selected.hotspot_tier2_source && !routeViewCenters.has(selected.id) ? 31 : 30.08;
     const onWheel = (e: WheelEvent) => {
       // preventDefault prevents trackpad pinch-zoom from triggering
       // browser-level zoom (Cmd-scroll). Registered with passive:false
@@ -3074,7 +3080,7 @@
       // little). Avoids over-shooting through the patch on a single
       // scroll click.
       const wheelK = 0.05 * Math.min(1, Math.pow(camR / 100, 1.8));
-      camRTarget = Math.max(30.08, Math.min(200, camRTarget + e.deltaY * wheelK));
+      camRTarget = Math.max(zoomFloor(), Math.min(200, camRTarget + e.deltaY * wheelK));
       flyActive = false; // wheel cancels any in-flight fly-in
     };
 
@@ -3120,7 +3126,7 @@
         const d = tDist(e.touches[0], e.touches[1]);
         // Floor lowered 30.2 → 30.08 to match the wheel floor so touch can
         // reach the manual 3D HiRISE zoom band before flat-patch (#309).
-        camRTarget = Math.max(30.08, Math.min(200, camRTarget * (pinchPrev / d)));
+        camRTarget = Math.max(zoomFloor(), Math.min(200, camRTarget * (pinchPrev / d)));
         // Pan via midpoint delta — mirrors the desktop Shift+drag path.
         const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
         const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
@@ -3404,7 +3410,11 @@
         const planetPos = planetMesh.getWorldPosition(legendScratchA);
         for (const mk of markers) {
           const wp = mk.group.getWorldPosition(legendScratchB);
-          const facing = legendScratchC.copy(wp).sub(planetPos).dot(legendScratchD.copy(camera.position).sub(wp)) > 0;
+          const facing =
+            legendScratchC
+              .copy(wp)
+              .sub(planetPos)
+              .dot(legendScratchD.copy(camera.position).sub(wp)) > 0;
           if (facing) {
             const ndc = wp.project(camera);
             if (Math.abs(ndc.x) <= 1 && Math.abs(ndc.y) <= 1 && ndc.z < 1) onScreen++;
@@ -3443,9 +3453,23 @@
         }
         // #360: route-centre selection brackets — the "zoomable imagery here"
         // cue, shown while the rover is selected (its landing halo is hidden).
+        // Fades out over camR 37 → 34 (#641): once the regional imagery fills
+        // the view the corners stretch across it as stray lines.
+        const routeHaloFade = Math.max(0, Math.min(1, (camR - 34) / 3));
         for (const rh of routeSelectionHalos) {
           rh.obj.visible =
-            layerSurface && nationEnabled(nationBySiteId.get(rh.siteId)) && rh.siteId === selId;
+            layerSurface &&
+            nationEnabled(nationBySiteId.get(rh.siteId)) &&
+            rh.siteId === selId &&
+            routeHaloFade > 0.01;
+          if (!rh.obj.visible) continue;
+          rh.obj.traverse((o) => {
+            const mat = (o as THREE.Mesh).material as
+              (THREE.Material & { opacity: number }) | undefined;
+            if (!mat || !('opacity' in mat)) return;
+            mat.userData.baseOpacity ??= mat.opacity;
+            mat.opacity = mat.userData.baseOpacity * routeHaloFade;
+          });
         }
         for (const om of orbitalMarkers) {
           // Nation filter (#363) folds into showOrbiters so dot + ring both hide.
@@ -3685,6 +3709,15 @@
             if (h.tier0Group) h.tier0Group.scale.setScalar(zoomScale);
             if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
           }
+          // A site without imagery (no LOD entry — Mars 2, Mars 6) kept its
+          // marker at full world size, so near the ground the model filled
+          // the screen (#641). It now holds the on-screen size it has at
+          // camR 60: shrinking with the distance to the surface.
+          const plainMarkerScale = Math.min(1, Math.max(0.002, (camR - 30) / 30));
+          const hotspotIds = new Set(hotspots.map((h) => h.siteId));
+          for (const mk of markers) {
+            if (mk.body && !hotspotIds.has(mk.siteId)) mk.body.scale.setScalar(plainMarkerScale);
+          }
           for (const p of museumPins) p.body.scale.setScalar(zoomScale);
           for (const p of observatoryPins) p.body.scale.setScalar(zoomScale);
 
@@ -3747,6 +3780,19 @@
           const LABEL_FLOOR_SURF = 47.1 - 30;
           const siteLabelScale =
             Math.max(0.65, zoomScale) * Math.min(1, Math.max(0.05, camR - 30) / LABEL_FLOOR_SURF);
+          // A neighbour whose marker sits under the selected site's magnified
+          // imagery is drawn at its true place on a ~20× map, so its name lands
+          // on the wrong ground and over the route (#641: Schiaparelli EDM on
+          // Opportunity's drive). Those fade with the selected label; the rest
+          // keep theirs (2026-06-08 feedback).
+          const footCtr = selected
+            ? (routeViewCenters.get(selected.id) ??
+              (selected.lat != null && selected.lon != null
+                ? { lat: selected.lat, lon: selected.lon }
+                : null))
+            : null;
+          const footUnit = footCtr ? latLonToUnitSphere(footCtr.lat, footCtr.lon) : null;
+          const footR = (REGIONAL_PATCH_DIAMETER_WORLD_UNITS * 0.75) / planetRadius;
           for (const mk of markers) {
             if (!mk.labelGroup) continue;
             const t = tierByIdForLabels.get(mk.siteId) ?? 0;
@@ -3754,8 +3800,16 @@
               mk.labelGroup.visible = false;
               continue;
             }
+            let underFootprint = false;
+            if (footUnit && mk.siteId !== selectedSiteId) {
+              const u = legendScratchA.copy(mk.group.position).normalize();
+              underFootprint =
+                Math.hypot(u.x - footUnit.x, u.y - footUnit.y, u.z - footUnit.z) < footR;
+            }
             const fade =
-              config.labelBandFade === 'all' || mk.siteId === selectedSiteId ? labelFade : 1;
+              config.labelBandFade === 'all' || mk.siteId === selectedSiteId || underFootprint
+                ? labelFade
+                : 1;
             if (fade < 0.01) {
               mk.labelGroup.visible = false;
               continue;
@@ -3906,7 +3960,9 @@
               // Split ramps: regional CTX fades in earlier (wider
               // zoom), detail HiRISE fades in later (closer zoom).
               mat.opacity = layer === 'regional' ? regionalOpacity : detailOpacity;
-              mat.transparent = mat.opacity < 0.99;
+              // A feathered layer (alphaMap) must stay transparent for its edge
+              // fade to draw.
+              mat.transparent = mat.opacity < 0.99 || !!(mat as THREE.MeshPhongMaterial).alphaMap;
             });
           }
 
@@ -4036,7 +4092,10 @@
             //
             // worldPerPx = (2 * d * tan(fovY/2)) / viewportH
             // where d ≈ distance from camera to surface (camR - 30).
-            const surfaceDistance = Math.max(0.05, camR - 30);
+            // To the route's shell (+0.05 above the sphere, rebuildTraverses),
+            // not the sphere: near the floor (camR 30.1) the sphere distance is
+            // twice the real one and every pill doubled in size (#641).
+            const surfaceDistance = Math.max(0.02, camR - (planetRadius + 0.05));
             const viewportH = renderer.domElement.clientHeight || window.innerHeight;
             const worldPerPx =
               (2 * surfaceDistance * Math.tan((camera.fov * Math.PI) / 360)) / viewportH;
@@ -4155,6 +4214,24 @@
                       cy - 14 < r.bottom,
                   );
                   if (under) tl.endLabel.position.copy(place(-1));
+                  // A drive that ends back at the lander (Apollo LRV loops) puts
+                  // the end caption on the start caption: drop it one line below.
+                  if (tl.startLabel?.visible) {
+                    const toPx = (o: THREE.Object3D) => {
+                      const q = o.getWorldPosition(new THREE.Vector3()).project(camera);
+                      return [(q.x * 0.5 + 0.5) * host.width, (-q.y * 0.5 + 0.5) * host.height];
+                    };
+                    const [ex, ey] = toPx(tl.endLabel);
+                    const [sx, sy] = toPx(tl.startLabel);
+                    if (Math.abs(ex - sx) < captionWidthPx && Math.abs(ey - sy) < 28) {
+                      const down = new THREE.Vector3(0, -1, 0)
+                        .applyQuaternion(camera.quaternion)
+                        .applyQuaternion(
+                          planetMesh.getWorldQuaternion(new THREE.Quaternion()).invert(),
+                        );
+                      tl.endLabel.position.addScaledVector(down, (sy + 30 - ey) * worldPerPx);
+                    }
+                  }
                 }
                 tl.endLabel.traverse((o) => {
                   if (o instanceof THREE.Sprite) {
@@ -4387,10 +4464,25 @@
           // With a site selected the card names that site or nothing, never
           // another promoted hotspot (a selected site without imagery used to
           // borrow a far-away lander's card).
+          // Nothing selected: only a hotspot on screen and on the near side can
+          // name the card (#641 — free zoom over bare plains showed "Mars 3
+          // lander", promoted but out of view).
           if (!bestH && !selected) {
             let bestTier = 0;
+            const ctr = planetMesh.getWorldPosition(legendScratchA);
             for (const h of hotspots) {
-              if (h.currentTier > bestTier) {
+              if (h.currentTier <= bestTier) continue;
+              const wp = h.group.getWorldPosition(legendScratchB);
+              if (
+                legendScratchC
+                  .copy(wp)
+                  .sub(ctr)
+                  .dot(legendScratchD.copy(camera.position).sub(wp)) <= 0
+              )
+                continue;
+              const ndc = wp.project(camera);
+              if (Math.abs(ndc.x) > 1 || Math.abs(ndc.y) > 1) continue;
+              {
                 bestTier = h.currentTier;
                 bestH = { siteId: h.siteId };
               }
@@ -5135,6 +5227,7 @@
   {#if !panoramaActive}
     <div
       class="hud-controls"
+      class:flat-hidden={flatPatchActive}
       data-audio-stage="surface-hud"
       role="group"
       aria-label={m.ui_view_controls()}
@@ -6886,7 +6979,8 @@ sample      ${debugInfo.projectedPxSample}`}
   /* The sphere controls (2D / reset / spin) are inert in the flat-patch
      detail view — hide them so they stop overlapping the flat-patch's own
      top-center context banner. */
-  .hud-top-mobile.flat-hidden {
+  .hud-top-mobile.flat-hidden,
+  .hud-controls.flat-hidden {
     display: none;
   }
 
@@ -7296,14 +7390,16 @@ sample      ${debugInfo.projectedPxSample}`}
     :global(html[data-touch][data-orientation='landscape']) .beside-panel {
       right: calc(var(--panel-width) + 12px);
     }
-    /* …and above the nation legend row, which runs under that spot. */
+    /* …and above the nation legend row, which runs under that spot. With no
+       legend (zoomed in, #641) the scale bar sits on the imagery card's
+       bottom line (56 px, TierContextCard) and the altitude stacks on it. */
     :global(html[data-form='desktop']) .altitude-indicator.beside-panel,
     :global(html[data-touch][data-orientation='landscape']) .altitude-indicator.beside-panel {
-      bottom: var(--legend-top, 96px);
+      bottom: var(--legend-top, 102px);
     }
     :global(html[data-form='desktop']) .distance-scale.beside-panel,
     :global(html[data-touch][data-orientation='landscape']) .distance-scale.beside-panel {
-      bottom: calc(var(--legend-top, 96px) + 34px);
+      bottom: calc(var(--legend-top, 22px) + 34px);
     }
   }
   /* Narrow window with a mouse: under the detail panel (z 30), like

@@ -78,10 +78,25 @@ describe('buildRegionalPatch', () => {
 
   it('uses a placeholder grey material without a texture url', () => {
     const m = layer(buildRegionalPatch({ siteId: 's' }), 'regional')!;
-    const mat = m.material as THREE.MeshStandardMaterial;
+    const mat = m.material as THREE.MeshPhongMaterial;
     expect(mat.map).toBeNull();
     expect(mat.color.getHex()).toBe(0x9a9a90);
     expect(mat.polygonOffsetFactor).toBe(-1);
+  });
+
+  it('feathers the regional edge into the globe; the detail layer keeps a hard edge', () => {
+    const reg = layer(buildRegionalPatch({ siteId: 's', textureUrl: '/r.jpg' }), 'regional')!
+      .material as THREE.MeshPhongMaterial;
+    expect(reg.alphaMap).not.toBeNull();
+    expect(reg.transparent).toBe(true);
+    const full = buildHotspotSurfacePatch({
+      siteId: 's',
+      textureUrl: '/d.jpg',
+      regionalTextureUrl: '/r.jpg',
+      accentColor: '#fff',
+    });
+    expect((layer(full, 'regional')!.material as THREE.MeshPhongMaterial).alphaMap).not.toBeNull();
+    expect((layer(full, 'detail')!.material as THREE.MeshPhongMaterial).alphaMap).toBeNull();
   });
 
   it('requests the texture and honours region aspect', () => {
@@ -218,17 +233,17 @@ describe('buildHotspotSurfacePatch', () => {
 });
 
 describe('patch texture loading', () => {
-  function patchMaterial(): THREE.MeshStandardMaterial {
+  function patchMaterial(): THREE.MeshPhongMaterial {
     const g = buildRegionalPatch({ siteId: 's', textureUrl: '/t.jpg' });
-    return layer(g, 'regional')!.material as THREE.MeshStandardMaterial;
+    return layer(g, 'regional')!.material as THREE.MeshPhongMaterial;
   }
 
-  it('binds a loaded texture with clamp wrapping, sRGB and anisotropy', () => {
+  it('binds a loaded texture with clamp wrapping, the globe decode and anisotropy', () => {
     const mat = patchMaterial();
     const tex = new THREE.Texture();
     loads[0].onLoad(tex);
     expect(mat.map).toBe(tex);
-    expect(tex.colorSpace).toBe(THREE.SRGBColorSpace);
+    expect(tex.colorSpace).toBe(THREE.NoColorSpace);
     expect(tex.wrapS).toBe(THREE.ClampToEdgeWrapping);
     expect(tex.anisotropy).toBe(16);
   });

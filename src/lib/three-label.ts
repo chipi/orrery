@@ -85,11 +85,19 @@ export function buildLabel(opts: LabelOptions): BuiltLabel {
     ctx.font = `bold ${fontPx}px 'Space Mono', monospace`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
+    // Dark pill behind the text: agency colours (NASA navy, ESA blue) are
+    // unreadable straight on the orange Mars or a bright dayside (#641).
+    const pillW = Math.min(canvas.width - 4, textWidth + 20);
+    const pillH = fontPx + 14;
+    ctx.fillStyle = 'rgba(5, 8, 20, 0.72)';
+    ctx.beginPath();
+    ctx.roundRect((canvas.width - pillW) / 2, (canvas.height - pillH) / 2, pillW, pillH, 6);
+    ctx.fill();
     // Soft glow under the text so it stays legible against bright
     // backgrounds (Earth dayside, sunlit Moon).
     ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
     ctx.shadowBlur = 6;
-    ctx.fillStyle = opts.color;
+    ctx.fillStyle = liftForDark(opts.color);
     ctx.fillText(upperText, canvas.width / 2, canvas.height / 2);
   }
   const texture = new THREE.Texture(canvas);
@@ -114,4 +122,14 @@ export function buildLabel(opts: LabelOptions): BuiltLabel {
   group.add(sprite);
 
   return { group, texture };
+}
+
+/** The colour mixed 45 % toward white, so a dark agency hue still reads on
+ *  the label's dark pill; non-hex colours pass through. */
+export function liftForDark(color: string): string {
+  const m = /^#([0-9a-f]{6})$/i.exec(color);
+  if (!m) return color;
+  const n = parseInt(m[1], 16);
+  const ch = (s: number) => Math.round(((n >> s) & 255) + (255 - ((n >> s) & 255)) * 0.45);
+  return `#${[16, 8, 0].map((s) => ch(s).toString(16).padStart(2, '0')).join('')}`;
 }

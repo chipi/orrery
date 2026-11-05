@@ -17,37 +17,13 @@
 import * as THREE from 'three';
 import { latLonToUnitSphere } from '$lib/moon-projection';
 import { streamedUrl } from '$lib/asset-url';
+import { featherMask } from '$lib/three/feather-mask';
 
 export { contextBounds, type ContextBounds } from './context-bounds';
 import type { ContextBounds } from './context-bounds';
 
 /** Above the planet sphere, below the stylised patches (which sit at +0.05+). */
 export const CONTEXT_SHELL_OFFSET = 0.02;
-
-let featherCache: THREE.Texture | null = null;
-/** Shared alpha mask: opaque centre, fading over the outer ~18 % to each edge. */
-function featherMask(): THREE.Texture {
-  if (featherCache) return featherCache;
-  const n = 256;
-  const data = new Uint8Array(n * n * 4);
-  const ramp = (t: number) => {
-    const d = Math.min(t, 1 - t) / 0.18; // 0 at the edge → 1 inside
-    const c = Math.max(0, Math.min(1, d));
-    return c * c * (3 - 2 * c); // smoothstep
-  };
-  for (let y = 0; y < n; y++) {
-    for (let x = 0; x < n; x++) {
-      const a = Math.round(255 * ramp((x + 0.5) / n) * ramp((y + 0.5) / n));
-      const i = (y * n + x) * 4;
-      data[i] = data[i + 1] = data[i + 2] = a; // alphaMap reads green
-      data[i + 3] = 255;
-    }
-  }
-  const tex = new THREE.DataTexture(data, n, n, THREE.RGBAFormat);
-  tex.needsUpdate = true;
-  featherCache = tex;
-  return tex;
-}
 
 /** Cap geometry over a lat/lon box: (segments+1)² vertices on a sphere of `radius`. */
 export function contextCapGeometry(

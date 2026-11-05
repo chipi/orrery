@@ -28,6 +28,7 @@
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { existsSync, promises as fs } from 'node:fs';
+import sharp from 'sharp';
 
 import { padToEquirectangular, type MarsColourPalette } from './panorama-padder.ts';
 import { buildPanoramaProvenanceEntry, upsertProvenanceEntries } from './provenance.ts';
@@ -72,6 +73,10 @@ interface MarsPanoramaConfig {
    *  interactive viewers. */
   outWidth?: number;
   outHeight?: number;
+  /** Brightness multiplier on the source before padding, for a dim true-colour
+   *  product that reads as a dark room in the viewer (1 = unchanged). Recorded
+   *  in provenance `modifications`. */
+  gain?: number;
 }
 
 /**
@@ -157,24 +162,26 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   },
   {
     siteId: 'opportunity',
-    sourceUrl:
-      'https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/9/39226_opportunity-mars-rover-panorama-marathon-valley-pia20749.jpg',
-    sourceLabel: 'PIA20749',
-    attribution: 'NASA / JPL-Caltech / Cornell Univ. / Arizona State Univ.',
+    sourceUrl: 'https://pancam.sese.asu.edu/images/Lion_King.jpg',
+    sourceLabel: 'PIA05672',
+    attribution: 'NASA / JPL / Cornell',
     license: 'PD-NASA',
-    // 2026-06-01 — switched from PIA22908 'Legacy Pan ANNOTATED' (the
-    // final-mission panorama with NASA's text labels + connecting lines
-    // baked into the pixels — the labels obstruct the actual view) to
-    // PIA20749 'Marathon Valley' (sols 4347-4375, April-May 2016).
-    // The Marathon Valley pan is un-annotated, captures Opportunity's
-    // marathon-distance achievement site on Endeavour Crater rim, and
-    // is dramatically wider and more atmospheric. Rover shadow visible
-    // at the bottom centre. 5000×1709 ≈ 2.93:1 → ~123° vFOV.
-    srcAzimuthDeg: 200,
-    srcElevationTopDeg: 35,
-    srcElevationBottomDeg: 30,
+    // 2026-11-05 (#641 review) — the "Lion King" Pancam panorama, sols 58 and
+    // 60, from the rim of Eagle Crater: the landing site this button stands
+    // at (lander, airbag marks, the rover's tracks out). Full 360°, 22780×4496
+    // from the Pancam team's page (photojournal PIA05672 serves one segment).
+    // The Marathon Valley pan (PIA20749) it replaces was 12 years and ~40 km
+    // from the landing, under a caption that described Eagle Crater.
+    // 22780/4496 at 360° → 71° tall; the horizon sits 4 % from the top.
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 3,
+    srcElevationBottomDeg: 68,
+    outWidth: 8192,
+    outHeight: 4096,
+    // Approximate true colour, mean ~57/42/30 RGB: the viewer showed a dark room.
+    gain: 1.45,
     caption:
-      "Opportunity at Marathon Valley, Endeavour Crater rim — sols 4347-4375 (Apr-May 2016). Captured at the marathon-running-distance milestone in the rover's mission.",
+      'Opportunity "Lion King" panorama from the rim of Eagle Crater, sols 58 and 60 (March 2004) — lander, airbag marks, the rover tracks out of the crater, Meridiani Planum beyond.',
   },
   {
     siteId: 'phoenix',
@@ -362,7 +369,11 @@ async function processOne(
   }
   try {
     const sourcePath = await ensureCachedSource(cfg);
-    const sourceBytes = await fs.readFile(sourcePath);
+    const raw = await fs.readFile(sourcePath);
+    const sourceBytes =
+      cfg.gain && cfg.gain !== 1
+        ? await sharp(raw).linear(cfg.gain, 0).jpeg({ quality: 95 }).toBuffer()
+        : raw;
     const padded = await padToEquirectangular({
       source: sourceBytes,
       srcAzimuthDeg: cfg.srcAzimuthDeg,
@@ -426,6 +437,7 @@ export async function fetchMarsPanoramas(args: Args): Promise<void> {
           caption: cfg.caption,
           outWidth: cfg.outWidth,
           outHeight: cfg.outHeight,
+          gain: cfg.gain,
         }),
       );
     } else if (result.status === 'skipped') {

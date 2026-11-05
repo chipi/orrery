@@ -14277,11 +14277,11 @@
     },
     "/images/hotspots/mars/opportunity/tier3-pan.jpg": {
       "score": 3,
-      "subject": "Incomplete panoramic mosaic of the Martian surface showing rocky terrain and hazy sky, with large unfilled background areas visible as flat color fills.",
+      "subject": "Full-circle panorama from the rim of Eagle Crater on Mars: the Opportunity lander and airbag marks on the crater floor, rover wheel tracks, flat plains to the horizon, rover deck in the foreground.",
       "category": "surface",
       "focal_point": {
-        "x": 0.28,
-        "y": 0.42
+        "x": 0.54,
+        "y": 0.47
       },
       "variants": {},
       "rejected_by": "score-below-threshold",

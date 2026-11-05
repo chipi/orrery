@@ -1537,20 +1537,19 @@
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/sriharikota-slp/tier3-pan.jpg",
       "panorama_metadata": {
-        "date": "2025-05-18",
+        "date": "2018-12-14",
         "instrument": "Ground photo panorama",
-        "caption": "Satish Dhawan Space Centre, Sriharikota — PSLV-C61 in transit from the Vehicle Integration Facility toward the launch pad.",
+        "caption": "Satish Dhawan Space Centre, Sriharikota — a GSLV (GSLV-F11 / GSAT-7A) rolling out on its mobile launch pedestal to the Second Launch Pad, December 2018, with the vehicle assembly buildings behind.",
         "credit_team": "ISRO · GODL-India",
-        "real_extent_pct_vertical": 41,
         "synthetic_regions": [
           {
-            "pitch_min_deg": 34,
+            "pitch_min_deg": 26,
             "pitch_max_deg": 90,
             "kind": "synthetic_sky"
           },
           {
             "pitch_min_deg": -90,
-            "pitch_max_deg": -40,
+            "pitch_max_deg": -25,
             "kind": "synthetic_nadir"
           }
         ],

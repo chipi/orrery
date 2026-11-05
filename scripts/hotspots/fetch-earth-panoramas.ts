@@ -80,18 +80,22 @@ const CONFIGS: EarthPanoramaConfig[] = [
   },
   {
     siteId: 'sriharikota-slp',
-    commonsFile: 'SDSC_panoroma_before_PSLVC61.webp',
-    commonsPage: 'https://commons.wikimedia.org/wiki/File:SDSC_panoroma_before_PSLVC61.webp',
-    srcAzimuthDeg: 130,
-    srcElevationTopDeg: 34,
-    srcElevationBottomDeg: 40,
+    // 2026-11-05 (#641 review) — the site is the SECOND Launch Pad; the PSLV-C61
+    // photo it replaces showed a rocket bound for the First. GSLV-F11 rolling
+    // out to the SLP (Dec 2018), 9888×3405 ≈ 150° wide, horizon mid-frame.
+    commonsFile: 'GSLV_F11_GSAT-7A_campaign-_Vehicle_roll_out_01.jpg',
+    commonsPage:
+      'https://commons.wikimedia.org/wiki/File:GSLV_F11_GSAT-7A_campaign-_Vehicle_roll_out_01.jpg',
+    srcAzimuthDeg: 150,
+    srcElevationTopDeg: 26,
+    srcElevationBottomDeg: 25,
     author: 'ISRO (Indian Space Research Organisation)',
     licenseShort: 'GODL-India',
     licenseUrl: 'https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf',
     licenseRationale:
       'ISRO material published under the Government Open Data License – India: worldwide royalty-free reuse including commercial, with attribution.',
     caption:
-      'Satish Dhawan Space Centre, Sriharikota — PSLV-C61 in transit from the Vehicle Integration Facility to the First Launch Pad (2025).',
+      'Satish Dhawan Space Centre, Sriharikota — a GSLV (GSLV-F11 / GSAT-7A) rolling out on its mobile launch pedestal to the Second Launch Pad, December 2018, with the vehicle assembly buildings behind.',
   },
   {
     siteId: 'wenchang-lc-101',

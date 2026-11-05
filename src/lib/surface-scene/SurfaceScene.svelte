@@ -164,6 +164,8 @@
   };
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
+  import { getImageEntry, hotspotTileTexture } from '$lib/image-vision';
+  import { globeSampler, imageStats, tintFromMean } from './globe-tint';
   import { REGIONAL_PATCH_DIAMETER_WORLD_UNITS } from '$lib/hotspot-surface-patch';
   import {
     getHotspotMode,
@@ -541,7 +543,14 @@
     };
     const [l0, l1] = pts[0];
     const [e0, e1] = pts[pts.length - 1];
-    const rows: JourneyRow[] = [row('landing', m.surface_landing_site(), landingSol, l0, l1)];
+    const landingRow = row('landing', m.surface_landing_site(), landingSol, l0, l1);
+    // No route tile at the lander (Curiosity): the site's own HiRISE detail.
+    if (!landingRow.thumb && site.hotspot_tier2_source)
+      landingRow.thumb = hotspotTileTexture(
+        site.hotspot_tier2_source,
+        getImageEntry(site.hotspot_tier2_source),
+      );
+    const rows: JourneyRow[] = [landingRow];
     const middle: JourneyRow[] = (tr.stops ?? []).map((st) =>
       row(st.id, st.label, st.sol, st.lat, st.lon),
     );
@@ -1016,6 +1025,9 @@
   let legendH = $state(0);
   // Site markers on screen right now (#641 legend gate), from the frame loop.
   let sitesInView = $state(0);
+  // Globe colour at the flat-patch site (Mars): its greyscale imagery is
+  // tinted to it, like the 3D patches (#641).
+  let flatPatchTint = $state<[number, number, number] | undefined>();
   const LEGEND_MIN_SITES = 4;
   const legendScratchA = new THREE.Vector3();
   const legendScratchB = new THREE.Vector3();
@@ -1694,7 +1706,11 @@
     scene.add(createStarField());
 
     const textureLoader = new THREE.TextureLoader();
-    const planetMap2k = textureLoader.load(config.textureUrl);
+    // Globe colour sampler for tinting greyscale patches (globe-tint.ts).
+    let globeColourAt: ReturnType<typeof globeSampler> = null;
+    const planetMap2k = textureLoader.load(config.textureUrl, (tex) => {
+      globeColourAt = globeSampler(tex.image as HTMLImageElement);
+    });
     const planetRadius = 30;
     // Axial-tilt group wraps the planet mesh so Mars's 25.19° obliquity
     // is visible (no-op rotation for Moon's ~0°). Orbital markers
@@ -2110,6 +2126,19 @@
       // details panel is not working" — the tween was running but
       // start = end so nothing visible happened).
       flyToR = targetR;
+      // Sun 35° off the site's zenith, on its north side: always daylit, with
+      // enough slant for the relief to read.
+      const north = new THREE.Vector3(0, 1, 0).addScaledVector(dir, -dir.y);
+      if (north.lengthSq() < 1e-6) north.set(1, 0, 0);
+      north.normalize();
+      const tilt = (35 * Math.PI) / 180;
+      flySunFrom = sun.position.clone().normalize();
+      flySunStart = performance.now();
+      flySunTo = dir
+        .clone()
+        .multiplyScalar(Math.cos(tilt))
+        .addScaledVector(north, Math.sin(tilt))
+        .normalize();
       // Surface sites orbit the body origin — clear any object orbit-target.
       flyFromOffset.copy(focusOffset);
       flyToOffset.set(0, 0, 0);
@@ -2599,6 +2628,12 @@
     let flyToP = 0;
     let flyToT = 0;
     let flyToR = 0;
+    // Sun swing with a site fly-in (#641): the light moves from where it is to
+    // the selected site's daytime sky, so the site never lands on the night side.
+    let flySunFrom: THREE.Vector3 | null = null;
+    let flySunTo: THREE.Vector3 | null = null;
+    let flySunStart = 0;
+    let lastTintPass = 0;
     // Orbit-target interpolation (CORE-2). Most flys orbit the body
     // origin (flyToOffset stays 0,0,0). Object focus retargets the orbit
     // centre to the satellite so the camera looks AT the object — keeps
@@ -3329,6 +3364,33 @@
         //   (c) Drag inertia — angular velocity decay 92%/frame.
         // All three are mutually exclusive per-frame: fly-in supersedes
         // zoom + inertia; zoom + inertia run together when fly isn't.
+        // Greyscale patches take the globe's hue once their texture is in (#641).
+        if (config.planet === 'mars' && globeColourAt && now - lastTintPass > 500) {
+          lastTintPass = now;
+          planetMesh.traverse((o) => {
+            const mat = (o as THREE.Mesh).material as THREE.MeshPhongMaterial | undefined;
+            if (!mat?.userData?.needsTint || !mat.map?.image) return;
+            mat.userData.needsTint = false;
+            const st = imageStats(mat.map.image as HTMLImageElement);
+            if (!st?.grey) return;
+            const p = planetMesh.worldToLocal(o.getWorldPosition(new THREE.Vector3())).normalize();
+            const lat = (Math.asin(Math.max(-1, Math.min(1, p.y))) * 180) / Math.PI;
+            const lon = (Math.atan2(-p.z, p.x) * 180) / Math.PI;
+            const [r, g, b] = tintFromMean(globeColourAt!(lat, lon), st.luma);
+            mat.color.setRGB(r, g, b);
+          });
+        }
+        // Its own clock, so a wheel / drag that cancels the fly-in still
+        // finishes the sun swing.
+        if (flySunFrom && flySunTo) {
+          const st = Math.min(1, (now - flySunStart) / FLY_DURATION_MS);
+          const d = sun.position.length() || 200;
+          sun.position.lerpVectors(flySunFrom, flySunTo, 1 - Math.pow(1 - st, 3));
+          // Antipodal start: the straight lerp passes through zero length.
+          if (sun.position.lengthSq() < 1e-6) sun.position.copy(flySunTo);
+          sun.position.normalize().multiplyScalar(d);
+          if (st >= 1) flySunFrom = flySunTo = null;
+        }
         let cameraChanged = false;
         if (flyActive) {
           const t = (now - flyStart) / FLY_DURATION_MS;
@@ -3575,6 +3637,7 @@
           0,
           (camDistFromOrigin - planetRadius) * (config.radiusKm / planetRadius),
         );
+        if (showDebug) debugInfo.camR = camR;
 
         // Orbit-ruler auto-hide (#363): once the camera comes within ~1
         // planet-radius of the surface the planet fills the view and the
@@ -3806,10 +3869,16 @@
               underFootprint =
                 Math.hypot(u.x - footUnit.x, u.y - footUnit.y, u.z - footUnit.z) < footR;
             }
+            // The selected site's label leaves first (camR 60 → 50): seen from
+            // straight above, its leader points at the camera and the name sat
+            // on the marker; the panel title and crosshair carry it (#641).
+            const selectedFade = Math.max(0, Math.min(1, (camR - 50) / 10));
             const fade =
-              config.labelBandFade === 'all' || mk.siteId === selectedSiteId || underFootprint
-                ? labelFade
-                : 1;
+              mk.siteId === selectedSiteId
+                ? Math.min(labelFade, selectedFade)
+                : config.labelBandFade === 'all' || underFootprint
+                  ? labelFade
+                  : 1;
             if (fade < 0.01) {
               mk.labelGroup.visible = false;
               continue;
@@ -4322,6 +4391,21 @@
                   cy + 14,
                 ]);
               }
+              // A photo pin under a start / end caption hides (Opportunity's
+              // last photo sat on "45.2 km · 5,250 days"); the Journey tab
+              // still lists it.
+              for (const sp of tl.stopPins) {
+                if (!sp.visible || sp.userData.kind !== 'traverse-photo') continue;
+                sp.getWorldPosition(scr).project(camera);
+                const px = (scr.x * 0.5 + 0.5) * vw;
+                const py = (-scr.y * 0.5 + 0.5) * vh;
+                if (
+                  pillRects.some(
+                    (q) => px > q[0] - 12 && px < q[2] + 12 && py > q[1] - 16 && py < q[3] + 16,
+                  )
+                )
+                  sp.visible = false;
+              }
               // Pills that would run under the open side panel flip to the
               // left of their ring.
               const rightEdge =
@@ -4779,6 +4863,11 @@
               }
             }
             flatPatchTarget = target;
+            const ft = target ?? selected;
+            flatPatchTint =
+              config.planet === 'mars' && globeColourAt && ft.lat != null && ft.lon != null
+                ? globeColourAt(ft.lat, ft.lon)
+                : undefined;
             if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
             flatPatchPhase = 'entering';
             flatPatchTransitionTimer = setTimeout(() => {
@@ -5420,6 +5509,7 @@ sample      ${debugInfo.projectedPxSample}`}
         {config}
         {traverses}
         entryKmPerPx={sphereKmPerPxAtSurface}
+        tint={flatPatchTint}
         onClose={(exitKmPerPx) => closeFlatPatch(exitKmPerPx)}
       />
     </div>

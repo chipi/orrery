@@ -537,6 +537,8 @@ function createPatchMaterial(
       tex.magFilter = THREE.LinearFilter;
       tex.generateMipmaps = true;
       mat.map = tex;
+      // The scene tints a greyscale patch to the globe under it (globe-tint.ts).
+      mat.userData.needsTint = true;
       mat.needsUpdate = true;
     },
     undefined,

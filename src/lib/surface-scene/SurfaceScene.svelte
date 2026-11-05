@@ -3791,8 +3791,10 @@
           for (const mk of markers) {
             if (mk.body && !hotspotIds.has(mk.siteId)) mk.body.scale.setScalar(plainMarkerScale);
           }
-          for (const p of museumPins) p.body.scale.setScalar(zoomScale);
-          for (const p of observatoryPins) p.body.scale.setScalar(zoomScale);
+          // Museum / telescope pins too: at the 0.2 floor the Baikonur museum
+          // pin, a few km from the pad, filled the view near the ground.
+          for (const p of museumPins) p.body.scale.setScalar(plainMarkerScale);
+          for (const p of observatoryPins) p.body.scale.setScalar(plainMarkerScale);
 
           // Site labels — shrink with zoomScale but floored at 0.65 so
           // they stay readable. Hide entirely when promoted to Tier 2+
@@ -5753,7 +5755,8 @@ sample      ${debugInfo.projectedPxSample}`}
   <!-- Only while several sites are in view (operator, #641): zoomed in on one
        site the strip just covers the route and imagery. Mobile keeps the
        Nations tab. -->
-  {#if !panoramaActive && sitesInView >= LEGEND_MIN_SITES}
+  <!-- …and not near the ground: the Florida pads are all "in view" at 50 km (#641). -->
+  {#if !panoramaActive && sitesInView >= LEGEND_MIN_SITES && altitudeKm >= config.radiusKm * 0.044}
     <div
       class="legend-3d"
       class:beside-panel={panelOpen}

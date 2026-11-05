@@ -248,10 +248,19 @@ function ensureTierBuilt(entry: HotspotEntry, tier: 0 | 1 | 2 | 3): void {
  * (only Apollo 11 is configured); active starting S2 when Tier 2
  * textures arrive and GPU memory budget matters.
  */
-function evictLRUIfNeeded(hotspots: HotspotEntry[]): void {
+function evictLRUIfNeeded(hotspots: HotspotEntry[], camera: THREE.Camera): void {
   const promoted = hotspots.filter((h) => h.currentTier > 0 || h.targetTier > 0);
   if (promoted.length <= HOTSPOT_LRU_CEILING) return;
-  const sorted = [...promoted].sort((a, b) => a.lastPromotedAt - b.lastPromotedAt);
+  // Farthest from the camera first (#641). Least-recently-promoted evicted
+  // hotspots that the next frame promoted again whenever more than the
+  // ceiling sat in view (/earth: 42 pads, the Florida cluster), so the
+  // selected pad's patch was rebuilt every frame and drew white until its
+  // texture loaded. The nearest stay built.
+  const p = new THREE.Vector3();
+  const dist = new Map(
+    promoted.map((h) => [h, h.group.getWorldPosition(p).distanceToSquared(camera.position)]),
+  );
+  const sorted = [...promoted].sort((a, b) => dist.get(b)! - dist.get(a)!);
   const toEvict = sorted.slice(0, promoted.length - HOTSPOT_LRU_CEILING);
   for (const e of toEvict) {
     // Demote to Tier 0, dispose tier1+ assets.
@@ -330,7 +339,7 @@ export function updateHotspotLOD(
   // this skip, when N hotspots > LRU ceiling, the dispatcher demotes
   // (ceiling-N) every frame, the page re-promotes them next frame, and
   // no fade ever completes — curTier stays 0 indefinitely.
-  if (currentMode !== 'high') evictLRUIfNeeded(hotspots);
+  if (currentMode !== 'high') evictLRUIfNeeded(hotspots, camera);
 }
 
 /**

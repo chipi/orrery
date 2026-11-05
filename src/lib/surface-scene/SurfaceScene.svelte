@@ -3107,8 +3107,14 @@
     // Closest zoom. A selected site with no imagery (Mars 2, Mars 6) stops at
     // camR 31 (~110 km on Mars), where the globe texture still reads; below
     // that there is only blur and no flat view to hand over to (#641).
+    // A site with only a regional image (Luna 9) stops at camR 32 (scale bar
+    // ~10 km): closer in, that Kaguya crop is upscaled into blur.
     const zoomFloor = () =>
-      selected && !selected.hotspot_tier2_source && !routeViewCenters.has(selected.id) ? 31 : 30.08;
+      selected && !selected.hotspot_tier2_source && !routeViewCenters.has(selected.id)
+        ? selected.hotspot_tier2_regional_source
+          ? 32
+          : 31
+        : 30.08;
     const onWheel = (e: WheelEvent) => {
       // preventDefault prevents trackpad pinch-zoom from triggering
       // browser-level zoom (Cmd-scroll). Registered with passive:false

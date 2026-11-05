@@ -55,6 +55,11 @@
       </div>
     </div>
   {/each}
+  {#if tierContext.locationUnconfirmed}
+    <div class="tcc-scale-note" data-testid="tcc-location-unconfirmed">
+      {m.surface_location_unconfirmed()}
+    </div>
+  {/if}
   {#if scaleNote}
     <div class="tcc-scale-note">{scaleNote}</div>
   {/if}

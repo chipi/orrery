@@ -42,6 +42,8 @@ export type TierContext = {
    */
   layers: TierLayer[];
   uncertaintyM?: number;
+  /** Landing spot never confirmed (Luna 9): shown in place of ±uncertainty. */
+  locationUnconfirmed?: boolean;
 };
 
 import type { SurfaceSite } from '$types/surface-site';
@@ -59,7 +61,12 @@ export function buildTierContext({
 }: {
   site: Pick<
     SurfaceSite,
-    'id' | 'name' | 'mission_type' | 'landing_date' | 'location_uncertainty_m'
+    | 'id'
+    | 'name'
+    | 'mission_type'
+    | 'landing_date'
+    | 'location_uncertainty_m'
+    | 'location_unconfirmed'
   >;
   agencyChip: { label: string; color: string };
   layers: TierLayer[];
@@ -72,5 +79,6 @@ export function buildTierContext({
     missionContext: missionContextFor(site),
     layers,
     uncertaintyM: site.location_uncertainty_m,
+    ...(site.location_unconfirmed ? { locationUnconfirmed: true } : {}),
   };
 }

@@ -3526,6 +3526,7 @@
   "fleet_operating_sites": "مواقع التشغيل",
   "surface_altitude": "الارتفاع {value}",
   "surface_layer_regional": "العرض الإقليمي",
+  "surface_location_unconfirmed": "لم يُؤكَّد موقع الهبوط الدقيق بعد",
   "surface_tier_scale_note": "عند هذا التكبير تُرسم مقاطع الصور أكبر من حجمها الحقيقي لتتمكن من رؤيتها. كبّر أكثر لعرض السطح المستوي بمقياسه الحقيقي.",
   "surface_how_this_works": "كيف يعمل هذا",
   "surface_layer_detail": "العرض التفصيلي",

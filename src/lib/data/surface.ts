@@ -29,6 +29,7 @@ interface SurfaceHotspotsSidecar {
       hotspot_tier3_panorama?: string;
       hotspot_annotations?: import('$types/surface-site').HotspotAnnotation[];
       location_uncertainty_m?: number;
+      location_unconfirmed?: boolean;
       showcase?: boolean;
       crashed?: boolean;
       // Panorama schema v2 (PRD-022 / ADR-074, #286). All optional;

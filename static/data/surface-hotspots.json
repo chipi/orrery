@@ -98,6 +98,9 @@
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+      "panorama_metadata": {
+        "entry_yaw_deg": 100
+      },
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo12/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
       "hotspot_tier2_ground_m": 10240,

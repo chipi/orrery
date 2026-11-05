@@ -310,3 +310,48 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
     .toBuffer();
   return out;
 }
+
+/**
+ * Turn the white no-data margin around a hand-assembled mosaic into black, so
+ * `recolourBlackThreshold` fills it with the palette like any other gap
+ * (#641: the ALSJ / Commons Apollo pans leave white where no frame reached).
+ * Only near-white connected to the image edge is touched — a flood fill from
+ * the border — so bright regolith and sun flare inside the mosaic stay.
+ */
+export async function whiteBorderToBlack(source: Buffer, minChannel = 245): Promise<Buffer> {
+  const { data, info } = await sharp(source)
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const { width: w, height: h } = info;
+  const white = (p: number) =>
+    data[p * 3] >= minChannel && data[p * 3 + 1] >= minChannel && data[p * 3 + 2] >= minChannel;
+  const seen = new Uint8Array(w * h);
+  const stack: number[] = [];
+  const push = (p: number) => {
+    if (!seen[p] && white(p)) {
+      seen[p] = 1;
+      stack.push(p);
+    }
+  };
+  for (let x = 0; x < w; x++) {
+    push(x);
+    push((h - 1) * w + x);
+  }
+  for (let y = 0; y < h; y++) {
+    push(y * w);
+    push(y * w + w - 1);
+  }
+  while (stack.length) {
+    const p = stack.pop()!;
+    data[p * 3] = data[p * 3 + 1] = data[p * 3 + 2] = 0;
+    const x = p % w;
+    if (x > 0) push(p - 1);
+    if (x < w - 1) push(p + 1);
+    if (p >= w) push(p - w);
+    if (p < (h - 1) * w) push(p + w);
+  }
+  return sharp(data, { raw: { width: w, height: h, channels: 3 } })
+    .jpeg({ quality: 95 })
+    .toBuffer();
+}

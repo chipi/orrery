@@ -33,6 +33,7 @@ import { spawn } from 'node:child_process';
 import { existsSync, promises as fs } from 'node:fs';
 
 import {
+  whiteBorderToBlack,
   padToEquirectangular,
   DEFAULT_MOON_PALETTE,
   type MarsColourPalette,
@@ -55,6 +56,9 @@ interface MoonPanoramaConfig {
   caption: string;
   palette?: Partial<MarsColourPalette>;
   recolourBlackThreshold?: number;
+  /** The mosaic sits in a white no-data margin (ALSJ / Commons Apollo pans):
+   *  blacken the edge-connected white first so the padding fills it. */
+  whiteBorder?: boolean;
   /** Output size; default 4096×2048. Large full-circle sources ship at 8K. */
   outWidth?: number;
   outHeight?: number;
@@ -63,20 +67,25 @@ interface MoonPanoramaConfig {
 const PANORAMAS: MoonPanoramaConfig[] = [
   {
     siteId: 'apollo12',
+    // 2026-11-05 (#641 review) — Pete's full-circle 12 O'clock LM pan (EVA-1)
+    // replaces the ~220° ALSEP Site strip: Intrepid, the flag, Al Bean, Pete's
+    // shadow. 7727×1049 at 360° → 49° tall, horizon 42 % from the top; the
+    // white no-data margin is blackened, then padded.
     sourceUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/9/98/' +
-      'Apollo_12_-_Pete%27s_ALSEP_Site_Pan.webp',
-    sourceLabel: "Apollo 12 Pete's ALSEP Site Pan",
-    attribution: 'NASA / Pete Conrad / Alan Bean · assembled by Dave Byrne · via ALSJ',
+      'https://upload.wikimedia.org/wikipedia/commons/e/e6/' +
+      'Apollo_12_-_Pete%27s_12_O%27clock_LM_Pan.webp',
+    sourceLabel: "Apollo 12 Pete's 12 O'clock LM Pan",
+    attribution: 'NASA / Pete Conrad / Alan Bean · assembled by Dave Byrne · via Wikimedia Commons',
     license: 'PD-NASA',
-    // 7559×1035 ≈ 7.3:1 — wide cylindrical, ~220° × ~30°.
-    srcAzimuthDeg: 220,
-    srcElevationTopDeg: 15,
-    srcElevationBottomDeg: 15,
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 20.5,
+    srcElevationBottomDeg: 28.5,
+    whiteBorder: true,
+    // Off: a fill of black would also grey out the deep crater shadows.
+    recolourBlackThreshold: 0,
     caption:
-      'Ocean of Storms ALSEP panorama. Intrepid LM + ALSEP central station + radioisotope ' +
-      'thermoelectric generator. Surveyor 3 crater rim visible in the distance — the only ' +
-      'Apollo site where astronauts walked to a previous robotic lander. Apollo 12, Nov 19 1969.',
+      "Apollo 12 full-circle panorama from the 12 o'clock side of Intrepid, EVA-1 " +
+      "(19 Nov 1969): the LM, the flag, Al Bean and Pete Conrad's shadow, Ocean of Storms.",
   },
   {
     siteId: 'apollo14',
@@ -448,7 +457,8 @@ async function processOne(cfg: MoonPanoramaConfig, missingOnly: boolean): Promis
   }
   try {
     const sourcePath = await ensureCachedSource(cfg);
-    const sourceBytes = await fs.readFile(sourcePath);
+    const raw = await fs.readFile(sourcePath);
+    const sourceBytes = cfg.whiteBorder ? await whiteBorderToBlack(raw) : raw;
     const padded = await padToEquirectangular({
       source: sourceBytes,
       srcAzimuthDeg: cfg.srcAzimuthDeg,

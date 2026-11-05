@@ -6,10 +6,15 @@ const cache = new Map<number, THREE.Texture>();
  * Shared alpha mask for a square UV patch: opaque centre, smoothstep fade over
  * the outer `edge` fraction to each side, so imagery drawn over the globe ends
  * without a hard line. `alphaMap` reads the green channel.
+ *
+ * Each call returns its own texture over one cached pixel buffer: materials
+ * are torn down with disposeObject3d, which disposes their alphaMap, and one
+ * shared texture disposed by a single patch left every other patch drawing
+ * white (Earth pads at close zoom, #641).
  */
 export function featherMask(edge = 0.18): THREE.Texture {
   const hit = cache.get(edge);
-  if (hit) return hit;
+  if (hit) return fresh(hit);
   const n = 256;
   const data = new Uint8Array(n * n * 4);
   const ramp = (t: number) => {
@@ -27,5 +32,11 @@ export function featherMask(edge = 0.18): THREE.Texture {
   const tex = new THREE.DataTexture(data, n, n, THREE.RGBAFormat);
   tex.needsUpdate = true;
   cache.set(edge, tex);
-  return tex;
+  return fresh(tex);
+}
+
+function fresh(base: THREE.Texture): THREE.Texture {
+  const t = base.clone();
+  t.needsUpdate = true;
+  return t;
 }

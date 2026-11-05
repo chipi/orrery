@@ -113,6 +113,13 @@ async function main() {
   // through the tile) instead of the 40 % default.
   const only = flag('--only')?.split(',').filter(Boolean) ?? null;
   const maxBlack = flag('--max-black') ? parseFloat(flag('--max-black') as string) : undefined;
+  // --skip ESP_055636_1775: never use these frames (a dust-storm frame ranks
+  // first at Marathon Valley and is featureless haze).
+  const skip = new Set(flag('--skip')?.split(',').filter(Boolean) ?? []);
+  // --prefer ESP_073225_2055: try these frames first (a path traced on one
+  // frame should be tiled from that frame — separate frames of the same ground
+  // differ by up to ~60 m).
+  const prefer = flag('--prefer')?.split(',').filter(Boolean) ?? [];
 
   const trPath = path.join('static/data/mars-traverses', `${rover}.json`);
   const tr = JSON.parse(await fs.readFile(trPath, 'utf8')) as RoverTraverse;
@@ -137,9 +144,10 @@ async function main() {
       searchRadiusKm: 100,
     });
     const ids: string[] = [
+      ...prefer,
       ...(lastProduct ? [lastProduct] : []),
       ...ranked.slice(0, MAX_CANDIDATES).map((c) => c.productId),
-    ].filter((v, idx, a) => a.indexOf(v) === idx);
+    ].filter((v, idx, a) => a.indexOf(v) === idx && !skip.has(v));
 
     let done = false;
     const rejections: string[] = [];

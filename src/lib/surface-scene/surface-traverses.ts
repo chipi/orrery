@@ -13,6 +13,8 @@ import * as THREE from 'three';
 import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
+import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js';
 import * as m from '$lib/paraglide/messages';
 import { getLocale } from '$lib/paraglide/runtime';
 import { formatNumber } from '$lib/format';
@@ -63,10 +65,66 @@ export function daysBetween(startIso: string, endIso: string): number {
   return Math.floor((end - start) / (1000 * 60 * 60 * 24));
 }
 
+// ─── Sol colour ramp + sol ticks (#641) ─────────────────────────
+// Whole-mission ramp, sol 1 → last sol: teal → white → amber (sRGB).
+const SOL_RAMP: ReadonlyArray<readonly [number, number, number]> = [
+  [45, 212, 191],
+  [226, 240, 236],
+  [251, 191, 36],
+];
+
+/** Ramp colour at t ∈ [0, 1] (clamped), as a linear THREE.Color. */
+export function solRampColor(t: number, out = new THREE.Color()): THREE.Color {
+  const u = Math.min(1, Math.max(0, t)) * (SOL_RAMP.length - 1);
+  const i = Math.min(SOL_RAMP.length - 2, Math.floor(u));
+  const f = u - i;
+  const [a, b] = [SOL_RAMP[i], SOL_RAMP[i + 1]];
+  return out.setRGB(
+    (a[0] + (b[0] - a[0]) * f) / 255,
+    (a[1] + (b[1] - a[1]) * f) / 255,
+    (a[2] + (b[2] - a[2]) * f) / 255,
+    THREE.SRGBColorSpace,
+  );
+}
+
+/** Tick spacing by mission length: a handful of labelled majors per route. */
+export function solTickSpacing(lastSol: number): { minor: number; major: number } {
+  if (lastSol <= 400) return { minor: 25, major: 100 };
+  if (lastSol <= 2500) return { minor: 100, major: 500 };
+  return { minor: 250, major: 1000 };
+}
+
+/** For each multiple of `every` the rover passed, the first point reached on
+ *  or after that sol (never point 0 — the landing has its own marker). */
+export function solTickIndices(sols: number[], every: number): Array<{ sol: number; i: number }> {
+  const out: Array<{ sol: number; i: number }> = [];
+  if (sols.length < 2 || every <= 0) return out;
+  let next = (Math.floor(sols[0] / every) + 1) * every;
+  for (let i = 1; i < sols.length; i++) {
+    if (sols[i] < next) continue;
+    out.push({ sol: next, i });
+    next = (Math.floor(sols[i] / every) + 1) * every;
+  }
+  return out;
+}
+
+// Ground half-lengths of the sol ticks: read at crater scale, vanish at the
+// whole-route view (where the colour ramp + major labels carry the time).
+const TICK_HALF_M = { minor: 20, major: 35 };
+
 // ─── Traverses (Mars rover paths today, Moon EVA paths future) ───
 export type TraverseLine = {
   line: Line2;
   lineMaterial: LineMaterial;
+  /** Dark casing under the line (#641). */
+  casing?: Line2;
+  casingMaterial?: LineMaterial;
+  /** Minor + major sol ticks (#641). */
+  ticks?: LineSegments2[];
+  tickMaterials?: LineMaterial[];
+  /** Pixel-stable labels at major ticks and next to stops (#641). */
+  tickLabels?: THREE.Sprite[];
+  stopLabels?: THREE.Sprite[];
   startDot: THREE.Mesh;
   endDot: THREE.Mesh;
   roverId: string;
@@ -136,15 +194,12 @@ function buildTraverseCaption(
   return { group, texture };
 }
 
-// ── Traverse-stop balloon-pin marker (NASA-map style) ───────────
-// Tear-drop balloon with kind-tinted body, thin white outline,
-// soft drop shadow, small white centre dot. Sol info is surfaced
-// only via the hover tooltip so the pin face doesn't duplicate
-// it — duplicate text was illegible at close zoom anyway (image
-// 19 feedback, 2026-06-02). Anchored at the tip via
-// sprite.center=(0.5, 0). Base scale is 1.0 here because the
-// animate loop computes a screen-pixel-stable target size and
-// sets sprite.scale per frame.
+// ── Traverse-stop ring marker (#641) ─────────────────────────────
+// White ring with a kind-tinted core and a dark outline, centred on the
+// path; the label pill beside it (buildTraverseText) carries name + sol.
+// The canvas keeps the old 64×96 balloon footprint so the animate loop's
+// per-frame (pinWorldW, pinWorldH) scaling and the picker are unchanged —
+// the ring centre is 32 px from the bottom, hence center.y = 1/3.
 function buildTraverseStopPin(hexColor: number): {
   sprite: THREE.Sprite;
   texture: THREE.Texture;
@@ -153,30 +208,20 @@ function buildTraverseStopPin(hexColor: number): {
   const canvas = document.createElement('canvas');
   canvas.width = 64;
   canvas.height = 96;
-  const cx = 32;
-  const headR = 22;
-  const headY = 28;
-  const tipY = 86;
+  const [cx, cy] = [32, 64];
   const ctx2 = canvas.getContext('2d');
   if (ctx2) {
-    ctx2.shadowColor = 'rgba(0, 0, 0, 0.55)';
-    ctx2.shadowBlur = 5;
-    ctx2.shadowOffsetY = 2;
+    ctx2.lineWidth = 9;
+    ctx2.strokeStyle = 'rgba(6, 8, 11, 0.8)';
     ctx2.beginPath();
-    ctx2.arc(cx, headY, headR, Math.PI * 0.78, Math.PI * 0.22, false);
-    ctx2.lineTo(cx, tipY);
-    ctx2.closePath();
-    ctx2.fillStyle = hex;
-    ctx2.fill();
-    ctx2.shadowColor = 'transparent';
-    ctx2.shadowBlur = 0;
-    ctx2.shadowOffsetY = 0;
-    ctx2.lineWidth = 3;
+    ctx2.arc(cx, cy, 20, 0, Math.PI * 2);
+    ctx2.stroke();
+    ctx2.lineWidth = 5;
     ctx2.strokeStyle = '#ffffff';
     ctx2.stroke();
-    ctx2.fillStyle = '#ffffff';
+    ctx2.fillStyle = hex;
     ctx2.beginPath();
-    ctx2.arc(cx, headY, 6, 0, Math.PI * 2);
+    ctx2.arc(cx, cy, 9, 0, Math.PI * 2);
     ctx2.fill();
   }
   const texture = new THREE.Texture(canvas);
@@ -193,8 +238,66 @@ function buildTraverseStopPin(hexColor: number): {
   const sprite = new THREE.Sprite(mat);
   sprite.renderOrder = 8;
   sprite.scale.set(1, 1.5, 1);
-  sprite.center.set(0.5, 0);
+  sprite.center.set(0.5, 1 / 3);
   return { sprite, texture };
+}
+
+/** Pixel-stable text sprite (#641): a sol number at a major tick, or a stop's
+ *  "name · Sol N" pill. `userData.aspect` (width / height) lets the animate
+ *  loop size it to a fixed on-screen height. `center` sets where the anchor
+ *  sits on the sprite. */
+function buildTraverseText(
+  text: string,
+  opts: { pill?: string; center: [number, number] },
+): THREE.Sprite {
+  const H = 64;
+  const font = `600 ${opts.pill ? 32 : 30}px 'Space Mono', monospace`;
+  const probe = document.createElement('canvas').getContext('2d');
+  if (probe) probe.font = font;
+  const textW = Math.ceil(probe?.measureText(text).width ?? text.length * 18);
+  const padX = opts.pill ? 22 : 8;
+  const canvas = document.createElement('canvas');
+  canvas.width = textW + padX * 2;
+  canvas.height = H;
+  const ctx2 = canvas.getContext('2d');
+  if (ctx2) {
+    if (opts.pill) {
+      const r = H / 2 - 4;
+      ctx2.beginPath();
+      ctx2.roundRect(2, 4, canvas.width - 4, H - 8, r);
+      ctx2.fillStyle = 'rgba(11, 18, 32, 0.86)';
+      ctx2.fill();
+      ctx2.lineWidth = 3;
+      ctx2.strokeStyle = opts.pill;
+      ctx2.stroke();
+    }
+    ctx2.font = font;
+    ctx2.textBaseline = 'middle';
+    ctx2.textAlign = 'left';
+    if (!opts.pill) {
+      ctx2.lineWidth = 7;
+      ctx2.strokeStyle = 'rgba(6, 8, 11, 0.9)';
+      ctx2.strokeText(text, padX, H / 2 + 2);
+    }
+    ctx2.fillStyle = '#ffffff';
+    ctx2.fillText(text, padX, H / 2 + 2);
+  }
+  const texture = new THREE.Texture(canvas);
+  texture.needsUpdate = true;
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true,
+      depthWrite: false,
+      depthTest: false,
+    }),
+  );
+  sprite.renderOrder = 9;
+  sprite.center.set(opts.center[0], opts.center[1]);
+  sprite.userData = { aspect: canvas.width / H };
+  return sprite;
 }
 
 export interface SurfaceTraversesContext {
@@ -264,6 +367,17 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         (sp.material as THREE.SpriteMaterial).dispose();
       }
       for (const t of tl.stopPinTextures) t.dispose();
+      for (const o of [tl.casing, ...(tl.ticks ?? [])]) {
+        if (!o) continue;
+        disposeObject3d(o);
+        planetMesh.remove(o);
+      }
+      for (const sp of [...(tl.tickLabels ?? []), ...(tl.stopLabels ?? [])]) {
+        planetMesh.remove(sp);
+        const mat = sp.material as THREE.SpriteMaterial;
+        mat.map?.dispose();
+        mat.dispose();
+      }
       tl.startLabelTexture?.dispose();
       tl.endLabelTexture?.dispose();
     }
@@ -289,7 +403,11 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       // green patch-centre pin lined up with the polyline start.
       const trSite = ctx.getSites().find((s) => s.id === tr.rover_id);
       const points = tr.points.slice();
-      if (trSite?.lat != null && trSite?.lon != null) {
+      // Sol-carrying paths (#641) start at the lander as measured on HiRISE,
+      // 0.2-0.45 km from the rounded site lat/lon — prepending that would draw
+      // a leg the rover never drove (and break the one-sol-per-point match).
+      const sols = tr.point_sols?.length === tr.points.length ? tr.point_sols : undefined;
+      if (!sols && trSite?.lat != null && trSite?.lon != null) {
         const [firstLat, firstLon] = points[0];
         if (Math.abs(firstLat - trSite.lat) > 1e-3 || Math.abs(firstLon - trSite.lon) > 1e-3) {
           points.unshift([trSite.lat, trSite.lon]);
@@ -348,8 +466,42 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       // refreshed in the resize hook below.
       const lineGeo = new LineGeometry();
       lineGeo.setPositions(verts);
+      // #641 — colour by sol over the whole mission when the path carries
+      // sols; otherwise the site colour as before (Moon traverses).
+      const lastSol = sols ? sols[sols.length - 1] : 0;
+      if (sols) {
+        const rgb: number[] = [];
+        const c = new THREE.Color();
+        for (const s of sols) {
+          solRampColor(lastSol > 1 ? (s - 1) / (lastSol - 1) : 0, c);
+          rgb.push(c.r, c.g, c.b);
+        }
+        lineGeo.setColors(rgb);
+      }
+      const resW = ctx.getContainer()?.clientWidth || window.innerWidth;
+      const resH = ctx.getContainer()?.clientHeight || window.innerHeight;
+      // Dark casing under the line so it reads on bright and dark terrain alike.
+      let casing: Line2 | undefined;
+      let casingMaterial: LineMaterial | undefined;
+      if (sols) {
+        const casingGeo = new LineGeometry();
+        casingGeo.setPositions(verts);
+        casingMaterial = new LineMaterial({
+          color: 0x06080b,
+          linewidth: 8,
+          transparent: true,
+          opacity: 0.75,
+          depthTest: false,
+        });
+        casingMaterial.resolution.set(resW, resH);
+        casing = new Line2(casingGeo, casingMaterial);
+        casing.renderOrder = 5;
+        casing.userData = { roverId: tr.rover_id, kind: 'traverse-casing' };
+        planetMesh.add(casing);
+      }
       const lineMaterial = new LineMaterial({
-        color: new THREE.Color(color).getHex(),
+        color: sols ? 0xffffff : new THREE.Color(color).getHex(),
+        vertexColors: !!sols,
         // 3 → 4: with the smaller balloon pins + endDot the line
         // now reads as the primary trail with the markers
         // anchored along it, rather than the markers floating
@@ -373,6 +525,67 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       line.userData = { roverId: tr.rover_id, kind: 'traverse' };
       planetMesh.add(line);
       tier2DelayedReveal.push(line);
+
+      // #641 — sol ticks across the path, minor + major (labelled), at the
+      // first point reached on each tick's sol. Ground-sized (metres on the
+      // magnified route) so they read at crater scale.
+      const ticks: LineSegments2[] = [];
+      const tickMaterials: LineMaterial[] = [];
+      const tickLabels: THREE.Sprite[] = [];
+      if (sols) {
+        const worldPerM = (planetRadius / (ctx.radiusKm * 1000)) * traverseMag;
+        const spacing = solTickSpacing(lastSol);
+        const vert = (i: number) =>
+          new THREE.Vector3(verts[i * 3], verts[i * 3 + 1], verts[i * 3 + 2]);
+        const perpAt = (i: number): THREE.Vector3 => {
+          const b = vert(i);
+          for (let k = i - 1; k >= 0; k--) {
+            const d = b.clone().sub(vert(k));
+            if (d.lengthSq() > 1e-12) return d.cross(b.clone().normalize()).normalize();
+          }
+          return new THREE.Vector3();
+        };
+        const loc = getLocale() as LocaleCode;
+        for (const kind of ['minor', 'major'] as const) {
+          const every = spacing[kind];
+          const half = TICK_HALF_M[kind] * worldPerM;
+          const segs: number[] = [];
+          for (const { sol, i } of solTickIndices(sols, every)) {
+            if (kind === 'minor' && sol % spacing.major === 0) continue;
+            const p = vert(i);
+            const n = perpAt(i);
+            segs.push(...p.clone().addScaledVector(n, -half).toArray());
+            segs.push(...p.clone().addScaledVector(n, half).toArray());
+            if (kind === 'major') {
+              const label = buildTraverseText(formatNumber(sol, loc), { center: [0.5, 0.5] });
+              label.position.copy(p.clone().addScaledVector(n, half * 2.2));
+              label.userData = {
+                ...label.userData,
+                roverId: tr.rover_id,
+                kind: 'traverse-tick-label',
+              };
+              planetMesh.add(label);
+              tickLabels.push(label);
+            }
+          }
+          if (!segs.length) continue;
+          const geo = new LineSegmentsGeometry();
+          geo.setPositions(segs);
+          const mat = new LineMaterial({
+            color: 0xffffff,
+            linewidth: kind === 'major' ? 2.5 : 1.5,
+            transparent: true,
+            depthTest: false,
+          });
+          mat.resolution.set(resW, resH);
+          const seg = new LineSegments2(geo, mat);
+          seg.renderOrder = 7;
+          seg.userData = { roverId: tr.rover_id, kind: 'traverse-ticks' };
+          planetMesh.add(seg);
+          ticks.push(seg);
+          tickMaterials.push(mat);
+        }
+      }
       const TRAVERSE_END_ACTIVE_COLOR = 0xef4444;
       const TRAVERSE_END_FINISHED_COLOR = 0xf59e0b;
       const first = tr.points[0];
@@ -452,6 +665,7 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       // lets them fade in lockstep with the line + dots.
       const stopPins: THREE.Sprite[] = [];
       const stopPinTextures: THREE.Texture[] = [];
+      const stopLabels: THREE.Sprite[] = [];
       if (tr.stops) {
         const STOP_KIND_COLOR: Record<string, number> = {
           sample: 0xfb923c,
@@ -477,6 +691,19 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
           tier2DelayedReveal.push(pinSprite);
           stopPins.push(pinSprite);
           stopPinTextures.push(pinTexture);
+          // #641 — "Victoria Crater · Sol 952" pill beside the ring; the
+          // animate loop sizes it and keeps it clear of the ring.
+          if (stop.label) {
+            const kindHex = STOP_KIND_COLOR[stop.kind] ?? 0xfde047;
+            const pill = buildTraverseText(`${stop.label} · ${m.traverse_sol({ sol: stop.sol })}`, {
+              pill: `#${kindHex.toString(16).padStart(6, '0')}`,
+              center: [0, 0.5],
+            });
+            pill.position.copy(stopWorld);
+            pill.userData = { ...pill.userData, roverId: tr.rover_id, kind: 'traverse-stop-label' };
+            planetMesh.add(pill);
+            stopLabels.push(pill);
+          }
         }
       }
 
@@ -656,6 +883,12 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         endLabelTexture: endBuilt.texture,
         stopPins,
         stopPinTextures,
+        casing,
+        casingMaterial,
+        ticks,
+        tickMaterials,
+        tickLabels,
+        stopLabels,
         startAnchor: startPosWorld.clone(),
         endAnchor: endPosWorld.clone(),
         tangent: tangent.clone(),

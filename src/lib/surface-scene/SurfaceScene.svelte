@@ -2999,6 +2999,8 @@
         const h = container?.clientHeight || window.innerHeight;
         for (const tl of traverseLines) {
           tl.lineMaterial.resolution.set(w, h);
+          tl.casingMaterial?.resolution.set(w, h);
+          for (const tm of tl.tickMaterials ?? []) tm.resolution.set(w, h);
         }
         // Re-fit the globe to the new aspect (e.g. orientation change)
         // unless the user has zoomed away from the default framing.
@@ -3831,7 +3833,7 @@
               tl.endDot.visible = tlShow;
               if (tl.startLabel) tl.startLabel.visible = tlShow;
               if (tl.endLabel) tl.endLabel.visible = tlShow;
-              tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
+              tl.lineMaterial.opacity = detailOpacity * (tl.casing || tl.isActive ? 0.95 : 0.7);
               const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
               // No pulse — flat 95% opacity for active rovers, 85% for ended (was
               // `tl.isActive ? pulse : 0.85` with pulse = sin(now*0.006)*0.25+0.7).
@@ -3885,6 +3887,43 @@
                 sp.visible = stopPinsVisible;
                 sp.scale.set(pinWorldW, pinWorldH, 1);
                 (sp.material as THREE.SpriteMaterial).opacity = detailOpacity;
+              }
+              // #641 — casing + sol ticks follow the line; labels are sized
+              // to a fixed on-screen height (worldPerPx) like the captions.
+              if (tl.casing) {
+                tl.casing.visible = tlShow;
+                if (tl.casingMaterial) tl.casingMaterial.opacity = detailOpacity * 0.75;
+              }
+              for (const tk of tl.ticks ?? []) tk.visible = tlShow && detailOpacity > 0.3;
+              for (const tm of tl.tickMaterials ?? []) tm.opacity = detailOpacity;
+              const tickLabelH = 15 * worldPerPx;
+              // Thin by screen distance: drop a label within ~44 px of one
+              // already shown (the rover's long stays bunch major ticks).
+              const shownPx: Array<[number, number]> = [];
+              const scr = new THREE.Vector3();
+              const vw = renderer.domElement.clientWidth || window.innerWidth;
+              const vh = renderer.domElement.clientHeight || window.innerHeight;
+              for (const lb of tl.tickLabels ?? []) {
+                let show = tlShow && detailOpacity > 0.3;
+                if (show) {
+                  lb.getWorldPosition(scr).project(camera);
+                  const sx = (scr.x * 0.5 + 0.5) * vw;
+                  const sy = (-scr.y * 0.5 + 0.5) * vh;
+                  if (shownPx.some(([x, y]) => Math.hypot(sx - x, sy - y) < 44)) show = false;
+                  else shownPx.push([sx, sy]);
+                }
+                lb.visible = show;
+                lb.scale.set(tickLabelH * (lb.userData.aspect ?? 2), tickLabelH, 1);
+                (lb.material as THREE.SpriteMaterial).opacity = detailOpacity;
+              }
+              const stopLabelH = 22 * worldPerPx;
+              for (const lb of tl.stopLabels ?? []) {
+                lb.visible = stopPinsVisible;
+                const wPx = 22 * (lb.userData.aspect ?? 4);
+                // Left edge 16 px right of the ring centre, whatever the width.
+                lb.center.x = -16 / wPx;
+                lb.scale.set(stopLabelH * (lb.userData.aspect ?? 4), stopLabelH, 1);
+                (lb.material as THREE.SpriteMaterial).opacity = detailOpacity;
               }
             }
           }
@@ -5220,7 +5259,6 @@ sample      ${debugInfo.projectedPxSample}`}
                 onclick={() => exitRouteView()}
                 title={m.surface_exit_route_title()}
               >
-                <span class="icon" aria-hidden="true">✕</span>
                 <span>{m.surface_exit_route()}</span>
               </button>
             {:else}
@@ -5230,7 +5268,6 @@ sample      ${debugInfo.projectedPxSample}`}
                 data-testid="view-route"
                 onclick={() => selected && enterRouteView(selected)}
               >
-                <span class="icon" aria-hidden="true">🛰</span>
                 <span>{m.surface_view_route()}</span>
               </button>
             {/if}
@@ -5244,7 +5281,6 @@ sample      ${debugInfo.projectedPxSample}`}
                 onclick={() => closeFlatPatch()}
                 title={m.surface_exit_zoom_title()}
               >
-                <span class="icon" aria-hidden="true">✕</span>
                 <span>{m.surface_exit_zoom_view()}</span>
               </button>
             {:else}
@@ -5260,7 +5296,6 @@ sample      ${debugInfo.projectedPxSample}`}
                   if (selected) flyToDetail?.(selected);
                 }}
               >
-                <span class="icon" aria-hidden="true">⤓</span>
                 <span>{m.surface_zoom_detail()}</span>
               </button>
             {/if}
@@ -5881,11 +5916,6 @@ sample      ${debugInfo.projectedPxSample}`}
       border-color 0.15s ease,
       color 0.15s ease;
   }
-  .head .zoom-to-detail-button .icon {
-    color: var(--accent, #4ecdc4);
-    font-size: 13px;
-    line-height: 1;
-  }
   .head .zoom-to-detail-button:hover,
   .head .zoom-to-detail-button:focus-visible {
     background: rgba(255, 255, 255, 0.08);
@@ -5929,27 +5959,29 @@ sample      ${debugInfo.projectedPxSample}`}
      on narrow viewports. */
   .head .site-cta-bar :global(.stand-at-site),
   .head .site-cta-bar .zoom-to-detail-button {
-    flex: 1 1 90px;
-    min-width: 90px;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 30px;
     width: auto;
     margin-top: 0;
-    padding: 10px 8px;
+    padding: 5px 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    text-align: center;
+    line-height: 1.25;
     /* Tinted with the body's --body-tint (Mars rust, Moon rocky grey,
        Earth deep blue) so the CTA row reads as belonging to the
        current world, not the selected site's nation. The agency badge
        above still carries the per-site nation accent for identity. */
-    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
-    color: #fff;
-    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 80%, transparent);
+    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 8%, rgba(8, 10, 22, 0.6));
+    color: rgba(255, 255, 255, 0.88);
+    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 50%, transparent);
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 1.2px;
+    letter-spacing: 0.2px;
     text-transform: uppercase;
     cursor: pointer;
     transition:
@@ -5968,16 +6000,10 @@ sample      ${debugInfo.projectedPxSample}`}
     outline: none;
     transform: translateY(-1px);
   }
-  .head .site-cta-bar .zoom-to-detail-button .icon {
-    color: #fff;
-    font-size: 13px;
-    line-height: 1;
-  }
-  /* The PanoramaToggleButton renders `.stand-at-site` with the
-     glyph injected via ::before; override its colour so the
-     half-moon / ✕ reads as white against the now-coloured fill. */
+  /* Text-only in the CTA row: the PanoramaToggleButton's ::before glyph
+     (◐ / ✕) is hidden here; elsewhere it keeps it. */
   .head .site-cta-bar :global(.stand-at-site::before) {
-    color: #fff;
+    display: none;
   }
 
   .sr-only {

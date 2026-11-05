@@ -215,6 +215,32 @@ describe('rebuildTraverses basics', () => {
     expect(firstVertex.getZ(0)).toBeCloseTo(expected.z, 4);
   });
 
+  it('sol-carrying path (#641): no prepended landing leg, a casing, sol colours, ticks', () => {
+    const far = site({ id: 'far', lat: 18.0, lon: 77.0 });
+    const points: Array<[number, number]> = [
+      [18.4, 77.4],
+      [18.45, 77.45],
+      [18.5, 77.5],
+      [18.55, 77.6],
+      [18.6, 77.7],
+    ];
+    const { rebuildTraverses, ctx } = setup({
+      sites: [far],
+      traverses: { far: traverse({ rover_id: 'far', points, point_sols: [1, 30, 60, 90, 120] }) },
+    });
+    rebuildTraverses();
+    const tl = ctx.traverseLines[0];
+    // 5 points → 4 segments: the far-off site position was NOT prepended.
+    expect(segments(tl.line)).toBe(4);
+    expect(tl.lineMaterial.vertexColors).toBe(true);
+    expect(tl.line.geometry.getAttribute('instanceColorStart')).toBeDefined();
+    expect(tl.casing).toBeDefined();
+    expect(segments(tl.casing as Line2)).toBe(4);
+    // lastSol 120 → minor every 25, major every 100: ticks at 25, 50, 75 (minor) and 100 (major).
+    expect(tl.ticks).toHaveLength(2);
+    expect(tl.tickLabels).toHaveLength(1);
+  });
+
   it('falls back to a white path for a rover with no site', () => {
     const { rebuildTraverses, ctx } = setup({ traverses: { r: traverse({ rover_id: 'r' }) } });
     rebuildTraverses();
@@ -371,7 +397,11 @@ describe('rebuildTraverses stops', () => {
     });
     expect(p1.userData.stopKind).toBe('drill');
     expect(p0.position.distanceTo(unit(18.45, 77.45, R + 0.05))).toBeLessThan(1e-9);
-    expect(p0.center.toArray()).toEqual([0.5, 0]);
+    // #641 ring marker: centred on the path (ring centre 1/3 up the canvas).
+    expect(p0.center.toArray()).toEqual([0.5, 1 / 3]);
+    // …with its "label · Sol N" pill beside it.
+    expect(tl.stopLabels).toHaveLength(3);
+    expect(tl.stopLabels?.[0].userData.kind).toBe('traverse-stop-label');
     expect(p0.renderOrder).toBe(8);
     for (const pin of tl.stopPins) {
       expect(pin.parent).toBe(planetMesh);

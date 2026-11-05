@@ -16,7 +16,7 @@
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
-  import { getImageAlt } from '$lib/image-alt';
+  import type { getImageAlt } from '$lib/image-alt';
   import { getLocale } from '$lib/paraglide/runtime';
   import { holdSceneCover } from '$lib/three/animate-loop';
 
@@ -48,6 +48,13 @@
       list = [src];
       index = 0;
     }
+  });
+
+  // Alt text loads with the first open: a static import put image-alt and SvelteMap in every
+  // panel route's JS and took /fleet over its budget.
+  let altOf = $state<typeof getImageAlt | null>(null);
+  $effect(() => {
+    if (src && !altOf) void import('$lib/image-alt').then((mod) => (altOf = mod.getImageAlt));
   });
 
   // The viewer covers the page; 3D scenes behind it stop rendering while open.
@@ -149,7 +156,7 @@
         <img
           class="lightbox-img"
           {...responsive(current, IMAGE_SIZES.full)}
-          alt={getImageAlt(current.slice(Math.max(0, current.indexOf('/images/'))), getLocale())}
+          alt={altOf?.(current.slice(Math.max(0, current.indexOf('/images/'))), getLocale()) ?? ''}
           decoding="async"
         />
       {/key}

@@ -123,6 +123,7 @@ If something *can't* be expressed in this contract, that's a signal — file an 
 | `register-{moon,mars,earth,venus}-hotspot-builders.ts` | Each body's Tier 1 model registration bundle |
 | `surface-picking.ts`, `surface-2d-map.ts`, `surface-traverses.ts`, `surface-markers.ts`, `surface-cam-tour.ts` | Extracted from SurfaceScene's `onMount` closure: 3D raycast picking + click dispatch, the flat 2D map (lunar discs / equirectangular) + its click handler, traverse rebuild, site + orbiter marker rebuild, audio-tour camera demos. Each takes a context object (`get*` getters for reactive/reassigned state, shared arrays by reference) |
 | `surface-context.ts`, `context-bounds.ts` | Context layer: a true-scale cap of a ~100 m/px mosaic crop over the selected site, child of the planet mesh, same material + texture decoding as the globe, feathered edge, opacity by camera distance (`contextOpacity`). `context-bounds.ts` has no imports so `scripts/hotspots/fetch-context-layer.ts` shares the box maths |
+| `globe-tint.ts` | Globe-matched tint for greyscale imagery (#641): samples the globe texture under a patch and sets the material colour so a grey CTX / HiRISE / LROC patch takes the planet's hue (Mars, Moon; `TINT_BODIES` in SurfaceScene); `tintedCopy` does the same for the 2D flat view. Colour imagery is left alone |
 | `debug-info.ts`, `status-tone.ts` | Shared debug overlay shape + factory; site status badge mapping |
 | `README.md` | This file — the contract |
 
@@ -132,7 +133,7 @@ These are upstream of `surface-scene/` and should be used as-is:
 
 - `src/lib/surface-map/*` — 12 pure helpers (nation palette, tier scale, hotspots mode, link tiers, panel tabs, story autopromote, 2D legend, load panel data, site formatters, tier context, URL sync)
 - `src/lib/three/*` — 23 Three.js helpers (scene renderer, canvas resizer, input listeners, outline pass, marker halo, orbiter group, place-on-sphere, surface lights, panorama keys, dispose helpers, star field, etc.)
-- `src/lib/hotspot-lod-dispatcher.ts` — Tier 0/1/2/3 LOD + LRU + cross-fade engine
+- `src/lib/hotspot-lod-dispatcher.ts` — Tier 0/1/2/3 LOD + LRU + cross-fade engine. Over the ceiling (28) it evicts the hotspots farthest from the camera, so the ones in view are never rebuilt every frame (#641, /earth's 42 pads)
 - `src/lib/hotspot-surface-patch.ts` — Tier 2 detail patch builder
 - `src/lib/hotspot-tier3-skybox.ts` — Tier 3 ground-level panorama
 - `src/types/surface-site.ts` — `SurfaceSite`, `RegionBounds`, `RegionKind` types

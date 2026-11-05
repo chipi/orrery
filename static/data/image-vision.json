@@ -27381,20 +27381,6 @@
       "scored_at": "2026-06-23T20:30:42.956Z",
       "scoring_cost_usd": 0.007359
     },
-    "/images/hotspots/moon/beresheet/tier3-pan.jpg": {
-      "score": 2,
-      "subject": "A small color-enhanced planetary surface image showing craters, positioned in the upper-left corner against large black and gray fill areas.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.11,
-        "y": 0.56
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:30:47.294Z",
-      "scoring_cost_usd": 0.008265
-    },
     "/images/hotspots/moon/chandrayaan3/tier2-lroc.jpg": {
       "score": 4,
       "subject": "High-resolution grayscale orbital image of a heavily cratered lunar surface with no prominent focal feature.",
@@ -27561,20 +27547,6 @@
       "scored_at": "2026-06-23T20:31:41.522Z",
       "scoring_cost_usd": 0.008034
     },
-    "/images/hotspots/moon/luna16/tier3-pan.jpg": {
-      "score": 2,
-      "subject": "Small orbital or reconnaissance image of a cratered lunar surface with a scale bar, occupying only a tiny corner of an otherwise black and grey frame.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.09,
-        "y": 0.5
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:31:46.452Z",
-      "scoring_cost_usd": 0.00813
-    },
     "/images/hotspots/moon/luna17/tier2-lroc.jpg": {
       "score": 6,
       "subject": "Black-and-white photograph of a Soviet Lunokhod lunar rover scale model or promotional image, showing the vehicle's eight wheels, tub-shaped body, and antenna against a dark background.",
@@ -27636,20 +27608,6 @@
       "fallback": false,
       "scored_at": "2026-06-23T20:32:04.119Z",
       "scoring_cost_usd": 0.007764
-    },
-    "/images/hotspots/moon/luna24/tier3-pan.jpg": {
-      "score": 2,
-      "subject": "Small grayscale lunar surface image with scale bar inset, embedded in a mostly black and gray canvas with severe framing issues.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.09,
-        "y": 0.49
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:32:08.376Z",
-      "scoring_cost_usd": 0.008145
     },
     "/images/hotspots/moon/luna9/tier3-pan.jpg": {
       "score": 1,

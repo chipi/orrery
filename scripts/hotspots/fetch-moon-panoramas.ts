@@ -18,10 +18,11 @@
  * Follow-up commits will add Chang'e 3/4/5, Chandrayaan-3, SLIM, Luna
  * 9, Lunokhod 1/2 as per-site panorama URLs land.
  *
- * Sites without sourceable panoramas (luna16, luna24 = robotic-only,
- * no panoramic camera): hotspot_tier3_panorama stays unset → "Stand
- * at site" button silently doesn't render. Same UX as mars3/beagle2/
- * schiaparelli.
+ * Sites without a ground-level panorama get no Tier 3: Luna 16 / Luna 24
+ * (no panoramic camera; an LRO orbital frame stood in) and Beresheet (crashed;
+ * its last descent frame stood in) — removed 2026-11-05, #641. With
+ * hotspot_tier3_panorama unset the "Stand here" button does not render, as on
+ * mars3 / beagle2 / schiaparelli.
  *
  * Usage:
  *   npm run images:hotspots -- --dest moon --layer tier3
@@ -334,29 +335,6 @@ const PANORAMAS: MoonPanoramaConfig[] = [
       'system on SLIM; the Sora-Q stereo MBC frame is the canonical surface view. JAXA.',
   },
   {
-    siteId: 'luna16',
-    sourceUrl:
-      'https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12984/PIA12984.jpg',
-    sourceLabel: 'Luna 16 landing site, LRO NAC orbital view (NASA, 2010)',
-    attribution: 'NASA / GSFC / Arizona State University · LRO Camera (NAC)',
-    license: 'PD-NASA',
-    // 900×900 ≈ 1:1 LRO NAC orbital view of the Luna 16 lander
-    // remnants in Mare Fecunditatis. Luna 16 carried only a descent-
-    // stage telephotometer (not a panoramic camera); no Earth-trans-
-    // mitted surface panorama exists. Per the "ship-with-honest-
-    // caption" editorial principle (same as mars3 / beagle2), this
-    // modern orbital view from LRO is the closest available "stand
-    // at the landing site" surface tier.
-    srcAzimuthDeg: 60,
-    srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 30,
-    caption:
-      'Luna 16 landing site, Mare Fecunditatis (1970) — modern LRO NAC orbital view. ' +
-      'Luna 16 was the first robotic sample-return mission and carried only a descent-stage ' +
-      'telephotometer; no Earth-transmitted surface panorama exists. This LRO image (PIA12984, ' +
-      'captured 2010) is the closest available landing-site view. NASA / GSFC / Arizona State.',
-  },
-  {
     siteId: 'luna17',
     sourceUrl: 'https://upload.wikimedia.org/wikipedia/en/8/86/Lk101.jpg',
     sourceLabel: 'Lunokhod 1 surface panorama (USSR, 1970)',
@@ -388,44 +366,6 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   // panorama is the right answer when no usable surface source exists,
   // rather than a misleading museum-replica stand-in. Stand-at-site
   // button hides; user sees Tier-2 LROC + the surface-site panel.
-  {
-    siteId: 'luna24',
-    sourceUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Luna24_rev_fig.png',
-    sourceLabel: 'Luna 24 landing site, LRO NAC orbital view (NASA / NSSDC)',
-    attribution: 'NASA / GSFC / Arizona State University · LRO Camera (NAC)',
-    license: 'PD-NASA',
-    // 1000×1000 ≈ 1:1 LRO orbital view of Luna 24 lander remnants in
-    // Mare Crisium with 25 m scale bar. Luna 24 had only a fixed TV
-    // camera on the descent stage; no surface panorama exists.
-    // Per ship-with-honest-caption pattern (mars3 / luna16): ship
-    // the LRO orbital view as the closest landing-site reference.
-    srcAzimuthDeg: 60,
-    srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 30,
-    caption:
-      'Luna 24 landing site, Mare Crisium (Aug 1976) — modern LRO NAC orbital view. ' +
-      'Luna 24 was the last Soviet Moon mission and the final lunar sample return until ' +
-      "Chang'e 5 in 2020. It carried only a fixed descent-stage TV camera, not a panoramic " +
-      'system; no Earth-transmitted surface panorama exists. NASA / GSFC / Arizona State.',
-  },
-  {
-    siteId: 'beresheet',
-    sourceUrl: 'https://cdn.mos.cms.futurecdn.net/9n8MuELHBDaLe5cxtrKMbj.jpeg',
-    sourceLabel: 'Beresheet final descent frame (SpaceIL, April 2019)',
-    attribution: 'SpaceIL · IAI · Beresheet descent camera (final transmission)',
-    license: 'SpaceIL-EDU',
-    // 999×577 ≈ 1.73:1 final transmitted frame at ~22 km altitude
-    // before main-engine failure + LOS. No surface imagery exists.
-    srcAzimuthDeg: 80,
-    srcElevationTopDeg: 25,
-    srcElevationBottomDeg: 46,
-    caption:
-      'Beresheet final descent frame — last image transmitted at ~22 km altitude over ' +
-      'Mare Serenitatis (April 11 2019) before main-engine failure and loss of comms. ' +
-      'Beresheet was the first privately-funded lunar lander and the first Israeli Moon ' +
-      'mission; the descent camera transmitted continuous frames during the powered descent. ' +
-      'No surface imagery exists. SpaceIL · Israel Aerospace Industries.',
-  },
 ];
 
 interface FetchResult {

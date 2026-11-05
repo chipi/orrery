@@ -31101,27 +31101,6 @@
    "instrument": "Kaguya TC"
   },
   {
-   "id": "583e7255b1b2b296",
-   "path": "/images/hotspots/moon/beresheet/tier3-pan.jpg",
-   "source_type": "direct-other",
-   "title": "Beresheet final descent frame — last image transmitted at ~22 km altitude over Mare Serenitatis (April 11 2019) before main-engine failure and loss of comms. Beresheet was the first privately-funded lunar lander and the first Israeli Moon mission; the descent camera transmitted continuous frames during the powered descent. No surface imagery exists. SpaceIL · Israel Aerospace Industries.",
-   "author": "SpaceIL · IAI · Beresheet descent camera (final transmission)",
-   "agency": "CNSA",
-   "source_url": "https://cdn.mos.cms.futurecdn.net/9n8MuELHBDaLe5cxtrKMbj.jpeg",
-   "image_url": "https://cdn.mos.cms.futurecdn.net/9n8MuELHBDaLe5cxtrKMbj.jpeg",
-   "license_short": "SpaceIL-EDU",
-   "license_url": "https://www.cnsa.gov.cn/english/",
-   "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
-   "modifications": [
-    "padded-to-4096x2048-equirectangular",
-    "reencoded-jpeg-q88"
-   ],
-   "revid": null,
-   "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-28T17:07:10.233Z"
-  },
-  {
    "id": "750f40c7d2147eea",
    "path": "/images/hotspots/moon/chandrayaan3/tier2-lroc.jpg",
    "source_type": "direct-agency",
@@ -31713,27 +31692,6 @@
    "instrument": "Kaguya TC"
   },
   {
-   "id": "51dd34888594d94a",
-   "path": "/images/hotspots/moon/luna16/tier3-pan.jpg",
-   "source_type": "direct-agency",
-   "title": "Luna 16 landing site, Mare Fecunditatis (1970) — modern LRO NAC orbital view. Luna 16 was the first robotic sample-return mission and carried only a descent-stage telephotometer; no Earth-transmitted surface panorama exists. This LRO image (PIA12984, captured 2010) is the closest available landing-site view. NASA / GSFC / Arizona State.",
-   "author": "NASA / GSFC / Arizona State University · LRO Camera (NAC)",
-   "agency": "NASA",
-   "source_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12984/PIA12984.jpg",
-   "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12984/PIA12984.jpg",
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
-   "modifications": [
-    "padded-to-4096x2048-equirectangular",
-    "reencoded-jpeg-q88"
-   ],
-   "revid": null,
-   "pageid": null,
-   "nasa_id": "Luna 16 landing site, LRO NAC orbital view (NASA, 2010)",
-   "fetched_at": "2026-06-28T17:07:10.233Z"
-  },
-  {
    "id": "9b1d11a1cc39fcab",
    "path": "/images/hotspots/moon/luna17/tier2-lroc.jpg",
    "source_type": "direct-agency",
@@ -32176,27 +32134,6 @@
    "fetched_at": "2026-11-03T21:36:51.734Z",
    "spacecraft_name": "Kaguya (SELENE)",
    "instrument": "Kaguya TC"
-  },
-  {
-   "id": "0ee4c596cadcc530",
-   "path": "/images/hotspots/moon/luna24/tier3-pan.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "Luna 24 landing site, Mare Crisium (Aug 1976) — modern LRO NAC orbital view. Luna 24 was the last Soviet Moon mission and the final lunar sample return until Chang'e 5 in 2020. It carried only a fixed descent-stage TV camera, not a panoramic system; no Earth-transmitted surface panorama exists. NASA / GSFC / Arizona State.",
-   "author": "NASA / GSFC / Arizona State University · LRO Camera (NAC)",
-   "agency": "NASA",
-   "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Luna24_rev_fig.png",
-   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Luna24_rev_fig.png",
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
-   "modifications": [
-    "padded-to-4096x2048-equirectangular",
-    "reencoded-jpeg-q88"
-   ],
-   "revid": null,
-   "pageid": null,
-   "nasa_id": "Luna 24 landing site, LRO NAC orbital view (NASA / NSSDC)",
-   "fetched_at": "2026-06-28T17:07:10.233Z"
   },
   {
    "id": "438324e4c5145e53",

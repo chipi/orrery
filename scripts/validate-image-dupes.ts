@@ -67,9 +67,7 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   // ── hotspots/moon tier-3 pan = panorama-tier composite that
   //    re-uses the mission's hero photo as its high-LOD source.
   //    Same image, different LOD tier in the hotspot pipeline.
-  '8ba75ba6', // hotspots/moon/beresheet/tier3-pan.jpg ← missions/beresheet/01.jpg
   '48e655bc', // hotspots/moon/change3/tier3-pan.jpg ← missions/change3/01.jpg
-  '895b2de9', // hotspots/moon/luna16/tier3-pan.jpg ← missions/luna16/01.jpg
   // ── luna9 has no distinct LROC detail, so the detail fetch fails
   //    over to a copy of its Kaguya TC regional crop (#361). Same
   //    image at two tiers (regional + detail) by design.

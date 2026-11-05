@@ -1752,7 +1752,7 @@
   "explore_lens_story_cosmic_web_title": "Das Kosmische Netz",
   "explore_lens_story_cosmic_web_body": "Das größte Muster, das es gibt: Galaxien sind nicht zufällig verstreut, sondern entlang von Filamenten und Blättern um fast leere Voids aufgereiht — eine Struktur, die wie Schaum oder ein Netz aus leuchtenden Fäden aussieht. Diese Schale ist ein stark schematisches Modell — ein Diagramm der Idee, keine Vermessung — das eine Handvoll der großen Mauern, Supercluster und Voids des nahen Universums zeigt. Es ist das Fossil von winzigen Wellen im frühen Kosmos, das über Milliarden von Jahren durch Gravitation gewachsen ist.",
   "fleet_entry_learn_science": "Die Wissenschaft kennenlernen",
-  "surface_exit_panorama": "Panorama beenden",
+  "surface_exit_panorama": "Panorama aus",
   "surface_exit_zoom": "Zoom beenden",
   "surface_exit_route": "Route beenden",
   "surface_view_route": "Route ansehen",
@@ -3633,7 +3633,7 @@
   "traverse_hover_detail": "≈ {date} · {km} km vom Landeplatz",
   "panel_tab_journey": "REISE",
   "journey_replay_play": "Fahrt abspielen",
-  "journey_replay_pause": "Pause",
+  "journey_replay_pause": "Pausieren",
   "journey_replay_scrub": "Sol der Fahrt",
   "journey_elevation": "Höhe entlang der Fahrt",
   "journey_elevation_range": "{min} bis {max} m · {climb} m Höhenunterschied"

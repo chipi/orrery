@@ -36,7 +36,6 @@
   import { countryLabel } from '$lib/country-label';
   import { epochLabel } from '$lib/epoch-label';
   import { fleetStatusLabel } from '$lib/status-label';
-  import MediaPlayer from './MediaPlayer.svelte';
   import MuseumsForObject from './MuseumsForObject.svelte';
   import VideoThumb from './VideoThumb.svelte';
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
@@ -849,7 +848,12 @@
 
 <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
-<MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
+<!-- Loaded when a clip opens: a static import kept /fleet over its JS budget in the prod build. -->
+{#if playerVideo}
+  {#await import('./MediaPlayer.svelte') then { default: MediaPlayer }}
+    <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
+  {/await}
+{/if}
 
 <style>
   .head {

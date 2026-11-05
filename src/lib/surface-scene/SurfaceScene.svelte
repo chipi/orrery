@@ -3473,6 +3473,18 @@
           p.halo.visible = p.id === selObsId;
         }
         const selId = selected?.id ?? null;
+        // Selection frames (site and route-centre) fade out over camR 37 → 34
+        // (#641): once the imagery fills the view their corners cut across it
+        // as stray lines, and on Venus (no imagery) the frame outgrew the view.
+        const routeHaloFade = Math.max(0, Math.min(1, (camR - 34) / 3));
+        const fadeHalo = (obj: THREE.Object3D, k: number) =>
+          obj.traverse((o) => {
+            const mat = (o as THREE.Mesh).material as
+              (THREE.Material & { opacity: number }) | undefined;
+            if (!mat || !('opacity' in mat)) return;
+            mat.userData.baseOpacity ??= mat.opacity;
+            mat.opacity = mat.userData.baseOpacity * k;
+          });
         // Sites on screen and on the near side (#641): the nation legend only
         // earns its strip when several are in view. Counted before the nation
         // filter, so switching nations off never hides the switches.
@@ -3509,7 +3521,12 @@
             // route's own framing (CTX + crosshair + line). The route IS the
             // selection indicator for these.
             mk.halo.visible =
-              layerSurface && nv && mk.siteId === selId && !routeViewCenters.has(mk.siteId);
+              layerSurface &&
+              nv &&
+              mk.siteId === selId &&
+              !routeViewCenters.has(mk.siteId) &&
+              routeHaloFade > 0.01;
+            if (mk.halo.visible) fadeHalo(mk.halo, routeHaloFade);
           }
           if (mk.hoverHalo) {
             // Teal hover ring — only when the mouse is over this
@@ -3523,23 +3540,13 @@
         }
         // #360: route-centre selection brackets — the "zoomable imagery here"
         // cue, shown while the rover is selected (its landing halo is hidden).
-        // Fades out over camR 37 → 34 (#641): once the regional imagery fills
-        // the view the corners stretch across it as stray lines.
-        const routeHaloFade = Math.max(0, Math.min(1, (camR - 34) / 3));
         for (const rh of routeSelectionHalos) {
           rh.obj.visible =
             layerSurface &&
             nationEnabled(nationBySiteId.get(rh.siteId)) &&
             rh.siteId === selId &&
             routeHaloFade > 0.01;
-          if (!rh.obj.visible) continue;
-          rh.obj.traverse((o) => {
-            const mat = (o as THREE.Mesh).material as
-              (THREE.Material & { opacity: number }) | undefined;
-            if (!mat || !('opacity' in mat)) return;
-            mat.userData.baseOpacity ??= mat.opacity;
-            mat.opacity = mat.userData.baseOpacity * routeHaloFade;
-          });
+          if (rh.obj.visible) fadeHalo(rh.obj, routeHaloFade);
         }
         for (const om of orbitalMarkers) {
           // Nation filter (#363) folds into showOrbiters so dot + ring both hide.

@@ -1223,20 +1223,19 @@
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/baikonur-1-5/tier3-pan.jpg",
       "panorama_metadata": {
-        "date": "2008-10-10",
-        "instrument": "Ground photo (banner crop)",
-        "caption": "Gagarin's Start (Site 1/5) before the Soyuz TMA-13 rollout — a very low-resolution banner crop.",
-        "credit_team": "NASA / Bill Ingalls",
-        "real_extent_pct_vertical": 13,
+        "date": "2018-06-04",
+        "instrument": "Ground photo",
+        "caption": "Gagarin's Start (Site 1/5), Baikonur Cosmodrome, 4 June 2018: the Soyuz for Soyuz MS-09 raised on the pad, the service gantries closing, flags and crews on the apron. NASA / Joel Kowsky.",
+        "credit_team": "NASA / Joel Kowsky",
         "synthetic_regions": [
           {
-            "pitch_min_deg": 12,
+            "pitch_min_deg": 39,
             "pitch_max_deg": 90,
             "kind": "synthetic_sky"
           },
           {
             "pitch_min_deg": -90,
-            "pitch_max_deg": -11,
+            "pitch_max_deg": -9,
             "kind": "synthetic_nadir"
           }
         ],

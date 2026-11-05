@@ -71888,23 +71888,23 @@
    "id": "e1e5d516fd37d205",
    "path": "/images/hotspots/earth/baikonur-1-5/tier3-pan.jpg",
    "source_type": "wikimedia-commons",
-   "title": "Gagarin's Start before the Soyuz TMA-13 rollout (2008) — a very low-resolution banner crop.",
-   "author": "NASA / Bill Ingalls",
+   "title": "Gagarin's Start (Site 1/5), Baikonur Cosmodrome, 4 June 2018: the Soyuz for Soyuz MS-09 raised on the pad, the service gantries closing, flags and crews on the apron. NASA / Joel Kowsky.",
+   "author": "NASA / Joel Kowsky",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File:Baikonur-banner.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baikonur-banner.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Expedition_56_Soyuz_Rollout_(NHQ201806040037).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Expedition_56_Soyuz_Rollout_(NHQ201806040037).jpg",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA media (Bill Ingalls, 2008) — U.S. Government work, not subject to copyright (17 U.S.C. §105).",
+   "license_rationale": "NASA media (Joel Kowsky, 2018) — U.S. Government work, not subject to copyright (17 U.S.C. §105).",
    "modifications": [
-    "padded-to-4096x2048-equirect-az160",
+    "padded-to-4096x2048-equirect-az130",
     "sky-and-ground-fill-synthetic",
     "jpeg"
    ],
    "revid": null,
    "pageid": null,
    "nasa_id": null,
-   "fetched_at": "2026-09-10T17:46:22.163Z"
+   "fetched_at": "2026-11-05T19:01:59.461Z"
   },
   {
    "id": "ad01e43af5752a18",

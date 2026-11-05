@@ -1013,6 +1013,13 @@
   // Nation legend height: the imagery card and the right-edge readouts stack
   // above the strip (--legend-top) instead of overlapping its wrapped rows.
   let legendH = $state(0);
+  // Site markers on screen right now (#641 legend gate), from the frame loop.
+  let sitesInView = $state(0);
+  const LEGEND_MIN_SITES = 4;
+  const legendScratchA = new THREE.Vector3();
+  const legendScratchB = new THREE.Vector3();
+  const legendScratchC = new THREE.Vector3();
+  const legendScratchD = new THREE.Vector3();
   let legendEl = $state<HTMLDivElement | undefined>();
   // Measured a frame after the resize, not inside the observer callback:
   // `bind:clientHeight` updated legendH mid-delivery, and the --legend-top /
@@ -3390,6 +3397,20 @@
           p.halo.visible = p.id === selObsId;
         }
         const selId = selected?.id ?? null;
+        // Sites on screen and on the near side (#641): the nation legend only
+        // earns its strip when several are in view. Counted before the nation
+        // filter, so switching nations off never hides the switches.
+        let onScreen = 0;
+        const planetPos = planetMesh.getWorldPosition(legendScratchA);
+        for (const mk of markers) {
+          const wp = mk.group.getWorldPosition(legendScratchB);
+          const facing = legendScratchC.copy(wp).sub(planetPos).dot(legendScratchD.copy(camera.position).sub(wp)) > 0;
+          if (facing) {
+            const ndc = wp.project(camera);
+            if (Math.abs(ndc.x) <= 1 && Math.abs(ndc.y) <= 1 && ndc.z < 1) onScreen++;
+          }
+        }
+        if (onScreen !== sitesInView) sitesInView = onScreen;
         for (const mk of markers) {
           // Nation filter (#363) — hide markers whose nation is toggled off.
           const nv = nationEnabled(nationBySiteId.get(mk.siteId));
@@ -5250,7 +5271,9 @@ sample      ${debugInfo.projectedPxSample}`}
        note: "when we go to panorama mode we still see altitude
        with Mm there, it should not be there in panorama mode on
        any planet"). -->
-  {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen}
+  <!-- …and not when almost landed (operator, #641): below ~4 % of the radius
+       (≈ 150 km on Mars) the detail imagery is in and the scale bar says it. -->
+  {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen && altitudeKm >= config.radiusKm * 0.044}
     <div class="altitude-indicator" class:beside-panel={panelOpen} aria-hidden="true">
       {m.surface_altitude({
         value:
@@ -5527,7 +5550,10 @@ sample      ${debugInfo.projectedPxSample}`}
        button: pressed = nation shown; un-pressed dims it and hides every
        object of that nation (surface, orbital, earth-sat). Default all-on,
        so it looks identical to the old passive legend until you click. -->
-  {#if !panoramaActive}
+  <!-- Only while several sites are in view (operator, #641): zoomed in on one
+       site the strip just covers the route and imagery. Mobile keeps the
+       Nations tab. -->
+  {#if !panoramaActive && sitesInView >= LEGEND_MIN_SITES}
     <div
       class="legend-3d"
       class:beside-panel={panelOpen}

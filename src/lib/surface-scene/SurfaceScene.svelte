@@ -195,6 +195,7 @@
     createSiteTagLayer,
     museumTagSpec,
     observatoryTagSpec,
+    focusFade,
     planetFill,
     siteTagSpec,
     tagStage,
@@ -1039,15 +1040,14 @@
   // Nation legend height: the imagery card and the right-edge readouts stack
   // above the strip (--legend-top) instead of overlapping its wrapped rows.
   let legendH = $state(0);
-  // Site markers on screen right now (#641 legend gate), from the frame loop.
-  let sitesInView = $state(0);
+  // Site icons have started to show at this zoom (#641 legend gate).
+  let tagStageOn = $state(false);
   // Globe colour at the flat-patch site (Mars): its greyscale imagery is
   // tinted to it, like the 3D patches (#641).
   let flatPatchTint = $state<[number, number, number] | undefined>();
   // Bodies whose greyscale imagery takes the globe's colour: Mars (reddish) and
   // the Moon (its tan-grey globe). Earth imagery is colour already.
   const TINT_BODIES = new Set(['mars', 'moon']);
-  const LEGEND_MIN_SITES = 4;
   const legendScratchA = new THREE.Vector3();
   const legendScratchB = new THREE.Vector3();
   const legendScratchC = new THREE.Vector3();
@@ -3517,24 +3517,6 @@
             mat.userData.baseOpacity ??= mat.opacity;
             mat.opacity = mat.userData.baseOpacity * k;
           });
-        // Sites on screen and on the near side (#641): the nation legend only
-        // earns its strip when several are in view. Counted before the nation
-        // filter, so switching nations off never hides the switches.
-        let onScreen = 0;
-        const planetPos = planetMesh.getWorldPosition(legendScratchA);
-        for (const mk of markers) {
-          const wp = mk.group.getWorldPosition(legendScratchB);
-          const facing =
-            legendScratchC
-              .copy(wp)
-              .sub(planetPos)
-              .dot(legendScratchD.copy(camera.position).sub(wp)) > 0;
-          if (facing) {
-            const ndc = wp.project(camera);
-            if (Math.abs(ndc.x) <= 1 && Math.abs(ndc.y) <= 1 && ndc.z < 1) onScreen++;
-          }
-        }
-        if (onScreen !== sitesInView) sitesInView = onScreen;
         for (const mk of markers) {
           // Nation filter (#363) — hide markers whose nation is toggled off.
           const nv = nationEnabled(nationBySiteId.get(mk.siteId));
@@ -4003,13 +3985,25 @@
                   .sub(centre)
                   .dot(legendScratchD.copy(camera.position).sub(wp)) > 0;
               if (!facing) return;
+              // Focus: tags far from the point under the camera fade out; the
+              // selected site always keeps its tag.
+              const arc =
+                (legendScratchC
+                  .copy(wp)
+                  .sub(centre)
+                  .normalize()
+                  .angleTo(legendScratchD.copy(camera.position).sub(centre)) *
+                  180) /
+                Math.PI;
+              const focused = boost > 0 ? opacity : opacity * focusFade(arc);
+              if (focused <= 0.01) return;
               const ndc = wp.project(camera);
               if (ndc.z >= 1 || Math.abs(ndc.x) > 1.1 || Math.abs(ndc.y) > 1.1) return;
               tagFrames.push({
                 key,
                 x: ((ndc.x + 1) / 2) * cw,
                 y: ((1 - ndc.y) / 2) * ch,
-                opacity,
+                opacity: focused,
                 boost,
               });
             };
@@ -4049,11 +4043,15 @@
           }
           const tagCw = renderer.domElement.clientWidth || 1;
           const tagCh = renderer.domElement.clientHeight || 1;
-          siteTags.sync(
-            tagFrames,
-            siteTagBlocked,
-            tagStage(planetFill(camR, planetRadius, camera.fov, tagCw, tagCh)),
-          );
+          const fillNow = planetFill(camR, planetRadius, camera.fov, tagCw, tagCh);
+          const fillFirst = planetFill(autoCamR, planetRadius, camera.fov, tagCw, tagCh);
+          const stage = tagStage(fillNow / fillFirst);
+          siteTags.sync(tagFrames, siteTagBlocked, stage);
+          // The nation legend arrives with the first icons (#641) — by zoom
+          // stage, not by tags shown, so switching every nation off keeps
+          // the switches.
+          const tagsOn = stage.icon > 0.01;
+          if (tagsOn !== tagStageOn) tagStageOn = tagsOn;
 
           // Tier-2 detail opacity ramp. Patch is eager-built at site
           // creation so tier2Group exists even when curTier < 2; we
@@ -5875,11 +5873,11 @@ sample      ${debugInfo.projectedPxSample}`}
        button: pressed = nation shown; un-pressed dims it and hides every
        object of that nation (surface, orbital, earth-sat). Default all-on,
        so it looks identical to the old passive legend until you click. -->
-  <!-- Only while several sites are in view (operator, #641): zoomed in on one
-       site the strip just covers the route and imagery. Mobile keeps the
-       Nations tab. -->
-  <!-- …and not near the ground: the Florida pads are all "in view" at 50 km (#641). -->
-  {#if !panoramaActive && sitesInView >= LEGEND_MIN_SITES && altitudeKm >= config.radiusKm * 0.044}
+  <!-- Only once the site icons arrive with zoom (operator, #641): the first
+       view is a bare globe. And not near the ground: zoomed in on one site
+       the strip just covers the route and imagery. Mobile keeps the Nations
+       tab. -->
+  {#if !panoramaActive && tagStageOn && altitudeKm >= config.radiusKm * 0.044}
     <div
       class="legend-3d"
       class:beside-panel={panelOpen}

@@ -283,26 +283,37 @@ export interface TagStage {
   card: number;
 }
 
-/** Zoom stages by planet fill: nothing far out, icons fading in as the
- *  planet grows, growing to full size, then the cards (#641). Desktop at the
- *  45° camera: icons 165 → 140 camR, full size by 90, cards 85 → 65. */
-export const TAG_STAGES = {
-  iconIn: [0.45, 0.53],
-  grow: [0.53, 0.85],
-  cardIn: [0.91, 1.26],
-  minSize: 0.7,
-} as const;
-
 const ramp = (x: number, [a, b]: readonly [number, number]) => {
   const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
   return t * t * (3 - 2 * t);
 };
 
-export function tagStage(fill: number): TagStage {
+/** Zoom stages by how much the planet has grown since the first view (its
+ *  fill over the fill at the route's default framing), so every route and
+ *  screen opens on a bare globe: icons fade in, grow to full size, then the
+ *  cards (#641). Desktop, default camR 150: icons 130 → 116, full size by 92,
+ *  cards 85 → 65. `focus`: arc (degrees) from the point under the camera
+ *  where tags start to fade and where they are gone — looking at North
+ *  America shows its sites, not Europe's on the limb. */
+export const TAG_STAGES = {
+  iconIn: [1.18, 1.34],
+  grow: [1.34, 1.78],
+  cardIn: [1.85, 2.55],
+  minSize: 0.7,
+  focus: [38, 50],
+} as const;
+
+/** Opacity for a tag `arcDeg` from the point under the camera. */
+export function focusFade(arcDeg: number): number {
+  return 1 - ramp(arcDeg, TAG_STAGES.focus);
+}
+
+/** `zoom`: planet fill now over the fill at the default framing. */
+export function tagStage(zoom: number): TagStage {
   return {
-    icon: ramp(fill, TAG_STAGES.iconIn),
-    size: TAG_STAGES.minSize + (1 - TAG_STAGES.minSize) * ramp(fill, TAG_STAGES.grow),
-    card: ramp(fill, TAG_STAGES.cardIn),
+    icon: ramp(zoom, TAG_STAGES.iconIn),
+    size: TAG_STAGES.minSize + (1 - TAG_STAGES.minSize) * ramp(zoom, TAG_STAGES.grow),
+    card: ramp(zoom, TAG_STAGES.cardIn),
   };
 }
 

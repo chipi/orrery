@@ -4,6 +4,7 @@ import {
   clusterFrames,
   createSiteTagLayer,
   iconForSite,
+  focusFade,
   planetFill,
   tagStage,
   siteTagSpec,
@@ -44,17 +45,30 @@ describe('zoom stages', () => {
     // Portrait phone: the narrow side sets the scale.
     expect(planetFill(150, 30, 45, 390, 760)).toBeCloseTo(0.96, 1);
   });
-  it('shows nothing far out, icons first, cards last', () => {
-    expect(tagStage(fill(200))).toEqual({ icon: 0, size: 0.7, card: 0 });
-    const def = tagStage(fill(150));
-    expect(def.icon).toBeGreaterThan(0);
-    expect(def.icon).toBeLessThan(1);
-    expect(def.card).toBe(0);
-    const near = tagStage(fill(95));
-    expect(near.icon).toBe(1);
+  // Zoom relative to the default framing (camR 150 on every route).
+  const zoom = (camR: number) => fill(camR) / fill(150);
+  it('opens bare, then icons, then cards', () => {
+    expect(tagStage(zoom(200))).toEqual({ icon: 0, size: 0.7, card: 0 });
+    expect(tagStage(zoom(150)).icon).toBe(0);
+    expect(tagStage(zoom(130)).icon).toBe(0);
+    const mid = tagStage(zoom(122));
+    expect(mid.icon).toBeGreaterThan(0);
+    expect(mid.icon).toBeLessThan(1);
+    expect(tagStage(zoom(116)).icon).toBeGreaterThan(0.9);
+    const near = tagStage(zoom(92));
     expect(near.size).toBeGreaterThan(0.95);
     expect(near.card).toBe(0);
-    expect(tagStage(fill(60))).toEqual({ icon: 1, size: 1, card: 1 });
+    expect(tagStage(zoom(60))).toEqual({ icon: 1, size: 1, card: 1 });
+  });
+  it('a phone opens bare too: zoom is relative, not absolute fill', () => {
+    const first = planetFill(150, 30, 45, 390, 760);
+    expect(tagStage(planetFill(150, 30, 45, 390, 760) / first).icon).toBe(0);
+  });
+  it('fades tags away from the point under the camera', () => {
+    expect(focusFade(10)).toBe(1);
+    expect(focusFade(38)).toBe(1);
+    expect(focusFade(44)).toBeCloseTo(0.5);
+    expect(focusFade(65)).toBe(0);
   });
 });
 

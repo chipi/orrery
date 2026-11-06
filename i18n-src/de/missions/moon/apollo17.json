@@ -21,7 +21,7 @@
       "type": "nominal"
     },
     {
-      "met": 3.4,
+      "met": 3.7,
       "label": "LOI",
       "note": "Einschwenken in die Mondumlaufbahn.",
       "type": "nominal"
@@ -64,7 +64,7 @@
       "description": "Feinkorrektur in der Anflugphase vor dem Einschwenken in die Mondumlaufbahn."
     },
     {
-      "met": 10.9,
+      "met": 9.75,
       "label": "Einschuss Richtung Erde",
       "description": "1972-12-16. Die SPS-Zündung schickt Apollo 17 nach 75 Stunden in der Mondumlaufbahn und drei Tagen auf der Oberfläche nach Hause."
     }

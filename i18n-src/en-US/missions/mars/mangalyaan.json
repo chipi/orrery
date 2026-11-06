@@ -11,7 +11,7 @@
     { "met": 1, "label": "PERIGEE BURN 1", "note": "First of six Earth orbit raising burns before trans-Mars injection.", "type": "nominal" },
     { "met": 25.43, "label": "TRANS-MARS INJECTION", "note": "Final perigee burn places spacecraft on Mars trajectory.", "type": "nominal" },
     { "met": 324, "label": "MARS ORBIT INSERTION", "note": "Liquid Apogee Motor fires after ~10 months dormant — fired for 24 minutes to capture into orbit.", "type": "nominal" },
-    { "met": 3300, "label": "MISSION END", "note": "Lost contact 2022-04 after spacecraft propellant exhausted.", "type": "warning" }
+    { "met": 3300, "label": "MISSION END", "note": "Lost contact 2022-04 after the propellant ran out and the battery drained below its safe limit during long eclipses (ISRO).", "type": "warning" }
   ],
   "vehicle_stage": "PSLV PS4 fourth stage"
 }

@@ -21,7 +21,7 @@
       "type": "nominal"
     },
     {
-      "met": 3.4,
+      "met": 3.7,
       "label": "Moi",
       "note": "Insertion en orbite lunaire.",
       "type": "nominal"
@@ -64,7 +64,7 @@
       "description": "Affinage de la phase d'approche avant l'insertion en orbite lunaire."
     },
     {
-      "met": 10.9,
+      "met": 9.75,
       "label": "Injection transterrestre",
       "description": "1972-12-16. L'allumage du SPS renvoie Apollo 17 vers la Terre après 75 heures en orbite lunaire et trois jours à la surface."
     }

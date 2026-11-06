@@ -21,7 +21,7 @@
       "type": "nominal"
     },
     {
-      "met": 3.4,
+      "met": 3.7,
       "label": "LOI",
       "note": "月軌道投入。",
       "type": "nominal"
@@ -64,7 +64,7 @@
       "description": "月周回軌道投入前の接近フェーズの精密化。"
     },
     {
-      "met": 10.9,
+      "met": 9.75,
       "label": "地球帰還軌道投入",
       "description": "1972-12-16。SPS 噴射が、月周回軌道での75時間と月面での3日間を終えた Apollo 17 を帰途に就かせる。"
     }

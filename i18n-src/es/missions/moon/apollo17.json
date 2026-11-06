@@ -21,7 +21,7 @@
       "type": "nominal"
     },
     {
-      "met": 3.4,
+      "met": 3.7,
       "label": "ILO",
       "note": "Inserción en órbita lunar.",
       "type": "nominal"
@@ -64,7 +64,7 @@
       "description": "Ajuste de la fase de aproximación antes de la inserción en órbita lunar."
     },
     {
-      "met": 10.9,
+      "met": 9.75,
       "label": "Inyección transterrestre",
       "description": "1972-12-16. El encendido del SPS devuelve al Apollo 17 a casa tras 75 horas en órbita lunar y tres días en la superficie."
     }

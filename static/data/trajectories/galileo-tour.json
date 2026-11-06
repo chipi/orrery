@@ -5,7 +5,7 @@
   "parent_planet": "jupiter",
   "color": "#a5d6a7",
   "schema_version": 1,
-  "_doc": "Jupiter-anchored orbital tour for /explore PATHS layer (#306 Slice D follow-up). Galileo completed 35 orbits over 8 years (1995-2003) with 34 close Galilean-moon flybys. Same scene convention as cassini-tour.json — semi-major in scene units (Jupiter size3=13.5, Io orbit=24, so 1 R_J ≈ 4 units). Six representative families capture the mission arc: initial capture (high apoapsis), the Io flyby that gave Galileo the radiation dose budget for the rest of the tour, the Europa-focused middle years, the late Io flybys when the orbit was tightened, and the disposal entry to protect Europa from terrestrial-microbe contamination.",
+  "_doc": "Jupiter-anchored orbital tour for /explore PATHS layer (#306 Slice D follow-up). Galileo completed 34 full orbits over 8 years (1995-2003; NASA — the 35th ended in the plunge) with 34 close Galilean-moon flybys. Same scene convention as cassini-tour.json — semi-major in scene units (Jupiter size3=13.5, Io orbit=24, so 1 R_J ≈ 4 units). Six representative families capture the mission arc: initial capture (high apoapsis), the Io flyby that gave Galileo the radiation dose budget for the rest of the tour, the Europa-focused middle years, the late Io flybys when the orbit was tightened, and the disposal entry to protect Europa from terrestrial-microbe contamination.",
   "orbits": [
     {
       "id": "joi-capture",

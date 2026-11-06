@@ -10,7 +10,7 @@
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Saturn V (AS-512) from KSC LC-39A 1972-12-07 — only Apollo night launch.", "type": "nominal" },
     { "met": 0.13, "label": "TLI", "note": "Trans-lunar injection.", "type": "nominal" },
-    { "met": 3.4, "label": "LOI", "note": "Lunar orbit insertion.", "type": "nominal" },
+    { "met": 3.7, "label": "LOI", "note": "Lunar orbit insertion.", "type": "nominal" },
     { "met": 4.6, "label": "TOUCHDOWN", "note": "Lunar Module Challenger lands at Taurus-Littrow Valley 1972-12-11 19:54 UTC.", "type": "nominal" },
     { "met": 4.76, "label": "FIRST EVA", "note": "Cernan and Schmitt begin first of three lunar EVAs (total 22h 4m).", "type": "info" },
     { "met": 7.8, "label": "ASCENT", "note": "Cernan: 'We leave as we came, and God willing, we shall return.'", "type": "nominal" },

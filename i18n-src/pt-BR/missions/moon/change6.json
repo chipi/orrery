@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 29,
+      "met": 29.54,
       "label": "ATERRAGEM",
       "note": "Lander desce na cratera Apollo (lado oposto) 2024-06-01 (UTC). Todas as comunicações via relé Queqiao-2.",
       "type": "nominal"
@@ -32,7 +32,7 @@
       "type": "info"
     },
     {
-      "met": 31,
+      "met": 31.59,
       "label": "SUBIDA",
       "note": "Veículo de subida decola; encontro com o orbitador.",
       "type": "nominal"

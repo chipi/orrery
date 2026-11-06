@@ -21,7 +21,7 @@
       "type": "nominal"
     },
     {
-      "met": 3.4,
+      "met": 3.7,
       "label": "LOI",
       "note": "Maanbaan-insertie.",
       "type": "nominal"
@@ -64,7 +64,7 @@
       "description": "Verfijning in de naderingsfase voor de intrede in een baan om de maan."
     },
     {
-      "met": 10.9,
+      "met": 9.75,
       "label": "Injectie richting de aarde",
       "description": "1972-12-16. De SPS-brandstap stuurt Apollo 17 naar huis na 75 uur in een baan om de maan en drie dagen op het oppervlak."
     }

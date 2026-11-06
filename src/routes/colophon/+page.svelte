@@ -27,6 +27,7 @@
   type Manifest = {
     anatomy_art: Diagram[];
     exploded_art: Diagram[];
+    landing_art?: (Diagram & { route: string })[];
     diagrams_science: Diagram[];
     posters: Poster[];
     lab_illustrations: Diagram[];
@@ -128,6 +129,12 @@
           <a href="#sec-exploded">{m.colophon_section_exploded()}</a>
           <span class="counts">· {data.exploded_art.length}</span>
         </li>
+        {#if data.landing_art && data.landing_art.length > 0}
+          <li>
+            <a href="#sec-landing">{m.colophon_section_landing()}</a>
+            <span class="counts">· {data.landing_art.length}</span>
+          </li>
+        {/if}
         <li>
           <a href="#sec-posters">{m.colophon_gallery_posters()}</a>
           <span class="counts">· {data.posters.length}</span>
@@ -197,7 +204,7 @@
       </ul>
     </section>
 
-    <!-- Launcher exploded cutaways: the stage-by-stage companions to the pencil sketches. -->
+    <!-- Exploded cutaways: launchers stage by stage, landers and rovers part by part. -->
     <section class="block" aria-labelledby="sec-exploded">
       <h2 id="sec-exploded">
         {m.colophon_section_exploded()}<span class="count">{data.exploded_art.length}</span>
@@ -222,6 +229,34 @@
         {/each}
       </ul>
     </section>
+
+    <!-- Landing sequences: how each surface site's craft came down (top of its STORY tab). -->
+    {#if data.landing_art && data.landing_art.length > 0}
+      <section class="block" aria-labelledby="sec-landing">
+        <h2 id="sec-landing">
+          {m.colophon_section_landing()}<span class="count">{data.landing_art.length}</span>
+        </h2>
+        <ul class="thumb-grid wide">
+          {#each data.landing_art as d (d.file)}
+            <li class="thumb-card">
+              <button
+                type="button"
+                class="thumb-open"
+                onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: d.route })}
+              >
+                <img
+                  {...responsive(srcOf(d.file), IMAGE_SIZES.colophonWide)}
+                  alt={d.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <span class="thumb-title">{d.title}</span>
+            </li>
+          {/each}
+        </ul>
+      </section>
+    {/if}
 
     <!-- Gallery posters: ORRERY originals, AI-generated (/posters). -->
     <section class="block" aria-labelledby="sec-posters">

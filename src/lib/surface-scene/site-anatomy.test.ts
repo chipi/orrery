@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { siteAnatomy } from './site-anatomy';
+import { siteAnatomy, siteLandingSequence } from './site-anatomy';
 import type { FleetRef } from '$types/mission';
 
 const site = (id: string, refs: Array<[string, FleetRef['role']]>) => ({
@@ -58,11 +58,42 @@ describe('siteAnatomy', () => {
     ).toEqual(['viking2-lander']);
   });
   it('shows nothing when only an orbiting vehicle is linked or nothing is drawn', () => {
-    expect(ids(site('artemis4', [['orion', 'spacecraft']]))).toEqual([]);
+    expect(ids(site('orbit-only', [['orion', 'spacecraft']]))).toEqual([]);
     expect(siteAnatomy(site('x', [['undrawn', 'spacecraft']]), () => null)).toEqual([]);
     expect(siteAnatomy({ id: 'y', fleet_refs: null }, drawn)).toEqual([]);
   });
   it('falls back to a carried rover when the lander has no drawing', () => {
     expect(ids(site('mars-pathfinder', [['sojourner', 'payload']]))).toEqual(['sojourner']);
+  });
+  it("carries each craft's exploded cutaway when it has one", () => {
+    const exploded = (id: string) =>
+      id === 'apollo-lm' ? `/images/anatomy-exploded/${id}.webp` : null;
+    const got = siteAnatomy(
+      site('apollo15', [
+        ['apollo-lm', 'spacecraft'],
+        ['lrv-apollo', 'payload'],
+      ]),
+      drawn,
+      exploded,
+    );
+    expect(got.map((a) => a.exploded)).toEqual(['/images/anatomy-exploded/apollo-lm.webp', null]);
+  });
+});
+
+describe('siteAnatomy — a lander drawn apart from its fleet entry', () => {
+  it('shows Starship HLS for Artemis IV, linked to the Starship entry, never the launch stack', () => {
+    const got = siteAnatomy(site('artemis4', [['orion', 'spacecraft']]), drawn, () => 'stack.webp');
+    expect(got).toEqual([
+      { fleetId: 'starship', src: '/images/anatomy/starship-hls.webp', exploded: null },
+    ]);
+  });
+});
+
+describe('siteLandingSequence', () => {
+  it('points at the sheet for a site that has one, and null otherwise', () => {
+    expect(siteLandingSequence('curiosity')).toMatch(
+      /\/images\/landing-sequences\/curiosity\.webp$/,
+    );
+    expect(siteLandingSequence('no-such-site')).toBeNull();
   });
 });

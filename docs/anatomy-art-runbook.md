@@ -36,6 +36,11 @@ Batches look different when the recipe drifts. To prevent that:
 5. **QC every batch against the existing set** — render a contact sheet
    (`build-anatomy-webp` already lists ids) and eyeball it next to a few of the
    shipped ones before committing. Regenerate any that drift.
+6. **Markings belong to the builder.** Starship carries SpaceX as its main mark;
+   NASA appears only where NASA commissioned it (the HLS), never alone — and if
+   the model cannot get that right, draw no logos at all (operator, 2026-11-06).
+   The model adds a NASA logo to any corner it can, Soviet craft included: ask for
+   "no logos, stamps or seals on the paper" and check every corner.
 
 ---
 

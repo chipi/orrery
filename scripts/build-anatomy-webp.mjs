@@ -38,3 +38,11 @@ write('src/lib/anatomy-exploded-ids.json', exploded);
 console.log(
   `${exploded.length} exploded ids → src/lib/anatomy-exploded-ids.json (from masters/anatomy-exploded).`,
 );
+
+// Landing-sequence sheets (#641): one per surface site, keyed by site id — the top of the
+// site's STORY tab. Prompts: scripts/anatomy/landing-sequences-2026-11.mjs.
+const sequences = idsFrom('masters/landing-sequences', /\.(png|webp)$/);
+write('src/lib/landing-sequence-ids.json', sequences);
+console.log(
+  `${sequences.length} landing-sequence ids → src/lib/landing-sequence-ids.json (from masters/landing-sequences).`,
+);

@@ -347,7 +347,13 @@
           "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3FG13dr6iAqIwHO1kDJUULPV6h7/9e6bddf3-2bd9-47b4-baee-56d32d1d82ab.png"
         }
       ],
-      "prompt": "Exploded technical cutaway illustration of the Starship / Super Heavy rocket, watercolor and ink-wash on faint aged graph paper, exposed internal structure. Follow the reference layout EXACTLY, preserving the tall-and-narrow proportions of every stage (do NOT make them short or fat): at far left a small assembled scale-reference rocket in correct proportion with a tiny human figure beside it and a '121 m' dimension line; the stages exploded apart in two columns, each stage a TALL SLENDER cylinder cut open to reveal its tanks with the engines drawn at the base. Handwritten engineering annotations, thin ruled leader lines, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. Vintage SpaceX markings (retro logo, flag, stencilled serials). KEEP the engine counts exact (33 Raptor 2 at Super Heavy Booster, six Raptor/RVac at Starship upper), the cut-open LOX / liquid methane tanks, and every label legible and in place: 'STARSHIP / SUPER HEAVY — EXPLODED', 'Super Heavy (Booster)', 'Starship (Upper)', 'FAIRING', 'PAYLOAD', '121 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic."
+      "prompt": "Exploded technical cutaway illustration of the Starship / Super Heavy rocket, watercolor and ink-wash on faint aged graph paper, exposed internal structure. Follow the reference layout EXACTLY, preserving the tall-and-narrow proportions of every stage (do NOT make them short or fat): at far left a small assembled scale-reference rocket in correct proportion with a tiny human figure beside it and a '121 m' dimension line; the stages exploded apart in two columns, each stage a TALL SLENDER cylinder cut open to reveal its tanks with the engines drawn at the base. Handwritten engineering annotations, thin ruled leader lines, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. Vintage SpaceX markings (retro logo, flag, stencilled serials). KEEP the engine counts exact (33 Raptor 2 at Super Heavy Booster, six Raptor/RVac at Starship upper), the cut-open LOX / liquid methane tanks, and every label legible and in place: 'STARSHIP / SUPER HEAVY — EXPLODED', 'Super Heavy (Booster)', 'Starship (Upper)', 'FAIRING', 'PAYLOAD', '121 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "rerender_2026_11_06": {
+        "job": "1b04ae80-27bc-4edc-8021-ff732a4f1308",
+        "change": "Operator 2026-11-06: the engines spread wider than the booster below a flared skirt. Re-rendered from the original generation (as reference) asking for one change: a straight booster with its 33 Raptors packed inside its base, the upper stage's six engines inside its base. Master resampled 2x (Lanczos) to 2528x1696.",
+        "previous_master": "masters/originals/anatomy-exploded/starship-2026-08.png",
+        "raw_original": "masters/originals/anatomy-exploded/starship.png"
+      }
     },
     "anatomy-exploded/titan-ii-glv": {
       "generation_id": "bfdc38fd-cc6d-4279-92b7-af9c9ca07de1",
@@ -2953,6 +2959,1745 @@
       "prompt": "Technical cutaway illustration of the Mars 6 lander, watercolor and ink-wash on faint graph paper, exposed internal structure — bowl-shaped opening petals, parachute, retro-rockets, mass spectrometer, antenna. Handwritten engineering annotations, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette, vintage scientific sketchbook / editorial infographic aesthetic. Soviet space program markings. Match the reference image's art style and overall layout exactly (paper, ink-wash, palette, annotation hand) — it shows a sister craft of the same family; change only the details described above and the name, so the drawing is the Mars 6 lander.",
       "batch": "2026-10-23",
       "upscale_4k_job": "8fdf5bd8-171a-4898-a989-51d185d85e65"
+    },
+    "landing-sequences/apollo11": {
+      "generation_id": "225cbdbe-7354-4e08-b837-08aa656808fe",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "c892743f-5271-44ed-b074-24e34bc9b2b5"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/apollo11.png"
+      }
+    },
+    "landing-sequences/apollo12": {
+      "generation_id": "401a5710-61ca-4a6b-8b5b-1f7675d76a12",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "c892743f-5271-44ed-b074-24e34bc9b2b5"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/apollo12.png"
+      }
+    },
+    "landing-sequences/apollo14": {
+      "generation_id": "89237d51-4a1f-406b-92f1-92b51b0b071c",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "c892743f-5271-44ed-b074-24e34bc9b2b5"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/apollo14.png"
+      }
+    },
+    "landing-sequences/apollo15": {
+      "generation_id": "d3b9aa6e-27b9-48ff-a10f-9580071bafee",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "b53923c2-a941-434d-bbaf-08d3cccd3dea"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/apollo15.png"
+      }
+    },
+    "landing-sequences/apollo16": {
+      "generation_id": "a235c0b0-3b51-42e3-b590-e3de296306f2",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "b53923c2-a941-434d-bbaf-08d3cccd3dea"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/apollo16.png"
+      }
+    },
+    "landing-sequences/apollo17": {
+      "generation_id": "08e38510-433b-461e-bdea-99266555e1ee",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "b53923c2-a941-434d-bbaf-08d3cccd3dea"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/apollo17.png"
+      }
+    },
+    "landing-sequences/artemis4": {
+      "generation_id": "b4593083-f319-45f3-9c67-a14dac406f98",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        }
+      ],
+      "prompt": "Technical landing-sequence illustration of the planned Artemis IV crewed landing with the tall SpaceX Starship lunar lander at the lunar south pole, four stages left to right joined by one dotted descent trajectory, watercolor and ink-wash on faint graph paper — first the tall stainless-steel Starship lander, with no fins and no flaps, in lunar orbit above the south pole, long shadows; then the powered descent on landing thrusters high on its side, the surface close below; next touchdown on its landing legs in low sunlight; finally two astronauts coming down in the elevator from the crew cabin high above to the surface. Four handwritten titles in one row along the top edge, one above each stage, each written once: lunar orbit, descent, touchdown, on the surface. Few annotations, each written only once: 'crew elevator', 'landing legs', 'south pole'. Write only these words, each exactly once; no other words, no date, no coordinates, no title box, no second row of titles. No logos, no flags, no agency marks and no lettering anywhere, on the craft or on the paper. A few faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic grey and silver palette, vintage scientific sketchbook / editorial infographic aesthetic. no sky crane lowering anything on cables. The Moon has no air: no parachute, no entry glow, no clouds in the sky. One continuous scene on a single sheet, no separate boxed panels: a band of black sky only above the grey lunar horizon, the faint graph paper showing above it. no large mountain on the horizon. The reference is a wordless guide to the layout and the style; do not copy its craft.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Re-rendered without logos (the first pick painted NASA logos on Starship; operator 2026-11-06). Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/artemis4.png"
+      }
+    },
+    "landing-sequences/beagle2": {
+      "generation_id": "6e2154aa-cb12-4c95-a4d2-14024002226b",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "5a10ee02-5521-4a4b-a1fa-ca16e7c02aa5"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/beagle2.png"
+      }
+    },
+    "landing-sequences/beresheet": {
+      "generation_id": "02014086-0742-46a2-a52e-9210d5c2fab9",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "0491312c-1db7-4ffc-83d7-173b8140a288"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray or duplicate handwritten label painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/beresheet.png"
+      }
+    },
+    "landing-sequences/chandrayaan3": {
+      "generation_id": "1136e42f-b8cf-4c8e-93ff-7633e4906477",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "0f59a36f-2246-417a-9242-6a09d605ed12"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/chandrayaan3.png"
+      }
+    },
+    "landing-sequences/change3": {
+      "generation_id": "7127cfa5-0d08-4d1d-b0c8-d0d1e01d9da2",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "17637843-6d5c-4d78-a197-434212f122ae"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray or duplicate handwritten label painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/change3.png"
+      }
+    },
+    "landing-sequences/change4": {
+      "generation_id": "93e0679f-c19f-4eed-b0a1-3f3cb1a26130",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "12fccc38-ec14-4fea-a3f0-cec3b8692c8a"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/change4.png"
+      }
+    },
+    "landing-sequences/change5": {
+      "generation_id": "53f97275-5e2f-461f-a521-49466f235ffe",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "b02c4dbe-93e2-400b-a424-9b8fc9f2a3bc"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/change5.png"
+      }
+    },
+    "landing-sequences/change6": {
+      "generation_id": "f3adb238-b364-4cdb-a920-6119a6461531",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "5683d787-7473-4e66-a120-58fbfb8417d1"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/change6.png"
+      }
+    },
+    "landing-sequences/change7": {
+      "generation_id": "f9b6525e-c024-445f-8245-51b045a87c24",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/change7.png"
+      }
+    },
+    "landing-sequences/curiosity": {
+      "generation_id": "ba8bd41b-c754-4c18-bfa9-84941778f05d",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "fa9d725b-b71f-4747-9c1c-79e83e1c8cdc"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/curiosity.png"
+      }
+    },
+    "landing-sequences/exomars-rosalind-franklin": {
+      "generation_id": "1d0cae4a-a8f9-44a1-a361-0e0cb66310bd",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "8884ea4c-07f0-4839-8a0b-3a020621a147"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray or duplicate handwritten label painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/exomars-rosalind-franklin.png"
+      }
+    },
+    "landing-sequences/insight": {
+      "generation_id": "992f5ffb-dde7-4ac4-86bf-6c62a3b3fdf6",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "eb881be6-e410-4c9a-ab2e-6be47a94f72c"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/insight.png"
+      }
+    },
+    "landing-sequences/luna16": {
+      "generation_id": "c7493154-361f-4d0d-a946-3b12fae71c98",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "ad0ef76a-4f16-4880-a0b4-0669e68f30cd"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/luna16.png"
+      }
+    },
+    "landing-sequences/luna17": {
+      "generation_id": "90ae8e04-8422-413a-9bef-9ed56269cf85",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "6c7267ed-4581-49d7-8514-0f7faf16a88b"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/luna17.png"
+      }
+    },
+    "landing-sequences/luna21": {
+      "generation_id": "ca98dab8-d14d-441d-83d0-c3277cfeda73",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "8716ac4c-d108-4ff6-96b2-acf9498f5fb9"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/luna21.png"
+      }
+    },
+    "landing-sequences/luna24": {
+      "generation_id": "559319f7-dd2e-4313-a928-4c1c40d45831",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "40906f01-4364-4916-938f-e00ae17bf2b9"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/luna24.png"
+      }
+    },
+    "landing-sequences/luna9": {
+      "generation_id": "c95bb4ff-de66-4be6-a45c-9fc25ebb70e9",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "0ff8c118-52e8-4398-8221-d63355f4822e"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/luna9.png"
+      }
+    },
+    "landing-sequences/mars2": {
+      "generation_id": "7421af23-9f4d-4e67-ae6a-2ef83b3b76e6",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "a8f14ba7-0dd4-41b7-ae0d-bd7f579f2f04"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/mars2.png"
+      }
+    },
+    "landing-sequences/mars3": {
+      "generation_id": "d21e8ab8-8c1d-4019-ab7d-e8f252952e22",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "48c51990-c826-48dd-9220-e7f58ab2a9fb"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/mars3.png"
+      }
+    },
+    "landing-sequences/mars6": {
+      "generation_id": "2d3622c4-450b-478c-b862-f7c9d4cb65ee",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "45dce34e-09af-4a51-82a3-8eaef766f045"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/mars6.png"
+      }
+    },
+    "landing-sequences/mars-pathfinder": {
+      "generation_id": "9a17d576-151d-4c82-a106-2e094babf688",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "074e37cf-0a4e-457b-921c-e993d194d16e"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/mars-pathfinder.png"
+      }
+    },
+    "landing-sequences/opportunity": {
+      "generation_id": "e4c47b6b-60d8-451f-b4b5-b023dcb9f88d",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "66b5cd9e-3929-42e3-8792-4f2059fb7d7a"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/opportunity.png"
+      }
+    },
+    "landing-sequences/perseverance": {
+      "generation_id": "54f1de17-2e36-48e1-928a-f36c5ceadb44",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "0bddc6f1-effb-4335-8e4b-b1e547731434"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/perseverance.png"
+      }
+    },
+    "landing-sequences/phoenix": {
+      "generation_id": "5d206a12-c13d-42a1-893c-fbb84321f9a0",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "20069f65-fcf4-4a48-aa0a-70b5c9354dfb"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/phoenix.png"
+      }
+    },
+    "landing-sequences/schiaparelli": {
+      "generation_id": "d2308570-f7ee-4b7f-bf9c-1839f57ea008",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "b4c8688d-fee7-4cce-9e0b-148ae2aeb970"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray or duplicate handwritten label painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/schiaparelli.png"
+      }
+    },
+    "landing-sequences/slim": {
+      "generation_id": "fc309ae4-4a6e-4975-80de-39c0562329e1",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "3400d6c4-f115-405d-9006-22b6419a3cfe"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/slim.png"
+      }
+    },
+    "landing-sequences/spirit": {
+      "generation_id": "f1d9a784-6787-44a0-ac85-11680e50353c",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "451aa7a0-b3f3-49c2-8f6b-8f615236749d"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/spirit.png"
+      }
+    },
+    "landing-sequences/vega-1": {
+      "generation_id": "f6f5b934-28f5-4f1b-a877-6e6944132448",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "fa43b279-e8c9-406b-bbc0-2cf65babe606"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/vega-1.png"
+      }
+    },
+    "landing-sequences/vega-2": {
+      "generation_id": "87a8829b-42a6-425b-8e57-f684c30d6aee",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "1e60527a-c216-4ebf-b2f0-8b0d504fbc19"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/vega-2.png"
+      }
+    },
+    "landing-sequences/venera-13": {
+      "generation_id": "4f091691-4f7d-424a-8d4e-fb1bbac1ef0b",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "1302b958-1ce1-4596-991d-b989fd639efc"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/venera-13.png"
+      }
+    },
+    "landing-sequences/viking1-lander": {
+      "generation_id": "5e285a09-fe12-45c0-b4cb-a43e701e25a8",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "e0c5adea-de2b-475c-ba70-9b4de094cc6e"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/viking1-lander.png"
+      }
+    },
+    "landing-sequences/viking2-lander": {
+      "generation_id": "9e2441d6-dff2-4056-a88b-d6b4a002f58c",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "412a63f2-7aa5-4d01-8ba2-f44b9d4b54a5"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray or duplicate handwritten label painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/viking2-lander.png"
+      }
+    },
+    "landing-sequences/zhurong": {
+      "generation_id": "b6be359a-32bc-4ca2-b34e-b5a48878429c",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "e85b0819-443c-49cf-ad50-01b7154b4fca"
+        },
+        {
+          "id": "68fdf281-d79b-4b9e-901b-4d7c28ddbed2"
+        }
+      ],
+      "prompt": "(see scripts/anatomy/landing-sequences-2026-11.mjs request for this site; the accepted render used that builder at its 2026-11-06 state)",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/landing-sequences/zhurong.png"
+      }
+    },
+    "anatomy-exploded/luna-9": {
+      "generation_id": "137714f7-de76-4688-9e38-eaa74ea10a4f",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "0ff8c118-52e8-4398-8221-d63355f4822e"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Luna 9 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.7 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the spherical landing capsule with its four petals and camera mast; the two inflatable cushions; the cylindrical retro-rocket stage with its main engine; the side compartments jettisoned before braking. Handwritten title at the top left: 'LUNA 9 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/luna-9.png"
+      }
+    },
+    "anatomy-exploded/luna-16": {
+      "generation_id": "e5a74110-acb5-44ad-aa61-2ea97b71b5f3",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "ad0ef76a-4f16-4880-a0b4-0669e68f30cd"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Luna 16 sample-return lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the spherical return capsule; the ascent stage with its tanks and engine; the drill arm; the four-legged descent stage with its spherical tanks. Handwritten title at the top left: 'LUNA 16 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/luna-16.png"
+      }
+    },
+    "anatomy-exploded/lunokhod-1": {
+      "generation_id": "c927dc5b-7cba-4452-bacf-b0dce3bedc88",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "6c7267ed-4581-49d7-8514-0f7faf16a88b"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Lunokhod 1 rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.35 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the hinged lid with solar cells on its inside; the pressurised tub-shaped body; the polonium-210 heater; the eight wire-mesh wheels, each with its own motor; the TV cameras and antennas. Handwritten title at the top left: 'LUNOKHOD 1 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/lunokhod-1.png"
+      }
+    },
+    "anatomy-exploded/lunokhod-2": {
+      "generation_id": "b129a89f-19c8-491b-93a8-f96f0b800905",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "8716ac4c-d108-4ff6-96b2-acf9498f5fb9"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Lunokhod 2 rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.35 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the hinged lid with solar cells; the pressurised tub-shaped body; the raised third TV camera; the eight wire-mesh wheels; the laser reflector. Handwritten title at the top left: 'LUNOKHOD 2 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/lunokhod-2.png"
+      }
+    },
+    "anatomy-exploded/luna24": {
+      "generation_id": "7dd3a226-5325-4c4d-b44d-bf4febc53d11",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "40906f01-4364-4916-938f-e00ae17bf2b9"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Luna 24 sample-return lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the spherical return capsule; the ascent stage; the 2.6 m drill; the four-legged descent stage. Handwritten title at the top left: 'LUNA 24 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/luna24.png"
+      }
+    },
+    "anatomy-exploded/apollo-lm": {
+      "generation_id": "f7df3f8b-4037-4307-bf6b-fc3751326d08",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "c892743f-5271-44ed-b074-24e34bc9b2b5"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Apollo Lunar Module, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '7 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the ascent stage with the crew cabin, windows and docking hatch; the ascent engine; the octagonal gold-foil descent stage; the throttleable descent engine; the four landing legs with footpads and contact probes. Handwritten title at the top left: 'APOLLO LUNAR MODULE — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/apollo-lm.png"
+      }
+    },
+    "anatomy-exploded/lrv-apollo": {
+      "generation_id": "b94acb8c-1bcc-411c-8eef-c4f5abb484c4",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "b53923c2-a941-434d-bbaf-08d3cccd3dea"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Apollo Lunar Roving Vehicle, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.1 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the high-gain dish antenna and TV camera; the two seats and the control console; the folding aluminium chassis; the four wire-mesh wheels with their hub motors; the silver-zinc batteries. Handwritten title at the top left: 'LUNAR ROVING VEHICLE — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/lrv-apollo.png"
+      }
+    },
+    "anatomy-exploded/change-3": {
+      "generation_id": "e6914a36-f527-4b03-bf97-3cbdd548a814",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "17637843-6d5c-4d78-a197-434212f122ae"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Chinese Chang'e 3 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '3.4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the box-shaped lander body with its instruments; the solar wings; the throttleable main engine; the four landing legs; the ramp, folded. Handwritten title at the top left: 'CHANG'E 3 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. CNSA markings on the craft only. No Chinese characters anywhere. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/change-3.png"
+      }
+    },
+    "anatomy-exploded/yutu": {
+      "generation_id": "69734d45-9a26-491a-93bd-c4bb29837be5",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "cd0d8f30-73c9-4f1b-9719-b526d45d59ab"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Chinese Yutu rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.5 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the two folding solar wings; the mast with cameras; the box-shaped body; the robotic arm; the six wheels on rocker-bogies. Handwritten title at the top left: 'YUTU — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. CNSA markings on the craft only. No Chinese characters anywhere. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/yutu.png"
+      }
+    },
+    "anatomy-exploded/change-4": {
+      "generation_id": "f449200f-c3ec-4ad5-a659-2c5586a89f4c",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "12fccc38-ec14-4fea-a3f0-cec3b8692c8a"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Chinese Chang'e 4 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '3.4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the box-shaped lander body; the solar wings; the main engine; the four landing legs; the ramp and the rover mount. Handwritten title at the top left: 'CHANG'E 4 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. CNSA markings on the craft only. No Chinese characters anywhere. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/change-4.png"
+      }
+    },
+    "anatomy-exploded/yutu-2": {
+      "generation_id": "72f2d026-1478-40ee-bff4-66b66ff05b6d",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "7c27feac-b2f6-4265-9cf5-6b4cc39f357d"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Chinese Yutu-2 rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.5 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the two folding solar wings; the mast with cameras; the box-shaped body; the ground-penetrating radar; the six wheels on rocker-bogies. Handwritten title at the top left: 'YUTU-2 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. CNSA markings on the craft only. No Chinese characters anywhere. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/yutu-2.png"
+      }
+    },
+    "anatomy-exploded/change-5": {
+      "generation_id": "6c9ad2fc-7150-4f39-b274-3948c8b5f3b8",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "b02c4dbe-93e2-400b-a424-9b8fc9f2a3bc"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Chinese Chang'e 5 lander and ascender, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the boxy ascender with the sample container, mounted on top; the scoop arm; the drill; the lander body with its main engine; the four landing legs and solar wings. Handwritten title at the top left: 'CHANG'E 5 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. CNSA markings on the craft only. No Chinese characters anywhere. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/change-5.png"
+      }
+    },
+    "anatomy-exploded/change6": {
+      "generation_id": "603660f0-16b3-4909-a797-3e1c2ea9a6e6",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "5683d787-7473-4e66-a120-58fbfb8417d1"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Chinese Chang'e 6 lander and ascender, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the boxy ascender on top; the scoop arm; the drill; the lander body with its main engine; the four landing legs and solar wings. Handwritten title at the top left: 'CHANG'E 6 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. CNSA markings on the craft only. No Chinese characters anywhere. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/change6.png"
+      }
+    },
+    "anatomy-exploded/vikram-cy3": {
+      "generation_id": "8e0dcf05-0ba4-46fc-84a3-bb6bd312fffa",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "0f59a36f-2246-417a-9242-6a09d605ed12"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Indian Vikram lander of Chandrayaan-3, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the box-shaped body with its solar panel; the four throttleable engines; the four landing legs; the ramp; the Pragyan rover folded inside. Handwritten title at the top left: 'VIKRAM — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. ISRO markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/vikram-cy3.png"
+      }
+    },
+    "anatomy-exploded/pragyan": {
+      "generation_id": "7b68ea85-5974-4d73-9a0b-bf061ff873d3",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "7fb53be6-857a-494e-b517-6e8fdada8e79"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Indian Pragyan rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '0.9 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the single solar panel; the twin navigation cameras; the box-shaped body with two spectrometers; the six wheels on rocker-bogies. Handwritten title at the top left: 'PRAGYAN — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. ISRO markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/pragyan.png"
+      }
+    },
+    "anatomy-exploded/slim": {
+      "generation_id": "0497cff1-ddbc-4f25-a372-c33107af45fd",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "3400d6c4-f115-405d-9006-22b6419a3cfe"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Japanese SLIM lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the two main engines; the propellant tanks; the crushable landing legs; the solar cells; the two tiny rovers LEV-1 and LEV-2. Handwritten title at the top left: 'SLIM — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. JAXA markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/slim.png"
+      }
+    },
+    "anatomy-exploded/beresheet": {
+      "generation_id": "b811af5d-5fa1-43e8-8e7c-39e81a2dc406",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "0491312c-1db7-4ffc-83d7-173b8140a288"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Israeli Beresheet lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.5 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the round top deck with solar panels; the spherical propellant tanks; the main engine; the four landing legs; the time-capsule disc. Handwritten title at the top left: 'BERESHEET — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. SpaceIL / IAI markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/beresheet.png"
+      }
+    },
+    "anatomy-exploded/mars-2": {
+      "generation_id": "e90c59b3-8d96-4c5a-b97c-fda75bc8c637",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "a8f14ba7-0dd4-41b7-ae0d-bd7f579f2f04"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Mars 2 descent capsule, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.2 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the conical aeroshell; the parachute container; the spherical lander with its petals; the PrOP-M rover on its cable. Handwritten title at the top left: 'MARS 2 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/mars-2.png"
+      }
+    },
+    "anatomy-exploded/mars-3": {
+      "generation_id": "62b86c32-b5b9-486a-9f60-4b6ffdb9500b",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "48c51990-c826-48dd-9220-e7f58ab2a9fb"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Mars 3 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.2 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the conical aeroshell; the parachute container and braking rocket; the spherical lander with four petals; the PrOP-M rover on its cable. Handwritten title at the top left: 'MARS 3 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/mars-3.png"
+      }
+    },
+    "anatomy-exploded/mars6": {
+      "generation_id": "3b99758d-63c7-4e75-9751-e11c43d35f4c",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "45dce34e-09af-4a51-82a3-8eaef766f045"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Mars 6 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.2 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the conical aeroshell; the parachute container and retro-rockets; the spherical lander with its petals. Handwritten title at the top left: 'MARS 6 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/mars6.png"
+      }
+    },
+    "anatomy-exploded/viking-1": {
+      "generation_id": "81e388f8-b306-4d1d-8f99-6a5836a139ae",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "e0c5adea-de2b-475c-ba70-9b4de094cc6e"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the NASA Viking 1 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.1 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the aeroshell and back shell; the hexagonal body; the two RTG power units; the sampling arm; the three legs and the three terminal descent engines; the dish antenna. Handwritten title at the top left: 'VIKING 1 LANDER — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/viking-1.png"
+      }
+    },
+    "anatomy-exploded/viking2-lander": {
+      "generation_id": "6d372b5f-f1b3-4eff-b7e8-bb1fc96baf12",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "412a63f2-7aa5-4d01-8ba2-f44b9d4b54a5"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the NASA Viking 2 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.1 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the aeroshell and back shell; the hexagonal body; the two RTG power units; the sampling arm; the three legs; the dish antenna. Handwritten title at the top left: 'VIKING 2 LANDER — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/viking2-lander.png"
+      }
+    },
+    "anatomy-exploded/sojourner": {
+      "generation_id": "e464487b-6462-4927-8797-ea406b55bd5d",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "074e37cf-0a4e-457b-921c-e993d194d16e"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Mars Pathfinder lander and its Sojourner rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the flat tetrahedral lander with its three triangular solar petals; the cluster of airbags; the camera mast; the small six-wheeled Sojourner rover. Handwritten title at the top left: 'MARS PATHFINDER — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/sojourner.png"
+      }
+    },
+    "anatomy-exploded/beagle2": {
+      "generation_id": "a62c0c7e-a8a1-4710-907f-3913564c3b7a",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "5a10ee02-5521-4a4b-a1fa-ca16e7c02aa5"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the British Beagle 2 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '0.7 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the shallow round base; the lid; the four round solar panels; the robotic arm with its instrument head; the mole. Handwritten title at the top left: 'BEAGLE 2 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. ESA / UK markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/beagle2.png"
+      }
+    },
+    "anatomy-exploded/spirit": {
+      "generation_id": "bfc7253a-c500-4950-9e78-174837ff0bf7",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "451aa7a0-b3f3-49c2-8f6b-8f615236749d"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the NASA Spirit rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.5 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the solar-cell deck; the camera mast; the robotic arm with its instruments; the warm electronics box; the six wheels on rocker-bogies. Handwritten title at the top left: 'SPIRIT — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/spirit.png"
+      }
+    },
+    "anatomy-exploded/opportunity": {
+      "generation_id": "4aa3d2bb-4a17-4b77-88f8-dd8784789ac4",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "66b5cd9e-3929-42e3-8792-4f2059fb7d7a"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the NASA Opportunity rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.5 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the solar-cell deck; the camera mast; the robotic arm with its instruments; the warm electronics box; the six wheels on rocker-bogies. Handwritten title at the top left: 'OPPORTUNITY — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/opportunity.png"
+      }
+    },
+    "anatomy-exploded/phoenix": {
+      "generation_id": "9aa40ac7-323d-425c-8c90-ebf3c55cbd4e",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "20069f65-fcf4-4a48-aa0a-70b5c9354dfb"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the NASA Phoenix lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.2 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the two round solar arrays; the deck with its science instruments; the robotic arm with its scoop; the meteorology mast; the three legs and pulsed thrusters. Handwritten title at the top left: 'PHOENIX — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/phoenix.png"
+      }
+    },
+    "anatomy-exploded/curiosity": {
+      "generation_id": "f765d412-37a7-4fdf-964f-1124c7ca495f",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "fa9d725b-b71f-4747-9c1c-79e83e1c8cdc"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the NASA Curiosity rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.2 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the mast with ChemCam and cameras; the robotic arm with the drill; the MMRTG nuclear power unit at the rear; the body with its labs; the six wheels on rocker-bogies. Handwritten title at the top left: 'CURIOSITY — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/curiosity.png"
+      }
+    },
+    "anatomy-exploded/schiaparelli": {
+      "generation_id": "53abd920-6732-45d4-8c0e-4b9490c45d04",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "b4c8688d-fee7-4cce-9e0b-148ae2aeb970"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the European Schiaparelli lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.8 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the front heat shield; the back cover and parachute; the crushable platform; the hydrazine thrusters; the small science payload. Handwritten title at the top left: 'SCHIAPARELLI — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. ESA markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/schiaparelli.png"
+      }
+    },
+    "anatomy-exploded/insight": {
+      "generation_id": "15e5e4e1-3218-4487-8906-a3ebb239df82",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "eb881be6-e410-4c9a-ab2e-6be47a94f72c"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the NASA InSight lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the two round solar arrays; the deck; the robotic arm; the domed seismometer; the heat probe; the three legs. Handwritten title at the top left: 'INSIGHT — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/insight.png"
+      }
+    },
+    "anatomy-exploded/perseverance": {
+      "generation_id": "deb6d83a-616b-4c81-83f5-c2968e0981cc",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "0bddc6f1-effb-4335-8e4b-b1e547731434"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the NASA Perseverance rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.2 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the mast with SuperCam and cameras; the robotic arm with its turret; the sample tubes; the MMRTG at the rear; the Ingenuity helicopter; the six wheels on rocker-bogies. Handwritten title at the top left: 'PERSEVERANCE — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/perseverance.png"
+      }
+    },
+    "anatomy-exploded/zhurong": {
+      "generation_id": "a28c0af4-032c-44c5-8fc3-6088fb5f4603",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "68fdf281-d79b-4b9e-901b-4d7c28ddbed2"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Chinese Zhurong rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.85 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the butterfly-wing solar panels; the mast with cameras; the body with its instruments; the six wheels on active suspension. Handwritten title at the top left: 'ZHURONG — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. CNSA markings on the craft only. No Chinese characters anywhere. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/zhurong.png"
+      }
+    },
+    "anatomy-exploded/exomars-rosalind-franklin": {
+      "generation_id": "7aabbb45-0b7f-4ca5-9644-756dec139b52",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "8884ea4c-07f0-4839-8a0b-3a020621a147"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the European Rosalind Franklin rover, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the mast with its cameras; the drill box that reaches 2 m; the analytical lab inside; the solar wings; the six wheels. Handwritten title at the top left: 'ROSALIND FRANKLIN — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. ESA markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/exomars-rosalind-franklin.png"
+      }
+    },
+    "anatomy-exploded/venera-13": {
+      "generation_id": "86fdde53-bb76-4fd6-9a4e-3b8a80f1837b",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "1302b958-1ce1-4596-991d-b989fd639efc"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Venera 13 lander, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '1.5 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the heat-shield sphere halves; the braking disc; the pressure sphere with its windows; the crushable landing ring; the drill and camera. Handwritten title at the top left: 'VENERA 13 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/venera-13.png"
+      }
+    },
+    "anatomy-exploded/vega-1": {
+      "generation_id": "0a7340c9-5b2a-4afe-8f0c-f19b214ee7b6",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "fa43b279-e8c9-406b-bbc0-2cf65babe606"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Vega 1 descent capsule, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the entry sphere halves; the balloon with its gondola; the braking disc; the lander pressure sphere; the crushable landing ring. Handwritten title at the top left: 'VEGA 1 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/vega-1.png"
+      }
+    },
+    "anatomy-exploded/vega-2": {
+      "generation_id": "888ef8cf-66b7-46b7-a7cb-23d2f47e1c35",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "d2ff3ba7-5b70-4319-96ea-bfa28b3f236d"
+        },
+        {
+          "id": "1e60527a-c216-4ebf-b2f0-8b0d504fbc19"
+        }
+      ],
+      "prompt": "Exploded technical cutaway illustration of the Soviet Vega 2 descent capsule, watercolor and ink-wash on faint aged graph paper, exposed internal structure. At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '2.4 m' dimension line. The parts pulled apart diagonally with thin ruled leader lines: the entry sphere halves; the balloon with its gondola; the braking disc; the lander pressure sphere with its drill; the crushable landing ring. Handwritten title at the top left: 'VEGA 2 — EXPLODED'. Short handwritten labels in English on the parts, each label written once. No logos, stamps, seals or copyright marks on the paper or in the corners. Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), vintage scientific sketchbook / editorial infographic aesthetic. USSR markings on the craft only. The first reference shows only the style: do not copy its rocket, its words, its stamp or its markings. The second reference shows this craft: draw its parts as they look there. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Stray mark (a corner logo, stamp or garbled label) painted out with blank graph paper copied from beside it. Resampled 2x (Lanczos) from the 1264x848 render to 2528x1696 for the master; no Higgsfield upscale.",
+        "raw_original": "masters/originals/anatomy-exploded/vega-2.png"
+      }
+    },
+    "anatomy/starship-hls": {
+      "generation_id": "c7c5575a-3c48-4911-ae01-18437cb91cbe",
+      "created_utc": "2026-11-06",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [
+        {
+          "id": "c892743f-5271-44ed-b074-24e34bc9b2b5"
+        }
+      ],
+      "prompt": "Technical cutaway illustration of the SpaceX Starship Human Landing System, the crewed lunar lander version of Starship chosen by NASA for Artemis, standing on the grey lunar surface, watercolor and ink-wash on faint graph paper. Correct proportions: a very tall slender stainless-steel cylinder about 50 m tall and 9 m wide, more than five times taller than it is wide, standing upright and filling the full height of the sheet, with no fins and no flaps and a pointed nose; at its foot a tiny 1.8 m astronaut, barely visible, under 1/25 of the craft's height, with a '50 m' dimension line beside the craft. Exposed internal structure: the crew cabin with a band of windows high near the nose, the crew elevator running down the outside of the hull to the ground, a ring of landing thrusters high on the body, the long methane and oxygen tanks filling most of the length, Raptor engines at the base, short landing legs. Handwritten engineering annotations in English, each written once, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic grey and silver palette, vintage scientific sketchbook / editorial infographic aesthetic. No title, no logos, no flags, no agency marks, no lettering on the craft itself. Different craft: take only the style from the reference, do not copy its shape, parts, text or markings.",
+      "edit": {
+        "date": "2026-11-06",
+        "change": "Misspelt label ('ANTI-SLOSH / BAFTEEFLES') painted out with the wash band above it, feathered. No logos, by operator direction (Starship: SpaceX main, NASA only where NASA commissioned it — or none). Resampled 2x (Lanczos) to 2528x1696.",
+        "raw_original": "masters/anatomy-originals/starship-hls.png"
+      }
     }
   }
 }

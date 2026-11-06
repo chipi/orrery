@@ -1,7 +1,8 @@
 <!--
-  Top of a surface site's STORY tab (#641): the anatomy drawings of what
-  is on the surface (site-anatomy.ts), each opening full-size and linking to
-  its fleet entry. Styled as /fleet's anatomy figure.
+  Top of a surface site's STORY tab (#641): the landing-sequence sheet (how it
+  came down), then the anatomy drawings of what is on the surface
+  (site-anatomy.ts), each with its exploded cutaway when it has one, opening
+  full-size and linking to its fleet entry. Styled as /fleet's anatomy figure.
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
@@ -13,10 +14,12 @@
 
   let {
     anatomy,
+    sequence = null,
     locale,
     onOpen,
   }: {
     anatomy: SiteAnatomy[];
+    sequence?: string | null;
     locale: string;
     onOpen: (src: string) => void;
   } = $props();
@@ -50,34 +53,77 @@
 </script>
 
 <section class="landing" data-testid="site-landing">
-  <h3 class="landing-heading">{m.programs_on_surface()}</h3>
-  {#each anatomy as a (a.fleetId)}
-    {@const name = names[a.fleetId] ?? a.fleetId}
-    {@const ladder = ladderReady ? ladderSources(a.src) : null}
-    <figure class="anatomy">
+  {#if sequence}
+    {@const ladder = ladderReady ? ladderSources(sequence) : null}
+    <h3 class="landing-heading">{m.site_landing_sequence_heading()}</h3>
+    <figure class="anatomy" data-testid="site-landing-sequence">
       <button
         type="button"
         class="anatomy-open"
-        onclick={() => onOpen(a.src)}
-        aria-label={m.fleet_anatomy_open_aria({ name })}
+        onclick={() => onOpen(sequence)}
+        aria-label={m.site_landing_sequence_heading()}
       >
         <img
-          src={ladder?.src ?? a.src}
+          src={ladder?.src ?? sequence}
           srcset={ladder?.srcset}
           sizes="(max-width: 640px) 100vw, 480px"
-          alt={m.fleet_anatomy_alt({ name })}
+          alt={m.site_landing_sequence_heading()}
           loading="lazy"
           decoding="async"
         />
       </button>
-      <figcaption>
-        <a class="fleet-link" href={localHref(`/fleet?id=${a.fleetId}`)}
-          >{m.plan_view_in_fleet({ label: name })} →</a
-        >
-      </figcaption>
     </figure>
-  {/each}
-  <p class="anatomy-caption">{m.fleet_anatomy_caption()}</p>
+    <p class="anatomy-caption">{m.site_landing_sequence_caption()}</p>
+  {/if}
+  {#if anatomy.length > 0}
+    <h3 class="landing-heading">{m.programs_on_surface()}</h3>
+    {#each anatomy as a (a.fleetId)}
+      {@const name = names[a.fleetId] ?? a.fleetId}
+      {@const ladder = ladderReady ? ladderSources(a.src) : null}
+      <figure class="anatomy">
+        <button
+          type="button"
+          class="anatomy-open"
+          onclick={() => onOpen(a.src)}
+          aria-label={m.fleet_anatomy_open_aria({ name })}
+        >
+          <img
+            src={ladder?.src ?? a.src}
+            srcset={ladder?.srcset}
+            sizes="(max-width: 640px) 100vw, 480px"
+            alt={m.fleet_anatomy_alt({ name })}
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+        {#if a.exploded}
+          {@const xl = ladderReady ? ladderSources(a.exploded) : null}
+          <button
+            type="button"
+            class="anatomy-open exploded"
+            onclick={() => onOpen(a.exploded!)}
+            aria-label={m.fleet_anatomy_open_aria({ name })}
+            data-testid="site-landing-exploded"
+          >
+            <img
+              src={xl?.src ?? a.exploded}
+              srcset={xl?.srcset}
+              sizes="(max-width: 640px) 100vw, 480px"
+              alt={m.fleet_anatomy_alt({ name })}
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+        {/if}
+        <figcaption>
+          <a class="fleet-link" href={localHref(`/fleet?id=${a.fleetId}`)}
+            >{m.plan_view_in_fleet({ label: name })} →</a
+          >
+        </figcaption>
+      </figure>
+    {/each}
+    <p class="anatomy-caption">{m.fleet_anatomy_caption()}</p>
+  {/if}
 </section>
 
 <style>
@@ -112,6 +158,9 @@
     border: 0;
     background: none;
     cursor: zoom-in;
+  }
+  .anatomy-open.exploded {
+    margin-top: 10px;
   }
   .anatomy img {
     max-width: 100%;

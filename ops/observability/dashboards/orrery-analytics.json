@@ -1,5 +1,6 @@
 {
   "uid": "orrery-analytics",
+  "description": "Orrery's product analytics from Umami: whether each custom event still fires, exploration rate and depth, flight progression through /fly, where science readers come from and go next, planner engagement, and engaged learning sessions. Pick the site at the top.",
   "title": "Orrery — Product analytics (Umami)",
   "tags": ["orrery", "umami", "product"],
   "timezone": "browser",

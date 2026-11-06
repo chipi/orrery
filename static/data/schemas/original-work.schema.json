@@ -456,7 +456,7 @@
           },
           "route": {
             "type": "string",
-            "pattern": "^/(moon|mars|venus)$"
+            "pattern": "^/missions\\?id=[a-z0-9-]+$"
           }
         }
       }

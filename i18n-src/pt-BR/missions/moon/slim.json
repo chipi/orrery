@@ -3,9 +3,9 @@
   "vehicle": "H-IIA 202",
   "payload": "730 kg de massa de lançamento; módulo de pouso de 200 kg; 2 microrovers (LEV-1, LEV-2)",
   "delta_v": "~3 km/s",
-  "type": "LANDER DE PRECISÃO · ATIVA",
+  "type": "LANDER DE PRECISÃO · REALIZADA",
   "first": "Primeiro pouso de precisão a 100 m do alvo em outro mundo",
-  "description": "Até o SLIM, os pousos lunares tinham uma precisão de mira em escala de quilômetros. O Smart Lander do JAXA demonstrou precisão de 100 m - a precisão necessária para missões tripuladas para atracar com carga pré-posicionada, para veículos de subida de retorno de amostra encontrarem seus parceiros orbitais e para qualquer arquitetura futura que dependa do pouso em locais específicos cientificamente valiosos. O SLIM também foi pioneiro na transferência balística de baixa energia para a Lua, demorando 135 dias para chegar, mas usando menos propelente do que as trajetórias diretas. Uma demonstração da paciência que as missões interplanetárias podem oferecer quando o cronograma não é a restrição vinculativa.",
+  "description": "Até o SLIM, os pousos lunares tinham uma precisão de mira em escala de quilômetros. O Smart Lander do JAXA demonstrou precisão de 100 m - a precisão necessária para missões tripuladas para atracar com carga pré-posicionada, para veículos de subida de retorno de amostra encontrarem seus parceiros orbitais e para qualquer arquitetura futura que dependa do pouso em locais específicos cientificamente valiosos. O SLIM também usou uma transferência balística de baixa energia para a Lua (pioneirismo da Hiten, em 1991), demorando 135 dias para chegar, mas usando menos propelente do que as trajetórias diretas. Uma demonstração da paciência que as missões interplanetárias podem oferecer quando o cronograma não é a restrição vinculativa.",
   "events": [
     {
       "met": 0,
@@ -28,7 +28,7 @@
     {
       "met": 135,
       "label": "ATERRAGEM",
-      "note": "Pouso suave na cratera Shioli 2024-01-19 15:20 UTC. Dentro da precisão alvo: ~55 m do centro.",
+      "note": "Pouso suave na cratera Shioli 2024-01-19 15:20 UTC. Dentro da precisão alvo: cerca de 10 m do alvo.",
       "type": "nominal"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 144,
       "label": "ENERGIA RETOMADA",
-      "note": "Mudanças no ângulo do sol; painéis solares geram energia; as operações foram retomadas por um dia lunar.",
+      "note": "Mudanças no ângulo do sol; painéis solares geram energia; o módulo sobreviveu a três noites lunares, com contato até abril de 2024.",
       "type": "info"
     }
   ],

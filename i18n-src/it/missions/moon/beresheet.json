@@ -12,7 +12,7 @@
     { "met": 10, "label": "TCM 1", "note": "Correzione di traiettoria durante la salita multi-orbitale.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Secondo TCM. L'apogeo si avvicina alla distanza di cattura lunare.", "type": "info" },
     { "met": 41, "label": "AVVICINAMENTO ALLA LUNA", "note": "Ultima accensione translunare — Beresheet su traiettoria lunare diretta.", "type": "nominal" },
-    { "met": 48, "label": "INSERIMENTO IN ORBITA LUNARE", "note": "Cattura in orbita lunare ellittica 2019-04-04.", "type": "nominal" },
+    { "met": 41, "label": "INSERIMENTO IN ORBITA LUNARE", "note": "Cattura in orbita lunare ellittica 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "ANOMALIA IN DISCESA", "note": "Reset dell'IMU durante la discesa propulsa → spegnimento del motore → schianto nel Mare Serenitatis il 2019-04-11.", "type": "warning" }
   ],
   "vehicle_stage": "secondo stadio del Falcon 9 verso GTO (lancio condiviso)"

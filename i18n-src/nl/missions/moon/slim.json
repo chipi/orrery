@@ -3,9 +3,9 @@
   "vehicle": "H-IIA 202",
   "payload": "730 kg lanceermassa; lander van 200 kg; 2 microrovers (LEV-1, LEV-2)",
   "delta_v": "~3 km/s",
-  "type": "PRECISIELANDER · ACTIEF",
+  "type": "PRECISIELANDER · GEVLOGEN",
   "first": "Eerste precisielanding binnen 100 m van het doel op een andere wereld",
-  "description": "Tot SLIM hadden maanlandingen een nauwkeurigheid van kilometers bij het richten. JAXA's Smart Lander demonstreerde een nauwkeurigheid van 100 m — de precisie die nodig is voor bemande missies om te koppelen met voorgepositioneerde vracht, voor opstijgvoertuigen voor monsterterugkeer om hun partners in een baan te vinden en voor elke toekomstige architectuur die afhankelijk is van landing op specifieke wetenschappelijk waardevolle locaties. SLIM pioneerde ook lage-energie ballistische transfer naar de Maan, en arriveerde in 135 dagen, maar gebruikte minder drijfstof dan directe trajecten. Een demonstratie van het geduld dat interplanetaire missies zich kunnen veroorloven wanneer de tijdlijn niet de bindende beperking is.",
+  "description": "Tot SLIM hadden maanlandingen een nauwkeurigheid van kilometers bij het richten. JAXA's Smart Lander demonstreerde een nauwkeurigheid van 100 m — de precisie die nodig is voor bemande missies om te koppelen met voorgepositioneerde vracht, voor opstijgvoertuigen voor monsterterugkeer om hun partners in een baan te vinden en voor elke toekomstige architectuur die afhankelijk is van landing op specifieke wetenschappelijk waardevolle locaties. SLIM gebruikte ook een lage-energie ballistische transfer naar de Maan (Hiten was daarin in 1991 de pionier), en arriveerde in 135 dagen, maar gebruikte minder drijfstof dan directe trajecten. Een demonstratie van het geduld dat interplanetaire missies zich kunnen veroorloven wanneer de tijdlijn niet de bindende beperking is.",
   "events": [
     {
       "met": 0,
@@ -28,7 +28,7 @@
     {
       "met": 135,
       "label": "NEERKOMST",
-      "note": "Zachte landing bij Shioli-krater 2024-01-19 15:20 UTC. Binnen target-nauwkeurigheid: ~55 m van het centrum af.",
+      "note": "Zachte landing bij Shioli-krater 2024-01-19 15:20 UTC. Binnen target-nauwkeurigheid: ongeveer 10 m van het doel.",
       "type": "nominal"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 144,
       "label": "STROOM HERVAT",
-      "note": "Zonnehoek verandert; zonnepanelen leveren stroom; de operaties worden hervat voor één lunaire dag.",
+      "note": "Zonnehoek verandert; zonnepanelen leveren stroom; de lander overleefde drie maannachten, met contact tot april 2024.",
       "type": "info"
     }
   ],

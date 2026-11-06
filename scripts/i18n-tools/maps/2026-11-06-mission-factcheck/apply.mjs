@@ -3,6 +3,8 @@
 //   node apply.mjs <batch.json>
 // batch.json: [{ m: "earth/vostok-5", text: { "en-US": [[find, replace], …], de: […], … } },
 //              { m, met: { "1": 0.98 } }, { m, base: [[find, replace], …] }]
+// A fleet entry (or any other file pair) instead of a mission: give "overlay" and/or "baseFile"
+// in place of m — "overlay": "i18n-src/{loc}/fleet/orbiter/x.json", "baseFile": "static/data/fleet/orbiter/x.json".
 // Every find must occur in its file, or the whole batch stops before anything is written.
 import { readFileSync, writeFileSync } from 'node:fs';
 
@@ -30,7 +32,9 @@ let n = 0;
 for (const e of batch) {
   if (e.text)
     for (const [loc, pairs] of Object.entries(e.text)) {
-      const f = `i18n-src/${loc}/missions/${e.m}.json`;
+      const f = e.overlay
+        ? e.overlay.replace('{loc}', loc)
+        : `i18n-src/${loc}/missions/${e.m}.json`;
       let s = get(f);
       for (const [a, b] of pairs) {
         if (!s.includes(a)) errors.push(`${f}: not found: ${a.slice(0, 60)}`);
@@ -40,7 +44,9 @@ for (const e of batch) {
     }
   if (e.met)
     for (const loc of LOCS) {
-      const f = `i18n-src/${loc}/missions/${e.m}.json`;
+      const f = e.overlay
+        ? e.overlay.replace('{loc}', loc)
+        : `i18n-src/${loc}/missions/${e.m}.json`;
       const j = JSON.parse(get(f));
       for (const [i, v] of Object.entries(e.met)) {
         if (!j.events?.[+i]) errors.push(`${f}: no event ${i}`);
@@ -50,7 +56,7 @@ for (const e of batch) {
       out.set(f, JSON.stringify(j, null, 2) + '\n');
     }
   if (e.base) {
-    const f = `static/data/missions/${e.m}.json`;
+    const f = e.baseFile ?? `static/data/missions/${e.m}.json`;
     let s = get(f);
     for (const [a, b] of e.base) {
       if (!s.includes(a)) errors.push(`${f}: not found: ${a.slice(0, 60)}`);

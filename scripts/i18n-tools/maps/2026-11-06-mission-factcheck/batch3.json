@@ -2,285 +2,64 @@
   {
     "m": "earth/apollo-1",
     "text": {
-      "en-US": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "ar": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "de": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "es": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
+      "en-US": [["17:31", "18:31"]],
+      "ar": [["17:31", "18:31"]],
+      "de": [["17:31", "18:31"]],
+      "es": [["17:31", "18:31"]],
       "fr": [
-        [
-          "17:31",
-          "18:31"
-        ],
-        [
-          "17h31",
-          "18h31"
-        ]
+        ["17:31", "18:31"],
+        ["17h31", "18h31"]
       ],
-      "hi": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "it": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "ja": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "ko": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "nl": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "pt-BR": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "ru": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "sr-Cyrl": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ],
-      "zh-CN": [
-        [
-          "17:31",
-          "18:31"
-        ]
-      ]
+      "hi": [["17:31", "18:31"]],
+      "it": [["17:31", "18:31"]],
+      "ja": [["17:31", "18:31"]],
+      "ko": [["17:31", "18:31"]],
+      "nl": [["17:31", "18:31"]],
+      "pt-BR": [["17:31", "18:31"]],
+      "ru": [["17:31", "18:31"]],
+      "sr-Cyrl": [["17:31", "18:31"]],
+      "zh-CN": [["17:31", "18:31"]]
     }
   },
   {
     "m": "earth/skylab-2",
     "text": {
-      "en-US": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "ar": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "de": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "es": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "fr": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "hi": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "it": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "ja": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "ko": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "nl": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "pt-BR": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "ru": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "sr-Cyrl": [
-        [
-          "20121",
-          "19979"
-        ]
-      ],
-      "zh-CN": [
-        [
-          "20121",
-          "19979"
-        ]
-      ]
+      "en-US": [["20121", "19979"]],
+      "ar": [["20121", "19979"]],
+      "de": [["20121", "19979"]],
+      "es": [["20121", "19979"]],
+      "fr": [["20121", "19979"]],
+      "hi": [["20121", "19979"]],
+      "it": [["20121", "19979"]],
+      "ja": [["20121", "19979"]],
+      "ko": [["20121", "19979"]],
+      "nl": [["20121", "19979"]],
+      "pt-BR": [["20121", "19979"]],
+      "ru": [["20121", "19979"]],
+      "sr-Cyrl": [["20121", "19979"]],
+      "zh-CN": [["20121", "19979"]]
     },
-    "base": [
-      [
-        "20121 kg",
-        "19979 kg"
-      ]
-    ]
+    "base": [["20121 kg", "19979 kg"]]
   },
   {
     "m": "earth/skylab-3",
     "text": {
-      "en-US": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "ar": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "de": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "es": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "fr": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "hi": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "it": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "ja": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "ko": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "nl": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "pt-BR": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "ru": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "sr-Cyrl": [
-        [
-          "19979",
-          "20121"
-        ]
-      ],
-      "zh-CN": [
-        [
-          "19979",
-          "20121"
-        ]
-      ]
+      "en-US": [["19979", "20121"]],
+      "ar": [["19979", "20121"]],
+      "de": [["19979", "20121"]],
+      "es": [["19979", "20121"]],
+      "fr": [["19979", "20121"]],
+      "hi": [["19979", "20121"]],
+      "it": [["19979", "20121"]],
+      "ja": [["19979", "20121"]],
+      "ko": [["19979", "20121"]],
+      "nl": [["19979", "20121"]],
+      "pt-BR": [["19979", "20121"]],
+      "ru": [["19979", "20121"]],
+      "sr-Cyrl": [["19979", "20121"]],
+      "zh-CN": [["19979", "20121"]]
     },
-    "base": [
-      [
-        "19979 kg",
-        "20121 kg"
-      ]
-    ]
+    "base": [["19979 kg", "20121 kg"]]
   },
   {
     "m": "earth/skylab-2",
@@ -328,10 +107,7 @@
         ]
       ],
       "ja": [
-        [
-          "ワシントンDCの国立航空宇宙博物館に",
-          "フロリダ州ペンサコーラの国立海軍航空博物館に"
-        ]
+        ["ワシントンDCの国立航空宇宙博物館に", "フロリダ州ペンサコーラの国立海軍航空博物館に"]
       ],
       "ko": [
         [
@@ -363,12 +139,7 @@
           "у National Museum of Naval Aviation у Пенсаколи, Флорида"
         ]
       ],
-      "zh-CN": [
-        [
-          "华盛顿特区国家航空航天博物馆",
-          "佛罗里达州彭萨科拉国家海军航空博物馆"
-        ]
-      ]
+      "zh-CN": [["华盛顿特区国家航空航天博物馆", "佛罗里达州彭萨科拉国家海军航空博物馆"]]
     }
   },
   {
@@ -379,140 +150,92 @@
           "displayed at the National Museum of the US Air Force, Dayton OH",
           "on display at the Oklahoma History Center, Oklahoma City"
         ],
-        [
-          "what NASA later called",
-          "what the media later called"
-        ]
+        ["what NASA later called", "what the media later called"]
       ],
       "ar": [
         [
           "في المتحف الوطني لسلاح الجو الأمريكي، دايتون، أوهايو",
           "في مركز أوكلاهوما للتاريخ في أوكلاهوما سيتي"
         ],
-        [
-          "بما وصفته NASA لاحقاً بـ",
-          "بما وصفته وسائل الإعلام لاحقاً بـ"
-        ]
+        ["بما وصفته NASA لاحقاً بـ", "بما وصفته وسائل الإعلام لاحقاً بـ"]
       ],
       "de": [
         [
           "wird im National Museum of the US Air Force, Dayton OH ausgestellt",
           "wird im Oklahoma History Center, Oklahoma City, ausgestellt"
         ],
-        [
-          "was die NASA später eine",
-          "was die Medien später eine"
-        ]
+        ["was die NASA später eine", "was die Medien später eine"]
       ],
       "es": [
         [
           "exhibido en el National Museum of the US Air Force, Dayton OH",
           "exhibido en el Oklahoma History Center, Oklahoma City"
         ],
-        [
-          "lo que NASA después llamó un",
-          "lo que los medios llamaron después un"
-        ]
+        ["lo que NASA después llamó un", "lo que los medios llamaron después un"]
       ],
       "fr": [
         [
           "exposé au National Museum of the US Air Force, Dayton OH",
           "exposé à l'Oklahoma History Center, Oklahoma City"
         ],
-        [
-          "ce que la NASA a plus tard appelé",
-          "ce que les médias ont plus tard appelé"
-        ]
+        ["ce que la NASA a plus tard appelé", "ce que les médias ont plus tard appelé"]
       ],
       "hi": [
         [
           "Dayton, OH के National Museum of the US Air Force में",
           "Oklahoma City के Oklahoma History Center में"
         ],
-        [
-          "जिसे NASA ने बाद में",
-          "जिसे मीडिया ने बाद में"
-        ]
+        ["जिसे NASA ने बाद में", "जिसे मीडिया ने बाद में"]
       ],
       "it": [
         [
           "esposto al National Museum of the US Air Force, Dayton OH",
           "esposto all'Oklahoma History Center, Oklahoma City"
         ],
-        [
-          "quello che la NASA chiamò in seguito",
-          "quello che i media chiamarono in seguito"
-        ]
+        ["quello che la NASA chiamò in seguito", "quello che i media chiamarono in seguito"]
       ],
       "ja": [
         [
           "オハイオ州デイトンのアメリカ空軍国立博物館に",
           "オクラホマシティのオクラホマ歴史センターに"
         ],
-        [
-          "のちにNASAが",
-          "のちにメディアが"
-        ]
+        ["のちにNASAが", "のちにメディアが"]
       ],
       "ko": [
-        [
-          "오하이오주 Dayton의 미국 공군 국립박물관에",
-          "Oklahoma City의 Oklahoma History Center에"
-        ],
-        [
-          "NASA가 훗날",
-          "언론이 훗날"
-        ]
+        ["오하이오주 Dayton의 미국 공군 국립박물관에", "Oklahoma City의 Oklahoma History Center에"],
+        ["NASA가 훗날", "언론이 훗날"]
       ],
       "nl": [
         [
           "in het National Museum of the US Air Force, Dayton OH",
           "in het Oklahoma History Center, Oklahoma City"
         ],
-        [
-          "wat NASA later een",
-          "wat de media later een"
-        ]
+        ["wat NASA later een", "wat de media later een"]
       ],
       "pt-BR": [
         [
           "no National Museum of the US Air Force, Dayton OH",
           "no Oklahoma History Center, Oklahoma City"
         ],
-        [
-          "a NASA posteriormente chamou de",
-          "a imprensa posteriormente chamou de"
-        ]
+        ["a NASA posteriormente chamou de", "a imprensa posteriormente chamou de"]
       ],
       "ru": [
         [
           "в Национальном музее ВВС США, Дейтон, Огайо",
           "в Историческом центре Оклахомы, Оклахома-Сити"
         ],
-        [
-          "NASA позже назвало",
-          "СМИ позже назвали"
-        ]
+        ["NASA позже назвало", "СМИ позже назвали"]
       ],
       "sr-Cyrl": [
         [
           "у National Museum of the US Air Force, Dayton OH",
           "у Oklahoma History Center, Oklahoma City"
         ],
-        [
-          "што је NASA касније назвала",
-          "што су медији касније назвали"
-        ]
+        ["што је NASA касније назвала", "што су медији касније назвали"]
       ],
       "zh-CN": [
-        [
-          "美国空军国家博物馆，位于俄亥俄州代顿",
-          "俄克拉何马历史中心，位于俄克拉何马城"
-        ],
-        [
-          "是 NASA 后来称为",
-          "是媒体后来称为"
-        ]
+        ["美国空军国家博物馆，位于俄亥俄州代顿", "俄克拉何马历史中心，位于俄克拉何马城"],
+        ["是 NASA 后来称为", "是媒体后来称为"]
       ]
     }
   },
@@ -612,10 +335,7 @@
           "도킹 후 몇 시간 만에 CSM 기계선의 자세 제어 추력기에서 누출이 생겨,",
           "정거장 접근 중 CSM 기계선의 자세 제어 추력기 쿼드에서 누출이 생기고 약 엿새 뒤 두 번째 쿼드에서도 누출이 생겨,"
         ],
-        [
-          "서비스 모듈 RCS 4중 누출;",
-          "서비스 모듈 RCS 4중 두 번째 누출(첫 번째는 접근 중);"
-        ]
+        ["서비스 모듈 RCS 4중 누출;", "서비스 모듈 RCS 4중 두 번째 누출(첫 번째는 접근 중);"]
       ],
       "nl": [
         [
@@ -662,119 +382,35 @@
           "对接后数小时内，CSM 服务舱的姿态控制推进器发生泄漏——位于卡纳维拉尔角的备用 CSM-119 做好了",
           "接近空间站时，CSM 服务舱的一组姿态控制推进器发生泄漏；约六天后第二组再次泄漏，位于卡纳维拉尔角的备用 CSM-119 做好了"
         ],
-        [
-          "服务舱RCS四元组泄漏；",
-          "服务舱RCS四元组第二次泄漏（第一次发生在接近阶段）；"
-        ]
+        ["服务舱RCS四元组泄漏；", "服务舱RCS四元组第二次泄漏（第一次发生在接近阶段）；"]
       ]
     }
   },
   {
     "m": "moon/apollo10",
     "text": {
-      "en-US": [
-        [
-          "15.6",
-          "14.4"
-        ]
-      ],
-      "ar": [
-        [
-          "15.6",
-          "14.4"
-        ]
-      ],
-      "de": [
-        [
-          "15,6",
-          "14,4"
-        ]
-      ],
-      "es": [
-        [
-          "15,6",
-          "14,4"
-        ]
-      ],
-      "fr": [
-        [
-          "15,6",
-          "14,4"
-        ]
-      ],
-      "hi": [
-        [
-          "15.6",
-          "14.4"
-        ]
-      ],
-      "it": [
-        [
-          "15,6",
-          "14,4"
-        ]
-      ],
-      "ja": [
-        [
-          "15.6",
-          "14.4"
-        ]
-      ],
-      "ko": [
-        [
-          "15.6",
-          "14.4"
-        ]
-      ],
-      "nl": [
-        [
-          "15,6",
-          "14,4"
-        ]
-      ],
-      "pt-BR": [
-        [
-          "15,6",
-          "14,4"
-        ]
-      ],
-      "ru": [
-        [
-          "15,6",
-          "14,4"
-        ]
-      ],
-      "sr-Cyrl": [
-        [
-          "15,6",
-          "14,4"
-        ]
-      ],
-      "zh-CN": [
-        [
-          "15.6",
-          "14.4"
-        ]
-      ]
+      "en-US": [["15.6", "14.4"]],
+      "ar": [["15.6", "14.4"]],
+      "de": [["15,6", "14,4"]],
+      "es": [["15,6", "14,4"]],
+      "fr": [["15,6", "14,4"]],
+      "hi": [["15.6", "14.4"]],
+      "it": [["15,6", "14,4"]],
+      "ja": [["15.6", "14.4"]],
+      "ko": [["15.6", "14.4"]],
+      "nl": [["15,6", "14,4"]],
+      "pt-BR": [["15,6", "14,4"]],
+      "ru": [["15,6", "14,4"]],
+      "sr-Cyrl": [["15,6", "14,4"]],
+      "zh-CN": [["15.6", "14.4"]]
     },
-    "base": [
-      [
-        "15.6 km",
-        "14.4 km"
-      ]
-    ]
+    "base": [["15.6 km", "14.4 km"]]
   },
   {
     "baseFile": "static/data/fleet/crewed-spacecraft/apollo-lm.json",
     "base": [
-      [
-        "descent to 15.6 km above Moon",
-        "descent to 14.4 km above Moon"
-      ],
-      [
-        "(re-detected 2019)",
-        "(possible re-detection announced 2019, unconfirmed)"
-      ]
+      ["descent to 15.6 km above Moon", "descent to 14.4 km above Moon"],
+      ["(re-detected 2019)", "(possible re-detection announced 2019, unconfirmed)"]
     ]
   },
   {
@@ -869,90 +505,20 @@
   {
     "m": "moon/apollo12",
     "text": {
-      "en-US": [
-        [
-          "a twenty-four-year-old controller named",
-          "a young controller named"
-        ]
-      ],
-      "ar": [
-        [
-          "مراقب في الرابعة والعشرين من عمره يُدعى",
-          "مراقب شاب يُدعى"
-        ]
-      ],
-      "de": [
-        [
-          "ein vierundzwanzigjähriger Flugleiter namens",
-          "ein junger Flugleiter namens"
-        ]
-      ],
-      "es": [
-        [
-          "un controlador de veinticuatro años llamado",
-          "un joven controlador llamado"
-        ]
-      ],
-      "fr": [
-        [
-          "un contrôleur de vingt-quatre ans nommé",
-          "un jeune contrôleur nommé"
-        ]
-      ],
-      "hi": [
-        [
-          "चौबीस वर्षीय नियंत्रक",
-          "युवा नियंत्रक"
-        ]
-      ],
-      "it": [
-        [
-          "un controllore di ventiquattro anni,",
-          "un giovane controllore,"
-        ]
-      ],
-      "ja": [
-        [
-          "24歳の管制官ジョン・アーロンが",
-          "若い管制官ジョン・アーロンが"
-        ]
-      ],
-      "ko": [
-        [
-          "스물네 살의 관제관",
-          "젊은 관제관"
-        ]
-      ],
-      "nl": [
-        [
-          "een vierentwintigjarige controller genaamd",
-          "een jonge controller genaamd"
-        ]
-      ],
-      "pt-BR": [
-        [
-          "um controlador de vinte e quatro anos chamado",
-          "um jovem controlador chamado"
-        ]
-      ],
-      "ru": [
-        [
-          "контроллер двадцати четырёх лет от роду по имени",
-          "молодой контроллер по имени"
-        ]
-      ],
-      "sr-Cyrl": [
-        [
-          "двадесетчетворогодишњи контролор по имену",
-          "млади контролор по имену"
-        ]
-      ],
-      "zh-CN": [
-        [
-          "二十四岁控制员",
-          "年轻的控制员"
-        ]
-      ]
+      "en-US": [["a twenty-four-year-old controller named", "a young controller named"]],
+      "ar": [["مراقب في الرابعة والعشرين من عمره يُدعى", "مراقب شاب يُدعى"]],
+      "de": [["ein vierundzwanzigjähriger Flugleiter namens", "ein junger Flugleiter namens"]],
+      "es": [["un controlador de veinticuatro años llamado", "un joven controlador llamado"]],
+      "fr": [["un contrôleur de vingt-quatre ans nommé", "un jeune contrôleur nommé"]],
+      "hi": [["चौबीस वर्षीय नियंत्रक", "युवा नियंत्रक"]],
+      "it": [["un controllore di ventiquattro anni,", "un giovane controllore,"]],
+      "ja": [["24歳の管制官ジョン・アーロンが", "若い管制官ジョン・アーロンが"]],
+      "ko": [["스물네 살의 관제관", "젊은 관제관"]],
+      "nl": [["een vierentwintigjarige controller genaamd", "een jonge controller genaamd"]],
+      "pt-BR": [["um controlador de vinte e quatro anos chamado", "um jovem controlador chamado"]],
+      "ru": [["контроллер двадцати четырёх лет от роду по имени", "молодой контроллер по имени"]],
+      "sr-Cyrl": [["двадесетчетворогодишњи контролор по имену", "млади контролор по имену"]],
+      "zh-CN": [["二十四岁控制员", "年轻的控制员"]]
     }
   },
   {
@@ -968,107 +534,28 @@
         "The 5-month-delayed launch had been triggered by Swigert being a late substitute for prime crew member Ken Mattingly (suspected German measles exposure).",
         "The launch had slipped from March to 11 April 1970 to allow more planning time; Swigert replaced Ken Mattingly (suspected German measles exposure) two days before launch."
       ],
-      [
-        "1970-04-14, closest approach 254 km",
-        "1970-04-15 00:21 UTC, closest approach 254 km"
-      ],
-      [
-        "\"label\": \"PC+2 burn — free-return correction\"",
-        "\"label\": \"Free-return burn\""
-      ],
-      [
-        "fired for 31 seconds",
-        "fired for 34 seconds"
-      ]
+      ["1970-04-14, closest approach 254 km", "1970-04-15 00:21 UTC, closest approach 254 km"],
+      ["\"label\": \"PC+2 burn — free-return correction\"", "\"label\": \"Free-return burn\""],
+      ["fired for 31 seconds", "fired for 34 seconds"]
     ]
   },
   {
     "m": "moon/apollo13",
     "text": {
-      "en-US": [
-        [
-          "31-second",
-          "34-second"
-        ]
-      ],
-      "ar": [
-        [
-          "31 ثانية",
-          "34 ثانية"
-        ]
-      ],
-      "de": [
-        [
-          "31-Sekunde",
-          "34-Sekunde"
-        ]
-      ],
-      "es": [
-        [
-          "31 segundo",
-          "34 segundo"
-        ]
-      ],
-      "fr": [
-        [
-          "31 seconde",
-          "34 seconde"
-        ]
-      ],
-      "hi": [
-        [
-          "31-सेकंड",
-          "34-सेकंड"
-        ]
-      ],
-      "it": [
-        [
-          "31 secondi",
-          "34 secondi"
-        ]
-      ],
-      "ja": [
-        [
-          "31秒間",
-          "34秒間"
-        ]
-      ],
-      "ko": [
-        [
-          "31초",
-          "34초"
-        ]
-      ],
-      "nl": [
-        [
-          "31-seconde",
-          "34-seconde"
-        ]
-      ],
-      "pt-BR": [
-        [
-          "31 segundo",
-          "34 segundo"
-        ]
-      ],
-      "ru": [
-        [
-          "31-секундн",
-          "34-секундн"
-        ]
-      ],
-      "sr-Cyrl": [
-        [
-          "31 секунде",
-          "34 секунде"
-        ]
-      ],
-      "zh-CN": [
-        [
-          "31秒的",
-          "34秒的"
-        ]
-      ]
+      "en-US": [["31-second", "34-second"]],
+      "ar": [["31 ثانية", "34 ثانية"]],
+      "de": [["31-Sekunde", "34-Sekunde"]],
+      "es": [["31 segundo", "34 segundo"]],
+      "fr": [["31 seconde", "34 seconde"]],
+      "hi": [["31-सेकंड", "34-सेकंड"]],
+      "it": [["31 secondi", "34 secondi"]],
+      "ja": [["31秒間", "34秒間"]],
+      "ko": [["31초", "34초"]],
+      "nl": [["31-seconde", "34-seconde"]],
+      "pt-BR": [["31 segundo", "34 segundo"]],
+      "ru": [["31-секундн", "34-секундн"]],
+      "sr-Cyrl": [["31 секунде", "34 секунде"]],
+      "zh-CN": [["31秒的", "34秒的"]]
     }
   },
   {
@@ -1080,90 +567,20 @@
   {
     "m": "moon/apollo14",
     "text": {
-      "en-US": [
-        [
-          "~24 m",
-          "~22 m"
-        ]
-      ],
-      "ar": [
-        [
-          "24 م",
-          "22 م"
-        ]
-      ],
-      "de": [
-        [
-          "etwa 24 m",
-          "etwa 22 m"
-        ]
-      ],
-      "es": [
-        [
-          "~24 m",
-          "~22 m"
-        ]
-      ],
-      "fr": [
-        [
-          "environ 24 m",
-          "environ 22 m"
-        ]
-      ],
-      "hi": [
-        [
-          "~24 m",
-          "~22 m"
-        ]
-      ],
-      "it": [
-        [
-          "circa 24 m",
-          "circa 22 m"
-        ]
-      ],
-      "ja": [
-        [
-          "約24 m",
-          "約22 m"
-        ]
-      ],
-      "ko": [
-        [
-          "약 24 m",
-          "약 22 m"
-        ]
-      ],
-      "nl": [
-        [
-          "ongeveer 24 m",
-          "ongeveer 22 m"
-        ]
-      ],
-      "pt-BR": [
-        [
-          "~24 m",
-          "~22 m"
-        ]
-      ],
-      "ru": [
-        [
-          "примерно 24 м",
-          "примерно 22 м"
-        ]
-      ],
-      "sr-Cyrl": [
-        [
-          "~24 m",
-          "~22 m"
-        ]
-      ],
-      "zh-CN": [
-        [
-          "约24米",
-          "约22米"
-        ]
-      ]
+      "en-US": [["~24 m", "~22 m"]],
+      "ar": [["24 م", "22 م"]],
+      "de": [["etwa 24 m", "etwa 22 m"]],
+      "es": [["~24 m", "~22 m"]],
+      "fr": [["environ 24 m", "environ 22 m"]],
+      "hi": [["~24 m", "~22 m"]],
+      "it": [["circa 24 m", "circa 22 m"]],
+      "ja": [["約24 m", "約22 m"]],
+      "ko": [["약 24 m", "약 22 m"]],
+      "nl": [["ongeveer 24 m", "ongeveer 22 m"]],
+      "pt-BR": [["~24 m", "~22 m"]],
+      "ru": [["примерно 24 м", "примерно 22 м"]],
+      "sr-Cyrl": [["~24 m", "~22 m"]],
+      "zh-CN": [["约24米", "约22米"]]
     }
   },
   {
@@ -1175,12 +592,7 @@
           "landing beside Hadley Rille at the foot of the Apennine mountains"
         ]
       ],
-      "ar": [
-        [
-          "أول هبوط في موقع مرتفع غير بحري",
-          "هبوط بجوار أخدود هادلي عند سفح جبال الأبنين"
-        ]
-      ],
+      "ar": [["أول هبوط في موقع مرتفع غير بحري", "هبوط بجوار أخدود هادلي عند سفح جبال الأبنين"]],
       "de": [
         [
           "erste Landung an einer Non-Mare-Hochland-Stelle",
@@ -1211,18 +623,8 @@
           "allunaggio accanto alla Rima Hadley, ai piedi degli Appennini lunari"
         ]
       ],
-      "ja": [
-        [
-          "海ではない高地への初の着陸",
-          "Hadley谷のそば、Apennine山脈のふもとへの着陸"
-        ]
-      ],
-      "ko": [
-        [
-          "비-mare 고지 지역에서의 첫 착륙",
-          "Hadley 열구 옆, Apennine 산맥 기슭에서의 착륙"
-        ]
-      ],
+      "ja": [["海ではない高地への初の着陸", "Hadley谷のそば、Apennine山脈のふもとへの着陸"]],
+      "ko": [["비-mare 고지 지역에서의 첫 착륙", "Hadley 열구 옆, Apennine 산맥 기슭에서의 착륙"]],
       "nl": [
         [
           "eerste landing op een hooglandlocatie die geen mare is",
@@ -1247,12 +649,7 @@
           "слетање поред бразде Хедли у подножју Апенинских планина"
         ]
       ],
-      "zh-CN": [
-        [
-          "首次在非月海高地地点着陆",
-          "在 Hadley 月溪旁、Apennine 山脉脚下着陆"
-        ]
-      ]
+      "zh-CN": [["首次在非月海高地地点着陆", "在 Hadley 月溪旁、Apennine 山脉脚下着陆"]]
     }
   },
   {

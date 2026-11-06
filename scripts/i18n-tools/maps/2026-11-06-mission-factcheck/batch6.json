@@ -15,10 +15,7 @@
         ]
       ],
       "de": [
-        [
-          "\"met\": 0.13,",
-          "\"met\": 1.05,"
-        ],
+        ["\"met\": 0.13,", "\"met\": 1.05,"],
         [
           "Translunare Injektion durch die ICPS-Zündung – Orion trennt sich auf einer zislunaren Flugbahn.",
           "Translunare Injektion durch die Zündung des Servicemodul-Triebwerks von Orion am zweiten Flugtag – Orion verlässt die Erdumlaufbahn auf einer zislunaren Flugbahn."
@@ -31,10 +28,7 @@
         ]
       ],
       "fr": [
-        [
-          "\"met\": 0.13,",
-          "\"met\": 1.05,"
-        ],
+        ["\"met\": 0.13,", "\"met\": 1.05,"],
         [
           "Allumage d'injection trans-lunaire par l'ICPS — Orion se sépare sur une trajectoire cislunaire.",
           "Allumage d'injection trans-lunaire par le moteur du module de service d'Orion au deuxième jour de vol — Orion part sur une trajectoire cislunaire."
@@ -47,10 +41,7 @@
         ]
       ],
       "it": [
-        [
-          "\"met\": 0.13,",
-          "\"met\": 1.05,"
-        ],
+        ["\"met\": 0.13,", "\"met\": 1.05,"],
         [
           "Accensione per l'iniezione translunare da parte dell'ICPS: Orion si separa sulla traiettoria cislunare.",
           "Accensione per l'iniezione translunare da parte del motore del modulo di servizio di Orion nel secondo giorno di volo: Orion parte sulla traiettoria cislunare."
@@ -69,20 +60,14 @@
         ]
       ],
       "nl": [
-        [
-          "\"met\": 0.13,",
-          "\"met\": 1.05,"
-        ],
+        ["\"met\": 0.13,", "\"met\": 1.05,"],
         [
           "Trans-lunaire injectie-ontsteking door ICPS — Orion scheidt op cislunair traject.",
           "Trans-lunaire injectie-ontsteking door de servicemodule-motor van Orion op vliegdag 2 — Orion vertrekt op cislunair traject."
         ]
       ],
       "pt-BR": [
-        [
-          "\"met\": 0.13,",
-          "\"met\": 1.05,"
-        ],
+        ["\"met\": 0.13,", "\"met\": 1.05,"],
         [
           "Queima de injeção translunar pelo ICPS – Orion se separa na trajetória cislunar.",
           "Queima de injeção translunar pelo motor do módulo de serviço da Orion no segundo dia de voo – Orion segue para a trajetória cislunar."
@@ -95,20 +80,14 @@
         ]
       ],
       "sr-Cyrl": [
-        [
-          "\"met\": 0.13,",
-          "\"met\": 1.05,"
-        ],
+        ["\"met\": 0.13,", "\"met\": 1.05,"],
         [
           "Паљење степена ICPS за убацивање на транслунарну путању — Orion се одваја и креће ка цислунарној путањи.",
           "Паљење мотора сервисног модула летелице Orion другог дана лета за убацивање на транслунарну путању — Orion креће ка цислунарној путањи."
         ]
       ],
       "zh-CN": [
-        [
-          "\"met\": 0.13,",
-          "\"met\": 1.05,"
-        ],
+        ["\"met\": 0.13,", "\"met\": 1.05,"],
         [
           "ICPS 进行跨月注入变轨——Orion 分离进入月球邻近轨迹。",
           "飞行第 2 天，Orion 服务舱发动机进行跨月注入变轨——Orion 进入月球邻近轨迹。"
@@ -119,14 +98,8 @@
   {
     "m": "moon/artemis2",
     "base": [
-      [
-        "\"met_days\": 0.13,",
-        "\"met_days\": 1.05,"
-      ],
-      [
-        "\"dv_km_s\": 3.05",
-        "\"dv_km_s\": 0.39"
-      ],
+      ["\"met_days\": 0.13,", "\"met_days\": 1.05,"],
+      ["\"dv_km_s\": 3.05", "\"dv_km_s\": 0.39"],
       [
         "The burn placed Orion + crew on a five-day free-return path to the Moon.",
         "Orion's own service-module (ESM) main engine fired about 25 hours after launch, on flight day 2 (the ICPS had only raised the perigee), placing Orion + crew on a five-day free-return path to the Moon."
@@ -271,10 +244,7 @@
         ]
       ],
       "zh-CN": [
-        [
-          "Orion在近地轨道与它们对接",
-          "Orion计划在近地轨道与其中一个或两个对接"
-        ],
+        ["Orion在近地轨道与它们对接", "Orion计划在近地轨道与其中一个或两个对接"],
         [
           "在轨道上，Orion 与 SpaceX 的 Starship 着陆器和 Blue Origin 的 Blue Moon 的先导版本会合并对接，乘组",
           "在轨道上，Orion 计划与 SpaceX 的 Starship 着陆器和 Blue Origin 的 Blue Moon 的先导版本中的一个或两个会合并对接，乘组"
@@ -450,10 +420,7 @@
         ]
       ],
       "ko": [
-        [
-          "제안된 최초 유인 화성 귀환 임무(SpaceX 아키텍처)",
-          "SpaceX가 제안한 유인 화성 왕복 임무"
-        ]
+        ["제안된 최초 유인 화성 귀환 임무(SpaceX 아키텍처)", "SpaceX가 제안한 유인 화성 왕복 임무"]
       ],
       "nl": [
         [
@@ -479,128 +446,46 @@
           "Мисија с посадом на Марс и назад, коју предлаже компанија SpaceX"
         ]
       ],
-      "zh-CN": [
-        [
-          "首个提议的载人火星往返任务（SpaceX 方案）",
-          "SpaceX 提议的载人火星往返任务"
-        ]
-      ]
+      "zh-CN": [["首个提议的载人火星往返任务（SpaceX 方案）", "SpaceX 提议的载人火星往返任务"]]
     }
   },
   {
     "m": "earth/inspiration4",
     "text": {
-      "en-US": [
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
-      ],
-      "ar": [
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
-      ],
+      "en-US": [["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]],
+      "ar": [["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]],
       "de": [
-        [
-          "2021-09-15 um 00:02 UTC",
-          "2021-09-16 um 00:02 UTC"
-        ],
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
+        ["2021-09-15 um 00:02 UTC", "2021-09-16 um 00:02 UTC"],
+        ["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]
       ],
       "es": [
-        [
-          "2021-09-15 a las 00:02 UTC",
-          "2021-09-16 a las 00:02 UTC"
-        ],
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
+        ["2021-09-15 a las 00:02 UTC", "2021-09-16 a las 00:02 UTC"],
+        ["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]
       ],
       "fr": [
-        [
-          "2021-09-15 à 00:02 UTC",
-          "2021-09-16 à 00:02 UTC"
-        ],
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
+        ["2021-09-15 à 00:02 UTC", "2021-09-16 à 00:02 UTC"],
+        ["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]
       ],
-      "hi": [
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
-      ],
+      "hi": [["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]],
       "it": [
-        [
-          "2021-09-15 alle 00:02 UTC",
-          "2021-09-16 alle 00:02 UTC"
-        ],
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
+        ["2021-09-15 alle 00:02 UTC", "2021-09-16 alle 00:02 UTC"],
+        ["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]
       ],
-      "ja": [
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
-      ],
-      "ko": [
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
-      ],
+      "ja": [["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]],
+      "ko": [["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]],
       "nl": [
-        [
-          "2021-09-15 om 00:02 UTC",
-          "2021-09-16 om 00:02 UTC"
-        ],
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
+        ["2021-09-15 om 00:02 UTC", "2021-09-16 om 00:02 UTC"],
+        ["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]
       ],
       "pt-BR": [
-        [
-          "2021-09-15 às 00:02 UTC",
-          "2021-09-16 às 00:02 UTC"
-        ],
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
+        ["2021-09-15 às 00:02 UTC", "2021-09-16 às 00:02 UTC"],
+        ["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]
       ],
-      "ru": [
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
-      ],
-      "sr-Cyrl": [
-        [
-          "2021-09-15 у 00:02 UTC",
-          "2021-09-16 у 00:02 UTC"
-        ]
-      ],
+      "ru": [["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]],
+      "sr-Cyrl": [["2021-09-15 у 00:02 UTC", "2021-09-16 у 00:02 UTC"]],
       "zh-CN": [
-        [
-          "2021年9月15日00:02 UTC",
-          "2021年9月16日00:02 UTC"
-        ],
-        [
-          "2021-09-15 00:02 UTC",
-          "2021-09-16 00:02 UTC"
-        ]
+        ["2021年9月15日00:02 UTC", "2021年9月16日00:02 UTC"],
+        ["2021-09-15 00:02 UTC", "2021-09-16 00:02 UTC"]
       ]
     }
   },
@@ -608,140 +493,98 @@
     "m": "earth/otv-7",
     "text": {
       "en-US": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "Performed a controlled aerobraking-style de-orbit sequence (USSF released a public update on the manoeuvre,",
           "Aerobraking manoeuvres in October 2024 lowered its orbit before the March 2025 de-orbit (USSF released a public update on the manoeuvres,"
         ]
       ],
       "ar": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "ونفّذت تسلسل خروج من المدار مضبوطاً بأسلوب الكبح الهوائي (أصدرت USSF تحديثاً علنياً عن المناورة",
           "وخفّضت مناورات الكبح الهوائي في أكتوبر 2024 مدارها قبل الخروج من المدار في مارس 2025 (أصدرت USSF تحديثاً علنياً عن المناورات"
         ]
       ],
       "de": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "Durchführung einer kontrollierten, Aerobraking-ähnlichen Abstiegssequenz aus der Umlaufbahn (die USSF veröffentlichte ein öffentliches Update zum Manöver",
           "Aerobraking-Manöver im Oktober 2024 senkten die Umlaufbahn vor dem Deorbit im März 2025 (die USSF veröffentlichte ein öffentliches Update zu den Manövern"
         ]
       ],
       "es": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "Realizó una secuencia controlada de desorbitación de tipo aerofrenado (la USSF publicó una actualización sobre la maniobra",
           "Maniobras de aerofrenado en octubre de 2024 redujeron su órbita antes de la desorbitación de marzo de 2025 (la USSF publicó una actualización sobre las maniobras"
         ]
       ],
       "fr": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "A effectué une séquence de désorbitation contrôlée de style freinage aérodynamique (l'USSF a publié une mise à jour publique sur la manœuvre",
           "Des manœuvres de freinage aérodynamique en octobre 2024 ont abaissé son orbite avant la désorbitation de mars 2025 (l'USSF a publié une mise à jour publique sur les manœuvres"
         ]
       ],
       "hi": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "यान ने एरोब्रेकिंग-शैली का नियंत्रित कक्षा-अवनति क्रम पूरा किया (USSF ने इस पैंतरे पर सार्वजनिक जानकारी जारी की",
           "अक्टूबर 2024 में एरोब्रेकिंग पैंतरों ने मार्च 2025 में कक्षा-अवनति से पहले यान की कक्षा नीची की (USSF ने इन पैंतरों पर सार्वजनिक जानकारी जारी की"
         ]
       ],
       "it": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "Ha eseguito una sequenza controllata di uscita dall'orbita in stile aerobraking (l'USSF ha pubblicato un aggiornamento sulla manovra",
           "Manovre di aerobraking nell'ottobre 2024 hanno abbassato la sua orbita prima dell'uscita dall'orbita di marzo 2025 (l'USSF ha pubblicato un aggiornamento sulle manovre"
         ]
       ],
       "ja": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "エアブレーキ方式の制御された軌道離脱シーケンスを実施した（USSFはこの機動について",
           "2024年10月のエアロブレーキング機動で軌道を下げたのち、2025年3月に軌道離脱した（USSFはこれらの機動について"
         ]
       ],
       "ko": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "에어로브레이킹 방식의 제어된 궤도 이탈 절차를 수행했다(USSF는 이 기동에 대한",
           "2024년 10월 에어로브레이킹 기동으로 궤도를 낮춘 뒤 2025년 3월에 궤도를 이탈했다(USSF는 이 기동들에 대한"
         ]
       ],
       "nl": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "Voerde een gecontroleerde de-orbitsequentie uit in de stijl van aeroremmen (USSF gaf een openbare update over het manoeuvre",
           "Aeroremmanoeuvres in oktober 2024 verlaagden de baan vóór de de-orbit in maart 2025 (USSF gaf een openbare update over de manoeuvres"
         ]
       ],
       "pt-BR": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "Realizou uma sequência controlada de desórbita em estilo aerofrenagem (USSF divulgou uma atualização pública da manobra",
           "Manobras de aerofrenagem em outubro de 2024 reduziram sua órbita antes da desórbita de março de 2025 (USSF divulgou uma atualização pública das manobras"
         ]
       ],
       "ru": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "Выполнена управляемая последовательность де-орбитизации в стиле аеробрейкинга (USSF опубликовал информационное сообщение о манёвре",
           "Манёвры аэроторможения в октябре 2024 года понизили орбиту перед сходом с орбиты в марте 2025 года (USSF опубликовал информационное сообщение о манёврах"
         ]
       ],
       "sr-Cyrl": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "Изведена је контролисана секвенца силаска из орбите налик аеро-кочењу (USSF је објавио јавно саопштење о маневру",
           "Маневри аеро-кочења у октобру 2024. снизили су орбиту пре силаска из орбите у марту 2025. (USSF је објавио јавно саопштење о маневрима"
         ]
       ],
       "zh-CN": [
-        [
-          "09:22",
-          "07:22"
-        ],
+        ["09:22", "07:22"],
         [
           "执行了受控的气动减速式离轨程序（USSF 就这次机动发布了公开更新",
           "2024年10月的气动减速机动降低了轨道高度，随后于2025年3月离轨（USSF 就这些机动发布了公开更新"

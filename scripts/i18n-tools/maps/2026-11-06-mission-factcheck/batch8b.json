@@ -1,1 +1,11 @@
-[ { "m": "mars/curiosity", "base": [["Landed 2012-08-06 05:32 UTC (22:32 PDT on 5 August)", "Landed 2012-08-06 05:17 UTC (the signal reached Earth at 22:32 PDT on 5 August)"]] } ]
+[
+  {
+    "m": "mars/curiosity",
+    "base": [
+      [
+        "Landed 2012-08-06 05:32 UTC (22:32 PDT on 5 August)",
+        "Landed 2012-08-06 05:17 UTC (the signal reached Earth at 22:32 PDT on 5 August)"
+      ]
+    ]
+  }
+]

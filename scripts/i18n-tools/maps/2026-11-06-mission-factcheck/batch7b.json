@@ -1,32 +1,152 @@
 [
-  { "overlay": "i18n-src/{loc}/mars-sites/opportunity.json", "text": {
-    "en-US": [["until Curiosity broke the cumulative record", "until Perseverance passed it in October 2026"]],
-    "ar": [["حتى كسرت Curiosity الرقم القياسي التراكمي", "حتى تجاوزتها Perseverance في أكتوبر 2026"]],
-    "de": [["bis Curiosity den kumulativen Rekord brach", "bis Perseverance sie im Oktober 2026 übertraf"]],
-    "es": [["hasta que Curiosity rompió el récord acumulado", "hasta que Perseverance la superó en octubre de 2026"]],
-    "fr": [["jusqu'à ce que Curiosity batte le record cumulé", "jusqu'à ce que Perseverance la dépasse en octobre 2026"]],
-    "hi": [["जब तक Curiosity ने संचयी रिकॉर्ड तोड़ा, तब तक", "अक्टूबर 2026 में Perseverance के आगे निकलने तक"]],
-    "it": [["finché Curiosity non ha battuto il record cumulativo", "finché Perseverance non l'ha superata nell'ottobre 2026"]],
-    "ja": [["Curiosityが累積記録を塗り替えるまで", "2026年10月にPerseveranceが上回るまで"]],
-    "ko": [["Curiosity가 누적 기록을 경신하기 전까지", "2026년 10월 Perseverance가 넘어서기 전까지"]],
-    "nl": [["tot Curiosity het cumulatieve record brak", "tot Perseverance het in oktober 2026 overtrof"]],
-    "pt-BR": [["até que Curiosity quebrou o registro cumulativo", "até que Perseverance o superou em outubro de 2026"]],
-    "ru": [["до тех пор пока Curiosity не побил совокупный рекорд", "пока в октябре 2026 года его не превзошёл Perseverance"]],
-    "sr-Cyrl": [["све док Curiosity није оборио збирни рекорд", "све док га Perseverance није надмашио у октобру 2026"]],
-    "zh-CN": [["直到Curiosity打破了这一累积记录", "直到2026年10月被Perseverance超越"]]
-  }},
-  { "m": "mars/mariner9", "text": {
-    "en-US": [["the spacecraft remains in orbit, slowly decaying", "the spacecraft was expected to stay in orbit for decades; whether it has since re-entered is unknown"]],
-    "ar": [["وما زالت المركبة في المدار، يتناقص ارتفاعها ببطء", "وكان متوقعاً أن تبقى المركبة في المدار عقوداً؛ ولا يُعرف إن كانت قد دخلت الغلاف الجوي منذ ذلك الحين"]],
-    "de": [["das Raumschiff bleibt in der Umlaufbahn und zerfällt langsam", "das Raumschiff sollte jahrzehntelang im Orbit bleiben; ob es inzwischen verglüht ist, ist unbekannt"]],
-    "es": [["la nave sigue en órbita, decayendo lentamente", "se esperaba que la nave siguiera en órbita durante décadas; se desconoce si ya ha reentrado"]],
-    "fr": [["l'engin spatial reste en orbite, se désintégrant lentement", "l'engin devait rester en orbite pendant des décennies ; on ignore s'il est depuis rentré dans l'atmosphère"]],
-    "it": [["la sonda resta in orbita, con un decadimento lento", "la sonda doveva restare in orbita per decenni; non si sa se sia già rientrata"]],
-    "ko": [["우주선은 궤도에 남아 서서히 고도가 낮아지고 있다", "우주선은 수십 년간 궤도에 남을 것으로 예상되었으며, 이미 재진입했는지는 알려지지 않았다"]],
-    "nl": [["het ruimtevaartuig blijft in een baan, langzaam vervallend", "het ruimtevaartuig zou decennialang in een baan blijven; of het inmiddels is teruggekeerd, is onbekend"]],
-    "pt-BR": [["a espaçonave continua em órbita, decaindo lentamente", "esperava-se que a espaçonave ficasse em órbita por décadas; não se sabe se já reentrou"]],
-    "ru": [["космический аппарат остаётся на орбите, медленно теряя высоту", "аппарат должен был оставаться на орбите десятилетиями; вошёл ли он уже в атмосферу, неизвестно"]],
-    "sr-Cyrl": [["летелица и даље остаје у орбити, а њена путања се полако спушта", "очекивало се да летелица остане у орбити деценијама; не зна се да ли је у међувремену ушла у атмосферу"]],
-    "zh-CN": [["该航天器仍在轨道上，缓慢衰减", "预计该航天器会在轨道上停留数十年；它是否已再入大气层尚不清楚"]]
-  }}
+  {
+    "overlay": "i18n-src/{loc}/mars-sites/opportunity.json",
+    "text": {
+      "en-US": [
+        [
+          "until Curiosity broke the cumulative record",
+          "until Perseverance passed it in October 2026"
+        ]
+      ],
+      "ar": [
+        ["حتى كسرت Curiosity الرقم القياسي التراكمي", "حتى تجاوزتها Perseverance في أكتوبر 2026"]
+      ],
+      "de": [
+        [
+          "bis Curiosity den kumulativen Rekord brach",
+          "bis Perseverance sie im Oktober 2026 übertraf"
+        ]
+      ],
+      "es": [
+        [
+          "hasta que Curiosity rompió el récord acumulado",
+          "hasta que Perseverance la superó en octubre de 2026"
+        ]
+      ],
+      "fr": [
+        [
+          "jusqu'à ce que Curiosity batte le record cumulé",
+          "jusqu'à ce que Perseverance la dépasse en octobre 2026"
+        ]
+      ],
+      "hi": [
+        [
+          "जब तक Curiosity ने संचयी रिकॉर्ड तोड़ा, तब तक",
+          "अक्टूबर 2026 में Perseverance के आगे निकलने तक"
+        ]
+      ],
+      "it": [
+        [
+          "finché Curiosity non ha battuto il record cumulativo",
+          "finché Perseverance non l'ha superata nell'ottobre 2026"
+        ]
+      ],
+      "ja": [["Curiosityが累積記録を塗り替えるまで", "2026年10月にPerseveranceが上回るまで"]],
+      "ko": [
+        ["Curiosity가 누적 기록을 경신하기 전까지", "2026년 10월 Perseverance가 넘어서기 전까지"]
+      ],
+      "nl": [
+        [
+          "tot Curiosity het cumulatieve record brak",
+          "tot Perseverance het in oktober 2026 overtrof"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "até que Curiosity quebrou o registro cumulativo",
+          "até que Perseverance o superou em outubro de 2026"
+        ]
+      ],
+      "ru": [
+        [
+          "до тех пор пока Curiosity не побил совокупный рекорд",
+          "пока в октябре 2026 года его не превзошёл Perseverance"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "све док Curiosity није оборио збирни рекорд",
+          "све док га Perseverance није надмашио у октобру 2026"
+        ]
+      ],
+      "zh-CN": [["直到Curiosity打破了这一累积记录", "直到2026年10月被Perseverance超越"]]
+    }
+  },
+  {
+    "m": "mars/mariner9",
+    "text": {
+      "en-US": [
+        [
+          "the spacecraft remains in orbit, slowly decaying",
+          "the spacecraft was expected to stay in orbit for decades; whether it has since re-entered is unknown"
+        ]
+      ],
+      "ar": [
+        [
+          "وما زالت المركبة في المدار، يتناقص ارتفاعها ببطء",
+          "وكان متوقعاً أن تبقى المركبة في المدار عقوداً؛ ولا يُعرف إن كانت قد دخلت الغلاف الجوي منذ ذلك الحين"
+        ]
+      ],
+      "de": [
+        [
+          "das Raumschiff bleibt in der Umlaufbahn und zerfällt langsam",
+          "das Raumschiff sollte jahrzehntelang im Orbit bleiben; ob es inzwischen verglüht ist, ist unbekannt"
+        ]
+      ],
+      "es": [
+        [
+          "la nave sigue en órbita, decayendo lentamente",
+          "se esperaba que la nave siguiera en órbita durante décadas; se desconoce si ya ha reentrado"
+        ]
+      ],
+      "fr": [
+        [
+          "l'engin spatial reste en orbite, se désintégrant lentement",
+          "l'engin devait rester en orbite pendant des décennies ; on ignore s'il est depuis rentré dans l'atmosphère"
+        ]
+      ],
+      "it": [
+        [
+          "la sonda resta in orbita, con un decadimento lento",
+          "la sonda doveva restare in orbita per decenni; non si sa se sia già rientrata"
+        ]
+      ],
+      "ko": [
+        [
+          "우주선은 궤도에 남아 서서히 고도가 낮아지고 있다",
+          "우주선은 수십 년간 궤도에 남을 것으로 예상되었으며, 이미 재진입했는지는 알려지지 않았다"
+        ]
+      ],
+      "nl": [
+        [
+          "het ruimtevaartuig blijft in een baan, langzaam vervallend",
+          "het ruimtevaartuig zou decennialang in een baan blijven; of het inmiddels is teruggekeerd, is onbekend"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "a espaçonave continua em órbita, decaindo lentamente",
+          "esperava-se que a espaçonave ficasse em órbita por décadas; não se sabe se já reentrou"
+        ]
+      ],
+      "ru": [
+        [
+          "космический аппарат остаётся на орбите, медленно теряя высоту",
+          "аппарат должен был оставаться на орбите десятилетиями; вошёл ли он уже в атмосферу, неизвестно"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "летелица и даље остаје у орбити, а њена путања се полако спушта",
+          "очекивало се да летелица остане у орбити деценијама; не зна се да ли је у међувремену ушла у атмосферу"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "该航天器仍在轨道上，缓慢衰减",
+          "预计该航天器会在轨道上停留数十年；它是否已再入大气层尚不清楚"
+        ]
+      ]
+    }
+  }
 ]

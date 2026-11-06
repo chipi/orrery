@@ -1,7 +1,7 @@
 {
   "_about": "Mission blueprints (#641): how each master in masters/blueprints/ was made. The reference sheet is scripts/anatomy/blueprint-plan-view.ts <id>; the model (Higgsfield gpt_image_2_6, high, 4k, 3:2) redraws it by hand. Facts on each sheet are sourced below; after each sheet our own mission and fleet text is checked against it and fixed where it was wrong.",
   "process": [
-    "1. Facts: dates, distances, launcher and spacecraft numbers from the sources listed; worked values from the site's Lab tools and ephemeris.",
+    "1. Facts: dates, distances, launcher and spacecraft numbers from the sources listed; worked values from the site's Lab tools and ephemeris. Panel I is the MISSION BRIEF: four or five lines on why the mission matters, written from our own mission text (first / description) so the sheet and the site say the same.",
     "2. Reference: npx tsx scripts/anatomy/blueprint-plan-view.ts <id> ref.png (computed plan view + panel layout), uploaded as the image reference.",
     "3. Drafts: 1-2 at quality medium, 2k (1 credit each) to settle layout and wording.",
     "4. Final: one render at quality high, 4k (4.25 credits), native 3504x2336 — no upscale needed (served base is 3072).",
@@ -16,7 +16,8 @@
       "edits": [
         "spacecraft panel: the callout on the golden record read 5 (a second 5); replaced by the legend's own circled 6",
         "v_esc formula: subscript ∞ in μ∞ redrawn as ☉",
-        "encounter table: Jupiter 570,000 KM → 721,670 KM (crop edit job 6b219c7d-7b5e-4e8c-8170-178d5e4b098e, only the cell pasted back), to match our mission text: 721,670 km from Jupiter's centre = 650,180 km above the clouds (Astronomy.com); Wikipedia's 570,000 km does not fit either"
+        "encounter table: Jupiter 570,000 KM → 721,670 KM (crop edit job 6b219c7d-7b5e-4e8c-8170-178d5e4b098e, only the cell pasted back), to match our mission text: 721,670 km from Jupiter's centre = 650,180 km above the clouds (Astronomy.com); Wikipedia's 570,000 km does not fit either",
+        "panel I: NOTES → MISSION BRIEF (WHY GO / WHY IT MATTERS), crop edit job 427c78a5-f9d5-44b8-8df1-596757c3e241, interior pasted inside the original border. From our mission text (first, description) plus: built and funded for Jupiter and Saturn, Uranus and Neptune added in flight."
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Voyager_2",
@@ -30,7 +31,10 @@
       "final_job": "85f7f4d8-ee82-4fb5-afd5-df7b51249e4b",
       "reference_media": "6fd57c08-328b-4fbb-8555-9152477c68c6",
       "drafts": ["d2c6ddc4-fb59-44cb-a064-3d05ea8a016d", "e9efe9f7-1441-496c-abd8-0f6ea0ee17b3"],
-      "edits": ["main view note: DLANETS → PLANETS (P copied from LOOPS on the same sheet)"],
+      "edits": [
+        "main view note: DLANETS → PLANETS (P copied from LOOPS on the same sheet)",
+        "panel I: NOTES → MISSION BRIEF (WHY GO / WHY IT MATTERS), crop edit job d96ec15f-deac-4426-97a3-c26096ae1a96, interior pasted inside the original border. From our mission text (first, description): 13 years, 294 orbits, 162 close moon flybys, Huygens 14 Jan 2005, Enceladus plumes, Titan lakes, end 15 Sep 2017 to protect Enceladus and Titan."
+      ],
       "sources": [
         "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
         "https://en.wikipedia.org/wiki/Titan_IV",

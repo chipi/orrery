@@ -93,7 +93,7 @@ const PANELS = [
   { t: 'D. SPACECRAFT', x: W - SIDE, y: 0, w: SIDE, h: 900 },
   { t: 'F. GRAVITY ASSIST', x: W - SIDE, y: 900, w: SIDE, h: 440 },
   { t: 'H. EQUATIONS', x: W - SIDE, y: 1340, w: SIDE, h: H - BOTTOM - 1340 },
-  { t: 'I. NOTES · TITLE BLOCK', x: W - SIDE, y: H - BOTTOM, w: SIDE, h: BOTTOM },
+  { t: 'I. MISSION BRIEF · TITLE BLOCK', x: W - SIDE, y: H - BOTTOM, w: SIDE, h: BOTTOM },
   ...(DET
     ? [
         { t: m.detail!.title, ...DET },

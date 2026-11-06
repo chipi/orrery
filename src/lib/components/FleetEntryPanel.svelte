@@ -184,6 +184,9 @@
   // Exploded-stage watercolor cutaway — a richer companion to the pencil
   // anatomy, shown alongside it in the DETAIL tab for launch vehicles.
   let cutawayPath = $derived(entry ? launcherCutawayPath(entry.id) : null);
+  // Opened on a drawing, the viewer steps through the craft's drawings, not the photo gallery.
+  let drawings = $derived([diagramPath, cutawayPath].filter((p): p is string => !!p));
+  let lightboxImages = $derived(lightboxSrc && drawings.includes(lightboxSrc) ? drawings : gallery);
 
   // Upgrade the pencil anatomy + exploded cutaway to their responsive WebP
   // ladders once the manifest loads; plain webp until then / when no ladder
@@ -846,7 +849,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
+<PanelLightbox src={lightboxSrc} images={lightboxImages} onClose={() => (lightboxSrc = null)} />
 
 <!-- Loaded when a clip opens: a static import kept /fleet over its JS budget in the prod build. -->
 {#if playerVideo}

@@ -77,7 +77,25 @@
     if (!src) return;
     if (e.key === 'Escape') {
       e.preventDefault();
-      onClose();
+      if (zoomed) zoomTo(1);
+      else onClose();
+    } else if (e.key === '+' || e.key === '=') {
+      e.preventDefault();
+      zoomTo(scale * 1.5);
+    } else if (e.key === '-') {
+      e.preventDefault();
+      zoomTo(scale / 1.5);
+    } else if (e.key === '0') {
+      e.preventDefault();
+      zoomTo(1);
+    } else if (zoomed && e.key.startsWith('Arrow')) {
+      e.preventDefault();
+      const d = 60;
+      if (e.key === 'ArrowLeft') tx += d;
+      if (e.key === 'ArrowRight') tx -= d;
+      if (e.key === 'ArrowUp') ty += d;
+      if (e.key === 'ArrowDown') ty -= d;
+      clampPan();
     } else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       e.preventDefault();
       const forward = e.key === 'ArrowRight' ? 1 : -1;
@@ -85,12 +103,100 @@
     }
   }
 
+  // Zoom + pan, for studying a drawing's fine labels at full resolution: wheel or +/− zoom
+  // around the pointer, double-click / double-tap toggles, drag pans, two fingers pinch.
+  // Swipe and arrow-key stepping only act at scale 1.
+  const MAX_ZOOM = 8;
+  let scale = $state(1);
+  let tx = $state(0);
+  let ty = $state(0);
+  let imgEl = $state<HTMLImageElement | null>(null);
+  const zoomed = $derived(scale > 1.01);
+  $effect(() => {
+    void current;
+    scale = 1;
+    tx = 0;
+    ty = 0;
+  });
+  function clampPan() {
+    if (!imgEl) return;
+    const w = imgEl.offsetWidth;
+    const h = imgEl.offsetHeight;
+    const mx = Math.max(0, (w * scale - w) / 2);
+    const my = Math.max(0, (h * scale - h) / 2);
+    tx = Math.min(mx, Math.max(-mx, tx));
+    ty = Math.min(my, Math.max(-my, ty));
+  }
+  /** Zoom to `next` keeping the image point under (cx, cy) (client coords) still. */
+  function zoomTo(next: number, cx?: number, cy?: number) {
+    next = Math.min(MAX_ZOOM, Math.max(1, next));
+    if (imgEl && cx !== undefined && cy !== undefined) {
+      const r = imgEl.getBoundingClientRect();
+      const px = cx - (r.left + r.width / 2);
+      const py = cy - (r.top + r.height / 2);
+      const k = next / scale;
+      tx = tx - px * (k - 1);
+      ty = ty - py * (k - 1);
+    }
+    scale = next;
+    if (scale === 1) {
+      tx = 0;
+      ty = 0;
+    }
+    clampPan();
+  }
+  function onWheel(e: WheelEvent) {
+    e.preventDefault();
+    zoomTo(scale * Math.exp(-e.deltaY * 0.0015), e.clientX, e.clientY);
+  }
+  function onDblClick(e: MouseEvent) {
+    zoomTo(zoomed ? 1 : 3, e.clientX, e.clientY);
+  }
+  const pointers = new Map<number, { x: number; y: number }>();
+  let pinch: { d: number; s: number } | null = null;
+  let lastTap = 0;
+  function onPointerDown(e: PointerEvent) {
+    (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      pinch = { d: Math.hypot(a!.x - b!.x, a!.y - b!.y), s: scale };
+    } else if (e.pointerType === 'touch') {
+      const now = Date.now();
+      if (now - lastTap < 300) zoomTo(zoomed ? 1 : 3, e.clientX, e.clientY);
+      lastTap = now;
+    }
+  }
+  function onPointerMove(e: PointerEvent) {
+    const prev = pointers.get(e.pointerId);
+    if (!prev) return;
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pinch && pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      zoomTo(
+        (pinch.s * Math.hypot(a!.x - b!.x, a!.y - b!.y)) / pinch.d,
+        (a!.x + b!.x) / 2,
+        (a!.y + b!.y) / 2,
+      );
+    } else if (zoomed && pointers.size === 1) {
+      tx += e.clientX - prev.x;
+      ty += e.clientY - prev.y;
+      clampPan();
+    }
+  }
+  function onPointerUp(e: PointerEvent) {
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinch = null;
+  }
+  // Zoomed in, ask the srcset for a rung that fills the zoomed size (up to the 3072 base).
+  const zoomSizes = $derived(zoomed ? `${Math.ceil(scale) * 100}vw` : undefined);
+
   let touchX: number | null = null;
   function onTouchStart(e: TouchEvent) {
-    touchX = e.touches.length === 1 ? e.touches[0]!.clientX : null;
+    touchX = e.touches.length === 1 && !zoomed ? e.touches[0]!.clientX : null;
   }
   function onTouchEnd(e: TouchEvent) {
-    if (touchX === null) return;
+    if (touchX === null || zoomed) return;
     const dx = e.changedTouches[0]!.clientX - touchX;
     touchX = null;
     if (Math.abs(dx) < 40) return;
@@ -154,12 +260,48 @@
     <div class="lightbox-stage" ontouchstart={onTouchStart} ontouchend={onTouchEnd}>
       {#key current}
         <img
+          bind:this={imgEl}
           class="lightbox-img"
+          class:zoomed
+          data-testid="lightbox-img"
           {...responsive(current, IMAGE_SIZES.full)}
+          sizes={zoomSizes ?? responsive(current, IMAGE_SIZES.full).sizes}
           alt={altOf?.(current.slice(Math.max(0, current.indexOf('/images/'))), getLocale()) ?? ''}
           decoding="async"
+          draggable="false"
+          style:transform={zoomed ? `translate(${tx}px, ${ty}px) scale(${scale})` : undefined}
+          onwheel={onWheel}
+          ondblclick={onDblClick}
+          onpointerdown={onPointerDown}
+          onpointermove={onPointerMove}
+          onpointerup={onPointerUp}
+          onpointercancel={onPointerUp}
         />
       {/key}
+    </div>
+
+    <div class="lightbox-zoom" role="group" aria-label={m.panel_lightbox_zoom_group()}>
+      <button
+        type="button"
+        aria-label={m.panel_lightbox_zoom_out()}
+        disabled={!zoomed}
+        onclick={() => zoomTo(scale / 1.5)}>−</button
+      >
+      <button
+        type="button"
+        class="lightbox-zoom-level"
+        aria-label={m.panel_lightbox_zoom_reset()}
+        data-testid="lightbox-zoom-level"
+        disabled={!zoomed}
+        onclick={() => zoomTo(1)}>{Math.round(scale * 100)}%</button
+      >
+      <button
+        type="button"
+        aria-label={m.panel_lightbox_zoom_in()}
+        data-testid="lightbox-zoom-in"
+        disabled={scale >= MAX_ZOOM}
+        onclick={() => zoomTo(scale * 1.5)}>+</button
+      >
     </div>
 
     <button
@@ -255,6 +397,50 @@
     object-fit: contain;
     border-radius: 4px;
     pointer-events: auto;
+    cursor: zoom-in;
+    /* the viewer handles pinch and drag itself */
+    touch-action: none;
+    user-select: none;
+    transform-origin: center center;
+    will-change: transform;
+  }
+  .lightbox-img.zoomed {
+    cursor: grab;
+  }
+  .lightbox-img.zoomed:active {
+    cursor: grabbing;
+  }
+  .lightbox-zoom {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    inset-inline-start: 16px;
+    display: flex;
+    gap: 6px;
+  }
+  .lightbox-zoom button {
+    min-width: 44px;
+    height: 44px;
+    padding: 0 10px;
+    background: rgba(2, 4, 12, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 20px;
+    border-radius: 22px;
+    cursor: pointer;
+  }
+  .lightbox-zoom .lightbox-zoom-level {
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
+  .lightbox-zoom button:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  .lightbox-zoom button:hover:not(:disabled),
+  .lightbox-zoom button:focus-visible {
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
   }
   .lightbox-close,
   .lightbox-nav {

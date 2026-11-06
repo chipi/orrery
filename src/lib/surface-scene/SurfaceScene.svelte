@@ -1293,6 +1293,16 @@
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
+  // Opened on a drawing, the viewer steps through the site's drawings (landing sheet, then each
+  // craft's anatomy and exploded view), not the photo gallery.
+  let panelDrawings = $derived(
+    [panelSequence, ...panelAnatomy.flatMap((a) => [a.src, a.exploded])].filter(
+      (p): p is string => !!p,
+    ),
+  );
+  let panelLightboxImages = $derived(
+    panelLightbox && panelDrawings.includes(panelLightbox) ? panelDrawings : panelGallery,
+  );
   // PRD-031 / RFC-033 S2 — linked videos interleaved into the site gallery.
   let panelVideos = $state<VideoProvenanceEntry[]>([]);
   let playerVideo = $state<VideoProvenanceEntry | null>(null);
@@ -6417,7 +6427,11 @@ sample      ${debugInfo.projectedPxSample}`}
     <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
   {/if}
 
-  <PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
+  <PanelLightbox
+    src={panelLightbox}
+    images={panelLightboxImages}
+    onClose={() => (panelLightbox = null)}
+  />
   <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
   <!-- #290 Slice 6b — Earth-satellite info panel. Mounted only when

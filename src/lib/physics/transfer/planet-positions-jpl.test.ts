@@ -8,12 +8,21 @@
  * `scripts/fly/planet-model-check.ts` prints the same table.
  */
 import { describe, expect, it } from 'vitest';
-import { destinationPos, orbitPath } from './mission-arc';
+import { destinationPos, earthPos, orbitPath } from './mission-arc';
 import { DESTINATIONS, type DestinationId } from './lambert-grid.constants';
 import { heliocentric, julianDay, type PlanetId } from '../ephemeris';
 import { dateToSimDay } from '../../sim-day';
 
-const PLANETS = ['mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'] as const;
+const PLANETS = [
+  'mercury',
+  'venus',
+  'earth',
+  'mars',
+  'jupiter',
+  'saturn',
+  'uranus',
+  'neptune',
+] as const;
 const wrapDeg = (d: number) => ((d + 540) % 360) - 180;
 const lonDeg = (x: number, y: number) => (Math.atan2(y, x) * 180) / Math.PI;
 
@@ -22,7 +31,8 @@ describe('destinationPos matches the JPL ephemeris', () => {
     it(`${p}: longitude within 0.6°, radius within 1.5 % over 1970–2035`, () => {
       for (let ms = Date.UTC(1970, 0, 1); ms < Date.UTC(2035, 0, 1); ms += 29 * 86_400_000) {
         const iso = new Date(ms).toISOString().slice(0, 10);
-        const sim = destinationPos(dateToSimDay(iso)!, p as DestinationId);
+        const d = dateToSimDay(iso)!;
+        const sim = p === 'earth' ? earthPos(d) : destinationPos(d, p as DestinationId);
         const jpl = heliocentric(p as PlanetId, julianDay(new Date(ms + 43_200_000)));
         expect(Math.abs(wrapDeg(lonDeg(sim.x, sim.z) - lonDeg(jpl.x, jpl.y)))).toBeLessThan(0.6);
         const rJ = Math.hypot(jpl.x, jpl.y);

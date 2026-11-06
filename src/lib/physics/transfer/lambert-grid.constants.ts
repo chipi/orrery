@@ -76,6 +76,16 @@ export const EARTH_MEAN_MOTION_RAD_PER_DAY = (2 * Math.PI) / EARTH.T;
 /** Mars mean motion, rad/day. */
 export const MARS_MEAN_MOTION_RAD_PER_DAY = (2 * Math.PI) / MARS.T;
 
+/** Earth's eccentric orbit (e 0.0167: a circle puts it up to 1.9° from JPL), in the same shape
+ *  as a destination, for `earthPos` and the grids' departure point and velocity. */
+export const EARTH_ORBIT = {
+  a: EARTH.a,
+  a0: EARTH.L0,
+  meanMotionRadPerDay: EARTH_MEAN_MOTION_RAD_PER_DAY,
+  e: EARTH.e,
+  varpi: EARTH.varpi,
+};
+
 // ─── Multi-destination support (ADR-026 + ADR-028) ─────────────────
 
 export type DestinationId =

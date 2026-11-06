@@ -8,14 +8,14 @@
  * Read-only. Use it after any change to lambert-grid.constants (elements, eccentricity).
  */
 import { heliocentric, julianDay, type PlanetId } from '../../src/lib/physics/ephemeris';
-import { destinationPos } from '../../src/lib/physics/transfer/mission-arc';
+import { destinationPos, earthPos } from '../../src/lib/physics/transfer/mission-arc';
 import { dateToSimDay } from '../../src/lib/sim-day';
 import type { DestinationId } from '../../src/lib/physics/transfer/lambert-grid.constants';
 
 const [from, to] = process.argv.slice(2).map(Number);
 const y0 = from || 1970;
 const y1 = to || 2035;
-const planets = ['mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'];
+const planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'];
 const wrap = (d: number) => ((d + 540) % 360) - 180;
 const deg = (x: number, y: number) => (Math.atan2(y, x) * 180) / Math.PI;
 
@@ -26,7 +26,8 @@ for (const p of planets) {
   let n = 0;
   for (let ms = Date.UTC(y0, 0, 1); ms < Date.UTC(y1, 0, 1); ms += 5 * 86_400_000) {
     const iso = new Date(ms).toISOString().slice(0, 10);
-    const sim = destinationPos(dateToSimDay(iso)!, p as DestinationId);
+    const d = dateToSimDay(iso)!;
+    const sim = p === 'earth' ? earthPos(d) : destinationPos(d, p as DestinationId);
     const j = heliocentric(p as PlanetId, julianDay(new Date(ms + 43_200_000)));
     const dl = wrap(deg(sim.x, sim.z) - deg(j.x, j.y));
     const dr = Math.hypot(sim.x, sim.z) - Math.hypot(j.x, j.y);

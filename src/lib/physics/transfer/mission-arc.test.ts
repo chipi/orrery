@@ -24,10 +24,12 @@ describe('orbital constants', () => {
 });
 
 describe('earthPos / marsPos', () => {
-  it('Earth heliocentric distance is constant at R_EARTH_AU', () => {
+  it('Earth heliocentric distance stays between perihelion and aphelion (eccentric)', () => {
     for (const day of [0, 100, 365, 1000]) {
       const p = earthPos(day);
-      expect(Math.hypot(p.x, p.z)).toBeCloseTo(R_EARTH_AU, 6);
+      const r = Math.hypot(p.x, p.z);
+      expect(r).toBeGreaterThanOrEqual(R_EARTH_AU * 0.983);
+      expect(r).toBeLessThanOrEqual(R_EARTH_AU * 1.0168);
     }
   });
 

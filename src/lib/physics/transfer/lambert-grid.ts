@@ -16,19 +16,15 @@
  */
 
 import { solveLambertPrograde } from './lambert';
-import { eccentricAnomaly } from '../ephemeris/kepler';
-import { inclinedOrbitXY, type InclinedOrbit } from './inclined-orbit';
+import { bodyHelioVelXY, bodyHelioXY, lambertEndVelocities, type HelioBody } from './helio-state';
 import {
   DESTINATIONS,
-  EARTH_A0,
-  EARTH_MEAN_MOTION_RAD_PER_DAY,
+  EARTH_ORBIT,
   HELIO_GRID_EPOCH_SIM_DAY,
   MU_SUN,
-  R_EARTH_AU,
   type DestinationId,
 } from './lambert-grid.constants';
 
-const V_EARTH_CIRC = Math.sqrt(MU_SUN / R_EARTH_AU);
 const AU_PER_YR_TO_KMS = 4.7404;
 
 /** Sentinel ∆v for cells where Lambert returned no solution. Clamps
@@ -116,80 +112,27 @@ export function computePorkchopGrid(
   return { grid, depDays, arrDays };
 }
 
-/** Heliocentric position (AU) in the ecliptic plane. Matches
- * `mission-arc.destinationPos` (x/z) mapped to Lambert's [x,y].
- *
- * `a0 + n·day` is the **mean longitude** L (not the true anomaly). For an
- * eccentric orbit the body's angular rate and radius both vary along the orbit,
- * with perihelion at the **longitude of perihelion** ϖ (`varpi`) — NOT at
- * ecliptic longitude 0 (S2). Phase the conic correctly: mean anomaly M = L − ϖ,
- * solve Kepler for the eccentric anomaly E, then r = a(1 − e·cos E) and true
- * anomaly ν, positioning the body at ecliptic longitude ν + ϖ. For a circular
- * model (e = 0, ϖ undefined) this reduces exactly to [a·cos L, a·sin L] — the
- * pre-ϖ behaviour, so every circular destination's grid stays byte-identical. */
-function destinationHelioXY(
-  day: number,
-  destination: {
-    a: number;
-    a0: number;
-    meanMotionRadPerDay: number;
-    e?: number;
-    varpi?: number;
-    orbit?: InclinedOrbit;
-  },
-): [number, number] {
-  const e = destination.e ?? 0;
-  if (destination.orbit)
-    return inclinedOrbitXY(
-      day,
-      destination.a,
-      e,
-      destination.meanMotionRadPerDay,
-      destination.orbit,
-    );
-  const L = destination.a0 + destination.meanMotionRadPerDay * day;
-  if (e === 0) return [destination.a * Math.cos(L), destination.a * Math.sin(L)];
-  const varpi = destination.varpi ?? 0;
-  const E = eccentricAnomaly(L - varpi, e);
-  const r = destination.a * (1 - e * Math.cos(E));
-  const nu = Math.atan2(Math.sqrt(1 - e * e) * Math.sin(E), Math.cos(E) - e);
-  const theta = nu + varpi;
-  return [r * Math.cos(theta), r * Math.sin(theta)];
-}
-
-/** Heliocentric ∆v (km/s) for an Earth → destination transfer. Uses
- * the same eccentric orbit model as `destinationHelioXY`. Returns
- * DV_FAILED when Lambert can't find a feasible transfer. */
-function computeDv(
-  depDay: number,
-  arrDay: number,
-  tofYr: number,
-  destination: { a: number; a0: number; meanMotionRadPerDay: number; e?: number; varpi?: number },
-): number {
+/** Heliocentric ∆v (km/s) for an Earth → destination transfer: |v∞| at departure plus |v∞|
+ * at arrival, each the VECTOR difference between the transfer's velocity (Lagrange f/g from
+ * the Lambert conic) and the body's own velocity on its eccentric orbit. Scalar or
+ * "the planet moves tangentially" forms under-price fast transfers (S1) and, with eccentric
+ * planets, miss up to ~2 km/s of Mars' radial motion. Returns DV_FAILED when Lambert can't
+ * find a feasible transfer. */
+function computeDv(depDay: number, arrDay: number, tofYr: number, destination: HelioBody): number {
   // Grid days count from 2026-01-01; the elements are at J2000.
-  const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * (depDay + HELIO_GRID_EPOCH_SIM_DAY);
-  const r1: [number, number] = [R_EARTH_AU * Math.cos(tE), R_EARTH_AU * Math.sin(tE)];
-  const r2 = destinationHelioXY(arrDay + HELIO_GRID_EPOCH_SIM_DAY, destination);
-  const r2mag = Math.hypot(r2[0], r2[1]);
-  const vDest = Math.sqrt(MU_SUN * (2 / r2mag - 1 / destination.a));
+  const t1 = depDay + HELIO_GRID_EPOCH_SIM_DAY;
+  const t2 = arrDay + HELIO_GRID_EPOCH_SIM_DAY;
+  const r1 = bodyHelioXY(t1, EARTH_ORBIT);
+  const r2 = bodyHelioXY(t2, destination);
 
   const result = solveLambertPrograde(r1, r2, tofYr, MU_SUN);
   if (!result) return DV_FAILED;
-
-  // Arrival ∆v = VECTOR hyperbolic excess at the destination (S1). The scalar
-  // |vDest − v2| collapses on fast (faster-than-Hohmann) transfers — matched
-  // speeds but diverging velocity vectors — which under-prices the fast half of
-  // every grid and flattens the TOF gradient. Split the arrival velocity into
-  // tangential √(µp)/r2 + radial; the destination moves ~tangentially at vDest.
-  const vt2 = Math.sqrt(MU_SUN * result.p) / r2mag;
-  const vr2 = Math.sqrt(Math.max(0, result.v2 * result.v2 - vt2 * vt2));
-  const vInfArrival = Math.hypot(vr2, vt2 - vDest);
-  // Departure v∞ is a vector too (Earth moves tangentially at V_EARTH_CIRC): long-way and
-  // slow transfers leave with a large radial component the scalar |v1 − v⊕| ignored.
-  const vt1 = Math.sqrt(MU_SUN * result.p) / R_EARTH_AU;
-  const vr1 = Math.sqrt(Math.max(0, result.v1 * result.v1 - vt1 * vt1));
-  const vInfDeparture = Math.hypot(vr1, vt1 - V_EARTH_CIRC);
-  const dvAuPerYr = vInfDeparture + vInfArrival;
-  const dvKmS = dvAuPerYr * AU_PER_YR_TO_KMS;
+  const ends = lambertEndVelocities(r1, r2, result.p, MU_SUN);
+  if (!ends) return DV_FAILED;
+  const vE = bodyHelioVelXY(t1, EARTH_ORBIT);
+  const vD = bodyHelioVelXY(t2, destination);
+  const vInfDeparture = Math.hypot(ends.v1[0] - vE[0], ends.v1[1] - vE[1]);
+  const vInfArrival = Math.hypot(ends.v2[0] - vD[0], ends.v2[1] - vD[1]);
+  const dvKmS = (vInfDeparture + vInfArrival) * AU_PER_YR_TO_KMS;
   return Math.max(3.2, Math.min(dvKmS, DV_FAILED));
 }

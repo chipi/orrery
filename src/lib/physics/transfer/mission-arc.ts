@@ -15,14 +15,14 @@
 
 import {
   DESTINATIONS,
-  EARTH_A0,
-  EARTH_MEAN_MOTION_RAD_PER_DAY,
+  EARTH_ORBIT,
   R_EARTH_AU,
   R_MARS_AU,
   type DestinationId,
 } from './lambert-grid.constants';
 import { eccentricAnomaly } from '../ephemeris/kepler';
 import { inclinedOrbitXY } from './inclined-orbit';
+import { bodyHelioXY } from './helio-state';
 import { MU_SUN_AU3_YR2, AUPYR_TO_KMS } from '../util/constants';
 
 /** Mars-specific Hohmann transfer constants — kept as named exports for
@@ -41,10 +41,17 @@ export const E_TRANSFER = (R_MARS_AU - R_EARTH_AU) / (R_MARS_AU + R_EARTH_AU);
  *  tube geometry and the spacecraft glyph) read `y ?? 0`. */
 export type Vec2 = { x: number; z: number; y?: number };
 
-/** Earth position at simulation day. Circular-orbit approximation. */
+/** Earth position at simulation day — its eccentric orbit (`EARTH_ORBIT`, the same point the
+ *  porkchop grids depart from). */
 export function earthPos(day: number): Vec2 {
-  const angle = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * day;
-  return { x: Math.cos(angle) * R_EARTH_AU, z: Math.sin(angle) * R_EARTH_AU };
+  const [x, z] = bodyHelioXY(day, EARTH_ORBIT);
+  return { x, z };
+}
+
+/** One revolution of Earth's orbit, sampled from `earthPos` (see `orbitPath`). */
+export function earthOrbitPath(steps = 256): Vec2[] {
+  const period = (2 * Math.PI) / EARTH_ORBIT.meanMotionRadPerDay;
+  return Array.from({ length: steps + 1 }, (_, i) => earthPos((i / steps) * period));
 }
 
 /** Mars position at simulation day — the eccentric destination model. */

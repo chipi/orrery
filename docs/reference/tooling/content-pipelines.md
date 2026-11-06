@@ -367,6 +367,8 @@ shows the craft away from a body at its event.
   longitude error and max radius error per planet.
 - `npx tsx scripts/fly/blueprint-fit-audit.ts [id …]` — per mission, every labelled /fly waypoint:
   where /fly puts the body on that date against JPL (Δλ, Δr), and the nearest mission event date.
+- `npx tsx scripts/fly/event-date-check.ts [--fixes=out.json]` — every mission event whose MET lands on
+  another day than its description states, with a fixes file for `scripts/remap-event-dates.ts`.
 - `npx tsx scripts/fly/porkchop-window-check.ts [dest …]` — the precomputed porkchops' minima
   against the JPL Hohmann phase dates.
 
@@ -376,5 +378,7 @@ shows the craft away from a body at its event.
 **When** — Any change to `lambert-grid.constants`, `planets.json` elements, the Lambert solver or a
 mission's flyby dates. After a change to the planet model, regenerate `npm run precompute-porkchops`
 and the /fly paths (`generate-fly-trajectory.ts`, every id in `static/data/fly-trajectories/`).
-**State** — healthy (2026-11-06: planets eccentric, max 0.47° (Mercury); worst /fly anchor 1.9°,
-Earth, still circular; 2026 Mars window 10-30).
+**State** — healthy (2026-11-07: planets and Earth eccentric, max 0.47° (Mercury), Earth 0.02°; v∞
+vectors from Lagrange f/g at both ends; 2026 Mars window 10-30). `event-date-check.ts` lists events whose
+MET date differs from the date in their own description (Moon METs count from launch time, so
+its Moon rows need the launch time to judge).

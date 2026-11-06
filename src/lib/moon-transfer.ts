@@ -20,14 +20,16 @@
  */
 
 import { solveLambertPrograde } from '$lib/physics/transfer/lambert';
-import { eccentricAnomaly } from '$lib/physics/ephemeris/kepler';
 import { DV_FAILED } from '$lib/physics/transfer/lambert-grid';
 import {
-  EARTH_A0,
-  EARTH_MEAN_MOTION_RAD_PER_DAY,
+  bodyHelioVelXY,
+  bodyHelioXY,
+  lambertEndVelocities,
+} from '$lib/physics/transfer/helio-state';
+import {
+  EARTH_ORBIT,
   HELIO_GRID_EPOCH_SIM_DAY,
   MU_SUN,
-  R_EARTH_AU,
 } from '$lib/physics/transfer/lambert-grid.constants';
 import {
   MU_HOST,
@@ -36,7 +38,6 @@ import {
   type MoonParams,
 } from './moon-transfer.constants';
 
-const V_EARTH_CIRC = Math.sqrt(MU_SUN / R_EARTH_AU);
 const AU_PER_YR_TO_KMS = 4.7404;
 
 /** Heliocentric elements of the host planet (same shape the porkchop grid uses). */
@@ -71,23 +72,6 @@ const INFEASIBLE: MoonMissionDv = {
   feasible: false,
 };
 
-/** Host heliocentric position (AU), matching `lambert-grid.destinationHelioXY`.
- *  `a0 + n·day` is the mean longitude L; on an eccentric orbit perihelion sits
- *  at ϖ (`varpi`), not longitude 0 (S2) — phase via M = L − ϖ → Kepler → true
- *  anomaly at longitude ν + ϖ. Circular hosts (e=0) reduce to [a·cos L, a·sin L],
- *  byte-identical to the pre-ϖ model (the giant-planet hosts are all circular). */
-function hostHelioXY(day: number, host: HostElements): [number, number] {
-  const e = host.e ?? 0;
-  const L = host.a0 + host.meanMotionRadPerDay * day;
-  if (e === 0) return [host.a * Math.cos(L), host.a * Math.sin(L)];
-  const varpi = host.varpi ?? 0;
-  const E = eccentricAnomaly(L - varpi, e);
-  const r = host.a * (1 - e * Math.cos(E));
-  const nu = Math.atan2(Math.sqrt(1 - e * e) * Math.sin(E), Math.cos(E) - e);
-  const theta = nu + varpi;
-  return [r * Math.cos(theta), r * Math.sin(theta)];
-}
-
 /**
  * Multi-leg ∆v for an Earth→moon mission cell. `depDay`/`arrDay` index the
  * heliocentric Earth→host leg (days from epoch), `tofYr` its time of flight
@@ -102,28 +86,24 @@ export function interplanetaryMoonDv(
 ): MoonMissionDv {
   // ── Leg 1: heliocentric Earth → host planet ──
   // Grid days count from 2026-01-01; the elements are at J2000.
-  const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * (depDay + HELIO_GRID_EPOCH_SIM_DAY);
-  const r1: [number, number] = [R_EARTH_AU * Math.cos(tE), R_EARTH_AU * Math.sin(tE)];
-  const r2 = hostHelioXY(arrDay + HELIO_GRID_EPOCH_SIM_DAY, host);
-  const r2mag = Math.hypot(r2[0], r2[1]);
-  const vDest = Math.sqrt(MU_SUN * (2 / r2mag - 1 / host.a));
+  const t1 = depDay + HELIO_GRID_EPOCH_SIM_DAY;
+  const t2 = arrDay + HELIO_GRID_EPOCH_SIM_DAY;
+  const r1 = bodyHelioXY(t1, EARTH_ORBIT);
+  const r2 = bodyHelioXY(t2, host);
 
   const result = solveLambertPrograde(r1, r2, tofYr, MU_SUN);
   if (!result) return INFEASIBLE;
+  const ends = lambertEndVelocities(r1, r2, result.p, MU_SUN);
+  if (!ends) return INFEASIBLE;
 
-  // Vector departure v∞ (Earth moves tangentially), as on the arrival side below.
-  const vt1 = Math.sqrt(MU_SUN * result.p) / R_EARTH_AU;
-  const vr1 = Math.sqrt(Math.max(0, result.v1 * result.v1 - vt1 * vt1));
-  const departure = Math.hypot(vr1, vt1 - V_EARTH_CIRC) * AU_PER_YR_TO_KMS;
-  // VECTOR hyperbolic excess w.r.t. the host — carried into the moon leg, not
-  // captured (B1). A scalar |vDest − v2| collapses on fast (faster-than-Hohmann)
-  // transfers, where the speeds match but the velocity VECTORS diverge (large
-  // radial component) — the exact bug ADR-085 §D2 fixed for the Moon, and it
-  // bites hardest here because v∞ is squared into the well-drop. Split the
-  // arrival velocity into tangential √(µp)/r2 + radial; the host moves ~tangentially.
-  const vt2 = Math.sqrt(MU_SUN * result.p) / r2mag;
-  const vr2 = Math.sqrt(Math.max(0, result.v2 * result.v2 - vt2 * vt2));
-  const vInfHost = Math.hypot(vr2, vt2 - vDest) * AU_PER_YR_TO_KMS;
+  // VECTOR hyperbolic excesses (B1): the transfer's velocity (Lagrange f/g) minus Earth's and
+  // the host's own velocity on their eccentric orbits. A scalar |vDest − v2| collapses on fast
+  // transfers, where the speeds match but the vectors diverge, and v∞ is squared into the
+  // well-drop below; "the planet moves tangentially" misses an eccentric host's radial motion.
+  const vE = bodyHelioVelXY(t1, EARTH_ORBIT);
+  const vH = bodyHelioVelXY(t2, host);
+  const departure = Math.hypot(ends.v1[0] - vE[0], ends.v1[1] - vE[1]) * AU_PER_YR_TO_KMS;
+  const vInfHost = Math.hypot(ends.v2[0] - vH[0], ends.v2[1] - vH[1]) * AU_PER_YR_TO_KMS;
 
   // ── Leg 2: host well → moon-orbit insertion (patched-conic) ──
   const muHost = MU_HOST[moon.host];

@@ -12,9 +12,9 @@ import { createLayeredStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
 import { heroEnvironment } from '$lib/three/hero-materials';
 import type { QualityConfig } from '$lib/quality/quality-tier';
-import { R_EARTH_AU, type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
+import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 import { SCALE_3D, SUN_SCENE_RADIUS } from '$lib/fly-scene-constants';
-import { orbitPath } from '$lib/physics/transfer/mission-arc';
+import { earthOrbitPath, orbitPath } from '$lib/physics/transfer/mission-arc';
 
 /**
  * Static heliocentric-scene builder. Extracted from
@@ -248,31 +248,19 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
  *  /explore because the camera here sits closer). */
 const EARTH_RADIUS = 2.6;
 
-/** Build a LineLoop sampling one orbital revolution at a given AU
- *  radius. 128 segments smooths the ring at typical zooms; opacity
- *  0.4 reads clearly against the dark background. */
-function buildOrbitRing(radius: number, color: number): THREE.LineLoop {
-  const pts: THREE.Vector3[] = [];
-  for (let i = 0; i <= 128; i++) {
-    const a = (i / 128) * Math.PI * 2;
-    pts.push(
-      new THREE.Vector3(Math.cos(a) * radius * SCALE_3D, 0, Math.sin(a) * radius * SCALE_3D),
-    );
-  }
+/** Build a LineLoop through one revolution of an orbit (AU points from `orbitPath` /
+ *  `earthOrbitPath`), so an eccentric body sits on its ring on every day, not on a circle of
+ *  radius a. Opacity 0.6 reads clearly against the dark background. */
+function buildPathRing(path: { x: number; z: number }[], color: number): THREE.LineLoop {
+  const pts = path.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
   return new THREE.LineLoop(
     new THREE.BufferGeometry().setFromPoints(pts),
     new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.6 }),
   );
 }
 
-/** Build a LineLoop through a destination's whole orbit (`orbitPath`), so an eccentric
- *  planet sits on its ring on every day, not on a circle of radius a. */
 function buildBodyOrbitRing(id: DestinationId, color: number): THREE.LineLoop {
-  const pts = orbitPath(id).map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
-  return new THREE.LineLoop(
-    new THREE.BufferGeometry().setFromPoints(pts),
-    new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.6 }),
-  );
+  return buildPathRing(orbitPath(id), color);
 }
 
 /** Build the destination mesh at the given style. Texture-aware: when
@@ -576,7 +564,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   scene.add(kuiperBelt);
 
   // Earth orbit + initial destination orbit (Mars by default).
-  const earthOrbitLine = buildOrbitRing(R_EARTH_AU, 0x4b9cd3);
+  const earthOrbitLine = buildPathRing(earthOrbitPath(), 0x4b9cd3);
   let destinationOrbitLine = buildBodyOrbitRing('mars', 0xc1440e);
   scene.add(earthOrbitLine);
   scene.add(destinationOrbitLine);

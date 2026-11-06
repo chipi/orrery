@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.000018,
+      "met": 0.0035,
       "label": "APOGÄUM",
       "note": "Apogäum 190 km nach 2,5 Minuten; ca. 5 min Schwerelosigkeit.",
       "type": "info"
     },
     {
-      "met": 0.000174,
+      "met": 0.0108,
       "label": "WASSERTREFFER",
       "note": "Atlantischer Ozean 480 km vor dem geplanten Landepunkt. Hatch feuerte vorzeitig — Kapsel lief voll Wasser und versank. Grissom entkam; geborgen durch USS Randolph.",
       "type": "warning"

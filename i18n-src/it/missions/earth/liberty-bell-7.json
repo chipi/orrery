@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.000018,
+      "met": 0.0035,
       "label": "APOGEO",
       "note": "Apogeo 190 km dopo 2,5 minuti; ~5 min di assenza di gravità.",
       "type": "info"
     },
     {
-      "met": 0.000174,
+      "met": 0.0108,
       "label": "AMMARAGGIO",
       "note": "Oceano Atlantico, a 480 km dalla rampa di lancio nella direzione del volo. Il portello si è azionato prematuramente — la capsula si è allagata ed è affondata. Grissom è riuscito a mettersi in salvo; recuperato dalla USS Randolph.",
       "type": "warning"

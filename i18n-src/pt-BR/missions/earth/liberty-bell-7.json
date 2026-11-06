@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.000018,
+      "met": 0.0035,
       "label": "APOGEU",
       "note": "Apogeu de 190 km após 2,5 minutos; ~5 min de imponderabilidade.",
       "type": "info"
     },
     {
-      "met": 0.000174,
+      "met": 0.0108,
       "label": "POUSO",
       "note": "Oceano Atlântico 480 km a favor do vento. Escotilha disparou prematuramente — cápsula encheu de água e afundou. Grissom escapou; recuperado pelo USS Randolph.",
       "type": "warning"

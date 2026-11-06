@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.000018,
+      "met": 0.0035,
       "label": "APOGEUM",
       "note": "Apogeum 190 km na 2,5 minuten; ~5 min gewichtloosheid.",
       "type": "info"
     },
     {
-      "met": 0.000174,
+      "met": 0.0108,
       "label": "WATERSPLASHDOWN",
       "note": "Atlantische Oceaan, 480 km van de lanceerplaats. Het luik werd voortijdig afgeschoten — capsule liep vol water en zonk. Grissom ontsnapte; geborgen door de USS Randolph.",
       "type": "warning"

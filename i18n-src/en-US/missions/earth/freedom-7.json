@@ -6,7 +6,7 @@
   "type": "CREWED SUBORBITAL · FLOWN",
   "first": "First American in space",
   "dispatch": "Freedom 7 is where American human spaceflight begins. Three weeks after Gagarin had already orbited the Earth, Alan Shepard's flight was shorter, lower, and slower — fifteen minutes, straight up and straight back down, never even reaching orbit — and the country celebrated anyway, because for the first time an American had left the planet. What set it apart from Gagarin's flight was the man: Shepard hand-flew his capsule's attitude in space, where Gagarin had ridden a fully automated one, and to a program built around test pilots that difference was everything. Twenty days later, its success gave Kennedy the nerve to stand before Congress and bet the nation on the Moon. A small flight that started something very large.",
-  "description": "Alan Shepard's 15-minute suborbital flight — first American in space, 23 days after Yuri Gagarin's Vostok 1 orbital flight. Apogee 187 km; max-g 11.6 g during re-entry; max-Q 3.7 g. Capsule Freedom 7 splashed down 487 km downrange in the Atlantic. Shepard reportedly remarked \"What a beautiful view\" at apogee. The flight was suborbital because the Mercury-Redstone launcher couldn't reach orbital velocity; subsequent orbital Mercury missions used the more powerful Atlas LV-3B. Capsule Freedom 7 is on display at the JFK Presidential Library, Boston MA.",
+  "description": "Alan Shepard's 15-minute suborbital flight — first American in space, 23 days after Yuri Gagarin's Vostok 1 orbital flight. Apogee 187 km; max-g 11.6 g during re-entry; max-Q 3.7 g. Capsule Freedom 7 splashed down 487 km downrange in the Atlantic. Shepard reportedly remarked \"What a beautiful view\" at apogee. The flight was suborbital because the Mercury-Redstone launcher couldn't reach orbital velocity; subsequent orbital Mercury missions used the more powerful Atlas LV-3B. Capsule Freedom 7 is on display at the Smithsonian National Air and Space Museum, Washington DC.",
   "events": [
     {
       "met": 0,
@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.000018,
+      "met": 0.0035,
       "label": "APOGEE",
-      "note": "Apogee 187 km after 2.5 minutes; weightlessness for ~5 min.",
+      "note": "Apogee 187 km; weightlessness for ~5 min.",
       "type": "info"
     },
     {
-      "met": 0.000174,
+      "met": 0.0107,
       "label": "SPLASHDOWN",
       "note": "Capsule splashed down 487 km downrange in Atlantic Ocean. Recovery by USS Lake Champlain.",
       "type": "nominal"

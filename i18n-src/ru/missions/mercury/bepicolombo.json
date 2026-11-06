@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "Стартовая сборка 4100 кг: MTM (Mercury Transfer Module, ESA — 4 ионных двигателя, солнечные батареи) + MPO (Mercury Planetary Orbiter, ESA, 1230 кг, 11 приборов) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 кг, 5 приборов) + солнцезащитный экран MOSIF. Два научных орбитальных аппарата разделяются после прибытия к Меркурию.",
+  "payload": "Стартовая сборка 4100 кг: MTM (Mercury Transfer Module, ESA — 4 ионных двигателя, солнечные батареи) + MPO (Mercury Planetary Orbiter, ESA, 1230 кг, 11 приборов) + MIO (Mercury Magnetospheric Orbiter, JAXA, 255 кг, 5 приборов) + солнцезащитный экран MOSIF. Два научных орбитальных аппарата разделяются после прибытия к Меркурию.",
   "delta_v": "~7,2 км/с (ионный перелёт + 9 гравитационных манёвров + MOI)",
   "type": "ОРБИТАЛЬНЫЙ АППАРАТ · АКТИВНА",
   "first": "Первая совместная миссия Европы и Японии к планете; второй космический аппарат, вышедший на орбиту Меркурия (после Messenger)",

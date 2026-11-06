@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "발사 시 스택 4100 kg: MTM(Mercury Transfer Module, ESA — 이온 추력기 4기, 태양 전지판) + MPO(Mercury Planetary Orbiter, ESA, 1230 kg, 장비 11종) + MIO(Mercury Magnetospheric Orbiter, JAXA, 285 kg, 장비 5종) + MOSIF 햇빛 가리개. 수성 도착 후 과학 궤도선 2기가 분리된다.",
+  "payload": "발사 시 스택 4100 kg: MTM(Mercury Transfer Module, ESA — 이온 추력기 4기, 태양 전지판) + MPO(Mercury Planetary Orbiter, ESA, 1230 kg, 장비 11종) + MIO(Mercury Magnetospheric Orbiter, JAXA, 255 kg, 장비 5종) + MOSIF 햇빛 가리개. 수성 도착 후 과학 궤도선 2기가 분리된다.",
   "delta_v": "~7.2 km/s (이온 순항 + 중력 보조 9회 + 수성 궤도 진입)",
   "type": "궤도선 · 운용 중",
   "first": "유럽과 일본의 첫 공동 행성 탐사 임무; 수성 궤도에 진입한 두 번째 우주선 (Messenger 이후)",

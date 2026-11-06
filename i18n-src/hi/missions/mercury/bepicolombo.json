@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "4100 kg प्रक्षेपण स्टैक: MTM (Mercury Transfer Module, ESA — 4 आयन थ्रस्टर, सौर पैनल) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 उपकरण) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 उपकरण) + MOSIF सूर्य-कवच। बुध पर पहुँचने के बाद दोनों वैज्ञानिक ऑर्बिटर अलग हो जाते हैं।",
+  "payload": "4100 kg प्रक्षेपण स्टैक: MTM (Mercury Transfer Module, ESA — 4 आयन थ्रस्टर, सौर पैनल) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 उपकरण) + MIO (Mercury Magnetospheric Orbiter, JAXA, 255 kg, 5 उपकरण) + MOSIF सूर्य-कवच। बुध पर पहुँचने के बाद दोनों वैज्ञानिक ऑर्बिटर अलग हो जाते हैं।",
   "delta_v": "~7.2 km/s (आयन-यात्रा + 9 गुरुत्व-सहायताएँ + MOI)",
   "type": "ऑर्बिटर · सक्रिय",
   "first": "यूरोप और जापान का पहला संयुक्त ग्रह-मिशन; बुध की परिक्रमा करने वाला दूसरा अंतरिक्ष यान (Messenger के बाद)",

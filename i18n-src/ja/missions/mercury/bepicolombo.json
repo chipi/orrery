@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "打上げ時スタック4100 kg：MTM（Mercury Transfer Module、ESA——イオンスラスター4基、太陽電池パネル）＋MPO（Mercury Planetary Orbiter、ESA、1230 kg、観測機器11種）＋MIO（Mercury Magnetospheric Orbiter、JAXA、285 kg、観測機器5種）＋MOSIFサンシールド。水星到着後に2機の科学観測機が分離する。",
+  "payload": "打上げ時スタック4100 kg：MTM（Mercury Transfer Module、ESA——イオンスラスター4基、太陽電池パネル）＋MPO（Mercury Planetary Orbiter、ESA、1230 kg、観測機器11種）＋MIO（Mercury Magnetospheric Orbiter、JAXA、255 kg、観測機器5種）＋MOSIFサンシールド。水星到着後に2機の科学観測機が分離する。",
   "delta_v": "~7.2 km/s（イオン推進の巡航＋スイングバイ9回＋水星周回軌道投入）",
   "type": "衛星軌道周回機 · 運用中",
   "first": "欧州と日本による初の共同惑星探査ミッション。水星を周回する探査機としては、Messengerに次いで史上2機目",

@@ -1864,6 +1864,7 @@
   ],
   "/images/fleet-galleries/atlas-lv-3b/03": [
     320,
+    640,
     853,
     960
   ],
@@ -3296,6 +3297,7 @@
   "/images/fleet-galleries/hope/03": [
     320,
     591,
+    640,
     946,
     960
   ],
@@ -4033,6 +4035,7 @@
   ],
   "/images/fleet-galleries/lucy/03": [
     320,
+    640,
     1280,
     2048,
     3072
@@ -4296,6 +4299,7 @@
   ],
   "/images/fleet-galleries/lunokhod-2/03": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/lunokhod-2/04": [
@@ -4365,6 +4369,7 @@
   ],
   "/images/fleet-galleries/mangalyaan/03": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/mangalyaan/04": [
@@ -4802,6 +4807,7 @@
   ],
   "/images/fleet-galleries/oneweb/03": [
     320,
+    640,
     1280,
     1920
   ],
@@ -5058,6 +5064,7 @@
   ],
   "/images/fleet-galleries/pragyan/02": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/pragyan/03": [
@@ -5364,6 +5371,7 @@
   ],
   "/images/fleet-galleries/salyut-1/04": [
     320,
+    640,
     1280,
     1920
   ],
@@ -5792,6 +5800,7 @@
   ],
   "/images/fleet-galleries/soyuz-7k-ok/02": [
     320,
+    640,
     1280
   ],
   "/images/fleet-galleries/soyuz-7k-ok/03": [
@@ -5837,6 +5846,7 @@
   ],
   "/images/fleet-galleries/soyuz-t/04": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/soyuz-t/05": [
@@ -6151,6 +6161,7 @@
   ],
   "/images/fleet-galleries/starlink/02": [
     320,
+    640,
     1280,
     1920
   ],
@@ -6165,6 +6176,7 @@
   ],
   "/images/fleet-galleries/starship/01": [
     320,
+    640,
     1196,
     1600
   ],
@@ -6425,6 +6437,7 @@
   ],
   "/images/fleet-galleries/vega-1/01": [
     320,
+    640,
     1280,
     1920
   ],
@@ -6787,6 +6800,7 @@
   ],
   "/images/fleet-galleries/vulcan/04": [
     320,
+    640,
     1280,
     1600
   ],
@@ -7547,6 +7561,7 @@
   ],
   "/images/mars-sites/mangalyaan/01": [
     320,
+    640,
     960
   ],
   "/images/mars-sites/mangalyaan/02": [
@@ -8930,6 +8945,7 @@
   "/images/missions/hope-probe/03": [
     320,
     591,
+    640,
     946,
     960
   ],
@@ -9058,6 +9074,7 @@
   ],
   "/images/missions/lucy/03": [
     320,
+    640,
     674
   ],
   "/images/missions/luna10/01": [
@@ -9511,6 +9528,7 @@
   ],
   "/images/missions/opportunity/03": [
     320,
+    640,
     1018,
     1629,
     1920
@@ -9794,6 +9812,7 @@
   ],
   "/images/missions/pioneer-10/01": [
     320,
+    640,
     1280,
     1400
   ],
@@ -10478,6 +10497,7 @@
   ],
   "/images/missions/ulysses/01": [
     320,
+    640,
     960
   ],
   "/images/missions/ulysses/03": [
@@ -19183,6 +19203,20 @@
     3072
   ],
   "/images/anatomy/starship-hls": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/cassini": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/voyager-2": [
     320,
     640,
     1280,

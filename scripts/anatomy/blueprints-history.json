@@ -44,5 +44,90 @@
       "notes": "The Venus 1 → Venus 2 leg is drawn as one conic; the real flight had a deep space manoeuvre on 3 Dec 1998, noted on the sheet. SRMU thrust left off: Wikipedia's 15.12 MN does not say per motor or both.",
       "content_check": "Fixed: our payload said the orbiter was ~5712 kg dry; 5,712 kg is the whole stack at launch, dry is 2,523 kg (all 14 locales, commit cd90ae7b4a5). Checked and kept: Huygens ~318 kg (ESA probe mass), Venus 1 284 km (JPL); the sheet uses these. Added to the sheet from our data: SOI 96-minute burn, 626 m/s (JPL)."
     }
+  },
+  "queue": {
+    "_about": "Order for the remaining /explore missions (2026-11-06): the most distinct missions first, near-twins of a sheet already done (or of one earlier in the list) last. 'needs' = what blueprint-plan-view.ts lacks for that mission today.",
+    "order": [
+      {
+        "id": "rosetta",
+        "why": "comet chase: three Earth flybys and one of Mars, ten years to rendezvous, orbit and Philae lander",
+        "needs": "comet 67P orbit (Keplerian elements), rendezvous end"
+      },
+      {
+        "id": "ulysses",
+        "why": "out of the ecliptic: Jupiter flings it over the Sun’s poles — the side elevation becomes the hero",
+        "needs": "polar view as main panel"
+      },
+      {
+        "id": "new-horizons",
+        "why": "fastest launch ever, one Jupiter assist, Pluto and then Arrokoth",
+        "needs": "Pluto/Arrokoth positions"
+      },
+      {
+        "id": "venera-13",
+        "why": "Venus lander: a short transfer inward, 127 minutes on a 457 °C surface, first colour images",
+        "needs": "inward transfer; entry/landing in place of flybys"
+      },
+      {
+        "id": "galileo",
+        "why": "VEEGA path, Jupiter orbiter and the first probe into a giant planet’s atmosphere",
+        "needs": "inner-loop detail (as Cassini)"
+      },
+      {
+        "id": "dawn",
+        "why": "ion engine: orbited two bodies, Vesta then Ceres",
+        "needs": "low-thrust spiral (not conics), Vesta/Ceres positions"
+      },
+      {
+        "id": "hayabusa2",
+        "why": "round trip: ion engine to Ryugu, sample, return capsule to Earth",
+        "needs": "asteroid Ryugu orbit, return leg"
+      },
+      {
+        "id": "juno",
+        "why": "solar-powered polar orbiter of Jupiter after one Earth flyby",
+        "needs": "Earth-flyby loop detail"
+      },
+      {
+        "id": "bepicolombo",
+        "why": "nine flybys (Earth, Venus ×2, Mercury ×6) to brake into Mercury orbit",
+        "needs": "Mercury in the ephemeris types, many short legs"
+      },
+      {
+        "id": "juice",
+        "why": "first lunar–Earth double flyby, to end in Ganymede orbit",
+        "needs": "Moon flyby in the inner detail; future events marked planned"
+      },
+      {
+        "id": "giotto",
+        "why": "closest look at Halley’s nucleus, 596 km, then Grigg–Skjellerup",
+        "needs": "comet Halley orbit"
+      },
+      {
+        "id": "pioneer-10",
+        "why": "first through the asteroid belt and first to Jupiter",
+        "needs": "—"
+      },
+      {
+        "id": "vega-1",
+        "why": "Venus balloon and lander, then Halley — close to Venera 13 and Giotto",
+        "needs": "Venus flyby + Halley"
+      },
+      {
+        "id": "pioneer-11",
+        "why": "Pioneer 10’s twin, on to Saturn — close to Pioneer 10",
+        "needs": "—"
+      },
+      {
+        "id": "voyager-1",
+        "why": "Voyager 2’s twin: Jupiter, Saturn, Titan and out — close to Voyager 2",
+        "needs": "—"
+      },
+      {
+        "id": "vega-2",
+        "why": "Vega 1’s twin — the last, most similar sheet",
+        "needs": "as Vega 1"
+      }
+    ]
   }
 }

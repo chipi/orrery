@@ -46,3 +46,11 @@ write('src/lib/landing-sequence-ids.json', sequences);
 console.log(
   `${sequences.length} landing-sequence ids → src/lib/landing-sequence-ids.json (from masters/landing-sequences).`,
 );
+
+// Mission blueprints (#641): one per mission, keyed by mission id — the top of the mission
+// panel's FLIGHT tab. How each was made: scripts/anatomy/blueprints-history.json.
+const blueprints = idsFrom('masters/blueprints', /\.(png|webp)$/);
+write('src/lib/blueprint-ids.json', blueprints);
+console.log(
+  `${blueprints.length} blueprint ids → src/lib/blueprint-ids.json (from masters/blueprints).`,
+);

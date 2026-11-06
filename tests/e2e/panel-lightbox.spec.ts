@@ -119,11 +119,37 @@ test.describe('panel lightbox', () => {
     await openAndCloseFromHero(page);
   });
 
+  // A mission with a blueprint shows it on OVERVIEW; it opens alone in the viewer and zooms.
+  test('mission blueprint opens full size and zooms', async ({ page }) => {
+    await page.goto('/missions?id=voyager-2');
+    const fig = page.getByTestId('mission-blueprint').filter({ visible: true }).first();
+    await expect(fig).toBeVisible({ timeout: 10_000 });
+    await fig.locator('button').click();
+    const img = page.getByTestId('lightbox-img');
+    await expect(img).toHaveAttribute('src', /blueprints\/voyager-2/);
+    await expect(page.locator('.lightbox-count')).toHaveCount(0);
+    await page.getByTestId('lightbox-zoom-in').click();
+    await expect(page.getByTestId('lightbox-zoom-level')).toHaveText('150%');
+    await page.keyboard.press('Escape');
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.lightbox-root')).toHaveCount(0);
+  });
+
+  test('a mission without a blueprint shows none', async ({ page }) => {
+    await page.goto('/missions?id=galileo');
+    await expect(page.locator('.panel-hero-btn').first()).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByTestId('mission-blueprint')).toHaveCount(0);
+  });
+
   // A drawing opens as a set (anatomy, then exploded view), and the viewer zooms in to the
   // full-resolution base for reading the labels; Esc first resets the zoom, then closes.
   test('fleet drawings step as a set and zoom', async ({ page }) => {
     await page.goto('/fleet?id=curiosity');
-    await page.getByRole('tab', { name: /detail/i }).filter({ visible: true }).first().click();
+    await page
+      .getByRole('tab', { name: /detail/i })
+      .filter({ visible: true })
+      .first()
+      .click();
     await page.locator('.anatomy-open').first().click();
     const img = page.getByTestId('lightbox-img');
     await expect(img).toBeVisible({ timeout: 5_000 });

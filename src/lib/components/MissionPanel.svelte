@@ -31,6 +31,9 @@
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
   import { hasTrajectory } from '$lib/data/interstellar';
+  import { missionBlueprint } from '$lib/blueprints';
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
 
   // The former LEARN tab folds into SCIENCE (Phase 4 cleanup): ScienceCards
   // on top, the tiered learn-link list below — one tab destination, less
@@ -61,6 +64,9 @@
   /** Thumbs under GALLERY tab: skip first image when a hero duplicates it. */
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
+  // Mission blueprint (#641): shown on OVERVIEW and atop FLIGHT; opens alone in the zoom viewer.
+  let blueprint = $derived(mission ? missionBlueprint(mission.id) : null);
+  let lightboxImages = $derived(lightboxSrc && lightboxSrc === blueprint ? [blueprint] : gallery);
   // PRD-031 / RFC-033 S1 — linked videos interleaved into the gallery rail.
   let videos = $state<VideoProvenanceEntry[]>([]);
   let playerVideo = $state<VideoProvenanceEntry | null>(null);
@@ -351,6 +357,9 @@
         {#if mission.dispatch}
           <p class="dispatch">{mission.dispatch}</p>
         {/if}
+        {#if blueprint}
+          {@render blueprintFigure(blueprint)}
+        {/if}
         <div class="grid">
           <div class="cell">
             <div class="cell-label">{m.mp_label_departure()}</div>
@@ -494,6 +503,9 @@
              the panel shows flight data + the path it produces in
              one place. Only missions with flight data have one
              (mission-thumbnails.test.ts); asking for the rest 404ed on prod. -->
+        {#if blueprint}
+          {@render blueprintFigure(blueprint)}
+        {/if}
         {#if mission.flight}
           <figure class="flight-thumbnail">
             <img
@@ -868,11 +880,71 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
+{#snippet blueprintFigure(src: string)}
+  <figure class="blueprint" data-testid="mission-blueprint">
+    <button
+      type="button"
+      class="blueprint-open"
+      onclick={() => (lightboxSrc = src)}
+      aria-label={m.mp_blueprint_open_aria({ name: mission?.name ?? '' })}
+    >
+      <img
+        {...responsive(src, IMAGE_SIZES.panel)}
+        alt={m.mp_blueprint_alt({ name: mission?.name ?? '' })}
+        loading="lazy"
+        decoding="async"
+      />
+    </button>
+    <figcaption>
+      <span class="blueprint-title">{m.mp_blueprint_heading()}</span>
+      {m.mp_blueprint_caption()}
+    </figcaption>
+  </figure>
+{/snippet}
+
+<PanelLightbox src={lightboxSrc} images={lightboxImages} onClose={() => (lightboxSrc = null)} />
 
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
 <style>
+  .blueprint {
+    margin: 12px 0 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 10px;
+  }
+  .blueprint-open {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+  }
+  .blueprint img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+  }
+  .blueprint figcaption {
+    margin: 8px 0 0;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-style: italic;
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .blueprint-title {
+    display: block;
+    font-family: inherit;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2px;
+  }
   .head {
     padding: 0 0 12px 0;
     border-bottom: 1px solid var(--color-border);

@@ -95944,6 +95944,116 @@
    "pageid": 129295051,
    "nasa_id": null,
    "fetched_at": "2026-11-05T11:09:33.448Z"
+  },
+  {
+   "id": "98e06980aa982afb",
+   "path": "/images/fleet-galleries/long-march-10/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Long_March_10_mockup_-_NMC.jpg",
+   "author": "Shujianyang (photo at the National Museum of China)",
+   "agency": "CMSA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Long_March_10_mockup_-_NMC.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Long_March_10_mockup_-_NMC.jpg",
+   "license_short": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "license_rationale": "No rights reserved.",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-jpeg",
+    "reencoded-webp-ladder"
+   ],
+   "revid": 1154032548,
+   "pageid": 134178584,
+   "nasa_id": null,
+   "fetched_at": "2026-11-06T10:21:55.910Z"
+  },
+  {
+   "id": "b5dcf236f51f716d",
+   "path": "/images/fleet-galleries/mengzhou/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Mengzhou_2020_prototype_return_capsule.png",
+   "author": "China News Service (中国新闻社)",
+   "agency": "CMSA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Mengzhou_2020_prototype_return_capsule.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Mengzhou_2020_prototype_return_capsule.png",
+   "license_short": "CC-BY-3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-jpeg",
+    "reencoded-webp-ladder"
+   ],
+   "revid": 1196673538,
+   "pageid": 188481138,
+   "nasa_id": null,
+   "fetched_at": "2026-11-06T10:21:55.910Z"
+  },
+  {
+   "id": "3f03365595e6ef14",
+   "path": "/images/fleet-galleries/lanyue/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Chinese_crewed_lunar_lander_mockup_01_-_NMC.jpg",
+   "author": "Shujianyang (photo at the National Museum of China)",
+   "agency": "CMSA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Chinese_crewed_lunar_lander_mockup_01_-_NMC.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Chinese_crewed_lunar_lander_mockup_01_-_NMC.jpg",
+   "license_short": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "license_rationale": "No rights reserved.",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-jpeg",
+    "reencoded-webp-ladder"
+   ],
+   "revid": 979537098,
+   "pageid": 134178585,
+   "nasa_id": null,
+   "fetched_at": "2026-11-06T10:21:55.910Z"
+  },
+  {
+   "id": "d5b5236b392a7ff8",
+   "path": "/images/fleet-galleries/promise/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:The_full-scale_engineering_model_of_NASA's_Perseverance_rover,_OPTIMISM_Rover.jpg",
+   "author": "NASA/JPL-Caltech",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:The_full-scale_engineering_model_of_NASA%27s_Perseverance_rover,_OPTIMISM_Rover.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/The_full-scale_engineering_model_of_NASA%27s_Perseverance_rover%2C_OPTIMISM_Rover.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-jpeg",
+    "reencoded-webp-ladder"
+   ],
+   "revid": 1093647526,
+   "pageid": 109667188,
+   "nasa_id": null,
+   "fetched_at": "2026-11-06T10:21:55.910Z"
+  },
+  {
+   "id": "5953b9d58760d607",
+   "path": "/images/moon-sites/change7/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Artist_view_of_Chang'e_7_lunar_mission_on_the_Moon.png",
+   "author": "China News Service (中国新闻社)",
+   "agency": "CNSA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
+   "license_short": "CC-BY-3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-jpeg",
+    "reencoded-webp-ladder"
+   ],
+   "revid": 1203276382,
+   "pageid": 188679355,
+   "nasa_id": null,
+   "fetched_at": "2026-11-06T10:21:55.910Z"
   }
  ]
 }

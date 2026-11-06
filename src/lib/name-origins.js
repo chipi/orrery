@@ -155,6 +155,8 @@ export const ORIGIN_NAMES = {
     Wentian: '问天',
     Mengtian: '梦天',
     Tianzhou: '天舟',
+    Mengzhou: '梦舟',
+    Lanyue: '揽月',
     "Chang'e": '嫦娥',
     Yutu: '玉兔',
     Queqiao: '鹊桥',

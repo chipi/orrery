@@ -3478,5 +3478,53 @@
     "status": "ACTIVE",
     "first_flight": "2016-11-03",
     "tagline": "China's first large hydrogen engine — the Long March 5 core"
+  },
+  {
+    "id": "long-march-10",
+    "name": "Long March 10 / 10A",
+    "category": "launcher",
+    "agency": "CMSA",
+    "country": "China",
+    "era": "planned",
+    "epoch": "lunar-return",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "China's Moon rocket in development: two launches carry the Mengzhou crew ship and the Lanyue lander for a crewed landing before 2030"
+  },
+  {
+    "id": "mengzhou",
+    "name": "Mengzhou",
+    "category": "crewed-spacecraft",
+    "agency": "CMSA",
+    "country": "China",
+    "era": "planned",
+    "epoch": "lunar-return",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "China's next crew spacecraft, in development: it takes astronauts to lunar orbit to meet the Lanyue lander"
+  },
+  {
+    "id": "lanyue",
+    "name": "Lanyue",
+    "category": "lander",
+    "agency": "CMSA",
+    "country": "China",
+    "era": "planned",
+    "epoch": "lunar-return",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "China's crewed lunar lander, in development: two astronauts go down in it while Mengzhou waits in orbit"
+  },
+  {
+    "id": "promise",
+    "name": "PROMISE",
+    "category": "rover",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "planned",
+    "epoch": "lunar-return",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "Proposed 2026: a JPL Mars-rover test twin, nuclear-powered, sent to the lunar south pole to scout for a Moon base"
   }
 ]

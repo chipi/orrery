@@ -26,12 +26,14 @@ const ROOT = process.cwd();
 const ROUTE_PARAMS = {
   '/missions': ['id', 'from'],
   '/fleet': ['id', 'from', 'category', 'view'],
+  '/moon': ['site'], // SurfaceScene.svelte reads ?site=
 };
 
 // Where the ids a parameter selects are listed.
 const ID_SOURCES = {
   '/missions?id': 'static/data/missions/index.json',
   '/fleet?id': 'static/data/fleet/index.json',
+  '/moon?site': 'static/data/moon-sites.json',
 };
 
 // Tooling records, not site content: image-sourcing dry runs and curation logs

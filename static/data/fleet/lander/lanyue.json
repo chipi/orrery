@@ -1,0 +1,32 @@
+{
+  "id": "lanyue",
+  "name": "Lanyue",
+  "category": "lander",
+  "agency": "CMSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "lunar-return",
+  "best_known_for": "China's crewed lunar lander, in development: two astronauts go down in it while Mengzhou waits in orbit",
+  "credit": "Lanyue (揽月, \"embracing the Moon\") is the lander for China's crewed landing, planned before 2030. Launched separately on a Long March 10, it meets Mengzhou in lunar orbit, takes two astronauts to the surface with the Tansuo rover and Wangyu suits, and lifts them back to orbit; a propulsion stage brakes the stack out of lunar orbit and is jettisoned near the surface, after which the lander finishes the descent on its own engines. A full-scale integrated landing and take-off test was carried out at a test site in Huailai, Hebei, in August 2025. China plans an uncrewed Lanyue landing and a full uncrewed rehearsal before any crew goes; no landing site has been announced.",
+  "links": [
+    {
+      "l": "China Space Day: how far have we come toward a manned lunar landing — CGTN (Apr 2026)",
+      "u": "https://news.cgtn.com/news/2026-04-24/China-Space-Day-How-far-have-we-come-toward-a-manned-lunar-landing--1MBhqOD8nQs/p.html",
+      "t": "intro"
+    },
+    {
+      "l": "China unveils detailed plan for crewed Moon landing — Universe Today (Nov 2026)",
+      "u": "https://www.universetoday.com/articles/china-unveils-their-plan-for-a-crewed-moon-landing",
+      "t": "core"
+    },
+    {
+      "l": "China lunar lander test success — The Register (Aug 2025)",
+      "u": "https://www.theregister.com/2025/08/11/china_lunar_lander_test_success/",
+      "t": "deep"
+    }
+  ],
+  "linked_sites": []
+}

@@ -67,7 +67,7 @@
     },
     {
       "type": "prose",
-      "md": "Restare è un problema diverso. Restare significa sopravvivere alla notte, ogni volta. Significa procurarsi energia durante due settimane di buio, il che richiede o l'energia nucleare (che gli Stati Uniti non portano sulla superficie di un pianeta dai lander Viking degli anni Settanta) o un luogo vicino al polo dove, sugli orli dei crateri, il Sole c'è per la maggior parte del tempo. Significa tenere sotto controllo l'accumulo di polvere nell'arco di mesi anziché di giorni. Significa un grado di infrastruttura — alimentazione, ripetitori di comunicazione, habitat — che l'Apollo non ha mai tentato. L'ambizione dichiarata del programma Artemis è una presenza umana stabile al polo sud. Quell'obiettivo è ancora lontano anni dalla realizzazione. [Artemis II](/missions?id=artemis2), il primo volo con equipaggio (un sorvolo lunare, non un allunaggio), è in programma ma non ancora effettuato. Artemis IV, ora previsto come il primo allunaggio con equipaggio dai tempi dell'Apollo, dovrebbe mirare alla regione del polo sud. In entrambe le frasi \"in programma\" regge un peso notevole."
+      "md": "Restare è un problema diverso. Restare significa sopravvivere alla notte, ogni volta. Significa procurarsi energia durante due settimane di buio, il che richiede o l'energia nucleare (che gli Stati Uniti non portano sulla superficie di un pianeta dai lander Viking degli anni Settanta) o un luogo vicino al polo dove, sugli orli dei crateri, il Sole c'è per la maggior parte del tempo. Significa tenere sotto controllo l'accumulo di polvere nell'arco di mesi anziché di giorni. Significa un grado di infrastruttura — alimentazione, ripetitori di comunicazione, habitat — che l'Apollo non ha mai tentato. L'ambizione dichiarata del programma Artemis è una presenza umana stabile al polo sud. Quell'obiettivo è ancora lontano anni dalla realizzazione. [Artemis II](/missions?id=artemis2), il primo volo con equipaggio (un sorvolo lunare, non un allunaggio), è stato effettuato nell'aprile 2026. Artemis IV, ora previsto come il primo allunaggio con equipaggio dai tempi dell'Apollo, dovrebbe mirare alla regione del polo sud. In quella frase \"previsto\" regge un peso notevole."
     },
     {
       "type": "figure",
@@ -106,6 +106,22 @@
       "kind": "diagram",
       "caption": "La Luna è più frequentata di quanto non sia stata dagli anni Settanta, e per la prima volta il cast è davvero globale: i primati sovietici del programma Luna, l'Apollo americano, la Cina che raggiunge due volte la faccia nascosta, l'India al polo sud, l'allunaggio di precisione del Giappone. La domanda più antica che il volo spaziale pone, ora posta da una parte più ampia della specie che mai.",
       "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Una seconda corsa"
+    },
+    {
+      "type": "prose",
+      "md": "La Luna è affollata anche in un altro senso: è di nuovo una corsa. L'obiettivo dichiarato della Cina è far allunare i propri astronauti prima del 2030, e il piano vola già a pezzi. Due razzi [Long March 10](/fleet?id=long-march-10) devono partire separatamente — uno con la navicella con equipaggio [Mengzhou](/fleet?id=mengzhou), l'altro con il lander [Lanyue](/fleet?id=lanyue) — e incontrarsi in orbita lunare, dove due astronauti cambiano veicolo, scendono su Lanyue con un rover chiamato Tansuo e tute chiamate Wangyu, e più tardi risalgono. A novembre 2026 il sistema di salvataggio di Mengzhou era stato provato due volte, un Lanyue a grandezza naturale aveva completato a terra una prova di atterraggio e decollo, e un primo stadio della famiglia Long March 10 aveva compiuto un primo volo a bassa quota. Alla fine di ottobre 2026 la Cina ha illustrato i passi che restano: un allunaggio di Lanyue senza equipaggio, poi una prova generale completa senza equipaggio dell'intera missione, e solo allora un equipaggio. Non ha ancora detto dove."
+    },
+    {
+      "type": "prose",
+      "md": "Washington se n'è accorta. Nel febbraio 2026 la NASA ha ridisegnato Artemis: Artemis III è diventata una prova in orbita terrestre nel 2027, e [Artemis IV](/missions?id=artemis4), prevista per il 2028, il primo allunaggio, con almeno un altro ogni anno successivo. «Con una concorrenza credibile del nostro maggiore avversario geopolitico che cresce di giorno in giorno», ha detto l'amministratore della NASA Jared Isaacman, «dobbiamo muoverci più in fretta, eliminare i ritardi e raggiungere i nostri obiettivi». A maggio si è spinto oltre, prevedendo che le prossime persone a volare attorno alla Luna, probabilmente nel 2027, sarebbero state cinesi — una data che la Cina stessa non ha annunciato — e paragonando il momento alla corsa con l'Unione Sovietica. La NASA ha anche proposto [PROMISE](/fleet?id=promise), un rover a propulsione nucleare costruito da uno dei gemelli di prova dei rover marziani del JPL, per esplorare il polo sud in vista di una base, anche se Isaacman ha detto che non volerà a meno che non costi poco."
+    },
+    {
+      "type": "prose",
+      "md": "Entrambi puntano allo stesso luogo. L'esploratore robotico cinese, [Chang'e 7](/moon?site=change7), dovrebbe posarsi vicino al polo sud ben prima di qualsiasi equipaggio — il suo lancio, previsto per fine agosto 2026, è stato annullato alla vigilia della finestra di lancio — e la Cina prevede lì una stazione di ricerca internazionale entro il 2035 circa. La prima volta la corsa finì con il vincitore che tornava a casa. Questa volta entrambe le parti dicono di voler restare, e così la domanda è meno chi arriva per primo che chi costruisce qualcosa che duri."
     },
     {
       "type": "heading",

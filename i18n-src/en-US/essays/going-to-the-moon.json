@@ -67,7 +67,7 @@
     },
     {
       "type": "prose",
-      "md": "Staying is a different problem. Staying means surviving the night, repeatedly. It means sourcing power through a fortnight of darkness, which requires either nuclear power (which the US has not sent to a planetary surface since the 1970s Viking landers) or a location near the pole where, on crater rims, the sun is present most of the time. It means managing dust accumulation over months rather than days. It means a degree of infrastructure — power, comms relay, habitat — that Apollo never attempted. The Artemis programme's stated ambition is a sustained human presence at the south pole. That goal is still years from realisation. [Artemis II](/missions?id=artemis2), the first crewed flight (a lunar flyby, not a landing), is planned but not yet flown. Artemis IV, now planned as the first crewed landing since Apollo, is to target the south polar region. \"Planned\" is doing significant work in both those sentences."
+      "md": "Staying is a different problem. Staying means surviving the night, repeatedly. It means sourcing power through a fortnight of darkness, which requires either nuclear power (which the US has not sent to a planetary surface since the 1970s Viking landers) or a location near the pole where, on crater rims, the sun is present most of the time. It means managing dust accumulation over months rather than days. It means a degree of infrastructure — power, comms relay, habitat — that Apollo never attempted. The Artemis programme's stated ambition is a sustained human presence at the south pole. That goal is still years from realisation. [Artemis II](/missions?id=artemis2), the first crewed flight (a lunar flyby, not a landing), flew in April 2026. Artemis IV, now planned as the first crewed landing since Apollo, is to target the south polar region. \"Planned\" is doing significant work in that sentence."
     },
     {
       "type": "figure",
@@ -106,6 +106,22 @@
       "kind": "diagram",
       "caption": "The Moon is busier than it has been since the 1970s, and for the first time the cast is genuinely global: the Soviet Luna firsts, American Apollo, China reaching the farside twice, India at the south pole, Japan’s pinpoint touchdown. The oldest question spaceflight asks, now asked by more of the species than ever.",
       "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "A second race"
+    },
+    {
+      "type": "prose",
+      "md": "The Moon is crowded in another way, too: it is a race again. China's stated aim is to land its own astronauts before 2030, and the plan is already flying in pieces. Two [Long March 10](/fleet?id=long-march-10) rockets are to launch separately — one with the [Mengzhou](/fleet?id=mengzhou) crew spacecraft, the other with the [Lanyue](/fleet?id=lanyue) lander — and meet in lunar orbit, where two astronauts change ship, go down in Lanyue with a rover called Tansuo and suits called Wangyu, and later come back up. By November 2026 Mengzhou's escape system had been tested twice, a full-scale Lanyue had completed a landing-and-take-off test on the ground, and a Long March 10-series booster had made a first low-altitude flight. At the end of October 2026 China set out the steps still ahead: an uncrewed Lanyue landing, then a complete uncrewed rehearsal of the whole mission, and only then a crew. It has not yet said where."
+    },
+    {
+      "type": "prose",
+      "md": "Washington has noticed. In February 2026 NASA reshaped Artemis: Artemis III became a 2027 test in Earth orbit, and [Artemis IV](/missions?id=artemis4), planned for 2028, the first landing, with at least one more every year after. \"With credible competition from our greatest geopolitical adversary increasing by the day,\" NASA Administrator Jared Isaacman said, \"we need to move faster, eliminate delays, and achieve our objectives.\" In May he went further, predicting that the next people to fly around the Moon, likely in 2027, would be Chinese — a date China itself has not announced — and comparing the moment to the race with the Soviet Union. NASA has also proposed [PROMISE](/fleet?id=promise), a nuclear-powered rover built from one of JPL's Mars-rover test twins, to scout the south pole for a base — though Isaacman has said it will not fly unless it is cheap."
+    },
+    {
+      "type": "prose",
+      "md": "Both are heading for the same place. China's robotic scout, [Chang'e 7](/moon?site=change7), is to land near the south pole well before any crew — its launch, due in late August 2026, was called off on the eve of the launch window — and China plans an international research station there by about 2035. The first time, the race ended with the winner going home. This time both sides say they mean to stay, which makes the question less who lands first than who builds something that lasts."
     },
     {
       "type": "heading",

@@ -67,7 +67,7 @@
     },
     {
       "type": "prose",
-      "md": "Zu bleiben ist ein anderes Problem. Bleiben heißt, die Nacht zu überstehen – immer wieder. Es heißt, Energie durch eine zwei Wochen lange Dunkelheit hindurch zu beschaffen, und das erfordert entweder Kernkraft (die die USA seit den Viking-Landern der 1970er Jahre nicht mehr auf eine Planetenoberfläche geschickt haben) oder einen Standort nahe dem Pol, an dem auf den Kraterrändern die Sonne die meiste Zeit scheint. Es heißt, Staubablagerungen über Monate statt über Tage in den Griff zu bekommen. Es heißt, ein Maß an Infrastruktur aufzubauen – Energieversorgung, Kommunikationsrelais, Habitat –, das Apollo nie versucht hat. Das erklärte Ziel des Artemis-Programms ist eine dauerhafte menschliche Präsenz am Südpol. Dieses Ziel ist noch Jahre von der Verwirklichung entfernt. [Artemis II](/missions?id=artemis2), der erste bemannte Flug (ein Vorbeiflug am Mond, keine Landung), ist geplant, aber noch nicht geflogen. Artemis IV, jetzt als erste bemannte Landung seit Apollo geplant, soll die Region um den Südpol anpeilen. „Geplant“ leistet in beiden Sätzen schwere Arbeit."
+      "md": "Zu bleiben ist ein anderes Problem. Bleiben heißt, die Nacht zu überstehen – immer wieder. Es heißt, Energie durch eine zwei Wochen lange Dunkelheit hindurch zu beschaffen, und das erfordert entweder Kernkraft (die die USA seit den Viking-Landern der 1970er Jahre nicht mehr auf eine Planetenoberfläche geschickt haben) oder einen Standort nahe dem Pol, an dem auf den Kraterrändern die Sonne die meiste Zeit scheint. Es heißt, Staubablagerungen über Monate statt über Tage in den Griff zu bekommen. Es heißt, ein Maß an Infrastruktur aufzubauen – Energieversorgung, Kommunikationsrelais, Habitat –, das Apollo nie versucht hat. Das erklärte Ziel des Artemis-Programms ist eine dauerhafte menschliche Präsenz am Südpol. Dieses Ziel ist noch Jahre von der Verwirklichung entfernt. [Artemis II](/missions?id=artemis2), der erste bemannte Flug (ein Vorbeiflug am Mond, keine Landung), flog im April 2026. Artemis IV, jetzt als erste bemannte Landung seit Apollo geplant, soll die Region um den Südpol anpeilen. „Geplant“ leistet in diesem Satz schwere Arbeit."
     },
     {
       "type": "figure",
@@ -106,6 +106,22 @@
       "kind": "diagram",
       "caption": "Auf dem Mond herrscht so viel Betrieb wie seit den 1970er-Jahren nicht mehr, und zum ersten Mal ist die Besetzung wirklich global: die sowjetischen Luna-Premieren, das amerikanische Apollo, China, das zweimal die Mondrückseite erreicht, Indien am Südpol, Japans punktgenaue Landung. Die älteste Frage der Raumfahrt, nun gestellt von mehr Menschen als je zuvor.",
       "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Ein zweiter Wettlauf"
+    },
+    {
+      "type": "prose",
+      "md": "Der Mond ist auch auf andere Weise belebt: Es ist wieder ein Wettlauf. Chinas erklärtes Ziel ist es, vor 2030 eigene Astronauten zu landen, und der Plan fliegt bereits in Teilen. Zwei Raketen vom Typ [Long March 10](/fleet?id=long-march-10) sollen getrennt starten – eine mit dem Besatzungsraumschiff [Mengzhou](/fleet?id=mengzhou), die andere mit dem Lander [Lanyue](/fleet?id=lanyue) – und sich in der Mondumlaufbahn treffen. Dort steigen zwei Astronauten um, fliegen in Lanyue mit einem Rover namens Tansuo und Anzügen namens Wangyu hinab und kehren später wieder hinauf zurück. Bis November 2026 war das Rettungssystem von Mengzhou zweimal getestet, ein Lanyue in Originalgröße hatte am Boden einen Lande- und Starttest absolviert, und eine Erststufe der Long-March-10-Reihe hatte einen ersten Flug in geringer Höhe hinter sich. Ende Oktober 2026 legte China die noch ausstehenden Schritte dar: eine unbemannte Landung von Lanyue, dann eine vollständige unbemannte Generalprobe der ganzen Mission und erst danach eine Besatzung. Wo, hat es noch nicht gesagt."
+    },
+    {
+      "type": "prose",
+      "md": "Washington hat es bemerkt. Im Februar 2026 baute die NASA Artemis um: Artemis III wurde ein Test in der Erdumlaufbahn für 2027, und [Artemis IV](/missions?id=artemis4), geplant für 2028, die erste Landung, danach mindestens eine weitere pro Jahr. „Da die ernsthafte Konkurrenz unseres größten geopolitischen Gegners von Tag zu Tag wächst“, sagte NASA-Administrator Jared Isaacman, „müssen wir schneller werden, Verzögerungen beseitigen und unsere Ziele erreichen.“ Im Mai ging er weiter und sagte voraus, dass die nächsten Menschen, die den Mond umrunden – wohl 2027 –, Chinesen sein würden (ein Termin, den China selbst nicht angekündigt hat), und verglich den Moment mit dem Wettlauf gegen die Sowjetunion. Die NASA hat außerdem [PROMISE](/fleet?id=promise) vorgeschlagen, einen nuklear betriebenen Rover, gebaut aus einem der Testzwillinge der Marsrover des JPL, der den Südpol für eine Basis erkunden soll – wobei Isaacman gesagt hat, er werde nur fliegen, wenn er billig ist."
+    },
+    {
+      "type": "prose",
+      "md": "Beide wollen an denselben Ort. Chinas robotischer Kundschafter [Chang'e 7](/moon?site=change7) soll lange vor jeder Besatzung nahe dem Südpol landen – sein für Ende August 2026 vorgesehener Start wurde am Vorabend des Startfensters abgesagt –, und China plant dort bis etwa 2035 eine internationale Forschungsstation. Beim ersten Mal endete der Wettlauf damit, dass der Sieger nach Hause flog. Diesmal sagen beide Seiten, sie wollten bleiben – und damit lautet die Frage weniger, wer zuerst landet, als wer etwas baut, das Bestand hat."
     },
     {
       "type": "heading",

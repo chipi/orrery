@@ -1,0 +1,32 @@
+{
+  "id": "mengzhou",
+  "name": "Mengzhou",
+  "category": "crewed-spacecraft",
+  "agency": "CMSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "lunar-return",
+  "best_known_for": "China's next crew spacecraft, in development: it takes astronauts to lunar orbit to meet the Lanyue lander",
+  "credit": "Mengzhou (梦舟, \"dream vessel\") is China's new-generation crew spacecraft. For the crewed lunar landing it launches on a Long March 10, meets the Lanyue lander in lunar orbit, and brings the crew home. Its escape system has been tested twice: a zero-height abort in June 2025 and an abort at maximum aerodynamic pressure on the Long March 10 test flight of 11 February 2026. It had not yet flown in orbit by November 2026.",
+  "links": [
+    {
+      "l": "China Space Day: how far have we come toward a manned lunar landing — CGTN (Apr 2026)",
+      "u": "https://news.cgtn.com/news/2026-04-24/China-Space-Day-How-far-have-we-come-toward-a-manned-lunar-landing--1MBhqOD8nQs/p.html",
+      "t": "intro"
+    },
+    {
+      "l": "China conducts low-altitude flight test for Long March 10 rocket — CGTN (11 Feb 2026)",
+      "u": "https://news.cgtn.com/news/2026-02-11/China-conducts-low-altitude-flight-test-for-Long-March-10-rocket-1KFK9b0VBiU/p.html",
+      "t": "deep"
+    },
+    {
+      "l": "China unveils detailed plan for crewed Moon landing — Universe Today (Nov 2026)",
+      "u": "https://www.universetoday.com/articles/china-unveils-their-plan-for-a-crewed-moon-landing",
+      "t": "core"
+    }
+  ],
+  "linked_missions": []
+}

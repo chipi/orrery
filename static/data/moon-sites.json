@@ -828,6 +828,35 @@
     ]
   },
   {
+    "id": "change7",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "CNSA",
+    "nation": "China",
+    "year": 2026,
+    "lat": -88.8,
+    "lon": 123.4,
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "PLANNED",
+    "surface_status": "planned",
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© CNSA — Chang'e 7. China's robotic precursor at the lunar south pole: orbiter, lander, rover and a small hopping probe to look into permanently shadowed craters for water ice. Reported target near the rim of Shackleton crater (about 88.8°S, 123.4°E). The launch, due in late August 2026, was called off on 23 August with no reason or new date given.",
+    "links": [
+      {
+        "l": "Chang'e 7 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Chang%27e_7",
+        "t": "intro"
+      },
+      {
+        "l": "China postpones Chang'e-7 lunar mission launch — Irish News / AP (Aug 2026)",
+        "u": "https://www.irishnews.com/news/world/china-abruptly-postpones-ambitious-change-7-lunar-mission-launch-JLQUEK3BENJYJEYRMWTGDCFXNE/",
+        "t": "deep"
+      }
+    ]
+  },
+  {
     "id": "artemis4",
     "marker": "crewed",
     "kind": "surface",

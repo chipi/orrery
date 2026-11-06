@@ -67,7 +67,7 @@
     },
     {
       "type": "prose",
-      "md": "Ficar é um problema diferente. Ficar significa sobreviver à noite, repetidas vezes. Significa obter energia ao longo de uma quinzena de escuridão, o que exige ou energia nuclear (que os EUA não enviam a uma superfície planetária desde os módulos de pouso Viking, nos anos 1970) ou um local perto do polo onde, nas bordas das crateras, o Sol está presente na maior parte do tempo. Significa lidar com o acúmulo de poeira ao longo de meses, e não de dias. Significa um grau de infraestrutura — energia, retransmissão de comunicações, habitat — que a Apollo nunca tentou. A ambição declarada do programa Artemis é uma presença humana sustentada no polo sul. Esse objetivo ainda está a anos de se concretizar. [Artemis II](/missions?id=artemis2), o primeiro voo tripulado (um sobrevoo lunar, não um pouso), está planejado, mas ainda não voou. Artemis IV, agora planejada como o primeiro pouso tripulado desde a Apollo, tem como alvo a região do polo sul. \"Planejado\" carrega muito peso nas duas frases."
+      "md": "Ficar é um problema diferente. Ficar significa sobreviver à noite, repetidas vezes. Significa obter energia ao longo de uma quinzena de escuridão, o que exige ou energia nuclear (que os EUA não enviam a uma superfície planetária desde os módulos de pouso Viking, nos anos 1970) ou um local perto do polo onde, nas bordas das crateras, o Sol está presente na maior parte do tempo. Significa lidar com o acúmulo de poeira ao longo de meses, e não de dias. Significa um grau de infraestrutura — energia, retransmissão de comunicações, habitat — que a Apollo nunca tentou. A ambição declarada do programa Artemis é uma presença humana sustentada no polo sul. Esse objetivo ainda está a anos de se concretizar. [Artemis II](/missions?id=artemis2), o primeiro voo tripulado (um sobrevoo lunar, não um pouso), voou em abril de 2026. Artemis IV, agora planejada como o primeiro pouso tripulado desde a Apollo, tem como alvo a região do polo sul. \"Planejada\" carrega muito peso nessa frase."
     },
     {
       "type": "figure",
@@ -106,6 +106,22 @@
       "kind": "diagram",
       "caption": "A Lua está mais movimentada do que em qualquer momento desde os anos 1970, e pela primeira vez o elenco é genuinamente global: os pioneirismos soviéticos da Luna, a Apollo americana, a China chegando duas vezes à face oposta, a Índia no polo sul, o pouso de precisão do Japão. A pergunta mais antiga que o voo espacial faz, agora feita por mais gente da espécie do que nunca.",
       "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Uma segunda corrida"
+    },
+    {
+      "type": "prose",
+      "md": "A Lua está cheia de outra maneira também: é uma corrida de novo. A meta declarada da China é pousar seus próprios astronautas antes de 2030, e o plano já está voando aos pedaços. Dois foguetes [Long March 10](/fleet?id=long-march-10) devem decolar separadamente — um com a nave tripulada [Mengzhou](/fleet?id=mengzhou), o outro com o módulo de pouso [Lanyue](/fleet?id=lanyue) — e se encontrar em órbita lunar, onde dois astronautas trocam de nave, descem no Lanyue com um rover chamado Tansuo e trajes chamados Wangyu, e depois sobem de volta. Em novembro de 2026, o sistema de escape da Mengzhou já tinha sido testado duas vezes, um Lanyue em tamanho real tinha concluído em solo um teste de pouso e decolagem, e um primeiro estágio da família Long March 10 tinha feito um primeiro voo em baixa altitude. No fim de outubro de 2026 a China expôs os passos que faltam: um pouso do Lanyue sem tripulação, depois um ensaio completo sem tripulação de toda a missão, e só então uma tripulação. Ainda não disse onde."
+    },
+    {
+      "type": "prose",
+      "md": "Washington percebeu. Em fevereiro de 2026 a NASA reformulou o Artemis: a Artemis III virou um teste em órbita terrestre em 2027, e a [Artemis IV](/missions?id=artemis4), prevista para 2028, o primeiro pouso, com pelo menos mais um a cada ano depois disso. \"Com uma concorrência crível do nosso maior adversário geopolítico aumentando a cada dia\", disse o administrador da NASA, Jared Isaacman, \"precisamos andar mais rápido, eliminar atrasos e alcançar nossos objetivos.\" Em maio ele foi além, prevendo que as próximas pessoas a voar ao redor da Lua, provavelmente em 2027, seriam chinesas — uma data que a própria China não anunciou — e comparando o momento à corrida contra a União Soviética. A NASA também propôs o [PROMISE](/fleet?id=promise), um rover movido a energia nuclear construído a partir de um dos gêmeos de teste dos rovers marcianos do JPL, para explorar o polo sul em busca de um local para uma base — embora Isaacman tenha dito que ele só voará se for barato."
+    },
+    {
+      "type": "prose",
+      "md": "Os dois estão indo para o mesmo lugar. O batedor robótico da China, a [Chang'e 7](/moon?site=change7), deve pousar perto do polo sul bem antes de qualquer tripulação — seu lançamento, previsto para o fim de agosto de 2026, foi cancelado na véspera da janela de lançamento — e a China planeja ali uma estação internacional de pesquisa por volta de 2035. Na primeira vez, a corrida terminou com o vencedor voltando para casa. Desta vez os dois lados dizem que pretendem ficar, e isso faz a pergunta ser menos quem pousa primeiro do que quem constrói algo que dure."
     },
     {
       "type": "heading",

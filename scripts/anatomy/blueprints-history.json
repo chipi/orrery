@@ -175,6 +175,24 @@
       ],
       "notes": "No draft. Ion-thrust legs (Mars → Vesta with one extra turn, Vesta → Ceres) have no ballistic conic (the fitted ellipse missed by 0.57 AU), so they are drawn as schematic spirals (new `spiral` leg) and the sheet says so; the 14 months at Vesta ride Vesta's orbit (new `ride` leg). Wikipedia gives the Mars flyby as 549 km in the text and 542 km elsewhere: the sheet uses 549, as our data does. 0–100 km/h in about 4 days: 27.8 m/s at 0.09 N / ~1,000 kg.",
       "content_check": "Fixed (commit eb956f1c0a4, 14 locales): the Vesta → Ceres leg had about 112 kg of xenon (an allocation, Wikipedia), not ~390 kg (more than the 425 kg tank minus the 247 kg used for Vesta). Not checked: \"the Mars assist added ~2.6 km/s\" and \"first interplanetary transfer under continuous low thrust between two bodies\" in our event text."
+    },
+    "hayabusa2": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts hayabusa2",
+      "reference_media": "8504f2a7-b582-48d8-baae-7295d8e0069f",
+      "drafts": [],
+      "final_job": "50e38d42-ac48-43ba-8e8b-3f7f71d66d17",
+      "edits": [
+        "panel C: the extra ⑥ papered over (five stations in the list)",
+        "panel D: the second ⑤ and its arrow papered over (the other ⑤ points at an antenna)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hayabusa2 (launch 04:22:04 UTC, 600/490 kg, μ10 28 mN / 3,000 s, swing-by 3,090 km, Ryugu dates, rovers, capsule 05:30 UTC Woomera, 5.4 g, Torifune 2026, 1998 KY26 2031)",
+        "https://en.wikipedia.org/wiki/162173_Ryugu (radius 448 m, 4.5e11 kg, 1/80,000 g, SCI 2 kg copper, up to 1 m deep, ~50% voids, amino acids and uracil)",
+        "JPL SBDB elements for 162173 Ryugu"
+      ],
+      "notes": "No draft. Main view at linear scale (new `scale` option): everything stays within 0.97–1.42 AU and √r crowded it into one ring. Launch → swing-by and swing-by → Ryugu (two extra turns) are fitted ellipses (fit error 0.000 AU); the 17 months at Ryugu ride its orbit; the return leg is a schematic ion-thrust spiral; the sheet says the loops are schematic. v_esc 37 cm/s computed from the Wikipedia mass and radius. Not sourced this session: LE-7A / LE-5B engines and \"water-bearing minerals\" (Wikipedia says the samples revealed water).",
+      "content_check": "Fixed (commit 76542b0eba9): dry mass 490 kg, not 609 kg (14 locales); Ryugu gravity about 1/80,000 g, not ~0.0001 g; the MINERVA-II rovers hop, not wheeled (English event text). Not changed: TD1 2019-02-22 in our credit is the JST date (21 Feb UTC); bulk density ~1.27 g/cm³ in our credit vs 1.19 in Wikipedia."
     }
   },
   "queue": {

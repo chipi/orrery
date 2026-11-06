@@ -109,6 +109,15 @@ const SMALL: Record<string, Elements> = {
     ma: 274.4193463761342,
     epoch: 2461200.5,
   },
+  ryugu: {
+    a: 1.190918932702464,
+    e: 0.1910730046480051,
+    i: 5.866442486408568,
+    om: 251.2897123995624,
+    w: 211.608993811871,
+    ma: 62.34067409463987,
+    epoch: 2461200.5,
+  },
   lutetia: {
     a: 2.434430742712361,
     e: 0.1647703512177245,
@@ -196,10 +205,27 @@ interface Mission {
   detail?: { title: string; maxAu: number };
   /** Small-body orbits drawn dashed (the target comet). */
   smallOrbits?: (keyof typeof SMALL)[];
+  /** Main-view distance law: √r (default) spreads the outer planets; linear suits a mission
+   *  that stays near 1 AU. */
+  scale?: 'sqrt' | 'linear';
   /** Title of the right-hand panel F when the mission has no gravity assist. */
   f?: string;
 }
 const MISSIONS: Record<string, Mission> = {
+  // Wikipedia "Hayabusa2": launch 04:22:04 UTC, capsule release 05:30 UTC; other dates (noon).
+  hayabusa2: {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '2014-12-03T04:22:04Z', tag: 'left' },
+      { label: 'SWING-BY', body: 'earth', utc: '2015-12-03T12:00:00Z', revs: 1 },
+      { label: 'RYUGU · ARRIVAL', body: 'ryugu', utc: '2018-06-27T12:00:00Z', revs: 2 },
+      { label: 'RYUGU · DEPARTURE', body: 'ryugu', utc: '2019-11-13T12:00:00Z', ride: true },
+      { label: 'CAPSULE RETURN', body: 'earth', utc: '2020-12-05T05:30:00Z', spiral: true },
+    ],
+    orbits: ['venus', 'earth', 'mars'],
+    smallOrbits: ['ryugu'],
+    scale: 'linear',
+    bottom: 'E. AT RYUGU · TOUCH AND GO',
+  },
   // Wikipedia "Dawn (spacecraft)": launch 11:34 UTC; flyby, arrival and departure dates (noon).
   dawn: {
     events: [
@@ -516,7 +542,7 @@ const mainP = projector(
     ...m.orbits.map((o) => MEAN_AU[o]!),
     ...(m.smallOrbits ?? []).map((s) => SMALL[s]!.a * (1 + SMALL[s]!.e)),
   ),
-  'sqrt',
+  m.scale ?? 'sqrt',
 );
 const inner = new Set(
   m.detail ? pos.flatMap((e, i) => (Math.hypot(e.p.x, e.p.y) <= m.detail!.maxAu ? [i] : [])) : [],
@@ -564,5 +590,5 @@ for (const e of pos)
     `${e.label.padEnd(26)} ${e.utc}  λ ${lonOf(e.p)}°  r ${Math.hypot(e.p.x, e.p.y).toFixed(2)} AU`,
   );
 console.log(
-  `wrote ${out} (${W}x${H}); plan view ${A.w}x${A.h}, distance ∝ √r${DET ? `; detail true scale to ${m.detail!.maxAu} AU` : ''}`,
+  `wrote ${out} (${W}x${H}); plan view ${A.w}x${A.h}, distance ∝ ${m.scale === 'linear' ? 'r' : '√r'}${DET ? `; detail true scale to ${m.detail!.maxAu} AU` : ''}`,
 );

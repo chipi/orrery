@@ -177,6 +177,36 @@ function heroExistsOnAnyFallback(imageDir: string, id: string): boolean {
   return false;
 }
 
+/** The gallery dir an entity's images are served from: its own, else the first fallback with a hero. */
+function galleryDir(imageDir: string, id: string): string | null {
+  for (const d of [imageDir, ...(FALLBACK_LADDER[imageDir] ?? [])]) {
+    if (existsSync(resolve(ROOT, `static/images/${d}/${id}/01.webp`))) return d;
+  }
+  return null;
+}
+
+/**
+ * An override slot must exist in the gallery the entity is served from. pickHero() builds the
+ * card URL from the slot without checking it, so a stale slot is a broken card image
+ * (fleet/venera-13 pointed at 05 for months after #384 removed it).
+ */
+function staleOverrides(spec: SurfaceSpec): Gap[] {
+  const f = resolve(ROOT, `static/data/${spec.label}-hero-overrides.json`);
+  if (!existsSync(f)) return [];
+  const { overrides } = JSON.parse(readFileSync(f, 'utf-8')) as {
+    overrides: Record<string, { slot: string }>;
+  };
+  const gaps: Gap[] = [];
+  for (const [id, { slot }] of Object.entries(overrides)) {
+    const dir = galleryDir(spec.imageDir, id);
+    if (!dir) continue; // no gallery at all: a coverage gap, reported by validateSurface
+    const path = `static/images/${dir}/${id}/${slot.replace(/\.[^.]+$/, '')}.webp`;
+    if (!existsSync(resolve(ROOT, path)))
+      gaps.push({ surface: spec.label, id, expectedPath: `/${path}` });
+  }
+  return gaps;
+}
+
 function validateSurface(spec: SurfaceSpec): Gap[] {
   const fullIndexPath = resolve(ROOT, spec.indexPath);
   if (!existsSync(fullIndexPath)) {
@@ -200,6 +230,7 @@ function main(): void {
   console.log('Hero-coverage validator — checking every surface…');
   let totalGaps = 0;
   const allGaps: Gap[] = [];
+  const stale: Gap[] = [];
   for (const spec of SURFACES) {
     const gaps = validateSurface(spec);
     const knownGapCount = spec.knownGaps.size;
@@ -215,6 +246,13 @@ function main(): void {
     );
     totalGaps += gaps.length;
     allGaps.push(...gaps);
+    stale.push(...staleOverrides(spec));
+  }
+  if (stale.length > 0) {
+    console.error('\n✘ Hero overrides pointing at a slot that is not on disk (broken card image):');
+    for (const g of stale) console.error(`  - ${g.surface}/${g.id} → ${g.expectedPath}`);
+    console.error(`\nPick an existing slot in static/data/<surface>-hero-overrides.json.`);
+    process.exit(1);
   }
   if (totalGaps > 0) {
     console.error('\n✘ Unexpected hero gaps (not in knownGaps allowlist):');

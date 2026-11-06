@@ -25,6 +25,7 @@ import { DV_FAILED } from '$lib/physics/transfer/lambert-grid';
 import {
   EARTH_A0,
   EARTH_MEAN_MOTION_RAD_PER_DAY,
+  HELIO_GRID_EPOCH_SIM_DAY,
   MU_SUN,
   R_EARTH_AU,
 } from '$lib/physics/transfer/lambert-grid.constants';
@@ -100,9 +101,10 @@ export function interplanetaryMoonDv(
   moon: MoonParams,
 ): MoonMissionDv {
   // ── Leg 1: heliocentric Earth → host planet ──
-  const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * depDay;
+  // Grid days count from 2026-01-01; the elements are at J2000.
+  const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * (depDay + HELIO_GRID_EPOCH_SIM_DAY);
   const r1: [number, number] = [R_EARTH_AU * Math.cos(tE), R_EARTH_AU * Math.sin(tE)];
-  const r2 = hostHelioXY(arrDay, host);
+  const r2 = hostHelioXY(arrDay + HELIO_GRID_EPOCH_SIM_DAY, host);
   const r2mag = Math.hypot(r2[0], r2[1]);
   const vDest = Math.sqrt(MU_SUN * (2 / r2mag - 1 / host.a));
 

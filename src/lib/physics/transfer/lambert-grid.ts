@@ -22,6 +22,7 @@ import {
   DESTINATIONS,
   EARTH_A0,
   EARTH_MEAN_MOTION_RAD_PER_DAY,
+  HELIO_GRID_EPOCH_SIM_DAY,
   MU_SUN,
   R_EARTH_AU,
   type DestinationId,
@@ -165,9 +166,10 @@ function computeDv(
   tofYr: number,
   destination: { a: number; a0: number; meanMotionRadPerDay: number; e?: number; varpi?: number },
 ): number {
-  const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * depDay;
+  // Grid days count from 2026-01-01; the elements are at J2000.
+  const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * (depDay + HELIO_GRID_EPOCH_SIM_DAY);
   const r1: [number, number] = [R_EARTH_AU * Math.cos(tE), R_EARTH_AU * Math.sin(tE)];
-  const r2 = destinationHelioXY(arrDay, destination);
+  const r2 = destinationHelioXY(arrDay + HELIO_GRID_EPOCH_SIM_DAY, destination);
   const r2mag = Math.hypot(r2[0], r2[1]);
   const vDest = Math.sqrt(MU_SUN * (2 / r2mag - 1 / destination.a));
 

@@ -58,6 +58,14 @@ export const R_EARTH_AU = EARTH.a;
 /** Mars heliocentric distance, AU. Circular-orbit approximation. */
 export const R_MARS_AU = MARS.a;
 
+/** Day offset from the planet elements' epoch (sim day 0 = 2000-01-01, J2000 — the epoch of
+ *  every L0 / ϖ in planets.json and of `mission-arc`'s earthPos/destinationPos) to the
+ *  heliocentric porkchop grid's day 0 = 2026-01-01 (`porkchop.ts#dayToDate`, /plan, the Lab
+ *  porkchop, precompute-porkchops). Grid code adds it before placing a planet; without it every
+ *  grid planet but Earth sat out of phase (Jupiter ~69°, Venus ~94°) and Mars' L0 had been
+ *  hand-set to its 2026 value, which in turn put /fly's Mars ~61° off. */
+export const HELIO_GRID_EPOCH_SIM_DAY = 9497;
+
 /** Earth mean longitude at epoch (rad). */
 export const EARTH_A0 = EARTH.L0;
 /** Mars mean longitude at epoch (rad). */

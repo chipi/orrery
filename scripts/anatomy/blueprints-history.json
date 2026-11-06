@@ -240,6 +240,24 @@
       ],
       "notes": "No draft. Phasing legs need an extra turn (a zero-turn conic needs a ~4-year orbit, far beyond the launch energy); the multi-turn fitter now prefers the least eccentric ellipse that fits within 0.01 AU (otherwise Earth → Venus dipped to 0.37 AU). Everything after 28 Sep 2026 is labelled planned. Ganymede orbit v 1.78 km/s and T 3.1 h computed from GM ≈ 9,888 km³/s² and R 2,634 km (from memory, not sourced this session). Not sourced: Ariane 5 engine names.",
       "content_check": "Fixed (commit e88759b6122): 6,070 / 2,420 kg, not 6,000 / 2,900 (14 locales); Earth flyby 2 on 2026-09-28 at 8,641 km, not 09-29; not the first European craft to Jupiter (Ulysses) but the first to the outer planets not launched by the US; one capture burn, not \"multi-month\". Not checked: \"35 close flybys\", \"settling into a 5,000 km circular orbit\" (Wikipedia gives 500 km for the final orbit), \"~5 km/s\" from Earth 3."
+    },
+    "giotto": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts giotto",
+      "reference_media": "bbfcfddb-175a-4e05-86b2-dba72d3ebd64",
+      "drafts": [],
+      "final_job": "80b6cd44-f0f4-4fc2-aa4b-12c47040e92c",
+      "edits": [
+        "panel A crop edit (job be32a580-f7ad-48e8-b53f-c3fb545e59ec): \"VENUS 0.72 AU\" sat between the trajectory band and Earth's circle; moved inside Venus's circle (two local attempts failed: a paper patch hit the band, a stroke-only move left a ghost)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Giotto_(spacecraft) (launch 11:23 UTC V-14 ELA-1, 960 kg, 1.87 × 2.85 m, shield 1 mm Al + 12 mm Kevlar, Halley 596 km, nucleus 15 × 7–10 km, at least three jets, ~10% active, 7.6 s impact, camera lost, 32 min, Earth 2 Jul 1990 first gravity assist from interplanetary space, Grigg–Skjellerup 10 Jul 1992 ~200 km, off 23 Jul 1992)",
+        "https://www.esa.int/Science_Exploration/Space_Science/Giotto_overview (GTO and the on-board motor after three orbits, 15 rpm, sheets 23 cm apart, 68 km/s, a one-gram particle, 0.1 g pierces 8 cm Al)",
+        "https://en.wikipedia.org/wiki/Halley_Armada (Vega 1 8,889 km, Vega 2 8,030 km, Suisei 151,000 km, Sakigake 6.99 million km; Pathfinder cut the miss distance from 4,000 to 596 km)",
+        "JPL Horizons osculating elements of 1P/Halley (1986-03-14) and 26P/Grigg–Skjellerup (1992-07-10)"
+      ],
+      "notes": "No draft. Comet positions from Horizons elements at the encounter (SBDB epochs are decades away; Jupiter perturbs 26P). The Halley flyby barely changed Giotto's orbit, so the hibernation leg keeps the launch orbit's period (313° in 255 days, ~0.81 yr): five extra turns to the 1990 Earth flyby (a 0.89 AU). 2.3 MJ = ½ · 1 g · (68 km/s)², ~0.55 kg TNT. Not sourced this session: Ariane 1 engine names, Earth flyby 22,730 km (our data), \"first spacecraft to visit two comets\".",
+      "content_check": "Fixed (commit 595c8516ecb, English text): at least three jets, not two; the closest comet encounter of its time, not to date; went closest of the armada, not the only close one; the painter saw the comet in 1301. Kept: \"first close-up images of a nucleus\" (Wikipedia: first close-up colour images)."
     }
   },
   "queue": {

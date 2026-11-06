@@ -118,6 +118,26 @@ const SMALL: Record<string, Elements> = {
     ma: 62.34067409463987,
     epoch: 2461200.5,
   },
+  // Comets: JPL Horizons osculating elements at the encounter (heliocentric ecliptic J2000), since
+  // their SBDB epochs are decades away and Jupiter perturbs 26P.
+  halley: {
+    a: 17.941213,
+    e: 0.9672762506864229,
+    i: 162.2422022915186,
+    om: 58.86005707648156,
+    w: 111.8656357419195,
+    ma: 0.4220442836528230,
+    epoch: 2446503.5,
+  },
+  'grigg-skjellerup': {
+    a: 2.963356,
+    e: 0.6643367486402151,
+    i: 21.09881617864237,
+    om: 213.3403034674752,
+    w: 359.2648773182634,
+    ma: 357.6548990928559,
+    epoch: 2448813.5,
+  },
   lutetia: {
     a: 2.434430742712361,
     e: 0.1647703512177245,
@@ -231,6 +251,19 @@ const MISSIONS: Record<string, Mission> = {
     end: 'orbit',
     bottom: 'J. AT JUPITER · INTO ORBIT AROUND GANYMEDE',
     detail: { title: 'E. INNER CRUISE · TRUE SCALE', maxAu: 2.2 },
+  },
+  // Wikipedia "Giotto (spacecraft)": launch 11:23 UTC; encounter and flyby dates (Halley at 00:00).
+  giotto: {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '1985-07-02T11:23:00Z' },
+      { label: 'HALLEY', body: 'halley', utc: '1986-03-14T00:00:00Z' },
+      { label: 'EARTH · FLYBY', body: 'earth', utc: '1990-07-02T12:00:00Z', revs: 5 },
+      { label: 'GRIGG–SKJELLERUP', body: 'grigg-skjellerup', utc: '1992-07-10T12:00:00Z', revs: 1, tag: 'right' },
+    ],
+    orbits: ['venus', 'earth', 'mars'],
+    scale: 'linear',
+    end: 'orbit',
+    bottom: 'E. AT HALLEY · 596 KM FROM THE NUCLEUS',
   },
   // Wikipedia "BepiColombo": launch 01:45 UTC; flyby dates (noon); insertion planned 21 Nov 2026.
   // The loops between Mercury flybys are resonant orbits we have no data for: drawn along Mercury's.

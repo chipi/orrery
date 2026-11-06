@@ -1642,6 +1642,12 @@
       "cover": false
     },
     {
+      "title": "Giotto",
+      "file": "/images/blueprints/giotto.webp",
+      "route": "/missions?id=giotto",
+      "cover": false
+    },
+    {
       "title": "Hayabusa2",
       "file": "/images/blueprints/hayabusa2.webp",
       "route": "/missions?id=hayabusa2",
@@ -3996,7 +4002,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 13,
+    "blueprint_art": 14,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

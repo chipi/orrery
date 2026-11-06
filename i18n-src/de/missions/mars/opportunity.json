@@ -4,9 +4,9 @@
   "payload": "1063 kg (Reisestufe + EDL + Rover); 174 kg Masse auf der Oberfläche",
   "delta_v": "~5,5 km/s",
   "type": "ROVER · GEFLOGEN",
-  "first": "Langstrecken-Marsrover (45,16 km); 14 Jahre Oberflächenlebensdauer gegenüber einer 90-Sol-Auslegung",
-  "dispatch": "Opportunity fuhr einen Marathon über einen anderen Planeten. Der Zwilling von Spirit, 2004 für eine neunzigtägige Mission gelandet, arbeitete vierzehn Jahre lang und legte mehr als fünfundvierzig Kilometer zurück — die längste Strecke, die ein Fahrzeug auf irgendeinem Himmelskörper zurückgelegt hat. Sie kam glücklicherweise in einem kleinen Krater an, dessen Wände genau das wassergelagerte Gestein zeigten, das sie finden sollte, und dann machte sie einfach weiter, Krater um Krater, und las die alte Wassergeschichte des Mars Kilometer für Kilometer. Ein planetenweit wütender Staubsturm brachte sie schließlich 2018 zum Schweigen.",
-  "description": "Opportunity (MER-B) hatte planetarisches Glück — sein airbag-umhüllter Lander prallte 26-mal über Meridiani Planum ab und rollte durch reinen Zufall in einen 22-m-Krater (Eagle), umgeben von freiliegendem Grundgestein, das ein Rover lesen konnte, ohne zu fahren. Die ersten Bilder zeigten Jarosit + „Blaubeeren\"-Hämatit-Konkretionen, die zu diesem Zeitpunkt stärksten Mineralnachweise für flüssiges Wasser auf dem frühen Mars. Über 14 Jahre 138 Tage (5.111 Sols) legte Opportunity 45,16 km zurück — den Marsrover-Marathon-Rekord — und besuchte die Krater Endurance, Victoria und Endeavour. Ein planetenweit wütender Staubsturm im Juni 2018 blockierte das Sonnenlicht von den Solarpanelen; die letzte Übertragung war 2018-06-10, und die NASA erklärte das Missionsende am 2019-02-13.",
+  "first": "Hielt den Fahrstrecken-Rekord auf dem Mars (45,16 km), bis Perseverance ihn im Oktober 2026 übertraf; 14 Jahre Oberflächenlebensdauer gegenüber einer 90-Sol-Auslegung",
+  "dispatch": "Opportunity fuhr einen Marathon über einen anderen Planeten. Der Zwilling von Spirit, 2004 für eine neunzigtägige Mission gelandet, arbeitete vierzehn Jahre lang und legte mehr als fünfundvierzig Kilometer zurück — die längste Strecke, die ein Fahrzeug auf irgendeinem Himmelskörper zurückgelegt hatte, bis Perseverance sie im Oktober 2026 übertraf. Sie kam glücklicherweise in einem kleinen Krater an, dessen Wände genau das wassergelagerte Gestein zeigten, das sie finden sollte, und dann machte sie einfach weiter, Krater um Krater, und las die alte Wassergeschichte des Mars Kilometer für Kilometer. Ein planetenweit wütender Staubsturm brachte sie schließlich 2018 zum Schweigen.",
+  "description": "Opportunity (MER-B) hatte planetarisches Glück — sein airbag-umhüllter Lander prallte 26-mal über Meridiani Planum ab und rollte durch reinen Zufall in einen 22-m-Krater (Eagle), umgeben von freiliegendem Grundgestein, das ein Rover lesen konnte, ohne zu fahren. Die ersten Bilder zeigten Jarosit + „Blaubeeren\"-Hämatit-Konkretionen, die zu diesem Zeitpunkt stärksten Mineralnachweise für flüssiges Wasser auf dem frühen Mars. Über 14 Jahre 138 Tage (5.111 Sols) legte Opportunity 45,16 km zurück — den Marsrover-Marathon-Rekord, der bis Perseverance im Oktober 2026 Bestand hatte — und besuchte die Krater Endurance, Victoria und Endeavour. Ein planetenweit wütender Staubsturm im Juni 2018 blockierte das Sonnenlicht von den Solarpanelen; die letzte Übertragung war 2018-06-10, und die NASA erklärte das Missionsende am 2019-02-13.",
   "events": [
     {
       "met": 0,
@@ -39,13 +39,13 @@
       "type": "info"
     },
     {
-      "met": 5300,
+      "met": 5452,
       "label": "LETZTE ÜBERTRAGUNG",
       "note": "2018-06-10. Planetenweit wütender Staubsturm reduziert Solarstrom.",
       "type": "warning"
     },
     {
-      "met": 5543,
+      "met": 5700,
       "label": "MISSIONSENDE",
       "note": "NASA erklärt Missionsende am 2019-02-13. 45,16 km zurückgelegt.",
       "type": "warning"

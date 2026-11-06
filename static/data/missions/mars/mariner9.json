@@ -11,10 +11,10 @@
   "arrival_date": "1971-11-14",
   "transit_days": 168,
   "vehicle": "Atlas SLV-3C Centaur",
-  "payload": "974 kg (incl. 449 kg propellant)",
+  "payload": "998 kg (incl. 439 kg propellant)",
   "delta_v": "~1.6 km/s",
   "data_quality": "good",
-  "credit": "© NASA / JPL — public domain. First spacecraft to orbit another planet. Imaged ~80% of Mars after a global dust storm cleared.",
+  "credit": "© NASA / JPL — public domain. First spacecraft to orbit another planet. Imaged ~85% of Mars after a global dust storm cleared.",
   "links": [
     {
       "l": "Mariner 9 — Wikipedia",
@@ -43,7 +43,7 @@
     "launch": {
       "vehicle_stage": "Centaur D-1A upper stage",
       "c3_km2_s2": 13.6,
-      "mass_at_tli_kg": 974,
+      "mass_at_tli_kg": 998,
       "source": "JPL Mariner Mars 1971 Project Final Report; NASA Mariner 9 Press Kit (1971-05)"
     },
     "cruise": {
@@ -97,13 +97,13 @@
         "met_days": 168.005,
         "type": "edl_or_oi",
         "label": "Mars orbit insertion — first ever",
-        "description": "15-minute solid-motor burn at 00:18 UT 1971-11-14 placed Mariner 9 into a 1398 × 17,917 km, 64.4°-inclination orbit — the first spacecraft of any nation to orbit another planet, beating Soviet Mars 2 by 13 days. The storm cleared by January; over the next 11 months Mariner 9 returned 7,329 images covering ~85% of the Martian surface, discovering Olympus Mons (the largest volcano in the solar system), Valles Marineris (the canyon system that bears its name), and the first close-ups of Phobos + Deimos."
+        "description": "15-minute burn of its liquid-fuelled main engine at 00:18 UT 1971-11-14 placed Mariner 9 into a 1398 × 17,917 km, 64.4°-inclination orbit — the first spacecraft of any nation to orbit another planet, beating Soviet Mars 2 by 13 days. The storm cleared by January; over the next 11 months Mariner 9 returned 7,329 images covering ~85% of the Martian surface, discovering Olympus Mons (the largest volcano in the solar system), Valles Marineris (the canyon system that bears its name), and the first close-ups of Phobos + Deimos."
       },
       {
         "met_days": 515,
         "type": "anomaly",
         "label": "End of mission",
-        "description": "1972-10-27. Mariner 9 ran out of attitude-control gas. Powered down in a parking orbit it remains in today — expected atmospheric re-entry around 2050."
+        "description": "1972-10-27. Mariner 9 ran out of attitude-control gas. Powered down in a parking orbit; NASA expected it to stay in orbit for at least 50 years, with re-entry estimated around 2020–2022 — whether it has already re-entered is unknown."
       }
     ],
     "interplanetary_profile": {

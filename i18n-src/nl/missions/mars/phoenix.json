@@ -5,7 +5,7 @@
   "delta_v": "~5,7 km/s",
   "type": "LANDER · GEVLOGEN",
   "first": "Eerste bevestiging van waterijs in het Martiaanse arctische regoliet; eerste zachte voortstuwingslanding op Mars sinds Viking 2",
-  "description": "Phoenix werd gered uit het geannuleerde Mars Surveyor 2001-programma — vluchthardware die zes jaar in opslag had gelegen, opnieuw gemonteerd en herbestemd voor de noordelijke poolvlakten van Mars. De naam werd letterlijk gekozen. De lander landde op 2008-05-25 op 68,22°N, 234,25°O in Vastitas Borealis, verder noordelijk dan enige eerdere oppervlaktemissie. Binnen enkele dagen schraapte de robotarm door de toplaag en legde helder wit ijs bloot dat gedurende vier sols zichtbaar sublimeerde voor de camera — directe bevestiging van waterijs onder de oppervlakte in het Martiaanse poolgebied. De lander detecteerde perchloraten in het regoliet en zag sneeuw uit wolken vallen. De missie eindigde op 2008-11-02 toen de zonne-energie onder de operationele drempel zakte bij het begin van de Marswinter; niemand verwachtte dat de lander de poolnacht zou overleven.",
+  "description": "Phoenix werd gered uit het geannuleerde Mars Surveyor 2001-programma — vluchthardware die zes jaar in opslag had gelegen, opnieuw gemonteerd en herbestemd voor de noordelijke poolvlakten van Mars. De naam werd letterlijk gekozen. De lander landde op 2008-05-25 op 68,22°N, 234,25°O in Vastitas Borealis, verder noordelijk dan enige eerdere oppervlaktemissie. Binnen drie weken schraapte de robotarm door de toplaag en legde helder wit ijs bloot dat gedurende vier sols zichtbaar sublimeerde voor de camera — directe bevestiging van waterijs onder de oppervlakte in het Martiaanse poolgebied. De lander detecteerde perchloraten in het regoliet en zag sneeuw uit wolken vallen. De missie eindigde op 2008-11-02 toen de zonne-energie onder de operationele drempel zakte bij het begin van de Marswinter; niemand verwachtte dat de lander de poolnacht zou overleven.",
   "events": [
     {
       "met": 0,
@@ -38,7 +38,7 @@
       "type": "info"
     },
     {
-      "met": 302,
+      "met": 315,
       "label": "IJS BLOOTGELEGD",
       "note": "Arm schrapt door toplaag. Helder wit ijs sublimeert voor de camera gedurende 4 sols.",
       "type": "info"

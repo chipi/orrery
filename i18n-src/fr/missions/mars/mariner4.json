@@ -5,7 +5,7 @@
   "delta_v": "~3,6 km/s",
   "type": "SURVOL · RÉALISÉE",
   "first": "Premier vaisseau spatial à atteindre Mars et à renvoyer des images rapprochées d'une autre planète",
-  "description": "La mission qui a mis fin aux rêves d'un Mars habitable. Les 22 images granuleuses de Mariner 4, prises lors d'un passage au plus près de 25 minutes à 9 846 km d'altitude, montraient une surface criblée de cratères et semblable à la Lune — pas de canaux, pas de végétation, pas de vie évidente. L'atmosphère était 100 fois plus ténue que prévu. La découverte a fait passer Mars, dans l'imaginaire public, d'une planète sœur de la Terre à un monde mort. Le suivi du vaisseau a aussi produit la première mesure de la structure du vent solaire entre les planètes.",
+  "description": "La mission qui a mis fin aux rêves d'un Mars habitable. Les 22 images granuleuses de Mariner 4, prises lors d'un passage au plus près de 25 minutes à 9 846 km d'altitude, montraient une surface criblée de cratères et semblable à la Lune — pas de canaux, pas de végétation, pas de vie évidente. L'atmosphère était environ 15 fois plus ténue que prévu. La découverte a fait passer Mars, dans l'imaginaire public, d'une planète sœur de la Terre à un monde mort. Le suivi du vaisseau a aussi produit une mesure de la structure du vent solaire entre les planètes.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 228,
       "label": "SURVOL DE MARS",
-      "note": "Approche la plus proche 9 846 km. 22 images renvoyées sur 8 heures lors de la lecture des données.",
+      "note": "Approche la plus proche 9 846 km. 22 images renvoyées sur environ trois semaines lors de la lecture des données.",
       "type": "nominal"
     },
     {

@@ -5,7 +5,7 @@
   "delta_v": "~5,7 km/s",
   "type": "ATERRIZADOR · REALIZADA",
   "first": "Primera confirmación de hielo de agua en el regolito ártico marciano; primer aterrizaje propulsivo suave en Marte desde Viking 2",
-  "description": "Phoenix fue rescatada del programa cancelado Mars Surveyor 2001 — hardware de vuelo almacenado durante seis años, reensamblado y redirigido a las llanuras polares del norte de Marte. El nombre fue elegido literalmente. Aterrizó el 25 de mayo de 2008 a 68,22°N, 234,25°E en Vastitas Borealis, más al norte que cualquier misión de superficie anterior. En pocos días, el brazo robótico raspó la capa superior del suelo y expuso hielo blanco brillante que se sublimó visiblemente en la cámara durante cuatro soles — confirmación directa de hielo de agua subsuperficial en el ártico marciano. Detectó percloratos en el regolito y observó nieve cayendo desde las nubes. La misión finalizó el 2 de noviembre de 2008 cuando la energía solar cayó por debajo del umbral operativo al inicio del invierno marciano; nunca se esperó que el módulo de aterrizaje sobreviviera a la noche polar.",
+  "description": "Phoenix fue rescatada del programa cancelado Mars Surveyor 2001 — hardware de vuelo almacenado durante seis años, reensamblado y redirigido a las llanuras polares del norte de Marte. El nombre fue elegido literalmente. Aterrizó el 25 de mayo de 2008 a 68,22°N, 234,25°E en Vastitas Borealis, más al norte que cualquier misión de superficie anterior. En tres semanas, el brazo robótico raspó la capa superior del suelo y expuso hielo blanco brillante que se sublimó visiblemente en la cámara durante cuatro soles — confirmación directa de hielo de agua subsuperficial en el ártico marciano. Detectó percloratos en el regolito y observó nieve cayendo desde las nubes. La misión finalizó el 2 de noviembre de 2008 cuando la energía solar cayó por debajo del umbral operativo al inicio del invierno marciano; nunca se esperó que el módulo de aterrizaje sobreviviera a la noche polar.",
   "events": [
     {
       "met": 0,
@@ -38,7 +38,7 @@
       "type": "info"
     },
     {
-      "met": 302,
+      "met": 315,
       "label": "HIELO EXPUESTO",
       "note": "El brazo raspa la capa superior del suelo. Hielo blanco brillante se sublima en la cámara durante 4 soles.",
       "type": "info"

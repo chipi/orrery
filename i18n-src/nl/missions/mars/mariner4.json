@@ -5,7 +5,7 @@
   "delta_v": "~3,6 km/s",
   "type": "VOORBIJVLUCHT · GEVLOGEN",
   "first": "Eerste ruimtevaartuig dat Mars bereikte en close-upbeelden van een andere planeet terugzond",
-  "description": "De missie die de dromen van een leefbare Mars beëindigde. De 22 korrelige beelden van Mariner 4, genomen tijdens een 25 minuten durende dichtste nadering op 9.846 km hoogte, toonden een gekraterd oppervlak dat op de Maan leek — geen kanalen, geen vegetatie, geen duidelijk leven. De atmosfeer was 100× dunner dan verwacht. De ontdekking veranderde Mars in de publieke verbeelding van zusterplaneet van de Aarde in een dode wereld. Het volgen van het ruimtevaartuig leverde ook de eerste meting op van de structuur van de zonnewind tussen de planeten.",
+  "description": "De missie die de dromen van een leefbare Mars beëindigde. De 22 korrelige beelden van Mariner 4, genomen tijdens een 25 minuten durende dichtste nadering op 9.846 km hoogte, toonden een gekraterd oppervlak dat op de Maan leek — geen kanalen, geen vegetatie, geen duidelijk leven. De atmosfeer was ongeveer 15× dunner dan verwacht. De ontdekking veranderde Mars in de publieke verbeelding van zusterplaneet van de Aarde in een dode wereld. Het volgen van het ruimtevaartuig leverde ook een meting op van de structuur van de zonnewind tussen de planeten.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 228,
       "label": "SCHEERVLUCHT LANGS MARS",
-      "note": "Dichtste nadering 9.846 km. 22 beelden teruggestuurd in 8 uur tijdens het afspelen van de gegevens.",
+      "note": "Dichtste nadering 9.846 km. 22 beelden teruggestuurd in ongeveer drie weken tijdens het afspelen van de gegevens.",
       "type": "nominal"
     },
     {

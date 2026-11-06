@@ -76,7 +76,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Delta II 7925H",
-        "description": "Cape Canaveral LC-17B, 2003-07-07. Second of the twin Mars Exploration Rovers. Flew on the heavier Delta II 7925H (Heavy) variant to compensate for the slightly later launch and a higher-energy injection requirement. Designed for 90 sols. Would survive 5,352 sols."
+        "description": "Cape Canaveral LC-17B, 2003-07-07. Second of the twin Mars Exploration Rovers. Flew on the heavier Delta II 7925H (Heavy) variant to compensate for the slightly later launch and a higher-energy injection requirement. Designed for 90 sols. Would operate for 5,111 sols."
       },
       {
         "met_days": 0.005,
@@ -118,7 +118,7 @@
         "met_days": 202.005,
         "type": "edl_or_oi",
         "label": "Mars EDL — airbag landing in Meridiani Planum",
-        "description": "Bounced 26 times across the hematite-rich plains of Meridiani Planum and rolled into a 22-m diameter crater — Eagle Crater — by sheer luck. The first close-up images showed bedrock exposing in the crater walls, geology a rover could read without driving anywhere. Found jarosite and \"blueberry\" hematite concretions, the strongest mineral evidence to that point of standing liquid water on early Mars. Traversed 45.16 km over 14+ years — the marathon-distance Mars rover record. Final transmission 2018-06-10 during a planet-wide dust storm; NASA declared end-of-mission 2019-02-13."
+        "description": "Bounced 26 times across the hematite-rich plains of Meridiani Planum and rolled into a 22-m diameter crater — Eagle Crater — by sheer luck. The first close-up images showed bedrock exposing in the crater walls, geology a rover could read without driving anywhere. Found jarosite and \"blueberry\" hematite concretions, the strongest mineral evidence to that point of standing liquid water on early Mars. Traversed 45.16 km over 14+ years — a record until Perseverance passed it in October 2026. Final transmission 2018-06-10 during a planet-wide dust storm; NASA declared end-of-mission 2019-02-13."
       }
     ],
     "interplanetary_profile": {

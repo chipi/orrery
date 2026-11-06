@@ -117,6 +117,25 @@
       ],
       "notes": "No draft: went straight to the 4K final from the reference sheet. \"Past the Moon in 9 hours\" and \"about the size of a grand piano\" checked against Wikipedia (\"took only nine hours to pass the Moon's orbit\"; \"comparable in size and general shape to a grand piano\").",
       "content_check": "Fixed: about 3 years saved by the Jupiter assist and 16.26 km/s relative to Earth at launch (commit 2e80cb459f7); Arrokoth 43 AU from the Sun at the flyby, not 44 (commit ebd363fe5b6), all 14 locales."
+    },
+    "venera-13": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts venera-13",
+      "reference_media": "7d9ae2ca-d374-48e3-871a-743cebd320c0",
+      "drafts": [],
+      "final_job": "b04a9a49-7e7d-4960-8464-0973e9392be7",
+      "edits": [
+        "panel D: the long ④ arrow to the lander antenna erased (④ is the dish, by its leader line, now joined to the circle); ⑤ copied from the list to the antenna; list ⑨/⑧ swapped so 8 = ring landing platform, 9 = camera window",
+        "panel F: the model invented altitude ticks 200/150/100/50 km (placing \"about 50 km\" at ~65 km); papered over, the graph is schematic and only the sourced ~50 km parachute release is given"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Venera_13",
+        "https://en.wikipedia.org/wiki/Venera_14 (shared 4V-1 design: 760 kg landing mass, parachute released ~50 km, air braking, ring platform, bus relay)",
+        "https://en.wikipedia.org/wiki/Atmosphere_of_Venus (surface density 65 kg/m³)",
+        "static/data/missions/venus/venera-13.json"
+      ],
+      "notes": "No draft. Plan view: a single Earth → Venus leg, 147° in 122 days (Type I, under the 146-day Hohmann half-orbit for a = 0.86 AU). Panel F titled ENTRY AND DESCENT PROFILE (new `f` field in the generator). Not on the sheet: entry speed (our 11.2 km/s is unsourced) and the lens-cap story (Wikipedia tells it of Venera 14).",
+      "content_check": "Fixed (mission + fleet, all 14 locales): lander 760 kg, not 1645 kg (that is the listed dry mass); surface pressure 89 atm, not 89 bar (9.0 MPa = 90 bar); fleet English best_known_for \"twice\" → about four times its 32-minute design life. Earlier: design life and ~4,400 kg (commit 97fdfb4a2fb)."
     }
   },
   "queue": {

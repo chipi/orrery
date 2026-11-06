@@ -153,8 +153,21 @@ interface Mission {
   detail?: { title: string; maxAu: number };
   /** Small-body orbits drawn dashed (the target comet). */
   smallOrbits?: (keyof typeof SMALL)[];
+  /** Title of the right-hand panel F when the mission has no gravity assist. */
+  f?: string;
 }
 const MISSIONS: Record<string, Mission> = {
+  // Wikipedia "Venera 13": launch 06:04 UTC, lander touchdown 03:57:21 UTC.
+  'venera-13': {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '1981-10-30T06:04:00Z' },
+      { label: 'VENUS · LANDING', body: 'venus', utc: '1982-03-01T03:57:21Z' },
+    ],
+    orbits: ['venus', 'earth', 'mars'],
+    end: 'orbit',
+    bottom: 'E. DESCENT AND LANDING · 1 MARCH 1982',
+    f: 'F. ENTRY AND DESCENT PROFILE',
+  },
   // Wikipedia "New Horizons": launch 19:00 UTC, Pluto 11:49:57 UTC, Arrokoth 05:33 UTC.
   'new-horizons': {
     events: [
@@ -242,7 +255,7 @@ const PANELS = [
   { t: 'C. LAUNCH SEQUENCE', x: 0, y: 1100, w: SIDE, h: H - BOTTOM - 1100 },
   { t: 'G. ENCOUNTER TABLE', x: 0, y: H - BOTTOM, w: SIDE, h: BOTTOM },
   { t: 'D. SPACECRAFT', x: W - SIDE, y: 0, w: SIDE, h: 900 },
-  { t: 'F. GRAVITY ASSIST', x: W - SIDE, y: 900, w: SIDE, h: 440 },
+  { t: m.f ?? 'F. GRAVITY ASSIST', x: W - SIDE, y: 900, w: SIDE, h: 440 },
   { t: 'H. EQUATIONS', x: W - SIDE, y: 1340, w: SIDE, h: H - BOTTOM - 1340 },
   { t: 'I. MISSION BRIEF · TITLE BLOCK', x: W - SIDE, y: H - BOTTOM, w: SIDE, h: BOTTOM },
   ...(DET

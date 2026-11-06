@@ -1642,6 +1642,12 @@
       "cover": false
     },
     {
+      "title": "Venera 13",
+      "file": "/images/blueprints/venera-13.webp",
+      "route": "/missions?id=venera-13",
+      "cover": false
+    },
+    {
       "title": "Voyager 2",
       "file": "/images/blueprints/voyager-2.webp",
       "route": "/missions?id=voyager-2",
@@ -3954,7 +3960,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 6,
+    "blueprint_art": 7,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

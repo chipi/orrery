@@ -204,7 +204,7 @@ const MISSIONS: Record<string, Mission> = {
   dawn: {
     events: [
       { label: 'EARTH · LAUNCH', body: 'earth', utc: '2007-09-27T11:34:00Z' },
-      { label: 'MARS', body: 'mars', utc: '2009-02-17T12:00:00Z' },
+      { label: 'MARS', body: 'mars', utc: '2009-02-17T12:00:00Z', tag: 'left' },
       { label: 'VESTA · ARRIVAL', body: 'vesta', utc: '2011-07-16T12:00:00Z', revs: 1, spiral: true },
       { label: 'VESTA · DEPARTURE', body: 'vesta', utc: '2012-09-05T12:00:00Z', ride: true },
       { label: 'CERES · ARRIVAL', body: 'ceres', utc: '2015-03-06T12:00:00Z', spiral: true },

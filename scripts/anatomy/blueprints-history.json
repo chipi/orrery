@@ -157,6 +157,24 @@
       ],
       "notes": "No draft. Flyby times set to noon (dates only in the source). Probe data time differs between sources (NASA 58 min, Wikipedia 61.4 min): the sheet says about an hour. Generator: Gaspra and Ida elements; per-event `tag` puts a label beside a dot at a panel edge.",
       "content_check": "Fixed: payload \"~2.5 t dry mass\" → 2,560 kg at launch, orbiter dry mass 1,880 kg (all 14 locales); arrival event \"confirmed liquid water under Europa's ice\" → found evidence of (NASA: evidence supports; English-only flight text). Not changed: probe release 1995-07-13 in our data vs 12 July 03:07 UTC in Wikipedia (time-zone or source difference, not resolved); entry 47.4 km/s in our data vs ~48 km/s in Wikipedia (the sheet says about 48)."
+    },
+    "dawn": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts dawn",
+      "reference_media": "d3451410-fa3c-4f6f-900e-bfdd7822e7dc",
+      "drafts": [],
+      "final_job": "15c2425c-b03f-48a5-a7ba-31e63c4ae598",
+      "edits": [
+        "panel D crop edit (job 3fe1a928-bdd2-438e-a4e7-587dc6ecfa93): two ① → one ① with two leaders; four thruster nozzles → three; the second ⑥ (on a nozzle) → ③; pasted below the corner pin"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dawn_(spacecraft) (launch, masses, NSTAR 90 mN / 3,100 s, ~11 km/s, 19.7 m, 10 kW, Mars 549 km, Vesta and Ceres dates, end 1 Nov 2018, xenon 247 + 112 of 425 kg)",
+        "https://en.wikipedia.org/wiki/Delta_II (7925H: nine GEM 46, RS-27A, AJ10-118K, Star 48B)",
+        "https://www.jpl.nasa.gov/missions/dawn/ (Vesta: core/mantle/crust, basin >300 mi with a peak over twice Everest, meteorite source)",
+        "JPL SBDB elements for 4 Vesta and 1 Ceres"
+      ],
+      "notes": "No draft. Ion-thrust legs (Mars → Vesta with one extra turn, Vesta → Ceres) have no ballistic conic (the fitted ellipse missed by 0.57 AU), so they are drawn as schematic spirals (new `spiral` leg) and the sheet says so; the 14 months at Vesta ride Vesta's orbit (new `ride` leg). Wikipedia gives the Mars flyby as 549 km in the text and 542 km elsewhere: the sheet uses 549, as our data does. 0–100 km/h in about 4 days: 27.8 m/s at 0.09 N / ~1,000 kg.",
+      "content_check": "Fixed (commit eb956f1c0a4, 14 locales): the Vesta → Ceres leg had about 112 kg of xenon (an allocation, Wikipedia), not ~390 kg (more than the 425 kg tank minus the 247 kg used for Vesta). Not checked: \"the Mars assist added ~2.6 km/s\" and \"first interplanetary transfer under continuous low thrust between two bodies\" in our event text."
     }
   },
   "queue": {

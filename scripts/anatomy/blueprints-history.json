@@ -63,6 +63,25 @@
       "notes": "Two legs of more than one turn (launch → Earth 1, Earth 1 → Mars) are fitted Kepler ellipses, not Lambert arcs. Computed and matching ESA: Steins 2.14 AU and Lutetia 2.72 AU from the Sun at the flybys, farthest 5.29 AU (hibernation), comet 2.71 AU from Earth at arrival, 28 min signal time at Philae landing. Ariane 5 G+ height and launch mass left off: Wikipedia gives a range and infers the mass from the plain G.",
       "content_check": "Fixed in all 14 locales (commit 45a52d9212c): orbiter dry mass ~2900 → ~1230 kg (3,000 kg is the launch mass); 'two Earth + one Mars' → three Earth + one Mars; 'Heatshield' removed (Rosetta had none); Earth 2 5,295 → 5,301 km (ESA actual, 5,295 was the plan); Lutetia 3,168 → 3,162 km (ESA). Kept: Earth 3 on 13 Nov 2009 (ESA; Wikipedia's 12 Nov is wrong), Earth 1 1,955 km.",
       "final_job": "84e9256e-3123-4520-8253-6192857dd30a"
+    },
+    "apollo11": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-cislunar-view.ts apollo11",
+      "reference_media": "a1e9d3d4-bec9-4b6a-ae8e-b2427b80719d",
+      "drafts": ["2cfc51bc-738f-4a7b-ace2-854fb08a3db2", "1ad493c3-bd2f-4dc9-9b4a-a87f4bd9e326"],
+      "final_job": "0bf4b227-f375-4b73-bf0d-57d338a0d455",
+      "edits": [
+        "landing-site note: 23,47°E → 23.47°E (comma tail painted out with paper from the same line)",
+        "launch sequence: stations renumbered 1–6 with S-II SEPARATES restored (crop edit job e8782745-e2f7-453d-9819-943e1f4f8af5, interior pasted inside the panel border)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Apollo_11",
+        "https://en.wikipedia.org/wiki/Saturn_V",
+        "static/data/missions/moon/apollo11.json (Apollo 11 Mission Report, NASA MSC-00171): LOI 113 × 313 km, SPS 357 s, PDI 15 km, MCC-2 only, 21 h 36 min on the surface",
+        "Orrery Lab cislunar-transfer (Hohmann to the Moon from LEO: Δv 3.13 km/s, 4.75 d)"
+      ],
+      "notes": "Hero is a schematic figure-eight in the rotating Earth–Moon frame: true along the Earth–Moon line, not in width; the sheet says so. Saturn V launch mass and payload left off (Wikipedia gives a range and a generic TLI payload that does not match our mission-report mass).",
+      "content_check": "Fixed (commit 996cda6f709, all 14 locales for TEI): TEI did not put Apollo 11 on a 'free-return trajectory'; TLI ended just short of escape speed, not at it; Saturn V is the most powerful rocket to fly successfully (the N1 out-thrusted it but failed). Fixed (commit 7486a67dc93): parking orbit 320 km → 186 × 183 km. Kept: PDI from 15 km (Wikipedia's '6,000 ft' is not the PDI altitude)."
     }
   },
   "queue": {

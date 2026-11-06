@@ -1612,6 +1612,12 @@
   ],
   "blueprint_art": [
     {
+      "title": "Apollo 11",
+      "file": "/images/blueprints/apollo11.webp",
+      "route": "/missions?id=apollo11",
+      "cover": false
+    },
+    {
       "title": "Cassini-Huygens",
       "file": "/images/blueprints/cassini.webp",
       "route": "/missions?id=cassini",
@@ -3936,7 +3942,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 3,
+    "blueprint_art": 4,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

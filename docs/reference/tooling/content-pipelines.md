@@ -349,6 +349,9 @@ between them:
   propagation (`conic-leg.ts`, `conic-leg.test.ts`);
 - else (resonant multi-revolution legs, ion-propulsion cruises) the coasting estimate.
 
+A leg gets a point per ~15 days and at least one per 8° of arc (Mercury-resonant loops were
+70–85° polygons); /fly samples the path at 2 points per waypoint, 500–2400.
+
 Sun missions end at their first perihelion (`SUN_PERIHELION_AU`, sourced): a real Kepler fall from
 the last anchor, marked `ends_at_perihelion_au`. The script prints per mission how many legs are
 conics and how many estimates. `/fly` moves labelled waypoints onto the body's position at that

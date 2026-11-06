@@ -424,11 +424,14 @@ export function computeMissionApply(
       // MET 193 falls between samples at 178 and 204, and the lerp
       // overshoots/undershoots Venus's actual position. 500 samples
       // = 4.9 days/sample, so the lerp lands within a few fractions
-      // of an AU of every waypoint.
+      // of an AU of every waypoint. A dense path gets 2 samples per waypoint (up to 2400):
+      // BepiColombo's and MESSENGER's 88-day Mercury loops at 500 samples were ~25°-a-step
+      // polygons.
+      const pathPts = inMission.length >= 2 ? inMission : remapped;
       const samples = buildSplineFromTrajectoryWaypoints(
-        inMission.length >= 2 ? inMission : remapped,
+        pathPts,
         m.departure_date,
-        500,
+        Math.min(2400, Math.max(500, 2 * pathPts.length)),
       );
       if (samples && samples.length >= 2) {
         splineOut = samples.map((p) => ({ x: p.x, y: p.y, z: p.z }));

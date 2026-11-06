@@ -156,7 +156,20 @@ for (const id of process.argv.slice(2)) {
       const b = list[i + 1];
       if (!b) break;
       const dt = b.met - a.met;
-      const n = Math.min(40, Math.max(2, Math.round(dt / 15)));
+      const r0 = Math.hypot(a.x, a.z);
+      const r1 = Math.hypot(b.x, b.z);
+      const t0 = Math.atan2(a.z, a.x);
+      const base = (((Math.atan2(b.z, b.x) - t0) % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+      const rAvg = (r0 + r1) / 2;
+      const expected = ((2 * Math.PI) / (365.25 * rAvg ** 1.5)) * dt;
+      const k = Math.max(0, Math.round((expected - base) / (2 * Math.PI)));
+      const dTheta = base + 2 * Math.PI * k;
+      // A point per ~15 days, and at least one per 8° of arc: a fixed step left Mercury-resonant
+      // loops (88-day laps) as polygons with 70–85° corners on /fly.
+      const n = Math.min(
+        240,
+        Math.max(2, Math.round(dt / 15), Math.ceil(dTheta / (Math.PI / 22.5))),
+      );
       const push = (met: number, p: { x: number; z: number }) =>
         out.push({ date: iso(dep, met), x: +p.x.toFixed(4), y: 0, z: +p.z.toFixed(4) });
       if (a.stays && a.body === b.body) {
@@ -168,14 +181,6 @@ for (const id of process.argv.slice(2)) {
         }
         continue;
       }
-      const r0 = Math.hypot(a.x, a.z);
-      const r1 = Math.hypot(b.x, b.z);
-      const t0 = Math.atan2(a.z, a.x);
-      const base = (((Math.atan2(b.z, b.x) - t0) % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
-      const rAvg = (r0 + r1) / 2;
-      const expected = ((2 * Math.PI) / (365.25 * rAvg ** 1.5)) * dt;
-      const k = Math.max(0, Math.round((expected - base) / (2 * Math.PI)));
-      const dTheta = base + 2 * Math.PI * k;
       // Within one revolution, the real conic between the two encounters (Lambert). Resonant
       // legs that loop the Sun more than once (MESSENGER's Mercury returns) keep the estimate.
       const conic = k === 0 ? lambertLeg({ x: a.x, z: a.z }, { x: b.x, z: b.z }, dt) : null;

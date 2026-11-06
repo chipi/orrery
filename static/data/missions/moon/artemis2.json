@@ -13,7 +13,7 @@
   "round_trip": true,
   "vehicle": "SLS Block 1 + Orion (crewed)",
   "payload": "Orion + 4-person crew (Wiseman / Glover / Koch / Hansen)",
-  "delta_v": "~6.5 km/s (round trip)",
+  "delta_v": "~3.1 km/s (from Earth orbit, free return)",
   "data_quality": "good",
   "credit": "© NASA — Artemis II mission, April 2026. First crewed flight beyond LEO since Apollo 17 (1972). Hybrid free-return lunar flyby — Orion swung around the Moon's far side at ~9,200 km altitude and returned to Earth without lunar orbit insertion. The mission that inspired Orrery.",
   "links": [
@@ -67,9 +67,9 @@
       "source": "NASA Artemis II free-return flyby (2026-04-06): no lunar orbit insertion burn; closest approach ~6,545 km (4,067 mi) above the far side; maximum distance 406,771 km, the human record"
     },
     "totals": {
-      "total_dv_km_s": 6.5,
+      "total_dv_km_s": 3.1,
       "tli_or_tmi_dv_km_s": 0.39,
-      "source": "NASA Artemis II: ICPS raised perigee and apogee into a high Earth orbit; Orion's service-module engine made the ~0.39 km/s TLI ~25 h after launch; free-return saves the LOI + TEI burns vs Apollo"
+      "source": "NASA Artemis II: ICPS raised perigee and apogee into a high Earth orbit; Orion's service-module engine made the ~0.39 km/s TLI ~25 h after launch; total derived from the 350 km parking orbit to C3 -1.7 km2/s2 (cislunar_profile): sqrt(C3 + 2mu/r) - sqrt(mu/r) = 3.1 km/s, split between the ICPS raises and Orion's TLI; free return needs no LOI or TEI burn (Apollo did)"
     },
     "events": [
       {

@@ -1,0 +1,44 @@
+{
+  "_about": "Mission blueprints (#641): how each master in masters/blueprints/ was made. The reference sheet is scripts/anatomy/blueprint-plan-view.ts <id>; the model (Higgsfield gpt_image_2_6, high, 4k, 3:2) redraws it by hand. Facts on each sheet are sourced below; after each sheet our own mission and fleet text is checked against it and fixed where it was wrong.",
+  "process": [
+    "1. Facts: dates, distances, launcher and spacecraft numbers from the sources listed; worked values from the site's Lab tools and ephemeris.",
+    "2. Reference: npx tsx scripts/anatomy/blueprint-plan-view.ts <id> ref.png (computed plan view + panel layout), uploaded as the image reference.",
+    "3. Drafts: 1-2 at quality medium, 2k (1 credit each) to settle layout and wording.",
+    "4. Final: one render at quality high, 4k (4.25 credits), native 3504x2336 — no upscale needed (served base is 3072).",
+    "5. Fixes: local patches (glyphs copied from the same sheet, paper patches) or a small crop edit pasted back cell by cell.",
+    "6. Content check: our mission/fleet text vs the sheet; wrong numbers fixed in all 14 locales."
+  ],
+  "sheets": {
+    "voyager-2": {
+      "date": "2026-11-06",
+      "final_job": "6aba4c50-89b7-44da-93b1-a96a6af883d6",
+      "reference_media": "56270bcd-1898-46be-a395-f86d14efd604",
+      "edits": [
+        "spacecraft panel: the callout on the golden record read 5 (a second 5); replaced by the legend's own circled 6",
+        "v_esc formula: subscript ∞ in μ∞ redrawn as ☉",
+        "encounter table: Jupiter 570,000 KM → 721,670 KM (crop edit job 6b219c7d-7b5e-4e8c-8170-178d5e4b098e, only the cell pasted back), to match our mission text: 721,670 km from Jupiter's centre = 650,180 km above the clouds (Astronomy.com); Wikipedia's 570,000 km does not fit either"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Voyager_2",
+        "https://en.wikipedia.org/wiki/Titan_IIIE",
+        "https://www.astronomy.com/today-in-the-history-of-astronomy/july-9-1979-voyager-2s-jupiter-visit/"
+      ],
+      "content_check": "static/data/missions/neptune/voyager-2.json and the fleet entry: dates and distances agree with the sheet (Jupiter 721,670 km, Saturn 101,000 km, Uranus 81,500 km, Neptune 4,950 km above cloud tops, Triton ~40,000 km); no change needed."
+    },
+    "cassini": {
+      "date": "2026-11-06",
+      "final_job": "85f7f4d8-ee82-4fb5-afd5-df7b51249e4b",
+      "reference_media": "6fd57c08-328b-4fbb-8555-9152477c68c6",
+      "drafts": ["d2c6ddc4-fb59-44cb-a064-3d05ea8a016d", "e9efe9f7-1441-496c-abd8-0f6ea0ee17b3"],
+      "edits": ["main view note: DLANETS → PLANETS (P copied from LOOPS on the same sheet)"],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
+        "https://en.wikipedia.org/wiki/Titan_IV",
+        "https://en.wikipedia.org/wiki/Huygens_(spacecraft)",
+        "https://www.sciencedaily.com/releases/1998/04/980428075725.htm"
+      ],
+      "notes": "The Venus 1 → Venus 2 leg is drawn as one conic; the real flight had a deep space manoeuvre on 3 Dec 1998, noted on the sheet. SRMU thrust left off: Wikipedia's 15.12 MN does not say per motor or both.",
+      "content_check": "Fixed: our payload said the orbiter was ~5712 kg dry; 5,712 kg is the whole stack at launch, dry is 2,523 kg (all 14 locales, commit cd90ae7b4a5). Checked and kept: Huygens ~318 kg (ESA probe mass), Venus 1 284 km (JPL); the sheet uses these. Added to the sheet from our data: SOI 96-minute burn, 626 m/s (JPL)."
+    }
+  }
+}

@@ -89,7 +89,7 @@
         "description": "July 1995. Companion to the south polar pass, this time over the northern solar pole. The two passes together delivered the first true 3D map of the heliosphere — confirming the Sun's polar magnetic-field structure flips during solar maximum (a finding Ulysses confirmed in its second polar pass set, 2000-2001)."
       },
       {
-        "met_days": 6845,
+        "met_days": 6842,
         "type": "anomaly",
         "label": "End of mission — propellant frozen",
         "description": "2009-06-30. Ulysses was decommissioned after 18 years of operation — far beyond the planned 5-year mission. The cause was thermal: as the RTG decayed below the threshold needed to keep hydrazine propellant lines warm, the propellant would have frozen and the spacecraft become unrecoverable. Three polar pass sets had been completed by then; the heliospheric data archive remains the standard reference."

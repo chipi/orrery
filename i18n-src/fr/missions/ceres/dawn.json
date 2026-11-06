@@ -23,9 +23,9 @@
   "vehicle_stage": "Delta II Star-48B (troisième étage)",
   "flight_events": [
     {
-      "met": 508,
+      "met": 510,
       "label": "Mars — assistance gravitationnelle",
-      "description": "Approche minimale de 549 km le 2009-02-17. L'assistance de Mars a apporté environ 2,6 km/s — de quoi atteindre l'astéroïde Vesta après deux années supplémentaires de spirale à propulsion ionique. Sans elle, Dawn aurait eu besoin de deux fois plus d'ergols ou de deux fois plus de temps de croisière."
+      "description": "Approche minimale de 542 km le 2009-02-18. L'assistance de Mars a apporté environ 2,6 km/s — de quoi atteindre l'astéroïde Vesta après deux années supplémentaires de spirale à propulsion ionique. Sans elle, Dawn aurait eu besoin de deux fois plus d'ergols ou de deux fois plus de temps de croisière."
     },
     {
       "met": 1388,
@@ -38,7 +38,7 @@
       "description": "Départ de Vesta le 2012-09-05. Les moteurs ioniques élargissent la spirale pendant 2,5 ans en direction de Cérès — le premier transfert interplanétaire jamais réalisé sous faible poussée continue entre deux corps. La trajectoire a consommé environ 112 kg de xénon."
     },
     {
-      "met": 2718,
+      "met": 2717.53,
       "label": "Insertion en orbite de Cérès",
       "description": "Capture en orbite de Cérès le 2015-03-06 — premier engin à orbiter autour d'une planète naine, et premier à orbiter autour de deux corps extraterrestres. Descente en spirale jusqu'à une orbite de cartographie à basse altitude de 35 km en 2018. À court d'hydrazine pour le contrôle d'attitude le 2018-10-31, l'engin reste sur une orbite stable autour de Cérès, monument planétaire protégé à long terme par les règles de protection planétaire."
     }

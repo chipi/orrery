@@ -68,7 +68,7 @@
         "description": "August 2024. The first spacecraft to use a Moon flyby (closest approach 700 km) followed by an Earth flyby (closest approach 6,800 km) within 24 hours — a coupled double assist that ESA engineers designed to bend Juice's trajectory toward Venus while saving ~100 m/s of ∆v versus a pure Earth-only flyby."
       },
       {
-        "met_days": 871,
+        "met_days": 870,
         "type": "flyby",
         "label": "Venus — gravity assist",
         "description": "August 2025. Closest approach ~5,088 km from Venus. The encounter raises Juice's aphelion enough that two more Earth assists in 2026 + 2029 will reach Jupiter. The Venus thermal environment is the hottest the spacecraft will face — passive thermal control was designed around this pass."

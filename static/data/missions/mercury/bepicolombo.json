@@ -73,13 +73,13 @@
         "description": "Closest approach 12,700 km on 2020-04-10. The first of nine flybys needed to lose orbital energy and spiral inward toward Mercury. Reaching Mercury directly from Earth is among the hardest interplanetary transfers — falling toward the Sun the spacecraft speeds up (Mercury orbits at about 47 km/s, Earth at about 30), so it has to shed a great deal of orbital energy to be slow enough relative to Mercury to be captured — the opposite of an outer-system mission's accelerate-and-go problem."
       },
       {
-        "met_days": 727,
+        "met_days": 726,
         "type": "flyby",
         "label": "Venus #1 — gravity assist",
         "description": "Closest approach 10,720 km on 2020-10-15. First of two Venus assists. Venus's gravity is used here to BRAKE the spacecraft — taking energy out of the heliocentric orbit so the perihelion drops toward Mercury's distance from the Sun."
       },
       {
-        "met_days": 1026,
+        "met_days": 1025,
         "type": "flyby",
         "label": "Venus #2 — gravity assist",
         "description": "Closest approach 552 km on 2021-08-10 — much closer than Venus #1. The deeper flyby drops aphelion further, setting up the first of six Mercury flybys 11 months later."

@@ -302,11 +302,11 @@ describe('getMission', () => {
 
   it('translates structural flight events from the overlay flight_events', async () => {
     const fr = await getMission('dawn', 'ceres', 'fr');
-    const frMars = fr?.flight?.events?.find((e) => e.met_days === 508);
+    const frMars = fr?.flight?.events?.find((e) => e.met_days === 510);
     expect(frMars?.label).toBe('Mars — assistance gravitationnelle');
-    expect(frMars?.description).toMatch(/^Approche minimale de 549 km/);
+    expect(frMars?.description).toMatch(/^Approche minimale de 542 km/);
     const en = await getMission('dawn', 'ceres');
-    expect(en?.flight?.events?.find((e) => e.met_days === 508)?.label).toBe(
+    expect(en?.flight?.events?.find((e) => e.met_days === 510)?.label).toBe(
       'Mars — gravity assist',
     );
   });
@@ -315,7 +315,7 @@ describe('getMission', () => {
     // /fly finds flyby bodies, DART's impact and the Moon phases from event labels; in a
     // translated locale those failed ("Mars — assistance gravitationnelle" is fine, "火星" not).
     const fr = await getMission('dawn', 'ceres', 'fr');
-    const frMars = fr?.flight?.events?.find((e) => e.met_days === 508);
+    const frMars = fr?.flight?.events?.find((e) => e.met_days === 510);
     expect(frMars?.label_en).toBe('Mars — gravity assist');
   });
 

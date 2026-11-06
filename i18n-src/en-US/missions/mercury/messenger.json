@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 365,
+      "met": 364,
       "label": "EARTH GRAVITY ASSIST",
       "note": "First of six assists to slow the trajectory enough to enter Mercury orbit.",
       "type": "nominal"
     },
     {
-      "met": 2419,
+      "met": 2418.03,
       "label": "MERCURY ORBIT INSERTION",
       "note": "Main-engine burn places MESSENGER into Mercury orbit after seven years of cruise.",
       "type": "nominal"

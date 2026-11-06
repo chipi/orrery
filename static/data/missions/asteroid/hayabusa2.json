@@ -68,7 +68,7 @@
         "description": "Tanegashima, Japan, 2014-12-03. JAXA's follow-up to the original Hayabusa, designed to bring back a larger, less-contaminated asteroid sample. Targets near-Earth asteroid 162173 Ryugu — a primitive C-type carbonaceous body that may preserve volatile organics from the early Solar System."
       },
       {
-        "met_days": 366,
+        "met_days": 365,
         "type": "flyby",
         "label": "Earth — gravity assist",
         "description": "Closest approach 3,090 km on 2015-12-03. The Earth flyby raises the spacecraft's aphelion enough to reach Ryugu's slightly-larger heliocentric orbit. Ion engines (four xenon thrusters) handled the cruise propulsion, demonstrating Japan's electric propulsion lineage from Hayabusa 1."

@@ -9,8 +9,8 @@
   "events": [
     { "met": 0, "label": "LANZAMIENTO", "note": "Atlas LV-3 Agena-D despega desde Cabo Cañaveral LC-12.", "type": "nominal" },
     { "met": 8, "label": "TCM-1", "note": "Primera corrección de trayectoria a medio camino completada; trayectoria fijada.", "type": "nominal" },
-    { "met": 228, "label": "SOBREVUELO DE MARTE", "note": "Aproximación máxima 9846 km. 22 imágenes devueltas a lo largo de unas tres semanas durante la reproducción de datos.", "type": "nominal" },
-    { "met": 228.5, "label": "PRIMERAS IMÁGENES", "note": "Primeras imágenes de cerca de otro planeta jamás devueltas a la Tierra.", "type": "info" }
+    { "met": 229, "label": "SOBREVUELO DE MARTE", "note": "Aproximación máxima 9846 km. 22 imágenes devueltas a lo largo de unas tres semanas durante la reproducción de datos.", "type": "nominal" },
+    { "met": 229.5, "label": "PRIMERAS IMÁGENES", "note": "Primeras imágenes de cerca de otro planeta jamás devueltas a la Tierra.", "type": "info" }
   ],
   "vehicle_stage": "etapa superior Agena D"
 }

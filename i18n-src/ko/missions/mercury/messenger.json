@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 365,
+      "met": 364,
       "label": "지구 중력 보조 기동",
       "note": "수성 궤도 진입에 필요한 속도를 낮추기 위한 6번의 기동 중 첫 번째.",
       "type": "nominal"
     },
     {
-      "met": 2419,
+      "met": 2418.03,
       "label": "수성 궤도 진입",
       "note": "주 엔진 분사로 7년의 우주 항해 후 MESSENGER를 수성 궤도에 배치한다.",
       "type": "nominal"

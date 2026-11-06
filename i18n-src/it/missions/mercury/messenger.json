@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 365,
+      "met": 364,
       "label": "FIONDA GRAVITAZIONALE TERRESTRE",
       "note": "Prima delle sei fionde gravitazionali per rallentare la traiettoria quanto basta a entrare in orbita attorno a Mercurio.",
       "type": "nominal"
     },
     {
-      "met": 2419,
+      "met": 2418.03,
       "label": "INSERIMENTO NELL'ORBITA DI MERCURIO",
       "note": "L'accensione del motore principale posiziona MESSENGER nell'orbita di Mercurio dopo sette anni di crociera.",
       "type": "nominal"

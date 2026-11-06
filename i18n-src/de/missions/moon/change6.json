@@ -20,19 +20,19 @@
       "type": "nominal"
     },
     {
-      "met": 30,
+      "met": 29,
       "label": "LANDUNG",
       "note": "Lander sinkt zum Apollo-Krater (gegenüberliegende Seite) 01.06.2024 (UTC). Die gesamte Kommunikation erfolgt über das Queqiao-2-Relais.",
       "type": "nominal"
     },
     {
-      "met": 30.6,
+      "met": 29.6,
       "label": "PROBENAHME",
       "note": "1,935 kg aus Regolith auf der anderen Seite gesammelt.",
       "type": "info"
     },
     {
-      "met": 32,
+      "met": 31,
       "label": "AUFSTIEG",
       "note": "Aufstiegsfahrzeug hebt ab; Rendezvous mit dem Orbiter.",
       "type": "nominal"

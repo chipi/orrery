@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 365,
+      "met": 364,
       "label": "地球引力辅助加速",
       "note": "六次辅助加速中的第一次，足以减速使航天器进入水星轨道。",
       "type": "nominal"
     },
     {
-      "met": 2419,
+      "met": 2418.03,
       "label": "水星轨道插入",
       "note": "主引擎点火将MESSENGER投入水星轨道，结束七年的巡航阶段。",
       "type": "nominal"

@@ -204,6 +204,28 @@ npm run validate-image-integrity
 #    masters/ addition + the static/images webp + every touched static/data JSON.
 ```
 
+### Removing a gallery image — `drop-gallery-slots.mjs`
+
+Logos, mission patches, charts, press-event shots and near-duplicates do not belong in a gallery.
+To remove slots and keep every gallery contiguous (01..N):
+
+```bash
+node scripts/drop-gallery-slots.mjs fleet-galleries/h3/05 missions/apollo7/01   # dry run: the plan
+node scripts/drop-gallery-slots.mjs --apply fleet-galleries/h3/05 missions/apollo7/01
+npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/build-i18n-bundles.mjs \
+  && node scripts/mobile/build-offline-manifest.mjs && npm run validate-image-integrity
+```
+
+It renumbers the kept slots in order and moves their files (served WebP + rungs + 1x1, credit
+thumbs, masters). It rewrites every JSON under `static/data/`, `scripts/i18n-tools/` and `i18n-src/`
+that names the gallery: provenance rows, alt text in 14 locales, ladder, phashes, approved list
+(and its `count`), vision, curation, a story's image list. Hero overrides are renumbered. When a
+dropped slot was the hero, the override is removed and the script names the gallery, so you pick a
+new hero. Read the dry run's JSON list before applying. A content file (a story, a program) that
+loses an image deserves a look. First used 2026-11-06 on 39 slots in 34 galleries, after a
+contact-sheet review of every candidate the vision data tags `other` or describes as a
+logo/patch/chart/poster.
+
 ### Gotchas learned the hard way (the 2026-07 main→mobile rebase)
 
 - **Images that enter outside the pipeline need the full treatment.** When 0.7.3 added gallery `.jpg`s that a rebase pulled onto the WebP branch, they had **no masters, no WebP tiers, no provenance**. Fix = move each `.jpg` → `masters/`, re-run `build-display-ladder.mjs`, merge + rekey its provenance, rebuild counts. **Treat any hand-added image as a master candidate.**

@@ -1014,22 +1014,6 @@
       "scoring_cost_usd": 0.005541
     },
     "/images/fleet-galleries/ariane-5/04.jpg": {
-      "score": 2,
-      "subject": "ESA infographic timeline showing Ariane 5's legacy of launching science missions from 1999 to 2023 including XMM Newton, Rosetta, Herschel Planck, BepiColombo, Webb, and Juice.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/ariane-5/04.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-24T00:27:23.830Z",
-      "scoring_cost_usd": 0.005481
-    },
-    "/images/fleet-galleries/ariane-5/05.jpg": {
       "score": 7,
       "subject": "Artist's render of an Ariane 6 rocket lifting off from its launch pad at the Guiana Space Centre, surrounded by billowing steam and exhaust clouds.",
       "category": "render",
@@ -1038,7 +1022,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/ariane-5/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/ariane-5/04.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
@@ -2405,22 +2389,6 @@
       "scored_at": "2026-05-22T08:51:17.516Z",
       "scoring_cost_usd": 0.006725999999999999
     },
-    "/images/fleet-galleries/hayabusa-2/03.jpg": {
-      "score": 8,
-      "subject": "Close-up view of asteroid Ryugu's rocky, boulder-strewn surface photographed by JAXA's Hayabusa2 spacecraft against the blackness of space.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/hayabusa-2/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:51:20.590Z",
-      "scoring_cost_usd": 0.006441
-    },
     "/images/fleet-galleries/hitomi/01.jpg": {
       "score": 8,
       "subject": "A fully assembled spacecraft wrapped in gold multi-layer insulation blankets and solar panels stands on a transport dolly inside a cleanroom facility, with technicians visible in the background.",
@@ -2580,38 +2548,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T08:52:45.346Z",
       "scoring_cost_usd": 0.005391
-    },
-    "/images/fleet-galleries/im-1-odysseus/02.jpg": {
-      "score": 2,
-      "subject": "Circular mission patch for CLPS Intuitive Machines 1 launch virtual guest program at Kennedy Space Center LC-39A, featuring a rocket illustration on a blue background.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/im-1-odysseus/02.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:52:49.226Z",
-      "scoring_cost_usd": 0.004539
-    },
-    "/images/fleet-galleries/im-1-odysseus/05.jpg": {
-      "score": 2,
-      "subject": "A man in a blue blazer speaking at a press conference table with a microphone and water bottle in front of him.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.4
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/im-1-odysseus/05.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:52:53.668Z",
-      "scoring_cost_usd": 0.0078060000000000004
     },
     "/images/fleet-galleries/insight/01.jpg": {
       "score": 8,
@@ -3303,22 +3239,6 @@
       "scoring_cost_usd": 0.005496
     },
     "/images/fleet-galleries/lvm3/03.jpg": {
-      "score": 2,
-      "subject": "Official ISRO promotional graphic for the LVM3-M3 OneWeb India-2 Mission showing a render of the GSLV Mk III rocket and a OneWeb satellite against a stylized background.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.35,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/lvm3/03.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:56:56.942Z",
-      "scoring_cost_usd": 0.007116
-    },
-    "/images/fleet-galleries/lvm3/04.jpg": {
       "score": 9,
       "subject": "ISRO GSLV rocket lifts off from a launch pad surrounded by billowing exhaust clouds and bright engine flames against a blue sky.",
       "category": "launch",
@@ -3327,7 +3247,7 @@
         "y": 0.35
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/lvm3/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/lvm3/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -4294,22 +4214,6 @@
       "scored_at": "2026-05-22T09:01:09.442Z",
       "scoring_cost_usd": 0.007668
     },
-    "/images/fleet-galleries/osiris-rex/05.jpg": {
-      "score": 2,
-      "subject": "A person speaking at a podium during a press conference in a museum meteorite exhibit, surrounded by media photographers and cameras.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.78,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/osiris-rex/05.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-22T09:01:14.070Z",
-      "scoring_cost_usd": 0.007268999999999999
-    },
     "/images/fleet-galleries/perseverance/01.jpg": {
       "score": 9,
       "subject": "NASA's Ingenuity helicopter in flight above the rocky Martian surface with distant hills in the background",
@@ -4552,38 +4456,6 @@
     },
     "/images/fleet-galleries/pragyan/03.jpg": {
       "score": 6,
-      "subject": "ISRO's Pragyan rover photographed on the lunar surface near the Chandrayaan-3 Vikram lander, as seen from the lander's onboard camera shortly after deployment.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.35,
-        "y": 0.25
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/pragyan/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:02:15.487Z",
-      "scoring_cost_usd": 0.005256
-    },
-    "/images/fleet-galleries/pragyan/04.jpg": {
-      "score": 6,
-      "subject": "ISRO's Pragyan rover visible on the lunar surface near the Chandrayaan-3 Vikram lander, as seen from the lander's onboard camera with ISRO branding overlay.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.38,
-        "y": 0.28
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/pragyan/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:02:18.655Z",
-      "scoring_cost_usd": 0.005301
-    },
-    "/images/fleet-galleries/pragyan/05.jpg": {
-      "score": 6,
       "subject": "Close-up camera view of ISRO's Pragyan rover wheel and chassis on the lunar surface, captured by an onboard camera during the Chandrayaan-3 mission.",
       "category": "surface",
       "focal_point": {
@@ -4591,7 +4463,7 @@
         "y": 0.4
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/pragyan/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/pragyan/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -5063,22 +4935,6 @@
       "scoring_cost_usd": 0.007566
     },
     "/images/fleet-galleries/saturn-v/01.jpg": {
-      "score": 2,
-      "subject": "NASA Kennedy Space Center 50th Anniversary commemorative poster collage featuring Apollo/Saturn program imagery including Saturn V launches, an astronaut on the lunar surface, and hardware photos.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/saturn-v/01.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T09:04:46.974Z",
-      "scoring_cost_usd": 0.007863
-    },
-    "/images/fleet-galleries/saturn-v/02.jpg": {
       "score": 9,
       "subject": "A Saturn rocket lifts off from its launch pad amid billowing exhaust and flame, with a crescent moon visible in the background sky.",
       "category": "launch",
@@ -5087,14 +4943,14 @@
         "y": 0.4
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/saturn-v/02.1x1.jpg"
+        "1x1": "/images/fleet-galleries/saturn-v/01.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:04:49.950Z",
       "scoring_cost_usd": 0.0072239999999999995
     },
-    "/images/fleet-galleries/saturn-v/03.jpg": {
+    "/images/fleet-galleries/saturn-v/02.jpg": {
       "score": 9,
       "subject": "Saturn V rocket lifting off from Kennedy Space Center launch pad, with billowing orange exhaust clouds reflected in a nearby body of water and birds scattered by the blast.",
       "category": "launch",
@@ -5103,14 +4959,14 @@
         "y": 0.35
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/saturn-v/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/saturn-v/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:04:52.929Z",
       "scoring_cost_usd": 0.007422
     },
-    "/images/fleet-galleries/saturn-v/04.jpg": {
+    "/images/fleet-galleries/saturn-v/03.jpg": {
       "score": 9,
       "subject": "A Saturn V rocket illuminated at night on its launch pad at Kennedy Space Center, surrounded by the mobile service structure against a dramatic cloudy sky.",
       "category": "launch",
@@ -5119,14 +4975,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/saturn-v/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/saturn-v/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:04:55.998Z",
       "scoring_cost_usd": 0.007581
     },
-    "/images/fleet-galleries/saturn-v/05.jpg": {
+    "/images/fleet-galleries/saturn-v/04.jpg": {
       "score": 10,
       "subject": "A Saturn V rocket illuminated by spotlights on the launch pad at Kennedy Space Center at night, with a full moon visible in the background.",
       "category": "launch",
@@ -5135,7 +4991,7 @@
         "y": 0.52
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/saturn-v/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/saturn-v/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -5976,7 +5832,7 @@
     },
     "/images/fleet-galleries/space-shuttle-orbiter/02.jpg": {
       "score": 2,
-      "subject": "Official crew patch for NASA Space Shuttle mission STS-130 featuring crew names Zamka, Virts, Hire, Patrick, Behnken, and Robinson on a hexagonal badge with Earth and shuttle silhouette.",
+      "subject": "Official mission patch for NASA Space Shuttle mission STS-130 featuring crew names Zamka, Virts, Robinson, Hire, Behnken, and Patrick on a hexagonal design with Earth and shuttle silhouette.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -5987,26 +5843,10 @@
       },
       "rejected_by": "category-diagram",
       "fallback": false,
-      "scored_at": "2026-05-22T09:07:54.232Z",
-      "scoring_cost_usd": 0.007926
-    },
-    "/images/fleet-galleries/space-shuttle-orbiter/03.jpg": {
-      "score": 2,
-      "subject": "Official mission patch for NASA Space Shuttle mission STS-130 featuring crew names Zamka, Virts, Robinson, Hire, Behnken, and Patrick on a hexagonal design with Earth and shuttle silhouette.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/space-shuttle-orbiter/03.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
       "scored_at": "2026-05-22T09:07:58.522Z",
       "scoring_cost_usd": 0.007926
     },
-    "/images/fleet-galleries/space-shuttle-orbiter/04.jpg": {
+    "/images/fleet-galleries/space-shuttle-orbiter/03.jpg": {
       "score": 9,
       "subject": "Space Shuttle Endeavour docked to the International Space Station with Canadarm2 visible and Earth's limb in the background, photographed on December 7, 2001.",
       "category": "orbital",
@@ -6015,14 +5855,14 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/space-shuttle-orbiter/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/space-shuttle-orbiter/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:08:02.491Z",
       "scoring_cost_usd": 0.007527
     },
-    "/images/fleet-galleries/space-shuttle-orbiter/05.jpg": {
+    "/images/fleet-galleries/space-shuttle-orbiter/04.jpg": {
       "score": 8,
       "subject": "Space Shuttle Endeavour docked to the International Space Station with Canadarm2 visible against the black of space and Earth's limb in the background, photographed on December 7, 2001.",
       "category": "orbital",
@@ -6031,7 +5871,7 @@
         "y": 0.52
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/space-shuttle-orbiter/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/space-shuttle-orbiter/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -6951,22 +6791,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T09:13:25.009Z",
       "scoring_cost_usd": 0.007686
-    },
-    "/images/fleet-galleries/voyager-1/04.jpg": {
-      "score": 2,
-      "subject": "A woman speaking at a podium or panel event, gesturing with her hands against a blue background with structural elements.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/voyager-1/04.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-22T09:13:28.699Z",
-      "scoring_cost_usd": 0.007923
     },
     "/images/fleet-galleries/voyager-2/01.jpg": {
       "score": 7,
@@ -9216,23 +9040,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:15:55.101Z",
       "scoring_cost_usd": 0.008529
-    },
-    "/images/missions/perseverance/05.jpg": {
-      "score": 2,
-      "subject": "NASA Mars Perseverance mission branding graphic with Mars globe and mission title text on a red-purple gradient background.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:15:58.483Z",
-      "scoring_cost_usd": 0.007683000000000001
     },
     "/images/missions/slim.jpg": {
       "score": 6,
@@ -13733,7 +13540,7 @@
       "scored_at": "2026-05-24T01:01:58.193Z",
       "scoring_cost_usd": 0.006515999999999999
     },
-    "/images/fleet-galleries/hayabusa-2/05.jpg": {
+    "/images/fleet-galleries/hayabusa-2/04.jpg": {
       "score": 2,
       "subject": "Infographic diagram showing organic molecules discovered on asteroid Ryugu, with molecular structure illustrations and text labels overlaid on an asteroid surface photograph.",
       "category": "diagram",
@@ -13742,28 +13549,12 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/hayabusa-2/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/hayabusa-2/04.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
       "scored_at": "2026-05-24T01:02:01.436Z",
       "scoring_cost_usd": 0.005271
-    },
-    "/images/fleet-galleries/htv-x/05.jpg": {
-      "score": 1,
-      "subject": "HTV-X mission logo displayed as black text on a white background.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/htv-x/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-24T01:02:04.878Z",
-      "scoring_cost_usd": 0.004926
     },
     "/images/fleet-galleries/htv/04.jpg": {
       "score": 2,
@@ -13781,7 +13572,7 @@
       "scored_at": "2026-05-24T01:02:10.591Z",
       "scoring_cost_usd": 0.005826
     },
-    "/images/fleet-galleries/im-1-odysseus/03.jpg": {
+    "/images/fleet-galleries/im-1-odysseus/02.jpg": {
       "score": 5,
       "subject": "Close-up orbital or reconnaissance photograph of the lunar surface showing cratered terrain with a shadowed crater in the upper left corner.",
       "category": "surface",
@@ -13790,14 +13581,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/im-1-odysseus/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/im-1-odysseus/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-24T01:02:13.506Z",
       "scoring_cost_usd": 0.006366
     },
-    "/images/fleet-galleries/im-1-odysseus/04.jpg": {
+    "/images/fleet-galleries/im-1-odysseus/03.jpg": {
       "score": 6,
       "subject": "Lunar Reconnaissance Orbiter overhead view of the Moon's cratered surface with a small circled object or spacecraft indicated near center frame.",
       "category": "surface",
@@ -13806,7 +13597,7 @@
         "y": 0.49
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/im-1-odysseus/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/im-1-odysseus/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -13941,7 +13732,7 @@
       "scored_at": "2026-05-24T01:02:56.599Z",
       "scoring_cost_usd": 0.005865
     },
-    "/images/fleet-galleries/lvm3/05.jpg": {
+    "/images/fleet-galleries/lvm3/04.jpg": {
       "score": 9,
       "subject": "ISRO LVM3 rocket standing on the launch pad at Satish Dhawan Space Centre (SDSC SHAR), Sriharikota, India, surrounded by the mobile service tower with retracted access arms.",
       "category": "launch",
@@ -13950,7 +13741,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/lvm3/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/lvm3/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -14563,22 +14354,6 @@
       "scoring_cost_usd": 0.005091
     },
     "/images/fleet-galleries/kourou-ela-2/03.jpg": {
-      "score": 2,
-      "subject": "Promotional broadcast graphic for ESA Ariane 5 launch carrying Eutelsat Konnect and GSAT-30 satellites, with overlaid text and composite imagery.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/kourou-ela-2/03.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:14:46.648Z",
-      "scoring_cost_usd": 0.005451
-    },
-    "/images/fleet-galleries/kourou-ela-2/04.jpg": {
       "score": 6,
       "subject": "A rocket stage or booster being assembled or processed vertically inside an integration facility, with engine nozzle visible at the bottom.",
       "category": "hardware",
@@ -14587,14 +14362,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/kourou-ela-2/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/kourou-ela-2/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:14:50.437Z",
       "scoring_cost_usd": 0.004806
     },
-    "/images/fleet-galleries/kourou-ela-2/05.jpg": {
+    "/images/fleet-galleries/kourou-ela-2/04.jpg": {
       "score": 8,
       "subject": "An Ariane 5 rocket being rolled out from the final assembly building at the Guiana Space Centre, with ESA and Ariane branding visible on the facility and a TITAN transporter vehicle in the foreground.",
       "category": "launch",
@@ -14603,7 +14378,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/kourou-ela-2/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/kourou-ela-2/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -17081,23 +16856,6 @@
       "scored_at": "2026-07-05T21:00:17.943Z",
       "scoring_cost_usd": 0.00891
     },
-    "/images/missions/chandrayaan3/05.jpg": {
-      "score": 3,
-      "subject": "A small, blurry, overexposed blob of light labeled 'Propulsion Module' against a black background, with an ISRO logo watermark in the upper left corner.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.4,
-        "y": 0.43
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:00:49.759Z",
-      "scoring_cost_usd": 0.007167
-    },
     "/images/missions/giotto.jpg": {
       "score": 7,
       "subject": "HMC 68-image composite of Comet Halley's nucleus and coma captured by the Giotto spacecraft on 14 March 1986, showing the dark irregular nucleus with bright jets emanating from its sunlit side.",
@@ -18571,22 +18329,6 @@
       "scored_at": "2026-05-22T08:48:48.914Z",
       "scoring_cost_usd": 0.00795
     },
-    "/images/fleet-galleries/energia/05.jpg": {
-      "score": 2,
-      "subject": "A 1991 Soviet postal stamp (12 kopek, Pochta SSSR) depicting the Buran space shuttle on its launch pad with the Energia rocket.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.4
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/energia/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:48:52.643Z",
-      "scoring_cost_usd": 0.004365
-    },
     "/images/fleet-galleries/gaganyaan/01.jpg": {
       "score": 8,
       "subject": "ISRO Gaganyaan crew module capsule with Indian flag markings displayed vertically in an integration facility, showing the white and orange heat shield assembly with ISRO branding.",
@@ -18634,22 +18376,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T08:49:45.763Z",
       "scoring_cost_usd": 0.007779
-    },
-    "/images/fleet-galleries/gaganyaan/05.jpg": {
-      "score": 2,
-      "subject": "A display board at an exhibition showing the Gaganyaan mission infographic with mission profile diagrams, spacecraft illustrations, and text about India's first human spaceflight program.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/gaganyaan/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:49:49.552Z",
-      "scoring_cost_usd": 0.0059310000000000005
     },
     "/images/fleet-galleries/gaganyaan/03.jpg": {
       "score": 4,
@@ -18778,22 +18504,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T08:51:04.201Z",
       "scoring_cost_usd": 0.005016
-    },
-    "/images/fleet-galleries/h3/05.jpg": {
-      "score": 2,
-      "subject": "H3 rocket mission patch logo featuring stylized orbital trajectory lines on a blue circular background",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/h3/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-24T01:01:48.263Z",
-      "scoring_cost_usd": 0.006501
     },
     "/images/fleet-galleries/hubble/02.jpg": {
       "score": 8,
@@ -19434,22 +19144,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T09:10:18.097Z",
       "scoring_cost_usd": 0.007935
-    },
-    "/images/fleet-galleries/tess/05.jpg": {
-      "score": 3,
-      "subject": "A NASA TESS mission team member holds up spacecraft hardware components during a press briefing in front of a NASA logo backdrop.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.4
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/tess/05.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-22T09:10:28.898Z",
-      "scoring_cost_usd": 0.007431
     },
     "/images/fleet-galleries/tess/03.jpg": {
       "score": 4,
@@ -23484,22 +23178,6 @@
       "scoring_cost_usd": 0.0027990000000000003
     },
     "/images/fleet-galleries/juice/03.jpg": {
-      "score": 2,
-      "subject": "ESA infographic titled 'JUICE in a Nutshell' summarizing the Jupiter Icy Moons Explorer mission objectives, instruments, and partners.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.4
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:00:42.932Z",
-      "scoring_cost_usd": 0.0078060000000000004
-    },
-    "/images/fleet-galleries/juice/04.jpg": {
       "score": 6,
       "subject": "Artist's render or museum model of a spacecraft with deployed solar panels and a large parabolic dish antenna against a black background.",
       "category": "render",
@@ -23515,7 +23193,7 @@
       "scored_at": "2026-06-12T21:00:45.494Z",
       "scoring_cost_usd": 0.003255
     },
-    "/images/fleet-galleries/juice/05.jpg": {
+    "/images/fleet-galleries/juice/04.jpg": {
       "score": 7,
       "subject": "Artist's render of a small satellite with cross-shaped solar panels in Earth orbit, with the planet's limb and atmosphere visible in the background.",
       "category": "render",
@@ -24443,22 +24121,6 @@
       "scored_at": "2026-06-12T21:04:48.633Z",
       "scoring_cost_usd": 0.006213
     },
-    "/images/fleet-galleries/mars-odyssey/05.jpg": {
-      "score": 2,
-      "subject": "NASA 2001 Mars Odyssey mission patch showing an artist rendering of the spacecraft orbiting a colorized Mars globe with institutional partner names around the border.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:04:52.258Z",
-      "scoring_cost_usd": 0.004416
-    },
     "/images/fleet-galleries/mars2-orbiter/01.jpg": {
       "score": 3,
       "subject": "Soviet postage stamp from 1972 commemorating the Mars 2 automatic station reaching Mars on 27 November 1971, depicting an illustrated spacecraft approaching the red planet.",
@@ -24748,22 +24410,6 @@
       "scoring_cost_usd": 0.007806
     },
     "/images/fleet-galleries/messenger/04.jpg": {
-      "score": 2,
-      "subject": "French-language annotated diagram showing MESSENGER spacecraft impact trajectory and Mercury surface elevation chart for April 30 impact event.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:06:26.812Z",
-      "scoring_cost_usd": 0.007608
-    },
-    "/images/fleet-galleries/messenger/05.jpg": {
       "score": 6,
       "subject": "False-color gravity or magnetic anomaly map overlaid on a detailed grayscale image of the Moon, showing two prominent red hotspot regions against a cratered lunar surface.",
       "category": "diagram",
@@ -25242,22 +24888,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:08:47.347Z",
       "scoring_cost_usd": 0.007725
-    },
-    "/images/fleet-galleries/ulysses/05.jpg": {
-      "score": 2,
-      "subject": "Promotional graphic for the Ulysses solar probe mission showing a rendered spacecraft above the Sun with planets and bold text overlay.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:08:50.501Z",
-      "scoring_cost_usd": 0.0039059999999999997
     },
     "/images/fleet-galleries/vega-1/01.jpg": {
       "score": 7,
@@ -26572,23 +26202,6 @@
       "scored_at": "2026-07-05T21:19:26.806Z",
       "scoring_cost_usd": 0.009468
     },
-    "/images/missions/skylab-3/05.jpg": {
-      "score": 4,
-      "subject": "Official mission patch for Skylab 4 (SL-4) crewed by Carr, Gibson, and Pogue, featuring a human silhouette with rainbow rings, a tree, and an orbital diagram forming the number 3.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:19:35.532Z",
-      "scoring_cost_usd": 0.009609
-    },
     "/images/hotspots/mars/beagle2/tier2-ctx.jpg": {
       "score": 5,
       "subject": "Grayscale orbital image of a cratered planetary surface, likely Mars or the Moon, showing numerous impact craters of varying sizes across a flat plain.",
@@ -27806,23 +27419,6 @@
       "scored_at": "2026-07-05T20:55:09.623Z",
       "scoring_cost_usd": 0.008994
     },
-    "/images/missions/apollo-soyuz/05.jpg": {
-      "score": 2,
-      "subject": "The Apollo-Soyuz Test Project (ASTP) mission patch showing the docked Apollo and Soyuz spacecraft over a globe, with red and blue interlocking arcs.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-07-05T20:55:13.178Z",
-      "scoring_cost_usd": 0.009255
-    },
     "/images/missions/apollo10/01.jpg": {
       "score": 7,
       "subject": "A Saturn V rocket on its mobile launcher platform being rolled out along the crawlerway at Kennedy Space Center, with the Vehicle Assembly Building visible in the background.",
@@ -27926,23 +27522,6 @@
       "scoring_cost_usd": 0.005403000000000001
     },
     "/images/missions/apollo7/01.jpg": {
-      "score": 4,
-      "subject": "Official mission patch for Apollo 7 featuring the crew names Schirra, Eisele, and Cunningham with a Command/Service Module orbiting Earth.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-07-05T20:57:30.693Z",
-      "scoring_cost_usd": 0.009006
-    },
-    "/images/missions/apollo7/02.jpg": {
       "score": 7,
       "subject": "The three-man crew of Apollo 7 — Donn Eisele, Wally Schirra, and Walter Cunningham — posed in their white NASA spacesuits bearing mission patches and American flags.",
       "category": "people",
@@ -27959,7 +27538,7 @@
       "scored_at": "2026-07-05T20:57:34.554Z",
       "scoring_cost_usd": 0.009357
     },
-    "/images/missions/apollo7/03.jpg": {
+    "/images/missions/apollo7/02.jpg": {
       "score": 2,
       "subject": "Low-quality black and white image of astronauts inside a spacecraft cabin holding a sign reading 'Keep those cards and letters coming in folks'",
       "category": "people",
@@ -27976,24 +27555,7 @@
       "scored_at": "2026-07-05T20:57:38.044Z",
       "scoring_cost_usd": 0.009144
     },
-    "/images/missions/apollo7/04.jpg": {
-      "score": 4,
-      "subject": "Apollo 7 mission patch featuring the crew names Schirra, Eisele, and Cunningham with a Command and Service Module orbiting Earth and the Roman numeral VII.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-07-05T20:57:44.209Z",
-      "scoring_cost_usd": 0.009434999999999999
-    },
-    "/images/missions/apollo7/05.jpg": {
+    "/images/missions/apollo7/03.jpg": {
       "score": 4,
       "subject": "Astronaut Wally Schirra in flight suit with mission patch and headset microphone inside a spacecraft cabin.",
       "category": "people",
@@ -28537,23 +28099,6 @@
       "scored_at": "2026-07-05T21:06:57.035Z",
       "scoring_cost_usd": 0.009014999999999999
     },
-    "/images/missions/liberty-bell-7/05.jpg": {
-      "score": 2,
-      "subject": "A line graph showing velocity in feet per second versus elapsed time in seconds during the boost phase of the MR-4 Mercury mission, with engine cutoff marked at approximately 150 seconds.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:07:00.374Z",
-      "scoring_cost_usd": 0.006162000000000001
-    },
     "/images/missions/lucy/01.jpg": {
       "score": 8,
       "subject": "A ULA Atlas V rocket lifts off at night from a launch pad, illuminating the surrounding structures with bright engine exhaust and steam clouds.",
@@ -29082,23 +28627,6 @@
       "scoring_cost_usd": 0.008805
     },
     "/images/missions/sigma-7/02.jpg": {
-      "score": 4,
-      "subject": "Embroidered mission patch for Mercury-Atlas 8 (Sigma 7) flown by Wally Schirra, showing the number 8, Mercury spacecraft, and Earth.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:18:45.829Z",
-      "scoring_cost_usd": 0.005235
-    },
-    "/images/missions/sigma-7/03.jpg": {
       "score": 5,
       "subject": "Astronaut Wally Schirra in a silver Mercury spacesuit posing in front of a world map with a Mercury-Atlas rocket model beside him.",
       "category": "people",
@@ -29115,7 +28643,7 @@
       "scored_at": "2026-07-05T21:18:49.702Z",
       "scoring_cost_usd": 0.0093
     },
-    "/images/missions/sigma-7/04.jpg": {
+    "/images/missions/sigma-7/03.jpg": {
       "score": 7,
       "subject": "The actual Sigma 7 Mercury spacecraft flown by astronaut Wally Schirra on October 3, 1962, displayed on a stand in a museum setting with a blue curtain backdrop and an identification placard.",
       "category": "hardware",
@@ -29132,7 +28660,7 @@
       "scored_at": "2026-07-05T21:18:53.295Z",
       "scoring_cost_usd": 0.009069
     },
-    "/images/missions/sigma-7/05.jpg": {
+    "/images/missions/sigma-7/04.jpg": {
       "score": 7,
       "subject": "A Mercury-Atlas rocket on the launch pad with a red gantry tower beside it, ready for flight operations.",
       "category": "launch",
@@ -30815,23 +30343,6 @@
       "scored_at": "2026-07-05T21:12:02.000Z",
       "scoring_cost_usd": 0.009036
     },
-    "/images/missions/maven/03.jpg": {
-      "score": 2,
-      "subject": "A scientific chart from MAVEN/IUVS showing altitude vs. intensity of the brightest Mars aurora on record observed on 12-13 September 2017.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:12:08.779Z",
-      "scoring_cost_usd": 0.009249
-    },
     "/images/missions/maven/02.jpg": {
       "score": 4,
       "subject": "A partially corrupted composite image showing a planetary body (likely Mars or Venus) overlaid with a large region of magenta pixel noise or data artifact on the left side, with a faint green line artifact visible on the right.",
@@ -32244,19 +31755,6 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.009302999999999999
     },
-    "/images/missions/hope-probe/05.jpg": {
-      "score": 8,
-      "subject": "A crescent view of Mars photographed by the UAE Hope Probe's Emirates Exploration Imager (EXI), showing the planet's reddish surface and atmospheric haze against black space.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.65,
-        "y": 0.42
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009396
-    },
     "/images/missions/lucy/02.jpg": {
       "score": 6,
       "subject": "Artist concept comparison chart of the six Jupiter Trojan asteroid targets of NASA's Lucy mission, including Patroclus, Menoetius, Eurybates, Orus, Leucus, Polymele, and Donaldjohanson, shown to relative scale against a starfield.",
@@ -32348,7 +31846,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.00861
     },
-    "/images/missions/maven/04.jpg": {
+    "/images/missions/maven/03.jpg": {
       "score": 7,
       "subject": "Artist's concept render of NASA's MAVEN spacecraft in orbit above Mars with solar panels deployed against a starfield backdrop.",
       "category": "render",
@@ -32361,7 +31859,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.008334000000000001
     },
-    "/images/missions/maven/05.jpg": {
+    "/images/missions/maven/04.jpg": {
       "score": 7,
       "subject": "Artist's render of the MAVEN spacecraft with large solar panel arrays, gold foil insulation, a high-gain antenna dish, and extended wire booms against a black background.",
       "category": "render",
@@ -32490,19 +31988,6 @@
       "rejected_by": null,
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.005019
-    },
-    "/images/missions/skylab-4/05.jpg": {
-      "score": 8,
-      "subject": "A NASA Apollo Command and Service Module photographed in Earth orbit with 'United States' markings visible, seen from another spacecraft against the blue curve of Earth below.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009282
     },
     "/images/missions/solar-orbiter/02.jpg": {
       "score": 10,

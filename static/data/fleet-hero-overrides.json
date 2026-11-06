@@ -109,7 +109,7 @@
    "approved_at": "2026-06-12"
   },
   "lvm3": {
-   "slot": "05.jpg",
+   "slot": "04.jpg",
    "reason": "subject names a different entity than lvm3",
    "approved_at": "2026-06-12"
   },
@@ -179,7 +179,7 @@
    "approved_at": "2026-06-12"
   },
   "saturn-v": {
-   "slot": "05.jpg",
+   "slot": "04.jpg",
    "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
    "approved_at": "2026-06-12"
   },
@@ -314,7 +314,7 @@
    "approved_at": "2026-06-20"
   },
   "hayabusa-2": {
-   "slot": "04.jpg",
+   "slot": "03.jpg",
    "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 04)",
    "approved_at": "2026-06-20"
   },
@@ -354,7 +354,7 @@
    "approved_at": "2026-06-29"
   },
   "space-shuttle-orbiter": {
-   "slot": "05.jpg",
+   "slot": "04.jpg",
    "reason": "G5 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
    "approved_at": "2026-06-23"
   },
@@ -509,7 +509,7 @@
    "approved_at": "2026-11-06"
   },
   "starlink": {
-   "slot": "03.jpg",
+   "slot": "02.jpg",
    "reason": "hero review 2026-11-06: satellite over Earth; 01 was a star-trail mosaic",
    "approved_at": "2026-11-06"
   },

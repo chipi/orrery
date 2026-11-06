@@ -1810,10 +1810,6 @@
     320,
     960
   ],
-  "/images/fleet-galleries/ariane-5/05": [
-    320,
-    960
-  ],
   "/images/fleet-galleries/ariane-6/01": [
     320,
     640,
@@ -2788,11 +2784,6 @@
     1363,
     1920
   ],
-  "/images/fleet-galleries/energia/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/fleet-galleries/enterprise/01": [
     320,
     640,
@@ -3013,10 +3004,6 @@
     854,
     960
   ],
-  "/images/fleet-galleries/gaganyaan/05": [
-    320,
-    960
-  ],
   "/images/fleet-galleries/gaia/01": [
     320,
     640,
@@ -3222,10 +3209,6 @@
     320,
     960
   ],
-  "/images/fleet-galleries/h3/05": [
-    320,
-    960
-  ],
   "/images/fleet-galleries/hakuto-r/01": [
     320,
     640,
@@ -3256,11 +3239,7 @@
     320,
     960
   ],
-  "/images/fleet-galleries/hayabusa-2/03": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/hayabusa-2/05": [
+  "/images/fleet-galleries/hayabusa-2/04": [
     320,
     1280,
     1920
@@ -3325,11 +3304,6 @@
     640,
     960
   ],
-  "/images/fleet-galleries/hope/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/fleet-galleries/htv-x/01": [
     320,
     640,
@@ -3344,10 +3318,6 @@
     960
   ],
   "/images/fleet-galleries/htv-x/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/htv-x/05": [
     320,
     960
   ],
@@ -3401,19 +3371,11 @@
   ],
   "/images/fleet-galleries/im-1-odysseus/02": [
     320,
-    650
+    960
   ],
   "/images/fleet-galleries/im-1-odysseus/03": [
     320,
     960
-  ],
-  "/images/fleet-galleries/im-1-odysseus/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/im-1-odysseus/05": [
-    320,
-    1024
   ],
   "/images/fleet-galleries/inmarsat/01": [
     320,
@@ -3551,14 +3513,9 @@
   ],
   "/images/fleet-galleries/juice/03": [
     320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/juice/04": [
-    320,
     521
   ],
-  "/images/fleet-galleries/juice/05": [
+  "/images/fleet-galleries/juice/04": [
     320,
     1280,
     1920
@@ -3644,10 +3601,6 @@
     960
   ],
   "/images/fleet-galleries/kourou-ela-2/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/kourou-ela-2/05": [
     320,
     960
   ],
@@ -4084,15 +4037,6 @@
     2048,
     3072
   ],
-  "/images/fleet-galleries/lucy/04": [
-    320,
-    1280
-  ],
-  "/images/fleet-galleries/lucy/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/fleet-galleries/luna-16/01": [
     320,
     719,
@@ -4374,13 +4318,9 @@
   ],
   "/images/fleet-galleries/lvm3/03": [
     320,
-    960
-  ],
-  "/images/fleet-galleries/lvm3/04": [
-    320,
     500
   ],
-  "/images/fleet-galleries/lvm3/05": [
+  "/images/fleet-galleries/lvm3/04": [
     320,
     640,
     853,
@@ -4518,10 +4458,6 @@
   "/images/fleet-galleries/mars-odyssey/04": [
     320,
     1082
-  ],
-  "/images/fleet-galleries/mars-odyssey/05": [
-    320,
-    600
   ],
   "/images/fleet-galleries/mars-polar-lander/01": [
     320,
@@ -4704,11 +4640,6 @@
   ],
   "/images/fleet-galleries/messenger/04": [
     320,
-    1154,
-    1262
-  ],
-  "/images/fleet-galleries/messenger/05": [
-    320,
     1280,
     1920
   ],
@@ -4876,10 +4807,6 @@
   ],
   "/images/fleet-galleries/oneweb/04": [
     320,
-    1186
-  ],
-  "/images/fleet-galleries/oneweb/05": [
-    320,
     1280,
     1920
   ],
@@ -4956,10 +4883,6 @@
     1280
   ],
   "/images/fleet-galleries/osiris-rex/04": [
-    320,
-    1280
-  ],
-  "/images/fleet-galleries/osiris-rex/05": [
     320,
     1280
   ],
@@ -5138,15 +5061,6 @@
     960
   ],
   "/images/fleet-galleries/pragyan/03": [
-    320,
-    640,
-    960
-  ],
-  "/images/fleet-galleries/pragyan/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/pragyan/05": [
     320,
     960
   ],
@@ -5610,21 +5524,17 @@
   ],
   "/images/fleet-galleries/saturn-v/01": [
     320,
-    960
+    843
   ],
   "/images/fleet-galleries/saturn-v/02": [
     320,
-    843
+    871
   ],
   "/images/fleet-galleries/saturn-v/03": [
     320,
-    871
-  ],
-  "/images/fleet-galleries/saturn-v/04": [
-    320,
     1280
   ],
-  "/images/fleet-galleries/saturn-v/05": [
+  "/images/fleet-galleries/saturn-v/04": [
     320,
     640,
     929
@@ -5888,15 +5798,6 @@
     320,
     1280
   ],
-  "/images/fleet-galleries/soyuz-7k-ok/04": [
-    320,
-    996
-  ],
-  "/images/fleet-galleries/soyuz-7k-ok/05": [
-    320,
-    1206,
-    1460
-  ],
   "/images/fleet-galleries/soyuz-fg/01": [
     320,
     640,
@@ -6040,14 +5941,10 @@
   ],
   "/images/fleet-galleries/space-shuttle-orbiter/03": [
     320,
-    1280
-  ],
-  "/images/fleet-galleries/space-shuttle-orbiter/04": [
-    320,
     1280,
     1920
   ],
-  "/images/fleet-galleries/space-shuttle-orbiter/05": [
+  "/images/fleet-galleries/space-shuttle-orbiter/04": [
     320,
     640,
     1280,
@@ -6254,19 +6151,15 @@
   ],
   "/images/fleet-galleries/starlink/02": [
     320,
-    585
-  ],
-  "/images/fleet-galleries/starlink/03": [
-    320,
     1280,
     1920
   ],
-  "/images/fleet-galleries/starlink/04": [
+  "/images/fleet-galleries/starlink/03": [
     320,
     448,
     700
   ],
-  "/images/fleet-galleries/starlink/05": [
+  "/images/fleet-galleries/starlink/04": [
     320,
     500
   ],
@@ -6365,10 +6258,6 @@
     1280
   ],
   "/images/fleet-galleries/tess/04": [
-    320,
-    1280
-  ],
-  "/images/fleet-galleries/tess/05": [
     320,
     1280
   ],
@@ -6503,10 +6392,6 @@
     320,
     1280,
     1920
-  ],
-  "/images/fleet-galleries/ulysses/05": [
-    320,
-    539
   ],
   "/images/fleet-galleries/vandenberg-slc-4e/01": [
     320,
@@ -6855,10 +6740,6 @@
   "/images/fleet-galleries/voyager-1/03": [
     320,
     1105
-  ],
-  "/images/fleet-galleries/voyager-1/04": [
-    320,
-    1280
   ],
   "/images/fleet-galleries/voyager-2/01": [
     320,
@@ -8106,11 +7987,6 @@
     1280,
     1920
   ],
-  "/images/missions/apollo-soyuz/05": [
-    320,
-    1280,
-    1600
-  ],
   "/images/missions/apollo10/01": [
     320,
     640,
@@ -8273,26 +8149,16 @@
   ],
   "/images/missions/apollo7/01": [
     320,
+    640,
     1280,
     1920
   ],
   "/images/missions/apollo7/02": [
     320,
-    640,
     1280,
     1920
   ],
   "/images/missions/apollo7/03": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/missions/apollo7/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/missions/apollo7/05": [
     320,
     1268,
     1920
@@ -8574,10 +8440,6 @@
     960
   ],
   "/images/missions/chandrayaan3/04": [
-    320,
-    960
-  ],
-  "/images/missions/chandrayaan3/05": [
     320,
     960
   ],
@@ -9076,11 +8938,6 @@
     640,
     960
   ],
-  "/images/missions/hope-probe/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/missions/huygens/01": [
     320,
     640,
@@ -9171,10 +9028,6 @@
     320,
     1280,
     1920
-  ],
-  "/images/missions/liberty-bell-7/05": [
-    320,
-    630
   ],
   "/images/missions/lro/01": [
     320,
@@ -9530,13 +9383,9 @@
   ],
   "/images/missions/maven/03": [
     320,
-    1032
-  ],
-  "/images/missions/maven/04": [
-    320,
     1280
   ],
-  "/images/missions/maven/05": [
+  "/images/missions/maven/04": [
     320,
     603
   ],
@@ -9925,10 +9774,6 @@
     640,
     1280
   ],
-  "/images/missions/perseverance/05": [
-    320,
-    1279
-  ],
   "/images/missions/phoenix/01": [
     320,
     512
@@ -10127,19 +9972,15 @@
   ],
   "/images/missions/sigma-7/02": [
     320,
-    362
+    1280,
+    1920
   ],
   "/images/missions/sigma-7/03": [
     320,
     1280,
-    1920
-  ],
-  "/images/missions/sigma-7/04": [
-    320,
-    1280,
     1600
   ],
-  "/images/missions/sigma-7/05": [
+  "/images/missions/sigma-7/04": [
     320,
     800
   ],
@@ -10193,11 +10034,6 @@
     1280,
     1920
   ],
-  "/images/missions/skylab-3/05": [
-    320,
-    1225,
-    1920
-  ],
   "/images/missions/skylab-4/01": [
     320,
     1280,
@@ -10219,10 +10055,6 @@
     640,
     1280,
     1920
-  ],
-  "/images/missions/skylab-4/05": [
-    320,
-    1095
   ],
   "/images/missions/slim/01": [
     320,
@@ -13854,7 +13686,7 @@
     2048,
     2592
   ],
-  "/images/fleet-galleries/hayabusa-2/04": [
+  "/images/fleet-galleries/hayabusa-2/03": [
     320,
     640,
     1280,
@@ -15015,7 +14847,7 @@
     2048,
     3072
   ],
-  "/images/fleet-galleries/voyager-1/05": [
+  "/images/fleet-galleries/voyager-1/04": [
     320,
     640,
     1018,

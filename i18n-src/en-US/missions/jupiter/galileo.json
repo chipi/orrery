@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Galileo probe and atmospheric entry probe; ~2.5 t dry mass",
+  "payload": "Galileo probe and atmospheric entry probe; 2,560 kg at launch; orbiter dry mass 1,880 kg",
   "delta_v": "~14 km/s (approx)",
   "type": "ORBITER · FLOWN",
   "first": "First spacecraft to orbit Jupiter; atmospheric probe into Jupiter clouds",

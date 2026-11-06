@@ -11,7 +11,7 @@
   "arrival_date": "1995-12-07",
   "transit_days": 2242,
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Galileo probe and atmospheric entry probe; ~2.5 t dry mass",
+  "payload": "Galileo probe and atmospheric entry probe; 2,560 kg at launch; orbiter dry mass 1,880 kg",
   "delta_v": "~14 km/s (approx)",
   "data_quality": "partial",
   "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. Cruise dates approximate Jupiter orbit insertion.",
@@ -120,7 +120,7 @@
         "met_days": 2243,
         "type": "edl_or_oi",
         "label": "Jupiter orbit insertion + probe descent",
-        "description": "1995-12-07. The probe entered Jupiter's atmosphere at 47.4 km/s, survived peak deceleration of 228 g, deployed a parachute, and transmitted for 58 minutes from 0.6 to 22 bar pressure before melting. Galileo simultaneously fired its main engine for 49 minutes to capture into Jupiter orbit — the first Jupiter orbiter, beginning an 8-year tour of the moons that confirmed liquid water under Europa's ice."
+        "description": "1995-12-07. The probe entered Jupiter's atmosphere at 47.4 km/s, survived peak deceleration of 228 g, deployed a parachute, and transmitted for 58 minutes from 0.6 to 22 bar pressure before melting. Galileo simultaneously fired its main engine for 49 minutes to capture into Jupiter orbit — the first Jupiter orbiter, beginning an 8-year tour of the moons that found evidence of liquid water under Europa's ice."
       }
     ],
     "interplanetary_profile": {

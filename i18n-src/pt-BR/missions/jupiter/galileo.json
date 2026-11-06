@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Sonda Galileo e sonda de entrada atmosférica; ~2,5 t de massa seca",
+  "payload": "Sonda Galileo e sonda de entrada atmosférica; 2560 kg no lançamento; massa seca do orbitador 1880 kg",
   "delta_v": "~14 km/s (aprox.)",
   "type": "ORBITADOR · REALIZADA",
   "first": "Primeira espaçonave a orbitar Júpiter; sonda atmosférica nas nuvens de Júpiter",

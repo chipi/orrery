@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Galileo探査機と大気圏突入プローブ；乾燥質量~2.5 t",
+  "payload": "Galileo探査機と大気圏突入プローブ；打ち上げ時2560 kg；オービターの乾燥質量1880 kg",
   "delta_v": "~14 km/s（概算）",
   "type": "オービター・飛行済み",
   "first": "木星を周回した初の宇宙機。木星の大気に大気圏突入プローブを投下",

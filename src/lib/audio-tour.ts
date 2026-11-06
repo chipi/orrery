@@ -1028,16 +1028,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 38, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
-    // VTT § 00:01:04.4 — Cernan quote ends ~t=59; auto-tour the
-    // panorama starting at t=65 so the camera pans through Apollo 17's
-    // three authored annotations (South Massif → Camelot Crater rim →
-    // LRV) during the "fifty years have passed / three Mars rovers /
-    // nobody has been back to the Moon" half-century arc. Tour
-    // duration = 3 × 4.5 s = ~13.5 s; ends at t=78.5, 21.5 s before
-    // the exit-panorama at t=100. exit-panorama also force-stops the
-    // auto-tour if it's still running (active=false → cleanup), so
-    // subsequent stages — and the next episode — are never blocked.
-    { at_sec: 65, action: 'click', target: '[data-audio-stage="surface-panorama-tour-play"]' },
+    // No auto-tour here: the ALSEP colour pan (#641) has one verified pin, the
+    // LRV, and the tour needs two. The panorama opens facing the rover (entry
+    // yaw 131°) and holds there through the "fifty years have passed / nobody
+    // has been back to the Moon" arc.
     // VTT § 00:01:42.0 — return to map view before "twelve markers
     // represent a closed chapter" (t≈102) so the listener sees the full
     // landing-site cluster on the close. Panorama held for ~60 s:

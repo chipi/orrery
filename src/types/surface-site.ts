@@ -11,6 +11,7 @@
  * USSR-attributed for the historical narrative).
  */
 
+import type { FleetRef } from './mission';
 import type { LinkTier, DataQuality } from './mission';
 
 export type SurfaceAgency =
@@ -113,6 +114,9 @@ export interface SurfaceSite {
    */
   linked_missions?: string[];
   links: Array<{ l: string; u: string; t: LinkTier }>;
+  /** Fleet entries of the craft at this site (`role: 'payload'` = a rover it
+   *  carried); drives the panel's anatomy drawings (site-anatomy.ts). */
+  fleet_refs?: FleetRef[] | null;
   /** Editorial overlay fields merged at fetch time */
   name?: string;
   mission_type?: string;

@@ -113,7 +113,7 @@ for (const id of ids) {
     }
     const day = dateToSimDay(wp.date.slice(0, 10))!;
     const sim = body === ('earth' as DestinationId) ? earthPos(day) : destinationPos(day, body);
-    let cmp = '';
+    let cmp: string;
     if (PLANETS.has(body)) {
       const j = heliocentric(
         body as PlanetId,

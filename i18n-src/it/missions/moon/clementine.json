@@ -1,11 +1,11 @@
 {
   "name": "Clementine",
   "vehicle": "Titan II G",
-  "payload": "424 kg a secco; 1690 kg di massa al lancio con propellente",
+  "payload": "227 kg a secco; 424 kg con propellente; 1690 kg al lancio con il motore a propellente solido di spinta finale",
   "delta_v": "~3,5 km/s",
   "type": "ORBITER · COMPLETATA",
   "first": "Missione lunare congiunta NASA-DoD; primi accenni di acqua ghiacciata ai poli lunari",
-  "description": "Progettato principalmente come dimostratore tecnologico della Strategic Defense Initiative, Clementine ha trascorso 10 settimane in orbita lunare restituendo la prima mappa topografica e multispettrale globale sistematica della Luna. Le misurazioni radar bistatiche al polo sud lunare hanno prodotto i primi accenni allettanti di ghiaccio d’acqua, confermati anni dopo da Lunar Prospector e Chandrayaan-1. La missione successiva di sorvolare l'asteroide Geographos fallì quando un malfunzionamento del propulsore esaurì il propellente della navicella.",
+  "description": "Progettato principalmente come dimostratore tecnologico della Strategic Defense Initiative, Clementine ha trascorso 10 settimane in orbita lunare restituendo la prima mappa topografica e multispettrale globale sistematica della Luna. Le misurazioni radar bistatiche al polo sud lunare hanno prodotto i primi accenni allettanti di ghiaccio d’acqua, un risultato contestato; Lunar Prospector (idrogeno), LCROSS e Chandrayaan-1 trovarono poi indizi di ghiaccio d'acqua. La missione successiva di sorvolare l'asteroide Geographos fallì quando un malfunzionamento del propulsore esaurì il propellente della navicella.",
   "events": [
     {
       "met": 0,

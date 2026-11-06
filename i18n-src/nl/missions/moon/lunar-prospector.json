@@ -1,11 +1,11 @@
 {
   "name": "Lunar Prospector",
   "vehicle": "Athena II",
-  "payload": "296 kg droog; had 5 wetenschappelijke instrumenten aan boord",
+  "payload": "126 kg droog (296 kg bij de lancering); had 5 wetenschappelijke instrumenten aan boord",
   "delta_v": "~4 km/s (TLI + LOI)",
   "type": "ROBOTISCHE ORBITER · GEVLOGEN",
   "first": "Neutronenspectrometer-waarneming van waterstof aan beide maanpolen",
-  "description": "De derde NASA Discovery-class missie en de eerste door NASA beheerde, speciaal aan de Maan gewijde orbiter van het post-Apollo-tijdperk. Gelanceerd op 1998-01-07 op een Athena II vanaf Cape Canaveral, bereikte Lunar Prospector op 1998-01-11 een cirkelvormige polaire baan van 100 km rond de maan. Het roterende ruimtevaartuig van 296 kg droeg vijf instrumenten: een gammastralenspectrometer voor de globale samenstelling van de korst, een neutronenspectrometer voor waterstof- / waterijsdetectie op de polen, een alfadeeltjesspectrometer voor radongas (indirecte detectie van vulkanisme), een magnetometer + elektronenreflectometer voor korstmagnetisme, en een Doppler-zwaartekrachtexperiment. Analyse van de neutronengegevens door het team van Boynton (Feldman et al., Science 281 + 284) vond scherpe tekorten aan neutronenflux boven beide maanpolen — consistent met ~2 × 10⁹ ton waterstofrijke materie (waarschijnlijk waterijs) in permanent beschaduwde polaire kraters. De missie eindigde op 1999-07-31 met opzettelijke inslag nabij de krater Shackleton, in de hoop een waarneembare waterdampluim vrij te stellen; er werd er geen waargenomen. De waterstofbevinding bleef staan tot LCROSS en Chandrayaan-1 / M3 (2009) onafhankelijke bevestiging gaven.",
+  "description": "De derde NASA Discovery-class missie en de eerste door NASA beheerde, speciaal aan de Maan gewijde orbiter van het post-Apollo-tijdperk. Gelanceerd op 1998-01-07 op een Athena II vanaf Cape Canaveral, werd Lunar Prospector op 1998-01-11 ingevangen in een maanbaan van 11,6 uur en op 16 januari verlaagd naar de polaire karteringsbaan van 100 km. Het roterende ruimtevaartuig van 296 kg droeg vijf instrumenten: een gammastralenspectrometer voor de globale samenstelling van de korst, een neutronenspectrometer voor waterstof- / waterijsdetectie op de polen, een alfadeeltjesspectrometer voor radongas (indirecte detectie van vulkanisme), een magnetometer + elektronenreflectometer voor korstmagnetisme, en een Doppler-zwaartekrachtexperiment. Analyse van de neutronengegevens door het team van Feldman (Feldman et al., Science 281 + 284) vond scherpe tekorten aan neutronenflux boven beide maanpolen — consistent met 10–300 miljoen ton waterijs (schatting uit 1998) in permanent beschaduwde polaire kraters. De missie eindigde op 1999-07-31 met opzettelijke inslag in de krater Shoemaker, in de hoop een waarneembare waterdampluim vrij te stellen; er werd er geen waargenomen. De waterstofbevinding bleef staan tot LCROSS en Chandrayaan-1 / M3 (2009) onafhankelijke bevestiging gaven.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 4.386,
       "label": "LOI",
-      "note": "Maanbaaninsertie 1998-01-11 — initiële 100 × 100 km polaire baan.",
+      "note": "Maanbaaninsertie 1998-01-11 — ingevangen in een baan van 11,6 uur; op 16 januari verlaagd naar de polaire karteringsbaan van 100 km.",
       "type": "nominal"
     },
     {
@@ -33,8 +33,8 @@
     },
     {
       "met": 569,
-      "label": "SHACKLETON-INSLAG",
-      "note": "Opzettelijke inslag nabij de krater Shackleton 1999-07-31 09:52 UTC. Geen waterdampwolk waargenomen vanaf de Aarde.",
+      "label": "SHOEMAKER-INSLAG",
+      "note": "Opzettelijke inslag in de krater Shoemaker 1999-07-31 09:52 UTC. Geen waterdampwolk waargenomen vanaf de Aarde.",
       "type": "nominal"
     }
   ],

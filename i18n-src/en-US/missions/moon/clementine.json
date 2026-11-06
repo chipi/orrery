@@ -1,11 +1,11 @@
 {
   "name": "Clementine",
   "vehicle": "Titan II G",
-  "payload": "424 kg dry mass; 1690 kg launch mass with propellant",
+  "payload": "227 kg dry mass; 424 kg with propellant; 1690 kg at launch with the solid kick motor",
   "delta_v": "~3.5 km/s",
   "type": "ORBITER · FLOWN",
   "first": "Joint NASA-DoD lunar mission; first hints of water ice at lunar poles",
-  "description": "Designed primarily as a Strategic Defense Initiative technology demonstrator, Clementine spent 10 weeks in lunar orbit returning the first systematic global topographic and multispectral map of the Moon. Bistatic radar measurements at the lunar south pole produced the first tantalising hints of water ice — confirmed years later by Lunar Prospector and Chandrayaan-1. The follow-on mission to flyby the asteroid Geographos failed when a thruster malfunction depleted the spacecraft's propellant.",
+  "description": "Designed primarily as a Strategic Defense Initiative technology demonstrator, Clementine spent 10 weeks in lunar orbit returning the first systematic global topographic and multispectral map of the Moon. Bistatic radar measurements at the lunar south pole produced the first tantalising hints of water ice — a disputed result; Lunar Prospector (hydrogen), LCROSS and Chandrayaan-1 later found evidence for water ice. The follow-on mission to flyby the asteroid Geographos failed when a thruster malfunction depleted the spacecraft's propellant.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Titan II G from Vandenberg AFB.", "type": "nominal" },
     { "met": 25, "label": "LOI", "note": "Lunar orbit insertion 1994-02-19.", "type": "nominal" },

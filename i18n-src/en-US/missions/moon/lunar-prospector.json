@@ -1,11 +1,11 @@
 {
   "name": "Lunar Prospector",
   "vehicle": "Athena II",
-  "payload": "296 kg dry; carried 5 science instruments",
+  "payload": "126 kg dry (296 kg at launch); carried 5 science instruments",
   "delta_v": "~4 km/s (TLI + LOI)",
   "type": "ROBOTIC ORBITER · FLOWN",
   "first": "Neutron-spectrometer hydrogen finding at both lunar poles",
-  "description": "The third NASA Discovery-class mission and the first NASA-managed dedicated lunar orbiter of the post-Apollo era. Launched 1998-01-07 on an Athena II from Cape Canaveral, Lunar Prospector entered a 100-km circular polar lunar orbit on 1998-01-11. The 296-kg spinning spacecraft carried five instruments: a gamma-ray spectrometer for global crustal composition, a neutron spectrometer for hydrogen / water-ice detection at the poles, an alpha-particle spectrometer for radon gas (indirect volcanism detection), a magnetometer + electron reflectometer for crustal magnetism, and a Doppler gravity experiment. Boynton-team analysis of the neutron data (Feldman et al., Science 281 + 284) found sharp neutron-flux deficits over both lunar poles — consistent with ~2 × 10⁹ tonnes of hydrogen-rich material (probably water ice) in permanently shadowed polar craters. Mission ended 1999-07-31 with deliberate impact near Shackleton crater hoping to release a detectable water-vapour plume; none was seen. The hydrogen finding stood until LCROSS and Chandrayaan-1 / M3 (2009) provided independent confirmation.",
+  "description": "The third NASA Discovery-class mission and the first NASA-managed dedicated lunar orbiter of the post-Apollo era. Launched 1998-01-07 on an Athena II from Cape Canaveral, Lunar Prospector was captured into an 11.6-hour lunar orbit on 1998-01-11 and lowered to its 100-km polar mapping orbit on 16 January. The 296-kg spinning spacecraft carried five instruments: a gamma-ray spectrometer for global crustal composition, a neutron spectrometer for hydrogen / water-ice detection at the poles, an alpha-particle spectrometer for radon gas (indirect volcanism detection), a magnetometer + electron reflectometer for crustal magnetism, and a Doppler gravity experiment. Feldman-team analysis of the neutron data (Feldman et al., Science 281 + 284) found sharp neutron-flux deficits over both lunar poles — consistent with 10–300 million tonnes of water ice (1998 estimate) in permanently shadowed polar craters. Mission ended 1999-07-31 with deliberate impact in Shoemaker crater hoping to release a detectable water-vapour plume; none was seen. The hydrogen finding stood until LCROSS and Chandrayaan-1 / M3 (2009) provided independent confirmation.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 4.386,
       "label": "LOI",
-      "note": "Lunar orbit insertion 1998-01-11 — initial 100 × 100 km polar orbit.",
+      "note": "Lunar orbit insertion 1998-01-11 — captured into an 11.6-hour orbit; lowered to the 100 km polar mapping orbit on 16 January.",
       "type": "nominal"
     },
     {
@@ -33,8 +33,8 @@
     },
     {
       "met": 569,
-      "label": "SHACKLETON IMPACT",
-      "note": "Deliberate impact near Shackleton crater 1999-07-31 09:52 UTC. No water-vapour plume detected from Earth.",
+      "label": "SHOEMAKER IMPACT",
+      "note": "Deliberate impact in Shoemaker crater 1999-07-31 09:52 UTC. No water-vapour plume detected from Earth.",
       "type": "nominal"
     }
   ],

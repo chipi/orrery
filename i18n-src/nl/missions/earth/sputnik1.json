@@ -1,7 +1,7 @@
 {
   "name": "Sputnik 1",
   "vehicle": "Sputnik 8K71PS (afgeleide van de R-7 Semyorka)",
-  "payload": "Gepolijste aluminium-magnesiumbol van 83,6 kg, Ø 58 cm; twee zenders (20,005 MHz + 40,002 MHz), drie zilver-zinkbatterijen (60 W), geen instrumenten behalve een thermometer + een druksensor",
+  "payload": "Gepolijste aluminium-magnesiumbol van 83,6 kg, Ø 58 cm; twee zenders (20,005 MHz + 40,002 MHz), drie zilver-zinkbatterijen (1 W zendvermogen), geen instrumenten behalve een thermometer + een druksensor",
   "delta_v": "~9,4 km/s (LEO)",
   "type": "AARDBAANSATELLIET · GEVLOGEN",
   "first": "Eerste kunstmatige satelliet in een baan om de aarde — begin van het ruimtetijdperk",

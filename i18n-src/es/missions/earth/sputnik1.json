@@ -1,7 +1,7 @@
 {
   "name": "Sputnik 1",
   "vehicle": "Sputnik 8K71PS (derivado del R-7 Semyorka)",
-  "payload": "Esfera pulida de aluminio-magnesio de 83,6 kg, Ø 58 cm; dos transmisores (20,005 MHz + 40,002 MHz), tres baterías de plata-zinc (60 W), sin más instrumentos que un termómetro + un sensor de presión",
+  "payload": "Esfera pulida de aluminio-magnesio de 83,6 kg, Ø 58 cm; dos transmisores (20,005 MHz + 40,002 MHz), tres baterías de plata-zinc (1 W de potencia de emisión), sin más instrumentos que un termómetro + un sensor de presión",
   "delta_v": "~9,4 km/s (LEO)",
   "type": "SATÉLITE EN ÓRBITA TERRESTRE · REALIZADA",
   "first": "Primer satélite artificial en orbitar la Tierra — inicio de la Era Espacial",

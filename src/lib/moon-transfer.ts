@@ -19,7 +19,7 @@
  * patched-conic here is the honest *upper* bound, and the caption says so.
  */
 
-import { solveLambert } from '$lib/physics/transfer/lambert';
+import { solveLambertPrograde } from '$lib/physics/transfer/lambert';
 import { eccentricAnomaly } from '$lib/physics/ephemeris/kepler';
 import { DV_FAILED } from '$lib/physics/transfer/lambert-grid';
 import {
@@ -108,10 +108,13 @@ export function interplanetaryMoonDv(
   const r2mag = Math.hypot(r2[0], r2[1]);
   const vDest = Math.sqrt(MU_SUN * (2 / r2mag - 1 / host.a));
 
-  const result = solveLambert(r1, r2, tofYr, MU_SUN);
+  const result = solveLambertPrograde(r1, r2, tofYr, MU_SUN);
   if (!result) return INFEASIBLE;
 
-  const departure = Math.abs(result.v1 - V_EARTH_CIRC) * AU_PER_YR_TO_KMS;
+  // Vector departure v∞ (Earth moves tangentially), as on the arrival side below.
+  const vt1 = Math.sqrt(MU_SUN * result.p) / R_EARTH_AU;
+  const vr1 = Math.sqrt(Math.max(0, result.v1 * result.v1 - vt1 * vt1));
+  const departure = Math.hypot(vr1, vt1 - V_EARTH_CIRC) * AU_PER_YR_TO_KMS;
   // VECTOR hyperbolic excess w.r.t. the host — carried into the moon leg, not
   // captured (B1). A scalar |vDest − v2| collapses on fast (faster-than-Hohmann)
   // transfers, where the speeds match but the velocity VECTORS diverge (large

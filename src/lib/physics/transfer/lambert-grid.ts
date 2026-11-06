@@ -15,7 +15,7 @@
  * `static/data/planets.json` at build time so they stay in sync.
  */
 
-import { solveLambert } from './lambert';
+import { solveLambertPrograde } from './lambert';
 import { eccentricAnomaly } from '../ephemeris/kepler';
 import { inclinedOrbitXY, type InclinedOrbit } from './inclined-orbit';
 import {
@@ -173,7 +173,7 @@ function computeDv(
   const r2mag = Math.hypot(r2[0], r2[1]);
   const vDest = Math.sqrt(MU_SUN * (2 / r2mag - 1 / destination.a));
 
-  const result = solveLambert(r1, r2, tofYr, MU_SUN);
+  const result = solveLambertPrograde(r1, r2, tofYr, MU_SUN);
   if (!result) return DV_FAILED;
 
   // Arrival ∆v = VECTOR hyperbolic excess at the destination (S1). The scalar
@@ -184,7 +184,12 @@ function computeDv(
   const vt2 = Math.sqrt(MU_SUN * result.p) / r2mag;
   const vr2 = Math.sqrt(Math.max(0, result.v2 * result.v2 - vt2 * vt2));
   const vInfArrival = Math.hypot(vr2, vt2 - vDest);
-  const dvAuPerYr = Math.abs(result.v1 - V_EARTH_CIRC) + vInfArrival;
+  // Departure v∞ is a vector too (Earth moves tangentially at V_EARTH_CIRC): long-way and
+  // slow transfers leave with a large radial component the scalar |v1 − v⊕| ignored.
+  const vt1 = Math.sqrt(MU_SUN * result.p) / R_EARTH_AU;
+  const vr1 = Math.sqrt(Math.max(0, result.v1 * result.v1 - vt1 * vt1));
+  const vInfDeparture = Math.hypot(vr1, vt1 - V_EARTH_CIRC);
+  const dvAuPerYr = vInfDeparture + vInfArrival;
   const dvKmS = dvAuPerYr * AU_PER_YR_TO_KMS;
   return Math.max(3.2, Math.min(dvKmS, DV_FAILED));
 }

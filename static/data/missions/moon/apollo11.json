@@ -88,13 +88,13 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Saturn V",
-        "description": "Kennedy Space Center LC-39A, 1969-07-16 13:32 UTC. Saturn V — the largest, most powerful rocket ever flown (until Starship's first orbital flight) — lifts the Apollo 11 stack of CSM Columbia + LM Eagle + Armstrong + Aldrin + Collins."
+        "description": "Kennedy Space Center LC-39A, 1969-07-16 13:32 UTC. Saturn V — the largest, most powerful rocket to fly successfully (until Starship's first orbital flight) — lifts the Apollo 11 stack of CSM Columbia + LM Eagle + Armstrong + Aldrin + Collins."
       },
       {
         "met_days": 0.117,
         "type": "tli_or_tmi",
         "label": "Trans-lunar injection",
-        "description": "S-IVB third-stage burn at 2h 44m, accelerating the stack from 320 km Earth parking orbit to 10.83 km/s — escape velocity from Earth. Begins the 3-day translunar coast."
+        "description": "S-IVB third-stage burn at 2h 44m, accelerating the stack from 320 km Earth parking orbit to 10.83 km/s — just short of Earth's escape velocity, on a long ellipse reaching out to the Moon. Begins the 3-day translunar coast."
       },
       {
         "met_days": 1.4,
@@ -125,7 +125,7 @@
         "met_days": 5.64,
         "type": "tei",
         "label": "Trans-Earth injection",
-        "description": "1969-07-22. SPS engine burn departing lunar orbit. Sent Apollo 11 on a free-return trajectory back to Earth.",
+        "description": "1969-07-22. SPS engine burn departing lunar orbit. Set Apollo 11 on course back to Earth.",
         "dv_km_s": 1
       },
       {

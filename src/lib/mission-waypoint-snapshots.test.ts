@@ -141,8 +141,8 @@ const HELIO_SNAPSHOTS: HelioSnapshot[] = [
     slug: 'galileo',
     dest: 'jupiter',
     firstMet: 0,
-    lastMetMin: 2355,
-    lastMetMax: 2356,
+    lastMetMin: 2354,
+    lastMetMax: 2355,
     count: 100,
   },
   {

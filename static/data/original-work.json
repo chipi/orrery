@@ -1624,6 +1624,12 @@
       "cover": false
     },
     {
+      "title": "New Horizons",
+      "file": "/images/blueprints/new-horizons.webp",
+      "route": "/missions?id=new-horizons",
+      "cover": false
+    },
+    {
       "title": "Rosetta",
       "file": "/images/blueprints/rosetta.webp",
       "route": "/missions?id=rosetta",
@@ -3948,7 +3954,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 5,
+    "blueprint_art": 6,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

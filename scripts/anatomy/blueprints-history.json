@@ -99,6 +99,24 @@
       ],
       "notes": "Side view computed from sourced facts: flyby at aphelion (Jupiter 5.40 AU on the day = published aphelion), i 79.11°, q 1.35 AU, south first. Computed period 2,265 d vs published 2,264.26 d; passes at 79° ecliptic latitude (80.2° heliographic published). Polar passes given by month only: our data has no day. 38.3 km/s for an 80° plane change at Earth's 29.8 km/s is 2v·sin(Δi/2).",
       "content_check": "Fixed (commit 1f5d478e717, English event text): launch speed 15.4 km/s relative to Earth, not 40 km/s; the 380,000 km Jupiter closest approach is above the cloud tops, 6.3 Jupiter radii (~450,000 km) from the centre (ESA). Not changed: launch mass 366 kg in our payload vs 371 kg in Wikipedia (sources differ on what is included); the sheet uses 371 kg."
+    },
+    "new-horizons": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts new-horizons",
+      "reference_media": "a3c16c1a-2897-460a-ad1f-8860f174d2d1",
+      "drafts": [],
+      "final_job": "647403bc-254e-494a-9307-6ef1c1b9c2de",
+      "edits": [
+        "escape-speed formula: μ∞ → μ☉ (paper tiled from beside it, ☉ drawn by hand weight)",
+        "panel I crop edit (job 60f1ecb3-1705-40fb-afc4-259e597b1a83): \"LAST OF THE CLASSICAL PLANETS\" → \"LAST OF THE NINE ORIGINAL PLANETS\"; interior pasted inside the original border"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/New_Horizons",
+        "JPL SBDB elements for Pluto and Arrokoth",
+        "static/data/missions/pluto/new-horizons.json"
+      ],
+      "notes": "No draft: went straight to the 4K final from the reference sheet. \"Past the Moon in 9 hours\" and \"about the size of a grand piano\" checked against Wikipedia (\"took only nine hours to pass the Moon's orbit\"; \"comparable in size and general shape to a grand piano\").",
+      "content_check": "Fixed: about 3 years saved by the Jupiter assist and 16.26 km/s relative to Earth at launch (commit 2e80cb459f7); Arrokoth 43 AU from the Sun at the flyby, not 44 (commit ebd363fe5b6), all 14 locales."
     }
   },
   "queue": {

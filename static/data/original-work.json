@@ -1648,6 +1648,12 @@
       "cover": false
     },
     {
+      "title": "JUICE",
+      "file": "/images/blueprints/juice.webp",
+      "route": "/missions?id=juice",
+      "cover": false
+    },
+    {
       "title": "Juno",
       "file": "/images/blueprints/juno.webp",
       "route": "/missions?id=juno",
@@ -3990,7 +3996,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 12,
+    "blueprint_art": 13,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

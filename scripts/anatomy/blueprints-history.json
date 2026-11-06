@@ -224,6 +224,22 @@
       ],
       "notes": "No draft. Generator now allows Mercury as an event body. Launch → Earth and Venus → Venus are fitted ellipses (fit errors 0.006 and 0.000 AU); Mercury 1 → 6 rides Mercury's orbit because the resonant loops between the flybys are not in our data — the sheet says so. Orbit insertion is in the future (21 Nov 2026): the sheet and table say PLANNED. Not sourced this session: Ariane 5 engine names (Vulcain 2, HM7B), \"MTM let go before arrival\", and the Venus and Mercury 1–4 altitudes (our data).",
       "content_check": "Fixed (commit 94516eac8e1): Mio 255 kg, not 285 (14 locales); English flight text: falling sunward the craft speeds up, so it must shed orbital energy (not \"velocity must DROP by ~25 km/s\"); Mercury flybys 5 and 6 are past, not planned; the 2024 thruster problem moved insertion to Nov 2026."
+    },
+    "juice": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts juice",
+      "reference_media": "839f4840-52e3-47ac-be30-82a33941f48d",
+      "drafts": [],
+      "final_job": "4d009fb6-ae42-44df-b667-ff9786845faf",
+      "edits": [
+        "panel J note crop edit (job 61a722c1-e0ae-4dcb-8368-553f0e8a89b2): \"THE FIRST SPACECRAFT TO ORBIT A MOON OTHER THAN OUR OWN\" → \"SET TO BE THE FIRST …\" (the Ganymede orbit is planned for Dec 2034)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer (launch 12:14:36 UTC VA260, last ESA science launch on Ariane 5, 6,070 / 2,420 kg, RIME freed 12 May 2023, Moon 700 km 19 Aug 2024 21:16, Earth 6,807 km 20 Aug 21:57, Venus 5,088 km 31 Aug 2025 05:28, Earth 2 8,641 km 28 Sep 2026 11:45, Earth 3 4,600 km 18 Jan 2029 planned, Jupiter Jul 2031, Ganymede 500 km polar Dec 2034, end of 2035, 10 instruments)",
+        "static/data/missions/jupiter/juice.json (85 m² arrays; arrival 2031-07-21)"
+      ],
+      "notes": "No draft. Phasing legs need an extra turn (a zero-turn conic needs a ~4-year orbit, far beyond the launch energy); the multi-turn fitter now prefers the least eccentric ellipse that fits within 0.01 AU (otherwise Earth → Venus dipped to 0.37 AU). Everything after 28 Sep 2026 is labelled planned. Ganymede orbit v 1.78 km/s and T 3.1 h computed from GM ≈ 9,888 km³/s² and R 2,634 km (from memory, not sourced this session). Not sourced: Ariane 5 engine names.",
+      "content_check": "Fixed (commit e88759b6122): 6,070 / 2,420 kg, not 6,000 / 2,900 (14 locales); Earth flyby 2 on 2026-09-28 at 8,641 km, not 09-29; not the first European craft to Jupiter (Ulysses) but the first to the outer planets not launched by the US; one capture burn, not \"multi-month\". Not checked: \"35 close flybys\", \"settling into a 5,000 km circular orbit\" (Wikipedia gives 500 km for the final orbit), \"~5 km/s\" from Earth 3."
     }
   },
   "queue": {

@@ -182,7 +182,11 @@ function multiRevLeg(r1: number, t1: number, r2: number, t2: number, revs: numbe
       const ra = p / (1 + e * Math.cos(t1 - wp));
       const rb = p / (1 + e * Math.cos(t1 + sweep - wp));
       const err = Math.abs(ra - r1) + Math.abs(rb - r2);
-      if (err < best.err) best = { err, e, wp };
+      // Many ellipses of this period pass both points; the least eccentric that fits is the
+      // physical one (JUICE's Earth → Venus leg otherwise dipped to 0.37 AU).
+      const fits = err < 0.01;
+      const bestFits = best.err < 0.01;
+      if (fits ? !bestFits || e < best.e : !bestFits && err < best.err) best = { err, e, wp };
     }
   }
   const p = a * (1 - best.e * best.e);
@@ -212,6 +216,22 @@ interface Mission {
   f?: string;
 }
 const MISSIONS: Record<string, Mission> = {
+  // Wikipedia "Jupiter Icy Moons Explorer": launch 12:14:36 UTC; flyby times UTC; Earth 3 and
+  // Jupiter arrival are planned (Earth 3 date only, Jupiter as in our data).
+  juice: {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '2023-04-14T12:14:36Z' },
+      { label: 'MOON + EARTH', body: 'earth', utc: '2024-08-20T21:57:00Z', revs: 1 },
+      { label: 'VENUS', body: 'venus', utc: '2025-08-31T05:28:00Z', revs: 1 },
+      { label: 'EARTH 2', body: 'earth', utc: '2026-09-28T11:45:00Z' },
+      { label: 'EARTH 3', body: 'earth', utc: '2029-01-18T12:00:00Z', revs: 1 },
+      { label: 'JUPITER · ARRIVAL', body: 'jupiter', utc: '2031-07-21T12:00:00Z', tag: 'right' },
+    ],
+    orbits: ['venus', 'earth', 'mars', 'jupiter'],
+    end: 'orbit',
+    bottom: 'J. AT JUPITER · INTO ORBIT AROUND GANYMEDE',
+    detail: { title: 'E. INNER CRUISE · TRUE SCALE', maxAu: 2.2 },
+  },
   // Wikipedia "BepiColombo": launch 01:45 UTC; flyby dates (noon); insertion planned 21 Nov 2026.
   // The loops between Mercury flybys are resonant orbits we have no data for: drawn along Mercury's.
   bepicolombo: {

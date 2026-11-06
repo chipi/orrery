@@ -68,13 +68,13 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — STS-41 Discovery / IUS+PAM-S",
-        "description": "Cape Canaveral, 1990-10-06. Joint ESA / NASA mission, deployed from Space Shuttle Discovery and accelerated by a two-stage upper stage (Inertial Upper Stage + Payload Assist Module-S) — the fastest spacecraft ever launched at the time (40 km/s relative to Earth on a Jupiter escape trajectory)."
+        "description": "Cape Canaveral, 1990-10-06. Joint ESA / NASA mission, deployed from Space Shuttle Discovery and accelerated by a two-stage upper stage (Inertial Upper Stage + Payload Assist Module-S) — the fastest spacecraft ever launched at the time (15.4 km/s relative to Earth after the upper stages fired)."
       },
       {
         "met_days": 490,
         "type": "flyby",
         "label": "Jupiter — out-of-ecliptic gravity assist",
-        "description": "Closest approach 380,000 km from Jupiter on 1992-02-08. The encounter was used for one purpose: bend Ulysses's trajectory ~80° out of the ecliptic plane, an angle no chemical rocket could deliver from Earth directly. The flyby left Ulysses on a polar solar orbit — the only spacecraft ever to study the Sun's poles."
+        "description": "Closest approach 380,000 km above Jupiter's cloud tops (6.3 Jupiter radii from its centre) on 1992-02-08. The encounter was used for one purpose: bend Ulysses's trajectory ~80° out of the ecliptic plane, an angle no chemical rocket could deliver from Earth directly. The flyby left Ulysses on a polar solar orbit — the only spacecraft ever to study the Sun's poles."
       },
       {
         "met_days": 1359,

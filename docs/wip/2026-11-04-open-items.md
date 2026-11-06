@@ -24,15 +24,30 @@ unconfirmed (option B, operator 2026-11-05).
 
 **Next, in the operator's order (2026-11-05):**
 
-- **1b. Panorama review** — every landing site's Tier-3 panorama: how it looks; for the poor ones,
-  find better sources.
+- **1b. Panorama review — done (2026-11-05/06).** Better sources for Opportunity, Apollo 12 / 14 / 15 /
+  17, Sriharikota SLP, Baikonur 1/5; Luna 16 / 24 and Beresheet lost their "Stand here" (no ground
+  view). Mosaic gaps are now filled from the image (`panorama-padder` `inpaintGaps`) on Curiosity,
+  Opportunity, Perseverance, Spirit, Viking 1 / 2, InSight; CNSA logos, a watermark and a caption strip
+  removed from the Chang'e 3 / 5 / 6 pans (`maskRects`). Left as they are: Apollo 15 / 16 frames' pale
+  sky above the horizon (photo content); Curiosity's ground under the rover deck has no imagery.
 - **Left from the zoom review:** Artemis 4 (89.5°S, planned) has no imagery and the globe texture
   pinches into radial streaks at the pole at every close zoom — needs a polar image (LRO WAC / NAC
   polar mosaic, south-polar stereographic) as its context or regional layer. Chandrayaan-3 (69°S)
   looks stretched north–south at 100 km; the context crop's geometry checks out (4096×1443 for a
   13.2° × 37.5° box), so it may be the terrain — not confirmed either way.
-- **1c. Markers and pins** — the small 3D rover / lander models read as childish; rethink the site
-  markers on Mars and the Moon and the museum / launch-pad pins on Earth.
+- **1c. Markers and pins — done (2026-11-06).** Screen-space site tags (`site-tags.ts`): icons by zoom
+  stage from the first view (bare), cards later, focus near the view centre, grouping, the nation
+  legend with the first icons; every route opens over its sites (TA.md § Scene 6, "Zoom bands").
+- **1d. Landing story** (operator 2026-11-06). Done: the STORY tab opens with the anatomy drawings of
+  what is on the surface (`site-anatomy.ts`; 37 of 38 sites; Artemis 4 has none). Next, when the
+  Higgsfield connector is back: one landing-sequence sheet per lander in the watercolor house style
+  (entry → descent → touchdown → after landing, from each site's descent archetype), anchor sheet
+  first (Curiosity's sky crane) for the operator's look, then the batch (~38 images, 2 credits each
+  by the recorded recipe); optional exploded views for the landed craft (~30).
+- **Audio tours: re-listen to every episode and adjust its cue points** (operator 2026-11-06). The
+  0.9.7 changes moved what is on screen under the narration (first view bare, tags by zoom stage,
+  new panoramas, Apollo 17's tour removed from the Cernan episode); tour-coverage only proves the
+  targets exist, not that they land on the right words.
 
 **2. The deploy gaps 0.9.6 hit** (small; they stop the same failures):
 

@@ -121,6 +121,8 @@
   import PanoramaCrossLink from '$lib/components/PanoramaCrossLink.svelte';
   import PanoramaFullscreenToggle from '$lib/components/PanoramaFullscreenToggle.svelte';
   import PanoramaAutoTour from '$lib/components/PanoramaAutoTour.svelte';
+  import SiteLandingPanel from '$lib/surface-scene/SiteLandingPanel.svelte';
+  import { siteAnatomy } from '$lib/surface-scene/site-anatomy';
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
@@ -1284,6 +1286,8 @@
 
   // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────
   let panelTab: PanelTab = $state('overview');
+  // The anatomy drawings of what is on this site's surface (top of STORY).
+  let panelAnatomy = $derived(selected ? siteAnatomy(selected) : []);
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
@@ -5998,6 +6002,7 @@ sample      ${debugInfo.projectedPxSample}`}
           hasStory: !!panelStory,
           hasLinks: panelHasLinks,
           hasJourney: journeyRows.length > 1,
+          hasLanding: panelAnatomy.length > 0,
         })}
         bind:active={panelTab}
       />
@@ -6260,14 +6265,23 @@ sample      ${debugInfo.projectedPxSample}`}
           </PanelGalleryGrid>
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
-      {:else if panelTab === 'story' && panelStory}
-        <SiteStoryPanel
-          story={panelStory}
-          onLightbox={(src) => {
-            panelLightbox = src;
-            if (selected) trackGalleryImageOpen('site', selected.id);
-          }}
-        />
+      {:else if panelTab === 'story' && (panelStory || panelAnatomy.length > 0)}
+        {#if panelAnatomy.length > 0}
+          <SiteLandingPanel
+            anatomy={panelAnatomy}
+            locale={localeFromPage(page)}
+            onOpen={(src) => (panelLightbox = src)}
+          />
+        {/if}
+        {#if panelStory}
+          <SiteStoryPanel
+            story={panelStory}
+            onLightbox={(src) => {
+              panelLightbox = src;
+              if (selected) trackGalleryImageOpen('site', selected.id);
+            }}
+          />
+        {/if}
       {:else if panelTab === 'journey'}
         {#if replayRange}
           <div class="replay" data-testid="journey-replay">

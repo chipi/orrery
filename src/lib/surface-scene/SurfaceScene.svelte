@@ -195,7 +195,9 @@
     createSiteTagLayer,
     museumTagSpec,
     observatoryTagSpec,
+    planetFill,
     siteTagSpec,
+    tagStage,
     type Rect,
     type TagBody,
     type TagFrame,
@@ -4045,7 +4047,13 @@
                 y1: r.bottom - host.top,
               }));
           }
-          siteTags.sync(tagFrames, siteTagBlocked);
+          const tagCw = renderer.domElement.clientWidth || 1;
+          const tagCh = renderer.domElement.clientHeight || 1;
+          siteTags.sync(
+            tagFrames,
+            siteTagBlocked,
+            tagStage(planetFill(camR, planetRadius, camera.fov, tagCw, tagCh)),
+          );
 
           // Tier-2 detail opacity ramp. Patch is eager-built at site
           // creation so tier2Group exists even when curTier < 2; we

@@ -260,6 +260,52 @@ export function clusterFrames(
   return groups.map(({ lead, keys, x, y }) => ({ lead, keys, x, y }));
 }
 
+/** How much of the view the planet fills: its on-screen radius over half
+ *  the canvas's shorter side (1 = it just touches the edges). */
+export function planetFill(
+  camDistance: number,
+  planetRadius: number,
+  fovDeg: number,
+  canvasW: number,
+  canvasH: number,
+): number {
+  const ang = Math.asin(Math.min(1, planetRadius / camDistance));
+  const pxR = (canvasH / 2) * (Math.tan(ang) / Math.tan((fovDeg * Math.PI) / 360));
+  return pxR / (Math.min(canvasW, canvasH) / 2);
+}
+
+export interface TagStage {
+  /** Icon opacity multiplier. */
+  icon: number;
+  /** Frame size multiplier. */
+  size: number;
+  /** Card opacity; 0 = icons only. */
+  card: number;
+}
+
+/** Zoom stages by planet fill: nothing far out, icons fading in as the
+ *  planet grows, growing to full size, then the cards (#641). Desktop at the
+ *  45° camera: icons 165 → 140 camR, full size by 90, cards 85 → 65. */
+export const TAG_STAGES = {
+  iconIn: [0.45, 0.53],
+  grow: [0.53, 0.85],
+  cardIn: [0.91, 1.26],
+  minSize: 0.7,
+} as const;
+
+const ramp = (x: number, [a, b]: readonly [number, number]) => {
+  const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
+  return t * t * (3 - 2 * t);
+};
+
+export function tagStage(fill: number): TagStage {
+  return {
+    icon: ramp(fill, TAG_STAGES.iconIn),
+    size: TAG_STAGES.minSize + (1 - TAG_STAGES.minSize) * ramp(fill, TAG_STAGES.grow),
+    card: ramp(fill, TAG_STAGES.cardIn),
+  };
+}
+
 export type TagBody = 'mars' | 'moon' | 'venus' | 'earth';
 
 const ROVER_ICONS = new Set<TagIcon>(['rover', 'merRover', 'lunokhod']);
@@ -375,7 +421,9 @@ export function tagMarkup(spec: TagSpec, scale = 1, count = 1): { frame: string;
 const STYLE = `
 .site-tags{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2;font-family:var(--font-mono,'Space Mono',monospace)}
 .site-tag{position:absolute;left:0;top:0;will-change:transform,opacity;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
-.site-tag__svg{position:absolute;overflow:visible}
+.site-tag__svg{position:absolute;overflow:visible;transform:scale(var(--tag-s,1));transform-origin:50% 50%}
+.site-tag__card,.site-tag__lead{opacity:var(--tag-card,1)}
+.site-tag__card{transform:translateY(calc((1 - var(--tag-card,1)) * 6px))}
 .site-tag__card{position:absolute;white-space:nowrap;padding:.42em .85em .5em .78em;background:linear-gradient(180deg,rgba(28,35,58,.86),rgba(8,11,22,.9));border:1px solid rgba(255,255,255,.12);border-left:2px solid;border-radius:2px;box-shadow:0 4px 14px rgba(0,0,0,.45);backdrop-filter:blur(4px)}
 .site-tag__name{letter-spacing:.08em;color:#f4f7fb;line-height:1.3;text-transform:uppercase}
 .site-tag__facts{font-size:.78em;letter-spacing:.12em;color:#9aa6bf;line-height:1.45;margin-top:1px;text-transform:uppercase}
@@ -388,7 +436,7 @@ const STYLE = `
  *  coordinates (canvas-relative, CSS px). */
 export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } = {}) {
   const scale = opts.scale ?? 1;
-  const half = Math.round(44 * scale) / 2;
+  const full = Math.round(44 * scale) / 2;
   // Breathing room kept around each card when thinning.
   const pad = 4;
   const root = document.createElement('div');
@@ -437,12 +485,29 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
     return { el, id };
   }
 
-  /** `blocked`: areas (layer px) cards keep clear of; a frame inside one hides. */
-  function sync(frames: TagFrame[], blocked: Rect[] = []) {
+  let lastSize = -1;
+  let lastCard = -1;
+
+  /** `blocked`: areas (layer px) cards keep clear of; a frame inside one hides.
+   *  `stage`: the zoom stage (tagStage) — icon fade, frame size, card fade. */
+  function sync(
+    frames: TagFrame[],
+    blocked: Rect[] = [],
+    stage: TagStage = { icon: 1, size: 1, card: 1 },
+  ) {
+    if (Math.abs(stage.size - lastSize) > 0.002) {
+      root.style.setProperty('--tag-s', stage.size.toFixed(3));
+      lastSize = stage.size;
+    }
+    if (Math.abs(stage.card - lastCard) > 0.002) {
+      root.style.setProperty('--tag-card', stage.card.toFixed(3));
+      lastCard = stage.card;
+    }
+    const half = full * stage.size;
     // A tag under a HUD panel is hidden whole (frame and card).
     const live = frames.filter(
       (f) =>
-        f.opacity > 0.01 &&
+        f.opacity * stage.icon > 0.01 &&
         specs.has(f.key) &&
         !blocked.some((b) =>
           overlaps(b, { x0: f.x - half, y0: f.y - half, x1: f.x + half, y1: f.y + half }),
@@ -470,28 +535,32 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
         const c = made.el.querySelector<HTMLElement>('.site-tag__card');
         if (c) st.card = { dx: c.offsetLeft, dy: c.offsetTop, w: c.offsetWidth, h: c.offsetHeight };
       }
-      const opacity = Math.max(...g.keys.map((k) => byKey.get(k)!.opacity));
+      const opacity = stage.icon * Math.max(...g.keys.map((k) => byKey.get(k)!.opacity));
       shown.push({ g, ...made, opacity });
     }
-    const cards = thinCards(
-      shown.map(({ g, id }) => {
-        const c = state.get(id)!.card ?? { dx: 0, dy: 0, w: 0, h: 0 };
-        const box = (dx: number) => ({
-          x0: g.x + dx - pad,
-          y0: g.y + c.dy - pad,
-          x1: g.x + dx + c.w + pad,
-          y1: g.y + c.dy + c.h + pad,
-        });
-        return {
-          key: id,
-          priority: prio.get(g.lead)!,
-          frame: { x0: g.x - half, y0: g.y - half, x1: g.x + half, y1: g.y + half },
-          cards: [box(c.dx), box(-c.dx - c.w)],
-        };
-      }),
-      { x0: 0, y0: 0, x1: root.clientWidth, y1: root.clientHeight },
-      blocked,
-    );
+    // Icons-only stage: no cards, no thinning.
+    const cards =
+      stage.card < 0.01
+        ? new Map<string, number>()
+        : thinCards(
+            shown.map(({ g, id }) => {
+              const c = state.get(id)!.card ?? { dx: 0, dy: 0, w: 0, h: 0 };
+              const box = (dx: number) => ({
+                x0: g.x + dx - pad,
+                y0: g.y + c.dy - pad,
+                x1: g.x + dx + c.w + pad,
+                y1: g.y + c.dy + c.h + pad,
+              });
+              return {
+                key: id,
+                priority: prio.get(g.lead)!,
+                frame: { x0: g.x - half, y0: g.y - half, x1: g.x + half, y1: g.y + half },
+                cards: [box(c.dx), box(-c.dx - c.w)],
+              };
+            }),
+            { x0: 0, y0: 0, x1: root.clientWidth, y1: root.clientHeight },
+            blocked,
+          );
     const seen = new Set<string>();
     for (const { g, el, id, opacity } of shown) {
       seen.add(id);

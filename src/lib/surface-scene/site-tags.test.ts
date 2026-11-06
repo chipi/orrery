@@ -4,6 +4,8 @@ import {
   clusterFrames,
   createSiteTagLayer,
   iconForSite,
+  planetFill,
+  tagStage,
   siteTagSpec,
   statusChipColor,
   tagAccent,
@@ -30,6 +32,29 @@ describe('iconForSite', () => {
     expect(iconForSite('moon', 'apollo15', 'crewed')).toBe('lm');
     expect(iconForSite('mars', 'curiosity', 'rover')).toBe('rover');
     expect(iconForSite('moon', 'chandrayaan3', 'lander')).toBe('lander');
+  });
+});
+
+describe('zoom stages', () => {
+  // Desktop canvas 1440×840, the scene's 45° camera, planet radius 30.
+  const fill = (camR: number) => planetFill(camR, 30, 45, 1440, 840);
+  it('measures how much of the view the planet fills', () => {
+    expect(fill(150)).toBeCloseTo(0.493, 2);
+    expect(fill(30.0001)).toBeGreaterThan(100);
+    // Portrait phone: the narrow side sets the scale.
+    expect(planetFill(150, 30, 45, 390, 760)).toBeCloseTo(0.96, 1);
+  });
+  it('shows nothing far out, icons first, cards last', () => {
+    expect(tagStage(fill(200))).toEqual({ icon: 0, size: 0.7, card: 0 });
+    const def = tagStage(fill(150));
+    expect(def.icon).toBeGreaterThan(0);
+    expect(def.icon).toBeLessThan(1);
+    expect(def.card).toBe(0);
+    const near = tagStage(fill(95));
+    expect(near.icon).toBe(1);
+    expect(near.size).toBeGreaterThan(0.95);
+    expect(near.card).toBe(0);
+    expect(tagStage(fill(60))).toEqual({ icon: 1, size: 1, card: 1 });
   });
 });
 
@@ -223,6 +248,14 @@ describe('createSiteTagLayer', () => {
     expect(shown().find((e) => e.dataset.tag === 'b')!.style.transform).toBe(
       'translate3d(300.0px,100.0px,0)',
     );
+    // Icons-only stage: every tag bare; far-out stage: nothing shown.
+    layer.sync([{ key: 'a', x: 100, y: 100, opacity: 1 }], [], { icon: 1, size: 0.8, card: 0 });
+    expect(shown()[0].classList.contains('site-tag--bare')).toBe(true);
+    expect(host.querySelector<HTMLElement>('.site-tags')!.style.getPropertyValue('--tag-s')).toBe(
+      '0.800',
+    );
+    layer.sync([{ key: 'a', x: 100, y: 100, opacity: 1 }], [], { icon: 0, size: 0.7, card: 0 });
+    expect(shown()).toHaveLength(0);
     // Under a HUD panel: hidden whole.
     layer.sync([{ key: 'a', x: 100, y: 100, opacity: 1 }], [box(50, 50, 150, 150)]);
     expect(shown()).toHaveLength(0);

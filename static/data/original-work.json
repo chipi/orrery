@@ -1642,6 +1642,12 @@
       "cover": false
     },
     {
+      "title": "Juno",
+      "file": "/images/blueprints/juno.webp",
+      "route": "/missions?id=juno",
+      "cover": false
+    },
+    {
       "title": "New Horizons",
       "file": "/images/blueprints/new-horizons.webp",
       "route": "/missions?id=new-horizons",
@@ -3978,7 +3984,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 10,
+    "blueprint_art": 11,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

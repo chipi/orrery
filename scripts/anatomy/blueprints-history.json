@@ -193,6 +193,23 @@
       ],
       "notes": "No draft. Main view at linear scale (new `scale` option): everything stays within 0.97–1.42 AU and √r crowded it into one ring. Launch → swing-by and swing-by → Ryugu (two extra turns) are fitted ellipses (fit error 0.000 AU); the 17 months at Ryugu ride its orbit; the return leg is a schematic ion-thrust spiral; the sheet says the loops are schematic. v_esc 37 cm/s computed from the Wikipedia mass and radius. Not sourced this session: LE-7A / LE-5B engines and \"water-bearing minerals\" (Wikipedia says the samples revealed water).",
       "content_check": "Fixed (commit 76542b0eba9): dry mass 490 kg, not 609 kg (14 locales); Ryugu gravity about 1/80,000 g, not ~0.0001 g; the MINERVA-II rovers hop, not wheeled (English event text). Not changed: TD1 2019-02-22 in our credit is the JST date (21 Feb UTC); bulk density ~1.27 g/cm³ in our credit vs 1.19 in Wikipedia."
+    },
+    "juno": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts juno",
+      "reference_media": "541ec773-8ae1-4caa-aebb-5a3547afc546",
+      "drafts": [],
+      "final_job": "bfb8afab-2715-4157-81b3-61e3a1adfc1d",
+      "edits": [
+        "panel A: the EARTH 1 AU arrow ended on Mars's orbit (364 px from the Sun; Mars 365, Earth 296): old arrow papered over, the covered stretch of the Mars line redrawn from the line measured just outside, a new arrow drawn to Earth's circle"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Juno_(spacecraft) (launch 16:25 UTC, 3,625 / 1,593 kg, three 2.7 × 8.9 m wings, deep-space burns Aug–Sep 2012, Earth 9 Oct 2013 559 km, arrival 03:53 UTC, 53.5-day orbits and the valve problem, 4,200 km, 1 cm titanium vault, fuzzy core, Ganymede 1,038 km, Europa 352 km, Io Dec 2023 / Feb 2024)",
+        "https://www.jpl.nasa.gov/news/nasas-juno-navigators-enable-jupiter-cyclone-discovery/ (8 around 1 north; 5 around 1 south, later 6)",
+        "static/data/missions/jupiter/juno.json (+7.3 km/s from the Earth flyby, 35-minute insertion burn)"
+      ],
+      "notes": "No draft. Launch → Earth flyby is a fitted ellipse with one extra turn (0.97–2.05 AU, fit error 0.002 AU); the deep-space burns are not modelled. 1/27 sunlight = 1/5.2². Not sourced this session: +7.3 km/s and the 35-minute burn (our data), and \"the Atlas V could not send Juno straight to Jupiter\" (our data says a direct transfer needed a far larger launcher).",
+      "content_check": "Fixed (commit 7f049c5ac53, 14 locales): \"first solar-powered spacecraft to operate beyond the asteroid belt\" → first to reach Jupiter; polar cyclones eight around the north pole, five (later six) around the south, not eight around each. Not changed: ~500 W at Jupiter in our data vs ~435 W in Wikipedia (NASA material uses about 500 W); \"mission extended through 2025\" in our data vs Wikipedia's extension through 2028."
     }
   },
   "queue": {

@@ -212,6 +212,17 @@ interface Mission {
   f?: string;
 }
 const MISSIONS: Record<string, Mission> = {
+  // Wikipedia "Juno (spacecraft)": launch 16:25 UTC, Jupiter arrival 03:53 UTC; Earth flyby (noon).
+  juno: {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '2011-08-05T16:25:00Z' },
+      { label: 'EARTH · FLYBY', body: 'earth', utc: '2013-10-09T12:00:00Z', revs: 1 },
+      { label: 'JUPITER · ORBIT INSERTION', body: 'jupiter', utc: '2016-07-05T03:53:00Z', tag: 'right' },
+    ],
+    orbits: ['earth', 'mars', 'jupiter'],
+    end: 'orbit',
+    bottom: 'E. AT JUPITER · OVER THE POLES',
+  },
   // Wikipedia "Hayabusa2": launch 04:22:04 UTC, capsule release 05:30 UTC; other dates (noon).
   hayabusa2: {
     events: [

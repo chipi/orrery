@@ -59,6 +59,14 @@
     "why": "engine name left in English (Liquid Apogee Motor)",
     "tr": "4924c9f2e3"
   },
+  "booster|ar|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "6c2755a077"
+  },
+  "booster|ar|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "c214c81df7"
+  },
   "booster|ar|missions/moon/luna16.json :: description": {
     "why": "variant: صاروخ Proton-K (launch vehicle, not a strap-on)",
     "tr": "e017e7ce97"
@@ -66,6 +74,10 @@
   "booster|ar|programs/spacex.json :: outcome.0.md": {
     "why": "variant: first stage (مرحلة)",
     "tr": "e76abaeae4"
+  },
+  "booster|de|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "1260260c6a"
   },
   "booster|de|fleet/engine/h-1.json :: best_known_for": {
     "why": "variant: first stage (Saturn I/IB first-stage engine), word omitted naturally",
@@ -78,6 +90,10 @@
   "booster|de|fleet/launcher/atlas-lv-3b.json :: description": {
     "why": "variant: Antriebsstufe (Atlas first-stage booster)",
     "tr": "baa55a1398"
+  },
+  "booster|de|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "fad6a2ee88"
   },
   "booster|de|fleet/launcher/mercury-redstone.json :: description": {
     "why": "variant: die Rakete allein (single-stage vehicle without capsule)",
@@ -99,6 +115,10 @@
     "why": "variant: Träger (launch vehicle)",
     "tr": "1a3c92512f"
   },
+  "booster|es|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "1e14751728"
+  },
   "booster|es|fleet/engine/h-1.json :: best_known_for": {
     "why": "variant: first stage (Saturn I/IB booster = primera etapa)",
     "tr": "4cb169f97e"
@@ -110,6 +130,10 @@
   "booster|es|fleet/launcher/falcon-heavy.json :: tagline": {
     "why": "variant: lanzador (whole vehicle)",
     "tr": "512f104a6b"
+  },
+  "booster|es|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "18053ddf04"
   },
   "booster|es|fleet/launcher/soyuz-2.json :: description": {
     "why": "variant: impulsores",
@@ -130,6 +154,10 @@
   "booster|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
     "why": "booster scale = escala de primera etapa",
     "tr": "6ba450961c"
+  },
+  "booster|fr|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "4777cda155"
   },
   "booster|fr|essays/reusable-launchers.json :: body.0.md": {
     "why": "variant: étage / premier étage (returned first stage)",
@@ -231,6 +259,10 @@
     "why": "variant: lanceur (whole vehicle)",
     "tr": "ab6761925a"
   },
+  "booster|fr|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "80be42fc36"
+  },
   "booster|fr|fleet/launcher/long-march-3b.json :: description": {
     "why": "variant: propulseurs auxiliaires latéraux",
     "tr": "56e3dde10d"
@@ -291,6 +323,18 @@
     "why": "variant: first stage (Super Heavy booster)",
     "tr": "9d49ce6aea"
   },
+  "booster|hi|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "fceb1e4679"
+  },
+  "booster|hi|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "5f3e8ebae8"
+  },
+  "booster|it|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "def693fec6"
+  },
   "booster|it|fleet/launcher/falcon-heavy.json :: best_known_for": {
     "why": "variant: lanciatore (whole vehicle)",
     "tr": "b95bd3b8c3"
@@ -298,6 +342,10 @@
   "booster|it|fleet/launcher/falcon-heavy.json :: tagline": {
     "why": "variant: lanciatore (whole vehicle)",
     "tr": "b95bd3b8c3"
+  },
+  "booster|it|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "6a9bd36f21"
   },
   "booster|it|fleet/station/salyut-4.json :: description": {
     "why": "variant: lanciatore (launcher failure)",
@@ -311,9 +359,33 @@
     "why": "variant: vettore (launch vehicle)",
     "tr": "ef43fdd9cd"
   },
+  "booster|ja|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "497565c589"
+  },
+  "booster|ja|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "d2af94c78a"
+  },
   "booster|ja|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
     "tr": "973ca8693f"
+  },
+  "booster|ko|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "38dca80e97"
+  },
+  "booster|ko|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "6ea649f1dc"
+  },
+  "booster|nl|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "f6e413452c"
+  },
+  "booster|nl|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "ee26c6d1a1"
   },
   "booster|nl|fleet/station/salyut-4.json :: description": {
     "why": "variant: raket (launch vehicle failure)",
@@ -323,6 +395,10 @@
     "why": "variant: draagraket",
     "tr": "faa5326f5e"
   },
+  "booster|pt-BR|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "746c566cf8"
+  },
   "booster|pt-BR|fleet/engine/h-1.json :: best_known_for": {
     "why": "variant: primeiro estágio (Saturn I/IB first-stage engine)",
     "tr": "60254f9ba1"
@@ -331,6 +407,10 @@
     "why": "variant: megafoguetes (Saturn rockets in general)",
     "tr": "8f5291e410"
   },
+  "booster|pt-BR|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "88d2fb277b"
+  },
   "booster|pt-BR|missions/moon/luna16.json :: description": {
     "why": "variant: foguete (whole Proton-K launcher)",
     "tr": "ba60d291d1"
@@ -338,6 +418,10 @@
   "booster|pt-BR|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy named, word omitted naturally",
     "tr": "f1f185c3c6"
+  },
+  "booster|ru|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "7853eab8c8"
   },
   "booster|ru|essays/reusable-launchers.json :: body.0.md": {
     "why": "variant: ступень (first-stage booster = stage)",
@@ -379,6 +463,10 @@
     "why": "variant: ракета (whole single-stack vehicle, not strap-on)",
     "tr": "7de6c500d0"
   },
+  "booster|ru|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "c4874a079a"
+  },
   "booster|ru|fleet/launcher/mercury-redstone.json :: description": {
     "why": "variant: ракета (whole single-stage vehicle)",
     "tr": "a13188816b"
@@ -402,6 +490,10 @@
   "booster|ru|programs/sputnik.json :: goals.0.md": {
     "why": "variant: ракета-носитель (launch vehicle)",
     "tr": "bf4248c9f0"
+  },
+  "booster|sr-Cyrl|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "bed2f38064"
   },
   "booster|sr-Cyrl|essays/reusable-launchers.json :: body.0.md": {
     "why": "variant: први степен (first-stage booster = stage)",
@@ -454,6 +546,10 @@
   "booster|sr-Cyrl|fleet/launcher/falcon-heavy.json :: tagline": {
     "why": "variant: ракета-носач (whole three-core vehicle)",
     "tr": "ad97f2d4c0"
+  },
+  "booster|sr-Cyrl|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "fcd8fe15d2"
   },
   "booster|sr-Cyrl|fleet/launcher/mercury-redstone.json :: description": {
     "why": "variant: ракета (whole single-stage vehicle)",
@@ -519,6 +615,10 @@
     "why": "booster = first stage 'први степен' is standard",
     "tr": "c4eeacfa99"
   },
+  "booster|zh-CN|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "c10c25f737"
+  },
   "booster|zh-CN|essays/reusable-launchers.json :: body.0.md": {
     "why": "pronoun 它 / 第一级火箭 in this sentence",
     "tr": "452422ccc9"
@@ -534,6 +634,10 @@
   "booster|zh-CN|fleet/launcher/falcon-heavy.json :: tagline": {
     "why": "whole vehicle: variant 运载火箭",
     "tr": "4d7f284b02"
+  },
+  "booster|zh-CN|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "31e8160dcd"
   },
   "booster|zh-CN|missions/moon/luna16.json :: description": {
     "why": "variant: 运载火箭 (Proton-K is the whole launcher)",

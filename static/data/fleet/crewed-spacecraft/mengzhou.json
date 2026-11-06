@@ -28,5 +28,9 @@
       "t": "core"
     }
   ],
-  "linked_missions": []
+  "linked_missions": [],
+  "specs": {
+    "length_m": 8.8,
+    "diameter_m": 4.5
+  }
 }

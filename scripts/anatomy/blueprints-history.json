@@ -301,6 +301,24 @@
       ],
       "notes": "Ground-track check, not tuned: the Soyuz orbit plane (set by the 12:20 launch, J2 drift included) passes 330 km from Kennedy at 19:43 UTC, 7 minutes before Apollo launched into it. The map shows that orbit at Apollo's launch, not a docking location (the docking point would need the real phasing). Not sourced this session: H-1 / J-2 engine counts, \"a step toward the space stations built together later\" (interpretation).",
       "content_check": "Not changed: \"14.4 t Apollo + 6.8 t Soyuz\" in our payload (not checked against a source this session)."
+    },
+    "pioneer-10": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts pioneer-10",
+      "reference_media": "5d14d60e-093a-454a-80dd-062e23ea3a14",
+      "drafts": [],
+      "final_job": "598f1863-87c3-4696-9d14-0b5af1cc6f7e",
+      "edits": [
+        "panel D: ② drawn twice (once per RTG pair); the right one and its arrows papered over",
+        "panel E strip crop edit (job aed55795-b4b7-43c2-9222-ffe84659d93c): \"ANROIZED\" → \"ANODIZED\"",
+        "panel H strip crop edit (job 7cae9b8b-9340-4a78-800e-0b44a6013091): escape formula had ⊕ and a stray \"/r.-\" tail → √(2μ☉ / r)",
+        "both strip edits came back letterboxed at 21:9; the content band was trimmed before pasting"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pioneer_10 (launch 01:49 UTC LC-36A, Atlas SLV-3C Centaur-D + Star-37E, 258 kg, 51,682 km/h fastest at the time, asteroid belt 15 Jul 1972 – 15 Feb 1973, Jupiter 3 Dec 1973 132,252 km, 200,000 + 56,000 rads, four SNAP-19 155 W, 2.74 m dish, plaque 152 × 229 mm, 11 instruments, 4.8 rpm, 500+ images, last signal 23 Jan 2003 ~80 AU, Aldebaran, first of five to reach solar escape velocity)"
+      ],
+      "notes": "No draft. New `end: stop` (draw nothing after the last event): the slow post-Jupiter escape curves, so the model was told to draw it dotted and labelled schematic. 11 h one way = 80 AU / c. Plaque figures requested as small simple outlines.",
+      "content_check": "Fixed (commit cb3bb89b53e): last contact from ~80 AU, not ~82 (14 locales; our own event text already said 80); dropped \"first spacecraft to fly past Mars's orbit\" (English credit). Not changed: launch \"1972-03-02\" in our launch event text is the local (EST) date; 01:49 UTC on 3 Mar."
     }
   },
   "queue": {

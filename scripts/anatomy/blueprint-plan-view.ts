@@ -221,8 +221,9 @@ function multiRevLeg(r1: number, t1: number, r2: number, t2: number, revs: numbe
 interface Mission {
   events: Event[];
   orbits: PlanetId[];
-  /** After the last event: 'escape' runs the path on, dashed; 'orbit' ends it there. */
-  end?: 'escape' | 'orbit';
+  /** After the last event: 'escape' runs the path on, dashed; 'orbit' ends it there; 'stop'
+   *  draws nothing (a slow escape that curves away, which a straight line would misstate). */
+  end?: 'escape' | 'orbit' | 'stop';
   /** Title of the wide bottom-centre panel (its right half when there is a detail). */
   bottom?: string;
   /** A true-scale detail of the inner cruise, out to `maxAu`. */
@@ -251,6 +252,16 @@ const MISSIONS: Record<string, Mission> = {
     end: 'orbit',
     bottom: 'J. AT JUPITER · INTO ORBIT AROUND GANYMEDE',
     detail: { title: 'E. INNER CRUISE · TRUE SCALE', maxAu: 2.2 },
+  },
+  // Wikipedia "Pioneer 10": launch 01:49 UTC; Jupiter closest approach 3 Dec 1973 (noon).
+  'pioneer-10': {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '1972-03-03T01:49:00Z' },
+      { label: 'JUPITER', body: 'jupiter', utc: '1973-12-03T12:00:00Z' },
+    ],
+    orbits: ['earth', 'mars', 'jupiter', 'saturn'],
+    end: 'stop',
+    bottom: 'E. AT JUPITER · 132,252 KM',
   },
   // Wikipedia "Giotto (spacecraft)": launch 11:23 UTC; encounter and flyby dates (Halley at 00:00).
   giotto: {
@@ -568,7 +579,9 @@ function planView(pr: Proj, orbits: PlanetId[], clip: number, quiet: Set<number>
     const end = runs.at(-1)!;
     const last = end.at(-1)!;
     const pv = end.at(-8)!;
-    if (m.end === 'orbit')
+    if (m.end === 'stop') {
+      // nothing past the last event
+    } else if (m.end === 'orbit')
       g.push(
         `<circle cx="${last.x}" cy="${last.y}" r="46" stroke-width="4" stroke-dasharray="10 8"/>`,
       );

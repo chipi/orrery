@@ -1678,6 +1678,12 @@
       "cover": false
     },
     {
+      "title": "Pioneer 10",
+      "file": "/images/blueprints/pioneer-10.webp",
+      "route": "/missions?id=pioneer-10",
+      "cover": false
+    },
+    {
       "title": "Rosetta",
       "file": "/images/blueprints/rosetta.webp",
       "route": "/missions?id=rosetta",
@@ -4020,7 +4026,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 17,
+    "blueprint_art": 18,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

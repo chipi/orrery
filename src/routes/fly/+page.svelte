@@ -3873,7 +3873,7 @@
             >
               <div class="opening-fleet-label">{m.fly_opening_fleet_assets()}</div>
               <div class="opening-fleet-row">
-                {#each openingFleetAssets as asset (asset.id)}
+                {#each openingFleetAssets as asset (`${asset.role}:${asset.id}`)}
                   <a
                     class="opening-fleet-card"
                     class:hero={asset.role === 'spacecraft' || asset.role === 'launcher'}

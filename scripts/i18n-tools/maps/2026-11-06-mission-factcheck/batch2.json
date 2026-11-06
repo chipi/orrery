@@ -1,0 +1,392 @@
+[
+  {
+    "m": "earth/vostok-2",
+    "text": {
+      "en-US": [
+        [
+          "still the youngest person ever to fly in space",
+          "still the youngest person ever to orbit the Earth"
+        ]
+      ],
+      "ar": [
+        [
+          "ولا يزال الأصغر سناً على الإطلاق الذي طار في الفضاء",
+          "ولا يزال أصغر من دار حول الأرض على الإطلاق"
+        ]
+      ],
+      "de": [
+        [
+          "noch immer die jüngste Person, die jemals ins All flog",
+          "noch immer die jüngste Person, die je die Erde umkreiste"
+        ]
+      ],
+      "es": [
+        [
+          "todavía la persona más joven en volar al espacio",
+          "todavía la persona más joven en orbitar la Tierra"
+        ]
+      ],
+      "fr": [
+        [
+          "toujours la plus jeune personne à avoir jamais volé dans l'espace",
+          "toujours la plus jeune personne à avoir jamais tourné autour de la Terre"
+        ]
+      ],
+      "hi": [
+        [
+          "आज भी अंतरिक्ष में उड़ने वाले सबसे कम उम्र के इंसान",
+          "आज भी पृथ्वी की परिक्रमा करने वाले सबसे कम उम्र के इंसान"
+        ]
+      ],
+      "it": [
+        [
+          "ancora la persona più giovane di sempre ad aver volato nello spazio",
+          "ancora la persona più giovane di sempre ad aver orbitato attorno alla Terra"
+        ]
+      ],
+      "ja": [["今なお史上最年少の宇宙飛行士である", "今なお地球を周回した史上最年少の人物である"]],
+      "ko": [
+        ["지금도 우주를 비행한 가장 어린 사람이다", "지금도 지구 궤도를 돈 가장 어린 사람이다"]
+      ],
+      "nl": [
+        [
+          "nog altijd de jongste persoon ooit die de ruimte in vloog",
+          "nog altijd de jongste persoon ooit die rond de aarde draaide"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "ainda a pessoa mais jovem a voar no espaço",
+          "ainda a pessoa mais jovem a orbitar a Terra"
+        ]
+      ],
+      "ru": [
+        [
+          "самым молодым человеком, когда-либо летавшим в космос",
+          "самым молодым человеком, когда-либо летавшим по орбите вокруг Земли"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "и даље најмлађа особа која је икада летела у свемир",
+          "и даље најмлађа особа која је икада кружила око Земље"
+        ]
+      ],
+      "zh-CN": [["至今仍是有史以来最年轻的太空飞行员", "至今仍是有史以来绕地球飞行的最年轻的人"]]
+    }
+  },
+  { "m": "earth/vostok-3", "met": { "1": 0.98 } },
+  {
+    "m": "earth/vostok-5",
+    "text": {
+      "en-US": [["Karaganda", "Karatal"]],
+      "de": [["Karaganda", "Karatal"]],
+      "es": [["Karaganda", "Karatal"]],
+      "fr": [["Karaganda", "Karatal"]],
+      "hi": [["Karaganda", "Karatal"]],
+      "it": [["Karaganda", "Karatal"]],
+      "nl": [["Karaganda", "Karatal"]],
+      "pt-BR": [["Karaganda", "Karatal"]],
+      "zh-CN": [
+        ["Karaganda", "卡拉塔尔"],
+        ["卡拉干达", "卡拉塔尔"]
+      ],
+      "ar": [
+        ["Karaganda", "كاراتال"],
+        ["كاراجاندا", "كاراتال"]
+      ],
+      "ja": [["カラガンダ", "カラタル"]],
+      "ko": [["카라간다", "카라탈"]],
+      "ru": [["Караганды", "Каратала"]],
+      "sr-Cyrl": [["града Караганди", "села Каратал"]]
+    }
+  },
+  { "m": "earth/voskhod-1", "met": { "1": 1.4 }, "sort": true },
+  {
+    "m": "earth/voskhod-1",
+    "text": {
+      "en-US": [
+        [
+          "While they were in orbit, Khrushchev was deposed; the crew returned to a fully different Soviet leadership.",
+          "Khrushchev was ousted just after they landed; the crew were welcomed home by a new Soviet leadership."
+        ],
+        [
+          "Soviet leadership change occurred during the flight.",
+          "Khrushchev was removed from power on 13–14 October, just after the landing."
+        ]
+      ],
+      "ar": [
+        [
+          "وبينما كانوا في المدار، أُطيح بخروتشوف؛ فعاد الطاقم إلى قيادة سوفييتية مختلفة تماماً.",
+          "أُطيح بخروتشوف بعد هبوطهم مباشرة؛ فاستقبلت الطاقمَ قيادةٌ سوفييتية جديدة."
+        ],
+        [
+          "حدث تغيير في القيادة السوفييتية أثناء الرحلة.",
+          "أُزيح خروتشوف من السلطة في 13–14 أكتوبر، بعد الهبوط مباشرة."
+        ]
+      ],
+      "de": [
+        [
+          "Während sie im Orbit waren, wurde Chruschtschow gestürzt; die Besatzung kehrte zu einer völlig anderen sowjetischen Führung zurück.",
+          "Kurz nach ihrer Landung wurde Chruschtschow gestürzt; die Besatzung wurde von einer neuen sowjetischen Führung empfangen."
+        ],
+        [
+          "Während des Fluges fand ein Wechsel in der sowjetischen Führung statt.",
+          "Chruschtschow wurde am 13.–14. Oktober, kurz nach der Landung, entmachtet."
+        ]
+      ],
+      "es": [
+        [
+          "Mientras estaban en órbita, Jrushchov fue destituido; la tripulación regresó a una dirección soviética completamente distinta.",
+          "Jrushchov fue destituido justo después de su aterrizaje; a la tripulación la recibió una nueva dirección soviética."
+        ],
+        [
+          "El cambio de liderazgo soviético se produjo durante el vuelo.",
+          "Jrushchov fue apartado del poder el 13–14 de octubre, justo después del aterrizaje."
+        ]
+      ],
+      "fr": [
+        [
+          "Pendant qu'ils étaient en orbite, Khrouchtchev fut destitué ; l'équipage revint à une direction soviétique totalement différente.",
+          "Khrouchtchev fut destitué juste après leur atterrissage ; l'équipage fut accueilli par une nouvelle direction soviétique."
+        ],
+        [
+          "Le changement de direction soviétique s'est produit pendant le vol.",
+          "Khrouchtchev fut écarté du pouvoir les 13–14 octobre, juste après l'atterrissage."
+        ]
+      ],
+      "hi": [
+        [
+          "जब वे कक्षा में थे, ख़्रुश्चेव को पद से हटा दिया गया; दल पूरी तरह बदले हुए सोवियत नेतृत्व के पास लौटा।",
+          "उनके उतरने के ठीक बाद ख़्रुश्चेव को पद से हटा दिया गया; दल का स्वागत नए सोवियत नेतृत्व ने किया।"
+        ],
+        [
+          "उड़ान के दौरान सोवियत नेतृत्व में परिवर्तन हुआ।",
+          "लैंडिंग के ठीक बाद, 13–14 अक्टूबर को ख़्रुश्चेव को सत्ता से हटा दिया गया।"
+        ]
+      ],
+      "it": [
+        [
+          "Mentre erano in orbita, Krusciov fu deposto; l'equipaggio tornò a una dirigenza sovietica completamente diversa.",
+          "Krusciov fu deposto subito dopo il loro atterraggio; l'equipaggio fu accolto da una nuova dirigenza sovietica."
+        ],
+        [
+          "Il cambio di leadership sovietica si verificò durante il volo.",
+          "Krusciov fu rimosso dal potere il 13–14 ottobre, subito dopo l'atterraggio."
+        ]
+      ],
+      "ja": [
+        [
+          "彼らが軌道にいる間にフルシチョフは失脚し、乗組員は全く異なるソ連指導部の下に戻ることになった。",
+          "彼らの着陸直後にフルシチョフは失脚し、乗組員は新しいソ連指導部に迎えられた。"
+        ],
+        [
+          "飛行中にソビエト指導部の交代が起こった。",
+          "着陸直後の10月13〜14日、フルシチョフは権力の座を追われた。"
+        ]
+      ],
+      "ko": [
+        [
+          "그들이 궤도에 있는 동안 흐루쇼프가 축출되었고, 승무원은 완전히 달라진 소련 지도부 아래로 돌아왔다.",
+          "그들이 착륙한 직후 흐루쇼프가 축출되었고, 승무원은 새로운 소련 지도부의 환영을 받았다."
+        ],
+        [
+          "비행 중 소련 지도부 교체가 발생했습니다.",
+          "착륙 직후인 10월 13~14일 흐루쇼프가 권좌에서 물러났습니다."
+        ]
+      ],
+      "nl": [
+        [
+          "Terwijl zij in een baan waren, werd Chroesjtsjov afgezet; de bemanning keerde terug naar een volledig ander Sovjetleiderschap.",
+          "Kort na hun landing werd Chroesjtsjov afgezet; de bemanning werd door een nieuw Sovjetleiderschap ontvangen."
+        ],
+        [
+          "Wissel in de Sovjet-leiding vond tijdens de vlucht plaats.",
+          "Chroesjtsjov werd op 13–14 oktober, kort na de landing, uit de macht gezet."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Enquanto estavam em órbita, Khrushchov foi deposto; a tripulação voltou a uma liderança soviética totalmente diferente.",
+          "Khrushchov foi deposto logo após o pouso; a tripulação foi recebida por uma nova liderança soviética."
+        ],
+        [
+          "A mudança de liderança soviética ocorreu durante o voo.",
+          "Khrushchov foi afastado do poder em 13–14 de outubro, logo após o pouso."
+        ]
+      ],
+      "ru": [
+        [
+          "Пока экипаж находился на орбите, Хрущёв был смещён со своего поста; вернулись они уже в совершенно другое советское руководство.",
+          "Сразу после их посадки Хрущёв был смещён со своего поста; экипаж встречало уже новое советское руководство."
+        ],
+        [
+          "Смена советского руководства произошла во время полёта.",
+          "Сразу после посадки, 13–14 октября, Хрущёв был отстранён от власти."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Док су били у орбити, Хрушчов је смењен; посада се вратила у потпуно другачије совјетско руководство.",
+          "Хрушчов је смењен одмах после њиховог слетања; посаду је дочекало ново совјетско руководство."
+        ],
+        [
+          "Током лета догодила се промена на челу совјетског руководства.",
+          "Хрушчов је уклоњен с власти 13–14. октобра, одмах после слетања."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "他们在轨道上时，赫鲁晓夫被推翻；乘组返回时面对的已是一个完全不同的苏联领导层。",
+          "他们着陆后不久，赫鲁晓夫被推翻；迎接乘组的已是新的苏联领导层。"
+        ],
+        ["飞行期间发生了苏联领导层更替。", "着陆后不久，赫鲁晓夫于10月13—14日被解除权力。"]
+      ]
+    }
+  },
+  { "m": "earth/voskhod-2", "met": { "2": 0.065 } },
+  {
+    "m": "earth/voskhod-2",
+    "text": {
+      "en-US": [
+        ["11:34", "08:34"],
+        ["in the frozen Siberian forest", "in the frozen forest of the Ural mountains"]
+      ],
+      "ar": [
+        ["11:34", "08:34"],
+        ["في غابة سيبيرية متجمدة", "في غابة متجمدة في جبال الأورال"]
+      ],
+      "de": [
+        ["11:34", "08:34"],
+        ["im gefrorenen sibirischen Wald", "im gefrorenen Wald des Uralgebirges"]
+      ],
+      "es": [
+        ["11:34", "08:34"],
+        ["en el bosque siberiano helado", "en el bosque helado de los montes Urales"]
+      ],
+      "fr": [
+        ["11:34", "08:34"],
+        ["dans la forêt sibérienne gelée", "dans la forêt gelée de l'Oural"]
+      ],
+      "hi": [
+        ["11:34", "08:34"],
+        ["बर्फ़ीले साइबेरियाई जंगल", "यूराल पर्वतों के बर्फ़ीले जंगल"]
+      ],
+      "it": [
+        ["11:34", "08:34"],
+        ["nella foresta siberiana gelata", "nella foresta gelata degli Urali"]
+      ],
+      "ja": [
+        ["11:34", "08:34"],
+        ["凍てつくシベリアの森", "凍てつくウラル山脈の森"]
+      ],
+      "ko": [
+        ["11:34", "08:34"],
+        ["시베리아의 얼어붙은 숲", "우랄산맥의 얼어붙은 숲"]
+      ],
+      "nl": [
+        ["11:34", "08:34"],
+        ["in het bevroren Siberische bos", "in het bevroren bos van het Oeralgebergte"]
+      ],
+      "pt-BR": [
+        ["11:34", "08:34"],
+        ["na floresta gelada siberiana", "na floresta gelada dos montes Urais"]
+      ],
+      "ru": [
+        ["11:34", "08:34"],
+        ["в замёрзшем сибирском лесу", "в замёрзшем уральском лесу"]
+      ],
+      "sr-Cyrl": [
+        ["11:34", "08:34"],
+        ["у залеђену сибирску шуму", "у залеђену шуму на Уралу"]
+      ],
+      "zh-CN": [
+        ["11:34", "08:34"],
+        ["冰冻的西伯利亚森林", "乌拉尔山区冰冻的森林"]
+      ]
+    }
+  },
+  {
+    "m": "earth/soyuz-1",
+    "text": {
+      "en-US": [["First Soyuz flight", "First crewed Soyuz flight"]],
+      "ar": [["أول رحلة Soyuz", "أول رحلة Soyuz مأهولة"]],
+      "de": [["Erster Soyuz-Flug", "Erster bemannter Soyuz-Flug"]],
+      "es": [["Primer vuelo Soyuz", "Primer vuelo tripulado Soyuz"]],
+      "fr": [["Premier vol Soyuz", "Premier vol habité Soyuz"]],
+      "hi": [["पहली Soyuz उड़ान", "पहली मानवयुक्त Soyuz उड़ान"]],
+      "it": [["Primo volo Soyuz", "Primo volo Soyuz con equipaggio"]],
+      "ja": [["初のSoyuz飛行", "初の有人Soyuz飛行"]],
+      "ko": [["첫 Soyuz 비행", "첫 유인 Soyuz 비행"]],
+      "nl": [["Eerste Soyuz-vlucht", "Eerste bemande Soyuz-vlucht"]],
+      "pt-BR": [["Primeiro voo Soyuz", "Primeiro voo tripulado Soyuz"]],
+      "ru": [["Первый полёт «Союз»", "Первый пилотируемый полёт «Союз»"]],
+      "sr-Cyrl": [["Први лет летелице Soyuz", "Први лет летелице Soyuz с посадом"]],
+      "zh-CN": [["首次 Soyuz 飞行", "首次载人 Soyuz 飞行"]]
+    }
+  },
+  { "m": "earth/soyuz-11", "met": { "1": 1.12, "2": 23.77 } },
+  {
+    "m": "earth/soyuz-11",
+    "base": [["\"arrival_date\": \"1971-06-30\"", "\"arrival_date\": \"1971-06-29\""]]
+  },
+  {
+    "m": "earth/soyuz-11",
+    "text": {
+      "en-US": [["on 30 June", "on 29 June"]],
+      "ar": [["في 30 يونيو", "في 29 يونيو"]],
+      "de": [["am 30. Juni", "am 29. Juni"]],
+      "es": [["del 30 de junio", "del 29 de junio"]],
+      "fr": [["le 30 juin", "le 29 juin"]],
+      "hi": [["30 जून", "29 जून"]],
+      "it": [["del 30 giugno", "del 29 giugno"]],
+      "ja": [["6月30日", "6月29日"]],
+      "ko": [["6월 30일", "6월 29일"]],
+      "nl": [["op 30 juni", "op 29 juni"]],
+      "pt-BR": [["em 30 de junho", "em 29 de junho"]],
+      "ru": [["30 июня", "29 июня"]],
+      "sr-Cyrl": [["30. јуна", "29. јуна"]],
+      "zh-CN": [["6 月 30 日", "6 月 29 日"]]
+    }
+  },
+  {
+    "m": "earth/shenzhou-1",
+    "text": {
+      "en-US": [
+        ["led directly to Shenzhou 5", "led, after three more uncrewed tests, to Shenzhou 5"]
+      ],
+      "ar": [["وقادت مباشرة إلى", "وبعد ثلاث رحلات تجريبية غير مأهولة أخرى قادت إلى"]],
+      "de": [["führte direkt zu", "führte nach drei weiteren unbemannten Tests zu"]],
+      "es": [["condujo directamente a", "tras otras tres pruebas no tripuladas condujo a"]],
+      "fr": [["a conduit directement à", "a conduit, après trois autres essais inhabités, à"]],
+      "hi": [["इसी से सीधे Shenzhou 5", "तीन और मानवरहित परीक्षणों के बाद इसी से Shenzhou 5"]],
+      "it": [
+        ["ha portato direttamente allo", "dopo altre tre prove senza equipaggio ha portato allo"]
+      ],
+      "ja": [
+        [
+          "2003年のShenzhou 5へ直接つながった",
+          "さらに3回の無人試験を経て2003年のShenzhou 5へつながった"
+        ]
+      ],
+      "ko": [
+        [
+          "Shenzhou 5(2003)로 곧바로 이어졌습니다",
+          "세 차례의 무인 시험을 더 거쳐 Shenzhou 5(2003)로 이어졌습니다"
+        ]
+      ],
+      "nl": [["leidde rechtstreeks naar", "leidde na nog drie onbemande tests naar"]],
+      "pt-BR": [["levou diretamente ao", "levou, após mais três testes não tripulados, ao"]],
+      "ru": [
+        [
+          "привела непосредственно к полёту",
+          "после ещё трёх беспилотных испытаний привела к полёту"
+        ]
+      ],
+      "sr-Cyrl": [
+        ["водио је директно до мисије", "после још три беспилотна теста водио је до мисије"]
+      ],
+      "zh-CN": [["直接促成了", "又经过三次无人试验，促成了"]]
+    }
+  }
+]

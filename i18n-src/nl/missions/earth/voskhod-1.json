@@ -6,7 +6,7 @@
   "dispatch": "Voskhod 1 was de eerste vlucht met meer dan één persoon aan boord, en het lukte door weg te laten. Er was geen ruimte in de eenpersoons Vostok voor een driekoppige bemanning, dus haalden de ingenieurs dingen eruit — de schietstoelen die elke vorige kosmonaut hadden gered, en, omdat het zelfs toen nog te krap was, de drukpakken. Komarov, Feoktistov en Jegorov vlogen een dag in hemdsmouwen, zonder ontsnappingsmogelijkheid bij een noodgeval tijdens de lancering of terugkeer en zonder bescherming als de cabine lucht zou verliezen. Er ging niets mis, dus het leek een triomf. Het was in werkelijkheid een gok — dat de bezuinigingen om als eerste te scoren niet de zaken zouden raken die ertoe deden — en die gok werd toevallig gewonnen.",
   "type": "BEMANDE AARDOMLOOPBAAN · GEVLOGEN",
   "first": "Eerste ruimtevlucht met meerdere bemanningsleden — drie kosmonauten in een van Vostok afgeleide capsule",
-  "description": "Eerste ruimtevlucht met drie bemanningsleden in de geschiedenis. Komarov, Feoktistov en Jegorov vlogen van 1964-10-12 tot 1964-10-13 in een sterk aangepaste Vostok-capsule (aangeduid als Voskhod / 'Zonsopgang'). De schietstoelen werden verwijderd en het drukregelsysteem van de cabine werd herzien zodat drie mannen in hemdsmouwen konden zitten — een propagandazege op de geplande Amerikaanse Gemini-vluchten met twee bemanningsleden, maar een bruut compromis dat de bemanning tijdens lancering of terugkeer geen enkele mogelijkheid tot ontsnapping liet. De ruimte in de cabine was zo krap dat Komarov meldde dat hij 24 uur lang Jegorovs adem in zijn nek voelde. Geland op 1964-10-13 07:47 UTC nabij Marevka, Kazachstan, met het nieuwe zachte landingssysteem met vastebrandstofretroraketten, omdat uitwerpen met een parachute niet mogelijk was. Terwijl zij in een baan waren, werd Chroesjtsjov afgezet; de bemanning keerde terug naar een volledig ander Sovjetleiderschap.",
+  "description": "Eerste ruimtevlucht met drie bemanningsleden in de geschiedenis. Komarov, Feoktistov en Jegorov vlogen van 1964-10-12 tot 1964-10-13 in een sterk aangepaste Vostok-capsule (aangeduid als Voskhod / 'Zonsopgang'). De schietstoelen werden verwijderd en het drukregelsysteem van de cabine werd herzien zodat drie mannen in hemdsmouwen konden zitten — een propagandazege op de geplande Amerikaanse Gemini-vluchten met twee bemanningsleden, maar een bruut compromis dat de bemanning tijdens lancering of terugkeer geen enkele mogelijkheid tot ontsnapping liet. De ruimte in de cabine was zo krap dat Komarov meldde dat hij 24 uur lang Jegorovs adem in zijn nek voelde. Geland op 1964-10-13 07:47 UTC nabij Marevka, Kazachstan, met het nieuwe zachte landingssysteem met vastebrandstofretroraketten, omdat uitwerpen met een parachute niet mogelijk was. Kort na hun landing werd Chroesjtsjov afgezet; de bemanning werd door een nieuw Sovjetleiderschap ontvangen.",
   "events": [
     {
       "met": 0,
@@ -15,16 +15,16 @@
       "type": "nominal"
     },
     {
-      "met": 0.8,
-      "label": "KHRUSHCHEV AFGEZET",
-      "note": "Wissel in de Sovjet-leiding vond tijdens de vlucht plaats.",
-      "type": "info"
-    },
-    {
       "met": 1.01,
       "label": "LANDING",
       "note": "Zachte landing met retro-raketten nabij Marevka 1964-10-13 07:47 UTC.",
       "type": "nominal"
+    },
+    {
+      "met": 1.4,
+      "label": "KHRUSHCHEV AFGEZET",
+      "note": "Chroesjtsjov werd op 13–14 oktober, kort na de landing, uit de macht gezet.",
+      "type": "info"
     }
   ]
 }

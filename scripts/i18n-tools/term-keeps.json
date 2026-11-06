@@ -2268,8 +2268,8 @@
     "tr": "9761616ae0"
   },
   "descent|de|missions/earth/voskhod-2.json :: description": {
-    "why": "variant: Landemodul (descent module)",
-    "tr": "776b475e14"
+    "why": "variant: Landemodul (descent module); re-read 2026-11-06 after the EVA-time fix",
+    "tr": "7f64ec2ae1"
   },
   "descent|de|missions/earth/vostok-1.json :: payload": {
     "why": "variant: Landekapsel (descent module)",
@@ -3712,8 +3712,8 @@
     "tr": "961ddde8e2"
   },
   "orbit|ru|missions/earth/vostok-5.json :: events.2.note": {
-    "why": "variant: виток (count of revolutions)",
-    "tr": "214219c89a"
+    "why": "variant: виток (count of revolutions); re-read 2026-11-06 after the Karatal fix",
+    "tr": "c3b8bd30ca"
   },
   "orbit|ru|missions/earth/vostok-5.json :: first": {
     "why": "variant: виток (count of revolutions)",

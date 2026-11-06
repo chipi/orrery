@@ -1,7 +1,7 @@
 {
   "name": "Mars Express",
   "vehicle": "Soyuz-FG / Fregat",
-  "payload": "1183 kg (1123 kg ऑर्बिटर + 60 kg Beagle 2 लैंडर)",
+  "payload": "प्रक्षेपण के समय 1223 kg, जिसमें 60 kg का Beagle 2 लैंडर शामिल है",
   "delta_v": "~4.5 km/s",
   "type": "ऑर्बिटर · सक्रिय",
   "first": "किसी दूसरे ग्रह के लिए यूरोप का पहला मिशन; सबसे लंबा चलने वाला गैर-NASA मंगल ऑर्बिटर",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 25,
+      "met": 2,
       "label": "TCM-1",
       "note": "पहला मध्य-पथ सुधार।",
       "type": "nominal"

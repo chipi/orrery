@@ -1,7 +1,7 @@
 {
   "name": "Mars Express",
   "vehicle": "Soyuz-FG / Fregat",
-  "payload": "1183 kg (1123 kg орбитер + 60 kg лендер Beagle 2)",
+  "payload": "1223 kg при лансирању, укључујући лендер Beagle 2 од 60 kg",
   "delta_v": "~4,5 km/s",
   "type": "ОРБИТЕР · АКТИВНА",
   "first": "Прва европска мисија до друге планете; најдуговечнији марсовски орбитер ван NASA",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 25,
+      "met": 2,
       "label": "TCM-1",
       "note": "Прва корекција путање у средини лета.",
       "type": "nominal"

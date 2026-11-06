@@ -1,11 +1,11 @@
 {
   "name": "Apollo 9",
   "vehicle": "Saturn V (AS-504)",
-  "payload": "42400 kg lanciati (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
+  "payload": "43196 kg lanciati (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
   "delta_v": "~9,5 km/s (fino alla LEO)",
   "type": "MISSIONE ORBITALE TERRESTRE CON EQUIPAGGIO · COMPLETATA",
   "first": "Primo volo con equipaggio del LM — test di separazione del LM e di rendezvous in orbita terrestre",
-  "description": "Il primo volo con equipaggio del Modulo Lunare. In orbita terrestre, McDivitt e Schweickart sganciarono il LM Spider dal CSM Gumdrop, si allontanarono fino a 183 km nell'arco di sei ore, poi eseguirono il rendezvous e si agganciarono di nuovo — ogni passo della procedura di rendezvous lunare fu collaudato senza la possibilità di riportare a casa l'equipaggio nel CSM in caso di problemi. Schweickart effettuò una EVA di 38 minuti sulla piattaforma del LM, dimostrando la tuta EVA dell'Apollo e lo zaino PLSS che gli equipaggi destinati a camminare sulla Luna avrebbero usato. Scott effettuò una EVA in piedi dal portello del CSM. Con l'hardware del LM e le procedure di rendezvous verificati, la NASA aveva via libera per inviare l'Apollo 10 sulla Luna due mesi dopo.",
+  "description": "Il primo volo con equipaggio del Modulo Lunare. In orbita terrestre, McDivitt e Schweickart sganciarono il LM Spider dal CSM Gumdrop, si allontanarono fino a 183 km nell'arco di sei ore, poi eseguirono il rendezvous e si agganciarono di nuovo — ogni passo della procedura di rendezvous lunare fu collaudato senza la possibilità di riportare a casa l'equipaggio nel CSM in caso di problemi. Schweickart effettuò una EVA di circa 38 minuti sulla piattaforma del LM, dimostrando la tuta EVA dell'Apollo e lo zaino PLSS che gli equipaggi destinati a camminare sulla Luna avrebbero usato. Scott effettuò una EVA in piedi dal portello del CSM. Con l'hardware del LM e le procedure di rendezvous verificati, la NASA aveva via libera per inviare l'Apollo 10 sulla Luna due mesi dopo.",
   "events": [
     {
       "met": 0,
@@ -28,7 +28,7 @@
     {
       "met": 4.5,
       "label": "EVA",
-      "note": "Schweickart esegue una EVA di 38 min sulla piattaforma del LM. EVA in piedi di Scott dal portello del CSM. Prima convalida dello zaino PLSS dell'Apollo.",
+      "note": "Schweickart esegue una EVA di circa 38 min sulla piattaforma del LM. EVA in piedi di Scott dal portello del CSM. Prima convalida dello zaino PLSS dell'Apollo.",
       "type": "info"
     },
     {

@@ -6,7 +6,7 @@
   "dispatch": "Voskhod 1 war der erste Flug, der mehr als eine Person ins All beförderte, und das gelang durch Weglassen. In der einsitzigen Vostok war kein Platz für eine dreiköpfige Besatzung, also entfernten die Ingenieure Dinge — die Schleudersitze, die jeden bisherigen Kosmonauten gerettet hatten, und, weil es selbst dann zu eng war, die Druckanzüge. Komarow, Feoktistow und Jegorow flogen einen Tag lang in Hemdsärmeln, ohne Möglichkeit, einem Start- oder Wiedereintrittsnotfall zu entkommen, und ohne Schutz, falls die Kabine Luft verlieren sollte. Nichts ging schief, also wirkte es wie ein Triumph. Es war wirklich eine Wette — dass die Abkürzungen, die man nahm, um eine Premiere zu erzielen, nicht die entscheidenden sein würden — und sie ging zufällig auf.",
   "type": "BEMANNTER ERDORBIT · GEFLOGEN",
   "first": "Erster Raumflug mit Mehrpersonenbesatzung – drei Kosmonauten in einer von Vostok abgeleiteten Kapsel",
-  "description": "Der erste Raumflug mit dreiköpfiger Besatzung in der Geschichte. Komarow, Feoktistow und Jegorow flogen vom 1964-10-12 bis 1964-10-13 in einer stark modifizierten Vostok-Kapsel (bezeichnet als Voskhod / „Sonnenaufgang\"). Schleudersitze wurden entfernt und das Kabinendrucksystem neu bewertet, um drei Männern zu ermöglichen, in Hemdsärmeln zu sitzen – ein Propagandaerfolg gegen die geplanten zweisitzigen US-Gemini-Flüge, aber ein brutaler Kompromiss, der der Besatzung während des Starts oder Wiedereintritts keine Fluchtmöglichkeit ließ. Der Platzabstand in der Kabine war so eng, dass Komarow berichtete, er könne Jegorows Atem an seinem Hals 24 Stunden lang spüren. Landung am 1964-10-13 07:47 UTC in der Nähe von Marevka, Kasachstan, mit dem neuen Feststoff-Bremsraketensystem für weiche Landungen, da keine Fallschirmauslösung möglich war. Kurz nach ihrer Landung wurde Chruschtschow gestürzt; die Besatzung wurde von einer neuen sowjetischen Führung empfangen.",
+  "description": "Der erste Raumflug mit dreiköpfiger Besatzung in der Geschichte. Komarow, Feoktistow und Jegorow flogen vom 1964-10-12 bis 1964-10-13 in einer stark modifizierten Vostok-Kapsel (bezeichnet als Voskhod / „Sonnenaufgang\"). Schleudersitze wurden entfernt und das Kabinendrucksystem neu bewertet, um drei Männern zu ermöglichen, in Hemdsärmeln zu sitzen – ein Propagandaerfolg gegen die geplanten zweisitzigen US-Gemini-Flüge, aber ein brutaler Kompromiss, der der Besatzung während des Starts oder Wiedereintritts keine Fluchtmöglichkeit ließ. Landung am 1964-10-13 07:47 UTC im Norden Kasachstans, etwa 312 km nordöstlich von Kostanai, mit dem neuen Feststoff-Bremsraketensystem für weiche Landungen, da keine Fallschirmauslösung möglich war. Kurz nach ihrer Landung wurde Chruschtschow gestürzt; die Besatzung wurde von einer neuen sowjetischen Führung empfangen.",
   "events": [
     {
       "met": 0,
@@ -17,7 +17,7 @@
     {
       "met": 1.01,
       "label": "LANDUNG",
-      "note": "Sanfte Landung mit Bremsraketen in der Nähe von Marevka am 13. Oktober 1964 um 07:47 UTC.",
+      "note": "Sanfte Landung mit Bremsraketen im Norden Kasachstans, etwa 312 km nordöstlich von Kostanai, am 13. Oktober 1964 um 07:47 UTC.",
       "type": "nominal"
     },
     {

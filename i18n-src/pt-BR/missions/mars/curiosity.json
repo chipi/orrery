@@ -17,19 +17,19 @@
     {
       "met": 0.005,
       "label": "QUEIMA TMI",
-      "note": "Injeção Trans-Marte (3,61 km/s ∆v) coloca MSL em uma trajetória heliocêntrica rumo a Marte.",
+      "note": "Injeção Trans-Marte coloca MSL em uma trajetória heliocêntrica rumo a Marte.",
       "type": "nominal"
     },
     {
-      "met": 12,
+      "met": 46,
       "label": "TCM-1",
       "note": "Primeira correção de trajetória em meado do percurso.",
       "type": "nominal"
     },
     {
-      "met": 110,
+      "met": 213,
       "label": "TCM-3",
-      "note": "Correção pré-EDL final; trajetória visa a elipse de pouso da Cratera Gale.",
+      "note": "Terceira correção de trajetória; refina o alvo na Cratera Gale.",
       "type": "nominal"
     },
     {
@@ -54,13 +54,13 @@
   "vehicle_stage": "estágio superior Centaur (Atlas V 541)",
   "flight_events": [
     {
-      "met": 76,
+      "met": 121,
       "label": "TCM-2",
       "description": "Queima de refinamento no meio do cruzeiro. A essa altura o Curiosity já saiu do poço gravitacional da Terra e segue uma trajetória heliocêntrica estável."
     },
     {
-      "met": 211,
-      "label": "TCM-4 — última queima antes do EDL",
+      "met": 246,
+      "label": "TCM-4 — quarta correção (restavam mais duas oportunidades antes do pouso)",
       "description": "Último grande ajuste de trajetória antes da entrada em Marte. O EDL exige precisão de mira melhor que 1 km na interface atmosférica; a TCM-4 garante isso."
     }
   ]

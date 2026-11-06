@@ -5,7 +5,7 @@
   "delta_v": "~3,7 km/s",
   "type": "ORBITADOR · REALIZADA",
   "first": "Mapa de radar más completo de Venus — 98% de la superficie a ~120 m de resolución; primer vehículo espacial planetario lanzado desde el Space Shuttle",
-  "description": "Magellan convirtió Venus, un disco liso cubierto de nubes, en un planeta cartografiado. Fue lanzada desde la bodega de carga útil del transbordador Atlantis el 1989-05-04 — la primera nave planetaria en viajar en un transbordador — y llegó a Venus el 1990-08-10 por una larga trayectoria de tipo IV (1,5 revoluciones solares). A lo largo de tres ciclos de cartografía, el radar de apertura sintética cubrió el 98 % de la superficie de Venus con una resolución de ~120 m y reveló tierras altas de teselas, coronas, domos en forma de tortita y una superficie joven, renovada por el vulcanismo. La misión terminó el 1994-10-13 con el Experimento de Terminación — la primera entrada atmosférica controlada y planificada de una nave planetaria.",
+  "description": "Magellan convirtió Venus, un disco liso cubierto de nubes, en un planeta cartografiado. Fue lanzada desde la bodega de carga útil del transbordador Atlantis el 1989-05-04 — la primera nave planetaria en viajar en un transbordador — y llegó a Venus el 1990-08-10 por una larga trayectoria de tipo IV (1,5 revoluciones solares). A lo largo de tres ciclos de cartografía, el radar de apertura sintética cubrió el 98 % de la superficie de Venus con una resolución de ~120 m y reveló tierras altas de teselas, coronas, domos en forma de tortita y una superficie joven, renovada por el vulcanismo. La misión terminó el 1994-10-13 con el Experimento de Terminación — una entrada atmosférica controlada y planificada de una nave planetaria.",
   "events": [
     {
       "met": 0,
@@ -28,7 +28,7 @@
     {
       "met": 463,
       "label": "VOI",
-      "note": "Encendido del motor sólido que sitúa la nave en una órbita casi polar de 295 × 8543 km, 85,5°.",
+      "note": "Encendido del motor sólido que sitúa la nave en una órbita casi polar de 294 × 8543 km, 85,5°.",
       "type": "info"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 1988,
       "label": "EXPERIMENTO DE TERMINACIÓN",
-      "note": "1994-10-13. Periapsis rebajado hasta la atmósfera: primera entrada atmosférica planificada de una nave planetaria.",
+      "note": "1994-10-13. Periapsis rebajado hasta la atmósfera: entrada atmosférica planificada de una nave planetaria.",
       "type": "warning"
     }
   ],

@@ -101,7 +101,7 @@
         "met_days": 2005.005,
         "type": "edl_or_oi",
         "label": "Jupiter orbit insertion",
-        "description": "Multi-engine 760-m/s burn places Clipper into a highly elliptical Jupiter orbit, with apoapsis carefully timed to keep the spacecraft outside the worst of Jupiter's radiation belts. The orbital tour will execute 49 close Europa flybys over four years — passing within 25 km of Europa's surface on the closest passes. Each flyby strips Europa's ice-shell secrets one swath at a time: REASON ice-penetrating radar profiles the shell, MASPEX mass spectrometer samples plume material if any, E-THEMIS thermal imager finds active geysers."
+        "description": "Multi-engine burn places Clipper into a highly elliptical Jupiter orbit, with apoapsis carefully timed to keep the spacecraft outside the worst of Jupiter's radiation belts. The orbital tour will execute 49 close Europa flybys over four years — passing within 25 km of Europa's surface on the closest passes. Each flyby strips Europa's ice-shell secrets one swath at a time: REASON ice-penetrating radar profiles the shell, MASPEX mass spectrometer samples plume material if any, E-THEMIS thermal imager finds active geysers."
       }
     ],
     "interplanetary_profile": {

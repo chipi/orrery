@@ -5,8 +5,8 @@
   "delta_v": "~1 km/s (maniobras totales de la misión)",
   "type": "ORBITADOR + MÓDULO DE ATERRIZAJE · REALIZADA",
   "first": "Primera nave en orbitar un asteroide (433 Eros, 2000) y primer aterrizaje suave en cualquier cuerpo pequeño (2001-02-12)",
-  "dispatch": "NEAR Shoemaker fue a Eros porque nadie sabía cómo era realmente un asteroide de cerca. Al llegar encontró un mundo acribillado de cráteres, estirado hasta adoptar forma de silla de montar por su propia rotación lenta, cubierto de un regolito fino que no tenía adónde ir con una gravedad casi nula. Durante un año cartografió cada cresta y cada roca desde la órbita; luego, en febrero de 2001, los controladores tentaron la suerte: redujeron cinco veces la órbita de la nave en dos semanas, la frenaron hasta una velocidad de paseo y la posaron en la superficie. Sobrevivió. Durante dieciséis días más transmitió desde Eros — el primer emisario de la Tierra en posarse sobre un cuerpo pequeño.",
-  "description": "Misión del programa Discovery de la NASA, dirigida por el APL de la Universidad Johns Hopkins. Lanzada el 1996-02-17, NEAR Shoemaker sobrevoló el asteroide 253 Mathilde (1997-06-27) antes de que una asistencia gravitatoria de la Tierra (1998-01-23) ajustara su órbita para coincidir con la de Eros. La inserción orbital alrededor de 433 Eros el 2000-02-14 inició un estudio de 12 meses que devolvió 160 000 imágenes y mapas espectrales, de composición y de gravedad completos del cuerpo de tipo S de 34 × 11 × 11 km. El 2001-02-12, cinco encendidos para reducir la órbita llevaron la nave a 5 km de altitud; el descenso controlado, a ~1,7 m/s, terminó con un aterrizaje suave cerca de la depresión Himeros (35°N, 280°O), con imágenes devueltas hasta 125 m de la superficie. La nave sobrevivió y transmitió desde la superficie durante ~16 días.",
+  "dispatch": "NEAR Shoemaker fue a Eros porque nadie sabía cómo era realmente un asteroide de cerca. Al llegar encontró un mundo acribillado de cráteres, con una depresión en forma de silla de montar, cubierto de un regolito fino que no tenía adónde ir con una gravedad casi nula. Durante un año cartografió cada cresta y cada roca desde la órbita; luego, en febrero de 2001, los controladores tentaron la suerte: redujeron cinco veces la órbita de la nave en dos semanas, la frenaron hasta una velocidad de paseo y la posaron en la superficie. Sobrevivió. Durante dieciséis días más transmitió desde Eros — el primer emisario de la Tierra en posarse sobre un cuerpo pequeño.",
+  "description": "Misión del programa Discovery de la NASA, dirigida por el APL de la Universidad Johns Hopkins. Lanzada el 1996-02-17, NEAR Shoemaker sobrevoló el asteroide 253 Mathilde (1997-06-27) antes de que una asistencia gravitatoria de la Tierra (1998-01-23) ajustara su órbita para coincidir con la de Eros. La inserción orbital alrededor de 433 Eros el 2000-02-14 inició un estudio de 12 meses que devolvió 160 000 imágenes y mapas espectrales, de composición y de gravedad completos del cuerpo de tipo S de 34 × 11 × 11 km. El 2001-02-12, cuatro encendidos de frenado bajaron la nave desde unos 26 km; tocó la superficie a 1,9 m/s en un aterrizaje suave justo al sur de la depresión Himeros, en forma de silla de montar, cerca de 35,7°S, con imágenes devueltas hasta unos 120 m de la superficie. La nave sobrevivió y transmitió desde la superficie durante ~16 días.",
   "events": [
     {
       "met": 0,
@@ -35,7 +35,7 @@
     {
       "met": 1822,
       "label": "ATERRIZAJE EN EROS — EDL",
-      "note": "2001-02-12: descenso controlado a 1,7 m/s — primer aterrizaje suave en cualquier cuerpo pequeño.",
+      "note": "2001-02-12: contacto con la superficie a 1,9 m/s — primer aterrizaje suave en cualquier cuerpo pequeño.",
       "type": "nominal"
     }
   ],

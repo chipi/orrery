@@ -96,7 +96,7 @@
         "met_days": 306.002,
         "type": "anomaly",
         "label": "Loss of signal",
-        "description": "DART transmitted nominal telemetry up to ~3 seconds before impact, then loss of signal as expected. The CubeSat LICIACube (deployed 15 days before impact) flew past about 57 km from Dimorphos, imaging the impact plume in real time. Hubble Space Telescope and the JWST also observed the ejecta tail in the days that followed."
+        "description": "DART transmitted nominal telemetry up to ~3 seconds before impact, then loss of signal as expected. The CubeSat LICIACube (deployed 15 days before impact) flew past about 57 km from Dimorphos, imaging the impact plume in real time. Hubble Space Telescope imaged the ejecta tail in the days that followed; the JWST also observed the impact."
       }
     ],
     "interplanetary_profile": {

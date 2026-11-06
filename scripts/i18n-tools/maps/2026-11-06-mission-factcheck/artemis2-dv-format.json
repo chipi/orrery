@@ -2,21 +2,75 @@
   {
     "m": "moon/artemis2",
     "text": {
-      "ar": [["~3.1 كم/ث من مدار الأرض (مسار عودة حرة)", "~3.1 كم/ث (من مدار الأرض، مسار عودة حرة)"]],
-      "de": [["~3,1 km/s aus der Erdumlaufbahn (freie Rückkehr)", "~3,1 km/s (aus der Erdumlaufbahn, freie Rückkehr)"]],
-      "en-US": [["~3.1 km/s from Earth orbit (free return)", "~3.1 km/s (from Earth orbit, free return)"]],
-      "es": [["~3,1 km/s desde la órbita terrestre (retorno libre)", "~3,1 km/s (desde la órbita terrestre, retorno libre)"]],
-      "fr": [["~3,1 km/s depuis l'orbite terrestre (retour libre)", "~3,1 km/s (depuis l'orbite terrestre, retour libre)"]],
-      "hi": [["~3.1 km/s पृथ्वी की कक्षा से (मुक्त वापसी)", "~3.1 km/s (पृथ्वी की कक्षा से, मुक्त वापसी)"]],
-      "it": [["~3,1 km/s dall'orbita terrestre (ritorno libero)", "~3,1 km/s (dall'orbita terrestre, ritorno libero)"]],
-      "nl": [["~3,1 km/s vanuit een baan om de aarde (vrije terugkeer)", "~3,1 km/s (vanuit een baan om de aarde, vrije terugkeer)"]],
-      "pt-BR": [["~3,1 km/s a partir da órbita terrestre (retorno livre)", "~3,1 km/s (a partir da órbita terrestre, retorno livre)"]],
-      "ru": [["~3,1 км/с с околоземной орбиты (свободное возвращение)", "~3,1 км/с (с околоземной орбиты, свободное возвращение)"]],
-      "sr-Cyrl": [["~3,1 km/s из Земљине орбите (слободан повратак)", "~3,1 km/s (из Земљине орбите, слободан повратак)"]]
+      "ar": [
+        ["~3.1 كم/ث من مدار الأرض (مسار عودة حرة)", "~3.1 كم/ث (من مدار الأرض، مسار عودة حرة)"]
+      ],
+      "de": [
+        [
+          "~3,1 km/s aus der Erdumlaufbahn (freie Rückkehr)",
+          "~3,1 km/s (aus der Erdumlaufbahn, freie Rückkehr)"
+        ]
+      ],
+      "en-US": [
+        ["~3.1 km/s from Earth orbit (free return)", "~3.1 km/s (from Earth orbit, free return)"]
+      ],
+      "es": [
+        [
+          "~3,1 km/s desde la órbita terrestre (retorno libre)",
+          "~3,1 km/s (desde la órbita terrestre, retorno libre)"
+        ]
+      ],
+      "fr": [
+        [
+          "~3,1 km/s depuis l'orbite terrestre (retour libre)",
+          "~3,1 km/s (depuis l'orbite terrestre, retour libre)"
+        ]
+      ],
+      "hi": [
+        [
+          "~3.1 km/s पृथ्वी की कक्षा से (मुक्त वापसी)",
+          "~3.1 km/s (पृथ्वी की कक्षा से, मुक्त वापसी)"
+        ]
+      ],
+      "it": [
+        [
+          "~3,1 km/s dall'orbita terrestre (ritorno libero)",
+          "~3,1 km/s (dall'orbita terrestre, ritorno libero)"
+        ]
+      ],
+      "nl": [
+        [
+          "~3,1 km/s vanuit een baan om de aarde (vrije terugkeer)",
+          "~3,1 km/s (vanuit een baan om de aarde, vrije terugkeer)"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "~3,1 km/s a partir da órbita terrestre (retorno livre)",
+          "~3,1 km/s (a partir da órbita terrestre, retorno livre)"
+        ]
+      ],
+      "ru": [
+        [
+          "~3,1 км/с с околоземной орбиты (свободное возвращение)",
+          "~3,1 км/с (с околоземной орбиты, свободное возвращение)"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "~3,1 km/s из Земљине орбите (слободан повратак)",
+          "~3,1 km/s (из Земљине орбите, слободан повратак)"
+        ]
+      ]
     }
   },
   {
     "m": "moon/artemis2",
-    "base": [["\"delta_v\": \"~3.1 km/s from Earth orbit (free return)\"", "\"delta_v\": \"~3.1 km/s (from Earth orbit, free return)\""]]
+    "base": [
+      [
+        "\"delta_v\": \"~3.1 km/s from Earth orbit (free return)\"",
+        "\"delta_v\": \"~3.1 km/s (from Earth orbit, free return)\""
+      ]
+    ]
   }
 ]

@@ -49,7 +49,7 @@
       "vehicle_stage": "Star 48BV solid third stage (Delta IV Heavy core + 2 strap-ons)",
       "c3_km2_s2": 154,
       "mass_at_tli_kg": 685,
-      "source": "NASA Parker Solar Probe Press Kit (2018-08); Fox et al. (2016). Highest C3 ever achieved for a science payload.",
+      "source": "NASA Parker Solar Probe Press Kit (2018-08); Fox et al. (2016). One of the highest C3 values ever flown; only New Horizons' was higher.",
       "departure": "stage-then-kick"
     },
     "cruise": {
@@ -73,7 +73,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Delta IV Heavy + Star 48BV",
-        "description": "Cape Canaveral SLC-37B, 2018-08-12. Parker Solar Probe required the highest C3 ever achieved for a science mission (154 km²/s²) to break out of Earth's orbital motion enough to fall into a Sun-grazing trajectory. The third-stage Star 48BV solid motor was a custom addition to the Delta IV Heavy stack."
+        "description": "Cape Canaveral SLC-37B, 2018-08-12. Parker Solar Probe required one of the highest launch energies ever flown (C3 ≈ 154 km²/s²; only New Horizons' was higher) to break out of Earth's orbital motion enough to fall into a Sun-grazing trajectory. The third-stage Star 48BV solid motor was a custom addition to the Delta IV Heavy stack."
       },
       {
         "met_days": 0.005,

@@ -1,7 +1,7 @@
 {
   "name": "Mars Express",
   "vehicle": "Soyuz-FG / Fregat",
-  "payload": "1183 kg（轨道器 1123 kg + Beagle 2 着陆器 60 kg）",
+  "payload": "发射时 1223 kg，含 60 kg 的 Beagle 2 着陆器",
   "delta_v": "~4.5 km/s",
   "type": "轨道器 · 运行中",
   "first": "欧洲首次前往其他行星的探测任务；运行时间最长的非NASA火星轨道器",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 25,
+      "met": 2,
       "label": "TCM-1",
       "note": "首次中途修正",
       "type": "nominal"

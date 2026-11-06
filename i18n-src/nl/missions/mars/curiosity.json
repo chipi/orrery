@@ -17,19 +17,19 @@
     {
       "met": 0.005,
       "label": "TMI-ONTSTEKING",
-      "note": "Trans-Mars-injectie (3,61 km/s delta-v) stuurt MSL op een heliocentrisch traject naar Mars.",
+      "note": "Trans-Mars-injectie stuurt MSL op een heliocentrisch traject naar Mars.",
       "type": "nominal"
     },
     {
-      "met": 12,
+      "met": 46,
       "label": "TCM-1",
       "note": "Eerste baan-correctiemanoeuvre.",
       "type": "nominal"
     },
     {
-      "met": 110,
+      "met": 213,
       "label": "TCM-3",
-      "note": "Laatste correctie vóór EDL; baan gericht op landingsellips van Gale-krater.",
+      "note": "Derde baancorrectie; verfijnt het doel in Gale-krater.",
       "type": "nominal"
     },
     {
@@ -54,13 +54,13 @@
   "vehicle_stage": "Centaur-bovenste trap (Atlas V 541)",
   "flight_events": [
     {
-      "met": 76,
+      "met": 121,
       "label": "TCM-2",
       "description": "Verfijningsbrandstap halverwege de reis. Op dit punt is Curiosity uit de zwaartekrachtput van de aarde en volgt een stabiele heliocentrische baan."
     },
     {
-      "met": 211,
-      "label": "TCM-4 — laatste brandstap voor de EDL",
+      "met": 246,
+      "label": "TCM-4 — vierde correctie (er waren nog twee kansen vóór de landing)",
       "description": "Laatste grote baanbijstelling voor de intrede in Mars. De EDL vereist een richtnauwkeurigheid beter dan 1 km aan de rand van de atmosfeer; TCM-4 levert die."
     }
   ]

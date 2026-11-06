@@ -17,19 +17,19 @@
     {
       "met": 0.005,
       "label": "ALLUMAGE D'INJECTION TRANS-MARTIENNE",
-      "note": "Injection trans-Mars (∆v de 3,61 km/s) : MSL est placé sur une trajectoire héliocentrique en direction de Mars.",
+      "note": "Injection trans-Mars : MSL est placé sur une trajectoire héliocentrique en direction de Mars.",
       "type": "nominal"
     },
     {
-      "met": 12,
+      "met": 46,
       "label": "TCM-1",
       "note": "Premier correctif de trajectoire mid-course.",
       "type": "nominal"
     },
     {
-      "met": 110,
+      "met": 213,
       "label": "TCM-3",
-      "note": "Correction finale pré-EDL ; la trajectoire cible l'ellipse d'atterrissage du cratère Gale.",
+      "note": "Troisième correction de trajectoire ; affine la cible dans le cratère Gale.",
       "type": "nominal"
     },
     {
@@ -54,13 +54,13 @@
   "vehicle_stage": "étage supérieur Centaur (Atlas V 541)",
   "flight_events": [
     {
-      "met": 76,
+      "met": 121,
       "label": "TCM-2",
       "description": "Allumage d'affinage à mi-croisière. À ce stade, Curiosity est sorti du puits gravitationnel terrestre et suit une trajectoire héliocentrique stable."
     },
     {
-      "met": 211,
-      "label": "TCM-4 — dernier allumage avant l'EDL",
+      "met": 246,
+      "label": "TCM-4 — quatrième correction (deux autres possibilités restaient avant l'atterrissage)",
       "description": "Dernière grande retouche de trajectoire avant l'entrée dans l'atmosphère martienne. L'EDL exige une précision de visée inférieure à 1 km à l'interface atmosphérique ; la TCM-4 la fournit."
     }
   ]

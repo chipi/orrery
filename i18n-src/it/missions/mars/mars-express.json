@@ -1,7 +1,7 @@
 {
   "name": "Mars Express",
   "vehicle": "Soyuz-FG / Fregat",
-  "payload": "1183 kg (1123 kg di orbiter + 60 kg del lander Beagle 2)",
+  "payload": "1223 kg al lancio, incluso il lander Beagle 2 da 60 kg",
   "delta_v": "~4,5 km/s",
   "type": "ORBITORE · ATTIVA",
   "first": "Prima missione europea verso un altro pianeta; il più longevo tra gli orbiter di Marte non NASA",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 25,
+      "met": 2,
       "label": "TCM-1",
       "note": "Prima correzione di metà percorso.",
       "type": "nominal"

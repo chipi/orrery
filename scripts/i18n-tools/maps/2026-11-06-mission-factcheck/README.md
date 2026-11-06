@@ -33,11 +33,27 @@ Lunar Prospector / Clementine fleet, Luna 24 mass), `batch7b.json` (Opportunity 
   `hera-retarget.ts` re-solves the DSM-2 → Didymos leg, and `generate-fly-trajectory.ts hera`
   rebuilt `static/data/fly-trajectories/hera.json`.
 
+## Round 2 — the "could not verify" items (2026-11-07)
+
+Four read-only `science-reviewer` agents took the ~90 items the first round could not settle
+(`unverified-brief.md`); the lead judged each (`round2-accepted.md`: sourced fixes accepted,
+unsourced details dropped rather than replaced, a few overruled) and four implementer agents
+applied them in all 14 locales: `round2-S.json` (early crewed flights), `round2-A.json` (Apollo,
+Skylab), `round2-V.json` (Venus, Mars), `round2-D.json` (deep space, small bodies). The lead moved
+the event METs (`round2-mets.json`: Curiosity's four TCMs, Mars Express TCM-1) and re-recorded 26
+term keeps whose fields changed elsewhere (`round2-keeps.json`). `fleet-repeats.mjs` checks the
+fleet files for wrong texts a mission fix replaced.
+
+Also from this arc: `event-date-check` fixes (`event-dates.json`, `juice-venus.json`), Artemis II
+(`artemis2-dv*.json`), Mangalyaan's end cause, Hera (`hera-*`), Galileo JOI.
+
 ## Open (not changed)
 
-- Artemis II `total_dv_km_s` 6.5 and `delta_v` "~6.5 km/s (round trip)" have no source; a
-  free-return from LEO needs ~3.1 km/s. Left until a source is found.
-- Hera `interplanetary_profile.waypoints_helio_au` put the Mars flyby at r ≈ 0.95 AU (Mars is
-  ~1.5); /fly does not draw them (it uses `fly-trajectories/hera.json`), so left as is.
-- Inspiration4 base `departure_date` 2021-09-15 is the Florida date (launch 00:02 UTC on the 16th).
-- Each reviewer's "could not verify" list (in the session transcript) was not acted on.
+- Mariner 10 TCM burn durations and Δv: SP-424 could not be read; not changed.
+- Europa Clipper's JOI Δv: no published figure found, so the number was removed.
+- Chang'e 7 postponement: which agency announced it (AP says CMSA) is not settled; our text does
+  not name one.
+- Chang'e 6 TEI: sources give only "around June 21"; MET 48.6 (07:51 Beijing on the 21st) kept.
+- Tianwen-1 orbiter "remains active": no dated 2026 source found.
+- Mars Express TCM-2 to TCM-4 dates: no source; only TCM-1 was moved.
+- Mercury capsule masses use different definitions (with/without escape tower); not unified.

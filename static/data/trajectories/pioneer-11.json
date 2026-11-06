@@ -5,14 +5,14 @@
   "category": "interstellar-bound",
   "color": "#ff7b72",
   "schema_version": 1,
-  "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice C). Launch 1973-04-06 → Jupiter gravity-assist 1974-12-02 (bent the path north and outward toward Saturn) → Saturn flyby 1979-09-01 (first ever, demonstrated gravity-assist that later enabled Voyager Grand Tour) → drift outward toward the constellation Aquila / Scutum (ecl. lat ~+11°). Signal lost 1995-09-30 from ~43 AU; coasting today at ~89 AU per JPL Horizons projection. Heliocentric ecliptic J2000 AU. Not ephemeris-grade; sufficient for the heliocentric log-scale view at /explore.",
+  "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice C). Launch 1973-04-06 → Jupiter gravity-assist 1974-12-03 (bent the path north and outward toward Saturn) → Saturn flyby 1979-09-01 (first ever, demonstrated gravity-assist that later enabled Voyager Grand Tour) → drift outward toward the constellation Aquila / Scutum (ecl. lat ~+11°). Signal lost 1995-11-24 from ~43 AU; coasting today at ~89 AU per JPL Horizons projection. Heliocentric ecliptic J2000 AU. Not ephemeris-grade; sufficient for the heliocentric log-scale view at /explore.",
   "current_position_au": [
     -31,
     80,
     17
   ],
   "current_distance_au": 89,
-  "current_distance_label": "89 AU · ~12.3 light-hours from the Sun (signal lost 1995-09-30)",
+  "current_distance_label": "89 AU · ~12.3 light-hours from the Sun (signal lost 1995-11-24)",
   "interstellar_since": null,
   "interstellar_since_label": "Signal lost 1995 — coasting toward Aquila, will reach interstellar space around 2027",
   "agency": "NASA",
@@ -104,7 +104,7 @@
       "z": 11.5
     },
     {
-      "date": "1995-09-30",
+      "date": "1995-11-24",
       "label": "Last signal",
       "x": -7.5,
       "y": 39,

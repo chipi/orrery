@@ -13,7 +13,7 @@
   "round_trip": true,
   "vehicle": "M-V-5",
   "payload": "510 kg (incl. 60 kg of xenon for four μ10 ion thrusters)",
-  "delta_v": "~4.0 km/s",
+  "delta_v": "~2.2 km/s (ion engines)",
   "data_quality": "good",
   "credit": "© JAXA / ISAS — public domain. First asteroid sample return. Heroic recovery from multiple failures: two of its three reaction wheels failed, an ion engine failed, communications lost for 7 weeks, hydrazine leak; engineers nursed the spacecraft back to Earth with one working ion engine assembled from the surviving halves of two damaged ones.",
   "links": [
@@ -92,7 +92,7 @@
         "met_days": 925.67,
         "type": "edl_or_oi",
         "label": "Itokawa surface operations — sample attempts",
-        "description": "Two touchdowns 2005-11-20 + 2005-11-25. The first was unintended — Hayabusa came down softly and bounced; sample collection mechanism did not fire. The second touchdown was planned but the sample-collection projectile failed to fire on command. Both surface contacts kicked up regolith into the collection horn anyway. The team would not know whether material had been captured until the capsule's recovery 5 years later."
+        "description": "Two touchdowns 2005-11-20 + 2005-11-25. On the first descent the sampling sequence aborted; Hayabusa came down softly, bounced and rested on the surface for about 30 minutes. The second touchdown was planned but the sample-collection projectile failed to fire on command. Both surface contacts kicked up regolith into the collection horn anyway. The team would not know whether material had been captured until the capsule's recovery 5 years later."
       },
       {
         "met_days": 944,

@@ -1,7 +1,7 @@
 {
   "name": "Mars Express",
   "vehicle": "Soyuz-FG / Fregat",
-  "payload": "1183 kg (1123 kg Orbiter + 60 kg Lander Beagle 2)",
+  "payload": "1223 kg beim Start, einschließlich des 60 kg schweren Landers Beagle 2",
   "delta_v": "~4,5 km/s",
   "type": "ORBITER · AKTIV",
   "first": "Europas erste Mission zu einem anderen Planeten; am längsten laufender nicht-NASA Mars-Orbiter",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 25,
+      "met": 2,
       "label": "TCM-1",
       "note": "Erste Korrektur in der Mitte des Kurses.",
       "type": "nominal"

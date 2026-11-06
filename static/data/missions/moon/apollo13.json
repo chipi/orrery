@@ -67,7 +67,7 @@
       "periapsis_km": 254,
       "inclination_deg": 5.36,
       "orbit_insertion_dv_km_s": 0,
-      "source": "Apollo 13 Mission Report (NASA MSC-02680, 1970); LOI cancelled — free-return flyby at 254 km altitude over Mare Cognitum"
+      "source": "Apollo 13 Mission Report (NASA MSC-02680, 1970); LOI cancelled — free-return flyby at 254 km altitude above the far side"
     },
     "totals": {
       "total_dv_km_s": 4.3,
@@ -98,7 +98,7 @@
         "met_days": 2.33,
         "type": "anomaly",
         "label": "Oxygen tank 2 explosion — \"Houston, we've had a problem\"",
-        "description": "1970-04-14 03:08 UTC. Oxygen tank 2 in the Service Module ruptured during a routine cryo stir, venting both O₂ tanks and crippling the CSM's fuel-cell electrical power. Cause was later traced to a damaged thermostatic-switch heater wire dating from pre-launch ground testing. Mission objective immediately switched from \"land on the Moon\" to \"get the crew home alive\"."
+        "description": "1970-04-14 03:08 UTC. Oxygen tank 2 in the Service Module ruptured during a routine cryo stir, venting both O₂ tanks and crippling the CSM's fuel-cell electrical power. Cause was later traced to overheated heater thermostat switches (rated 28 V, fed 65 V during pre-launch ground detanking) that damaged the Teflon insulation of the tank's fan wiring; in flight a short in those wires ignited it. Mission objective immediately switched from \"land on the Moon\" to \"get the crew home alive\"."
       },
       {
         "met_days": 2.56,
@@ -110,7 +110,7 @@
         "met_days": 3.21,
         "type": "flyby",
         "label": "Moon — free-return flyby",
-        "description": "1970-04-15 00:21 UTC, closest approach 254 km above Mare Cognitum. Apollo 13 reached 400,171 km from Earth on the far side — the farthest humans had travelled from Earth until Artemis II (April 2026). No lunar landing — Aquarius (the LM, designed for 45 hours) had to keep three astronauts alive for 87 hours instead."
+        "description": "1970-04-15 00:21 UTC, closest approach 254 km above the far side. Apollo 13 reached 400,171 km from Earth there — the farthest humans had travelled from Earth until Artemis II (April 2026). No lunar landing — Aquarius (the LM, designed for 45 hours) had to keep three astronauts alive for 87 hours instead."
       },
       {
         "met_days": 3.31,

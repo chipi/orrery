@@ -1,7 +1,7 @@
 {
   "name": "Mars Express",
   "vehicle": "Soyuz-FG / Fregat",
-  "payload": "1183 kg (orbiteur de 1123 kg + atterrisseur Beagle 2 de 60 kg)",
+  "payload": "1223 kg au lancement, dont l'atterrisseur Beagle 2 de 60 kg",
   "delta_v": "~4,5 km/s",
   "type": "ORBITEUR · ACTIVE",
   "first": "Première mission de l'Europe vers une autre planète ; orbiteur martien hors NASA en activité le plus longtemps",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 25,
+      "met": 2,
       "label": "TCM-1",
       "note": "Première correction à mi-parcours.",
       "type": "nominal"

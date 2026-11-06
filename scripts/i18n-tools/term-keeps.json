@@ -1,7 +1,7 @@
 {
   "airlock|ar|missions/earth/skylab-2.json :: description": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes",
-    "tr": "a4e297f4b6"
+    "tr": "f120f233b8"
   },
   "airlock|it|science/life-in-space/lunar-surface-ops.json :: body_paragraphs.1": {
     "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
@@ -21,7 +21,7 @@
   },
   "airlock|ru|missions/earth/skylab-2.json :: description": {
     "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word; re-read 2026-11-06 after the fact-check fixes",
-    "tr": "753be63fd3"
+    "tr": "6905695220"
   },
   "aphelion|ja|science/orbits/eccentricity.json :: body_paragraphs.0": {
     "why": "read 2026-11-04 (chunk 3): the general apoapsis word (ja 遠点) in the eccentricity article",
@@ -2217,11 +2217,11 @@
   },
   "capsule|ru|missions/earth/vostok-3.json :: description": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "08e8ea1ed0"
+    "tr": "93a9b87947"
   },
   "capsule|ru|missions/earth/vostok-4.json :: description": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "2508b7cc61"
+    "tr": "0c9c192225"
   },
   "capsule|ru|science/mission-phases/entry-footprint.json :: intro_sentence": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -2233,11 +2233,11 @@
   },
   "capsule|zh-CN|missions/earth/faith-7.json :: description": {
     "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word; re-read 2026-11-06 after the fact-check fixes",
-    "tr": "e8b58cf5ad"
+    "tr": "0d77f9a5f1"
   },
   "capsule|zh-CN|missions/earth/sigma-7.json :: description": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes",
-    "tr": "b1a75c2a8b"
+    "tr": "be0ec71617"
   },
   "capsule|zh-CN|science/life-in-space/crew-selection.json :: body_paragraphs.0": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -2273,7 +2273,7 @@
   },
   "descent|de|missions/earth/voskhod-2.json :: description": {
     "why": "variant: Landemodul (descent module); re-read 2026-11-06 after the EVA-time fix",
-    "tr": "7f64ec2ae1"
+    "tr": "9398a1e9c0"
   },
   "descent|de|missions/earth/vostok-1.json :: payload": {
     "why": "variant: Landekapsel (descent module)",
@@ -2949,7 +2949,7 @@
   },
   "orbit|ar|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 22 دورة",
-    "tr": "fdf2c2bee9"
+    "tr": "1b364708be"
   },
   "orbit|ar|missions/earth/faith-7.json :: first": {
     "why": "variant: دورة (lap count)",
@@ -3293,7 +3293,7 @@
   },
   "orbit|ja|missions/earth/aurora-7.json :: description": {
     "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun",
-    "tr": "e3b3e45110"
+    "tr": "52cdbda060"
   },
   "orbit|ja|missions/earth/aurora-7.json :: dispatch": {
     "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun",
@@ -3301,7 +3301,7 @@
   },
   "orbit|ja|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 周 (revolution counter)",
-    "tr": "afacbb06d9"
+    "tr": "81d3c56f75"
   },
   "orbit|ja|missions/earth/friendship-7.json :: events.3.note": {
     "why": "variant: 周 (revolution counter)",
@@ -3325,7 +3325,7 @@
   },
   "orbit|ko|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 바퀴 (revolution counter)",
-    "tr": "09e30e222f"
+    "tr": "5a41c110f0"
   },
   "orbit|ko|missions/earth/friendship-7.json :: dispatch": {
     "why": "variant: 돈 (verb to orbit)",
@@ -3445,7 +3445,7 @@
   },
   "orbit|nl|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: omlopen (counted revolutions)",
-    "tr": "52b7243ded"
+    "tr": "95ea3efbfa"
   },
   "orbit|nl|missions/earth/friendship-7.json :: events.3.note": {
     "why": "variant: omlopen (counted revolutions)",
@@ -3657,7 +3657,7 @@
   },
   "orbit|ru|missions/earth/aurora-7.json :: description": {
     "why": "variant: виток (count of revolutions)",
-    "tr": "e0ba70e3c3"
+    "tr": "6cdc50c67f"
   },
   "orbit|ru|missions/earth/aurora-7.json :: dispatch": {
     "why": "variant: виток (count of revolutions)",
@@ -3677,7 +3677,7 @@
   },
   "orbit|ru|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: виток (count of revolutions)",
-    "tr": "0c147fd7e1"
+    "tr": "68becec42e"
   },
   "orbit|ru|missions/earth/faith-7.json :: first": {
     "why": "variant: виток (count of revolutions)",
@@ -4073,7 +4073,7 @@
   },
   "orbit|zh-CN|missions/earth/aurora-7.json :: description": {
     "why": "variant: 圈 (laps)",
-    "tr": "b0a718f6b4"
+    "tr": "c334e1dd18"
   },
   "orbit|zh-CN|missions/earth/aurora-7.json :: first": {
     "why": "variant: 圈 (laps)",
@@ -4089,7 +4089,7 @@
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 圈 (laps)",
-    "tr": "fface8b8b5"
+    "tr": "e6424e0e7c"
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: first": {
     "why": "variant: 圈 (laps)",
@@ -4409,7 +4409,7 @@
   },
   "payload|ko|missions/moon/apollo8.json :: description": {
     "why": "payload of the mission paraphrased as 임무",
-    "tr": "ca13e538f0"
+    "tr": "34ce240061"
   },
   "payload|ko|missions/moon/luna16.json :: description": {
     "why": "variant: 탑재량 (payload mass); re-read 2026-11-06 after the fact-check fixes",
@@ -4441,11 +4441,11 @@
   },
   "payload|nl|missions/venus/magellan.json :: description": {
     "why": "variant: laadruim (payload bay, standard word); re-read 2026-11-06 after the fact-check fixes",
-    "tr": "23814299ac"
+    "tr": "193a66a1ab"
   },
   "payload|pt-BR|missions/venus/magellan.json :: description": {
     "why": "variant: baía de carga (payload bay); re-read 2026-11-06 after the fact-check fixes",
-    "tr": "b0d0138c9b"
+    "tr": "e436e0819b"
   },
   "payload|pt-BR|programs/mercury.json :: narrative.1.md": {
     "why": "figurative: astronaut as cargo/passenger",
@@ -4537,11 +4537,11 @@
   },
   "payload|zh-CN|missions/moon/apollo8.json :: description": {
     "why": "payload (which craft flies) rendered by 任务; natural omission",
-    "tr": "998003955b"
+    "tr": "e3929f6a87"
   },
   "payload|zh-CN|missions/venus/magellan.json :: description": {
     "why": "variant: 货舱 (shuttle payload bay); re-read 2026-11-06 after the fact-check fixes",
-    "tr": "f399ea58fa"
+    "tr": "46ad0e844f"
   },
   "payload|zh-CN|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
@@ -4573,7 +4573,7 @@
   },
   "polar orbit|nl|missions/venus/magellan.json :: events.3.note": {
     "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'",
-    "tr": "0dda04dbdc"
+    "tr": "483f654ec3"
   },
   "propellant|ar|essays/asteroid-mining.json :: body.15.caption": {
     "why": "variant: وقود الصواريخ (rocket propellant)",
@@ -4897,7 +4897,7 @@
   },
   "sample return|nl|missions/bennu/osiris-rex.json :: description": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
-    "tr": "9f0af7873c"
+    "tr": "267e50a38d"
   },
   "sample return|nl|programs/jaxa-robotic.json :: link_labels./programs/hayabusa": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
@@ -5017,7 +5017,7 @@
   },
   "splashdown|fr|missions/earth/freedom-7.json :: description": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean; re-read 2026-11-06 after the fact-check fixes",
-    "tr": "339c03e03c"
+    "tr": "8bd9b9f9dd"
   },
   "splashdown|fr|missions/moon/apollo15.json :: description": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
@@ -5029,7 +5029,7 @@
   },
   "splashdown|hi|missions/earth/freedom-7.json :: description": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean; re-read 2026-11-06 after the fact-check fixes",
-    "tr": "d440feb01c"
+    "tr": "5f601acb7a"
   },
   "splashdown|hi|missions/earth/freedom-7.json :: events.2.note": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
@@ -5065,7 +5065,7 @@
   },
   "splashdown|pt-BR|missions/earth/liberty-bell-7.json :: description": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
-    "tr": "6b25b02186"
+    "tr": "eec2c93b86"
   },
   "splashdown|pt-BR|missions/moon/apollo10.json :: events.7.note": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",

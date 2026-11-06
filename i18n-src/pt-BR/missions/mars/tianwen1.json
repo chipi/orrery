@@ -5,7 +5,7 @@
   "delta_v": "~5 km/s",
   "type": "ORBITADOR · ATERRISSADOR · ROVER · ATIVA",
   "first": "Primeira missão a conseguir entregar orbitador, módulo de aterrissagem e rover a Marte em um único lançamento",
-  "description": "A primeira missão da China a Marte foi a primeira a conseguir, em um único lançamento, o que até então só a soviética Mars 3 havia tentado, em 1971: inserção orbital, entrada atmosférica, pouso suave e implantação do rover. O rover Zhurong operou 358 sóis em Utopia Planitia, percorrendo 1,9 km, antes de entrar na hibernação planejada em maio de 2022; desde então não acordou (provavelmente devido ao acúmulo de poeira nos painéis solares). O orbitador permanece ativo, mapeando o planeta em alta resolução e servindo como retransmissor para recursos terrestres.",
+  "description": "A primeira missão da China a Marte foi a primeira a conseguir, em um único lançamento, o que até então só a soviética Mars 3 havia tentado, em 1971: inserção orbital, entrada atmosférica, pouso suave e implantação do rover. O rover Zhurong operou 347 sóis (358 dias terrestres) em Utopia Planitia, percorrendo 1,9 km, antes de entrar na hibernação planejada em maio de 2022; desde então não acordou (provavelmente devido ao acúmulo de poeira nos painéis solares). O orbitador permanece ativo, mapeando o planeta em alta resolução e servindo como retransmissor para recursos terrestres.",
   "events": [
     {
       "met": 0,

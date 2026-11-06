@@ -6,7 +6,7 @@
   "dispatch": "Faith 7 encerrou o Mercury, e o fez da forma mais difícil. Gordon Cooper voou vinte e duas órbitas ao longo de um dia e meio — mais tempo do que todos os voos anteriores do Mercury combinados — e então, nas horas finais, seu sistema de controle automático falhou. Então ele pilotou a reentrada manualmente, alinhando a cápsula com o horizonte e as estrelas e acionando seus retrofoguetes em uma contagem falada, e pousou muito perto do alvo. Foi a última vez que um americano orbitou a Terra sozinho, e uma última palavra digna para um programa construído por pilotos de teste: quando a automação falhou, o piloto trouxe tudo para casa.",
   "type": "TRIPULADO ÓRBITA TERRESTRE · REALIZADA",
   "first": "Último voo orbital tripulado solo americano; 22 órbitas / 34 horas",
-  "description": "O voo de 22 órbitas de Gordon Cooper — última missão Mercury e último voo orbital tripulado solo americano de todos os tempos (todos os programas americanos posteriores levaram tripulações múltiplas). Duração 34 h 19 min — mais do que todos os voos Mercury anteriores somados. Cooper realizou observação da Terra, fotografia e fez uma refeição no espaço. No fim da missão, uma falha de alimentação forçou o controle manual de toda a atitude e da ignição dos retrofoguetes — Cooper usou as marcas de alinhamento pintadas na janela contra o horizonte terrestre para se orientar, alcançando o amerissagem mais preciso de qualquer voo Mercury (~7 km do alvo). A cápsula Faith 7 está em exposição no Space Center Houston, TX.",
+  "description": "O voo de 22 órbitas de Gordon Cooper — última missão Mercury e último voo orbital tripulado solo americano de todos os tempos (todos os programas americanos posteriores levaram tripulações múltiplas). Duração 34 h 19 min — mais do que todos os voos Mercury anteriores somados. Cooper realizou observação da Terra, fotografia e fez uma refeição no espaço. No fim da missão, uma falha de alimentação forçou o controle manual de toda a atitude e da ignição dos retrofoguetes — Cooper usou as marcas de alinhamento pintadas na janela contra o horizonte terrestre para se orientar, alcançando o amerissagem mais preciso de qualquer voo Mercury (a cerca de 6 km (4 mi) do navio de recuperação USS Kearsarge). A cápsula Faith 7 está em exposição no Space Center Houston, TX.",
   "events": [
     {
       "met": 0,
@@ -29,7 +29,7 @@
     {
       "met": 1.43,
       "label": "AMERISSAGEM",
-      "note": "Oceano Pacífico, a ~7 km do alvo após 22 órbitas / 34 h 19 min. Resgate pelo USS Kearsarge.",
+      "note": "Oceano Pacífico, a cerca de 6 km (4 mi) do navio de recuperação após 22 órbitas / 34 h 19 min. Resgate pelo USS Kearsarge.",
       "type": "nominal"
     }
   ]

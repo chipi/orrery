@@ -1,7 +1,7 @@
 {
   "name": "Mars Express",
   "vehicle": "Soyuz-FG / Fregat",
-  "payload": "1183 kg (1123 kg de orbitador + 60 kg del módulo de aterrizaje Beagle 2)",
+  "payload": "1223 kg en el lanzamiento, incluido el módulo de aterrizaje Beagle 2 de 60 kg",
   "delta_v": "~4,5 km/s",
   "type": "ORBITADOR · ACTIVA",
   "first": "Primera misión de Europa a otro planeta; el orbitador de Marte de mayor vida operativa fuera de la NASA",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 25,
+      "met": 2,
       "label": "TCM-1",
       "note": "Primera corrección de trayectoria.",
       "type": "nominal"

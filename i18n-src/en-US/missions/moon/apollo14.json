@@ -23,7 +23,7 @@
     {
       "met": 0.25,
       "label": "CSM-LM DOCKING",
-      "note": "Five docking attempts before Kitty Hawk soft-captured Antares — anomaly in docking latches; root cause never reproduced on ground.",
+      "note": "Six docking attempts (the first five failed) before Kitty Hawk soft-captured Antares — anomaly in docking latches; root cause never reproduced on ground.",
       "type": "warning"
     },
     {

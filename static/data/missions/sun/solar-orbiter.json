@@ -1,7 +1,7 @@
 {
   "id": "solar-orbiter",
   "agency": "ESA / NASA",
-  "agency_full": "European Space Agency (lead) / Airbus Defence and Space (spacecraft) / NASA (launch + 1 instrument)",
+  "agency_full": "European Space Agency (lead) / Airbus Defence and Space (spacecraft) / NASA (launch + 2 instruments: SoloHI and Heavy Ion Sensor)",
   "sector": "gov",
   "dest": "SUN",
   "color": "#003247",
@@ -76,7 +76,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Atlas V 411",
-        "description": "Cape Canaveral SLC-41, 2020-02-10. ESA-led mission with NASA launch + one instrument contribution. Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in detail — a view inaccessible from Earth or any prior ecliptic-bound observatory."
+        "description": "Cape Canaveral SLC-41, 2020-02-10. ESA-led mission with NASA launch + two instruments (SoloHI and the Heavy Ion Sensor). Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in detail — a view inaccessible from Earth or any prior ecliptic-bound observatory."
       },
       {
         "met_days": 0.005,

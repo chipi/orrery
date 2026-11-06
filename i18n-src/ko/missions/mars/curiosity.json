@@ -17,19 +17,19 @@
     {
       "met": 0.005,
       "label": "화성 전이 연소",
-      "note": "화성 전이(3.61 km/s ∆v)가 MSL을 태양중심 화성 방향 궤적으로 보낸다.",
+      "note": "화성 전이가 MSL을 태양중심 화성 방향 궤적으로 보낸다.",
       "type": "nominal"
     },
     {
-      "met": 12,
+      "met": 46,
       "label": "TCM-1",
       "note": "첫 번째 중도 수정.",
       "type": "nominal"
     },
     {
-      "met": 110,
+      "met": 213,
       "label": "TCM-3",
-      "note": "최종 EDL 전 수정; 궤적은 게일 분화구 착륙 타원을 목표로 한다.",
+      "note": "세 번째 궤적 수정; 게일 분화구 목표를 정밀화한다.",
       "type": "nominal"
     },
     {
@@ -54,13 +54,13 @@
   "vehicle_stage": "Centaur 상단 (Atlas V 541)",
   "flight_events": [
     {
-      "met": 76,
+      "met": 121,
       "label": "TCM-2",
       "description": "순항 중간의 정밀 조정 분사. 이 시점에서 Curiosity는 지구의 중력 우물을 벗어나 안정된 태양 중심 궤도를 따라간다."
     },
     {
-      "met": 211,
-      "label": "TCM-4 — EDL 전 마지막 분사",
+      "met": 246,
+      "label": "TCM-4 — 네 번째 수정(착륙 전 두 번의 기회가 더 남아 있었다)",
       "description": "화성 대기 진입 전 마지막 큰 궤도 미세 조정. EDL에는 대기 경계에서 1 km 미만의 조준 정확도가 필요하며, TCM-4가 이를 맞춘다."
     }
   ]

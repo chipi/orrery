@@ -5,7 +5,7 @@
   "delta_v": "~5 km/s",
   "type": "ORBITER · LANDER · ROVER · ACTIVE",
   "first": "First mission to successfully deliver orbiter, lander, and rover to Mars in a single launch",
-  "description": "China's first Mars mission was the first to succeed, in one launch, at what only the Soviet Mars 3 had attempted in 1971: orbital insertion, atmospheric entry, soft landing, and rover deployment. The Zhurong rover operated 358 sols at Utopia Planitia, traversing 1.9 km, before entering planned hibernation in May 2022; it has not woken since (likely due to dust accumulation on solar panels). The orbiter remains active, mapping the planet at high resolution and serving as relay for ground assets.",
+  "description": "China's first Mars mission was the first to succeed, in one launch, at what only the Soviet Mars 3 had attempted in 1971: orbital insertion, atmospheric entry, soft landing, and rover deployment. The Zhurong rover operated 347 sols (358 Earth days) at Utopia Planitia, traversing 1.9 km, before entering planned hibernation in May 2022; it has not woken since (likely due to dust accumulation on solar panels). The orbiter remains active, mapping the planet at high resolution and serving as relay for ground assets.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Long March 5 from Wenchang — China's first interplanetary launch, on a heavy-lift rocket.", "type": "nominal" },
     { "met": 202, "label": "MARS ORBIT INSERTION", "note": "Engine burn captures spacecraft into Mars orbit.", "type": "nominal" },

@@ -1,0 +1,1194 @@
+[
+  {
+    "m": "earth/voskhod-2",
+    "text": {
+      "en-US": [
+        [
+          "The cabin atmosphere also became O₂-rich in orbit, after the EVA hatch failed to re-seal, briefly risking spontaneous combustion.",
+          "After Leonov re-entered, the hatch did not seal properly and the life-support system overfilled the cabin with oxygen — a fire hazard had a spark occurred."
+        ]
+      ],
+      "ar": [
+        [
+          "كما أصبح هواء المقصورة غنياً بالأكسجين في المدار بعد أن تعذر إحكام إغلاق فتحة السير الفضائي، فتعرّض لخطر الاشتعال التلقائي لفترة وجيزة.",
+          "وبعد عودة ليونوف إلى الداخل لم تُغلق الفتحة إغلاقاً محكماً، فملأ نظام دعم الحياة المقصورة بالأكسجين بإفراط، وكان ذلك سيشكّل خطر حريق لو حدثت شرارة."
+        ]
+      ],
+      "de": [
+        [
+          "Nachdem sich die EVA-Luke nicht wieder abdichten ließ, wurde die Kabinenluft im Orbit zudem sauerstoffreich, was kurzzeitig die Gefahr einer Selbstentzündung barg.",
+          "Nachdem Leonow wieder drinnen war, schloss die Luke nicht richtig, und das Lebenserhaltungssystem füllte die Kabine übermäßig mit Sauerstoff — eine Brandgefahr, falls ein Funke aufgetreten wäre."
+        ]
+      ],
+      "es": [
+        [
+          "La atmósfera de la cabina también se volvió rica en O₂ en órbita, después de que la escotilla de EVA no volviera a sellarse, con un breve riesgo de combustión espontánea.",
+          "Después de que Leónov volviera a entrar, la escotilla no selló bien y el sistema de soporte vital llenó la cabina de oxígeno en exceso, con riesgo de incendio si saltaba una chispa."
+        ]
+      ],
+      "fr": [
+        [
+          "L'atmosphère de la cabine s'est également enrichie en O₂ en orbite, après l'échec de l'écoutille EVA à se refermer, risquant brièvement une combustion spontanée.",
+          "Après le retour de Leonov à l'intérieur, l'écoutille ne s'est pas correctement scellée et le système de survie a rempli la cabine d'un excès d'oxygène, ce qui aurait présenté un risque d'incendie en cas d'étincelle."
+        ]
+      ],
+      "hi": [
+        [
+          "कक्षा में केबिन का वातावरण O₂-समृद्ध भी हो गया, क्योंकि EVA हैच दोबारा ठीक से सील नहीं हुआ, जिससे थोड़े समय के लिए स्वतः दहन का जोखिम रहा।",
+          "लिओनोव के भीतर लौटने के बाद हैच ठीक से सील नहीं हुआ और जीवन-रक्षक प्रणाली ने केबिन को ज़रूरत से ज़्यादा ऑक्सीजन से भर दिया, जो चिंगारी उठने पर आग का ख़तरा था।"
+        ]
+      ],
+      "it": [
+        [
+          "Anche l'atmosfera della cabina divenne ricca di O₂ in orbita, dopo che il portello dell'EVA non si richiuse correttamente, con un breve rischio di combustione spontanea.",
+          "Dopo il rientro di Leonov, il portello non si sigillò correttamente e il sistema di supporto vitale riempì la cabina di ossigeno in eccesso, con rischio di incendio se fosse scoccata una scintilla."
+        ]
+      ],
+      "ja": [
+        [
+          "また軌道上では、EVAハッチが再び密閉できなくなったあと船内が酸素過多になり、一時は自然発火の危険があった。",
+          "レオーノフが船内に戻ったあと、ハッチが正しく密閉されず、生命維持装置が船内を酸素で過剰に満たしたため、火花が散れば火災の危険があった。"
+        ]
+      ],
+      "ko": [
+        [
+          "선내 대기도 EVA 해치가 다시 밀폐되지 않아 궤도에서 산소가 풍부해졌고, 잠시 자연 발화 위험이 있었다.",
+          "레오노프가 다시 들어온 뒤 해치가 제대로 밀폐되지 않았고 생명 유지 장치가 선내를 산소로 과도하게 채워, 불꽃이 튀었다면 화재 위험이 있었다."
+        ]
+      ],
+      "nl": [
+        [
+          "Ook de cabineatmosfeer werd in de baan zuurstofrijk nadat het EVA-luik niet opnieuw dichtging, wat kort het risico op spontane ontbranding inhield.",
+          "Nadat Leonov weer binnen was, sloot het luik niet goed af en vulde het levensondersteuningssysteem de cabine overmatig met zuurstof, een brandgevaar als er een vonk was ontstaan."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "A atmosfera do compartimento também ficou rica em O₂ em órbita, após a escotilha de EVA não conseguir se fechar novamente, brevemente arriscando combustão espontânea.",
+          "Depois que Leonov voltou para dentro, a escotilha não vedou corretamente e o sistema de suporte à vida encheu a cabine de oxigênio em excesso, um risco de incêndio caso ocorresse uma faísca."
+        ]
+      ],
+      "ru": [
+        [
+          "Атмосфера кабины также стала богатой на кислород на орбите после того, как люк выхода не герметизировался повторно, кратко рискуя самопроизвольным возгоранием.",
+          "После возвращения Леонова люк не загерметизировался должным образом, и система жизнеобеспечения переполнила кабину кислородом — при искре это грозило пожаром."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Атмосфера у кабини је у орбити такође постала богата кисеоником (O₂) пошто се отвор за излазак у свемир није поново херметички затворио, због чега је накратко постојала опасност од самозапаљења.",
+          "Након што се Леонов вратио унутра, отвор није био правилно херметички затворен, а систем за одржавање живота препунио је кабину кисеоником, што би представљало опасност од пожара да је дошло до варнице."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "舱内大气在轨道上也变得富含O₂，原因是舱外活动舱口未能重新密封，一度面临自燃的风险。",
+          "列昂诺夫返回舱内后，舱口未能正确密封，生命保障系统使舱内氧气过量，一旦出现火花便有起火风险。"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "earth/voskhod-2",
+    "text": {
+      "en-US": [
+        [
+          "before rescue helicopters arrived 1965-03-21.",
+          "until a rescue party reached them on 1965-03-20; on 1965-03-21 they skied about 9 km to a helicopter site and were flown out."
+        ],
+        [
+          "before recovery helicopters reached them 1965-03-21.",
+          "until a rescue party reached them 1965-03-20; on 1965-03-21 they skied about 9 km to a helicopter site and were flown out."
+        ]
+      ],
+      "ar": [
+        [
+          "قبل وصول مروحيات الإنقاذ في 1965-03-21.",
+          "إلى أن وصل إليهم فريق إنقاذ في 1965-03-20؛ وفي 1965-03-21 تزلّجوا نحو 9 كم إلى موقع مروحيات ونُقلوا جواً."
+        ]
+      ],
+      "de": [
+        [
+          "ehe Rettungshubschrauber am 1965-03-21 eintrafen.",
+          "bis ein Rettungstrupp sie am 1965-03-20 erreichte; am 1965-03-21 liefen sie etwa 9 km auf Skiern zu einem Hubschrauberplatz und wurden ausgeflogen."
+        ],
+        [
+          "bevor Rettungshubschrauber sie am 1965-03-21 erreichten.",
+          "bis ein Rettungstrupp sie am 1965-03-20 erreichte; am 1965-03-21 liefen sie etwa 9 km auf Skiern zu einem Hubschrauberplatz und wurden ausgeflogen."
+        ]
+      ],
+      "es": [
+        [
+          "antes de que llegaran los helicópteros de rescate el 1965-03-21.",
+          "hasta que un grupo de rescate los alcanzó el 1965-03-20; el 1965-03-21 esquiaron unos 9 km hasta un lugar de helicópteros y fueron evacuados en vuelo."
+        ],
+        [
+          "antes de que los helicópteros de recuperación los alcanzaran el 1965-03-21.",
+          "hasta que un grupo de rescate los alcanzó el 1965-03-20; el 1965-03-21 esquiaron unos 9 km hasta un lugar de helicópteros y fueron evacuados en vuelo."
+        ]
+      ],
+      "fr": [
+        [
+          "avant l'arrivée des hélicoptères de sauvetage le 1965-03-21.",
+          "jusqu'à ce qu'une équipe de secours les atteigne le 1965-03-20 ; le 1965-03-21, ils ont parcouru environ 9 km à skis jusqu'à un site d'hélicoptères et ont été évacués par les airs."
+        ],
+        [
+          "avant la récupération par hélicoptères de sauvetage le 1965-03-21.",
+          "jusqu'à ce qu'une équipe de secours les atteigne le 1965-03-20 ; le 1965-03-21, ils ont parcouru environ 9 km à skis jusqu'à un site d'hélicoptères et ont été évacués par les airs."
+        ]
+      ],
+      "hi": [
+        [
+          "बचाव हेलीकॉप्टरों के 1965-03-21 को पहुँचने तक दल ने जंगल में भेड़ियों के बीच दो रातें काटीं।",
+          "दल ने जंगल में भेड़ियों के बीच दो रातें काटीं; 1965-03-20 को बचाव दल उन तक पहुँचा, और 1965-03-21 को वे लगभग 9 km स्की करके हेलीकॉप्टर स्थल तक गए और हवाई मार्ग से निकाले गए।"
+        ],
+        [
+          "जीवित रहा, फिर 1965-03-21 को बचाव हेलीकॉप्टर उन तक पहुँचे।",
+          "जीवित रहा; 1965-03-20 को बचाव दल उन तक पहुँचा, और 1965-03-21 को वे लगभग 9 km स्की करके हेलीकॉप्टर स्थल तक गए और हवाई मार्ग से निकाले गए।"
+        ]
+      ],
+      "it": [
+        [
+          "prima che gli elicotteri di soccorso arrivassero il 1965-03-21.",
+          "finché una squadra di soccorso li raggiunse il 1965-03-20; il 1965-03-21 percorsero con gli sci circa 9 km fino a un sito per elicotteri e furono portati via in volo."
+        ],
+        [
+          "prima che gli elicotteri di recupero li raggiungessero il 1965-03-21.",
+          "finché una squadra di soccorso li raggiunse il 1965-03-20; il 1965-03-21 percorsero con gli sci circa 9 km fino a un sito per elicotteri e furono portati via in volo."
+        ]
+      ],
+      "ja": [
+        [
+          "1965-03-21に救助ヘリコプターが到着した。",
+          "1965-03-20に救助隊が到着し、1965-03-21には約9 kmをスキーで進んでヘリコプターの待つ地点へ向かい、空路で収容された。"
+        ]
+      ],
+      "ko": [
+        [
+          "1965-03-21 구조 헬리콥터가 도착했다.",
+          "1965-03-20에 구조대가 도착했고, 1965-03-21에는 약 9 km를 스키로 이동해 헬리콥터 지점에서 공중으로 이송되었다."
+        ],
+        [
+          "견디고 1965-03-21에 구조 헬리콥터가 도착했을 때 회수됨.",
+          "견뎠고, 1965-03-20에 구조대가 도착했으며 1965-03-21에는 약 9 km를 스키로 이동해 헬리콥터 지점에서 공중으로 이송됨."
+        ]
+      ],
+      "nl": [
+        [
+          "voordat reddingshelikopters arriveerden op 1965-03-21.",
+          "tot een reddingsteam hen op 1965-03-20 bereikte; op 1965-03-21 skieden ze ongeveer 9 km naar een helikopterplek en werden uitgevlogen."
+        ],
+        [
+          "voordat reddingshelikopters hen op 1965-03-21 bereikten.",
+          "tot een reddingsteam hen op 1965-03-20 bereikte; op 1965-03-21 skieden ze ongeveer 9 km naar een helikopterplek en werden uitgevlogen."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "antes que helicópteros de resgate chegassem 1965-03-21.",
+          "até que uma equipe de resgate os alcançou em 1965-03-20; em 1965-03-21 eles esquiaram cerca de 9 km até um local de helicópteros e foram levados de helicóptero."
+        ],
+        [
+          "antes que helicópteros de recuperação os alcançassem 1965-03-21.",
+          "até que uma equipe de resgate os alcançou em 1965-03-20; em 1965-03-21 eles esquiaram cerca de 9 km até um local de helicópteros e foram levados de helicóptero."
+        ]
+      ],
+      "ru": [
+        [
+          "пока спасательные вертолёты не прибыли 1965-03-21.",
+          "пока 1965-03-20 до них не добралась спасательная группа; 1965-03-21 они прошли на лыжах около 9 км до места посадки вертолётов и были вывезены по воздуху."
+        ],
+        [
+          "прежде чем спасательные вертолёты достигли их 1965-03-21.",
+          "пока 1965-03-20 до них не добралась спасательная группа; 1965-03-21 они прошли на лыжах около 9 км до места посадки вертолётов и были вывезены по воздуху."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "све док 21. 3. 1965. нису стигли хеликоптери за спасавање.",
+          "све док им 20. 3. 1965. није стигла спасилачка група; 21. 3. 1965. скијали су око 9 km до места за хеликоптере и однети су ваздухом."
+        ],
+        [
+          "пре него што су до ње 1965-03-21 стигли хеликоптери за спасавање.",
+          "док до ње 1965-03-20 није стигла спасилачка група; 1965-03-21 је скијала око 9 km до места за хеликоптере и однета је ваздухом."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "直到救援直升机于1965-03-21抵达。",
+          "直到救援队于1965-03-20赶到；1965-03-21他们滑雪约9 km抵达直升机场地，被空运撤离。"
+        ],
+        [
+          "直到救援直升机于1965-03-21到达。",
+          "直到救援队于1965-03-20赶到；1965-03-21他们滑雪约9 km抵达直升机场地，被空运撤离。"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "earth/voskhod-1",
+    "text": {
+      "en-US": [
+        [
+          "Cabin spacing was so tight Komarov reported he could feel Yegorov's breath on his neck for 24 hours. ",
+          ""
+        ]
+      ],
+      "ar": [
+        [
+          "كان التباعد داخل المقصورة ضيقاً إلى حد أن كوماروف أفاد بأنه شعر بأنفاس يغوروف على رقبته طوال 24 ساعة. ",
+          ""
+        ]
+      ],
+      "de": [
+        [
+          "Der Platzabstand in der Kabine war so eng, dass Komarow berichtete, er könne Jegorows Atem an seinem Hals 24 Stunden lang spüren. ",
+          ""
+        ]
+      ],
+      "es": [
+        [
+          "El espacio de cabina era tan reducido que Komarov informó que durante 24 horas pudo sentir la respiración de Yegorov en su nuca. ",
+          ""
+        ]
+      ],
+      "fr": [
+        [
+          "L'habitacle était si exigu que Komarov rapporta avoir senti l'haleine de Iegorov dans sa nuque pendant 24 heures. ",
+          ""
+        ]
+      ],
+      "hi": [
+        [
+          "केबिन इतनी तंग थी कि कोमारोव ने बताया कि 24 घंटे तक उन्हें अपनी गर्दन पर येगोरोव की साँस महसूस होती रही। ",
+          ""
+        ]
+      ],
+      "it": [
+        [
+          "Lo spazio in cabina era così ristretto che Komarov riferì di poter sentire il respiro di Egorov sul collo per 24 ore. ",
+          ""
+        ]
+      ],
+      "ja": [
+        ["客室はあまりに狭く、コマロフは24時間にわたりエゴロフの息を首筋に感じたと報告した。", ""]
+      ],
+      "ko": [
+        [
+          "선실이 너무 좁아서 코마로프는 24시간 내내 예고로프의 숨결이 목에 닿는 것을 느꼈다고 보고했다. ",
+          ""
+        ]
+      ],
+      "nl": [
+        [
+          "De ruimte in de cabine was zo krap dat Komarov meldde dat hij 24 uur lang Jegorovs adem in zijn nek voelde. ",
+          ""
+        ]
+      ],
+      "pt-BR": [
+        [
+          "O espaço da cabine era tão apertado que Komarov relatou ter sentido a respiração de Yegorov na sua nuca por 24 horas. ",
+          ""
+        ]
+      ],
+      "ru": [
+        [
+          "Кабина была настолько тесной, что Комаров сообщал, что 24 часа чувствовал дыхание Егорова на своей шее. ",
+          ""
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Простор у кабини био је толико тесан да је Комаров јавио да читав дан осећа дах космонаута Јегорова на врату. ",
+          ""
+        ]
+      ],
+      "zh-CN": [
+        ["舱内空间极其狭窄，科马罗夫说他整整24小时都能感觉到叶戈罗夫的呼吸喷在自己的脖子上。", ""]
+      ]
+    }
+  },
+  {
+    "m": "earth/voskhod-1",
+    "text": {
+      "en-US": [
+        ["near Marevka, Kazakhstan", "in northern Kazakhstan, about 312 km north-east of Kostanay"],
+        ["near Marevka 1964", "in northern Kazakhstan, about 312 km north-east of Kostanay, 1964"]
+      ],
+      "ar": [
+        ["قرب Marevka في كازاخستان", "في شمال كازاخستان، على بعد نحو 312 كم شمال شرق كوستاناي"],
+        ["بالقرب من Marevka", "في شمال كازاخستان، على بعد نحو 312 كم شمال شرق كوستاناي،"]
+      ],
+      "de": [
+        [
+          "in der Nähe von Marevka, Kasachstan",
+          "im Norden Kasachstans, etwa 312 km nordöstlich von Kostanai"
+        ],
+        [
+          "in der Nähe von Marevka am",
+          "im Norden Kasachstans, etwa 312 km nordöstlich von Kostanai, am"
+        ]
+      ],
+      "es": [
+        [
+          "cerca de Marevka, Kazajistán",
+          "en el norte de Kazajistán, a unos 312 km al noreste de Kostanái"
+        ],
+        [
+          "cerca de Marevka 1964",
+          "en el norte de Kazajistán, a unos 312 km al noreste de Kostanái, 1964"
+        ]
+      ],
+      "fr": [
+        [
+          "près de Marevka, Kazakhstan",
+          "dans le nord du Kazakhstan, à environ 312 km au nord-est de Kostanaï"
+        ],
+        [
+          "près de Marevka 1964",
+          "dans le nord du Kazakhstan, à environ 312 km au nord-est de Kostanaï, 1964"
+        ]
+      ],
+      "hi": [
+        [
+          "कज़ाख़स्तान में मारेव्का के पास उतरे",
+          "उत्तरी कज़ाख़स्तान में कोस्तानाय से लगभग 312 km उत्तर-पूर्व में उतरे"
+        ],
+        [
+          "Marevka के पास 1964",
+          "उत्तरी कज़ाख़स्तान में कोस्तानाय से लगभग 312 km उत्तर-पूर्व में 1964"
+        ]
+      ],
+      "it": [
+        [
+          "vicino a Marevka, Kazakistan",
+          "nel Kazakistan settentrionale, a circa 312 km a nord-est di Kostanaj"
+        ],
+        [
+          "vicino a Marevka il",
+          "nel Kazakistan settentrionale, a circa 312 km a nord-est di Kostanaj, il"
+        ]
+      ],
+      "ja": [
+        [
+          "カザフスタンの Marevka 近郊に着陸した",
+          "カザフスタン北部、コスタナイの北東約312 kmに着陸した"
+        ],
+        ["Marevka近郊", "カザフスタン北部（コスタナイの北東約312 km）"]
+      ],
+      "ko": [
+        [
+          "카자흐스탄 마레브카 근처에 착륙했으며",
+          "카자흐스탄 북부, 코스타나이 북동쪽 약 312 km 지점에 착륙했으며"
+        ],
+        ["Marevka 근처에", "카자흐스탄 북부, 코스타나이 북동쪽 약 312 km 지점에"]
+      ],
+      "nl": [
+        [
+          "nabij Marevka, Kazachstan",
+          "in het noorden van Kazachstan, ongeveer 312 km ten noordoosten van Kostanaj"
+        ],
+        [
+          "nabij Marevka 1964",
+          "in het noorden van Kazachstan, ongeveer 312 km ten noordoosten van Kostanaj, 1964"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "perto de Marevka, Cazaquistão",
+          "no norte do Cazaquistão, a cerca de 312 km a nordeste de Kostanai"
+        ],
+        [
+          "perto de Marevka 1964",
+          "no norte do Cazaquistão, a cerca de 312 km a nordeste de Kostanai, 1964"
+        ]
+      ],
+      "ru": [
+        [
+          "близ Маревки, Казахстан",
+          "на севере Казахстана, примерно в 312 км к северо-востоку от Костаная"
+        ],
+        [
+          "близ Маревки 1964",
+          "на севере Казахстана, примерно в 312 км к северо-востоку от Костаная, 1964"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "близу Marevka у Казахстану",
+          "на северу Казахстана, око 312 km североисточно од Костаная"
+        ],
+        [
+          "у близини места Marevka, 13.",
+          "на северу Казахстана, око 312 km североисточно од Костаная, 13."
+        ]
+      ],
+      "zh-CN": [
+        ["在哈萨克斯坦的 Marevka 附近着陆", "在哈萨克斯坦北部、科斯塔奈东北约312 km处着陆"],
+        ["在Marevka附近触地", "在哈萨克斯坦北部、科斯塔奈东北约312 km处触地"]
+      ]
+    }
+  },
+  {
+    "m": "earth/vostok-3",
+    "text": {
+      "en-US": [[" and to John Glenn's Friendship 7", ""]],
+      "ar": [[" وعلى رحلة Friendship 7 لجون غلين", ""]],
+      "de": [[" und auf Friendship 7", ""]],
+      "es": [[" y al Friendship 7 de John Glenn", ""]],
+      "fr": [[" et à Friendship 7 de John Glenn", ""]],
+      "hi": [[" और जॉन ग्लेन के Friendship 7", ""]],
+      "it": [[" e al Friendship 7 di John Glenn", ""]],
+      "ja": [["とジョン・グレンのFriendship 7", ""]],
+      "ko": [["와 존 글렌의 Friendship 7", ""]],
+      "nl": [[" en John Glenns Friendship 7", ""]],
+      "pt-BR": [[" e ao Friendship 7 de John Glenn", ""]],
+      "ru": [[" и полёт Джона Гленна на Friendship 7", ""]],
+      "sr-Cyrl": [[" и на лет Friendship 7 Џона Глена", ""]],
+      "zh-CN": [["以及约翰·格伦的Friendship 7", ""]]
+    }
+  },
+  {
+    "m": "earth/vostok-6",
+    "text": {
+      "en-US": [
+        [
+          "ground controllers re-uploaded corrected attitude software the next day",
+          "ground controllers supplied corrective data"
+        ],
+        ["corrected next day.", "ground controllers supplied corrective data."]
+      ],
+      "ar": [
+        [
+          "وأعاد مراقبو الأرض في اليوم التالي رفع برنامج تحكم الاتجاه المصحَّح",
+          "وزوّدها مراقبو الأرض ببيانات تصحيحية"
+        ],
+        ["تم تصحيحه في اليوم التالي.", "زوّد مراقبو الأرض ببيانات تصحيحية."]
+      ],
+      "de": [
+        [
+          "die Flugkontrolleure luden am nächsten Tag die korrigierte Lageregelungssoftware erneut hoch",
+          "die Flugkontrolleure übermittelten Korrekturdaten"
+        ],
+        ["am nächsten Tag korrigiert.", "die Flugkontrolle übermittelte Korrekturdaten."]
+      ],
+      "es": [
+        [
+          "los controladores en tierra cargaron de nuevo, al día siguiente, el software de actitud corregido",
+          "los controladores en tierra proporcionaron datos correctivos"
+        ],
+        [
+          "corregido al día siguiente.",
+          "los controladores en tierra proporcionaron datos correctivos."
+        ]
+      ],
+      "fr": [
+        [
+          "les contrôleurs au sol ont téléchargé à nouveau le logiciel d'attitude corrigé le lendemain",
+          "les contrôleurs au sol ont fourni des données correctives"
+        ],
+        ["corrigé le lendemain.", "les contrôleurs au sol ont fourni des données correctives."]
+      ],
+      "hi": [
+        [
+          "अगले दिन भू-नियंत्रकों ने सुधारा हुआ अभिविन्यास सॉफ़्टवेयर दोबारा अपलोड किया",
+          "भू-नियंत्रकों ने सुधारात्मक डेटा उपलब्ध कराया"
+        ],
+        ["अगले दिन सुधारा गया।", "भू-नियंत्रकों ने सुधारात्मक डेटा उपलब्ध कराया।"]
+      ],
+      "it": [
+        [
+          "i controllori a terra caricarono il software di assetto corretto il giorno successivo",
+          "i controllori a terra fornirono dati correttivi"
+        ],
+        ["corretto il giorno successivo.", "i controllori a terra hanno fornito dati correttivi."]
+      ],
+      "ja": [
+        [
+          "地上管制官は翌日、修正された姿勢制御ソフトウェアを再アップロードした",
+          "地上管制官が修正用のデータを送った"
+        ],
+        ["翌日に修正。", "地上管制官が修正用のデータを送った。"]
+      ],
+      "ko": [
+        [
+          "지상 관제진은 이튿날 수정된 자세 제어 소프트웨어를 다시 올려 보냈다",
+          "지상 관제진이 수정 데이터를 제공했다"
+        ],
+        ["다음 날 수정되었다.", "지상 관제진이 수정 데이터를 제공했다."]
+      ],
+      "nl": [
+        [
+          "grondcontroleurs laadden de volgende dag gecorrigeerde attitudesoftware opnieuw in",
+          "grondcontroleurs leverden corrigerende gegevens"
+        ],
+        ["gecorrigeerd de volgende dag.", "grondcontroleurs leverden corrigerende gegevens."]
+      ],
+      "pt-BR": [
+        [
+          "controladores em terra recarregaram o software de atitude corrigido no dia seguinte",
+          "controladores em terra forneceram dados corretivos"
+        ],
+        ["corrigido no dia seguinte.", "controladores em terra forneceram dados corretivos."]
+      ],
+      "ru": [
+        [
+          "наземные контроллеры перезагрузили исправленное программное обеспечение управления ориентацией на следующий день",
+          "наземные контроллеры передали корректирующие данные"
+        ],
+        ["исправлено на следующий день.", "наземные контроллеры передали корректирующие данные."]
+      ],
+      "sr-Cyrl": [
+        [
+          "контролори лета су следећег дана поново учитали исправљени софтвер за оријентацију",
+          "контролори лета су доставили корективне податке"
+        ],
+        ["исправљено следећег дана.", "контролори лета су доставили корективне податке."]
+      ],
+      "zh-CN": [
+        ["地面控制人员次日重新上传了修正后的姿态软件", "地面控制人员提供了修正数据"],
+        ["次日已修正。", "地面控制人员提供了修正数据。"]
+      ]
+    }
+  },
+  {
+    "m": "earth/vostok-4",
+    "text": {
+      "en-US": [
+        ["the duress code-word for early termination", "the pre-arranged code for feeling ill"]
+      ],
+      "ar": [["إشارة الاستغاثة لإنهاء الرحلة مبكراً", "الرمز المتفق عليه مسبقاً للشعور بالمرض"]],
+      "de": [
+        [
+          "als Notfall-Codewort für vorzeitige Beendigung",
+          "als den vereinbarten Code für Unwohlsein"
+        ]
+      ],
+      "es": [
+        [
+          "como la palabra clave de emergencia para una terminación anticipada",
+          "como el código preacordado para indicar malestar"
+        ]
+      ],
+      "fr": [
+        [
+          "comme le mot de code d'urgence pour terminer prématurément",
+          "comme le code convenu à l'avance pour signaler un malaise"
+        ]
+      ],
+      "hi": [
+        [
+          "समय-पूर्व समाप्ति के संकट-संकेत के रूप में",
+          "बीमार महसूस करने के पूर्व-निर्धारित कोड के रूप में"
+        ]
+      ],
+      "it": [
+        [
+          "per la parola in codice di emergenza per la conclusione anticipata",
+          "per il codice concordato in anticipo per indicare un malore"
+        ]
+      ],
+      "ja": [
+        [
+          "早期中止を意味する緊急の合言葉と取り違えた",
+          "体調不良を知らせる事前取り決めの合図と取り違えた"
+        ]
+      ],
+      "ko": [["조기 종료를 알리는 위급 암호로", "몸이 좋지 않음을 알리는 사전 약속된 암호로"]],
+      "nl": [
+        [
+          "als het noodsignaal voor voortijdige beëindiging",
+          "als de vooraf afgesproken code voor ziek voelen"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "como a palavra-código de emergência para término antecipado",
+          "como o código combinado de antemão para mal-estar"
+        ]
+      ],
+      "ru": [
+        [
+          "как кодовое слово о необходимости досрочного завершения",
+          "как заранее условленный сигнал о плохом самочувствии"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "као кодну реч за опасност којом се тражи превремени прекид лета",
+          "као унапред договорену кодну реч за лоше осећање"
+        ]
+      ],
+      "zh-CN": [["误解成了要求提前终止的紧急暗号", "误解成了事先约定的表示身体不适的暗号"]]
+    }
+  },
+  {
+    "m": "earth/shenzhou-1",
+    "text": {
+      "en-US": [
+        [
+          "Carried mock-up life-support hardware, telemetry packages, and a Chinese flag, plus seeds for a microgravity-genetics return cargo.",
+          "Carried a dummy payload and about 100 kg of seeds exposed to the space environment."
+        ]
+      ],
+      "ar": [
+        [
+          "حملت نماذج لمعدات دعم الحياة وحزم قياس عن بُعد وعلماً صينياً، إضافة إلى بذور لحمولة عائدة لدراسة وراثة الجاذبية الدقيقة.",
+          "حملت حمولة وهمية ونحو 100 كجم من البذور المعرّضة لبيئة الفضاء."
+        ]
+      ],
+      "de": [
+        [
+          "Transportierte Nachbildungen der Lebenserhaltungssysteme, Telemetriepakete und eine chinesische Flagge sowie Samen für Mikrogravitations-Genetik-Rückfrachten.",
+          "Transportierte eine Dummy-Nutzlast und etwa 100 kg Samen, die der Weltraumumgebung ausgesetzt wurden."
+        ]
+      ],
+      "es": [
+        [
+          "Llevaba equipos simulados de soporte vital, paquetes de telemetría y una bandera china, además de semillas para una carga de retorno de genética en microgravedad.",
+          "Llevaba una carga útil simulada y unos 100 kg de semillas expuestas al entorno espacial."
+        ]
+      ],
+      "fr": [
+        [
+          "Emportait un système de soutien vital factice, des ensembles de télémétrie et un drapeau chinois, ainsi que des graines pour un retour de cargaison de génétique en microgravité.",
+          "Emportait une charge utile factice et environ 100 kg de graines exposées à l'environnement spatial."
+        ]
+      ],
+      "hi": [
+        [
+          "इसमें जीवन-रक्षक प्रणाली के नकली उपकरण, टेलीमेट्री पैकेज और एक चीनी झंडा था, साथ ही सूक्ष्मगुरुत्व-आनुवंशिकी की वापसी-खेप के लिए बीज।",
+          "इसमें एक डमी पेलोड और अंतरिक्ष के वातावरण के संपर्क में लाए गए लगभग 100 kg बीज थे।"
+        ]
+      ],
+      "it": [
+        [
+          "Trasportava hardware simulato per il supporto vitale, pacchetti di telemetria e una bandiera cinese, oltre a semi per un carico di ritorno di genetica in microgravità.",
+          "Trasportava un carico utile fittizio e circa 100 kg di semi esposti all'ambiente spaziale."
+        ]
+      ],
+      "ja": [
+        [
+          "模擬の生命維持装置、テレメトリ機器、中国国旗に加え、微小重力下での遺伝学実験のために持ち帰る種子を搭載していた。",
+          "ダミーの搭載物と、宇宙環境にさらされる約100 kgの種子を搭載していた。"
+        ]
+      ],
+      "ko": [
+        [
+          "모의 생명 유지 장비, 원격 측정 장비, 중국 국기, 그리고 미세중력 유전학 연구용 귀환 화물인 씨앗을 실었습니다.",
+          "더미 탑재물과 우주 환경에 노출시킬 약 100 kg의 씨앗을 실었습니다."
+        ]
+      ],
+      "nl": [
+        [
+          "Aan boord waren nagebouwde levensondersteuningssystemen, telemetriepakketten en een Chinese vlag, plus zaden voor een retourlading met microzwaartekrachtgenetica.",
+          "Aan boord waren een dummy-lading en ongeveer 100 kg zaden die aan de ruimteomgeving werden blootgesteld."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Transportava equipamentos de suporte de vida em maquete, pacotes de telemetria e uma bandeira chinesa, além de sementes para retorno de carga em pesquisa de genética em microgravidade.",
+          "Transportava uma carga útil simulada e cerca de 100 kg de sementes expostas ao ambiente espacial."
+        ]
+      ],
+      "ru": [
+        [
+          "Несла макеты систем жизнеобеспечения, телеметрические приборы и китайский флаг, а также семена для возврата из микрогравитации в исследованиях генетики.",
+          "Несла макет полезной нагрузки и около 100 кг семян, подвергавшихся воздействию космической среды."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Носила је макете опреме за одржавање живота, телеметријске пакете и кинеску заставу, као и семе за повратни терет намењен генетским истраживањима у микрогравитацији.",
+          "Носила је макету корисног терета и око 100 kg семена изложеног свемирском окружењу."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "搭载了模拟生命保障硬件、遥测设备和中国国旗，以及供微重力遗传学研究、随舱返回的种子。",
+          "搭载了一个模拟载荷和约100 kg暴露于太空环境的种子。"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "earth/freedom-7",
+    "text": {
+      "en-US": [["max-Q 3.7 g", "peak 6.3 g on ascent; maximum dynamic pressure about 28 kPa"]],
+      "ar": [
+        [
+          "ضغط ديناميكي أقصى 3.7 جي",
+          "ذروة 6.3 جي أثناء الصعود؛ وأقصى ضغط ديناميكي نحو 28 كيلوباسكال"
+        ]
+      ],
+      "de": [["max-Q 3,7 g", "Spitzenwert 6,3 g beim Aufstieg; maximaler Staudruck etwa 28 kPa"]],
+      "es": [
+        ["max-Q 3,7 g", "pico de 6,3 g en el ascenso; presión dinámica máxima de unos 28 kPa"]
+      ],
+      "fr": [
+        [
+          "Q maximal 3,7 g",
+          "pic de 6,3 g à la montée ; pression dynamique maximale d'environ 28 kPa"
+        ]
+      ],
+      "hi": [["max-Q पर 3.7 g", "आरोहण के दौरान शिखर 6.3 g; अधिकतम गतिक दाब लगभग 28 kPa"]],
+      "it": [
+        ["max-Q 3,7 g", "picco di 6,3 g in salita; pressione dinamica massima di circa 28 kPa"]
+      ],
+      "ja": [["最大Q時は3.7 G", "上昇時のピークは6.3 G、最大動圧は約28 kPa"]],
+      "ko": [["최대 동압 3.7 g", "상승 중 최대 6.3 g, 최대 동압 약 28 kPa"]],
+      "nl": [
+        ["max-Q 3,7 g", "piek van 6,3 g bij de lancering; maximale dynamische druk ongeveer 28 kPa"]
+      ],
+      "pt-BR": [
+        ["max-Q 3,7 g", "pico de 6,3 g na subida; pressão dinâmica máxima de cerca de 28 kPa"]
+      ],
+      "ru": [
+        [
+          "максимум скоростного напора 3,7 g",
+          "пик 6,3 g при выведении; максимальный скоростной напор около 28 кПа"
+        ]
+      ],
+      "sr-Cyrl": [
+        ["max-Q 3,7 g", "врх од 6,3 g при успону; максимални динамички притисак око 28 kPa"]
+      ],
+      "zh-CN": [["最大动压3.7 g", "上升段峰值6.3 g；最大动压约28 kPa"]]
+    }
+  },
+  {
+    "m": "earth/aurora-7",
+    "text": {
+      "en-US": [
+        [
+          "the heavy experimental load + a stuck yaw thruster caused him to be ~25° off attitude at retro-fire, overshooting",
+          "the heavy experimental load, a faulty pitch horizon scanner and fuel spent running the manual and automatic attitude systems together left the capsule ~25° off in yaw, and retro-fire came ~3 s late, overshooting"
+        ],
+        [
+          "The 1 h 7 min recovery delay was",
+          "The recovery delay (Carpenter was found after nearly an hour and lifted out about 3 hours after splashdown) was"
+        ],
+        [
+          "1 h 7 min recovery delay.",
+          "Carpenter found after nearly an hour and lifted out about 3 hours after splashdown."
+        ]
+      ],
+      "ar": [
+        [
+          "وتسبّب الحمل التجريبي الثقيل مع دافع انعراج عالق في أن يكون منحرفًا نحو 25° عن الوضعية الصحيحة عند إطلاق صواريخ الكبح، فتجاوز",
+          "وتسبّب الحمل التجريبي الثقيل ومستشعر أفق معطّل لزاوية الميل والوقود المستهلك في تشغيل نظامي التحكم اليدوي والآلي بالوضعية معًا في انحراف الكبسولة نحو 25° في الانعراج، وتأخّر إطلاق صواريخ الكبح نحو 3 ثوانٍ، فتجاوز"
+        ],
+        [
+          "وقد نُشر تأخر الانتشال البالغ ساعة و7 دقائق على نطاق واسع",
+          "وقد نُشر تأخر الانتشال (عُثر على كاربنتر بعد قرابة ساعة، وانتُشل بعد نحو 3 ساعات من الهبوط المائي) على نطاق واسع"
+        ],
+        [
+          "تأخر الانتشال ساعة و7 دقائق.",
+          "عُثر على كاربنتر بعد قرابة ساعة وانتُشل بعد نحو 3 ساعات من الهبوط المائي."
+        ]
+      ],
+      "de": [
+        [
+          "die hohe experimentelle Belastung + ein festsitzendes Gier-Triebwerk führten dazu, dass seine Kapsel bei der Zündung der Bremsraketen ca. 25° von der Solllage abwich und das Landeziel um ca. 400 km überschoss.",
+          "die hohe experimentelle Belastung, ein fehlerhafter Horizontsensor für die Nickachse und Treibstoff, der durch den gleichzeitigen Betrieb der manuellen und der automatischen Lageregelung verbraucht wurde, ließen die Kapsel ca. 25° im Gier abweichen, und die Zündung der Bremsraketen erfolgte ca. 3 s zu spät, sodass das Landeziel um ca. 400 km überschossen wurde."
+        ],
+        [
+          "Die Bergungsverzögerung von 1 h 7 min wurde",
+          "Die Bergungsverzögerung (Carpenter wurde nach fast einer Stunde gefunden und etwa 3 Stunden nach der Wasserung herausgehoben) wurde"
+        ],
+        [
+          "1 h 7 min Verzögerung bei der Bergung.",
+          "Carpenter nach fast einer Stunde gefunden und etwa 3 Stunden nach der Wasserung herausgehoben."
+        ]
+      ],
+      "es": [
+        [
+          "la carga experimental pesada y un propulsor de guiñada atascado provocaron que estuviera ~25° fuera de actitud en el encendido de retrocohetes, sobrepasando",
+          "la carga experimental pesada, un sensor de horizonte de cabeceo defectuoso y el combustible gastado al usar a la vez los sistemas de actitud manual y automático dejaron la cápsula ~25° desviada en guiñada, y el encendido de retrocohetes se produjo ~3 s tarde, sobrepasando"
+        ],
+        [
+          "El retraso de 1 h 7 min en la recuperación se",
+          "El retraso en la recuperación (a Carpenter lo encontraron tras casi una hora y lo sacaron unas 3 horas después del amerizaje) se"
+        ],
+        [
+          "1 h 7 min de retraso en la recuperación.",
+          "Carpenter hallado tras casi una hora y sacado unas 3 horas después del amerizaje."
+        ]
+      ],
+      "fr": [
+        [
+          "la charge expérimentale lourde et un propulseur de lacet bloqué l'ont fait être ~25° hors d'attitude au tir des rétrofusées, dépassant",
+          "la charge expérimentale lourde, un détecteur d'horizon de tangage défectueux et le carburant consommé à faire fonctionner ensemble les systèmes d'attitude manuel et automatique ont laissé la capsule à ~25° en lacet, et le tir des rétrofusées est intervenu ~3 s trop tard, dépassant"
+        ],
+        [
+          "Le retard d'1 h 7 min à la récupération a",
+          "Le retard de récupération (Carpenter a été retrouvé après près d'une heure et hissé à bord environ 3 heures après l'amerrissage) a"
+        ],
+        [
+          "1 h 7 min de retard pour la récupération.",
+          "Carpenter retrouvé après près d'une heure et hissé à bord environ 3 heures après l'amerrissage."
+        ]
+      ],
+      "hi": [
+        [
+          "प्रयोगों के भारी बोझ + अटके हुए यॉ थ्रस्टर के कारण रेट्रो-फ़ायर के समय वे ~25° दिशा से हटे थे और उतरने के लक्ष्य से",
+          "प्रयोगों के भारी बोझ, खराब पिच क्षितिज-स्कैनर और मैन्युअल व स्वचालित अभिविन्यास प्रणालियों को एक साथ चलाने में खर्च हुए ईंधन के कारण कैप्सूल यॉ में ~25° हटा हुआ था और रेट्रो-फ़ायर ~3 s देर से हुआ, जिससे वे उतरने के लक्ष्य से"
+        ],
+        [
+          "1 घंटे 7 मिनट की बरामदगी-देरी की खूब चर्चा हुई",
+          "बरामदगी में देरी (कार्पेंटर लगभग एक घंटे बाद मिले और समुद्र में उतरने के लगभग 3 घंटे बाद बाहर निकाले गए) की खूब चर्चा हुई"
+        ],
+        [
+          "बरामदगी में 1 घंटा 7 मिनट की देरी।",
+          "कार्पेंटर लगभग एक घंटे बाद मिले और समुद्र में उतरने के लगभग 3 घंटे बाद बाहर निकाले गए।"
+        ]
+      ],
+      "it": [
+        [
+          "il pesante carico sperimentale e un propulsore di imbardata bloccato lo portarono a essere fuori assetto di ~25° all'accensione dei retrorazzi, mancando",
+          "il pesante carico sperimentale, uno scanner d'orizzonte di beccheggio difettoso e il carburante consumato facendo funzionare insieme i sistemi di assetto manuale e automatico lasciarono la capsula fuori di ~25° in imbardata, e l'accensione dei retrorazzi avvenne con ~3 s di ritardo, mancando"
+        ],
+        [
+          "Il ritardo di 1 h 7 min nel recupero ebbe",
+          "Il ritardo nel recupero (Carpenter fu trovato dopo quasi un'ora e issato a bordo circa 3 ore dopo l'ammaraggio) ebbe"
+        ],
+        [
+          "1 h 7 min di ritardo nel recupero.",
+          "Carpenter trovato dopo quasi un'ora e issato a bordo circa 3 ore dopo l'ammaraggio."
+        ]
+      ],
+      "ja": [
+        [
+          "実験の負荷の重さと、ヨー軸スラスターの固着が重なって、逆噴射時の姿勢が約25°ずれ、着陸目標を約400 km行き過ぎた。",
+          "実験の負荷の重さに加え、ピッチ水平線センサーの不具合と、手動と自動の姿勢制御系を同時に動かして燃料を消費したことで、カプセルはヨー方向に約25°ずれ、逆噴射も約3秒遅れ、着陸目標を約400 km行き過ぎた。"
+        ],
+        [
+          "回収が1時間7分遅れたことは",
+          "回収の遅れ（カーペンターは1時間近く後に発見され、着水から約3時間後に引き上げられた）は"
+        ],
+        [
+          "回収は 1 時間 7 分遅れた。",
+          "カーペンターは1時間近く後に発見され、着水から約3時間後に引き上げられた。"
+        ]
+      ],
+      "ko": [
+        [
+          "과도한 실험 일정과 고착된 요(yaw) 스러스터로 인해 역추진 점화 시 자세가 약 25° 어긋났고, 착수 목표를 약 400 km 초과했다.",
+          "과도한 실험 일정, 결함 있는 피치 수평선 감지기, 수동·자동 자세 제어 시스템을 함께 가동하느라 소모한 연료 때문에 캡슐이 요(yaw) 방향으로 약 25° 어긋났고 역추진 점화도 약 3초 늦어, 착수 목표를 약 400 km 초과했다."
+        ],
+        [
+          "1시간 7분의 인양 지연은",
+          "인양 지연(카펜터는 거의 1시간 뒤에 발견되었고 착수 약 3시간 뒤에 끌어올려졌다)은"
+        ],
+        [
+          "회수가 1시간 7분 지연됨.",
+          "카펜터는 거의 1시간 뒤에 발견되어 착수 약 3시간 뒤에 끌어올려짐."
+        ]
+      ],
+      "nl": [
+        [
+          "door de zware experimentele belasting en een vastzittende gier-stuwraket stond hij bij retro-fire ~25° verkeerd in stand, waardoor hij",
+          "door de zware experimentele belasting, een defecte horizonsensor voor de pitch en brandstof die opging aan het tegelijk draaien van de handmatige en automatische standregeling stond de capsule ~25° verkeerd in gier en kwam de retro-fire ~3 s te laat, waardoor hij"
+        ],
+        [
+          "De 1 u 7 min vertraging bij het bergen werd",
+          "De vertraging bij het bergen (Carpenter werd na bijna een uur gevonden en ongeveer 3 uur na de landing in zee opgehesen) werd"
+        ],
+        [
+          "1 u 7 min vertraging bij de berging.",
+          "Carpenter na bijna een uur gevonden en ongeveer 3 uur na de landing in zee opgehesen."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "a carga experimental pesada e um propulsor de guinada travado o deixaram ~25° fora de atitude na ignição dos retrofoguetes, ultrapassando",
+          "a carga experimental pesada, um sensor de horizonte de arfagem defeituoso e o combustível gasto ao operar juntos os sistemas de atitude manual e automático deixaram a cápsula ~25° desviada em guinada, e a ignição dos retrofoguetes veio ~3 s atrasada, ultrapassando"
+        ],
+        [
+          "O atraso de 1 h 7 min no resgate teve",
+          "O atraso no resgate (Carpenter foi encontrado após quase uma hora e içado cerca de 3 horas após a amerissagem) teve"
+        ],
+        [
+          "1 h 7 min de atraso no resgate.",
+          "Carpenter encontrado após quase uma hora e içado cerca de 3 horas após a amerissagem."
+        ]
+      ],
+      "ru": [
+        [
+          "тяжёлая экспериментальная нагрузка и заклинивший разворотный двигатель привели к отклонению от ориентации примерно на 25° в момент торможения, в результате чего он перелетел",
+          "тяжёлая экспериментальная нагрузка, неисправный датчик горизонта по тангажу и топливо, израсходованное на одновременную работу ручной и автоматической систем ориентации, привели к отклонению капсулы примерно на 25° по рысканию, а тормозной импульс был выдан примерно на 3 с позже, в результате чего он перелетел"
+        ],
+        [
+          "Задержка в спасении на 1 ч 7 мин получила",
+          "Задержка в спасении (Карпентера нашли спустя почти час и подняли на борт примерно через 3 часа после приводнения) получила"
+        ],
+        [
+          "поиск задержался на 1 ч 7 мин.",
+          "Карпентера нашли спустя почти час и подняли на борт примерно через 3 часа после приводнения."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "велико експериментално оптерећење и заглављени потисник за скретање довели су до тога да је при паљењу ретро-ракета био отприлике 25° ван задате оријентације, па је промашио",
+          "велико експериментално оптерећење, неисправан сензор хоризонта по нагибу и гориво утрошено на истовремени рад ручног и аутоматског система оријентације довели су до тога да је капсула била отприлике 25° скренута по правцу, а паљење ретро-ракета каснило око 3 s, па је промашио"
+        ],
+        [
+          "Кашњење од 1 h 7 min у проналажењу и спасавању нашироко",
+          "Кашњење у проналажењу и спасавању (Карпентера су пронашли после скоро сат времена, а извукли тек око 3 сата након спуштања на воду) нашироко"
+        ],
+        [
+          "извлачење је каснило 1 h 7 min.",
+          "Карпентера су пронашли после скоро сат времена, а извукли око 3 сата након спуштања на воду."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "繁重的实验负载叠加偏航推进器卡滞，导致制动火箭点火时他偏离姿态约 25°，最终溅落点偏离目标约 400 km。",
+          "繁重的实验负载、有故障的俯仰地平线扫描仪，以及同时运行手动与自动姿态系统所耗费的燃料，使飞船偏航方向偏离约 25°，制动火箭点火还晚了约 3 秒，最终溅落点偏离目标约 400 km。"
+        ],
+        [
+          "长达 1 小时 7 分钟的搜救延迟被广泛报道",
+          "搜救延迟（卡彭特近一小时后才被发现，溅落约 3 小时后才被吊起）被广泛报道"
+        ],
+        ["回收延误 1 小时 7 分钟。", "卡彭特近一小时后才被发现，溅落约 3 小时后才被吊起。"]
+      ]
+    }
+  },
+  {
+    "m": "earth/sigma-7",
+    "text": {
+      "en-US": [
+        [
+          "Aurora 7 had used 38 kg of attitude control gas; Schirra used only 32 kg with double the flight time.",
+          "Schirra used so little attitude-control fuel that he dumped the rest during re-entry."
+        ]
+      ],
+      "ar": [
+        [
+          "استهلكت Aurora 7 ما مقداره 38 كغ من غاز التحكم في الاتجاه؛ واستهلك شيرا 32 كغ فقط مع ضعف مدة الرحلة.",
+          "استهلك شيرا من وقود التحكم في الوضعية قدراً ضئيلاً إلى حد أنه تخلّص من الباقي أثناء الدخول في الغلاف الجوي."
+        ]
+      ],
+      "de": [
+        [
+          "Aurora 7 verbrauchte 38 kg Lageregelungsgas; Schirra verbrauchte nur 32 kg bei doppelter Flugdauer.",
+          "Schirra verbrauchte so wenig Lageregelungstreibstoff, dass er den Rest beim Wiedereintritt abließ."
+        ]
+      ],
+      "es": [
+        [
+          "Aurora 7 había utilizado 38 kg de gas de control de actitud; Schirra utilizó solo 32 kg con el doble de tiempo de vuelo.",
+          "Schirra gastó tan poco combustible de control de actitud que descargó el resto durante la entrada atmosférica."
+        ]
+      ],
+      "fr": [
+        [
+          "Aurora 7 avait consommé 38 kg de gaz de contrôle d'attitude ; Schirra n'en a utilisé que 32 kg avec une durée de vol double.",
+          "Schirra a consommé si peu de carburant de contrôle d'attitude qu'il a largué le reste pendant la rentrée."
+        ]
+      ],
+      "hi": [
+        [
+          "Aurora 7 ने दिशा-नियंत्रण गैस के 38 kg इस्तेमाल किए थे; शिरा ने दोगुने उड़ान-समय में केवल 32 kg इस्तेमाल किए।",
+          "शिरा ने दिशा-नियंत्रण ईंधन इतना कम इस्तेमाल किया कि पुनः प्रवेश के दौरान उन्होंने बचा हुआ ईंधन छोड़ दिया।"
+        ]
+      ],
+      "it": [
+        [
+          "Aurora 7 aveva consumato 38 kg di gas di controllo di assetto; Schirra ne ha usati solo 32 kg con il doppio della durata del volo.",
+          "Schirra consumò così poco carburante di controllo di assetto che scaricò il resto durante il rientro."
+        ]
+      ],
+      "ja": [
+        [
+          "Aurora 7は姿勢制御ガスを38 kg使ったが、シラーは2倍の飛行時間で32 kgしか使わなかった。",
+          "シラーは姿勢制御用の燃料をごくわずかしか使わず、残りを再突入中に放出した。"
+        ]
+      ],
+      "ko": [
+        [
+          "Aurora 7은 자세 제어 가스 38 kg을 썼지만, 시라는 두 배의 비행 시간에 단 32 kg만 썼다.",
+          "시라는 자세 제어 연료를 아주 적게 써서 남은 연료를 재진입 중에 버렸다."
+        ]
+      ],
+      "nl": [
+        [
+          "Aurora 7 had 38 kg stuurgas gebruikt; Schirra gebruikte slechts 32 kg met de dubbele vluchttijd.",
+          "Schirra gebruikte zo weinig standregelingsbrandstof dat hij de rest tijdens de terugkeer loosde."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Aurora 7 havia usado 38 kg de gás de controle de atitude; Schirra usou apenas 32 kg com o dobro do tempo de voo.",
+          "Schirra usou tão pouco combustível de controle de atitude que despejou o restante durante a reentrada."
+        ]
+      ],
+      "ru": [
+        [
+          "Aurora 7 израсходовала 38 кг газа для ориентации; Ширра использовал всего 32 кг при вдвое большей продолжительности полёта.",
+          "Ширра израсходовал так мало топлива системы ориентации, что остаток слил при входе в атмосферу."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Aurora 7 потрошила је 38 kg гаса за контролу положаја; Шира је потрошио свега 32 kg, уз двоструко дуже време лета.",
+          "Шира је потрошио толико мало горива за контролу положаја да је остатак испустио током повратка у атмосферу."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "Aurora 7使用了38 kg的姿态控制气体；希拉用仅32 kg的气体完成了两倍的飞行时间。",
+          "希拉使用的姿态控制燃料极少，以至于在再入过程中把剩余的燃料排放掉了。"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "earth/faith-7",
+    "text": {
+      "en-US": [
+        ["(~7 km from target)", "(about 6 km (4 mi) from the recovery ship USS Kearsarge)"],
+        ["~7 km from target", "about 6 km (4 mi) from the recovery ship"]
+      ],
+      "ar": [
+        ["(~7 كم من الهدف)", "(نحو 6 كم (4 أميال) من سفينة الانتشال USS Kearsarge)"],
+        ["~7 كم من الهدف", "نحو 6 كم (4 أميال) من سفينة الانتشال"]
+      ],
+      "de": [
+        ["(~7 km vom Ziel)", "(etwa 6 km (4 mi) vom Bergungsschiff USS Kearsarge)"],
+        ["~7 km vom Zielpunkt", "etwa 6 km (4 mi) vom Bergungsschiff"]
+      ],
+      "es": [
+        ["(~7 km del objetivo)", "(a unos 6 km (4 mi) del buque de recuperación USS Kearsarge)"],
+        ["a ~7 km del objetivo", "a unos 6 km (4 mi) del buque de recuperación"]
+      ],
+      "fr": [
+        ["(~7 km de la cible)", "(à environ 6 km (4 mi) du navire de récupération USS Kearsarge)"],
+        ["à ~7 km de la cible", "à environ 6 km (4 mi) du navire de récupération"]
+      ],
+      "hi": [
+        ["(लक्ष्य से ~7 km दूर)", "(रिकवरी जहाज़ USS Kearsarge से लगभग 6 km (4 मील) दूर)"],
+        ["लक्ष्य से ~7 किमी दूर", "रिकवरी जहाज़ से लगभग 6 किमी (4 मील) दूर"]
+      ],
+      "it": [
+        ["(~7 km dal bersaglio)", "(a circa 6 km (4 mi) dalla nave di recupero USS Kearsarge)"],
+        ["a ~7 km dal bersaglio", "a circa 6 km (4 mi) dalla nave di recupero"]
+      ],
+      "ja": [
+        ["（目標から約 7 km）", "（回収船USS Kearsargeから約6 km（4マイル））"],
+        ["目標地点から約 7 km", "回収船から約 6 km（4 マイル）"]
+      ],
+      "ko": [
+        ["(목표로부터 약 7 km)", "(회수함 USS Kearsarge로부터 약 6 km(4마일))"],
+        ["목표 지점에서 ~7 km", "회수함에서 약 6 km(4마일)"]
+      ],
+      "nl": [
+        ["(~7 km van het doel)", "(ongeveer 6 km (4 mi) van het bergingsschip USS Kearsarge)"],
+        ["~7 km van het doel", "ongeveer 6 km (4 mi) van het bergingsschip"]
+      ],
+      "pt-BR": [
+        ["(~7 km do alvo)", "(a cerca de 6 km (4 mi) do navio de recuperação USS Kearsarge)"],
+        ["a ~7 km do alvo", "a cerca de 6 km (4 mi) do navio de recuperação"]
+      ],
+      "ru": [
+        ["(~7 км от цели)", "(около 6 км (4 мили) от корабля-спасателя USS Kearsarge)"],
+        ["~7 км от расчётной точки", "около 6 км (4 мили) от корабля-спасателя"]
+      ],
+      "sr-Cyrl": [
+        ["(~7 km од циља)", "(око 6 km (4 миље) од брода за спасавање USS Kearsarge)"],
+        ["~7 km од циљне тачке", "око 6 km (4 миље) од брода за спасавање"]
+      ],
+      "zh-CN": [
+        ["（距目标约 7 km）", "（距回收舰USS Kearsarge约 6 km（4 英里））"],
+        ["落在距目标约 7 km处", "落在距回收舰约 6 km（4 英里）处"]
+      ]
+    }
+  },
+  {
+    "m": "earth/liberty-bell-7",
+    "text": {
+      "en-US": [
+        [
+          "first flight to feature an explosive escape hatch",
+          "first Mercury flight with an explosive escape hatch"
+        ],
+        ["480 km downrange", "486 km downrange"]
+      ],
+      "ar": [
+        ["أول رحلة تتميز بفتحة خروج انفجارية", "أول رحلة Mercury بفتحة خروج انفجارية"],
+        ["480 كم", "486 كم"]
+      ],
+      "de": [
+        ["erster Flug mit einer Sprengluke", "erster Mercury-Flug mit einer Sprengluke"],
+        ["480 km", "486 km"]
+      ],
+      "es": [
+        [
+          "primer vuelo con escotilla de escape explosiva",
+          "primer vuelo Mercury con escotilla de escape explosiva"
+        ],
+        ["480 km", "486 km"]
+      ],
+      "fr": [
+        [
+          "premier vol doté d'une écoutille de secours explosive",
+          "premier vol Mercury doté d'une écoutille de secours explosive"
+        ],
+        ["480 km", "486 km"]
+      ],
+      "hi": [
+        ["विस्फोटक आपात-हैच वाली पहली उड़ान", "विस्फोटक आपात-हैच वाली पहली Mercury उड़ान"],
+        ["480 किमी", "486 किमी"]
+      ],
+      "it": [
+        [
+          "primo volo con un portello di fuga esplosivo",
+          "primo volo Mercury con un portello di fuga esplosivo"
+        ],
+        ["480 km", "486 km"]
+      ],
+      "ja": [
+        [
+          "爆発ボルト式の脱出ハッチを初めて搭載した飛行でもありました",
+          "爆発ボルト式の脱出ハッチを初めて搭載したMercury飛行でもありました"
+        ],
+        ["480 km", "486 km"]
+      ],
+      "ko": [
+        ["폭발식 탈출 해치를 갖춘 첫 비행", "폭발식 탈출 해치를 갖춘 첫 Mercury 비행"],
+        ["480 km", "486 km"]
+      ],
+      "nl": [
+        [
+          "eerste vlucht met een explosief noodluik",
+          "eerste Mercury-vlucht met een explosief noodluik"
+        ],
+        ["480 km", "486 km"]
+      ],
+      "pt-BR": [
+        [
+          "primeiro voo a apresentar uma escotilha de fuga explosiva",
+          "primeiro voo Mercury a apresentar uma escotilha de fuga explosiva"
+        ],
+        ["480 km", "486 km"]
+      ],
+      "ru": [
+        [
+          "первый полёт с взрывным люком аварийного спуска",
+          "первый полёт Mercury с взрывным люком аварийного спуска"
+        ],
+        ["480 км", "486 км"]
+      ],
+      "sr-Cyrl": [
+        [
+          "први лет са експлозивним отвором за излаз у нужди",
+          "први лет Mercury са експлозивним отвором за излаз у нужди"
+        ],
+        ["480 km", "486 km"]
+      ],
+      "zh-CN": [
+        ["首次配备爆破式逃生舱门的飞行", "首次配备爆破式逃生舱门的Mercury飞行"],
+        ["480 km", "486 km"]
+      ]
+    }
+  }
+]

@@ -16,10 +16,10 @@
   "arrival_date": "2021-02-18",
   "transit_days": 203,
   "vehicle": "Atlas V 541",
-  "payload": "3839 kg launch mass (1025 kg rover; 1.8 kg Ingenuity helicopter)",
+  "payload": "about 4060 kg launch mass (1025 kg rover; 1.8 kg Ingenuity helicopter)",
   "delta_v": "~6.1 km/s",
   "data_quality": "good",
-  "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. First helicopter on another planet (Ingenuity, retired 2024-01). Caching samples for future Mars Sample Return.",
+  "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. First helicopter on another planet (Ingenuity, retired 2024-01). Cached samples in tubes; the NASA-ESA Mars Sample Return that was to retrieve them was cancelled in 2026.",
   "links": [
     {
       "l": "Perseverance (rover) — Wikipedia",
@@ -58,7 +58,7 @@
       "vehicle_stage": "Centaur upper stage (Atlas V 541)",
       "c3_km2_s2": 14.79,
       "declination_deg": 16.7,
-      "mass_at_tli_kg": 3649,
+      "mass_at_tli_kg": 4060,
       "source": "NASA Mars 2020 Press Kit (2020-07); ULA Atlas V 541 mission overview"
     },
     "cruise": {

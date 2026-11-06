@@ -549,7 +549,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2024-10-14",
-    "tagline": "Largest planetary spacecraft; 49 Europa flybys planned"
+    "tagline": "Largest NASA planetary-mission spacecraft; 49 Europa flybys planned"
   },
   {
     "id": "lucy",
@@ -1375,7 +1375,7 @@
     "country": "USA",
     "era": "2011-now",
     "epoch": "commercial-era",
-    "status": "ACTIVE",
+    "status": "RETIRED",
     "first_flight": "2013-11-18",
     "tagline": "Mars atmospheric loss to solar wind"
   },

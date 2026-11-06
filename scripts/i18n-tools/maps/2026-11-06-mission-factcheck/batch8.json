@@ -1,0 +1,1311 @@
+[
+  {
+    "m": "mars/curiosity",
+    "text": {
+      "en-US": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "ar": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "de": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "es": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "fr": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "hi": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "it": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "ja": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "ko": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "nl": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "ru": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "3839",
+          "3893"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "3839",
+          "3893"
+        ]
+      ]
+    },
+    "base": [
+      [
+        "3839 kg launch mass",
+        "3893 kg launch mass"
+      ],
+      [
+        "\"mass_at_tli_kg\": 3839",
+        "\"mass_at_tli_kg\": 3893"
+      ],
+      [
+        "mission lifetime targets 2 Mars years",
+        "mission lifetime targets 1 Mars year (687 days)"
+      ],
+      [
+        "parachute deploys at Mach 2.2, then",
+        "the parachute deploys, then"
+      ],
+      [
+        "Landed 2012-08-06 22:32 PDT at",
+        "Landed 2012-08-06 05:32 UTC (22:32 PDT on 5 August) at"
+      ],
+      [
+        "Mast-mounted MastCam returned the first colour panoramic minutes later.",
+        "The first Hazcam images came within minutes; the first panorama followed on 7 August."
+      ]
+    ]
+  },
+  {
+    "m": "mars/mars-express",
+    "text": {
+      "en-US": [
+        [
+          "Europe's first interplanetary mission",
+          "Europe's first mission to another planet"
+        ]
+      ],
+      "ar": [
+        [
+          "أول مهمة أوروبية بين الكواكب",
+          "أول مهمة أوروبية إلى كوكب آخر"
+        ]
+      ],
+      "de": [
+        [
+          "Europas erste interplanetare Mission",
+          "Europas erste Mission zu einem anderen Planeten"
+        ]
+      ],
+      "es": [
+        [
+          "Primera misión interplanetaria de Europa",
+          "Primera misión de Europa a otro planeta"
+        ]
+      ],
+      "fr": [
+        [
+          "Première mission interplanétaire de l'Europe",
+          "Première mission de l'Europe vers une autre planète"
+        ]
+      ],
+      "hi": [
+        [
+          "यूरोप का पहला अंतरग्रहीय मिशन",
+          "किसी दूसरे ग्रह के लिए यूरोप का पहला मिशन"
+        ]
+      ],
+      "it": [
+        [
+          "Prima missione interplanetaria europea",
+          "Prima missione europea verso un altro pianeta"
+        ]
+      ],
+      "ja": [
+        [
+          "欧州初の惑星間ミッション",
+          "欧州初の他惑星探査ミッション"
+        ]
+      ],
+      "ko": [
+        [
+          "유럽의 첫 행성간 임무",
+          "유럽 최초의 타행성 탐사 임무"
+        ]
+      ],
+      "nl": [
+        [
+          "Europa's eerste interplanetaire missie",
+          "Europa's eerste missie naar een andere planeet"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "A primeira missão interplanetária da Europa",
+          "A primeira missão da Europa a outro planeta"
+        ]
+      ],
+      "ru": [
+        [
+          "Первая межпланетная миссия Европы",
+          "Первая миссия Европы к другой планете"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Прва европска међупланетарна мисија",
+          "Прва европска мисија до друге планете"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "欧洲首次行星际探测任务",
+          "欧洲首次前往其他行星的探测任务"
+        ]
+      ]
+    },
+    "base": [
+      [
+        "Europe's first interplanetary spacecraft and longest-running non-NASA Mars mission",
+        "Europe's first mission to another planet and longest-running non-NASA Mars mission"
+      ],
+      [
+        "the longest-running Mars orbiter ever.",
+        "one of the longest-running Mars orbiters (after Mars Odyssey)."
+      ],
+      [
+        "Beagle 2 had landed safely 6 days earlier but failed",
+        "Beagle 2 had separated 6 days earlier and landed the same day (2003-12-25) but failed"
+      ]
+    ]
+  },
+  {
+    "m": "mars/maven",
+    "text": {
+      "en-US": [
+        [
+          "ORBITER · ACTIVE",
+          "ORBITER · FLOWN"
+        ],
+        [
+          "The spacecraft also serves as a critical relay for surface assets, including Curiosity and Perseverance.",
+          "The spacecraft also served as a critical relay for surface assets, including Curiosity and Perseverance, until it lost contact in December 2025; NASA declared the mission over in June 2026."
+        ]
+      ],
+      "ar": [
+        [
+          "مدار · نشطة",
+          "مدار · أُطلقت"
+        ],
+        [
+          "وتعمل المركبة أيضًا مرحِّلًا بالغ الأهمية للمركبات على السطح، ومنها Curiosity و Perseverance.",
+          "وعملت المركبة أيضًا مرحِّلًا بالغ الأهمية للمركبات على السطح، ومنها Curiosity و Perseverance، إلى أن فقدت الاتصال في ديسمبر 2025؛ وأعلنت NASA انتهاء المهمة في يونيو 2026."
+        ]
+      ],
+      "de": [
+        [
+          "ORBITER · AKTIV",
+          "ORBITER · GEFLOGEN"
+        ],
+        [
+          "Das Raumschiff dient auch als wichtiges Relais für Missionen an der Oberfläche, einschließlich Curiosity und Perseverance.",
+          "Das Raumschiff diente auch als wichtiges Relais für Missionen an der Oberfläche, einschließlich Curiosity und Perseverance, bis der Kontakt im Dezember 2025 abbrach; die NASA erklärte die Mission im Juni 2026 für beendet."
+        ]
+      ],
+      "es": [
+        [
+          "ORBITADOR · ACTIVA",
+          "ORBITADOR · REALIZADA"
+        ],
+        [
+          "La nave también sirve como retransmisor esencial para los equipos en la superficie, entre ellos Curiosity y Perseverance.",
+          "La nave también sirvió como retransmisor esencial para los equipos en la superficie, entre ellos Curiosity y Perseverance, hasta que perdió el contacto en diciembre de 2025; la NASA declaró concluida la misión en junio de 2026."
+        ]
+      ],
+      "fr": [
+        [
+          "ORBITEUR · ACTIVE",
+          "ORBITEUR · RÉALISÉE"
+        ],
+        [
+          "La sonde sert aussi de relais essentiel pour les engins en surface, dont Curiosity et Perseverance.",
+          "La sonde a aussi servi de relais essentiel pour les engins en surface, dont Curiosity et Perseverance, jusqu'à la perte du contact en décembre 2025 ; la NASA a déclaré la mission terminée en juin 2026."
+        ]
+      ],
+      "hi": [
+        [
+          "ऑर्बिटर · सक्रिय",
+          "ऑर्बिटर · उड़ानपूर्ण"
+        ],
+        [
+          "यह अंतरिक्ष यान Curiosity और Perseverance सहित सतह पर काम कर रहे यानों के लिए एक अहम रिले का काम भी करता है।",
+          "यह अंतरिक्ष यान Curiosity और Perseverance सहित सतह पर काम कर रहे यानों के लिए एक अहम रिले का काम भी करता था, जब तक दिसंबर 2025 में उससे संपर्क टूट नहीं गया; NASA ने जून 2026 में मिशन समाप्त घोषित कर दिया।"
+        ]
+      ],
+      "it": [
+        [
+          "ORBITORE · ATTIVA",
+          "ORBITER · COMPLETATA"
+        ],
+        [
+          "La sonda funge anche da relè fondamentale per i mezzi in superficie, tra cui Curiosity e Perseverance.",
+          "La sonda ha fatto anche da relè fondamentale per i mezzi in superficie, tra cui Curiosity e Perseverance, finché non ha perso il contatto nel dicembre 2025; la NASA ha dichiarato conclusa la missione nel giugno 2026."
+        ]
+      ],
+      "ja": [
+        [
+          "軌道機 · 運用中",
+          "軌道機 · 飛行済み"
+        ],
+        [
+          "また、この探査機は、Curiosity や Perseverance を含む火星表面の探査機との重要な通信中継役も務めている。",
+          "また、この探査機は、Curiosity や Perseverance を含む火星表面の探査機との重要な通信中継役も、2025年12月に交信を失うまで務めた。NASAは2026年6月にミッションの終了を宣言した。"
+        ]
+      ],
+      "ko": [
+        [
+          "궤도선 · 운용 중",
+          "궤도선 · 비행완료"
+        ],
+        [
+          "이 탐사선은 Curiosity와 Perseverance를 비롯한 표면 탐사 장비를 위한 핵심 중계기 역할도 합니다.",
+          "이 탐사선은 2025년 12월 교신이 끊길 때까지 Curiosity와 Perseverance를 비롯한 표면 탐사 장비를 위한 핵심 중계기 역할도 했습니다. NASA는 2026년 6월 임무 종료를 선언했습니다."
+        ]
+      ],
+      "nl": [
+        [
+          "ORBITER · ACTIEF",
+          "ORBITER · GEVLOGEN"
+        ],
+        [
+          "Het ruimtevaartuig dient ook als cruciaal relais voor de voertuigen op het oppervlak, waaronder Curiosity en Perseverance.",
+          "Het ruimtevaartuig diende ook als cruciaal relais voor de voertuigen op het oppervlak, waaronder Curiosity en Perseverance, tot het in december 2025 het contact verloor; NASA verklaarde de missie in juni 2026 voor beëindigd."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "ÓRBITA · ATIVA",
+          "ORBITADOR · REALIZADA"
+        ],
+        [
+          "A espaçonave também funciona como um retransmissor crítico para os recursos de superfície, incluindo Curiosity e Perseverance.",
+          "A espaçonave também funcionou como um retransmissor crítico para os recursos de superfície, incluindo Curiosity e Perseverance, até perder o contato em dezembro de 2025; a NASA declarou a missão encerrada em junho de 2026."
+        ]
+      ],
+      "ru": [
+        [
+          "ОРБИТЕР · АКТИВНА",
+          "ОРБИТАЛЬНЫЙ АППАРАТ · ВЫПОЛНЕНА"
+        ],
+        [
+          "Аппарат также критически важен как ретранслятор для поверхности, включая Curiosity и Perseverance.",
+          "Аппарат также служил критически важным ретранслятором для поверхности, включая Curiosity и Perseverance, пока в декабре 2025 года не была потеряна связь; в июне 2026 года NASA объявило миссию завершённой."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "ОРБИТЕР · АКТИВНА",
+          "ОРБИТЕР · ОБАВЉЕНА"
+        ],
+        [
+          "Свемирска летелица служи и као кључни релеј за уређаје на површини, укључујући Curiosity и Perseverance.",
+          "Свемирска летелица је служила и као кључни релеј за уређаје на површини, укључујући Curiosity и Perseverance, све док у децембру 2025. није изгубљена веза; NASA је у јуну 2026. мисију прогласила завршеном."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "轨道器 · 运行中",
+          "轨道器 · 已飞行"
+        ],
+        [
+          "该航天器还是地表探测器的关键中继，其中包括Curiosity和Perseverance。",
+          "该航天器还曾是地表探测器的关键中继，其中包括Curiosity和Perseverance，直至2025年12月失去联系；NASA于2026年6月宣布任务结束。"
+        ]
+      ]
+    },
+    "base": [
+      [
+        "\"status\": \"ACTIVE\"",
+        "\"status\": \"FLOWN\""
+      ],
+      [
+        "Studies how Mars lost its atmosphere; serves as relay for surface assets.",
+        "Studied how Mars lost its atmosphere; served as relay for surface assets until contact was lost in December 2025."
+      ],
+      [
+        "MAVEN remains operational, recently extended through 2030+, also serving as a relay for the Perseverance + Curiosity rovers.",
+        "MAVEN lost contact on 2025-12-06 and NASA declared the mission over on 2026-06-03; until then it also served as a relay for the Perseverance + Curiosity rovers."
+      ]
+    ]
+  },
+  {
+    "overlay": "i18n-src/{loc}/fleet/orbiter/maven.json",
+    "text": {
+      "en-US": [
+        [
+          "In Mars orbit since 2014, studying how",
+          "In Mars orbit from 2014 until contact was lost in December 2025, it studied how"
+        ]
+      ],
+      "ar": [
+        [
+          "في مدار المريخ منذ 2014، تدرس كيف",
+          "في مدار المريخ منذ 2014 حتى فقدان الاتصال بها في ديسمبر 2025، درست كيف"
+        ]
+      ],
+      "de": [
+        [
+          "Seit 2014 im Marsorbit; erforscht, wie",
+          "Von 2014 bis zum Kontaktverlust im Dezember 2025 im Marsorbit; erforschte, wie"
+        ]
+      ],
+      "es": [
+        [
+          "En órbita marciana desde 2014, estudia cómo",
+          "En órbita marciana desde 2014 hasta que perdió el contacto en diciembre de 2025, estudió cómo"
+        ]
+      ],
+      "fr": [
+        [
+          "En orbite martienne depuis 2014, étudiant comment",
+          "En orbite martienne de 2014 jusqu'à la perte du contact en décembre 2025, elle a étudié comment"
+        ]
+      ],
+      "hi": [
+        [
+          "2014 से मंगल की कक्षा में, यह अध्ययन कर रहा है कि",
+          "दिसंबर 2025 में संपर्क टूटने तक 2014 से मंगल की कक्षा में रहकर, इसने अध्ययन किया कि"
+        ]
+      ],
+      "it": [
+        [
+          "In orbita attorno a Marte dal 2014, studia come",
+          "In orbita attorno a Marte dal 2014 fino alla perdita del contatto nel dicembre 2025, ha studiato come"
+        ]
+      ],
+      "ja": [
+        [
+          "2014年から火星周回軌道上にあり、",
+          "2014年から2025年12月に交信を失うまで火星周回軌道上にあり、"
+        ]
+      ],
+      "ko": [
+        [
+          "2014년부터 화성 궤도에서 수십억 년에 걸쳐",
+          "2014년부터 2025년 12월 교신이 끊길 때까지 화성 궤도에서 수십억 년에 걸쳐"
+        ]
+      ],
+      "nl": [
+        [
+          "Sinds 2014 in een baan om Mars, bestudeert hoe",
+          "Van 2014 tot het contact in december 2025 verloren ging in een baan om Mars, bestudeerde hoe"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Em órbita de Marte desde 2014, estudando como",
+          "Em órbita de Marte de 2014 até perder o contato em dezembro de 2025, estudou como"
+        ]
+      ],
+      "ru": [
+        [
+          "На орбите Марса с 2014 года, изучает, как",
+          "На орбите Марса с 2014 года до потери связи в декабре 2025 года; изучал, как"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "У орбити око Марса налази се од 2014. године и проучава како",
+          "У орбити око Марса налазио се од 2014. године до губитка везе у децембру 2025. и проучавао је како"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "自2014年以来在火星轨道运行，研究该星球",
+          "自2014年起在火星轨道运行，直至2025年12月失去联系，研究过该星球"
+        ]
+      ]
+    }
+  },
+  {
+    "baseFile": "static/data/fleet/orbiter/maven.json",
+    "base": [
+      [
+        "\"status\": \"ACTIVE\"",
+        "\"status\": \"RETIRED\""
+      ]
+    ]
+  },
+  {
+    "baseFile": "static/data/fleet/index.json",
+    "base": [
+      [
+        "\"id\": \"maven\",\n    \"name\": \"MAVEN\",\n    \"category\": \"orbiter\",\n    \"agency\": \"NASA\",\n    \"country\": \"USA\",\n    \"era\": \"2011-now\",\n    \"epoch\": \"commercial-era\",\n    \"status\": \"ACTIVE\"",
+        "\"id\": \"maven\",\n    \"name\": \"MAVEN\",\n    \"category\": \"orbiter\",\n    \"agency\": \"NASA\",\n    \"country\": \"USA\",\n    \"era\": \"2011-now\",\n    \"epoch\": \"commercial-era\",\n    \"status\": \"RETIRED\""
+      ]
+    ]
+  },
+  {
+    "m": "mars/mangalyaan",
+    "base": [
+      [
+        "Trans-Mars injection — final perigee burn",
+        "Trans-Mars injection"
+      ],
+      [
+        "2013-12-01. The 6th perigee burn — a 23-minute manoeuvre at 600 km altitude — finally sent Mangalyaan onto a heliocentric Mars-transfer trajectory after 25 days of Earth-orbit raising.",
+        "2013-11-30. After six Earth-orbit-raising burns, a separate 23-minute trans-Mars injection burn sent Mangalyaan onto a heliocentric Mars-transfer trajectory."
+      ],
+      [
+        "366 × 80,000 km orbit",
+        "421.7 × 76,994 km orbit"
+      ],
+      [
+        " Returned the first global high-resolution mosaic of Mars + atmospheric methane observations.",
+        ""
+      ]
+    ]
+  },
+  {
+    "m": "mars/mangalyaan",
+    "met": {
+      "1": 1
+    }
+  },
+  {
+    "m": "mars/insight",
+    "text": {
+      "en-US": [
+        [
+          "First seismometer on Mars",
+          "First to detect marsquakes"
+        ],
+        [
+          "694 kg lander",
+          "694 kg at launch (358 kg lander)"
+        ],
+        [
+          " and shields it from wind.",
+          "; its wind shield was added in February 2019."
+        ]
+      ],
+      "ar": [
+        [
+          "أول مقياس زلزالي على المريخ",
+          "أول من رصد الزلازل المريخية"
+        ],
+        [
+          "مركبة هبوط 694 كغ",
+          "694 كغ عند الإطلاق (مركبة الهبوط 358 كغ)"
+        ],
+        [
+          " وتحميه من الرياح.",
+          "؛ وأُضيف درع الرياح في فبراير 2019."
+        ]
+      ],
+      "de": [
+        [
+          "Erstes Seismometer auf dem Mars",
+          "Erste Mission, die Marsbeben nachwies"
+        ],
+        [
+          "694 kg schwerer Lander",
+          "694 kg beim Start (Lander 358 kg)"
+        ],
+        [
+          " und schützt es vor Wind.",
+          "; der Windschutz wurde im Februar 2019 ergänzt."
+        ]
+      ],
+      "es": [
+        [
+          "Primer sismómetro en Marte",
+          "Primera en detectar sismos en Marte"
+        ],
+        [
+          "Módulo de aterrizaje de 694 kg",
+          "694 kg al lanzamiento (módulo de aterrizaje de 358 kg)"
+        ],
+        [
+          " y lo protege del viento.",
+          "; el protector contra el viento se añadió en febrero de 2019."
+        ]
+      ],
+      "fr": [
+        [
+          "Premier sismomètre sur Mars",
+          "Première à détecter des séismes sur Mars"
+        ],
+        [
+          "atterrisseur de 694 kg",
+          "694 kg au lancement (atterrisseur de 358 kg)"
+        ],
+        [
+          " et le protège du vent.",
+          " ; le pare-vent a été ajouté en février 2019."
+        ]
+      ],
+      "hi": [
+        [
+          "मंगल पर पहला भूकंपमापी",
+          "मंगल पर भूकंप दर्ज करने वाला पहला मिशन"
+        ],
+        [
+          "694 kg लैंडर",
+          "प्रक्षेपण पर 694 kg (358 kg लैंडर)"
+        ],
+        [
+          " और हवा से ढालती है।",
+          "; हवा से बचाने वाला कवच फरवरी 2019 में जोड़ा गया।"
+        ]
+      ],
+      "it": [
+        [
+          "Primo sismometro su Marte",
+          "Prima a rilevare terremoti su Marte"
+        ],
+        [
+          "Lander da 694 kg",
+          "694 kg al lancio (lander da 358 kg)"
+        ],
+        [
+          " e lo protegge dal vento.",
+          "; lo schermo antivento è stato aggiunto nel febbraio 2019."
+        ]
+      ],
+      "ja": [
+        [
+          "火星初の地震計",
+          "火星地震を初めて検出"
+        ],
+        [
+          "ランダー694 kg",
+          "打上げ時694 kg（ランダー358 kg）"
+        ],
+        [
+          "、風から遮蔽する。",
+          "。風防は2019年2月に追加された。"
+        ]
+      ],
+      "ko": [
+        [
+          "화성 최초 지진계",
+          "화성 지진을 최초로 관측"
+        ],
+        [
+          "착륙선 694 kg",
+          "발사 시 694 kg(착륙선 358 kg)"
+        ],
+        [
+          "놓고 바람으로부터 차폐.",
+          "놓음; 바람막이는 2019년 2월에 추가."
+        ]
+      ],
+      "nl": [
+        [
+          "Eerste seismometer op Mars",
+          "Eerste die marsbevingen detecteerde"
+        ],
+        [
+          "Lander van 694 kg",
+          "694 kg bij lancering (lander van 358 kg)"
+        ],
+        [
+          " en beschermt het tegen de wind.",
+          "; de windkap werd in februari 2019 toegevoegd."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Primeiro sismógrafo em Marte",
+          "Primeira a detectar terremotos em Marte"
+        ],
+        [
+          "Módulo de pouso de 694 kg",
+          "694 kg no lançamento (módulo de pouso de 358 kg)"
+        ],
+        [
+          " e o protege do vento.",
+          "; o escudo contra o vento foi acrescentado em fevereiro de 2019."
+        ]
+      ],
+      "ru": [
+        [
+          "Первый сейсмометр на Марсе",
+          "Первая, кто зарегистрировал марсотрясения"
+        ],
+        [
+          "Посадочный аппарат 694 кг",
+          "694 кг при запуске (посадочный аппарат 358 кг)"
+        ],
+        [
+          " и экранирует от ветра.",
+          "; ветрозащитный экран добавлен в феврале 2019 года."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Први сеизмометар на Марсу",
+          "Прва која је открила потресе на Марсу"
+        ],
+        [
+          "Лендер масе 694 kg",
+          "694 kg при лансирању (лендер масе 358 kg)"
+        ],
+        [
+          " и штити га од ветра.",
+          "; штитник од ветра додат је у фебруару 2019."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "火星上的首个地震仪",
+          "首次探测到火星地震"
+        ],
+        [
+          "694 kg 着陆器",
+          "发射时 694 kg（着陆器 358 kg）"
+        ],
+        [
+          "并用防风罩保护它。",
+          "，防风罩于2019年2月加装。"
+        ]
+      ]
+    },
+    "base": [
+      [
+        "\"payload\": \"694 kg lander\"",
+        "\"payload\": \"694 kg at launch (358 kg lander)\""
+      ],
+      [
+        " back to Earth via 1.6-W radios —",
+        " back to Earth —"
+      ]
+    ]
+  },
+  {
+    "m": "mars/insight",
+    "met": {
+      "4": 228
+    }
+  },
+  {
+    "m": "mars/hope-probe",
+    "text": {
+      "en-US": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "ar": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "de": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "es": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "fr": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "hi": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "it": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "ja": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "ko": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "nl": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "ru": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "1500",
+          "1350"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "1500",
+          "1350"
+        ]
+      ]
+    },
+    "base": [
+      [
+        "\"payload\": \"1500 kg\"",
+        "\"payload\": \"1350 kg\""
+      ],
+      [
+        "captured Hope into a ~20,000 × 43,000 km orbit.",
+        "captured Hope into an initial 40-hour capture orbit; the ~20,000 × 43,000 km science orbit came later."
+      ]
+    ]
+  },
+  {
+    "m": "mars/perseverance",
+    "text": {
+      "en-US": [
+        [
+          "3839 kg",
+          "about 4060 kg"
+        ],
+        [
+          "up to 5 m altitude",
+          "3 m altitude"
+        ],
+        [
+          "first sample caching for Mars Sample Return",
+          "first sample caching on Mars"
+        ],
+        [
+          "Mars Sample Return depends on it — the rover is collecting and caching samples in tubes that a future mission will retrieve and bring to Earth.",
+          "The rover cached samples in tubes meant for Mars Sample Return, but NASA and ESA cancelled that mission in 2026, so the tubes have no planned retrieval mission."
+        ]
+      ],
+      "ar": [
+        [
+          "3839 كغ",
+          "نحو 4060 كغ"
+        ],
+        [
+          "على ارتفاع يصل إلى 5 أمتار",
+          "على ارتفاع 3 أمتار"
+        ],
+        [
+          "أول تخزين للعينات لمهمة إعادة عينات المريخ",
+          "أول تخزين للعينات على المريخ"
+        ],
+        [
+          "وتعتمد عليها مهمة إعادة عينات المريخ — إذ تجمع المركبة الجوالة العينات وتخزنها في أنابيب ستستردها مهمة مستقبلية وتحملها إلى الأرض.",
+          "وقد خزّنت المركبة الجوالة عينات في أنابيب كانت مخصصة لمهمة إعادة عينات المريخ، لكن NASA وESA ألغتا تلك المهمة في عام 2026، فلا توجد مهمة مخطط لها لاسترداد هذه الأنابيب."
+        ]
+      ],
+      "de": [
+        [
+          "3839 kg",
+          "etwa 4060 kg"
+        ],
+        [
+          "39,1 Sekunden bis zu 5 m Höhe",
+          "39,1 Sekunden in 3 m Höhe"
+        ],
+        [
+          "erste Probensammlung für Mars Sample Return",
+          "erste Probensammlung auf dem Mars"
+        ],
+        [
+          "Mars Sample Return hängt davon ab – der Rover sammelt Proben und lagert sie in Röhrchen, die eine zukünftige Mission bergen und zur Erde bringen wird.",
+          "Der Rover hat Proben in Röhrchen gelagert, die für Mars Sample Return bestimmt waren; NASA und ESA haben diese Mission jedoch 2026 abgesagt, sodass für die Röhrchen keine Bergungsmission geplant ist."
+        ]
+      ],
+      "es": [
+        [
+          "3839 kg",
+          "unos 4060 kg"
+        ],
+        [
+          "a una altitud de hasta 5 m",
+          "a una altitud de 3 m"
+        ],
+        [
+          "primer almacenamiento de muestras para Mars Sample Return",
+          "primer almacenamiento de muestras en Marte"
+        ],
+        [
+          "Mars Sample Return depende de ella: el rover está recopilando y almacenando muestras en tubos que una futura misión recuperará y traerá a la Tierra.",
+          "El rover almacenó muestras en tubos destinados a Mars Sample Return, pero la NASA y la ESA cancelaron esa misión en 2026, así que no hay ninguna misión prevista para recuperar los tubos."
+        ]
+      ],
+      "fr": [
+        [
+          "3839 kg",
+          "environ 4060 kg"
+        ],
+        [
+          "jusqu'à 5 m d'altitude",
+          "à 3 m d'altitude"
+        ],
+        [
+          "premier stockage d'échantillons pour la mission Mars Sample Return",
+          "premier stockage d'échantillons sur Mars"
+        ],
+        [
+          "Mars Sample Return en dépend — le rover collecte et stocke des échantillons dans des tubes qu'une mission future récupérera et ramènera sur la Terre.",
+          "Le rover a stocké des échantillons dans des tubes destinés à Mars Sample Return, mais la NASA et l'ESA ont annulé cette mission en 2026 : aucune mission de récupération n'est prévue pour ces tubes."
+        ]
+      ],
+      "hi": [
+        [
+          "3839 kg",
+          "लगभग 4060 kg"
+        ],
+        [
+          "5 मी ऊंचाई तक 39.1 सेकंड",
+          "3 मी ऊंचाई पर 39.1 सेकंड"
+        ],
+        [
+          "Mars Sample Return के लिए नमूनों का पहला भंडारण",
+          "मंगल पर नमूनों का पहला भंडारण"
+        ],
+        [
+          "Mars Sample Return इसी पर निर्भर है — रोवर नलियों में नमूने इकट्ठा करके जमा कर रहा है, जिन्हें भविष्य का कोई मिशन उठाकर पृथ्वी पर लाएगा।",
+          "रोवर ने नलियों में नमूने जमा किए हैं, जो Mars Sample Return के लिए थे; पर NASA और ESA ने 2026 में उस मिशन को रद्द कर दिया, इसलिए इन नलियों को वापस लाने का कोई मिशन नियोजित नहीं है।"
+        ]
+      ],
+      "it": [
+        [
+          "3839 kg",
+          "circa 4060 kg"
+        ],
+        [
+          "a un'altitudine fino a 5 m",
+          "a un'altitudine di 3 m"
+        ],
+        [
+          "primo deposito di campioni per Mars Sample Return",
+          "primo deposito di campioni su Marte"
+        ],
+        [
+          "Mars Sample Return dipende da essa — il rover sta raccogliendo e depositando campioni in tubi che una futura missione recupererà e porterà sulla Terra.",
+          "Il rover ha depositato campioni in tubi destinati a Mars Sample Return, ma NASA ed ESA hanno cancellato quella missione nel 2026, quindi per i tubi non è prevista alcuna missione di recupero."
+        ]
+      ],
+      "ja": [
+        [
+          "3839 kg",
+          "約4060 kg"
+        ],
+        [
+          "高度5 mまで39.1秒",
+          "高度3 mで39.1秒"
+        ],
+        [
+          "火星サンプルリターンに向けた初の試料採取・保管",
+          "火星で初の試料採取・保管"
+        ],
+        [
+          "火星サンプルリターンはこれにかかっている — ローバーはサンプルをチューブに採取して置いており、将来のミッションがそれを回収して地球に持ち帰る。",
+          "ローバーは火星サンプルリターン向けのチューブにサンプルを採取して置いてきたが、NASAとESAは2026年にそのミッションを中止したため、チューブを回収する計画のミッションは現在ない。"
+        ]
+      ],
+      "ko": [
+        [
+          "3839 kg",
+          "약 4060 kg"
+        ],
+        [
+          "최대 5 m 고도에서 39.1초",
+          "3 m 고도에서 39.1초"
+        ],
+        [
+          "Mars Sample Return을 위한 최초의 시료 저장",
+          "화성 최초의 시료 저장"
+        ],
+        [
+          "화성 샘플 반환은 이에 달려 있습니다. 로버는 튜브에 샘플을 수집 및 캐싱하고 있으며, 향후 미션이 이를 회수하여 지구로 가져올 것입니다.",
+          "로버는 화성 샘플 반환을 위한 튜브에 샘플을 수집 및 캐싱했지만, NASA와 ESA가 2026년에 해당 미션을 취소하여 튜브를 회수할 예정인 미션은 없습니다."
+        ]
+      ],
+      "nl": [
+        [
+          "3839 kg",
+          "ongeveer 4060 kg"
+        ],
+        [
+          "op tot 5 m hoogte",
+          "op 3 m hoogte"
+        ],
+        [
+          "eerste monstercaching voor Mars Sample Return",
+          "eerste monstercaching op Mars"
+        ],
+        [
+          "Mars Sample Return hangt ervan af — de rover verzamelt en bewaart monsters in buizen die een toekomstige missie zal ophalen en naar de Aarde brengen.",
+          "De rover heeft monsters bewaard in buizen die bedoeld waren voor Mars Sample Return, maar NASA en ESA hebben die missie in 2026 geannuleerd, dus voor de buizen is geen ophaalmissie gepland."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "3839 kg",
+          "cerca de 4060 kg"
+        ],
+        [
+          "a até 5 m de altitude",
+          "a 3 m de altitude"
+        ],
+        [
+          "primeiro armazenamento de amostras para Mars Sample Return",
+          "primeiro armazenamento de amostras em Marte"
+        ],
+        [
+          "Mars Sample Return depende dela — o rover coleta e armazena amostras em tubos que uma missão futura recuperará e trará para a Terra.",
+          "O rover armazenou amostras em tubos destinados ao Mars Sample Return, mas a NASA e a ESA cancelaram essa missão em 2026, então não há missão planejada para recuperar os tubos."
+        ]
+      ],
+      "ru": [
+        [
+          "3839 кг",
+          "около 4060 кг"
+        ],
+        [
+          "на высоте до 5 м",
+          "на высоте 3 м"
+        ],
+        [
+          "первое депонирование образцов для программы Mars Sample Return",
+          "первое депонирование образцов на Марсе"
+        ],
+        [
+          "От неё зависит Mars Sample Return — ровер собирает и оставляет образцы в пробирках, которые будущая миссия извлечёт и доставит на Землю.",
+          "Ровер оставил образцы в пробирках, предназначавшихся для Mars Sample Return, но NASA и ESA отменили эту миссию в 2026 году, так что для пробирок нет запланированной миссии по возвращению."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "3839 kg",
+          "око 4060 kg"
+        ],
+        [
+          "на висини до 5 m",
+          "на висини од 3 m"
+        ],
+        [
+          "прво прикупљање и похрањивање узорака за Mars Sample Return",
+          "прво прикупљање и похрањивање узорака на Марсу"
+        ],
+        [
+          "Од ње зависи Mars Sample Return — ровер прикупља узорке и похрањује их у цевчице које ће нека будућа мисија преузети и донети на Земљу.",
+          "Ровер је похранио узорке у цевчице намењене мисији Mars Sample Return, али су NASA и ESA ту мисију отказале 2026. године, па за ове цевчице није планирана мисија преузимања."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "质量 3839 kg",
+          "质量约 4060 kg"
+        ],
+        [
+          "最高高度达5 m",
+          "飞行高度3 m"
+        ],
+        [
+          "首次为火星样本返回任务缓存样本",
+          "首次在火星上缓存样本"
+        ],
+        [
+          "火星样本返回计划依赖于它——这辆火星车正在采集样本并装入样品管缓存，以供未来的任务取回并带回地球。",
+          "这辆火星车已将样本装入为火星样本返回计划准备的样品管缓存，但NASA和ESA已于2026年取消该计划，这些样品管目前没有计划中的取回任务。"
+        ]
+      ]
+    },
+    "base": [
+      [
+        "3839 kg launch mass",
+        "about 4060 kg launch mass"
+      ],
+      [
+        "\"mass_at_tli_kg\": 3649",
+        "\"mass_at_tli_kg\": 4060"
+      ],
+      [
+        "Caching samples for future Mars Sample Return.",
+        "Cached samples in tubes; the NASA-ESA Mars Sample Return that was to retrieve them was cancelled in 2026."
+      ]
+    ]
+  },
+  {
+    "m": "mars/tianwen1",
+    "text": {
+      "en-US": [
+        [
+          "First mission to deliver orbiter",
+          "First mission to successfully deliver orbiter"
+        ],
+        [
+          "accomplished what no agency had ever attempted in one launch",
+          "was the first to succeed, in one launch, at what only the Soviet Mars 3 had attempted in 1971"
+        ],
+        [
+          "China's first super-heavy interplanetary launch.",
+          "China's first interplanetary launch, on a heavy-lift rocket."
+        ]
+      ],
+      "ar": [
+        [
+          "أول مهمة تنقل",
+          "أول مهمة تنجح في نقل"
+        ],
+        [
+          "حققت أول مهمة مريخية للصين ما لم تحاوله أي وكالة في إطلاق واحد",
+          "كانت أول مهمة مريخية للصين الأولى التي تنجح في إطلاق واحد في ما لم يحاوله قبلها سوى المركبة السوفيتية Mars 3 عام 1971"
+        ],
+        [
+          "أول إطلاق صيني فائق الثقل بين الكواكب.",
+          "أول إطلاق صيني بين الكواكب، على صاروخ ثقيل."
+        ]
+      ],
+      "de": [
+        [
+          "Erste Mission, bei der Orbiter, Lander und Rover in einem einzigen Start zum Mars gebracht werden",
+          "Erste Mission, der es gelang, Orbiter, Lander und Rover in einem einzigen Start zum Mars zu bringen"
+        ],
+        [
+          "erreichte, was noch nie eine Agentur in einem einzigen Start versucht hatte",
+          "war die erste, der in einem einzigen Start gelang, was zuvor nur die sowjetische Mars 3 1971 versucht hatte"
+        ],
+        [
+          "Chinas erste Superträger-Weltraummission zu einem anderen Planeten.",
+          "Chinas erster interplanetarer Start, auf einer Schwerlastrakete."
+        ]
+      ],
+      "es": [
+        [
+          "Primera misión en entregar",
+          "Primera misión en lograr entregar"
+        ],
+        [
+          "logró lo que ninguna agencia había intentado con un solo lanzamiento",
+          "fue la primera en lograr con un solo lanzamiento lo que antes solo había intentado la soviética Mars 3 en 1971"
+        ],
+        [
+          "primer lanzamiento interplanetario superpesado de China.",
+          "primer lanzamiento interplanetario de China, con un cohete pesado."
+        ]
+      ],
+      "fr": [
+        [
+          "Première mission visant à livrer",
+          "Première mission à avoir réussi à livrer"
+        ],
+        [
+          "a accompli ce qu'aucune agence n'avait jamais tenté en un seul lancement",
+          "est la première à avoir réussi, en un seul lancement, ce que seule la soviétique Mars 3 avait tenté en 1971"
+        ],
+        [
+          "premier lancement interplanétaire chinois de classe super-lourd.",
+          "premier lancement interplanétaire chinois, sur un lanceur lourd."
+        ]
+      ],
+      "hi": [
+        [
+          "मंगल पहुँचाने वाला पहला मिशन",
+          "मंगल पहुँचाने में सफल होने वाला पहला मिशन"
+        ],
+        [
+          "ने वह कर दिखाया जो किसी एजेंसी ने एक ही प्रक्षेपण में कभी नहीं आज़माया था",
+          "ने एक ही प्रक्षेपण में वह कर दिखाया जिसे इससे पहले केवल सोवियत Mars 3 ने 1971 में आज़माया था, और ऐसा करने वाला वह पहला मिशन बना"
+        ],
+        [
+          "चीन का पहला अति-भारी अंतरग्रहीय प्रक्षेपण।",
+          "चीन का पहला अंतरग्रहीय प्रक्षेपण, एक भारी रॉकेट पर।"
+        ]
+      ],
+      "it": [
+        [
+          "Prima missione che trasporta",
+          "Prima missione a riuscire a trasportare"
+        ],
+        [
+          "ha realizzato ciò che nessuna agenzia aveva mai tentato in un solo lancio",
+          "è stata la prima a riuscire, in un solo lancio, in ciò che prima aveva tentato solo la sovietica Mars 3 nel 1971"
+        ],
+        [
+          "il primo lancio interplanetario super-pesante della Cina.",
+          "il primo lancio interplanetario della Cina, su un razzo pesante."
+        ]
+      ],
+      "ja": [
+        [
+          "火星へ届けた初のミッション",
+          "火星へ届けることに初めて成功したミッション"
+        ],
+        [
+          "これまでどの機関も試みなかった軌道投入、大気圏突入、軟着陸、ローバー展開のすべてを成し遂げた",
+          "1971年にソ連のMars 3が試みただけの軌道投入、大気圏突入、軟着陸、ローバー展開のすべてを、初めて成功させた"
+        ],
+        [
+          "中国初の超重量級惑星間打ち上げ。",
+          "中国初の惑星間打ち上げ、大型ロケットによる。"
+        ]
+      ],
+      "ko": [
+        [
+          "화성에 보낸 최초 임무",
+          "화성에 보내는 데 최초로 성공한 임무"
+        ],
+        [
+          "어떤 기관도 한 번의 발사로 시도한 적 없는 일을 해냈다",
+          "한 번의 발사로는 1971년 소련의 Mars 3만 시도했던 일을 최초로 성공시켰다"
+        ],
+        [
+          "중국 최초의 초중량급 행성간 발사.",
+          "중국 최초의 행성간 발사, 대형 로켓 사용."
+        ]
+      ],
+      "nl": [
+        [
+          "Eerste missie die orbiter, lander en rover in één lancering naar Mars levert",
+          "Eerste missie die erin slaagde orbiter, lander en rover in één lancering naar Mars te brengen"
+        ],
+        [
+          "volbracht wat geen ruimtevaartorganisatie ooit in één lancering had geprobeerd",
+          "slaagde er als eerste in, in één lancering, wat tot dan toe alleen de Sovjet-Mars 3 in 1971 had geprobeerd"
+        ],
+        [
+          "Chinas eerste superbelaste interplanetaire lancering.",
+          "Chinas eerste interplanetaire lancering, met een zware draagraket."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Primeira missão a entregar",
+          "Primeira missão a conseguir entregar"
+        ],
+        [
+          "realizou o que nenhuma agência jamais havia tentado em um único lançamento",
+          "foi a primeira a conseguir, em um único lançamento, o que até então só a soviética Mars 3 havia tentado, em 1971"
+        ],
+        [
+          "primeiro lançamento interplanetário super-pesado da China.",
+          "primeiro lançamento interplanetário da China, com um foguete pesado."
+        ]
+      ],
+      "ru": [
+        [
+          "Первая миссия, доставившая",
+          "Первая успешная миссия, доставившая"
+        ],
+        [
+          "сделал за один запуск то, чего ни одно агентство не пробовало",
+          "первым сумел за один запуск сделать то, что до этого пробовал лишь советский «Марс-3» в 1971 году"
+        ],
+        [
+          "первый китайский пуск сверхтяжёлой ракеты в межпланетную миссию.",
+          "первый китайский межпланетный пуск, на тяжёлой ракете."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Прва мисија која је једним лансирањем до Марса однела орбитер, лендер и ровер",
+          "Прва мисија којој је успело да једним лансирањем до Марса однесе орбитер, лендер и ровер"
+        ],
+        [
+          "постигла је оно што ниједна агенција дотад није покушала једним лансирањем",
+          "прва је успела да једним лансирањем постигне оно што је дотад покушао само совјетски Mars 3 1971. године"
+        ],
+        [
+          "прво кинеско лансирање свемирске летелице ка другим планетама помоћу супертешке ракете.",
+          "прво кинеско међупланетарно лансирање, на тешкој ракети."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "首次在单次发射中向火星交付",
+          "首次在单次发射中成功向火星交付"
+        ],
+        [
+          "在一次发射中完成了此前没有任何航天机构尝试过的事",
+          "在一次发射中首次成功完成了此前只有苏联Mars 3于1971年尝试过的事"
+        ],
+        [
+          "中国首次超重型行星际发射。",
+          "中国首次行星际发射，使用重型运载火箭。"
+        ]
+      ]
+    },
+    "base": [
+      [
+        "First mission to deliver an orbiter, lander, and rover to Mars in a single launch.",
+        "First mission to succeed in delivering an orbiter, lander, and rover to Mars in a single launch (the Soviet Mars 3 attempted it in 1971)."
+      ],
+      [
+        "Tianwen-1 is unique among Mars missions in carrying an orbiter + lander + rover (Zhurong) in a single launch — orbit, land, AND drive on the first attempt.",
+        "Tianwen-1 was the first Mars mission to carry an orbiter + lander + rover (Zhurong) in a single launch and succeed — orbit, land, AND drive on the first attempt (the Soviet Mars 3 attempted the same in 1971)."
+      ]
+    ]
+  }
+]

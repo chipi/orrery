@@ -14,7 +14,7 @@
   "payload": "5000 kg (orbiter + lander + Zhurong rover)",
   "delta_v": "~5 km/s",
   "data_quality": "good",
-  "credit": "© CNSA. First mission to deliver an orbiter, lander, and rover to Mars in a single launch. Lander/rover touchdown 2021-05-14 at Utopia Planitia. Zhurong rover went into hibernation 2022-05; orbiter remains active.",
+  "credit": "© CNSA. First mission to succeed in delivering an orbiter, lander, and rover to Mars in a single launch (the Soviet Mars 3 attempted it in 1971). Lander/rover touchdown 2021-05-14 at Utopia Planitia. Zhurong rover went into hibernation 2022-05; orbiter remains active.",
   "links": [
     {
       "l": "Tianwen-1 — Wikipedia",
@@ -84,7 +84,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Long March 5",
-        "description": "Wenchang, China, 2020-07-23. CNSA's first interplanetary mission, named after a Chinese poem from 340 BCE (\"Heavenly Questions\"). Tianwen-1 is unique among Mars missions in carrying an orbiter + lander + rover (Zhurong) in a single launch — orbit, land, AND drive on the first attempt."
+        "description": "Wenchang, China, 2020-07-23. CNSA's first interplanetary mission, named after a Chinese poem from 340 BCE (\"Heavenly Questions\"). Tianwen-1 was the first Mars mission to carry an orbiter + lander + rover (Zhurong) in a single launch and succeed — orbit, land, AND drive on the first attempt (the Soviet Mars 3 attempted the same in 1971)."
       },
       {
         "met_days": 0.005,

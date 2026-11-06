@@ -1,10 +1,10 @@
 {
   "name": "InSight",
   "vehicle": "Atlas V 401",
-  "payload": "Módulo de aterrizaje de 694 kg",
+  "payload": "694 kg al lanzamiento (módulo de aterrizaje de 358 kg)",
   "delta_v": "~5,5 km/s",
   "type": "ATERRIZADOR · REALIZADA",
-  "first": "Primer sismómetro en Marte; primer lanzamiento interplanetario desde la costa oeste de EE. UU.",
+  "first": "Primera en detectar sismos en Marte; primer lanzamiento interplanetario desde la costa oeste de EE. UU.",
   "description": "InSight le dio a Marte su primer estetoscopio. Su sismómetro, desplegado por un brazo robótico sobre el regolito, registró más de 1300 martemotos — incluido uno de magnitud 5 en 2022, el mayor jamás detectado en otro planeta. Los datos revelaron la estructura interior de Marte: un núcleo fundido de 1800 km de radio, una corteza gruesa y una sorprendente estratificación del manto. El experimento de flujo de calor con el «topo» fracasó cuando el regolito resultó demasiado cohesivo para su diseño de autopercusión. La misión terminó cuando la acumulación de polvo en los paneles solares redujo la energía por debajo del umbral operativo.",
   "events": [
     {
@@ -32,9 +32,9 @@
       "type": "nominal"
     },
     {
-      "met": 213,
+      "met": 228,
       "label": "SISMÓMETRO DESPLEGADO",
-      "note": "El brazo robótico coloca el instrumento SEIS sobre la superficie y lo protege del viento.",
+      "note": "El brazo robótico coloca el instrumento SEIS sobre la superficie; el protector contra el viento se añadió en febrero de 2019.",
       "type": "info"
     },
     {

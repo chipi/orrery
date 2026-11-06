@@ -14,7 +14,7 @@
   "payload": "1183 kg (1123 kg orbiter + 60 kg Beagle 2 lander)",
   "delta_v": "~4.5 km/s",
   "data_quality": "good",
-  "credit": "© ESA. Beagle 2 lander reached the surface but never deployed solar panels fully, lost. Orbiter remains active 20+ years — Europe's first interplanetary spacecraft and longest-running non-NASA Mars mission.",
+  "credit": "© ESA. Beagle 2 lander reached the surface but never deployed solar panels fully, lost. Orbiter remains active 20+ years — Europe's first mission to another planet and longest-running non-NASA Mars mission.",
   "links": [
     {
       "l": "Mars Express — Wikipedia",
@@ -70,7 +70,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Soyuz-FG / Fregat",
-        "description": "Baikonur Cosmodrome, 2003-06-02. ESA's first Mars mission, launched on a Russian Soyuz under a cooperative contract. Carried the Beagle 2 lander, designed by the UK's Beagle Project. Mars Express is still operational, the longest-running Mars orbiter ever."
+        "description": "Baikonur Cosmodrome, 2003-06-02. ESA's first Mars mission, launched on a Russian Soyuz under a cooperative contract. Carried the Beagle 2 lander, designed by the UK's Beagle Project. Mars Express is still operational, one of the longest-running Mars orbiters (after Mars Odyssey)."
       },
       {
         "met_days": 0.005,
@@ -112,7 +112,7 @@
         "met_days": 206.01,
         "type": "edl_or_oi",
         "label": "Mars orbit insertion",
-        "description": "2003-12-25 — Christmas Day. 37-minute main engine burn captured Mars Express into an initial ~250 × 150,000 km orbit, later trimmed to the operational ~298 × 10,107 km near-polar science orbit. Beagle 2 had landed safely 6 days earlier but failed to fully deploy its solar panels — only discovered in 2015 from MRO HiRISE imagery. Mars Express's MARSIS radar later mapped subsurface ice + (controversially) a liquid water reservoir under the south polar ice cap."
+        "description": "2003-12-25 — Christmas Day. 37-minute main engine burn captured Mars Express into an initial ~250 × 150,000 km orbit, later trimmed to the operational ~298 × 10,107 km near-polar science orbit. Beagle 2 had separated 6 days earlier and landed the same day (2003-12-25) but failed to fully deploy its solar panels — only discovered in 2015 from MRO HiRISE imagery. Mars Express's MARSIS radar later mapped subsurface ice + (controversially) a liquid water reservoir under the south polar ice cap."
       }
     ],
     "interplanetary_profile": {

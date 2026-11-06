@@ -1,12 +1,12 @@
 {
   "name": "Perseverance",
   "vehicle": "Atlas V 541",
-  "payload": "3839 kg de masse au lancement (rover de 1025 kg ; hélicoptère Ingenuity de 1,8 kg)",
+  "payload": "environ 4060 kg de masse au lancement (rover de 1025 kg ; hélicoptère Ingenuity de 1,8 kg)",
   "delta_v": "~6,1 km/s",
   "type": "ROVER · ACTIVE",
-  "first": "Premier hélicoptère sur une autre planète (Ingenuity) ; premier stockage d'échantillons pour la mission Mars Sample Return",
+  "first": "Premier hélicoptère sur une autre planète (Ingenuity) ; premier stockage d'échantillons sur Mars",
   "dispatch": "Perseverance est allé sur Mars chercher les morts. Posé en 2021 au fond du cratère Jezero — un bassin qui abrite le delta d'une rivière ayant alimenté un lac il y a des milliards d'années, exactement le genre d'endroit où la vie aurait laissé des traces — c'est le premier rover conçu spécifiquement pour rechercher des signes de vie ancienne, et pour faire ce qu'aucune mission n'avait fait : sceller de la roche martienne dans des tubes et les mettre de côté pour qu'un futur engin spatial les rapporte sur Terre. Il a aussi livré Ingenuity, le petit hélicoptère qui a réalisé le premier vol propulsé sur une autre planète. Si les échantillons qu'il met en dépôt sont un jour rapportés, ils seront les premiers fragments de la surface d'une autre planète ramenés sur Terre.",
-  "description": "Perseverance est la mission de surface martienne la plus ambitieuse jamais envoyée. Mars Sample Return en dépend — le rover collecte et stocke des échantillons dans des tubes qu'une mission future récupérera et ramènera sur la Terre. Ingenuity, le premier hélicoptère sur une autre planète, a volé lors de 72 missions avant de se retirer avec des rotors endommagés en janvier 2024 — prouvant que le vol contrôlé est possible dans la fine atmosphère de Mars. MOXIE, un démonstrateur d'oxygène à partir de CO2, a produit le premier oxygène fabriqué localement sur une autre planète, une répétition générale pour les missions martiennes habitées.",
+  "description": "Perseverance est la mission de surface martienne la plus ambitieuse jamais envoyée. Le rover a stocké des échantillons dans des tubes destinés à Mars Sample Return, mais la NASA et l'ESA ont annulé cette mission en 2026 : aucune mission de récupération n'est prévue pour ces tubes. Ingenuity, le premier hélicoptère sur une autre planète, a volé lors de 72 missions avant de se retirer avec des rotors endommagés en janvier 2024 — prouvant que le vol contrôlé est possible dans la fine atmosphère de Mars. MOXIE, un démonstrateur d'oxygène à partir de CO2, a produit le premier oxygène fabriqué localement sur une autre planète, une répétition générale pour les missions martiennes habitées.",
   "events": [
     {
       "met": 0,
@@ -41,7 +41,7 @@
     {
       "met": 271,
       "label": "PREMIER VOL D'INGENUITY",
-      "note": "Premier vol motorisé contrôlé sur une autre planète — 39,1 secondes jusqu'à 5 m d'altitude.",
+      "note": "Premier vol motorisé contrôlé sur une autre planète — 39,1 secondes à 3 m d'altitude.",
       "type": "info"
     },
     {

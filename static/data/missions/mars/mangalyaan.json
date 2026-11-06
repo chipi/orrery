@@ -76,8 +76,8 @@
       {
         "met_days": 25.43,
         "type": "tli_or_tmi",
-        "label": "Trans-Mars injection — final perigee burn",
-        "description": "2013-12-01. The 6th perigee burn — a 23-minute manoeuvre at 600 km altitude — finally sent Mangalyaan onto a heliocentric Mars-transfer trajectory after 25 days of Earth-orbit raising. Total mission cost was just $74M, the lowest-cost interplanetary mission in history."
+        "label": "Trans-Mars injection",
+        "description": "2013-11-30. After six Earth-orbit-raising burns, a separate 23-minute trans-Mars injection burn sent Mangalyaan onto a heliocentric Mars-transfer trajectory. Total mission cost was just $74M, the lowest-cost interplanetary mission in history."
       },
       {
         "met_days": 50,
@@ -113,7 +113,7 @@
         "met_days": 324.005,
         "type": "edl_or_oi",
         "label": "Mars orbit insertion",
-        "description": "24-minute main engine burn captured Mangalyaan into a highly-elliptical 366 × 80,000 km orbit. The mission was designed for 6 months but operated for ~8 years at Mars before contact was lost in 2022. Returned the first global high-resolution mosaic of Mars + atmospheric methane observations."
+        "description": "24-minute main engine burn captured Mangalyaan into a highly-elliptical 421.7 × 76,994 km orbit. The mission was designed for 6 months but operated for ~8 years at Mars before contact was lost in 2022."
       }
     ],
     "interplanetary_profile": {

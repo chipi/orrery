@@ -121,6 +121,15 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
 // spun underneath, breaking spatial reference). Markers are
 // tangent-aligned via lookAt(origin) so they "stand up" from the
 // surface instead of pointing along world axes.
+/** Layer the camera never renders (#641 1c): the 3D marker models and sprite
+ *  labels stay in the scene graph (LOD entries, tests) but site tags draw the
+ *  markers. The invisible hit spheres stay on layer 0, so picking still works. */
+export const UNRENDERED_LAYER = 31;
+export function hideFromCamera<T extends THREE.Object3D>(obj: T): T {
+  obj.traverse((o) => o.layers.set(UNRENDERED_LAYER));
+  return obj;
+}
+
 export type MarkerObj = {
   group: THREE.Group;
   siteId: string;
@@ -290,6 +299,7 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       if (site.status === 'CRASHED' || site.status === 'LOST') {
         dimMaterials(tier0Group, 0.55);
       }
+      hideFromCamera(tier0Group);
       group.add(tier0Group);
       // Anchor on the surface; orient the group so +Y points away from
       // Moon centre (radially outward), so cone-style markers stand up.
@@ -325,7 +335,7 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
         offset: labelOffsets.get(site.id) ?? new THREE.Vector3(0, 3.2, 0),
         size: 1.6,
       });
-      group.add(label.group);
+      group.add(hideFromCamera(label.group));
 
       // Selection halo (visible only while site === selected).
       // ADR-061 / ADR-072 Slice 3 §"selection halo as bounding rect":
@@ -459,7 +469,7 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
             maxTier,
             group,
             tier0Group,
-            tier1Builder: () => builder(accent),
+            tier1Builder: () => hideFromCamera(builder(accent)),
             tier2Builder,
           });
           // Tier-2 patch build is LAZY + per-landing-zone (#363 perf).

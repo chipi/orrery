@@ -191,6 +191,15 @@
     OBSERVATORY_PIN_COLOR,
     type MuseumPin,
   } from '$lib/surface-scene/museum-layer';
+  import {
+    createSiteTagLayer,
+    museumTagSpec,
+    observatoryTagSpec,
+    siteTagSpec,
+    type Rect,
+    type TagBody,
+    type TagFrame,
+  } from '$lib/surface-scene/site-tags';
   import ObservatoryPanel from '$lib/surface-scene/ObservatoryPanel.svelte';
   import { buildObservatoryModel } from '$lib/earth-place-models';
   import type { Observatory } from '$types/observatory';
@@ -1658,6 +1667,21 @@
       if (e instanceof WebGLUnavailableError) return;
       throw e;
     }
+    // Site tags (#641 1c): the screen-space markers over the canvas. Earth
+    // draws them smaller (dozens of pads and museums share a view), phones too.
+    const siteTags = createSiteTagLayer(container!, {
+      scale: (config.planet === 'earth' ? 0.62 : 1) * (window.innerWidth < 600 ? 0.85 : 1),
+    });
+    lifecycle.add(() => siteTags.dispose());
+    const siteTagFade = new Map<string, number>();
+    const siteTagPos = new THREE.Vector3();
+    let siteTagSources: unknown[] = [];
+    // HUD panels over the canvas (detail panel, chips, legend, rulers): cards
+    // keep clear of them. Re-read twice a second, not every frame.
+    const SITE_TAG_HUD =
+      'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler';
+    let siteTagBlocked: Rect[] = [];
+    let siteTagBlockedAt = -Infinity;
     // Hero IBL — reflections/glints on the PBR lander/rover models. Tier-gated
     // (high+): the per-frame env sampling starves software-GL / GPU-less
     // renderers (on the CI SwiftShader runner it tipped the flat-patch /
@@ -3886,6 +3910,7 @@
             const t = tierByIdForLabels.get(mk.siteId) ?? 0;
             if (t >= 2) {
               mk.labelGroup.visible = false;
+              siteTagFade.set(mk.siteId, 0);
               continue;
             }
             let underFootprint = false;
@@ -3901,9 +3926,10 @@
             const fade =
               mk.siteId === selectedSiteId
                 ? Math.min(labelFade, selectedFade)
-                : config.labelBandFade === 'all' || underFootprint
+                : underFootprint
                   ? labelFade
                   : 1;
+            siteTagFade.set(mk.siteId, mk.group.visible ? fade : 0);
             if (fade < 0.01) {
               mk.labelGroup.visible = false;
               continue;
@@ -3944,6 +3970,82 @@
               });
             }
           }
+
+          // Site tags: content when the lists change (load, locale), then
+          // each visible tag's anchor projected to canvas px.
+          if (
+            siteTagSources[0] !== sites ||
+            siteTagSources[1] !== museumsCache ||
+            siteTagSources[2] !== observatoriesCache
+          ) {
+            siteTagSources = [sites, museumsCache, observatoriesCache];
+            siteTags.setSpecs([
+              ...sites
+                .filter((st) => st.kind !== 'orbiter' && st.lat != null && st.lon != null)
+                .map((st) => siteTagSpec(st, config.planet as TagBody)),
+              ...museumsCache.map(museumTagSpec),
+              ...observatoriesCache.map(observatoryTagSpec),
+            ]);
+          }
+          const tagFrames: TagFrame[] = [];
+          if (!panoramaActive && !flatPatchActive) {
+            const cw = renderer.domElement.clientWidth;
+            const ch = renderer.domElement.clientHeight;
+            const centre = planetMesh.getWorldPosition(legendScratchB);
+            const tagAt = (key: string, obj: THREE.Object3D, opacity: number, boost = 0) => {
+              if (opacity <= 0.01) return;
+              const wp = obj.getWorldPosition(siteTagPos);
+              const facing =
+                legendScratchC
+                  .copy(wp)
+                  .sub(centre)
+                  .dot(legendScratchD.copy(camera.position).sub(wp)) > 0;
+              if (!facing) return;
+              const ndc = wp.project(camera);
+              if (ndc.z >= 1 || Math.abs(ndc.x) > 1.1 || Math.abs(ndc.y) > 1.1) return;
+              tagFrames.push({
+                key,
+                x: ((ndc.x + 1) / 2) * cw,
+                y: ((1 - ndc.y) / 2) * ch,
+                opacity,
+                boost,
+              });
+            };
+            for (const mk of markers)
+              tagAt(
+                `site:${mk.siteId}`,
+                mk.group,
+                siteTagFade.get(mk.siteId) ?? 0,
+                mk.siteId === selected?.id ? 10 : 0,
+              );
+            // A place under the selected site's magnified imagery would sit on
+            // the wrong ground: it fades with the reveal band, the rest stay.
+            const placeFade = (g: THREE.Object3D) => {
+              if (!footUnit) return 1;
+              const u = legendScratchA.copy(g.position).normalize();
+              return Math.hypot(u.x - footUnit.x, u.y - footUnit.y, u.z - footUnit.z) < footR
+                ? labelFade
+                : 1;
+            };
+            for (const p of museumPins)
+              tagAt(`museum:${p.id}`, p.group, museumsOn ? placeFade(p.group) : 0);
+            for (const p of observatoryPins)
+              tagAt(`scope:${p.id}`, p.group, telescopesOn ? placeFade(p.group) : 0);
+          }
+          if (now - siteTagBlockedAt > 500) {
+            siteTagBlockedAt = now;
+            const host = renderer.domElement.getBoundingClientRect();
+            siteTagBlocked = [...document.querySelectorAll(SITE_TAG_HUD)]
+              .map((el) => el.getBoundingClientRect())
+              .filter((r) => r.width > 0 && r.height > 0)
+              .map((r) => ({
+                x0: r.left - host.left,
+                y0: r.top - host.top,
+                x1: r.right - host.left,
+                y1: r.bottom - host.top,
+              }));
+          }
+          siteTags.sync(tagFrames, siteTagBlocked);
 
           // Tier-2 detail opacity ramp. Patch is eager-built at site
           // creation so tier2Group exists even when curTier < 2; we

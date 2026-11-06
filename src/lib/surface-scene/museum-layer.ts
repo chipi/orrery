@@ -11,6 +11,7 @@ import { latLonToUnitSphere } from '$lib/moon-projection';
 import { northTangent, placeOnSphereTangent } from '$lib/three/place-on-sphere';
 import { buildLabel } from '$lib/three-label';
 import { buildMuseumModel } from '$lib/earth-place-models';
+import { hideFromCamera } from '$lib/surface-scene/surface-markers';
 
 export const MUSEUM_PIN_COLOR = '#ffc850';
 export const OBSERVATORY_PIN_COLOR = '#7fe0ff';
@@ -90,7 +91,7 @@ export function buildPlacePins(
     const model = opts.modelFor(place);
     model.scale.multiplyScalar(PLACE_MARKER_SCALE);
     if (opts.faceTilt) model.rotation.x = -opts.faceTilt;
-    body.add(model);
+    body.add(hideFromCamera(model));
     group.add(body);
     const unit = latLonToUnitSphere(place.lat, place.lon);
     placeOnSphereTangent(group, unit, planetRadius);
@@ -107,7 +108,7 @@ export function buildPlacePins(
       offset: offsets.get(place.id),
       size: 1.3,
     });
-    group.add(label.group);
+    group.add(hideFromCamera(label.group));
 
     const halo = new THREE.Mesh(
       new THREE.RingGeometry(0.3, 0.38, 32),

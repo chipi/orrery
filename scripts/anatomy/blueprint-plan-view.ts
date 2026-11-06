@@ -37,6 +37,24 @@ interface Elements {
 // JPL Small-Body Database (ssd-api.jpl.nasa.gov/sbdb.api, full precision), fetched 2026-11-06.
 // Two-body propagation from these epochs: ample for a schematic map, not for navigation.
 const SMALL: Record<string, Elements> = {
+  pluto: {
+    a: 39.58862938517124,
+    e: 0.2518378778576892,
+    i: 17.14771140999114,
+    om: 110.2923840543057,
+    w: 113.7090015158565,
+    ma: 38.68366347318184,
+    epoch: 2457588.5,
+  },
+  arrokoth: {
+    a: 44.05257835991367,
+    e: 0.03555717645015258,
+    i: 2.450613924655929,
+    om: 159.0377267890618,
+    w: 188.8507463365642,
+    ma: 310.9839309924138,
+    epoch: 2461200.5,
+  },
   '67p': {
     a: 3.462249490129549,
     e: 0.6409081308996354,
@@ -137,6 +155,18 @@ interface Mission {
   smallOrbits?: (keyof typeof SMALL)[];
 }
 const MISSIONS: Record<string, Mission> = {
+  // Wikipedia "New Horizons": launch 19:00 UTC, Pluto 11:49:57 UTC, Arrokoth 05:33 UTC.
+  'new-horizons': {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '2006-01-19T19:00:00Z' },
+      { label: 'JUPITER', body: 'jupiter', utc: '2007-02-28T05:43:00Z' },
+      { label: 'PLUTO', body: 'pluto', utc: '2015-07-14T11:49:57Z' },
+      { label: 'ARROKOTH', body: 'arrokoth', utc: '2019-01-01T05:33:00Z' },
+    ],
+    orbits: ['earth', 'jupiter', 'saturn', 'uranus', 'neptune'],
+    smallOrbits: ['pluto', 'arrokoth'],
+    bottom: 'E. AT PLUTO · 14 JULY 2015',
+  },
   // ESA + Wikipedia "Rosetta (spacecraft)": launch 07:17:51 UTC; flyby and arrival dates.
   rosetta: {
     events: [

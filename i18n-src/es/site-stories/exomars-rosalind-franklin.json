@@ -1,0 +1,46 @@
+{
+  "intro": "Rosalind Franklin es el primer rover marciano de Europa, construido para buscar señales de vida pasada. Su taladro puede llegar a 2 m bajo la superficie, más hondo que cualquier rover anterior, donde las moléculas orgánicas están protegidas de la radiación que las destruye cerca de la superficie. El rover estaba listo para volar en 2022 en una misión conjunta con Rusia; esa colaboración terminó tras la invasión rusa de Ucrania, y la ESA rehízo la misión con la NASA. Su lanzamiento está previsto para 2028 y su aterrizaje en Oxia Planum, una llanura de roca rica en arcillas depositada en agua hace unos cuatro mil millones de años.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Seis ruedas, un taladro de 2 metros y un laboratorio dentro",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/01.webp",
+          "caption": "Un modelo a escala real de Rosalind Franklin en exposición: arriba el mástil con sus cámaras, delante la caja del taladro y los paneles solares desplegados."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/04.webp",
+          "caption": "Un modelo del rover con su acabado térmico dorado, el mástil alzado y las alas solares abiertas."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Pruebas",
+      "subtitle": "Ensayar Marte en la Tierra",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/04.webp",
+          "caption": "Un prototipo temprano del rover en pruebas de campo en el desierto de Atacama, en Chile, cerca del Observatorio Paranal de ESO: uno de los lugares más secos de la Tierra hace las veces de Marte."
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "Aterrizaje",
+      "subtitle": "Oxia Planum, el lugar de aterrizaje previsto",
+      "images": [
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/02.webp",
+          "caption": "El conjunto de entrada y aterrizaje tal como se diseñó al principio, separado en piezas: abajo el escudo térmico, en medio la plataforma que baja el rover y de la que este sale rodando, y arriba la cubierta trasera."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/01.webp",
+          "caption": "Un cráter y su material eyectado justo al sureste del lugar de aterrizaje, vistos por el Mars Reconnaissance Orbiter de la NASA: las rocas lanzadas desde abajo son el tipo de piedras sueltas que el rover debe estudiar."
+        }
+      ]
+    }
+  ]
+}

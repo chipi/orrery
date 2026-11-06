@@ -1,0 +1,46 @@
+{
+  "intro": "Rosalind Franklin 是欧洲第一辆火星车，用来寻找过去生命的迹象。它的钻头能钻到地下2米，比以往任何火星车都深；在那里，有机分子能免受近地表会破坏它们的辐射。这辆火星车在2022年已准备就绪，原本与俄罗斯联合执行任务；俄罗斯入侵乌克兰后，这一合作终止，ESA 与 NASA 一起重组了任务。它计划于2028年发射，降落在欧克西亚高原——一片约40亿年前在水中沉积的富含黏土的岩石平原。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "六个轮子、2米钻头和一座车内实验室",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/01.webp",
+          "caption": "展出的 Rosalind Franklin 全尺寸模型：顶部是装有相机的桅杆，前方是钻头箱，太阳能板已展开。"
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/04.webp",
+          "caption": "披着金色热控涂层的火星车模型，桅杆竖起，太阳能翼展开。"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "测试",
+      "subtitle": "在地球上预演火星",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/04.webp",
+          "caption": "早期火星车原型在智利阿塔卡马沙漠进行野外试验，靠近 ESO 的帕拉纳尔天文台——地球上最干燥的地方之一扮演火星。"
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "着陆",
+      "subtitle": "欧克西亚高原——计划着陆点",
+      "images": [
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/02.webp",
+          "caption": "最初设计的进入与着陆组合体分解图：底部是防热罩，中间是把火星车送下去、火星车再从上面驶下的平台，顶部是后壳。"
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/01.webp",
+          "caption": "NASA 火星勘测轨道飞行器拍摄的着陆点东南方不远处的一个陨石坑及其溅射物：从地下抛出的岩石，正是火星车要研究的那类松散石块。"
+        }
+      ]
+    }
+  ]
+}

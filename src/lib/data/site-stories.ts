@@ -33,6 +33,10 @@ export interface SiteStory {
   site: string;
   intro: string;
   chapters: SiteStoryChapter[];
+  /** Slug of a Long View essay the story leads into (/essays/<slug>);
+   *  the panel ends the story with a link card to it (#641: Artemis IV →
+   *  the essay on returning to the Moon). */
+  essay?: string;
 }
 
 /**
@@ -62,6 +66,7 @@ function mergeStoryOverlay(base: SiteStory, overlay: SiteStoryOverlay): SiteStor
   return {
     site: base.site,
     intro: overlay.intro ?? base.intro,
+    essay: base.essay,
     chapters: base.chapters.map((c) => {
       const o = overlayChaptersById.get(c.id);
       return {

@@ -1,0 +1,46 @@
+{
+  "intro": "Rosalind Franklin est le premier rover martien européen, conçu pour chercher des traces d'une vie passée. Sa foreuse peut descendre à 2 m sous la surface, plus profond qu'aucun rover avant lui, là où les molécules organiques sont à l'abri du rayonnement qui les détruit près de la surface. Le rover était prêt à partir en 2022 pour une mission commune avec la Russie ; ce partenariat a pris fin après l'invasion de l'Ukraine par la Russie, et l'ESA a reconstruit la mission avec la NASA. Son lancement est prévu en 2028, pour un atterrissage à Oxia Planum, une plaine de roches riches en argiles déposées dans l'eau il y a environ quatre milliards d'années.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Six roues, une foreuse de 2 mètres et un laboratoire à bord",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/01.webp",
+          "caption": "Une maquette grandeur nature de Rosalind Franklin exposée : le mât et ses caméras au sommet, le caisson de la foreuse à l'avant, les panneaux solaires déployés."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/04.webp",
+          "caption": "Une maquette du rover dans sa protection thermique dorée, le mât levé et les ailes solaires ouvertes."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Les essais",
+      "subtitle": "Répéter Mars sur Terre",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/04.webp",
+          "caption": "Un premier prototype de rover en essais sur le terrain dans le désert d'Atacama, au Chili, près de l'observatoire du Paranal de l'ESO : l'un des endroits les plus secs de la Terre tient lieu de Mars."
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "L'atterrissage",
+      "subtitle": "Oxia Planum — le site d'atterrissage prévu",
+      "images": [
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/02.webp",
+          "caption": "L'ensemble d'entrée et d'atterrissage tel qu'il fut d'abord conçu, en vue éclatée : le bouclier thermique en bas, la plateforme qui descend le rover et dont il descend en roulant, et la coque arrière au sommet."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/01.webp",
+          "caption": "Un cratère et ses éjectas juste au sud-est du site d'atterrissage, vus par Mars Reconnaissance Orbiter de la NASA : les roches projetées depuis la profondeur sont le genre de pierres éparses que le rover doit étudier."
+        }
+      ]
+    }
+  ]
+}

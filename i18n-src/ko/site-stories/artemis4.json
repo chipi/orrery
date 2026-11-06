@@ -1,0 +1,46 @@
+{
+  "intro": "Artemis IV는 2028년에 다시 사람을 달에 내려놓을 계획입니다. 1972년 Apollo 17 이후 첫 착륙이자, 남극 근처에 내리는 첫 유인 착륙입니다. Apollo는 방문하러 갔습니다. 이번에는 머무는 것이 목표입니다. 극지 크레이터의 물 얼음은 마실 물과 공기, 로켓 추진제가 될 수 있고, NASA는 그때부터 해마다 적어도 한 번씩 착륙하며 기지를 향해 나아갈 계획입니다. 그리고 다시 경쟁이기도 합니다. 2026년 2월 계획을 발표하며 NASA 국장 재러드 아이작먼은 \"우리의 가장 큰 지정학적 경쟁국과의 실질적인 경쟁이 날마다 거세지고 있는 만큼, 우리는 더 빨리 움직여야 한다\"고 말했습니다. 중국은 2030년 이전에 자국 우주인을 달에 착륙시키는 것을 목표로 합니다.",
+  "chapters": [
+    {
+      "id": "landing",
+      "title": "착륙",
+      "subtitle": "2028년 — 네 명 중 두 명이 남극으로 내려간다",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/03.webp",
+          "caption": "상상도: 달 궤도에서 Orion이 Starship 착륙선과 만나 승무원이 옮겨 탄다. NASA는 Artemis IV 승무원을 SpaceX의 Starship이 태울지 Blue Origin의 Blue Moon이 태울지 아직 밝히지 않았으며, 먼저 준비되는 쪽을 고를 것이라고 했다."
+        },
+        {
+          "src": "/images/missions/artemis4/02.webp",
+          "caption": "상상도: 달 표면의 Starship 착륙선, 지평선 위로 지구가 떠 있다."
+        },
+        {
+          "src": "/images/missions/artemis4/01.webp",
+          "caption": "상상도: 남극의 착륙선 옆에 선, Axiom 달 우주복 차림의 우주비행사들. 이곳에서 약 일주일을 보낼 예정이다."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "Orion과 유럽 서비스 모듈",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/04.webp",
+          "caption": "Artemis IV용 유럽 서비스 모듈. Orion의 엔진과 전력, 공기를 맡는다. 2026년 7월 케네디 우주 센터에서 준비 중인 모습."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "다음 단계",
+      "subtitle": "수많은 착륙의 첫 번째",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/05.webp",
+          "caption": "Artemis II 승무원이 찍은, 크레이터로 뒤덮인 남극-에이트켄 분지의 가장자리. Artemis IV 이후의 착륙들은 이 극지대를 겨냥한다. NASA는 기지 후보지를 정찰할 로버 PROMISE도 제안했고, 중국은 2035년 무렵까지 남극 근처에 연구기지를 세울 계획이다."
+        }
+      ]
+    }
+  ]
+}

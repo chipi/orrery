@@ -519,7 +519,7 @@ export function request([id, craft, title, height, parts, agency], generations) 
     `Exploded technical cutaway illustration of ${craft}, watercolor and ink-wash on faint aged graph paper, exposed internal structure. ` +
     `At far left one single small assembled drawing of the craft to scale beside a tiny unlabelled human silhouette marked '1.8 m', with a '${height}' dimension line. ` +
     `The parts pulled apart diagonally with thin ruled leader lines: ${parts.join('; ')}. ` +
-    `Handwritten title at the top left: '${title} — EXPLODED'. Short handwritten labels in English on the parts, each label written once. ` +
+    `Handwritten title at the top left: '${title} — EXPLODED'. Short handwritten labels in English on the parts: every label written exactly once, never two labels with the same words, one drawing of each part. The only dimensions written are '${height}' and '1.8 m'. Equations in Latin letters and numbers only, no other scripts. ` +
     'No logos, stamps, seals or copyright marks on the paper or in the corners. ' +
     'Faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette (brass, steel, copper on cream paper), ' +
     `vintage scientific sketchbook / editorial infographic aesthetic. ${agency} markings on the craft only. ` +

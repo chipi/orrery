@@ -667,7 +667,9 @@ export function request(
     (notes.length
       ? `Few annotations, each written only once: ${notes.map((n) => `'${n}'`).join(', ')}. `
       : 'No annotations. ') +
-    'Write only these words, each exactly once; no other words, no date, no coordinates, no logos, no title box, no second row of titles. ' +
+    'Write only these words, each exactly once; no other words, no date, no coordinates, no logos, no title box, no second row of titles, no title repeated inside the scene. ' +
+    'Each stage shows the craft once: never two copies of the same craft side by side in one stage. ' +
+    'Equations in Latin letters and numbers only, no other scripts. ' +
     'A few faint physics equations in the margins, ink-splatter wash clouds, ' +
     `warm muted ${PALETTE[body]} palette, vintage scientific sketchbook / editorial infographic aesthetic. ` +
     (agency

@@ -16,13 +16,113 @@
  * by hand in the blueprint style and must keep this geometry.
  */
 import sharp from 'sharp';
-import { heliocentric, julianDay, type PlanetId } from '../../src/lib/physics/ephemeris';
+import {
+  heliocentric,
+  julianDay,
+  orbitalPlanePosition,
+  type PlanetId,
+} from '../../src/lib/physics/ephemeris';
 import { lambertLeg } from '../lib/conic-leg';
+
+/** Osculating heliocentric ecliptic J2000 elements (JPL SBDB): a AU, angles degrees, epoch JD. */
+interface Elements {
+  a: number;
+  e: number;
+  i: number;
+  om: number;
+  w: number;
+  ma: number;
+  epoch: number;
+}
+// JPL Small-Body Database (ssd-api.jpl.nasa.gov/sbdb.api, full precision), fetched 2026-11-06.
+// Two-body propagation from these epochs: ample for a schematic map, not for navigation.
+const SMALL: Record<string, Elements> = {
+  '67p': {
+    a: 3.462249490129549,
+    e: 0.6409081308996354,
+    i: 7.040294937543767,
+    om: 50.13557377155012,
+    w: 12.79824970228189,
+    ma: 8.859927425218402,
+    epoch: 2457305.5,
+  },
+  steins: {
+    a: 2.363141776987294,
+    e: 0.1467867767199327,
+    i: 9.9247485385748,
+    om: 55.2936189517901,
+    w: 251.4371219667194,
+    ma: 275.4028858220599,
+    epoch: 2461200.5,
+  },
+  lutetia: {
+    a: 2.434430742712361,
+    e: 0.1647703512177245,
+    i: 3.064452891064415,
+    om: 80.83855721319993,
+    w: 249.8802780888828,
+    ma: 298.7726414605465,
+    epoch: 2461200.5,
+  },
+};
+const RAD = Math.PI / 180;
+/** Heliocentric ecliptic position (AU) of a small body at JD, from its elements. */
+function smallBody(el: Elements, jd: number) {
+  const n = 0.9856076686 / Math.pow(el.a, 1.5); // deg/day
+  const q = orbitalPlanePosition(el.a, el.e, (el.ma + n * (jd - el.epoch)) * RAD);
+  const [w, i, om] = [el.w * RAD, el.i * RAD, el.om * RAD];
+  const x1 = q.x * Math.cos(w) - q.y * Math.sin(w);
+  const y1 = q.x * Math.sin(w) + q.y * Math.cos(w);
+  const y2 = y1 * Math.cos(i);
+  return {
+    x: x1 * Math.cos(om) - y2 * Math.sin(om),
+    y: x1 * Math.sin(om) + y2 * Math.cos(om),
+    z: y1 * Math.sin(i),
+  };
+}
 
 interface Event {
   label: string;
-  body: Exclude<PlanetId, 'mercury' | 'pluto'>;
+  body: Exclude<PlanetId, 'mercury' | 'pluto'> | keyof typeof SMALL;
   utc: string;
+  /** Full turns around the Sun on the leg INTO this event, beyond the direct angle between the
+   *  two positions (Rosetta's one-year Earth-to-Earth orbit: 1). The single-revolution Lambert
+   *  solver cannot represent those; the leg is then a Kepler ellipse fitted by `multiRevLeg`. */
+  revs?: number;
+}
+
+/**
+ * A prograde Kepler ellipse from (r1, θ1) sweeping `revs` full turns plus the direct angle to
+ * (r2, θ2) in `tof` days. The semi-major axis follows from the mean angular rate (the period is
+ * the flight time over the turns swept); the eccentricity and perihelion direction are searched
+ * so the ellipse passes through both radii. Sampled by angle, which is all a plan view needs.
+ */
+function multiRevLeg(r1: number, t1: number, r2: number, t2: number, revs: number, tof: number) {
+  let d = t2 - t1;
+  d = ((d % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+  const sweep = 2 * Math.PI * revs + d;
+  const period = (tof * 2 * Math.PI) / sweep;
+  const a = Math.pow(period / 365.25, 2 / 3);
+  let best = { err: Infinity, e: 0, wp: 0 };
+  for (let ie = 0; ie <= 400; ie++) {
+    const e = (ie / 400) * 0.6;
+    const p = a * (1 - e * e);
+    for (let iw = 0; iw < 720; iw++) {
+      const wp = (iw / 720) * 2 * Math.PI;
+      const ra = p / (1 + e * Math.cos(t1 - wp));
+      const rb = p / (1 + e * Math.cos(t1 + sweep - wp));
+      const err = Math.abs(ra - r1) + Math.abs(rb - r2);
+      if (err < best.err) best = { err, e, wp };
+    }
+  }
+  const p = a * (1 - best.e * best.e);
+  const pts: { x: number; y: number }[] = [];
+  for (let k = 0; k <= 600; k++) {
+    const t = t1 + (sweep * k) / 600;
+    const r = p / (1 + best.e * Math.cos(t - best.wp));
+    pts.push({ x: r * Math.cos(t), y: r * Math.sin(t) });
+  }
+  return { pts, a, e: best.e, err: best.err, q: a * (1 - best.e), Q: a * (1 + best.e) };
 }
 interface Mission {
   events: Event[];
@@ -33,8 +133,28 @@ interface Mission {
   bottom?: string;
   /** A true-scale detail of the inner cruise, out to `maxAu`. */
   detail?: { title: string; maxAu: number };
+  /** Small-body orbits drawn dashed (the target comet). */
+  smallOrbits?: (keyof typeof SMALL)[];
 }
 const MISSIONS: Record<string, Mission> = {
+  // ESA + Wikipedia "Rosetta (spacecraft)": launch 07:17:51 UTC; flyby and arrival dates.
+  rosetta: {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '2004-03-02T07:17:51Z' },
+      { label: 'EARTH 1', body: 'earth', utc: '2005-03-04T12:00:00Z', revs: 1 },
+      { label: 'MARS', body: 'mars', utc: '2007-02-25T12:00:00Z', revs: 1 },
+      { label: 'EARTH 2', body: 'earth', utc: '2007-11-13T12:00:00Z' },
+      { label: 'ŠTEINS', body: 'steins', utc: '2008-09-05T12:00:00Z' },
+      { label: 'EARTH 3', body: 'earth', utc: '2009-11-13T12:00:00Z' },
+      { label: 'LUTETIA', body: 'lutetia', utc: '2010-07-10T12:00:00Z' },
+      { label: '67P · ARRIVAL', body: '67p', utc: '2014-08-06T12:00:00Z' },
+    ],
+    orbits: ['earth', 'mars', 'jupiter'],
+    smallOrbits: ['67p'],
+    end: 'orbit',
+    bottom: 'J. AT THE COMET · PHILAE LANDING',
+    detail: { title: 'E. INNER CRUISE · TRUE SCALE', maxAu: 2.8 },
+  },
   // Wikipedia "Cassini–Huygens": flyby dates; launch, Earth flyby and SOI times UTC.
   cassini: {
     events: [
@@ -64,6 +184,7 @@ const MISSIONS: Record<string, Mission> = {
 };
 const MEAN_AU: Partial<Record<PlanetId, number>> = {
   venus: 0.723,
+  mars: 1.524,
   earth: 1,
   jupiter: 5.2,
   saturn: 9.58,
@@ -129,7 +250,8 @@ type Proj = ReturnType<typeof projector>;
 
 const pos = m.events.map((e) => {
   const jd = julianDay(new Date(e.utc));
-  return { ...e, p: heliocentric(e.body as PlanetId, jd), jd };
+  const p = e.body in SMALL ? smallBody(SMALL[e.body]!, jd) : heliocentric(e.body as PlanetId, jd);
+  return { ...e, p, jd };
 });
 
 // Cruise legs as sampled Lambert conics, in AU. conic-leg works in the x–z plane: ecliptic y → z.
@@ -138,6 +260,21 @@ for (let i = 0; i < pos.length - 1; i++) {
   const a = pos[i]!;
   const b = pos[i + 1]!;
   const tof = b.jd - a.jd;
+  if (b.revs) {
+    const leg = multiRevLeg(
+      Math.hypot(a.p.x, a.p.y),
+      Math.atan2(a.p.y, a.p.x),
+      Math.hypot(b.p.x, b.p.y),
+      Math.atan2(b.p.y, b.p.x),
+      b.revs,
+      tof,
+    );
+    console.log(
+      `${a.label} → ${b.label}: ${b.revs} extra turn(s), a ${leg.a.toFixed(2)} AU, e ${leg.e.toFixed(3)}, ${leg.q.toFixed(2)}–${leg.Q.toFixed(2)} AU, fit error ${leg.err.toFixed(3)} AU`,
+    );
+    path.push(...leg.pts);
+    continue;
+  }
   const leg = lambertLeg({ x: a.p.x, z: a.p.y }, { x: b.p.x, z: b.p.y }, tof, 5e-3);
   if (!leg) throw new Error(`no Lambert leg ${a.label} → ${b.label}`);
   for (let k = 0; k <= 300; k++) {
@@ -161,6 +298,21 @@ function planView(pr: Proj, orbits: PlanetId[], clip: number, quiet: Set<number>
   const g: string[] = [`<g fill="none" stroke="#e8eeff" stroke-width="3">`];
   for (const o of orbits)
     g.push(`<circle cx="${c.x}" cy="${c.y}" r="${pr.r(MEAN_AU[o]!)}" stroke-width="2"/>`);
+  // Target small bodies: their orbit as a dashed ellipse (true shape, sampled from the elements).
+  for (const s of m.smallOrbits ?? []) {
+    const el = SMALL[s]!;
+    const period = 365.25 * Math.pow(el.a, 1.5);
+    // Split where the orbit leaves the clip radius, so the visible arcs never join across.
+    const arcs: P[][] = [[]];
+    for (let k = 0; k <= 360; k++) {
+      const q = smallBody(el, el.epoch + (period * k) / 360);
+      if (Math.hypot(q.x, q.y) <= clip) arcs.at(-1)!.push(pr.pt(q.x, q.y));
+      else if (arcs.at(-1)!.length) arcs.push([]);
+    }
+    for (const arc of arcs)
+      if (arc.length > 1)
+        g.push(`<polyline points="${fmt(arc)}" stroke-width="2" stroke-dasharray="10 8"/>`);
+  }
   g.push(
     `<line x1="${c.x}" y1="${c.y}" x2="${c.x + Rpx + 30}" y2="${c.y}" stroke-width="2" stroke-dasharray="14 10"/>`,
   );
@@ -188,6 +340,19 @@ function planView(pr: Proj, orbits: PlanetId[], clip: number, quiet: Set<number>
   g.push(
     `<g font-family="sans-serif" font-size="${fs}" fill="#e8eeff"><text x="${c.x + Rpx + 36}" y="${c.y + fs / 3}">♈ 0°</text>`,
   );
+  // Events drawn at the same spot (Rosetta's launch and Earth 1; Earth 2 and 3) share one label.
+  const shown = pos.flatMap((e, i) =>
+    Math.hypot(e.p.x, e.p.y) <= clip && !quiet.has(i) ? [{ i, q: pr.pt(e.p.x, e.p.y) }] : [],
+  );
+  const labelOf = new Map<number, string>();
+  for (const s of shown) {
+    const host = shown.find(
+      (o) => o.i < s.i && Math.hypot(o.q.x - s.q.x, o.q.y - s.q.y) < fs * 1.2,
+    );
+    const text = `${pos[s.i]!.label} · λ ${lonOf(pos[s.i]!.p)}°`;
+    if (host) labelOf.set(host.i, `${labelOf.get(host.i)} / ${text}`);
+    else labelOf.set(s.i, text);
+  }
   pos.forEach((e, i) => {
     if (Math.hypot(e.p.x, e.p.y) > clip) return;
     const q = pr.pt(e.p.x, e.p.y);
@@ -199,10 +364,8 @@ function planView(pr: Proj, orbits: PlanetId[], clip: number, quiet: Set<number>
     const lx = q.x + Math.cos(out) * fs * 1.4;
     const ly = q.y + Math.sin(out) * fs * 1.4 + fs / 3;
     const anchor = Math.cos(out) < -0.2 ? 'end' : Math.cos(out) > 0.2 ? 'start' : 'middle';
-    if (!quiet.has(i))
-      g.push(
-        `<text x="${lx}" y="${ly}" text-anchor="${anchor}">${esc(e.label)} · λ ${lonOf(e.p)}°</text>`,
-      );
+    if (labelOf.has(i))
+      g.push(`<text x="${lx}" y="${ly}" text-anchor="${anchor}">${esc(labelOf.get(i)!)}</text>`);
   });
   g.push('</g>');
   return g.join('\n');
@@ -211,7 +374,10 @@ function planView(pr: Proj, orbits: PlanetId[], clip: number, quiet: Set<number>
 const mainP = projector(
   { x: A.x + A.w / 2, y: A.y + A.h / 2 + 20 },
   Math.min(A.w, A.h) / 2 - 90,
-  Math.max(...m.orbits.map((o) => MEAN_AU[o]!)),
+  Math.max(
+    ...m.orbits.map((o) => MEAN_AU[o]!),
+    ...(m.smallOrbits ?? []).map((s) => SMALL[s]!.a * (1 + SMALL[s]!.e)),
+  ),
   'sqrt',
 );
 const inner = new Set(

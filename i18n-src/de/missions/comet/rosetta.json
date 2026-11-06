@@ -1,7 +1,7 @@
 {
   "name": "Rosetta",
   "vehicle": "Ariane 5G+",
-  "payload": "Orbiter (~2900 kg Trockenmasse, 11 Instrumente) + Landeeinheit Philae (~100 kg, 10 Instrumente). Hitzeschild, zwei Erd- + ein Mars-Swing-by, 957 Tage Winterschlaf im tiefen Weltraum 2011–2014.",
+  "payload": "Orbiter (~1230 kg Trockenmasse, 11 Instrumente) + Landeeinheit Philae (~100 kg, 10 Instrumente). Drei Erd- + ein Mars-Swing-by, 957 Tage Winterschlaf im tiefen Weltraum 2011–2014.",
   "delta_v": "~2,3 km/s (Rendezvous + Kometenoperationen)",
   "type": "ORBITER + LANDER · GEFLOGEN",
   "first": "Erstes Raumschiff, das einen Kometen umkreiste — und auf einem landete (Philae, 2014-11-12)",
@@ -48,7 +48,7 @@
     {
       "met": 1351,
       "label": "Erde Nr. 2 — Swing-by",
-      "description": "Größte Annäherung 5.295 km am 2007-11-13. Kurzzeitig für einen erdnahen Asteroiden gehalten (Bezeichnung 2007 VN84), bevor Beobachter erkannten, dass es Rosetta auf dem Weg nach außen war."
+      "description": "Größte Annäherung 5.301 km am 2007-11-13. Kurzzeitig für einen erdnahen Asteroiden gehalten (Bezeichnung 2007 VN84), bevor Beobachter erkannten, dass es Rosetta auf dem Weg nach außen war."
     },
     {
       "met": 2082,

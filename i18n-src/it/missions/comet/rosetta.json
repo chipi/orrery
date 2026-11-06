@@ -1,7 +1,7 @@
 {
   "name": "Rosetta",
   "vehicle": "Ariane 5G+",
-  "payload": "Orbiter (~2900 kg a secco, 11 strumenti) + lander di discesa Philae (~100 kg, 10 strumenti). Scudo termico, due fionde gravitazionali terrestri + una marziana, 957 giorni di ibernazione nello spazio profondo 2011–2014.",
+  "payload": "Orbiter (~1230 kg a secco, 11 strumenti) + lander di discesa Philae (~100 kg, 10 strumenti). Tre fionde gravitazionali terrestri + una marziana, 957 giorni di ibernazione nello spazio profondo 2011–2014.",
   "delta_v": "~2,3 km/s (incontro + operazioni sulla cometa)",
   "type": "ORBITER + LANDER · COMPLETATA",
   "first": "Primo veicolo spaziale a entrare in orbita attorno a una cometa — e ad atterrare su una (Philae, 2014-11-12)",
@@ -48,7 +48,7 @@
     {
       "met": 1351,
       "label": "Terra n. 2 — fionda gravitazionale",
-      "description": "Massimo avvicinamento di 5.295 km il 2007-11-13. Per breve tempo fu scambiata per un asteroide vicino alla Terra (designato 2007 VN84), finché gli osservatori capirono che era Rosetta in viaggio verso l'esterno."
+      "description": "Massimo avvicinamento di 5.301 km il 2007-11-13. Per breve tempo fu scambiata per un asteroide vicino alla Terra (designato 2007 VN84), finché gli osservatori capirono che era Rosetta in viaggio verso l'esterno."
     },
     {
       "met": 2082,

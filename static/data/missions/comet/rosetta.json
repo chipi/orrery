@@ -16,7 +16,7 @@
   "arrival_date": "2014-08-06",
   "transit_days": 3809,
   "vehicle": "Ariane 5G+",
-  "payload": "Orbiter (~2900 kg dry, 11 instruments) + Philae descent lander (~100 kg, 10 instruments). Heatshield, two Earth + one Mars gravity assist, 957 days of deep-space hibernation 2011–2014.",
+  "payload": "Orbiter (~1230 kg dry, 11 instruments) + Philae descent lander (~100 kg, 10 instruments). Three Earth + one Mars gravity assist, 957 days of deep-space hibernation 2011–2014.",
   "delta_v": "~2.3 km/s (rendezvous + comet ops)",
   "data_quality": "good",
   "flight_data_quality": "sparse",
@@ -92,7 +92,7 @@
         "met_days": 1351,
         "type": "flyby",
         "label": "Earth #2 — gravity assist",
-        "description": "Closest approach 5,295 km on 2007-11-13. Briefly mistaken for a near-Earth asteroid (designated 2007 VN84) before observers realised it was Rosetta heading out."
+        "description": "Closest approach 5,301 km on 2007-11-13. Briefly mistaken for a near-Earth asteroid (designated 2007 VN84) before observers realised it was Rosetta heading out."
       },
       {
         "met_days": 1648,
@@ -110,7 +110,7 @@
         "met_days": 2320,
         "type": "flyby",
         "label": "Lutetia (21) — asteroid flyby",
-        "description": "Closest approach 3,168 km from main-belt asteroid 21 Lutetia on 2010-07-10. At ~120 km mean diameter, Lutetia is the largest asteroid ever visited at close range; the M-type spectrum + high density suggested a metal-rich differentiated body."
+        "description": "Closest approach 3,162 km from main-belt asteroid 21 Lutetia on 2010-07-10. At ~120 km mean diameter, Lutetia is the largest asteroid ever visited at close range; the M-type spectrum + high density suggested a metal-rich differentiated body."
       },
       {
         "met_days": 3809,

@@ -1,7 +1,7 @@
 {
   "name": "Rosetta",
   "vehicle": "Ariane 5G+",
-  "payload": "Orbiter (~2900 kg dry, 11 instruments) + Philae descent lander (~100 kg, 10 instruments). Heatshield, two Earth + one Mars gravity assist, 957 days of deep-space hibernation 2011–2014.",
+  "payload": "Orbiter (~1230 kg dry, 11 instruments) + Philae descent lander (~100 kg, 10 instruments). Three Earth + one Mars gravity assist, 957 days of deep-space hibernation 2011–2014.",
   "delta_v": "~2.3 km/s (rendezvous + comet ops)",
   "type": "ORBITER + LANDER · FLOWN",
   "first": "First spacecraft to orbit a comet — and to land on one (Philae, 2014-11-12)",

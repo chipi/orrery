@@ -2264,8 +2264,8 @@
     "tr": "4acdd46c60"
   },
   "descent|de|missions/comet/rosetta.json :: payload": {
-    "why": "variant: Landeeinheit Philae (descent lander)",
-    "tr": "ef650f3a67"
+    "why": "variant: Landeeinheit Philae (descent lander); re-read 2026-11-06 after the dry-mass and flyby-count fix",
+    "tr": "9761616ae0"
   },
   "descent|de|missions/earth/voskhod-2.json :: description": {
     "why": "variant: Landemodul (descent module)",

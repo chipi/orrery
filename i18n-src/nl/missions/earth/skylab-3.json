@@ -1,12 +1,12 @@
 {
   "name": "Skylab 3",
   "vehicle": "Saturn IB (SA-207)",
-  "payload": "19979 kg lanceermassa; CSM-117 + bemanning van 3 personen",
+  "payload": "20121 kg lanceermassa; CSM-117 + bemanning van 3 personen",
   "delta_v": "~9,4 km/s (LEO)",
   "dispatch": "Skylab 3 nam de vraag naar het uithoudingsvermogen en verdubbelde het antwoord bijna. De eerste bemanning was 28 dagen gebleven, de bemanning van Alan Bean bleef er 59 — en bracht het menselijk lichaam verder in langdurige gewichtloosheid dan iemand ooit was gegaan, om gezonder terug te keren dan de pessimisten hadden gevreesd. Ze verzamelden een enorme hoeveelheid zonnewaarnemingen met de Apollo Telescope Mount en doorstonden een schrikmoment toen lekken in de stuurraketten van hun Apollo-pendelschip even de mogelijkheid van een reddingsvlucht opriepen. Bij Skylab 3 begonnen lange verblijven in de ruimte niet alleen overleefbaar maar ook routine te lijken — het stille voorwerk voor elke maandenlange stationsmissie sindsdien.",
   "type": "BEMANDE STATIONSBEMANNING · GEVLOGEN",
   "first": "Tweede Skylab-bemanning — 59 dagen, plaatste een zonneschild met twee palen ter vervanging van de parasol",
-  "description": "Bean, Garriott en Lousma — de tweede bemanning die aan boord van Skylab leefde, 59 dagen en 11 uur lang. Gelanceerd op 1973-07-28 om 11:11 UTC met een Saturn IB (SA-207). Binnen enkele uren na het aankoppelen kreeg de servicemodule van de CSM een lek in een stuurraket voor standregeling — de reserve-CSM-119 werd op Cape Canaveral klaargemaakt voor een mogelijke reddingsmissie, maar de bemanning voltooide de missie zonder problemen. Garriott leidde 305 uur aan zonne-observaties met de instrumenten van de Apollo Telescope Mount. Tijdens drie EVA's werd een zonneschild met twee palen boven de oorspronkelijke parasol geplaatst, het pakket met snelheidsgyroscopen gerepareerd en werden filmcassettes uit de ATM gehaald. Landde in zee op 1973-09-25 om 22:19 UTC; CSM-117 staat tentoongesteld in het Glenn Visitor Center, Cleveland.",
+  "description": "Bean, Garriott en Lousma — de tweede bemanning die aan boord van Skylab leefde, 59 dagen en 11 uur lang. Gelanceerd op 1973-07-28 om 11:11 UTC met een Saturn IB (SA-207). Bij de nadering van het station kreeg een quad stuurraketten voor standregeling van de servicemodule van de CSM een lek; na een tweede lek ongeveer zes dagen later werd de reserve-CSM-119 op Cape Canaveral klaargemaakt voor een mogelijke reddingsmissie, maar de bemanning voltooide de missie zonder problemen. Garriott leidde 305 uur aan zonne-observaties met de instrumenten van de Apollo Telescope Mount. Tijdens drie EVA's werd een zonneschild met twee palen boven de oorspronkelijke parasol geplaatst, het pakket met snelheidsgyroscopen gerepareerd en werden filmcassettes uit de ATM gehaald. Landde in zee op 1973-09-25 om 22:19 UTC; CSM-117 staat tentoongesteld in het Glenn Visitor Center, Cleveland.",
   "events": [
     {
       "met": 0,
@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.5,
+      "met": 6,
       "label": "LEK IN CSM-STUURRAKETTEN",
-      "note": "Service-modulelek in RCS-vierpoot; reddingsvoertuig CSM-119 werd bij Cape voorbereid maar niet gevlogen.",
+      "note": "Tweede lek in de RCS-vierpoot van de servicemodule (het eerste tijdens de nadering); reddingsvoertuig CSM-119 werd bij Cape voorbereid maar niet gevlogen.",
       "type": "warning"
     },
     {
-      "met": 30,
+      "met": 9,
       "label": "EVA: ZONNESCHILD MET TWEE PALEN",
       "note": "Bemanning plaatste dubbele-pool scherm over originele parasol.",
       "type": "nominal"

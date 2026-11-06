@@ -79,7 +79,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Saturn V",
-        "description": "Kennedy Space Center LC-39A, 1970-04-11 19:13 UTC. Apollo 13 — Lovell + Swigert + Haise — bound for the Fra Mauro highlands. The 5-month-delayed launch had been triggered by Swigert being a late substitute for prime crew member Ken Mattingly (suspected German measles exposure)."
+        "description": "Kennedy Space Center LC-39A, 1970-04-11 19:13 UTC. Apollo 13 — Lovell + Swigert + Haise — bound for the Fra Mauro highlands. The launch had slipped from March to 11 April 1970 to allow more planning time; Swigert replaced Ken Mattingly (suspected German measles exposure) two days before launch."
       },
       {
         "met_days": 0.117,
@@ -101,21 +101,21 @@
         "description": "1970-04-14 03:08 UTC. Oxygen tank 2 in the Service Module ruptured during a routine cryo stir, venting both O₂ tanks and crippling the CSM's fuel-cell electrical power. Cause was later traced to a damaged thermostatic-switch heater wire dating from pre-launch ground testing. Mission objective immediately switched from \"land on the Moon\" to \"get the crew home alive\"."
       },
       {
-        "met_days": 2.92,
+        "met_days": 2.56,
         "type": "tcm",
-        "label": "PC+2 burn — free-return correction",
-        "description": "1970-04-14. With the SPS engine ruled out (could compound the SM damage), the LM descent engine fired for 31 seconds to put Aquarius + Odyssey on a faster free-return trajectory back to Earth — using the Moon's gravity instead of a burn."
+        "label": "Free-return burn",
+        "description": "1970-04-14. With the SPS engine ruled out (could compound the SM damage), the LM descent engine fired for 34 seconds to put Aquarius + Odyssey on a faster free-return trajectory back to Earth — using the Moon's gravity instead of a burn."
       },
       {
-        "met_days": 3.13,
+        "met_days": 3.21,
         "type": "flyby",
         "label": "Moon — free-return flyby",
-        "description": "1970-04-14, closest approach 254 km above Mare Cognitum. Apollo 13 reached 400,171 km from Earth on the far side — the farthest humans had travelled from Earth until Artemis II (April 2026). No lunar landing — Aquarius (the LM, designed for 45 hours) had to keep three astronauts alive for 87 hours instead."
+        "description": "1970-04-15 00:21 UTC, closest approach 254 km above Mare Cognitum. Apollo 13 reached 400,171 km from Earth on the far side — the farthest humans had travelled from Earth until Artemis II (April 2026). No lunar landing — Aquarius (the LM, designed for 45 hours) had to keep three astronauts alive for 87 hours instead."
       },
       {
-        "met_days": 3.96,
+        "met_days": 3.31,
         "type": "tcm",
-        "label": "PC+22 — second LM burn correction",
+        "label": "PC+2 — second LM descent-engine burn",
         "description": "Another LM descent-engine burn refines the Earth-return trajectory + targets the splashdown ellipse."
       },
       {

@@ -33,19 +33,19 @@
       "type": "warning"
     },
     {
-      "met": 2.92,
+      "met": 2.56,
       "label": "QUEIMA DE RETORNO LIVRE",
-      "note": "Queima do motor de descida do LM com duração de 31 segundos retorna a espaçonave a uma trajetória de retorno livre.",
+      "note": "Queima do motor de descida do LM com duração de 34 segundos retorna a espaçonave a uma trajetória de retorno livre.",
       "type": "info"
     },
     {
-      "met": 3.13,
+      "met": 3.21,
       "label": "SOBREVOO LUNAR",
       "note": "Aproximação mínima de 254 km de altitude sobre Mare Cognitum — a 400.171 km, a distância mais longe que humanos haviam viajado da Terra (recorde mantido de 1970 a 2026, superado pela Artemis II em abril de 2026).",
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.31,
       "label": "QUEIMA PC+2",
       "note": "Queima de pericíntio mais 2 horas reduz o tempo de retorno à Terra em dez horas.",
       "type": "nominal"

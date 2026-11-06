@@ -33,19 +33,19 @@
       "type": "warning"
     },
     {
-      "met": 2.92,
+      "met": 2.56,
       "label": "ACCENSIONE RITORNO LIBERO",
-      "note": "Accensione di 31 secondi del motore di discesa dell'LM riporta l'astronave su una traiettoria di ritorno libero.",
+      "note": "Accensione di 34 secondi del motore di discesa dell'LM riporta l'astronave su una traiettoria di ritorno libero.",
       "type": "info"
     },
     {
-      "met": 3.13,
+      "met": 3.21,
       "label": "SORVOLO LUNARE",
       "note": "Approccio più vicino a 254 km di altitudine sopra Mare Cognitum — a 400.171 km, la distanza massima raggiunta dall'uomo dalla Terra (record mantenuto 1970–2026, superato da Artemis II ad aprile 2026).",
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.31,
       "label": "ACCENSIONE PC+2",
       "note": "L'accensione a 2 ore dopo il pericinzio riduce di dieci ore il tempo di ritorno sulla Terra.",
       "type": "nominal"

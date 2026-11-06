@@ -6,7 +6,8 @@
     "3. Drafts: 1-2 at quality medium, 2k (1 credit each) to settle layout and wording.",
     "4. Final: one render at quality high, 4k (4.25 credits), native 3504x2336 — no upscale needed (served base is 3072).",
     "5. Fixes: local patches (glyphs copied from the same sheet, paper patches) or a small crop edit pasted back cell by cell.",
-    "6. Content check: our mission/fleet text vs the sheet; wrong numbers fixed in all 14 locales."
+    "6. Content check: our mission/fleet text vs the sheet; wrong numbers fixed in all 14 locales.",
+    "Prompt rule since Rosetta: CALLOUT RULE — each number once on the drawing, pointing at the part its list line names (the Rosetta drafts doubled callouts 1 and 3; the final did not)."
   ],
   "sheets": {
     "voyager-2": {
@@ -43,15 +44,39 @@
       ],
       "notes": "The Venus 1 → Venus 2 leg is drawn as one conic; the real flight had a deep space manoeuvre on 3 Dec 1998, noted on the sheet. SRMU thrust left off: Wikipedia's 15.12 MN does not say per motor or both.",
       "content_check": "Fixed: our payload said the orbiter was ~5712 kg dry; 5,712 kg is the whole stack at launch, dry is 2,523 kg (all 14 locales, commit cd90ae7b4a5). Checked and kept: Huygens ~318 kg (ESA probe mass), Venus 1 284 km (JPL); the sheet uses these. Added to the sheet from our data: SOI 96-minute burn, 626 m/s (JPL)."
+    },
+    "rosetta": {
+      "date": "2026-11-06",
+      "reference_media": "9ee638b6-9ae6-4872-9e8b-f62f9980d0f2",
+      "drafts": ["2d8e356e-5253-4897-9de7-9c5de774fe60", "d3aa86fc-5a66-4813-b593-e2e298a6b120"],
+      "edits": [
+        "none needed: every callout single and matched, every number as briefed (checked reduced and at full size on the inner cruise and equations)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)",
+        "https://en.wikipedia.org/wiki/Ariane_5",
+        "https://m.esa.int/Our_Activities/Operations/Rosetta_closes_in_on_Earth_a_second_time",
+        "https://sci.esa.int/web/rosetta/-/45841-rosetta-s-third-earth-swingby",
+        "https://www.esa.int/Enabling_Support/Operations/Rosetta_lines_up_for_spectacular_asteroid_flyby",
+        "JPL SBDB elements for 67P, 2867 Steins, 21 Lutetia (ssd-api.jpl.nasa.gov/sbdb.api, full precision, 2026-11-06)"
+      ],
+      "notes": "Two legs of more than one turn (launch → Earth 1, Earth 1 → Mars) are fitted Kepler ellipses, not Lambert arcs. Computed and matching ESA: Steins 2.14 AU and Lutetia 2.72 AU from the Sun at the flybys, farthest 5.29 AU (hibernation), comet 2.71 AU from Earth at arrival, 28 min signal time at Philae landing. Ariane 5 G+ height and launch mass left off: Wikipedia gives a range and infers the mass from the plain G.",
+      "content_check": "Fixed in all 14 locales (commit 45a52d9212c): orbiter dry mass ~2900 → ~1230 kg (3,000 kg is the launch mass); 'two Earth + one Mars' → three Earth + one Mars; 'Heatshield' removed (Rosetta had none); Earth 2 5,295 → 5,301 km (ESA actual, 5,295 was the plan); Lutetia 3,168 → 3,162 km (ESA). Kept: Earth 3 on 13 Nov 2009 (ESA; Wikipedia's 12 Nov is wrong), Earth 1 1,955 km.",
+      "final_job": "84e9256e-3123-4520-8253-6192857dd30a"
     }
   },
   "queue": {
-    "_about": "Order for the remaining /explore missions (2026-11-06): the most distinct missions first, near-twins of a sheet already done (or of one earlier in the list) last. 'needs' = what blueprint-plan-view.ts lacks for that mission today.",
+    "_about": "Order for the remaining /explore missions (2026-11-06): the most distinct missions first, near-twins of a sheet already done (or of one earlier in the list) last. 'needs' = what blueprint-plan-view.ts lacks for that mission today. Apollo 11 added second by the operator.",
     "order": [
       {
         "id": "rosetta",
         "why": "comet chase: three Earth flybys and one of Mars, ten years to rendezvous, orbit and Philae lander",
         "needs": "comet 67P orbit (Keplerian elements), rendezvous end"
+      },
+      {
+        "id": "apollo11",
+        "why": "the first crewed landing on another world: Saturn V, translunar injection, lunar orbit, Eagle at Tranquility Base, return to the Pacific",
+        "needs": "a cislunar plan view (Earth–Moon frame: parking orbit, TLI, free-return figure-eight, LOI, descent) instead of the heliocentric map"
       },
       {
         "id": "ulysses",

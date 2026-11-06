@@ -5292,8 +5292,8 @@
     "tr": "4d6db4245f"
   },
   "trajectory|hi|missions/jupiter/juno.json :: description": {
-    "why": "orbit sense; कक्षा is correct",
-    "tr": "b78e3d1d82"
+    "why": "orbit sense; कक्षा is correct; re-read 2026-11-06 after the cyclone-count fix",
+    "tr": "f01d3b5834"
   },
   "trajectory|hi|programs/gaganyaan.json :: outcome.2.md": {
     "why": "figurative: direction/course, not a flight path",
@@ -5328,8 +5328,8 @@
     "tr": "8f32223174"
   },
   "trajectory|ko|missions/jupiter/juno.json :: description": {
-    "why": "variant: 극궤도 (polar orbit around Jupiter)",
-    "tr": "8d853e5278"
+    "why": "variant: 극궤도 (polar orbit around Jupiter); re-read 2026-11-06 after the cyclone-count fix",
+    "tr": "f3203fd81b"
   },
   "trajectory|ko|missions/mercury/messenger.json :: events.1.note": {
     "why": "trajectory omitted by paraphrase (속도를 낮추기 위한)",

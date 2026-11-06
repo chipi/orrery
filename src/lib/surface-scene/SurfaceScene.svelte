@@ -5818,8 +5818,8 @@ sample      ${debugInfo.projectedPxSample}`}
   <!-- Only once the site icons arrive with zoom (operator, #641): the first
        view is a bare globe. And not near the ground: zoomed in on one site
        the strip just covers the route and imagery. Mobile keeps the Nations
-       tab. -->
-  {#if !panoramaActive && tagStageOn && altitudeKm >= config.radiusKm * 0.044}
+       tab. The 2D map shows every site, so it always has the strip. -->
+  {#if !panoramaActive && (view === '2d' || (tagStageOn && altitudeKm >= config.radiusKm * 0.044))}
     <div
       class="legend-3d"
       class:beside-panel={panelOpen}

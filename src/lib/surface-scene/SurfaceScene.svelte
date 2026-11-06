@@ -2595,22 +2595,25 @@
     // Apply initialView (lat/lon → spherical θ/φ) before camR0 is
     // snapshotted, so resetCamera() returns to the geo-oriented pose.
     // Skipped if the route consumer didn't set initialView.
-    // Same direction maths as faceLatLon: the camera sits over the point the
-    // markers' latLonToUnitSphere puts at lat/lon. camT = lon (as before)
-    // opened 90° west of it — a viewer in Amsterdam faced North America (#641).
-    if (initialView) {
-      const v = latLonToUnitSphere(
-        Math.max(-90, Math.min(90, initialView.latDeg)),
-        initialView.lonDeg,
-      );
-      camP = Math.acos(Math.max(-1, Math.min(1, v.y)));
-      camT = Math.atan2(v.x, v.z);
-    }
+    // initialFacing turns the planet first: the camera sits on +Z at camT = 0,
+    // and a point at longitude L comes round to face it after a turn of
+    // −90° − L about Y (the lit side stays lit).
     if (initialFacing && !initialView) {
-      // The camera sits on +Z at camT = 0; a point at longitude L comes round
-      // to face it after a planet turn of −90° − L about Y.
       planetMesh.rotation.y = (-(90 + initialFacing.lonDeg) * Math.PI) / 180;
-      camP = ((90 - Math.max(-89, Math.min(89, initialFacing.latDeg))) * Math.PI) / 180;
+    }
+    // Then the camera goes over the point in WORLD space, the way faceLatLon
+    // does: through the planet's matrix, so the axial tilt counts (#641:
+    // camT = lon opened 90° west of the viewer; ignoring the 23.4° tilt put
+    // Belgrade's view over the Sahara).
+    const openOn = initialView ?? initialFacing;
+    if (openOn) {
+      const v = latLonToUnitSphere(Math.max(-90, Math.min(90, openOn.latDeg)), openOn.lonDeg);
+      // Parents too: before the first render the tilt group's world matrix
+      // is still identity.
+      planetMesh.updateWorldMatrix(true, false);
+      const dir = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld).normalize();
+      camP = Math.acos(Math.max(-1, Math.min(1, dir.y)));
+      camT = Math.atan2(dir.x, dir.z);
     }
     const camR0 = camR;
     const camP0 = camP;

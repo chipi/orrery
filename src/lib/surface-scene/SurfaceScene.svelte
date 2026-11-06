@@ -3861,45 +3861,12 @@
           }
           const labelFade = Math.max(0, 1 - regionalOpacityTop * 4);
 
-          const tierByIdForLabels = new Map<string, number>();
-          for (const h of hotspots) {
-            tierByIdForLabels.set(h.siteId, Math.max(h.currentTier, h.targetTier));
-          }
-          // Label fade only applies to the SELECTED site's label —
-          // unselected sites keep their labels fully visible so the
-          // wider scene context is preserved while the user zooms in on
-          // one site (user feedback 2026-06-08: "you hid all the
-          // labels, and I asked only one from the site that is
-          // selected"). Tier-2 hard hide still applies to every label
-          // (those are physically inside the rectangle anyway).
-          // Museum pin labels (PRD-027) follow the same zoom band fade.
-          for (const p of [...museumPins, ...observatoryPins]) {
-            const layerOn = museumPins.includes(p) ? museumsOn : telescopesOn;
-            p.labelGroup.visible = layerOn && labelFade >= 0.01;
-            if (!p.labelGroup.visible) continue;
-            p.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
-            p.labelGroup.traverse((obj) => {
-              if (obj instanceof THREE.Sprite) {
-                const mat = obj.material as THREE.SpriteMaterial;
-                mat.opacity = labelFade;
-                mat.transparent = true;
-              }
-            });
-          }
           const selectedSiteId = selected?.id;
-          // The 0.65 floor froze the label's WORLD size below camR ≈ 47 while
-          // the camera kept closing in, so a neighbour's name grew to fill the
-          // view at regional zoom (#641: "SCHIAPARELLI EDM" over Opportunity).
-          // Below that point it shrinks with surface distance — on-screen size
-          // held where the floor starts.
-          const LABEL_FLOOR_SURF = 47.1 - 30;
-          const siteLabelScale =
-            Math.max(0.65, zoomScale) * Math.min(1, Math.max(0.05, camR - 30) / LABEL_FLOOR_SURF);
           // A neighbour whose marker sits under the selected site's magnified
-          // imagery is drawn at its true place on a ~20× map, so its name lands
+          // imagery is drawn at its true place on a ~20× map, so its tag lands
           // on the wrong ground and over the route (#641: Schiaparelli EDM on
-          // Opportunity's drive). Those fade with the selected label; the rest
-          // keep theirs (2026-06-08 feedback).
+          // Opportunity's drive). Those fade with the regional reveal; the rest
+          // keep theirs (2026-06-08 feedback: hide only the selected site's).
           const footCtr = selected
             ? (routeViewCenters.get(selected.id) ??
               (selected.lat != null && selected.lon != null
@@ -3908,24 +3875,19 @@
             : null;
           const footUnit = footCtr ? latLonToUnitSphere(footCtr.lat, footCtr.lon) : null;
           const footR = (REGIONAL_PATCH_DIAMETER_WORLD_UNITS * 0.75) / planetRadius;
+          // The selected site's tag leaves first (camR 60 → 50): seen from
+          // straight above, its leader points at the camera; the panel title
+          // and crosshair carry it (#641). A site's own imagery tier no longer
+          // hides its tag — with nothing selected the LOD promotes and evicts
+          // sites as you zoom, and the tags blinked with it.
+          const selectedFade = Math.max(0, Math.min(1, (camR - 50) / 10));
           for (const mk of markers) {
-            if (!mk.labelGroup) continue;
-            const t = tierByIdForLabels.get(mk.siteId) ?? 0;
-            if (t >= 2) {
-              mk.labelGroup.visible = false;
-              siteTagFade.set(mk.siteId, 0);
-              continue;
-            }
             let underFootprint = false;
             if (footUnit && mk.siteId !== selectedSiteId) {
               const u = legendScratchA.copy(mk.group.position).normalize();
               underFootprint =
                 Math.hypot(u.x - footUnit.x, u.y - footUnit.y, u.z - footUnit.z) < footR;
             }
-            // The selected site's label leaves first (camR 60 → 50): seen from
-            // straight above, its leader points at the camera and the name sat
-            // on the marker; the panel title and crosshair carry it (#641).
-            const selectedFade = Math.max(0, Math.min(1, (camR - 50) / 10));
             const fade =
               mk.siteId === selectedSiteId
                 ? Math.min(labelFade, selectedFade)
@@ -3933,45 +3895,6 @@
                   ? labelFade
                   : 1;
             siteTagFade.set(mk.siteId, mk.group.visible ? fade : 0);
-            if (fade < 0.01) {
-              mk.labelGroup.visible = false;
-              continue;
-            }
-            mk.labelGroup.visible = true;
-            mk.labelGroup.scale.setScalar(siteLabelScale);
-            if (fade < 0.99) {
-              mk.labelGroup.traverse((obj) => {
-                if (obj instanceof THREE.Sprite) {
-                  const mat = obj.material as THREE.SpriteMaterial;
-                  mat.opacity = fade;
-                  mat.transparent = true;
-                } else if (obj instanceof THREE.Mesh) {
-                  const mat = obj.material as THREE.Material & { opacity: number };
-                  if ('opacity' in mat) {
-                    mat.opacity = fade;
-                    mat.transparent = true;
-                  }
-                }
-              });
-            } else {
-              // Reset to fully opaque when not fading (the user
-              // unselected this site after a partial fade).
-              mk.labelGroup.traverse((obj) => {
-                if (obj instanceof THREE.Sprite) {
-                  const mat = obj.material as THREE.SpriteMaterial;
-                  if (mat.opacity !== 1) {
-                    mat.opacity = 1;
-                    mat.transparent = false;
-                  }
-                } else if (obj instanceof THREE.Mesh) {
-                  const mat = obj.material as THREE.Material & { opacity: number };
-                  if ('opacity' in mat && mat.opacity !== 1) {
-                    mat.opacity = 1;
-                    mat.transparent = false;
-                  }
-                }
-              });
-            }
           }
 
           // Site tags: content when the lists change (load, locale), then

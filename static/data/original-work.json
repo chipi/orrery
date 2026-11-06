@@ -1612,6 +1612,12 @@
   ],
   "blueprint_art": [
     {
+      "title": "Apollo-Soyuz Test Project (ASTP)",
+      "file": "/images/blueprints/apollo-soyuz.webp",
+      "route": "/missions?id=apollo-soyuz",
+      "cover": false
+    },
+    {
       "title": "Apollo 11",
       "file": "/images/blueprints/apollo11.webp",
       "route": "/missions?id=apollo11",
@@ -1678,6 +1684,12 @@
       "cover": false
     },
     {
+      "title": "Sputnik 1",
+      "file": "/images/blueprints/sputnik1.webp",
+      "route": "/missions?id=sputnik1",
+      "cover": false
+    },
+    {
       "title": "Ulysses",
       "file": "/images/blueprints/ulysses.webp",
       "route": "/missions?id=ulysses",
@@ -1687,6 +1699,12 @@
       "title": "Venera 13",
       "file": "/images/blueprints/venera-13.webp",
       "route": "/missions?id=venera-13",
+      "cover": false
+    },
+    {
+      "title": "Vostok 1",
+      "file": "/images/blueprints/vostok-1.webp",
+      "route": "/missions?id=vostok-1",
       "cover": false
     },
     {
@@ -4002,7 +4020,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 14,
+    "blueprint_art": 17,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

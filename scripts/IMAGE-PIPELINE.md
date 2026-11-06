@@ -453,6 +453,28 @@ The pipeline's design decisions are locked in these ADRs. Read the relevant one 
 
 ---
 
+## Mission blueprints
+
+Hand-drafted indigo mission sheets, shown on the mission page (OVERVIEW and FLIGHT) and opened in
+the shared drawing viewer. The image model redraws a **computed reference sheet**, so the
+geometry is ours, not the model's; every fact on the prompt comes from a source recorded in
+`scripts/anatomy/blueprints-history.json`, together with the jobs, local fixes and the content
+check (our mission text made to agree with the sheet, all 14 locales).
+
+| Script | Reference it draws | Missions |
+|---|---|---|
+| `anatomy/blueprint-plan-view.ts` | Heliocentric plan view: JPL ephemeris planets, SBDB/Horizons small bodies, Lambert or fitted multi-turn legs, `ride` (along a body's orbit) and `spiral` (ion thrust, schematic) legs, √r or linear scale, optional true-scale inner detail | interplanetary |
+| `anatomy/blueprint-cislunar-view.ts` | Schematic figure-eight in the rotating Earth–Moon frame, lunar orbit to true scale | Apollo 11 |
+| `anatomy/blueprint-polar-view.ts` | Side view of an out-of-ecliptic orbit built from sourced facts | Ulysses |
+| `anatomy/blueprint-earth-view.ts` | Ground track on a world map (coastlines traced from `static/textures/2k_earth_daymap.jpg`; circular-orbit model with GMST and J2 drift, checked against a sourced place) and the orbit to true scale | Sputnik 1, Vostok 1, Apollo–Soyuz |
+
+Wiring after a master lands in `masters/blueprints/<mission-id>.png`: `node scripts/build-anatomy-webp.mjs`
+(writes `src/lib/blueprint-ids.json`) → `node scripts/vision/build-display-ladder.mjs --only blueprints`
+→ `node scripts/vision/add-card-rungs.mjs --stems=blueprints/<id>` → `node scripts/build-original-work.mjs`
+(colophon) → `npx prettier --write static/data/image-ladder.json` → `npm run validate-data`.
+
+---
+
 ## Five gotchas (cross-link to AGENTS.md)
 
 The full prose lives in [AGENTS.md §"Image pipeline — gotchas"](../AGENTS.md#image-pipeline--gotchas). Headlines only:

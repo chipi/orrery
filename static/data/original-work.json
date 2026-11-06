@@ -1624,6 +1624,12 @@
       "cover": false
     },
     {
+      "title": "Galileo",
+      "file": "/images/blueprints/galileo.webp",
+      "route": "/missions?id=galileo",
+      "cover": false
+    },
+    {
       "title": "New Horizons",
       "file": "/images/blueprints/new-horizons.webp",
       "route": "/missions?id=new-horizons",
@@ -3960,7 +3966,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 7,
+    "blueprint_art": 8,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

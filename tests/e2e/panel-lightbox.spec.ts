@@ -136,7 +136,7 @@ test.describe('panel lightbox', () => {
   });
 
   test('a mission without a blueprint shows none', async ({ page }) => {
-    await page.goto('/missions?id=galileo');
+    await page.goto('/missions?id=curiosity');
     await expect(page.locator('.panel-hero-btn').first()).toBeVisible({ timeout: 10_000 });
     await expect(page.getByTestId('mission-blueprint')).toHaveCount(0);
   });

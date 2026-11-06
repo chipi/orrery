@@ -136,6 +136,27 @@
       ],
       "notes": "No draft. Plan view: a single Earth → Venus leg, 147° in 122 days (Type I, under the 146-day Hohmann half-orbit for a = 0.86 AU). Panel F titled ENTRY AND DESCENT PROFILE (new `f` field in the generator). Not on the sheet: entry speed (our 11.2 km/s is unsourced) and the lens-cap story (Wikipedia tells it of Venera 14).",
       "content_check": "Fixed (mission + fleet, all 14 locales): lander 760 kg, not 1645 kg (that is the listed dry mass); surface pressure 89 atm, not 89 bar (9.0 MPa = 90 bar); fleet English best_known_for \"twice\" → about four times its 32-minute design life. Earlier: design life and ~4,400 kg (commit 97fdfb4a2fb)."
+    },
+    "galileo": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts galileo",
+      "reference_media": "6239fe3f-08db-4678-b850-1d3647e6047e",
+      "drafts": [],
+      "final_job": "8d0095e7-5a57-481b-870f-34822513e960",
+      "edits": [
+        "panel F: \"EARTH 1 1960 KM\" → 960 KM (stray 1 papered over)",
+        "panel H: μ₀ → μ☉ (dot drawn in the circle)",
+        "panel B crop edit (job b6b68b8d-8299-4ffc-abf0-7c7725d15d5c): ① moved to the left booster, ③ added on the orbiter wing (it was missing from the drawing)",
+        "panel C crop edit (job 728b37c3-d44f-4af8-9259-265fff4572d1): duplicate ④ removed and renumbered 1–5; \"ON TO VTAGES\" → \"ON TO VENUS\"; note reworded from \"Centaur was banned from the Shuttle\" to \"NASA cancelled the more powerful Shuttle-Centaur upper stage\" (Wikipedia: cancelled)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Galileo_project (launch, flyby dates and distances, masses, 570 W, 160 bit/s, VEEGA after the Shuttle-Centaur cancellation)",
+        "https://en.wikipedia.org/wiki/Galileo_Probe (release, entry 48 km/s, 61.4 min)",
+        "https://science.nasa.gov/mission/galileo/ (34 orbits, 58 min, 23 × Earth pressure, end 21 Sept 2003)",
+        "JPL SBDB elements for 951 Gaspra and 243 Ida"
+      ],
+      "notes": "No draft. Flyby times set to noon (dates only in the source). Probe data time differs between sources (NASA 58 min, Wikipedia 61.4 min): the sheet says about an hour. Generator: Gaspra and Ida elements; per-event `tag` puts a label beside a dot at a panel edge.",
+      "content_check": "Fixed: payload \"~2.5 t dry mass\" → 2,560 kg at launch, orbiter dry mass 1,880 kg (all 14 locales); arrival event \"confirmed liquid water under Europa's ice\" → found evidence of (NASA: evidence supports; English-only flight text). Not changed: probe release 1995-07-13 in our data vs 12 July 03:07 UTC in Wikipedia (time-zone or source difference, not resolved); entry 47.4 km/s in our data vs ~48 km/s in Wikipedia (the sheet says about 48)."
     }
   },
   "queue": {

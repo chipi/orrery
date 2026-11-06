@@ -73,6 +73,42 @@ const SMALL: Record<string, Elements> = {
     ma: 275.4028858220599,
     epoch: 2461200.5,
   },
+  gaspra: {
+    a: 2.209978353670737,
+    e: 0.1737374595425464,
+    i: 4.10465496946464,
+    om: 252.9672913251979,
+    w: 130.0037637381037,
+    ma: 112.9508716440696,
+    epoch: 2461200.5,
+  },
+  ida: {
+    a: 2.863348031699649,
+    e: 0.04610962795708528,
+    i: 1.130363094271507,
+    om: 323.5366609419851,
+    w: 113.2571826848795,
+    ma: 49.64769088009876,
+    epoch: 2461200.5,
+  },
+  vesta: {
+    a: 2.361365965127599,
+    e: 0.09020374382834395,
+    i: 7.143925545058711,
+    om: 103.701293265032,
+    w: 151.4686478221564,
+    ma: 81.19015607686903,
+    epoch: 2461200.5,
+  },
+  ceres: {
+    a: 2.765552595034094,
+    e: 0.07969229514816586,
+    i: 10.58802780183462,
+    om: 80.24862682043221,
+    w: 73.29421453021587,
+    ma: 274.4193463761342,
+    epoch: 2461200.5,
+  },
   lutetia: {
     a: 2.434430742712361,
     e: 0.1647703512177245,
@@ -107,6 +143,13 @@ interface Event {
    *  two positions (Rosetta's one-year Earth-to-Earth orbit: 1). The single-revolution Lambert
    *  solver cannot represent those; the leg is then a Kepler ellipse fitted by `multiRevLeg`. */
   revs?: number;
+  /** Put the label beside the dot instead of away from the Sun (a dot at a panel edge). */
+  tag?: 'left' | 'right';
+  /** The leg INTO this event rides along the same body's orbit (Dawn in orbit around Vesta). */
+  ride?: boolean;
+  /** The leg INTO this event was flown on ion thrust: no conic fits it, so it is drawn as a
+   *  spiral with the radius changing evenly with angle (plus `revs` full turns). Schematic. */
+  spiral?: boolean;
 }
 
 /**
@@ -157,6 +200,36 @@ interface Mission {
   f?: string;
 }
 const MISSIONS: Record<string, Mission> = {
+  // Wikipedia "Dawn (spacecraft)": launch 11:34 UTC; flyby, arrival and departure dates (noon).
+  dawn: {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '2007-09-27T11:34:00Z' },
+      { label: 'MARS', body: 'mars', utc: '2009-02-17T12:00:00Z' },
+      { label: 'VESTA · ARRIVAL', body: 'vesta', utc: '2011-07-16T12:00:00Z', revs: 1, spiral: true },
+      { label: 'VESTA · DEPARTURE', body: 'vesta', utc: '2012-09-05T12:00:00Z', ride: true },
+      { label: 'CERES · ARRIVAL', body: 'ceres', utc: '2015-03-06T12:00:00Z', spiral: true },
+    ],
+    orbits: ['earth', 'mars', 'jupiter'],
+    smallOrbits: ['vesta', 'ceres'],
+    end: 'orbit',
+    bottom: 'E. TWO WORLDS · VESTA AND CERES',
+  },
+  // Wikipedia "Galileo project": launch 16:53:40 UTC, probe entry 22:04 UTC; flyby dates (noon).
+  galileo: {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '1989-10-18T16:53:40Z' },
+      { label: 'VENUS', body: 'venus', utc: '1990-02-10T12:00:00Z' },
+      { label: 'EARTH 1', body: 'earth', utc: '1990-12-08T12:00:00Z' },
+      { label: 'GASPRA', body: 'gaspra', utc: '1991-10-29T12:00:00Z', tag: 'right' },
+      { label: 'EARTH 2', body: 'earth', utc: '1992-12-08T12:00:00Z' },
+      { label: 'IDA', body: 'ida', utc: '1993-08-28T12:00:00Z', tag: 'right' },
+      { label: 'JUPITER · ARRIVAL', body: 'jupiter', utc: '1995-12-07T22:04:00Z', tag: 'right' },
+    ],
+    orbits: ['venus', 'earth', 'mars', 'jupiter'],
+    end: 'orbit',
+    bottom: 'J. AT JUPITER · PROBE ENTRY 7 DEC 1995',
+    detail: { title: 'E. INNER CRUISE · TRUE SCALE', maxAu: 3.0 },
+  },
   // Wikipedia "Venera 13": launch 06:04 UTC, lander touchdown 03:57:21 UTC.
   'venera-13': {
     events: [
@@ -303,6 +376,28 @@ for (let i = 0; i < pos.length - 1; i++) {
   const a = pos[i]!;
   const b = pos[i + 1]!;
   const tof = b.jd - a.jd;
+  if (b.ride) {
+    for (let k = 0; k <= 300; k++) {
+      const jd = a.jd + (tof * k) / 300;
+      const q = b.body in SMALL ? smallBody(SMALL[b.body]!, jd) : heliocentric(b.body as PlanetId, jd);
+      path.push({ x: q.x, y: q.y });
+    }
+    continue;
+  }
+  if (b.spiral) {
+    const r1 = Math.hypot(a.p.x, a.p.y);
+    const r2 = Math.hypot(b.p.x, b.p.y);
+    const t1 = Math.atan2(a.p.y, a.p.x);
+    let d = Math.atan2(b.p.y, b.p.x) - t1;
+    d = ((d % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+    const sweep = 2 * Math.PI * (b.revs ?? 0) + d;
+    for (let k = 0; k <= 600; k++) {
+      const u = k / 600;
+      const r = r1 + (r2 - r1) * u;
+      path.push({ x: r * Math.cos(t1 + sweep * u), y: r * Math.sin(t1 + sweep * u) });
+    }
+    continue;
+  }
   if (b.revs) {
     const leg = multiRevLeg(
       Math.hypot(a.p.x, a.p.y),
@@ -403,7 +498,7 @@ function planView(pr: Proj, orbits: PlanetId[], clip: number, quiet: Set<number>
       `<circle cx="${q.x}" cy="${q.y}" r="${e.body === 'earth' ? fs / 3 : fs / 1.8}" fill="#e8eeff"/>`,
     );
     // Labels point away from the Sun, so neighbouring events on one orbit do not collide.
-    const out = Math.atan2(q.y - c.y, q.x - c.x);
+    const out = e.tag === 'right' ? 0 : e.tag === 'left' ? Math.PI : Math.atan2(q.y - c.y, q.x - c.x);
     const lx = q.x + Math.cos(out) * fs * 1.4;
     const ly = q.y + Math.sin(out) * fs * 1.4 + fs / 3;
     const anchor = Math.cos(out) < -0.2 ? 'end' : Math.cos(out) > 0.2 ? 'start' : 'middle';

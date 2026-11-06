@@ -1,0 +1,31 @@
+{
+  "intro": "Vega 2 raggiunse Venere quattro giorni dopo la gemella, il 15 giugno 1985, e fece lo stesso: un pallone tra le nubi, un lander al suolo, la sonda verso la cometa di Halley. Questa volta la trivella funzionò. Il campione somigliava a una roccia anortosite-troctolite, rara sulla Terra ma nota negli altopiani della Luna. Il pallone galleggiò per circa 46 ore, e il 9 marzo 1986 la sonda passò a circa 8.000 km dal nucleo della cometa.",
+  "chapters": [
+    {
+      "id": "venus",
+      "title": "Venere",
+      "subtitle": "15 giugno 1985 — il secondo lander e il secondo pallone",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/01.webp",
+          "caption": "La missione Vega: l'ingresso della capsula nell'atmosfera di Venere, il pallone che si apre sotto il paracadute e la rotta della sonda verso la cometa di Halley."
+        },
+        {
+          "src": "/images/missions/vega-2/03.webp",
+          "caption": "Una capsula di discesa Vega esposta, la sfera che portò il lander e il pallone fino a Venere."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Cometa di Halley",
+      "subtitle": "9 marzo 1986 — a circa 8.000 km dal nucleo",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/02.webp",
+          "caption": "Il foglietto filatelico sovietico per lo studio internazionale della cometa di Halley. Le misure delle due Vega sulla posizione del nucleo aiutarono la sonda europea Giotto a mirare il proprio passaggio, molto più ravvicinato, cinque giorni dopo."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "intro": "Vega 2 erreichte die Venus vier Tage nach ihrer Zwillingssonde, am 15. Juni 1985, und tat dasselbe: ein Ballon in die Wolken, ein Lander auf den Boden, die Sonde weiter zum Halleyschen Kometen. Diesmal funktionierte der Bohrer. Die Probe glich einem Anorthosit-Troktolith-Gestein, das auf der Erde selten ist, aus dem Hochland des Mondes aber bekannt. Der Ballon schwebte rund 46 Stunden, und am 9. März 1986 passierte die Sonde den Kern des Kometen in rund 8.000 km Abstand.",
+  "chapters": [
+    {
+      "id": "venus",
+      "title": "Venus",
+      "subtitle": "15. Juni 1985 – der zweite Lander und Ballon",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/01.webp",
+          "caption": "Die Vega-Mission: der Eintritt der Kapsel in die Venusatmosphäre, der Ballon, der sich an seinem Fallschirm öffnet, und der Weg der Sonde weiter zum Halleyschen Kometen."
+        },
+        {
+          "src": "/images/missions/vega-2/03.webp",
+          "caption": "Eine Vega-Abstiegskapsel in einer Ausstellung – die Kugel, die Lander und Ballon zur Venus hinabbrachte."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Halleyscher Komet",
+      "subtitle": "9. März 1986 – rund 8.000 km vom Kern",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/02.webp",
+          "caption": "Der sowjetische Briefmarkenblock zur internationalen Erforschung des Halleyschen Kometen. Die Messungen der Vega-Sonden, wo der Kern lag, halfen Europas Giotto, den eigenen, viel näheren Vorbeiflug fünf Tage später zu zielen."
+        }
+      ]
+    }
+  ]
+}

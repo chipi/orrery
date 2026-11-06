@@ -1,0 +1,42 @@
+{
+  "intro": "Deux jours avant d'atteindre Vénus, Vega 1 s'est séparée en deux : une capsule contenant un atterrisseur et un ballon est entrée dans l'atmosphère le 11 juin 1985, tandis que la sonde principale poursuivait sa route vers la comète de Halley. Le ballon a flotté dans les nuages à environ 54 km d'altitude pendant quelque 46 heures — le premier ballon scientifique lancé sur une autre planète. Les turbulences de la descente ont déclenché les expériences de surface de l'atterrisseur, dont la foreuse, vers 20 km d'altitude, si bien qu'il n'a jamais prélevé le sol. Le 6 mars 1986, la sonde est passée à environ 8 900 km du noyau de la comète.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Un atterrisseur de type Venera et un ballon dans une même capsule",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/02.webp",
+          "caption": "Du matériel d'une sonde Vega en cours d'assemblage : le porteur qui allait poursuivre jusqu'à la comète de Halley."
+        },
+        {
+          "src": "/images/missions/vega-1/04.webp",
+          "caption": "Une capsule de descente Vega exposée : la sphère qui a fait descendre l'atterrisseur et le ballon vers Vénus."
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "title": "Vénus",
+      "subtitle": "11 juin 1985 — un atterrisseur au sol, un ballon dans les nuages",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/03.webp",
+          "caption": "Le plan de Vega : la capsule entre dans l'atmosphère de Vénus, libère le ballon et l'atterrisseur, et la sonde poursuit vers la comète de Halley."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "La comète de Halley",
+      "subtitle": "6 mars 1986 — à environ 8 900 km du noyau",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/01.webp",
+          "caption": "Le bloc-feuillet soviétique consacré à l'étude internationale de la comète de Halley : Edmond Halley, une sonde Vega et la comète."
+        }
+      ]
+    }
+  ]
+}

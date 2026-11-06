@@ -1,0 +1,46 @@
+{
+  "intro": "Venera 13 landete am 1. März 1982 auf der Venus, knapp östlich von Phoebe Regio, und arbeitete 127 Minuten lang bei 457 °C und etwa dem 90-Fachen des Luftdrucks auf Meereshöhe der Erde – viermal so lange wie die vorgesehenen 32 Minuten. Sie sandte die ersten Farbbilder der Venusoberfläche und bohrte eine Bodenprobe an, die ihr Röntgengerät als kaliumreichen Basalt bestimmte.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Eine Druckkugel auf einem Knautschring",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/04.webp",
+          "caption": "Ein beschriftetes Modell einer Venera-Sonde dieser Generation: der Träger mit Triebwerk, Solarzellen und Parabolantenne, darauf die Kugel, die den Lander hinabbrachte."
+        },
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "Die sowjetische Briefmarke von 1982 für Venera 13 und ihre Zwillingssonde Venera 14, die vier Tage später rund 950 km entfernt landete."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "127 Minuten auf der Venus – gelandet am 1. März 1982",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "Eine Schwarz-Weiß-Aufnahme von Venera 13: flache Gesteinsplatten und dunkler Boden, am Rand die Technik des Landers selbst. Die Kamera blickte durch ein Fenster und schwenkte von Seite zu Seite."
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "Das Farbpanorama, neu bearbeitet: der erste Farbblick auf den Boden der Venus. Am unteren Rand beider Hälften verläuft der gezahnte Ring des Landers."
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "Vermächtnis",
+      "subtitle": "Bis heute die letzten Bilder von der Venusoberfläche",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/05.webp",
+          "caption": "Ansichten der Venus von Venera 13 und 14 neben Ansichten des Mars von Viking 1 und 2 – ein Vergleich, den Stephen Paul Meszaros für die NASA zusammenstellte."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "intro": "在抵达金星前两天,Vega 1 一分为二:装有着陆器和气球的返回舱于 1985 年 6 月 11 日进入大气层,主探测器则继续飞往哈雷彗星。气球在约 54 km 高的云层中漂浮了约 46 小时,是第一个在其他行星上飞行的科学气球。下降途中的湍流在约 20 km 高度提前触发了着陆器的表面实验(包括钻探装置),因此它始终没能采集地面样品。1986 年 3 月 6 日,探测器从距哈雷彗星彗核约 8,900 km 处飞过。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "一个舱里装着 Venera 型着陆器和气球",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/02.webp",
+          "caption": "正在总装的 Vega 探测器部件:这部分运载舱将继续飞往哈雷彗星。"
+        },
+        {
+          "src": "/images/missions/vega-1/04.webp",
+          "caption": "展出的 Vega 下降舱:把着陆器和气球送到金星的球形舱。"
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "title": "金星",
+      "subtitle": "1985 年 6 月 11 日 — 着陆器在地面,气球在云中",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/03.webp",
+          "caption": "Vega 计划示意图:下降舱进入金星大气层,释放气球和着陆器,探测器继续飞往哈雷彗星。"
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "哈雷彗星",
+      "subtitle": "1986 年 3 月 6 日 — 距彗核约 8,900 km",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/01.webp",
+          "caption": "苏联为哈雷彗星国际联合研究发行的小型张:埃德蒙·哈雷、Vega 探测器和彗星。"
+        }
+      ]
+    }
+  ]
+}

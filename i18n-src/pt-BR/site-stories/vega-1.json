@@ -1,0 +1,42 @@
+{
+  "intro": "Dois dias antes de chegar a Vênus, a Vega 1 se dividiu em duas: uma cápsula com um módulo de pouso e um balão entrou na atmosfera em 11 de junho de 1985, enquanto a sonda principal seguia rumo ao cometa Halley. O balão flutuou entre as nuvens a cerca de 54 km de altitude por umas 46 horas — o primeiro balão científico a voar em outro planeta. A turbulência da descida acionou antes da hora os experimentos de superfície do módulo, entre eles a perfuratriz, a cerca de 20 km de altitude, e por isso ele nunca coletou amostras do solo. Em 6 de março de 1986 a sonda passou a cerca de 8.900 km do núcleo do cometa.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Um módulo do tipo Venera e um balão em uma só cápsula",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/02.webp",
+          "caption": "Equipamento de uma sonda Vega durante a montagem: o veículo portador que seguiria até o cometa Halley."
+        },
+        {
+          "src": "/images/missions/vega-1/04.webp",
+          "caption": "Uma cápsula de descida Vega em exposição: a esfera que levou o módulo de pouso e o balão até Vênus."
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "title": "Vênus",
+      "subtitle": "11 de junho de 1985 — um módulo no chão, um balão nas nuvens",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/03.webp",
+          "caption": "O plano da Vega: a cápsula entra na atmosfera de Vênus, solta o balão e o módulo de pouso, e a sonda segue para o cometa Halley."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Cometa Halley",
+      "subtitle": "6 de março de 1986 — a cerca de 8.900 km do núcleo",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/01.webp",
+          "caption": "O bloco filatélico soviético dedicado ao estudo internacional do cometa Halley: Edmond Halley, uma sonda Vega e o cometa."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "intro": "Op 27 november 1971, een paar uur voordat Mars 2 in een baan om Mars kwam, maakte de afdaalcapsule zich los en zette koers naar het oppervlak. Het afdaalsysteem faalde — waarschijnlijk omdat de capsule te steil binnenkwam —, de parachute ging niet open en de capsule sloeg te pletter: het eerste door mensen gemaakte voorwerp op het oppervlak van Mars. Aan boord was PrOP-M, een kleine rover die aan het eind van een kabel op ski's moest lopen. De orbiter werkte door tot in 1972.",
+  "chapters": [
+    {
+      "id": "arrival",
+      "title": "Aankomst",
+      "subtitle": "27 november 1971 — het eerste voorwerp op Mars",
+      "images": [
+        {
+          "src": "/images/missions/mars2/02.webp",
+          "caption": "De Sovjet-postzegel uit 1972 voor het automatische station Mars 2: de wimpel aan boord bereikte de planeet op 27 november 1971."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Dezelfde capsule als Mars 3",
+      "images": [
+        {
+          "src": "/images/missions/mars2/03.webp",
+          "caption": "De afdaalcapsule van Mars 2 had hetzelfde ontwerp als die van Mars 3, die op deze postzegel uit 1972 staat. Mars 3 maakte vijf dagen later een zachte landing en zond ongeveer 20 seconden lang een signaal uit."
+        }
+      ]
+    }
+  ]
+}

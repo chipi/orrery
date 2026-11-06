@@ -15,6 +15,7 @@ export const ORIGIN_NAMES = {
     Voskhod: 'Восход',
     Luna: 'Луна',
     Lunokhod: 'Луноход',
+    PrOP: 'ПрОП', // PrOP-M, the Mars 2 / 3 ski-walking rover
     Mars: 'Марс',
     Venera: 'Венера',
     Vega: 'Вега',

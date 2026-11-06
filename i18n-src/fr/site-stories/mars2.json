@@ -1,0 +1,27 @@
+{
+  "intro": "Le 27 novembre 1971, quelques heures avant la mise en orbite de Mars 2, sa capsule de descente s'est séparée et s'est dirigée vers la surface. Le système de descente a échoué — sans doute parce que la capsule est entrée trop abruptement —, le parachute ne s'est pas ouvert et elle s'est écrasée : le premier objet fabriqué par l'homme à atteindre la surface de Mars. À bord se trouvait PrOP-M, un petit rover conçu pour avancer sur des patins au bout d'un câble. L'orbiteur a continué de fonctionner jusqu'en 1972.",
+  "chapters": [
+    {
+      "id": "arrival",
+      "title": "L'arrivée",
+      "subtitle": "27 novembre 1971 — le premier objet sur Mars",
+      "images": [
+        {
+          "src": "/images/missions/mars2/02.webp",
+          "caption": "Le timbre soviétique de 1972 consacré à la station automatique Mars 2 : le fanion qu'elle emportait a atteint la planète le 27 novembre 1971."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "La même capsule que Mars 3",
+      "images": [
+        {
+          "src": "/images/missions/mars2/03.webp",
+          "caption": "La capsule de descente de Mars 2 était de même conception que celle de Mars 3, représentée sur ce timbre de 1972. Mars 3 s'est posée en douceur cinq jours plus tard et a émis un signal pendant une vingtaine de secondes."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "intro": "A Venera 13 pousou em Vênus em 1º de março de 1982, logo a leste de Phoebe Regio, e funcionou por 127 minutos a 457 °C e sob uma pressão de cerca de 90 vezes a do ar ao nível do mar na Terra — quatro vezes sua vida útil prevista de 32 minutos. Enviou as primeiras imagens coloridas da superfície de Vênus e perfurou uma amostra do solo, que seu instrumento de raios X identificou como um basalto rico em potássio.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Uma esfera pressurizada sobre um anel amortecedor",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/04.webp",
+          "caption": "Uma maquete legendada de uma sonda Venera desta geração: o veículo portador com motor, painéis solares e antena parabólica, e no topo a esfera que levou o módulo de pouso até o chão."
+        },
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "O selo soviético de 1982 dedicado à Venera 13 e à sua gêmea Venera 14, que pousou quatro dias depois a cerca de 950 km dali."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "127 minutos em Vênus — pousou em 1º de março de 1982",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "Uma imagem em preto e branco da Venera 13: lajes planas de rocha e solo escuro, com o próprio equipamento do módulo na borda. A câmera olhava através de uma janela e varria de um lado a outro."
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "O panorama colorido, reprocessado: a primeira vista colorida do solo de Vênus. O anel serrilhado do módulo corre ao longo da parte de baixo das duas metades."
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "Legado",
+      "subtitle": "Ainda as últimas imagens da superfície de Vênus",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/05.webp",
+          "caption": "Vistas de Vênus das Venera 13 e 14 ao lado de vistas de Marte das Viking 1 e 2, uma comparação preparada para a NASA por Stephen Paul Meszaros."
+        }
+      ]
+    }
+  ]
+}

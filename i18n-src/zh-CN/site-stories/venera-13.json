@@ -1,0 +1,46 @@
+{
+  "intro": "Venera 13 于 1982 年 3 月 1 日在金星着陆,着陆点就在福柏区以东。它在 457 °C 的高温、约为地球海平面气压 90 倍的压力下工作了 127 分钟,是设计寿命 32 分钟的四倍。它传回了金星表面的第一批彩色照片,还钻取了一份地面样品,其 X 射线仪器判定为富钾玄武岩。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "压力球坐在缓冲环上",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/04.webp",
+          "caption": "这一代 Venera 探测器的带标注模型:装有发动机、太阳能电池板和抛物面天线的运载舱,顶部是把着陆器送到地面的球形舱。"
+        },
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "1982 年苏联为 Venera 13 及其孪生探测器 Venera 14 发行的邮票;Venera 14 四天后在约 950 km 外着陆。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "在金星上的 127 分钟 — 1982 年 3 月 1 日着陆",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "Venera 13 拍摄的一幅黑白图像:平坦的岩板和深色土壤,边缘是着陆器自身的设备。相机透过一扇窗口向外看,左右扫描成像。"
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "重新处理的彩色全景图:人类第一次看到金星地面的彩色景象。两半图像的底部都能看到着陆器的锯齿状圆环。"
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "遗产",
+      "subtitle": "至今仍是来自金星表面的最后一批照片",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/05.webp",
+          "caption": "Venera 13、14 拍摄的金星景象与 Viking 1、2 拍摄的火星景象并排对比,由 Stephen Paul Meszaros 为 NASA 制作。"
+        }
+      ]
+    }
+  ]
+}

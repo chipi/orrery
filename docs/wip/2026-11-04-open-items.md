@@ -44,6 +44,13 @@ unconfirmed (option B, operator 2026-11-05).
   (entry → descent → touchdown → after landing, from each site's descent archetype), anchor sheet
   first (Curiosity's sky crane) for the operator's look, then the batch (~38 images, 2 credits each
   by the recorded recipe); optional exploded views for the landed craft (~30).
+- **Mission-gallery provenance that names another picture** (found 2026-11-06): `venera-13/01` (the
+  1982 Venera 13 / 14 stamp) is credited to Commons "Surface of Venus from Venera 13"; `vega-1/01` (the
+  Halley stamp sheet) to "Vega balloon probe" — the credit line and source link point at other
+  images. `mars2/01` (a full Mars disc, source unclear), `mars2/04` (orbital close-up far sharper than
+  Mars 2 returned) and `mars6/03` (a surface sunset; Mars 6 sent none) do not belong to their
+  missions. Check every mission gallery's provenance against what the image shows; the new stories
+  use only the images that do belong.
 - **Audio tours: re-listen to every episode and adjust its cue points** (operator 2026-11-06). The
   0.9.7 changes moved what is on screen under the narration (first view bare, tags by zoom stage,
   new panoramas, Apollo 17's tour removed from the Cernan episode); tour-coverage only proves the

@@ -1,0 +1,31 @@
+{
+  "intro": "La Vega 2 llegó a Venus cuatro días después que su gemela, el 15 de junio de 1985, e hizo lo mismo: un globo a las nubes, un módulo al suelo y la sonda rumbo al cometa Halley. Esta vez la perforadora funcionó. Su muestra parecía una roca de anortosita-troctolita, rara en la Tierra pero conocida en las tierras altas de la Luna. El globo flotó unas 46 horas, y el 9 de marzo de 1986 la sonda pasó a unos 8.000 km del núcleo del cometa.",
+  "chapters": [
+    {
+      "id": "venus",
+      "title": "Venus",
+      "subtitle": "15 de junio de 1985 — el segundo módulo y el segundo globo",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/01.webp",
+          "caption": "La misión Vega: la entrada de la cápsula en la atmósfera de Venus, el globo que se abre bajo su paracaídas y la trayectoria de la sonda hacia el cometa Halley."
+        },
+        {
+          "src": "/images/missions/vega-2/03.webp",
+          "caption": "Una cápsula de descenso Vega en exposición, la esfera que llevó el módulo y el globo hasta Venus."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Cometa Halley",
+      "subtitle": "9 de marzo de 1986 — a unos 8.000 km del núcleo",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/02.webp",
+          "caption": "La hoja filatélica soviética dedicada al estudio internacional del cometa Halley. Las mediciones de las dos Vega sobre la posición del núcleo ayudaron a la sonda europea Giotto a apuntar su propio paso, mucho más cercano, cinco días después."
+        }
+      ]
+    }
+  ]
+}

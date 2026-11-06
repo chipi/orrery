@@ -1,0 +1,46 @@
+{
+  "intro": "Venera 13は1982年3月1日、フェーベ地域のすぐ東で金星に着陸し、457 °C、地球の海面気圧のおよそ90倍の圧力のなかで127分間動き続けました。設計寿命32分の約4倍です。金星表面の初のカラー画像を送り、地面を掘って採った試料は、搭載したX線装置によってカリウムに富む玄武岩と判定されました。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "衝撃吸収リングに載った耐圧球",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/04.webp",
+          "caption": "この世代のVenera探査機の模型(ラベル付き):エンジン、太陽電池パネル、パラボラアンテナを備えた母船と、その上で着陸機を地表へ降ろした球体。"
+        },
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "Venera 13と、4日後に約950 km離れた場所に着陸した双子機Venera 14を記念した1982年のソ連切手。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "地表",
+      "subtitle": "金星での127分間 — 1982年3月1日着陸",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "Venera 13のモノクロ画像:平らな岩の板と黒っぽい土、縁には着陸機自身の機器。カメラは窓越しに外を見て、左右に走査しました。"
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "再処理したカラーパノラマ:金星の地面を写した初のカラー画像。左右どちらの下端にも、着陸機のギザギザのリングが写っています。"
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "遺産",
+      "subtitle": "今も金星表面からの最後の画像",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/05.webp",
+          "caption": "Venera 13・14による金星の画像と、Viking 1・2による火星の画像を並べた比較図。Stephen Paul MeszarosがNASAのために作成したもの。"
+        }
+      ]
+    }
+  ]
+}

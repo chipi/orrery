@@ -1,0 +1,27 @@
+{
+  "intro": "Mars 6 arrived on 12 March 1974. Its lander transmitted all the way down through the atmosphere — the first measurements taken inside the Martian air — but a fault in the electronics garbled much of the data, and contact was lost moments before touchdown in Margaritifer Terra.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "One of four Soviet Mars craft of 1973",
+      "images": [
+        {
+          "src": "/images/missions/mars6/01.webp",
+          "caption": "A model of a Soviet Mars spacecraft of this family on display, its large dish antenna on top."
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "title": "Descent",
+      "subtitle": "12 March 1974 — data all the way down",
+      "images": [
+        {
+          "src": "/images/missions/mars6/02.webp",
+          "caption": "The 1972 Soviet stamp for fifteen years of the space era: a lander on the surface of Mars."
+        }
+      ]
+    }
+  ]
+}

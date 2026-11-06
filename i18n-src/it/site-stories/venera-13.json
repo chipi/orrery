@@ -1,0 +1,46 @@
+{
+  "intro": "Venera 13 atterrò su Venere il 1º marzo 1982, poco a est di Phoebe Regio, e funzionò per 127 minuti a 457 °C, sotto una pressione circa 90 volte quella dell'aria al livello del mare sulla Terra: quattro volte la durata prevista di 32 minuti. Inviò le prime immagini a colori della superficie di Venere e perforò un campione del suolo, che il suo strumento a raggi X identificò come un basalto ricco di potassio.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Una sfera pressurizzata su un anello ammortizzatore",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/04.webp",
+          "caption": "Un modello con didascalie di una sonda Venera di questa generazione: il vettore con motore, pannelli solari e antenna parabolica, e in cima la sfera che portò giù il lander."
+        },
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "Il francobollo sovietico del 1982 per Venera 13 e la gemella Venera 14, che atterrò quattro giorni dopo a circa 950 km di distanza."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "127 minuti su Venere — atterrata il 1º marzo 1982",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "Un fotogramma in bianco e nero di Venera 13: lastre di roccia piatte e suolo scuro, con l'equipaggiamento del lander lungo il bordo. La fotocamera guardava attraverso un oblò e scorreva da un lato all'altro."
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "Il panorama a colori, rielaborato: la prima veduta a colori del suolo di Venere. L'anello dentellato del lander corre lungo il fondo di entrambe le metà."
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "Eredità",
+      "subtitle": "Ancora oggi le ultime immagini dalla superficie di Venere",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/05.webp",
+          "caption": "Vedute di Venere di Venera 13 e 14 accanto a vedute di Marte di Viking 1 e 2, un confronto preparato per la NASA da Stephen Paul Meszaros."
+        }
+      ]
+    }
+  ]
+}

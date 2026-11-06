@@ -1,7 +1,7 @@
 {
   "name": "Vega 2",
   "vehicle": "Proton-K / D-1",
-  "payload": "Gemela idéntica de la Vega 1: bus de sobrevuelo de 4920 kg + módulo de aterrizaje de Venus de ~1500 kg + aerostato de helio. Lanzada 6 días después de la Vega 1 por redundancia + una solución de armada pareada para el Halley.",
+  "payload": "Gemela idéntica de la Vega 1: unos 4900 kg en total, incluido el módulo de descenso de ~1500 kg (módulo de aterrizaje de Venus + aerostato de helio). Lanzada 6 días después de la Vega 1 por redundancia + una solución de armada pareada para el Halley.",
   "delta_v": "~3,6 km/s (salida + reorientación para interceptar el Halley)",
   "type": "SOBREVUELO + MÓDULO DE DESCENSO + GLOBO · REALIZADA",
   "first": "Primer análisis químico de suelo de tipo tierras altas venusianas (Aphrodite Terra, 1985); su encuentro con el Halley, emparejado con el de Vega 1, alimentó la solución de apuntamiento de Giotto",

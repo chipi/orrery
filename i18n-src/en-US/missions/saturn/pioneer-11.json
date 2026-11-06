@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 11",
   "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
-  "payload": "Outer-system flyby spacecraft; SNAP-19 RTGs (~165 W at launch); twin of Pioneer 10",
+  "payload": "Outer-system flyby spacecraft; SNAP-19 RTGs (155 W at launch); twin of Pioneer 10",
   "delta_v": "~15 km/s (cumulative, Jupiter + Saturn assists)",
   "type": "FLYBY · FLOWN",
   "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",

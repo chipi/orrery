@@ -14,7 +14,7 @@
   "payload": "685 kg (including 11.43-cm carbon-carbon Thermal Protection System sustaining 1,377 °C at perihelion)",
   "delta_v": "~16 km/s (incl. 7 Venus gravity assists)",
   "data_quality": "good",
-  "credit": "© NASA / JHU APL — public domain. Closest spacecraft to the Sun ever flown. First mission to enter the Sun's corona (2021-04-28). Final perihelion 22 on 2024-12-24 at 6.1 M km from the Sun's surface (~9.86 R☉).",
+  "credit": "© NASA / JHU APL — public domain. Closest spacecraft to the Sun ever flown. First mission to enter the Sun's corona (2021-04-28). Perihelion 22, the first at the closest distance, on 2024-12-24 at 6.1 M km from the Sun's surface (~9.86 R☉); the mission continues, extended to 2029.",
   "links": [
     {
       "l": "Parker Solar Probe — Wikipedia",
@@ -115,7 +115,7 @@
         "met_days": 2326,
         "type": "edl_or_oi",
         "label": "Closest perihelion (P22) — final design milestone",
-        "description": "2024-12-24. Christmas Eve eve. Parker reached 6.1 M km from the Sun's surface (~9.86 R☉, 0.046 AU) — the closest any spacecraft has ever been to the Sun. Speed at perihelion: ~191 km/s, the fastest human-made object ever. The heat shield's solar-facing surface reached ~1,377 °C; the spacecraft bus behind it remained at room temperature. Parker has not yet been commanded back to Earth contact at the time of writing."
+        "description": "2024-12-24. Christmas Eve eve. Parker reached 6.1 M km from the Sun's surface (~9.86 R☉, 0.046 AU) — the closest any spacecraft has ever been to the Sun. Speed at perihelion: ~191 km/s, the fastest human-made object ever. The heat shield's solar-facing surface reached ~1,377 °C; the spacecraft bus behind it remained at room temperature. Its beacon confirmed a safe pass on 26 December 2024."
       }
     ],
     "interplanetary_profile": {

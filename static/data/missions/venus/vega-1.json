@@ -11,11 +11,11 @@
   "arrival_date": "1985-06-11",
   "transit_days": 178,
   "vehicle": "Proton-K / D-1",
-  "payload": "4920 kg flyby bus + ~1500 kg descent module (Venera-type lander + first-of-kind helium balloon aerostat). Twin spacecraft Vega 1 / Vega 2 launched 6 days apart for the same Venus-then-Halley itinerary.",
+  "payload": "About 4900 kg in total, including the ~1500 kg descent module (Venera-type lander + first-of-kind helium balloon aerostat). Twin spacecraft Vega 1 / Vega 2 launched 6 days apart for the same Venus-then-Halley itinerary.",
   "delta_v": "~3.6 km/s (departure + Halley intercept retarget)",
   "data_quality": "good",
   "flight_data_quality": "sparse",
-  "credit": "© Roscosmos / IKI / international consortium. Vega 1 lifted off from Baikonur 1984-12-15 carrying a Soviet Venus lander descended from the Venera line plus an ESA / CNES-built helium aerostat (balloon) — the first balloon deployment in another planet's atmosphere. The descent module separated 1985-06-09 and entered Venus's atmosphere 1985-06-11. The balloon drifted at ~54 km altitude for 46.5 hours, transmitting wind + temperature data via a 20-station global radio network. The bus, freed of its descent mass, used Venus gravity assist to redirect to comet 1P/Halley, achieving closest approach (8890 km) on 1986-03-06 — three days ahead of Vega 2, and a week ahead of ESA's Giotto, which used Vega's flyby position fix to navigate its own 596 km Halley flyby. This made Vega 1 the first-ever spacecraft to carry science instruments to two distinct solar-system targets in a single mission.",
+  "credit": "© Roscosmos / IKI / international consortium. Vega 1 lifted off from Baikonur 1984-12-15 carrying a Soviet Venus lander descended from the Venera line plus an ESA / CNES-built helium aerostat (balloon) — the first balloon deployment in another planet's atmosphere. The descent module separated 1985-06-09 and entered Venus's atmosphere 1985-06-11. The balloon drifted at ~54 km altitude for 46.5 hours, transmitting wind + temperature data via a 20-station global radio network. The bus, freed of its descent mass, used Venus gravity assist to redirect to comet 1P/Halley, achieving closest approach (8890 km) on 1986-03-06 — three days ahead of Vega 2, and a week ahead of ESA's Giotto, which used Vega's flyby position fix to navigate its own 596 km Halley flyby. This made Vega 1 the first spacecraft to visit both a planet and a comet (Mariner 10 had visited two planets).",
   "links": [
     {
       "l": "Vega program — Wikipedia",
@@ -76,7 +76,7 @@
         "met_days": 446,
         "type": "flyby",
         "label": "Halley — flyby (Halley Armada)",
-        "description": "Closest approach 8,890 km from Halley's nucleus on 1986-03-06 — first close visit to any comet, 8 days before Giotto's much closer pass. Vega 1's imagery + dust-impact data informed the Giotto-target final approach geometry: \"the Halley Armada\" cooperative tracking enabled Giotto to safely fly to 596 km without an unknown nucleus position."
+        "description": "Closest approach 8,890 km from Halley's nucleus on 1986-03-06 — the first images of a comet's nucleus, 8 days before Giotto's much closer pass. Vega 1's imagery + dust-impact data informed the Giotto-target final approach geometry: \"the Halley Armada\" cooperative tracking enabled Giotto to safely fly to 596 km without an unknown nucleus position."
       }
     ],
     "arrival": {

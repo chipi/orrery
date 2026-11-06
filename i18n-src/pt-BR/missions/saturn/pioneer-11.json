@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 11",
   "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
-  "payload": "Espaçonave de sobrevoo do sistema solar externo; RTGs SNAP-19 (~165 W no lançamento); gêmea da Pioneer 10",
+  "payload": "Espaçonave de sobrevoo do sistema solar externo; RTGs SNAP-19 (155 W no lançamento); gêmea da Pioneer 10",
   "delta_v": "~15 km/s (acumulado, assistências de Júpiter + Saturno)",
   "type": "SOBREVOO · REALIZADA",
   "first": "Primeira sonda a passar por Saturno (1979-09-01); demonstrou a assistência gravitacional que enviou a Voyager 2 adiante",

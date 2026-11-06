@@ -1,7 +1,7 @@
 {
   "name": "Vega 2",
   "vehicle": "Proton-K / D-1",
-  "payload": "Identical twin of Vega 1: 4920 kg flyby bus + ~1500 kg Venus lander + helium aerostat. Launched 6 days after Vega 1 for redundancy + a paired Halley armada solution.",
+  "payload": "Identical twin of Vega 1: about 4900 kg in total, including the ~1500 kg descent module (Venus lander + helium aerostat). Launched 6 days after Vega 1 for redundancy + a paired Halley armada solution.",
   "delta_v": "~3.6 km/s (departure + Halley intercept retarget)",
   "type": "FLYBY + LANDER + BALLOON · FLOWN",
   "first": "First chemical analysis of Venusian highland-type soil (Aphrodite Terra, 1985); paired Halley encounter with Vega 1 fed Giotto's targeting solution",

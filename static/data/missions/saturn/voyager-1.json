@@ -11,7 +11,7 @@
   "arrival_date": "1980-11-12",
   "transit_days": 1164,
   "vehicle": "Titan IIIE / Centaur",
-  "payload": "Planetary flyby spacecraft; three RTG modules totalling ~470 W at launch (decaying to ~250 W today)",
+  "payload": "Planetary flyby spacecraft; three RTG modules totalling ~470 W at launch (decaying to ~220 W today)",
   "delta_v": "~17 km/s (cumulative, Jupiter + Saturn assists)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
@@ -92,7 +92,7 @@
         "met_days": 1164,
         "type": "flyby",
         "label": "Saturn — flyby + Titan probe",
-        "description": "Closest approach 124,000 km from Saturn on 1980-11-12; the prior day Voyager 1 passes within 6500 km of Titan to probe its nitrogen haze. The Titan-targeted geometry bends the trajectory 35° upward out of the ecliptic plane, ending any future planetary encounter — Voyager 1 is now committed to interstellar space. Heliopause crossing followed on 2012-08-25; the spacecraft is the most distant human-made object."
+        "description": "Closest approach 124,000 km from Saturn on 1980-11-12; the same day, about 18 hours earlier, Voyager 1 passes within 6500 km of Titan to probe its nitrogen haze. The Titan-targeted geometry bends the trajectory 35° upward out of the ecliptic plane, ending any future planetary encounter — Voyager 1 is now committed to interstellar space. Heliopause crossing followed on 2012-08-25; the spacecraft is the most distant human-made object."
       }
     ],
     "interplanetary_profile": {

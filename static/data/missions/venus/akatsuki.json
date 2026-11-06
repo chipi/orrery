@@ -71,7 +71,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — H-IIA 202",
-        "description": "Tanegashima Space Center, 2010-05-20. Shared a launch with the IKAROS solar-sail demonstrator (the first interplanetary solar sail) and three university CubeSats. Akatsuki — \"dawn\" in Japanese — was Japan's first Venus mission, designed for a 30-month primary mission to study Venus atmospheric super-rotation."
+        "description": "Tanegashima Space Center, 2010-05-20. Shared a launch with the IKAROS solar-sail demonstrator (the first interplanetary solar sail) and four university small satellites. Akatsuki — \"dawn\" in Japanese — was Japan's first Venus mission, designed for a 30-month primary mission to study Venus atmospheric super-rotation."
       },
       {
         "met_days": 0.005,
@@ -119,7 +119,7 @@
         "met_days": 2027,
         "type": "arrival",
         "label": "Venus approach (second attempt)",
-        "description": "2015-12-07 — five years and one day after the first attempt. Akatsuki arrives at Venus again."
+        "description": "2015-12-07 — exactly five years after the first attempt. Akatsuki arrives at Venus again."
       },
       {
         "met_days": 2027.005,

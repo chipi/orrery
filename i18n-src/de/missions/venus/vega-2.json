@@ -1,7 +1,7 @@
 {
   "name": "Vega 2",
   "vehicle": "Proton-K / D-1",
-  "payload": "Identischer Zwilling von Vega 1: 4920 kg schwerer Vorbeiflug-Bus + ~1500 kg Venus-Lander + Heliumaerostat. 6 Tage nach Vega 1 gestartet — zur Redundanz und als Teil einer gepaarten Halley-Flotte.",
+  "payload": "Identischer Zwilling von Vega 1: insgesamt etwa 4900 kg, darunter das ~1500 kg schwere Abstiegsmodul (Venus-Lander + Heliumaerostat). 6 Tage nach Vega 1 gestartet — zur Redundanz und als Teil einer gepaarten Halley-Flotte.",
   "delta_v": "~3,6 km/s (Abflug + Neuausrichtung auf das Abfangen des Halleyschen Kometen)",
   "type": "VORBEIFLUG + LANDER + BALLON · GEFLOGEN",
   "first": "Erste chemische Analyse von Venusgestein der Hochland-Art (Aphrodite Terra, 1985); gepaarte Halley-Begegnung mit Vega 1 lieferte Giottos Zielbestimmung",

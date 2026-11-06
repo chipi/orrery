@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 11",
   "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
-  "payload": "Nave de sobrevuelo del sistema exterior; RTG SNAP-19 (~165 W al lanzamiento); gemela del Pioneer 10",
+  "payload": "Nave de sobrevuelo del sistema exterior; RTG SNAP-19 (155 W al lanzamiento); gemela del Pioneer 10",
   "delta_v": "~15 km/s (acumulado, asistencias de Júpiter + Saturno)",
   "type": "SOBREVUELO · REALIZADA",
   "first": "Primera nave en sobrevolar Saturno (1979-09-01); demostró la asistencia gravitatoria que envió al Voyager 2 hacia adelante",

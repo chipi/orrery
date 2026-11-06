@@ -1,7 +1,7 @@
 {
   "name": "Voyager 1",
   "vehicle": "Titan IIIE / Centaur",
-  "payload": "Sonde de survol planétaire ; trois modules RTG totalisant ~470 W au lancement (déclinant à ~250 W aujourd'hui)",
+  "payload": "Sonde de survol planétaire ; trois modules RTG totalisant ~470 W au lancement (déclinant à ~220 W aujourd'hui)",
   "delta_v": "~17 km/s (cumulé, assistances de Jupiter + Saturne)",
   "type": "SURVOL · RÉALISÉE",
   "first": "L'objet le plus lointain créé par l'humanité — actuellement à ~170 au du Soleil dans l'espace interstellaire",

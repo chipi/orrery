@@ -1,7 +1,7 @@
 {
   "name": "Voyager 1",
   "vehicle": "Titan IIIE / Centaur",
-  "payload": "Planeten-Vorbeiflug-Raumsonde; drei RTG-Module mit zusammen ~470 W beim Start (heute abgefallen auf ~250 W)",
+  "payload": "Planeten-Vorbeiflug-Raumsonde; drei RTG-Module mit zusammen ~470 W beim Start (heute abgefallen auf ~220 W)",
   "delta_v": "~17 km/s (kumuliert, Jupiter- + Saturn-Swing-bys)",
   "type": "VORBEIFLUG · GEFLOGEN",
   "first": "Das entfernteste von Menschen geschaffene Objekt — derzeit ~170 AE von der Sonne im interstellaren Raum entfernt",

@@ -1,7 +1,7 @@
 {
   "name": "Vega 2",
   "vehicle": "Proton-K / D-1",
-  "payload": "Jumelle identique de Vega 1 : bus de survol de 4920 kg + atterrisseur vénusien d'environ 1500 kg + aérostat à hélium. Lancée 6 jours après Vega 1 pour la redondance et pour former, avec elle, une paire dans la flottille d'étude de Halley.",
+  "payload": "Jumelle identique de Vega 1 : environ 4900 kg au total, dont un module de descente d'environ 1500 kg (atterrisseur vénusien + aérostat à hélium). Lancée 6 jours après Vega 1 pour la redondance et pour former, avec elle, une paire dans la flottille d'étude de Halley.",
   "delta_v": "~3,6 km/s (départ + réorientation vers l'interception de la comète de Halley)",
   "type": "SURVOL + MODULE DE DESCENTE + BALLON · RÉALISÉE",
   "first": "Première analyse chimique du sol de type highland vénusien (Aphrodite Terra, 1985) ; rencontre avec Halley en tandem avec Vega 1 qui a alimenté la solution de ciblage de Giotto",

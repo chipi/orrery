@@ -99,13 +99,13 @@
       {
         "met_days": 937,
         "type": "flyby",
-        "label": "Venus gravity assist 2",
-        "description": "2022-09-04. Second VGA tilts the orbital plane upward, beginning the climb out of the ecliptic toward the polar viewing geometry."
+        "label": "Venus gravity assist 3",
+        "description": "2022-09-04. Third VGA tilts the orbital plane upward, beginning the climb out of the ecliptic toward the polar viewing geometry."
       },
       {
         "met_days": 975,
         "type": "edl_or_oi",
-        "label": "Closest perihelion to date (P4)",
+        "label": "Perihelion 5 (P5)",
         "description": "2022-10-12. Reached 0.29 AU (~62 R☉) — within Mercury's perihelion distance. First close-approach observations using the full instrument suite."
       },
       {

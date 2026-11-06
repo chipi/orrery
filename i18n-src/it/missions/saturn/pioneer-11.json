@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 11",
   "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
-  "payload": "Sonda di sorvolo del sistema solare esterno; RTG SNAP-19 (~165 W al lancio); gemella del Pioneer 10",
+  "payload": "Sonda di sorvolo del sistema solare esterno; RTG SNAP-19 (155 W al lancio); gemella del Pioneer 10",
   "delta_v": "~15 km/s (cumulativo, fionde di Giove + Saturno)",
   "type": "SORVOLO · COMPLETATA",
   "first": "Primo veicolo spaziale a sorvolare Saturno (1979-09-01); ha dimostrato la fionda gravitazionale che ha mandato avanti Voyager 2",

@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 11",
   "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
-  "payload": "외태양계 근접통과 탐사선; SNAP-19 RTG(발사 시 ~165 W); Pioneer 10의 쌍둥이",
+  "payload": "외태양계 근접통과 탐사선; SNAP-19 RTG(발사 시 155 W); Pioneer 10의 쌍둥이",
   "delta_v": "~15 km/s (누적, 목성 + 토성 보조)",
   "type": "플라이바이 · 비행 완료",
   "first": "토성 최초 근접 통과(1979-09-01); Voyager 2를 더 먼 곳으로 보낸 중력 보조를 실증",

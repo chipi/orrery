@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 11",
   "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
-  "payload": "外太阳系飞掠探测器；SNAP-19 RTG（发射时~165 W）；Pioneer 10 的孪生探测器",
+  "payload": "外太阳系飞掠探测器；SNAP-19 RTG（发射时155 W）；Pioneer 10 的孪生探测器",
   "delta_v": "~15 km/s（累计，木星 + 土星引力辅助）",
   "type": "飞掠 · 已飞行",
   "first": "首个飞掠土星的航天器（1979-09-01）；演示了后来将 Voyager 2 送往更远处的引力辅助",

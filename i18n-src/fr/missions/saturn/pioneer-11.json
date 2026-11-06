@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 11",
   "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
-  "payload": "Sonde de survol du système solaire externe ; RTG SNAP-19 (~165 W au lancement) ; jumelle de Pioneer 10",
+  "payload": "Sonde de survol du système solaire externe ; RTG SNAP-19 (155 W au lancement) ; jumelle de Pioneer 10",
   "delta_v": "~15 km/s (cumulé, assistances de Jupiter + Saturne)",
   "type": "SURVOL · RÉALISÉE",
   "first": "Premier engin spatial à survoler Saturne (1979-09-01) ; a démontré l'assistance gravitationnelle qui a propulsé Voyager 2",

@@ -86,6 +86,134 @@ export interface PadInput {
    *  but spares deep-shadow imagery (Curiosity sol-3070 shadows are
    *  ~#3a2a20). */
   recolourBlackThreshold?: number;
+  /** Fill the source's gaps below the horizon (transparent pixels,
+   *  near-black ones under `recolourBlackThreshold`, the azimuth gap) and
+   *  a margin under the band from the surrounding pixels — real ground and
+   *  the regolith palette alike — instead of one flat palette colour.
+   *  Gaps open to the sky (connected through gaps to the band's top edge)
+   *  keep the sky palette — filled from the terrain they turned the sky
+   *  brown; match `palette.sky*` to the photo's real sky so stepped frame
+   *  edges up there blend in. Holes inside the image are filled at any
+   *  height. A mosaic's jagged
+   *  outline otherwise left flat stair-step blocks (#641: Curiosity). */
+  inpaintGaps?: boolean;
+}
+
+/**
+ * Pull-push fill: every `unknown` pixel of the RGB `canvas` takes a smooth
+ * blend of the known pixels around it (near ones weigh most). Runs on a
+ * 1/`factor` grid — the fill is soft by nature — and writes the upscaled
+ * result into the unknown pixels only.
+ */
+export async function pullPushFill(
+  canvas: Buffer,
+  unknown: Uint8Array,
+  width: number,
+  height: number,
+  factor = 4,
+): Promise<void> {
+  const lw = Math.ceil(width / factor);
+  const lh = Math.ceil(height / factor);
+  // Level 0: block averages of the known pixels (premultiplied by coverage).
+  const P0 = new Float32Array(lw * lh * 3);
+  const A0 = new Float32Array(lw * lh);
+  const N0 = new Float32Array(lw * lh);
+  for (let y = 0; y < height; y++) {
+    const ly = Math.floor(y / factor);
+    for (let x = 0; x < width; x++) {
+      const li = ly * lw + Math.floor(x / factor);
+      N0[li]++;
+      const i = y * width + x;
+      if (unknown[i]) continue;
+      A0[li]++;
+      P0[li * 3] += canvas[i * 3];
+      P0[li * 3 + 1] += canvas[i * 3 + 1];
+      P0[li * 3 + 2] += canvas[i * 3 + 2];
+    }
+  }
+  for (let li = 0; li < lw * lh; li++) {
+    const n = N0[li] || 1;
+    A0[li] /= n;
+    P0[li * 3] /= n;
+    P0[li * 3 + 1] /= n;
+    P0[li * 3 + 2] /= n;
+  }
+  // Pull: halve until 1×1.
+  const levels: Array<{ w: number; h: number; P: Float32Array; A: Float32Array }> = [
+    { w: lw, h: lh, P: P0, A: A0 },
+  ];
+  while (levels[levels.length - 1].w > 1 || levels[levels.length - 1].h > 1) {
+    const { w, h, P, A } = levels[levels.length - 1];
+    const w2 = Math.ceil(w / 2);
+    const h2 = Math.ceil(h / 2);
+    const P2 = new Float32Array(w2 * h2 * 3);
+    const A2 = new Float32Array(w2 * h2);
+    const N2 = new Float32Array(w2 * h2);
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        const i = y * w + x;
+        const j = (y >> 1) * w2 + (x >> 1);
+        N2[j]++;
+        A2[j] += A[i];
+        P2[j * 3] += P[i * 3];
+        P2[j * 3 + 1] += P[i * 3 + 1];
+        P2[j * 3 + 2] += P[i * 3 + 2];
+      }
+    }
+    for (let j = 0; j < w2 * h2; j++) {
+      const n = N2[j] || 1;
+      A2[j] /= n;
+      P2[j * 3] /= n;
+      P2[j * 3 + 1] /= n;
+      P2[j * 3 + 2] /= n;
+    }
+    levels.push({ w: w2, h: h2, P: P2, A: A2 });
+  }
+  // Push: from the coarsest level down, C = P + (1 − A) · upsampled coarser C.
+  const top = levels[levels.length - 1];
+  let C = new Float32Array(3);
+  for (let c = 0; c < 3; c++) C[c] = top.A[0] > 0 ? top.P[c] / top.A[0] : 0;
+  let cw = 1;
+  let ch = 1;
+  for (let k = levels.length - 2; k >= 0; k--) {
+    const { w, h, P, A } = levels[k];
+    const next = new Float32Array(w * h * 3);
+    for (let y = 0; y < h; y++) {
+      const sy = Math.min(ch - 1, Math.max(0, (y + 0.5) / 2 - 0.5));
+      const y0 = Math.floor(sy);
+      const y1 = Math.min(ch - 1, y0 + 1);
+      const fy = sy - y0;
+      for (let x = 0; x < w; x++) {
+        const sx = Math.min(cw - 1, Math.max(0, (x + 0.5) / 2 - 0.5));
+        const x0 = Math.floor(sx);
+        const x1 = Math.min(cw - 1, x0 + 1);
+        const fx = sx - x0;
+        const i = y * w + x;
+        const a = Math.min(1, A[i]);
+        for (let c = 0; c < 3; c++) {
+          const up =
+            (C[(y0 * cw + x0) * 3 + c] * (1 - fx) + C[(y0 * cw + x1) * 3 + c] * fx) * (1 - fy) +
+            (C[(y1 * cw + x0) * 3 + c] * (1 - fx) + C[(y1 * cw + x1) * 3 + c] * fx) * fy;
+          next[i * 3 + c] = P[i * 3 + c] + (1 - a) * up;
+        }
+      }
+    }
+    C = next;
+    cw = w;
+    ch = h;
+  }
+  const low = Buffer.alloc(lw * lh * 3);
+  for (let i = 0; i < low.length; i++) low[i] = Math.max(0, Math.min(255, Math.round(C[i])));
+  const fill = await sharp(low, { raw: { width: lw, height: lh, channels: 3 } })
+    .resize(width, height, { fit: 'fill', kernel: 'cubic' })
+    .raw()
+    .toBuffer();
+  for (let i = 0; i < width * height; i++) {
+    if (!unknown[i]) continue;
+    canvas[i * 3] = fill[i * 3];
+    canvas[i * 3 + 1] = fill[i * 3 + 1];
+    canvas[i * 3 + 2] = fill[i * 3 + 2];
+  }
 }
 
 /**
@@ -208,6 +336,16 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
     .toColourspace('srgb')
     .raw()
     .toBuffer({ resolveWithObject: true });
+  // Transparent source pixels (a mosaic's outline), for inpaintGaps.
+  const srcAlpha = input.inpaintGaps
+    ? await sharp(input.source, { limitInputPixels: false })
+        .resize(srcOutWidth, srcOutHeight, { fit: 'fill' })
+        .ensureAlpha()
+        .extractChannel(3)
+        .raw()
+        .toBuffer()
+    : null;
+  const unknown = input.inpaintGaps ? new Uint8Array(outWidth * outHeight) : null;
 
   // Build the output canvas in raw RGB.
   const canvas = Buffer.alloc(outWidth * outHeight * 3);
@@ -287,7 +425,9 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
         const g = srcBuf[sIdx + 1];
         const b = srcBuf[sIdx + 2];
         const oIdx = outRowStart + col * 3;
-        if (r + g + b < recolourThreshold) {
+        const transparent = srcAlpha != null && srcAlpha[row * srcOutWidth + col] < 128;
+        if (transparent || r + g + b < recolourThreshold) {
+          if (unknown) unknown[outRow * outWidth + col] = 1;
           canvas[oIdx] = fillR;
           canvas[oIdx + 1] = fillG;
           canvas[oIdx + 2] = fillB;
@@ -302,6 +442,55 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
       const outRowStart = outRow * outWidth * 3;
       srcBuf.copy(canvas, outRowStart, srcRowStart, srcRowStart + srcOutWidth * 3);
     }
+  }
+
+  // 4b. inpaintGaps: the gaps, the azimuth gap and a margin of padding on
+  //     each side of the band's top and bottom edges are filled from
+  //     everything around them.
+  if (unknown) {
+    if (recolourThreshold <= 0 && srcAlpha) {
+      for (let row = 0; row < srcOutHeight; row++) {
+        for (let col = 0; col < srcOutWidth; col++) {
+          if (srcAlpha[row * srcOutWidth + col] < 128) unknown[(topRow + row) * outWidth + col] = 1;
+        }
+      }
+    }
+    for (let row = Math.max(topRow, Math.ceil(halfH)); row < bottomRow; row++) {
+      for (let col = srcOutWidth; col < outWidth; col++) unknown[row * outWidth + col] = 1;
+    }
+    // Gaps reachable from the band's top edge through other gaps are open
+    // sky, above the horizon only: they keep the sky palette (4-connected
+    // flood fill, wrapping in azimuth on a full circle). Below the horizon a
+    // gap is ground and is always filled.
+    const wrap = srcOutWidth === outWidth;
+    const queue = new Int32Array(outWidth * Math.max(1, bottomRow - topRow));
+    let qh = 0;
+    let qt = 0;
+    const open = (row: number, col: number) => {
+      const i = row * outWidth + col;
+      if (unknown[i] !== 1) return;
+      unknown[i] = 2;
+      queue[qt++] = i;
+    };
+    if (topRow < halfH) for (let col = 0; col < outWidth; col++) open(topRow, col);
+    while (qh < qt) {
+      const i = queue[qh++];
+      const row = Math.floor(i / outWidth);
+      const col = i - row * outWidth;
+      if (row > topRow) open(row - 1, col);
+      if (row + 1 < Math.min(bottomRow, Math.ceil(halfH))) open(row + 1, col);
+      if (col > 0) open(row, col - 1);
+      else if (wrap) open(row, outWidth - 1);
+      if (col + 1 < outWidth) open(row, col + 1);
+      else if (wrap) open(row, 0);
+    }
+    for (let i = 0; i < unknown.length; i++) if (unknown[i] === 2) unknown[i] = 0;
+    // Under the band the fill fades into the shadowed-ground pad.
+    const margin = Math.round(outHeight * 0.06);
+    for (let row = bottomRow; row < Math.min(outHeight, bottomRow + margin); row++) {
+      unknown.fill(1, row * outWidth, (row + 1) * outWidth);
+    }
+    await pullPushFill(canvas, unknown, outWidth, outHeight);
   }
 
   // 5. JPEG-encode.
@@ -353,5 +542,31 @@ export async function whiteBorderToBlack(source: Buffer, minChannel = 245): Prom
   }
   return sharp(data, { raw: { width: w, height: h, channels: 3 } })
     .jpeg({ quality: 95 })
+    .toBuffer();
+}
+
+/**
+ * Black out rectangles of a source image — agency logos, watermarks and
+ * caption strips baked into a release (#641: CNSA / CLEP logos on the
+ * Chang'e 5 and 6 panoramas). Rects are [x0, y0, x1, y1] as fractions of
+ * the width and height. Black then reads as a gap: the sky on the Moon,
+ * `recolourBlackThreshold` fills the rest.
+ */
+export async function blackOutRects(
+  source: Buffer,
+  rects: ReadonlyArray<readonly [number, number, number, number]>,
+): Promise<Buffer> {
+  const meta = await sharp(source, { limitInputPixels: false }).metadata();
+  const w = meta.width ?? 0;
+  const h = meta.height ?? 0;
+  const svg = `<svg width="${w}" height="${h}">${rects
+    .map(
+      ([x0, y0, x1, y1]) =>
+        `<rect x="${Math.floor(x0 * w)}" y="${Math.floor(y0 * h)}" width="${Math.ceil((x1 - x0) * w)}" height="${Math.ceil((y1 - y0) * h)}" fill="#000"/>`,
+    )
+    .join('')}</svg>`;
+  return sharp(source, { limitInputPixels: false })
+    .composite([{ input: Buffer.from(svg) }])
+    .png()
     .toBuffer();
 }

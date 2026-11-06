@@ -77,6 +77,9 @@ interface MarsPanoramaConfig {
    *  product that reads as a dark room in the viewer (1 = unchanged). Recorded
    *  in provenance `modifications`. */
   gain?: number;
+  /** Fill the mosaic's gaps from the surrounding pixels instead of one flat
+   *  palette colour (panorama-padder `inpaintGaps`). */
+  inpaintGaps?: boolean;
 }
 
 /**
@@ -124,9 +127,17 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     // for the 4× pixel-density jump.
     outWidth: 8192,
     outHeight: 4096,
+    // The PNG's outline is transparent and jagged; flat fill left
+    // stair-step blocks of tan and brown (#641). Sky pad matched to the
+    // mosaic's own sky (mean of its bright neutral top pixels: 189,177,175)
+    // so the stepped frame tops blend into it.
+    inpaintGaps: true,
+    palette: { skyHorizon: [192, 180, 178], skyZenith: [150, 136, 130] },
   },
   {
     siteId: 'perseverance',
+    // Mosaic gaps filled from the image, not one flat colour (#641).
+    inpaintGaps: true,
     sourceUrl:
       'https://assets.science.nasa.gov/content/dam/science/psd/mars/resources/deepzooms/2/5/25640_PIA2464-Perseverance_Sol3_Mastcam-Z_panorama.jpg',
     sourceLabel: 'PIA2464',
@@ -150,6 +161,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   },
   {
     siteId: 'spirit',
+    // Mosaic gaps filled from the image, not one flat colour (#641).
+    inpaintGaps: true,
     sourceUrl:
       'https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/6/36529_PIA16440_McMurdo_Merged_Cyl_L456atc_br2.jpg',
     sourceLabel: 'PIA16440',
@@ -162,6 +175,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   },
   {
     siteId: 'opportunity',
+    // Mosaic gaps filled from the image, not one flat colour (#641).
+    inpaintGaps: true,
     sourceUrl: 'https://pancam.sese.asu.edu/images/Lion_King.jpg',
     sourceLabel: 'PIA05672',
     attribution: 'NASA / JPL / Cornell',
@@ -205,6 +220,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   },
   {
     siteId: 'insight',
+    // Mosaic gaps filled from the image, not one flat colour (#641).
+    inpaintGaps: true,
     sourceUrl:
       'https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/42655_PIA23136.png',
     sourceLabel: 'PIA23136',
@@ -229,6 +246,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   },
   {
     siteId: 'viking2-lander',
+    // Mosaic gaps filled from the image, not one flat colour (#641).
+    inpaintGaps: true,
     sourceUrl:
       'https://commons.wikimedia.org/wiki/Special:FilePath/Panorama-VikingLander2-1-1976.jpg',
     sourceLabel: 'NASA Viking Lander 2 panorama (1976, via Wikimedia Commons)',
@@ -249,6 +268,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   },
   {
     siteId: 'viking1-lander',
+    // Mosaic gaps filled from the image, not one flat colour (#641).
+    inpaintGaps: true,
     sourceUrl: 'https://archive.org/download/PIA03163/PIA03163.jpg',
     sourceLabel: 'PIA03163',
     attribution: 'NASA / JPL',
@@ -389,6 +410,7 @@ async function processOne(
       // 8K (PRD-022 / ADR-074, #286 Phase 1A); rest default to 4K.
       outWidth: cfg.outWidth,
       outHeight: cfg.outHeight,
+      inpaintGaps: cfg.inpaintGaps,
     });
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     await fs.writeFile(outPath, padded);

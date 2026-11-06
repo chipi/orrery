@@ -34,6 +34,7 @@ import { spawn } from 'node:child_process';
 import { existsSync, promises as fs } from 'node:fs';
 
 import {
+  blackOutRects,
   whiteBorderToBlack,
   padToEquirectangular,
   DEFAULT_MOON_PALETTE,
@@ -60,6 +61,9 @@ interface MoonPanoramaConfig {
   /** The mosaic sits in a white no-data margin (ALSJ / Commons Apollo pans):
    *  blacken the edge-connected white first so the padding fills it. */
   whiteBorder?: boolean;
+  /** Logos / watermarks / caption strips baked into the release, blacked out
+   *  before padding: [x0, y0, x1, y1] fractions of the source. */
+  maskRects?: Array<[number, number, number, number]>;
   /** Output size; default 4096×2048. Large full-circle sources ship at 8K. */
   outWidth?: number;
   outHeight?: number;
@@ -247,6 +251,8 @@ const PANORAMAS: MoonPanoramaConfig[] = [
 
   {
     siteId: 'change3',
+    // The release carries its title and mosaic credit in a strip under the image (#641).
+    maskRects: [[0, 0.915, 1, 1]],
     sourceUrl: 'https://cdn.mos.cms.futurecdn.net/2UmRx9rkjZfauYdoQi8aAT.jpg',
     sourceLabel: "Chang'e 3 1st Color Panorama (CNSA, Dec 2013)",
     attribution: "CNSA / Chinanews / Ken Kremer / Marco Di Lorenzo · Chang'e 3 lander PCAM",
@@ -263,6 +269,11 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'change5',
+    // CNSA + CLEP logos top right and a Weibo watermark at the bottom (#641).
+    maskRects: [
+      [0.775, 0.05, 0.985, 0.235],
+      [0.42, 0.95, 0.57, 1],
+    ],
     sourceUrl:
       'https://planetary.s3.amazonaws.com/web/assets/pictures/lunar-surface-pano-from-change-5.jpg',
     sourceLabel: "Chang'e 5 lunar surface panorama (CNSA, Dec 2020)",
@@ -281,6 +292,8 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'change6',
+    // CNSA + CLEP logos top right (#641).
+    maskRects: [[0.855, 0.025, 0.995, 0.175]],
     sourceUrl:
       'https://news.cgtn.com/news/2024-06-04/China-s-Chang-e-6-sends-back-images-from-the-far-side-of-the-moon-1u9v8l9xdUk/img/52549cd8b951460bb6fe186a2495c8fb/52549cd8b951460bb6fe186a2495c8fb.jpeg',
     sourceLabel: "Chang'e 6 first surface panorama (CNSA, June 2024)",
@@ -404,7 +417,10 @@ async function processOne(cfg: MoonPanoramaConfig, missingOnly: boolean): Promis
   try {
     const sourcePath = await ensureCachedSource(cfg);
     const raw = await fs.readFile(sourcePath);
-    const sourceBytes = cfg.whiteBorder ? await whiteBorderToBlack(raw) : raw;
+    const unbordered = cfg.whiteBorder ? await whiteBorderToBlack(raw) : raw;
+    const sourceBytes = cfg.maskRects?.length
+      ? await blackOutRects(unbordered, cfg.maskRects)
+      : unbordered;
     const padded = await padToEquirectangular({
       source: sourceBytes,
       srcAzimuthDeg: cfg.srcAzimuthDeg,

@@ -3691,6 +3691,7 @@
     data-ret-len={retPts.length}
     data-out-vertex-hash={outVertexHash}
     data-helio-kms={heliocentricKms.toFixed(4)}
+    data-transfer-a-au={transferA.toFixed(6)}
     data-dist-earth-au={distFromEarthAu.toFixed(6)}
     data-dist-mars-au={distFromMarsAu.toFixed(6)}
     data-signal-delay-min={signalDelayMin.toFixed(4)}

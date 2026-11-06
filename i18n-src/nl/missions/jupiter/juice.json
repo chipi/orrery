@@ -1,7 +1,7 @@
 {
   "name": "JUICE",
   "vehicle": "Ariane 5 ECA",
-  "payload": "6000 kg nat (2900 kg droog) — het grootste interplanetaire ruimtevaartuig dat Europa ooit heeft gebouwd. 10 instrumenten: JANUS (zichtbaar), MAJIS (IR), UVS, SWI (sub-mm), GALA (laserhoogtemeter), RIME (radarsounder, NASA), J-MAG (magnetometer), PEP (deeltjes), RPWI (plasmagolven), 3GM (radiowetenschap). Zonnepanelen van 85 m², berekend op werking op ~5,5 AE.",
+  "payload": "6070 kg nat (2420 kg droog) — het grootste interplanetaire ruimtevaartuig dat Europa ooit heeft gebouwd. 10 instrumenten: JANUS (zichtbaar), MAJIS (IR), UVS, SWI (sub-mm), GALA (laserhoogtemeter), RIME (radarsounder, NASA), J-MAG (magnetometer), PEP (deeltjes), RPWI (plasmagolven), 3GM (radiowetenschap). Zonnepanelen van 85 m², berekend op werking op ~5,5 AE.",
   "delta_v": "~3,0 km/s (reeks zwaartekrachtassists + Jupiter-baaninsertie + Ganymedes-baaninsertie)",
   "type": "ORBITER · ACTIEF",
   "first": "Grootste interplanetaire ruimtevaartuig gebouwd in Europa; eerste ruimtevaartuig ooit dat in een baan om een maan van een andere planeet komt (Ganymedes, 2034)",

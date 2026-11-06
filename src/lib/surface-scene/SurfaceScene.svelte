@@ -3974,6 +3974,7 @@
             siteTagBlockedAt = now;
             const host = renderer.domElement.getBoundingClientRect();
             siteTagBlocked = [...document.querySelectorAll(SITE_TAG_HUD)]
+              .filter((el) => getComputedStyle(el).visibility !== 'hidden')
               .map((el) => el.getBoundingClientRect())
               .filter((r) => r.width > 0 && r.height > 0)
               .map((r) => ({
@@ -5818,10 +5819,15 @@ sample      ${debugInfo.projectedPxSample}`}
   <!-- Only once the site icons arrive with zoom (operator, #641): the first
        view is a bare globe. And not near the ground: zoomed in on one site
        the strip just covers the route and imagery. Mobile keeps the Nations
-       tab. The 2D map shows every site, so it always has the strip. -->
-  {#if !panoramaActive && (view === '2d' || (tagStageOn && altitudeKm >= config.radiusKm * 0.044))}
+       tab. The 2D map shows every site, so it always has the strip. Kept in
+       the DOM and faded (the mobile Nations tab mirrors its state). -->
+  {#if !panoramaActive}
     <div
       class="legend-3d"
+      class:legend-3d--away={!(
+        view === '2d' ||
+        (tagStageOn && altitudeKm >= config.radiusKm * 0.044)
+      )}
       class:beside-panel={panelOpen}
       bind:this={legendEl}
       role="group"
@@ -7200,7 +7206,15 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 4px;
   }
 
+  .legend-3d--away {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
   .legend-3d {
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s;
     position: absolute;
     /* Compact colour-key strip spanning the full width just above the
        footer. On desktop always visible; on mobile replaced by the

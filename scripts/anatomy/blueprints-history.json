@@ -210,6 +210,20 @@
       ],
       "notes": "No draft. Launch → Earth flyby is a fitted ellipse with one extra turn (0.97–2.05 AU, fit error 0.002 AU); the deep-space burns are not modelled. 1/27 sunlight = 1/5.2². Not sourced this session: +7.3 km/s and the 35-minute burn (our data), and \"the Atlas V could not send Juno straight to Jupiter\" (our data says a direct transfer needed a far larger launcher).",
       "content_check": "Fixed (commit 7f049c5ac53, 14 locales): \"first solar-powered spacecraft to operate beyond the asteroid belt\" → first to reach Jupiter; polar cyclones eight around the north pole, five (later six) around the south, not eight around each. Not changed: ~500 W at Jupiter in our data vs ~435 W in Wikipedia (NASA material uses about 500 W); \"mission extended through 2025\" in our data vs Wikipedia's extension through 2028."
+    },
+    "bepicolombo": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts bepicolombo",
+      "reference_media": "9409dca0-ab9f-4d50-83f7-26f358250164",
+      "drafts": [],
+      "final_job": "69e571ec-6b1d-4d3f-9364-eaa657035eac",
+      "edits": ["panel H: the subscript of M drew as \"∞\"-like; papered over and ☉ drawn"],
+      "sources": [
+        "https://en.wikipedia.org/wiki/BepiColombo (launch 01:45 UTC VA245, 4,100 kg, MPO 1,230 / Mio 255 / MTM 2,615 kg, four T6 290 mN, Earth 12,700 km, Venus dates, six Mercury flybys 165–37,626 km, 2024 thruster problem +11 months, insertion planned 21 Nov 2026)",
+        "static/data/missions/mercury/bepicolombo.json (Venus 10,720 / 552 km, Mercury 1–4 altitudes, Giuseppe Colombo and Mariner 10)"
+      ],
+      "notes": "No draft. Generator now allows Mercury as an event body. Launch → Earth and Venus → Venus are fitted ellipses (fit errors 0.006 and 0.000 AU); Mercury 1 → 6 rides Mercury's orbit because the resonant loops between the flybys are not in our data — the sheet says so. Orbit insertion is in the future (21 Nov 2026): the sheet and table say PLANNED. Not sourced this session: Ariane 5 engine names (Vulcain 2, HM7B), \"MTM let go before arrival\", and the Venus and Mercury 1–4 altitudes (our data).",
+      "content_check": "Fixed (commit 94516eac8e1): Mio 255 kg, not 285 (14 locales); English flight text: falling sunward the craft speeds up, so it must shed orbital energy (not \"velocity must DROP by ~25 km/s\"); Mercury flybys 5 and 6 are past, not planned; the 2024 thruster problem moved insertion to Nov 2026."
     }
   },
   "queue": {

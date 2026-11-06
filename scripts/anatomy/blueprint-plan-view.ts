@@ -146,7 +146,7 @@ function smallBody(el: Elements, jd: number) {
 
 interface Event {
   label: string;
-  body: Exclude<PlanetId, 'mercury' | 'pluto'> | keyof typeof SMALL;
+  body: Exclude<PlanetId, 'pluto'> | keyof typeof SMALL;
   utc: string;
   /** Full turns around the Sun on the leg INTO this event, beyond the direct angle between the
    *  two positions (Rosetta's one-year Earth-to-Earth orbit: 1). The single-revolution Lambert
@@ -212,6 +212,22 @@ interface Mission {
   f?: string;
 }
 const MISSIONS: Record<string, Mission> = {
+  // Wikipedia "BepiColombo": launch 01:45 UTC; flyby dates (noon); insertion planned 21 Nov 2026.
+  // The loops between Mercury flybys are resonant orbits we have no data for: drawn along Mercury's.
+  bepicolombo: {
+    events: [
+      { label: 'EARTH · LAUNCH', body: 'earth', utc: '2018-10-20T01:45:00Z' },
+      { label: 'EARTH · FLYBY', body: 'earth', utc: '2020-04-10T12:00:00Z', revs: 1 },
+      { label: 'VENUS 1', body: 'venus', utc: '2020-10-15T12:00:00Z' },
+      { label: 'VENUS 2', body: 'venus', utc: '2021-08-10T12:00:00Z', revs: 1 },
+      { label: 'MERCURY 1', body: 'mercury', utc: '2021-10-01T12:00:00Z' },
+      { label: 'MERCURY 6', body: 'mercury', utc: '2025-01-08T12:00:00Z', ride: true, tag: 'right' },
+    ],
+    orbits: ['mercury', 'venus', 'earth', 'mars'],
+    scale: 'linear',
+    end: 'orbit',
+    bottom: 'E. AT MERCURY · TWO ORBITERS',
+  },
   // Wikipedia "Juno (spacecraft)": launch 16:25 UTC, Jupiter arrival 03:53 UTC; Earth flyby (noon).
   juno: {
     events: [
@@ -336,6 +352,7 @@ const MISSIONS: Record<string, Mission> = {
   },
 };
 const MEAN_AU: Partial<Record<PlanetId, number>> = {
+  mercury: 0.387,
   venus: 0.723,
   mars: 1.524,
   earth: 1,

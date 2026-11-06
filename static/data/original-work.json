@@ -1618,6 +1618,12 @@
       "cover": false
     },
     {
+      "title": "BepiColombo",
+      "file": "/images/blueprints/bepicolombo.webp",
+      "route": "/missions?id=bepicolombo",
+      "cover": false
+    },
+    {
       "title": "Cassini-Huygens",
       "file": "/images/blueprints/cassini.webp",
       "route": "/missions?id=cassini",
@@ -3984,7 +3990,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 11,
+    "blueprint_art": 12,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

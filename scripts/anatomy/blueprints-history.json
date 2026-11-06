@@ -82,6 +82,23 @@
       ],
       "notes": "Hero is a schematic figure-eight in the rotating Earth–Moon frame: true along the Earth–Moon line, not in width; the sheet says so. Saturn V launch mass and payload left off (Wikipedia gives a range and a generic TLI payload that does not match our mission-report mass).",
       "content_check": "Fixed (commit 996cda6f709, all 14 locales for TEI): TEI did not put Apollo 11 on a 'free-return trajectory'; TLI ended just short of escape speed, not at it; Saturn V is the most powerful rocket to fly successfully (the N1 out-thrusted it but failed). Fixed (commit 7486a67dc93): parking orbit 320 km → 186 × 183 km. Kept: PDI from 15 km (Wikipedia's '6,000 ft' is not the PDI altitude)."
+    },
+    "ulysses": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-polar-view.ts ulysses",
+      "reference_media": "ae39953e-c77a-49c3-9408-e9b84bf72a24",
+      "drafts": ["064597a6-51e8-4f96-9a89-f3172039fcd7"],
+      "final_job": "cbba2a83-6ff8-4ee7-b7ce-00a373c2447f",
+      "edits": [
+        "panel J: \"MAP OF TILF HELIOSPHERE\" → \"MAP OF THE HELIOSPHERE\" (THE copied from the same line)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ulysses_(spacecraft)",
+        "https://www.cosmos.esa.int/web/ulysses/jupiter-flyby",
+        "static/data/missions/sun/ulysses.json (polar pass months, end of mission)"
+      ],
+      "notes": "Side view computed from sourced facts: flyby at aphelion (Jupiter 5.40 AU on the day = published aphelion), i 79.11°, q 1.35 AU, south first. Computed period 2,265 d vs published 2,264.26 d; passes at 79° ecliptic latitude (80.2° heliographic published). Polar passes given by month only: our data has no day. 38.3 km/s for an 80° plane change at Earth's 29.8 km/s is 2v·sin(Δi/2).",
+      "content_check": "Fixed (commit 1f5d478e717, English event text): launch speed 15.4 km/s relative to Earth, not 40 km/s; the 380,000 km Jupiter closest approach is above the cloud tops, 6.3 Jupiter radii (~450,000 km) from the centre (ESA). Not changed: launch mass 366 kg in our payload vs 371 kg in Wikipedia (sources differ on what is included); the sheet uses 371 kg."
     }
   },
   "queue": {

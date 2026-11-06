@@ -1630,6 +1630,12 @@
       "cover": false
     },
     {
+      "title": "Ulysses",
+      "file": "/images/blueprints/ulysses.webp",
+      "route": "/missions?id=ulysses",
+      "cover": false
+    },
+    {
       "title": "Voyager 2",
       "file": "/images/blueprints/voyager-2.webp",
       "route": "/missions?id=voyager-2",
@@ -3942,7 +3948,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
-    "blueprint_art": 4,
+    "blueprint_art": 5,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

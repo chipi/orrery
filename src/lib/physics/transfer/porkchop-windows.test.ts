@@ -2,8 +2,9 @@
  * The porkchop's launch windows against the real sky. Reference: the dates the JPL Keplerian
  * ephemeris (`physics/ephemeris`, the same elements the blueprints and the sky views use) gives
  * the Hohmann phase angle — target longitude − Earth longitude = π(1 − ((1+r)/2r)^1.5). Every
- * porkchop valley must sit within weeks of one (the grid's circular-orbit Lambert is not a
- * Hohmann transfer, and Mars' eccentricity moves its optimum by up to ~3 weeks).
+ * porkchop valley must sit within weeks of one (a Lambert optimum is not a
+ * Hohmann transfer, and Mars' eccentricity moves its optimum by ~5 weeks: the 2026 grid minimum is
+ * 10-30, the NASA handbook's lowest-energy departures Oct 31 / Nov 14, the circular phase 12-05).
  *
  * Guards the 2026-11-06 bug: grid days (from 2026-01-01) were placed with J2000 elements and no
  * offset, so every planet but Earth was out of phase — Jupiter's window ~80 days early, Venus'

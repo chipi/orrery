@@ -358,3 +358,23 @@ near longitude 0°) and `/fly` no longer flies them.
 shows the craft away from a body at its event.
 **State** — healthy (2026-11-03: 25 missions; no return legs — operator scope rule 2026-11-02).
 
+
+## /fly and /plan against JPL — check (`scripts/fly/`)
+
+**Commands** — read-only, each prints a table:
+- `npx tsx scripts/fly/planet-model-check.ts [fromYear toYear]` — `destinationPos` (the planet model
+  /fly, the /plan porkchop grid and the Lab share) against the JPL Keplerian ephemeris: max / RMS
+  longitude error and max radius error per planet.
+- `npx tsx scripts/fly/blueprint-fit-audit.ts [id …]` — per mission, every labelled /fly waypoint:
+  where /fly puts the body on that date against JPL (Δλ, Δr), and the nearest mission event date.
+- `npx tsx scripts/fly/porkchop-window-check.ts [dest …]` — the precomputed porkchops' minima
+  against the JPL Hohmann phase dates.
+
+**What** — The JPL ephemeris (`src/lib/physics/ephemeris`) is the reference. The guards are
+`planet-positions-jpl.test.ts` (every planet within 0.6° of JPL, 1970–2035) and
+`porkchop-windows.test.ts` (every Venus / Mars / Jupiter window near its JPL date, Δv near Hohmann).
+**When** — Any change to `lambert-grid.constants`, `planets.json` elements, the Lambert solver or a
+mission's flyby dates. After a change to the planet model, regenerate `npm run precompute-porkchops`
+and the /fly paths (`generate-fly-trajectory.ts`, every id in `static/data/fly-trajectories/`).
+**State** — healthy (2026-11-06: planets eccentric, max 0.47° (Mercury); worst /fly anchor 1.9°,
+Earth, still circular; 2026 Mars window 10-30).

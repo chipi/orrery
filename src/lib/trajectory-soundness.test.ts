@@ -230,11 +230,13 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
           expectCloseTo(last.z, expected.z / SCALE_3D, 5 / SCALE_3D, `${m.id} Moon-mode last.z`);
         } else {
           const hid = arcs.heliDestinationId;
+          // The outbound arc ends at the destination on flyby_day (fly-moon-arc buildArcs);
+          // arr_day is the Earth return on a round trip.
           if (!hid) throw new Error(`${m.id}: missing heliDestinationId`);
           const expected =
             hid === 'mars'
-              ? marsPos(arcs.timeline.arr_day)
-              : destinationPos(arcs.timeline.arr_day, hid);
+              ? marsPos(arcs.timeline.flyby_day)
+              : destinationPos(arcs.timeline.flyby_day, hid);
           const tol = hid === 'mars' ? 0.1 : 0.25;
           expectCloseTo(
             Math.hypot(last.x, last.z),

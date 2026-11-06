@@ -12,13 +12,9 @@ import { createLayeredStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
 import { heroEnvironment } from '$lib/three/hero-materials';
 import type { QualityConfig } from '$lib/quality/quality-tier';
-import {
-  DESTINATIONS,
-  R_EARTH_AU,
-  R_MARS_AU,
-  type DestinationId,
-} from '$lib/physics/transfer/lambert-grid.constants';
+import { R_EARTH_AU, type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 import { SCALE_3D, SUN_SCENE_RADIUS } from '$lib/fly-scene-constants';
+import { orbitPath } from '$lib/physics/transfer/mission-arc';
 
 /**
  * Static heliocentric-scene builder. Extracted from
@@ -263,6 +259,16 @@ function buildOrbitRing(radius: number, color: number): THREE.LineLoop {
       new THREE.Vector3(Math.cos(a) * radius * SCALE_3D, 0, Math.sin(a) * radius * SCALE_3D),
     );
   }
+  return new THREE.LineLoop(
+    new THREE.BufferGeometry().setFromPoints(pts),
+    new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.6 }),
+  );
+}
+
+/** Build a LineLoop through a destination's whole orbit (`orbitPath`), so an eccentric
+ *  planet sits on its ring on every day, not on a circle of radius a. */
+function buildBodyOrbitRing(id: DestinationId, color: number): THREE.LineLoop {
+  const pts = orbitPath(id).map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
   return new THREE.LineLoop(
     new THREE.BufferGeometry().setFromPoints(pts),
     new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.6 }),
@@ -571,7 +577,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
 
   // Earth orbit + initial destination orbit (Mars by default).
   const earthOrbitLine = buildOrbitRing(R_EARTH_AU, 0x4b9cd3);
-  let destinationOrbitLine = buildOrbitRing(R_MARS_AU, 0xc1440e);
+  let destinationOrbitLine = buildBodyOrbitRing('mars', 0xc1440e);
   scene.add(earthOrbitLine);
   scene.add(destinationOrbitLine);
 
@@ -617,7 +623,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     mesh.visible = false;
     scene.add(mesh);
     contextPlanets.set(id, mesh);
-    const orbit = buildOrbitRing(DESTINATIONS[id].a, style.color);
+    const orbit = buildBodyOrbitRing(id, style.color);
     orbit.visible = false;
     scene.add(orbit);
     contextOrbits.set(id, orbit);
@@ -1025,11 +1031,10 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     mat.emissiveIntensity = map ? 0.05 : 0.2;
     mat.needsUpdate = true;
     // Orbit ring — full replace (size + colour change together).
-    const orbitRadius = DESTINATIONS[id].a;
     scene.remove(destinationOrbitLine);
     destinationOrbitLine.geometry.dispose();
     (destinationOrbitLine.material as THREE.Material).dispose();
-    destinationOrbitLine = buildOrbitRing(orbitRadius, style.color);
+    destinationOrbitLine = buildBodyOrbitRing(id, style.color);
     destinationOrbitLine.visible = destinationOrbitVisible;
     scene.add(destinationOrbitLine);
     // Saturn rings — reveal only when we're at Saturn; resize the rings

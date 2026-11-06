@@ -17,8 +17,6 @@ import {
   DESTINATIONS,
   EARTH_A0,
   EARTH_MEAN_MOTION_RAD_PER_DAY,
-  MARS_A0,
-  MARS_MEAN_MOTION_RAD_PER_DAY,
   R_EARTH_AU,
   R_MARS_AU,
   type DestinationId,
@@ -49,10 +47,21 @@ export function earthPos(day: number): Vec2 {
   return { x: Math.cos(angle) * R_EARTH_AU, z: Math.sin(angle) * R_EARTH_AU };
 }
 
-/** Mars position at simulation day. Circular-orbit approximation. */
+/** Mars position at simulation day — the eccentric destination model. */
 export function marsPos(day: number): Vec2 {
-  const angle = MARS_A0 + MARS_MEAN_MOTION_RAD_PER_DAY * day;
-  return { x: Math.cos(angle) * R_MARS_AU, z: Math.sin(angle) * R_MARS_AU };
+  return destinationPos(day, 'mars');
+}
+
+/** One revolution of a destination's orbit, sampled from `destinationPos` so a drawn ring
+ *  passes through the body on every day (an eccentric orbit is not a circle of radius a). */
+export function orbitPath(id: DestinationId, steps = 256): Vec2[] {
+  const period = (2 * Math.PI) / DESTINATIONS[id].meanMotionRadPerDay;
+  const pts: Vec2[] = [];
+  for (let i = 0; i <= steps; i++) {
+    const p = destinationPos((i / steps) * period, id);
+    pts.push({ x: p.x, z: p.z });
+  }
+  return pts;
 }
 
 /** Heliocentric position of any supported destination on a given
@@ -64,10 +73,9 @@ export function destinationPos(day: number, id: DestinationId): Vec2 {
   // `a0 + n·day` is the mean longitude L, not the true anomaly. On an eccentric
   // orbit perihelion sits at the longitude of perihelion ϖ (`varpi`), not at 0
   // (S2): phase via mean anomaly M = L − ϖ → Kepler → true anomaly, placing the
-  // body at ecliptic longitude ν + ϖ. Circular bodies (e = 0) reduce exactly to
-  // [a·cos L, a·sin L] — byte-identical to the pre-ϖ model, so every giant-planet
-  // arc (and its hand-tuned trajectory.json) is untouched. Kept in lockstep with
-  // lambert-grid.destinationHelioXY so /fly render and /plan porkchop agree.
+  // body at ecliptic longitude ν + ϖ. The planets carry their e (within 0.5° of JPL,
+  // planet-positions-jpl.test); bodies without e reduce exactly to [a·cos L, a·sin L].
+  // Kept in lockstep with lambert-grid.destinationHelioXY so /fly render and /plan porkchop agree.
   if (d.orbit) {
     const [x, z] = inclinedOrbitXY(day, d.a, e, d.meanMotionRadPerDay, d.orbit);
     return { x, z };
@@ -288,11 +296,14 @@ export function returnArc(marsArr: Vec2, earthRet: Vec2, steps: number): Vec2[] 
   const longSweep = 2 * Math.PI + sweep;
 
   const pts: Vec2[] = [];
-  const radiusSwing = (R_MARS_AU - R_EARTH_AU) / 2;
+  // Radius eases from the endpoints' own distances (Mars is eccentric, not at R_MARS_AU).
+  const rMars = Math.hypot(marsArr.x, marsArr.z);
+  const rEarth = Math.hypot(earthRet.x, earthRet.z);
   for (let i = 0; i <= steps; i++) {
     const t = i / steps;
     const ang = marsAngle + longSweep * t;
-    const r = A_TRANSFER + radiusSwing * Math.cos(Math.PI * t);
+    const c = Math.cos(Math.PI * t);
+    const r = (rMars * (1 + c) + rEarth * (1 - c)) / 2;
     pts.push({ x: Math.cos(ang) * r, z: Math.sin(ang) * r });
   }
   return pts;

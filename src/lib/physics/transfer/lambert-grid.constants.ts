@@ -194,6 +194,8 @@ function buildPlanetDestination(id: DestinationId, name: string): DestinationCon
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
     varpi: p.varpi,
+    // Eccentric like the real planet: circles put Mercury 24°, Mars 11° off JPL.
+    e: p.e,
   };
 }
 

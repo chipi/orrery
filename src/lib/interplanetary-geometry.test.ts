@@ -56,11 +56,11 @@ describe('interplanetary-geometry — buildInterplanetaryTrajectory (Tier 1)', (
     const last = cruise.points[cruise.points.length - 1];
     const r0 = Math.hypot(first.x, first.z);
     const r1 = Math.hypot(last.x, last.z);
-    // Earth ~1 AU; Mars ~1.524 AU.
+    // Earth ~1 AU; Mars between perihelion 1.381 and aphelion 1.666 AU (e = 0.093).
     expect(r0).toBeGreaterThan(0.95);
     expect(r0).toBeLessThan(1.05);
-    expect(r1).toBeGreaterThan(1.45);
-    expect(r1).toBeLessThan(1.55);
+    expect(r1).toBeGreaterThan(1.37);
+    expect(r1).toBeLessThan(1.67);
   });
 
   it('arrival_track samples the target body over the full mission window', () => {
@@ -69,8 +69,8 @@ describe('interplanetary-geometry — buildInterplanetaryTrajectory (Tier 1)', (
     expect(traj.arrival_track.length).toBeGreaterThan(10);
     for (const p of traj.arrival_track) {
       const r = Math.hypot(p.x, p.z);
-      expect(r).toBeGreaterThan(1.45);
-      expect(r).toBeLessThan(1.55);
+      expect(r).toBeGreaterThan(1.37);
+      expect(r).toBeLessThan(1.67);
     }
   });
 

@@ -1,0 +1,756 @@
+[
+  {
+    "m": "moon/artemis2",
+    "text": {
+      "en-US": [
+        [
+          "\"met\": 0.13, \"label\": \"TLI\", \"note\": \"Trans-lunar injection burn by ICPS — Orion separates onto cislunar trajectory.",
+          "\"met\": 1.05, \"label\": \"TLI\", \"note\": \"Trans-lunar injection burn by Orion's service-module engine on flight day 2 — Orion leaves Earth orbit for a cislunar trajectory."
+        ]
+      ],
+      "ar": [
+        [
+          "\"met\": 0.13, \"label\": \"TLI\", \"note\": \"إشعال الحقن نحو القمر بواسطة ICPS — تنفصل Orion على مسار بين الأرض والقمر.",
+          "\"met\": 1.05, \"label\": \"TLI\", \"note\": \"إشعال الحقن نحو القمر بواسطة محرك وحدة الخدمة في Orion في اليوم الثاني من الرحلة — تنطلق Orion على مسار بين الأرض والقمر."
+        ]
+      ],
+      "de": [
+        [
+          "\"met\": 0.13,",
+          "\"met\": 1.05,"
+        ],
+        [
+          "Translunare Injektion durch die ICPS-Zündung – Orion trennt sich auf einer zislunaren Flugbahn.",
+          "Translunare Injektion durch die Zündung des Servicemodul-Triebwerks von Orion am zweiten Flugtag – Orion verlässt die Erdumlaufbahn auf einer zislunaren Flugbahn."
+        ]
+      ],
+      "es": [
+        [
+          "\"met\": 0.13, \"label\": \"ITL\", \"note\": \"Encendido de inyección translunar del ICPS — Orion se separa en una trayectoria cislunar.",
+          "\"met\": 1.05, \"label\": \"ITL\", \"note\": \"Encendido de inyección translunar del motor del módulo de servicio de Orion en el segundo día de vuelo — Orion sale hacia una trayectoria cislunar."
+        ]
+      ],
+      "fr": [
+        [
+          "\"met\": 0.13,",
+          "\"met\": 1.05,"
+        ],
+        [
+          "Allumage d'injection trans-lunaire par l'ICPS — Orion se sépare sur une trajectoire cislunaire.",
+          "Allumage d'injection trans-lunaire par le moteur du module de service d'Orion au deuxième jour de vol — Orion part sur une trajectoire cislunaire."
+        ]
+      ],
+      "hi": [
+        [
+          "\"met\": 0.13, \"label\": \"TLI\", \"note\": \"ICPS द्वारा ट्रांस-लूनर इंजेक्शन दहन — Orion सिसलूनर प्रक्षेपवक्र पर अलग होता है।",
+          "\"met\": 1.05, \"label\": \"TLI\", \"note\": \"उड़ान के दूसरे दिन Orion के सर्विस मॉड्यूल इंजन द्वारा ट्रांस-लूनर इंजेक्शन दहन — Orion सिसलूनर प्रक्षेपवक्र पर निकल पड़ता है।"
+        ]
+      ],
+      "it": [
+        [
+          "\"met\": 0.13,",
+          "\"met\": 1.05,"
+        ],
+        [
+          "Accensione per l'iniezione translunare da parte dell'ICPS: Orion si separa sulla traiettoria cislunare.",
+          "Accensione per l'iniezione translunare da parte del motore del modulo di servizio di Orion nel secondo giorno di volo: Orion parte sulla traiettoria cislunare."
+        ]
+      ],
+      "ja": [
+        [
+          "\"met\": 0.13, \"label\": \"TLI\", \"note\": \"ICPSによる月遷移軌道投入噴射 — Orionが地球・月間軌道へ分離。",
+          "\"met\": 1.05, \"label\": \"TLI\", \"note\": \"飛行2日目、Orionのサービスモジュールのエンジンによる月遷移軌道投入噴射 — Orionが地球・月間軌道へ向かう。"
+        ]
+      ],
+      "ko": [
+        [
+          "\"met\": 0.13, \"label\": \"TLI\", \"note\": \"ICPS가 달 이행 주입 연소 — Orion이 달권 궤적으로 분리.",
+          "\"met\": 1.05, \"label\": \"TLI\", \"note\": \"비행 2일째 Orion 서비스 모듈 엔진의 달 이행 주입 연소 — Orion이 달권 궤적으로 진입."
+        ]
+      ],
+      "nl": [
+        [
+          "\"met\": 0.13,",
+          "\"met\": 1.05,"
+        ],
+        [
+          "Trans-lunaire injectie-ontsteking door ICPS — Orion scheidt op cislunair traject.",
+          "Trans-lunaire injectie-ontsteking door de servicemodule-motor van Orion op vliegdag 2 — Orion vertrekt op cislunair traject."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "\"met\": 0.13,",
+          "\"met\": 1.05,"
+        ],
+        [
+          "Queima de injeção translunar pelo ICPS – Orion se separa na trajetória cislunar.",
+          "Queima de injeção translunar pelo motor do módulo de serviço da Orion no segundo dia de voo – Orion segue para a trajetória cislunar."
+        ]
+      ],
+      "ru": [
+        [
+          "\"met\": 0.13, \"label\": \"TLI\", \"note\": \"Включение двигателя ICPS для транслунной инъекции — Orion выходит на цислунную траекторию.",
+          "\"met\": 1.05, \"label\": \"TLI\", \"note\": \"Включение маршевого двигателя служебного модуля Orion для транслунной инъекции на вторые сутки полёта — Orion выходит на цислунную траекторию."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "\"met\": 0.13,",
+          "\"met\": 1.05,"
+        ],
+        [
+          "Паљење степена ICPS за убацивање на транслунарну путању — Orion се одваја и креће ка цислунарној путањи.",
+          "Паљење мотора сервисног модула летелице Orion другог дана лета за убацивање на транслунарну путању — Orion креће ка цислунарној путањи."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "\"met\": 0.13,",
+          "\"met\": 1.05,"
+        ],
+        [
+          "ICPS 进行跨月注入变轨——Orion 分离进入月球邻近轨迹。",
+          "飞行第 2 天，Orion 服务舱发动机进行跨月注入变轨——Orion 进入月球邻近轨迹。"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "moon/artemis2",
+    "base": [
+      [
+        "\"met_days\": 0.13,",
+        "\"met_days\": 1.05,"
+      ],
+      [
+        "\"dv_km_s\": 3.05",
+        "\"dv_km_s\": 0.39"
+      ],
+      [
+        "The burn placed Orion + crew on a five-day free-return path to the Moon.",
+        "Orion's own service-module (ESM) main engine fired about 25 hours after launch, on flight day 2 (the ICPS had only raised the perigee), placing Orion + crew on a five-day free-return path to the Moon."
+      ],
+      [
+        "ICPS performed nominal TLI for Orion",
+        "ICPS raised the perigee; Orion's own service-module engine performed TLI on flight day 2"
+      ]
+    ]
+  },
+  {
+    "m": "earth/artemis3",
+    "text": {
+      "en-US": [
+        [
+          "Orion docks with them in Earth orbit",
+          "Orion plans to dock with one or both in Earth orbit"
+        ],
+        [
+          "In orbit, Orion meets pathfinder versions of SpaceX's Starship lander and Blue Origin's Blue Moon, docks, and the crew test",
+          "In orbit, Orion plans to meet and dock with pathfinder versions of one or both of SpaceX's Starship lander and Blue Origin's Blue Moon, and the crew test"
+        ]
+      ],
+      "ar": [
+        [
+          "Orion ترسو بها في المدار الأرضي",
+          "Orion تخطط للالتحام بإحداها أو بكلتيهما في المدار الأرضي"
+        ],
+        [
+          "تلتقي Orion بنسختين تجريبيتين من مركبة الهبوط Starship من SpaceX ومن Blue Moon من Blue Origin، وتلتحم بهما، ",
+          "تخطط Orion للالتقاء بنسخة تجريبية من مركبة الهبوط Starship من SpaceX أو من Blue Moon من Blue Origin أو بكلتيهما والالتحام بها، "
+        ]
+      ],
+      "de": [
+        [
+          "Orion dockt in der Erdumlaufbahn an ihnen an",
+          "Orion will in der Erdumlaufbahn an einem oder beiden andocken"
+        ],
+        [
+          "In der Umlaufbahn trifft Orion auf Pathfinder-Versionen des Starship-Landers von SpaceX und des Blue Moon von Blue Origin, dockt an, und die Besatzung",
+          "In der Umlaufbahn will Orion an einer oder beiden der Pathfinder-Versionen des Starship-Landers von SpaceX und des Blue Moon von Blue Origin andocken, und die Besatzung"
+        ]
+      ],
+      "es": [
+        [
+          "Orion se acopla a ellos en órbita terrestre",
+          "Orion prevé acoplarse a uno o a ambos en órbita terrestre"
+        ],
+        [
+          "En órbita, Orion se reúne con versiones de prueba del módulo de aterrizaje Starship de SpaceX y del Blue Moon de Blue Origin, se acopla a ellos, y la tripulación",
+          "En órbita, Orion prevé reunirse y acoplarse con una o ambas versiones de prueba del módulo de aterrizaje Starship de SpaceX y del Blue Moon de Blue Origin, y la tripulación"
+        ]
+      ],
+      "fr": [
+        [
+          "Orion s'amarre à eux en orbite terrestre",
+          "Orion prévoit de s'amarrer à l'un d'eux ou aux deux en orbite terrestre"
+        ],
+        [
+          "En orbite, Orion rejoint des versions préparatoires de l'atterrisseur Starship de SpaceX et du Blue Moon de Blue Origin, s'amarre, et l'équipage",
+          "En orbite, Orion prévoit de rejoindre et de s'amarrer à l'une ou aux deux versions préparatoires de l'atterrisseur Starship de SpaceX et du Blue Moon de Blue Origin, et l'équipage"
+        ]
+      ],
+      "hi": [
+        [
+          "Orion पृथ्वी की कक्षा में उनके साथ डॉक करता है",
+          "Orion पृथ्वी की कक्षा में उनमें से एक या दोनों के साथ डॉक करने की योजना बनाता है"
+        ],
+        [
+          "कक्षा में Orion, SpaceX के Starship लैंडर और Blue Origin के Blue Moon के पाथफ़ाइंडर संस्करणों से मिलता है, डॉक करता है, और दल",
+          "कक्षा में Orion, SpaceX के Starship लैंडर और Blue Origin के Blue Moon के पाथफ़ाइंडर संस्करणों में से एक या दोनों से मिलने और डॉक करने की योजना बनाता है, और दल"
+        ]
+      ],
+      "it": [
+        [
+          "Orion si aggancia a essi in orbita terrestre",
+          "Orion prevede di agganciarsi a uno o a entrambi in orbita terrestre"
+        ],
+        [
+          "In orbita Orion incontra versioni di prova del lander Starship di SpaceX e del Blue Moon di Blue Origin, si aggancia, e l'equipaggio",
+          "In orbita Orion prevede di incontrare e agganciarsi a una o a entrambe le versioni di prova del lander Starship di SpaceX e del Blue Moon di Blue Origin, e l'equipaggio"
+        ]
+      ],
+      "ja": [
+        [
+          "Orionが地球周回軌道上でそれらとドッキングする",
+          "Orionは地球周回軌道上でそのいずれか、または両方とのドッキングを計画している"
+        ],
+        [
+          "軌道上でOrionは、SpaceXのStarship着陸機とBlue OriginのBlue Moonのパスファインダー版に出会ってドッキングし、乗員は",
+          "軌道上でOrionは、SpaceXのStarship着陸機とBlue OriginのBlue Moonのパスファインダー版のいずれか、または両方と出会ってドッキングすることを計画しており、乗員は"
+        ]
+      ],
+      "ko": [
+        [
+          "Orion이 지구 궤도에서 착륙선과 도킹한다",
+          "Orion이 지구 궤도에서 착륙선 하나 또는 둘 모두와 도킹할 계획이다"
+        ],
+        [
+          "궤도에서 Orion은 SpaceX의 Starship 착륙선과 Blue Origin의 Blue Moon의 선행 시험용 버전과 만나 도킹하고, 승무원은",
+          "궤도에서 Orion은 SpaceX의 Starship 착륙선과 Blue Origin의 Blue Moon의 선행 시험용 버전 중 하나 또는 둘 모두와 만나 도킹할 계획이며, 승무원은"
+        ]
+      ],
+      "nl": [
+        [
+          "Orion koppelt er in een baan om de Aarde aan vast",
+          "Orion is van plan in een baan om de Aarde aan een of beide te koppelen"
+        ],
+        [
+          "In de baan ontmoet Orion testversies van SpaceX' Starship-lander en Blue Origins Blue Moon, koppelt eraan vast, en test de bemanning",
+          "In de baan is Orion van plan een of beide testversies van SpaceX' Starship-lander en Blue Origins Blue Moon te ontmoeten en eraan te koppelen, en test de bemanning"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "a Orion acopla a eles em órbita terrestre",
+          "a Orion planeja acoplar a um deles ou a ambos em órbita terrestre"
+        ],
+        [
+          "Em órbita, a Orion encontra versões de teste do módulo de pouso Starship, da SpaceX, e do Blue Moon, da Blue Origin, acopla a elas, e a tripulação",
+          "Em órbita, a Orion planeja encontrar e acoplar a uma ou a ambas as versões de teste do módulo de pouso Starship, da SpaceX, e do Blue Moon, da Blue Origin, e a tripulação"
+        ]
+      ],
+      "ru": [
+        [
+          "Orion стыкуется с ними на околоземной орбите",
+          "Orion планирует стыковку с одним из них или с обоими на околоземной орбите"
+        ],
+        [
+          "На орбите Orion встречается с опытными образцами посадочного модуля Starship компании SpaceX и Blue Moon компании Blue Origin, стыкуется с ними, а экипаж",
+          "На орбите Orion планирует встретиться и состыковаться с одним или обоими опытными образцами посадочного модуля Starship компании SpaceX и Blue Moon компании Blue Origin, а экипаж"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Orion се с њима спаја у Земљиној орбити",
+          "Orion планира да се у Земљиној орбити споји с једним или с оба"
+        ],
+        [
+          "У орбити Orion се среће са пробним верзијама лендера Starship компаније SpaceX и лендера Blue Moon компаније Blue Origin, спаја се с њима, а посада",
+          "У орбити Orion планира да се сретне и споји са једном или обе пробне верзије лендера Starship компаније SpaceX и лендера Blue Moon компаније Blue Origin, а посада"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "Orion在近地轨道与它们对接",
+          "Orion计划在近地轨道与其中一个或两个对接"
+        ],
+        [
+          "在轨道上，Orion 与 SpaceX 的 Starship 着陆器和 Blue Origin 的 Blue Moon 的先导版本会合并对接，乘组",
+          "在轨道上，Orion 计划与 SpaceX 的 Starship 着陆器和 Blue Origin 的 Blue Moon 的先导版本中的一个或两个会合并对接，乘组"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "earth/artemis3",
+    "base": [
+      [
+        "Orion rendezvous and docking with pathfinder versions of the commercial landers",
+        "Orion rendezvous and (planned) docking with one or both of the commercial landers' pathfinder versions"
+      ]
+    ]
+  },
+  {
+    "m": "moon/artemis4",
+    "text": {
+      "en-US": [
+        [
+          "the first landing since Apollo 17 in 1972, and the first ever near the south pole",
+          "the first crewed landing since Apollo 17 in 1972, and the first crewed landing near the south pole"
+        ]
+      ],
+      "ar": [
+        [
+          "أول هبوط منذ Apollo 17 عام 1972، وأول هبوط على الإطلاق قرب القطب الجنوبي",
+          "أول هبوط مأهول منذ Apollo 17 عام 1972، وأول هبوط مأهول قرب القطب الجنوبي"
+        ]
+      ],
+      "de": [
+        [
+          "die erste Landung seit Apollo 17 im Jahr 1972 und die erste überhaupt in der Nähe des Südpols",
+          "die erste bemannte Landung seit Apollo 17 im Jahr 1972 und die erste bemannte Landung in der Nähe des Südpols"
+        ]
+      ],
+      "es": [
+        [
+          "el primer aterrizaje desde el Apollo 17 en 1972 y el primero cerca del polo sur",
+          "el primer aterrizaje tripulado desde el Apollo 17 en 1972 y el primero tripulado cerca del polo sur"
+        ]
+      ],
+      "fr": [
+        [
+          "le premier alunissage depuis Apollo 17 en 1972, et le tout premier près du pôle sud",
+          "le premier alunissage en équipage depuis Apollo 17 en 1972, et le premier en équipage près du pôle sud"
+        ]
+      ],
+      "hi": [
+        [
+          "1972 के Apollo 17 के बाद पहली लैंडिंग, और दक्षिणी ध्रुव के पास पहली ही।",
+          "1972 के Apollo 17 के बाद पहली मानवयुक्त लैंडिंग, और दक्षिणी ध्रुव के पास पहली मानवयुक्त लैंडिंग।"
+        ]
+      ],
+      "it": [
+        [
+          "il primo allunaggio dall'Apollo 17 nel 1972 e il primo in assoluto vicino al polo sud",
+          "il primo allunaggio con equipaggio dall'Apollo 17 nel 1972 e il primo con equipaggio vicino al polo sud"
+        ]
+      ],
+      "ja": [
+        [
+          "1972年のApollo 17以来初の着陸であり、南極付近では史上初となる",
+          "1972年のApollo 17以来初の有人着陸であり、南極付近では初の有人着陸となる"
+        ]
+      ],
+      "ko": [
+        [
+          "1972년 Apollo 17 이후 첫 착륙이자 남극 부근에서는 사상 처음이다",
+          "1972년 Apollo 17 이후 첫 유인 착륙이자 남극 부근에서는 첫 유인 착륙이다"
+        ]
+      ],
+      "nl": [
+        [
+          "de eerste landing sinds Apollo 17 in 1972, en de eerste ooit bij de zuidpool",
+          "de eerste bemande landing sinds Apollo 17 in 1972, en de eerste bemande landing bij de zuidpool"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "o primeiro pouso desde a Apollo 17, em 1972, e o primeiro já feito perto do polo sul",
+          "o primeiro pouso tripulado desde a Apollo 17, em 1972, e o primeiro pouso tripulado perto do polo sul"
+        ]
+      ],
+      "ru": [
+        [
+          "первая посадка со времён Apollo 17 в 1972 году и первая в истории вблизи южного полюса",
+          "первая пилотируемая посадка со времён Apollo 17 в 1972 году и первая пилотируемая посадка вблизи южного полюса"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "прво слетање после мисије Apollo 17 из 1972.",
+          "прво слетање посаде после мисије Apollo 17 из 1972."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "这是自1972年Apollo 17以来的首次着陆，也是人类首次在南极附近着陆",
+          "这是自1972年Apollo 17以来的首次载人着陆，也是首次在南极附近的载人着陆"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "moon/artemis4",
+    "base": [
+      [
+        "the first crewed lunar landing since Apollo 17 (1972) and the first ever near the south pole",
+        "the first crewed lunar landing since Apollo 17 (1972) and the first crewed landing near the south pole"
+      ]
+    ]
+  },
+  {
+    "m": "moon/blue-moon-mk1",
+    "base": [
+      [
+        "Blue Moon's BE-7 hydrogen/oxygen engines (the first cryogenic propulsion on a lunar lander) execute the powered descent.",
+        "Blue Moon's single BE-7 hydrogen/oxygen engine (the first hydrogen-fuelled lunar lander engine) executes the powered descent."
+      ]
+    ]
+  },
+  {
+    "m": "mars/starship-mars-crew",
+    "text": {
+      "en-US": [
+        [
+          "First proposed crewed return mission to Mars (SpaceX architecture)",
+          "SpaceX's proposed crewed round trip to Mars"
+        ]
+      ],
+      "ar": [
+        [
+          "أول مهمة عودة بشرية مقترحة إلى المريخ (بنية SpaceX)",
+          "رحلة ذهاب وعودة بشرية إلى المريخ مقترحة من SpaceX"
+        ]
+      ],
+      "de": [
+        [
+          "Erste geplante bemannte Rückflugmission zum Mars (SpaceX-Architektur)",
+          "Von SpaceX vorgeschlagene bemannte Hin- und Rückreise zum Mars"
+        ]
+      ],
+      "es": [
+        [
+          "Primera misión propuesta de retorno tripulado a Marte (arquitectura SpaceX)",
+          "Viaje tripulado de ida y vuelta a Marte propuesto por SpaceX"
+        ]
+      ],
+      "fr": [
+        [
+          "Première mission habitée aller-retour vers Mars à avoir été proposée (architecture SpaceX)",
+          "Mission habitée aller-retour vers Mars proposée par SpaceX"
+        ]
+      ],
+      "hi": [
+        [
+          "मंगल तक पहला प्रस्तावित मानवयुक्त वापसी मिशन (SpaceX की वास्तुकला)",
+          "SpaceX द्वारा प्रस्तावित मंगल तक मानवयुक्त आना-जाना मिशन"
+        ]
+      ],
+      "it": [
+        [
+          "Prima proposta di missione di ritorno con equipaggio su Marte (architettura SpaceX)",
+          "Missione di andata e ritorno con equipaggio su Marte proposta da SpaceX"
+        ]
+      ],
+      "ja": [
+        [
+          "火星への有人往還ミッションとして初めて提案された計画（SpaceXの構想）",
+          "SpaceXが提案する火星への有人往還ミッション"
+        ]
+      ],
+      "ko": [
+        [
+          "제안된 최초 유인 화성 귀환 임무(SpaceX 아키텍처)",
+          "SpaceX가 제안한 유인 화성 왕복 임무"
+        ]
+      ],
+      "nl": [
+        [
+          "Eerste voorgestelde bemande terugkeermissie naar Mars (SpaceX-architectuur)",
+          "Door SpaceX voorgestelde bemande heen-en-terugreis naar Mars"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Primeira proposta de missão tripulada de retorno a Marte (arquitetura SpaceX)",
+          "Viagem tripulada de ida e volta a Marte proposta pela SpaceX"
+        ]
+      ],
+      "ru": [
+        [
+          "Первая предложенная пилотируемая миссия на Марс с возвращением (архитектура SpaceX)",
+          "Предложенная SpaceX пилотируемая экспедиция на Марс с возвращением"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Прва предложена мисија с посадом за повратак са Марса (архитектура компаније SpaceX)",
+          "Мисија с посадом на Марс и назад, коју предлаже компанија SpaceX"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "首个提议的载人火星往返任务（SpaceX 方案）",
+          "SpaceX 提议的载人火星往返任务"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "earth/inspiration4",
+    "text": {
+      "en-US": [
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "ar": [
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "de": [
+        [
+          "2021-09-15 um 00:02 UTC",
+          "2021-09-16 um 00:02 UTC"
+        ],
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "es": [
+        [
+          "2021-09-15 a las 00:02 UTC",
+          "2021-09-16 a las 00:02 UTC"
+        ],
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "fr": [
+        [
+          "2021-09-15 à 00:02 UTC",
+          "2021-09-16 à 00:02 UTC"
+        ],
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "hi": [
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "it": [
+        [
+          "2021-09-15 alle 00:02 UTC",
+          "2021-09-16 alle 00:02 UTC"
+        ],
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "ja": [
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "ko": [
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "nl": [
+        [
+          "2021-09-15 om 00:02 UTC",
+          "2021-09-16 om 00:02 UTC"
+        ],
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "2021-09-15 às 00:02 UTC",
+          "2021-09-16 às 00:02 UTC"
+        ],
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "ru": [
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "2021-09-15 у 00:02 UTC",
+          "2021-09-16 у 00:02 UTC"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "2021年9月15日00:02 UTC",
+          "2021年9月16日00:02 UTC"
+        ],
+        [
+          "2021-09-15 00:02 UTC",
+          "2021-09-16 00:02 UTC"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "earth/otv-7",
+    "text": {
+      "en-US": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "Performed a controlled aerobraking-style de-orbit sequence (USSF released a public update on the manoeuvre,",
+          "Aerobraking manoeuvres in October 2024 lowered its orbit before the March 2025 de-orbit (USSF released a public update on the manoeuvres,"
+        ]
+      ],
+      "ar": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "ونفّذت تسلسل خروج من المدار مضبوطاً بأسلوب الكبح الهوائي (أصدرت USSF تحديثاً علنياً عن المناورة",
+          "وخفّضت مناورات الكبح الهوائي في أكتوبر 2024 مدارها قبل الخروج من المدار في مارس 2025 (أصدرت USSF تحديثاً علنياً عن المناورات"
+        ]
+      ],
+      "de": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "Durchführung einer kontrollierten, Aerobraking-ähnlichen Abstiegssequenz aus der Umlaufbahn (die USSF veröffentlichte ein öffentliches Update zum Manöver",
+          "Aerobraking-Manöver im Oktober 2024 senkten die Umlaufbahn vor dem Deorbit im März 2025 (die USSF veröffentlichte ein öffentliches Update zu den Manövern"
+        ]
+      ],
+      "es": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "Realizó una secuencia controlada de desorbitación de tipo aerofrenado (la USSF publicó una actualización sobre la maniobra",
+          "Maniobras de aerofrenado en octubre de 2024 redujeron su órbita antes de la desorbitación de marzo de 2025 (la USSF publicó una actualización sobre las maniobras"
+        ]
+      ],
+      "fr": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "A effectué une séquence de désorbitation contrôlée de style freinage aérodynamique (l'USSF a publié une mise à jour publique sur la manœuvre",
+          "Des manœuvres de freinage aérodynamique en octobre 2024 ont abaissé son orbite avant la désorbitation de mars 2025 (l'USSF a publié une mise à jour publique sur les manœuvres"
+        ]
+      ],
+      "hi": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "यान ने एरोब्रेकिंग-शैली का नियंत्रित कक्षा-अवनति क्रम पूरा किया (USSF ने इस पैंतरे पर सार्वजनिक जानकारी जारी की",
+          "अक्टूबर 2024 में एरोब्रेकिंग पैंतरों ने मार्च 2025 में कक्षा-अवनति से पहले यान की कक्षा नीची की (USSF ने इन पैंतरों पर सार्वजनिक जानकारी जारी की"
+        ]
+      ],
+      "it": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "Ha eseguito una sequenza controllata di uscita dall'orbita in stile aerobraking (l'USSF ha pubblicato un aggiornamento sulla manovra",
+          "Manovre di aerobraking nell'ottobre 2024 hanno abbassato la sua orbita prima dell'uscita dall'orbita di marzo 2025 (l'USSF ha pubblicato un aggiornamento sulle manovre"
+        ]
+      ],
+      "ja": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "エアブレーキ方式の制御された軌道離脱シーケンスを実施した（USSFはこの機動について",
+          "2024年10月のエアロブレーキング機動で軌道を下げたのち、2025年3月に軌道離脱した（USSFはこれらの機動について"
+        ]
+      ],
+      "ko": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "에어로브레이킹 방식의 제어된 궤도 이탈 절차를 수행했다(USSF는 이 기동에 대한",
+          "2024년 10월 에어로브레이킹 기동으로 궤도를 낮춘 뒤 2025년 3월에 궤도를 이탈했다(USSF는 이 기동들에 대한"
+        ]
+      ],
+      "nl": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "Voerde een gecontroleerde de-orbitsequentie uit in de stijl van aeroremmen (USSF gaf een openbare update over het manoeuvre",
+          "Aeroremmanoeuvres in oktober 2024 verlaagden de baan vóór de de-orbit in maart 2025 (USSF gaf een openbare update over de manoeuvres"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "Realizou uma sequência controlada de desórbita em estilo aerofrenagem (USSF divulgou uma atualização pública da manobra",
+          "Manobras de aerofrenagem em outubro de 2024 reduziram sua órbita antes da desórbita de março de 2025 (USSF divulgou uma atualização pública das manobras"
+        ]
+      ],
+      "ru": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "Выполнена управляемая последовательность де-орбитизации в стиле аеробрейкинга (USSF опубликовал информационное сообщение о манёвре",
+          "Манёвры аэроторможения в октябре 2024 года понизили орбиту перед сходом с орбиты в марте 2025 года (USSF опубликовал информационное сообщение о манёврах"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "Изведена је контролисана секвенца силаска из орбите налик аеро-кочењу (USSF је објавио јавно саопштење о маневру",
+          "Маневри аеро-кочења у октобру 2024. снизили су орбиту пре силаска из орбите у марту 2025. (USSF је објавио јавно саопштење о маневрима"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "09:22",
+          "07:22"
+        ],
+        [
+          "执行了受控的气动减速式离轨程序（USSF 就这次机动发布了公开更新",
+          "2024年10月的气动减速机动降低了轨道高度，随后于2025年3月离轨（USSF 就这些机动发布了公开更新"
+        ],
+        [
+          "执行了受控气动制动式离轨程序(美国太空部队发布了该机动的公开更新",
+          "2024年10月的气动制动机动降低了轨道高度，随后于2025年3月离轨(美国太空部队发布了这些机动的公开更新"
+        ]
+      ]
+    }
+  }
+]

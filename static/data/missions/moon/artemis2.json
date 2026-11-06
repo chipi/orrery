@@ -52,7 +52,7 @@
     "launch": {
       "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage)",
       "mass_at_tli_kg": 26500,
-      "source": "NASA Artemis II post-flight report; ICPS performed nominal TLI for Orion"
+      "source": "NASA Artemis II post-flight report; ICPS raised the perigee; Orion's own service-module engine performed TLI on flight day 2"
     },
     "cruise": {
       "tcm_count": 2,
@@ -84,11 +84,11 @@
         "description": "Orion + ICPS finished post-launch checkout in high Earth orbit. The crew flew Orion around the spent ICPS for the manual proximity-operations demo unique to this mission."
       },
       {
-        "met_days": 0.13,
+        "met_days": 1.05,
         "type": "tli_or_tmi",
         "label": "Trans-lunar injection",
-        "description": "The burn placed Orion + crew on a five-day free-return path to the Moon. The trajectory is designed so the Moon's gravity bends Orion straight back to Earth even if the engine fails — no LOI burn needed.",
-        "dv_km_s": 3.05
+        "description": "Orion's own service-module (ESM) main engine fired about 25 hours after launch, on flight day 2 (the ICPS had only raised the perigee), placing Orion + crew on a five-day free-return path to the Moon. The trajectory is designed so the Moon's gravity bends Orion straight back to Earth even if the engine fails — no LOI burn needed.",
+        "dv_km_s": 0.39
       },
       {
         "met_days": 1.5,

@@ -1,7 +1,7 @@
 {
   "name": "Cassini-Huygens",
   "vehicle": "Titan IVB / Centaur",
-  "payload": "土星轨道器（干质量~5712 kg）+ Huygens 下降探测器（~318 kg，ESA 研制，2005-01-14 在土卫六着陆）",
+  "payload": "土星轨道器（干质量~2523 kg）+ Huygens 下降探测器（~318 kg，ESA 研制，2005-01-14 在土卫六着陆）",
   "delta_v": "~2 km/s（土星轨道入轨）",
   "type": "轨道器 + 着陆器 · 已飞行",
   "first": "环绕土星13年——Huygens 于 2005-01-14 着陆土卫六（外太阳系首次软着陆）",

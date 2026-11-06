@@ -1,7 +1,7 @@
 {
   "name": "Cassini-Huygens",
   "vehicle": "Titan IVB / Centaur",
-  "payload": "Saturnus-orbiter (~5712 kg droog) + Huygens-afdalingssonde (~318 kg, gebouwd door ESA, landde op Titan op 2005-01-14)",
+  "payload": "Saturnus-orbiter (~2523 kg droog) + Huygens-afdalingssonde (~318 kg, gebouwd door ESA, landde op Titan op 2005-01-14)",
   "delta_v": "~2 km/s (Saturnus-baaninsertie)",
   "type": "Orbiter + Lander · GEVLOGEN",
   "first": "13 jaar in baan om Saturnus — Huygens landde op 2005-01-14 op Titan (eerste zachte landing in het buitenste zonnestelsel)",

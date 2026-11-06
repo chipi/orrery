@@ -1,7 +1,7 @@
 {
   "name": "Cassini-Huygens",
   "vehicle": "Titan IVB / Centaur",
-  "payload": "Saturn orbiter (~5712 kg dry) + Huygens descent probe (~318 kg, ESA-built, landed on Titan 2005-01-14)",
+  "payload": "Saturn orbiter (~2523 kg dry) + Huygens descent probe (~318 kg, ESA-built, landed on Titan 2005-01-14)",
   "delta_v": "~2 km/s (Saturn orbit insertion)",
   "type": "ORBITER + LANDER · FLOWN",
   "first": "13 years in orbit around Saturn — Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",

@@ -12,7 +12,7 @@
   "transit_days": 816,
   "round_trip": true,
   "vehicle": "Atlas V 411",
-  "payload": "2110 kg launch mass (1075 kg dry)",
+  "payload": "2110 kg launch mass (880 kg dry)",
   "delta_v": "~1.4 km/s",
   "data_quality": "good",
   "credit": "© NASA / GSFC / U. Arizona / Lockheed Martin — public domain. Returned 121.6 g of Bennu surface material to Earth 2023-09-24 — the largest asteroid sample ever returned. Extended as OSIRIS-APEX en route to a 2029 Apophis rendezvous.",
@@ -107,13 +107,13 @@
         "met_days": 816.005,
         "type": "edl_or_oi",
         "label": "Bennu orbit insertion",
-        "description": "Sequence of approach burns place OSIRIS-REx into a 1.4-km circumnavigation — the closest-ever spacecraft orbit around a celestial body. Surveyed Bennu for 1.5 years, mapping the boulder-strewn surface in unprecedented detail. Discovered active particle ejections from the asteroid — a previously unknown class of behaviour."
+        "description": "Sequence of approach burns place OSIRIS-REx into a 1.4-km circumnavigation — the closest-ever spacecraft orbit around a celestial body. Surveyed Bennu for about two and a half years, mapping the boulder-strewn surface in unprecedented detail. Discovered active particle ejections from the asteroid — a previously unknown class of behaviour."
       },
       {
         "met_days": 1503,
         "type": "edl_or_oi",
         "label": "TAG — Touch-and-Go sample collection",
-        "description": "2020-10-20. OSIRIS-REx descended to the Nightingale site, fired a burst of N₂ gas into the surface from its sample-collection arm, and grabbed a sample-rich plume — then immediately backed away. The asteroid surface turned out to be 'rubble-pile fluid' — the spacecraft sank ~50 cm into the surface in the half-second it was in contact. Sample mass returned: 121.6 g, the largest asteroid sample ever."
+        "description": "2020-10-20. OSIRIS-REx descended to the Nightingale site, fired a burst of N₂ gas into the surface from its sample-collection arm, and grabbed a sample-rich plume — then immediately backed away. The asteroid surface turned out to be 'rubble-pile fluid' — the spacecraft sank ~50 cm into the surface in the few seconds it was in contact. Sample mass returned: 121.6 g, the largest asteroid sample ever."
       },
       {
         "met_days": 1705,
@@ -125,7 +125,7 @@
         "met_days": 2572,
         "type": "earth_return",
         "label": "Earth sample-return capsule delivery",
-        "description": "2023-09-24. Sample Return Capsule (SRC) released at 102,000 km, entered the atmosphere at 12.4 km/s, parachuted into the Utah Test and Training Range. The spacecraft itself was immediately redesignated OSIRIS-APEX and rerouted to a 2029-04-13 rendezvous with asteroid Apophis (which will pass within 31,000 km of Earth that same day)."
+        "description": "2023-09-24. Sample Return Capsule (SRC) released at 102,000 km, entered the atmosphere at 12.4 km/s, parachuted into the Utah Test and Training Range. The spacecraft itself was immediately redesignated OSIRIS-APEX and rerouted toward asteroid Apophis, which passes about 32,000 km from Earth on 2029-04-13; OSIRIS-APEX arrives later that month."
       }
     ],
     "interplanetary_profile": {

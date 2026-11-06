@@ -87,10 +87,10 @@
         "description": "A Mars flyby in March 2025 bends Hera's path toward Didymos and yields a bonus flyby of the Martian moon Deimos."
       },
       {
-        "met_days": 300,
+        "met_days": 509,
         "type": "tcm",
         "label": "DSM-2",
-        "description": "Post-Mars-flyby trajectory correction targeting the Didymos rendezvous."
+        "description": "Second deep-space manoeuvre, in February 2026 after the Mars flyby, lining Hera up for its November 2026 rendezvous with Didymos."
       },
       {
         "met_days": 812,

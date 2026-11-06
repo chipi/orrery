@@ -10,7 +10,7 @@
   "era": "2011-now",
   "epoch": "commercial-era",
   "best_known_for": "First mission to the Jupiter Trojans; encounters 11 asteroids (6 Trojans + 2 main-belt + satellites) in one 12-year trajectory",
-  "credit": "Added with /fly mission JSON (#341 batch 5). 1003 kg of hydrazine — more propellant than dry mass — to feed an 8-encounter trajectory.",
+  "credit": "Added with /fly mission JSON (#341 batch 5).",
   "specs": { "length_m": 16, "diameter_m": 1.7 },
   "links": [
     {

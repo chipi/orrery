@@ -1,7 +1,7 @@
 {
   "name": "OSIRIS-REx",
   "vehicle": "Atlas V 411",
-  "payload": "2110 kg de masa de lanzamiento (1075 kg en seco)",
+  "payload": "2110 kg de masa de lanzamiento (880 kg en seco)",
   "delta_v": "~1,4 km/s",
   "type": "RETORNO DE MUESTRAS · REALIZADA",
   "first": "Mayor muestra de asteroide jamás retornada (121,6 g de Bennu, entregada en la Tierra 2023-09-24)",

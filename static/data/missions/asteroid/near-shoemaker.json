@@ -66,13 +66,13 @@
         "met_days": 706,
         "type": "flyby",
         "label": "Earth — gravity assist",
-        "description": "1998-01-23: 540 km Earth flyby, raising the aphelion to match Eros's orbit. The spacecraft was briefly lost due to a thruster anomaly during a deep-space manoeuvre two weeks earlier — recovered via the Earth flyby geometry."
+        "description": "1998-01-23: 540 km Earth flyby, raising the aphelion to match Eros's orbit. The spacecraft was briefly lost after a thruster anomaly aborted its burn of 1998-12-20, 11 months later; NEAR flew past Eros instead and returned 14 months later."
       },
       {
         "met_days": 1458,
         "type": "edl_or_oi",
         "label": "Eros orbit insertion",
-        "description": "2000-02-14: 916 km orbital insertion burn into a 200 × 366 km elliptical orbit around Eros — the first spacecraft to orbit an asteroid. Over 12 months, orbit altitude was steadily reduced to build a 35 km near-circular mapping orbit."
+        "description": "2000-02-14: orbital insertion burn into a 321 × 366 km elliptical orbit around Eros — the first spacecraft to orbit an asteroid. Over 12 months, orbit altitude was steadily reduced to build a 35 km near-circular mapping orbit."
       },
       {
         "met_days": 1822,

@@ -1,7 +1,7 @@
 {
   "name": "OSIRIS-REx",
   "vehicle": "Atlas V 411",
-  "payload": "2110 kg di massa al lancio (1075 kg a secco)",
+  "payload": "2110 kg di massa al lancio (880 kg a secco)",
   "delta_v": "~1,4 km/s",
   "type": "MISSIONE DI RITORNO DI CAMPIONI · COMPLETATA",
   "first": "Più grande campione di asteroide mai riportato sulla Terra (121,6 g da Bennu, consegnato il 2023-09-24)",

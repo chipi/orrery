@@ -1,7 +1,7 @@
 {
   "name": "Lucy",
   "vehicle": "Atlas V 401",
-  "payload": "1550 kg (dont 1003 kg d'hydrazine — Lucy emporte bien plus d'ergols que sa masse à sec)",
+  "payload": "1550 kg (821 kg à sec)",
   "delta_v": "~6 km/s (avec 3 assistances gravitationnelles terrestres)",
   "type": "SURVOL MULTIPLE · ACTIVE",
   "first": "Première mission vers les Troyens de Jupiter ; visite 11 corps répartis sur 8 astéroïdes et leurs satellites sur une seule trajectoire de 12 ans — un nombre record d'objets en orbites solaires distinctes",
@@ -28,7 +28,7 @@
     {
       "met": 1282,
       "label": "DONALDJOHANSON",
-      "note": "Survol supplémentaire dans la ceinture principale, 2025-04. Astéroïde de type C de 4 km.",
+      "note": "Survol supplémentaire dans la ceinture principale, 2025-04. Astéroïde binaire à contact de type C d'environ 8 km de long.",
       "type": "info"
     },
     {

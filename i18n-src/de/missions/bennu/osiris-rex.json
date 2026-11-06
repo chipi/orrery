@@ -1,7 +1,7 @@
 {
   "name": "OSIRIS-REx",
   "vehicle": "Atlas V 411",
-  "payload": "2110 kg Startmasse (1075 kg Trockenmasse)",
+  "payload": "2110 kg Startmasse (880 kg Trockenmasse)",
   "delta_v": "~1,4 km/s",
   "type": "PROBENRÜCKKEHR · GEFLOGEN",
   "first": "Größte je zurückgebrachte Asteroidenprobe (121,6 g von Bennu, zur Erde 2023-09-24 geliefert)",

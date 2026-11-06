@@ -1,7 +1,7 @@
 {
   "name": "OSIRIS-REx",
   "vehicle": "Atlas V 411",
-  "payload": "2110 kg launch mass (1075 kg dry)",
+  "payload": "2110 kg launch mass (880 kg dry)",
   "delta_v": "~1.4 km/s",
   "type": "SAMPLE-RETURN · FLOWN",
   "first": "Largest asteroid sample ever returned (121.6 g of Bennu, delivered to Earth 2023-09-24)",

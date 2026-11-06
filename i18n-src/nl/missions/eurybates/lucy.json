@@ -1,7 +1,7 @@
 {
   "name": "Lucy",
   "vehicle": "Atlas V 401",
-  "payload": "1550 kg (incl. 1003 kg hydrazine — Lucy draagt veel meer drijfstof dan droge massa)",
+  "payload": "1550 kg (821 kg droog)",
   "delta_v": "~6 km/s (met 3 aardse zwaartekrachtassists)",
   "type": "MEERVOUDIGE FLYBY · ACTIEF",
   "first": "Eerste missie naar de Jupiter-trojanen; bezoekt 11 lichamen verspreid over 8 asteroïden en hun satellieten in een enkel traject van 12 jaar — een recordaantal objecten op afzonderlijke zonnebanen",
@@ -28,7 +28,7 @@
     {
       "met": 1282,
       "label": "DONALDJOHANSON",
-      "note": "Bonus-flyby door hoofdgordel 2025-04. 4-km C-type asteroïde.",
+      "note": "Bonus-flyby door hoofdgordel 2025-04. C-type contactbinaire asteroïde van ongeveer 8 km lang.",
       "type": "info"
     },
     {

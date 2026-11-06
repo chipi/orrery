@@ -68,7 +68,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — M-V-5",
-        "description": "Uchinoura Space Center, 2003-05-09. JAXA's first-of-its-kind sample-return mission to a near-Earth asteroid. Hayabusa (Japanese for 'falcon') carried four μ10 microwave-discharge ion thrusters — at the time the most powerful ion-propulsion subsystem ever flown."
+        "description": "Uchinoura Space Center, 2003-05-09. JAXA's first-of-its-kind sample-return mission to a near-Earth asteroid. Hayabusa (Japanese for 'falcon') carried four μ10 microwave-discharge ion thrusters — the first microwave-discharge ion engines ever flown."
       },
       {
         "met_days": 0.005,
@@ -86,7 +86,7 @@
         "met_days": 857,
         "type": "arrival",
         "label": "Itokawa station-keeping",
-        "description": "2005-09-12. Hayabusa arrived at 25143 Itokawa — a 540×270×210-m near-Earth asteroid. The body is too small to orbit gravitationally; the spacecraft station-kept at a 7-km gate position and descended for sample attempts."
+        "description": "2005-09-12. Hayabusa arrived at 25143 Itokawa — a 540×270×210-m near-Earth asteroid. The body is too small to orbit gravitationally; the spacecraft station-kept at a 20-km gate position and descended for sample attempts."
       },
       {
         "met_days": 925.67,

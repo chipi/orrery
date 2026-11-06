@@ -1,7 +1,7 @@
 {
   "name": "Lucy",
   "vehicle": "Atlas V 401",
-  "payload": "1550 kg (incl. 1003 kg of hydrazine — Lucy carries more propellant than dry mass, by a wide margin)",
+  "payload": "1550 kg (821 kg dry)",
   "delta_v": "~6 km/s (with 3 Earth gravity assists)",
   "type": "MULTI-FLYBY · ACTIVE",
   "first": "First mission to the Jupiter Trojans; visits 11 bodies across 8 asteroids and their satellites in a single 12-year trajectory — a record number of objects on separate solar orbits",
@@ -28,7 +28,7 @@
     {
       "met": 1282,
       "label": "DONALDJOHANSON",
-      "note": "Main-belt bonus flyby 2025-04. 4-km C-type asteroid.",
+      "note": "Main-belt bonus flyby 2025-04. C-type contact-binary asteroid about 8 km long.",
       "type": "info"
     },
     {

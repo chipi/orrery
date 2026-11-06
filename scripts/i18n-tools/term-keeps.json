@@ -4876,8 +4876,8 @@
     "tr": "d45d83ac37"
   },
   "sample return|ru|missions/asteroid/hayabusa2.json :: payload": {
-    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
-    "tr": "f268b57d6f"
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept; re-read 2026-11-06 after the dry-mass fix",
+    "tr": "b49f73f3a5"
   },
   "sample return|ru|missions/moon/luna16.json :: first": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",

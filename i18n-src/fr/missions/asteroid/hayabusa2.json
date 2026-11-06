@@ -1,7 +1,7 @@
 {
   "name": "Hayabusa2",
   "vehicle": "H-IIA 202",
-  "payload": "609 kg à sec, propulsion ionique-électrique (propulseurs 4×μ10) + bipropergol chimique + HGA de 1,6 m. Charge utile embarquée — Small Carry-on Impactor (SCI, charge formée de 2,5 kg), atterrisseur MASCOT (10 kg, DLR/CNES), 3× rovers MINERVA-II (~1 kg chacun), capsule de retour d'échantillons (16 kg, rentrée sous parachute).",
+  "payload": "490 kg à sec, propulsion ionique-électrique (propulseurs 4×μ10) + bipropergol chimique + HGA de 1,6 m. Charge utile embarquée — Small Carry-on Impactor (SCI, charge formée de 2,5 kg), atterrisseur MASCOT (10 kg, DLR/CNES), 3× rovers MINERVA-II (~1 kg chacun), capsule de retour d'échantillons (16 kg, rentrée sous parachute).",
   "delta_v": "~2 km/s (cumul du moteur ionique)",
   "type": "RETOUR D'ÉCHANTILLON + ATTERRISSEURS · ACTIF (mission étendue)",
   "first": "Deuxième retour d'échantillon d'astéroïde (Ryugu, 2020) ; premier cratère d'impact artificiel sur un astéroïde ; premier matériau du sous-sol astéroïdal ramené sur Terre",

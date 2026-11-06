@@ -1,7 +1,7 @@
 {
   "name": "Hayabusa2",
   "vehicle": "H-IIA 202",
-  "payload": "609 kg Trockenmasse, Ionenantrieb (4×μ10-Triebwerke) + chemischer Zweistoffantrieb + 1,6 m HGA. Nutzlast an Bord — Small Carry-on Impactor (SCI, 2,5 kg Hohlladung), Lander MASCOT (10 kg, DLR/CNES), 3× Rover MINERVA-II (je ~1 kg), Probenrückführkapsel (16 kg, Wiedereintritt am Fallschirm).",
+  "payload": "490 kg Trockenmasse, Ionenantrieb (4×μ10-Triebwerke) + chemischer Zweistoffantrieb + 1,6 m HGA. Nutzlast an Bord — Small Carry-on Impactor (SCI, 2,5 kg Hohlladung), Lander MASCOT (10 kg, DLR/CNES), 3× Rover MINERVA-II (je ~1 kg), Probenrückführkapsel (16 kg, Wiedereintritt am Fallschirm).",
   "delta_v": "~2 km/s (Ionentriebwerk, kumuliert)",
   "type": "PROBENRÜCKGABE + LANDER · AKTIV (erweitert)",
   "first": "Zweite Rückholung von Asteroidenproben (Ryugu, 2020); erster künstlicher Einschlagkrater auf einem Asteroiden; erstes Material aus dem Untergrund eines Asteroiden auf die Erde zurückgebracht",

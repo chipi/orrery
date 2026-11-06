@@ -12,7 +12,7 @@
   "transit_days": 1302,
   "round_trip": true,
   "vehicle": "H-IIA 202",
-  "payload": "609 kg dry, ion-electric propulsion (4×μ10 thrusters) + chemical bipropellant + 1.6 m HGA. Onboard payload — Small Carry-on Impactor (SCI, 2.5 kg shaped charge), MASCOT lander (10 kg, DLR/CNES), 3× MINERVA-II rovers (~1 kg each), sample return capsule (16 kg, parachute reentry).",
+  "payload": "490 kg dry, ion-electric propulsion (4×μ10 thrusters) + chemical bipropellant + 1.6 m HGA. Onboard payload — Small Carry-on Impactor (SCI, 2.5 kg shaped charge), MASCOT lander (10 kg, DLR/CNES), 3× MINERVA-II rovers (~1 kg each), sample return capsule (16 kg, parachute reentry).",
   "delta_v": "~2 km/s (ion engine cumulative)",
   "data_quality": "good",
   "flight_data_quality": "sparse",
@@ -77,7 +77,7 @@
         "met_days": 1302,
         "type": "arrival",
         "label": "Ryugu rendezvous",
-        "description": "Arrived at asteroid Ryugu on 2018-06-27. Held station at 20 km for 18 months of mapping. Deployed three rovers (MASCOT and two MINERVA-II hoppers) that landed on the surface and operated in Ryugu's ~0.0001 g gravity — the first wheeled exploration of any asteroid. Two touchdown sampling operations followed, including one inside an artificial crater made by a copper impactor."
+        "description": "Arrived at asteroid Ryugu on 2018-06-27. Held station at 20 km for 18 months of mapping. Deployed three rovers (MASCOT and two MINERVA-II hoppers) that landed on the surface and operated in Ryugu's gravity of about 1/80,000 g — the first rovers to hop across an asteroid. Two touchdown sampling operations followed, including one inside an artificial crater made by a copper impactor."
       },
       {
         "met_days": 2194,

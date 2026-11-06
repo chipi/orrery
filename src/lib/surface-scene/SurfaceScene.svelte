@@ -256,6 +256,13 @@
      *  /earth to auto-orient toward the viewer's approximate location
      *  (issue #315). Has no effect if a URL state pose is present. */
     initialView?: { latDeg: number; lonDeg: number };
+    /** Open facing this lat/lon by TURNING THE PLANET (longitude) and tilting
+     *  the camera (latitude), so the default camera — on the lit side of a
+     *  route whose sun is fixed in the scene (Mars, Venus) — stays in
+     *  daylight. initialView moves the camera instead, for routes that aim
+     *  their own sun (Earth, Moon). #641: site tags show only near the view
+     *  centre, so a route opens over its sites. */
+    initialFacing?: { latDeg: number; lonDeg: number };
     /** Fired when the selected orbital object (EarthObject) changes —
      *  used by /earth to flag the matching regime band on the orbit
      *  ruler (#354). Receives the selected EarthObject id, or null
@@ -303,6 +310,7 @@
     loadMuseums,
     loadObservatories,
     initialView,
+    initialFacing,
     onSatelliteSelect,
     onSiteSelect,
     regimes,
@@ -2587,11 +2595,22 @@
     // Apply initialView (lat/lon → spherical θ/φ) before camR0 is
     // snapshotted, so resetCamera() returns to the geo-oriented pose.
     // Skipped if the route consumer didn't set initialView.
+    // Same direction maths as faceLatLon: the camera sits over the point the
+    // markers' latLonToUnitSphere puts at lat/lon. camT = lon (as before)
+    // opened 90° west of it — a viewer in Amsterdam faced North America (#641).
     if (initialView) {
-      const lat = Math.max(-90, Math.min(90, initialView.latDeg));
-      const lon = ((initialView.lonDeg + 540) % 360) - 180;
-      camT = (lon * Math.PI) / 180;
-      camP = ((90 - lat) * Math.PI) / 180;
+      const v = latLonToUnitSphere(
+        Math.max(-90, Math.min(90, initialView.latDeg)),
+        initialView.lonDeg,
+      );
+      camP = Math.acos(Math.max(-1, Math.min(1, v.y)));
+      camT = Math.atan2(v.x, v.z);
+    }
+    if (initialFacing && !initialView) {
+      // The camera sits on +Z at camT = 0; a point at longitude L comes round
+      // to face it after a planet turn of −90° − L about Y.
+      planetMesh.rotation.y = (-(90 + initialFacing.lonDeg) * Math.PI) / 180;
+      camP = ((90 - Math.max(-89, Math.min(89, initialFacing.latDeg))) * Math.PI) / 180;
     }
     const camR0 = camR;
     const camP0 = camP;

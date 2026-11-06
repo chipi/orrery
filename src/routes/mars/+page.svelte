@@ -226,6 +226,10 @@
       regimePanelOpen = true;
     }
   });
+  // Open over Elysium/Isidis, where most landers are (Curiosity, InSight,
+  // Zhurong, Perseverance, Beagle 2, Viking 2) — the site tags show only near
+  // the view centre (#641).
+  const MARS_SITES_SIDE = { latDeg: 10, lonDeg: 120 };
 </script>
 
 <svelte:head>
@@ -238,6 +242,7 @@
 <SurfaceScene
   config={MARS_CONFIG}
   body="mars"
+  initialFacing={MARS_SITES_SIDE}
   loadSites={getMarsSites}
   loadGallery={getMarsSiteGallery}
   loadTraverses={loadMarsTraverses}

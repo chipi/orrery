@@ -243,6 +243,9 @@
     for (const e of entries) if (e) out[e[0]] = e[1];
     return out;
   }
+  // Open on the near side, where the Apollo, Luna and Chang'e 3/5 sites are
+  // (#641); without it the default camera faced the western limb and far side.
+  const MOON_NEAR_SIDE = { latDeg: 10, lonDeg: 0 };
 </script>
 
 <svelte:head>
@@ -257,6 +260,7 @@
   bind:this={surfaceScene}
   config={MOON_CONFIG}
   body="moon"
+  initialView={MOON_NEAR_SIDE}
   loadSites={getMoonSites}
   loadGallery={getMoonSiteGallery}
   loadTraverses={loadMoonTraverses}

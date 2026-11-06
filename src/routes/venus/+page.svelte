@@ -48,11 +48,15 @@
       available: ['gravity', 'velocity'],
     },
   };
+  // Open over the Vega 1/2 landing sites; Venera 13 is ~125° away on the
+  // other side (#641: site tags show only near the view centre).
+  const VENUS_SITES_SIDE = { latDeg: 0, lonDeg: 178 };
 </script>
 
 <SurfaceScene
   config={VENUS_CONFIG}
   body="venus"
+  initialFacing={VENUS_SITES_SIDE}
   loadSites={getVenusSites}
   loadGallery={getVenusSiteGallery}
 />

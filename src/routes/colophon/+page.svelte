@@ -28,6 +28,7 @@
     anatomy_art: Diagram[];
     exploded_art: Diagram[];
     landing_art?: (Diagram & { route: string })[];
+    blueprint_art?: (Diagram & { route: string })[];
     diagrams_science: Diagram[];
     posters: Poster[];
     lab_illustrations: Diagram[];
@@ -135,6 +136,12 @@
             <span class="counts">· {data.landing_art.length}</span>
           </li>
         {/if}
+        {#if data.blueprint_art && data.blueprint_art.length > 0}
+          <li>
+            <a href="#sec-blueprints">{m.colophon_section_blueprints()}</a>
+            <span class="counts">· {data.blueprint_art.length}</span>
+          </li>
+        {/if}
         <li>
           <a href="#sec-posters">{m.colophon_gallery_posters()}</a>
           <span class="counts">· {data.posters.length}</span>
@@ -238,6 +245,34 @@
         </h2>
         <ul class="thumb-grid wide">
           {#each data.landing_art as d (d.file)}
+            <li class="thumb-card">
+              <button
+                type="button"
+                class="thumb-open"
+                onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: d.route })}
+              >
+                <img
+                  {...responsive(srcOf(d.file), IMAGE_SIZES.colophonWide)}
+                  alt={d.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <span class="thumb-title">{d.title}</span>
+            </li>
+          {/each}
+        </ul>
+      </section>
+    {/if}
+
+    <!-- Mission blueprints: a planning sheet per mission (mission panel OVERVIEW and FLIGHT). -->
+    {#if data.blueprint_art && data.blueprint_art.length > 0}
+      <section class="block" aria-labelledby="sec-blueprints">
+        <h2 id="sec-blueprints">
+          {m.colophon_section_blueprints()}<span class="count">{data.blueprint_art.length}</span>
+        </h2>
+        <ul class="thumb-grid wide">
+          {#each data.blueprint_art as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"

@@ -1610,6 +1610,20 @@
       "cover": false
     }
   ],
+  "blueprint_art": [
+    {
+      "title": "Cassini-Huygens",
+      "file": "/images/blueprints/cassini.webp",
+      "route": "/missions?id=cassini",
+      "cover": false
+    },
+    {
+      "title": "Voyager 2",
+      "file": "/images/blueprints/voyager-2.webp",
+      "route": "/missions?id=voyager-2",
+      "cover": false
+    }
+  ],
   "lab_illustrations": [
     {
       "title": "Apollo Round Trip",
@@ -3916,6 +3930,7 @@
     "anatomy_art": 198,
     "exploded_art": 76,
     "landing_art": 39,
+    "blueprint_art": 2,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

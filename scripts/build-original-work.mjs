@@ -150,6 +150,24 @@ const landingArt = JSON.parse(readFileSync('src/lib/landing-sequence-ids.json', 
     cover: false,
   }));
 
+// Mission blueprints (#641) — one per mission, under /images/blueprints/{mission}.webp, ids from
+// src/lib/blueprint-ids.json; the route opens that mission's panel.
+const missionName = (id) => {
+  for (const d of readdirSync('i18n-src/en-US/missions', { withFileTypes: true })) {
+    const f = `i18n-src/en-US/missions/${d.name}/${id}.json`;
+    if (d.isDirectory() && existsSync(f)) return JSON.parse(readFileSync(f, 'utf8')).name ?? null;
+  }
+  return null;
+};
+const blueprintArt = JSON.parse(readFileSync('src/lib/blueprint-ids.json', 'utf8'))
+  .filter((id) => existsSync(`static/images/blueprints/${id}.webp`))
+  .map((id) => ({
+    title: missionName(id) ?? humanize(id),
+    file: `/images/blueprints/${id}.webp`,
+    route: `/missions?id=${id}`,
+    cover: false,
+  }));
+
 // Curated 3D-model catalogue. Every distinct hand-built mesh in the
 // project gets its own entry + thumbnail; the thumbnails are captured
 // from the /dev/models gallery by scripts/capture-colophon-thumbs.ts
@@ -1183,6 +1201,7 @@ const manifest = {
   anatomy_art: anatomyArt,
   exploded_art: explodedArt,
   landing_art: landingArt,
+  blueprint_art: blueprintArt,
   lab_illustrations: labIllustrations,
   diagrams_science: science,
   posters,
@@ -1195,6 +1214,7 @@ const manifest = {
     anatomy_art: anatomyArt.length,
     exploded_art: explodedArt.length,
     landing_art: landingArt.length,
+    blueprint_art: blueprintArt.length,
     lab_illustrations: labIllustrations.length,
     diagrams_science: science.length,
     posters: posters.length,

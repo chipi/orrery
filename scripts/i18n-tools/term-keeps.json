@@ -2828,8 +2828,8 @@
     "tr": "d64b44a1db"
   },
   "lander|ru|missions/venus/venera-13.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
-    "tr": "9d744af361"
+    "why": "generic craft word «аппарат» for the lander (natural rendering); re-read 2026-11-06 after the design-life fix",
+    "tr": "ac547f7919"
   },
   "lander|ru|programs/jaxa-robotic.json :: goals.1.caption": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",

@@ -11,7 +11,7 @@
   "arrival_date": "1982-03-01",
   "transit_days": 122,
   "vehicle": "Proton-K / D-1",
-  "payload": "~4500 kg combined: flyby bus + 1645 kg titanium descent capsule (cameras, X-ray fluorescence soil-composition spectrometer, seismometer, soil-sampling arm with hermetic-vault drill). Designed for one of the most hostile descent environments ever attempted.",
+  "payload": "~4400 kg combined: flyby bus + 1645 kg titanium descent capsule (cameras, X-ray fluorescence soil-composition spectrometer, seismometer, soil-sampling arm with hermetic-vault drill). Designed for one of the most hostile descent environments ever attempted.",
   "delta_v": "~1.5 km/s (Venus arrival)",
   "data_quality": "good",
   "flight_data_quality": "sparse",
@@ -70,7 +70,7 @@
         "met_days": 122,
         "type": "edl_or_oi",
         "label": "Venus landing + surface operations",
-        "description": "Soft-landed 1982-03-01 at Phoebe Regio. Transmitted for 127 minutes from the surface — twice the design lifetime — and returned the first colour panoramic images of Venus's surface, sampled the soil with an X-ray fluorescence spectrometer, and recorded the first audio from the surface of another planet (wind on Venus's microphone). The lander succumbed to the heat after ~2 hours."
+        "description": "Soft-landed 1982-03-01 at Phoebe Regio. Transmitted for 127 minutes from the surface — about four times its 32-minute design life — and returned the first colour panoramic images of Venus's surface, sampled the soil with an X-ray fluorescence spectrometer, and recorded the first audio from the surface of another planet (wind on Venus's microphone). The lander succumbed to the heat after ~2 hours."
       }
     ],
     "arrival": {

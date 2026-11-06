@@ -51,6 +51,7 @@
   "flight": {
     "launch": {
       "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage)",
+      "departure": "spacecraft",
       "mass_at_tli_kg": 26500,
       "source": "NASA Artemis II post-flight report; ICPS raised the perigee; Orion's own service-module engine performed TLI on flight day 2"
     },
@@ -67,8 +68,8 @@
     },
     "totals": {
       "total_dv_km_s": 6.5,
-      "tli_or_tmi_dv_km_s": 3.05,
-      "source": "NASA Artemis II ∆v ledger (Orion + ICPS TLI); free-return saves the LOI + TEI burns vs Apollo"
+      "tli_or_tmi_dv_km_s": 0.39,
+      "source": "NASA Artemis II: ICPS raised perigee and apogee into a high Earth orbit; Orion's service-module engine made the ~0.39 km/s TLI ~25 h after launch; free-return saves the LOI + TEI burns vs Apollo"
     },
     "events": [
       {
@@ -123,7 +124,7 @@
         "revs": 1.5
       },
       "tli": {
-        "dv_kms": 3.05,
+        "dv_kms": 0.39,
         "c3_km2_s2": -1.7
       },
       "translunar": {

@@ -23,11 +23,21 @@ About 175 confirmed findings. Cross-cutting repeats outside mission and fleet fi
 (JAXA programme page and SLIM descent profile), `finish.mjs` (Apollo 13 event times, SMART-1 /
 Lunar Prospector / Clementine fleet, Luna 24 mass), `batch7b.json` (Opportunity site page).
 
+## Done after the fact-check
+
+- Artemis II: TLI is Orion's ESM burn (`flight.launch.departure: spacecraft`, 0.39 km/s in
+  `totals` and `cislunar_profile.tli`); the launch act ends at separation, no ICPS TLI beat.
+  The waypoints keep their shape (no high-Earth-orbit loop is modelled).
+- Hera: arrival 2026-11-28 (ESA: November 2026, no day), `transit_days` 782.
+  `hera-arrival.json` → `scripts/remap-event-dates.ts` (events, waypoints, overlay METs), then
+  `hera-retarget.ts` re-solves the DSM-2 → Didymos leg, and `generate-fly-trajectory.ts hera`
+  rebuilt `static/data/fly-trajectories/hera.json`.
+
 ## Open (not changed)
 
-- Artemis II `/fly` numbers: `flight.totals.tli_or_tmi_dv_km_s` and `cislunar_profile` still model a
-  3.05 km/s ICPS TLI; the real TLI was Orion's ESM, ~0.39 km/s, on flight day 2. Artemis IV's base
-  text says "ICPS performs TLI" (the current plan was not verified).
+- Artemis II `total_dv_km_s` 6.5 and `delta_v` "~6.5 km/s (round trip)" have no source; a
+  free-return from LEO needs ~3.1 km/s. Left until a source is found.
+- Hera `interplanetary_profile.waypoints_helio_au` put the Mars flyby at r ≈ 0.95 AU (Mars is
+  ~1.5); /fly does not draw them (it uses `fly-trajectories/hera.json`), so left as is.
 - Inspiration4 base `departure_date` 2021-09-15 is the Florida date (launch 00:02 UTC on the 16th).
-- Hera `arrival_date` 2026-12-28: ESA now says November 2026 without a day.
 - Each reviewer's "could not verify" list (in the session transcript) was not acted on.

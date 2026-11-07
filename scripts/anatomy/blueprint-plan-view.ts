@@ -126,7 +126,7 @@ const SMALL: Record<string, Elements> = {
     i: 162.2422022915186,
     om: 58.86005707648156,
     w: 111.8656357419195,
-    ma: 0.4220442836528230,
+    ma: 0.422044283652823,
     epoch: 2446503.5,
   },
   'grigg-skjellerup': {
@@ -269,7 +269,13 @@ const MISSIONS: Record<string, Mission> = {
       { label: 'EARTH · LAUNCH', body: 'earth', utc: '1985-07-02T11:23:00Z' },
       { label: 'HALLEY', body: 'halley', utc: '1986-03-14T00:00:00Z' },
       { label: 'EARTH · FLYBY', body: 'earth', utc: '1990-07-02T12:00:00Z', revs: 5 },
-      { label: 'GRIGG–SKJELLERUP', body: 'grigg-skjellerup', utc: '1992-07-10T12:00:00Z', revs: 1, tag: 'right' },
+      {
+        label: 'GRIGG–SKJELLERUP',
+        body: 'grigg-skjellerup',
+        utc: '1992-07-10T12:00:00Z',
+        revs: 1,
+        tag: 'right',
+      },
     ],
     orbits: ['venus', 'earth', 'mars'],
     scale: 'linear',
@@ -285,7 +291,13 @@ const MISSIONS: Record<string, Mission> = {
       { label: 'VENUS 1', body: 'venus', utc: '2020-10-15T12:00:00Z' },
       { label: 'VENUS 2', body: 'venus', utc: '2021-08-10T12:00:00Z', revs: 1 },
       { label: 'MERCURY 1', body: 'mercury', utc: '2021-10-01T12:00:00Z' },
-      { label: 'MERCURY 6', body: 'mercury', utc: '2025-01-08T12:00:00Z', ride: true, tag: 'right' },
+      {
+        label: 'MERCURY 6',
+        body: 'mercury',
+        utc: '2025-01-08T12:00:00Z',
+        ride: true,
+        tag: 'right',
+      },
     ],
     orbits: ['mercury', 'venus', 'earth', 'mars'],
     scale: 'linear',
@@ -297,7 +309,12 @@ const MISSIONS: Record<string, Mission> = {
     events: [
       { label: 'EARTH · LAUNCH', body: 'earth', utc: '2011-08-05T16:25:00Z' },
       { label: 'EARTH · FLYBY', body: 'earth', utc: '2013-10-09T12:00:00Z', revs: 1 },
-      { label: 'JUPITER · ORBIT INSERTION', body: 'jupiter', utc: '2016-07-05T03:53:00Z', tag: 'right' },
+      {
+        label: 'JUPITER · ORBIT INSERTION',
+        body: 'jupiter',
+        utc: '2016-07-05T03:53:00Z',
+        tag: 'right',
+      },
     ],
     orbits: ['earth', 'mars', 'jupiter'],
     end: 'orbit',
@@ -322,7 +339,13 @@ const MISSIONS: Record<string, Mission> = {
     events: [
       { label: 'EARTH · LAUNCH', body: 'earth', utc: '2007-09-27T11:34:00Z' },
       { label: 'MARS', body: 'mars', utc: '2009-02-17T12:00:00Z', tag: 'left' },
-      { label: 'VESTA · ARRIVAL', body: 'vesta', utc: '2011-07-16T12:00:00Z', revs: 1, spiral: true },
+      {
+        label: 'VESTA · ARRIVAL',
+        body: 'vesta',
+        utc: '2011-07-16T12:00:00Z',
+        revs: 1,
+        spiral: true,
+      },
       { label: 'VESTA · DEPARTURE', body: 'vesta', utc: '2012-09-05T12:00:00Z', ride: true },
       { label: 'CERES · ARRIVAL', body: 'ceres', utc: '2015-03-06T12:00:00Z', spiral: true },
     ],
@@ -497,7 +520,8 @@ for (let i = 0; i < pos.length - 1; i++) {
   if (b.ride) {
     for (let k = 0; k <= 300; k++) {
       const jd = a.jd + (tof * k) / 300;
-      const q = b.body in SMALL ? smallBody(SMALL[b.body]!, jd) : heliocentric(b.body as PlanetId, jd);
+      const q =
+        b.body in SMALL ? smallBody(SMALL[b.body]!, jd) : heliocentric(b.body as PlanetId, jd);
       path.push({ x: q.x, y: q.y });
     }
     continue;
@@ -618,7 +642,8 @@ function planView(pr: Proj, orbits: PlanetId[], clip: number, quiet: Set<number>
       `<circle cx="${q.x}" cy="${q.y}" r="${e.body === 'earth' ? fs / 3 : fs / 1.8}" fill="#e8eeff"/>`,
     );
     // Labels point away from the Sun, so neighbouring events on one orbit do not collide.
-    const out = e.tag === 'right' ? 0 : e.tag === 'left' ? Math.PI : Math.atan2(q.y - c.y, q.x - c.x);
+    const out =
+      e.tag === 'right' ? 0 : e.tag === 'left' ? Math.PI : Math.atan2(q.y - c.y, q.x - c.x);
     const lx = q.x + Math.cos(out) * fs * 1.4;
     const ly = q.y + Math.sin(out) * fs * 1.4 + fs / 3;
     const anchor = Math.cos(out) < -0.2 ? 'end' : Math.cos(out) > 0.2 ? 'start' : 'middle';

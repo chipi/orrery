@@ -44226,7 +44226,7 @@
    "revid": null,
    "pageid": 134258045,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:02.109Z"
+   "fetched_at": "2026-11-07T08:27:09.934Z"
   },
   {
    "id": "b57b1cb2b00fac4c",
@@ -44980,7 +44980,7 @@
    "revid": null,
    "pageid": 36927817,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:03.221Z"
+   "fetched_at": "2026-11-07T08:27:11.043Z"
   },
   {
    "id": "8a1a8dd04adcec6f",
@@ -45001,7 +45001,7 @@
    "revid": null,
    "pageid": 36927817,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:03.221Z"
+   "fetched_at": "2026-11-07T08:27:11.043Z"
   },
   {
    "id": "414bbd8b1b6ef4cd",
@@ -45979,44 +45979,42 @@
   {
    "id": "99774c040aeb143e",
    "path": "/images/missions/galileo/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Galileo_spacecraft_model.png",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "Line drawing of the Galileo spacecraft's encounters on its way to Jupiter (S89-44173)",
+   "author": "NASA/JSC",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AGalileo_spacecraft_model.png",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Galileo_spacecraft_model.png",
+   "source_url": "https://images.nasa.gov/details/S89-44173",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "S89-44173",
+   "fetched_at": "2026-11-07T08:28:52.501Z"
   },
   {
    "id": "8f636a885917afbb",
    "path": "/images/missions/galileo/02.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:Galileo_spacecraft_model.png",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "Line drawing of the Galileo spacecraft's encounters on its way to Jupiter (S89-44173)",
+   "author": "NASA/JSC",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AGalileo_spacecraft_model.png",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Galileo_spacecraft_model.png",
+   "source_url": "https://images.nasa.gov/details/S89-44173",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "S89-44173",
+   "fetched_at": "2026-11-07T08:28:52.501Z"
   },
   {
    "id": "9cc42e001da27662",
@@ -50179,7 +50177,7 @@
    "revid": null,
    "pageid": 4520846,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:04.334Z"
+   "fetched_at": "2026-11-07T08:27:12.151Z"
   },
   {
    "id": "c526f3a8bbf1f6b4",
@@ -50200,7 +50198,7 @@
    "revid": null,
    "pageid": 4520846,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:04.334Z"
+   "fetched_at": "2026-11-07T08:27:12.152Z"
   },
   {
    "id": "ae65defcb3501878",
@@ -50740,7 +50738,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "KSC-04pd1539",
-   "fetched_at": "2026-11-07T08:06:15.059Z"
+   "fetched_at": "2026-11-07T08:28:52.501Z"
   },
   {
    "id": "c1cc2730ce612f5a",
@@ -50760,7 +50758,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "KSC-04pd1539",
-   "fetched_at": "2026-11-07T08:06:15.059Z"
+   "fetched_at": "2026-11-07T08:28:52.501Z"
   },
   {
    "id": "456bf26e0b4e794f",
@@ -50965,18 +50963,19 @@
   {
    "id": "d7f888971a1d68ce",
    "path": "/images/missions/mmx/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:MMX-CG01.png",
+   "source_type": "direct-agency",
+   "title": "MMX spacecraft, front view (MMX mission website)",
    "author": "JAXA",
    "agency": "JAXA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMMX-CG01.png",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MMX-CG01.png",
-   "license_short": "CC-BY-4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "license_rationale": "Reuse with attribution.",
+   "source_url": "https://www.mmx.jaxa.jp/en/",
+   "image_url": "https://www.mmx.jaxa.jp/images/top/craft_front.webp",
+   "license_short": "JAXA-OPEN",
+   "license_url": "https://global.jaxa.jp/policy.html",
+   "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "reencoded-jpeg",
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
@@ -50986,18 +50985,19 @@
   {
    "id": "710806f610d6a79a",
    "path": "/images/missions/mmx/02.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:MMX-CG01.png",
+   "source_type": "direct-agency",
+   "title": "MMX spacecraft, front view (MMX mission website)",
    "author": "JAXA",
    "agency": "JAXA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMMX-CG01.png",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MMX-CG01.png",
-   "license_short": "CC-BY-4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "license_rationale": "Reuse with attribution.",
+   "source_url": "https://www.mmx.jaxa.jp/en/",
+   "image_url": "https://www.mmx.jaxa.jp/images/top/craft_front.webp",
+   "license_short": "JAXA-OPEN",
+   "license_url": "https://global.jaxa.jp/policy.html",
+   "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "reencoded-jpeg",
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
@@ -52645,7 +52645,7 @@
    "revid": null,
    "pageid": 18841428,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:05.448Z"
+   "fetched_at": "2026-11-07T08:27:13.260Z"
   },
   {
    "id": "b111befd67f5f85a",
@@ -52666,7 +52666,7 @@
    "revid": null,
    "pageid": 18841428,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:05.449Z"
+   "fetched_at": "2026-11-07T08:27:13.260Z"
   },
   {
    "id": "d514201ae62ca8fe",
@@ -54343,7 +54343,7 @@
    "revid": null,
    "pageid": 59265889,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:06.561Z"
+   "fetched_at": "2026-11-07T08:27:14.367Z"
   },
   {
    "id": "267190f99366c1b9",
@@ -54364,7 +54364,7 @@
    "revid": null,
    "pageid": 59274312,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:07.672Z"
+   "fetched_at": "2026-11-07T08:27:15.475Z"
   },
   {
    "id": "65dc766d242620d8",
@@ -54385,7 +54385,7 @@
    "revid": null,
    "pageid": 59274215,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:08.784Z"
+   "fetched_at": "2026-11-07T08:27:16.584Z"
   },
   {
    "id": "7c0ab6ed51a26cc4",
@@ -54406,28 +54406,28 @@
    "revid": null,
    "pageid": 59274121,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:09.896Z"
+   "fetched_at": "2026-11-07T08:27:17.692Z"
   },
   {
    "id": "b2c9edf6052c5eb7",
    "path": "/images/missions/smart-1/05.webp",
    "source_type": "wikimedia-commons",
-   "title": "File:Smart 1 002.jpg",
-   "author": "ESA",
+   "title": "File:One set of solar panels is deployed for testing ESA239244.jpg",
+   "author": "European Space Agency",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ASmart%201%20002.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Smart%201%20002.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File:One_set_of_solar_panels_is_deployed_for_testing_ESA239244.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/One_set_of_solar_panels_is_deployed_for_testing_ESA239244.jpg",
    "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+   "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
    "modifications": [
     "downloaded-via-commons-search",
     "reencoded-jpeg"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 59274119,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.857Z"
+   "fetched_at": "2026-11-07T08:27:18.945Z"
   },
   {
    "id": "72184a9988b79f6f",
@@ -56460,7 +56460,7 @@
    "revid": null,
    "pageid": 19572883,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:11.009Z"
+   "fetched_at": "2026-11-07T08:27:20.055Z"
   },
   {
    "id": "c5b5d0d9ce098660",
@@ -56481,7 +56481,7 @@
    "revid": null,
    "pageid": 19572883,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:11.009Z"
+   "fetched_at": "2026-11-07T08:27:20.055Z"
   },
   {
    "id": "6d60d44082db77a8",
@@ -56588,7 +56588,7 @@
    "revid": null,
    "pageid": 35736768,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:12.120Z"
+   "fetched_at": "2026-11-07T08:27:21.162Z"
   },
   {
    "id": "b5f061bf5eff52ed",
@@ -56609,7 +56609,7 @@
    "revid": null,
    "pageid": 35736768,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:12.120Z"
+   "fetched_at": "2026-11-07T08:27:21.163Z"
   },
   {
    "id": "fcb713ec1fec037a",
@@ -56630,7 +56630,7 @@
    "revid": null,
    "pageid": 6817849,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:13.230Z"
+   "fetched_at": "2026-11-07T08:27:22.271Z"
   },
   {
    "id": "2ca9650bc175a321",
@@ -56651,7 +56651,7 @@
    "revid": null,
    "pageid": 6817849,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:13.230Z"
+   "fetched_at": "2026-11-07T08:27:22.271Z"
   },
   {
    "id": "aceb78d7ce406ca6",
@@ -56880,7 +56880,7 @@
    "revid": null,
    "pageid": 4520857,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:14.341Z"
+   "fetched_at": "2026-11-07T08:27:23.379Z"
   },
   {
    "id": "928481265f75dcc2",
@@ -56901,7 +56901,7 @@
    "revid": null,
    "pageid": 4520857,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T08:06:14.341Z"
+   "fetched_at": "2026-11-07T08:27:23.379Z"
   },
   {
    "id": "a690a0d3dbe9d71a",
@@ -58069,7 +58069,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA21741",
-   "fetched_at": "2026-11-07T08:06:15.059Z"
+   "fetched_at": "2026-11-07T08:28:52.501Z"
   },
   {
    "id": "6da753483ba14e29",
@@ -58089,7 +58089,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA21741",
-   "fetched_at": "2026-11-07T08:06:15.059Z"
+   "fetched_at": "2026-11-07T08:28:52.501Z"
   },
   {
    "id": "3257f380d4c7c9e2",
@@ -58109,7 +58109,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "201309120010HQ",
-   "fetched_at": "2026-11-07T08:06:15.059Z"
+   "fetched_at": "2026-11-07T08:28:52.501Z"
   },
   {
    "id": "706b65e8ebbded20",
@@ -58129,7 +58129,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "201309120010HQ",
-   "fetched_at": "2026-11-07T08:06:15.059Z"
+   "fetched_at": "2026-11-07T08:28:52.501Z"
   },
   {
    "id": "d4e4196d13556b86",

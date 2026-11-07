@@ -30192,11 +30192,11 @@
     },
     "/images/missions/mars2/01.jpg": {
       "score": 7,
-      "subject": "Full disk view of Mars against black space, showing surface features including polar ice and dust regions.",
-      "category": "orbital",
+      "subject": "Render of PrOP-M, the small rover on skis that Mars 2 and Mars 3 carried, on a stony Martian surface.",
+      "category": "render",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.55
       },
       "subject_match": true,
       "variants": {
@@ -30204,8 +30204,8 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:11:16.573Z",
-      "scoring_cost_usd": 0.005466
+      "scored_at": "2026-11-07T00:00:00.000Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/mars2/02.jpg": {
       "score": 5,
@@ -31835,16 +31835,16 @@
     },
     "/images/missions/mars2/04.jpg": {
       "score": 5,
-      "subject": "Anaglyph 3D stereoscopic image of the Martian surface showing impact craters and ancient valley networks, captured by ESA's Mars Express HRSC camera.",
-      "category": "surface",
+      "subject": "Museum model of the Mars 3 descent module, the same lander design Mars 2 carried, petals open and antennas raised.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.55
       },
       "subject_match": true,
       "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.00861
+      "scored_at": "2026-11-07T00:00:00.000Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/maven/03.jpg": {
       "score": 7,

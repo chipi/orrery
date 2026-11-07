@@ -9492,7 +9492,9 @@
   ],
   "/images/missions/mars2/01": [
     320,
-    577
+    1280,
+    2048,
+    3000
   ],
   "/images/missions/mars2/02": [
     320,
@@ -9504,7 +9506,9 @@
   ],
   "/images/missions/mars2/04": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/mars3/01": [
     320,
@@ -14859,11 +14863,6 @@
     401
   ],
   "/images/mars-sites/mars6/03": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/missions/mars6/03": [
     320,
     1280,
     1920

@@ -2,7 +2,7 @@
   "version": 1,
   "generated_by": "audit-image-usage.ts --write-approved",
   "note": "Sticky allowlist — source of truth for /credits + provenance, independent of vision scores. RFC-029 decision 4. Re-derive after fetches land; the list only grows (used images are never auto-dropped).",
-  "count": 6278,
+  "count": 6276,
   "approved": [
     "/images/anatomy/akatsuki.webp",
     "/images/anatomy/antares.webp",
@@ -4988,8 +4988,6 @@
     "/images/missions/mars6/01.jpg",
     "/images/missions/mars6/02.1x1.jpg",
     "/images/missions/mars6/02.jpg",
-    "/images/missions/mars6/03.1x1.jpg",
-    "/images/missions/mars6/03.jpg",
     "/images/missions/maven/01.1x1.jpg",
     "/images/missions/maven/01.jpg",
     "/images/missions/maven/02.1x1.jpg",

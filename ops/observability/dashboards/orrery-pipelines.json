@@ -1,5 +1,6 @@
 {
   "uid": "orrery-pipelines",
+  "description": "Orrery's pipeline runs (the data runners and refresh jobs), from their logs: runs over 24 h, error and failure lines, log volume per container, and the recent and error lines themselves. Pick the environment at the top.",
   "title": "Orrery \u2014 Pipelines",
   "tags": ["orrery", "pipeline"],
   "timezone": "browser",

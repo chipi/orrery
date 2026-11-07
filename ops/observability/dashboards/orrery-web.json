@@ -1,5 +1,6 @@
 {
   "uid": "orrery-web",
+  "description": "Orrery's web surface, from its access log in VictoriaLogs: requests, 4xx and 5xx, bytes served and stderr lines, requests and bytes per minute, the top paths, and the failed and recent requests. Pick the environment at the top.",
   "title": "Orrery \u2014 Web",
   "tags": ["orrery", "web"],
   "timezone": "browser",

@@ -1,5 +1,6 @@
 {
   "uid": "orrery-overview",
+  "description": "Orrery at a glance, from its logs in VictoriaLogs: log lines, web requests, errors and warnings, and pipeline runs, with log volume and errors per surface over time and the recent error lines. Pick the environment at the top.",
   "title": "Orrery \u2014 Overview",
   "tags": ["orrery", "overview"],
   "timezone": "browser",

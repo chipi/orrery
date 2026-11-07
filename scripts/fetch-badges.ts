@@ -18,7 +18,7 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 // Wikimedia requires a descriptive User-Agent + polite rate (they 429 fast).
-const UA = 'orrery-badge-fetch/1.0 (https://github.com/chipi/orrery; marko.dragoljevic@gmail.com)';
+const UA = 'orrery-badge-fetch/1.0 (https://github.com/chipi/orrery)';
 const THROTTLE_MS = 1800;
 const BADGE_PX = 256; // badges render as small icons; 256px is ample
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

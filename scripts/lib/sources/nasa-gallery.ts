@@ -13,8 +13,7 @@ export interface SourceCandidate {
   source: string;
 }
 
-const UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 
 // Known-good slugs. Generic 'ksc-history' guarantees a non-empty fallback page.
 const SEED_SLUGS: Record<string, string> = {

@@ -322,8 +322,7 @@ const LOGOS_DIR = 'static/logos';
 // Wikimedia requires a descriptive User-Agent (not a generic
 // HTTP-client UA) and rate-limits anonymous bulk downloads. The
 // guidance is roughly one request per second for scripts.
-const WIKIMEDIA_UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const WIKIMEDIA_UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 const WIKIMEDIA_DELAY_MS = 1100;
 
 async function downloadFromWikimedia(url: string, dest: string): Promise<void> {

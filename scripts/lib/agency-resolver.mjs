@@ -20,8 +20,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { scoreRelevance } from './relevance-gate.mjs';
 
-const UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 const REGISTRY_PATH = 'static/data/agency-archives.json';
 
 let _registry = null;

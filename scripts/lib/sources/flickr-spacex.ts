@@ -12,8 +12,7 @@ export interface SourceCandidate {
   source: string; // the adapter key
 }
 
-const UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 const FEED =
   'https://www.flickr.com/services/feeds/photos_public.gne?id=130608600@N05&format=json&nojsoncallback=1';
 

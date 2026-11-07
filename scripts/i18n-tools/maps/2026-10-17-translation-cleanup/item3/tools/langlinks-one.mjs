@@ -7,7 +7,7 @@ for (let i = 0; i < titles.length; i += 50) {
   let r;
   for (let k = 0; k < 4; k++) {
     r = await fetch(u, {
-      headers: { 'User-Agent': 'orrery-i18n/1.0 (marko.dragoljevic@gmail.com)' },
+      headers: { 'User-Agent': 'orrery-i18n/1.0 (https://github.com/chipi/orrery)' },
     });
     if (r.status !== 429) break;
     await sleep(2000 * (k + 1));

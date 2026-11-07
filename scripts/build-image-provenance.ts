@@ -77,8 +77,7 @@ const WAIVERS_PATH = 'static/data/license-waivers.json';
 const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
 const COMMONS_FILEPATH_BASE = 'https://commons.wikimedia.org/wiki/Special:FilePath';
 const COMMONS_DELAY_MS = 1100;
-const COMMONS_UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const COMMONS_UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 
 const NASA_IMAGES_BASE = 'https://images.nasa.gov';
 

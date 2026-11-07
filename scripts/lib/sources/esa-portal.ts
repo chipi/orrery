@@ -18,8 +18,7 @@ export interface SourceCandidate {
   source: string; // the adapter key
 }
 
-const UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 
 // Minimal HTML-entity decode — WP emits numeric + a few named entities in titles.
 function decode(s: string): string {

@@ -107,4 +107,17 @@ test.describe('descent EDL HUD (desktop)', () => {
       expect(errors).toEqual([]);
     });
   }
+
+  test('an Earth re-entry descent loads its body texture (no 404)', async ({ page }) => {
+    // The scene built `2k_<body>.jpg`; Earth's map is 2k_earth_daymap.jpg, so all 32 Earth
+    // re-entry descents requested a missing 2k_earth.jpg.
+    const missing: string[] = [];
+    page.on('response', (r) => {
+      if (r.status() >= 400 && r.url().includes('/textures/')) missing.push(r.url());
+    });
+    await enterDescent(page, 'apollo8');
+    await expect(page.locator('.descent .stage canvas')).toBeAttached();
+    await page.waitForTimeout(1500);
+    expect(missing).toEqual([]);
+  });
 });

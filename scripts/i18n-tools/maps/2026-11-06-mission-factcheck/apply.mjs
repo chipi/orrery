@@ -38,7 +38,10 @@ for (const e of batch) {
       let s = get(f);
       for (const [a, b] of pairs) {
         if (!s.includes(a)) errors.push(`${f}: not found: ${a.slice(0, 60)}`);
-        else ((s = s.split(a).join(b)), n++);
+        else {
+          s = s.split(a).join(b);
+          n++;
+        }
       }
       out.set(f, s);
     }
@@ -50,7 +53,10 @@ for (const e of batch) {
       const j = JSON.parse(get(f));
       for (const [i, v] of Object.entries(e.met)) {
         if (!j.events?.[+i]) errors.push(`${f}: no event ${i}`);
-        else ((j.events[+i].met = v), n++);
+        else {
+          j.events[+i].met = v;
+          n++;
+        }
       }
       if (e.sort) j.events.sort((x, y) => x.met - y.met);
       out.set(f, JSON.stringify(j, null, 2) + '\n');
@@ -60,7 +66,10 @@ for (const e of batch) {
     let s = get(f);
     for (const [a, b] of e.base) {
       if (!s.includes(a)) errors.push(`${f}: not found: ${a.slice(0, 60)}`);
-      else ((s = s.split(a).join(b)), n++);
+      else {
+        s = s.split(a).join(b);
+        n++;
+      }
     }
     out.set(f, s);
   }

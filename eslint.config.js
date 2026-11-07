@@ -223,6 +223,8 @@ export default [
       'docs/.vitepress/cache/',
       'playwright-report/',
       'test-results/',
+      // Gitignored local scratch (image patches, browser checks): never in CI's checkout.
+      '.image-cache/',
       // Generated coverage report (@vitest/coverage-v8 HTML/lcov, S1).
       'coverage/',
       // Local-only Python virtualenvs (gitignored) — used by Argos

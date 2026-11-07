@@ -26,7 +26,6 @@ const MISSIONS: Record<
     inclDeg: number;
     periAu: number;
     apoAu: number;
-    marks: { label: string; E: number }[];
   }
 > = {
   // Wikipedia "Ulysses (spacecraft)": launch 6 Oct 1990, Jupiter 8 Feb 1992, i 79.11°, q 1.35 AU, Q 5.40 AU.

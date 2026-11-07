@@ -58,6 +58,14 @@
   let episodes = $state<Episode[]>([]);
   let lightbox = $state<{ src: string; title: string; route: string } | null>(null);
 
+  // Each section shows its first PREVIEW items and a "Show all" button: a full scroll of the
+  // page loaded ~63 MB of images on a phone (image-weight.spec, 2026-11-07).
+  const PREVIEW = 10;
+  let expanded = $state<Record<string, boolean>>({});
+  function shown<T>(key: string, list: readonly T[]): readonly T[] {
+    return expanded[key] ? list : list.slice(0, PREVIEW);
+  }
+
   $effect(() => {
     void fetch(`${base}/data/original-work.json`)
       .then((r) => r.json())
@@ -102,6 +110,19 @@
 <svelte:head>
   <title>{m.colophon_title()} — Orrery</title>
 </svelte:head>
+
+{#snippet showAll(key: string, count: number)}
+  {#if count > PREVIEW && !expanded[key]}
+    <button
+      type="button"
+      class="show-all"
+      data-testid="colophon-show-all"
+      onclick={() => (expanded = { ...expanded, [key]: true })}
+    >
+      {m.colophon_show_all({ count })}
+    </button>
+  {/if}
+{/snippet}
 
 <section class="colophon" aria-labelledby="colophon-title" data-route-ready="true">
   <header class="head">
@@ -191,7 +212,7 @@
         {m.colophon_section_cutaways()}<span class="count">{data.anatomy_art.length}</span>
       </h2>
       <ul class="thumb-grid wide">
-        {#each data.anatomy_art as d (d.file)}
+        {#each shown('cutaways', data.anatomy_art) as d (d.file)}
           <li class="thumb-card">
             <button
               type="button"
@@ -209,6 +230,7 @@
           </li>
         {/each}
       </ul>
+      {@render showAll('cutaways', data.anatomy_art.length)}
     </section>
 
     <!-- Exploded cutaways: launchers stage by stage, landers and rovers part by part. -->
@@ -217,7 +239,7 @@
         {m.colophon_section_exploded()}<span class="count">{data.exploded_art.length}</span>
       </h2>
       <ul class="thumb-grid wide">
-        {#each data.exploded_art as d (d.file)}
+        {#each shown('exploded', data.exploded_art) as d (d.file)}
           <li class="thumb-card">
             <button
               type="button"
@@ -235,6 +257,7 @@
           </li>
         {/each}
       </ul>
+      {@render showAll('exploded', data.exploded_art.length)}
     </section>
 
     <!-- Landing sequences: how each surface site's craft came down (top of its STORY tab). -->
@@ -244,7 +267,7 @@
           {m.colophon_section_landing()}<span class="count">{data.landing_art.length}</span>
         </h2>
         <ul class="thumb-grid wide">
-          {#each data.landing_art as d (d.file)}
+          {#each shown('landing', data.landing_art) as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"
@@ -262,6 +285,7 @@
             </li>
           {/each}
         </ul>
+        {@render showAll('landing', data.landing_art.length)}
       </section>
     {/if}
 
@@ -272,7 +296,7 @@
           {m.colophon_section_blueprints()}<span class="count">{data.blueprint_art.length}</span>
         </h2>
         <ul class="thumb-grid wide">
-          {#each data.blueprint_art as d (d.file)}
+          {#each shown('blueprints', data.blueprint_art) as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"
@@ -290,6 +314,7 @@
             </li>
           {/each}
         </ul>
+        {@render showAll('blueprints', data.blueprint_art.length)}
       </section>
     {/if}
 
@@ -306,7 +331,7 @@
         })}
       </p>
       <ul class="thumb-grid">
-        {#each data.posters as p (p.file)}
+        {#each shown('posters', data.posters) as p (p.file)}
           <li class="thumb-card">
             <button
               type="button"
@@ -319,6 +344,7 @@
           </li>
         {/each}
       </ul>
+      {@render showAll('posters', data.posters.length)}
     </section>
 
     <!-- Physics Lab illustrations: ORRERY originals, AI-generated (/lab).
@@ -335,7 +361,7 @@
           })}
         </p>
         <ul class="thumb-grid">
-          {#each data.lab_illustrations as d (d.file)}
+          {#each shown('lab', data.lab_illustrations) as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"
@@ -353,6 +379,7 @@
             </li>
           {/each}
         </ul>
+        {@render showAll('lab', data.lab_illustrations.length)}
       </section>
     {/if}
 
@@ -362,7 +389,7 @@
         {m.colophon_section_diagrams()}<span class="count">{data.diagrams_science.length}</span>
       </h2>
       <ul class="thumb-grid">
-        {#each data.diagrams_science as d (d.file)}
+        {#each shown('diagrams', data.diagrams_science) as d (d.file)}
           <li class="thumb-card" class:cover={d.cover}>
             <button
               type="button"
@@ -380,6 +407,7 @@
           </li>
         {/each}
       </ul>
+      {@render showAll('diagrams', data.diagrams_science.length)}
     </section>
 
     <!-- Human-spaceflight capsules + live-rendered geometry/canvas. Each item
@@ -388,7 +416,7 @@
       <section class="block" aria-labelledby="sec-{sec.id}">
         <h2 id="sec-{sec.id}">{sec.label}<span class="count">{sec.items.length}</span></h2>
         <ul class="item-list">
-          {#each sec.items as it (it.thumb)}
+          {#each shown(sec.id, sec.items) as it (it.thumb)}
             <li class="item" class:has-thumb={it.thumb}>
               {#if it.thumb}
                 <button
@@ -406,6 +434,7 @@
             </li>
           {/each}
         </ul>
+        {@render showAll(sec.id, sec.items.length)}
       </section>
     {/each}
 
@@ -417,7 +446,7 @@
         {m.colophon_section_ui()}<span class="count">{ICON_SHOWCASE.length}</span>
       </h2>
       <ul class="icon-grid">
-        {#each ICON_SHOWCASE as icon (icon.id)}
+        {#each shown('ui', ICON_SHOWCASE) as icon (icon.id)}
           <li class="icon-card">
             <div class="icon-swatch">
               {#each icon.variants ?? [{ props: {} }] as v (v.label ?? 'only')}
@@ -437,6 +466,7 @@
           </li>
         {/each}
       </ul>
+      {@render showAll('ui', ICON_SHOWCASE.length)}
     </section>
 
     <section class="block" aria-labelledby="sec-writing">
@@ -444,7 +474,7 @@
         {m.colophon_section_writing()}<span class="count">{data.writing.length}</span>
       </h2>
       <ul class="item-list">
-        {#each data.writing as it (it.route + '@' + it.title)}
+        {#each shown('writing', data.writing) as it (it.route + '@' + it.title)}
           <li class="item">
             <p class="it-title">{it.title}</p>
             <p class="it-what">{it.what}</p>
@@ -452,6 +482,7 @@
           </li>
         {/each}
       </ul>
+      {@render showAll('writing', data.writing.length)}
     </section>
 
     {#if episodes.length > 0}
@@ -461,7 +492,7 @@
         </h2>
         <p class="tours-note">{m.colophon_tours_note()}</p>
         <ul class="episode-list">
-          {#each episodes as ep (ep.id)}
+          {#each shown('tours', episodes) as ep (ep.id)}
             <li class="episode">
               <span class="ep-title">{ep.title}</span>
               <span class="ep-actions">
@@ -488,6 +519,7 @@
             </li>
           {/each}
         </ul>
+        {@render showAll('tours', episodes.length)}
       </section>
     {/if}
   {/if}
@@ -650,6 +682,29 @@
   }
   .thumb-grid.wide .thumb-card img {
     aspect-ratio: 3 / 2;
+  }
+  /* Phones: two per row, so a thumbnail takes the 640 px rung instead of 1280 at 3x. */
+  @media (max-width: 560px) {
+    .thumb-grid.wide {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+  }
+  .show-all {
+    margin-top: 14px;
+    min-height: 44px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: inherit;
+    font: inherit;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+  .show-all:hover,
+  .show-all:focus-visible {
+    border-color: rgba(255, 255, 255, 0.4);
   }
   .thumb-card {
     background: rgba(255, 255, 255, 0.02);

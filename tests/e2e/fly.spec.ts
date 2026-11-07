@@ -144,16 +144,22 @@ test.describe('/fly — URL mission loading (RFC-004)', () => {
 
   test('a craft in two roles (Starship launcher + spacecraft) renders without page errors', async ({
     page,
+    isMobile,
   }) => {
     // The opening fleet strip keyed its cards by fleet id; Starship's two cards (launcher,
-    // spacecraft) threw Svelte each_key_duplicate on every render of the strip.
+    // spacecraft) threw Svelte each_key_duplicate on every render of the strip. Mobile /fly
+    // starts mid-cruise without the opening, so the strip exists on desktop only.
+    test.skip(isMobile, 'the opening fleet strip is desktop-only');
     const errors: string[] = [];
     page.on('pageerror', (err) => errors.push(err.message));
     await gotoFly(page, '/fly?mission=starship-mars-crew');
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Starship/i, {
       timeout: 10_000,
     });
-    await expect(page.locator('[data-testid="fly-opening-fleet"]')).toBeAttached();
+    // The strip fades in 3 s into the opening.
+    await expect(page.locator('[data-testid="fly-opening-fleet"]')).toBeAttached({
+      timeout: 20_000,
+    });
     await page.waitForTimeout(1500);
     expect(errors.filter((e) => /each_key_duplicate/.test(e))).toEqual([]);
   });

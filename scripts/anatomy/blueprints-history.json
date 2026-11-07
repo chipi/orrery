@@ -173,7 +173,7 @@
         "https://www.jpl.nasa.gov/missions/dawn/ (Vesta: core/mantle/crust, basin >300 mi with a peak over twice Everest, meteorite source)",
         "JPL SBDB elements for 4 Vesta and 1 Ceres"
       ],
-      "notes": "No draft. Ion-thrust legs (Mars → Vesta with one extra turn, Vesta → Ceres) have no ballistic conic (the fitted ellipse missed by 0.57 AU), so they are drawn as schematic spirals (new `spiral` leg) and the sheet says so; the 14 months at Vesta ride Vesta's orbit (new `ride` leg). Wikipedia gives the Mars flyby as 549 km in the text and 542 km elsewhere: the sheet uses 549, as our data does. 0–100 km/h in about 4 days: 27.8 m/s at 0.09 N / ~1,000 kg.",
+      "notes": "No draft. Ion-thrust legs (Mars → Vesta with one extra turn, Vesta → Ceres) have no ballistic conic (the fitted ellipse missed by 0.57 AU), so they are drawn as schematic spirals (new `spiral` leg) and the sheet says so; the 14 months at Vesta ride Vesta's orbit (new `ride` leg). Wikipedia gives the Mars flyby as 549 km in the text and 542 km elsewhere; the sheet first used 549 and 17 Feb, as our data did. Fixed 2026-11-07 to 542 km and 18 Feb 2009 (00:27:58 UTC, Dawn Journal) in panels A, F and G by a local glyph swap (.image-cache/landing/dawn-patch.mjs), with the mission data in all 14 locales. 0–100 km/h in about 4 days: 27.8 m/s at 0.09 N / ~1,000 kg.",
       "content_check": "Fixed (commit eb956f1c0a4, 14 locales): the Vesta → Ceres leg had about 112 kg of xenon (an allocation, Wikipedia), not ~390 kg (more than the 425 kg tank minus the 247 kg used for Vesta). Not checked: \"the Mars assist added ~2.6 km/s\" and \"first interplanetary transfer under continuous low thrust between two bodies\" in our event text."
     },
     "hayabusa2": {
@@ -315,7 +315,7 @@
         "both strip edits came back letterboxed at 21:9; the content band was trimmed before pasting"
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Pioneer_10 (launch 01:49 UTC LC-36A, Atlas SLV-3C Centaur-D + Star-37E, 258 kg, 51,682 km/h fastest at the time, asteroid belt 15 Jul 1972 – 15 Feb 1973, Jupiter 3 Dec 1973 132,252 km, 200,000 + 56,000 rads, four SNAP-19 155 W, 2.74 m dish, plaque 152 × 229 mm, 11 instruments, 4.8 rpm, 500+ images, last signal 23 Jan 2003 ~80 AU, Aldebaran, first of five to reach solar escape velocity)"
+        "https://en.wikipedia.org/wiki/Pioneer_10 (launch 01:49 UTC LC-36A, Atlas SLV-3C Centaur-D + Star-37E, 258 kg, 51,682 km/h fastest at the time, asteroid belt 15 Jul 1972 – 15 Feb 1973, Jupiter 3 Dec 1973 (the US date; the sheet was fixed 2026-11-07 to 4 Dec 1973, closest approach 02:26 UT per AAS, panels A and G, local glyph swap .image-cache/landing/p10-patch.mjs) 132,252 km, 200,000 + 56,000 rads, four SNAP-19 155 W, 2.74 m dish, plaque 152 × 229 mm, 11 instruments, 4.8 rpm, 500+ images, last signal 23 Jan 2003 ~80 AU, Aldebaran, first of five to reach solar escape velocity)"
       ],
       "notes": "No draft. New `end: stop` (draw nothing after the last event): the slow post-Jupiter escape curves, so the model was told to draw it dotted and labelled schematic. 11 h one way = 80 AU / c. Plaque figures requested as small simple outlines.",
       "content_check": "Fixed (commit cb3bb89b53e): last contact from ~80 AU, not ~82 (14 locales; our own event text already said 80); dropped \"first spacecraft to fly past Mars's orbit\" (English credit). Not changed: launch \"1972-03-02\" in our launch event text is the local (EST) date; 01:49 UTC on 3 Mar."

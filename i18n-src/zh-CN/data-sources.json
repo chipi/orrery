@@ -17,5 +17,7 @@
   "models-ref-jaxa": "JAXA 关于 H-IIA、H3、M-V 以及 HTV / HTV-X 转移飞行器的页面，提供了为 /fly 和 /fleet 尺寸对比建模的日本运载火箭和货运飞船的尺寸。",
   "models-ref-isro": "ISRO 关于运载火箭和“加根扬”的页面（PSLV、GSLV Mk III / LVM3、乘员舱），提供了为 /fly 和 /fleet 尺寸对比建模的印度飞行器的尺寸。",
   "models-ref-agencies": "航天机构和制造商的官方页面（俄罗斯航天局、SpaceX、联合发射联盟、波音、诺斯罗普·格鲁曼、萤火虫、阿丽亚娜空间、中国载人航天工程办公室和中国航天科技集团、美国太空军），提供了运载火箭和航天器模型的飞行器尺寸。",
-  "models-ref-independent": "独立的航天参考资料和博物馆页面（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、史密森尼国家航空航天博物馆、施派尔技术博物馆等），提供了苏联、航天飞机和暴风雪号时代飞行器的大小。"
+  "models-ref-independent": "独立的航天参考资料和博物馆页面（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、史密森尼国家航空航天博物馆、施派尔技术博物馆等），提供了苏联、航天飞机和暴风雪号时代飞行器的大小。",
+  "nasa-mmgis-rover-traverses": "Curiosity 和 Perseverance 漫游车团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。",
+  "pds-mer-traverses": "Spirit 和 Opportunity 科学团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。"
 }

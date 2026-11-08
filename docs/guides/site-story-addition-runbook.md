@@ -22,6 +22,7 @@ A site story file lives at `static/data/site-stories/<siteId>.json` and carries 
 {
   "site": "apollo11",
   "intro": "A short (1–3 sentence) narrative hook: context, stakes, outcome.",
+  "essay": "optional-essay-slug",
   "chapters": [
     {
       "id": "hardware",
@@ -41,6 +42,7 @@ A site story file lives at `static/data/site-stories/<siteId>.json` and carries 
 **Field reference:**
 - **`site` (required, string):** kebab-case ID matching the mission/site (e.g. `apollo11`, `curiosity`, `chang-e-3`). Must match a real mission in the index.
 - **`intro` (required, string):** 1–3 sentences setting the narrative frame. ~100–200 characters preferred (readable in the story header before chapter tabs).
+- **`essay` (optional, string):** slug of a Long View essay the story leads into. After the last chapter the panel shows a card (kicker, essay title and dek, "Read") linking to `/essays/<slug>`; the title and dek come from the essay in the reader's locale. Omit it when no essay fits.
 - **`chapters` (required, array):** at least 1 chapter. Each carries:
   - **`id` (required, string):** kebab-case identifier (`hardware`, `launch`, `surface`, `science`, `people`). Canonical ids get localized chapter titles (see "Rendering" below); custom ids render the `title` field verbatim.
   - **`title` (required, string):** display name for the chapter rail.

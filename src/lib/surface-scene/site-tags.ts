@@ -453,6 +453,8 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
   const root = document.createElement('div');
   root.className = 'site-tags';
   root.dataset.testid = 'site-tags';
+  // A visual copy of the 3D pins (pointer-events: none): keep the card text out of the a11y tree.
+  root.setAttribute('aria-hidden', 'true');
   const style = document.createElement('style');
   style.textContent = STYLE;
   root.appendChild(style);
@@ -544,7 +546,9 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
       if (!st.card) {
         // Measured once, while shown: the card's box relative to the anchor.
         const c = made.el.querySelector<HTMLElement>('.site-tag__card');
-        if (c) st.card = { dx: c.offsetLeft, dy: c.offsetTop, w: c.offsetWidth, h: c.offsetHeight };
+        // Measured while the host is hidden, the card is 0×0: measure again next frame.
+        if (c && c.offsetWidth > 0)
+          st.card = { dx: c.offsetLeft, dy: c.offsetTop, w: c.offsetWidth, h: c.offsetHeight };
       }
       const opacity = stage.icon * Math.max(...g.keys.map((k) => byKey.get(k)!.opacity));
       shown.push({ g, ...made, opacity });

@@ -1708,6 +1708,12 @@
       'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler';
     let siteTagBlocked: Rect[] = [];
     let siteTagBlockedAt = -Infinity;
+    // Traverse end caption: the scale-bar / altitude boxes it must dodge, re-measured at most
+    // every 250 ms (reading them every frame forces a layout after siteTags writes).
+    let traverseHud: { host: DOMRect; huds: DOMRect[] } | null = null;
+    let traverseHudAt = -Infinity;
+    const tlScratch = new THREE.Vector3();
+    const tlScratchQ = new THREE.Quaternion();
     // Hero IBL — reflections/glints on the PBR lander/rover models. Tier-gated
     // (high+): the per-frame env sampling starves software-GL / GPU-less
     // renderers (on the CI SwiftShader runner it tipped the flat-patch /
@@ -3049,8 +3055,14 @@
     // like that on earth as well"). Empty on /moon and /mars where
     // earthSats stays [].
     let hoveredSatId: string | null = null;
-    const onHover = (e: MouseEvent) => {
-      if (isDrag) return;
+    // Picking projects every vertex of every visible traverse, so mousemoves are coalesced
+    // to one pick per animation frame.
+    let hoverEvent: MouseEvent | null = null;
+    let hoverRaf = 0;
+    const runHover = () => {
+      hoverRaf = 0;
+      const e = hoverEvent;
+      if (!e || isDrag) return;
       // Earth-sat picks win over surface picks (same precedence as
       // tryPick3d's click handling) so hovering an ISS dot over a
       // launchpad below it highlights the sat, not the pad.
@@ -3060,7 +3072,15 @@
       const stopHit = pickStopAt(e.clientX, e.clientY);
       hoveredStopInfo = stopHit ? { ...stopHit, clientX: e.clientX, clientY: e.clientY } : null;
     };
+    const onHover = (e: MouseEvent) => {
+      if (isDrag) return;
+      hoverEvent = e;
+      if (!hoverRaf) hoverRaf = requestAnimationFrame(runHover);
+    };
     const onHoverLeave = () => {
+      if (hoverRaf) cancelAnimationFrame(hoverRaf);
+      hoverRaf = 0;
+      hoverEvent = null;
       hoveredSiteId = null;
       hoveredSatId = null;
       hoveredStopInfo = null;
@@ -4358,23 +4378,30 @@
               }
               if (tl.endLabel) {
                 tl.endLabel.scale.setScalar(captionScale);
+                const endLabel = tl.endLabel;
                 const place = (sign: number) =>
-                  tl.endAnchor
-                    .clone()
+                  endLabel.position
+                    .copy(tl.endAnchor)
                     .addScaledVector(tl.tangent, sign * tangentOffsetWorld)
                     .normalize()
                     .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
-                tl.endLabel.position.copy(place(1));
+                place(1);
                 // #641 — swap to the other side of the end dot when the caption
                 // would sit under the scale bar / altitude readout boxes.
                 if (tl.endLabel.visible) {
-                  const host = renderer.domElement.getBoundingClientRect();
-                  const huds = sceneRoot
-                    ? [...sceneRoot.querySelectorAll('.distance-scale, .altitude-indicator')].map(
-                        (e) => e.getBoundingClientRect(),
-                      )
-                    : [];
-                  const v = tl.endLabel.getWorldPosition(new THREE.Vector3()).project(camera);
+                  if (!traverseHud || now - traverseHudAt > 250) {
+                    traverseHudAt = now;
+                    traverseHud = {
+                      host: renderer.domElement.getBoundingClientRect(),
+                      huds: sceneRoot
+                        ? [
+                            ...sceneRoot.querySelectorAll('.distance-scale, .altitude-indicator'),
+                          ].map((e) => e.getBoundingClientRect())
+                        : [],
+                    };
+                  }
+                  const { host, huds } = traverseHud;
+                  const v = tl.endLabel.getWorldPosition(tlScratch).project(camera);
                   const cx = host.left + (v.x * 0.5 + 0.5) * host.width;
                   const cy = host.top + (-v.y * 0.5 + 0.5) * host.height;
                   const hw = captionWidthPx / 2;
@@ -4385,22 +4412,21 @@
                       cy + 14 > r.top &&
                       cy - 14 < r.bottom,
                   );
-                  if (under) tl.endLabel.position.copy(place(-1));
+                  if (under) place(-1);
                   // A drive that ends back at the lander (Apollo LRV loops) puts
                   // the end caption on the start caption: drop it one line below.
                   if (tl.startLabel?.visible) {
                     const toPx = (o: THREE.Object3D) => {
-                      const q = o.getWorldPosition(new THREE.Vector3()).project(camera);
+                      const q = o.getWorldPosition(tlScratch).project(camera);
                       return [(q.x * 0.5 + 0.5) * host.width, (-q.y * 0.5 + 0.5) * host.height];
                     };
                     const [ex, ey] = toPx(tl.endLabel);
                     const [sx, sy] = toPx(tl.startLabel);
                     if (Math.abs(ex - sx) < captionWidthPx && Math.abs(ey - sy) < 28) {
-                      const down = new THREE.Vector3(0, -1, 0)
+                      const down = tlScratch
+                        .set(0, -1, 0)
                         .applyQuaternion(camera.quaternion)
-                        .applyQuaternion(
-                          planetMesh.getWorldQuaternion(new THREE.Quaternion()).invert(),
-                        );
+                        .applyQuaternion(planetMesh.getWorldQuaternion(tlScratchQ).invert());
                       tl.endLabel.position.addScaledVector(down, (sy + 30 - ey) * worldPerPx);
                     }
                   }
@@ -5066,6 +5092,7 @@
     lifecycle.add(stopRouteViewEscape);
     lifecycle.add(() => panoramaSkybox?.dispose());
     lifecycle.add(stopCanvasInputs);
+    lifecycle.add(() => cancelAnimationFrame(hoverRaf));
     lifecycle.add(() => disposeScene(scene));
     // ADR-073 Layer B — explicitly dispose the lazy-loaded 4K
     // texture. disposeScene only walks the scene graph; when the

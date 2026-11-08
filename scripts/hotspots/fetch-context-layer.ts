@@ -386,6 +386,7 @@ function provenanceRow(
   ids: string[],
   urls: string[],
   mPerPx: number,
+  grey = false,
 ): ProvenanceEntry {
   const p = `/images/hotspots/${BODY}/${site}/context.webp`;
   if (BODY === 'earth')
@@ -416,28 +417,34 @@ function provenanceRow(
       instrument: 'Sentinel-2 MSI',
     };
   const moon = BODY === 'moon';
+  const colour = grey ? '' : ' · colour from the globe texture (Solar System Scope)';
+  const colourNote = grey
+    ? ' Kept grey (no colour layer).'
+    : ' The colour layer is the CC-BY-4.0 Solar System Scope globe texture already credited on the globe.';
   return {
     id: createHash('sha256').update(p).digest('hex').slice(0, 16),
     path: p,
     source_type: 'derived-mosaic',
     title: `${moon ? 'LRO WAC global morphology mosaic' : `THEMIS day-IR controlled mosaic (${ids.join(', ')})`} — context crop ${b.lat_min}…${b.lat_max}°N ${b.lon_min}…${b.lon_max}°E`,
     author: moon
-      ? 'NASA / GSFC / Arizona State University (LROC WAC) · USGS Astrogeology ARD · colour from the globe texture (Solar System Scope)'
-      : 'NASA / JPL / Arizona State University (THEMIS, Mars Odyssey) · USGS Astrogeology · colour from the globe texture (Solar System Scope)',
+      ? `NASA / GSFC / Arizona State University (LROC WAC) · USGS Astrogeology ARD${colour}`
+      : `NASA / JPL / Arizona State University (THEMIS, Mars Odyssey) · USGS Astrogeology${colour}`,
     agency: 'NASA',
-    source_url: moon ? 'https://www.lroc.asu.edu/' : 'https://themis.asu.edu/',
+    source_url: moon
+      ? 'https://astrogeology.usgs.gov/search/map/moon_lro_lroc_wac_global_morphology_mosaic_100m'
+      : 'https://themis.asu.edu/',
     image_url: urls[0],
     license_short: 'PD-NASA',
     license_url: 'https://www.nasa.gov/nasa-brand-center/images-and-media/',
     license_rationale: moon
-      ? 'LROC WAC mosaic: NASA/GSFC/ASU, U.S. Government work (17 U.S.C. §105). The colour layer is the CC-BY-4.0 Solar System Scope globe texture already credited on the globe.'
-      : 'THEMIS controlled mosaics: NASA/JPL/ASU, U.S. Government work, distributed by USGS Astrogeology (STAC licence CC0-1.0). The colour layer is the CC-BY-4.0 Solar System Scope globe texture already credited on the globe.',
+      ? `LROC WAC mosaic: NASA/GSFC/ASU, U.S. Government work (17 U.S.C. §105).${colourNote}`
+      : `THEMIS controlled mosaics: NASA/JPL/ASU, U.S. Government work, distributed by USGS Astrogeology (STAC licence CC0-1.0).${colourNote}`,
     modifications: [
       b.polar_half_km
         ? `reprojected-${KM}km-square-polar-stereographic-centred-on-the-pole`
         : `cropped-${KM}km-true-scale-lat-lon-box`,
       `averaged-to-${OUT_W}px-wide-${mPerPx.toFixed(0)}m-per-px`,
-      'colour-from-globe-texture-detail-transfer',
+      grey ? 'kept-grey-no-colour-transfer' : 'colour-from-globe-texture-detail-transfer',
       'reencoded-webp-ladder',
     ],
     revid: null,
@@ -564,7 +571,7 @@ async function main() {
         .toFile(master);
       hs.entries[s.id].hotspot_context_source = `/images/hotspots/${BODY}/${s.id}/context.webp`;
       hs.entries[s.id].hotspot_context_bounds = b;
-      prov.push(provenanceRow(s.id, b, ids, urls, mPerPx));
+      prov.push(provenanceRow(s.id, b, ids, urls, mPerPx, grey !== null));
       ok++;
       console.log(
         `  ✓ ${s.id} ${OUT_W}×${outH} from ${ids.join('+')} (${((Date.now() - t0) / 1000).toFixed(0)} s)`,

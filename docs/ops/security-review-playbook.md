@@ -64,7 +64,7 @@ For each area: gather evidence, then grade `✓ safe | ⚠ partial | ✗ broken 
 9. **Telemetry / privacy** — Sentry: `beforeSend` scrubs URLs/headers/cookies? `sendDefaultPii: false`? Replay disabled? Analytics: production-only host check? Cookies: enumerate every `Set-Cookie` / `document.cookie`. localStorage / sessionStorage usage (project rule: forbidden — verify).
 10. **Data integrity** — image / data fetch scripts: live fetch at build time vs pinned. Image-provenance manifest signed or checksum-only? `validate-data` gate covering all data classes? `check-no-secrets` gate covering all credential patterns?
 11. **Authentication / authorization** — confirm no `/login`, no `/admin`, no `auth`, no `password`, no `session`, no `jwt` matches in `src/`. Confirm no user accounts in any data file.
-12. **Existing security testing** — Dependabot config? CodeQL? Snyk? axe-core gate? Per-PR `npm audit` step?
+12. **Existing security testing** — Dependabot config? CodeQL? Snyk? axe-core gate? Per-PR `npm audit` step? CodeQL's scope is set by `.github/codeql/codeql-config.yml` (`config-file` in `codeql.yml`): it ignores the paths `scripts/_archive`, `scripts/i18n-tools/maps` and `docs/prototypes`, and excludes the rules `js/file-access-to-http` and `js/http-to-file-access` repo-wide (the data pipelines fetch and cache by design). Read the config before counting open alerts, and re-check the alert list on main after a change to it.
 
 ### Step 3 — Reconcile agent output with `npm audit`
 

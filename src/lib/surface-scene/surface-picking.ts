@@ -222,14 +222,21 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
   // Hover anywhere on a visible sol-carrying path: "Sol N" + date + km.
   function pickPathAt(clientX: number, clientY: number, rect: DOMRect): StopPickHit | null {
     const v = new THREE.Vector3();
+    const toCam = new THREE.Vector3();
+    const outward = new THREE.Vector3();
     const project = (w: THREE.Vector3): [number, number] | null => {
-      v.copy(w).applyMatrix4(planetWorld).project(camera);
+      v.copy(w).applyMatrix4(planetWorld);
+      // Far side of the globe: the path vertex faces away from the camera, so it is hidden.
+      if (toCam.copy(camera.position).sub(v).dot(outward.copy(v).sub(planetCentre)) <= 0)
+        return null;
+      v.project(camera);
       if (v.z > 1) return null;
       return [rect.left + ((v.x + 1) / 2) * rect.width, rect.top + ((1 - v.y) / 2) * rect.height];
     };
     for (const tl of ctx.traverseLines) {
       if (!tl.line?.visible || !tl.pathWorld || !tl.pointSols || !tl.pointKm) continue;
       planetWorld.copy(tl.line.parent?.matrixWorld ?? new THREE.Matrix4());
+      planetCentre.setFromMatrixPosition(planetWorld);
       const i = nearestPathVertex(tl.pathWorld, project, clientX, clientY);
       if (i < 0) continue;
       const sol = tl.pointSols[i];
@@ -245,6 +252,7 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
     return null;
   }
   const planetWorld = new THREE.Matrix4();
+  const planetCentre = new THREE.Vector3();
 
   function pickStopAt(clientX: number, clientY: number): StopPickHit | null {
     const rect = el3d.getBoundingClientRect();

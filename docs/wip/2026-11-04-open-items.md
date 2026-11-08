@@ -42,25 +42,24 @@ unconfirmed (option B, operator 2026-11-05).
   master warped onto the same site-centred stereographic grid put every crater in the same place
   and shape. What reads as a stretch at the 87 km zoom is the long low-sun shadows plus a real
   defect of the colour transfer: zero (shadowed) pixels take the globe's flat colour, so shadows
-  become flat grey blobs with dark outlines and the lit ground washes out. Fix: give high-latitude
-  Moon crops the grey, brightness-capped treatment the polar crop uses (`polarGrey` in
-  fetch-context-layer.ts), then re-fetch the south-polar sites (Chandrayaan-3, Chang'e 6…).
+  become flat grey blobs with dark outlines and the lit ground washes out. Fix, done: Moon crops
+  past `HIGH_LAT` = 60° get the grey, brightness-capped treatment the polar crop uses (`polarGrey`
+  in fetch-context-layer.ts). Only Chandrayaan-3 (69°S) is past it, and it was re-fetched
+  (`5e52c98eb03`); Chang'e 6 (~41°S) does not need it.
 - **1c. Markers and pins — done (2026-11-06).** Screen-space site tags (`site-tags.ts`): icons by zoom
   stage from the first view (bare), cards later, focus near the view centre, grouping, the nation
   legend with the first icons; every route opens over its sites (TA.md § Scene 6, "Zoom bands").
-- **1d. Landing story** (operator 2026-11-06). Done: the STORY tab opens with the anatomy drawings of
-  what is on the surface (`site-anatomy.ts`; 37 of 38 sites; Artemis 4 has none). Next, when the
-  Higgsfield connector is back: one landing-sequence sheet per lander in the watercolor house style
-  (entry → descent → touchdown → after landing, from each site's descent archetype), anchor sheet
-  first (Curiosity's sky crane) for the operator's look, then the batch (~38 images, 2 credits each
-  by the recorded recipe); optional exploded views for the landed craft (~30).
-- **Mission-gallery provenance that names another picture** (found 2026-11-06): `venera-13/01` (the
-  1982 Venera 13 / 14 stamp) is credited to Commons "Surface of Venus from Venera 13"; `vega-1/01` (the
-  Halley stamp sheet) to "Vega balloon probe" — the credit line and source link point at other
-  images. `mars2/01` (a full Mars disc, source unclear), `mars2/04` (orbital close-up far sharper than
-  Mars 2 returned) and `mars6/03` (a surface sunset; Mars 6 sent none) do not belong to their
-  missions. Check every mission gallery's provenance against what the image shows; the new stories
-  use only the images that do belong.
+- **1d. Landing story — done** (operator 2026-11-06). The STORY tab opens with the anatomy drawings of
+  what is on the surface (`site-anatomy.ts`; 37 of 38 sites; Artemis 4 has none). Every landing site
+  has a landing-sequence sheet and landers and rovers have exploded cutaways (`d72ccdb8da1`; 4K
+  masters in `4d4723f5733`; listed as `landing_art` / `exploded_art` in
+  `static/data/original-work.json`).
+- **Mission-gallery provenance that names another picture — done** (found 2026-11-06): `venera-13/01`
+  and `vega-1/01` now credit the stamp files they are (`4fa4b24a3d0`); `mars2/01` and `mars2/04` were
+  replaced with a PrOP-M render and a museum model of the Mars 3 descent module, and `mars6/03` (a
+  sunset Mars 6 never sent) was dropped (`421c139995d`). The last three misattributed images were
+  traced in `fcaa95bddb1`, and `scripts/gallery-credit-shape-check.mjs` checks every credited
+  Commons file against its image's shape.
 - **Audio tours: re-listen to every episode and adjust its cue points** (operator 2026-11-06). The
   0.9.7 changes moved what is on screen under the narration (first view bare, tags by zoom stage,
   new panoramas, Apollo 17's tour removed from the Cernan episode); tour-coverage only proves the
@@ -73,9 +72,8 @@ unconfirmed (option B, operator 2026-11-05).
   to Jupiter and Mercury; jwst-l2-halo, voyager-grand-tour, saturn-v-anchor, signal-delay,
   tianhe-core, zarya-first-module and guide-missions re-timed (their audio was re-rendered after
   authoring, 3–13 s). Left, each needing a decision or a new hook:
-  - guide-missions 38–46 s says "Filter status equals failed… Mars 2, Schiaparelli, Beresheet…"
-    but missions have no failed status (FLOWN only); the `?status=FAILED` stage shows the unfiltered
-    grid. Needs a failed outcome in the mission data + filter, or a script change.
+  - guide-missions 38–46 s says "Filter status equals failed… Mars 2, Schiaparelli, Beresheet…".
+    Done (`98b5355afc5`): `outcome: "failure"` in the mission index and a FAILED pill on /missions.
   - The mission panel's explore button (guide-missions 89 s), Queqiao itself (queqiao-magpie
     23–44 s), the home "?" chips (guide-home 110 s) and Tianhe's docking ports (guide-tiangong 79 s)
     are named but have no `data-audio-stage` hook to show.
@@ -103,13 +101,13 @@ unconfirmed (option B, operator 2026-11-05).
   the frozen i18n map records and the HTML prototypes (78) and the fetch/upload-by-design rules
   `js/file-access-to-http` / `js/http-to-file-access` (39); 52 fixed in code; 7 dismissed on
   GitHub with reasons (MCP empty-token guard, dedicated worker, operator-typed CLI regex, three
-  test inputs, the atomic lock dir). The rest close when the next scan of main runs the config.
+  test inputs, the atomic lock dir). The rest are expected to close when the next scan of main runs the config; not verified yet.
   MCP trace probe: deploy-verify sends a traceparent to `/mcp` (401) and finds that trace
   (homelab 97662e7).
 
-**3. One content track** — proposed: re-verify the fact-check findings (`factcheck/`, 55 files,
-~250 findings), since they are about the correctness of what is live. Alternatives are in "Content
-and accuracy" below.
+**3. One content track** — chosen: re-verify the fact-check findings (`factcheck/`, 55 files),
+since they are about the correctness of what is live. Alternatives are in "Content and accuracy"
+below.
 **Done 2026-11-08:**
 
 - 793 findings re-checked against the live text, then the remaining errors fixed in all 14
@@ -151,7 +149,6 @@ Decided, not open: Earth has no 2D view (`ecbbf98f183`); no sky view on Venus (o
 - 23 site stories not written.
 - Museums: geography pass 4 never ran — 38 live museums (22 US, 0 India) against 79 researched
   (`2026-10-22-museum-research/`); each added museum needs 13 overlays.
-- Fact-check findings in `factcheck/` (55 files, ~250 findings) not re-verified one by one.
 - Lab: 3D re-entry corridor (2D shipped first, deliberate); four lesson items unverified
   (reach-orbit result cells, per-goal capstones, two diagrams).
 - Issues: #368, #313, #130, #486, #414.

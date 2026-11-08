@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { plainText } from './build-image-provenance.ts';
+import { plainText } from './commons-text.ts';
 
 describe('plainText (Commons extmetadata → credit text)', () => {
   it('drops hidden elements, so the "Unknown author" template is not read twice', () => {

@@ -1341,6 +1341,34 @@
           "u": "https://spaceflightnow.com/2018/09/14/delta-2-icesat-2-mission-status-center/"
         }
       ]
+    },
+    {
+      "id": "nasa-mmgis-rover-traverses",
+      "name": "NASA MMGIS rover traverses",
+      "catalog": "MMGIS traverse layers — Curiosity (MSL) and Perseverance (M20), NASA/JPL-Caltech",
+      "category": "other",
+      "description": "The rover teams' localized drive paths for Curiosity and Perseverance, drawn on the Mars surface view with their sols and distances.",
+      "source_url": "https://mars.nasa.gov/mmgis-maps/M20/Layers/json/M20_traverse.json",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Published by NASA/JPL-Caltech; U.S. Government work (17 U.S.C. §105).",
+      "used_on": [
+        "mars"
+      ]
+    },
+    {
+      "id": "pds-mer-traverses",
+      "name": "PDS Geosciences Node — MER traverses",
+      "catalog": "MER Analyst's Notebook traverse tables — Spirit (MERA) and Opportunity (MERB), PDS Geosciences Node, Washington University in St. Louis",
+      "category": "other",
+      "description": "The science teams' localized drive paths for Spirit and Opportunity, drawn on the Mars surface view with their sols and distances.",
+      "source_url": "https://an.rsl.wustl.edu/mera/AN/meri/MER/traverse/MERB_traverse_5130.csv",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA Planetary Data System archive data from a NASA mission; U.S. Government work (17 U.S.C. §105).",
+      "used_on": [
+        "mars"
+      ]
     }
   ]
 }

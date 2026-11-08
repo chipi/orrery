@@ -62,7 +62,7 @@ const FILE_ROOTS = ['static/images', 'static/credit-thumbs/images', 'masters'];
 const JSON_ROOTS = ['static/data', 'scripts/i18n-tools', 'i18n-src'];
 // Generated or historical: the i18n bundles are rebuilt from i18n-src (build-i18n-bundles.mjs);
 // slice-a-*-dryrun.json are past dry-run reports, kept as written.
-const SKIP = [/^static\/data\/i18n\//, /slice-a-.*-dryrun\.json$/];
+const SKIP = [/^static\/data\/i18n\//, /^scripts\/i18n-tools\/maps\//, /slice-a-.*-dryrun\.json$/];
 
 /** gallery "<dir>/<id>" → { drop:Set<NN>, map: Map<oldNN,newNN> } */
 const galleries = new Map();

@@ -150,6 +150,10 @@ Not directly runnable — imported by the pipeline above:
 - **`tts/retry.ts`** — `withRetry`: 3-attempt exponential backoff on network/5xx/429, honours `Retry-After`.
 - **`suggest-stages.ts`** — `tsx scripts/audio/suggest-stages.ts <episode-id>`: parses an episode's
   SSML + VTT and emits a VTT-anchored `EPISODE_STAGES` block to paste into `src/lib/audio-tour.ts`.
+- **`stage-review.ts`** — `npx tsx scripts/audio/stage-review.ts --url http://localhost:4193 --out <dir> [episode-id …]`:
+  the re-listen check. Per stage it saves a screenshot just after the stage fires beside the VTT
+  words spoken around it (six stages per sheet, `<out>/<episode>-NN.png`); a stage whose target is
+  missing is marked SKIPPED. Read-only, against `vite preview` of a build.
 
 ---
 

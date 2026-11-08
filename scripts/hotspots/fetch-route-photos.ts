@@ -32,7 +32,7 @@ interface PhotoSpec {
 }
 
 const LIST = 'scripts/hotspots/route-photos.json';
-const UA = 'Mozilla/5.0 (Orrery route-photos; +https://orrerylearn.com)';
+const UA = 'Mozilla/5.0 (Orrery route-photos; +https://github.com/chipi/orrery)';
 
 async function download(url: string, out: string): Promise<void> {
   if (existsSync(out)) return;

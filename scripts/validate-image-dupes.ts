@@ -303,7 +303,6 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'c4453604', // smart-1/04 cross-surface (ESA: packed for launch)
   'fdc8e325', // smart-1/05 cross-surface (ESA: solar panels deployed)
 
-
   '12042c1f', // missions/dart/01,05 (hero + slot)
   'de85aceb', // missions/mercury-redstone-3/01,04 (hero + slot)
 

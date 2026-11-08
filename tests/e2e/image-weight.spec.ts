@@ -57,7 +57,9 @@ const BUDGET_MB: Record<string, Record<Device, number>> = {
   // 2026-11-06: landing sequences, science diagrams and 18 mission blueprints since — phone
   // re-measured at 62.7 MB (oversize 0; a phone shows the wide thumbs full width at 3x, so new
   // art costs it ~3x what it costs a tablet: 47.0 / 9.9 / 45.0 MB, still inside). Phone only, 1.15x.
-  '/colophon': { phone: 72, tablet: 49, desktop: 10, tv: 47 },
+  // 2026-11-08: each section now shows 10 items until "Show all" — re-measured on the production
+  // build at 4.1 / 4.1 / 2.6 / 3.9 MB, oversize 0; same 1.15x rule, rounded up.
+  '/colophon': { phone: 5, tablet: 5, desktop: 3, tv: 5 },
 };
 
 async function measure(browser: Browser, baseURL: string, route: string, device: Device) {

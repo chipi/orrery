@@ -215,12 +215,12 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── images/crew/                    ← per-flight crew portraits (ADR-053)
 │   ├── data/               ← all app JSON: missions, fleet, i18n overlays, schemas, planets, porkchop, …
 │   │   ├── missions/
-│   │   │   ├── index.json  ← lightweight manifest (42 entries)
+│   │   │   ├── index.json  ← lightweight manifest (126 entries)
 │   │   │   ├── mars/       ← base mission files (language-neutral) — `flight.interplanetary_profile` per ADR-058 third amendment
 │   │   │   ├── moon/       ← Moon missions (incl. `flight.cislunar_profile` per ADR-058)
 │   │   │   ├── ceres/ jupiter/ neptune/ pluto/  ← outer-system missions (`flight.interplanetary_profile`)
 │   │   ├── fleet/          ← fleet entries across categories (ADR-052; PRD-012 / RFC-016)
-│   │   │   ├── index.json                    ← generated manifest (drives /fleet card grid)
+│   │   │   ├── index.json                    ← hand-maintained manifest (drives /fleet card grid; `build-engine-fleet.ts` merges only the engine rows); name + tagline must equal the en-US overlay
 │   │   │   ├── launcher/                     ← per-entry base files (language-neutral)
 │   │   │   ├── crewed-spacecraft/
 │   │   │   ├── cargo-spacecraft/
@@ -756,7 +756,7 @@ E2e (Playwright) runs on push to `main`, not on every PR.
 
 ### Before pushing — `npm run preflight`
 
-Mirrors CI step-for-step locally. Runs typecheck → lint → test → validate-data → build. **If preflight passes, push is safe; if it fails, do not push.** A `.husky/pre-push` hook auto-runs it on `git push` and blocks the push on failure (use `git push --no-verify` only when explicitly intended).
+Mirrors CI step-for-step locally. Runs typecheck → lint → test → validate-data → build (with `SENTRY_SOURCEMAPS=1`, as CI does, so the route budget measures the bytes prod ships). **If preflight passes, push is safe; if it fails, do not push.** A `.husky/pre-push` hook auto-runs it on `git push` and blocks the push on failure (use `git push --no-verify` only when explicitly intended).
 
 Hooks self-activate after `npm install` via the `prepare` script (`git config core.hooksPath .husky`). No new dependencies — `.husky/pre-push` is a plain bash script.
 

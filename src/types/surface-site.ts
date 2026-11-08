@@ -13,6 +13,7 @@
 
 import type { FleetRef } from './mission';
 import type { LinkTier, DataQuality } from './mission';
+import type { ContextBounds } from '../lib/surface-scene/context-bounds';
 
 export type SurfaceAgency =
   | 'NASA'
@@ -179,15 +180,11 @@ export interface SurfaceSite {
    * Context layer (surface-context.ts): a true-scale ~150–200 m/px crop of a
    * global mosaic around the site, draped on the globe between the globe
    * texture and the stylised regional patch. Path of the served image and the
-   * lat/lon box it covers (simple-cylindrical, same as the globe texture).
+   * lat/lon box it covers (simple-cylindrical, same as the globe texture) — or, near a
+   * pole, a polar-stereographic square of ±polar_half_km (see ContextBounds).
    */
   hotspot_context_source?: string;
-  hotspot_context_bounds?: {
-    lat_min: number;
-    lat_max: number;
-    lon_min: number;
-    lon_max: number;
-  };
+  hotspot_context_bounds?: ContextBounds;
   /**
    * Operator override for the auto-pick HiRISE product. When set,
    * the fetch pipeline skips the catalog candidate ranking and

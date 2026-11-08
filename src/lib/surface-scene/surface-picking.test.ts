@@ -258,7 +258,8 @@ describe('pickStopAt (#641 kinds)', () => {
           stopPins: [],
           endDot: hidden(),
           line,
-          pathWorld: [new THREE.Vector3(5, 5, 0), new THREE.Vector3(0, 0, 0)],
+          // On a globe of radius 2 at the origin, the second vertex faces the camera (z = +10).
+          pathWorld: [new THREE.Vector3(1.6, 1.2, 0), new THREE.Vector3(0, 0, 2)],
           pointSols: [1, 66],
           pointKm: [0, 0.36],
           dateOfSol: (s: number) => `D${s}`,
@@ -269,6 +270,26 @@ describe('pickStopAt (#641 kinds)', () => {
     expect(hit?.title).toContain('66');
     expect(hit?.label).toContain('D66');
     expect(hit?.label).toContain('0.36');
+  });
+
+  it('ignores path vertices on the far side of the globe', () => {
+    const line = new THREE.Group();
+    line.updateMatrixWorld(true);
+    const { ctx } = makeCtx({
+      traverseLines: [
+        {
+          stopPins: [],
+          endDot: hidden(),
+          line,
+          // Behind the globe: projects to the pointer, but faces away from the camera.
+          pathWorld: [new THREE.Vector3(0, 0, -2)],
+          pointSols: [9],
+          pointKm: [1],
+          dateOfSol: (s: number) => `D${s}`,
+        },
+      ],
+    });
+    expect(createSurfacePicking(ctx).pickStopAt(CX, CY)).toBeNull();
   });
 });
 

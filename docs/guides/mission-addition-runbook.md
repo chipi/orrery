@@ -33,7 +33,7 @@ Net: `validate-data` flagging a missing fleet asset is correct — but the *fix*
 
 ### 1–3 · Core data
 
-Base record required fields (`mission.schema.json`): `id, agency, agency_full, sector, dest, color, year, status, departure_date, arrival_date, transit_days, vehicle, payload, delta_v, data_quality, credit, links`. Index required: `id, agency, dest, status, year, sector, color` (+ `crewed`). Overlay required: `name, type, first, description`. `id` is `^[a-z0-9-]+$`; `dest` must match the file-path destination. Copy the shape from the nearest analog (Artemis 4 was authored from `artemis3.json`).
+Base record required fields (`mission.schema.json`): `id, agency, agency_full, sector, dest, color, year, status, departure_date, arrival_date, transit_days, vehicle, payload, delta_v, data_quality, credit, links`. Index required: `id, agency, dest, status, year, sector, color` (+ `crewed`). Index-only and optional: `outcome: "failure"`, set on a mission that did not reach its primary objective (crashed, aborted, lost). It drives the FAILED pill and `?status=FAILED` on `/missions`; `status` stays as it is, because a failed mission still flew. Five missions carry it today (Apollo 1, Apollo 13, Soyuz 1, Schiaparelli, Beresheet). Overlay required: `name, type, first, description`. `id` is `^[a-z0-9-]+$`; `dest` must match the file-path destination. Copy the shape from the nearest analog (Artemis 4 was authored from `artemis3.json`).
 
 ### 5 · Fleet refs — author new fleet entries FIRST
 

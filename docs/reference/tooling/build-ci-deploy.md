@@ -85,7 +85,7 @@ secret scan; data-only → validate-data + build; messages-only → i18n + typec
 audio-only → audio cost + build; tests-only → vitest `--changed` + build; source-code →
 typecheck + lint + vitest `--changed` + validate-data + secrets + build; static-asset-only →
 build. Any config-file or unrecognised path → FULL.
-**When** — Pre-push gate (husky `pre-push` auto-runs it). Mirrors CI.
+**When** — Pre-push gate (husky `pre-push` auto-runs it). Mirrors CI, including `SENTRY_SOURCEMAPS=1` on the build so the route budget measures prod's bytes.
 **I/O** — Reads git diff; strips generated `src/lib/paraglide/` from the change set.
 **Gotchas** — Pre-push gate, NOT a mid-iteration checkpoint. Does NOT run e2e (release
 rehearsal covers that). Set `PREFLIGHT_OFFLINE=1` to skip `git fetch` on no-network runners.
@@ -133,6 +133,23 @@ build emitted only the en-US tree, ~18 HTML files). Asserts every non-base local
 **I/O** — Reads `build/` + `project.inlang/settings.json`.
 **Gotchas** — Floor is a coarse 200; does not check per-route × per-locale completeness
 (Playwright e2e covers content correctness).
+**State** — healthy.
+
+## `scripts/check-route-budget.mjs`
+
+**Command** — runs in `npm run build` (`node scripts/check-route-budget.mjs`); `--report` prints
+every measurement; `--chunks <route>` (for example `--chunks /fleet`) lists that route's own
+chunks by size.
+**What** — Per-route JavaScript budget, from the Vite client manifest, in brotli KB as served.
+Measures the shell (root layout + client entry, loaded by every page) and what each route adds
+beyond it, plus the CSS and the lazy (dynamic-import) closures, each against its own budget in
+`scripts/route-budget.json`.
+**When** — Post-`vite build`, automatically. If a route trips, find what grew with `--report` /
+`--chunks` and remove it; raise a budget only for a real feature, with the reason in the commit.
+**I/O** — Reads the build output and `scripts/route-budget.json`.
+**Gotchas** — Build with `SENTRY_SOURCEMAPS=1` to measure what prod ships: its debug ids add
+about 6 KB to `/fleet`. Preflight (`scripts/preflight-smart.mjs`) and the `ci` job in
+`.github/workflows/ci.yml` set it; a bare local `npm run build` does not.
 **State** — healthy.
 
 ## `scripts/gh-pages-compat.mjs`

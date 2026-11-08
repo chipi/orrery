@@ -518,6 +518,8 @@ check (our mission text made to agree with the sheet, all 14 locales).
 | `anatomy/blueprint-polar-view.ts` | Side view of an out-of-ecliptic orbit built from sourced facts | Ulysses |
 | `anatomy/blueprint-earth-view.ts` | Ground track on a world map (coastlines traced from `static/textures/2k_earth_daymap.jpg`; circular-orbit model with GMST and J2 drift, checked against a sourced place) and the orbit to true scale | Sputnik 1, Vostok 1, Apollo–Soyuz |
 
+The scripts, the two landing-art generators (`landing-sequences-2026-11.mjs`, `lander-exploded-2026-11.mjs`) and the history records are listed in [`anatomy/README.md`](anatomy/README.md). Landing-sequence sheets are wired the same way as blueprints: `build-anatomy-webp.mjs` reads `masters/landing-sequences` and writes `src/lib/landing-sequence-ids.json`, the list of sites that have a sheet (read by `siteLandingSequence()` and `build-original-work.mjs`).
+
 Wiring after a master lands in `masters/blueprints/<mission-id>.png`: `node scripts/build-anatomy-webp.mjs`
 (writes `src/lib/blueprint-ids.json`) → `node scripts/vision/build-display-ladder.mjs --only blueprints`
 → `node scripts/vision/add-card-rungs.mjs --stems=blueprints/<id>` → `node scripts/build-original-work.mjs`

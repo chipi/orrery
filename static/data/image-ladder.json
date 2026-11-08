@@ -5683,14 +5683,14 @@
   "/images/fleet-galleries/salyut-3/03": [
     320,
     1280,
-    1920
+    2048,
+    2643
   ],
   "/images/fleet-galleries/salyut-4/01": [
     320,
-    640,
     1280,
     2048,
-    3072
+    2643
   ],
   "/images/fleet-galleries/salyut-4/04": [
     320,
@@ -5707,7 +5707,9 @@
   ],
   "/images/fleet-galleries/salyut-5/02": [
     320,
-    602
+    1280,
+    2048,
+    2643
   ],
   "/images/fleet-galleries/salyut-5/03": [
     320,
@@ -5747,7 +5749,9 @@
   ],
   "/images/fleet-galleries/salyut-6/05": [
     320,
-    514
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/salyut-7/01": [
     320,
@@ -5763,7 +5767,8 @@
   "/images/fleet-galleries/salyut-7/04": [
     320,
     1280,
-    1850
+    2048,
+    3000
   ],
   "/images/fleet-galleries/salyut-7/05": [
     320,
@@ -5772,7 +5777,9 @@
   ],
   "/images/fleet-galleries/saturn-ib/01": [
     320,
-    640
+    728,
+    1165,
+    1706
   ],
   "/images/fleet-galleries/saturn-ib/02": [
     320,
@@ -5785,11 +5792,14 @@
   ],
   "/images/fleet-galleries/saturn-ib/04": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/saturn-ib/05": [
     320,
-    1280
+    1024,
+    1639
   ],
   "/images/fleet-galleries/saturn-v/01": [
     320,
@@ -5813,8 +5823,9 @@
   ],
   "/images/fleet-galleries/sbirs-heo/02": [
     320,
-    1280,
-    1920
+    1187,
+    1899,
+    2540
   ],
   "/images/fleet-galleries/schiaparelli/01": [
     320,
@@ -5904,7 +5915,9 @@
   ],
   "/images/fleet-galleries/skylab/04": [
     320,
-    977
+    1254,
+    2006,
+    3009
   ],
   "/images/fleet-galleries/skylab/05": [
     320,
@@ -6056,7 +6069,6 @@
   ],
   "/images/fleet-galleries/soyuz-7k-ok/01": [
     320,
-    640,
     1280
   ],
   "/images/fleet-galleries/soyuz-7k-ok/02": [
@@ -6112,7 +6124,9 @@
   ],
   "/images/fleet-galleries/soyuz-t/05": [
     320,
-    801
+    1280,
+    2048,
+    2560
   ],
   "/images/fleet-galleries/soyuz-tm/01": [
     320,
@@ -6130,7 +6144,8 @@
   "/images/fleet-galleries/soyuz-tm/04": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/soyuz-tm/05": [
     320,
@@ -6257,7 +6272,7 @@
   ],
   "/images/fleet-galleries/spektr-rg/04": [
     320,
-    960
+    1200
   ],
   "/images/fleet-galleries/spektr-rg/05": [
     320,
@@ -6358,7 +6373,9 @@
   ],
   "/images/fleet-galleries/starbase-orbital-a/04": [
     320,
-    600
+    1012,
+    1618,
+    2428
   ],
   "/images/fleet-galleries/starbase-orbital-a/05": [
     320,
@@ -6433,7 +6450,9 @@
   ],
   "/images/fleet-galleries/starlink/04": [
     320,
-    500
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/starship/01": [
     320,
@@ -6602,11 +6621,14 @@
   "/images/fleet-galleries/tianwen-1/04": [
     320,
     1280,
-    1430
+    2048,
+    3072
   ],
   "/images/fleet-galleries/tianwen-1/05": [
     320,
-    1122
+    1280,
+    2048,
+    2336
   ],
   "/images/fleet-galleries/tianzhou/01": [
     320,
@@ -6744,7 +6766,9 @@
   ],
   "/images/fleet-galleries/venera-13/04": [
     320,
-    620
+    861,
+    1377,
+    1890
   ],
   "/images/fleet-galleries/venera-7/01": [
     320,
@@ -6866,7 +6890,9 @@
   ],
   "/images/fleet-galleries/vikram-cy2/03": [
     320,
-    960
+    854,
+    1367,
+    2050
   ],
   "/images/fleet-galleries/vikram-cy2/05": [
     320,
@@ -6879,7 +6905,9 @@
   ],
   "/images/fleet-galleries/vikram-cy3/03": [
     320,
-    608
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/vikram-cy3/05": [
     320,
@@ -6911,7 +6939,10 @@
     793
   ],
   "/images/fleet-galleries/voskhod-11a57/05": [
-    157
+    320,
+    1280,
+    2048,
+    2592
   ],
   "/images/fleet-galleries/voskhod/01": [
     320,
@@ -6985,7 +7016,10 @@
     1403
   ],
   "/images/fleet-galleries/vostok-k/05": [
-    318
+    320,
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/vostok/01": [
     320,
@@ -7148,7 +7182,9 @@
   ],
   "/images/fleet-galleries/xmm-newton/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/xmm-newton/03": [
     320,
@@ -14053,10 +14089,9 @@
   ],
   "/images/fleet-galleries/vega-2/04": [
     320,
-    640,
-    1280,
-    2048,
-    2362
+    853,
+    1365,
+    2048
   ],
   "/images/fleet-galleries/a7l/03": [
     320,
@@ -14936,7 +14971,8 @@
   "/images/fleet-galleries/tiangong-1/04": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/tundra-sirius/03": [
     320,
@@ -15101,10 +15137,7 @@
   ],
   "/images/fleet-galleries/smart-1/03": [
     320,
-    640,
-    1280,
-    2048,
-    2178
+    1065
   ],
   "/images/fleet-galleries/soyuz-ms/03": [
     320,
@@ -15549,12 +15582,13 @@
   "/images/fleet-galleries/sbirs-heo/03": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/sbirs-heo/04": [
     320,
     1280,
-    1920
+    1800
   ],
   "/images/fleet-galleries/beresheet/01": [
     320,
@@ -16236,7 +16270,7 @@
   ],
   "/images/fleet-galleries/semnan-imam-khomeini/05": [
     320,
-    1200
+    800
   ],
   "/images/fleet-galleries/sohae/01": [
     320,

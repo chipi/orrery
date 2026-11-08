@@ -4877,20 +4877,21 @@
       "scoring_cost_usd": 0.0058709999999999995
     },
     "/images/fleet-galleries/saturn-ib/01.jpg": {
-      "score": 3,
-      "subject": "NASA poster showing Saturn launch vehicle configurations and missions with multiple small photographs of various Saturn rockets on a display board.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A Saturn IB lifting off from Launch Complex 34 at Cape Kennedy with the Apollo 7 crew, 11 October 1968.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/saturn-ib/01.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:04:29.319Z",
-      "scoring_cost_usd": 0.004224
+      "scored_at": "2026-11-08T08:28:05.839Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/saturn-ib/02.jpg": {
       "score": 9,
@@ -4925,36 +4926,38 @@
       "scoring_cost_usd": 0.007506
     },
     "/images/fleet-galleries/saturn-ib/04.jpg": {
-      "score": 2,
-      "subject": "NASA technical diagram showing labeled cutaway illustrations of the Saturn V launch vehicle and Saturn Workshop (Skylab) with annotated components.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Skylab 4 Saturn IB lifting off from Pad 39B, seen across a lagoon, 16 November 1973.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/saturn-ib/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:04:39.967Z",
-      "scoring_cost_usd": 0.007566
+      "scored_at": "2026-11-08T08:28:05.867Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/saturn-ib/05.jpg": {
-      "score": 2,
-      "subject": "Skylab Program SL-1 and SL-2 mission sequence diagram showing 25 numbered steps from launch through splashdown around an illustrated Earth.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Saturn IB carrying the Skylab 2 crew rising from Kennedy Space Center, 25 May 1973.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/saturn-ib/05.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:04:43.292Z",
-      "scoring_cost_usd": 0.007566
+      "scored_at": "2026-11-08T08:28:05.919Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/saturn-v/01.jpg": {
       "score": 9,
@@ -5213,9 +5216,9 @@
       "scoring_cost_usd": 0.008178
     },
     "/images/fleet-galleries/skylab/04.jpg": {
-      "score": 2,
-      "subject": "Labeled cutaway diagram of the Skylab Orbital Workshop showing interior compartments and systems",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Skylab against black sky from the Skylab 3 command module during the fly-around before docking, 28 July 1973, with its single solar wing.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -5223,10 +5226,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/skylab/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:05:35.423Z",
-      "scoring_cost_usd": 0.007385999999999999
+      "scored_at": "2026-11-08T08:28:05.974Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/skylab/05.jpg": {
       "score": 2,
@@ -5453,9 +5457,9 @@
       "scoring_cost_usd": 0.006843
     },
     "/images/fleet-galleries/soyuz-7k-ok/01.jpg": {
-      "score": 2,
-      "subject": "Black-and-white line drawing diagram of a Soyuz spacecraft showing isometric technical illustration with solar panels and docking module.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A Soyuz 7K-OK(A) spacecraft with CCCP markings on display at the National Space Centre, Leicester.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -5463,10 +5467,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/soyuz-7k-ok/01.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:31:20.230Z",
-      "scoring_cost_usd": 0.006627
+      "scored_at": "2026-11-08T08:28:06.029Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/soyuz-fg/01.jpg": {
       "score": 9,
@@ -5613,9 +5618,9 @@
       "scoring_cost_usd": 0.006201
     },
     "/images/fleet-galleries/soyuz-t/05.jpg": {
-      "score": 2,
-      "subject": "Line-drawing diagram of the Salyut-7 space station configuration as of 31 May 1986, with text labels in Russian and English.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The flown Soyuz T-6 descent module on display at the Musée de l'Air, Le Bourget.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -5623,10 +5628,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/soyuz-t/05.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:07:11.924Z",
-      "scoring_cost_usd": 0.0052049999999999996
+      "scored_at": "2026-11-08T08:29:53.669Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/soyuz-tm/01.jpg": {
       "score": 7,
@@ -5677,20 +5683,21 @@
       "scoring_cost_usd": 0.005766
     },
     "/images/fleet-galleries/soyuz-tm/04.jpg": {
-      "score": 3,
-      "subject": "1988 Soviet postal stamp depicting the Mir space station with Soyuz spacecraft, USSR and Bulgarian flags, commemorating international spaceflight cooperation.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A Soyuz TM photographed from Atlantis just after undocking from Mir, 4 July 1995.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
-        "y": 0.52
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/soyuz-tm/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:31:27.122Z",
-      "scoring_cost_usd": 0.005781
+      "scored_at": "2026-11-08T08:29:53.682Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/soyuz-tm/05.jpg": {
       "score": 2,
@@ -6639,20 +6646,21 @@
       "scoring_cost_usd": 0.006171
     },
     "/images/fleet-galleries/vikram-cy2/03.jpg": {
-      "score": 2,
-      "subject": "A dark composite image showing a partial 3D render of spacecraft hardware on the left overlaid with a schematic diagram annotation on the right.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Vikram lander mounted on top of the Chandrayaan-2 orbiter in the integration hall before launch, June 2019.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.55,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/vikram-cy2/03.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:12:17.459Z",
-      "scoring_cost_usd": 0.005271
+      "scored_at": "2026-11-08T08:29:54.267Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/vikram-cy2/05.jpg": {
       "score": 6,
@@ -18886,20 +18894,21 @@
       "scoring_cost_usd": 0.007776
     },
     "/images/fleet-galleries/salyut-6/05.jpg": {
-      "score": 3,
-      "subject": "1978 Soviet postal stamp depicting a Soyuz spacecraft docking with Salyut space station, issued for the Interkosmos international spaceflight program.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A hanging model of Salyut 6 with a Soyuz docked at each end, in the Memorial Museum of Cosmonautics, Moscow.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/salyut-6/05.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:03:44.709Z",
-      "scoring_cost_usd": 0.007566
+      "scored_at": "2026-11-08T08:28:05.792Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/salyut-6/02.jpg": {
       "score": 3,
@@ -18950,9 +18959,9 @@
       "scoring_cost_usd": 0.007266
     },
     "/images/fleet-galleries/salyut-7/04.jpg": {
-      "score": 1,
-      "subject": "Plain black hardcover book cover digitized by Google from the University of Michigan library collection.",
-      "category": "other",
+      "score": 8,
+      "subject": "A model of a Soyuz docking with the Salyut 7 station at the Exhibition of Achievements of the National Economy, Moscow, 1985.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -18960,10 +18969,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/salyut-7/04.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:04:12.258Z",
-      "scoring_cost_usd": 0.007629
+      "scored_at": "2026-11-08T08:28:05.817Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/salyut-7/05.jpg": {
       "score": 1,
@@ -19062,9 +19072,9 @@
       "scoring_cost_usd": 0.004437
     },
     "/images/fleet-galleries/spektr-rg/04.jpg": {
-      "score": 6,
-      "subject": "SRG/ART-XC first all-sky X-ray survey map with labeled sources including the Galactic center, Crab Nebula, Cyg X-1, and Coma Cluster.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The seven mirror modules of the eROSITA X-ray telescope, one of Spektr-RG's two instruments.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -19072,10 +19082,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/spektr-rg/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:31:43.239Z",
-      "scoring_cost_usd": 0.005105999999999999
+      "scored_at": "2026-11-08T08:29:53.698Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/spitzer/02.jpg": {
       "score": 8,
@@ -19318,11 +19329,11 @@
       "scoring_cost_usd": 0.005616
     },
     "/images/fleet-galleries/vikram-cy3/03.jpg": {
-      "score": 6,
-      "subject": "LRO after/before ratio image showing the Vikram lander impact site on the lunar surface, with a bright central disturbed zone and scattered ejecta visible against the grey regolith.",
-      "category": "surface",
+      "score": 8,
+      "subject": "The Chandrayaan-3 Vikram lander on its stand in the clean room, June 2023.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.48,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
@@ -19330,13 +19341,14 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:32:30.273Z",
-      "scoring_cost_usd": 0.006486
+      "scored_at": "2026-11-08T08:29:54.419Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/xmm-newton/02.jpg": {
-      "score": 6,
-      "subject": "All-sky map visualization showing orbital or trajectory paths as blue streaking lines on a black background in an oval Mollweide projection.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A full-size replica of the XMM-Newton X-ray observatory at the Cité de l'espace, Toulouse, 2007.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -19344,10 +19356,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/xmm-newton/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:13:51.150Z",
-      "scoring_cost_usd": 0.005196
+      "scored_at": "2026-11-08T08:29:54.477Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/xmm-newton/03.jpg": {
       "score": 6,
@@ -24647,9 +24660,9 @@
       "scoring_cost_usd": 0.007626
     },
     "/images/fleet-galleries/salyut-3/03.jpg": {
-      "score": 2,
-      "subject": "Line-drawing diagram of a spacecraft assembly, likely Soyuz or Salyut-era Soviet spacecraft configuration.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A detailed paper model of the Salyut 3 (Almaz) station with a Soyuz docked.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -24657,10 +24670,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:07:26.712Z",
-      "scoring_cost_usd": 0.004401
+      "scored_at": "2026-11-08T08:28:05.750Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/salyut-4/04.jpg": {
       "score": 2,
@@ -24711,9 +24725,9 @@
       "scoring_cost_usd": 0.003072
     },
     "/images/fleet-galleries/salyut-5/02.jpg": {
-      "score": 2,
-      "subject": "Line-drawing diagram of the Salyut 5 (Almaz) Soviet space station showing solar panels and module configuration.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A detailed paper model of the Salyut 5 (Almaz) station with a Soyuz docked.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -24721,10 +24735,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:07:53.678Z",
-      "scoring_cost_usd": 0.004092
+      "scored_at": "2026-11-08T08:28:05.780Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/salyut-5/03.jpg": {
       "score": 7,
@@ -24791,9 +24806,9 @@
       "scoring_cost_usd": 0.007416000000000001
     },
     "/images/fleet-galleries/sbirs-heo/02.jpg": {
-      "score": 2,
-      "subject": "Two U.S. Air Force officers in flight suits posing in front of a covered payload or equipment container inside a facility.",
-      "category": "people",
+      "score": 8,
+      "subject": "A rendering of an SBIRS missile-warning satellite in orbit above Earth.",
+      "category": "render",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -24801,10 +24816,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:08:11.381Z",
-      "scoring_cost_usd": 0.007683000000000001
+      "scored_at": "2026-11-08T08:28:05.929Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/smart-1/01.jpg": {
       "score": 6,
@@ -25079,9 +25095,9 @@
       "scoring_cost_usd": 0.003771
     },
     "/images/fleet-galleries/venera-13/04.jpg": {
-      "score": 5,
-      "subject": "Composite black-and-white panoramic surface images from the Soviet Venera 13 and Venera 14 landers showing the rocky Venusian surface with lander hardware visible.",
-      "category": "surface",
+      "score": 8,
+      "subject": "A life-size cut-away model of a Venera 12 lander, the same design as Venera 13, Moscow, 1985.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -25091,8 +25107,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:09:22.877Z",
-      "scoring_cost_usd": 0.007596
+      "scored_at": "2026-11-08T08:29:54.245Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/viking1-orbiter/01.jpg": {
       "score": 9,
@@ -25239,9 +25256,9 @@
       "scoring_cost_usd": 0.005211
     },
     "/images/fleet-galleries/voskhod-11a57/05.jpg": {
-      "score": 2,
-      "subject": "A simple green illustrated diagram of a Soyuz-style rocket on a white background.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Models of the Vostok, Voskhod and Soyuz rockets side by side at the Gateway to Space exhibition, Budapest, 2016.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -25249,10 +25266,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:09:59.286Z",
-      "scoring_cost_usd": 0.003075
+      "scored_at": "2026-11-08T08:29:54.443Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/vostok-k/01.jpg": {
       "score": 7,
@@ -25319,9 +25337,9 @@
       "scoring_cost_usd": 0.007653
     },
     "/images/fleet-galleries/vostok-k/05.jpg": {
-      "score": 2,
-      "subject": "Russian-language cutaway diagram of the Vostok rocket showing internal components, fuel tanks, and engine labels with dimensional annotations.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A Vostok rocket on its erector display outdoors at the Tsiolkovsky museum of cosmonautics, Kaluga.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -25329,10 +25347,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:10:15.292Z",
-      "scoring_cost_usd": 0.003981
+      "scored_at": "2026-11-08T08:29:54.456Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/x37b/01.jpg": {
       "score": 8,
@@ -32793,6 +32812,149 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-08T08:22:32.204Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/salyut-4/01.jpg": {
+      "score": 8,
+      "subject": "A detailed paper model of the Salyut 4 station with its solar wings and a Soyuz docked.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:28:05.766Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/sbirs-heo/03.jpg": {
+      "score": 8,
+      "subject": "The SBIRS GEO-5 satellite being unloaded from a C-5M Galaxy at Cape Canaveral, March 2021.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:28:05.948Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/sbirs-heo/04.jpg": {
+      "score": 8,
+      "subject": "An Atlas V carrying SBIRS GEO Flight 4 lifting off from Cape Canaveral, 19 January 2018.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:28:05.963Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/semnan-imam-khomeini/05.jpg": {
+      "score": 8,
+      "subject": "A Safir rocket on its launch tower at the Imam Khomeini Spaceport near Semnan before carrying the Fajr satellite, February 2015.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:28:05.972Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/smart-1/03.jpg": {
+      "score": 8,
+      "subject": "The lunar craters Mayer and Bond near 63° north, imaged by SMART-1's AMIE camera.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:28:06.023Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/starbase-orbital-a/04.jpg": {
+      "score": 8,
+      "subject": "The Booster 4/Ship 20 stack on Orbital Launch Mount A at Starbase beside the propellant tank farm.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:29:53.709Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/starlink/04.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 lifting off from Pad 39A carrying 29 Starlink satellites, 1 December 2025.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:29:53.871Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/tiangong-1/04.jpg": {
+      "score": 8,
+      "subject": "A scale model of a Tiangong space laboratory docked with a Shenzhou spacecraft, in a museum display.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:29:53.954Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/tianwen-1/04.jpg": {
+      "score": 8,
+      "subject": "Olympus Mons wreathed in cloud, imaged by the Tianwen-1 orbiter's MoRIC camera.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:29:53.970Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/tianwen-1/05.jpg": {
+      "score": 8,
+      "subject": "A rendering of the Tianwen-1 lander with the Zhurong rover on Mars, published at launch in July 2020.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:29:54.126Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/vega-2/04.jpg": {
+      "score": 8,
+      "subject": "A Vega probe bus with its Venus lander sphere at the Steven F. Udvar-Hazy Center, Chantilly, Virginia.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:29:54.142Z",
       "scoring_cost_usd": 0
     }
   }

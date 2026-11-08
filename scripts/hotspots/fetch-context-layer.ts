@@ -57,6 +57,8 @@ const EOX_YEAR = 2025;
 /** Earth pads cluster (nine at Cape Canaveral): a pad whose centre lies this far
  *  inside an earlier pad's box reuses that crop instead of a near-copy. */
 const SHARE_MARGIN_KM = 150;
+/** Moon sites past this latitude get the grey crop (polarGrey), not the colour transfer. */
+const HIGH_LAT = 60;
 /** THEMIS quads above this latitude are polar stereographic; not joined here. */
 const THEMIS_MAX_LAT = 65;
 
@@ -539,9 +541,13 @@ async function main() {
       // At a pole the globe texture is the pinched, streaked thing the cap covers:
       // matching it would paint its smears back in. Keep the mosaic grey, black
       // shadows and all (permanently shadowed floors are black), at the globe's
-      // overall brightness.
-      const { out, nodataFrac } = polarGlobe
-        ? polarGrey(data, polarGlobe)
+      // overall brightness. Same past HIGH_LAT on the Moon: low sun leaves zero
+      // (shadow) pixels that the transfer filled with the globe's flat colour —
+      // grey blobs with dark outlines, washed-out ground (Chandrayaan-3, 69°S,
+      // checked against the WAC on a site-centred stereographic grid, 2026-11-08).
+      const grey = polarGlobe ?? (BODY === 'moon' && Math.abs(s.lat) > HIGH_LAT ? globe : null);
+      const { out, nodataFrac } = grey
+        ? polarGrey(data, grey)
         : await detailTransfer(data, channels, globe, outH, Math.max(1, globeMPerPx / mPerPx / 2));
       if (process.env.CTX_DEBUG) {
         const mean = (x: Uint8Array | Buffer) =>

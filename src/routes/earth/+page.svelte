@@ -35,6 +35,7 @@
   import { viewerLatLon } from '$lib/viewer-location';
   import { getObserverLocation } from '$lib/geolocation';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
 
   const earthSurfaceConfig = makeEarthLaunchSitesConfig(base);
 
@@ -166,6 +167,7 @@
 </script>
 
 <svelte:head><title>{m.earth_page_title()}</title></svelte:head>
+<VisuallyHiddenH1 title={m.earth_page_title()} />
 
 <DebugPanelRegistrar label="EARTH" />
 

@@ -102,15 +102,16 @@
   const mirrorBuild = isMirrorBuild(base);
   let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
-  // Card share stubs (#547, /c/*) are en-US-only redirect pages prerendered
-  // at the bare path — advertising 14 localized twins that are never
-  // prerendered would invite crawlers onto ~6k phantom URLs (soft-404 spam).
-  let isCardStub = $derived(seoRoute.startsWith('/c/'));
-  let hreflangs = $derived(isCardStub ? [] : hreflangAlternates(seoRoute));
+  // Card share stubs (#547, /c/*) and the OAuth callback are en-US-only pages
+  // prerendered at the bare path that set their own noindex — advertising 14
+  // localized twins that are never prerendered would invite crawlers onto
+  // phantom URLs (soft-404 spam).
+  let isNoindexStub = $derived(seoRoute.startsWith('/c/') || seoRoute === '/lab/callback');
+  let hreflangs = $derived(isNoindexStub ? [] : hreflangAlternates(seoRoute));
   // og:locale (+ alternates) so social unfurls and crawlers see the page's
   // language (#519). Complements the hreflang set above.
   let ogLocaleValue = $derived(ogLocale(activeLocale));
-  let ogLocaleAlts = $derived(isCardStub ? [] : ogLocaleAlternates(activeLocale));
+  let ogLocaleAlts = $derived(isNoindexStub ? [] : ogLocaleAlternates(activeLocale));
 
   // DebugPanel context — created HERE (layout), not inside DebugPanel,
   // so descendant pages (which are children of `<main>`) can see it via
@@ -505,13 +506,13 @@
 </script>
 
 <svelte:head>
-  <!-- Default title — pages override via their own <svelte:head><title>; Svelte
-       dedupes so exactly one survives. Replaces the former hardcoded title in
-       app.html, which duplicated the per-page one. -->
-  <title>Orrery</title>
+  <!-- No default <title> here: every page sets its own. A layout fallback beat
+       the page title in SSR on pages that bind a child component's prop
+       (/explore, /fly): Svelte renders those on a renderer copy whose path holds
+       -1, so the layout's title sorted later and won. -->
   {#if mirrorBuild}
-    <!-- Card stubs carry their own noindex. -->
-    {#if !isCardStub}<meta name="robots" content="noindex" />{/if}
+    <!-- Card stubs and lab/callback carry their own noindex. -->
+    {#if !isNoindexStub}<meta name="robots" content="noindex" />{/if}
   {:else}
     <link rel="canonical" href={canonicalHref} />
     {#each hreflangs as alt (alt.hreflang)}

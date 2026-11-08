@@ -30,6 +30,7 @@
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { getObserverLocation } from '$lib/geolocation';
   import {
     moonObserverView,
@@ -252,6 +253,7 @@
 <svelte:head>
   <title>{m.moon_page_title()}</title>
 </svelte:head>
+<VisuallyHiddenH1 title={m.moon_page_title()} />
 
 <SurfacePreloadLinks planet="moon" />
 <DebugPanelRegistrar label="MOON" />

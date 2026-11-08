@@ -33,6 +33,7 @@
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import type { Traverse } from '$types/surface-site';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
 
   // Hidden tour anchors emit data-audio-stage="mars-select-{audio}".
   // The audio-tour test (src/lib/audio-tour.test.ts) scans this file
@@ -235,6 +236,7 @@
 <svelte:head>
   <title>{m.mars_page_title()}</title>
 </svelte:head>
+<VisuallyHiddenH1 title={m.mars_page_title()} />
 
 <SurfacePreloadLinks planet="mars" />
 <DebugPanelRegistrar label="MARS" />

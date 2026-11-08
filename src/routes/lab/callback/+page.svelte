@@ -25,7 +25,11 @@
   });
 </script>
 
-<svelte:head><title>Orrery — {t('lab.signin.title')}</title></svelte:head>
+<svelte:head>
+  <title>Orrery — {t('lab.signin.title')}</title>
+  <!-- An OAuth handshake page, not content. -->
+  <meta name="robots" content="noindex" />
+</svelte:head>
 
 <main class="callback">
   {#if failed === 'denied'}

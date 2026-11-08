@@ -10,6 +10,7 @@
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
   import { buildVenusLanderModel } from '$lib/venus-lander-models';
   import { registerVenusHotspotBuilders } from '$lib/surface-scene/register-venus-hotspot-builders';
@@ -52,6 +53,11 @@
   // other side (#641: site tags show only near the view centre).
   const VENUS_SITES_SIDE = { latDeg: 0, lonDeg: 178 };
 </script>
+
+<svelte:head>
+  <title>{m.venus_page_title()}</title>
+</svelte:head>
+<VisuallyHiddenH1 title={m.venus_page_title()} />
 
 <SurfaceScene
   config={VENUS_CONFIG}

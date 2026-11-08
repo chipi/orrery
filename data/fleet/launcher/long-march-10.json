@@ -1,0 +1,32 @@
+{
+  "id": "long-march-10",
+  "name": "Long March 10 / 10A",
+  "category": "launcher",
+  "agency": "CMSA",
+  "country": "China",
+  "manufacturer": "CALT",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "lunar-return",
+  "best_known_for": "China's Moon rocket in development: two launches carry the Mengzhou crew ship and the Lanyue lander for a crewed landing before 2030",
+  "credit": "Long March 10 is the rocket China is building for its crewed lunar landing, planned before 2030: one launch carries the Mengzhou crew spacecraft, another the Lanyue lander, and the two meet in lunar orbit. The single-core Long March 10A is to fly Mengzhou to Earth orbit. Engine firings ran in 2025, and on 11 February 2026 a Long March 10-series test booster flew a low-altitude flight from Wenchang, carrying a Mengzhou abort test. Its first orbital launch had not taken place by November 2026.",
+  "links": [
+    {
+      "l": "China Space Day: how far have we come toward a manned lunar landing — CGTN (Apr 2026)",
+      "u": "https://news.cgtn.com/news/2026-04-24/China-Space-Day-How-far-have-we-come-toward-a-manned-lunar-landing--1MBhqOD8nQs/p.html",
+      "t": "intro"
+    },
+    {
+      "l": "China conducts low-altitude flight test for Long March 10 rocket — CGTN (11 Feb 2026)",
+      "u": "https://news.cgtn.com/news/2026-02-11/China-conducts-low-altitude-flight-test-for-Long-March-10-rocket-1KFK9b0VBiU/p.html",
+      "t": "deep"
+    },
+    {
+      "l": "China unveils detailed plan for crewed Moon landing — Universe Today (Nov 2026)",
+      "u": "https://www.universetoday.com/articles/china-unveils-their-plan-for-a-crewed-moon-landing",
+      "t": "core"
+    }
+  ],
+  "linked_missions": []
+}

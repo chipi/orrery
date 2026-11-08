@@ -3,13 +3,22 @@
   "tab": "life-in-space",
   "order": 20,
   "photo": {
-    "src": "/images/fleet-galleries/progress-m/03.webp",
+    "src": "/images/fleet-galleries/progress-m/02.webp",
     "credit": "NASA · Mir Space Station as photographed from Space Shuttle Endeavour during STS-89 (January 1998). Mir's 15-year operational life included a fire, a depressurisation, and the longest continuous-occupation crew rotation in history before ISS. Most of what we know about crew dynamics under stress was learned on Mir."
   },
   "see_in_app": [
-    { "route": "/missions", "context_key": "ISS expeditions (Expedition 1, 2000 → current), Mir expeditions (especially EO-23 / EO-24 / EO-25 in 1997 covering the fire + collision), long-duration analog campaigns" },
-    { "route": "/iss", "context_key": "Modular international architecture — multi-national crews working together is the operational norm now, but it was hard-won" },
-    { "route": "/tiangong", "context_key": "Single-agency station — the comparison case to ISS's international model" }
+    {
+      "route": "/missions",
+      "context_key": "ISS expeditions (Expedition 1, 2000 → current), Mir expeditions (especially EO-23 / EO-24 / EO-25 in 1997 covering the fire + collision), long-duration analog campaigns"
+    },
+    {
+      "route": "/iss",
+      "context_key": "Modular international architecture — multi-national crews working together is the operational norm now, but it was hard-won"
+    },
+    {
+      "route": "/tiangong",
+      "context_key": "Single-agency station — the comparison case to ISS's international model"
+    }
   ],
   "links": [
     {

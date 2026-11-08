@@ -11,7 +11,7 @@
   "arrival_date": "2030-04-11",
   "transit_days": 2005,
   "vehicle": "Falcon Heavy",
-  "payload": "6065 kg (largest planetary mission spacecraft ever launched; 100-m² solar arrays for outer-system power)",
+  "payload": "6065 kg (largest spacecraft NASA has ever launched for a planetary mission; 100-m² solar arrays for outer-system power)",
   "delta_v": "~3.5 km/s (with Mars + Earth gravity assists)",
   "data_quality": "good",
   "credit": "© NASA / JPL-Caltech / APL — public domain. Designed for 49 Europa flybys after Jupiter orbit insertion. Investigates Europa's habitability: confirms ice-shell thickness, characterizes the subsurface ocean, maps surface composition.",
@@ -71,7 +71,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Falcon Heavy",
-        "description": "Kennedy Space Center LC-39A, 2024-10-14. The largest planetary mission spacecraft ever launched — 6065 kg with 100-m² solar arrays (the largest interplanetary photovoltaic system at the time). Europa Clipper is the first mission dedicated specifically to characterising the habitability of one of Jupiter's icy moons."
+        "description": "Kennedy Space Center LC-39A, 2024-10-14. The largest spacecraft NASA has ever launched for a planetary mission — 6065 kg with 100-m² solar arrays (the largest interplanetary photovoltaic system at the time). Europa Clipper is the first mission dedicated specifically to characterising the habitability of one of Jupiter's icy moons."
       },
       {
         "met_days": 0.005,
@@ -101,7 +101,7 @@
         "met_days": 2005.005,
         "type": "edl_or_oi",
         "label": "Jupiter orbit insertion",
-        "description": "Multi-engine 760-m/s burn places Clipper into a highly elliptical Jupiter orbit, with apoapsis carefully timed to keep the spacecraft outside the worst of Jupiter's radiation belts. The orbital tour will execute 49 close Europa flybys over four years — passing within 25 km of Europa's surface on the closest passes. Each flyby strips Europa's ice-shell secrets one swath at a time: REASON ice-penetrating radar profiles the shell, MASPEX mass spectrometer samples plume material if any, E-THEMIS thermal imager finds active geysers."
+        "description": "Multi-engine burn places Clipper into a highly elliptical Jupiter orbit, with apoapsis carefully timed to keep the spacecraft outside the worst of Jupiter's radiation belts. The orbital tour will execute 49 close Europa flybys over four years — passing within 25 km of Europa's surface on the closest passes. Each flyby strips Europa's ice-shell secrets one swath at a time: REASON ice-penetrating radar profiles the shell, MASPEX mass spectrometer samples plume material if any, E-THEMIS thermal imager finds active geysers."
       }
     ],
     "interplanetary_profile": {

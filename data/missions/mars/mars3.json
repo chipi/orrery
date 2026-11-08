@@ -114,7 +114,7 @@
         "met_days": 188.013,
         "type": "anomaly",
         "label": "Lander fails after 14.5 seconds",
-        "description": "Returned a partial low-resolution scan + the first signal from the Martian surface, then went silent — likely a victim of the dust-storm winds + sand-bombardment shorting the lander's surface instruments. The orbiter continued operating for another 8 months."
+        "description": "Returned a partial low-resolution scan + the first signal from the Martian surface, then went silent — the cause is unknown (a dust-storm-induced electrical discharge is one hypothesis). The orbiter continued operating for another 8 months."
       }
     ],
     "interplanetary_profile": {

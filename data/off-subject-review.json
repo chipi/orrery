@@ -9,15 +9,7 @@
       "decision": "remove",
       "at": "2026-07-06T05:26:20.508Z"
     },
-    "/images/missions/mmx/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:26:20.508Z"
-    },
     "/images/missions/polaris-dawn/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:26:20.508Z"
-    },
-    "/images/missions/rosetta/05.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:26:20.508Z"
     },
@@ -37,14 +29,6 @@
       "decision": "keep",
       "at": "2026-07-06T05:23:23.832Z"
     },
-    "/images/missions/hope-probe/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/maven/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
     "/images/missions/otv-7/04.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
@@ -57,31 +41,11 @@
       "decision": "keep",
       "at": "2026-07-06T05:23:23.832Z"
     },
-    "/images/missions/starship-mars-crew/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
     "/images/missions/smart-1/01.jpg": {
       "decision": "keep",
       "at": "2026-07-06T05:23:23.832Z"
     },
-    "/images/missions/venera-13/04.jpg": {
-      "decision": "keep",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/mars-pathfinder/03.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
     "/images/missions/skylab-4/01.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/lunar-prospector/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/lunar-prospector/03.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
@@ -119,22 +83,6 @@
       "at": "2026-07-06T05:23:23.832Z"
     },
     "/images/missions/artemis3/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/voyager-1/05.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/voyager-1/03.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/voyager-1/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/vostok-6/05.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
@@ -202,10 +150,6 @@
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
-    "/images/missions/vega-2/02.jpg": {
-      "decision": "keep",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
     "/images/missions/vega-1/04.jpg": {
       "decision": "keep",
       "at": "2026-07-06T05:23:23.832Z"
@@ -222,23 +166,11 @@
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
     },
-    "/images/missions/apollo-1/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:25:38.023Z"
-    },
     "/images/missions/apollo13/05.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:25:38.023Z"
     },
     "/images/missions/bepicolombo/02.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:25:38.023Z"
-    },
-    "/images/missions/change3/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:25:38.023Z"
-    },
-    "/images/missions/change3/05.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:25:38.023Z"
     },
@@ -250,15 +182,11 @@
       "decision": "remove",
       "at": "2026-07-06T05:25:38.023Z"
     },
-    "/images/missions/mars-express/02.jpg": {
+    "/images/missions/mars2/03.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:25:38.023Z"
     },
-    "/images/missions/mars2/04.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:25:38.023Z"
-    },
-    "/images/missions/mars3/04.jpg": {
+    "/images/missions/mars3/03.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:25:38.023Z"
     },
@@ -275,10 +203,6 @@
       "at": "2026-07-06T05:25:38.023Z"
     },
     "/images/missions/luna24/01.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:25:38.023Z"
-    },
-    "/images/missions/maven/02.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:25:38.023Z"
     },
@@ -313,14 +237,6 @@
     "/images/missions/vega-1/02.jpg": {
       "decision": "remove",
       "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/vega-2/03.jpg": {
-      "decision": "keep",
-      "at": "2026-07-06T05:23:23.832Z"
-    },
-    "/images/missions/mars6/03.jpg": {
-      "decision": "remove",
-      "at": "2026-07-06T05:25:38.023Z"
     },
     "/images/missions/shenzhou-2/03.jpg": {
       "decision": "keep",

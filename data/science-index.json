@@ -808,8 +808,8 @@
     "tab": "planets",
     "section": "active-spacecraft-survey",
     "title": "Active Spacecraft Survey",
-    "intro": "What's at each planet right now: from MRO at Mars to Juno at Jupiter to Akatsuki at Venus.",
-    "haystack": "active spacecraft survey what's at each planet right now: from mro at mars to juno at jupiter to akatsuki at venus. mars — orbital fleet as of 2026: mro (nasa, since 2006, 300 km polar orbit, hirise camera + atmosphere observations + data relay). maven (nasa, since 2014, 6200 km orbit, atmospheric escape rates). mars express (esa, since 2003, 4200 km, mineralogy + atmosphere). exomars tgo (esa, since 2016, 400 km, trace gases + russian relay). mangalyaan / mom (isro, 2014–2022, methane + atmosphere — first asian mission to successfully orbit mars). tianwen-1 (cnsa, since 2021, 4250 km, delivered zhurong rover + global mapping). hope / emm (uae space agency, since 2021, 30,000 km equatorial, atmospheric science). on the surface: perseverance + curiosity rovers (both nasa) and the now-grounded ingenuity helicopter."
+    "intro": "What's at each planet right now: from MRO at Mars to Juno at Jupiter — while Venus has had no orbiter since Akatsuki ended in 2025.",
+    "haystack": "active spacecraft survey what's at each planet right now: from mro at mars to juno at jupiter — while venus has had no orbiter since akatsuki ended in 2025. mars — orbital fleet as of 2026: mro (nasa, since 2006, 300 km polar orbit, hirise camera + atmosphere observations + data relay). maven (nasa, since 2014, 6200 km orbit, atmospheric escape rates). mars express (esa, since 2003, 4200 km, mineralogy + atmosphere). exomars tgo (esa, since 2016, 400 km, trace gases + russian relay). mangalyaan / mom (isro, 2014–2022, methane + atmosphere — first asian mission to successfully orbit mars). tianwen-1 (cnsa, since 2021, 4250 km, delivered zhurong rover + global mapping). hope / emm (uae space agency, since 2021, 30,000 km equatorial, atmospheric science). on the surface: perseverance + curiosity rovers (both nasa) and the now-grounded ingenuity helicopter."
   },
   {
     "tab": "planets",

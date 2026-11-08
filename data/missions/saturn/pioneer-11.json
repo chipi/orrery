@@ -11,11 +11,11 @@
   "arrival_date": "1979-09-01",
   "transit_days": 2339,
   "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
-  "payload": "Outer-system flyby spacecraft; SNAP-19 RTGs (~165 W at launch); twin of Pioneer 10",
+  "payload": "Outer-system flyby spacecraft; SNAP-19 RTGs (155 W at launch); twin of Pioneer 10",
   "delta_v": "~15 km/s (cumulative, Jupiter + Saturn assists)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
-  "credit": "© NASA / Ames Research Center — U.S. Government work, public domain. First spacecraft to fly past Saturn (1979-09-01) and the first to image the planet at close range. Used Jupiter's gravity to reach Saturn, demonstrating the gravity-assist technique that would later send Voyager 2 to Uranus and Neptune. Discovered Saturn's F ring + a small inner moon (later resolved by the Voyagers into the co-orbital pair Janus/Epimetheus). Carries the same Pioneer plaque as Pioneer 10. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; spacecraft heading toward the constellation Aquila.",
+  "credit": "© NASA / Ames Research Center — U.S. Government work, public domain. First spacecraft to fly past Saturn (1979-09-01) and the first to image the planet at close range. Used Jupiter's gravity to reach Saturn, demonstrating the gravity-assist technique that would later send Voyager 2 to Uranus and Neptune. Discovered Saturn's F ring + a small inner moon (later resolved by the Voyagers into the co-orbital pair Janus/Epimetheus). Carries the same Pioneer plaque as Pioneer 10. Routine operations ended 1995-09-30 at a heliocentric distance of ~43 AU; the last engineering data arrived 1995-11-24; spacecraft heading toward the constellation Aquila.",
   "links": [
     {
       "l": "Pioneer 11 — Wikipedia",
@@ -68,19 +68,19 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Atlas / Centaur",
-        "description": "Cape Canaveral, 1973-04-06. Launched after Pioneer 10's successful Jupiter encounter — Pioneer 11's primary purpose was to use Jupiter's gravity to reach Saturn ahead of the Voyagers and scout the ring-plane crossing geometry."
+        "description": "Cape Canaveral, 1973-04-06. Launched eight months before Pioneer 10 reached Jupiter — Pioneer 11's primary purpose was to use Jupiter's gravity to reach Saturn ahead of the Voyagers and scout the ring-plane crossing geometry."
       },
       {
         "met_days": 606,
         "type": "flyby",
         "label": "Jupiter — gravity assist",
-        "description": "Closest approach 42,800 km above the cloud tops on 1974-12-02 — even closer than Pioneer 10. Returns the first images of Jupiter's polar regions and confirms the magnetosphere boundary's response to the solar wind. The flyby bends the trajectory dramatically — slingshot raises the aphelion past Saturn at a high inclination."
+        "description": "Closest approach 42,800 km above the cloud tops on 1974-12-03 — even closer than Pioneer 10. Returns the first images of Jupiter's polar regions and confirms the magnetosphere boundary's response to the solar wind. The flyby bends the trajectory dramatically — slingshot raises the aphelion past Saturn at a high inclination."
       },
       {
         "met_days": 2339,
         "type": "flyby",
         "label": "Saturn — flyby",
-        "description": "Closest approach 20,900 km above Saturn's cloud tops on 1979-09-01 — the first spacecraft to visit Saturn, two years ahead of Voyager 1. Discovered the thin F-ring and a small inner moon (later resolved by the Voyagers into the co-orbital pair Janus/Epimetheus); the ring-plane crossing geometry it tested cleared the Voyagers to attempt the same path. Last contact 1995-09-30."
+        "description": "Closest approach 20,900 km above Saturn's cloud tops on 1979-09-01 — the first spacecraft to visit Saturn, about 14 months ahead of Voyager 1. Discovered the thin F-ring and a small inner moon (later resolved by the Voyagers into the co-orbital pair Janus/Epimetheus); the ring-plane crossing geometry it tested cleared the Voyagers to attempt the same path. Routine operations ended 1995-09-30; the last engineering data arrived 1995-11-24."
       }
     ],
     "interplanetary_profile": {

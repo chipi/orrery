@@ -30,5 +30,11 @@
   ],
   "linked_missions": [
     "beresheet"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "beresheet"
+    }
   ]
 }

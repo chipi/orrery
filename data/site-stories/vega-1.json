@@ -1,0 +1,43 @@
+{
+  "site": "vega-1",
+  "intro": "Two days before reaching Venus, Vega 1 split in two: a capsule carrying a lander and a balloon entered the atmosphere on 11 June 1985, while the main spacecraft flew on towards Halley's Comet. The balloon floated in the clouds about 54 km up for some 46 hours — the first instrument balloon flown on another planet. Turbulence during the descent set off the lander's surface experiments, the soil drill among them, about 20 km up, so it never sampled the ground. On 6 March 1986 the spacecraft passed Halley's nucleus at about 8,900 km.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "A Venera-type lander and a balloon in one capsule",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/02.webp",
+          "caption": "Vega spacecraft hardware during assembly: the carrier that would fly on to Halley's Comet."
+        },
+        {
+          "src": "/images/missions/vega-1/04.webp",
+          "caption": "A Vega descent capsule on display: the sphere that carried the lander and the balloon down to Venus."
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "title": "Venus",
+      "subtitle": "11 June 1985 — a lander on the ground, a balloon in the clouds",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/03.webp",
+          "caption": "The Vega plan: the capsule enters Venus's atmosphere, releases the balloon and the lander, and the spacecraft goes on to meet Halley's Comet."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Halley's Comet",
+      "subtitle": "6 March 1986 — about 8,900 km from the nucleus",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/01.webp",
+          "caption": "The Soviet stamp sheet for the international study of Halley's Comet: Edmond Halley, a Vega spacecraft and the comet."
+        }
+      ]
+    }
+  ]
+}

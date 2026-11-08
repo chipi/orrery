@@ -11,8 +11,8 @@
   "arrival_date": "2011-03-18",
   "transit_days": 2418,
   "vehicle": "Delta II 7925H-9.5",
-  "payload": "Mercury orbiter; sunshade-protected (front-side 370 °C, back-side -45 °C); seven instruments including imaging, spectrometers, magnetometer, laser altimeter",
-  "delta_v": "~2.3 km/s (Mercury orbit insertion)",
+  "payload": "Mercury orbiter; sunshade-protected (front-side 370 °C, spacecraft behind it ~20 °C); seven instruments including imaging, spectrometers, magnetometer, laser altimeter",
+  "delta_v": "~0.9 km/s (Mercury orbit insertion)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
   "credit": "© NASA / Johns Hopkins APL — U.S. Government work, public domain. MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) was the first spacecraft to orbit Mercury and the first to map its surface in full. Orbited Mercury 2011-03-18 to 2015-04-30 (~4096 orbits). Discoveries: water ice in permanently shadowed polar craters; previously unknown 'hollows' geological feature; quantified Mercury's iron core (~85 % of the planet's radius — the largest core-to-radius ratio of any planet in the solar system); mapped the planet's magnetic field offset from its geographic centre. Mission ended with a controlled impact onto Mercury's surface 2015-04-30 (no further fuel for orbit maintenance).",
@@ -76,7 +76,7 @@
         "description": "Cape Canaveral, 2004-08-03. The first Mercury orbiter — predecessor Mariner 10 (1974) only managed three flybys. MESSENGER (Mercury Surface, Space Environment, Geochemistry, and Ranging) took 6.5 years and six gravity assists to lose the orbital energy needed to capture into Mercury orbit."
       },
       {
-        "met_days": 365,
+        "met_days": 364,
         "type": "flyby",
         "label": "Earth — gravity assist",
         "description": "Closest approach 2,348 km on 2005-08-02. First of six gravity assists in the EVVMMM (Earth-Venus-Venus-Mercury-Mercury-Mercury) cruise plan. Each one removes orbital energy, the OPPOSITE of an outer-planet mission's energy gain."
@@ -112,7 +112,7 @@
         "description": "Closest approach 228 km on 2009-09-29. Final pre-orbit flyby — the trajectory was now tuned for Mercury orbital capture 17 months later."
       },
       {
-        "met_days": 2419,
+        "met_days": 2418.03,
         "type": "edl_or_oi",
         "label": "Mercury orbit insertion",
         "description": "2011-03-18. 15-minute main engine burn captured MESSENGER into a highly-elliptical 12-hour Mercury orbit — the first spacecraft to orbit Mercury. Mapped surface composition + topography for 4 years before exhausting fuel and impacting the surface on 2015-04-30 in a planned end-of-mission disposal."
@@ -132,19 +132,19 @@
           0
         ],
         [
-          180,
+          179.507,
           1.1,
           0.3,
           0.02
         ],
         [
-          365,
+          364,
           1,
           0,
           0
         ],
         [
-          630.937,
+          630.532,
           0.85,
           -0.4,
           0

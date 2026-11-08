@@ -1,7 +1,7 @@
 {
   "id": "solar-orbiter",
   "agency": "ESA / NASA",
-  "agency_full": "European Space Agency (lead) / Airbus Defence and Space (spacecraft) / NASA (launch + 1 instrument)",
+  "agency_full": "European Space Agency (lead) / Airbus Defence and Space (spacecraft) / NASA (launch + 2 instruments: SoloHI and Heavy Ion Sensor)",
   "sector": "gov",
   "dest": "SUN",
   "color": "#003247",
@@ -76,7 +76,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Atlas V 411",
-        "description": "Cape Canaveral SLC-41, 2020-02-10. ESA-led mission with NASA launch + one instrument contribution. Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in detail — a view inaccessible from Earth or any prior ecliptic-bound observatory."
+        "description": "Cape Canaveral SLC-41, 2020-02-10. ESA-led mission with NASA launch + two instruments (SoloHI and the Heavy Ion Sensor). Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in detail — a view inaccessible from Earth or any prior ecliptic-bound observatory."
       },
       {
         "met_days": 0.005,
@@ -91,7 +91,7 @@
         "description": "First mid-course correction."
       },
       {
-        "met_days": 125,
+        "met_days": 126,
         "type": "arrival",
         "label": "First perihelion (P1)",
         "description": "2020-06-15. First close approach: 0.51 AU (~109 R☉). Initial science observations during Mercury's neighbourhood."
@@ -99,13 +99,13 @@
       {
         "met_days": 937,
         "type": "flyby",
-        "label": "Venus gravity assist 2",
-        "description": "2022-09-04. Second VGA tilts the orbital plane upward, beginning the climb out of the ecliptic toward the polar viewing geometry."
+        "label": "Venus gravity assist 3",
+        "description": "2022-09-04. Third VGA tilts the orbital plane upward, beginning the climb out of the ecliptic toward the polar viewing geometry."
       },
       {
         "met_days": 975,
         "type": "edl_or_oi",
-        "label": "Closest perihelion to date (P4)",
+        "label": "Perihelion 5 (P5)",
         "description": "2022-10-12. Reached 0.29 AU (~62 R☉) — within Mercury's perihelion distance. First close-approach observations using the full instrument suite."
       },
       {
@@ -154,235 +154,235 @@
           0.348294
         ],
         [
-          93.333,
+          93.846,
           -0.732712,
           0,
           0.196992
         ],
         [
-          125,
+          126,
           -0.719953,
           0,
           0.069811
         ],
         [
-          138.92,
+          139.903,
           -0.720859,
           0,
           0.059739
         ],
         [
-          160.573,
+          161.529,
           -0.720859,
           0,
           0.059739
         ],
         [
-          182.227,
+          183.157,
           -0.720859,
           0,
           0.059739
         ],
         [
-          203.88,
+          204.783,
           -0.720859,
           0,
           0.059739
         ],
         [
-          225.533,
+          226.409,
           -0.720859,
           0,
           0.059739
         ],
         [
-          247.187,
+          248.037,
           -0.720859,
           0,
           0.059739
         ],
         [
-          268.84,
+          269.663,
           -0.720859,
           0,
           0.059739
         ],
         [
-          290.493,
+          291.289,
           -0.720859,
           0,
           0.059739
         ],
         [
-          312.147,
+          312.917,
           -0.720859,
           0,
           0.059739
         ],
         [
-          333.8,
+          334.543,
           -0.720859,
           0,
           0.059739
         ],
         [
-          355.453,
+          356.169,
           -0.720859,
           0,
           0.059739
         ],
         [
-          377.107,
+          377.797,
           -0.720859,
           0,
           0.059739
         ],
         [
-          398.76,
+          399.423,
           -0.720859,
           0,
           0.059739
         ],
         [
-          420.413,
+          421.049,
           -0.720859,
           0,
           0.059739
         ],
         [
-          442.067,
+          442.677,
           -0.720859,
           0,
           0.059739
         ],
         [
-          463.72,
+          464.303,
           -0.720859,
           0,
           0.059739
         ],
         [
-          485.373,
+          485.929,
           -0.720859,
           0,
           0.059739
         ],
         [
-          507.027,
+          507.557,
           -0.720859,
           0,
           0.059739
         ],
         [
-          528.68,
+          529.183,
           -0.720859,
           0,
           0.059739
         ],
         [
-          550.333,
+          550.809,
           -0.720859,
           0,
           0.059739
         ],
         [
-          571.987,
+          572.437,
           -0.720859,
           0,
           0.059739
         ],
         [
-          593.64,
+          594.063,
           -0.720859,
           0,
           0.059739
         ],
         [
-          615.293,
+          615.689,
           -0.720859,
           0,
           0.059739
         ],
         [
-          636.947,
+          637.317,
           -0.720859,
           0,
           0.059739
         ],
         [
-          658.6,
+          658.943,
           -0.720859,
           0,
           0.059739
         ],
         [
-          680.253,
+          680.569,
           -0.720859,
           0,
           0.059739
         ],
         [
-          701.907,
+          702.197,
           -0.720859,
           0,
           0.059739
         ],
         [
-          723.56,
+          723.823,
           -0.720859,
           0,
           0.059739
         ],
         [
-          745.213,
+          745.449,
           -0.720859,
           0,
           0.059739
         ],
         [
-          766.867,
+          767.077,
           -0.720859,
           0,
           0.059739
         ],
         [
-          788.52,
+          788.703,
           -0.720859,
           0,
           0.059739
         ],
         [
-          810.173,
+          810.329,
           -0.720859,
           0,
           0.059739
         ],
         [
-          831.827,
+          831.957,
           -0.720859,
           0,
           0.059739
         ],
         [
-          853.48,
+          853.583,
           -0.720859,
           0,
           0.059739
         ],
         [
-          875.133,
+          875.209,
           -0.720859,
           0,
           0.059739
         ],
         [
-          896.787,
+          896.837,
           -0.720859,
           0,
           0.059739
         ],
         [
-          918.44,
+          918.463,
           -0.720859,
           0,
           0.059739

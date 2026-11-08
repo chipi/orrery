@@ -1,864 +1,1008 @@
 {
   "/images/anatomy/akatsuki": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/antares": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/apollo-csm-block-ii": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/apollo-lm": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/ariane-1": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/ariane-5": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/ariane-6": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/atlas-v": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/atv": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/bepicolombo": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/beresheet": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/blue-moon-mk1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/buran": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/cargo-dragon-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/cargo-dragon-v1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/cassini": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/chandra": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/chandrayaan1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/change-3": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/change-4": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/change-5": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/compton-gro": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/crew-dragon": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/curiosity": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/cygnus-enhanced": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/dart": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/dawn": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/delta-ii": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/energia": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/euclid": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/europa-clipper": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/exomars-rosalind-franklin": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/exomars-tgo": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/falcon-9": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/falcon-heavy": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/gaganyaan": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/gaia": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/galileo": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/gemini": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/h-iia": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/h3": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/hakuto-r": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/hayabusa": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/hayabusa-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/hitomi": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/hope": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/htv": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/htv-x": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/hubble": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/im-1-odysseus": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/insight": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/iss": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/juice": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/juno": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/jwst": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/kepler": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/long-march-2f": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/long-march-3b": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/long-march-5": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/long-march-7": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/lro": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lrv-apollo": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lucy": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/luna-16": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/luna-9": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lunar-prospector": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lunokhod-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lunokhod-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lvm3": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/magellan": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mangalyaan": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mariner-4": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mariner-9": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mars-3": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mars-express": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mars-odyssey": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/maven": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mercury-capsule": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mercury-redstone": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/messenger": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mir": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mro": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/n1": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/new-glenn": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/new-shepard": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/opportunity": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/orion": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/osiris-rex": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/parker-solar-probe": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/perseverance": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/phoenix": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/pioneer-10": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/pioneer-11": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/pragyan": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/progress-m": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/progress-ms": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/proton-m": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/pslv-xl": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/psyche-spacecraft": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/rosetta": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/salyut-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/salyut-6": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/salyut-7": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/saturn-ib": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/saturn-v": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/schiaparelli": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/shenzhou": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/skylab": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/slim": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/sls-block-1": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/smart-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/sojourner": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/solar-orbiter": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/soyuz-2": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/soyuz-ms": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/soyuz-tma": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/space-shuttle-orbiter": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/space-shuttle-stack": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/spektr-rg": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/spirit": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/spitzer": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/starliner": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/starship": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/surveyor-3": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/tess": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/tiangong": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/tiangong-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/tiangong-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/tianwen-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/tianzhou": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/ulysses": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/venera-13": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/venera-7": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/viking-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/vikram-cy3": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/vostok": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/voyager-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/voyager-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/vulcan": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/x37b": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/xmm-newton": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/yutu": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/yutu-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/zhurong": [
     320,
+    640,
     1280,
     2048,
     3072
@@ -870,12 +1014,14 @@
   ],
   "/images/belts/asteroid/01": [
     320,
-    1280,
-    1600
+    640,
+    1209,
+    1846
   ],
   "/images/belts/asteroid/02": [
     320,
-    1262
+    1280,
+    1973
   ],
   "/images/belts/asteroid/03": [
     320,
@@ -884,8 +1030,7 @@
   ],
   "/images/belts/asteroid/04": [
     320,
-    1024,
-    1600
+    1000
   ],
   "/images/belts/asteroid/05": [
     320,
@@ -914,12 +1059,11 @@
   "/images/belts/kuiper/05": [
     320,
     1280,
-    1600
+    1860
   ],
   "/images/belts/kuiper/06": [
     320,
-    1280,
-    1600
+    1000
   ],
   "/images/colophon/craft-bepicolombo": [
     320,
@@ -1152,11 +1296,15 @@
   ],
   "/images/earth-objects/beidou/04": [
     320,
-    1003
+    960,
+    1536,
+    2304
   ],
   "/images/earth-objects/beidou/05": [
     320,
-    542
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/chandra/01": [
     320,
@@ -1182,7 +1330,9 @@
   ],
   "/images/earth-objects/gaia/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/gaia/04": [
     320,
@@ -1192,7 +1342,8 @@
   "/images/earth-objects/gaia/05": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/earth-objects/galileo/01": [
     320,
@@ -1225,17 +1376,14 @@
   ],
   "/images/earth-objects/geo/03": [
     320,
-    960
-  ],
-  "/images/earth-objects/geo/04": [
-    320,
     1276,
     1920
   ],
-  "/images/earth-objects/geo/05": [
+  "/images/earth-objects/geo/04": [
     320,
-    1280,
-    1920
+    1017,
+    1627,
+    2441
   ],
   "/images/earth-objects/glonass/01": [
     320,
@@ -1244,25 +1392,22 @@
   ],
   "/images/earth-objects/glonass/02": [
     320,
-    800
+    960
   ],
   "/images/earth-objects/glonass/03": [
     320,
-    960
-  ],
-  "/images/earth-objects/glonass/04": [
-    320,
     768
   ],
-  "/images/earth-objects/glonass/05": [
+  "/images/earth-objects/glonass/04": [
     320,
     1280,
     1600
   ],
   "/images/earth-objects/goes/02": [
     320,
-    1280,
-    1656
+    853,
+    1365,
+    2000
   ],
   "/images/earth-objects/goes/03": [
     320,
@@ -1271,13 +1416,15 @@
   ],
   "/images/earth-objects/goes/04": [
     320,
-    1280,
-    1800
+    853,
+    1365,
+    2048
   ],
   "/images/earth-objects/goes/05": [
     320,
     1280,
-    1784
+    2048,
+    3072
   ],
   "/images/earth-objects/gps/01": [
     320,
@@ -1285,10 +1432,16 @@
     960
   ],
   "/images/earth-objects/gps/02": [
-    240
+    320,
+    1280,
+    2048,
+    2850
   ],
   "/images/earth-objects/gps/03": [
-    200
+    320,
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/gps/04": [
     320,
@@ -1409,11 +1562,6 @@
     1280,
     1920
   ],
-  "/images/earth-objects/kuiper/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/earth-objects/landsat/01": [
     320,
     640,
@@ -1422,7 +1570,9 @@
   ],
   "/images/earth-objects/landsat/02": [
     320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/earth-objects/landsat/03": [
     320,
@@ -1437,10 +1587,10 @@
     320,
     640
   ],
-  "/images/earth-objects/o3b/01": [
+  "/images/earth-objects/o3b/02": [
     320,
-    640,
-    1024
+    1280,
+    1920
   ],
   "/images/earth-objects/o3b/03": [
     320,
@@ -1448,11 +1598,6 @@
     1920
   ],
   "/images/earth-objects/o3b/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/earth-objects/o3b/05": [
     320,
     1280,
     1920
@@ -1471,7 +1616,8 @@
   "/images/earth-objects/oneweb/03": [
     320,
     1280,
-    1376
+    2048,
+    3072
   ],
   "/images/earth-objects/oneweb/04": [
     320,
@@ -1499,11 +1645,6 @@
     1920
   ],
   "/images/earth-objects/planet-labs/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/earth-objects/planet-labs/05": [
     320,
     1280,
     1920
@@ -1543,7 +1684,8 @@
   "/images/earth-objects/starlink/02": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/earth-objects/starlink/03": [
     320,
@@ -1557,7 +1699,9 @@
   ],
   "/images/earth-objects/starlink/05": [
     320,
-    510
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/tiangong/01": [
     320,
@@ -1587,20 +1731,27 @@
   ],
   "/images/earth-objects/tundra-molniya/02": [
     320,
-    461
+    1129,
+    1806,
+    2709
   ],
   "/images/earth-objects/tundra-molniya/03": [
     320,
-    1280,
-    1920
+    960,
+    1536,
+    2304
   ],
   "/images/earth-objects/tundra-molniya/04": [
     320,
-    597
+    1280,
+    2048,
+    2592
   ],
   "/images/earth-objects/tundra-molniya/05": [
     320,
-    595
+    945,
+    1513,
+    2269
   ],
   "/images/earth-objects/xmm/01": [
     320,
@@ -1613,7 +1764,8 @@
   ],
   "/images/earth-objects/xmm/03": [
     320,
-    1280
+    1280,
+    1800
   ],
   "/images/earth-objects/xmm/05": [
     320,
@@ -1735,11 +1887,7 @@
   ],
   "/images/fleet-galleries/apollo-csm-block-ii/04": [
     320,
-    960
-  ],
-  "/images/fleet-galleries/apollo-csm-block-ii/05": [
-    320,
-    979
+    1140
   ],
   "/images/fleet-galleries/apollo-lm/01": [
     320,
@@ -1804,13 +1952,11 @@
   ],
   "/images/fleet-galleries/ariane-5/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/ariane-5/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/ariane-5/05": [
     320,
     960
   ],
@@ -1859,21 +2005,25 @@
   ],
   "/images/fleet-galleries/atlas-lv-3b/01": [
     320,
-    640,
-    784
+    1024,
+    1638,
+    2400
   ],
   "/images/fleet-galleries/atlas-lv-3b/02": [
     320,
-    960
+    1048
   ],
   "/images/fleet-galleries/atlas-lv-3b/03": [
     320,
+    640,
     853,
     960
   ],
   "/images/fleet-galleries/atlas-lv-3b/04": [
     320,
-    722
+    1053,
+    1684,
+    2467
   ],
   "/images/fleet-galleries/atlas-lv-3b/05": [
     320,
@@ -1919,11 +2069,15 @@
   ],
   "/images/fleet-galleries/atv/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/atv/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/atv/04": [
     320,
@@ -1931,7 +2085,8 @@
   ],
   "/images/fleet-galleries/atv/05": [
     320,
-    656
+    1272,
+    2027
   ],
   "/images/fleet-galleries/axemu/01": [
     320,
@@ -1947,27 +2102,27 @@
   ],
   "/images/fleet-galleries/axemu/03": [
     320,
-    591,
-    946,
-    1419
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/axemu/04": [
     320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/axemu/05": [
-    320,
-    1280,
-    1920
+    853,
+    1365,
+    2048
   ],
   "/images/fleet-galleries/baikonur-1-5/01": [
     320,
-    382
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/baikonur-1-5/02": [
     320,
-    441
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/baikonur-1-5/03": [
     320,
@@ -2033,7 +2188,9 @@
   ],
   "/images/fleet-galleries/beagle2/02": [
     320,
-    640
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/beagle2/03": [
     320,
@@ -2064,16 +2221,6 @@
     1280,
     1920
   ],
-  "/images/fleet-galleries/beidou/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/beidou/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/fleet-galleries/bepicolombo/01": [
     320,
     640,
@@ -2097,8 +2244,7 @@
   ],
   "/images/fleet-galleries/bepicolombo/05": [
     320,
-    1280,
-    1920
+    800
   ],
   "/images/fleet-galleries/blue-moon-mk1/01": [
     320,
@@ -2152,19 +2298,14 @@
   ],
   "/images/fleet-galleries/buran/02": [
     320,
-    829,
     960
   ],
   "/images/fleet-galleries/buran/03": [
     320,
-    960
-  ],
-  "/images/fleet-galleries/buran/04": [
-    320,
     640,
     960
   ],
-  "/images/fleet-galleries/buran/05": [
+  "/images/fleet-galleries/buran/04": [
     320,
     960
   ],
@@ -2176,8 +2317,9 @@
   ],
   "/images/fleet-galleries/cape-canaveral-lc-36b/02": [
     320,
-    1280,
-    1920
+    867,
+    1386,
+    2031
   ],
   "/images/fleet-galleries/cape-canaveral-lc-36b/03": [
     320,
@@ -2288,17 +2430,13 @@
   ],
   "/images/fleet-galleries/cassini/02": [
     320,
-    1010
+    640
   ],
   "/images/fleet-galleries/cassini/03": [
     320,
-    640
-  ],
-  "/images/fleet-galleries/cassini/04": [
-    320,
     853
   ],
-  "/images/fleet-galleries/cassini/05": [
+  "/images/fleet-galleries/cassini/04": [
     320,
     1280
   ],
@@ -2345,7 +2483,8 @@
   "/images/fleet-galleries/challenger/05": [
     320,
     1280,
-    1920
+    2048,
+    2996
   ],
   "/images/fleet-galleries/chandra/01": [
     320,
@@ -2397,12 +2536,9 @@
   ],
   "/images/fleet-galleries/change-3/02": [
     320,
-    703
-  ],
-  "/images/fleet-galleries/change-3/03": [
-    320,
-    928,
-    960
+    1280,
+    2048,
+    2400
   ],
   "/images/fleet-galleries/change-4/01": [
     320,
@@ -2437,15 +2573,6 @@
     1280,
     1920
   ],
-  "/images/fleet-galleries/change1/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/change1/05": [
-    320,
-    354
-  ],
   "/images/fleet-galleries/change6/01": [
     320,
     590,
@@ -2463,10 +2590,6 @@
     1416
   ],
   "/images/fleet-galleries/change6/04": [
-    320,
-    1100
-  ],
-  "/images/fleet-galleries/change6/05": [
     320,
     640,
     1280,
@@ -2513,7 +2636,7 @@
   "/images/fleet-galleries/commercial-stations/01": [
     320,
     640,
-    1280
+    1089
   ],
   "/images/fleet-galleries/compton-gro/01": [
     320,
@@ -2562,7 +2685,9 @@
   "/images/fleet-galleries/crew-dragon/01": [
     320,
     640,
-    731
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/crew-dragon/02": [
     320,
@@ -2570,7 +2695,9 @@
   ],
   "/images/fleet-galleries/crew-dragon/03": [
     320,
-    960
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/crew-dragon/04": [
     320,
@@ -2668,13 +2795,14 @@
   ],
   "/images/fleet-galleries/dawn/04": [
     320,
-    1280,
-    1920
+    851,
+    1362,
+    2000
   ],
   "/images/fleet-galleries/dawn/05": [
     320,
     1280,
-    1920
+    1600
   ],
   "/images/fleet-galleries/delta-ii/01": [
     320,
@@ -2702,8 +2830,9 @@
   ],
   "/images/fleet-galleries/delta-ii/05": [
     320,
-    1280,
-    1920
+    886,
+    1418,
+    2127
   ],
   "/images/fleet-galleries/discovery/01": [
     320,
@@ -2773,10 +2902,8 @@
   ],
   "/images/fleet-galleries/energia/01": [
     320,
-    640,
-    720,
-    1152,
-    1280
+    1280,
+    1480
   ],
   "/images/fleet-galleries/energia/02": [
     320,
@@ -2786,11 +2913,6 @@
     320,
     852,
     1363,
-    1920
-  ],
-  "/images/fleet-galleries/energia/05": [
-    320,
-    1280,
     1920
   ],
   "/images/fleet-galleries/enterprise/01": [
@@ -2827,8 +2949,9 @@
   ],
   "/images/fleet-galleries/euclid/02": [
     320,
-    703,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/euclid/03": [
     320,
@@ -2848,9 +2971,9 @@
   ],
   "/images/fleet-galleries/europa-clipper/03": [
     320,
-    1280,
-    2048,
-    3072
+    959,
+    1535,
+    2303
   ],
   "/images/fleet-galleries/europa-clipper/04": [
     320,
@@ -2916,31 +3039,30 @@
   ],
   "/images/fleet-galleries/f-1/01": [
     320,
-    640
+    640,
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/f-1/02": [
     320,
-    640
+    940,
+    1504,
+    2203
   ],
   "/images/fleet-galleries/falcon-9/01": [
     320,
-    1280
+    1280,
+    2048,
+    2985
   ],
   "/images/fleet-galleries/falcon-9/02": [
     320,
-    733
+    995
   ],
   "/images/fleet-galleries/falcon-9/03": [
     320,
-    995
-  ],
-  "/images/fleet-galleries/falcon-9/04": [
-    320,
     640,
-    1280
-  ],
-  "/images/fleet-galleries/falcon-9/05": [
-    320,
     1280
   ],
   "/images/fleet-galleries/falcon-heavy/01": [
@@ -3010,12 +3132,9 @@
   ],
   "/images/fleet-galleries/gaganyaan/04": [
     320,
-    854,
-    960
-  ],
-  "/images/fleet-galleries/gaganyaan/05": [
-    320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gaia/01": [
     320,
@@ -3025,11 +3144,15 @@
   ],
   "/images/fleet-galleries/gaia/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gaia/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/galileo-gnss/01": [
     320,
@@ -3038,13 +3161,14 @@
   ],
   "/images/fleet-galleries/galileo-gnss/02": [
     320,
-    703,
-    988
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/galileo-gnss/04": [
     320,
     1280,
-    1920
+    1573
   ],
   "/images/fleet-galleries/galileo/01": [
     320,
@@ -3095,10 +3219,6 @@
   ],
   "/images/fleet-galleries/giotto/02": [
     320,
-    1173
-  ],
-  "/images/fleet-galleries/giotto/03": [
-    320,
     1016
   ],
   "/images/fleet-galleries/glonass/01": [
@@ -3118,11 +3238,12 @@
   ],
   "/images/fleet-galleries/glonass/04": [
     320,
-    500
+    1200
   ],
   "/images/fleet-galleries/glonass/05": [
     320,
-    672
+    1280,
+    1920
   ],
   "/images/fleet-galleries/goes-noaa/01": [
     320,
@@ -3137,13 +3258,15 @@
   ],
   "/images/fleet-galleries/goes-noaa/04": [
     320,
-    1280,
-    1920
+    853,
+    1365,
+    2048
   ],
   "/images/fleet-galleries/goes-noaa/05": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gps-gnss/01": [
     320,
@@ -3153,26 +3276,32 @@
   "/images/fleet-galleries/gps-gnss/02": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gps-gnss/03": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gps-gnss/04": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gps-gnss/05": [
     320,
     1280,
-    1920
+    1848
   ],
   "/images/fleet-galleries/h-1/01": [
     320,
-    439
+    640,
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/h-1/02": [
     320,
@@ -3220,11 +3349,9 @@
   ],
   "/images/fleet-galleries/h3/04": [
     320,
-    960
-  ],
-  "/images/fleet-galleries/h3/05": [
-    320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hakuto-r/01": [
     320,
@@ -3256,14 +3383,11 @@
     320,
     960
   ],
-  "/images/fleet-galleries/hayabusa-2/03": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/hayabusa-2/05": [
+  "/images/fleet-galleries/hayabusa-2/04": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hayabusa/01": [
     320,
@@ -3286,16 +3410,15 @@
   ],
   "/images/fleet-galleries/hitomi/02": [
     320,
-    780
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hitomi/03": [
     320,
-    928
-  ],
-  "/images/fleet-galleries/hitomi/04": [
-    320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hm7b/01": [
     320,
@@ -3317,6 +3440,7 @@
   "/images/fleet-galleries/hope/03": [
     320,
     591,
+    640,
     946,
     960
   ],
@@ -3324,11 +3448,6 @@
     320,
     640,
     960
-  ],
-  "/images/fleet-galleries/hope/05": [
-    320,
-    1280,
-    1920
   ],
   "/images/fleet-galleries/htv-x/01": [
     320,
@@ -3345,11 +3464,9 @@
   ],
   "/images/fleet-galleries/htv-x/04": [
     320,
-    960
-  ],
-  "/images/fleet-galleries/htv-x/05": [
-    320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/htv/01": [
     320,
@@ -3359,7 +3476,9 @@
   ],
   "/images/fleet-galleries/htv/02": [
     320,
-    810
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/htv/03": [
     320,
@@ -3367,7 +3486,9 @@
   ],
   "/images/fleet-galleries/htv/04": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/htv/05": [
     320,
@@ -3380,7 +3501,9 @@
   ],
   "/images/fleet-galleries/hubble/02": [
     320,
-    856
+    1280,
+    2048,
+    2972
   ],
   "/images/fleet-galleries/hubble/03": [
     320,
@@ -3388,11 +3511,15 @@
   ],
   "/images/fleet-galleries/hubble/04": [
     320,
-    882
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hubble/05": [
     320,
-    866
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/im-1-odysseus/01": [
     320,
@@ -3401,19 +3528,11 @@
   ],
   "/images/fleet-galleries/im-1-odysseus/02": [
     320,
-    650
+    960
   ],
   "/images/fleet-galleries/im-1-odysseus/03": [
     320,
     960
-  ],
-  "/images/fleet-galleries/im-1-odysseus/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/im-1-odysseus/05": [
-    320,
-    1024
   ],
   "/images/fleet-galleries/inmarsat/01": [
     320,
@@ -3422,20 +3541,21 @@
   ],
   "/images/fleet-galleries/inmarsat/02": [
     320,
-    640
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/inmarsat/03": [
     320,
-    640
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/inmarsat/04": [
     320,
-    365
-  ],
-  "/images/fleet-galleries/inmarsat/05": [
-    320,
-    1052,
-    1374
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/insight/01": [
     320,
@@ -3453,7 +3573,8 @@
   "/images/fleet-galleries/insight/04": [
     320,
     1280,
-    1500
+    2048,
+    3072
   ],
   "/images/fleet-galleries/insight/05": [
     320,
@@ -3467,7 +3588,8 @@
   "/images/fleet-galleries/iridium-next/02": [
     320,
     1280,
-    1920
+    2048,
+    3000
   ],
   "/images/fleet-galleries/iridium-next/03": [
     320,
@@ -3551,14 +3673,9 @@
   ],
   "/images/fleet-galleries/juice/03": [
     320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/juice/04": [
-    320,
     521
   ],
-  "/images/fleet-galleries/juice/05": [
+  "/images/fleet-galleries/juice/04": [
     320,
     1280,
     1920
@@ -3581,7 +3698,7 @@
     320,
     1280,
     2048,
-    2600
+    3000
   ],
   "/images/fleet-galleries/jwst/01": [
     320,
@@ -3616,19 +3733,25 @@
   ],
   "/images/fleet-galleries/kepler/02": [
     320,
-    1280
+    857,
+    1371,
+    2008
   ],
   "/images/fleet-galleries/kepler/03": [
     320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/kepler/04": [
     320,
-    1280
+    721,
+    1140
   ],
   "/images/fleet-galleries/kepler/05": [
     320,
-    1280
+    1280,
+    1463
   ],
   "/images/fleet-galleries/kourou-ela-2/01": [
     320,
@@ -3644,10 +3767,6 @@
     960
   ],
   "/images/fleet-galleries/kourou-ela-2/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/kourou-ela-2/05": [
     320,
     960
   ],
@@ -3753,12 +3872,15 @@
   ],
   "/images/fleet-galleries/landsat/04": [
     320,
-    1199
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/landsat/05": [
     320,
-    1280,
-    1920
+    1024,
+    1638,
+    2400
   ],
   "/images/fleet-galleries/lc-14/01": [
     320,
@@ -3897,12 +4019,6 @@
     853,
     1365,
     2048
-  ],
-  "/images/fleet-galleries/le-5b/02": [
-    320,
-    719,
-    1150,
-    1684
   ],
   "/images/fleet-galleries/le-7a/01": [
     320,
@@ -4080,18 +4196,10 @@
   ],
   "/images/fleet-galleries/lucy/03": [
     320,
+    640,
     1280,
     2048,
     3072
-  ],
-  "/images/fleet-galleries/lucy/04": [
-    320,
-    1280
-  ],
-  "/images/fleet-galleries/lucy/05": [
-    320,
-    1280,
-    1920
   ],
   "/images/fleet-galleries/luna-16/01": [
     320,
@@ -4165,12 +4273,6 @@
     320,
     879
   ],
-  "/images/fleet-galleries/luna10/05": [
-    320,
-    938,
-    1500,
-    1845
-  ],
   "/images/fleet-galleries/luna24/01": [
     320,
     640,
@@ -4224,15 +4326,7 @@
   ],
   "/images/fleet-galleries/lunar-orbiter-2/03": [
     320,
-    682
-  ],
-  "/images/fleet-galleries/lunar-orbiter-2/04": [
-    320,
     768
-  ],
-  "/images/fleet-galleries/lunar-orbiter-2/05": [
-    320,
-    587
   ],
   "/images/fleet-galleries/lunar-orbiter-3/01": [
     320,
@@ -4247,7 +4341,9 @@
   ],
   "/images/fleet-galleries/lunar-orbiter-3/03": [
     320,
-    669
+    739,
+    1183,
+    1775
   ],
   "/images/fleet-galleries/lunar-orbiter-3/04": [
     320,
@@ -4276,7 +4372,9 @@
   ],
   "/images/fleet-galleries/lunar-orbiter-4/05": [
     320,
-    534
+    1027,
+    1643,
+    1824
   ],
   "/images/fleet-galleries/lunar-orbiter-5/01": [
     320,
@@ -4301,7 +4399,7 @@
   ],
   "/images/fleet-galleries/lunar-orbiter-5/05": [
     320,
-    565
+    1250
   ],
   "/images/fleet-galleries/lunar-prospector/01": [
     320,
@@ -4334,7 +4432,9 @@
   ],
   "/images/fleet-galleries/lunokhod-1/04": [
     320,
-    1170
+    924,
+    1479,
+    2218
   ],
   "/images/fleet-galleries/lunokhod-1/05": [
     320,
@@ -4344,7 +4444,9 @@
   ],
   "/images/fleet-galleries/lunokhod-2/01": [
     320,
-    556
+    1280,
+    2048,
+    2069
   ],
   "/images/fleet-galleries/lunokhod-2/02": [
     320,
@@ -4352,6 +4454,7 @@
   ],
   "/images/fleet-galleries/lunokhod-2/03": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/lunokhod-2/04": [
@@ -4368,19 +4471,15 @@
   ],
   "/images/fleet-galleries/lvm3/02": [
     320,
-    393,
-    629,
-    891
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/lvm3/03": [
     320,
-    960
-  ],
-  "/images/fleet-galleries/lvm3/04": [
-    320,
     500
   ],
-  "/images/fleet-galleries/lvm3/05": [
+  "/images/fleet-galleries/lvm3/04": [
     320,
     640,
     853,
@@ -4416,20 +4515,23 @@
   ],
   "/images/fleet-galleries/mangalyaan/01": [
     320,
-    640,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/mangalyaan/02": [
     320,
-    960
+    988
   ],
   "/images/fleet-galleries/mangalyaan/03": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/mangalyaan/04": [
     320,
-    500
+    1280,
+    2048
   ],
   "/images/fleet-galleries/mangalyaan/05": [
     320,
@@ -4497,7 +4599,9 @@
   ],
   "/images/fleet-galleries/mars-express/05": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/mars-odyssey/01": [
     320,
@@ -4517,11 +4621,9 @@
   ],
   "/images/fleet-galleries/mars-odyssey/04": [
     320,
-    1082
-  ],
-  "/images/fleet-galleries/mars-odyssey/05": [
-    320,
-    600
+    873,
+    1398,
+    1822
   ],
   "/images/fleet-galleries/mars-polar-lander/01": [
     320,
@@ -4552,7 +4654,9 @@
   ],
   "/images/fleet-galleries/mars2-orbiter/02": [
     320,
-    1252
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/mars2-orbiter/03": [
     320,
@@ -4570,8 +4674,9 @@
   ],
   "/images/fleet-galleries/mars3-orbiter/03": [
     320,
-    1280,
-    1920
+    816,
+    1307,
+    1960
   ],
   "/images/fleet-galleries/mars3-orbiter/04": [
     320,
@@ -4579,27 +4684,24 @@
   ],
   "/images/fleet-galleries/mars3-orbiter/05": [
     320,
-    1280,
-    1920
+    719,
+    1150,
+    1725
   ],
   "/images/fleet-galleries/mars6/01": [
     250
   ],
   "/images/fleet-galleries/mars6/02": [
     320,
-    1249
+    1280,
+    1500
   ],
   "/images/fleet-galleries/mars6/03": [
     320,
     1280,
-    1500
-  ],
-  "/images/fleet-galleries/mars6/04": [
-    320,
-    1280,
     1920
   ],
-  "/images/fleet-galleries/mars6/05": [
+  "/images/fleet-galleries/mars6/04": [
     320,
     965
   ],
@@ -4634,7 +4736,8 @@
   "/images/fleet-galleries/mercury-capsule/02": [
     320,
     1280,
-    1920
+    2048,
+    3000
   ],
   "/images/fleet-galleries/mercury-capsule/03": [
     320,
@@ -4699,18 +4802,15 @@
   ],
   "/images/fleet-galleries/messenger/03": [
     320,
-    1280,
-    1920
+    877,
+    1404,
+    2056
   ],
   "/images/fleet-galleries/messenger/04": [
     320,
-    1154,
-    1262
-  ],
-  "/images/fleet-galleries/messenger/05": [
-    320,
     1280,
-    1920
+    2048,
+    3008
   ],
   "/images/fleet-galleries/mir/01": [
     320,
@@ -4740,7 +4840,9 @@
   ],
   "/images/fleet-galleries/molniya/02": [
     320,
-    468
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/molniya/03": [
     320,
@@ -4790,17 +4892,6 @@
     1280,
     1920
   ],
-  "/images/fleet-galleries/n1/04": [
-    315,
-    504,
-    756
-  ],
-  "/images/fleet-galleries/n1/05": [
-    320,
-    788,
-    1262,
-    1848
-  ],
   "/images/fleet-galleries/new-glenn/02": [
     320,
     640,
@@ -4814,10 +4905,6 @@
     320,
     960
   ],
-  "/images/fleet-galleries/new-glenn/05": [
-    320,
-    960
-  ],
   "/images/fleet-galleries/new-shepard/02": [
     320,
     640,
@@ -4826,7 +4913,9 @@
   ],
   "/images/fleet-galleries/new-shepard/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/new-shepard/04": [
     320,
@@ -4861,7 +4950,9 @@
   ],
   "/images/fleet-galleries/oneweb/01": [
     320,
-    857
+    854,
+    1367,
+    2050
   ],
   "/images/fleet-galleries/oneweb/02": [
     320,
@@ -4871,14 +4962,11 @@
   ],
   "/images/fleet-galleries/oneweb/03": [
     320,
+    640,
     1280,
     1920
   ],
   "/images/fleet-galleries/oneweb/04": [
-    320,
-    1186
-  ],
-  "/images/fleet-galleries/oneweb/05": [
     320,
     1280,
     1920
@@ -4891,10 +4979,6 @@
   "/images/fleet-galleries/opportunity/04": [
     320,
     640,
-    834
-  ],
-  "/images/fleet-galleries/opportunity/05": [
-    320,
     834
   ],
   "/images/fleet-galleries/orion/01": [
@@ -4911,10 +4995,6 @@
     1280
   ],
   "/images/fleet-galleries/orion/04": [
-    320,
-    1280
-  ],
-  "/images/fleet-galleries/orion/05": [
     320,
     1280
   ],
@@ -4956,10 +5036,6 @@
     1280
   ],
   "/images/fleet-galleries/osiris-rex/04": [
-    320,
-    1280
-  ],
-  "/images/fleet-galleries/osiris-rex/05": [
     320,
     1280
   ],
@@ -5018,12 +5094,13 @@
   ],
   "/images/fleet-galleries/phobos-2/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/phobos-2/04": [
     320,
-    1280,
-    1920
+    420
   ],
   "/images/fleet-galleries/phoenix/01": [
     320,
@@ -5070,7 +5147,9 @@
   ],
   "/images/fleet-galleries/pioneer-11/02": [
     320,
-    866
+    1024,
+    1638,
+    2400
   ],
   "/images/fleet-galleries/pioneer-11/03": [
     320,
@@ -5087,13 +5166,15 @@
   ],
   "/images/fleet-galleries/planet-labs/02": [
     320,
-    1280,
-    1920
+    852,
+    1363,
+    2045
   ],
   "/images/fleet-galleries/planet-labs/03": [
     320,
     1280,
-    1920
+    2048,
+    2700
   ],
   "/images/fleet-galleries/planet-labs/04": [
     320,
@@ -5102,7 +5183,9 @@
   ],
   "/images/fleet-galleries/planet-labs/05": [
     320,
-    843
+    1280,
+    2048,
+    2401
   ],
   "/images/fleet-galleries/plesetsk-41-1/01": [
     320,
@@ -5115,7 +5198,7 @@
   ],
   "/images/fleet-galleries/plesetsk-43/02": [
     320,
-    500
+    1200
   ],
   "/images/fleet-galleries/plesetsk-43/03": [
     320,
@@ -5131,22 +5214,16 @@
   ],
   "/images/fleet-galleries/pragyan/01": [
     320,
-    548
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/pragyan/02": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/pragyan/03": [
     320,
     640,
     960
   ],
-  "/images/fleet-galleries/pragyan/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/pragyan/05": [
+  "/images/fleet-galleries/pragyan/03": [
     320,
     960
   ],
@@ -5163,21 +5240,17 @@
   "/images/fleet-galleries/progress-m/01": [
     320,
     640,
-    960
+    1024
   ],
   "/images/fleet-galleries/progress-m/02": [
     320,
-    1024
+    960
   ],
   "/images/fleet-galleries/progress-m/03": [
     320,
     960
   ],
   "/images/fleet-galleries/progress-m/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/progress-m/05": [
     320,
     960
   ],
@@ -5213,15 +5286,9 @@
     1920
   ],
   "/images/fleet-galleries/proton-k/03": [
-    320,
-    939,
-    1502,
-    1920
-  ],
-  "/images/fleet-galleries/proton-k/04": [
     192
   ],
-  "/images/fleet-galleries/proton-k/05": [
+  "/images/fleet-galleries/proton-k/04": [
     320,
     351
   ],
@@ -5267,10 +5334,6 @@
     853,
     960
   ],
-  "/images/fleet-galleries/pslv-xl/05": [
-    320,
-    960
-  ],
   "/images/fleet-galleries/psyche-spacecraft/01": [
     320,
     640,
@@ -5297,20 +5360,14 @@
   ],
   "/images/fleet-galleries/r-7-vostok/02": [
     320,
-    396,
-    633,
-    923
-  ],
-  "/images/fleet-galleries/r-7-vostok/03": [
-    320,
     903
   ],
-  "/images/fleet-galleries/r-7-vostok/04": [
+  "/images/fleet-galleries/r-7-vostok/03": [
     320,
     1280,
     1920
   ],
-  "/images/fleet-galleries/r-7-vostok/05": [
+  "/images/fleet-galleries/r-7-vostok/04": [
     320,
     1145,
     1832,
@@ -5444,16 +5501,17 @@
     320,
     960
   ],
-  "/images/fleet-galleries/salyut-1/02": [
+  "/images/fleet-galleries/salyut-1/01": [
     320,
     960
   ],
-  "/images/fleet-galleries/salyut-1/04": [
+  "/images/fleet-galleries/salyut-1/03": [
     320,
+    640,
     1280,
     1920
   ],
-  "/images/fleet-galleries/salyut-1/05": [
+  "/images/fleet-galleries/salyut-1/04": [
     320,
     1247
   ],
@@ -5461,25 +5519,18 @@
     320,
     640,
     1280,
-    1832
+    1333
   ],
   "/images/fleet-galleries/salyut-2/02": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/fleet-galleries/salyut-2/03": [
     320,
     1239,
     1920
   ],
-  "/images/fleet-galleries/salyut-2/04": [
+  "/images/fleet-galleries/salyut-2/03": [
     320,
     642
   ],
-  "/images/fleet-galleries/salyut-2/05": [
+  "/images/fleet-galleries/salyut-2/04": [
     320,
     1280,
     1920
@@ -5490,30 +5541,7 @@
     1280,
     1600
   ],
-  "/images/fleet-galleries/salyut-3/02": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/fleet-galleries/salyut-3/03": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/salyut-4/01": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/fleet-galleries/salyut-4/04": [
-    320,
-    576
-  ],
-  "/images/fleet-galleries/salyut-4/05": [
+  "/images/fleet-galleries/salyut-4/03": [
     320,
     640,
     1280,
@@ -5524,7 +5552,9 @@
   ],
   "/images/fleet-galleries/salyut-5/02": [
     320,
-    602
+    1280,
+    2048,
+    2643
   ],
   "/images/fleet-galleries/salyut-5/03": [
     320,
@@ -5533,12 +5563,6 @@
     1920
   ],
   "/images/fleet-galleries/salyut-5/04": [
-    320,
-    630,
-    1009,
-    1483
-  ],
-  "/images/fleet-galleries/salyut-5/05": [
     320,
     640,
     1280,
@@ -5564,7 +5588,9 @@
   ],
   "/images/fleet-galleries/salyut-6/05": [
     320,
-    514
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/salyut-7/01": [
     320,
@@ -5580,16 +5606,14 @@
   "/images/fleet-galleries/salyut-7/04": [
     320,
     1280,
-    1850
-  ],
-  "/images/fleet-galleries/salyut-7/05": [
-    320,
-    1280,
-    1920
+    2048,
+    3000
   ],
   "/images/fleet-galleries/saturn-ib/01": [
     320,
-    640
+    728,
+    1165,
+    1706
   ],
   "/images/fleet-galleries/saturn-ib/02": [
     320,
@@ -5602,29 +5626,28 @@
   ],
   "/images/fleet-galleries/saturn-ib/04": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/saturn-ib/05": [
     320,
-    1280
+    1024,
+    1639
   ],
   "/images/fleet-galleries/saturn-v/01": [
     320,
-    960
+    843
   ],
   "/images/fleet-galleries/saturn-v/02": [
     320,
-    843
+    871
   ],
   "/images/fleet-galleries/saturn-v/03": [
     320,
-    871
-  ],
-  "/images/fleet-galleries/saturn-v/04": [
-    320,
     1280
   ],
-  "/images/fleet-galleries/saturn-v/05": [
+  "/images/fleet-galleries/saturn-v/04": [
     320,
     640,
     929
@@ -5634,8 +5657,9 @@
   ],
   "/images/fleet-galleries/sbirs-heo/02": [
     320,
-    1280,
-    1920
+    1187,
+    1899,
+    2540
   ],
   "/images/fleet-galleries/schiaparelli/01": [
     320,
@@ -5717,17 +5741,15 @@
   ],
   "/images/fleet-galleries/skylab/02": [
     320,
-    1014
+    1280
   ],
   "/images/fleet-galleries/skylab/03": [
     320,
-    1280
+    1254,
+    2006,
+    3009
   ],
   "/images/fleet-galleries/skylab/04": [
-    320,
-    977
-  ],
-  "/images/fleet-galleries/skylab/05": [
     320,
     1275,
     1920
@@ -5786,16 +5808,12 @@
   ],
   "/images/fleet-galleries/sojourner/02": [
     320,
-    640
-  ],
-  "/images/fleet-galleries/sojourner/03": [
-    320,
     819
   ],
-  "/images/fleet-galleries/sojourner/04": [
+  "/images/fleet-galleries/sojourner/03": [
     256
   ],
-  "/images/fleet-galleries/sojourner/05": [
+  "/images/fleet-galleries/sojourner/04": [
     320,
     640
   ],
@@ -5822,13 +5840,6 @@
     720,
     1152,
     1729
-  ],
-  "/images/fleet-galleries/sokol-m/01": [
-    320,
-    534,
-    640,
-    854,
-    1280
   ],
   "/images/fleet-galleries/solar-orbiter/01": [
     320,
@@ -5877,25 +5888,12 @@
   ],
   "/images/fleet-galleries/soyuz-7k-ok/01": [
     320,
-    640,
     1280
   ],
   "/images/fleet-galleries/soyuz-7k-ok/02": [
     320,
+    640,
     1280
-  ],
-  "/images/fleet-galleries/soyuz-7k-ok/03": [
-    320,
-    1280
-  ],
-  "/images/fleet-galleries/soyuz-7k-ok/04": [
-    320,
-    996
-  ],
-  "/images/fleet-galleries/soyuz-7k-ok/05": [
-    320,
-    1206,
-    1460
   ],
   "/images/fleet-galleries/soyuz-fg/01": [
     320,
@@ -5936,11 +5934,14 @@
   ],
   "/images/fleet-galleries/soyuz-t/04": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/soyuz-t/05": [
     320,
-    801
+    1280,
+    2048,
+    2560
   ],
   "/images/fleet-galleries/soyuz-tm/01": [
     320,
@@ -5958,7 +5959,8 @@
   "/images/fleet-galleries/soyuz-tm/04": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/soyuz-tm/05": [
     320,
@@ -5972,16 +5974,11 @@
     1280,
     1600
   ],
-  "/images/fleet-galleries/soyuz-tma/02": [
+  "/images/fleet-galleries/soyuz-tma/03": [
     320,
-    783,
     960
   ],
   "/images/fleet-galleries/soyuz-tma/04": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/soyuz-tma/05": [
     320,
     853,
     960
@@ -6040,14 +6037,10 @@
   ],
   "/images/fleet-galleries/space-shuttle-orbiter/03": [
     320,
-    1280
-  ],
-  "/images/fleet-galleries/space-shuttle-orbiter/04": [
-    320,
     1280,
     1920
   ],
-  "/images/fleet-galleries/space-shuttle-orbiter/05": [
+  "/images/fleet-galleries/space-shuttle-orbiter/04": [
     320,
     640,
     1280,
@@ -6089,7 +6082,7 @@
   ],
   "/images/fleet-galleries/spektr-rg/04": [
     320,
-    960
+    1200
   ],
   "/images/fleet-galleries/spektr-rg/05": [
     320,
@@ -6190,7 +6183,9 @@
   ],
   "/images/fleet-galleries/starbase-orbital-a/04": [
     320,
-    600
+    1012,
+    1618,
+    2428
   ],
   "/images/fleet-galleries/starbase-orbital-a/05": [
     320,
@@ -6254,24 +6249,24 @@
   ],
   "/images/fleet-galleries/starlink/02": [
     320,
-    585
-  ],
-  "/images/fleet-galleries/starlink/03": [
-    320,
+    640,
     1280,
     1920
   ],
-  "/images/fleet-galleries/starlink/04": [
+  "/images/fleet-galleries/starlink/03": [
     320,
     448,
     700
   ],
-  "/images/fleet-galleries/starlink/05": [
+  "/images/fleet-galleries/starlink/04": [
     320,
-    500
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/starship/01": [
     320,
+    640,
     1196,
     1600
   ],
@@ -6345,10 +6340,6 @@
   ],
   "/images/fleet-galleries/tanegashima-yoshinobu/04": [
     320,
-    529
-  ],
-  "/images/fleet-galleries/tanegashima-yoshinobu/05": [
-    320,
     1280
   ],
   "/images/fleet-galleries/tess/01": [
@@ -6365,10 +6356,6 @@
     1280
   ],
   "/images/fleet-galleries/tess/04": [
-    320,
-    1280
-  ],
-  "/images/fleet-galleries/tess/05": [
     320,
     1280
   ],
@@ -6440,11 +6427,14 @@
   "/images/fleet-galleries/tianwen-1/04": [
     320,
     1280,
-    1430
+    2048,
+    3072
   ],
   "/images/fleet-galleries/tianwen-1/05": [
     320,
-    1122
+    1280,
+    2048,
+    2336
   ],
   "/images/fleet-galleries/tianzhou/01": [
     320,
@@ -6455,11 +6445,7 @@
     320,
     960
   ],
-  "/images/fleet-galleries/tianzhou/03": [
-    320,
-    960
-  ],
-  "/images/fleet-galleries/tianzhou/05": [
+  "/images/fleet-galleries/tianzhou/04": [
     320,
     960
   ],
@@ -6504,10 +6490,6 @@
     1280,
     1920
   ],
-  "/images/fleet-galleries/ulysses/05": [
-    320,
-    539
-  ],
   "/images/fleet-galleries/vandenberg-slc-4e/01": [
     320,
     640,
@@ -6540,6 +6522,7 @@
   ],
   "/images/fleet-galleries/vega-1/01": [
     320,
+    640,
     1280,
     1920
   ],
@@ -6554,10 +6537,6 @@
     753,
     1205,
     1808
-  ],
-  "/images/fleet-galleries/vega-1/05": [
-    320,
-    566
   ],
   "/images/fleet-galleries/vega-2/01": [
     320,
@@ -6585,7 +6564,9 @@
   ],
   "/images/fleet-galleries/venera-13/04": [
     320,
-    620
+    861,
+    1377,
+    1890
   ],
   "/images/fleet-galleries/venera-7/01": [
     320,
@@ -6707,7 +6688,9 @@
   ],
   "/images/fleet-galleries/vikram-cy2/03": [
     320,
-    960
+    854,
+    1367,
+    2050
   ],
   "/images/fleet-galleries/vikram-cy2/05": [
     320,
@@ -6720,7 +6703,9 @@
   ],
   "/images/fleet-galleries/vikram-cy3/03": [
     320,
-    608
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/vikram-cy3/05": [
     320,
@@ -6752,7 +6737,10 @@
     793
   ],
   "/images/fleet-galleries/voskhod-11a57/05": [
-    157
+    320,
+    1280,
+    2048,
+    2592
   ],
   "/images/fleet-galleries/voskhod/01": [
     320,
@@ -6790,16 +6778,10 @@
   ],
   "/images/fleet-galleries/vostok-6/01": [
     320,
+    640,
     850,
     1361,
     1600
-  ],
-  "/images/fleet-galleries/vostok-6/02": [
-    320,
-    640,
-    850,
-    1360,
-    1920
   ],
   "/images/fleet-galleries/vostok-k/01": [
     320,
@@ -6826,7 +6808,10 @@
     1403
   ],
   "/images/fleet-galleries/vostok-k/05": [
-    318
+    320,
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/vostok/01": [
     320,
@@ -6855,10 +6840,6 @@
   "/images/fleet-galleries/voyager-1/03": [
     320,
     1105
-  ],
-  "/images/fleet-galleries/voyager-1/04": [
-    320,
-    1280
   ],
   "/images/fleet-galleries/voyager-2/01": [
     320,
@@ -6906,6 +6887,7 @@
   ],
   "/images/fleet-galleries/vulcan/04": [
     320,
+    640,
     1280,
     1600
   ],
@@ -6955,16 +6937,6 @@
     1365,
     1920
   ],
-  "/images/fleet-galleries/x37b/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/x37b/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/fleet-galleries/xichang-lc-2/01": [
     320,
     640,
@@ -6992,7 +6964,9 @@
   ],
   "/images/fleet-galleries/xmm-newton/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/xmm-newton/03": [
     320,
@@ -7015,12 +6989,6 @@
   ],
   "/images/fleet-galleries/yf-100/02": [
     320,
-    765,
-    1224,
-    1836
-  ],
-  "/images/fleet-galleries/yf-100/03": [
-    320,
     848,
     1356,
     2035
@@ -7037,21 +7005,13 @@
   ],
   "/images/fleet-galleries/yutu-2/01": [
     320,
-    960
+    350
   ],
   "/images/fleet-galleries/yutu-2/02": [
     320,
-    960
-  ],
-  "/images/fleet-galleries/yutu-2/03": [
-    320,
-    350
-  ],
-  "/images/fleet-galleries/yutu-2/04": [
-    320,
     1112
   ],
-  "/images/fleet-galleries/yutu-2/05": [
+  "/images/fleet-galleries/yutu-2/03": [
     320,
     1146,
     1834,
@@ -7067,14 +7027,10 @@
   ],
   "/images/fleet-galleries/yutu/03": [
     320,
-    960
-  ],
-  "/images/fleet-galleries/yutu/04": [
-    320,
     640,
     960
   ],
-  "/images/fleet-galleries/yutu/05": [
+  "/images/fleet-galleries/yutu/04": [
     320,
     960
   ],
@@ -7094,11 +7050,6 @@
     320,
     1280,
     1920
-  ],
-  "/images/fleet-galleries/zhurong/05": [
-    320,
-    1011,
-    1301
   ],
   "/images/iss-modules/beam/01": [
     320,
@@ -7271,11 +7222,9 @@
   ],
   "/images/iss-modules/harmony/03": [
     320,
-    1280
-  ],
-  "/images/iss-modules/harmony/04": [
-    320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/iss-modules/htv_x/01": [
     320,
@@ -7323,7 +7272,9 @@
   ],
   "/images/iss-modules/leonardo/02": [
     320,
-    1279
+    1165,
+    1864,
+    2796
   ],
   "/images/iss-modules/leonardo/03": [
     320,
@@ -7374,10 +7325,6 @@
     320,
     1280
   ],
-  "/images/iss-modules/pirs/05": [
-    320,
-    1280
-  ],
   "/images/iss-modules/prichal/01": [
     320,
     960
@@ -7422,11 +7369,7 @@
     320,
     1280
   ],
-  "/images/iss-modules/quest/03": [
-    320,
-    1280
-  ],
-  "/images/iss-modules/quest/05": [
+  "/images/iss-modules/quest/04": [
     320,
     1280
   ],
@@ -7448,7 +7391,8 @@
   ],
   "/images/iss-modules/rassvet/05": [
     320,
-    1280
+    1280,
+    1999
   ],
   "/images/iss-modules/soyuz_ms/01": [
     320,
@@ -7530,10 +7474,6 @@
     1280,
     1920
   ],
-  "/images/iss-modules/unity/05": [
-    320,
-    1196
-  ],
   "/images/iss-modules/zarya/01": [
     320,
     960
@@ -7555,10 +7495,6 @@
     462
   ],
   "/images/iss-modules/zvezda/04": [
-    320,
-    700
-  ],
-  "/images/iss-modules/zvezda/05": [
     320,
     700
   ],
@@ -7613,7 +7549,9 @@
   ],
   "/images/mars-sites/exomars-rosalind-franklin/02": [
     320,
-    499
+    1280,
+    2048,
+    3072
   ],
   "/images/mars-sites/exomars-rosalind-franklin/03": [
     320,
@@ -7642,12 +7580,6 @@
   ],
   "/images/mars-sites/hope/03": [
     320,
-    591,
-    946,
-    960
-  ],
-  "/images/mars-sites/hope/04": [
-    320,
     640,
     960
   ],
@@ -7666,6 +7598,7 @@
   ],
   "/images/mars-sites/mangalyaan/01": [
     320,
+    640,
     960
   ],
   "/images/mars-sites/mangalyaan/02": [
@@ -7687,7 +7620,9 @@
   ],
   "/images/mars-sites/mariner9/04": [
     320,
-    640
+    1280,
+    2048,
+    2995
   ],
   "/images/mars-sites/mariner9/05": [
     300
@@ -7698,7 +7633,9 @@
   ],
   "/images/mars-sites/mars-odyssey/02": [
     320,
-    640
+    1280,
+    2048,
+    3072
   ],
   "/images/mars-sites/mars-odyssey/03": [
     320,
@@ -7722,14 +7659,10 @@
   ],
   "/images/mars-sites/mars-pathfinder/03": [
     320,
-    640
-  ],
-  "/images/mars-sites/mars-pathfinder/04": [
-    320,
     640,
     819
   ],
-  "/images/mars-sites/mars-pathfinder/05": [
+  "/images/mars-sites/mars-pathfinder/04": [
     256
   ],
   "/images/mars-sites/mars2/01": [
@@ -7737,14 +7670,6 @@
     640,
     1280,
     1600
-  ],
-  "/images/mars-sites/mars2/02": [
-    320,
-    960
-  ],
-  "/images/mars-sites/mars2/03": [
-    320,
-    960
   ],
   "/images/mars-sites/mars3/01": [
     320,
@@ -7754,27 +7679,21 @@
   ],
   "/images/mars-sites/mars3/02": [
     320,
-    960
+    719,
+    1150,
+    1725
   ],
   "/images/mars-sites/mars3/03": [
-    320,
-    960
-  ],
-  "/images/mars-sites/mars3/04": [
     320,
     689,
     960
   ],
-  "/images/mars-sites/mars3/05": [
+  "/images/mars-sites/mars3/04": [
     320,
     640
   ],
   "/images/mars-sites/mars6/01": [
     250
-  ],
-  "/images/mars-sites/mars6/02": [
-    320,
-    960
   ],
   "/images/mars-sites/maven/01": [
     320,
@@ -7788,7 +7707,9 @@
   ],
   "/images/mars-sites/maven/03": [
     320,
-    1032
+    1280,
+    2048,
+    3000
   ],
   "/images/mars-sites/maven/04": [
     320,
@@ -7796,7 +7717,9 @@
   ],
   "/images/mars-sites/maven/05": [
     320,
-    603
+    1280,
+    2048,
+    3000
   ],
   "/images/mars-sites/mro/01": [
     320,
@@ -7854,11 +7777,9 @@
   ],
   "/images/mars-sites/perseverance/04": [
     320,
-    1280
-  ],
-  "/images/mars-sites/perseverance/05": [
-    320,
-    1279
+    1280,
+    2048,
+    3072
   ],
   "/images/mars-sites/phoenix/01": [
     320,
@@ -7902,7 +7823,9 @@
   "/images/mars-sites/spirit/01": [
     320,
     640,
-    960
+    1280,
+    2048,
+    3000
   ],
   "/images/mars-sites/spirit/02": [
     320,
@@ -7951,16 +7874,15 @@
   ],
   "/images/mars-sites/tianwen1-orbiter/04": [
     320,
-    960
-  ],
-  "/images/mars-sites/tianwen1-orbiter/05": [
-    320,
-    960
+    1280,
+    1920
   ],
   "/images/mars-sites/viking1-lander/01": [
     320,
     640,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/mars-sites/viking1-lander/02": [
     207
@@ -7984,20 +7906,26 @@
     960
   ],
   "/images/mars-sites/viking1-orbiter/02": [
-    207
+    320,
+    1280,
+    2048,
+    2520
   ],
   "/images/mars-sites/viking1-orbiter/03": [
     320,
     1280,
-    1744
+    1778
   ],
   "/images/mars-sites/viking1-orbiter/04": [
     320,
-    625
+    1004,
+    1606,
+    2094
   ],
   "/images/mars-sites/viking1-orbiter/05": [
     320,
-    640
+    1280,
+    1360
   ],
   "/images/mars-sites/viking2-lander/01": [
     320,
@@ -8005,7 +7933,10 @@
     960
   ],
   "/images/mars-sites/viking2-lander/02": [
-    319
+    320,
+    1280,
+    2048,
+    3000
   ],
   "/images/mars-sites/viking2-lander/03": [
     208
@@ -8041,7 +7972,7 @@
   "/images/missions/akatsuki/01": [
     320,
     640,
-    960
+    1000
   ],
   "/images/missions/akatsuki/02": [
     320,
@@ -8053,11 +7984,13 @@
   ],
   "/images/missions/akatsuki/04": [
     320,
-    1024
+    942
   ],
   "/images/missions/akatsuki/05": [
     320,
-    467
+    850,
+    1360,
+    1594
   ],
   "/images/missions/apollo-1/01": [
     320,
@@ -8068,7 +8001,8 @@
   "/images/missions/apollo-1/02": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/missions/apollo-1/03": [
     320,
@@ -8078,7 +8012,9 @@
   ],
   "/images/missions/apollo-1/04": [
     320,
-    492
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/apollo-1/05": [
     320,
@@ -8105,11 +8041,6 @@
     320,
     1280,
     1920
-  ],
-  "/images/missions/apollo-soyuz/05": [
-    320,
-    1280,
-    1600
   ],
   "/images/missions/apollo10/01": [
     320,
@@ -8273,26 +8204,16 @@
   ],
   "/images/missions/apollo7/01": [
     320,
+    640,
     1280,
     1920
   ],
   "/images/missions/apollo7/02": [
     320,
-    640,
     1280,
     1920
   ],
   "/images/missions/apollo7/03": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/missions/apollo7/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/missions/apollo7/05": [
     320,
     1268,
     1920
@@ -8481,7 +8402,9 @@
   ],
   "/images/missions/bepicolombo/04": [
     320,
-    419
+    1280,
+    2048,
+    3000
   ],
   "/images/missions/bepicolombo/05": [
     320,
@@ -8490,7 +8413,7 @@
   ],
   "/images/missions/beresheet/02": [
     320,
-    1029
+    1100
   ],
   "/images/missions/beresheet/03": [
     320,
@@ -8558,7 +8481,9 @@
   ],
   "/images/missions/chandrayaan1/05": [
     320,
-    630
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/chandrayaan3/01": [
     320,
@@ -8574,10 +8499,6 @@
     960
   ],
   "/images/missions/chandrayaan3/04": [
-    320,
-    960
-  ],
-  "/images/missions/chandrayaan3/05": [
     320,
     960
   ],
@@ -8604,17 +8525,12 @@
   "/images/missions/change3/03": [
     320,
     1280,
-    1536
+    2048,
+    2400
   ],
   "/images/missions/change3/04": [
     320,
-    928,
-    1450
-  ],
-  "/images/missions/change3/05": [
-    320,
-    1280,
-    1472
+    952
   ],
   "/images/missions/change4/01": [
     320,
@@ -8678,7 +8594,7 @@
   ],
   "/images/missions/change6/03": [
     320,
-    960
+    948
   ],
   "/images/missions/clementine/01": [
     320,
@@ -8695,7 +8611,8 @@
   ],
   "/images/missions/clementine/04": [
     320,
-    960
+    963,
+    1168
   ],
   "/images/missions/curiosity/01": [
     320,
@@ -8854,7 +8771,9 @@
   ],
   "/images/missions/galileo/02": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/galileo/03": [
     320,
@@ -9068,6 +8987,7 @@
   "/images/missions/hope-probe/03": [
     320,
     591,
+    640,
     946,
     960
   ],
@@ -9075,11 +8995,6 @@
     320,
     640,
     960
-  ],
-  "/images/missions/hope-probe/05": [
-    320,
-    1280,
-    1920
   ],
   "/images/missions/huygens/01": [
     320,
@@ -9117,7 +9032,8 @@
   "/images/missions/inspiration4/03": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/missions/inspiration4/04": [
     320,
@@ -9172,10 +9088,6 @@
     1280,
     1920
   ],
-  "/images/missions/liberty-bell-7/05": [
-    320,
-    630
-  ],
   "/images/missions/lro/01": [
     320,
     1280
@@ -9201,10 +9113,13 @@
   ],
   "/images/missions/lucy/02": [
     320,
-    1041
+    853,
+    1365,
+    2048
   ],
   "/images/missions/lucy/03": [
     320,
+    640,
     674
   ],
   "/images/missions/luna10/01": [
@@ -9306,19 +9221,15 @@
     1920
   ],
   "/images/missions/lunar-prospector/02": [
-    200
+    320,
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/lunar-prospector/03": [
     320,
-    800
-  ],
-  "/images/missions/lunar-prospector/04": [
-    320,
-    800
-  ],
-  "/images/missions/lunar-prospector/05": [
-    320,
-    800
+    1280,
+    2000
   ],
   "/images/missions/magellan/01": [
     320,
@@ -9358,7 +9269,8 @@
   ],
   "/images/missions/mangalyaan/03": [
     320,
-    960
+    1280,
+    1800
   ],
   "/images/missions/mangalyaan/04": [
     320,
@@ -9392,8 +9304,7 @@
   "/images/missions/mariner10/05": [
     320,
     640,
-    1280,
-    1920
+    922
   ],
   "/images/missions/mariner4/01": [
     320,
@@ -9427,8 +9338,7 @@
   "/images/missions/mariner9/04": [
     320,
     640,
-    1280,
-    1920
+    1150
   ],
   "/images/missions/mariner9/05": [
     320,
@@ -9442,7 +9352,9 @@
   ],
   "/images/missions/mars-express/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/mars-express/03": [
     320,
@@ -9466,7 +9378,7 @@
   ],
   "/images/missions/mars-pathfinder/03": [
     320,
-    640
+    1280
   ],
   "/images/missions/mars-pathfinder/04": [
     320,
@@ -9478,7 +9390,10 @@
   ],
   "/images/missions/mars2/01": [
     320,
-    577
+    640,
+    1280,
+    2048,
+    3000
   ],
   "/images/missions/mars2/02": [
     320,
@@ -9486,11 +9401,9 @@
   ],
   "/images/missions/mars2/03": [
     320,
-    960
-  ],
-  "/images/missions/mars2/04": [
-    320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/mars3/01": [
     320,
@@ -9503,10 +9416,6 @@
     960
   ],
   "/images/missions/mars3/03": [
-    320,
-    960
-  ],
-  "/images/missions/mars3/04": [
     320,
     689,
     960
@@ -9526,19 +9435,19 @@
   ],
   "/images/missions/maven/02": [
     320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/missions/maven/03": [
     320,
-    1032
+    1280
   ],
   "/images/missions/maven/04": [
     320,
-    1280
-  ],
-  "/images/missions/maven/05": [
-    320,
-    603
+    1280,
+    2048,
+    3000
   ],
   "/images/missions/mercury-atlas-9/01": [
     320,
@@ -9605,8 +9514,9 @@
   "/images/missions/mmx/01": [
     320,
     640,
-    853,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/mmx/02": [
     320,
@@ -9614,7 +9524,7 @@
   ],
   "/images/missions/mmx/03": [
     320,
-    960
+    1080
   ],
   "/images/missions/mmx/04": [
     320,
@@ -9622,7 +9532,9 @@
   ],
   "/images/missions/mmx/05": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/near-shoemaker/01": [
     320,
@@ -9662,6 +9574,7 @@
   ],
   "/images/missions/opportunity/03": [
     320,
+    640,
     1018,
     1629,
     1920
@@ -9738,28 +9651,9 @@
     1280,
     1920
   ],
-  "/images/missions/otv-2/02": [
-    320,
-    853,
-    1365,
-    1824
-  ],
-  "/images/missions/otv-2/03": [
-    320,
-    1280,
-    1792
-  ],
-  "/images/missions/otv-2/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/missions/otv-2/05": [
-    320,
-    398
-  ],
   "/images/missions/otv-3/01": [
     320,
+    640,
     1280,
     1920
   ],
@@ -9773,18 +9667,6 @@
     320,
     1280,
     1920
-  ],
-  "/images/missions/otv-3/04": [
-    320,
-    853,
-    1365,
-    1824
-  ],
-  "/images/missions/otv-3/05": [
-    320,
-    640,
-    1280,
-    1792
   ],
   "/images/missions/otv-4/01": [
     320,
@@ -9854,12 +9736,6 @@
     592,
     708
   ],
-  "/images/missions/otv-6/05": [
-    320,
-    853,
-    1365,
-    1824
-  ],
   "/images/missions/otv-7/01": [
     320,
     891,
@@ -9925,10 +9801,6 @@
     640,
     1280
   ],
-  "/images/missions/perseverance/05": [
-    320,
-    1279
-  ],
   "/images/missions/phoenix/01": [
     320,
     512
@@ -9949,6 +9821,7 @@
   ],
   "/images/missions/pioneer-10/01": [
     320,
+    640,
     1280,
     1400
   ],
@@ -9972,11 +9845,13 @@
   ],
   "/images/missions/pioneer-11/02": [
     320,
-    866
+    1012,
+    1619,
+    1760
   ],
   "/images/missions/pioneer-11/03": [
     320,
-    960
+    640
   ],
   "/images/missions/pioneer-11/05": [
     320,
@@ -10054,12 +9929,14 @@
   ],
   "/images/missions/rosetta/05": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/schiaparelli/01": [
     320,
     1280,
-    2048
+    1920
   ],
   "/images/missions/schiaparelli/02": [
     320,
@@ -10127,19 +10004,15 @@
   ],
   "/images/missions/sigma-7/02": [
     320,
-    362
+    1280,
+    1920
   ],
   "/images/missions/sigma-7/03": [
     320,
     1280,
-    1920
-  ],
-  "/images/missions/sigma-7/04": [
-    320,
-    1280,
     1600
   ],
-  "/images/missions/sigma-7/05": [
+  "/images/missions/sigma-7/04": [
     320,
     800
   ],
@@ -10193,11 +10066,6 @@
     1280,
     1920
   ],
-  "/images/missions/skylab-3/05": [
-    320,
-    1225,
-    1920
-  ],
   "/images/missions/skylab-4/01": [
     320,
     1280,
@@ -10219,10 +10087,6 @@
     640,
     1280,
     1920
-  ],
-  "/images/missions/skylab-4/05": [
-    320,
-    1095
   ],
   "/images/missions/slim/01": [
     320,
@@ -10378,7 +10242,9 @@
   ],
   "/images/missions/starship-mars-crew/02": [
     320,
-    960
+    1141,
+    1826,
+    2739
   ],
   "/images/missions/starship-mars-crew/03": [
     320,
@@ -10386,10 +10252,6 @@
     960
   ],
   "/images/missions/starship-mars-crew/04": [
-    320,
-    960
-  ],
-  "/images/missions/starship-mars-crew/05": [
     320,
     640,
     1280,
@@ -10642,10 +10504,13 @@
   ],
   "/images/missions/tianwen1/05": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/ulysses/01": [
     320,
+    640,
     960
   ],
   "/images/missions/ulysses/03": [
@@ -10662,7 +10527,9 @@
   ],
   "/images/missions/vega-1/03": [
     320,
-    566
+    925,
+    1480,
+    2220
   ],
   "/images/missions/vega-1/04": [
     320,
@@ -10670,11 +10537,15 @@
   ],
   "/images/missions/vega-2/01": [
     320,
-    566
+    853,
+    1365,
+    1500
   ],
   "/images/missions/vega-2/02": [
     320,
-    361
+    908,
+    1453,
+    2180
   ],
   "/images/missions/venera-13/01": [
     320,
@@ -10688,10 +10559,6 @@
   "/images/missions/venera-13/03": [
     320,
     958
-  ],
-  "/images/missions/venera-13/04": [
-    320,
-    620
   ],
   "/images/missions/viking1/01": [
     320,
@@ -10797,7 +10664,9 @@
     1920
   ],
   "/images/missions/vostok-2/04": [
-    180
+    320,
+    1280,
+    1600
   ],
   "/images/missions/vostok-2/05": [
     320,
@@ -10822,9 +10691,6 @@
     1280,
     1920
   ],
-  "/images/missions/vostok-3/05": [
-    180
-  ],
   "/images/missions/vostok-4/01": [
     320,
     640,
@@ -10845,9 +10711,6 @@
     320,
     1280,
     1600
-  ],
-  "/images/missions/vostok-4/05": [
-    180
   ],
   "/images/missions/vostok-5/01": [
     260
@@ -10876,8 +10739,8 @@
   ],
   "/images/missions/vostok-6/05": [
     320,
-    867,
-    1317
+    1280,
+    1816
   ],
   "/images/missions/voyager-1/01": [
     320,
@@ -10890,15 +10753,19 @@
   ],
   "/images/missions/voyager-1/03": [
     320,
-    1105
+    1012,
+    1619,
+    1760
   ],
   "/images/missions/voyager-1/04": [
     320,
-    1280
+    853,
+    1365,
+    2048
   ],
   "/images/missions/voyager-1/05": [
     320,
-    1138
+    971
   ],
   "/images/missions/voyager-2/01": [
     320,
@@ -10990,11 +10857,6 @@
     320,
     952
   ],
-  "/images/moon-sites/change3/05": [
-    320,
-    1280,
-    1800
-  ],
   "/images/moon-sites/change4/01": [
     320,
     640,
@@ -11035,7 +10897,9 @@
   ],
   "/images/moon-sites/luna21/02": [
     320,
-    683
+    1280,
+    2048,
+    3072
   ],
   "/images/moon-sites/luna21/03": [
     320,
@@ -11061,6 +10925,7 @@
   ],
   "/images/planets/earth/05": [
     320,
+    640,
     1280,
     1600
   ],
@@ -11092,8 +10957,7 @@
   ],
   "/images/planets/mars/01": [
     320,
-    1280,
-    1600
+    1065
   ],
   "/images/planets/mars/02": [
     320,
@@ -11131,8 +10995,7 @@
   ],
   "/images/planets/mercury/04": [
     320,
-    1280,
-    1600
+    1032
   ],
   "/images/planets/mercury/05": [
     320,
@@ -11214,7 +11077,9 @@
   ],
   "/images/planets/venus/02": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/planets/venus/03": [
     320,
@@ -11222,7 +11087,7 @@
   ],
   "/images/planets/venus/04": [
     320,
-    1280
+    1024
   ],
   "/images/recommendations/blogs/ars-technica": [
     240
@@ -11360,15 +11225,6 @@
     640,
     1100
   ],
-  "/images/satellites/ariel/02": [
-    320,
-    979
-  ],
-  "/images/satellites/ariel/03": [
-    320,
-    1280,
-    1440
-  ],
   "/images/satellites/callisto/01": [
     320,
     640,
@@ -11393,11 +11249,6 @@
     1280
   ],
   "/images/satellites/charon/02": [
-    320,
-    1280,
-    1600
-  ],
-  "/images/satellites/charon/03": [
     320,
     1280,
     1600
@@ -11439,7 +11290,7 @@
     1280,
     1600
   ],
-  "/images/satellites/europa/05": [
+  "/images/satellites/europa/04": [
     320,
     632
   ],
@@ -11450,13 +11301,9 @@
   ],
   "/images/satellites/ganymede/02": [
     320,
-    790
-  ],
-  "/images/satellites/ganymede/04": [
-    320,
     560
   ],
-  "/images/satellites/ganymede/05": [
+  "/images/satellites/ganymede/03": [
     320,
     1280,
     1600
@@ -11522,15 +11369,6 @@
     640,
     648
   ],
-  "/images/satellites/oberon/02": [
-    320,
-    513
-  ],
-  "/images/satellites/oberon/04": [
-    320,
-    1099,
-    1600
-  ],
   "/images/satellites/phobos/01": [
     320,
     640,
@@ -11544,14 +11382,10 @@
   "/images/satellites/phobos/03": [
     320,
     1280,
-    1600
+    2048,
+    3072
   ],
   "/images/satellites/phobos/04": [
-    320,
-    1280,
-    1600
-  ],
-  "/images/satellites/phobos/05": [
     320,
     794
   ],
@@ -11592,10 +11426,6 @@
   "/images/satellites/titania/04": [
     320,
     738
-  ],
-  "/images/satellites/titania/05": [
-    320,
-    1200
   ],
   "/images/satellites/triton/01": [
     320,
@@ -12078,10 +11908,6 @@
   "/images/small-bodies/oumuamua/01": [
     320,
     640,
-    960
-  ],
-  "/images/small-bodies/oumuamua/02": [
-    320,
     854,
     1366,
     1600
@@ -12102,13 +11928,9 @@
   ],
   "/images/small-bodies/pluto/04": [
     320,
-    1280,
-    1600
-  ],
-  "/images/small-bodies/pluto/05": [
-    249,
-    399,
-    599
+    1186,
+    1897,
+    2520
   ],
   "/images/stars/altair/01": [
     320,
@@ -12184,11 +12006,11 @@
   ],
   "/images/tiangong-modules/chinarm/02": [
     320,
-    960
+    800
   ],
   "/images/tiangong-modules/chinarm/03": [
     320,
-    960
+    800
   ],
   "/images/tiangong-modules/chinarm/04": [
     320,
@@ -12196,22 +12018,19 @@
   ],
   "/images/tiangong-modules/mengtian/01": [
     320,
-    876,
-    960
+    640,
+    810
   ],
   "/images/tiangong-modules/mengtian/02": [
     320,
-    960
+    1280,
+    1440
   ],
   "/images/tiangong-modules/mengtian/03": [
     320,
     960
   ],
   "/images/tiangong-modules/mengtian/04": [
-    320,
-    960
-  ],
-  "/images/tiangong-modules/mengtian/05": [
     320,
     960
   ],
@@ -12226,15 +12045,11 @@
   ],
   "/images/tiangong-modules/shenzhou/03": [
     320,
-    960
+    545
   ],
   "/images/tiangong-modules/shenzhou/04": [
     320,
-    545
-  ],
-  "/images/tiangong-modules/shenzhou/05": [
-    320,
-    960
+    810
   ],
   "/images/tiangong-modules/tianhe/01": [
     320,
@@ -12259,11 +12074,13 @@
   ],
   "/images/tiangong-modules/tianzhou/02": [
     320,
-    960
+    765
   ],
   "/images/tiangong-modules/tianzhou/03": [
     320,
-    960
+    1280,
+    2048,
+    2560
   ],
   "/images/tiangong-modules/tianzhou/04": [
     320,
@@ -12279,199 +12096,232 @@
   ],
   "/images/tiangong-modules/wentian/02": [
     320,
-    960
+    1280,
+    1490
   ],
   "/images/tiangong-modules/wentian/03": [
     320,
-    960
+    1280,
+    1500
   ],
   "/images/tiangong-modules/wentian/04": [
     320,
-    876,
-    960
+    1280,
+    1335
   ],
   "/images/anatomy/atlas-lv-3b": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/m-v": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/proton-k": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/pslv": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/soyuz": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/titan-ii-glv": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/voskhod-11a57": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/vostok-k": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy-exploded/atlas-lv-3b": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/atlas-v": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/h-iia": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/h3": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/long-march-2f": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/long-march-3b": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/lvm3": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/m-v": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/mercury-redstone": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/proton-k": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/pslv": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/saturn-ib": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/saturn-v": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/soyuz": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/space-shuttle-stack": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/starship": [
     320,
+    640,
     1280,
     2048,
-    2528
+    3072
   ],
   "/images/anatomy-exploded/titan-ii-glv": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/voskhod-11a57": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/vostok-k": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/ariane-1": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/ariane-5": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/falcon-9": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/long-march-5": [
     320,
+    640,
     1280,
     2048,
     2528
@@ -13760,7 +13610,9 @@
   "/images/missions/vega-2/03": [
     320,
     640,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/aces/02": [
     320,
@@ -13827,10 +13679,9 @@
   ],
   "/images/fleet-galleries/emu/03": [
     320,
-    640,
-    989,
-    1583,
-    2374
+    1280,
+    2048,
+    3032
   ],
   "/images/fleet-galleries/emu/04": [
     320,
@@ -13853,7 +13704,7 @@
     2048,
     2592
   ],
-  "/images/fleet-galleries/hayabusa-2/04": [
+  "/images/fleet-galleries/hayabusa-2/03": [
     320,
     640,
     1280,
@@ -13930,10 +13781,9 @@
   ],
   "/images/fleet-galleries/vega-2/04": [
     320,
-    640,
-    1280,
-    2048,
-    2362
+    853,
+    1365,
+    2048
   ],
   "/images/fleet-galleries/a7l/03": [
     320,
@@ -13982,13 +13832,6 @@
     1280,
     2048,
     3072
-  ],
-  "/images/missions/venera-13/05": [
-    320,
-    640,
-    1021,
-    1633,
-    2185
   ],
   "/images/missions/freedom-7/05": [
     320,
@@ -14081,18 +13924,6 @@
     320,
     640,
     1280,
-    1575
-  ],
-  "/images/earth-objects/change2/03": [
-    320,
-    640,
-    1280,
-    1950
-  ],
-  "/images/earth-objects/change2/04": [
-    320,
-    640,
-    1280,
     2048,
     2400
   ],
@@ -14117,7 +13948,7 @@
     2048,
     3072
   ],
-  "/images/earth-objects/o3b/02": [
+  "/images/earth-objects/o3b/01": [
     320,
     640,
     1280,
@@ -14184,22 +14015,16 @@
     2048,
     2400
   ],
-  "/images/fleet-galleries/change-2/03": [
+  "/images/fleet-galleries/change-2/02": [
     320,
     640,
     1050
   ],
-  "/images/fleet-galleries/change-3/04": [
+  "/images/fleet-galleries/change-3/03": [
     320,
     640,
     1280,
     1594
-  ],
-  "/images/fleet-galleries/change-3/05": [
-    320,
-    640,
-    1280,
-    1536
   ],
   "/images/fleet-galleries/change-4/04": [
     320,
@@ -14268,13 +14093,6 @@
     2048,
     2804
   ],
-  "/images/fleet-galleries/gaia/05": [
-    320,
-    640,
-    1280,
-    2048,
-    2962
-  ],
   "/images/fleet-galleries/galileo-gnss/03": [
     320,
     640,
@@ -14289,11 +14107,6 @@
     1366,
     2048
   ],
-  "/images/fleet-galleries/giotto/05": [
-    320,
-    640,
-    910
-  ],
   "/images/fleet-galleries/h-iia/02": [
     320,
     640,
@@ -14301,7 +14114,7 @@
     1440,
     2160
   ],
-  "/images/fleet-galleries/hitomi/05": [
+  "/images/fleet-galleries/hitomi/04": [
     320,
     640,
     1280,
@@ -14444,28 +14257,28 @@
     2048,
     2568
   ],
-  "/images/fleet-galleries/sokol-m/02": [
+  "/images/fleet-galleries/sokol-m/01": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/fleet-galleries/sokol-m/03": [
+  "/images/fleet-galleries/sokol-m/02": [
     320,
     640,
     853,
     1366,
     2048
   ],
-  "/images/fleet-galleries/sokol-m/04": [
+  "/images/fleet-galleries/sokol-m/03": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/fleet-galleries/sokol-m/05": [
+  "/images/fleet-galleries/sokol-m/04": [
     320,
     640,
     1280,
@@ -14548,7 +14361,7 @@
     2048,
     3072
   ],
-  "/images/mars-sites/hope/05": [
+  "/images/mars-sites/hope/04": [
     320,
     640,
     1024
@@ -14565,28 +14378,13 @@
     640,
     1280,
     2048,
-    2564
+    3072
   ],
   "/images/mars-sites/mars3-orbiter/03": [
     320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/mars-sites/mars3-orbiter/04": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/mars-sites/mars3-orbiter/05": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
+    719,
+    1150,
+    1725
   ],
   "/images/mars-sites/schiaparelli/05": [
     320,
@@ -14645,8 +14443,9 @@
   ],
   "/images/missions/clementine/05": [
     320,
-    640,
-    1132
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/freedom-7/03": [
     320,
@@ -14659,12 +14458,6 @@
     320,
     640,
     853
-  ],
-  "/images/missions/giotto/05": [
-    320,
-    640,
-    1280,
-    1544
   ],
   "/images/missions/juice/02": [
     320,
@@ -14732,7 +14525,7 @@
     1280,
     2000
   ],
-  "/images/missions/mars3/05": [
+  "/images/missions/mars3/04": [
     320,
     640,
     1280,
@@ -14754,12 +14547,6 @@
     2400
   ],
   "/images/moon-sites/change2/02": [
-    320,
-    640,
-    1280,
-    1950
-  ],
-  "/images/moon-sites/change2/03": [
     320,
     640,
     1125
@@ -14785,14 +14572,13 @@
   ],
   "/images/moon-sites/luna21/04": [
     320,
-    640,
-    1280,
-    1946
+    1000
   ],
   "/images/moon-sites/luna21/05": [
     320,
-    640,
-    952
+    1280,
+    2048,
+    3072
   ],
   "/images/small-bodies/halley/02": [
     320,
@@ -14821,25 +14607,6 @@
   "/images/fleet-galleries/plesetsk-41-1/03": [
     320,
     600
-  ],
-  "/images/fleet-galleries/tiangong-1/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/tundra-sirius/03": [
-    320,
-    401
-  ],
-  "/images/mars-sites/mars6/03": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/missions/mars6/03": [
-    320,
-    1280,
-    1920
   ],
   "/images/missions/shenzhou-2/03": [
     320,
@@ -14913,23 +14680,6 @@
     2048,
     3072
   ],
-  "/images/fleet-galleries/change-2/02": [
-    320,
-    640,
-    1280,
-    1950
-  ],
-  "/images/fleet-galleries/change-2/04": [
-    320,
-    640,
-    1280,
-    1575
-  ],
-  "/images/fleet-galleries/giotto/04": [
-    320,
-    640,
-    1016
-  ],
   "/images/fleet-galleries/lunar-orbiter-1/03": [
     320,
     640,
@@ -14979,7 +14729,7 @@
     2048,
     3072
   ],
-  "/images/fleet-galleries/salyut-1/03": [
+  "/images/fleet-galleries/salyut-1/02": [
     320,
     640,
     1280,
@@ -14995,10 +14745,7 @@
   ],
   "/images/fleet-galleries/smart-1/03": [
     320,
-    640,
-    1280,
-    2048,
-    2178
+    1065
   ],
   "/images/fleet-galleries/soyuz-ms/03": [
     320,
@@ -15014,14 +14761,14 @@
     2048,
     3072
   ],
-  "/images/fleet-galleries/voyager-1/05": [
+  "/images/fleet-galleries/voyager-1/04": [
     320,
     640,
     1018,
     1629,
     1833
   ],
-  "/images/iss-modules/harmony/05": [
+  "/images/iss-modules/harmony/04": [
     320,
     640,
     1280,
@@ -15090,8 +14837,9 @@
   ],
   "/images/missions/mariner4/04": [
     320,
-    640,
-    849
+    1280,
+    2048,
+    3072
   ],
   "/images/satellites/deimos/03": [
     320,
@@ -15125,7 +14873,7 @@
     1280,
     1920
   ],
-  "/images/mars-sites/mars2/04": [
+  "/images/mars-sites/mars2/02": [
     320,
     1280,
     1920
@@ -15166,15 +14914,9 @@
   ],
   "/images/fleet-galleries/n1/02": [
     320,
-    640,
-    972,
-    1555,
-    2332
-  ],
-  "/images/fleet-galleries/salyut-1/01": [
-    320,
-    640,
-    1015
+    719,
+    1150,
+    1725
   ],
   "/images/fleet-galleries/salyut-7/02": [
     320,
@@ -15182,7 +14924,7 @@
     1280,
     2048
   ],
-  "/images/fleet-galleries/salyut-3/04": [
+  "/images/fleet-galleries/salyut-3/02": [
     320,
     640,
     1280,
@@ -15196,7 +14938,7 @@
     2048,
     3072
   ],
-  "/images/fleet-galleries/soyuz-tma/03": [
+  "/images/fleet-galleries/soyuz-tma/02": [
     320,
     640,
     1280,
@@ -15228,7 +14970,7 @@
     640,
     1040
   ],
-  "/images/fleet-galleries/tianzhou/04": [
+  "/images/fleet-galleries/tianzhou/03": [
     320,
     640,
     1280,
@@ -15239,13 +14981,13 @@
     640,
     1100
   ],
-  "/images/fleet-galleries/salyut-4/02": [
+  "/images/fleet-galleries/salyut-4/01": [
     320,
     640,
     1280,
     1329
   ],
-  "/images/fleet-galleries/salyut-4/03": [
+  "/images/fleet-galleries/salyut-4/02": [
     320,
     640,
     1280,
@@ -15274,10 +15016,9 @@
   ],
   "/images/fleet-galleries/compton-gro/04": [
     320,
-    640,
-    1280,
-    2048,
-    2362
+    1273,
+    2036,
+    3054
   ],
   "/images/fleet-galleries/lc-34/03": [
     320,
@@ -15349,12 +15090,6 @@
     640,
     954
   ],
-  "/images/satellites/oberon/03": [
-    320,
-    640,
-    1280,
-    1440
-  ],
   "/images/satellites/miranda/05": [
     320,
     640,
@@ -15362,10 +15097,8 @@
   ],
   "/images/satellites/callisto/03": [
     320,
-    640,
-    1280,
-    2048,
-    2220
+    1177,
+    1580
   ],
   "/images/planets/neptune/04": [
     320,
@@ -15381,10 +15114,8 @@
   ],
   "/images/planets/uranus/05": [
     320,
-    640,
-    1191,
-    1906,
-    2859
+    1280,
+    1843
   ],
   "/images/mars-sites/spirit/05": [
     320,
@@ -15410,7 +15141,7 @@
     640,
     1216
   ],
-  "/images/iss-modules/quest/04": [
+  "/images/iss-modules/quest/03": [
     320,
     640,
     1280,
@@ -15444,16 +15175,19 @@
   "/images/fleet-galleries/sbirs-heo/03": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/sbirs-heo/04": [
     320,
     1280,
-    1920
+    1800
   ],
   "/images/fleet-galleries/beresheet/01": [
     320,
-    1029
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/beresheet/02": [
     320,
@@ -15472,7 +15206,7 @@
     1280,
     1920
   ],
-  "/images/satellites/charon/04": [
+  "/images/satellites/charon/03": [
     320,
     1041
   ],
@@ -15898,9 +15632,9 @@
   ],
   "/images/fleet-galleries/alcantara/03": [
     320,
-    1280,
-    2048,
-    3072
+    1133,
+    1813,
+    2719
   ],
   "/images/fleet-galleries/alcantara/04": [
     320,
@@ -16129,7 +15863,7 @@
   ],
   "/images/fleet-galleries/semnan-imam-khomeini/05": [
     320,
-    1200
+    800
   ],
   "/images/fleet-galleries/sohae/01": [
     320,
@@ -16253,372 +15987,434 @@
   ],
   "/images/anatomy-exploded/antares": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/ariane-6": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/atlas-slv-3d": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/delta-ii": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/energia": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/falcon-heavy": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/long-march-7": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/n1": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/new-glenn": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/proton-m": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/pslv-xl": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/r-7-vostok": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/sls-block-1": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/soyuz-2": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/soyuz-fg": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/soyuz-u": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy-exploded/vulcan": [
     320,
+    640,
     1280,
     2048,
     2528
   ],
   "/images/anatomy/apollo-csm-block-i": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/atlantis": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/atlas-slv-3d": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/beagle2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/buran-ok-gli": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/challenger": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/change-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/change1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/change6": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/clementine": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/columbia": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/discovery": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/endeavour": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/enterprise": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/giotto": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/luna10": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/luna24": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lunar-orbiter-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lunar-orbiter-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lunar-orbiter-3": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lunar-orbiter-4": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/lunar-orbiter-5": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mars-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mars-polar-lander": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mars2-orbiter": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mars3-orbiter": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/mars6": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/phobos-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/progress-7k-tg": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/r-7-vostok": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/salyut-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/salyut-3": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/salyut-4": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/salyut-5": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/soyuz-7k-ok": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/soyuz-fg": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/soyuz-t": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/soyuz-tm": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/soyuz-u": [
     320,
+    640,
     860,
     1376,
     2063
   ],
   "/images/anatomy/vega-1": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/vega-2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/viking1-orbiter": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/viking2-lander": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/vikram-cy2": [
     320,
+    640,
     1280,
     2048,
     3072
   ],
   "/images/anatomy/voskhod": [
     320,
+    640,
     1280,
     2048,
     3072
@@ -17012,323 +16808,158 @@
   ],
   "/images/hotspots/mars/opportunity/traverse/km-01": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-02": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-03": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-04": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-05": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-06": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-07": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-08": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-09": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-10": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-11": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-12": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-13": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-14": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-15": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-16": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-17": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-18": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/km-19": [
     512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-20": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-21": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-22": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-23": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-24": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-25": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-26": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-27": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-28": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-29": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-30": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-31": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-32": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-33": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-34": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-35": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-36": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-37": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-38": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-39": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-40": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-41": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-42": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-43": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-44": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-45": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-46": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-47": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-48": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-49": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-50": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-51": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-52": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-53": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-54": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-55": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-56": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-57": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/km-58": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/sol-1232": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/sol-1820": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/sol-3010": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/opportunity/traverse/sol-4500": [
-    512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/opportunity/traverse/sol-56": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/spirit/traverse/km-01": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/spirit/traverse/km-02": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/spirit/traverse/km-03": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/spirit/traverse/km-04": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/spirit/traverse/km-05": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/spirit/traverse/km-06": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/spirit/traverse/km-07": [
     512,
-    1024
-  ],
-  "/images/hotspots/mars/spirit/traverse/sol-1000": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/spirit/traverse/sol-1500": [
-    512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/spirit/traverse/sol-2210": [
     512,
-    1024
-  ],
-  "/images/hotspots/mars/spirit/traverse/sol-590": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/spirit/traverse/sol-90": [
-    512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/zhurong/traverse/km-01": [
     512,
-    1024
-  ],
-  "/images/hotspots/mars/zhurong/traverse/km-02": [
-    512,
-    1024
-  ],
-  "/images/hotspots/mars/zhurong/traverse/sol-103": [
-    512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/zhurong/traverse/sol-347": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/mars/zhurong/traverse/sol-60": [
     512,
-    1024
+    1024,
+    2048
   ],
   "/images/hotspots/moon/apollo16/traverse/end": [
     256
@@ -18739,6 +18370,909 @@
     4096
   ],
   "/images/hotspots/earth/xichang-lc-2/context": [
+    1024,
+    2048,
+    4096
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-2681": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-4081": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-652": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-95": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/opportunity/traverse/sol-952": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-159": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-581": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-66": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/spirit/traverse/sol-744": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/hotspots/mars/zhurong/traverse/sol-97": [
+    512,
+    1024,
+    2048
+  ],
+  "/images/mars-sites/opportunity/route/endurance-layers": [
+    320,
+    640,
+    1024
+  ],
+  "/images/mars-sites/opportunity/route/erebus-horizon": [
+    320,
+    640,
+    1280,
+    2048,
+    2154
+  ],
+  "/images/mars-sites/opportunity/route/marathon-valley-pan": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/opportunity/route/perseverance-valley": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/opportunity/route/victoria-lip": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/spirit/route/beside-home-plate": [
+    320,
+    640,
+    1280,
+    2048,
+    2601
+  ],
+  "/images/mars-sites/spirit/route/bonneville-approach": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/spirit/route/bonneville-rim": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/spirit/route/larrys-lookout": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/spirit/route/troy": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/curiosity/route/gediz-vallis": [
+    320,
+    640,
+    1280,
+    2048,
+    2924
+  ],
+  "/images/mars-sites/curiosity/route/glen-torridon": [
+    320,
+    640,
+    1280,
+    1328
+  ],
+  "/images/mars-sites/curiosity/route/marias-pass": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/curiosity/route/murray-buttes": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/curiosity/route/vera-rubin-ridge": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/curiosity/route/yellowknife-overlook": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/bright-angel": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/delta-approach": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/landing-pan": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/south-seitah": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/toward-crater-rim": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/perseverance/route/van-zyl-overlook": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/mars-sites/zhurong/route/parachute-backshell": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/lanyue/01": [
+    320,
+    640,
+    833,
+    1333,
+    1999
+  ],
+  "/images/fleet-galleries/long-march-10/01": [
+    320,
+    640,
+    853,
+    1365,
+    2048
+  ],
+  "/images/fleet-galleries/mengzhou/01": [
+    320,
+    640,
+    1280
+  ],
+  "/images/fleet-galleries/promise/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/moon-sites/change7/01": [
+    320,
+    640,
+    1280,
+    1800
+  ],
+  "/images/anatomy-exploded/apollo-lm": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/beagle2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/beresheet": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/change-3": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/change-4": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/change-5": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/change6": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/curiosity": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/exomars-rosalind-franklin": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/insight": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/lrv-apollo": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/luna-16": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/luna-9": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/luna24": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/lunokhod-1": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/lunokhod-2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/mars-2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/mars-3": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/mars6": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/opportunity": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/perseverance": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/phoenix": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/pragyan": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/schiaparelli": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/slim": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/sojourner": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/spirit": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/vega-1": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/vega-2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/venera-13": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/viking-1": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/viking2-lander": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/vikram-cy3": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/yutu-2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/yutu": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy-exploded/zhurong": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/apollo11": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/apollo12": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/apollo14": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/apollo15": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/apollo16": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/apollo17": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/artemis4": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/beagle2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/beresheet": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/chandrayaan3": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/change3": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/change4": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/change5": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/change6": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/change7": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/curiosity": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/exomars-rosalind-franklin": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/insight": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/luna16": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/luna17": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/luna21": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/luna24": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/luna9": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/mars-pathfinder": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/mars2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/mars3": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/mars6": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/opportunity": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/perseverance": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/phoenix": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/schiaparelli": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/slim": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/spirit": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/vega-1": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/vega-2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/venera-13": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/viking1-lander": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/viking2-lander": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/landing-sequences/zhurong": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/starship-hls": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/cassini": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/voyager-2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/rosetta": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/apollo11": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/ulysses": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/new-horizons": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/venera-13": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/galileo": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/dawn": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/hayabusa2": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/juno": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/bepicolombo": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/juice": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/giotto": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/sputnik1": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/apollo-soyuz": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/vostok-1": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/blueprints/pioneer-10": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/hotspots/moon/artemis4/context": [
     1024,
     2048,
     4096

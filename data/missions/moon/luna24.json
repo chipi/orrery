@@ -12,7 +12,7 @@
   "transit_days": 9,
   "round_trip": true,
   "vehicle": "Proton-K / D",
-  "payload": "4800 kg launch mass; 1900 kg lander; 0.170 kg sample returned",
+  "payload": "about 5700 kg launch mass; 1900 kg lander; 0.170 kg sample returned",
   "delta_v": "~3.5 km/s",
   "data_quality": "good",
   "credit": "© Soviet Academy of Sciences (historical). Last successful uncrewed lunar landing for 37 years (until Chang'e 3 in 2013).",
@@ -52,7 +52,7 @@
   "flight": {
     "launch": {
       "vehicle_stage": "Blok-D upper stage",
-      "mass_at_tli_kg": 4800,
+      "mass_at_tli_kg": 5700,
       "source": "NASA NSSDCA Luna 24 archive; Soviet records fragmentary"
     },
     "cruise": {

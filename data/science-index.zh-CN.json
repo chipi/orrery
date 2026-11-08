@@ -808,8 +808,8 @@
     "tab": "planets",
     "section": "active-spacecraft-survey",
     "title": "在役探测器概览",
-    "intro": "现在各行星的情况：从火星轨道器MRO到木星探测器Juno，再到金星的Akatsuki。",
-    "haystack": "在役探测器概览 现在各行星的情况：从火星轨道器mro到木星探测器juno，再到金星的akatsuki。 火星——2026年轨道编队：mro（nasa，自2006年以来，300 km极地轨道，hirise相机+大气观测+数据中继）。maven（nasa，自2014年以来，6200 km轨道，大气逃逸率）。mars express（esa，自2003年以来，4200 km，矿物学+大气）。exomars tgo（esa，自2016年以来，400 km，微量气体+俄罗斯中继）。mangalyaan / mom（isro，2014–2022年，甲烷+大气——首个成功绕火星运行的亚洲任务）。天问一号（国家航天局，自2021年以来，4250 km，携带祝融漫游车+全球制图）。hope / emm（阿联酋太空局，自2021年以来，30,000 km赤道轨道，大气科学）。地表上：perseverance和curiosity漫游车（均为nasa）以及现已停用的ingenuity直升机。 active spacecraft survey"
+    "intro": "现在各行星的情况：从火星轨道器MRO到木星探测器Juno——而自2025年Akatsuki结束任务以来，金星已没有轨道器。",
+    "haystack": "在役探测器概览 现在各行星的情况：从火星轨道器mro到木星探测器juno——而自2025年akatsuki结束任务以来，金星已没有轨道器。 火星——2026年轨道编队：mro（nasa，自2006年以来，300 km极地轨道，hirise相机+大气观测+数据中继）。maven（nasa，自2014年以来，6200 km轨道，大气逃逸率）。mars express（esa，自2003年以来，4200 km，矿物学+大气）。exomars tgo（esa，自2016年以来，400 km，微量气体+俄罗斯中继）。mangalyaan / mom（isro，2014–2022年，甲烷+大气——首个成功绕火星运行的亚洲任务）。天问一号（国家航天局，自2021年以来，4250 km，携带祝融漫游车+全球制图）。hope / emm（阿联酋太空局，自2021年以来，30,000 km赤道轨道，大气科学）。地表上：perseverance和curiosity漫游车（均为nasa）以及现已停用的ingenuity直升机。 active spacecraft survey"
   },
   {
     "tab": "planets",

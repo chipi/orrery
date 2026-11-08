@@ -11,10 +11,10 @@
   "arrival_date": "2003-12-25",
   "transit_days": 206,
   "vehicle": "Soyuz-FG / Fregat",
-  "payload": "1183 kg (1123 kg orbiter + 60 kg Beagle 2 lander)",
+  "payload": "1223 kg at launch, including the 60 kg Beagle 2 lander",
   "delta_v": "~4.5 km/s",
   "data_quality": "good",
-  "credit": "© ESA. Beagle 2 lander reached the surface but never deployed solar panels fully, lost. Orbiter remains active 20+ years — Europe's first interplanetary spacecraft and longest-running non-NASA Mars mission.",
+  "credit": "© ESA. Beagle 2 lander reached the surface but never deployed solar panels fully, lost. Orbiter remains active 20+ years — Europe's first mission to another planet and longest-running non-NASA Mars mission.",
   "links": [
     {
       "l": "Mars Express — Wikipedia",
@@ -42,7 +42,7 @@
     "launch": {
       "vehicle_stage": "Fregat upper stage",
       "c3_km2_s2": 10.5,
-      "mass_at_tli_kg": 1183,
+      "mass_at_tli_kg": 1223,
       "source": "ESA Mars Express Press Kit (2003-06); Soyuz-Fregat User's Manual"
     },
     "cruise": {
@@ -70,16 +70,16 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Soyuz-FG / Fregat",
-        "description": "Baikonur Cosmodrome, 2003-06-02. ESA's first Mars mission, launched on a Russian Soyuz under a cooperative contract. Carried the Beagle 2 lander, designed by the UK's Beagle Project. Mars Express is still operational, the longest-running Mars orbiter ever."
+        "description": "Baikonur Cosmodrome, 2003-06-02. ESA's first Mars mission, launched on a Russian Soyuz under a cooperative contract. Carried the Beagle 2 lander, designed by the UK's Beagle Project. Mars Express is still operational, one of the longest-running Mars orbiters (after Mars Odyssey)."
       },
       {
-        "met_days": 0.005,
+        "met_days": 0.064,
         "type": "tli_or_tmi",
         "label": "Trans-Mars injection",
         "description": "Fregat upper stage burn at T+90 minutes sends Mars Express on a 6.5-month Hohmann-like transfer."
       },
       {
-        "met_days": 25,
+        "met_days": 2,
         "type": "tcm",
         "label": "TCM-1",
         "description": "First post-TMI cleanup."
@@ -99,7 +99,7 @@
       {
         "met_days": 200,
         "type": "tcm",
-        "label": "TCM-4 — final pre-MOI",
+        "label": "TCM-4",
         "description": "Final approach targeting."
       },
       {
@@ -112,7 +112,7 @@
         "met_days": 206.01,
         "type": "edl_or_oi",
         "label": "Mars orbit insertion",
-        "description": "2003-12-25 — Christmas Day. 37-minute main engine burn captured Mars Express into an initial ~250 × 150,000 km orbit, later trimmed to the operational ~298 × 10,107 km near-polar science orbit. Beagle 2 had landed safely 6 days earlier but failed to fully deploy its solar panels — only discovered in 2015 from MRO HiRISE imagery. Mars Express's MARSIS radar later mapped subsurface ice + (controversially) a liquid water reservoir under the south polar ice cap."
+        "description": "2003-12-25 — Christmas Day. 37-minute main engine burn captured Mars Express into an initial ~250 × 150,000 km orbit, later trimmed to the operational ~298 × 10,107 km near-polar science orbit. Beagle 2 had separated 6 days earlier and landed the same day (2003-12-25) but failed to fully deploy its solar panels — only discovered in 2015 from MRO HiRISE imagery. Mars Express's MARSIS radar later mapped subsurface ice and in 2018 found a bright radar reflector under the south polar cap, read as a subglacial lake — an interpretation still disputed."
       }
     ],
     "interplanetary_profile": {
@@ -130,127 +130,127 @@
           -0.940672
         ],
         [
-          2.185,
+          0.179,
           -0.300395,
           0,
           -0.954907
         ],
         [
-          4.3699,
+          0.353,
           -0.261074,
           0,
           -0.967895
         ],
         [
-          6.5549,
+          0.528,
           -0.221396,
           0,
           -0.979568
         ],
         [
-          8.7398,
+          0.702,
           -0.181384,
           0,
           -0.989758
         ],
         [
-          10.9248,
+          0.877,
           -0.141139,
           0,
           -0.998672
         ],
         [
-          13.1097,
+          1.051,
           -0.100697,
           0,
           -1.006198
         ],
         [
-          15.2947,
+          1.225,
           -0.060111,
           0,
           -1.012288
         ],
         [
-          17.4796,
+          1.4,
           -0.019449,
           0,
           -1.017101
         ],
         [
-          19.6646,
+          1.574,
           0.02124,
           0,
           -1.020483
         ],
         [
-          21.8495,
+          1.749,
           0.061901,
           0,
           -1.022502
         ],
         [
-          25,
+          2,
           0.120372,
           0,
           -1.023089
         ],
         [
-          26.2195,
+          4.473,
           0.142928,
           0,
           -1.022592
         ],
         [
-          28.4044,
+          8.903,
           0.183191,
           0,
           -1.020646
         ],
         [
-          30.5894,
+          13.334,
           0.22324,
           0,
           -1.017492
         ],
         [
-          32.7743,
+          17.764,
           0.262975,
           0,
           -1.012912
         ],
         [
-          34.9593,
+          22.195,
           0.302408,
           0,
           -1.007172
         ],
         [
-          37.1442,
+          26.625,
           0.341484,
           0,
           -1.00024
         ],
         [
-          39.3292,
+          31.055,
           0.380119,
           0,
           -0.992014
         ],
         [
-          41.5141,
+          35.486,
           0.418336,
           0,
           -0.982701
         ],
         [
-          43.6991,
+          39.916,
           0.456063,
           0,
           -0.972233
         ],
         [
-          45.884,
+          44.347,
           0.493248,
           0,
           -0.960611
@@ -268,115 +268,115 @@
           -0.934258
         ],
         [
-          52.4389,
+          52.439,
           0.601413,
           0,
           -0.919517
         ],
         [
-          54.6239,
+          54.624,
           0.636258,
           0,
           -0.903865
         ],
         [
-          56.8088,
+          56.809,
           0.670376,
           0,
           -0.887179
         ],
         [
-          58.9938,
+          58.994,
           0.703831,
           0,
           -0.869616
         ],
         [
-          61.1787,
+          61.179,
           0.73662,
           0,
           -0.851229
         ],
         [
-          63.3637,
+          63.364,
           0.768595,
           0,
           -0.831901
         ],
         [
-          65.5486,
+          65.549,
           0.799874,
           0,
           -0.811821
         ],
         [
-          67.7336,
+          67.734,
           0.830408,
           0,
           -0.790983
         ],
         [
-          69.9185,
+          69.919,
           0.860103,
           0,
           -0.769347
         ],
         [
-          72.1035,
+          72.104,
           0.889063,
           0,
           -0.747053
         ],
         [
-          74.2885,
+          74.289,
           0.917207,
           0,
           -0.724073
         ],
         [
-          76.4734,
+          76.473,
           0.944509,
           0,
           -0.700428
         ],
         [
-          78.6584,
+          78.658,
           0.971047,
           0,
           -0.676216
         ],
         [
-          80.8433,
+          80.843,
           0.99671,
           0,
           -0.651395
         ],
         [
-          83.0283,
+          83.028,
           1.02154,
           0,
           -0.62603
         ],
         [
-          85.2132,
+          85.213,
           1.04559,
           0,
           -0.600186
         ],
         [
-          87.3982,
+          87.398,
           1.068716,
           0,
           -0.573811
         ],
         [
-          89.5831,
+          89.583,
           1.091031,
           0,
           -0.547001
         ],
         [
-          91.7681,
+          91.768,
           1.112548,
           0,
           -0.51979
@@ -400,25 +400,25 @@
           -0.435812
         ],
         [
-          100.5079,
+          100.508,
           1.18989,
           0,
           -0.407143
         ],
         [
-          102.6929,
+          102.693,
           1.207143,
           0,
           -0.378205
         ],
         [
-          104.8778,
+          104.878,
           1.223536,
           0,
           -0.348997
         ],
         [
-          107.0628,
+          107.063,
           1.239062,
           0,
           -0.319542
@@ -430,85 +430,85 @@
           -0.279621
         ],
         [
-          111.4327,
+          111.433,
           1.267677,
           0,
           -0.260026
         ],
         [
-          113.6176,
+          113.618,
           1.280722,
           0,
           -0.229998
         ],
         [
-          115.8026,
+          115.803,
           1.293002,
           0,
           -0.199832
         ],
         [
-          117.9875,
+          117.988,
           1.304385,
           0,
           -0.169527
         ],
         [
-          120.1725,
+          120.173,
           1.314996,
           0,
           -0.139122
         ],
         [
-          122.3575,
+          122.358,
           1.324846,
           0,
           -0.108636
         ],
         [
-          124.5424,
+          124.542,
           1.333812,
           0,
           -0.078078
         ],
         [
-          126.7274,
+          126.727,
           1.342044,
           0,
           -0.047477
         ],
         [
-          128.9123,
+          128.912,
           1.349503,
           0,
           -0.016848
         ],
         [
-          131.0973,
+          131.097,
           1.356134,
           0,
           0.013791
         ],
         [
-          133.2822,
+          133.282,
           1.362049,
           0,
           0.044423
         ],
         [
-          135.4672,
+          135.467,
           1.367185,
           0,
           0.075029
         ],
         [
-          137.6521,
+          137.652,
           1.371547,
           0,
           0.105593
         ],
         [
-          139.8371,
+          139.837,
           1.375215,
           0,
           0.136104
@@ -532,115 +532,115 @@
           0.227134
         ],
         [
-          148.5769,
+          148.577,
           1.382467,
           0,
           0.257256
         ],
         [
-          150.7619,
+          150.762,
           1.382509,
           0,
           0.287253
         ],
         [
-          152.9468,
+          152.947,
           1.381891,
           0,
           0.317114
         ],
         [
-          155.1318,
+          155.132,
           1.380516,
           0,
           0.346801
         ],
         [
-          157.3167,
+          157.317,
           1.378512,
           0,
           0.37633
         ],
         [
-          159.5017,
+          159.502,
           1.375848,
           0,
           0.405679
         ],
         [
-          161.6866,
+          161.687,
           1.372482,
           0,
           0.43482
         ],
         [
-          163.8716,
+          163.872,
           1.368511,
           0,
           0.46377
         ],
         [
-          166.0565,
+          166.057,
           1.363881,
           0,
           0.492497
         ],
         [
-          168.2415,
+          168.242,
           1.358602,
           0,
           0.52099
         ],
         [
-          170.4265,
+          170.427,
           1.352743,
           0,
           0.54926
         ],
         [
-          172.6114,
+          172.611,
           1.346229,
           0,
           0.577264
         ],
         [
-          174.7964,
+          174.796,
           1.339117,
           0,
           0.605012
         ],
         [
-          176.9813,
+          176.981,
           1.33145,
           0,
           0.63251
         ],
         [
-          179.1663,
+          179.166,
           1.323133,
           0,
           0.659698
         ],
         [
-          181.3512,
+          181.351,
           1.314268,
           0,
           0.686613
         ],
         [
-          183.5362,
+          183.536,
           1.30486,
           0,
           0.713245
         ],
         [
-          185.7211,
+          185.721,
           1.294834,
           0,
           0.739539
         ],
         [
-          187.9061,
+          187.906,
           1.284295,
           0,
           0.76554
@@ -664,13 +664,13 @@
           0.841557
         ],
         [
-          196.6459,
+          196.646,
           1.23677,
           0,
           0.866208
         ],
         [
-          198.8309,
+          198.831,
           1.223584,
           0,
           0.890496
@@ -682,7 +682,7 @@
           0.903354
         ],
         [
-          203.2008,
+          203.201,
           1.195758,
           0,
           0.938

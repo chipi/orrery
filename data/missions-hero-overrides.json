@@ -56,7 +56,8 @@
   "starship-demo": {
    "slot": "03.jpg",
    "reason": "subject names a different entity than starship-demo",
-   "approved_at": "2026-06-12"
+   "approved_at": "2026-06-12",
+   "position": "50% 20%"
   },
   "bepicolombo": {
    "slot": "01.jpg",
@@ -71,7 +72,8 @@
   "skylab-4": {
    "slot": "04.jpg",
    "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
-   "approved_at": "2026-06-12"
+   "approved_at": "2026-06-12",
+   "position": "50% 10%"
   },
   "inspiration4": {
    "slot": "04.jpg",
@@ -83,20 +85,15 @@
    "reason": "category: people-only — no asset visible; score: 1 < threshold 6; vision-rejected: category-people",
    "approved_at": "2026-06-12"
   },
-  "otv-3": {
-   "slot": "05.jpg",
-   "reason": "subject names a different entity than otv-3",
-   "approved_at": "2026-06-12"
-  },
   "otv-7": {
    "slot": "02.jpg",
    "reason": "subject names a different entity than otv-7",
    "approved_at": "2026-06-12"
   },
   "opportunity": {
-   "slot": "05.jpg",
-   "reason": "manual hero override — Marko 2026-06-20",
-   "approved_at": "2026-06-20"
+   "slot": "03.jpg",
+   "reason": "hero review 2026-11-06: Victoria crater from orbit; 05 was a ragged mosaic",
+   "approved_at": "2026-11-06"
   },
   "spirit": {
    "slot": "03.jpg",
@@ -144,9 +141,9 @@
    "approved_at": "2026-06-20"
   },
   "vostok-5": {
-   "slot": "02.jpg",
-   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
-   "approved_at": "2026-06-20"
+   "slot": "05.jpg",
+   "reason": "hero review 2026-11-06: the Vostok 5 capsule; 02 was a stamp",
+   "approved_at": "2026-11-06"
   },
   "vostok-6": {
    "slot": "02.jpg",
@@ -154,9 +151,9 @@
    "approved_at": "2026-06-20"
   },
   "pioneer-10": {
-   "slot": "05.jpg",
-   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
-   "approved_at": "2026-06-20"
+   "slot": "01.jpg",
+   "reason": "hero review 2026-11-06: the spacecraft; 05 was a blurred Jupiter",
+   "approved_at": "2026-11-06"
   },
   "pioneer-11": {
    "slot": "05.jpg",
@@ -164,9 +161,9 @@
    "approved_at": "2026-06-20"
   },
   "venera-13": {
-   "slot": "05.jpg",
-   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
-   "approved_at": "2026-06-20"
+   "slot": "02.jpg",
+   "reason": "hero review 2026-11-06: the lander photographing its own surface; 05 was a Viking/Venera composite with headings, and the colour panorama 03 crops too tight on a card",
+   "approved_at": "2026-11-06"
   },
   "vega-1": {
    "slot": "02.jpg",
@@ -179,9 +176,9 @@
    "approved_at": "2026-06-20"
   },
   "ulysses": {
-   "slot": "02.jpg",
-   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
-   "approved_at": "2026-06-20"
+   "slot": "01.jpg",
+   "reason": "hero review 2026-11-06: the spacecraft at Jupiter; 02 was a speck on black",
+   "approved_at": "2026-11-06"
   },
   "hayabusa2": {
    "slot": "04.jpg",
@@ -206,7 +203,8 @@
   "clementine": {
    "slot": "01.jpg",
    "reason": "manual hero override — Marko 2026-06-20 (G1 = slot 01)",
-   "approved_at": "2026-06-20"
+   "approved_at": "2026-06-20",
+   "position": "50% 35%"
   },
   "mariner10": {
    "slot": "05.jpg",
@@ -239,9 +237,9 @@
    "approved_at": "2026-06-20"
   },
   "luna24": {
-   "slot": "02.jpg",
-   "reason": "manual hero override — Marko 2026-06-20 (G2 = slot 02)",
-   "approved_at": "2026-06-20"
+   "slot": "04.jpg",
+   "reason": "hero review 2026-11-06: the lander; 02 was an orbital frame with labels",
+   "approved_at": "2026-11-06"
   },
   "mars3": {
    "slot": "01.jpg",
@@ -266,10 +264,11 @@
   "voskhod-1": {
    "slot": "05.jpg",
    "reason": "manual hero override — Marko 2026-06-20",
-   "approved_at": "2026-06-20"
+   "approved_at": "2026-06-20",
+   "position": "50% 30%"
   },
   "apollo7": {
-   "slot": "02.jpg",
+   "slot": "01.jpg",
    "reason": "manual hero override — Marko 2026-06-20",
    "approved_at": "2026-06-20"
   },
@@ -299,14 +298,103 @@
    "approved_at": "2026-09-12"
   },
   "hope-probe": {
+   "slot": "03.jpg",
+   "reason": "hero review 2026-11-06: the probe with its dish; 04 was a tight crop",
+   "approved_at": "2026-11-06"
+  },
+  "starship-mars-crew": {
    "slot": "04.jpg",
    "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
    "approved_at": "2026-09-12"
   },
-  "starship-mars-crew": {
-   "slot": "05.jpg",
-   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
-   "approved_at": "2026-09-12"
+  "lucy": {
+   "slot": "03.jpg",
+   "reason": "hero review 2026-11-06: Lucy at a Trojan; 01 was a near-black launch",
+   "approved_at": "2026-11-06"
+  },
+  "apollo11": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "apollo12": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 40%"
+  },
+  "apollo17": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 25%"
+  },
+  "freedom-7": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 0%"
+  },
+  "gemini12": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 20%"
+  },
+  "gemini3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "luna10": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 20%"
+  },
+  "mercury-redstone-3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 15%"
+  },
+  "shenzhou-2": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 25%"
+  },
+  "shenzhou-3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 20%"
+  },
+  "skylab-3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 25%"
+  },
+  "soyuz-1": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 25%"
+  },
+  "soyuz-11": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 35%"
+  },
+  "vostok-4": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 70%"
   }
  }
 }

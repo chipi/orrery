@@ -808,8 +808,8 @@
     "tab": "planets",
     "section": "active-spacecraft-survey",
     "title": "稼働中の探査機一覧",
-    "intro": "現在、各惑星には何があるか：火星のMRO、木星のJuno、金星のあかつきなど。",
-    "haystack": "稼働中の探査機一覧 現在、各惑星には何があるか：火星のmro、木星のjuno、金星のあかつきなど。 火星 — 2026年現在の周回宇宙機群: mro（nasa、2006年以降、高度300 km極軌道、hiriseカメラ+大気観測+データ中継）。maven（nasa、2014年以降、軌道高度6200 km、大気散逸率測定）。mars express（esa、2003年以降、軌道高度4200 km、鉱物学+大気観測）。exomars tgo（esa、2016年以降、軌道高度400 km、微量ガス+ロシア中継）。mangalyaan / mom（isro、2014～2022年、メタン+大気観測 — 火星周回軌道への初のアジア発の成功した打上げ）。tianwen-1（cnsa、2021年以降、軌道高度4250 km、zhurongローバーの投入+全球規模のマッピング）。hope / emm（uae space agency、2021年以降、赤道軌道高度30,000 km、大気科学）。地表に設置: perseveranceおよび curiosityローバー（ともにnasa）ならびに現在非稼働状態のingenuityヘリコプター。 active spacecraft survey"
+    "intro": "現在、各惑星には何があるか：火星のMRO、木星のJuno。一方、金星にはあかつきが2025年に運用を終えて以来、周回機はありません。",
+    "haystack": "稼働中の探査機一覧 現在、各惑星には何があるか：火星のmro、木星のjuno。一方、金星にはあかつきが2025年に運用を終えて以来、周回機はありません。 火星 — 2026年現在の周回宇宙機群: mro（nasa、2006年以降、高度300 km極軌道、hiriseカメラ+大気観測+データ中継）。maven（nasa、2014年以降、軌道高度6200 km、大気散逸率測定）。mars express（esa、2003年以降、軌道高度4200 km、鉱物学+大気観測）。exomars tgo（esa、2016年以降、軌道高度400 km、微量ガス+ロシア中継）。mangalyaan / mom（isro、2014～2022年、メタン+大気観測 — 火星周回軌道への初のアジア発の成功した打上げ）。tianwen-1（cnsa、2021年以降、軌道高度4250 km、zhurongローバーの投入+全球規模のマッピング）。hope / emm（uae space agency、2021年以降、赤道軌道高度30,000 km、大気科学）。地表に設置: perseveranceおよび curiosityローバー（ともにnasa）ならびに現在非稼働状態のingenuityヘリコプター。 active spacecraft survey"
   },
   {
     "tab": "planets",

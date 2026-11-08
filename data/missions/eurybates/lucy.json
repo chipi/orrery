@@ -11,7 +11,7 @@
   "arrival_date": "2027-08-12",
   "transit_days": 2126,
   "vehicle": "Atlas V 401",
-  "payload": "1550 kg (incl. 1003 kg of hydrazine — Lucy carries more propellant than dry mass, by a wide margin)",
+  "payload": "1550 kg (821 kg dry)",
   "delta_v": "~6 km/s (with 3 Earth gravity assists)",
   "data_quality": "good",
   "credit": "© NASA / GSFC / SwRI / Lockheed Martin — public domain. First mission to the Jupiter Trojans — primordial asteroids co-orbiting Jupiter at the L4 and L5 Lagrange points, believed to preserve material from the outer protoplanetary disc. First asteroid flyby: Dinkinesh (2023-11-01), at which the contact-binary satellite Selam was discovered. Bonus main-belt asteroid Donaldjohanson flyby 2025-04. Eurybates encounter 2027-08; Patroclus-Menoetius binary 2033-03 closes the primary mission.",
@@ -64,7 +64,7 @@
     "totals": {
       "total_dv_km_s": 6,
       "tli_or_tmi_dv_km_s": 4.6,
-      "source": "NASA Lucy Press Kit (2021-10); 3 Earth gravity assists provide the energy ion thrust alone couldn't deliver"
+      "source": "NASA Lucy Press Kit (2021-10); 3 Earth gravity assists provide the energy its chemical engine alone couldn't deliver"
     },
     "events": [
       {
@@ -101,7 +101,7 @@
         "met_days": 1282,
         "type": "flyby",
         "label": "Donaldjohanson (main-belt bonus)",
-        "description": "2025-04-20. Closest approach 960 km at 13.4 km/s past asteroid 52246 Donaldjohanson — a 4-km main-belt asteroid named for the discoverer of the Lucy hominid fossil. Bonus target added late in mission design to test instruments before the Trojan encounters."
+        "description": "2025-04-20. Closest approach 960 km at 13.4 km/s past asteroid 52246 Donaldjohanson — a main-belt contact-binary asteroid about 8 km long, named for the discoverer of the Lucy hominid fossil. Bonus target added late in mission design to test instruments before the Trojan encounters."
       },
       {
         "met_days": 2126,
@@ -113,13 +113,13 @@
         "met_days": 2126.001,
         "type": "flyby",
         "label": "Eurybates + Queta",
-        "description": "Closest approach 1,000 km at 5.7 km/s past 3548 Eurybates, the largest member of the L4 Eurybates family — a 64-km C-type fragment of a larger parent body. Queta is Eurybates's 1-km moon, discovered by Hubble in 2018. Lucy's first Trojan encounter."
+        "description": "Closest approach within 1,000 km at 5.8 km/s (2027-08-11) past 3548 Eurybates, the largest member of the L4 Eurybates family — a 64-km C-type fragment of a larger parent body. Queta is Eurybates's 1-km moon, discovered by Hubble in 2018. Lucy's first Trojan encounter."
       },
       {
         "met_days": 2160,
         "type": "flyby",
         "label": "Polymele",
-        "description": "2027-09-15. 21-km P-type Trojan; Hubble follow-up revealed a satellite that doesn't yet have a name."
+        "description": "2027-09-15. 21-km P-type Trojan; the Lucy team found a satellite during a stellar occultation in March 2022; it doesn't yet have a name."
       },
       {
         "met_days": 2376,

@@ -11,7 +11,7 @@
   "arrival_date": "1985-06-15",
   "transit_days": 176,
   "vehicle": "Proton-K / D-1",
-  "payload": "Identical twin of Vega 1: 4920 kg flyby bus + ~1500 kg Venus lander + helium aerostat. Launched 6 days after Vega 1 for redundancy + a paired Halley armada solution.",
+  "payload": "Identical twin of Vega 1: about 4900 kg in total, including the ~1500 kg descent module (Venus lander + helium aerostat). Launched 6 days after Vega 1 for redundancy + a paired Halley armada solution.",
   "delta_v": "~3.6 km/s (departure + Halley intercept retarget)",
   "data_quality": "good",
   "flight_data_quality": "sparse",
@@ -70,10 +70,10 @@
         "met_days": 176,
         "type": "flyby",
         "label": "Venus — flyby + lander + balloon",
-        "description": "1985-06-15. Lander touched down on Aphrodite Terra; balloon drifted 11,600 km at 54 km altitude before its batteries failed. Vega 2 surface samples returned the first X-ray fluorescence chemistry from the highlands — anorthositic, distinct from Vega 1's lowland sampling."
+        "description": "1985-06-15. Lander touched down on Aphrodite Terra; balloon drifted about 11,100 km at 54 km altitude before its batteries failed. Vega 2 surface samples returned the first X-ray fluorescence chemistry from the highlands — anorthositic, distinct from Vega 1's lowland sampling."
       },
       {
-        "met_days": 442,
+        "met_days": 443,
         "type": "flyby",
         "label": "Halley — flyby (Halley Armada)",
         "description": "Closest approach 8,030 km from Halley's nucleus on 1986-03-09, three days after Vega 1. Together the two Vegas + Sakigake/Suisei + Giotto delivered the first multi-spacecraft cometary observation campaign in history — pathway-data sharing across NASA, ESA, Roscosmos (then Soviet Intercosmos), and JAXA's predecessors was unprecedented for the period."

@@ -45,7 +45,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2010-05-20",
-    "tagline": "Only active Venus orbiter"
+    "tagline": "Japan's first Venus orbiter; recovered from a 2010 orbit-insertion failure to study cloud-top dynamics"
   },
   {
     "id": "antares",
@@ -93,7 +93,7 @@
     "epoch": "first-stations",
     "status": "RETIRED",
     "first_flight": "1979-12-24",
-    "tagline": "Europe's first independent orbital launcher; flew Giotto to Halley"
+    "tagline": "Europe's first independent orbital launcher — opened the commercial-comsat era for ESA, flew Giotto to Halley"
   },
   {
     "id": "ariane-5",
@@ -105,7 +105,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1996",
-    "tagline": "Launched Rosetta, JWST, Galileo (ESA)"
+    "tagline": "Launched Rosetta, JWST, Galileo satnav (ESA)"
   },
   {
     "id": "ariane-6",
@@ -129,7 +129,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1985-10-03",
-    "tagline": "OV-104; flew final Shuttle mission STS-135 (2011) + final Hubble servicing STS-125 + deployed Galileo + Magellan"
+    "tagline": "OV-104 — fourth Shuttle. Flew final mission STS-135 (2011), final Hubble servicing STS-125 (2009), deployed Galileo + Magellan"
   },
   {
     "id": "atlas-lv-3b",
@@ -153,7 +153,7 @@
     "epoch": "first-stations",
     "status": "RETIRED",
     "first_flight": "1973-04-10",
-    "tagline": "1970s NASA outer-planet workhorse; Pioneer 10/11, Helios, Mariner 9/10"
+    "tagline": "1970s NASA outer-planet workhorse — Pioneer 10/11, Helios 1/2, Mariner 9/10, Pioneer Venus"
   },
   {
     "id": "atlas-v",
@@ -189,7 +189,7 @@
     "epoch": "lunar-return",
     "status": "PLANNED",
     "first_flight": "planned",
-    "tagline": "Next-gen US EVA suit, qualifying for Artemis III"
+    "tagline": "Next-gen US EVA suit, to be tested on Artemis III"
   },
   {
     "id": "baikonur-1-5",
@@ -237,7 +237,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2000-10-31",
-    "tagline": "China's GNSS — MEO + IGSO + GEO hybrid; global ops 2020"
+    "tagline": "China's GNSS — global ops since 2020; unique MEO + IGSO + GEO hybrid"
   },
   {
     "id": "bepicolombo",
@@ -249,7 +249,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2018-10-20",
-    "tagline": "Joint ESA + JAXA twin-orbiter Mercury mission; MPO + Mio arrive 2026"
+    "tagline": "Twin-orbiter joint ESA + JAXA Mercury mission — splits into MPO + Mio at Mercury arrival in 2026"
   },
   {
     "id": "beresheet",
@@ -273,7 +273,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2025-01-16",
-    "tagline": "Blue Origin cargo lunar lander; ~3 t to the surface, BE-7 hydrogen"
+    "tagline": "Blue Origin's first-generation lunar cargo lander — single-stage hydrogen / oxygen vehicle, ~3 t to the surface"
   },
   {
     "id": "buran",
@@ -297,7 +297,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1985-11-10",
-    "tagline": "Burans atmospheric analog (BTS-002); equivalent of NASAs Enterprise; never reached space"
+    "tagline": "Buran's atmospheric analog — equivalent of NASA's Enterprise. Four jet engines, 24 atmospheric tests 1985-88, never to orbit"
   },
   {
     "id": "cape-canaveral-slc-40",
@@ -369,7 +369,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1983-04-04",
-    "tagline": "OV-099; lost 73s after launch on STS-51-L 1986-01-28 with 7 crew including Christa McAuliffe"
+    "tagline": "OV-099 — second operational Shuttle. Lost 73s after launch on STS-51-L (1986-01-28) with all seven crew including teacher Christa McAuliffe"
   },
   {
     "id": "chandra",
@@ -393,7 +393,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "2010-10-01",
-    "tagline": "Second Chinese lunar orbiter; later asteroid flyby"
+    "tagline": "Second Chinese lunar orbiter; first to visit asteroid 4179 Toutatis"
   },
   {
     "id": "change-3",
@@ -441,7 +441,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1994-01-25",
-    "tagline": "Joint BMDO + NASA lunar orbiter; first global multispectral map + hint of polar ice"
+    "tagline": "Joint BMDO + NASA lunar orbiter — first global multispectral map and first bistatic-radar evidence for polar water ice"
   },
   {
     "id": "columbia",
@@ -453,7 +453,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1981-04-12",
-    "tagline": "OV-102; first Shuttle to fly to space (STS-1, 1981-04-12); lost on STS-107 re-entry 2003-02-01"
+    "tagline": "OV-102 — the first Shuttle orbiter to fly to space (STS-1, 1981-04-12); lost on re-entry STS-107 2003-02-01"
   },
   {
     "id": "compton-gro",
@@ -549,7 +549,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2024-10-14",
-    "tagline": "Largest planetary spacecraft; 49 Europa flybys planned"
+    "tagline": "First mission dedicated to characterising Europa's habitability"
   },
   {
     "id": "lucy",
@@ -573,7 +573,7 @@
     "epoch": "commercial-era",
     "status": "RETIRED",
     "first_flight": "2007-09-27",
-    "tagline": "Only spacecraft to orbit two extraterrestrial worlds; Vesta then Ceres via ion propulsion"
+    "tagline": "Only spacecraft to orbit two extraterrestrial worlds — Vesta then Ceres via ion propulsion"
   },
   {
     "id": "delta-ii",
@@ -585,7 +585,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "1989-02-14",
-    "tagline": "NASA's medium-lift planetary-science workhorse; Dawn, Messenger, MRO, Kepler"
+    "tagline": "NASA's medium-lift planetary-science workhorse — 155 flights 1989-2018"
   },
   {
     "id": "discovery",
@@ -597,7 +597,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1984-08-30",
-    "tagline": "OV-103; most-flown Shuttle (39 missions); deployed Hubble + both return-to-flight missions"
+    "tagline": "OV-103 — third Shuttle. Deployed Hubble (STS-31, 1990); flew both return-to-flight missions. 39 missions — most of any orbiter"
   },
   {
     "id": "emu",
@@ -621,7 +621,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1992-05-07",
-    "tagline": "OV-105; youngest Shuttle; built from spares to replace Challenger; first Hubble servicing + Unity + Canadarm2"
+    "tagline": "OV-105 — fifth Shuttle, built from spares to replace Challenger. First Hubble servicing STS-61 (1993); delivered Unity + Canadarm2"
   },
   {
     "id": "energia",
@@ -633,7 +633,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1987",
-    "tagline": "Soviet super-heavy; flew Buran once"
+    "tagline": "Soviet super-heavy; two flights (Polyus 1987, Buran 1988)"
   },
   {
     "id": "enterprise",
@@ -645,7 +645,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1977-08-12",
-    "tagline": "OV-101; prototype Shuttle; 1977 atmospheric drop tests; never flew to orbit"
+    "tagline": "OV-101 — prototype Shuttle. Renamed from Constitution after Star Trek fan campaign. Flew 1977 atmospheric tests; never reached orbit"
   },
   {
     "id": "euclid",
@@ -705,7 +705,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "2008-09-27",
-    "tagline": "China's EVA suit — derived from the Orlan, first flown on Shenzhou 7 in 2008"
+    "tagline": "China's EVA suit — architecturally similar to the Orlan, first flown on Shenzhou 7 in 2008"
   },
   {
     "id": "gaganyaan",
@@ -753,7 +753,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2011-10-21",
-    "tagline": "Europe's civilian GNSS — 28 satellites, full ops 2024"
+    "tagline": "Europe's civilian GNSS — ~30 sats, sub-metre positioning"
   },
   {
     "id": "gemini",
@@ -777,7 +777,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "1985-07-02",
-    "tagline": "First close-up images of a cometary nucleus; 596 km past Halley's Comet, 1986"
+    "tagline": "First close-up images of a cometary nucleus — flew 596 km past Halley's Comet at 68 km/s in 1986"
   },
   {
     "id": "glonass",
@@ -789,7 +789,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "1982-10-12",
-    "tagline": "Russia's GNSS — 24 satellites at 19,130 km, restored 2011"
+    "tagline": "Russia's GNSS — 24 sats, restored to full coverage in 2011"
   },
   {
     "id": "goes-noaa",
@@ -801,7 +801,7 @@
     "epoch": "lunar-era",
     "status": "ACTIVE",
     "first_flight": "1975-10-16",
-    "tagline": "US geostationary weather — GOES-East + GOES-West pair"
+    "tagline": "NOAA geostationary weather pair — Americas continuous coverage"
   },
   {
     "id": "gps-gnss",
@@ -813,7 +813,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "1978-02-22",
-    "tagline": "Original GNSS — 31 satellites at 20,180 km MEO, 6 planes"
+    "tagline": "The original GNSS — 31 satellites, free public service since 2000"
   },
   {
     "id": "h-iia",
@@ -849,7 +849,7 @@
     "epoch": "commercial-era",
     "status": "FAILED",
     "first_flight": "2023-04-25",
-    "tagline": "First private Japanese lunar lander; M1 + M2 both crashed"
+    "tagline": "Japan's first private Moon landing attempts; Mission 1 (2023) and Mission 2 (2025) both crashed"
   },
   {
     "id": "hayabusa",
@@ -861,7 +861,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "2003-05-09",
-    "tagline": "First asteroid sample return (Itokawa, 2010)"
+    "tagline": "First asteroid sample ever returned to Earth"
   },
   {
     "id": "hayabusa-2",
@@ -981,7 +981,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2017-01-14",
-    "tagline": "Polar LEO comms — 75 satellites, global voice/data, GMDSS partner"
+    "tagline": "Polar LEO comms — 66 operational sats +9 spares, GMDSS partner, global voice/data"
   },
   {
     "id": "iss",
@@ -1005,7 +1005,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "1999-11-19",
-    "tagline": "China's crewed-spaceflight pad — every Shenzhou crew, every Tianzhou cargo run"
+    "tagline": "China's crewed-spaceflight pad — every Shenzhou crew"
   },
   {
     "id": "juice",
@@ -1017,7 +1017,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2023-04-14",
-    "tagline": "ESA Jupiter flagship; first orbiter ever around a Galilean moon (Ganymede), arrival 2031-2034"
+    "tagline": "ESA flagship to Jupiter — first orbiter ever to settle around a Galilean moon (Ganymede, 2034)"
   },
   {
     "id": "juno",
@@ -1053,7 +1053,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "2009-03-07",
-    "tagline": "Discovered 2,600+ exoplanets"
+    "tagline": "Discovered 2,700+ exoplanets"
   },
   {
     "id": "kourou-ela-2",
@@ -1065,7 +1065,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1986-03-28",
-    "tagline": "Primary Ariane 4 pad — flew every Ariane 4 mission (1988-2003)"
+    "tagline": "Early Ariane pad — 1 Ariane 2, 2 Ariane 3, 116 Ariane 4 (1986-2003)"
   },
   {
     "id": "kourou-ela-3",
@@ -1105,7 +1105,7 @@
   },
   {
     "id": "kuiper",
-    "name": "Project Kuiper",
+    "name": "Amazon Leo (formerly Project Kuiper)",
     "category": "constellation",
     "agency": "Amazon",
     "country": "USA",
@@ -1113,7 +1113,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2023-10-06",
-    "tagline": "Amazon LEO broadband — planned 3236 satellites, ramping 2024+"
+    "tagline": "Amazon LEO broadband — 3,236 sats planned, commercial beta 2026"
   },
   {
     "id": "landsat",
@@ -1125,7 +1125,7 @@
     "epoch": "lunar-era",
     "status": "ACTIVE",
     "first_flight": "1972-07-23",
-    "tagline": "Longest continuous Earth imaging — 50+ years from Landsat 1 to 9"
+    "tagline": "50+ years of continuous Earth imaging — Landsat 1 to 9"
   },
   {
     "id": "lc-39a",
@@ -1137,7 +1137,7 @@
     "epoch": "lunar-era",
     "status": "ACTIVE",
     "first_flight": "1967-11-09",
-    "tagline": "Launched all Apollo lunar missions; today flies Falcon 9, Falcon Heavy, and Crew Dragon"
+    "tagline": "Launched Apollo 8, 9 and 11–17 (Apollo 9 in Earth orbit; Apollo 10 flew from 39B); today flies Falcon 9, Falcon Heavy, and Crew Dragon"
   },
   {
     "id": "lc-39b",
@@ -1173,7 +1173,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "1996-02-15",
-    "tagline": "China's GTO workhorse — Chang'e 3 / 4 lunar landers + most commercial comsats from Xichang"
+    "tagline": "China's GTO workhorse — Chang'e lunar landers + most Chinese comsats"
   },
   {
     "id": "long-march-5",
@@ -1213,7 +1213,7 @@
   },
   {
     "id": "luna-16",
-    "name": "Luna 16-class",
+    "name": "Luna 16",
     "category": "lander",
     "agency": "Roscosmos",
     "country": "USSR",
@@ -1329,7 +1329,7 @@
     "epoch": "lunar-era",
     "status": "FAILED",
     "first_flight": "1971-11-27",
-    "tagline": "First spacecraft to reach Mars; lander crashed"
+    "tagline": "First human-made object to reach Mars surface; lander crashed (1971)"
   },
   {
     "id": "mars-3",
@@ -1341,7 +1341,7 @@
     "epoch": "lunar-era",
     "status": "RETIRED",
     "first_flight": "1971-12-02",
-    "tagline": "First soft landing on Mars; 110 s of telemetry"
+    "tagline": "First soft landing on Mars; 14.5 s of surface transmission"
   },
   {
     "id": "mars-express",
@@ -1353,7 +1353,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "2003-06-02",
-    "tagline": "ESA's longest-running Mars orbiter"
+    "tagline": "ESA's first Mars orbiter; Europe's first planetary mission"
   },
   {
     "id": "mars-polar-lander",
@@ -1365,7 +1365,7 @@
     "epoch": "shuttle-and-mir",
     "status": "FAILED",
     "first_flight": "1999-12-03",
-    "tagline": "Lost on landing; drove faster-better-cheaper review"
+    "tagline": "Lost during landing in 1999; the failure led NASA to review its “faster, better, cheaper” approach"
   },
   {
     "id": "maven",
@@ -1375,7 +1375,7 @@
     "country": "USA",
     "era": "2011-now",
     "epoch": "commercial-era",
-    "status": "ACTIVE",
+    "status": "RETIRED",
     "first_flight": "2013-11-18",
     "tagline": "Mars atmospheric loss to solar wind"
   },
@@ -1401,7 +1401,7 @@
     "epoch": "commercial-era",
     "status": "RETIRED",
     "first_flight": "2004-08-03",
-    "tagline": "First Mercury orbiter; 6.6-year gravity-assist cruise before insertion in 2011"
+    "tagline": "First Mercury orbiter — 6 planetary gravity assists over 6.6 years to bleed energy before insertion in 2011"
   },
   {
     "id": "mir",
@@ -1461,7 +1461,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2025-01-16",
-    "tagline": "Blue Origin's two-stage reusable heavy-lift orbital launcher — BE-4 first stage + cryogenic second"
+    "tagline": "Blue Origin's two-stage reusable heavy-lift orbital launcher"
   },
   {
     "id": "new-shepard",
@@ -1485,7 +1485,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2013-06-25",
-    "tagline": "Only operational MEO commercial broadband — 20+ satellites"
+    "tagline": "Only operational MEO commercial broadband — 20+ sats"
   },
   {
     "id": "oneweb",
@@ -1497,7 +1497,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2019-02-27",
-    "tagline": "First-generation LEO broadband — 648 satellites in 12 polar planes"
+    "tagline": "First-gen LEO broadband — 648 sats in 12 polar planes"
   },
   {
     "id": "opportunity",
@@ -1509,7 +1509,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "2004-01-25",
-    "tagline": "Twin to Spirit; 14-year Mars operation"
+    "tagline": "Twin to Spirit; nearly 15-year Mars operation"
   },
   {
     "id": "orion",
@@ -1557,7 +1557,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2018-08-12",
-    "tagline": "Closest spacecraft to the Sun ever flown (9.86 R☉)"
+    "tagline": "Closest spacecraft to the Sun ever flown"
   },
   {
     "id": "psyche-spacecraft",
@@ -1641,7 +1641,7 @@
     "epoch": "first-stations",
     "status": "RETIRED",
     "first_flight": "1973-04-06",
-    "tagline": "First spacecraft to encounter Saturn; 1979 flyby via Jupiter gravity assist"
+    "tagline": "First spacecraft to encounter Saturn — Jupiter flyby in 1974 then gravity-assist to Saturn in 1979"
   },
   {
     "id": "planet-labs",
@@ -1653,7 +1653,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2013-04-19",
-    "tagline": "Daily Earth-imaging from ~150 CubeSats + 21 SkySats"
+    "tagline": "Daily Earth imaging — ~150 CubeSats + 21 SkySats"
   },
   {
     "id": "plesetsk-41-1",
@@ -1677,7 +1677,7 @@
     "epoch": "first-steps",
     "status": "ACTIVE",
     "first_flight": "1968-03-17",
-    "tagline": "World's most northerly orbital launch site — Russia's polar / Molniya military + GLONASS pad"
+    "tagline": "Plesetsk's workhorse Soyuz pad at 62.9°N — the world's highest-latitude active orbital launch complex"
   },
   {
     "id": "pragyan",
@@ -1737,7 +1737,7 @@
     "epoch": "first-stations",
     "status": "RETIRED",
     "first_flight": "1967-03-10",
-    "tagline": "Soviet / Russian heavy-lift workhorse 1967-2012; Salyut, Mir, every Venera, every Luna"
+    "tagline": "The Soviet / Russian heavy-lift workhorse 1967-2012 — Salyut, Mir, Venera, Vega, Luna sample-return"
   },
   {
     "id": "proton-m",
@@ -1761,7 +1761,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "2008-10-22",
-    "tagline": "ISRO's heavy-strap-on PSLV variant — launched Chandrayaan-1 + Mars Orbiter Mission"
+    "tagline": "ISRO's heavy strap-on PSLV variant — Chandrayaan-1 + Mars Orbiter"
   },
   {
     "id": "r-7-vostok",
@@ -1881,7 +1881,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2014-04-03",
-    "tagline": "Europe's flagship Earth-observation programme — Sentinel-1/2/3/5P/6"
+    "tagline": "Europe's Earth-obs flagship — Sentinel-1/2/3/5P/6"
   },
   {
     "id": "shenzhou",
@@ -2145,7 +2145,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "2005-05-05",
-    "tagline": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3, Mangalyaan, and the upcoming Gaganyaan crew programme"
+    "tagline": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme"
   },
   {
     "id": "starbase-orbital-a",
@@ -2193,7 +2193,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2018-02-22",
-    "tagline": "Largest LEO broadband constellation — ~6000 active satellites"
+    "tagline": "Largest LEO broadband constellation — over 11,000 active satellites (as of October 2026)"
   },
   {
     "id": "starship",
@@ -2205,7 +2205,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2023-04-20",
-    "tagline": "Fully reusable super-heavy launch vehicle in development for Artemis HLS + Mars"
+    "tagline": "Fully reusable super-heavy launch vehicle"
   },
   {
     "id": "surveyor-3",
@@ -2329,7 +2329,7 @@
   },
   {
     "id": "tundra-sirius",
-    "name": "Sirius Satellite Radio (Tundra)",
+    "name": "Sirius Satellite Radio (Tundra) — Historical (2000-2016)",
     "category": "constellation",
     "agency": "Sirius XM",
     "country": "USA",
@@ -2337,7 +2337,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "2000-06-30",
-    "tagline": "Only commercial Tundra-orbit fleet — 3 satellites, 24-hour HEO over North America"
+    "tagline": "Historic commercial Tundra-orbit constellation — decommissioned 2016"
   },
   {
     "id": "ulysses",
@@ -2349,7 +2349,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "1990-10-06",
-    "tagline": "Only spacecraft to fly over the Sun's poles; joint ESA + NASA, 1990-2009"
+    "tagline": "First spacecraft to observe the Sun's poles from above + below the ecliptic — Jupiter gravity assist 1992"
   },
   {
     "id": "vandenberg-slc-4e",
@@ -2373,7 +2373,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "1984-12-15",
-    "tagline": "Soviet Venus + Halley double mission; first interplanetary balloon, first Halley flyby"
+    "tagline": "Soviet Venus + Halley's Comet double mission — Venera lander, first interplanetary balloon, then Halley flyby"
   },
   {
     "id": "vega-2",
@@ -2385,7 +2385,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "1984-12-21",
-    "tagline": "Sibling of Vega 1; second Soviet Venus + Halley double mission, 1986-03-09 Halley flyby"
+    "tagline": "Sibling of Vega 1 — second Soviet Venus + Halley double mission, lander + balloon then Halley flyby"
   },
   {
     "id": "venera-13",
@@ -2397,7 +2397,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "1981-10-30",
-    "tagline": "First colour images of Venus surface; 127-minute survival in 470 °C / 89-atm conditions"
+    "tagline": "First colour images of the Venusian surface — survived 127 minutes in 457 °C / 89-atm conditions"
   },
   {
     "id": "venera-7",
@@ -2409,7 +2409,7 @@
     "epoch": "lunar-era",
     "status": "RETIRED",
     "first_flight": "1970-12-15",
-    "tagline": "First soft landing on another planet (Venus)"
+    "tagline": "First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970)"
   },
   {
     "id": "viking-1",
@@ -2433,7 +2433,7 @@
     "epoch": "commercial-era",
     "status": "FAILED",
     "first_flight": "2019-09-07",
-    "tagline": "Chandrayaan-2 lander; crashed; orbiter lives on"
+    "tagline": "Lander of India's Chandrayaan-2; it crashed in 2019, but the orbiter kept working"
   },
   {
     "id": "vikram-cy3",
@@ -2445,7 +2445,7 @@
     "epoch": "commercial-era",
     "status": "RETIRED",
     "first_flight": "2023-08-23",
-    "tagline": "First lunar south-pole landing"
+    "tagline": "First landing near the lunar south pole"
   },
   {
     "id": "voskhod",
@@ -2505,7 +2505,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2024-01-08",
-    "tagline": "Atlas V + Delta IV successor; certifies for NSSL Phase 3 + carries Dream Chaser / Starliner"
+    "tagline": "Atlas V + Delta IV successor; certifies for NSSL Phase 3 + planned for Dream Chaser"
   },
   {
     "id": "wenchang-lc-101",
@@ -2529,7 +2529,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2010-04-22",
-    "tagline": "USSF reusable robotic spaceplane; classified multi-year orbital missions, post-Shuttle US spaceplane"
+    "tagline": "USSF reusable robotic spaceplane — multi-year classified orbital missions, the only US spaceplane operational after the Shuttle's retirement"
   },
   {
     "id": "xichang-lc-2",
@@ -2541,7 +2541,7 @@
     "epoch": "shuttle-and-mir",
     "status": "ACTIVE",
     "first_flight": "1990-04-07",
-    "tagline": "Long March 3A/3B family — most Chinese GTO commercial launches and Beidou/Compass satellites"
+    "tagline": "Long March 3A/3B family — most Chinese GTO commercial launches and Beidou GNSS deployments"
   },
   {
     "id": "xichang-lc-3",
@@ -2553,7 +2553,7 @@
     "epoch": "shuttle-and-mir",
     "status": "ACTIVE",
     "first_flight": "1984-04-08",
-    "tagline": "First operational CZ-3 launch pad — DFH-2 first comsat, retired CZ-3 missions"
+    "tagline": "First CZ-3 operational successes — DFH-2 first GTO success, Apstar / Asiasat / Sinosat era"
   },
   {
     "id": "xmm-newton",
@@ -2637,7 +2637,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1998-01-07",
-    "tagline": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shackleton impact ended mission 1999"
+    "tagline": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shoemaker impact ended mission 1999"
   },
   {
     "id": "smart-1",
@@ -2697,7 +2697,7 @@
     "epoch": "lunar-return",
     "status": "RETIRED",
     "first_flight": "2024-05-03",
-    "tagline": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-02; 1935 g returned to Inner Mongolia 2024-06-25"
+    "tagline": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-01 (UTC); 1935 g returned to Inner Mongolia 2024-06-25"
   },
   {
     "id": "viking1-orbiter",
@@ -2745,7 +2745,7 @@
     "epoch": "lunar-era",
     "status": "RETIRED",
     "first_flight": "1973-08-05",
-    "tagline": "Soviet 1973 Mars lander — first direct atmospheric measurements (224 s of descent telemetry) before signal loss 148 m above surface"
+    "tagline": "Soviet 1973 Mars lander — first descent telemetry from Mars atmosphere (224 s, mostly corrupted)"
   },
   {
     "id": "mars-odyssey",
@@ -2769,7 +2769,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "2003-06-02",
-    "tagline": "UK/ESA Mars lander released from Mars Express 2003-12-19. Silent on arrival; found by HiRISE 2015 — landed safely, 2 solar panels stuck"
+    "tagline": "UK/ESA Mars lander from Mars Express (2003). Silent on arrival; HiRISE found it intact in 2015 — a solar panel had failed to deploy"
   },
   {
     "id": "exomars-rosalind-franklin",
@@ -2805,7 +2805,7 @@
     "epoch": "space-race",
     "status": "RETIRED",
     "first_flight": "1966-11-06",
-    "tagline": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at 9 km altitude"
+    "tagline": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at ~45 km altitude"
   },
   {
     "id": "lunar-orbiter-3",
@@ -2877,7 +2877,7 @@
     "epoch": "lunar-era",
     "status": "RETIRED",
     "first_flight": "1974-12-26",
-    "tagline": "Civilian DOS-4 station — hosted Soyuz 17 (30 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03"
+    "tagline": "Civilian DOS-4 station — hosted Soyuz 17 (29 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03"
   },
   {
     "id": "salyut-5",
@@ -2913,7 +2913,7 @@
     "epoch": "lunar-era",
     "status": "RETIRED",
     "first_flight": "1971-05-19",
-    "tagline": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 2 weeks). Operated 1971-11-27 to 1972-08"
+    "tagline": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 13 days). Operated 1971-11-27 to 1972-08"
   },
   {
     "id": "mercury-redstone",
@@ -3009,7 +3009,7 @@
     "epoch": "space-race",
     "status": "RETIRED",
     "first_flight": "1965-08-11",
-    "tagline": "USAF Atlas-Centaur pad — Mariner 10 (1973), Pioneer 11 (1973), Pioneer Venus, Intelsat — now Blue Origin New Glenn"
+    "tagline": "USAF Atlas-Centaur pad — Mariner 10, Pioneer 11 (1973), Pioneer Venus (1978); now Blue Origin New Glenn (leased 2015, flew 2025)"
   },
   {
     "id": "cape-canaveral-lc-17",
@@ -3225,7 +3225,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2017-06-05",
-    "tagline": "India's first home-grown cryogenic engine — the LVM3 upper stage"
+    "tagline": "India's first home-grown cryogenic engine, born from necessity"
   },
   {
     "id": "f-1",
@@ -3237,7 +3237,7 @@
     "epoch": "lunar-era",
     "status": "RETIRED",
     "first_flight": "1967-11-09",
-    "tagline": "Most powerful single-chamber liquid engine ever flown — five lifted Saturn V"
+    "tagline": "The most powerful single-chamber engine ever flown"
   },
   {
     "id": "h-1",
@@ -3249,7 +3249,7 @@
     "epoch": "space-race",
     "status": "RETIRED",
     "first_flight": "1961-10-27",
-    "tagline": "Eight-cluster Saturn I/IB booster engine — the F-1 rehearsal"
+    "tagline": "Eight engines, eight missions — the Saturn I workhorse"
   },
   {
     "id": "hm7b",
@@ -3261,7 +3261,7 @@
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
     "first_flight": "1986-05-31",
-    "tagline": "Europe's cryogenic upper-stage engine — Ariane's translunar workhorse"
+    "tagline": "Ariane's cryogenic upper stage, three decades of service"
   },
   {
     "id": "j-2",
@@ -3273,7 +3273,7 @@
     "epoch": "lunar-era",
     "status": "RETIRED",
     "first_flight": "1966-02-26",
-    "tagline": "Restartable hydrogen upper-stage engine that sent Apollo translunar"
+    "tagline": "The engine that sent Apollo to the Moon — twice"
   },
   {
     "id": "le-5b",
@@ -3285,7 +3285,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "2001-08-29",
-    "tagline": "Japan's restartable cryogenic upper stage — H-IIA through H3"
+    "tagline": "Japan's restartable upper stage, flying from H-IIA through H3"
   },
   {
     "id": "le-7a",
@@ -3297,7 +3297,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "2001-08-29",
-    "tagline": "Japan's staged-combustion hydrogen core — powered H-IIA/H-IIB"
+    "tagline": "Japan's staged-combustion hydrogen core, two decades of H-II service"
   },
   {
     "id": "le-9",
@@ -3309,7 +3309,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2023-03-07",
-    "tagline": "The largest expander-bleed engine ever flown — the H3 core"
+    "tagline": "The largest expander-bleed engine ever built — powering H3"
   },
   {
     "id": "lr87",
@@ -3321,7 +3321,7 @@
     "epoch": "space-race",
     "status": "RETIRED",
     "first_flight": "1959-02-06",
-    "tagline": "The twin-chamber first stage that launched Gemini crews on Titan II"
+    "tagline": "Twin-chamber hypergolic first stage that flew every Gemini crew"
   },
   {
     "id": "merlin-1d",
@@ -3333,7 +3333,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2013-09-29",
-    "tagline": "The reusable workhorse — nine lift Falcon 9, flown and re-flown dozens of times"
+    "tagline": "Nine engines, one booster, flown and re-flown dozens of times"
   },
   {
     "id": "raptor",
@@ -3345,7 +3345,7 @@
     "epoch": "mars-era",
     "status": "ACTIVE",
     "first_flight": "2023-04-20",
-    "tagline": "First full-flow staged-combustion engine to fly — 33 lift Super Heavy"
+    "tagline": "Full-flow staged combustion — the hardest cycle, finally flying"
   },
   {
     "id": "rd-107-108",
@@ -3357,7 +3357,7 @@
     "epoch": "first-steps",
     "status": "ACTIVE",
     "first_flight": "1957-08-21",
-    "tagline": "The R-7 engines — still flying humans on Soyuz after 65+ years"
+    "tagline": "Sputnik's engine — still flying humans 65 years later"
   },
   {
     "id": "rd-180",
@@ -3369,7 +3369,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "2000-05-24",
-    "tagline": "Oxygen-rich staged combustion the US could not match — flew on Atlas V"
+    "tagline": "Russian ox-rich staged combustion the US could not replicate"
   },
   {
     "id": "rd-253",
@@ -3381,7 +3381,7 @@
     "epoch": "space-race",
     "status": "RETIRED",
     "first_flight": "1965-07-16",
-    "tagline": "Proton's hypergolic workhorse — six lifted every Proton first stage"
+    "tagline": "Six hypergolic engines powered every Proton first stage"
   },
   {
     "id": "rl10",
@@ -3393,7 +3393,7 @@
     "epoch": "space-race",
     "status": "ACTIVE",
     "first_flight": "1963-11-27",
-    "tagline": "Longest-serving engine in spaceflight — the first hydrogen upper stage"
+    "tagline": "Hydrogen upper stage, six decades and counting"
   },
   {
     "id": "rocketdyne-a7",
@@ -3405,7 +3405,7 @@
     "epoch": "space-race",
     "status": "RETIRED",
     "first_flight": "1961-05-05",
-    "tagline": "The engine that launched the first American — Freedom 7"
+    "tagline": "The engine that launched the first American into space"
   },
   {
     "id": "rs-25",
@@ -3417,7 +3417,7 @@
     "epoch": "shuttle-and-mir",
     "status": "ACTIVE",
     "first_flight": "1981-04-12",
-    "tagline": "Reusable staged-combustion engine — 135 Shuttle flights, now flies on SLS"
+    "tagline": "Reusable, hydrogen-fuelled, and still flying on SLS"
   },
   {
     "id": "vikas",
@@ -3429,7 +3429,7 @@
     "epoch": "iss-assembly",
     "status": "ACTIVE",
     "first_flight": "1993-09-20",
-    "tagline": "India's workhorse — powers PSLV, GSLV and LVM3 to this day"
+    "tagline": "India's licensed Viking — three decades powering PSLV and GSLV"
   },
   {
     "id": "viking",
@@ -3441,7 +3441,7 @@
     "epoch": "first-stations",
     "status": "RETIRED",
     "first_flight": "1979-12-24",
-    "tagline": "The French engine later licensed to India as Vikas — powered Ariane 1–4"
+    "tagline": "The French engine that became India's workhorse"
   },
   {
     "id": "vulcain-2",
@@ -3453,7 +3453,7 @@
     "epoch": "iss-assembly",
     "status": "RETIRED",
     "first_flight": "2002-12-11",
-    "tagline": "Europe's hydrogen core engine — powered every Ariane 5"
+    "tagline": "Europe's hydrogen core engine — every Ariane 5 depended on it"
   },
   {
     "id": "yf-100",
@@ -3465,7 +3465,7 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2015-09-20",
-    "tagline": "China's modern staged-combustion kerolox engine — Long March 5/6/7"
+    "tagline": "China's staged-combustion kerolox engine, powering the new generation"
   },
   {
     "id": "yf-77",
@@ -3477,6 +3477,54 @@
     "epoch": "commercial-era",
     "status": "ACTIVE",
     "first_flight": "2016-11-03",
-    "tagline": "China's first large hydrogen engine — the Long March 5 core"
+    "tagline": "China's first large hydrogen engine — Long March 5's foundation"
+  },
+  {
+    "id": "long-march-10",
+    "name": "Long March 10 / 10A",
+    "category": "launcher",
+    "agency": "CMSA",
+    "country": "China",
+    "era": "planned",
+    "epoch": "lunar-return",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "China's Moon rocket, in development"
+  },
+  {
+    "id": "mengzhou",
+    "name": "Mengzhou",
+    "category": "crewed-spacecraft",
+    "agency": "CMSA",
+    "country": "China",
+    "era": "planned",
+    "epoch": "lunar-return",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "China's next crew spacecraft, in development"
+  },
+  {
+    "id": "lanyue",
+    "name": "Lanyue",
+    "category": "lander",
+    "agency": "CMSA",
+    "country": "China",
+    "era": "planned",
+    "epoch": "lunar-return",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "China's crewed lunar lander, in development"
+  },
+  {
+    "id": "promise",
+    "name": "PROMISE",
+    "category": "rover",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "planned",
+    "epoch": "lunar-return",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "Proposed NASA rover for the lunar south pole"
   }
 ]

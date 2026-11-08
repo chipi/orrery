@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["/orrery/_app/immutable/chunks/CopbVTS_.js","/orrery/_app/immutable/chunks/BIvgX3tN.js","/orrery/_app/immutable/chunks/B_cCGZcS.js"])))=>i.map(i=>d[i]);
+import{a as e,o as t}from"./BIvgX3tN.js";var n=e(`Network`,{web:()=>t(()=>import(`./CopbVTS_.js`).then(e=>new e.NetworkWeb),__vite__mapDeps([0,1,2]),import.meta.url)});export{n as Network};

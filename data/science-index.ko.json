@@ -808,8 +808,8 @@
     "tab": "planets",
     "section": "active-spacecraft-survey",
     "title": "현역 탐사선 현황",
-    "intro": "지금 각 행성에 있는 것: 화성의 MRO에서 목성의 Juno, 금성의 Akatsuki까지.",
-    "haystack": "현역 탐사선 현황 지금 각 행성에 있는 것: 화성의 mro에서 목성의 juno, 금성의 akatsuki까지. 화성 — 2026년 현재 궤도 함대: mro(nasa, 2006년부터, 300 km 극궤도, hirise 카메라 + 대기 관측 + 데이터 중계). maven(nasa, 2014년부터, 6200 km 궤도, 대기 탈출률). mars express(esa, 2003년부터, 4200 km, 광물학 + 대기). exomars tgo(esa, 2016년부터, 400 km, 미량 가스 + 러시아 중계). mangalyaan / mom(isro, 2014–2022, 메탄 + 대기 — 화성 궤도 진입에 성공한 최초의 아시아 임무). tianwen-1(cnsa, 2021년부터, 4250 km, zhurong 로버 투입 + 전역 지도 작성). hope / emm(uae 우주국, 2021년부터, 30,000 km 적도 궤도, 대기 과학). 지표면에서: perseverance + curiosity 로버(둘 다 nasa)와 이제 비행을 마친 ingenuity 헬리콥터. active spacecraft survey"
+    "intro": "지금 각 행성에 있는 것: 화성의 MRO에서 목성의 Juno까지 — 금성에는 2025년 Akatsuki가 종료된 뒤로 궤도선이 없습니다.",
+    "haystack": "현역 탐사선 현황 지금 각 행성에 있는 것: 화성의 mro에서 목성의 juno까지 — 금성에는 2025년 akatsuki가 종료된 뒤로 궤도선이 없습니다. 화성 — 2026년 현재 궤도 함대: mro(nasa, 2006년부터, 300 km 극궤도, hirise 카메라 + 대기 관측 + 데이터 중계). maven(nasa, 2014년부터, 6200 km 궤도, 대기 탈출률). mars express(esa, 2003년부터, 4200 km, 광물학 + 대기). exomars tgo(esa, 2016년부터, 400 km, 미량 가스 + 러시아 중계). mangalyaan / mom(isro, 2014–2022, 메탄 + 대기 — 화성 궤도 진입에 성공한 최초의 아시아 임무). tianwen-1(cnsa, 2021년부터, 4250 km, zhurong 로버 투입 + 전역 지도 작성). hope / emm(uae 우주국, 2021년부터, 30,000 km 적도 궤도, 대기 과학). 지표면에서: perseverance + curiosity 로버(둘 다 nasa)와 이제 비행을 마친 ingenuity 헬리콥터. active spacecraft survey"
   },
   {
     "tab": "planets",

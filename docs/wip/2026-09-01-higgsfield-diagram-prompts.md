@@ -1,6 +1,6 @@
 # Higgsfield polish brief — the 6 new /science diagrams (#32)
 
-**Status 2026-11-04:** OPEN, not executed: no commit changed the 6 webps after 3ae23d6ff73 (2026-09-01); the sketch placeholders are still shipped. The lab-goal art (25 images) used the same style via nano_banana_2 and shipped in 60e228144dc, but that is a different set.
+**Status 2026-11-08:** OPEN, not executed, still needed: `git log -1` on `static/diagrams/science/lifting-entry.webp` is still 3ae23d6ff73 (2026-09-01) and the six sketch PNGs are still in `docs/wip/essay-diagram-sources/_lab-systems-science/`; the sketch placeholders are still shipped. The lab-goal art (25 images) used the same style via nano_banana_2 and shipped in 60e228144dc, but that is a different set.
 
 The Higgsfield MCP connector doesn't authenticate in Claude Code CLI (its OAuth uses Clerk +
 a non-standard `/register` path the CLI client can't complete). It IS live in the Claude **web

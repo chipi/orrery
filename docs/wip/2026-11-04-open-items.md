@@ -1,126 +1,125 @@
-# Open items after 0.9.6 — the one list, and the 0.9.7 plan
+# Open items after 0.9.7 — the one list
 
-Rewritten 2026-11-05, after 0.9.6 shipped (PR #640, prod `e2d8acc17c1`, tag `v0.9.6`). It keeps only
-what is open now. The 0.9.6 plan and its step-by-step record (glossary chunks, the translation
-samples, step 4) are done; read them with `git show 73aaccec30c:docs/wip/2026-11-04-open-items.md`.
-Older notes that were folded into this list: `git show d11a0df6db6:docs/wip/<name>`. What else
-stays in `docs/wip/` is listed at the end.
+Rewritten 2026-11-08 after 0.9.7 merged (PR #649, squash `908ca0d9465`; release commit
+`8248a6b4043`, being deployed and tagged `v0.9.7`). First commit on `tech-debt/0.9.8`. It keeps
+only what is open now. Older notes that were
+folded into this list: `git show d11a0df6db6:docs/wip/<name>`. The 0.9.6 plan and record:
+`git show 73aaccec30c:docs/wip/2026-11-04-open-items.md`. What else stays in `docs/wip/` is listed
+at the end. The file keeps its 2026-11-04 name because ADR-047, ADR-051, RFC-015,
+`.claude/skills/term-consistency/SKILL.md` and `scripts/lib/dhash.mjs` link to it by that name.
+
+**0.9.7 done.** Rover traverses and the zoom review of every landing site, the panorama review,
+screen-space site tags, landing story sheets and exploded cutaways, mission-gallery provenance fixes,
+the audio-tour re-listen (all 32 episodes), the deploy gaps (route budget measured with prod's
+sourcemap build, collectible card on demand on `/missions` and `/fleet`, MCP trace probe), the
+CodeQL triage (175 alerts) and the fact-check re-verification (793 findings, 14 locales). The
+release notes are in `CHANGELOG.md` `[0.9.7]`; the full plan and step-by-step record, with commit
+ids, is `git show 908ca0d9465:docs/wip/2026-11-04-open-items.md`.
 
 Rules that still hold: no paid LLM or translation runs (the Hebrew run is the one exception the
 operator allowed); every translation fix round ends with a measurement; a new error class is the
 stop rule; never list native-speaker review as a gap; work inline by hand, fewest tokens, and evolve
 the tooling every round.
 
-## 0.9.7 — tentative plan
+## 0.9.8 — plan (operator, 2026-11-08)
 
-Branch `tech-debt/0.9.7`. Order proposed 2026-11-05; the operator picks what goes in.
+Branch `tech-debt/0.9.8`, cut from main after PR #649 (0.9.7) merges. Out of scope for 0.9.8:
+the mobile apps (#442, #490, #621, AR, crash reporting on a device) and TV / D-pad (#375).
 
-**1. Rover traverses — done (#641, 2026-11-05).** Spirit / Opportunity on the science team's
-localized paths, Zhurong traced on HiRISE, every Mars rover with sols, photos, Journey tab, replay and
-elevation; then a zoom review of every landing site on Mars (16), Venus (3), the Moon (19) and Earth
-(42) with `scripts/hotspots/zoom-sweep.mjs`, fixing each defect found (TA.md § Scene 6, "Zoom bands").
-Luna 9 keeps its regional image only: no map-projected LRO close-up exists and its landing spot is
-unconfirmed (option B, operator 2026-11-05).
+**Must close in 0.9.8:**
 
-**Next, in the operator's order (2026-11-05):**
+0. **SEO, in-repo (first work item).** From the 2026-11-08 technical audit of the build
+   (`docs/wip/<date>-seo-review.md`): one URL set per language, English slugs, each locale page
+   canonical to itself with full hreflang (already correct for hub pages). Work, in order:
+   - **Entity pages** — `/missions/<id>`, `/fleet/<id>`, `/moon/<id>`, `/mars/<id>`, planets…, in
+     all 14 locales (`/de/missions/apollo-11`) — first of all: noindex / redirect the staging host
+   (`chipi.github.io/orrery` ranks for "porkchop plot calculator" instead of orrerylearn.com).
+   Entity pages: self-canonical, hreflang, title / H1 /
+     description from the locale overlay, content in the prerendered HTML; the `?id=` panels stay
+     as the in-app view and link to the page. Today no entity has an indexable URL (shells
+     canonicalise to `/fleet`, `/missions`; the 523 `/c/*` stubs are noindex, en-US only).
+   - Open Graph + Twitter tags on every indexable page (none today besides `og:locale`).
+   - JSON-LD: Article + BreadcrumbList (essays, science, programs), WebSite + Organization (home),
+     entity types for the new pages.
+   - Titles: `/explore`, `/fly`, `/venus` are just "Orrery" in 14 locales; ≤60 chars, consistent
+     "<page> · Orrery" style, no ALL-CAPS; 476 pages without a meta description; descriptions
+     ≤160 chars; titles/descriptions with the words people search for, in each language
+     (content review).
+   - H1 on `/earth`, `/iss`, `/mars`, `/moon`, `/tiangong`, `/venus`, `/missions/launches`.
+   - `lab/callback` noindex; sitemap with `lastmod`, split per locale; inbound links to
+     `/catalog`, `/learn`, `/worlds`, `/explore/hub`.
+   - Tools say what they are: `/plan` is the porkchop / launch-window planner (titled "Mission
+     Configurator", no description); `/lab` calculators get one indexable page each (delta-v,
+     TWR, escape velocity, Hohmann … today 60+ share one URL).
+   - SEO `<title>` + description beside the poetic H1s (13 essays, 42 programs, ~45 science
+     articles; proposals in the content review) — operator approves each; `∆v` titles also say
+     "delta-v".
+   - Description bugs: raw markdown in `essays/new-propulsion`; ja Lagrange description
+     ("two-person system"); de "Lagrange-Punkte".
+   - **SEO gate** in validate / CI: every indexable built page has title, description,
+     self-canonical, complete hreflang, OG tags, valid JSON-LD and one H1; length limits; no
+     noindex leaks; sitemap = indexable pages.
+   - From the live-site review: HTML not cached at the edge (`cf-cache-status: DYNAMIC`, no
+     `cache-control` / `etag`) — set a cache policy; find the link that produces `/'` (35 views,
+     404); sitemap 7.1 MB → per-locale files; PageSpeed numbers still unmeasured (API key or a
+     local Lighthouse run — operator decides). Baiduspider: allowed (operator, 2026-11-08) —
+     Cloudflare dashboard, AI Crawl Control → Crawlers → Allow; confirm in the live robots.txt.
+   Long-term SEO (Search Console, keyword research, monitoring) is a separate agent's work:
+   `docs/wip/<date>-seo-brief.md`.
+1. **#550** — gallery sourcing: the three galleries below the hero bar (Chang'e 6, Sokol-M,
+   Voskhod 11A57), plus the placeholder credits behind them (`validate-gallery-credits.ts`).
+2. **#597** — lab-api / MCP OAuth hardening (DCR, `/register`, rate-limit key, token headers).
+3. **#257** — caption / alt-text i18n pipeline (every picture's caption in every locale).
+4. **#291** — higher-resolution tier-2 surface patches (HiRISE / LROC at ~2 m/px).
+5. **#289** — panorama: synthetic-azimuth wedge rendering + microcopy for partial-azimuth sites.
 
-- **1b. Panorama review — done (2026-11-05/06).** Better sources for Opportunity, Apollo 12 / 14 / 15 /
-  17, Sriharikota SLP, Baikonur 1/5; Luna 16 / 24 and Beresheet lost their "Stand here" (no ground
-  view). Mosaic gaps are now filled from the image (`panorama-padder` `inpaintGaps`) on Curiosity,
-  Opportunity, Perseverance, Spirit, Viking 1 / 2, InSight; CNSA logos, a watermark and a caption strip
-  removed from the Chang'e 3 / 5 / 6 pans (`maskRects`). Left as they are: Apollo 15 / 16 frames' pale
-  sky above the horizon (photo content); Curiosity's ground under the rover deck has no imagery.
-- **Left from the zoom review:** Artemis 4 (89.5°S, planned) has no imagery and the globe texture
-  pinches into radial streaks at the pole at every close zoom — needs a polar image (LRO WAC / NAC
-  polar mosaic, south-polar stereographic) as its context or regional layer. Chandrayaan-3 (69°S)
-  looks stretched north–south at 100 km; the context crop's geometry checks out (4096×1443 for a
-  13.2° × 37.5° box), so it may be the terrain — not confirmed either way.
-  **Artemis 4 done 2026-11-08:** a 400 km polar-stereographic WAC square centred on the pole
-  (`polar_half_km`), real terrain at every zoom, no pinch. From ~1 Mm altitude it reads as a dark
-  square on the bright globe: the pole really is mostly in shadow, the globe texture is not.
-  **Chandrayaan-3 settled 2026-11-08: not stretched.** The WAC source and the shipped context
-  master warped onto the same site-centred stereographic grid put every crater in the same place
-  and shape. What reads as a stretch at the 87 km zoom is the long low-sun shadows plus a real
-  defect of the colour transfer: zero (shadowed) pixels take the globe's flat colour, so shadows
-  become flat grey blobs with dark outlines and the lit ground washes out. Fix, done: Moon crops
-  past `HIGH_LAT` = 60° get the grey, brightness-capped treatment the polar crop uses (`polarGrey`
-  in fetch-context-layer.ts). Only Chandrayaan-3 (69°S) is past it, and it was re-fetched
-  (`5e52c98eb03`); Chang'e 6 (~41°S) does not need it.
-- **1c. Markers and pins — done (2026-11-06).** Screen-space site tags (`site-tags.ts`): icons by zoom
-  stage from the first view (bare), cards later, focus near the view centre, grouping, the nation
-  legend with the first icons; every route opens over its sites (TA.md § Scene 6, "Zoom bands").
-- **1d. Landing story — done** (operator 2026-11-06). The STORY tab opens with the anatomy drawings of
-  what is on the surface (`site-anatomy.ts`; 37 of 38 sites; Artemis 4 has none). Every landing site
-  has a landing-sequence sheet and landers and rovers have exploded cutaways (`d72ccdb8da1`; 4K
-  masters in `4d4723f5733`; listed as `landing_art` / `exploded_art` in
-  `static/data/original-work.json`).
-- **Mission-gallery provenance that names another picture — done** (found 2026-11-06): `venera-13/01`
-  and `vega-1/01` now credit the stamp files they are (`4fa4b24a3d0`); `mars2/01` and `mars2/04` were
-  replaced with a PrOP-M render and a museum model of the Mars 3 descent module, and `mars6/03` (a
-  sunset Mars 6 never sent) was dropped (`421c139995d`). The last three misattributed images were
-  traced in `fcaa95bddb1`, and `scripts/gallery-credit-shape-check.mjs` checks every credited
-  Commons file against its image's shape.
-- **Audio tours: re-listen to every episode and adjust its cue points** (operator 2026-11-06). The
-  0.9.7 changes moved what is on screen under the narration (first view bare, tags by zoom stage,
-  new panoramas, Apollo 17's tour removed from the Cernan episode); tour-coverage only proves the
-  targets exist, not that they land on the right words.
-  **Done 2026-11-08** with `scripts/audio/stage-review.ts` (screen after each stage + the VTT words
-  around it), all 32 episodes. Fixed: /moon and /mars openings zoom to the markers the narration
-  names; three drag/zoom stages targeted the HUD (no listener) and never moved the camera; flashes
-  scroll off-screen targets into view and the /fleet roll-call glow was clipped by
-  content-visibility; /fly's DEMO overlay is dismissed; the Voyager 2 panel closes; /plan switches
-  to Jupiter and Mercury; jwst-l2-halo, voyager-grand-tour, saturn-v-anchor, signal-delay,
-  tianhe-core, zarya-first-module and guide-missions re-timed (their audio was re-rendered after
-  authoring, 3–13 s). Left, each needing a decision or a new hook:
-  - guide-missions 38–46 s says "Filter status equals failed… Mars 2, Schiaparelli, Beresheet…".
-    Done (`98b5355afc5`): `outcome: "failure"` in the mission index and a FAILED pill on /missions.
-  - The mission panel's explore button (guide-missions 89 s), Queqiao itself (queqiao-magpie
-    23–44 s), the home "?" chips (guide-home 110 s) and Tianhe's docking ports (guide-tiangong 79 s)
-    are named but have no `data-audio-stage` hook to show.
+**Then:** the missing site stories. All moon, Mars and Venus sites have one except Chang'e 7
+(planned), so this means writing it as a planned-mission story (14 locales).
 
-**2. The deploy gaps 0.9.6 hit** (small; they stop the same failures):
+**Then, all of it in scope (the goal, however long it takes):** robustness (deploy rollback `build.prev`, LL2 5xx
+retry proof, observability outage drill), performance (`/lab` chunk; card on demand on the
+remaining panels), the rest of the credits backlog (20 placeholders with no identified file, 100
+agency-only authors), translation tooling gates (length ratio, coverage scan, source hash),
+content (six science diagrams — Higgsfield credits needed; museums pass 4).
 
-- The route budget runs without the prod build env locally and in preflight, so `/fleet` passed at
-  ~99 KB locally and failed the prod deploy at 105.45 KB (Sentry debug ids add ~6 KB across
-  /fleet's chunks). Measure the budget with the prod env (preflight, or a CI job before deploy).
-- Headroom: `/fleet` 101.9 / 105 KB, `/missions` 128.5 / 130 KB (prod env). Click-only code still
-  loads up front: `CollectibleCard` + `card-spec` 12.7 KB on /fleet.
-- Keep the per-route chunk report (which sources fill a route's JS, brotli KB) as a repo tool —
-  it lived in the session scratchpad as `.route-chunks.mjs`.
-  **Done 2026-11-08 (first three):** preflight and CI's `ci` build now set SENTRY_SOURCEMAPS=1, so
-  the budget measures prod's bytes — it immediately caught /missions at 133 / 130 KB. The
-  collectible card now loads on demand (`src/lib/cards/lazy-card.ts`): /missions 133 → 112 KB,
-  /fleet 104 → 89 KB (lazy budgets 35 / 45 for the moved bytes). Chunk report:
-  `node scripts/check-route-budget.mjs --chunks /fleet`.
-- `deploy-verify` cannot prove MCP tracing without a client: `mcp.orrerylearn.com` needs an OAuth
-  bearer and there is no probe credential. Decide on a probe path (an internal token, or a trace on
-  `/health`).
-- CodeQL on a PR touching more than 300 files reports "Cannot retrieve the full diff": its PR-only
-  filter may miss alerts in big release PRs. Check the open alert list on main after each release.
-  **Triaged 2026-11-08 (175 open on main):** `.github/codeql/codeql-config.yml` drops the archive,
-  the frozen i18n map records and the HTML prototypes (78) and the fetch/upload-by-design rules
-  `js/file-access-to-http` / `js/http-to-file-access` (39); 52 fixed in code; 7 dismissed on
-  GitHub with reasons (MCP empty-token guard, dedicated worker, operator-typed CLI regex, three
-  test inputs, the atomic lock dir). The rest are expected to close when the next scan of main runs the config; not verified yet.
-  MCP trace probe: deploy-verify sends a traceparent to `/mcp` (401) and finds that trace
-  (homelab 97662e7).
+Closed 2026-11-08 on the operator's decision: #635, #637, #638 (did not reproduce at HEAD).
 
-**3. One content track** — chosen: re-verify the fact-check findings (`factcheck/`, 55 files),
-since they are about the correctness of what is live. Alternatives are in "Content and accuracy"
-below.
-**Done 2026-11-08:**
+## Left over from 0.9.7
 
-- 793 findings re-checked against the live text, then the remaining errors fixed in all 14
-  locales. Results are in `factcheck/2026-11-08-reverify.json`, the summary at the top of
-  `factcheck/INDEX.md`.
-- English fleet cards showed 101 stale taglines: `fleet/index.json` had drifted from the overlays.
-  validate-data now checks that the index's name and tagline equal the en-US overlay.
+- **Audio-tour hooks.** Four things the narration names have no `data-audio-stage` hook to show:
+  the mission panel's explore button (guide-missions 89 s), Queqiao itself (queqiao-magpie
+  23–44 s), the home "?" chips (guide-home 110 s) and Tianhe's docking ports (guide-tiangong 79 s).
+  Needs a decision per item or a new hook.
+- **Collectible card loads on demand only on `MissionPanel` and `FleetEntryPanel`**
+  (`src/lib/cards/lazy-card.ts`). `PlanetPanel`, `SatellitePanel`, `SmallBodyPanel`,
+  `EarthObjectPanel` and `SurfaceScene` still import `card-spec` and `CardOverlay` statically
+  (about 13 KB br in total on any route that loads them); move them to `loadCardModules()` the same way.
+- **CodeQL.** `.github/codeql/codeql-config.yml` excludes `js/file-access-to-http` and
+  `js/http-to-file-access` for the whole repository, not for `scripts/` only (the comment says the
+  flows are data pipelines; the rule would also be silent for a real leak in `src/` or the
+  services). Either scope the exclusion to the pipeline paths or record why repo-wide is safe. Open
+  alerts on main: 168 on 2026-11-08 (175 minus the 7 dismissed); the config and the 52 code fixes
+  are on this branch, so the count drops only after the merge and the next scan of main. Check the
+  list after the merge and after each release (a PR over 300 files gets no PR-only diff).
+- **Gallery credits.** `scripts/validate-gallery-credits.ts` allows 311 placeholder credits
+  (ceiling 311; was 411 on 2026-11-01), the NASA search-page and "Uncurated / Curated panel
+  image" rows. The 2026-11-08 release review reports 20 of them with no identified file at all and
+  100 credits whose author is only an agency name; those two counts were not re-derived in this
+  pass. Lower the ceiling as they are sourced (`scripts/credit-placeholders-find.mjs`).
+- **Fleet galleries.** Provenance hygiene for the 1x1 crops and the webp files (a crop gets its
+  source only when re-cropping the matched image reproduces it) is open from the release review;
+  not re-measured in this pass.
+- **`#641`** (rover traverses) is still open on GitHub although its work is in 0.9.7; close it with
+  the merge.
+- Left as they are: Apollo 15 / 16 panorama frames' pale sky above the horizon (photo content);
+  Curiosity's ground under the rover deck (no imagery). Luna 9 keeps its regional image only (no
+  map-projected LRO close-up; landing spot unconfirmed).
 
-**Waiting on the operator:** #550 gallery sourcing (later; per-image approval, removes slots);
-#635 / #637 / #638 do not reproduce at HEAD (dev server, 0 page errors on `/fly`, `/moon`, both
-line-ups in en and de) — close them or keep them open; widening the axe gate beyond the overview tab
-and serious/critical; Hebrew (pilot only, `18dc87c2bff`; `he` not in `native-terms.json`,
-`RTL_LOCALES` is `['ar']`); mobile store publishing; v1.0.
+**Waiting on the operator:** #550 picture choices (in the 0.9.8 plan; per-image approval, removes
+slots); widening the axe
+gate beyond the overview tab and serious/critical (`tests/e2e/a11y.spec.ts` gates 0 critical or
+serious); Hebrew (pilot only, `18dc87c2bff`; `he` not in `scripts/i18n-tools/native-terms.json`,
+`RTL_LOCALES` is `['ar']` in `src/lib/locale.ts:77`); mobile store publishing (#442); v1.0.
 
 Decided, not open: Earth has no 2D view (`ecbbf98f183`); no sky view on Venus (operator,
 2026-11-04).
@@ -131,34 +130,50 @@ Decided, not open: Earth has no 2D view (`ecbbf98f183`); no sky view on Venus (o
 
 - `NAME_POLICY` / `BASE_RULES` / `LOCALE_RULES` are hand-written copies, not generated from the
   style guide.
-- Not built: length-ratio check in `problems()`, a coverage-scan gate in validate-data, an
-  English-hash-per-string gate, a two-model pilot.
+- Not built: length-ratio check in `problems()` (`scripts/lib/translate-quality.mjs`), a
+  coverage-scan gate in validate-data (`scripts/i18n-coverage-scan.mjs` is not called from
+  `validate-data.ts` or CI), an English-hash-per-string gate, a two-model pilot.
 - TS label maps only partly translated.
 - Image captions per locale (#257); Curator tour audio (#156, #152).
-- Source-language links: `link-provenance.json` has ru 60, zh 21, hi 2; `overlay_locale` notes and
-  translation-reviewer ids unset.
+- Source-language links: `link-provenance.json` has ru 60, zh 21, hi 2 (checked 2026-11-08);
+  `overlay_locale` notes and translation-reviewer ids unset.
 - UI label variants per locale (8 hi … 31 ru) kept as an allowed baseline (`ui-label-audit.mjs`).
 
 ### Content and accuracy
 
-- Science: the six 2026-09 articles still use interim SVG diagrams (Higgsfield restyle not done;
-  prompts in `2026-09-01-higgsfield-diagram-prompts.md`); their `ORPHAN_ALLOWLIST` entries
-  (`src/lib/science-orphan-detector.test.ts:176-198`) may be stale.
-- Essays: no fact-check; two essays from the long-view roadmap not written ("Power in the dark",
-  the capstone "The whole journey so far").
-- 23 site stories not written.
-- Museums: geography pass 4 never ran — 38 live museums (22 US, 0 India) against 79 researched
-  (`2026-10-22-museum-research/`); each added museum needs 13 overlays.
+- Science: the six 2026-09 articles still use interim SVG diagrams (no commit touched the six
+  webps after `3ae23d6ff73`, 2026-09-01; Higgsfield restyle not done; prompts in
+  `2026-09-01-higgsfield-diagram-prompts.md`). Their `ORPHAN_ALLOWLIST` entries
+  (`src/lib/science-orphan-detector.test.ts`, the six `BROWSE` rows, about lines 175–199) may be
+  stale: five of the six ids are now named as `citationKey` in `src/lib/physics/registry/*.ts`
+  (`skip-entry` is not); whether the detector counts that as an inbound link was not tested.
+- Essays: two essays from the long-view roadmap not written ("Power in the dark", the capstone
+  "The whole journey so far"; no text with those titles in `static/data` or `i18n-src/en-US`). All
+  13 shipped essays were fact-checked on 2026-07-14 (`factcheck/review-essays-1..5.md`) and their
+  findings re-verified on 2026-11-08.
+- Site stories: 57 of the 58 Moon, Mars and Venus sites in `moon-sites.json` / `mars-sites.json` /
+  `venus-sites.json` have a story in `static/data/site-stories/`; the one without is `change7`
+  (Chang'e 7, planned, no landing yet). The 42 fleet launch sites have none; the loader hides the
+  STORY tab for them (`src/lib/data/site-stories.ts`).
+- Museums: geography pass 4 never ran — 38 live museums (`static/data/museums.json`: 22 US, 2 JP,
+  2 GB, 2 CN, 1 each in UA, RU, RO, NL, KZ, FR, DK, DE, BG, AU; 0 India) against 79 researched in
+  19 countries (36 US, 12 RU, 5 JP, 5 CN, 1 IN, …; `2026-10-22-museum-research/merged.json`; no
+  `raw/out4_*.json`). Russia is 1 live of 12 researched. Each added museum needs 13 overlays.
 - Lab: 3D re-entry corridor (2D shipped first, deliberate); four lesson items unverified
-  (reach-orbit result cells, per-goal capstones, two diagrams).
-- Issues: #368, #313, #130, #486, #414.
-- Library and credits backlog: CODEOWNERS and a PR-template provenance box, drift-check scripts,
-  search and `?source=` deep links on `/library` and `/credits`, JSON-LD `sameAs`, a "report a
-  broken link" button; `text-sources.json` has 19 ids against ~100 entities; the weekly link check
-  reports but files nothing.
-- Learn-more links: about 20 backlog items (none closed).
+  (reach-orbit result cells, per-goal capstones, two diagrams); not re-checked in this pass.
+- Issues, all open on 2026-11-08: #368, #313, #130, #486, #414.
+- Library and credits backlog (the old list: `git show d11a0df6db6:docs/wip/learn-link-backlog.md`,
+  21 items, none fully shipped): CODEOWNERS (no file in the repo) and a PR-template provenance box
+  (`.github/PULL_REQUEST_TEMPLATE.md` has none), a `link-provenance` drift-check script, search and
+  `?source=` deep links on `/library` and `/credits`, JSON-LD `sameAs` (none in `src`), a "report a
+  broken link" button, `/library` virtualisation if render time passes ~250 ms (RFC-015 points
+  here for this); `text-sources.json` has 19 entries (the "against ~100 entities" comparison was not
+  re-derived); the weekly link check (`.github/workflows/link-check.yml`) reports but files nothing
+  and commits no report.
 
 ### /fly (detail: `git show d11a0df6db6:docs/wip/2026-11-03-0.9.5-fly-handover.md`)
+
+Carried from the 2026-11-05 list; not re-verified in this pass.
 
 - Earth capsules: Apollo 8 lunar-return entry, Gemini 7/12 peaks (parked on #522); Skylab 2–4,
   Gemini 3, Soyuz 11, Shenzhou 1 have no usable sourced values.
@@ -177,49 +192,63 @@ Decided, not open: Earth has no 2D view (`ecbbf98f183`); no sky view on Venus (o
 
 ### Surfaces
 
-- #291 (higher-resolution tier-2 patches), #289 (panorama wedge, partly), #49 (ISS GLB).
+- #291 (higher-resolution tier-2 patches), #289 (panorama wedge, partly), #49 (ISS GLB); all open.
+- Artemis 4 has no site-anatomy drawing (37 of 38 sites have one, 0.9.7).
 
 ### Mobile and devices
 
-- AR: Android WebXR pass not done; `APP_STORE_URL` is `null` (`EnterArButton.svelte:40`, #217);
-  #216, #195 undecided.
+- AR: Android WebXR pass not done; `APP_STORE_URL` is `null` (`EnterArButton.svelte:40`; #217 is
+  closed, so the URL is a decision for the store listing, #442).
 - #490 (AR retest), #442 (store publishing), #621 (CocoaPods → SPM; `ios/App/Podfile` still
   there); App Store privacy answers not applied; iOS build and the iCloud flag untested on a
-  device.
+  device. #216 and #195 are closed (2026-08-05) and no longer open questions.
 - Crash reporting: a forced native crash, dSYM upload and the Play mapping upload need a device;
-  the old runbook (`git show d11a0df6db6:docs/wip/2026-07-23-mobile-crash-observability.md`) drifted from the code (`platform` tag, Sentry 10.69.0)
-  — fix the doc when the device steps are done.
+  the old runbook (`git show d11a0df6db6:docs/wip/2026-07-23-mobile-crash-observability.md`)
+  drifted from the code (`platform` tag, Sentry 10.69.0) — fix the doc when the device steps are
+  done.
 
 ### a11y
 
 - #375 (TV / D-pad); no `lang` spans on proper nouns; screen-reader narration (`role="log"`) on
-  `/fly`; dimensions 2, 9, 10, 14, 15, 17 of the 2026-05-15 audit not re-verified.
+  `/fly` (neither found in `src`); dimensions 2, 9, 10, 14, 15, 17 of the 2026-05-15 audit not
+  re-verified. The 0.9.7 site tags are an `aria-hidden` HTML layer (`SurfaceScene.svelte:457`);
+  not checked with a screen reader.
 
 ### Performance
 
-- `/lab` chunk 2.35 MB.
+- `/lab` is the largest route: 725 KB br of 795 KB (`scripts/check-route-budget.mjs --report`,
+  on the build output of 2026-11-08 17:40, which is older than HEAD; whether later commits moved /lab was not checked).
+  The earlier list gave "/lab chunk 2.35 MB" without naming the chunk. The largest raw chunk in
+  that build is the shared `auth` chunk, 2,411,663 bytes raw / 622 KB br. Measured on a build
+  with source maps; the numbers move with the next build.
 
 ### Infra, tooling, tests
 
 - No deploy rollback (`build.prev` nowhere); observability outage drill not run; launch-data retry
   unproven on a real LL2 5xx; lab-api DCR consent page (#597); git-history PNG purge (needs the
   operator's approval); launch webcasts, image-source adapters' leftovers, LROC TODOs.
-- Tests that hard-code counts: `missions.spec.ts:59,70,96`, `launches-timeline.spec.ts:48`,
-  `landing.spec.ts:28`; non-unique `{#each}` keys in `library/episodes/+page.svelte:185` and
-  `LaunchTelemetry.svelte:174`.
+- Tests that hard-code counts (all still there): `tests/e2e/missions.spec.ts:59,70,76,96,103`
+  (MARS 20, MOON 32, JUPITER 5 cards), `launches-timeline.spec.ts:48` (7 decade pills; becomes 8
+  when 2027–36 opens), `landing.spec.ts:28,66` (22 cards, 9 footer links). Non-unique `{#each}` keys, latent only:
+  `src/routes/library/episodes/+page.svelte:185` (`src.label`; `audio/episode-sources.json` has no
+  episodes today, so it never renders) and `src/lib/components/LaunchTelemetry.svelte:174`
+  (`st.name`; no duplicate stage names in `static/data/launch-profiles` today).
 - Umami: analytics opt-out and historical cleanup are operator actions (`docs/ops/umami-setup.md`);
   `behavioral-analytics-log.md` has had no weekly entry since 2026-08-31.
 
 ### v1.0
 
 - No 1.0.0 version, tag or Release until the operator has tested; device checklist (#490);
-  analytics opt-out. Product tracks: #489, #156, #152, #257, #46, #417, #411, #522.
+  analytics opt-out. Product tracks: #489, #156, #152, #257, #46, #417, #411, #522 (all open on
+  2026-11-08).
 
 ## What else stays in `docs/wip/`
 
 Only open work and the material it needs:
 
-- `factcheck/` — the fact-check findings (open, see above).
+- `factcheck/` — the 2026-07-14 fact-check findings (54 detail files) and their 2026-11-08
+  re-verification (`2026-11-08-reverify.json`); 242 rows are recorded as unchanged by reason (see
+  `INDEX.md`).
 - `2026-10-22-museum-research/` — the research for museum pass 4 (open).
 - `2026-09-01-higgsfield-diagram-prompts.md` — prompts for the open diagram restyle.
 - `a11y-gap-2026-05-15.md` — the a11y backlog; its status line says what is still open.

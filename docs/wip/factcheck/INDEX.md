@@ -1,4 +1,4 @@
-# Missions + Science + Fleet fact-check — master index (2026-07-14)
+# Missions + Science + Fleet fact-check — master index (review 2026-07-14, re-verified 2026-11-08)
 
 **Re-verified 2026-11-08** (`2026-11-08-reverify.json`, one row per finding, 793 rows across the 54
 detail files, with the live file:line): 486 fixed, 60 rewritten, 4 gone, 1 unlocated, 242 unchanged.
@@ -26,17 +26,29 @@ Not changed, by reason:
 - **Already right:** Europa Clipper 6,065 kg is the launch mass. Soyuz TMA 2002–2012. Pioneer 11
   from LC-36B. "First robotic sample" for Luna 16.
 
-**Status 2026-11-04:** the "worst offenders" list was applied (spot-verified: Blue Moon Mk1 PLANNED/NET 2027, OTV-3 and Vostok-6 inventions gone, NRHO 6.5 d, Hill sphere 46,000x, LRV 35.7/92 km, Apollo 13 record qualified by Artemis II, Chandrayaan-1 "5th", Antares/H-IIA RETIRED, Atlas V = ULA, LVM3 2017, Saturn ~274 moons) via d13c1ee992b (2026-07-14), bab97e3b2db (2026-08-02), b3ee7406353 (2026-08-05), 49b9fb29c1f (2026-10-31, fleet templates). The line "Nothing edited yet" is stale. Not verified: the remaining ~250 per-file findings in the 55 detail files, one by one.
+**Reading the rest of this file.** The sections below are the record of the 2026-07-14 review pass,
+kept as written, so "fix first" and the finding counts describe that day. The findings were applied
+afterwards: the "worst offenders" list in commits d13c1ee992b, bab97e3b2db, b3ee7406353 and
+49b9fb29c1f (spot-checked 2026-11-04 against the data: Blue Moon Mk1, OTV-3 and Vostok-6, NRHO
+6.5 d, Hill sphere 46,000x, LRV 35.7 / 92 km, Apollo 13 record, Chandrayaan-1 "5th", Antares /
+H-IIA retired, Atlas V = ULA, LVM3 2017, Saturn ~274 moons), the rest by the 2026-11-08
+re-verification above. The current state of each finding is its row in `2026-11-08-reverify.json`
+(status FIXED / CHANGED / GONE / OPEN / UNLOCATED; OPEN there is the "unchanged" count above, kept
+for the reasons listed). In that file the rows for these worst offenders read FIXED: Apollo 12
+"first man-made lunar impact", Rosetta D/H, the LRV 27 km record, Molniya apogees, DRACO 2027,
+Mangalyaan as active, Voyager "parabolic-ish", Blue Moon Mk1, Antares status, H-IIA, Atlas V agency, LVM3 first flight. The other worst-offender rows were not re-read on
+2026-11-08.
 
 The `science-reviewer` swept all **123 mission editorials** + **130 science
 overlays** (253 items), batched across 25 reviewer agents. Each batch's detail
-(exact quote → correction + source) is in its own file below. Nothing edited yet
-— this is the review pass; apply on Marko's go (as with /programs).
+(exact quote → correction + source) is in its own file below. A separate pass covered the 13 essays
+(`review-essays-1.md` to `review-essays-5.md`, also 2026-07-14), and the site and fleet files
+(`sites-*.md`, `fleet-*.md`) are further detail files; all of them are rows in the re-verification.
 
 Severity: 🔴 wrong fact · 🟠 claim > evidence · 🟡 needs source/softening · 🔵 nit.
 (Some mission batches labelled HIGH/MED/LOW instead of emoji — same meaning.)
 
-## Worst offenders (fix first)
+## Worst offenders as of 2026-07-14 (historical; applied, see the note above)
 
 **Fabrications / invented detail**
 - `blue-moon-mk1` (moon) — fake 2025 flight dates; it never flew (NET 2027 after the New Glenn loss). → `missions-moon-robotic.md`
@@ -74,7 +86,7 @@ the encyclopedia article tree). A dedicated pass reviewed all 33: 3 fixed
 🔵 `apsides` stale "ν = 42°"), applied + re-translated to all 13 locales.
 → [`science-lens-overlays.md`](science-lens-overlays.md)
 
-## Detail files (25)
+## Detail files (the 25 below, plus the essays, sites and fleet files listed in the directory)
 
 ### Missions (123)
 - `missions-small-bodies.md` — hayabusa2, osiris-rex, dawn, giotto, rosetta, hera, dart, lucy, hayabusa1

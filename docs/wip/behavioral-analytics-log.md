@@ -1,6 +1,6 @@
 # Orrery — behavioral analytics running log
 
-**Status 2026-11-04:** live log, but only one entry (2026-08-31); no review appended in 2 months. The 'Open data-quality to-dos' are partly closed: operator-exclusion toggle exists (`src/lib/analytics-optout.ts`, `/privacy`), #521 events landed (`80cc692100a`). Standing question 1 lever (language suggestion) shipped (`src/lib/components/LanguageSuggestion.svelte`, `c177e50eb2c`); #519 multilingual SEO in `8915eaf2f99`. No new data pulled this pass (remote access out of scope), so none of the baseline numbers are re-measured. OPEN: next weekly entry; whether the `search` event fires on prod.
+**Status 2026-11-08:** unchanged since 2026-11-04 (CHANGELOG `[0.9.7]` has no analytics change; `src/lib/analytics-optout.ts` and `LanguageSuggestion.svelte` exist). Earlier status: live log, but only one entry (2026-08-31); no review appended in 2 months. The 'Open data-quality to-dos' are partly closed: operator-exclusion toggle exists (`src/lib/analytics-optout.ts`, `/privacy`), #521 events landed (`80cc692100a`). Standing question 1 lever (language suggestion) shipped (`src/lib/components/LanguageSuggestion.svelte`, `c177e50eb2c`); #519 multilingual SEO in `8915eaf2f99`. No new data pulled this pass (remote access out of scope), so none of the baseline numbers are re-measured. OPEN: next weekly entry; whether the `search` event fires on prod.
 
 A living log of what real users do on prod, so over the first 1-2 months we build a
 picture and then improve user flows toward desired outcomes (explore more, discover

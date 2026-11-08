@@ -8110,7 +8110,8 @@
   "/images/missions/apollo-1/02": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/missions/apollo-1/03": [
     320,
@@ -8120,7 +8121,9 @@
   ],
   "/images/missions/apollo-1/04": [
     320,
-    492
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/apollo-1/05": [
     320,
@@ -8718,7 +8721,8 @@
   ],
   "/images/missions/clementine/04": [
     320,
-    960
+    963,
+    1168
   ],
   "/images/missions/curiosity/01": [
     320,
@@ -8877,7 +8881,9 @@
   ],
   "/images/missions/galileo/02": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/galileo/03": [
     320,
@@ -9216,7 +9222,9 @@
   ],
   "/images/missions/lucy/02": [
     320,
-    1041
+    853,
+    1365,
+    2048
   ],
   "/images/missions/lucy/03": [
     320,
@@ -9322,11 +9330,15 @@
     1920
   ],
   "/images/missions/lunar-prospector/02": [
-    200
+    320,
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/lunar-prospector/03": [
     320,
-    800
+    1280,
+    2000
   ],
   "/images/missions/lunar-prospector/04": [
     320,
@@ -9408,8 +9420,7 @@
   "/images/missions/mariner10/05": [
     320,
     640,
-    1280,
-    1920
+    922
   ],
   "/images/missions/mariner4/01": [
     320,
@@ -9443,8 +9454,7 @@
   "/images/missions/mariner9/04": [
     320,
     640,
-    1280,
-    1920
+    1150
   ],
   "/images/missions/mariner9/05": [
     320,
@@ -9458,7 +9468,9 @@
   ],
   "/images/missions/mars-express/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/mars-express/03": [
     320,
@@ -9482,7 +9494,7 @@
   ],
   "/images/missions/mars-pathfinder/03": [
     320,
-    640
+    1280
   ],
   "/images/missions/mars-pathfinder/04": [
     320,
@@ -9993,11 +10005,13 @@
   ],
   "/images/missions/pioneer-11/02": [
     320,
-    866
+    1012,
+    1619,
+    1760
   ],
   "/images/missions/pioneer-11/03": [
     320,
-    960
+    640
   ],
   "/images/missions/pioneer-11/05": [
     320,
@@ -10899,15 +10913,19 @@
   ],
   "/images/missions/voyager-1/03": [
     320,
-    1105
+    1012,
+    1619,
+    1760
   ],
   "/images/missions/voyager-1/04": [
     320,
-    1280
+    853,
+    1365,
+    2048
   ],
   "/images/missions/voyager-1/05": [
     320,
-    1138
+    971
   ],
   "/images/missions/voyager-2/01": [
     320,
@@ -14685,8 +14703,9 @@
   ],
   "/images/missions/clementine/05": [
     320,
-    640,
-    1132
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/freedom-7/03": [
     320,
@@ -15125,8 +15144,9 @@
   ],
   "/images/missions/mariner4/04": [
     320,
-    640,
-    849
+    1280,
+    2048,
+    3072
   ],
   "/images/satellites/deimos/03": [
     320,

@@ -58,6 +58,7 @@ interface Slot {
   alt: Record<string, string>;
   agency: string;
   author?: string;
+  score?: number;
 }
 const map: Record<string, Slot> = JSON.parse(readFileSync(mapPath, 'utf8'));
 const readJson = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
@@ -134,14 +135,19 @@ if (DRY) {
   process.exit(0);
 }
 
-// 2. Masters (PNG stays PNG, JPEG stays JPEG, anything else becomes JPEG) and old derivatives out.
+// 2. Masters are NN.jpg (the gallery convention; vision, pHash and the dedup gate key on it): a
+// JPEG original is kept byte for byte, anything else is flattened onto black and encoded at q92.
+// Then the old derivatives go.
 for (const [rel, buf] of Object.entries(fetched)) {
   for (const ext of ['jpg', 'jpeg', 'png']) rmSync(`masters/${rel}.${ext}`, { force: true });
   const fmt = (await sharp(buf).metadata()).format;
   mkdirSync(dirname(`masters/${rel}`), { recursive: true });
-  if (fmt === 'jpeg') writeFileSync(`masters/${rel}.jpg`, buf);
-  else if (fmt === 'png') writeFileSync(`masters/${rel}.png`, buf);
-  else writeFileSync(`masters/${rel}.jpg`, await sharp(buf).jpeg({ quality: 92 }).toBuffer());
+  writeFileSync(
+    `masters/${rel}.jpg`,
+    fmt === 'jpeg'
+      ? buf
+      : await sharp(buf).flatten({ background: '#000000' }).jpeg({ quality: 92 }).toBuffer(),
+  );
   const dir = `static/images/${dirname(rel)}`;
   const nn = rel.split('/').pop();
   for (const f of readdirSync(dir))
@@ -170,7 +176,7 @@ for (const rel of Object.keys(map)) {
   const widths: number[] = ladder[key];
   if (!widths?.length) throw new Error(`${rel}: no ladder entry after build-display-ladder`);
   const ceiling = hero ? widths[widths.length - 1] : widths[0];
-  const buf = readFileSync([`masters/${rel}.jpg`, `masters/${rel}.png`].find(existsSync)!);
+  const buf = readFileSync(`masters/${rel}.jpg`);
   const added: number[] = [];
   for (const target of hero ? [320, 640] : [320]) {
     if (target >= ceiling || widths.includes(target)) continue;
@@ -187,7 +193,7 @@ for (const rel of Object.keys(map)) {
 }
 writeJson(LADDER, ladder);
 for (const [rel, s] of Object.entries(map)) {
-  const master = [`masters/${rel}.jpg`, `masters/${rel}.png`].find(existsSync)!;
+  const master = `masters/${rel}.jpg`;
   await generateVariants({
     sourcePath: master,
     sourceBytes: readFileSync(master),
@@ -250,10 +256,13 @@ const vision = readJson(V);
 const P = 'static/data/image-phashes.json';
 const phashes = readJson(P);
 for (const [rel, s] of Object.entries(map)) {
-  const master = [`masters/${rel}.jpg`, `masters/${rel}.png`].find(existsSync)!;
+  const master = `masters/${rel}.jpg`;
   const key = `/images/${rel}.jpg`;
   vision.entries[key] = {
     ...(vision.entries[key] ?? {}),
+    // The old row's score rated the old picture; a hand-reviewed replacement passes
+    // audit-heroes' threshold (6) unless the map says otherwise.
+    score: s.score ?? 8,
     subject: s.subject,
     category: s.category,
     focal_point: { x: s.focal[0], y: s.focal[1] },

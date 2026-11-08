@@ -8158,21 +8158,21 @@
       "scoring_cost_usd": 0.008496
     },
     "/images/missions/galileo/02.jpg": {
-      "score": 3,
-      "subject": "Orbital trajectory diagram showing the Galileo spacecraft's VEEGA path from Earth launch in 1989 through Venus and Earth flybys to Jupiter arrival in 1995, with asteroid belt encounters at Gaspra and Ida labeled.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Galileo on its Inertial Upper Stage, tilted for deployment in Atlantis's payload bay during STS-34, October 1989.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:04:20.205Z",
-      "scoring_cost_usd": 0.009405
+      "scored_at": "2026-11-08T07:14:35.154Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/galileo/03.jpg": {
       "score": 8,
@@ -17139,38 +17139,38 @@
       "scoring_cost_usd": 0.00915
     },
     "/images/missions/pioneer-11/02.jpg": {
-      "score": 4,
-      "subject": "Annotated line-drawing diagram of the Pioneer plaque showing human figures, pulsar map, solar system, and spacecraft silhouette with labeled elements.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Pioneer G, launched as Pioneer 11, awaiting its protective shroud at Cape Kennedy in March 1973.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.55
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:16:36.853Z",
-      "scoring_cost_usd": 0.00693
+      "scored_at": "2026-11-08T07:14:35.229Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/pioneer-11/03.jpg": {
-      "score": 5,
-      "subject": "The Pioneer plaque showing a man and woman, pulsar map, and solar system diagram intended as a message for extraterrestrial intelligence.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Jupiter seen from above its north pole by Pioneer 11, the first image of the planet's polar region.",
+      "category": "orbital",
       "focal_point": {
-        "x": 0.6,
-        "y": 0.4
+        "x": 0.5,
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:16:18.986Z",
-      "scoring_cost_usd": 0.007308
+      "scored_at": "2026-11-08T07:14:35.236Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/pioneer-11/05.jpg": {
       "score": 5,
@@ -27267,7 +27267,7 @@
       "scoring_cost_usd": 0.008324999999999999
     },
     "/images/missions/akatsuki/01.jpg": {
-      "score": 7,
+      "score": 8,
       "subject": "JAXA computer graphic of the Akatsuki Venus orbiter with its two solar panels extended.",
       "category": "render",
       "focal_point": {
@@ -27280,7 +27280,7 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.613Z",
+      "scored_at": "2026-11-08T07:13:41.303Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/akatsuki/02.jpg": {
@@ -27297,7 +27297,7 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.631Z",
+      "scored_at": "2026-11-08T07:13:41.308Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/akatsuki/03.jpg": {
@@ -27314,7 +27314,7 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.668Z",
+      "scored_at": "2026-11-08T07:13:41.311Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/akatsuki/04.jpg": {
@@ -27331,11 +27331,11 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.673Z",
+      "scored_at": "2026-11-08T07:13:41.316Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/akatsuki/05.jpg": {
-      "score": 5,
+      "score": 8,
       "subject": "H-IIA Flight 17 lifting off from Tanegashima in May 2010 with the Venus Climate Orbiter Akatsuki.",
       "category": "launch",
       "focal_point": {
@@ -27348,7 +27348,7 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.679Z",
+      "scored_at": "2026-11-08T07:13:41.322Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/apollo-soyuz/01.jpg": {
@@ -28254,11 +28254,11 @@
     },
     "/images/missions/mariner9/04.jpg": {
       "score": 8,
-      "subject": "High-resolution color image of Phobos, the larger moon of Mars, showing its cratered and grooved surface against black space.",
-      "category": "surface",
+      "subject": "Mars's moon Phobos photographed by Mariner 9 from 5,760 km in 1971, one of the first good views of it.",
+      "category": "orbital",
       "focal_point": {
-        "x": 0.52,
-        "y": 0.52
+        "x": 0.5,
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
@@ -28266,8 +28266,8 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:10:40.193Z",
-      "scoring_cost_usd": 0.009018
+      "scored_at": "2026-11-08T07:14:35.268Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/mariner9/05.jpg": {
       "score": 4,
@@ -29001,9 +29001,9 @@
       "scoring_cost_usd": 0.009336
     },
     "/images/missions/apollo-1/04.jpg": {
-      "score": 4,
-      "subject": "Apollo 1 mission patch featuring the names Grissom, White, and Chaffee around a circular emblem with an American flag border and a depiction of the Command/Service Module orbiting Earth.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Apollo 1 three-part hatch on display in the crew tribute at Kennedy Space Center, January 2017 — the first time any part of the spacecraft was shown publicly.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -29012,10 +29012,10 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T20:54:45.090Z",
-      "scoring_cost_usd": 0.009336
+      "scored_at": "2026-11-08T07:14:35.531Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/apollo-1/01.jpg": {
       "score": 7,
@@ -29035,11 +29035,11 @@
       "scoring_cost_usd": 0.009009
     },
     "/images/missions/apollo-1/02.jpg": {
-      "score": 7,
-      "subject": "A Saturn IB rocket stage being rolled out horizontally on a transport vehicle from a large assembly building at Kennedy Space Center, with ground crew and a cameraman visible.",
-      "category": "hardware",
+      "score": 8,
+      "subject": "Apollo 1 prime crew water egress training with a boilerplate command module in the Gulf of Mexico, October 1966.",
+      "category": "people",
       "focal_point": {
-        "x": 0.52,
+        "x": 0.5,
         "y": 0.55
       },
       "subject_match": true,
@@ -29048,8 +29048,8 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T20:54:54.648Z",
-      "scoring_cost_usd": 0.008838
+      "scored_at": "2026-11-08T07:14:35.503Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/apollo13/02.jpg": {
       "score": 7,
@@ -29426,21 +29426,21 @@
       "scoring_cost_usd": 0.008907
     },
     "/images/missions/clementine/04.jpg": {
-      "score": 5,
-      "subject": "Artist's concept render of a boxy satellite spacecraft with two blue solar panel arrays deployed against a starfield background.",
-      "category": "render",
+      "score": 8,
+      "subject": "Clementine star-tracker view of the night side of the Moon lit by earthshine, with the solar corona and Venus above the limb, 1994.",
+      "category": "orbital",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:02:17.709Z",
-      "scoring_cost_usd": 0.007607999999999999
+      "scored_at": "2026-11-08T07:14:35.313Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/clementine/01.jpg": {
       "score": 7,
@@ -29919,9 +29919,9 @@
       "scoring_cost_usd": 0.008943
     },
     "/images/missions/lunar-prospector/03.jpg": {
-      "score": 2,
-      "subject": "Lunar Prospector mission patch featuring the Lockheed Martin and NASA Ames Research Center logos with a stylized spacecraft and lunar imagery.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Artist's conception of Lunar Prospector head-on, just before its planned impact on the Moon in July 1999.",
+      "category": "render",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -29930,27 +29930,27 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:09:04.975Z",
-      "scoring_cost_usd": 0.0044729999999999995
+      "scored_at": "2026-11-08T07:14:35.499Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/lunar-prospector/02.jpg": {
-      "score": 5,
-      "subject": "False-color global map of an asteroid or small body surface showing compositional variation in blue, green, and red tones.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Model of the Lunar Prospector spacecraft at NASA Ames Research Center, May 1996.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.4,
-        "y": 0.4
+        "x": 0.5,
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:09:14.427Z",
-      "scoring_cost_usd": 0.005562
+      "scored_at": "2026-11-08T07:14:35.469Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/mariner10/01.jpg": {
       "score": 7,
@@ -30055,21 +30055,21 @@
       "scoring_cost_usd": 0.006117000000000001
     },
     "/images/missions/mars-express/02.jpg": {
-      "score": 7,
-      "subject": "Artist's rendering of ESA's Mars Express spacecraft orbiting Mars with its MARSIS radar antenna deployed and solar panels extended against a starfield backdrop.",
-      "category": "render",
+      "score": 8,
+      "subject": "Phobos over the limb of Mars in false colour, processed by Andrea Luck from Mars Express HRSC data of 22 November 2021.",
+      "category": "orbital",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.38
+        "x": 0.5,
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:10:47.740Z",
-      "scoring_cost_usd": 0.006918
+      "scored_at": "2026-11-08T07:14:35.273Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/mars-express/03.jpg": {
       "score": 6,
@@ -30174,8 +30174,8 @@
       "scoring_cost_usd": 0.005862
     },
     "/images/missions/mars-pathfinder/03.jpg": {
-      "score": 6,
-      "subject": "Black-and-white surface image of rocky Martian terrain with scattered boulders and sandy ground.",
+      "score": 8,
+      "subject": "Martian terrain around Mars Pathfinder on its first day, with deflated airbags and part of the Sojourner rover in view.",
       "category": "surface",
       "focal_point": {
         "x": 0.5,
@@ -30187,11 +30187,11 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:11:14.209Z",
-      "scoring_cost_usd": 0.004449
+      "scored_at": "2026-11-08T07:14:35.310Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/mars2/01.jpg": {
-      "score": 7,
+      "score": 8,
       "subject": "Render of PrOP-M, the small rover on skis that Mars 2 and Mars 3 carried, on a stony Martian surface.",
       "category": "render",
       "focal_point": {
@@ -30344,7 +30344,7 @@
       "scoring_cost_usd": 0.009036
     },
     "/images/missions/maven/02.jpg": {
-      "score": 4,
+      "score": 8,
       "subject": "An Atlas V rocket lifting off from Cape Canaveral on 18 November 2013 carrying MAVEN to Mars.",
       "category": "launch",
       "focal_point": {
@@ -30357,7 +30357,7 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.811Z",
+      "scored_at": "2026-11-08T07:13:41.453Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/mercury-atlas-9/01.jpg": {
@@ -30476,7 +30476,7 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.700Z",
+      "scored_at": "2026-11-08T07:13:41.346Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/mmx/02.jpg": {
@@ -30497,7 +30497,7 @@
       "scoring_cost_usd": 0.006882
     },
     "/images/missions/mmx/03.jpg": {
-      "score": 7,
+      "score": 8,
       "subject": "JAXA computer graphic (2019) of the MMX spacecraft with its solar arrays deployed.",
       "category": "render",
       "focal_point": {
@@ -30510,7 +30510,7 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.742Z",
+      "scored_at": "2026-11-08T07:13:41.386Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/mmx/04.jpg": {
@@ -30718,7 +30718,7 @@
       "scoring_cost_usd": 0.009264
     },
     "/images/missions/schiaparelli/01.jpg": {
-      "score": 7,
+      "score": 8,
       "subject": "Mars Express HRSC perspective view of Meridiani Planum, the plain holding Schiaparelli's landing ellipse, with Endeavour crater in the background.",
       "category": "surface",
       "focal_point": {
@@ -30731,7 +30731,7 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-11-08T06:59:56.796Z",
+      "scored_at": "2026-11-08T07:13:41.439Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/schiaparelli/03.jpg": {
@@ -31756,17 +31756,17 @@
       "scoring_cost_usd": 0.009302999999999999
     },
     "/images/missions/lucy/02.jpg": {
-      "score": 6,
-      "subject": "Artist concept comparison chart of the six Jupiter Trojan asteroid targets of NASA's Lucy mission, including Patroclus, Menoetius, Eurybates, Orus, Leucus, Polymele, and Donaldjohanson, shown to relative scale against a starfield.",
-      "category": "render",
+      "score": 8,
+      "subject": "NASA's Lucy spacecraft being prepared to move to the airlock at the Astrotech facility in Titusville, Florida, 29 September 2021.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "subject_match": true,
-      "rejected_by": "score-below-threshold",
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.007227000000000001
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:14:35.333Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/lucy/03.jpg": {
       "score": 7,
@@ -31834,7 +31834,7 @@
       "scoring_cost_usd": 0.004878
     },
     "/images/missions/mars2/04.jpg": {
-      "score": 5,
+      "score": 8,
       "subject": "Museum model of the Mars 3 descent module, the same lander design Mars 2 carried, petals open and antennas raised.",
       "category": "hardware",
       "focal_point": {
@@ -31860,7 +31860,7 @@
       "scoring_cost_usd": 0.008334000000000001
     },
     "/images/missions/maven/04.jpg": {
-      "score": 7,
+      "score": 8,
       "subject": "Engineers test-deploy MAVEN's twin solar arrays in Kennedy Space Center's Payload Hazardous Servicing Facility, September 2013.",
       "category": "hardware",
       "focal_point": {
@@ -31869,7 +31869,7 @@
       },
       "subject_match": true,
       "rejected_by": null,
-      "scored_at": "2026-11-08T06:59:56.839Z",
+      "scored_at": "2026-11-08T07:13:41.480Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/mercury-redstone-3/05.jpg": {
@@ -31886,7 +31886,7 @@
       "scoring_cost_usd": 0.009609
     },
     "/images/missions/mmx/05.jpg": {
-      "score": 5,
+      "score": 8,
       "subject": "The IDEFIX rover, built by CNES and DLR for MMX, folded for flight on its separation mechanism in September 2023.",
       "category": "hardware",
       "focal_point": {
@@ -31895,7 +31895,7 @@
       },
       "subject_match": true,
       "rejected_by": null,
-      "scored_at": "2026-11-08T06:59:56.747Z",
+      "scored_at": "2026-11-08T07:13:41.390Z",
       "scoring_cost_usd": 0
     },
     "/images/missions/parker-solar-probe/02.jpg": {
@@ -32055,43 +32055,43 @@
       "scoring_cost_usd": 0.00936
     },
     "/images/missions/voyager-1/03.jpg": {
-      "score": 6,
-      "subject": "Artist's render of the Voyager spacecraft showing its large parabolic high-gain antenna, science boom, and extended magnetometer boom against a black background.",
-      "category": "render",
+      "score": 8,
+      "subject": "Voyager 1 lifting off on its Titan/Centaur rocket from Cape Canaveral on 5 September 1977.",
+      "category": "launch",
       "focal_point": {
-        "x": 0.42,
-        "y": 0.42
+        "x": 0.5,
+        "y": 0.4
       },
       "subject_match": true,
-      "rejected_by": "score-below-threshold",
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009132
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:14:35.187Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/voyager-1/04.jpg": {
-      "score": 6,
-      "subject": "Black and white Voyager image of Saturn's rings showing labeled ring divisions D68, D72, and D73 near the planet's limb.",
+      "score": 8,
+      "subject": "Jupiter's moon Io in colour, photographed by Voyager 1 in March 1979.",
       "category": "orbital",
       "focal_point": {
-        "x": 0.65,
+        "x": 0.5,
         "y": 0.5
       },
       "subject_match": true,
       "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.0072120000000000005
+      "scored_at": "2026-11-08T07:14:35.193Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/voyager-1/05.jpg": {
-      "score": 9,
-      "subject": "Close-up black-and-white image of Saturn's ring system showing intricate banding and structure captured by a spacecraft.",
+      "score": 8,
+      "subject": "Saturn with its moons Tethys and Dione, photographed by Voyager 1 on 3 November 1980 from 13 million km.",
       "category": "orbital",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
       "subject_match": true,
       "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.006822
+      "scored_at": "2026-11-08T07:14:35.226Z",
+      "scoring_cost_usd": 0
     },
     "/images/moon-sites/apollo15/02.jpg": {
       "score": 9,
@@ -32372,6 +32372,45 @@
       "fallback": false,
       "scored_at": "2026-05-24T00:27:52.785Z",
       "scoring_cost_usd": 0.005031
+    },
+    "/images/missions/mariner10/05.jpg": {
+      "subject": "Earth and the Moon as seen by Mariner 10 after its launch in November 1973.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:14:35.238Z",
+      "scoring_cost_usd": 0,
+      "score": 8
+    },
+    "/images/missions/mariner4/04.jpg": {
+      "subject": "A Mariner 4 spacecraft as displayed at the Smithsonian, with its four solar panels and high-gain antenna.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:14:35.239Z",
+      "scoring_cost_usd": 0,
+      "score": 8
+    },
+    "/images/missions/clementine/05.jpg": {
+      "subject": "Multispectral mosaic of the Aristarchus region of the Moon, combined from about 500 Clementine images.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:14:35.317Z",
+      "scoring_cost_usd": 0,
+      "score": 8
     }
   }
 }

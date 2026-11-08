@@ -41263,7 +41263,7 @@
       "revid": null,
       "pageid": 155954676,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:44.008Z"
+      "fetched_at": "2026-11-08T07:13:30.009Z"
     },
     {
       "id": "d097f9943e1866f2",
@@ -41284,7 +41284,7 @@
       "revid": null,
       "pageid": 95498094,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:45.238Z"
+      "fetched_at": "2026-11-08T07:13:31.121Z"
     },
     {
       "id": "740505caf128e7c1",
@@ -41305,7 +41305,7 @@
       "revid": null,
       "pageid": 182086824,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:46.478Z"
+      "fetched_at": "2026-11-08T07:13:32.234Z"
     },
     {
       "id": "325ef224e9c35456",
@@ -41326,7 +41326,7 @@
       "revid": null,
       "pageid": 88464497,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:47.723Z"
+      "fetched_at": "2026-11-08T07:13:33.346Z"
     },
     {
       "id": "c1a6b410eae13536",
@@ -41347,7 +41347,7 @@
       "revid": null,
       "pageid": 10407701,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:48.977Z"
+      "fetched_at": "2026-11-08T07:13:34.458Z"
     },
     {
       "id": "53de8424b8a8385b",
@@ -41367,7 +41367,7 @@
       "revid": null,
       "pageid": 155954676,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:48.977Z"
+      "fetched_at": "2026-11-08T07:13:34.458Z"
     },
     {
       "id": "3c3b737edd3803dc",
@@ -41387,7 +41387,7 @@
       "revid": null,
       "pageid": 95498094,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:48.977Z"
+      "fetched_at": "2026-11-08T07:13:34.458Z"
     },
     {
       "id": "8482ef8678b7a7ed",
@@ -41407,7 +41407,7 @@
       "revid": null,
       "pageid": 182086824,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:48.977Z"
+      "fetched_at": "2026-11-08T07:13:34.458Z"
     },
     {
       "id": "0517b73546c1b95a",
@@ -41427,7 +41427,7 @@
       "revid": null,
       "pageid": 88464497,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:48.977Z"
+      "fetched_at": "2026-11-08T07:13:34.458Z"
     },
     {
       "id": "4711e401aaff3ba8",
@@ -41447,7 +41447,7 @@
       "revid": null,
       "pageid": 10407701,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:48.977Z"
+      "fetched_at": "2026-11-08T07:13:34.458Z"
     },
     {
       "id": "f71c8206672ed82f",
@@ -41473,23 +41473,22 @@
     {
       "id": "d59c00011bc87723",
       "path": "/images/missions/apollo-1/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — missions/apollo-1",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "PRESS BOAT - YACHT - DUCHESS (s66-58597)",
+      "author": "NASA/JSC",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
+      "source_url": "https://images.nasa.gov/details/s66-58597",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.962Z"
+      "nasa_id": "s66-58597",
+      "fetched_at": "2026-11-08T07:14:34.992Z"
     },
     {
       "id": "ef4220e82d6bea81",
@@ -41516,11 +41515,11 @@
       "id": "4128ec6eb40aa2d4",
       "path": "/images/missions/apollo-1/04.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:AS-204 - hatch.png",
-      "author": "NASA",
+      "title": "File:Apollo 1 Tribute three-part hatch.JPG",
+      "author": "NASA/Kim Shiflett",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:AS-204_-_hatch.png",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/AS-204_-_hatch.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apollo_1_Tribute_three-part_hatch.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Apollo_1_Tribute_three-part_hatch.JPG",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "Public domain",
@@ -41529,9 +41528,9 @@
         "walker-fallback"
       ],
       "revid": null,
-      "pageid": 109848,
+      "pageid": 150299724,
       "nasa_id": null,
-      "fetched_at": "2026-11-02T10:12:47.591Z"
+      "fetched_at": "2026-11-08T07:14:25.764Z"
     },
     {
       "id": "50480bc5592d680a",
@@ -41552,6 +41551,46 @@
       "pageid": null,
       "nasa_id": "S66-50152",
       "fetched_at": "2026-10-21T08:56:15.150Z"
+    },
+    {
+      "id": "74ba5e5b7553c8d9",
+      "path": "/images/missions/apollo-1/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Apollo 1 Tribute three-part hatch.JPG",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apollo_1_Tribute_three-part_hatch.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Apollo_1_Tribute_three-part_hatch.JPG",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 150299724,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T07:14:25.765Z"
+    },
+    {
+      "id": "99606ab121c73e9d",
+      "path": "/images/missions/apollo-1/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "PRESS BOAT - YACHT - DUCHESS (s66-58597)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/s66-58597",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "s66-58597",
+      "fetched_at": "2026-11-08T07:14:34.992Z"
     },
     {
       "id": "e6b3ccdadf73e0eb",
@@ -45144,44 +45183,42 @@
     {
       "id": "d668f0794d5e12c0",
       "path": "/images/missions/clementine/04.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Clementine_final_checks.jpg",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "Clementine Observes the Moon, Solar Corona, and Venus (PIA00434)",
+      "author": "NASA/JPL/USGS",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AClementine_final_checks.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Clementine_final_checks.jpg",
+      "source_url": "https://images.nasa.gov/details/PIA00434",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.844Z"
+      "nasa_id": "PIA00434",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "4b7901db3f018c42",
       "path": "/images/missions/clementine/04.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Clementine_final_checks.jpg",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "Clementine Observes the Moon, Solar Corona, and Venus (PIA00434)",
+      "author": "NASA/JPL/USGS",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AClementine_final_checks.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Clementine_final_checks.jpg",
+      "source_url": "https://images.nasa.gov/details/PIA00434",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.844Z"
+      "nasa_id": "PIA00434",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "dde74bdb71451000",
@@ -46072,10 +46109,10 @@
       "id": "99774c040aeb143e",
       "path": "/images/missions/galileo/02.1x1.jpg",
       "source_type": "nasa-images-api",
-      "title": "Line drawing of the Galileo spacecraft's encounters on its way to Jupiter (S89-44173)",
+      "title": "STS-34 Galileo spacecraft / IUS deployment sequence in OV-104's payload bay (s34-71-00r)",
       "author": "NASA/JSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/S89-44173",
+      "source_url": "https://images.nasa.gov/details/s34-71-00r",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -46085,17 +46122,17 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "S89-44173",
-      "fetched_at": "2026-11-07T08:28:52.501Z"
+      "nasa_id": "s34-71-00r",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "8f636a885917afbb",
       "path": "/images/missions/galileo/02.webp",
       "source_type": "nasa-images-api",
-      "title": "Line drawing of the Galileo spacecraft's encounters on its way to Jupiter (S89-44173)",
+      "title": "STS-34 Galileo spacecraft / IUS deployment sequence in OV-104's payload bay (s34-71-00r)",
       "author": "NASA/JSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/S89-44173",
+      "source_url": "https://images.nasa.gov/details/s34-71-00r",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -46105,8 +46142,8 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "S89-44173",
-      "fetched_at": "2026-11-07T08:28:52.501Z"
+      "nasa_id": "s34-71-00r",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "9cc42e001da27662",
@@ -48119,23 +48156,22 @@
     {
       "id": "a1873b2094829f72",
       "path": "/images/missions/lucy/02.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Lucy targets.jpg",
-      "author": "NASA/Goddard Space Flight Center Conceptual Image Lab",
+      "source_type": "nasa-images-api",
+      "title": "Lucy Spacecraft Move from WPC to Airlock (KSC-20210929-PH-JBS01_0011)",
+      "author": "NASA/Ben Smegelsky",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Lucy_targets.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Lucy_targets.jpg",
+      "source_url": "https://images.nasa.gov/details/KSC-20210929-PH-JBS01_0011",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "Public domain",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": 117581208,
-      "nasa_id": null,
-      "fetched_at": "2026-11-07T09:38:03.102Z"
+      "pageid": null,
+      "nasa_id": "KSC-20210929-PH-JBS01_0011",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "2193f0401428af1d",
@@ -48157,6 +48193,26 @@
       "pageid": 54764545,
       "nasa_id": null,
       "fetched_at": "2026-11-07T09:38:04.212Z"
+    },
+    {
+      "id": "351d34472f803f39",
+      "path": "/images/missions/lucy/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Lucy Spacecraft Move from WPC to Airlock (KSC-20210929-PH-JBS01_0011)",
+      "author": "NASA/Ben Smegelsky",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/KSC-20210929-PH-JBS01_0011",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20210929-PH-JBS01_0011",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "b56c13d4beff056a",
@@ -48894,44 +48950,43 @@
     {
       "id": "914c0bf7b465d23b",
       "path": "/images/missions/lunar-prospector/02.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Lunar Prospector insignia.png",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "N-244 Lunar Prospector Model (ARC-1996-AC96-0196-5)",
+      "author": "Adam Souza",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ALunar%20Prospector%20insignia.png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lunar%20Prospector%20insignia.png",
+      "source_url": "https://images.nasa.gov/details/ARC-1996-AC96-0196-5",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.854Z"
+      "nasa_id": "ARC-1996-AC96-0196-5",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "f0493b89529185e9",
       "path": "/images/missions/lunar-prospector/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Lunar Prospector Thorium abundance map.jpg",
-      "author": "NASA",
+      "title": "File:78768main LPhead.jpg",
+      "author": "Donald Grahame",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ALunar%20Prospector%20Thorium%20abundance%20map.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lunar%20Prospector%20Thorium%20abundance%20map.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:78768main_LPhead.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/78768main_LPhead.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 78924135,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.854Z"
+      "fetched_at": "2026-11-08T07:14:26.877Z"
     },
     {
       "id": "62d90be1e43df00b",
@@ -48974,6 +49029,46 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.854Z"
+    },
+    {
+      "id": "05dcbf80b4983183",
+      "path": "/images/missions/lunar-prospector/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:78768main LPhead.jpg",
+      "author": "Donald Grahame",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:78768main_LPhead.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/78768main_LPhead.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 78924135,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T07:14:26.877Z"
+    },
+    {
+      "id": "8d8bef93aaf5e449",
+      "path": "/images/missions/lunar-prospector/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "N-244 Lunar Prospector Model (ARC-1996-AC96-0196-5)",
+      "author": "Adam Souza",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/ARC-1996-AC96-0196-5",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ARC-1996-AC96-0196-5",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "5035b3e9ff7195d5",
@@ -49377,23 +49472,42 @@
     {
       "id": "2245de4a593cf216",
       "path": "/images/missions/mariner10/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Mariner 10 gravitational slingshot.jpg",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "Earth and Moon as Viewed by Mariner 10 (PIA02441)",
+      "author": "NASA/JPL/Northwestern University",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AMariner%2010%20gravitational%20slingshot.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mariner%2010%20gravitational%20slingshot.jpg",
+      "source_url": "https://images.nasa.gov/details/PIA02441",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.854Z"
+      "nasa_id": "PIA02441",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
+    },
+    {
+      "id": "71d03f869ab8cc8c",
+      "path": "/images/missions/mariner10/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Earth and Moon as Viewed by Mariner 10 (PIA02441)",
+      "author": "NASA/JPL/Northwestern University",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/PIA02441",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA02441",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "91e5910d1bea0092",
@@ -49584,22 +49698,22 @@
       "id": "e1c136156c790906",
       "path": "/images/missions/mariner9/04.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Phobos colour 2008.jpg",
-      "author": "ESA / DLR / FU Berlin (CC BY-SA 3.0 IGO)",
-      "agency": "ESA / DLR / FU Berlin (CC BY-SA 3.0 IGO)",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APhobos%20colour%202008.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phobos%20colour%202008.jpg",
-      "license_short": "CC-BY-SA-3.0-IGO",
-      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "title": "File:Phobos by Mariner 9 (71-051A-04A).jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Phobos_by_Mariner_9_(71-051A-04A).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Phobos_by_Mariner_9_%2871-051A-04A%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 68062053,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.859Z"
+      "fetched_at": "2026-11-08T07:14:27.991Z"
     },
     {
       "id": "529cbd6d2ee04fc2",
@@ -49621,6 +49735,26 @@
       "pageid": null,
       "nasa_id": "PIA03100",
       "fetched_at": "2026-06-19T09:26:46.858Z"
+    },
+    {
+      "id": "6be279029555c3b8",
+      "path": "/images/missions/mariner9/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Phobos by Mariner 9 (71-051A-04A).jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Phobos_by_Mariner_9_(71-051A-04A).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Phobos_by_Mariner_9_%2871-051A-04A%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 68062053,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T07:14:27.991Z"
     },
     {
       "id": "18f33acb10d1385c",
@@ -49668,43 +49802,43 @@
       "id": "23a00329332e8648",
       "path": "/images/missions/mars-express/02.1x1.jpg",
       "source_type": "wikimedia-commons",
-      "title": "File:Phobos colour 2008.jpg",
-      "author": "ESA",
+      "title": "File:Phobos over Mars - ESA Mars Express (52682839964).png",
+      "author": "ESA/DLR/FUBerlin/AndreaLuck",
       "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APhobos%20colour%202008.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phobos%20colour%202008.jpg",
-      "license_short": "CC-BY-SA-3.0-IGO",
-      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Phobos_over_Mars_-_ESA_Mars_Express_(52682839964).png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Phobos_over_Mars_-_ESA_Mars_Express_%2852682839964%29.png",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 129512069,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.836Z"
+      "fetched_at": "2026-11-08T07:14:29.103Z"
     },
     {
       "id": "2159387b922229d3",
       "path": "/images/missions/mars-express/02.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Phobos colour 2008.jpg",
-      "author": "ESA",
+      "title": "File:Phobos over Mars - ESA Mars Express (52682839964).png",
+      "author": "ESA/DLR/FUBerlin/AndreaLuck",
       "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APhobos%20colour%202008.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phobos%20colour%202008.jpg",
-      "license_short": "CC-BY-SA-3.0-IGO",
-      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Phobos_over_Mars_-_ESA_Mars_Express_(52682839964).png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Phobos_over_Mars_-_ESA_Mars_Express_%2852682839964%29.png",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 129512069,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.836Z"
+      "fetched_at": "2026-11-08T07:14:29.103Z"
     },
     {
       "id": "5a0e85de35d3ba3e",
@@ -49918,10 +50052,10 @@
       "id": "d2c9d5af3d4b0002",
       "path": "/images/missions/mars-pathfinder/03.1x1.jpg",
       "source_type": "nasa-images-api",
-      "title": "Newest is Biggest: Three Generations of NASA Mars Rovers",
-      "author": "NASA",
+      "title": "Martian Terrain, Unfurled Rover Ramps & Deflated Airbags (PIA00613)",
+      "author": "NASA/JPL",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/PIA11436",
+      "source_url": "https://images.nasa.gov/details/PIA00613",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -49931,17 +50065,17 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "PIA11436",
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "nasa_id": "PIA00613",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "f314b0cd6fb23831",
       "path": "/images/missions/mars-pathfinder/03.webp",
       "source_type": "nasa-images-api",
-      "title": "Newest is Biggest: Three Generations of NASA Mars Rovers",
-      "author": "NASA",
+      "title": "Martian Terrain, Unfurled Rover Ramps & Deflated Airbags (PIA00613)",
+      "author": "NASA/JPL",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/PIA11436",
+      "source_url": "https://images.nasa.gov/details/PIA00613",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -49951,8 +50085,8 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "PIA11436",
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "nasa_id": "PIA00613",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "0b7bcf4c618f3f75",
@@ -50516,7 +50650,7 @@
       "revid": null,
       "pageid": 74860079,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:50.235Z"
+      "fetched_at": "2026-11-08T07:13:35.569Z"
     },
     {
       "id": "1c2a6a2168f5cfd9",
@@ -50536,7 +50670,7 @@
       "revid": null,
       "pageid": 74860079,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:50.235Z"
+      "fetched_at": "2026-11-08T07:13:35.569Z"
     },
     {
       "id": "25431b05fbce07c3",
@@ -50597,7 +50731,7 @@
       "revid": null,
       "pageid": 29702709,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:51.491Z"
+      "fetched_at": "2026-11-08T07:13:36.680Z"
     },
     {
       "id": "a86b272a95757978",
@@ -50618,7 +50752,7 @@
       "revid": null,
       "pageid": 29702709,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:51.491Z"
+      "fetched_at": "2026-11-08T07:13:36.680Z"
     },
     {
       "id": "d555c838b059cca7",
@@ -50984,7 +51118,7 @@
       "revid": null,
       "pageid": 158692002,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:52.722Z"
+      "fetched_at": "2026-11-08T07:13:37.791Z"
     },
     {
       "id": "067ef4089bd84ecb",
@@ -51004,7 +51138,7 @@
       "revid": null,
       "pageid": 158692002,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:52.722Z"
+      "fetched_at": "2026-11-08T07:13:37.791Z"
     },
     {
       "id": "d7f888971a1d68ce",
@@ -51069,7 +51203,7 @@
       "revid": null,
       "pageid": 155953606,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:53.956Z"
+      "fetched_at": "2026-11-08T07:13:38.904Z"
     },
     {
       "id": "1db73d47c2e0f060",
@@ -51090,7 +51224,7 @@
       "revid": null,
       "pageid": 155953606,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:53.956Z"
+      "fetched_at": "2026-11-08T07:13:38.904Z"
     },
     {
       "id": "6131bc5dbbfbfbdd",
@@ -51153,7 +51287,7 @@
       "revid": null,
       "pageid": 138132805,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:55.224Z"
+      "fetched_at": "2026-11-08T07:13:40.014Z"
     },
     {
       "id": "f9b8d905833508c3",
@@ -51174,7 +51308,7 @@
       "revid": null,
       "pageid": 138132805,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:55.224Z"
+      "fetched_at": "2026-11-08T07:13:40.015Z"
     },
     {
       "id": "c2244285c329adba",
@@ -52884,85 +53018,85 @@
       "id": "a0dd2a4d0faec47a",
       "path": "/images/missions/pioneer-11/02.1x1.jpg",
       "source_type": "wikimedia-commons",
-      "title": "File:Pioneer11.jpg",
-      "author": "NASA",
+      "title": "File:Pioneer 11 prior to launch.jpg",
+      "author": "NASA Kennedy Space Center (NASA-KSC)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APioneer11.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pioneer11.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pioneer_11_prior_to_launch.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Pioneer_11_prior_to_launch.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 303111,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.848Z"
+      "fetched_at": "2026-11-08T07:14:30.214Z"
     },
     {
       "id": "d1b313e6fe4138bb",
       "path": "/images/missions/pioneer-11/02.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Pioneer11.jpg",
-      "author": "NASA",
+      "title": "File:Pioneer 11 prior to launch.jpg",
+      "author": "NASA Kennedy Space Center (NASA-KSC)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APioneer11.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pioneer11.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pioneer_11_prior_to_launch.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Pioneer_11_prior_to_launch.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 303111,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.848Z"
+      "fetched_at": "2026-11-08T07:14:30.214Z"
     },
     {
       "id": "09489cad5a763b96",
       "path": "/images/missions/pioneer-11/03.1x1.jpg",
       "source_type": "wikimedia-commons",
-      "title": "File:Pioneer10-plaque.jpg",
-      "author": "NASA",
+      "title": "File:The planet Jupiter as seen from above its north pole by Pioneer 11.jpg",
+      "author": "NASA Ames",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APioneer10-plaque.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pioneer10-plaque.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_planet_Jupiter_as_seen_from_above_its_north_pole_by_Pioneer_11.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/The_planet_Jupiter_as_seen_from_above_its_north_pole_by_Pioneer_11.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 25464772,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.848Z"
+      "fetched_at": "2026-11-08T07:14:31.325Z"
     },
     {
       "id": "a838e6a363e527a6",
       "path": "/images/missions/pioneer-11/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Pioneer10-plaque.jpg",
-      "author": "NASA",
+      "title": "File:The planet Jupiter as seen from above its north pole by Pioneer 11.jpg",
+      "author": "NASA Ames",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APioneer10-plaque.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pioneer10-plaque.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_planet_Jupiter_as_seen_from_above_its_north_pole_by_Pioneer_11.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/The_planet_Jupiter_as_seen_from_above_its_north_pole_by_Pioneer_11.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 25464772,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.848Z"
+      "fetched_at": "2026-11-08T07:14:31.325Z"
     },
     {
       "id": "93be232f9ed7a66f",
@@ -53443,7 +53577,7 @@
       "revid": null,
       "pageid": 91395510,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:56.462Z"
+      "fetched_at": "2026-11-08T07:13:41.125Z"
     },
     {
       "id": "307b3317cb9a816a",
@@ -53547,7 +53681,7 @@
       "revid": null,
       "pageid": 91395510,
       "nasa_id": null,
-      "fetched_at": "2026-11-08T06:59:56.462Z"
+      "fetched_at": "2026-11-08T07:13:41.125Z"
     },
     {
       "id": "0fb0f46091349e59",
@@ -58157,10 +58291,10 @@
       "id": "3257f380d4c7c9e2",
       "path": "/images/missions/voyager-1/03.1x1.jpg",
       "source_type": "nasa-images-api",
-      "title": "Voyager in Interstellar Space (201309120010HQ)",
-      "author": "NASA/Carla Cioffi",
+      "title": "Voyager 1 Launch (PIA21746)",
+      "author": "NASA/JPL-Caltech/KSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/201309120010HQ",
+      "source_url": "https://images.nasa.gov/details/PIA21746",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -58170,17 +58304,17 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "201309120010HQ",
-      "fetched_at": "2026-11-07T08:28:52.501Z"
+      "nasa_id": "PIA21746",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "706b65e8ebbded20",
       "path": "/images/missions/voyager-1/03.webp",
       "source_type": "nasa-images-api",
-      "title": "Voyager in Interstellar Space (201309120010HQ)",
-      "author": "NASA/Carla Cioffi",
+      "title": "Voyager 1 Launch (PIA21746)",
+      "author": "NASA/JPL-Caltech/KSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/201309120010HQ",
+      "source_url": "https://images.nasa.gov/details/PIA21746",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -58190,17 +58324,17 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "201309120010HQ",
-      "fetched_at": "2026-11-07T08:28:52.501Z"
+      "nasa_id": "PIA21746",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "d4e4196d13556b86",
       "path": "/images/missions/voyager-1/04.1x1.jpg",
       "source_type": "nasa-images-api",
-      "title": "Voyager 40th Anniversary at Air and Space Museum",
-      "author": "NASA",
+      "title": "Voyager 1's look at Jupiter's moon Io JPL ref No. P-21457 (ARC-1979-AC79-7114)",
+      "author": "JPL",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/NHQ201709050020",
+      "source_url": "https://images.nasa.gov/details/ARC-1979-AC79-7114",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -58210,17 +58344,17 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "NHQ201709050020",
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "nasa_id": "ARC-1979-AC79-7114",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "72eed8a8e340bca6",
       "path": "/images/missions/voyager-1/04.webp",
       "source_type": "nasa-images-api",
-      "title": "Voyager 40th Anniversary at Air and Space Museum",
-      "author": "NASA",
+      "title": "Voyager 1's look at Jupiter's moon Io JPL ref No. P-21457 (ARC-1979-AC79-7114)",
+      "author": "JPL",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/NHQ201709050020",
+      "source_url": "https://images.nasa.gov/details/ARC-1979-AC79-7114",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -58230,17 +58364,17 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "NHQ201709050020",
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "nasa_id": "ARC-1979-AC79-7114",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "d8011d78052e5a41",
       "path": "/images/missions/voyager-1/05.1x1.jpg",
       "source_type": "nasa-images-api",
-      "title": "Voyager 40th Anniversary at Air and Space Museum",
-      "author": "NASA",
+      "title": "Saturn With Tethys and Dione (PIA00024)",
+      "author": "NASA/JPL",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/NHQ201709050019",
+      "source_url": "https://images.nasa.gov/details/PIA00024",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -58250,17 +58384,17 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "NHQ201709050019",
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "nasa_id": "PIA00024",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "35ca6d3ab8d67eba",
       "path": "/images/missions/voyager-1/05.webp",
       "source_type": "nasa-images-api",
-      "title": "Voyager 40th Anniversary at Air and Space Museum",
-      "author": "NASA",
+      "title": "Saturn With Tethys and Dione (PIA00024)",
+      "author": "NASA/JPL",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/NHQ201709050019",
+      "source_url": "https://images.nasa.gov/details/PIA00024",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -58270,8 +58404,8 @@
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "NHQ201709050019",
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "nasa_id": "PIA00024",
+      "fetched_at": "2026-11-08T07:14:34.993Z"
     },
     {
       "id": "38c456911ee4bec0",
@@ -77738,46 +77872,42 @@
     {
       "id": "f1f03cbe7e00a353",
       "path": "/images/missions/clementine/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Appleton cráter (Clementine).jpg",
-      "author": "NASA",
-      "agency": "USAF",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Appleton_cr%C3%A1ter_(Clementine).jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Appleton_cr%C3%A1ter_%28Clementine%29.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Multispectral Mosaic of the Aristarchus Crater and Plateau (PIA00090)",
+      "author": "NASA/JPL/USGS",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/PIA00090",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-commons-api",
-        "resized-to-4096-master",
-        "reencoded-webp"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": 47301176,
-      "nasa_id": null,
-      "fetched_at": "2026-10-20T19:51:19.659Z"
+      "pageid": null,
+      "nasa_id": "PIA00090",
+      "fetched_at": "2026-11-08T07:14:34.994Z"
     },
     {
       "id": "e2d273866afc4362",
       "path": "/images/missions/clementine/05.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Appleton cráter (Clementine).jpg",
-      "author": "NASA",
-      "agency": "USAF",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Appleton_cr%C3%A1ter_(Clementine).jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Appleton_cr%C3%A1ter_%28Clementine%29.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Multispectral Mosaic of the Aristarchus Crater and Plateau (PIA00090)",
+      "author": "NASA/JPL/USGS",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/PIA00090",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-commons-api",
-        "resized-to-4096-master",
-        "reencoded-webp"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": 47301176,
-      "nasa_id": null,
-      "fetched_at": "2026-10-20T19:51:19.659Z"
+      "pageid": null,
+      "nasa_id": "PIA00090",
+      "fetched_at": "2026-11-08T07:14:34.994Z"
     },
     {
       "id": "1f090bd74dd1176f",
@@ -80375,45 +80505,45 @@
       "id": "648a02708470bccf",
       "path": "/images/missions/mariner4/04.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Mariner 3 or 4 diagram.jpg",
-      "author": "NASA",
+      "title": "File:Mariner 4 at the Smithsonian (52742006188).jpg",
+      "author": "jurvetson",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_3_or_4_diagram.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Mariner_3_or_4_diagram.jpg",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_4_at_the_Smithsonian_(52742006188).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Mariner_4_at_the_Smithsonian_%2852742006188%29.jpg",
+      "license_short": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_rationale": "Creative Commons Attribution 2.0",
       "modifications": [
         "downloaded-via-commons-api",
         "resized-to-4096-master",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": 1573661,
+      "pageid": 158823247,
       "nasa_id": null,
-      "fetched_at": "2026-10-21T08:05:11.835Z"
+      "fetched_at": "2026-11-08T07:14:32.438Z"
     },
     {
       "id": "ae3acfce585b1a07",
       "path": "/images/missions/mariner4/04.1x1.jpg",
       "source_type": "wikimedia-commons",
-      "title": "File:Mariner 3 or 4 diagram.jpg",
-      "author": "NASA",
+      "title": "File:Mariner 4 at the Smithsonian (52742006188).jpg",
+      "author": "jurvetson",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_3_or_4_diagram.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Mariner_3_or_4_diagram.jpg",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_4_at_the_Smithsonian_(52742006188).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Mariner_4_at_the_Smithsonian_%2852742006188%29.jpg",
+      "license_short": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_rationale": "Creative Commons Attribution 2.0",
       "modifications": [
         "downloaded-via-commons-api",
         "resized-to-4096-master",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": 1573661,
+      "pageid": 158823247,
       "nasa_id": null,
-      "fetched_at": "2026-10-21T08:05:11.835Z"
+      "fetched_at": "2026-11-08T07:14:32.438Z"
     },
     {
       "id": "9e572e32a10c4f4f",

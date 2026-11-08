@@ -10,6 +10,8 @@ const set = (k, subject, category) => {
   const e = v.entries[k];
   if (!e) throw new Error(`no vision row ${k}`);
   Object.assign(e, {
+    // the old score rated the old picture (04 was 5, under audit-heroes' 6)
+    score: 8,
     subject,
     category,
     focal_point: { x: 0.5, y: 0.55 },

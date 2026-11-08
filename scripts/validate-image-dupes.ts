@@ -87,13 +87,6 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   //    because the spacecraft AND the comet ARE the same scene.
   'a374b46f', // small-bodies/67p/01.jpg ← missions/rosetta/01.jpg
   '28ebc10a', // small-bodies/halley/01.jpg ← missions/giotto/04.jpg
-  // ── /tiangong-modules per-module galleries share images with
-  //    earth-objects/tiangong (which renders the whole station as
-  //    a single orbital object). 4 modules × 3 panorama slots all
-  //    show the same docked stack photo.
-  '80a3788a', // earth-objects/tiangong/01.jpg ← tiangong-modules/{chinarm,mengtian,tianzhou,wentian}/02.jpg
-  '62b03029', // earth-objects/tiangong/02.jpg ← tiangong-modules/{chinarm,mengtian,tianzhou,wentian}/03.jpg
-  'af492a81', // earth-objects/tiangong/03.jpg ← tiangong-modules/{mengtian,wentian}/{01,04}.jpg
   // ── earth-objects ← moon-site for entities that orbit + landed
   //    (chang'e 2 hero shared with its lunar-site panel).
   '821cae2f', // earth-objects/change2/01.jpg ← moon-sites/change2/01.jpg
@@ -113,9 +106,9 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   // ── Mars-3 (mission site) shares its hero with the fleet
   //    entry — same spacecraft photo seen from two surfaces.
   'c658c2fd', // mars-sites/mars3/01.jpg ← fleet-galleries/mars-3/05.jpg
-  // ── Viking 1 lander + orbiter on /mars share the fleet hero
+  // ── The Viking 1 orbiter on /mars shares the fleet hero
   //    because the operator-published photo IS the spacecraft.
-  '3c94e82c', // mars-sites/viking1-{lander,orbiter}/01.jpg ← fleet-galleries/viking-1/03.jpg
+  '3c94e82c', // mars-sites/viking1-orbiter/01.jpg ← fleet-galleries/viking-1/03.jpg
   // ── Mars Express + Phobos-2 fleet entry: phobos-2's flyby
   //    of Mars IS the mars-express site context photo.
   'ac806b35', // mars-sites/mars-express/02.jpg ← fleet-galleries/phobos-2/02.jpg
@@ -215,13 +208,6 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   //    ISS modules sharing assembly-era / docking-bay photos.
   '3486a1ef', // unity + zvezda
   '3632f2da', // unity + zarya
-  //    Mars rover pair from same Mars Exploration Rover programme.
-  'eaac0de3', // opportunity + spirit
-  //    Viking 1 lander + orbiter — same descent stack at Mars.
-  'deb29699', // viking1-lander + viking1-orbiter
-  'a990a3ef', // viking1-lander + viking1-orbiter
-  'cae8df25', // viking1-lander + viking1-orbiter
-  '1e135762', // viking1-lander + viking1-orbiter
   //    Freedom 7 / Mercury Redstone-3 — same first US crewed flight.
   '279f1015', // freedom-7 + mercury-redstone-3
   //    X-37B OTV missions share spacecraft photo across flights.
@@ -317,13 +303,6 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'c4453604', // smart-1/04 cross-surface (ESA: packed for launch)
   'fdc8e325', // smart-1/05 cross-surface (ESA: solar panels deployed)
 
-  // ALLOWLIST_AUTHORIZED (2026-06-21) — belts panel re-curation.
-  // Same NASA artist concept can legitimately represent both asteroid
-  // and Kuiper belt structures (e.g. generic "small body system" art).
-  // Marko will de-duplicate visually in /explore app review.
-  '0a066c4d', // belts/asteroid/01 + kuiper/03 (Altjira system artist concept)
-  '029bb16e', // belts/asteroid/02 + kuiper/02 (Kuiper Belt artist concept 2014)
-  '8bf77658', // belts/asteroid/03 + kuiper/05 (Comet 238P-Read artist concept)
 
   '12042c1f', // missions/dart/01,05 (hero + slot)
   'de85aceb', // missions/mercury-redstone-3/01,04 (hero + slot)

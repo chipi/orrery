@@ -137,16 +137,18 @@ if (DRY) {
 
 // 2. Masters are NN.jpg (the gallery convention; vision, pHash and the dedup gate key on it): a
 // JPEG original is kept byte for byte, anything else is flattened onto black and encoded at q92.
+// A JPEG with an EXIF rotation is re-encoded upright: the ladder ignores the flag, so a camera
+// photo stored sideways was served sideways (earth-objects/beidou/04, 2026-11-08).
 // Then the old derivatives go.
 for (const [rel, buf] of Object.entries(fetched)) {
   for (const ext of ['jpg', 'jpeg', 'png']) rmSync(`masters/${rel}.${ext}`, { force: true });
-  const fmt = (await sharp(buf).metadata()).format;
+  const { format: fmt, orientation } = await sharp(buf).metadata();
   mkdirSync(dirname(`masters/${rel}`), { recursive: true });
   writeFileSync(
     `masters/${rel}.jpg`,
-    fmt === 'jpeg'
+    fmt === 'jpeg' && (orientation ?? 1) === 1
       ? buf
-      : await sharp(buf).flatten({ background: '#000000' }).jpeg({ quality: 92 }).toBuffer(),
+      : await sharp(buf).rotate().flatten({ background: '#000000' }).jpeg({ quality: 92 }).toBuffer(),
   );
   const dir = `static/images/${dirname(rel)}`;
   const nn = rel.split('/').pop();

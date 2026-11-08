@@ -1014,12 +1014,14 @@
   ],
   "/images/belts/asteroid/01": [
     320,
-    1280,
-    1600
+    640,
+    1209,
+    1846
   ],
   "/images/belts/asteroid/02": [
     320,
-    1262
+    1280,
+    1973
   ],
   "/images/belts/asteroid/03": [
     320,
@@ -1028,8 +1030,7 @@
   ],
   "/images/belts/asteroid/04": [
     320,
-    1024,
-    1600
+    1000
   ],
   "/images/belts/asteroid/05": [
     320,
@@ -1058,12 +1059,11 @@
   "/images/belts/kuiper/05": [
     320,
     1280,
-    1600
+    1860
   ],
   "/images/belts/kuiper/06": [
     320,
-    1280,
-    1600
+    1000
   ],
   "/images/colophon/craft-bepicolombo": [
     320,
@@ -1296,11 +1296,15 @@
   ],
   "/images/earth-objects/beidou/04": [
     320,
-    1003
+    960,
+    1536,
+    2304
   ],
   "/images/earth-objects/beidou/05": [
     320,
-    542
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/chandra/01": [
     320,
@@ -1326,7 +1330,9 @@
   ],
   "/images/earth-objects/gaia/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/gaia/04": [
     320,
@@ -1336,7 +1342,8 @@
   "/images/earth-objects/gaia/05": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/earth-objects/galileo/01": [
     320,
@@ -1369,17 +1376,14 @@
   ],
   "/images/earth-objects/geo/03": [
     320,
-    960
-  ],
-  "/images/earth-objects/geo/04": [
-    320,
     1276,
     1920
   ],
-  "/images/earth-objects/geo/05": [
+  "/images/earth-objects/geo/04": [
     320,
-    1280,
-    1920
+    1017,
+    1627,
+    2441
   ],
   "/images/earth-objects/glonass/01": [
     320,
@@ -1388,25 +1392,22 @@
   ],
   "/images/earth-objects/glonass/02": [
     320,
-    800
+    960
   ],
   "/images/earth-objects/glonass/03": [
     320,
-    960
-  ],
-  "/images/earth-objects/glonass/04": [
-    320,
     768
   ],
-  "/images/earth-objects/glonass/05": [
+  "/images/earth-objects/glonass/04": [
     320,
     1280,
     1600
   ],
   "/images/earth-objects/goes/02": [
     320,
-    1280,
-    1656
+    853,
+    1365,
+    2000
   ],
   "/images/earth-objects/goes/03": [
     320,
@@ -1415,13 +1416,15 @@
   ],
   "/images/earth-objects/goes/04": [
     320,
-    1280,
-    1800
+    853,
+    1365,
+    2048
   ],
   "/images/earth-objects/goes/05": [
     320,
     1280,
-    1784
+    2048,
+    3072
   ],
   "/images/earth-objects/gps/01": [
     320,
@@ -1429,10 +1432,16 @@
     960
   ],
   "/images/earth-objects/gps/02": [
-    240
+    320,
+    1280,
+    2048,
+    2850
   ],
   "/images/earth-objects/gps/03": [
-    200
+    320,
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/gps/04": [
     320,
@@ -1553,11 +1562,6 @@
     1280,
     1920
   ],
-  "/images/earth-objects/kuiper/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/earth-objects/landsat/01": [
     320,
     640,
@@ -1566,7 +1570,9 @@
   ],
   "/images/earth-objects/landsat/02": [
     320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/earth-objects/landsat/03": [
     320,
@@ -1581,10 +1587,10 @@
     320,
     640
   ],
-  "/images/earth-objects/o3b/01": [
+  "/images/earth-objects/o3b/02": [
     320,
-    640,
-    1024
+    1280,
+    1920
   ],
   "/images/earth-objects/o3b/03": [
     320,
@@ -1592,11 +1598,6 @@
     1920
   ],
   "/images/earth-objects/o3b/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/earth-objects/o3b/05": [
     320,
     1280,
     1920
@@ -1615,7 +1616,8 @@
   "/images/earth-objects/oneweb/03": [
     320,
     1280,
-    1376
+    2048,
+    3072
   ],
   "/images/earth-objects/oneweb/04": [
     320,
@@ -1643,11 +1645,6 @@
     1920
   ],
   "/images/earth-objects/planet-labs/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/earth-objects/planet-labs/05": [
     320,
     1280,
     1920
@@ -1687,7 +1684,8 @@
   "/images/earth-objects/starlink/02": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/earth-objects/starlink/03": [
     320,
@@ -1701,7 +1699,9 @@
   ],
   "/images/earth-objects/starlink/05": [
     320,
-    510
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/tiangong/01": [
     320,
@@ -1731,20 +1731,27 @@
   ],
   "/images/earth-objects/tundra-molniya/02": [
     320,
-    461
+    1129,
+    1806,
+    2709
   ],
   "/images/earth-objects/tundra-molniya/03": [
     320,
-    1280,
-    1920
+    960,
+    1536,
+    2304
   ],
   "/images/earth-objects/tundra-molniya/04": [
     320,
-    597
+    1280,
+    2048,
+    2592
   ],
   "/images/earth-objects/tundra-molniya/05": [
     320,
-    595
+    945,
+    1513,
+    2269
   ],
   "/images/earth-objects/xmm/01": [
     320,
@@ -1757,7 +1764,8 @@
   ],
   "/images/earth-objects/xmm/03": [
     320,
-    1280
+    1280,
+    1800
   ],
   "/images/earth-objects/xmm/05": [
     320,
@@ -5231,6 +5239,7 @@
   ],
   "/images/fleet-galleries/progress-m/01": [
     320,
+    640,
     1024
   ],
   "/images/fleet-galleries/progress-m/02": [
@@ -5508,6 +5517,7 @@
   ],
   "/images/fleet-galleries/salyut-2/01": [
     320,
+    640,
     1280,
     1333
   ],
@@ -6768,6 +6778,7 @@
   ],
   "/images/fleet-galleries/vostok-6/01": [
     320,
+    640,
     850,
     1361,
     1600
@@ -7211,11 +7222,9 @@
   ],
   "/images/iss-modules/harmony/03": [
     320,
-    1280
-  ],
-  "/images/iss-modules/harmony/04": [
-    320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/iss-modules/htv_x/01": [
     320,
@@ -7263,7 +7272,9 @@
   ],
   "/images/iss-modules/leonardo/02": [
     320,
-    1279
+    1165,
+    1864,
+    2796
   ],
   "/images/iss-modules/leonardo/03": [
     320,
@@ -7314,10 +7325,6 @@
     320,
     1280
   ],
-  "/images/iss-modules/pirs/05": [
-    320,
-    1280
-  ],
   "/images/iss-modules/prichal/01": [
     320,
     960
@@ -7362,11 +7369,7 @@
     320,
     1280
   ],
-  "/images/iss-modules/quest/03": [
-    320,
-    1280
-  ],
-  "/images/iss-modules/quest/05": [
+  "/images/iss-modules/quest/04": [
     320,
     1280
   ],
@@ -7388,7 +7391,8 @@
   ],
   "/images/iss-modules/rassvet/05": [
     320,
-    1280
+    1280,
+    1999
   ],
   "/images/iss-modules/soyuz_ms/01": [
     320,
@@ -7470,10 +7474,6 @@
     1280,
     1920
   ],
-  "/images/iss-modules/unity/05": [
-    320,
-    1196
-  ],
   "/images/iss-modules/zarya/01": [
     320,
     960
@@ -7495,10 +7495,6 @@
     462
   ],
   "/images/iss-modules/zvezda/04": [
-    320,
-    700
-  ],
-  "/images/iss-modules/zvezda/05": [
     320,
     700
   ],
@@ -7553,7 +7549,9 @@
   ],
   "/images/mars-sites/exomars-rosalind-franklin/02": [
     320,
-    499
+    1280,
+    2048,
+    3072
   ],
   "/images/mars-sites/exomars-rosalind-franklin/03": [
     320,
@@ -7581,12 +7579,6 @@
     960
   ],
   "/images/mars-sites/hope/03": [
-    320,
-    591,
-    946,
-    960
-  ],
-  "/images/mars-sites/hope/04": [
     320,
     640,
     960
@@ -7628,7 +7620,9 @@
   ],
   "/images/mars-sites/mariner9/04": [
     320,
-    640
+    1280,
+    2048,
+    2995
   ],
   "/images/mars-sites/mariner9/05": [
     300
@@ -7639,7 +7633,9 @@
   ],
   "/images/mars-sites/mars-odyssey/02": [
     320,
-    640
+    1280,
+    2048,
+    3072
   ],
   "/images/mars-sites/mars-odyssey/03": [
     320,
@@ -7663,14 +7659,10 @@
   ],
   "/images/mars-sites/mars-pathfinder/03": [
     320,
-    640
-  ],
-  "/images/mars-sites/mars-pathfinder/04": [
-    320,
     640,
     819
   ],
-  "/images/mars-sites/mars-pathfinder/05": [
+  "/images/mars-sites/mars-pathfinder/04": [
     256
   ],
   "/images/mars-sites/mars2/01": [
@@ -7678,14 +7670,6 @@
     640,
     1280,
     1600
-  ],
-  "/images/mars-sites/mars2/02": [
-    320,
-    960
-  ],
-  "/images/mars-sites/mars2/03": [
-    320,
-    960
   ],
   "/images/mars-sites/mars3/01": [
     320,
@@ -7695,27 +7679,21 @@
   ],
   "/images/mars-sites/mars3/02": [
     320,
-    960
+    719,
+    1150,
+    1725
   ],
   "/images/mars-sites/mars3/03": [
-    320,
-    960
-  ],
-  "/images/mars-sites/mars3/04": [
     320,
     689,
     960
   ],
-  "/images/mars-sites/mars3/05": [
+  "/images/mars-sites/mars3/04": [
     320,
     640
   ],
   "/images/mars-sites/mars6/01": [
     250
-  ],
-  "/images/mars-sites/mars6/02": [
-    320,
-    960
   ],
   "/images/mars-sites/maven/01": [
     320,
@@ -7729,7 +7707,9 @@
   ],
   "/images/mars-sites/maven/03": [
     320,
-    1032
+    1280,
+    2048,
+    3000
   ],
   "/images/mars-sites/maven/04": [
     320,
@@ -7737,7 +7717,9 @@
   ],
   "/images/mars-sites/maven/05": [
     320,
-    603
+    1280,
+    2048,
+    3000
   ],
   "/images/mars-sites/mro/01": [
     320,
@@ -7795,11 +7777,9 @@
   ],
   "/images/mars-sites/perseverance/04": [
     320,
-    1280
-  ],
-  "/images/mars-sites/perseverance/05": [
-    320,
-    1279
+    1280,
+    2048,
+    3072
   ],
   "/images/mars-sites/phoenix/01": [
     320,
@@ -7843,7 +7823,9 @@
   "/images/mars-sites/spirit/01": [
     320,
     640,
-    960
+    1280,
+    2048,
+    3000
   ],
   "/images/mars-sites/spirit/02": [
     320,
@@ -7892,16 +7874,15 @@
   ],
   "/images/mars-sites/tianwen1-orbiter/04": [
     320,
-    960
-  ],
-  "/images/mars-sites/tianwen1-orbiter/05": [
-    320,
-    960
+    1280,
+    1920
   ],
   "/images/mars-sites/viking1-lander/01": [
     320,
     640,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/mars-sites/viking1-lander/02": [
     207
@@ -7925,20 +7906,26 @@
     960
   ],
   "/images/mars-sites/viking1-orbiter/02": [
-    207
+    320,
+    1280,
+    2048,
+    2520
   ],
   "/images/mars-sites/viking1-orbiter/03": [
     320,
     1280,
-    1744
+    1778
   ],
   "/images/mars-sites/viking1-orbiter/04": [
     320,
-    625
+    1004,
+    1606,
+    2094
   ],
   "/images/mars-sites/viking1-orbiter/05": [
     320,
-    640
+    1280,
+    1360
   ],
   "/images/mars-sites/viking2-lander/01": [
     320,
@@ -7946,7 +7933,10 @@
     960
   ],
   "/images/mars-sites/viking2-lander/02": [
-    319
+    320,
+    1280,
+    2048,
+    3000
   ],
   "/images/mars-sites/viking2-lander/03": [
     208
@@ -9400,6 +9390,7 @@
   ],
   "/images/missions/mars2/01": [
     320,
+    640,
     1280,
     2048,
     3000
@@ -9662,6 +9653,7 @@
   ],
   "/images/missions/otv-3/01": [
     320,
+    640,
     1280,
     1920
   ],
@@ -10905,7 +10897,9 @@
   ],
   "/images/moon-sites/luna21/02": [
     320,
-    683
+    1280,
+    2048,
+    3072
   ],
   "/images/moon-sites/luna21/03": [
     320,
@@ -10931,6 +10925,7 @@
   ],
   "/images/planets/earth/05": [
     320,
+    640,
     1280,
     1600
   ],
@@ -10962,8 +10957,7 @@
   ],
   "/images/planets/mars/01": [
     320,
-    1280,
-    1600
+    1065
   ],
   "/images/planets/mars/02": [
     320,
@@ -11001,8 +10995,7 @@
   ],
   "/images/planets/mercury/04": [
     320,
-    1280,
-    1600
+    1032
   ],
   "/images/planets/mercury/05": [
     320,
@@ -11084,7 +11077,9 @@
   ],
   "/images/planets/venus/02": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/planets/venus/03": [
     320,
@@ -11092,7 +11087,7 @@
   ],
   "/images/planets/venus/04": [
     320,
-    1280
+    1024
   ],
   "/images/recommendations/blogs/ars-technica": [
     240
@@ -11230,15 +11225,6 @@
     640,
     1100
   ],
-  "/images/satellites/ariel/02": [
-    320,
-    979
-  ],
-  "/images/satellites/ariel/03": [
-    320,
-    1280,
-    1440
-  ],
   "/images/satellites/callisto/01": [
     320,
     640,
@@ -11263,11 +11249,6 @@
     1280
   ],
   "/images/satellites/charon/02": [
-    320,
-    1280,
-    1600
-  ],
-  "/images/satellites/charon/03": [
     320,
     1280,
     1600
@@ -11309,7 +11290,7 @@
     1280,
     1600
   ],
-  "/images/satellites/europa/05": [
+  "/images/satellites/europa/04": [
     320,
     632
   ],
@@ -11320,13 +11301,9 @@
   ],
   "/images/satellites/ganymede/02": [
     320,
-    790
-  ],
-  "/images/satellites/ganymede/04": [
-    320,
     560
   ],
-  "/images/satellites/ganymede/05": [
+  "/images/satellites/ganymede/03": [
     320,
     1280,
     1600
@@ -11392,15 +11369,6 @@
     640,
     648
   ],
-  "/images/satellites/oberon/02": [
-    320,
-    513
-  ],
-  "/images/satellites/oberon/04": [
-    320,
-    1099,
-    1600
-  ],
   "/images/satellites/phobos/01": [
     320,
     640,
@@ -11414,14 +11382,10 @@
   "/images/satellites/phobos/03": [
     320,
     1280,
-    1600
+    2048,
+    3072
   ],
   "/images/satellites/phobos/04": [
-    320,
-    1280,
-    1600
-  ],
-  "/images/satellites/phobos/05": [
     320,
     794
   ],
@@ -11462,10 +11426,6 @@
   "/images/satellites/titania/04": [
     320,
     738
-  ],
-  "/images/satellites/titania/05": [
-    320,
-    1200
   ],
   "/images/satellites/triton/01": [
     320,
@@ -11948,10 +11908,6 @@
   "/images/small-bodies/oumuamua/01": [
     320,
     640,
-    960
-  ],
-  "/images/small-bodies/oumuamua/02": [
-    320,
     854,
     1366,
     1600
@@ -11972,13 +11928,9 @@
   ],
   "/images/small-bodies/pluto/04": [
     320,
-    1280,
-    1600
-  ],
-  "/images/small-bodies/pluto/05": [
-    249,
-    399,
-    599
+    1186,
+    1897,
+    2520
   ],
   "/images/stars/altair/01": [
     320,
@@ -12054,11 +12006,11 @@
   ],
   "/images/tiangong-modules/chinarm/02": [
     320,
-    960
+    800
   ],
   "/images/tiangong-modules/chinarm/03": [
     320,
-    960
+    800
   ],
   "/images/tiangong-modules/chinarm/04": [
     320,
@@ -12066,22 +12018,19 @@
   ],
   "/images/tiangong-modules/mengtian/01": [
     320,
-    876,
-    960
+    640,
+    810
   ],
   "/images/tiangong-modules/mengtian/02": [
     320,
-    960
+    1280,
+    1440
   ],
   "/images/tiangong-modules/mengtian/03": [
     320,
     960
   ],
   "/images/tiangong-modules/mengtian/04": [
-    320,
-    960
-  ],
-  "/images/tiangong-modules/mengtian/05": [
     320,
     960
   ],
@@ -12096,15 +12045,11 @@
   ],
   "/images/tiangong-modules/shenzhou/03": [
     320,
-    960
+    545
   ],
   "/images/tiangong-modules/shenzhou/04": [
     320,
-    545
-  ],
-  "/images/tiangong-modules/shenzhou/05": [
-    320,
-    960
+    810
   ],
   "/images/tiangong-modules/tianhe/01": [
     320,
@@ -12129,11 +12074,13 @@
   ],
   "/images/tiangong-modules/tianzhou/02": [
     320,
-    960
+    765
   ],
   "/images/tiangong-modules/tianzhou/03": [
     320,
-    960
+    1280,
+    2048,
+    2560
   ],
   "/images/tiangong-modules/tianzhou/04": [
     320,
@@ -12149,16 +12096,18 @@
   ],
   "/images/tiangong-modules/wentian/02": [
     320,
-    960
+    1280,
+    1490
   ],
   "/images/tiangong-modules/wentian/03": [
     320,
-    960
+    1280,
+    1500
   ],
   "/images/tiangong-modules/wentian/04": [
     320,
-    876,
-    960
+    1280,
+    1335
   ],
   "/images/anatomy/atlas-lv-3b": [
     320,
@@ -13975,18 +13924,6 @@
     320,
     640,
     1280,
-    1575
-  ],
-  "/images/earth-objects/change2/03": [
-    320,
-    640,
-    1280,
-    1950
-  ],
-  "/images/earth-objects/change2/04": [
-    320,
-    640,
-    1280,
     2048,
     2400
   ],
@@ -14011,7 +13948,7 @@
     2048,
     3072
   ],
-  "/images/earth-objects/o3b/02": [
+  "/images/earth-objects/o3b/01": [
     320,
     640,
     1280,
@@ -14424,7 +14361,7 @@
     2048,
     3072
   ],
-  "/images/mars-sites/hope/05": [
+  "/images/mars-sites/hope/04": [
     320,
     640,
     1024
@@ -14441,28 +14378,13 @@
     640,
     1280,
     2048,
-    2564
+    3072
   ],
   "/images/mars-sites/mars3-orbiter/03": [
     320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/mars-sites/mars3-orbiter/04": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/mars-sites/mars3-orbiter/05": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
+    719,
+    1150,
+    1725
   ],
   "/images/mars-sites/schiaparelli/05": [
     320,
@@ -14627,12 +14549,6 @@
   "/images/moon-sites/change2/02": [
     320,
     640,
-    1280,
-    1950
-  ],
-  "/images/moon-sites/change2/03": [
-    320,
-    640,
     1125
   ],
   "/images/moon-sites/luna16/02": [
@@ -14656,14 +14572,13 @@
   ],
   "/images/moon-sites/luna21/04": [
     320,
-    640,
-    1280,
-    1946
+    1000
   ],
   "/images/moon-sites/luna21/05": [
     320,
-    640,
-    952
+    1280,
+    2048,
+    3072
   ],
   "/images/small-bodies/halley/02": [
     320,
@@ -14692,11 +14607,6 @@
   "/images/fleet-galleries/plesetsk-41-1/03": [
     320,
     600
-  ],
-  "/images/mars-sites/mars6/03": [
-    320,
-    1280,
-    1920
   ],
   "/images/missions/shenzhou-2/03": [
     320,
@@ -14858,7 +14768,7 @@
     1629,
     1833
   ],
-  "/images/iss-modules/harmony/05": [
+  "/images/iss-modules/harmony/04": [
     320,
     640,
     1280,
@@ -14963,7 +14873,7 @@
     1280,
     1920
   ],
-  "/images/mars-sites/mars2/04": [
+  "/images/mars-sites/mars2/02": [
     320,
     1280,
     1920
@@ -15180,12 +15090,6 @@
     640,
     954
   ],
-  "/images/satellites/oberon/03": [
-    320,
-    640,
-    1280,
-    1440
-  ],
   "/images/satellites/miranda/05": [
     320,
     640,
@@ -15193,10 +15097,8 @@
   ],
   "/images/satellites/callisto/03": [
     320,
-    640,
-    1280,
-    2048,
-    2220
+    1177,
+    1580
   ],
   "/images/planets/neptune/04": [
     320,
@@ -15212,10 +15114,8 @@
   ],
   "/images/planets/uranus/05": [
     320,
-    640,
-    1191,
-    1906,
-    2859
+    1280,
+    1843
   ],
   "/images/mars-sites/spirit/05": [
     320,
@@ -15241,7 +15141,7 @@
     640,
     1216
   ],
-  "/images/iss-modules/quest/04": [
+  "/images/iss-modules/quest/03": [
     320,
     640,
     1280,
@@ -15306,7 +15206,7 @@
     1280,
     1920
   ],
-  "/images/satellites/charon/04": [
+  "/images/satellites/charon/03": [
     320,
     1041
   ],

@@ -134,20 +134,21 @@
       "scoring_cost_usd": 0.004986
     },
     "/images/earth-objects/gaia/02.jpg": {
-      "score": 4,
-      "subject": "Simulated wide-angle view of the ESA Gaia spacecraft rendered in a planetarium/space-simulation software interface with the Milky Way panorama visible in the background.",
-      "category": "render",
+      "score": 8,
+      "subject": "Gaia's all-sky colour view of the Milky Way and neighbouring galaxies from nearly 1.7 billion stars (Gaia data release 2, April 2018).",
+      "category": "other",
       "focal_point": {
-        "x": 0.47,
-        "y": 0.42
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/earth-objects/gaia/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:25:08.065Z",
-      "scoring_cost_usd": 0.005361
+      "scored_at": "2026-11-08T09:36:33.385Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/galileo/01.jpg": {
       "score": 6,
@@ -198,22 +199,6 @@
       "scoring_cost_usd": 0.006711
     },
     "/images/earth-objects/geo/02.jpg": {
-      "score": 7,
-      "subject": "Artist's concept render of a satellite with large multi-panel solar arrays deployed against a starfield background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/earth-objects/geo/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-24T00:25:27.176Z",
-      "scoring_cost_usd": 0.006291
-    },
-    "/images/earth-objects/geo/03.jpg": {
       "score": 5,
       "subject": "Two technicians in white lab coats work on a cylindrical solar-panel-covered satellite in a laboratory surrounded by vintage electronic equipment.",
       "category": "people",
@@ -222,7 +207,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/earth-objects/geo/03.1x1.jpg"
+        "1x1": "/images/earth-objects/geo/02.1x1.jpg"
       },
       "rejected_by": "category-people",
       "fallback": false,
@@ -246,22 +231,6 @@
       "scoring_cost_usd": 0.005181
     },
     "/images/earth-objects/glonass/02.jpg": {
-      "score": 6,
-      "subject": "A GLONASS-K navigation spacecraft engineering model or mockup on display at a Roscosmos trade show exhibit, showing gold-foil thermal insulation and antenna arrays.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/earth-objects/glonass/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:25:36.875Z",
-      "scoring_cost_usd": 0.005445
-    },
-    "/images/earth-objects/glonass/03.jpg": {
       "score": 8,
       "subject": "A Soyuz rocket stands erect on its launch pad with service gantry and support structures under a clear blue sky.",
       "category": "launch",
@@ -270,7 +239,7 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/earth-objects/glonass/03.1x1.jpg"
+        "1x1": "/images/earth-objects/glonass/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -294,36 +263,38 @@
       "scoring_cost_usd": 0.005616
     },
     "/images/earth-objects/gps/02.jpg": {
-      "score": 6,
-      "subject": "Artist's concept render of a GPS Block II satellite with solar panels deployed in orbit above Earth.",
-      "category": "render",
+      "score": 8,
+      "subject": "A GPS Block II satellite during its qualification test series in the AEDC Mark I space chamber, 1985.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.38
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/earth-objects/gps/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:25:43.195Z",
-      "scoring_cost_usd": 0.005616
+      "scored_at": "2026-11-08T09:36:33.679Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/gps/03.jpg": {
-      "score": 6,
-      "subject": "Artist's render of a gold-foil-wrapped satellite with dual solar panels orbiting above Earth's curved horizon",
-      "category": "render",
+      "score": 8,
+      "subject": "A Falcon 9 carrying the GPS III-SV09 satellite arcs into the night sky after launch from Cape Canaveral, 27 January 2026.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.3
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/earth-objects/gps/03.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:25:46.621Z",
-      "scoring_cost_usd": 0.005811
+      "scored_at": "2026-11-08T09:36:33.689Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/hubble/01.jpg": {
       "score": 9,
@@ -726,9 +697,9 @@
       "scoring_cost_usd": 0.007371
     },
     "/images/earth-objects/xmm/03.jpg": {
-      "score": 2,
-      "subject": "Diagram comparing X-ray telescopes XMM-Newton and NuSTAR against the electromagnetic spectrum, showing their respective energy ranges.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "XMM-Newton X-ray image, with optical data, of the NGC 5044 galaxy group and its hot gas sloshing around the central galaxy.",
+      "category": "other",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -736,10 +707,11 @@
       "variants": {
         "1x1": "/images/earth-objects/xmm/03.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:13.665Z",
-      "scoring_cost_usd": 0.006687
+      "scored_at": "2026-11-08T09:36:34.276Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/xmm/05.jpg": {
       "score": 9,
@@ -10469,9 +10441,9 @@
       "scoring_cost_usd": 0.005495999999999999
     },
     "/images/planets/mars/01.jpg": {
-      "score": 2,
-      "subject": "NASA Mars Perseverance mission promotional graphic with logo text and stylized Mars globe on gradient background",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Colour mosaic of the giant volcano Olympus Mons on Mars made from Viking 1 Orbiter images.",
+      "category": "orbital",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -10479,10 +10451,11 @@
       "variants": {
         "1x1": "/images/planets/mars/01.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:09:02.743Z",
-      "scoring_cost_usd": 0.006042
+      "scored_at": "2026-11-08T09:37:39.572Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/planets/mars/02.jpg": {
       "score": 2,
@@ -10597,8 +10570,8 @@
       "scoring_cost_usd": 0.004548
     },
     "/images/planets/mercury/04.jpg": {
-      "score": 6,
-      "subject": "Grayscale orbital image of a heavily cratered planetary surface, likely Mercury or the Moon, showing multiple impact craters of varying sizes across a rugged terrain.",
+      "score": 8,
+      "subject": "The eastern part of the Caloris Planitia plain on Mercury photographed by MESSENGER on 11 October 2012.",
       "category": "surface",
       "focal_point": {
         "x": 0.5,
@@ -10609,8 +10582,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:13:32.941Z",
-      "scoring_cost_usd": 0.003894
+      "scored_at": "2026-11-08T09:37:39.577Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/planets/mercury/05.jpg": {
       "score": 9,
@@ -10853,20 +10827,21 @@
       "scoring_cost_usd": 0.007851
     },
     "/images/planets/venus/02.jpg": {
-      "score": 6,
-      "subject": "Radar-mapped global surface mosaic of Venus compiled from Magellan spacecraft data, showing volcanic plains, highland regions, and impact craters in false-color orange tones.",
+      "score": 8,
+      "subject": "Three-dimensional perspective view of the volcano Maat Mons on Venus built from Magellan radar data.",
       "category": "surface",
       "focal_point": {
-        "x": 0.5,
-        "y": 0.5
+        "x": 0.45,
+        "y": 0.4
       },
       "variants": {
         "1x1": "/images/planets/venus/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:14:30.024Z",
-      "scoring_cost_usd": 0.008151
+      "scored_at": "2026-11-08T09:37:39.588Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/planets/venus/03.jpg": {
       "score": 6,
@@ -10886,8 +10861,8 @@
     },
     "/images/planets/venus/04.jpg": {
       "score": 8,
-      "subject": "False-color radar topographic map of Venus's northern hemisphere compiled from Magellan spacecraft data, showing elevation variations across the planet's surface.",
-      "category": "surface",
+      "subject": "Venus with its cloud swirls seen in ultraviolet by Japan's Akatsuki orbiter on 2 December 2022.",
+      "category": "orbital",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -10897,8 +10872,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:14:37.311Z",
-      "scoring_cost_usd": 0.007524
+      "scored_at": "2026-11-08T09:37:39.606Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/recommendations/blogs/ars-technica.jpg": {
       "score": 1,
@@ -12803,22 +12779,6 @@
       "scoring_cost_usd": 0.006770999999999999
     },
     "/images/small-bodies/oumuamua/01.jpg": {
-      "score": 7,
-      "subject": "Artist's concept of the interstellar object 'Oumuamua passing through the inner solar system, with labeled planetary orbits overlaid on a starfield background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.28,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/small-bodies/oumuamua/01.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:22:17.867Z",
-      "scoring_cost_usd": 0.005856
-    },
-    "/images/small-bodies/oumuamua/02.jpg": {
       "score": 2,
       "subject": "Multi-panel astronomical light curve diagram showing magnitude measurements of a celestial object over three nights in October using various telescopes including VLT, Gemini, Keck, CFHT, and UKIRT.",
       "category": "diagram",
@@ -12827,7 +12787,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/small-bodies/oumuamua/02.1x1.jpg"
+        "1x1": "/images/small-bodies/oumuamua/01.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
@@ -12883,36 +12843,21 @@
       "scoring_cost_usd": 0.0072239999999999995
     },
     "/images/small-bodies/pluto/04.jpg": {
-      "score": 7,
-      "subject": "A rocket payload fairing or upper stage section being hoisted by crane inside a vehicle assembly or processing facility, with technicians visible in the background.",
-      "category": "hardware",
+      "score": 8,
+      "subject": "Water-ice mountains meeting the nitrogen-ice plain of Sputnik Planum on Pluto, New Horizons, 14 July 2015.",
+      "category": "surface",
       "focal_point": {
-        "x": 0.42,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/small-bodies/pluto/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:22:36.723Z",
-      "scoring_cost_usd": 0.007239
-    },
-    "/images/small-bodies/pluto/05.jpg": {
-      "score": 3,
-      "subject": "A large octagonal New Horizons Pluto-Kuiper Belt Mission logo graphic laid out on the floor of a spacecraft assembly facility.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/small-bodies/pluto/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:22:40.236Z",
-      "scoring_cost_usd": 0.007314
+      "scored_at": "2026-11-08T09:37:39.636Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/sun/01.jpg": {
       "score": 4,
@@ -13011,40 +12956,42 @@
       "scoring_cost_usd": 0.005736
     },
     "/images/tiangong-modules/wentian/02.jpg": {
-      "score": 6,
-      "subject": "Artist's render of the Chinese Tiangong space station in orbit above Earth with solar arrays deployed against a starfield backdrop.",
-      "category": "render",
+      "score": 8,
+      "subject": "The Wentian lab module in a clean room before its July 2022 launch.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.48
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/tiangong-modules/wentian/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:01.783Z",
-      "scoring_cost_usd": 0.006711
+      "scored_at": "2026-11-08T09:37:39.703Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/tiangong-modules/wentian/03.jpg": {
-      "score": 6,
-      "subject": "The International Space Station's main truss and central modules photographed from a visiting spacecraft against the black void of space.",
+      "score": 8,
+      "subject": "The flexible solar arrays of the Wentian lab module deployed in orbit above Earth.",
       "category": "orbital",
       "focal_point": {
         "x": 0.5,
-        "y": 0.55
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/tiangong-modules/wentian/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:05:16.249Z",
-      "scoring_cost_usd": 0.005391
+      "scored_at": "2026-11-08T09:37:39.709Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/tiangong-modules/wentian/04.jpg": {
-      "score": 7,
-      "subject": "Chinese space station experiment rack labeled '航天基础试验机柜' (Space Fundamental Experiment Cabinet) containing multiple scientific experiment modules including microbial, thermal, and Stirling thermoelectric conversion units.",
+      "score": 8,
+      "subject": "The rotation arm mounted on the Wentian lab module's docking end during ground preparation in 2022.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -13055,8 +13002,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:05.602Z",
-      "scoring_cost_usd": 0.007869000000000001
+      "scored_at": "2026-11-08T09:37:39.714Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/textures/2k_earth_daymap.jpg": {
       "score": 6,
@@ -14956,22 +14904,6 @@
     },
     "/images/mars-sites/hope/03.jpg": {
       "score": 6,
-      "subject": "A full-scale engineering model or replica of the Emirates Mars Mission Hope Probe spacecraft displayed at an indoor exhibition, showing solar panels, dish antenna, and science instruments.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/hope/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:51.314Z",
-      "scoring_cost_usd": 0.007389
-    },
-    "/images/mars-sites/hope/04.jpg": {
-      "score": 6,
       "subject": "A physical scale model or engineering mockup of the UAE Hope Mars probe (Emirates Mars Mission) displayed at an exhibition, showing the spacecraft bus with solar panel array and high-gain antenna dish.",
       "category": "hardware",
       "focal_point": {
@@ -14979,7 +14911,7 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/hope/04.1x1.jpg"
+        "1x1": "/images/mars-sites/hope/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15164,20 +15096,21 @@
       "scoring_cost_usd": 0.007983
     },
     "/images/mars-sites/mariner9/04.jpg": {
-      "score": 5,
-      "subject": "Side-by-side comparison of Mars surface orbital imagery showing impact craters and terrain features, with a 500-meter scale bar on the right panel.",
-      "category": "surface",
+      "score": 8,
+      "subject": "The Mariner 9 spacecraft photographed against black before launch, high-gain dish and four solar panels extended.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/mars-sites/mariner9/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:53:46.057Z",
-      "scoring_cost_usd": 0.0044399999999999995
+      "scored_at": "2026-11-08T09:35:15.204Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/mariner9/05.jpg": {
       "score": 5,
@@ -15292,20 +15225,21 @@
       "scoring_cost_usd": 0.003663
     },
     "/images/mars-sites/mars-odyssey/02.jpg": {
-      "score": 3,
-      "subject": "Annotated orbital image of a Martian surface region showing a blue ellipse marking a landing zone with red dots indicating a target location, with scattered impact craters visible.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Artist concept of 2001 Mars Odyssey in orbit over Syrtis Major Planum.",
+      "category": "render",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.45
+        "x": 0.6,
+        "y": 0.4
       },
       "variants": {
         "1x1": "/images/mars-sites/mars-odyssey/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:54:07.417Z",
-      "scoring_cost_usd": 0.004713
+      "scored_at": "2026-11-08T09:35:15.211Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/mars-odyssey/03.jpg": {
       "score": 5,
@@ -15388,22 +15322,6 @@
       "scoring_cost_usd": 0.004194
     },
     "/images/mars-sites/mars-pathfinder/03.jpg": {
-      "score": 7,
-      "subject": "Three Mars rover models of different generations (Sojourner, MER Spirit/Opportunity, and MSL Curiosity) displayed side by side on a plaza outside the JPL visitor center in Pasadena, California.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.6
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-pathfinder/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:29:48.719Z",
-      "scoring_cost_usd": 0.0044729999999999995
-    },
-    "/images/mars-sites/mars-pathfinder/04.jpg": {
       "score": 9,
       "subject": "NASA Mars Pathfinder Sojourner rover on the rocky Martian surface, surrounded by boulders and rocky terrain in a wide-angle black and white photograph.",
       "category": "surface",
@@ -15412,14 +15330,14 @@
         "y": 0.62
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars-pathfinder/04.1x1.jpg"
+        "1x1": "/images/mars-sites/mars-pathfinder/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:29:53.511Z",
       "scoring_cost_usd": 0.004085999999999999
     },
-    "/images/mars-sites/mars-pathfinder/05.jpg": {
+    "/images/mars-sites/mars-pathfinder/04.jpg": {
       "score": 6,
       "subject": "Black-and-white image of rocky Martian surface terrain with boulders and sandy ground captured by a Mars rover or lander camera.",
       "category": "surface",
@@ -15428,7 +15346,7 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars-pathfinder/05.1x1.jpg"
+        "1x1": "/images/mars-sites/mars-pathfinder/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15445,38 +15363,6 @@
       },
       "variants": {
         "1x1": "/images/mars-sites/mars2/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:23.696Z",
-      "scoring_cost_usd": 0.003909
-    },
-    "/images/mars-sites/mars2/02.jpg": {
-      "score": 2,
-      "subject": "Soviet postage stamp commemorating the Mars 2 automatic station mission dated 27 November 1971, featuring an illustrated spacecraft approaching Mars.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars2/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:27.477Z",
-      "scoring_cost_usd": 0.006036
-    },
-    "/images/mars-sites/mars2/03.jpg": {
-      "score": 9,
-      "subject": "Full-disk view of Mars showing reddish-orange terrain, surface features, and a polar ice cap against a black background.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars2/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15500,38 +15386,23 @@
       "scoring_cost_usd": 0.0050100000000000006
     },
     "/images/mars-sites/mars3/02.jpg": {
-      "score": 4,
-      "subject": "Soviet postal stamp depicting the Mars 3 lander descent module with Cyrillic text commemorating its soft landing on Mars on 2 December 1971.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars3/02.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:31.621Z",
-      "scoring_cost_usd": 0.005946
-    },
-    "/images/mars-sites/mars3/03.jpg": {
-      "score": 3,
-      "subject": "Annotated diagram showing candidate hardware locations for the Soviet Mars-3 lander on Mars surface imagery from HiRISE.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Front view of the full-size Mars 3 replica with its dish antenna at the Tsiolkovsky State Museum of the History of Cosmonautics, Kaluga.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars3/03.1x1.jpg"
+        "1x1": "/images/mars-sites/mars3/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:54:39.563Z",
-      "scoring_cost_usd": 0.005001
+      "scored_at": "2026-11-08T09:35:15.530Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
-    "/images/mars-sites/mars3/04.jpg": {
+    "/images/mars-sites/mars3/03.jpg": {
       "score": 6,
       "subject": "HiRISE orbital image of the Martian surface showing a central color strip of layered terrain with flanking grayscale regions and a 500-meter scale bar.",
       "category": "surface",
@@ -15540,14 +15411,14 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars3/04.1x1.jpg"
+        "1x1": "/images/mars-sites/mars3/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:54:43.444Z",
       "scoring_cost_usd": 0.007779
     },
-    "/images/mars-sites/mars3/05.jpg": {
+    "/images/mars-sites/mars3/04.jpg": {
       "score": 2,
       "subject": "Annotated diagram showing candidate hardware locations for the Soviet Mars-3 lander on the Martian surface, with labeled insets for parachute, retrorocket, lander, and heat shield candidates.",
       "category": "diagram",
@@ -15556,7 +15427,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars3/05.1x1.jpg"
+        "1x1": "/images/mars-sites/mars3/04.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
@@ -15579,22 +15450,6 @@
       "scored_at": "2026-06-08T10:54:50.886Z",
       "scoring_cost_usd": 0.003273
     },
-    "/images/mars-sites/mars6/02.jpg": {
-      "score": 2,
-      "subject": "Soviet 1972 postage stamp commemorating 15 years of the space age, depicting an artistic rendering of a spacecraft on a planetary surface alongside cosmonauts.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.4,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars6/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:55.545Z",
-      "scoring_cost_usd": 0.006051
-    },
     "/images/mars-sites/maven/01.jpg": {
       "score": 7,
       "subject": "A cleanroom technician in white bunny suit inspects a large dome-shaped spacecraft hardware assembly—likely a crew module or pressure vessel—mounted on a stand in a high-bay facility.",
@@ -15612,25 +15467,26 @@
       "scoring_cost_usd": 0.007605
     },
     "/images/mars-sites/maven/02.jpg": {
-      "score": 3,
-      "subject": "Composite collage of Mars and multiple NASA Mars mission spacecraft including rovers, landers, and orbiters shown as artist renders and concept images.",
+      "score": 8,
+      "subject": "Artist concept of the MAVEN orbiter over the limb of Mars.",
       "category": "render",
       "focal_point": {
-        "x": 0.5,
+        "x": 0.45,
         "y": 0.5
       },
       "variants": {
         "1x1": "/images/mars-sites/maven/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:23:14.881Z",
-      "scoring_cost_usd": 0.007374
+      "scored_at": "2026-11-08T09:35:15.704Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/maven/03.jpg": {
-      "score": 2,
-      "subject": "Scientific diagram showing MAVEN/IUVS aurora intensity vs altitude data for Mars, comparing the record-breaking September 2017 aurora event to the prior 2015 record.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "MAVEN with its twin solar arrays test-deployed in the Payload Hazardous Servicing Facility at Kennedy Space Center, September 2013.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -15638,10 +15494,11 @@
       "variants": {
         "1x1": "/images/mars-sites/maven/03.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:55:03.859Z",
-      "scoring_cost_usd": 0.007791
+      "scored_at": "2026-11-08T09:35:15.712Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/maven/04.jpg": {
       "score": 4,
@@ -15660,20 +15517,21 @@
       "scoring_cost_usd": 0.007764
     },
     "/images/mars-sites/maven/05.jpg": {
-      "score": 2,
-      "subject": "Scientific diagram showing proton flux measurements at 15-100 MeV and 80-220 MeV energy ranges plotted as green and blue curves, with a red curve in a lower panel.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Engineers working on MAVEN and its high-gain antenna at Kennedy Space Center before launch, November 2013.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/mars-sites/maven/05.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:55:12.049Z",
-      "scoring_cost_usd": 0.004884
+      "scored_at": "2026-11-08T09:35:15.740Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/mro/01.jpg": {
       "score": 6,
@@ -15869,22 +15727,6 @@
     },
     "/images/mars-sites/perseverance/03.jpg": {
       "score": 8,
-      "subject": "Close-up view of a Mars rover's wheel and suspension assembly wrapped in thermal insulation blankets during clean-room assembly and integration.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.72,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/perseverance/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:55:58.378Z",
-      "scoring_cost_usd": 0.006309
-    },
-    "/images/mars-sites/perseverance/04.jpg": {
-      "score": 8,
       "subject": "Close-up view of Mars rover wheels and rocker-bogie suspension assembly during integration in a clean room facility, showing detailed metallic wheel spokes and thermal blankets.",
       "category": "hardware",
       "focal_point": {
@@ -15892,28 +15734,29 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/perseverance/04.1x1.jpg"
+        "1x1": "/images/mars-sites/perseverance/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:56:01.972Z",
       "scoring_cost_usd": 0.007329
     },
-    "/images/mars-sites/perseverance/05.jpg": {
-      "score": 2,
-      "subject": "NASA Mars Perseverance mission promotional graphic with logo text and partial Mars globe on gradient background",
-      "category": "diagram",
+    "/images/mars-sites/perseverance/04.jpg": {
+      "score": 8,
+      "subject": "Perseverance rover selfie beside the rock Rochette in Jezero crater on sol 198, 10 September 2021.",
+      "category": "surface",
       "focal_point": {
-        "x": 0.5,
-        "y": 0.5
+        "x": 0.65,
+        "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/perseverance/05.1x1.jpg"
+        "1x1": "/images/mars-sites/perseverance/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:56:05.252Z",
-      "scoring_cost_usd": 0.005922
+      "scored_at": "2026-11-08T09:35:15.769Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/phoenix/01.jpg": {
       "score": 5,
@@ -16044,20 +15887,21 @@
       "scoring_cost_usd": 0.00801
     },
     "/images/mars-sites/spirit/01.jpg": {
-      "score": 7,
-      "subject": "Artist's concept render of NASA's Mars Exploration Rover (Spirit or Opportunity) on the Martian surface with rocky terrain and hills in the background.",
-      "category": "render",
+      "score": 8,
+      "subject": "Mars Exploration Rover Spirit alone on the floor of the Payload Hazardous Servicing Facility at Kennedy Space Center, Pancam mast raised, before launch.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.52
+        "y": 0.55
       },
       "variants": {
         "1x1": "/images/mars-sites/spirit/01.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:55:32.812Z",
-      "scoring_cost_usd": 0.005991
+      "scored_at": "2026-11-08T10:35:13.579Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/spirit/02.jpg": {
       "score": 7,
@@ -16220,22 +16064,6 @@
       "scoring_cost_usd": 0.005961
     },
     "/images/mars-sites/tianwen1-orbiter/03.jpg": {
-      "score": 9,
-      "subject": "China's Zhurong Mars rover photographed on the Martian surface alongside its lander platform, with the red rocky terrain and hazy orange sky in the background.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/tianwen1-orbiter/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:44:07.964Z",
-      "scoring_cost_usd": 0.004836
-    },
-    "/images/mars-sites/tianwen1-orbiter/04.jpg": {
       "score": 7,
       "subject": "Panoramic view of the Martian surface showing red sandy terrain with wind-sculpted dunes and a portion of a lander's solar panel and communication antenna in the foreground.",
       "category": "surface",
@@ -16244,44 +16072,46 @@
         "y": 0.6
       },
       "variants": {
-        "1x1": "/images/mars-sites/tianwen1-orbiter/04.1x1.jpg"
+        "1x1": "/images/mars-sites/tianwen1-orbiter/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:57:27.423Z",
       "scoring_cost_usd": 0.005196
     },
-    "/images/mars-sites/tianwen1-orbiter/05.jpg": {
-      "score": 2,
-      "subject": "Annotated diagram of China's Zhurong Mars rover with labeled science instruments including NaTeCam, MSCam, MCS, RoMAG, MarSCoDe, and RoPeR.",
-      "category": "diagram",
+    "/images/mars-sites/tianwen1-orbiter/04.jpg": {
+      "score": 8,
+      "subject": "A Long March 5 rocket lifting off from Wenchang with the Tianwen-1 orbiter and lander, 23 July 2020.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/tianwen1-orbiter/05.1x1.jpg"
+        "1x1": "/images/mars-sites/tianwen1-orbiter/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:57:32.017Z",
-      "scoring_cost_usd": 0.005406
+      "scored_at": "2026-11-08T09:35:15.781Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/viking1-lander/01.jpg": {
-      "score": 9,
-      "subject": "NASA Viking Mars orbiter/lander spacecraft shown in full pre-launch configuration against a black background, displaying its large dome aeroshell, solar panels, high-gain antenna, and lander capsule.",
+      "score": 8,
+      "subject": "A Viking lander test article on a simulated Mars surface, with its dish antenna, sampling arm and meteorology boom.",
       "category": "hardware",
       "focal_point": {
-        "x": 0.52,
-        "y": 0.48
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/mars-sites/viking1-lander/01.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:40:41.770Z",
-      "scoring_cost_usd": 0.005781
+      "scored_at": "2026-11-08T10:35:13.566Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/viking1-lander/02.jpg": {
       "score": 4,
@@ -16364,68 +16194,72 @@
       "scoring_cost_usd": 0.005781
     },
     "/images/mars-sites/viking1-orbiter/02.jpg": {
-      "score": 4,
-      "subject": "Close-up view of a Mars lander or rover body panel decorated with an American flag and colorful stickers, with the Martian surface visible in the background.",
-      "category": "surface",
+      "score": 8,
+      "subject": "Viking 1 lifting off on a Titan IIIE-Centaur from Cape Canaveral, 20 August 1975, carrying the orbiter and lander to Mars.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.4
       },
       "variants": {
         "1x1": "/images/mars-sites/viking1-orbiter/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:57:35.952Z",
-      "scoring_cost_usd": 0.004002
+      "scored_at": "2026-11-08T09:35:15.052Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/viking1-orbiter/03.jpg": {
-      "score": 6,
-      "subject": "Black-and-white surface image of Mars showing rocky terrain with scattered stones and part of a lander structure visible at the upper left, likely taken by a Viking lander camera.",
-      "category": "surface",
+      "score": 8,
+      "subject": "NASA painting based on a mosaic of Viking orbiter images, showing Olympus Mons rising above thin water-ice clouds.",
+      "category": "orbital",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.5
+        "x": 0.45,
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/mars-sites/viking1-orbiter/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:57:39.129Z",
-      "scoring_cost_usd": 0.005712
+      "scored_at": "2026-11-08T09:35:15.062Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/viking1-orbiter/04.jpg": {
-      "score": 9,
-      "subject": "A Titan/Centaur rocket lifts off from Complex 41 at Cape Canaveral, surrounded by billowing exhaust clouds and engine flame.",
-      "category": "launch",
+      "score": 8,
+      "subject": "Half-lit Mars photographed by Viking 1 from 685,000 km on its approach, June 1976.",
+      "category": "orbital",
       "focal_point": {
-        "x": 0.45,
-        "y": 0.35
+        "x": 0.4,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/mars-sites/viking1-orbiter/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:57:42.257Z",
-      "scoring_cost_usd": 0.00621
+      "scored_at": "2026-11-08T09:35:15.074Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/viking1-orbiter/05.jpg": {
-      "score": 5,
-      "subject": "False-color orbital image of a Martian cratered plain featuring a prominent dark impact crater surrounded by smaller craters and subtle surface textures",
-      "category": "surface",
+      "score": 8,
+      "subject": "Viking orbiter global mosaic of the Cerberus hemisphere of Mars.",
+      "category": "orbital",
       "focal_point": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/mars-sites/viking1-orbiter/05.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:57:45.327Z",
-      "scoring_cost_usd": 0.004203
+      "scored_at": "2026-11-08T09:35:15.081Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/viking2-lander/01.jpg": {
       "score": 8,
@@ -16444,9 +16278,9 @@
       "scoring_cost_usd": 0.006006
     },
     "/images/mars-sites/viking2-lander/02.jpg": {
-      "score": 2,
-      "subject": "Radar image of a cratered planetary surface labeled with 'Goldstone' and a red X marker indicating a location of interest.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Technicians inspecting the Viking 2 lander in the Spacecraft Assembly and Encapsulation Facility at Kennedy Space Center, February 1975.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -16454,10 +16288,11 @@
       "variants": {
         "1x1": "/images/mars-sites/viking2-lander/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:57:51.840Z",
-      "scoring_cost_usd": 0.004479
+      "scored_at": "2026-11-08T09:35:15.791Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/viking2-lander/03.jpg": {
       "score": 8,
@@ -19858,36 +19693,21 @@
       "scoring_cost_usd": 0.005451
     },
     "/images/iss-modules/harmony/03.jpg": {
-      "score": 3,
-      "subject": "NASA Space Shuttle crew members in orange launch-entry suits waving as they walk toward the Astrovan at Kennedy Space Center",
-      "category": "people",
+      "score": 8,
+      "subject": "Looking down the length of the ISS Harmony (Node 2) module interior at Kennedy Space Center in 2007.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.45,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/iss-modules/harmony/03.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:35:43.660Z",
-      "scoring_cost_usd": 0.007194
-    },
-    "/images/iss-modules/harmony/04.jpg": {
-      "score": 3,
-      "subject": "NASA Space Shuttle crew members in orange launch-entry suits waving as they walk to the Astrovan before launch",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/iss-modules/harmony/04.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-24T00:35:47.038Z",
-      "scoring_cost_usd": 0.007164
+      "scored_at": "2026-11-08T09:37:39.512Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/iss-modules/harmony/02.jpg": {
       "score": 8,
@@ -20082,20 +19902,21 @@
       "scoring_cost_usd": 0.005796
     },
     "/images/iss-modules/leonardo/02.jpg": {
-      "score": 9,
-      "subject": "A Soyuz crewed spacecraft docked to the International Space Station with a Progress cargo vehicle visible at right, Earth's curved horizon and blue atmosphere in the background.",
-      "category": "orbital",
+      "score": 8,
+      "subject": "Astronauts Scott Kelly and Steve Lindsey inside the Leonardo Permanent Multipurpose Module, packed with cargo bags, on 1 March 2011.",
+      "category": "people",
       "focal_point": {
-        "x": 0.45,
-        "y": 0.52
+        "x": 0.5,
+        "y": 0.55
       },
       "variants": {
         "1x1": "/images/iss-modules/leonardo/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:36:31.998Z",
-      "scoring_cost_usd": 0.007314
+      "scored_at": "2026-11-08T09:37:39.556Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/iss-modules/leonardo/04.jpg": {
       "score": 8,
@@ -20275,22 +20096,6 @@
     },
     "/images/iss-modules/pirs/04.jpg": {
       "score": 8,
-      "subject": "Close-up view of the ISS Zvezda service module's docking port and exterior hardware photographed from orbit against black space, dated September 17, 2001.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/iss-modules/pirs/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:37:17.547Z",
-      "scoring_cost_usd": 0.007482
-    },
-    "/images/iss-modules/pirs/05.jpg": {
-      "score": 8,
       "subject": "A Soyuz or Progress spacecraft approaching for docking, viewed head-on from the ISS with Earth's cloud-covered surface in the background, January 2002.",
       "category": "spacecraft",
       "focal_point": {
@@ -20298,7 +20103,7 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/iss-modules/pirs/05.1x1.jpg"
+        "1x1": "/images/iss-modules/pirs/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -20465,7 +20270,7 @@
       "scored_at": "2026-05-24T00:37:56.473Z",
       "scoring_cost_usd": 0.005916
     },
-    "/images/iss-modules/quest/05.jpg": {
+    "/images/iss-modules/quest/04.jpg": {
       "score": 2,
       "subject": "NASA astronaut in a white EVA spacesuit inside a spacecraft airlock preparing for a spacewalk.",
       "category": "people",
@@ -20474,7 +20279,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/iss-modules/quest/05.1x1.jpg"
+        "1x1": "/images/iss-modules/quest/04.1x1.jpg"
       },
       "rejected_by": "category-people",
       "fallback": false,
@@ -20483,22 +20288,6 @@
     },
     "/images/iss-modules/quest/02.jpg": {
       "score": 8,
-      "subject": "An ISS module being installed or inspected during an EVA, with a suited astronaut on the robotic arm visible against Earth's limb and blue atmosphere below.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/iss-modules/quest/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:38:05.326Z",
-      "scoring_cost_usd": 0.007314
-    },
-    "/images/iss-modules/quest/03.jpg": {
-      "score": 8,
       "subject": "The International Space Station photographed against the black void of space, showing its distinctive solar array truss structure and connected modules in a slightly diagonal orientation.",
       "category": "orbital",
       "focal_point": {
@@ -20506,7 +20295,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/iss-modules/quest/03.1x1.jpg"
+        "1x1": "/images/iss-modules/quest/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -20530,20 +20319,21 @@
       "scoring_cost_usd": 0.003486
     },
     "/images/iss-modules/rassvet/05.jpg": {
-      "score": 2,
-      "subject": "Official mission patch for STS-132 Space Shuttle Atlantis featuring crew names Bowen, Reisman, Ham, Antonelli, Good, and Sellers.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Rassvet Mini-Research Module 1 being lifted in the Astrotech processing facility in Florida before its 2010 launch to the ISS.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.55
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/iss-modules/rassvet/05.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:38:21.154Z",
-      "scoring_cost_usd": 0.007776
+      "scored_at": "2026-11-08T09:37:39.524Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/iss-modules/rassvet/01.jpg": {
       "score": 9,
@@ -20897,22 +20687,6 @@
       "scored_at": "2026-05-24T00:40:05.698Z",
       "scoring_cost_usd": 0.007686
     },
-    "/images/iss-modules/unity/05.jpg": {
-      "score": 7,
-      "subject": "A technician in a cleanroom suit inspects the interior of a large cylindrical space station module through an open hatch during ground processing.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.72,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/iss-modules/unity/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:40:08.677Z",
-      "scoring_cost_usd": 0.007566
-    },
     "/images/iss-modules/zarya/01.jpg": {
       "score": 8,
       "subject": "Early International Space Station assembly with Unity and Zarya modules joined in orbit, photographed from the Space Shuttle with Earth's limb visible in the background and an EVA astronaut on the robotic arm.",
@@ -20995,22 +20769,6 @@
     },
     "/images/iss-modules/zvezda/04.jpg": {
       "score": 2,
-      "subject": "An astronaut or cosmonaut wearing a harness and headset inside a space station module",
-      "category": "people",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/iss-modules/zvezda/04.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-05-24T00:40:36.563Z",
-      "scoring_cost_usd": 0.004176
-    },
-    "/images/iss-modules/zvezda/05.jpg": {
-      "score": 2,
       "subject": "Two astronauts embracing and smiling inside a Space Shuttle cabin.",
       "category": "people",
       "focal_point": {
@@ -21018,7 +20776,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/iss-modules/zvezda/05.1x1.jpg"
+        "1x1": "/images/iss-modules/zvezda/04.1x1.jpg"
       },
       "rejected_by": "category-people",
       "fallback": false,
@@ -21026,36 +20784,38 @@
       "scoring_cost_usd": 0.004326
     },
     "/images/tiangong-modules/chinarm/02.jpg": {
-      "score": 6,
-      "subject": "Artist's render of the Chinese Tiangong space station in orbit above Earth with solar arrays deployed against a starfield backdrop.",
-      "category": "render",
+      "score": 8,
+      "subject": "The 10 m large robotic arm of the Tiangong station reaching out above Earth.",
+      "category": "orbital",
       "focal_point": {
         "x": 0.5,
-        "y": 0.48
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/tiangong-modules/chinarm/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:01.783Z",
-      "scoring_cost_usd": 0.006711
+      "scored_at": "2026-11-08T09:37:39.746Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/tiangong-modules/chinarm/03.jpg": {
-      "score": 6,
-      "subject": "The International Space Station's main truss and central modules photographed from a visiting spacecraft against the black void of space.",
+      "score": 8,
+      "subject": "The 15 m combined robotic arm of Tiangong, large and small arms joined, working on the station exterior in orbit.",
       "category": "orbital",
       "focal_point": {
         "x": 0.5,
-        "y": 0.55
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/tiangong-modules/chinarm/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:05:16.249Z",
-      "scoring_cost_usd": 0.005391
+      "scored_at": "2026-11-08T09:37:39.750Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/tiangong-modules/chinarm/04.jpg": {
       "score": 5,
@@ -21090,25 +20850,43 @@
       "scoring_cost_usd": 0.005691
     },
     "/images/tiangong-modules/mengtian/02.jpg": {
-      "score": 6,
-      "subject": "Artist's render of the Chinese Tiangong space station in orbit above Earth with solar arrays deployed against a starfield backdrop.",
+      "score": 8,
+      "subject": "Rendering of the Mengtian lab module with its solar arrays deployed.",
       "category": "render",
       "focal_point": {
-        "x": 0.5,
-        "y": 0.48
+        "x": 0.45,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/tiangong-modules/mengtian/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:01.783Z",
-      "scoring_cost_usd": 0.006711
+      "scored_at": "2026-11-08T09:37:39.682Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
+    },
+    "/images/tiangong-modules/mengtian/01.jpg": {
+      "score": 8,
+      "subject": "The Mengtian lab module standing upright in a clean room during ground testing before launch in 2022.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/tiangong-modules/mengtian/01.1x1.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-11-08T10:35:13.589Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/tiangong-modules/mengtian/03.jpg": {
       "score": 6,
-      "subject": "The International Space Station's main truss and central modules photographed from a visiting spacecraft against the black void of space.",
-      "category": "orbital",
+      "subject": "Two Chinese space science instruments on museum display — a medium-resolution imaging spectrometer and a space materials growth furnace from the Tiangong program — shown in a glass exhibition case.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.55
@@ -21118,42 +20896,10 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:05:16.249Z",
-      "scoring_cost_usd": 0.005391
-    },
-    "/images/tiangong-modules/mengtian/01.jpg": {
-      "score": 7,
-      "subject": "Chinese space station experiment rack labeled '航天基础试验机柜' (Space Fundamental Experiment Cabinet) containing multiple scientific experiment modules including microbial, thermal, and Stirling thermoelectric conversion units.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/tiangong-modules/mengtian/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:27:05.602Z",
-      "scoring_cost_usd": 0.007869000000000001
-    },
-    "/images/tiangong-modules/mengtian/04.jpg": {
-      "score": 6,
-      "subject": "Two Chinese space science instruments on museum display — a medium-resolution imaging spectrometer and a space materials growth furnace from the Tiangong program — shown in a glass exhibition case.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/tiangong-modules/mengtian/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
       "scored_at": "2026-06-08T11:23:20.756Z",
       "scoring_cost_usd": 0.005301
     },
-    "/images/tiangong-modules/mengtian/05.jpg": {
+    "/images/tiangong-modules/mengtian/04.jpg": {
       "score": 6,
       "subject": "A cold atomic microwave clock (空间冷原子微波钟) space instrument displayed in a glass museum case, likely associated with the Chinese Space Station program.",
       "category": "hardware",
@@ -21162,7 +20908,7 @@
         "y": 0.52
       },
       "variants": {
-        "1x1": "/images/tiangong-modules/mengtian/05.1x1.jpg"
+        "1x1": "/images/tiangong-modules/mengtian/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -21185,7 +20931,7 @@
       "scored_at": "2026-06-08T11:23:29.658Z",
       "scoring_cost_usd": 0.005031
     },
-    "/images/tiangong-modules/shenzhou/04.jpg": {
+    "/images/tiangong-modules/shenzhou/03.jpg": {
       "score": 4,
       "subject": "A Chinese taikonaut in a white Shenzhou-program spacesuit at a pre-launch ceremony",
       "category": "people",
@@ -21194,7 +20940,7 @@
         "y": 0.4
       },
       "variants": {
-        "1x1": "/images/tiangong-modules/shenzhou/04.1x1.jpg"
+        "1x1": "/images/tiangong-modules/shenzhou/03.1x1.jpg"
       },
       "rejected_by": "category-people",
       "fallback": false,
@@ -21217,37 +20963,22 @@
       "scored_at": "2026-06-08T11:23:39.639Z",
       "scoring_cost_usd": 0.007554
     },
-    "/images/tiangong-modules/shenzhou/05.jpg": {
-      "score": 4,
-      "subject": "Framed Hong Kong Special Administrative Region flag displayed in a museum exhibit case, reportedly flown aboard a spacecraft.",
-      "category": "other",
+    "/images/tiangong-modules/shenzhou/04.jpg": {
+      "score": 8,
+      "subject": "A Shenzhou spacecraft in final assembly at Jiuquan in 2022.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/tiangong-modules/shenzhou/05.1x1.jpg"
+        "1x1": "/images/tiangong-modules/shenzhou/04.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:23:43.984Z",
-      "scoring_cost_usd": 0.0059310000000000005
-    },
-    "/images/tiangong-modules/shenzhou/03.jpg": {
-      "score": 5,
-      "subject": "An astronaut in a white spacesuit performing a spacewalk (EVA) outside a space station, with a bright solar flare and station hardware visible in the background.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.4
-      },
-      "variants": {
-        "1x1": "/images/tiangong-modules/shenzhou/03.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:23:09.483Z",
-      "scoring_cost_usd": 0.005646
+      "scored_at": "2026-11-08T09:37:39.753Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/tiangong-modules/tianhe/02.jpg": {
       "score": 6,
@@ -21314,36 +21045,38 @@
       "scoring_cost_usd": 0.007404
     },
     "/images/tiangong-modules/tianzhou/02.jpg": {
-      "score": 6,
-      "subject": "Artist's render of the Chinese Tiangong space station in orbit above Earth with solar arrays deployed against a starfield backdrop.",
-      "category": "render",
+      "score": 8,
+      "subject": "The Tianzhou-2 cargo spacecraft standing in a clean room before its May 2021 launch.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.48
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/tiangong-modules/tianzhou/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:01.783Z",
-      "scoring_cost_usd": 0.006711
+      "scored_at": "2026-11-08T09:37:39.719Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/tiangong-modules/tianzhou/03.jpg": {
-      "score": 6,
-      "subject": "The International Space Station's main truss and central modules photographed from a visiting spacecraft against the black void of space.",
-      "category": "orbital",
+      "score": 8,
+      "subject": "A Long March 7 rocket lifting off from Wenchang with the Tianzhou 10 cargo spacecraft in May 2026.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.55
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/tiangong-modules/tianzhou/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:05:16.249Z",
-      "scoring_cost_usd": 0.005391
+      "scored_at": "2026-11-08T09:37:39.739Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/tiangong-modules/tianzhou/04.jpg": {
       "score": 6,
@@ -31506,7 +31239,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.008991
     },
-    "/images/mars-sites/mars2/04.jpg": {
+    "/images/mars-sites/mars2/02.jpg": {
       "score": 7,
       "subject": "High-resolution orbital view of the Martian surface showing rocky terrain with dark boulder fields, eroded craters, and reddish-gray regolith captured by HiRISE or similar Mars reconnaissance camera.",
       "category": "surface",
@@ -32306,6 +32039,370 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-08T08:29:54.142Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/mars-sites/exomars-rosalind-franklin/02.jpg": {
+      "score": 8,
+      "subject": "Full-scale Rosalind Franklin ExoMars rover model on display against a Mars backdrop at ESA ESTEC, Noordwijk, October 2024.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:35:15.084Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/mars-sites/mars3-orbiter/03.jpg": {
+      "score": 8,
+      "subject": "Side view of the Mars 3 replica showing the orbiter bus with dish antenna and solar panel, Kaluga cosmonautics museum.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:35:15.616Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/moon-sites/luna21/02.jpg": {
+      "score": 8,
+      "subject": "Lunokhod 2 replica in the Tsiolkovsky State Museum of the History of Cosmonautics, Kaluga (Luna 21 payload).",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:35:15.800Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/moon-sites/luna21/04.jpg": {
+      "score": 8,
+      "subject": "Lunar Reconnaissance Orbiter image of Lunokhod 2 tracks looping around a small crater in Le Monnier bay.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:35:15.869Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/moon-sites/luna21/05.jpg": {
+      "score": 8,
+      "subject": "Side view of the Lunokhod 2 replica showing its eight wheels, Kaluga cosmonautics museum.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:35:15.873Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/beidou/04.jpg": {
+      "score": 8,
+      "subject": "A BeiDou navigation satellite model in front of a BeiDou constellation model at the InnoTech Expo, Hong Kong, December 2022.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T10:37:37.477Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/beidou/05.jpg": {
+      "score": 8,
+      "subject": "Physical model of the BeiDou constellation, satellites on orbit rings around a globe, at the InnoTech Expo, Hong Kong, December 2022.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.348Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/gaia/05.jpg": {
+      "score": 8,
+      "subject": "The Large Magellanic Cloud as seen by ESA's Gaia satellite (data release 2, April 2018).",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.405Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/geo/04.jpg": {
+      "score": 8,
+      "subject": "An Intelsat IVA geostationary communications satellite being worked on by technicians, 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.458Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/goes/02.jpg": {
+      "score": 8,
+      "subject": "NASA's GOES-P weather satellite being lifted at the Astrotech facility, Titusville, Florida, January 2010.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.581Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/goes/04.jpg": {
+      "score": 8,
+      "subject": "An Atlas V lifts off from Space Launch Complex 41, Cape Canaveral, carrying the GOES-S weather satellite, 1 March 2018.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.35
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.605Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/goes/05.jpg": {
+      "score": 8,
+      "subject": "GOES-13 full-disk colour image of the Earth over the Americas, 17 August 2010.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.668Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/landsat/02.jpg": {
+      "score": 8,
+      "subject": "Technicians check out the Landsat Data Continuity Mission (Landsat 8) satellite at Astrotech, Vandenberg, 21 December 2012.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.818Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/oneweb/03.jpg": {
+      "score": 8,
+      "subject": "OneWeb satellites stacked on their dispenser between the open fairing halves during LVM3 M2 integration, October 2022.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.846Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/starlink/02.jpg": {
+      "score": 8,
+      "subject": "A train of Starlink satellites crossing the night sky over Georgia, USA, 28 April 2020.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.882Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/starlink/05.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 lifts off with a Starlink batch from Cape Canaveral Space Launch Complex 40, 11 December 2025.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:33.926Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/tundra-molniya/02.jpg": {
+      "score": 8,
+      "subject": "A Molniya-1 communications satellite on display at the Tsiolkovsky State Museum of the History of Cosmonautics, Kaluga, May 2022.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:34.083Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/tundra-molniya/03.jpg": {
+      "score": 8,
+      "subject": "A Molniya-1 satellite exhibit in the RKK Energia museum, Korolev, April 2023.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:34.165Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/tundra-molniya/04.jpg": {
+      "score": 8,
+      "subject": "The Orbita satellite television ground station with its dish antennas in Surgut, Russia, May 2009.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:34.192Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/tundra-molniya/05.jpg": {
+      "score": 8,
+      "subject": "An Orbita satellite-communication ground station, a large dish antenna on a round building (black-and-white photograph).",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:36:34.212Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/planets/uranus/05.jpg": {
+      "score": 8,
+      "subject": "Two Hubble views of Uranus with its rings and bright auroral patches on the disk.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:37:39.581Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/satellites/callisto/03.jpg": {
+      "score": 8,
+      "subject": "Callisto, heavily cratered, assembled from Voyager 1 colour-filtered images taken on 6 March 1979.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:37:39.609Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/satellites/phobos/03.jpg": {
+      "score": 8,
+      "subject": "Phobos in a Mars Express HRSC image from a close flyby on 30 April 2017.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:37:39.622Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/belts/asteroid/02.jpg": {
+      "score": 8,
+      "subject": "Main-belt asteroid 243 Ida, a mosaic of five Galileo images taken on 28 August 1993.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:37:39.649Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/belts/asteroid/04.jpg": {
+      "score": 8,
+      "subject": "Main-belt asteroid 951 Gaspra in enhanced colour, photographed by Galileo on 29 October 1991.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:37:39.656Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/belts/kuiper/05.jpg": {
+      "score": 8,
+      "subject": "Kuiper-belt object Arrokoth, a red two-lobed contact binary, in a colour composite of New Horizons images from its 1 January 2019 flyby.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:37:39.664Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/belts/kuiper/06.jpg": {
+      "score": 8,
+      "subject": "Artist's concept of the New Horizons spacecraft flying past Pluto and Charon on 14 July 2015.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T09:37:39.670Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/belts/asteroid/01.jpg": {
+      "score": 8,
+      "subject": "Main-belt asteroid 21 Lutetia photographed by ESA's Rosetta probe during its flyby on 10 July 2010.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T10:35:13.592Z",
       "scoring_cost_usd": 0
     }
   }

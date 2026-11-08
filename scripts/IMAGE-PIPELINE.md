@@ -250,7 +250,9 @@ by hand (no vision API call), writes the alt text in 14 locales and records its 
 translation source (or `translate-alt-text.mjs plan` would queue a paid re-translation), updates the
 pHash, clears curation and off-subject entries for the old picture, and regenerates the /credits
 thumb (`build-credit-thumbs.mjs` is add-only, so a replaced slot's old thumb must be removed first:
-the 2026-11-07 Mars 2 swap left two stale ones). Do not trust the vision data to find what to
+the 2026-11-07 Mars 2 swap left two stale ones). A JPEG original with an EXIF rotation is written
+upright (re-encoded at q92): the ladder ignores the flag, and on 2026-11-08 a phone photo
+(earth-objects/beidou/04) was served sideways. Do not trust the vision data to find what to
 replace: on 2026-11-08 several rows still described pictures replaced earlier, so the review was by
 eye over contact sheets of every live mission gallery image.
 

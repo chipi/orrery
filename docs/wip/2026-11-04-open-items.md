@@ -55,6 +55,20 @@ unconfirmed (option B, operator 2026-11-05).
   0.9.7 changes moved what is on screen under the narration (first view bare, tags by zoom stage,
   new panoramas, Apollo 17's tour removed from the Cernan episode); tour-coverage only proves the
   targets exist, not that they land on the right words.
+  **Done 2026-11-08** with `scripts/audio/stage-review.ts` (screen after each stage + the VTT words
+  around it), all 32 episodes. Fixed: /moon and /mars openings zoom to the markers the narration
+  names; three drag/zoom stages targeted the HUD (no listener) and never moved the camera; flashes
+  scroll off-screen targets into view and the /fleet roll-call glow was clipped by
+  content-visibility; /fly's DEMO overlay is dismissed; the Voyager 2 panel closes; /plan switches
+  to Jupiter and Mercury; jwst-l2-halo, voyager-grand-tour, saturn-v-anchor, signal-delay,
+  tianhe-core, zarya-first-module and guide-missions re-timed (their audio was re-rendered after
+  authoring, 3–13 s). Left, each needing a decision or a new hook:
+  - guide-missions 38–46 s says "Filter status equals failed… Mars 2, Schiaparelli, Beresheet…"
+    but missions have no failed status (FLOWN only); the `?status=FAILED` stage shows the unfiltered
+    grid. Needs a failed outcome in the mission data + filter, or a script change.
+  - The mission panel's explore button (guide-missions 89 s), Queqiao itself (queqiao-magpie
+    23–44 s), the home "?" chips (guide-home 110 s) and Tianhe's docking ports (guide-tiangong 79 s)
+    are named but have no `data-audio-stage` hook to show.
 
 **2. The deploy gaps 0.9.6 hit** (small; they stop the same failures):
 

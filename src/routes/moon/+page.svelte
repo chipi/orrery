@@ -80,6 +80,7 @@
   // and on each TourAnchors button below.
   const MOON_TOUR_ANCHORS = [
     { audio: 'luna9', site: 'luna9' },
+    { audio: 'luna17', site: 'luna17' },
     { audio: 'apollo11', site: 'apollo11' },
     { audio: 'apollo12', site: 'apollo12' },
     { audio: 'apollo14', site: 'apollo14' },

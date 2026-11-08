@@ -432,10 +432,23 @@
       return;
     }
     switch (stage.action) {
-      case 'flash':
+      case 'flash': {
+        // A glow the listener can't see illustrates nothing: bring an off-screen target into
+        // view first (the home grid's solar-system, station and catalog cards flashed above or
+        // below the fold — stage-review 2026-11-08). An element that fits the viewport is
+        // centred unless it is wholly visible below the sticky header (~64 px); a bigger one
+        // (a whole grid) only when it is entirely off-screen.
+        const r = el.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const hidden =
+          r.height < vh - 96
+            ? r.top < 64 || r.bottom > vh
+            : r.bottom < 0 || r.top > vh || r.right < 0 || r.left > window.innerWidth;
+        if (hidden) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         el.classList.add('audio-stage-flash');
         window.setTimeout(() => el.classList.remove('audio-stage-flash'), 1800);
         break;
+      }
       case 'scroll-to':
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         break;

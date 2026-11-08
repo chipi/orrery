@@ -356,6 +356,7 @@ Cues + DOM actions in `src/lib/audio-tour.ts` are the interaction layer that run
 - **`navigate` for URL-bound state.** Use the `navigate` action (not `click`) to demo search/filter affordances on routes whose state lives in the URL (`/missions`, `/fleet`, `/launches`). Target is the URL path/query (`/missions?q=apollo`), NOT a CSS selector.
 - **Panorama / assembly playback opportunities.** /moon and /mars sites with `hotspot_tier3_panorama` can be entered via `data-audio-stage="surface-stand-at-site"`. /iss and /tiangong have a fixed-duration assembly playback (50 s / 24 s); only wire it into episodes whose narration covers a window of at least that length, with the assembly narrative content matching what plays.
 - **Verify in a real browser.** A failing selector silently no-ops — preflight won't catch it. After authoring, play the episode through with the AudioOverlay open and watch every stage fire.
+- **Re-listen after scene changes.** `tests/e2e/tour-coverage.spec.ts` proves every target exists; it does not prove the stage lands on the right words or that the view shows what the narration describes. `npx tsx scripts/audio/stage-review.ts --url <built site> --out <dir> [episode …]` writes, per stage, the screen just after it fires next to the VTT words spoken around it: read those sheets after any change to a toured route's first view, labels, panels or panoramas.
 
 ---
 

@@ -881,9 +881,12 @@
      has no content-visibility so the identical highlight shows there. Lift
      content-visibility for the focused/selected card so the keyboard
      roving-nav highlight renders the same on both routes. One card opts
-     out of the optimisation at a time — negligible. */
+     out of the optimisation at a time — negligible. The audio tour's flash glow
+     is a box-shadow too: without the opt-out every fleet roll-call flash was
+     invisible (stage-review 2026-11-08). */
   .fleet-grid > .card-li:has(.card:focus-visible),
-  .fleet-grid > .card-li:has(.card.selected) {
+  .fleet-grid > .card-li:has(.card.selected),
+  .fleet-grid > .card-li:has(.card:global(.audio-stage-flash)) {
     content-visibility: visible;
   }
 

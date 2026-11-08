@@ -3942,6 +3942,7 @@
           type="button"
           class="opening-skip"
           data-testid="fly-opening-skip"
+          data-audio-stage="fly-opening-skip"
           onclick={skipOpening}
           aria-label={m.fly_proceed_aria()}
         >
@@ -4220,7 +4221,7 @@
     >
       {isPlaying ? '⏸' : '▶'}
     </button>
-    <div class="scrub-track-wrap">
+    <div class="scrub-track-wrap" data-audio-stage="fly-timeline">
       <!-- Custom-styled track underneath the (transparent) native input.
            The native input still owns drag + click interactions for
            accessibility; the styled track + progress fill render the

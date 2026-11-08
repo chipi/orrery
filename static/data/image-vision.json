@@ -31143,55 +31143,55 @@
       "scoring_cost_usd": 0.005748
     },
     "/images/missions/vega-1/03.jpg": {
-      "score": 2,
-      "subject": "A Soviet CCCP-marked spacecraft model or lander replica on display in a museum with visitors in the background.",
+      "score": 8,
+      "subject": "A Vega probe bus with its Venus descent capsule on display at the Smithsonian's Steven F. Udvar-Hazy Center, March 2018.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.55
+        "y": 0.45
       },
-      "subject_match": false,
+      "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "off-subject",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:21:47.123Z",
-      "scoring_cost_usd": 0.008952
+      "scored_at": "2026-11-08T07:26:08.247Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/vega-2/01.jpg": {
-      "score": 4,
-      "subject": "An illustrated mission diagram showing the Vega spacecraft trajectory, Venus atmospheric entry with balloon deployment, and Comet Halley rendezvous sequence.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Artist's impression of a Vega balloon probe drifting in the atmosphere of Venus, by Joris Wegner.",
+      "category": "render",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.4
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:21:44.034Z",
-      "scoring_cost_usd": 0.005748
+      "scored_at": "2026-11-08T07:26:08.339Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/vega-2/02.jpg": {
-      "score": 4,
-      "subject": "An illustrated mission diagram showing the Vega spacecraft trajectory, Venus atmospheric entry with balloon deployment, and Comet Halley rendezvous sequence.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A Vega balloon with its gondola on display at the Smithsonian's Steven F. Udvar-Hazy Center, March 2018.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.4
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:21:44.034Z",
-      "scoring_cost_usd": 0.005748
+      "scored_at": "2026-11-08T07:26:08.356Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/voskhod-1/01.jpg": {
       "score": 6,
@@ -32159,21 +32159,21 @@
       "scoring_cost_usd": 0.009255
     },
     "/images/missions/vega-2/03.jpg": {
-      "score": 2,
-      "subject": "A Soviet CCCP-marked spacecraft model or lander replica on display in a museum with visitors in the background.",
+      "score": 8,
+      "subject": "Wide view of the Vega probe bus and landing apparatus in the space hangar of the Steven F. Udvar-Hazy Center, August 2025.",
       "category": "hardware",
       "focal_point": {
-        "x": 0.5,
-        "y": 0.55
+        "x": 0.4,
+        "y": 0.5
       },
-      "subject_match": false,
+      "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "off-subject",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:21:47.123Z",
-      "scoring_cost_usd": 0.008952
+      "scored_at": "2026-11-08T07:26:08.402Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/shenzhou-2/03.jpg": {
       "score": 5,
@@ -32436,6 +32436,32 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-08T07:21:46.949Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/vostok-2/04.jpg": {
+      "score": 8,
+      "subject": "Muscovites on Red Square at the moment Vostok 2's safe landing was announced, 7 August 1961.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:26:08.430Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/vostok-6/05.jpg": {
+      "score": 8,
+      "subject": "Valery Bykovsky, Nikita Khrushchev and Valentina Tereshkova greeted in Moscow, 22 June 1963.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:26:08.445Z",
       "scoring_cost_usd": 0
     }
   }

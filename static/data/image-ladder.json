@@ -10694,7 +10694,9 @@
   ],
   "/images/missions/vega-1/03": [
     320,
-    566
+    925,
+    1480,
+    2220
   ],
   "/images/missions/vega-1/04": [
     320,
@@ -10702,11 +10704,15 @@
   ],
   "/images/missions/vega-2/01": [
     320,
-    566
+    853,
+    1365,
+    1500
   ],
   "/images/missions/vega-2/02": [
     320,
-    361
+    908,
+    1453,
+    2180
   ],
   "/images/missions/venera-13/01": [
     320,
@@ -10829,7 +10835,9 @@
     1920
   ],
   "/images/missions/vostok-2/04": [
-    180
+    320,
+    1280,
+    1600
   ],
   "/images/missions/vostok-2/05": [
     320,
@@ -10908,8 +10916,8 @@
   ],
   "/images/missions/vostok-6/05": [
     320,
-    867,
-    1317
+    1280,
+    1816
   ],
   "/images/missions/voyager-1/01": [
     320,
@@ -13827,7 +13835,9 @@
   "/images/missions/vega-2/03": [
     320,
     640,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/aces/02": [
     320,

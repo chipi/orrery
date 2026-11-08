@@ -102,6 +102,7 @@ tables); keep it.
 | credit rows to the real NASA Images item, once the match is known (creates a missing row) | `apply-provenance-nasa.mjs <map.json>` | by hand |
 | credit rows to an image on an agency's own website (direct-agency; licence from the allowlist) | `apply-provenance-agency.mjs <map.json>` | by hand |
 | does each mission gallery image have the shape of the Commons file its credit names (finds credits that point at another picture) | `gallery-credit-shape-check.mjs` (read-only) | by hand, after gallery changes |
+| replace gallery slots with another Commons/NASA picture, end to end (master, ladder, card rungs, 1x1, credit, alt text in 14 locales + its translation-source hash, vision row, pHash, curation, /credits thumb) | `npx tsx replace-gallery-slots.ts <map.json> [--dry-run]` (maps under `link-fixes/`; masters of the galleries smudged first) | by hand, after looking at each new picture |
 
 Runbook: the `orrery-link-health` skill. The two outbound checkers share
 `lib/link-probe.mjs` (polite User-Agent, 2 requests per host, HEAD then GET).

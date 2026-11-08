@@ -226,6 +226,28 @@ loses an image deserves a look. First used 2026-11-06 on 39 slots in 34 gallerie
 contact-sheet review of every candidate the vision data tags `other` or describes as a
 logo/patch/chart/poster.
 
+### Replacing a gallery image — `replace-gallery-slots.ts`
+
+When a slot should hold a better picture rather than disappear, write a map under
+`scripts/link-fixes/` (`{ "<rel>": { source: "commons"|"nasa", id, focal: [x, y], category, subject,
+alt: { all 14 locales } } }`), smudge the galleries' masters and run:
+
+```bash
+npx tsx scripts/replace-gallery-slots.ts <map.json> --dry-run   # fetches every original, writes nothing
+npx tsx scripts/replace-gallery-slots.ts <map.json>
+npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/build-i18n-bundles.mjs \
+  && node scripts/mobile/build-offline-manifest.mjs && npm run validate-image-integrity
+```
+
+It runs steps 1–3 of the runbook above for each slot through the same scripts, sets the vision row
+by hand (no vision API call), writes the alt text in 14 locales and records its English as the
+translation source (or `translate-alt-text.mjs plan` would queue a paid re-translation), updates the
+pHash, clears curation and off-subject entries for the old picture, and regenerates the /credits
+thumb (`build-credit-thumbs.mjs` is add-only, so a replaced slot's old thumb must be removed first:
+the 2026-11-07 Mars 2 swap left two stale ones). Do not trust the vision data to find what to
+replace: on 2026-11-08 several rows still described pictures replaced earlier, so the review was by
+eye over contact sheets of every live mission gallery image.
+
 ### Gotchas learned the hard way (the 2026-07 main→mobile rebase)
 
 - **Images that enter outside the pipeline need the full treatment.** When 0.7.3 added gallery `.jpg`s that a rebase pulled onto the WebP branch, they had **no masters, no WebP tiers, no provenance**. Fix = move each `.jpg` → `masters/`, re-run `build-display-ladder.mjs`, merge + rekey its provenance, rebuild counts. **Treat any hand-added image as a master candidate.**

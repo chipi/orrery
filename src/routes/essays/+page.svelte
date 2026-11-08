@@ -77,7 +77,7 @@
               />
             {/if}
             <h3>{e.title}</h3>
-            <p class="card-dek">{essayPlainText(e.dek)}</p>
+            <p class="card-dek">{essayPlainText(e.dek ?? '')}</p>
             <span class="go">{m.essays_read()}</span>
           </a>
         {/each}

@@ -54,6 +54,9 @@ const OVERRIDE_SURFACE = {
   planets: 'planets',
   'small-bodies': 'small-bodies',
   satellites: 'satellites',
+  belts: 'belts',
+  'iss-modules': 'iss-modules',
+  'tiangong-modules': 'tiangong-modules',
 };
 const FILE_ROOTS = ['static/images', 'static/credit-thumbs/images', 'masters'];
 const JSON_ROOTS = ['static/data', 'scripts/i18n-tools', 'i18n-src'];

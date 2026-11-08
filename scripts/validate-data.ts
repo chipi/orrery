@@ -684,13 +684,17 @@ for (const f of [
 }
 validateFile(join(DATA_ROOT, 'sun-gallery.json'), validateSunGallery);
 for (const f of [
+  'belts',
+  'earth-objects',
   'fleet',
+  'iss-modules',
   'mars-sites',
   'missions',
   'moon-sites',
   'planets',
   'satellites',
   'small-bodies',
+  'tiangong-modules',
 ]) {
   validateFile(join(DATA_ROOT, `${f}-hero-overrides.json`), validateHeroOverrides);
 }

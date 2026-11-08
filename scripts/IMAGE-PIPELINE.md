@@ -256,6 +256,26 @@ upright (re-encoded at q92): the ladder ignores the flag, and on 2026-11-08 a ph
 replace: on 2026-11-08 several rows still described pictures replaced earlier, so the review was by
 eye over contact sheets of every live mission gallery image.
 
+### Hero crop positions — `vision/hero-crop-sheet.mjs`
+
+A hero is shown as a cover crop in three places: the collectible card's hero band (about 1.6–2.6:1,
+its lower half faded under the title), the browse-page covers (16:9) and every explore panel hero
+(16:9). All crop at the centre unless the hero's entry in `static/data/<surface>-hero-overrides.json`
+carries a reviewed `position` (CSS object-position, `"50% 22%"`), which `heroPositionFor()` in
+`src/lib/image-hero.ts` applies everywhere. A hero without an override entry gets one with its own
+slot (`"slot": "01.jpg"`) when it needs a position.
+
+```bash
+node scripts/vision/hero-crop-sheet.mjs --out /tmp/crops                       # every surface
+node scripts/vision/hero-crop-sheet.mjs --out /tmp/crops --surface missions --only apollo11 \
+  --try "missions/apollo11=50% 20%"                                            # preview a fix
+```
+
+Review the sheets by eye (the card's faded half counts as hidden), record the chosen positions, then
+`npm run build-cards`. `replace-gallery-slots.ts` clears the position when it replaces the hero
+picture; `drop-gallery-slots.mjs` keeps it with the picture when it renumbers. The 2026-11-08 review
+started from the Apollo 11 card, whose helmet was cut off at the top.
+
 ### Gotchas learned the hard way (the 2026-07 main→mobile rebase)
 
 - **Images that enter outside the pipeline need the full treatment.** When 0.7.3 added gallery `.jpg`s that a rebase pulled onto the WebP branch, they had **no masters, no WebP tiers, no provenance**. Fix = move each `.jpg` → `masters/`, re-run `build-display-ladder.mjs`, merge + rekey its provenance, rebuild counts. **Treat any hand-added image as a master candidate.**

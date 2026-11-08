@@ -23,7 +23,7 @@
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
-  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
+  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
     type RemoteData,
@@ -701,6 +701,7 @@
               <img
                 class="card-cover"
                 {...responsive(pickHero('missions', mission.id), IMAGE_SIZES.card)}
+                style:object-position={heroPositionFor(pickHero('missions', mission.id))}
                 alt=""
                 loading="lazy"
                 onerror={(e) => {

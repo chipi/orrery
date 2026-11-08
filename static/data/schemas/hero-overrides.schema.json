@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "hero-overrides.schema.json",
   "title": "Hero-image override manifest",
-  "description": "Shared by fleet-/mars-sites-/missions-/moon-sites-/planets-/satellites-/small-bodies-hero-overrides.json. Maps an entity id to the gallery slot promoted as its hero image, with the reason and approval date. generated_at only exists on the audit-generated files (fleet, mars-sites, missions, moon-sites); overrides may be empty.",
+  "description": "Shared by earth-objects-/fleet-/mars-sites-/missions-/moon-sites-/planets-/satellites-/small-bodies-hero-overrides.json. Maps an entity id to the gallery slot promoted as its hero image, with the reason and approval date. generated_at only exists on the audit-generated files (fleet, mars-sites, missions, moon-sites); overrides may be empty.",
   "type": "object",
   "required": [
     "version",
@@ -55,6 +55,11 @@
         "approved_at": {
           "type": "string",
           "format": "date"
+        },
+        "position": {
+          "type": "string",
+          "pattern": "^(100|[1-9]?[0-9])% (100|[1-9]?[0-9])%$",
+          "description": "CSS object-position for the hero's cover crops (collectible card, browse cover, panel hero), e.g. \"50% 22%\"; set where the centred crop cuts the subject off. Reviewed with scripts/vision/hero-crop-sheet.mjs."
         }
       }
     }

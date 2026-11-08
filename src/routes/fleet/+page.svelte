@@ -27,7 +27,7 @@
   import * as m from '$lib/paraglide/messages';
   import { countryLabel } from '$lib/country-label';
   import { fleetStatusLabel } from '$lib/status-label';
-  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
+  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
     type RemoteData,
@@ -694,6 +694,7 @@
                 <img
                   class="card-cover"
                   {...responsive(pickHero('fleet', entry.id), IMAGE_SIZES.card)}
+                  style:object-position={heroPositionFor(pickHero('fleet', entry.id))}
                   alt=""
                   loading="lazy"
                   onerror={(e) => {

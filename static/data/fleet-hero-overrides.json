@@ -86,7 +86,8 @@
   "feitian": {
    "slot": "02.jpg",
    "reason": "category: people-only — no asset visible; vision-rejected: category-people; subject names a different entity than feitian",
-   "approved_at": "2026-06-12"
+   "approved_at": "2026-06-12",
+   "position": "50% 5%"
   },
   "galileo": {
    "slot": "02.jpg",
@@ -166,7 +167,8 @@
   "progress-ms": {
    "slot": "02.jpg",
    "reason": "subject names a different entity than progress-ms",
-   "approved_at": "2026-06-12"
+   "approved_at": "2026-06-12",
+   "position": "50% 0%"
   },
   "rosetta": {
    "slot": "04.jpg",
@@ -186,12 +188,14 @@
   "spirit": {
    "slot": "04.jpg",
    "reason": "category: diagram — not a hero candidate; score: 3 < threshold 6; vision-rejected: category-diagram; subject names a different entity than spirit",
-   "approved_at": "2026-06-12"
+   "approved_at": "2026-06-12",
+   "position": "50% 45%"
   },
   "taiyuan-lc-9": {
    "slot": "01.jpg",
    "reason": "manual hero override — Marko 2026-06-29 (fetch re-source via zh-Commons: real LM-4C launch; replaces text/logo set)",
-   "approved_at": "2026-06-29"
+   "approved_at": "2026-06-29",
+   "position": "50% 10%"
   },
   "vega-2": {
    "slot": "03.jpg",
@@ -451,7 +455,8 @@
   "sokol-kv-2": {
    "slot": "04.jpg",
    "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
-   "approved_at": "2026-09-12"
+   "approved_at": "2026-09-12",
+   "position": "50% 0%"
   },
   "atlas-lv-3b": {
    "slot": "03.jpg",
@@ -486,7 +491,8 @@
   "perseverance": {
    "slot": "04.jpg",
    "reason": "hero review 2026-11-06: rover selfie; 01 showed only Ingenuity over dunes",
-   "approved_at": "2026-11-06"
+   "approved_at": "2026-11-06",
+   "position": "70% 15%"
   },
   "salyut-1": {
    "slot": "03.jpg",
@@ -511,12 +517,163 @@
   "vulcan": {
    "slot": "04.jpg",
    "reason": "hero review 2026-11-06: Vulcan on the pad; 01 was a dark sky with a tiny flame",
-   "approved_at": "2026-11-06"
+   "approved_at": "2026-11-06",
+   "position": "50% 15%"
   },
   "mars2-orbiter": {
    "slot": "03.jpg",
    "reason": "hero review 2026-11-06: the hardware; 01 was a stamp",
    "approved_at": "2026-11-06"
+  },
+  "a7l": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "aces": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 10%"
+  },
+  "apollo-lm": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "change-3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 0%"
+  },
+  "gaia": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "60% 100%"
+  },
+  "hitomi": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 10%"
+  },
+  "krechet-94": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 10%"
+  },
+  "lanyue": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 15%"
+  },
+  "luna10": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 15%"
+  },
+  "mengzhou": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 20%"
+  },
+  "mercury-capsule": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "mercury-redstone": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "38% 15%"
+  },
+  "orlan-mks": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "palmachim": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 38%"
+  },
+  "plesetsk-41-1": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 0%"
+  },
+  "promise": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 0%"
+  },
+  "shenzhou-iva": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 10%"
+  },
+  "sokol-m": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "soyuz": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 10%"
+  },
+  "soyuz-2": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 30%"
+  },
+  "soyuz-fg": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 30%"
+  },
+  "soyuz-u": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 30%"
+  },
+  "titan-ii-glv": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 35%"
+  },
+  "vostok-k": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 0%"
+  },
+  "woomera": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 15%"
   }
  }
 }

@@ -148,7 +148,11 @@ for (const [rel, buf] of Object.entries(fetched)) {
     `masters/${rel}.jpg`,
     fmt === 'jpeg' && (orientation ?? 1) === 1
       ? buf
-      : await sharp(buf).rotate().flatten({ background: '#000000' }).jpeg({ quality: 92 }).toBuffer(),
+      : await sharp(buf)
+          .rotate()
+          .flatten({ background: '#000000' })
+          .jpeg({ quality: 92 })
+          .toBuffer(),
   );
   const dir = `static/images/${dirname(rel)}`;
   const nn = rel.split('/').pop();
@@ -288,6 +292,18 @@ const off = readJson(O);
 const offMap = off.decisions ?? off.entries ?? off;
 for (const k of gone) delete offMap[k];
 writeJson(O, off);
+// A hero's reviewed crop position belongs to the old picture: drop it with the picture.
+for (const rel of Object.keys(map)) {
+  const [surfaceDir, entity, nn] = rel.split('/');
+  const ovFile = `static/data/${surfaceDir === 'fleet-galleries' ? 'fleet' : surfaceDir}-hero-overrides.json`;
+  if (!existsSync(ovFile)) continue;
+  const ovj = readJson(ovFile);
+  const o = ovj.overrides?.[entity];
+  if (!o?.position || o.slot.slice(0, 2) !== nn) continue;
+  delete o.position;
+  writeJson(ovFile, ovj);
+  console.log(`  hero ${rel}: crop position cleared — review it with vision/hero-crop-sheet.mjs`);
+}
 
 // 7. /credits thumbs (add-only, the old ones were removed above).
 execFileSync('node', ['scripts/vision/build-credit-thumbs.mjs'], { stdio: 'inherit' });

@@ -44,7 +44,10 @@ export type HeroSurface =
   | 'earth-objects'
   | 'planets'
   | 'small-bodies'
-  | 'satellites';
+  | 'satellites'
+  | 'belts'
+  | 'iss-modules'
+  | 'tiangong-modules';
 
 const SURFACE_TO_DIR: Record<HeroSurface, string> = {
   missions: 'missions',
@@ -55,6 +58,9 @@ const SURFACE_TO_DIR: Record<HeroSurface, string> = {
   planets: 'planets',
   'small-bodies': 'small-bodies',
   satellites: 'satellites',
+  belts: 'belts',
+  'iss-modules': 'iss-modules',
+  'tiangong-modules': 'tiangong-modules',
 };
 
 const DEFAULT_SLOT = '01.jpg';
@@ -70,6 +76,9 @@ export interface HeroOverride {
   slot: string;
   reason?: string;
   approved_at?: string;
+  /** CSS object-position for the hero's cover crops (card, browse cover, panel
+   *  hero), e.g. "50% 22%", set where the centred crop cuts the subject off. */
+  position?: string;
 }
 
 export interface HeroOverrideFile {
@@ -164,6 +173,26 @@ export function applyHeroOverride(surface: HeroSurface, id: string, gallery: str
   });
   if (idx <= 0) return gallery; // not present, or already first
   return [gallery[idx], ...gallery.slice(0, idx), ...gallery.slice(idx + 1)];
+}
+
+const DIR_TO_SURFACE = Object.fromEntries(
+  Object.entries(SURFACE_TO_DIR).map(([s, d]) => [d, s as HeroSurface]),
+) as Record<string, HeroSurface>;
+
+/**
+ * The reviewed crop position of a hero image, from its URL (any ladder rung:
+ * `…/images/<dir>/<id>/<NN>.webp` or `<NN>-640.webp`). Defined only when the
+ * surface's overrides are loaded, the entry names this slot, and it carries a
+ * `position`; otherwise undefined and the crop stays centred.
+ */
+export function heroPositionFor(src: string | undefined): string | undefined {
+  const m = src?.match(/\/images\/([^/]+)\/([^/]+)\/(\d\d)(?:-\d+)?\.(?:webp|jpe?g)(?:[?#].*)?$/);
+  if (!m) return undefined;
+  const surface = DIR_TO_SURFACE[m[1]!];
+  if (!surface) return undefined;
+  const o = overrideCache.get(surface)?.overrides?.[m[2]!];
+  if (!o?.position || o.slot.slice(0, 2) !== m[3]) return undefined;
+  return o.position;
 }
 
 /** Test seam: clear the override cache so the next loadHeroOverrides

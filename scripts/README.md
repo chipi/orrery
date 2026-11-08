@@ -103,6 +103,7 @@ tables); keep it.
 | credit rows to an image on an agency's own website (direct-agency; licence from the allowlist) | `apply-provenance-agency.mjs <map.json>` | by hand |
 | does each mission gallery image have the shape of the Commons file its credit names (finds credits that point at another picture) | `gallery-credit-shape-check.mjs` (read-only) | by hand, after gallery changes |
 | replace gallery slots with another Commons/NASA picture, end to end (master, ladder, card rungs, 1x1, credit, alt text in 14 locales + its translation-source hash, vision row, pHash, curation, /credits thumb) | `npx tsx replace-gallery-slots.ts <map.json> [--dry-run]` (maps under `link-fixes/`; masters of the galleries smudged first) | by hand, after looking at each new picture |
+| hero crops: each hero with its card (2.5:1, faded) and 16:9 cover crops at its reviewed `position`, as contact sheets; `--try` previews a candidate position | `node vision/hero-crop-sheet.mjs --out <dir> [--surface …] [--only …] [--try "<surface>/<id>=<x>% <y>%"]` (read-only) | by hand, after hero swaps |
 
 Runbook: the `orrery-link-health` skill. The two outbound checkers share
 `lib/link-probe.mjs` (polite User-Agent, 2 requests per host, HEAD then GET).

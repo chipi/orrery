@@ -56,7 +56,8 @@
   "starship-demo": {
    "slot": "03.jpg",
    "reason": "subject names a different entity than starship-demo",
-   "approved_at": "2026-06-12"
+   "approved_at": "2026-06-12",
+   "position": "50% 20%"
   },
   "bepicolombo": {
    "slot": "01.jpg",
@@ -71,7 +72,8 @@
   "skylab-4": {
    "slot": "04.jpg",
    "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
-   "approved_at": "2026-06-12"
+   "approved_at": "2026-06-12",
+   "position": "50% 10%"
   },
   "inspiration4": {
    "slot": "04.jpg",
@@ -201,7 +203,8 @@
   "clementine": {
    "slot": "01.jpg",
    "reason": "manual hero override — Marko 2026-06-20 (G1 = slot 01)",
-   "approved_at": "2026-06-20"
+   "approved_at": "2026-06-20",
+   "position": "50% 35%"
   },
   "mariner10": {
    "slot": "05.jpg",
@@ -261,7 +264,8 @@
   "voskhod-1": {
    "slot": "05.jpg",
    "reason": "manual hero override — Marko 2026-06-20",
-   "approved_at": "2026-06-20"
+   "approved_at": "2026-06-20",
+   "position": "50% 30%"
   },
   "apollo7": {
    "slot": "01.jpg",
@@ -307,6 +311,90 @@
    "slot": "03.jpg",
    "reason": "hero review 2026-11-06: Lucy at a Trojan; 01 was a near-black launch",
    "approved_at": "2026-11-06"
+  },
+  "apollo11": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "apollo12": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 40%"
+  },
+  "apollo17": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 25%"
+  },
+  "freedom-7": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 0%"
+  },
+  "gemini12": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 20%"
+  },
+  "gemini3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 5%"
+  },
+  "luna10": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 20%"
+  },
+  "mercury-redstone-3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 15%"
+  },
+  "shenzhou-2": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 25%"
+  },
+  "shenzhou-3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 20%"
+  },
+  "skylab-3": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 25%"
+  },
+  "soyuz-1": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 25%"
+  },
+  "soyuz-11": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 35%"
+  },
+  "vostok-4": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 70%"
   }
  }
 }

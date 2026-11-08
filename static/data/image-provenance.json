@@ -47661,22 +47661,22 @@
       "id": "b499cc886f16a698",
       "path": "/images/missions/inspiration4/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Inspiration4 Launch (210915-X-YM354-1013).jpg",
-      "author": "SpaceX",
+      "title": "File:Inspiration 4 Launch (7264908).jpeg",
+      "author": "U.S. Space Force photo by Joshua Conti",
       "agency": "SpaceX",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AInspiration4%20Launch%20(210915-X-YM354-1013).jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inspiration4%20Launch%20(210915-X-YM354-1013).jpg",
-      "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Inspiration_4_Launch_(7264908).jpeg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Inspiration_4_Launch_%287264908%29.jpeg",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 127521612,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.854Z"
+      "fetched_at": "2026-11-08T07:28:47.406Z"
     },
     {
       "id": "a8dde636f602aa9d",
@@ -47719,6 +47719,26 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.854Z"
+    },
+    {
+      "id": "f19e454232259545",
+      "path": "/images/missions/inspiration4/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Inspiration 4 Launch (7264908).jpeg",
+      "author": "U.S. Space Force photo by Joshua Conti",
+      "agency": "SpaceX",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Inspiration_4_Launch_(7264908).jpeg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Inspiration_4_Launch_%287264908%29.jpeg",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 127521612,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T07:28:47.407Z"
     },
     {
       "id": "579976071d2d83c5",
@@ -55236,43 +55256,43 @@
       "id": "70610333915b89b5",
       "path": "/images/missions/starship-mars-crew/02.1x1.jpg",
       "source_type": "wikimedia-commons",
-      "title": "File:SpaceX Starship before IFT-5.jpg",
-      "author": "SpaceX",
+      "title": "File:Starship Booster Landing on Mechzilla (54064036815).jpg",
+      "author": "Steve Jurvetson from Los Altos, USA",
       "agency": "SpaceX",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ASpaceX%20Starship%20before%20IFT-5.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20before%20IFT-5.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Starship_Booster_Landing_on_Mechzilla_(54064036815).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Starship_Booster_Landing_on_Mechzilla_%2854064036815%29.jpg",
       "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_rationale": "Creative Commons Attribution 2.0",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 153891197,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.839Z"
+      "fetched_at": "2026-11-08T07:28:48.652Z"
     },
     {
       "id": "474f5619357bfeb1",
       "path": "/images/missions/starship-mars-crew/02.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:SpaceX Starship before IFT-5.jpg",
-      "author": "SpaceX",
+      "title": "File:Starship Booster Landing on Mechzilla (54064036815).jpg",
+      "author": "Steve Jurvetson from Los Altos, USA",
       "agency": "SpaceX",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ASpaceX%20Starship%20before%20IFT-5.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20before%20IFT-5.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Starship_Booster_Landing_on_Mechzilla_(54064036815).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Starship_Booster_Landing_on_Mechzilla_%2854064036815%29.jpg",
       "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_rationale": "Creative Commons Attribution 2.0",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 153891197,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.839Z"
+      "fetched_at": "2026-11-08T07:28:48.652Z"
     },
     {
       "id": "427d0e202fdd7173",

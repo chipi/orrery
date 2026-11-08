@@ -25404,21 +25404,21 @@
       "scoring_cost_usd": 0.009498
     },
     "/images/missions/inspiration4/03.jpg": {
-      "score": 4,
-      "subject": "Inspiration4 mission patch on a camouflage uniform sleeve alongside a US flag patch, showing the '4' logo with words Leadership, Hope, Prosperity, Generosity, and Inspiration.",
-      "category": "other",
+      "score": 8,
+      "subject": "The Falcon 9 carrying the Inspiration4 crew on Launch Complex 39A at Kennedy Space Center on launch day, 15 September 2021.",
+      "category": "launch",
       "focal_point": {
-        "x": 0.47,
-        "y": 0.55
+        "x": 0.5,
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:06:07.848Z",
-      "scoring_cost_usd": 0.009447
+      "scored_at": "2026-11-08T07:28:48.877Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/inspiration4/04.jpg": {
       "score": 8,
@@ -31042,11 +31042,11 @@
     },
     "/images/missions/starship-mars-crew/02.jpg": {
       "score": 8,
-      "subject": "A SpaceX rocket ascending through a twilight sky with a brilliant plume of orange and white engine exhaust trailing below.",
+      "subject": "The Super Heavy booster caught by the launch tower's arms at Starbase during Starship flight test 5, 13 October 2024.",
       "category": "launch",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.25
+        "x": 0.5,
+        "y": 0.45
       },
       "subject_match": true,
       "variants": {
@@ -31054,8 +31054,8 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:21:04.900Z",
-      "scoring_cost_usd": 0.009134999999999999
+      "scored_at": "2026-11-08T07:28:48.928Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/starship-mars-crew/03.jpg": {
       "score": 6,

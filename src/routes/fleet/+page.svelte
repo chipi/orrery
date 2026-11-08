@@ -439,7 +439,7 @@
 </script>
 
 <svelte:head>
-  <title>{m.fleet_page_title()}</title>
+  <title>{m.fleet_page_title()} · Orrery</title>
   <meta name="description" content={m.fleet_meta_description()} />
 </svelte:head>
 <VisuallyHiddenH1 title={m.fleet_page_title()} />

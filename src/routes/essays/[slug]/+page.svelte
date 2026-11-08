@@ -11,12 +11,13 @@
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import { localizeHref } from '$lib/paraglide/runtime';
-  import { essayInlineHtml } from '$lib/essay-md';
+  import { essayInlineHtml, essayPlainText } from '$lib/essay-md';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
   let essay = $derived(data.essay);
+  let dekText = $derived(essayPlainText(essay.dek));
 
   // Section openers: a running number per heading, and an accent per movement so the
   // five movements of the series read apart (light enough for AA on the page background).
@@ -50,7 +51,7 @@
 
 <svelte:head>
   <title>{essay.title} · {m.essays_title()} · Orrery</title>
-  <meta name="description" content={essay.dek} />
+  <meta name="description" content={dekText} />
 </svelte:head>
 
 <article class="essay" data-route-ready="true">
@@ -62,12 +63,13 @@
 
   <header class="head">
     <h1>{essay.title}</h1>
-    <p class="dek">{essay.dek}</p>
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -- author-controlled overlay, escaped by essayInlineHtml -->
+    <p class="dek">{@html essayInlineHtml(essay.dek)}</p>
   </header>
 
   {#if essay.hero}
     <figure class="hero">
-      <img {...responsive(imgSrc(essay.hero), IMAGE_SIZES.full)} alt={essay.dek} decoding="async" />
+      <img {...responsive(imgSrc(essay.hero), IMAGE_SIZES.full)} alt={dekText} decoding="async" />
     </figure>
   {/if}
 

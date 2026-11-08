@@ -31,3 +31,15 @@ export function essayInlineHtml(md: string): string {
   s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
   return s;
 }
+
+/**
+ * The same essay markdown as plain text — link text kept, URLs and emphasis
+ * markers dropped — for attributes and contexts that cannot hold markup (meta
+ * description, alt text, a dek inside a card link).
+ */
+export function essayPlainText(md: string): string {
+  return md
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1');
+}

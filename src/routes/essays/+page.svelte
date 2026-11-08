@@ -10,6 +10,7 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetUrl } from '$lib/asset-url';
   import LongViewHero from '$lib/components/LongViewHero.svelte';
+  import { essayPlainText } from '$lib/essay-md';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
@@ -76,7 +77,7 @@
               />
             {/if}
             <h3>{e.title}</h3>
-            <p class="card-dek">{e.dek}</p>
+            <p class="card-dek">{essayPlainText(e.dek)}</p>
             <span class="go">{m.essays_read()}</span>
           </a>
         {/each}

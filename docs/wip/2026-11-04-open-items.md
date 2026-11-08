@@ -38,10 +38,13 @@ unconfirmed (option B, operator 2026-11-05).
   **Artemis 4 done 2026-11-08:** a 400 km polar-stereographic WAC square centred on the pole
   (`polar_half_km`), real terrain at every zoom, no pinch. From ~1 Mm altitude it reads as a dark
   square on the bright globe: the pole really is mostly in shadow, the globe texture is not.
-  **Chandrayaan-3 still not settled:** in its context master the crater shadows are ~2.5–2.7× wider
-  than tall (2.84 = correct for 69°S in a lat/lon crop) but some rims only ~2×, which would come out
-  ~1.4× tall on the globe. Next check: crop the same 400 km as an oblique stereographic square
-  centred on the site and compare crater outlines at the 87 km zoom.
+  **Chandrayaan-3 settled 2026-11-08: not stretched.** The WAC source and the shipped context
+  master warped onto the same site-centred stereographic grid put every crater in the same place
+  and shape. What reads as a stretch at the 87 km zoom is the long low-sun shadows plus a real
+  defect of the colour transfer: zero (shadowed) pixels take the globe's flat colour, so shadows
+  become flat grey blobs with dark outlines and the lit ground washes out. Fix: give high-latitude
+  Moon crops the grey, brightness-capped treatment the polar crop uses (`polarGrey` in
+  fetch-context-layer.ts), then re-fetch the south-polar sites (Chandrayaan-3, Chang'e 6…).
 - **1c. Markers and pins — done (2026-11-06).** Screen-space site tags (`site-tags.ts`): icons by zoom
   stage from the first view (bare), cards later, focus near the view centre, grouping, the nation
   legend with the first icons; every route opens over its sites (TA.md § Scene 6, "Zoom bands").
@@ -86,6 +89,11 @@ unconfirmed (option B, operator 2026-11-05).
   loads up front: `CollectibleCard` + `card-spec` 12.7 KB on /fleet.
 - Keep the per-route chunk report (which sources fill a route's JS, brotli KB) as a repo tool —
   it lived in the session scratchpad as `.route-chunks.mjs`.
+  **Done 2026-11-08 (first three):** preflight and CI's `ci` build now set SENTRY_SOURCEMAPS=1, so
+  the budget measures prod's bytes — it immediately caught /missions at 133 / 130 KB. The
+  collectible card now loads on demand (`src/lib/cards/lazy-card.ts`): /missions 133 → 112 KB,
+  /fleet 104 → 89 KB (lazy budgets 35 / 45 for the moved bytes). Chunk report:
+  `node scripts/check-route-budget.mjs --chunks /fleet`.
 - `deploy-verify` cannot prove MCP tracing without a client: `mcp.orrerylearn.com` needs an OAuth
   bearer and there is no probe credential. Decide on a probe path (an internal token, or a trace on
   `/health`).

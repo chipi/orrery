@@ -107,7 +107,12 @@ jobs:
       # gate before pushing.
       - run: npm run test:coverage
       - run: npm run validate-data
+      # Build as deploy-prod does (SENTRY_SOURCEMAPS: debug ids, hidden maps, no upload) so the
+      # route budget measures the bytes prod ships: 0.9.6 passed here at ~99 KB and failed the
+      # prod deploy at 105.45 KB on /fleet.
       - run: npm run build
+        env:
+          SENTRY_SOURCEMAPS: '1'
       # The docs site (VitePress) is otherwise built only by the deploy workflows after a merge:
       # a bare <page> in a guide passed every PR check and broke Deploy preview + Deploy docs
       # on main (2026-10-31). Building it here makes the required `ci` check catch it.

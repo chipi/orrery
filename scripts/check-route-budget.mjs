@@ -22,7 +22,9 @@
 //
 // Budgets live in scripts/route-budget.json (KB, brotli): `shell` / `routes` for JS,
 // `css` and `lazy` for the other two (each `{ shell?, defaultRoute, routes }`). If a route trips its
-// budget, find what grew (`node scripts/check-route-budget.mjs --report`) and
+// budget, find what grew (`node scripts/check-route-budget.mjs --report`; `--chunks /fleet`
+// lists one route's own chunks by size — build with SENTRY_SOURCEMAPS=1 to measure what
+// prod ships, as preflight and CI do) and
 // remove it; raise a budget only for a real feature, with the reason in the
 // commit. Run after `vite build`. Wired into `npm run build`.
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
@@ -126,6 +128,29 @@ const over = rows.flatMap((r) => [
   ...(r.lazy > r.lazyBudget ? [`${r.route} lazy ${r.lazy.toFixed(0)} > ${r.lazyBudget} KB`] : []),
 ]);
 rows.sort((a, b) => b.kb - a.kb);
+// --chunks <route>: what fills that route's JS — its own chunks (beyond the shell) by brotli
+// size, with the manifest's chunk name and source. Measure with SENTRY_SOURCEMAPS=1 to match
+// prod (debug ids); kept here since 0.9.7 instead of a session scratch script.
+const chunksFor = process.argv[process.argv.indexOf('--chunks') + 1];
+if (process.argv.includes('--chunks')) {
+  const n = readdirSync(NODES).find((f) => f.endsWith('.js') && nodeLabel(f) === chunksFor);
+  if (!n) {
+    console.error(`check-route-budget: no route node labelled ${chunksFor}`);
+    process.exit(2);
+  }
+  const own = [...closure(nodeKey(n))].filter((k) => !shell.has(k));
+  const list = own
+    .map((k) => ({
+      k,
+      kb: brBytes(manifest[k].file) / 1024,
+      src: manifest[k].src ?? manifest[k].name ?? k,
+    }))
+    .sort((a, b) => b.kb - a.kb);
+  console.log(
+    `${chunksFor}: ${list.length} chunks, ${list.reduce((s, c) => s + c.kb, 0).toFixed(1)} KB br`,
+  );
+  for (const c of list) console.log(`  ${c.kb.toFixed(1).padStart(6)} KB  ${c.src}`);
+}
 if (report || over.length) {
   const cell = (v, b) =>
     `${v.toFixed(0).padStart(5)}/${String(b === Infinity ? '-' : b).padEnd(4)}`;

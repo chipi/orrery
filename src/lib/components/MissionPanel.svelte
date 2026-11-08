@@ -11,8 +11,8 @@
   import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
   import { getMissionGallery, getMarsSites, getMoonSites, getBadges } from '$lib/data';
   import { getMissionIndex } from '$lib/data/missions';
-  import { cardForMission, type CardSpec } from '$lib/cards/card-spec';
-  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { CardSpec } from '$lib/cards/card-spec';
+  import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import type { MissionIndex } from '$types/mission';
   import type { SurfaceSite } from '$types/surface-site';
   import { formatNumber } from '$lib/format';
@@ -57,8 +57,17 @@
   // Card hero == the app hero (gallery[0], override-blessed). One picture
   // per entity everywhere — a bad card hero is fixed at the hero override,
   // never by a card-specific derivation (operator direction 2026-09-12).
+  // The card code loads on demand (lazy-card.ts): fetched when a mission opens.
+  let cards = $state<CardModules | null>(null);
+  $effect(() => {
+    if (mission && !cards)
+      void loadCardModules().then(
+        (c) => (cards = c),
+        () => {},
+      );
+  });
   let cardSpec = $derived<CardSpec | null>(
-    mission ? cardForMission(mission, missionIndex, gallery[0]) : null,
+    mission && cards ? cards.spec.cardForMission(mission, missionIndex, gallery[0]) : null,
   );
   let badges = $state<Record<string, string>>({});
   /** Thumbs under GALLERY tab: skip first image when a hero duplicates it. */
@@ -876,8 +885,8 @@
   {/if}
 </Panel>
 
-{#if cardSpec}
-  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{#if cardSpec && cards}
+  <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
 {#snippet blueprintFigure(src: string)}

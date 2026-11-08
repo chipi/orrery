@@ -22,6 +22,8 @@ import * as m from '$lib/paraglide/messages';
 import { countryLabel } from '$lib/country-label';
 import { SITE_ORIGIN } from '$lib/seo';
 
+export { fleetAliasesMission, fleetAliasMissionId, siteAliasMissionId } from './card-alias';
+
 // Human-readable host printed on the card footer — rides the SITE_ORIGIN
 // spine so a domain move re-slugs every card on the next corpus regen.
 const SLUG_HOST = SITE_ORIGIN.replace(/^https?:\/\//, '');
@@ -167,27 +169,6 @@ export function cardForMission(
   };
 }
 
-/**
- * True when a fleet entry shares its id with a mission — the same real thing
- * on two surfaces (Perseverance the rover IS Perseverance the mission; 47
- * craft overlap this way). The mission card is canonical for those: it has
- * the richer spec set (launch, ΔV, transit, trajectory figure) and one
- * collectible per real thing keeps the collection honest. Panels alias to
- * the mission card; the generator + share stubs skip the fleet duplicate.
- */
-export function fleetAliasesMission(fleetId: string, missionIndex: MissionIndex[]): boolean {
-  return fleetAliasMissionId(fleetId, missionIndex) !== null;
-}
-
-/** Fleet↔mission ids drift on dashes ('change-4' vs 'change4' — 11 real
- *  duplicates shipped before this normalisation). Compare dash-stripped;
- *  returns the MISSION's real id (the canonical card owner) or null. */
-const normalizeCardId = (id: string) => id.replace(/-/g, '');
-export function fleetAliasMissionId(fleetId: string, missionIndex: MissionIndex[]): string | null {
-  const n = normalizeCardId(fleetId);
-  return missionIndex.find((mi) => normalizeCardId(mi.id) === n)?.id ?? null;
-}
-
 const FLEET_CATEGORY_LABEL: Record<string, () => string> = {
   launcher: m.card_cat_launcher,
   'crewed-spacecraft': m.card_cat_crewed_spacecraft,
@@ -260,24 +241,6 @@ export function cardForFleet(
     imagePath: `/images/cards/fleet/${entry.id}.jpg`,
     shareHref: `/c/fleet/${entry.id}`,
   };
-}
-
-/**
- * Mission id a surface site aliases to, or null. Most moon/mars/venus sites
- * ARE missions (Apollo 11 the site is Apollo 11 the mission) — matched by
- * `mission_id` first, id parity second (same rule the panels' crossSite
- * lookup uses). 45 of 54 moon/mars sites alias a mission and show the
- * canonical mission card; only the remaining 9 without a mission record
- * get their own site card.
- */
-export function siteAliasMissionId(
-  site: { id: string; mission_id?: string },
-  missionIndex: MissionIndex[],
-): string | null {
-  if (site.mission_id && missionIndex.some((mi) => mi.id === site.mission_id))
-    return site.mission_id;
-  if (missionIndex.some((mi) => mi.id === site.id)) return site.id;
-  return null;
 }
 
 /** '47.7°N 134.3°E' — the card register for site coordinates. */

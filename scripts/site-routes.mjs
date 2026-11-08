@@ -123,6 +123,28 @@ function siteRoutes() {
   return routes;
 }
 
+/** One indexable page per planet, moon and small body (/explore/<id>, 0.9.8 SEO). */
+function bodyRoutes() {
+  /** @param {string} p */
+  const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null);
+  /** @type {Set<string>} — a Set: Pluto is in planets.json and small-bodies.json */
+  const ids = new Set();
+  for (const p of read('static/data/planets.json')?.planets ?? []) ids.add(p.name.toLowerCase());
+  for (const s of read('static/data/satellites.json')?.satellites ?? []) ids.add(s.id);
+  for (const b of read('static/data/small-bodies.json')?.bodies ?? []) ids.add(b.id);
+  return [...ids].map((id) => `/explore/${id}`);
+}
+
+/** One indexable page per Lab formula (/lab/<id>, 0.9.8 SEO). The id list is
+ *  guarded against the TS registry by lab-formulas-json.test.ts. */
+function labRoutes() {
+  const path = 'static/data/lab-formulas.json';
+  if (!existsSync(path)) return [];
+  /** @type {{ ids: string[] }} */
+  const { ids } = JSON.parse(readFileSync(path, 'utf8'));
+  return ids.map((id) => `/lab/${id}`);
+}
+
 /**
  * All un-localized canonical routes the site ships (no base prefix, no
  * locale prefix). e.g. `['/', '/missions', '/science/physics/kepler', ...]`.
@@ -138,5 +160,7 @@ export function collectCanonicalRoutes() {
     ...missionRoutes(),
     ...fleetRoutes(),
     ...siteRoutes(),
+    ...bodyRoutes(),
+    ...labRoutes(),
   ];
 }

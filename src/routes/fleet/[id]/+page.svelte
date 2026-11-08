@@ -4,6 +4,7 @@
   prerendered HTML, with a link into the app (the /fleet?id= panel).
 -->
 <script lang="ts">
+  import '$lib/components/entity-page.css';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { localHref } from '$lib/locale';
@@ -80,7 +81,9 @@
 
   {#if entry.dispatch}<p class="dispatch">{entry.dispatch}</p>{/if}
   {#if entry.description}<p class="description">{entry.description}</p>{/if}
-  {#if entry.best_known_for}<p class="known">{entry.best_known_for}</p>{/if}
+  {#if entry.best_known_for && entry.best_known_for !== entry.tagline}
+    <p class="known">{entry.best_known_for}</p>
+  {/if}
 
   <dl class="facts">
     <div>
@@ -116,7 +119,7 @@
   {#if data.missions.length}
     <section class="missions">
       <h2>{m.panel_tab_missions()}</h2>
-      <ul>
+      <ul class="linklist">
         {#each data.missions as mission (mission.id)}
           <li>
             <a href={localHref(`/missions/${mission.id}`)}>{mission.name}</a>
@@ -131,112 +134,3 @@
     <a class="cta" href={localHref(`/fleet?id=${entry.id}`)}>{m.launches_open_in_orrery()}</a>
   </p>
 </article>
-
-<style>
-  .entity {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 72px 20px 64px;
-    color: rgba(255, 255, 255, 0.86);
-    line-height: 1.6;
-  }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.45);
-    margin-bottom: 18px;
-  }
-  .crumb a {
-    color: rgba(255, 255, 255, 0.65);
-    text-decoration: none;
-  }
-  .crumb .sep {
-    margin: 0 6px;
-  }
-  .meta {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
-    margin: 0 0 6px;
-  }
-  h1 {
-    font-size: clamp(28px, 6vw, 44px);
-    line-height: 1.1;
-    margin: 0 0 12px;
-    color: #fff;
-  }
-  .lede {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.78);
-  }
-  .hero {
-    margin: 24px 0;
-  }
-  .hero img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-  }
-  .dispatch {
-    font-size: 17px;
-  }
-  .facts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px 20px;
-    margin: 24px 0;
-    padding: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
-  }
-  .facts dt {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-  }
-  .facts dd {
-    margin: 2px 0 0;
-  }
-  .missions h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
-    margin: 28px 0 8px;
-  }
-  .missions ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 6px 16px;
-  }
-  .missions a {
-    color: #7fb0e0;
-  }
-  .missions .year {
-    margin-left: 6px;
-    color: rgba(255, 255, 255, 0.45);
-    font-size: 13px;
-  }
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 28px;
-  }
-  .cta {
-    display: inline-block;
-    padding: 10px 16px;
-    border: 1px solid rgba(127, 176, 224, 0.6);
-    border-radius: 4px;
-    color: #cfe3f7;
-    text-decoration: none;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 13px;
-  }
-</style>

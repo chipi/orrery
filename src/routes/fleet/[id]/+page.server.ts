@@ -39,7 +39,9 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
         return { id, name: full?.name ?? id, year: m.year };
       }),
     )
-  ).filter((m): m is { id: string; name: string; year: number } => m !== null);
+  )
+    .filter((m): m is { id: string; name: string; year: number } => m !== null)
+    .sort((a, b) => a.year - b.year);
 
   // The entry's collectible card as share image; entries without one get the default.
   const hasCard =

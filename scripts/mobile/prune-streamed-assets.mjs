@@ -150,14 +150,21 @@ async function targets() {
   const cardStubs = path.join(BUILD, 'c');
   if (existsSync(cardStubs)) list.push(cardStubs);
 
-  // Entity pages (0.9.8 SEO: /missions/<id>, /fleet/<id>, /<body>/<site>, × 14
+  // Entity pages (0.9.8 SEO: /missions, /fleet, /<body>/<site>, /explore, /lab/<id>, × 14
   // locales) are search-engine surfaces; in the app an entity opens in its
   // ?id= / ?site= panel. /missions/launches is not an entity and stays.
-  const ids = async (file) =>
-    JSON.parse(await readFile(path.join(BUILD, 'data', file), 'utf8').catch(() => '[]')).map(
-      (e) => e.id,
-    );
+  const json = async (file, empty) =>
+    JSON.parse(await readFile(path.join(BUILD, 'data', file), 'utf8').catch(() => empty));
+  const ids = async (file) => (await json(file, '[]')).map((e) => e.id);
+  // /explore/<id>: planets (id = lowercase name), moons, small bodies.
+  const bodyIds = [
+    ...((await json('planets.json', '{}')).planets?.map((p) => p.name.toLowerCase()) ?? []),
+    ...((await json('satellites.json', '{}')).satellites?.map((s) => s.id) ?? []),
+    ...((await json('small-bodies.json', '{}')).bodies?.map((b) => b.id) ?? []),
+  ];
   for (const [dir, entityIds] of [
+    ['explore', [...new Set(bodyIds)]],
+    ['lab', (await json('lab-formulas.json', '{}')).ids ?? []],
     ['missions', await ids('missions/index.json')],
     ['fleet', await ids('fleet/index.json')],
     ['moon', await ids('moon-sites.json')],

@@ -15,7 +15,7 @@
   import * as m from '$lib/paraglide/messages';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
-  import { canonicalUrl } from '$lib/seo';
+  import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { getLocale } from '$lib/paraglide/runtime';
   import { countryLabel } from '$lib/country-label';
   import { programStatusLabel } from '$lib/status-label';
@@ -146,8 +146,8 @@
 </script>
 
 <svelte:head>
-  <title>{p.name} · {m.programs_index_title()} · Orrery</title>
-  <meta name="description" content={p.tagline} />
+  <title>{pageTitle(p.name, m.programs_index_title())}</title>
+  <meta name="description" content={metaDescription(p.tagline)} />
 </svelte:head>
 <JsonLd data={jsonLd} />
 

@@ -6,7 +6,9 @@ import {
   canonicalUrl,
   hreflangAlternates,
   isMirrorBuild,
+  metaDescription,
   ogLocale,
+  pageTitle,
   ogLocaleAlternates,
 } from './seo';
 import { SUPPORTED_LOCALES } from './locale';
@@ -48,6 +50,74 @@ describe('localizedPath', () => {
   it('prefixes non-default locales, keeping the root trailing slash', () => {
     expect(localizedPath('/missions', 'de')).toBe('/de/missions');
     expect(localizedPath('/', 'de')).toBe('/de/');
+  });
+});
+
+describe('metaDescription', () => {
+  it('keeps text that fits, collapsing whitespace', () => {
+    expect(metaDescription('  Short   and sweet. ')).toBe('Short and sweet.');
+  });
+
+  it('cuts at the last sentence end that fits', () => {
+    const s = `${'word '.repeat(22)}first sentence ends here. ${'more '.repeat(30)}second.`;
+    expect(metaDescription(s)).toBe(`${'word '.repeat(22)}first sentence ends here.`);
+  });
+
+  it('prefers a word cut over a lone short first sentence', () => {
+    const s =
+      'Keine Methode misst alle kosmischen Entfernungen. Astronomen bauen eine Leiter: Jede Technik reicht etwas weiter und wird von der Sprosse darunter geeicht – vom Radar im Sonnensystem bis zum Rand des beobachtbaren Universums.';
+    const out = metaDescription(s);
+    expect(out.length).toBeGreaterThan(100);
+    expect(out.length).toBeLessThanOrEqual(160);
+    expect(out.endsWith('…')).toBe(true);
+  });
+
+  it('does not treat a decimal point as a sentence end', () => {
+    const s = `The orbit is 1.5 million km from Earth, ${'and more words '.repeat(12)}end.`;
+    const out = metaDescription(s);
+    expect(out.endsWith('…')).toBe(true);
+    expect(out.length).toBeLessThanOrEqual(160);
+    expect(out).toContain('1.5 million');
+  });
+
+  it('cuts CJK text at 。 and long unspaced text anywhere with an ellipsis', () => {
+    const ja = `${'あ'.repeat(70)}。${'い'.repeat(120)}。`;
+    expect(metaDescription(ja)).toBe(`${'あ'.repeat(70)}。`);
+    const zh = '字'.repeat(200);
+    expect(metaDescription(zh)).toBe(`${'字'.repeat(159)}…`);
+  });
+});
+
+describe('pageTitle', () => {
+  it('joins main, section and brand when it fits', () => {
+    expect(pageTitle('Lagrange points', 'Science')).toBe('Lagrange points · Science · Orrery');
+    expect(pageTitle('Apollo')).toBe('Apollo · Orrery');
+  });
+
+  it('keeps only the topic of a long "Topic — subtitle" title', () => {
+    expect(
+      pageTitle(
+        'End-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule',
+        'Science',
+      ),
+    ).toBe('End-of-life disposal · Science · Orrery');
+    expect(pageTitle('寿命末期处置——墓地轨道、受控离轨、25年规则', '科学'.repeat(30))).toBe(
+      '寿命末期处置 · Orrery',
+    );
+  });
+
+  it('also treats a colon as the topic separator', () => {
+    expect(
+      pageTitle(
+        'Проектирование марсианского жилища: заранее развёрнутое, снабжаемое за счёт ISRU',
+        'Наука',
+      ),
+    ).toBe('Проектирование марсианского жилища · Наука · Orrery');
+  });
+
+  it('drops the section when the topic alone still does not fit with it', () => {
+    const topic = 'A'.repeat(45);
+    expect(pageTitle(`${topic} — more`, 'Wissenschaft')).toBe(`${topic} · Orrery`);
   });
 });
 

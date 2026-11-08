@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   import { onMount, onDestroy } from 'svelte';
   import { exploreContext } from '$lib/explore-context';
@@ -1701,7 +1702,10 @@
   }
 </script>
 
-<svelte:head><title>{m.explore_page_title()}</title></svelte:head>
+<svelte:head>
+  <title>{m.explore_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_explore_desc())} />
+</svelte:head>
 <VisuallyHiddenH1 title={m.explore_page_title()} />
 
 {#if liveRenderer && liveQuality}

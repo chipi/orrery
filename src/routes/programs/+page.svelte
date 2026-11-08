@@ -4,6 +4,7 @@
   spaceflight. Cards deep-link into the full editorial page.
 -->
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
@@ -104,7 +105,7 @@
 
 <svelte:head>
   <title>{m.programs_index_title()} · Orrery</title>
-  <meta name="description" content={m.programs_meta_description()} />
+  <meta name="description" content={metaDescription(m.programs_meta_description())} />
 </svelte:head>
 
 <div class="programs-index">

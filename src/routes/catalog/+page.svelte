@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import * as m from '$lib/paraglide/messages';
   import SectionHub from '$lib/components/SectionHub.svelte';
 
@@ -46,6 +47,7 @@
 
 <svelte:head>
   <title>{m.catalog_page_title()}</title>
+  <meta name="description" content={metaDescription(m.catalog_hub_intro())} />
 </svelte:head>
 
 <SectionHub

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   /*
    * /earth — unified surface + orbital route (#290).
@@ -166,7 +167,10 @@
   ] as const;
 </script>
 
-<svelte:head><title>{m.earth_page_title()}</title></svelte:head>
+<svelte:head>
+  <title>{m.earth_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_earth_desc())} />
+</svelte:head>
 <VisuallyHiddenH1 title={m.earth_page_title()} />
 
 <DebugPanelRegistrar label="EARTH" />

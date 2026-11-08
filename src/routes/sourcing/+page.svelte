@@ -7,6 +7,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { metaDescription } from '$lib/seo';
   import * as m from '$lib/paraglide/messages';
   import { localizeHref } from '$lib/paraglide/runtime';
   import type { PageData } from './$types';
@@ -22,7 +23,7 @@
 
 <svelte:head>
   <title>{m.sourcing_page_title()} · Orrery</title>
-  <meta name="description" content={m.sourcing_meta_description()} />
+  <meta name="description" content={metaDescription(m.sourcing_meta_description())} />
 </svelte:head>
 
 <article class="sourcing" data-route-ready="true">

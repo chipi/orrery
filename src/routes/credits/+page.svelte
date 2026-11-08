@@ -12,6 +12,7 @@
   HTML — long lists, native scrolling, lazy-loaded thumbnails.
 -->
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
@@ -262,6 +263,7 @@
 
 <svelte:head>
   <title>{m.credits_title()} — Orrery</title>
+  <meta name="description" content={metaDescription(m.credits_intro_body_2())} />
 </svelte:head>
 
 <section class="credits" aria-labelledby="credits-title" data-route-ready="true">

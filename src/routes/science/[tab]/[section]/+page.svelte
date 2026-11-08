@@ -18,7 +18,8 @@
   import { scienceTabLabel, scienceTabTitle } from '$lib/science-tab-label';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
-  import { canonicalUrl } from '$lib/seo';
+  import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
+  import { ogTitle } from '$lib/social-meta';
   import { getLocale } from '$lib/paraglide/runtime';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
   import MuseumsForObject from '$lib/components/MuseumsForObject.svelte';
@@ -44,7 +45,7 @@
         image: section.diagram ? absoluteUrl(`/diagrams/science/${section.diagram}`) : undefined,
       }),
       breadcrumbList([
-        { name: m.science_heading(), url: canonicalUrl('/science', loc) },
+        { name: ogTitle(m.science_page_title()), url: canonicalUrl('/science', loc) },
         { name: scienceTabTitle(section.tab), url: canonicalUrl(`/science/${section.tab}`, loc) },
         { name: section.title, url },
       ]),
@@ -115,8 +116,8 @@
 </script>
 
 <svelte:head>
-  <title>{section.title} · {m.science_page_title()}</title>
-  <meta name="description" content={section.intro_sentence} />
+  <title>{pageTitle(section.title, ogTitle(m.science_page_title()))}</title>
+  <meta name="description" content={metaDescription(section.intro_sentence)} />
 </svelte:head>
 <JsonLd data={jsonLd} />
 

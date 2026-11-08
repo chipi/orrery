@@ -55,6 +55,42 @@ export function localizedPath(route: string, locale: LocaleCode): string {
   return route === '/' ? `/${locale}/` : `/${locale}${route}`;
 }
 
+/**
+ * A meta description of at most `max` characters: whole sentences when they
+ * carry enough of the text (a Latin `.!?` counts only before a space, so "1.5"
+ * and "e.g." are not ends; CJK `。！？` always count), otherwise cut at a word
+ * boundary (or anywhere, for scripts without spaces) with an ellipsis. In
+ * spaced scripts a sentence cut must keep 60% of `max` — a lone short first
+ * sentence says less than a longer cut; a CJK sentence is dense enough at 40.
+ */
+export function metaDescription(text: string, max = 160): string {
+  const s = text.replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  const head = s.slice(0, max + 1);
+  let end = -1;
+  for (const m of head.matchAll(/[.!?](?= )|[。！？]/g)) if (m.index < max) end = m.index + 1;
+  const spaced = (s.match(/ /g)?.length ?? 0) > s.length / 20;
+  if (end >= (spaced ? max * 0.6 : 40)) return s.slice(0, end);
+  const room = s.slice(0, max - 1);
+  const space = room.lastIndexOf(' ');
+  return `${(space >= 40 ? room.slice(0, space) : room).replace(/[\s,;:—–-]+$/u, '')}…`;
+}
+
+/**
+ * `Main · Section · Orrery`, kept within `max` characters for the results page:
+ * a long "Topic — subtitle" (or "Topic: subtitle") main title keeps only its
+ * topic, and if that is still too long the section name goes. The H1 and
+ * description keep the full text.
+ */
+export function pageTitle(main: string, section?: string, max = 60): string {
+  const join = (...parts: (string | undefined)[]) => parts.filter(Boolean).join(' · ');
+  const full = join(main, section, 'Orrery');
+  if (full.length <= max) return full;
+  const topic = main.split(/\s[—–]\s|——|: |：/)[0].trim();
+  const short = join(topic, section, 'Orrery');
+  return short.length <= max ? short : join(topic, 'Orrery');
+}
+
 /** Absolute production URL for a canonical route in a given locale. */
 export function canonicalUrl(route: string, locale: LocaleCode): string {
   return SITE_ORIGIN + localizedPath(route, locale);

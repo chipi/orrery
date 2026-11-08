@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import * as m from '$lib/paraglide/messages';
   import { localHref } from '$lib/locale';
   import MediaPlayer from '$lib/components/MediaPlayer.svelte';
@@ -45,6 +46,7 @@
 
 <svelte:head>
   <title>{m.live_title()} · Orrery</title>
+  <meta name="description" content={metaDescription(m.live_intro())} />
 </svelte:head>
 
 <section class="live" aria-labelledby="live-title" data-route-ready="true">

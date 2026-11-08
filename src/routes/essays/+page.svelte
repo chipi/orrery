@@ -4,6 +4,7 @@
   each essay; the essays deep-link back into missions / fleet / science.
 -->
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
@@ -51,7 +52,7 @@
 
 <svelte:head>
   <title>{m.essays_title()} · {m.essays_label()} · Orrery</title>
-  <meta name="description" content={m.essays_meta_description()} />
+  <meta name="description" content={metaDescription(m.essays_meta_description())} />
 </svelte:head>
 
 <section class="longview" data-route-ready="true">

@@ -158,6 +158,7 @@ export const tiangongRouteConfig: StationRouteConfig = {
   stationName: 'Tiangong',
   msg: {
     pageTitle: m.tiangong_page_title,
+    metaDescription: m.landing_card_tiangong_desc,
     loadFailed: m.tiangong_load_failed,
     a11yModulesList: m.a11y_tiangong_modules_list_aria,
     canvasAria: m.tiangong_canvas_aria,

@@ -3,6 +3,7 @@
   import { page } from '$app/state';
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
+  import { metaDescription } from '$lib/seo';
   import { viewport } from '$lib/viewport.svelte';
   import { agencyToLogoEntries } from '$lib/agency-logo';
   import type { FleetIndexEntry } from '$types/fleet';
@@ -3137,7 +3138,10 @@
   });
 </script>
 
-<svelte:head><title>{m.fly_page_title()}</title></svelte:head>
+<svelte:head>
+  <title>{m.fly_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_fly_desc())} />
+</svelte:head>
 <VisuallyHiddenH1 title={m.fly_page_title()} />
 
 <!-- Launch pre-roll overlay (opt-in ?launch=1). Self-contained; dismisses to reveal the transfer scene. -->

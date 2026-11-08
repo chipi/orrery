@@ -12,6 +12,7 @@
    */
 
   import { onMount, untrack } from 'svelte';
+  import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
@@ -216,7 +217,7 @@
 
 <svelte:head>
   <title>{m.launches_page_title()} — Orrery</title>
-  <meta name="description" content={m.launches_meta_description()} />
+  <meta name="description" content={metaDescription(m.launches_meta_description())} />
 </svelte:head>
 <VisuallyHiddenH1 title={m.launches_page_title()} />
 

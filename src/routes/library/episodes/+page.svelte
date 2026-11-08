@@ -15,6 +15,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
   import {
     getAudioProvenanceManifest,
@@ -120,7 +121,7 @@
 
 <svelte:head>
   <title>{m.library_episodes_page_title()}</title>
-  <meta name="description" content={m.library_episodes_meta_description()} />
+  <meta name="description" content={metaDescription(m.library_episodes_meta_description())} />
 </svelte:head>
 
 <section class="ep-index" aria-labelledby="ep-index-title" data-route-ready="true">

@@ -12,6 +12,7 @@
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import { scienceTabLabel, scienceTabTitle } from '$lib/science-tab-label';
+  import { metaDescription } from '$lib/seo';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
@@ -39,6 +40,12 @@
 
 <svelte:head>
   <title>{scienceTabTitle(data.tab)} · {m.science_page_title()}</title>
+  {#if data.intro}
+    <meta
+      name="description"
+      content={metaDescription(`${data.intro.headline} ${data.intro.paragraphs[0] ?? ''}`)}
+    />
+  {/if}
 </svelte:head>
 
 <nav class="crumb">

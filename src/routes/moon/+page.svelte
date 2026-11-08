@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   // /moon is now a thin shell over the shared SurfaceScene component
   // (ADR-072 / #283 Slice 2). Planet-specific config (texture URL,
@@ -252,6 +253,7 @@
 
 <svelte:head>
   <title>{m.moon_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_moon_desc())} />
 </svelte:head>
 <VisuallyHiddenH1 title={m.moon_page_title()} />
 

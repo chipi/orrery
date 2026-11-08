@@ -7,6 +7,7 @@
   // Data limit: Venus has no optical surface map (perpetual cloud cover, no
   // Magellan raster shipped), so the globe uses the cloud-top atmosphere
   // texture under a heavy amber tint — honest for what is visible of Venus.
+  import { metaDescription } from '$lib/seo';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
@@ -56,6 +57,7 @@
 
 <svelte:head>
   <title>{m.venus_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_venus_desc())} />
 </svelte:head>
 <VisuallyHiddenH1 title={m.venus_page_title()} />
 

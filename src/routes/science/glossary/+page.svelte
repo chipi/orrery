@@ -6,6 +6,7 @@
   /science (PRD-038), next to Reading List and Watch List.
 -->
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import * as m from '$lib/paraglide/messages';
   import { localHref } from '$lib/locale';
   import type { PageData } from './$types';
@@ -22,7 +23,7 @@
 
 <svelte:head>
   <title>{m.glossary_page_title()} · Orrery</title>
-  <meta name="description" content={m.glossary_meta_description()} />
+  <meta name="description" content={metaDescription(m.glossary_meta_description())} />
 </svelte:head>
 
 <article class="glossary" data-route-ready="true">

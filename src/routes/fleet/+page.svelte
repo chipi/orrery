@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount, untrack } from 'svelte';
@@ -440,7 +441,7 @@
 
 <svelte:head>
   <title>{m.fleet_page_title()} · Orrery</title>
-  <meta name="description" content={m.fleet_meta_description()} />
+  <meta name="description" content={metaDescription(m.fleet_meta_description())} />
 </svelte:head>
 <VisuallyHiddenH1 title={m.fleet_page_title()} />
 

@@ -12,6 +12,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { metaDescription } from '$lib/seo';
   import * as m from '$lib/paraglide/messages';
 
   type Book = {
@@ -213,7 +214,7 @@
 
 <svelte:head>
   <title>{m.reading_list_title()} · {m.story_chapter_science()} · Orrery</title>
-  <meta name="description" content={m.reading_list_meta_description()} />
+  <meta name="description" content={metaDescription(m.reading_list_meta_description())} />
 </svelte:head>
 
 <article class="resources">

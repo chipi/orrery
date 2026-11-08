@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
@@ -109,6 +110,7 @@
 
 <svelte:head>
   <title>{m.colophon_title()} — Orrery</title>
+  <meta name="description" content={metaDescription(m.colophon_intro())} />
 </svelte:head>
 
 {#snippet showAll(key: string, count: number)}

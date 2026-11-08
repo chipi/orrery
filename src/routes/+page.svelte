@@ -9,7 +9,7 @@
   import * as m from '$lib/paraglide/messages';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import { website } from '$lib/json-ld';
-  import { canonicalUrl } from '$lib/seo';
+  import { canonicalUrl, metaDescription } from '$lib/seo';
   import { getLocale } from '$lib/paraglide/runtime';
 
   // The author's other sites. Names are brands (not translated); the sites are
@@ -246,7 +246,7 @@
 
 <svelte:head>
   <title>{m.landing_page_title()}</title>
-  <meta name="description" content={m.landing_meta_description()} />
+  <meta name="description" content={metaDescription(m.landing_meta_description())} />
 </svelte:head>
 <JsonLd data={jsonLd} />
 

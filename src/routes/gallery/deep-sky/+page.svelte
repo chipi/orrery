@@ -3,6 +3,7 @@
   // A single filterable stream of publicly-licensed telescope imagery. Each
   // tile opens a lightbox with the full-resolution view, caption, and credit.
   import { base } from '$app/paths';
+  import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
@@ -140,7 +141,7 @@
 
 <svelte:head>
   <title>{m.deepsky_name()} · {m.layout_footer_gallery()} · Orrery</title>
-  <meta name="description" content={m.deepsky_meta_description()} />
+  <meta name="description" content={metaDescription(m.deepsky_meta_description())} />
 </svelte:head>
 
 <article class="gallery" data-route-ready="true">

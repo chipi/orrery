@@ -205,7 +205,7 @@ gotchas", **docs/adr/TA.md** §pipelines.
 ### audit-site-imagery.mjs
 
 **Command** — `node scripts/audit-site-imagery.mjs`
-**What** — Categorises every /earth /moon /mars site by own-vs-mission-vs-fleet hero byte-size into KEEP_OWN / DELETE_OWN_USE_MISSION / FALLBACK_OK / HAND_SOURCE etc. Writes `/tmp/site-image-audit.json`. Read-only.
+**What** — Categorises every /earth /moon /mars site by own-vs-mission-vs-fleet hero byte-size into KEEP_OWN / DELETE_OWN_USE_MISSION / FALLBACK_OK / HAND_SOURCE etc. Writes `site-image-audit.json` into a fresh temp dir (path printed). Read-only.
 **When** — on-demand.
 **State** — Current; a one-shot triage helper (size-heuristic, not vision-based).
 

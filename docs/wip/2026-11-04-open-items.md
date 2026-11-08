@@ -99,6 +99,13 @@ unconfirmed (option B, operator 2026-11-05).
   `/health`).
 - CodeQL on a PR touching more than 300 files reports "Cannot retrieve the full diff": its PR-only
   filter may miss alerts in big release PRs. Check the open alert list on main after each release.
+  **Triaged 2026-11-08 (175 open on main):** `.github/codeql/codeql-config.yml` drops the archive,
+  the frozen i18n map records and the HTML prototypes (78) and the fetch/upload-by-design rules
+  `js/file-access-to-http` / `js/http-to-file-access` (39); 52 fixed in code; 7 dismissed on
+  GitHub with reasons (MCP empty-token guard, dedicated worker, operator-typed CLI regex, three
+  test inputs, the atomic lock dir). The rest close when the next scan of main runs the config.
+  MCP trace probe: deploy-verify sends a traceparent to `/mcp` (401) and finds that trace
+  (homelab 97662e7).
 
 **3. One content track** — proposed: re-verify the fact-check findings (`factcheck/`, 55 files,
 ~250 findings), since they are about the correctness of what is live. Alternatives are in "Content

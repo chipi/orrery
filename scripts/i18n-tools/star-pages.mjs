@@ -28,13 +28,19 @@ const missing = {};
 for (const loc of LOCS)
   for (const s of stars) {
     const f = `i18n-src/${loc}/universe/named-stars/${s.id}.json`;
-    if (!fs.existsSync(f)) continue;
+    let raw;
+    try {
+      raw = fs.readFileSync(f, 'utf8');
+    } catch (e) {
+      if (e.code === 'ENOENT') continue;
+      throw e;
+    }
     const form = g.star?.[s.proper]?.[loc];
     if (!form) {
       (missing[loc] ??= []).push(s.proper);
       // a name the glossary no longer gives (a Flamsteed number written by an earlier run)
       // goes: the page falls back to the catalogue's proper name
-      const doc = JSON.parse(fs.readFileSync(f, 'utf8'));
+      const doc = JSON.parse(raw);
       if (doc.name !== undefined) {
         delete doc.name;
         if (!dry) fs.writeFileSync(f, JSON.stringify(doc, null, 2) + '\n');
@@ -42,7 +48,7 @@ for (const loc of LOCS)
       }
       continue;
     }
-    const doc = JSON.parse(fs.readFileSync(f, 'utf8'));
+    const doc = JSON.parse(raw);
     if (doc.name === form) continue;
     const bad = problems(loc, s.proper, form);
     if (bad.length) {

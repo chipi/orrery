@@ -9,7 +9,7 @@
  *   2. e2e desktop      — npx playwright test --project=desktop-chromium
  *   3. e2e mobile       — npx playwright test --project=mobile-chromium
  *   4. CHANGELOG extract — pulls the `## [X.Y.Z]` block from CHANGELOG.md
- *                          into /tmp/release-body-vX.Y.Z.md
+ *                          into release-body-vX.Y.Z.md in a fresh temp dir (path printed)
  *   5. gh release draft  — creates a DRAFT release tied to the named
  *                          tag (does NOT push the tag, does NOT mark
  *                          the release as published). Human reviewer
@@ -26,9 +26,10 @@
  * and shipping turns into a CI ping-pong. Closes GH issue #134.
  */
 
-import { execSync, spawnSync } from 'node:child_process';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
 import { createInterface } from 'node:readline/promises';
 
 const VERSION_PATTERN = /^v\d+\.\d+\.\d+(?:-[\w.]+)?$/;
@@ -121,9 +122,21 @@ if (pkgJson.version !== versionBare) {
 }
 
 const changelogPath = resolve(repoRoot, 'CHANGELOG.md');
-if (existsSync(changelogPath)) {
-  const sectionCheck = execSync(
-    `/usr/bin/awk -v ver="${versionBare}" '$0 ~ "^## \\\\[" ver "\\\\]" { print "yes"; exit }' ${JSON.stringify(changelogPath)}`,
+let changelogText: string | null = null;
+try {
+  changelogText = readFileSync(changelogPath, 'utf-8');
+} catch (e) {
+  if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+}
+if (changelogText !== null) {
+  const sectionCheck = execFileSync(
+    '/usr/bin/awk',
+    [
+      '-v',
+      `ver=${versionBare}`,
+      '$0 ~ "^## \\\\[" ver "\\\\]" { print "yes"; exit }',
+      changelogPath,
+    ],
     { encoding: 'utf-8' },
   ).trim();
   if (!sectionCheck) {
@@ -142,9 +155,8 @@ if (existsSync(changelogPath)) {
 ### Changed
 
 `;
-      const content = readFileSync(changelogPath, 'utf-8');
       // Insert immediately after the `## [Unreleased]` line.
-      const updated = content.replace(/(## \[Unreleased\][^\n]*\n)/, `$1\n${stub}`);
+      const updated = changelogText.replace(/(## \[Unreleased\][^\n]*\n)/, `$1\n${stub}`);
       writeFileSync(changelogPath, updated);
       ok(`stub written. Open CHANGELOG.md, fill in the section, then re-run the rehearsal.`);
       process.exit(0);
@@ -179,7 +191,9 @@ run(
 log(`extracting CHANGELOG body for ${version}`);
 // (changelogPath already resolved in Step 3 above — reuse it; a second
 // `const` here was a redeclaration that broke `npm run release:rehearsal`.)
-if (!existsSync(changelogPath)) {
+try {
+  readFileSync(changelogPath);
+} catch {
   fail('CHANGELOG.md missing', 1);
 }
 // Use awk for the section extract — the JS regex approach
@@ -188,8 +202,14 @@ if (!existsSync(changelogPath)) {
 // section was clearly present. Same awk recipe lives in release.yml.
 let releaseBody: string;
 try {
-  releaseBody = execSync(
-    `/usr/bin/awk -v ver="${versionBare}" '$0 ~ "^## \\\\[" ver "\\\\]" { flag=1; next } $0 ~ "^## \\\\[" { flag=0 } flag' ${JSON.stringify(changelogPath)}`,
+  releaseBody = execFileSync(
+    '/usr/bin/awk',
+    [
+      '-v',
+      `ver=${versionBare}`,
+      '$0 ~ "^## \\\\[" ver "\\\\]" { flag=1; next } $0 ~ "^## \\\\[" { flag=0 } flag',
+      changelogPath,
+    ],
     { encoding: 'utf-8' },
   ).trim();
 } catch {
@@ -202,7 +222,7 @@ if (!releaseBody) {
   );
   process.exit(1);
 }
-const bodyPath = `/tmp/release-body-${version}.md`;
+const bodyPath = join(mkdtempSync(join(tmpdir(), 'release-body-')), `release-body-${version}.md`);
 writeFileSync(bodyPath, releaseBody);
 ok(`CHANGELOG body written to ${bodyPath} (${releaseBody.length} chars)`);
 console.log(

@@ -197,8 +197,14 @@ async function main() {
       if (typeof en.dispatch !== 'string' || !en.dispatch.length) continue;
       for (const loc of LOCALES) {
         const dst = path.join(ROOT, 'i18n-src', loc, rel);
-        if (fs.existsSync(dst) && fs.statSync(dst).size > 2) {
-          const cur = JSON.parse(fs.readFileSync(dst, 'utf8'));
+        let curRaw = null;
+        try {
+          curRaw = fs.readFileSync(dst);
+        } catch (e) {
+          if (e.code !== 'ENOENT') throw e;
+        }
+        if (curRaw !== null && curRaw.length > 2) {
+          const cur = JSON.parse(curRaw.toString('utf8'));
           if (typeof cur.dispatch === 'string' && cur.dispatch.length) {
             skip++;
             continue;

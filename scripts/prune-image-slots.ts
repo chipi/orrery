@@ -37,7 +37,6 @@
  * Writes a per-run report to `docs/provenance/prune-image-slots-report.md`.
  */
 import { readdir, readFile, rename, rm, mkdir, rmdir, writeFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
 
 const STATIC_IMAGES_ROOT = 'static/images';
@@ -389,8 +388,13 @@ async function updateSidecarManifest(
   plans: IdPlan[],
   surfaceMatch: string,
 ): Promise<void> {
-  if (!existsSync(path)) return;
-  const raw = JSON.parse(await readFile(path, 'utf8')) as Record<string, unknown>;
+  let raw: Record<string, unknown>;
+  try {
+    raw = JSON.parse(await readFile(path, 'utf8')) as Record<string, unknown>;
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === 'ENOENT') return;
+    throw e;
+  }
   // Each key is `<id>/<NN>` (commons-shape) or `<id>/<NN>.jpg` (legacy).
   // Rewrite keys whose IDs match this surface's plans.
   const planById = new Map<string, IdPlan>();

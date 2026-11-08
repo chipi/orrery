@@ -24,11 +24,11 @@ const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 function decode(s: string): string {
   return s
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
-    .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#039;|&apos;/g, "'")
+    .replace(/&amp;/g, '&')
     .trim();
 }
 

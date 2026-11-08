@@ -11,7 +11,7 @@
  * components.
  */
 
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { closeSync, fstatSync, mkdirSync, openSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { assertGcatHeader, parseGcatLaunchTsv } from '../../../../scripts/gcat/parse-launch-log.js';
 import type { LaunchSource, LaunchSourceAttribution, LaunchSourceWindow } from './provider.js';
@@ -36,20 +36,33 @@ export class GcatSourceError extends Error {
   }
 }
 
+// One open, then stat + read on the descriptor: no check-then-read race on the path.
+function readCache(maxAgeMs = Infinity): string | null {
+  let fd: number;
+  try {
+    fd = openSync(CACHE_FILE, 'r');
+  } catch {
+    return null;
+  }
+  try {
+    if (Date.now() - fstatSync(fd).mtimeMs >= maxAgeMs) return null;
+    return readFileSync(fd, 'utf8');
+  } finally {
+    closeSync(fd);
+  }
+}
+
 async function downloadIfStale(force = false): Promise<string> {
-  if (!force && existsSync(CACHE_FILE)) {
-    const age = Date.now() - statSync(CACHE_FILE).mtimeMs;
-    if (age < 7 * ONE_DAY_MS) {
-      return readFileSync(CACHE_FILE, 'utf8');
-    }
+  if (!force) {
+    const fresh = readCache(7 * ONE_DAY_MS);
+    if (fresh !== null) return fresh;
   }
   mkdirSync(dirname(CACHE_FILE), { recursive: true });
   const res = await fetch(GCAT_TSV_URL);
   if (!res.ok) {
-    if (existsSync(CACHE_FILE)) {
-      // Network outage / 5xx — fall back to last cached payload. RFC-023 §13.
-      return readFileSync(CACHE_FILE, 'utf8');
-    }
+    // Network outage / 5xx — fall back to last cached payload. RFC-023 §13.
+    const stale = readCache();
+    if (stale !== null) return stale;
     throw new GcatSourceError(`GCAT TSV download failed: ${res.status} ${res.statusText}`);
   }
   const tsv = await res.text();

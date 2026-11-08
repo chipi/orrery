@@ -33,6 +33,7 @@ self.addEventListener('activate', (event) => {
 
 // The app pings this after a download completes or offline data is removed.
 self.addEventListener('message', (event) => {
+  if (event.origin !== self.location.origin) return;
   if (event.data === 'orrery-offline-updated') event.waitUntil(refreshOfflineIndex());
 });
 

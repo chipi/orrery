@@ -128,7 +128,11 @@ for (const { rel, doc } of items) {
   fs.writeFileSync(en, JSON.stringify(doc, null, 2) + '\n');
   for (const loc of seed) {
     const tgt = path.join('i18n-src', loc, `${rel}.json`);
-    if (fs.existsSync(tgt)) {
+    fs.mkdirSync(path.dirname(tgt), { recursive: true });
+    try {
+      fs.writeFileSync(tgt, JSON.stringify(doc, null, 2) + '\n', { flag: 'wx' });
+    } catch (e) {
+      if (e.code !== 'EEXIST') throw e;
       // --pending: a seeded file whose fields are still the English (a run that
       // stopped part-way) gets those fields into the manifest again
       if (!args.pending) continue;
@@ -138,8 +142,6 @@ for (const { rel, doc } of items) {
       if (paths.length) manifest.push({ loc, file: rel, paths });
       continue;
     }
-    fs.mkdirSync(path.dirname(tgt), { recursive: true });
-    fs.writeFileSync(tgt, JSON.stringify(doc, null, 2) + '\n');
     manifest.push({ loc, file: rel, paths: textPaths(doc) });
   }
 }

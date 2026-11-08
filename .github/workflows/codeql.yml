@@ -43,6 +43,8 @@ jobs:
           # tracked input, open-redirect via tainted URL params, etc.)
           # on top of the default suite.
           queries: security-extended,security-and-quality
+          # Paths and rules that are noise for this repo, each with its reason.
+          config-file: ./.github/codeql/codeql-config.yml
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0

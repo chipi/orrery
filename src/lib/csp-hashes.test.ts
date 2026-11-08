@@ -16,7 +16,7 @@ const scriptSrc: string[] = config.kit?.csp?.directives?.['script-src'] ?? [];
 describe('CSP script-src hashes', () => {
   it("lists the hash of app.html's inline viewport script", () => {
     const html = readFileSync('src/app.html', 'utf8');
-    const inline = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]);
+    const inline = [...html.matchAll(/<script>([\s\S]*?)<\/script>/gi)].map((m) => m[1]);
     expect(inline).toHaveLength(1);
     expect(scriptSrc).toContain(sha(inline[0]));
   });

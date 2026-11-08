@@ -14,7 +14,7 @@
  *
  * Usage: node scripts/vision/optimize-1x1-thumbnails.mjs [--dir static/images]
  */
-import { readdir, stat, writeFile, readFile } from 'node:fs/promises';
+import { readdir, writeFile, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
 
@@ -42,8 +42,8 @@ let after = 0;
 const overBudget = [];
 
 for await (const file of walk(ROOT)) {
-  const startBytes = (await stat(file)).size;
   const buf = await readFile(file);
+  const startBytes = buf.length;
   const meta = await sharp(buf).metadata();
   const w = meta.width ?? 0;
   if (w <= MAX_PX && startBytes <= SKIP_KB * 1024) {

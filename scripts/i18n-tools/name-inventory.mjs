@@ -8,6 +8,7 @@
 //   node scripts/i18n-tools/name-inventory.mjs <out.tsv>
 // Output TSV: count \t run \t kind \t qid \t class \t enwiki title \t female(1/0)
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 
 const out = process.argv[2];
@@ -73,8 +74,21 @@ const KIND = [
 ];
 // POST (long title lists overflow a GET URL), paced, retried with back-off; every
 // response is cached so a stopped run resumes where it was
-const CACHE = process.env.NAME_INV_CACHE ?? '/tmp/name-inventory-cache.json';
-const cache = fs.existsSync(CACHE) ? JSON.parse(fs.readFileSync(CACHE, 'utf8')) : {};
+// a per-user cache dir, not os.tmpdir(): the cache must outlive the run to resume it
+const CACHE =
+  process.env.NAME_INV_CACHE ??
+  path.join(
+    process.env.XDG_CACHE_HOME ?? path.join(os.homedir(), '.cache'),
+    'orrery',
+    'name-inventory-cache.json',
+  );
+fs.mkdirSync(path.dirname(CACHE), { recursive: true });
+let cache = {};
+try {
+  cache = JSON.parse(fs.readFileSync(CACHE, 'utf8'));
+} catch (e) {
+  if (e.code !== 'ENOENT') throw e;
+}
 let unsaved = 0;
 async function get(api, params) {
   const key = api + JSON.stringify(params);

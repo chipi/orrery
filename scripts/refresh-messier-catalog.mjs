@@ -17,6 +17,7 @@
  * Output: scripts/data-snapshots/messier-catalog.json
  */
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
@@ -162,15 +163,24 @@ function parseHms(ra, dec) {
 async function loadCsv() {
   const local = process.env.OPENNGC_CSV;
   if (local && fs.existsSync(local)) return fs.readFileSync(local, 'utf8');
-  const cached = '/tmp/openngc-ngc.csv';
-  if (fs.existsSync(cached)) {
+  // a per-user cache dir, not os.tmpdir(): the download is reused across runs
+  const cached = path.join(
+    process.env.XDG_CACHE_HOME ?? path.join(os.homedir(), '.cache'),
+    'orrery',
+    'openngc-ngc.csv',
+  );
+  try {
+    const text = fs.readFileSync(cached, 'utf8');
     console.log(`Using cached ${cached}`);
-    return fs.readFileSync(cached, 'utf8');
+    return text;
+  } catch (e) {
+    if (e.code !== 'ENOENT') throw e;
   }
   console.log(`Fetching ${OPENNGC_URL} …`);
   const res = await fetch(OPENNGC_URL);
   if (!res.ok) throw new Error(`OpenNGC fetch ${res.status}`);
   const text = await res.text();
+  fs.mkdirSync(path.dirname(cached), { recursive: true });
   fs.writeFileSync(cached, text);
   return text;
 }

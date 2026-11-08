@@ -137,13 +137,18 @@ async function translate(locale, strings) {
 let ok = 0;
 for (const loc of locales) {
   const locPath = path.join(SCIENCE(loc), `${args.file}.json`);
-  if (!fs.existsSync(locPath)) {
-    console.error(`  ✗ ${loc}: no overlay at ${locPath}`);
+  let raw;
+  try {
+    raw = fs.readFileSync(locPath, 'utf8');
+  } catch (e) {
+    console.error(
+      e.code === 'ENOENT' ? `  ✗ ${loc}: no overlay at ${locPath}` : `  ✗ ${loc}: ${e.message}`,
+    );
     continue;
   }
   try {
     const translated = await translate(loc, enStrings);
-    const obj = JSON.parse(fs.readFileSync(locPath, 'utf8'));
+    const obj = JSON.parse(raw);
     paths.forEach((p, i) => setAt(obj, p, translated[i]));
     fs.writeFileSync(locPath, JSON.stringify(obj, null, 2) + '\n', 'utf8');
     console.log(`  ✓ ${loc}: ${paths.length} field(s) patched`);

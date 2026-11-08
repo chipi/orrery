@@ -7,6 +7,7 @@ import {
   contextBounds,
   contextCapGeometry,
   contextOpacity,
+  polarToLatLon,
 } from './surface-context';
 
 const MOON_R = 1737.4;
@@ -77,6 +78,57 @@ describe('contextCapGeometry', () => {
   it('has (segments+1)² vertices and 2·segments² triangles', () => {
     expect(pos.count).toBe(81);
     expect(g.getIndex()!.count).toBe(8 * 8 * 6);
+  });
+});
+
+describe('polar context (box reaching a pole)', () => {
+  const b = contextBounds(-89.5, 0, 400, MOON_R);
+  const kmPerDeg = (MOON_R * Math.PI) / 180;
+
+  it('becomes a stereographic square centred on the pole, its cap holding the corners', () => {
+    expect(b.polar_half_km).toBe(200);
+    expect(b.lat_min).toBe(-90);
+    expect([b.lon_min, b.lon_max]).toEqual([-180, 180]);
+    expect((b.lat_max + 90) * kmPerDeg).toBeCloseTo(200 * Math.SQRT2, 0);
+    // A site whose box stays clear of the pole keeps the lat/lon box.
+    expect(contextBounds(-69.37, 32.32, 400, MOON_R).polar_half_km).toBeUndefined();
+  });
+
+  it('inverts south polar stereographic: x east of 0°… y toward 0°E', () => {
+    const c = polarToLatLon(0, 0, MOON_R, true);
+    expect(c.lat).toBe(-90);
+    // y > 0 lies on the 0° meridian, x > 0 on 90°E (x = ρ sin λ, y = ρ cos λ).
+    const onY = polarToLatLon(0, 100, MOON_R, true);
+    expect(onY.lon).toBeCloseTo(0, 6);
+    expect((onY.lat + 90) * kmPerDeg).toBeCloseTo(100, 0);
+    expect(polarToLatLon(100, 0, MOON_R, true).lon).toBeCloseTo(90, 6);
+    expect(polarToLatLon(0, -100, MOON_R, false).lon).toBeCloseTo(0, 6);
+  });
+
+  it('builds the cap over the square: on the sphere, outward, corners at uv (0,0) and (1,1)', () => {
+    const r = 30.02;
+    const g = contextCapGeometry(b, r, 8, MOON_R);
+    const pos = g.getAttribute('position');
+    const uv = g.getAttribute('uv');
+    const n = g.getAttribute('normal');
+    for (let i = 0; i < pos.count; i++) {
+      const v = new THREE.Vector3().fromBufferAttribute(pos, i);
+      expect(v.length()).toBeCloseTo(r, 4);
+      expect(
+        v.clone().normalize().dot(new THREE.Vector3().fromBufferAttribute(n, i)),
+      ).toBeGreaterThan(0.99);
+    }
+    const corner = polarToLatLon(-200, -200, MOON_R, true);
+    const p0 = latLonToUnitSphere(corner.lat, corner.lon);
+    const first = new THREE.Vector3().fromBufferAttribute(pos, 0);
+    expect(first.x / r).toBeCloseTo(p0.x, 5);
+    expect(first.y / r).toBeCloseTo(p0.y, 5);
+    expect(first.z / r).toBeCloseTo(p0.z, 5);
+    expect([uv.getX(0), uv.getY(0)]).toEqual([0, 0]);
+    expect([uv.getX(uv.count - 1), uv.getY(uv.count - 1)]).toEqual([1, 1]);
+    // The grid centre (uv 0.5, 0.5) is the pole itself.
+    const mid = new THREE.Vector3().fromBufferAttribute(pos, (pos.count - 1) / 2);
+    expect(mid.y / r).toBeCloseTo(-1, 5);
   });
 });
 

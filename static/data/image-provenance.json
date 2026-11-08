@@ -94899,6 +94899,32 @@
       "pageid": 188679355,
       "nasa_id": null,
       "fetched_at": "2026-11-06T10:21:55.910Z"
+    },
+    {
+      "id": "5316d602da3ea413",
+      "path": "/images/hotspots/moon/artemis4/context.webp",
+      "source_type": "derived-mosaic",
+      "title": "LRO WAC global morphology mosaic — context crop -90…-80.6724°N -180…180°E",
+      "author": "NASA / GSFC / Arizona State University (LROC WAC) · USGS Astrogeology ARD · colour from the globe texture (Solar System Scope)",
+      "agency": "NASA",
+      "source_url": "https://www.lroc.asu.edu/",
+      "image_url": "https://astrogeo-ard.s3.us-west-2.amazonaws.com/moon/basemaps/lroc_wac_mosaic/lroc_wac_mosaic_global_303ppd_v3/lroc_wac_mosaic_global_303ppd_v3.tif",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "LROC WAC mosaic: NASA/GSFC/ASU, U.S. Government work (17 U.S.C. §105). The colour layer is the CC-BY-4.0 Solar System Scope globe texture already credited on the globe.",
+      "modifications": [
+        "reprojected-400km-square-polar-stereographic-centred-on-the-pole",
+        "averaged-to-4096px-wide-98m-per-px",
+        "colour-from-globe-texture-detail-transfer",
+        "reencoded-webp-ladder"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T14:11:12.529Z",
+      "spacecraft_id": "lro",
+      "spacecraft_name": "Lunar Reconnaissance Orbiter",
+      "instrument": "LROC WAC"
     }
   ]
 }

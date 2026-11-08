@@ -1937,6 +1937,18 @@
         "lon_min": -46.1679,
         "lon_max": -42.5677
       }
+    },
+    "artemis4": {
+      "hotspot_tier_max": 0,
+      "hotspot_annotations": [],
+      "hotspot_context_source": "/images/hotspots/moon/artemis4/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -90,
+        "lat_max": -80.6724,
+        "lon_min": -180,
+        "lon_max": 180,
+        "polar_half_km": 200
+      }
     }
   }
 }

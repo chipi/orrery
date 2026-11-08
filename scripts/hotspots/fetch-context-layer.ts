@@ -26,6 +26,7 @@
  * Usage:
  *   node --import tsx scripts/hotspots/fetch-context-layer.ts --body moon --only apollo17
  *   node --import tsx scripts/hotspots/fetch-context-layer.ts --body mars [--km 400] [--force]
+ *        [--max-nodata 0.25]   (zero pixels accepted; raise it only after looking at the crop)
  */
 import gdal from 'gdal-async';
 import sharp from 'sharp';
@@ -72,6 +73,9 @@ if (BODY !== 'moon' && BODY !== 'mars' && BODY !== 'earth')
 const KM = Number(flag('km') ?? 400);
 const ONLY = flag('only')?.split(',');
 const FORCE = process.argv.includes('--force');
+/** Largest share of zero pixels accepted (default a quarter). Zero is no data or,
+ *  near the poles, permanently shadowed crater floor — which is real and black. */
+const MAX_NODATA = Number(flag('max-nodata') ?? 0.25);
 
 gdal.config.set('GDAL_DISABLE_READDIR_ON_OPEN', 'EMPTY_DIR');
 gdal.config.set('CPL_VSIL_CURL_ALLOWED_EXTENSIONS', '.tif,.TIF,.vrt');
@@ -194,6 +198,75 @@ async function readBox(ds: gdal.Dataset, b: Bounds) {
   return { data, outH };
 }
 
+/**
+ * A box that reaches the pole (bounds.polar_half_km): the WAC mosaic and the globe
+ * texture warped into the same OUT_W² polar stereographic square centred on the
+ * pole (context-bounds.ts polarToLatLon is the inverse the cap is built with).
+ * A lat/lon crop there is a strip spanning every longitude (Artemis 4, 89.5°S).
+ */
+async function readPolar(b: Bounds): Promise<{ data: Uint8Array; globe: Buffer; outH: number }> {
+  const h = (b.polar_half_km as number) * 1000;
+  const south = b.lat_min <= -90;
+  const R = RADIUS_KM[BODY] * 1000;
+  const pole = south ? -90 : 90;
+  const stere = `+proj=stere +lat_0=${pole} +lat_ts=${pole} +lon_0=0 +k=1 +x_0=0 +y_0=0 +R=${R} +units=m +no_defs`;
+  const grid = [
+    '-t_srs',
+    stere,
+    '-te',
+    `${-h}`,
+    `${-h}`,
+    `${h}`,
+    `${h}`,
+    '-ts',
+    `${OUT_W}`,
+    `${OUT_W}`,
+  ];
+  const src = gdal.open(`/vsicurl/${WAC_COG}`);
+  const mosaic = await gdal.warpAsync(
+    `/vsimem/polar-wac-${Date.now()}.tif`,
+    null,
+    [src],
+    [...grid, '-r', 'average'],
+  );
+  const data = (await mosaic.bands.get(1).pixels.readAsync(0, 0, OUT_W, OUT_W)) as Uint8Array;
+  mosaic.close();
+  src.close();
+  // The globe texture is simple cylindrical over the whole sphere: give it that
+  // georeference, then warp it onto the same square for the colour layer.
+  const tex = gdal.open(GLOBE_TEXTURE[BODY]);
+  const geo = await gdal.translateAsync(`/vsimem/polar-globe-${Date.now()}.vrt`, tex, [
+    '-of',
+    'VRT',
+    '-a_srs',
+    `+proj=longlat +R=${R} +no_defs`,
+    '-a_ullr',
+    '-180',
+    '90',
+    '180',
+    '-90',
+  ]);
+  const warped = await gdal.warpAsync(
+    `/vsimem/polar-globe-${Date.now()}.tif`,
+    null,
+    [geo],
+    [...grid, '-r', 'cubic'],
+  );
+  const rgb = Buffer.alloc(OUT_W * OUT_W * 3);
+  for (let c = 0; c < 3; c++) {
+    const band = (await warped.bands.get(c + 1).pixels.readAsync(0, 0, OUT_W, OUT_W)) as Uint8Array;
+    for (let i = 0; i < band.length; i++) rgb[i * 3 + c] = band[i]!;
+  }
+  warped.close();
+  geo.close();
+  tex.close();
+  const globe = await sharp(rgb, { raw: { width: OUT_W, height: OUT_W, channels: 3 } })
+    .blur(2)
+    .raw()
+    .toBuffer();
+  return { data, globe, outH: OUT_W };
+}
+
 /** Globe texture colour over the box, resized to the output. */
 async function globeOver(b: Bounds, outH: number): Promise<Buffer> {
   const tex = sharp(GLOBE_TEXTURE[BODY]);
@@ -253,6 +326,36 @@ async function detailTransfer(
     }
   }
   return { out, nodataFrac: nodata / (OUT_W * outH) };
+}
+
+/** Grey mosaic → RGB scaled to the globe's mean brightness over the lit pixels. */
+function polarGrey(src: Uint8Array, globe: Buffer) {
+  let srcSum = 0;
+  let globeSum = 0;
+  let lit = 0;
+  for (let i = 0; i < src.length; i++) {
+    if (src[i] === 0) continue;
+    srcSum += src[i]!;
+    globeSum += (globe[i * 3]! + globe[i * 3 + 1]! + globe[i * 3 + 2]!) / 3;
+    lit++;
+  }
+  // Capped so the brightest lit 1 % stays below white: near the pole the globe is
+  // brightest where it is smeared, and the plain mean blew the lit slopes out.
+  const hist = new Array<number>(256).fill(0);
+  for (let i = 0; i < src.length; i++) if (src[i]) hist[src[i]!]++;
+  let p99 = 255;
+  for (let v = 255, acc = 0; v > 0; v--) {
+    acc += hist[v]!;
+    if (acc >= lit * 0.01) {
+      p99 = v;
+      break;
+    }
+  }
+  const k = Math.min(lit && srcSum ? globeSum / srcSum : 1, 235 / p99);
+  const out = Buffer.alloc(src.length * 3);
+  for (let i = 0; i < src.length; i++)
+    out.fill(Math.min(255, Math.round(src[i]! * k)), i * 3, i * 3 + 3);
+  return { out, nodataFrac: 1 - lit / src.length };
 }
 
 /** Earth: one EOX GetMap over the box, OUT_W wide (RGB, 3 channels). */
@@ -328,7 +431,9 @@ function provenanceRow(
       ? 'LROC WAC mosaic: NASA/GSFC/ASU, U.S. Government work (17 U.S.C. §105). The colour layer is the CC-BY-4.0 Solar System Scope globe texture already credited on the globe.'
       : 'THEMIS controlled mosaics: NASA/JPL/ASU, U.S. Government work, distributed by USGS Astrogeology (STAC licence CC0-1.0). The colour layer is the CC-BY-4.0 Solar System Scope globe texture already credited on the globe.',
     modifications: [
-      `cropped-${KM}km-true-scale-lat-lon-box`,
+      b.polar_half_km
+        ? `reprojected-${KM}km-square-polar-stereographic-centred-on-the-pole`
+        : `cropped-${KM}km-true-scale-lat-lon-box`,
       `averaged-to-${OUT_W}px-wide-${mPerPx.toFixed(0)}m-per-px`,
       'colour-from-globe-texture-detail-transfer',
       'reencoded-webp-ladder',
@@ -409,7 +514,13 @@ async function main() {
       let channels = 1;
       let ids: string[];
       let urls: string[];
-      if (BODY === 'earth') {
+      let polarGlobe: Buffer | undefined;
+      if (b.polar_half_km) {
+        if (BODY !== 'moon') throw new Error('polar context is wired for the Moon (WAC) only');
+        ({ data, outH, globe: polarGlobe } = await readPolar(b));
+        ids = ['WAC'];
+        urls = [WAC_COG];
+      } else if (BODY === 'earth') {
         const r = await readEox(b);
         ({ data, outH } = r);
         channels = 3;
@@ -422,16 +533,16 @@ async function main() {
         src.ds.close();
       }
       const mPerPx = (KM * 1000) / OUT_W;
-      const globe = await globeOver(b, outH);
+      const globe = polarGlobe ?? (await globeOver(b, outH));
       // Blur to the globe's own resolution: 4K texture px → output px.
       const globeMPerPx = (2 * Math.PI * RADIUS_KM[BODY] * 1000) / 4096;
-      const { out, nodataFrac } = await detailTransfer(
-        data,
-        channels,
-        globe,
-        outH,
-        Math.max(1, globeMPerPx / mPerPx / 2),
-      );
+      // At a pole the globe texture is the pinched, streaked thing the cap covers:
+      // matching it would paint its smears back in. Keep the mosaic grey, black
+      // shadows and all (permanently shadowed floors are black), at the globe's
+      // overall brightness.
+      const { out, nodataFrac } = polarGlobe
+        ? polarGrey(data, polarGlobe)
+        : await detailTransfer(data, channels, globe, outH, Math.max(1, globeMPerPx / mPerPx / 2));
       if (process.env.CTX_DEBUG) {
         const mean = (x: Uint8Array | Buffer) =>
           (x.reduce((a: number, v: number) => a + v, 0) / x.length).toFixed(1);
@@ -439,7 +550,7 @@ async function main() {
       }
       // Zero = no data or, near the poles, unlit crater floor; those pixels keep
       // the globe colour. A quarter of the box is the most we accept.
-      if (nodataFrac > 0.25)
+      if (nodataFrac > MAX_NODATA)
         throw new Error(`${(nodataFrac * 100).toFixed(1)}% no-data in the box`);
       await fs.mkdir(path.dirname(master), { recursive: true });
       await sharp(out, { raw: { width: OUT_W, height: outH, channels: 3 } })

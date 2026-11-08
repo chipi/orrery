@@ -35,6 +35,13 @@ unconfirmed (option B, operator 2026-11-05).
   polar mosaic, south-polar stereographic) as its context or regional layer. Chandrayaan-3 (69°S)
   looks stretched north–south at 100 km; the context crop's geometry checks out (4096×1443 for a
   13.2° × 37.5° box), so it may be the terrain — not confirmed either way.
+  **Artemis 4 done 2026-11-08:** a 400 km polar-stereographic WAC square centred on the pole
+  (`polar_half_km`), real terrain at every zoom, no pinch. From ~1 Mm altitude it reads as a dark
+  square on the bright globe: the pole really is mostly in shadow, the globe texture is not.
+  **Chandrayaan-3 still not settled:** in its context master the crater shadows are ~2.5–2.7× wider
+  than tall (2.84 = correct for 69°S in a lat/lon crop) but some rims only ~2×, which would come out
+  ~1.4× tall on the globe. Next check: crop the same 400 km as an oblique stereographic square
+  centred on the site and compare crater outlines at the 87 km zoom.
 - **1c. Markers and pins — done (2026-11-06).** Screen-space site tags (`site-tags.ts`): icons by zoom
   stage from the first view (bare), cards later, focus near the view centre, grouping, the nation
   legend with the first icons; every route opens over its sites (TA.md § Scene 6, "Zoom bands").

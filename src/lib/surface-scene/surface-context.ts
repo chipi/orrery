@@ -19,27 +19,40 @@ import { latLonToUnitSphere } from '$lib/moon-projection';
 import { streamedUrl } from '$lib/asset-url';
 import { featherMask } from '$lib/three/feather-mask';
 
-export { contextBounds, type ContextBounds } from './context-bounds';
-import type { ContextBounds } from './context-bounds';
+export { contextBounds, polarToLatLon, type ContextBounds } from './context-bounds';
+import { polarToLatLon, type ContextBounds } from './context-bounds';
 
 /** Above the planet sphere, below the stylised patches (which sit at +0.05+). */
 export const CONTEXT_SHELL_OFFSET = 0.02;
 
-/** Cap geometry over a lat/lon box: (segments+1)² vertices on a sphere of `radius`. */
+/**
+ * Cap geometry over a lat/lon box: (segments+1)² vertices on a sphere of `radius`.
+ * A polar box (`polar_half_km`) is a grid over its stereographic square instead,
+ * each vertex projected back onto the sphere, with UVs linear in the plane — so
+ * the polar-stereographic crop drapes without the pole pinch. `bodyRadiusKm`
+ * (the real radius) is needed only for that inverse projection.
+ */
 export function contextCapGeometry(
   b: ContextBounds,
   radius: number,
   segments = 48,
+  bodyRadiusKm = 1737.4,
 ): THREE.BufferGeometry {
   const pos: number[] = [];
   const uv: number[] = [];
   const idx: number[] = [];
+  const h = b.polar_half_km;
+  const south = b.lat_min <= -90;
   for (let j = 0; j <= segments; j++) {
     const v = j / segments;
-    const lat = b.lat_min + (b.lat_max - b.lat_min) * v;
     for (let i = 0; i <= segments; i++) {
       const u = i / segments;
-      const lon = b.lon_min + (b.lon_max - b.lon_min) * u;
+      const { lat, lon } = h
+        ? polarToLatLon((2 * u - 1) * h, (2 * v - 1) * h, bodyRadiusKm, south)
+        : {
+            lat: b.lat_min + (b.lat_max - b.lat_min) * v,
+            lon: b.lon_min + (b.lon_max - b.lon_min) * u,
+          };
       const p = latLonToUnitSphere(lat, lon);
       pos.push(p.x * radius, p.y * radius, p.z * radius);
       uv.push(u, v);
@@ -53,6 +66,14 @@ export function contextCapGeometry(
       idx.push(a, a + 1, a + row, a + 1, a + row + 1, a + row);
     }
   }
+  // The stereographic plane seen from outside the south pole is mirrored
+  // relative to a lat/lon grid; flip the winding when the first triangle faces in.
+  const tri = [idx[0]!, idx[1]!, idx[2]!].map(
+    (k) => new THREE.Vector3(pos[k * 3], pos[k * 3 + 1], pos[k * 3 + 2]),
+  );
+  const n = new THREE.Vector3().subVectors(tri[1]!, tri[0]!).cross(tri[2]!.clone().sub(tri[0]!));
+  if (n.dot(tri[0]!) < 0)
+    for (let k = 0; k < idx.length; k += 3) [idx[k + 1], idx[k + 2]] = [idx[k + 2]!, idx[k + 1]!];
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
   g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
@@ -72,8 +93,15 @@ export function buildContextCap(input: {
   textureUrl: string;
   bounds: ContextBounds;
   planetRadius: number;
+  /** Real body radius (km): places a polar crop's stereographic grid. */
+  bodyRadiusKm?: number;
 }): THREE.Mesh {
-  const geom = contextCapGeometry(input.bounds, input.planetRadius + CONTEXT_SHELL_OFFSET);
+  const geom = contextCapGeometry(
+    input.bounds,
+    input.planetRadius + CONTEXT_SHELL_OFFSET,
+    48,
+    input.bodyRadiusKm,
+  );
   // Same material + shininess as the planet sphere (SurfaceScene planetMaterial)
   // so the cap shades exactly like the globe it sits on; a MeshStandard cap
   // read as a darker square under the same lights.

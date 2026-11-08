@@ -4069,6 +4069,7 @@
               ),
               bounds: selected.hotspot_context_bounds,
               planetRadius,
+              bodyRadiusKm: config.radiusKm,
             });
             planetMesh.add(cap);
             contextCaps.set(selected.id, cap);

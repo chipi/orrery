@@ -10,7 +10,10 @@
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
-  import { localizeHref } from '$lib/paraglide/runtime';
+  import { localizeHref, getLocale } from '$lib/paraglide/runtime';
+  import JsonLd from '$lib/components/JsonLd.svelte';
+  import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
+  import { canonicalUrl } from '$lib/seo';
   import { essayInlineHtml, essayPlainText } from '$lib/essay-md';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
@@ -18,6 +21,23 @@
   let { data }: { data: PageData } = $props();
   let essay = $derived(data.essay);
   let dekText = $derived(essayPlainText(essay.dek));
+  let jsonLd = $derived.by(() => {
+    const loc = getLocale();
+    const url = canonicalUrl(`/essays/${essay.slug}`, loc);
+    return [
+      article({
+        headline: essay.title,
+        description: dekText,
+        url,
+        inLanguage: loc,
+        image: essay.hero ? absoluteUrl(imgSrc(essay.hero), base) : undefined,
+      }),
+      breadcrumbList([
+        { name: m.essays_title(), url: canonicalUrl('/essays', loc) },
+        { name: essay.title, url },
+      ]),
+    ];
+  });
 
   // Section openers: a running number per heading, and an accent per movement so the
   // five movements of the series read apart (light enough for AA on the page background).
@@ -53,6 +73,7 @@
   <title>{essay.title} · {m.essays_title()} · Orrery</title>
   <meta name="description" content={dekText} />
 </svelte:head>
+<JsonLd data={jsonLd} />
 
 <article class="essay" data-route-ready="true">
   <nav class="crumb">

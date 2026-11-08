@@ -7,6 +7,10 @@
   import { assetOrigin } from '$lib/asset-url';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import JsonLd from '$lib/components/JsonLd.svelte';
+  import { website } from '$lib/json-ld';
+  import { canonicalUrl } from '$lib/seo';
+  import { getLocale } from '$lib/paraglide/runtime';
 
   // The author's other sites. Names are brands (not translated); the sites are
   // English, hence hreflang.
@@ -23,6 +27,13 @@
       line: m.landing_more_airandspace,
     },
   ];
+  const jsonLd = $derived(
+    website({
+      url: canonicalUrl('/', getLocale()),
+      inLanguage: getLocale(),
+      description: m.landing_meta_description(),
+    }),
+  );
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { CURATOR_FULL_TOUR } from '$lib/audio-tour';
@@ -237,6 +248,7 @@
   <title>{m.landing_page_title()}</title>
   <meta name="description" content={m.landing_meta_description()} />
 </svelte:head>
+<JsonLd data={jsonLd} />
 
 <article class="landing" data-testid="landing">
   <header class="hero" data-audio-stage="hero">

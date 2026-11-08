@@ -15,7 +15,11 @@
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
-  import { scienceTabLabel } from '$lib/science-tab-label';
+  import { scienceTabLabel, scienceTabTitle } from '$lib/science-tab-label';
+  import JsonLd from '$lib/components/JsonLd.svelte';
+  import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
+  import { canonicalUrl } from '$lib/seo';
+  import { getLocale } from '$lib/paraglide/runtime';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
   import MuseumsForObject from '$lib/components/MuseumsForObject.svelte';
   import ObservatoriesForArticle from '$lib/components/ObservatoriesForArticle.svelte';
@@ -28,6 +32,24 @@
   let { data }: Props = $props();
 
   let section = $derived(data.section);
+  let jsonLd = $derived.by(() => {
+    const loc = getLocale();
+    const url = canonicalUrl(`/science/${section.tab}/${section.id}`, loc);
+    return [
+      article({
+        headline: section.title,
+        description: section.intro_sentence,
+        url,
+        inLanguage: loc,
+        image: section.diagram ? absoluteUrl(`/diagrams/science/${section.diagram}`) : undefined,
+      }),
+      breadcrumbList([
+        { name: m.science_heading(), url: canonicalUrl('/science', loc) },
+        { name: scienceTabTitle(section.tab), url: canonicalUrl(`/science/${section.tab}`, loc) },
+        { name: section.title, url },
+      ]),
+    ];
+  });
 
   // Umami custom event: which sections out of 85 earn the read.
   // Standard pageview already fires per URL; this carries structured
@@ -96,6 +118,7 @@
   <title>{section.title} · {m.science_page_title()}</title>
   <meta name="description" content={section.intro_sentence} />
 </svelte:head>
+<JsonLd data={jsonLd} />
 
 <article class="reading">
   <nav class="crumb">

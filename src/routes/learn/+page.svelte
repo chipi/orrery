@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-  <title>{m.nav_learn()} · ORRERY</title>
+  <title>{m.learn_page_title()}</title>
 </svelte:head>
 
 <SectionHub

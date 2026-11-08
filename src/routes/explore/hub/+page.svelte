@@ -67,7 +67,7 @@
 </script>
 
 <svelte:head>
-  <title>{m.nav_group_explore()} · ORRERY</title>
+  <title>{m.explore_hub_page_title()}</title>
 </svelte:head>
 
 <SectionHub

@@ -37,7 +37,7 @@
 </script>
 
 <svelte:head>
-  <title>{m.nav_group_worlds()} · ORRERY</title>
+  <title>{m.worlds_page_title()}</title>
 </svelte:head>
 
 <SectionHub

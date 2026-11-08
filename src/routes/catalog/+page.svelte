@@ -45,7 +45,7 @@
 </script>
 
 <svelte:head>
-  <title>{m.nav_catalog()} · ORRERY</title>
+  <title>{m.catalog_page_title()}</title>
 </svelte:head>
 
 <SectionHub

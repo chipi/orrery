@@ -11,7 +11,7 @@
   import { localHref } from '$lib/locale';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
-  import { scienceTabLabel } from '$lib/science-tab-label';
+  import { scienceTabLabel, scienceTabTitle } from '$lib/science-tab-label';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-  <title>{tabLabel(data.tab)} · {m.science_page_title()}</title>
+  <title>{scienceTabTitle(data.tab)} · {m.science_page_title()}</title>
 </svelte:head>
 
 <nav class="crumb">

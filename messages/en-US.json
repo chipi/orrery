@@ -1765,7 +1765,7 @@
   "plan_mission_type_disabled_flyby_only": "Landing is not a defined manoeuvre for this destination at this fidelity. Use FLYBY or see the mission library for real flight paths.",
   "plan_mission_type_flyby": "FLYBY",
   "plan_mission_type_landing": "LANDING",
-  "plan_page_title": "Mission Configurator · Orrery",
+  "plan_page_title": "Launch Window Planner · Porkchop Plots · Orrery",
   "plan_panel_label": "Mission summary",
   "plan_plot_title": "PORKCHOP · EARTH → {dest} · ∆v km/s",
   "plan_porkchop_title": "Porkchop plot · the calendar of cheap launches",

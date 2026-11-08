@@ -133,13 +133,15 @@ async function targets() {
   list.push(path.join(BUILD, 'images'));
   list.push(path.join(BUILD, 'audio'));
 
-  // sitemap.xml is a search-engine artifact — ~6.6 MB now that it carries
-  // per-URL hreflang alternates (270 routes × 14 locales, #519). It is never
-  // used on-device (the Capacitor shell serves no crawlers), so prune it off
-  // the mobile bundle; the web build keeps it. Without this it pushed the
-  // mobile build over the 75 MB OTA budget.
-  const sitemap = path.join(BUILD, 'sitemap.xml');
-  if (existsSync(sitemap)) list.push(sitemap);
+  // The sitemaps are search-engine artifacts — the sitemap.xml index plus
+  // sitemaps/<locale>.xml, ~7 MB together with per-URL hreflang alternates
+  // (#519). Never used on-device (the Capacitor shell serves no crawlers), so
+  // prune them off the mobile bundle; the web build keeps them. Without this
+  // they pushed the mobile build over the 75 MB OTA budget.
+  for (const p of ['sitemap.xml', 'sitemaps']) {
+    const sitemap = path.join(BUILD, p);
+    if (existsSync(sitemap)) list.push(sitemap);
+  }
 
   // /c/* card share stubs (#547) are crawler/unfurl surfaces — 499
   // prerendered pages (~7.5 MB) the Capacitor shell never serves: shares

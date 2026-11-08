@@ -133,7 +133,7 @@ export default defineConfig(({ mode, command }) => {
       // Allow imports from static/ — used by $data/ alias for build-time
       // JSON imports (planets, small-bodies, scenarios). Without this,
       // Vite's default fs.allow excludes static/ and dev-only 404s flood
-      // the console. `scripts/` is here so /sitemap.xml can import the shared
+      // the console. `scripts/` is here so the sitemaps ($lib/sitemap) import the shared
       // route list (site-routes.mjs) in dev — it's prerendered in prod builds
       // where fs.allow doesn't apply, but this keeps the dev server serving it.
       fs: { allow: ['static', 'i18n-src', 'scripts'] },

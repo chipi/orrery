@@ -110,6 +110,17 @@ tables); keep it.
 Runbook: the `orrery-link-health` skill. The two outbound checkers share
 `lib/link-probe.mjs` (polite User-Agent, 2 requests per host, HEAD then GET).
 
+## SEO — which tool, when
+
+| Question | Run | Where it runs |
+| --- | --- | --- |
+| does every indexable page have one title (not the bare brand, ≤90 chars), one description (≤160), a self-referencing canonical, the full hreflang set with built targets, og:title / og:url / og:image and a Twitter card, JSON-LD that parses and one H1, with no noindex leak — and do the sitemaps list exactly those pages; on the GH Pages mirror (`VITE_BASE`), is every page noindex with no canonical | `check-seo.mjs` | every `npm run build` |
+
+The SEO code it checks: `src/lib/seo.ts` (canonical, hreflang, `metaDescription`,
+`pageTitle`, `isMirrorBuild`), `src/lib/social-meta.ts` (Open Graph + Twitter,
+applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
+`src/lib/sitemap.ts` (the `/sitemap.xml` index and `/sitemaps/<locale>.xml`).
+
 **Manual tools no npm script or workflow runs** (read the header first):
 
 - `mobile/build-offline-manifest.mjs` — regenerates the committed

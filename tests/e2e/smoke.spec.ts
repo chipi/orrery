@@ -13,7 +13,7 @@ import { revealDesktopNavLink } from './_helpers/nav';
 const ROUTES = [
   { path: '/', titleHint: 'Orrery' },
   { path: '/explore', titleHint: 'Solar System Explorer' },
-  { path: '/plan', titleHint: 'Mission Configurator' },
+  { path: '/plan', titleHint: 'Launch Window Planner' },
   { path: '/fly', titleHint: 'Mission Arc' },
   { path: '/missions', titleHint: 'Mission Catalog' },
   { path: '/earth', titleHint: 'Earth Orbit' },

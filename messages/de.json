@@ -223,6 +223,7 @@
   "lib_filter_status_flown": "GEFLOGEN",
   "lib_filter_status_planned": "GEPLANT",
   "lib_filter_status_cancelled": "ABGESAGT",
+  "lib_filter_status_failed": "FEHLGESCHLAGEN",
   "mission_status_active": "AKTIV",
   "mission_status_flown": "GEFLOGEN",
   "mission_status_planned": "GEPLANT",

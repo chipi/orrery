@@ -118,7 +118,9 @@ export async function getMissionsForLibrary(locale = 'en-US'): Promise<Mission[]
       const merged = await getMission(entry.id, entry.dest, locale);
       // Fall back to the index entry if the per-mission file is missing
       // for some reason — better an under-decorated card than a crash.
-      return merged ?? ({ ...entry } as Mission);
+      if (!merged) return { ...entry } as Mission;
+      // `outcome` lives only in the index (the status filter's FAILED reads it).
+      return entry.outcome ? { ...merged, outcome: entry.outcome } : merged;
     }),
   );
   return missions;

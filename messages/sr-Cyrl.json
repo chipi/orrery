@@ -223,6 +223,7 @@
   "lib_filter_status_flown": "ИЗВЕДЕНО",
   "lib_filter_status_planned": "ПЛАНИРАНО",
   "lib_filter_status_cancelled": "ОТКАЗАНО",
+  "lib_filter_status_failed": "НЕУСПЕЛО",
   "mission_status_active": "АКТИВНА",
   "mission_status_flown": "ОБАВЉЕНА",
   "mission_status_planned": "ПЛАНИРАНА",

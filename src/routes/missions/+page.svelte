@@ -70,7 +70,9 @@
    */
   interface MissionFilterState {
     dest: Destination | 'ALL';
-    status: MissionStatus | 'ALL';
+    /** FAILED is not a MissionStatus: it lists missions whose index entry carries
+     *  outcome 'failure' (they FLEW, or never got off the pad). */
+    status: MissionStatus | 'FAILED' | 'ALL';
     agency: string;
     crew: 'ALL' | 'CREWED' | 'UNCREWED';
     /**
@@ -192,7 +194,10 @@
             filterState.q,
           ) &&
           (filterState.dest === 'ALL' || mission.dest === filterState.dest) &&
-          (filterState.status === 'ALL' || mission.status === filterState.status) &&
+          (filterState.status === 'ALL' ||
+            (filterState.status === 'FAILED'
+              ? mission.outcome === 'failure'
+              : mission.status === filterState.status)) &&
           (filterState.agency === 'ALL' ||
             splitAgencies(mission.agency).includes(filterState.agency)) &&
           (filterState.crew === 'ALL' ||
@@ -213,7 +218,11 @@
     const agency = url.searchParams.get('agency');
     filterState.dest = dest && isMissionDestination(dest) ? dest : 'ALL';
     filterState.status =
-      status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' || status === 'CANCELLED'
+      status === 'ACTIVE' ||
+      status === 'FLOWN' ||
+      status === 'PLANNED' ||
+      status === 'CANCELLED' ||
+      status === 'FAILED'
         ? status
         : 'ALL';
     filterState.agency = agency ?? 'ALL';
@@ -266,7 +275,7 @@
     pushFiltersToUrl();
   }
 
-  function setStatus(value: MissionStatus | 'ALL') {
+  function setStatus(value: MissionStatus | 'FAILED' | 'ALL') {
     filterState.status = value;
     pushFiltersToUrl();
   }
@@ -589,6 +598,14 @@
           role="radio"
           aria-checked={filterState.status === 'CANCELLED'}
           onclick={() => setStatus('CANCELLED')}>{m.lib_filter_status_cancelled()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={filterState.status === 'FAILED'}
+          role="radio"
+          aria-checked={filterState.status === 'FAILED'}
+          onclick={() => setStatus('FAILED')}>{m.lib_filter_status_failed()}</button
         >
       </div>
 

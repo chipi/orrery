@@ -331,6 +331,7 @@
   "lib_filter_status_flown": "已飞行",
   "lib_filter_status_planned": "计划中",
   "lib_filter_status_cancelled": "已取消",
+  "lib_filter_status_failed": "失败",
   "mission_status_active": "运行中",
   "mission_status_flown": "已飞行",
   "mission_status_planned": "计划中",

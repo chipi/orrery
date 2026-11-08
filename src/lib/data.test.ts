@@ -497,6 +497,13 @@ describe('getMissionsForLibrary', () => {
     const all = await filterMissions();
     expect(lib).toHaveLength(all.length);
   });
+
+  it("carries the index-only outcome, so /missions' FAILED filter finds the failures", async () => {
+    const lib = await getMissionsForLibrary();
+    const failed = lib.filter((m) => m.outcome === 'failure').map((m) => m.id);
+    expect(failed.sort()).toEqual(['apollo-1', 'apollo13', 'beresheet', 'schiaparelli', 'soyuz-1']);
+    expect(lib.find((m) => m.id === 'curiosity')!.outcome).toBeUndefined();
+  });
 });
 
 describe('getEarthObjects', () => {

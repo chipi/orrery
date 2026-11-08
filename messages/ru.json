@@ -331,6 +331,7 @@
   "lib_filter_status_flown": "ВЫПОЛНЕННЫЕ",
   "lib_filter_status_planned": "ПЛАНИРУЕМЫЕ",
   "lib_filter_status_cancelled": "ОТМЕНЁННЫЕ",
+  "lib_filter_status_failed": "НЕУДАЧНЫЕ",
   "mission_status_active": "АКТИВНА",
   "mission_status_flown": "ВЫПОЛНЕНА",
   "mission_status_planned": "ПЛАНИРУЕТСЯ",

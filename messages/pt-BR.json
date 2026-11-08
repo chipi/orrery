@@ -223,6 +223,7 @@
   "lib_filter_status_flown": "REALIZADA",
   "lib_filter_status_planned": "PLANEJADA",
   "lib_filter_status_cancelled": "CANCELADA",
+  "lib_filter_status_failed": "FRACASSADA",
   "mission_status_active": "ATIVA",
   "mission_status_flown": "REALIZADA",
   "mission_status_planned": "PLANEJADA",

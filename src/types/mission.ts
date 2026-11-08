@@ -212,6 +212,9 @@ export interface MissionIndex {
   /** True if any phase of the mission carried a crew. Derived offline
    *  from overlay.type containing 'CREWED' via scripts/backfill-crewed-flag.mjs. */
   crewed?: boolean;
+  /** Set when the mission did not achieve its primary objective; the
+   *  /missions status filter FAILED lists these. Status is unchanged. */
+  outcome?: 'failure';
 }
 
 export interface MissionLink {

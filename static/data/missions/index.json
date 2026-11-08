@@ -47,7 +47,8 @@
     "year": 1970,
     "sector": "gov",
     "color": "#0B3D91",
-    "crewed": true
+    "crewed": true,
+    "outcome": "failure"
   },
   {
     "id": "luna16",
@@ -317,7 +318,8 @@
     "year": 2016,
     "sector": "gov",
     "color": "#003247",
-    "crewed": false
+    "crewed": false,
+    "outcome": "failure"
   },
   {
     "id": "change4",
@@ -347,7 +349,8 @@
     "year": 2019,
     "sector": "private",
     "color": "#0038B8",
-    "crewed": false
+    "crewed": false,
+    "outcome": "failure"
   },
   {
     "id": "change5",
@@ -797,7 +800,8 @@
     "year": 1967,
     "sector": "gov",
     "color": "#0B3D91",
-    "crewed": true
+    "crewed": true,
+    "outcome": "failure"
   },
   {
     "id": "apollo-soyuz",
@@ -1227,7 +1231,8 @@
     "year": 1967,
     "sector": "gov",
     "color": "#CD1F2D",
-    "crewed": true
+    "crewed": true,
+    "outcome": "failure"
   },
   {
     "id": "soyuz-11",

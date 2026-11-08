@@ -8,7 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
-## [0.9.7] — Unreleased
+## [0.9.7] — 2026-11-08
 
 A surfaces and accuracy release: site tags arrive by zoom stage on every body, a landing site's
 STORY opens with how the craft came down and what it is made of, Mars rovers get a Journey tab,

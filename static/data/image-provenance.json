@@ -41641,44 +41641,42 @@
   {
    "id": "287ad9dd6a6704a0",
    "path": "/images/missions/apollo11/01.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Aldrin Apollo 11.jpg",
-   "author": "NASA",
-   "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AAldrin%20Apollo%2011.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Aldrin%20Apollo%2011.jpg",
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
-   "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
-   ],
-   "revid": null,
-   "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.828Z"
-  },
-  {
-   "id": "5b590defc1f28e60",
-   "path": "/images/missions/apollo11/01.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — apollo11 / \"apollo 11 lunar surface\"",
-   "author": "NASA",
+   "title": "Astronaut Edwin Aldrin walks on lunar surface near leg of Lunar Module (as11-40-5903)",
+   "author": "NASA/JSC",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=apollo+11+lunar+surface&media_type=image&keywords=apollo11",
+   "source_url": "https://images.nasa.gov/details/as11-40-5903",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.829Z"
+   "nasa_id": "as11-40-5903",
+   "fetched_at": "2026-11-08T06:45:37.143Z"
+  },
+  {
+   "id": "5b590defc1f28e60",
+   "path": "/images/missions/apollo11/01.webp",
+   "source_type": "nasa-images-api",
+   "title": "Astronaut Edwin Aldrin walks on lunar surface near leg of Lunar Module (as11-40-5903)",
+   "author": "NASA/JSC",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/as11-40-5903",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "as11-40-5903",
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "385afc576a0a7e0c",
@@ -45021,7 +45019,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "GSFC_20171208_Archive_e001939",
-   "fetched_at": "2026-11-08T06:38:27.728Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "6356a64fd396936b",
@@ -45041,7 +45039,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "GSFC_20171208_Archive_e001939",
-   "fetched_at": "2026-11-08T06:38:27.728Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "d668f0794d5e12c0",
@@ -45533,7 +45531,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA20309",
-   "fetched_at": "2026-11-08T06:38:27.728Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "d23ffcccb2761b2a",
@@ -45553,7 +45551,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA20309",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "71785a095255bff0",
@@ -45573,7 +45571,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA20405",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "eeff4c62bdd2b066",
@@ -45593,7 +45591,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA20405",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "d88c6866c8d243d3",
@@ -47338,7 +47336,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA19811",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "3c6c639e8103fcde",
@@ -47358,7 +47356,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA19811",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "45a8658d850dcc61",
@@ -47976,7 +47974,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA12086",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "78434430802539b8",
@@ -47996,7 +47994,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA12086",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "0245cab8122167c1",
@@ -51278,7 +51276,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA20201",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "e2864618de4842b0",
@@ -51298,7 +51296,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA20201",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "d5e5f8bb5d8d1a71",
@@ -57155,7 +57153,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA01443",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "189896c52ad8f06d",
@@ -57175,7 +57173,7 @@
    "revid": null,
    "pageid": null,
    "nasa_id": "PIA01443",
-   "fetched_at": "2026-11-08T06:38:27.729Z"
+   "fetched_at": "2026-11-08T06:45:37.144Z"
   },
   {
    "id": "fa26784290162e5e",

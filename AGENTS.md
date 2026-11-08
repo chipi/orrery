@@ -94,6 +94,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | External assets | Resolved at build time | ADR-016 |
 | Imagery sourcing | Agency-first fetch priority; NASA as fallback library | ADR-046 |
 | Outbound LEARN links | Agency-first per-link provenance; native-language priority; `rel="noopener noreferrer external"` + `hreflang` everywhere; public `/library` bill-of-links; link-checker chained into `npm run fetch` | ADR-051 |
+| SEO surface | Indexable entity pages (`/missions/[id]`, `/fleet/[id]`, `/moon\|mars\|venus/[id]`, `/explore/[id]`, `/lab/[id]`) in 14 locales from the panels' data; `pageTitle()` / `metaDescription()`; OG + Twitter from `hooks.server.ts`; JSON-LD; split sitemaps from `scripts/site-routes.mjs`; staging mirror noindex; `check-seo.mjs` gate in every build. A change to what a panel shows should reach its entity page | ADR-096 |
 | Provenance + license stewardship | Per-image manifest + text manifest + fail-closed validate-data; public `/credits` page | ADR-047 |
 | i18n | Paraglide-js + locale overlay files | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |

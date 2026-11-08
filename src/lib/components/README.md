@@ -11,5 +11,6 @@ Svelte components shared across routes, by family. Scene-specific ones live with
 - **Look-alikes** — `EpochTimelineStrip` (/missions, /fleet) vs `TimelineNavigator` (/missions year window); `MediaPlayer` (modal) vs `VideoThumb` (resting tile).
 - **Debug** — `DebugPanel` (`?debug=1`) shows page tabs registered via `DebugPanelRegistrar` / `debug-panel-context.ts`; also `RenderingDebugRegistrar`, `FlybyDebugViewer`, `AscentCameraDebug`.
 - **Attribution/links** — `ImageCredit`, `LinkCredit`, `LearnLink` (ADR-051 rules).
+- **SEO** — `JsonLd` (schema.org data block in the head; build the data with `$lib/json-ld`), `SiteEntityPage` (the /moon|mars|venus/[id] entity page) and `entity-page.css` (the shared layout of every entity page: missions, fleet, sites, bodies, Lab formulas; ADR-096).
 
 Pointers: TA.md §components · AGENTS.md (i18n, mobile-first). No doc states why panels share one shell; the `Panel.svelte` prop comments are the only record.

@@ -22,3 +22,8 @@ Logic lives in `src/lib/explore/` (see its README). Source-reading tests:
 in `SOURCE_FILES` (page, `TimeDock`, `HudControls`); a component that takes
 over an anchor must join it. `tactical-scan-mobile.test.ts` reads
 `HudControls` for the drawer's Scan tab.
+
+`[id]/` is not part of the explorer: it is the indexable page of one planet,
+moon or small body (server load `+page.server.ts` → `$lib/data/body-entity`,
+names from the glossary `body` section), linking back to `/explore?id=`
+(ADR-096). `hub/` is the nav-group hub.

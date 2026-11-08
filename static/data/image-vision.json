@@ -24146,24 +24146,7 @@
       "scored_at": "2026-06-12T21:07:19.964Z",
       "scoring_cost_usd": 0.007626
     },
-    "/images/fleet-galleries/salyut-3/02.jpg": {
-      "score": 8,
-      "subject": "A detailed paper model of the Salyut 3 (Almaz) station with a Soyuz docked.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-11-08T08:28:05.750Z",
-      "scoring_cost_usd": 0,
-      "subject_match": true
-    },
-    "/images/fleet-galleries/salyut-4/04.jpg": {
+    "/images/fleet-galleries/salyut-4/03.jpg": {
       "score": 6,
       "subject": "A handmade paper or card model of the Soviet Salyut space station with solar panels, displayed against a plain grey background.",
       "category": "hardware",
@@ -32208,19 +32191,6 @@
       "scored_at": "2026-11-08T08:22:32.204Z",
       "scoring_cost_usd": 0
     },
-    "/images/fleet-galleries/salyut-4/01.jpg": {
-      "score": 8,
-      "subject": "A detailed paper model of the Salyut 4 station with its solar wings and a Soyuz docked.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-11-08T08:28:05.766Z",
-      "scoring_cost_usd": 0
-    },
     "/images/fleet-galleries/sbirs-heo/03.jpg": {
       "score": 8,
       "subject": "The SBIRS GEO-5 satellite being unloaded from a C-5M Galaxy at Cape Canaveral, March 2021.",
@@ -32297,19 +32267,6 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-08T08:29:53.871Z",
-      "scoring_cost_usd": 0
-    },
-    "/images/fleet-galleries/tiangong-1/04.jpg": {
-      "score": 8,
-      "subject": "A scale model of a Tiangong space laboratory docked with a Shenzhou spacecraft, in a museum display.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-11-08T08:29:53.954Z",
       "scoring_cost_usd": 0
     },
     "/images/fleet-galleries/tianwen-1/04.jpg": {

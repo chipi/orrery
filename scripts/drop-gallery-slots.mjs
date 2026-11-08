@@ -15,7 +15,11 @@
  *   with a string naming it, like a provenance row) is removed, and every kept slot's path is
  *   rewritten to its new number. Files keep their indentation (compact files stay compact);
  * - static/data/<surface>-hero-overrides.json slots: renumbered, or removed when the hero itself
- *   was dropped (the card falls back to 01 — pick a new hero after, the script says which).
+ *   was dropped (the card falls back to 01 — pick a new hero after, the script says which);
+ * - program figures (`"reuse": "fleet/<id>/<NN>"`, `"missions/<id>/<NN>"` in i18n-src/<loc>/programs):
+ *   renumbered and listed so their captions can be checked. A figure that reuses a DROPPED slot
+ *   stops the run (dry run too) with the list, nothing written: re-point it first. On 2026-11-08 a
+ *   drop left `fleet/n1/05` dangling (the build's prerender 404'd) and renumbered others silently.
  *
  * After --apply run `npx tsx scripts/rebuild-gallery-manifests.ts` (counts),
  * `node scripts/build-i18n-bundles.mjs`, `node scripts/mobile/build-offline-manifest.mjs` and
@@ -83,22 +87,36 @@ for (const g of galleries.values()) {
 }
 
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+// Program figures name a slot as `"reuse": "fleet/<id>/<NN>"` — the surface name, not the served
+// dir (fleet-galleries); the other surfaces use the dir name in both places.
+const REUSE_ALIAS = { 'fleet-galleries': 'fleet' };
 // A slot path ends at its number or continues with an extension / rung suffix; image-ladder.json
 // keys have no extension (`/images/fleet-galleries/juice/04`).
-const refRe = (g) => new RegExp(`(^|/)${esc(g.dir)}/${esc(g.id)}/(\\d\\d)(?=[.\\-]|$)`, 'g');
+const refRe = (g) => {
+  const dirs = [g.dir, REUSE_ALIAS[g.dir]].filter(Boolean).map(esc).join('|');
+  return new RegExp(`(^|/)(${dirs})/${esc(g.id)}/(\\d\\d)(?=[.\\-]|$)`, 'g');
+};
 /** 'drop' | 'keep' | null for a string naming a slot of any gallery in the set. */
 function classify(str) {
   for (const g of galleries.values()) {
-    for (const m of str.matchAll(refRe(g))) return g.drop.has(m[2]) ? 'drop' : 'keep';
+    for (const m of str.matchAll(refRe(g))) return g.drop.has(m[3]) ? 'drop' : 'keep';
   }
   return null;
 }
 function rewrite(str) {
   let out = str;
   for (const g of galleries.values())
-    out = out.replace(refRe(g), (all, pre, nn) => `${pre}${g.dir}/${g.id}/${g.map.get(nn) ?? nn}`);
+    out = out.replace(
+      refRe(g),
+      (all, pre, dir, nn) => `${pre}${dir}/${g.id}/${g.map.get(nn) ?? nn}`,
+    );
   return out;
 }
+// A program figure that reuses a dropped slot can't be renumbered (the number would then name
+// another picture) or silently removed (it is prose content): the run refuses until it is
+// re-pointed. Renumbered ones are listed so their captions can be checked.
+const reuseDropped = [];
+const reuseMoved = [];
 const namesDropped = (v) =>
   typeof v === 'string'
     ? classify(v) === 'drop'
@@ -111,6 +129,10 @@ function walk(v) {
     const out = {};
     for (const [k, x] of Object.entries(v)) {
       if (classify(k) === 'drop') continue;
+      if (k === 'reuse' && typeof x === 'string') {
+        if (classify(x) === 'drop') reuseDropped.push(`${currentFile}: ${x}`);
+        else if (rewrite(x) !== x) reuseMoved.push(`${currentFile}: ${x} → ${rewrite(x)}`);
+      }
       out[rewrite(k)] = walk(x);
     }
     // A `count` that matched a sibling list's length (image-approved.json) follows the list.
@@ -133,21 +155,36 @@ const scan = (d) => {
   }
 };
 JSON_ROOTS.forEach(scan);
-const needles = [...galleries.keys()].map((k) => `${k}/`);
+const needles = [...galleries.values()].flatMap((g) =>
+  [g.dir, REUSE_ALIAS[g.dir]].filter(Boolean).map((d) => `${d}/${g.id}/`),
+);
 let jsonChanged = 0;
+let currentFile = '';
+const writes = [];
 for (const f of jsonFiles) {
   const text = readFileSync(f, 'utf8');
   if (!needles.some((n) => text.includes(n))) continue;
+  currentFile = f;
   const before = JSON.parse(text);
   const after = walk(before);
   if (JSON.stringify(after) === JSON.stringify(before)) continue; // mentions the gallery, no slot changes
   const indentMatch = text.match(/^[{[]\r?\n([ \t]+)/);
   const indent = indentMatch ? indentMatch[1] : 0;
-  const next = JSON.stringify(after, null, indent) + (text.endsWith('\n') ? '\n' : '');
+  writes.push([f, JSON.stringify(after, null, indent) + (text.endsWith('\n') ? '\n' : '')]);
   jsonChanged++;
   console.log(`  json ${f}`);
-  if (APPLY) writeFileSync(f, next);
 }
+if (reuseMoved.length)
+  console.log(
+    `program figures renumbered — check each caption still fits:\n  ${reuseMoved.join('\n  ')}`,
+  );
+if (reuseDropped.length) {
+  console.error(
+    `✗ program figures reuse a dropped slot — re-point them first (nothing written):\n  ${reuseDropped.join('\n  ')}`,
+  );
+  process.exit(1);
+}
+if (APPLY) for (const [f, next] of writes) writeFileSync(f, next);
 
 // Hero overrides (slot is "NN.jpg" with no path).
 const reheroes = [];

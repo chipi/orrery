@@ -22204,51 +22204,8 @@
       "fetched_at": "2026-06-19T09:26:46.960Z"
     },
     {
-      "id": "0c0e1f43529bdac7",
-      "path": "/images/fleet-galleries/salyut-3/02.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Salyut 3 paper model.JPG",
-      "author": "Godai",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Salyut_3_paper_model.JPG",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Salyut_3_paper_model.JPG",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": 46877954,
-      "nasa_id": null,
-      "fetched_at": "2026-11-08T08:27:49.171Z"
-    },
-    {
-      "id": "b93ebe59a2c59039",
-      "path": "/images/fleet-galleries/salyut-4/01.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Salyut 4 paper model.JPG",
-      "author": "Godai",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Salyut_4_paper_model.JPG",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Salyut_4_paper_model.JPG",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg",
-        "rendered-svg-on-white"
-      ],
-      "revid": null,
-      "pageid": 46877951,
-      "nasa_id": null,
-      "fetched_at": "2026-11-08T08:27:50.412Z"
-    },
-    {
       "id": "319631f15baea886",
-      "path": "/images/fleet-galleries/salyut-4/04.webp",
+      "path": "/images/fleet-galleries/salyut-4/03.webp",
       "source_type": "direct-other",
       "title": "Uncurated panel image — fleet-galleries/salyut-4",
       "author": "Roscosmos",
@@ -24021,27 +23978,6 @@
       "pageid": 850903,
       "nasa_id": null,
       "fetched_at": "2026-10-21T08:56:15.150Z"
-    },
-    {
-      "id": "28615708c43b4212",
-      "path": "/images/fleet-galleries/soyuz-7k-ok/03.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/soyuz-7k-ok",
-      "author": "Roscosmos",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
-      "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
     },
     {
       "id": "b57093d51d922724",
@@ -26257,26 +26193,6 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.903Z"
-    },
-    {
-      "id": "648542cec1d0173d",
-      "path": "/images/fleet-galleries/tiangong-1/04.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Model of the Chinese Tiangong Shenzhou.jpg",
-      "author": "Leebrandoncremer",
-      "agency": "CNSA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Model_of_the_Chinese_Tiangong_Shenzhou.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Model_of_the_Chinese_Tiangong_Shenzhou.jpg",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
-      "modifications": [
-        "identified-by-image-match"
-      ],
-      "revid": null,
-      "pageid": 51692069,
-      "nasa_id": null,
-      "fetched_at": "2026-11-08T08:29:42.300Z"
     },
     {
       "id": "4c8c0ce039858dbd",
@@ -59661,46 +59577,6 @@
       "fetched_at": "2026-10-21T08:56:15.150Z"
     },
     {
-      "id": "66e5c860c0ab7967",
-      "path": "/images/moon-sites/change3/05.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Artist view of Chang'e 7 lunar mission on the Moon.png",
-      "author": "中国新闻社",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
-      "license_short": "CC-BY-3.0",
-      "license_url": "https://creativecommons.org/licenses/by/3.0",
-      "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
-      "modifications": [
-        "identified-by-image-match"
-      ],
-      "revid": null,
-      "pageid": 188679355,
-      "nasa_id": null,
-      "fetched_at": "2026-10-21T10:43:46.503Z"
-    },
-    {
-      "id": "4b756478d06db42e",
-      "path": "/images/moon-sites/change3/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Artist view of Chang'e 7 lunar mission on the Moon.png",
-      "author": "中国新闻社",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
-      "license_short": "CC-BY-3.0",
-      "license_url": "https://creativecommons.org/licenses/by/3.0",
-      "license_rationale": "Freely licensed via Wikimedia Commons; attribution required.",
-      "modifications": [
-        "identified-by-image-match"
-      ],
-      "revid": null,
-      "pageid": 188679355,
-      "nasa_id": null,
-      "fetched_at": "2026-10-21T10:43:46.503Z"
-    },
-    {
       "id": "feea08b8dc55467e",
       "path": "/images/moon-sites/change4/01.1x1.jpg",
       "source_type": "wikimedia-commons",
@@ -77621,26 +77497,6 @@
       "fetched_at": "2026-10-20T19:51:19.659Z"
     },
     {
-      "id": "fe0e4b60d15d9d4a",
-      "path": "/images/fleet-galleries/tiangong-1/04.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Model of the Chinese Tiangong Shenzhou.jpg",
-      "author": "Leebrandoncremer",
-      "agency": "CNSA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Model_of_the_Chinese_Tiangong_Shenzhou.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Model_of_the_Chinese_Tiangong_Shenzhou.jpg",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
-      "modifications": [
-        "identified-by-image-match"
-      ],
-      "revid": null,
-      "pageid": 51692069,
-      "nasa_id": null,
-      "fetched_at": "2026-11-08T08:29:53.454Z"
-    },
-    {
       "id": "443c7ea434fb4d25",
       "path": "/images/fleet-galleries/tundra-sirius/02.webp",
       "source_type": "wikimedia-commons",
@@ -81727,7 +81583,7 @@
     },
     {
       "id": "f2267fd9c213bc7b",
-      "path": "/images/fleet-galleries/salyut-3/03.webp",
+      "path": "/images/fleet-galleries/salyut-3/02.webp",
       "source_type": "wikimedia-commons",
       "title": "File:Центр Космонавтики и Авиации, Москва 45 - Cosmonautics and Aviation Center, Moscow.jpg",
       "author": "Pulux11",
@@ -81749,7 +81605,7 @@
     },
     {
       "id": "def3d311ec04dec0",
-      "path": "/images/fleet-galleries/salyut-3/03.1x1.jpg",
+      "path": "/images/fleet-galleries/salyut-3/02.1x1.jpg",
       "source_type": "wikimedia-commons",
       "title": "File:Центр Космонавтики и Авиации, Москва 45 - Cosmonautics and Aviation Center, Moscow.jpg",
       "author": "Pulux11",
@@ -81768,26 +81624,6 @@
       "pageid": 71718823,
       "nasa_id": null,
       "fetched_at": "2026-10-21T08:07:45.597Z"
-    },
-    {
-      "id": "da618a2ad9762c49",
-      "path": "/images/fleet-galleries/salyut-3/02.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Salyut 3 paper model.JPG",
-      "author": "Godai",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Salyut_3_paper_model.JPG",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Salyut_3_paper_model.JPG",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
-      "modifications": [
-        "identified-by-image-match"
-      ],
-      "revid": null,
-      "pageid": 46877954,
-      "nasa_id": null,
-      "fetched_at": "2026-11-08T08:28:04.093Z"
     },
     {
       "id": "9869bbcae4c3fe80",
@@ -82163,7 +81999,7 @@
     },
     {
       "id": "037c0564bf88028f",
-      "path": "/images/fleet-galleries/salyut-4/02.webp",
+      "path": "/images/fleet-galleries/salyut-4/01.webp",
       "source_type": "wikimedia-commons",
       "title": "File:1975 CPA 4446.jpg",
       "author": "Post of Soviet Union",
@@ -82185,7 +82021,7 @@
     },
     {
       "id": "5bbbdfeb94419ac0",
-      "path": "/images/fleet-galleries/salyut-4/02.1x1.jpg",
+      "path": "/images/fleet-galleries/salyut-4/01.1x1.jpg",
       "source_type": "wikimedia-commons",
       "title": "File:1975 CPA 4446.jpg",
       "author": "Post of Soviet Union",
@@ -82207,7 +82043,7 @@
     },
     {
       "id": "db64904a29dc5b0e",
-      "path": "/images/fleet-galleries/salyut-4/03.webp",
+      "path": "/images/fleet-galleries/salyut-4/02.webp",
       "source_type": "wikimedia-commons",
       "title": "File:1975 CPA 4504.jpg",
       "author": "USSR Post",
@@ -82229,7 +82065,7 @@
     },
     {
       "id": "77948f6578a7df38",
-      "path": "/images/fleet-galleries/salyut-4/03.1x1.jpg",
+      "path": "/images/fleet-galleries/salyut-4/02.1x1.jpg",
       "source_type": "wikimedia-commons",
       "title": "File:1975 CPA 4504.jpg",
       "author": "USSR Post",
@@ -82248,26 +82084,6 @@
       "pageid": 3206861,
       "nasa_id": null,
       "fetched_at": "2026-10-21T08:07:45.597Z"
-    },
-    {
-      "id": "29e085bbdc86c7be",
-      "path": "/images/fleet-galleries/salyut-4/01.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Salyut 4 paper model.JPG",
-      "author": "Godai",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Salyut_4_paper_model.JPG",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Salyut_4_paper_model.JPG",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
-      "modifications": [
-        "identified-by-image-match"
-      ],
-      "revid": null,
-      "pageid": 46877951,
-      "nasa_id": null,
-      "fetched_at": "2026-11-08T08:28:04.093Z"
     },
     {
       "id": "3ddeb4bd87b8a9aa",
@@ -95945,26 +95761,6 @@
       "pageid": 187446400,
       "nasa_id": null,
       "fetched_at": "2026-11-05T11:09:32.198Z"
-    },
-    {
-      "id": "e669552e28da592b",
-      "path": "/images/mars-sites/zhurong/route/selfie-with-lander.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Zhurong-with-lander-selfie-flat.jpg",
-      "author": "中国新闻网",
-      "agency": "中国新闻网",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Zhurong-with-lander-selfie-flat.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Zhurong-with-lander-selfie-flat.jpg",
-      "license_short": "CC-BY-4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0",
-      "license_rationale": "Creative Commons Attribution 4.0",
-      "modifications": [
-        "identified-by-image-match"
-      ],
-      "revid": null,
-      "pageid": 129295051,
-      "nasa_id": null,
-      "fetched_at": "2026-11-05T11:09:33.448Z"
     },
     {
       "id": "98e06980aa982afb",

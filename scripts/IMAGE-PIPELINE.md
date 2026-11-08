@@ -222,7 +222,10 @@ that names the gallery: provenance rows, alt text in 14 locales, ladder, phashes
 (and its `count`), vision, curation, a story's image list. Hero overrides are renumbered. When a
 dropped slot was the hero, the override is removed and the script names the gallery, so you pick a
 new hero. Read the dry run's JSON list before applying. A content file (a story, a program) that
-loses an image deserves a look. First used 2026-11-06 on 39 slots in 34 galleries, after a
+loses an image deserves a look. Program figures (`"reuse": "fleet/<id>/<NN>"`) are renumbered and
+listed for a caption check; one that reuses a dropped slot stops the run until it is re-pointed.
+Routes and stories reuse a gallery picture by path; they never keep their own copy of it (the pHash
+gate flags such copies once all masters are pulled). First used 2026-11-06 on 39 slots in 34 galleries, after a
 contact-sheet review of every candidate the vision data tags `other` or describes as a
 logo/patch/chart/poster.
 

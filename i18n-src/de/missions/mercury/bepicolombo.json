@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "4100 kg schwerer Startverbund: MTM (Mercury Transfer Module, ESA — 4 Ionentriebwerke, Solarmodule) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 Instrumente) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 Instrumente) + Sonnenschutz MOSIF. Die beiden wissenschaftlichen Orbiter trennen sich nach der Ankunft am Merkur.",
+  "payload": "4100 kg schwerer Startverbund: MTM (Mercury Transfer Module, ESA — 4 Ionentriebwerke, Solarmodule) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 Instrumente) + MIO (Mercury Magnetospheric Orbiter, JAXA, 255 kg, 5 Instrumente) + Sonnenschutz MOSIF. Die beiden wissenschaftlichen Orbiter trennen sich nach der Ankunft am Merkur.",
   "delta_v": "~7,2 km/s (Ionen-Cruise + 9 Swing-bys + MOI)",
   "type": "ORBITER · AKTIV",
   "first": "Erste gemeinsame Planetenmission von Europa und Japan; zweites Raumschiff, das jemals den Merkur umkreist (nach Messenger)",
@@ -20,13 +20,13 @@
       "type": "nominal"
     },
     {
-      "met": 727,
+      "met": 726,
       "label": "VENUS-VORBEIFLUG #1",
       "note": "Erste Venus-Gravitationsunterstützung.",
       "type": "nominal"
     },
     {
-      "met": 1026,
+      "met": 1025,
       "label": "VENUS-VORBEIFLUG #2",
       "note": "Zweite Venus-Gravitationsunterstützung startet die Merkur-Annäherungsphase.",
       "type": "nominal"

@@ -35,10 +35,10 @@ interface BeatCase {
 }
 
 const BEATS: BeatCase[] = [
-  { planet: 'mercury', mission: 'messenger', metDays: 2419 },
+  { planet: 'mercury', mission: 'messenger', metDays: 2418.03 },
   { planet: 'venus', mission: 'cassini', metDays: 193 },
-  { planet: 'earth', mission: 'hayabusa2', metDays: 366, earthHold: true },
-  { planet: 'mars', mission: 'mariner4', metDays: 228 },
+  { planet: 'earth', mission: 'hayabusa2', metDays: 365, earthHold: true },
+  { planet: 'mars', mission: 'mariner4', metDays: 229 },
   { planet: 'jupiter', mission: 'pioneer-10', metDays: 641 },
   { planet: 'saturn', mission: 'cassini', metDays: 2451 },
   { planet: 'uranus', mission: 'voyager-2', metDays: 3079 },

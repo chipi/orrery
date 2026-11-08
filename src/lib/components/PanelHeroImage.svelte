@@ -12,6 +12,7 @@
   import * as m from '$lib/paraglide/messages';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import { heroPositionFor } from '$lib/image-hero';
 
   interface Props {
     src: string;
@@ -23,6 +24,7 @@
     heroClass?: string;
   }
   let { src, name, onOpen, ariaLabel, heroClass = '' }: Props = $props();
+  const position = $derived(heroPositionFor(src));
 </script>
 
 <div class="panel-hero {heroClass}" class:plain={!onOpen}>
@@ -33,7 +35,13 @@
       onclick={onOpen}
       aria-label={ariaLabel ?? m.panel_hero_aria({ name })}
     >
-      <img {...responsive(src, IMAGE_SIZES.panel)} alt="" fetchpriority="high" decoding="async" />
+      <img
+        {...responsive(src, IMAGE_SIZES.panel)}
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+        style:object-position={position}
+      />
     </button>
   {:else}
     <img {...responsive(src, IMAGE_SIZES.panel)} alt="" fetchpriority="high" decoding="async" />

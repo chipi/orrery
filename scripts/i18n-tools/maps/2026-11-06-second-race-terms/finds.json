@@ -1,0 +1,20 @@
+[
+  {
+    "loc": "ja",
+    "term": "launch window",
+    "find": "打ち上げ期間の前日",
+    "replace": "打ち上げウィンドウの前日"
+  },
+  {
+    "loc": "ko",
+    "term": "launch window",
+    "find": "발사 기간 전날",
+    "replace": "발사 창이 열리기 전날"
+  },
+  {
+    "loc": "hi",
+    "term": "launch window",
+    "find": "प्रक्षेपण अवधि से एक दिन पहले",
+    "replace": "प्रक्षेपण विंडो से एक दिन पहले"
+  }
+]

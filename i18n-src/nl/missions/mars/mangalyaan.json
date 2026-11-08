@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 1,
       "label": "PERIGEUM-ONTSTEKING 1",
       "note": "Eerste van zes baanverhogingsontstekingen rond Aarde voorafgaand aan trans-Mars-injectie.",
       "type": "nominal"
@@ -34,7 +34,7 @@
     {
       "met": 3300,
       "label": "MISSIËINDE",
-      "note": "Contactverlies in 2022-04 nadat de drijfstof van het ruimtevaartuig was uitgeput.",
+      "note": "Contactverlies in 2022-04 nadat de drijfstof op was en de batterij tijdens lange verduisteringen onder haar veilige grens was ontladen (ISRO).",
       "type": "warning"
     }
   ],

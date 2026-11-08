@@ -1,18 +1,7 @@
 {
   "hotspot_annotations": [],
-  "panorama_caption": "Vallée de Taurus-Littrow, station 5. Schmitt + Cernan ont travaillé ici sur Camelot Crater et le South Massif. Le dernier panorama de sortie lunaire du programme Apollo.",
-  "compass_zero_direction": "avant du LRV (selon l'orientation du panorama de l'ALSJ)",
+  "panorama_caption": "Le site ALSEP dans la vallée Taurus-Littrow, EVA-1 (12 décembre 1972) : l'ensemble d'expériences, le Lunar Roving Vehicle et les massifs de la vallée, le panorama couleur de Jack Schmitt. Le dernier alunissage d'Apollo.",
   "panorama_annotations": [
-    {
-      "id": "south-massif",
-      "label": "South Massif",
-      "body": "Haut relief soulevé de 2,3 km, échantillonné à la station 2 (le site de la découverte du sol orange)."
-    },
-    {
-      "id": "camelot-crater",
-      "label": "Bord de Camelot Crater",
-      "body": "Grand cratère d'impact plus ancien près du module lunaire ; le champ de blocs de la station 5 se trouve sur son bord."
-    },
     {
       "id": "lrv",
       "label": "Rover lunaire (LRV)",

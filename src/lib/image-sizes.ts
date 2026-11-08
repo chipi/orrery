@@ -24,8 +24,8 @@ export const IMAGE_SIZES = {
   banner: '(max-width: 520px) 100vw, 480px',
   /** /colophon thumbnail grid (150px-min columns). */
   colophonThumb: 'auto, (max-width: 560px) 50vw, 260px',
-  /** /colophon wide thumbnail grid (230px-min columns). */
-  colophonWide: 'auto, (max-width: 560px) 100vw, 360px',
+  /** /colophon wide thumbnail grid (230px-min columns; two columns on phones). */
+  colophonWide: 'auto, (max-width: 560px) 50vw, 360px',
   /** /credits row thumbnail: 64px, 96px from 768px. */
   creditThumb: 'auto, (min-width: 768px) 96px, 64px',
 } as const;

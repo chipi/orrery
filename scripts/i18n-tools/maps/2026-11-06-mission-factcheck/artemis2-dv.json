@@ -1,0 +1,44 @@
+[
+  {
+    "m": "moon/artemis2",
+    "text": {
+      "ar": [["~6.5 كم/ث (رحلة ذهاب وإياب)", "~3.1 كم/ث من مدار الأرض (مسار عودة حرة)"]],
+      "de": [["~6,5 km/s (Hin- und Rückflug)", "~3,1 km/s aus der Erdumlaufbahn (freie Rückkehr)"]],
+      "en-US": [["~6.5 km/s (round trip)", "~3.1 km/s from Earth orbit (free return)"]],
+      "es": [["~6,5 km/s (ida y vuelta)", "~3,1 km/s desde la órbita terrestre (retorno libre)"]],
+      "fr": [["~6,5 km/s (aller-retour)", "~3,1 km/s depuis l'orbite terrestre (retour libre)"]],
+      "hi": [["~6.5 km/s (आना-जाना)", "~3.1 km/s पृथ्वी की कक्षा से (मुक्त वापसी)"]],
+      "it": [["~6,5 km/s (andata e ritorno)", "~3,1 km/s dall'orbita terrestre (ritorno libero)"]],
+      "ja": [["~6.5 km/s（往復）", "~3.1 km/s（地球周回軌道から、自由帰還軌道）"]],
+      "ko": [["~6.5 km/s (왕복)", "~3.1 km/s (지구 궤도에서, 자유 귀환 궤도)"]],
+      "nl": [
+        ["~6,5 km/s (heen en terug)", "~3,1 km/s vanuit een baan om de aarde (vrije terugkeer)"]
+      ],
+      "pt-BR": [
+        ["~6,5 km/s (ida e volta)", "~3,1 km/s a partir da órbita terrestre (retorno livre)"]
+      ],
+      "ru": [
+        [
+          "~6,5 км/с (полёт туда и обратно)",
+          "~3,1 км/с с околоземной орбиты (свободное возвращение)"
+        ]
+      ],
+      "sr-Cyrl": [["~6,5 km/s (повратни лет)", "~3,1 km/s из Земљине орбите (слободан повратак)"]],
+      "zh-CN": [["~6.5 km/s（往返）", "~3.1 km/s（自地球轨道起，自由返回轨道）"]]
+    }
+  },
+  {
+    "m": "moon/artemis2",
+    "base": [
+      [
+        "\"delta_v\": \"~6.5 km/s (round trip)\"",
+        "\"delta_v\": \"~3.1 km/s from Earth orbit (free return)\""
+      ],
+      ["\"total_dv_km_s\": 6.5,", "\"total_dv_km_s\": 3.1,"],
+      [
+        "free-return saves the LOI + TEI burns vs Apollo",
+        "total derived from the 350 km parking orbit to C3 -1.7 km2/s2 (cislunar_profile): sqrt(C3 + 2mu/r) - sqrt(mu/r) = 3.1 km/s, split between the ICPS raises and Orion's TLI; free return needs no LOI or TEI burn (Apollo did)"
+      ]
+    ]
+  }
+]

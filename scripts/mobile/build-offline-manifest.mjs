@@ -36,6 +36,10 @@ const OVERRIDE_BUCKET = {
   'moon-sites': 'moon-sites',
   'small-bodies': 'small-bodies',
   satellites: 'satellites',
+  'earth-objects': 'earth-objects',
+  belts: 'belts',
+  'iss-modules': 'iss-modules',
+  'tiangong-modules': 'tiangong-modules',
 };
 // bucket → { item → heroStem } (e.g. "05.jpg" → "05"). Default hero stem is "01".
 const heroOverride = {};

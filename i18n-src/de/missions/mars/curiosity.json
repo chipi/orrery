@@ -1,7 +1,7 @@
 {
   "name": "Curiosity",
   "vehicle": "Atlas V 541",
-  "payload": "3839 kg Startmasse (899 kg Rover auf der Oberfläche)",
+  "payload": "3893 kg Startmasse (899 kg Rover auf der Oberfläche)",
   "delta_v": "~6,1 km/s",
   "type": "ROVER · AKTIV",
   "first": "Erster kernkraftbetriebener Mars-Rover; erste Sky-Crane-Landung",
@@ -17,19 +17,19 @@
     {
       "met": 0.005,
       "label": "TMI-ZÜNDUNG",
-      "note": "Trans-Mars-Injektion (3,61 km/s ∆v) schickt MSL auf eine heliozentrische Mars-Bahn.",
+      "note": "Trans-Mars-Injektion schickt MSL auf eine heliozentrische Mars-Bahn.",
       "type": "nominal"
     },
     {
-      "met": 12,
+      "met": 46,
       "label": "TCM-1",
       "note": "Erste Mittkurskorrektur.",
       "type": "nominal"
     },
     {
-      "met": 110,
+      "met": 213,
       "label": "TCM-3",
-      "note": "Letzte Vorkorrektur vor EDL; Flugbahn zielt auf Landungsellipse des Gale-Kraters.",
+      "note": "Dritte Bahnkorrektur; verfeinert das Ziel im Gale-Krater.",
       "type": "nominal"
     },
     {
@@ -54,13 +54,13 @@
   "vehicle_stage": "Centaur-Oberstufe (Atlas V 541)",
   "flight_events": [
     {
-      "met": 76,
+      "met": 121,
       "label": "TCM-2",
       "description": "Feinkorrekturzündung zur Flugmitte. Zu diesem Zeitpunkt hat Curiosity den Schwerkrafttrichter der Erde verlassen und folgt einer stabilen heliozentrischen Bahn."
     },
     {
-      "met": 211,
-      "label": "TCM-4 — letzte Zündung vor dem EDL",
+      "met": 246,
+      "label": "TCM-4 — vierte Korrektur (vor der Landung blieben noch zwei Möglichkeiten)",
       "description": "Letzte größere Bahnkorrektur vor dem Eintritt in die Marsatmosphäre. Das EDL verlangt eine Zielgenauigkeit unter 1 km an der Atmosphärengrenze; TCM-4 liefert sie."
     }
   ]

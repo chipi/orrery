@@ -528,6 +528,8 @@ export function buildPanoramaProvenanceEntry(input: {
    *  the provenance manifest stays accurate. */
   outWidth?: number;
   outHeight?: number;
+  /** Brightness multiplier applied to the source (see MarsPanoramaConfig.gain). */
+  gain?: number;
 }): ProvenanceEntry {
   const id = createHash('sha256').update(input.publicPath).digest('hex').slice(0, 16);
   const licenseUrl =
@@ -574,6 +576,7 @@ export function buildPanoramaProvenanceEntry(input: {
     license_rationale: licenseRationale,
     modifications: [
       `padded-to-${input.outWidth ?? 4096}x${input.outHeight ?? 2048}-equirectangular`,
+      ...(input.gain && input.gain !== 1 ? [`brightened-x${input.gain}`] : []),
       'reencoded-jpeg-q88',
     ],
     revid: null,

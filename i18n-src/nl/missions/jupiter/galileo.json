@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Galileo-sonde en atmosferische intredesonde; ~2,5 t droge massa",
+  "payload": "Galileo-sonde en atmosferische intredesonde; 2560 kg bij de lancering; droge massa van de orbiter 1880 kg",
   "delta_v": "~14 km/s (bij benadering)",
   "type": "ORBITER · GEVLOGEN",
   "first": "Eerste ruimtevaartuig dat Jupiter omcirkelde; atmosferische sonde in Jupiters wolken",
@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 2243,
+      "met": 2242,
       "label": "JUPITER-BAANINSERTIE",
       "note": "Hoofdmotorontsteking brengt Galileo in een baan; een 8 jaar durende wetenschappelijke maantour begint.",
       "type": "nominal"

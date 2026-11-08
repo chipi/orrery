@@ -44,7 +44,7 @@
     "shell": 20
   },
   "lazy": {
-    "$comment": "KB brotli, what dynamic imports load beyond the shell and the route's static closure (JS + CSS). Set 2026-11-02, same rule.",
+    "$comment": "KB brotli, what dynamic imports load beyond the shell and the route's static closure (JS + CSS). Set 2026-11-02, same rule. /missions and /fleet raised 2026-11-08: the collectible card (resolvers, CollectibleCard, CardOverlay, card messages) moved from their first load to on demand (lazy-card.ts), /missions JS 133 → 112, /fleet 104 → 89 with prod debug ids.",
     "defaultRoute": 10,
     "routes": {
       "/explore": 75,
@@ -55,7 +55,8 @@
       "/iss": 45,
       "/tiangong": 50,
       "/fly": 40,
-      "/fleet": 20
+      "/fleet": 45,
+      "/missions": 35
     }
   }
 }

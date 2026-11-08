@@ -28,7 +28,8 @@
         "constellations": "constelaciones are star patterns; constelaciones de satélites are satellite fleets (Starlink etc.)",
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nivel, m.), quality_tier_* qualify the graphics quality (calidad, f.) — bajo / baja / alto / alta",
         "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nivel, m.), quality_tier_* qualify the graphics quality (calidad, f.) — bajo / baja / alto / alta",
-        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body",
+        "failed": "agreement with the noun (fallida for missions, like realizada/cancelada); FALLIDO for a vehicle"
       }
     },
     "fr": {
@@ -55,7 +56,8 @@
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (niveau, m.), quality_tier_* qualify the graphics quality (qualité, f.; élevée is the usual word for quality) — bas / basse / haut / élevée",
         "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (niveau, m.), quality_tier_* qualify the graphics quality (qualité, f.; élevée is the usual word for quality) — bas / basse / haut / élevée",
         "crewed": "agreement with the noun: lib_filter_crew_crewed qualifies a mission (habitée, f.); fleet_cat_crewed a vehicle (habité, m.)",
-        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body",
+        "failed": "agreement with the noun (échouées for missions, like réalisées/annulées); ÉCHEC as the state of a vehicle"
       }
     },
     "de": {
@@ -102,7 +104,8 @@
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nível, m.), quality_tier_* qualify the graphics quality (qualidade, f.) — baixo / baixa / alto / alta",
         "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nível, m.), quality_tier_* qualify the graphics quality (qualidade, f.) — baixo / baixa / alto / alta",
         "height": "different senses: lab_axis_height is the altitude axis of a trajectory chart; fleet_spec_height is how tall a vehicle is",
-        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body",
+        "failed": "agreement with the noun (fracassada for missions, like realizada/cancelada); FALHOU for a vehicle"
       }
     },
     "it": {
@@ -129,7 +132,8 @@
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (livello, m.), quality_tier_* qualify the graphics quality (qualità, f.) — basso / bassa / alto / alta",
         "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (livello, m.), quality_tier_* qualify the graphics quality (qualità, f.) — basso / bassa / alto / alta",
         "outcome": "different senses: launches_filter_outcome filters launches by result (success / failure); program_section_outcome heads what a program achieved",
-        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body",
+        "failed": "agreement with the noun (fallite for missions, like completate/annullate); FALLITO for a vehicle"
       }
     },
     "nl": {
@@ -173,7 +177,8 @@
         "detail": "a detail tab (детаљи) vs the detailed map layer (детаљ)",
         "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Картица за дељење; card_share_card is the collector card's share action — Подели картицу",
         "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
-        "program": "grammatical case: programs_index_intro_program is a word inside the /programs intro sentence (inflected there); program_link_kind_program is the standalone tag on a see-also link"
+        "program": "grammatical case: programs_index_intro_program is a word inside the /programs intro sentence (inflected there); program_link_kind_program is the standalone tag on a see-also link",
+        "failed": "Serbian agreement: the adjective agrees with the noun it qualifies (неуспело for the missions filter, like изведено/отказано); НЕУСПЕХ as the state of a vehicle"
       }
     },
     "zh-CN": {
@@ -298,7 +303,8 @@
         "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (المستوى, m.), quality_tier_* qualify the graphics quality (الجودة, f.; عالية is the usual word for quality) — منخفض / منخفضة / مرتفع / عالية",
         "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (المستوى, m.), quality_tier_* qualify the graphics quality (الجودة, f.; عالية is the usual word for quality) — منخفض / منخفضة / مرتفع / عالية",
-        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body",
+        "failed": "agreement with the noun (فاشلة for missions, like نشطة/ملغاة); فشل as the state of a vehicle"
       },
       "notes": {
         "explore_ctx_solar_system": "open 2026-10-30: the site splits between two forms of \"Solar System\" in prose (i18n-src المجموعة الشمسية 124 / النظام الشمسي 71; messages 1 / 24); the label keeps the UI's form until a prose-wide one-name decision; glossary has المجموعة الشمسية (ar Wikipedia)"
@@ -338,7 +344,8 @@
         "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (детализация, f.), quality_tier_* qualify the graphics quality (качество, n.) — низкая / низкое / высокая / высокое",
         "program": "grammatical case: programs_index_intro_program is a word inside the /programs intro sentence (inflected there); program_link_kind_program is the standalone tag on a see-also link",
         "outcome": "different senses: launches_filter_outcome filters launches by result (success / failure); program_section_outcome heads what a program achieved",
-        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body",
+        "failed": "plural adjective for the missions filter (неудачные, like выполненные/отменённые); НЕУДАЧА as the state of a vehicle"
       },
       "notes": {
         "plan_destination_psyche": "left \"Psyche\": problems() refuses the native Психея because it reads Psyche as the spacecraft; ja/ko/zh-CN have the native asteroid name"

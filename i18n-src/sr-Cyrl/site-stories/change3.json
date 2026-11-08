@@ -7,12 +7,8 @@
       "subtitle": "Први кинески лунарни лендер + ровер Yutu",
       "images": [
         {
-          "src": "/images/fleet-galleries/change-3/01.webp",
-          "caption": "Лендер Chang'e 3 на изложби — јединица за грејање типа RTG, четири ноге, рампе за спуштање ровера Yutu."
-        },
-        {
           "src": "/images/fleet-galleries/change-3/02.webp",
-          "caption": "Ровер Yutu — 140 kg, 6 точкова, радар за продирање у тло постављен испод шасије."
+          "caption": "Макета ровера Yutu у природној величини — 140 kg, шест точкова, са георадаром испод шасије."
         }
       ]
     },
@@ -22,8 +18,8 @@
       "subtitle": "1. децембар 2013. — Long March 3B са Сичанга",
       "images": [
         {
-          "src": "/images/fleet-galleries/change-3/03.webp",
-          "caption": "Long March 3B полеће са Chang'e 3 — 5 дана лета до Месеца, меко слетање 14. децембра."
+          "src": "/images/fleet-galleries/long-march-3b/04.webp",
+          "caption": "Long March 3B полеће ноћу — ракета која је лансирала Chang'e 3 из Сичанга 1. децембра 2013."
         }
       ]
     },
@@ -33,12 +29,12 @@
       "subtitle": "Море кише — слетање 14. децембра 2013.",
       "images": [
         {
-          "src": "/images/fleet-galleries/change-3/04.webp",
-          "caption": "Лендер Chang'e 3 и ровер Yutu фотографишу један другог на површини Месеца — први такав узајамни портрет кинеске опреме на Месецу."
+          "src": "/images/fleet-galleries/change-3/01.webp",
+          "caption": "Лендер Chang'e 3 на Мору киша, снимак ровера Yutu, са траговима точкова ровера у првом плану."
         },
         {
-          "src": "/images/fleet-galleries/change-3/05.webp",
-          "caption": "Радарски профил подповршине Мора кише који је снимио Yutu радаром за продирање у тло — вишеслојни базалтни токови до дубине од ~330 m."
+          "src": "/images/fleet-galleries/change-3/03.webp",
+          "caption": "Камена громада на Мору киша изблиза, снимак ровера Yutu, са уметнутим орбиталним снимком њеног положаја."
         }
       ]
     }

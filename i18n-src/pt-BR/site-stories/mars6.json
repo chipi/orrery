@@ -1,0 +1,27 @@
+{
+  "intro": "A Mars 6 chegou em 12 de março de 1974. Seu módulo transmitiu durante toda a descida pela atmosfera — as primeiras medições feitas dentro do ar marciano —, mas uma falha na eletrônica deixou boa parte dos dados ilegível, e o contato se perdeu instantes antes do pouso em Margaritifer Terra.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Uma das quatro sondas soviéticas a Marte de 1973",
+      "images": [
+        {
+          "src": "/images/missions/mars6/01.webp",
+          "caption": "Uma maquete de uma sonda soviética a Marte desta família em exposição, com a grande antena parabólica no topo."
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "title": "Descida",
+      "subtitle": "12 de março de 1974 — dados durante toda a descida",
+      "images": [
+        {
+          "src": "/images/missions/mars6/02.webp",
+          "caption": "O selo soviético de 1972 pelos quinze anos da era espacial: um módulo de pouso na superfície de Marte."
+        }
+      ]
+    }
+  ]
+}

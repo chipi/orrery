@@ -1,7 +1,7 @@
 {
   "name": "Cassini-Huygens",
   "vehicle": "Titan IVB / Centaur",
-  "payload": "Orbitador de Saturno (~5712 kg en seco) + sonda de descenso Huygens (~318 kg, construida por la ESA, aterrizó en Titán el 2005-01-14)",
+  "payload": "Orbitador de Saturno (~2523 kg en seco) + sonda de descenso Huygens (~318 kg, construida por la ESA, aterrizó en Titán el 2005-01-14)",
   "delta_v": "~2 km/s (inserción en órbita de Saturno)",
   "type": "Orbitador + Aterrizador · REALIZADA",
   "first": "13 años en órbita de Saturno — Huygens aterrizó en Titán el 2005-01-14 (primer aterrizaje suave en el sistema solar exterior)",

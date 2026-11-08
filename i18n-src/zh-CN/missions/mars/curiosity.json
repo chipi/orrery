@@ -1,7 +1,7 @@
 {
   "name": "Curiosity",
   "vehicle": "Atlas V 541",
-  "payload": "发射质量 3839 kg（地表巡视器 899 kg）",
+  "payload": "发射质量 3893 kg（地表巡视器 899 kg）",
   "delta_v": "~6.1 km/s",
   "type": "火星车 · 运行中",
   "first": "首辆核动力火星车；首次采用天空起重机着陆",
@@ -17,19 +17,19 @@
     {
       "met": 0.005,
       "label": "火星转移注入点火",
-      "note": "火星科学实验室进行火星转移注入（∆v 3.61 km/s），进入日心轨道飞向火星。",
+      "note": "火星科学实验室进行火星转移注入，进入日心轨道飞向火星。",
       "type": "nominal"
     },
     {
-      "met": 12,
+      "met": 46,
       "label": "TCM-1",
       "note": "第一次中途轨迹修正。",
       "type": "nominal"
     },
     {
-      "met": 110,
+      "met": 213,
       "label": "TCM-3",
-      "note": "着陆前最后的轨道修正；轨迹瞄准盖尔撞击坑着陆椭圆区。",
+      "note": "第三次轨道修正；精化盖尔撞击坑着陆目标。",
       "type": "nominal"
     },
     {
@@ -54,13 +54,13 @@
   "vehicle_stage": "Centaur 上面级（Atlas V 541）",
   "flight_events": [
     {
-      "met": 76,
+      "met": 121,
       "label": "TCM-2",
       "description": "巡航中途的精修点火。此时 Curiosity 已脱离地球的引力阱，处于稳定的日心轨道上。"
     },
     {
-      "met": 211,
-      "label": "TCM-4——EDL 前最后一次点火",
+      "met": 246,
+      "label": "TCM-4——第四次修正（着陆前还有两次修正机会）",
       "description": "进入火星大气前最后一次较大的轨道微调。EDL 要求在大气界面处的瞄准精度优于1 km；TCM-4 保证了这一点。"
     }
   ]

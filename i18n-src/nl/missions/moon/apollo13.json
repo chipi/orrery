@@ -33,19 +33,19 @@
       "type": "warning"
     },
     {
-      "met": 2.92,
+      "met": 2.56,
       "label": "VRIJE-TERUGKEERONTSTEKING",
-      "note": "31-seconde LM afdalingsmotorontsteking keert het ruimtevaartuig terug naar een vrije-terugkeer-baan.",
+      "note": "34-seconde LM afdalingsmotorontsteking keert het ruimtevaartuig terug naar een vrije-terugkeer-baan.",
       "type": "info"
     },
     {
-      "met": 3.13,
+      "met": 3.21,
       "label": "MAANVOORBIJVLUCHT",
-      "note": "Dichtstbijzijnde benadering 254 km hoogte boven Mare Cognitum — op 400.171 km de verste afstand die mensen van de Aarde hadden bereikt (record van 1970–2026, overtroffen door Artemis II in april 2026).",
+      "note": "Dichtstbijzijnde benadering 254 km hoogte boven de achterkant van de maan — op 400.171 km de verste afstand die mensen van de Aarde hadden bereikt (record van 1970–2026, overtroffen door Artemis II in april 2026).",
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.31,
       "label": "PC+2-ONTSTEKING",
       "note": "Pericynthion-plus-2-uur-ontsteking verkort de terugkeer-naar-Aarde-tijd met tien uur.",
       "type": "nominal"

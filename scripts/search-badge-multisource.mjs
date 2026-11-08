@@ -5,11 +5,13 @@
 //   2. Wikimedia Commons category members of the entity's article — the
 //      emblem file is usually filed there under a "... logo/insignia" name.
 // Emits candidates (title-filtered to real emblems + free licence) to
-// /tmp/gap-multisource.json for human hand-pick.
+// gap-multisource.json in a fresh temp dir (path printed) for human hand-pick.
 //
 //   node scripts/search-badge-multisource.mjs /tmp/gaps-remaining.json
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const UA = 'orrery-badge-fetch/1.0 (https://github.com/chipi/orrery; educational)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -107,6 +109,7 @@ async function commonsCategory(article) {
         descriptionurl: ii.descriptionurl,
         author: (ii.extmetadata?.Artist?.value || '')
           .replace(/<[^>]+>/g, '')
+          .replace(/[<>]/g, '')
           .trim()
           .slice(0, 50),
       });
@@ -147,8 +150,9 @@ async function main() {
     if (done % 25 === 0) console.error(`  …${done}/${gaps.length} (${results.length} with hits)`);
     await sleep(250);
   }
-  writeFileSync('/tmp/gap-multisource.json', JSON.stringify(results, null, 2));
-  console.error(`\n${results.length}/${gaps.length} entities got a candidate.`);
+  const outPath = join(mkdtempSync(join(tmpdir(), 'badge-multisource-')), 'gap-multisource.json');
+  writeFileSync(outPath, JSON.stringify(results, null, 2));
+  console.error(`\n${results.length}/${gaps.length} entities got a candidate -> ${outPath}`);
 }
 
 main().catch((e) => {

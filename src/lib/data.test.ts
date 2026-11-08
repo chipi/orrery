@@ -302,11 +302,11 @@ describe('getMission', () => {
 
   it('translates structural flight events from the overlay flight_events', async () => {
     const fr = await getMission('dawn', 'ceres', 'fr');
-    const frMars = fr?.flight?.events?.find((e) => e.met_days === 508);
+    const frMars = fr?.flight?.events?.find((e) => e.met_days === 510);
     expect(frMars?.label).toBe('Mars — assistance gravitationnelle');
-    expect(frMars?.description).toMatch(/^Approche minimale de 549 km/);
+    expect(frMars?.description).toMatch(/^Approche minimale de 542 km/);
     const en = await getMission('dawn', 'ceres');
-    expect(en?.flight?.events?.find((e) => e.met_days === 508)?.label).toBe(
+    expect(en?.flight?.events?.find((e) => e.met_days === 510)?.label).toBe(
       'Mars — gravity assist',
     );
   });
@@ -315,7 +315,7 @@ describe('getMission', () => {
     // /fly finds flyby bodies, DART's impact and the Moon phases from event labels; in a
     // translated locale those failed ("Mars — assistance gravitationnelle" is fine, "火星" not).
     const fr = await getMission('dawn', 'ceres', 'fr');
-    const frMars = fr?.flight?.events?.find((e) => e.met_days === 508);
+    const frMars = fr?.flight?.events?.find((e) => e.met_days === 510);
     expect(frMars?.label_en).toBe('Mars — gravity assist');
   });
 
@@ -356,14 +356,14 @@ describe('reference data', () => {
     expect(lunar).toHaveLength(8); // LRO + the 7 backfilled v0.4 orbiters
   });
 
-  it('moonSites() returns 27 sites (19 surface + 8 orbiters)', async () => {
+  it('moonSites() returns 28 sites (20 surface + 8 orbiters)', async () => {
     // v0.7 added luna16, luna21, beresheet (V3a + V3c hotspot coverage
-    // per PRD-014 / RFC-017 §S7). Bumps surface count 16 → 19.
+    // per PRD-014 / RFC-017 §S7). Bumps surface count 16 → 19; Chang'e 7 → 20.
     const data = await moonSites();
-    expect(data).toHaveLength(27);
+    expect(data).toHaveLength(28);
     const surface = data.filter((s) => !s.kind || s.kind === 'surface');
     const orbiters = data.filter((s) => s.kind === 'orbiter');
-    expect(surface).toHaveLength(19);
+    expect(surface).toHaveLength(20);
     expect(orbiters).toHaveLength(8);
   });
 });
@@ -497,6 +497,13 @@ describe('getMissionsForLibrary', () => {
     const all = await filterMissions();
     expect(lib).toHaveLength(all.length);
   });
+
+  it("carries the index-only outcome, so /missions' FAILED filter finds the failures", async () => {
+    const lib = await getMissionsForLibrary();
+    const failed = lib.filter((m) => m.outcome === 'failure').map((m) => m.id);
+    expect(failed.sort()).toEqual(['apollo-1', 'apollo13', 'beresheet', 'schiaparelli', 'soyuz-1']);
+    expect(lib.find((m) => m.id === 'curiosity')!.outcome).toBeUndefined();
+  });
 });
 
 describe('getEarthObjects', () => {
@@ -528,11 +535,11 @@ describe('getEarthObjects', () => {
 });
 
 describe('getMoonSites', () => {
-  it('returns 27 sites merged with their en-US overlay', async () => {
+  it('returns 28 sites merged with their en-US overlay', async () => {
     // v0.7 adds luna16 / luna21 / beresheet base entries for hotspot
-    // coverage; bumps count 24 → 27.
+    // coverage; bumps count 24 → 27; Chang'e 7 → 28.
     const list = await getMoonSites();
-    expect(list).toHaveLength(27);
+    expect(list).toHaveLength(28);
     const apollo11 = list.find((s) => s.id === 'apollo11');
     expect(apollo11).toBeDefined();
     expect(apollo11!.year).toBe(1969);
@@ -567,7 +574,7 @@ describe('getMoonSites', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getMoonSites('xx-TEST');
-    expect(list).toHaveLength(27);
+    expect(list).toHaveLength(28);
   });
 });
 

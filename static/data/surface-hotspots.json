@@ -98,6 +98,9 @@
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+      "panorama_metadata": {
+        "entry_yaw_deg": 100
+      },
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo12/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
       "hotspot_tier2_ground_m": 10240,
@@ -120,7 +123,7 @@
       "hotspot_tier2_regional_ground_m": 15360,
       "hotspot_tier2_ground_m": 10240,
       "panorama_metadata": {
-        "entry_yaw_deg": 179
+        "entry_yaw_deg": 155
       },
       "hotspot_context_source": "/images/hotspots/moon/apollo14/context.webp",
       "hotspot_context_bounds": {
@@ -137,6 +140,9 @@
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+      "panorama_metadata": {
+        "entry_yaw_deg": 180
+      },
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo15/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
       "hotspot_tier2_ground_m": 10240,
@@ -180,30 +186,15 @@
       "panorama_metadata": {
         "date": "1972-12-12",
         "instrument": "Hasselblad 70mm",
-        "caption": "Taurus-Littrow valley, Station 5. Schmitt + Cernan worked Camelot Crater and the South Massif here. Final lunar EVA panorama in the Apollo programme.",
+        "caption": "The ALSEP site in the Taurus-Littrow valley, EVA-1 (12 December 1972): the experiment package, the Lunar Roving Vehicle and the valley's massifs, Jack Schmitt's colour pan. The last Apollo landing.",
         "credit_team": "NASA · Apollo 17 / ALSJ",
-        "real_extent_pct_vertical": 40,
-        "compass_zero_direction": "LRV forward (per ALSJ panorama orientation)"
+        "entry_yaw_deg": 131
       },
       "panorama_annotations": [
         {
-          "id": "south-massif",
-          "yaw_deg": -75,
-          "pitch_deg": 3,
-          "label": "South Massif",
-          "body": "2.3 km uplifted highland, sampled at Station 2 (the orange-soil discovery site)."
-        },
-        {
-          "id": "camelot-crater",
-          "yaw_deg": 55,
-          "pitch_deg": -2,
-          "label": "Camelot Crater rim",
-          "body": "Large pre-existing impact crater near the Lunar Module; Station 5 boulder field is on the rim."
-        },
-        {
           "id": "lrv",
-          "yaw_deg": 10,
-          "pitch_deg": -12,
+          "yaw_deg": 131,
+          "pitch_deg": -3,
           "label": "Lunar Roving Vehicle",
           "body": "The third LRV used on the Moon. Total traverse this mission: 35.7 km — still the record."
         }
@@ -284,14 +275,14 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/spirit/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/spirit/tier3-pan.jpg",
       "panorama_metadata": {
-        "sol": 590,
-        "date": "2005-08-23",
+        "sol": 932,
+        "date": "2006-08-17",
         "instrument": "Pancam",
-        "caption": "Spirit's view from the summit of Husband Hill — first Martian summit reached by a rover. Looking south across the Inner Basin of Gusev Crater toward the Columbia Hills.",
+        "caption": "Spirit's McMurdo panorama, taken from Low Ridge beside Home Plate while the rover sat out the 2006 Martian winter (sols 814–932). Husband Hill on the horizon, the rippled El Dorado dunes at its foot.",
         "credit_team": "NASA/JPL-Caltech/Cornell",
         "nasa_id": "PIA01906"
       },
-      "traverse_stop_link": "sol-590",
+      "traverse_stop_link": "sol-744",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_ground_m": 15360,
       "hotspot_context_source": "/images/hotspots/mars/spirit/context.webp",
@@ -312,16 +303,17 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/opportunity/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
       "panorama_metadata": {
-        "sol": 56,
-        "date": "2004-03-21",
+        "sol": 58,
+        "date": "2004-03-23",
         "instrument": "Pancam",
-        "caption": "Opportunity's view from inside Eagle Crater, the airbag-bounce landing site — the layered Burns Cliff outcrop visible across the crater wall would become the rover's first major science target.",
-        "credit_team": "NASA/JPL-Caltech/Cornell",
-        "nasa_id": "PIA05783"
+        "caption": "Opportunity's \"Lion King\" panorama from the rim of Eagle Crater, sols 58 and 60 — the lander and its airbag marks on the crater floor, the rover's tracks out of the crater, and the plains of Meridiani Planum beyond.",
+        "credit_team": "NASA/JPL/Cornell",
+        "nasa_id": "PIA05672",
+        "entry_yaw_deg": 76
       },
       "traverse_stop_link": "sol-56",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_tier2_regional_ground_m": 29700,
       "hotspot_context_source": "/images/hotspots/mars/opportunity/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -5.3308,
@@ -386,7 +378,7 @@
       ],
       "traverse_stop_link": "sol-3500",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_tier2_regional_ground_m": 18435,
       "hotspot_context_source": "/images/hotspots/mars/curiosity/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -7.9708,
@@ -451,7 +443,7 @@
       ],
       "traverse_stop_link": "sol-58",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_tier2_regional_ground_m": 17410,
       "hotspot_context_source": "/images/hotspots/mars/perseverance/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 15.0592,
@@ -492,7 +484,7 @@
     "luna9": {
       "hotspot_tier_max": 3,
       "hotspot_model": "luna-9-spherical",
-      "location_uncertainty_m": 100,
+      "location_unconfirmed": true,
       "hotspot_annotations": [],
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna9/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna9/tier2-regional.jpg",
@@ -508,22 +500,14 @@
       }
     },
     "luna16": {
-      "hotspot_tier_max": 3,
+      "hotspot_tier_max": 2,
       "hotspot_model": "luna-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/luna16/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/luna16/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna16/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25497,
       "hotspot_tier2_ground_m": 1500,
-      "panorama_metadata": {
-        "date": "2010",
-        "instrument": "LRO Narrow Angle Camera",
-        "caption": "Luna 16 sent back no panorama of its landing site. This is LRO's view of the lander from orbit, taken in 2010.",
-        "credit_team": "NASA / GSFC / Arizona State University",
-        "entry_yaw_deg": 240
-      },
       "hotspot_context_source": "/images/hotspots/moon/luna16/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -7.1093,
@@ -571,21 +555,14 @@
       }
     },
     "luna24": {
-      "hotspot_tier_max": 3,
+      "hotspot_tier_max": 2,
       "hotspot_model": "luna-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/luna24/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/luna24/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna24/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 17152,
       "hotspot_tier2_ground_m": 1500,
-      "panorama_metadata": {
-        "instrument": "LRO Narrow Angle Camera",
-        "caption": "Luna 24 sent back no panorama of its landing site. This is LRO's view of the lander from orbit.",
-        "credit_team": "NASA / GSFC / Arizona State University",
-        "entry_yaw_deg": 240
-      },
       "hotspot_context_source": "/images/hotspots/moon/luna24/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 6.1186,
@@ -818,22 +795,15 @@
       }
     },
     "beresheet": {
-      "hotspot_tier_max": 3,
+      "hotspot_tier_max": 2,
       "hotspot_model": "beresheet",
       "hotspot_tier2_source": "/images/hotspots/moon/beresheet/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "crashed": true,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/beresheet/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/beresheet/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 27392,
       "hotspot_tier2_ground_m": 1000,
-      "panorama_metadata": {
-        "date": "2019-04-11",
-        "caption": "Beresheet crashed while landing, so no view from the surface exists. This is its last image, taken about 22 km above Mare Serenitatis before contact was lost.",
-        "credit_team": "SpaceIL · Israel Aerospace Industries",
-        "entry_yaw_deg": 230
-      },
       "hotspot_context_source": "/images/hotspots/moon/beresheet/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 25.9984,
@@ -1231,20 +1201,19 @@
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/baikonur-1-5/tier3-pan.jpg",
       "panorama_metadata": {
-        "date": "2008-10-10",
-        "instrument": "Ground photo (banner crop)",
-        "caption": "Gagarin's Start (Site 1/5) before the Soyuz TMA-13 rollout — a very low-resolution banner crop.",
-        "credit_team": "NASA / Bill Ingalls",
-        "real_extent_pct_vertical": 13,
+        "date": "2018-06-04",
+        "instrument": "Ground photo",
+        "caption": "Gagarin's Start (Site 1/5), Baikonur Cosmodrome, 4 June 2018: the Soyuz for Soyuz MS-09 raised on the pad, the service gantries closing, flags and crews on the apron. NASA / Joel Kowsky.",
+        "credit_team": "NASA / Joel Kowsky",
         "synthetic_regions": [
           {
-            "pitch_min_deg": 12,
+            "pitch_min_deg": 39,
             "pitch_max_deg": 90,
             "kind": "synthetic_sky"
           },
           {
             "pitch_min_deg": -90,
-            "pitch_max_deg": -11,
+            "pitch_max_deg": -9,
             "kind": "synthetic_nadir"
           }
         ],
@@ -1545,20 +1514,19 @@
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/sriharikota-slp/tier3-pan.jpg",
       "panorama_metadata": {
-        "date": "2025-05-18",
+        "date": "2018-12-14",
         "instrument": "Ground photo panorama",
-        "caption": "Satish Dhawan Space Centre, Sriharikota — PSLV-C61 in transit from the Vehicle Integration Facility toward the launch pad.",
+        "caption": "Satish Dhawan Space Centre, Sriharikota — a GSLV (GSLV-F11 / GSAT-7A) rolling out on its mobile launch pedestal to the Second Launch Pad, December 2018, with the vehicle assembly buildings behind.",
         "credit_team": "ISRO · GODL-India",
-        "real_extent_pct_vertical": 41,
         "synthetic_regions": [
           {
-            "pitch_min_deg": 34,
+            "pitch_min_deg": 26,
             "pitch_max_deg": 90,
             "kind": "synthetic_sky"
           },
           {
             "pitch_min_deg": -90,
-            "pitch_max_deg": -40,
+            "pitch_max_deg": -25,
             "kind": "synthetic_nadir"
           }
         ],
@@ -1968,6 +1936,18 @@
         "lat_max": -0.5191,
         "lon_min": -46.1679,
         "lon_max": -42.5677
+      }
+    },
+    "artemis4": {
+      "hotspot_tier_max": 0,
+      "hotspot_annotations": [],
+      "hotspot_context_source": "/images/hotspots/moon/artemis4/context.webp",
+      "hotspot_context_bounds": {
+        "lat_min": -90,
+        "lat_max": -80.6724,
+        "lon_min": -180,
+        "lon_max": 180,
+        "polar_half_km": 200
       }
     }
   }

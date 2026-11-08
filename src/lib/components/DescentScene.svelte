@@ -100,12 +100,15 @@
   // Rocky rubble-pile small bodies (no bespoke map yet) borrow Phobos — a real
   // asteroid-like rocky surface — as an honest stand-in rather than a blank sphere.
   const ROCKY_BODIES = new Set(['itokawa', 'ryugu', 'bennu', 'eros', 'comet_67p']);
+  // Earth's map is the day map (there is no 2k_earth.jpg): every Earth re-entry 404'd.
   const bodyTexName = $derived(
     mission.body === 'venus'
       ? 'venus_atmosphere'
-      : ROCKY_BODIES.has(mission.body)
-        ? 'phobos'
-        : mission.body,
+      : mission.body === 'earth'
+        ? 'earth_daymap'
+        : ROCKY_BODIES.has(mission.body)
+          ? 'phobos'
+          : mission.body,
   );
 
   const BODY_NAME: Record<DescentBody, () => string> = {

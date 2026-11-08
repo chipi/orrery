@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 1,
       "label": "ACCENSIONE PERIGEO 1",
       "note": "La prima di sei accensioni di innalzamento dell'orbita terrestre prima dell'iniezione trans-Marte.",
       "type": "nominal"
@@ -34,7 +34,7 @@
     {
       "met": 3300,
       "label": "FINE MISSIONE",
-      "note": "Perdita di contatto 2022-04 dopo l'esaurimento del propellente del veicolo spaziale.",
+      "note": "Perdita di contatto 2022-04 dopo l'esaurimento del propellente e la scarica della batteria sotto il limite di sicurezza durante lunghe eclissi (ISRO).",
       "type": "warning"
     }
   ],

@@ -25,7 +25,7 @@ describe('ScienceLayersPanel metaFor — source-level exhaustiveness', () => {
 
   for (const key of LAYER_ORDER) {
     it(`metaFor has a "case '${key}':" branch`, () => {
-      const re = new RegExp(`case\\s+['"]${key.replace(/[-]/g, '\\-')}['"]\\s*:`);
+      const re = new RegExp(`case\\s+['"]${key.replace(/[\\-]/g, '\\$&')}['"]\\s*:`);
       expect(
         re.test(source),
         `LayerKey "${key}" has no matching case in ${PANEL_PATH}. Add it to the metaFor switch.`,

@@ -59,11 +59,15 @@ export async function getVenusSiteGallery(): Promise<string[]> {
  * count is 0 — UI hides the GALLERY tab.
  */
 export async function getIssModuleGallery(moduleId: string): Promise<string[]> {
-  return getCategoryGallery('iss-modules', 'iss-galleries.json', moduleId);
+  const gallery = await getCategoryGallery('iss-modules', 'iss-galleries.json', moduleId);
+  await loadHeroOverrides('iss-modules');
+  return applyHeroOverride('iss-modules', moduleId, gallery);
 }
 
 export async function getTiangongModuleGallery(moduleId: string): Promise<string[]> {
-  return getCategoryGallery('tiangong-modules', 'tiangong-galleries.json', moduleId);
+  const gallery = await getCategoryGallery('tiangong-modules', 'tiangong-galleries.json', moduleId);
+  await loadHeroOverrides('tiangong-modules');
+  return applyHeroOverride('tiangong-modules', moduleId, gallery);
 }
 
 /**
@@ -184,7 +188,10 @@ export async function getEarthObjectGallery(
   missionIdFallback?: string,
 ): Promise<string[]> {
   const own = await getCategoryGallery('earth-objects', 'earth-object-galleries.json', objectId);
-  if (own.length > 0) return own;
+  if (own.length > 0) {
+    await loadHeroOverrides('earth-objects');
+    return applyHeroOverride('earth-objects', objectId, own);
+  }
   // Fallback: many earth-objects (LRO, Hubble, JWST, ISS, etc.) match
   // a mission id with an existing photo gallery. Use those photos so
   // every panel gets meaningful imagery without re-vendoring.
@@ -253,7 +260,9 @@ export async function getSatelliteGallery(satelliteId: string): Promise<string[]
  *  to a flat { asteroid: N, kuiper: N } count map matching the other
  *  gallery manifests. Images live under static/images/belts/<beltId>/ */
 export async function getBeltGallery(beltId: string): Promise<string[]> {
-  return getCategoryGallery('belts', 'belt-galleries.json', beltId);
+  const gallery = await getCategoryGallery('belts', 'belt-galleries.json', beltId);
+  await loadHeroOverrides('belts');
+  return applyHeroOverride('belts', beltId, gallery);
 }
 
 /**

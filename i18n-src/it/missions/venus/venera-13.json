@@ -1,11 +1,11 @@
 {
   "name": "Venera 13",
   "vehicle": "Proton-K / D-1",
-  "payload": "~4500 kg combinati: bus di sorvolo + capsula di discesa in titanio da 1645 kg (camere, spettrometro a fluorescenza X per la composizione del suolo, sismometro, braccio di campionamento con trivella a camera ermetica). Progettata per uno degli ambienti di discesa più ostili mai tentati.",
+  "payload": "~4400 kg combinati: bus di sorvolo + capsula di discesa in titanio da 760 kg (camere, spettrometro a fluorescenza X per la composizione del suolo, sismometro, braccio di campionamento con trivella a camera ermetica). Progettata per uno degli ambienti di discesa più ostili mai tentati.",
   "delta_v": "~1,5 km/s (arrivo su Venere)",
   "type": "LANDER · COMPLETATA",
   "first": "Più lunga sopravvivenza in superficie di qualsiasi missione su Venere (127 min); prime panoramiche a colori e primo audio dalla superficie di un altro pianeta",
-  "description": "L'apice del programma sovietico Venera. Venera 13 fu lanciata il 1981-10-30 e atterrò il 1982-03-01 a 7,5°S 303°E negli altopiani di Phoebe Regio. Condizioni in superficie all'atterraggio: 457 °C, 89 bar, foschia di acido solforico. Il lander sopravvisse 127 minuti — quasi un'ora oltre il suo obiettivo di progetto — restituendo le prime panoramiche a colori della superficie di un altro pianeta, registrando l'audio del vento con un microfono e usando il suo trapano e uno spettrometro a fluorescenza X di bordo per determinare che il basalto del sito di atterraggio aveva una composizione alcalina a leucite, debolmente differenziata. La sonda gemella Venera 14 eseguì operazioni identiche in un altro sito cinque giorni dopo. La serie Venera (1967–1983) resta a oggi l'unico programma di superficie riuscito su Venere.",
+  "description": "L'apice del programma sovietico Venera. Venera 13 fu lanciata il 1981-10-30 e atterrò il 1982-03-01 a 7,5°S 303°E negli altopiani di Phoebe Regio. Condizioni in superficie all'atterraggio: 457 °C, 89 atm, foschia di acido solforico. Il lander sopravvisse 127 minuti — circa quattro volte i 32 minuti di progetto — restituendo le prime panoramiche a colori della superficie di un altro pianeta, registrando l'audio del vento con un microfono e usando il suo trapano e uno spettrometro a fluorescenza X di bordo per determinare che il basalto del sito di atterraggio aveva una composizione alcalina a leucite, debolmente differenziata. La sonda gemella Venera 14 eseguì operazioni identiche in un altro sito cinque giorni dopo. La serie Venera (1967–1983) resta a oggi l'unico programma di superficie riuscito su Venere.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 122,
       "label": "ATTERRAGGIO SUPERFICIE VENERE",
-      "note": "Atterraggio a Phoebe Regio a 7,5°S 303°E; 127 minuti di operazioni in superficie a 457 °C / 89 bar.",
+      "note": "Atterraggio a Phoebe Regio a 7,5°S 303°E; 127 minuti di operazioni in superficie a 457 °C / 89 atm.",
       "type": "nominal"
     }
   ]

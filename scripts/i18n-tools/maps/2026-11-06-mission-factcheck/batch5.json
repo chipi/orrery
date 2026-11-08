@@ -1,0 +1,581 @@
+[
+  {
+    "m": "moon/chandrayaan1",
+    "base": [
+      [
+        "Captured into a 100-km polar lunar orbit.",
+        "Captured into a 504 × 7,502 km polar orbit, lowered to 100 km on 2008-11-12."
+      ],
+      ["when the spacecraft's thermal control failed", "when its power supply units failed"]
+    ]
+  },
+  {
+    "m": "moon/chandrayaan3",
+    "base": [
+      ["Captured into 170 × 36,500 km lunar orbit.", "Captured into 164 × 18,074 km lunar orbit."]
+    ],
+    "text": {
+      "en-US": [
+        [
+          "the closest any spacecraft has come to a lunar pole",
+          "the closest any spacecraft had come to a lunar pole at the time (IM-2 landed closer in 2025)"
+        ],
+        [
+          "detected sulfur on the lunar surface for the first time and made in-situ thermal measurements",
+          "made the first in-situ measurement of sulfur near the lunar south pole and took in-situ thermal measurements"
+        ]
+      ],
+      "ar": [
+        [
+          "وهو الأقرب الذي وصلت إليه أي مركبة فضائية من قطب قمري",
+          "وهو الأقرب الذي وصلت إليه أي مركبة فضائية من قطب قمري حتى ذلك الحين (وهبطت IM-2 أقرب منه في عام 2025)"
+        ],
+        [
+          "كشفت مركبة Pragyan الجوالة عن الكبريت على سطح القمر للمرة الأولى وأجرت قياسات حرارية في الموقع",
+          "أجرت مركبة Pragyan الجوالة أول قياس في الموقع للكبريت قرب القطب الجنوبي للقمر، وأجرت قياسات حرارية في الموقع"
+        ]
+      ],
+      "de": [
+        [
+          "näher an einem Mondpol als jedes andere Raumfahrzeug zuvor",
+          "näher an einem Mondpol als jedes andere Raumfahrzeug zuvor (IM-2 landete 2025 noch näher)"
+        ],
+        [
+          "Der Pragyan-Rover wies Schwefel auf der Mondoberfläche zum ersten Mal nach und führte In-situ-Wärmemessungen durch",
+          "Der Pragyan-Rover führte die erste In-situ-Messung von Schwefel nahe dem Mondsüdpol durch und nahm In-situ-Wärmemessungen vor"
+        ]
+      ],
+      "es": [
+        [
+          "lo más cerca que cualquier nave ha llegado a un polo lunar",
+          "lo más cerca que cualquier nave había llegado a un polo lunar hasta entonces (IM-2 alunizó más cerca en 2025)"
+        ],
+        [
+          "El róver Pragyan detectó azufre en la superficie lunar por primera vez e hizo mediciones térmicas in situ",
+          "El róver Pragyan hizo la primera medición in situ de azufre cerca del polo sur lunar y mediciones térmicas in situ"
+        ]
+      ],
+      "fr": [
+        [
+          "le plus proche qu'un engin spatial n'ait jamais approché un pôle lunaire",
+          "le plus près qu'un engin spatial se soit approché d'un pôle lunaire jusque-là (IM-2 s'est posé plus près en 2025)"
+        ],
+        [
+          "Le rover Pragyan a détecté du soufre à la surface lunaire pour la première fois et a effectué des mesures thermiques in-situ",
+          "Le rover Pragyan a réalisé la première mesure in situ de soufre près du pôle sud lunaire, ainsi que des mesures thermiques in-situ"
+        ]
+      ],
+      "hi": [
+        [
+          "जो अब तक किसी भी अंतरिक्ष यान का चंद्र ध्रुव के सबसे करीब पहुँचना है",
+          "जो उस समय तक किसी भी अंतरिक्ष यान का चंद्र ध्रुव के सबसे करीब पहुँचना था (2025 में IM-2 इससे भी करीब उतरा)"
+        ],
+        [
+          "प्रज्ञान रोवर ने चंद्र सतह पर पहली बार सल्फर का पता लगाया और मौके पर ही तापीय मापन किए",
+          "प्रज्ञान रोवर ने चंद्र दक्षिणी ध्रुव के निकट सल्फर का पहला मौके पर मापन किया और मौके पर ही तापीय मापन भी किए"
+        ]
+      ],
+      "it": [
+        [
+          "il punto più vicino a un polo lunare mai raggiunto da un veicolo spaziale",
+          "il punto più vicino a un polo lunare raggiunto da un veicolo spaziale fino ad allora (nel 2025 IM-2 è atterrato più vicino)"
+        ],
+        [
+          "Il rover Pragyan ha rilevato lo zolfo sulla superficie lunare per la prima volta e ha effettuato misurazioni termiche in situ",
+          "Il rover Pragyan ha effettuato la prima misurazione in situ dello zolfo vicino al polo sud lunare e misurazioni termiche in situ"
+        ]
+      ],
+      "ja": [
+        [
+          "これは月の極に最も近づいた宇宙機の記録である",
+          "これは当時、宇宙機が月の極に最も近づいた記録だった（2025年にIM-2がさらに近くへ着陸した）"
+        ],
+        [
+          "Pragyanローバーは月面で初めて硫黄を検出し、その場での熱測定を行った",
+          "Pragyanローバーは月の南極付近で初めて硫黄のその場測定を行い、その場での熱測定も行った"
+        ]
+      ],
+      "ko": [
+        [
+          "어떤 우주선도 달의 극에 이만큼 가까이 간 적은 없었다",
+          "당시 어떤 우주선도 달의 극에 이만큼 가까이 간 적은 없었다(2025년 IM-2가 더 가까이 착륙했다)"
+        ],
+        [
+          "Pragyan 로버는 달 표면에서 황을 처음 검출했고 현장 열 측정도 수행했다",
+          "Pragyan 로버는 달 남극 근처에서 황을 처음으로 현장 측정했고 현장 열 측정도 수행했다"
+        ]
+      ],
+      "nl": [
+        [
+          "de dichtste benadering van een maanpool door enig ruimtevaartuig",
+          "de dichtste benadering van een maanpool door enig ruimtevaartuig tot dan toe (IM-2 landde in 2025 dichterbij)"
+        ],
+        [
+          "De Pragyan-rover detecteerde voor het eerst zwavel op het maanoppervlak en voerde in-situ thermische metingen uit",
+          "De Pragyan-rover deed de eerste in-situmeting van zwavel nabij de maanzuidpool en voerde in-situ thermische metingen uit"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "o ponto mais próximo de um polo lunar já alcançado por uma espaçonave",
+          "o ponto mais próximo de um polo lunar alcançado por uma espaçonave até então (o IM-2 pousou mais perto em 2025)"
+        ],
+        [
+          "O rover Pragyan detectou enxofre na superfície lunar pela primeira vez e fez medições térmicas in situ",
+          "O rover Pragyan fez a primeira medição in situ de enxofre perto do polo sul lunar e medições térmicas in situ"
+        ]
+      ],
+      "ru": [
+        [
+          "ближе к лунному полюсу, чем любой другой космический аппарат",
+          "ближе к лунному полюсу, чем любой другой космический аппарат до того (IM-2 в 2025 году сел ещё ближе)"
+        ],
+        [
+          "Ровер Pragyan впервые обнаружил серу на лунной поверхности и провёл измерения температуры на месте",
+          "Ровер Pragyan впервые провёл измерение серы на месте вблизи южного полюса Луны и измерения температуры на месте"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "што је најближе лунарном полу до којег је икада стигла нека летелица",
+          "што је у то време било најближе лунарном полу до којег је стигла нека летелица (IM-2 је 2025. слетео још ближе)"
+        ],
+        [
+          "Ровер Pragyan први пут је открио сумпор на површини Месеца и извршио термичка мерења на лицу места",
+          "Ровер Pragyan први је на лицу места измерио сумпор близу јужног пола Месеца и извршио термичка мерења на лицу места"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "是迄今任何航天器离月球极区最近的一次",
+          "是当时任何航天器离月球极区最近的一次（2025年IM-2着陆得更近）"
+        ],
+        [
+          "Pragyan月球车首次在月面探测到硫，并进行了原位热测量",
+          "Pragyan月球车首次在月球南极附近对硫进行了原位测量，并进行了原位热测量"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "moon/change1",
+    "text": {
+      "en-US": [
+        ["Lunar orbit insertion 2007-11-07 — first", "Lunar orbit insertion 2007-11-05 — first"]
+      ],
+      "ar": [["2007-11-07 — أول", "2007-11-05 — أول"]],
+      "de": [["am 2007-11-07 — erstes", "am 2007-11-05 — erstes"]],
+      "es": [["el 2007-11-07 — primera", "el 2007-11-05 — primera"]],
+      "fr": [["le 2007-11-07 — premier", "le 2007-11-05 — premier"]],
+      "hi": [["2007-11-07 — चंद्रमा", "2007-11-05 — चंद्रमा"]],
+      "it": [["2007-11-07 — primo", "2007-11-05 — primo"]],
+      "ja": [["2007年11月7日—月に", "2007年11月5日—月に"]],
+      "ko": [["2007-11-07 달 궤도", "2007-11-05 달 궤도"]],
+      "nl": [["2007-11-07 — eerste", "2007-11-05 — eerste"]],
+      "pt-BR": [["7 de novembro de 2007 — primeiro", "5 de novembro de 2007 — primeiro"]],
+      "ru": [["2007-11-07 — первый", "2007-11-05 — первый"]],
+      "sr-Cyrl": [["7. 11. 2007. — прва", "5. 11. 2007. — прва"]],
+      "zh-CN": [["2007年11月7日 ——首个", "2007年11月5日 ——首个"]]
+    }
+  },
+  {
+    "m": "moon/change3",
+    "text": {
+      "en-US": [
+        [
+          "the third lander in CNSA's Chang'e programme",
+          "the first lander (the third mission) of CNSA's Chang'e programme"
+        ]
+      ],
+      "ar": [
+        [
+          "ثالث مركبة هبوط في برنامج Chang'e التابع لوكالة CNSA",
+          "أول مركبة هبوط (وثالث مهمة) في برنامج Chang'e التابع لوكالة CNSA"
+        ]
+      ],
+      "de": [
+        [
+          "die dritte Sonde im Chang'e-Programm der CNSA",
+          "der erste Lander (die dritte Mission) im Chang'e-Programm der CNSA"
+        ]
+      ],
+      "es": [
+        [
+          "el tercer módulo de descenso del programa Chang'e de la CNSA",
+          "el primer módulo de descenso (la tercera misión) del programa Chang'e de la CNSA"
+        ]
+      ],
+      "fr": [
+        [
+          "le troisième atterrisseur du programme Chang'e de la CNSA",
+          "le premier atterrisseur (la troisième mission) du programme Chang'e de la CNSA"
+        ]
+      ],
+      "hi": [
+        [
+          "CNSA के Chang'e कार्यक्रम का तीसरा लैंडर था",
+          "CNSA के Chang'e कार्यक्रम का पहला लैंडर (तीसरा मिशन) था"
+        ]
+      ],
+      "it": [
+        [
+          "il terzo lander del programma Chang'e della CNSA",
+          "il primo lander (terza missione) del programma Chang'e della CNSA"
+        ]
+      ],
+      "ja": [
+        [
+          "Chang'e 3はCNSAのChang'e計画で3番目の着陸船であり",
+          "Chang'e 3はCNSAのChang'e計画で初の着陸船（3番目のミッション）であり"
+        ]
+      ],
+      "ko": [
+        [
+          "CNSA Chang'e 계획의 세 번째 착륙선이자",
+          "CNSA Chang'e 계획의 첫 번째 착륙선(세 번째 임무)이자"
+        ]
+      ],
+      "nl": [
+        [
+          "de derde lander in het Chang'e-programma van CNSA",
+          "de eerste lander (de derde missie) in het Chang'e-programma van CNSA"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "o terceiro módulo de pouso do programa Chang'e da CNSA",
+          "o primeiro módulo de pouso (a terceira missão) do programa Chang'e da CNSA"
+        ]
+      ],
+      "ru": [
+        [
+          "третьим аппаратом серии Chang'e программы CNSA",
+          "первым посадочным аппаратом (третьей миссией) программы Chang'e агентства CNSA"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "трећи лендер у програму Chang'e агенције CNSA",
+          "први лендер (трећа мисија) у програму Chang'e агенције CNSA"
+        ]
+      ],
+      "zh-CN": [
+        ["国家航天局嫦娥项目的第三个着陆器", "国家航天局嫦娥项目的首个着陆器（第三次任务）"]
+      ]
+    }
+  },
+  {
+    "m": "moon/change5",
+    "base": [["2020-12-17. Capsule re-entered", "2020-12-16 (17:59 UTC). Capsule re-entered"]]
+  },
+  {
+    "m": "moon/change6",
+    "base": [
+      [
+        "at the Earth-Moon L2 Lagrange point for far-side comms",
+        "in an elliptical frozen orbit around the Moon for far-side comms"
+      ]
+    ],
+    "text": {
+      "en-US": [["(far side) 2024-06-02.", "(far side) 2024-06-01 (UTC)."]],
+      "ar": [["(الجانب البعيد) 2024-06-02.", "(الجانب البعيد) 2024-06-01 (UTC)."]],
+      "de": [["02.06.2024. Die gesamte", "01.06.2024 (UTC). Die gesamte"]],
+      "es": [["(cara oculta) 2024-06-02.", "(cara oculta) 2024-06-01 (UTC)."]],
+      "fr": [["(face cachée) le 2024-06-02.", "(face cachée) le 2024-06-01 (UTC)."]],
+      "hi": [["2024-06-02 को उतरता है", "2024-06-01 (UTC) को उतरता है"]],
+      "it": [["(lato nascosto) 2024-06-02.", "(lato nascosto) 2024-06-01 (UTC)."]],
+      "ja": [["（裏側）へ降下 2024-06-02。", "（裏側）へ降下 2024-06-01（UTC）。"]],
+      "ko": [["하강 2024-06-02.", "하강 2024-06-01(UTC)."]],
+      "nl": [["(achterzijde) 2024-06-02.", "(achterzijde) 2024-06-01 (UTC)."]],
+      "pt-BR": [["(lado oposto) 2024-06-02.", "(lado oposto) 2024-06-01 (UTC)."]],
+      "ru": [["(обратная сторона) 2024-06-02.", "(обратная сторона) 2024-06-01 (UTC)."]],
+      "sr-Cyrl": [["2. 6. 2024. Сва", "1. 6. 2024. (UTC). Сва"]],
+      "zh-CN": [["于2024-06-02降落", "于2024-06-01（UTC）降落"]]
+    }
+  },
+  {
+    "m": "moon/slim",
+    "base": [
+      ["\"status\": \"ACTIVE\"", "\"status\": \"FLOWN\""],
+      ["landed within 55 m of its target point", "landed about 10 m from its target point"]
+    ],
+    "text": {
+      "en-US": [
+        [" · ACTIVE", " · FLOWN"],
+        ["~55 m off centre", "about 10 m from the target"],
+        [
+          "operations resumed for one lunar day",
+          "the lander survived three lunar nights, with contact until April 2024"
+        ],
+        [
+          "pioneered low-energy ballistic transfer to the Moon",
+          "used a low-energy ballistic transfer to the Moon (Hiten pioneered it in 1991)"
+        ]
+      ],
+      "ar": [
+        [" · نشطة", " · أُطلقت"],
+        ["~55 م عن المركز", "نحو 10 م من الهدف"],
+        [
+          "يُستأنف العمل ليوم قمري واحد",
+          "بقيت المركبة حية خلال ثلاث ليالٍ قمرية، مع اتصال حتى أبريل 2024"
+        ],
+        [
+          "كما كانت SLIM رائدة في النقل الباليستي منخفض الطاقة إلى القمر",
+          "كما استخدمت SLIM نقلاً باليستياً منخفض الطاقة إلى القمر (وكانت Hiten رائدة فيه عام 1991)"
+        ]
+      ],
+      "de": [
+        [" · AKTIV", " · GEFLOGEN"],
+        ["~55 m außerhalb der Mitte", "etwa 10 m vom Ziel entfernt"],
+        [
+          "Der Betrieb wurde für einen Mondtag wieder aufgenommen",
+          "der Lander überstand drei Mondnächte, mit Kontakt bis April 2024"
+        ],
+        [
+          "SLIM leistete auch Pionierarbeit beim niederenergetischen ballistischen Transfer zum Mond.",
+          "SLIM nutzte auch einen niederenergetischen ballistischen Transfer zum Mond (Pionier war Hiten 1991)."
+        ]
+      ],
+      "es": [
+        [" · ACTIVA", " · REALIZADA"],
+        ["~55 m del centro", "a unos 10 m del objetivo"],
+        [
+          "operaciones reanudadas durante un día lunar",
+          "el módulo sobrevivió a tres noches lunares, con contacto hasta abril de 2024"
+        ],
+        [
+          "SLIM también fue pionero en la transferencia balística de baja energía a la Luna",
+          "SLIM también usó una transferencia balística de baja energía a la Luna (Hiten fue pionera en 1991)"
+        ]
+      ],
+      "fr": [
+        [" · ACTIVE", " · RÉALISÉE"],
+        ["à ~55 m du centre", "à environ 10 m de la cible"],
+        [
+          "les opérations ont repris pendant un jour lunaire",
+          "l'atterrisseur a survécu à trois nuits lunaires, avec des contacts jusqu'en avril 2024"
+        ],
+        [
+          "SLIM a également été le pionnier du transfert balistique à faible énergie vers la Lune",
+          "SLIM a également utilisé un transfert balistique à faible énergie vers la Lune (Hiten l'avait inauguré en 1991)"
+        ]
+      ],
+      "hi": [
+        [" · सक्रिय", " · उड़ान पूर्ण"],
+        ["केंद्र से ~55 m", "लक्ष्य से लगभग 10 m"],
+        ["एक चंद्र दिन संचालन फिर", "लैंडर तीन चंद्र रातों तक बचा रहा, अप्रैल 2024 तक संपर्क रहा"],
+        [
+          "SLIM ने चंद्रमा तक कम-ऊर्जा बैलिस्टिक स्थानांतरण की भी राह खोली",
+          "SLIM ने चंद्रमा तक कम-ऊर्जा बैलिस्टिक स्थानांतरण का भी उपयोग किया (Hiten ने 1991 में इसकी राह खोली थी)"
+        ]
+      ],
+      "it": [
+        [" · ATTIVA", " · COMPLETATA"],
+        ["~55 m fuori centro", "a circa 10 m dal bersaglio"],
+        [
+          "le operazioni riprendono per un giorno lunare",
+          "il lander è sopravvissuto a tre notti lunari, con contatti fino ad aprile 2024"
+        ],
+        [
+          "SLIM ha anche aperto la strada al trasferimento balistico a bassa energia verso la Luna",
+          "SLIM ha anche usato un trasferimento balistico a bassa energia verso la Luna (aperto da Hiten nel 1991)"
+        ]
+      ],
+      "ja": [
+        [" · 運用中", " · 飛行済み"],
+        ["中心から約55 mのずれ", "目標から約10 m"],
+        ["月の1昼夜のあいだ運用を再開した", "着陸機は月の夜を3回越え、2024年4月まで交信が続いた"],
+        [
+          "SLIMはまた、月への低エネルギー弾道遷移を開拓した",
+          "SLIMはまた、月への低エネルギー弾道遷移を用いた（先駆けは1991年のHiten）"
+        ]
+      ],
+      "ko": [
+        [" · 운용 중", " · 비행 완료"],
+        ["중심에서 약 55 m 오차", "목표에서 약 10 m"],
+        ["한 달 낮 동안 운용 재개", "착륙선이 달의 밤을 세 번 견뎌 냈고 2024년 4월까지 교신 유지"],
+        [
+          "SLIM은 또한 달로의 저에너지 탄도 전이를 개척했으며",
+          "SLIM은 또한 달로의 저에너지 탄도 전이(1991년 Hiten이 개척)를 사용했으며"
+        ]
+      ],
+      "nl": [
+        [" · ACTIEF", " · GEVLOGEN"],
+        ["~55 m van het centrum af", "ongeveer 10 m van het doel"],
+        [
+          "de operaties worden hervat voor één lunaire dag",
+          "de lander overleefde drie maannachten, met contact tot april 2024"
+        ],
+        [
+          "SLIM pioneerde ook lage-energie ballistische transfer naar de Maan",
+          "SLIM gebruikte ook een lage-energie ballistische transfer naar de Maan (Hiten was daarin in 1991 de pionier)"
+        ]
+      ],
+      "pt-BR": [
+        [" · ATIVA", " · REALIZADA"],
+        ["~55 m do centro", "cerca de 10 m do alvo"],
+        [
+          "as operações foram retomadas por um dia lunar",
+          "o módulo sobreviveu a três noites lunares, com contato até abril de 2024"
+        ],
+        [
+          "O SLIM também foi pioneiro na transferência balística de baixa energia para a Lua",
+          "O SLIM também usou uma transferência balística de baixa energia para a Lua (pioneirismo da Hiten, em 1991)"
+        ]
+      ],
+      "ru": [
+        [" · АКТИВНА", " · ВЫПОЛНЕНА"],
+        ["~55 м от центра", "около 10 м от цели"],
+        [
+          "работа возобновлена на одни лунные сутки",
+          "аппарат пережил три лунные ночи, связь сохранялась до апреля 2024"
+        ],
+        [
+          "SLIM также первым применил малозатратный баллистический перелёт к Луне",
+          "SLIM также применил малозатратный баллистический перелёт к Луне (первой его освоила Hiten в 1991 году)"
+        ]
+      ],
+      "sr-Cyrl": [
+        [" · АКТИВНА", " · ОБАВЉЕНА"],
+        ["~55 m од центра", "око 10 m од циља"],
+        [
+          "рад је настављен током једног лунарног дана",
+          "лендер је преживео три лунарне ноћи, уз везу до априла 2024"
+        ],
+        [
+          "SLIM је уједно био пионир нискоенергетског балистичког трансфера до Месеца",
+          "SLIM је уједно користио нискоенергетски балистички трансфер до Месеца (пионир је била Hiten 1991. године)"
+        ]
+      ],
+      "zh-CN": [
+        [" · 运行中", " · 已飞行"],
+        ["偏离中心约55米", "距目标约10米"],
+        ["运行恢复持续一个月球日", "着陆器挺过了三个月夜，直到2024年4月仍保持联系"],
+        [
+          "SLIM还率先采用低能量弹道转移轨道前往月球",
+          "SLIM还采用了低能量弹道转移轨道前往月球（1991年的Hiten首开先河）"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "moon/beresheet",
+    "met": { "5": 41 },
+    "sort": true
+  },
+  {
+    "baseFile": "static/data/missions/index.json",
+    "base": [
+      [
+        "\"id\": \"slim\",\n    \"agency\": \"JAXA\",\n    \"dest\": \"MOON\",\n    \"status\": \"ACTIVE\"",
+        "\"id\": \"slim\",\n    \"agency\": \"JAXA\",\n    \"dest\": \"MOON\",\n    \"status\": \"FLOWN\""
+      ]
+    ]
+  },
+  {
+    "baseFile": "static/data/fleet/lander/change6.json",
+    "base": [
+      [
+        "(positioned in a halo orbit around Earth-Moon L2 since March 2024)",
+        "(in an elliptical frozen orbit around the Moon since March 2024)"
+      ],
+      ["on 2024-06-02 06:23 UTC", "on 2024-06-01 22:23 UTC"]
+    ]
+  },
+  {
+    "overlay": "i18n-src/{loc}/fleet/lander/change6.json",
+    "text": {
+      "en-US": [
+        [
+          "(positioned in a halo orbit around Earth-Moon L2 since March 2024)",
+          "(in an elliptical frozen orbit around the Moon since March 2024)"
+        ]
+      ],
+      "ar": [
+        [
+          "(الموضوع في مدار هالة حول نقطة الأرض-القمر L2 منذ مارس 2024)",
+          "(الموضوع في مدار إهليلجي مجمّد حول القمر منذ مارس 2024)"
+        ],
+        ["Apollo 2024-06-02؛ 1935", "Apollo 2024-06-01 (UTC)؛ 1935"]
+      ],
+      "de": [
+        [
+          "(seit März 2024 in einer Halo-Umlaufbahn um den Erde-Mond-Punkt L2)",
+          "(seit März 2024 in einer elliptischen, eingefrorenen Umlaufbahn um den Mond)"
+        ]
+      ],
+      "es": [
+        [
+          "(posicionado en órbita de halo alrededor del punto L2 Tierra-Luna desde marzo de 2024)",
+          "(en una órbita elíptica congelada alrededor de la Luna desde marzo de 2024)"
+        ]
+      ],
+      "fr": [
+        [
+          "(placé en orbite de halo autour du point L2 Terre-Lune depuis mars 2024)",
+          "(placé depuis mars 2024 sur une orbite elliptique gelée autour de la Lune)"
+        ],
+        ["le 2024-06-02 ; 1935", "le 2024-06-01 (UTC) ; 1935"]
+      ],
+      "hi": [
+        [
+          "(मार्च 2024 से पृथ्वी–चंद्रमा L2 के चारों ओर हेलो कक्षा में स्थित)",
+          "(मार्च 2024 से चंद्रमा के चारों ओर दीर्घवृत्ताकार 'फ्रोज़न' कक्षा में स्थित)"
+        ],
+        ["बेसिन लैंडिंग 2024-06-02; 1935", "बेसिन लैंडिंग 2024-06-01 (UTC); 1935"]
+      ],
+      "it": [
+        [
+          "(posizionato in orbita di alone attorno al punto L2 Terra-Luna da marzo 2024)",
+          "(posizionato da marzo 2024 in un'orbita ellittica congelata attorno alla Luna)"
+        ],
+        ["il 2024-06-02; 1935", "il 2024-06-01 (UTC); 1935"]
+      ],
+      "ja": [
+        [
+          "2024年3月から地球-月L2点周辺のハロー軌道にあるQueqiao-2中継衛星",
+          "2024年3月から月周回の楕円凍結軌道にあるQueqiao-2中継衛星"
+        ]
+      ],
+      "ko": [
+        [
+          "2024년 3월부터 지구-달 L2 주위 헤일로 궤도에 있는 Queqiao-2 중계 위성",
+          "2024년 3월부터 달 주위 타원 동결 궤도에 있는 Queqiao-2 중계 위성"
+        ]
+      ],
+      "nl": [
+        [
+          "(sinds maart 2024 in een haloïdebaan rond het Aarde-Maan L2-punt)",
+          "(sinds maart 2024 in een elliptische, bevroren baan rond de Maan)"
+        ],
+        ["op 2024-06-02; 1935", "op 2024-06-01 (UTC); 1935"]
+      ],
+      "pt-BR": [
+        [
+          "(posicionado em órbita de halo em torno do ponto L2 Terra-Lua desde março de 2024)",
+          "(posicionado em uma órbita elíptica congelada em torno da Lua desde março de 2024)"
+        ]
+      ],
+      "ru": [
+        [
+          "(с марта 2024 года на гало-орбите вокруг точки L2 системы Земля — Луна)",
+          "(с марта 2024 года на эллиптической замороженной орбите вокруг Луны)"
+        ],
+        ["Apollo 2024-06-02; 1935", "Apollo 2024-06-01 (UTC); 1935"]
+      ],
+      "sr-Cyrl": [
+        [
+          "(који се од марта 2024. налази у хало орбити око тачке L2 система Земља–Месец)",
+          "(који се од марта 2024. налази у елиптичној замрзнутој орбити око Месеца)"
+        ],
+        ["Apollo 2024-06-02; 1935", "Apollo 2024-06-01 (UTC); 1935"]
+      ],
+      "zh-CN": [
+        [
+          "自2024年3月起运行在地月L2点晕轨道上的鹊桥二号中继卫星",
+          "自2024年3月起运行在环月椭圆冻结轨道上的鹊桥二号中继卫星"
+        ]
+      ]
+    }
+  }
+]

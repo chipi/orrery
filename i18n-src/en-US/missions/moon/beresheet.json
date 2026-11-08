@@ -12,7 +12,7 @@
     { "met": 10, "label": "TCM 1", "note": "Trajectory correction during multi-orbit climb.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Second TCM. Apogee approaching lunar capture distance.", "type": "info" },
     { "met": 41, "label": "LUNAR APPROACH", "note": "Final translunar burn — Beresheet on direct lunar trajectory.", "type": "nominal" },
-    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "Capture into elliptical lunar orbit 2019-04-04.", "type": "nominal" },
+    { "met": 41, "label": "LUNAR ORBIT INSERTION", "note": "Capture into elliptical lunar orbit 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "DESCENT ANOMALY", "note": "IMU reset during powered descent → engine shutdown → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
   ],
   "vehicle_stage": "Falcon 9 second stage to GTO (rideshare)"

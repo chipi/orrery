@@ -18,10 +18,11 @@
  * Follow-up commits will add Chang'e 3/4/5, Chandrayaan-3, SLIM, Luna
  * 9, Lunokhod 1/2 as per-site panorama URLs land.
  *
- * Sites without sourceable panoramas (luna16, luna24 = robotic-only,
- * no panoramic camera): hotspot_tier3_panorama stays unset → "Stand
- * at site" button silently doesn't render. Same UX as mars3/beagle2/
- * schiaparelli.
+ * Sites without a ground-level panorama get no Tier 3: Luna 16 / Luna 24
+ * (no panoramic camera; an LRO orbital frame stood in) and Beresheet (crashed;
+ * its last descent frame stood in) — removed 2026-11-05, #641. With
+ * hotspot_tier3_panorama unset the "Stand here" button does not render, as on
+ * mars3 / beagle2 / schiaparelli.
  *
  * Usage:
  *   npm run images:hotspots -- --dest moon --layer tier3
@@ -33,6 +34,8 @@ import { spawn } from 'node:child_process';
 import { existsSync, promises as fs } from 'node:fs';
 
 import {
+  blackOutRects,
+  whiteBorderToBlack,
   padToEquirectangular,
   DEFAULT_MOON_PALETTE,
   type MarsColourPalette,
@@ -55,46 +58,60 @@ interface MoonPanoramaConfig {
   caption: string;
   palette?: Partial<MarsColourPalette>;
   recolourBlackThreshold?: number;
+  /** The mosaic sits in a white no-data margin (ALSJ / Commons Apollo pans):
+   *  blacken the edge-connected white first so the padding fills it. */
+  whiteBorder?: boolean;
+  /** Logos / watermarks / caption strips baked into the release, blacked out
+   *  before padding: [x0, y0, x1, y1] fractions of the source. */
+  maskRects?: Array<[number, number, number, number]>;
+  /** Output size; default 4096×2048. Large full-circle sources ship at 8K. */
+  outWidth?: number;
+  outHeight?: number;
 }
 
 const PANORAMAS: MoonPanoramaConfig[] = [
   {
     siteId: 'apollo12',
+    // 2026-11-05 (#641 review) — Pete's full-circle 12 O'clock LM pan (EVA-1)
+    // replaces the ~220° ALSEP Site strip: Intrepid, the flag, Al Bean, Pete's
+    // shadow. 7727×1049 at 360° → 49° tall, horizon 42 % from the top; the
+    // white no-data margin is blackened, then padded.
     sourceUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/9/98/' +
-      'Apollo_12_-_Pete%27s_ALSEP_Site_Pan.webp',
-    sourceLabel: "Apollo 12 Pete's ALSEP Site Pan",
-    attribution: 'NASA / Pete Conrad / Alan Bean · assembled by Dave Byrne · via ALSJ',
+      'https://upload.wikimedia.org/wikipedia/commons/e/e6/' +
+      'Apollo_12_-_Pete%27s_12_O%27clock_LM_Pan.webp',
+    sourceLabel: "Apollo 12 Pete's 12 O'clock LM Pan",
+    attribution: 'NASA / Pete Conrad / Alan Bean · assembled by Dave Byrne · via Wikimedia Commons',
     license: 'PD-NASA',
-    // 7559×1035 ≈ 7.3:1 — wide cylindrical, ~220° × ~30°.
-    srcAzimuthDeg: 220,
-    srcElevationTopDeg: 15,
-    srcElevationBottomDeg: 15,
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 20.5,
+    srcElevationBottomDeg: 28.5,
+    whiteBorder: true,
+    // Off: a fill of black would also grey out the deep crater shadows.
+    recolourBlackThreshold: 0,
     caption:
-      'Ocean of Storms ALSEP panorama. Intrepid LM + ALSEP central station + radioisotope ' +
-      'thermoelectric generator. Surveyor 3 crater rim visible in the distance — the only ' +
-      'Apollo site where astronauts walked to a previous robotic lander. Apollo 12, Nov 19 1969.',
+      "Apollo 12 full-circle panorama from the 12 o'clock side of Intrepid, EVA-1 " +
+      "(19 Nov 1969): the LM, the flag, Al Bean and Pete Conrad's shadow, Ocean of Storms.",
   },
   {
     siteId: 'apollo14',
+    // 2026-11-05 (#641 review) — NASA's seamless 360° landing-site panorama
+    // replaces the 180° LM 12 O'clock pan: Antares, the flag, the
+    // photographer's shadow, the Sun. 15000×1800 at 360° → 43° tall, horizon
+    // 42 % from the top.
     sourceUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/c/cc/' +
-      'Apollo_14_-_LM_12_O%27clock_Pan_Hi-Res.jpg',
-    sourceLabel: "Apollo 14 LM 12 O'clock Pan Hi-Res",
-    attribution: 'NASA / Alan Shepard / Edgar Mitchell · via Apollo Lunar Surface Journal',
+      'https://upload.wikimedia.org/wikipedia/commons/a/a1/Apollo_14_landing_site_panorama.jpg',
+    sourceLabel: 'Apollo 14 landing site panorama (NASA)',
+    attribution: 'NASA / Alan Shepard / Edgar Mitchell · via Wikimedia Commons',
     license: 'PD-NASA',
-    // 12893×3185 ≈ 4.05:1 — at 180° hAz the implied vFOV is 44°
-    // (180/4.05). Earlier 14+14=28° configuration squished the
-    // source vertically by 1.57x and shrank the LM ascent stage
-    // + ALSEP equipment into a thin band. 22+22=44 matches the
-    // source aspect ratio so 1px ≈ 1px angular size on output.
-    srcAzimuthDeg: 180,
-    srcElevationTopDeg: 22,
-    srcElevationBottomDeg: 22,
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 18,
+    srcElevationBottomDeg: 25,
+    recolourBlackThreshold: 0,
+    outWidth: 8192,
+    outHeight: 4096,
     caption:
-      "Fra Mauro panorama looking forward of Antares LM (12 o'clock position). " +
-      'Cone Crater rim visible in distance; ALSEP package + MET (Modular Equipment Transporter) tracks. ' +
-      'Apollo 14, Feb 5–6 1971. NASA / Shepard / Mitchell via ALSJ.',
+      'Apollo 14 landing site at Fra Mauro, full-circle (Feb 1971): Antares LM, the flag, ' +
+      "the photographer's shadow, the Sun low over the plain. NASA / Shepard / Mitchell.",
   },
   {
     siteId: 'change4',
@@ -138,20 +155,25 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'apollo15',
+    // 2026-11-05 (#641 review) — the full-circle VIP Site pan (AS15-88-11895
+    // to 11925, Dave Scott, end of EVA-3) replaces Jim's 200° ALSEP strip
+    // (4167×605). 33982×5964 at 360° → 63° tall; the flat horizon sits 31 %
+    // from the top. USGS Astrogeology: "Apollo 15 Panorama - VIP Site".
     sourceUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/d/d4/' +
-      'Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp',
-    sourceLabel: "Apollo 15 Jim's ALSEP Pan EVA-2",
-    attribution: 'NASA / Dave Scott / Jim Irwin · assembled by Dave Byrne · via ALSJ',
+      'https://upload.wikimedia.org/wikipedia/commons/6/6f/' +
+      'Apollo_15_-_As15-88-11895-11925_Panorama.jpg',
+    sourceLabel: 'AS15-88-11895-11925 (VIP Site pan)',
+    attribution: 'NASA / Dave Scott / Jim Irwin · assembled by Kev Holmes · via Wikimedia Commons',
     license: 'PD-NASA',
-    // 4167×605 ≈ 6.9:1 — roughly 200° wide, ~30° vertical.
-    srcAzimuthDeg: 200,
-    srcElevationTopDeg: 15,
-    srcElevationBottomDeg: 15,
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 20,
+    srcElevationBottomDeg: 43,
+    outWidth: 8192,
+    outHeight: 4096,
     caption:
-      'Hadley Rille ALSEP panorama, end of EVA-2. Falcon LM + Lunar Roving Vehicle + ' +
-      'ALSEP central station; Mount Hadley massif visible. Apollo 15, Aug 1 1971. ' +
-      'NASA / Scott / Irwin via Apollo Lunar Surface Journal.',
+      'Apollo 15 VIP Site panorama, the Lunar Roving Vehicle at its last parking spot, end of ' +
+      'EVA-3 (2 Aug 1971): Mount Hadley, the Apennine Front, the Falcon LM in the distance ' +
+      'with Jim Irwin. NASA / Scott / Irwin, assembled by Kev Holmes.',
   },
   {
     siteId: 'apollo16',
@@ -198,16 +220,22 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'apollo17',
+    // 2026-11-05 (#641 review) — the north half of the same ALSEP pan at full
+    // resolution (12412×4308) replaces the 3249×651 USGS composite. Width from
+    // the frames: one 60 mm Hasselblad frame (~49°) is ~20 % of the strip →
+    // ~240°; 85° tall, horizon at 50 %. The south half is not stitched in.
     sourceUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/1/18/' +
-      "019_Jack's_Color_ALSEP_Pan_USGS.jpg",
-    sourceLabel: "Jack's Color ALSEP Pan (USGS)",
-    attribution: 'NASA / Gene Cernan / Jack Schmitt / USGS · via Apollo Lunar Surface Journal',
+      'https://upload.wikimedia.org/wikipedia/commons/6/63/' +
+      '020_Jack%27s_Color_ALSEP_Pan_North.jpg',
+    sourceLabel: "Jack's Color ALSEP Pan North",
+    attribution: 'NASA / Gene Cernan / Jack Schmitt · via Wikimedia Commons',
     license: 'PD-NASA',
-    // 3249×651 ≈ 5:1 aspect — roughly 180° wide, ~36° vertical.
-    srcAzimuthDeg: 180,
-    srcElevationTopDeg: 18,
-    srcElevationBottomDeg: 18,
+    srcAzimuthDeg: 240,
+    srcElevationTopDeg: 42,
+    srcElevationBottomDeg: 43,
+    recolourBlackThreshold: 0,
+    outWidth: 8192,
+    outHeight: 4096,
     caption:
       'Taurus-Littrow Valley ALSEP panorama, EVA-1. Jack Schmitt assembled colour pan, ' +
       'Lunar Roving Vehicle and Lunar Module Challenger visible. ' +
@@ -223,6 +251,8 @@ const PANORAMAS: MoonPanoramaConfig[] = [
 
   {
     siteId: 'change3',
+    // The release carries its title and mosaic credit in a strip under the image (#641).
+    maskRects: [[0, 0.915, 1, 1]],
     sourceUrl: 'https://cdn.mos.cms.futurecdn.net/2UmRx9rkjZfauYdoQi8aAT.jpg',
     sourceLabel: "Chang'e 3 1st Color Panorama (CNSA, Dec 2013)",
     attribution: "CNSA / Chinanews / Ken Kremer / Marco Di Lorenzo · Chang'e 3 lander PCAM",
@@ -239,6 +269,11 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'change5',
+    // CNSA + CLEP logos top right and a Weibo watermark at the bottom (#641).
+    maskRects: [
+      [0.775, 0.05, 0.985, 0.235],
+      [0.42, 0.95, 0.57, 1],
+    ],
     sourceUrl:
       'https://planetary.s3.amazonaws.com/web/assets/pictures/lunar-surface-pano-from-change-5.jpg',
     sourceLabel: "Chang'e 5 lunar surface panorama (CNSA, Dec 2020)",
@@ -257,6 +292,8 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   },
   {
     siteId: 'change6',
+    // CNSA + CLEP logos top right (#641).
+    maskRects: [[0.855, 0.025, 0.995, 0.175]],
     sourceUrl:
       'https://news.cgtn.com/news/2024-06-04/China-s-Chang-e-6-sends-back-images-from-the-far-side-of-the-moon-1u9v8l9xdUk/img/52549cd8b951460bb6fe186a2495c8fb/52549cd8b951460bb6fe186a2495c8fb.jpeg',
     sourceLabel: "Chang'e 6 first surface panorama (CNSA, June 2024)",
@@ -311,29 +348,6 @@ const PANORAMAS: MoonPanoramaConfig[] = [
       'system on SLIM; the Sora-Q stereo MBC frame is the canonical surface view. JAXA.',
   },
   {
-    siteId: 'luna16',
-    sourceUrl:
-      'https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12984/PIA12984.jpg',
-    sourceLabel: 'Luna 16 landing site, LRO NAC orbital view (NASA, 2010)',
-    attribution: 'NASA / GSFC / Arizona State University · LRO Camera (NAC)',
-    license: 'PD-NASA',
-    // 900×900 ≈ 1:1 LRO NAC orbital view of the Luna 16 lander
-    // remnants in Mare Fecunditatis. Luna 16 carried only a descent-
-    // stage telephotometer (not a panoramic camera); no Earth-trans-
-    // mitted surface panorama exists. Per the "ship-with-honest-
-    // caption" editorial principle (same as mars3 / beagle2), this
-    // modern orbital view from LRO is the closest available "stand
-    // at the landing site" surface tier.
-    srcAzimuthDeg: 60,
-    srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 30,
-    caption:
-      'Luna 16 landing site, Mare Fecunditatis (1970) — modern LRO NAC orbital view. ' +
-      'Luna 16 was the first robotic sample-return mission and carried only a descent-stage ' +
-      'telephotometer; no Earth-transmitted surface panorama exists. This LRO image (PIA12984, ' +
-      'captured 2010) is the closest available landing-site view. NASA / GSFC / Arizona State.',
-  },
-  {
     siteId: 'luna17',
     sourceUrl: 'https://upload.wikimedia.org/wikipedia/en/8/86/Lk101.jpg',
     sourceLabel: 'Lunokhod 1 surface panorama (USSR, 1970)',
@@ -365,44 +379,6 @@ const PANORAMAS: MoonPanoramaConfig[] = [
   // panorama is the right answer when no usable surface source exists,
   // rather than a misleading museum-replica stand-in. Stand-at-site
   // button hides; user sees Tier-2 LROC + the surface-site panel.
-  {
-    siteId: 'luna24',
-    sourceUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Luna24_rev_fig.png',
-    sourceLabel: 'Luna 24 landing site, LRO NAC orbital view (NASA / NSSDC)',
-    attribution: 'NASA / GSFC / Arizona State University · LRO Camera (NAC)',
-    license: 'PD-NASA',
-    // 1000×1000 ≈ 1:1 LRO orbital view of Luna 24 lander remnants in
-    // Mare Crisium with 25 m scale bar. Luna 24 had only a fixed TV
-    // camera on the descent stage; no surface panorama exists.
-    // Per ship-with-honest-caption pattern (mars3 / luna16): ship
-    // the LRO orbital view as the closest landing-site reference.
-    srcAzimuthDeg: 60,
-    srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 30,
-    caption:
-      'Luna 24 landing site, Mare Crisium (Aug 1976) — modern LRO NAC orbital view. ' +
-      'Luna 24 was the last Soviet Moon mission and the final lunar sample return until ' +
-      "Chang'e 5 in 2020. It carried only a fixed descent-stage TV camera, not a panoramic " +
-      'system; no Earth-transmitted surface panorama exists. NASA / GSFC / Arizona State.',
-  },
-  {
-    siteId: 'beresheet',
-    sourceUrl: 'https://cdn.mos.cms.futurecdn.net/9n8MuELHBDaLe5cxtrKMbj.jpeg',
-    sourceLabel: 'Beresheet final descent frame (SpaceIL, April 2019)',
-    attribution: 'SpaceIL · IAI · Beresheet descent camera (final transmission)',
-    license: 'SpaceIL-EDU',
-    // 999×577 ≈ 1.73:1 final transmitted frame at ~22 km altitude
-    // before main-engine failure + LOS. No surface imagery exists.
-    srcAzimuthDeg: 80,
-    srcElevationTopDeg: 25,
-    srcElevationBottomDeg: 46,
-    caption:
-      'Beresheet final descent frame — last image transmitted at ~22 km altitude over ' +
-      'Mare Serenitatis (April 11 2019) before main-engine failure and loss of comms. ' +
-      'Beresheet was the first privately-funded lunar lander and the first Israeli Moon ' +
-      'mission; the descent camera transmitted continuous frames during the powered descent. ' +
-      'No surface imagery exists. SpaceIL · Israel Aerospace Industries.',
-  },
 ];
 
 interface FetchResult {
@@ -440,7 +416,11 @@ async function processOne(cfg: MoonPanoramaConfig, missingOnly: boolean): Promis
   }
   try {
     const sourcePath = await ensureCachedSource(cfg);
-    const sourceBytes = await fs.readFile(sourcePath);
+    const raw = await fs.readFile(sourcePath);
+    const unbordered = cfg.whiteBorder ? await whiteBorderToBlack(raw) : raw;
+    const sourceBytes = cfg.maskRects?.length
+      ? await blackOutRects(unbordered, cfg.maskRects)
+      : unbordered;
     const padded = await padToEquirectangular({
       source: sourceBytes,
       srcAzimuthDeg: cfg.srcAzimuthDeg,
@@ -450,6 +430,8 @@ async function processOne(cfg: MoonPanoramaConfig, missingOnly: boolean): Promis
       // NASA Apollo panoramas often have rover-deck cutouts padded
       // with black; recolour to lunar grey so they blend.
       recolourBlackThreshold: cfg.recolourBlackThreshold ?? 60,
+      outWidth: cfg.outWidth,
+      outHeight: cfg.outHeight,
     });
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     await fs.writeFile(outPath, padded);
@@ -501,6 +483,8 @@ export async function fetchMoonPanoramas(args: Args): Promise<void> {
         attribution: r.cfg.attribution,
         license: r.cfg.license,
         caption: r.cfg.caption,
+        outWidth: r.cfg.outWidth,
+        outHeight: r.cfg.outHeight,
       }),
     );
     await upsertProvenanceEntries(entries);

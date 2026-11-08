@@ -26,11 +26,15 @@ const HOST = process.env.HOST ?? '127.0.0.1';
 // build/. CORS=1: send the header the Capacitor WebView needs for
 // cross-origin texture fetches (crossOrigin='anonymous'; GitHub Pages / the
 // VPS send it in production). Both off by default — Layer 1 serves build/
-// and stubs the CDN in-page.
+// and stubs the CDN in-page. FALLBACK=<file>: serve that page for a path
+// with no file, as GitHub Pages serves the adapter's 404.html shell for an
+// unprerendered route (/cards/<kind>/<id>, used by build-cards). Off by
+// default, so pruned files still 404 for the mobile e2e.
 const DIR = path.resolve(process.cwd(), process.env.DIR ?? 'build');
 const CORS = process.env.CORS === '1';
+const FALLBACK = process.env.FALLBACK || false;
 
-const serve = sirv(DIR, { dev: false, etag: true, gzip: false, brotli: false });
+const serve = sirv(DIR, { dev: false, etag: true, gzip: false, brotli: false, single: FALLBACK });
 const server = createServer((req, res) => {
   if (CORS) res.setHeader('Access-Control-Allow-Origin', '*');
   serve(req, res);

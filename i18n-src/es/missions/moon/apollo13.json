@@ -33,19 +33,19 @@
       "type": "warning"
     },
     {
-      "met": 2.92,
+      "met": 2.56,
       "label": "ENCENDIDO DE RETORNO LIBRE",
-      "note": "Un encendido de 31 segundos del motor de descenso del LM devuelve la nave a una trayectoria de retorno libre.",
+      "note": "Un encendido de 34 segundos del motor de descenso del LM devuelve la nave a una trayectoria de retorno libre.",
       "type": "info"
     },
     {
-      "met": 3.13,
+      "met": 3.21,
       "label": "SOBREVUELO LUNAR",
-      "note": "Máxima aproximación a 254 km de altitud sobre Mare Cognitum — a 400 171 km, la distancia más lejana que los humanos habían viajado desde la Tierra (récord mantenido 1970–2026, superado por Artemis II en abril de 2026).",
+      "note": "Máxima aproximación a 254 km de altitud sobre la cara oculta de la Luna — a 400 171 km, la distancia más lejana que los humanos habían viajado desde la Tierra (récord mantenido 1970–2026, superado por Artemis II en abril de 2026).",
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.31,
       "label": "ENCENDIDO PC+2",
       "note": "Encendido de Pericintio-más-2-horas reduce el tiempo de retorno a la Tierra diez horas.",
       "type": "nominal"

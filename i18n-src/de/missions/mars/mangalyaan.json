@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 1,
       "label": "PERIGÄUM-ZÜNDUNG 1",
       "note": "Erste von sechs Erdorbitzündungen zur Erhöhung vor der Trans-Mars-Injektion.",
       "type": "nominal"
@@ -34,7 +34,7 @@
     {
       "met": 3300,
       "label": "MISSIONENDE",
-      "note": "Kontaktverlust 2022-04, nachdem Raumfahrzeug-Treibstoff erschöpft war.",
+      "note": "Kontaktverlust 2022-04, nachdem der Treibstoff erschöpft und die Batterie in langen Finsternissen unter die sichere Grenze entladen war (ISRO).",
       "type": "warning"
     }
   ],

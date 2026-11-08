@@ -23,9 +23,9 @@
   "vehicle_stage": "Delta II Star-48B (terzo stadio)",
   "flight_events": [
     {
-      "met": 508,
+      "met": 510,
       "label": "Marte — fionda gravitazionale",
-      "description": "Massimo avvicinamento di 549 km il 2009-02-17. La fionda di Marte ha aggiunto circa 2,6 km/s, abbastanza per raggiungere l'asteroide Vesta dopo altri due anni di spirale a propulsione ionica. Senza di essa Dawn avrebbe avuto bisogno del doppio di propellente o del doppio del tempo di crociera."
+      "description": "Massimo avvicinamento di 542 km il 2009-02-18. La fionda di Marte ha aggiunto circa 2,6 km/s, abbastanza per raggiungere l'asteroide Vesta dopo altri due anni di spirale a propulsione ionica. Senza di essa Dawn avrebbe avuto bisogno del doppio di propellente o del doppio del tempo di crociera."
     },
     {
       "met": 1388,
@@ -35,10 +35,10 @@
     {
       "met": 1805,
       "label": "Partenza da Vesta — spirale ionica verso Cerere",
-      "description": "Partenza da Vesta il 2012-09-05. I motori ionici hanno allargato la spirale verso l'esterno per 2,5 anni in direzione di Cerere: il primo trasferimento interplanetario tra due corpi compiuto con spinta bassa e continua. La traiettoria ha consumato circa 390 kg di xeno."
+      "description": "Partenza da Vesta il 2012-09-05. I motori ionici hanno allargato la spirale verso l'esterno per 2,5 anni in direzione di Cerere: il primo trasferimento interplanetario tra due corpi compiuto con spinta bassa e continua. La traiettoria ha consumato circa 112 kg di xeno."
     },
     {
-      "met": 2718,
+      "met": 2717.53,
       "label": "Inserimento in orbita attorno a Cerere",
       "description": "Cattura in orbita attorno a Cerere il 2015-03-06: la prima sonda in orbita attorno a un pianeta nano e la prima in orbita attorno a due corpi extraterrestri. Nel 2018 è scesa a spirale fino a un'orbita di mappatura bassa a 35 km. Il 2018-10-31 ha esaurito l'idrazina per il controllo d'assetto; la sonda resta in un'orbita stabile attorno a Cerere, monumento planetario protetto a lungo termine dalle regole di protezione planetaria."
     }

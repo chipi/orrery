@@ -24,17 +24,21 @@ describe('orbital constants', () => {
 });
 
 describe('earthPos / marsPos', () => {
-  it('Earth heliocentric distance is constant at R_EARTH_AU', () => {
+  it('Earth heliocentric distance stays between perihelion and aphelion (eccentric)', () => {
     for (const day of [0, 100, 365, 1000]) {
       const p = earthPos(day);
-      expect(Math.hypot(p.x, p.z)).toBeCloseTo(R_EARTH_AU, 6);
+      const r = Math.hypot(p.x, p.z);
+      expect(r).toBeGreaterThanOrEqual(R_EARTH_AU * 0.983);
+      expect(r).toBeLessThanOrEqual(R_EARTH_AU * 1.0168);
     }
   });
 
-  it('Mars heliocentric distance is constant at R_MARS_AU', () => {
+  it('Mars heliocentric distance stays between perihelion and aphelion (eccentric)', () => {
     for (const day of [0, 100, 365, 1000]) {
       const p = marsPos(day);
-      expect(Math.hypot(p.x, p.z)).toBeCloseTo(R_MARS_AU, 6);
+      const r = Math.hypot(p.x, p.z);
+      expect(r).toBeGreaterThanOrEqual(R_MARS_AU * (1 - DESTINATIONS.mars.e!) - 1e-9);
+      expect(r).toBeLessThanOrEqual(R_MARS_AU * (1 + DESTINATIONS.mars.e!) + 1e-9);
     }
   });
 
@@ -75,10 +79,10 @@ describe('destinationPos — longitude of perihelion ϖ (S2)', () => {
     expect((thetaAtMin + 2 * Math.PI) % (2 * Math.PI)).toBeCloseTo(varpi, 1);
   });
 
-  it('a circular destination (Jupiter, e=0) is a pure [a·cos L, a·sin L] ring — ϖ inert', () => {
-    const { a, a0, meanMotionRadPerDay: n } = DESTINATIONS.jupiter;
+  it('a circular destination (Ceres, e omitted) is a pure [a·cos L, a·sin L] ring — ϖ inert', () => {
+    const { a, a0, meanMotionRadPerDay: n } = DESTINATIONS.ceres;
     for (const day of [0, 500, 4000]) {
-      const p = destinationPos(day, 'jupiter');
+      const p = destinationPos(day, 'ceres');
       const L = a0 + n * day;
       expect(p.x).toBeCloseTo(a * Math.cos(L), 10);
       expect(p.z).toBeCloseTo(a * Math.sin(L), 10);
@@ -285,10 +289,12 @@ describe('returnArc', () => {
     expect(total).toBeGreaterThan(chord * 3);
   });
 
-  it('midpoint radius is A_TRANSFER (cosine profile peak)', () => {
+  it('midpoint radius is the mean of the endpoint radii (cosine profile)', () => {
     const mid = arc[100];
     const r = Math.hypot(mid.x, mid.z);
-    expect(r).toBeCloseTo(A_TRANSFER, 3);
+    const rM = Math.hypot(marsArr.x, marsArr.z);
+    const rE = Math.hypot(earthRet.x, earthRet.z);
+    expect(r).toBeCloseTo((rM + rE) / 2, 3);
   });
 });
 

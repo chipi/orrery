@@ -1,0 +1,46 @@
+{
+  "intro": "O Rosalind Franklin é o primeiro rover marciano da Europa, construído para procurar sinais de vida passada. Sua broca alcança 2 m abaixo da superfície, mais fundo que qualquer rover anterior, onde as moléculas orgânicas ficam protegidas da radiação que as destrói perto da superfície. O rover estava pronto para voar em 2022 numa missão conjunta com a Rússia; essa parceria acabou depois que a Rússia invadiu a Ucrânia, e a ESA refez a missão com a NASA. O lançamento está previsto para 2028, com pouso em Oxia Planum, uma planície de rocha rica em argila depositada na água há cerca de quatro bilhões de anos.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Seis rodas, uma broca de 2 metros e um laboratório a bordo",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/01.webp",
+          "caption": "Um modelo em tamanho real do Rosalind Franklin em exposição: o mastro com as câmeras no topo, a caixa da broca na frente, os painéis solares abertos."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/04.webp",
+          "caption": "Um modelo do rover com seu acabamento térmico dourado, o mastro erguido e as asas solares abertas."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testes",
+      "subtitle": "Ensaiando Marte na Terra",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/04.webp",
+          "caption": "Um protótipo inicial do rover em testes de campo no deserto do Atacama, no Chile, perto do Observatório do Paranal, do ESO — um dos lugares mais secos da Terra faz as vezes de Marte."
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "Pouso",
+      "subtitle": "Oxia Planum — o local de pouso previsto",
+      "images": [
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/02.webp",
+          "caption": "O conjunto de entrada e pouso como foi projetado no início, em vista explodida: embaixo o escudo térmico, no meio a plataforma que leva o rover para baixo e da qual ele sai rodando, e em cima a cápsula traseira."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/01.webp",
+          "caption": "Uma cratera e seus ejetos logo a sudeste do local de pouso, vistos pela Mars Reconnaissance Orbiter da NASA: rochas lançadas lá de baixo são o tipo de pedra solta que o rover deve estudar."
+        }
+      ]
+    }
+  ]
+}

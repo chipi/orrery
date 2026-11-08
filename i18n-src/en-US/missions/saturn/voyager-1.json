@@ -1,7 +1,7 @@
 {
   "name": "Voyager 1",
   "vehicle": "Titan IIIE / Centaur",
-  "payload": "Planetary flyby spacecraft; three RTG modules totalling ~470 W at launch (decaying to ~250 W today)",
+  "payload": "Planetary flyby spacecraft; three RTG modules totalling ~470 W at launch (decaying to ~220 W today)",
   "delta_v": "~17 km/s (cumulative, Jupiter + Saturn assists)",
   "type": "FLYBY · FLOWN",
   "first": "Most distant human-made object — currently ~170 AU from the Sun in interstellar space",

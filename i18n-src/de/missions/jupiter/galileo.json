@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Raumsonde Galileo und atmosphärische Eintrittssonde; ~2,5 t Trockenmasse",
+  "payload": "Raumsonde Galileo und atmosphärische Eintrittssonde; 2560 kg beim Start; Trockenmasse des Orbiters 1880 kg",
   "delta_v": "~14 km/s (ungefähr)",
   "type": "ORBITER · GEFLOGEN",
   "first": "Erstes Raumfahrzeug, das Jupiter umkreiste; Atmosphärensonde in die Jupiterwolken",
@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 2243,
+      "met": 2242,
       "label": "JUPITERORBIT-EINSCHWUNG",
       "note": "Haupttriebwerk-Zündung bringt Galileo in Orbit; eine 8-jährige Tour der Mondenforschung beginnt.",
       "type": "nominal"

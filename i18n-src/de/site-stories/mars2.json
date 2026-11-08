@@ -1,0 +1,27 @@
+{
+  "intro": "Am 27. November 1971, wenige Stunden bevor Mars 2 in die Umlaufbahn einschwenkte, trennte sich die Abstiegskapsel und flog zur Oberfläche. Das Landesystem versagte – wohl weil die Kapsel zu steil eintrat –, der Fallschirm öffnete sich nicht, und sie schlug auf: das erste von Menschen gebaute Objekt auf der Marsoberfläche. An Bord war PrOP-M, ein kleiner Rover, der an einem Kabel auf Kufen laufen sollte. Der Orbiter arbeitete bis ins Jahr 1972 weiter.",
+  "chapters": [
+    {
+      "id": "arrival",
+      "title": "Ankunft",
+      "subtitle": "27. November 1971 – das erste Objekt auf dem Mars",
+      "images": [
+        {
+          "src": "/images/missions/mars2/02.webp",
+          "caption": "Die sowjetische Briefmarke von 1972 für die automatische Station Mars 2: Der Wimpel an Bord erreichte den Planeten am 27. November 1971."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Dieselbe Kapsel wie bei Mars 3",
+      "images": [
+        {
+          "src": "/images/missions/mars2/03.webp",
+          "caption": "Museumsmodell der Landekapsel von Mars 3 – Mars 2 trug dieselbe Bauart. Mars 3 landete fünf Tage später weich und sendete 14,5 Sekunden lang ein Signal."
+        }
+      ]
+    }
+  ]
+}

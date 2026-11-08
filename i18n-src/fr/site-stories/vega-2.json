@@ -1,0 +1,31 @@
+{
+  "intro": "Vega 2 est arrivée à Vénus quatre jours après sa jumelle, le 15 juin 1985, et a fait de même : un ballon dans les nuages, un atterrisseur au sol, la sonde en route vers la comète de Halley. Cette fois, la foreuse de l'atterrisseur a fonctionné. Son échantillon ressemblait à une roche de type anorthosite-troctolite, rare sur Terre mais connue des hauts plateaux de la Lune. Le ballon a flotté pendant quelque 46 heures, et le 9 mars 1986 la sonde est passée à environ 8 000 km du noyau de la comète.",
+  "chapters": [
+    {
+      "id": "venus",
+      "title": "Vénus",
+      "subtitle": "15 juin 1985 — le deuxième atterrisseur et le deuxième ballon",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/01.webp",
+          "caption": "La mission Vega : l'entrée de la capsule dans l'atmosphère de Vénus, le ballon qui s'ouvre sous son parachute et la trajectoire de la sonde vers la comète de Halley."
+        },
+        {
+          "src": "/images/missions/vega-2/03.webp",
+          "caption": "Une capsule de descente Vega exposée, la sphère qui a fait descendre l'atterrisseur et le ballon vers Vénus."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "La comète de Halley",
+      "subtitle": "9 mars 1986 — à environ 8 000 km du noyau",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/02.webp",
+          "caption": "Le bloc-feuillet soviétique consacré à l'étude internationale de la comète de Halley. Les mesures des deux Vega sur la position du noyau ont aidé la sonde européenne Giotto à viser son propre passage, bien plus proche, cinq jours plus tard."
+        }
+      ]
+    }
+  ]
+}

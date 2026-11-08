@@ -31,6 +31,8 @@ import {
   destinationPos,
   earthPos,
   marsPos,
+  orbitPath,
+  earthOrbitPath,
   spacecraftHeading,
   spacecraftPos,
 } from '$lib/physics/transfer/mission-arc';
@@ -48,7 +50,6 @@ import { isLayerOn } from '$lib/science-layers';
 import { markerStateFor } from '$lib/orbital/cislunar/cislunar-marker-reveal';
 import { moonHelioPos } from '$lib/fly-moon-arc';
 import { parseFlybyMetFromSubPhase } from '$lib/fly-cinematic-beats';
-import { R_EARTH_AU, R_MARS_AU } from '$lib/physics/transfer/lambert-grid.constants';
 import { runCinematicFrame } from '$lib/fly-cinematic-frame';
 import { SCALE_3D } from '$lib/fly-scene-constants';
 import { sensory } from '$lib/sensory/state.svelte';
@@ -233,6 +234,10 @@ function impactEventOf(mission: {
 }
 /** Scene radius of the impact shot's primary (Didymos's DEST_STYLE size in fly-helio-scene). */
 const IMPACT_PRIMARY_R = 0.4;
+/** Mars's eccentric orbit for the 2D fallback ring (the planet sits on it every day). */
+const MARS_ORBIT_PATH = orbitPath('mars', 180);
+/** Earth's eccentric orbit for the same fallback ring. */
+const EARTH_ORBIT_PATH = earthOrbitPath(180);
 
 export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs) {
   const {
@@ -406,12 +411,22 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // points for a cislunar transit).
     if (!bridge.isMoonMission) {
       ctx2.beginPath();
-      ctx2.arc(cx, cy, R_EARTH_AU * SCALE_2D, 0, Math.PI * 2);
+      for (const [i, p] of EARTH_ORBIT_PATH.entries()) {
+        const x = cx + p.x * SCALE_2D;
+        const y = cy + p.z * SCALE_2D;
+        if (i === 0) ctx2.moveTo(x, y);
+        else ctx2.lineTo(x, y);
+      }
       ctx2.strokeStyle = 'rgba(75,156,211,0.35)';
       ctx2.lineWidth = 1;
       ctx2.stroke();
       ctx2.beginPath();
-      ctx2.arc(cx, cy, R_MARS_AU * SCALE_2D, 0, Math.PI * 2);
+      for (const [i, p] of MARS_ORBIT_PATH.entries()) {
+        const x = cx + p.x * SCALE_2D;
+        const y = cy + p.z * SCALE_2D;
+        if (i === 0) ctx2.moveTo(x, y);
+        else ctx2.lineTo(x, y);
+      }
       ctx2.strokeStyle = 'rgba(193,68,14,0.35)';
       ctx2.lineWidth = 1;
       ctx2.stroke();

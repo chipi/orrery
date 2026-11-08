@@ -83,6 +83,10 @@
       "crewed": {
         "type": "boolean",
         "description": "True if any phase of the mission carried a crew. Derived offline from overlay.type containing 'CREWED' (see scripts/backfill-crewed-flag.mjs)."
+      },
+      "outcome": {
+        "enum": ["failure"],
+        "description": "Set when the mission did not achieve its primary objective (crashed, aborted, lost); /missions' status filter FAILED lists these. Absent otherwise. Status stays what it is (a failed mission still FLEW)."
       }
     }
   }

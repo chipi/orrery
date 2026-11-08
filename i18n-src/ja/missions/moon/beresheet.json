@@ -12,7 +12,7 @@
     { "met": 10, "label": "TCM 1", "note": "周回を重ねる上昇の途中での軌道修正。", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "2回目のTCM。遠地点が月捕獲距離に接近中。", "type": "info" },
     { "met": 41, "label": "月への接近", "note": "最終月遷移噴射 — Beresheet が直接月軌道へ。", "type": "nominal" },
-    { "met": 48, "label": "月周回軌道投入", "note": "2019-04-04に月周回の楕円軌道へ捕獲。", "type": "nominal" },
+    { "met": 41, "label": "月周回軌道投入", "note": "2019-04-04に月周回の楕円軌道へ捕獲。", "type": "nominal" },
     { "met": 48.01, "label": "降下中の異常", "note": "降下中の慣性計測装置のリセット → エンジンシャットダウン → 晴れの海への衝突、2019年4月11日。", "type": "warning" }
   ],
   "vehicle_stage": "Falcon 9 第2段で GTO へ（相乗り）"

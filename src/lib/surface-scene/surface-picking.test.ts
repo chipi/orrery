@@ -192,3 +192,119 @@ describe('pickStopAt', () => {
     });
   });
 });
+
+describe('pickStopAt (#641 kinds)', () => {
+  const mesh = (userData: Record<string, unknown>) => {
+    const o = new THREE.Mesh(
+      new THREE.SphereGeometry(1, 8, 8),
+      new THREE.MeshBasicMaterial({ side: THREE.DoubleSide }),
+    );
+    o.userData = userData;
+    o.updateMatrixWorld(true);
+    return o;
+  };
+  const hidden = () => Object.assign(new THREE.Mesh(), { visible: false });
+
+  it('a photo pin returns its image, thumb and an approximate sol mark', () => {
+    const pin = mesh({
+      kind: 'traverse-photo',
+      stopSol: 18,
+      stopSolApprox: true,
+      image: '/images/x.webp',
+      thumb: '/images/x-320.webp',
+    });
+    const { ctx } = makeCtx({
+      traverseLines: [{ stopPins: [pin as unknown as THREE.Sprite], endDot: hidden() }],
+    });
+    const hit = createSurfacePicking(ctx).pickStopAt(CX, CY);
+    expect(hit?.image).toBe('/images/x.webp');
+    expect(hit?.thumb).toBe('/images/x-320.webp');
+    expect(hit?.title).toContain('≈18');
+  });
+
+  it('a stop shows its sol once; a Moon stop without a sol is titled by its name', () => {
+    const pick = (ud: Record<string, unknown>) => {
+      const { ctx } = makeCtx({
+        traverseLines: [{ stopPins: [mesh(ud) as unknown as THREE.Sprite], endDot: hidden() }],
+      });
+      return createSurfacePicking(ctx).pickStopAt(CX, CY);
+    };
+    const mars = pick({ kind: 'traverse-stop', stopSol: 952, stopLabel: 'Victoria Crater' });
+    expect(mars).toMatchObject({ title: 'Sol 952', label: 'Victoria Crater' });
+    expect(mars?.sol).toBeUndefined();
+    expect(pick({ kind: 'traverse-stop', stopLabel: 'Station 5' })).toMatchObject({
+      title: 'Station 5',
+    });
+  });
+
+  it('the landing ring returns the landing-site card', () => {
+    const pin = mesh({ kind: 'traverse-landing', stopLabel: 'Landed', stopLat: 3, stopLon: 4 });
+    const { ctx } = makeCtx({
+      traverseLines: [{ stopPins: [pin as unknown as THREE.Sprite], endDot: hidden() }],
+    });
+    expect(createSurfacePicking(ctx).pickStopAt(CX, CY)).toMatchObject({
+      label: 'Landed',
+      lat: 3,
+      lon: 4,
+    });
+  });
+
+  it('falls back to the path: the vertex under the pointer gives sol + date + km', () => {
+    const line = new THREE.Group();
+    line.updateMatrixWorld(true);
+    const { ctx } = makeCtx({
+      traverseLines: [
+        {
+          stopPins: [],
+          endDot: hidden(),
+          line,
+          // On a globe of radius 2 at the origin, the second vertex faces the camera (z = +10).
+          pathWorld: [new THREE.Vector3(1.6, 1.2, 0), new THREE.Vector3(0, 0, 2)],
+          pointSols: [1, 66],
+          pointKm: [0, 0.36],
+          dateOfSol: (s: number) => `D${s}`,
+        },
+      ],
+    });
+    const hit = createSurfacePicking(ctx).pickStopAt(CX, CY);
+    expect(hit?.title).toContain('66');
+    expect(hit?.label).toContain('D66');
+    expect(hit?.label).toContain('0.36');
+  });
+
+  it('ignores path vertices on the far side of the globe', () => {
+    const line = new THREE.Group();
+    line.updateMatrixWorld(true);
+    const { ctx } = makeCtx({
+      traverseLines: [
+        {
+          stopPins: [],
+          endDot: hidden(),
+          line,
+          // Behind the globe: projects to the pointer, but faces away from the camera.
+          pathWorld: [new THREE.Vector3(0, 0, -2)],
+          pointSols: [9],
+          pointKm: [1],
+          dateOfSol: (s: number) => `D${s}`,
+        },
+      ],
+    });
+    expect(createSurfacePicking(ctx).pickStopAt(CX, CY)).toBeNull();
+  });
+});
+
+describe('nearestPathVertex (#641)', () => {
+  it('returns the closest projected vertex within maxPx, else -1', async () => {
+    const { nearestPathVertex } = await import('./surface-picking');
+    const pts = [
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(10, 0, 0),
+      new THREE.Vector3(20, 0, 0),
+    ];
+    const project = (v: THREE.Vector3): [number, number] | null => (v.x === 20 ? null : [v.x, v.y]);
+    expect(nearestPathVertex(pts, project, 9, 1)).toBe(1);
+    expect(nearestPathVertex(pts, project, 1, 0)).toBe(0);
+    // behind the camera (null) is skipped; nothing else within 10 px
+    expect(nearestPathVertex(pts, project, 21, 0)).toBe(-1);
+  });
+});

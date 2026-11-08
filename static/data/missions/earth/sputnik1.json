@@ -11,7 +11,7 @@
   "arrival_date": "1957-10-04",
   "transit_days": 0,
   "vehicle": "Sputnik 8K71PS (R-7 Semyorka derivative)",
-  "payload": "83.6 kg polished aluminium-magnesium sphere, Ø 58 cm; two transmitters (20.005 MHz + 40.002 MHz), three silver-zinc batteries (60 W), no instruments beyond a thermometer + pressure sensor",
+  "payload": "83.6 kg polished aluminium-magnesium sphere, Ø 58 cm; two transmitters (20.005 MHz + 40.002 MHz), three silver-zinc batteries (1 W radio output), no instruments beyond a thermometer + pressure sensor",
   "delta_v": "~9.4 km/s (LEO)",
   "data_quality": "good",
   "credit": "© OKB-1 / Roscosmos archive. Public domain / historical.",

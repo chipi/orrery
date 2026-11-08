@@ -15,13 +15,9 @@
     getMissionIndex,
   } from '$lib/data';
   import { localeFromPage, localHref } from '$lib/locale';
-  import {
-    cardForFleet,
-    cardForMission,
-    fleetAliasMissionId,
-    type CardSpec,
-  } from '$lib/cards/card-spec';
-  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { CardSpec } from '$lib/cards/card-spec';
+  import { fleetAliasMissionId } from '$lib/cards/card-alias';
+  import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import type { Mission, MissionIndex } from '$types/mission';
   import type { FleetIndexEntry } from '$types/fleet';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
@@ -98,16 +94,25 @@
   // card derives meanwhile, so an aliased entry never flashes a fleet-typed
   // card while its mission record is in flight.
   let aliasPending = $state(false);
+  // The card code loads on demand (lazy-card.ts): fetched when an entry opens.
+  let cards = $state<CardModules | null>(null);
+  $effect(() => {
+    if (entry && !cards)
+      void loadCardModules().then(
+        (c) => (cards = c),
+        () => {},
+      );
+  });
   let cardSpec = $derived<CardSpec | null>(
-    !entry || aliasPending
+    !entry || aliasPending || !cards
       ? null
       : aliasMission
-        ? cardForMission(aliasMission, missionIndex, aliasHero)
+        ? cards.spec.cardForMission(aliasMission, missionIndex, aliasHero)
         : // Wait for the index before deriving a fleet card — an empty index
           // would flash a '—/0' collection number on first open.
           fleetIndex.length === 0
           ? null
-          : cardForFleet(
+          : cards.spec.cardForFleet(
               entry,
               fleetIndex,
               gallery[0],
@@ -184,6 +189,9 @@
   // Exploded-stage watercolor cutaway — a richer companion to the pencil
   // anatomy, shown alongside it in the DETAIL tab for launch vehicles.
   let cutawayPath = $derived(entry ? launcherCutawayPath(entry.id) : null);
+  // Opened on a drawing, the viewer steps through the craft's drawings, not the photo gallery.
+  let drawings = $derived([diagramPath, cutawayPath].filter((p): p is string => !!p));
+  let lightboxImages = $derived(lightboxSrc && drawings.includes(lightboxSrc) ? drawings : gallery);
 
   // Upgrade the pencil anatomy + exploded cutaway to their responsive WebP
   // ladders once the manifest loads; plain webp until then / when no ladder
@@ -842,11 +850,11 @@
   {/if}
 </Panel>
 
-{#if cardSpec}
-  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{#if cardSpec && cards}
+  <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
+<PanelLightbox src={lightboxSrc} images={lightboxImages} onClose={() => (lightboxSrc = null)} />
 
 <!-- Loaded when a clip opens: a static import kept /fleet over its JS budget in the prod build. -->
 {#if playerVideo}

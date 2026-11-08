@@ -19,9 +19,10 @@ const root = `i18n-src/${loc}`;
 const edits = [];
 const hits = rows.map(() => 0);
 const walk = (dir) => {
-  for (const f of fs.readdirSync(dir)) {
+  for (const d of fs.readdirSync(dir, { withFileTypes: true })) {
+    const f = d.name;
     const p = path.join(dir, f);
-    if (fs.statSync(p).isDirectory()) walk(p);
+    if (d.isDirectory()) walk(p);
     else if (f.endsWith('.json')) {
       const rel = path.relative(root, p);
       const visit = (v, at) => {

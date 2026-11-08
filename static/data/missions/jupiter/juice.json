@@ -11,11 +11,11 @@
   "arrival_date": "2031-07-21",
   "transit_days": 3020,
   "vehicle": "Ariane 5 ECA",
-  "payload": "6000 kg wet (2900 kg dry) — largest interplanetary spacecraft Europe has ever built. 10 instruments: JANUS (visible), MAJIS (IR), UVS, SWI (sub-mm), GALA (laser altimeter), RIME (radar sounder, NASA), J-MAG (mag), PEP (particle), RPWI (plasma waves), 3GM (radio science). 85 m² solar arrays sized for ~5.5 AU operation.",
+  "payload": "6070 kg wet (2420 kg dry) — largest interplanetary spacecraft Europe has ever built. 10 instruments: JANUS (visible), MAJIS (IR), UVS, SWI (sub-mm), GALA (laser altimeter), RIME (radar sounder, NASA), J-MAG (mag), PEP (particle), RPWI (plasma waves), 3GM (radio science). 85 m² solar arrays sized for ~5.5 AU operation.",
   "delta_v": "~3.0 km/s (gravity-assist sequence + Jupiter orbit insertion + Ganymede orbit insertion)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
-  "credit": "© ESA / Airbus / instrument PIs. JUICE — JUpiter ICy moons Explorer — launched 2023-04-14 from Kourou as ESA's flagship L-class outer-system mission. The 8-year cruise is one of the most complex gravity-assist sequences ever attempted: a unique Lunar-Earth Gravity Assist (LEGA) on 2024-08-19 (first such manoeuvre ever performed), Venus 2025-08-31, Earth 2026-09-29, Earth 2029-01-18, with each pass building ΔV toward Jupiter arrival 2031-07-21. After Jupiter orbit insertion JUICE will conduct 35 close flybys of Europa, Ganymede, and Callisto over 3.5 years before manoeuvring into a dedicated Ganymede orbit on 2034-12-31 — the first spacecraft ever to orbit a moon of another planet. Primary science questions: Is there a subsurface ocean at Ganymede? What is the composition + thickness of Europa's ice shell? How do the Jovian magnetic environment + ice-shell tides interact across the three icy moons? Planned end of mission 2035 by impact on Ganymede.",
+  "credit": "© ESA / Airbus / instrument PIs. JUICE — JUpiter ICy moons Explorer — launched 2023-04-14 from Kourou as ESA's flagship L-class outer-system mission. The 8-year cruise is one of the most complex gravity-assist sequences ever attempted: a unique Lunar-Earth Gravity Assist (LEGA) on 2024-08-19 (first such manoeuvre ever performed), Venus 2025-08-31, Earth 2026-09-28, Earth 2029-01-18, with each pass building ΔV toward Jupiter arrival 2031-07-21. After Jupiter orbit insertion JUICE will conduct 35 close flybys of Europa, Ganymede, and Callisto over 3.5 years before manoeuvring into a dedicated Ganymede orbit on 2034-12-31 — the first spacecraft ever to orbit a moon of another planet. Primary science questions: Is there a subsurface ocean at Ganymede? What is the composition + thickness of Europa's ice shell? How do the Jovian magnetic environment + ice-shell tides interact across the three icy moons? Planned end of mission 2035 by impact on Ganymede.",
   "links": [
     {
       "l": "JUICE (spacecraft) — Wikipedia",
@@ -59,7 +59,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Ariane 5 ECA",
-        "description": "Kourou, French Guiana, 2023-04-14. ESA's first L-class mission and the first European spacecraft to Jupiter. Juice (JUpiter ICy moons Explorer) targets the three Galilean ice moons — Ganymede, Callisto, Europa — to test whether their subsurface oceans could be habitable."
+        "description": "Kourou, French Guiana, 2023-04-14. ESA's first L-class mission and the first spacecraft to the outer planets not launched by the United States. Juice (JUpiter ICy moons Explorer) targets the three Galilean ice moons — Ganymede, Callisto, Europa — to test whether their subsurface oceans could be habitable."
       },
       {
         "met_days": 493,
@@ -68,7 +68,7 @@
         "description": "August 2024. The first spacecraft to use a Moon flyby (closest approach 700 km) followed by an Earth flyby (closest approach 6,800 km) within 24 hours — a coupled double assist that ESA engineers designed to bend Juice's trajectory toward Venus while saving ~100 m/s of ∆v versus a pure Earth-only flyby."
       },
       {
-        "met_days": 871,
+        "met_days": 870,
         "type": "flyby",
         "label": "Venus — gravity assist",
         "description": "August 2025. Closest approach ~5,088 km from Venus. The encounter raises Juice's aphelion enough that two more Earth assists in 2026 + 2029 will reach Jupiter. The Venus thermal environment is the hottest the spacecraft will face — passive thermal control was designed around this pass."
@@ -77,7 +77,7 @@
         "met_days": 1263,
         "type": "flyby",
         "label": "Earth #2 — gravity assist",
-        "description": "September 2026. Adds energy for the third leg of the cruise to Jupiter."
+        "description": "Closest approach 8,641 km on 2026-09-28. Adds energy for the third leg of the cruise to Jupiter."
       },
       {
         "met_days": 2106,
@@ -89,7 +89,7 @@
         "met_days": 3020,
         "type": "edl_or_oi",
         "label": "Jupiter orbit insertion",
-        "description": "Planned 2031-07. Multi-month capture burn into Jupiter orbit. After 35 Jupiter orbits with Europa + Callisto + Ganymede flybys, Juice will become the first spacecraft to orbit a moon other than Earth's (Ganymede) in 2034 — settling into a 5,000 km circular orbit to map the largest moon in the solar system."
+        "description": "Planned 2031-07. A capture burn puts Juice into orbit around Jupiter. After 35 Jupiter orbits with Europa + Callisto + Ganymede flybys, Juice will become the first spacecraft to orbit a moon other than Earth's (Ganymede) in 2034 — settling into a 5,000 km circular orbit to map the largest moon in the solar system."
       }
     ]
   }

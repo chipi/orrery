@@ -1,0 +1,414 @@
+{
+  "_about": "Mission blueprints (#641): how each master in masters/blueprints/ was made. The reference sheet is scripts/anatomy/blueprint-plan-view.ts <id>; the model (Higgsfield gpt_image_2_6, high, 4k, 3:2) redraws it by hand. Facts on each sheet are sourced below; after each sheet our own mission and fleet text is checked against it and fixed where it was wrong.",
+  "process": [
+    "1. Facts: dates, distances, launcher and spacecraft numbers from the sources listed; worked values from the site's Lab tools and ephemeris. Panel I is the MISSION BRIEF: four or five lines on why the mission matters, written from our own mission text (first / description) so the sheet and the site say the same.",
+    "2. Reference: npx tsx scripts/anatomy/blueprint-plan-view.ts <id> ref.png (computed plan view + panel layout), uploaded as the image reference.",
+    "3. Drafts: 1-2 at quality medium, 2k (1 credit each) to settle layout and wording.",
+    "4. Final: one render at quality high, 4k (4.25 credits), native 3504x2336 — no upscale needed (served base is 3072).",
+    "5. Fixes: local patches (glyphs copied from the same sheet, paper patches) or a small crop edit pasted back cell by cell.",
+    "6. Content check: our mission/fleet text vs the sheet; wrong numbers fixed in all 14 locales.",
+    "Prompt rule since Rosetta: CALLOUT RULE — each number once on the drawing, pointing at the part its list line names (the Rosetta drafts doubled callouts 1 and 3; the final did not)."
+  ],
+  "sheets": {
+    "voyager-2": {
+      "date": "2026-11-06",
+      "final_job": "6aba4c50-89b7-44da-93b1-a96a6af883d6",
+      "reference_media": "56270bcd-1898-46be-a395-f86d14efd604",
+      "edits": [
+        "spacecraft panel: the callout on the golden record read 5 (a second 5); replaced by the legend's own circled 6",
+        "v_esc formula: subscript ∞ in μ∞ redrawn as ☉",
+        "encounter table: Jupiter 570,000 KM → 721,670 KM (crop edit job 6b219c7d-7b5e-4e8c-8170-178d5e4b098e, only the cell pasted back), to match our mission text: 721,670 km from Jupiter's centre = 650,180 km above the clouds (Astronomy.com); Wikipedia's 570,000 km does not fit either",
+        "panel I: NOTES → MISSION BRIEF (WHY GO / WHY IT MATTERS), crop edit job 427c78a5-f9d5-44b8-8df1-596757c3e241, interior pasted inside the original border. From our mission text (first, description) plus: built and funded for Jupiter and Saturn, Uranus and Neptune added in flight."
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Voyager_2",
+        "https://en.wikipedia.org/wiki/Titan_IIIE",
+        "https://www.astronomy.com/today-in-the-history-of-astronomy/july-9-1979-voyager-2s-jupiter-visit/"
+      ],
+      "content_check": "static/data/missions/neptune/voyager-2.json and the fleet entry: dates and distances agree with the sheet (Jupiter 721,670 km, Saturn 101,000 km, Uranus 81,500 km, Neptune 4,950 km above cloud tops, Triton ~40,000 km); no change needed."
+    },
+    "cassini": {
+      "date": "2026-11-06",
+      "final_job": "85f7f4d8-ee82-4fb5-afd5-df7b51249e4b",
+      "reference_media": "6fd57c08-328b-4fbb-8555-9152477c68c6",
+      "drafts": ["d2c6ddc4-fb59-44cb-a064-3d05ea8a016d", "e9efe9f7-1441-496c-abd8-0f6ea0ee17b3"],
+      "edits": [
+        "main view note: DLANETS → PLANETS (P copied from LOOPS on the same sheet)",
+        "panel I: NOTES → MISSION BRIEF (WHY GO / WHY IT MATTERS), crop edit job d96ec15f-deac-4426-97a3-c26096ae1a96, interior pasted inside the original border. From our mission text (first, description): 13 years, 294 orbits, 162 close moon flybys, Huygens 14 Jan 2005, Enceladus plumes, Titan lakes, end 15 Sep 2017 to protect Enceladus and Titan."
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
+        "https://en.wikipedia.org/wiki/Titan_IV",
+        "https://en.wikipedia.org/wiki/Huygens_(spacecraft)",
+        "https://www.sciencedaily.com/releases/1998/04/980428075725.htm"
+      ],
+      "notes": "The Venus 1 → Venus 2 leg is drawn as one conic; the real flight had a deep space manoeuvre on 3 Dec 1998, noted on the sheet. SRMU thrust left off: Wikipedia's 15.12 MN does not say per motor or both.",
+      "content_check": "Fixed: our payload said the orbiter was ~5712 kg dry; 5,712 kg is the whole stack at launch, dry is 2,523 kg (all 14 locales, commit cd90ae7b4a5). Checked and kept: Huygens ~318 kg (ESA probe mass), Venus 1 284 km (JPL); the sheet uses these. Added to the sheet from our data: SOI 96-minute burn, 626 m/s (JPL)."
+    },
+    "rosetta": {
+      "date": "2026-11-06",
+      "reference_media": "9ee638b6-9ae6-4872-9e8b-f62f9980d0f2",
+      "drafts": ["2d8e356e-5253-4897-9de7-9c5de774fe60", "d3aa86fc-5a66-4813-b593-e2e298a6b120"],
+      "edits": [
+        "none needed: every callout single and matched, every number as briefed (checked reduced and at full size on the inner cruise and equations)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)",
+        "https://en.wikipedia.org/wiki/Ariane_5",
+        "https://m.esa.int/Our_Activities/Operations/Rosetta_closes_in_on_Earth_a_second_time",
+        "https://sci.esa.int/web/rosetta/-/45841-rosetta-s-third-earth-swingby",
+        "https://www.esa.int/Enabling_Support/Operations/Rosetta_lines_up_for_spectacular_asteroid_flyby",
+        "JPL SBDB elements for 67P, 2867 Steins, 21 Lutetia (ssd-api.jpl.nasa.gov/sbdb.api, full precision, 2026-11-06)"
+      ],
+      "notes": "Two legs of more than one turn (launch → Earth 1, Earth 1 → Mars) are fitted Kepler ellipses, not Lambert arcs. Computed and matching ESA: Steins 2.14 AU and Lutetia 2.72 AU from the Sun at the flybys, farthest 5.29 AU (hibernation), comet 2.71 AU from Earth at arrival, 28 min signal time at Philae landing. Ariane 5 G+ height and launch mass left off: Wikipedia gives a range and infers the mass from the plain G.",
+      "content_check": "Fixed in all 14 locales (commit 45a52d9212c): orbiter dry mass ~2900 → ~1230 kg (3,000 kg is the launch mass); 'two Earth + one Mars' → three Earth + one Mars; 'Heatshield' removed (Rosetta had none); Earth 2 5,295 → 5,301 km (ESA actual, 5,295 was the plan); Lutetia 3,168 → 3,162 km (ESA). Kept: Earth 3 on 13 Nov 2009 (ESA; Wikipedia's 12 Nov is wrong), Earth 1 1,955 km.",
+      "final_job": "84e9256e-3123-4520-8253-6192857dd30a"
+    },
+    "apollo11": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-cislunar-view.ts apollo11",
+      "reference_media": "a1e9d3d4-bec9-4b6a-ae8e-b2427b80719d",
+      "drafts": ["2cfc51bc-738f-4a7b-ace2-854fb08a3db2", "1ad493c3-bd2f-4dc9-9b4a-a87f4bd9e326"],
+      "final_job": "0bf4b227-f375-4b73-bf0d-57d338a0d455",
+      "edits": [
+        "landing-site note: 23,47°E → 23.47°E (comma tail painted out with paper from the same line)",
+        "launch sequence: stations renumbered 1–6 with S-II SEPARATES restored (crop edit job e8782745-e2f7-453d-9819-943e1f4f8af5, interior pasted inside the panel border)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Apollo_11",
+        "https://en.wikipedia.org/wiki/Saturn_V",
+        "static/data/missions/moon/apollo11.json (Apollo 11 Mission Report, NASA MSC-00171): LOI 113 × 313 km, SPS 357 s, PDI 15 km, MCC-2 only, 21 h 36 min on the surface",
+        "Orrery Lab cislunar-transfer (Hohmann to the Moon from LEO: Δv 3.13 km/s, 4.75 d)"
+      ],
+      "notes": "Hero is a schematic figure-eight in the rotating Earth–Moon frame: true along the Earth–Moon line, not in width; the sheet says so. Saturn V launch mass and payload left off (Wikipedia gives a range and a generic TLI payload that does not match our mission-report mass).",
+      "content_check": "Fixed (commit 996cda6f709, all 14 locales for TEI): TEI did not put Apollo 11 on a 'free-return trajectory'; TLI ended just short of escape speed, not at it; Saturn V is the most powerful rocket to fly successfully (the N1 out-thrusted it but failed). Fixed (commit 7486a67dc93): parking orbit 320 km → 186 × 183 km. Kept: PDI from 15 km (Wikipedia's '6,000 ft' is not the PDI altitude)."
+    },
+    "ulysses": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-polar-view.ts ulysses",
+      "reference_media": "ae39953e-c77a-49c3-9408-e9b84bf72a24",
+      "drafts": ["064597a6-51e8-4f96-9a89-f3172039fcd7"],
+      "final_job": "cbba2a83-6ff8-4ee7-b7ce-00a373c2447f",
+      "edits": [
+        "panel J: \"MAP OF TILF HELIOSPHERE\" → \"MAP OF THE HELIOSPHERE\" (THE copied from the same line)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ulysses_(spacecraft)",
+        "https://www.cosmos.esa.int/web/ulysses/jupiter-flyby",
+        "static/data/missions/sun/ulysses.json (polar pass months, end of mission)"
+      ],
+      "notes": "Side view computed from sourced facts: flyby at aphelion (Jupiter 5.40 AU on the day = published aphelion), i 79.11°, q 1.35 AU, south first. Computed period 2,265 d vs published 2,264.26 d; passes at 79° ecliptic latitude (80.2° heliographic published). Polar passes given by month only: our data has no day. 38.3 km/s for an 80° plane change at Earth's 29.8 km/s is 2v·sin(Δi/2).",
+      "content_check": "Fixed (commit 1f5d478e717, English event text): launch speed 15.4 km/s relative to Earth, not 40 km/s; the 380,000 km Jupiter closest approach is above the cloud tops, 6.3 Jupiter radii (~450,000 km) from the centre (ESA). Not changed: launch mass 366 kg in our payload vs 371 kg in Wikipedia (sources differ on what is included); the sheet uses 371 kg."
+    },
+    "new-horizons": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts new-horizons",
+      "reference_media": "a3c16c1a-2897-460a-ad1f-8860f174d2d1",
+      "drafts": [],
+      "final_job": "647403bc-254e-494a-9307-6ef1c1b9c2de",
+      "edits": [
+        "escape-speed formula: μ∞ → μ☉ (paper tiled from beside it, ☉ drawn by hand weight)",
+        "panel I crop edit (job 60f1ecb3-1705-40fb-afc4-259e597b1a83): \"LAST OF THE CLASSICAL PLANETS\" → \"LAST OF THE NINE ORIGINAL PLANETS\"; interior pasted inside the original border"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/New_Horizons",
+        "JPL SBDB elements for Pluto and Arrokoth",
+        "static/data/missions/pluto/new-horizons.json"
+      ],
+      "notes": "No draft: went straight to the 4K final from the reference sheet. \"Past the Moon in 9 hours\" and \"about the size of a grand piano\" checked against Wikipedia (\"took only nine hours to pass the Moon's orbit\"; \"comparable in size and general shape to a grand piano\").",
+      "content_check": "Fixed: about 3 years saved by the Jupiter assist and 16.26 km/s relative to Earth at launch (commit 2e80cb459f7); Arrokoth 43 AU from the Sun at the flyby, not 44 (commit ebd363fe5b6), all 14 locales."
+    },
+    "venera-13": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts venera-13",
+      "reference_media": "7d9ae2ca-d374-48e3-871a-743cebd320c0",
+      "drafts": [],
+      "final_job": "b04a9a49-7e7d-4960-8464-0973e9392be7",
+      "edits": [
+        "panel D: the long ④ arrow to the lander antenna erased (④ is the dish, by its leader line, now joined to the circle); ⑤ copied from the list to the antenna; list ⑨/⑧ swapped so 8 = ring landing platform, 9 = camera window",
+        "panel F: the model invented altitude ticks 200/150/100/50 km (placing \"about 50 km\" at ~65 km); papered over, the graph is schematic and only the sourced ~50 km parachute release is given"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Venera_13",
+        "https://en.wikipedia.org/wiki/Venera_14 (shared 4V-1 design: 760 kg landing mass, parachute released ~50 km, air braking, ring platform, bus relay)",
+        "https://en.wikipedia.org/wiki/Atmosphere_of_Venus (surface density 65 kg/m³)",
+        "static/data/missions/venus/venera-13.json"
+      ],
+      "notes": "No draft. Plan view: a single Earth → Venus leg, 147° in 122 days (Type I, under the 146-day Hohmann half-orbit for a = 0.86 AU). Panel F titled ENTRY AND DESCENT PROFILE (new `f` field in the generator). Not on the sheet: entry speed (our 11.2 km/s is unsourced) and the lens-cap story (Wikipedia tells it of Venera 14).",
+      "content_check": "Fixed (mission + fleet, all 14 locales): lander 760 kg, not 1645 kg (that is the listed dry mass); surface pressure 89 atm, not 89 bar (9.0 MPa = 90 bar); fleet English best_known_for \"twice\" → about four times its 32-minute design life. Earlier: design life and ~4,400 kg (commit 97fdfb4a2fb)."
+    },
+    "galileo": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts galileo",
+      "reference_media": "6239fe3f-08db-4678-b850-1d3647e6047e",
+      "drafts": [],
+      "final_job": "8d0095e7-5a57-481b-870f-34822513e960",
+      "edits": [
+        "panel F: \"EARTH 1 1960 KM\" → 960 KM (stray 1 papered over)",
+        "panel H: μ₀ → μ☉ (dot drawn in the circle)",
+        "panel B crop edit (job b6b68b8d-8299-4ffc-abf0-7c7725d15d5c): ① moved to the left booster, ③ added on the orbiter wing (it was missing from the drawing)",
+        "panel C crop edit (job 728b37c3-d44f-4af8-9259-265fff4572d1): duplicate ④ removed and renumbered 1–5; \"ON TO VTAGES\" → \"ON TO VENUS\"; note reworded from \"Centaur was banned from the Shuttle\" to \"NASA cancelled the more powerful Shuttle-Centaur upper stage\" (Wikipedia: cancelled)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Galileo_project (launch, flyby dates and distances, masses, 570 W, 160 bit/s, VEEGA after the Shuttle-Centaur cancellation)",
+        "https://en.wikipedia.org/wiki/Galileo_Probe (release, entry 48 km/s, 61.4 min)",
+        "https://science.nasa.gov/mission/galileo/ (34 orbits, 58 min, 23 × Earth pressure, end 21 Sept 2003)",
+        "JPL SBDB elements for 951 Gaspra and 243 Ida"
+      ],
+      "notes": "No draft. Flyby times set to noon (dates only in the source). Probe data time differs between sources (NASA 58 min, Wikipedia 61.4 min): the sheet says about an hour. Generator: Gaspra and Ida elements; per-event `tag` puts a label beside a dot at a panel edge.",
+      "content_check": "Fixed: payload \"~2.5 t dry mass\" → 2,560 kg at launch, orbiter dry mass 1,880 kg (all 14 locales); arrival event \"confirmed liquid water under Europa's ice\" → found evidence of (NASA: evidence supports; English-only flight text). Not changed: probe release 1995-07-13 in our data vs 12 July 03:07 UTC in Wikipedia (time-zone or source difference, not resolved); entry 47.4 km/s in our data vs ~48 km/s in Wikipedia (the sheet says about 48)."
+    },
+    "dawn": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts dawn",
+      "reference_media": "d3451410-fa3c-4f6f-900e-bfdd7822e7dc",
+      "drafts": [],
+      "final_job": "15c2425c-b03f-48a5-a7ba-31e63c4ae598",
+      "edits": [
+        "panel D crop edit (job 3fe1a928-bdd2-438e-a4e7-587dc6ecfa93): two ① → one ① with two leaders; four thruster nozzles → three; the second ⑥ (on a nozzle) → ③; pasted below the corner pin"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dawn_(spacecraft) (launch, masses, NSTAR 90 mN / 3,100 s, ~11 km/s, 19.7 m, 10 kW, Mars 549 km, Vesta and Ceres dates, end 1 Nov 2018, xenon 247 + 112 of 425 kg)",
+        "https://en.wikipedia.org/wiki/Delta_II (7925H: nine GEM 46, RS-27A, AJ10-118K, Star 48B)",
+        "https://www.jpl.nasa.gov/missions/dawn/ (Vesta: core/mantle/crust, basin >300 mi with a peak over twice Everest, meteorite source)",
+        "JPL SBDB elements for 4 Vesta and 1 Ceres"
+      ],
+      "notes": "No draft. Ion-thrust legs (Mars → Vesta with one extra turn, Vesta → Ceres) have no ballistic conic (the fitted ellipse missed by 0.57 AU), so they are drawn as schematic spirals (new `spiral` leg) and the sheet says so; the 14 months at Vesta ride Vesta's orbit (new `ride` leg). Wikipedia gives the Mars flyby as 549 km in the text and 542 km elsewhere; the sheet first used 549 and 17 Feb, as our data did. Fixed 2026-11-07 to 542 km and 18 Feb 2009 (00:27:58 UTC, Dawn Journal) in panels A, F and G by a local glyph swap (.image-cache/landing/dawn-patch.mjs), with the mission data in all 14 locales. 0–100 km/h in about 4 days: 27.8 m/s at 0.09 N / ~1,000 kg.",
+      "content_check": "Fixed (commit eb956f1c0a4, 14 locales): the Vesta → Ceres leg had about 112 kg of xenon (an allocation, Wikipedia), not ~390 kg (more than the 425 kg tank minus the 247 kg used for Vesta). Not checked: \"the Mars assist added ~2.6 km/s\" and \"first interplanetary transfer under continuous low thrust between two bodies\" in our event text."
+    },
+    "hayabusa2": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts hayabusa2",
+      "reference_media": "8504f2a7-b582-48d8-baae-7295d8e0069f",
+      "drafts": [],
+      "final_job": "50e38d42-ac48-43ba-8e8b-3f7f71d66d17",
+      "edits": [
+        "panel C: the extra ⑥ papered over (five stations in the list)",
+        "panel D: the second ⑤ and its arrow papered over (the other ⑤ points at an antenna)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hayabusa2 (launch 04:22:04 UTC, 600/490 kg, μ10 28 mN / 3,000 s, swing-by 3,090 km, Ryugu dates, rovers, capsule 05:30 UTC Woomera, 5.4 g, Torifune 2026, 1998 KY26 2031)",
+        "https://en.wikipedia.org/wiki/162173_Ryugu (radius 448 m, 4.5e11 kg, 1/80,000 g, SCI 2 kg copper, up to 1 m deep, ~50% voids, amino acids and uracil)",
+        "JPL SBDB elements for 162173 Ryugu"
+      ],
+      "notes": "No draft. Main view at linear scale (new `scale` option): everything stays within 0.97–1.42 AU and √r crowded it into one ring. Launch → swing-by and swing-by → Ryugu (two extra turns) are fitted ellipses (fit error 0.000 AU); the 17 months at Ryugu ride its orbit; the return leg is a schematic ion-thrust spiral; the sheet says the loops are schematic. v_esc 37 cm/s computed from the Wikipedia mass and radius. Not sourced this session: LE-7A / LE-5B engines and \"water-bearing minerals\" (Wikipedia says the samples revealed water).",
+      "content_check": "Fixed (commit 76542b0eba9): dry mass 490 kg, not 609 kg (14 locales); Ryugu gravity about 1/80,000 g, not ~0.0001 g; the MINERVA-II rovers hop, not wheeled (English event text). Not changed: TD1 2019-02-22 in our credit is the JST date (21 Feb UTC); bulk density ~1.27 g/cm³ in our credit vs 1.19 in Wikipedia."
+    },
+    "juno": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts juno",
+      "reference_media": "541ec773-8ae1-4caa-aebb-5a3547afc546",
+      "drafts": [],
+      "final_job": "bfb8afab-2715-4157-81b3-61e3a1adfc1d",
+      "edits": [
+        "panel A: the EARTH 1 AU arrow ended on Mars's orbit (364 px from the Sun; Mars 365, Earth 296): old arrow papered over, the covered stretch of the Mars line redrawn from the line measured just outside, a new arrow drawn to Earth's circle"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Juno_(spacecraft) (launch 16:25 UTC, 3,625 / 1,593 kg, three 2.7 × 8.9 m wings, deep-space burns Aug–Sep 2012, Earth 9 Oct 2013 559 km, arrival 03:53 UTC, 53.5-day orbits and the valve problem, 4,200 km, 1 cm titanium vault, fuzzy core, Ganymede 1,038 km, Europa 352 km, Io Dec 2023 / Feb 2024)",
+        "https://www.jpl.nasa.gov/news/nasas-juno-navigators-enable-jupiter-cyclone-discovery/ (8 around 1 north; 5 around 1 south, later 6)",
+        "static/data/missions/jupiter/juno.json (+7.3 km/s from the Earth flyby, 35-minute insertion burn)"
+      ],
+      "notes": "No draft. Launch → Earth flyby is a fitted ellipse with one extra turn (0.97–2.05 AU, fit error 0.002 AU); the deep-space burns are not modelled. 1/27 sunlight = 1/5.2². Not sourced this session: +7.3 km/s and the 35-minute burn (our data), and \"the Atlas V could not send Juno straight to Jupiter\" (our data says a direct transfer needed a far larger launcher).",
+      "content_check": "Fixed (commit 7f049c5ac53, 14 locales): \"first solar-powered spacecraft to operate beyond the asteroid belt\" → first to reach Jupiter; polar cyclones eight around the north pole, five (later six) around the south, not eight around each. Not changed: ~500 W at Jupiter in our data vs ~435 W in Wikipedia (NASA material uses about 500 W); \"mission extended through 2025\" in our data vs Wikipedia's extension through 2028."
+    },
+    "bepicolombo": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts bepicolombo",
+      "reference_media": "9409dca0-ab9f-4d50-83f7-26f358250164",
+      "drafts": [],
+      "final_job": "69e571ec-6b1d-4d3f-9364-eaa657035eac",
+      "edits": ["panel H: the subscript of M drew as \"∞\"-like; papered over and ☉ drawn"],
+      "sources": [
+        "https://en.wikipedia.org/wiki/BepiColombo (launch 01:45 UTC VA245, 4,100 kg, MPO 1,230 / Mio 255 / MTM 2,615 kg, four T6 290 mN, Earth 12,700 km, Venus dates, six Mercury flybys 165–37,626 km, 2024 thruster problem +11 months, insertion planned 21 Nov 2026)",
+        "static/data/missions/mercury/bepicolombo.json (Venus 10,720 / 552 km, Mercury 1–4 altitudes, Giuseppe Colombo and Mariner 10)"
+      ],
+      "notes": "No draft. Generator now allows Mercury as an event body. Launch → Earth and Venus → Venus are fitted ellipses (fit errors 0.006 and 0.000 AU); Mercury 1 → 6 rides Mercury's orbit because the resonant loops between the flybys are not in our data — the sheet says so. Orbit insertion is in the future (21 Nov 2026): the sheet and table say PLANNED. Not sourced this session: Ariane 5 engine names (Vulcain 2, HM7B), \"MTM let go before arrival\", and the Venus and Mercury 1–4 altitudes (our data).",
+      "content_check": "Fixed (commit 94516eac8e1): Mio 255 kg, not 285 (14 locales); English flight text: falling sunward the craft speeds up, so it must shed orbital energy (not \"velocity must DROP by ~25 km/s\"); Mercury flybys 5 and 6 are past, not planned; the 2024 thruster problem moved insertion to Nov 2026."
+    },
+    "juice": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts juice",
+      "reference_media": "839f4840-52e3-47ac-be30-82a33941f48d",
+      "drafts": [],
+      "final_job": "4d009fb6-ae42-44df-b667-ff9786845faf",
+      "edits": [
+        "panel J note crop edit (job 61a722c1-e0ae-4dcb-8368-553f0e8a89b2): \"THE FIRST SPACECRAFT TO ORBIT A MOON OTHER THAN OUR OWN\" → \"SET TO BE THE FIRST …\" (the Ganymede orbit is planned for Dec 2034)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer (launch 12:14:36 UTC VA260, last ESA science launch on Ariane 5, 6,070 / 2,420 kg, RIME freed 12 May 2023, Moon 700 km 19 Aug 2024 21:16, Earth 6,807 km 20 Aug 21:57, Venus 5,088 km 31 Aug 2025 05:28, Earth 2 8,641 km 28 Sep 2026 11:45, Earth 3 4,600 km 18 Jan 2029 planned, Jupiter Jul 2031, Ganymede 500 km polar Dec 2034, end of 2035, 10 instruments)",
+        "static/data/missions/jupiter/juice.json (85 m² arrays; arrival 2031-07-21)"
+      ],
+      "notes": "No draft. Phasing legs need an extra turn (a zero-turn conic needs a ~4-year orbit, far beyond the launch energy); the multi-turn fitter now prefers the least eccentric ellipse that fits within 0.01 AU (otherwise Earth → Venus dipped to 0.37 AU). Everything after 28 Sep 2026 is labelled planned. Ganymede orbit v 1.78 km/s and T 3.1 h computed from GM ≈ 9,888 km³/s² and R 2,634 km (from memory, not sourced this session). Not sourced: Ariane 5 engine names.",
+      "content_check": "Fixed (commit e88759b6122): 6,070 / 2,420 kg, not 6,000 / 2,900 (14 locales); Earth flyby 2 on 2026-09-28 at 8,641 km, not 09-29; not the first European craft to Jupiter (Ulysses) but the first to the outer planets not launched by the US; one capture burn, not \"multi-month\". Not checked: \"35 close flybys\", \"settling into a 5,000 km circular orbit\" (Wikipedia gives 500 km for the final orbit), \"~5 km/s\" from Earth 3."
+    },
+    "giotto": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts giotto",
+      "reference_media": "bbfcfddb-175a-4e05-86b2-dba72d3ebd64",
+      "drafts": [],
+      "final_job": "80b6cd44-f0f4-4fc2-aa4b-12c47040e92c",
+      "edits": [
+        "panel A crop edit (job be32a580-f7ad-48e8-b53f-c3fb545e59ec): \"VENUS 0.72 AU\" sat between the trajectory band and Earth's circle; moved inside Venus's circle (two local attempts failed: a paper patch hit the band, a stroke-only move left a ghost)"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Giotto_(spacecraft) (launch 11:23 UTC V-14 ELA-1, 960 kg, 1.87 × 2.85 m, shield 1 mm Al + 12 mm Kevlar, Halley 596 km, nucleus 15 × 7–10 km, at least three jets, ~10% active, 7.6 s impact, camera lost, 32 min, Earth 2 Jul 1990 first gravity assist from interplanetary space, Grigg–Skjellerup 10 Jul 1992 ~200 km, off 23 Jul 1992)",
+        "https://www.esa.int/Science_Exploration/Space_Science/Giotto_overview (GTO and the on-board motor after three orbits, 15 rpm, sheets 23 cm apart, 68 km/s, a one-gram particle, 0.1 g pierces 8 cm Al)",
+        "https://en.wikipedia.org/wiki/Halley_Armada (Vega 1 8,889 km, Vega 2 8,030 km, Suisei 151,000 km, Sakigake 6.99 million km; Pathfinder cut the miss distance from 4,000 to 596 km)",
+        "JPL Horizons osculating elements of 1P/Halley (1986-03-14) and 26P/Grigg–Skjellerup (1992-07-10)"
+      ],
+      "notes": "No draft. Comet positions from Horizons elements at the encounter (SBDB epochs are decades away; Jupiter perturbs 26P). The Halley flyby barely changed Giotto's orbit, so the hibernation leg keeps the launch orbit's period (313° in 255 days, ~0.81 yr): five extra turns to the 1990 Earth flyby (a 0.89 AU). 2.3 MJ = ½ · 1 g · (68 km/s)², ~0.55 kg TNT. Not sourced this session: Ariane 1 engine names, Earth flyby 22,730 km (our data), \"first spacecraft to visit two comets\".",
+      "content_check": "Fixed (commit 595c8516ecb, English text): at least three jets, not two; the closest comet encounter of its time, not to date; went closest of the armada, not the only close one; the painter saw the comet in 1301. Kept: \"first close-up images of a nucleus\" (Wikipedia: first close-up colour images)."
+    },
+    "sputnik1": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-earth-view.ts sputnik1",
+      "reference_media": "25bb3850-091f-4496-99f3-2e80681e193e",
+      "drafts": [],
+      "final_job": "4b11a6c1-fdfd-409a-8f66-819334025610",
+      "edits": [],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sputnik_1 (19:28:34 UTC, Sputnik-PS 8K71PS, Site 1/5, 83.6 kg, 58 cm, antennas 2.4 / 2.9 m, 20.005 / 40.002 MHz, three silver-zinc batteries, 1 W, nitrogen 1.3 atm, 22 days, 215 × 939 km, 65.1°, 96.2 min, 1,440 orbits, reentry 4 Jan 1958, upper-air density from decay, ionosphere from the radio)"
+      ],
+      "notes": "First sheet from the new Earth-orbit reference (blueprint-earth-view.ts): coastlines traced from the site's day map, ground track from a circular-orbit model (Earth rotation via GMST, J2 node drift) started over Baikonur 5 minutes after launch. One orbit ends 24° west of the start (Earth turns 24.1° in 96.2 min). H: a = 6,955 km reproduces T = 96.2 min; vis-viva 7.98 / 7.19 km/s at perigee / apogee. Not sourced this session: RD-107 / RD-108, Korolev as chief designer (common knowledge), \"the beeps carried temperature and pressure\", \"the core stage also reached orbit\".",
+      "content_check": "Fixed (commit 1f7e016cd46, 14 locales): the radio put out 1 W (Wikipedia), not \"batteries (60 W)\"."
+    },
+    "vostok-1": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-earth-view.ts vostok-1",
+      "reference_media": "98f18a0d-dded-4ca9-ac69-9743d2189a96",
+      "drafts": [],
+      "final_job": "fbc9eacd-b1de-4977-94bd-05724f0a5869",
+      "edits": [
+        "panel A: the arrowhead on the southern stretch pointed west; the track runs east: papered over, the track stroke and graticule dashes redrawn, an east-pointing head drawn",
+        "panel D: the list's first item was numbered ②; ① copied from the drawing"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vostok_1 (06:07 UTC / 09:07 Moscow, Vostok-K 8K72K, Site 1/5, Kedr, \"Poyekhali!\", 181 × 327 km, 64.95°, 89.1 min, 108 min, retrofire 07:25 over west Africa, service module held by wires, ejection 07:55 at 7 km, landing 08:05 26 km SW of Engels, separate parachutes, kept secret until 1971, Gagarin 27)",
+        "static/data/missions/earth/vostok-1.json (4,725 kg)"
+      ],
+      "notes": "Ground-track check, not tuned: with the track started over Baikonur 5 minutes after launch, the model puts 07:25 at 11.4° S 10.6° E (off west Africa, as the source says) and passes 128 km from Engels; the orbital track stops there because the descent falls short of the orbit. H: 7.8 km/s at 181 km; T ≈ 89 min (Kepler on 181 × 327 km gives 89.6, the source 89.1). Not sourced this session: the capsule interior details drawn in E2 (generic), \"flown automatically\".",
+      "content_check": "Our data agrees with the sheet (launch, landing date, 4,725 kg); nothing to fix."
+    },
+    "apollo-soyuz": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-earth-view.ts apollo-soyuz",
+      "reference_media": "71d3a42d-70d1-48b7-9f66-305e3ef510ee",
+      "drafts": [],
+      "final_job": "f13f1110-6e34-4d09-9dd5-592558295e85",
+      "edits": [],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Apollo%E2%80%93Soyuz (Soyuz 19 12:20 UTC Soyuz-U Site 1/5, Apollo 19:50 UTC Saturn IB SA-210 LC-39B, crews, docking 17 Jul 16:09:09, handshake 3 h later, docked 44 h 2 min 51 s, second docking, Soyuz landing 21 Jul 10:50:51, splashdown 24 Jul 21:18:24, docking module 2,012 kg, 5 psi O₂ vs ~15 psi N₂/O₂, APAS-75, 217–231 km, 51.8°, artificial eclipse, 1972 agreement, each crew spoke the other's language)"
+      ],
+      "notes": "Ground-track check, not tuned: the Soyuz orbit plane (set by the 12:20 launch, J2 drift included) passes 330 km from Kennedy at 19:43 UTC, 7 minutes before Apollo launched into it. The map shows that orbit at Apollo's launch, not a docking location (the docking point would need the real phasing). Not sourced this session: H-1 / J-2 engine counts, \"a step toward the space stations built together later\" (interpretation).",
+      "content_check": "Not changed: \"14.4 t Apollo + 6.8 t Soyuz\" in our payload (not checked against a source this session)."
+    },
+    "pioneer-10": {
+      "date": "2026-11-06",
+      "reference": "scripts/anatomy/blueprint-plan-view.ts pioneer-10",
+      "reference_media": "5d14d60e-093a-454a-80dd-062e23ea3a14",
+      "drafts": [],
+      "final_job": "598f1863-87c3-4696-9d14-0b5af1cc6f7e",
+      "edits": [
+        "panel D: ② drawn twice (once per RTG pair); the right one and its arrows papered over",
+        "panel E strip crop edit (job aed55795-b4b7-43c2-9222-ffe84659d93c): \"ANROIZED\" → \"ANODIZED\"",
+        "panel H strip crop edit (job 7cae9b8b-9340-4a78-800e-0b44a6013091): escape formula had ⊕ and a stray \"/r.-\" tail → √(2μ☉ / r)",
+        "both strip edits came back letterboxed at 21:9; the content band was trimmed before pasting"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pioneer_10 (launch 01:49 UTC LC-36A, Atlas SLV-3C Centaur-D + Star-37E, 258 kg, 51,682 km/h fastest at the time, asteroid belt 15 Jul 1972 – 15 Feb 1973, Jupiter 3 Dec 1973 (the US date; the sheet was fixed 2026-11-07 to 4 Dec 1973, closest approach 02:26 UT per AAS, panels A and G, local glyph swap .image-cache/landing/p10-patch.mjs) 132,252 km, 200,000 + 56,000 rads, four SNAP-19 155 W, 2.74 m dish, plaque 152 × 229 mm, 11 instruments, 4.8 rpm, 500+ images, last signal 23 Jan 2003 ~80 AU, Aldebaran, first of five to reach solar escape velocity)"
+      ],
+      "notes": "No draft. New `end: stop` (draw nothing after the last event): the slow post-Jupiter escape curves, so the model was told to draw it dotted and labelled schematic. 11 h one way = 80 AU / c. Plaque figures requested as small simple outlines.",
+      "content_check": "Fixed (commit cb3bb89b53e): last contact from ~80 AU, not ~82 (14 locales; our own event text already said 80); dropped \"first spacecraft to fly past Mars's orbit\" (English credit). Not changed: launch \"1972-03-02\" in our launch event text is the local (EST) date; 01:49 UTC on 3 Mar."
+    }
+  },
+  "queue": {
+    "_about": "Order for the remaining /explore missions (2026-11-06): the most distinct missions first, near-twins of a sheet already done (or of one earlier in the list) last. 'needs' = what blueprint-plan-view.ts lacks for that mission today. Apollo 11 added second by the operator.",
+    "order": [
+      {
+        "id": "rosetta",
+        "why": "comet chase: three Earth flybys and one of Mars, ten years to rendezvous, orbit and Philae lander",
+        "needs": "comet 67P orbit (Keplerian elements), rendezvous end"
+      },
+      {
+        "id": "apollo11",
+        "why": "the first crewed landing on another world: Saturn V, translunar injection, lunar orbit, Eagle at Tranquility Base, return to the Pacific",
+        "needs": "a cislunar plan view (Earth–Moon frame: parking orbit, TLI, free-return figure-eight, LOI, descent) instead of the heliocentric map"
+      },
+      {
+        "id": "ulysses",
+        "why": "out of the ecliptic: Jupiter flings it over the Sun’s poles — the side elevation becomes the hero",
+        "needs": "polar view as main panel"
+      },
+      {
+        "id": "new-horizons",
+        "why": "fastest launch ever, one Jupiter assist, Pluto and then Arrokoth",
+        "needs": "Pluto/Arrokoth positions"
+      },
+      {
+        "id": "venera-13",
+        "why": "Venus lander: a short transfer inward, 127 minutes on a 457 °C surface, first colour images",
+        "needs": "inward transfer; entry/landing in place of flybys"
+      },
+      {
+        "id": "galileo",
+        "why": "VEEGA path, Jupiter orbiter and the first probe into a giant planet’s atmosphere",
+        "needs": "inner-loop detail (as Cassini)"
+      },
+      {
+        "id": "dawn",
+        "why": "ion engine: orbited two bodies, Vesta then Ceres",
+        "needs": "low-thrust spiral (not conics), Vesta/Ceres positions"
+      },
+      {
+        "id": "hayabusa2",
+        "why": "round trip: ion engine to Ryugu, sample, return capsule to Earth",
+        "needs": "asteroid Ryugu orbit, return leg"
+      },
+      {
+        "id": "juno",
+        "why": "solar-powered polar orbiter of Jupiter after one Earth flyby",
+        "needs": "Earth-flyby loop detail"
+      },
+      {
+        "id": "bepicolombo",
+        "why": "nine flybys (Earth, Venus ×2, Mercury ×6) to brake into Mercury orbit",
+        "needs": "Mercury in the ephemeris types, many short legs"
+      },
+      {
+        "id": "juice",
+        "why": "first lunar–Earth double flyby, to end in Ganymede orbit",
+        "needs": "Moon flyby in the inner detail; future events marked planned"
+      },
+      {
+        "id": "giotto",
+        "why": "closest look at Halley’s nucleus, 596 km, then Grigg–Skjellerup",
+        "needs": "comet Halley orbit"
+      },
+      {
+        "id": "pioneer-10",
+        "why": "first through the asteroid belt and first to Jupiter",
+        "needs": "—"
+      },
+      {
+        "id": "vega-1",
+        "why": "Venus balloon and lander, then Halley — close to Venera 13 and Giotto",
+        "needs": "Venus flyby + Halley"
+      },
+      {
+        "id": "pioneer-11",
+        "why": "Pioneer 10’s twin, on to Saturn — close to Pioneer 10",
+        "needs": "—"
+      },
+      {
+        "id": "voyager-1",
+        "why": "Voyager 2’s twin: Jupiter, Saturn, Titan and out — close to Voyager 2",
+        "needs": "—"
+      },
+      {
+        "id": "vega-2",
+        "why": "Vega 1’s twin — the last, most similar sheet",
+        "needs": "as Vega 1"
+      }
+    ]
+  }
+}

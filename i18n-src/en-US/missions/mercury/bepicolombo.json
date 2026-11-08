@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "4100 kg launch stack: MTM (Mercury Transfer Module, ESA — 4 ion thrusters, solar arrays) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instruments) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 instruments) + MOSIF sunshield. Two science orbiters separate after Mercury arrival.",
+  "payload": "4100 kg launch stack: MTM (Mercury Transfer Module, ESA — 4 ion thrusters, solar arrays) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instruments) + MIO (Mercury Magnetospheric Orbiter, JAXA, 255 kg, 5 instruments) + MOSIF sunshield. Two science orbiters separate after Mercury arrival.",
   "delta_v": "~7.2 km/s (ion-cruise + 9 gravity assists + MOI)",
   "type": "ORBITER · ACTIVE",
   "first": "First Europe + Japan joint planetary mission; second-ever spacecraft to orbit Mercury (after Messenger)",
@@ -20,13 +20,13 @@
       "type": "nominal"
     },
     {
-      "met": 727,
+      "met": 726,
       "label": "VENUS FLYBY #1",
       "note": "First Venus gravity assist.",
       "type": "nominal"
     },
     {
-      "met": 1026,
+      "met": 1025,
       "label": "VENUS FLYBY #2",
       "note": "Second Venus gravity assist begins the Mercury approach phase.",
       "type": "nominal"

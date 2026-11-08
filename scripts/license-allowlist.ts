@@ -368,6 +368,7 @@ export function isAllowedLicense(licenseShort: string): boolean {
 export function normaliseLicenseShortName(raw: string): string {
   const cleaned = raw
     .replace(/<[^>]*>/g, '')
+    .replace(/[<>]/g, '')
     .replace(/\s+/g, ' ')
     .trim()
     .toUpperCase();

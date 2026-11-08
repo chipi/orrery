@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Galileo 탐사선과 대기 진입 탐사기; 건조 질량 ~2.5 t",
+  "payload": "Galileo 탐사선과 대기 진입 탐사기; 발사 시 2560 kg; 궤도선 건조 질량 1880 kg",
   "delta_v": "~14 km/s (추정)",
   "type": "궤도선 · 비행 완료",
   "first": "목성을 최초로 공전한 우주선; 목성 구름으로 대기 탐사선 투입",
@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 2243,
+      "met": 2242,
       "label": "목성 궤도 진입",
       "note": "주 엔진 연소로 Galileo를 궤도에 포획; 8년간의 위성 과학 탐사 투어가 시작된다.",
       "type": "nominal"

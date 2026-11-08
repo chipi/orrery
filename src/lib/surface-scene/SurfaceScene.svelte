@@ -54,7 +54,17 @@
   import { buildSubSolarPoint } from '$lib/surface-scene/surface-sun-layers';
   import { createSurfacePicking } from '$lib/surface-scene/surface-picking';
   import { createSurface2dMap } from '$lib/surface-scene/surface-2d-map';
-  import { createSurfaceTraverses, type TraverseLine } from '$lib/surface-scene/surface-traverses';
+  import {
+    createSurfaceTraverses,
+    traversePathKm,
+    daysBetween,
+    greatCircleKm,
+    solToDate,
+    type TraverseLine,
+  } from '$lib/surface-scene/surface-traverses';
+  import { formatNumber } from '$lib/format';
+  import { getImageAlt } from '$lib/image-alt';
+  import { getLocale } from '$lib/paraglide/runtime';
   import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
   import { ladderRungUrl, loadLadder, type LadderManifest } from '$lib/image-srcset';
   import { createSurfaceMarkers, type MarkerObj } from '$lib/surface-scene/surface-markers';
@@ -111,6 +121,8 @@
   import PanoramaCrossLink from '$lib/components/PanoramaCrossLink.svelte';
   import PanoramaFullscreenToggle from '$lib/components/PanoramaFullscreenToggle.svelte';
   import PanoramaAutoTour from '$lib/components/PanoramaAutoTour.svelte';
+  import SiteLandingPanel from '$lib/surface-scene/SiteLandingPanel.svelte';
+  import { siteAnatomy, siteLandingSequence } from '$lib/surface-scene/site-anatomy';
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
@@ -145,7 +157,7 @@
   import { buildSurfacePanelTabs } from '$lib/surface-map/build-panel-tabs';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { type SiteStory } from '$lib/data';
-  import { localeFromPage, localHref } from '$lib/locale';
+  import { localeFromPage, localHref, type LocaleCode } from '$lib/locale';
   /** The /science page that explains each body's imagery layers ("How this works"). */
   const HOW_IMAGERY_WORKS: Partial<Record<string, string>> = {
     moon: '/science/planets/moon-surface-imagery',
@@ -154,6 +166,9 @@
   };
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
+  import { getImageEntry, hotspotTileTexture } from '$lib/image-vision';
+  import { globeSampler, imageStats, tintFromMean } from './globe-tint';
+  import { REGIONAL_PATCH_DIAMETER_WORLD_UNITS } from '$lib/hotspot-surface-patch';
   import {
     getHotspotMode,
     setHotspotMode,
@@ -178,6 +193,18 @@
     OBSERVATORY_PIN_COLOR,
     type MuseumPin,
   } from '$lib/surface-scene/museum-layer';
+  import {
+    createSiteTagLayer,
+    museumTagSpec,
+    observatoryTagSpec,
+    focusFade,
+    planetFill,
+    siteTagSpec,
+    tagStage,
+    type Rect,
+    type TagBody,
+    type TagFrame,
+  } from '$lib/surface-scene/site-tags';
   import ObservatoryPanel from '$lib/surface-scene/ObservatoryPanel.svelte';
   import { buildObservatoryModel } from '$lib/earth-place-models';
   import type { Observatory } from '$types/observatory';
@@ -231,6 +258,13 @@
      *  /earth to auto-orient toward the viewer's approximate location
      *  (issue #315). Has no effect if a URL state pose is present. */
     initialView?: { latDeg: number; lonDeg: number };
+    /** Open facing this lat/lon by TURNING THE PLANET (longitude) and tilting
+     *  the camera (latitude), so the default camera — on the lit side of a
+     *  route whose sun is fixed in the scene (Mars, Venus) — stays in
+     *  daylight. initialView moves the camera instead, for routes that aim
+     *  their own sun (Earth, Moon). #641: site tags show only near the view
+     *  centre, so a route opens over its sites. */
+    initialFacing?: { latDeg: number; lonDeg: number };
     /** Fired when the selected orbital object (EarthObject) changes —
      *  used by /earth to flag the matching regime band on the orbit
      *  ruler (#354). Receives the selected EarthObject id, or null
@@ -278,6 +312,7 @@
     loadMuseums,
     loadObservatories,
     initialView,
+    initialFacing,
     onSatelliteSelect,
     onSiteSelect,
     regimes,
@@ -469,6 +504,196 @@
   // prop in onMount. Empty record when the route doesn't pass that prop
   // (Moon today). Keyed by rover_id.
   let traverses: Record<string, Traverse> = $state({});
+  // #641 — the selected site's traverse when it is an uncrewed rover (crewed
+  // Apollo LRV traverses keep the EVA / samples / crew tiles).
+  const roverTr = $derived.by((): Traverse | null => {
+    const s = selected as SurfaceSite | null;
+    // Mars rovers with mission sols only: the tiles read "Days on Mars" and
+    // "Sol N", and without last_sol "last contact" fell back to the data
+    // snapshot date (Lunokhod 1: "2026-11-04", 20,441 days). Moon rovers keep
+    // the generic surface-time cells.
+    const tr = s && !s.crew?.length ? (traverses[s.id] ?? null) : null;
+    return config.planet === 'mars' && tr?.last_sol != null ? tr : null;
+  });
+  const locale = $derived(getLocale() as LocaleCode);
+  // #641 — Journey tab: landing, every stop, last position, in sol order, with
+  // the ≈ date, km from landing (scaled to the mission's distance driven) and
+  // the stop's own route tile as a thumbnail. Needs a sol-carrying traverse.
+  type JourneyRow = {
+    key: string;
+    label: string;
+    sol: number;
+    lat: number;
+    lon: number;
+    km: number;
+    date: string;
+    thumb?: string;
+    /** Photo rows open the photo instead of flying the camera. */
+    photo?: string;
+  };
+  const journeyRows = $derived.by((): JourneyRow[] => {
+    const tr = roverTr;
+    const site = selected as SurfaceSite | null;
+    if (!tr?.point_sols || tr.point_sols.length !== tr.points.length || !site) return [];
+    const pts = tr.points;
+    const cum = [0];
+    for (let i = 1; i < pts.length; i++)
+      cum.push(cum[i - 1] + greatCircleKm(pts[i - 1], pts[i], config.radiusKm));
+    const scale = tr.length_km && cum[cum.length - 1] > 0 ? tr.length_km / cum[cum.length - 1] : 1;
+    const nearest = (lat: number, lon: number) => {
+      let bi = 0;
+      let bd = Infinity;
+      for (let i = 0; i < pts.length; i++) {
+        const d = (pts[i][0] - lat) ** 2 + (pts[i][1] - lon) ** 2;
+        if (d < bd) {
+          bd = d;
+          bi = i;
+        }
+      }
+      return bi;
+    };
+    const landingSol = tr.landing_sol ?? 1;
+    const dateOf = (sol: number) =>
+      site.landing_date ? solToDate(site.landing_date, landingSol, sol) : '';
+    const row = (key: string, label: string, sol: number, lat: number, lon: number): JourneyRow => {
+      const tile = tr.route_patches?.find((rp) => rp.id === key);
+      return {
+        key,
+        label,
+        sol,
+        lat,
+        lon,
+        km: cum[nearest(lat, lon)] * scale,
+        date: dateOf(sol),
+        thumb: tile ? ladderRungUrl(tile.image, tile.rungs, 512) : undefined,
+      };
+    };
+    const [l0, l1] = pts[0];
+    const [e0, e1] = pts[pts.length - 1];
+    const landingRow = row('landing', m.surface_landing_site(), landingSol, l0, l1);
+    // No route tile at the lander (Curiosity): the site's own HiRISE detail.
+    if (!landingRow.thumb && site.hotspot_tier2_source)
+      landingRow.thumb = hotspotTileTexture(
+        site.hotspot_tier2_source,
+        getImageEntry(site.hotspot_tier2_source),
+      );
+    const rows: JourneyRow[] = [landingRow];
+    const middle: JourneyRow[] = (tr.stops ?? []).map((st) =>
+      row(st.id, st.label, st.sol, st.lat, st.lon),
+    );
+    for (const ph of tr.route_photos ?? []) {
+      const r = row(ph.id, getImageAlt(ph.image, locale), ph.sol, ph.lat, ph.lon);
+      r.thumb = ph.thumb;
+      r.photo = ph.image;
+      middle.push(r);
+    }
+    rows.push(...middle.sort((a, b) => a.sol - b.sol));
+    const end = row(
+      'end',
+      tr.status === 'ACTIVE'
+        ? m.traverse_current_rover_position()
+        : m.traverse_final_rover_position(),
+      tr.last_sol ?? tr.point_sols[tr.point_sols.length - 1],
+      e0,
+      e1,
+    );
+    end.km = tr.length_km ?? end.km;
+    rows.push(end);
+    return rows;
+  });
+  // #641 — replay: the sol the path is drawn up to (null = whole route).
+  let replaySol = $state<number | null>(null);
+  let replayPlaying = $state(false);
+  const replayRange = $derived.by((): [number, number] | null => {
+    const s = roverTr?.point_sols;
+    return s?.length ? [s[0], s[s.length - 1]] : null;
+  });
+  // Live counters under the scrubber: sol · ≈ date · km at the drawn tip.
+  const replayAt = $derived.by(() => {
+    const tr = roverTr;
+    const site = selected as SurfaceSite | null;
+    if (replaySol == null || !tr?.point_sols || !site) return null;
+    let idx = 0;
+    while (idx + 1 < tr.point_sols.length && tr.point_sols[idx + 1] <= replaySol) idx++;
+    let km = 0;
+    for (let i = 1; i <= idx; i++)
+      km += greatCircleKm(tr.points[i - 1], tr.points[i], config.radiusKm);
+    const total = traversePathKm(tr.points, config.radiusKm);
+    if (tr.length_km && total > 0) km *= tr.length_km / total;
+    return {
+      sol: Math.round(replaySol),
+      km,
+      date: site.landing_date
+        ? solToDate(site.landing_date, tr.landing_sol ?? 1, Math.round(replaySol))
+        : '',
+    };
+  });
+  // ~24 s for any mission, whatever its length; pauses at the end.
+  $effect(() => {
+    if (!replayPlaying || !replayRange) return;
+    const [a, b] = replayRange;
+    const step = (b - a) / (24 * 30);
+    const id = setInterval(() => {
+      const next = (replaySol ?? a) + step;
+      if (next >= b) {
+        replaySol = b;
+        replayPlaying = false;
+      } else replaySol = next;
+    }, 1000 / 30);
+    return () => clearInterval(id);
+  });
+  // A different site, or a site without sols, drops the replay.
+  $effect(() => {
+    void selected?.id;
+    replaySol = null;
+    replayPlaying = false;
+  });
+  function toggleReplay() {
+    if (!replayRange || !selected) return;
+    if (replayPlaying) {
+      replayPlaying = false;
+      return;
+    }
+    if (replaySol == null || replaySol >= replayRange[1]) replaySol = replayRange[0];
+    if (!routeViewActive) enterRouteView(selected);
+    replayPlaying = true;
+  }
+  // #641 — elevation profile: km along the drive (scaled to the mission's
+  // distance) against elevation, ≤ 240 samples, as an SVG path in a 300 × 64
+  // box; plus where the replay tip sits on it.
+  const PROFILE_W = 300;
+  const PROFILE_H = 64;
+  const profile = $derived.by(() => {
+    const tr = roverTr;
+    const elev = tr?.point_elev_m;
+    if (!tr || !elev || elev.length !== tr.points.length || elev.length < 2) return null;
+    const km = [0];
+    for (let i = 1; i < tr.points.length; i++) {
+      km.push(km[i - 1] + greatCircleKm(tr.points[i - 1], tr.points[i], config.radiusKm));
+    }
+    const scale = tr.length_km && km[km.length - 1] > 0 ? tr.length_km / km[km.length - 1] : 1;
+    const total = km[km.length - 1] * scale;
+    const lo = Math.min(...elev);
+    const hi = Math.max(...elev);
+    const span = Math.max(1, hi - lo);
+    const step = Math.max(1, Math.floor(elev.length / 240));
+    const x = (k: number) => (k * scale * PROFILE_W) / (total || 1);
+    const y = (e: number) => PROFILE_H - 4 - ((e - lo) / span) * (PROFILE_H - 8);
+    let d = '';
+    for (let i = 0; i < elev.length; i += step)
+      d += `${d ? 'L' : 'M'}${x(km[i]).toFixed(1)},${y(elev[i]).toFixed(1)}`;
+    d += `L${x(km[km.length - 1]).toFixed(1)},${y(elev[elev.length - 1]).toFixed(1)}`;
+    return {
+      d,
+      area: `${d}L${PROFILE_W},${PROFILE_H}L0,${PROFILE_H}Z`,
+      lo,
+      hi,
+      total,
+      source: tr.elev_source ?? '',
+    };
+  });
+  /** Fly to a Journey row: assigned in onMount (needs the traverse lines). */
+  let focusJourney: ((lat: number, lon: number) => void) | undefined;
 
   // Earth-orbital handles (#290 Slice 6) — populated async inside
   // onMount once eol.satellites.loadObjects resolves. The animate loop
@@ -825,6 +1050,44 @@
   // Nation legend height: the imagery card and the right-edge readouts stack
   // above the strip (--legend-top) instead of overlapping its wrapped rows.
   let legendH = $state(0);
+  // Site icons have started to show at this zoom (#641 legend gate).
+  let tagStageOn = $state(false);
+  // Globe colour at the flat-patch site (Mars): its greyscale imagery is
+  // tinted to it, like the 3D patches (#641).
+  let flatPatchTint = $state<[number, number, number] | undefined>();
+  // Bodies whose greyscale imagery takes the globe's colour: Mars (reddish) and
+  // the Moon (its tan-grey globe). Earth imagery is colour already.
+  const TINT_BODIES = new Set(['mars', 'moon']);
+  const legendScratchA = new THREE.Vector3();
+  const legendScratchB = new THREE.Vector3();
+  const legendScratchC = new THREE.Vector3();
+  const legendScratchD = new THREE.Vector3();
+  let legendEl = $state<HTMLDivElement | undefined>();
+  // Measured a frame after the resize, not inside the observer callback:
+  // `bind:clientHeight` updated legendH mid-delivery, and the --legend-top /
+  // --card-bottom writes it triggers re-laid-out observed elements in the same
+  // pass ("ResizeObserver loop completed with undelivered notifications").
+  $effect(() => {
+    const el = legendEl;
+    if (!el) {
+      legendH = 0;
+      return;
+    }
+    let raf = 0;
+    const measure = () => {
+      if (el.clientHeight !== legendH) legendH = el.clientHeight;
+    };
+    measure();
+    const ro = new ResizeObserver(() => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(measure);
+    });
+    ro.observe(el);
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+    };
+  });
   // On <html> so the host route's locate button (outside this component)
   // can sit on the same line.
   $effect(() => {
@@ -956,6 +1219,8 @@
     label?: string;
     lat?: number;
     lon?: number;
+    image?: string;
+    thumb?: string;
     clientX: number;
     clientY: number;
   } | null>(null);
@@ -1021,9 +1286,23 @@
 
   // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────
   let panelTab: PanelTab = $state('overview');
+  // The anatomy drawings of what is on this site's surface (top of STORY).
+  let panelAnatomy = $derived(selected ? siteAnatomy(selected) : []);
+  const panelSequenceId = $derived((selected as SurfaceSite | null)?.id ?? null);
+  let panelSequence = $derived(panelSequenceId ? siteLandingSequence(panelSequenceId) : null);
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
+  // Opened on a drawing, the viewer steps through the site's drawings (landing sheet, then each
+  // craft's anatomy and exploded view), not the photo gallery.
+  let panelDrawings = $derived(
+    [panelSequence, ...panelAnatomy.flatMap((a) => [a.src, a.exploded])].filter(
+      (p): p is string => !!p,
+    ),
+  );
+  let panelLightboxImages = $derived(
+    panelLightbox && panelDrawings.includes(panelLightbox) ? panelDrawings : panelGallery,
+  );
   // PRD-031 / RFC-033 S2 — linked videos interleaved into the site gallery.
   let panelVideos = $state<VideoProvenanceEntry[]>([]);
   let playerVideo = $state<VideoProvenanceEntry | null>(null);
@@ -1135,7 +1414,8 @@
   // hidden until the user manually drags the moon — issue #227).
   // Click handlers don't pass `face` so picking a marker on screen
   // doesn't lurch the camera off whatever the user was looking at.
-  let faceCameraAtSite: ((site: SurfaceSite, targetR?: number) => void) | undefined;
+  let faceCameraAtSite:
+    ((site: SurfaceSite, targetR?: number, exact?: boolean) => void) | undefined;
   // Fly the camera to face an arbitrary lat/lon (#48 — /earth "center on my
   // location"). Mirrors faceCameraAtSite's tween without a site lookup. Assigned
   // in onMount (captures the fly-tween vars); exposed via the faceLatLon handle.
@@ -1413,6 +1693,27 @@
       if (e instanceof WebGLUnavailableError) return;
       throw e;
     }
+    // Site tags (#641 1c): the screen-space markers over the canvas. Earth
+    // draws them smaller (dozens of pads and museums share a view), phones too.
+    const siteTags = createSiteTagLayer(container!, {
+      scale: (config.planet === 'earth' ? 0.62 : 1) * (window.innerWidth < 600 ? 0.85 : 1),
+    });
+    lifecycle.add(() => siteTags.dispose());
+    const siteTagFade = new Map<string, number>();
+    const siteTagPos = new THREE.Vector3();
+    let siteTagSources: unknown[] = [];
+    // HUD panels over the canvas (detail panel, chips, legend, rulers): cards
+    // keep clear of them. Re-read twice a second, not every frame.
+    const SITE_TAG_HUD =
+      'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler';
+    let siteTagBlocked: Rect[] = [];
+    let siteTagBlockedAt = -Infinity;
+    // Traverse end caption: the scale-bar / altitude boxes it must dodge, re-measured at most
+    // every 250 ms (reading them every frame forces a layout after siteTags writes).
+    let traverseHud: { host: DOMRect; huds: DOMRect[] } | null = null;
+    let traverseHudAt = -Infinity;
+    const tlScratch = new THREE.Vector3();
+    const tlScratchQ = new THREE.Quaternion();
     // Hero IBL — reflections/glints on the PBR lander/rover models. Tier-gated
     // (high+): the per-frame env sampling starves software-GL / GPU-less
     // renderers (on the CI SwiftShader runner it tipped the flat-patch /
@@ -1469,7 +1770,11 @@
     scene.add(createStarField());
 
     const textureLoader = new THREE.TextureLoader();
-    const planetMap2k = textureLoader.load(config.textureUrl);
+    // Globe colour sampler for tinting greyscale patches (globe-tint.ts).
+    let globeColourAt: ReturnType<typeof globeSampler> = null;
+    const planetMap2k = textureLoader.load(config.textureUrl, (tex) => {
+      globeColourAt = globeSampler(tex.image as HTMLImageElement);
+    });
     const planetRadius = 30;
     // Axial-tilt group wraps the planet mesh so Mars's 25.19° obliquity
     // is visible (no-op rotation for Moon's ~0°). Orbital markers
@@ -1837,13 +2142,24 @@
     // CTX) ~64% revealed and already framed by the brackets; leaning in
     // sharpens to the HiRISE/LROC detail. Paired with regionalFadeStart
     // 50→44 below so the ramp tracks the closer landing (#361).
-    faceCameraAtSite = (site: SurfaceSite, targetR = 37) => {
+    focusJourney = (lat: number, lon: number) => {
+      const site = selected;
+      if (!site || !faceCameraAtSite) return;
+      // Route view on: the line + stops show at once (routeDetailOpacity 1)
+      // instead of waiting for the detail band at this altitude.
+      routeViewActive = true;
+      const tl = traverseLines.find((t) => t.roverId === site.id);
+      const [dLat, dLon] = tl?.toDrawn?.(lat, lon) ?? [lat, lon];
+      faceCameraAtSite({ ...site, lat: dLat, lon: dLon }, 31, true);
+    };
+    faceCameraAtSite = (site: SurfaceSite, targetR = 37, exact = false) => {
       if (site.lat == null || site.lon == null) return;
       // #360: rovers with a traverse frame on the route's CENTRE (the
       // magnified midpoint) rather than the landing, so the whole drive +
       // its midpoint-centred CTX sit centred in view. routeViewCenters is
-      // populated by rebuildTraverses.
-      const ctr = routeViewCenters.get(site.id);
+      // populated by rebuildTraverses. `exact` (#641) skips that: a stop /
+      // Journey row must land on ITS point, not the route centre.
+      const ctr = exact ? undefined : routeViewCenters.get(site.id);
       const v = latLonToUnitSphere(ctr?.lat ?? site.lat, ctr?.lon ?? site.lon);
       planetMesh.updateMatrixWorld(true);
       const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld);
@@ -1874,6 +2190,19 @@
       // details panel is not working" — the tween was running but
       // start = end so nothing visible happened).
       flyToR = targetR;
+      // Sun 35° off the site's zenith, on its north side: always daylit, with
+      // enough slant for the relief to read.
+      const north = new THREE.Vector3(0, 1, 0).addScaledVector(dir, -dir.y);
+      if (north.lengthSq() < 1e-6) north.set(1, 0, 0);
+      north.normalize();
+      const tilt = (35 * Math.PI) / 180;
+      flySunFrom = sun.position.clone().normalize();
+      flySunStart = performance.now();
+      flySunTo = dir
+        .clone()
+        .multiplyScalar(Math.cos(tilt))
+        .addScaledVector(north, Math.sin(tilt))
+        .normalize();
       // Surface sites orbit the body origin — clear any object orbit-target.
       flyFromOffset.copy(focusOffset);
       flyToOffset.set(0, 0, 0);
@@ -2195,11 +2524,12 @@
               const stop = traverse?.stops?.find((s) => s.id === stopId);
               const site = sites.find((s) => s.id === siteId);
               if (stop && site && faceCameraAtSite) {
-                // Face the stop's coords using the real site record (traverses
-                // are keyed by site id, so `site` is always present here). No
-                // fabricated/cast placeholder — if the site is somehow missing
-                // we fall through rather than face a fake SurfaceSite.
-                faceCameraAtSite({ ...site, lat: stop.lat, lon: stop.lon });
+                // Face where the stop is DRAWN: the route is magnified around
+                // the landing site, so its true lat/lon points elsewhere (#641).
+                // The real site record carries the rest (no fake SurfaceSite).
+                const tl = traverseLines.find((t) => t.roverId === siteId);
+                const [lat, lon] = tl?.toDrawn?.(stop.lat, stop.lon) ?? [stop.lat, stop.lon];
+                faceCameraAtSite({ ...site, lat, lon }, 31, true);
               } else if (site && faceCameraAtSite) {
                 // Stop not found — graceful fallback to facing the site.
                 faceCameraAtSite(site);
@@ -2287,11 +2617,25 @@
     // Apply initialView (lat/lon → spherical θ/φ) before camR0 is
     // snapshotted, so resetCamera() returns to the geo-oriented pose.
     // Skipped if the route consumer didn't set initialView.
-    if (initialView) {
-      const lat = Math.max(-90, Math.min(90, initialView.latDeg));
-      const lon = ((initialView.lonDeg + 540) % 360) - 180;
-      camT = (lon * Math.PI) / 180;
-      camP = ((90 - lat) * Math.PI) / 180;
+    // initialFacing turns the planet first: the camera sits on +Z at camT = 0,
+    // and a point at longitude L comes round to face it after a turn of
+    // −90° − L about Y (the lit side stays lit).
+    if (initialFacing && !initialView) {
+      planetMesh.rotation.y = (-(90 + initialFacing.lonDeg) * Math.PI) / 180;
+    }
+    // Then the camera goes over the point in WORLD space, the way faceLatLon
+    // does: through the planet's matrix, so the axial tilt counts (#641:
+    // camT = lon opened 90° west of the viewer; ignoring the 23.4° tilt put
+    // Belgrade's view over the Sahara).
+    const openOn = initialView ?? initialFacing;
+    if (openOn) {
+      const v = latLonToUnitSphere(Math.max(-90, Math.min(90, openOn.latDeg)), openOn.lonDeg);
+      // Parents too: before the first render the tilt group's world matrix
+      // is still identity.
+      planetMesh.updateWorldMatrix(true, false);
+      const dir = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld).normalize();
+      camP = Math.acos(Math.max(-1, Math.min(1, dir.y)));
+      camT = Math.atan2(dir.x, dir.z);
     }
     const camR0 = camR;
     const camP0 = camP;
@@ -2362,6 +2706,12 @@
     let flyToP = 0;
     let flyToT = 0;
     let flyToR = 0;
+    // Sun swing with a site fly-in (#641): the light moves from where it is to
+    // the selected site's daytime sky, so the site never lands on the night side.
+    let flySunFrom: THREE.Vector3 | null = null;
+    let flySunTo: THREE.Vector3 | null = null;
+    let flySunStart = 0;
+    let lastTintPass = 0;
     // Orbit-target interpolation (CORE-2). Most flys orbit the body
     // origin (flyToOffset stays 0,0,0). Object focus retargets the orbit
     // centre to the satellite so the camera looks AT the object — keeps
@@ -2705,8 +3055,14 @@
     // like that on earth as well"). Empty on /moon and /mars where
     // earthSats stays [].
     let hoveredSatId: string | null = null;
-    const onHover = (e: MouseEvent) => {
-      if (isDrag) return;
+    // Picking projects every vertex of every visible traverse, so mousemoves are coalesced
+    // to one pick per animation frame.
+    let hoverEvent: MouseEvent | null = null;
+    let hoverRaf = 0;
+    const runHover = () => {
+      hoverRaf = 0;
+      const e = hoverEvent;
+      if (!e || isDrag) return;
       // Earth-sat picks win over surface picks (same precedence as
       // tryPick3d's click handling) so hovering an ISS dot over a
       // launchpad below it highlights the sat, not the pad.
@@ -2716,7 +3072,15 @@
       const stopHit = pickStopAt(e.clientX, e.clientY);
       hoveredStopInfo = stopHit ? { ...stopHit, clientX: e.clientX, clientY: e.clientY } : null;
     };
+    const onHover = (e: MouseEvent) => {
+      if (isDrag) return;
+      hoverEvent = e;
+      if (!hoverRaf) hoverRaf = requestAnimationFrame(runHover);
+    };
     const onHoverLeave = () => {
+      if (hoverRaf) cancelAnimationFrame(hoverRaf);
+      hoverRaf = 0;
+      hoverEvent = null;
       hoveredSiteId = null;
       hoveredSatId = null;
       hoveredStopInfo = null;
@@ -2815,12 +3179,26 @@
       // counts as a pan, not a pick — otherwise Shift+click selects a
       // hotspot instead of doing nothing.
       if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') {
-        tryPick3d(e.clientX, e.clientY);
+        // A photo pin opens its photo (#641); anything else picks as before.
+        const photo = pickStopAt(e.clientX, e.clientY)?.image;
+        if (photo) panelLightbox = photo;
+        else tryPick3d(e.clientX, e.clientY);
       }
     };
     // Suppress the browser context menu on right-click so right-drag
     // pan stays usable (no menu pop interrupting the gesture).
     const onContextMenu = (e: MouseEvent) => e.preventDefault();
+    // Closest zoom. A selected site with no imagery (Mars 2, Mars 6) stops at
+    // camR 31 (~110 km on Mars), where the globe texture still reads; below
+    // that there is only blur and no flat view to hand over to (#641).
+    // A site with only a regional image (Luna 9) stops at camR 32 (scale bar
+    // ~10 km): closer in, that Kaguya crop is upscaled into blur.
+    const zoomFloor = () =>
+      selected && !selected.hotspot_tier2_source && !routeViewCenters.has(selected.id)
+        ? selected.hotspot_tier2_regional_source
+          ? 32
+          : 31
+        : 30.08;
     const onWheel = (e: WheelEvent) => {
       // preventDefault prevents trackpad pinch-zoom from triggering
       // browser-level zoom (Cmd-scroll). Registered with passive:false
@@ -2835,7 +3213,7 @@
       // little). Avoids over-shooting through the patch on a single
       // scroll click.
       const wheelK = 0.05 * Math.min(1, Math.pow(camR / 100, 1.8));
-      camRTarget = Math.max(30.08, Math.min(200, camRTarget + e.deltaY * wheelK));
+      camRTarget = Math.max(zoomFloor(), Math.min(200, camRTarget + e.deltaY * wheelK));
       flyActive = false; // wheel cancels any in-flight fly-in
     };
 
@@ -2881,7 +3259,7 @@
         const d = tDist(e.touches[0], e.touches[1]);
         // Floor lowered 30.2 → 30.08 to match the wheel floor so touch can
         // reach the manual 3D HiRISE zoom band before flat-patch (#309).
-        camRTarget = Math.max(30.08, Math.min(200, camRTarget * (pinchPrev / d)));
+        camRTarget = Math.max(zoomFloor(), Math.min(200, camRTarget * (pinchPrev / d)));
         // Pan via midpoint delta — mirrors the desktop Shift+drag path.
         const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
         const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
@@ -2945,7 +3323,10 @@
         e.changedTouches.length === 1 &&
         e.touches.length === 0
       ) {
-        tryPick3d(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+        const t = e.changedTouches[0];
+        const photo = pickStopAt(t.clientX, t.clientY)?.image;
+        if (photo) panelLightbox = photo;
+        else tryPick3d(t.clientX, t.clientY);
       }
     };
 
@@ -2999,6 +3380,8 @@
         const h = container?.clientHeight || window.innerHeight;
         for (const tl of traverseLines) {
           tl.lineMaterial.resolution.set(w, h);
+          tl.casingMaterial?.resolution.set(w, h);
+          for (const tm of tl.tickMaterials ?? []) tm.resolution.set(w, h);
         }
         // Re-fit the globe to the new aspect (e.g. orientation change)
         // unless the user has zoomed away from the default framing.
@@ -3079,6 +3462,33 @@
         //   (c) Drag inertia — angular velocity decay 92%/frame.
         // All three are mutually exclusive per-frame: fly-in supersedes
         // zoom + inertia; zoom + inertia run together when fly isn't.
+        // Greyscale patches take the globe's hue once their texture is in (#641).
+        if (TINT_BODIES.has(config.planet) && globeColourAt && now - lastTintPass > 500) {
+          lastTintPass = now;
+          planetMesh.traverse((o) => {
+            const mat = (o as THREE.Mesh).material as THREE.MeshPhongMaterial | undefined;
+            if (!mat?.userData?.needsTint || !mat.map?.image) return;
+            mat.userData.needsTint = false;
+            const st = imageStats(mat.map.image as HTMLImageElement);
+            if (!st?.grey) return;
+            const p = planetMesh.worldToLocal(o.getWorldPosition(new THREE.Vector3())).normalize();
+            const lat = (Math.asin(Math.max(-1, Math.min(1, p.y))) * 180) / Math.PI;
+            const lon = (Math.atan2(-p.z, p.x) * 180) / Math.PI;
+            const [r, g, b] = tintFromMean(globeColourAt!(lat, lon), st.luma);
+            mat.color.setRGB(r, g, b);
+          });
+        }
+        // Its own clock, so a wheel / drag that cancels the fly-in still
+        // finishes the sun swing.
+        if (flySunFrom && flySunTo) {
+          const st = Math.min(1, (now - flySunStart) / FLY_DURATION_MS);
+          const d = sun.position.length() || 200;
+          sun.position.lerpVectors(flySunFrom, flySunTo, 1 - Math.pow(1 - st, 3));
+          // Antipodal start: the straight lerp passes through zero length.
+          if (sun.position.lengthSq() < 1e-6) sun.position.copy(flySunTo);
+          sun.position.normalize().multiplyScalar(d);
+          if (st >= 1) flySunFrom = flySunTo = null;
+        }
         let cameraChanged = false;
         if (flyActive) {
           const t = (now - flyStart) / FLY_DURATION_MS;
@@ -3153,6 +3563,18 @@
           p.halo.visible = p.id === selObsId;
         }
         const selId = selected?.id ?? null;
+        // Selection frames (site and route-centre) fade out over camR 37 → 34
+        // (#641): once the imagery fills the view their corners cut across it
+        // as stray lines, and on Venus (no imagery) the frame outgrew the view.
+        const routeHaloFade = Math.max(0, Math.min(1, (camR - 34) / 3));
+        const fadeHalo = (obj: THREE.Object3D, k: number) =>
+          obj.traverse((o) => {
+            const mat = (o as THREE.Mesh).material as
+              (THREE.Material & { opacity: number }) | undefined;
+            if (!mat || !('opacity' in mat)) return;
+            mat.userData.baseOpacity ??= mat.opacity;
+            mat.opacity = mat.userData.baseOpacity * k;
+          });
         for (const mk of markers) {
           // Nation filter (#363) — hide markers whose nation is toggled off.
           const nv = nationEnabled(nationBySiteId.get(mk.siteId));
@@ -3171,7 +3593,12 @@
             // route's own framing (CTX + crosshair + line). The route IS the
             // selection indicator for these.
             mk.halo.visible =
-              layerSurface && nv && mk.siteId === selId && !routeViewCenters.has(mk.siteId);
+              layerSurface &&
+              nv &&
+              mk.siteId === selId &&
+              !routeViewCenters.has(mk.siteId) &&
+              routeHaloFade > 0.01;
+            if (mk.halo.visible) fadeHalo(mk.halo, routeHaloFade);
           }
           if (mk.hoverHalo) {
             // Teal hover ring — only when the mouse is over this
@@ -3187,7 +3614,11 @@
         // cue, shown while the rover is selected (its landing halo is hidden).
         for (const rh of routeSelectionHalos) {
           rh.obj.visible =
-            layerSurface && nationEnabled(nationBySiteId.get(rh.siteId)) && rh.siteId === selId;
+            layerSurface &&
+            nationEnabled(nationBySiteId.get(rh.siteId)) &&
+            rh.siteId === selId &&
+            routeHaloFade > 0.01;
+          if (rh.obj.visible) fadeHalo(rh.obj, routeHaloFade);
         }
         for (const om of orbitalMarkers) {
           // Nation filter (#363) folds into showOrbiters so dot + ring both hide.
@@ -3293,6 +3724,7 @@
           0,
           (camDistFromOrigin - planetRadius) * (config.radiusKm / planetRadius),
         );
+        if (showDebug) debugInfo.camR = camR;
 
         // Orbit-ruler auto-hide (#363): once the camera comes within ~1
         // planet-radius of the surface the planet fills the view and the
@@ -3386,7 +3818,9 @@
         // Per-frame tier selection based on screen-projected marker size.
         // For S1, only Apollo 11 swaps Tier 0 → Tier 1; other hotspots
         // join the dispatcher as their sub-issues land.
-        if (hotspots.length) {
+        // Runs with no imagery hotspots too (Venus): marker / label scaling and
+        // the scale bar live here (#641).
+        {
           // Selected-site clamp (port of /mars). Without a selection
           // every hotspot uses its data-driven maxTier; with one,
           // non-selected sites clamp to ≤ Tier 1 so adjacent discs
@@ -3427,8 +3861,19 @@
             if (h.tier0Group) h.tier0Group.scale.setScalar(zoomScale);
             if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
           }
-          for (const p of museumPins) p.body.scale.setScalar(zoomScale);
-          for (const p of observatoryPins) p.body.scale.setScalar(zoomScale);
+          // A site without imagery (no LOD entry — Mars 2, Mars 6) kept its
+          // marker at full world size, so near the ground the model filled
+          // the screen (#641). It now holds the on-screen size it has at
+          // camR 60: shrinking with the distance to the surface.
+          const plainMarkerScale = Math.min(1, Math.max(0.002, (camR - 30) / 30));
+          const hotspotIds = new Set(hotspots.map((h) => h.siteId));
+          for (const mk of markers) {
+            if (mk.body && !hotspotIds.has(mk.siteId)) mk.body.scale.setScalar(plainMarkerScale);
+          }
+          // Museum / telescope pins too: at the 0.2 floor the Baikonur museum
+          // pin, a few km from the pad, filled the view near the ground.
+          for (const p of museumPins) p.body.scale.setScalar(plainMarkerScale);
+          for (const p of observatoryPins) p.body.scale.setScalar(plainMarkerScale);
 
           // Site labels — shrink with zoomScale but floored at 0.65 so
           // they stay readable. Hide entirely when promoted to Tier 2+
@@ -3455,81 +3900,140 @@
           }
           const labelFade = Math.max(0, 1 - regionalOpacityTop * 4);
 
-          const tierByIdForLabels = new Map<string, number>();
-          for (const h of hotspots) {
-            tierByIdForLabels.set(h.siteId, Math.max(h.currentTier, h.targetTier));
-          }
-          // Label fade only applies to the SELECTED site's label —
-          // unselected sites keep their labels fully visible so the
-          // wider scene context is preserved while the user zooms in on
-          // one site (user feedback 2026-06-08: "you hid all the
-          // labels, and I asked only one from the site that is
-          // selected"). Tier-2 hard hide still applies to every label
-          // (those are physically inside the rectangle anyway).
-          // Museum pin labels (PRD-027) follow the same zoom band fade.
-          for (const p of [...museumPins, ...observatoryPins]) {
-            const layerOn = museumPins.includes(p) ? museumsOn : telescopesOn;
-            p.labelGroup.visible = layerOn && labelFade >= 0.01;
-            if (!p.labelGroup.visible) continue;
-            p.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
-            p.labelGroup.traverse((obj) => {
-              if (obj instanceof THREE.Sprite) {
-                const mat = obj.material as THREE.SpriteMaterial;
-                mat.opacity = labelFade;
-                mat.transparent = true;
-              }
-            });
-          }
           const selectedSiteId = selected?.id;
+          // A neighbour whose marker sits under the selected site's magnified
+          // imagery is drawn at its true place on a ~20× map, so its tag lands
+          // on the wrong ground and over the route (#641: Schiaparelli EDM on
+          // Opportunity's drive). Those fade with the regional reveal; the rest
+          // keep theirs (2026-06-08 feedback: hide only the selected site's).
+          const footCtr = selected
+            ? (routeViewCenters.get(selected.id) ??
+              (selected.lat != null && selected.lon != null
+                ? { lat: selected.lat, lon: selected.lon }
+                : null))
+            : null;
+          const footUnit = footCtr ? latLonToUnitSphere(footCtr.lat, footCtr.lon) : null;
+          const footR = (REGIONAL_PATCH_DIAMETER_WORLD_UNITS * 0.75) / planetRadius;
+          // The selected site's tag leaves first (camR 60 → 50): seen from
+          // straight above, its leader points at the camera; the panel title
+          // and crosshair carry it (#641). A site's own imagery tier no longer
+          // hides its tag — with nothing selected the LOD promotes and evicts
+          // sites as you zoom, and the tags blinked with it.
+          const selectedFade = Math.max(0, Math.min(1, (camR - 50) / 10));
           for (const mk of markers) {
-            if (!mk.labelGroup) continue;
-            const t = tierByIdForLabels.get(mk.siteId) ?? 0;
-            if (t >= 2) {
-              mk.labelGroup.visible = false;
-              continue;
+            let underFootprint = false;
+            if (footUnit && mk.siteId !== selectedSiteId) {
+              const u = legendScratchA.copy(mk.group.position).normalize();
+              underFootprint =
+                Math.hypot(u.x - footUnit.x, u.y - footUnit.y, u.z - footUnit.z) < footR;
             }
             const fade =
-              config.labelBandFade === 'all' || mk.siteId === selectedSiteId ? labelFade : 1;
-            if (fade < 0.01) {
-              mk.labelGroup.visible = false;
-              continue;
-            }
-            mk.labelGroup.visible = true;
-            mk.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
-            if (fade < 0.99) {
-              mk.labelGroup.traverse((obj) => {
-                if (obj instanceof THREE.Sprite) {
-                  const mat = obj.material as THREE.SpriteMaterial;
-                  mat.opacity = fade;
-                  mat.transparent = true;
-                } else if (obj instanceof THREE.Mesh) {
-                  const mat = obj.material as THREE.Material & { opacity: number };
-                  if ('opacity' in mat) {
-                    mat.opacity = fade;
-                    mat.transparent = true;
-                  }
-                }
-              });
-            } else {
-              // Reset to fully opaque when not fading (the user
-              // unselected this site after a partial fade).
-              mk.labelGroup.traverse((obj) => {
-                if (obj instanceof THREE.Sprite) {
-                  const mat = obj.material as THREE.SpriteMaterial;
-                  if (mat.opacity !== 1) {
-                    mat.opacity = 1;
-                    mat.transparent = false;
-                  }
-                } else if (obj instanceof THREE.Mesh) {
-                  const mat = obj.material as THREE.Material & { opacity: number };
-                  if ('opacity' in mat && mat.opacity !== 1) {
-                    mat.opacity = 1;
-                    mat.transparent = false;
-                  }
-                }
-              });
-            }
+              mk.siteId === selectedSiteId
+                ? Math.min(labelFade, selectedFade)
+                : underFootprint
+                  ? labelFade
+                  : 1;
+            siteTagFade.set(mk.siteId, mk.group.visible ? fade : 0);
           }
+
+          // Site tags: content when the lists change (load, locale), then
+          // each visible tag's anchor projected to canvas px.
+          if (
+            siteTagSources[0] !== sites ||
+            siteTagSources[1] !== museumsCache ||
+            siteTagSources[2] !== observatoriesCache
+          ) {
+            siteTagSources = [sites, museumsCache, observatoriesCache];
+            siteTags.setSpecs([
+              ...sites
+                .filter((st) => st.kind !== 'orbiter' && st.lat != null && st.lon != null)
+                .map((st) => siteTagSpec(st, config.planet as TagBody)),
+              ...museumsCache.map(museumTagSpec),
+              ...observatoriesCache.map(observatoryTagSpec),
+            ]);
+          }
+          const tagFrames: TagFrame[] = [];
+          if (!panoramaActive && !flatPatchActive) {
+            const cw = renderer.domElement.clientWidth;
+            const ch = renderer.domElement.clientHeight;
+            const centre = planetMesh.getWorldPosition(legendScratchB);
+            const tagAt = (key: string, obj: THREE.Object3D, opacity: number, boost = 0) => {
+              if (opacity <= 0.01) return;
+              const wp = obj.getWorldPosition(siteTagPos);
+              const facing =
+                legendScratchC
+                  .copy(wp)
+                  .sub(centre)
+                  .dot(legendScratchD.copy(camera.position).sub(wp)) > 0;
+              if (!facing) return;
+              // Focus: tags far from the point under the camera fade out; the
+              // selected site always keeps its tag.
+              const arc =
+                (legendScratchC
+                  .copy(wp)
+                  .sub(centre)
+                  .normalize()
+                  .angleTo(legendScratchD.copy(camera.position).sub(centre)) *
+                  180) /
+                Math.PI;
+              const focused = boost > 0 ? opacity : opacity * focusFade(arc);
+              if (focused <= 0.01) return;
+              const ndc = wp.project(camera);
+              if (ndc.z >= 1 || Math.abs(ndc.x) > 1.1 || Math.abs(ndc.y) > 1.1) return;
+              tagFrames.push({
+                key,
+                x: ((ndc.x + 1) / 2) * cw,
+                y: ((1 - ndc.y) / 2) * ch,
+                opacity: focused,
+                boost,
+              });
+            };
+            for (const mk of markers)
+              tagAt(
+                `site:${mk.siteId}`,
+                mk.group,
+                siteTagFade.get(mk.siteId) ?? 0,
+                mk.siteId === selected?.id ? 10 : 0,
+              );
+            // A place under the selected site's magnified imagery would sit on
+            // the wrong ground: it fades with the reveal band, the rest stay.
+            const placeFade = (g: THREE.Object3D) => {
+              if (!footUnit) return 1;
+              const u = legendScratchA.copy(g.position).normalize();
+              return Math.hypot(u.x - footUnit.x, u.y - footUnit.y, u.z - footUnit.z) < footR
+                ? labelFade
+                : 1;
+            };
+            for (const p of museumPins)
+              tagAt(`museum:${p.id}`, p.group, museumsOn ? placeFade(p.group) : 0);
+            for (const p of observatoryPins)
+              tagAt(`scope:${p.id}`, p.group, telescopesOn ? placeFade(p.group) : 0);
+          }
+          if (now - siteTagBlockedAt > 500) {
+            siteTagBlockedAt = now;
+            const host = renderer.domElement.getBoundingClientRect();
+            siteTagBlocked = [...document.querySelectorAll(SITE_TAG_HUD)]
+              .filter((el) => getComputedStyle(el).visibility !== 'hidden')
+              .map((el) => el.getBoundingClientRect())
+              .filter((r) => r.width > 0 && r.height > 0)
+              .map((r) => ({
+                x0: r.left - host.left,
+                y0: r.top - host.top,
+                x1: r.right - host.left,
+                y1: r.bottom - host.top,
+              }));
+          }
+          const tagCw = renderer.domElement.clientWidth || 1;
+          const tagCh = renderer.domElement.clientHeight || 1;
+          const fillNow = planetFill(camR, planetRadius, camera.fov, tagCw, tagCh);
+          const fillFirst = planetFill(autoCamR, planetRadius, camera.fov, tagCw, tagCh);
+          const stage = tagStage(fillNow / fillFirst);
+          siteTags.sync(tagFrames, siteTagBlocked, stage);
+          // The nation legend arrives with the first icons (#641) — by zoom
+          // stage, not by tags shown, so switching every nation off keeps
+          // the switches.
+          const tagsOn = stage.icon > 0.01;
+          if (tagsOn !== tagStageOn) tagStageOn = tagsOn;
 
           // Tier-2 detail opacity ramp. Patch is eager-built at site
           // creation so tier2Group exists even when curTier < 2; we
@@ -3585,6 +4089,7 @@
               ),
               bounds: selected.hotspot_context_bounds,
               planetRadius,
+              bodyRadiusKm: config.radiusKm,
             });
             planetMesh.add(cap);
             contextCaps.set(selected.id, cap);
@@ -3626,6 +4131,13 @@
             h.tier2Group.visible = regionalOpacity > 0.01 || detailOpacity > 0.01;
             h.tier2Group.traverse((obj) => {
               if (!(obj instanceof THREE.Mesh)) return;
+              // Annotation pins (Apollo 11 flag, LRRR, EASEP …) hold their
+              // on-screen size: at a fixed world size the five, metres apart,
+              // stacked into one ring filling the view near the floor (#641).
+              if (obj.userData?.annotationId) {
+                obj.scale.setScalar(Math.min(1, Math.max(0.02, camR - 30)));
+                return;
+              }
               const layer = obj.userData?.layer;
               if (layer !== 'detail' && layer !== 'regional') return;
               // #360: for traverse rovers the landing regional CTX is replaced
@@ -3640,7 +4152,9 @@
               // Split ramps: regional CTX fades in earlier (wider
               // zoom), detail HiRISE fades in later (closer zoom).
               mat.opacity = layer === 'regional' ? regionalOpacity : detailOpacity;
-              mat.transparent = mat.opacity < 0.99;
+              // A feathered layer (alphaMap) must stay transparent for its edge
+              // fade to draw.
+              mat.transparent = mat.opacity < 0.99 || !!(mat as THREE.MeshPhongMaterial).alphaMap;
             });
           }
 
@@ -3770,7 +4284,10 @@
             //
             // worldPerPx = (2 * d * tan(fovY/2)) / viewportH
             // where d ≈ distance from camera to surface (camR - 30).
-            const surfaceDistance = Math.max(0.05, camR - 30);
+            // To the route's shell (+0.05 above the sphere, rebuildTraverses),
+            // not the sphere: near the floor (camR 30.1) the sphere distance is
+            // twice the real one and every pill doubled in size (#641).
+            const surfaceDistance = Math.max(0.02, camR - (planetRadius + 0.05));
             const viewportH = renderer.domElement.clientHeight || window.innerHeight;
             const worldPerPx =
               (2 * surfaceDistance * Math.tan((camera.fov * Math.PI) / 360)) / viewportH;
@@ -3831,11 +4348,12 @@
               tl.endDot.visible = tlShow;
               if (tl.startLabel) tl.startLabel.visible = tlShow;
               if (tl.endLabel) tl.endLabel.visible = tlShow;
-              tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
+              tl.lineMaterial.opacity =
+                routeDetailOpacity * (tl.casing || tl.isActive ? 0.95 : 0.7);
               const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
               // No pulse — flat 95% opacity for active rovers, 85% for ended (was
               // `tl.isActive ? pulse : 0.85` with pulse = sin(now*0.006)*0.25+0.7).
-              dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
+              dotMat.opacity = routeDetailOpacity * (tl.isActive ? 0.95 : 0.85);
               tl.endDot.scale.setScalar(endDotScale);
               // Reposition captions each frame so they sit ~70 px
               // tangentially + ~30 px outward from the anchor dot
@@ -3854,37 +4372,235 @@
                 tl.startLabel.traverse((o) => {
                   if (o instanceof THREE.Sprite) {
                     const m2 = o.material as THREE.SpriteMaterial;
-                    m2.opacity = detailOpacity;
+                    m2.opacity = routeDetailOpacity;
                   }
                 });
               }
               if (tl.endLabel) {
                 tl.endLabel.scale.setScalar(captionScale);
-                const endCaptionPos = tl.endAnchor
-                  .clone()
-                  .addScaledVector(tl.tangent, tangentOffsetWorld)
-                  .normalize()
-                  .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
-                tl.endLabel.position.copy(endCaptionPos);
+                const endLabel = tl.endLabel;
+                const place = (sign: number) =>
+                  endLabel.position
+                    .copy(tl.endAnchor)
+                    .addScaledVector(tl.tangent, sign * tangentOffsetWorld)
+                    .normalize()
+                    .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
+                place(1);
+                // #641 — swap to the other side of the end dot when the caption
+                // would sit under the scale bar / altitude readout boxes.
+                if (tl.endLabel.visible) {
+                  if (!traverseHud || now - traverseHudAt > 250) {
+                    traverseHudAt = now;
+                    traverseHud = {
+                      host: renderer.domElement.getBoundingClientRect(),
+                      huds: sceneRoot
+                        ? [
+                            ...sceneRoot.querySelectorAll('.distance-scale, .altitude-indicator'),
+                          ].map((e) => e.getBoundingClientRect())
+                        : [],
+                    };
+                  }
+                  const { host, huds } = traverseHud;
+                  const v = tl.endLabel.getWorldPosition(tlScratch).project(camera);
+                  const cx = host.left + (v.x * 0.5 + 0.5) * host.width;
+                  const cy = host.top + (-v.y * 0.5 + 0.5) * host.height;
+                  const hw = captionWidthPx / 2;
+                  const under = huds.some(
+                    (r) =>
+                      cx + hw > r.left &&
+                      cx - hw < r.right &&
+                      cy + 14 > r.top &&
+                      cy - 14 < r.bottom,
+                  );
+                  if (under) place(-1);
+                  // A drive that ends back at the lander (Apollo LRV loops) puts
+                  // the end caption on the start caption: drop it one line below.
+                  if (tl.startLabel?.visible) {
+                    const toPx = (o: THREE.Object3D) => {
+                      const q = o.getWorldPosition(tlScratch).project(camera);
+                      return [(q.x * 0.5 + 0.5) * host.width, (-q.y * 0.5 + 0.5) * host.height];
+                    };
+                    const [ex, ey] = toPx(tl.endLabel);
+                    const [sx, sy] = toPx(tl.startLabel);
+                    if (Math.abs(ex - sx) < captionWidthPx && Math.abs(ey - sy) < 28) {
+                      const down = tlScratch
+                        .set(0, -1, 0)
+                        .applyQuaternion(camera.quaternion)
+                        .applyQuaternion(planetMesh.getWorldQuaternion(tlScratchQ).invert());
+                      tl.endLabel.position.addScaledVector(down, (sy + 30 - ey) * worldPerPx);
+                    }
+                  }
+                }
                 tl.endLabel.traverse((o) => {
                   if (o instanceof THREE.Sprite) {
                     const m2 = o.material as THREE.SpriteMaterial;
-                    m2.opacity = detailOpacity;
+                    m2.opacity = routeDetailOpacity;
                   }
                 });
               }
+              // (route view: routeDetailOpacity is 1 — the whole drive shows.)
               // Gate the in-between stop pins on a tighter threshold
               // than the line — pins only make sense once HiRISE detail
-              // is substantially in (detailOpacity > 0.6 ≈ camR < ~31.5),
+              // is substantially in (routeDetailOpacity > 0.6 ≈ camR < ~31.5),
               // otherwise they read as confetti scattered across an
               // un-textured rectangle (image 21 feedback, 2026-06-03).
               // Line + start/end + captions stay on the wider gate so
               // the user gets a path-preview earlier in the zoom.
-              const stopPinsVisible = tlShow && detailOpacity > 0.6;
+              const stopPinsVisible = tlShow && routeDetailOpacity > 0.6;
               for (const sp of tl.stopPins) {
                 sp.visible = stopPinsVisible;
                 sp.scale.set(pinWorldW, pinWorldH, 1);
-                (sp.material as THREE.SpriteMaterial).opacity = detailOpacity;
+                (sp.material as THREE.SpriteMaterial).opacity = routeDetailOpacity;
+              }
+              // #641 — casing + sol ticks follow the line; labels are sized
+              // to a fixed on-screen height (worldPerPx) like the captions.
+              if (tl.casing) {
+                tl.casing.visible = tlShow;
+                if (tl.casingMaterial) tl.casingMaterial.opacity = routeDetailOpacity * 0.75;
+              }
+              for (const tk of tl.ticks ?? []) tk.visible = tlShow && routeDetailOpacity > 0.3;
+              for (const tm of tl.tickMaterials ?? []) tm.opacity = routeDetailOpacity;
+              const tickLabelH = 15 * worldPerPx;
+              // Thin by screen distance: drop a label within ~44 px of one
+              // already shown (the rover's long stays bunch major ticks).
+              const shownPx: Array<[number, number]> = [];
+              const scr = new THREE.Vector3();
+              const vw = renderer.domElement.clientWidth || window.innerWidth;
+              const vh = renderer.domElement.clientHeight || window.innerHeight;
+              const toScreen = (o: THREE.Object3D): [number, number] => {
+                o.getWorldPosition(scr).project(camera);
+                return [(scr.x * 0.5 + 0.5) * vw, (-scr.y * 0.5 + 0.5) * vh];
+              };
+              // Screen rectangles the tick labels must stay out of: the start /
+              // end captions (centred, captionWidthPx wide) and the stop pills
+              // (left edge 16 px right of the ring, 22 px tall).
+              const blocked: Array<[number, number, number, number]> = [];
+              for (const cap of [tl.startLabel, tl.endLabel]) {
+                if (!cap?.visible) continue;
+                const [x, y] = toScreen(cap);
+                const hw = captionWidthPx / 2 + 8;
+                blocked.push([x - hw, y - 20, x + hw, y + 20]);
+              }
+              if (stopPinsVisible) {
+                for (const lb of tl.stopLabels ?? []) {
+                  const [x, y] = toScreen(lb);
+                  blocked.push([x - 12, y - 18, x + 22 * (lb.userData.aspect ?? 4) + 24, y + 18]);
+                }
+              }
+              for (const lb of tl.tickLabels ?? []) {
+                let show = tlShow && routeDetailOpacity > 0.3;
+                if (show) {
+                  const [sx, sy] = toScreen(lb);
+                  if (
+                    shownPx.some(([x, y]) => Math.hypot(sx - x, sy - y) < 44) ||
+                    blocked.some(([x0, y0, x1, y1]) => sx > x0 && sx < x1 && sy > y0 && sy < y1)
+                  )
+                    show = false;
+                  else shownPx.push([sx, sy]);
+                }
+                lb.visible = show;
+                lb.scale.set(tickLabelH * (lb.userData.aspect ?? 2), tickLabelH, 1);
+                (lb.material as THREE.SpriteMaterial).opacity = routeDetailOpacity;
+              }
+              const stopLabelH = 22 * worldPerPx;
+              // Pills hide when they would overlap an earlier one (Home Plate
+              // and Troy sit ~80 m apart); the ring stays, the tooltip names it.
+              // Start / end captions claim their space first: a pill that
+              // would sit under one hides (the ring stays).
+              const pillRects: Array<[number, number, number, number]> = [];
+              for (const cap of [tl.startLabel, tl.endLabel]) {
+                if (!cap?.visible) continue;
+                cap.getWorldPosition(scr).project(camera);
+                const cx = (scr.x * 0.5 + 0.5) * vw;
+                const cy = (-scr.y * 0.5 + 0.5) * vh;
+                pillRects.push([
+                  cx - captionWidthPx / 2,
+                  cy - 14,
+                  cx + captionWidthPx / 2,
+                  cy + 14,
+                ]);
+              }
+              // A photo pin under a start / end caption hides (Opportunity's
+              // last photo sat on "45.2 km · 5,250 days"); the Journey tab
+              // still lists it.
+              for (const sp of tl.stopPins) {
+                if (!sp.visible || sp.userData.kind !== 'traverse-photo') continue;
+                sp.getWorldPosition(scr).project(camera);
+                const px = (scr.x * 0.5 + 0.5) * vw;
+                const py = (-scr.y * 0.5 + 0.5) * vh;
+                if (
+                  pillRects.some(
+                    (q) => px > q[0] - 12 && px < q[2] + 12 && py > q[1] - 16 && py < q[3] + 16,
+                  )
+                )
+                  sp.visible = false;
+              }
+              // Pills that would run under the open side panel flip to the
+              // left of their ring.
+              const rightEdge =
+                panelOpen && (tl.stopLabels?.length ?? 0) > 0
+                  ? vw -
+                    (parseFloat(
+                      getComputedStyle(renderer.domElement).getPropertyValue('--panel-width'),
+                    ) || 0)
+                  : vw;
+              for (const lb of tl.stopLabels ?? []) {
+                const wPx = 22 * (lb.userData.aspect ?? 4);
+                let pillShow = stopPinsVisible;
+                let flip = false;
+                if (pillShow) {
+                  lb.getWorldPosition(scr).project(camera);
+                  const px = (scr.x * 0.5 + 0.5) * vw;
+                  const py = (-scr.y * 0.5 + 0.5) * vh;
+                  flip = px + 16 + wPx > rightEdge - 8;
+                  const r: [number, number, number, number] = flip
+                    ? [px - 16 - wPx, py - 12, px - 16, py + 12]
+                    : [px + 16, py - 12, px + 16 + wPx, py + 12];
+                  if (
+                    pillRects.some((q) => r[0] < q[2] && r[2] > q[0] && r[1] < q[3] && r[3] > q[1])
+                  )
+                    pillShow = false;
+                  else pillRects.push(r);
+                }
+                lb.visible = pillShow;
+                // Near edge 16 px from the ring centre, whatever the width.
+                lb.center.x = flip ? 1 + 16 / wPx : -16 / wPx;
+                lb.scale.set(stopLabelH * (lb.userData.aspect ?? 4), stopLabelH, 1);
+                (lb.material as THREE.SpriteMaterial).opacity = routeDetailOpacity;
+              }
+              // #641 — "Replay the drive": draw the path up to replaySol, the
+              // rover marker at its tip, nothing from later sols.
+              const rs = tl.roverId === focusedSiteId ? replaySol : null;
+              const lineGeo = tl.line.geometry as THREE.InstancedBufferGeometry;
+              const casingGeo = tl.casing?.geometry as THREE.InstancedBufferGeometry | undefined;
+              if (rs != null && tl.pointSols && tl.pathWorld) {
+                let idx = 0;
+                while (idx + 1 < tl.pointSols.length && tl.pointSols[idx + 1] <= rs) idx++;
+                lineGeo.instanceCount = idx;
+                if (casingGeo) casingGeo.instanceCount = idx;
+                for (const tk of tl.ticks ?? []) tk.visible = false;
+                for (const lb of [...(tl.tickLabels ?? []), ...(tl.stopLabels ?? [])]) {
+                  if ((lb.userData.sol ?? 0) > rs) lb.visible = false;
+                }
+                for (const sp of tl.stopPins) {
+                  const k = sp.userData.kind;
+                  if (
+                    (k === 'traverse-stop' || k === 'traverse-photo') &&
+                    (sp.userData.stopSol ?? 0) > rs
+                  ) {
+                    sp.visible = false;
+                  }
+                }
+                tl.endDot.visible = tl.endDot.visible && idx >= tl.pointSols.length - 1;
+                if (tl.replayMarker) {
+                  tl.replayMarker.visible = tlShow;
+                  tl.replayMarker.position.copy(tl.pathWorld[idx]);
+                  tl.replayMarker.scale.set(pinWorldW * 1.3, pinWorldH * 1.3, 1);
+                }
+              } else {
+                lineGeo.instanceCount = Infinity;
+                if (casingGeo) casingGeo.instanceCount = Infinity;
+                if (tl.replayMarker) tl.replayMarker.visible = false;
               }
             }
           }
@@ -3961,10 +4677,25 @@
           // With a site selected the card names that site or nothing, never
           // another promoted hotspot (a selected site without imagery used to
           // borrow a far-away lander's card).
+          // Nothing selected: only a hotspot on screen and on the near side can
+          // name the card (#641 — free zoom over bare plains showed "Mars 3
+          // lander", promoted but out of view).
           if (!bestH && !selected) {
             let bestTier = 0;
+            const ctr = planetMesh.getWorldPosition(legendScratchA);
             for (const h of hotspots) {
-              if (h.currentTier > bestTier) {
+              if (h.currentTier <= bestTier) continue;
+              const wp = h.group.getWorldPosition(legendScratchB);
+              if (
+                legendScratchC
+                  .copy(wp)
+                  .sub(ctr)
+                  .dot(legendScratchD.copy(camera.position).sub(wp)) <= 0
+              )
+                continue;
+              const ndc = wp.project(camera);
+              if (Math.abs(ndc.x) > 1 || Math.abs(ndc.y) > 1) continue;
+              {
                 bestTier = h.currentTier;
                 bestH = { siteId: h.siteId };
               }
@@ -4016,14 +4747,22 @@
                     licenseShort: 'CC-BY-NC-SA-4.0',
                   });
                 } else if (config.planet === 'mars') {
+                  // Crop size follows the site's recorded ground extent: rover
+                  // crops grow to cover the traverse (#641; Opportunity 29.7 km
+                  // = 5 940 px, shown as a 4 096 px texture ≈ 7 m/px).
+                  const regGroundM = site.hotspot_tier2_regional_ground_m ?? 15360;
+                  const regCropPx = Math.round(regGroundM / 5);
+                  const regShownMPerPx = regGroundM / Math.min(regCropPx, 4096);
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'Murray Lab Global CTX Mosaic',
                     sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
                     resolutionText: m.surface_res_crop({
-                      res: m.unit_mpx_value({ value: '5' }),
-                      crop: '3072',
-                      km: m.mp_flight_unit_km({ value: '15' }),
+                      res: m.unit_mpx_value({ value: formatNumber(regShownMPerPx, locale, 0) }),
+                      crop: String(regCropPx),
+                      km: m.mp_flight_unit_km({
+                        value: formatNumber(regGroundM / 1000, locale, 0),
+                      }),
                     }),
                     sourceUrl: 'https://www.msss.com/all_projects/mro-ctx.php',
                     licenseShort: 'PD-NASA',
@@ -4253,6 +4992,11 @@
               }
             }
             flatPatchTarget = target;
+            const ft = target ?? selected;
+            flatPatchTint =
+              TINT_BODIES.has(config.planet) && globeColourAt && ft.lat != null && ft.lon != null
+                ? globeColourAt(ft.lat, ft.lon)
+                : undefined;
             if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
             flatPatchPhase = 'entering';
             flatPatchTransitionTimer = setTimeout(() => {
@@ -4348,6 +5092,7 @@
     lifecycle.add(stopRouteViewEscape);
     lifecycle.add(() => panoramaSkybox?.dispose());
     lifecycle.add(stopCanvasInputs);
+    lifecycle.add(() => cancelAnimationFrame(hoverRaf));
     lifecycle.add(() => disposeScene(scene));
     // ADR-073 Layer B — explicitly dispose the lazy-loaded 4K
     // texture. disposeScene only walks the scene graph; when the
@@ -4701,6 +5446,7 @@
   {#if !panoramaActive}
     <div
       class="hud-controls"
+      class:flat-hidden={flatPatchActive}
       data-audio-stage="surface-hud"
       role="group"
       aria-label={m.ui_view_controls()}
@@ -4837,7 +5583,9 @@ sample      ${debugInfo.projectedPxSample}`}
        note: "when we go to panorama mode we still see altitude
        with Mm there, it should not be there in panorama mode on
        any planet"). -->
-  {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen}
+  <!-- …and not when almost landed (operator, #641): below ~4 % of the radius
+       (≈ 150 km on Mars) the detail imagery is in and the scale bar says it. -->
+  {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen && altitudeKm >= config.radiusKm * 0.044}
     <div class="altitude-indicator" class:beside-panel={panelOpen} aria-hidden="true">
       {m.surface_altitude({
         value:
@@ -4891,6 +5639,7 @@ sample      ${debugInfo.projectedPxSample}`}
         {config}
         {traverses}
         entryKmPerPx={sphereKmPerPxAtSurface}
+        tint={flatPatchTint}
         onClose={(exitKmPerPx) => closeFlatPatch(exitKmPerPx)}
       />
     </div>
@@ -4927,6 +5676,9 @@ sample      ${debugInfo.projectedPxSample}`}
       style="left: {hoveredStopInfo.clientX + 16}px; top: {hoveredStopInfo.clientY + 18}px"
       data-testid="traverse-stop-tooltip"
     >
+      {#if hoveredStopInfo.image}
+        <img class="photo-thumb" src={hoveredStopInfo.thumb ?? hoveredStopInfo.image} alt="" />
+      {/if}
       <span class="sol mono">{hoveredStopInfo.title}</span>
       {#if hoveredStopInfo.label}
         <span class="label">{hoveredStopInfo.label}</span>
@@ -5111,11 +5863,20 @@ sample      ${debugInfo.projectedPxSample}`}
        button: pressed = nation shown; un-pressed dims it and hides every
        object of that nation (surface, orbital, earth-sat). Default all-on,
        so it looks identical to the old passive legend until you click. -->
+  <!-- Only once the site icons arrive with zoom (operator, #641): the first
+       view is a bare globe. And not near the ground: zoomed in on one site
+       the strip just covers the route and imagery. Mobile keeps the Nations
+       tab. The 2D map shows every site, so it always has the strip. Kept in
+       the DOM and faded (the mobile Nations tab mirrors its state). -->
   {#if !panoramaActive}
     <div
       class="legend-3d"
+      class:legend-3d--away={!(
+        view === '2d' ||
+        (tagStageOn && altitudeKm >= config.radiusKm * 0.044)
+      )}
       class:beside-panel={panelOpen}
-      bind:clientHeight={legendH}
+      bind:this={legendEl}
       role="group"
       aria-label={m.moon_legend_nation_aria()}
     >
@@ -5220,7 +5981,6 @@ sample      ${debugInfo.projectedPxSample}`}
                 onclick={() => exitRouteView()}
                 title={m.surface_exit_route_title()}
               >
-                <span class="icon" aria-hidden="true">✕</span>
                 <span>{m.surface_exit_route()}</span>
               </button>
             {:else}
@@ -5230,7 +5990,6 @@ sample      ${debugInfo.projectedPxSample}`}
                 data-testid="view-route"
                 onclick={() => selected && enterRouteView(selected)}
               >
-                <span class="icon" aria-hidden="true">🛰</span>
                 <span>{m.surface_view_route()}</span>
               </button>
             {/if}
@@ -5244,7 +6003,6 @@ sample      ${debugInfo.projectedPxSample}`}
                 onclick={() => closeFlatPatch()}
                 title={m.surface_exit_zoom_title()}
               >
-                <span class="icon" aria-hidden="true">✕</span>
                 <span>{m.surface_exit_zoom_view()}</span>
               </button>
             {:else}
@@ -5260,7 +6018,6 @@ sample      ${debugInfo.projectedPxSample}`}
                   if (selected) flyToDetail?.(selected);
                 }}
               >
-                <span class="icon" aria-hidden="true">⤓</span>
                 <span>{m.surface_zoom_detail()}</span>
               </button>
             {/if}
@@ -5284,6 +6041,8 @@ sample      ${debugInfo.projectedPxSample}`}
           hasGallery: panelGallery.length > 0 || panelVideos.length > 0,
           hasStory: !!panelStory,
           hasLinks: panelHasLinks,
+          hasJourney: journeyRows.length > 1,
+          hasLanding: panelAnatomy.length > 0 || !!panelSequence,
         })}
         bind:active={panelTab}
       />
@@ -5350,49 +6109,106 @@ sample      ${debugInfo.projectedPxSample}`}
                 {selected.lon != null ? m.moon_lon_deg({ value: selected.lon.toFixed(2) }) : '—'}
               </div>
             </div>
-            <div class="cell">
-              <div class="cell-label">
-                {m.moon_panel_duration()}<WhyPopover
-                  title={m.why_surface_time_title()}
-                  body={m.why_surface_time_body()}
-                />
+            {#if roverTr}
+              <!-- #641 — uncrewed rovers: what the rover did, not crewed-mission
+                   fields (EVA / samples / crew read "—" / "0 kg" for them). -->
+              <div class="cell" data-testid="rover-distance">
+                <div class="cell-label">{m.panel_rover_distance()}</div>
+                <div class="cell-value">
+                  {m.panel_rover_km({
+                    value: formatNumber(
+                      roverTr.length_km ?? traversePathKm(roverTr.points, config.radiusKm),
+                      locale,
+                      (roverTr.length_km ?? 10) >= 10 ? 1 : 2,
+                    ),
+                  })}
+                </div>
               </div>
-              <div class="cell-value">
-                {selected.surface_duration_days
-                  ? m.moon_days({ value: selected.surface_duration_days.toString() })
-                  : '—'}
+              <div class="cell">
+                <div class="cell-label">
+                  {roverTr.status === 'ACTIVE'
+                    ? m.panel_rover_latest_drive()
+                    : m.panel_rover_days_on_mars()}
+                </div>
+                <div class="cell-value">
+                  {#if roverTr.status === 'ACTIVE'}
+                    {roverTr.last_sol != null
+                      ? m.traverse_sol({ sol: formatNumber(roverTr.last_sol, locale) })
+                      : '—'}
+                  {:else}
+                    {formatNumber(
+                      selected.landing_date
+                        ? daysBetween(selected.landing_date, roverTr.snapshot_date)
+                        : (selected.surface_duration_days ?? 0),
+                      locale,
+                    )}
+                  {/if}
+                </div>
               </div>
-            </div>
-            <div class="cell">
-              <div class="cell-label">
-                {m.moon_panel_eva()}<WhyPopover
-                  title={m.why_eva_time_title()}
-                  body={m.why_eva_time_body()}
-                />
+              <div class="cell">
+                <div class="cell-label">{m.panel_rover_last_contact()}</div>
+                <div class="cell-value">
+                  {#if roverTr.status === 'ACTIVE'}
+                    {m.panel_rover_still_driving()}
+                  {:else if roverTr.last_sol != null}
+                    {m.panel_rover_contact_sol({
+                      date: roverTr.snapshot_date,
+                      sol: formatNumber(roverTr.last_sol, locale),
+                    })}
+                  {:else}
+                    {roverTr.snapshot_date}
+                  {/if}
+                </div>
               </div>
-              <div class="cell-value">
-                {selected.eva_duration_hours
-                  ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
-                  : '—'}
+              <div class="cell">
+                <div class="cell-label">{m.panel_rover_stops()}</div>
+                <div class="cell-value">{formatNumber(roverTr.stops?.length ?? 0, locale)}</div>
               </div>
-            </div>
-            <div class="cell">
-              <div class="cell-label">
-                {m.moon_panel_samples()}<WhyPopover
-                  title={m.why_samples_title()}
-                  body={m.why_samples_body()}
-                />
+            {:else}
+              <div class="cell">
+                <div class="cell-label">
+                  {m.moon_panel_duration()}<WhyPopover
+                    title={m.why_surface_time_title()}
+                    body={m.why_surface_time_body()}
+                  />
+                </div>
+                <div class="cell-value">
+                  {selected.surface_duration_days
+                    ? m.moon_days({ value: selected.surface_duration_days.toString() })
+                    : '—'}
+                </div>
               </div>
-              <div class="cell-value">
-                {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
+              <div class="cell">
+                <div class="cell-label">
+                  {m.moon_panel_eva()}<WhyPopover
+                    title={m.why_eva_time_title()}
+                    body={m.why_eva_time_body()}
+                  />
+                </div>
+                <div class="cell-value">
+                  {selected.eva_duration_hours
+                    ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
+                    : '—'}
+                </div>
               </div>
-            </div>
-            <div class="cell">
-              <div class="cell-label">{m.moon_panel_crew()}</div>
-              <div class="cell-value short">
-                {selected.crew && selected.crew.length > 0 ? selected.crew.join(', ') : '—'}
+              <div class="cell">
+                <div class="cell-label">
+                  {m.moon_panel_samples()}<WhyPopover
+                    title={m.why_samples_title()}
+                    body={m.why_samples_body()}
+                  />
+                </div>
+                <div class="cell-value">
+                  {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
+                </div>
               </div>
-            </div>
+              <div class="cell">
+                <div class="cell-label">{m.moon_panel_crew()}</div>
+                <div class="cell-value short">
+                  {selected.crew && selected.crew.length > 0 ? selected.crew.join(', ') : '—'}
+                </div>
+              </div>
+            {/if}
           {/if}
         </div>
 
@@ -5489,14 +6305,127 @@ sample      ${debugInfo.projectedPxSample}`}
           </PanelGalleryGrid>
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
-      {:else if panelTab === 'story' && panelStory}
-        <SiteStoryPanel
-          story={panelStory}
-          onLightbox={(src) => {
-            panelLightbox = src;
-            if (selected) trackGalleryImageOpen('site', selected.id);
-          }}
-        />
+      {:else if panelTab === 'story' && (panelStory || panelAnatomy.length > 0 || panelSequence)}
+        {#if panelAnatomy.length > 0 || panelSequence}
+          <SiteLandingPanel
+            anatomy={panelAnatomy}
+            sequence={panelSequence}
+            locale={localeFromPage(page)}
+            onOpen={(src) => (panelLightbox = src)}
+          />
+        {/if}
+        {#if panelStory}
+          <SiteStoryPanel
+            story={panelStory}
+            onLightbox={(src) => {
+              panelLightbox = src;
+              if (selected) trackGalleryImageOpen('site', selected.id);
+            }}
+          />
+        {/if}
+      {:else if panelTab === 'journey'}
+        {#if replayRange}
+          <div class="replay" data-testid="journey-replay">
+            <button
+              type="button"
+              class="replay-play"
+              data-testid="journey-replay-play"
+              aria-pressed={replayPlaying}
+              onclick={toggleReplay}
+            >
+              {replayPlaying ? m.journey_replay_pause() : m.journey_replay_play()}
+            </button>
+            <input
+              id="journey-replay-scrub"
+              class="replay-scrub"
+              type="range"
+              min={replayRange[0]}
+              max={replayRange[1]}
+              step="1"
+              value={replaySol ?? replayRange[1]}
+              aria-label={m.journey_replay_scrub()}
+              oninput={(e) => {
+                replayPlaying = false;
+                replaySol = Number((e.currentTarget as HTMLInputElement).value);
+                if (!routeViewActive && selected) enterRouteView(selected);
+              }}
+            />
+            {#if replayAt}
+              <p class="replay-at mono" aria-live="polite">
+                {m.traverse_sol({ sol: formatNumber(replayAt.sol, locale) })} ·
+                {m.traverse_hover_detail({
+                  date: replayAt.date,
+                  km: formatNumber(replayAt.km, locale, replayAt.km < 10 ? 2 : 1),
+                })}
+              </p>
+            {/if}
+          </div>
+        {/if}
+        {#if profile}
+          <figure class="profile" data-testid="journey-profile">
+            <figcaption class="profile-cap">
+              <span>{m.journey_elevation()}</span>
+              <span class="mono" title={profile.source}>
+                {m.journey_elevation_range({
+                  min: formatNumber(profile.lo, locale),
+                  max: formatNumber(profile.hi, locale),
+                  climb: formatNumber(profile.hi - profile.lo, locale),
+                })}
+              </span>
+            </figcaption>
+            <svg
+              class="profile-svg"
+              viewBox="0 0 {PROFILE_W} {PROFILE_H}"
+              preserveAspectRatio="none"
+              role="img"
+              aria-label={m.journey_elevation()}
+            >
+              <path class="profile-area" d={profile.area} />
+              <path class="profile-line" d={profile.d} vector-effect="non-scaling-stroke" />
+              {#if replayAt}
+                <line
+                  class="profile-cursor"
+                  x1={(replayAt.km / (profile.total || 1)) * PROFILE_W}
+                  x2={(replayAt.km / (profile.total || 1)) * PROFILE_W}
+                  y1="0"
+                  y2={PROFILE_H}
+                  vector-effect="non-scaling-stroke"
+                />
+              {/if}
+            </svg>
+          </figure>
+        {/if}
+        <ol class="journey" data-testid="panel-journey">
+          {#each journeyRows as row (row.key)}
+            <li>
+              <button
+                type="button"
+                class="journey-row"
+                class:journey-row--photo={!!row.photo}
+                onclick={() =>
+                  row.photo ? (panelLightbox = row.photo) : focusJourney?.(row.lat, row.lon)}
+              >
+                {#if row.thumb}
+                  <img class="journey-thumb" src={row.thumb} alt="" loading="lazy" />
+                {:else}
+                  <span class="journey-thumb journey-thumb--none" aria-hidden="true"></span>
+                {/if}
+                <span class="journey-text">
+                  <span class="journey-sol mono"
+                    >{m.traverse_sol({ sol: formatNumber(row.sol, locale) })}</span
+                  >
+                  <span class="journey-label">{row.label}</span>
+                  <span class="journey-meta mono">
+                    {m.traverse_hover_detail({
+                      date: row.date,
+                      km: formatNumber(row.km, locale, row.km < 10 ? 2 : 1),
+                    })}
+                  </span>
+                </span>
+              </button>
+            </li>
+          {/each}
+        </ol>
       {:else if panelTab === 'learn'}
         {#if !panelHasLinks}
           <p class="empty-tab">{m.panel_no_links()}</p>
@@ -5526,7 +6455,11 @@ sample      ${debugInfo.projectedPxSample}`}
     <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
   {/if}
 
-  <PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
+  <PanelLightbox
+    src={panelLightbox}
+    images={panelLightboxImages}
+    onClose={() => (panelLightbox = null)}
+  />
   <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
   <!-- #290 Slice 6b — Earth-satellite info panel. Mounted only when
@@ -5881,11 +6814,6 @@ sample      ${debugInfo.projectedPxSample}`}
       border-color 0.15s ease,
       color 0.15s ease;
   }
-  .head .zoom-to-detail-button .icon {
-    color: var(--accent, #4ecdc4);
-    font-size: 13px;
-    line-height: 1;
-  }
   .head .zoom-to-detail-button:hover,
   .head .zoom-to-detail-button:focus-visible {
     background: rgba(255, 255, 255, 0.08);
@@ -5929,27 +6857,29 @@ sample      ${debugInfo.projectedPxSample}`}
      on narrow viewports. */
   .head .site-cta-bar :global(.stand-at-site),
   .head .site-cta-bar .zoom-to-detail-button {
-    flex: 1 1 90px;
-    min-width: 90px;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 30px;
     width: auto;
     margin-top: 0;
-    padding: 10px 8px;
+    padding: 5px 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    text-align: center;
+    line-height: 1.25;
     /* Tinted with the body's --body-tint (Mars rust, Moon rocky grey,
        Earth deep blue) so the CTA row reads as belonging to the
        current world, not the selected site's nation. The agency badge
        above still carries the per-site nation accent for identity. */
-    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
-    color: #fff;
-    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 80%, transparent);
+    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 8%, rgba(8, 10, 22, 0.6));
+    color: rgba(255, 255, 255, 0.88);
+    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 50%, transparent);
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 1.2px;
+    letter-spacing: 0.2px;
     text-transform: uppercase;
     cursor: pointer;
     transition:
@@ -5968,16 +6898,146 @@ sample      ${debugInfo.projectedPxSample}`}
     outline: none;
     transform: translateY(-1px);
   }
-  .head .site-cta-bar .zoom-to-detail-button .icon {
-    color: #fff;
-    font-size: 13px;
-    line-height: 1;
-  }
-  /* The PanoramaToggleButton renders `.stand-at-site` with the
-     glyph injected via ::before; override its colour so the
-     half-moon / ✕ reads as white against the now-coloured fill. */
+  /* Text-only in the CTA row: the PanoramaToggleButton's ::before glyph
+     (◐ / ✕) is hidden here; elsewhere it keeps it. */
   .head .site-cta-bar :global(.stand-at-site::before) {
+    display: none;
+  }
+
+  /* #641 — Journey tab: the traverse as a timeline. A thin rule down the
+     thumbnails' left edge reads as the route; each row flies to its point. */
+  .replay {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    margin-top: 12px;
+  }
+  .replay-play {
+    padding: 5px 10px;
+    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
+    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 70%, transparent);
+    border-radius: 3px;
     color: #fff;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .replay-play:focus-visible {
+    outline: 2px solid var(--body-tint, #4ecdc4);
+    outline-offset: 2px;
+  }
+  .replay-scrub {
+    flex: 1 1 160px;
+    min-width: 0;
+    accent-color: var(--body-tint, #4ecdc4);
+  }
+  .replay-at {
+    flex: 1 1 100%;
+    margin: 0;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .traverse-stop-tooltip .photo-thumb {
+    display: block;
+    width: 200px;
+    max-width: 60vw;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+  .profile {
+    margin: 12px 0 0;
+  }
+  .profile-cap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 10px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: 4px;
+  }
+  .profile-svg {
+    display: block;
+    width: 100%;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+  .profile-area {
+    fill: color-mix(in srgb, var(--body-tint, #4ecdc4) 22%, transparent);
+  }
+  .profile-line {
+    fill: none;
+    stroke: color-mix(in srgb, var(--body-tint, #4ecdc4) 60%, #ffffff);
+    stroke-width: 1.5;
+  }
+  .profile-cursor {
+    stroke: #ffffff;
+    stroke-width: 1.5;
+  }
+  .journey {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .journey-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.92);
+    text-align: left;
+    cursor: pointer;
+  }
+  .journey-row:hover,
+  .journey-row:focus-visible {
+    border-color: var(--body-tint, #4ecdc4);
+    background: rgba(255, 255, 255, 0.07);
+    outline: none;
+  }
+  .journey-row--photo .journey-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .journey-thumb {
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .journey-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .journey-sol {
+    font-size: 11px;
+    color: var(--body-tint, #4ecdc4);
+    letter-spacing: 0.6px;
+  }
+  .journey-label {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  .journey-meta {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.72);
   }
 
   .sr-only {
@@ -6009,9 +7069,9 @@ sample      ${debugInfo.projectedPxSample}`}
        Relaxed back at @min-width: 501. */
     min-width: 78px;
     padding: 0 6px;
-    background: rgba(8, 10, 22, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.55);
+    background: rgba(8, 10, 22, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.78);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8.5px;
     letter-spacing: 1.5px;
@@ -6039,11 +7099,13 @@ sample      ${debugInfo.projectedPxSample}`}
     border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 55%, transparent);
     outline: none;
   }
+  /* Active: tinted over a DARK base (was tint-on-transparent — rust text on
+     a rust wash over orange terrain read at ~1.5:1, #641). */
   .hud-controls :global(.chip.active),
   .ctrl-row.chips :global(.chip.active) {
-    background: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 18%, transparent);
-    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 70%, transparent);
-    color: var(--body-tint, #c8cdda);
+    background: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 22%, rgba(8, 10, 22, 0.82));
+    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 75%, transparent);
+    color: color-mix(in srgb, var(--body-tint, #c8cdda) 45%, #ffffff);
   }
   .hud-controls :global(.toggle) {
     min-width: 44px;
@@ -6158,7 +7220,8 @@ sample      ${debugInfo.projectedPxSample}`}
   /* The sphere controls (2D / reset / spin) are inert in the flat-patch
      detail view — hide them so they stop overlapping the flat-patch's own
      top-center context banner. */
-  .hud-top-mobile.flat-hidden {
+  .hud-top-mobile.flat-hidden,
+  .hud-controls.flat-hidden {
     display: none;
   }
 
@@ -6205,7 +7268,15 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 4px;
   }
 
+  .legend-3d--away {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
   .legend-3d {
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s;
     position: absolute;
     /* Compact colour-key strip spanning the full width just above the
        footer. On desktop always visible; on mobile replaced by the
@@ -6326,11 +7397,12 @@ sample      ${debugInfo.projectedPxSample}`}
     line-height: 1;
     margin: 0 0 4px;
   }
+  /* #641 contrast: was 8 px at 40 % — unreadable on the dark panel. */
   .type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.72);
     margin: 0;
   }
   .grid {
@@ -6348,11 +7420,12 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 4px;
     padding: 8px 10px;
   }
+  /* #641 contrast: was 6 px at 25 %. */
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 3px;
   }
   .cell-value {
@@ -6566,14 +7639,16 @@ sample      ${debugInfo.projectedPxSample}`}
     :global(html[data-touch][data-orientation='landscape']) .beside-panel {
       right: calc(var(--panel-width) + 12px);
     }
-    /* …and above the nation legend row, which runs under that spot. */
+    /* …and above the nation legend row, which runs under that spot. With no
+       legend (zoomed in, #641) the scale bar sits on the imagery card's
+       bottom line (56 px, TierContextCard) and the altitude stacks on it. */
     :global(html[data-form='desktop']) .altitude-indicator.beside-panel,
     :global(html[data-touch][data-orientation='landscape']) .altitude-indicator.beside-panel {
-      bottom: var(--legend-top, 96px);
+      bottom: var(--legend-top, 102px);
     }
     :global(html[data-form='desktop']) .distance-scale.beside-panel,
     :global(html[data-touch][data-orientation='landscape']) .distance-scale.beside-panel {
-      bottom: calc(var(--legend-top, 96px) + 34px);
+      bottom: calc(var(--legend-top, 22px) + 34px);
     }
   }
   /* Narrow window with a mouse: under the detail panel (z 30), like

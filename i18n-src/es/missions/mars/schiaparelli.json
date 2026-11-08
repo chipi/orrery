@@ -4,7 +4,7 @@
   "payload": "577 kg (módulo de aterrizaje EDM de la misión ExoMars 2016 con el Trace Gas Orbiter)",
   "delta_v": "~5,5 km/s",
   "type": "DEMOSTRADOR DE ENTRADA ATMOSFÉRICA, DESCENSO Y ATERRIZAJE · ESTRELLADO",
-  "first": "Primer intento de la ESA en la superficie de Marte; tenía la intención de demostrar la tecnología de EDL antes de ExoMars Rosalind Franklin",
+  "first": "Primer intento de la ESA con un módulo de aterrizaje propio en Marte; tenía la intención de demostrar la tecnología de EDL antes de ExoMars Rosalind Franklin",
   "description": "Schiaparelli era el demostrador de entrada, descenso y aterrizaje que viajaba como carga secundaria en el ExoMars Trace Gas Orbiter (TGO). Llamada así por el astrónomo italiano Giovanni Schiaparelli, la sonda se construyó para poner a prueba el sistema de EDL que la ESA pensaba ampliar para el róver Rosalind Franklin. Schiaparelli se separó del TGO el 16 de octubre de 2016 y entró en la atmósfera marciana tres días después. El perfil de descenso se vino abajo: una unidad de medición inercial saturada hizo que el software de navegación creyera que la sonda ya había aterrizado, cuando aún estaba en altura — el paracaídas se soltó antes de tiempo y los propulsores de frenado se apagaron tras funcionar solo 3 segundos. Schiaparelli golpeó la superficie a ~150 m/s. El propio TGO completó con éxito la inserción orbital y sigue operando.",
   "events": [
     { "met": 0, "label": "LANZAMIENTO", "note": "Proton-M desde Baikonur, 2016-03-14. Conjunto TGO + Schiaparelli.", "type": "nominal" },

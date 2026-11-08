@@ -5,7 +5,7 @@
   "delta_v": "~3 km/s",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Second Soviet lunar rover; longest off-world drive (~39 km) for over 40 years",
-  "description": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the southern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
+  "description": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the eastern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Trans-lunar injection on the Blok-D upper stage.", "type": "nominal" },

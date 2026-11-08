@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "Empilement au lancement de 4100 kg : MTM (Mercury Transfer Module, ESA — 4 propulseurs ioniques, panneaux solaires) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instruments) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 instruments) + pare-soleil MOSIF. Les deux orbiteurs scientifiques se séparent après l'arrivée à Mercure.",
+  "payload": "Empilement au lancement de 4100 kg : MTM (Mercury Transfer Module, ESA — 4 propulseurs ioniques, panneaux solaires) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instruments) + MIO (Mercury Magnetospheric Orbiter, JAXA, 255 kg, 5 instruments) + pare-soleil MOSIF. Les deux orbiteurs scientifiques se séparent après l'arrivée à Mercure.",
   "delta_v": "~7,2 km/s (croisière ionique + 9 assistances gravitationnelles + MOI)",
   "type": "ORBITEUR · ACTIVE",
   "first": "Première mission planétaire conjointe Europe + Japon ; deuxième vaisseau spatial de l'histoire à se placer en orbite autour de Mercure (après Messenger)",
@@ -20,13 +20,13 @@
       "type": "nominal"
     },
     {
-      "met": 727,
+      "met": 726,
       "label": "SURVOL VÉNUS #1",
       "note": "Première assistance gravitationnelle vénusienne.",
       "type": "nominal"
     },
     {
-      "met": 1026,
+      "met": 1025,
       "label": "SURVOL VÉNUS #2",
       "note": "La deuxième assistance gravitationnelle de Vénus amorce la phase d'approche de Mercure.",
       "type": "nominal"

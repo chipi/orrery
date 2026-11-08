@@ -22,7 +22,7 @@
   import { destinationLabel } from '$lib/destination-label';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { TrajectoryArrowIcon } from '$lib/components/icons';
-  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
+  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
@@ -1223,6 +1223,7 @@
           <figure class="rocket-photo">
             <img
               src={pickHero('fleet', fleetId)}
+              style:object-position={heroPositionFor(pickHero('fleet', fleetId))}
               alt={m.plan_rocket_photo_alt({ name: selectedRocket.name ?? selectedRocket.id })}
               loading="lazy"
               onerror={(e) => {

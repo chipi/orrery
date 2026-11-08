@@ -1,7 +1,7 @@
 # 2026-10-31 — space-terms glossary pilot
 
 The record of the 20-term pilot on the science tree (runbook: skill
-`term-consistency`; write-up: `docs/wip/2026-10-31-space-terms-glossary-pilot.md`).
+`term-consistency`; write-up: `git show 5cf9491e398:git show 5cf9491e398:docs/wip/2026-10-31-space-terms-glossary-pilot.md`).
 
 | Path | What it is |
 |---|---|

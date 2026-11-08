@@ -17,7 +17,7 @@ import { expandFlyHud } from './_helpers/hud-expand';
  *
  *   Layer 4 (HUD-matches-arc):
  *     - heliocentricKms matches vis-viva on the spacecraft's heliocentric
- *       radius using the Earth-Mars Hohmann semi-major axis.
+ *       radius on the HUD's transfer ellipse (data-transfer-a-au).
  *     - signalDelayMin matches distFromEarthAu × AU_TO_LMIN.
  *     - All readouts are finite numbers (no NaN, no ±∞).
  *
@@ -37,8 +37,6 @@ const AU_PER_YR_TO_KMS = 4.7404;
 const AU_TO_KM = 149_597_870.7;
 const C_LIGHT_KM_S = 299_792.458;
 const R_EARTH_AU = 1.0;
-const R_MARS_AU = 1.52366;
-const A_TRANSFER_MARS = (R_EARTH_AU + R_MARS_AU) / 2;
 
 // Tolerances ---------------------------------------------------------------
 const HELIO_TOL_KMS = 0.02; // hud rounds to 0.0001, our compute also; gap is float drift
@@ -68,6 +66,8 @@ interface RenderState {
   retLen: number;
   outVertexHash: string;
   helioKms: number;
+  /** The HUD's transfer-ellipse semi-major axis: Earth to the target's real radius at arrival. */
+  transferAAu: number;
   distEarthAu: number;
   distMarsAu: number;
   signalDelayMin: number;
@@ -88,6 +88,7 @@ async function readRenderState(page: import('@playwright/test').Page): Promise<R
     retLen: el.getAttribute('data-ret-len'),
     outVertexHash: el.getAttribute('data-out-vertex-hash'),
     helioKms: el.getAttribute('data-helio-kms'),
+    transferAAu: el.getAttribute('data-transfer-a-au'),
     distEarthAu: el.getAttribute('data-dist-earth-au'),
     distMarsAu: el.getAttribute('data-dist-mars-au'),
     signalDelayMin: el.getAttribute('data-signal-delay-min'),
@@ -104,6 +105,7 @@ async function readRenderState(page: import('@playwright/test').Page): Promise<R
     retLen: Number(attrs.retLen),
     outVertexHash: attrs.outVertexHash ?? '',
     helioKms: Number(attrs.helioKms),
+    transferAAu: Number(attrs.transferAAu),
     distEarthAu: Number(attrs.distEarthAu),
     distMarsAu: Number(attrs.distMarsAu),
     signalDelayMin: Number(attrs.signalDelayMin),
@@ -304,7 +306,10 @@ test.describe('/fly render validation — Layer 4 (HUD matches arc)', () => {
       //               throughout the cislunar transit (real Apollo
       //               heliocentric speed varied by ~1 km/s).
       const scR = c.isMoon ? R_EARTH_AU : Math.hypot(s.scX, s.scZ);
-      const aTransfer = c.isMoon ? R_EARTH_AU : A_TRANSFER_MARS;
+      // The ellipse the HUD uses (Mars is eccentric: its radius at arrival, not 1.524 AU).
+      const aTransfer = c.isMoon ? R_EARTH_AU : s.transferAAu;
+      expect(s.transferAAu).toBeGreaterThan((R_EARTH_AU + 1.38) / 2);
+      expect(s.transferAAu).toBeLessThan((R_EARTH_AU + 1.67) / 2);
       const predictedHelio = visViva(scR, aTransfer);
       expect(Math.abs(s.helioKms - predictedHelio)).toBeLessThan(HELIO_TOL_KMS);
 

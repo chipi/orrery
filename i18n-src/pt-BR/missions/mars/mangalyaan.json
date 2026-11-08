@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 1,
       "label": "QUEIMAÇÃO DO PERIGEU 1",
       "note": "Primeira de seis queimações de elevação de órbita terrestre antes da injeção trans-Marte.",
       "type": "nominal"
@@ -34,7 +34,7 @@
     {
       "met": 3300,
       "label": "FIM DA MISSÃO",
-      "note": "Perda de contato em 2022-04 após o propelente da espaçonave se esgotar.",
+      "note": "Perda de contato em 2022-04 após o propelente se esgotar e a bateria descarregar abaixo do limite seguro durante longos eclipses (ISRO).",
       "type": "warning"
     }
   ],

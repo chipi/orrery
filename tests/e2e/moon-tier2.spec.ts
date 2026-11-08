@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { test, expect } from '@playwright/test';
 
 /**
@@ -26,7 +27,7 @@ test.describe('Moon — Tier 2 patch + Tier 3 button smoke', () => {
     await expect(page.getByRole('tab', { name: 'OVERVIEW' })).toBeVisible({ timeout: 20_000 });
     // Stand-at-site button renders only when hotspot_tier3_panorama is
     // set on the site's sidecar entry.
-    await expect(page.getByRole('button', { name: /stand at site/i })).toBeVisible({
+    await expect(page.getByRole('button', { name: /stand here/i })).toBeVisible({
       timeout: 5_000,
     });
   });
@@ -61,34 +62,21 @@ test.describe('Moon — Tier 2 patch + Tier 3 button smoke', () => {
     expect(buf.length).toBeGreaterThan(2048);
   });
 
-  // v0.7.0 Step 1 — all 18 Moon sites now ship Tier 3 panoramas
-  // (10 newly added: change3/5/6, chandrayaan3, slim, luna16/17/21/24, beresheet).
-  // No "graceful absent button" anywhere on /moon. Mirrors mars3/beagle2/schiaparelli
-  // editorial pattern where single-frame / descent-only imagery is padded honestly.
-  const ALL_MOON_TIER3_SITES = [
-    'apollo11',
-    'apollo12',
-    'apollo14',
-    'apollo15',
-    'apollo16',
-    'apollo17',
-    'change3',
-    'change4',
-    'change5',
-    'change6',
-    'chandrayaan3',
-    'slim',
-    'luna16',
-    'luna17',
-    'luna21',
-    'luna24',
-    'beresheet',
-    'luna9',
-  ];
+  // Every Moon site whose sidecar declares a Tier 3 panorama must serve it.
+  // Read from the sidecar so the list can't drift from the data (#641 removed
+  // the Luna 16 / 24 and Beresheet panoramas — none was a ground view).
+  const sidecar = JSON.parse(readFileSync('static/data/surface-hotspots.json', 'utf8')) as {
+    entries: Record<string, { hotspot_tier3_panorama?: string }>;
+  };
+  const MOON_TIER3_SITES = Object.entries(sidecar.entries)
+    .filter(([, e]) => e.hotspot_tier3_panorama?.startsWith('/images/hotspots/moon/'))
+    .map(([id]) => id);
 
-  for (const site of ALL_MOON_TIER3_SITES) {
-    if (site === 'luna9') continue; // luna9 has no LROC coords yet → Tier 2/3 deferred
-    if (site === 'luna21') continue; // luna21 panorama imagery not yet sourced → Tier 3 deferred
+  test('the sidecar lists Moon Tier 3 panoramas', () => {
+    expect(MOON_TIER3_SITES.length).toBeGreaterThan(10);
+  });
+
+  for (const site of MOON_TIER3_SITES) {
     if (site === 'apollo11' || site === 'change4') continue; // covered by explicit tests above
     test(`${site} Tier 3 panorama JPEG is served`, async ({ request }) => {
       const res = await request.get(`/images/hotspots/moon/${site}/tier3-pan.jpg`);

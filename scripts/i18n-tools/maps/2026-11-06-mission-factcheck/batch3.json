@@ -1,0 +1,800 @@
+[
+  {
+    "m": "earth/apollo-1",
+    "text": {
+      "en-US": [["17:31", "18:31"]],
+      "ar": [["17:31", "18:31"]],
+      "de": [["17:31", "18:31"]],
+      "es": [["17:31", "18:31"]],
+      "fr": [
+        ["17:31", "18:31"],
+        ["17h31", "18h31"]
+      ],
+      "hi": [["17:31", "18:31"]],
+      "it": [["17:31", "18:31"]],
+      "ja": [["17:31", "18:31"]],
+      "ko": [["17:31", "18:31"]],
+      "nl": [["17:31", "18:31"]],
+      "pt-BR": [["17:31", "18:31"]],
+      "ru": [["17:31", "18:31"]],
+      "sr-Cyrl": [["17:31", "18:31"]],
+      "zh-CN": [["17:31", "18:31"]]
+    }
+  },
+  {
+    "m": "earth/skylab-2",
+    "text": {
+      "en-US": [["20121", "19979"]],
+      "ar": [["20121", "19979"]],
+      "de": [["20121", "19979"]],
+      "es": [["20121", "19979"]],
+      "fr": [["20121", "19979"]],
+      "hi": [["20121", "19979"]],
+      "it": [["20121", "19979"]],
+      "ja": [["20121", "19979"]],
+      "ko": [["20121", "19979"]],
+      "nl": [["20121", "19979"]],
+      "pt-BR": [["20121", "19979"]],
+      "ru": [["20121", "19979"]],
+      "sr-Cyrl": [["20121", "19979"]],
+      "zh-CN": [["20121", "19979"]]
+    },
+    "base": [["20121 kg", "19979 kg"]]
+  },
+  {
+    "m": "earth/skylab-3",
+    "text": {
+      "en-US": [["19979", "20121"]],
+      "ar": [["19979", "20121"]],
+      "de": [["19979", "20121"]],
+      "es": [["19979", "20121"]],
+      "fr": [["19979", "20121"]],
+      "hi": [["19979", "20121"]],
+      "it": [["19979", "20121"]],
+      "ja": [["19979", "20121"]],
+      "ko": [["19979", "20121"]],
+      "nl": [["19979", "20121"]],
+      "pt-BR": [["19979", "20121"]],
+      "ru": [["19979", "20121"]],
+      "sr-Cyrl": [["19979", "20121"]],
+      "zh-CN": [["19979", "20121"]]
+    },
+    "base": [["19979 kg", "20121 kg"]]
+  },
+  {
+    "m": "earth/skylab-2",
+    "text": {
+      "en-US": [
+        [
+          "displayed at the National Air and Space Museum, Washington DC",
+          "displayed at the National Museum of Naval Aviation, Pensacola, Florida"
+        ]
+      ],
+      "ar": [
+        [
+          "في المتحف الوطني للهواء والفضاء في واشنطن دي سي",
+          "في المتحف الوطني للطيران البحري في بنساكولا بولاية فلوريدا"
+        ]
+      ],
+      "de": [
+        [
+          "im National Air and Space Museum, Washington DC, ausgestellt",
+          "im National Museum of Naval Aviation, Pensacola, Florida, ausgestellt"
+        ]
+      ],
+      "es": [
+        [
+          "en el National Air and Space Museum, Washington DC",
+          "en el National Museum of Naval Aviation, Pensacola, Florida"
+        ]
+      ],
+      "fr": [
+        [
+          "au National Air and Space Museum, Washington D.C.",
+          "au National Museum of Naval Aviation, Pensacola, Floride"
+        ]
+      ],
+      "hi": [
+        [
+          "वाशिंगटन DC के National Air and Space Museum में",
+          "Pensacola, Florida के National Museum of Naval Aviation में"
+        ]
+      ],
+      "it": [
+        [
+          "al National Air and Space Museum di Washington D.C.",
+          "al National Museum of Naval Aviation di Pensacola, Florida"
+        ]
+      ],
+      "ja": [
+        ["ワシントンDCの国立航空宇宙博物館に", "フロリダ州ペンサコーラの国立海軍航空博物館に"]
+      ],
+      "ko": [
+        [
+          "Washington DC의 National Air and Space Museum에",
+          "플로리다주 Pensacola의 National Museum of Naval Aviation에"
+        ]
+      ],
+      "nl": [
+        [
+          "in het National Air and Space Museum in Washington D.C.",
+          "in het National Museum of Naval Aviation in Pensacola, Florida"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "no Museu Nacional do Ar e do Espaço, Washington D.C.",
+          "no Museu Nacional de Aviação Naval, Pensacola, Flórida"
+        ]
+      ],
+      "ru": [
+        [
+          "в Национальном авиакосмическом музее, Вашингтон",
+          "в Национальном музее морской авиации, Пенсакола, Флорида"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "у National Air and Space Museum у Вашингтону",
+          "у National Museum of Naval Aviation у Пенсаколи, Флорида"
+        ]
+      ],
+      "zh-CN": [["华盛顿特区国家航空航天博物馆", "佛罗里达州彭萨科拉国家海军航空博物馆"]]
+    }
+  },
+  {
+    "m": "earth/skylab-4",
+    "text": {
+      "en-US": [
+        [
+          "displayed at the National Museum of the US Air Force, Dayton OH",
+          "on display at the Oklahoma History Center, Oklahoma City"
+        ],
+        ["what NASA later called", "what the media later called"]
+      ],
+      "ar": [
+        [
+          "في المتحف الوطني لسلاح الجو الأمريكي، دايتون، أوهايو",
+          "في مركز أوكلاهوما للتاريخ في أوكلاهوما سيتي"
+        ],
+        ["بما وصفته NASA لاحقاً بـ", "بما وصفته وسائل الإعلام لاحقاً بـ"]
+      ],
+      "de": [
+        [
+          "wird im National Museum of the US Air Force, Dayton OH ausgestellt",
+          "wird im Oklahoma History Center, Oklahoma City, ausgestellt"
+        ],
+        ["was die NASA später eine", "was die Medien später eine"]
+      ],
+      "es": [
+        [
+          "exhibido en el National Museum of the US Air Force, Dayton OH",
+          "exhibido en el Oklahoma History Center, Oklahoma City"
+        ],
+        ["lo que NASA después llamó un", "lo que los medios llamaron después un"]
+      ],
+      "fr": [
+        [
+          "exposé au National Museum of the US Air Force, Dayton OH",
+          "exposé à l'Oklahoma History Center, Oklahoma City"
+        ],
+        ["ce que la NASA a plus tard appelé", "ce que les médias ont plus tard appelé"]
+      ],
+      "hi": [
+        [
+          "Dayton, OH के National Museum of the US Air Force में",
+          "Oklahoma City के Oklahoma History Center में"
+        ],
+        ["जिसे NASA ने बाद में", "जिसे मीडिया ने बाद में"]
+      ],
+      "it": [
+        [
+          "esposto al National Museum of the US Air Force, Dayton OH",
+          "esposto all'Oklahoma History Center, Oklahoma City"
+        ],
+        ["quello che la NASA chiamò in seguito", "quello che i media chiamarono in seguito"]
+      ],
+      "ja": [
+        [
+          "オハイオ州デイトンのアメリカ空軍国立博物館に",
+          "オクラホマシティのオクラホマ歴史センターに"
+        ],
+        ["のちにNASAが", "のちにメディアが"]
+      ],
+      "ko": [
+        ["오하이오주 Dayton의 미국 공군 국립박물관에", "Oklahoma City의 Oklahoma History Center에"],
+        ["NASA가 훗날", "언론이 훗날"]
+      ],
+      "nl": [
+        [
+          "in het National Museum of the US Air Force, Dayton OH",
+          "in het Oklahoma History Center, Oklahoma City"
+        ],
+        ["wat NASA later een", "wat de media later een"]
+      ],
+      "pt-BR": [
+        [
+          "no National Museum of the US Air Force, Dayton OH",
+          "no Oklahoma History Center, Oklahoma City"
+        ],
+        ["a NASA posteriormente chamou de", "a imprensa posteriormente chamou de"]
+      ],
+      "ru": [
+        [
+          "в Национальном музее ВВС США, Дейтон, Огайо",
+          "в Историческом центре Оклахомы, Оклахома-Сити"
+        ],
+        ["NASA позже назвало", "СМИ позже назвали"]
+      ],
+      "sr-Cyrl": [
+        [
+          "у National Museum of the US Air Force, Dayton OH",
+          "у Oklahoma History Center, Oklahoma City"
+        ],
+        ["што је NASA касније назвала", "што су медији касније назвали"]
+      ],
+      "zh-CN": [
+        ["美国空军国家博物馆，位于俄亥俄州代顿", "俄克拉何马历史中心，位于俄克拉何马城"],
+        ["是 NASA 后来称为", "是媒体后来称为"]
+      ]
+    }
+  },
+  {
+    "m": "earth/skylab-3",
+    "met": {
+      "1": 6,
+      "2": 9
+    },
+    "sort": true
+  },
+  {
+    "m": "earth/skylab-3",
+    "text": {
+      "en-US": [
+        [
+          "Within hours of docking the CSM service module suffered an attitude-control thruster leak — back-up CSM-119 was prepped",
+          "On approach to the station, an attitude-control thruster quad on the CSM service module leaked; after a second quad leaked about six days later, back-up CSM-119 was prepped"
+        ],
+        [
+          "Service-module RCS quad leak;",
+          "Second service-module RCS quad leak (the first was on approach);"
+        ]
+      ],
+      "ar": [
+        [
+          "بعد ساعات من الالتحام، عانت الوحدة الخدمية لمركبة CSM من تسرب في دافع التحكم بالوضعية — فجُهّزت المركبة الاحتياطية CSM-119",
+          "أثناء الاقتراب من المحطة تسرّبت إحدى رباعيات دافعات التحكم بالوضعية في الوحدة الخدمية لمركبة CSM؛ وإثر تسرّب ثانٍ بعد نحو ستة أيام جُهّزت المركبة الاحتياطية CSM-119"
+        ],
+        [
+          "تسرّب في إحدى رباعيات نظام التحكم في الاتجاه (RCS) بوحدة الخدمة؛",
+          "تسرّب ثانٍ في إحدى رباعيات نظام التحكم في الاتجاه (RCS) بوحدة الخدمة (الأول وقع أثناء الاقتراب)؛"
+        ]
+      ],
+      "de": [
+        [
+          "Innerhalb weniger Stunden nach dem Andocken trat am CSM-Servicemodul ein Leck an einem Lageregelungstriebwerk auf — die Reserve-CSM-119 wurde",
+          "Beim Anflug auf die Station trat an einem Lageregelungstriebwerks-Quad des CSM-Servicemoduls ein Leck auf; nach einem zweiten Quad-Leck rund sechs Tage später wurde die Reserve-CSM-119"
+        ],
+        [
+          "Leck im RCS-Quad des Service-Moduls;",
+          "Zweites Leck im RCS-Quad des Service-Moduls (das erste beim Anflug);"
+        ]
+      ],
+      "es": [
+        [
+          "A pocas horas del acoplamiento, el módulo de servicio del CSM sufrió una fuga en un propulsor de control de actitud — el CSM-119 de respaldo fue preparado",
+          "Durante la aproximación a la estación, un cuarteto de propulsores de control de actitud del módulo de servicio del CSM sufrió una fuga; tras una segunda fuga unos seis días después, el CSM-119 de respaldo fue preparado"
+        ],
+        [
+          "Fuga en un cuarteto de propulsores RCS del módulo de servicio;",
+          "Segunda fuga en un cuarteto de propulsores RCS del módulo de servicio (la primera fue en la aproximación);"
+        ]
+      ],
+      "fr": [
+        [
+          "Quelques heures après l'amarrage, le module de service du CSM subit une fuite sur un propulseur de contrôle d'attitude — le CSM-119 de secours fut préparé",
+          "Lors de l'approche de la station, un quad de propulseurs de contrôle d'attitude du module de service du CSM subit une fuite ; après une seconde fuite environ six jours plus tard, le CSM-119 de secours fut préparé"
+        ],
+        [
+          "Fuite du quad de propulsion du module de service ;",
+          "Seconde fuite du quad de propulsion du module de service (la première lors de l'approche) ;"
+        ]
+      ],
+      "hi": [
+        [
+          "डॉकिंग के कुछ ही घंटों के भीतर CSM सर्विस मॉड्यूल के दिशा-नियंत्रण थ्रस्टर में रिसाव हो गया —",
+          "स्टेशन के पास पहुँचते समय CSM सर्विस मॉड्यूल के दिशा-नियंत्रण थ्रस्टर क्वाड में रिसाव हो गया; लगभग छह दिन बाद दूसरे क्वाड में रिसाव होने पर"
+        ],
+        [
+          "सेवा-मॉड्यूल RCS क्वाड रिसाव;",
+          "सेवा-मॉड्यूल RCS क्वाड का दूसरा रिसाव (पहला निकट पहुँचने के दौरान हुआ था);"
+        ]
+      ],
+      "it": [
+        [
+          "A poche ore dall'aggancio, il modulo di servizio del CSM subì una perdita a un propulsore di controllo d'assetto — il CSM-119 di riserva fu preparato",
+          "Durante l'avvicinamento alla stazione, un gruppo di propulsori di controllo d'assetto del modulo di servizio del CSM subì una perdita; dopo una seconda perdita circa sei giorni dopo, il CSM-119 di riserva fu preparato"
+        ],
+        [
+          "Perdita da un gruppo di propulsori RCS (quad) del modulo di servizio;",
+          "Seconda perdita da un gruppo di propulsori RCS (quad) del modulo di servizio (la prima durante l'avvicinamento);"
+        ]
+      ],
+      "ja": [
+        [
+          "ドッキングから数時間のうちに、CSMのサービスモジュールで姿勢制御スラスターから漏れが生じた。救出ミッションの可能性に備えて",
+          "ステーションへの接近中にCSMのサービスモジュールの姿勢制御スラスター・クワッドから漏れが生じ、約6日後に2つ目のクワッドからも漏れが生じたため、救出ミッションの可能性に備えて"
+        ],
+        [
+          "サービスモジュールRCS クワッドからの漏洩；",
+          "サービスモジュールRCS クワッドからの2度目の漏洩（1度目は接近中）；"
+        ]
+      ],
+      "ko": [
+        [
+          "도킹 후 몇 시간 만에 CSM 기계선의 자세 제어 추력기에서 누출이 생겨,",
+          "정거장 접근 중 CSM 기계선의 자세 제어 추력기 쿼드에서 누출이 생기고 약 엿새 뒤 두 번째 쿼드에서도 누출이 생겨,"
+        ],
+        ["서비스 모듈 RCS 4중 누출;", "서비스 모듈 RCS 4중 두 번째 누출(첫 번째는 접근 중);"]
+      ],
+      "nl": [
+        [
+          "Binnen enkele uren na het aankoppelen kreeg de servicemodule van de CSM een lek in een stuurraket voor standregeling — de reserve-CSM-119 werd",
+          "Bij de nadering van het station kreeg een quad stuurraketten voor standregeling van de servicemodule van de CSM een lek; na een tweede lek ongeveer zes dagen later werd de reserve-CSM-119"
+        ],
+        [
+          "Service-modulelek in RCS-vierpoot;",
+          "Tweede lek in de RCS-vierpoot van de servicemodule (het eerste tijdens de nadering);"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Poucas horas após a atracação, o módulo de serviço do CSM sofreu um vazamento em um propulsor de controle de atitude — o CSM-119 de reserva foi preparado",
+          "Na aproximação da estação, um quad de propulsores de controle de atitude do módulo de serviço do CSM sofreu um vazamento; após um segundo vazamento cerca de seis dias depois, o CSM-119 de reserva foi preparado"
+        ],
+        [
+          "Vazamento de quad de RCS do módulo de serviço;",
+          "Segundo vazamento de quad de RCS do módulo de serviço (o primeiro na aproximação);"
+        ]
+      ],
+      "ru": [
+        [
+          "В течение нескольких часов после стыковки служебный модуль CSM получил утечку в системе ориентации — резервный CSM-119 был подготовлен",
+          "При сближении со станцией в одном блоке двигателей ориентации служебного модуля CSM произошла утечка; после второй утечки примерно через шесть дней резервный CSM-119 был подготовлен"
+        ],
+        [
+          "Утечка в блоке реактивных двигателей служебного модуля;",
+          "Вторая утечка в блоке реактивных двигателей служебного модуля (первая — при сближении);"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Неколико сати након спајања, сервисни модул CSM претрпео је цурење на потисницима за контролу положаја — резервни CSM-119 припремљен је",
+          "Приликом приближавања станици цурио је један блок потисника за контролу положаја на сервисном модулу CSM; након другог цурења око шест дана касније резервни CSM-119 припремљен је"
+        ],
+        [
+          "Цурење на RCS блоку потисника сервисног модула;",
+          "Друго цурење на RCS блоку потисника сервисног модула (прво при приближавању);"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "对接后数小时内，CSM 服务舱的姿态控制推进器发生泄漏——位于卡纳维拉尔角的备用 CSM-119 做好了",
+          "接近空间站时，CSM 服务舱的一组姿态控制推进器发生泄漏；约六天后第二组再次泄漏，位于卡纳维拉尔角的备用 CSM-119 做好了"
+        ],
+        ["服务舱RCS四元组泄漏；", "服务舱RCS四元组第二次泄漏（第一次发生在接近阶段）；"]
+      ]
+    }
+  },
+  {
+    "m": "moon/apollo10",
+    "text": {
+      "en-US": [["15.6", "14.4"]],
+      "ar": [["15.6", "14.4"]],
+      "de": [["15,6", "14,4"]],
+      "es": [["15,6", "14,4"]],
+      "fr": [["15,6", "14,4"]],
+      "hi": [["15.6", "14.4"]],
+      "it": [["15,6", "14,4"]],
+      "ja": [["15.6", "14.4"]],
+      "ko": [["15.6", "14.4"]],
+      "nl": [["15,6", "14,4"]],
+      "pt-BR": [["15,6", "14,4"]],
+      "ru": [["15,6", "14,4"]],
+      "sr-Cyrl": [["15,6", "14,4"]],
+      "zh-CN": [["15.6", "14.4"]]
+    },
+    "base": [["15.6 km", "14.4 km"]]
+  },
+  {
+    "baseFile": "static/data/fleet/crewed-spacecraft/apollo-lm.json",
+    "base": [
+      ["descent to 15.6 km above Moon", "descent to 14.4 km above Moon"],
+      ["(re-detected 2019)", "(possible re-detection announced 2019, unconfirmed)"]
+    ]
+  },
+  {
+    "m": "moon/apollo10",
+    "text": {
+      "en-US": [
+        [
+          "(most recently confirmed by Nick Howes / Faulkes Telescope, 2019)",
+          "(a possible rediscovery was announced in 2019, candidate 2018 AV2, but it is not confirmed)"
+        ]
+      ],
+      "ar": [
+        [
+          "(وآخر تأكيد كان على يد Nick Howes / Faulkes Telescope عام 2019)",
+          "(أُعلن عام 2019 عن اكتشاف محتمل جديد، المرشح 2018 AV2، لكنه لم يُؤكَّد)"
+        ]
+      ],
+      "de": [
+        [
+          "(zuletzt bestätigt durch Nick Howes / Faulkes Telescope, 2019)",
+          "(2019 wurde eine mögliche Wiederentdeckung bekannt gegeben, Kandidat 2018 AV2, die aber nicht bestätigt ist)"
+        ]
+      ],
+      "es": [
+        [
+          "(la confirmación más reciente, de Nick Howes / Faulkes Telescope, en 2019)",
+          "(en 2019 se anunció un posible redescubrimiento, el candidato 2018 AV2, aún sin confirmar)"
+        ]
+      ],
+      "fr": [
+        [
+          "(confirmation la plus récente par Nick Howes / Faulkes Telescope, 2019)",
+          "(une possible redécouverte a été annoncée en 2019, le candidat 2018 AV2, mais elle n'est pas confirmée)"
+        ]
+      ],
+      "hi": [
+        [
+          "(सबसे हाल की पुष्टि Nick Howes / Faulkes Telescope ने 2019 में की)",
+          "(2019 में एक संभावित पुनर्खोज की घोषणा हुई — उम्मीदवार 2018 AV2 — पर उसकी पुष्टि नहीं हुई है)"
+        ]
+      ],
+      "it": [
+        [
+          "(confermato da ultimo da Nick Howes / Faulkes Telescope, 2019)",
+          "(nel 2019 è stata annunciata una possibile riscoperta, il candidato 2018 AV2, ma non è confermata)"
+        ]
+      ],
+      "ja": [
+        [
+          "（直近ではNick Howes / Faulkes Telescopeが2019年に確認）",
+          "（2019年には再発見の可能性が発表されたが、候補2018 AV2は未確認）"
+        ]
+      ],
+      "ko": [
+        [
+          "(가장 최근에는 Nick Howes / Faulkes Telescope에 의해 2019년에 확인됨)",
+          "(2019년에 재발견 가능성이 발표되었으나 후보 2018 AV2는 확인되지 않음)"
+        ]
+      ],
+      "nl": [
+        [
+          "(meest recent bevestigd door Nick Howes / Faulkes Telescope, 2019)",
+          "(in 2019 werd een mogelijke herontdekking aangekondigd, kandidaat 2018 AV2, maar die is niet bevestigd)"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "(confirmado mais recentemente por Nick Howes / Faulkes Telescope, 2019)",
+          "(uma possível redescoberta foi anunciada em 2019, o candidato 2018 AV2, mas não foi confirmada)"
+        ]
+      ],
+      "ru": [
+        [
+          "(последний раз подтверждена Nick Howes / Faulkes Telescope в 2019 году)",
+          "(в 2019 году объявили о возможном повторном обнаружении — кандидат 2018 AV2, — но оно не подтверждено)"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "(последњи пут потврдили су га Nick Howes / Faulkes Telescope, 2019)",
+          "(2019. је објављено могуће поновно откриће, кандидат 2018 AV2, али оно није потврђено)"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "（最近一次确认是Nick Howes / Faulkes Telescope，2019年）",
+          "（2019年曾宣布一次可能的重新发现，候选天体2018 AV2，但尚未得到确认）"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "moon/apollo12",
+    "text": {
+      "en-US": [["a twenty-four-year-old controller named", "a young controller named"]],
+      "ar": [["مراقب في الرابعة والعشرين من عمره يُدعى", "مراقب شاب يُدعى"]],
+      "de": [["ein vierundzwanzigjähriger Flugleiter namens", "ein junger Flugleiter namens"]],
+      "es": [["un controlador de veinticuatro años llamado", "un joven controlador llamado"]],
+      "fr": [["un contrôleur de vingt-quatre ans nommé", "un jeune contrôleur nommé"]],
+      "hi": [["चौबीस वर्षीय नियंत्रक", "युवा नियंत्रक"]],
+      "it": [["un controllore di ventiquattro anni,", "un giovane controllore,"]],
+      "ja": [["24歳の管制官ジョン・アーロンが", "若い管制官ジョン・アーロンが"]],
+      "ko": [["스물네 살의 관제관", "젊은 관제관"]],
+      "nl": [["een vierentwintigjarige controller genaamd", "een jonge controller genaamd"]],
+      "pt-BR": [["um controlador de vinte e quatro anos chamado", "um jovem controlador chamado"]],
+      "ru": [["контроллер двадцати четырёх лет от роду по имени", "молодой контроллер по имени"]],
+      "sr-Cyrl": [["двадесетчетворогодишњи контролор по имену", "млади контролор по имену"]],
+      "zh-CN": [["二十四岁控制员", "年轻的控制员"]]
+    }
+  },
+  {
+    "m": "moon/apollo12",
+    "met": {
+      "6": 6.25
+    }
+  },
+  {
+    "m": "moon/apollo13",
+    "base": [
+      [
+        "The 5-month-delayed launch had been triggered by Swigert being a late substitute for prime crew member Ken Mattingly (suspected German measles exposure).",
+        "The launch had slipped from March to 11 April 1970 to allow more planning time; Swigert replaced Ken Mattingly (suspected German measles exposure) two days before launch."
+      ],
+      ["1970-04-14, closest approach 254 km", "1970-04-15 00:21 UTC, closest approach 254 km"],
+      ["\"label\": \"PC+2 burn — free-return correction\"", "\"label\": \"Free-return burn\""],
+      ["fired for 31 seconds", "fired for 34 seconds"]
+    ]
+  },
+  {
+    "m": "moon/apollo13",
+    "text": {
+      "en-US": [["31-second", "34-second"]],
+      "ar": [["31 ثانية", "34 ثانية"]],
+      "de": [["31-Sekunde", "34-Sekunde"]],
+      "es": [["31 segundo", "34 segundo"]],
+      "fr": [["31 seconde", "34 seconde"]],
+      "hi": [["31-सेकंड", "34-सेकंड"]],
+      "it": [["31 secondi", "34 secondi"]],
+      "ja": [["31秒間", "34秒間"]],
+      "ko": [["31초", "34초"]],
+      "nl": [["31-seconde", "34-seconde"]],
+      "pt-BR": [["31 segundo", "34 segundo"]],
+      "ru": [["31-секундн", "34-секундн"]],
+      "sr-Cyrl": [["31 секунде", "34 секунде"]],
+      "zh-CN": [["31秒的", "34秒的"]]
+    }
+  },
+  {
+    "m": "moon/apollo13",
+    "met": {
+      "6": 3.31
+    }
+  },
+  {
+    "m": "moon/apollo14",
+    "text": {
+      "en-US": [["~24 m", "~22 m"]],
+      "ar": [["24 م", "22 م"]],
+      "de": [["etwa 24 m", "etwa 22 m"]],
+      "es": [["~24 m", "~22 m"]],
+      "fr": [["environ 24 m", "environ 22 m"]],
+      "hi": [["~24 m", "~22 m"]],
+      "it": [["circa 24 m", "circa 22 m"]],
+      "ja": [["約24 m", "約22 m"]],
+      "ko": [["약 24 m", "약 22 m"]],
+      "nl": [["ongeveer 24 m", "ongeveer 22 m"]],
+      "pt-BR": [["~24 m", "~22 m"]],
+      "ru": [["примерно 24 м", "примерно 22 м"]],
+      "sr-Cyrl": [["~24 m", "~22 m"]],
+      "zh-CN": [["约24米", "约22米"]]
+    }
+  },
+  {
+    "m": "moon/apollo15",
+    "text": {
+      "en-US": [
+        [
+          "first landing at a non-mare highland site",
+          "landing beside Hadley Rille at the foot of the Apennine mountains"
+        ]
+      ],
+      "ar": [["أول هبوط في موقع مرتفع غير بحري", "هبوط بجوار أخدود هادلي عند سفح جبال الأبنين"]],
+      "de": [
+        [
+          "erste Landung an einer Non-Mare-Hochland-Stelle",
+          "Landung neben der Hadley-Rille am Fuß der Apenninen"
+        ]
+      ],
+      "es": [
+        [
+          "primer alunizaje en un sitio de tierras altas que no es mare",
+          "alunizaje junto a la Rima Hadley, al pie de los montes Apeninos"
+        ]
+      ],
+      "fr": [
+        [
+          "premier atterrissage sur un site de hautes terres, hors des mers lunaires",
+          "atterrissage près de la rainure Hadley, au pied des monts Apennins"
+        ]
+      ],
+      "hi": [
+        [
+          "चंद्र सागर से बाहर के उच्चभूमि स्थल पर पहली लैंडिंग",
+          "Hadley रिल के पास, Apennine पर्वतों की तलहटी में लैंडिंग"
+        ]
+      ],
+      "it": [
+        [
+          "primo allunaggio in un sito di altopiano, fuori dai mari lunari",
+          "allunaggio accanto alla Rima Hadley, ai piedi degli Appennini lunari"
+        ]
+      ],
+      "ja": [["海ではない高地への初の着陸", "Hadley谷のそば、Apennine山脈のふもとへの着陸"]],
+      "ko": [["비-mare 고지 지역에서의 첫 착륙", "Hadley 열구 옆, Apennine 산맥 기슭에서의 착륙"]],
+      "nl": [
+        [
+          "eerste landing op een hooglandlocatie die geen mare is",
+          "landing naast de Hadley-rille aan de voet van de Apennijnen"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "primeiro pouso numa área de terras altas não-mare",
+          "pouso ao lado do Rego Hadley, no sopé dos montes Apeninos"
+        ]
+      ],
+      "ru": [
+        [
+          "первая посадка в нагорном, а не морском районе",
+          "посадка рядом с бороздой Хэдли у подножия Апеннинских гор"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "прво слетање на планинско узвишење које није маре",
+          "слетање поред бразде Хедли у подножју Апенинских планина"
+        ]
+      ],
+      "zh-CN": [["首次在非月海高地地点着陆", "在 Hadley 月溪旁、Apennine 山脉脚下着陆"]]
+    }
+  },
+  {
+    "m": "moon/apollo16",
+    "text": {
+      "en-US": [
+        [
+          "every rock returned was breccia (impact-shattered debris)",
+          "nearly every rock returned was breccia (impact-shattered debris), and none was volcanic"
+        ],
+        [
+          "every rock Young and Duke brought back was breccia — rubble welded together by impacts.",
+          "nearly every rock Young and Duke brought back was breccia — rubble welded together by impacts — and none was volcanic."
+        ]
+      ],
+      "ar": [
+        [
+          "فكل صخرة أُعيدت كانت بريشيا (حطامًا تهشم بفعل الاصطدامات)",
+          "فكل صخرة تقريبًا أُعيدت كانت بريشيا (حطامًا تهشم بفعل الاصطدامات) ولم تكن أي منها بركانية"
+        ],
+        [
+          "كل صخرة أحضرها يونغ وديوك كانت بريشيا — حطام ملحوم معًا بفعل الاصطدامات.",
+          "كل صخرة تقريبًا أحضرها يونغ وديوك كانت بريشيا — حطام ملحوم معًا بفعل الاصطدامات — ولم تكن أي منها بركانية."
+        ]
+      ],
+      "de": [
+        [
+          "jedes zurückgebrachte Gestein war Brekzie (durch Einschlag zertrümmerter Schutt)",
+          "nahezu jedes zurückgebrachte Gestein war Brekzie (durch Einschlag zertrümmerter Schutt), und keines war vulkanisch"
+        ],
+        [
+          "jedes Gestein, das Young und Duke zurückbrachten, war Brekzie — Geröll, das durch Einschläge zusammengeschweißt wurde.",
+          "nahezu jedes Gestein, das Young und Duke zurückbrachten, war Brekzie — Geröll, das durch Einschläge zusammengeschweißt wurde — und keines war vulkanisch."
+        ]
+      ],
+      "es": [
+        [
+          "todas las rocas devueltas fueron brecha (escombro fragmentado por impacto)",
+          "casi todas las rocas devueltas fueron brecha (escombro fragmentado por impacto) y ninguna era volcánica"
+        ],
+        [
+          "cada roca que Young y Duke trajeron de vuelta era brecha — escombros soldados entre sí por impactos.",
+          "casi cada roca que Young y Duke trajeron de vuelta era brecha — escombros soldados entre sí por impactos — y ninguna era volcánica."
+        ]
+      ],
+      "fr": [
+        [
+          "chaque roche ramenée était une brèche (débris écrasé par un impact)",
+          "presque chaque roche ramenée était une brèche (débris écrasé par un impact) et aucune n'était volcanique"
+        ],
+        [
+          "chaque roche rapportée par Young et Duke était une brèche — des débris soudés par des impacts.",
+          "presque chaque roche rapportée par Young et Duke était une brèche — des débris soudés par des impacts — et aucune n'était volcanique."
+        ]
+      ],
+      "hi": [
+        [
+          "लौटाई गई हर चट्टान ब्रेशिया (टकराव से चूर-चूर मलबा) थी",
+          "लौटाई गई लगभग हर चट्टान ब्रेशिया (टकराव से चूर-चूर मलबा) थी और कोई भी ज्वालामुखीय नहीं थी"
+        ],
+        [
+          "यंग और ड्यूक की लाई हर चट्टान ब्रेशिया निकली — टकरावों से आपस में जुड़ा मलबा।",
+          "यंग और ड्यूक की लाई लगभग हर चट्टान ब्रेशिया निकली — टकरावों से आपस में जुड़ा मलबा — और कोई भी ज्वालामुखीय नहीं थी।"
+        ]
+      ],
+      "it": [
+        [
+          "ogni roccia riportata era breccia (detriti frantumati dagli impatti)",
+          "quasi ogni roccia riportata era breccia (detriti frantumati dagli impatti) e nessuna era vulcanica"
+        ],
+        [
+          "ogni roccia che Young e Duke riportarono era breccia — detriti saldati insieme dagli impatti.",
+          "quasi ogni roccia che Young e Duke riportarono era breccia — detriti saldati insieme dagli impatti — e nessuna era vulcanica."
+        ]
+      ],
+      "ja": [
+        [
+          "持ち帰られた岩石はすべて角礫岩（衝突で砕かれた破片）で、",
+          "持ち帰られた岩石はほぼすべてが角礫岩（衝突で砕かれた破片）で、火山岩は一つもなく、"
+        ],
+        [
+          "ヤングとデュークが持ち帰った岩石はすべて角礫岩 — 衝突で固められた瓦礫だった。",
+          "ヤングとデュークが持ち帰った岩石はほぼすべてが角礫岩 — 衝突で固められた瓦礫 — で、火山岩は一つもなかった。"
+        ]
+      ],
+      "ko": [
+        [
+          "귀환한 모든 암석이 각력(충돌로 부서진 잔해)이었으므로,",
+          "귀환한 암석은 거의 전부가 각력(충돌로 부서진 잔해)이었고 화산암은 하나도 없었으므로,"
+        ],
+        [
+          "영과 듀크가 가져온 모든 암석은 각력암 — 충돌로 서로 눌어붙은 잔해 — 이었다.",
+          "영과 듀크가 가져온 암석은 거의 전부가 각력암 — 충돌로 서로 눌어붙은 잔해 — 이었고 화산암은 하나도 없었다."
+        ]
+      ],
+      "nl": [
+        [
+          "elk gesteente dat werd teruggebracht was breccia (door inslagen verbrijzeld puin)",
+          "bijna elk gesteente dat werd teruggebracht was breccia (door inslagen verbrijzeld puin) en geen enkel was vulkanisch"
+        ],
+        [
+          "elke steen die Young en Duke meebrachten was breccia — puin dat door inslagen was samengesmolten.",
+          "bijna elke steen die Young en Duke meebrachten was breccia — puin dat door inslagen was samengesmolten — en geen enkele was vulkanisch."
+        ]
+      ],
+      "pt-BR": [
+        [
+          "toda rocha retornada era brecha (detritos pulverizados por impacto)",
+          "quase toda rocha retornada era brecha (detritos pulverizados por impacto) e nenhuma era vulcânica"
+        ],
+        [
+          "cada rocha que Young e Duke trouxeram de volta era brecha — escombros soldados entre si por impactos.",
+          "quase cada rocha que Young e Duke trouxeram de volta era brecha — escombros soldados entre si por impactos — e nenhuma era vulcânica."
+        ]
+      ],
+      "ru": [
+        [
+          "все возвращённые образцы были брекчией (обломками, раздробленными ударом)",
+          "почти все возвращённые образцы были брекчией (обломками, раздробленными ударом), и ни один не был вулканическим"
+        ],
+        [
+          "каждый камень, который привезли Янг и Дьюк, оказался брекчией — обломками, спаянными ударами.",
+          "почти каждый камень, который привезли Янг и Дьюк, оказался брекчией — обломками, спаянными ударами, — и ни один не был вулканическим."
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "свака враћена стена била је бреча (крш разбијен ударима)",
+          "скоро свака враћена стена била је бреча (крш разбијен ударима), а ниједна није била вулканска"
+        ],
+        [
+          "свака стена коју су Јанг и Дјук донели на Земљу била је бреча — крш који су удари заварили у чврсту целину.",
+          "скоро свака стена коју су Јанг и Дјук донели на Земљу била је бреча — крш који су удари заварили у чврсту целину — а ниједна није била вулканска."
+        ]
+      ],
+      "zh-CN": [
+        [
+          "带回的每一块岩石都是角砾岩（被撞击震碎的碎屑）",
+          "带回的岩石几乎全是角砾岩（被撞击震碎的碎屑），没有一块是火山岩"
+        ],
+        [
+          "扬和杜克带回的每一块岩石都是角砾岩——被撞击焊接在一起的碎石。",
+          "扬和杜克带回的几乎每一块岩石都是角砾岩——被撞击焊接在一起的碎石——没有一块是火山岩。"
+        ]
+      ]
+    }
+  }
+]

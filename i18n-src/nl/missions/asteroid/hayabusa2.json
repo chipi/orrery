@@ -1,7 +1,7 @@
 {
   "name": "Hayabusa2",
   "vehicle": "H-IIA 202",
-  "payload": "609 kg droog, elektrische ionenaandrijving (4 μ10-thrusters) + chemisch bi-drijfgas + 1,6 m HGA. Lading aan boord — Small Carry-on Impactor (SCI, 2,5 kg holle lading), MASCOT-lander (10 kg, DLR/CNES), 3× MINERVA-II-rovers (~1 kg per stuk), monsterretourcapsule (16 kg, terugkeer met parachute).",
+  "payload": "490 kg droog, elektrische ionenaandrijving (4 μ10-thrusters) + chemisch bi-drijfgas + 1,6 m HGA. Lading aan boord — Small Carry-on Impactor (SCI, 2,5 kg holle lading), MASCOT-lander (10 kg, DLR/CNES), 3× MINERVA-II-rovers (~1 kg per stuk), monsterretourcapsule (16 kg, terugkeer met parachute).",
   "delta_v": "~2 km/s (cumulatief van de ionenmotor)",
   "type": "MONSTERTERUGKEER + LANDERS · ACTIEF (uitgebreid)",
   "first": "Tweede asteroïdemonster naar de Aarde (Ryugu, 2020); eerste kunstmatige inslagkrater op een asteroïde; eerste ondergronds asteroïdemateriaal naar de Aarde",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 366,
+      "met": 365,
       "label": "AARDE-FLYBY",
       "note": "Een zwaartekrachtassist bij de Aarde stemt de fasering van de rendez-vous-baan af.",
       "type": "nominal"

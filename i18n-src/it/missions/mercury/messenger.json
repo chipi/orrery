@@ -1,11 +1,11 @@
 {
   "name": "MESSENGER",
   "vehicle": "Delta II 7925H-9.5",
-  "payload": "Orbiter di Mercurio; protetto da uno schermo solare (lato frontale 370 °C, lato posteriore -45 °C); sette strumenti tra cui camera, spettrometri, magnetometro, altimetro laser",
-  "delta_v": "~2,3 km/s (inserimento in orbita attorno a Mercurio)",
+  "payload": "Orbiter di Mercurio; protetto da uno schermo solare (lato frontale 370 °C, sonda dietro ~20 °C); sette strumenti tra cui camera, spettrometri, magnetometro, altimetro laser",
+  "delta_v": "~0,9 km/s (inserimento in orbita attorno a Mercurio)",
   "type": "ORBITALE · COMPLETATA",
   "first": "Primo veicolo spaziale a orbitare Mercurio; prima mappa completa della superficie del pianeta più interno",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) usò sei fionde gravitazionali nell'arco di sette anni — Terra, Venere due volte, Mercurio tre volte — per rallentare e inserirsi in orbita attorno a Mercurio il 2011-03-18. Protetta da un parasole, con un lato a 370 °C e l'altro a -45 °C. Tra le scoperte: ghiaccio d'acqua nei crateri polari in ombra permanente, le «cavità» (hollows), formazioni geologiche fino ad allora sconosciute, e la conferma che il nucleo di ferro di Mercurio occupa circa l'85 % del raggio del pianeta (il più alto rapporto nucleo-raggio tra i pianeti del sistema solare). La missione terminò con un impatto controllato sulla superficie di Mercurio il 2015-04-30, dopo l'esaurimento del carburante.",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) usò sei fionde gravitazionali nell'arco di sette anni — Terra, Venere due volte, Mercurio tre volte — per rallentare e inserirsi in orbita attorno a Mercurio il 2011-03-18. Protetta da un parasole, con lo schermo a 370 °C e la sonda dietro a circa temperatura ambiente (~20 °C). Tra le scoperte: ghiaccio d'acqua nei crateri polari in ombra permanente, le «cavità» (hollows), formazioni geologiche fino ad allora sconosciute, e la conferma che il nucleo di ferro di Mercurio occupa circa l'85 % del raggio del pianeta (il più alto rapporto nucleo-raggio tra i pianeti del sistema solare). La missione terminò con un impatto controllato sulla superficie di Mercurio il 2015-04-30, dopo l'esaurimento del carburante.",
   "events": [
     {
       "met": 0,
@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 365,
+      "met": 364,
       "label": "FIONDA GRAVITAZIONALE TERRESTRE",
       "note": "Prima delle sei fionde gravitazionali per rallentare la traiettoria quanto basta a entrare in orbita attorno a Mercurio.",
       "type": "nominal"
     },
     {
-      "met": 2419,
+      "met": 2418.03,
       "label": "INSERIMENTO NELL'ORBITA DI MERCURIO",
       "note": "L'accensione del motore principale posiziona MESSENGER nell'orbita di Mercurio dopo sette anni di crociera.",
       "type": "nominal"

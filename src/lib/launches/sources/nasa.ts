@@ -16,7 +16,7 @@
  * structured parsing — out of scope for v0.7.
  */
 
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { closeSync, fstatSync, mkdirSync, openSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import type { LaunchSource, LaunchSourceAttribution, LaunchSourceWindow } from './provider.js';
 import type { RawLaunchEntry } from '../types.js';
@@ -52,9 +52,9 @@ export function rssItemToRawEntry(
   // Decode common entities (&amp; &#8211; &nbsp;)
   const decode = (s: string) =>
     s
-      .replace(/&amp;/g, '&')
       .replace(/&#8211;/g, '-')
-      .replace(/&nbsp;/g, ' ');
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&');
 
   const title = decode(item.title);
   const m = title.match(LAUNCH_PATTERN);
@@ -84,15 +84,30 @@ export function rssItemToRawEntry(
   };
 }
 
-async function downloadIfStale(): Promise<string> {
-  if (existsSync(CACHE_PATH)) {
-    const age = Date.now() - statSync(CACHE_PATH).mtimeMs;
-    if (age < ONE_DAY_MS / 2) return readFileSync(CACHE_PATH, 'utf8');
+// One open, then stat + read on the descriptor: no check-then-read race on the path.
+function readCache(maxAgeMs = Infinity): string | null {
+  let fd: number;
+  try {
+    fd = openSync(CACHE_PATH, 'r');
+  } catch {
+    return null;
   }
+  try {
+    if (Date.now() - fstatSync(fd).mtimeMs >= maxAgeMs) return null;
+    return readFileSync(fd, 'utf8');
+  } finally {
+    closeSync(fd);
+  }
+}
+
+async function downloadIfStale(): Promise<string> {
+  const fresh = readCache(ONE_DAY_MS / 2);
+  if (fresh !== null) return fresh;
   mkdirSync(dirname(CACHE_PATH), { recursive: true });
   const res = await fetch(NASA_RSS_URL);
   if (!res.ok) {
-    if (existsSync(CACHE_PATH)) return readFileSync(CACHE_PATH, 'utf8');
+    const stale = readCache();
+    if (stale !== null) return stale;
     throw new Error(`NASA RSS ${res.status}`);
   }
   const xml = await res.text();

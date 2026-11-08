@@ -14,7 +14,7 @@
   "payload": "685 kg (including 11.43-cm carbon-carbon Thermal Protection System sustaining 1,377 °C at perihelion)",
   "delta_v": "~16 km/s (incl. 7 Venus gravity assists)",
   "data_quality": "good",
-  "credit": "© NASA / JHU APL — public domain. Closest spacecraft to the Sun ever flown. First mission to enter the Sun's corona (2021-04-28). Final perihelion 22 on 2024-12-24 at 6.1 M km from the Sun's surface (~9.86 R☉).",
+  "credit": "© NASA / JHU APL — public domain. Closest spacecraft to the Sun ever flown. First mission to enter the Sun's corona (2021-04-28). Perihelion 22, the first at the closest distance, on 2024-12-24 at 6.1 M km from the Sun's surface (~9.86 R☉); the mission continues, extended to 2029.",
   "links": [
     {
       "l": "Parker Solar Probe — Wikipedia",
@@ -49,7 +49,7 @@
       "vehicle_stage": "Star 48BV solid third stage (Delta IV Heavy core + 2 strap-ons)",
       "c3_km2_s2": 154,
       "mass_at_tli_kg": 685,
-      "source": "NASA Parker Solar Probe Press Kit (2018-08); Fox et al. (2016). Highest C3 ever achieved for a science payload.",
+      "source": "NASA Parker Solar Probe Press Kit (2018-08); Fox et al. (2016). One of the highest C3 values ever flown; only New Horizons' was higher.",
       "departure": "stage-then-kick"
     },
     "cruise": {
@@ -73,7 +73,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Delta IV Heavy + Star 48BV",
-        "description": "Cape Canaveral SLC-37B, 2018-08-12. Parker Solar Probe required the highest C3 ever achieved for a science mission (154 km²/s²) to break out of Earth's orbital motion enough to fall into a Sun-grazing trajectory. The third-stage Star 48BV solid motor was a custom addition to the Delta IV Heavy stack."
+        "description": "Cape Canaveral SLC-37B, 2018-08-12. Parker Solar Probe required one of the highest launch energies ever flown (C3 ≈ 154 km²/s²; only New Horizons' was higher) to break out of Earth's orbital motion enough to fall into a Sun-grazing trajectory. The third-stage Star 48BV solid motor was a custom addition to the Delta IV Heavy stack."
       },
       {
         "met_days": 0.005,
@@ -100,7 +100,7 @@
         "description": "2021-02-20. Fourth VGA tightens perihelion further toward the 9.86 R☉ target."
       },
       {
-        "met_days": 989,
+        "met_days": 990,
         "type": "edl_or_oi",
         "label": "First corona entry (P8)",
         "description": "2021-04-28. Perihelion 8 dipped below the Alfvén critical surface — the formal boundary of the Sun's corona. Parker became the first spacecraft to enter the Sun's atmosphere."
@@ -115,7 +115,7 @@
         "met_days": 2326,
         "type": "edl_or_oi",
         "label": "Closest perihelion (P22) — final design milestone",
-        "description": "2024-12-24. Christmas Eve eve. Parker reached 6.1 M km from the Sun's surface (~9.86 R☉, 0.046 AU) — the closest any spacecraft has ever been to the Sun. Speed at perihelion: ~191 km/s, the fastest human-made object ever. The heat shield's solar-facing surface reached ~1,377 °C; the spacecraft bus behind it remained at room temperature. Parker has not yet been commanded back to Earth contact at the time of writing."
+        "description": "2024-12-24. Christmas Eve eve. Parker reached 6.1 M km from the Sun's surface (~9.86 R☉, 0.046 AU) — the closest any spacecraft has ever been to the Sun. Speed at perihelion: ~191 km/s, the fastest human-made object ever. The heat shield's solar-facing surface reached ~1,377 °C; the spacecraft bus behind it remained at room temperature. Its beacon confirmed a safe pass on 26 December 2024."
       }
     ],
     "interplanetary_profile": {

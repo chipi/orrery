@@ -1,0 +1,46 @@
+{
+  "intro": "A Artemis IV deve levar pessoas de volta à Lua em 2028 — o primeiro pouso desde a Apollo 17, em 1972, e o primeiro pouso tripulado perto do polo sul. A Apollo foi visitar. Desta vez a meta é ficar: o gelo de água das crateras polares pode fornecer água potável, ar e propelente de foguete, e a NASA planeja pelo menos um pouso por ano a partir de então, rumo a uma base. Também é uma corrida de novo. Ao anunciar o plano em fevereiro de 2026, o administrador da NASA, Jared Isaacman, disse que \"com uma concorrência crível do nosso maior adversário geopolítico aumentando a cada dia, precisamos andar mais rápido\". A China pretende pousar seus próprios astronautas antes de 2030.",
+  "chapters": [
+    {
+      "id": "landing",
+      "title": "Pouso",
+      "subtitle": "2028 — dois dos quatro astronautas descem ao polo sul",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/03.webp",
+          "caption": "Concepção artística: a Orion encontra um módulo de pouso Starship em órbita lunar, onde a tripulação troca de nave. A NASA ainda não disse se a Starship da SpaceX ou o Blue Moon da Blue Origin levará a tripulação da Artemis IV; vai escolher o que ficar pronto primeiro."
+        },
+        {
+          "src": "/images/missions/artemis4/02.webp",
+          "caption": "Concepção artística: um módulo de pouso Starship na superfície lunar, com a Terra acima do horizonte."
+        },
+        {
+          "src": "/images/missions/artemis4/01.webp",
+          "caption": "Concepção artística: astronautas com os trajes lunares da Axiom ao lado do módulo de pouso no polo sul, onde devem passar cerca de uma semana."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "A Orion e seu módulo de serviço europeu",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/04.webp",
+          "caption": "O Módulo de Serviço Europeu da Artemis IV — o motor, a energia e o ar da Orion — durante a preparação no Centro Espacial Kennedy, em julho de 2026."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "O que vem depois",
+      "subtitle": "O primeiro de muitos pousos",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/05.webp",
+          "caption": "A borda cheia de crateras da bacia do Polo Sul-Aitken, fotografada pela tripulação da Artemis II. Os pousos depois da Artemis IV miram esta região polar; a NASA também propôs o PROMISE, um rover para explorá-la em busca de um local para uma base, e a China planeja uma estação de pesquisa perto do polo sul por volta de 2035."
+        }
+      ]
+    }
+  ]
+}

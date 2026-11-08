@@ -31,6 +31,11 @@ import { execSync, spawnSync } from 'node:child_process';
 const log = (msg) => console.log(`▶ ${msg}`);
 const sh = (cmd) => execSync(cmd, { encoding: 'utf-8' });
 
+// Build as prod does: the Sentry plugin's debug ids add ~6 KB to /fleet, and the
+// route budget passed locally at ~99 KB while the prod deploy failed at 105.45 KB
+// (0.9.6). Every build below inherits it; no upload, the maps stay hidden.
+process.env.SENTRY_SOURCEMAPS ??= '1';
+
 function fetchBase() {
   if (process.env.PREFLIGHT_OFFLINE === '1') {
     log('PREFLIGHT_OFFLINE=1 — skipping `git fetch origin main`');

@@ -1,0 +1,31 @@
+{
+  "intro": "Vega 2 arrived at Venus four days after its twin, on 15 June 1985, and did the same: a balloon into the clouds, a lander to the ground, the spacecraft on to Halley's Comet. This time the lander's drill worked. Its sample looked like an anorthosite–troctolite rock, rare on Earth but known from the highlands of the Moon. The balloon floated for some 46 hours, and on 9 March 1986 the spacecraft passed Halley's nucleus at about 8,000 km.",
+  "chapters": [
+    {
+      "id": "venus",
+      "title": "Venus",
+      "subtitle": "15 June 1985 — the second lander and balloon",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/01.webp",
+          "caption": "The Vega mission: the capsule's entry into Venus's atmosphere, the balloon opening under its parachute, and the spacecraft's path on to Halley's Comet."
+        },
+        {
+          "src": "/images/missions/vega-2/03.webp",
+          "caption": "A Vega descent capsule on display, the sphere that carried lander and balloon down to Venus."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Halley's Comet",
+      "subtitle": "9 March 1986 — about 8,000 km from the nucleus",
+      "images": [
+        {
+          "src": "/images/missions/vega-2/02.webp",
+          "caption": "The Soviet stamp sheet for the international study of Halley's Comet. The Vegas' measurements of where the nucleus was helped Europe's Giotto aim its own, much closer pass five days later."
+        }
+      ]
+    }
+  ]
+}

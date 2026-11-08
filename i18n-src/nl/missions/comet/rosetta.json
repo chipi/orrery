@@ -1,7 +1,7 @@
 {
   "name": "Rosetta",
   "vehicle": "Ariane 5G+",
-  "payload": "Orbiter (~2900 kg droog, 11 instrumenten) + Philae-afdalingslander (~100 kg, 10 instrumenten). Hitteschild, twee aardse + één Mars-zwaartekrachtassist, 957 dagen winterslaap in de diepe ruimte 2011–2014.",
+  "payload": "Orbiter (~1230 kg droog, 11 instrumenten) + Philae-afdalingslander (~100 kg, 10 instrumenten). Drie aardse + één Mars-zwaartekrachtassist, 957 dagen winterslaap in de diepe ruimte 2011–2014.",
   "delta_v": "~2,3 km/s (rendez-vous + kometenoperaties)",
   "type": "ORBITER + LANDER · GEVLOGEN",
   "first": "Eerste ruimtevaartuig om een komeet te omcirkelen — en om erop te landen (Philae, 2014-11-12)",
@@ -32,7 +32,7 @@
       "type": "nominal"
     },
     {
-      "met": 2320,
+      "met": 2321,
       "label": "ASTEROÏDE 21 LUTETIA",
       "note": "Flyby van ~120 km langs een van de grootste asteroïden in de hoofdgordel die ooit van dichtbij zijn waargenomen.",
       "type": "nominal"
@@ -48,7 +48,7 @@
     {
       "met": 1351,
       "label": "Aarde nr. 2 — zwaartekrachtassist",
-      "description": "Dichtste nadering 5.295 km op 2007-11-13. Kort aangezien voor een aardscheerder (aanduiding 2007 VN84), tot waarnemers doorhadden dat het Rosetta was, op weg naar buiten."
+      "description": "Dichtste nadering 5.301 km op 2007-11-13. Kort aangezien voor een aardscheerder (aanduiding 2007 VN84), tot waarnemers doorhadden dat het Rosetta was, op weg naar buiten."
     },
     {
       "met": 2082,

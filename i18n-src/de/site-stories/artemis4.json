@@ -1,0 +1,46 @@
+{
+  "intro": "Artemis IV soll 2028 wieder Menschen auf den Mond bringen – die erste Landung seit Apollo 17 im Jahr 1972 und die erste bemannte Landung in der Nähe des Südpols. Apollo kam zu Besuch. Diesmal ist das Ziel zu bleiben: Das Wassereis in den Polkratern könnte Trinkwasser, Atemluft und Raketentreibstoff liefern, und die NASA plant von da an mindestens eine Landung pro Jahr, auf dem Weg zu einer Basis. Es ist auch wieder ein Wettlauf. Als NASA-Administrator Jared Isaacman den Plan im Februar 2026 vorstellte, sagte er: „Da die ernsthafte Konkurrenz unseres größten geopolitischen Gegners von Tag zu Tag wächst, müssen wir schneller werden.“ China will seine eigenen Astronauten vor 2030 landen.",
+  "chapters": [
+    {
+      "id": "landing",
+      "title": "Landung",
+      "subtitle": "2028 – zwei der vier Astronauten steigen zum Südpol hinab",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/03.webp",
+          "caption": "Künstlerische Darstellung: Orion trifft in der Mondumlaufbahn auf einen Starship-Lander, und die Besatzung steigt um. Die NASA hat noch nicht gesagt, ob SpaceX' Starship oder Blue Origins Blue Moon die Besatzung von Artemis IV tragen wird; sie wählt den, der zuerst bereit ist."
+        },
+        {
+          "src": "/images/missions/artemis4/02.webp",
+          "caption": "Künstlerische Darstellung: ein Starship-Lander auf der Mondoberfläche, die Erde über dem Horizont."
+        },
+        {
+          "src": "/images/missions/artemis4/01.webp",
+          "caption": "Künstlerische Darstellung: Astronauten in Axioms Mondraumanzügen neben dem Lander am Südpol, wo sie etwa eine Woche verbringen sollen."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Orion und sein europäisches Servicemodul",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/04.webp",
+          "caption": "Das Europäische Servicemodul für Artemis IV – Triebwerk, Strom und Atemluft für Orion – bei der Vorbereitung im Kennedy Space Center im Juli 2026."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Wie es weitergeht",
+      "subtitle": "Die erste von vielen Landungen",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/05.webp",
+          "caption": "Der kraterübersäte Rand des Südpol-Aitken-Beckens, fotografiert von der Besatzung von Artemis II. Die Landungen nach Artemis IV zielen auf diese Polregion; die NASA hat außerdem PROMISE vorgeschlagen, einen Rover, der sie für eine Basis erkunden soll, und China plant bis etwa 2035 eine Forschungsstation nahe dem Südpol."
+        }
+      ]
+    }
+  ]
+}

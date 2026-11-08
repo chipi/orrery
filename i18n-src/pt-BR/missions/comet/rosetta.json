@@ -1,7 +1,7 @@
 {
   "name": "Rosetta",
   "vehicle": "Ariane 5G+",
-  "payload": "Orbitador (~2900 kg a seco, 11 instrumentos) + módulo de descida Philae (~100 kg, 10 instrumentos). Escudo térmico, duas assistências gravitacionais da Terra + uma de Marte, 957 dias de hibernação no espaço profundo 2011–2014.",
+  "payload": "Orbitador (~1230 kg a seco, 11 instrumentos) + módulo de descida Philae (~100 kg, 10 instrumentos). Três assistências gravitacionais da Terra + uma de Marte, 957 dias de hibernação no espaço profundo 2011–2014.",
   "delta_v": "~2,3 km/s (encontro + operações no cometa)",
   "type": "SONDA ORBITAL + MÓDULO DE POUSO · REALIZADA",
   "first": "Primeira espaçonave a orbitar um cometa — e a pousar em um (Philae, 2014-11-12)",
@@ -32,7 +32,7 @@
       "type": "nominal"
     },
     {
-      "met": 2320,
+      "met": 2321,
       "label": "ASTEROIDE 21 LUTÉCIA",
       "note": "Sobrevoo a ~120 km de um dos maiores asteroides do cinturão principal já observado de perto.",
       "type": "nominal"
@@ -48,7 +48,7 @@
     {
       "met": 1351,
       "label": "Terra nº 2 — assistência gravitacional",
-      "description": "Máxima aproximação de 5.295 km em 2007-11-13. Por um tempo foi confundida com um asteroide próximo da Terra (designado 2007 VN84), até que os observadores perceberam que era a Rosetta se afastando."
+      "description": "Máxima aproximação de 5.301 km em 2007-11-13. Por um tempo foi confundida com um asteroide próximo da Terra (designado 2007 VN84), até que os observadores perceberam que era a Rosetta se afastando."
     },
     {
       "met": 2082,

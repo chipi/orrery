@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, promises as fs } from 'node:fs';
 import path from 'node:path';
+import sharp from 'sharp';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
 import { ensureCtxMosaicTile, tileNameForLatLon, tileUrlForName } from './ctx-mosaic.ts';
 
@@ -92,8 +93,40 @@ function cropCentre(roverId: string, lat: number, lon: number): { lat: number; l
   return { lat, lon };
 }
 
+/** Default regional crop (px at the mosaic's 5 m/px ≈ 15.4 km). */
+const BASE_CROP_PX = 3072;
+/** Largest regional texture written; bigger crops are downsampled. */
+const MAX_OUTPUT_PX = 4096;
+
+/**
+ * Crop size for a rover's regional CTX (#641): wide enough that the whole
+ * traverse, seen from its midpoint, fits with a 15 % margin — Opportunity's
+ * drive spans ~26 km, past the 15.4 km default. Never smaller than the
+ * default; rounded up to 1 024 m. Non-rovers keep the default.
+ */
+function cropPxFor(roverId: string, centre: { lat: number; lon: number }, mPerPx = 5): number {
+  const p = path.join(TRAVERSE_DIR, `${roverId}.json`);
+  if (!existsSync(p)) return BASE_CROP_PX;
+  const pts = (JSON.parse(readFileSync(p, 'utf8')) as { points?: [number, number][] }).points;
+  if (!pts?.length) return BASE_CROP_PX;
+  let half = 0;
+  for (const pt of pts) {
+    half = Math.max(
+      half,
+      gcMetres([centre.lat, centre.lon], [pt[0], centre.lon]),
+      gcMetres([centre.lat, centre.lon], [centre.lat, pt[1]]),
+    );
+  }
+  const groundM = Math.ceil((2 * half * 1.15) / 1024) * 1024;
+  return Math.max(BASE_CROP_PX, Math.ceil(groundM / mPerPx));
+}
+
 export interface MarsCtxFetchResult {
   siteId: string;
+  /** Source pixels cropped (ground = cropPx × resolutionMPerPx). */
+  cropPx: number;
+  /** Where the crop is centred (the traverse midpoint for rovers). */
+  centre: { lat: number; lon: number };
   tileName: string;
   sourceUrl: string;
   outputPath: string;
@@ -194,17 +227,35 @@ async function fetchOneCtx(
     return null;
   }
   const localTilePath = await ensureCtxMosaicTile(centre.lat, centre.lon);
+  const cropPx = cropPxFor(hotspot.id, centre);
   try {
     const crop = await cropRemoteRasterToLatLon({
       localRasterPath: localTilePath,
       targetLat: centre.lat,
       targetLon: centre.lon,
       outputPath,
-      cropSize: 3072,
+      cropSize: cropPx,
       jpegQuality: 88,
+      requireCentered: cropPx > BASE_CROP_PX,
     });
+    // Full-resolution crop → masters/ (Git LFS), like the route tiles.
+    const full = await fs.readFile(outputPath);
+    const masterPath = path.join(
+      'masters',
+      path.relative(path.join('static', 'images'), outputPath),
+    );
+    await fs.mkdir(path.dirname(masterPath), { recursive: true });
+    await fs.writeFile(masterPath, full);
+    if (cropPx > MAX_OUTPUT_PX) {
+      await fs.writeFile(
+        outputPath,
+        await sharp(full).resize(MAX_OUTPUT_PX, MAX_OUTPUT_PX).jpeg({ quality: 88 }).toBuffer(),
+      );
+    }
     return {
       siteId: hotspot.id,
+      cropPx,
+      centre,
       tileName,
       sourceUrl,
       outputPath,

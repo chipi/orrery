@@ -1,7 +1,7 @@
 {
   "name": "Hayabusa2",
   "vehicle": "H-IIA 202",
-  "payload": "干质量 609 kg，离子电推进（4×μ10 推力器）+ 化学双组元推进 + 1.6 m HGA。搭载载荷——Small Carry-on Impactor（SCI，2.5 kg 成形装药）、MASCOT 着陆器（10 kg，DLR/CNES）、3× MINERVA-II 巡视器（各~1 kg）、样本返回舱（16 kg，降落伞再入）。",
+  "payload": "干质量 490 kg，离子电推进（4×μ10 推力器）+ 化学双组元推进 + 1.6 m HGA。搭载载荷——Small Carry-on Impactor（SCI，2.5 kg 成形装药）、MASCOT 着陆器（10 kg，DLR/CNES）、3× MINERVA-II 巡视器（各~1 kg）、样本返回舱（16 kg，降落伞再入）。",
   "delta_v": "~2 km/s（离子发动机累计）",
   "type": "样品返回 + 着陆器 · 活跃中（延期任务）",
   "first": "第二次小行星样品返回（龙宫，2020年）；首次在小行星上制造人工撞击坑；首次将小行星地下物质样品送回地球",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 366,
+      "met": 365,
       "label": "地球飞掠",
       "note": "地球引力辅助为交会轨道调相。",
       "type": "nominal"

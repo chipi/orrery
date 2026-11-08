@@ -6,6 +6,8 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import { dataLoadFailed } from '$lib/data/core';
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
+  import { getEssay } from '$lib/data/science';
+  import { localHref } from '$lib/locale';
 
   // Localized titles for the canonical chapter ids — the story JSON
   // files use a fixed vocabulary of chapter.id values (hardware /
@@ -126,9 +128,66 @@
         </div>{/if}
     </section>
   {/each}
+  {#if story.essay}
+    {#await getEssay(story.essay, getLocale()) then essay}
+      {#if essay}
+        <a
+          class="essay-card"
+          href={localHref(`/essays/${story.essay}`)}
+          data-testid="site-story-essay"
+        >
+          <span class="essay-kicker">{m.essays_title()}</span>
+          <span class="essay-title">{essay.title}</span>
+          {#if essay.dek}<span class="essay-dek">{essay.dek}</span>{/if}
+          <span class="essay-read">{m.essays_read()}</span>
+        </a>
+      {/if}
+    {/await}
+  {/if}
 </div>
 
 <style>
+  .essay-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 2px solid var(--body-tint, #8fb4ff);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    color: inherit;
+    text-decoration: none;
+  }
+  .essay-card:hover,
+  .essay-card:focus-visible {
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .essay-kicker {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--body-tint, rgba(255, 255, 255, 0.6));
+  }
+  .essay-title {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.2;
+  }
+  .essay-dek {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .essay-read {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--body-tint, #8fb4ff);
+  }
   .story {
     display: flex;
     flex-direction: column;

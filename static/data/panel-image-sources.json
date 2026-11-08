@@ -42,20 +42,6 @@
     "fetched_at": "2026-06-12T21:28:42.805Z"
   },
   "earth-objects/change2/02": {
-    "commons_file": "Chang'e 4 Lander Coordinates (LROC1087 - content M1298916428LR 1100p arrows).png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20Lander%20Coordinates%20(LROC1087%20-%20content%20M1298916428LR%201100p%20arrows).png",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
-  },
-  "earth-objects/change2/03": {
-    "commons_file": "Chang'e 4 Lander Coordinates (LROC1087 - content CE4 Locator Figure).png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20Lander%20Coordinates%20(LROC1087%20-%20content%20CE4%20Locator%20Figure).png",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
-  },
-  "earth-objects/change2/04": {
     "commons_file": "Mandel zoom 11 satellite double spiral.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Mandel%20zoom%2011%20satellite%20double%20spiral.jpg",
     "credit": "CNSA",
@@ -104,14 +90,14 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/geo/04": {
+  "earth-objects/geo/03": {
     "commons_file": "Geostationary Satellite imagery.png",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Geostationary%20Satellite%20imagery.png",
     "credit": "NOAA",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/geo/05": {
+  "earth-objects/geo/04": {
     "commons_file": "Diagram of communications, data processing and dissemination associated with Geostationary Satellite System (2268-503).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Diagram%20of%20communications%2C%20data%20processing%20and%20dissemination%20associated%20with%20Geostationary%20Satellite%20System%20(2268-503).jpg",
     "credit": "NOAA",
@@ -125,21 +111,14 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/glonass/02": {
-    "commons_file": "Glonass K model at Cebit 2011 Satellite, sideview 1.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Glonass%20K%20model%20at%20Cebit%202011%20Satellite%2C%20sideview%201.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "earth-objects/glonass/04": {
+  "earth-objects/glonass/03": {
     "commons_file": "GLONASS GPS Personal Radio Beacon.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:GLONASS%20GPS%20Personal%20Radio%20Beacon.jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/glonass/05": {
+  "earth-objects/glonass/04": {
     "commons_file": "Glonass K Navigation Spacecraft model at Cebit 2011 Satellite, general view from the right (modified).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Glonass%20K%20Navigation%20Spacecraft%20model%20at%20Cebit%202011%20Satellite%2C%20general%20view%20from%20the%20right%20(modified).jpg",
     "credit": "Roscosmos",
@@ -307,13 +286,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/kuiper/05": {
-    "commons_file": "Kuiper 3 Launches from Cape Canaveral Space Force Station (9339803).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Kuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339803).jpg",
-    "credit": "Amazon",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
   "earth-objects/landsat/01": {
     "commons_file": "Lena River Delta - Landsat 2000.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Lena%20River%20Delta%20-%20Landsat%202000.jpg",
@@ -364,34 +336,27 @@
     "fetched_at": "2026-06-12T21:28:42.805Z"
   },
   "earth-objects/o3b/01": {
-    "commons_file": "O3b satellite constellation.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:O3b%20satellite%20constellation.png",
-    "credit": "SES",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "earth-objects/o3b/02": {
     "commons_file": "Bourgery & Jacob-o3b.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Bourgery%20%26%20Jacob-o3b.jpg",
     "credit": "SES",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/o3b/03": {
+  "earth-objects/o3b/02": {
     "commons_file": "Falcon 9 Starlink 10-59 Launch (9391879).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Falcon%209%20Starlink%2010-59%20Launch%20(9391879).jpg",
     "credit": "SES",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/o3b/04": {
+  "earth-objects/o3b/03": {
     "commons_file": "Falcon 9 Bluebird 1-5 Launch (8638151).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Falcon%209%20Bluebird%201-5%20Launch%20(8638151).jpg",
     "credit": "SES",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/o3b/05": {
+  "earth-objects/o3b/04": {
     "commons_file": "Falcon 9 Bluebird 1-5 Launch (8638152).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Falcon%209%20Bluebird%201-5%20Launch%20(8638152).jpg",
     "credit": "SES",
@@ -434,34 +399,27 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "earth-objects/planet-labs/01": {
-    "commons_file": "Planet-Labs Hackathon-23Sep2015.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Planet-Labs%20Hackathon-23Sep2015.png",
-    "credit": "Planet Labs",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "earth-objects/planet-labs/02": {
     "commons_file": "Arkhangelsk Russia - Planet Labs Satellite image.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Arkhangelsk%20Russia%20-%20Planet%20Labs%20Satellite%20image.jpg",
     "credit": "Planet Labs PBC",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/planet-labs/03": {
+  "earth-objects/planet-labs/02": {
     "commons_file": "Bohai sea aquaculture planet labs satellite image.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Bohai%20sea%20aquaculture%20planet%20labs%20satellite%20image.jpg",
     "credit": "Planet Labs PBC",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/planet-labs/04": {
+  "earth-objects/planet-labs/03": {
     "commons_file": "Dawesville Channel Australia - Planet Labs satellite image.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Dawesville%20Channel%20Australia%20-%20Planet%20Labs%20satellite%20image.jpg",
     "credit": "Planet Labs PBC",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "earth-objects/planet-labs/05": {
+  "earth-objects/planet-labs/04": {
     "commons_file": "Ulanqab, Inner Mongolia China - Planet Labs satellite image.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Ulanqab%2C%20Inner%20Mongolia%20China%20-%20Planet%20Labs%20satellite%20image.jpg",
     "credit": "Planet Labs PBC",
@@ -672,20 +630,13 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "mars-sites/hope/03": {
-    "commons_file": "Emirates Mars Mission mockup at IAC 2021 02.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Emirates%20Mars%20Mission%20mockup%20at%20IAC%202021%2002.jpg",
-    "credit": "MBRSC (UAE Space Agency)",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "mars-sites/hope/04": {
     "commons_file": "Emirates Mars Mission mockup at IAC 2021 01 (cropped).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Emirates%20Mars%20Mission%20mockup%20at%20IAC%202021%2001%20(cropped).jpg",
     "credit": "MBRSC (UAE Space Agency)",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "mars-sites/hope/05": {
+  "mars-sites/hope/04": {
     "commons_file": "Hope crater 009A30.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Hope%20crater%20009A30.jpg",
     "credit": "MBRSC (UAE Space Agency)",
@@ -783,34 +734,20 @@
     "fetched_at": "2026-06-12T21:28:42.805Z"
   },
   "mars-sites/mars3-orbiter/02": {
-    "commons_file": "Mars Climate Orbiter 2.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Climate%20Orbiter%202.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
-  },
-  "mars-sites/mars3-orbiter/03": {
     "commons_file": "Mars Orbiter Mission Over Mars (15237158879).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Orbiter%20Mission%20Over%20Mars%20(15237158879).jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T13:26:18.186Z"
   },
-  "mars-sites/mars3-orbiter/04": {
+  "mars-sites/mars3-orbiter/03": {
     "commons_file": "Mars Orbiter Mission-Mars Orbit Insertion Profile.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Orbiter%20Mission-Mars%20Orbit%20Insertion%20Profile.jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T13:26:18.186Z"
   },
-  "mars-sites/mars3-orbiter/05": {
-    "commons_file": "Mars Orbiter Mission - Payloads.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Orbiter%20Mission%20-%20Payloads.png",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
-  },
-  "mars-sites/mars3/05": {
+  "mars-sites/mars3/04": {
     "commons_file": "Mars3 lander vsm.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Mars3%20lander%20vsm.jpg",
     "credit": "Roscosmos",
@@ -823,13 +760,6 @@
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "mars-sites/mars6/03": {
-    "commons_file": "PIA23202 cc-Mars-InSightLander-Sunset-20190425.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA23202%20cc-Mars-InSightLander-Sunset-20190425.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
   },
   "mars-sites/mars6/04": {
     "commons_file": "MarsLanderMola16.png",
@@ -1006,13 +936,6 @@
     "fetched_at": "2026-06-12T21:28:42.805Z"
   },
   "moon-sites/change2/02": {
-    "commons_file": "Chang'e-3 lunar landing site.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e-3%20lunar%20landing%20site.jpg",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
-  },
-  "moon-sites/change2/03": {
     "commons_file": "Chang'e 4 Lander- A Closer Look (02 m1147290066lr m130C5A1B).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20Lander-%20A%20Closer%20Look%20(02%20m1147290066lr%20m130C5A1B).jpg",
     "credit": "CNSA",
@@ -1039,13 +962,6 @@
     "credit": "CNSA",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "moon-sites/change3/05": {
-    "commons_file": "Artist view of Chang'e 7 lunar mission on the Moon.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist%20view%20of%20Chang'e%207%20lunar%20mission%20on%20the%20Moon.png",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
   },
   "moon-sites/luna10/01": {
     "commons_file": "Luna 10 Space Probe.jpg",
@@ -1675,19 +1591,6 @@
     }
   },
   "small-bodies/pluto/04": {
-    "commons_file": "Pluto-new-horizons-2015-07-14-01.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Pluto-new-horizons-2015-07-14-01.jpg",
-    "credit": "https://www.engadget.com/2015/07/14/the-big-picture-best-pluto-image/",
-    "license": "public domain",
-    "fetched_at": "2026-06-20T22:01:17Z",
-    "bodies_iteration": 1,
-    "query": "Pluto New Horizons",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
-  "small-bodies/pluto/05": {
     "commons_file": "New Horizons’ Very Best View of Pluto (Mosiac).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:New%20Horizons%E2%80%99%20Very%20Best%20View%20of%20Pluto%20(Mosiac).jpg",
     "credit": "http://pluto.jhuapl.edu/Multimedia/Science-Photos/pics/p_leisa_hires.jpg",
@@ -1753,19 +1656,6 @@
     }
   },
   "satellites/phobos/02": {
-    "commons_file": "Phobos edit 2.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Phobos%20edit%202.jpg",
-    "credit": "Edited version of Image:221831main PIA10368.png.",
-    "license": "public domain",
-    "fetched_at": "2026-06-20T22:01:20Z",
-    "bodies_iteration": 1,
-    "query": "Phobos Mars moon MRO",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
-  "satellites/phobos/03": {
     "commons_file": "Stickney mro.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Stickney%20mro.jpg",
     "credit": "English Wikipedia - Original image and description.",
@@ -1778,7 +1668,7 @@
       "confidence": 0.95
     }
   },
-  "satellites/phobos/04": {
+  "satellites/phobos/03": {
     "commons_file": "Phobos Viking Mosaic DLRcontrol 7200.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Phobos%20Viking%20Mosaic%20DLRcontrol%207200.jpg",
     "credit": "https://astrogeology.usgs.gov/search/map/Phobos/Viking/Phobos_Viking_Mosaic_40ppd_DLRcontrol",
@@ -1791,7 +1681,7 @@
       "confidence": 0.95
     }
   },
-  "satellites/phobos/05": {
+  "satellites/phobos/04": {
     "commons_file": "Phobos Full.png",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Phobos%20Full.png",
     "credit": "Viking Orbiter 357A64 http://nssdc.gsfc.nasa.gov/imgcat/html/object_page/vo1_357a64.html (Image conversion from TIFF file to PNG by uploader)",
@@ -1908,7 +1798,7 @@
       "confidence": 0.95
     }
   },
-  "satellites/europa/05": {
+  "satellites/europa/04": {
     "commons_file": "Europa Domes.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Europa%20Domes.jpg",
     "credit": "NASA planetary photojournal NASA planetary photojournal, PIA00588 http://photojournal.jpl.nasa.gov/jpeg/PIA00588.jpg",
@@ -1922,19 +1812,6 @@
     }
   },
   "satellites/ganymede/02": {
-    "commons_file": "Ganymede g1 true-edit.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Ganymede%20g1%20true-edit.jpg",
-    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA00716",
-    "license": "public domain",
-    "fetched_at": "2026-06-20T22:01:25Z",
-    "bodies_iteration": 1,
-    "query": "Ganymede Galileo spacecraft",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
-  "satellites/ganymede/04": {
     "commons_file": "PIA00497 Nippur Sulcus.png",
     "commons_url": "https://commons.wikimedia.org/wiki/File:PIA00497%20Nippur%20Sulcus.png",
     "credit": "https://science.nasa.gov/photojournal/ganymedes-nippur-sulcus/",
@@ -1947,7 +1824,7 @@
       "confidence": 0.95
     }
   },
-  "satellites/ganymede/05": {
+  "satellites/ganymede/03": {
     "commons_file": "Ganymede terrain.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Ganymede%20terrain.jpg",
     "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA02577",
@@ -2155,19 +2032,6 @@
       "confidence": 0.95
     }
   },
-  "satellites/charon/02": {
-    "commons_file": "Pluto Spray Paints its Moon Red (noaoann16017a).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Pluto%20Spray%20Paints%20its%20Moon%20Red%20(noaoann16017a).jpg",
-    "credit": "Pluto Spray Paints its Moon Red",
-    "license": "cc by 4.0",
-    "fetched_at": "2026-06-21T08:19:22Z",
-    "bodies_iteration": 1,
-    "query": "Charon New Horizons Pluto moon",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
   "satellites/triton/04": {
     "commons_file": "Neptune’s Moon Triton Fosters Rare Icy Union (gemini1903a) square.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%E2%80%99s%20Moon%20Triton%20Fosters%20Rare%20Icy%20Union%20(gemini1903a)%20square.jpg",
@@ -2181,7 +2045,7 @@
       "confidence": 0.95
     }
   },
-  "satellites/charon/03": {
+  "satellites/charon/02": {
     "commons_file": "NH-PlutoMoon--Charon-NeutralBrightRelease-20151001.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:NH-PlutoMoon--Charon-NeutralBrightRelease-20151001.jpg",
     "credit": "http://www.nasa.gov/sites/default/files/thumbnails/image/nh-charon-neutral-bright-release.jpg",
@@ -2194,7 +2058,7 @@
       "confidence": 0.95
     }
   },
-  "satellites/charon/04": {
+  "satellites/charon/03": {
     "commons_file": "Charon in True Color - High-Res.png",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Charon%20in%20True%20Color%20-%20High-Res.png",
     "credit": "http://pluto.jhuapl.edu/Multimedia/Science-Photos/image.php?page=1&amp;gallery_id=2&amp;image_id=544",
@@ -2272,19 +2136,6 @@
       "confidence": 0.95
     }
   },
-  "satellites/ariel/02": {
-    "commons_file": "Ariel - January 24 1986 (22257264653).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Ariel%20-%20January%2024%201986%20(22257264653).jpg",
-    "credit": "Ariel - January 24 1986",
-    "license": "cc by-sa 2.0",
-    "fetched_at": "2026-06-20T22:01:37Z",
-    "bodies_iteration": 1,
-    "query": "Ariel Voyager 2 Uranus moon",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
   "satellites/titania/03": {
     "commons_file": "Titania - Jan 24 1986 (22689891350).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Titania%20-%20Jan%2024%201986%20(22689891350).jpg",
@@ -2324,58 +2175,6 @@
       "confidence": 0.95
     }
   },
-  "satellites/titania/05": {
-    "commons_file": "PIA00039 Titania.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA00039%20Titania.jpg",
-    "credit": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 https://web.archive.org/web/20180817095759/http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
-    "license": "public domain",
-    "fetched_at": "2026-06-20T22:01:39Z",
-    "bodies_iteration": 1,
-    "query": "Titania Voyager 2 Uranus moon",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
-  "satellites/oberon/02": {
-    "commons_file": "Oberon - Green-Violet - January 24 1986 - 4 (50906003243).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Oberon%20-%20Green-Violet%20-%20January%2024%201986%20-%204%20(50906003243).jpg",
-    "credit": "Oberon - Green-Violet - January 24 1986 - 4",
-    "license": "cc by 2.0",
-    "fetched_at": "2026-06-20T22:01:40Z",
-    "bodies_iteration": 1,
-    "query": "Oberon Voyager 2 Uranus moon",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
-  "satellites/oberon/03": {
-    "commons_file": "Oberon - Jan 24 1986 (22889267591).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Oberon%20-%20Jan%2024%201986%20(22889267591).jpg",
-    "credit": "Oberon - Jan 24 1986",
-    "license": "cc by-sa 2.0",
-    "fetched_at": "2026-06-20T22:01:40Z",
-    "bodies_iteration": 1,
-    "query": "Oberon Voyager 2 Uranus moon",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.92
-    }
-  },
-  "satellites/oberon/04": {
-    "commons_file": "ESO - Which Ringed Planet (by).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:ESO%20-%20Which%20Ringed%20Planet%20(by).jpg",
-    "credit": "Which Ringed Planet...!? Uranus with rings and moons JPL Solar System Simulator for 2002-11-09 00:00 UT",
-    "license": "cc by 4.0",
-    "fetched_at": "2026-06-20T22:01:41Z",
-    "bodies_iteration": 1,
-    "query": "Oberon Voyager 2 Uranus moon",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.92
-    }
-  },
   "planets/pluto/02": {
     "commons_file": "New Pluto Images from NASA’s New Horizons- It’s Complicated (20700948604).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:New%20Pluto%20Images%20from%20NASA%E2%80%99s%20New%20Horizons-%20It%E2%80%99s%20Complicated%20(20700948604).jpg",
@@ -2387,19 +2186,6 @@
     "vision": {
       "verdict": "related",
       "confidence": 0.95
-    }
-  },
-  "satellites/ariel/03": {
-    "commons_file": "Ariel map JPL USGS.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Ariel%20map%20JPL%20USGS.jpg",
-    "credit": "https://maps.jpl.nasa.gov/tmaps/uranus.html, https://nasa3d.arc.nasa.gov/detail/ura1vuu2",
-    "license": "public domain",
-    "fetched_at": "2026-06-20T22:01:37Z",
-    "bodies_iteration": 1,
-    "query": "Ariel Voyager 2 Uranus moon",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.92
     }
   },
   "sun/04": {
@@ -2563,7 +2349,7 @@
     "bodies_iteration": "handsource-zero-survivor-2026-06-21",
     "query": "Haumea ring artist"
   },
-  "small-bodies/oumuamua/02": {
+  "small-bodies/oumuamua/01": {
     "commons_file": "Artist impression of interstellar object ‘Oumuamua (54445460199).png",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Artist%20impression%20of%20interstellar%20object%20%E2%80%98Oumuamua%20(54445460199).png",
     "credit": "Artist impression of interstellar object ‘Oumuamua",
@@ -2638,5 +2424,12 @@
     "commons_url": "https://commons.wikimedia.org/wiki/File:Mars_3_Space_Probe_1.jpg",
     "credit": "Stolbovsky",
     "license": "CC-BY-4.0"
+  },
+  "moon-sites/change7/01": {
+    "commons_file": "Artist view of Chang'e 7 lunar mission on the Moon.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist_view_of_Chang%27e_7_lunar_mission_on_the_Moon.png",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-11-06T10:21:55.910Z"
   }
 }

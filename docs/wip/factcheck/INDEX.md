@@ -1,5 +1,31 @@
 # Missions + Science + Fleet fact-check — master index (2026-07-14)
 
+**Re-verified 2026-11-08** (`2026-11-08-reverify.json`, one row per finding, 793 rows across the 54
+detail files, with the live file:line): 486 fixed, 60 rewritten, 4 gone, 1 unlocated, 242 unchanged.
+The unchanged and rewritten rows were triaged. About 45 were still wrong and are fixed in all 14
+locales. Most of those were base `static/data` fields (`credit`, `best_known_for`) still carrying a
+claim the overlays had already corrected. Also fixed:
+
+- Mars 3 transmission time: 14.5 s everywhere (JPL).
+- Akatsuki listed as active: its mission ended 2025-09-18 (JAXA press release). The "worst
+  offenders" line below did not hold for the planets survey.
+- Chang'e 6 landing date: 2024-06-01 UTC.
+- Artemis II credit.
+- Salyut 4 and 5 crew durations.
+- Starlink count.
+- Eris aphelion.
+- Biosphere 2 morning glories.
+- Section counts in the planets and orbits intros.
+- 101 stale English fleet-card taglines and 3 names. `fleet/index.json` had drifted from the en-US
+  overlays, and en-US cards read the index directly. validate-data now fails on any drift.
+
+Not changed, by reason:
+
+- **`era` findings:** `era` is the first-flight bucket (schema enum), not service dates.
+- **Self-dismissed:** the report itself calls the claim defensible, optional or correct.
+- **Already right:** Europa Clipper 6,065 kg is the launch mass. Soyuz TMA 2002–2012. Pioneer 11
+  from LC-36B. "First robotic sample" for Luna 16.
+
 **Status 2026-11-04:** the "worst offenders" list was applied (spot-verified: Blue Moon Mk1 PLANNED/NET 2027, OTV-3 and Vostok-6 inventions gone, NRHO 6.5 d, Hill sphere 46,000x, LRV 35.7/92 km, Apollo 13 record qualified by Artemis II, Chandrayaan-1 "5th", Antares/H-IIA RETIRED, Atlas V = ULA, LVM3 2017, Saturn ~274 moons) via d13c1ee992b (2026-07-14), bab97e3b2db (2026-08-02), b3ee7406353 (2026-08-05), 49b9fb29c1f (2026-10-31, fleet templates). The line "Nothing edited yet" is stale. Not verified: the remaining ~250 per-file findings in the 55 detail files, one by one.
 
 The `science-reviewer` swept all **123 mission editorials** + **130 science

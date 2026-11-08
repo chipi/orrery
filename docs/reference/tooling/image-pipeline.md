@@ -243,9 +243,9 @@ Served display images are WebP, derived from the git-LFS `masters/` store — sm
 ### `generate-hero-overrides.ts` — hero override JSON **(STANDING)**
 
 - **Command** `npx tsx scripts/generate-hero-overrides.ts`
-- **What** Reads the `## ⇄ Swap proposals` tables in `docs/provenance/*-hero-audit.md` (from `audit-heroes.ts`) → writes `static/data/<surface>-hero-overrides.json`, consumed by `pickHero()` + `loadHeroOverrides`. Idempotent.
+- **What** Reads the `## ⇄ Swap proposals` tables in `docs/provenance/*-hero-audit.md` (from `audit-heroes.ts`) → writes `static/data/<surface>-hero-overrides.json`, consumed by `pickHero()` + `loadHeroOverrides`. An existing override file is skipped: since the 2026-11 hero reviews the files are hand-curated. `--force` merges the audit into an existing file; hand-written entries and their `position` are kept (a position is dropped only when the audit picks another slot), but proposals removed by hand come back, so read the diff.
 - **When** After a hero audit produces new swap proposals.
-- **Gotchas** Hero per surface lives in the override JSON, NOT slot 01 — disk-copying to slot 01 is invisible if an override exists.
+- **Gotchas** Hero per surface lives in the override JSON, NOT slot 01 — disk-copying to slot 01 is invisible if an override exists. An entry may also carry a reviewed crop `position` (CSS object-position); see "Hero crop positions" in `scripts/IMAGE-PIPELINE.md`.
 - **State** STANDING.
 
 ### `fix-fleet-heroes.ts` — fleet hero curation **(ONE-SHOT-BUT-KEPT)**

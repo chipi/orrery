@@ -1,0 +1,50 @@
+{
+  "missions/inspiration4/03": {
+    "source": "commons",
+    "id": "Inspiration 4 Launch (7264908).jpeg",
+    "agency": "SpaceX",
+    "focal": [0.5, 0.5],
+    "category": "launch",
+    "subject": "The Falcon 9 carrying the Inspiration4 crew on Launch Complex 39A at Kennedy Space Center on launch day, 15 September 2021.",
+    "alt": {
+      "en-US": "The Falcon 9 carrying the Inspiration4 crew on Launch Complex 39A at Kennedy Space Center on launch day, 15 September 2021",
+      "ar": "صاروخ فالكون 9 الذي حمل طاقم Inspiration4 على مجمع الإطلاق 39A في مركز كينيدي للفضاء يوم الإطلاق، 15 سبتمبر 2021",
+      "de": "Die Falcon 9 mit der Inspiration4-Besatzung auf Startkomplex 39A im Kennedy Space Center am Starttag, 15. September 2021",
+      "es": "El Falcon 9 que llevó a la tripulación de Inspiration4 en el Complejo de Lanzamiento 39A del Centro Espacial Kennedy el día del lanzamiento, 15 de septiembre de 2021",
+      "fr": "Le Falcon 9 emportant l'équipage d'Inspiration4 sur le pas de tir 39A du centre spatial Kennedy le jour du lancement, le 15 septembre 2021",
+      "hi": "15 सितंबर 2021 को प्रक्षेपण के दिन केनेडी स्पेस सेंटर के लॉन्च कॉम्प्लेक्स 39A पर Inspiration4 दल को ले जाने वाला फ़ाल्कन 9",
+      "it": "Il Falcon 9 con l'equipaggio di Inspiration4 sul complesso di lancio 39A del Kennedy Space Center il giorno del lancio, 15 settembre 2021",
+      "ja": "打ち上げ当日の2021年9月15日、ケネディ宇宙センター39A発射台に立つ、Inspiration4のクルーを乗せたファルコン9",
+      "ko": "발사 당일인 2021년 9월 15일 케네디 우주센터 39A 발사대에 선, Inspiration4 승무원을 태운 팰컨 9",
+      "nl": "De Falcon 9 met de Inspiration4-bemanning op lanceercomplex 39A van het Kennedy Space Center op de lanceerdag, 15 september 2021",
+      "pt-BR": "O Falcon 9 que levou a tripulação da Inspiration4 no Complexo de Lançamento 39A do Centro Espacial Kennedy no dia do lançamento, 15 de setembro de 2021",
+      "ru": "Ракета Falcon 9 с экипажем Inspiration4 на стартовом комплексе 39A Космического центра Кеннеди в день запуска, 15 сентября 2021 года",
+      "sr-Cyrl": "Ракета Falcon 9 са посадом Inspiration4 на лансирном комплексу 39A Свемирског центра Кенеди на дан лансирања, 15. септембра 2021",
+      "zh-CN": "2021年9月15日发射当天，肯尼迪航天中心39A发射台上搭载Inspiration4乘组的猎鹰9号"
+    }
+  },
+  "missions/starship-mars-crew/02": {
+    "source": "commons",
+    "id": "Starship Booster Landing on Mechzilla (54064036815).jpg",
+    "agency": "SpaceX",
+    "focal": [0.5, 0.45],
+    "category": "launch",
+    "subject": "The Super Heavy booster caught by the launch tower's arms at Starbase during Starship flight test 5, 13 October 2024.",
+    "alt": {
+      "en-US": "The Super Heavy booster caught by the launch tower's arms at Starbase during Starship's fifth flight test, 13 October 2024",
+      "ar": "المعزز Super Heavy تلتقطه ذراعا برج الإطلاق في Starbase خلال الرحلة التجريبية الخامسة لـStarship، 13 أكتوبر 2024",
+      "de": "Der Super-Heavy-Booster wird beim fünften Starship-Testflug am 13. Oktober 2024 in Starbase von den Armen des Startturms gefangen",
+      "es": "El propulsor Super Heavy atrapado por los brazos de la torre de lanzamiento en Starbase durante el quinto vuelo de prueba de Starship, 13 de octubre de 2024",
+      "fr": "Le propulseur Super Heavy rattrapé par les bras de la tour de lancement à Starbase lors du cinquième vol d'essai de Starship, le 13 octobre 2024",
+      "hi": "13 अक्टूबर 2024 को Starship की पाँचवीं परीक्षण उड़ान में Starbase पर प्रक्षेपण टावर की भुजाओं द्वारा पकड़ा गया Super Heavy बूस्टर",
+      "it": "Il booster Super Heavy afferrato dai bracci della torre di lancio a Starbase durante il quinto volo di prova di Starship, 13 ottobre 2024",
+      "ja": "2024年10月13日、Starship第5回飛行試験でStarbaseの発射塔のアームに捕らえられるSuper Heavyブースター",
+      "ko": "2024년 10월 13일 Starship 5차 시험 비행에서 Starbase 발사탑의 팔에 붙잡히는 Super Heavy 부스터",
+      "nl": "De Super Heavy-booster wordt tijdens de vijfde testvlucht van Starship op 13 oktober 2024 in Starbase opgevangen door de armen van de lanceertoren",
+      "pt-BR": "O propulsor Super Heavy capturado pelos braços da torre de lançamento em Starbase durante o quinto voo de teste da Starship, 13 de outubro de 2024",
+      "ru": "Ускоритель Super Heavy пойман захватами стартовой башни на Starbase в пятом испытательном полёте Starship, 13 октября 2024 года",
+      "sr-Cyrl": "Бустер Super Heavy који хватају кракови лансирне куле у Starbase током петог пробног лета летелице Starship, 13. октобар 2024",
+      "zh-CN": "2024年10月13日Starship第五次试飞中，Super Heavy助推器在Starbase被发射塔的机械臂抓住"
+    }
+  }
+}

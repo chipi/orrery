@@ -1,7 +1,7 @@
 {
   "name": "Lucy",
   "vehicle": "Atlas V 401",
-  "payload": "1550 kg (einschl. 1003 kg Hydrazin — Lucy trägt deutlich mehr Treibstoff als Trockenmasse)",
+  "payload": "1550 kg (821 kg Trockenmasse)",
   "delta_v": "~6 km/s (mit 3 Erd-Swing-bys)",
   "type": "MEHRFACH-VORBEIFLUG · AKTIV",
   "first": "Erste Mission zu den Jupiter-Trojanern; besucht 11 Körper auf 8 Asteroiden und ihren Monden auf einer einzigen 12-jährigen Flugbahn — eine Rekordanzahl von Objekten auf getrennten Sonnenumlaufbahnen",
@@ -28,7 +28,7 @@
     {
       "met": 1282,
       "label": "DONALDJOHANSON",
-      "note": "Bonusvorbeiflug im Hauptgürtel 2025-04. 4-km C-Typ-Asteroid.",
+      "note": "Bonusvorbeiflug im Hauptgürtel 2025-04. C-Typ-Kontaktbinärasteroid von etwa 8 km Länge.",
       "type": "info"
     },
     {

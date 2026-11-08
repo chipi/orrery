@@ -1,0 +1,16 @@
+# CodeQL config (codeql.yml `config-file`). Triaged 2026-11-08 over the 175 open alerts on main.
+paths-ignore:
+  # Retired one-off scripts, kept for history; nothing runs them.
+  - scripts/_archive/**
+  # Frozen records of past translation rounds (the edits and the tools that made them), not live code.
+  - scripts/i18n-tools/maps/**
+  # Static HTML design prototypes from the planning phase, never served.
+  - docs/prototypes/**
+query-filters:
+  # Orrery's scripts and launch sources are data pipelines: they fetch from public APIs and cache to
+  # disk, and the provenance tools send local file content to those APIs by design. Every hit of
+  # these two rules was that intended flow (39 alerts), so they are noise here.
+  - exclude:
+      id: js/file-access-to-http
+  - exclude:
+      id: js/http-to-file-access

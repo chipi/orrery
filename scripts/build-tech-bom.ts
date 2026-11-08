@@ -133,7 +133,7 @@ function canonicaliseLicense(raw: unknown): string {
       return canonicaliseLicense((first as { type: unknown }).type);
     }
   }
-  if (typeof raw === 'object' && raw !== null && 'type' in raw) {
+  if (typeof raw === 'object' && 'type' in raw) {
     return canonicaliseLicense((raw as { type: unknown }).type);
   }
   return 'UNKNOWN';
@@ -331,7 +331,7 @@ function validateLicenses(pkgs: Pkg[]): void {
 
 function escMd(s: string | undefined): string {
   if (!s) return '';
-  return s.replace(/\|/g, '\\|').replace(/\r?\n/g, ' ').slice(0, 110);
+  return s.replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/\r?\n/g, ' ').slice(0, 110);
 }
 
 function writeMarkdown(pkgs: Pkg[], ourPkg: Record<string, unknown>): string {

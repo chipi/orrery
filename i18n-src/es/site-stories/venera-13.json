@@ -1,0 +1,42 @@
+{
+  "intro": "La Venera 13 se posó en Venus el 1 de marzo de 1982, justo al este de Phoebe Regio, y funcionó durante 127 minutos a 457 °C y bajo una presión de unas 90 veces la del aire al nivel del mar en la Tierra: cuatro veces su vida útil prevista de 32 minutos. Envió las primeras imágenes en color de la superficie de Venus y perforó una muestra del suelo, que su instrumento de rayos X identificó como un basalto rico en potasio.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Una esfera presurizada sobre un anillo amortiguador",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "El sello soviético de 1982 dedicado a la Venera 13 y a su gemela Venera 14, que aterrizó cuatro días después a unos 950 km de distancia."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "127 minutos en Venus — aterrizó el 1 de marzo de 1982",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "Una imagen en blanco y negro de la Venera 13: losas planas de roca y suelo oscuro, con el propio equipo del módulo en el borde. La cámara miraba a través de una ventana y hacía un barrido de lado a lado."
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "La panorámica en color, reprocesada: la primera vista en color del suelo de Venus. El anillo dentado del módulo recorre la parte inferior de ambas mitades."
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "Legado",
+      "subtitle": "Siguen siendo las últimas imágenes de la superficie de Venus",
+      "images": [
+        {
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Venus como la muestran los mapas de radar, con datos de Magellan, Pioneer Venus y Venera. Ninguna nave ha enviado imágenes desde la superficie desde las Venera 13 y 14 en 1982."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+ "version": "1.0",
+ "source_audit": "(manual curation — hand-edit; crop positions reviewed with scripts/vision/hero-crop-sheet.mjs)",
+ "overrides": {
+  "iridium-next": {
+   "slot": "01.jpg",
+   "reason": "crop position only: the centred cover crop cut the subject off",
+   "approved_at": "2026-11-08",
+   "position": "50% 0%"
+  }
+ }
+}

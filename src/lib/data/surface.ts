@@ -1,7 +1,7 @@
 import { get } from './core';
 import { loadLadder } from '$lib/image-srcset';
 import type { MoonSite } from '$types/moon-site';
-import type { MarsSite, Traverse, RouteHirisePatch } from '$types/mars-site';
+import type { MarsSite, Traverse, RouteHirisePatch, RoutePhoto } from '$types/mars-site';
 
 export async function moonSites(): Promise<MoonSite[]> {
   return get<MoonSite[]>('moon-sites.json');
@@ -29,6 +29,7 @@ interface SurfaceHotspotsSidecar {
       hotspot_tier3_panorama?: string;
       hotspot_annotations?: import('$types/surface-site').HotspotAnnotation[];
       location_uncertainty_m?: number;
+      location_unconfirmed?: boolean;
       showcase?: boolean;
       crashed?: boolean;
       // Panorama schema v2 (PRD-022 / ADR-074, #286). All optional;
@@ -285,6 +286,13 @@ export async function getMarsTraverse(
       `mars-traverses/${roverId}.route-patches.json`,
     ).catch(() => null);
     if (rp?.patches?.length) t.route_patches = await withRungs(rp.patches);
+  }
+  // The rover's own photos along the route (#641) — optional sidecar, same rule.
+  if (t.has_route_photos) {
+    const ph = await get<{ photos: RoutePhoto[] }>(
+      `mars-traverses/${roverId}.route-photos.json`,
+    ).catch(() => null);
+    if (ph?.photos?.length) t.route_photos = ph.photos;
   }
   return t;
 }

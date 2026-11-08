@@ -1,0 +1,42 @@
+{
+  "intro": "Zwei Tage vor der Ankunft an der Venus teilte sich Vega 1: Eine Kapsel mit einem Lander und einem Ballon trat am 11. Juni 1985 in die Atmosphäre ein, während die Sonde weiter zum Halleyschen Kometen flog. Der Ballon schwebte rund 46 Stunden lang in etwa 54 km Höhe in den Wolken – der erste Messballon auf einem anderen Planeten. Turbulenzen beim Abstieg lösten die Oberflächenexperimente des Landers, darunter den Bohrer, schon in etwa 20 km Höhe aus, sodass er den Boden nie beprobte. Am 6. März 1986 passierte die Sonde den Kern des Kometen in rund 8.900 km Abstand.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Ein Lander vom Venera-Typ und ein Ballon in einer Kapsel",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/02.webp",
+          "caption": "Technik einer Vega-Sonde bei der Montage: der Träger, der weiter zum Halleyschen Kometen fliegen sollte."
+        },
+        {
+          "src": "/images/missions/vega-1/04.webp",
+          "caption": "Eine Vega-Abstiegskapsel in einer Ausstellung: die Kugel, die Lander und Ballon zur Venus hinabbrachte."
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "title": "Venus",
+      "subtitle": "11. Juni 1985 – ein Lander am Boden, ein Ballon in den Wolken",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/03.webp",
+          "caption": "Der Vega-Plan: Die Kapsel tritt in die Venusatmosphäre ein, setzt Ballon und Lander frei, und die Sonde fliegt weiter zum Halleyschen Kometen."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Halleyscher Komet",
+      "subtitle": "6. März 1986 – rund 8.900 km vom Kern",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/01.webp",
+          "caption": "Der sowjetische Briefmarkenblock zur internationalen Erforschung des Halleyschen Kometen: Edmond Halley, eine Vega-Sonde und der Komet."
+        }
+      ]
+    }
+  ]
+}

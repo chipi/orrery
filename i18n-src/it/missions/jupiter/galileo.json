@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Sonda Galileo e sonda di ingresso atmosferico; ~2,5 t di massa a secco",
+  "payload": "Sonda Galileo e sonda di ingresso atmosferico; 2560 kg al lancio; massa a secco dell’orbiter 1880 kg",
   "delta_v": "~14 km/s (circa)",
   "type": "ORBITER · COMPLETATA",
   "first": "Primo veicolo spaziale in orbita attorno a Giove; sonda atmosferica nelle nubi di Giove",
@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 2243,
+      "met": 2242,
       "label": "INSERIMENTO IN ORBITA DI GIOVE",
       "note": "L'accensione del motore principale cattura Galileo in orbita; inizia un tour di otto anni dedicato alla scienza dei satelliti.",
       "type": "nominal"

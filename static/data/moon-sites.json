@@ -81,6 +81,12 @@
         "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-16",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "luna-16",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -164,6 +170,12 @@
         "l": "Lunokhod 2 — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Lunokhod_2",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "lunokhod-2",
+        "role": "spacecraft"
       }
     ]
   },
@@ -666,7 +678,7 @@
     "agency": "CNSA",
     "nation": "China",
     "year": 2024,
-    "landing_date": "2024-06-02",
+    "landing_date": "2024-06-01",
     "lat": -41.6385,
     "lon": -153.9852,
     "region_bounds": {
@@ -812,6 +824,35 @@
         "l": "小型月着陸実証機 SLIM (ISAS/JAXA)",
         "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/past/slim.html",
         "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "change7",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "CNSA",
+    "nation": "China",
+    "year": 2026,
+    "lat": -88.8,
+    "lon": 123.4,
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "PLANNED",
+    "surface_status": "planned",
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© CNSA — Chang'e 7. China's robotic precursor at the lunar south pole: orbiter, lander, rover and a small hopping probe to look into permanently shadowed craters for water ice. Reported target near the rim of Shackleton crater (about 88.8°S, 123.4°E). The launch, due in late August 2026, was called off on 23 August with no reason or new date given.",
+    "links": [
+      {
+        "l": "Chang'e 7 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Chang%27e_7",
+        "t": "intro"
+      },
+      {
+        "l": "China postpones Chang'e-7 lunar mission launch — Irish News / AP (Aug 2026)",
+        "u": "https://www.irishnews.com/news/world/china-abruptly-postpones-ambitious-change-7-lunar-mission-launch-JLQUEK3BENJYJEYRMWTGDCFXNE/",
+        "t": "deep"
       }
     ]
   },
@@ -1166,6 +1207,12 @@
         "l": "LROC — Beresheet impact site",
         "u": "https://www.lroc.asu.edu/posts/1119",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "beresheet",
+        "role": "spacecraft"
       }
     ]
   }

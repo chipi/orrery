@@ -1,0 +1,42 @@
+{
+  "intro": "Due giorni prima di raggiungere Venere, Vega 1 si divise in due: una capsula con un lander e un pallone entrò nell'atmosfera l'11 giugno 1985, mentre la sonda principale proseguiva verso la cometa di Halley. Il pallone galleggiò tra le nubi a circa 54 km di quota per circa 46 ore: il primo pallone scientifico mai volato su un altro pianeta. Le turbolenze della discesa attivarono in anticipo gli esperimenti di superficie del lander, tra cui la trivella, a circa 20 km di quota, così non campionò mai il suolo. Il 6 marzo 1986 la sonda passò a circa 8.900 km dal nucleo della cometa.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Un lander di tipo Venera e un pallone in un'unica capsula",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/02.webp",
+          "caption": "Componenti di una sonda Vega durante l'assemblaggio: il vettore che avrebbe proseguito fino alla cometa di Halley."
+        },
+        {
+          "src": "/images/missions/vega-1/04.webp",
+          "caption": "Una capsula di discesa Vega esposta: la sfera che portò il lander e il pallone fino a Venere."
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "title": "Venere",
+      "subtitle": "11 giugno 1985 — un lander al suolo, un pallone tra le nubi",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/03.webp",
+          "caption": "Il piano di Vega: la capsula entra nell'atmosfera di Venere, rilascia il pallone e il lander, e la sonda prosegue verso la cometa di Halley."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Cometa di Halley",
+      "subtitle": "6 marzo 1986 — a circa 8.900 km dal nucleo",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/01.webp",
+          "caption": "Il foglietto filatelico sovietico per lo studio internazionale della cometa di Halley: Edmond Halley, una sonda Vega e la cometa."
+        }
+      ]
+    }
+  ]
+}

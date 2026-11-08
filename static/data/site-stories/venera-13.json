@@ -1,0 +1,43 @@
+{
+  "site": "venera-13",
+  "intro": "Venera 13 landed on Venus on 1 March 1982, just east of Phoebe Regio, and kept working for 127 minutes in 457 °C heat under about 90 times the air pressure at sea level on Earth — four times its 32-minute design life. It sent the first colour pictures of the Venusian surface and drilled a sample of the ground, which its X-ray instrument found to be a potassium-rich basalt.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "A pressure sphere on a crush ring",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "The 1982 Soviet stamp for Venera 13 and its twin Venera 14, which landed four days later about 950 km away."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "127 minutes on Venus — landed 1 March 1982",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "A black-and-white frame from Venera 13: flat slabs of rock and dark soil, with the lander's own hardware along the edge. The camera looked out through a window and swept from side to side."
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "The colour panorama, reprocessed: the first colour view of the ground on Venus. The lander's own saw-toothed ring runs along the bottom of both halves."
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "Legacy",
+      "subtitle": "Still the last pictures from the surface of Venus",
+      "images": [
+        {
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Venus as radar maps show it, from Magellan, Pioneer Venus and Venera data. No spacecraft has sent pictures from the surface since Venera 13 and 14 in 1982."
+        }
+      ]
+    }
+  ]
+}

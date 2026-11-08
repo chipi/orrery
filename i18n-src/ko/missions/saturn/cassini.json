@@ -1,7 +1,7 @@
 {
   "name": "Cassini-Huygens",
   "vehicle": "Titan IVB / Centaur",
-  "payload": "토성 궤도선(건조 질량 ~5712 kg) + Huygens 강하 탐사기(~318 kg, ESA 제작, 2005-01-14 타이탄 착륙)",
+  "payload": "토성 궤도선(건조 질량 ~2523 kg) + Huygens 강하 탐사기(~318 kg, ESA 제작, 2005-01-14 타이탄 착륙)",
   "delta_v": "~2 km/s (토성 궤도 진입)",
   "type": "궤도선 + 착륙선 · 비행 완료",
   "first": "토성 궤도 13년 — Huygens는 2005-01-14 타이탄에 착륙(외태양계 최초의 연착륙)",

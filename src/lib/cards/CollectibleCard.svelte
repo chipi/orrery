@@ -19,6 +19,7 @@
   import { getImageProvenance } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
   import type { CardSpec } from './card-spec';
+  import { heroPositionFor } from '$lib/image-hero';
 
   type Props = { spec: CardSpec };
   let { spec }: Props = $props();
@@ -79,7 +80,14 @@
 
   <div class="hero">
     {#if spec.heroUrl}
-      <img class="hero-img" src={spec.heroUrl} alt="" loading="lazy" decoding="async" />
+      <img
+        class="hero-img"
+        src={spec.heroUrl}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        style:object-position={heroPositionFor(spec.heroUrl)}
+      />
     {/if}
     <div class="hero-fade"></div>
     <h2 class="title">{spec.title}</h2>

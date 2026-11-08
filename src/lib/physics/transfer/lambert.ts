@@ -44,6 +44,10 @@ export interface LambertResult {
  *    (slow / phasing transfers), monotonically INCREASING in a. Needed for the
  *    geocentric Earth→Moon grid's long TOF band (ADR-085): beyond ~5 d the
  *    minimum-energy ceiling, the only feasible transfer is the high path.
+ *
+ * `longWay` selects the transfer angle: false (default) is the short way (< 180°), true the long
+ * way (> 180°), where β → −β. The prograde heliocentric grids need it: a Venus or Mercury
+ * transfer that sweeps more than half an orbit, or any slow one, is long-way.
  */
 export function lambertTOF(
   a: number,
@@ -51,12 +55,13 @@ export function lambertTOF(
   c: number,
   mu: number,
   highPath: boolean = false,
+  longWay: boolean = false,
 ): number {
   if (a <= s / 2 + 1e-9) return 1e9;
   const sinAlpha = Math.sqrt(Math.min(1, s / (2 * a)));
   const sinBeta = Math.sqrt(Math.max(0, (s - c) / (2 * a)));
   const alpha = highPath ? 2 * Math.PI - 2 * Math.asin(sinAlpha) : 2 * Math.asin(sinAlpha);
-  const beta = 2 * Math.asin(sinBeta);
+  const beta = (longWay ? -2 : 2) * Math.asin(sinBeta);
   return Math.sqrt((a * a * a) / mu) * (alpha - Math.sin(alpha) - (beta - Math.sin(beta)));
 }
 
@@ -80,7 +85,8 @@ export function lambertTOF(
  * @param aMax bisection ceiling on the transfer semi-major axis (same units as r1); default AU-scale
  * @param opts `highPath: true` solves the slow/phasing HIGH branch (α → 2π − α),
  *   for TOF beyond the minimum-energy ceiling. Default (omitted / false) is the
- *   original LOW-branch solve — byte-identical for every existing caller.
+ *   original LOW-branch solve — byte-identical for every existing caller. `longWay: true`
+ *   solves the > 180° transfer (β → −β); default short way, byte-identical as before.
  */
 export function solveLambert(
   r1: readonly [number, number],
@@ -88,16 +94,19 @@ export function solveLambert(
   tof: number,
   mu: number,
   aMax: number = 200.0,
-  opts: { highPath?: boolean } = {},
+  opts: { highPath?: boolean; longWay?: boolean } = {},
 ): LambertResult | null {
   const highPath = opts.highPath ?? false;
+  const longWay = opts.longWay ?? false;
   const r1mag = Math.hypot(r1[0], r1[1]);
   const r2mag = Math.hypot(r2[0], r2[1]);
   const c = Math.hypot(r2[0] - r1[0], r2[1] - r1[1]);
   const s = (r1mag + r2mag + c) / 2;
 
   // Parabolic TOF — no solution faster than this is achievable.
-  const tParabolic = ((Math.pow(s, 1.5) - Math.pow(Math.abs(s - c), 1.5)) * Math.sqrt(2 / mu)) / 3;
+  const tParabolic =
+    ((Math.pow(s, 1.5) + (longWay ? 1 : -1) * Math.pow(Math.abs(s - c), 1.5)) * Math.sqrt(2 / mu)) /
+    3;
   if (tof < tParabolic * 0.98) return null;
 
   let aLo = s / 2 + 1e-6;
@@ -105,22 +114,22 @@ export function solveLambert(
 
   if (!highPath) {
     // LOW branch: lambertTOF is monotonically DECREASING in a.
-    if (lambertTOF(aLo, s, c, mu) < tof) return null;
-    if (lambertTOF(aHi, s, c, mu) > tof) return null;
+    if (lambertTOF(aLo, s, c, mu, false, longWay) < tof) return null;
+    if (lambertTOF(aHi, s, c, mu, false, longWay) > tof) return null;
     for (let i = 0; i < 52; i++) {
       const aMid = (aLo + aHi) / 2;
-      if (lambertTOF(aMid, s, c, mu) > tof) aLo = aMid;
+      if (lambertTOF(aMid, s, c, mu, false, longWay) > tof) aLo = aMid;
       else aHi = aMid;
     }
   } else {
     // HIGH branch: lambertTOF(..., true) is monotonically INCREASING in a
     // (min-energy TOF at a = s/2, →∞ as a grows). tof below the min-energy
     // floor belongs to the low branch; tof above aMax's reach is unsolvable.
-    if (lambertTOF(aLo, s, c, mu, true) > tof) return null;
-    if (lambertTOF(aHi, s, c, mu, true) < tof) return null;
+    if (lambertTOF(aLo, s, c, mu, true, longWay) > tof) return null;
+    if (lambertTOF(aHi, s, c, mu, true, longWay) < tof) return null;
     for (let i = 0; i < 52; i++) {
       const aMid = (aLo + aHi) / 2;
-      if (lambertTOF(aMid, s, c, mu, true) < tof) aLo = aMid;
+      if (lambertTOF(aMid, s, c, mu, true, longWay) < tof) aLo = aMid;
       else aHi = aMid;
     }
   }
@@ -138,11 +147,34 @@ export function solveLambert(
   const sinAlpha = Math.sqrt(Math.min(1, s / (2 * a)));
   const sinBeta = Math.sqrt(Math.max(0, (s - c) / (2 * a)));
   const alpha = highPath ? 2 * Math.PI - 2 * Math.asin(sinAlpha) : 2 * Math.asin(sinAlpha);
-  const beta = 2 * Math.asin(sinBeta);
+  const beta = (longWay ? -2 : 2) * Math.asin(sinBeta);
   const p =
     c > 1e-12
       ? ((4 * a * (s - r1mag) * (s - r2mag)) / (c * c)) * Math.sin((alpha + beta) / 2) ** 2
       : a; // degenerate (coincident endpoints) — unused, avoid /0
 
   return { a, v1, v2, p };
+}
+
+/**
+ * Prograde (counter-clockwise, the way every planet goes) Lambert transfer between two in-plane
+ * heliocentric positions: picks the short or long way from the actual transfer angle r1 → r2,
+ * then the low (fast) branch, falling back to the high (slow) one — the single solution a
+ * planet-to-planet porkchop cell has. `solveLambert` alone only knows chord geometry, so on its
+ * own it returns the short-way answer even when the prograde path is the long way, and nothing
+ * for flights slower than the minimum-energy ellipse.
+ */
+export function solveLambertPrograde(
+  r1: readonly [number, number],
+  r2: readonly [number, number],
+  tof: number,
+  mu: number,
+  aMax: number = 200.0,
+): LambertResult | null {
+  const cross = r1[0] * r2[1] - r1[1] * r2[0];
+  const longWay = cross < 0;
+  return (
+    solveLambert(r1, r2, tof, mu, aMax, { longWay }) ??
+    solveLambert(r1, r2, tof, mu, aMax, { longWay, highPath: true })
+  );
 }

@@ -1,0 +1,46 @@
+{
+  "intro": "Rosalind Franklin ist Europas erster Marsrover, gebaut für die Suche nach Spuren früheren Lebens. Sein Bohrer reicht 2 m unter die Oberfläche, tiefer als bei jedem Rover zuvor – dorthin, wo organische Moleküle vor der Strahlung geschützt sind, die sie nahe der Oberfläche zerstört. Der Rover war 2022 startbereit, für eine gemeinsame Mission mit Russland; diese Partnerschaft endete nach Russlands Überfall auf die Ukraine, und die ESA baute die Mission mit der NASA neu auf. Der Start ist für 2028 geplant, die Landung in Oxia Planum, einer Ebene aus tonreichem Gestein, das sich vor etwa vier Milliarden Jahren im Wasser ablagerte.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Sechs Räder, ein 2-Meter-Bohrer und ein Labor im Inneren",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/01.webp",
+          "caption": "Ein Modell von Rosalind Franklin in Originalgröße in einer Ausstellung: oben der Mast mit den Kameras, vorn der Bohrkasten, die Solarpaneele ausgeklappt."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/04.webp",
+          "caption": "Ein Modell des Rovers in seiner goldenen Thermalhülle, mit aufgerichtetem Mast und geöffneten Solarflügeln."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Erprobung",
+      "subtitle": "Den Mars auf der Erde proben",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/04.webp",
+          "caption": "Ein früher Rover-Prototyp bei Feldtests in Chiles Atacama-Wüste, nahe dem Paranal-Observatorium der ESO – einer der trockensten Orte der Erde steht für den Mars."
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "Landung",
+      "subtitle": "Oxia Planum – der geplante Landeplatz",
+      "images": [
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/02.webp",
+          "caption": "Die Eintritts- und Landeeinheit in ihrer ersten Auslegung, auseinandergezogen: unten der Hitzeschild, darüber die Plattform, die den Rover hinabträgt und von der er herunterfährt, oben die hintere Schale."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/01.webp",
+          "caption": "Ein Krater und sein Auswurf knapp südöstlich des Landeplatzes, aufgenommen vom Mars Reconnaissance Orbiter der NASA: Gestein, das aus der Tiefe herausgeschleudert wurde, ist die Art loser Steine, die der Rover untersuchen soll."
+        }
+      ]
+    }
+  ]
+}

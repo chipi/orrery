@@ -1,0 +1,27 @@
+{
+  "intro": "Il 27 novembre 1971, poche ore prima che Mars 2 entrasse in orbita, la sua capsula di discesa si separò e si diresse verso la superficie. Il sistema di discesa fallì — probabilmente perché la capsula entrò con un angolo troppo ripido —, il paracadute non si aprì e si schiantò: il primo oggetto costruito dall'uomo a raggiungere la superficie di Marte. A bordo c'era PrOP-M, un piccolo rover pensato per avanzare su pattini all'estremità di un cavo. L'orbiter continuò a funzionare fino al 1972.",
+  "chapters": [
+    {
+      "id": "arrival",
+      "title": "Arrivo",
+      "subtitle": "27 novembre 1971 — il primo oggetto su Marte",
+      "images": [
+        {
+          "src": "/images/missions/mars2/02.webp",
+          "caption": "Il francobollo sovietico del 1972 per la stazione automatica Mars 2: il gagliardetto che portava raggiunse il pianeta il 27 novembre 1971."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "La stessa capsula di Mars 3",
+      "images": [
+        {
+          "src": "/images/missions/mars2/03.webp",
+          "caption": "Modello da museo del modulo di discesa di Mars 3: Mars 2 portava lo stesso progetto. Mars 3 atterrò dolcemente cinque giorni dopo e trasmise un segnale per 14,5 secondi."
+        }
+      ]
+    }
+  ]
+}

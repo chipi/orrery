@@ -3,9 +3,9 @@
   "vehicle": "H-IIA 202",
   "payload": "730 kg Startmasse; 200 kg Lander; 2 Mikro-Rover (LEV-1, LEV-2)",
   "delta_v": "~3 km/s",
-  "type": "PRÄZISIONSLANDER · AKTIV",
+  "type": "PRÄZISIONSLANDER · GEFLOGEN",
   "first": "Erste Präzisionslandung innerhalb von 100 m Entfernung vom Ziel auf einer anderen Welt",
-  "description": "Bis SLIM hatten Mondlandungen eine Zielgenauigkeit im Kilometerbereich. Der Smart Lander von JAXA zeigte eine Genauigkeit von 100 m – die Präzision, die für bemannte Missionen zum Andocken an vorpositionierte Fracht, für Probenrückführungs-Aufstiegsfahrzeuge zum Finden ihrer Orbitalpartner und für jede zukünftige Architektur erforderlich ist, die von der Landung an bestimmten wissenschaftlich wertvollen Orten abhängt. SLIM leistete auch Pionierarbeit beim niederenergetischen ballistischen Transfer zum Mond. Die Ankunft dauerte 135 Tage, verbrauchte aber weniger Treibstoff als direkte Flugbahnen. Ein Beweis für die Geduld, die interplanetare Missionen aufbringen können, wenn der Zeitplan nicht die verbindliche Einschränkung darstellt.",
+  "description": "Bis SLIM hatten Mondlandungen eine Zielgenauigkeit im Kilometerbereich. Der Smart Lander von JAXA zeigte eine Genauigkeit von 100 m – die Präzision, die für bemannte Missionen zum Andocken an vorpositionierte Fracht, für Probenrückführungs-Aufstiegsfahrzeuge zum Finden ihrer Orbitalpartner und für jede zukünftige Architektur erforderlich ist, die von der Landung an bestimmten wissenschaftlich wertvollen Orten abhängt. SLIM nutzte auch einen niederenergetischen ballistischen Transfer zum Mond (Pionier war Hiten 1991). Die Ankunft dauerte 135 Tage, verbrauchte aber weniger Treibstoff als direkte Flugbahnen. Ein Beweis für die Geduld, die interplanetare Missionen aufbringen können, wenn der Zeitplan nicht die verbindliche Einschränkung darstellt.",
   "events": [
     {
       "met": 0,
@@ -28,7 +28,7 @@
     {
       "met": 135,
       "label": "LANDUNG",
-      "note": "Sanfte Landung im Shioli-Krater 2024-01-19 15:20 UTC. Innerhalb der Zielgenauigkeit: ~55 m außerhalb der Mitte.",
+      "note": "Sanfte Landung im Shioli-Krater 2024-01-19 15:20 UTC. Innerhalb der Zielgenauigkeit: etwa 10 m vom Ziel entfernt.",
       "type": "nominal"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 144,
       "label": "STROM WIEDERHERGESTELLT",
-      "note": "Sonnenwinkel ändert sich; Sonnenkollektoren erzeugen Strom; Der Betrieb wurde für einen Mondtag wieder aufgenommen.",
+      "note": "Sonnenwinkel ändert sich; Sonnenkollektoren erzeugen Strom; der Lander überstand drei Mondnächte, mit Kontakt bis April 2024.",
       "type": "info"
     }
   ],

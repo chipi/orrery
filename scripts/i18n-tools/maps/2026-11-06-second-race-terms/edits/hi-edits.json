@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.26.md",
+    "term": "launch window",
+    "decision": "change",
+    "find": "प्रक्षेपण अवधि से एक दिन पहले",
+    "replace": "प्रक्षेपण विंडो से एक दिन पहले"
+  }
+]

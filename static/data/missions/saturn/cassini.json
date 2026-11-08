@@ -11,7 +11,7 @@
   "arrival_date": "2004-07-01",
   "transit_days": 2451,
   "vehicle": "Titan IVB / Centaur",
-  "payload": "Saturn orbiter (~5712 kg dry) + Huygens descent probe (~318 kg, ESA-built, landed on Titan 2005-01-14)",
+  "payload": "Saturn orbiter (~2523 kg dry) + Huygens descent probe (~318 kg, ESA-built, landed on Titan 2005-01-14)",
   "delta_v": "~2 km/s (Saturn orbit insertion)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",

@@ -1,0 +1,27 @@
+{
+  "intro": "Mars 6 kam am 12. März 1974 an. Ihr Lander sendete während des ganzen Abstiegs durch die Atmosphäre – die ersten Messungen in der Marsluft selbst –, doch ein Fehler in der Elektronik machte einen großen Teil der Daten unbrauchbar, und der Kontakt brach kurz vor dem Aufsetzen in Margaritifer Terra ab.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Eine von vier sowjetischen Marssonden von 1973",
+      "images": [
+        {
+          "src": "/images/missions/mars6/01.webp",
+          "caption": "Das Modell einer sowjetischen Marssonde dieser Baureihe in einer Ausstellung, oben die große Parabolantenne."
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "title": "Abstieg",
+      "subtitle": "12. März 1974 – Daten auf dem ganzen Weg nach unten",
+      "images": [
+        {
+          "src": "/images/missions/mars6/02.webp",
+          "caption": "Die sowjetische Briefmarke von 1972 zu fünfzehn Jahren Raumfahrt: ein Lander auf der Marsoberfläche."
+        }
+      ]
+    }
+  ]
+}

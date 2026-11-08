@@ -1,0 +1,46 @@
+{
+  "intro": "Artemis IV is planned to put people on the Moon again in 2028 — the first landing since Apollo 17 in 1972, and the first crewed landing near the south pole. Apollo went to visit. This time the aim is to stay: the water ice in the polar craters could give drinking water, air and rocket propellant, and NASA plans at least one landing a year from then on, building towards a base. It is a race again, too. Announcing the plan in February 2026, NASA Administrator Jared Isaacman said that \"with credible competition from our greatest geopolitical adversary increasing by the day, we need to move faster\" — China aims to land its own astronauts before 2030.",
+  "chapters": [
+    {
+      "id": "landing",
+      "title": "Landing",
+      "subtitle": "2028 — two of the four astronauts go down to the south pole",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/03.webp",
+          "caption": "Artist's concept: Orion meets a Starship lander in lunar orbit, where the crew changes ship. NASA has not yet said whether SpaceX's Starship or Blue Origin's Blue Moon will carry Artemis IV's crew; it will pick the one that is ready first."
+        },
+        {
+          "src": "/images/missions/artemis4/02.webp",
+          "caption": "Artist's concept: a Starship lander on the lunar surface, Earth above the horizon."
+        },
+        {
+          "src": "/images/missions/artemis4/01.webp",
+          "caption": "Artist's concept: astronauts in Axiom's lunar spacesuits beside the lander at the south pole, where they are to spend about a week."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Orion and its European service module",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/04.webp",
+          "caption": "The European Service Module for Artemis IV — Orion's engine, power and air — during processing at Kennedy Space Center in July 2026."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "What comes next",
+      "subtitle": "The first of many landings",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/05.webp",
+          "caption": "The cratered edge of the South Pole–Aitken basin, photographed by the Artemis II crew. The landings that follow Artemis IV are aimed at this polar region; NASA has also proposed PROMISE, a rover to scout it for a base, and China plans a research station near the south pole by about 2035."
+        }
+      ]
+    }
+  ]
+}

@@ -2,22 +2,26 @@
   "stops": [
     {
       "id": "sol-56",
+      "label": "cratere Eagle"
+    },
+    {
+      "id": "sol-95",
       "label": "cratere Endurance"
     },
     {
-      "id": "sol-1232",
+      "id": "sol-652",
       "label": "cratere Erebus"
     },
     {
-      "id": "sol-1820",
+      "id": "sol-952",
       "label": "cratere Victoria"
     },
     {
-      "id": "sol-3010",
+      "id": "sol-2681",
       "label": "Arrivo al bordo del cratere Endeavour"
     },
     {
-      "id": "sol-4500",
+      "id": "sol-4081",
       "label": "Marathon Valley"
     }
   ]

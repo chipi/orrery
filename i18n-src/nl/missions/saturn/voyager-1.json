@@ -1,7 +1,7 @@
 {
   "name": "Voyager 1",
   "vehicle": "Titan IIIE / Centaur",
-  "payload": "Planetair voorbijvlucht-ruimtevaartuig; drie RTG-modules met samen ~470 W bij lancering (afnemend tot ~250 W nu)",
+  "payload": "Planetair voorbijvlucht-ruimtevaartuig; drie RTG-modules met samen ~470 W bij lancering (afnemend tot ~220 W nu)",
   "delta_v": "~17 km/s (cumulatief, zwaartekrachtsteunen van Jupiter + Saturnus)",
   "type": "VOORBIJVLUCHT · GEVLOGEN",
   "first": "Het verste door mensen gemaakte object — momenteel ongeveer 170 AE van de Zon in interstellaire ruimte",

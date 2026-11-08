@@ -32,7 +32,7 @@ The `category` field + the directory `static/data/fleet/<category>/` must agree.
 
 ### 1–3 · Core data
 
-Base entry required (`fleet-entry.schema.json`): `id, name, category, agency, country, manufacturer, first_flight, status, era, epoch, credit, links`. Index required (`fleet-index.schema.json`): `id, name, category, agency, country, era, epoch, status, first_flight, tagline`. Overlay required (`fleet-overlay.schema.json`): `description` (+ `name`, `tagline`, `best_known_for` carried alongside). `id` is `^[a-z0-9-]+$`; copy the shape from the nearest analog (`sls-block-1b` authored from `sls-block-1.json`). `era` is a range (`"2011-now"`); `epoch` is a program tag (`"lunar-return"`).
+Base entry required (`fleet-entry.schema.json`): `id, name, category, agency, country, manufacturer, first_flight, status, era, epoch, credit, links`. Index required (`fleet-index.schema.json`): `id, name, category, agency, country, era, epoch, status, first_flight, tagline`. Overlay required (`fleet-overlay.schema.json`): `description` (+ `name`, `tagline`, `best_known_for` carried alongside). `id` is `^[a-z0-9-]+$`; copy the shape from the nearest analog (`sls-block-1b` authored from `sls-block-1.json`). `era` is a range (`"2011-now"`); `epoch` is a program tag (`"lunar-return"`). The index `name` and `tagline` must equal the en-US overlay's: en-US cards read the index directly (`getFleetIndex` in `src/lib/data/fleet.ts`; other locales take both from their overlay), and `validate-data` fails on a difference.
 
 ### 5 · Symmetry is derived, not authored
 

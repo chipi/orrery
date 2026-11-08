@@ -22,11 +22,14 @@
  * every swap proposal in the current audit; future audits with new
  * proposals would re-run this to refresh the JSON.
  *
- * Idempotent: a 2nd run on an unchanged audit overwrites the JSON with
- * identical content.
+ * Since the 2026-11 hero reviews the override files are hand-curated (slots
+ * removed by hand, reviewed crop `position`s), so an existing file is skipped.
+ * `--force` merges the audit into it: hand-written entries and positions are
+ * kept (a position is dropped only when the audit picks another slot), but
+ * proposals removed by hand come back — read the diff.
  *
  * Run:
- *   npx tsx scripts/generate-hero-overrides.ts
+ *   npx tsx scripts/generate-hero-overrides.ts [--force]
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -67,21 +70,47 @@ async function main(): Promise<void> {
       console.log(`  ${surface}: no swap proposals → no override file written`);
       continue;
     }
-    const overrides: Record<string, { slot: string; reason: string; approved_at: string }> = {};
-    for (const r of rows) {
-      overrides[r.id] = {
-        slot: r.slot,
-        reason: r.reason,
-        approved_at: APPROVED_AT,
+    const outPath = join(OUT_DIR, `${surface}-hero-overrides.json`);
+    // The override files are hand-curated since the 2026-11 hero reviews (slots removed by hand,
+    // crop positions): an existing file is left alone unless --force.
+    if (!process.argv.includes('--force')) {
+      try {
+        await readFile(outPath, 'utf8');
+        console.log(`  ${surface}: ${outPath} exists (hand-curated) — skipped; --force merges`);
+        continue;
+      } catch {
+        /* no file yet: generate it */
+      }
+    }
+    // Merge into the existing file: hand-written overrides and reviewed crop `position`s are
+    // kept. A position belongs to its slot, so it is dropped when the audit picks another slot.
+    type Override = { slot: string; reason: string; approved_at: string; position?: string };
+    let existing: Record<string, Override> = {};
+    let sourceAudit = `${surface}-hero-audit.md`;
+    try {
+      const prevFile = JSON.parse(await readFile(outPath, 'utf8')) as {
+        overrides?: typeof existing;
+        source_audit?: string;
       };
+      existing = prevFile.overrides ?? {};
+      sourceAudit = prevFile.source_audit ?? sourceAudit;
+    } catch {
+      existing = {};
+    }
+    const overrides: Record<string, Override> = { ...existing };
+    for (const r of rows) {
+      const prev = existing[r.id];
+      overrides[r.id] =
+        prev && prev.slot === r.slot
+          ? prev
+          : { slot: r.slot, reason: r.reason, approved_at: APPROVED_AT };
     }
     const file = {
       version: '1.0',
       generated_at: new Date().toISOString(),
-      source_audit: `${surface}-hero-audit.md`,
+      source_audit: sourceAudit,
       overrides,
     };
-    const outPath = join(OUT_DIR, `${surface}-hero-overrides.json`);
     await writeFile(outPath, JSON.stringify(file, null, 2) + '\n');
     console.log(`  ${surface}: ${rows.length} overrides → ${outPath}`);
     total += rows.length;

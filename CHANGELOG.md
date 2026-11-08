@@ -8,6 +8,70 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [0.9.7] — Unreleased
+
+A surfaces and accuracy release: site tags arrive by zoom stage on every body, a landing site's
+STORY opens with how the craft came down and what it is made of, Mars rovers get a Journey tab,
+mission blueprints and a zooming viewer join the drawings, and every fact-check finding, gallery
+picture and credit was re-checked.
+
+### Added
+
+- **Site tags by zoom stage.** Screen-space tags replace the 3D markers: every route opens on a
+  bare globe, icons appear first, cards later, only near the view centre, with touching tags
+  grouped and the nation legend arriving with the first icons.
+- **Landing sites tell how they landed.** The STORY tab opens with a landing-sequence sheet (entry,
+  descent, touchdown, after landing) for 39 sites, the drawings of the craft on the surface, and
+  36 exploded cutaways of the landers and rovers, each linking to its `/fleet` entry.
+- **Mars rover journeys.** A Journey tab with the landing, stops and photos in sol order, a replay
+  of the drive, an elevation profile and 24 photos pinned on the route. Spirit, Opportunity and
+  Zhurong follow their real paths, coloured by sol.
+- **Mission blueprints.** Indigo mission sheets for Voyager 2, Cassini, Apollo 11, Rosetta,
+  Ulysses, New Horizons, Venera 13, Dawn, Galileo, Hayabusa2, Juno, BepiColombo, JUICE, Giotto,
+  Sputnik 1, Vostok 1, Apollo–Soyuz and Pioneer 10, on the mission panel and in the colophon.
+- **A viewer that zooms.** The shared image viewer zooms by wheel, pinch or double tap, and
+  drawings open as a set (anatomy, then exploded view; landing sheet, then each craft).
+- **A FAILED filter on `/missions`** for the five missions that missed their objective (Apollo 1,
+  Apollo 13, Soyuz 1, Schiaparelli, Beresheet).
+- **The second race on the Moon.** Long March 10, Mengzhou, Lanyue and PROMISE in the fleet,
+  Chang'e 7 as a planned site, and a new section in the essay "The Practice Ground".
+- **More site stories.** Venera 13, Vega 1, Vega 2, Mars 2, Mars 6, Artemis IV and Rosalind
+  Franklin, all 14 locales; a story can end with a card to its essay.
+- **Artemis 4 polar imagery.** A 400 km polar-stereographic square at the south pole, with real
+  terrain at every zoom and no pinch.
+- **More ground views.** Full-circle panoramas for Apollo 12, 14, 15 and 17 and Opportunity (Eagle
+  Crater), pad panoramas at Gagarin's Start and Sriharikota; "Stand here" appears only where a
+  ground view exists.
+- **`/colophon`** lists landing sheets, exploded views and blueprints; each section shows 10 items
+  with a Show all button, two to a row on phones.
+
+### Changed
+
+- **Planets are eccentric.** Earth and the other planets use their orbital eccentricity in the
+  shared transfer model and on `/fly`, and the porkchop plots take the transfer velocity at both
+  ends from vectors (ADR-095). The Mars delta-v is 5.53 (was 5.59).
+- **Cards, covers and panel heroes use reviewed crop positions**, so heads and spacecraft are no
+  longer cut off (55 heroes of 561 moved off the centre).
+- **Smaller first loads.** The collectible card loads when a panel opens: `/missions` 133 to 112
+  KB and `/fleet` 104 to 89 KB (brotli, as prod builds).
+
+### Fixed
+
+- **Fact-check.** All 793 findings re-checked against the live text and the remaining errors fixed
+  in 14 locales; mission, fleet and site facts corrected (dates, masses, distances, launch and
+  landing times). English fleet cards no longer show 101 stale taglines.
+- **Galleries and credits.** Gallery pictures that were diagrams, patches, stamps,
+  repeats or the wrong subject replaced or dropped across missions, fleet, sites, bodies and
+  stations; credits traced to the file each picture is (311 placeholder credits remain, down from
+  411). The rover traverse data (NASA MMGIS, PDS Geosciences Node) is credited on `/credits`.
+- **Audio tours.** All 32 episodes re-listened against their captions; stages that missed their
+  words or never moved the camera were fixed and re-timed.
+- **Surface views.** Opening views face the right way, the nation legend fades instead of
+  vanishing, Chandrayaan-3's context crop keeps real shadows, Earth re-entry descents load the
+  day map, and `/fly` loops draw smooth paths.
+- **Security scan.** 175 open CodeQL alerts triaged: 52 fixed in code, 7 dismissed with reasons,
+  the rest removed by a scanner config.
+
 ## [0.9.6] — 2026-11-04
 
 A translation and glossary release: the science, essays and program texts are read and fixed in

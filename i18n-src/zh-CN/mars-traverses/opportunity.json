@@ -2,22 +2,26 @@
   "stops": [
     {
       "id": "sol-56",
+      "label": "鹰撞击坑"
+    },
+    {
+      "id": "sol-95",
       "label": "坚忍撞击坑"
     },
     {
-      "id": "sol-1232",
+      "id": "sol-652",
       "label": "厄瑞玻斯撞击坑"
     },
     {
-      "id": "sol-1820",
+      "id": "sol-952",
       "label": "维多利亚撞击坑"
     },
     {
-      "id": "sol-3010",
+      "id": "sol-2681",
       "label": "抵达奋斗撞击坑边缘"
     },
     {
-      "id": "sol-4500",
+      "id": "sol-4081",
       "label": "Marathon Valley"
     }
   ]

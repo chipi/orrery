@@ -6,7 +6,7 @@
   "type": "BEMAND SUBORBITAAL · GEVLOGEN",
   "first": "Tweede Amerikaanse suborbitale vlucht; door een storing aan het luik ging de capsule verloren (teruggevonden in 1999)",
   "dispatch": "Liberty Bell 7 vloog foutloos en wordt vooral herinnerd om wat er gebeurde nadat de vlucht was afgelopen. Gus Grissoms suborbitale sprong herhaalde die van Shepard — bewijs dat de eerste vlucht geen toeval was — maar op het water sprong het nieuwe explosieve luik vanzelf open, liep de capsule vol water, en zonk naar de bodem van de Atlantische Oceaan terwijl Grissom bijna verdronk in zijn vollopende pak. Of hij de ontsteker had aangeraakt of dat het uit zichzelf afging — daarover werd de rest van zijn leven gediscussieerd en het werd nooit beslecht. De werkelijke les van deze vlucht was stiller en bruikbaarder: het gevaarlijkste deel van een ruimtevlucht is niet altijd de ruimtevlucht zelf.",
-  "description": "Gus Grissoms suborbitale vlucht van 15 minuten — tweede Amerikaan in de ruimte, eerste vlucht met een explosief noodluik. Na de landing in zee sprong het luik voortijdig open, liep de capsule vol water, en zonk Liberty Bell 7 naar een diepte van 4900 m; Grissom ontsnapte maar zijn pak liep vol water en hij verdronk bijna tijdens het ophalen met de helikopter. De oorzaak van het voortijdig openspringen van het luik bleef decennia omstreden; Grissom hield vol dat hij de ontsteker niet had aangeraakt. Teruggevonden op 1999-07-20 door een expeditie van Oceaneering/Discovery Channel, gerestaureerd en nu tentoongesteld in het Kansas Cosmosphere & Space Center, Hutchinson KS. Het boek van Tom Wolfe / de film uit 1983 The Right Stuff dramatiseerde deze vlucht en de luikcontroverse.",
+  "description": "Gus Grissoms suborbitale vlucht van 15 minuten — tweede Amerikaan in de ruimte, eerste Mercury-vlucht met een explosief noodluik. Na de landing in zee sprong het luik voortijdig open, liep de capsule vol water, en zonk Liberty Bell 7 naar een diepte van 4900 m; Grissom ontsnapte maar zijn pak liep vol water en hij verdronk bijna tijdens het ophalen met de helikopter. De oorzaak van het voortijdig openspringen van het luik bleef decennia omstreden; Grissom hield vol dat hij de ontsteker niet had aangeraakt. Teruggevonden op 1999-07-20 door een expeditie van Oceaneering/Discovery Channel, gerestaureerd en nu tentoongesteld in het Kansas Cosmosphere & Space Center, Hutchinson KS. Het boek van Tom Wolfe / de film uit 1983 The Right Stuff dramatiseerde deze vlucht en de luikcontroverse.",
   "events": [
     {
       "met": 0,
@@ -15,15 +15,15 @@
       "type": "nominal"
     },
     {
-      "met": 0.000018,
+      "met": 0.0035,
       "label": "APOGEUM",
       "note": "Apogeum 190 km na 2,5 minuten; ~5 min gewichtloosheid.",
       "type": "info"
     },
     {
-      "met": 0.000174,
+      "met": 0.0108,
       "label": "WATERSPLASHDOWN",
-      "note": "Atlantische Oceaan, 480 km van de lanceerplaats. Het luik werd voortijdig afgeschoten — capsule liep vol water en zonk. Grissom ontsnapte; geborgen door de USS Randolph.",
+      "note": "Atlantische Oceaan, 486 km van de lanceerplaats. Het luik werd voortijdig afgeschoten — capsule liep vol water en zonk. Grissom ontsnapte; geborgen door de USS Randolph.",
       "type": "warning"
     },
     {

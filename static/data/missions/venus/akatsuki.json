@@ -14,7 +14,7 @@
   "payload": "517 kg (incl. 196 kg propellant)",
   "delta_v": "~1.2 km/s",
   "data_quality": "good",
-  "credit": "© JAXA / ISAS — public domain. Recovered from a 2010 VOI failure (clogged oxidiser check valve) and inserted into Venus orbit on a backup attempt 2015-12-07 using attitude-control thrusters. Contact lost 2024; JAXA declared operations complete 2025-09-18.",
+  "credit": "© JAXA / ISAS — public domain. Recovered from a 2010 VOI failure (salt-blocked helium check valve to the fuel tank) and inserted into Venus orbit on a backup attempt 2015-12-07 using attitude-control thrusters. Contact lost 2024; JAXA declared operations complete 2025-09-18.",
   "links": [
     {
       "l": "Akatsuki (spacecraft) — Wikipedia",
@@ -71,7 +71,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — H-IIA 202",
-        "description": "Tanegashima Space Center, 2010-05-20. Shared a launch with the IKAROS solar-sail demonstrator (the first interplanetary solar sail) and three university CubeSats. Akatsuki — \"dawn\" in Japanese — was Japan's first Venus mission, designed for a 30-month primary mission to study Venus atmospheric super-rotation."
+        "description": "Tanegashima Space Center, 2010-05-20. Shared a launch with the IKAROS solar-sail demonstrator (the first interplanetary solar sail) and four university small satellites. Akatsuki — \"dawn\" in Japanese — was Japan's first Venus mission, designed for a 30-month primary mission to study Venus atmospheric super-rotation."
       },
       {
         "met_days": 0.005,
@@ -106,8 +106,8 @@
       {
         "met_days": 201.005,
         "type": "anomaly",
-        "label": "VOI-1 failure — clogged oxidiser check valve",
-        "description": "Approximately 152 seconds into the planned 720-second VOI burn, the Orbit Maneuvering Engine throttled off when salt crystal buildup in an oxidiser check valve disrupted the propellant mix and caused asymmetric thrust + attitude tumble. Akatsuki sailed past Venus into solar orbit. Recovery plan: keep the spacecraft alive in solar orbit until the next Venus encounter window (2015 or 2016), then attempt VOI again using the attitude-control thrusters."
+        "label": "VOI-1 failure — salt-blocked helium check valve",
+        "description": "Approximately 152 seconds into the planned 720-second VOI burn, the probe entered safe mode: salt deposits had blocked a check valve between the helium pressurant tank and the fuel tank, and the Orbit Maneuvering Engine, starved of fuel, ran oxidiser-rich and overheated. Akatsuki sailed past Venus into solar orbit. Recovery plan: keep the spacecraft alive in solar orbit until the next Venus encounter window (2015 or 2016), then attempt VOI again using the attitude-control thrusters."
       },
       {
         "met_days": 1000,
@@ -119,7 +119,7 @@
         "met_days": 2027,
         "type": "arrival",
         "label": "Venus approach (second attempt)",
-        "description": "2015-12-07 — five years and one day after the first attempt. Akatsuki arrives at Venus again."
+        "description": "2015-12-07 — exactly five years after the first attempt. Akatsuki arrives at Venus again."
       },
       {
         "met_days": 2027.005,

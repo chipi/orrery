@@ -112,13 +112,13 @@
         "met_days": 208,
         "type": "arrival",
         "label": "Mars approach + cruise-stage separation",
-        "description": "2004-01-03. Cruise stage jettisoned 15 minutes before entry; backshell + heat shield + lander bounce-cushion entered Mars's atmosphere at 5.4 km/s."
+        "description": "2004-01-04 UTC (the evening of 3 January in California). Cruise stage jettisoned 15 minutes before entry; backshell + heat shield + lander bounce-cushion entered Mars's atmosphere at 5.4 km/s."
       },
       {
         "met_days": 208.005,
         "type": "edl_or_oi",
         "label": "Mars EDL — airbag landing in Gusev Crater",
-        "description": "\"Six minutes from hell.\" Heat shield braked from 5.4 km/s to Mach 1.8; parachute deployed at 8.5 km altitude; retrorockets fired 12 m up; airbag-cocooned lander dropped, bounced 28 times across the crater floor, and rolled to a stop 250 m from its first impact at 14.57°S, 175.47°E in Gusev Crater. Spirit rolled off the lander petals six sols later. Found hematite-bearing rocks in the Columbia Hills suggesting persistent water. Stuck in soft sulphate-rich soil at \"Troy\" 2009-04; mission declared ended 2011-05-25."
+        "description": "\"Six minutes from hell.\" Heat shield braked from 5.4 km/s to Mach 1.8; parachute deployed at 8.5 km altitude; retrorockets fired 12 m up; airbag-cocooned lander dropped, bounced 28 times across the crater floor, and rolled to a stop 250 m from its first impact at 14.57°S, 175.47°E in Gusev Crater. Spirit rolled off the lander petals twelve sols later. Found hematite-bearing rocks in the Columbia Hills suggesting persistent water. Stuck in soft sulphate-rich soil at \"Troy\" 2009-04; mission declared ended 2011-05-25."
       }
     ],
     "interplanetary_profile": {

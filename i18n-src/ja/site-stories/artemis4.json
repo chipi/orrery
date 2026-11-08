@@ -1,0 +1,46 @@
+{
+  "intro": "Artemis IV は2028年に再び人を月面に送る計画です。1972年の Apollo 17 以来の着陸であり、南極付近への初の有人着陸になります。Apollo は訪れるだけでした。今回の目的はとどまることです。極域のクレーターにある水の氷は飲み水や空気、ロケット推進剤になりうるもので、NASA はそれ以降、少なくとも年1回の着陸を重ねて基地を目指します。そして、これは再び競争でもあります。2026年2月に計画を発表した際、NASA 長官のジャレッド・アイザックマンは「最大の地政学的競争相手による本格的な競争が日ごとに強まるなか、われわれはもっと速く進まなければならない」と述べました。中国は2030年までに自国の宇宙飛行士を月面に降ろすことを目指しています。",
+  "chapters": [
+    {
+      "id": "landing",
+      "title": "着陸",
+      "subtitle": "2028年 — 4人のうち2人が南極へ降りる",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/03.webp",
+          "caption": "想像図：月周回軌道で Orion が Starship 着陸機とドッキングし、乗員が乗り移る。Artemis IV の乗員を運ぶのが SpaceX の Starship か Blue Origin の Blue Moon か、NASA はまだ明らかにしておらず、先に準備が整ったほうを選ぶとしている。"
+        },
+        {
+          "src": "/images/missions/artemis4/02.webp",
+          "caption": "想像図：月面の Starship 着陸機。地平線の上に地球が浮かぶ。"
+        },
+        {
+          "src": "/images/missions/artemis4/01.webp",
+          "caption": "想像図：南極の着陸機のそばに立つ、Axiom の月面宇宙服を着た宇宙飛行士。滞在は約1週間の予定。"
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "Orion と欧州サービスモジュール",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/04.webp",
+          "caption": "Artemis IV 用の欧州サービスモジュール。Orion のエンジン、電力、空気を担う。2026年7月、ケネディ宇宙センターでの整備中。"
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "その先へ",
+      "subtitle": "数多くの着陸の最初の一回",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/05.webp",
+          "caption": "Artemis II の乗員が撮影した、クレーターだらけの南極エイトケン盆地の縁。Artemis IV に続く着陸はこの極域を目指す。NASA は基地の候補地を探る探査車 PROMISE も提案しており、中国は2035年ごろまでに南極付近に研究ステーションを設ける計画だ。"
+        }
+      ]
+    }
+  ]
+}

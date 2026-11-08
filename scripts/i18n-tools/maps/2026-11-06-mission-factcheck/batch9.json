@@ -1,0 +1,660 @@
+[
+  {
+    "m": "asteroid/near-shoemaker",
+    "base": [
+      [
+        "The spacecraft was briefly lost due to a thruster anomaly during a deep-space manoeuvre two weeks earlier — recovered via the Earth flyby geometry.",
+        "The spacecraft was briefly lost after a thruster anomaly aborted its burn of 1998-12-20, 11 months later; NEAR flew past Eros instead and returned 14 months later."
+      ],
+      [
+        "916 km orbital insertion burn into a 200 × 366 km elliptical orbit",
+        "orbital insertion burn into a 321 × 366 km elliptical orbit"
+      ]
+    ]
+  },
+  {
+    "m": "bennu/osiris-rex",
+    "text": {
+      "en-US": [["1075", "880"]],
+      "ar": [["1075", "880"]],
+      "de": [["1075", "880"]],
+      "es": [["1075", "880"]],
+      "fr": [["1075", "880"]],
+      "hi": [["1075", "880"]],
+      "it": [["1075", "880"]],
+      "ja": [["1075", "880"]],
+      "ko": [["1075", "880"]],
+      "nl": [["1075", "880"]],
+      "pt-BR": [["1075", "880"]],
+      "ru": [["1075", "880"]],
+      "sr-Cyrl": [["1075", "880"]],
+      "zh-CN": [["1075", "880"]]
+    },
+    "base": [
+      ["1075 kg dry", "880 kg dry"],
+      ["Surveyed Bennu for 1.5 years", "Surveyed Bennu for about two and a half years"],
+      ["in the half-second it was in contact", "in the few seconds it was in contact"],
+      [
+        "rerouted to a 2029-04-13 rendezvous with asteroid Apophis (which will pass within 31,000 km of Earth that same day)",
+        "rerouted toward asteroid Apophis, which passes about 32,000 km from Earth on 2029-04-13; OSIRIS-APEX arrives later that month"
+      ]
+    ]
+  },
+  {
+    "m": "didymos/hera",
+    "base": [
+      [
+        "\"met_days\": 300,\n        \"type\": \"tcm\",\n        \"label\": \"DSM-2\",\n        \"description\": \"Post-Mars-flyby trajectory correction targeting the Didymos rendezvous.\"",
+        "\"met_days\": 509,\n        \"type\": \"tcm\",\n        \"label\": \"DSM-2\",\n        \"description\": \"Second deep-space manoeuvre, in February 2026 after the Mars flyby, lining Hera up for its November 2026 rendezvous with Didymos.\""
+      ]
+    ]
+  },
+  {
+    "m": "dimorphos/dart",
+    "text": {
+      "en-US": [["(4.2%)", "(~4.6%)"]],
+      "ar": [["(4.2%)", "(~4.6%)"]],
+      "hi": [["(4.2%)", "(~4.6%)"]],
+      "ja": [["（4.2%）", "（~4.6%）"]],
+      "ko": [["(4.2%)", "(~4.6%)"]],
+      "zh-CN": [["（4.2%）", "（~4.6%）"]],
+      "de": [["(4,2%)", "(~4,6%)"]],
+      "it": [["(4,2%)", "(~4,6%)"]],
+      "nl": [["(4,2%)", "(~4,6%)"]],
+      "pt-BR": [["(4,2%)", "(~4,6%)"]],
+      "ru": [["(4,2%)", "(~4,6%)"]],
+      "sr-Cyrl": [["(4,2%)", "(~4,6%)"]],
+      "es": [["(4,2 %)", "(~4,6 %)"]],
+      "fr": [["(4,2 %)", "(~4,6 %)"]]
+    },
+    "base": [
+      ["(4.2% reduction", "(~4.6% reduction"],
+      ["flew past at 1,000 km altitude", "flew past about 57 km from Dimorphos"]
+    ]
+  },
+  {
+    "m": "eurybates/lucy",
+    "text": {
+      "en-US": [
+        [
+          "(incl. 1003 kg of hydrazine — Lucy carries more propellant than dry mass, by a wide margin)",
+          "(821 kg dry)"
+        ],
+        ["4-km C-type asteroid.", "C-type contact-binary asteroid about 8 km long."]
+      ],
+      "ar": [
+        [
+          "(بما في ذلك 1003 كغ من الهيدرازين — تحمل Lucy من الوقود الدافع أكثر بكثير من كتلتها الجافة)",
+          "(الكتلة الجافة 821 كغ)"
+        ],
+        ["كويكب من النوع C بطول 4 كم.", "كويكب ثنائي التلامس من النوع C بطول نحو 8 كم."]
+      ],
+      "de": [
+        [
+          "(einschl. 1003 kg Hydrazin — Lucy trägt deutlich mehr Treibstoff als Trockenmasse)",
+          "(821 kg Trockenmasse)"
+        ],
+        ["4-km C-Typ-Asteroid.", "C-Typ-Kontaktbinärasteroid von etwa 8 km Länge."]
+      ],
+      "es": [
+        [
+          "(incl. 1003 kg de hidracina — Lucy lleva mucho más propelente que masa en seco)",
+          "(821 kg en seco)"
+        ],
+        [
+          "Asteroide de tipo C de 4 km.",
+          "Asteroide binario de contacto de tipo C de unos 8 km de largo."
+        ]
+      ],
+      "fr": [
+        [
+          "(dont 1003 kg d'hydrazine — Lucy emporte bien plus d'ergols que sa masse à sec)",
+          "(821 kg à sec)"
+        ],
+        [
+          "Astéroïde de type C de 4 km.",
+          "Astéroïde binaire à contact de type C d'environ 8 km de long."
+        ]
+      ],
+      "hi": [
+        [
+          "(1003 kg हाइड्रेज़ीन सहित — Lucy अपने शुष्क द्रव्यमान से कहीं अधिक प्रणोदक ले जाता है)",
+          "(821 kg शुष्क)"
+        ],
+        ["4-km C-प्रकार क्षुद्रग्रह।", "लगभग 8 km लंबा C-प्रकार का संपर्क-युग्म क्षुद्रग्रह।"]
+      ],
+      "it": [
+        [
+          "(incl. 1003 kg di idrazina — Lucy porta molto più propellente che massa a secco)",
+          "(821 kg a secco)"
+        ],
+        [
+          "Asteroide di tipo C di 4 km.",
+          "Asteroide binario a contatto di tipo C, lungo circa 8 km."
+        ]
+      ],
+      "ja": [
+        [
+          "（ヒドラジン1003 kgを含む——Lucyは乾燥質量を大きく上回る推進剤を搭載している）",
+          "（乾燥質量821 kg）"
+        ],
+        ["4 kmのC型小惑星。", "全長約8 kmのC型の接触連星小惑星。"]
+      ],
+      "ko": [
+        [
+          "(하이드라진 1003 kg 포함 — Lucy는 건조 질량을 크게 웃도는 추진제를 싣고 있다)",
+          "(건조 질량 821 kg)"
+        ],
+        ["4-km C-형 소행성.", "길이 약 8 km의 C-형 접촉쌍 소행성."]
+      ],
+      "nl": [
+        [
+          "(incl. 1003 kg hydrazine — Lucy draagt veel meer drijfstof dan droge massa)",
+          "(821 kg droog)"
+        ],
+        ["4-km C-type asteroïde.", "C-type contactbinaire asteroïde van ongeveer 8 km lang."]
+      ],
+      "pt-BR": [
+        [
+          "(incl. 1003 kg de hidrazina — a Lucy carrega muito mais propelente do que massa seca)",
+          "(821 kg a seco)"
+        ],
+        [
+          "Asteroide tipo C de 4 km.",
+          "Asteroide binário de contato tipo C, com cerca de 8 km de comprimento."
+        ]
+      ],
+      "ru": [
+        [
+          "(включая 1003 кг гидразина — Lucy несёт топлива заметно больше, чем весит сама в сухом виде)",
+          "(сухая масса 821 кг)"
+        ],
+        ["Астероид C-типа размером 4 км.", "Контактно-двойной астероид C-типа длиной около 8 км."]
+      ],
+      "sr-Cyrl": [
+        [
+          "(укључујући 1003 kg хидразина — Lucy носи знатно више горива него што износи њена сува маса)",
+          "(сува маса 821 kg)"
+        ],
+        ["Астероид C-типа пречника 4 km.", "Контактни двојни астероид C-типа дужине око 8 km."]
+      ],
+      "zh-CN": [
+        ["（含 1003 kg 肼——Lucy 携带的推进剂远多于其干质量）", "（干质量 821 kg）"],
+        ["4-km C型小行星。", "长约 8 km 的 C型接触双星小行星。"]
+      ]
+    },
+    "base": [
+      [
+        "(incl. 1003 kg of hydrazine — Lucy carries more propellant than dry mass, by a wide margin)",
+        "(821 kg dry)"
+      ],
+      [
+        "a 4-km main-belt asteroid named for",
+        "a main-belt contact-binary asteroid about 8 km long, named for"
+      ],
+      [
+        "Hubble follow-up revealed a satellite that doesn't yet have a name.",
+        "the Lucy team found a satellite during a stellar occultation in March 2022; it doesn't yet have a name."
+      ],
+      [
+        "the energy ion thrust alone couldn't deliver",
+        "the energy its chemical engine alone couldn't deliver"
+      ]
+    ]
+  },
+  {
+    "overlay": "i18n-src/{loc}/fleet/orbiter/lucy.json",
+    "text": {
+      "en-US": [["Carries 1003 kg of hydrazine — more propellant than dry mass. ", ""]],
+      "ar": [
+        ["تحمل 1003 كجم من الهيدرازين — وهي كمية وقود دافع أكبر من الكتلة الجافة للمركبة. ", ""]
+      ],
+      "de": [["Führt 1003 kg Hydrazin mit — mehr Treibstoff als Trockenmasse. ", ""]],
+      "es": [["Transporta 1003 kg de hidracina — más propelente que masa seca. ", ""]],
+      "fr": [["Transporte 1003 kg d'hydrazine — plus de propergol que la masse sèche. ", ""]],
+      "hi": [["इसमें 1003 किग्रा हाइड्रेज़िन है — शुष्क द्रव्यमान से अधिक प्रणोदक। ", ""]],
+      "it": [["Trasporta 1003 kg di idrazina — più propellente che massa secca. ", ""]],
+      "ja": [["ヒドラジン1003 kgを搭載しており、これは機体の乾燥質量を上回る推進剤量です。", ""]],
+      "ko": [["하이드라진 1003 kg을 싣고 있어 — 건조 질량보다 추진제가 더 많습니다. ", ""]],
+      "nl": [["Voert 1003 kg hydrazine mee — meer drijfstof dan droge massa. ", ""]],
+      "pt-BR": [["Leva 1003 kg de hidrazina — mais propelente do que massa seca. ", ""]],
+      "ru": [["Несёт 1003 кг гидразина — больше, чем её сухая масса. ", ""]],
+      "sr-Cyrl": [["Носи 1003 kg хидразина — више горива него суве масе. ", ""]],
+      "zh-CN": [["携带1003 kg肼推进剂——推进剂质量超过干质量。", ""]]
+    }
+  },
+  {
+    "baseFile": "static/data/fleet/orbiter/lucy.json",
+    "base": [
+      [
+        "(#341 batch 5). 1003 kg of hydrazine — more propellant than dry mass — to feed an 8-encounter trajectory.",
+        "(#341 batch 5)."
+      ]
+    ]
+  },
+  {
+    "m": "itokawa/hayabusa1",
+    "text": {
+      "en-US": [
+        [
+          "the most powerful ion-propulsion subsystem flown to that point",
+          "the first microwave-discharge ion engines ever flown"
+        ],
+        ["7-km gate position", "20-km gate position"]
+      ],
+      "ar": [
+        [
+          "أقوى منظومة دفع أيوني طارت حتى ذلك الحين",
+          "أول محركات أيونية بالتفريغ بالموجات الميكروية تطير في الفضاء"
+        ],
+        ["البوابة 7 كم", "البوابة 20 كم"]
+      ],
+      "de": [
+        [
+          "dem damals stärksten Ionenantriebssystem im All",
+          "den ersten je geflogenen Mikrowellen-Ionentriebwerken"
+        ],
+        ["7-km-Gateposition", "20-km-Gateposition"]
+      ],
+      "es": [
+        [
+          "el subsistema de propulsión iónica más potente volado hasta ese momento",
+          "los primeros motores iónicos de descarga por microondas que han volado"
+        ],
+        ["gate) a 7 km", "gate) a 20 km"]
+      ],
+      "fr": [
+        [
+          "le sous-système de propulsion ionique le plus puissant jamais lancé à cette époque",
+          "les premiers moteurs ioniques à décharge micro-onde jamais lancés"
+        ],
+        ["« porte » de 7 km", "« porte » de 20 km"]
+      ],
+      "hi": [
+        [
+          "उस समय तक उड़ाया गया सबसे शक्तिशाली आयन-प्रणोदन उपतंत्र",
+          "अब तक उड़ाए गए पहले माइक्रोवेव-डिस्चार्ज आयन इंजन"
+        ],
+        ["7-km गेट", "20-km गेट"]
+      ],
+      "it": [
+        [
+          "il sottosistema di propulsione ionica più potente mai volato fino ad allora",
+          "i primi motori ionici a scarica a microonde mai volati"
+        ],
+        ["d'ingresso a 7 km", "d'ingresso a 20 km"]
+      ],
+      "ja": [
+        [
+          "当時までに飛行した中で最も強力なイオン推進システムである4基のμ10イオンスラスター",
+          "宇宙で初めて飛行したマイクロ波放電式イオンエンジンである4基のμ10イオンスラスター"
+        ],
+        ["高度7 kmのゲート", "高度20 kmのゲート"]
+      ],
+      "ko": [
+        [
+          "당시까지 비행한 이온 추진 하위 시스템 중 가장 강력한 μ10 이온 추진기 4기",
+          "처음으로 비행한 마이크로파 방전식 이온 엔진인 μ10 이온 추진기 4기"
+        ],
+        ["7-km 유지", "20-km 유지"]
+      ],
+      "nl": [
+        [
+          "het krachtigste ionaandrijfsysteem dat tot dan toe was gevlogen",
+          "de eerste ooit gevlogen ionenmotoren met microgolfontlading"
+        ],
+        ["poortpositie op 7 km", "poortpositie op 20 km"]
+      ],
+      "pt-BR": [
+        [
+          "o subsistema de propulsão iônica mais poderoso voado até aquele momento",
+          "os primeiros motores iônicos de descarga por micro-ondas já voados"
+        ],
+        ["entrada a 7 km", "entrada a 20 km"]
+      ],
+      "ru": [
+        [
+          "самой мощной ионной двигательной установкой, когда-либо применявшейся на тот момент",
+          "первыми летавшими в космосе ионными двигателями с СВЧ-разрядом"
+        ],
+        ["расстоянии 7 км", "расстоянии 20 км"]
+      ],
+      "sr-Cyrl": [
+        [
+          "најснажнијим подсистемом јонског погона који је до тада летео",
+          "првим јонским потисницима с микроталасним пражњењем који су икада летели"
+        ],
+        ["на 7 km од", "на 20 km од"]
+      ],
+      "zh-CN": [
+        ["当时飞行过的最强大的离子推进分系统", "首批飞行的微波放电式离子发动机"],
+        ["在7 km门控", "在20 km门控"]
+      ]
+    },
+    "base": [
+      [
+        "at the time the most powerful ion-propulsion subsystem ever flown",
+        "the first microwave-discharge ion engines ever flown"
+      ],
+      ["station-kept at a 7-km gate position", "station-kept at a 20-km gate position"]
+    ]
+  },
+  {
+    "m": "psyche/psyche-mission",
+    "text": {
+      "en-US": [
+        [
+          "first use of Hall-effect ion thrusters as the primary cruise propulsion",
+          "first interplanetary spacecraft to use Hall-effect thrusters"
+        ]
+      ],
+      "ar": [
+        [
+          "أول استخدام لمحركات أيونية بتأثير هول كدفع أساسي في الرحلة",
+          "أول مركبة بين كوكبية تستخدم محركات تأثير هول"
+        ]
+      ],
+      "de": [
+        [
+          "erste Verwendung von Hall-Effekt-Ionentriebwerken als primärer Antrieb für die Reisephase",
+          "erste interplanetare Raumsonde mit Hall-Effekt-Triebwerken"
+        ]
+      ],
+      "es": [
+        [
+          "primer uso de propulsores iónicos de efecto Hall como propulsión principal de crucero",
+          "primera nave interplanetaria que usa propulsores de efecto Hall"
+        ]
+      ],
+      "fr": [
+        [
+          "premier emploi de propulseurs ioniques à effet Hall comme propulsion principale de croisière",
+          "premier engin interplanétaire à utiliser des propulseurs à effet Hall"
+        ]
+      ],
+      "hi": [
+        [
+          "मुख्य यात्रा-प्रणोदन के रूप में हॉल-प्रभाव आयन थ्रस्टरों का पहला उपयोग",
+          "हॉल-प्रभाव थ्रस्टरों का उपयोग करने वाला पहला अंतरग्रहीय अंतरिक्ष यान"
+        ]
+      ],
+      "it": [
+        [
+          "primo utilizzo di propulsori ionici a effetto Hall come propulsione primaria di trasferimento",
+          "prima sonda interplanetaria a usare propulsori a effetto Hall"
+        ]
+      ],
+      "ja": [
+        [
+          "並びにホール効果イオンスラスターを主要な航行推進システムとして初めて使用するミッション",
+          "並びにホール効果スラスターを使用する初の惑星間探査機"
+        ]
+      ],
+      "ko": [
+        [
+          "홀 효과 이온 추진기를 주 순항 추진에 처음 사용",
+          "홀 효과 추진기를 사용하는 최초의 행성간 우주선"
+        ]
+      ],
+      "nl": [
+        [
+          "eerste gebruik van Hall-effect-ionenmotoren als primaire voortstuwing tijdens de cruisefase",
+          "eerste interplanetaire ruimtevaartuig dat Hall-effectmotoren gebruikt"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "primeiro uso de propulsores de íons de efeito Hall como propulsão principal de cruzeiro",
+          "primeira espaçonave interplanetária a usar propulsores de efeito Hall"
+        ]
+      ],
+      "ru": [
+        [
+          "первое использование ионных двигателей на эффекте Холла в качестве основной маршевой двигательной установки",
+          "первый межпланетный аппарат с двигателями на эффекте Холла"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "прва употреба јонских потисника са Холовим ефектом као главног погона за крстарење",
+          "прва међупланетарна летелица са потисницима на Холовом ефекту"
+        ]
+      ],
+      "zh-CN": [
+        ["首次以霍尔效应离子推进器作为主要巡航推进", "首个使用霍尔效应推进器的行星际航天器"]
+      ]
+    }
+  },
+  {
+    "m": "jupiter/europa-clipper",
+    "text": {
+      "en-US": [
+        [
+          "largest planetary mission spacecraft ever launched",
+          "largest spacecraft NASA has ever launched for a planetary mission"
+        ]
+      ],
+      "ar": [
+        [
+          "أكبر مركبة فضائية لمهمة كوكبية أُطلقت على الإطلاق",
+          "أكبر مركبة فضائية أطلقتها NASA على الإطلاق لمهمة كوكبية"
+        ]
+      ],
+      "de": [
+        [
+          "größte Planetenmission-Raumsonde, die je gestartet wurde",
+          "größte Raumsonde, die die NASA je für eine Planetenmission gestartet hat"
+        ],
+        [
+          "größtes je gestartetes Planetenmissions-Raumfahrzeug",
+          "größtes Raumfahrzeug, das die NASA je für eine Planetenmission gestartet hat"
+        ]
+      ],
+      "es": [
+        [
+          "la nave de misión planetaria más grande jamás lanzada",
+          "la nave más grande que la NASA ha lanzado jamás para una misión planetaria"
+        ]
+      ],
+      "fr": [
+        [
+          "plus gros engin spatial de mission planétaire jamais lancé",
+          "plus gros engin spatial que la NASA ait jamais lancé pour une mission planétaire"
+        ],
+        [
+          "vaisseau spatial de mission planétaire le plus volumineux jamais lancé",
+          "vaisseau spatial le plus volumineux que la NASA ait jamais lancé pour une mission planétaire"
+        ]
+      ],
+      "hi": [
+        [
+          "अब तक प्रक्षेपित सबसे बड़ा ग्रहीय मिशन",
+          "NASA द्वारा किसी ग्रहीय मिशन के लिए अब तक प्रक्षेपित सबसे बड़ा"
+        ]
+      ],
+      "it": [
+        [
+          "la sonda per missioni planetarie più grande mai lanciata",
+          "la sonda più grande mai lanciata dalla NASA per una missione planetaria"
+        ],
+        [
+          "il più grande veicolo spaziale di missione planetaria mai lanciato",
+          "il più grande veicolo spaziale mai lanciato dalla NASA per una missione planetaria"
+        ]
+      ],
+      "ja": [
+        [
+          "これまでに打ち上げられた惑星探査機として最大；",
+          "NASAがこれまでに惑星探査用に打ち上げた最大の機体；"
+        ],
+        [
+          "打ち上げられた惑星探査機として史上最大（",
+          "NASAが惑星探査用に打ち上げた機体として史上最大（"
+        ]
+      ],
+      "ko": [
+        [
+          "지금까지 발사된 행성 탐사선 중 최대",
+          "NASA가 지금까지 행성 탐사용으로 발사한 우주선 중 최대"
+        ]
+      ],
+      "nl": [
+        [
+          "grootste ruimtevaartuig voor planetaire missies ooit gelanceerd",
+          "grootste ruimtevaartuig dat NASA ooit voor een planetaire missie heeft gelanceerd"
+        ],
+        [
+          "grootste ruimtevaartuig voor een planetaire missie ooit gelanceerd",
+          "grootste ruimtevaartuig dat NASA ooit voor een planetaire missie heeft gelanceerd"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "a maior espaçonave de missão planetária já lançada",
+          "a maior espaçonave que a NASA já lançou para uma missão planetária"
+        ],
+        [
+          "maior nave de missão planetária já lançada",
+          "maior nave que a NASA já lançou para uma missão planetária"
+        ]
+      ],
+      "ru": [
+        [
+          "самый крупный аппарат для планетных миссий из всех запускавшихся",
+          "самый крупный аппарат, запущенный NASA для планетной миссии"
+        ],
+        [
+          "крупнейший планетарный космический аппарат из когда-либо запущенных",
+          "крупнейший космический аппарат, когда-либо запущенный NASA для планетарной миссии"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "највећа летелица за планетарне мисије икада лансирана",
+          "највећа летелица коју је NASA икада лансирала за планетарну мисију"
+        ],
+        [
+          "највећа летелица за неку планетарну мисију икада лансирана",
+          "највећа летелица коју је NASA икада лансирала за планетарну мисију"
+        ]
+      ],
+      "zh-CN": [
+        ["迄今发射的最大行星任务探测器", "NASA迄今为行星任务发射的最大探测器"],
+        ["迄今发射的最大的行星探测航天器", "NASA迄今为行星任务发射的最大航天器"]
+      ]
+    },
+    "base": [
+      [
+        "largest planetary mission spacecraft ever launched",
+        "largest spacecraft NASA has ever launched for a planetary mission"
+      ]
+    ]
+  },
+  {
+    "overlay": "i18n-src/{loc}/fleet/orbiter/europa-clipper.json",
+    "text": {
+      "en-US": [
+        [
+          "Largest planetary mission spacecraft ever launched (~6000 kg)",
+          "The largest spacecraft NASA has ever launched for a planetary mission (~6000 kg)"
+        ]
+      ],
+      "ar": [
+        [
+          "أكبر مركبة بعثة كوكبية أطلقت على الإطلاق (~6000 كغ)",
+          "أكبر مركبة فضائية أطلقتها NASA على الإطلاق لبعثة كوكبية (~6000 كغ)"
+        ]
+      ],
+      "de": [
+        [
+          "Das größte je gestartete Raumfahrzeug einer Planetenmission (~6000 kg)",
+          "Das größte Raumfahrzeug, das die NASA je für eine Planetenmission gestartet hat (~6000 kg)"
+        ]
+      ],
+      "es": [
+        [
+          "Es la nave de misión planetaria más grande jamás lanzada (~6000 kg)",
+          "Es la nave más grande que la NASA ha lanzado jamás para una misión planetaria (~6000 kg)"
+        ]
+      ],
+      "fr": [
+        [
+          "Plus grand engin spatial de mission planétaire jamais lancé (~6000 kg)",
+          "Plus grand engin spatial que la NASA ait jamais lancé pour une mission planétaire (~6000 kg)"
+        ]
+      ],
+      "hi": [
+        [
+          "अब तक प्रक्षेपित सबसे बड़ा ग्रहीय-मिशन अंतरिक्ष यान (~6000 किग्रा)",
+          "NASA द्वारा किसी ग्रहीय मिशन के लिए अब तक प्रक्षेपित सबसे बड़ा अंतरिक्ष यान (~6000 किग्रा)"
+        ]
+      ],
+      "it": [
+        [
+          "La più grande sonda per missioni planetarie mai lanciata (~6000 kg)",
+          "La più grande sonda mai lanciata dalla NASA per una missione planetaria (~6000 kg)"
+        ]
+      ],
+      "ja": [
+        [
+          "これまでに打ち上げられた惑星探査機として最大の機体（~6000 kg）",
+          "NASAがこれまでに惑星探査用に打ち上げた最大の機体（~6000 kg）"
+        ]
+      ],
+      "ko": [
+        [
+          "지금까지 발사된 행성 탐사선 중 가장 큰 우주선(~6000 kg)",
+          "NASA가 지금까지 행성 탐사용으로 발사한 가장 큰 우주선(~6000 kg)"
+        ]
+      ],
+      "nl": [
+        [
+          "Het grootste ruimtevaartuig voor een planetaire missie dat ooit is gelanceerd (~6000 kg)",
+          "Het grootste ruimtevaartuig dat NASA ooit voor een planetaire missie heeft gelanceerd (~6000 kg)"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "Maior espaçonave de missão planetária já lançada (~6000 kg)",
+          "Maior espaçonave que a NASA já lançou para uma missão planetária (~6000 kg)"
+        ]
+      ],
+      "ru": [
+        [
+          "Крупнейший из когда-либо запущенных аппаратов для планетарных миссий (~6000 кг)",
+          "Крупнейший аппарат, когда-либо запущенный NASA для планетарной миссии (~6000 кг)"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Највећа летелица икада лансирана за планетарну мисију (~6000 kg)",
+          "Највећа летелица коју је NASA икада лансирала за планетарну мисију (~6000 kg)"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "这是有史以来发射的最大的行星任务航天器（约 6000 kg）",
+          "这是NASA迄今为行星任务发射的最大航天器（约 6000 kg）"
+        ]
+      ]
+    }
+  },
+  {
+    "baseFile": "static/data/fleet/orbiter/europa-clipper.json",
+    "base": [
+      [
+        "Largest planetary spacecraft ever launched (6065 kg)",
+        "Largest spacecraft NASA has launched for a planetary mission (6065 kg)"
+      ]
+    ]
+  },
+  {
+    "baseFile": "static/data/fleet/index.json",
+    "base": [
+      [
+        "Largest planetary spacecraft; 49 Europa flybys planned",
+        "Largest NASA planetary-mission spacecraft; 49 Europa flybys planned"
+      ]
+    ]
+  }
+]

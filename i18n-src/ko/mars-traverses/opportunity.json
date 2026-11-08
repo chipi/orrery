@@ -2,22 +2,26 @@
   "stops": [
     {
       "id": "sol-56",
+      "label": "이글 분화구"
+    },
+    {
+      "id": "sol-95",
       "label": "인듀어런스 분화구"
     },
     {
-      "id": "sol-1232",
+      "id": "sol-652",
       "label": "에레버스 분화구"
     },
     {
-      "id": "sol-1820",
+      "id": "sol-952",
       "label": "빅토리아 분화구"
     },
     {
-      "id": "sol-3010",
+      "id": "sol-2681",
       "label": "인데버 분화구 가장자리 도착"
     },
     {
-      "id": "sol-4500",
+      "id": "sol-4081",
       "label": "Marathon Valley"
     }
   ]

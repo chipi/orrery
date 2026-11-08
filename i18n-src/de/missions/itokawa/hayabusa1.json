@@ -2,10 +2,10 @@
   "name": "Hayabusa",
   "vehicle": "M-V-5",
   "payload": "510 kg (einschl. 60 kg Xenon für vier Ionentriebwerke μ10)",
-  "delta_v": "~4,0 km/s",
+  "delta_v": "~2,2 km/s (Ionentriebwerke)",
   "type": "PROBENRÜCKKEHR · GEFLOGEN",
   "first": "Erste jemals zur Erde zurückgebrachte Asteroidenprobe (~1.500 Körner Itokawa-Staub, weniger als ein Milligramm gesamt)",
-  "description": "JAXAs Hayabusa (Japanisch für „Falke\") führte die heroischste Rettungsmission in der Raumfahrtgeschichte durch. Gestartet 2003-05-09 auf einer M-V-5 mit vier μ10-Ionentriebwerken — dem damals stärksten Ionenantriebssystem im All. Kam am 2005-09-12 beim 540×270×210-m-Trümmerhaufen-Asteroiden 25143 Itokawa an. Zwei Landungen (2005-11-20 + 25), beide mit Ausfällen der Probensammel-Projektile, aber Regolith wurde trotzdem ins Sammelhorn gewirbelt. Dann lähmte ein Hydrazin-Leck die Lageregelung, zwei von drei Reaktionsrädern fielen aus, die Kommunikation brach für sieben Wochen ab, das Rückkehrfenster zur Erde verschob sich um drei Jahre. Ingenieure setzten ein funktionierendes Ionentriebwerk aus den überlebenden Hälften zweier beschädigter Triebwerke zusammen und brachten Hayabusa zur Erde zurück. Die Probenkapsel, die am 2010-06-13 bei Woomera AUS geborgen wurde, enthielt ~1.500 Körner Itokawa-Staub (weniger als ein Milligramm gesamt) — was die S-Typ-Zusammensetzung des Asteroiden und die Trümmerhaufen-Struktur bestätigte und bewies, dass Asteroidenprobenrückkehr möglich ist.",
+  "description": "JAXAs Hayabusa (Japanisch für „Falke\") führte die heroischste Rettungsmission in der Raumfahrtgeschichte durch. Gestartet 2003-05-09 auf einer M-V-5 mit vier μ10-Ionentriebwerken — den ersten je geflogenen Mikrowellen-Ionentriebwerken. Kam am 2005-09-12 beim 540×270×210-m-Trümmerhaufen-Asteroiden 25143 Itokawa an. Zwei Landungen (2005-11-20 + 25), beide mit Ausfällen der Probensammel-Projektile, aber Regolith wurde trotzdem ins Sammelhorn gewirbelt. Dann lähmte ein Hydrazin-Leck die Lageregelung, zwei von drei Reaktionsrädern fielen aus, die Kommunikation brach für sieben Wochen ab, das Rückkehrfenster zur Erde verschob sich um drei Jahre. Ingenieure setzten ein funktionierendes Ionentriebwerk aus den überlebenden Hälften zweier beschädigter Triebwerke zusammen und brachten Hayabusa zur Erde zurück. Die Probenkapsel, die am 2010-06-13 bei Woomera AUS geborgen wurde, enthielt ~1.500 Körner Itokawa-Staub (weniger als ein Milligramm gesamt) — was die S-Typ-Zusammensetzung des Asteroiden und die Trümmerhaufen-Struktur bestätigte und bewies, dass Asteroidenprobenrückkehr möglich ist.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 857,
       "label": "ITOKAWA-ANKUNFT",
-      "note": "2005-09-12. Stationsposten in 7-km-Gateposition.",
+      "note": "2005-09-12. Stationsposten in 20-km-Gateposition.",
       "type": "info"
     },
     {

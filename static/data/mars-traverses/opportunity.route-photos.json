@@ -1,0 +1,45 @@
+{
+  "rover_id": "opportunity",
+  "photos": [
+    {
+      "id": "endurance-layers",
+      "sol": 134,
+      "lat": -1.95282,
+      "lon": -5.516251,
+      "image": "/images/mars-sites/opportunity/route/endurance-layers.webp",
+      "thumb": "/images/mars-sites/opportunity/route/endurance-layers-320.webp"
+    },
+    {
+      "id": "erebus-horizon",
+      "sol": 590,
+      "lat": -2.015196,
+      "lon": -5.519005,
+      "image": "/images/mars-sites/opportunity/route/erebus-horizon.webp",
+      "thumb": "/images/mars-sites/opportunity/route/erebus-horizon-320.webp"
+    },
+    {
+      "id": "victoria-lip",
+      "sol": 1278,
+      "lat": -2.053634,
+      "lon": -5.508395,
+      "image": "/images/mars-sites/opportunity/route/victoria-lip.webp",
+      "thumb": "/images/mars-sites/opportunity/route/victoria-lip-320.webp"
+    },
+    {
+      "id": "marathon-valley-pan",
+      "sol": 4347,
+      "lat": -2.316599,
+      "lon": -5.353284,
+      "image": "/images/mars-sites/opportunity/route/marathon-valley-pan.webp",
+      "thumb": "/images/mars-sites/opportunity/route/marathon-valley-pan-320.webp"
+    },
+    {
+      "id": "perseverance-valley",
+      "sol": 4840,
+      "lat": -2.332216,
+      "lon": -5.349773,
+      "image": "/images/mars-sites/opportunity/route/perseverance-valley.webp",
+      "thumb": "/images/mars-sites/opportunity/route/perseverance-valley-320.webp"
+    }
+  ]
+}

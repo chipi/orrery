@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "Lanceerstapel van 4100 kg: MTM (Mercury Transfer Module, ESA — 4 ionenthrusters, zonnepanelen) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instrumenten) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 instrumenten) + MOSIF-zonnescherm. De twee wetenschappelijke orbiters scheiden na aankomst bij Mercurius.",
+  "payload": "Lanceerstapel van 4100 kg: MTM (Mercury Transfer Module, ESA — 4 ionenthrusters, zonnepanelen) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instrumenten) + MIO (Mercury Magnetospheric Orbiter, JAXA, 255 kg, 5 instrumenten) + MOSIF-zonnescherm. De twee wetenschappelijke orbiters scheiden na aankomst bij Mercurius.",
   "delta_v": "~7,2 km/s (ionencruise + 9 zwaartekrachtassists + MOI)",
   "type": "ORBITER · ACTIEF",
   "first": "Eerste gezamenlijke Europese en Japanse missie naar een planeet; tweede ruimtevaartuig ooit dat Mercurius omcirkelt (na Messenger)",
@@ -20,13 +20,13 @@
       "type": "nominal"
     },
     {
-      "met": 727,
+      "met": 726,
       "label": "VENUS-FLYBY #1",
       "note": "Eerste zwaartekrachtassist rond Venus.",
       "type": "nominal"
     },
     {
-      "met": 1026,
+      "met": 1025,
       "label": "VENUS-FLYBY #2",
       "note": "Tweede zwaartekrachtassist rond Venus start de Mercurius-benaderingsfase.",
       "type": "nominal"

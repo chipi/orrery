@@ -1,11 +1,11 @@
 {
   "name": "Lunar Prospector",
   "vehicle": "Athena II",
-  "payload": "296 kg à sec ; emportait 5 instruments scientifiques",
+  "payload": "126 kg à sec (296 kg au lancement) ; emportait 5 instruments scientifiques",
   "delta_v": "~4 km/s (TLI + LOI)",
   "type": "ORBITEUR ROBOTIQUE · RÉALISÉE",
   "first": "Détection de l'hydrogène aux deux pôles lunaires par spectromètre à neutrons",
-  "description": "La troisième mission NASA Discovery-class et le premier orbiteur lunaire dédié géré par la NASA de l'ère post-Apollo. Lancé le 1998-01-07 sur un Athena II depuis Cap Canaveral, Lunar Prospector est entré en orbite lunaire polaire circulaire de 100 km le 1998-01-11. L'engin spatial tournoyant de 296 kg était équipé de cinq instruments : un spectromètre gamma pour la composition crustale mondiale, un spectromètre à neutrons pour la détection de l'hydrogène / glace d'eau aux pôles, un spectromètre à particules alpha pour le gaz radon (détection indirecte du volcanisme), un magnétomètre + réflectomètre d'électrons pour le magnétisme crustal, et une expérience de gravité Doppler. L'analyse par l'équipe Boynton des données de neutrons (Feldman et al., Science 281 + 284) a révélé des déficits aigus du flux de neutrons aux deux pôles lunaires — compatibles avec environ 2 × 10⁹ tonnes de matériau riche en hydrogène (probablement de la glace d'eau) dans des cratères polaires en permanence à l'ombre. La mission s'est terminée le 1999-07-31 par un impact volontaire près du cratère Shackleton dans l'espoir de libérer un panache de vapeur d'eau détectable ; aucun n'a été observé. La découverte d'hydrogène est restée valide jusqu'à ce que LCROSS et Chandrayaan-1 / M3 (2009) fournissent une confirmation indépendante.",
+  "description": "La troisième mission NASA Discovery-class et le premier orbiteur lunaire dédié géré par la NASA de l'ère post-Apollo. Lancé le 1998-01-07 sur un Athena II depuis Cap Canaveral, Lunar Prospector a été capturé en orbite lunaire de 11,6 heures le 1998-01-11, puis abaissé le 16 janvier sur l'orbite polaire de cartographie de 100 km. L'engin spatial tournoyant de 296 kg était équipé de cinq instruments : un spectromètre gamma pour la composition crustale mondiale, un spectromètre à neutrons pour la détection de l'hydrogène / glace d'eau aux pôles, un spectromètre à particules alpha pour le gaz radon (détection indirecte du volcanisme), un magnétomètre + réflectomètre d'électrons pour le magnétisme crustal, et une expérience de gravité Doppler. L'analyse par l'équipe Feldman des données de neutrons (Feldman et al., Science 281 + 284) a révélé des déficits aigus du flux de neutrons aux deux pôles lunaires — compatibles avec 10 à 300 millions de tonnes de glace d'eau (estimation de 1998) dans des cratères polaires en permanence à l'ombre. La mission s'est terminée le 1999-07-31 par un impact volontaire dans le cratère Shoemaker dans l'espoir de libérer un panache de vapeur d'eau détectable ; aucun n'a été observé. La découverte d'hydrogène est restée valide jusqu'à ce que LCROSS et Chandrayaan-1 / M3 (2009) fournissent une confirmation indépendante.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 4.386,
       "label": "LOI",
-      "note": "Insertion en orbite lunaire le 1998-01-11 — orbite polaire initiale de 100 × 100 km.",
+      "note": "Insertion en orbite lunaire le 1998-01-11 — capture sur une orbite de 11,6 heures ; abaissée le 16 janvier sur l'orbite polaire de cartographie de 100 km.",
       "type": "nominal"
     },
     {
@@ -33,8 +33,8 @@
     },
     {
       "met": 569,
-      "label": "IMPACT SHACKLETON",
-      "note": "Impact volontaire près du cratère Shackleton le 1999-07-31 à 09:52 UTC. Aucun panache de vapeur d'eau n'a été détecté depuis la Terre.",
+      "label": "IMPACT SHOEMAKER",
+      "note": "Impact volontaire dans le cratère Shoemaker le 1999-07-31 à 09:52 UTC. Aucun panache de vapeur d'eau n'a été détecté depuis la Terre.",
       "type": "nominal"
     }
   ],

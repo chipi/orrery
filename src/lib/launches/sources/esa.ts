@@ -9,7 +9,7 @@
  * Mostly post-launch coverage but real launch-data signal.
  */
 
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { closeSync, fstatSync, mkdirSync, openSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import type { LaunchSource, LaunchSourceAttribution, LaunchSourceWindow } from './provider.js';
 import type { RawLaunchEntry } from '../types.js';
@@ -93,18 +93,33 @@ export function esaArticleToRawEntry(
   };
 }
 
-async function downloadIfStale(): Promise<string> {
-  if (existsSync(CACHE_PATH)) {
-    const age = Date.now() - statSync(CACHE_PATH).mtimeMs;
-    if (age < ONE_DAY_MS / 2) return readFileSync(CACHE_PATH, 'utf8');
+// One open, then stat + read on the descriptor: no check-then-read race on the path.
+function readCache(maxAgeMs = Infinity): string | null {
+  let fd: number;
+  try {
+    fd = openSync(CACHE_PATH, 'r');
+  } catch {
+    return null;
   }
+  try {
+    if (Date.now() - fstatSync(fd).mtimeMs >= maxAgeMs) return null;
+    return readFileSync(fd, 'utf8');
+  } finally {
+    closeSync(fd);
+  }
+}
+
+async function downloadIfStale(): Promise<string> {
+  const fresh = readCache(ONE_DAY_MS / 2);
+  if (fresh !== null) return fresh;
   mkdirSync(dirname(CACHE_PATH), { recursive: true });
   const res = await fetch(ESA_URL, {
     headers: { 'user-agent': 'OrreryLaunchesBot/0.1' },
     redirect: 'follow',
   });
   if (!res.ok) {
-    if (existsSync(CACHE_PATH)) return readFileSync(CACHE_PATH, 'utf8');
+    const stale = readCache();
+    if (stale !== null) return stale;
     throw new Error(`ESA ${res.status}`);
   }
   const html = await res.text();

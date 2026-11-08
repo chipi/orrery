@@ -14,7 +14,7 @@
   "payload": "577 kg (EDM lander part of ExoMars 2016 mission with Trace Gas Orbiter)",
   "delta_v": "~5.5 km/s",
   "data_quality": "good",
-  "credit": "© European Space Agency. Demonstration EDL lander; impacted at ~540 km/h after parachute jettisoned 3.7 km too early due to IMU saturation. Crash forensics via HiRISE imagery confirmed impact site within hours of signal loss.",
+  "credit": "© European Space Agency. Demonstration EDL lander; impacted at ~540 km/h after parachute jettisoned 3.7 km too early due to IMU saturation. MRO's Context Camera found the impact site the next day; HiRISE imaged it days later.",
   "links": [
     {
       "l": "Schiaparelli EDM — Wikipedia",
@@ -67,7 +67,7 @@
       "v_infinity_km_s": 5.5,
       "periapsis_km": 0,
       "inclination_deg": 7,
-      "source": "ESA mission archive; entry at 121 km altitude, 5.83 km/s, 12.4 km/s relative to surface",
+      "source": "ESA mission archive; entry at 121 km altitude, 5.83 km/s",
       "entry_velocity_km_s": 5.83,
       "edl_system": "parachute_retro",
       "edl_duration_s": 319,

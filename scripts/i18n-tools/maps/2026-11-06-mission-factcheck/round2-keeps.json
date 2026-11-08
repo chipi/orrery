@@ -1,0 +1,184 @@
+[
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "missions/earth/aurora-7.json",
+    "at": "description",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "term": "orbit",
+    "loc": "ja",
+    "rel": "missions/earth/aurora-7.json",
+    "at": "description",
+    "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun"
+  },
+  {
+    "term": "orbit",
+    "loc": "ja",
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "why": "variant: 周 (revolution counter)"
+  },
+  {
+    "term": "orbit",
+    "loc": "zh-CN",
+    "rel": "missions/earth/aurora-7.json",
+    "at": "description",
+    "why": "variant: 圈 (laps)"
+  },
+  {
+    "term": "orbit",
+    "loc": "zh-CN",
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "why": "variant: 圈 (laps)"
+  },
+  {
+    "term": "orbit",
+    "loc": "ko",
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "why": "variant: 바퀴 (revolution counter)"
+  },
+  {
+    "term": "orbit",
+    "loc": "ar",
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "why": "variant: 22 دورة"
+  },
+  {
+    "term": "orbit",
+    "loc": "nl",
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "why": "variant: omlopen (counted revolutions)"
+  },
+  {
+    "term": "payload",
+    "loc": "zh-CN",
+    "rel": "missions/moon/apollo8.json",
+    "at": "description",
+    "why": "payload (which craft flies) rendered by 任务; natural omission"
+  },
+  {
+    "term": "payload",
+    "loc": "zh-CN",
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "why": "variant: 货舱 (shuttle payload bay); re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "payload",
+    "loc": "ko",
+    "rel": "missions/moon/apollo8.json",
+    "at": "description",
+    "why": "payload of the mission paraphrased as 임무"
+  },
+  {
+    "term": "payload",
+    "loc": "nl",
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "why": "variant: laadruim (payload bay, standard word); re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "payload",
+    "loc": "pt-BR",
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "why": "variant: baía de carga (payload bay); re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "descent",
+    "loc": "de",
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "why": "variant: Landemodul (descent module); re-read 2026-11-06 after the EVA-time fix"
+  },
+  {
+    "term": "capsule",
+    "loc": "ru",
+    "rel": "missions/earth/vostok-3.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text"
+  },
+  {
+    "term": "capsule",
+    "loc": "ru",
+    "rel": "missions/earth/vostok-4.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text"
+  },
+  {
+    "term": "capsule",
+    "loc": "zh-CN",
+    "rel": "missions/earth/faith-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word; re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "capsule",
+    "loc": "zh-CN",
+    "rel": "missions/earth/sigma-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "airlock",
+    "loc": "ru",
+    "rel": "missions/earth/skylab-2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word; re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "airlock",
+    "loc": "ar",
+    "rel": "missions/earth/skylab-2.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "splashdown",
+    "loc": "hi",
+    "rel": "missions/earth/freedom-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean; re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "splashdown",
+    "loc": "fr",
+    "rel": "missions/earth/freedom-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean; re-read 2026-11-06 after the fact-check fixes"
+  },
+  {
+    "term": "splashdown",
+    "loc": "pt-BR",
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean"
+  },
+  {
+    "term": "sample return",
+    "loc": "nl",
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept"
+  },
+  {
+    "term": "polar orbit",
+    "loc": "nl",
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'"
+  }
+]

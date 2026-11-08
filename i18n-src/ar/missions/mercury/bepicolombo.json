@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "حزمة الإطلاق 4100 كغ: MTM (Mercury Transfer Module، ESA — 4 محركات أيونية، ألواح شمسية) + MPO (Mercury Planetary Orbiter، ESA، 1230 كغ، 11 جهازًا) + MIO (Mercury Magnetospheric Orbiter، JAXA، 285 كغ، 5 أجهزة) + المظلة الشمسية MOSIF. تنفصل المركبتان المداريتان العلميتان بعد الوصول إلى عطارد.",
+  "payload": "حزمة الإطلاق 4100 كغ: MTM (Mercury Transfer Module، ESA — 4 محركات أيونية، ألواح شمسية) + MPO (Mercury Planetary Orbiter، ESA، 1230 كغ، 11 جهازًا) + MIO (Mercury Magnetospheric Orbiter، JAXA، 255 كغ، 5 أجهزة) + المظلة الشمسية MOSIF. تنفصل المركبتان المداريتان العلميتان بعد الوصول إلى عطارد.",
   "delta_v": "~7.2 كم/ث (عبور بالدفع الأيوني + 9 مناورات لمساعدة الجاذبية + MOI)",
   "type": "ساتل · نشطة",
   "first": "أول مهمة كوكبية مشتركة بين أوروبا واليابان؛ ثاني مركبة فضائية تدور حول عطارد (بعد Messenger)",
@@ -20,13 +20,13 @@
       "type": "nominal"
     },
     {
-      "met": 727,
+      "met": 726,
       "label": "تحليق الزهرة رقم 1",
       "note": "أول مساعدة جاذبية للزهرة.",
       "type": "nominal"
     },
     {
-      "met": 1026,
+      "met": 1025,
       "label": "تحليق الزهرة رقم 2",
       "note": "مساعدة الجاذبية الثانية من الزهرة تبدأ مرحلة الاقتراب من عطارد.",
       "type": "nominal"

@@ -1,0 +1,27 @@
+{
+  "intro": "El 27 de noviembre de 1971, unas horas antes de que la Mars 2 entrara en órbita, su cápsula de descenso se separó y se dirigió a la superficie. El sistema de descenso falló —probablemente porque la cápsula entró con un ángulo demasiado inclinado—, el paracaídas no se abrió y se estrelló: el primer objeto fabricado por el ser humano en llegar a la superficie de Marte. A bordo iba PrOP-M, un pequeño róver diseñado para avanzar sobre esquís al extremo de un cable. El orbitador siguió funcionando hasta 1972.",
+  "chapters": [
+    {
+      "id": "arrival",
+      "title": "Llegada",
+      "subtitle": "27 de noviembre de 1971 — el primer objeto en Marte",
+      "images": [
+        {
+          "src": "/images/missions/mars2/02.webp",
+          "caption": "El sello soviético de 1972 dedicado a la estación automática Mars 2: el banderín que llevaba llegó al planeta el 27 de noviembre de 1971."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "La misma cápsula que la Mars 3",
+      "images": [
+        {
+          "src": "/images/missions/mars2/03.webp",
+          "caption": "Maqueta de museo del módulo de descenso de la Mars 3: la Mars 2 llevaba el mismo diseño. La Mars 3 aterrizó suavemente cinco días después y envió señal durante 14,5 segundos."
+        }
+      ]
+    }
+  ]
+}

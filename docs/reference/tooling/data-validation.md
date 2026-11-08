@@ -46,7 +46,7 @@ gotchas", **docs/adr/TA.md** §pipelines.
 **Command** — `npm run validate-data` (runs it as one of the parallel tasks); standalone `tsx scripts/validate-data.ts`
 **What** — The core validator. Compiles ~45 JSON schemas (`Ajv({strict:true, strictRequired:false})`) and validates every reference file, mission, overlay, fleet entry, science section, launch, audio manifest, etc. Then layers on ~20 runtime invariants the schema can't express.
 **When** — automatically in `npm run validate-data` → preflight → CI.
-**Fails on** (any of, summed at the end → `process.exit(1)`): schema violation; cislunar/interplanetary waypoint invariant breach (MET-0 anchor, strictly-increasing, window cap, ≤200 pts); fleet↔mission↔site bidirectional drift + orphan/category mismatch; doc gating-sentence missing (PRD "Why this is a PRD", RFC "Why this is an RFC", ADR "> Status ·"); tcm_count drift; provenance license-not-allowed / missing-file / duplicate-path; text-sources + source-logos dupes/missing; link-provenance unknown-source/tracker-survivor/dup/bad-BCP47; launches missing-primary/missing-citation/orphan-launcher-ref; oversized image > 8 MiB workbox cap; `.jpg` non-JPEG bytes; image-vision/curation malformed; **surface-hotspot Tier-2 consumed-variant missing on disk**; **missing en-US overlay** (earth-objects/fleet/moon-sites/mars-sites/science/fleet-galleries); audio + episode-sources cross-ref breaks.
+**Fails on** (any of, summed at the end → `process.exit(1)`): schema violation; cislunar/interplanetary waypoint invariant breach (MET-0 anchor, strictly-increasing, window cap, ≤200 pts); fleet↔mission↔site bidirectional drift + orphan/category mismatch; a `fleet/index.json` `name` or `tagline` that differs from its en-US overlay (en-US cards read the index directly); doc gating-sentence missing (PRD "Why this is a PRD", RFC "Why this is an RFC", ADR "> Status ·"); tcm_count drift; provenance license-not-allowed / missing-file / duplicate-path; text-sources + source-logos dupes/missing; link-provenance unknown-source/tracker-survivor/dup/bad-BCP47; launches missing-primary/missing-citation/orphan-launcher-ref; oversized image > 8 MiB workbox cap; `.jpg` non-JPEG bytes; image-vision/curation malformed; **surface-hotspot Tier-2 consumed-variant missing on disk**; **missing en-US overlay** (earth-objects/fleet/moon-sites/mars-sites/science/fleet-galleries); audio + episode-sources cross-ref breaks.
 **Gotchas**
 - **Fails CLOSED on a missing en-US overlay** (ADR-069 / GH #83): adding a registry id without its `i18n/en-US/.../<id>.json` breaks the build here, not just at e2e. Other locales fall back to en-US so only en-US presence is enforced.
 - Doc gating-sentence check is scoped to `git ls-files` (issue #136) — untracked PRD/RFC drafts a parallel agent left don't block your push; `git add` them to re-cover. Falls back to a filesystem walk when git metadata is unavailable.
@@ -84,7 +84,7 @@ gotchas", **docs/adr/TA.md** §pipelines.
 **Command** — `tsx scripts/validate-hero-coverage.ts` (parallel task in `validate-data`)
 **What** — Walks every surface index (missions/fleet/moon-sites/mars-sites/earth-objects/planets) and verifies a `01.jpg` hero exists, following the same cross-surface fallback ladder as the runtime gallery loader.
 **When** — automatically in `npm run validate-data`.
-**Fails on** — any id with no hero on disk AND no fallback hit AND not in that surface's `KNOWN_*_GAPS` allowlist.
+**Fails on** — any id with no hero on disk AND no fallback hit AND not in that surface's `KNOWN_*_GAPS` allowlist; any hero override whose slot is not on disk (the card would show a broken image).
 **Gotchas** — all `KNOWN_*_GAPS` sets are currently empty (#342 cleared the cruise-phase backlog). The fallback ladder is bidirectional (surface↔missions↔fleet) so a byte-dedup pass that dropped a redundant copy doesn't false-flag. Adding an id to a gap set requires a real fetch + a `docs/provenance/image-hero-inventory.md` entry.
 **State** — Healthy / current. Coupled to the runtime loader's ladder — keep `FALLBACK_LADDER` in sync with `src/lib/data.ts`.
 
@@ -205,7 +205,7 @@ gotchas", **docs/adr/TA.md** §pipelines.
 ### audit-site-imagery.mjs
 
 **Command** — `node scripts/audit-site-imagery.mjs`
-**What** — Categorises every /earth /moon /mars site by own-vs-mission-vs-fleet hero byte-size into KEEP_OWN / DELETE_OWN_USE_MISSION / FALLBACK_OK / HAND_SOURCE etc. Writes `/tmp/site-image-audit.json`. Read-only.
+**What** — Categorises every /earth /moon /mars site by own-vs-mission-vs-fleet hero byte-size into KEEP_OWN / DELETE_OWN_USE_MISSION / FALLBACK_OK / HAND_SOURCE etc. Writes `site-image-audit.json` into a fresh temp dir (path printed). Read-only.
 **When** — on-demand.
 **State** — Current; a one-shot triage helper (size-heuristic, not vision-based).
 

@@ -1,0 +1,42 @@
+{
+  "intro": "Venera 13은 1982년 3월 1일 포이베 지역 바로 동쪽의 금성 표면에 착륙해, 457 °C의 열과 지구 해수면 기압의 약 90배에 이르는 압력 속에서 127분 동안 작동했습니다. 설계 수명 32분의 네 배입니다. 금성 표면의 첫 컬러 사진을 보냈고, 땅을 뚫어 시료를 채취했는데, 탑재한 X선 장비는 이를 칼륨이 풍부한 현무암으로 판정했습니다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "충격 흡수 링 위의 내압 구체",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "Venera 13과, 나흘 뒤 약 950km 떨어진 곳에 착륙한 쌍둥이 탐사선 Venera 14를 기념한 1982년 소련 우표."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "금성에서의 127분 — 1982년 3월 1일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "Venera 13이 찍은 흑백 사진: 평평한 암석 판과 어두운 흙, 가장자리에는 착륙선 자신의 장비가 보입니다. 카메라는 창을 통해 밖을 보며 좌우로 훑었습니다."
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "다시 처리한 컬러 파노라마: 금성 지면을 담은 첫 컬러 사진입니다. 두 부분 모두 아래쪽에 착륙선의 톱니 모양 링이 보입니다."
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "유산",
+      "subtitle": "지금도 금성 표면에서 온 마지막 사진",
+      "images": [
+        {
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Magellan, Pioneer Venus, Venera의 자료로 만든 레이더 지도 속 금성. 1982년 Venera 13호와 14호 이후 표면에서 사진을 보낸 탐사선은 없다."
+        }
+      ]
+    }
+  ]
+}

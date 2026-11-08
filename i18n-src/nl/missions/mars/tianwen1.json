@@ -4,13 +4,13 @@
   "payload": "5000 kg (orbiter + lander + Zhurong-rover)",
   "delta_v": "~5 km/s",
   "type": "ORBITER · LANDER · ROVER · ACTIEF",
-  "first": "Eerste missie die orbiter, lander en rover in één lancering naar Mars levert",
-  "description": "China's eerste Marsmissie volbracht wat geen ruimtevaartorganisatie ooit in één lancering had geprobeerd: baaninsertie, atmosferische intrede, zachte landing en het uitzetten van een rover. De rover Zhurong werkte 358 sols op Utopia Planitia, legde 1,9 km af en ging in mei 2022 in geplande hibernatie; sindsdien is hij niet meer wakker geworden (waarschijnlijk door stofophoping op de zonnepanelen). De orbiter blijft actief, brengt de planeet met hoge resolutie in kaart en dient als relais voor de toestellen op de grond.",
+  "first": "Eerste missie die erin slaagde orbiter, lander en rover in één lancering naar Mars te brengen",
+  "description": "China's eerste Marsmissie slaagde er als eerste in, in één lancering, wat tot dan toe alleen de Sovjet-Mars 3 in 1971 had geprobeerd: baaninsertie, atmosferische intrede, zachte landing en het uitzetten van een rover. De rover Zhurong werkte 347 sols (358 aardse dagen) op Utopia Planitia, legde 1,9 km af en ging in mei 2022 in geplande hibernatie; sindsdien is hij niet meer wakker geworden (waarschijnlijk door stofophoping op de zonnepanelen). De orbiter blijft actief, brengt de planeet met hoge resolutie in kaart en dient als relais voor de toestellen op de grond.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Long March 5 van Wenchang — Chinas eerste superbelaste interplanetaire lancering.",
+      "note": "Long March 5 van Wenchang — Chinas eerste interplanetaire lancering, met een zware draagraket.",
       "type": "nominal"
     },
     {

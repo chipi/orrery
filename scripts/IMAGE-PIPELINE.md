@@ -204,6 +204,78 @@ npm run validate-image-integrity
 #    masters/ addition + the static/images webp + every touched static/data JSON.
 ```
 
+### Removing a gallery image — `drop-gallery-slots.mjs`
+
+Logos, mission patches, charts, press-event shots and near-duplicates do not belong in a gallery.
+To remove slots and keep every gallery contiguous (01..N):
+
+```bash
+node scripts/drop-gallery-slots.mjs fleet-galleries/h3/05 missions/apollo7/01   # dry run: the plan
+node scripts/drop-gallery-slots.mjs --apply fleet-galleries/h3/05 missions/apollo7/01
+npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/build-i18n-bundles.mjs \
+  && node scripts/mobile/build-offline-manifest.mjs && npm run validate-image-integrity
+```
+
+It renumbers the kept slots in order and moves their files (served WebP + rungs + 1x1, credit
+thumbs, masters). It rewrites every JSON under `static/data/`, `scripts/i18n-tools/` and `i18n-src/`
+that names the gallery: provenance rows, alt text in 14 locales, ladder, phashes, approved list
+(and its `count`), vision, curation, a story's image list. Hero overrides are renumbered. When a
+dropped slot was the hero, the override is removed and the script names the gallery, so you pick a
+new hero. Read the dry run's JSON list before applying. A content file (a story, a program) that
+loses an image deserves a look. Program figures (`"reuse": "fleet/<id>/<NN>"`) are renumbered and
+listed for a caption check; one that reuses a dropped slot stops the run until it is re-pointed.
+Routes and stories reuse a gallery picture by path; they never keep their own copy of it (the pHash
+gate flags such copies once all masters are pulled). First used 2026-11-06 on 39 slots in 34 galleries, after a
+contact-sheet review of every candidate the vision data tags `other` or describes as a
+logo/patch/chart/poster.
+
+### Replacing a gallery image — `replace-gallery-slots.ts`
+
+When a slot should hold a better picture rather than disappear, write a map under
+`scripts/link-fixes/` (`{ "<rel>": { source: "commons"|"nasa", id, focal: [x, y], category, subject,
+alt: { all 14 locales }, agency, author? } }`), smudge the galleries' masters and run. `agency` is
+required because the credit tools keep a row's old agency, which named the old picture's source
+(batch 1 came out with "JAXA / NASA" on a JAXA render); `author` overrides a Commons author field that
+holds a licence text instead of a name (MMX-CG02.jpg):
+
+```bash
+npx tsx scripts/replace-gallery-slots.ts <map.json> --dry-run   # fetches every original, writes nothing
+npx tsx scripts/replace-gallery-slots.ts <map.json>
+npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/build-i18n-bundles.mjs \
+  && node scripts/mobile/build-offline-manifest.mjs && npm run validate-image-integrity
+```
+
+It runs steps 1–3 of the runbook above for each slot through the same scripts, sets the vision row
+by hand (no vision API call), writes the alt text in 14 locales and records its English as the
+translation source (or `translate-alt-text.mjs plan` would queue a paid re-translation), updates the
+pHash, clears curation and off-subject entries for the old picture, and regenerates the /credits
+thumb (`build-credit-thumbs.mjs` is add-only, so a replaced slot's old thumb must be removed first:
+the 2026-11-07 Mars 2 swap left two stale ones). A JPEG original with an EXIF rotation is written
+upright (re-encoded at q92): the ladder ignores the flag, and on 2026-11-08 a phone photo
+(earth-objects/beidou/04) was served sideways. Do not trust the vision data to find what to
+replace: on 2026-11-08 several rows still described pictures replaced earlier, so the review was by
+eye over contact sheets of every live mission gallery image.
+
+### Hero crop positions — `vision/hero-crop-sheet.mjs`
+
+A hero is shown as a cover crop in three places: the collectible card's hero band (about 1.6–2.6:1,
+its lower half faded under the title), the browse-page covers (16:9) and every explore panel hero
+(16:9). All crop at the centre unless the hero's entry in `static/data/<surface>-hero-overrides.json`
+carries a reviewed `position` (CSS object-position, `"50% 22%"`), which `heroPositionFor()` in
+`src/lib/image-hero.ts` applies everywhere. A hero without an override entry gets one with its own
+slot (`"slot": "01.jpg"`) when it needs a position.
+
+```bash
+node scripts/vision/hero-crop-sheet.mjs --out /tmp/crops                       # every surface
+node scripts/vision/hero-crop-sheet.mjs --out /tmp/crops --surface missions --only apollo11 \
+  --try "missions/apollo11=50% 20%"                                            # preview a fix
+```
+
+Review the sheets by eye (the card's faded half counts as hidden), record the chosen positions, then
+`npm run build-cards`. `replace-gallery-slots.ts` clears the position when it replaces the hero
+picture; `drop-gallery-slots.mjs` keeps it with the picture when it renumbers. The 2026-11-08 review
+started from the Apollo 11 card, whose helmet was cut off at the top.
+
 ### Gotchas learned the hard way (the 2026-07 main→mobile rebase)
 
 - **Images that enter outside the pipeline need the full treatment.** When 0.7.3 added gallery `.jpg`s that a rebase pulled onto the WebP branch, they had **no masters, no WebP tiers, no provenance**. Fix = move each `.jpg` → `masters/`, re-run `build-display-ladder.mjs`, merge + rekey its provenance, rebuild counts. **Treat any hand-added image as a master candidate.**
@@ -428,6 +500,30 @@ The pipeline's design decisions are locked in these ADRs. Read the relevant one 
 | Fleet imagery taxonomy | [ADR-053](../docs/adr/ADR-053.md) | hero / anatomy SVG / mission patch / crew portrait layering |
 | Per-mission overlay completeness | [ADR-069](../docs/adr/ADR-069.md) | validate-data gate + AGENTS.md rule |
 | Pipeline-runner infra | [ADR-064](../docs/adr/ADR-064.md) | The `tsx`-entrypoint Docker image (deployment, not content) |
+
+---
+
+## Mission blueprints
+
+Hand-drafted indigo mission sheets, shown on the mission page (OVERVIEW and FLIGHT) and opened in
+the shared drawing viewer. The image model redraws a **computed reference sheet**, so the
+geometry is ours, not the model's; every fact on the prompt comes from a source recorded in
+`scripts/anatomy/blueprints-history.json`, together with the jobs, local fixes and the content
+check (our mission text made to agree with the sheet, all 14 locales).
+
+| Script | Reference it draws | Missions |
+|---|---|---|
+| `anatomy/blueprint-plan-view.ts` | Heliocentric plan view: JPL ephemeris planets, SBDB/Horizons small bodies, Lambert or fitted multi-turn legs, `ride` (along a body's orbit) and `spiral` (ion thrust, schematic) legs, √r or linear scale, optional true-scale inner detail | interplanetary |
+| `anatomy/blueprint-cislunar-view.ts` | Schematic figure-eight in the rotating Earth–Moon frame, lunar orbit to true scale | Apollo 11 |
+| `anatomy/blueprint-polar-view.ts` | Side view of an out-of-ecliptic orbit built from sourced facts | Ulysses |
+| `anatomy/blueprint-earth-view.ts` | Ground track on a world map (coastlines traced from `static/textures/2k_earth_daymap.jpg`; circular-orbit model with GMST and J2 drift, checked against a sourced place) and the orbit to true scale | Sputnik 1, Vostok 1, Apollo–Soyuz |
+
+The scripts, the two landing-art generators (`landing-sequences-2026-11.mjs`, `lander-exploded-2026-11.mjs`) and the history records are listed in [`anatomy/README.md`](anatomy/README.md). Landing-sequence sheets are wired the same way as blueprints: `build-anatomy-webp.mjs` reads `masters/landing-sequences` and writes `src/lib/landing-sequence-ids.json`, the list of sites that have a sheet (read by `siteLandingSequence()` and `build-original-work.mjs`).
+
+Wiring after a master lands in `masters/blueprints/<mission-id>.png`: `node scripts/build-anatomy-webp.mjs`
+(writes `src/lib/blueprint-ids.json`) → `node scripts/vision/build-display-ladder.mjs --only blueprints`
+→ `node scripts/vision/add-card-rungs.mjs --stems=blueprints/<id>` → `node scripts/build-original-work.mjs`
+(colophon) → `npx prettier --write static/data/image-ladder.json` → `npm run validate-data`.
 
 ---
 

@@ -14,7 +14,7 @@
   "goals": [
     {
       "type": "figure",
-      "image": { "reuse": "fleet/n1/05" },
+      "image": { "reuse": "fleet/n1/01" },
       "caption": "The N1 super-heavy rocket — the Soviet answer to the Saturn V. Its first stage clustered thirty engines because no single Soviet engine was powerful enough, and no test stand existed big enough to fire them together.",
       "align": "right"
     },
@@ -30,7 +30,7 @@
   "outcome": [
     {
       "type": "figure",
-      "image": { "reuse": "fleet/n1/04" },
+      "image": { "reuse": "fleet/n1/03" },
       "caption": "The N1's first stage clustered thirty NK-15 engines in two rings. With no way to ground-test them together, every flight was the first integrated test — and all four ended in failure, one destroying the launch pad.",
       "align": "right"
     },
@@ -61,7 +61,7 @@
     {
       "type": "figure",
       "image": { "reuse": "fleet/n1/02" },
-      "caption": "A US reconnaissance image of an N1 mockup at Baikonur, late 1967. For two decades the Soviet Union insisted the Moon rocket did not exist; to the outside world it was known mainly through American spy photographs like this one.",
+      "caption": "A museum model of the N1. For two decades the Soviet Union insisted the Moon rocket did not exist; to the outside world it was known mainly through American spy photographs.",
       "align": "left"
     },
     {

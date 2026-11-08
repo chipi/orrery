@@ -7,7 +7,7 @@
  * getMarsSiteGallery, getEarthObjectGallery — all chain own → mission
  * → fleet today).
  *
- * Produces a single audit JSON at /tmp/site-image-audit.json with one
+ * Produces a single audit JSON (site-image-audit.json in a fresh temp dir; path printed) with one
  * row per site, categorising each into:
  *   - KEEP_OWN          own slot 01 ≥ 100KB — leave it
  *   - KEEP_OWN_LOWQ     own 30–100KB — medium, leave for Marko's eye
@@ -21,7 +21,16 @@
  * Run: node scripts/audit-site-imagery.mjs
  */
 
-import { readFileSync, writeFileSync, existsSync, statSync, readdirSync } from 'node:fs';
+import {
+  mkdtempSync,
+  readFileSync,
+  writeFileSync,
+  existsSync,
+  statSync,
+  readdirSync,
+} from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const STRONG_BYTES = 100_000;
 const WEAK_BYTES = 30_000;
@@ -122,7 +131,8 @@ for (const row of audit) {
   summary.by_surface_x_category[k] = (summary.by_surface_x_category[k] ?? 0) + 1;
 }
 
-writeFileSync('/tmp/site-image-audit.json', JSON.stringify({ summary, audit }, null, 2));
+const auditPath = join(mkdtempSync(join(tmpdir(), 'site-image-audit-')), 'site-image-audit.json');
+writeFileSync(auditPath, JSON.stringify({ summary, audit }, null, 2));
 console.log('Summary:');
 console.log(' total sites:', summary.total);
 console.log(' by category:');
@@ -133,4 +143,4 @@ console.log('\n by surface × category:');
 for (const [k, n] of Object.entries(summary.by_surface_x_category).sort()) {
   console.log(`   ${k.padEnd(40)} ${n}`);
 }
-console.log('\n→ full audit at /tmp/site-image-audit.json');
+console.log(`\n→ full audit at ${auditPath}`);

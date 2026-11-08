@@ -61,6 +61,9 @@ const SURFACES = {
   planets: 'planets',
   'small-bodies': 'small-bodies',
   satellites: 'satellites',
+  belts: 'belts',
+  'iss-modules': 'iss-modules',
+  'tiangong-modules': 'tiangong-modules',
 };
 
 const exists = (p) =>

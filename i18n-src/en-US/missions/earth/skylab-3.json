@@ -1,12 +1,12 @@
 {
   "name": "Skylab 3",
   "vehicle": "Saturn IB (SA-207)",
-  "payload": "19979 kg launch mass; CSM-117 + 3-person crew",
+  "payload": "20121 kg launch mass; CSM-117 + 3-person crew",
   "delta_v": "~9.4 km/s (LEO)",
   "dispatch": "Skylab 3 took the endurance question and nearly doubled the answer. Where the first crew had stayed 28 days, Alan Bean's crew stayed 59 — pushing the human body further into long-duration weightlessness than anyone had gone, and returning healthier than the pessimists had feared. They logged a huge haul of solar observations from the Apollo Telescope Mount and rode out a scare when thruster leaks on their Apollo ferry briefly raised the prospect of a rescue flight. Skylab 3 is where long stays in space started to look not just survivable but routine — the quiet groundwork for every months-long station tour since.",
   "type": "CREWED STATION CREW · FLOWN",
   "first": "Second Skylab crew — 59 days, deployed twin-pole solar shield to replace parasol",
-  "description": "Bean, Garriott and Lousma — the second crew to live aboard Skylab, for 59 days 11 hours. Launched 1973-07-28 11:11 UTC on Saturn IB (SA-207). Within hours of docking the CSM service module suffered an attitude-control thruster leak — back-up CSM-119 was prepped at Cape Canaveral for a possible rescue mission, but the crew completed nominally. Garriott led 305 hours of solar observations using the Apollo Telescope Mount instruments. Three EVAs deployed a twin-pole sun shield over the original parasol, repaired the rate gyro package, and recovered film canisters from the ATM. Splashed down 1973-09-25 22:19 UTC; CSM-117 displayed at the Glenn Visitor Center, Cleveland.",
+  "description": "Bean, Garriott and Lousma — the second crew to live aboard Skylab, for 59 days 11 hours. Launched 1973-07-28 11:11 UTC on Saturn IB (SA-207). On approach to the station, an attitude-control thruster quad on the CSM service module leaked; after a second quad leaked about six days later, back-up CSM-119 was prepped at Cape Canaveral for a possible rescue mission, but the crew completed nominally. Garriott led about 305 crew-hours of solar observations using the Apollo Telescope Mount instruments. Three EVAs deployed a twin-pole sun shield over the original parasol, repaired the rate gyro package, and recovered film canisters from the ATM. Splashed down 1973-09-25 22:19 UTC; CSM-117 displayed at the Glenn Visitor Center, Cleveland.",
   "events": [
     {
       "met": 0,
@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.5,
+      "met": 6,
       "label": "CSM THRUSTER LEAK",
-      "note": "Service-module RCS quad leak; rescue CSM-119 prepared at Cape but not flown.",
+      "note": "Second service-module RCS quad leak (the first was on approach); rescue CSM-119 prepared at Cape but not flown.",
       "type": "warning"
     },
     {
-      "met": 30,
+      "met": 9,
       "label": "TWIN-POLE SHIELD EVA",
       "note": "Crew deployed twin-pole shield over original parasol.",
       "type": "nominal"

@@ -22,7 +22,7 @@ import type { AskAuth, AuthDeps, AuthPhase } from './auth';
 let BASE: string;
 let AskAuthCtor: typeof AskAuth;
 let labApiFront: Server;
-const EMAIL = 'marko.dragoljevic@gmail.com';
+const EMAIL = 'allowed-user@example.com';
 const REDIRECT = 'http://localhost:5373/lab/callback';
 
 let dir: string;

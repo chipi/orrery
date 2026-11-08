@@ -1,0 +1,46 @@
+{
+  "intro": "Artemis IV moet in 2028 weer mensen op de Maan zetten – de eerste landing sinds Apollo 17 in 1972, en de eerste bemande landing bij de zuidpool. Apollo kwam op bezoek. Deze keer is het doel te blijven: het waterijs in de poolkraters kan drinkwater, lucht en raketbrandstof leveren, en NASA plant vanaf dan minstens één landing per jaar, op weg naar een basis. Het is ook weer een race. Toen NASA-administrator Jared Isaacman het plan in februari 2026 aankondigde, zei hij: ‘Nu de geloofwaardige concurrentie van onze grootste geopolitieke tegenstander met de dag toeneemt, moeten we sneller gaan.’ China wil zijn eigen astronauten vóór 2030 laten landen.",
+  "chapters": [
+    {
+      "id": "landing",
+      "title": "Landing",
+      "subtitle": "2028 – twee van de vier astronauten dalen af naar de zuidpool",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/03.webp",
+          "caption": "Artistieke impressie: Orion ontmoet een Starship-lander in een baan om de Maan, waar de bemanning overstapt. NASA heeft nog niet gezegd of SpaceX' Starship of Blue Origins Blue Moon de bemanning van Artemis IV vervoert; het kiest de lander die het eerst klaar is."
+        },
+        {
+          "src": "/images/missions/artemis4/02.webp",
+          "caption": "Artistieke impressie: een Starship-lander op het maanoppervlak, de Aarde boven de horizon."
+        },
+        {
+          "src": "/images/missions/artemis4/01.webp",
+          "caption": "Artistieke impressie: astronauten in de maanpakken van Axiom naast de lander bij de zuidpool, waar ze ongeveer een week moeten blijven."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Orion en zijn Europese servicemodule",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/04.webp",
+          "caption": "De Europese servicemodule voor Artemis IV – de motor, stroom en lucht van Orion – tijdens de voorbereiding in het Kennedy Space Center in juli 2026."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Wat volgt",
+      "subtitle": "De eerste van vele landingen",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/05.webp",
+          "caption": "De met kraters bezaaide rand van het Zuidpool-Aitken-bekken, gefotografeerd door de bemanning van Artemis II. De landingen na Artemis IV richten zich op dit poolgebied; NASA heeft ook PROMISE voorgesteld, een rover die het voor een basis moet verkennen, en China plant rond 2035 een onderzoeksstation bij de zuidpool."
+        }
+      ]
+    }
+  ]
+}

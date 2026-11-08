@@ -1,0 +1,1071 @@
+[
+  {
+    "m": "moon/luna9",
+    "text": {
+      "en-US": [
+        [
+          "returned across three sessions over three days",
+          "returned across seven radio sessions (8 h 5 min in total) over three days"
+        ],
+        [
+          "returned in three transmission sessions over three days",
+          "returned in seven transmission sessions (8 h 5 min in total) over three days"
+        ]
+      ],
+      "ar": [
+        [
+          "عبر ثلاث جلسات إرسال في ثلاثة أيام",
+          "عبر سبع جلسات إرسال لاسلكي (8 ساعات و5 دقائق في المجموع) في ثلاثة أيام"
+        ],
+        [
+          "في ثلاث جلسات إرسال على مدى ثلاثة أيام",
+          "في سبع جلسات إرسال (8 ساعات و5 دقائق في المجموع) على مدى ثلاثة أيام"
+        ]
+      ],
+      "de": [
+        [
+          "in drei Sitzungen über drei Tage hinweg",
+          "in sieben Funksitzungen (insgesamt 8 h 5 min) über drei Tage hinweg"
+        ],
+        [
+          "in drei Transmissionssitzungen über drei Tage",
+          "in sieben Transmissionssitzungen (insgesamt 8 h 5 min) über drei Tage"
+        ]
+      ],
+      "es": [
+        [
+          "devueltas en tres sesiones de transmisión a lo largo de tres días zanjaron",
+          "devueltas en siete sesiones de radio (8 h 5 min en total) a lo largo de tres días zanjaron"
+        ],
+        [
+          "devueltas en tres sesiones de transmisión a lo largo de tres días.",
+          "devueltas en siete sesiones de transmisión (8 h 5 min en total) a lo largo de tres días."
+        ]
+      ],
+      "fr": [
+        [
+          "lors de trois sessions étalées sur trois jours",
+          "lors de sept sessions radio (8 h 5 min au total) étalées sur trois jours"
+        ],
+        [
+          "en trois sessions réparties sur trois jours",
+          "en sept sessions (8 h 5 min au total) réparties sur trois jours"
+        ]
+      ],
+      "hi": [
+        [
+          "तीन दिनों में तीन सत्रों के दौरान",
+          "तीन दिनों में सात रेडियो सत्रों (कुल 8 घंटे 5 मिनट) के दौरान"
+        ],
+        [
+          "तीन दिनों में तीन संचरण सत्रों में",
+          "तीन दिनों में सात संचरण सत्रों (कुल 8 घंटे 5 मिनट) में"
+        ]
+      ],
+      "it": [
+        [
+          "in tre sessioni nel corso di tre giorni risolsero",
+          "in sette sessioni radio (8 h 5 min in totale) nel corso di tre giorni risolsero"
+        ],
+        [
+          "in tre sessioni nel corso di tre giorni.",
+          "in sette sessioni (8 h 5 min in totale) nel corso di tre giorni."
+        ]
+      ],
+      "ja": [
+        ["3日間にわたる3回の通信で送られ", "3日間にわたる7回の電波通信（合計8時間5分）で送られ"],
+        ["3日間3回の送信セッション", "3日間7回の送信セッション（合計8時間5分）"]
+      ],
+      "ko": [
+        ["사흘에 걸쳐 세 차례의 교신으로", "사흘에 걸쳐 일곱 차례의 무선 교신(총 8시간 5분)으로"],
+        ["3일에 걸쳐 3번의 전송 세션으로", "3일에 걸쳐 7번의 전송 세션(총 8시간 5분)으로"]
+      ],
+      "nl": [
+        [
+          "verzonden over drie sessies in drie dagen",
+          "verzonden over zeven radiosessies (samen 8 uur en 5 minuten) in drie dagen"
+        ],
+        [
+          "verzonden in drie transmissiesessies over drie dagen",
+          "verzonden in zeven transmissiesessies (samen 8 uur en 5 minuten) over drie dagen"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "retornadas em três sessões ao longo de três dias",
+          "retornadas em sete sessões de rádio (8 h 5 min no total) ao longo de três dias"
+        ],
+        [
+          "retornadas em três sessões de transmissão ao longo de três dias",
+          "retornadas em sete sessões de transmissão (8 h 5 min no total) ao longo de três dias"
+        ]
+      ],
+      "ru": [
+        [
+          "переданы в течение трёх сеансов на протяжении трёх дней",
+          "переданы за семь радиосеансов (всего 8 ч 5 мин) на протяжении трёх дней"
+        ],
+        [
+          "переданы в течение трёх сеансов передачи за три дня",
+          "переданы в течение семи сеансов передачи (всего 8 ч 5 мин) за три дня"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "током три сесије у распону од три дана",
+          "током седам радио-сесија (укупно 8 h 5 min) у распону од три дана"
+        ],
+        [
+          "током три сесије преноса у распону од три дана",
+          "током седам сесија преноса (укупно 8 h 5 min) у распону од три дана"
+        ]
+      ],
+      "zh-CN": [
+        ["它分三次传输、历时三天", "它分七次无线电传输（总计8小时5分钟）、历时三天"],
+        ["在三天内分三个传输会话返回", "在三天内分七个传输会话（总计8小时5分钟）返回"]
+      ]
+    },
+    "base": [
+      [
+        "11 previous Soviet attempts (Luna 4-8) had failed",
+        "11 earlier Soviet soft-landing attempts had failed (Luna 9 was the twelfth)"
+      ]
+    ]
+  },
+  {
+    "m": "moon/luna10",
+    "base": [["1966-03-31 10:48 UT", "1966-03-31 10:47 UT"]]
+  },
+  {
+    "m": "moon/luna16",
+    "text": {
+      "en-US": [[", and decades later by Chang'e 5 and Chang'e 6", ""]],
+      "ar": [["، وبعد عقود في Chang'e 5 و Chang'e 6", ""]],
+      "de": [[" sowie Jahrzehnte später von Chang'e 5 und Chang'e 6", ""]],
+      "es": [[", y décadas más tarde por Chang'e 5 y Chang'e 6", ""]],
+      "fr": [[", et décennies plus tard par Chang'e 5 et Chang'e 6", ""]],
+      "hi": [[", और दशकों बाद Chang'e 5 और Chang'e 6 में भी", ""]],
+      "it": [[", decenni dopo, da Chang'e 5 e Chang'e 6", ""]],
+      "ja": [["再び使われ、数十年後にはChang'e 5とChang'e 6にも受け継がれた", "再び使われた"]],
+      "ko": [["다시 쓰였고, 수십 년 뒤 Chang'e 5와 Chang'e 6에서도 쓰였습니다", "다시 쓰였습니다"]],
+      "nl": [[", en decennia later door Chang'e 5 en Chang'e 6", ""]],
+      "pt-BR": [[", e décadas depois por Chang'e 5 e Chang'e 6", ""]],
+      "ru": [[", а десятилетиями позже — для Chang'e 5 и Chang'e 6", ""]],
+      "sr-Cyrl": [[", а деценијама касније и за Chang'e 5 и Chang'e 6", ""]],
+      "zh-CN": [["，数十年后又被嫦娥五号和嫦娥六号采用", ""]]
+    },
+    "base": [
+      [
+        "predated American sample-return ambitions by decades",
+        "Apollo 11 had returned crewed samples 14 months earlier"
+      ]
+    ]
+  },
+  {
+    "m": "moon/luna17",
+    "text": {
+      "en-US": [["322 kg", "756 kg"]],
+      "ar": [
+        ["322 كغ", "756 كغ"],
+        ["322 كيلوغراماً", "756 كيلوغراماً"]
+      ],
+      "de": [["322 kg", "756 kg"]],
+      "es": [["322 kg", "756 kg"]],
+      "fr": [["322 kg", "756 kg"]],
+      "hi": [["322 kg", "756 kg"]],
+      "it": [["322 kg", "756 kg"]],
+      "ja": [["322 kg", "756 kg"]],
+      "ko": [["322 kg", "756 kg"]],
+      "nl": [["322 kg", "756 kg"]],
+      "pt-BR": [["322 kg", "756 kg"]],
+      "ru": [["322 кг", "756 кг"]],
+      "sr-Cyrl": [["322 kg", "756 kg"]],
+      "zh-CN": [
+        ["322 kg", "756 kg"],
+        ["重 322 千克", "重 756 千克"]
+      ]
+    },
+    "base": [["322 kg Lunokhod 1 rover", "756 kg Lunokhod 1 rover"]]
+  },
+  {
+    "m": "moon/luna21",
+    "text": {
+      "en-US": [["southern edge of Mare Serenitatis", "eastern edge of Mare Serenitatis"]],
+      "ar": [["على الحافة الجنوبية لبحر الصفاء", "على الحافة الشرقية لبحر الصفاء"]],
+      "de": [["am südlichen Rand des Mare", "am östlichen Rand des Mare"]],
+      "es": [["en el borde meridional de Mare", "en el borde oriental de Mare"]],
+      "fr": [["sur le bord méridional de Mer", "sur le bord oriental de Mer"]],
+      "hi": [["निर्मलता सागर के दक्षिणी किनारे", "निर्मलता सागर के पूर्वी किनारे"]],
+      "it": [["sul bordo meridionale di Mare", "sul bordo orientale di Mare"]],
+      "ja": [["晴れの海南縁", "晴れの海東縁"]],
+      "ko": [["평온의 바다 남쪽 가장자리", "평온의 바다 동쪽 가장자리"]],
+      "nl": [["aan de zuidrand van Mare", "aan de oostrand van Mare"]],
+      "pt-BR": [["na borda sul de Mare", "na borda leste de Mare"]],
+      "ru": [["на южном краю Моря Ясности", "на восточном краю Моря Ясности"]],
+      "sr-Cyrl": [["на јужном ободу Мора ведрине", "на источном ободу Мора ведрине"]],
+      "zh-CN": [["澄海南缘", "澄海东缘"]]
+    },
+    "base": [
+      [
+        "followed it by nearly two years",
+        "followed the first Apollo rover drive (Apollo 15, July 1971) by about a year and a half"
+      ]
+    ]
+  },
+  {
+    "m": "moon/luna24",
+    "text": {
+      "en-US": [["4800 kg launch mass", "about 5700 kg launch mass"]],
+      "ar": [["كتلة الإطلاق 4800 كغ", "كتلة الإطلاق نحو 5700 كغ"]],
+      "de": [["4800 kg Startmasse", "rund 5700 kg Startmasse"]],
+      "es": [["4800 kg de masa", "unos 5700 kg de masa"]],
+      "fr": [["4800 kg de masse", "environ 5700 kg de masse"]],
+      "hi": [["4800 kg प्रक्षेपण", "लगभग 5700 kg प्रक्षेपण"]],
+      "it": [["4800 kg di massa", "circa 5700 kg di massa"]],
+      "ja": [["打上げ質量4800 kg", "打上げ質量約5700 kg"]],
+      "ko": [["발사 질량 4800 kg", "발사 질량 약 5700 kg"]],
+      "nl": [["4800 kg lanceermassa", "ongeveer 5700 kg lanceermassa"]],
+      "pt-BR": [["4800 kg de massa", "cerca de 5700 kg de massa"]],
+      "ru": [["Стартовая масса 4800 кг", "Стартовая масса около 5700 кг"]],
+      "sr-Cyrl": [["Лансирна маса 4800 kg", "Лансирна маса око 5700 kg"]],
+      "zh-CN": [["发射质量 4800 kg", "发射质量约 5700 kg"]]
+    },
+    "base": [["4800 kg launch mass;", "about 5700 kg launch mass;"]]
+  },
+  {
+    "m": "moon/clementine",
+    "text": {
+      "en-US": [
+        [
+          "424 kg dry mass; 1690 kg launch mass with propellant",
+          "227 kg dry mass; 424 kg with propellant; 1690 kg at launch with the solid kick motor"
+        ],
+        [
+          "confirmed years later by Lunar Prospector and Chandrayaan-1",
+          "a disputed result; Lunar Prospector (hydrogen), LCROSS and Chandrayaan-1 later found evidence for water ice"
+        ]
+      ],
+      "ar": [
+        [
+          "الكتلة الجافة 424 كغ؛ كتلة الإطلاق مع الوقود الدافع 1690 كغ",
+          "الكتلة الجافة 227 كغ؛ 424 كغ مع الوقود الدافع؛ 1690 كغ عند الإطلاق مع محرك الدفع الصلب"
+        ],
+        [
+          "وهو ما أكدته بعد سنوات مهمتا Lunar Prospector وChandrayaan-1",
+          "وهي نتيجة مختلَف عليها؛ فقد رصدت لاحقاً Lunar Prospector (الهيدروجين) وLCROSS وChandrayaan-1 أدلة على وجود جليد مائي"
+        ]
+      ],
+      "de": [
+        [
+          "424 kg Trockenmasse; 1690 kg Startmasse mit Treibstoff",
+          "227 kg Trockenmasse; 424 kg mit Treibstoff; 1690 kg beim Start mit dem Feststoff-Kickmotor"
+        ],
+        [
+          "bestätigte Jahre später von Lunar Prospector und Chandrayaan-1",
+          "ein umstrittenes Ergebnis; Lunar Prospector (Wasserstoff), LCROSS und Chandrayaan-1 fanden später Hinweise auf Wassereis"
+        ]
+      ],
+      "es": [
+        [
+          "424 kg en seco; 1690 kg de masa de lanzamiento con propelente",
+          "227 kg en seco; 424 kg con propelente; 1690 kg al lanzamiento con el motor de impulso de combustible sólido"
+        ],
+        [
+          "confirmados años después por Lunar Prospector y Chandrayaan-1",
+          "un resultado discutido; Lunar Prospector (hidrógeno), LCROSS y Chandrayaan-1 encontraron más tarde indicios de hielo de agua"
+        ]
+      ],
+      "fr": [
+        [
+          "424 kg de masse à sec ; 1690 kg de masse au lancement avec les ergols",
+          "227 kg de masse à sec ; 424 kg avec les ergols ; 1690 kg au lancement avec le moteur d'injection à propergol solide"
+        ],
+        [
+          "confirmés des années plus tard par Lunar Prospector et Chandrayaan-1",
+          "un résultat contesté ; Lunar Prospector (hydrogène), LCROSS et Chandrayaan-1 ont trouvé plus tard des indices de glace d'eau"
+        ]
+      ],
+      "hi": [
+        [
+          "424 kg शुष्क द्रव्यमान; प्रणोदक सहित 1690 kg प्रक्षेपण द्रव्यमान",
+          "227 kg शुष्क द्रव्यमान; प्रणोदक सहित 424 kg; ठोस किक मोटर सहित प्रक्षेपण पर 1690 kg"
+        ],
+        [
+          "जिनकी पुष्टि वर्षों बाद Lunar Prospector और चंद्रयान-1 ने की",
+          "यह परिणाम विवादित रहा; बाद में Lunar Prospector (हाइड्रोजन), LCROSS और चंद्रयान-1 ने जल-बर्फ़ के साक्ष्य पाए"
+        ]
+      ],
+      "it": [
+        [
+          "424 kg a secco; 1690 kg di massa al lancio con propellente",
+          "227 kg a secco; 424 kg con propellente; 1690 kg al lancio con il motore a propellente solido di spinta finale"
+        ],
+        [
+          "confermati anni dopo da Lunar Prospector e Chandrayaan-1",
+          "un risultato contestato; Lunar Prospector (idrogeno), LCROSS e Chandrayaan-1 trovarono poi indizi di ghiaccio d'acqua"
+        ]
+      ],
+      "ja": [
+        [
+          "乾燥質量424 kg；推進剤込みの打上げ質量1690 kg",
+          "乾燥質量227 kg；推進剤込み424 kg；固体キックモーター込みの打上げ時1690 kg"
+        ],
+        [
+          "これは数年後、Lunar ProspectorとChandrayaan-1によって確認された",
+          "この結果には異論があったが、のちにLunar Prospector（水素）、LCROSS、Chandrayaan-1が水氷の証拠を見つけた"
+        ]
+      ],
+      "ko": [
+        [
+          "건조 질량 424 kg; 추진제 포함 발사 질량 1690 kg",
+          "건조 질량 227 kg; 추진제 포함 424 kg; 고체 킥 모터 포함 발사 시 1690 kg"
+        ],
+        [
+          "이는 수년 뒤 Lunar Prospector와 Chandrayaan-1이 확인했습니다",
+          "이 결과는 논란이 있었으나, 이후 Lunar Prospector(수소), LCROSS, Chandrayaan-1이 물얼음의 증거를 찾아냈습니다"
+        ]
+      ],
+      "nl": [
+        [
+          "424 kg droge massa; 1690 kg lanceermassa met drijfstof",
+          "227 kg droge massa; 424 kg met drijfstof; 1690 kg bij de lancering met de vaste kickmotor"
+        ],
+        [
+          "jaren later bevestigd door Lunar Prospector en Chandrayaan-1",
+          "een omstreden resultaat; Lunar Prospector (waterstof), LCROSS en Chandrayaan-1 vonden later aanwijzingen voor waterijs"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "424 kg de massa seca; 1690 kg de massa de lançamento com propelente",
+          "227 kg de massa seca; 424 kg com propelente; 1690 kg no lançamento com o motor de impulso sólido"
+        ],
+        [
+          "confirmados anos depois pelo Lunar Prospector e pelo Chandrayaan-1",
+          "um resultado contestado; o Lunar Prospector (hidrogênio), o LCROSS e o Chandrayaan-1 encontraram depois indícios de gelo de água"
+        ]
+      ],
+      "ru": [
+        [
+          "Сухая масса 424 кг; стартовая масса с топливом 1690 кг",
+          "Сухая масса 227 кг; 424 кг с топливом; 1690 кг при старте с твердотопливным разгонным двигателем"
+        ],
+        [
+          "позже подтверждены Lunar Prospector и Chandrayaan-1",
+          "результат оспаривался; позднее Lunar Prospector (водород), LCROSS и Chandrayaan-1 нашли свидетельства водяного льда"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Сува маса 424 kg; лансирна маса са погонским горивом 1690 kg",
+          "Сува маса 227 kg; 424 kg са погонским горивом; 1690 kg при лансирању са чврстим покретачким мотором"
+        ],
+        [
+          "који су годинама касније потврдиле мисије Lunar Prospector и Chandrayaan-1",
+          "тај налаз је био споран, али су касније Lunar Prospector (водоник), LCROSS и Chandrayaan-1 пронашли доказе о воденом леду"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "干质量 424 kg；含推进剂的发射质量 1690 kg",
+          "干质量 227 kg；含推进剂 424 kg；带固体助推发动机的发射质量 1690 kg"
+        ],
+        [
+          "数年后得到Lunar Prospector和Chandrayaan-1的证实",
+          "这一结果存在争议，后来Lunar Prospector（氢）、LCROSS和Chandrayaan-1发现了水冰的证据"
+        ]
+      ]
+    },
+    "base": [
+      [
+        "424 kg dry mass; 1690 kg launch mass with propellant",
+        "227 kg dry mass; 424 kg with propellant; 1690 kg at launch with the solid kick motor"
+      ],
+      [
+        "the discovery that triggered LRO + every subsequent ice-search mission",
+        "a disputed hint that spurred later ice searches"
+      ],
+      ["(22 years)", "(21 years)"]
+    ]
+  },
+  {
+    "m": "moon/lunar-prospector",
+    "text": {
+      "en-US": [
+        ["296 kg dry; carried", "126 kg dry (296 kg at launch); carried"],
+        [
+          "entered a 100-km circular polar lunar orbit on 1998-01-11",
+          "was captured into an 11.6-hour lunar orbit on 1998-01-11 and lowered to its 100-km polar mapping orbit on 16 January"
+        ],
+        [
+          "initial 100 × 100 km polar orbit.",
+          "captured into an 11.6-hour orbit; lowered to the 100 km polar mapping orbit on 16 January."
+        ],
+        [
+          "~2 × 10⁹ tonnes of hydrogen-rich material (probably water ice)",
+          "10–300 million tonnes of water ice (1998 estimate)"
+        ],
+        ["Boynton-team analysis", "Feldman-team analysis"],
+        ["near Shackleton crater", "in Shoemaker crater"],
+        ["SHACKLETON IMPACT", "SHOEMAKER IMPACT"]
+      ],
+      "ar": [
+        ["الكتلة الجافة 296 كغ؛", "الكتلة الجافة 126 كغ (296 كغ عند الإطلاق)؛"],
+        [
+          "ودخلت Lunar Prospector في 1998-01-11 مداراً قطبياً دائرياً حول القمر على ارتفاع 100 كم",
+          "وأُسرت Lunar Prospector في 1998-01-11 في مدار قمري مدته 11.6 ساعة ثم خُفض مدارها في 16 يناير إلى مدار قطبي لرسم الخرائط على ارتفاع 100 كم"
+        ],
+        [
+          "— المدار القطبي الأولي 100 × 100 كم",
+          "— الالتقاط في مدار مدته 11.6 ساعة، ثم خُفض في 16 يناير إلى مدار رسم الخرائط القطبي على ارتفاع 100 كم"
+        ],
+        [
+          "نحو 2 × 10⁹ طن من مادة غنية بالهيدروجين (على الأرجح جليد مائي)",
+          "10–300 مليون طن من جليد الماء (تقدير عام 1998)"
+        ],
+        ["تحليل فريق Boynton", "تحليل فريق Feldman"],
+        ["قرب فوهة شاكلتون", "في فوهة شوميكر"],
+        ["ارتطام شاكلتون", "ارتطام شوميكر"]
+      ],
+      "de": [
+        ["296 kg Trockenmasse;", "126 kg Trockenmasse (296 kg beim Start);"],
+        [
+          "erreichte Lunar Prospector am 1998-01-11 eine 100-km-Kreisbahn um den Mond mit polarer Umlaufbahn",
+          "wurde Lunar Prospector am 1998-01-11 in eine Mondumlaufbahn von 11,6 Stunden eingefangen und am 16. Januar auf die polare Kartierungsbahn in 100 km Höhe abgesenkt"
+        ],
+        [
+          "— initiale 100 × 100 km polare Bahn",
+          "— Einfang in eine 11,6-Stunden-Bahn; am 16. Januar auf die polare Kartierungsbahn in 100 km Höhe abgesenkt"
+        ],
+        [
+          "~2 × 10⁹ Tonnen wasserstoffreichem Material (wahrscheinlich Wassereis)",
+          "10–300 Millionen Tonnen Wassereis (Schätzung von 1998)"
+        ],
+        ["durch das Boynton-Team", "durch das Feldman-Team"],
+        ["nahe des Shackleton-Kraters", "im Shoemaker-Krater"],
+        ["nahe Shackleton-Krater", "im Shoemaker-Krater"],
+        ["SHACKLETON-EINSCHLAG", "SHOEMAKER-EINSCHLAG"]
+      ],
+      "es": [
+        ["296 kg en seco;", "126 kg en seco (296 kg al lanzamiento);"],
+        [
+          "entró en una órbita lunar polar circular de 100 km el 1998-01-11",
+          "fue capturado en una órbita lunar de 11,6 horas el 1998-01-11 y descendió el 16 de enero a la órbita polar de cartografía de 100 km"
+        ],
+        [
+          "— órbita polar inicial de 100 × 100 km",
+          "— capturado en una órbita de 11,6 horas; el 16 de enero descendió a la órbita polar de cartografía de 100 km"
+        ],
+        [
+          "aproximadamente 2 × 10⁹ toneladas de material rico en hidrógeno (probablemente hielo de agua)",
+          "entre 10 y 300 millones de toneladas de hielo de agua (estimación de 1998)"
+        ],
+        ["equipo de Boynton", "equipo de Feldman"],
+        ["cerca del cráter Shackleton", "en el cráter Shoemaker"],
+        ["IMPACTO SHACKLETON", "IMPACTO SHOEMAKER"]
+      ],
+      "fr": [
+        ["296 kg à sec ;", "126 kg à sec (296 kg au lancement) ;"],
+        [
+          "est entré en orbite lunaire polaire circulaire de 100 km le 1998-01-11",
+          "a été capturé en orbite lunaire de 11,6 heures le 1998-01-11, puis abaissé le 16 janvier sur l'orbite polaire de cartographie de 100 km"
+        ],
+        [
+          "— orbite polaire initiale de 100 × 100 km",
+          "— capture sur une orbite de 11,6 heures ; abaissée le 16 janvier sur l'orbite polaire de cartographie de 100 km"
+        ],
+        [
+          "environ 2 × 10⁹ tonnes de matériau riche en hydrogène (probablement de la glace d'eau)",
+          "10 à 300 millions de tonnes de glace d'eau (estimation de 1998)"
+        ],
+        ["l'équipe Boynton", "l'équipe Feldman"],
+        ["près du cratère Shackleton", "dans le cratère Shoemaker"],
+        ["IMPACT SHACKLETON", "IMPACT SHOEMAKER"]
+      ],
+      "hi": [
+        ["296 kg शुष्क;", "126 kg शुष्क (प्रक्षेपण पर 296 kg);"],
+        [
+          "1998-01-11 को 100 km की वृत्ताकार ध्रुवीय चंद्र कक्षा में पहुँचा",
+          "1998-01-11 को 11.6 घंटे की चंद्र कक्षा में पकड़ा गया और 16 जनवरी को 100 km की ध्रुवीय मानचित्रण कक्षा में उतारा गया"
+        ],
+        [
+          "— प्रारंभिक 100 × 100 किमी ध्रुवीय कक्षा",
+          "— 11.6 घंटे की कक्षा में पकड़ा गया; 16 जनवरी को 100 किमी की ध्रुवीय मानचित्रण कक्षा में उतारा गया"
+        ],
+        [
+          "~2 × 10⁹ टन हाइड्रोजन-समृद्ध पदार्थ (संभवतः जल-बर्फ़)",
+          "10–300 मिलियन टन जल-बर्फ़ (1998 का अनुमान)"
+        ],
+        ["Boynton की टीम", "Feldman की टीम"],
+        ["शैकलटन क्रेटर के पास जानबूझकर टकराकर", "Shoemaker क्रेटर में जानबूझकर टकराकर"],
+        ["Shackleton क्रेटर के पास जानबूझकर प्रभाव", "Shoemaker क्रेटर में जानबूझकर प्रभाव"],
+        ["शैकलटन प्रभाव", "Shoemaker प्रभाव"]
+      ],
+      "it": [
+        ["296 kg a secco;", "126 kg a secco (296 kg al lancio);"],
+        [
+          "entrò in un'orbita lunare polare circolare di 100 km il 1998-01-11",
+          "fu catturato il 1998-01-11 in un'orbita lunare di 11,6 ore e portato il 16 gennaio nell'orbita polare di mappatura di 100 km"
+        ],
+        [
+          "— orbita polare iniziale di 100 × 100 km",
+          "— catturato in un'orbita di 11,6 ore; il 16 gennaio portato nell'orbita polare di mappatura di 100 km"
+        ],
+        [
+          "~2 × 10⁹ tonnellate di materiale ricco di idrogeno (probabilmente ghiaccio d'acqua)",
+          "10–300 milioni di tonnellate di ghiaccio d'acqua (stima del 1998)"
+        ],
+        ["del team di Boynton", "del team di Feldman"],
+        ["vicino al cratere Shackleton", "nel cratere Shoemaker"],
+        ["IMPATTO SHACKLETON", "IMPATTO SHOEMAKER"]
+      ],
+      "ja": [
+        ["乾燥質量296 kg；", "乾燥質量126 kg（打上げ時296 kg）；"],
+        [
+          "1998-01-11に高度100 kmの円形の月極軌道に入った",
+          "1998-01-11に周期11.6時間の月周回軌道に捕捉され、1月16日に高度100 kmの極観測軌道へ下げられた"
+        ],
+        [
+          "初期100 × 100 km極軌道",
+          "周期11.6時間の軌道に捕捉、1月16日に高度100 kmの極観測軌道へ下げた"
+        ],
+        [
+          "約2 × 10⁹トンの水素を豊富に含む物質（おそらく水氷）",
+          "1000万～3億トンの水氷（1998年の推定）"
+        ],
+        ["Boyntonチーム", "Feldmanチーム"],
+        [
+          "シャクルトン・クレーター付近へ意図的に衝突させて",
+          "シューメーカー・クレーターへ意図的に衝突させて"
+        ],
+        ["シャクルトン・クレーター付近に意図的に衝突", "シューメーカー・クレーターに意図的に衝突"],
+        ["シャクルトン衝突", "シューメーカー衝突"]
+      ],
+      "ko": [
+        ["건조 질량 296 kg;", "건조 질량 126 kg(발사 시 296 kg);"],
+        [
+          "1998년 1월 11일 달의 100 km 원형 극궤도에 진입했다",
+          "1998년 1월 11일 달의 11.6시간 궤도에 포획되었고 1월 16일 100 km 극궤도 관측 궤도로 낮춰졌다"
+        ],
+        [
+          "초기 100 × 100 km 극궤도",
+          "11.6시간 궤도에 포획, 1월 16일 100 km 극궤도 관측 궤도로 하강"
+        ],
+        ["수소가 풍부한 물질(아마도 물얼음) 약 2 × 10⁹ 톤", "물얼음 1천만~3억 톤(1998년 추정)"],
+        ["Boynton 팀", "Feldman 팀"],
+        ["섀클턴 분화구 근처에 의도적으로 충돌하며", "Shoemaker 분화구에 의도적으로 충돌하며"],
+        ["Shackleton 분화구 근처 의도된 충돌", "Shoemaker 분화구 의도된 충돌"],
+        ["SHACKLETON 충돌", "SHOEMAKER 충돌"]
+      ],
+      "nl": [
+        ["296 kg droog;", "126 kg droog (296 kg bij de lancering);"],
+        [
+          "bereikte Lunar Prospector op 1998-01-11 een cirkelvormige polaire baan van 100 km rond de maan",
+          "werd Lunar Prospector op 1998-01-11 ingevangen in een maanbaan van 11,6 uur en op 16 januari verlaagd naar de polaire karteringsbaan van 100 km"
+        ],
+        [
+          "— initiële 100 × 100 km polaire baan",
+          "— ingevangen in een baan van 11,6 uur; op 16 januari verlaagd naar de polaire karteringsbaan van 100 km"
+        ],
+        [
+          "~2 × 10⁹ ton waterstofrijke materie (waarschijnlijk waterijs)",
+          "10–300 miljoen ton waterijs (schatting uit 1998)"
+        ],
+        ["team van Boynton", "team van Feldman"],
+        ["nabij de krater Shackleton", "in de krater Shoemaker"],
+        ["SHACKLETON-INSLAG", "SHOEMAKER-INSLAG"]
+      ],
+      "pt-BR": [
+        ["296 kg a seco;", "126 kg a seco (296 kg no lançamento);"],
+        [
+          "entrou em uma órbita polar lunar circular de 100 km em 1998-01-11",
+          "foi capturado em uma órbita lunar de 11,6 horas em 1998-01-11 e rebaixado em 16 de janeiro para a órbita polar de mapeamento de 100 km"
+        ],
+        [
+          "— órbita polar inicial de 100 × 100 km",
+          "— capturado em órbita de 11,6 horas; rebaixado em 16 de janeiro para a órbita polar de mapeamento de 100 km"
+        ],
+        [
+          "~2 × 10⁹ toneladas de material rico em hidrogênio (provavelmente gelo de água)",
+          "10–300 milhões de toneladas de gelo de água (estimativa de 1998)"
+        ],
+        ["equipe de Boynton", "equipe de Feldman"],
+        ["perto da cratera Shackleton", "na cratera Shoemaker"],
+        ["IMPACTO SHACKLETON", "IMPACTO SHOEMAKER"]
+      ],
+      "ru": [
+        ["Сухая масса 296 кг;", "Сухая масса 126 кг (296 кг при старте);"],
+        [
+          "вышел на круговую полярную орбиту Луны на высоте 100 км 1998-01-11",
+          "был захвачен на окололунную орбиту с периодом 11,6 часа 1998-01-11 и 16 января переведён на полярную картографическую орбиту высотой 100 км"
+        ],
+        [
+          "— начальная полярная орбита 100 × 100 км",
+          "— захват на орбиту с периодом 11,6 часа; 16 января переведён на полярную картографическую орбиту высотой 100 км"
+        ],
+        [
+          "примерно 2 × 10⁹ тонн богатого водородом материала (вероятно, водяного льда)",
+          "10–300 млн тонн водяного льда (оценка 1998 года)"
+        ],
+        ["командой Boynton", "командой Feldman"],
+        ["вблизи кратера Shackleton", "в кратер Shoemaker"],
+        ["ПАДЕНИЕ НА ШАКЕЛТОН", "ПАДЕНИЕ В КРАТЕР SHOEMAKER"]
+      ],
+      "sr-Cyrl": [
+        ["Сува маса 296 kg;", "Сува маса 126 kg (296 kg при лансирању);"],
+        [
+          "је 1998-01-11 ушао у кружну поларну орбиту око Месеца на висини од 100 km",
+          "је 1998-01-11 ухваћен у месечеву орбиту од 11,6 сати, а 16. јануара спуштен у поларну орбиту за мапирање на висини од 100 km"
+        ],
+        [
+          "— почетна поларна орбита 100 × 100 km",
+          "— ухваћен у орбиту од 11,6 сати; 16. јануара спуштен у поларну орбиту за мапирање на висини од 100 km"
+        ],
+        [
+          "~2 × 10⁹ тона материјала богатог водоником (вероватно воденог леда)",
+          "10–300 милиона тона воденог леда (процена из 1998)"
+        ],
+        ["предвођен научником Boynton", "предвођен научником Feldman"],
+        ["у близини кратера Shackleton", "у кратеру Shoemaker"],
+        ["близу кратера Shackleton", "у кратеру Shoemaker"],
+        ["УДАР У SHACKLETON", "УДАР У SHOEMAKER"]
+      ],
+      "zh-CN": [
+        ["干质量 296 kg；", "干质量 126 kg（发射时 296 kg）；"],
+        [
+          "于1998年1月11日进入100 km高的圆形极地月球轨道",
+          "于1998年1月11日被捕获进入周期11.6小时的月球轨道，1月16日降至100 km高的极地测绘轨道"
+        ],
+        [
+          "——初始100 × 100 km极地轨道",
+          "——被捕获进入周期11.6小时的轨道，1月16日降至100 km极地测绘轨道"
+        ],
+        ["约 2 × 10⁹ 吨富氢物质（很可能是水冰）", "1000万至3亿吨水冰（1998年估计）"],
+        ["博因顿团队", "费尔德曼团队"],
+        ["探测器被有意撞向沙克尔顿撞击坑附近", "探测器被有意撞入Shoemaker撞击坑"],
+        ["故意撞击Shackleton撞击坑附近", "故意撞入Shoemaker撞击坑"],
+        ["沙克尔顿撞击坑撞击", "Shoemaker撞击坑撞击"]
+      ]
+    }
+  },
+  {
+    "m": "moon/smart-1",
+    "text": {
+      "en-US": [
+        ["Operated for 16 months", "Operated for about 22 months"],
+        [
+          "rather than the days-long chemical transfer of every prior lunar mission",
+          "rather than the usual days-long chemical transfer"
+        ],
+        ["the first X-ray fluorescence elemental maps", "X-ray fluorescence elemental maps"],
+        ["delivers first global elemental maps of the Moon", "delivers elemental maps of the Moon"]
+      ],
+      "ar": [
+        ["عملت 16 شهراً", "عملت نحو 22 شهراً"],
+        [
+          "بدلاً من النقل الكيميائي الذي لم يتجاوز أياماً في كل مهمة قمرية سابقة",
+          "بدلاً من النقل الكيميائي المعتاد الذي لم يتجاوز أياماً"
+        ],
+        ["وأولى الخرائط العنصرية للقمر", "وخرائط عنصرية للقمر"],
+        ["أول خرائط عنصرية شاملة للقمر", "خرائط عنصرية للقمر"]
+      ],
+      "de": [
+        ["Es arbeitete 16 Monate", "Es arbeitete rund 22 Monate"],
+        [
+          "statt der tagelangen chemischen Transfers aller früheren Mondmissionen",
+          "statt des üblichen tagelangen chemischen Transfers"
+        ],
+        ["die ersten Röntgenfluoreszenz-Karten", "Röntgenfluoreszenz-Karten"],
+        ["liefert erste globale Elementkarten des Mondes", "liefert Elementkarten des Mondes"]
+      ],
+      "es": [
+        ["Operó durante 16 meses", "Operó durante unos 22 meses"],
+        [
+          "en lugar de la transferencia química de cuestión de días de todas las misiones lunares anteriores",
+          "en lugar de la habitual transferencia química de cuestión de días"
+        ],
+        ["los primeros mapas elementales de fluorescencia", "mapas elementales de fluorescencia"],
+        [
+          "entrega los primeros mapas elementales globales de la Luna",
+          "entrega mapas elementales de la Luna"
+        ]
+      ],
+      "fr": [
+        ["Exploité pendant 16 mois", "Exploité pendant environ 22 mois"],
+        [
+          "au lieu du transfert chimique de quelques jours de toutes les missions lunaires précédentes",
+          "au lieu du transfert chimique habituel de quelques jours"
+        ],
+        ["les premières cartes élémentaires de la Lune", "des cartes élémentaires de la Lune"],
+        [
+          "livre les premières cartes élémentaires globales de la Lune",
+          "livre des cartes élémentaires de la Lune"
+        ]
+      ],
+      "hi": [
+        [
+          "ध्रुवीय चंद्र कक्षा में 16 महीने काम करते हुए",
+          "ध्रुवीय चंद्र कक्षा में लगभग 22 महीने काम करते हुए"
+        ],
+        [
+          "पहले के हर चंद्र मिशन के कुछ दिनों के रासायनिक स्थानांतरण के बजाय",
+          "सामान्य कुछ दिनों के रासायनिक स्थानांतरण के बजाय"
+        ],
+        ["चंद्रमा के पहले एक्स-रे प्रतिदीप्ति", "चंद्रमा के एक्स-रे प्रतिदीप्ति"],
+        ["चंद्रमा के पहले वैश्विक तात्विक मानचित्र", "चंद्रमा के तात्विक मानचित्र"]
+      ],
+      "it": [
+        ["Ha operato per 16 mesi", "Ha operato per circa 22 mesi"],
+        [
+          "anziché il trasferimento chimico di pochi giorni di ogni missione lunare precedente",
+          "anziché il consueto trasferimento chimico di pochi giorni"
+        ],
+        ["le prime mappe elementari della Luna", "mappe elementari della Luna"],
+        [
+          "fornisce le prime mappe elementali globali della Luna",
+          "fornisce mappe elementali della Luna"
+        ]
+      ],
+      "ja": [
+        ["月を回る極軌道で16か月運用し", "月を回る極軌道で約22か月運用し"],
+        [
+          "それまでのあらゆる月ミッションが数日で行った化学推進による移行ではなく",
+          "通常は数日で行う化学推進による移行ではなく"
+        ],
+        ["月の初のX線蛍光による元素マップ", "月のX線蛍光による元素マップ"],
+        ["月の初の全球元素マップ", "月の元素マップ"]
+      ],
+      "ko": [
+        ["달 극궤도에서 16개월 동안", "달 극궤도에서 약 22개월 동안"],
+        [
+          "이전의 모든 달 탐사 임무가 며칠이면 끝나는 화학 추진 전이를 택한 것과 달리",
+          "통상 며칠이면 끝나는 화학 추진 전이와 달리"
+        ],
+        ["달 최초의 엑스선 형광 원소 지도", "달의 엑스선 형광 원소 지도"],
+        ["달의 첫 전역 원소 지도", "달의 원소 지도"]
+      ],
+      "nl": [
+        ["Het was 16 maanden actief", "Het was ongeveer 22 maanden actief"],
+        [
+          "in plaats van de chemische overgang van enkele dagen van elke eerdere maanmissie",
+          "in plaats van de gebruikelijke chemische overgang van enkele dagen"
+        ],
+        ["de eerste röntgenfluorescentiekaarten", "röntgenfluorescentiekaarten"],
+        ["levert eerste wereldwijde elementenkaarten", "levert elementenkaarten"]
+      ],
+      "pt-BR": [
+        ["Operou por 16 meses", "Operou por cerca de 22 meses"],
+        [
+          "em vez da transferência química de dias de todas as missões lunares anteriores",
+          "em vez da habitual transferência química de dias"
+        ],
+        ["os primeiros mapas elementares de fluorescência", "mapas elementares de fluorescência"],
+        [
+          "entrega os primeiros mapas elementares globais da Lua",
+          "entrega mapas elementares da Lua"
+        ]
+      ],
+      "ru": [
+        ["Работал в течение 16 месяцев", "Работал в течение примерно 22 месяцев"],
+        [
+          "вместо многодневной химической переходной траектории всех предыдущих лунных миссий",
+          "вместо обычной многодневной химической переходной траектории"
+        ],
+        ["первые карты элементного состава Луны", "карты элементного состава Луны"],
+        ["даёт первые глобальные карты", "даёт карты"]
+      ],
+      "sr-Cyrl": [
+        ["Током 16 месеци", "Током око 22 месеца"],
+        [
+          "за разлику од вишедневног хемијског транфера сваке претходне лунарне мисије",
+          "за разлику од уобичајеног вишедневног хемијског транфера"
+        ],
+        ["прве елементне карте Месеца", "елементне карте Месеца"],
+        ["даје прве глобалне карте елемената", "даје карте елемената"]
+      ],
+      "zh-CN": [
+        ["工作了 16 个月", "工作了约 22 个月"],
+        ["而不是此前每次月球任务那种为期数天的化学推进转移", "而不是通常为期数天的化学推进转移"],
+        ["首批月球 X 射线荧光元素图", "月球 X 射线荧光元素图"],
+        ["提供首张月球全球元素地图", "提供月球元素地图"]
+      ]
+    }
+  },
+  {
+    "m": "moon/lro",
+    "base": [
+      ["Series of 4 burns over 5 days", "Series of 4 burns over 4 days"],
+      ["still operating 15 years later", "still operating 17 years later"]
+    ]
+  },
+  {
+    "overlay": "i18n-src/{loc}/fleet/orbiter/smart-1.json",
+    "text": {
+      "en-US": [
+        ["Operated for 16 months", "Operated for about 22 months"],
+        ["the first X-ray fluorescence elemental maps", "X-ray fluorescence elemental maps"]
+      ],
+      "ar": [
+        ["عملت لمدة 16 شهراً", "عملت لمدة نحو 22 شهراً"],
+        [
+          "وأول خرائط عنصرية بالأشعة السينية الفلورية للقمر",
+          "وخرائط عنصرية بالأشعة السينية الفلورية للقمر"
+        ]
+      ],
+      "de": [
+        ["Sie arbeitete 16 Monate lang", "Sie arbeitete rund 22 Monate lang"],
+        ["die ersten Röntgenfluoreszenz-Karten", "Röntgenfluoreszenz-Karten"]
+      ],
+      "es": [
+        ["Operó 16 meses", "Operó unos 22 meses"],
+        ["los primeros mapas elementales por fluorescencia", "mapas elementales por fluorescencia"]
+      ],
+      "fr": [
+        ["Il a opéré pendant 16 mois", "Il a opéré pendant environ 22 mois"],
+        ["les premières cartes élémentaires de la Lune", "des cartes élémentaires de la Lune"]
+      ],
+      "hi": [
+        ["ध्रुवीय चंद्र कक्षा में 16 महीनों तक", "ध्रुवीय चंद्र कक्षा में लगभग 22 महीनों तक"],
+        ["चंद्रमा के पहले X-ray प्रतिदीप्ति", "चंद्रमा के X-ray प्रतिदीप्ति"]
+      ],
+      "it": [
+        ["Operò per 16 mesi", "Operò per circa 22 mesi"],
+        ["le prime mappe elementari", "mappe elementari"]
+      ],
+      "ja": [
+        ["極月周回軌道で 16 か月運用", "極月周回軌道で約 22 か月運用"],
+        ["月初の X 線蛍光元素マップ", "月の X 線蛍光元素マップ"]
+      ],
+      "ko": [
+        ["달 극궤도에서 16개월 동안", "달 극궤도에서 약 22개월 동안"],
+        ["달 최초의 X선 형광 원소 지도", "달의 X선 형광 원소 지도"]
+      ],
+      "nl": [
+        ["Werkte 16 maanden", "Werkte ongeveer 22 maanden"],
+        ["de eerste röntgenfluorescentie-elementkaarten", "röntgenfluorescentie-elementkaarten"]
+      ],
+      "pt-BR": [
+        ["Operou por 16 meses", "Operou por cerca de 22 meses"],
+        ["os primeiros mapas elementais da Lua", "mapas elementais da Lua"]
+      ],
+      "ru": [
+        ["16 месяцев работал", "Около 22 месяцев работал"],
+        ["первые карты элементного состава Луны", "карты элементного состава Луны"]
+      ],
+      "sr-Cyrl": [
+        ["Током 16 месеци", "Током око 22 месеца"],
+        ["прве мапе елемената Месеца", "мапе елемената Месеца"]
+      ],
+      "zh-CN": [
+        ["在极地月球轨道上运行 16 个月", "在极地月球轨道上运行约 22 个月"],
+        ["月球首批 X 射线荧光元素图", "月球 X 射线荧光元素图"]
+      ]
+    },
+    "baseFile": "static/data/fleet/orbiter/smart-1.json",
+    "base": [
+      ["Operated for 16 months", "Operated for about 22 months"],
+      ["the first X-ray fluorescence elemental maps", "X-ray fluorescence elemental maps"]
+    ]
+  },
+  {
+    "overlay": "i18n-src/{loc}/fleet/orbiter/lunar-prospector.json",
+    "text": {
+      "en-US": [
+        ["deliberate Shackleton impact", "deliberate Shoemaker impact"],
+        [
+          "deliberately impacted near Shackleton crater",
+          "deliberately impacted in Shoemaker crater"
+        ],
+        [
+          "entered a 100-km circular polar orbit",
+          "was captured into lunar orbit on 1998-01-11 and lowered to a 100-km polar mapping orbit on 16 January"
+        ],
+        [
+          "~2 × 10⁹ tonnes of hydrogen-rich material (most plausibly water ice)",
+          "10–300 million tonnes of water ice (1998 estimate)"
+        ]
+      ],
+      "ar": [
+        ["ارتطام Shackleton المتعمد", "ارتطام Shoemaker المتعمد"],
+        ["قرب فوهة شاكلتون", "في فوهة شوميكر"],
+        [
+          "دخل Lunar Prospector مدارًا قطبيًا دائريًا بارتفاع 100 كم",
+          "أُسر Lunar Prospector في مدار قمري في 1998-01-11 ثم خُفض في 16 يناير إلى مدار قطبي لرسم الخرائط بارتفاع 100 كم"
+        ],
+        [
+          "حوالي 2 × 10⁹ طن من المادة الغنية بالهيدروجين (الأرجح أن يكون جليد مائي)",
+          "10–300 مليون طن من جليد الماء (تقدير عام 1998)"
+        ],
+        ["بالقرب من فوهة Shackleton", "في فوهة Shoemaker"]
+      ],
+      "de": [
+        ["Shackleton-Einschlag", "Shoemaker-Einschlag"],
+        [
+          "in der Nähe des Shackleton-Kraters zum Absturz gebracht",
+          "im Shoemaker-Krater zum Absturz gebracht"
+        ],
+        [
+          "ging Lunar Prospector in eine kreisförmige polare Umlaufbahn von 100 km",
+          "wurde Lunar Prospector am 1998-01-11 in eine Mondumlaufbahn eingefangen und am 16. Januar auf eine polare Kartierungsbahn von 100 km abgesenkt"
+        ],
+        [
+          "~2 × 10⁹ Tonnen wasserstoffreichem Material (höchstwahrscheinlich Wassereis)",
+          "10–300 Millionen Tonnen Wassereis (Schätzung von 1998)"
+        ]
+      ],
+      "es": [
+        ["impacto adrede en Shackleton", "impacto adrede en Shoemaker"],
+        ["impacto deliberado en Shackleton", "impacto deliberado en Shoemaker"],
+        ["cerca del cráter Shackleton", "en el cráter Shoemaker"],
+        [
+          "entró en una órbita polar circular de 100 km",
+          "fue capturado en órbita lunar el 1998-01-11 y descendió el 16 de enero a una órbita polar de cartografía de 100 km"
+        ],
+        [
+          "≈2 × 10⁹ toneladas de material rico en hidrógeno (muy probablemente hielo de agua)",
+          "entre 10 y 300 millones de toneladas de hielo de agua (estimación de 1998)"
+        ]
+      ],
+      "fr": [
+        ["impact volontaire dans Shackleton", "impact volontaire dans Shoemaker"],
+        ["impact volontaire près de Shackleton", "impact volontaire dans Shoemaker"],
+        ["près du cratère Shackleton", "dans le cratère Shoemaker"],
+        [
+          "s'est placée sur une orbite polaire circulaire à 100 km",
+          "a été capturée en orbite lunaire le 1998-01-11, puis abaissée le 16 janvier sur une orbite polaire de cartographie à 100 km"
+        ],
+        [
+          "~2 × 10⁹ tonnes de matériau riche en hydrogène (très probablement de la glace d'eau)",
+          "10 à 300 millions de tonnes de glace d'eau (estimation de 1998)"
+        ]
+      ],
+      "hi": [
+        ["जानबूझकर Shackleton से टकराकर", "जानबूझकर Shoemaker क्रेटर में टकराकर"],
+        ["Shackleton पर जानबूझकर टकराव से", "Shoemaker क्रेटर में जानबूझकर टकराव से"],
+        ["शैकलटन क्रेटर के पास", "Shoemaker क्रेटर में"],
+        [
+          "ने 100 किमी की वृत्ताकार ध्रुवीय कक्षा में प्रवेश किया",
+          "को 1998-01-11 को चंद्र कक्षा में पकड़ा गया और 16 जनवरी को 100 किमी की ध्रुवीय मानचित्रण कक्षा में उतारा गया"
+        ],
+        [
+          "~2 × 10⁹ टन हाइड्रोजन-समृद्ध पदार्थ (सबसे संभावित रूप से जल-बर्फ)",
+          "10–300 मिलियन टन जल-बर्फ़ (1998 का अनुमान)"
+        ]
+      ],
+      "it": [
+        ["impatto deliberato su Shackleton", "impatto deliberato nel cratere Shoemaker"],
+        ["vicino al cratere Shackleton", "nel cratere Shoemaker"],
+        [
+          "entrò in un'orbita polare circolare di 100 km",
+          "fu catturato in orbita lunare il 1998-01-11 e portato il 16 gennaio in un'orbita polare di mappatura di 100 km"
+        ],
+        [
+          "~2 × 10⁹ tonnellate di materiale ricco di idrogeno (molto probabilmente ghiaccio d'acqua)",
+          "10–300 milioni di tonnellate di ghiaccio d'acqua (stima del 1998)"
+        ]
+      ],
+      "ja": [
+        [
+          "シャクルトン・クレーターへの意図的な衝突により1999年にミッション終了",
+          "シューメーカー・クレーターへの意図的な衝突により1999年にミッション終了"
+        ],
+        [
+          "シャクルトン・クレーター付近への意図的な衝突により",
+          "シューメーカー・クレーターへの意図的な衝突により"
+        ],
+        [
+          "100 km円形極軌道に投入された",
+          "1998-01-11に月周回軌道に捕捉され、1月16日に高度100 kmの極観測軌道へ下げられた"
+        ],
+        [
+          "約2 × 10⁹トンの水素に富んだ物質（最も可能性の高い水氷）",
+          "1000万～3億トンの水氷（1998年の推定）"
+        ]
+      ],
+      "ko": [
+        ["1999년 섀클턴 분화구 충돌로", "1999년 Shoemaker 분화구 충돌로"],
+        ["섀클턴 분화구 근처에 일부러 충돌했지만", "Shoemaker 분화구에 일부러 충돌했지만"],
+        [
+          "100 km 원형 극궤도에 진입했습니다",
+          "1998-01-11 달 궤도에 포획되었고 1월 16일 100 km 극궤도 관측 궤도로 낮춰졌습니다"
+        ],
+        [
+          "수소가 풍부한 물질(가장 유력하게는 물 얼음) 약 2 × 10⁹톤",
+          "물 얼음 1천만~3억 톤(1998년 추정)"
+        ]
+      ],
+      "nl": [
+        ["opzettelijke Shackleton-inslag", "opzettelijke Shoemaker-inslag"],
+        ["neergestort bij de krater Shackleton", "neergestort in de krater Shoemaker"],
+        [
+          "kwam in een cirkelvormige polaire baan op 100 km",
+          "werd op 1998-01-11 in een maanbaan ingevangen en op 16 januari verlaagd naar een polaire karteringsbaan op 100 km"
+        ],
+        [
+          "~2 × 10⁹ ton waterstofrijk materiaal (vrijwel zeker waterijs)",
+          "10–300 miljoen ton waterijs (schatting uit 1998)"
+        ]
+      ],
+      "pt-BR": [
+        ["impacto em Shackleton", "impacto em Shoemaker"],
+        ["impacto proposital em Shackleton", "impacto proposital em Shoemaker"],
+        ["perto da cratera Shackleton", "na cratera Shoemaker"],
+        [
+          "entrou em uma órbita polar circular de 100 km",
+          "foi capturada em órbita lunar em 1998-01-11 e rebaixada em 16 de janeiro para uma órbita polar de mapeamento de 100 km"
+        ],
+        [
+          "~2 × 10⁹ toneladas de material rico em hidrogênio (muito provavelmente gelo de água)",
+          "10–300 milhões de toneladas de gelo de água (estimativa de 1998)"
+        ]
+      ],
+      "ru": [
+        ["в 1999 упал у кратера Шеклтон", "в 1999 упал в кратер Shoemaker"],
+        [
+          "намеренное падение у кратера Шеклтон завершило",
+          "намеренное падение в кратер Shoemaker завершило"
+        ],
+        ["вблизи кратера Шеклтон", "в кратер Shoemaker"],
+        [
+          "вышел на круговую полярную орбиту высотой 100 км",
+          "был захвачен на окололунную орбиту 1998-01-11 и 16 января переведён на полярную картографическую орбиту высотой 100 км"
+        ],
+        [
+          "~2 × 10⁹ тонн богатого водородом материала (наиболее вероятно, водяного льда)",
+          "10–300 млн тонн водяного льда (оценка 1998 года)"
+        ]
+      ],
+      "sr-Cyrl": [
+        ["намерни удар у кратер Шеклтон", "намерни удар у кратер Shoemaker"],
+        ["у близини кратера Шеклтон", "у кратеру Shoemaker"],
+        [
+          "и ушао је у кружну поларну орбиту на висини од 100 km",
+          "и ухваћен је у месечеву орбиту 1998-01-11, а 16. јануара спуштен у поларну орбиту за мапирање на висини од 100 km"
+        ],
+        [
+          "~2 × 10⁹ тона материјала богатог водоником (највероватније воденог леда)",
+          "10–300 милиона тона воденог леда (процена из 1998)"
+        ]
+      ],
+      "zh-CN": [
+        ["1999 年蓄意撞击沙克尔顿撞击坑，任务结束", "1999 年蓄意撞击 Shoemaker 撞击坑，任务结束"],
+        ["蓄意撞击沙克尔顿撞击坑附近", "蓄意撞入Shoemaker撞击坑"],
+        ["进入100 km圆形极地轨道", "于1998-01-11被捕获进入月球轨道，1月16日降至100 km极地测绘轨道"],
+        ["约2×10⁹吨富氢物质（最有可能是水冰）", "1000万至3亿吨水冰（1998年估计）"]
+      ]
+    },
+    "baseFile": "static/data/fleet/orbiter/lunar-prospector.json",
+    "base": [
+      ["deliberate Shackleton impact", "deliberate Shoemaker impact"],
+      ["deliberately impacted near Shackleton crater", "deliberately impacted in Shoemaker crater"],
+      [
+        "entered a 100-km circular polar orbit",
+        "was captured into lunar orbit on 1998-01-11 and lowered to a 100-km polar mapping orbit on 16 January"
+      ],
+      [
+        "~2 × 10⁹ tonnes of hydrogen-rich material (most plausibly water ice)",
+        "10–300 million tonnes of water ice (1998 estimate)"
+      ]
+    ]
+  }
+]

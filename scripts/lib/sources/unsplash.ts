@@ -17,8 +17,7 @@ export interface SourceCandidate {
   source: string;
 }
 
-const UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 
 // Only NASA + SpaceX run official verified Unsplash accounts.
 const USER_BY_AGENCY: Record<string, string> = { NASA: 'nasa', SpaceX: 'spacex' };

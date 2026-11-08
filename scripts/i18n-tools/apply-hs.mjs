@@ -81,7 +81,12 @@ if (errs.length) {
 }
 for (const [site, want] of Object.entries(files)) {
   const p = `${R}/i18n-src/${loc}/hotspot-metadata/${site}.json`;
-  const cur = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {};
+  let cur = {};
+  try {
+    cur = JSON.parse(fs.readFileSync(p, 'utf8'));
+  } catch (e) {
+    if (e.code !== 'ENOENT') throw e;
+  }
   fs.mkdirSync(path.dirname(p), { recursive: true });
   fs.writeFileSync(p, JSON.stringify({ ...cur, ...want }, null, 2) + '\n');
 }

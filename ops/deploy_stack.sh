@@ -42,7 +42,9 @@ docker run --rm -v /srv/orrery/static/data:/d -v /srv/orrery/.launches-cache:/c 
 #    can still edit the allowlist over SSH; the container writes state.json (0600
 #    private key) via owner bits. allowlist is read per-request, not at boot —
 #    no seed/boot race.
-ALLOW_EMAIL="${ORRERY_LAB_ALLOWLIST_EMAIL:-marko.dragoljevic@gmail.com}"
+# No default address in the repo: set ORRERY_LAB_ALLOWLIST_EMAIL for a first deploy, or add
+# emails to lab-api-state/allowlist.json over SSH afterwards.
+ALLOW_EMAIL="${ORRERY_LAB_ALLOWLIST_EMAIL:-}"
 mkdir -p lab-api-state
 # Seed the allowlist only if absent. On a re-run the dir + file already exist and
 # are owned by the container's labapi uid (chowned below on a prior run), so
@@ -51,8 +53,13 @@ mkdir -p lab-api-state
 # container reads/writes state.json + the 0600 key; group=deploy + 770 dir /
 # 660 allowlist so the operator can still edit the allowlist over SSH.
 if [ ! -f lab-api-state/allowlist.json ]; then
-  printf '{"emails":["%s"]}\n' "$ALLOW_EMAIL" > lab-api-state/allowlist.json
-  echo "seeded lab-api-state/allowlist.json"
+  if [ -n "$ALLOW_EMAIL" ]; then
+    printf '{"emails":["%s"]}\n' "$ALLOW_EMAIL" > lab-api-state/allowlist.json
+    echo "seeded lab-api-state/allowlist.json"
+  else
+    printf '{"emails":[]}\n' > lab-api-state/allowlist.json
+    echo "WARNING: seeded an EMPTY lab-api allowlist (ORRERY_LAB_ALLOWLIST_EMAIL unset); add emails over SSH"
+  fi
 fi
 LAB_API_TAG="$(grep -E '^ORRERY_LAB_API_IMAGE_TAG=' .env | cut -d= -f2- || true)"
 LAB_API_TAG="${LAB_API_TAG:-main}"

@@ -11,7 +11,7 @@ Orrery is a fully static site with no server, no user accounts, no database, no 
 If you find something:
 
 1. **Do not file a public issue** for vulnerabilities you believe are exploitable.
-2. Email the maintainer (see commit log for `marko.dragoljevic@gmail.com`) with `[SECURITY]` in the subject.
+2. Report it privately through GitHub: [Security → Report a vulnerability](https://github.com/chipi/orrery/security/advisories/new).
 3. Include: the repo + commit hash, a reproduction or proof of concept, the impact you believe it has, and your suggested fix if you have one.
 
 For non-exploitable concerns (e.g. a stale dependency that has a published CVE but isn't actually reachable in the bundle), a regular GitHub issue is fine.

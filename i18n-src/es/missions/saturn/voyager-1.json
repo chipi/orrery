@@ -1,7 +1,7 @@
 {
   "name": "Voyager 1",
   "vehicle": "Titan IIIE / Centaur",
-  "payload": "Nave de sobrevuelo planetario; tres módulos RTG que suman ~470 W al lanzamiento (decayendo hasta ~250 W hoy)",
+  "payload": "Nave de sobrevuelo planetario; tres módulos RTG que suman ~470 W al lanzamiento (decayendo hasta ~220 W hoy)",
   "delta_v": "~17 km/s (acumulado, asistencias de Júpiter + Saturno)",
   "type": "SOBREVUELO · REALIZADA",
   "first": "Objeto más lejano creado por la humanidad — actualmente a ~170 au del Sol en el espacio interestelar",

@@ -107,13 +107,24 @@ const TZ_TO_LATLON: Record<string, [number, number]> = {
  *
  * SSR-safe: returns null when `Intl` or `window` is unavailable.
  */
+/** Legacy names Chromium's ICU still reports for zones the table keys by
+ *  their current name (#641: an India viewer read "Asia/Calcutta" and got
+ *  the default pose). */
+const TZ_ALIAS: Record<string, string> = {
+  'Asia/Calcutta': 'Asia/Kolkata',
+  'Europe/Kiev': 'Europe/Kyiv',
+};
+
+/** Lat/lon anchor for an IANA zone (or a legacy alias of one), else null. */
+export function latLonForTimeZone(tz: string): { latDeg: number; lonDeg: number } | null {
+  const hit = TZ_TO_LATLON[tz] ?? TZ_TO_LATLON[TZ_ALIAS[tz] ?? ''];
+  return hit ? { latDeg: hit[0], lonDeg: hit[1] } : null;
+}
+
 export function viewerLatLon(): { latDeg: number; lonDeg: number } | null {
   if (typeof Intl === 'undefined' || typeof window === 'undefined') return null;
   try {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const hit = TZ_TO_LATLON[tz];
-    if (!hit) return null;
-    return { latDeg: hit[0], lonDeg: hit[1] };
+    return latLonForTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone);
   } catch {
     return null;
   }

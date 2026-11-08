@@ -12,7 +12,7 @@
     { "met": 10, "label": "TCM 1", "note": "Trajectcorrectie tijdens meerorbitalige klimming.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Tweede TCM. Apogeum nadert afstand van maanvangst.", "type": "info" },
     { "met": 41, "label": "NADERING VAN DE MAAN", "note": "Finale transmaanontsteking — Beresheet op directe maantrajectorium.", "type": "nominal" },
-    { "met": 48, "label": "MAANBAANINSERTIE", "note": "Vangst in elliptische maanbaan 2019-04-04.", "type": "nominal" },
+    { "met": 41, "label": "MAANBAANINSERTIE", "note": "Vangst in elliptische maanbaan 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "AFWIJKING TIJDENS AFDALING", "note": "IMU-reset tijdens aangedreven afdaling → motorafschakeling → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
   ],
   "vehicle_stage": "tweede trap van de Falcon 9 naar GTO (meelift)"

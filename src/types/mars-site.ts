@@ -11,4 +11,5 @@ export type {
   SurfaceNation as MarsNation,
   Traverse,
   RouteHirisePatch,
+  RoutePhoto,
 } from './surface-site';

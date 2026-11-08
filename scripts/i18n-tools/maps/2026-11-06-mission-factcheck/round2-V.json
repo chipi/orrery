@@ -1,0 +1,428 @@
+[
+  {
+    "m": "venus/vega-1",
+    "text": {
+      "en-US": [
+        ["Soviet–ESA flagship of the Halley armada", "Soviet flagship of the Halley armada"],
+        [
+          "a first-of-kind ESA/CNES-built helium balloon",
+          "a first-of-kind helium balloon built by CNES with IKI"
+        ],
+        ["a week later", "8 days later"]
+      ],
+      "ar": [
+        ["رائدة أسطول هالي السوفييتي–الأوروبي", "رائدة أسطول هالي السوفييتي"],
+        ["بنته ESA/CNES", "بنته CNES بالتعاون مع IKI"],
+        ["الأقرب بكثير من هالي، بعد أسبوع", "الأقرب بكثير من هالي، بعد 8 أيام"]
+      ],
+      "de": [
+        [
+          "Sowjetisch-ESA-Flaggschiff der Halley-Armada",
+          "Sowjetisches Flaggschiff der Halley-Armada"
+        ],
+        ["von ESA/CNES gebauten", "vom CNES zusammen mit IKI gebauten"],
+        ["eine Woche später", "8 Tage später"]
+      ],
+      "es": [
+        ["Buque insignia soviético-ESA de la armada", "Buque insignia soviético de la armada"],
+        ["construido por ESA/CNES", "construido por el CNES con IKI"],
+        ["una semana después", "8 días después"]
+      ],
+      "fr": [
+        ["Navire amiral soviéto-européen de l'armada", "Navire amiral soviétique de l'armada"],
+        ["construit par l'ESA et le CNES", "construit par le CNES avec l'IKI"],
+        ["une semaine plus tard", "8 jours plus tard"]
+      ],
+      "hi": [
+        ["सोवियत–ESA प्रमुख मिशन", "सोवियत प्रमुख मिशन"],
+        ["ESA/CNES द्वारा बनाया गया", "CNES द्वारा IKI के साथ बनाया गया"],
+        ["एक सप्ताह बाद", "8 दिन बाद"]
+      ],
+      "it": [
+        ["Ammiraglia sovietico-ESA dell'armata", "Ammiraglia sovietica dell'armata"],
+        ["costruito da ESA/CNES", "costruito dal CNES con l'IKI"],
+        ["una settimana dopo", "8 giorni dopo"]
+      ],
+      "ja": [
+        ["ソ連・ESA合同の旗艦機", "ソ連の旗艦機"],
+        ["ESA/CNES製の初のヘリウム気球", "CNESがIKIと共同で製作した初のヘリウム気球"],
+        ["その1週間後に", "その8日後に"]
+      ],
+      "ko": [
+        ["소련-ESA 주력 탐사선", "소련 주력 탐사선"],
+        ["ESA/CNES가 제작한", "CNES가 IKI와 함께 제작한"],
+        ["일주일 뒤", "8일 뒤"]
+      ],
+      "nl": [
+        ["Sovjet–ESA-vlaggenschip", "Sovjet-vlaggenschip"],
+        ["door ESA/CNES gebouwde", "door CNES met IKI gebouwde"],
+        ["om een week later", "om 8 dagen later"]
+      ],
+      "pt-BR": [
+        ["Navio-capitânia soviético–ESA da armada", "Navio-capitânia soviético da armada"],
+        ["construído pela ESA/CNES", "construído pelo CNES com o IKI"],
+        ["uma semana depois", "8 dias depois"]
+      ],
+      "ru": [
+        ["Советско-ESA флагман армады", "Советский флагман армады"],
+        ["разработанным ESA и CNES", "созданным CNES совместно с IKI"],
+        ["неделю спустя", "8 дней спустя"]
+      ],
+      "sr-Cyrl": [
+        [
+          "Заједнички водећи пројекат Совјетског Савеза и агенције ESA у армади",
+          "Водећи пројекат Совјетског Савеза у армади"
+        ],
+        ["који су изградили ESA и CNES", "који је изградио CNES заједно са IKI"],
+        ["недељу дана касније", "8 дана касније"]
+      ],
+      "zh-CN": [
+        ["苏联与 ESA 联合的哈雷彗星探测舰队旗舰", "苏联的哈雷彗星探测舰队旗舰"],
+        ["由 ESA/CNES 建造", "由 CNES 与 IKI 联合建造"],
+        ["一周后进行", "8 天后进行"]
+      ]
+    }
+  },
+  {
+    "m": "venus/vega-1",
+    "base": [
+      [
+        "an ESA / CNES-built helium aerostat (balloon)",
+        "a helium aerostat (balloon) built by CNES with IKI"
+      ],
+      ["a week ahead of ESA's Giotto", "8 days ahead of ESA's Giotto"],
+      [
+        "Vega 1's imagery + dust-impact data informed the Giotto-target final approach geometry",
+        "Vega's camera images of the nucleus, with VLBI tracking of Vega's position, refined Giotto's aim point (the 'Pathfinder' scheme)"
+      ]
+    ]
+  },
+  {
+    "baseFile": "static/data/fleet/lander/venera-13.json",
+    "base": [["(Phoebe Regio, Beta Regio volcanic flank)", "(Phoebe Regio)"]]
+  },
+  {
+    "m": "venus/venera-13",
+    "base": [
+      [
+        "beating its design target by nearly an hour",
+        "beating its design target by about 95 minutes"
+      ]
+    ]
+  },
+  {
+    "m": "mars/mars-express",
+    "text": {
+      "en-US": [
+        [
+          "1183 kg (1123 kg orbiter + 60 kg Beagle 2 lander)",
+          "1223 kg at launch, including the 60 kg Beagle 2 lander"
+        ]
+      ],
+      "ar": [
+        [
+          "1183 كغ (1123 كغ مركبة مدارية + 60 كغ مركبة الهبوط Beagle 2)",
+          "1223 كغ عند الإطلاق، بما فيها مركبة الهبوط Beagle 2 البالغة 60 كغ"
+        ]
+      ],
+      "de": [
+        [
+          "1183 kg (1123 kg Orbiter + 60 kg Lander Beagle 2)",
+          "1223 kg beim Start, einschließlich des 60 kg schweren Landers Beagle 2"
+        ]
+      ],
+      "es": [
+        [
+          "1183 kg (1123 kg de orbitador + 60 kg del módulo de aterrizaje Beagle 2)",
+          "1223 kg en el lanzamiento, incluido el módulo de aterrizaje Beagle 2 de 60 kg"
+        ]
+      ],
+      "fr": [
+        [
+          "1183 kg (orbiteur de 1123 kg + atterrisseur Beagle 2 de 60 kg)",
+          "1223 kg au lancement, dont l'atterrisseur Beagle 2 de 60 kg"
+        ]
+      ],
+      "hi": [
+        [
+          "1183 kg (1123 kg ऑर्बिटर + 60 kg Beagle 2 लैंडर)",
+          "प्रक्षेपण के समय 1223 kg, जिसमें 60 kg का Beagle 2 लैंडर शामिल है"
+        ]
+      ],
+      "it": [
+        [
+          "1183 kg (1123 kg di orbiter + 60 kg del lander Beagle 2)",
+          "1223 kg al lancio, incluso il lander Beagle 2 da 60 kg"
+        ]
+      ],
+      "ja": [
+        [
+          "1183 kg（オービター1123 kg＋Beagle 2ランダー60 kg）",
+          "打ち上げ時1223 kg（60 kgのBeagle 2ランダーを含む）"
+        ]
+      ],
+      "ko": [
+        [
+          "1183 kg(궤도선 1123 kg + Beagle 2 착륙선 60 kg)",
+          "발사 시 1223 kg(60 kg의 Beagle 2 착륙선 포함)"
+        ]
+      ],
+      "nl": [
+        [
+          "1183 kg (1123 kg orbiter + 60 kg Beagle 2-lander)",
+          "1223 kg bij de lancering, inclusief de 60 kg zware Beagle 2-lander"
+        ]
+      ],
+      "pt-BR": [
+        [
+          "1183 kg (1123 kg de orbitador + 60 kg do módulo de pouso Beagle 2)",
+          "1223 kg no lançamento, incluindo o módulo de pouso Beagle 2 de 60 kg"
+        ]
+      ],
+      "ru": [
+        [
+          "1183 кг (1123 кг орбитальный аппарат + 60 кг посадочный аппарат Beagle 2)",
+          "1223 кг при запуске, включая посадочный аппарат Beagle 2 массой 60 кг"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "1183 kg (1123 kg орбитер + 60 kg лендер Beagle 2)",
+          "1223 kg при лансирању, укључујући лендер Beagle 2 од 60 kg"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "1183 kg（轨道器 1123 kg + Beagle 2 着陆器 60 kg）",
+          "发射时 1223 kg，含 60 kg 的 Beagle 2 着陆器"
+        ]
+      ]
+    }
+  },
+  {
+    "m": "mars/mars-express",
+    "base": [
+      [
+        "1183 kg (1123 kg orbiter + 60 kg Beagle 2 lander)",
+        "1223 kg at launch, including the 60 kg Beagle 2 lander"
+      ],
+      ["\"mass_at_tli_kg\": 1183", "\"mass_at_tli_kg\": 1223"],
+      ["TCM-4 — final pre-MOI", "TCM-4"],
+      [
+        "mapped subsurface ice + (controversially) a liquid water reservoir under the south polar ice cap.",
+        "mapped subsurface ice and in 2018 found a bright radar reflector under the south polar cap, read as a subglacial lake — an interpretation still disputed."
+      ]
+    ]
+  },
+  {
+    "m": "mars/curiosity",
+    "text": {
+      "en-US": [
+        ["Trans-Mars injection (3.61 km/s ∆v) sends", "Trans-Mars injection sends"],
+        [
+          "Final pre-EDL correction; trajectory targets Gale Crater landing ellipse.",
+          "Third trajectory correction; refines the Gale Crater target."
+        ]
+      ],
+      "ar": [
+        ["الحقن نحو المريخ (دلتا-في 3.61 كم/ث) يرسل", "الحقن نحو المريخ يرسل"],
+        [
+          "تصحيح نهائي قبل EDL؛ المسار يستهدف الحقل البيضاوي للهبوط في فوهة غيل.",
+          "تصحيح المسار الثالث؛ يُدقّق الهدف في فوهة غيل."
+        ],
+        ["TCM-4 — آخر حرقة قبل EDL", "TCM-4 — التصحيح الرابع (بقيت فرصتان إضافيتان قبل الهبوط)"]
+      ],
+      "de": [
+        ["Trans-Mars-Injektion (3,61 km/s ∆v) schickt", "Trans-Mars-Injektion schickt"],
+        [
+          "Letzte Vorkorrektur vor EDL; Flugbahn zielt auf Landungsellipse des Gale-Kraters.",
+          "Dritte Bahnkorrektur; verfeinert das Ziel im Gale-Krater."
+        ],
+        [
+          "TCM-4 — letzte Zündung vor dem EDL",
+          "TCM-4 — vierte Korrektur (vor der Landung blieben noch zwei Möglichkeiten)"
+        ]
+      ],
+      "es": [
+        ["Inyección transmarciana (∆v de 3,61 km/s): envía", "Inyección transmarciana: envía"],
+        [
+          "Última corrección previa a la EDL; la trayectoria apunta a la elipse de aterrizaje en el cráter Gale.",
+          "Tercera corrección de trayectoria; afina el objetivo en el cráter Gale."
+        ],
+        [
+          "TCM-4 — último encendido antes del EDL",
+          "TCM-4 — cuarta corrección (quedaban dos oportunidades más antes del aterrizaje)"
+        ]
+      ],
+      "fr": [
+        ["Injection trans-Mars (∆v de 3,61 km/s) : MSL", "Injection trans-Mars : MSL"],
+        [
+          "Correction finale pré-EDL ; la trajectoire cible l'ellipse d'atterrissage du cratère Gale.",
+          "Troisième correction de trajectoire ; affine la cible dans le cratère Gale."
+        ],
+        [
+          "TCM-4 — dernier allumage avant l'EDL",
+          "TCM-4 — quatrième correction (deux autres possibilités restaient avant l'atterrissage)"
+        ]
+      ],
+      "hi": [
+        ["ट्रांस-मंगल इंजेक्शन (3.61 किमी/सेकंड डेल्टा-वी) MSL", "ट्रांस-मंगल इंजेक्शन MSL"],
+        [
+          "अंतिम EDL-पूर्व सुधार; प्रक्षेपवक्र गेल क्रेटर लैंडिंग दीर्घवृत्त को लक्षित करता है।",
+          "तीसरा प्रक्षेपवक्र सुधार; गेल क्रेटर के लक्ष्य को परिष्कृत करता है।"
+        ],
+        ["TCM-4 — EDL से पहले अंतिम दहन", "TCM-4 — चौथा सुधार (लैंडिंग से पहले दो और अवसर शेष थे)"]
+      ],
+      "it": [
+        ["L'iniezione trans-marziana (3,61 km/s ∆v) pone", "L'iniezione trans-marziana pone"],
+        [
+          "Correzione finale pre-EDL; la traiettoria punta all'ellisse di atterraggio del Cratere Gale.",
+          "Terza correzione di traiettoria; affina il bersaglio nel Cratere Gale."
+        ],
+        [
+          "TCM-4 — ultima accensione prima dell'EDL",
+          "TCM-4 — quarta correzione (restavano altre due occasioni prima dell'atterraggio)"
+        ]
+      ],
+      "ja": [
+        ["火星遷移軌道投入（デルタV 3.61 km/s）により", "火星遷移軌道投入により"],
+        [
+          "EDL前最終修正。軌道はゲール・クレーター着陸楕円を目標。",
+          "第3回軌道修正。ゲール・クレーターの目標を精密化。"
+        ],
+        ["TCM-4——EDL 前の最後の噴射", "TCM-4——第4回修正（着陸までにあと2回の機会が残っていた）"]
+      ],
+      "ko": [
+        ["화성 전이(3.61 km/s ∆v)가", "화성 전이가"],
+        [
+          "최종 EDL 전 수정; 궤적은 게일 분화구 착륙 타원을 목표로 한다.",
+          "세 번째 궤적 수정; 게일 분화구 목표를 정밀화한다."
+        ],
+        [
+          "TCM-4 — EDL 전 마지막 분사",
+          "TCM-4 — 네 번째 수정(착륙 전 두 번의 기회가 더 남아 있었다)"
+        ]
+      ],
+      "nl": [
+        ["Trans-Mars-injectie (3,61 km/s delta-v) stuurt", "Trans-Mars-injectie stuurt"],
+        [
+          "Laatste correctie vóór EDL; baan gericht op landingsellips van Gale-krater.",
+          "Derde baancorrectie; verfijnt het doel in Gale-krater."
+        ],
+        [
+          "TCM-4 — laatste brandstap voor de EDL",
+          "TCM-4 — vierde correctie (er waren nog twee kansen vóór de landing)"
+        ]
+      ],
+      "pt-BR": [
+        ["Injeção Trans-Marte (3,61 km/s ∆v) coloca", "Injeção Trans-Marte coloca"],
+        [
+          "Correção pré-EDL final; trajetória visa a elipse de pouso da Cratera Gale.",
+          "Terceira correção de trajetória; refina o alvo na Cratera Gale."
+        ],
+        [
+          "TCM-4 — última queima antes do EDL",
+          "TCM-4 — quarta correção (restavam mais duas oportunidades antes do pouso)"
+        ]
+      ],
+      "ru": [
+        [
+          "Отлётный импульс к Марсу (дельта-v 3,61 км/с) переводит",
+          "Отлётный импульс к Марсу переводит"
+        ],
+        [
+          "Финальная корректировка перед входом в атмосферу; траектория нацелена на эллипс посадки кратера Gale.",
+          "Третья коррекция траектории; уточняет цель в кратере Gale."
+        ],
+        [
+          "TCM-4 — последнее включение перед EDL",
+          "TCM-4 — четвёртая коррекция (до посадки оставались ещё две возможности)"
+        ]
+      ],
+      "sr-Cyrl": [
+        [
+          "Убацивање на путању ка Марсу (∆v од 3,61 km/s) шаље",
+          "Убацивање на путању ка Марсу шаље"
+        ],
+        [
+          "Завршна корекција пре фазе EDL; путања циља елипсу слетања у кратеру Гејл.",
+          "Трећа корекција путање; прецизира циљ у кратеру Гејл."
+        ],
+        [
+          "TCM-4 — последње паљење пре EDL",
+          "TCM-4 — четврта корекција (до слетања су остале још две могућности)"
+        ]
+      ],
+      "zh-CN": [
+        [
+          "火星科学实验室进行火星转移注入（∆v 3.61 km/s），进入",
+          "火星科学实验室进行火星转移注入，进入"
+        ],
+        [
+          "着陆前最后的轨道修正；轨迹瞄准盖尔撞击坑着陆椭圆区。",
+          "第三次轨道修正；精化盖尔撞击坑着陆目标。"
+        ],
+        ["TCM-4——EDL 前最后一次点火", "TCM-4——第四次修正（着陆前还有两次修正机会）"]
+      ]
+    }
+  },
+  {
+    "m": "mars/curiosity",
+    "base": [
+      [
+        "TCM-4 — final pre-EDL burn",
+        "TCM-4 — fourth correction (two more chances remained before landing)"
+      ]
+    ]
+  },
+  {
+    "m": "mars/mangalyaan",
+    "base": [
+      [
+        "the lowest-cost interplanetary mission in history",
+        "the least expensive Mars mission to succeed"
+      ]
+    ]
+  },
+  {
+    "m": "mars/tianwen1",
+    "text": {
+      "en-US": [["operated 358 sols", "operated 347 sols (358 Earth days)"]],
+      "ar": [["358 يومًا مريخيًا", "347 يومًا مريخيًا (358 يومًا أرضيًا)"]],
+      "de": [["358 Sols", "347 Sols (358 Erdtage)"]],
+      "es": [["358 soles", "347 soles (358 días terrestres)"]],
+      "fr": [["358 sols", "347 sols (358 jours terrestres)"]],
+      "hi": [["358 सोल", "347 सोल (358 पृथ्वी दिन)"]],
+      "it": [["per 358 sol", "per 347 sol (358 giorni terrestri)"]],
+      "ja": [["358 sol稼働", "347 sol（地球日で358日）稼働"]],
+      "ko": [["358솔 동안", "347솔(지구일 기준 358일) 동안"]],
+      "nl": [["358 sols", "347 sols (358 aardse dagen)"]],
+      "pt-BR": [["358 sóis", "347 sóis (358 dias terrestres)"]],
+      "ru": [["358 солов", "347 солов (358 земных суток)"]],
+      "sr-Cyrl": [["358 сола", "347 сола (358 земаљских дана)"]],
+      "zh-CN": [["358个火星日", "347个火星日（358个地球日）"]]
+    }
+  },
+  {
+    "m": "mars/tianwen1",
+    "base": [
+      [
+        "a Chinese poem from 340 BCE (\\\"Heavenly Questions\\\")",
+        "the poem Tianwen ('Questions to Heaven') by Qu Yuan (c. 340–278 BCE)"
+      ]
+    ]
+  },
+  {
+    "m": "mars/hope-probe",
+    "base": [
+      [
+        "Launched on a Japanese H-IIA in a programme designed to leapfrog the Emirates' space-science capability by partnering with US universities + JAXA + ESA over a single mission timeline.",
+        "Built by MBRSC with the University of Colorado Boulder (LASP), Arizona State University and UC Berkeley; launched on a Mitsubishi Heavy Industries H-IIA."
+      ]
+    ]
+  },
+  {
+    "baseFile": "static/data/fleet/rover/zhurong.json",
+    "base": [["\"first_flight\": \"2021-05-15\"", "\"first_flight\": \"2021-05-14\""]]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "intro": "Mars 6 est arrivée le 12 mars 1974. Son atterrisseur a émis pendant toute la descente dans l'atmosphère — les premières mesures prises dans l'air martien lui-même —, mais une panne électronique a rendu une grande partie des données inexploitables, et le contact a été perdu quelques instants avant le contact avec le sol, dans Margaritifer Terra.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "L'une des quatre sondes martiennes soviétiques de 1973",
+      "images": [
+        {
+          "src": "/images/missions/mars6/01.webp",
+          "caption": "La maquette d'une sonde martienne soviétique de cette famille exposée, avec sa grande antenne parabolique au sommet."
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "title": "La descente",
+      "subtitle": "12 mars 1974 — des données tout au long de la descente",
+      "images": [
+        {
+          "src": "/images/missions/mars6/02.webp",
+          "caption": "Le timbre soviétique de 1972 pour les quinze ans de l'ère spatiale : un atterrisseur à la surface de Mars."
+        }
+      ]
+    }
+  ]
+}

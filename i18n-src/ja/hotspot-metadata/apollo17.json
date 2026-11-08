@@ -1,18 +1,7 @@
 {
   "hotspot_annotations": [],
-  "panorama_caption": "タウルス・リットロウ渓谷の谷、ステーション 5。シュミット + サーナンはここで Camelot Crater と South Massif を調査した。Apollo 計画最後の月面船外活動のパノラマ。",
-  "compass_zero_direction": "月面車の前方（ALSJ のパノラマ方位による）",
+  "panorama_caption": "タウルス・リットロウ渓谷のALSEP設置地点、EVA-1（1972年12月12日）。観測装置一式、月面車、谷を囲む山塊を写したジャック・シュミットのカラーパノラマ。アポロ最後の着陸。",
   "panorama_annotations": [
-    {
-      "id": "south-massif",
-      "label": "South Massif",
-      "body": "高さ 2.3 km の隆起した高地。ステーション 2（オレンジ色の土が見つかった場所）で試料が採取された。"
-    },
-    {
-      "id": "camelot-crater",
-      "label": "Camelot Crater の縁",
-      "body": "月着陸船の近くにある古い大きな衝突クレーター。ステーション 5 の岩塊地帯はその縁にある。"
-    },
     {
       "id": "lrv",
       "label": "月面車",

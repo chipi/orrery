@@ -4,7 +4,9 @@ One card per real thing, shareable everywhere. Authority: `docs/adr/TA.md` §com
 
 | File | Owns |
 |---|---|
-| `card-spec.ts` | The `CardSpec` contract, the 6 pure resolvers (`cardForMission/Fleet/Site/Planet/Satellite/SmallBody`), and the canonical-card alias helpers (`fleetAliasesMission`, `siteAliasMissionId`, `earthObjectCardAlias`). Pure data mapping — no DOM, no fetch; callers pass the hero + figure URLs in. |
+| `card-spec.ts` | The `CardSpec` contract, the 6 pure resolvers (`cardForMission/Fleet/Site/Planet/Satellite/SmallBody`), and re-exports the alias helpers from `card-alias.ts`. Pure data mapping — no DOM, no fetch; callers pass the hero + figure URLs in. |
+| `card-alias.ts` | The canonical-card alias helpers (`fleetAliasesMission`, `fleetAliasMissionId`, `siteAliasMissionId`, `earthObjectCardAlias`), split out of `card-spec.ts` so a panel can ask "does this alias a mission card?" without loading the resolvers and `CollectibleCard`. |
+| `lazy-card.ts` | `loadCardModules()`: loads `card-spec` and `CardOverlay` on demand (about 13 KB br) when a `/missions` or `/fleet` panel opens, so they stay out of the route's first load and inside its budget. A failed fetch is retried on the next open. |
 | `CollectibleCard.svelte` | Template 01 "cinematic" — the ONLY restyle surface. Pure HTML/CSS over a `CardSpec`; strictly monochrome chrome; figure collapses on load error; data values are LTR-isolated for RTL locales. |
 | `CardOverlay.svelte` | The modal + share actions. HEAD-probes the generated JPEG (hides Share-card on 404), shares the `/c/<kind>/<id>` OG stub via `sharePath()`, capture-phase Escape (closes the overlay, not the panel underneath). |
 | `card-spec.test.ts` | Unit tests for the resolvers + alias helpers. |

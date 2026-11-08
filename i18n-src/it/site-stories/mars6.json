@@ -1,0 +1,27 @@
+{
+  "intro": "Mars 6 arrivò il 12 marzo 1974. Il suo lander trasmise per tutta la discesa nell'atmosfera — le prime misure prese dentro l'aria marziana —, ma un guasto all'elettronica rese inutilizzabile buona parte dei dati, e il contatto si perse pochi istanti prima del contatto con il suolo, in Margaritifer Terra.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Una delle quattro sonde marziane sovietiche del 1973",
+      "images": [
+        {
+          "src": "/images/missions/mars6/01.webp",
+          "caption": "Il modello di una sonda marziana sovietica di questa famiglia in esposizione, con la grande antenna parabolica in cima."
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "title": "Discesa",
+      "subtitle": "12 marzo 1974 — dati per tutta la discesa",
+      "images": [
+        {
+          "src": "/images/missions/mars6/02.webp",
+          "caption": "Il francobollo sovietico del 1972 per i quindici anni dell'era spaziale: un lander sulla superficie di Marte."
+        }
+      ]
+    }
+  ]
+}

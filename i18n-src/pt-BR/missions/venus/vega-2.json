@@ -1,7 +1,7 @@
 {
   "name": "Vega 2",
   "vehicle": "Proton-K / D-1",
-  "payload": "Gêmea idêntica da Vega 1: barramento de sobrevoo de 4920 kg + módulo de pouso em Vênus de ~1500 kg + aerostato de hélio. Lançada 6 dias depois da Vega 1 por redundância + uma solução de armada emparelhada para o Halley.",
+  "payload": "Gêmea idêntica da Vega 1: cerca de 4900 kg no total, incluindo o módulo de descida de ~1500 kg (módulo de pouso em Vênus + aerostato de hélio). Lançada 6 dias depois da Vega 1 por redundância + uma solução de armada emparelhada para o Halley.",
   "delta_v": "~3,6 km/s (partida + redirecionamento para a interceptação do Halley)",
   "type": "SOBREVOO + POUSADOR + BALÃO · REALIZADA",
   "first": "Primeira análise química do solo tipo das terras altas venusianas (Aphrodite Terra, 1985); encontro pareado com Halley junto com Vega 1 forneceu a solução de direcionamento para Giotto",
@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 442,
+      "met": 443,
       "label": "SOBREVOO DE HALLEY",
       "note": "Aproximação máxima do cometa 1P/Halley a 8030 km — correção de posição pareada para Giotto.",
       "type": "nominal"

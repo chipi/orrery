@@ -1,0 +1,46 @@
+{
+  "intro": "Rosalind Franklin is Europe's first Mars rover, built to look for signs of past life. Its drill can reach 2 m below the surface, deeper than any rover before it, where organic molecules are shielded from the radiation that breaks them down near the top. The rover was ready to fly in 2022 on a joint mission with Russia; that partnership ended after Russia invaded Ukraine, and ESA rebuilt the mission with NASA. It is planned to launch in 2028 and land at Oxia Planum, a plain of clay-rich rock laid down in water about four billion years ago.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Six wheels, a 2-metre drill and a lab inside",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/01.webp",
+          "caption": "A full-scale model of Rosalind Franklin on display: the mast with its cameras on top, the drill box along the front, the solar panels folded out."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/04.webp",
+          "caption": "A model of the rover in its gold thermal finish, with the mast raised and the solar wings open."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "subtitle": "Rehearsing Mars on Earth",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/04.webp",
+          "caption": "An early rover prototype on field trials in Chile's Atacama Desert, near ESO's Paranal Observatory — one of the driest places on Earth stands in for Mars."
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "Landing",
+      "subtitle": "Oxia Planum — the planned landing site",
+      "images": [
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/02.webp",
+          "caption": "The entry and landing stack as first designed, pulled apart: heat shield at the bottom, the platform that carries the rover down and that it drives off, and the back shell on top."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/01.webp",
+          "caption": "A crater and its ejecta just southeast of the landing site, seen by NASA's Mars Reconnaissance Orbiter: rocks thrown out from below are the kind of loose stones the rover is to study."
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "airlock|ar|missions/earth/skylab-2.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "97b5a3c361"
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "f120f233b8"
   },
   "airlock|it|science/life-in-space/lunar-surface-ops.json :: body_paragraphs.1": {
     "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
@@ -20,8 +20,8 @@
     "tr": "72cb81ac0e"
   },
   "airlock|ru|missions/earth/skylab-2.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
-    "tr": "cf89ffe766"
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "6905695220"
   },
   "aphelion|ja|science/orbits/eccentricity.json :: body_paragraphs.0": {
     "why": "read 2026-11-04 (chunk 3): the general apoapsis word (ja 遠点) in the eccentricity article",
@@ -59,13 +59,25 @@
     "why": "engine name left in English (Liquid Apogee Motor)",
     "tr": "4924c9f2e3"
   },
+  "booster|ar|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "6c2755a077"
+  },
+  "booster|ar|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "c214c81df7"
+  },
   "booster|ar|missions/moon/luna16.json :: description": {
-    "why": "variant: صاروخ Proton-K (launch vehicle, not a strap-on)",
-    "tr": "e017e7ce97"
+    "why": "variant: صاروخ Proton-K (launch vehicle, not a strap-on); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "1d2424200a"
   },
   "booster|ar|programs/spacex.json :: outcome.0.md": {
     "why": "variant: first stage (مرحلة)",
     "tr": "e76abaeae4"
+  },
+  "booster|de|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "1260260c6a"
   },
   "booster|de|fleet/engine/h-1.json :: best_known_for": {
     "why": "variant: first stage (Saturn I/IB first-stage engine), word omitted naturally",
@@ -78,6 +90,10 @@
   "booster|de|fleet/launcher/atlas-lv-3b.json :: description": {
     "why": "variant: Antriebsstufe (Atlas first-stage booster)",
     "tr": "baa55a1398"
+  },
+  "booster|de|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "fad6a2ee88"
   },
   "booster|de|fleet/launcher/mercury-redstone.json :: description": {
     "why": "variant: die Rakete allein (single-stage vehicle without capsule)",
@@ -92,12 +108,16 @@
     "tr": "1f7b407ac4"
   },
   "booster|de|missions/moon/luna16.json :: description": {
-    "why": "variant: launcher (Proton-K booster)",
-    "tr": "b723c8f12f"
+    "why": "variant: launcher (Proton-K booster); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "bd9e8c4e97"
   },
   "booster|de|programs/sputnik.json :: goals.0.md": {
     "why": "variant: Träger (launch vehicle)",
     "tr": "1a3c92512f"
+  },
+  "booster|es|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "1e14751728"
   },
   "booster|es|fleet/engine/h-1.json :: best_known_for": {
     "why": "variant: first stage (Saturn I/IB booster = primera etapa)",
@@ -111,6 +131,10 @@
     "why": "variant: lanzador (whole vehicle)",
     "tr": "512f104a6b"
   },
+  "booster|es|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "18053ddf04"
+  },
   "booster|es|fleet/launcher/soyuz-2.json :: description": {
     "why": "variant: impulsores",
     "tr": "afef068d08"
@@ -120,8 +144,8 @@
     "tr": "6484983e9c"
   },
   "booster|es|missions/moon/luna16.json :: description": {
-    "why": "variant: launcher (Proton-K booster = lanzador)",
-    "tr": "0b4d84a676"
+    "why": "variant: launcher (Proton-K booster = lanzador); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "898f92dc9d"
   },
   "booster|es|programs/sputnik.json :: goals.0.md": {
     "why": "variant: cohete (launch vehicle)",
@@ -130,6 +154,10 @@
   "booster|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
     "why": "booster scale = escala de primera etapa",
     "tr": "6ba450961c"
+  },
+  "booster|fr|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "4777cda155"
   },
   "booster|fr|essays/reusable-launchers.json :: body.0.md": {
     "why": "variant: étage / premier étage (returned first stage)",
@@ -231,6 +259,10 @@
     "why": "variant: lanceur (whole vehicle)",
     "tr": "ab6761925a"
   },
+  "booster|fr|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "80be42fc36"
+  },
   "booster|fr|fleet/launcher/long-march-3b.json :: description": {
     "why": "variant: propulseurs auxiliaires latéraux",
     "tr": "56e3dde10d"
@@ -256,8 +288,8 @@
     "tr": "3c12afd40a"
   },
   "booster|fr|missions/moon/luna16.json :: description": {
-    "why": "variant: lanceur (whole Proton-K launcher)",
-    "tr": "494d405325"
+    "why": "variant: lanceur (whole Proton-K launcher); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "d13b841cb3"
   },
   "booster|fr|programs/spacex.json :: goals.1.caption": {
     "why": "variant: first stage booster (propulseurs)",
@@ -291,6 +323,18 @@
     "why": "variant: first stage (Super Heavy booster)",
     "tr": "9d49ce6aea"
   },
+  "booster|hi|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "fceb1e4679"
+  },
+  "booster|hi|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "5f3e8ebae8"
+  },
+  "booster|it|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "def693fec6"
+  },
   "booster|it|fleet/launcher/falcon-heavy.json :: best_known_for": {
     "why": "variant: lanciatore (whole vehicle)",
     "tr": "b95bd3b8c3"
@@ -299,21 +343,49 @@
     "why": "variant: lanciatore (whole vehicle)",
     "tr": "b95bd3b8c3"
   },
+  "booster|it|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "6a9bd36f21"
+  },
   "booster|it|fleet/station/salyut-4.json :: description": {
     "why": "variant: lanciatore (launcher failure)",
     "tr": "1fd0d5558b"
   },
   "booster|it|missions/moon/luna16.json :: description": {
-    "why": "variant: vettore (whole Proton-K launcher)",
-    "tr": "c5ff566521"
+    "why": "variant: vettore (whole Proton-K launcher); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "325bf72590"
   },
   "booster|it|programs/sputnik.json :: goals.0.md": {
     "why": "variant: vettore (launch vehicle)",
     "tr": "ef43fdd9cd"
   },
+  "booster|ja|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "497565c589"
+  },
+  "booster|ja|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "d2af94c78a"
+  },
   "booster|ja|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
     "tr": "973ca8693f"
+  },
+  "booster|ko|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "38dca80e97"
+  },
+  "booster|ko|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "6ea649f1dc"
+  },
+  "booster|nl|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "f6e413452c"
+  },
+  "booster|nl|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "ee26c6d1a1"
   },
   "booster|nl|fleet/station/salyut-4.json :: description": {
     "why": "variant: raket (launch vehicle failure)",
@@ -323,6 +395,10 @@
     "why": "variant: draagraket",
     "tr": "faa5326f5e"
   },
+  "booster|pt-BR|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "746c566cf8"
+  },
   "booster|pt-BR|fleet/engine/h-1.json :: best_known_for": {
     "why": "variant: primeiro estágio (Saturn I/IB first-stage engine)",
     "tr": "60254f9ba1"
@@ -331,13 +407,21 @@
     "why": "variant: megafoguetes (Saturn rockets in general)",
     "tr": "8f5291e410"
   },
+  "booster|pt-BR|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "88d2fb277b"
+  },
   "booster|pt-BR|missions/moon/luna16.json :: description": {
-    "why": "variant: foguete (whole Proton-K launcher)",
-    "tr": "ba60d291d1"
+    "why": "variant: foguete (whole Proton-K launcher); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "0950419b14"
   },
   "booster|pt-BR|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy named, word omitted naturally",
     "tr": "f1f185c3c6"
+  },
+  "booster|ru|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "7853eab8c8"
   },
   "booster|ru|essays/reusable-launchers.json :: body.0.md": {
     "why": "variant: ступень (first-stage booster = stage)",
@@ -379,6 +463,10 @@
     "why": "variant: ракета (whole single-stack vehicle, not strap-on)",
     "tr": "7de6c500d0"
   },
+  "booster|ru|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "c4874a079a"
+  },
   "booster|ru|fleet/launcher/mercury-redstone.json :: description": {
     "why": "variant: ракета (whole single-stage vehicle)",
     "tr": "a13188816b"
@@ -396,12 +484,16 @@
     "tr": "6cf86da617"
   },
   "booster|ru|missions/moon/luna16.json :: description": {
-    "why": "variant: launcher (Proton-K booster = ракета-носитель)",
-    "tr": "dae7284df5"
+    "why": "variant: launcher (Proton-K booster = ракета-носитель); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "b1fe3b5422"
   },
   "booster|ru|programs/sputnik.json :: goals.0.md": {
     "why": "variant: ракета-носитель (launch vehicle)",
     "tr": "bf4248c9f0"
+  },
+  "booster|sr-Cyrl|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "bed2f38064"
   },
   "booster|sr-Cyrl|essays/reusable-launchers.json :: body.0.md": {
     "why": "variant: први степен (first-stage booster = stage)",
@@ -455,6 +547,10 @@
     "why": "variant: ракета-носач (whole three-core vehicle)",
     "tr": "ad97f2d4c0"
   },
+  "booster|sr-Cyrl|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "fcd8fe15d2"
+  },
   "booster|sr-Cyrl|fleet/launcher/mercury-redstone.json :: description": {
     "why": "variant: ракета (whole single-stage vehicle)",
     "tr": "ccf3fec231"
@@ -472,8 +568,8 @@
     "tr": "2a9fe9cb8b"
   },
   "booster|sr-Cyrl|missions/moon/luna16.json :: description": {
-    "why": "variant: ракета (whole launcher Proton-K)",
-    "tr": "a3ce0d8b06"
+    "why": "variant: ракета (whole launcher Proton-K); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "43db19c60d"
   },
   "booster|sr-Cyrl|programs/spacex.json :: goals.1.caption": {
     "why": "variant: first stage (Falcon 9 booster)",
@@ -519,6 +615,10 @@
     "why": "booster = first stage 'први степен' is standard",
     "tr": "c4eeacfa99"
   },
+  "booster|zh-CN|essays/going-to-the-moon.json :: body.24.md": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "c10c25f737"
+  },
   "booster|zh-CN|essays/reusable-launchers.json :: body.0.md": {
     "why": "pronoun 它 / 第一级火箭 in this sentence",
     "tr": "452422ccc9"
@@ -535,9 +635,13 @@
     "why": "whole vehicle: variant 运载火箭",
     "tr": "4d7f284b02"
   },
+  "booster|zh-CN|fleet/launcher/long-march-10.json :: description": {
+    "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
+    "tr": "31e8160dcd"
+  },
   "booster|zh-CN|missions/moon/luna16.json :: description": {
-    "why": "variant: 运载火箭 (Proton-K is the whole launcher)",
-    "tr": "fc6ac1d602"
+    "why": "variant: 运载火箭 (Proton-K is the whole launcher); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "693af15c8b"
   },
   "booster|zh-CN|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
@@ -1687,6 +1791,10 @@
     "why": "burned on pad = fire, not an engine firing",
     "tr": "6f497ab45a"
   },
+  "burn|ru|missions/mars/mariner9.json :: events.3.note": {
+    "why": "variant: включение двигателя (engine firing = burn); read 2026-11-06",
+    "tr": "758e157dc1"
+  },
   "burn|ru|missions/venus/akatsuki.json :: events.2.note": {
     "why": "binding inflected and split: двигателя OME на 152-й секунде включения",
     "tr": "8385de784e"
@@ -2109,11 +2217,11 @@
   },
   "capsule|ru|missions/earth/vostok-3.json :: description": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "08e8ea1ed0"
+    "tr": "93a9b87947"
   },
   "capsule|ru|missions/earth/vostok-4.json :: description": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "2508b7cc61"
+    "tr": "0c9c192225"
   },
   "capsule|ru|science/mission-phases/entry-footprint.json :: intro_sentence": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -2124,12 +2232,12 @@
     "tr": "b0a718f6b4"
   },
   "capsule|zh-CN|missions/earth/faith-7.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
-    "tr": "5141d01b92"
+    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "0d77f9a5f1"
   },
   "capsule|zh-CN|missions/earth/sigma-7.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "09347f7361"
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "be0ec71617"
   },
   "capsule|zh-CN|science/life-in-space/crew-selection.json :: body_paragraphs.0": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -2160,12 +2268,12 @@
     "tr": "4acdd46c60"
   },
   "descent|de|missions/comet/rosetta.json :: payload": {
-    "why": "variant: Landeeinheit Philae (descent lander)",
-    "tr": "ef650f3a67"
+    "why": "variant: Landeeinheit Philae (descent lander); re-read 2026-11-06 after the dry-mass and flyby-count fix",
+    "tr": "9761616ae0"
   },
   "descent|de|missions/earth/voskhod-2.json :: description": {
-    "why": "variant: Landemodul (descent module)",
-    "tr": "776b475e14"
+    "why": "variant: Landemodul (descent module); re-read 2026-11-06 after the EVA-time fix",
+    "tr": "9398a1e9c0"
   },
   "descent|de|missions/earth/vostok-1.json :: payload": {
     "why": "variant: Landekapsel (descent module)",
@@ -2584,8 +2692,8 @@
     "tr": "6b414719be"
   },
   "lander|ar|missions/mars/phoenix.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "9afcfc2adb"
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "524678e0cb"
   },
   "lander|ar|missions/mars/starship-demo.json :: description": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -2595,9 +2703,17 @@
     "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
     "tr": "1393bdf8f4"
   },
+  "lander|ar|missions/moon/slim.json :: events.5.note": {
+    "why": "a generic word for the craft (aircraft/vehicle) or a compound with the term (Marslandeversuch); read 2026-11-06",
+    "tr": "871b439f10"
+  },
   "lander|ar|science/mission-phases/skycrane.json :: body_paragraphs.0": {
     "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
     "tr": "8455eb37eb"
+  },
+  "lander|de|missions/mars/schiaparelli.json :: first": {
+    "why": "a generic word for the craft (aircraft/vehicle) or a compound with the term (Marslandeversuch); read 2026-11-06",
+    "tr": "0cbb39ad88"
   },
   "lander|de|missions/moon/blue-moon-mk1.json :: events.1.note": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -2628,16 +2744,16 @@
     "tr": "9cb16df84f"
   },
   "lander|es|missions/moon/luna9.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "d7e4b56979"
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "259662f062"
   },
   "lander|es|missions/moon/luna9.json :: payload": {
     "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
     "tr": "d7c0472cdf"
   },
   "lander|fr|missions/moon/luna9.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "cc77dc544b"
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "107668ac25"
   },
   "lander|fr|missions/moon/luna9.json :: payload": {
     "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
@@ -2696,8 +2812,8 @@
     "tr": "4381d24211"
   },
   "lander|pt-BR|missions/moon/luna9.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "66b565d366"
+    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "9c6d95700f"
   },
   "lander|pt-BR|missions/moon/luna9.json :: payload": {
     "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
@@ -2723,9 +2839,13 @@
     "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
     "tr": "d64b44a1db"
   },
+  "lander|ru|missions/moon/slim.json :: events.5.note": {
+    "why": "a generic word for the craft (aircraft/vehicle) or a compound with the term (Marslandeversuch); read 2026-11-06",
+    "tr": "1c929d423d"
+  },
   "lander|ru|missions/venus/venera-13.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
-    "tr": "9d744af361"
+    "why": "generic craft word «аппарат» for the lander (natural rendering); re-read 2026-11-06 after the 89 atm fix",
+    "tr": "29ae2d193f"
   },
   "lander|ru|programs/jaxa-robotic.json :: goals.1.caption": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -2829,7 +2949,7 @@
   },
   "orbit|ar|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 22 دورة",
-    "tr": "fdf2c2bee9"
+    "tr": "1b364708be"
   },
   "orbit|ar|missions/earth/faith-7.json :: first": {
     "why": "variant: دورة (lap count)",
@@ -2858,6 +2978,10 @@
   "orbit|ar|missions/earth/sputnik1.json :: events.3.note": {
     "why": "variant: 1440 دورة",
     "tr": "7f74257c48"
+  },
+  "orbit|ar|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "896549435e"
   },
   "orbit|ar|programs/chandrayaan.json :: goals.2.md": {
     "why": "variant: دوران (verb sense of orbit)",
@@ -3111,9 +3235,17 @@
     "why": "natural omission: lanzamientos polares y heliosíncronos",
     "tr": "4a61a2889f"
   },
+  "orbit|es|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "71bfb56831"
+  },
   "orbit|fr|missions/earth/vostok-1.json :: dispatch": {
     "why": "variant: en faire le tour (circled the Earth)",
     "tr": "b41eca8bf4"
+  },
+  "orbit|fr|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "4a0fc663a2"
   },
   "orbit|fr|science/_landing.json :: chapters.7.paragraphs.1": {
     "why": "orbit as verb (tourner autour), not the orbit noun",
@@ -3131,6 +3263,10 @@
     "why": "field left untranslated English; term not rendered (garble listed)",
     "tr": "e27e7ac488"
   },
+  "orbit|hi|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "6d3a9e8add"
+  },
   "orbit|hi|science/_landing.json :: chapters.0.diagram": {
     "why": "file name",
     "tr": "72874f8e10"
@@ -3143,6 +3279,10 @@
     "why": "natural omission: lanci polari ed eliosincroni",
     "tr": "e3f53a1559"
   },
+  "orbit|it|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "ba71fe8613"
+  },
   "orbit|ja|essays/asteroid-mining.json :: body.0.md": {
     "why": "variant: 回る / その周囲の (orbiting rendered naturally)",
     "tr": "0d0c060831"
@@ -3153,7 +3293,7 @@
   },
   "orbit|ja|missions/earth/aurora-7.json :: description": {
     "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun",
-    "tr": "e3b3e45110"
+    "tr": "52cdbda060"
   },
   "orbit|ja|missions/earth/aurora-7.json :: dispatch": {
     "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun",
@@ -3161,7 +3301,7 @@
   },
   "orbit|ja|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 周 (revolution counter)",
-    "tr": "afacbb06d9"
+    "tr": "81d3c56f75"
   },
   "orbit|ja|missions/earth/friendship-7.json :: events.3.note": {
     "why": "variant: 周 (revolution counter)",
@@ -3185,7 +3325,7 @@
   },
   "orbit|ko|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 바퀴 (revolution counter)",
-    "tr": "09e30e222f"
+    "tr": "5a41c110f0"
   },
   "orbit|ko|missions/earth/friendship-7.json :: dispatch": {
     "why": "variant: 돈 (verb to orbit)",
@@ -3198,6 +3338,10 @@
   "orbit|ko|missions/earth/vostok-6.json :: dispatch": {
     "why": "variant: 돈 / 바퀴 (verb to orbit)",
     "tr": "ac06db95d9"
+  },
+  "orbit|ko|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "9a2eba4f06"
   },
   "orbit|ko|missions/moon/luna10.json :: first": {
     "why": "variant: 돈 (verb to orbit)",
@@ -3301,7 +3445,7 @@
   },
   "orbit|nl|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: omlopen (counted revolutions)",
-    "tr": "52b7243ded"
+    "tr": "95ea3efbfa"
   },
   "orbit|nl|missions/earth/friendship-7.json :: events.3.note": {
     "why": "variant: omlopen (counted revolutions)",
@@ -3342,6 +3486,10 @@
   "orbit|nl|missions/earth/vostok-5.json :: first": {
     "why": "variant: aardomloopvlucht / omwentelingen",
     "tr": "d01065d502"
+  },
+  "orbit|nl|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "3d4c7e0098"
   },
   "orbit|nl|programs/cassini.json :: narrative.0.md": {
     "why": "variant: omloop (orbit as revolution)",
@@ -3479,6 +3627,10 @@
     "why": "draaien/omloop verb or period sense, natural",
     "tr": "06e76d0781"
   },
+  "orbit|pt-BR|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "a49ca09b83"
+  },
   "orbit|pt-BR|science/planets/_intro.json :: paragraphs.0": {
     "why": "\"from orbit\" as do espaço, natural",
     "tr": "7b82d3f7b2"
@@ -3505,7 +3657,7 @@
   },
   "orbit|ru|missions/earth/aurora-7.json :: description": {
     "why": "variant: виток (count of revolutions)",
-    "tr": "e0ba70e3c3"
+    "tr": "6cdc50c67f"
   },
   "orbit|ru|missions/earth/aurora-7.json :: dispatch": {
     "why": "variant: виток (count of revolutions)",
@@ -3525,7 +3677,7 @@
   },
   "orbit|ru|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: виток (count of revolutions)",
-    "tr": "0c147fd7e1"
+    "tr": "68becec42e"
   },
   "orbit|ru|missions/earth/faith-7.json :: first": {
     "why": "variant: виток (count of revolutions)",
@@ -3608,8 +3760,8 @@
     "tr": "961ddde8e2"
   },
   "orbit|ru|missions/earth/vostok-5.json :: events.2.note": {
-    "why": "variant: виток (count of revolutions)",
-    "tr": "214219c89a"
+    "why": "variant: виток (count of revolutions); re-read 2026-11-06 after the Karatal fix",
+    "tr": "c3b8bd30ca"
   },
   "orbit|ru|missions/earth/vostok-5.json :: first": {
     "why": "variant: виток (count of revolutions)",
@@ -3630,6 +3782,10 @@
   "orbit|ru|missions/earth/vostok-6.json :: type": {
     "why": "ОКОЛОЗЕМНЫЙ (near-Earth, orbit implied) for EARTH-ORBIT in a type label",
     "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "be809ab8b4"
   },
   "orbit|ru|missions/moon/beresheet.json :: events.2.note": {
     "why": "variant: многооборотном (multi-orbit)",
@@ -3770,6 +3926,10 @@
   "orbit|sr-Cyrl|missions/moon/apollo8.json :: events.3.note": {
     "why": "variant: обилазак (orbit count)",
     "tr": "a852cc3816"
+  },
+  "orbit|sr-Cyrl|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "04935a7adb"
   },
   "orbit|sr-Cyrl|science/_landing.json :: chapters.0.diagram": {
     "why": "'кружи/обилази око' is the correct verb for orbiting",
@@ -3913,7 +4073,7 @@
   },
   "orbit|zh-CN|missions/earth/aurora-7.json :: description": {
     "why": "variant: 圈 (laps)",
-    "tr": "b0a718f6b4"
+    "tr": "c334e1dd18"
   },
   "orbit|zh-CN|missions/earth/aurora-7.json :: first": {
     "why": "variant: 圈 (laps)",
@@ -3924,12 +4084,12 @@
     "tr": "5141d01b92"
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: dispatch": {
-    "why": "variant: 圈 (laps)",
-    "tr": "683040f310"
+    "why": "variant: 圈 (laps); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "a29da6a264"
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 圈 (laps)",
-    "tr": "fface8b8b5"
+    "tr": "e6424e0e7c"
   },
   "orbit|zh-CN|missions/earth/faith-7.json :: first": {
     "why": "variant: 圈 (laps)",
@@ -3954,6 +4114,10 @@
   "orbit|zh-CN|missions/earth/vostok-6.json :: dispatch": {
     "why": "variant: 圈 (laps)",
     "tr": "b309b7884e"
+  },
+  "orbit|zh-CN|missions/moon/artemis2.json :: events.1.note": {
+    "why": "natural omission: 'sets off on a cislunar trajectory' (leaving Earth orbit implied); read 2026-11-06",
+    "tr": "d7598606a4"
   },
   "orbit|zh-CN|programs/chandrayaan.json :: goals.2.md": {
     "why": "variant: 绕月飞行",
@@ -4128,8 +4292,8 @@
     "tr": "3654546096"
   },
   "orbiter|ru|fleet/orbiter/lunar-prospector.json :: tagline": {
-    "why": "read 2026-11-04 (chunk 1): the Shuttle / Buran orbiter: another sense than the binding (a robotic orbiter)",
-    "tr": "63d513e0d7"
+    "why": "read 2026-11-04 (chunk 1): the Shuttle / Buran orbiter: another sense than the binding (a robotic orbiter); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "ea65194e0e"
   },
   "orbiter|ru|missions/mars/mars-express.json :: events.2.note": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -4245,11 +4409,11 @@
   },
   "payload|ko|missions/moon/apollo8.json :: description": {
     "why": "payload of the mission paraphrased as 임무",
-    "tr": "ca13e538f0"
+    "tr": "34ce240061"
   },
   "payload|ko|missions/moon/luna16.json :: description": {
-    "why": "variant: 탑재량 (payload mass)",
-    "tr": "0cf988f91f"
+    "why": "variant: 탑재량 (payload mass); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "e9c5e4c48e"
   },
   "payload|ko|missions/moon/smart-1.json :: events.0.note": {
     "why": "variant: 공동 탑재 (shared ride)",
@@ -4276,12 +4440,12 @@
     "tr": "37b188a275"
   },
   "payload|nl|missions/venus/magellan.json :: description": {
-    "why": "variant: laadruim (payload bay, standard word)",
-    "tr": "a7a24a25a8"
+    "why": "variant: laadruim (payload bay, standard word); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "193a66a1ab"
   },
   "payload|pt-BR|missions/venus/magellan.json :: description": {
-    "why": "variant: baía de carga (payload bay)",
-    "tr": "4e8c4f4fa6"
+    "why": "variant: baía de carga (payload bay); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "e436e0819b"
   },
   "payload|pt-BR|programs/mercury.json :: narrative.1.md": {
     "why": "figurative: astronaut as cargo/passenger",
@@ -4308,8 +4472,8 @@
     "tr": "ab2ad42b96"
   },
   "payload|ru|fleet/lander/change6.json :: description": {
-    "why": "variant: научная аппаратура (instrument suite, not cargo)",
-    "tr": "fa9e486991"
+    "why": "variant: научная аппаратура (instrument suite, not cargo); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "34d40643ac"
   },
   "payload|ru|fleet/launcher/ariane-5.json :: description": {
     "why": "variant: спутники (the payloads are satellites)",
@@ -4368,16 +4532,16 @@
     "tr": "b9996d5e40"
   },
   "payload|zh-CN|fleet/orbiter/smart-1.json :: description": {
-    "why": "recast: 搭乘 (rideshare)",
-    "tr": "db0db2ccfb"
+    "why": "recast: 搭乘 (rideshare); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "80c9456143"
   },
   "payload|zh-CN|missions/moon/apollo8.json :: description": {
     "why": "payload (which craft flies) rendered by 任务; natural omission",
-    "tr": "998003955b"
+    "tr": "e3929f6a87"
   },
   "payload|zh-CN|missions/venus/magellan.json :: description": {
-    "why": "variant: 货舱 (shuttle payload bay)",
-    "tr": "5e538fe0df"
+    "why": "variant: 货舱 (shuttle payload bay); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "46ad0e844f"
   },
   "payload|zh-CN|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
@@ -4409,7 +4573,7 @@
   },
   "polar orbit|nl|missions/venus/magellan.json :: events.3.note": {
     "why": "read 2026-11-04 (chunk 3): 'polar' shared with another orbit noun (sun-synchronous + polar orbits) or 'orbit near the pole'",
-    "tr": "0dda04dbdc"
+    "tr": "483f654ec3"
   },
   "propellant|ar|essays/asteroid-mining.json :: body.15.caption": {
     "why": "variant: وقود الصواريخ (rocket propellant)",
@@ -4420,8 +4584,8 @@
     "tr": "9d006c7891"
   },
   "propellant|ar|missions/mercury/mariner10.json :: description": {
-    "why": "binding split by its noun (وقود النيتروجين الدافع = nitrogen propellant)",
-    "tr": "172107151d"
+    "why": "binding split by its noun (وقود النيتروجين الدافع = nitrogen propellant); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "e7fee76b94"
   },
   "propellant|es|fleet/launcher/h-iia.json :: description": {
     "why": "variant: propulsión líquida",
@@ -4460,12 +4624,12 @@
     "tr": "78b07cc18b"
   },
   "propellant|nl|missions/mercury/mariner10.json :: description": {
-    "why": "propellant omitted naturally: \"het stikstof voor standregeling\" is the propellant",
-    "tr": "5d976fa4ad"
+    "why": "propellant omitted naturally: \"het stikstof voor standregeling\" is the propellant; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "bf06cc4e0a"
   },
   "propellant|pt-BR|missions/mercury/mariner10.json :: description": {
-    "why": "nitrogen itself is the propellant; omission is natural",
-    "tr": "f610ab5367"
+    "why": "nitrogen itself is the propellant; omission is natural; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "b1cb3203e2"
   },
   "propellant|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "RP-1 \"Rocket Propellant 1\" is a name",
@@ -4484,8 +4648,8 @@
     "tr": "071ebba279"
   },
   "propellant|ru|missions/mercury/mariner10.json :: description": {
-    "why": "nitrogen named as the supply (запас азота)",
-    "tr": "6b92d913e5"
+    "why": "nitrogen named as the supply (запас азота); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "25abd3821a"
   },
   "propellant|sr-Cyrl|fleet/launcher/soyuz.json :: description": {
     "why": "variant: течни погон (liquid-propellant rocket)",
@@ -4500,8 +4664,8 @@
     "tr": "080f3933a3"
   },
   "regolith|ja|missions/itokawa/hayabusa1.json :: description": {
-    "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out",
-    "tr": "562b84b359"
+    "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "540fbf7484"
   },
   "regolith|ja|science/life-in-space/lunar-suits.json :: intro_sentence": {
     "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out",
@@ -4680,8 +4844,8 @@
     "tr": "ed7fdce764"
   },
   "sample return|fr|missions/moon/slim.json :: description": {
-    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
-    "tr": "712d3a0eb8"
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "a8d25ca4a3"
   },
   "sample return|hi|fleet/orbiter/hayabusa-2.json :: tagline": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
@@ -4696,8 +4860,8 @@
     "tr": "2528dc0cf7"
   },
   "sample return|it|fleet/lander/change6.json :: best_known_for": {
-    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
-    "tr": "6ebdde3133"
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "b5ecf353d5"
   },
   "sample return|it|fleet/lander/change6.json :: tagline": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
@@ -4716,8 +4880,8 @@
     "tr": "874d59ce8d"
   },
   "sample return|it|missions/moon/slim.json :: description": {
-    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
-    "tr": "d0092db1b3"
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "20816423e7"
   },
   "sample return|ja|science/life-in-space/surface-dust-mitigation.json :: body_paragraphs.1": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
@@ -4733,7 +4897,7 @@
   },
   "sample return|nl|missions/bennu/osiris-rex.json :: description": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
-    "tr": "9f0af7873c"
+    "tr": "267e50a38d"
   },
   "sample return|nl|programs/jaxa-robotic.json :: link_labels./programs/hayabusa": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
@@ -4772,8 +4936,8 @@
     "tr": "d45d83ac37"
   },
   "sample return|ru|missions/asteroid/hayabusa2.json :: payload": {
-    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
-    "tr": "f268b57d6f"
+    "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept; re-read 2026-11-06 after the dry-mass fix",
+    "tr": "b49f73f3a5"
   },
   "sample return|ru|missions/moon/luna16.json :: first": {
     "why": "read 2026-11-04 (chunk 2): phrased around the samples (first samples brought back, samples returned) or the mission name kept",
@@ -4852,8 +5016,8 @@
     "tr": "6b0c2deff5"
   },
   "splashdown|fr|missions/earth/freedom-7.json :: description": {
-    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
-    "tr": "8737aa750b"
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "8bd9b9f9dd"
   },
   "splashdown|fr|missions/moon/apollo15.json :: description": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
@@ -4864,8 +5028,8 @@
     "tr": "dd33f29a00"
   },
   "splashdown|hi|missions/earth/freedom-7.json :: description": {
-    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
-    "tr": "4eda91e68f"
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "5f601acb7a"
   },
   "splashdown|hi|missions/earth/freedom-7.json :: events.2.note": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
@@ -4901,7 +5065,7 @@
   },
   "splashdown|pt-BR|missions/earth/liberty-bell-7.json :: description": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
-    "tr": "6b25b02186"
+    "tr": "eec2c93b86"
   },
   "splashdown|pt-BR|missions/moon/apollo10.json :: events.7.note": {
     "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
@@ -4916,8 +5080,8 @@
     "tr": "0cade6b7c9"
   },
   "splashdown|sr-Cyrl|missions/earth/friendship-7.json :: description": {
-    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean",
-    "tr": "69eb8b4e69"
+    "why": "read 2026-11-04 (chunk 2): a plain 'came down / landed in the ocean' rendering, or the word left out where the sentence names the ocean; re-read 2026-11-06 after the fact-check fixes",
+    "tr": "a4eb7fb087"
   },
   "stage|ar|missions/venus/magellan.json :: vehicle": {
     "why": "proper name Inertial Upper Stage left in English",
@@ -5181,15 +5345,15 @@
   },
   "trajectory|hi|essays/generational-starships.json :: body.0.md": {
     "why": "variant: पलायन-पथ (escape trajectory)",
-    "tr": "dc81a26485"
+    "tr": "acfff89410"
   },
   "trajectory|hi|essays/new-propulsion.json :: body.29.md": {
     "why": "figurative direction of progress, not a flight path",
     "tr": "4d6db4245f"
   },
   "trajectory|hi|missions/jupiter/juno.json :: description": {
-    "why": "orbit sense; कक्षा is correct",
-    "tr": "b78e3d1d82"
+    "why": "orbit sense; कक्षा is correct; re-read 2026-11-06 after the cyclone-count fix",
+    "tr": "f01d3b5834"
   },
   "trajectory|hi|programs/gaganyaan.json :: outcome.2.md": {
     "why": "figurative: direction/course, not a flight path",
@@ -5216,16 +5380,16 @@
     "tr": "923ecc37fe"
   },
   "trajectory|ko|missions/earth/otv-7.json :: description": {
-    "why": "variant: 궤도 (HEO is a closed orbit)",
-    "tr": "ff67897c9a"
+    "why": "variant: 궤도 (HEO is a closed orbit); re-read 2026-11-06 after the fact-check fixes",
+    "tr": "b134093ae8"
   },
   "trajectory|ko|missions/earth/sputnik1.json :: description": {
     "why": "variant: 궤도 (closed orbit of Sputnik)",
     "tr": "8f32223174"
   },
   "trajectory|ko|missions/jupiter/juno.json :: description": {
-    "why": "variant: 극궤도 (polar orbit around Jupiter)",
-    "tr": "8d853e5278"
+    "why": "variant: 극궤도 (polar orbit around Jupiter); re-read 2026-11-06 after the cyclone-count fix",
+    "tr": "f3203fd81b"
   },
   "trajectory|ko|missions/mercury/messenger.json :: events.1.note": {
     "why": "trajectory omitted by paraphrase (속도를 낮추기 위한)",

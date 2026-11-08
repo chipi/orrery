@@ -97,7 +97,7 @@ const HELIO_SNAPSHOTS: HelioSnapshot[] = [
   { slug: 'hope-probe', dest: 'mars', firstMet: 0, lastMetMin: 215, lastMetMax: 215.5, count: 100 },
   { slug: 'insight', dest: 'mars', firstMet: 0, lastMetMin: 215, lastMetMax: 215.5, count: 100 },
   { slug: 'mangalyaan', dest: 'mars', firstMet: 0, lastMetMin: 340, lastMetMax: 340.5, count: 100 },
-  { slug: 'mariner4', dest: 'mars', firstMet: 0, lastMetMin: 239, lastMetMax: 239.5, count: 100 },
+  { slug: 'mariner4', dest: 'mars', firstMet: 0, lastMetMin: 240, lastMetMax: 240.5, count: 100 },
   {
     slug: 'mars-express',
     dest: 'mars',
@@ -141,8 +141,8 @@ const HELIO_SNAPSHOTS: HelioSnapshot[] = [
     slug: 'galileo',
     dest: 'jupiter',
     firstMet: 0,
-    lastMetMin: 2355,
-    lastMetMax: 2356,
+    lastMetMin: 2354,
+    lastMetMax: 2355,
     count: 100,
   },
   {

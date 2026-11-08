@@ -215,12 +215,12 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── images/crew/                    ← per-flight crew portraits (ADR-053)
 │   ├── data/               ← all app JSON: missions, fleet, i18n overlays, schemas, planets, porkchop, …
 │   │   ├── missions/
-│   │   │   ├── index.json  ← lightweight manifest (42 entries)
+│   │   │   ├── index.json  ← lightweight manifest (126 entries)
 │   │   │   ├── mars/       ← base mission files (language-neutral) — `flight.interplanetary_profile` per ADR-058 third amendment
 │   │   │   ├── moon/       ← Moon missions (incl. `flight.cislunar_profile` per ADR-058)
 │   │   │   ├── ceres/ jupiter/ neptune/ pluto/  ← outer-system missions (`flight.interplanetary_profile`)
 │   │   ├── fleet/          ← fleet entries across categories (ADR-052; PRD-012 / RFC-016)
-│   │   │   ├── index.json                    ← generated manifest (drives /fleet card grid)
+│   │   │   ├── index.json                    ← hand-maintained manifest (drives /fleet card grid; `build-engine-fleet.ts` merges only the engine rows); name + tagline must equal the en-US overlay
 │   │   │   ├── launcher/                     ← per-entry base files (language-neutral)
 │   │   │   ├── crewed-spacecraft/
 │   │   │   ├── cargo-spacecraft/
@@ -293,7 +293,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 
 **Before reaching for a script, check [`docs/reference/tooling/`](docs/reference/tooling/README.md)** — the canonical map of every *standing* tool (build/CI, data validation, image pipeline, content pipelines) with what/when/gotchas. It supersedes guessing from `scripts/` filenames: one-shot wave/slice/migration scripts now live in `scripts/_archive/` (don't re-run them — read for the recipe, then use the standing tool). Deep end-to-end references stay authoritative: [TA.md §pipelines](docs/adr/TA.md), [`scripts/IMAGE-PIPELINE.md`](scripts/IMAGE-PIPELINE.md), the `docs/guides/` runbooks.
 
-Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run validate-data` (data gates), `npm run validate-prod` (**post-deploy** live-site validator — browser-based, ~60 checks incl. a regression guard per prod fix; `VALIDATE_URL=…` to target staging/local; see `docs/wip/2026-07-22-prod-validator.md`), `npm run audit:images` (every shipped image is used), `npm run fetch-assets` (stages to `_staging/` → review at `/dev/staging` → `npm run build-image-provenance -- --offline`), `npm run images:hotspots` (Mars/Moon surface detail, Node 22 + gdal). New standing tool → add a row to the matching tooling page; retired tool → move to `_archive/` + note in `tooling/archive.md`.
+Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run validate-data` (data gates), `npm run validate-prod` (**post-deploy** live-site validator — browser-based, ~60 checks incl. a regression guard per prod fix; `VALIDATE_URL=…` to target staging/local; see `docs/ops/prod-validator.md`), `npm run audit:images` (every shipped image is used), `npm run fetch-assets` (stages to `_staging/` → review at `/dev/staging` → `npm run build-image-provenance -- --offline`), `npm run images:hotspots` (Mars/Moon surface detail, Node 22 + gdal). New standing tool → add a row to the matching tooling page; retired tool → move to `_archive/` + note in `tooling/archive.md`.
 
 ---
 
@@ -356,6 +356,7 @@ Cues + DOM actions in `src/lib/audio-tour.ts` are the interaction layer that run
 - **`navigate` for URL-bound state.** Use the `navigate` action (not `click`) to demo search/filter affordances on routes whose state lives in the URL (`/missions`, `/fleet`, `/launches`). Target is the URL path/query (`/missions?q=apollo`), NOT a CSS selector.
 - **Panorama / assembly playback opportunities.** /moon and /mars sites with `hotspot_tier3_panorama` can be entered via `data-audio-stage="surface-stand-at-site"`. /iss and /tiangong have a fixed-duration assembly playback (50 s / 24 s); only wire it into episodes whose narration covers a window of at least that length, with the assembly narrative content matching what plays.
 - **Verify in a real browser.** A failing selector silently no-ops — preflight won't catch it. After authoring, play the episode through with the AudioOverlay open and watch every stage fire.
+- **Re-listen after scene changes.** `tests/e2e/tour-coverage.spec.ts` proves every target exists; it does not prove the stage lands on the right words or that the view shows what the narration describes. `npx tsx scripts/audio/stage-review.ts --url <built site> --out <dir> [episode …]` writes, per stage, the screen just after it fires next to the VTT words spoken around it: read those sheets after any change to a toured route's first view, labels, panels or panoramas.
 
 ---
 
@@ -755,7 +756,7 @@ E2e (Playwright) runs on push to `main`, not on every PR.
 
 ### Before pushing — `npm run preflight`
 
-Mirrors CI step-for-step locally. Runs typecheck → lint → test → validate-data → build. **If preflight passes, push is safe; if it fails, do not push.** A `.husky/pre-push` hook auto-runs it on `git push` and blocks the push on failure (use `git push --no-verify` only when explicitly intended).
+Mirrors CI step-for-step locally. Runs typecheck → lint → test → validate-data → build (with `SENTRY_SOURCEMAPS=1`, as CI does, so the route budget measures the bytes prod ships). **If preflight passes, push is safe; if it fails, do not push.** A `.husky/pre-push` hook auto-runs it on `git push` and blocks the push on failure (use `git push --no-verify` only when explicitly intended).
 
 Hooks self-activate after `npm install` via the `prepare` script (`git config core.hooksPath .husky`). No new dependencies — `.husky/pre-push` is a plain bash script.
 

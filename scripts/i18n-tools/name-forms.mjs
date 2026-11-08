@@ -7,6 +7,8 @@
 // Output TSV: kind \t qid \t enwiki \t runs (|-joined) \t female \t slavic \t <loc>=<form>…
 // (a form from a label rather than an article is prefixed "label:", for review).
 import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 
 const [inv, out] = process.argv.slice(2);
 const LOCS = {
@@ -30,8 +32,21 @@ for (const l of fs.readFileSync(inv, 'utf8').trim().split('\n')) {
   if (!items.has(qid)) items.set(qid, { kind, enwiki, female: female === '1', runs: [] });
   items.get(qid).runs.push(`${run}:${n}`);
 }
-const CACHE = process.env.NAME_FORMS_CACHE ?? '/tmp/name-forms-cache.json';
-const cache = fs.existsSync(CACHE) ? JSON.parse(fs.readFileSync(CACHE, 'utf8')) : {};
+// a per-user cache dir, not os.tmpdir(): the cache must outlive the run to resume it
+const CACHE =
+  process.env.NAME_FORMS_CACHE ??
+  path.join(
+    process.env.XDG_CACHE_HOME ?? path.join(os.homedir(), '.cache'),
+    'orrery',
+    'name-forms-cache.json',
+  );
+fs.mkdirSync(path.dirname(CACHE), { recursive: true });
+let cache = {};
+try {
+  cache = JSON.parse(fs.readFileSync(CACHE, 'utf8'));
+} catch (e) {
+  if (e.code !== 'ENOENT') throw e;
+}
 const langs = [...new Set(Object.values(LOCS).flatMap(([, l]) => l.split('|')))].join('|');
 async function wbget(params) {
   for (let t = 0; t < 8; t++) {
@@ -185,10 +200,11 @@ for (const [qid, it] of items) {
       // (a bare number only for a numbered minor planet: "Shoemaker-Levy 9" keeps its 9)
       if (form && it.kind === 'body') {
         const numbered = /^\d+ /.test(it.enwiki);
-        const bare = form
-          .replace(/^(label:)?\(?\p{Nd}+\)?\s+(?=\p{L})/u, '$1')
-          .replace(numbered ? /\s+\p{Nd}+$/u : /$^/, '')
-          .replace(/^(label:)?(小行星|الكويكب )\p{Nd}+$/u, '');
+        const lead = form.replace(/^(label:)?\(?\p{Nd}+\)?\s+(?=\p{L})/u, '$1');
+        const bare = (numbered ? lead.replace(/\s+\p{Nd}+$/u, '') : lead).replace(
+          /^(label:)?(小行星|الكويكب )\p{Nd}+$/u,
+          '',
+        );
         form = /\p{L}/u.test(bare.replace(/^label:/, '')) ? bare : null;
       }
     }

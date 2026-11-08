@@ -288,7 +288,7 @@ function main(): void {
     console.log(`  // (${s.reason})`);
     if (s.action === 'cue') {
       console.log(
-        `  { at_sec: ${s.at_sec}, action: 'cue', target: '${s.target.replace(/'/g, "\\'")}', duration_ms: ${s.duration_ms ?? 4000} },`,
+        `  { at_sec: ${s.at_sec}, action: 'cue', target: '${s.target.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}', duration_ms: ${s.duration_ms ?? 4000} },`,
       );
     } else if (s.duration_ms !== undefined) {
       console.log(

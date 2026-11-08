@@ -21,7 +21,7 @@
       "type": "nominal"
     },
     {
-      "met": 3.4,
+      "met": 3.7,
       "label": "LOI",
       "note": "Inserimento nell'orbita lunare.",
       "type": "nominal"
@@ -64,7 +64,7 @@
       "description": "Affinamento della fase di avvicinamento prima dell'inserimento in orbita lunare."
     },
     {
-      "met": 10.9,
+      "met": 9.75,
       "label": "Immissione transterrestre",
       "description": "1972-12-16. L'accensione dell'SPS riporta a casa l'Apollo 17 dopo 75 ore in orbita lunare e tre giorni sulla superficie."
     }

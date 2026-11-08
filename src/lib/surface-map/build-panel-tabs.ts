@@ -16,10 +16,18 @@ export function buildSurfacePanelTabs({
   hasGallery,
   hasStory,
   hasLinks,
+  hasJourney = false,
+  hasLanding = false,
 }: {
   hasGallery: boolean;
   hasStory: boolean;
   hasLinks: boolean;
+  /** A rover with a traverse: its stops as a timeline (#641). */
+  hasJourney?: boolean;
+  /** The craft on the surface has anatomy drawings: shown at the top of
+   *  STORY, so they open the tab even with no story (#641 — a sixth tab
+   *  pushed LEARN off the row). */
+  hasLanding?: boolean;
 }) {
   return [
     { id: 'overview', label: m.panel_tab_overview() },
@@ -27,8 +35,14 @@ export function buildSurfacePanelTabs({
     {
       id: 'story',
       label: m.panel_tab_story(),
-      visible: hasStory,
+      visible: hasStory || hasLanding,
       testid: 'panel-tab-story',
+    },
+    {
+      id: 'journey',
+      label: m.panel_tab_journey(),
+      visible: hasJourney,
+      testid: 'panel-tab-journey',
     },
     { id: 'learn', label: m.panel_tab_learn(), visible: hasLinks },
   ];

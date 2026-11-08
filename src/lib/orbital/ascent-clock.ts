@@ -87,7 +87,7 @@ export function scrubberToPoint(u: number, tl: JourneyTimeline): ClockPoint {
       descentT: 0,
     };
   }
-  const f = fD > 0 ? (c - cruiseEnd) / fD : 1;
+  const f = (c - cruiseEnd) / fD;
   return {
     phase: 'descent',
     ascentT: tl.ascentDurationS,

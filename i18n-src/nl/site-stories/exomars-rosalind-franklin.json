@@ -1,0 +1,46 @@
+{
+  "intro": "Rosalind Franklin is Europa's eerste Marsrover, gebouwd om te zoeken naar sporen van vroeger leven. Zijn boor reikt tot 2 m onder het oppervlak, dieper dan elke rover ervoor, waar organische moleculen beschermd zijn tegen de straling die ze vlak onder het oppervlak afbreekt. De rover stond in 2022 klaar voor een gezamenlijke missie met Rusland; die samenwerking eindigde na de Russische inval in Oekraïne, en ESA bouwde de missie opnieuw op met NASA. De lancering staat gepland voor 2028, de landing in Oxia Planum, een vlakte van kleirijk gesteente dat ongeveer vier miljard jaar geleden in water werd afgezet.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Zes wielen, een boor van 2 meter en een lab aan boord",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/01.webp",
+          "caption": "Een levensgroot model van Rosalind Franklin op een tentoonstelling: bovenop de mast met camera's, voorop de boorkast, de zonnepanelen uitgeklapt."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/04.webp",
+          "caption": "Een model van de rover in zijn gouden thermische laag, met de mast omhoog en de zonnevleugels open."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testen",
+      "subtitle": "Mars oefenen op Aarde",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/exomars-rosalind-franklin/04.webp",
+          "caption": "Een vroeg roverprototype bij veldtests in de Atacamawoestijn in Chili, bij het Paranal-observatorium van ESO – een van de droogste plekken op Aarde staat model voor Mars."
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "Landing",
+      "subtitle": "Oxia Planum – de geplande landingsplaats",
+      "images": [
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/02.webp",
+          "caption": "De intrede- en landingseenheid zoals die eerst was ontworpen, uit elkaar getrokken: onderaan het hitteschild, daarboven het platform dat de rover omlaag brengt en waar hij vanaf rijdt, en bovenaan de achterschaal."
+        },
+        {
+          "src": "/images/mars-sites/exomars-rosalind-franklin/01.webp",
+          "caption": "Een krater en zijn uitworp net ten zuidoosten van de landingsplaats, gezien door NASA's Mars Reconnaissance Orbiter: gesteente dat van onderen is opgeworpen is het soort losse stenen dat de rover moet bestuderen."
+        }
+      ]
+    }
+  ]
+}

@@ -33,19 +33,19 @@
       "type": "warning"
     },
     {
-      "met": 2.92,
+      "met": 2.56,
       "label": "FREIFLUGBAHN-ZÜNDUNG",
-      "note": "31-Sekunden-LM-Abstiegstriebwerks-Brennphase setzt das Raumschiff auf eine Freiflugbahn zurück.",
+      "note": "34-Sekunden-LM-Abstiegstriebwerks-Brennphase setzt das Raumschiff auf eine Freiflugbahn zurück.",
       "type": "info"
     },
     {
-      "met": 3.13,
+      "met": 3.21,
       "label": "MONDFLYBY",
-      "note": "Nächste Annäherung 254 km Höhe über Mare Cognitum — auf 400.171 km, die weiteste Entfernung, die Menschen von der Erde gereist hatten (Rekord gehalten 1970–2026, übertroffen durch Artemis II im April 2026).",
+      "note": "Nächste Annäherung 254 km Höhe über der Rückseite des Mondes — auf 400.171 km, die weiteste Entfernung, die Menschen von der Erde gereist hatten (Rekord gehalten 1970–2026, übertroffen durch Artemis II im April 2026).",
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.31,
       "label": "PC+2-ZÜNDUNG",
       "note": "Perizynthion-Plus-2-Stunden-Zündung verkürzt die Rückkehrzeit zur Erde um zehn Stunden.",
       "type": "nominal"

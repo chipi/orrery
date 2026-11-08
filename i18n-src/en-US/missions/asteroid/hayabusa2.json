@@ -1,7 +1,7 @@
 {
   "name": "Hayabusa2",
   "vehicle": "H-IIA 202",
-  "payload": "609 kg dry, ion-electric propulsion (4×μ10 thrusters) + chemical bipropellant + 1.6 m HGA. Onboard payload — Small Carry-on Impactor (SCI, 2.5 kg shaped charge), MASCOT lander (10 kg, DLR/CNES), 3× MINERVA-II rovers (~1 kg each), sample return capsule (16 kg, parachute reentry).",
+  "payload": "490 kg dry, ion-electric propulsion (4×μ10 thrusters) + chemical bipropellant + 1.6 m HGA. Onboard payload — Small Carry-on Impactor (SCI, 2.5 kg shaped charge), MASCOT lander (10 kg, DLR/CNES), 3× MINERVA-II rovers (~1 kg each), sample return capsule (16 kg, parachute reentry).",
   "delta_v": "~2 km/s (ion engine cumulative)",
   "type": "SAMPLE RETURN + LANDERS · ACTIVE (extended)",
   "first": "Second asteroid sample return (Ryugu, 2020); first artificial impact crater on an asteroid; first subsurface asteroid material returned to Earth",
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 366,
+      "met": 365,
       "label": "EARTH FLYBY",
       "note": "Earth gravity assist phases the rendezvous orbit.",
       "type": "nominal"

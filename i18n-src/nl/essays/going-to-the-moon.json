@@ -67,7 +67,7 @@
     },
     {
       "type": "prose",
-      "md": "Blijven is een ander probleem. Blijven betekent de nacht overleven, keer op keer. Het betekent stroom opwekken tijdens twee weken duisternis, wat ofwel kernenergie vereist (die de VS sinds de Viking-landers van de jaren zeventig niet meer naar een planeetoppervlak hebben gestuurd) ofwel een plek bij de pool waar op de kraterranden de zon het grootste deel van de tijd schijnt. Het betekent maandenlang, in plaats van dagenlang, stofophoping beheersen. Het betekent een mate van infrastructuur — stroom, communicatierelais, habitat — die Apollo nooit heeft geprobeerd. De uitgesproken ambitie van het Artemis-programma is een duurzame menselijke aanwezigheid aan de zuidpool. Dat doel is nog jaren van verwezenlijking verwijderd. [Artemis II](/missions?id=artemis2), de eerste bemande vlucht (een voorbijvlucht langs de Maan, geen landing), is gepland maar nog niet uitgevoerd. Artemis IV, nu gepland als de eerste bemande landing sinds Apollo, moet zich op het zuidpoolgebied richten. \"Gepland\" doet in beide zinnen veel werk."
+      "md": "Blijven is een ander probleem. Blijven betekent de nacht overleven, keer op keer. Het betekent stroom opwekken tijdens twee weken duisternis, wat ofwel kernenergie vereist (die de VS sinds de Viking-landers van de jaren zeventig niet meer naar een planeetoppervlak hebben gestuurd) ofwel een plek bij de pool waar op de kraterranden de zon het grootste deel van de tijd schijnt. Het betekent maandenlang, in plaats van dagenlang, stofophoping beheersen. Het betekent een mate van infrastructuur — stroom, communicatierelais, habitat — die Apollo nooit heeft geprobeerd. De uitgesproken ambitie van het Artemis-programma is een duurzame menselijke aanwezigheid aan de zuidpool. Dat doel is nog jaren van verwezenlijking verwijderd. [Artemis II](/missions?id=artemis2), de eerste bemande vlucht (een voorbijvlucht langs de Maan, geen landing), vloog in april 2026. Artemis IV, nu gepland als de eerste bemande landing sinds Apollo, moet zich op het zuidpoolgebied richten. \"Gepland\" doet in die zin veel werk."
     },
     {
       "type": "figure",
@@ -106,6 +106,22 @@
       "kind": "diagram",
       "caption": "De Maan is drukker bezocht dan sinds de jaren zeventig, en voor het eerst is de rolbezetting werkelijk wereldwijd: de Sovjet-primeurs van Luna, het Amerikaanse Apollo, China dat twee keer de achterkant bereikt, India bij de zuidpool, de precisielanding van Japan. De oudste vraag die de ruimtevaart stelt, nu gesteld door een groter deel van de mensheid dan ooit.",
       "align": "wide"
+    },
+    {
+      "type": "heading",
+      "text": "Een tweede race"
+    },
+    {
+      "type": "prose",
+      "md": "De Maan is ook op een andere manier druk: het is weer een race. China's verklaarde doel is vóór 2030 eigen astronauten te laten landen, en het plan vliegt al in stukken. Twee [Long March 10](/fleet?id=long-march-10)-raketten moeten apart vertrekken – een met het bemande ruimteschip [Mengzhou](/fleet?id=mengzhou), de andere met de lander [Lanyue](/fleet?id=lanyue) – en elkaar in een baan om de Maan ontmoeten, waar twee astronauten overstappen, in Lanyue afdalen met een rover die Tansuo heet en pakken die Wangyu heten, en later weer opstijgen. In november 2026 was het reddingssysteem van Mengzhou twee keer getest, had een levensgrote Lanyue op de grond een landings- en starttest doorstaan en had een eerste trap uit de Long March 10-reeks een eerste vlucht op lage hoogte gemaakt. Eind oktober 2026 zette China de resterende stappen uiteen: een onbemande landing van Lanyue, dan een volledige onbemande generale repetitie van de hele missie, en pas daarna een bemanning. Waar, heeft het nog niet gezegd."
+    },
+    {
+      "type": "prose",
+      "md": "Washington heeft het gemerkt. In februari 2026 gooide NASA Artemis om: Artemis III werd een test in een baan om de Aarde in 2027, en [Artemis IV](/missions?id=artemis4), gepland voor 2028, de eerste landing, met daarna minstens één per jaar. ‘Nu de geloofwaardige concurrentie van onze grootste geopolitieke tegenstander met de dag toeneemt,’ zei NASA-administrator Jared Isaacman, ‘moeten we sneller gaan, vertragingen wegwerken en onze doelen halen.’ In mei ging hij verder en voorspelde dat de volgende mensen die om de Maan vliegen, waarschijnlijk in 2027, Chinezen zouden zijn – een datum die China zelf niet heeft aangekondigd – en vergeleek hij het moment met de race tegen de Sovjet-Unie. NASA heeft ook [PROMISE](/fleet?id=promise) voorgesteld, een rover op kernenergie gebouwd uit een van de testtweelingen van de Marsrovers van JPL, om de zuidpool te verkennen voor een basis – al zei Isaacman dat hij alleen vliegt als hij goedkoop is."
+    },
+    {
+      "type": "prose",
+      "md": "Allebei gaan ze naar dezelfde plek. China's robotverkenner [Chang'e 7](/moon?site=change7) moet ruim vóór elke bemanning bij de zuidpool landen – de lancering, gepland voor eind augustus 2026, werd aan de vooravond van het lanceervenster afgeblazen – en China plant daar rond 2035 een internationaal onderzoeksstation. De eerste keer eindigde de race ermee dat de winnaar naar huis ging. Deze keer zeggen beide kanten dat ze willen blijven, en dan gaat de vraag minder over wie het eerst landt dan over wie iets bouwt dat blijft."
     },
     {
       "type": "heading",

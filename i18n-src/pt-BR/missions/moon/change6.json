@@ -20,19 +20,19 @@
       "type": "nominal"
     },
     {
-      "met": 30,
+      "met": 29.54,
       "label": "ATERRAGEM",
-      "note": "Lander desce na cratera Apollo (lado oposto) 2024-06-02. Todas as comunicações via relé Queqiao-2.",
+      "note": "Lander desce na cratera Apollo (lado oposto) 2024-06-01 (UTC). Todas as comunicações via relé Queqiao-2.",
       "type": "nominal"
     },
     {
-      "met": 30.6,
+      "met": 29.6,
       "label": "AMOSTRAGEM",
       "note": "1.935 kg coletados do regolito do outro lado.",
       "type": "info"
     },
     {
-      "met": 32,
+      "met": 31.59,
       "label": "SUBIDA",
       "note": "Veículo de subida decola; encontro com o orbitador.",
       "type": "nominal"

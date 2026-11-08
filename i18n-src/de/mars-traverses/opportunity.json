@@ -2,22 +2,26 @@
   "stops": [
     {
       "id": "sol-56",
+      "label": "Eagle-Krater"
+    },
+    {
+      "id": "sol-95",
       "label": "Endurance-Krater"
     },
     {
-      "id": "sol-1232",
+      "id": "sol-652",
       "label": "Erebus-Krater"
     },
     {
-      "id": "sol-1820",
+      "id": "sol-952",
       "label": "Victoria-Krater"
     },
     {
-      "id": "sol-3010",
+      "id": "sol-2681",
       "label": "Ankunft am Rand des Endeavour-Kraters"
     },
     {
-      "id": "sol-4500",
+      "id": "sol-4081",
       "label": "Marathon Valley"
     }
   ]

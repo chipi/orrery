@@ -18,18 +18,17 @@ export interface SourceCandidate {
   source: string; // the adapter key
 }
 
-const UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 
 // Minimal HTML-entity decode — WP emits numeric + a few named entities in titles.
 function decode(s: string): string {
   return s
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
-    .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#039;|&apos;/g, "'")
+    .replace(/&amp;/g, '&')
     .trim();
 }
 

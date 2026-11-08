@@ -1,11 +1,11 @@
 {
   "name": "OSIRIS-REx",
   "vehicle": "Atlas V 411",
-  "payload": "2110 kg di massa al lancio (1075 kg a secco)",
+  "payload": "2110 kg di massa al lancio (880 kg a secco)",
   "delta_v": "~1,4 km/s",
   "type": "MISSIONE DI RITORNO DI CAMPIONI · COMPLETATA",
   "first": "Più grande campione di asteroide mai riportato sulla Terra (121,6 g da Bennu, consegnato il 2023-09-24)",
-  "description": "OSIRIS-REx ha condotto una delle operazioni di prossimità attorno a un asteroide più esigenti mai tentate. Lanciata il 2016-09-08 da Cape Canaveral su un Atlas V 411, la sonda ha usato nel 2017 una fionda gravitazionale terrestre per ruotare il proprio piano orbitale fino all'inclinazione di 6° di Bennu, e il 2018-12-03 ha raggiunto con un rendezvous l'asteroide carbonaceo vicino alla Terra, largo 492 m. Dopo il mantenimento della posizione a ~19 km, è poi entrata in un'orbita record di ~1,4 km — la più vicina mai raggiunta da un veicolo spaziale attorno a un qualsiasi corpo celeste. Ha trascorso due anni a mappare la superficie di Bennu, ricoperta di massi, e a scoprire emissioni attive di particelle. Il 2020-10-20 il braccio di campionamento Touch-and-Go è sceso al sito Nightingale, ha sparato gas N₂ sulla superficie e ha afferrato un pennacchio di materiale, sprofondando di 50 cm in una superficie che si comportava come un fluido di ammasso di detriti. La capsula di ritorno dei campioni ha consegnato 121,6 g di materiale di Bennu nello Utah il 2023-09-24. La sonda stessa è stata subito ribattezzata OSIRIS-APEX, in rotta verso un rendezvous con Apophis nel 2029.",
+  "description": "OSIRIS-REx ha condotto una delle operazioni di prossimità attorno a un asteroide più esigenti mai tentate. Lanciata il 2016-09-08 da Cape Canaveral su un Atlas V 411, la sonda ha usato nel 2017 una fionda gravitazionale terrestre per ruotare il proprio piano orbitale fino all'inclinazione di 6° di Bennu, e il 2018-12-03 ha raggiunto con un rendezvous l'asteroide carbonaceo vicino alla Terra, largo 492 m. Dopo il mantenimento della posizione a ~19 km, è poi entrata in un'orbita record a 680 m sopra la superficie (930 m dal centro di Bennu, 2019-06) — la più vicina mai raggiunta da un veicolo spaziale attorno a un qualsiasi corpo celeste. Ha trascorso due anni a mappare la superficie di Bennu, ricoperta di massi, e a scoprire emissioni attive di particelle. Il 2020-10-20 il braccio di campionamento Touch-and-Go è sceso al sito Nightingale, ha sparato gas N₂ sulla superficie e ha afferrato un pennacchio di materiale, sprofondando di 50 cm in una superficie che si comportava come un fluido di ammasso di detriti. La capsula di ritorno dei campioni ha consegnato 121,6 g di materiale di Bennu nello Utah il 2023-09-24. La sonda stessa è stata subito ribattezzata OSIRIS-APEX, in rotta verso un rendezvous con Apophis nel 2029.",
   "events": [
     {
       "met": 0,
@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 380,
+      "met": 379,
       "label": "FIONDA GRAVITAZIONALE TERRESTRE",
       "note": "2017-09-22, 17.237 km sopra l'Antartide — ruota il piano orbitale verso l'inclinazione di 6° di Bennu.",
       "type": "info"
@@ -22,7 +22,7 @@
     {
       "met": 816,
       "label": "RENDEZVOUS CON BENNU",
-      "note": "Arriva a Bennu; mantiene la posizione a ~19 km e poi stringe progressivamente l'orbita fino a un record di ~1,4 km — la più vicina orbita di un veicolo spaziale attorno a qualsiasi corpo celeste.",
+      "note": "Arriva a Bennu; mantiene la posizione a ~19 km e poi stringe progressivamente l'orbita fino a un'orbita record a 680 m sopra la superficie (930 m dal centro di Bennu, 2019-06) — la più vicina orbita di un veicolo spaziale attorno a qualsiasi corpo celeste.",
       "type": "info"
     },
     {

@@ -8,6 +8,7 @@ import {
   pickHero,
   loadHeroOverrides,
   applyHeroOverride,
+  heroPositionFor,
   _resetHeroOverrideCache,
   type HeroOverrideFile,
 } from './image-hero';
@@ -236,5 +237,50 @@ describe('applyHeroOverride — gallery reordering', () => {
 
   it('handles empty galleries safely', () => {
     expect(applyHeroOverride('missions', 'x', [])).toEqual([]);
+  });
+});
+
+describe('heroPositionFor — reviewed crop position', () => {
+  const load = async (surface: 'fleet' | 'tiangong-modules', file: HeroOverrideFile) => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() =>
+        Promise.resolve(new Response(JSON.stringify(file), { status: 200 })),
+      ) as unknown as typeof fetch,
+    );
+    await loadHeroOverrides(surface);
+  };
+
+  it('returns the position for the hero slot at any ladder rung', async () => {
+    await load('fleet', {
+      version: '1.0',
+      overrides: { 'saturn-v': { slot: '04.jpg', position: '50% 20%' } },
+    });
+    expect(heroPositionFor('/images/fleet-galleries/saturn-v/04.webp')).toBe('50% 20%');
+    expect(heroPositionFor('https://cdn.example/images/fleet-galleries/saturn-v/04-640.webp')).toBe(
+      '50% 20%',
+    );
+  });
+
+  it('is undefined for another slot, an entry without position, or an unloaded surface', async () => {
+    await load('fleet', {
+      version: '1.0',
+      overrides: {
+        'saturn-v': { slot: '04.jpg', position: '50% 20%' },
+        atlas: { slot: '02.jpg' },
+      },
+    });
+    expect(heroPositionFor('/images/fleet-galleries/saturn-v/01.webp')).toBeUndefined();
+    expect(heroPositionFor('/images/fleet-galleries/atlas/02.webp')).toBeUndefined();
+    expect(heroPositionFor('/images/missions/apollo11/01.webp')).toBeUndefined();
+    expect(heroPositionFor(undefined)).toBeUndefined();
+  });
+
+  it('covers the surfaces added for station modules', async () => {
+    await load('tiangong-modules', {
+      version: '1.0',
+      overrides: { tianhe: { slot: '01.jpg', position: '40% 30%' } },
+    });
+    expect(heroPositionFor('/images/tiangong-modules/tianhe/01-320.webp')).toBe('40% 30%');
   });
 });

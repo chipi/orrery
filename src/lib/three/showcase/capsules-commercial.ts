@@ -502,6 +502,69 @@ function buildGaganyaan(): THREE.Group {
   return g;
 }
 
+/** Mengzhou, lunar configuration: long service module with two wings, 4.5 m blunt-cone crew module. */
+function buildMengzhou(): THREE.Group {
+  const m = baseMats();
+  const g = new THREE.Group();
+  const smH = 5.5;
+  g.add(cyl(2.1, 2.1, 0, smH, m.whiteDim, 48));
+  g.add(cyl(2.13, 2.13, 0, 0.12, m.metal, 48));
+  g.add(cyl(2.13, 2.13, smH - 0.12, smH, m.metal, 48));
+  g.add(cyl(2.11, 2.11, 1.2, 2.4, m.gold, 48));
+  for (let k = 0; k < 4; k++) {
+    const quad = new THREE.Group();
+    quad.add(box(0.4, 0.34, 0.1, m.black));
+    radial(g, quad, Math.PI / 4 + (k * Math.PI) / 2, 2.13, smH - 0.5, 0);
+  }
+  for (const side of [-1, 1]) {
+    g.add(box(0.12, 0.5, 0.6, m.metal, side * 2.15, 3.6, 0));
+    const wing = new THREE.Group();
+    wing.position.set(side * 2.2, 3.6, 0);
+    for (let s = 0; s < 3; s++) {
+      const pnl = panelFrame(1.6, 2.4, m, 4, 6, 0);
+      pnl.position.x = side * (0.85 + s * 1.65);
+      pnl.rotation.x = Math.PI / 2;
+      wing.add(pnl);
+    }
+    g.add(wing);
+  }
+  const cm = new THREE.Group();
+  cm.position.y = smH;
+  cm.add(
+    lathe(
+      [
+        [0, 0],
+        [2.15, 0],
+        [2.25, 0.12],
+        [2.15, 0.45],
+        [1.0, 2.95],
+        [0.85, 3.2],
+        [0, 3.3],
+      ],
+      m.white,
+    ),
+  );
+  cm.add(
+    lathe(
+      [
+        [0, 0],
+        [2.15, 0],
+        [2.25, 0.12],
+      ],
+      m.heat,
+    ),
+  );
+  const sl = Math.atan(1.15 / 2.5);
+  for (const th of [0.35, -0.35]) {
+    const w = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.17, 0.05, 22), m.glass);
+    w.rotation.x = Math.PI / 2;
+    radial(cm, w, th, 1.62, 1.6, sl);
+  }
+  radial(cm, box(0.8, 0.9, 0.04, m.whiteDim), Math.PI, 1.7, 1.4, sl);
+  g.add(cm);
+  return g;
+}
+
 /** New Shepard: booster (ring fin, wedge fins, landing gear) with the crew capsule on top. */
 function buildNewShepard(): THREE.Group {
   const m = baseMats();
@@ -788,6 +851,17 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
       {
         l: 'Gaganyaan — Wikipedia (crew module 3.5 m x 3.58 m; SM length and arrays estimate)',
         u: 'https://en.wikipedia.org/wiki/Gaganyaan',
+      },
+    ],
+  },
+  mengzhou: {
+    build: buildMengzhou,
+    heightM: 8.8,
+    diameterM: 4.5,
+    refs: [
+      {
+        l: 'Mengzhou (spacecraft) — Wikipedia (8.8 m lunar configuration, crew module 4.5 m; module split and wings estimate)',
+        u: 'https://en.wikipedia.org/wiki/Mengzhou_(spacecraft)',
       },
     ],
   },

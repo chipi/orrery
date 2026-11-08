@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "Лансирани склоп од 4100 kg: MTM (Mercury Transfer Module, ESA — 4 јонска мотора, соларни панели) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 инструмената) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 инструмената) + штит од Сунца MOSIF. Два научна орбитера се раздвајају након доласка до Меркура.",
+  "payload": "Лансирани склоп од 4100 kg: MTM (Mercury Transfer Module, ESA — 4 јонска мотора, соларни панели) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 инструмената) + MIO (Mercury Magnetospheric Orbiter, JAXA, 255 kg, 5 инструмената) + штит од Сунца MOSIF. Два научна орбитера се раздвајају након доласка до Меркура.",
   "delta_v": "~7,2 km/s (јонско крстарење + 9 гравитационих маневара + MOI)",
   "type": "ОРБИТЕР · АКТИВНА",
   "first": "Прва заједничка планетарна мисија Европе и Јапана; друга летелица икада која ће орбитирати око Меркура (после сонде Messenger)",
@@ -20,13 +20,13 @@
       "type": "nominal"
     },
     {
-      "met": 727,
+      "met": 726,
       "label": "ПРЕЛЕТ ПОРЕД ВЕНЕРЕ #1",
       "note": "Први гравитациони маневар поред Венере.",
       "type": "nominal"
     },
     {
-      "met": 1026,
+      "met": 1025,
       "label": "ПРЕЛЕТ ПОРЕД ВЕНЕРЕ #2",
       "note": "Други гравитациони маневар поред Венере отвара фазу приближавања Меркуру.",
       "type": "nominal"

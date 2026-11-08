@@ -34,6 +34,20 @@ async function waitForSceneReady(page: import('@playwright/test').Page) {
   );
 }
 
+/** The globe opens bare: the legend strip fades in with the first site
+ *  icons as you zoom (#641). Wheel in over the globe until it has arrived. */
+async function zoomUntilLegend(page: import('@playwright/test').Page) {
+  const box = await page.locator('canvas').first().boundingBox();
+  if (!box) throw new Error('no scene canvas');
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  const arrived = page.locator('.legend-3d:not(.legend-3d--away)');
+  for (let i = 0; i < 40 && (await arrived.count()) === 0; i++) {
+    await page.mouse.wheel(0, -150);
+    await page.waitForTimeout(150);
+  }
+  await expect(arrived).toHaveCount(1);
+}
+
 test.describe('nation legend filter', () => {
   test('/earth — toggles a nation off then back on', async ({ page, isMobile }) => {
     await page.goto('/earth');
@@ -56,6 +70,7 @@ test.describe('nation legend filter', () => {
 
     // Default: every nation button is pressed (shown).
     await expect(usa).toHaveAttribute('aria-pressed', 'true', { timeout: 15_000 });
+    if (!isMobile) await zoomUntilLegend(page);
 
     // Toggle off → un-pressed + dimmed.
     await toggleUsa();
@@ -77,6 +92,7 @@ test.describe('nation legend filter', () => {
     await waitForSceneReady(page);
     const usa = page.getByTestId('legend-nation-USA');
     await expect(usa).toHaveAttribute('aria-pressed', 'true', { timeout: 15_000 });
+    if (!isMobile) await zoomUntilLegend(page);
 
     // Toggle USA off. On mobile, tap the drawer chip (it auto-collapses);
     // state reflects on the mirror.

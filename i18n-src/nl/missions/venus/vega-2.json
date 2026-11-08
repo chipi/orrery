@@ -1,7 +1,7 @@
 {
   "name": "Vega 2",
   "vehicle": "Proton-K / D-1",
-  "payload": "Identieke tweeling van Vega 1: voorbijvlucht-bus van 4920 kg + Venus-lander van ~1500 kg + heliumaerostaat. 6 dagen na Vega 1 gelanceerd voor redundantie + een gekoppelde Halley-vlootoplossing.",
+  "payload": "Identieke tweeling van Vega 1: ongeveer 4900 kg in totaal, inclusief de afdalingsmodule van ~1500 kg (Venus-lander + heliumaerostaat). 6 dagen na Vega 1 gelanceerd voor redundantie + een gekoppelde Halley-vlootoplossing.",
   "delta_v": "~3,6 km/s (vertrek + herrichting voor onderschepping van Halley)",
   "type": "VOORBIJVLUCHT + LANDER + BALLON · GEVLOGEN",
   "first": "Eerste chemische analyse van Venusiaanse bodem van het hooglandtype (Aphrodite Terra, 1985); gepaarde Halley-ontmoeting met Vega 1 voedde de richtoplossing van Giotto",
@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 442,
+      "met": 443,
       "label": "HALLEY-VOORBIJVLUCHT",
       "note": "Kleinste afstand tot komeet 1P/Halley: 8030 km — aanvullende positiebepaling voor Giotto.",
       "type": "nominal"

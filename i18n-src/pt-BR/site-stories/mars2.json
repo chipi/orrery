@@ -1,0 +1,27 @@
+{
+  "intro": "Em 27 de novembro de 1971, poucas horas antes de a Mars 2 entrar em órbita, sua cápsula de descida se separou e seguiu para a superfície. O sistema de descida falhou — provavelmente porque a cápsula entrou inclinada demais —, o paraquedas não abriu e ela se espatifou: o primeiro objeto feito pelo ser humano a chegar à superfície de Marte. A bordo estava o PrOP-M, um pequeno rover feito para andar sobre esquis na ponta de um cabo. O orbitador continuou funcionando até 1972.",
+  "chapters": [
+    {
+      "id": "arrival",
+      "title": "Chegada",
+      "subtitle": "27 de novembro de 1971 — o primeiro objeto em Marte",
+      "images": [
+        {
+          "src": "/images/missions/mars2/02.webp",
+          "caption": "O selo soviético de 1972 dedicado à estação automática Mars 2: a flâmula que levava chegou ao planeta em 27 de novembro de 1971."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "A mesma cápsula da Mars 3",
+      "images": [
+        {
+          "src": "/images/missions/mars2/03.webp",
+          "caption": "Maquete de museu do módulo de descida da Mars 3 — a Mars 2 levava o mesmo projeto. A Mars 3 pousou suavemente cinco dias depois e transmitiu sinal por 14,5 segundos."
+        }
+      ]
+    }
+  ]
+}

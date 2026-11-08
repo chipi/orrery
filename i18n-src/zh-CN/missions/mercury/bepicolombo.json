@@ -1,7 +1,7 @@
 {
   "name": "BepiColombo",
   "vehicle": "Ariane 5 ECA",
-  "payload": "发射时组合体 4100 kg：MTM（Mercury Transfer Module，ESA——4 台离子推力器、太阳能电池阵）+ MPO（Mercury Planetary Orbiter，ESA，1230 kg，11 台仪器）+ MIO（Mercury Magnetospheric Orbiter，JAXA，285 kg，5 台仪器）+ MOSIF 遮阳罩。抵达水星后两台科学轨道器分离。",
+  "payload": "发射时组合体 4100 kg：MTM（Mercury Transfer Module，ESA——4 台离子推力器、太阳能电池阵）+ MPO（Mercury Planetary Orbiter，ESA，1230 kg，11 台仪器）+ MIO（Mercury Magnetospheric Orbiter，JAXA，255 kg，5 台仪器）+ MOSIF 遮阳罩。抵达水星后两台科学轨道器分离。",
   "delta_v": "~7.2 km/s（离子巡航 + 9 次引力辅助 + 水星轨道入轨）",
   "type": "轨道器 · 运行中",
   "first": "欧洲与日本首次联合行星任务；第二个绕水星运行的航天器（继Messenger之后）",
@@ -20,13 +20,13 @@
       "type": "nominal"
     },
     {
-      "met": 727,
+      "met": 726,
       "label": "金星飞掠 #1",
       "note": "首次金星引力辅助。",
       "type": "nominal"
     },
     {
-      "met": 1026,
+      "met": 1025,
       "label": "金星飞掠 #2",
       "note": "第二次金星引力辅助，启动水星接近阶段。",
       "type": "nominal"

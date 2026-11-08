@@ -1,0 +1,42 @@
+{
+  "intro": "Dos días antes de llegar a Venus, la Vega 1 se dividió en dos: una cápsula con un módulo de aterrizaje y un globo entró en la atmósfera el 11 de junio de 1985, mientras la sonda principal seguía rumbo al cometa Halley. El globo flotó entre las nubes a unos 54 km de altura durante unas 46 horas: el primer globo científico que voló en otro planeta. Las turbulencias del descenso activaron antes de tiempo los experimentos de superficie del módulo, entre ellos la perforadora, a unos 20 km de altura, de modo que nunca tomó muestras del suelo. El 6 de marzo de 1986 la sonda pasó a unos 8.900 km del núcleo del cometa.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Un módulo de tipo Venera y un globo en una sola cápsula",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/02.webp",
+          "caption": "Equipo de una sonda Vega durante el montaje: el portador que seguiría hasta el cometa Halley."
+        },
+        {
+          "src": "/images/missions/vega-1/04.webp",
+          "caption": "Una cápsula de descenso Vega en exposición: la esfera que llevó el módulo de aterrizaje y el globo hasta Venus."
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "title": "Venus",
+      "subtitle": "11 de junio de 1985 — un módulo en el suelo, un globo en las nubes",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/03.webp",
+          "caption": "El plan de Vega: la cápsula entra en la atmósfera de Venus, suelta el globo y el módulo de aterrizaje, y la sonda continúa hacia el cometa Halley."
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "title": "Cometa Halley",
+      "subtitle": "6 de marzo de 1986 — a unos 8.900 km del núcleo",
+      "images": [
+        {
+          "src": "/images/missions/vega-1/01.webp",
+          "caption": "La hoja filatélica soviética dedicada al estudio internacional del cometa Halley: Edmond Halley, una sonda Vega y el cometa."
+        }
+      ]
+    }
+  ]
+}

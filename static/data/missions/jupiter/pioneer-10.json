@@ -15,7 +15,7 @@
   "delta_v": "~14.4 km/s (post-Jupiter heliocentric)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
-  "credit": "© NASA / Ames Research Center — U.S. Government work, public domain. First spacecraft to fly past Mars's orbit, first through the asteroid belt (which we then discovered was less hazardous than feared), first to fly past Jupiter (1973-12-04), first to cross Saturn's orbit (1976), first to reach a distance from the Sun greater than Pluto's at perihelion (1983). Last successful contact 2003-01-23 from a heliocentric distance of ~82 AU; spacecraft now heading toward the constellation Taurus and the star Aldebaran (encounter in ~2 million years). Carries the Pioneer plaque — humanity's first deliberate interstellar message, designed by Carl Sagan + Frank Drake + Linda Salzman Sagan.",
+  "credit": "© NASA / Ames Research Center — U.S. Government work, public domain. First through the asteroid belt (which we then discovered was less hazardous than feared), first to fly past Jupiter (1973-12-04), first to cross Saturn's orbit (1976), first to reach a distance from the Sun greater than Pluto's at perihelion (1983). Last successful contact 2003-01-23 from a heliocentric distance of ~80 AU; spacecraft now heading toward the constellation Taurus and the star Aldebaran (encounter in ~2 million years). Carries the Pioneer plaque — humanity's first deliberate interstellar message, designed by Carl Sagan + Frank Drake + Linda Salzman Sagan.",
   "links": [
     {
       "l": "Pioneer 10 — Wikipedia",
@@ -65,13 +65,13 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Atlas / Centaur",
-        "description": "Cape Canaveral, 1972-03-02. The first spacecraft launched on a trajectory to escape the solar system — Pioneer 10's primary objective was to prove a probe could survive the asteroid belt crossing and Jupiter's radiation environment. NASA Ames managed the program; engineered by TRW."
+        "description": "Cape Canaveral, 1972-03-03. The first spacecraft launched on a trajectory to escape the solar system — Pioneer 10's primary objective was to prove a probe could survive the asteroid belt crossing and Jupiter's radiation environment. NASA Ames managed the program; engineered by TRW."
       },
       {
         "met_days": 641,
         "type": "flyby",
         "label": "Jupiter — first encounter",
-        "description": "Closest approach 132,252 km from Jupiter's cloud tops on 1973-12-03 — the first spacecraft ever to fly past the giant planet. Survived the previously-untested radiation belts, mapped the magnetosphere, returned the first close-up imagery, and gained enough energy from Jupiter's gravity to escape the solar system. Last signal received 2003-01-23 from 80 AU."
+        "description": "Closest approach 132,252 km from Jupiter's cloud tops on 1973-12-04 at 02:26 UTC (the evening of 3 December in the US) — the first spacecraft ever to fly past the giant planet. Survived the previously-untested radiation belts, mapped the magnetosphere, returned the first close-up imagery, and gained enough energy from Jupiter's gravity to escape the solar system. Last signal received 2003-01-23 from 80 AU."
       }
     ],
     "interplanetary_profile": {

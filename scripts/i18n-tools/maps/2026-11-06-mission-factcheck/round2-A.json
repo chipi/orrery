@@ -1,0 +1,484 @@
+[
+  {
+    "m": "moon/apollo13",
+    "text": {
+      "en-US": [["over Mare Cognitum", "above the far side of the Moon"]],
+      "ar": [["فوق البحر المعلوم", "فوق الجانب البعيد من القمر"]],
+      "de": [["über Mare Cognitum", "über der Rückseite des Mondes"]],
+      "es": [["sobre Mare Cognitum", "sobre la cara oculta de la Luna"]],
+      "fr": [["au-dessus de Mare Cognitum", "au-dessus de la face cachée de la Lune"]],
+      "hi": [["ज्ञात सागर के ऊपर", "चंद्रमा के दूर वाले पक्ष के ऊपर"]],
+      "it": [["sopra Mare Cognitum", "sopra il lato nascosto della Luna"]],
+      "ja": [["既知の海の上空", "月の裏側の上空"]],
+      "ko": [["인식의 바다 상공", "달 뒷면 상공"]],
+      "nl": [["boven Mare Cognitum", "boven de achterkant van de maan"]],
+      "pt-BR": [["sobre Mare Cognitum", "sobre o lado oposto da Lua"]],
+      "ru": [["над Морем Познанным", "над дальней стороной Луны"]],
+      "sr-Cyrl": [["изнад Мора познатог", "изнад невидљиве стране Месеца"]],
+      "zh-CN": [["在Cognitum海上空", "在月球背面上空"]]
+    },
+    "base": [
+      [
+        "free-return flyby at 254 km altitude over Mare Cognitum",
+        "free-return flyby at 254 km altitude above the far side"
+      ],
+      [
+        "Cause was later traced to a damaged thermostatic-switch heater wire dating from pre-launch ground testing.",
+        "Cause was later traced to overheated heater thermostat switches (rated 28 V, fed 65 V during pre-launch ground detanking) that damaged the Teflon insulation of the tank's fan wiring; in flight a short in those wires ignited it."
+      ],
+      [
+        "closest approach 254 km above Mare Cognitum. Apollo 13 reached 400,171 km from Earth on the far side",
+        "closest approach 254 km above the far side. Apollo 13 reached 400,171 km from Earth there"
+      ]
+    ]
+  },
+  {
+    "m": "moon/apollo16",
+    "text": {
+      "en-US": [
+        ["48599", "52759"],
+        [
+          "Duke's 11-second hop attempt during a long-jump record attempt put him at risk of damaging his PLSS backpack and was called off.",
+          "At the end of the third moonwalk Duke fell backwards onto his PLSS backpack during a high-jump attempt."
+        ]
+      ],
+      "ar": [
+        ["48599", "52759"],
+        [
+          "أما محاولة ديوك الوثب التي استغرقت 11 ثانية ضمن محاولة لتسجيل رقم قياسي في الوثب الطويل فعرّضت حقيبته PLSS لخطر التلف فأُوقفت",
+          "وفي نهاية النشاط الثالث خارج المركبة سقط ديوك إلى الخلف على حقيبته PLSS أثناء محاولة وثب عالٍ"
+        ]
+      ],
+      "de": [
+        ["48599", "52759"],
+        [
+          "Dukes 11-sekündiger Sprungversuch während eines Weitsprung-Rekordversuchs brachte ihn in Gefahr, seinen PLSS-Rucksack zu beschädigen, und wurde abgebrochen",
+          "Am Ende der dritten EVA fiel Duke bei einem Hochsprungversuch rückwärts auf seinen PLSS-Rucksack"
+        ]
+      ],
+      "es": [
+        ["48599", "52759"],
+        [
+          "El intento de salto de 11 segundos de Duke durante un intento de récord de salto en largo lo puso en riesgo de dañar su mochila PLSS y fue cancelado",
+          "Al final de la tercera EVA, Duke cayó de espaldas sobre su mochila PLSS durante un intento de salto de altura"
+        ]
+      ],
+      "fr": [
+        ["48599", "52759"],
+        [
+          "La tentative de saut de Duke de 11 secondes lors d'une tentative de record de saut en longueur l'a mis en risque d'endommager son sac à dos PLSS et a été abandonnée",
+          "À la fin de la troisième EVA, Duke est tombé à la renverse sur son sac à dos PLSS lors d'une tentative de saut en hauteur"
+        ]
+      ],
+      "hi": [
+        ["48599", "52759"],
+        [
+          "ड्यूक का लंबी कूद का रिकॉर्ड बनाने की कोशिश में 11 सेकंड का कूद-प्रयास उनके PLSS बैकपैक को नुकसान पहुँचाने का जोखिम बन गया और उसे रोक दिया गया",
+          "तीसरी EVA के अंत में ऊँची कूद के प्रयास के दौरान ड्यूक पीछे की ओर अपने PLSS बैकपैक पर गिर पड़े"
+        ]
+      ],
+      "it": [
+        ["48599", "52759"],
+        [
+          "Il tentativo di balzo di Duke, durato 11 secondi, durante un tentativo di record di salto in lungo rischiava di danneggiare il suo zaino PLSS e fu interrotto",
+          "Alla fine della terza EVA Duke cadde all'indietro sul suo zaino PLSS durante un tentativo di salto in alto"
+        ]
+      ],
+      "ja": [
+        ["48599", "52759"],
+        [
+          "デュークは走り幅跳びの記録に挑む際に11秒間のホップを試みましたが、PLSSバックパックを損傷するおそれがあるため中止されました",
+          "3回目のEVAの終わりに、デュークは高く跳ぼうとして後ろ向きに倒れ、PLSSバックパックの上に落ちました"
+        ]
+      ],
+      "ko": [
+        ["48599", "52759"],
+        [
+          "듀크의 11초 홉 시도는 장거리 점프 기록 도전 중에 PLSS 배낭 손상의 위험에 빠지게 하여 중단되었다",
+          "세 번째 EVA가 끝날 무렵 듀크는 높이뛰기를 시도하다 뒤로 넘어져 PLSS 배낭 위로 떨어졌다"
+        ]
+      ],
+      "nl": [
+        ["48599", "52759"],
+        [
+          "Dukes poging tot een sprong van 11 seconden tijdens een poging tot een verspringrecord zette hem in gevaar voor beschadiging van zijn PLSS-rugzak en werd afgebroken",
+          "Aan het einde van de derde EVA viel Duke bij een hoogspringpoging achterover op zijn PLSS-rugzak"
+        ]
+      ],
+      "pt-BR": [
+        ["48599", "52759"],
+        [
+          "A tentativa de salto de 11 segundos de Duke durante uma tentativa de recorde de salto em distância o colocou em risco de danificar seu mochilaPLSS e foi cancelada",
+          "No fim da terceira EVA, Duke caiu de costas sobre sua mochila PLSS durante uma tentativa de salto em altura"
+        ]
+      ],
+      "ru": [
+        ["48599", "52759"],
+        [
+          "Попытка 11-секундного прыжка Дьюка во время попытки установить рекорд в длину прыжка создала риск повреждения его портативной системы жизнеобеспечения PLSS, и попытка была прекращена",
+          "В конце третьего выхода Дьюк во время попытки прыжка в высоту упал спиной на свою портативную систему жизнеобеспечения PLSS"
+        ]
+      ],
+      "sr-Cyrl": [
+        ["48599", "52759"],
+        [
+          "Дјук 11-секундни покушај скока током покушаја обарања рекорда у скоку удаљ довео га је у опасност да оштети ранац PLSS, па је прекинут",
+          "На крају трећег изласка Дјук је током покушаја скока увис пао уназад на свој ранац PLSS"
+        ]
+      ],
+      "zh-CN": [
+        ["48599", "52759"],
+        [
+          "杜克在尝试跳远纪录时进行的11秒跳跃，有损坏其PLSS背包的风险，因而被叫停",
+          "在第三次舱外活动结束时，杜克在尝试跳高时向后摔倒在其PLSS背包上"
+        ]
+      ]
+    },
+    "base": [["48599 kg", "52759 kg"]]
+  },
+  {
+    "m": "earth/apollo9",
+    "text": {
+      "en-US": [
+        ["42400", "43196"],
+        ["did a 38-minute EVA on the LM porch", "did an EVA of about 38 minutes on the LM porch"],
+        ["does 38-min EVA on LM porch", "does EVA of about 38 min on LM porch"]
+      ],
+      "ar": [
+        ["42400", "43196"],
+        ["مدته 38 دقيقة", "مدته نحو 38 دقيقة"]
+      ],
+      "de": [
+        ["42400", "43196"],
+        ["eine 38-minütige EVA auf der", "eine EVA von etwa 38 Minuten auf der"],
+        ["führt 38-min EVA auf der", "führt EVA von etwa 38 min auf der"]
+      ],
+      "es": [
+        ["42400", "43196"],
+        ["una EVA de 38 minutos", "una EVA de unos 38 minutos"],
+        ["una EVA de 38 min", "una EVA de unos 38 min"]
+      ],
+      "fr": [
+        ["42400", "43196"],
+        ["une EVA de 38 minutes", "une EVA d'environ 38 minutes"],
+        ["une EVA de 38 min", "une EVA d'environ 38 min"]
+      ],
+      "hi": [
+        ["42400", "43196"],
+        ["पर 38 मिनट की EVA", "पर लगभग 38 मिनट की EVA"],
+        ["पर 38-मिनट की EVA", "पर लगभग 38-मिनट की EVA"]
+      ],
+      "it": [
+        ["42400", "43196"],
+        ["una EVA di 38 minuti", "una EVA di circa 38 minuti"],
+        ["una EVA di 38 min", "una EVA di circa 38 min"]
+      ],
+      "ja": [
+        ["42400", "43196"],
+        ["ポーチで38分間", "ポーチで約38分間"],
+        ["ポーチから38分間", "ポーチから約38分間"]
+      ],
+      "ko": [
+        ["42400", "43196"],
+        ["현관에서 38분간", "현관에서 약 38분간"]
+      ],
+      "nl": [
+        ["42400", "43196"],
+        ["een EVA van 38 minuten", "een EVA van ongeveer 38 minuten"],
+        ["38 minuten durende EVA", "ongeveer 38 minuten durende EVA"]
+      ],
+      "pt-BR": [
+        ["42400", "43196"],
+        ["uma EVA de 38 minutos", "uma EVA de cerca de 38 minutos"],
+        ["EVA de 38 min", "EVA de cerca de 38 min"]
+      ],
+      "ru": [
+        ["42400", "43196"],
+        ["38-минутный выход", "примерно 38-минутный выход"]
+      ],
+      "sr-Cyrl": [
+        ["42400", "43196"],
+        ["провео 38 минута", "провео око 38 минута"],
+        ["обавља 38-минутни EVA", "обавља EVA од око 38 минута"]
+      ],
+      "zh-CN": [
+        ["42400", "43196"],
+        ["进行了38分钟的舱外活动", "进行了约38分钟的舱外活动"],
+        ["进行38分钟舱外活动", "进行约38分钟舱外活动"]
+      ]
+    },
+    "base": [["42400 kg", "43196 kg"]]
+  },
+  {
+    "m": "earth/apollo7",
+    "text": {
+      "en-US": [["232 × 285", "228 × 285"]],
+      "ar": [["232 × 285", "228 × 285"]],
+      "de": [["232 × 285", "228 × 285"]],
+      "es": [["232 × 285", "228 × 285"]],
+      "fr": [["232 × 285", "228 × 285"]],
+      "hi": [["232 × 285", "228 × 285"]],
+      "it": [["232 × 285", "228 × 285"]],
+      "ja": [["232 × 285", "228 × 285"]],
+      "ko": [["232 × 285", "228 × 285"]],
+      "nl": [["232 × 285", "228 × 285"]],
+      "pt-BR": [["232 × 285", "228 × 285"]],
+      "ru": [["232 × 285", "228 × 285"]],
+      "sr-Cyrl": [["232 × 285", "228 × 285"]],
+      "zh-CN": [["232 × 285", "228 × 285"]]
+    }
+  },
+  {
+    "m": "moon/apollo8",
+    "text": {
+      "en-US": [
+        [
+          "to ~1 billion viewers — the largest TV audience to that date",
+          "to an estimated audience of up to a billion — the most-watched broadcast to that date"
+        ],
+        [
+          "to ~1 billion viewers — largest live TV audience to that date",
+          "to an estimated audience of up to a billion — the most-watched broadcast to that date"
+        ],
+        ["a billion people heard", "an estimated billion people heard"]
+      ],
+      "ar": [
+        [
+          "أمام نحو مليار مشاهد — أكبر جمهور تلفزيوني حتى ذلك التاريخ",
+          "أمام جمهور يُقدَّر بما يصل إلى مليار مشاهد — أكثر بثّ مشاهدةً حتى ذلك التاريخ"
+        ],
+        [
+          "لحوالي 1 مليار مشاهد — أكبر جمهور تلفاز مباشر حتى ذلك التاريخ",
+          "لجمهور يُقدَّر بما يصل إلى مليار مشاهد — أكثر بثّ مشاهدةً حتى ذلك التاريخ"
+        ],
+        ["سمع مليار شخص", "سمع ما يُقدَّر بمليار شخص"]
+      ],
+      "de": [
+        [
+          "für etwa 1 Milliarde Zuschauer — das größte Fernsehpublikum bis zu diesem Zeitpunkt",
+          "für ein geschätztes Publikum von bis zu einer Milliarde — die meistgesehene Sendung bis zu diesem Zeitpunkt"
+        ],
+        [
+          "für ~1 Milliarde Zuschauer — größtes Live-Fernsehen-Publikum bis dahin",
+          "für ein geschätztes Publikum von bis zu einer Milliarde — meistgesehene Sendung bis dahin"
+        ],
+        ["hörten eine Milliarde Menschen", "hörten schätzungsweise eine Milliarde Menschen"]
+      ],
+      "es": [
+        [
+          "ante ~1000 millones de espectadores — la mayor audiencia televisiva hasta esa fecha",
+          "ante una audiencia estimada de hasta 1000 millones — la emisión más vista hasta esa fecha"
+        ],
+        [
+          "ante ~1000 millones de espectadores — la mayor audiencia de televisión en directo hasta esa fecha",
+          "ante una audiencia estimada de hasta 1000 millones — la emisión más vista hasta esa fecha"
+        ],
+        [
+          "en Nochebuena mil millones de personas escucharon",
+          "en Nochebuena, según las estimaciones, mil millones de personas escucharon"
+        ]
+      ],
+      "fr": [
+        [
+          "pour environ 1 milliard de spectateurs — le plus grand public télévisé jusque-là",
+          "pour un public estimé jusqu'à un milliard de spectateurs — l'émission la plus regardée jusque-là"
+        ],
+        [
+          "devant environ 1 milliard de téléspectateurs — la plus grande audience de télévision en direct jusqu'à cette date",
+          "devant un public estimé jusqu'à un milliard de téléspectateurs — l'émission la plus regardée jusqu'à cette date"
+        ],
+        [
+          "un milliard de personnes entendirent",
+          "selon les estimations, un milliard de personnes entendirent"
+        ]
+      ],
+      "hi": [
+        [
+          "~1 अरब दर्शकों के लिए उत्पत्ति ग्रंथ से पाठ किया — उस तारीख तक का सबसे बड़ा टीवी दर्शक-वर्ग",
+          "अनुमानित अधिकतम 1 अरब दर्शकों के लिए उत्पत्ति ग्रंथ से पाठ किया — उस तारीख तक का सबसे ज़्यादा देखा गया प्रसारण"
+        ],
+        [
+          "जिसे लगभग 1 अरब दर्शक देखते हैं — उस समय तक का सबसे बड़ा लाइव टीवी दर्शक-वर्ग",
+          "जिसे अनुमानतः अधिकतम 1 अरब दर्शक देखते हैं — उस समय तक का सबसे ज़्यादा देखा गया प्रसारण"
+        ],
+        ["एक अरब लोगों ने", "अनुमानतः एक अरब लोगों ने"]
+      ],
+      "it": [
+        [
+          "davanti a circa 1 miliardo di spettatori — il più grande pubblico televisivo fino ad allora",
+          "davanti a un pubblico stimato fino a 1 miliardo di spettatori — la trasmissione più vista fino ad allora"
+        ],
+        [
+          "a circa 1 miliardo di spettatori — il pubblico televisivo in diretta più numeroso fino a quella data",
+          "a un pubblico stimato fino a 1 miliardo di spettatori — la trasmissione più vista fino a quella data"
+        ],
+        ["un miliardo di persone ascoltò", "secondo le stime un miliardo di persone ascoltò"]
+      ],
+      "ja": [
+        [
+          "視聴者は約10億人 — 当時として史上最大のテレビ視聴者数だった",
+          "視聴者は推定で最大10億人 — 当時として最も多く視聴された放送だった"
+        ],
+        [
+          "約10億視聴者に放送。当時最大のライブTV視聴者数",
+          "推定で最大10億人の視聴者に放送。当時最も多く視聴された放送"
+        ],
+        ["10億人が月周回軌道から", "推定10億人が月周回軌道から"]
+      ],
+      "ko": [
+        [
+          "약 10억 시청자가 보는 생방송 텔레비전에서 창세기를 낭독했는데, 당시까지 최대 규모의 TV 시청자였습니다",
+          "최대 10억 명으로 추정되는 시청자가 보는 생방송 텔레비전에서 창세기를 낭독했는데, 당시까지 가장 많이 시청된 방송이었습니다"
+        ],
+        [
+          "약 10억 명의 시청자에게 방송됨 — 당시까지의 최대 라이브 TV 시청 규모",
+          "최대 10억 명으로 추정되는 시청자에게 방송됨 — 당시까지 가장 많이 시청된 방송"
+        ],
+        ["10억 명의 사람들이 달 궤도에서", "추정 10억 명의 사람들이 달 궤도에서"]
+      ],
+      "nl": [
+        [
+          "voor ~1 miljard kijkers — het grootste televisiepubliek tot die datum",
+          "voor een geschat publiek van maximaal 1 miljard kijkers — de meest bekeken uitzending tot die datum"
+        ],
+        [
+          "voor ~1 miljard kijkers — grootste live TV-publiek tot op dat moment",
+          "voor een geschat publiek van maximaal 1 miljard kijkers — meest bekeken uitzending tot op dat moment"
+        ],
+        ["hoorde een miljard mensen", "hoorde naar schatting een miljard mensen"]
+      ],
+      "pt-BR": [
+        [
+          "para ~1 bilhão de telespectadores — a maior audiência de TV até aquela data",
+          "para uma audiência estimada em até 1 bilhão de telespectadores — a transmissão mais assistida até aquela data"
+        ],
+        [
+          "para ~1 bilhão de espectadores — a maior audiência de TV ao vivo até essa data",
+          "para uma audiência estimada em até 1 bilhão de espectadores — a transmissão mais assistida até essa data"
+        ],
+        ["um bilhão de pessoas ouviram", "segundo estimativas, um bilhão de pessoas ouviram"]
+      ],
+      "ru": [
+        [
+          "для примерно 1 млрд зрителей — это была крупнейшая телевизионная аудитория на тот момент",
+          "для аудитории, по оценкам, до 1 млрд зрителей — это была самая просматриваемая трансляция на тот момент"
+        ],
+        [
+          "примерно для 1 миллиарда зрителей — самая большая телевизионная аудитория в прямом эфире на тот момент",
+          "для аудитории, по оценкам, до 1 миллиарда зрителей — самая просматриваемая трансляция на тот момент"
+        ],
+        ["миллиард людей услышал", "по оценкам, миллиард людей услышал"]
+      ],
+      "sr-Cyrl": [
+        [
+          "за ~1 милијарду гледалаца — до тада највећу телевизијску публику",
+          "за публику процењену на до милијарду гледалаца — до тада најгледаније емитовање"
+        ],
+        [
+          "за ~1 милијарду гледалаца — највећа гледаност директног ТВ преноса до тог датума",
+          "за публику процењену на до милијарду гледалаца — најгледаније емитовање до тог датума"
+        ],
+        ["милијарду људи чуло", "по процени милијарду људи чуло"]
+      ],
+      "zh-CN": [
+        [
+          "观众约10亿——这是当时规模最大的电视观众群",
+          "估计观众最多达10亿——这是当时收看人数最多的一次播出"
+        ],
+        [
+          "观众人数达约10亿人 — 创当时最大规模电视直播观众纪录",
+          "估计观众最多达10亿人 — 当时收看人数最多的一次播出"
+        ],
+        ["十亿人听到了", "据估计十亿人听到了"]
+      ]
+    }
+  },
+  {
+    "m": "moon/apollo14",
+    "text": {
+      "en-US": [["Five docking attempts", "Six docking attempts (the first five failed)"]],
+      "ar": [["خمس محاولات التحام", "ست محاولات التحام (فشلت الخمس الأولى)"]],
+      "de": [["Fünf Andockungsversuche", "Sechs Andockungsversuche (die ersten fünf scheiterten)"]],
+      "es": [
+        [
+          "Cinco intentos de acoplamiento",
+          "Seis intentos de acoplamiento (los cinco primeros fallaron)"
+        ]
+      ],
+      "fr": [
+        ["Cinq tentatives d'amarrage", "Six tentatives d'amarrage (les cinq premières ont échoué)"]
+      ],
+      "hi": [["पाँच डॉकिंग प्रयास", "छह डॉकिंग प्रयास (पहले पाँच विफल रहे)"]],
+      "it": [
+        ["Cinque tentativi di aggancio", "Sei tentativi di aggancio (i primi cinque fallirono)"]
+      ],
+      "ja": [["5回のドッキング試行", "6回のドッキング試行（最初の5回は失敗）"]],
+      "ko": [["도킹 시도 5회", "도킹 시도 6회(앞의 5회는 실패)"]],
+      "nl": [["Vijf dockingpogingen", "Zes dockingpogingen (de eerste vijf mislukten)"]],
+      "pt-BR": [
+        [
+          "Cinco tentativas de acoplamento",
+          "Seis tentativas de acoplamento (as cinco primeiras falharam)"
+        ]
+      ],
+      "ru": [["Пять попыток стыковки", "Шесть попыток стыковки (первые пять не удались)"]],
+      "sr-Cyrl": [["Пет покушаја спајања", "Шест покушаја спајања (првих пет није успело)"]],
+      "zh-CN": [["五次对接尝试后", "六次对接尝试（前五次失败）后"]]
+    }
+  },
+  {
+    "m": "earth/skylab-3",
+    "text": {
+      "en-US": [
+        ["led 305 hours of solar observations", "led about 305 crew-hours of solar observations"]
+      ],
+      "ar": [["305 ساعات من الرصد الشمسي", "نحو 305 ساعات عمل للطاقم من الرصد الشمسي"]],
+      "de": [["305 Stunden Sonnenbeobachtung", "etwa 305 Besatzungsstunden Sonnenbeobachtung"]],
+      "es": [
+        ["305 horas de observaciones solares", "unas 305 horas-tripulante de observaciones solares"]
+      ],
+      "fr": [
+        [
+          "305 heures d'observations solaires",
+          "environ 305 heures-équipage d'observations solaires"
+        ]
+      ],
+      "hi": [["305 घंटे के सौर प्रेक्षणों", "लगभग 305 दल-घंटों के सौर प्रेक्षणों"]],
+      "it": [["305 ore di osservazioni solari", "circa 305 ore-equipaggio di osservazioni solari"]],
+      "ja": [["305時間に及ぶ太陽観測", "乗組員延べ約305時間に及ぶ太陽観測"]],
+      "ko": [["305시간의 태양 관측", "승무원 작업 시간 약 305시간의 태양 관측"]],
+      "nl": [
+        ["305 uur aan zonne-observaties", "ongeveer 305 bemanningsuren aan zonne-observaties"]
+      ],
+      "pt-BR": [
+        ["305 horas de observações solares", "cerca de 305 horas-tripulação de observações solares"]
+      ],
+      "ru": [["305 часов солнечных наблюдений", "около 305 человеко-часов солнечных наблюдений"]],
+      "sr-Cyrl": [["305 сати осматрања Сунца", "око 305 сати рада посаде на осматрању Сунца"]],
+      "zh-CN": [["305小时的太阳观测", "约305个乘组工时的太阳观测"]]
+    }
+  },
+  {
+    "m": "earth/skylab-2",
+    "text": {
+      "en-US": [["38-minute stand-up EVA", "stand-up EVA of about 40 minutes"]],
+      "ar": [["سير فضائي واقف مدته 38 دقيقة", "سير فضائي واقف مدته نحو 40 دقيقة"]],
+      "de": [["38-minütigen Stehausstieg", "etwa 40-minütigen Stehausstieg"]],
+      "es": [["EVA de 38 minutos de pie", "EVA de unos 40 minutos de pie"]],
+      "fr": [
+        ["EVA de 38 minutes en position debout", "EVA d'environ 40 minutes en position debout"]
+      ],
+      "hi": [["38 मिनट की खड़े-खड़े EVA", "लगभग 40 मिनट की खड़े-खड़े EVA"]],
+      "it": [["EVA di 38 minuti", "EVA di circa 40 minuti"]],
+      "ja": [["38分間のスタンドアップEVA", "約40分間のスタンドアップEVA"]],
+      "ko": [["38분간의 스탠드업 EVA", "약 40분간의 스탠드업 EVA"]],
+      "nl": [["38 minuten durende stand-up-EVA", "ongeveer 40 minuten durende stand-up-EVA"]],
+      "pt-BR": [["EVA de pé de 38 minutos", "EVA de pé de cerca de 40 minutos"]],
+      "ru": [["38-минутного открытого выхода", "примерно 40-минутного открытого выхода"]],
+      "sr-Cyrl": [
+        ["38-минутне EVA у стојећем положају", "EVA у стојећем положају од око 40 минута"]
+      ],
+      "zh-CN": [["38分钟的站立式舱外活动", "约40分钟的站立式舱外活动"]]
+    }
+  }
+]

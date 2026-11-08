@@ -1,0 +1,42 @@
+{
+  "intro": "Venera 13 s'est posée sur Vénus le 1er mars 1982, juste à l'est de Phoebe Regio, et a fonctionné 127 minutes par 457 °C, sous une pression d'environ 90 fois celle de l'air au niveau de la mer sur Terre — quatre fois sa durée de vie prévue de 32 minutes. Elle a transmis les premières images en couleur de la surface de Vénus et prélevé par forage un échantillon du sol, que son instrument à rayons X a identifié comme un basalte riche en potassium.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Une sphère pressurisée sur un anneau d'amortissement",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/01.webp",
+          "caption": "Le timbre soviétique de 1982 consacré à Venera 13 et à sa jumelle Venera 14, qui s'est posée quatre jours plus tard à environ 950 km de là."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "127 minutes sur Vénus — posée le 1er mars 1982",
+      "images": [
+        {
+          "src": "/images/missions/venera-13/02.webp",
+          "caption": "Une image en noir et blanc de Venera 13 : des dalles de roche plates et un sol sombre, avec le matériel de l'atterrisseur lui-même sur le bord. La caméra regardait à travers un hublot et balayait d'un côté à l'autre."
+        },
+        {
+          "src": "/images/missions/venera-13/03.webp",
+          "caption": "Le panorama en couleur, retraité : la première vue en couleur du sol de Vénus. L'anneau dentelé de l'atterrisseur court le long du bas des deux moitiés."
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "L'héritage",
+      "subtitle": "Toujours les dernières images de la surface de Vénus",
+      "images": [
+        {
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Vénus telle que la montrent les cartes radar, d’après les données de Magellan, Pioneer Venus et Venera. Aucun engin n’a envoyé d’images de la surface depuis Venera 13 et 14 en 1982."
+        }
+      ]
+    }
+  ]
+}

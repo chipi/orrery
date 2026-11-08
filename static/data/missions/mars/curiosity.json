@@ -16,7 +16,7 @@
   "arrival_date": "2012-08-06",
   "transit_days": 254,
   "vehicle": "Atlas V 541",
-  "payload": "3839 kg launch mass (899 kg rover on surface)",
+  "payload": "3893 kg launch mass (899 kg rover on surface)",
   "delta_v": "~6.1 km/s",
   "data_quality": "good",
   "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. First nuclear-powered (RTG) Mars rover. Sky-crane EDL architecture.",
@@ -53,7 +53,7 @@
       "vehicle_stage": "Centaur upper stage (Atlas V 541)",
       "c3_km2_s2": 11.4,
       "declination_deg": 36,
-      "mass_at_tli_kg": 3839,
+      "mass_at_tli_kg": 3893,
       "source": "NASA MSL Press Kit (2011-11); Lock et al., 'Trajectory Design and Targeting for MSL', AAS 11-205"
     },
     "cruise": {
@@ -82,7 +82,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Atlas V 541",
-        "description": "Cape Canaveral, 2011-11-26. Mars Science Laboratory carries Curiosity, the largest, most capable rover at the time (900 kg, plutonium-powered RTG, mission lifetime targets 2 Mars years — actually 12+ years and counting). Launched on the second-largest Atlas V configuration available."
+        "description": "Cape Canaveral, 2011-11-26. Mars Science Laboratory carries Curiosity, the largest, most capable rover at the time (900 kg, plutonium-powered RTG, mission lifetime targets 1 Mars year (687 days) — actually 12+ years and counting). Launched on the second-largest Atlas V configuration available."
       },
       {
         "met_days": 0.005,
@@ -91,40 +91,40 @@
         "description": "Centaur upper stage burn at T+45 minutes accelerates MSL onto a Hohmann-like transfer to Mars. Cruise stage handles solar panels + attitude control during the ~8.5-month cruise."
       },
       {
-        "met_days": 12,
+        "met_days": 46,
         "type": "tcm",
         "label": "TCM-1 — first trajectory correction",
-        "description": "Cleanup burn 12 days after TMI, removing the small dispersion from the launch + TMI. Standard Mars-cruise practice: schedule TCMs at lengthening intervals as the trajectory firms up."
+        "description": "Cleanup burn on 2012-01-11, about 46 days after launch, removing the small dispersion from the launch + TMI. Standard Mars-cruise practice: schedule TCMs at lengthening intervals as the trajectory firms up."
       },
       {
-        "met_days": 76,
+        "met_days": 121,
         "type": "tcm",
         "label": "TCM-2",
         "description": "Mid-cruise refinement burn. By this point Curiosity is past Earth's gravity well and on a stable heliocentric trajectory."
       },
       {
-        "met_days": 110,
+        "met_days": 213,
         "type": "tcm",
         "label": "TCM-3",
         "description": "Approach-phase pre-burn. Begins tightening the targeting for the Gale Crater EDL site."
       },
       {
-        "met_days": 211,
+        "met_days": 246,
         "type": "tcm",
-        "label": "TCM-4 — final pre-EDL burn",
+        "label": "TCM-4 — fourth correction (two more chances remained before landing)",
         "description": "Last large trajectory tweak before Mars entry. EDL requires <1 km targeting accuracy at the atmospheric interface; TCM-4 delivers it."
       },
       {
         "met_days": 254,
         "type": "arrival",
         "label": "Mars approach + cruise-stage separation",
-        "description": "2012-08-05. 10 minutes before atmospheric entry, the cruise stage separates and the backshell + descent stage + rover hits Mars's atmosphere at 5.85 km/s."
+        "description": "2012-08-06 UTC (the evening of 5 August in California). 10 minutes before atmospheric entry, the cruise stage separates and the backshell + descent stage + rover hits Mars's atmosphere at 5.85 km/s."
       },
       {
         "met_days": 254.005,
         "type": "edl_or_oi",
         "label": "Mars EDL — sky-crane landing in Gale Crater",
-        "description": "\"Seven minutes of terror\": parachute deploys at Mach 2.2, then the descent stage fires retro-rockets and lowers Curiosity on a 7.5-m sky-crane tether — a one-shot technique no Mars mission had used before. Landed 2012-08-06 22:32 PDT at 4.5895°S, 137.4417°E, a few hundred metres from target inside Gale Crater. Mast-mounted MastCam returned the first colour panoramic minutes later. Still operational 12+ years on, climbing Mount Sharp's stratigraphic column."
+        "description": "\"Seven minutes of terror\": the parachute deploys, then the descent stage fires retro-rockets and lowers Curiosity on a 7.5-m sky-crane tether — a one-shot technique no Mars mission had used before. Landed 2012-08-06 05:17 UTC (the signal reached Earth at 22:32 PDT on 5 August) at 4.5895°S, 137.4417°E, a few hundred metres from target inside Gale Crater. The first Hazcam images came within minutes; the first panorama followed on 7 August. Still operational 12+ years on, climbing Mount Sharp's stratigraphic column."
       }
     ],
     "interplanetary_profile": {
@@ -142,559 +142,559 @@
           0.903114
         ],
         [
-          2.694,
+          10.316,
           0.382228,
           0,
           0.922348
         ],
         [
-          5.388,
+          20.646,
           0.334284,
           0,
           0.939731
         ],
         [
-          8.082,
+          30.976,
           0.285635,
           0,
           0.955142
         ],
         [
-          12,
+          46,
           0.213769,
           0,
           0.973758
         ],
         [
-          13.47,
+          47.723,
           0.18652,
           0,
           0.979521
         ],
         [
-          16.164,
+          50.88,
           0.136317,
           0,
           0.988592
         ],
         [
-          18.8579,
+          54.037,
           0.085806,
           0,
           0.995432
         ],
         [
-          21.5519,
+          57.194,
           0.035123,
           0,
           1.000277
         ],
         [
-          24.2459,
+          60.351,
           -0.01564,
           0,
           1.002877
         ],
         [
-          26.9399,
+          63.508,
           -0.066367,
           0,
           1.00333
         ],
         [
-          29.6339,
+          66.665,
           -0.116967,
           0,
           1.001812
         ],
         [
-          32.3279,
+          69.822,
           -0.167301,
           0,
           0.998012
         ],
         [
-          35.0219,
+          72.979,
           -0.217298,
           0,
           0.992215
         ],
         [
-          37.7159,
+          76.136,
           -0.266883,
           0,
           0.984518
         ],
         [
-          40.4099,
+          79.293,
           -0.315863,
           0,
           0.974588
         ],
         [
-          43.1039,
+          82.45,
           -0.364253,
           0,
           0.962849
         ],
         [
-          45.7979,
+          85.607,
           -0.411948,
           0,
           0.949265
         ],
         [
-          48.4919,
+          88.764,
           -0.45878,
           0,
           0.933691
         ],
         [
-          51.1859,
+          91.921,
           -0.504796,
           0,
           0.916462
         ],
         [
-          53.8798,
+          95.078,
           -0.549856,
           0,
           0.897492
         ],
         [
-          56.5738,
+          98.235,
           -0.593861,
           0,
           0.8768
         ],
         [
-          59.2678,
+          101.392,
           -0.636867,
           0,
           0.854633
         ],
         [
-          61.9618,
+          104.549,
           -0.678685,
           0,
           0.83087
         ],
         [
-          64.6558,
+          107.706,
           -0.71932,
           0,
           0.805659
         ],
         [
-          67.3498,
+          110.863,
           -0.758815,
           0,
           0.779169
         ],
         [
-          70.0438,
+          114.02,
           -0.796928,
           0,
           0.751259
         ],
         [
-          72.7378,
+          117.177,
           -0.833786,
           0,
           0.722168
         ],
         [
-          76,
+          121,
           -0.876642,
           0,
           0.685414
         ],
         [
-          78.1258,
+          126.752,
           -0.903482,
           0,
           0.660603
         ],
         [
-          80.8198,
+          134.042,
           -0.936283,
           0,
           0.628276
         ],
         [
-          83.5138,
+          141.331,
           -0.967713,
           0,
           0.595028
         ],
         [
-          86.2078,
+          148.621,
           -0.997616,
           0,
           0.560839
         ],
         [
-          88.9017,
+          155.91,
           -1.026189,
           0,
           0.525905
         ],
         [
-          91.5957,
+          163.2,
           -1.053301,
           0,
           0.49022
         ],
         [
-          94.2897,
+          170.49,
           -1.078916,
           0,
           0.453838
         ],
         [
-          96.9837,
+          177.779,
           -1.103186,
           0,
           0.41689
         ],
         [
-          99.6777,
+          185.069,
           -1.125932,
           0,
           0.379366
         ],
         [
-          102.3717,
+          192.359,
           -1.147237,
           0,
           0.341357
         ],
         [
-          105.0657,
+          199.648,
           -1.167205,
           0,
           0.302948
         ],
         [
-          107.7597,
+          206.938,
           -1.185608,
           0,
           0.264132
         ],
         [
-          110,
+          213,
           -1.199868,
           0,
           0.23162
         ],
         [
-          113.1477,
+          214.028,
           -1.21836,
           0,
           0.185646
         ],
         [
-          115.8417,
+          214.909,
           -1.232515,
           0,
           0.14604
         ],
         [
-          118.5357,
+          215.789,
           -1.245383,
           0,
           0.106283
         ],
         [
-          121.2297,
+          216.669,
           -1.256907,
           0,
           0.06641
         ],
         [
-          123.9237,
+          217.549,
           -1.266977,
           0,
           0.02646
         ],
         [
-          126.6176,
+          218.43,
           -1.275803,
           0,
           -0.013515
         ],
         [
-          129.3116,
+          219.31,
           -1.283284,
           0,
           -0.053477
         ],
         [
-          132.0056,
+          220.19,
           -1.289418,
           0,
           -0.093383
         ],
         [
-          134.6996,
+          221.07,
           -1.294359,
           0,
           -0.133203
         ],
         [
-          137.3936,
+          221.95,
           -1.297964,
           0,
           -0.172885
         ],
         [
-          140.0876,
+          222.831,
           -1.300333,
           0,
           -0.212403
         ],
         [
-          142.7816,
+          223.711,
           -1.301565,
           0,
           -0.251736
         ],
         [
-          145.4756,
+          224.591,
           -1.301478,
           0,
           -0.290814
         ],
         [
-          148.1696,
+          225.471,
           -1.300266,
           0,
           -0.32964
         ],
         [
-          150.8636,
+          226.351,
           -1.29796,
           0,
           -0.368189
         ],
         [
-          153.5576,
+          227.232,
           -1.294393,
           0,
           -0.406382
         ],
         [
-          156.2516,
+          228.112,
           -1.289791,
           0,
           -0.444248
         ],
         [
-          158.9456,
+          228.992,
           -1.284115,
           0,
           -0.481745
         ],
         [
-          161.6395,
+          229.872,
           -1.277294,
           0,
           -0.518813
         ],
         [
-          164.3335,
+          230.753,
           -1.269499,
           0,
           -0.555484
         ],
         [
-          167.0275,
+          231.633,
           -1.260655,
           0,
           -0.591698
         ],
         [
-          169.7215,
+          232.513,
           -1.250777,
           0,
           -0.627425
         ],
         [
-          172.4155,
+          233.393,
           -1.239987,
           0,
           -0.662696
         ],
         [
-          175.1095,
+          234.273,
           -1.228178,
           0,
           -0.697422
         ],
         [
-          177.8035,
+          235.154,
           -1.21544,
           0,
           -0.731621
         ],
         [
-          180.4975,
+          236.034,
           -1.201851,
           0,
           -0.765308
         ],
         [
-          183.1915,
+          236.914,
           -1.187278,
           0,
           -0.798368
         ],
         [
-          185.8855,
+          237.794,
           -1.171876,
           0,
           -0.830871
         ],
         [
-          188.5795,
+          238.674,
           -1.155669,
           0,
           -0.862803
         ],
         [
-          191.2735,
+          239.555,
           -1.138546,
           0,
           -0.894052
         ],
         [
-          193.9675,
+          240.435,
           -1.120674,
           0,
           -0.924711
         ],
         [
-          196.6614,
+          241.315,
           -1.102026,
           0,
           -0.954732
         ],
         [
-          199.3554,
+          242.195,
           -1.082563,
           0,
           -0.984046
         ],
         [
-          202.0494,
+          243.076,
           -1.062409,
           0,
           -1.012732
         ],
         [
-          204.7434,
+          243.956,
           -1.041514,
           0,
           -1.040711
         ],
         [
-          207.4374,
+          244.836,
           -1.019898,
           0,
           -1.067971
         ],
         [
-          211,
+          246,
           -0.990303,
           0,
           -1.102955
         ],
         [
-          212.8254,
+          246.34,
           -0.974697,
           0,
           -1.120393
         ],
         [
-          215.5194,
+          246.841,
           -0.951114,
           0,
           -1.145492
         ],
         [
-          218.2134,
+          247.342,
           -0.926953,
           0,
           -1.169898
         ],
         [
-          220.9074,
+          247.843,
           -0.902131,
           0,
           -1.193468
         ],
         [
-          223.6014,
+          248.344,
           -0.87676,
           0,
           -1.216311
         ],
         [
-          226.2954,
+          248.846,
           -0.850857,
           0,
           -1.238417
         ],
         [
-          228.9894,
+          249.347,
           -0.824359,
           0,
           -1.259658
         ],
         [
-          231.6833,
+          249.848,
           -0.797379,
           0,
           -1.28016
         ],
         [
-          234.3773,
+          250.349,
           -0.769904,
           0,
           -1.299869
         ],
         [
-          237.0713,
+          250.85,
           -0.741918,
           0,
           -1.318716
         ],
         [
-          239.7653,
+          251.352,
           -0.713505,
           0,
           -1.336802
         ],
         [
-          242.4593,
+          251.853,
           -0.684638,
           0,
           -1.354038
         ],
         [
-          245.1533,
+          252.354,
           -0.655339,
           0,
           -1.370421
         ],
         [
-          247.8473,
+          252.855,
           -0.625667,
           0,
           -1.386023
         ],
         [
-          250.5413,
+          253.357,
           -0.595586,
           0,
           -1.400719

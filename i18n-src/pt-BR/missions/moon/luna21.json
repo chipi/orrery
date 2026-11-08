@@ -5,7 +5,7 @@
   "delta_v": "~3 km/s",
   "type": "ATERRISSADOR NÃO TRIPULADO + ROVER · REALIZADA",
   "first": "Segundo rover lunar soviético; trajetória extraplanetária mais longa (~39 km) por mais de 40 anos",
-  "description": "Luna 21 entregou Lunokhod 2, o segundo rover lunar controlado por tripulação da União Soviética, na cratera Le Monnier, na borda sul de Mare Serenitatis em janeiro de 1973. O rover foi dirigido por uma equipe de cinco pessoas de uma sala de controle na Crimeia e percorreu aproximadamente 39 km ao longo de quatro dias lunares — um recorde de distância extraplanetária que se manteve até o rover Opportunity da NASA ultrapassá-lo em Marte em 2014. Lunokhod 2 retornou 80.000 quadros de televisão e 86 panoramas antes que a contaminação de poeira de seus painéis solares encerrasse as operações.",
+  "description": "Luna 21 entregou Lunokhod 2, o segundo rover lunar controlado por tripulação da União Soviética, na cratera Le Monnier, na borda leste de Mare Serenitatis em janeiro de 1973. O rover foi dirigido por uma equipe de cinco pessoas de uma sala de controle na Crimeia e percorreu aproximadamente 39 km ao longo de quatro dias lunares — um recorde de distância extraplanetária que se manteve até o rover Opportunity da NASA ultrapassá-lo em Marte em 2014. Lunokhod 2 retornou 80.000 quadros de televisão e 86 panoramas antes que a contaminação de poeira de seus painéis solares encerrasse as operações.",
   "events": [
     { "met": 0, "label": "LANÇAMENTO", "note": "Proton-K a partir de Baikonur, 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Injeção translunar no estágio superior Blok-D.", "type": "nominal" },

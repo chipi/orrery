@@ -1,7 +1,7 @@
 {
   "name": "Lucy",
   "vehicle": "Atlas V 401",
-  "payload": "1550 kg (incl. 1003 kg de hidrazina — a Lucy carrega muito mais propelente do que massa seca)",
+  "payload": "1550 kg (821 kg a seco)",
   "delta_v": "~6 km/s (com 3 assistências gravitacionais da Terra)",
   "type": "SOBREVOO MÚLTIPLO · ATIVA",
   "first": "Primeira missão aos Troianos de Júpiter; visita 11 corpos em 8 asteroides e seus satélites em uma única trajetória de 12 anos — um número recorde de objetos em órbitas solares separadas",
@@ -28,7 +28,7 @@
     {
       "met": 1282,
       "label": "DONALDJOHANSON",
-      "note": "Sobrevoo bônus da faixa principal 2025-04. Asteroide tipo C de 4 km.",
+      "note": "Sobrevoo bônus da faixa principal 2025-04. Asteroide binário de contato tipo C, com cerca de 8 km de comprimento.",
       "type": "info"
     },
     {

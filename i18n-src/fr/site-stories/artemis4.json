@@ -1,0 +1,46 @@
+{
+  "intro": "Artemis IV doit ramener des humains sur la Lune en 2028 : le premier alunissage depuis Apollo 17 en 1972, et le premier alunissage habité près du pôle Sud. Apollo était venu en visite. Cette fois, le but est de rester : la glace d'eau des cratères polaires pourrait fournir de l'eau potable, de l'air et des ergols, et la NASA prévoit au moins un alunissage par an à partir de là, pour aller vers une base. C'est aussi, de nouveau, une course. En annonçant le plan en février 2026, l'administrateur de la NASA Jared Isaacman a déclaré qu'« avec une concurrence crédible de notre plus grand adversaire géopolitique qui augmente de jour en jour, nous devons aller plus vite ». La Chine vise à faire alunir ses propres astronautes avant 2030.",
+  "chapters": [
+    {
+      "id": "landing",
+      "title": "L'alunissage",
+      "subtitle": "2028 — deux des quatre astronautes descendent au pôle Sud",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/03.webp",
+          "caption": "Vue d'artiste : Orion rejoint un atterrisseur Starship en orbite lunaire, où l'équipage change de vaisseau. La NASA n'a pas encore dit si ce sera le Starship de SpaceX ou le Blue Moon de Blue Origin qui portera l'équipage d'Artemis IV ; elle choisira celui qui sera prêt le premier."
+        },
+        {
+          "src": "/images/missions/artemis4/02.webp",
+          "caption": "Vue d'artiste : un atterrisseur Starship sur la surface lunaire, la Terre au-dessus de l'horizon."
+        },
+        {
+          "src": "/images/missions/artemis4/01.webp",
+          "caption": "Vue d'artiste : des astronautes en combinaison lunaire d'Axiom à côté de l'atterrisseur au pôle Sud, où ils doivent passer environ une semaine."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Orion et son module de service européen",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/04.webp",
+          "caption": "Le module de service européen d'Artemis IV — le moteur, l'énergie et l'air d'Orion — en préparation au Centre spatial Kennedy en juillet 2026."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "La suite",
+      "subtitle": "Le premier de nombreux alunissages",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/05.webp",
+          "caption": "Le bord criblé de cratères du bassin Pôle Sud-Aitken, photographié par l'équipage d'Artemis II. Les alunissages qui suivront Artemis IV visent cette région polaire ; la NASA a aussi proposé PROMISE, un rover chargé de la reconnaître en vue d'une base, et la Chine prévoit une station de recherche près du pôle Sud vers 2035."
+        }
+      ]
+    }
+  ]
+}

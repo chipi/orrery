@@ -5,8 +5,8 @@
   "delta_v": "~9,4 km/s (LEO)",
   "type": "BEMANDE AARDBAAN · GEVLOGEN",
   "first": "Eerste extravehiculaire activiteit (Leonov, 12 min, 1965-03-18)",
-  "dispatch": "Voskhod 2 bereikte de eerste ruimtewandeling en was bijna de eerste dood in de ruimte geworden. Aleksej Leonov dreef uit een opblaasbare sluis het vacuüm in, de eerste mens ooit volledig buiten een ruimtevaartuig — en toen zijn pak zo stijf opzwol dat hij zich niet kon buigen om terug naar binnen te gaan. Hij moest een ventiel openen en zijn eigen lucht eruit laten stromen, op het risico van caisson-ziekte af, alleen maar om klein genoeg te worden om door het luik naar binnen te passen. Het was nog niet voorbij: de automatische terugkeer mislukte, de bemanning vloog handmatig omlaag, en zij landden honderden kilometers van koers af in het bevroren Siberische bos, waar zij twee nachten uitwachtten temidden van wolven totdat reddingswerkers op ski's hen bereikten. Het publiek zag twaalf triomfantelijke minuten; hoe dicht het bij rampspoed was gekomen bleef jarenlang geheim.",
-  "description": "Pavel Beljajev + Aleksej Leonovs vlucht van 1 dag — eerste EVA in de geschiedenis. Leonov bracht 12 minuten buiten Voskhod 2 door (1965-03-18 11:34 UTC), na drukverlaging in een opblaasbare Volga-sluis die Sovjettechnici hadden toegevoegd omdat de romp van Voskhod te weinig ruimte had voor volledige drukverlaging. Leonovs pak zwol op in het vacuüm, waardoor hij buiten de sluis vast kwam te zitten; hij moest de pakdruk laten ontsnappen om weer naar binnen te kunnen, wat het risico op decompressieziekte verhoogde. De terugkeer was even dramatisch — het automatische landingssysteem faalde, en Beljajev vloog de afdaalmodule handmatig naar een harde landing in diepe sneeuw in de Oeral, ongeveer 390 km naast het doel; de bemanning overleefde twee nachten in het bos tussen de wolven voordat reddingshelikopters arriveerden op 1965-03-21. Ook de cabineatmosfeer werd in de baan zuurstofrijk nadat het EVA-luik niet opnieuw dichtging, wat kort het risico op spontane ontbranding inhield.",
+  "dispatch": "Voskhod 2 bereikte de eerste ruimtewandeling en was bijna de eerste dood in de ruimte geworden. Aleksej Leonov dreef uit een opblaasbare sluis het vacuüm in, de eerste mens ooit volledig buiten een ruimtevaartuig — en toen zijn pak zo stijf opzwol dat hij zich niet kon buigen om terug naar binnen te gaan. Hij moest een ventiel openen en zijn eigen lucht eruit laten stromen, op het risico van caisson-ziekte af, alleen maar om klein genoeg te worden om door het luik naar binnen te passen. Het was nog niet voorbij: de automatische terugkeer mislukte, de bemanning vloog handmatig omlaag, en zij landden honderden kilometers van koers af in het bevroren bos van het Oeralgebergte, waar zij twee nachten uitwachtten temidden van wolven totdat reddingswerkers op ski's hen bereikten. Het publiek zag twaalf triomfantelijke minuten; hoe dicht het bij rampspoed was gekomen bleef jarenlang geheim.",
+  "description": "Pavel Beljajev + Aleksej Leonovs vlucht van 1 dag — eerste EVA in de geschiedenis. Leonov bracht 12 minuten buiten Voskhod 2 door (1965-03-18 08:34 UTC), na drukverlaging in een opblaasbare Volga-sluis die Sovjettechnici hadden toegevoegd omdat de romp van Voskhod te weinig ruimte had voor volledige drukverlaging. Leonovs pak zwol op in het vacuüm, waardoor hij buiten de sluis vast kwam te zitten; hij moest de pakdruk laten ontsnappen om weer naar binnen te kunnen, wat het risico op decompressieziekte verhoogde. De terugkeer was even dramatisch — het automatische landingssysteem faalde, en Beljajev vloog de afdaalmodule handmatig naar een harde landing in diepe sneeuw in de Oeral, ongeveer 390 km naast het doel; de bemanning overleefde twee nachten in het bos tussen de wolven tot een reddingsteam hen op 1965-03-20 bereikte; op 1965-03-21 skieden ze ongeveer 9 km naar een helikopterplek en werden uitgevlogen. Nadat Leonov weer binnen was, sloot het luik niet goed af en vulde het levensondersteuningssysteem de cabine overmatig met zuurstof, een brandgevaar als er een vonk was ontstaan.",
   "events": [
     {
       "met": 0,
@@ -21,9 +21,9 @@
       "type": "nominal"
     },
     {
-      "met": 0.19,
+      "met": 0.065,
       "label": "EVA",
-      "note": "Leonov verlaat de Volga-sluis 1965-03-18 11:34 UTC; eerste menselijke EVA. 12 min buiten; zijn pak zwol op in het vacuüm en hij liet druk ontsnappen om weer naar binnen te kunnen.",
+      "note": "Leonov verlaat de Volga-sluis 1965-03-18 08:34 UTC; eerste menselijke EVA. 12 min buiten; zijn pak zwol op in het vacuüm en hij liet druk ontsnappen om weer naar binnen te kunnen.",
       "type": "info"
     },
     {
@@ -35,7 +35,7 @@
     {
       "met": 2.5,
       "label": "REDDINGSOPERATIE",
-      "note": "De bemanning overleefde 2 nachten in een met wolven bevolkt bos bij -30°C voordat reddingshelikopters hen op 1965-03-21 bereikten.",
+      "note": "De bemanning overleefde 2 nachten in een met wolven bevolkt bos bij -30°C tot een reddingsteam hen op 1965-03-20 bereikte; op 1965-03-21 skieden ze ongeveer 9 km naar een helikopterplek en werden uitgevlogen.",
       "type": "info"
     }
   ]

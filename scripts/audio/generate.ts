@@ -6,7 +6,7 @@
 // Cache: SHA-256(provider + voiceId + ssml). Identical input never re-generates;
 // the existing `.{hash8}.mp3` is reused and the cost-ledger gets a `cached` row.
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { closeSync, existsSync, mkdirSync, openSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { parseArgs } from 'node:util';
@@ -225,8 +225,16 @@ async function main(): Promise<void> {
   };
 
   // Cache hit — skip generation, log a `cached` row in the ledger.
-  if (existsSync(mp3Path) && existsSync(vttPath) && existsSync(txtPath)) {
-    const txt = readFileSync(txtPath, 'utf-8');
+  let cachedTxt: string | null = null;
+  try {
+    closeSync(openSync(mp3Path, 'r'));
+    closeSync(openSync(vttPath, 'r'));
+    cachedTxt = readFileSync(txtPath, 'utf-8');
+  } catch {
+    // any of the three missing → no cache hit
+  }
+  if (cachedTxt !== null) {
+    const txt = cachedTxt;
     // Cached rows: zero billable_chars + zero cost. The point of the
     // ledger is to count what we actually paid for; cached re-uses
     // burn 0 chars.

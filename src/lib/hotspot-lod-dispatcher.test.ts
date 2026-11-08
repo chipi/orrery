@@ -250,3 +250,46 @@ describe('registerHotspotModelBuilder / getHotspotModelBuilder', () => {
     expect(group.name).toBe('built');
   });
 });
+
+// ─── LRU eviction (#641) ─────────────────────────────────────────────────────
+// Plain groups at known positions: getWorldPosition with no parents is just
+// the position once updateMatrixWorld has run.
+import { updateHotspotLOD } from './hotspot-lod-dispatcher';
+
+describe('updateHotspotLOD eviction over the ceiling', () => {
+  afterEach(() => setHotspotMode('auto'));
+
+  it('keeps the hotspots nearest the camera and evicts the farthest', () => {
+    setHotspotMode('auto');
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.01, 1000);
+    camera.position.set(0, 0, 0);
+    camera.updateMatrixWorld(true);
+    const n = HOTSPOT_LRU_CEILING + 2;
+    const entries = Array.from({ length: n }, (_, i) => {
+      const group = new THREE.Group();
+      const tier0Group = new THREE.Group();
+      group.add(tier0Group);
+      // distance 1 + i/100: all close enough for Tier 1, entry 0 nearest
+      group.position.set(0, 0, -(1 + i / 100));
+      group.updateMatrixWorld(true);
+      return createHotspotEntry({
+        siteId: `s${i}`,
+        maxTier: 1,
+        group,
+        tier0Group,
+        tier1Builder: () => new THREE.Group(),
+      });
+    });
+    // Already at Tier 1, the nearest promoted longest ago: least-recently-
+    // promoted would evict exactly those.
+    entries.forEach((e, i) => {
+      e.targetTier = 1;
+      e.currentTier = 1;
+      e.lastPromotedAt = i;
+    });
+    updateHotspotLOD(entries, camera, 900, 1000, 16);
+    const evicted = entries.filter((e) => e.targetTier === 0).map((e) => e.siteId);
+    expect(evicted).toEqual([`s${n - 2}`, `s${n - 1}`]);
+    expect(entries[0].targetTier).toBe(1);
+  });
+});

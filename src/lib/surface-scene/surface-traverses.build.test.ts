@@ -1,4 +1,5 @@
 // @vitest-environment jsdom
+import { liftForDark } from '$lib/three-label';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import * as THREE from 'three';
 import { Line2 } from 'three/examples/jsm/lines/Line2.js';
@@ -152,16 +153,19 @@ describe('rebuildTraverses basics', () => {
     expect(tl.isActive).toBe(false);
     expect(tl.surfaceRadius).toBeCloseTo(R + 0.05, 10);
 
-    // line + startDot + endDot + 2 caption groups
-    expect(planetMesh.children).toHaveLength(5);
+    // casing + line + startDot + endDot + 2 caption groups
+    expect(planetMesh.children).toHaveLength(6);
+    expect(tl.casing?.parent).toBe(planetMesh);
     expect(tl.line).toBeInstanceOf(Line2);
     expect(tl.line.userData).toEqual({ roverId: 'perseverance', kind: 'traverse' });
     expect(tl.line.renderOrder).toBe(6);
     // first point equals the site → nothing prepended → 3 points = 2 segments
     expect(segments(tl.line)).toBe(2);
 
-    // path colour comes from the nation palette, ended = 0.7 opacity
-    expect(tl.lineMaterial.color.getHexString()).toBe(colorFor(rover).slice(1).toLowerCase());
+    // path colour: the nation palette lifted for dark ground, ended = 0.7 opacity
+    expect(tl.lineMaterial.color.getHexString()).toBe(
+      liftForDark(colorFor(rover)).slice(1).toLowerCase(),
+    );
     expect(tl.lineMaterial.opacity).toBe(0.7);
     expect(tl.lineMaterial.linewidth).toBe(4);
     expect(tl.lineMaterial.depthTest).toBe(false);
@@ -213,6 +217,76 @@ describe('rebuildTraverses basics', () => {
     expect(firstVertex.getX(0)).toBeCloseTo(expected.x, 4);
     expect(firstVertex.getY(0)).toBeCloseTo(expected.y, 4);
     expect(firstVertex.getZ(0)).toBeCloseTo(expected.z, 4);
+  });
+
+  it('sol-carrying path (#641): no prepended landing leg, a casing, sol colours, ticks', () => {
+    const far = site({ id: 'far', lat: 18.0, lon: 77.0 });
+    const points: Array<[number, number]> = [
+      [18.4, 77.4],
+      [18.45, 77.45],
+      [18.5, 77.5],
+      [18.55, 77.6],
+      [18.6, 77.7],
+    ];
+    const { rebuildTraverses, ctx } = setup({
+      sites: [far],
+      traverses: { far: traverse({ rover_id: 'far', points, point_sols: [1, 30, 60, 90, 120] }) },
+    });
+    rebuildTraverses();
+    const tl = ctx.traverseLines[0];
+    // 5 points → 4 segments: the far-off site position was NOT prepended.
+    expect(segments(tl.line)).toBe(4);
+    expect(tl.lineMaterial.vertexColors).toBe(true);
+    expect(tl.line.geometry.getAttribute('instanceColorStart')).toBeDefined();
+    expect(tl.casing).toBeDefined();
+    expect(segments(tl.casing as Line2)).toBe(4);
+    // lastSol 120 → minor every 25, major every 100: ticks at 25, 50, 75 (minor) and 100 (major).
+    expect(tl.ticks).toHaveLength(2);
+    const kinds = (tl.tickLabels ?? []).map((l) => l.userData.kind);
+    expect(kinds.filter((k) => k === 'traverse-tick-label')).toHaveLength(1);
+    // ~19 km of path → a milestone every 5 km: 5, 10, 15.
+    expect(kinds.filter((k) => k === 'traverse-km-label')).toHaveLength(3);
+    // Landing ring on the first point, pickable as the landing site.
+    expect(tl.stopPins[0].userData.kind).toBe('traverse-landing');
+    // Hover data: one km per point, starting at 0.
+    expect(tl.pointKm?.[0]).toBe(0);
+    expect(tl.pathWorld).toHaveLength(5);
+  });
+
+  it('route photos (#641): one camera pin each, pickable, carrying image + sol', () => {
+    const { rebuildTraverses, ctx } = setup({
+      traverses: {
+        r: traverse({
+          rover_id: 'r',
+          route_photos: [
+            {
+              id: 'a',
+              sol: 10,
+              lat: 18.45,
+              lon: 77.45,
+              image: '/images/a.webp',
+              thumb: '/images/a-320.webp',
+            },
+            {
+              id: 'b',
+              sol: 20,
+              sol_approx: true,
+              lat: 18.5,
+              lon: 77.5,
+              image: '/images/b.webp',
+              thumb: '/images/b-320.webp',
+            },
+          ],
+        }),
+      },
+    });
+    rebuildTraverses();
+    const photos = ctx.traverseLines[0].stopPins.filter(
+      (p) => p.userData.kind === 'traverse-photo',
+    );
+    expect(photos.map((p) => p.userData.image)).toEqual(['/images/a.webp', '/images/b.webp']);
+    expect(photos[1].userData.stopSolApprox).toBe(true);
+    expect(photos[0].userData.thumb).toBe('/images/a-320.webp');
   });
 
   it('falls back to a white path for a rover with no site', () => {
@@ -371,7 +445,11 @@ describe('rebuildTraverses stops', () => {
     });
     expect(p1.userData.stopKind).toBe('drill');
     expect(p0.position.distanceTo(unit(18.45, 77.45, R + 0.05))).toBeLessThan(1e-9);
-    expect(p0.center.toArray()).toEqual([0.5, 0]);
+    // #641 ring marker: centred on the path (ring centre 1/3 up the canvas).
+    expect(p0.center.toArray()).toEqual([0.5, 1 / 3]);
+    // …with its "label · Sol N" pill beside it.
+    expect(tl.stopLabels).toHaveLength(3);
+    expect(tl.stopLabels?.[0].userData.kind).toBe('traverse-stop-label');
     expect(p0.renderOrder).toBe(8);
     for (const pin of tl.stopPins) {
       expect(pin.parent).toBe(planetMesh);

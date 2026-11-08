@@ -98,7 +98,7 @@ Technical terms (the `term` class: burn, flyby, orbit insertion …). Runbook: t
 | `link-targets.test.ts` | Translated overlays keep the English markdown link targets. |
 
 Garble pass (text from the 2026-05 / 2026-07-14 runs without quality checks). Method, results and
-fix rules: `docs/wip/2026-10-31-garble-pass.md`.
+fix rules: `git show 5cf9491e398:git show 5cf9491e398:docs/wip/2026-10-31-garble-pass.md`.
 
 | Tool | What it does |
 |---|---|

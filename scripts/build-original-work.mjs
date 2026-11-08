@@ -121,14 +121,50 @@ const anatomyArt = (() => {
   }
 })();
 
-// Launcher exploded cutaways — the stage-by-stage watercolor companions to the
-// pencil sketches, under /images/anatomy-exploded/{id}.webp, ids from
+// Exploded cutaways — launchers stage by stage, and the landers and rovers on the
+// surface sites — under /images/anatomy-exploded/{id}.webp, ids from
 // src/lib/anatomy-exploded-ids.json (derived from masters/anatomy-exploded).
 const explodedArt = JSON.parse(readFileSync('src/lib/anatomy-exploded-ids.json', 'utf8'))
   .filter((id) => existsSync(`static/images/anatomy-exploded/${id}.webp`))
   .map((id) => ({
     title: fleetNames[id] ?? humanize(id),
     file: `/images/anatomy-exploded/${id}.webp`,
+    cover: false,
+  }));
+
+// Landing-sequence sheets (#641) — one per surface site, under
+// /images/landing-sequences/{site}.webp, ids from src/lib/landing-sequence-ids.json.
+const siteOf = (id) => {
+  for (const body of ['moon', 'mars', 'venus']) {
+    const f = `i18n-src/en-US/${body}-sites/${id}.json`;
+    if (existsSync(f)) return { name: JSON.parse(readFileSync(f, 'utf8')).name, route: `/${body}` };
+  }
+  return { name: null, route: '/moon' };
+};
+const landingArt = JSON.parse(readFileSync('src/lib/landing-sequence-ids.json', 'utf8'))
+  .filter((id) => existsSync(`static/images/landing-sequences/${id}.webp`))
+  .map((id) => ({
+    title: siteOf(id).name ?? humanize(id),
+    file: `/images/landing-sequences/${id}.webp`,
+    route: siteOf(id).route,
+    cover: false,
+  }));
+
+// Mission blueprints (#641) — one per mission, under /images/blueprints/{mission}.webp, ids from
+// src/lib/blueprint-ids.json; the route opens that mission's panel.
+const missionName = (id) => {
+  for (const d of readdirSync('i18n-src/en-US/missions', { withFileTypes: true })) {
+    const f = `i18n-src/en-US/missions/${d.name}/${id}.json`;
+    if (d.isDirectory() && existsSync(f)) return JSON.parse(readFileSync(f, 'utf8')).name ?? null;
+  }
+  return null;
+};
+const blueprintArt = JSON.parse(readFileSync('src/lib/blueprint-ids.json', 'utf8'))
+  .filter((id) => existsSync(`static/images/blueprints/${id}.webp`))
+  .map((id) => ({
+    title: missionName(id) ?? humanize(id),
+    file: `/images/blueprints/${id}.webp`,
+    route: `/missions?id=${id}`,
     cover: false,
   }));
 
@@ -1164,6 +1200,8 @@ const manifest = {
   generated_by: 'scripts/build-original-work.mjs',
   anatomy_art: anatomyArt,
   exploded_art: explodedArt,
+  landing_art: landingArt,
+  blueprint_art: blueprintArt,
   lab_illustrations: labIllustrations,
   diagrams_science: science,
   posters,
@@ -1175,6 +1213,8 @@ const manifest = {
   totals: {
     anatomy_art: anatomyArt.length,
     exploded_art: explodedArt.length,
+    landing_art: landingArt.length,
+    blueprint_art: blueprintArt.length,
     lab_illustrations: labIllustrations.length,
     diagrams_science: science.length,
     posters: posters.length,

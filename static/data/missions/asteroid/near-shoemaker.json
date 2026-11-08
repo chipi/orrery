@@ -15,7 +15,7 @@
   "delta_v": "~1 km/s (total mission manoeuvres)",
   "data_quality": "good",
   "flight_data_quality": "sparse",
-  "credit": "© NASA / Johns Hopkins University Applied Physics Laboratory — public domain. NEAR Shoemaker (Near Earth Asteroid Rendezvous) launched 1996-02-17 from Cape Canaveral on the first of NASA's Discovery-program planetary missions. After an Earth gravity assist (1998-01-23) and a flyby of asteroid 253 Mathilde (1997-06-27), the spacecraft entered orbit around 433 Eros on 2000-02-14 — the first spacecraft to orbit an asteroid. Over 12 months of orbital science it returned 160,000+ images and detailed spectral, compositional, and gravitational maps of the S-type chondrite body (~34 km × 11 km × 11 km). On 2001-02-12, after five orbit-lowering burns, NEAR Shoemaker executed a controlled descent at ~1.7 m/s and soft-landed on Eros near the saddle region, returning images to within 125 m of the surface — the first soft landing on any small body in the solar system. The spacecraft survived impact and continued transmitting for ~16 days from the surface.",
+  "credit": "© NASA / Johns Hopkins University Applied Physics Laboratory — public domain. NEAR Shoemaker (Near Earth Asteroid Rendezvous) launched 1996-02-17 from Cape Canaveral on the first of NASA's Discovery-program planetary missions. After an Earth gravity assist (1998-01-23) and a flyby of asteroid 253 Mathilde (1997-06-27), the spacecraft entered orbit around 433 Eros on 2000-02-14 — the first spacecraft to orbit an asteroid. Over 12 months of orbital science it returned 160,000+ images and detailed spectral, compositional, and gravitational maps of the S-type chondrite body (~34 km × 11 km × 11 km). On 2001-02-12, after four braking burns from about 26 km, NEAR Shoemaker touched down at 1.9 m/s on Eros just south of the saddle-shaped Himeros, returning images to within about 120 m of the surface — the first soft landing on any small body in the solar system. The spacecraft survived impact and continued transmitting for ~16 days from the surface.",
   "links": [
     {
       "l": "NEAR Shoemaker — Wikipedia",
@@ -60,25 +60,25 @@
         "met_days": 496,
         "type": "flyby",
         "label": "253 Mathilde — flyby",
-        "description": "1997-06-27: NEAR flew within 1,212 km of carbonaceous asteroid 253 Mathilde, returning 500 images of the 50 km body. Largest cratered object ever imaged relative to its size — five craters wider than the object's radius."
+        "description": "1997-06-27: NEAR flew within 1,212 km of carbonaceous asteroid 253 Mathilde, returning 500 images of the 50 km body. Largest cratered object ever imaged relative to its size — several giant craters 20–33 km across."
       },
       {
         "met_days": 706,
         "type": "flyby",
         "label": "Earth — gravity assist",
-        "description": "1998-01-23: 540 km Earth flyby, raising the aphelion to match Eros's orbit. The spacecraft was briefly lost due to a thruster anomaly during a deep-space manoeuvre two weeks earlier — recovered via the Earth flyby geometry."
+        "description": "1998-01-23: 540 km Earth flyby, raising the aphelion to match Eros's orbit. The spacecraft was briefly lost after a thruster anomaly aborted its burn of 1998-12-20, 11 months later; NEAR flew past Eros instead and returned 14 months later."
       },
       {
         "met_days": 1458,
         "type": "edl_or_oi",
         "label": "Eros orbit insertion",
-        "description": "2000-02-14: 916 km orbital insertion burn into a 200 × 366 km elliptical orbit around Eros — the first spacecraft to orbit an asteroid. Over 12 months, orbit altitude was steadily reduced to build a 35 km near-circular mapping orbit."
+        "description": "2000-02-14: orbital insertion burn into a 321 × 366 km elliptical orbit around Eros — the first spacecraft to orbit an asteroid. Over 12 months, orbit altitude was steadily reduced to build a 35 km near-circular mapping orbit."
       },
       {
         "met_days": 1822,
         "type": "edl_or_oi",
         "label": "Eros landing — EDL",
-        "description": "2001-02-12: five orbit-lowering burns reduced altitude to ~5 km; the final controlled descent proceeded at ~1.7 m/s. NEAR Shoemaker soft-landed near the Himeros saddle region at 35.0°N, 280.0°W, returning images from 125 m altitude. First soft landing on any small body. The spacecraft survived and transmitted from the surface for ~16 days."
+        "description": "2001-02-12: four braking burns brought it down from about 26 km; it touched down at 1.9 m/s. NEAR Shoemaker soft-landed just south of the saddle-shaped Himeros, near 35.7°S, returning images from about 120 m altitude. First soft landing on any small body. The spacecraft survived and transmitted from the surface for ~16 days."
       }
     ],
     "interplanetary_profile": {

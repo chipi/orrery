@@ -58,6 +58,14 @@ export const R_EARTH_AU = EARTH.a;
 /** Mars heliocentric distance, AU. Circular-orbit approximation. */
 export const R_MARS_AU = MARS.a;
 
+/** Day offset from the planet elements' epoch (sim day 0 = 2000-01-01, J2000 — the epoch of
+ *  every L0 / ϖ in planets.json and of `mission-arc`'s earthPos/destinationPos) to the
+ *  heliocentric porkchop grid's day 0 = 2026-01-01 (`porkchop.ts#dayToDate`, /plan, the Lab
+ *  porkchop, precompute-porkchops). Grid code adds it before placing a planet; without it every
+ *  grid planet but Earth sat out of phase (Jupiter ~69°, Venus ~94°) and Mars' L0 had been
+ *  hand-set to its 2026 value, which in turn put /fly's Mars ~61° off. */
+export const HELIO_GRID_EPOCH_SIM_DAY = 9497;
+
 /** Earth mean longitude at epoch (rad). */
 export const EARTH_A0 = EARTH.L0;
 /** Mars mean longitude at epoch (rad). */
@@ -67,6 +75,16 @@ export const MARS_A0 = MARS.L0;
 export const EARTH_MEAN_MOTION_RAD_PER_DAY = (2 * Math.PI) / EARTH.T;
 /** Mars mean motion, rad/day. */
 export const MARS_MEAN_MOTION_RAD_PER_DAY = (2 * Math.PI) / MARS.T;
+
+/** Earth's eccentric orbit (e 0.0167: a circle puts it up to 1.9° from JPL), in the same shape
+ *  as a destination, for `earthPos` and the grids' departure point and velocity. */
+export const EARTH_ORBIT = {
+  a: EARTH.a,
+  a0: EARTH.L0,
+  meanMotionRadPerDay: EARTH_MEAN_MOTION_RAD_PER_DAY,
+  e: EARTH.e,
+  varpi: EARTH.varpi,
+};
 
 // ─── Multi-destination support (ADR-026 + ADR-028) ─────────────────
 
@@ -186,6 +204,8 @@ function buildPlanetDestination(id: DestinationId, name: string): DestinationCon
     a0: p.L0,
     meanMotionRadPerDay: (2 * Math.PI) / p.T,
     varpi: p.varpi,
+    // Eccentric like the real planet: circles put Mercury 24°, Mars 11° off JPL.
+    e: p.e,
   };
 }
 

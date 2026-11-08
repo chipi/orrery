@@ -3691,6 +3691,7 @@
     data-ret-len={retPts.length}
     data-out-vertex-hash={outVertexHash}
     data-helio-kms={heliocentricKms.toFixed(4)}
+    data-transfer-a-au={transferA.toFixed(6)}
     data-dist-earth-au={distFromEarthAu.toFixed(6)}
     data-dist-mars-au={distFromMarsAu.toFixed(6)}
     data-signal-delay-min={signalDelayMin.toFixed(4)}
@@ -3872,7 +3873,7 @@
             >
               <div class="opening-fleet-label">{m.fly_opening_fleet_assets()}</div>
               <div class="opening-fleet-row">
-                {#each openingFleetAssets as asset (asset.id)}
+                {#each openingFleetAssets as asset (`${asset.role}:${asset.id}`)}
                   <a
                     class="opening-fleet-card"
                     class:hero={asset.role === 'spacecraft' || asset.role === 'launcher'}
@@ -3941,6 +3942,7 @@
           type="button"
           class="opening-skip"
           data-testid="fly-opening-skip"
+          data-audio-stage="fly-opening-skip"
           onclick={skipOpening}
           aria-label={m.fly_proceed_aria()}
         >
@@ -4219,7 +4221,7 @@
     >
       {isPlaying ? '⏸' : '▶'}
     </button>
-    <div class="scrub-track-wrap">
+    <div class="scrub-track-wrap" data-audio-stage="fly-timeline">
       <!-- Custom-styled track underneath the (transparent) native input.
            The native input still owns drag + click interactions for
            accessibility; the styled track + progress fill render the

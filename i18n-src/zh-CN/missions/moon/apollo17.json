@@ -21,7 +21,7 @@
       "type": "nominal"
     },
     {
-      "met": 3.4,
+      "met": 3.7,
       "label": "LOI",
       "note": "进入环月轨道。",
       "type": "nominal"
@@ -64,7 +64,7 @@
       "description": "进入环月轨道前的接近阶段精修。"
     },
     {
-      "met": 10.9,
+      "met": 9.75,
       "label": "月地转移入射",
       "description": "1972-12-16。SPS 点火在环月轨道上停留75小时、月面停留3天之后送 Apollo 17 回家。"
     }

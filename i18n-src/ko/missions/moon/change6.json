@@ -20,19 +20,19 @@
       "type": "nominal"
     },
     {
-      "met": 30,
+      "met": 29.54,
       "label": "착지",
-      "note": "착륙선이 후면 아폴로 분화구 하강 2024-06-02. 모든 통신은 Queqiao-2 경유.",
+      "note": "착륙선이 후면 아폴로 분화구 하강 2024-06-01(UTC). 모든 통신은 Queqiao-2 경유.",
       "type": "nominal"
     },
     {
-      "met": 30.6,
+      "met": 29.6,
       "label": "시료 채취",
       "note": "후면 레골리스에서 1.935 kg 채취.",
       "type": "info"
     },
     {
-      "met": 32,
+      "met": 31.59,
       "label": "상승",
       "note": "상승체 이륙; 궤도선과 랑데부.",
       "type": "nominal"

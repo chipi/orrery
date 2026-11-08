@@ -53,6 +53,7 @@ import {
   type MissionImageQuery,
 } from './fetch-assets.ts';
 import { SOLAR_SYSTEM_SCOPE_URL, textureLicense } from './lib/texture-credit.ts';
+import { plainText } from './lib/commons-text.ts';
 import {
   getAllowlistEntry,
   isAllowedLicense,
@@ -77,8 +78,7 @@ const WAIVERS_PATH = 'static/data/license-waivers.json';
 const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
 const COMMONS_FILEPATH_BASE = 'https://commons.wikimedia.org/wiki/Special:FilePath';
 const COMMONS_DELAY_MS = 1100;
-const COMMONS_UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const COMMONS_UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 
 const NASA_IMAGES_BASE = 'https://images.nasa.gov';
 
@@ -152,18 +152,6 @@ const OFFLINE = ARGS.has('--offline');
 // ──────────────────────────────────────────────────────────────────────
 
 const commonsCache = new Map<string, CommonsImageInfo | null>();
-
-function plainText(html: string | undefined | null): string | null {
-  if (!html) return null;
-  // Repeat until stable: one pass over "<scr<b>ipt>" leaves "<script>".
-  let text = html;
-  for (let prev = ''; prev !== text;) {
-    prev = text;
-    text = text.replace(/<[^>]*>/g, '');
-  }
-  const stripped = text.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
-  return stripped || null;
-}
 
 function hostOf(url: string): string {
   try {

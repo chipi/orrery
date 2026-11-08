@@ -11,7 +11,9 @@
  * USSR-attributed for the historical narrative).
  */
 
+import type { FleetRef } from './mission';
 import type { LinkTier, DataQuality } from './mission';
+import type { ContextBounds } from '../lib/surface-scene/context-bounds';
 
 export type SurfaceAgency =
   | 'NASA'
@@ -113,6 +115,9 @@ export interface SurfaceSite {
    */
   linked_missions?: string[];
   links: Array<{ l: string; u: string; t: LinkTier }>;
+  /** Fleet entries of the craft at this site (`role: 'payload'` = a rover it
+   *  carried); drives the panel's anatomy drawings (site-anatomy.ts). */
+  fleet_refs?: FleetRef[] | null;
   /** Editorial overlay fields merged at fetch time */
   name?: string;
   mission_type?: string;
@@ -140,6 +145,9 @@ export interface SurfaceSite {
   hotspot_model?: string;
   hotspot_annotations?: HotspotAnnotation[];
   location_uncertainty_m?: number;
+  /** The landing spot has never been confirmed in orbital imagery (Luna 9):
+   *  the card says so instead of an uncertainty figure (#641). */
+  location_unconfirmed?: boolean;
   /**
    * Path (provenance-style, e.g. /images/hotspots/moon/apollo11/tier2-lroc.jpg)
    * to the source LROC NAC / HiRISE patch for this site. Frontend
@@ -172,15 +180,11 @@ export interface SurfaceSite {
    * Context layer (surface-context.ts): a true-scale ~150–200 m/px crop of a
    * global mosaic around the site, draped on the globe between the globe
    * texture and the stylised regional patch. Path of the served image and the
-   * lat/lon box it covers (simple-cylindrical, same as the globe texture).
+   * lat/lon box it covers (simple-cylindrical, same as the globe texture) — or, near a
+   * pole, a polar-stereographic square of ±polar_half_km (see ContextBounds).
    */
   hotspot_context_source?: string;
-  hotspot_context_bounds?: {
-    lat_min: number;
-    lat_max: number;
-    lon_min: number;
-    lon_max: number;
-  };
+  hotspot_context_bounds?: ContextBounds;
   /**
    * Operator override for the auto-pick HiRISE product. When set,
    * the fetch pipeline skips the catalog candidate ranking and
@@ -353,6 +357,24 @@ export interface Traverse {
   credit: string;
   /** Polyline vertices: [lat, lon] pairs in degrees. */
   points: Array<[number, number]>;
+  /**
+   * The sol each point was reached on, one per point (#641) — from the team
+   * tables (MER), MMGIS waypoints (MSL/M2020) or interpolated milestones
+   * (Zhurong, `point_sols_approx`). Drives the sol colour ramp and sol ticks.
+   */
+  point_sols?: number[];
+  /** True when `point_sols` are interpolated rather than recorded. */
+  point_sols_approx?: boolean;
+  /** Elevation at each point, m above the areoid (#641 profile). */
+  point_elev_m?: number[];
+  /** Where `point_elev_m` comes from (rover waypoints / DEM). */
+  elev_source?: string;
+  /** Distance driven — the mission's own figure, not the simplified polyline's length. */
+  length_km?: number;
+  /** Last sol with contact (ENDED) or of the latest drive (ACTIVE). */
+  last_sol?: number;
+  /** Sol number of landing day (MER 1, MSL / M2020 0) — sol → date. */
+  landing_sol?: number;
   /** Curated notable stops along the traverse. Optional. */
   stops?: TraverseStop[];
   /**
@@ -370,6 +392,25 @@ export interface Traverse {
    * rendered as a detail patch on the magnified traverse.
    */
   route_patches?: RouteHirisePatch[];
+  /** True when a `<rover>.route-photos.json` sidecar exists (#641). */
+  has_route_photos?: boolean;
+  /** The rover's own photos, placed on the path at their sol (#641). */
+  route_photos?: RoutePhoto[];
+}
+
+/** A photo the rover took, pinned on its traverse (#641). Caption = the
+ *  image's alt text in the page locale; credit lives in image provenance. */
+export interface RoutePhoto {
+  id: string;
+  sol: number;
+  /** True when the sol is converted from a date, not recorded. */
+  sol_approx?: boolean;
+  lat: number;
+  lon: number;
+  /** Served image path (/images/…webp). */
+  image: string;
+  /** 512 px preview for the hover card / Journey row. */
+  thumb: string;
 }
 
 /** One along-route HiRISE detail crop (#360). */

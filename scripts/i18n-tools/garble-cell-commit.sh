@@ -34,7 +34,7 @@ git add "${paths[@]}" "$rec" scripts/i18n-tools/term-keeps.json
 git commit -q -F - <<EOF
 fix(i18n): $loc $tree garble pass — $n fields retranslated from English
 
-docs/wip/2026-10-31-garble-pass.md §3. ${summary}
+git show 5cf9491e398:docs/wip/2026-10-31-garble-pass.md §3. ${summary}
 Gates: apply-edits refused 0; term-drift --gate ($loc) 0; name-drift-scan $loc 0;
 validate-data passed. Record: $rec/.
 

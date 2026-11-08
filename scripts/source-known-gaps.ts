@@ -80,8 +80,7 @@ function diskToUrlPath(diskPath: string): string {
   return diskPath.replace(/^static\//, '/');
 }
 
-const UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 const COMMONS_FILEPATH = 'https://commons.wikimedia.org/wiki/Special:FilePath';
 const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
 const COMMONS_DELAY_MS = 1100;

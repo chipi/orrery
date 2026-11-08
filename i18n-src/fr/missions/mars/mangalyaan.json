@@ -14,7 +14,7 @@
       "type": "nominal"
     },
     {
-      "met": 7,
+      "met": 1,
       "label": "ALLUMAGE AU PÉRIGÉE 1",
       "note": "Première des six allumages de rehaussement d'orbite terrestre avant l'injection trans-Mars.",
       "type": "nominal"
@@ -34,7 +34,7 @@
     {
       "met": 3300,
       "label": "FIN DE MISSION",
-      "note": "Perte de contact en 2022-04 après épuisement du propergol du vaisseau.",
+      "note": "Perte de contact en 2022-04 après l'épuisement du propergol et la décharge de la batterie sous sa limite de sécurité lors de longues éclipses (ISRO).",
       "type": "warning"
     }
   ],

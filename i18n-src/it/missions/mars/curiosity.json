@@ -1,7 +1,7 @@
 {
   "name": "Curiosity",
   "vehicle": "Atlas V 541",
-  "payload": "3839 kg di massa al lancio (rover da 899 kg sulla superficie)",
+  "payload": "3893 kg di massa al lancio (rover da 899 kg sulla superficie)",
   "delta_v": "~6,1 km/s",
   "type": "ROVER · ATTIVA",
   "first": "Primo rover marziano a energia nucleare; primo atterraggio con gru volante",
@@ -17,19 +17,19 @@
     {
       "met": 0.005,
       "label": "ACCENSIONE TMI",
-      "note": "L'iniezione trans-marziana (3,61 km/s ∆v) pone MSL su una traiettoria eliocentrica diretta verso Marte.",
+      "note": "L'iniezione trans-marziana pone MSL su una traiettoria eliocentrica diretta verso Marte.",
       "type": "nominal"
     },
     {
-      "met": 12,
+      "met": 46,
       "label": "TCM-1",
       "note": "Prima correzione di mezza strada.",
       "type": "nominal"
     },
     {
-      "met": 110,
+      "met": 213,
       "label": "TCM-3",
-      "note": "Correzione finale pre-EDL; la traiettoria punta all'ellisse di atterraggio del Cratere Gale.",
+      "note": "Terza correzione di traiettoria; affina il bersaglio nel Cratere Gale.",
       "type": "nominal"
     },
     {
@@ -54,13 +54,13 @@
   "vehicle_stage": "stadio superiore Centaur (Atlas V 541)",
   "flight_events": [
     {
-      "met": 76,
+      "met": 121,
       "label": "TCM-2",
       "description": "Accensione di affinamento a metà crociera. A questo punto Curiosity è uscito dal pozzo gravitazionale terrestre e segue una traiettoria eliocentrica stabile."
     },
     {
-      "met": 211,
-      "label": "TCM-4 — ultima accensione prima dell'EDL",
+      "met": 246,
+      "label": "TCM-4 — quarta correzione (restavano altre due occasioni prima dell'atterraggio)",
       "description": "Ultimo grande ritocco della traiettoria prima dell'ingresso su Marte. L'EDL richiede una precisione di puntamento inferiore a 1 km all'interfaccia atmosferica; la TCM-4 la garantisce."
     }
   ]

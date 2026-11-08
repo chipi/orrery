@@ -1,0 +1,27 @@
+{
+  "intro": "On 27 November 1971, a few hours before Mars 2 entered orbit, its descent capsule separated and headed for the surface. The descent system failed — probably because the capsule came in too steeply — the parachute did not open, and it struck the ground: the first human-made object to reach the surface of Mars. Inside was PrOP-M, a small rover built to walk on skis at the end of a tether. The orbiter worked on into 1972.",
+  "chapters": [
+    {
+      "id": "arrival",
+      "title": "Arrival",
+      "subtitle": "27 November 1971 — the first object on Mars",
+      "images": [
+        {
+          "src": "/images/missions/mars2/02.webp",
+          "caption": "The 1972 Soviet stamp for the Mars 2 automatic station: the pennant it carried reached the planet on 27 November 1971."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "The same capsule as Mars 3",
+      "images": [
+        {
+          "src": "/images/missions/mars2/03.webp",
+          "caption": "A museum model of the Mars 3 descent module — Mars 2 carried the same design. Mars 3 landed softly five days later and sent a signal for 14.5 seconds."
+        }
+      ]
+    }
+  ]
+}

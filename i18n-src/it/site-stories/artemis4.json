@@ -1,0 +1,46 @@
+{
+  "intro": "Artemis IV dovrebbe riportare esseri umani sulla Luna nel 2028: il primo allunaggio dai tempi di Apollo 17 nel 1972 e il primo allunaggio con equipaggio vicino al polo sud. Apollo andò in visita. Questa volta l'obiettivo è restare: il ghiaccio d'acqua dei crateri polari potrebbe dare acqua potabile, aria e propellente per razzi, e la NASA prevede almeno un allunaggio all'anno da allora in poi, verso una base. Ed è di nuovo una corsa. Annunciando il piano nel febbraio 2026, l'amministratore della NASA Jared Isaacman ha detto che «con una concorrenza credibile del nostro maggiore avversario geopolitico che cresce di giorno in giorno, dobbiamo muoverci più in fretta». La Cina punta a far allunare i propri astronauti prima del 2030.",
+  "chapters": [
+    {
+      "id": "landing",
+      "title": "Allunaggio",
+      "subtitle": "2028: due dei quattro astronauti scendono al polo sud",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/03.webp",
+          "caption": "Rappresentazione artistica: Orion incontra un lander Starship in orbita lunare, dove l'equipaggio cambia veicolo. La NASA non ha ancora detto se sarà la Starship di SpaceX o il Blue Moon di Blue Origin a portare l'equipaggio di Artemis IV; sceglierà quello pronto per primo."
+        },
+        {
+          "src": "/images/missions/artemis4/02.webp",
+          "caption": "Rappresentazione artistica: un lander Starship sulla superficie lunare, con la Terra sopra l'orizzonte."
+        },
+        {
+          "src": "/images/missions/artemis4/01.webp",
+          "caption": "Rappresentazione artistica: astronauti con le tute lunari di Axiom accanto al lander al polo sud, dove dovrebbero restare circa una settimana."
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Orion e il suo modulo di servizio europeo",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/04.webp",
+          "caption": "Il Modulo di Servizio Europeo di Artemis IV — motore, energia e aria di Orion — durante la preparazione al Kennedy Space Center nel luglio 2026."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Cosa viene dopo",
+      "subtitle": "Il primo di molti allunaggi",
+      "images": [
+        {
+          "src": "/images/missions/artemis4/05.webp",
+          "caption": "Il bordo craterizzato del bacino Polo Sud-Aitken, fotografato dall'equipaggio di Artemis II. Gli allunaggi successivi ad Artemis IV puntano a questa regione polare; la NASA ha anche proposto PROMISE, un rover per esplorarla in vista di una base, e la Cina prevede una stazione di ricerca vicino al polo sud entro il 2035 circa."
+        }
+      ]
+    }
+  ]
+}

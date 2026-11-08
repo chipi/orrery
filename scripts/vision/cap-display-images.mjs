@@ -18,7 +18,7 @@
  * Interim: superseded by the WebP `srcset` ladder (Slice 2/3); banks the
  * ~−312 MB now regardless of how the ladder work sequences.
  */
-import { readdir, stat, writeFile, readFile } from 'node:fs/promises';
+import { readdir, writeFile, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
 
@@ -50,8 +50,8 @@ let before = 0;
 let after = 0;
 
 for await (const file of walk(ROOT)) {
-  const startBytes = (await stat(file)).size;
   const buf = await readFile(file);
+  const startBytes = buf.length;
   const meta = await sharp(buf).metadata();
   const long = Math.max(meta.width ?? 0, meta.height ?? 0);
   const ext = path.extname(file).toLowerCase();

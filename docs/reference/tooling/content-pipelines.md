@@ -150,6 +150,10 @@ Not directly runnable — imported by the pipeline above:
 - **`tts/retry.ts`** — `withRetry`: 3-attempt exponential backoff on network/5xx/429, honours `Retry-After`.
 - **`suggest-stages.ts`** — `tsx scripts/audio/suggest-stages.ts <episode-id>`: parses an episode's
   SSML + VTT and emits a VTT-anchored `EPISODE_STAGES` block to paste into `src/lib/audio-tour.ts`.
+- **`stage-review.ts`** — `npx tsx scripts/audio/stage-review.ts --url http://localhost:4193 --out <dir> [episode-id …]`:
+  the re-listen check. Per stage it saves a screenshot just after the stage fires beside the VTT
+  words spoken around it (six stages per sheet, `<out>/<episode>-NN.png`); a stage whose target is
+  missing is marked SKIPPED. Read-only, against `vite preview` of a build.
 
 ---
 
@@ -349,6 +353,9 @@ between them:
   propagation (`conic-leg.ts`, `conic-leg.test.ts`);
 - else (resonant multi-revolution legs, ion-propulsion cruises) the coasting estimate.
 
+A leg gets a point per ~15 days and at least one per 8° of arc (Mercury-resonant loops were
+70–85° polygons); /fly samples the path at 2 points per waypoint, 500–2400.
+
 Sun missions end at their first perihelion (`SUN_PERIHELION_AU`, sourced): a real Kepler fall from
 the last anchor, marked `ends_at_perihelion_au`. The script prints per mission how many legs are
 conics and how many estimates. `/fly` moves labelled waypoints onto the body's position at that
@@ -358,3 +365,27 @@ near longitude 0°) and `/fly` no longer flies them.
 shows the craft away from a body at its event.
 **State** — healthy (2026-11-03: 25 missions; no return legs — operator scope rule 2026-11-02).
 
+
+## /fly and /plan against JPL — check (`scripts/fly/`)
+
+**Commands** — read-only, each prints a table:
+- `npx tsx scripts/fly/planet-model-check.ts [fromYear toYear]` — `destinationPos` (the planet model
+  /fly, the /plan porkchop grid and the Lab share) against the JPL Keplerian ephemeris: max / RMS
+  longitude error and max radius error per planet.
+- `npx tsx scripts/fly/blueprint-fit-audit.ts [id …]` — per mission, every labelled /fly waypoint:
+  where /fly puts the body on that date against JPL (Δλ, Δr), and the nearest mission event date.
+- `npx tsx scripts/fly/event-date-check.ts [--fixes=out.json]` — every mission event whose MET lands on
+  another day than its description states, with a fixes file for `scripts/remap-event-dates.ts`.
+- `npx tsx scripts/fly/porkchop-window-check.ts [dest …]` — the precomputed porkchops' minima
+  against the JPL Hohmann phase dates.
+
+**What** — The JPL ephemeris (`src/lib/physics/ephemeris`) is the reference. The guards are
+`planet-positions-jpl.test.ts` (every planet within 0.6° of JPL, 1970–2035) and
+`porkchop-windows.test.ts` (every Venus / Mars / Jupiter window near its JPL date, Δv near Hohmann).
+**When** — Any change to `lambert-grid.constants`, `planets.json` elements, the Lambert solver or a
+mission's flyby dates. After a change to the planet model, regenerate `npm run precompute-porkchops`
+and the /fly paths (`generate-fly-trajectory.ts`, every id in `static/data/fly-trajectories/`).
+**State** — healthy (2026-11-07: planets and Earth eccentric, max 0.47° (Mercury), Earth 0.02°; v∞
+vectors from Lagrange f/g at both ends; 2026 Mars window 10-30). `event-date-check.ts` lists events whose
+MET date differs from the date in their own description (Moon METs count from launch time, so
+its Moon rows need the launch time to judge).

@@ -20,9 +20,17 @@
 import { readFileSync, existsSync } from 'fs';
 import { scoreRelevance } from './relevance-gate.mjs';
 
-const UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 const REGISTRY_PATH = 'static/data/agency-archives.json';
+
+function urlHostIs(url, host) {
+  try {
+    const h = new URL(url).hostname;
+    return h === host || h.endsWith('.' + host);
+  } catch {
+    return false;
+  }
+}
 
 let _registry = null;
 const _curations = new Map();
@@ -106,7 +114,7 @@ async function fetchPrimary(primary, { mission, slot, query, alreadyTaken }, reg
 
   switch (primary.kind) {
     case 'json-api':
-      if (primary.url.includes('images-api.nasa.gov')) {
+      if (urlHostIs(primary.url, 'images-api.nasa.gov')) {
         return await nasaImagesApi(primary, query, alreadyTaken);
       }
       return null;
@@ -124,7 +132,7 @@ async function fetchPrimary(primary, { mission, slot, query, alreadyTaken }, reg
     case 'scrape-press-release':
       // Per-source dispatcher: try a known scraper, then fall back to
       // the curation file (or null) if not implemented.
-      if (primary.url.includes('esahubble.org')) {
+      if (urlHostIs(primary.url, 'esahubble.org')) {
         return (
           (await esahubbleScrape(primary, query, alreadyTaken)) ??
           (await tryCuratedFallback(primary, { mission, slot }))

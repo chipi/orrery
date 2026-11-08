@@ -119,7 +119,8 @@ function maybeStartServer() {
     process.exit(1);
   }
   const child = spawn('node', ['scripts/mobile/serve-build.mjs'], {
-    env: { ...process.env, PORT: String(PORT), HOST: '127.0.0.1' },
+    // /cards/<kind>/<id> is not prerendered: without the 404.html shell every card timed out.
+    env: { ...process.env, PORT: String(PORT), HOST: '127.0.0.1', FALLBACK: '404.html' },
     stdio: 'ignore',
   });
   return child;

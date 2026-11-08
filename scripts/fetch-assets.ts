@@ -322,9 +322,17 @@ const LOGOS_DIR = 'static/logos';
 // Wikimedia requires a descriptive User-Agent (not a generic
 // HTTP-client UA) and rate-limits anonymous bulk downloads. The
 // guidance is roughly one request per second for scripts.
-const WIKIMEDIA_UA =
-  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const WIKIMEDIA_UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery)';
 const WIKIMEDIA_DELAY_MS = 1100;
+
+function isWikimediaMediaUrl(url: string): boolean {
+  try {
+    const host = new URL(url).hostname;
+    return host === 'commons.wikimedia.org' || host === 'upload.wikimedia.org';
+  } catch {
+    return false;
+  }
+}
 
 async function downloadFromWikimedia(url: string, dest: string): Promise<void> {
   const res = await fetch(url, { headers: { 'User-Agent': WIKIMEDIA_UA } });
@@ -2021,33 +2029,14 @@ export const WIKIMEDIA_TIANGONG_MODULE_GALLERY: Record<string, string[]> = {
   ],
 };
 
-async function fetchTiangongModuleImages(onlyIds?: string[]): Promise<number> {
+async function fetchTiangongModuleImages(): Promise<number> {
   await mkdir(TIANGONG_MODULES_IMG_DIR, { recursive: true });
   await mkdir('static/data', { recursive: true });
 
-  const subsetMode = Array.isArray(onlyIds) && onlyIds.length > 0;
-  let prevManifest: Record<string, number> = {};
-  if (subsetMode) {
-    try {
-      prevManifest = JSON.parse(await readFile(TIANGONG_GALLERIES_MANIFEST, 'utf8')) as Record<
-        string,
-        number
-      >;
-    } catch {
-      /* no existing manifest */
-    }
-  }
-  const manifest: Record<string, number> = subsetMode ? { ...prevManifest } : {};
+  const manifest: Record<string, number> = {};
   let totalPhotos = 0;
 
-  const queries = subsetMode
-    ? TIANGONG_IMAGE_QUERIES.filter((q) => onlyIds!.includes(q.id))
-    : TIANGONG_IMAGE_QUERIES;
-
-  if (subsetMode && queries.length === 0) {
-    console.warn('  ⚠ --tiangong-only: no ids matched TIANGONG_IMAGE_QUERIES');
-    return 0;
-  }
+  const queries = TIANGONG_IMAGE_QUERIES;
 
   for (let i = 0; i < queries.length; i++) {
     const row = queries[i];
@@ -3947,7 +3936,7 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
       try {
         const slot = `${String(saved + 1).padStart(2, '0')}.jpg`;
         const dest = join(entryDir, slot);
-        if (url.includes('commons.wikimedia.org') || url.includes('upload.wikimedia.org')) {
+        if (isWikimediaMediaUrl(url)) {
           await downloadFromWikimedia(url, dest);
         } else {
           await downloadFile(url, dest);

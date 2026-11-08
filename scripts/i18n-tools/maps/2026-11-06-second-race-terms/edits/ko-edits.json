@@ -1,0 +1,10 @@
+[
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.26.md",
+    "term": "launch window",
+    "decision": "change",
+    "find": "발사 기간 전날",
+    "replace": "발사 창이 열리기 전날"
+  }
+]

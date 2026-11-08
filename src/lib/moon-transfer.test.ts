@@ -112,7 +112,9 @@ describe('interplanetaryMoonDv — vector v∞ regression guard (B1)', () => {
   const europa = moon('europa');
   const host = DESTINATIONS[europa.host as keyof typeof DESTINATIONS];
   // Same departure; vary only TOF across the Hohmann floor.
-  const fast = interplanetaryMoonDv(280, 280 + 1.2 * 365.25, 1.2, host, europa);
+  // 1.4 yr, not 1.2: with eccentric planets (2026-11-06) a 1.2-yr leg from day 280 needs a
+  // hyperbolic transfer, which the elliptic Lambert solver does not produce (it is infeasible).
+  const fast = interplanetaryMoonDv(280, 280 + 1.4 * 365.25, 1.4, host, europa);
   const nearHohmann = interplanetaryMoonDv(280, 280 + 2.4 * 365.25, 2.4, host, europa);
 
   it('a faster-than-Hohmann arrival does NOT collapse v∞ (was 0.24 km/s; reality ~13)', () => {

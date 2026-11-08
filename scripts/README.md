@@ -100,6 +100,12 @@ tables); keep it.
 | the same for every placeholder credit in some surfaces at once (grouped by entity, crops follow their image when the re-crop matches, resumable) | `credit-placeholders-find.mjs --surface <a,b> --out <file.json>` | by hand; look at every match with d > 4 before applying |
 | credit rows to the real Commons file, once the match is known (creates a missing row) | `backfill-provenance-commons.ts <map.json>` | by hand |
 | credit rows to the real NASA Images item, once the match is known (creates a missing row) | `apply-provenance-nasa.mjs <map.json>` | by hand |
+| credit rows to an image on an agency's own website (direct-agency; licence from the allowlist) | `apply-provenance-agency.mjs <map.json>` | by hand |
+| does each mission gallery image have the shape of the Commons file its credit names (finds credits that point at another picture) | `gallery-credit-shape-check.mjs` (read-only) | by hand, after gallery changes |
+| replace gallery slots with another Commons/NASA picture, end to end (master, ladder, card rungs, 1x1, credit, alt text in 14 locales + its translation-source hash, vision row, pHash, curation, /credits thumb) | `npx tsx replace-gallery-slots.ts <map.json> [--dry-run]` (maps under `link-fixes/`; masters of the galleries smudged first) | by hand, after looking at each new picture |
+| hero crops: each hero with its card (2.5:1, faded) and 16:9 cover crops at its reviewed `position`, as contact sheets; `--try` previews a candidate position | `node vision/hero-crop-sheet.mjs --out <dir> [--surface …] [--only …] [--try "<surface>/<id>=<x>% <y>%"]` (read-only) | by hand, after hero swaps |
+| drop gallery slots (logos, patches, near-duplicates, no better picture) and renumber the gallery everywhere it is referenced (files, masters, credits, alt text, hero overrides, program figures; round records under `i18n-tools/maps/` are left as written) | `node drop-gallery-slots.mjs <surface>/<id>/<NN> … [--apply]` (dry run by default; header lists the rebuilds to run after) | by hand, after looking at each slot |
+| an audio tour against the screen: a screenshot after each stage beside the narration words of its VTT window, as contact sheets | `npx tsx audio/stage-review.ts --url http://localhost:4193 --out <dir> [episode-id …]` (read-only; against `vite preview` of a build) | by hand, after re-timing a tour (AGENTS.md tour re-listen rule) |
 
 Runbook: the `orrery-link-health` skill. The two outbound checkers share
 `lib/link-probe.mjs` (polite User-Agent, 2 requests per host, HEAD then GET).

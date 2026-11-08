@@ -360,17 +360,6 @@ export interface SurfaceSceneConfig {
    * 2026-09-11 feedback). Default 1 — moon/mars unchanged.
    */
   tier2PatchScale?: number;
-
-  /**
-   * Which site labels the Tier-2 reveal band fades out. Default
-   * 'selected' — the 2026-06-08 moon direction ("only [hide] the one
-   * from the site that is selected"): unselected labels stay for scene
-   * context, which works when sites sit hundreds of km apart. 'all' is
-   * for clustered bodies — the Cape pads are km apart, so an unselected
-   * neighbour's label otherwise sprawls across the promoted pad's
-   * imagery square (2026-09-11 feedback). /earth sets 'all'.
-   */
-  labelBandFade?: 'selected' | 'all';
 }
 
 /**

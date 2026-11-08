@@ -1,7 +1,7 @@
 {
   "name": "Curiosity",
   "vehicle": "Atlas V 541",
-  "payload": "打上げ質量3839 kg（地表のローバー899 kg）",
+  "payload": "打上げ質量3893 kg（地表のローバー899 kg）",
   "delta_v": "~6.1 km/s",
   "type": "ローバー · 運用中",
   "first": "最初の原子力火星ローバー。スカイクレーンで着陸した最初のミッション",
@@ -17,19 +17,19 @@
     {
       "met": 0.005,
       "label": "火星遷移軌道投入燃焼",
-      "note": "火星遷移軌道投入（デルタV 3.61 km/s）により、MSLは火星へ向かう日心軌道に乗る。",
+      "note": "火星遷移軌道投入により、MSLは火星へ向かう日心軌道に乗る。",
       "type": "nominal"
     },
     {
-      "met": 12,
+      "met": 46,
       "label": "TCM-1",
       "note": "最初の軌道中修正。",
       "type": "nominal"
     },
     {
-      "met": 110,
+      "met": 213,
       "label": "TCM-3",
-      "note": "EDL前最終修正。軌道はゲール・クレーター着陸楕円を目標。",
+      "note": "第3回軌道修正。ゲール・クレーターの目標を精密化。",
       "type": "nominal"
     },
     {
@@ -54,13 +54,13 @@
   "vehicle_stage": "Centaur 上段（Atlas V 541）",
   "flight_events": [
     {
-      "met": 76,
+      "met": 121,
       "label": "TCM-2",
       "description": "巡航中間の精密化噴射。この時点で Curiosity は地球の重力井戸を抜け、安定した日心軌道を進んでいる。"
     },
     {
-      "met": 211,
-      "label": "TCM-4——EDL 前の最後の噴射",
+      "met": 246,
+      "label": "TCM-4——第4回修正（着陸までにあと2回の機会が残っていた）",
       "description": "火星大気突入前の最後の大きな軌道微調整。EDL には大気界面で 1 km 未満の照準精度が必要で、TCM-4 がそれを実現する。"
     }
   ]

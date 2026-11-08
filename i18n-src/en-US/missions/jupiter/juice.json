@@ -1,7 +1,7 @@
 {
   "name": "JUICE",
   "vehicle": "Ariane 5 ECA",
-  "payload": "6000 kg wet (2900 kg dry) — largest interplanetary spacecraft Europe has ever built. 10 instruments: JANUS (visible), MAJIS (IR), UVS, SWI (sub-mm), GALA (laser altimeter), RIME (radar sounder, NASA), J-MAG (mag), PEP (particle), RPWI (plasma waves), 3GM (radio science). 85 m² solar arrays sized for ~5.5 AU operation.",
+  "payload": "6070 kg wet (2420 kg dry) — largest interplanetary spacecraft Europe has ever built. 10 instruments: JANUS (visible), MAJIS (IR), UVS, SWI (sub-mm), GALA (laser altimeter), RIME (radar sounder, NASA), J-MAG (mag), PEP (particle), RPWI (plasma waves), 3GM (radio science). 85 m² solar arrays sized for ~5.5 AU operation.",
   "delta_v": "~3.0 km/s (gravity-assist sequence + Jupiter orbit insertion + Ganymede orbit insertion)",
   "type": "ORBITER · ACTIVE",
   "first": "Largest interplanetary spacecraft built in Europe; first spacecraft ever to orbit a moon of another planet (Ganymede, 2034)",
@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 871,
+      "met": 870,
       "label": "VENUS FLYBY",
       "note": "Venus gravity assist en route back to two more Earth passes.",
       "type": "nominal"

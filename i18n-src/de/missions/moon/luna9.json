@@ -5,7 +5,7 @@
   "delta_v": "~3 km/s",
   "type": "UNBEMANNTES LANDER-MODUL · GEFLOGEN",
   "first": "Erste Weichlandung auf dem Mond; erste Fotografien von der Mondoberfläche",
-  "description": "Nach 11 sowjetischen Fehlschlägen und 5 amerikanischen Ranger-Missionen, die nur zum Absturz bestimmt waren, gelang es Luna 9, als erstes Raumfahrzeug eine Weichlandung auf einem anderen Himmelskörper durchzuführen. Neun Bilder — darunter fünf Panoramen — übertragen in drei Sitzungen über drei Tage hinweg klärten eine lang anhaltende wissenschaftliche Debatte: Die Mondoberfläche war fest, kein Staubmeer, das ein Lander-Modul hätte versinken lassen können. Die Mission dauerte 3 Tage bis zur Batterieerschöpfung. Innerhalb weniger Monate nutzte jede darauffolgende Mond-Mission die Weichlandung als Standard-Verfahren.",
+  "description": "Nach 11 sowjetischen Fehlschlägen und 5 amerikanischen Ranger-Missionen, die nur zum Absturz bestimmt waren, gelang es Luna 9, als erstes Raumfahrzeug eine Weichlandung auf einem anderen Himmelskörper durchzuführen. Neun Bilder — darunter fünf Panoramen — übertragen in sieben Funksitzungen (insgesamt 8 h 5 min) über drei Tage hinweg klärten eine lang anhaltende wissenschaftliche Debatte: Die Mondoberfläche war fest, kein Staubmeer, das ein Lander-Modul hätte versinken lassen können. Die Mission dauerte 3 Tage bis zur Batterieerschöpfung. Innerhalb weniger Monate nutzte jede darauffolgende Mond-Mission die Weichlandung als Standard-Verfahren.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 3.01,
       "label": "ERSTE BILDER",
-      "note": "Neun Bilder einschließlich fünf Panoramen, übertragen in drei Transmissionssitzungen über drei Tage.",
+      "note": "Neun Bilder einschließlich fünf Panoramen, übertragen in sieben Transmissionssitzungen (insgesamt 8 h 5 min) über drei Tage.",
       "type": "info"
     },
     {

@@ -1,7 +1,7 @@
 {
   "name": "Hayabusa2",
   "vehicle": "H-IIA 202",
-  "payload": "건조 질량 609 kg, 이온 전기 추진(4×μ10 추력기) + 화학 이원추진제 + 1.6 m HGA. 탑재체 — Small Carry-on Impactor(SCI, 성형 폭약 2.5 kg), MASCOT 착륙선(10 kg, DLR/CNES), 3× MINERVA-II 로버(각 ~1 kg), 샘플 귀환 캡슐(16 kg, 낙하산 재진입).",
+  "payload": "건조 질량 490 kg, 이온 전기 추진(4×μ10 추력기) + 화학 이원추진제 + 1.6 m HGA. 탑재체 — Small Carry-on Impactor(SCI, 성형 폭약 2.5 kg), MASCOT 착륙선(10 kg, DLR/CNES), 3× MINERVA-II 로버(각 ~1 kg), 샘플 귀환 캡슐(16 kg, 낙하산 재진입).",
   "delta_v": "~2 km/s (이온 엔진 누적)",
   "type": "샘플 회수 + 착륙선 · 활성(연장)",
   "first": "두 번째 소행성 샘플 귀환(류구, 2020); 소행성에 만든 최초의 인공 충돌 분화구; 지구로 가져온 최초의 소행성 지하 물질",
@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 366,
+      "met": 365,
       "label": "지구 근접통과",
       "note": "지구 중력보조가 랑데부 궤도를 조정한다.",
       "type": "nominal"

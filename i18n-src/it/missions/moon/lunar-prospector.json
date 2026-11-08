@@ -1,11 +1,11 @@
 {
   "name": "Lunar Prospector",
   "vehicle": "Athena II",
-  "payload": "296 kg a secco; trasportava 5 strumenti scientifici",
+  "payload": "126 kg a secco (296 kg al lancio); trasportava 5 strumenti scientifici",
   "delta_v": "~4 km/s (TLI + LOI)",
   "type": "ORBITER ROBOTICO · COMPLETATA",
   "first": "Rilevamento dell'idrogeno mediante spettrometro neutronico a entrambi i poli lunari",
-  "description": "La terza missione della classe Discovery della NASA e il primo orbiter lunare dedicato gestito dalla NASA nell'era post-Apollo. Lanciato il 1998-01-07 su un Athena II da Cape Canaveral, Lunar Prospector entrò in un'orbita lunare polare circolare di 100 km il 1998-01-11. La sonda in rotazione, di 296 kg, portava cinque strumenti: uno spettrometro a raggi gamma per la composizione della crosta a scala globale, uno spettrometro neutronico per rilevare idrogeno e ghiaccio d'acqua ai poli, uno spettrometro a particelle alfa per il gas radon (rilevamento indiretto del vulcanesimo), un magnetometro e un riflettometro di elettroni per il magnetismo crostale e un esperimento gravimetrico Doppler. L'analisi dei dati neutronici del team di Boynton (Feldman et al., Science 281 + 284) trovò marcati deficit di flusso neutronico su entrambi i poli lunari, coerenti con ~2 × 10⁹ tonnellate di materiale ricco di idrogeno (probabilmente ghiaccio d'acqua) nei crateri polari in ombra permanente. La missione terminò il 1999-07-31 con un impatto deliberato vicino al cratere Shackleton, nella speranza di sollevare una nube di vapore acqueo rilevabile; non ne fu osservata alcuna. La scoperta dell'idrogeno resse fino a quando LCROSS e Chandrayaan-1 / M3 (2009) ne fornirono una conferma indipendente.",
+  "description": "La terza missione della classe Discovery della NASA e il primo orbiter lunare dedicato gestito dalla NASA nell'era post-Apollo. Lanciato il 1998-01-07 su un Athena II da Cape Canaveral, Lunar Prospector fu catturato il 1998-01-11 in un'orbita lunare di 11,6 ore e portato il 16 gennaio nell'orbita polare di mappatura di 100 km. La sonda in rotazione, di 296 kg, portava cinque strumenti: uno spettrometro a raggi gamma per la composizione della crosta a scala globale, uno spettrometro neutronico per rilevare idrogeno e ghiaccio d'acqua ai poli, uno spettrometro a particelle alfa per il gas radon (rilevamento indiretto del vulcanesimo), un magnetometro e un riflettometro di elettroni per il magnetismo crostale e un esperimento gravimetrico Doppler. L'analisi dei dati neutronici del team di Feldman (Feldman et al., Science 281 + 284) trovò marcati deficit di flusso neutronico su entrambi i poli lunari, coerenti con 10–300 milioni di tonnellate di ghiaccio d'acqua (stima del 1998) nei crateri polari in ombra permanente. La missione terminò il 1999-07-31 con un impatto deliberato nel cratere Shoemaker, nella speranza di sollevare una nube di vapore acqueo rilevabile; non ne fu osservata alcuna. La scoperta dell'idrogeno resse fino a quando LCROSS e Chandrayaan-1 / M3 (2009) ne fornirono una conferma indipendente.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 4.386,
       "label": "LOI",
-      "note": "Inserimento in orbita lunare 1998-01-11 — orbita polare iniziale di 100 × 100 km.",
+      "note": "Inserimento in orbita lunare 1998-01-11 — catturato in un'orbita di 11,6 ore; il 16 gennaio portato nell'orbita polare di mappatura di 100 km.",
       "type": "nominal"
     },
     {
@@ -33,8 +33,8 @@
     },
     {
       "met": 569,
-      "label": "IMPATTO SHACKLETON",
-      "note": "Impatto deliberato vicino al cratere Shackleton il 1999-07-31 09:52 UTC. Nessuna nube di vapore acqueo rilevata dalla Terra.",
+      "label": "IMPATTO SHOEMAKER",
+      "note": "Impatto deliberato nel cratere Shoemaker il 1999-07-31 09:52 UTC. Nessuna nube di vapore acqueo rilevata dalla Terra.",
       "type": "nominal"
     }
   ],

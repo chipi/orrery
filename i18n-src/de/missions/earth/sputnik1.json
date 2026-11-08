@@ -1,7 +1,7 @@
 {
   "name": "Sputnik 1",
   "vehicle": "Sputnik 8K71PS (Ableger der R-7 Semyorka)",
-  "payload": "83,6 kg schwere polierte Aluminium-Magnesium-Kugel, Ø 58 cm; zwei Sender (20,005 MHz + 40,002 MHz), drei Silber-Zink-Batterien (60 W), keine Instrumente außer Thermometer + Drucksensor",
+  "payload": "83,6 kg schwere polierte Aluminium-Magnesium-Kugel, Ø 58 cm; zwei Sender (20,005 MHz + 40,002 MHz), drei Silber-Zink-Batterien (1 W Sendeleistung), keine Instrumente außer Thermometer + Drucksensor",
   "delta_v": "~9,4 km/s (LEO)",
   "type": "ERDORBIT-SATELLIT · GEFLOGEN",
   "first": "Erster künstlicher Satellit im Erdorbit — Beginn des Weltraumzeitalters",

@@ -1,0 +1,107 @@
+[
+  {
+    "mission": "asteroid/hayabusa2",
+    "label": "Earth — gravity assist",
+    "realDate": "2015-12-03",
+    "source": { "l": "event text: closest approach 2015-12-03 (10:08 UTC)" }
+  },
+  {
+    "mission": "bennu/osiris-rex",
+    "label": "Earth gravity assist",
+    "realDate": "2017-09-22",
+    "source": { "l": "event text: 2017-09-22 (16:52 UTC)" }
+  },
+  {
+    "mission": "ceres/dawn",
+    "label": "Mars — gravity assist",
+    "realDate": "2009-02-18",
+    "source": {
+      "l": "Dawn Journal: 542 km at 00:27:58 UTC 2009-02-18 (4:27 pm PST Feb 17)",
+      "u": "https://www.planetary.org/articles/1869"
+    }
+  },
+  {
+    "mission": "comet/giotto",
+    "label": "Earth — gravity assist",
+    "realDate": "1990-07-02",
+    "source": { "l": "event text: 1990-07-02" }
+  },
+  {
+    "mission": "comet/rosetta",
+    "label": "Lutetia (21) — asteroid flyby",
+    "realDate": "2010-07-10",
+    "source": { "l": "event text: 2010-07-10 (15:45 UTC)" }
+  },
+  {
+    "mission": "mars/mariner4",
+    "label": "Mars — first successful flyby",
+    "realDate": "1965-07-15",
+    "source": { "l": "event text: 1965-07-15 (01:00 UTC)" }
+  },
+  {
+    "mission": "mars/mariner9",
+    "label": "End of mission",
+    "realDate": "1972-10-27",
+    "source": { "l": "event text: 1972-10-27" }
+  },
+  {
+    "mission": "mercury/bepicolombo",
+    "label": "Venus #1 — gravity assist",
+    "realDate": "2020-10-15",
+    "source": { "l": "event text: 2020-10-15 (03:58 UTC)" }
+  },
+  {
+    "mission": "mercury/bepicolombo",
+    "label": "Venus #2 — gravity assist",
+    "realDate": "2021-08-10",
+    "source": { "l": "event text: 2021-08-10 (13:51 UTC)" }
+  },
+  {
+    "mission": "mercury/messenger",
+    "label": "Earth — gravity assist",
+    "realDate": "2005-08-02",
+    "source": { "l": "event text: 2005-08-02 (19:13 UTC)" }
+  },
+  {
+    "mission": "neptune/voyager-2",
+    "label": "Saturn — gravity assist",
+    "realDate": "1981-08-26",
+    "source": { "l": "event text: 1981-08-26 (03:24 UTC)" }
+  },
+  {
+    "mission": "sun/parker-solar-probe",
+    "label": "First corona entry (P8)",
+    "realDate": "2021-04-28",
+    "source": { "l": "event text: 2021-04-28" }
+  },
+  {
+    "mission": "sun/solar-orbiter",
+    "label": "First perihelion (P1)",
+    "realDate": "2020-06-15",
+    "source": { "l": "event text: 2020-06-15" }
+  },
+  {
+    "mission": "sun/ulysses",
+    "label": "End of mission — propellant frozen",
+    "realDate": "2009-06-30",
+    "source": { "l": "event text: 2009-06-30" }
+  },
+  {
+    "mission": "venus/vega-2",
+    "label": "Halley — flyby (Halley Armada)",
+    "realDate": "1986-03-09",
+    "source": { "l": "event text: 1986-03-09 (07:20 UTC)" }
+  },
+  {
+    "mission": "moon/change6",
+    "label": "Far-side powered descent — Apollo crater",
+    "realDate": "2024-06-01",
+    "source": { "l": "event text: landing 2024-06-01 22:23 UTC" }
+  },
+  {
+    "mission": "moon/change6",
+    "label": "Far-side ascent — first ever",
+    "realDate": "2024-06-03",
+    "source": { "l": "event text: 2024-06-03 23:38 UTC" }
+  }
+]

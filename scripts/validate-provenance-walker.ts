@@ -28,6 +28,15 @@ type ProvenanceEntry = {
   [k: string]: unknown;
 };
 
+function isNasaCdnUrl(u: unknown): boolean {
+  if (typeof u !== 'string') return false;
+  try {
+    return new URL(u).hostname === 'images-assets.nasa.gov';
+  } catch {
+    return false;
+  }
+}
+
 const args = process.argv.slice(2);
 const manifestArg = args.find((a) => a.startsWith('--manifest='));
 const manifestPath = manifestArg
@@ -46,9 +55,7 @@ async function main(): Promise<void> {
     if (typeof e.image_url === 'string' && e.image_url.includes('Special:FilePath/undefined')) {
       undefinedFilepath.push(e);
     }
-    const refsNasaCdn =
-      (typeof e.image_url === 'string' && e.image_url.includes('images-assets.nasa.gov')) ||
-      (typeof e.source_url === 'string' && e.source_url.includes('images-assets.nasa.gov'));
+    const refsNasaCdn = isNasaCdnUrl(e.image_url) || isNasaCdnUrl(e.source_url);
     if (refsNasaCdn && !e.nasa_id) {
       nasaMissingId.push(e);
     }

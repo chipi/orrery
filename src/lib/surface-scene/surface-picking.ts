@@ -11,6 +11,10 @@
  */
 import * as THREE from 'three';
 import * as m from '$lib/paraglide/messages';
+import { getLocale } from '$lib/paraglide/runtime';
+import { formatNumber } from '$lib/format';
+import { getImageAlt } from '$lib/image-alt';
+import type { LocaleCode } from '$lib/locale';
 import type { OrbiterMarker } from '$lib/three/orbiter-group';
 import type { HotspotEntry } from '$lib/hotspot-lod-dispatcher';
 import type { SkyboxHandle } from '$lib/hotspot-tier3-skybox';
@@ -23,11 +27,42 @@ import type { PanoramaAnnotation, SurfaceSite } from '$types/surface-site';
 export interface PickableTraverseLine {
   stopPins: THREE.Sprite[];
   endDot: THREE.Mesh;
+  line?: THREE.Object3D;
+  pathWorld?: THREE.Vector3[];
+  pointSols?: number[];
+  pointKm?: number[];
+  dateOfSol?: (sol: number) => string;
+}
+
+/** Path hover (#641): the vertex nearest the pointer within `maxPx` on
+ *  screen, or -1. `project` maps a world point to client pixels. */
+export function nearestPathVertex(
+  pathWorld: ReadonlyArray<THREE.Vector3>,
+  project: (v: THREE.Vector3) => [number, number] | null,
+  x: number,
+  y: number,
+  maxPx = 10,
+): number {
+  let best = -1;
+  let bestD = maxPx;
+  for (let i = 0; i < pathWorld.length; i++) {
+    const p = project(pathWorld[i]);
+    if (!p) continue;
+    const d = Math.hypot(p[0] - x, p[1] - y);
+    if (d < bestD) {
+      bestD = d;
+      best = i;
+    }
+  }
+  return best;
 }
 
 /** Compact tooltip payload returned by `pickStopAt`. */
 export interface StopPickHit {
   title: string;
+  /** Photo pin (#641): the image to open, and its small preview. */
+  image?: string;
+  thumb?: string;
   sol?: number;
   label?: string;
   lat?: number;
@@ -184,6 +219,41 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
   // traverse-end dot, and the patch-pin landing marker across
   // all loaded rovers / hotspots. Returns a compact tooltip
   // payload (title + optional sol + optional lat/lon).
+  // Hover anywhere on a visible sol-carrying path: "Sol N" + date + km.
+  function pickPathAt(clientX: number, clientY: number, rect: DOMRect): StopPickHit | null {
+    const v = new THREE.Vector3();
+    const toCam = new THREE.Vector3();
+    const outward = new THREE.Vector3();
+    const project = (w: THREE.Vector3): [number, number] | null => {
+      v.copy(w).applyMatrix4(planetWorld);
+      // Far side of the globe: the path vertex faces away from the camera, so it is hidden.
+      if (toCam.copy(camera.position).sub(v).dot(outward.copy(v).sub(planetCentre)) <= 0)
+        return null;
+      v.project(camera);
+      if (v.z > 1) return null;
+      return [rect.left + ((v.x + 1) / 2) * rect.width, rect.top + ((1 - v.y) / 2) * rect.height];
+    };
+    for (const tl of ctx.traverseLines) {
+      if (!tl.line?.visible || !tl.pathWorld || !tl.pointSols || !tl.pointKm) continue;
+      planetWorld.copy(tl.line.parent?.matrixWorld ?? new THREE.Matrix4());
+      planetCentre.setFromMatrixPosition(planetWorld);
+      const i = nearestPathVertex(tl.pathWorld, project, clientX, clientY);
+      if (i < 0) continue;
+      const sol = tl.pointSols[i];
+      const km = tl.pointKm[i];
+      return {
+        title: m.traverse_sol({ sol: formatNumber(sol, getLocale() as LocaleCode) }),
+        label: m.traverse_hover_detail({
+          date: tl.dateOfSol?.(sol) ?? '',
+          km: formatNumber(km, getLocale() as LocaleCode, km < 10 ? 2 : 1),
+        }),
+      };
+    }
+    return null;
+  }
+  const planetWorld = new THREE.Matrix4();
+  const planetCentre = new THREE.Vector3();
+
   function pickStopAt(clientX: number, clientY: number): StopPickHit | null {
     const rect = el3d.getBoundingClientRect();
     const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
@@ -207,16 +277,36 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
         }
       });
     }
-    if (targets.length === 0) return null;
-    const hits = ray.intersectObjects(targets, false);
+    const hits = targets.length ? ray.intersectObjects(targets, false) : [];
     const hit = hits.find((h) => h.object.userData?.kind);
-    if (!hit) return null;
+    if (!hit) return pickPathAt(clientX, clientY, rect);
     const ud = hit.object.userData;
     if (ud.kind === 'traverse-stop') {
+      // "Sol N" once, as the title (the card's sol line repeated it); a stop
+      // without a sol (the Moon's stations) is titled by its name.
+      return Number.isFinite(ud.stopSol)
+        ? {
+            title: m.traverse_sol({ sol: formatNumber(ud.stopSol, getLocale() as LocaleCode) }),
+            label: ud.stopLabel,
+          }
+        : { title: ud.stopLabel ?? '', label: undefined };
+    }
+    if (ud.kind === 'traverse-photo') {
       return {
-        title: m.traverse_sol({ sol: ud.stopSol }),
-        sol: ud.stopSol,
+        title: m.traverse_sol({
+          sol: `${ud.stopSolApprox ? '≈' : ''}${formatNumber(ud.stopSol, getLocale() as LocaleCode)}`,
+        }),
+        label: getImageAlt(ud.image, getLocale()),
+        image: ud.image,
+        thumb: ud.thumb,
+      };
+    }
+    if (ud.kind === 'traverse-landing') {
+      return {
+        title: m.surface_landing_site(),
         label: ud.stopLabel,
+        lat: ud.stopLat,
+        lon: ud.stopLon,
       };
     }
     if (ud.kind === 'traverse-end') {

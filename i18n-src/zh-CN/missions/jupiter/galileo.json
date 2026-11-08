@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Galileo 探测器和大气进入探测器；干质量~2.5 t",
+  "payload": "Galileo 探测器和大气进入探测器；发射质量 2560 kg；轨道器干质量 1880 kg",
   "delta_v": "~14 km/s（估算）",
   "type": "轨道飞行器 · 已飞行",
   "first": "第一个绕木星轨道运行的航天器；向木星大气释放探测器",
@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 2243,
+      "met": 2242,
       "label": "木星轨道插入",
       "note": "主发动机点火使Galileo进入轨道；为期8年的卫星科学巡游开始。",
       "type": "nominal"

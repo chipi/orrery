@@ -1,0 +1,27 @@
+{
+  "intro": "Mars 6 kwam aan op 12 maart 1974. De lander zond de hele afdaling door de atmosfeer heen gegevens uit — de eerste metingen in de Marslucht zelf —, maar door een fout in de elektronica was een groot deel van de gegevens onbruikbaar, en het contact viel weg vlak voor de landing in Margaritifer Terra.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Een van de vier Sovjet-Marssondes van 1973",
+      "images": [
+        {
+          "src": "/images/missions/mars6/01.webp",
+          "caption": "Een model van een Sovjet-Marssonde uit deze reeks op een tentoonstelling, met bovenop de grote schotelantenne."
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "title": "Afdaling",
+      "subtitle": "12 maart 1974 — gegevens tijdens de hele afdaling",
+      "images": [
+        {
+          "src": "/images/missions/mars6/02.webp",
+          "caption": "De Sovjet-postzegel uit 1972 voor vijftien jaar ruimtevaart: een lander op het oppervlak van Mars."
+        }
+      ]
+    }
+  ]
+}

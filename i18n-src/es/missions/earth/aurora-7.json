@@ -6,7 +6,7 @@
   "dispatch": "Aurora 7 estaba destinada a ser una repetición y se convirtió en un susto. Scott Carpenter voló el mismo perfil de tres órbitas que Glenn, pero distraído por experimentos y un sistema de control defectuoso quemó todo su combustible de actitud y disparó sus retrocohetes unos segundos tarde y ligeramente desalineados — lo suficiente para llevarlo unos 400 kilómetros más allá de su objetivo de amerizaje. Durante una larga y silenciosa hora nadie supo si estaba vivo, hasta que un avión de búsqueda lo avistó flotando en una balsa salvavidas. Es un recordatorio claro de que en una máquina con casi ningún margen, los pequeños errores se amplifican rápidamente — y que recuperarse de ellos es una habilidad en sí misma.",
   "type": "TRIPULADO ÓRBITA TERRESTRE · REALIZADA",
   "first": "Repitió el perfil de 3 órbitas de Glenn; sobrepasó el objetivo de aterrizaje en 400 km",
-  "description": "El vuelo de 3 órbitas de Scott Carpenter — repitió el perfil MA-6 de Glenn para afianzar la confianza en el vehículo Mercury-Atlas antes de los vuelos más largos de Schirra y Cooper. Carpenter realizó extensos experimentos en ingravidez y tareas de observación; la carga experimental pesada y un propulsor de guiñada atascado provocaron que estuviera ~25° fuera de actitud en el encendido de retrocohetes, sobrepasando el objetivo de aterrizaje en ~400 km. El retraso de 1 h 7 min en la recuperación se informó ampliamente y dañó la reputación de Carpenter ante la dirección de la NASA; nunca volvió a volar. La cápsula Aurora 7 está expuesta en el Museum of Science and Industry, Chicago IL.",
+  "description": "El vuelo de 3 órbitas de Scott Carpenter — repitió el perfil MA-6 de Glenn para afianzar la confianza en el vehículo Mercury-Atlas antes de los vuelos más largos de Schirra y Cooper. Carpenter realizó extensos experimentos en ingravidez y tareas de observación; la carga experimental pesada, un sensor de horizonte de cabeceo defectuoso y el combustible gastado al usar a la vez los sistemas de actitud manual y automático dejaron la cápsula ~25° desviada en guiñada, y el encendido de retrocohetes se produjo ~3 s tarde, sobrepasando el objetivo de aterrizaje en ~400 km. El retraso en la recuperación (a Carpenter lo encontraron tras casi una hora y lo sacaron unas 3 horas después del amerizaje) se informó ampliamente y dañó la reputación de Carpenter ante la dirección de la NASA; nunca volvió a volar. La cápsula Aurora 7 está expuesta en el Museum of Science and Industry, Chicago IL.",
   "events": [
     {
       "met": 0,
@@ -23,7 +23,7 @@
     {
       "met": 0.205,
       "label": "AMERIZAJE",
-      "note": "Océano Atlántico, ~400 km más allá del objetivo; 1 h 7 min de retraso en la recuperación. USS Pierce, USS Intrepid.",
+      "note": "Océano Atlántico, ~400 km más allá del objetivo; Carpenter hallado tras casi una hora y sacado unas 3 horas después del amerizaje. USS Pierce, USS Intrepid.",
       "type": "warning"
     }
   ]

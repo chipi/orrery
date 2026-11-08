@@ -7,10 +7,6 @@
       "subtitle": "충격 흡수 링 위의 내압 구체",
       "images": [
         {
-          "src": "/images/missions/venera-13/04.webp",
-          "caption": "이 세대 Venera 탐사선의 설명이 붙은 모형: 엔진과 태양 전지판, 접시 안테나를 갖춘 모선과, 그 위에서 착륙선을 지표로 내려보낸 구체."
-        },
-        {
           "src": "/images/missions/venera-13/01.webp",
           "caption": "Venera 13과, 나흘 뒤 약 950km 떨어진 곳에 착륙한 쌍둥이 탐사선 Venera 14를 기념한 1982년 소련 우표."
         }
@@ -37,8 +33,8 @@
       "subtitle": "지금도 금성 표면에서 온 마지막 사진",
       "images": [
         {
-          "src": "/images/missions/venera-13/05.webp",
-          "caption": "Venera 13·14가 찍은 금성 풍경과 Viking 1·2가 찍은 화성 풍경을 나란히 놓은 비교 자료로, Stephen Paul Meszaros가 NASA를 위해 만들었습니다."
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Magellan, Pioneer Venus, Venera의 자료로 만든 레이더 지도 속 금성. 1982년 Venera 13호와 14호 이후 표면에서 사진을 보낸 탐사선은 없다."
         }
       ]
     }

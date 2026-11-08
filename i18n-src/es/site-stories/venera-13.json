@@ -7,10 +7,6 @@
       "subtitle": "Una esfera presurizada sobre un anillo amortiguador",
       "images": [
         {
-          "src": "/images/missions/venera-13/04.webp",
-          "caption": "Una maqueta rotulada de una sonda Venera de esta generación: el portador con su motor, sus paneles solares y su antena parabólica, y arriba la esfera que llevó al módulo de aterrizaje hasta el suelo."
-        },
-        {
           "src": "/images/missions/venera-13/01.webp",
           "caption": "El sello soviético de 1982 dedicado a la Venera 13 y a su gemela Venera 14, que aterrizó cuatro días después a unos 950 km de distancia."
         }
@@ -37,8 +33,8 @@
       "subtitle": "Siguen siendo las últimas imágenes de la superficie de Venus",
       "images": [
         {
-          "src": "/images/missions/venera-13/05.webp",
-          "caption": "Vistas de Venus de las Venera 13 y 14 junto a vistas de Marte de las Viking 1 y 2, una comparación preparada para la NASA por Stephen Paul Meszaros."
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Venus como la muestran los mapas de radar, con datos de Magellan, Pioneer Venus y Venera. Ninguna nave ha enviado imágenes desde la superficie desde las Venera 13 y 14 en 1982."
         }
       ]
     }

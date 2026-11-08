@@ -7,10 +7,6 @@
       "subtitle": "كرة مضغوطة فوق حلقة لامتصاص الصدمة",
       "images": [
         {
-          "src": "/images/missions/venera-13/04.webp",
-          "caption": "نموذج مُعلَّم لمسبار Venera من هذا الجيل: المركبة الحاملة بمحركها وألواحها الشمسية وهوائيها الطبقي، وفي أعلاها الكرة التي أنزلت مركبة الهبوط."
-        },
-        {
           "src": "/images/missions/venera-13/01.webp",
           "caption": "طابع سوفيتي صدر عام 1982 لـ Venera 13 وتوأمها Venera 14 التي هبطت بعد أربعة أيام على بعد نحو 950 كم."
         }
@@ -37,8 +33,8 @@
       "subtitle": "ما تزال آخر الصور من سطح الزهرة",
       "images": [
         {
-          "src": "/images/missions/venera-13/05.webp",
-          "caption": "مشاهد من الزهرة التقطتها Venera 13 و14 إلى جانب مشاهد من المريخ التقطتها Viking 1 و2، في مقارنة أعدّها Stephen Paul Meszaros لصالح NASA."
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "الزهرة كما تظهرها خرائط الرادار، من بيانات Magellan وPioneer Venus وVenera. لم ترسل أي مركبة صورًا من السطح منذ Venera 13 و14 عام 1982."
         }
       ]
     }

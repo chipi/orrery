@@ -7,10 +7,6 @@
       "subtitle": "衝撃吸収リングに載った耐圧球",
       "images": [
         {
-          "src": "/images/missions/venera-13/04.webp",
-          "caption": "この世代のVenera探査機の模型(ラベル付き):エンジン、太陽電池パネル、パラボラアンテナを備えた母船と、その上で着陸機を地表へ降ろした球体。"
-        },
-        {
           "src": "/images/missions/venera-13/01.webp",
           "caption": "Venera 13と、4日後に約950 km離れた場所に着陸した双子機Venera 14を記念した1982年のソ連切手。"
         }
@@ -37,8 +33,8 @@
       "subtitle": "今も金星表面からの最後の画像",
       "images": [
         {
-          "src": "/images/missions/venera-13/05.webp",
-          "caption": "Venera 13・14による金星の画像と、Viking 1・2による火星の画像を並べた比較図。Stephen Paul MeszarosがNASAのために作成したもの。"
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Magellan、Pioneer Venus、Veneraのデータによるレーダー地図の金星。1982年のVenera 13号・14号以来、地表から画像を送った探査機はない。"
         }
       ]
     }

@@ -8641,11 +8641,6 @@
     320,
     952
   ],
-  "/images/missions/change3/05": [
-    320,
-    1280,
-    1472
-  ],
   "/images/missions/change4/01": [
     320,
     703
@@ -9345,14 +9340,6 @@
     1280,
     2000
   ],
-  "/images/missions/lunar-prospector/04": [
-    320,
-    800
-  ],
-  "/images/missions/lunar-prospector/05": [
-    320,
-    800
-  ],
   "/images/missions/magellan/01": [
     320,
     1280,
@@ -9541,10 +9528,6 @@
     960
   ],
   "/images/missions/mars3/03": [
-    320,
-    960
-  ],
-  "/images/missions/mars3/04": [
     320,
     689,
     960
@@ -9780,26 +9763,6 @@
     1280,
     1920
   ],
-  "/images/missions/otv-2/02": [
-    320,
-    853,
-    1365,
-    1824
-  ],
-  "/images/missions/otv-2/03": [
-    320,
-    1280,
-    1792
-  ],
-  "/images/missions/otv-2/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/missions/otv-2/05": [
-    320,
-    398
-  ],
   "/images/missions/otv-3/01": [
     320,
     1280,
@@ -9815,18 +9778,6 @@
     320,
     1280,
     1920
-  ],
-  "/images/missions/otv-3/04": [
-    320,
-    853,
-    1365,
-    1824
-  ],
-  "/images/missions/otv-3/05": [
-    320,
-    640,
-    1280,
-    1792
   ],
   "/images/missions/otv-4/01": [
     320,
@@ -9895,12 +9846,6 @@
     320,
     592,
     708
-  ],
-  "/images/missions/otv-6/05": [
-    320,
-    853,
-    1365,
-    1824
   ],
   "/images/missions/otv-7/01": [
     320,
@@ -10419,10 +10364,6 @@
   ],
   "/images/missions/starship-mars-crew/04": [
     320,
-    960
-  ],
-  "/images/missions/starship-mars-crew/05": [
-    320,
     640,
     1280,
     1920
@@ -10730,10 +10671,6 @@
     320,
     958
   ],
-  "/images/missions/venera-13/04": [
-    320,
-    620
-  ],
   "/images/missions/viking1/01": [
     320,
     640,
@@ -10865,9 +10802,6 @@
     1280,
     1920
   ],
-  "/images/missions/vostok-3/05": [
-    180
-  ],
   "/images/missions/vostok-4/01": [
     320,
     640,
@@ -10888,9 +10822,6 @@
     320,
     1280,
     1600
-  ],
-  "/images/missions/vostok-4/05": [
-    180
   ],
   "/images/missions/vostok-5/01": [
     260
@@ -14063,13 +13994,6 @@
     2048,
     3072
   ],
-  "/images/missions/venera-13/05": [
-    320,
-    640,
-    1021,
-    1633,
-    2185
-  ],
   "/images/missions/freedom-7/05": [
     320,
     640,
@@ -14741,12 +14665,6 @@
     640,
     853
   ],
-  "/images/missions/giotto/05": [
-    320,
-    640,
-    1280,
-    1544
-  ],
   "/images/missions/juice/02": [
     320,
     640,
@@ -14813,7 +14731,7 @@
     1280,
     2000
   ],
-  "/images/missions/mars3/05": [
+  "/images/missions/mars3/04": [
     320,
     640,
     1280,

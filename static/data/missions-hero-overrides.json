@@ -83,11 +83,6 @@
    "reason": "category: people-only — no asset visible; score: 1 < threshold 6; vision-rejected: category-people",
    "approved_at": "2026-06-12"
   },
-  "otv-3": {
-   "slot": "05.jpg",
-   "reason": "subject names a different entity than otv-3",
-   "approved_at": "2026-06-12"
-  },
   "otv-7": {
    "slot": "02.jpg",
    "reason": "subject names a different entity than otv-7",
@@ -304,7 +299,7 @@
    "approved_at": "2026-11-06"
   },
   "starship-mars-crew": {
-   "slot": "05.jpg",
+   "slot": "04.jpg",
    "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
    "approved_at": "2026-09-12"
   },

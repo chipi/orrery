@@ -7,10 +7,6 @@
       "subtitle": "Une sphère pressurisée sur un anneau d'amortissement",
       "images": [
         {
-          "src": "/images/missions/venera-13/04.webp",
-          "caption": "Une maquette légendée d'une sonde Venera de cette génération : le porteur avec son moteur, ses panneaux solaires et son antenne parabolique, et au sommet la sphère qui a fait descendre l'atterrisseur."
-        },
-        {
           "src": "/images/missions/venera-13/01.webp",
           "caption": "Le timbre soviétique de 1982 consacré à Venera 13 et à sa jumelle Venera 14, qui s'est posée quatre jours plus tard à environ 950 km de là."
         }
@@ -37,8 +33,8 @@
       "subtitle": "Toujours les dernières images de la surface de Vénus",
       "images": [
         {
-          "src": "/images/missions/venera-13/05.webp",
-          "caption": "Des vues de Vénus par Venera 13 et 14 à côté de vues de Mars par Viking 1 et 2, une comparaison réalisée pour la NASA par Stephen Paul Meszaros."
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Vénus telle que la montrent les cartes radar, d’après les données de Magellan, Pioneer Venus et Venera. Aucun engin n’a envoyé d’images de la surface depuis Venera 13 et 14 en 1982."
         }
       ]
     }

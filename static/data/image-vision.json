@@ -17320,23 +17320,6 @@
       "scored_at": "2026-07-05T21:22:01.921Z",
       "scoring_cost_usd": 0.005151
     },
-    "/images/missions/venera-13/04.jpg": {
-      "score": 5,
-      "subject": "A labeled diagram-style photograph of a Soviet Venera spacecraft engineering model displayed indoors, showing components including the lander reentry vehicle, central core, parabolic antenna, solar panels, and instrument compartments.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": false,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "off-subject",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:22:05.347Z",
-      "scoring_cost_usd": 0.005877
-    },
     "/images/missions/voyager-1.jpg": {
       "score": 9,
       "subject": "NASA Voyager spacecraft engineering model or flight unit photographed against a black background, showing the high-gain antenna dish, science instrument boom, RTG power source, and magnetometer boom in full detail.",
@@ -25556,74 +25539,6 @@
       "scored_at": "2026-07-05T21:14:28.565Z",
       "scoring_cost_usd": 0.009033
     },
-    "/images/missions/otv-2/02.jpg": {
-      "score": 9,
-      "subject": "USAF X-37B orbital test vehicle mounted vertically inside a payload processing facility, with the Atlas V fairing halves open behind it, showing the spacecraft's nose, fuselage, and delta wings with USAF markings clearly visible.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:14:16.732Z",
-      "scoring_cost_usd": 0.009261
-    },
-    "/images/missions/otv-2/03.jpg": {
-      "score": 7,
-      "subject": "The Boeing X-37B unmanned spaceplane sitting on a runway after landing, showing heat-scorched thermal protection tiles on its underside and twin tail fins.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:14:13.244Z",
-      "scoring_cost_usd": 0.008856
-    },
-    "/images/missions/otv-2/04.jpg": {
-      "score": 7,
-      "subject": "The Boeing X-37B orbital test vehicle stored vertically inside a thermal vacuum chamber facility, showing the USAF roundel and service access panels on its fuselage.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:14:19.944Z",
-      "scoring_cost_usd": 0.008997
-    },
-    "/images/missions/otv-2/05.jpg": {
-      "score": 8,
-      "subject": "USAF X-37B orbital test vehicle standing vertically in a processing facility, displaying USAF markings and American flag in background",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:14:22.614Z",
-      "scoring_cost_usd": 0.005157
-    },
     "/images/missions/otv-3/01.jpg": {
       "score": 8,
       "subject": "An Atlas V rocket lifts off from a coastal launch complex at Cape Canaveral, producing brilliant engine flames and billowing white exhaust clouds.",
@@ -25674,40 +25589,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:14:37.613Z",
       "scoring_cost_usd": 0.008715
-    },
-    "/images/missions/otv-3/04.jpg": {
-      "score": 9,
-      "subject": "USAF X-37B orbital test vehicle mounted vertically inside a payload processing facility, with the Atlas V fairing halves open behind it, showing the spacecraft's nose, fuselage, and delta wings with USAF markings clearly visible.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:14:16.732Z",
-      "scoring_cost_usd": 0.009261
-    },
-    "/images/missions/otv-3/05.jpg": {
-      "score": 7,
-      "subject": "The Boeing X-37B unmanned spaceplane sitting on a runway after landing, showing heat-scorched thermal protection tiles on its underside and twin tail fins.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:14:13.244Z",
-      "scoring_cost_usd": 0.008856
     },
     "/images/missions/otv-4/01.jpg": {
       "score": 8,
@@ -25946,23 +25827,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:15:23.437Z",
       "scoring_cost_usd": 0.008490000000000001
-    },
-    "/images/missions/otv-6/05.jpg": {
-      "score": 9,
-      "subject": "USAF X-37B orbital test vehicle mounted vertically inside a payload processing facility, with the Atlas V fairing halves open behind it, showing the spacecraft's nose, fuselage, and delta wings with USAF markings clearly visible.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-05T21:14:16.732Z",
-      "scoring_cost_usd": 0.009261
     },
     "/images/missions/shenzhou-1/01.jpg": {
       "score": 6,
@@ -30258,23 +30122,6 @@
       "scored_at": "2026-07-05T21:11:33.531Z",
       "scoring_cost_usd": 0.008907
     },
-    "/images/missions/mars3/03.jpg": {
-      "score": 4,
-      "subject": "A Soviet commemorative postage stamp from 1972 depicting the Mars 3 lander descent module with Cyrillic text noting its soft landing on Mars on 2 December 1971.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.48
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:11:24.159Z",
-      "scoring_cost_usd": 0.007455
-    },
     "/images/missions/mars3/01.jpg": {
       "score": 7,
       "subject": "Annotated MRO HiRISE orbital imagery showing candidate hardware components of the Soviet Mars-3 lander including parachute, retrorocket, lander, and heat shield on the Martian surface.",
@@ -31023,23 +30870,6 @@
       "scored_at": "2026-07-05T21:21:01.897Z",
       "scoring_cost_usd": 0.007358999999999999
     },
-    "/images/missions/starship-mars-crew/04.jpg": {
-      "score": 4,
-      "subject": "SpaceX Starbase launch facility at night with 'We Are Explorers' graffiti on a concrete barrier in the foreground and the orbital launch tower lit up in the background.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:20:49.497Z",
-      "scoring_cost_usd": 0.0072239999999999995
-    },
     "/images/missions/starship-mars-crew/02.jpg": {
       "score": 8,
       "subject": "The Super Heavy booster caught by the launch tower's arms at Starbase during Starship flight test 5, 13 October 2024.",
@@ -31780,32 +31610,6 @@
       "rejected_by": "score-below-threshold",
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.006108
-    },
-    "/images/missions/lunar-prospector/04.jpg": {
-      "score": 8,
-      "subject": "A long-exposure photograph captures a rocket's curved launch trajectory streaking across a twilight sky with a half-illuminated Moon visible above.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.38,
-        "y": 0.55
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009219
-    },
-    "/images/missions/lunar-prospector/05.jpg": {
-      "score": 6,
-      "subject": "A Lockheed Martin Athena II rocket stands on the launch pad at Cape Canaveral with two technicians in the foreground, likely during Lunar Prospector launch preparations.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009159
     },
     "/images/missions/mars-express/05.jpg": {
       "score": 9,

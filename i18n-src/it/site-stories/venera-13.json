@@ -7,10 +7,6 @@
       "subtitle": "Una sfera pressurizzata su un anello ammortizzatore",
       "images": [
         {
-          "src": "/images/missions/venera-13/04.webp",
-          "caption": "Un modello con didascalie di una sonda Venera di questa generazione: il vettore con motore, pannelli solari e antenna parabolica, e in cima la sfera che portò giù il lander."
-        },
-        {
           "src": "/images/missions/venera-13/01.webp",
           "caption": "Il francobollo sovietico del 1982 per Venera 13 e la gemella Venera 14, che atterrò quattro giorni dopo a circa 950 km di distanza."
         }
@@ -37,8 +33,8 @@
       "subtitle": "Ancora oggi le ultime immagini dalla superficie di Venere",
       "images": [
         {
-          "src": "/images/missions/venera-13/05.webp",
-          "caption": "Vedute di Venere di Venera 13 e 14 accanto a vedute di Marte di Viking 1 e 2, un confronto preparato per la NASA da Stephen Paul Meszaros."
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Venere come la mostrano le mappe radar, dai dati di Magellan, Pioneer Venus e Venera. Nessuna sonda ha più inviato immagini dalla superficie dopo le Venera 13 e 14 nel 1982."
         }
       ]
     }

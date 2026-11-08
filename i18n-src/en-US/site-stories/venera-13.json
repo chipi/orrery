@@ -7,10 +7,6 @@
       "subtitle": "A pressure sphere on a crush ring",
       "images": [
         {
-          "src": "/images/missions/venera-13/04.webp",
-          "caption": "A labelled model of a Venera spacecraft of this generation: the carrier with its engine, solar panels and dish antenna, and on top the sphere that carried the lander down."
-        },
-        {
           "src": "/images/missions/venera-13/01.webp",
           "caption": "The 1982 Soviet stamp for Venera 13 and its twin Venera 14, which landed four days later about 950 km away."
         }
@@ -37,8 +33,8 @@
       "subtitle": "Still the last pictures from the surface of Venus",
       "images": [
         {
-          "src": "/images/missions/venera-13/05.webp",
-          "caption": "Venera 13 and 14 views of Venus beside Viking 1 and 2 views of Mars, a comparison prepared for NASA by Stephen Paul Meszaros."
+          "src": "/images/missions/magellan/01.webp",
+          "caption": "Venus as radar maps show it, from Magellan, Pioneer Venus and Venera data. No spacecraft has sent pictures from the surface since Venera 13 and 14 in 1982."
         }
       ]
     }

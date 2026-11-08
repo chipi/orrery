@@ -44471,27 +44471,6 @@
       "fetched_at": "2026-11-08T07:21:41.755Z"
     },
     {
-      "id": "05c1f006e2bac8df",
-      "path": "/images/missions/change3/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Sinus Iridum, Chang'e 3 & Lunokhod 1 landing sites.png",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Sinus_Iridum,_Chang%27e_3_%26_Lunokhod_1_landing_sites.png",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Sinus_Iridum%2C_Chang%27e_3_%26_Lunokhod_1_landing_sites.png",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA/LROC public-domain imagery.",
-      "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": 30411778,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.853Z"
-    },
-    {
       "id": "e3de85f009daf0fb",
       "path": "/images/missions/change3/03.1x1.jpg",
       "source_type": "wikimedia-commons",
@@ -49049,48 +49028,6 @@
       "fetched_at": "2026-11-08T07:14:26.877Z"
     },
     {
-      "id": "62d90be1e43df00b",
-      "path": "/images/missions/lunar-prospector/04.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Lunar Prospector Gravity map.jpg",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ALunar%20Prospector%20Gravity%20map.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lunar%20Prospector%20Gravity%20map.jpg",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.854Z"
-    },
-    {
-      "id": "e0aa2a7c0016e136",
-      "path": "/images/missions/lunar-prospector/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Lunar Prospector Potassium abundance map.jpg",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ALunar%20Prospector%20Potassium%20abundance%20map.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lunar%20Prospector%20Potassium%20abundance%20map.jpg",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.854Z"
-    },
-    {
       "id": "05dcbf80b4983183",
       "path": "/images/missions/lunar-prospector/03.1x1.jpg",
       "source_type": "wikimedia-commons",
@@ -50483,50 +50420,8 @@
       "fetched_at": "2026-11-07T08:27:12.152Z"
     },
     {
-      "id": "ae65defcb3501878",
-      "path": "/images/missions/mars3/03.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg",
-      "author": "Roscosmos",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg",
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
-      "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.837Z"
-    },
-    {
-      "id": "68f79159cd979760",
-      "path": "/images/missions/mars3/03.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg",
-      "author": "Roscosmos",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg",
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
-      "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.837Z"
-    },
-    {
       "id": "10dd84492da75201",
-      "path": "/images/missions/mars3/04.1x1.jpg",
+      "path": "/images/missions/mars3/03.1x1.jpg",
       "source_type": "wikimedia-commons",
       "title": "File:Possible_Mars_3_lander_from_MRO_ESP_031036_1345_MRGB.abrowse.jpg",
       "author": "Roscosmos",
@@ -50547,7 +50442,7 @@
     },
     {
       "id": "0e1bd3d404034f49",
-      "path": "/images/missions/mars3/04.webp",
+      "path": "/images/missions/mars3/03.webp",
       "source_type": "wikimedia-commons",
       "title": "File:Possible_Mars_3_lander_from_MRO_ESP_031036_1345_MRGB.abrowse.jpg",
       "author": "Roscosmos",
@@ -51929,90 +51824,6 @@
       "fetched_at": "2026-06-19T09:26:46.855Z"
     },
     {
-      "id": "d7a98250a2557b8c",
-      "path": "/images/missions/otv-2/02.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Boeing X-37B inside payload fairing before launch.jpg",
-      "author": "USAF",
-      "agency": "USAF",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ABoeing%20X-37B%20inside%20payload%20fairing%20before%20launch.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing%20X-37B%20inside%20payload%20fairing%20before%20launch.jpg",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.855Z"
-    },
-    {
-      "id": "cf32c9bb71eddaec",
-      "path": "/images/missions/otv-2/03.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Boeing X-37B after ground tests at Vandenberg AFB, October 2007.jpg",
-      "author": "USAF",
-      "agency": "USAF",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ABoeing%20X-37B%20after%20ground%20tests%20at%20Vandenberg%20AFB%2C%20October%202007.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing%20X-37B%20after%20ground%20tests%20at%20Vandenberg%20AFB%2C%20October%202007.jpg",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.855Z"
-    },
-    {
-      "id": "f887de296c57b013",
-      "path": "/images/missions/otv-2/04.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:X-37 launch prep.jpg",
-      "author": "USAF",
-      "agency": "USAF",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AX-37%20launch%20prep.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/X-37%20launch%20prep.jpg",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.855Z"
-    },
-    {
-      "id": "2dd216c7c261d1ab",
-      "path": "/images/missions/otv-2/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:X-37B prelaunch.jpg",
-      "author": "USAF",
-      "agency": "USAF",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AX-37B%20prelaunch.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/X-37B%20prelaunch.jpg",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.855Z"
-    },
-    {
       "id": "f07aa76449246bfa",
       "path": "/images/missions/otv-3/01.webp",
       "source_type": "wikimedia-commons",
@@ -52063,48 +51874,6 @@
       "agency": "USAF",
       "source_url": "https://commons.wikimedia.org/wiki/File%3AOTV-3%20USA-240%202012%2012%2012%20(cropped).jpg",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/OTV-3%20USA-240%202012%2012%2012%20(cropped).jpg",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.855Z"
-    },
-    {
-      "id": "d60cd2acafaecdd3",
-      "path": "/images/missions/otv-3/04.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Boeing X-37B inside payload fairing before launch.jpg",
-      "author": "USAF",
-      "agency": "USAF",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ABoeing%20X-37B%20inside%20payload%20fairing%20before%20launch.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing%20X-37B%20inside%20payload%20fairing%20before%20launch.jpg",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.855Z"
-    },
-    {
-      "id": "30012e20df0e7062",
-      "path": "/images/missions/otv-3/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Boeing X-37B after ground tests at Vandenberg AFB, October 2007.jpg",
-      "author": "USAF",
-      "agency": "USAF",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ABoeing%20X-37B%20after%20ground%20tests%20at%20Vandenberg%20AFB%2C%20October%202007.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing%20X-37B%20after%20ground%20tests%20at%20Vandenberg%20AFB%2C%20October%202007.jpg",
       "license_short": "PD-USGov",
       "license_url": "https://www.usa.gov/government-works",
       "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
@@ -52399,27 +52168,6 @@
       "agency": "USSF",
       "source_url": "https://commons.wikimedia.org/wiki/File%3AX-37B%20concludes%20mission%20(221111-F-XX000-0004).jpg",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/X-37B%20concludes%20mission%20(221111-F-XX000-0004).jpg",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.855Z"
-    },
-    {
-      "id": "3dfd3b6ed0b12899",
-      "path": "/images/missions/otv-6/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Boeing X-37B inside payload fairing before launch.jpg",
-      "author": "USSF",
-      "agency": "USSF",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ABoeing%20X-37B%20inside%20payload%20fairing%20before%20launch.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing%20X-37B%20inside%20payload%20fairing%20before%20launch.jpg",
       "license_short": "PD-USGov",
       "license_url": "https://www.usa.gov/government-works",
       "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
@@ -55337,50 +55085,8 @@
       "fetched_at": "2026-06-19T09:26:46.839Z"
     },
     {
-      "id": "c92f0a3c769f71e5",
-      "path": "/images/missions/starship-mars-crew/04.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:SuperHeavyLaunchers.png",
-      "author": "SpaceX",
-      "agency": "SpaceX",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ASuperHeavyLaunchers.png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SuperHeavyLaunchers.png",
-      "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
-      "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.839Z"
-    },
-    {
-      "id": "c5fc66bc11f4dcfd",
-      "path": "/images/missions/starship-mars-crew/04.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:SuperHeavyLaunchers.png",
-      "author": "SpaceX",
-      "agency": "SpaceX",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ASuperHeavyLaunchers.png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SuperHeavyLaunchers.png",
-      "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
-      "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.839Z"
-    },
-    {
       "id": "3fce58a7121edf18",
-      "path": "/images/missions/starship-mars-crew/05.1x1.jpg",
+      "path": "/images/missions/starship-mars-crew/04.1x1.jpg",
       "source_type": "wikimedia-commons",
       "title": "File:SpaceX Starship and Mars.jpg",
       "author": "CactiStaccingCrane",
@@ -55400,7 +55106,7 @@
     },
     {
       "id": "ade06741ad9b00f5",
-      "path": "/images/missions/starship-mars-crew/05.webp",
+      "path": "/images/missions/starship-mars-crew/04.webp",
       "source_type": "wikimedia-commons",
       "title": "File:SpaceX Starship and Mars.jpg",
       "author": "CactiStaccingCrane",
@@ -57246,48 +56952,6 @@
       "fetched_at": "2026-06-19T09:26:46.850Z"
     },
     {
-      "id": "797bffa081cbae66",
-      "path": "/images/missions/venera-13/04.1x1.jpg",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — venera-13 / \"Venera 13 Venus surface color panorama Soviet lander\"",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=Venera+13+Venus+surface+color+panorama+Soviet+lander&media_type=image&keywords=venera-13",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
-      "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.850Z"
-    },
-    {
-      "id": "4012c35f52e88657",
-      "path": "/images/missions/venera-13/04.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — venera-13 / \"Venera 13 Venus surface color panorama Soviet lander\"",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=Venera+13+Venus+surface+color+panorama+Soviet+lander&media_type=image&keywords=venera-13",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
-      "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.850Z"
-    },
-    {
       "id": "69e3a69398aa69c2",
       "path": "/images/missions/viking1/01.1x1.jpg",
       "source_type": "wikimedia-commons",
@@ -58013,27 +57677,6 @@
       "fetched_at": "2026-06-19T09:26:46.857Z"
     },
     {
-      "id": "32539af4d41e1c3f",
-      "path": "/images/missions/vostok-3/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Vostok3-4patch.png",
-      "author": "Roscosmos",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AVostok3-4patch.png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok3-4patch.png",
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.857Z"
-    },
-    {
       "id": "6c5dcc1adfe0c9a3",
       "path": "/images/missions/vostok-4/01.webp",
       "source_type": "wikimedia-commons",
@@ -58105,27 +57748,6 @@
       "agency": "Roscosmos",
       "source_url": "https://commons.wikimedia.org/wiki/File%3AGreeting%20on%20Popovich%20and%20Nikolaev.jpg",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Greeting%20on%20Popovich%20and%20Nikolaev.jpg",
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
-      "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.857Z"
-    },
-    {
-      "id": "2fbe8685448c2921",
-      "path": "/images/missions/vostok-4/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Vostok3-4patch.png",
-      "author": "Roscosmos",
-      "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AVostok3-4patch.png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok3-4patch.png",
       "license_short": "PD-Russia",
       "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
       "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
@@ -73506,50 +73128,6 @@
       "fetched_at": "2026-10-20T17:00:03.840Z"
     },
     {
-      "id": "171cf52cdf3c62c1",
-      "path": "/images/missions/venera-13/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Surfaces of Mars and Venus (4089158361).jpg",
-      "author": "Lunar and Planetary Institute from Houston, TX, USA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Surfaces_of_Mars_and_Venus_(4089158361).jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Surfaces_of_Mars_and_Venus_%284089158361%29.jpg",
-      "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
-      "modifications": [
-        "downloaded-via-commons-api",
-        "resized-to-4096-master",
-        "reencoded-webp"
-      ],
-      "revid": null,
-      "pageid": 98866125,
-      "nasa_id": null,
-      "fetched_at": "2026-10-20T17:00:03.840Z"
-    },
-    {
-      "id": "f56fe13f07b51cb8",
-      "path": "/images/missions/venera-13/05.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Surfaces of Mars and Venus (4089158361).jpg",
-      "author": "Lunar and Planetary Institute from Houston, TX, USA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Surfaces_of_Mars_and_Venus_(4089158361).jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Surfaces_of_Mars_and_Venus_%284089158361%29.jpg",
-      "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
-      "modifications": [
-        "downloaded-via-commons-api",
-        "resized-to-4096-master",
-        "reencoded-webp"
-      ],
-      "revid": null,
-      "pageid": 98866125,
-      "nasa_id": null,
-      "fetched_at": "2026-10-20T17:00:03.840Z"
-    },
-    {
       "id": "36d12934acc366e9",
       "path": "/images/missions/freedom-7/05.webp",
       "source_type": "nasa-images-api",
@@ -78098,50 +77676,6 @@
       "fetched_at": "2026-10-20T19:51:19.659Z"
     },
     {
-      "id": "af64e9428fb45ffb",
-      "path": "/images/missions/giotto/05.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Schéma sonde-spatiale-Giotto.png",
-      "author": "Pline",
-      "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Sch%C3%A9ma_sonde-spatiale-Giotto.png",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Sch%C3%A9ma_sonde-spatiale-Giotto.png",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "license_rationale": "Reuse with attribution; derivatives under same license.",
-      "modifications": [
-        "downloaded-via-commons-api",
-        "resized-to-4096-master",
-        "reencoded-webp"
-      ],
-      "revid": null,
-      "pageid": 97694078,
-      "nasa_id": null,
-      "fetched_at": "2026-10-20T19:51:19.659Z"
-    },
-    {
-      "id": "dc8792aea032658d",
-      "path": "/images/missions/giotto/05.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Schéma sonde-spatiale-Giotto.png",
-      "author": "Pline",
-      "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Sch%C3%A9ma_sonde-spatiale-Giotto.png",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Sch%C3%A9ma_sonde-spatiale-Giotto.png",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "license_rationale": "Reuse with attribution; derivatives under same license.",
-      "modifications": [
-        "downloaded-via-commons-api",
-        "resized-to-4096-master",
-        "reencoded-webp"
-      ],
-      "revid": null,
-      "pageid": 97694078,
-      "nasa_id": null,
-      "fetched_at": "2026-10-20T19:51:19.659Z"
-    },
-    {
       "id": "0bbf9d262c9809d2",
       "path": "/images/missions/juice/02.webp",
       "source_type": "wikimedia-commons",
@@ -78583,7 +78117,7 @@
     },
     {
       "id": "76860c984131f5a9",
-      "path": "/images/missions/mars3/05.webp",
+      "path": "/images/missions/mars3/04.webp",
       "source_type": "wikimedia-commons",
       "title": "File:Soviet Mars 3 Commemorative Plaque and USSR Emblem.jpg",
       "author": "Hayden Soloviev",
@@ -78605,7 +78139,7 @@
     },
     {
       "id": "3e3982ffd21ad2e0",
-      "path": "/images/missions/mars3/05.1x1.jpg",
+      "path": "/images/missions/mars3/04.1x1.jpg",
       "source_type": "wikimedia-commons",
       "title": "File:Soviet Mars 3 Commemorative Plaque and USSR Emblem.jpg",
       "author": "Hayden Soloviev",

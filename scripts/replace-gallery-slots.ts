@@ -8,7 +8,9 @@
  * picture and regenerates the /credits thumb.
  *
  * Map: { "<rel e.g. missions/mars2/01>": { source: "commons" | "nasa", id: "<File name | nasa_id>",
- *        focal: [x, y], category, subject, alt: { "<locale>": "<text>" … all 14 } } }
+ *        focal: [x, y], category, subject, alt: { "<locale>": "<text>" … all 14 },
+ *        agency: "<gallery credit label>", author?: "<only when the source's author field is wrong>" } }
+ * `agency` is required: the credit tools keep a row's old agency, which belonged to the old picture.
  *
  * Usage: npx tsx scripts/replace-gallery-slots.ts <map.json> [--dry-run]
  * Then: rebuild-gallery-manifests.ts, build-i18n-bundles.mjs, build-offline-manifest.mjs,
@@ -54,6 +56,8 @@ interface Slot {
   category: string;
   subject: string;
   alt: Record<string, string>;
+  agency: string;
+  author?: string;
 }
 const map: Record<string, Slot> = JSON.parse(readFileSync(mapPath, 'utf8'));
 const readJson = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
@@ -67,8 +71,8 @@ for (const [rel, s] of Object.entries(map)) {
   if (!existsSync(`static/images/${rel}.webp`)) problems.push(`${rel}: no served slot to replace`);
   if (s.source !== 'commons' && s.source !== 'nasa')
     problems.push(`${rel}: source must be commons or nasa`);
-  if (!s.id || !s.subject || !s.category)
-    problems.push(`${rel}: id, subject and category are required`);
+  if (!s.id || !s.subject || !s.category || !s.agency)
+    problems.push(`${rel}: id, subject, category and agency are required`);
   if (!Array.isArray(s.focal) || s.focal.some((v) => !(v >= 0 && v <= 1)))
     problems.push(`${rel}: focal [x, y] in 0..1`);
   for (const l of LOCALES)
@@ -151,7 +155,37 @@ execFileSync(
   ['scripts/vision/build-display-ladder.mjs', '--only', [...dirs].join(','), '--force'],
   { stdio: 'inherit' },
 );
-execFileSync('node', ['scripts/vision/add-card-rungs.mjs', '--all'], { stdio: 'inherit' });
+// Card rungs for these slots only, as add-card-rungs.mjs makes them (its --all walks every
+// manifest entry and needs every master smudged): 320 under the smallest rung, and 320 + 640
+// under the base for a card hero (the hero override's slot, else 01).
+const LADDER = 'static/data/image-ladder.json';
+const ladder = readJson(LADDER);
+for (const rel of Object.keys(map)) {
+  const [surfaceDir, entity, nn] = rel.split('/');
+  const surface = surfaceDir === 'fleet-galleries' ? 'fleet' : surfaceDir;
+  const ovFile = `static/data/${surface}-hero-overrides.json`;
+  const ov = existsSync(ovFile) ? (readJson(ovFile).overrides ?? {}) : {};
+  const hero = (ov[entity]?.slot ?? '01.jpg').replace(/\.[^.]+$/, '') === nn;
+  const key = `/images/${rel}`;
+  const widths: number[] = ladder[key];
+  if (!widths?.length) throw new Error(`${rel}: no ladder entry after build-display-ladder`);
+  const ceiling = hero ? widths[widths.length - 1] : widths[0];
+  const buf = readFileSync([`masters/${rel}.jpg`, `masters/${rel}.png`].find(existsSync)!);
+  const added: number[] = [];
+  for (const target of hero ? [320, 640] : [320]) {
+    if (target >= ceiling || widths.includes(target)) continue;
+    const data = await sharp(buf)
+      .resize({ width: target, withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toBuffer();
+    const w = (await sharp(data).metadata()).width ?? target;
+    if (w >= ceiling || widths.includes(w) || added.includes(w)) continue;
+    writeFileSync(`static${key}-${w}.webp`, data);
+    added.push(w);
+  }
+  ladder[key] = [...new Set([...added, ...widths])].sort((a, b) => a - b);
+}
+writeJson(LADDER, ladder);
 for (const [rel, s] of Object.entries(map)) {
   const master = [`masters/${rel}.jpg`, `masters/${rel}.png`].find(existsSync)!;
   await generateVariants({
@@ -183,6 +217,16 @@ if (Object.keys(nasa).length) {
     stdio: 'inherit',
   });
 }
+const PROV = 'static/data/image-provenance.json';
+const prov = readJson(PROV);
+for (const e of prov.entries ?? prov) {
+  const rel = String(e.path).match(/^\/images\/(.+?)(?:\.webp|\.1x1\.jpg)$/)?.[1];
+  const s = rel ? map[rel] : undefined;
+  if (!s) continue;
+  e.agency = s.agency;
+  if (s.author) e.author = s.author;
+}
+writeJson(PROV, prov);
 
 // 5. Alt text in 14 locales + translation sources.
 const SOURCES = 'scripts/i18n-tools/maps/alt-text-sources.json';

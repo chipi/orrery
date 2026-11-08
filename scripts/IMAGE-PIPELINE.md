@@ -230,7 +230,10 @@ logo/patch/chart/poster.
 
 When a slot should hold a better picture rather than disappear, write a map under
 `scripts/link-fixes/` (`{ "<rel>": { source: "commons"|"nasa", id, focal: [x, y], category, subject,
-alt: { all 14 locales } } }`), smudge the galleries' masters and run:
+alt: { all 14 locales }, agency, author? } }`), smudge the galleries' masters and run. `agency` is
+required because the credit tools keep a row's old agency, which named the old picture's source
+(batch 1 came out with "JAXA / NASA" on a JAXA render); `author` overrides a Commons author field that
+holds a licence text instead of a name (MMX-CG02.jpg):
 
 ```bash
 npx tsx scripts/replace-gallery-slots.ts <map.json> --dry-run   # fetches every original, writes nothing

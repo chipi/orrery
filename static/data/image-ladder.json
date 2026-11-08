@@ -8081,7 +8081,7 @@
   "/images/missions/akatsuki/01": [
     320,
     640,
-    960
+    1000
   ],
   "/images/missions/akatsuki/02": [
     320,
@@ -8093,11 +8093,13 @@
   ],
   "/images/missions/akatsuki/04": [
     320,
-    1024
+    942
   ],
   "/images/missions/akatsuki/05": [
     320,
-    467
+    850,
+    1360,
+    1594
   ],
   "/images/missions/apollo-1/01": [
     320,
@@ -9544,7 +9546,9 @@
   ],
   "/images/missions/maven/02": [
     320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/missions/maven/03": [
     320,
@@ -9552,7 +9556,9 @@
   ],
   "/images/missions/maven/04": [
     320,
-    603
+    1280,
+    2048,
+    3000
   ],
   "/images/missions/mercury-atlas-9/01": [
     320,
@@ -9619,8 +9625,9 @@
   "/images/missions/mmx/01": [
     320,
     640,
-    853,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/mmx/02": [
     320,
@@ -9628,7 +9635,7 @@
   ],
   "/images/missions/mmx/03": [
     320,
-    960
+    1080
   ],
   "/images/missions/mmx/04": [
     320,
@@ -9636,7 +9643,9 @@
   ],
   "/images/missions/mmx/05": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/near-shoemaker/01": [
     320,
@@ -10071,7 +10080,7 @@
   "/images/missions/schiaparelli/01": [
     320,
     1280,
-    2048
+    1920
   ],
   "/images/missions/schiaparelli/02": [
     320,

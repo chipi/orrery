@@ -64,6 +64,9 @@ the mobile apps (#442, #490, #621, AR, crash reporting on a device) and TV / D-p
      404); sitemap 7.1 MB → per-locale files; PageSpeed numbers still unmeasured (API key or a
      local Lighthouse run — operator decides). Baiduspider: allowed (operator, 2026-11-08) —
      Cloudflare dashboard, AI Crawl Control → Crawlers → Allow; confirm in the live robots.txt.
+   - **Last step (operator, 2026-11-08):** update the README and all docs the SEO work touches
+     (TA.md, the ADRs/guides on SEO, URLs and the sitemap, folder READMEs, the gate in the
+     validation docs) so they describe what shipped.
    Long-term SEO (Search Console, keyword research, monitoring) is a separate agent's work:
    `docs/wip/<date>-seo-brief.md`.
 1. **#550** — gallery sourcing: the three galleries below the hero bar (Chang'e 6, Sokol-M,

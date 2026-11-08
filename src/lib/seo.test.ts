@@ -5,6 +5,7 @@ import {
   localizedPath,
   canonicalUrl,
   hreflangAlternates,
+  isMirrorBuild,
   ogLocale,
   ogLocaleAlternates,
 } from './seo';
@@ -47,6 +48,13 @@ describe('localizedPath', () => {
   it('prefixes non-default locales, keeping the root trailing slash', () => {
     expect(localizedPath('/missions', 'de')).toBe('/de/missions');
     expect(localizedPath('/', 'de')).toBe('/de/');
+  });
+});
+
+describe('isMirrorBuild', () => {
+  it('is true only for a build under a base path (GH Pages staging)', () => {
+    expect(isMirrorBuild('/orrery')).toBe(true);
+    expect(isMirrorBuild('')).toBe(false);
   });
 });
 

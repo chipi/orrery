@@ -39,6 +39,7 @@
     canonicalRoute,
     canonicalUrl,
     hreflangAlternates,
+    isMirrorBuild,
     ogLocale,
     ogLocaleAlternates,
   } from '$lib/seo';
@@ -95,9 +96,10 @@
 
   // SEO — canonical + hreflang for the current page. The route is reduced to
   // its un-localized form (base + locale prefix stripped, query dropped) and
-  // every URL points at the production origin, so staging/GH-Pages copies
-  // canonicalise to their prod twin instead of competing for the index. Emitted
-  // in every locale's copy of the page → the hreflang set is reciprocal.
+  // every URL points at the production origin. Emitted in every locale's copy
+  // of the page → the hreflang set is reciprocal. The GH Pages mirror emits
+  // noindex instead (isMirrorBuild).
+  const mirrorBuild = isMirrorBuild(base);
   let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
   // Card share stubs (#547, /c/*) are en-US-only redirect pages prerendered
@@ -507,10 +509,15 @@
        dedupes so exactly one survives. Replaces the former hardcoded title in
        app.html, which duplicated the per-page one. -->
   <title>Orrery</title>
-  <link rel="canonical" href={canonicalHref} />
-  {#each hreflangs as alt (alt.hreflang)}
-    <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
-  {/each}
+  {#if mirrorBuild}
+    <!-- Card stubs carry their own noindex. -->
+    {#if !isCardStub}<meta name="robots" content="noindex" />{/if}
+  {:else}
+    <link rel="canonical" href={canonicalHref} />
+    {#each hreflangs as alt (alt.hreflang)}
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    {/each}
+  {/if}
   <meta property="og:locale" content={ogLocaleValue} />
   {#each ogLocaleAlts as alt (alt)}
     <meta property="og:locale:alternate" content={alt} />

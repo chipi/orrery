@@ -1,12 +1,10 @@
 /**
  * SEO URL helpers — canonical + hreflang.
  *
- * Every deployment (prod VPS, GH Pages staging, Docker, localhost) points
- * its canonical + hreflang tags at the PRODUCTION origin. That makes prod
- * the authoritative copy and stops the staging mirror from competing for
- * Google's index — a staging page canonicalises to its prod twin rather
- * than self-referencing. Absolute prod URLs also mean the sitemap and the
- * on-page tags agree byte-for-byte.
+ * Canonical + hreflang tags always point at the PRODUCTION origin, so prod
+ * is the authoritative copy and the sitemap and the on-page tags agree
+ * byte-for-byte. The GH Pages staging mirror emits noindex instead (see
+ * `isMirrorBuild`).
  *
  * URL shape mirrors scripts/gh-pages-compat.mjs#expandLocalizedRoots and
  * the Paraglide URL-segment strategy: en-US at the bare path, every other
@@ -16,6 +14,17 @@ import { SUPPORTED_LOCALES, DEFAULT_LOCALE, isSupportedLocale, type LocaleCode }
 
 /** Canonical public origin — production host, no trailing slash. */
 export const SITE_ORIGIN = 'https://www.orrerylearn.com';
+
+/**
+ * True for a build served under a base path — the GH Pages staging mirror
+ * (`VITE_BASE=/orrery/`, staging.yml). Prod, Docker and the native apps build
+ * with no base. Google indexed the mirror (it outranked prod) even though its
+ * canonical pointed at prod — a canonical is only a hint — so the mirror says
+ * noindex and leaves out canonical + hreflang, which would contradict it.
+ */
+export function isMirrorBuild(base: string): boolean {
+  return base !== '';
+}
 
 /**
  * Reduce a live pathname to its un-localized canonical route.

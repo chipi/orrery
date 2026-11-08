@@ -3178,8 +3178,9 @@
   ],
   "/images/fleet-galleries/gaganyaan/04": [
     320,
-    854,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gaia/01": [
     320,
@@ -3189,11 +3190,15 @@
   ],
   "/images/fleet-galleries/gaia/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gaia/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/galileo-gnss/01": [
     320,
@@ -3202,13 +3207,14 @@
   ],
   "/images/fleet-galleries/galileo-gnss/02": [
     320,
-    703,
-    988
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/galileo-gnss/04": [
     320,
     1280,
-    1920
+    1573
   ],
   "/images/fleet-galleries/galileo/01": [
     320,
@@ -3282,11 +3288,12 @@
   ],
   "/images/fleet-galleries/glonass/04": [
     320,
-    500
+    1200
   ],
   "/images/fleet-galleries/glonass/05": [
     320,
-    672
+    1280,
+    1920
   ],
   "/images/fleet-galleries/goes-noaa/01": [
     320,
@@ -3301,13 +3308,15 @@
   ],
   "/images/fleet-galleries/goes-noaa/04": [
     320,
-    1280,
-    1920
+    853,
+    1365,
+    2048
   ],
   "/images/fleet-galleries/goes-noaa/05": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gps-gnss/01": [
     320,
@@ -3317,26 +3326,32 @@
   "/images/fleet-galleries/gps-gnss/02": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gps-gnss/03": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gps-gnss/04": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/gps-gnss/05": [
     320,
     1280,
-    1920
+    1848
   ],
   "/images/fleet-galleries/h-1/01": [
     320,
-    439
+    640,
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/h-1/02": [
     320,
@@ -3384,7 +3399,9 @@
   ],
   "/images/fleet-galleries/h3/04": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hakuto-r/01": [
     320,
@@ -3419,7 +3436,8 @@
   "/images/fleet-galleries/hayabusa-2/04": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hayabusa/01": [
     320,
@@ -3442,11 +3460,15 @@
   ],
   "/images/fleet-galleries/hitomi/02": [
     320,
-    780
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hitomi/03": [
     320,
-    928
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hitomi/04": [
     320,
@@ -3497,7 +3519,9 @@
   ],
   "/images/fleet-galleries/htv-x/04": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/htv/01": [
     320,
@@ -3507,7 +3531,9 @@
   ],
   "/images/fleet-galleries/htv/02": [
     320,
-    810
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/htv/03": [
     320,
@@ -3515,7 +3541,9 @@
   ],
   "/images/fleet-galleries/htv/04": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/htv/05": [
     320,
@@ -3528,7 +3556,9 @@
   ],
   "/images/fleet-galleries/hubble/02": [
     320,
-    856
+    1280,
+    2048,
+    2972
   ],
   "/images/fleet-galleries/hubble/03": [
     320,
@@ -3536,11 +3566,15 @@
   ],
   "/images/fleet-galleries/hubble/04": [
     320,
-    882
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/hubble/05": [
     320,
-    866
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/im-1-odysseus/01": [
     320,
@@ -3562,11 +3596,15 @@
   ],
   "/images/fleet-galleries/inmarsat/02": [
     320,
-    640
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/inmarsat/03": [
     320,
-    640
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/inmarsat/04": [
     320,
@@ -3574,8 +3612,9 @@
   ],
   "/images/fleet-galleries/inmarsat/05": [
     320,
-    1052,
-    1374
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/insight/01": [
     320,
@@ -3593,7 +3632,8 @@
   "/images/fleet-galleries/insight/04": [
     320,
     1280,
-    1500
+    2048,
+    3072
   ],
   "/images/fleet-galleries/insight/05": [
     320,
@@ -3607,7 +3647,8 @@
   "/images/fleet-galleries/iridium-next/02": [
     320,
     1280,
-    1920
+    2048,
+    3000
   ],
   "/images/fleet-galleries/iridium-next/03": [
     320,
@@ -3716,7 +3757,7 @@
     320,
     1280,
     2048,
-    2600
+    3000
   ],
   "/images/fleet-galleries/jwst/01": [
     320,
@@ -3751,19 +3792,25 @@
   ],
   "/images/fleet-galleries/kepler/02": [
     320,
-    1280
+    857,
+    1371,
+    2008
   ],
   "/images/fleet-galleries/kepler/03": [
     320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/kepler/04": [
     320,
-    1280
+    721,
+    1140
   ],
   "/images/fleet-galleries/kepler/05": [
     320,
-    1280
+    1280,
+    1463
   ],
   "/images/fleet-galleries/kourou-ela-2/01": [
     320,
@@ -3884,12 +3931,15 @@
   ],
   "/images/fleet-galleries/landsat/04": [
     320,
-    1199
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/landsat/05": [
     320,
-    1280,
-    1920
+    1024,
+    1638,
+    2400
   ],
   "/images/fleet-galleries/lc-14/01": [
     320,
@@ -4370,7 +4420,9 @@
   ],
   "/images/fleet-galleries/lunar-orbiter-3/03": [
     320,
-    669
+    739,
+    1183,
+    1775
   ],
   "/images/fleet-galleries/lunar-orbiter-3/04": [
     320,
@@ -4399,7 +4451,9 @@
   ],
   "/images/fleet-galleries/lunar-orbiter-4/05": [
     320,
-    534
+    1027,
+    1643,
+    1824
   ],
   "/images/fleet-galleries/lunar-orbiter-5/01": [
     320,
@@ -4424,7 +4478,7 @@
   ],
   "/images/fleet-galleries/lunar-orbiter-5/05": [
     320,
-    565
+    1250
   ],
   "/images/fleet-galleries/lunar-prospector/01": [
     320,
@@ -4457,7 +4511,9 @@
   ],
   "/images/fleet-galleries/lunokhod-1/04": [
     320,
-    1170
+    924,
+    1479,
+    2218
   ],
   "/images/fleet-galleries/lunokhod-1/05": [
     320,
@@ -4467,7 +4523,9 @@
   ],
   "/images/fleet-galleries/lunokhod-2/01": [
     320,
-    556
+    1280,
+    2048,
+    2069
   ],
   "/images/fleet-galleries/lunokhod-2/02": [
     320,
@@ -4492,9 +4550,9 @@
   ],
   "/images/fleet-galleries/lvm3/02": [
     320,
-    393,
-    629,
-    891
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/lvm3/03": [
     320,
@@ -4536,12 +4594,13 @@
   ],
   "/images/fleet-galleries/mangalyaan/01": [
     320,
-    640,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/mangalyaan/02": [
     320,
-    960
+    988
   ],
   "/images/fleet-galleries/mangalyaan/03": [
     320,
@@ -4550,7 +4609,8 @@
   ],
   "/images/fleet-galleries/mangalyaan/04": [
     320,
-    500
+    1280,
+    2048
   ],
   "/images/fleet-galleries/mangalyaan/05": [
     320,
@@ -4618,7 +4678,9 @@
   ],
   "/images/fleet-galleries/mars-express/05": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/mars-odyssey/01": [
     320,
@@ -4638,7 +4700,9 @@
   ],
   "/images/fleet-galleries/mars-odyssey/04": [
     320,
-    1082
+    873,
+    1398,
+    1822
   ],
   "/images/fleet-galleries/mars-polar-lander/01": [
     320,
@@ -4669,7 +4733,9 @@
   ],
   "/images/fleet-galleries/mars2-orbiter/02": [
     320,
-    1252
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/mars2-orbiter/03": [
     320,
@@ -4687,8 +4753,9 @@
   ],
   "/images/fleet-galleries/mars3-orbiter/03": [
     320,
-    1280,
-    1920
+    816,
+    1307,
+    1960
   ],
   "/images/fleet-galleries/mars3-orbiter/04": [
     320,
@@ -4696,8 +4763,9 @@
   ],
   "/images/fleet-galleries/mars3-orbiter/05": [
     320,
-    1280,
-    1920
+    719,
+    1150,
+    1725
   ],
   "/images/fleet-galleries/mars6/01": [
     250
@@ -4751,7 +4819,8 @@
   "/images/fleet-galleries/mercury-capsule/02": [
     320,
     1280,
-    1920
+    2048,
+    3000
   ],
   "/images/fleet-galleries/mercury-capsule/03": [
     320,
@@ -4816,13 +4885,15 @@
   ],
   "/images/fleet-galleries/messenger/03": [
     320,
-    1280,
-    1920
+    877,
+    1404,
+    2056
   ],
   "/images/fleet-galleries/messenger/04": [
     320,
     1280,
-    1920
+    2048,
+    3008
   ],
   "/images/fleet-galleries/mir/01": [
     320,
@@ -4852,7 +4923,9 @@
   ],
   "/images/fleet-galleries/molniya/02": [
     320,
-    468
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/molniya/03": [
     320,
@@ -4938,7 +5011,9 @@
   ],
   "/images/fleet-galleries/new-shepard/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/new-shepard/04": [
     320,
@@ -4973,7 +5048,9 @@
   ],
   "/images/fleet-galleries/oneweb/01": [
     320,
-    857
+    854,
+    1367,
+    2050
   ],
   "/images/fleet-galleries/oneweb/02": [
     320,
@@ -5123,12 +5200,13 @@
   ],
   "/images/fleet-galleries/phobos-2/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/phobos-2/04": [
     320,
-    1280,
-    1920
+    420
   ],
   "/images/fleet-galleries/phoenix/01": [
     320,
@@ -5175,7 +5253,9 @@
   ],
   "/images/fleet-galleries/pioneer-11/02": [
     320,
-    866
+    1024,
+    1638,
+    2400
   ],
   "/images/fleet-galleries/pioneer-11/03": [
     320,
@@ -5192,13 +5272,15 @@
   ],
   "/images/fleet-galleries/planet-labs/02": [
     320,
-    1280,
-    1920
+    852,
+    1363,
+    2045
   ],
   "/images/fleet-galleries/planet-labs/03": [
     320,
     1280,
-    1920
+    2048,
+    2700
   ],
   "/images/fleet-galleries/planet-labs/04": [
     320,
@@ -5207,7 +5289,9 @@
   ],
   "/images/fleet-galleries/planet-labs/05": [
     320,
-    843
+    1280,
+    2048,
+    2401
   ],
   "/images/fleet-galleries/plesetsk-41-1/01": [
     320,
@@ -5220,7 +5304,7 @@
   ],
   "/images/fleet-galleries/plesetsk-43/02": [
     320,
-    500
+    1200
   ],
   "/images/fleet-galleries/plesetsk-43/03": [
     320,
@@ -5236,7 +5320,9 @@
   ],
   "/images/fleet-galleries/pragyan/01": [
     320,
-    548
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/pragyan/02": [
     320,
@@ -5394,9 +5480,9 @@
   ],
   "/images/fleet-galleries/r-7-vostok/02": [
     320,
-    396,
-    633,
-    923
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/r-7-vostok/03": [
     320,
@@ -5557,9 +5643,8 @@
   ],
   "/images/fleet-galleries/salyut-2/01": [
     320,
-    640,
     1280,
-    1832
+    1333
   ],
   "/images/fleet-galleries/salyut-2/02": [
     320,
@@ -15188,10 +15273,9 @@
   ],
   "/images/fleet-galleries/n1/02": [
     320,
-    640,
-    972,
-    1555,
-    2332
+    719,
+    1150,
+    1725
   ],
   "/images/fleet-galleries/salyut-1/01": [
     320,

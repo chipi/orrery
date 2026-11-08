@@ -2466,20 +2466,21 @@
       "scoring_cost_usd": 0.004776
     },
     "/images/fleet-galleries/htv-x/04.jpg": {
-      "score": 5,
-      "subject": "Live telemetry screen capture from JAXA H3-F7 rocket launch showing flight trajectory overlay with stage separation events at T+3:31 above Earth's cloud-covered surface.",
-      "category": "launch",
+      "score": 8,
+      "subject": "The HTV-X1 cargo spacecraft grasped by the Canadarm2 robotic arm at the International Space Station.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/htv-x/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:51:04.201Z",
-      "scoring_cost_usd": 0.005016
+      "scored_at": "2026-11-08T08:15:58.403Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/htv/01.jpg": {
       "score": 9,
@@ -2498,9 +2499,9 @@
       "scoring_cost_usd": 0.0054659999999999995
     },
     "/images/fleet-galleries/htv/02.jpg": {
-      "score": 2,
-      "subject": "Cutaway diagram of the Japanese Experiment Module (Kibo) showing pressurized and unpressurized sections with labeled components including ISPRs, EF payload, water tank, and air circular tube.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The HTV-6 cargo vehicle on final approach to the International Space Station, December 2016.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -2508,10 +2509,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/htv/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:51:44.080Z",
-      "scoring_cost_usd": 0.004974
+      "scored_at": "2026-11-08T08:15:58.345Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/htv/03.jpg": {
       "score": 8,
@@ -2610,9 +2612,9 @@
       "scoring_cost_usd": 0.007329
     },
     "/images/fleet-galleries/insight/04.jpg": {
-      "score": 2,
-      "subject": "Spectrogram SP2 showing seismic acceleration data plotted as frequency versus time with a color-coded intensity scale.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The InSight lander with its solar arrays deployed during pre-launch testing at Lockheed Martin Space, Denver.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -2620,10 +2622,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/insight/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:53:08.425Z",
-      "scoring_cost_usd": 0.0059370000000000004
+      "scored_at": "2026-11-08T08:19:19.565Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/insight/05.jpg": {
       "score": 7,
@@ -2770,20 +2773,21 @@
       "scoring_cost_usd": 0.003738
     },
     "/images/fleet-galleries/juno/05.jpg": {
-      "score": 2,
-      "subject": "Diagram showing Juno spacecraft orbital trajectory around Jupiter including prime and extended mission phases with moon flyby markers.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Technicians working on the Juno spacecraft at Astrotech, Titusville, Florida, April 2011.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.75,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/juno/05.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:53:49.304Z",
-      "scoring_cost_usd": 0.006216
+      "scored_at": "2026-11-08T08:19:19.631Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/krechet-94/01.jpg": {
       "score": 8,
@@ -3171,20 +3175,21 @@
       "scoring_cost_usd": 0.005826
     },
     "/images/fleet-galleries/lunokhod-2/01.jpg": {
-      "score": 3,
-      "subject": "Artist concept illustration showing the Soviet Luna lander and Lunokhod rover on the lunar surface with Earth visible in the background, annotated with red boxes and labels.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A Lunokhod 2 rover model with its round lid open, on display in a Russian museum, 2007.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.6
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/lunokhod-2/01.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:56:38.436Z",
-      "scoring_cost_usd": 0.004491
+      "scored_at": "2026-11-08T08:21:00.539Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/lunokhod-2/02.jpg": {
       "score": 4,
@@ -3347,9 +3352,9 @@
       "scoring_cost_usd": 0.006651
     },
     "/images/fleet-galleries/mangalyaan/01.jpg": {
-      "score": 2,
-      "subject": "Labeled diagram of a spacecraft showing solar array, propellant tank, high gain antenna, medium gain antenna, and low gain antenna components.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A model of the Mars Orbiter Mission spacecraft at the National Space Science Park, Thiruvananthapuram, 2024.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -3357,10 +3362,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/mangalyaan/01.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:57:21.011Z",
-      "scoring_cost_usd": 0.005316
+      "scored_at": "2026-11-08T08:21:00.554Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mangalyaan/03.jpg": {
       "score": 6,
@@ -3379,20 +3385,21 @@
       "scoring_cost_usd": 0.005481
     },
     "/images/fleet-galleries/mangalyaan/04.jpg": {
-      "score": 2,
-      "subject": "CAD render of a pitch panel assembly component labeled MPW-11, part of an ISRO spacecraft diagram.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The limb of Mars with the dark shadow of Phobos, taken by the Mars Colour Camera on 14 October 2014.",
+      "category": "orbital",
       "focal_point": {
-        "x": 0.55,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/mangalyaan/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:57:28.055Z",
-      "scoring_cost_usd": 0.003642
+      "scored_at": "2026-11-08T08:21:00.568Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mariner-4/01.jpg": {
       "score": 8,
@@ -3699,20 +3706,21 @@
       "scoring_cost_usd": 0.007329
     },
     "/images/fleet-galleries/mercury-capsule/02.jpg": {
-      "score": 2,
-      "subject": "Two elderly men in suits seated on a stage at what appears to be a panel or speaking event before an audience.",
-      "category": "people",
+      "score": 8,
+      "subject": "The Friendship 7 capsule floating in the Atlantic as it is retrieved after John Glenn's orbital flight, 20 February 1962.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/mercury-capsule/02.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:58:57.291Z",
-      "scoring_cost_usd": 0.0072239999999999995
+      "scored_at": "2026-11-08T08:21:00.855Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mercury-capsule/03.jpg": {
       "score": 2,
@@ -3987,20 +3995,21 @@
       "scoring_cost_usd": 0.0053159999999999995
     },
     "/images/fleet-galleries/new-shepard/03.jpg": {
-      "score": 2,
-      "subject": "Three people gathered around a table with a Blue Origin hard hat, with a spacecraft capsule visible in the background.",
-      "category": "people",
+      "score": 8,
+      "subject": "Looking up at a New Shepard booster on display at EAA AirVenture, Oshkosh, July 2017.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/new-shepard/03.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:00:09.103Z",
-      "scoring_cost_usd": 0.005166
+      "scored_at": "2026-11-08T08:22:32.065Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/new-shepard/04.jpg": {
       "score": 6,
@@ -4307,9 +4316,9 @@
       "scoring_cost_usd": 0.006216
     },
     "/images/fleet-galleries/phobos-2/03.jpg": {
-      "score": 9,
-      "subject": "High-resolution color image of Phobos, the larger of Mars's two moons, showing its irregular cratered surface with prominent grooves and the bright ejecta rays of Stickney crater against a black background.",
-      "category": "orbital",
+      "score": 8,
+      "subject": "A scale model of the Soviet Phobos spacecraft in a display case at the Polytechnical Museum, Moscow, 2010.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -4319,8 +4328,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:01:38.688Z",
-      "scoring_cost_usd": 0.0066960000000000006
+      "scored_at": "2026-11-08T08:22:32.109Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/phoenix/01.jpg": {
       "score": 7,
@@ -13553,25 +13563,26 @@
       "scoring_cost_usd": 0.006515999999999999
     },
     "/images/fleet-galleries/hayabusa-2/04.jpg": {
-      "score": 2,
-      "subject": "Infographic diagram showing organic molecules discovered on asteroid Ryugu, with molecular structure illustrations and text labels overlaid on an asteroid surface photograph.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Rendering of Hayabusa2 with its solar panels near the asteroid Ryugu.",
+      "category": "render",
       "focal_point": {
-        "x": 0.35,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/hayabusa-2/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:02:01.436Z",
-      "scoring_cost_usd": 0.005271
+      "scored_at": "2026-11-08T08:15:58.291Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/htv/04.jpg": {
-      "score": 2,
-      "subject": "Exploded-view technical diagram of a modular spacecraft showing pressurized carrier, unpressurized carrier, avionics module, and propulsion module with labeled components.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The HTV-9 cargo ship held by the Canadarm2 robotic arm at the International Space Station, May 2020.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -13579,10 +13590,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/htv/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:02:10.591Z",
-      "scoring_cost_usd": 0.005826
+      "scored_at": "2026-11-08T08:15:58.375Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/im-1-odysseus/02.jpg": {
       "score": 5,
@@ -13697,9 +13709,9 @@
       "scoring_cost_usd": 0.006666
     },
     "/images/fleet-galleries/lunokhod-1/04.jpg": {
-      "score": 3,
-      "subject": "1971 Soviet postage stamp depicting the Lunokhod-1 lunar rover on the Moon's surface",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A replica of Lunokhod 1 with its solar-panel lid raised at the Evergreen Aviation & Space Museum, McMinnville, Oregon.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -13707,10 +13719,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/lunokhod-1/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:02:49.556Z",
-      "scoring_cost_usd": 0.005586
+      "scored_at": "2026-11-08T08:21:00.479Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/lunokhod-2/05.jpg": {
       "score": 6,
@@ -13729,20 +13742,21 @@
       "scoring_cost_usd": 0.006693
     },
     "/images/fleet-galleries/lvm3/02.jpg": {
-      "score": 2,
-      "subject": "Illustrated diagram of ISRO GSLV rocket with Indian flag and text labels",
-      "category": "diagram",
+      "score": 8,
+      "subject": "LVM3 M4 climbing after lift-off from Sriharikota with Chandrayaan-3, 14 July 2023.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/lvm3/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:02:56.599Z",
-      "scoring_cost_usd": 0.005865
+      "scored_at": "2026-11-08T08:21:00.548Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/lvm3/04.jpg": {
       "score": 9,
@@ -13761,9 +13775,9 @@
       "scoring_cost_usd": 0.007884
     },
     "/images/fleet-galleries/mangalyaan/02.jpg": {
-      "score": 2,
-      "subject": "Diagram showing orbital paths of Earth and Mars around the Sun with transfer trajectory arcs, labeled in Malayalam script.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Technicians working on the Mars Orbiter Mission spacecraft in a clean room at the ISRO Satellite Centre, Bengaluru, 2013.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -13771,10 +13785,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/mangalyaan/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:03:04.260Z",
-      "scoring_cost_usd": 0.006546
+      "scored_at": "2026-11-08T08:21:00.565Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mangalyaan/05.jpg": {
       "score": 9,
@@ -13809,41 +13824,43 @@
       "scoring_cost_usd": 0.004821
     },
     "/images/fleet-galleries/mars-express/05.jpg": {
-      "score": 2,
-      "subject": "ESA diagram illustrating radio occultation between Mars Express and ExoMars TGO spacecraft over Mars, with annotated explanation text.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "ESA artist's impression of Mars Express above Martian terrain imaged by its own stereo camera.",
+      "category": "render",
       "focal_point": {
         "x": 0.5,
-        "y": 0.4
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/mars-express/05.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:03:14.783Z",
-      "scoring_cost_usd": 0.005031
+      "scored_at": "2026-11-08T08:21:00.790Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/phobos-2/04.jpg": {
-      "score": 4,
-      "subject": "Annotated composite image showing a detailed full Moon alongside labeled point-source sightings of Mars moons Phobos and Deimos against a black sky.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Artist's concept of the Soviet Phobos spacecraft near Mars with a small lander beside it.",
+      "category": "render",
       "focal_point": {
-        "x": 0.65,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/phobos-2/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:03:18.884Z",
-      "scoring_cost_usd": 0.005856
+      "scored_at": "2026-11-08T08:22:32.130Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/pragyan/01.jpg": {
-      "score": 2,
-      "subject": "Annotated engineering diagram of a Mars rover (MER-style) with labeled components including solar panels, antennae, rocker-bogie suspension, and electronics box.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "An engineering model of the Pragyan rover with gold foil, solar panel and six wheels, at an exhibition in 2018.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -13851,10 +13868,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/pragyan/01.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:03:25.327Z",
-      "scoring_cost_usd": 0.004131
+      "scored_at": "2026-11-08T08:22:32.212Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/pragyan/02.jpg": {
       "score": 6,
@@ -13889,9 +13907,9 @@
       "scoring_cost_usd": 0.004821000000000001
     },
     "/images/fleet-galleries/r-7-vostok/02.jpg": {
-      "score": 2,
-      "subject": "Black-and-white line drawing diagram of a Vostok-style Soviet rocket showing full vehicle stack from engines to payload fairing.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A Vostok rocket on its display gantry outside the Tsiolkovsky museum of cosmonautics, Kaluga, 2022.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -13899,10 +13917,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/r-7-vostok/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T01:03:36.244Z",
-      "scoring_cost_usd": 0.00618
+      "scored_at": "2026-11-08T08:22:32.477Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/r-7-vostok/04.jpg": {
       "score": 2,
@@ -13985,20 +14004,21 @@
       "scoring_cost_usd": 0.007782
     },
     "/images/fleet-galleries/hitomi/02.jpg": {
-      "score": 2,
-      "subject": "Labelled diagram of the ASTRO-H (Hitomi) X-ray astronomy satellite showing major components including mirrors, optical bench, solar arrays, and detectors.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "An H-IIA rocket lifting off from Tanegashima with the Hitomi X-ray satellite, 17 February 2016.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/hitomi/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T02:36:38.159Z",
-      "scoring_cost_usd": 0.00504
+      "scored_at": "2026-11-08T08:15:58.301Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/krechet-94/02.jpg": {
       "score": 7,
@@ -14575,20 +14595,21 @@
       "scoring_cost_usd": 0.00558
     },
     "/images/fleet-galleries/oneweb/01.jpg": {
-      "score": 3,
-      "subject": "Wide-angle exterior view of a low-rise white facility building surrounded by palm trees and open lawn, likely a space industry campus in Florida.",
-      "category": "other",
+      "score": 8,
+      "subject": "OneWeb satellites stacked on their dispenser inside the open LVM3 fairing at Sriharikota, October 2022.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.55
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/oneweb/01.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:21:58.384Z",
-      "scoring_cost_usd": 0.003915
+      "scored_at": "2026-11-08T08:22:32.082Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/planet-labs/01.jpg": {
       "score": 9,
@@ -18358,9 +18379,9 @@
       "scoring_cost_usd": 0.007149
     },
     "/images/fleet-galleries/gaganyaan/04.jpg": {
-      "score": 2,
-      "subject": "A illustrated diagram or infographic showing a spacecraft concept with heat shield, descent stage, and thruster assembly, surrounded by detail callout circles.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A flown ISRO crew module capsule on public display.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -18368,10 +18389,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/gaganyaan/04.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:49:45.763Z",
-      "scoring_cost_usd": 0.007779
+      "scored_at": "2026-11-08T08:15:57.344Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/gaganyaan/03.jpg": {
       "score": 4,
@@ -18390,25 +18412,26 @@
       "scoring_cost_usd": 0.004557
     },
     "/images/fleet-galleries/gaia/02.jpg": {
-      "score": 7,
-      "subject": "Artist's concept of a red-orange banded brown dwarf or rogue planet floating against the Milky Way starfield background.",
-      "category": "render",
+      "score": 8,
+      "subject": "A model of the Gaia spacecraft with its large circular sunshield at an exhibition, 2014.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.72,
-        "y": 0.55
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/gaia/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:49:52.831Z",
-      "scoring_cost_usd": 0.004701
+      "scored_at": "2026-11-08T08:15:57.580Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/gaia/03.jpg": {
-      "score": 2,
-      "subject": "A detailed top-down map of the Milky Way's hot star density based on Gaia DR3 data, showing OB associations, masers, HII regions, and open clusters within 5000 parsecs.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "ESA artist's impression of Gaia scanning the Milky Way.",
+      "category": "render",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -18416,10 +18439,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/gaia/03.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:28:52.355Z",
-      "scoring_cost_usd": 0.007131
+      "scored_at": "2026-11-08T08:15:57.618Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/gaia/01.jpg": {
       "score": 9,
@@ -18486,8 +18510,8 @@
       "scoring_cost_usd": 0.007626
     },
     "/images/fleet-galleries/h3/04.jpg": {
-      "score": 5,
-      "subject": "Live telemetry screen capture from JAXA H3-F7 rocket launch showing flight trajectory overlay with stage separation events at T+3:31 above Earth's cloud-covered surface.",
+      "score": 8,
+      "subject": "The H3 rocket lifting off from Tanegashima on Test Flight 2, 17 February 2024.",
       "category": "launch",
       "focal_point": {
         "x": 0.5,
@@ -18498,15 +18522,16 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:51:04.201Z",
-      "scoring_cost_usd": 0.005016
+      "scored_at": "2026-11-08T08:15:58.280Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/hubble/02.jpg": {
       "score": 8,
-      "subject": "Space Shuttle Discovery mounted on its external tank and solid rocket boosters on the launch pad at Kennedy Space Center, viewed from a close elevated angle showing the orbiter's fuselage markings.",
-      "category": "launch",
+      "subject": "The Hubble Space Telescope redeployed above Earth after the STS-109 servicing mission, 9 March 2002.",
+      "category": "spacecraft",
       "focal_point": {
-        "x": 0.55,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
@@ -18514,8 +18539,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:51:58.551Z",
-      "scoring_cost_usd": 0.007389
+      "scored_at": "2026-11-08T08:19:19.429Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/hubble/03.jpg": {
       "score": 8,
@@ -18535,19 +18561,20 @@
     },
     "/images/fleet-galleries/hubble/04.jpg": {
       "score": 8,
-      "subject": "Aerial overhead view of a Space Shuttle stack — orbiter, orange external tank, and two solid rocket boosters — mounted on the Mobile Launcher Platform during rollout at Kennedy Space Center.",
+      "subject": "Hubble against black sky as Endeavour closes in on the first servicing mission, STS-61, December 1993.",
       "category": "spacecraft",
       "focal_point": {
-        "x": 0.48,
-        "y": 0.62
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/hubble/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:52:05.628Z",
-      "scoring_cost_usd": 0.007527
+      "scored_at": "2026-11-08T08:19:19.441Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/hubble/01.jpg": {
       "score": 9,
@@ -18567,19 +18594,20 @@
     },
     "/images/fleet-galleries/hubble/05.jpg": {
       "score": 8,
-      "subject": "Space Shuttle Discovery mounted on its external tank and solid rocket boosters on the launch pad at Kennedy Space Center, with an American flag in the foreground.",
-      "category": "launch",
+      "subject": "Hubble held by Discovery's robot arm during its deployment on STS-31, 25 April 1990.",
+      "category": "spacecraft",
       "focal_point": {
-        "x": 0.62,
-        "y": 0.55
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/hubble/05.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:52:12.297Z",
-      "scoring_cost_usd": 0.007268999999999999
+      "scored_at": "2026-11-08T08:19:19.470Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/jwst/01.jpg": {
       "score": 2,
@@ -18662,8 +18690,8 @@
       "scoring_cost_usd": 0.0078119999999999995
     },
     "/images/fleet-galleries/kepler/05.jpg": {
-      "score": 6,
-      "subject": "Artist's concept size comparison of an exoplanet (green-hued gas giant) alongside Jupiter, shown against a dark background.",
+      "score": 8,
+      "subject": "Artist's concept of the Kepler spacecraft with its sunshade and stars behind it.",
       "category": "render",
       "focal_point": {
         "x": 0.5,
@@ -18672,10 +18700,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/kepler/05.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:54:38.280Z",
-      "scoring_cost_usd": 0.0065190000000000005
+      "scored_at": "2026-11-08T08:19:19.665Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/kepler/01.jpg": {
       "score": 9,
@@ -18695,51 +18724,54 @@
     },
     "/images/fleet-galleries/kepler/02.jpg": {
       "score": 8,
-      "subject": "Artist's concept of a dark exoplanet transiting in front of a large orange-red star with solar prominences and a debris disk visible in the background.",
-      "category": "render",
+      "subject": "Technicians preparing the Kepler spacecraft at Astrotech, Titusville, Florida, February 2009.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.55,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/kepler/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:54:50.212Z",
-      "scoring_cost_usd": 0.006609
+      "scored_at": "2026-11-08T08:19:19.643Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/kepler/03.jpg": {
-      "score": 7,
-      "subject": "Artist's concept of an Earth-like exoplanet orbiting close to an orange dwarf star with a smaller body visible in the background",
-      "category": "render",
+      "score": 8,
+      "subject": "The Kepler spacecraft upright in the Astrotech processing facility with technicians, February 2009.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.45,
-        "y": 0.42
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/kepler/03.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:54:52.968Z",
-      "scoring_cost_usd": 0.006204
+      "scored_at": "2026-11-08T08:19:19.653Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/kepler/04.jpg": {
-      "score": 7,
-      "subject": "Artist's concept of the Kepler-90 star system showing eight planets arranged in a line from the host star, varying in size from small rocky worlds to large gas giants.",
+      "score": 8,
+      "subject": "Artist's concept of the Kepler spacecraft in space.",
       "category": "render",
       "focal_point": {
-        "x": 0.55,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/kepler/04.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:55:07.848Z",
-      "scoring_cost_usd": 0.004788
+      "scored_at": "2026-11-08T08:19:19.661Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/long-march-7/02.jpg": {
       "score": 7,
@@ -23819,20 +23851,21 @@
       "scoring_cost_usd": 0.007446
     },
     "/images/fleet-galleries/lunar-orbiter-3/03.jpg": {
-      "score": 2,
-      "subject": "Black and white technical diagram showing two circular illustrations depicting trajectory or impact sequence with arrows and shaded regions.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "An Atlas-Agena lifting off from Complex 13 at Cape Kennedy with Lunar Orbiter III, 5 February 1967.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:03:37.395Z",
-      "scoring_cost_usd": 0.003711
+      "scored_at": "2026-11-08T08:21:00.438Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/lunar-orbiter-3/04.jpg": {
       "score": 8,
@@ -23915,20 +23948,21 @@
       "scoring_cost_usd": 0.006579
     },
     "/images/fleet-galleries/lunar-orbiter-4/05.jpg": {
-      "score": 2,
-      "subject": "Technical diagram showing two circular shapes with antenna-like lines, likely a schematic illustration of Sputnik or a similar satellite concept.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "An Atlas-Agena rising from Cape Kennedy with Lunar Orbiter 4, 4 May 1967.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:03:59.248Z",
-      "scoring_cost_usd": 0.004656
+      "scored_at": "2026-11-08T08:21:00.456Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/lunar-orbiter-5/01.jpg": {
       "score": 7,
@@ -23995,9 +24029,9 @@
       "scoring_cost_usd": 0.007296
     },
     "/images/fleet-galleries/lunar-orbiter-5/05.jpg": {
-      "score": 2,
-      "subject": "Two circular diagrams showing particle distribution and shaded region patterns, likely a scientific or geological stereonet illustration.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A full-size Lunar Orbiter engineering model hanging in the Smithsonian National Air and Space Museum, 2012.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -24005,10 +24039,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:04:17.074Z",
-      "scoring_cost_usd": 0.0038580000000000003
+      "scored_at": "2026-11-08T08:21:00.469Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/lunar-prospector/01.jpg": {
       "score": 7,
@@ -24107,9 +24142,9 @@
       "scoring_cost_usd": 0.0042450000000000005
     },
     "/images/fleet-galleries/mars-odyssey/04.jpg": {
-      "score": 2,
-      "subject": "Diagram showing the 2001 Mars Odyssey mission trajectory and mission phase annotations including launch, cruise, orbit insertion, aerobraking, and science relay phases.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Technicians at Kennedy Space Center lifting the 2001 Mars Odyssey spacecraft during launch preparations, 2001.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -24117,10 +24152,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:04:48.633Z",
-      "scoring_cost_usd": 0.006213
+      "scored_at": "2026-11-08T08:21:00.845Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mars2-orbiter/01.jpg": {
       "score": 3,
@@ -24139,20 +24175,21 @@
       "scoring_cost_usd": 0.007581
     },
     "/images/fleet-galleries/mars2-orbiter/02.jpg": {
-      "score": 3,
-      "subject": "Soviet postage stamp commemorating the Mars 2 spacecraft mission dated 27 November 1971, showing an illustrated probe near Mars.",
-      "category": "other",
+      "score": 8,
+      "subject": "A replica of the Mars 3 spacecraft, the same design as Mars 2, in the Tsiolkovsky State Museum of the History of Cosmonautics, Kaluga, 2016.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.45,
-        "y": 0.58
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:05:00.301Z",
-      "scoring_cost_usd": 0.007878
+      "scored_at": "2026-11-08T08:21:00.586Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mars2-orbiter/03.jpg": {
       "score": 2,
@@ -24203,20 +24240,21 @@
       "scoring_cost_usd": 0.00489
     },
     "/images/fleet-galleries/mars3-orbiter/03.jpg": {
-      "score": 4,
-      "subject": "Annotated diagram composite showing candidate hardware remnants of the Soviet Mars-3 lander on the Martian surface, with labeled insets for parachute, retrorocket, lander, and heat shield candidates from HiRISE imagery.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A replica of the Mars 3 spacecraft with its descent module on top, in the Tsiolkovsky museum, Kaluga, 2022.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.4
+        "y": 0.5
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:05:36.247Z",
-      "scoring_cost_usd": 0.007941
+      "scored_at": "2026-11-08T08:21:00.630Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mars3-orbiter/04.jpg": {
       "score": 3,
@@ -24235,8 +24273,8 @@
       "scoring_cost_usd": 0.007731
     },
     "/images/fleet-galleries/mars3-orbiter/05.jpg": {
-      "score": 6,
-      "subject": "Two Soviet commemorative medals for the Mars 3 mission (1971), showing the lander on the Martian surface with a Mars-to-Earth signal arc on the obverse and the USSR state emblem on the reverse.",
+      "score": 8,
+      "subject": "A replica of the Mars 3 lander on its stand in the Tsiolkovsky museum, Kaluga, 2016.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -24247,8 +24285,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:05:43.960Z",
-      "scoring_cost_usd": 0.007734
+      "scored_at": "2026-11-08T08:21:00.709Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mars6/01.jpg": {
       "score": 5,
@@ -24395,52 +24434,55 @@
       "scoring_cost_usd": 0.008013
     },
     "/images/fleet-galleries/messenger/03.jpg": {
-      "score": 4,
-      "subject": "Annotated orbital map of the Moon's north polar region showing permanently shadowed craters with yellow highlights indicating water ice deposits detected by spacecraft instruments.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.38,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:06:23.354Z",
-      "scoring_cost_usd": 0.007806
-    },
-    "/images/fleet-galleries/messenger/04.jpg": {
-      "score": 6,
-      "subject": "False-color gravity or magnetic anomaly map overlaid on a detailed grayscale image of the Moon, showing two prominent red hotspot regions against a cratered lunar surface.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.48,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:06:31.112Z",
-      "scoring_cost_usd": 0.007944
-    },
-    "/images/fleet-galleries/molniya/02.jpg": {
-      "score": 2,
-      "subject": "Diagram showing an orbital trajectory around Earth with numbered time markers in hours.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Delta II carrying MESSENGER floodlit on its pad at Cape Canaveral before the August 2004 launch.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.6
+        "y": 0.5
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:06:37.881Z",
-      "scoring_cost_usd": 0.003558
+      "scored_at": "2026-11-08T08:21:00.868Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
+    },
+    "/images/fleet-galleries/messenger/04.jpg": {
+      "score": 8,
+      "subject": "Technicians beside the MESSENGER spacecraft during preparations at Kennedy Space Center, June 2004.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": ""
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-11-08T08:21:00.877Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
+    },
+    "/images/fleet-galleries/molniya/02.jpg": {
+      "score": 8,
+      "subject": "A Molniya communications satellite hanging in the Cosmo Isle Hakui space museum, Japan, 2009.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": ""
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-11-08T08:22:31.958Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/pioneer-11/01.jpg": {
       "score": 6,
@@ -24459,20 +24501,21 @@
       "scoring_cost_usd": 0.007704
     },
     "/images/fleet-galleries/pioneer-11/02.jpg": {
-      "score": 2,
-      "subject": "Reproduction or print of the Pioneer plaque showing human figures, pulsar map, and solar system diagram intended as a message to extraterrestrial intelligence.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Pioneer 11 inside the opened launch fairing at Cape Kennedy, 16 March 1973.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:06:45.348Z",
-      "scoring_cost_usd": 0.007821
+      "scored_at": "2026-11-08T08:22:32.132Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/pioneer-11/03.jpg": {
       "score": 6,
@@ -24571,9 +24614,9 @@
       "scoring_cost_usd": 0.00351
     },
     "/images/fleet-galleries/salyut-2/01.jpg": {
-      "score": 2,
-      "subject": "Russian-language labeled diagram of a Soyuz spacecraft showing compartments including the orbital module, descent module, and service module.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A full-size Almaz military space-station hull, the type flown as Salyut 2, on display at Baikonur.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -24581,10 +24624,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:07:12.874Z",
-      "scoring_cost_usd": 0.007686
+      "scored_at": "2026-11-08T08:22:32.507Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/salyut-3/01.jpg": {
       "score": 2,
@@ -32450,6 +32494,305 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-08T08:08:47.300Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/galileo-gnss/02.jpg": {
+      "score": 8,
+      "subject": "A Galileo navigation satellite in flight configuration in ESA's test centre for acoustic testing.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:57.649Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/galileo-gnss/04.jpg": {
+      "score": 8,
+      "subject": "Artist's impression of the Galileo navigation satellite constellation around Earth.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:57.661Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/glonass/04.jpg": {
+      "score": 8,
+      "subject": "A Soyuz-2.1b lifting off from Plesetsk with the GLONASS-K2 navigation satellite, 7 August 2023.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:57.676Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/glonass/05.jpg": {
+      "score": 8,
+      "subject": "A model of a GLONASS navigation satellite with its solar panels and antenna array.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:57.685Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/goes-noaa/04.jpg": {
+      "score": 8,
+      "subject": "The GOES-R weather satellite in the clean room at Astrotech, Titusville, Florida, before launch, September 2016.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:57.698Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/goes-noaa/05.jpg": {
+      "score": 8,
+      "subject": "The GOES-U weather satellite on its stand at Astrotech Space Operations, Titusville, Florida, June 2024.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:57.725Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/gps-gnss/02.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 carrying the GPS III-SV09 satellite lifting off from Cape Canaveral, January 2026.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:57.919Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/gps-gnss/03.jpg": {
+      "score": 8,
+      "subject": "Three GPS III satellites on their ground stands in a clean room before launch.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:58.192Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/gps-gnss/04.jpg": {
+      "score": 8,
+      "subject": "GPS-0012, a qualification test vehicle for the GPS Block II satellites, at the San Diego Air & Space Museum.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:58.209Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/gps-gnss/05.jpg": {
+      "score": 8,
+      "subject": "An unlaunched GPS Block II-A satellite on display at the San Diego Air & Space Museum.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:58.239Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/h-1/01.jpg": {
+      "score": 8,
+      "subject": "A Rocketdyne H-1 engine on display at the Arkansas Air & Military Museum.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:58.247Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/hitomi/03.jpg": {
+      "score": 8,
+      "subject": "The microcalorimeter array at the heart of Hitomi's Soft X-ray Spectrometer.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:15:58.311Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/inmarsat/02.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 lifting off from Pad 39A carrying Inmarsat-5 F4, 15 May 2017.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:19:19.487Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/inmarsat/03.jpg": {
+      "score": 8,
+      "subject": "The Falcon 9 carrying Inmarsat-5 F4 on Pad 39A before launch, May 2017.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:19:19.510Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/inmarsat/05.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 carrying Inmarsat-6 F2 launching from Space Launch Complex 40, Cape Canaveral, 17 February 2023.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:19:19.526Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/iridium-next/02.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 lifting off from Vandenberg with Iridium NEXT satellites on the Iridium-2 mission, 25 June 2017.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:19:19.612Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/landsat/04.jpg": {
+      "score": 8,
+      "subject": "An Atlas V carrying Landsat 9 lifting off from Vandenberg Space Force Base, 27 September 2021.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:19:19.668Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/landsat/05.jpg": {
+      "score": 8,
+      "subject": "An Atlas V launching Landsat 8 from Vandenberg Air Force Base, 11 February 2013.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:19:19.722Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/n1/02.jpg": {
+      "score": 8,
+      "subject": "A scale model of the Soviet N1 moon rocket in the Tsiolkovsky museum of cosmonautics, Kaluga, 2016.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:22:31.990Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/planet-labs/02.jpg": {
+      "score": 8,
+      "subject": "Two Planet Labs Dove satellites drifting away from the International Space Station, 17 May 2016.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:22:32.148Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/planet-labs/03.jpg": {
+      "score": 8,
+      "subject": "Cupertino, California, imaged by Planet Labs' Dove satellites, 26 October 2016.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:22:32.175Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/planet-labs/05.jpg": {
+      "score": 8,
+      "subject": "The Satish Dhawan Space Centre on the Indian coast, imaged by Planet Labs' Dove satellites, 13 February 2017.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:22:32.193Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/plesetsk-43/02.jpg": {
+      "score": 8,
+      "subject": "A Soyuz-2.1v on its railway transporter-erector being rolled out at Plesetsk, July 2019.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:22:32.204Z",
       "scoring_cost_usd": 0
     }
   }

@@ -29,7 +29,7 @@
    "approved_at": "2026-11-06"
   },
   "buran": {
-   "slot": "04.jpg",
+   "slot": "03.jpg",
    "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
    "approved_at": "2026-06-23"
   },
@@ -79,7 +79,7 @@
    "approved_at": "2026-06-12"
   },
   "falcon-9": {
-   "slot": "04.jpg",
+   "slot": "03.jpg",
    "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
    "approved_at": "2026-06-12"
   },
@@ -214,12 +214,12 @@
    "approved_at": "2026-06-12"
   },
   "yutu": {
-   "slot": "04.jpg",
+   "slot": "03.jpg",
    "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram; subject names a different entity than yutu",
    "approved_at": "2026-06-12"
   },
   "yutu-2": {
-   "slot": "03.jpg",
+   "slot": "01.jpg",
    "reason": "subject names a different entity than yutu-2",
    "approved_at": "2026-06-12"
   },
@@ -249,12 +249,12 @@
    "approved_at": "2026-06-12"
   },
   "salyut-4": {
-   "slot": "05.jpg",
+   "slot": "04.jpg",
    "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
    "approved_at": "2026-06-12"
   },
   "salyut-5": {
-   "slot": "05.jpg",
+   "slot": "04.jpg",
    "reason": "score: 3 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than salyut-5",
    "approved_at": "2026-06-12"
   },
@@ -289,11 +289,6 @@
    "approved_at": "2026-06-20"
   },
   "vostok-5": {
-   "slot": "02.jpg",
-   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
-   "approved_at": "2026-06-20"
-  },
-  "vostok-6": {
    "slot": "02.jpg",
    "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
    "approved_at": "2026-06-20"
@@ -444,7 +439,7 @@
    "approved_at": "2026-09-12"
   },
   "change6": {
-   "slot": "05.jpg",
+   "slot": "04.jpg",
    "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
    "approved_at": "2026-09-12"
   },
@@ -494,7 +489,7 @@
    "approved_at": "2026-11-06"
   },
   "salyut-1": {
-   "slot": "04.jpg",
+   "slot": "03.jpg",
    "reason": "hero review 2026-11-06: clean render of the station; 01 was a line drawing",
    "approved_at": "2026-11-06"
   },
@@ -516,11 +511,6 @@
   "vulcan": {
    "slot": "04.jpg",
    "reason": "hero review 2026-11-06: Vulcan on the pad; 01 was a dark sky with a tiny flame",
-   "approved_at": "2026-11-06"
-  },
-  "salyut-2": {
-   "slot": "02.jpg",
-   "reason": "hero review 2026-11-06: unlabelled drawing; 01 had Russian callout labels",
    "approved_at": "2026-11-06"
   },
   "mars2-orbiter": {

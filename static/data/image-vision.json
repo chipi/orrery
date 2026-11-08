@@ -839,22 +839,6 @@
     },
     "/images/fleet-galleries/apollo-csm-block-ii/03.jpg": {
       "score": 9,
-      "subject": "Earth rising above the lunar horizon as seen from lunar orbit, with the cratered Moon surface in the foreground and Earth half-illuminated against the black void of space.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/apollo-csm-block-ii/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:42:33.182Z",
-      "scoring_cost_usd": 0.0063809999999999995
-    },
-    "/images/fleet-galleries/apollo-csm-block-ii/04.jpg": {
-      "score": 9,
       "subject": "Earthrise view from lunar orbit showing the cratered Moon surface in the foreground with Earth and a small spacecraft rising above the horizon against black space.",
       "category": "orbital",
       "focal_point": {
@@ -862,14 +846,14 @@
         "y": 0.58
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/apollo-csm-block-ii/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/apollo-csm-block-ii/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T08:42:36.413Z",
       "scoring_cost_usd": 0.006651
     },
-    "/images/fleet-galleries/apollo-csm-block-ii/05.jpg": {
+    "/images/fleet-galleries/apollo-csm-block-ii/04.jpg": {
       "score": 8,
       "subject": "The Apollo 15 command and service module in lunar orbit, seen from the lunar module, 2 August 1971.",
       "category": "spacecraft",
@@ -878,7 +862,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/apollo-csm-block-ii/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/apollo-csm-block-ii/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -1358,22 +1342,6 @@
       "scoring_cost_usd": 0.005451
     },
     "/images/fleet-galleries/buran/02.jpg": {
-      "score": 9,
-      "subject": "Close-up view of the Space Shuttle orbiter's aft section showing three main engine nozzles, OMS pods, and thermal protection tiles against a blue sky.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.62
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/buran/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:44:37.741Z",
-      "scoring_cost_usd": 0.007755
-    },
-    "/images/fleet-galleries/buran/03.jpg": {
       "score": 8,
       "subject": "Soviet Buran space shuttle orbiter mounted atop its Antonov An-225 Mriya carrier aircraft against a clear blue sky.",
       "category": "spacecraft",
@@ -1382,14 +1350,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/buran/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/buran/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T08:44:40.740Z",
       "scoring_cost_usd": 0.004626
     },
-    "/images/fleet-galleries/buran/04.jpg": {
+    "/images/fleet-galleries/buran/03.jpg": {
       "score": 9,
       "subject": "Soviet Antonov An-225 Mriya cargo aircraft carrying the Buran space shuttle orbiter in flight against a pale blue sky.",
       "category": "spacecraft",
@@ -1398,14 +1366,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/buran/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/buran/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T08:44:43.534Z",
       "scoring_cost_usd": 0.005376
     },
-    "/images/fleet-galleries/buran/05.jpg": {
+    "/images/fleet-galleries/buran/04.jpg": {
       "score": 7,
       "subject": "Soviet Buran space shuttle orbiter on outdoor static display, shown in profile view with Cyrillic nameplate visible on fuselage.",
       "category": "spacecraft",
@@ -1414,7 +1382,7 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/buran/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/buran/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -1503,22 +1471,6 @@
     },
     "/images/fleet-galleries/cassini/02.jpg": {
       "score": 9,
-      "subject": "A large multi-engine rocket lifts off at night surrounded by brilliant engine exhaust and billowing steam clouds from the launch pad.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/cassini/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:45:30.888Z",
-      "scoring_cost_usd": 0.007536
-    },
-    "/images/fleet-galleries/cassini/03.jpg": {
-      "score": 9,
       "subject": "Saturn's moon Titan photographed by the Cassini spacecraft, showing its thick hazy atmosphere with subtle surface features visible through the haze, with Saturn's rings visible as a thin line bisecting the background.",
       "category": "orbital",
       "focal_point": {
@@ -1526,14 +1478,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/cassini/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/cassini/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T08:45:33.960Z",
       "scoring_cost_usd": 0.004758
     },
-    "/images/fleet-galleries/cassini/04.jpg": {
+    "/images/fleet-galleries/cassini/03.jpg": {
       "score": 8,
       "subject": "Night rocket launch streaking upward through clouds, illuminating the sky and water, with a support vessel silhouetted in the foreground.",
       "category": "launch",
@@ -1542,14 +1494,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/cassini/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/cassini/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T08:45:36.939Z",
       "scoring_cost_usd": 0.007239
     },
-    "/images/fleet-galleries/cassini/05.jpg": {
+    "/images/fleet-galleries/cassini/04.jpg": {
       "score": 8,
       "subject": "A large rocket lifts off at night from a launch complex, surrounded by massive plumes of flame and exhaust smoke against a black sky.",
       "category": "launch",
@@ -1558,7 +1510,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/cassini/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/cassini/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -1582,22 +1534,6 @@
       "scoring_cost_usd": 0.004584
     },
     "/images/fleet-galleries/change-3/02.jpg": {
-      "score": 9,
-      "subject": "Chang'e-4 lander on the lunar far side surface with Yutu-2 rover tracks visible in the foreground regolith.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/change-3/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:46:28.534Z",
-      "scoring_cost_usd": 0.004263
-    },
-    "/images/fleet-galleries/change-3/03.jpg": {
       "score": 8,
       "subject": "A full-size mockup of the Yutu rover on display at the National Museum of China, 2023.",
       "category": "hardware",
@@ -1606,7 +1542,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/change-3/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/change-3/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -1954,22 +1890,6 @@
       "subject_match": true
     },
     "/images/fleet-galleries/falcon-9/02.jpg": {
-      "score": 2,
-      "subject": "Annotated technical line-drawing diagram of a SpaceX Falcon 9 rocket with Dragon spacecraft, labeling major components including stages, engines, grid fins, and landing legs.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/falcon-9/02.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:48:59.513Z",
-      "scoring_cost_usd": 0.006687
-    },
-    "/images/fleet-galleries/falcon-9/03.jpg": {
       "score": 6,
       "subject": "A rendered illustration of a SpaceX Falcon 9 rocket with NASA branding and Crew Dragon capsule on a black background.",
       "category": "render",
@@ -1978,14 +1898,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/falcon-9/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/falcon-9/02.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-05-22T08:49:06.132Z",
       "scoring_cost_usd": 0.007866
     },
-    "/images/fleet-galleries/falcon-9/04.jpg": {
+    "/images/fleet-galleries/falcon-9/03.jpg": {
       "score": 8,
       "subject": "SpaceX Crew Dragon capsule being lifted by overhead crane during integration processing inside a large assembly facility, with the Falcon 9 rocket fairing visible to the right.",
       "category": "hardware",
@@ -1994,27 +1914,11 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/falcon-9/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/falcon-9/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T08:49:09.794Z",
-      "scoring_cost_usd": 0.007344
-    },
-    "/images/fleet-galleries/falcon-9/05.jpg": {
-      "score": 8,
-      "subject": "A SpaceX Dragon spacecraft capsule being processed or mated to a rocket in a processing facility, suspended by yellow overhead crane rigging with an American flag visible in the background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.48,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/falcon-9/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:49:13.405Z",
       "scoring_cost_usd": 0.007344
     },
     "/images/fleet-galleries/falcon-heavy/01.jpg": {
@@ -3946,38 +3850,6 @@
       "scored_at": "2026-05-22T08:59:50.457Z",
       "scoring_cost_usd": 0.007941
     },
-    "/images/fleet-galleries/n1/04.jpg": {
-      "score": 2,
-      "subject": "Book cover for 'Beyond Earth: A Chronicle of Deep Space Exploration, 1958–2016' by Asif A. Siddiqi, featuring stylized silhouette icons of various space probes and rovers.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/n1/04.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:59:54.636Z",
-      "scoring_cost_usd": 0.007854
-    },
-    "/images/fleet-galleries/n1/05.jpg": {
-      "score": 2,
-      "subject": "Cover of NASA monograph 'The Spoken Word III: Recollections of Dryden History; The Shuttle Years' showing a Space Shuttle atop a 747 carrier aircraft in flight.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.75
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/n1/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:59:59.756Z",
-      "scoring_cost_usd": 0.008028
-    },
     "/images/fleet-galleries/new-shepard/02.jpg": {
       "score": 2,
       "subject": "Group of people including a man in a suit signing a document at a counter with a Blue Origin hard hat visible nearby.",
@@ -4075,22 +3947,6 @@
       "scored_at": "2026-05-22T09:00:30.449Z",
       "scoring_cost_usd": 0.007356
     },
-    "/images/fleet-galleries/opportunity/05.jpg": {
-      "score": 9,
-      "subject": "NASA/Boeing Delta II rocket carrying the Mars Exploration Rover Opportunity (MER-B) stands on the launch pad at Cape Canaveral, framed by the open mobile service tower doors.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/opportunity/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:00:34.163Z",
-      "scoring_cost_usd": 0.0072959999999999995
-    },
     "/images/fleet-galleries/orion/01.jpg": {
       "score": 7,
       "subject": "NASA Orion spacecraft with deployed solar array panels shown against a white background, displaying the crew module and service module configuration.",
@@ -4154,22 +4010,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T09:00:46.799Z",
       "scoring_cost_usd": 0.007629
-    },
-    "/images/fleet-galleries/orion/05.jpg": {
-      "score": 6,
-      "subject": "3D render of a NASA spacecraft lander concept featuring a crew capsule atop a descent stage with extended solar panels and landing legs on a white background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/orion/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-22T09:00:51.916Z",
-      "scoring_cost_usd": 0.007344000000000001
     },
     "/images/fleet-galleries/orlan-mks/01.jpg": {
       "score": 8,
@@ -4524,23 +4364,7 @@
       "scored_at": "2026-05-22T09:02:25.347Z",
       "scoring_cost_usd": 0.007476
     },
-    "/images/fleet-galleries/progress-m/01.jpg": {
-      "score": 9,
-      "subject": "Russian Mir space station photographed against black space, showing the full complex with multiple modules and solar arrays deployed.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.48,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/progress-m/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:59:13.758Z",
-      "scoring_cost_usd": 0.0065309999999999995
-    },
-    "/images/fleet-galleries/progress-m/03.jpg": {
+    "/images/fleet-galleries/progress-m/02.jpg": {
       "score": 9,
       "subject": "The Russian Mir space station photographed against a black space background, showing its full modular configuration with multiple docked modules, solar panels, and a Soyuz spacecraft attached.",
       "category": "orbital",
@@ -4549,14 +4373,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/progress-m/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/progress-m/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:02:29.025Z",
       "scoring_cost_usd": 0.006441
     },
-    "/images/fleet-galleries/progress-m/04.jpg": {
+    "/images/fleet-galleries/progress-m/03.jpg": {
       "score": 9,
       "subject": "The Russian Mir space station photographed from Space Shuttle Atlantis in low Earth orbit, with Earth's blue limb and cloud cover visible in the background.",
       "category": "orbital",
@@ -4565,14 +4389,14 @@
         "y": 0.52
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/progress-m/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/progress-m/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:02:32.304Z",
       "scoring_cost_usd": 0.005961
     },
-    "/images/fleet-galleries/progress-m/05.jpg": {
+    "/images/fleet-galleries/progress-m/04.jpg": {
       "score": 9,
       "subject": "Russian Mir space station photographed in orbit against the curved blue limb of Earth with cloud-covered ocean below.",
       "category": "orbital",
@@ -4581,7 +4405,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/progress-m/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/progress-m/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -4748,7 +4572,7 @@
       "scored_at": "2026-05-22T09:03:09.382Z",
       "scoring_cost_usd": 0.005751
     },
-    "/images/fleet-galleries/r-7-vostok/03.jpg": {
+    "/images/fleet-galleries/r-7-vostok/02.jpg": {
       "score": 3,
       "subject": "1969 Soviet postal stamp depicting the Vostok carrier rocket on its launch pad with service gantry, illustrated in a stylized graphic art style.",
       "category": "diagram",
@@ -4757,14 +4581,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/r-7-vostok/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/r-7-vostok/02.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
       "scored_at": "2026-05-22T09:03:13.742Z",
       "scoring_cost_usd": 0.007596
     },
-    "/images/fleet-galleries/r-7-vostok/05.jpg": {
+    "/images/fleet-galleries/r-7-vostok/04.jpg": {
       "score": 4,
       "subject": "Hungarian postage stamp from 1961 commemorating Yuri Gagarin's first human spaceflight, depicting a stylized rocket and launch structure.",
       "category": "diagram",
@@ -4773,7 +4597,7 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/r-7-vostok/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/r-7-vostok/04.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
@@ -4844,7 +4668,7 @@
       "scored_at": "2026-05-22T09:03:32.490Z",
       "scoring_cost_usd": 0.008211
     },
-    "/images/fleet-galleries/salyut-1/02.jpg": {
+    "/images/fleet-galleries/salyut-1/01.jpg": {
       "score": 4,
       "subject": "A paper craft or scale model of a Soviet Zarya (ЗАРЯ) / Salyut space station module displayed against a plain tan background.",
       "category": "hardware",
@@ -4853,14 +4677,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/salyut-1/02.1x1.jpg"
+        "1x1": "/images/fleet-galleries/salyut-1/01.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-05-22T09:03:40.815Z",
       "scoring_cost_usd": 0.006111
     },
-    "/images/fleet-galleries/salyut-1/05.jpg": {
+    "/images/fleet-galleries/salyut-1/04.jpg": {
       "score": 3,
       "subject": "Soviet 1978 Interkosmos postage stamp (32k) depicting a Soyuz spacecraft docking, a tracking ship, world map with orbital paths, and USSR/Polish flags.",
       "category": "diagram",
@@ -4869,7 +4693,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/salyut-1/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/salyut-1/04.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
@@ -5185,22 +5009,6 @@
     },
     "/images/fleet-galleries/skylab/02.jpg": {
       "score": 2,
-      "subject": "Labeled cutaway diagram of the Skylab Orbital Workshop showing interior compartments and systems.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/skylab/02.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T09:05:28.026Z",
-      "scoring_cost_usd": 0.0074010000000000005
-    },
-    "/images/fleet-galleries/skylab/03.jpg": {
-      "score": 2,
       "subject": "Extremely blurry and overexposed low-resolution video frame showing an indistinct interior space with unidentifiable equipment or hardware.",
       "category": "hardware",
       "focal_point": {
@@ -5208,14 +5016,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/skylab/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/skylab/02.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-05-22T09:05:32.400Z",
       "scoring_cost_usd": 0.008178
     },
-    "/images/fleet-galleries/skylab/04.jpg": {
+    "/images/fleet-galleries/skylab/03.jpg": {
       "score": 8,
       "subject": "Skylab against black sky from the Skylab 3 command module during the fly-around before docking, 28 July 1973, with its single solar wing.",
       "category": "spacecraft",
@@ -5224,7 +5032,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/skylab/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/skylab/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -5232,7 +5040,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/fleet-galleries/skylab/05.jpg": {
+    "/images/fleet-galleries/skylab/04.jpg": {
       "score": 2,
       "subject": "Cutaway artist concept illustration of a space station interior module showing crew quarters, storage, and robotic arms",
       "category": "diagram",
@@ -5241,7 +5049,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/skylab/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/skylab/04.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
@@ -5361,22 +5169,6 @@
       "scoring_cost_usd": 0.004464
     },
     "/images/fleet-galleries/sojourner/02.jpg": {
-      "score": 7,
-      "subject": "Three Mars rover models of different generations displayed outdoors on a plaza in front of the JPL building, showing the scale progression from Sojourner to MER to MSL Curiosity.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.6
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/sojourner/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:06:10.762Z",
-      "scoring_cost_usd": 0.004353
-    },
-    "/images/fleet-galleries/sojourner/03.jpg": {
       "score": 8,
       "subject": "NASA's Sojourner rover on the rocky Martian surface during the Mars Pathfinder mission, shown in black and white.",
       "category": "surface",
@@ -5385,14 +5177,14 @@
         "y": 0.62
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/sojourner/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/sojourner/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:06:13.594Z",
       "scoring_cost_usd": 0.0042959999999999995
     },
-    "/images/fleet-galleries/sojourner/04.jpg": {
+    "/images/fleet-galleries/sojourner/03.jpg": {
       "score": 6,
       "subject": "Black-and-white image of the Martian surface showing rocky terrain with boulders and sandy soil.",
       "category": "surface",
@@ -5401,14 +5193,14 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/sojourner/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/sojourner/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:06:16.109Z",
       "scoring_cost_usd": 0.0031260000000000003
     },
-    "/images/fleet-galleries/sojourner/05.jpg": {
+    "/images/fleet-galleries/sojourner/04.jpg": {
       "score": 9,
       "subject": "Sojourner rover sitting on the Mars Pathfinder lander petal with the rocky Martian surface and hills visible in the background.",
       "category": "surface",
@@ -5417,7 +5209,7 @@
         "y": 0.6
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/sojourner/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/sojourner/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -5434,22 +5226,6 @@
       },
       "variants": {
         "1x1": "/images/fleet-galleries/sokol-kv-2/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:06:21.994Z",
-      "scoring_cost_usd": 0.006843
-    },
-    "/images/fleet-galleries/sokol-m/01.jpg": {
-      "score": 7,
-      "subject": "Russian Sokol KV-2 pressure suit worn by cosmonaut V. Polyakov, displayed on a mannequin against a neutral gray background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/sokol-m/01.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -5731,23 +5507,7 @@
       "scored_at": "2026-05-22T09:07:25.969Z",
       "scoring_cost_usd": 0.00786
     },
-    "/images/fleet-galleries/soyuz-tma/02.jpg": {
-      "score": 9,
-      "subject": "A Soyuz rocket lifts off from Baikonur Cosmodrome with full engine ignition, support arms falling away and flame plume visible at the base.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/soyuz-tma/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:06:25.619Z",
-      "scoring_cost_usd": 0.007401
-    },
-    "/images/fleet-galleries/soyuz-tma/04.jpg": {
+    "/images/fleet-galleries/soyuz-tma/03.jpg": {
       "score": 9,
       "subject": "A Soyuz or Progress spacecraft photographed in low Earth orbit with Earth's limb and atmosphere visible in the background.",
       "category": "spacecraft",
@@ -5756,14 +5516,14 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/soyuz-tma/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/soyuz-tma/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:07:31.841Z",
       "scoring_cost_usd": 0.0053159999999999995
     },
-    "/images/fleet-galleries/soyuz-tma/05.jpg": {
+    "/images/fleet-galleries/soyuz-tma/04.jpg": {
       "score": 10,
       "subject": "The International Space Station with Space Shuttle Endeavour docked, photographed from a Soyuz spacecraft against Earth's limb and the blackness of space.",
       "category": "orbital",
@@ -5772,7 +5532,7 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/soyuz-tma/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/soyuz-tma/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -6903,22 +6663,6 @@
       "scoring_cost_usd": 0.007563
     },
     "/images/fleet-galleries/yutu/01.jpg": {
-      "score": 2,
-      "subject": "Annotated traverse map diagram of the Chang'e-4 lunar rover path on the Moon's far side surface.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/yutu/01.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-24T00:32:51.982Z",
-      "scoring_cost_usd": 0.004056
-    },
-    "/images/fleet-galleries/yutu/02.jpg": {
       "score": 7,
       "subject": "A detailed scale model of the Chinese Yutu lunar rover on display in a museum exhibit, showing its six-wheel rocker-bogie chassis, solar panels, high-gain antenna, and Chinese flag markings.",
       "category": "hardware",
@@ -6927,14 +6671,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/yutu/02.1x1.jpg"
+        "1x1": "/images/fleet-galleries/yutu/01.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:14:20.154Z",
       "scoring_cost_usd": 0.005391
     },
-    "/images/fleet-galleries/yutu/03.jpg": {
+    "/images/fleet-galleries/yutu/02.jpg": {
       "score": 7,
       "subject": "A museum display model of the Chinese Yutu lunar rover, showing its dish antenna, solar panels, Chinese flag markings, and rocker-bogie wheel system against a dark exhibition backdrop.",
       "category": "hardware",
@@ -6943,14 +6687,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/yutu/03.1x1.jpg"
+        "1x1": "/images/fleet-galleries/yutu/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:14:23.642Z",
       "scoring_cost_usd": 0.005526
     },
-    "/images/fleet-galleries/yutu/04.jpg": {
+    "/images/fleet-galleries/yutu/03.jpg": {
       "score": 9,
       "subject": "China's Yutu lunar rover on the Moon's surface, showing its deployed solar panels, dish antenna, and Chinese flag markings against the grey regolith.",
       "category": "surface",
@@ -6959,14 +6703,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/yutu/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/yutu/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-05-22T09:14:26.562Z",
       "scoring_cost_usd": 0.0051210000000000006
     },
-    "/images/fleet-galleries/yutu/05.jpg": {
+    "/images/fleet-galleries/yutu/04.jpg": {
       "score": 6,
       "subject": "Four-panel orbital reconnaissance image mosaic showing the Chang'e 4 lunar landing site on the Moon's far side, captured by the Lunar Reconnaissance Orbiter between December 2018 and February 2019, with arrows indicating the lander and Yutu-2 rover.",
       "category": "surface",
@@ -6975,7 +6719,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/yutu/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/yutu/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -13898,7 +13642,7 @@
       "scored_at": "2026-05-24T01:03:29.284Z",
       "scoring_cost_usd": 0.007131
     },
-    "/images/fleet-galleries/progress-m/02.jpg": {
+    "/images/fleet-galleries/progress-m/01.jpg": {
       "score": 1,
       "subject": "Completely black image with no visible content or subject matter.",
       "category": "other",
@@ -13907,31 +13651,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/progress-m/02.1x1.jpg"
+        "1x1": "/images/fleet-galleries/progress-m/01.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-05-24T01:03:32.496Z",
       "scoring_cost_usd": 0.004821000000000001
     },
-    "/images/fleet-galleries/r-7-vostok/02.jpg": {
-      "score": 8,
-      "subject": "A Vostok rocket on its display gantry outside the Tsiolkovsky museum of cosmonautics, Kaluga, 2022.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/r-7-vostok/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-11-08T08:22:32.477Z",
-      "scoring_cost_usd": 0,
-      "subject_match": true
-    },
-    "/images/fleet-galleries/r-7-vostok/04.jpg": {
+    "/images/fleet-galleries/r-7-vostok/03.jpg": {
       "score": 2,
       "subject": "1969 Soviet postage stamp (10 kopeks, Pochta SSSR) depicting the Vostok launch vehicle on the launch pad with gantry structure, rendered in a stylized graphic art style.",
       "category": "diagram",
@@ -13940,7 +13667,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/r-7-vostok/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/r-7-vostok/03.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
@@ -13963,7 +13690,7 @@
       "scored_at": "2026-05-24T01:03:43.999Z",
       "scoring_cost_usd": 0.006756
     },
-    "/images/fleet-galleries/salyut-1/04.jpg": {
+    "/images/fleet-galleries/salyut-1/03.jpg": {
       "score": 3,
       "subject": "1978 Soviet USSR postage stamp depicting Soyuz spacecraft docking with Salyut space station, issued for the Interkosmos program.",
       "category": "diagram",
@@ -13972,7 +13699,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/salyut-1/04.1x1.jpg"
+        "1x1": "/images/fleet-galleries/salyut-1/03.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
@@ -14555,22 +14282,6 @@
       "scoring_cost_usd": 0.005211
     },
     "/images/fleet-galleries/new-glenn/04.jpg": {
-      "score": 3,
-      "subject": "A person wearing a flight helmet looks out of a helicopter window toward a distant launch pad and water tower at Kennedy Space Center.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.72,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/new-glenn/04.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:21:29.009Z",
-      "scoring_cost_usd": 0.005631
-    },
-    "/images/fleet-galleries/new-glenn/05.jpg": {
       "score": 5,
       "subject": "Aerial view of a launch pad facility at Kennedy Space Center showing a damaged or under-construction integration tower structure and water tower.",
       "category": "launch",
@@ -14579,7 +14290,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/new-glenn/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/new-glenn/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -14714,22 +14425,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T10:25:46.210Z",
       "scoring_cost_usd": 0.007809
-    },
-    "/images/fleet-galleries/pslv-xl/05.jpg": {
-      "score": 7,
-      "subject": "ISRO PSLV rocket on the launch pad at Satish Dhawan Space Centre, flanked by service towers, prior to launch.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/pslv-xl/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:25:49.688Z",
-      "scoring_cost_usd": 0.004761
     },
     "/images/fleet-galleries/sentinel-copernicus/01.jpg": {
       "score": 8,
@@ -18975,22 +18670,6 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/fleet-galleries/salyut-7/05.jpg": {
-      "score": 1,
-      "subject": "Plain dark cloth cover of a Google-digitized book from the University of Michigan library.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/salyut-7/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-22T09:04:17.116Z",
-      "scoring_cost_usd": 0.007629
-    },
     "/images/fleet-galleries/salyut-7/03.jpg": {
       "score": 2,
       "subject": "Cover page of 'Walking to Olympus: An EVA Chronology', a NASA monograph from 1997 featuring an astronaut in a spacesuit against a dark background.",
@@ -19264,23 +18943,7 @@
       "scored_at": "2026-05-22T09:05:20.373Z",
       "scoring_cost_usd": 0.0051210000000000006
     },
-    "/images/fleet-galleries/tianzhou/03.jpg": {
-      "score": 5,
-      "subject": "3D render of the Chinese Space Station (Tiangong) with solar arrays extended against a black background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/tianzhou/03.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-24T00:31:16.890Z",
-      "scoring_cost_usd": 0.005001
-    },
-    "/images/fleet-galleries/tianzhou/05.jpg": {
+    "/images/fleet-galleries/tianzhou/04.jpg": {
       "score": 4,
       "subject": "Artist's render of the Chinese Space Station (Tiangong) in low Earth orbit with solar panels deployed and Earth visible below.",
       "category": "render",
@@ -19289,7 +18952,7 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/tianzhou/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/tianzhou/04.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
@@ -19426,41 +19089,9 @@
       "scored_at": "2026-05-22T09:14:09.262Z",
       "scoring_cost_usd": 0.004821
     },
-    "/images/fleet-galleries/yutu-2/03.jpg": {
-      "score": 8,
-      "subject": "Yutu lunar rover photographed on the surface of the Moon during the Chang'e 3 mission, showing its solar panels and instrument mast.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/yutu-2/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:14:15.314Z",
-      "scoring_cost_usd": 0.003498
-    },
-    "/images/fleet-galleries/yutu-2/04.jpg": {
-      "score": 8,
-      "subject": "Yutu lunar rover photographed on the surface of the Moon during the Chang'e 3 mission, showing its solar panels and instrument mast.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/yutu-2/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:14:15.314Z",
-      "scoring_cost_usd": 0.003498
-    },
     "/images/fleet-galleries/yutu-2/01.jpg": {
-      "score": 9,
-      "subject": "China's Chang'e-4 lunar lander sitting on the surface of the Moon's far side, with gold thermal insulation, solar panels, and the Chinese national flag visible.",
+      "score": 8,
+      "subject": "Yutu lunar rover photographed on the surface of the Moon during the Chang'e 3 mission, showing its solar panels and instrument mast.",
       "category": "surface",
       "focal_point": {
         "x": 0.5,
@@ -19471,26 +19102,10 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:28:17.490Z",
-      "scoring_cost_usd": 0.005286
+      "scored_at": "2026-05-22T09:14:15.314Z",
+      "scoring_cost_usd": 0.003498
     },
     "/images/fleet-galleries/yutu-2/02.jpg": {
-      "score": 9,
-      "subject": "China's Chang'e-4 lunar lander sitting on the grey regolith of the Moon's far side, its gold thermal insulation blankets brightly lit against the black sky, with rover tracks visible in the foreground.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/yutu-2/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:28:20.765Z",
-      "scoring_cost_usd": 0.005556
-    },
-    "/images/fleet-galleries/yutu-2/05.jpg": {
       "score": 8,
       "subject": "Yutu lunar rover photographed on the surface of the Moon during the Chang'e 3 mission, showing its solar panels and instrument mast.",
       "category": "surface",
@@ -19499,7 +19114,23 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/fleet-galleries/yutu-2/05.1x1.jpg"
+        "1x1": "/images/fleet-galleries/yutu-2/02.1x1.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T09:14:15.314Z",
+      "scoring_cost_usd": 0.003498
+    },
+    "/images/fleet-galleries/yutu-2/03.jpg": {
+      "score": 8,
+      "subject": "Yutu lunar rover photographed on the surface of the Moon during the Chang'e 3 mission, showing its solar panels and instrument mast.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/yutu-2/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -19537,22 +19168,6 @@
       "fallback": false,
       "scored_at": "2026-05-22T09:14:30.578Z",
       "scoring_cost_usd": 0.007596
-    },
-    "/images/fleet-galleries/zhurong/05.jpg": {
-      "score": 7,
-      "subject": "Aerial view of the Ingenuity helicopter and Perseverance rover on the Martian surface, captured by Mars Reconnaissance Orbiter's HiRISE camera, showing the spacecraft as small teal-colored objects against the red terrain with dust disturbance patterns visible.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/zhurong/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T09:14:34.533Z",
-      "scoring_cost_usd": 0.003777
     },
     "/images/fleet-galleries/zhurong/02.jpg": {
       "score": 9,
@@ -22452,22 +22067,6 @@
       "scored_at": "2026-06-12T20:56:53.538Z",
       "scoring_cost_usd": 0.007869000000000001
     },
-    "/images/fleet-galleries/change1/04.jpg": {
-      "score": 2,
-      "subject": "Color-coded exploded diagram of a spacecraft bus with labeled components A through I and numbered callouts 1 through 8.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T20:56:57.361Z",
-      "scoring_cost_usd": 0.0075840000000000005
-    },
     "/images/fleet-galleries/change6/01.jpg": {
       "score": 6,
       "subject": "Scale model of a Chinese CASC lunar or deep-space spacecraft on display at an aerospace exhibition, featuring gold thermal blankets and solar panels.",
@@ -22517,22 +22116,6 @@
       "scoring_cost_usd": 0.007509
     },
     "/images/fleet-galleries/change6/04.jpg": {
-      "score": 4,
-      "subject": "Topographic map overlay on lunar surface imagery marking the Chang'e 6 landing site near Chaffee crater on the Moon's far side.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T20:57:11.738Z",
-      "scoring_cost_usd": 0.007746
-    },
-    "/images/fleet-galleries/change6/05.jpg": {
       "score": 7,
       "subject": "A Long March 5 rocket on its mobile launch platform being rolled out at Wenchang Space Launch Center, China, surrounded by tropical vegetation and spectators with red flags.",
       "category": "launch",
@@ -23160,22 +22743,6 @@
       "scoring_cost_usd": 0.007719
     },
     "/images/fleet-galleries/giotto/02.jpg": {
-      "score": 8,
-      "subject": "Close-up image of Halley's Comet nucleus surrounded by bright coma and dust jets, captured by the Giotto spacecraft in 1986.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.68,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-12T21:00:25.458Z",
-      "scoring_cost_usd": 0.007719
-    },
-    "/images/fleet-galleries/giotto/03.jpg": {
       "score": 2,
       "subject": "Black-and-white line drawing diagram of a spacecraft with solar panels and antenna.",
       "category": "diagram",
@@ -23591,22 +23158,6 @@
       "scored_at": "2026-06-12T21:02:30.884Z",
       "scoring_cost_usd": 0.0075060000000000005
     },
-    "/images/fleet-galleries/luna10/05.jpg": {
-      "score": 3,
-      "subject": "Soviet postage stamp commemorating Luna 10 spacecraft launch on April 3, 1966, depicting an illustrated spacecraft with Earth and Moon motifs.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:02:34.538Z",
-      "scoring_cost_usd": 0.007773
-    },
     "/images/fleet-galleries/luna24/01.jpg": {
       "score": 8,
       "subject": "Soviet lunar lander spacecraft engineering model on display inside a Russian space museum, with Cyrillic signage reading 'Flight Control Center' visible in the background.",
@@ -23784,22 +23335,6 @@
       "scoring_cost_usd": 0.005142
     },
     "/images/fleet-galleries/lunar-orbiter-2/03.jpg": {
-      "score": 1,
-      "subject": "A black-and-white technical diagram showing two circular cross-section illustrations with arrows and shaded regions, depicting an optical or sensor concept.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:03:18.363Z",
-      "scoring_cost_usd": 0.0036810000000000002
-    },
-    "/images/fleet-galleries/lunar-orbiter-2/04.jpg": {
       "score": 4,
       "subject": "Close-up underside view of a Soviet-era spacecraft or satellite on museum display, showing spherical descent module and structural framework.",
       "category": "hardware",
@@ -23814,22 +23349,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:03:21.875Z",
       "scoring_cost_usd": 0.0049440000000000005
-    },
-    "/images/fleet-galleries/lunar-orbiter-2/05.jpg": {
-      "score": 2,
-      "subject": "A labeled technical diagram of a Mariner-class spacecraft showing components such as camera lenses, solar panels, antennas, and propulsion systems.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:03:24.795Z",
-      "scoring_cost_usd": 0.003921
     },
     "/images/fleet-galleries/lunar-orbiter-3/01.jpg": {
       "score": 8,
@@ -24318,22 +23837,6 @@
       "scored_at": "2026-06-12T21:05:46.364Z",
       "scoring_cost_usd": 0.003078
     },
-    "/images/fleet-galleries/mars6/02.jpg": {
-      "score": 3,
-      "subject": "Mars surface map with labeled landing site markers for Viking 1, Mars Pathfinder, Mars 2, Opportunity, and Mars 6 overlaid on an orange-tinted orbital image.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:05:50.574Z",
-      "scoring_cost_usd": 0.007731
-    },
     "/images/fleet-galleries/mercury-redstone/01.jpg": {
       "score": 9,
       "subject": "A Mercury-Redstone rocket marked 'United States' stands on the launch pad beside the service structure and gantry crane at Cape Canaveral, with ground crew visible at its base.",
@@ -24579,22 +24082,6 @@
       "scoring_cost_usd": 0.007359
     },
     "/images/fleet-galleries/proton-k/03.jpg": {
-      "score": 2,
-      "subject": "Technical comparison diagram of Soviet UR-500 and UR-500K (Proton) rocket variants from 1965 to 1971 with scale in meters.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:07:03.836Z",
-      "scoring_cost_usd": 0.007893
-    },
-    "/images/fleet-galleries/proton-k/04.jpg": {
       "score": 7,
       "subject": "A large white rocket standing vertically on its launch pad against a clear blue sky, with launch support structure visible at left.",
       "category": "launch",
@@ -24610,7 +24097,7 @@
       "scored_at": "2026-06-12T21:07:06.730Z",
       "scoring_cost_usd": 0.003201
     },
-    "/images/fleet-galleries/proton-k/05.jpg": {
+    "/images/fleet-galleries/proton-k/04.jpg": {
       "score": 6,
       "subject": "A Proton rocket (labeled 'ПРОТОН' in Cyrillic) standing on its launch pad at Baikonur Cosmodrome, flanked by support structures and a floodlight tower.",
       "category": "launch",
@@ -24659,7 +24146,7 @@
       "scored_at": "2026-06-12T21:07:19.964Z",
       "scoring_cost_usd": 0.007626
     },
-    "/images/fleet-galleries/salyut-3/03.jpg": {
+    "/images/fleet-galleries/salyut-3/02.jpg": {
       "score": 8,
       "subject": "A detailed paper model of the Salyut 3 (Almaz) station with a Soyuz docked.",
       "category": "hardware",
@@ -24677,22 +24164,6 @@
       "subject_match": true
     },
     "/images/fleet-galleries/salyut-4/04.jpg": {
-      "score": 2,
-      "subject": "Labeled cutaway diagram of the Salyut 4 civilian orbital station showing internal components and docked Soyuz spacecraft.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:07:43.745Z",
-      "scoring_cost_usd": 0.003975
-    },
-    "/images/fleet-galleries/salyut-4/05.jpg": {
       "score": 6,
       "subject": "A handmade paper or card model of the Soviet Salyut space station with solar panels, displayed against a plain grey background.",
       "category": "hardware",
@@ -24758,22 +24229,6 @@
       "scoring_cost_usd": 0.0078
     },
     "/images/fleet-galleries/salyut-5/04.jpg": {
-      "score": 6,
-      "subject": "A recovered Soviet Almaz reconnaissance space station film return capsule on museum display, showing heat-scorched exterior and deployed parachute pack.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-12T21:08:01.725Z",
-      "scoring_cost_usd": 0.007665
-    },
-    "/images/fleet-galleries/salyut-5/05.jpg": {
       "score": 6,
       "subject": "Soviet space station optical visor (визир) instrument, likely the ВД-5 used on Salyut stations, displayed behind glass in a museum exhibit.",
       "category": "hardware",
@@ -24997,22 +24452,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:09:03.493Z",
       "scoring_cost_usd": 0.007476
-    },
-    "/images/fleet-galleries/vega-1/05.jpg": {
-      "score": 2,
-      "subject": "Artist's diagram illustrating the Vega mission profile, showing trajectory from Earth launch through Venus atmosphere entry and balloon deployment to Comet Halley rendezvous.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-12T21:09:07.170Z",
-      "scoring_cost_usd": 0.004521
     },
     "/images/fleet-galleries/vega-2/01.jpg": {
       "score": 5,
@@ -25400,38 +24839,6 @@
       "fallback": false,
       "scored_at": "2026-06-12T21:10:25.441Z",
       "scoring_cost_usd": 0.007614
-    },
-    "/images/fleet-galleries/x37b/04.jpg": {
-      "score": 9,
-      "subject": "Boeing X-37B autonomous spaceplane photographed head-on at night on a runway following landing, showing thermal protection tiles and landing gear.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-12T21:10:28.582Z",
-      "scoring_cost_usd": 0.007641
-    },
-    "/images/fleet-galleries/x37b/05.jpg": {
-      "score": 7,
-      "subject": "USAF Boeing X-37B orbital test vehicle on the runway at night after landing, with two technicians in hazmat suits conducting post-landing safing operations.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-12T21:10:32.147Z",
-      "scoring_cost_usd": 0.0076890000000000005
     },
     "/images/missions/inspiration4/01.jpg": {
       "score": 4,
@@ -31467,19 +30874,6 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.009342
     },
-    "/images/fleet-galleries/vostok-6/02.jpg": {
-      "score": 8,
-      "subject": "A museum display model of the Vostok-6 spacecraft showing its distinctive spherical reentry capsule in silver with green trim, surrounded by smaller spherical tanks and instrumentation modules, with Russian text panels visible in the background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009219
-    },
     "/images/fleet-galleries/vostok-6/03.jpg": {
       "score": 8,
       "subject": "A museum display model of the Soviet Vostok spacecraft showing the spherical descent module and equipment section, with Cyrillic text referencing Valentina Tereshkova visible in the background.",
@@ -32346,7 +31740,7 @@
       "scored_at": "2026-11-08T08:06:58.465Z",
       "scoring_cost_usd": 0
     },
-    "/images/fleet-galleries/axemu/04.jpg": {
+    "/images/fleet-galleries/axemu/03.jpg": {
       "score": 8,
       "subject": "Canadian Space Agency astronaut Jenni Gibbons practising lunar tasks underwater in the Axiom AxEMU suit at NASA Johnson, November 2025.",
       "category": "people",
@@ -32359,7 +31753,7 @@
       "scored_at": "2026-11-08T08:08:46.509Z",
       "scoring_cost_usd": 0
     },
-    "/images/fleet-galleries/axemu/05.jpg": {
+    "/images/fleet-galleries/axemu/04.jpg": {
       "score": 8,
       "subject": "A NASA crew member using lunar tools in the Axiom lunar spacesuit during an elevated-pressure test at NASA Johnson, January 2026.",
       "category": "people",
@@ -32697,7 +32091,7 @@
       "scored_at": "2026-11-08T08:19:19.510Z",
       "scoring_cost_usd": 0
     },
-    "/images/fleet-galleries/inmarsat/05.jpg": {
+    "/images/fleet-galleries/inmarsat/04.jpg": {
       "score": 8,
       "subject": "A Falcon 9 carrying Inmarsat-6 F2 launching from Space Launch Complex 40, Cape Canaveral, 17 February 2023.",
       "category": "launch",

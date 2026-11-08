@@ -8511,7 +8511,9 @@
   ],
   "/images/missions/bepicolombo/04": [
     320,
-    419
+    1280,
+    2048,
+    3000
   ],
   "/images/missions/bepicolombo/05": [
     320,
@@ -8520,7 +8522,7 @@
   ],
   "/images/missions/beresheet/02": [
     320,
-    1029
+    1100
   ],
   "/images/missions/beresheet/03": [
     320,
@@ -8588,7 +8590,9 @@
   ],
   "/images/missions/chandrayaan1/05": [
     320,
-    630
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/chandrayaan3/01": [
     320,
@@ -8630,12 +8634,12 @@
   "/images/missions/change3/03": [
     320,
     1280,
-    1536
+    2048,
+    2400
   ],
   "/images/missions/change3/04": [
     320,
-    928,
-    1450
+    952
   ],
   "/images/missions/change3/05": [
     320,
@@ -8704,7 +8708,7 @@
   ],
   "/images/missions/change6/03": [
     320,
-    960
+    948
   ],
   "/images/missions/clementine/01": [
     320,
@@ -9386,7 +9390,8 @@
   ],
   "/images/missions/mangalyaan/03": [
     320,
-    960
+    1280,
+    1800
   ],
   "/images/missions/mangalyaan/04": [
     320,
@@ -10089,7 +10094,9 @@
   ],
   "/images/missions/rosetta/05": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/schiaparelli/01": [
     320,
@@ -10664,7 +10671,9 @@
   ],
   "/images/missions/tianwen1/05": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/ulysses/01": [
     320,

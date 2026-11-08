@@ -7588,9 +7588,9 @@
       "scoring_cost_usd": 0.008094
     },
     "/images/missions/chandrayaan1/05.jpg": {
-      "score": 5,
-      "subject": "Chandrayaan-1 Moon Mineralogy Mapper data showing infrared reflectance and water absorption strength on the lunar surface.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Front view of a model of the Chandrayaan-1 lunar orbiter on display, August 2024.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -7599,10 +7599,10 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:00:32.674Z",
-      "scoring_cost_usd": 0.005271
+      "scored_at": "2026-11-08T07:21:46.908Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/chandrayaan3.jpg": {
       "score": 9,
@@ -8678,21 +8678,21 @@
       "scoring_cost_usd": 0.007974
     },
     "/images/missions/mangalyaan/03.jpg": {
-      "score": 5,
-      "subject": "Labeled engineering diagram of an ISRO spacecraft showing solar arrays, propellant tank, high gain antenna, medium gain antenna, and low gain antenna components.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Mars Orbiter Mission spacecraft being loaded into ISRO's Large Space Simulation Chamber for its thermal-vacuum test.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.55,
+        "x": 0.5,
         "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:09:45.088Z",
-      "scoring_cost_usd": 0.006567
+      "scored_at": "2026-11-08T07:21:46.945Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/mangalyaan/04.jpg": {
       "score": 8,
@@ -9174,9 +9174,9 @@
       "scoring_cost_usd": 0.006855
     },
     "/images/missions/tianwen1/05.jpg": {
-      "score": 4,
-      "subject": "Labeled engineering diagram of the Chinese Zhurong Mars rover showing instrument locations including NaTeCam, MSCam, MCS, RoMAG, MarSCoDe, RoPeR, and solar panels.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "1:3 scale model of China's Mars probe, the Tianwen-1 lander with the Zhurong rover, at an exhibition in Qingdao, September 2018.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -9185,10 +9185,10 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:21:27.863Z",
-      "scoring_cost_usd": 0.006672
+      "scored_at": "2026-11-08T07:21:46.974Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/viking1.jpg": {
       "score": 8,
@@ -27726,9 +27726,9 @@
       "scoring_cost_usd": 0.008778
     },
     "/images/missions/beresheet/02.jpg": {
-      "score": 2,
-      "subject": "A schematic orbital diagram showing an elliptical trajectory around Earth rendered in blue lines on a dark background.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Beresheet crash site on the Moon seen by NASA's Lunar Reconnaissance Orbiter on 22 April 2019, eleven days after the attempted landing.",
+      "category": "surface",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -27737,10 +27737,10 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T20:59:35.416Z",
-      "scoring_cost_usd": 0.0057599999999999995
+      "scored_at": "2026-11-08T07:21:46.904Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/beresheet/03.jpg": {
       "score": 7,
@@ -29222,21 +29222,21 @@
       "scoring_cost_usd": 0.0081
     },
     "/images/missions/bepicolombo/04.jpg": {
-      "score": 3,
-      "subject": "A satellite spacecraft in an ESA cleanroom facility with thermal blankets and a dish antenna, alongside a conical component on a transport dolly.",
+      "score": 8,
+      "subject": "Deployment test of one of the Mercury Transfer Module's 12 m solar wings at ESA's technical centre, May 2017, the panels hung from above to mimic weightlessness.",
       "category": "hardware",
       "focal_point": {
-        "x": 0.35,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
-      "subject_match": false,
+      "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "off-subject",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T20:59:21.008Z",
-      "scoring_cost_usd": 0.0069689999999999995
+      "scored_at": "2026-11-08T07:21:46.883Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/bepicolombo/03.jpg": {
       "score": 5,
@@ -29341,21 +29341,21 @@
       "scoring_cost_usd": 0.008508
     },
     "/images/missions/change3/03.jpg": {
-      "score": 3,
-      "subject": "A grayscale lunar globe with coordinate grid overlay and an orange crosshair marker indicating the Chang'e 3 landing site at 44.12°N 19.51°W near Mare Imbrium.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Mockup of the Yutu lunar rover displayed at the National Museum of China.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.35,
-        "y": 0.42
+        "x": 0.5,
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:01:16.811Z",
-      "scoring_cost_usd": 0.009189
+      "scored_at": "2026-11-08T07:21:46.923Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/change6/01.jpg": {
       "score": 6,
@@ -29392,21 +29392,21 @@
       "scoring_cost_usd": 0.008757
     },
     "/images/missions/change6/03.jpg": {
-      "score": 5,
-      "subject": "Topographic map of the lunar far side showing the Chang'e 6 landing site within the Apollo Basin, with contour lines and crater labels including Chaffee, Chaffee F, and Chaffee S.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Model of Jinchan, the small rover carried by the Chang'e 6 mission.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.43,
-        "y": 0.47
+        "x": 0.5,
+        "y": 0.5
       },
       "subject_match": true,
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-07-05T21:02:05.703Z",
-      "scoring_cost_usd": 0.008355
+      "scored_at": "2026-11-08T07:21:46.942Z",
+      "scoring_cost_usd": 0
     },
     "/images/missions/clementine/02.jpg": {
       "score": 6,
@@ -32411,6 +32411,32 @@
       "scored_at": "2026-11-08T07:14:35.317Z",
       "scoring_cost_usd": 0,
       "score": 8
+    },
+    "/images/missions/change3/04.jpg": {
+      "score": 8,
+      "subject": "The Chang'e 3 landing site from NASA's LRO narrow-angle camera, about 240 m across, the ground around the lander brightened by its rocket exhaust.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:21:46.938Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/rosetta/05.jpg": {
+      "score": 8,
+      "subject": "Model of the Rosetta spacecraft at the Bluedot festival, Jodrell Bank Observatory, July 2016.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T07:21:46.949Z",
+      "scoring_cost_usd": 0
     }
   }
 }

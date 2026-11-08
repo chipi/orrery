@@ -150,16 +150,28 @@ async function targets() {
   const cardStubs = path.join(BUILD, 'c');
   if (existsSync(cardStubs)) list.push(cardStubs);
 
-  // /missions/<id> entity pages (0.9.8 SEO, 126 missions × 14 locales) are
-  // search-engine surfaces; in the app a mission opens as the /missions?id=
-  // panel. /missions/launches stays.
-  const missionIds = JSON.parse(
-    await readFile(path.join(BUILD, 'data', 'missions', 'index.json'), 'utf8').catch(() => '[]'),
-  ).map((m) => m.id);
-  for (const prefix of ['', ...locales.filter((l) => l !== baseLocale)]) {
-    for (const id of missionIds) {
-      const page = path.join(BUILD, prefix, 'missions', `${id}.html`);
-      if (existsSync(page)) list.push(page);
+  // Entity pages (0.9.8 SEO: /missions/<id>, /fleet/<id>, /<body>/<site>, × 14
+  // locales) are search-engine surfaces; in the app an entity opens in its
+  // ?id= / ?site= panel. /missions/launches is not an entity and stays.
+  const ids = async (file) =>
+    JSON.parse(await readFile(path.join(BUILD, 'data', file), 'utf8').catch(() => '[]')).map(
+      (e) => e.id,
+    );
+  for (const [dir, entityIds] of [
+    ['missions', await ids('missions/index.json')],
+    ['fleet', await ids('fleet/index.json')],
+    ['moon', await ids('moon-sites.json')],
+    ['mars', await ids('mars-sites.json')],
+    ['venus', await ids('venus-sites.json')],
+  ]) {
+    for (const prefix of ['', ...locales.filter((l) => l !== baseLocale)]) {
+      for (const id of entityIds) {
+        // The page and its <id>/__data.json (server-load data for client navigation).
+        for (const p of [`${id}.html`, id]) {
+          const page = path.join(BUILD, prefix, dir, p);
+          if (existsSync(page)) list.push(page);
+        }
+      }
     }
   }
 

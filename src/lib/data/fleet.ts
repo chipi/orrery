@@ -1,4 +1,4 @@
-import { get } from './core';
+import { get, type FetchLike } from './core';
 import type {
   FleetCategory,
   FleetEntry,
@@ -35,17 +35,19 @@ export async function getFleet(
   id: string,
   category: FleetCategory,
   locale = 'en-US',
+  fetchFn: FetchLike = fetch,
 ): Promise<FleetEntry | null> {
   try {
-    const baseRecord = await get<FleetEntryBase>(`fleet/${category}/${id}.json`);
+    const baseRecord = await get<FleetEntryBase>(`fleet/${category}/${id}.json`, fetchFn);
     const overlay = await get<FleetEntryOverlay>(
       `i18n/${locale}/fleet/${category}/${id}.json`,
+      fetchFn,
     ).catch(() => null);
     const fallback =
       overlay ??
       (locale === 'en-US'
         ? null
-        : await get<FleetEntryOverlay>(`i18n/en-US/fleet/${category}/${id}.json`).catch(
+        : await get<FleetEntryOverlay>(`i18n/en-US/fleet/${category}/${id}.json`, fetchFn).catch(
             () => null,
           ));
     // Phase A skeletons ship without overlays; merge what we have.

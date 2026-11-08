@@ -5,7 +5,7 @@ import { entityHero } from '$lib/entity-hero';
 import missionIndex from '$data/missions/index.json';
 import galleryCounts from '$data/mission-galleries.json';
 import heroOverrides from '$data/missions-hero-overrides.json';
-import type { EntryGenerator, PageLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 
 /**
  * /missions/<id> — one mission's indexable page (0.9.8 SEO item 0): the text
@@ -17,7 +17,7 @@ export const prerender = true;
 export const entries: EntryGenerator = () =>
   (missionIndex as { id: string }[]).map(({ id }) => ({ id }));
 
-export const load: PageLoad = async ({ params, fetch }) => {
+export const load: PageServerLoad = async ({ params, fetch }) => {
   const entry = (await getMissionIndex(fetch)).find((m) => m.id === params.id);
   if (!entry) throw error(404, `Unknown mission: ${params.id}`);
   const mission = await getMission(entry.id, entry.dest, getLocale(), fetch);

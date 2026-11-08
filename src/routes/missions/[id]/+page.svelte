@@ -110,7 +110,7 @@
         <dt>{m.mp_label_vehicle()}</dt>
         <dd>
           {#if launcherRef}
-            <a href={localHref(`/fleet?id=${launcherRef}`)}>{mission.vehicle}</a>
+            <a href={localHref(`/fleet/${launcherRef}`)}>{mission.vehicle}</a>
           {:else}{mission.vehicle}{/if}
         </dd>
       </div>
@@ -120,7 +120,7 @@
         <dt>{m.mp_label_payload()}</dt>
         <dd>
           {#if craftRef}
-            <a href={localHref(`/fleet?id=${craftRef}`)}>{mission.payload}</a>
+            <a href={localHref(`/fleet/${craftRef}`)}>{mission.payload}</a>
           {:else}{mission.payload}{/if}
         </dd>
       </div>

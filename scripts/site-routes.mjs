@@ -100,6 +100,29 @@ function missionRoutes() {
   return idx.map((m) => `/missions/${m.id}`);
 }
 
+/** One indexable page per fleet entry (/fleet/<id>, 0.9.8 SEO). */
+function fleetRoutes() {
+  const idxPath = 'static/data/fleet/index.json';
+  if (!existsSync(idxPath)) return [];
+  /** @type {{ id: string }[]} */
+  const idx = JSON.parse(readFileSync(idxPath, 'utf8'));
+  return idx.map((f) => `/fleet/${f.id}`);
+}
+
+/** One indexable page per Moon / Mars / Venus site (/<body>/<id>, 0.9.8 SEO). */
+function siteRoutes() {
+  /** @type {string[]} */
+  const routes = [];
+  for (const body of ['moon', 'mars', 'venus']) {
+    const path = `static/data/${body}-sites.json`;
+    if (!existsSync(path)) continue;
+    /** @type {{ id: string }[]} */
+    const sites = JSON.parse(readFileSync(path, 'utf8'));
+    for (const s of sites) routes.push(`/${body}/${s.id}`);
+  }
+  return routes;
+}
+
 /**
  * All un-localized canonical routes the site ships (no base prefix, no
  * locale prefix). e.g. `['/', '/missions', '/science/physics/kepler', ...]`.
@@ -113,5 +136,7 @@ export function collectCanonicalRoutes() {
     ...programsRoutes(),
     ...essaysRoutes(),
     ...missionRoutes(),
+    ...fleetRoutes(),
+    ...siteRoutes(),
   ];
 }

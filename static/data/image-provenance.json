@@ -5094,23 +5094,43 @@
     {
       "id": "a4ba9de41a0df2f8",
       "path": "/images/fleet-galleries/apollo-csm-block-ii/05.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/apollo-csm-block-ii",
+      "source_type": "wikimedia-commons",
+      "title": "File:Apollo CSM lunar orbit.jpg",
       "author": "NASA",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apollo_CSM_lunar_orbit.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Apollo_CSM_lunar_orbit.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "curated-no-upstream-record",
         "walker-fallback"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 243484,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.959Z"
+      "fetched_at": "2026-11-08T08:06:50.711Z"
+    },
+    {
+      "id": "0867869fac5bd2b1",
+      "path": "/images/fleet-galleries/apollo-csm-block-ii/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Apollo CSM lunar orbit.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apollo_CSM_lunar_orbit.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Apollo_CSM_lunar_orbit.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 243484,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:06:50.711Z"
     },
     {
       "id": "6fa2ddf04212dcf7",
@@ -5367,22 +5387,22 @@
       "id": "cf0c041bedc16ad8",
       "path": "/images/fleet-galleries/ariane-5/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Ariane_5_on_the_launch_pad_(17287955801).jpg",
-      "author": "ESA",
+      "title": "File:Webb Liftoff on Ariane 5 (potm2201a).jpeg",
+      "author": "ESA/CNES/Arianespace/Optique Vidéo du CSG - JM Guillon",
       "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AAriane_5_on_the_launch_pad_(17287955801).jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariane_5_on_the_launch_pad_(17287955801).jpg",
-      "license_short": "CC-BY-SA-3.0-IGO",
-      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Webb_Liftoff_on_Ariane_5_(potm2201a).jpeg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Webb_Liftoff_on_Ariane_5_%28potm2201a%29.jpeg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 125389816,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.872Z"
+      "fetched_at": "2026-11-08T08:06:51.973Z"
     },
     {
       "id": "eaeb6438529f3227",
@@ -5404,6 +5424,26 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.872Z"
+    },
+    {
+      "id": "c31066bbf723d4c5",
+      "path": "/images/fleet-galleries/ariane-5/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Webb Liftoff on Ariane 5 (potm2201a).jpeg",
+      "author": "ESA/CNES/Arianespace/Optique Vidéo du CSG - JM Guillon",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Webb_Liftoff_on_Ariane_5_(potm2201a).jpeg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Webb_Liftoff_on_Ariane_5_%28potm2201a%29.jpeg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 125389816,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:06:51.973Z"
     },
     {
       "id": "542d595efc4e3516",
@@ -5598,11 +5638,11 @@
       "id": "439aab0e09a76905",
       "path": "/images/fleet-galleries/atlas-lv-3b/01.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Mercury profile.jpg",
-      "author": "User Reubenbarton on en.wikipedia",
+      "title": "File:Launch of Friendship 7 - GPN-2000-000686.jpg",
+      "author": "NASA/photographer unknown",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Mercury_profile.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Mercury_profile.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_Friendship_7_-_GPN-2000-000686.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Launch_of_Friendship_7_-_GPN-2000-000686.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "Public domain",
@@ -5611,30 +5651,30 @@
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": 1020105,
+      "pageid": 6449049,
       "nasa_id": null,
-      "fetched_at": "2026-11-02T09:25:22.102Z"
+      "fetched_at": "2026-11-08T08:06:53.238Z"
     },
     {
       "id": "27651109cefcb0cb",
       "path": "/images/fleet-galleries/atlas-lv-3b/02.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:USAF_ICBM_and_NASA_Launch_Vehicle_Flight_Test_Successes_and_Failures.png",
-      "author": "NASA",
+      "title": "File:Mercury-Atlas 8 launch in 1962.jpg",
+      "author": "U.S. Navy",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AUSAF_ICBM_and_NASA_Launch_Vehicle_Flight_Test_Successes_and_Failures.png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/USAF_ICBM_and_NASA_Launch_Vehicle_Flight_Test_Successes_and_Failures.png",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mercury-Atlas_8_launch_in_1962.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Mercury-Atlas_8_launch_in_1962.jpg",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 29335503,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.873Z"
+      "fetched_at": "2026-11-08T08:06:54.487Z"
     },
     {
       "id": "73ee44a09b4e82d8",
@@ -5660,23 +5700,23 @@
     {
       "id": "5c8651cd8fa4cf17",
       "path": "/images/fleet-galleries/atlas-lv-3b/04.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/atlas-lv-3b",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mercury-Atlas 3 launch.jpg",
       "author": "NASA",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mercury-Atlas_3_launch.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Mercury-Atlas_3_launch.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "curated-no-upstream-record",
         "walker-fallback"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 458998,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.959Z"
+      "fetched_at": "2026-11-08T08:06:55.750Z"
     },
     {
       "id": "a101ae5820e6f7e7",
@@ -5697,6 +5737,66 @@
       "pageid": 26938217,
       "nasa_id": null,
       "fetched_at": "2026-10-21T08:56:15.150Z"
+    },
+    {
+      "id": "019664fc13573ad5",
+      "path": "/images/fleet-galleries/atlas-lv-3b/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Launch of Friendship 7 - GPN-2000-000686.jpg",
+      "author": "NASA/photographer unknown",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_Friendship_7_-_GPN-2000-000686.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Launch_of_Friendship_7_-_GPN-2000-000686.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 6449049,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:06:55.751Z"
+    },
+    {
+      "id": "bac35e0257903c53",
+      "path": "/images/fleet-galleries/atlas-lv-3b/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mercury-Atlas 8 launch in 1962.jpg",
+      "author": "U.S. Navy",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mercury-Atlas_8_launch_in_1962.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Mercury-Atlas_8_launch_in_1962.jpg",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 29335503,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:06:55.751Z"
+    },
+    {
+      "id": "0ca6b43277c6ae06",
+      "path": "/images/fleet-galleries/atlas-lv-3b/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mercury-Atlas 3 launch.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mercury-Atlas_3_launch.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Mercury-Atlas_3_launch.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 458998,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:06:55.751Z"
     },
     {
       "id": "76ee764bec115bec",
@@ -5933,43 +6033,43 @@
       "id": "314141ffd2275b5f",
       "path": "/images/fleet-galleries/atv/02.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:ATV-Modell_der_ESA_(6158420723).jpg",
-      "author": "ESA",
+      "title": "File:ATV-4 \"Albert Einstein\" approaching the ISS.jpg",
+      "author": "NASA",
       "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AATV-Modell_der_ESA_(6158420723).jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ATV-Modell_der_ESA_(6158420723).jpg",
-      "license_short": "CC-BY-SA-3.0-IGO",
-      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ATV-4_%22Albert_Einstein%22_approaching_the_ISS.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/ATV-4_%22Albert_Einstein%22_approaching_the_ISS.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 32317561,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.873Z"
+      "fetched_at": "2026-11-08T08:06:57.009Z"
     },
     {
       "id": "f565a20d3fe7e899",
       "path": "/images/fleet-galleries/atv/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Automated_Transfer_Vehicle.svg",
-      "author": "ESA",
+      "title": "File:ISS-26 ATV-2 Johannes Kepler docks to Zvezda.jpg",
+      "author": "NASA",
       "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AAutomated_Transfer_Vehicle.svg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Automated_Transfer_Vehicle.svg",
-      "license_short": "CC-BY-SA-3.0-IGO",
-      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ISS-26_ATV-2_Johannes_Kepler_docks_to_Zvezda.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/ISS-26_ATV-2_Johannes_Kepler_docks_to_Zvezda.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 13918665,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.873Z"
+      "fetched_at": "2026-11-08T08:08:14.888Z"
     },
     {
       "id": "80f0cf0ecf0d4b25",
@@ -5996,22 +6096,82 @@
       "id": "58da4070a83ebff4",
       "path": "/images/fleet-galleries/atv/05.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:ATVtoISS.png",
-      "author": "Martin Jediny",
+      "title": "File:Iss016e034191.jpg",
+      "author": "NASA",
       "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:ATVtoISS.png",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/ATVtoISS.png",
-      "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Iss016e034191.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Iss016e034191.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": 104634660,
+      "pageid": 3828031,
       "nasa_id": null,
-      "fetched_at": "2026-11-01T19:23:45.435Z"
+      "fetched_at": "2026-11-08T08:08:16.152Z"
+    },
+    {
+      "id": "9159b1674c29a71c",
+      "path": "/images/fleet-galleries/atv/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:ATV-4 \"Albert Einstein\" approaching the ISS.jpg",
+      "author": "NASA",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ATV-4_%22Albert_Einstein%22_approaching_the_ISS.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/ATV-4_%22Albert_Einstein%22_approaching_the_ISS.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 32317561,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:06:57.009Z"
+    },
+    {
+      "id": "08903567415d7f0d",
+      "path": "/images/fleet-galleries/atv/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:ISS-26 ATV-2 Johannes Kepler docks to Zvezda.jpg",
+      "author": "NASA",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ISS-26_ATV-2_Johannes_Kepler_docks_to_Zvezda.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/ISS-26_ATV-2_Johannes_Kepler_docks_to_Zvezda.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 13918665,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:16.152Z"
+    },
+    {
+      "id": "3e83dde2b3458781",
+      "path": "/images/fleet-galleries/atv/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Iss016e034191.jpg",
+      "author": "NASA",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Iss016e034191.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Iss016e034191.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 3828031,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:16.152Z"
     },
     {
       "id": "eec94b2cfd680eb6",
@@ -6078,83 +6238,123 @@
       "id": "e5c839953d0d903d",
       "path": "/images/fleet-galleries/axemu/04.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Administrator Isaacman Visits Axiom Space (NHQ20260123 admin 0005).jpg",
-      "author": "NASA Kennedy Space Center / NASA/John Kraus",
+      "title": "File:Canadian Space Agency Astronaut Jenni Gibbons Practices Lunar Tasks (jsc2025e085695).jpg",
+      "author": "NASA Johnson Space Center / NASA",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Administrator_Isaacman_Visits_Axiom_Space_(NHQ20260123_admin_0005).jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Administrator_Isaacman_Visits_Axiom_Space_%28NHQ20260123_admin_0005%29.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Canadian_Space_Agency_Astronaut_Jenni_Gibbons_Practices_Lunar_Tasks_(jsc2025e085695).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Canadian_Space_Agency_Astronaut_Jenni_Gibbons_Practices_Lunar_Tasks_%28jsc2025e085695%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": 183156428,
+      "pageid": 178647814,
       "nasa_id": null,
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "fetched_at": "2026-11-08T08:08:17.403Z"
     },
     {
       "id": "103efdf11f99a16f",
       "path": "/images/fleet-galleries/axemu/05.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Administrator Isaacman Visits Axiom Space (NHQ20260123 admin 0007).jpg",
-      "author": "NASA Kennedy Space Center / NASA/John Kraus",
+      "title": "File:Artemis III Lunar Spacesuit Testing (jsc2026e003928).jpg",
+      "author": "NASA Johnson Space Center / NASA/Bill Stafford",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Administrator_Isaacman_Visits_Axiom_Space_(NHQ20260123_admin_0007).jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Administrator_Isaacman_Visits_Axiom_Space_%28NHQ20260123_admin_0007%29.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Artemis_III_Lunar_Spacesuit_Testing_(jsc2026e003928).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Artemis_III_Lunar_Spacesuit_Testing_%28jsc2026e003928%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": 183156232,
+      "pageid": 183862276,
       "nasa_id": null,
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "fetched_at": "2026-11-08T08:08:18.666Z"
+    },
+    {
+      "id": "1d989f8fcc10a1d2",
+      "path": "/images/fleet-galleries/axemu/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Canadian Space Agency Astronaut Jenni Gibbons Practices Lunar Tasks (jsc2025e085695).jpg",
+      "author": "NASA Johnson Space Center / NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Canadian_Space_Agency_Astronaut_Jenni_Gibbons_Practices_Lunar_Tasks_(jsc2025e085695).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Canadian_Space_Agency_Astronaut_Jenni_Gibbons_Practices_Lunar_Tasks_%28jsc2025e085695%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 178647814,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:18.666Z"
+    },
+    {
+      "id": "2f0f19037ae74d04",
+      "path": "/images/fleet-galleries/axemu/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Artemis III Lunar Spacesuit Testing (jsc2026e003928).jpg",
+      "author": "NASA Johnson Space Center / NASA/Bill Stafford",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Artemis_III_Lunar_Spacesuit_Testing_(jsc2026e003928).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Artemis_III_Lunar_Spacesuit_Testing_%28jsc2026e003928%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 183862276,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:18.666Z"
     },
     {
       "id": "7b7e8b9b20031ba4",
       "path": "/images/fleet-galleries/baikonur-1-5/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/baikonur-1-5",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_type": "wikimedia-commons",
+      "title": "File:Soyuz expedition 19 launch pad.jpg",
+      "author": "Bill Ingalls",
+      "agency": "Roscosmos",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz_expedition_19_launch_pad.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Soyuz_expedition_19_launch_pad.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "curated-no-upstream-record",
         "walker-fallback"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 6439094,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.959Z"
+      "fetched_at": "2026-11-08T08:08:19.907Z"
     },
     {
       "id": "8d2af0907b5e0dc8",
       "path": "/images/fleet-galleries/baikonur-1-5/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/baikonur-1-5",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_type": "wikimedia-commons",
+      "title": "File:Космодром Байконур, стартовый стол на Гагаринском старте (7).jpg",
+      "author": "Nikolai Bulykin",
+      "agency": "Roscosmos",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%B4%D1%80%D0%BE%D0%BC_%D0%91%D0%B0%D0%B9%D0%BA%D0%BE%D0%BD%D1%83%D1%80,_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81%D1%82%D0%BE%D0%BB_%D0%BD%D0%B0_%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B5_(7).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%B4%D1%80%D0%BE%D0%BC_%D0%91%D0%B0%D0%B9%D0%BA%D0%BE%D0%BD%D1%83%D1%80%2C_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81%D1%82%D0%BE%D0%BB_%D0%BD%D0%B0_%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B5_%287%29.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
         "curated-no-upstream-record",
         "walker-fallback"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 192112161,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.959Z"
+      "fetched_at": "2026-11-08T08:08:21.163Z"
     },
     {
       "id": "1cf4ca8eddc76b1b",
@@ -6218,6 +6418,46 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.959Z"
+    },
+    {
+      "id": "24d33aacb379db21",
+      "path": "/images/fleet-galleries/baikonur-1-5/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Soyuz expedition 19 launch pad.jpg",
+      "author": "Bill Ingalls",
+      "agency": "Roscosmos",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz_expedition_19_launch_pad.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Soyuz_expedition_19_launch_pad.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 6439094,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:21.163Z"
+    },
+    {
+      "id": "d6c491aa14e65813",
+      "path": "/images/fleet-galleries/baikonur-1-5/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Космодром Байконур, стартовый стол на Гагаринском старте (7).jpg",
+      "author": "Nikolai Bulykin",
+      "agency": "Roscosmos",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%B4%D1%80%D0%BE%D0%BC_%D0%91%D0%B0%D0%B9%D0%BA%D0%BE%D0%BD%D1%83%D1%80,_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81%D1%82%D0%BE%D0%BB_%D0%BD%D0%B0_%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B5_(7).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%B4%D1%80%D0%BE%D0%BC_%D0%91%D0%B0%D0%B9%D0%BA%D0%BE%D0%BD%D1%83%D1%80%2C_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81%D1%82%D0%BE%D0%BB_%D0%BD%D0%B0_%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B5_%287%29.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 192112161,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:21.163Z"
     },
     {
       "id": "52188946d8febf8b",
@@ -6389,21 +6629,21 @@
       "id": "06dec4b7d6e32b4e",
       "path": "/images/fleet-galleries/beagle2/02.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Beagle-2-separation.png",
-      "author": "ESA - European Space Agency, CC BY-SA 3.0 IGO",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Beagle-2-separation.png",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Beagle-2-separation.png",
-      "license_short": "CC-BY-3.0-IGO",
-      "license_url": "https://creativecommons.org/licenses/by/3.0/igo/deed.en",
-      "license_rationale": "Licensed CC BY 3.0 igo on Wikimedia Commons.",
+      "title": "File:A replica of Beagle 2 - geograph.org.uk - 7566047.jpg",
+      "author": "Neil Owen",
+      "agency": "UKSA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_replica_of_Beagle_2_-_geograph.org.uk_-_7566047.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/A_replica_of_Beagle_2_-_geograph.org.uk_-_7566047.jpg",
+      "license_short": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 2.0",
       "modifications": [
         "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": 53038908,
+      "pageid": 163895053,
       "nasa_id": null,
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "fetched_at": "2026-11-08T08:08:22.424Z"
     },
     {
       "id": "962afe4bb75a8e82",
@@ -6655,43 +6895,63 @@
       "id": "51864ad7b6dd2813",
       "path": "/images/fleet-galleries/bepicolombo/05.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:BepiColombo_images_antennas_ESA401735.jpg",
-      "author": "ESA",
-      "agency": "ESA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ABepiColombo_images_antennas_ESA401735.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo_images_antennas_ESA401735.jpg",
-      "license_short": "CC-BY-SA-3.0-IGO",
-      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-      "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+      "title": "File:Mercury (BepiColombo Mercury-1).jpg",
+      "author": "NASA",
+      "agency": "ESA / JAXA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mercury_(BepiColombo_Mercury-1).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Mercury_%28BepiColombo_Mercury-1%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 196661529,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.874Z"
+      "fetched_at": "2026-11-08T08:08:23.692Z"
+    },
+    {
+      "id": "fd552e0784848739",
+      "path": "/images/fleet-galleries/bepicolombo/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mercury (BepiColombo Mercury-1).jpg",
+      "author": "NASA",
+      "agency": "ESA / JAXA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mercury_(BepiColombo_Mercury-1).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Mercury_%28BepiColombo_Mercury-1%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 196661529,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:23.693Z"
     },
     {
       "id": "84f916e84b7c3afa",
       "path": "/images/fleet-galleries/beresheet/01.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Beresheet_model_on_Habima_Square_20190222_01.jpg",
-      "author": "TaBaZzz",
+      "title": "File:Spacecraft 03 (cropped).jpg",
+      "author": "Oshratsl",
       "agency": "SpaceIL",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ABeresheet_model_on_Habima_Square_20190222_01.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet_model_on_Habima_Square_20190222_01.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Spacecraft_03_(cropped).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Spacecraft_03_%28cropped%29.jpg",
       "license_short": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "license_rationale": "Reuse with attribution; derivatives under same license.",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 76801467,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.874Z"
+      "fetched_at": "2026-11-08T08:08:24.947Z"
     },
     {
       "id": "3f335005f9152089",
@@ -6755,6 +7015,26 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.874Z"
+    },
+    {
+      "id": "60391d656a9246a6",
+      "path": "/images/fleet-galleries/beresheet/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Spacecraft 03 (cropped).jpg",
+      "author": "Oshratsl",
+      "agency": "SpaceIL",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Spacecraft_03_(cropped).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Spacecraft_03_%28cropped%29.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 76801467,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:24.947Z"
     },
     {
       "id": "b9b6d9577990fe59",
@@ -7074,21 +7354,21 @@
       "id": "e73115e4c27fb4f6",
       "path": "/images/fleet-galleries/cape-canaveral-lc-36b/02.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Air Force welcomes commercial space customer Blue Origin to Launch Complex 36 (2179362).jpeg",
-      "author": "U.S. Air Force photo by Matthew Jurgens",
-      "agency": "United Launch Alliance",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Air_Force_welcomes_commercial_space_customer_Blue_Origin_to_Launch_Complex_36_(2179362).jpeg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Air_Force_welcomes_commercial_space_customer_Blue_Origin_to_Launch_Complex_36_%282179362%29.jpeg",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
+      "title": "File:Intelsat IV-F5 Launch - GPN-2000-000639.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Intelsat_IV-F5_Launch_-_GPN-2000-000639.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Intelsat_IV-F5_Launch_-_GPN-2000-000639.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
       "modifications": [
         "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": 126159083,
+      "pageid": 6448940,
       "nasa_id": null,
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "fetched_at": "2026-11-08T08:08:26.183Z"
     },
     {
       "id": "b37889cde90b1d87",
@@ -7150,6 +7430,26 @@
       "pageid": 158091185,
       "nasa_id": null,
       "fetched_at": "2026-10-21T08:56:15.150Z"
+    },
+    {
+      "id": "7c3025a868a13ed7",
+      "path": "/images/fleet-galleries/cape-canaveral-lc-36b/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Intelsat IV-F5 Launch - GPN-2000-000639.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Intelsat_IV-F5_Launch_-_GPN-2000-000639.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Intelsat_IV-F5_Launch_-_GPN-2000-000639.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 6448940,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:26.183Z"
     },
     {
       "id": "272833b927d97b32",
@@ -7775,22 +8075,42 @@
       "id": "dbf1c4a2cee3d2fd",
       "path": "/images/fleet-galleries/challenger/05.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Shuttle profiles.jpg",
-      "author": "NASA",
+      "title": "File:Space Shuttle Challenger (04-04-1983).JPEG",
+      "author": "Unknown author",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AShuttle%20profiles.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shuttle%20profiles.jpg",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Space_Shuttle_Challenger_(04-04-1983).JPEG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Space_Shuttle_Challenger_%2804-04-1983%29.JPEG",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 5284886,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.875Z"
+      "fetched_at": "2026-11-08T08:08:27.438Z"
+    },
+    {
+      "id": "0cfb4ee6e66834d9",
+      "path": "/images/fleet-galleries/challenger/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Space Shuttle Challenger (04-04-1983).JPEG",
+      "author": "Unknown author",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Space_Shuttle_Challenger_(04-04-1983).JPEG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Space_Shuttle_Challenger_%2804-04-1983%29.JPEG",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 5284886,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:27.438Z"
     },
     {
       "id": "b8ef1602453bf4fb",
@@ -8067,22 +8387,22 @@
       "id": "48cfb10ca77c1058",
       "path": "/images/fleet-galleries/change-3/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Chang'e_3_Lander_and_Rover_From_Above_(LROC637_-_landerview_lroc_crop).png",
-      "author": "CMSA",
-      "agency": "CMSA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AChang'e_3_Lander_and_Rover_From_Above_(LROC637_-_landerview_lroc_crop).png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang'e_3_Lander_and_Rover_From_Above_(LROC637_-_landerview_lroc_crop).png",
+      "title": "File:Yutu rover mockup at NMC 02.jpg",
+      "author": "Shujianyang",
+      "agency": "CNSA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Yutu_rover_mockup_at_NMC_02.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Yutu_rover_mockup_at_NMC_02.jpg",
       "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "license_rationale": "Reuse with attribution; derivatives under same license.",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 134404364,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.876Z"
+      "fetched_at": "2026-11-08T08:08:28.900Z"
     },
     {
       "id": "4d36fe316451f099",
@@ -8550,22 +8870,42 @@
       "id": "763436851bc84b30",
       "path": "/images/fleet-galleries/commercial-stations/01.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Axiom Segment on ISS.jpg",
+      "title": "File:Axiom modules connected to ISS.jpg",
       "author": "Axiom Space, Inc.",
       "agency": "Axiom Space",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Axiom_Segment_on_ISS.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Axiom_Segment_on_ISS.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Axiom_modules_connected_to_ISS.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Axiom_modules_connected_to_ISS.jpg",
       "license_short": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "license_rationale": "Reuse with attribution; derivatives under same license.",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
         "downloaded-via-special-filepath",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": 93041826,
+      "pageid": 93041825,
       "nasa_id": null,
-      "fetched_at": "2026-07-12T19:51:15.082Z"
+      "fetched_at": "2026-11-08T08:08:30.130Z"
+    },
+    {
+      "id": "72966515e630b260",
+      "path": "/images/fleet-galleries/commercial-stations/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Axiom modules connected to ISS.jpg",
+      "author": "Axiom Space, Inc.",
+      "agency": "Axiom Space",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Axiom_modules_connected_to_ISS.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Axiom_modules_connected_to_ISS.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 93041825,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:30.130Z"
     },
     {
       "id": "23c180a60903f63e",
@@ -8754,23 +9094,23 @@
     {
       "id": "0bc20bd8380ba174",
       "path": "/images/fleet-galleries/crew-dragon/01.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — crew-dragon / \"fleet crew-dragon\"",
+      "source_type": "wikimedia-commons",
+      "title": "File:The SpaceX Crew Dragon Endeavour approaches the International Space Station (iss065e002661).jpg",
       "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+crew-dragon&media_type=image&keywords=crew-dragon",
-      "image_url": null,
+      "agency": "SpaceX",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_SpaceX_Crew_Dragon_Endeavour_approaches_the_International_Space_Station_(iss065e002661).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/The_SpaceX_Crew_Dragon_Endeavour_approaches_the_International_Space_Station_%28iss065e002661%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 104481321,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.877Z"
+      "fetched_at": "2026-11-08T08:08:31.380Z"
     },
     {
       "id": "e20cfdbc9c28eb3e",
@@ -8797,22 +9137,22 @@
       "id": "1f30819aad117056",
       "path": "/images/fleet-galleries/crew-dragon/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Both_commercial_Crew_vehicles_Crew_Dragon_and_Starliner_docked_to_ports_on_harmony_module_at_the_same_time.png",
+      "title": "File:CCP SpaceX Demo-2 Dragon (3).jpg",
       "author": "SpaceX",
       "agency": "SpaceX",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ABoth_commercial_Crew_vehicles_Crew_Dragon_and_Starliner_docked_to_ports_on_harmony_module_at_the_same_time.png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Both_commercial_Crew_vehicles_Crew_Dragon_and_Starliner_docked_to_ports_on_harmony_module_at_the_same_time.png",
-      "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:CCP_SpaceX_Demo-2_Dragon_(3).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/CCP_SpaceX_Demo-2_Dragon_%283%29.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 89261776,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.877Z"
+      "fetched_at": "2026-11-08T08:08:32.657Z"
     },
     {
       "id": "1658fa9b66f44768",
@@ -8855,6 +9195,46 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.877Z"
+    },
+    {
+      "id": "792cca0d8de1f333",
+      "path": "/images/fleet-galleries/crew-dragon/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:The SpaceX Crew Dragon Endeavour approaches the International Space Station (iss065e002661).jpg",
+      "author": "NASA",
+      "agency": "SpaceX",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_SpaceX_Crew_Dragon_Endeavour_approaches_the_International_Space_Station_(iss065e002661).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/The_SpaceX_Crew_Dragon_Endeavour_approaches_the_International_Space_Station_%28iss065e002661%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 104481321,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:32.657Z"
+    },
+    {
+      "id": "d1c58ab921082af1",
+      "path": "/images/fleet-galleries/crew-dragon/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:CCP SpaceX Demo-2 Dragon (3).jpg",
+      "author": "SpaceX",
+      "agency": "SpaceX",
+      "source_url": "https://commons.wikimedia.org/wiki/File:CCP_SpaceX_Demo-2_Dragon_(3).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/CCP_SpaceX_Demo-2_Dragon_%283%29.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 89261776,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:32.657Z"
     },
     {
       "id": "9aca1f3e4186aa4b",
@@ -9229,43 +9609,83 @@
       "id": "f95e70e129487df1",
       "path": "/images/fleet-galleries/dawn/04.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Ceres_and_Vesta,_Moon_size_comparison.jpg",
-      "author": "NASA",
+      "title": "File:Dawn assembly at KSC.jpg",
+      "author": "NASA/George Shelton, Image ID: KSC-07PD-0864",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ACeres_and_Vesta%2C_Moon_size_comparison.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ceres_and_Vesta%2C_Moon_size_comparison.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dawn_assembly_at_KSC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Dawn_assembly_at_KSC.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 2141714,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.878Z"
+      "fetched_at": "2026-11-08T08:08:33.892Z"
     },
     {
       "id": "aa98a7a5839e5d93",
       "path": "/images/fleet-galleries/dawn/05.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Hubble_Images_of_Asteroids_Vesta_and_Ceres.jpg",
-      "author": "NASA",
+      "title": "File:Released to Public \"Dawn Begins Its Journey\" by NASA Sandra Joseph and Rafael Hernandez (NASA) (2866267493).jpg",
+      "author": "NASA/Sandra Joseph and Rafael Hernandez",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AHubble_Images_of_Asteroids_Vesta_and_Ceres.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble_Images_of_Asteroids_Vesta_and_Ceres.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Released_to_Public_%22Dawn_Begins_Its_Journey%22_by_NASA_Sandra_Joseph_and_Rafael_Hernandez_(NASA)_(2866267493).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Released_to_Public_%22Dawn_Begins_Its_Journey%22_by_NASA_Sandra_Joseph_and_Rafael_Hernandez_%28NASA%29_%282866267493%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 97553682,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.878Z"
+      "fetched_at": "2026-11-08T08:08:35.136Z"
+    },
+    {
+      "id": "e078534771e37e35",
+      "path": "/images/fleet-galleries/dawn/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Dawn assembly at KSC.jpg",
+      "author": "NASA/George Shelton, Image ID: KSC-07PD-0864",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dawn_assembly_at_KSC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Dawn_assembly_at_KSC.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 2141714,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:35.136Z"
+    },
+    {
+      "id": "c3e85e638e3f7a68",
+      "path": "/images/fleet-galleries/dawn/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Released to Public \"Dawn Begins Its Journey\" by NASA Sandra Joseph and Rafael Hernandez (NASA) (2866267493).jpg",
+      "author": "NASA/Sandra Joseph and Rafael Hernandez",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Released_to_Public_%22Dawn_Begins_Its_Journey%22_by_NASA_Sandra_Joseph_and_Rafael_Hernandez_(NASA)_(2866267493).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Released_to_Public_%22Dawn_Begins_Its_Journey%22_by_NASA_Sandra_Joseph_and_Rafael_Hernandez_%28NASA%29_%282866267493%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 97553682,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:35.136Z"
     },
     {
       "id": "f047a5ea09cb29c5",
@@ -9355,22 +9775,42 @@
       "id": "4e5c1a88bd6a7257",
       "path": "/images/fleet-galleries/delta-ii/05.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Delta_II_Rocket_Joins_KSC_Rocket_Garden_(3).jpg",
-      "author": "NASA",
+      "title": "File:Delta II and NPP at dusk.jpg",
+      "author": "Bill Ingalls",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ADelta_II_Rocket_Joins_KSC_Rocket_Garden_(3).jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Delta_II_Rocket_Joins_KSC_Rocket_Garden_(3).jpg",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Delta_II_and_NPP_at_dusk.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Delta_II_and_NPP_at_dusk.jpg",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 17151258,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.878Z"
+      "fetched_at": "2026-11-08T08:08:36.384Z"
+    },
+    {
+      "id": "ec3a98eb3dac3f0e",
+      "path": "/images/fleet-galleries/delta-ii/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Delta II and NPP at dusk.jpg",
+      "author": "Bill Ingalls",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Delta_II_and_NPP_at_dusk.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Delta_II_and_NPP_at_dusk.jpg",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 17151258,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:36.384Z"
     },
     {
       "id": "0d6d4e802fc08da7",
@@ -9627,22 +10067,22 @@
       "id": "07ef682972d1e783",
       "path": "/images/fleet-galleries/energia/01.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Energia_Render_3_corrected.png",
-      "author": "Roscosmos",
+      "title": "File:Energia-rocket-transporter-1.jpg",
+      "author": "Аркадий Тарасов",
       "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AEnergia_Render_3_corrected.png",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Energia_Render_3_corrected.png",
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Energia-rocket-transporter-1.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Energia-rocket-transporter-1.jpg",
+      "license_short": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 36348303,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.878Z"
+      "fetched_at": "2026-11-08T08:08:37.615Z"
     },
     {
       "id": "c97794c35921bbe3",
@@ -9814,23 +10254,23 @@
     {
       "id": "f4eb9d3f81cefd7e",
       "path": "/images/fleet-galleries/euclid/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/euclid",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_type": "wikimedia-commons",
+      "title": "File:Euclid looking into the Universe ESA24697255 (cropped).jpg",
+      "author": "European Space Agency",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Euclid_looking_into_the_Universe_ESA24697255_(cropped).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Euclid_looking_into_the_Universe_ESA24697255_%28cropped%29.jpg",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
       "modifications": [
         "curated-no-upstream-record",
         "walker-fallback"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 132020213,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.959Z"
+      "fetched_at": "2026-11-08T08:08:38.848Z"
     },
     {
       "id": "1b7b93f30a9c49e3",
@@ -9896,22 +10336,22 @@
     {
       "id": "5cdd6bed6423c0ad",
       "path": "/images/fleet-galleries/europa-clipper/03.webp",
-      "source_type": "nasa-images-api",
-      "title": "Europa Clipper: NASA's Largest Planetary Spacecraft (Artist's Concept)",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Europa Clipper in TVAC 25 Space Simulator.jpg",
+      "author": "NASA/JPL-Caltech",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/PIA26433",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Europa_Clipper_in_TVAC_25_Space_Simulator.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Europa_Clipper_in_TVAC_25_Space_Simulator.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
-      "nasa_id": "PIA26433",
-      "fetched_at": "2026-10-21T08:56:15.150Z"
+      "pageid": 146877724,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:40.077Z"
     },
     {
       "id": "ea40d8912ec9a257",
@@ -9952,6 +10392,26 @@
       "pageid": null,
       "nasa_id": "PIA24330",
       "fetched_at": "2026-10-21T08:56:15.150Z"
+    },
+    {
+      "id": "b70ded8f682d1372",
+      "path": "/images/fleet-galleries/europa-clipper/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Europa Clipper in TVAC 25 Space Simulator.jpg",
+      "author": "NASA/JPL-Caltech",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Europa_Clipper_in_TVAC_25_Space_Simulator.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Europa_Clipper_in_TVAC_25_Space_Simulator.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 146877724,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:40.077Z"
     },
     {
       "id": "2c171894513133e9",
@@ -10163,65 +10623,105 @@
     {
       "id": "9bcc666d4af4bf40",
       "path": "/images/fleet-galleries/f-1/01.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — f-1",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:F-1 Engines Being Installed.jpg",
+      "author": "NASA Marshall Space Flight Center",
       "agency": "NASA",
-      "source_url": "https://images-assets.nasa.gov/image/9903406/9903406~small.jpg",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:F-1_Engines_Being_Installed.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/F-1_Engines_Being_Installed.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": null,
-      "nasa_id": "9903406",
-      "fetched_at": "2026-08-01T23:43:23.787Z"
+      "pageid": 4503317,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:41.316Z"
     },
     {
       "id": "f9d9bcc391bb81b2",
       "path": "/images/fleet-galleries/f-1/02.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — f-1",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:F-1 Engine Test Firing.jpg",
+      "author": "NASA Marshall Space Flight Center",
       "agency": "NASA",
-      "source_url": "https://images-assets.nasa.gov/image/9801771/9801771~small.jpg",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:F-1_Engine_Test_Firing.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/F-1_Engine_Test_Firing.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": null,
-      "nasa_id": "9801771",
-      "fetched_at": "2026-08-01T23:43:23.787Z"
+      "pageid": 4503397,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:42.555Z"
+    },
+    {
+      "id": "01b971262d27b887",
+      "path": "/images/fleet-galleries/f-1/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:F-1 Engines Being Installed.jpg",
+      "author": "NASA Marshall Space Flight Center",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:F-1_Engines_Being_Installed.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/F-1_Engines_Being_Installed.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 4503317,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:42.556Z"
+    },
+    {
+      "id": "8e416eb716a84154",
+      "path": "/images/fleet-galleries/f-1/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:F-1 Engine Test Firing.jpg",
+      "author": "NASA Marshall Space Flight Center",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:F-1_Engine_Test_Firing.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/F-1_Engine_Test_Firing.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 4503397,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:42.556Z"
     },
     {
       "id": "812b986f88c16e06",
       "path": "/images/fleet-galleries/falcon-9/01.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — falcon-9 / \"fleet falcon-9\"",
+      "source_type": "wikimedia-commons",
+      "title": "File:SES-10 Launch - world's first reflight of an orbital class rocket (33361035200).jpg",
       "author": "SpaceX",
       "agency": "SpaceX",
-      "source_url": "https://images.nasa.gov/search?q=fleet+falcon-9&media_type=image&keywords=falcon-9",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_(33361035200).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_%2833361035200%29.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-jpeg"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 57565631,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.879Z"
+      "fetched_at": "2026-11-08T08:08:43.797Z"
     },
     {
       "id": "2348d708c97bb3ae",
@@ -10306,6 +10806,26 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.879Z"
+    },
+    {
+      "id": "db2803e1870f753a",
+      "path": "/images/fleet-galleries/falcon-9/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:SES-10 Launch - world's first reflight of an orbital class rocket (33361035200).jpg",
+      "author": "SpaceX",
+      "agency": "SpaceX",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_(33361035200).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_%2833361035200%29.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 57565631,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:43.798Z"
     },
     {
       "id": "4069d518e796a070",
@@ -72076,46 +72596,46 @@
     {
       "id": "560d688ec45bbaa0",
       "path": "/images/fleet-galleries/emu/03.webp",
-      "source_type": "nasa-images-api",
-      "title": "Labeled cutaway line drawing of Shuttle Extravehicular Mobility Unit (EMU)",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Piers Sellers spacewalk.jpg",
+      "author": "NASA, Astronaut Michael Edward Fossum",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/S91-37110",
-      "image_url": "https://images-assets.nasa.gov/image/S91-37110/S91-37110~orig.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Piers_Sellers_spacewalk.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Piers_Sellers_spacewalk.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "resized-to-4096-master",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": null,
-      "nasa_id": "S91-37110",
-      "fetched_at": "2026-10-20T17:00:03.840Z"
+      "pageid": 1168035,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:45.053Z"
     },
     {
       "id": "b5e77f10ce240824",
       "path": "/images/fleet-galleries/emu/03.1x1.jpg",
-      "source_type": "nasa-images-api",
-      "title": "Labeled cutaway line drawing of Shuttle Extravehicular Mobility Unit (EMU)",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Piers Sellers spacewalk.jpg",
+      "author": "NASA, Astronaut Michael Edward Fossum",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/details/S91-37110",
-      "image_url": "https://images-assets.nasa.gov/image/S91-37110/S91-37110~orig.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Piers_Sellers_spacewalk.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Piers_Sellers_spacewalk.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "resized-to-4096-master",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": null,
-      "nasa_id": "S91-37110",
-      "fetched_at": "2026-10-20T17:00:03.840Z"
+      "pageid": 1168035,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:45.053Z"
     },
     {
       "id": "0361bd2b219aea86",
@@ -74338,6 +74858,26 @@
       "fetched_at": "2026-10-20T19:51:19.659Z"
     },
     {
+      "id": "e0551109a09c51ed",
+      "path": "/images/fleet-galleries/beagle2/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:A replica of Beagle 2 - geograph.org.uk - 7566047.jpg",
+      "author": "Neil Owen",
+      "agency": "UKSA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_replica_of_Beagle_2_-_geograph.org.uk_-_7566047.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/A_replica_of_Beagle_2_-_geograph.org.uk_-_7566047.jpg",
+      "license_short": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 2.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 163895053,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:45.053Z"
+    },
+    {
       "id": "53df67a1349ae80c",
       "path": "/images/fleet-galleries/change-2/01.webp",
       "source_type": "wikimedia-commons",
@@ -74512,6 +75052,26 @@
       "pageid": 30219959,
       "nasa_id": null,
       "fetched_at": "2026-10-20T19:51:19.659Z"
+    },
+    {
+      "id": "00784f21a4fb20e4",
+      "path": "/images/fleet-galleries/change-3/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Yutu rover mockup at NMC 02.jpg",
+      "author": "Shujianyang",
+      "agency": "CNSA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Yutu_rover_mockup_at_NMC_02.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Yutu_rover_mockup_at_NMC_02.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134404364,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:45.053Z"
     },
     {
       "id": "04e7478f3804dcef",
@@ -74908,6 +75468,26 @@
       "pageid": 153978009,
       "nasa_id": null,
       "fetched_at": "2026-10-20T19:51:19.659Z"
+    },
+    {
+      "id": "4359f9005661a2e6",
+      "path": "/images/fleet-galleries/euclid/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Euclid looking into the Universe ESA24697255 (cropped).jpg",
+      "author": "European Space Agency",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Euclid_looking_into_the_Universe_ESA24697255_(cropped).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Euclid_looking_into_the_Universe_ESA24697255_%28cropped%29.jpg",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 132020213,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:45.053Z"
     },
     {
       "id": "3e630011afadca26",
@@ -81255,6 +81835,26 @@
       "fetched_at": "2026-10-21T08:07:45.597Z"
     },
     {
+      "id": "5d9cc2a9752c09ed",
+      "path": "/images/fleet-galleries/energia/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Energia-rocket-transporter-1.jpg",
+      "author": "Аркадий Тарасов",
+      "agency": "Roscosmos",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Energia-rocket-transporter-1.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Energia-rocket-transporter-1.jpg",
+      "license_short": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 36348303,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:08:45.053Z"
+    },
+    {
       "id": "552c3b745b1a3b3a",
       "path": "/images/fleet-galleries/cargo-dragon-2/05.webp",
       "source_type": "nasa-images-api",
@@ -81346,45 +81946,45 @@
       "id": "a1ef9a5a7c67342c",
       "path": "/images/fleet-galleries/compton-gro/04.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:Compton 1 to 30 MeV All-Sky Map.jpg",
-      "author": "NASA/COMPTEL team, Max Planck Institute for Extrasolar Physics",
+      "title": "File:Gamma Ray Observatory grasped by Atlantis' Canadarm (S37-99-0098).jpg",
+      "author": "NASA",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Compton_1_to_30_MeV_All-Sky_Map.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Compton_1_to_30_MeV_All-Sky_Map.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gamma_Ray_Observatory_grasped_by_Atlantis%27_Canadarm_(S37-99-0098).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Gamma_Ray_Observatory_grasped_by_Atlantis%27_Canadarm_%28S37-99-0098%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-api",
         "resized-to-4096-master",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": 78951995,
+      "pageid": 90560943,
       "nasa_id": null,
-      "fetched_at": "2026-10-21T08:07:45.597Z"
+      "fetched_at": "2026-11-08T08:08:46.303Z"
     },
     {
       "id": "6ebf1518ceb0f203",
       "path": "/images/fleet-galleries/compton-gro/04.1x1.jpg",
       "source_type": "wikimedia-commons",
-      "title": "File:Compton 1 to 30 MeV All-Sky Map.jpg",
-      "author": "NASA/COMPTEL team, Max Planck Institute for Extrasolar Physics",
+      "title": "File:Gamma Ray Observatory grasped by Atlantis' Canadarm (S37-99-0098).jpg",
+      "author": "NASA",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Compton_1_to_30_MeV_All-Sky_Map.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Compton_1_to_30_MeV_All-Sky_Map.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gamma_Ray_Observatory_grasped_by_Atlantis%27_Canadarm_(S37-99-0098).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Gamma_Ray_Observatory_grasped_by_Atlantis%27_Canadarm_%28S37-99-0098%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-commons-api",
         "resized-to-4096-master",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": 78951995,
+      "pageid": 90560943,
       "nasa_id": null,
-      "fetched_at": "2026-10-21T08:07:45.597Z"
+      "fetched_at": "2026-11-08T08:08:46.303Z"
     },
     {
       "id": "1b0bae71eca629cf",
@@ -85296,22 +85896,22 @@
       "id": "ab49e8127a8266b6",
       "path": "/images/fleet-galleries/alcantara/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:11 02 2021 - Cerimônia de entrega de Títulos de Propriedade, em Alcântara - MA. (50936441103).jpg",
-      "author": "Ministério da Defesa",
-      "agency": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File:11_02_2021_-_Cerim%C3%B4nia_de_entrega_de_T%C3%ADtulos_de_Propriedade,_em_Alc%C3%A2ntara_-_MA._(50936441103).jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/11%2002%202021%20-%20Cerim%C3%B4nia%20de%20entrega%20de%20T%C3%ADtulos%20de%20Propriedade%2C%20em%20Alc%C3%A2ntara%20-%20MA.%20(50936441103).jpg",
-      "license_short": "CC-BY-2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "license_rationale": "Reuse with attribution.",
+      "title": "File:Lançamento do foguete brasileiro de médio porte VSB-30 V07 da Base de Alcântara.jpg",
+      "author": "Agência Brasil",
+      "agency": "AEB",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
       "modifications": [
         "downloaded-via-commons-search",
         "reencoded-webp"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 17652920,
       "nasa_id": null,
-      "fetched_at": "2026-10-22T21:08:11.929Z"
+      "fetched_at": "2026-11-08T08:06:58.272Z"
     },
     {
       "id": "b111579654e197d6",
@@ -85333,6 +85933,26 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-10-22T21:08:12.849Z"
+    },
+    {
+      "id": "c80276b0cf09da81",
+      "path": "/images/fleet-galleries/alcantara/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Lançamento do foguete brasileiro de médio porte VSB-30 V07 da Base de Alcântara.jpg",
+      "author": "Agência Brasil",
+      "agency": "AEB",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 17652920,
+      "nasa_id": null,
+      "fetched_at": "2026-11-08T08:06:58.273Z"
     },
     {
       "id": "d619dc15167e1aad",

@@ -1883,7 +1883,7 @@
   ],
   "/images/fleet-galleries/apollo-csm-block-ii/05": [
     320,
-    979
+    1140
   ],
   "/images/fleet-galleries/apollo-lm/01": [
     320,
@@ -1948,7 +1948,9 @@
   ],
   "/images/fleet-galleries/ariane-5/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/ariane-5/04": [
     320,
@@ -1999,12 +2001,13 @@
   ],
   "/images/fleet-galleries/atlas-lv-3b/01": [
     320,
-    640,
-    784
+    1024,
+    1638,
+    2400
   ],
   "/images/fleet-galleries/atlas-lv-3b/02": [
     320,
-    960
+    1048
   ],
   "/images/fleet-galleries/atlas-lv-3b/03": [
     320,
@@ -2014,7 +2017,9 @@
   ],
   "/images/fleet-galleries/atlas-lv-3b/04": [
     320,
-    722
+    1053,
+    1684,
+    2467
   ],
   "/images/fleet-galleries/atlas-lv-3b/05": [
     320,
@@ -2060,11 +2065,15 @@
   ],
   "/images/fleet-galleries/atv/02": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/atv/03": [
     320,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/atv/04": [
     320,
@@ -2072,7 +2081,8 @@
   ],
   "/images/fleet-galleries/atv/05": [
     320,
-    656
+    1272,
+    2027
   ],
   "/images/fleet-galleries/axemu/01": [
     320,
@@ -2095,20 +2105,26 @@
   "/images/fleet-galleries/axemu/04": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/fleet-galleries/axemu/05": [
     320,
-    1280,
-    1920
+    853,
+    1365,
+    2048
   ],
   "/images/fleet-galleries/baikonur-1-5/01": [
     320,
-    382
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/baikonur-1-5/02": [
     320,
-    441
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/baikonur-1-5/03": [
     320,
@@ -2174,7 +2190,9 @@
   ],
   "/images/fleet-galleries/beagle2/02": [
     320,
-    640
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/beagle2/03": [
     320,
@@ -2238,8 +2256,7 @@
   ],
   "/images/fleet-galleries/bepicolombo/05": [
     320,
-    1280,
-    1920
+    800
   ],
   "/images/fleet-galleries/blue-moon-mk1/01": [
     320,
@@ -2317,8 +2334,9 @@
   ],
   "/images/fleet-galleries/cape-canaveral-lc-36b/02": [
     320,
-    1280,
-    1920
+    867,
+    1386,
+    2031
   ],
   "/images/fleet-galleries/cape-canaveral-lc-36b/03": [
     320,
@@ -2486,7 +2504,8 @@
   "/images/fleet-galleries/challenger/05": [
     320,
     1280,
-    1920
+    2048,
+    2996
   ],
   "/images/fleet-galleries/chandra/01": [
     320,
@@ -2542,8 +2561,9 @@
   ],
   "/images/fleet-galleries/change-3/03": [
     320,
-    928,
-    960
+    1280,
+    2048,
+    2400
   ],
   "/images/fleet-galleries/change-4/01": [
     320,
@@ -2654,7 +2674,7 @@
   "/images/fleet-galleries/commercial-stations/01": [
     320,
     640,
-    1280
+    1089
   ],
   "/images/fleet-galleries/compton-gro/01": [
     320,
@@ -2703,7 +2723,9 @@
   "/images/fleet-galleries/crew-dragon/01": [
     320,
     640,
-    731
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/crew-dragon/02": [
     320,
@@ -2711,7 +2733,9 @@
   ],
   "/images/fleet-galleries/crew-dragon/03": [
     320,
-    960
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/crew-dragon/04": [
     320,
@@ -2809,13 +2833,14 @@
   ],
   "/images/fleet-galleries/dawn/04": [
     320,
-    1280,
-    1920
+    851,
+    1362,
+    2000
   ],
   "/images/fleet-galleries/dawn/05": [
     320,
     1280,
-    1920
+    1600
   ],
   "/images/fleet-galleries/delta-ii/01": [
     320,
@@ -2843,8 +2868,9 @@
   ],
   "/images/fleet-galleries/delta-ii/05": [
     320,
-    1280,
-    1920
+    886,
+    1418,
+    2127
   ],
   "/images/fleet-galleries/discovery/01": [
     320,
@@ -2914,10 +2940,8 @@
   ],
   "/images/fleet-galleries/energia/01": [
     320,
-    640,
-    720,
-    1152,
-    1280
+    1280,
+    1480
   ],
   "/images/fleet-galleries/energia/02": [
     320,
@@ -2963,8 +2987,9 @@
   ],
   "/images/fleet-galleries/euclid/02": [
     320,
-    703,
-    960
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/euclid/03": [
     320,
@@ -2984,9 +3009,9 @@
   ],
   "/images/fleet-galleries/europa-clipper/03": [
     320,
-    1280,
-    2048,
-    3072
+    959,
+    1535,
+    2303
   ],
   "/images/fleet-galleries/europa-clipper/04": [
     320,
@@ -3052,15 +3077,22 @@
   ],
   "/images/fleet-galleries/f-1/01": [
     320,
-    640
+    640,
+    1280,
+    2048,
+    3000
   ],
   "/images/fleet-galleries/f-1/02": [
     320,
-    640
+    940,
+    1504,
+    2203
   ],
   "/images/fleet-galleries/falcon-9/01": [
     320,
-    1280
+    1280,
+    2048,
+    2985
   ],
   "/images/fleet-galleries/falcon-9/02": [
     320,
@@ -13834,10 +13866,9 @@
   ],
   "/images/fleet-galleries/emu/03": [
     320,
-    640,
-    989,
-    1583,
-    2374
+    1280,
+    2048,
+    3032
   ],
   "/images/fleet-galleries/emu/04": [
     320,
@@ -15265,10 +15296,9 @@
   ],
   "/images/fleet-galleries/compton-gro/04": [
     320,
-    640,
-    1280,
-    2048,
-    2362
+    1273,
+    2036,
+    3054
   ],
   "/images/fleet-galleries/lc-34/03": [
     320,
@@ -15444,7 +15474,9 @@
   ],
   "/images/fleet-galleries/beresheet/01": [
     320,
-    1029
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/beresheet/02": [
     320,
@@ -15889,9 +15921,9 @@
   ],
   "/images/fleet-galleries/alcantara/03": [
     320,
-    1280,
-    2048,
-    3072
+    1133,
+    1813,
+    2719
   ],
   "/images/fleet-galleries/alcantara/04": [
     320,

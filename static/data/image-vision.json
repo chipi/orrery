@@ -870,20 +870,21 @@
       "scoring_cost_usd": 0.006651
     },
     "/images/fleet-galleries/apollo-csm-block-ii/05.jpg": {
-      "score": 9,
-      "subject": "A crescent Earth rising above the rugged lunar surface, photographed from lunar orbit against the black void of space.",
-      "category": "orbital",
+      "score": 8,
+      "subject": "The Apollo 15 command and service module in lunar orbit, seen from the lunar module, 2 August 1971.",
+      "category": "spacecraft",
       "focal_point": {
-        "x": 0.38,
-        "y": 0.55
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/apollo-csm-block-ii/05.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:42:39.792Z",
-      "scoring_cost_usd": 0.006546
+      "scored_at": "2026-11-08T08:06:58.473Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/apollo-lm/01.jpg": {
       "score": 9,
@@ -998,9 +999,9 @@
       "scoring_cost_usd": 0.005496
     },
     "/images/fleet-galleries/ariane-5/03.jpg": {
-      "score": 2,
-      "subject": "Four people with ESA badges posing in front of what appears to be the Guiana Space Centre with an Ariane rocket on the launch pad in the background.",
-      "category": "people",
+      "score": 8,
+      "subject": "An Ariane 5 lifting off from Kourou, French Guiana, with the James Webb Space Telescope on 25 December 2021.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -1008,10 +1009,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/ariane-5/03.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:43:11.848Z",
-      "scoring_cost_usd": 0.005541
+      "scored_at": "2026-11-08T08:06:58.477Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/ariane-5/04.jpg": {
       "score": 7,
@@ -1078,36 +1080,38 @@
       "scoring_cost_usd": 0.004716
     },
     "/images/fleet-galleries/atlas-lv-3b/01.jpg": {
-      "score": 6,
-      "subject": "Composite panel of all six Mercury-Atlas and Mercury-Redstone launch vehicles — Freedom 7 through Faith 7 — showing each rocket on the pad or at liftoff with mission name labels.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Mercury-Atlas rocket with John Glenn's Friendship 7 lifting off from Cape Canaveral on 20 February 1962.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/atlas-lv-3b/01.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:43:38.243Z",
-      "scoring_cost_usd": 0.005271
+      "scored_at": "2026-11-08T08:06:58.502Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/atlas-lv-3b/02.jpg": {
-      "score": 2,
-      "subject": "Declassified SECRET-stamped diagram showing launch-vehicle flight-test history and plans for U.S. manned space-flight programs, 1957–1970.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Mercury-Atlas 8 carrying Wally Schirra's Sigma 7 lifting off from Cape Canaveral on 3 October 1962.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/atlas-lv-3b/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:27.286Z",
-      "scoring_cost_usd": 0.005121
+      "scored_at": "2026-11-08T08:06:58.527Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/atlas-lv-3b/03.jpg": {
       "score": 2,
@@ -1126,11 +1130,11 @@
       "scoring_cost_usd": 0.005001
     },
     "/images/fleet-galleries/atlas-lv-3b/04.jpg": {
-      "score": 5,
-      "subject": "Two vintage rockets on outdoor display, likely at the U.S. Space & Rocket Center, partially obscured by colorful flags in the foreground at dusk.",
-      "category": "hardware",
+      "score": 8,
+      "subject": "The uncrewed Mercury-Atlas 3 lifting off from Cape Canaveral on 25 April 1961.",
+      "category": "launch",
       "focal_point": {
-        "x": 0.25,
+        "x": 0.5,
         "y": 0.45
       },
       "variants": {
@@ -1138,8 +1142,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:43:42.547Z",
-      "scoring_cost_usd": 0.005451
+      "scored_at": "2026-11-08T08:06:58.538Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/atlas-lv-3b/05.jpg": {
       "score": 7,
@@ -1254,36 +1259,38 @@
       "scoring_cost_usd": 0.0038459999999999996
     },
     "/images/fleet-galleries/atv/02.jpg": {
-      "score": 2,
-      "subject": "Several people in suits examining interior hardware of a spacecraft or space station module during a facility tour.",
-      "category": "people",
+      "score": 8,
+      "subject": "ATV-4 Albert Einstein approaching the International Space Station over Earth on 15 June 2013.",
+      "category": "spacecraft",
       "focal_point": {
-        "x": 0.45,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/atv/02.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:44:17.893Z",
-      "scoring_cost_usd": 0.005781
+      "scored_at": "2026-11-08T08:06:58.555Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/atv/03.jpg": {
-      "score": 2,
-      "subject": "Line drawing diagram of a space station module with solar arrays and astronaut figures, with dotted annotation lines.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "ATV-2 Johannes Kepler about to dock to the Zvezda module of the International Space Station, 24 February 2011.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/atv/03.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:36.534Z",
-      "scoring_cost_usd": 0.006036
+      "scored_at": "2026-11-08T08:08:46.479Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/atv/04.jpg": {
       "score": 6,
@@ -1302,9 +1309,9 @@
       "scoring_cost_usd": 0.0037470000000000003
     },
     "/images/fleet-galleries/atv/05.jpg": {
-      "score": 2,
-      "subject": "Orbital mechanics diagram showing ISS and ATV rendezvous trajectory with labeled waypoints around a stylized Earth",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Jules Verne ATV approaching the International Space Station against Earth's airglow, 31 March 2008.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -1312,10 +1319,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/atv/05.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:27:39.669Z",
-      "scoring_cost_usd": 0.004281
+      "scored_at": "2026-11-08T08:08:46.501Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/axemu/01.jpg": {
       "score": 4,
@@ -1590,9 +1598,9 @@
       "scoring_cost_usd": 0.004263
     },
     "/images/fleet-galleries/change-3/03.jpg": {
-      "score": 2,
-      "subject": "Annotated composite diagram comparing Chang'e 3 lander and Yutu rover surface imagery with an orbital overhead view connected by yellow and red annotation lines.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "A full-size mockup of the Yutu rover on display at the National Museum of China, 2023.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -1600,10 +1608,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/change-3/03.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:28:08.281Z",
-      "scoring_cost_usd": 0.007818
+      "scored_at": "2026-11-08T08:08:46.872Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/change-4/01.jpg": {
       "score": 4,
@@ -1670,9 +1679,9 @@
       "scoring_cost_usd": 0.007719
     },
     "/images/fleet-galleries/crew-dragon/01.jpg": {
-      "score": 2,
-      "subject": "Group of astronauts gathered inside the International Space Station's hatch area during a crew greeting or press conference.",
-      "category": "people",
+      "score": 8,
+      "subject": "Crew Dragon Endeavour approaching the International Space Station on 24 April 2021.",
+      "category": "spacecraft",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -1680,10 +1689,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/crew-dragon/01.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:28:23.884Z",
-      "scoring_cost_usd": 0.00456
+      "scored_at": "2026-11-08T08:08:46.930Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/crew-dragon/02.jpg": {
       "score": 3,
@@ -1702,20 +1712,21 @@
       "scoring_cost_usd": 0.004515
     },
     "/images/fleet-galleries/crew-dragon/03.jpg": {
-      "score": 3,
-      "subject": "Labeled diagram/render of the International Space Station showing docked vehicles including Crew-4 Dragon, Starliner OFT-2, Cygnus-17, Progress 79, Progress 80, and Soyuz MS-21.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Crew Dragon for the Demo-2 mission in final processing at Cape Canaveral, April 2020.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/crew-dragon/03.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:28:30.601Z",
-      "scoring_cost_usd": 0.0054210000000000005
+      "scored_at": "2026-11-08T08:08:46.960Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/crew-dragon/04.jpg": {
       "score": 8,
@@ -1926,20 +1937,21 @@
       "scoring_cost_usd": 0.007581
     },
     "/images/fleet-galleries/falcon-9/01.jpg": {
-      "score": 2,
-      "subject": "Four people in matching purple polo shirts posing in front of a large rocket or spacecraft fuselage inside a hangar.",
-      "category": "people",
+      "score": 8,
+      "subject": "A Falcon 9 lifting off from Pad 39A on 30 March 2017 on SES-10, the first reflight of an orbital-class booster.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.55
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/falcon-9/01.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:48:55.968Z",
-      "scoring_cost_usd": 0.007164
+      "scored_at": "2026-11-08T08:08:47.310Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/falcon-9/02.jpg": {
       "score": 2,
@@ -18265,20 +18277,21 @@
       "scoring_cost_usd": 0.007509
     },
     "/images/fleet-galleries/energia/01.jpg": {
-      "score": 4,
-      "subject": "3D render showing front and side orthographic views of the Soviet Energia heavy-lift rocket with engine detail insets on black background",
-      "category": "render",
+      "score": 8,
+      "subject": "The Energia rocket carried out on its transporter to the launch complex at Baikonur in 1987, a frame from a film shot at the time.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/energia/01.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:28:37.102Z",
-      "scoring_cost_usd": 0.007716000000000001
+      "scored_at": "2026-11-08T08:08:47.026Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/energia/02.jpg": {
       "score": 3,
@@ -22057,20 +22070,21 @@
       "scoring_cost_usd": 0.007614
     },
     "/images/fleet-galleries/bepicolombo/05.jpg": {
-      "score": 4,
-      "subject": "BepiColombo spacecraft monitoring camera views showing deployed medium-gain and high-gain antennas on the Mercury Planetary Orbiter, alongside a labeled diagram of the spacecraft stack.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Mercury's northern hemisphere as imaged by BepiColombo during its first Mercury flyby, 1 October 2021.",
+      "category": "orbital",
       "focal_point": {
-        "x": 0.62,
-        "y": 0.38
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T20:55:21.938Z",
-      "scoring_cost_usd": 0.007941
+      "scored_at": "2026-11-08T08:08:46.758Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/blue-moon-mk1/01.jpg": {
       "score": 8,
@@ -22281,20 +22295,21 @@
       "scoring_cost_usd": 0.007299
     },
     "/images/fleet-galleries/challenger/05.jpg": {
-      "score": 3,
-      "subject": "Composite comparison image showing five Space Shuttle orbiters — Columbia, Challenger, Discovery, Atlantis, and Endeavour — each photographed during launch or on the pad with their external tanks and solid rocket boosters.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "Space Shuttle Challenger lifting off from Pad 39A on STS-6, 4 April 1983.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.45
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T20:56:25.118Z",
-      "scoring_cost_usd": 0.007836
+      "scored_at": "2026-11-08T08:08:46.851Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/chandrayaan1/01.jpg": {
       "score": 2,
@@ -22649,25 +22664,26 @@
       "scoring_cost_usd": 0.006612
     },
     "/images/fleet-galleries/dawn/04.jpg": {
-      "score": 6,
-      "subject": "Composite size-comparison image showing asteroid Vesta, dwarf planet Ceres, and Earth's Moon to scale against a black background.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Dawn spacecraft in a clean room at Astrotech's payload processing facility near Kennedy Space Center, April 2007.",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.42,
-        "y": 0.72
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T20:58:05.845Z",
-      "scoring_cost_usd": 0.007683000000000001
+      "scored_at": "2026-11-08T08:08:46.979Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/dawn/05.jpg": {
-      "score": 6,
-      "subject": "Hubble Space Telescope composite showing dwarf planet Ceres (January 2004, ACS/HRC) and asteroid Vesta (May 2007, WFPC2) as small resolved discs against black space.",
-      "category": "orbital",
+      "score": 8,
+      "subject": "A Delta II lifting off from Cape Canaveral carrying the Dawn spacecraft, 27 September 2007.",
+      "category": "launch",
       "focal_point": {
         "x": 0.5,
         "y": 0.45
@@ -22677,8 +22693,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T20:58:09.949Z",
-      "scoring_cost_usd": 0.007785
+      "scored_at": "2026-11-08T08:08:46.987Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/delta-ii/01.jpg": {
       "score": 8,
@@ -22745,20 +22762,21 @@
       "scoring_cost_usd": 0.007413
     },
     "/images/fleet-galleries/delta-ii/05.jpg": {
-      "score": 2,
-      "subject": "A military officer speaks at a podium during an outdoor ceremony in front of rocket engine hardware on display.",
-      "category": "people",
+      "score": 8,
+      "subject": "A Delta II carrying the NPP satellite on its pad at Vandenberg at dusk, 27 October 2011.",
+      "category": "launch",
       "focal_point": {
-        "x": 0.52,
-        "y": 0.55
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T20:58:28.577Z",
-      "scoring_cost_usd": 0.007839
+      "scored_at": "2026-11-08T08:08:46.990Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/discovery/01.jpg": {
       "score": 8,
@@ -32097,9 +32115,9 @@
       "scoring_cost_usd": 0.0077280000000000005
     },
     "/images/fleet-galleries/beresheet/01.jpg": {
-      "score": 7,
-      "subject": "SpaceIL Beresheet lunar lander spacecraft model on display, showing sponsor logos and IAI branding on white and black paneling with landing legs extended",
-      "category": "hardware",
+      "score": 8,
+      "subject": "A rendering of the Beresheet lander standing on the surface of the Moon.",
+      "category": "render",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -32109,8 +32127,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:44:29.627Z",
-      "scoring_cost_usd": 0.006351
+      "scored_at": "2026-11-08T08:08:46.761Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/beresheet/02.jpg": {
       "score": 2,
@@ -32249,6 +32268,188 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-08T07:26:08.445Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/alcantara/03.jpg": {
+      "score": 8,
+      "subject": "A VSB-30 V07 sounding rocket lifting off from the Alcântara Launch Center, Brazil, on 12 December 2011.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:06:58.465Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/axemu/04.jpg": {
+      "score": 8,
+      "subject": "Canadian Space Agency astronaut Jenni Gibbons practising lunar tasks underwater in the Axiom AxEMU suit at NASA Johnson, November 2025.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:46.509Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/axemu/05.jpg": {
+      "score": 8,
+      "subject": "A NASA crew member using lunar tools in the Axiom lunar spacesuit during an elevated-pressure test at NASA Johnson, January 2026.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:46.600Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/baikonur-1-5/01.jpg": {
+      "score": 8,
+      "subject": "A Soyuz rocket raised into position on Baikonur's Site 1 launch pad, 24 March 2009.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:46.670Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/baikonur-1-5/02.jpg": {
+      "score": 8,
+      "subject": "The Site 1 (Gagarin's Start) launch pad at Baikonur Cosmodrome with a Soyuz rocket on it.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:46.682Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/beagle2/02.jpg": {
+      "score": 8,
+      "subject": "A full-size replica of the Beagle 2 lander with its solar panels open on a Mars-like surface, 2023.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:46.725Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/cape-canaveral-lc-36b/02.jpg": {
+      "score": 8,
+      "subject": "An Atlas-Centaur carrying Intelsat IV F-5 lifting off from Complex 36B at Cape Canaveral, 13 June 1972, with the lighthouse in the foreground.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:46.806Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/commercial-stations/01.jpg": {
+      "score": 8,
+      "subject": "An Axiom Space rendering of Axiom Station habitat modules attached to the International Space Station.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:46.890Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/compton-gro/04.jpg": {
+      "score": 8,
+      "subject": "The Compton Gamma Ray Observatory still held by Atlantis's robot arm over clouds and ocean on STS-37, 7 April 1991.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:46.894Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/emu/03.jpg": {
+      "score": 8,
+      "subject": "Astronaut Piers Sellers in an EMU on the third STS-121 spacewalk, 12 July 2006, with Earth behind him.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:47.009Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/euclid/02.jpg": {
+      "score": 8,
+      "subject": "An ESA artist's impression of the Euclid space telescope in orbit.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:47.031Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/europa-clipper/03.jpg": {
+      "score": 8,
+      "subject": "Europa Clipper in the 25-foot space simulator at JPL during thermal vacuum testing, February 2024.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:47.075Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/f-1/01.jpg": {
+      "score": 8,
+      "subject": "Engineers at NASA's Marshall Space Flight Center installing F-1 engines on a Saturn V first stage for testing, 1965.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:47.261Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/f-1/02.jpg": {
+      "score": 8,
+      "subject": "An F-1 engine static firing at Edwards Air Force Base, 26 May 1962.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-08T08:08:47.300Z",
       "scoring_cost_usd": 0
     }
   }

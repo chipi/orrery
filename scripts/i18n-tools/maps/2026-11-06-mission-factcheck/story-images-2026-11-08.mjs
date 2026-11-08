@@ -21,6 +21,34 @@ const L = [
 ];
 // [site, chapter id, src, mode ('caption' = rewrite the caption of src, 'add' = append), captions]
 const EDITS = [
+  // mars2/03 (a repeat of mars3/02's stamp) was dropped; the chapter takes the descent-module model,
+  // and the signal time follows the Mars 3 story (14.5 s; it said "about 20" here).
+  [
+    'mars2',
+    'hardware',
+    '/images/missions/mars2/03.webp',
+    'add',
+    {
+      'en-US':
+        'A museum model of the Mars 3 descent module — Mars 2 carried the same design. Mars 3 landed softly five days later and sent a signal for 14.5 seconds.',
+      ar: 'نموذج متحفي لوحدة الهبوط في Mars 3، وهو التصميم نفسه الذي حمله Mars 2. هبط Mars 3 بسلام بعد خمسة أيام وأرسل إشارة لمدة 14.5 ثانية.',
+      de: 'Museumsmodell der Landekapsel von Mars 3 – Mars 2 trug dieselbe Bauart. Mars 3 landete fünf Tage später weich und sendete 14,5 Sekunden lang ein Signal.',
+      es: 'Maqueta de museo del módulo de descenso de la Mars 3: la Mars 2 llevaba el mismo diseño. La Mars 3 aterrizó suavemente cinco días después y envió señal durante 14,5 segundos.',
+      fr: 'Maquette de musée du module de descente de Mars 3 — Mars 2 emportait le même modèle. Mars 3 s’est posée en douceur cinq jours plus tard et a émis un signal pendant 14,5 secondes.',
+      hi: 'Mars 3 के अवतरण मॉड्यूल का संग्रहालय मॉडल — Mars 2 भी यही डिज़ाइन ले गया था। Mars 3 पाँच दिन बाद धीरे से उतरा और 14.5 सेकंड तक संकेत भेजता रहा।',
+      it: 'Modello da museo del modulo di discesa di Mars 3: Mars 2 portava lo stesso progetto. Mars 3 atterrò dolcemente cinque giorni dopo e trasmise un segnale per 14,5 secondi.',
+      ja: 'Mars 3降下モジュールの博物館模型。Mars 2も同じ設計の機体を搭載していた。Mars 3は5日後に軟着陸し、14.5秒間信号を送った。',
+      ko: 'Mars 3 하강 모듈의 박물관 모형. Mars 2도 같은 설계를 실었다. Mars 3은 닷새 뒤 연착륙해 14.5초 동안 신호를 보냈다.',
+      nl: 'Museummodel van de afdaalmodule van Mars 3 – Mars 2 droeg hetzelfde ontwerp. Mars 3 landde vijf dagen later zacht en zond 14,5 seconden lang een signaal.',
+      'pt-BR':
+        'Maquete de museu do módulo de descida da Mars 3 — a Mars 2 levava o mesmo projeto. A Mars 3 pousou suavemente cinco dias depois e transmitiu sinal por 14,5 segundos.',
+      ru: 'Музейная модель спускаемого аппарата «Марса-3» — «Марс-2» нёс такой же. «Марс-3» мягко сел пятью днями позже и передавал сигнал 14,5 секунды.',
+      'sr-Cyrl':
+        'Музејски модел спусног модула летелице Mars 3 — Mars 2 је носио исти дизајн. Mars 3 је меко слетео пет дана касније и слао сигнал 14,5 секунди.',
+      'zh-CN':
+        'Mars 3下降舱的博物馆模型——Mars 2携带的是同样的设计。五天后Mars 3软着陆，并发送信号14.5秒。',
+    },
+  ],
   [
     'mars3',
     'hardware',

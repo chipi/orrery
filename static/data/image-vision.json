@@ -30088,23 +30088,6 @@
       "scored_at": "2026-07-05T21:11:19.615Z",
       "scoring_cost_usd": 0.006924
     },
-    "/images/missions/mars2/03.jpg": {
-      "score": 4,
-      "subject": "A Soviet commemorative postage stamp from 1972 depicting the Mars 3 lander descent module with Cyrillic text noting its soft landing on Mars on 2 December 1971.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.48
-      },
-      "subject_match": true,
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-05T21:11:24.159Z",
-      "scoring_cost_usd": 0.007455
-    },
     "/images/missions/mars3/02.jpg": {
       "score": 6,
       "subject": "A large Soviet or Russian spacecraft model or engineering replica with a parabolic dish antenna and solar panels on display in a museum or exhibition hall.",
@@ -31637,7 +31620,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.004878
     },
-    "/images/missions/mars2/04.jpg": {
+    "/images/missions/mars2/03.jpg": {
       "score": 8,
       "subject": "Museum model of the Mars 3 descent module, the same lander design Mars 2 carried, petals open and antennas raised.",
       "category": "hardware",

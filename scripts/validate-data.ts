@@ -2292,13 +2292,32 @@ let overlayFailed = 0;
   // (b) fleet/index.json (flat array, id+category) → i18n/en-US/fleet/{category}/{id}.json
   try {
     const raw = readFileSync(FLEET_INDEX_PATH, 'utf-8');
-    const items = JSON.parse(raw) as Array<{ id: string; category: string }>;
+    const items = JSON.parse(raw) as Array<{
+      id: string;
+      category: string;
+      name?: string;
+      tagline?: string;
+    }>;
     for (const f of items) {
       const overlayPath = join(I18N_EN, 'fleet', f.category, `${f.id}.json`);
       if (!existsSync(overlayPath)) {
         problems.push(
           `fleet "${f.id}" (${f.category}) missing en-US overlay at i18n/en-US/fleet/${f.category}/${f.id}.json`,
         );
+        continue;
+      }
+      // en-US cards read name + tagline straight from the index (getFleetIndex skips the
+      // overlay for en-US), so the index copy must equal the overlay or English cards go stale.
+      const overlay = JSON.parse(readFileSync(overlayPath, 'utf-8')) as {
+        name?: string;
+        tagline?: string;
+      };
+      for (const key of ['name', 'tagline'] as const) {
+        if (overlay[key] && overlay[key] !== f[key]) {
+          problems.push(
+            `fleet "${f.id}" (${f.category}): index.json ${key} differs from the en-US overlay — copy the overlay's ${key} into fleet/index.json`,
+          );
+        }
       }
     }
   } catch (err) {

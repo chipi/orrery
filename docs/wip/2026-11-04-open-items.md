@@ -110,6 +110,13 @@ unconfirmed (option B, operator 2026-11-05).
 **3. One content track** — proposed: re-verify the fact-check findings (`factcheck/`, 55 files,
 ~250 findings), since they are about the correctness of what is live. Alternatives are in "Content
 and accuracy" below.
+**Done 2026-11-08:**
+
+- 793 findings re-checked against the live text, then the remaining errors fixed in all 14
+  locales. Results are in `factcheck/2026-11-08-reverify.json`, the summary at the top of
+  `factcheck/INDEX.md`.
+- English fleet cards showed 101 stale taglines: `fleet/index.json` had drifted from the overlays.
+  validate-data now checks that the index's name and tagline equal the en-US overlay.
 
 **Waiting on the operator:** #550 gallery sourcing (later; per-image approval, removes slots);
 #635 / #637 / #638 do not reproduce at HEAD (dev server, 0 page errors on `/fly`, `/moon`, both

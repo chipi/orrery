@@ -11,7 +11,7 @@
     { "met": 60, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
     { "met": 455, "label": "TCM-4", "note": "Final pre-VOI trim.", "type": "nominal" },
     { "met": 463, "label": "VOI", "note": "Solid-motor burn into a 294 × 8543 km, 85.5° near-polar orbit.", "type": "info" },
-    { "met": 950, "label": "MAPPING CYCLE 1 COMPLETE", "note": "First full pass — 84% surface coverage at 100 m resolution.", "type": "info" },
+    { "met": 950, "label": "MAPPING CYCLE 1 COMPLETE", "note": "First full pass — 84% surface coverage at ~120 m resolution.", "type": "info" },
     { "met": 1988, "label": "TERMINATION EXPERIMENT", "note": "1994-10-13. Periapsis lowered into atmosphere — a planned planetary spacecraft entry.", "type": "warning" }
   ],
   "vehicle_stage": "Inertial Upper Stage (IUS)"

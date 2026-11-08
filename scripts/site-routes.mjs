@@ -5,7 +5,7 @@
  * Two consumers:
  *   1. svelte.config.js — feeds `expandLocalizedRoots` to seed the
  *      per-locale prerender crawl.
- *   2. src/routes/sitemap.xml/+server.ts — emits one <loc> per
+ *   2. src/lib/sitemap.ts (/sitemaps/<locale>.xml) — emits one <loc> per
  *      locale × route for search engines.
  *
  * Keeping the list here (not inline in svelte.config.js) means the
@@ -91,6 +91,15 @@ function essaysRoutes() {
   return routes;
 }
 
+/** One indexable page per mission (/missions/<id>, 0.9.8 SEO). */
+function missionRoutes() {
+  const idxPath = 'static/data/missions/index.json';
+  if (!existsSync(idxPath)) return [];
+  /** @type {{ id: string }[]} */
+  const idx = JSON.parse(readFileSync(idxPath, 'utf8'));
+  return idx.map((m) => `/missions/${m.id}`);
+}
+
 /**
  * All un-localized canonical routes the site ships (no base prefix, no
  * locale prefix). e.g. `['/', '/missions', '/science/physics/kepler', ...]`.
@@ -98,5 +107,11 @@ function essaysRoutes() {
  * @returns {string[]}
  */
 export function collectCanonicalRoutes() {
-  return [...SEED_ROUTES, ...scienceRoutes(), ...programsRoutes(), ...essaysRoutes()];
+  return [
+    ...SEED_ROUTES,
+    ...scienceRoutes(),
+    ...programsRoutes(),
+    ...essaysRoutes(),
+    ...missionRoutes(),
+  ];
 }

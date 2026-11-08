@@ -48,7 +48,7 @@
  * NO-OP unless MOBILE=1, so it is safe to leave in a shared build chain.
  * Idempotent: missing targets are skipped without error.
  */
-import { rm, stat, readdir } from 'node:fs/promises';
+import { rm, stat, readdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { locales, baseLocale } from '../../src/lib/paraglide/runtime.js';
@@ -149,6 +149,19 @@ async function targets() {
   // so the stub a recipient opens is always the web deploy's copy.
   const cardStubs = path.join(BUILD, 'c');
   if (existsSync(cardStubs)) list.push(cardStubs);
+
+  // /missions/<id> entity pages (0.9.8 SEO, 126 missions × 14 locales) are
+  // search-engine surfaces; in the app a mission opens as the /missions?id=
+  // panel. /missions/launches stays.
+  const missionIds = JSON.parse(
+    await readFile(path.join(BUILD, 'data', 'missions', 'index.json'), 'utf8').catch(() => '[]'),
+  ).map((m) => m.id);
+  for (const prefix of ['', ...locales.filter((l) => l !== baseLocale)]) {
+    for (const id of missionIds) {
+      const page = path.join(BUILD, prefix, 'missions', `${id}.html`);
+      if (existsSync(page)) list.push(page);
+    }
+  }
 
   // /credits thumbnails (#482, ~6.9 MB): the page builds their URLs with
   // assetUrl(), so on-device they stream from STREAM_ORIGIN like /images.

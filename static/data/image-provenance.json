@@ -41410,7 +41410,7 @@
    "revid": null,
    "pageid": 6463903,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:21.115Z"
+   "fetched_at": "2026-11-07T09:37:29.793Z"
   },
   {
    "id": "4128ec6eb40aa2d4",
@@ -41512,7 +41512,7 @@
    "revid": null,
    "pageid": 6462840,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:22.342Z"
+   "fetched_at": "2026-11-07T09:37:30.906Z"
   },
   {
    "id": "a44111d863b21500",
@@ -43493,7 +43493,7 @@
    "revid": null,
    "pageid": 89848638,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:23.452Z"
+   "fetched_at": "2026-11-07T09:37:32.017Z"
   },
   {
    "id": "e56d56771dc0e615",
@@ -45007,43 +45007,41 @@
    "id": "414bbd8b1b6ef4cd",
    "path": "/images/missions/clementine/03.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — clementine / \"clementine lunar mission\"",
-   "author": "NASA",
+   "title": "The Far Side of the Moon -- And All the Way Around (GSFC_20171208_Archive_e001939)",
+   "author": "NASA/GSFC",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=clementine+lunar+mission&media_type=image&keywords=clementine",
+   "source_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001939",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.844Z"
+   "nasa_id": "GSFC_20171208_Archive_e001939",
+   "fetched_at": "2026-11-08T06:38:27.728Z"
   },
   {
    "id": "6356a64fd396936b",
    "path": "/images/missions/clementine/03.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — clementine / \"clementine lunar mission\"",
-   "author": "NASA",
+   "title": "The Far Side of the Moon -- And All the Way Around (GSFC_20171208_Archive_e001939)",
+   "author": "NASA/GSFC",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=clementine+lunar+mission&media_type=image&keywords=clementine",
+   "source_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001939",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.844Z"
+   "nasa_id": "GSFC_20171208_Archive_e001939",
+   "fetched_at": "2026-11-08T06:38:27.728Z"
   },
   {
    "id": "d668f0794d5e12c0",
@@ -45521,85 +45519,81 @@
    "id": "1cad668bd47888b6",
    "path": "/images/missions/dawn/04.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — dawn / \"dawn spacecraft ceres\"",
-   "author": "NASA",
+   "title": "Dawn LAMO Image 19 (PIA20309)",
+   "author": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=dawn+spacecraft+ceres&media_type=image&keywords=dawn",
+   "source_url": "https://images.nasa.gov/details/PIA20309",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.848Z"
+   "nasa_id": "PIA20309",
+   "fetched_at": "2026-11-08T06:38:27.728Z"
   },
   {
    "id": "d23ffcccb2761b2a",
    "path": "/images/missions/dawn/04.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — dawn / \"dawn spacecraft ceres\"",
-   "author": "NASA",
+   "title": "Dawn LAMO Image 19 (PIA20309)",
+   "author": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=dawn+spacecraft+ceres&media_type=image&keywords=dawn",
+   "source_url": "https://images.nasa.gov/details/PIA20309",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.848Z"
+   "nasa_id": "PIA20309",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "71785a095255bff0",
    "path": "/images/missions/dawn/05.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — dawn / \"dawn spacecraft ceres\"",
-   "author": "NASA",
+   "title": "Dawn LAMO Image 50 (PIA20405)",
+   "author": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=dawn+spacecraft+ceres&media_type=image&keywords=dawn",
+   "source_url": "https://images.nasa.gov/details/PIA20405",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.848Z"
+   "nasa_id": "PIA20405",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "eeff4c62bdd2b066",
    "path": "/images/missions/dawn/05.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — dawn / \"dawn spacecraft ceres\"",
-   "author": "NASA",
+   "title": "Dawn LAMO Image 50 (PIA20405)",
+   "author": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=dawn+spacecraft+ceres&media_type=image&keywords=dawn",
+   "source_url": "https://images.nasa.gov/details/PIA20405",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.848Z"
+   "nasa_id": "PIA20405",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "d88c6866c8d243d3",
@@ -45620,7 +45614,7 @@
    "revid": null,
    "pageid": 57036736,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:24.560Z"
+   "fetched_at": "2026-11-07T09:37:33.128Z"
   },
   {
    "id": "104b98fa4c7683f9",
@@ -45661,7 +45655,7 @@
    "revid": null,
    "pageid": 38400953,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:25.669Z"
+   "fetched_at": "2026-11-07T09:37:34.239Z"
   },
   {
    "id": "e5695c2749587b2c",
@@ -46155,7 +46149,7 @@
    "revid": null,
    "pageid": 37745690,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:26.777Z"
+   "fetched_at": "2026-11-07T09:37:35.348Z"
   },
   {
    "id": "fd46fd8f641e85d0",
@@ -46176,7 +46170,7 @@
    "revid": null,
    "pageid": 152985114,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:27.885Z"
+   "fetched_at": "2026-11-07T09:37:36.460Z"
   },
   {
    "id": "82cdac826afff40f",
@@ -46197,7 +46191,7 @@
    "revid": null,
    "pageid": 96837015,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:28.993Z"
+   "fetched_at": "2026-11-07T09:37:37.570Z"
   },
   {
    "id": "2b81a21ee8fdfef7",
@@ -46218,7 +46212,7 @@
    "revid": null,
    "pageid": 96829577,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:30.102Z"
+   "fetched_at": "2026-11-07T09:37:38.681Z"
   },
   {
    "id": "05e483a13bd18def",
@@ -46239,7 +46233,7 @@
    "revid": null,
    "pageid": 154684303,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:31.210Z"
+   "fetched_at": "2026-11-07T09:37:39.792Z"
   },
   {
    "id": "260f96117dc624d2",
@@ -46300,7 +46294,7 @@
    "revid": null,
    "pageid": 152382618,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:32.317Z"
+   "fetched_at": "2026-11-07T09:37:40.902Z"
   },
   {
    "id": "96bf989142b75ed7",
@@ -46321,7 +46315,7 @@
    "revid": null,
    "pageid": 152382638,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:33.425Z"
+   "fetched_at": "2026-11-07T09:37:42.012Z"
   },
   {
    "id": "8da8e4ecf98ac927",
@@ -46342,7 +46336,7 @@
    "revid": null,
    "pageid": 133745416,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:34.533Z"
+   "fetched_at": "2026-11-07T09:37:43.123Z"
   },
   {
    "id": "26e2a08dfce81d03",
@@ -46383,7 +46377,7 @@
    "revid": null,
    "pageid": 54198155,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:35.640Z"
+   "fetched_at": "2026-11-07T09:37:44.232Z"
   },
   {
    "id": "6e064a9c011488f6",
@@ -46404,7 +46398,7 @@
    "revid": null,
    "pageid": 152382446,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:36.747Z"
+   "fetched_at": "2026-11-07T09:37:45.343Z"
   },
   {
    "id": "58d2e5527f683d97",
@@ -46425,7 +46419,7 @@
    "revid": null,
    "pageid": 6452012,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:37.855Z"
+   "fetched_at": "2026-11-07T09:37:46.452Z"
   },
   {
    "id": "a8b476efdded76ba",
@@ -46446,7 +46440,7 @@
    "revid": null,
    "pageid": 6458643,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:38.962Z"
+   "fetched_at": "2026-11-07T09:37:47.562Z"
   },
   {
    "id": "f4a4911b35f9abfb",
@@ -46467,7 +46461,7 @@
    "revid": null,
    "pageid": 95038901,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:40.200Z"
+   "fetched_at": "2026-11-07T09:37:48.672Z"
   },
   {
    "id": "f7a94463b0ac81dd",
@@ -46488,7 +46482,7 @@
    "revid": null,
    "pageid": 11913123,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:41.448Z"
+   "fetched_at": "2026-11-07T09:37:49.783Z"
   },
   {
    "id": "a476382e1de9ce13",
@@ -46509,7 +46503,7 @@
    "revid": null,
    "pageid": 116790247,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:42.677Z"
+   "fetched_at": "2026-11-07T09:37:50.894Z"
   },
   {
    "id": "e3449e7f67cabb03",
@@ -46530,7 +46524,7 @@
    "revid": null,
    "pageid": 152381815,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:43.912Z"
+   "fetched_at": "2026-11-07T09:37:52.003Z"
   },
   {
    "id": "7d2c0a918f666009",
@@ -46551,7 +46545,7 @@
    "revid": null,
    "pageid": 6482593,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:45.021Z"
+   "fetched_at": "2026-11-07T09:37:53.114Z"
   },
   {
    "id": "3bd3fdb2a2db0b4a",
@@ -46572,7 +46566,7 @@
    "revid": null,
    "pageid": 161840639,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:46.129Z"
+   "fetched_at": "2026-11-07T09:37:54.223Z"
   },
   {
    "id": "a604731a066c3e01",
@@ -46593,7 +46587,7 @@
    "revid": null,
    "pageid": 152381946,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:47.236Z"
+   "fetched_at": "2026-11-07T09:37:55.332Z"
   },
   {
    "id": "55e1e7cc563aada1",
@@ -46614,7 +46608,7 @@
    "revid": null,
    "pageid": 152381768,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:48.343Z"
+   "fetched_at": "2026-11-07T09:37:56.443Z"
   },
   {
    "id": "5475936acda2b057",
@@ -46635,7 +46629,7 @@
    "revid": null,
    "pageid": 152381759,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:49.451Z"
+   "fetched_at": "2026-11-07T09:37:57.552Z"
   },
   {
    "id": "490e5a54118a8432",
@@ -46656,7 +46650,7 @@
    "revid": null,
    "pageid": 154685299,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:50.559Z"
+   "fetched_at": "2026-11-07T09:37:58.662Z"
   },
   {
    "id": "77cd951c79176fb0",
@@ -46677,7 +46671,7 @@
    "revid": null,
    "pageid": 20918269,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:51.667Z"
+   "fetched_at": "2026-11-07T09:37:59.772Z"
   },
   {
    "id": "c743cdcf675fb7e4",
@@ -46698,7 +46692,7 @@
    "revid": null,
    "pageid": 106578185,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:52.773Z"
+   "fetched_at": "2026-11-07T09:38:00.882Z"
   },
   {
    "id": "85f2c8fb54650a52",
@@ -46739,7 +46733,7 @@
    "revid": null,
    "pageid": 421973,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:53.880Z"
+   "fetched_at": "2026-11-07T09:38:01.992Z"
   },
   {
    "id": "7e85e3de808eb3b4",
@@ -47330,43 +47324,41 @@
    "id": "7c4b36108f60ecfe",
    "path": "/images/missions/insight/02.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — insight / \"insight mars lander\"",
-   "author": "NASA",
+   "title": "Artist Concept of InSight Lander on Mars (PIA19811)",
+   "author": "NASA/JPL-Caltech",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=insight+mars+lander&media_type=image&keywords=insight",
+   "source_url": "https://images.nasa.gov/details/PIA19811",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.835Z"
+   "nasa_id": "PIA19811",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "3c6c639e8103fcde",
    "path": "/images/missions/insight/02.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — insight / \"insight mars lander\"",
-   "author": "NASA",
+   "title": "Artist Concept of InSight Lander on Mars (PIA19811)",
+   "author": "NASA/JPL-Caltech",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=insight+mars+lander&media_type=image&keywords=insight",
+   "source_url": "https://images.nasa.gov/details/PIA19811",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.835Z"
+   "nasa_id": "PIA19811",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "45a8658d850dcc61",
@@ -47970,43 +47962,41 @@
    "id": "9fde24fe7cb7834c",
    "path": "/images/missions/lro/05.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — lro / \"lunar reconnaissance orbiter\"",
-   "author": "NASA",
+   "title": "Loading Lunar Reconnaissance Orbiter LRO in the Thermal Vacuum Chamber (PIA12086)",
+   "author": "NASA/JPL",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=lunar+reconnaissance+orbiter&media_type=image&keywords=lro",
+   "source_url": "https://images.nasa.gov/details/PIA12086",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.844Z"
+   "nasa_id": "PIA12086",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "78434430802539b8",
    "path": "/images/missions/lro/05.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — lro / \"lunar reconnaissance orbiter\"",
-   "author": "NASA",
+   "title": "Loading Lunar Reconnaissance Orbiter LRO in the Thermal Vacuum Chamber (PIA12086)",
+   "author": "NASA/JPL",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=lunar+reconnaissance+orbiter&media_type=image&keywords=lro",
+   "source_url": "https://images.nasa.gov/details/PIA12086",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.844Z"
+   "nasa_id": "PIA12086",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "0245cab8122167c1",
@@ -48047,7 +48037,7 @@
    "revid": null,
    "pageid": 117581208,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:54.988Z"
+   "fetched_at": "2026-11-07T09:38:03.102Z"
   },
   {
    "id": "2193f0401428af1d",
@@ -48068,7 +48058,7 @@
    "revid": null,
    "pageid": 54764545,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:56.094Z"
+   "fetched_at": "2026-11-07T09:38:04.212Z"
   },
   {
    "id": "b56c13d4beff056a",
@@ -49885,7 +49875,7 @@
    "revid": null,
    "pageid": 2154231,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:57.372Z"
+   "fetched_at": "2026-11-07T09:38:05.321Z"
   },
   {
    "id": "ed619ecb3b1ec2e1",
@@ -49906,7 +49896,7 @@
    "revid": null,
    "pageid": 2154231,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:57.372Z"
+   "fetched_at": "2026-11-07T09:38:05.321Z"
   },
   {
    "id": "e982d1903bc7346f",
@@ -51274,43 +51264,41 @@
    "id": "b090bc40d57aa236",
    "path": "/images/missions/new-horizons/05.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — new-horizons / \"new horizons pluto flyby\"",
-   "author": "NASA",
+   "title": "New Horizons Very Best View of Pluto Mosiac (PIA20201)",
+   "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=new+horizons+pluto+flyby&media_type=image&keywords=new-horizons",
+   "source_url": "https://images.nasa.gov/details/PIA20201",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "PIA20201",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "e2864618de4842b0",
    "path": "/images/missions/new-horizons/05.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — new-horizons / \"new horizons pluto flyby\"",
-   "author": "NASA",
+   "title": "New Horizons Very Best View of Pluto Mosiac (PIA20201)",
+   "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=new+horizons+pluto+flyby&media_type=image&keywords=new-horizons",
+   "source_url": "https://images.nasa.gov/details/PIA20201",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "PIA20201",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "d5e5f8bb5d8d1a71",
@@ -52255,7 +52243,7 @@
    "revid": null,
    "pageid": 59476892,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:58.480Z"
+   "fetched_at": "2026-11-07T09:38:06.432Z"
   },
   {
    "id": "ab54284d16f4a3e5",
@@ -52316,7 +52304,7 @@
    "revid": null,
    "pageid": 75084035,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:19:59.589Z"
+   "fetched_at": "2026-11-07T09:38:07.543Z"
   },
   {
    "id": "885798ec2cc55c70",
@@ -54468,7 +54456,7 @@
    "revid": null,
    "pageid": 167452752,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:20:00.697Z"
+   "fetched_at": "2026-11-07T09:38:08.653Z"
   },
   {
    "id": "f70421175aac9689",
@@ -54698,7 +54686,7 @@
    "revid": null,
    "pageid": 1129363,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:20:01.948Z"
+   "fetched_at": "2026-11-07T09:38:09.763Z"
   },
   {
    "id": "cd28334a90c003a0",
@@ -56461,7 +56449,7 @@
    "revid": null,
    "pageid": 3167275,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:20:03.188Z"
+   "fetched_at": "2026-11-07T09:38:10.875Z"
   },
   {
    "id": "a2a68dfe4332ba99",
@@ -56483,7 +56471,7 @@
    "revid": null,
    "pageid": 3167275,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:20:03.189Z"
+   "fetched_at": "2026-11-07T09:38:10.875Z"
   },
   {
    "id": "25d043f37e8cfab1",
@@ -56796,7 +56784,7 @@
    "revid": null,
    "pageid": 76810734,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:20:04.454Z"
+   "fetched_at": "2026-11-07T09:38:11.985Z"
   },
   {
    "id": "9b9c0fdd089a56e4",
@@ -56817,7 +56805,7 @@
    "revid": null,
    "pageid": 76810734,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:20:04.454Z"
+   "fetched_at": "2026-11-07T09:38:11.985Z"
   },
   {
    "id": "74568057aa560675",
@@ -57153,43 +57141,41 @@
    "id": "02a8b48e5b69dde5",
    "path": "/images/missions/viking1/05.1x1.jpg",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — viking1 / \"viking 1 mars lander\"",
-   "author": "NASA",
+   "title": "Mars Orbiter Camera Acquires High Resolution Stereoscopic Images of the Viking One Landing Site (PIA01443)",
+   "author": "NASA/JPL/Malin Space Science Systems",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=viking+1+mars+lander&media_type=image&keywords=viking1",
+   "source_url": "https://images.nasa.gov/details/PIA01443",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.840Z"
+   "nasa_id": "PIA01443",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "189896c52ad8f06d",
    "path": "/images/missions/viking1/05.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — viking1 / \"viking 1 mars lander\"",
-   "author": "NASA",
+   "title": "Mars Orbiter Camera Acquires High Resolution Stereoscopic Images of the Viking One Landing Site (PIA01443)",
+   "author": "NASA/JPL/Malin Space Science Systems",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=viking+1+mars+lander&media_type=image&keywords=viking1",
+   "source_url": "https://images.nasa.gov/details/PIA01443",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.840Z"
+   "nasa_id": "PIA01443",
+   "fetched_at": "2026-11-08T06:38:27.729Z"
   },
   {
    "id": "fa26784290162e5e",
@@ -57299,23 +57285,23 @@
   {
    "id": "f9284c467dc07c6b",
    "path": "/images/missions/voskhod-2/01.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — missions/voskhod-2",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:LeonovSpacewalk.gif",
+   "author": "Unknown author",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:LeonovSpacewalk.gif",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/LeonovSpacewalk.gif",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
    "modifications": [
     "curated-no-upstream-record",
     "walker-fallback"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 149301383,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.963Z"
+   "fetched_at": "2026-11-07T09:38:13.095Z"
   },
   {
    "id": "dde62dc51e41d9f9",
@@ -57357,7 +57343,7 @@
    "revid": null,
    "pageid": 8476300,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:20:05.562Z"
+   "fetched_at": "2026-11-07T09:38:14.204Z"
   },
   {
    "id": "2babd89163573d7b",
@@ -57440,28 +57426,28 @@
    "revid": null,
    "pageid": 89850666,
    "nasa_id": null,
-   "fetched_at": "2026-11-07T09:20:06.670Z"
+   "fetched_at": "2026-11-07T09:38:15.313Z"
   },
   {
    "id": "a5c2ca5f458e5833",
    "path": "/images/missions/vostok-1/03.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — missions/vostok-1",
-   "author": "Roscosmos",
+   "source_type": "wikimedia-commons",
+   "title": "File:Yuri Gagarin portrait.png",
+   "author": "В. Жихаренко / ТАСС Обработка: Roman Kubanskiy",
    "agency": "Roscosmos",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
-   "license_short": "PD-Russia",
-   "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-   "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Yuri_Gagarin_portrait.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Yuri_Gagarin_portrait.png",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
    "modifications": [
     "curated-no-upstream-record",
     "walker-fallback"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 177830149,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.963Z"
+   "fetched_at": "2026-11-07T09:38:16.423Z"
   },
   {
    "id": "3b713d8d41074cc3",

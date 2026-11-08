@@ -60,6 +60,13 @@ interface PendingAuth {
   resource: string;
   clientState: string | null;
   createdAt: number;
+  /**
+   * A self-registered (DCR) client must be approved on the consent page before the
+   * Google hop (#597): anyone can register a client with their own callback, so
+   * without this one /authorize link sent to a signed-in operator minted a token
+   * silently. Static clients are trusted and skip it.
+   */
+  needsConsent: boolean;
 }
 
 interface AuthCode {
@@ -80,7 +87,38 @@ function s256(verifier: string): string {
 }
 
 export type AuthorizeResult =
-  { kind: 'redirect'; location: string } | { kind: 'error'; status: number; body: string };
+  | { kind: 'redirect'; location: string }
+  | { kind: 'html'; status: number; body: string }
+  | { kind: 'error'; status: number; body: string };
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/** The consent page for a self-registered client: names where the token would go. */
+function consentPage(host: string, state: string): string {
+  const h = escapeHtml(host);
+  const s = escapeHtml(state);
+  return `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Allow access? · Orrery</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;background:#0a0b10;color:#e8eaf0;max-width:32rem;margin:12vh auto;padding:0 20px}
+strong{color:#fff}form{display:flex;gap:12px;margin-top:24px}button{font:inherit;padding:10px 18px;border-radius:4px;border:1px solid #7fb0e0;cursor:pointer}
+.allow{background:#7fb0e0;color:#0a0b10}.deny{background:transparent;color:#e8eaf0}</style></head>
+<body><h1>Allow access to the Orrery Lab?</h1>
+<p>An app at <strong>${h}</strong> asks to use the Orrery Lab's physics tools for you. It gets read-only access to the calculators — nothing else.</p>
+<p>Only allow it if you started this from that app. You will sign in with Google next.</p>
+<form method="post" action="/authorize/consent">
+<input type="hidden" name="state" value="${s}">
+<button class="allow" name="decision" value="allow">Allow</button>
+<button class="deny" name="decision" value="deny">Deny</button>
+</form></body></html>`;
+}
 
 export type TokenResult =
   | { kind: 'ok'; body: Record<string, unknown> }
@@ -243,6 +281,7 @@ export class AuthServer {
 
     this.gcPending();
     const state = randomBytes(24).toString('base64url');
+    const needsConsent = !this.cfg.clients.some((c) => c.clientId === clientId);
     this.pending.set(state, {
       clientId,
       redirectUri,
@@ -250,7 +289,38 @@ export class AuthServer {
       resource,
       clientState: params.get('state'),
       createdAt: Date.now(),
+      needsConsent,
     });
+    if (needsConsent) {
+      return { kind: 'html', status: 200, body: consentPage(new URL(redirectUri).host, state) };
+    }
+    return { kind: 'redirect', location: googleAuthUrl(this.cfg.google, state) };
+  }
+
+  // ── POST /authorize/consent ─────────────────────────────────────────────
+
+  /**
+   * The consent page's answer for a self-registered client (#597). Allow → on to
+   * Google sign-in; deny → access_denied back to the client. The pending record is
+   * the only key, so a consent can be given once, within the pending TTL.
+   */
+  consent(form: URLSearchParams): AuthorizeResult {
+    const state = form.get('state') ?? '';
+    const pending = this.pending.get(state);
+    if (!pending || !pending.needsConsent || Date.now() - pending.createdAt > PENDING_TTL_MS) {
+      this.pending.delete(state);
+      return { kind: 'error', status: 400, body: 'unknown or expired authorization state' };
+    }
+    if (form.get('decision') !== 'allow') {
+      this.pending.delete(state);
+      const url = new URL(pending.redirectUri);
+      url.searchParams.set('error', 'access_denied');
+      url.searchParams.set('error_description', 'the user denied access');
+      if (pending.clientState !== null) url.searchParams.set('state', pending.clientState);
+      url.searchParams.set('iss', this.cfg.issuer);
+      return { kind: 'redirect', location: url.toString() };
+    }
+    pending.needsConsent = false;
     return { kind: 'redirect', location: googleAuthUrl(this.cfg.google, state) };
   }
 
@@ -263,6 +333,11 @@ export class AuthServer {
     this.pending.delete(state);
     if (!pending || Date.now() - pending.createdAt > PENDING_TTL_MS) {
       return { kind: 'error', status: 400, body: 'unknown or expired authorization state' };
+    }
+    // A self-registered client's state reaches Google only through the consent page;
+    // one that skipped it gets nothing (#597).
+    if (pending.needsConsent) {
+      return { kind: 'error', status: 400, body: 'authorization was not approved' };
     }
 
     const redirect = (params2: Record<string, string>): AuthorizeResult => {

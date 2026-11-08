@@ -137,7 +137,13 @@ async function runAuthLeg(opts: {
   authUrl.searchParams.set('resource', opts.resource ?? MCP_RESOURCE);
   if (opts.state) authUrl.searchParams.set('state', opts.state);
 
-  const authResp = await fetch(authUrl, { redirect: 'manual' });
+  let authResp = await fetch(authUrl, { redirect: 'manual' });
+  // A self-registered (DCR) client stops at the consent page first (#597); approve it.
+  if (authResp.status === 200) {
+    const page = await authResp.text();
+    const consentState = /name="state" value="([^"]+)"/.exec(page)?.[1] ?? '';
+    authResp = await postConsent(consentState, 'allow');
+  }
   expect(authResp.status).toBe(302);
   const authRedirect = new URL(authResp.headers.get('location') ?? '');
   const googleState = authRedirect.searchParams.get('state') ?? '';
@@ -149,6 +155,15 @@ async function runAuthLeg(opts: {
   expect(cbResp.status).toBe(302);
   const callbackRedirect = new URL(cbResp.headers.get('location') ?? '');
   return { authRedirect, callbackRedirect, ourCode: callbackRedirect.searchParams.get('code') };
+}
+
+function postConsent(state: string, decision: 'allow' | 'deny'): Promise<Response> {
+  return fetch(`${base}/authorize/consent`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ state, decision }).toString(),
+    redirect: 'manual',
+  });
 }
 
 async function postToken(
@@ -603,6 +618,69 @@ describe('DCR — dynamic client registration (#464, shareable connector)', () =
     });
     expect(flow.callbackRedirect.searchParams.get('error')).toBe('access_denied');
     expect(flow.ourCode).toBeNull();
+  });
+
+  function dcrAuthorizeUrl(clientId: string, state = 'client-state'): URL {
+    const u = new URL(`${base}/authorize`);
+    u.searchParams.set('client_id', clientId);
+    u.searchParams.set('redirect_uri', CB);
+    u.searchParams.set('response_type', 'code');
+    u.searchParams.set(
+      'code_challenge',
+      createHash('sha256').update(randomBytes(32).toString('base64url')).digest('base64url'),
+    );
+    u.searchParams.set('code_challenge_method', 'S256');
+    u.searchParams.set('resource', MCP_RESOURCE);
+    u.searchParams.set('state', state);
+    return u;
+  }
+
+  it('a DCR /authorize shows a consent page naming the callback host, never framed or cached (#597)', async () => {
+    const reg = await register([CB]);
+    const resp = await fetch(dcrAuthorizeUrl(reg.body.client_id as string), { redirect: 'manual' });
+    expect(resp.status).toBe(200); // not a 302 to Google
+    expect(resp.headers.get('content-type')).toContain('text/html');
+    expect(resp.headers.get('cache-control')).toBe('no-store');
+    expect(resp.headers.get('content-security-policy')).toContain("frame-ancestors 'none'");
+    expect(resp.headers.get('x-frame-options')).toBe('DENY');
+    const page = await resp.text();
+    expect(page).toContain('<strong>claude.ai</strong>');
+    expect(page).toContain('action="/authorize/consent"');
+  });
+
+  it('deny on the consent page → access_denied to the client, with its state; no Google hop', async () => {
+    const reg = await register([CB]);
+    const page = await (await fetch(dcrAuthorizeUrl(reg.body.client_id as string, 'abc'))).text();
+    const state = /name="state" value="([^"]+)"/.exec(page)![1];
+    const resp = await postConsent(state, 'deny');
+    expect(resp.status).toBe(302);
+    const loc = new URL(resp.headers.get('location') ?? '');
+    expect(loc.origin + loc.pathname).toBe(CB);
+    expect(loc.searchParams.get('error')).toBe('access_denied');
+    expect(loc.searchParams.get('state')).toBe('abc');
+    // The pending record is gone: allowing afterwards finds nothing.
+    expect((await postConsent(state, 'allow')).status).toBe(400);
+  });
+
+  it('a DCR state that skipped the consent page gets nothing at the Google callback', async () => {
+    const reg = await register([CB]);
+    const page = await (await fetch(dcrAuthorizeUrl(reg.body.client_id as string))).text();
+    const state = /name="state" value="([^"]+)"/.exec(page)![1];
+    const cb = new URL(`${base}/auth/google/callback`);
+    cb.searchParams.set('state', state);
+    cb.searchParams.set('code', googleCodeFor(ALLOWED_EMAIL));
+    const resp = await fetch(cb, { redirect: 'manual' });
+    expect(resp.status).toBe(400);
+    expect(await resp.text()).toBe('authorization was not approved');
+  });
+
+  it('consent with an unknown state → 400; a static client never sees the page', async () => {
+    expect((await postConsent('no-such-state', 'allow')).status).toBe(400);
+    const flow = await runAuthLeg({
+      email: ALLOWED_EMAIL,
+      verifier: randomBytes(32).toString('base64url'),
+    }); // claude-ai (static) — runAuthLeg asserts the direct 302
+    expect(flow.ourCode).toBeTruthy();
   });
 
   it('register requires at least one https redirect_uri', async () => {

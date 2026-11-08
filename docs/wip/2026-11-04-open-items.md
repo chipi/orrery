@@ -246,6 +246,9 @@ Carried from the 2026-11-05 list; not re-verified in this pass.
 
 Only open work and the material it needs:
 
+- `2026-11-08-0.9.8-handover.md` — start here for 0.9.8 (state, plan pointer, operator rules).
+- `2026-11-08-seo-review/` and `2026-11-08-seo-brief.md` — the SEO evidence (item 0) and the
+  brief for the separate long-term SEO agent.
 - `factcheck/` — the 2026-07-14 fact-check findings (54 detail files) and their 2026-11-08
   re-verification (`2026-11-08-reverify.json`); 242 rows are recorded as unchanged by reason (see
   `INDEX.md`).

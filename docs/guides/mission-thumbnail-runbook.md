@@ -15,7 +15,7 @@ mission JSON and draws what `/fly` flies: it never re-derives a trajectory.
 | Mission | Data the generator reads | You get |
 | --- | --- | --- |
 | Sun-orbiting / planetary (`dest` MARS … NEPTUNE, SUN, COMET, ASTEROID) with a `flight` block | `flight.events[]` (types `launch`, `flyby`, `edl_or_oi`, `arrival` with `met_days`), `departure_date`, `transit_days`; optional waypoint file `static/data/fly-trajectories/<id>.json` or `static/data/trajectories/<id>.json` (which one /fly loads is `flyTrajectoryPath()` in `src/lib/fly-trajectory-ids.ts`; a new id goes into that list too) | heliocentric plot: Sun, Earth ring, destination ring, spline or transfer arc, one disc + label per flyby/arrival |
-| Moon (`dest` MOON) with a `flight` block | `flight.cislunar_profile`, `flight.events[]` | Earth-centred plot: Moon ring, TLI coast, lunar encounter, return leg for round trips |
+| Moon (`dest` MOON) with a `flight` block | `flight.cislunar_profile`, `flight.events[]` | Earth-centred plot: Moon ring (drawn only along the Moon's track during the flight, plus a margin, so it ends inside the frame), TLI coast, lunar encounter, return leg for round trips |
 | Earth orbit (`dest` EARTH) | an entry in `src/lib/orbital/earth-orbit-registry.ts`: `apogeeKm`, `perigeeKm`, `inclinationDeg`, `revolutions`, `suborbital?` | orbit ring on an Earth disc, `n REV` (suborbital: a ballistic arch) |
 | Anything with none of the above | nothing | a placeholder in the same style: Earth disc, mission name and type, caption "NO TRAJECTORY DATA". No path is invented; add the data and re-run to replace it |
 

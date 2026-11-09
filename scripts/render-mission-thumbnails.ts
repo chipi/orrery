@@ -273,12 +273,26 @@ function cislunarScene(m: MissionRec): Scene {
   }
   if (!moonAt && ct.moon_track.length)
     moonAt = P(ct.moon_track[Math.floor(ct.moon_track.length / 2)]);
+  // The Moon's orbit is drawn only where the Moon is during the flight (its track plus a margin), so
+  // the dashed arc ends inside the frame instead of being cut by its edge, and it is part of the fit.
+  const moonAngles = ct.moon_track.map((q) => Math.atan2(q.z, q.x));
+  const a0 = moonAngles[0] ?? 0;
+  let lo = 0;
+  let hi = 0;
+  for (const a of moonAngles) {
+    const d = Math.atan2(Math.sin(a - a0), Math.cos(a - a0));
+    lo = Math.min(lo, d);
+    hi = Math.max(hi, d);
+  }
+  const MARGIN = (24 * Math.PI) / 180;
   const ring: Pt[] = [];
-  for (let i = 0; i <= 180; i++) {
-    const a = (i / 180) * Math.PI * 2;
+  const n = 90;
+  for (let i = 0; i <= n; i++) {
+    const a = a0 + lo - MARGIN + ((hi - lo + 2 * MARGIN) * i) / n;
     ring.push({ x: Math.cos(a), y: Math.sin(a) });
   }
   scene.rings.push({ pts: ring, body: 'moon' });
+  scene.fit.push(...ring);
   scene.discs.push({ p: { x: 0, y: 0 }, r: R_EARTH_KM * k * 3.5, color: BODY.earth });
   scene.fit.push({ x: 0, y: 0 });
   if (moonAt) {

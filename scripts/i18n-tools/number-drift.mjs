@@ -4,6 +4,7 @@
  *
  *   node scripts/i18n-tools/number-drift.mjs [tree=science|all] [locales=all] [--list] [--changed]
  *                                            [--json] [--no-dates] [--unreviewed] [--gate]
+ *                                            [--accept=<locale|file|field> --why="<reason>"]
  *
  * Numbers are compared as values: "149,597,870,700", "149.597.870.700", "149 597 870 700" and
  * "1,5"/"1.5" are the same; Eastern Arabic and Devanagari digits are read as digits. A value is
@@ -36,7 +37,7 @@
  * so an edit to either brings the finding back. --unreviewed subtracts them; --gate does too over
  * every tree and locale and exits 1 on a finding left or an exception that matches nothing.
  */
-import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { isMain } from './garble-lib.mjs';
 import { textHash } from './term-match.mjs';
 import { HALF, cjkNumbers, romanNumbers, wordNumbers } from './number-words.mjs';
@@ -59,15 +60,20 @@ const ALL_LOCS = [
 
 const DIGITS = { '٠': 0, '١': 1, '٢': 2, '٣': 3, '٤': 4, '٥': 5, '٦': 6, '٧': 7, '٨': 8, '٩': 9 };
 for (let i = 0; i < 10; i++) DIGITS[String.fromCharCode(0x966 + i)] = i; // Devanagari
-const ascii = (s) =>
-  s
+// Subscript digits are read on the translation side only: "N₂O₄" there is the English "N2O4", while an
+// English "CO₂" would ask every translation to write a 2 (the Japanese writes 二酸化炭素).
+const ascii = (s, subscripts = false) =>
+  (subscripts ? s.replace(/[₀-₉]/g, (c) => String(c.charCodeAt(0) - 0x2080)) : s)
     .replace(/[٠-٩०-९]/g, (c) => DIGITS[c])
     .replace(/(\d)٫(\d)/g, '$1.$2')
     .replace(/(\d)٬(\d)/g, '$1,$2');
 // Scale words after a number, per language (longest first: "mil millones" before "mil").
 // CJK scales (万 億 만 억 조) are read with the CJK numerals in number-words.mjs.
 const SCALE = [
+  [/^(milliards?|miliardi)\s+(de|di)\s+(milliards?|miliardi)(?![\p{L}])/iu, 1e18],
+  [/^(mille\s+milliards|mila\s+miliardi)(?![\p{L}])/iu, 1e12],
   [/^mil\s+millones\b/i, 1e9],
+  [/^(trillón|trillones|quintilhão|quintilhões)(?![\p{L}])/iu, 1e18],
   [/^(लाख\s+करोड़|लाख\s+करोड)/u, 1e12],
   [
     /^(thousand|tausend|mille|mil|mila|duizend|тыс\.?|тысяч[аи]?|хиљад[аеиу]?|хиљ\.?|हज़ार|हजार|آلاف|ألف)(?![\p{L}])/iu,
@@ -99,6 +105,9 @@ const ABBR = [
   [/^(Gyr|Gpc|Gly|Ga|bn)(?![A-Za-z])/u, 1e9],
   [/^(Myr|Mpc|Mly|Ma)(?![A-Za-z])/u, 1e6],
   [/^(kyr|kpc|كيلوبارسك)(?![A-Za-z])/u, 1e3],
+  [/^Mal(?![A-Za-z])/u, 1e6, 'fr'],
+  [/^Gal(?![A-Za-z])/u, 1e9, 'fr'],
+  [/^Mlj(?![A-Za-z])/u, 1e6, 'nl'],
   [/^Гпк/u, 1e9],
   [/^Мпк/u, 1e6],
   [/^кпк/u, 1e3],
@@ -365,10 +374,10 @@ const NUM_RE_GUARDED = new RegExp(
 const GUARDED_GROUPING = new Set(['ja', 'zh-CN', 'ko', 'hi', 'ar']);
 const CJK_LOCS = new Set(['ja', 'zh-CN', 'ko']);
 const RANGE_GAP =
-  /^(?:[–~〜～-]|[\s\u00a0][–-][\s\u00a0]|[\s\u00a0](?:to|bis|à|al?|até|tot|до|и|e|and|y|et|und|en|ou|o|oder|или)[\s\u00a0])(?:US|R|C|A)?[$€£¥~]?[\s\u00a0]?$/iu;
+  /^(?:[–~〜～-]|至|到|から|까지|および約?|[\s\u00a0]?و|[\s\u00a0][–-][\s\u00a0]|[\s\u00a0](?:to|bis|à|al?|até|tot|до|и|e|and|y|et|und|en|ou|o|oder|или|إلى|حتى|से|और|和|与|と|および約?)[\s\u00a0])(?:US|R|C|A)?[$€£¥~]?[\s\u00a0]?$/iu;
 export function numbers(s, loc = 'en-US', dates = true) {
   const out = [];
-  let t = ascii(s)
+  let t = ascii(s, loc !== 'en-US')
     .replace(/\[[^\]]*\]\([^)]*\)/g, (m) => m.replace(/\(.*\)$/, '')) // drop link targets
     .replace(/https?:\/\/\S+/g, '')
     .replace(/(\d):00(?!\d)/g, '$1'); // 10:00 is "10 h": the minutes are not a number
@@ -399,7 +408,9 @@ export function numbers(s, loc = 'en-US', dates = true) {
     const rest = after.replace(/^[\s\u00a0+-]+/, '');
     let unit = 1;
     const scale = rest !== after ? SCALE.find(([re]) => re.test(rest)) : null;
-    const abbr = ABBR.find(([re]) => re.test(rest));
+    // "10 prochains Ga": a word between the number and the unit
+    const unitText = rest.replace(/^(?:prochains?|derniers?)[\s\u00a0]+/iu, '');
+    const abbr = ABBR.find(([re, , only]) => (!only || only === loc) && re.test(unitText));
     if (scale) unit = scale[1];
     else if (abbr) unit = abbr[1];
     else if (
@@ -426,11 +437,25 @@ export function numbers(s, loc = 'en-US', dates = true) {
   for (let i = found.length - 2; i >= 0; i--) {
     const a = found[i];
     const b = found[i + 1];
-    if (a.unit === 1 && b.unit > 1 && RANGE_GAP.test(t.slice(a.end, b.at))) a.unit = b.unit;
+    if (
+      a.unit === 1 &&
+      b.unit > 1 &&
+      !/[A-Za-z-]$/.test(t.slice(0, a.at)) &&
+      RANGE_GAP.test(t.slice(a.end, b.at))
+    )
+      a.unit = b.unit;
   }
   for (const f of found) out.push(String(Math.round(f.n * f.unit * 1e6) / 1e6));
   return out;
 }
+
+const CONVERSIONS = [
+  ['mi|miles?', 1.609344],
+  ['ft|feet|foot', 0.3048],
+  ['yards?|yd', 0.9144],
+  ['lbs?|pounds?', 0.45359237],
+  ['inch(?:es)?|in', 0.0254],
+];
 
 // A year written short ("1946-47", "late 1950s" -> "50") and a century ("the 2100s" -> "22nd").
 function sameYear(m, has) {
@@ -471,6 +496,30 @@ export function drift(en, tr, loc, dates = true) {
     const f = pre && { kilo: 1e3, mega: 1e6, giga: 1e9, tera: 1e12 }[pre[1].toLowerCase()];
     if (f && have.has(String(Math.round(Number(m) * f * 1e6) / 1e6)))
       missing.splice(missing.indexOf(m), 1);
+  }
+  // Idioms and names: "1-year" is an adjective, "24/7" is "around the clock", "1P/Halley" is a name.
+  for (const m of [...missing]) {
+    const x = esc(m);
+    const idiom =
+      (m === '1' &&
+        /(?<![\d.,/])1-(?:year|day|hour|month|week|minute|second|orbit|person|seat|tonne|metre|meter)\b|\bper 1 [a-z]/.test(
+          en,
+        )) ||
+      ((m === '24' || m === '7') && /(?<![\d.,])24\/7(?![\d])/.test(en)) ||
+      new RegExp(`(?<![\\d.,])${x}[PD]/`).test(en);
+    if (idiom) missing.splice(missing.indexOf(m), 1);
+  }
+  // Unit systems: 10 ft -> 3 m, 1.7 mi -> 2.7 km (within 5%, in the unit or its thousand).
+  const haveNums = [...have].map(Number).filter((n) => Number.isFinite(n));
+  for (const m of [...missing]) {
+    for (const [unit, factor] of CONVERSIONS) {
+      if (!new RegExp(`(?<![\\d.,])${esc(m)}[\\s-]*(?:${unit})(?![A-Za-z])`).test(en)) continue;
+      const want = Number(m) * factor;
+      if (haveNums.some((h) => [1, 1e3, 1e-3].some((k) => Math.abs(h * k - want) <= want * 0.05))) {
+        missing.splice(missing.indexOf(m), 1);
+        break;
+      }
+    }
   }
   // "23 and a half" -> 23,5
   for (const m of [...missing])
@@ -561,8 +610,26 @@ export function scan(tree, loc, { changed = false, dates = true, onHit, reviewed
   return { fields, withMissing: hits, reviewed: skipped };
 }
 
+// --accept=<locale|file|field> --why="<reason>": record the finding as reviewed, on the texts as
+// they are now (the key is what --list prints: locale, file, field).
+function accept(key, why) {
+  const [loc, rel, at] = key.split('|');
+  const get = (o) => at.split('.').reduce((x, k) => x?.[k], o);
+  const en = get(JSON.parse(readFileSync(`${SRC}/${rel}`, 'utf8')));
+  const tr = get(JSON.parse(readFileSync(`${SRC.replace('en-US', loc)}/${rel}`, 'utf8')));
+  if (typeof en !== 'string' || typeof tr !== 'string' || !why)
+    throw new Error(`cannot accept ${key}`);
+  const all = loadReviewed();
+  all[reviewKey(loc, rel, at)] = { why, en: textHash(en), tr: textHash(tr) };
+  const sorted = Object.fromEntries(Object.entries(all).sort(([a], [b]) => (a < b ? -1 : 1)));
+  writeFileSync(REVIEWED_FILE, `${JSON.stringify(sorted, null, 2)}\n`);
+  console.log(`reviewed: ${key}`);
+}
+
 function main(argv) {
   const args = argv.slice(2).map((a) => a.replace(/^(tree|locales)=/, ''));
+  const acc = args.find((a) => a.startsWith('--accept='));
+  if (acc) return accept(acc.slice(9), args.find((a) => a.startsWith('--why='))?.slice(6));
   const tree = args.find((a) => !a.startsWith('--') && !a.includes(',')) ?? 'science';
   const locArg = args.find(
     (a) => a.includes(',') || (/^[a-z]{2}(-[A-Za-z]+)?$/.test(a) && a !== tree),

@@ -205,3 +205,56 @@ describe('number-drift: other equivalences', () => {
   it('1/6 g: the numerator is a word', () =>
     expect(missing('1/6 g', 'gravité au sixième de g', 'fr')).toEqual([]));
 });
+
+describe('number-drift: idioms, unit systems and notation', () => {
+  it('ft, mi, lb read as metric: 10 ft = 3 m, 1.7 mi = 2.7 km, 4.4 lb = 2 kg', () => {
+    expect(missing('a 10-foot rocket', 'una cohete de 3 metros', 'es')).toEqual([]);
+    expect(missing('reached 1.7 mi', 'alcanzó 2,7 km', 'es')).toEqual([]);
+    expect(missing('9000 ft', '2 740 m', 'fr')).toEqual([]);
+    expect(missing('a 4.4-pound rocket', 'une fusée de 2 kg', 'fr')).toEqual([]);
+  });
+  it('a conversion that is wrong is reported', () => {
+    expect(missing('a 10-foot rocket', 'una cohete de 5 metros', 'es')).toEqual(['10']);
+    expect(missing('reached 1.7 mi', 'alcanzó 4,7 km', 'es')).toEqual(['1.7']);
+  });
+  it('1-year, per 1 hour, 24/7 and 1P/Halley are idioms and names', () => {
+    expect(missing('a 1-year phase', 'Die einjährige Phase', 'de')).toEqual([]);
+    expect(missing('24/7 views', 'Vues 24h/24', 'fr')).toEqual([]);
+    expect(missing('24/7 views', 'круглосуточные виды', 'ru')).toEqual([]);
+    expect(missing('comet 1P/Halley', 'comète de Halley', 'fr')).toEqual([]);
+  });
+  it('a 1 that is not an idiom is still reported', () =>
+    expect(missing('1 crew member', 'Besatzung', 'de')).toEqual(['1']));
+  it('subscript digits are read on the translation side: N2O4 = N₂O₄', () => {
+    expect(missing('N2O4 / UDMH', 'N₂O₄ / UDMH', 'ko')).toEqual([]);
+    expect(numbers('CO₂')).toEqual([]);
+  });
+  it('Korean native numerals before a counter, and 만 as "only"', () => {
+    expect(missing('lunar day 2', '두 번째 달 낮', 'ko')).toEqual([]);
+    expect(missing('Two launch areas', '발사 구역 두 곳', 'ko')).toEqual([]);
+    expect(numbers('Falcon 9조차도', 'ko')).toEqual(['9']);
+    expect(numbers('21세기', 'ko')).toEqual(['21']);
+  });
+  it('the Japanese middle dot is a decimal point between kanji digits', () =>
+    expect(missing('1.731 kg', '一・七三一 kg', 'ja')).toEqual([]));
+  it('Arabic decades and duals', () => {
+    expect(missing('the 2010s', 'في العقد الثاني من القرن الحادي والعشرين', 'ar')).toEqual([]);
+    expect(missing('the 2000s', 'في العقد الأول من الألفية', 'ar')).toEqual([]);
+    expect(missing('2 crewed flights', 'رحلتان مأهولتان', 'ar')).toEqual([]);
+  });
+  it('Italian century adjectives: 18th-century = settecentesco', () =>
+    expect(missing('the 18th-century catalogue', 'nel catalogo settecentesco', 'it')).toEqual([]));
+  it('fr Mal is light-years only in French: "15 Mal" in German is "15 times"', () => {
+    expect(numbers('2,5 Mal', 'fr')).toEqual(['2500000']);
+    expect(numbers('15 Mal pro Sekunde', 'de')).toEqual(['15']);
+  });
+  it('a scale is not carried from a name-number (L2 a 1,5 milioni)', () =>
+    expect(numbers('punto L2 a 1,5 milioni di km', 'it')).toEqual(['2', '1500000']));
+  it('a word between the number and its unit: 10 prochains Ga', () =>
+    expect(numbers('dans les 10 prochains Ga', 'fr')).toEqual(['10000000000']));
+  it('Indian grouping and a plain space after a name', () => {
+    expect(numbers('3,33,000', 'hi')).toEqual(['333000']);
+    expect(numbers('Yutu-2 140 кг', 'ru')).toEqual(['2', '140']);
+    expect(numbers('Ariane 4 116회', 'ko')).toEqual(['4', '116']);
+  });
+});

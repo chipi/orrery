@@ -1,6 +1,8 @@
 {
   "title": "Ziolkowski-Raketengleichung",
   "intro_sentence": "Wie viel Geschwindigkeitsänderung man mit einem bestimmten Triebwerk und einer bestimmten Treibstoffmenge erreicht — die Gleichung, die Raumfahrt zu einem logarithmischen Problem macht.",
+  "seo_title": "Raketengrundgleichung nach Ziolkowski (mit Rechner)",
+  "seo_description": "Wie viel Delta-v ein Triebwerk mit einer Treibstoffmenge bringt. Die Raketengleichung macht Raumfahrt logarithmisch; probieren Sie die Zahlen im Physik-Labor.",
   "narrative_101": [
     "Konstantin Ziolkowski war ein gehörloser russischer Schullehrer, der sich in seiner Freizeit mit Raumfahrt befasste — Jahrzehnte bevor jemand tatsächlich eine Rakete bauen konnte. 1903 schrieb er eine Gleichung auf, der bis heute niemand entkommen ist. Sie besagt: Das ∆v, das man aus einer Rakete herausholen kann, hängt von zwei Dingen ab — wie gut dein Triebwerk ist und wie groß der Treibstoffanteil deiner Rakete ist. Und der Zusammenhang ist LOGARITHMISCH.",
     "Der Logarithmus ist die Falle. Wenn deine Rakete zur Hälfte aus Treibstoff besteht, erreichst du ein bestimmtes ∆v. Um dieses ∆v zu verdoppeln, musst du deine Rakete nicht zu zwei Dritteln aus Treibstoff machen, sondern zu etwa 75 %. Für das Dreifache sind es eher 87–88 % Treibstoff. Die Zahlen laufen dir exponentiell davon. Deshalb ist die Saturn V ein 110-Meter-Turm, der fast ausschließlich aus Treibstoff besteht — das Raumschiff ist eine winzige Kapsel oben drauf.",

@@ -1,6 +1,8 @@
 {
   "title": "Raketvergelijking van Tsiolkovski",
   "intro_sentence": "Hoeveel snelheidsverandering je kunt bereiken met een gegeven motor en brandstofmassa — de vergelijking die ruimtevlucht tot een logaritmisch probleem maakt.",
+  "seo_title": "Raketvergelijking van Tsiolkovski (met rekenhulp)",
+  "seo_description": "Hoeveel delta-v een motor met een brandstoflading oplevert. De raketvergelijking maakt ruimtevaart logaritmisch; probeer de getallen in het Natuurkundelab.",
   "narrative_101": [
     "Konstantin Tsiolkovski was een dove Russische leraar die in zijn vrije tijd over ruimtevlucht nadacht, tientallen jaren voordat iemand daadwerkelijk een raket kon bouwen. In 1903 schreef hij een vergelijking op waaraan niemand kon ontsnappen, en dat is nog steeds zo. De vergelijking zegt: de ∆v die je uit een raket kunt halen hangt af van twee dingen — hoe goed je motor is, en hoeveel van je raket uit brandstof bestaat. En de relatie is LOGARITMISCH.",
     "De logaritme is de val. Bestaat je raket voor de helft uit brandstof, dan krijg je een bepaalde ∆v. Om die ∆v te verdubbelen maak je je raket niet voor twee derde brandstof — je moet hem voor zo'n 75% uit brandstof laten bestaan. Voor verdrievoudiging ligt dat dichter bij 87–88%. De getallen lopen exponentieel uit de hand. Daarom is een Saturn V een toren van 110 meter die bijna helemaal uit drijfstof bestaat — het ruimtevaartuig is een minuscule capsule bovenop.",

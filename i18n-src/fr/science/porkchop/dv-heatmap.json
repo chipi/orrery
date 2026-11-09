@@ -1,6 +1,7 @@
 {
   "title": "Carte thermique du ∆v",
   "intro_sentence": "L'échelle de couleur qui transforme les nombres Δv en une image lisible au coup d'œil.",
+  "seo_title": "Carte de chaleur du delta-v (porkchop) : lire les couleurs",
   "narrative_101": [
     "L'intérêt d'un diagramme porkchop, ce sont les couleurs. Des chiffres dans une immense grille diraient la même chose, mais on n'y verrait pas les motifs. Nous peignons donc chaque case — bleu-vert froid pour les trajectoires bon marché, jaune pour celles à la limite, orange et rouge pour celles désespérément coûteuses. La reconnaissance de formes prend le relais du calcul.",
     "Le turquoise froid se situe autour de 3 km/s de ∆v — l'allumage de départ depuis l'orbite basse (LEO) pour un transfert de type Hohmann vers Mars (injection trans-martienne). Le bleu, autour de 5 km/s — abordable, trajets un peu plus rapides. Le jaune, autour de 7 km/s — cela devient cher, vous payez la vitesse. L'orange et le rouge au-delà de 9 km/s — vous êtes sorti de ce que les fusées actuelles peuvent fournir en pratique. La correspondance couleur-coût est la même sur tous les diagrammes porkchop de /plan.",

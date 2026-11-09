@@ -1,6 +1,7 @@
 {
   "title": "Eje de la ventana de salida",
   "intro_sentence": "El momento del lanzamiento: recorre el eje X, normalmente un intervalo de cuatro años muestreado día a día.",
+  "seo_title": "Eje de salida de la gráfica porkchop: elegir ventana",
   "narrative_101": [
     "Lee la gráfica porkchop como un calendario. El eje horizontal — de izquierda a derecha — es la fecha en que abandonas la Tierra. Cada columna de píxeles es un día de lanzamiento diferente. Orrery muestrea con resolución de un día durante aproximadamente cuatro años; eso es suficiente para capturar dos ciclos sinódicos completos de Marte (el ciclo de ~26 meses cabe aproximadamente dos veces en cuatro años), lo cual basta para ver repetirse el patrón de la ventana de lanzamiento.",
     "Observa la fila de celdas de bajo coste (el lóbulo azul verdoso frío) y podrás leer en el calendario exactamente cuándo están las ventanas de lanzamiento. Para Marte son aproximadamente cada 26 meses. Para Venus, cada 19. Para Júpiter, cada 13. Cada zona barata es una ventana — fuera de esas zonas, el calendario juega en tu contra.",

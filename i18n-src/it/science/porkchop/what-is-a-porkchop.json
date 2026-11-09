@@ -1,6 +1,7 @@
 {
   "title": "Cos'è un diagramma porkchop?",
   "intro_sentence": "Mappa di calore 2D del costo della traiettoria per ogni coppia (data di partenza, tempo di transito), lo strumento standard per le finestre di lancio. (I porkchop standard tracciano C3 e V∞; Orrery usa ∆v in km/s, semplificato.)",
+  "seo_description": "Un diagramma porkchop mostra il costo della traiettoria per data e durata di volo: lo strumento delle finestre di lancio. Disegna il tuo nel planner.",
   "narrative_101": [
     "Quando i pianificatori di missioni vogliono sapere se un viaggio su Marte è fattibile, non calcolano una sola traiettoria. Ne calcolano MILIONI — ogni possibile data di partenza, ogni possibile tempo di transito, in una griglia gigante — e disegnano una mappa di calore. Le traiettorie economiche appaiono come zone blu fredde, quelle costose come rosse. Il risultato, stranamente, sembra una braciola di maiale. La zona economica è la carne della braciola; la cresta costosa è l'osso.",
     "Perché usare un'intera mappa termica invece di una sola risposta ottimale? Perché le vere missioni hanno vincoli. Forse una particolare rampa di lancio è disponibile solo nel 2026. Forse devi atterrare prima della fine della stagione delle tempeste di polvere. Forse un particolare razzo è pronto solo da un certo mese. Il porkchop ti permette di vedere TUTTI i compromessi contemporaneamente — scegli la traiettoria abbastanza economica che si adatta al tuo calendario nel mondo reale.",

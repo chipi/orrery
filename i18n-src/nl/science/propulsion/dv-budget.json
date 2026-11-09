@@ -1,6 +1,8 @@
 {
   "title": "∆v als Missiebudget",
   "intro_sentence": "Het getal dat bepaalt of een missie mogelijk is — de totale snelheidsverandering die je nodig hebt, opgeteld voor elke manoeuvre.",
+  "seo_title": "Delta-v-budget: de totale snelheid die een missie uitgeeft",
+  "seo_description": "Het ene getal dat zegt of een missie kan: het totale delta-v dat je uitgeeft, opgeteld over elke motorstoot, van lancering tot landing.",
   "narrative_101": [
     "Het geld van de ruimtevaart zijn geen dollars. Het is ∆v — uitgesproken als ‘delta-v’ — en dat wordt gemeten in kilometer per seconde. Elke ontsteking van je raket kost wat ∆v. Elke beweging op een baan heeft een prijskaartje in km/s. Het ∆v-budget van de missie is gewoon de lopende som: lancering + injectie + koerscorrecties + aankomst + landing. Tel het op, dat is je rekening.",
     "Nu komt de keiharde clou. Je raket heeft geen onbeperkte ∆v. Er zit een hard plafond op, bepaald door de Tsiolkovski-vergelijking en volledig afhankelijk van hoeveel van je raket uit brandstof bestaat en hoe goed je motoren zijn. Overschrijdt je rekening het plafond, dan is de missie onmogelijk. Er meer geld tegenaan gooien helpt niet. De wiskunde wint.",

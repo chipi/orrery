@@ -1,6 +1,7 @@
 {
   "title": "Transfert de Hohmann",
   "intro_sentence": "Le voyage à deux allumages le moins coûteux entre deux orbites circulaires coplanaires — et la référence par laquelle les planificateurs de mission évaluent tout le reste.",
+  "seo_description": "Le trajet à deux poussées le moins cher entre deux orbites circulaires, calculé par Walter Hohmann en 1925. Voyez l'ellipse et calculez delta-v et durée de vol.",
   "narrative_101": [
     "Vous êtes sur l'orbite de la Terre. Vous voulez être sur celle de Mars. Les deux orbites sont à peu près des cercles autour du Soleil. Comment passer de l'une à l'autre avec le moins de carburant possible ?",
     "La réponse, trouvée par Walter Hohmann en 1925, est d'une élégance saisissante. Trouvez une ellipse qui touche tout juste l'orbite de la Terre d'un côté et tout juste l'orbite de Mars de l'autre. Allumez brièvement votre moteur pour quitter la Terre et rejoindre cette ellipse. Poursuivez en roue libre pendant environ 8,5 mois sans rallumer le moteur du tout — la gravité fait le travail. Quand vous arrivez à l'extrémité opposée, rallumez le moteur pour vous installer en orbite martienne. Deux allumages, au total. C'est fait.",

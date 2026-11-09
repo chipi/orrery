@@ -1,6 +1,7 @@
 {
   "title": "Interferenz",
   "intro_sentence": "Mehrere einzelne Teleskope zu einer virtuellen Apertur zusammenschalten, die größer ist als jedes von ihnen — das Event Horizon Telescope ist ein erdgroßes Radiointerferometer aus Antennen auf vier Kontinenten.",
+  "seo_title": "Interferometrie: Wie Teleskope zu einem werden",
   "body_paragraphs": [
     "Das Auflösungsvermögen eines einzelnen Teleskops hängt von seiner Apertur ab (Durchmesser / Wellenlänge). Eine Radioantenne von 30 m Durchmesser, die bei 1 mm Wellenlänge abbildet, hat eine Winkelauflösung von etwa 7 Bogensekunden — zu grob, um das meiste zu erkennen. Zwei Antennen im Abstand von 1000 km, die dieselbe Quelle gleichzeitig beobachten und ihre Signale kombinieren, verhalten sich dagegen wie ein einziges Teleskop von **1000 km Durchmesser** — mit der entsprechenden Auflösung im Bereich von Millibogensekunden.",
     "Der Trick ist die Korrelation: Die Radiowellen, die an Antenne A und Antenne B ankommen, unterscheiden sich durch eine winzige Phasenverzögerung, die von der Richtung der Quelle und der Basislinie zwischen den Antennen abhängt. Kreuzkorreliert man die beiden Signale über die Zeit, misst man diese Phasenverzögerung. Tut man das mit N Antennen an verschiedenen Positionen, tastet das kombinierte Signal gleichzeitig N×(N-1)/2 Basislinien ab und füllt so die Fourier-Komponenten der Helligkeitsverteilung der Quelle. Eine iterative Dekonvolution rekonstruiert daraus das Bild.",

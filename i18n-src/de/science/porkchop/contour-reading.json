@@ -1,6 +1,7 @@
 {
   "title": "Die Konturen lesen",
   "intro_sentence": "Die Form der günstigen Zone zeigt dir die Geometrie tragfähiger Flugbahnen — und wo die Kompromisse liegen.",
+  "seo_title": "Porkchop-Plot lesen: Die Konturlinien",
   "narrative_101": [
     "Jetzt kennst du die Achsen und die Farbskala. Die nächste Fähigkeit ist das Lesen der FORM der günstigen Zone. Der blaugrüne Lappen ist kein beliebiger Fleck — er ist eine buchstäbliche Karte dafür, welche Flugbahnen funktionieren und welche nicht.",
     "Der klassische Mars-Porkchop-Plot hat pro Startfenster ZWEI günstige Lappen, nebeneinander. Sie heißen Flugbahnen vom „Typ I“ und „Typ II“ — gleiches Fenster, zwei verschiedene Wege um die Sonne. Typ I geht den kurzen Weg (Transferwinkel unter 180 Grad) und ist schneller. Typ II geht den langen Weg (Transferwinkel über 180 Grad) und ist langsamer, aber manchmal günstiger. Beide sind real, beide wurden geflogen.",

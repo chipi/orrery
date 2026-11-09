@@ -1,6 +1,7 @@
 {
   "title": "Inferometrie",
   "intro_sentence": "Voeg afzonderlijke telescopen samen tot één virtuele apertuur die groter is dan die van elk van hen — de Event Horizon Telescope is een radio-interferometer ter grootte van de Aarde, gebouwd uit antennes op vier continenten.",
+  "seo_title": "Interferometrie: hoe telescopen één worden",
   "body_paragraphs": [
     "Het oplossend vermogen van een telescoop hangt af van de apertuur (diameter / golflengte). Een radioantenne van 30 m doorsnede die bij een golflengte van 1 mm waarneemt, heeft een hoekresolutie van ongeveer 7 boogseconden — te grof om de meeste dingen te zien. Maar twee antennes op 1000 km van elkaar, die gelijktijdig dezelfde bron waarnemen en hun signalen combineren, gedragen zich als één telescoop van **1000 km doorsnede**, met een resolutie van milliboogseconden.",
     "De truc is correlatie: de radiogolven die bij antenne A en antenne B aankomen, verschillen door een minieme faseverschuiving die afhangt van de richting van de bron en van de basislijn tussen de antennes. Kruiscorreleer de twee signalen in de tijd en je meet die faseverschuiving. Doe dat met N antennes op verschillende posities en het gecombineerde signaal bemonstert tegelijk N×(N-1)/2 basislijnen, waarmee de Fouriercomponenten van de helderheidsverdeling van de bron worden ingevuld. Een iteratieve deconvolutie herstelt daarna het beeld.",

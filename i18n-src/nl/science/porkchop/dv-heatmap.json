@@ -1,6 +1,7 @@
 {
   "title": "∆v-warmtekaart",
   "intro_sentence": "De kleurschaal die ∆v-waarden omzet in een afbeelding die je in één oogopslag kunt lezen.",
+  "seo_title": "Delta-v-heatmap in het porkchop-diagram: de kleuren lezen",
   "narrative_101": [
     "Het hele punt van een porkchop-diagram zijn de kleuren. Getallen in een gigantisch raster zouden je hetzelfde vertellen, maar je zou de patronen niet zien. Dus kleuren we elke cel — koel blauwgroen voor goedkope trajecten, geel voor grensgevallen, oranje en rood voor hopeloos duur. Patroonherkenning neemt het over van het rekenwerk.",
     "Koel blauwgroen zit rond 3 km/s ∆v — de vertrekontsteking vanuit LEO voor een Hohmann-achtige transfer naar Mars (trans-Marsinjectie). Blauw rond 5 km/s — betaalbaar, iets snellere reizen. Geel rond 7 km/s — het wordt duur, je betaalt voor snelheid. Oranje en rood boven 9 km/s — je zit voorbij wat huidige raketten in de praktijk kunnen leveren. De koppeling van kleur aan kosten is hetzelfde in alle porkchop-diagrammen in /plan.",

@@ -1,6 +1,7 @@
 {
   "title": "Mapa de calor de ∆v",
   "intro_sentence": "La escala de colores que convierte los números ∆v en una imagen que puedes leer de un vistazo.",
+  "seo_title": "Mapa de calor de delta-v en la gráfica porkchop: los colores",
   "narrative_101": [
     "Lo esencial de una gráfica porkchop es el color. Los números en una cuadrícula gigante te dirían lo mismo, pero no podrías ver los patrones. Así que pintamos cada celda — verde azulado frío para trayectorias económicas, amarillo para las intermedias, naranja y rojo para las prohibitivamente caras. El reconocimiento de patrones sustituye a la aritmética.",
     "El verde azulado frío ronda los 3 km/s de ∆v — el encendido de salida desde LEO para una transferencia tipo Hohmann a Marte (inyección trans-Marte). Azul alrededor de 5 km/s — viajes asequibles, un poco más rápidos. Amarillo alrededor de 7 km/s — cada vez más caro, pagas por velocidad. Naranja y rojo más allá de 9 km/s — has salido del ámbito de lo que los cohetes actuales pueden lograr en la práctica. La correspondencia entre color y coste es la misma en todos los porkchops de /plan.",

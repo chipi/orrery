@@ -1,6 +1,7 @@
 {
   "title": "Bilancio di potenza solare",
   "intro_sentence": "Quanta elettricità generano i pannelli solari — il vincolo a monte di ogni sistema che l'equipaggio può attivare.",
+  "seo_title": "Budget di energia solare di una stazione spaziale",
   "narrative_101": [
     "Una stazione spaziale funziona a elettricità solare. Le ali solari si estendono lungo la travatura dell'SSI, lunga ~109 m — più grande di un campo da calcio — perché tutto il resto dipende dai watt che ricavano dalla luce del Sole: supporto vitale, comunicazioni, strumenti scientifici, la macchina per l'esercizio fisico dell'equipaggio, la ventola del flusso d'aria del bagno.",
     "Gli otto pannelli originali dell'SSI, da 35 m × 12 m, fornivano ~160 kW di picco in luce solare all'inizio della vita utile, con una perdita di rendimento nel tempo; con l'aggiunta di sei pannelli srotolabili iROSA (che coprono sei delle otto ali originali, ciascuno aggiunge >20 kW), la capacità di generazione installata ha raggiunto i ~215 kW. La potenza media su un'orbita fornita ai carichi — tenendo conto della frazione illuminata di ~0,6 e delle perdite di batteria e regolazione — è di circa 84–120 kW. Tiangong funziona con meno: circa 27 kW di picco — meno equipaggio, meno esperimenti, carico termico più semplice.",

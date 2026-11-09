@@ -1,6 +1,8 @@
 {
   "title": "Equazione del razzo di Ciolkovskij",
   "intro_sentence": "Quanta variazione di velocità puoi ottenere da un dato motore e da un dato carico di propellente — l'equazione che rende il volo spaziale un problema logaritmico.",
+  "seo_title": "Equazione di Ciolkovskij del razzo (con calcolatore)",
+  "seo_description": "Quanto delta-v dà un motore con un dato carico di propellente. L'equazione rende logaritmico il volo spaziale; prova i numeri nel Laboratorio di fisica.",
   "narrative_101": [
     "Konstantin Ciolkovskij era un maestro di scuola russo e sordo che pensava al volo spaziale nel tempo libero, decenni prima che qualcuno fosse in grado di costruire un razzo. Nel 1903 scrisse un'equazione a cui nessuno può sfuggire, e da cui ancora non siamo sfuggiti. Dice così: il ∆v che puoi estrarre da un razzo dipende da due cose — quanto è buono il tuo motore e quanta parte del tuo razzo è carburante. E la relazione è LOGARITMICA.",
     "Il logaritmo è la trappola. Se il tuo razzo è per metà carburante, ottieni un certo ∆v. Per raddoppiare quel ∆v non basta che il razzo sia per due terzi carburante: deve esserlo per circa il 75%. Per triplicarlo, per l'87-88% circa. I numeri crescono in modo esponenziale e ti sfuggono di mano. È per questo che un Saturn V è una torre di 110 metri fatta quasi interamente di propellente — l'astronave è una piccola capsula in cima.",

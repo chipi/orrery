@@ -1,6 +1,7 @@
 {
   "title": "Lancement + Ascension",
   "intro_sentence": "Les dix minutes les plus violentes de toute mission — où l'on lutte simultanément contre la gravité, l'atmosphère et l'équation de la fusée.",
+  "seo_title": "Lancement et ascension d'une fusée : dix minutes violentes",
   "narrative_101": [
     "L'essentiel du danger du vol spatial se joue dans les huit premières minutes. La fusée s'allume, combat son propre poids pour décoller du pas de tir, traverse une atmosphère suffisamment dense pour la déchirer, et accélère de zéro à sept kilomètres et demi par seconde au moment où le moteur s'arrête. Si quelque chose tourne mal pendant l'ascension, il y a rarement le temps de le corriger.",
     "L'arithmétique est brutale. Atteindre l'orbite demande ~9,4 km/s de ∆v, mais seulement ~7,9 km/s contribuent réellement à la vitesse orbitale. Le reste est gaspillé en « perte de gravité » (il faut continuer à brûler le carburant simplement pour maintenir la fusée en altitude pendant qu'elle monte) et « perte de traînée » (l'atmosphère qui repousse). Les ingénieurs passent des années à optimiser le programme de tangage — exactement quand et de combien incliner — pour minimiser ces pertes.",

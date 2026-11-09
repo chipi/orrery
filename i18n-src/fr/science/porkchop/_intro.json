@@ -1,5 +1,7 @@
 {
   "headline": "Diagrammes porkchop — quand lancer, et pourquoi les fenêtres sont ce qu'elles sont.",
+  "seo_title": "Diagrammes porkchop expliqués : cartes de fenêtres de tir",
+  "seo_description": "Comment lire un diagramme porkchop : axes de départ et de durée de vol, courbes de delta-v, viabilité et ce que la zone économique dit d'une fenêtre de tir.",
   "paragraphs": [
     "Les planificateurs de mission ne calculent pas une seule trajectoire vers Mars — ils en calculent des millions, sur une immense grille, et en tirent une carte thermique. Les trajectoires bon marché apparaissent en lobes bleu froid. Les coûteuses virent au rouge. Le résultat ressemble, curieusement, à une côtelette de porc. La zone bon marché est la chair de la côtelette ; la crête coûteuse en est l'os.",
     "Pourquoi dessiner la carte entière au lieu de juste l'optimum ? Parce que les vraies missions ont des contraintes — une fusée qui n'est prête qu'une année particulière, un pas de tir qui n'est disponible que certaines semaines, un site d'atterrissage qui a besoin d'une saison spécifique sur Mars. Le diagramme de porkchop vous permet de voir TOUS les compromis à la fois et de choisir la trajectoire assez bon marché qui s'adapte à votre calendrier réel.",

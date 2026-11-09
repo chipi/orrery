@@ -1,6 +1,7 @@
 {
   "title": "Interferometría",
   "intro_sentence": "Unir telescopios separados en una abertura virtual única más grande que cualquiera de ellos — el Event Horizon Telescope es un interferómetro de radio del tamaño de la Tierra construido a partir de antenas en cuatro continentes.",
+  "seo_title": "Interferometría: cómo varios telescopios se vuelven uno",
   "body_paragraphs": [
     "El poder de resolución de un solo telescopio depende de su abertura (diámetro / longitud de onda). Una antena de radio de 30 m de diámetro que observa con una longitud de onda de 1 mm tiene una resolución angular de unos 7 segundos de arco, demasiado gruesa para ver la mayoría de las cosas. Pero dos antenas separadas 1000 km, que observan la misma fuente a la vez y combinan sus señales, se comportan, con esa resolución, como un único telescopio de **1000 km de diámetro**: milisegundos de arco.",
     "El truco es la correlación: las ondas de radio que llegan a la antena A y a la antena B difieren en un diminuto retardo de fase que depende de la dirección de la fuente y de la línea de base entre las antenas. Si correlacionas de forma cruzada las dos señales a lo largo del tiempo, mides ese retardo de fase. Haz lo mismo con N antenas en posiciones distintas y la señal combinada muestrea N×(N-1)/2 líneas de base simultáneamente, rellenando las componentes de Fourier de la distribución de brillo de la fuente. Después, una deconvolución iterativa recupera la imagen.",

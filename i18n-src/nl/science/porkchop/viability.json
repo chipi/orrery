@@ -1,6 +1,7 @@
 {
   "title": "Haalbaarheid aflezen",
   "intro_sentence": "Een cel is haalbaar wanneer het ∆v-vermogen van je raket ≥ de ∆v-kosten van de cel — en het porkchop-diagram zet die vergelijking om in een ja/nee-kaart.",
+  "seo_title": "Haalbaarheid in het porkchop-diagram: haalt je raket het?",
   "narrative_101": [
     "Dit is de vraag die van een porkchop-diagram meer maakt dan een mooie heatmap, namelijk een echte missiebeslissing: kan mijn raket dit eigenlijk vliegen? Elke raket — Falcon Heavy, SLS, Atlas V, noem maar op — heeft een gepubliceerd ∆v-vermogen voor een gegeven ladingmassa. Leg dat plafond naast de ∆v-kosten per cel en je hebt een ja/nee-kaart.",
     "Cellen waar het vermogen van de raket de kosten overstijgt, zijn haalbaar, met marge te over. Cellen waar vermogen en kosten precies gelijk zijn, zijn haalbaar maar krap — riskant, zonder speelruimte als er iets misgaat. Cellen waar de kosten het vermogen overstijgen? Dat traject is met die raket gewoon niet te vliegen. Je kunt het nog zo graag willen; de natuurkunde zegt nee.",

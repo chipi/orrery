@@ -1,6 +1,7 @@
 {
   "title": "Agrupación de antenas — muchos oídos pequeños en lugar de uno gigante",
   "intro_sentence": "Combinar en tiempo real las señales de varias antenas crea una única apertura virtual mayor que la de cualquier antena individual, y permite captar señales más débiles de naves sin construir estructuras cada vez mayores.",
+  "seo_title": "Antenas en array: combinar parabólicas en el espacio",
   "body_paragraphs": [
     "Una sola antena grande es la forma obvia de captar la débil señal de una nave situada a miles de millones de kilómetros. Las antenas de 70 m de la DSN —en Goldstone, Madrid y Camberra— están cerca del límite práctico de los reflectores terrestres totalmente orientables. Construir algo apreciablemente mayor exigiría una estructura fija (que limita la cobertura del cielo) o una ingeniería que aún no existe. La alternativa es combinar muchas antenas más pequeñas: la agrupación de antenas (arraying).",
     "Cuando varias antenas observan a la vez la misma nave y sus señales se combinan con los desfases y retardos correctos, el resultado es una suma coherente. El ruido de cada antena se suma de forma incoherente (crece con la raíz cuadrada del número de antenas), mientras que la señal se suma de forma coherente (crece con el número de antenas). El área colectora efectiva de una agrupación de N antenas idénticas es N veces la de una sola antena. Esto no es una aproximación: es el mismo principio de los conjuntos de radiotelescopios como el Very Large Array y ALMA.",

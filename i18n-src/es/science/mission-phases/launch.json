@@ -1,6 +1,7 @@
 {
   "title": "Lanzamiento + ascenso",
   "intro_sentence": "Los diez minutos más violentos de cualquier misión: una lucha simultánea contra la gravedad, la atmósfera y la ecuación del cohete.",
+  "seo_title": "Lanzamiento y ascenso de un cohete: diez minutos violentos",
   "narrative_101": [
     "La mayor parte del peligro en astronáutica ocurre en los primeros ocho minutos. El cohete se enciende, lucha contra su propio peso para despegar de la plataforma, sube a través de aire suficientemente denso para destrozarlo, y acelera de cero a siete y medio kilómetros por segundo cuando el motor se apaga. Si algo va mal durante el ascenso, rara vez hay tiempo para arreglarlo.",
     "La aritmética es brutal. Llegar a órbita cuesta ~9,4 km/s de Δv, pero solo ~7,9 km/s contribuyen realmente a la velocidad orbital. El resto se desperdicia en la «pérdida por gravedad» (hay que mantener los motores encendidos solo para sostener el cohete mientras sube) y en la «pérdida por arrastre» (la atmósfera empujando hacia atrás). Los ingenieros pasan años optimizando el programa de cabeceo —exactamente cuándo y cuánto inclinar— para minimizar estas pérdidas.",

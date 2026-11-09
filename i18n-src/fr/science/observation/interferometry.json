@@ -1,6 +1,7 @@
 {
   "title": "Interférométrie",
   "intro_sentence": "Assemblez des télescopes distincts en une ouverture virtuelle plus grande que chacun d'eux — l'Event Horizon Telescope est un interféromètre radio grand comme la Terre, construit à partir d'antennes réparties sur quatre continents.",
+  "seo_title": "Interférométrie : comment des télescopes n'en font qu'un",
   "body_paragraphs": [
     "Le pouvoir de résolution d'un télescope isolé dépend de son ouverture (diamètre / longueur d'onde). Une antenne radio de 30 m de diamètre qui observe à 1 mm de longueur d'onde a une résolution angulaire d'environ 7 secondes d'arc — trop grossière pour distinguer la plupart des objets. Mais deux antennes distantes de 1 000 km, qui observent simultanément la même source et combinent leurs signaux, se comportent comme un seul télescope de **1 000 km de diamètre** à cette résolution — de l'ordre de la milliseconde d'arc.",
     "L'astuce est la corrélation : les ondes radio qui arrivent à l'antenne A et à l'antenne B diffèrent par un minuscule retard de phase, qui dépend de la direction de la source et de la distance qui sépare les antennes (la ligne de base). En corrélant les deux signaux au fil du temps, on mesure ce retard de phase. Avec N antennes placées à des positions différentes, le signal combiné échantillonne simultanément N×(N-1)/2 lignes de base, ce qui remplit les composantes de Fourier de la distribution de luminosité de la source. Une déconvolution itérative reconstitue ensuite l'image.",

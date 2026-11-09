@@ -1,6 +1,7 @@
 {
   "title": "L'empreinte d'atterrissage — où la portance d'une capsule peut l'emmener",
   "intro_sentence": "Une capsule en rentrée n'est pas visée comme une fléchette : sa portance lui donne une zone atteignable au sol, l'« empreinte », et l'ordinateur de guidage y choisit un site en décidant comment dépenser cette portance.",
+  "seo_title": "Rentrée d'une capsule : l'ellipse d'atterrissage",
   "narrative_101": [
     "Une fois qu'une capsule s'engage dans la rentrée elle ne peut ajouter d'énergie — pas de moteurs, pas de remise des gaz. Mais elle n'est pas impuissante sur l'endroit OÙ elle descend. En roulant pour pointer sa portance vers le haut elle étend le vol plané et vole loin ; en roulant portance vers le bas elle plonge et atterrit court ; en inclinant à gauche ou à droite elle se déplace latéralement. L'ensemble de tous les endroits qu'elle pourrait atteindre, compte tenu de sa vitesse et de sa portance, est une zone au sol en forme de goutte d'eau étirée — l'empreinte d'atterrissage.",
     "Atteindre le bord éloigné de cette empreinte a un coût : voler avec la portance orientée vers le haut pour aller loin impose une descente plus rasante et plus douce, avec un pic de g plus faible, tandis que plonger court impose une descente plus raide et plus rude. L'empreinte porte donc un compromis : les cibles lointaines sont celles à faible g, les cibles proches celles à fort g, et le guidage doit trouver un programme d'inclinaison qui se pose sur le point choisi sans jamais franchir les limites de g ou de chauffage en cours de route.",

@@ -1,6 +1,7 @@
 {
   "title": "Axe temps de vol",
   "intro_sentence": "La durée du voyage — portée sur l'axe Y, en jours pour les planètes intérieures et en années pour les planètes extérieures.",
+  "seo_title": "Axe de durée de vol du diagramme porkchop : durée du trajet",
   "narrative_101": [
     "Si l'axe des X vous dit QUAND vous partez, l'axe des Y vous dit COMBIEN DE TEMPS le voyage dure. Bas du graphique : trajets rapides et courts. Haut du graphique : trajets lents et longs. Pour les destinations de classe Mars, l'axe s'étend sur environ 100 à 500 jours. Pour Jupiter, c'est des années.",
     "Vous pouvez maintenant lire tout le compromis d'un seul coup d'œil. Remontez tout droit une colonne du diagramme porkchop — c'est la MÊME date de lancement, mais des temps de transit différents. Près du bas (trajet rapide), les cellules deviennent rouges — les trajets rapides coûtent cher parce que vous forcez une ellipse de transfert très inclinée. Plus haut (trajet plus lent), les cellules passent au bleu froid — c'est la bande de Hohmann naturelle, celle où les calculs veulent que le voyage se situe.",

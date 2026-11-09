@@ -1,6 +1,7 @@
 {
   "title": "Flugzeit-Achse",
   "intro_sentence": "Wie lang die Reise dauert — entlang der Y-Achse, in Tagen für innere Planeten und Jahren für äußere.",
+  "seo_title": "Porkchop-Plot, Flugzeitachse: Die Reisedauer",
   "narrative_101": [
     "Sagt dir die X-Achse, WANN du aufbrichst, so sagt dir die Y-Achse, WIE LANGE die Reise dauert. Unten im Diagramm: schnelle, kurze Reisen. Oben im Diagramm: langsame, lange Reisen. Bei Mars-ähnlichen Zielen erstreckt sich die Achse grob über 100 bis 500 Tage. Bei Jupiter sind es Jahre.",
     "Jetzt kannst du den gesamten Kompromiss auf einen Blick erfassen. Geh in einer Spalte des Plots senkrecht nach oben – das ist DASSELBE Startdatum, aber unterschiedliche Reisezeiten. Unten (schnelle Reise) werden die Zellen rot – schnelle Reisen sind teuer, weil du eine steile Transferellipse erzwingst. Weiter oben (langsamere Reise) werden die Zellen kühlblau – das ist das natürliche Hohmann-Band, in dem die Mathematik die Reise haben will.",

@@ -1,6 +1,7 @@
 {
   "title": "Lire la faisabilité",
   "intro_sentence": "Une cellule est viable lorsque la capacité de votre fusée en delta-v ≥ le coût en delta-v de la cellule — et le diagramme porkchop transforme cette comparaison en une carte oui/non.",
+  "seo_title": "Viabilité du porkchop : votre fusée fait-elle le trajet ?",
   "narrative_101": [
     "Voici la question qui transforme un diagramme porkchop, de jolie carte thermique, en véritable décision de mission : ma fusée peut-elle réellement faire ce trajet ? Chaque fusée — Falcon Heavy, SLS, Atlas V, au choix — a une capacité en delta-v publiée pour une masse de charge utile donnée. Comparez ce plafond aux coûts de chaque cellule du porkchop et vous obtenez une carte oui/non.",
     "Les cellules où la capacité de la fusée dépasse le coût sont réalisables, avec une marge de sécurité. Les cellules où la capacité correspond exactement au coût sont réalisables mais serrées — risquées, sans marge pour les imprévus. Les cellules où le coût dépasse la capacité ? Cette trajectoire n'est simplement pas réalisable avec cette fusée. Vous pouvez le souhaiter tant que vous voulez ; la physique dit non.",

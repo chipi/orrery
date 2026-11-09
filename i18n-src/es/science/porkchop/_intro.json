@@ -1,5 +1,7 @@
 {
   "headline": "Gráficas porkchop — cuándo lanzar, y por qué las ventanas son las ventanas.",
+  "seo_title": "Gráficas porkchop explicadas: ventanas de lanzamiento",
+  "seo_description": "Cómo leer una gráfica porkchop: ejes de salida y tiempo de vuelo, contornos de delta-v, viabilidad y qué dice la zona barata de una ventana.",
   "paragraphs": [
     "Los planificadores de misiones no calculan una única trayectoria a Marte: calculan millones, en una cuadrícula gigante, y pintan un mapa de calor. Las trayectorias baratas aparecen como lóbulos azules fríos. Las costosas se vuelven rojas. El resultado, curiosamente, parece una chuleta de cerdo. La zona barata es la carne de la chuleta; la cresta cara es el hueso.",
     "¿Por qué dibujamos el mapa entero en lugar de solo el óptimo? Porque las misiones reales tienen restricciones — un cohete que solo está listo un año en particular, una plataforma de lanzamiento que solo está disponible ciertas semanas, un sitio de aterrizaje que necesita una estación específica en Marte. El porkchop te permite ver TODOS los compromisos a la vez y elegir la trayectoria lo bastante económica que se ajuste a tu calendario del mundo real.",

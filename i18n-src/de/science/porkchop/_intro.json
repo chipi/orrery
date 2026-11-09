@@ -1,5 +1,7 @@
 {
   "headline": "Porkchop-Plots — wann man startet und warum die Fenster so sind, wie sie sind.",
+  "seo_title": "Porkchop-Plots erklärt: Diagramme für Startfenster",
+  "seo_description": "So liest man einen Porkchop-Plot: Start- und Flugzeitachse, Delta-v-Konturen, Machbarkeit und was die günstige Zone über ein Startfenster verrät.",
   "paragraphs": [
     "Missionsplaner berechnen keine einzelne Flugbahn zum Mars — sie berechnen Millionen in einem riesigen Gitter und erstellen eine Wärmekarte. Günstige Flugbahnen erscheinen als kühle blaue Lappen. Teure werden rot. Das Ergebnis sieht seltsamerweise wie ein Schweinekotelett aus. Die günstige Zone ist das Fleisch des Koteletts; der teure Grat ist der Knochen.",
     "Warum zeichnen wir die ganze Karte statt nur das Optimum? Weil echte Missionen Einschränkungen haben — eine Rakete, die nur in einem bestimmten Jahr einsatzbereit ist, einen Startplatz, der nur in bestimmten Wochen verfügbar ist, eine Landestelle, die eine bestimmte Jahreszeit auf dem Mars benötigt. Der Porkchop-Plot zeigt Ihnen ALLE Kompromisse auf einmal und ermöglicht es Ihnen, die ausreichend günstige Flugbahn auszuwählen, die in Ihren realen Kalender passt.",

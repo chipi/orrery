@@ -1,6 +1,7 @@
 {
   "title": "Coronagrafi",
   "intro_sentence": "Un disco occultante all'interno del telescopio blocca la stella ospite, così che il pianeta accanto — un miliardo di volte più debole — diventi visibile.",
+  "seo_title": "Coronografi: oscurare la stella per vedere i pianeti",
   "body_paragraphs": [
     "Una stella simile al Sole supera in luminosità i suoi pianeti di un fattore circa 10⁹ alle lunghezze d'onda visibili e 10⁶ nell'infrarosso. I fotoni del pianeta non mancano: annegano nelle ali di diffrazione della funzione di risposta all'impulso (PSF) della stella. La ripresa diretta di un esopianeta è possibile solo se si riesce a sopprimere quella PSF di molti ordini di grandezza. Un coronografo fa esattamente questo.",
     "Il classico coronografo di Lyot (1930, inventato da Bernard Lyot per la fotografia solare) colloca un disco opaco sul piano focale del telescopio per bloccare la stella e, più a valle, una seconda maschera per fermare la luce diffratta dal bordo della prima. I moderni coronografi a pupilla apodizzata e i coronografi a vortice usano elaborati schemi di fase per spingere la soppressione a 10⁻⁹ o meglio in regioni ristrette dell'immagine.",

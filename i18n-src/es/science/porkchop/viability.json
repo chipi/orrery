@@ -1,6 +1,7 @@
 {
   "title": "Leer la viabilidad",
   "intro_sentence": "Una celda es viable cuando la capacidad ∆v de tu cohete ≥ el coste ∆v de la celda — y la gráfica porkchop convierte esa comparación en un mapa sí/no.",
+  "seo_title": "Viabilidad en la gráfica porkchop: ¿llega tu cohete?",
   "narrative_101": [
     "La pregunta que transforma un porkchop de un bonito mapa de calor en una decisión de misión real es: ¿puede mi cohete volar realmente esto? Cada cohete — Falcon Heavy, SLS, Atlas V, el que sea — tiene una capacidad de ∆v publicada para una masa de carga útil dada. Compara ese límite con los costes por celda del porkchop y tienes un mapa sí/no.",
     "Las celdas donde la capacidad del cohete supera el coste son viables, con margen de sobra. Las celdas donde la capacidad coincide exactamente con el coste son viables pero ajustadas — arriesgadas, sin holgura si algo sale mal. ¿Y las celdas donde el coste supera la capacidad? Esa trayectoria simplemente no es viable con ese cohete. Puedes desearlo todo lo que quieras; la física dice que no.",

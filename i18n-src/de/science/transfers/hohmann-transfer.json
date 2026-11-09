@@ -1,6 +1,7 @@
 {
   "title": "Hohmann-Transfer",
   "intro_sentence": "Die günstigste Reise mit zwei Zündungen zwischen zwei koplanaren Kreisbahnen — und die Vergleichsgröße, an der Missionsplaner alles andere messen.",
+  "seo_description": "Der günstigste Zwei-Zündungen-Flug zwischen zwei Kreisbahnen, 1925 von Walter Hohmann berechnet. Ellipse ansehen, Delta-v und Flugzeit berechnen.",
   "narrative_101": [
     "Du befindest dich in der Erdumlaufbahn. Du möchtest in der Marsumlaufbahn sein. Beide Bahnen sind ungefähr Kreise um die Sonne. Wie gelangst du von einer zur anderen mit so wenig Treibstoff wie möglich?",
     "Die Antwort, die Walter Hohmann 1925 ausarbeitete, ist verblüffend elegant. Finde eine Ellipse, die auf der einen Seite gerade eben die Erdbahn und auf der anderen gerade eben die Marsbahn berührt. Zünde dein Triebwerk kurz, um die Erde zu verlassen und auf diese Ellipse einzuschwenken. Gleite etwa 8,5 Monate, ohne das Triebwerk überhaupt zu zünden — die Schwerkraft erledigt die Arbeit. Am fernen Ende zündest du erneut, um in die Marsumlaufbahn einzuschwenken. Zwei Zündungen insgesamt. Fertig.",

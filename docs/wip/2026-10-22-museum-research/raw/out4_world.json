@@ -1,0 +1,25 @@
+{
+ "museums": {
+  "powerhouse-sydney": {"name": "Powerhouse Museum (Powerhouse Collection)", "city": "Sydney", "country": "AU", "website": "https://powerhouse.com.au"}
+ },
+ "rows": [
+  {"ref": "f-1", "museum": "powerhouse-sydney", "item": "Rocketdyne F-1 engine, 25th of 114 R&D engines (ground-test, 35 test firings, never flew)", "kind": "test-article", "evidence": "https://collection.powerhouse.com.au/object/267098", "status": "confirmed", "notes": "Collection page states it is on public display and the only example known on public display outside the US; the Task Eternal exhibition page does not list it, so the exact gallery is unstated."},
+  {"ref": "sokol-kv-2", "museum": "powerhouse-sydney", "item": "Sokol KV-2 suit worn by Gennadi Manakov on Soyuz TM-10 (Powerhouse object 94/65/1)", "kind": "flown", "evidence": "https://collection.powerhouse.com.au/object/141689", "status": "uncertain", "notes": "Catalogue page confirms a flown suit in the collection; the page does not state current display."}
+ ],
+ "museums_checked": [
+  {"id": "powerhouse-sydney", "name": "Powerhouse Museum", "city": "Sydney", "country": "AU", "result": "rows added 2"},
+  {"id": "canada-aviation-and-space-museum", "name": "Canada Aviation and Space Museum (Ingenium)", "city": "Ottawa", "country": "CA", "result": "no new rows (Canadarm already in merged; Alouette-1 is an engineering model of a satellite that is not an Orrery object; Garneau flight suit not an Orrery object; a Hadfield Sokol suit appears only in a search summary, no page read names it)"},
+  {"id": "mega-silk-way-astana", "name": "MEGA Silk Way exhibition 'Kazakh Space Path'", "city": "Astana", "country": "KZ", "result": "no row: real Soyuz TMA-16M descent capsule shown only 2018-11 to 2019-03 (informburo.kz), not on display now"},
+  {"id": "canberra-deep-space-complex", "name": "Canberra Deep Space Communication Complex", "city": "Canberra", "country": "AU", "result": "no real Orrery hardware (Apollo 11 lunar sample, models only)"},
+  {"id": "questacon", "name": "Questacon", "city": "Canberra", "country": "AU", "result": "no real Orrery hardware found"},
+  {"id": "carnarvon-space-and-technology-museum", "name": "Carnarvon Space and Technology Museum", "city": "Carnarvon", "country": "AU", "result": "no row: sources describe full-size Gemini/Apollo capsules (replicas) and unspecified 'pieces of Skylab'; no named real unit"},
+  {"id": "israeli-air-force-museum", "name": "Israeli Air Force Museum", "city": "Hatzerim", "country": "IL", "result": "no real Orrery hardware found (Shavit at Eretz Israel Museum is a life-size model)"},
+  {"id": "madatech-haifa", "name": "MadaTech National Museum of Science, Technology and Space", "city": "Haifa", "country": "IL", "result": "no row: Almaz command module and suits reported for a temporary exhibition; could not read the page (403), real/current not confirmed"},
+  {"id": "mbrsc-dubai", "name": "Mohammed bin Rashid Space Centre", "city": "Dubai", "country": "AE", "result": "no real Orrery hardware (Falcon 9 on site is a replica; no Hope spare found)"},
+  {"id": "museum-of-the-future-dubai", "name": "Museum of the Future", "city": "Dubai", "country": "AE", "result": "no real Orrery hardware found"},
+  {"id": "rahmi-koc-museum-istanbul", "name": "Rahmi M. Koc Museum", "city": "Istanbul", "country": "TR", "result": "no real Orrery hardware found"},
+  {"id": "memorial-aeroespacial-brasileiro", "name": "Memorial Aeroespacial Brasileiro", "city": "Sao Jose dos Campos", "country": "BR", "result": "no real Orrery hardware (models; Sonda/VLS are not Orrery objects)"},
+  {"id": "museo-nacional-aeronautica-argentina", "name": "Museo Nacional de Aeronautica / Argentine rocket sites", "city": "Moron", "country": "AR", "result": "no real Orrery hardware found"},
+  {"id": "hanoi-soyuz-37-exhibition", "name": "State Records and Archives exhibition, Soyuz 37", "city": "Hanoi", "country": "VN", "result": "no row: shows Pham Tuan's carried artefacts, not a capsule; closes 2026-06-10"}
+ ]
+}

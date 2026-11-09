@@ -25,11 +25,11 @@ const rows = m.rows.map((r) => {
   };
 });
 const checked = [];
-for (const f of ['out3_ru', 'out3_eastern', 'out3_zh', 'out3_jako', 'out3_asia', 'out3_eu_south', 'out3_eu_north', 'out3_world', 'out3_us']) {
+for (const f of ['out3_ru', 'out3_eastern', 'out3_zh', 'out3_jako', 'out3_asia', 'out3_eu_south', 'out3_eu_north', 'out3_world', 'out3_us', 'out4_china', 'out4_india', 'out4_jako', 'out4_world']) {
   if (!existsSync(`${dir}/raw/${f}.json`)) continue;
   for (const c of load(`raw/${f}.json`).museums_checked ?? []) checked.push({ name: c.name, city: c.city ?? '', country: (c.country ?? '?').toUpperCase(), result: String(c.result ?? '') });
 }
-writeFileSync(`${out}/pagedata.json`, JSON.stringify({ generated: '2026-10-22', rows, checked }));
+writeFileSync(`${out}/pagedata.json`, JSON.stringify({ generated: '2026-11-09', rows, checked }));
 console.log('rows', rows.length, 'checked museums', checked.length, 'bytes', JSON.stringify({ rows, checked }).length);
 const ids = new Set(rows.map((r) => r.id));
 console.log('unique ids', ids.size);

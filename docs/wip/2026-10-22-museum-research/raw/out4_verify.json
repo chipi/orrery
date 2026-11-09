@@ -1,0 +1,876 @@
+{
+ "checked": [
+  {
+   "museum": "science-museum-london",
+   "ref": "sokol-kv-2",
+   "item": "Helen Sharman's Sokol KV-2 suit (Soyuz TM-12)",
+   "verdict": "uncertain",
+   "evidence": "https://collection.sciencemuseumgroup.org.uk/objects/co8030220",
+   "notes": "Record location is Science Museum : Space Gallery, but the record carries a \"contact us in advance\" caveat; not confirmed on view."
+  },
+  {
+   "museum": "deutsches-museum-munich",
+   "ref": "sokol-kv-2",
+   "item": "Klaus-Dietrich Flade's Sokol KV-2 suit (Mir 1992)",
+   "verdict": "uncertain",
+   "evidence": "https://digital.deutsches-museum.de/en/digital-catalogue/collection-object/1994-612/",
+   "notes": "Catalogue confirms Flade flew this Sokol KV-2 (1992) but gives no display location."
+  },
+  {
+   "museum": "rkk-energia-museum-korolev",
+   "ref": "/science/history/sputnik-1957",
+   "item": "Sputnik 1 backup",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/RKK_Energiya_museum",
+   "notes": "en.wikipedia museum article lists Sputnik 2/3 etc., not clearly the Sputnik 1 backup; tours by appointment only."
+  },
+  {
+   "museum": "tsiolkovsky-museum-kaluga",
+   "ref": "/science/history/tsiolkovsky-equation-1903",
+   "item": "Tsiolkovsky's house and personal materials",
+   "verdict": "uncertain",
+   "evidence": "https://gmik.ru",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "samara-cosmic-museum",
+   "ref": "soyuz",
+   "item": "R-7 11A511 (Soyuz) built 1984, used as Plesetsk crew-training rocket, mounted on museum building",
+   "verdict": "confirmed",
+   "evidence": "https://en.wikipedia.org/wiki/Soyuz_carrier_rocket_monument",
+   "notes": "Wikipedia: intact R-7 11A511 built 1984 at Progress, fixed on the Samara Cosmic museum building (outdoor monument). Kind: unflown training/production rocket, not a flown unit."
+  },
+  {
+   "museum": "science-museum-london",
+   "ref": "rl10",
+   "item": "RL10A-4",
+   "verdict": "confirmed",
+   "evidence": "https://collection.sciencemuseumgroup.org.uk/objects/co40018",
+   "notes": "Collection record recordDisplayLocation = \"Science Museum : Space Gallery\" (gallery opened Sept 2025)."
+  },
+  {
+   "museum": "museum-space-missile-technology-spb",
+   "ref": "rd-107-108",
+   "item": "RD-107 engine",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/RD-107",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "lavochkin-museum-khimki",
+   "ref": "lunokhod-1",
+   "item": "Lunokhod 3 (unflown flight spare, same class)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Lunokhod_programme",
+   "notes": "A search summary says the Lavochkin museum holds the Lunokhod-3 flight model; museum page not read."
+  },
+  {
+   "museum": "lavochkin-museum-khimki",
+   "ref": "lunokhod-2",
+   "item": "Lunokhod 3 (unflown flight spare, same class)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Lunokhod_programme",
+   "notes": "Same unit as lunokhod-1 row; not verified at museum page."
+  },
+  {
+   "museum": "guiana-space-museum-kourou",
+   "ref": "xmm-newton",
+   "item": "XMM-Newton Structural Thermal Model",
+   "verdict": "uncertain",
+   "evidence": "https://www.buran-energia.com/blog/space-museum-of-kourou",
+   "notes": "Visitor report lists \"the satellite XMM-Newton\" in the museum; ESA calls the unit a Structural Thermal Model; no museum page."
+  },
+  {
+   "museum": "rkk-energia-museum-korolev",
+   "ref": "vostok",
+   "item": "Restored Vostok-1 descent module (Gagarin)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/RKK_Energiya_museum",
+   "notes": "en.wikipedia lists Vostok 1 capsule among exhibits; tours by appointment; no museum page."
+  },
+  {
+   "museum": "rkk-energia-museum-korolev",
+   "ref": "vostok",
+   "item": "Vostok-6 descent module (Tereshkova)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/RKK_Energiya_museum",
+   "notes": "en.wikipedia lists the Vostok 6 capsule; no museum page."
+  },
+  {
+   "museum": "tsiolkovsky-museum-kaluga",
+   "ref": "vostok",
+   "item": "Vostok-5 descent module (Bykovsky, 1963), displayed since 1968",
+   "verdict": "uncertain",
+   "evidence": "https://ru.wikipedia.org/wiki/Восток-5",
+   "notes": "ru.wikipedia says descent module exhibited in Kaluga since 1968; putevka says the museum got an \"authentic part\" of Vostok-5 in 1968 (whole module vs part unclear)."
+  },
+  {
+   "museum": "vdnkh-cosmonautics-aviation-center-moscow",
+   "ref": "vostok",
+   "item": "'Подлинный спускаемый аппарат космического корабля «Восток»' (unit not identified)",
+   "verdict": "uncertain",
+   "evidence": "https://ru.wikipedia.org/wiki/Павильон_№_34_«Космос»_на_ВДНХ",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "tsiolkovsky-museum-kaluga",
+   "ref": "r-7-vostok",
+   "item": "Vostok launch vehicle duplicate of Gagarin's Vostok-1 rocket, outdoors on museum grounds",
+   "verdict": "uncertain",
+   "evidence": "https://www.putevka.com/kaluzhskaya-oblast/kaluga/sight/raketa-nositel-vostok",
+   "notes": "putevka: rocket in Kaluga since 1973, \"exact copy\" and the \"dubler\" of Gagarin's Vostok; real-backup vs copy not settled."
+  },
+  {
+   "museum": "tsiolkovsky-museum-kaluga",
+   "ref": "vostok-k",
+   "item": "Vostok launch vehicle duplicate of Gagarin's Vostok-1 rocket (Vostok 8K72K), outdoors",
+   "verdict": "uncertain",
+   "evidence": "https://www.putevka.com/kaluzhskaya-oblast/kaluga/sight/raketa-nositel-vostok",
+   "notes": "Same unit as r-7-vostok row; putevka calls it an \"exact copy\" and the backup (dubler) of Gagarin's Vostok."
+  },
+  {
+   "museum": "rkk-energia-museum-korolev",
+   "ref": "soyuz-t",
+   "item": "Soyuz-19 descent module (Apollo-Soyuz, 1975)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/RKK_Energiya_museum",
+   "notes": "en.wikipedia lists Soyuz 19 descent module; no museum page."
+  },
+  {
+   "museum": "tsiolkovsky-museum-kaluga",
+   "ref": "soyuz-t",
+   "item": "Soyuz-34 descent module (1979)",
+   "verdict": "uncertain",
+   "evidence": "https://ru.wikipedia.org/wiki/Союз-34",
+   "notes": "ru.wikipedia image caption: Soyuz-34 descent module in the Kaluga museum exposition; no museum page read."
+  },
+  {
+   "museum": "tsiolkovsky-museum-kaluga",
+   "ref": "soyuz-t",
+   "item": "Soyuz-22 descent module (1976)",
+   "verdict": "dropped",
+   "evidence": "https://ru.wikipedia.org/wiki/Музей_и_дом-усадьба_К._Э._Циолковского",
+   "notes": "The cited ru.wikipedia page is the Tsiolkovsky estate museum at Izhevskoye (Ryazan oblast), which says the Soyuz-22 descent module is its centrepiece; not a Kaluga exhibit. en.wikipedia RKK Energiya museum also lists Soyuz 22. Wrong museum for this row; unit location needs a fresh row (Izhevskoye vs Energia)."
+  },
+  {
+   "museum": "memorial-museum-of-cosmonautics-moscow",
+   "ref": "soyuz-t",
+   "item": "Soyuz-37 descent module (1980)",
+   "verdict": "uncertain",
+   "evidence": "https://ru.wikipedia.org/wiki/Мемориальный_музей_космонавтики",
+   "notes": "ru.wikipedia lists the Soyuz-37 descent module in the museum; museum page not read."
+  },
+  {
+   "museum": "memorial-museum-of-cosmonautics-moscow",
+   "ref": "soyuz-tm",
+   "item": "Soyuz TM-7 descent module",
+   "verdict": "uncertain",
+   "evidence": "https://commons.wikimedia.org/wiki/File:Союз_ТМ-7.jpg",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "arkhipo-osipovka-cosmonautics-museum",
+   "ref": "soyuz-t",
+   "item": "Soyuz-30 descent module (1978)",
+   "verdict": "uncertain",
+   "evidence": "https://ru.wikipedia.org/wiki/Союз-30",
+   "notes": "CONFLICT: ru.wikipedia Soyuz-30 says the descent module is in Arkhipo-Osipovka, but en/pl sources put the real Soyuz 30 lander in Warsaw. At most one is real."
+  },
+  {
+   "museum": "korolev-museum-of-cosmonautics-zhytomyr",
+   "ref": "soyuz-t",
+   "item": "Soyuz 27 descent module (1978)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Soyuz_27",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "gagarin-cosmonaut-training-center-museum",
+   "ref": "soyuz-7k-ok",
+   "item": "Soyuz-4 descent module",
+   "verdict": "uncertain",
+   "evidence": "https://ru.wikipedia.org/wiki/Музей_космонавтики_Центра_подготовки_космонавтов_им._Ю._А._Гагарина",
+   "notes": "ru.wikipedia names the Soyuz-4 descent module in the museum; no museum page read."
+  },
+  {
+   "museum": "baikonur-cosmodrome-museum",
+   "ref": "buran",
+   "item": "OK-ML1 / BTS-001 full-size ground-test orbiter, outdoors by the museum entrance",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Buran_programme",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "vdnkh-moscow",
+   "ref": "buran",
+   "item": "Buran ground-test orbiter (OK-ML1 per ru.wikipedia), outdoors on Industry Square, since 2014",
+   "verdict": "uncertain",
+   "evidence": "https://ru.wikipedia.org/wiki/БТС-001_ОК-МЛ-1",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "sirius-science-center-sochi",
+   "ref": "buran",
+   "item": "OK-KS (BTS-003) full-scale ground-test orbiter, outdoors since June 2017",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Buran_programme",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "samara-regional-museum-alabin",
+   "ref": "rd-107-108",
+   "item": "RD-117 engine (Soyuz variant of RD-107)",
+   "verdict": "uncertain",
+   "evidence": "https://ru.wikipedia.org/wiki/РД-107",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "letecke-muzeum-kbely",
+   "ref": "soyuz-7k-ok",
+   "item": "Return capsule of Soyuz 28 (Remek/Gubarev, 1978) plus Remek's spacesuit",
+   "verdict": "confirmed",
+   "evidence": "https://prague.eu/cs/akce/stale-expozice-leteckeho-muzea-kbely/",
+   "notes": "Prague.eu permanent-exhibition page: \"Vystavena je navratova kabina kosmicke lodi Sojuz 28 spolu se skafandrem ... Vladimira Remka\". Not the museum own site."
+  },
+  {
+   "museum": "museum-polish-military-technology-warsaw",
+   "ref": "soyuz-7k-ok",
+   "item": "Descent capsule of Soyuz 30 (Klimuk/Hermaszewski, 1978), with Hermaszewski's suits",
+   "verdict": "uncertain",
+   "evidence": "https://pl.wikipedia.org/wiki/Muzeum_Polskiej_Techniki_Wojskowej",
+   "notes": "pl.wikipedia: Soyuz 30 lander is now on the grounds of the Polish Army Museum (Al. Jerozolimskie), not Fort Czerniakow; museum id may be wrong and location current status unverified. Conflicts with Arkhipo-Osipovka row."
+  },
+  {
+   "museum": "baikonur-cosmodrome-museum",
+   "ref": "/science/history/sputnik-1957",
+   "item": "Sputnik pre-flight test unit hung from ceiling",
+   "verdict": "uncertain",
+   "evidence": "https://commons.wikimedia.org/wiki/File:SputnikTestModel.jpg",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "baikonur-cosmodrome-museum",
+   "ref": "buran",
+   "item": "Piece of window glass of OK-1K1 (Buran, flew 1988; orbiter destroyed 2002)",
+   "verdict": "uncertain",
+   "evidence": "https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Museum_of_Baikonur_Cosmodrome_History",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "china-science-and-technology-museum",
+   "ref": "yf-77",
+   "item": "YF-77 rocket engine on display",
+   "verdict": "confirmed",
+   "evidence": "https://cstm.cdstm.cn/hd/yg/tshd/art/2025/art_2655365b22714bcb96a89f417ca99220.html",
+   "notes": "CSTM 2025 event page names the YF-77 rocket engine as a tour exhibit (event 7-8 Nov). Real/test status of the engine not stated."
+  },
+  {
+   "museum": "china-science-and-technology-museum",
+   "ref": "tiangong",
+   "item": "Tianhe core module structural verification unit (天和核心舱结构验证件)",
+   "verdict": "confirmed",
+   "evidence": "https://cstm.cdstm.cn/hd/yg/tshd/art/2025/art_2655365b22714bcb96a89f417ca99220.html",
+   "notes": "Same CSTM page: Tianhe core module structural verification unit in the West Hall (test-article)."
+  },
+  {
+   "museum": "national-museum-of-china",
+   "ref": "shenzhou",
+   "item": "Shenzhou 5 return capsule (神舟五号返回舱), Yang Liwei's flight",
+   "verdict": "uncertain",
+   "evidence": "https://zh.wikipedia.org/wiki/神舟五号",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "china-aerospace-museum-beijing",
+   "ref": "shenzhou",
+   "item": "Shenzhou 4 return capsule (神舟四号返回舱实物)",
+   "verdict": "uncertain",
+   "evidence": "https://zh.wikipedia.org/wiki/中国航天博物馆",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "aerospace-tt-and-c-equipment-museum-weinan",
+   "ref": "shenzhou",
+   "item": "Shenzhou 6 return capsule (神舟六号载人航天飞船返回舱)",
+   "verdict": "uncertain",
+   "evidence": "https://zh.wikipedia.org/wiki/航天测控装备博物馆",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "gifu-kakamigahara-air-space-museum",
+   "ref": "le-7a",
+   "item": "LE-7 rocket engine (listed as 実機 / actual hardware; the predecessor of LE-7A, not a 7A)",
+   "verdict": "uncertain",
+   "evidence": "https://sorahaku.net/exhibition/permanent/space/s1/",
+   "notes": "Museum page lists \"LE-7 engine\" (real, 実機) as a featured exhibit; it is LE-7, the predecessor of LE-7A, so the ref match is a class decision for the operator."
+  },
+  {
+   "museum": "jaxa-kakuda-space-center",
+   "ref": "le-7a",
+   "item": "LE-7 engine recovered from the sea after H-II F8 (1999), in the Space Development Exhibition Room; large LE-5 and LE-7 engines outdoors",
+   "verdict": "uncertain",
+   "evidence": "https://fanfun.jaxa.jp/visit/kakuda/index.html",
+   "notes": "JAXA page: large liquid engines LE-5, LE-7 outdoors; variant (LE-7 vs LE-7A) and flown status not stated."
+  },
+  {
+   "museum": "jaxa-kakuda-space-center",
+   "ref": "le-5b",
+   "item": "Large LE-5 liquid rocket engine displayed outdoors (variant not stated)",
+   "verdict": "uncertain",
+   "evidence": "https://fanfun.jaxa.jp/visit/kakuda/index.html",
+   "notes": "JAXA page: LE-5 outdoors; variant 5/5A/5B not stated."
+  },
+  {
+   "museum": "nagoya-city-science-museum",
+   "ref": "h-iia",
+   "item": "H-IIB development/structural test vehicle (outdoor, since Nov 2011): real first-stage engine section, LH2 tank, central body, interstage and fairing; other parts replicas",
+   "verdict": "confirmed",
+   "evidence": "https://www.ncsm.city.nagoya.jp/exhibit_files/pdf/X103.pdf",
+   "notes": "Museum exhibit sheet X103 (outdoor): H-IIB where 1st-stage engine section, tank, centre section, interstage and fairing are real test-vehicle hardware (実機), the rest built to match. Kind: test-article (part real). Sheet dated 2025-04."
+  },
+  {
+   "museum": "nagoya-city-science-museum",
+   "ref": "le-7a",
+   "item": "LE-7A engines in the H-IIB structural test vehicle (per Wikipedia)",
+   "verdict": "dropped",
+   "evidence": "https://www.ncsm.city.nagoya.jp/exhibit_files/pdf/X103.pdf",
+   "notes": "Museum sheet X103 says the two main engines are not part of the exhibit (they would be added at launch); no LE-7A named on this vehicle."
+  },
+  {
+   "museum": "nehru-planetarium-delhi",
+   "ref": "soyuz-t",
+   "item": "Soyuz T-10 descent module (return craft of the Soyuz T-11 Indo-Soviet crew incl. Rakesh Sharma), shown with Sharma's space suit",
+   "verdict": "uncertain",
+   "evidence": "https://commons.wikimedia.org/wiki/File:Soyuz-T-10_Landing_Pod.jpg",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "space-expo-noordwijk",
+   "ref": "sokol-kv-2",
+   "item": "Sokol suit worn by Andre Kuipers on Soyuz TMA-03M",
+   "verdict": "confirmed",
+   "evidence": "https://www.museum.nl/en/space-expo/showpiece/ruimtepak",
+   "notes": "Space Expo showpiece page: the Sokol suit Kuipers wore on Soyuz TMA-03M is in the permanent exhibition. Soyuz TMA-03M capsule also shown (space-expo.nl/en/collection/andre-kuipers-soyuz)."
+  },
+  {
+   "museum": "space-expo-noordwijk",
+   "ref": "viking",
+   "item": "Ariane 1 engine block with four Viking 2 engines ('original engine part of Ariane I')",
+   "verdict": "uncertain",
+   "evidence": "https://nl.wikipedia.org/wiki/Space_Expo",
+   "notes": "Not re-verified at museum page."
+  },
+  {
+   "museum": "guiana-space-museum-kourou",
+   "ref": "vulcain-2",
+   "item": "'Old Vulcain engine' on display at the CSG museum",
+   "verdict": "uncertain",
+   "evidence": "https://www.buran-energia.com/blog/space-museum-of-kourou",
+   "notes": "Visitor report lists a Vulcain engine/tailpipe; Vulcain 1 vs 2 and flown vs test not stated; no museum page."
+  },
+  {
+   "museum": "cite-de-l-espace-toulouse",
+   "ref": "sokol-kv-2",
+   "item": "Sokol suit of Claudie Andre-Deshays (Haigneré)",
+   "verdict": "uncertain",
+   "evidence": "https://commons.wikimedia.org/wiki/Category:Claudie_André-Deshays'_SOKOL_space_suit_at_Cité_de_l'Espace",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "cite-de-l-espace-toulouse",
+   "ref": "mir",
+   "item": "Mir engineering model with its original equipment",
+   "verdict": "uncertain",
+   "evidence": "https://fr.wikipedia.org/wiki/Cité_de_l'espace",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "militaerhistorisches-museum-dresden",
+   "ref": "soyuz-t",
+   "item": "Soyuz 29 descent module (used by Sigmund Jaehn to return from Salyut 6, 1978)",
+   "verdict": "uncertain",
+   "evidence": "https://de.wikipedia.org/wiki/Sojus_29",
+   "notes": "de.wikipedia: capsule shown in the Libeskind wedge of MHM Dresden since 2011; museum page not read."
+  },
+  {
+   "museum": "science-museum-london",
+   "ref": "j-2",
+   "item": "J-2 rocket engine (Rockwell, 1966, object 1977-402)",
+   "verdict": "confirmed",
+   "evidence": "https://collection.sciencemuseumgroup.org.uk/objects/co40347/j2-rocket-engine-saturn-v-rocket-second",
+   "notes": "Collection record recordDisplayLocation = \"Science Museum : Space Gallery\"."
+  },
+  {
+   "museum": "science-museum-london",
+   "ref": "/science/history/goddard-liquid-rocket-1926",
+   "item": "Goddard rocket engine (1929), lent by NASM",
+   "verdict": "uncertain",
+   "evidence": "https://collection.sciencemuseumgroup.org.uk/objects/co40009/goddard-rocket-engine",
+   "notes": "Record has no display location; it is a 1929 engine, not the 1926 rocket."
+  },
+  {
+   "museum": "national-museum-of-scotland-edinburgh",
+   "ref": "gemini",
+   "item": "Gemini Paraglider TTV-2 boilerplate capsule",
+   "verdict": "uncertain",
+   "evidence": "https://commons.wikimedia.org/wiki/Category:Gemini_TTV-2_Paraglider_capsule",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "technik-museum-speyer",
+   "ref": "sokol-kv-2",
+   "item": "Sokol-KV-2 suit (unidentified unit)",
+   "verdict": "uncertain",
+   "evidence": "https://commons.wikimedia.org/wiki/File:2012-10-23_Sokol-KV-2_space_suit_anagoria.JPG",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "canada-aviation-and-space-museum",
+   "ref": "endeavour",
+   "item": "Canadarm 201 (Space Shuttle Endeavour's Canadian-built robotic arm)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Canada_Aviation_and_Space_Museum",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "california-science-center",
+   "ref": "mercury-capsule",
+   "item": "Capsule 5 (MR-2, chimp Ham)",
+   "verdict": "uncertain",
+   "evidence": "https://airandspace.si.edu/collection-objects/capsule-mercury-mr-2/nasm_A19680267000",
+   "notes": "NASM page: MR-2 capsule not on display at NASM, \"on loan or in storage\" (consistent with a loan, not proof of CSC display)."
+  },
+  {
+   "museum": "houston-museum-of-natural-science",
+   "ref": "mercury-capsule",
+   "item": "Capsule 6 (MA-2)",
+   "verdict": "uncertain",
+   "evidence": "https://american-spacecraft.org/mercury",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "new-york-hall-of-science",
+   "ref": "mercury-capsule",
+   "item": "Capsule 1 (beach abort test)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/New_York_Hall_of_Science",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "space-center-houston",
+   "ref": "a7l",
+   "item": "Pete Conrad's Apollo 12 moonwalk suit",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "museum-of-flight-seattle",
+   "ref": "/science/history/sputnik-1957",
+   "item": "Sputnik 1 engineering model",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Sputnik_1",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "national-museum-usaf-dayton",
+   "ref": "atlas-lv-3b",
+   "item": "Restored Convair Atlas D (LV-3B / SM-65D) missile painted as Mercury-Atlas 9, with mock-up Mercury capsule",
+   "verdict": "dropped",
+   "evidence": "https://www.collectspace.com/news/news-043024a-mercury-altas-9-rocket-cooper-air-force-museum.html",
+   "notes": "collectSPACE (Apr 2024): the display is a restored Atlas D missile painted as the MA-9 rocket, described as a replica of Cooper's ride; not a Mercury LV-3B."
+  },
+  {
+   "museum": "nasm-washington",
+   "ref": "f-1",
+   "item": "Rocketdyne F-1 full-size test engine (1963)",
+   "verdict": "uncertain",
+   "evidence": "https://howthingsfly.si.edu/node/389",
+   "notes": "Page says the F-1 is in the old Apollo to the Moon gallery (closed); current gallery not confirmed."
+  },
+  {
+   "museum": "museum-of-flight-seattle",
+   "ref": "f-1",
+   "item": "Recovered Apollo 12 engine #3 thrust chamber and injector, Apollo 16 gas generator, Apollo 11 recovered components",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Rocketdyne_F-1",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "us-space-and-rocket-center",
+   "ref": "f-1",
+   "item": "F-1 engine",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "michigan-space-and-science-center",
+   "ref": "f-1",
+   "item": "F-1 engine",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "tulsa-air-and-space-museum",
+   "ref": "h-1",
+   "item": "Saturn IB H-1 engine",
+   "verdict": "uncertain",
+   "evidence": "https://newson6.com/story/666a2f540badad5e606b88d1/tulsa-air-and-space-museum-to-display-new-rocket-engines",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "cosmosphere-hutchinson",
+   "ref": "h-1",
+   "item": "H-1 engine, Legacy Gallery",
+   "verdict": "confirmed",
+   "evidence": "https://cosmo.org/gallery-guide/",
+   "notes": "Cosmosphere gallery guide: \"H-1 Engine GENUINE\". Flown/test status not stated."
+  },
+  {
+   "museum": "us-space-and-rocket-center",
+   "ref": "h-1",
+   "item": "H-1 engine",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "tulsa-air-and-space-museum",
+   "ref": "j-2",
+   "item": "Saturn IB J-2 engine",
+   "verdict": "uncertain",
+   "evidence": "https://newson6.com/story/666a2f540badad5e606b88d1/tulsa-air-and-space-museum-to-display-new-rocket-engines",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "us-space-and-rocket-center",
+   "ref": "j-2",
+   "item": "J-2 engine",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "michigan-space-and-science-center",
+   "ref": "j-2",
+   "item": "J-2 engine",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "udvar-hazy",
+   "ref": "rs-25",
+   "item": "Space Shuttle Main Engine",
+   "verdict": "uncertain",
+   "evidence": "https://howthingsfly.si.edu/node/390",
+   "notes": "Page shows an SSME but does not state it is on display at Udvar-Hazy."
+  },
+  {
+   "museum": "kennedy-space-center-visitor-complex",
+   "ref": "rs-25",
+   "item": "Space Shuttle Main Engine",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "us-space-and-rocket-center",
+   "ref": "rs-25",
+   "item": "Space Shuttle Main Engine",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "national-museum-usaf-dayton",
+   "ref": "lr87",
+   "item": "Aerojet LR87 engine",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "cosmosphere-hutchinson",
+   "ref": "rocketdyne-a7",
+   "item": "Redstone engine (Rocket Gallery)",
+   "verdict": "uncertain",
+   "evidence": "https://cosmo.org/gallery-guide/",
+   "notes": "Gallery guide: Redstone engine GENUINE; A-7 variant and flown status not stated."
+  },
+  {
+   "museum": "san-diego-air-and-space-museum",
+   "ref": "rl10",
+   "item": "RL10 engine (donor Hal Hahn)",
+   "verdict": "confirmed",
+   "evidence": "https://sandiegoairandspace.org/collection/item/aerojet-rocketdyne-rl10-engine",
+   "notes": "SDASM page: the RL10 donated by Hal Hahn \"is on display in our Space: Our Greatest Adventure special exhibit\" (special exhibit, may be temporary). Flown/test status not stated."
+  },
+  {
+   "museum": "us-space-and-rocket-center",
+   "ref": "rl10",
+   "item": "RL-10",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "museum-of-science-and-industry-chicago",
+   "ref": "rl10",
+   "item": "RL-10",
+   "verdict": "uncertain",
+   "evidence": "https://historicspacecraft.com/rocket_engines.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "mayborn-museum-waco",
+   "ref": "merlin-1d",
+   "item": "Merlin engine from McGregor, on display since 2020",
+   "verdict": "uncertain",
+   "evidence": "https://www.collectspace.com/news/news-092523a-spacex-artifacts-smithsonian-air-space-museum.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "cosmosphere-hutchinson",
+   "ref": "rd-107-108",
+   "item": "RD-107 engine, Missile Row",
+   "verdict": "confirmed",
+   "evidence": "https://cosmo.org/gallery-guide/",
+   "notes": "Cosmosphere gallery guide (Missile Row): \"RD-107 Engine GENUINE\". Flown/test status not stated."
+  },
+  {
+   "museum": "kennedy-space-center-visitor-complex",
+   "ref": "cargo-dragon-v1",
+   "item": "Dragon C102 (COTS Demo 2, first to berth at ISS), Gateway",
+   "verdict": "uncertain",
+   "evidence": "https://wereportspace.com/2022/06/11/kennedy-space-center-visitor-complex-previews-new-gateway-exhibit",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "museum-of-science-and-industry-chicago",
+   "ref": "cargo-dragon-v1",
+   "item": "Dragon C113 (CRS-12, CRS-17)",
+   "verdict": "uncertain",
+   "evidence": "https://www.collectspace.com/news/news-092523a-spacex-artifacts-smithsonian-air-space-museum.html",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "nasm-washington",
+   "ref": "surveyor-3",
+   "item": "Surveyor 3 TV camera returned by Apollo 12",
+   "verdict": "uncertain",
+   "evidence": "https://www.collectspace.com/news/news-112219a-apollo-12-surveyor-parts-50-years.html",
+   "notes": "collectSPACE 2019: camera in storage during gallery renovation; current display not checked."
+  },
+  {
+   "museum": "cosmosphere-hutchinson",
+   "ref": "surveyor-3",
+   "item": "Surveyor 3 soil sampler scoop (returned by Apollo 12)",
+   "verdict": "uncertain",
+   "evidence": "https://www.collectspace.com/news/news-112219a-apollo-12-surveyor-parts-50-years.html",
+   "notes": "collectSPACE 2019 says the scoop is exhibited; current gallery guide lists only a Surveyor engineering model, not the scoop."
+  },
+  {
+   "museum": "nasm-washington",
+   "ref": "spirit",
+   "item": "MER Surface System Test-Bed rover (twin of Spirit/Opportunity)",
+   "verdict": "uncertain",
+   "evidence": "https://airandspace.si.edu/multimedia-gallery/mars-exploration-rover-mer",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "nasm-washington",
+   "ref": "opportunity",
+   "item": "MER Surface System Test-Bed rover (twin of Spirit/Opportunity)",
+   "verdict": "uncertain",
+   "evidence": "https://airandspace.si.edu/multimedia-gallery/mars-exploration-rover-mer",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "udvar-hazy",
+   "ref": "vega-1",
+   "item": "Vega Solar System Probe Bus and Landing Apparatus engineering model",
+   "verdict": "uncertain",
+   "evidence": "https://airandspace.si.edu/events/chasing-halleys-comet-vega-spacecraft",
+   "notes": "Event page text not confirmed to say on display."
+  },
+  {
+   "museum": "udvar-hazy",
+   "ref": "vega-2",
+   "item": "Vega Solar System Probe Bus and Landing Apparatus engineering model",
+   "verdict": "uncertain",
+   "evidence": "https://airandspace.si.edu/events/chasing-halleys-comet-vega-spacecraft",
+   "notes": "Same unit as vega-1."
+  },
+  {
+   "museum": "udvar-hazy",
+   "ref": "clementine",
+   "item": "Clementine engineering model (donated by NRL, 2003)",
+   "verdict": "uncertain",
+   "evidence": "https://www.nrl.navy.mil/Media/News/Article/2632245/nrl-donates-clementine-spacecraft-to-national-air-and-space-museum/",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "san-diego-air-and-space-museum",
+   "ref": "gps-gnss",
+   "item": "GPS-0012, Block II Qualification Test Vehicle (never flew)",
+   "verdict": "uncertain",
+   "evidence": "https://www.ion.org/museum/GPS-12.cfm",
+   "notes": "ION museum page (undated) says GPS-0012 is displayed at SDASM, the only publicly displayed GPS SV; SDASM page not read."
+  },
+  {
+   "museum": "nasm-washington",
+   "ref": "gps-gnss",
+   "item": "NTS-2 engineering model (restored; GPS precursor satellite)",
+   "verdict": "uncertain",
+   "evidence": "https://www.nrl.navy.mil/Media/News/Article/2563219/first-gps-navstar-satellite-goes-on-display/",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "us-space-and-rocket-center",
+   "ref": "apollo-csm-block-i",
+   "item": "CM-010 (Block I thermal test article)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "frontiers-of-flight-dallas",
+   "ref": "apollo-csm-block-ii",
+   "item": "Command module CSM-101 (Apollo 7)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Frontiers_of_Flight_Museum",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "san-diego-air-and-space-museum",
+   "ref": "apollo-csm-block-ii",
+   "item": "Command module Gumdrop (Apollo 9, CSM-104)",
+   "verdict": "confirmed",
+   "evidence": "https://sandiegoairandspace.org/collection/item/apollo-9-command-module",
+   "notes": "SDASM page: Apollo 9 command module on display (moved there May 2004, on loan from NASM)."
+  },
+  {
+   "museum": "national-museum-usaf-dayton",
+   "ref": "apollo-csm-block-ii",
+   "item": "Command module Endeavour (Apollo 15, CSM-112)",
+   "verdict": "uncertain",
+   "evidence": "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/197685/apollo-15-command-module",
+   "notes": "Museum fact sheet blocks fetch (403); a search summary says Endeavour is in the Space Gallery on NASM loan."
+  },
+  {
+   "museum": "national-naval-aviation-museum",
+   "ref": "apollo-csm-block-ii",
+   "item": "Command module Skylab 2 (CSM-116)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Skylab_2",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "great-lakes-science-center",
+   "ref": "apollo-csm-block-ii",
+   "item": "Command module Skylab 3 (CSM-117)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Great_Lakes_Science_Center",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "oklahoma-history-center",
+   "ref": "apollo-csm-block-ii",
+   "item": "Command module Skylab 4 (CSM-118)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Oklahoma_History_Center",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "kennedy-space-center-visitor-complex",
+   "ref": "apollo-csm-block-ii",
+   "item": "CSM-119 Skylab Rescue command module, never flown",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Visitor_Complex",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "intrepid-museum",
+   "ref": "soyuz-tma",
+   "item": "Soyuz TMA-6 descent module",
+   "verdict": "uncertain",
+   "evidence": "https://airmuseumnetwork.com/soyuz-capsule-joins-enterprise-in-intrepid-s-space-shuttle-pavilion",
+   "notes": "Only 2013-era coverage read (Soyuz capsule on loan from Greg Olsen in the Space Shuttle Pavilion); no current museum page read."
+  },
+  {
+   "museum": "grissom-memorial-spring-mill",
+   "ref": "gemini",
+   "item": "Gemini 3 'Molly Brown'",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Gemini_3",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "nasm-washington",
+   "ref": "gemini",
+   "item": "Gemini VII spacecraft",
+   "verdict": "confirmed",
+   "evidence": "https://airandspace.si.edu/collection-objects/capsule-gemini-vii/nasm_A19680273000",
+   "notes": "NASM object page: \"Display Status: on display in Destination Moon at the National Air and Space Museum in Washington, DC\"."
+  },
+  {
+   "museum": "cape-canaveral-space-force-museum",
+   "ref": "gemini",
+   "item": "Gemini SC-2 (Gemini 2, reflown suborbital)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Project_Gemini",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "nasm-washington",
+   "ref": "mercury-capsule",
+   "item": "Freedom 7 (MR-3)",
+   "verdict": "confirmed",
+   "evidence": "https://airandspace.si.edu/collection-objects/capsule-mercury-mr-3/nasm_A19620021000",
+   "notes": "NASM object page: \"on display in Destination Moon at the National Air and Space Museum in Washington, DC\"."
+  },
+  {
+   "museum": "space-center-houston",
+   "ref": "falcon-9",
+   "item": "Falcon 9 Full Thrust booster B1035",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "stafford-air-and-space-museum",
+   "ref": "f-1",
+   "item": "F-1 engine",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Stafford_Air_%26_Space_Museum",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "stafford-air-and-space-museum",
+   "ref": "j-2",
+   "item": "J-2 engine",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Stafford_Air_%26_Space_Museum",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "stafford-air-and-space-museum",
+   "ref": "a7l",
+   "item": "Tom Stafford's Apollo 10 suit",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Stafford_Air_%26_Space_Museum",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  },
+  {
+   "museum": "evergreen-aviation-space-museum",
+   "ref": "titan-ii-glv",
+   "item": "Martin Titan II SLV (Space Launch Vehicle)",
+   "verdict": "uncertain",
+   "evidence": "https://en.wikipedia.org/wiki/Evergreen_Aviation_%26_Space_Museum",
+   "notes": "Not re-verified in pass 4 (no museum page found within budget); evidence unchanged."
+  }
+ ]
+}

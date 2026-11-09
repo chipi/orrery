@@ -6343,6 +6343,16 @@ sample      ${debugInfo.projectedPxSample}`}
           {/if}
         </div>
 
+        {#if panelIllustration}
+          <SiteIllustrationFigure
+            illustration={panelIllustration}
+            onOpen={(src) => {
+              panelLightbox = src;
+              if (selected) trackGalleryImageOpen('site', selected.id);
+            }}
+          />
+        {/if}
+
         {#if selected.left}
           <section class="left-block" style:--accent={colorFor(selected)}>
             <h3>{m.moon_panel_left_title()}</h3>
@@ -6440,16 +6450,7 @@ sample      ${debugInfo.projectedPxSample}`}
           </PanelGalleryGrid>
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
-      {:else if panelTab === 'story' && (panelStory || panelIllustration || panelAnatomy.length > 0 || panelSequence)}
-        {#if panelIllustration}
-          <SiteIllustrationFigure
-            illustration={panelIllustration}
-            onOpen={(src) => {
-              panelLightbox = src;
-              if (selected) trackGalleryImageOpen('site', selected.id);
-            }}
-          />
-        {/if}
+      {:else if panelTab === 'story' && (panelStory || panelAnatomy.length > 0 || panelSequence)}
         {#if panelAnatomy.length > 0 || panelSequence}
           <SiteLandingPanel
             anatomy={panelAnatomy}

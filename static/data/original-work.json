@@ -1720,6 +1720,764 @@
       "cover": false
     }
   ],
+  "mission_trajectories": [
+    {
+      "title": "Akatsuki",
+      "file": "/images/missions/thumbnails/akatsuki.webp",
+      "route": "/missions?id=akatsuki",
+      "cover": false
+    },
+    {
+      "title": "Apollo 1 (AS-204)",
+      "file": "/images/missions/thumbnails/apollo-1.webp",
+      "route": "/missions?id=apollo-1",
+      "cover": false
+    },
+    {
+      "title": "Apollo-Soyuz Test Project (ASTP)",
+      "file": "/images/missions/thumbnails/apollo-soyuz.webp",
+      "route": "/missions?id=apollo-soyuz",
+      "cover": false
+    },
+    {
+      "title": "Apollo 10",
+      "file": "/images/missions/thumbnails/apollo10.webp",
+      "route": "/missions?id=apollo10",
+      "cover": false
+    },
+    {
+      "title": "Apollo 11",
+      "file": "/images/missions/thumbnails/apollo11.webp",
+      "route": "/missions?id=apollo11",
+      "cover": false
+    },
+    {
+      "title": "Apollo 12",
+      "file": "/images/missions/thumbnails/apollo12.webp",
+      "route": "/missions?id=apollo12",
+      "cover": false
+    },
+    {
+      "title": "Apollo 13",
+      "file": "/images/missions/thumbnails/apollo13.webp",
+      "route": "/missions?id=apollo13",
+      "cover": false
+    },
+    {
+      "title": "Apollo 14",
+      "file": "/images/missions/thumbnails/apollo14.webp",
+      "route": "/missions?id=apollo14",
+      "cover": false
+    },
+    {
+      "title": "Apollo 15",
+      "file": "/images/missions/thumbnails/apollo15.webp",
+      "route": "/missions?id=apollo15",
+      "cover": false
+    },
+    {
+      "title": "Apollo 16",
+      "file": "/images/missions/thumbnails/apollo16.webp",
+      "route": "/missions?id=apollo16",
+      "cover": false
+    },
+    {
+      "title": "Apollo 17",
+      "file": "/images/missions/thumbnails/apollo17.webp",
+      "route": "/missions?id=apollo17",
+      "cover": false
+    },
+    {
+      "title": "Apollo 7",
+      "file": "/images/missions/thumbnails/apollo7.webp",
+      "route": "/missions?id=apollo7",
+      "cover": false
+    },
+    {
+      "title": "Apollo 8",
+      "file": "/images/missions/thumbnails/apollo8.webp",
+      "route": "/missions?id=apollo8",
+      "cover": false
+    },
+    {
+      "title": "Apollo 9",
+      "file": "/images/missions/thumbnails/apollo9.webp",
+      "route": "/missions?id=apollo9",
+      "cover": false
+    },
+    {
+      "title": "Artemis II",
+      "file": "/images/missions/thumbnails/artemis2.webp",
+      "route": "/missions?id=artemis2",
+      "cover": false
+    },
+    {
+      "title": "Artemis III",
+      "file": "/images/missions/thumbnails/artemis3.webp",
+      "route": "/missions?id=artemis3",
+      "cover": false
+    },
+    {
+      "title": "Artemis IV",
+      "file": "/images/missions/thumbnails/artemis4.webp",
+      "route": "/missions?id=artemis4",
+      "cover": false
+    },
+    {
+      "title": "Artemis V",
+      "file": "/images/missions/thumbnails/artemis5.webp",
+      "route": "/missions?id=artemis5",
+      "cover": false
+    },
+    {
+      "title": "Aurora 7 / MA-7",
+      "file": "/images/missions/thumbnails/aurora-7.webp",
+      "route": "/missions?id=aurora-7",
+      "cover": false
+    },
+    {
+      "title": "BepiColombo",
+      "file": "/images/missions/thumbnails/bepicolombo.webp",
+      "route": "/missions?id=bepicolombo",
+      "cover": false
+    },
+    {
+      "title": "Beresheet",
+      "file": "/images/missions/thumbnails/beresheet.webp",
+      "route": "/missions?id=beresheet",
+      "cover": false
+    },
+    {
+      "title": "Blue Moon MK1",
+      "file": "/images/missions/thumbnails/blue-moon-mk1.webp",
+      "route": "/missions?id=blue-moon-mk1",
+      "cover": false
+    },
+    {
+      "title": "Cassini-Huygens",
+      "file": "/images/missions/thumbnails/cassini.webp",
+      "route": "/missions?id=cassini",
+      "cover": false
+    },
+    {
+      "title": "Chandrayaan-1",
+      "file": "/images/missions/thumbnails/chandrayaan1.webp",
+      "route": "/missions?id=chandrayaan1",
+      "cover": false
+    },
+    {
+      "title": "Chandrayaan-3",
+      "file": "/images/missions/thumbnails/chandrayaan3.webp",
+      "route": "/missions?id=chandrayaan3",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 1",
+      "file": "/images/missions/thumbnails/change1.webp",
+      "route": "/missions?id=change1",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 3",
+      "file": "/images/missions/thumbnails/change3.webp",
+      "route": "/missions?id=change3",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 4 / Yutu-2",
+      "file": "/images/missions/thumbnails/change4.webp",
+      "route": "/missions?id=change4",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 5",
+      "file": "/images/missions/thumbnails/change5.webp",
+      "route": "/missions?id=change5",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 6",
+      "file": "/images/missions/thumbnails/change6.webp",
+      "route": "/missions?id=change6",
+      "cover": false
+    },
+    {
+      "title": "Clementine",
+      "file": "/images/missions/thumbnails/clementine.webp",
+      "route": "/missions?id=clementine",
+      "cover": false
+    },
+    {
+      "title": "Curiosity",
+      "file": "/images/missions/thumbnails/curiosity.webp",
+      "route": "/missions?id=curiosity",
+      "cover": false
+    },
+    {
+      "title": "DART",
+      "file": "/images/missions/thumbnails/dart.webp",
+      "route": "/missions?id=dart",
+      "cover": false
+    },
+    {
+      "title": "Dawn",
+      "file": "/images/missions/thumbnails/dawn.webp",
+      "route": "/missions?id=dawn",
+      "cover": false
+    },
+    {
+      "title": "Europa Clipper",
+      "file": "/images/missions/thumbnails/europa-clipper.webp",
+      "route": "/missions?id=europa-clipper",
+      "cover": false
+    },
+    {
+      "title": "Faith 7 / MA-9",
+      "file": "/images/missions/thumbnails/faith-7.webp",
+      "route": "/missions?id=faith-7",
+      "cover": false
+    },
+    {
+      "title": "Freedom 7 / MR-3",
+      "file": "/images/missions/thumbnails/freedom-7.webp",
+      "route": "/missions?id=freedom-7",
+      "cover": false
+    },
+    {
+      "title": "Friendship 7 / MA-6",
+      "file": "/images/missions/thumbnails/friendship-7.webp",
+      "route": "/missions?id=friendship-7",
+      "cover": false
+    },
+    {
+      "title": "Galileo",
+      "file": "/images/missions/thumbnails/galileo.webp",
+      "route": "/missions?id=galileo",
+      "cover": false
+    },
+    {
+      "title": "Gemini 12 / GT-12",
+      "file": "/images/missions/thumbnails/gemini12.webp",
+      "route": "/missions?id=gemini12",
+      "cover": false
+    },
+    {
+      "title": "Gemini 3 / GT-3",
+      "file": "/images/missions/thumbnails/gemini3.webp",
+      "route": "/missions?id=gemini3",
+      "cover": false
+    },
+    {
+      "title": "Gemini 4 / GT-4",
+      "file": "/images/missions/thumbnails/gemini4.webp",
+      "route": "/missions?id=gemini4",
+      "cover": false
+    },
+    {
+      "title": "Gemini 6A / GT-6A",
+      "file": "/images/missions/thumbnails/gemini6a.webp",
+      "route": "/missions?id=gemini6a",
+      "cover": false
+    },
+    {
+      "title": "Gemini 7 / GT-7",
+      "file": "/images/missions/thumbnails/gemini7.webp",
+      "route": "/missions?id=gemini7",
+      "cover": false
+    },
+    {
+      "title": "Gemini 8 / GT-8",
+      "file": "/images/missions/thumbnails/gemini8.webp",
+      "route": "/missions?id=gemini8",
+      "cover": false
+    },
+    {
+      "title": "Giotto",
+      "file": "/images/missions/thumbnails/giotto.webp",
+      "route": "/missions?id=giotto",
+      "cover": false
+    },
+    {
+      "title": "Hayabusa",
+      "file": "/images/missions/thumbnails/hayabusa1.webp",
+      "route": "/missions?id=hayabusa1",
+      "cover": false
+    },
+    {
+      "title": "Hayabusa2",
+      "file": "/images/missions/thumbnails/hayabusa2.webp",
+      "route": "/missions?id=hayabusa2",
+      "cover": false
+    },
+    {
+      "title": "Hera",
+      "file": "/images/missions/thumbnails/hera.webp",
+      "route": "/missions?id=hera",
+      "cover": false
+    },
+    {
+      "title": "Hope Probe",
+      "file": "/images/missions/thumbnails/hope-probe.webp",
+      "route": "/missions?id=hope-probe",
+      "cover": false
+    },
+    {
+      "title": "Huygens",
+      "file": "/images/missions/thumbnails/huygens.webp",
+      "route": "/missions?id=huygens",
+      "cover": false
+    },
+    {
+      "title": "InSight",
+      "file": "/images/missions/thumbnails/insight.webp",
+      "route": "/missions?id=insight",
+      "cover": false
+    },
+    {
+      "title": "Inspiration4",
+      "file": "/images/missions/thumbnails/inspiration4.webp",
+      "route": "/missions?id=inspiration4",
+      "cover": false
+    },
+    {
+      "title": "JUICE",
+      "file": "/images/missions/thumbnails/juice.webp",
+      "route": "/missions?id=juice",
+      "cover": false
+    },
+    {
+      "title": "Juno",
+      "file": "/images/missions/thumbnails/juno.webp",
+      "route": "/missions?id=juno",
+      "cover": false
+    },
+    {
+      "title": "Liberty Bell 7 / MR-4",
+      "file": "/images/missions/thumbnails/liberty-bell-7.webp",
+      "route": "/missions?id=liberty-bell-7",
+      "cover": false
+    },
+    {
+      "title": "Lunar Reconnaissance Orbiter",
+      "file": "/images/missions/thumbnails/lro.webp",
+      "route": "/missions?id=lro",
+      "cover": false
+    },
+    {
+      "title": "Lucy",
+      "file": "/images/missions/thumbnails/lucy.webp",
+      "route": "/missions?id=lucy",
+      "cover": false
+    },
+    {
+      "title": "Luna 10",
+      "file": "/images/missions/thumbnails/luna10.webp",
+      "route": "/missions?id=luna10",
+      "cover": false
+    },
+    {
+      "title": "Luna 16",
+      "file": "/images/missions/thumbnails/luna16.webp",
+      "route": "/missions?id=luna16",
+      "cover": false
+    },
+    {
+      "title": "Luna 17 / Lunokhod 1",
+      "file": "/images/missions/thumbnails/luna17.webp",
+      "route": "/missions?id=luna17",
+      "cover": false
+    },
+    {
+      "title": "Luna 21 / Lunokhod 2",
+      "file": "/images/missions/thumbnails/luna21.webp",
+      "route": "/missions?id=luna21",
+      "cover": false
+    },
+    {
+      "title": "Luna 24",
+      "file": "/images/missions/thumbnails/luna24.webp",
+      "route": "/missions?id=luna24",
+      "cover": false
+    },
+    {
+      "title": "Luna 9",
+      "file": "/images/missions/thumbnails/luna9.webp",
+      "route": "/missions?id=luna9",
+      "cover": false
+    },
+    {
+      "title": "Lunar Prospector",
+      "file": "/images/missions/thumbnails/lunar-prospector.webp",
+      "route": "/missions?id=lunar-prospector",
+      "cover": false
+    },
+    {
+      "title": "Magellan",
+      "file": "/images/missions/thumbnails/magellan.webp",
+      "route": "/missions?id=magellan",
+      "cover": false
+    },
+    {
+      "title": "Mangalyaan",
+      "file": "/images/missions/thumbnails/mangalyaan.webp",
+      "route": "/missions?id=mangalyaan",
+      "cover": false
+    },
+    {
+      "title": "Mariner 10",
+      "file": "/images/missions/thumbnails/mariner10.webp",
+      "route": "/missions?id=mariner10",
+      "cover": false
+    },
+    {
+      "title": "Mariner 4",
+      "file": "/images/missions/thumbnails/mariner4.webp",
+      "route": "/missions?id=mariner4",
+      "cover": false
+    },
+    {
+      "title": "Mariner 9",
+      "file": "/images/missions/thumbnails/mariner9.webp",
+      "route": "/missions?id=mariner9",
+      "cover": false
+    },
+    {
+      "title": "Mars Express",
+      "file": "/images/missions/thumbnails/mars-express.webp",
+      "route": "/missions?id=mars-express",
+      "cover": false
+    },
+    {
+      "title": "Mars Pathfinder",
+      "file": "/images/missions/thumbnails/mars-pathfinder.webp",
+      "route": "/missions?id=mars-pathfinder",
+      "cover": false
+    },
+    {
+      "title": "Mars 3",
+      "file": "/images/missions/thumbnails/mars3.webp",
+      "route": "/missions?id=mars3",
+      "cover": false
+    },
+    {
+      "title": "MAVEN",
+      "file": "/images/missions/thumbnails/maven.webp",
+      "route": "/missions?id=maven",
+      "cover": false
+    },
+    {
+      "title": "MESSENGER",
+      "file": "/images/missions/thumbnails/messenger.webp",
+      "route": "/missions?id=messenger",
+      "cover": false
+    },
+    {
+      "title": "MMX",
+      "file": "/images/missions/thumbnails/mmx.webp",
+      "route": "/missions?id=mmx",
+      "cover": false
+    },
+    {
+      "title": "NEAR Shoemaker",
+      "file": "/images/missions/thumbnails/near-shoemaker.webp",
+      "route": "/missions?id=near-shoemaker",
+      "cover": false
+    },
+    {
+      "title": "New Horizons",
+      "file": "/images/missions/thumbnails/new-horizons.webp",
+      "route": "/missions?id=new-horizons",
+      "cover": false
+    },
+    {
+      "title": "Opportunity",
+      "file": "/images/missions/thumbnails/opportunity.webp",
+      "route": "/missions?id=opportunity",
+      "cover": false
+    },
+    {
+      "title": "OSIRIS-REx",
+      "file": "/images/missions/thumbnails/osiris-rex.webp",
+      "route": "/missions?id=osiris-rex",
+      "cover": false
+    },
+    {
+      "title": "X-37B OTV-1 (USA-212)",
+      "file": "/images/missions/thumbnails/otv-1.webp",
+      "route": "/missions?id=otv-1",
+      "cover": false
+    },
+    {
+      "title": "X-37B OTV-2 (USA-226)",
+      "file": "/images/missions/thumbnails/otv-2.webp",
+      "route": "/missions?id=otv-2",
+      "cover": false
+    },
+    {
+      "title": "X-37B OTV-3 (USA-240)",
+      "file": "/images/missions/thumbnails/otv-3.webp",
+      "route": "/missions?id=otv-3",
+      "cover": false
+    },
+    {
+      "title": "X-37B OTV-4 (USA-261, AFSPC-5)",
+      "file": "/images/missions/thumbnails/otv-4.webp",
+      "route": "/missions?id=otv-4",
+      "cover": false
+    },
+    {
+      "title": "X-37B OTV-5 (USA-277)",
+      "file": "/images/missions/thumbnails/otv-5.webp",
+      "route": "/missions?id=otv-5",
+      "cover": false
+    },
+    {
+      "title": "X-37B OTV-6 (USA-299, USSF-7)",
+      "file": "/images/missions/thumbnails/otv-6.webp",
+      "route": "/missions?id=otv-6",
+      "cover": false
+    },
+    {
+      "title": "X-37B OTV-7 (USA-358, USSF-52)",
+      "file": "/images/missions/thumbnails/otv-7.webp",
+      "route": "/missions?id=otv-7",
+      "cover": false
+    },
+    {
+      "title": "Parker Solar Probe",
+      "file": "/images/missions/thumbnails/parker-solar-probe.webp",
+      "route": "/missions?id=parker-solar-probe",
+      "cover": false
+    },
+    {
+      "title": "Perseverance",
+      "file": "/images/missions/thumbnails/perseverance.webp",
+      "route": "/missions?id=perseverance",
+      "cover": false
+    },
+    {
+      "title": "Phoenix",
+      "file": "/images/missions/thumbnails/phoenix.webp",
+      "route": "/missions?id=phoenix",
+      "cover": false
+    },
+    {
+      "title": "Pioneer 10",
+      "file": "/images/missions/thumbnails/pioneer-10.webp",
+      "route": "/missions?id=pioneer-10",
+      "cover": false
+    },
+    {
+      "title": "Pioneer 11",
+      "file": "/images/missions/thumbnails/pioneer-11.webp",
+      "route": "/missions?id=pioneer-11",
+      "cover": false
+    },
+    {
+      "title": "Polaris Dawn",
+      "file": "/images/missions/thumbnails/polaris-dawn.webp",
+      "route": "/missions?id=polaris-dawn",
+      "cover": false
+    },
+    {
+      "title": "Psyche",
+      "file": "/images/missions/thumbnails/psyche-mission.webp",
+      "route": "/missions?id=psyche-mission",
+      "cover": false
+    },
+    {
+      "title": "Rosetta",
+      "file": "/images/missions/thumbnails/rosetta.webp",
+      "route": "/missions?id=rosetta",
+      "cover": false
+    },
+    {
+      "title": "Schiaparelli EDM",
+      "file": "/images/missions/thumbnails/schiaparelli.webp",
+      "route": "/missions?id=schiaparelli",
+      "cover": false
+    },
+    {
+      "title": "Shenzhou 1",
+      "file": "/images/missions/thumbnails/shenzhou-1.webp",
+      "route": "/missions?id=shenzhou-1",
+      "cover": false
+    },
+    {
+      "title": "Sigma 7 / MA-8",
+      "file": "/images/missions/thumbnails/sigma-7.webp",
+      "route": "/missions?id=sigma-7",
+      "cover": false
+    },
+    {
+      "title": "Skylab 2",
+      "file": "/images/missions/thumbnails/skylab-2.webp",
+      "route": "/missions?id=skylab-2",
+      "cover": false
+    },
+    {
+      "title": "Skylab 3",
+      "file": "/images/missions/thumbnails/skylab-3.webp",
+      "route": "/missions?id=skylab-3",
+      "cover": false
+    },
+    {
+      "title": "Skylab 4",
+      "file": "/images/missions/thumbnails/skylab-4.webp",
+      "route": "/missions?id=skylab-4",
+      "cover": false
+    },
+    {
+      "title": "SLIM",
+      "file": "/images/missions/thumbnails/slim.webp",
+      "route": "/missions?id=slim",
+      "cover": false
+    },
+    {
+      "title": "SMART-1",
+      "file": "/images/missions/thumbnails/smart-1.webp",
+      "route": "/missions?id=smart-1",
+      "cover": false
+    },
+    {
+      "title": "Solar Orbiter",
+      "file": "/images/missions/thumbnails/solar-orbiter.webp",
+      "route": "/missions?id=solar-orbiter",
+      "cover": false
+    },
+    {
+      "title": "Soyuz 1",
+      "file": "/images/missions/thumbnails/soyuz-1.webp",
+      "route": "/missions?id=soyuz-1",
+      "cover": false
+    },
+    {
+      "title": "Soyuz 11",
+      "file": "/images/missions/thumbnails/soyuz-11.webp",
+      "route": "/missions?id=soyuz-11",
+      "cover": false
+    },
+    {
+      "title": "Spirit",
+      "file": "/images/missions/thumbnails/spirit.webp",
+      "route": "/missions?id=spirit",
+      "cover": false
+    },
+    {
+      "title": "Sputnik 1",
+      "file": "/images/missions/thumbnails/sputnik1.webp",
+      "route": "/missions?id=sputnik1",
+      "cover": false
+    },
+    {
+      "title": "Starship Demo",
+      "file": "/images/missions/thumbnails/starship-demo.webp",
+      "route": "/missions?id=starship-demo",
+      "cover": false
+    },
+    {
+      "title": "Starship Mars Crew",
+      "file": "/images/missions/thumbnails/starship-mars-crew.webp",
+      "route": "/missions?id=starship-mars-crew",
+      "cover": false
+    },
+    {
+      "title": "Tianwen-1",
+      "file": "/images/missions/thumbnails/tianwen1.webp",
+      "route": "/missions?id=tianwen1",
+      "cover": false
+    },
+    {
+      "title": "Ulysses",
+      "file": "/images/missions/thumbnails/ulysses.webp",
+      "route": "/missions?id=ulysses",
+      "cover": false
+    },
+    {
+      "title": "Vega 1",
+      "file": "/images/missions/thumbnails/vega-1.webp",
+      "route": "/missions?id=vega-1",
+      "cover": false
+    },
+    {
+      "title": "Vega 2",
+      "file": "/images/missions/thumbnails/vega-2.webp",
+      "route": "/missions?id=vega-2",
+      "cover": false
+    },
+    {
+      "title": "Venera 13",
+      "file": "/images/missions/thumbnails/venera-13.webp",
+      "route": "/missions?id=venera-13",
+      "cover": false
+    },
+    {
+      "title": "Viking 1",
+      "file": "/images/missions/thumbnails/viking1.webp",
+      "route": "/missions?id=viking1",
+      "cover": false
+    },
+    {
+      "title": "Voskhod 1",
+      "file": "/images/missions/thumbnails/voskhod-1.webp",
+      "route": "/missions?id=voskhod-1",
+      "cover": false
+    },
+    {
+      "title": "Voskhod 2",
+      "file": "/images/missions/thumbnails/voskhod-2.webp",
+      "route": "/missions?id=voskhod-2",
+      "cover": false
+    },
+    {
+      "title": "Vostok 1",
+      "file": "/images/missions/thumbnails/vostok-1.webp",
+      "route": "/missions?id=vostok-1",
+      "cover": false
+    },
+    {
+      "title": "Vostok 2",
+      "file": "/images/missions/thumbnails/vostok-2.webp",
+      "route": "/missions?id=vostok-2",
+      "cover": false
+    },
+    {
+      "title": "Vostok 3",
+      "file": "/images/missions/thumbnails/vostok-3.webp",
+      "route": "/missions?id=vostok-3",
+      "cover": false
+    },
+    {
+      "title": "Vostok 4",
+      "file": "/images/missions/thumbnails/vostok-4.webp",
+      "route": "/missions?id=vostok-4",
+      "cover": false
+    },
+    {
+      "title": "Vostok 5",
+      "file": "/images/missions/thumbnails/vostok-5.webp",
+      "route": "/missions?id=vostok-5",
+      "cover": false
+    },
+    {
+      "title": "Vostok 6",
+      "file": "/images/missions/thumbnails/vostok-6.webp",
+      "route": "/missions?id=vostok-6",
+      "cover": false
+    },
+    {
+      "title": "Voyager 1",
+      "file": "/images/missions/thumbnails/voyager-1.webp",
+      "route": "/missions?id=voyager-1",
+      "cover": false
+    },
+    {
+      "title": "Voyager 2",
+      "file": "/images/missions/thumbnails/voyager-2.webp",
+      "route": "/missions?id=voyager-2",
+      "cover": false
+    }
+  ],
   "site_illustrations": [
     {
       "title": "Apollo 11",
@@ -4125,6 +4883,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
+    "mission_trajectories": 126,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

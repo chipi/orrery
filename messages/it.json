@@ -3707,5 +3707,7 @@
   "site_illustration_alt_zhurong": "Mappa illustrata a blocco del percorso di Zhurong su Utopia Planitia, 2021–2022: dalla piattaforma di atterraggio (sol 0) al segno del sol 60 e ai 100 giorni su Marte (sol 97), fino alla posizione finale del rover (sol 347).",
   "site_illustration_alt_change4": "Mappa illustrata a blocco del sito di allunaggio di Chang’e 4 nel cratere Von Kármán: il lander Chang’e 4 si trova a est, la posizione del rover Yutu-2 a maggio 2019 è poco più a ovest e il suo percorso serpeggia a lungo verso ovest e nord-ovest fino all’ultima posizione, segnata da un piccolo rover.",
   "surface_card_collapse_aria": "Comprimi i dettagli del sito",
-  "surface_card_expand_aria": "Espandi i dettagli del sito"
+  "surface_card_expand_aria": "Espandi i dettagli del sito",
+  "colophon_section_mission_trajectories": "Grafici delle traiettorie delle missioni",
+  "colophon_mission_trajectories_note": "Uno schema per missione, disegnato dal codice con lo stesso modello di traiettoria che vola il simulatore /fly; non è generato con IA. I tour del sistema esterno sono compressi radialmente oltre 1,6 UA e le orbite terrestri sono esagerate per renderle leggibili; la didascalia lo dice. Una missione senza dati orbitali riceve un segnaposto etichettato, mai una traiettoria inventata. Le etichette nelle immagini sono in inglese."
 }

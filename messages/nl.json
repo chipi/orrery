@@ -3707,5 +3707,7 @@
   "site_illustration_alt_zhurong": "Geïllustreerde blokkaart van de route van Zhurong over Utopia Planitia, 2021–2022: van het landingsplatform (sol 0) langs de markering bij sol 60 en 100 dagen op Mars (sol 97) naar de eindpositie van de rover (sol 347).",
   "site_illustration_alt_change4": "Geïllustreerde blokkaart van de landingsplaats van Chang’e 4 in de Von Kármán-krater: de lander Chang’e 4 staat in het oosten, de positie van de rover Yutu-2 in mei 2019 ligt een stukje naar het westen en zijn route slingert een lange afstand naar het westen en noordwesten tot zijn laatste positie, gemarkeerd door een kleine rover.",
   "surface_card_collapse_aria": "Locatiegegevens inklappen",
-  "surface_card_expand_aria": "Locatiegegevens uitklappen"
+  "surface_card_expand_aria": "Locatiegegevens uitklappen",
+  "colophon_section_mission_trajectories": "Trajectgrafieken van de missies",
+  "colophon_mission_trajectories_note": "Eén schema per missie, in code getekend met hetzelfde trajectmodel dat de /fly-simulator vliegt; niet door AI gegenereerd. Tochten door het buitenste zonnestelsel zijn voorbij 1,6 AE radiaal samengedrukt en banen om de aarde zijn overdreven groot getekend om leesbaar te blijven; het onderschrift vermeldt dat. Een missie zonder baangegevens krijgt een benoemde plaatshouder, nooit een verzonnen traject. De labels in de beelden zijn Engels."
 }

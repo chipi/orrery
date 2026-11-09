@@ -3707,5 +3707,7 @@
   "site_illustration_alt_zhurong": "Illustrierte Blockkarte der Route von Zhurong über die Utopia Planitia, 2021–2022: von der Landeplattform (Sol 0) über die Markierung bei Sol 60 und 100 Tage auf dem Mars (Sol 97) bis zur letzten Position des Rovers (Sol 347).",
   "site_illustration_alt_change4": "Illustrierte Blockkarte der Landestelle von Chang’e 4 im Von-Kármán-Krater: Die Landeeinheit Chang’e 4 steht im Osten, die Position des Rovers Yutu-2 vom Mai 2019 liegt ein Stück westlich davon, und seine Route windet sich weit nach Westen und Nordwesten bis zur letzten Position, die ein kleiner Rover markiert.",
   "surface_card_collapse_aria": "Standortdetails einklappen",
-  "surface_card_expand_aria": "Standortdetails ausklappen"
+  "surface_card_expand_aria": "Standortdetails ausklappen",
+  "colophon_section_mission_trajectories": "Flugbahn-Diagramme der Missionen",
+  "colophon_mission_trajectories_note": "Pro Mission ein Schema, per Code aus demselben Flugbahnmodell gezeichnet, das der /fly-Simulator fliegt – nicht KI-generiert. Touren durch das äußere Sonnensystem sind jenseits von 1,6 AE radial gestaucht, und Umlaufbahnen um die Erde sind übertrieben groß gezeichnet, damit sie lesbar bleiben; die Bildunterschrift weist darauf hin. Eine Mission ohne Umlaufbahn-Daten erhält einen beschrifteten Platzhalter, nie eine erfundene Flugbahn. Die Beschriftungen in den Bildern sind englisch."
 }

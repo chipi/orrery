@@ -3707,5 +3707,7 @@
   "site_illustration_alt_zhurong": "Illustrated block map of Zhurong’s route across Utopia Planitia, 2021–2022: from the landing platform (sol 0) past the sol 60 marker and 100 days on Mars (sol 97) to the rover’s final position (sol 347).",
   "site_illustration_alt_change4": "Illustrated block map of the Chang’e 4 landing site in Von Kármán crater: the Chang’e 4 lander stands in the east, the Yutu-2 position of May 2019 lies a short way west, and the rover’s route winds a long way west and north-west to its last position, marked by a small rover.",
   "surface_card_collapse_aria": "Collapse site details",
-  "surface_card_expand_aria": "Expand site details"
+  "surface_card_expand_aria": "Expand site details",
+  "colophon_section_mission_trajectories": "Mission trajectory plots",
+  "colophon_mission_trajectories_note": "One schematic per mission, drawn in code from the same trajectory model the /fly simulator flies — not AI-generated. Outer-system tours are radially compressed beyond 1.6 AU and Earth-orbit rings are exaggerated so they read; the plot’s caption says so. A mission with no orbit data gets a labelled placeholder, never an invented path. Labels in the pictures are in English."
 }

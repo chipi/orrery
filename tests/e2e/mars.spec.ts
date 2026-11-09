@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
 import { openDrawerTab } from './_helpers/hud-expand';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /mars — Mars Surface Map (3D textured sphere + 2D equirectangular map +
@@ -52,6 +53,8 @@ test.describe('/mars', () => {
 
   test('layer chips render and toggle', async ({ page, isMobile }) => {
     await page.goto('/mars');
+    // Prerendered chips are visible before their handlers are wired; a tap in that window is dropped.
+    await waitForHydration(page);
     // Mobile: chips live in the MobileDrawerGroup Layers tab (dual-rendered
     // with the hidden desktop hud-controls) — open it and scope to `.mdg-body`.
     if (isMobile) await openDrawerTab(page, /layers/i);

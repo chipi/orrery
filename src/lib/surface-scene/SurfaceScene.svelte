@@ -174,6 +174,7 @@
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
   import SurfaceFlatPatch from '$lib/surface-scene/SurfaceFlatPatch.svelte';
+  import { routePatchFlatTarget } from '$lib/surface-scene/flat-patch-extent';
   import {
     createSkybox,
     teardownPanoramaSkybox,
@@ -4980,16 +4981,16 @@
                   }
                 }
                 const rp = best?.userData?.routePatch as
-                  { lat: number; lon: number; image: string; id: string } | undefined;
-                if (rp) {
-                  target = {
-                    ...selected,
-                    lat: rp.lat,
-                    lon: rp.lon,
-                    hotspot_tier2_source: rp.image,
-                    name: `${selected.name ?? selected.id} · ${rp.id}`,
-                  };
-                }
+                  | {
+                      lat: number;
+                      lon: number;
+                      image: string;
+                      id: string;
+                      ground_m: number;
+                      resolution_m_per_px: number;
+                    }
+                  | undefined;
+                if (rp) target = routePatchFlatTarget(selected, rp, config.radiusKm);
               }
             }
             flatPatchTarget = target;

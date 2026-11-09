@@ -140,3 +140,93 @@ describe('gdal-crop: equirectangular raster with latitude_of_origin != 0 is not 
     expect(Math.abs(lineColAtRow(px, w, h / 2 + 300) - w / 2)).toBeLessThanOrEqual(4);
   }, 60_000);
 });
+
+// Earth launch pads are cut from Sentinel-2 UTM tiles (fetch-earth-pads.ts). The surface scene
+// draws every patch north-up, so a UTM crop whose grid convergence exceeds the 0.5 degree
+// threshold (Vandenberg, UTM 10N, 2.4 degrees from the meridian: about 1.4 degrees) must be
+// warped north-up, whole and three-band; one on the central meridian stays a plain window.
+function meridianCentroidCol(px: Uint8Array, w: number, row: number): number {
+  let sum = 0;
+  let n = 0;
+  for (let r = row - 5; r <= row + 5; r++)
+    for (let c = 0; c < w; c++)
+      if (px[r * w + c] >= 200) {
+        sum += c;
+        n++;
+      }
+  return n ? sum / n : -1000;
+}
+
+function buildUtmRaster(rasterPath: string, lat: number, lon: number): void {
+  const size = 3000;
+  const utm = gdal.SpatialReference.fromEPSG(32610);
+  const geo = utm.cloneGeogCS()!;
+  const fwd = new gdal.CoordinateTransformation(geo, utm);
+  const toUtm = (la: number, lo: number) =>
+    geo.EPSGTreatsAsLatLong() ? fwd.transformPoint(la, lo) : fwd.transformPoint(lo, la);
+  const c = toUtm(lat, lon);
+  const gt = [c.x - 1500 * 10, 10, 0, c.y + 1500 * 10, 0, -10];
+  const ds = gdal.drivers.get('GTiff').create(rasterPath, size, size, 3, gdal.GDT_Byte);
+  ds.srs = utm;
+  ds.geoTransform = gt;
+  const data = new Uint8Array(size * size);
+  for (let i = 0; i < data.length; i++)
+    data[i] = 60 + (((i % size) + Math.floor(i / size)) % 16) * 5;
+  for (let dLat = -0.07; dLat <= 0.07; dLat += 0.0001) {
+    const p = toUtm(lat + dLat, lon);
+    const col = Math.round((p.x - gt[0]) / gt[1]);
+    const row = Math.round((p.y - gt[3]) / gt[5]);
+    for (let dy = -1; dy <= 1; dy++)
+      for (let dx = -1; dx <= 1; dx++) {
+        const cc = col + dx;
+        const rr = row + dy;
+        if (cc >= 0 && cc < size && rr >= 0 && rr < size) data[rr * size + cc] = 255;
+      }
+  }
+  for (let b = 1; b <= 3; b++) ds.bands.get(b).pixels.write(0, 0, size, size, data);
+  ds.flush();
+  ds.close();
+}
+
+async function cropUtm(
+  name: string,
+  lat: number,
+  lon: number,
+): Promise<{ px: Uint8Array; w: number; h: number; bands: number }> {
+  const rasterPath = path.join(dir, `${name}.tif`);
+  buildUtmRaster(rasterPath, lat, lon);
+  const outputPath = path.join(dir, `${name}-out.jpg`);
+  await cropRemoteRasterToLatLon({
+    localRasterPath: rasterPath,
+    targetLat: lat,
+    targetLon: lon,
+    outputPath,
+    cropSize: 1024,
+    requireCentered: true,
+  });
+  const out = gdal.open(outputPath);
+  const w = out.rasterSize.x;
+  const h = out.rasterSize.y;
+  const px = out.bands.get(1).pixels.read(0, 0, w, h) as Uint8Array;
+  const bands = out.bands.count();
+  out.close();
+  return { px, w, h, bands };
+}
+
+describe('gdal-crop: Earth UTM pad raster', () => {
+  it('far from the zone meridian (convergence ~1.4 deg) is warped north-up, whole, 3 bands', async () => {
+    const { px, w, h, bands } = await cropUtm('utm-far', 34.632, -120.611);
+    expect(bands).toBe(3);
+    let black = 0;
+    for (const v of px) if (v < 10) black++;
+    expect(black / px.length).toBeLessThan(0.01);
+    expect(Math.abs(meridianCentroidCol(px, w, h / 2 - 300) - w / 2)).toBeLessThanOrEqual(2);
+    expect(Math.abs(meridianCentroidCol(px, w, h / 2 + 300) - w / 2)).toBeLessThanOrEqual(2);
+  }, 60_000);
+
+  it('on the central meridian (convergence 0) stays a plain window, meridian vertical', async () => {
+    const { px, w, h } = await cropUtm('utm-centre', 34.632, -123);
+    expect(Math.abs(meridianCentroidCol(px, w, h / 2 - 300) - w / 2)).toBeLessThanOrEqual(2);
+    expect(Math.abs(meridianCentroidCol(px, w, h / 2 + 300) - w / 2)).toBeLessThanOrEqual(2);
+  }, 60_000);
+});

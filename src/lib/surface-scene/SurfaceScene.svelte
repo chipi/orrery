@@ -4898,14 +4898,16 @@
                   });
                 } else {
                   // LROC NAC Featured Image (#361) — pre-cropped orbital view
-                  // published by the LROC team, ~0.5–2 m/px native.
+                  // published by the LROC team, ~0.5–2 m/px native. Website
+                  // products are copyrighted, educational use with credit
+                  // (lroc.im-ldi.com/about/terms); only PDS data is public domain.
                   layers.push({
                     layerLabel: m.surface_layer_detail(),
                     sourceTitle: 'LROC NAC Featured Image',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
                     resolutionText: `~${m.unit_mpx_value({ value: '0.5–2' })}`,
-                    sourceUrl: 'https://www.lroc.asu.edu/',
-                    licenseShort: 'PD-NASA',
+                    sourceUrl: 'https://lroc.im-ldi.com/about/terms',
+                    licenseShort: 'LROC-EDU',
                   });
                 }
               }

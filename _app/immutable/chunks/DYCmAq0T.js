@@ -1,0 +1,1 @@
+import{X as e,gt as t,mt as n}from"./B_cCGZcS.js";import{l as r,u as i}from"./BFezGjsE2.js";var a=t(!1),o=!1,s=!1;function c(){s=!0}function l(){o||(o=!0,i().then(()=>n(a,!0)))}function u(t,n){if(l(),!e(a))return s?{}:{src:t};let i=r(t);return i?.srcset?{src:i.src,srcset:i.srcset,sizes:n}:{src:i?.src??t}}export{u as n,c as t};

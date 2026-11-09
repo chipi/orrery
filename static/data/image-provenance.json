@@ -2344,12 +2344,12 @@
       "license_url": "https://en.wikipedia.org/wiki/Public_domain",
       "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": 47289335,
       "nasa_id": null,
-      "fetched_at": "2026-11-02T10:12:41.119Z"
+      "fetched_at": "2026-11-09T00:37:25.774Z"
     },
     {
       "id": "871ca981410698cc",
@@ -2364,12 +2364,12 @@
       "license_url": "https://en.wikipedia.org/wiki/Public_domain",
       "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": 47289335,
       "nasa_id": null,
-      "fetched_at": "2026-11-02T10:12:41.120Z"
+      "fetched_at": "2026-11-09T00:37:25.775Z"
     },
     {
       "id": "e902496e951f139e",
@@ -32857,22 +32857,21 @@
       "id": "a24033191807dd80",
       "path": "/images/iss-modules/canadarm2/04.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — canadarm2 / \"ISS canadarm2 module\"",
-      "author": "NASA",
+      "title": "The Canadarm2 robotic arm extends from a data grapple fixture on the International Space Station (iss073e0575226)",
+      "author": "NASA/JSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=ISS+canadarm2+module&media_type=image&keywords=canadarm2",
+      "source_url": "https://images.nasa.gov/details/iss073e0575226",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.860Z"
+      "nasa_id": "iss073e0575226",
+      "fetched_at": "2026-11-09T00:37:24.241Z"
     },
     {
       "id": "6ab7982487854f04",
@@ -33668,43 +33667,41 @@
       "id": "ce417206f0684dd2",
       "path": "/images/iss-modules/cupola/04.1x1.jpg",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — cupola / \"ISS cupola module\"",
-      "author": "NASA",
+      "title": "Exterior view of Cupola windows (iss042e078481)",
+      "author": "Barry Wilmore",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=ISS+cupola+module&media_type=image&keywords=cupola",
+      "source_url": "https://images.nasa.gov/details/iss042e078481",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.861Z"
+      "nasa_id": "iss042e078481",
+      "fetched_at": "2026-11-09T00:37:24.241Z"
     },
     {
       "id": "0f5d9675932cfb91",
       "path": "/images/iss-modules/cupola/04.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — cupola / \"ISS cupola module\"",
-      "author": "NASA",
+      "title": "Exterior view of Cupola windows (iss042e078481)",
+      "author": "Barry Wilmore",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=ISS+cupola+module&media_type=image&keywords=cupola",
+      "source_url": "https://images.nasa.gov/details/iss042e078481",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.861Z"
+      "nasa_id": "iss042e078481",
+      "fetched_at": "2026-11-09T00:37:24.241Z"
     },
     {
       "id": "3eff805e6be1ec64",
@@ -58545,46 +58542,48 @@
     {
       "id": "e8e9e20686d17506",
       "path": "/images/moon-sites/apollo15/02.1x1.jpg",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — apollo15 / \"apollo 15 lunar rover hadley\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Apollo 15 Mission image - View of the Apollo Lunar Surface Experiments Package (ALSEP) (as15-85-11471).jpg",
+      "author": "NASA Johnson Space Center",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=apollo+15+lunar+rover+hadley&media_type=image&keywords=apollo15",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apollo_15_Mission_image_-_View_of_the_Apollo_Lunar_Surface_Experiments_Package_(ALSEP)_(as15-85-11471).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Apollo_15_Mission_image_-_View_of_the_Apollo_Lunar_Surface_Experiments_Package_%28ALSEP%29_%28as15-85-11471%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-jpeg",
-        "copied-from-mission-gallery"
+        "copied-from-mission-gallery",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 157450932,
       "nasa_id": null,
-      "fetched_at": "2026-07-06T17:33:35.613Z"
+      "fetched_at": "2026-11-09T00:37:27.024Z"
     },
     {
       "id": "4f69869cb3347460",
       "path": "/images/moon-sites/apollo15/02.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — apollo15 / \"apollo 15 lunar rover hadley\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Apollo 15 Mission image - View of the Apollo Lunar Surface Experiments Package (ALSEP) (as15-85-11471).jpg",
+      "author": "NASA Johnson Space Center",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=apollo+15+lunar+rover+hadley&media_type=image&keywords=apollo15",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apollo_15_Mission_image_-_View_of_the_Apollo_Lunar_Surface_Experiments_Package_(ALSEP)_(as15-85-11471).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Apollo_15_Mission_image_-_View_of_the_Apollo_Lunar_Surface_Experiments_Package_%28ALSEP%29_%28as15-85-11471%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-jpeg",
-        "copied-from-mission-gallery"
+        "copied-from-mission-gallery",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 157450932,
       "nasa_id": null,
-      "fetched_at": "2026-07-06T17:33:35.613Z"
+      "fetched_at": "2026-11-09T00:37:27.024Z"
     },
     {
       "id": "6fac8cb69dd442fe",
@@ -58629,90 +58628,94 @@
     {
       "id": "3f291b6bf0638de9",
       "path": "/images/moon-sites/apollo15/04.1x1.jpg",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — apollo15 / \"apollo 15 lunar rover hadley\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Lunar Activities During the Apollo 15 Mission (3747526718).jpg",
+      "author": "George Eastman House",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=apollo+15+lunar+rover+hadley&media_type=image&keywords=apollo15",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lunar_Activities_During_the_Apollo_15_Mission_(3747526718).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Lunar_Activities_During_the_Apollo_15_Mission_%283747526718%29.jpg",
       "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_url": "https://www.flickr.com/commons/usage/",
+      "license_rationale": "No known copyright restrictions",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-jpeg",
-        "copied-from-mission-gallery"
+        "copied-from-mission-gallery",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 53593558,
       "nasa_id": null,
-      "fetched_at": "2026-07-06T17:33:35.613Z"
+      "fetched_at": "2026-11-09T00:37:28.254Z"
     },
     {
       "id": "8b5fa079ee6c9dc3",
       "path": "/images/moon-sites/apollo15/04.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — apollo15 / \"apollo 15 lunar rover hadley\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Lunar Activities During the Apollo 15 Mission (3747526718).jpg",
+      "author": "George Eastman House",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=apollo+15+lunar+rover+hadley&media_type=image&keywords=apollo15",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lunar_Activities_During_the_Apollo_15_Mission_(3747526718).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Lunar_Activities_During_the_Apollo_15_Mission_%283747526718%29.jpg",
       "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_url": "https://www.flickr.com/commons/usage/",
+      "license_rationale": "No known copyright restrictions",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-jpeg",
-        "copied-from-mission-gallery"
+        "copied-from-mission-gallery",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 53593558,
       "nasa_id": null,
-      "fetched_at": "2026-07-06T17:33:35.613Z"
+      "fetched_at": "2026-11-09T00:37:28.255Z"
     },
     {
       "id": "34634a47cb87057c",
       "path": "/images/moon-sites/apollo15/05.1x1.jpg",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — apollo15 / \"apollo 15 lunar rover hadley\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Astronaut James Irwin gives salute beside U.S. flag during lunar surface extravehicular activity (EVA) (3747529970).jpg",
+      "author": "George Eastman House",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=apollo+15+lunar+rover+hadley&media_type=image&keywords=apollo15",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Astronaut_James_Irwin_gives_salute_beside_U.S._flag_during_lunar_surface_extravehicular_activity_(EVA)_(3747529970).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Astronaut_James_Irwin_gives_salute_beside_U.S._flag_during_lunar_surface_extravehicular_activity_%28EVA%29_%283747529970%29.jpg",
       "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_url": "https://www.flickr.com/commons/usage/",
+      "license_rationale": "No known copyright restrictions",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-jpeg",
-        "copied-from-mission-gallery"
+        "copied-from-mission-gallery",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 53593447,
       "nasa_id": null,
-      "fetched_at": "2026-07-06T17:33:35.613Z"
+      "fetched_at": "2026-11-09T00:37:29.485Z"
     },
     {
       "id": "591e2c93f4d1a024",
       "path": "/images/moon-sites/apollo15/05.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — apollo15 / \"apollo 15 lunar rover hadley\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Astronaut James Irwin gives salute beside U.S. flag during lunar surface extravehicular activity (EVA) (3747529970).jpg",
+      "author": "George Eastman House",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=apollo+15+lunar+rover+hadley&media_type=image&keywords=apollo15",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Astronaut_James_Irwin_gives_salute_beside_U.S._flag_during_lunar_surface_extravehicular_activity_(EVA)_(3747529970).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Astronaut_James_Irwin_gives_salute_beside_U.S._flag_during_lunar_surface_extravehicular_activity_%28EVA%29_%283747529970%29.jpg",
       "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_url": "https://www.flickr.com/commons/usage/",
+      "license_rationale": "No known copyright restrictions",
       "modifications": [
         "downloaded-via-nasa-images-api",
         "reencoded-jpeg",
-        "copied-from-mission-gallery"
+        "copied-from-mission-gallery",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 53593447,
       "nasa_id": null,
-      "fetched_at": "2026-07-06T17:33:35.613Z"
+      "fetched_at": "2026-11-09T00:37:29.485Z"
     },
     {
       "id": "4adf372f623d92f8",
@@ -61872,23 +61875,22 @@
     {
       "id": "7be4fe208a6030bd",
       "path": "/images/satellites/deimos/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — satellites/deimos",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Deimos-MRO.jpg",
+      "author": "NASA/JPL-caltech/University of Arizona",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Deimos-MRO.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Deimos-MRO.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 6213773,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.963Z"
+      "fetched_at": "2026-11-09T00:37:30.729Z"
     },
     {
       "id": "86af6c778784981d",
@@ -62534,23 +62536,22 @@
     {
       "id": "f5ecdf59dd80fe44",
       "path": "/images/satellites/titania/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — satellites/titania",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Titania (moon) labeled.jpg",
+      "author": "Titania_(moon)_color_cropped.jpg: *Titania_(moon)_color.jpg: NASA/JPL derivative work: Ruslik (talk) derivative work: Ruslik (talk)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Titania_(moon)_labeled.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Titania_%28moon%29_labeled.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 7996704,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.963Z"
+      "fetched_at": "2026-11-09T00:37:31.959Z"
     },
     {
       "id": "35cda50ce0eb91de",
@@ -62618,23 +62619,22 @@
     {
       "id": "32059a613d10baed",
       "path": "/images/satellites/triton/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — satellites/triton",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Triton moon mosaic Voyager 2 (large).jpg",
+      "author": "NASA / Jet Propulsion Lab / U.S. Geological Survey",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Triton_moon_mosaic_Voyager_2_(large).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Triton_moon_mosaic_Voyager_2_%28large%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 96172,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.963Z"
+      "fetched_at": "2026-11-09T00:37:33.203Z"
     },
     {
       "id": "62b5dc6468487d5d",

@@ -131,6 +131,60 @@
     columns: 2;
   }
 
+  /* A window with a mouse that is narrower than the bottom row (PLANET SCALES card,
+     time dock to 542 px, footer More button): the centred tab would sit under the
+     dock, so it parks left of the footer's More button instead. */
+  @media (max-width: 1450px) and (hover: hover) and (pointer: fine) {
+    .entity-index.floating {
+      inset-inline-start: auto;
+      inset-inline-end: 80px;
+      transform: none;
+      width: auto;
+    }
+    .floating ul {
+      inset-inline-start: auto;
+      inset-inline-end: 0;
+      transform: none;
+    }
+  }
+  /* Wide window with a mouse: the footer strip is ~720 px wide at the right, so the
+     centred tab would run into it; it sits just right of the time dock (542 px). */
+  @media (min-width: 1451px) and (hover: hover) and (pointer: fine) {
+    .entity-index.floating {
+      inset-inline-start: 556px;
+      transform: none;
+    }
+  }
+  /* Below 700 px the short "A–Z" label keeps it clear of the dock (below 601 px
+     the dock sits above the bottom row; 601-700 px lifts the tab over the dock). */
+  @media (max-width: 700px) and (hover: hover) and (pointer: fine) {
+    .floating .ei-full {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .floating .ei-short {
+      display: inline;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 700px) and (hover: hover) and (pointer: fine) {
+    .entity-index.floating {
+      bottom: 70px;
+    }
+  }
+  @media (max-width: 600px) and (hover: hover) and (pointer: fine) {
+    .floating ul {
+      position: fixed;
+      inset-inline-start: 10px;
+      inset-inline-end: 10px;
+      bottom: 44px;
+      width: auto;
+    }
+  }
+
   /* Phone: a left-edge pull tab just above the INDEX tab (--index-handle-top is
      published on <html> by the scene; 50 % where there is none), the list opening
      as a panel beside it. Out of the way of the bottom bar, the tab row and the

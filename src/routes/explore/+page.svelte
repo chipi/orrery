@@ -2300,6 +2300,25 @@
   .ruler-desktop-only {
     display: contents;
   }
+  /* The left rail (PLANETS…ICONIC MISSIONS chips, 124-368 px from the top) and
+     the ruler must not share pixels. Tall windows: the ruler sits below the
+     chips (--ruler-top-clear caps its height). Short ones: it moves right,
+     beside the chips. Up to 600 px wide the time dock is 96 px tall, so the
+     ruler clears it (--ruler-clear). */
+  .ruler-desktop-only {
+    --ruler-top-clear: 376px;
+  }
+  @media (max-height: 759px) {
+    .ruler-desktop-only {
+      --ruler-top-clear: 0px;
+      --ruler-left: 159px;
+    }
+  }
+  @media (max-width: 600px) {
+    .ruler-desktop-only {
+      --ruler-clear: 104px;
+    }
+  }
   @media (hover: none), (pointer: coarse) {
     .ruler-desktop-only {
       display: none;

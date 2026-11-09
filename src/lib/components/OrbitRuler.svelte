@@ -199,7 +199,13 @@
        "make sure pulldowns stack on top of this new control. less
        space for it, but no overflow"). Internal scroll if the band
        count would otherwise exceed the budget. */
-    max-height: calc(100vh - var(--nav-height, 60px) - 140px);
+    max-height: min(
+      calc(100vh - var(--nav-height, 60px) - 140px),
+      calc(
+        100vh - var(--ruler-top-clear, 0px) -
+          max(var(--ruler-bottom, 80px), var(--ruler-clear, 0px))
+      )
+    );
     overflow-y: auto;
     overscroll-behavior: contain;
   }

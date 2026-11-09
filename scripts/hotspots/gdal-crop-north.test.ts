@@ -52,6 +52,28 @@ function buildPolarRaster(rasterPath: string): { lat: number; lon: number } {
   return { lat, lon };
 }
 
+// Centre of the densest 13-px window of saturated pixels: the painted line (9 px wide)
+// fills it, the stretched background fills at most a few px of any window.
+function lineColAtRow(px: Uint8Array, w: number, row: number): number {
+  let best = -1000;
+  let bestCount = 0;
+  for (let c = 6; c < w - 6; c++) {
+    let n = 0;
+    for (let k = -6; k <= 6; k++) if (px[row * w + c + k] >= 250) n++;
+    if (n > bestCount) {
+      bestCount = n;
+      best = c;
+    }
+  }
+  return best;
+}
+
+// HiRISE RDRs are Equirectangular with latitude_of_origin = the swath's centre latitude
+// (Perseverance 15 N), and GDAL's reading of that needs correctHiriseProjection. North is
+// straight up there, so the crop must stay a plain window (no re-projection, no black).
+const EQUIRECT_LAT0_WKT =
+  'PROJCS["Equirectangular MARS",GEOGCS["GCS_MARS",DATUM["unnamed",SPHEROID["unnamed",3394839.8133163,0]],PRIMEM["Reference meridian",0],UNIT["degree",0.0174532925199433]],PROJECTION["Equirectangular"],PARAMETER["latitude_of_origin",15],PARAMETER["central_meridian",180],PARAMETER["standard_parallel_1",0],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1],AXIS["Easting",EAST],AXIS["Northing",NORTH]]';
+
 describe('gdal-crop: polar-stereographic raster is cut north-up', () => {
   it('a meridian through the target is a vertical line in the crop', async () => {
     const rasterPath = path.join(dir, 'polar.tif');
@@ -69,24 +91,52 @@ describe('gdal-crop: polar-stereographic raster is cut north-up', () => {
     const h = out.rasterSize.y;
     const px = out.bands.get(1).pixels.read(0, 0, w, h) as Uint8Array;
     out.close();
-    // Centre of the densest 13-px window of saturated pixels: the painted line (9 px wide)
-    // fills it, the stretched background fills at most a few px of any window.
-    const colAtRow = (row: number): number => {
-      let best = -1000;
-      let bestCount = 0;
-      for (let c = 6; c < w - 6; c++) {
-        let n = 0;
-        for (let k = -6; k <= 6; k++) if (px[row * w + c + k] >= 250) n++;
-        if (n > bestCount) {
-          bestCount = n;
-          best = c;
-        }
-      }
-      return best;
-    };
-    const top = colAtRow(h / 2 - 300);
-    const bottom = colAtRow(h / 2 + 300);
+    const top = lineColAtRow(px, w, h / 2 - 300);
+    const bottom = lineColAtRow(px, w, h / 2 + 300);
     expect(Math.abs(top - w / 2)).toBeLessThanOrEqual(4);
     expect(Math.abs(bottom - w / 2)).toBeLessThanOrEqual(4);
+  }, 60_000);
+});
+
+describe('gdal-crop: equirectangular raster with latitude_of_origin != 0 is not re-projected', () => {
+  it('keeps a vertical line vertical and the crop whole', async () => {
+    const size = 3000;
+    const lat0 = 15;
+    const R = 3394839.8133163;
+    const gt = [-5873740.125, 0.25, 0, 1101732.875, 0, -0.25];
+    const srs = gdal.SpatialReference.fromWKT(EQUIRECT_LAT0_WKT);
+    const inv = new gdal.CoordinateTransformation(srs, srs.cloneGeogCS()!);
+    const xCorr = gt[0] + 1500 * gt[1];
+    const yCorr = gt[3] + 1500 * gt[5];
+    const centre = inv.transformPoint(
+      xCorr / Math.cos((lat0 * Math.PI) / 180),
+      yCorr - (R * lat0 * Math.PI) / 180,
+    );
+    const rasterPath = path.join(dir, 'equirect.tif');
+    const ds = gdal.drivers.get('GTiff').create(rasterPath, size, size, 1, gdal.GDT_UInt16);
+    ds.srs = srs;
+    ds.geoTransform = gt;
+    const data = new Uint16Array(size * size);
+    for (let i = 0; i < data.length; i++)
+      data[i] = 800 + (((i % size) + Math.floor(i / size)) % 16) * 10;
+    for (let r = 0; r < size; r++) for (let c = 1496; c <= 1504; c++) data[r * size + c] = 4000;
+    ds.bands.get(1).pixels.write(0, 0, size, size, data);
+    ds.flush();
+    ds.close();
+    const outputPath = path.join(dir, 'equirect-out.jpg');
+    await cropRemoteRasterToLatLon({
+      localRasterPath: rasterPath,
+      targetLat: centre.y,
+      targetLon: centre.x,
+      outputPath,
+      cropSize: 1024,
+    });
+    const out = gdal.open(outputPath);
+    const w = out.rasterSize.x;
+    const h = out.rasterSize.y;
+    const px = out.bands.get(1).pixels.read(0, 0, w, h) as Uint8Array;
+    out.close();
+    expect(Math.abs(lineColAtRow(px, w, h / 2 - 300) - w / 2)).toBeLessThanOrEqual(4);
+    expect(Math.abs(lineColAtRow(px, w, h / 2 + 300) - w / 2)).toBeLessThanOrEqual(4);
   }, 60_000);
 });

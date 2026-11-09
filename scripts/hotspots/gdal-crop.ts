@@ -226,7 +226,7 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
       input.bandIndex != null
         ? [input.bandIndex]
         : Array.from({ length: ds.bands.count() }, (_, i) => i + 1);
-    const northTiltDeg = trueNorthTiltDeg(transform, llSrs, gt, input, px, py);
+    const northTiltDeg = trueNorthTiltDeg(transform, llSrs, gt, input, wkt, px, py);
     const warpNorthUp = Math.abs(northTiltDeg) > NORTH_TILT_WARP_DEG;
     const bandData = warpNorthUp
       ? await readNorthUpBands(ds, bandIndices, input, wkt, cropSize, gt)
@@ -295,6 +295,7 @@ function trueNorthTiltDeg(
   llSrs: gdal.SpatialReference,
   gt: number[],
   input: CropInput,
+  wkt: string,
   px: number,
   py: number,
 ): number {
@@ -302,9 +303,9 @@ function trueNorthTiltDeg(
   const p = llSrs.EPSGTreatsAsLatLong()
     ? transform.transformPoint(input.targetLat + step, input.targetLon)
     : transform.transformPoint(input.targetLon, input.targetLat + step);
-  // The wkt-based Equirectangular correction never applies here: those rasters
-  // have north straight up, and this is only a direction probe.
-  const [nx, ny] = projectedToPixel(gt, p.x, p.y);
+  // Same Equirectangular correction as the target pixel, or a lat0 != 0 raster reads as tilted.
+  const c = correctHiriseProjection(wkt, p.x, p.y);
+  const [nx, ny] = projectedToPixel(gt, c.xCorr, c.yCorr);
   const dx = nx - px;
   const dy = ny - py;
   if (Math.hypot(dx, dy) < 1e-9) return 0;

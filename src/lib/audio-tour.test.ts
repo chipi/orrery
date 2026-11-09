@@ -396,3 +396,23 @@ describe('navigate targets resolve to real routes (404 guard)', () => {
     expect(bad, `navigate targets with no matching route:\n${bad.join('\n')}`).toEqual([]);
   });
 });
+
+describe('guide-missions — surface link beat', () => {
+  it('flashes the mission panel surface link inside the narrated 89–100 s window', () => {
+    const stage = EPISODE_STAGES['guide-missions'].find(
+      (s) => s.target === '[data-audio-stage="mission-surface-link"]',
+    );
+    expect(stage, 'guide-missions has no stage for mission-surface-link').toBeDefined();
+    expect(stage!.action).toBe('flash');
+    expect(stage!.at_sec).toBeGreaterThanOrEqual(89);
+    expect(stage!.at_sec).toBeLessThan(100);
+  });
+
+  it('MissionPanel carries the hook on the surface-link anchor', () => {
+    const src = readFileSync(
+      join(process.cwd(), 'src/lib/components/MissionPanel.svelte'),
+      'utf-8',
+    );
+    expect(src).toMatch(/data-testid="surface-link"\s+data-audio-stage="mission-surface-link"/);
+  });
+});

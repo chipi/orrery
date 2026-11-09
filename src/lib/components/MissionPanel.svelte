@@ -873,6 +873,7 @@
             class="surface-link"
             href={localHref(`/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`)}
             data-testid="surface-link"
+            data-audio-stage="mission-surface-link"
           >
             {surfaceLabel}
           </a>

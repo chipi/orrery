@@ -688,6 +688,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 83.5, action: 'click', target: '[data-audio-stage="mission-tab-gallery"]' },
     { at_sec: 86, action: 'click', target: '[data-audio-stage="mission-tab-science"]' },
     { at_sec: 88.5, action: 'click', target: '[data-audio-stage="mission-tab-overview"]' },
+    // VTT 00:01:29 "Where the mission has a destination on a planetary surface, the
+    // explore button jumps you to that surface…" — the surface link on the Overview
+    // tab (Curiosity has a Mars site; no-ops for a mission without one).
+    { at_sec: 89.5, action: 'flash', target: '[data-audio-stage="mission-surface-link"]' },
     // Close before the timeline beat so it's visible.
     { at_sec: 99, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:01:42.9 "Look at the timeline"

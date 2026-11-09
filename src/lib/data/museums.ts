@@ -1,21 +1,24 @@
-import { get } from './core';
+import { get, type FetchLike } from './core';
 import type { Museum, MuseumBase, MuseumForObject, MuseumOverlay } from '$types/museum';
 
-export async function museumsBase(): Promise<MuseumBase[]> {
-  return get<MuseumBase[]>('museums.json');
+export async function museumsBase(fetchFn: FetchLike = fetch): Promise<MuseumBase[]> {
+  return get<MuseumBase[]>('museums.json', fetchFn);
 }
 
 /**
  * Museums merged with their per-locale text (name, city, description,
  * item lines), falling back to en-US per museum (PRD-027).
  */
-export async function getMuseums(locale = 'en-US'): Promise<Museum[]> {
-  const base = await museumsBase();
+export async function getMuseums(
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<Museum[]> {
+  const base = await museumsBase(fetchFn);
   const merged: Museum[] = [];
   for (const mu of base) {
     const overlay =
-      (await get<MuseumOverlay>(`i18n/${locale}/museums/${mu.id}.json`).catch(() => null)) ??
-      (await get<MuseumOverlay>(`i18n/en-US/museums/${mu.id}.json`).catch(() => null));
+      (await get<MuseumOverlay>(`i18n/${locale}/museums/${mu.id}.json`, fetchFn).catch(() => null)) ??
+      (await get<MuseumOverlay>(`i18n/en-US/museums/${mu.id}.json`, fetchFn).catch(() => null));
     if (!overlay) throw new Error(`museums: no en-US overlay for ${mu.id}`);
     merged.push({ ...mu, ...overlay });
   }

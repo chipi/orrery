@@ -104,6 +104,9 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 6px 16px;
 }
+.entity .linklist.wide {
+  grid-template-columns: 1fr;
+}
 .entity .linklist li {
   margin: 0;
 }
@@ -111,6 +114,12 @@
   margin-left: 6px;
   color: rgba(255, 255, 255, 0.45);
   font-size: 13px;
+}
+.entity .linklist .note {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
 }
 .entity .equation {
   margin: 20px 0;

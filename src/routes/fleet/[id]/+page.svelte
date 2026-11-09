@@ -26,6 +26,29 @@
   let summary = $derived(
     metaDescription([entry.tagline, entry.description].filter(Boolean).join(' ')),
   );
+  const CATEGORY: Record<string, () => string> = {
+    launcher: m.fleet_cat_launcher,
+    'crewed-spacecraft': m.fleet_cat_crewed,
+    'cargo-spacecraft': m.fleet_cat_cargo,
+    station: m.fleet_cat_station,
+    rover: m.fleet_cat_rover,
+    lander: m.fleet_cat_lander,
+    orbiter: m.fleet_cat_orbiter,
+    observatory: m.fleet_cat_observatory,
+    'space-suit': m.fleet_cat_suit,
+    constellation: m.fleet_cat_constellation,
+    'launch-site': m.fleet_cat_launch_site,
+    engine: m.fleet_cat_engine,
+  };
+  let siteHeading = $derived(
+    entry.category === 'lander' || entry.category === 'rover'
+      ? m.surface_landing_site()
+      : entry.category === 'orbiter' ||
+          entry.category === 'station' ||
+          entry.category === 'observatory'
+        ? m.fleet_operating_orbit()
+        : m.fleet_operating_sites(),
+  );
   let specs = $derived(fleetSpecRows(entry, getLocale()));
   let card = $derived(data.card);
   let jsonLd = $derived.by(() => {
@@ -67,7 +90,8 @@
 
   <header>
     <p class="meta">
-      {entry.agency} · <span class="status">{fleetStatusLabel(entry.status)}</span>
+      {entry.agency} · {CATEGORY[entry.category]?.() ?? entry.category} ·
+      <span class="status">{fleetStatusLabel(entry.status)}</span>
     </p>
     <h1>{entry.name}</h1>
     {#if entry.tagline}<p class="lede">{entry.tagline}</p>{/if}
@@ -105,6 +129,14 @@
       </div>
     {/if}
     <div>
+      <dt>{m.card_stat_era()}</dt>
+      <dd>
+        {entry.era === 'planned'
+          ? m.fleet_value_planned()
+          : entry.era.replace('now', m.programs_meta_now())}
+      </dd>
+    </div>
+    <div>
       <dt>{m.fleet_label_epoch()}</dt>
       <dd>{epochLabel(entry.epoch)}</dd>
     </div>
@@ -124,6 +156,67 @@
           <li>
             <a href={localHref(`/missions/${mission.id}`)}>{mission.name}</a>
             <span class="year">{mission.year}</span>
+            {#if mission.first}<span class="note">{mission.first}</span>{/if}
+          </li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
+  {#if data.crewed.length}
+    <section class="crew">
+      <h2>{m.panel_tab_crew()}</h2>
+      <ul>
+        {#each data.crewed as fl (fl.designation)}
+          <li>
+            {#if fl.missionId}<a class="inline" href={localHref(`/missions/${fl.missionId}`)}
+                >{fl.mission}</a
+              >{:else}{fl.mission}{/if}
+            — {fl.crew.join(', ')}
+          </li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
+  {#if data.sites.length}
+    <section class="sites">
+      <h2>{siteHeading}</h2>
+      <ul class="linklist wide">
+        {#each data.sites as site (site.href)}
+          <li>
+            <a href={localHref(site.href)}>{site.name}</a>
+            {#if site.place}<span class="year">{site.place}</span>{/if}
+            {#if site.text}<span class="note">{site.text}</span>{/if}
+          </li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
+  {#each [{ title: m.fleet_engines_heading(), items: data.engines }, { title: m.fleet_used_on(), items: data.usedOn }, { title: section, items: data.alongside }, { title: CATEGORY[entry.category]?.() ?? entry.category, items: data.kin }] as group (group.title)}
+    {#if group.items.length}
+      <section class="related">
+        <h2>{group.title}</h2>
+        <ul class="linklist">
+          {#each group.items as h (h.id)}
+            <li>
+              <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
+              {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+            </li>
+          {/each}
+        </ul>
+      </section>
+    {/if}
+  {/each}
+
+  {#if data.museums.length}
+    <section class="museums">
+      <h2>{m.museum_block_heading()}</h2>
+      <ul>
+        {#each data.museums as museum (museum.id)}
+          <li>
+            <strong>{museum.name}</strong>, {museum.city}{#if museum.item}&nbsp;— {museum.item}{/if}
           </li>
         {/each}
       </ul>

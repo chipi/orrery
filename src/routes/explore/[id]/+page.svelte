@@ -56,6 +56,32 @@
   {#if body.text}<p class="dispatch">{body.text}</p>{/if}
   {#if body.surface}<p>{body.surface}</p>{/if}
 
+  {#if data.facts.length}
+    <dl class="facts">
+      {#each data.facts as row (row.label)}
+        <div>
+          <dt>{row.label}</dt>
+          <dd>{row.value}</dd>
+        </div>
+      {/each}
+    </dl>
+  {/if}
+
+  {#if data.science.length}
+    <section class="science">
+      <h2>{m.panel_tab_science()}</h2>
+      <ul class="linklist wide">
+        {#each data.science as sec (sec.href)}
+          <li>
+            <a href={localHref(sec.href)}>{sec.title}</a>
+            {#if sec.why}<span class="note">{sec.why}</span>{/if}
+            {#if sec.intro}<span class="note">{sec.intro}</span>{/if}
+          </li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
   {#if body.visits.length}
     <section class="visits">
       <h2>{m.panel_tab_missions()}</h2>

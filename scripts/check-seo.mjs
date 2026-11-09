@@ -10,10 +10,23 @@
  *   - JSON-LD blocks that parse
  *   - exactly one <h1>
  *   - no robots noindex (a noindex leak drops a real page from search)
- *   - entity pages (/missions/<id> … /lab/<id>): at least 80 words in <main> (160
- *     characters for zh-CN and ja) — thinner is thin content, not a page
+ *   - entity pages (/missions/<id> … /lab/<id>): at least THIN_MIN_CHARS[locale]
+ *     characters of text in <main> (whitespace excluded), a regression floor (below)
  * and the sitemaps (/sitemap.xml index + /sitemaps/<locale>.xml) must list
  * exactly the indexable pages.
+ *
+ * The thin-page floor (ADR-096 decision 12). Every entity page stays indexable; the
+ * floor only stops a page from getting thinner than the corpus is today. It counts
+ * characters, not words, because words are not a fair unit across languages (a
+ * Korean "word" is ~3 characters, a German one ~7; zh-CN and ja have no spaces), and
+ * it is set per locale because the same content takes a different number of
+ * characters in each: measured over the 0.9.8 corpus, the median page is ~1.1-1.2x
+ * the English length in es / fr / de / pt-BR / it / nl / sr-Cyrl / ru, ~1.0x in hi /
+ * ar, ~0.55-0.6x in zh-CN / ja / ko. Each locale's floor is 95 % of its own thinnest
+ * entity page after the entity pages were enriched from localized data they already
+ * had (0.9.8), rounded down to 5. After a deliberate change to what the entity pages
+ * show, re-measure with `CHECK_SEO_FLOORS=1 node scripts/check-seo.mjs` (prints the
+ * thinnest page and the suggested floor per locale) and update THIN_MIN_CHARS.
  *
  * On the GitHub Pages mirror (VITE_BASE set) the rule flips: every page must be
  * noindex and carry no canonical (src/lib/seo.ts isMirrorBuild).
@@ -36,11 +49,25 @@ const DEFAULT_LOCALE = BASE_LOCALE;
 // (pageTitle() keeps the rest within 60); this ceiling catches real regressions.
 const TITLE_MAX = 90;
 const DESCRIPTION_MAX = 160;
-// An entity page with less text than this in <main> is thin content (ADR-096):
-// words, or characters for the locales that write without spaces.
-const THIN_MIN_WORDS = 80;
-const THIN_MIN_CHARS = 160;
-const CHAR_COUNT_LOCALES = ['zh-CN', 'ja'];
+// An entity page with fewer characters than this in <main> has got thinner than the
+// corpus was when the floor was set (ADR-096 decision 12; see the header).
+const THIN_MIN_CHARS = {
+  'en-US': 350,
+  es: 390,
+  fr: 430,
+  de: 390,
+  'pt-BR': 390,
+  it: 395,
+  nl: 410,
+  'sr-Cyrl': 315,
+  'zh-CN': 175,
+  ja: 190,
+  ko: 175,
+  hi: 345,
+  ar: 330,
+  ru: 390,
+};
+const thinnest = new Map();
 const ENTITY_ROUTE = /^\/(missions|fleet|moon|mars|venus|explore|lab)\/([^/]+)$/;
 // Index / app pages that sit under an entity prefix.
 const NOT_ENTITY = new Set(['/missions/launches', '/explore/hub']);
@@ -191,17 +218,13 @@ for (const file of files) {
   if (h1s !== 1) fail('h1 count is not 1', `${where} (${h1s})`);
 
   if (ENTITY_ROUTE.test(route) && !NOT_ENTITY.has(route)) {
-    const text = mainText(html);
     const locale = LOCALE_CODES.find((l) => path.startsWith(`/${l}/`)) ?? DEFAULT_LOCALE;
-    if (CHAR_COUNT_LOCALES.includes(locale)) {
-      const chars = [...text.replace(/\s/g, '')].length;
-      if (chars < THIN_MIN_CHARS)
-        fail(`thin entity page (under ${THIN_MIN_CHARS} characters)`, `${where} (${chars})`);
-    } else {
-      const words = text ? text.split(' ').length : 0;
-      if (words < THIN_MIN_WORDS)
-        fail(`thin entity page (under ${THIN_MIN_WORDS} words)`, `${where} (${words})`);
-    }
+    const chars = [...mainText(html).replace(/\s/g, '')].length;
+    const floor = THIN_MIN_CHARS[locale];
+    if (floor === undefined) fail('no thin-page floor for the locale', locale);
+    else if (chars < floor)
+      fail(`thin entity page (under ${locale}'s ${floor} characters)`, `${where} (${chars})`);
+    if (chars < (thinnest.get(locale)?.chars ?? Infinity)) thinnest.set(locale, { chars, where });
   }
 }
 
@@ -231,6 +254,14 @@ if (!BASE) {
     for (const p of indexable) if (!listed.has(p)) fail('indexable page missing from sitemaps', p);
     for (const p of listed) if (!indexable.has(p)) fail('sitemap URL is not an indexable page', p);
   }
+}
+
+if (process.env.CHECK_SEO_FLOORS) {
+  console.log('locale   thinnest  suggested floor  page');
+  for (const [locale, { chars, where }] of [...thinnest].sort())
+    console.log(
+      `${locale.padEnd(8)} ${String(chars).padStart(8)}  ${String(Math.floor((chars * 0.95) / 5) * 5).padStart(15)}  ${where}`,
+    );
 }
 
 const mode = BASE ? `mirror (${BASE})` : 'prod';

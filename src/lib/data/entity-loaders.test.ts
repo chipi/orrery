@@ -61,6 +61,20 @@ describe('getBodyEntity', () => {
     expect(ja).toMatchObject({ kind: 'small-body', name: '101955 Bennu', text: 'Rubble pile.' });
   });
 
+  it('carries the numbers and the science sections the panels show', async () => {
+    files['planets.json'] = {
+      planets: [{ name: 'Mars', a: 1.524, e: 0.0934, T: 686.98, incl: 1.85, axialTilt: 25.19 }],
+    };
+    files['i18n/de/planets/mars.json'] = { science_sections: [{ tab: 'orbits', section: 'x', why: 'Darum.' }] };
+    const mars = await getBodyEntity('mars', 'de');
+    expect(mars?.stats).toMatchObject({ semiMajorAxisAu: 1.524, periodDays: 686.98 });
+    expect(mars?.science).toEqual([{ tab: 'orbits', section: 'x', why: 'Darum.' }]);
+    files['satellites.json'] = {
+      satellites: [{ id: 'europa', name: 'Europa', parent_planet_id: 'jupiter', radius_km: 1560.8 }],
+    };
+    expect((await getBodyEntity('europa', 'en-US'))?.stats.radiusKm).toBe(1560.8);
+  });
+
   it('returns null for an unknown id', async () => {
     expect(await getBodyEntity('vulcan', 'en-US')).toBeNull();
   });
@@ -80,6 +94,23 @@ describe('getSiteEntity', () => {
     expect(de?.site).toMatchObject({ id: 'apollo11' });
     expect(de?.text.fact).toBe('First landing.');
     expect(de?.story).toBeNull();
+  });
+
+  it('adds the mission that flew to the site, with its hardware', async () => {
+    files['moon-sites.json'] = [{ id: 'apollo11', mission_id: 'a11' }];
+    files['missions/index.json'] = [{ id: 'a11', dest: 'Moon' }];
+    files['missions/moon/a11.json'] = { id: 'a11', fleet_refs: [{ id: 'saturn-v', role: 'launcher' }] };
+    files['i18n/de/missions/moon/a11.json'] = { name: 'Apollo 11', first: 'Erste Landung.' };
+    files['fleet/index.json'] = [{ id: 'saturn-v', category: 'launcher' }];
+    files['fleet/launcher/saturn-v.json'] = { id: 'saturn-v', name: 'Saturn V' };
+    files['i18n/de/fleet/launcher/saturn-v.json'] = { name: 'Saturn V', tagline: 'Mondrakete.' };
+    const e = await getSiteEntity('moon', 'apollo11', 'de');
+    expect(e?.mission).toEqual({
+      id: 'a11',
+      name: 'Apollo 11',
+      first: 'Erste Landung.',
+      hardware: [{ id: 'saturn-v', name: 'Saturn V', tagline: 'Mondrakete.' }],
+    });
   });
 
   it('returns null for an unknown site', async () => {

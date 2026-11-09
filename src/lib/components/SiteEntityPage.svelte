@@ -122,6 +122,31 @@
     </section>
   {/if}
 
+  {#if entity.mission}
+    <section class="mission">
+      <h2>{ogTitle(m.missions_page_title())}</h2>
+      <ul class="linklist wide">
+        <li>
+          <a href={localHref(`/missions/${entity.mission.id}`)}>{entity.mission.name}</a>
+          {#if entity.mission.first}<span class="note">{entity.mission.first}</span>{/if}
+        </li>
+      </ul>
+    </section>
+    {#if entity.mission.hardware.length}
+      <section class="hardware">
+        <h2>{ogTitle(m.fleet_page_title()).split(/\s[—–]\s/)[0]}</h2>
+        <ul class="linklist wide">
+          {#each entity.mission.hardware as h (h.id)}
+            <li>
+              <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
+              {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+            </li>
+          {/each}
+        </ul>
+      </section>
+    {/if}
+  {/if}
+
   <p class="actions">
     <a class="cta" href={localHref(`/${body}?site=${site.id}`)}>{m.launches_open_in_orrery()}</a>
     {#if site.mission_id}

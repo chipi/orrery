@@ -58,11 +58,66 @@
 
   {#if data.inWords}<p class="dispatch">{data.inWords}</p>{/if}
 
-  {#if data.outputs.length}
+  {#if data.parameters.length}
+    <section class="parameters">
+      <h2>{m.lab_ui_aria_parameters()}</h2>
+      <dl class="facts">
+        {#each data.parameters as row (row.label)}
+          <div>
+            <dt>{row.label}</dt>
+            <dd>{row.value}</dd>
+          </div>
+        {/each}
+      </dl>
+    </section>
+  {/if}
+
+  {#if data.results.length}
+    <section class="results">
+      <h2>{m.lab_ui_aria_results()}</h2>
+      <dl class="facts">
+        {#each data.results as row (row.label)}
+          <div>
+            <dt>{row.label}</dt>
+            <dd>{row.value}</dd>
+          </div>
+        {/each}
+      </dl>
+    </section>
+  {:else if data.outputs.length}
     <section class="results">
       <h2>{m.lab_ui_aria_results()}</h2>
       <ul>
         {#each data.outputs as label (label)}<li>{label}</li>{/each}
+      </ul>
+    </section>
+  {/if}
+
+  {#if data.assumptions.length}
+    <p class="assumptions">
+      <strong>{m.lab_ui_assumptions_label()}</strong>
+      {data.assumptions.join(' · ')}
+    </p>
+  {/if}
+
+  {#if data.buildsOn.length}
+    <section class="builds-on">
+      <h2>{m.lab_ui_builds_on()}</h2>
+      <ul class="linklist">
+        {#each data.buildsOn as f (f.id)}
+          <li><a href={localHref(`/lab/${f.id}`)}>{f.title}</a></li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
+  {#if data.sameDomain.length}
+    <section class="same-domain">
+      <h2>{m.lab_ui_title()}</h2>
+      <ul class="linklist">
+        {#each data.sameDomain as f (f.id)}
+          <li><a href={localHref(`/lab/${f.id}`)}>{f.title}</a></li>
+        {/each}
       </ul>
     </section>
   {/if}

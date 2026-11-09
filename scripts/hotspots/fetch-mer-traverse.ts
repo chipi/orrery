@@ -78,8 +78,11 @@ const ROVERS: Record<string, RoverSpec> = {
     lengthKm: 7.73,
     lastSol: 2210,
     toLatLon: (x, y) => [(y / IAU_MARS_RADIUS_M) * DEG, 175.5 + (x / IAU_MARS_RADIUS_M) * DEG],
-    // The lander beside Sleepy Hollow on PSP_003689_1650.
-    ties: [{ sol: 1, lat: -14.57337, lon: 175.47763 }],
+    // The lander beside Sleepy Hollow on PSP_001513_1655, the frame of the site patch and its
+    // ring (surface-hotspots spirit.lander). On PSP_003689_1650 the same lander sits 44 m
+    // east; the route tiles are cut from that frame and are moved by the same offset in
+    // spirit.route-patches.json / spirit.route-photos.json (images unchanged).
+    ties: [{ sol: 1, lat: -14.57326, lon: 175.47687 }],
     credit: (km, n, url) =>
       `© NASA/JPL-Caltech — Spirit rover traverse, Gusev Crater landing site (Jan 2004) across the Columbia Hills to Troy beside Home Plate (last contact March 2010): the science team's localized drive path (T. Parker, corrected against orbital images; interpolated by the PDS Geosciences Node, ${url}), ${km} km, simplified to ${n} points (Douglas–Peucker, ${SIMPLIFY_TOLERANCE_M} m).`,
     stops: [

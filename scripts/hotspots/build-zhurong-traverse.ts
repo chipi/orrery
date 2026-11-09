@@ -123,6 +123,13 @@ const CROPS: Crop[] = [
   },
 ];
 
+// The lander in the site patch's frame (ESP_075625_2055; surface-hotspots zhurong.lander, which
+// sits at mars-sites zhurong). The trace starts at the lander, and on ESP_073225_2055 the lander is
+// at that first traced point (checked with traverse-overlay.ts: within 1 m); the two products'
+// georeferencing differs by 22 m north / 15 m east, so the whole trace is moved by that offset.
+// Route tiles keep their images and are moved by the same offset in zhurong.route-patches.json.
+const LANDER_SITE_FRAME: [number, number] = [25.06437, 109.92658];
+
 // Parked rover, ESP_077511_2055, in ESP_073225_2055's georeferencing.
 const PARKED: [number, number] = [25.04116, 109.93026];
 
@@ -170,8 +177,10 @@ function pointAt(points: [number, number][], targetM: number): [number, number] 
 }
 
 async function main() {
-  const points = [...CROPS.flatMap((c) => c.px.map((p) => pxToLatLon(c, p))), PARKED].map(
-    ([la, lo]) => [round6(la), round6(lo)] as [number, number],
+  const traced = [...CROPS.flatMap((c) => c.px.map((p) => pxToLatLon(c, p))), PARKED];
+  const [dLat, dLon] = [LANDER_SITE_FRAME[0] - traced[0][0], LANDER_SITE_FRAME[1] - traced[0][1]];
+  const points = traced.map(
+    ([la, lo]) => [round6(la + dLat), round6(lo + dLon)] as [number, number],
   );
   let lengthM = 0;
   for (let i = 1; i < points.length; i++) lengthM += metres(points[i - 1], points[i]);

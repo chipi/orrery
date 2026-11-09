@@ -4,40 +4,40 @@
     {
       "id": "bonneville-approach",
       "sol": 43,
-      "lat": -14.573149,
-      "lon": 175.478243,
+      "lat": -14.573039,
+      "lon": 175.477483,
       "image": "/images/missions/spirit/11.webp",
       "thumb": "/images/missions/spirit/11-320.webp"
     },
     {
       "id": "bonneville-rim",
       "sol": 68,
-      "lat": -14.570107,
-      "lon": 175.481359,
+      "lat": -14.569997,
+      "lon": 175.480599,
       "image": "/images/missions/spirit/02.webp",
       "thumb": "/images/missions/spirit/02-320.webp"
     },
     {
       "id": "larrys-lookout",
       "sol": 410,
-      "lat": -14.591799,
-      "lon": 175.522354,
+      "lat": -14.591689,
+      "lon": 175.521594,
       "image": "/images/missions/spirit/12.webp",
       "thumb": "/images/missions/spirit/12-320.webp"
     },
     {
       "id": "beside-home-plate",
       "sol": 1809,
-      "lat": -14.607187,
-      "lon": 175.528207,
+      "lat": -14.607077,
+      "lon": 175.527447,
       "image": "/images/missions/spirit/13.webp",
       "thumb": "/images/missions/spirit/13-320.webp"
     },
     {
       "id": "troy",
       "sol": 1891,
-      "lat": -14.607409,
-      "lon": 175.527217,
+      "lat": -14.607299,
+      "lon": 175.526457,
       "image": "/images/missions/spirit/14.webp",
       "thumb": "/images/missions/spirit/14-320.webp"
     }

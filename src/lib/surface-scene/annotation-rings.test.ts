@@ -332,3 +332,39 @@ describe('areas and small rings', () => {
     expect(placed.get('a')?.rect.x).toBe(small.x);
   });
 });
+
+describe('layoutLabels short names and edge rings', () => {
+  const ring = 40;
+  const long = 'Rover tracks to the SEP site';
+
+  it('shows the curated short name before an ellipsis chip when the full name fits nowhere', () => {
+    const view = { w: 200, h: 600 };
+    const out = layoutLabels(
+      [{ id: 'r', x: 100, y: 300, label: long, short: 'Rover tracks' }],
+      view,
+      ring,
+    );
+    expect(out.get('r')?.text).toBe('Rover tracks');
+    expect(out.get('r')?.rect.w).toBe(estimateLabelWidth('Rover tracks'));
+  });
+
+  it('keeps the full name when it fits', () => {
+    const out = layoutLabels(
+      [{ id: 'r', x: 100, y: 300, label: long, short: 'Rover tracks' }],
+      { w: 800, h: 600 },
+      ring,
+    );
+    expect(out.get('r')?.text).toBe(long);
+  });
+
+  it('labels a ring partly past the right edge, the chip slid inside the view', () => {
+    const view = { w: 200, h: 600 };
+    const out = layoutLabels([{ id: 's', x: 195, y: 300, label: 'Surveyor 3' }], view, ring, [
+      { x: 0, y: 270, w: 150, h: 60 },
+    ]);
+    const lab = out.get('s')!;
+    expect(lab).toBeDefined();
+    expect(lab.rect.x).toBeGreaterThanOrEqual(0);
+    expect(lab.rect.x + lab.rect.w).toBeLessThanOrEqual(view.w);
+  });
+});

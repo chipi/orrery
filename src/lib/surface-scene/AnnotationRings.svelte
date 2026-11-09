@@ -134,6 +134,7 @@
       singles.map((r) => ({
         id: r.annotation.id,
         label: chipText(r.annotation),
+        short: r.annotation.label_short,
         x: r.x,
         y: r.y,
         ringPx: pxOf(r),
@@ -380,7 +381,7 @@
         style:left="{lab.rect.x}px"
         style:top="{lab.rect.y}px"
         style:width="{lab.rect.w}px"
-        aria-hidden="true">{chipText(r.annotation)}</span
+        aria-hidden="true">{lab.text}</span
       >
     {/if}
   {/each}

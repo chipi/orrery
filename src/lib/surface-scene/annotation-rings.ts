@@ -132,34 +132,58 @@ export const ringFootprint = ringDisc;
  * Which labels fit. Rings always stay. A label tries the right of its ring, then
  * the left, then above, then below it; a side is skipped when the chip would be clipped by
  * the view edge, run under a blocked rectangle (the side panel, HUD), or touch a
- * ring or an already placed label. Only when the full name fits on no side is a
- * shortened chip (ellipsis) tried, and a label that fits nowhere is dropped. Earlier anchors win a clash, so callers pass them in
- * priority order.
+ * ring or an already placed label. Texts are tried in order: the full name on every
+ * side, then the curated short name (`short`) on every side, and only then a shortened
+ * chip (ellipsis). A ring that itself sits partly past the view edge gets a last
+ * resort: its chip above or below it, slid along the edge to stay inside the view.
+ * A label that fits nowhere is dropped. Earlier anchors win a clash, so callers pass them in
+ * priority order. `text` is the string the chip must show.
  */
 export function layoutLabels(
-  anchors: Array<RingAnchor & { label: string }>,
+  anchors: Array<RingAnchor & { label: string; short?: string }>,
   view: { w: number; h: number },
   ringPx: number,
   blocked: Rect[] = [],
-): Map<string, { side: LabelSide; rect: Rect }> {
-  const placed = new Map<string, { side: LabelSide; rect: Rect }>();
+): Map<string, { side: LabelSide; rect: Rect; text: string }> {
+  const placed = new Map<string, { side: LabelSide; rect: Rect; text: string }>();
   const discs = [...anchors.map((a) => ringDisc(a, a.ringPx ?? ringPx)), ...blocked];
+  const inView = (r: Rect): boolean =>
+    r.x >= 0 && r.y >= 0 && r.x + r.w <= view.w && r.y + r.h <= view.h;
   for (const [i, a] of anchors.entries()) {
+    const own = a.ringPx ?? ringPx;
     const full = estimateLabelWidth(a.label);
-    const widths = full > SHORT_LABEL_PX ? [full, SHORT_LABEL_PX] : [full];
-    // the full name on any side beats a shortened chip on a preferred one
-    search: for (const width of widths) {
-      for (const side of ['right', 'left', 'top', 'bottom'] as const) {
-        const rect = labelRect(a, width, side, a.ringPx ?? ringPx);
-        const inside =
-          rect.x >= 0 && rect.y >= 0 && rect.x + rect.w <= view.w && rect.y + rect.h <= view.h;
-        if (!inside) continue;
-        const clash =
-          discs.some((d, j) => j !== i && overlaps(rect, d)) ||
-          [...placed.values()].some((p) => overlaps(rect, p.rect));
-        if (clash) continue;
-        placed.set(a.id, { side, rect });
-        break search;
+    const candidates = [{ text: a.label, width: full }];
+    const shortWidth = a.short ? estimateLabelWidth(a.short) : full;
+    if (a.short && shortWidth < full) candidates.push({ text: a.short, width: shortWidth });
+    if (Math.min(full, shortWidth) > SHORT_LABEL_PX) {
+      candidates.push({
+        text: a.short && shortWidth < full ? a.short : a.label,
+        width: SHORT_LABEL_PX,
+      });
+    }
+    const free = (rect: Rect): boolean =>
+      !discs.some((d, j) => j !== i && overlaps(rect, d)) &&
+      ![...placed.values()].some((p) => overlaps(rect, p.rect));
+    // the full name on any side beats a shorter text on a preferred one
+    search: {
+      for (const { text, width } of candidates) {
+        for (const side of ['right', 'left', 'top', 'bottom'] as const) {
+          const rect = labelRect(a, width, side, own);
+          if (!inView(rect) || !free(rect)) continue;
+          placed.set(a.id, { side, rect, text });
+          break search;
+        }
+      }
+      if (a.x - own / 2 >= 0 && a.x + own / 2 <= view.w) break search;
+      for (const { text, width } of candidates) {
+        if (width > view.w) continue;
+        for (const side of ['top', 'bottom'] as const) {
+          const raw = labelRect(a, width, side, own);
+          const rect = { ...raw, x: Math.max(0, Math.min(raw.x, view.w - width)) };
+          if (!inView(rect) || !free(rect)) continue;
+          placed.set(a.id, { side, rect, text });
+          break search;
+        }
       }
     }
   }

@@ -5,14 +5,14 @@
  * single dynamic function that handles the full status enum
  * (FLOWN | PLANNED | ACTIVE | ENDED | CRASHED | LOST).
  *
- * Colour palette mirrors the Mars implementation's tones — teal for
+ * Colour palette mirrors the Mars implementation's tones — muted blue for
  * active, red for crashed, orange for lost, blue for planned, dim for
  * historical (ended / flown).
  *
  * Optional `kind` argument refines the label for orbital sites — an
  * ACTIVE spacecraft sitting in orbit reads more honestly as "IN ORBIT"
  * than as "ACTIVE" (which fits surface landers + ground stations). The
- * tone colour stays the same active teal regardless of kind.
+ * tone colour stays the same active blue regardless of kind.
  */
 import type { SiteStatus, SiteKind, SurfaceSite } from '$types/surface-site';
 import * as m from '$lib/paraglide/messages';
@@ -33,7 +33,7 @@ export function statusTone(
     case 'ACTIVE':
       return {
         label: kind === 'orbiter' ? m.surface_status_in_orbit() : m.surface_status_active(),
-        color: '#4ecdc4',
+        color: '#889fe7',
       };
     case 'CRASHED':
       return { label: m.surface_status_crashed(), color: '#ff6b6b' };

@@ -3,8 +3,8 @@
   "patches": [
     {
       "id": "sol-182",
-      "lat": -4.58948,
-      "lon": 137.44913,
+      "lat": -4.590187,
+      "lon": 137.448702,
       "kind": "drill",
       "label": "John Klein drill",
       "image": "/images/hotspots/mars/curiosity/traverse/sol-182.webp",
@@ -58,8 +58,8 @@
     },
     {
       "id": "km-01",
-      "lat": -4.589467,
-      "lon": 137.441633,
+      "lat": -4.591318,
+      "lon": 137.440514,
       "kind": "route",
       "image": "/images/hotspots/mars/curiosity/traverse/km-01.webp",
       "product_id": "ESP_078499_1755",

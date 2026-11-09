@@ -2544,7 +2544,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.4693,
@@ -2567,7 +2567,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.5595,
@@ -2590,7 +2590,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.5807,
@@ -2613,7 +2613,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-14/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-14/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.4891,
@@ -2636,7 +2636,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-34/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-34/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.5194,
@@ -2659,7 +2659,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-39a/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39a/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.6059,
@@ -2682,7 +2682,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-39b/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39b/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.625,
@@ -2705,7 +2705,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-5/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-5/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.4355,
@@ -2728,7 +2728,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/starbase-orbital-a/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/starbase-orbital-a/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 25.9947,
@@ -2751,7 +2751,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/vandenberg-slc-4e/tier3-pan.jpg",
       "panorama_metadata": {
@@ -2795,7 +2795,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-2/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-2/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.2205,
@@ -2818,7 +2818,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-3/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-3/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.2275,
@@ -2841,7 +2841,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-4/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-4/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.2511,
@@ -2864,7 +2864,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 30.3984,
@@ -2887,7 +2887,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/baikonur-1-5/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-1-5/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/baikonur-1-5/tier3-pan.jpg",
       "panorama_metadata": {
@@ -2930,7 +2930,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/baikonur-200/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-200/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 46.0285,
@@ -2953,7 +2953,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/baikonur-31-6/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-31-6/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/baikonur-31-6/tier3-pan.jpg",
       "panorama_metadata": {
@@ -2997,7 +2997,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/plesetsk-41-1/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-41-1/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 62.9185,
@@ -3020,7 +3020,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/plesetsk-43/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-43/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 62.9155,
@@ -3043,7 +3043,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/jiuquan-slc-43/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/jiuquan-slc-43/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/jiuquan-slc-43/tier3-pan.jpg",
       "panorama_metadata": {
@@ -3087,7 +3087,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 38.8375,
@@ -3110,7 +3110,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/wenchang-lc-101/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/wenchang-lc-101/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/wenchang-lc-101/tier3-pan.jpg",
       "panorama_metadata": {
@@ -3154,7 +3154,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/xichang-lc-2/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-2/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.234,
@@ -3177,7 +3177,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/xichang-lc-3/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-3/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.2355,
@@ -3200,7 +3200,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/sriharikota-slp/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/sriharikota-slp/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/sriharikota-slp/tier3-pan.jpg",
       "panorama_metadata": {
@@ -3243,7 +3243,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-zlv/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-zlv/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.225,
@@ -3266,7 +3266,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-els/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-els/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.2904,
@@ -3289,7 +3289,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-lc-17/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-lc-17/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.4444,
@@ -3312,7 +3312,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/wallops-lc-0/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/wallops-lc-0/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 37.8317,
@@ -3335,7 +3335,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/uchinoura/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/uchinoura/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 31.25,
@@ -3358,7 +3358,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/baikonur-81/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-81/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 46.0593,
@@ -3381,7 +3381,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/vostochny-1s/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/vostochny-1s/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 51.8713,
@@ -3404,7 +3404,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/wenchang-lc-201/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/wenchang-lc-201/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 19.6069,
@@ -3427,7 +3427,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/rocket-lab-lc-1/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/rocket-lab-lc-1/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": -39.2638,
@@ -3450,7 +3450,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/naro-space-center/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/naro-space-center/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 34.4204,
@@ -3473,7 +3473,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/sohae/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/sohae/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 39.6486,
@@ -3496,7 +3496,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/semnan-imam-khomeini/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/semnan-imam-khomeini/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 35.2231,
@@ -3519,7 +3519,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/palmachim/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/palmachim/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 31.8729,
@@ -3542,7 +3542,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/woomera/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/woomera/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 50,
       "region_bounds": {
         "lat_min": -30.9832,
@@ -3565,7 +3565,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/hammaguir/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/hammaguir/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 30.7666,
@@ -3588,7 +3588,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/san-marco/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/san-marco/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 700,
       "region_bounds": {
         "lat_min": -2.9498,
@@ -3611,7 +3611,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/alcantara/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/alcantara/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": -2.3292,

@@ -64,6 +64,8 @@ export interface TagFrame {
   opacity: number;
   /** Added to the spec's priority (the selected site claims its card first). */
   boost?: number;
+  /** Card and leader opacity multiplier (default 1); at 0 the tag is its icon alone, whatever the zoom stage. */
+  card?: number;
 }
 
 export interface Rect {
@@ -569,6 +571,8 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
       shown: boolean;
       hover?: boolean;
       bare: boolean;
+      /** The card opacity written on the element ('' = inherits the layer's). */
+      cardVar?: string;
       z: number;
       left?: boolean;
       card?: { dx: number; dy: number; w: number; h: number };
@@ -713,13 +717,14 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
         });
       }
     }
+    const cardOf = (lead: string) => byKey.get(lead)?.card ?? 1;
     // Icons-only stage: no cards, no thinning.
     const cards =
       stage.card < 0.01 || fan
         ? new Map<string, number>()
         : thinCards(
             shown
-              .filter((s) => !s.fan)
+              .filter((s) => !s.fan && cardOf(s.g.lead) > 0.01)
               .map(({ g, id }) => {
                 const c = state.get(id)!.card ?? { dx: 0, dy: 0, w: 0, h: 0 };
                 const box = (dx: number) => ({
@@ -751,9 +756,15 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
         el.classList.toggle('site-tag--hover', hovered);
         st.hover = hovered;
       }
+      const cardMul = fanItem ? 1 : cardOf(g.lead);
       let side = fanItem ? fanItem.side : cards.get(id);
-      if (hovered && side == null)
+      if (hovered && side == null && cardMul > 0.01)
         side = st.card && g.x + st.card.dx + st.card.w > root.clientWidth ? 1 : 0;
+      const cardVar = cardMul >= 0.99 ? '' : (stage.card * cardMul).toFixed(3);
+      if (cardVar !== (st.cardVar ?? '')) {
+        el.style.setProperty('--tag-card', cardVar);
+        st.cardVar = cardVar;
+      }
       const bare = side == null;
       if (bare !== st.bare) {
         el.classList.toggle('site-tag--bare', bare);

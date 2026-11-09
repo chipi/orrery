@@ -546,3 +546,34 @@ describe('fan in the tag layer', () => {
     expect(shown().find((e) => e.dataset.tag === 'd')!.style.opacity).toBe('');
   });
 });
+
+describe('a tag with its card faded out is its icon alone (selected site, zoomed in)', () => {
+  const setup = () => {
+    const host = document.createElement('div');
+    document.body.appendChild(host);
+    const layer = createSiteTagLayer(host);
+    layer.setSpecs([spec('a', 1), spec('b', 2)]);
+    const find = (k: string) =>
+      [...host.querySelectorAll<HTMLElement>('.site-tag')].find((e) => e.dataset.tag === k)!;
+    return { layer, find };
+  };
+  const full = { icon: 1, size: 1, card: 1 };
+  it('card 0 hides card and leader even at the full-card stage, and even when hovered', () => {
+    const { layer, find } = setup();
+    const frames = [
+      { key: 'a', x: 100, y: 100, opacity: 1, card: 0 },
+      { key: 'b', x: 400, y: 100, opacity: 1 },
+    ];
+    layer.setHover('a');
+    layer.sync(frames, [], full);
+    expect(find('a').classList.contains('site-tag--bare')).toBe(true);
+    expect(find('a').style.display).not.toBe('none');
+  });
+  it('a partial card fade is written on the tag alone and cleared when it ends', () => {
+    const { layer, find } = setup();
+    layer.sync([{ key: 'a', x: 100, y: 100, opacity: 1, card: 0.5 }], [], full);
+    expect(find('a').style.getPropertyValue('--tag-card')).toBe('0.500');
+    layer.sync([{ key: 'a', x: 100, y: 100, opacity: 1 }], [], full);
+    expect(find('a').style.getPropertyValue('--tag-card')).toBe('');
+  });
+});

@@ -1564,6 +1564,20 @@
       }
     }
   }
+  /** The crosshair marks the selected site's spot once its tag icon has gone. With the
+   *  panel closed, a tap within reach of it (on the ground, or on a ring or badge sitting
+   *  there) reopens the panel, as does the landing ring (`ringId`) wherever it sits. `x`, `y`: container px. */
+  function reopenPanelAt(x: number, y: number, ringId?: string): boolean {
+    if (!selected || panelOpen || flatPatchActive || panoramaActive) return false;
+    if (ringId !== 'landing') {
+      const ch = siteCrosshairScreen;
+      if (!ch?.onScreen || regionalOpacityForUi <= 0.35 || Math.hypot(x - ch.x, y - ch.y) > 24)
+        return false;
+    }
+    cue('select');
+    panelOpen = true;
+    return true;
+  }
   /** Open a museum's card (PRD-027); `face` flies the camera to it. */
   function selectMuseum(id: string, options: { face?: boolean } = {}) {
     const mu = museumsCache.find((x) => x.id === id);
@@ -1756,6 +1770,7 @@
     });
     lifecycle.add(() => siteTags.dispose());
     const siteTagFade = new Map<string, number>();
+    const siteCardFade = new Map<string, number>();
     const siteTagPos = new THREE.Vector3();
     let siteTagSources: unknown[] = [];
     // HUD panels over the canvas (detail panel, chips, legend, rulers): cards
@@ -3066,6 +3081,7 @@
       el3d,
       camera,
       markers,
+      getSiteFade: (id) => siteTagFade.get(id) ?? 1,
       orbitalMarkers,
       traverseLines,
       hotspots,
@@ -3103,6 +3119,11 @@
       onSitePicked: (id) => {
         cue('select');
         selectedSat = null;
+        if (selected?.id === id && camR < 60) {
+          // Already close on it: reopen the panel without a camera move.
+          panelOpen = true;
+          return;
+        }
         // CORE-2 — a plain site click zooms + centres on every surface
         // route (earth / moon / mars), matching the ?site= deep-link and
         // the orbital-object focus. Uniform across planets — no per-body
@@ -3154,11 +3175,35 @@
       const id = hit.lead.slice(hit.lead.indexOf(':') + 1);
       if (hit.lead.startsWith('museum:')) selectMuseum(id, { face: true });
       else if (hit.lead.startsWith('scope:')) selectObservatory(id, { face: true });
-      else {
+      else if (selected?.id === id && camR < 60) {
+        // Zoomed in on the selected site (its icon is all that is left of the
+        // tag): the tap reopens the panel where the camera already is.
+        selectedSat = null;
+        panelOpen = true;
+      } else {
         selectedSat = null;
         selectSite(id, { face: true });
       }
       return true;
+    };
+    // A photo pin opens its photo (#641); the selected site's landing ring, once its
+    // icon has handed over to it, reopens the panel; anything else picks as before.
+    const pickAt = (clientX: number, clientY: number) => {
+      const stop = pickStopAt(clientX, clientY);
+      if (stop?.image) {
+        panelLightbox = stop.image;
+        return;
+      }
+      if (stop?.landingOf && stop.landingOf === selected?.id && !panelOpen) {
+        cue('select');
+        panelOpen = true;
+        return;
+      }
+      // Close in, the camera sits inside the marker's hit sphere (no raycast hit): the
+      // crosshair that marks the selected site's spot takes the tap.
+      const r = container!.getBoundingClientRect();
+      if (reopenPanelAt(clientX - r.left, clientY - r.top)) return;
+      if (!pickTagAt(clientX, clientY)) tryPick3d(clientX, clientY);
     };
 
     let hoveredSiteId: string | null = null;
@@ -3301,9 +3346,7 @@
       // hotspot instead of doing nothing.
       if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') {
         // A photo pin opens its photo (#641); anything else picks as before.
-        const photo = pickStopAt(e.clientX, e.clientY)?.image;
-        if (photo) panelLightbox = photo;
-        else if (!pickTagAt(e.clientX, e.clientY)) tryPick3d(e.clientX, e.clientY);
+        pickAt(e.clientX, e.clientY);
       }
     };
     // Suppress the browser context menu on right-click so right-drag
@@ -3445,9 +3488,7 @@
         e.touches.length === 0
       ) {
         const t = e.changedTouches[0];
-        const photo = pickStopAt(t.clientX, t.clientY)?.image;
-        if (photo) panelLightbox = photo;
-        else if (!pickTagAt(t.clientX, t.clientY)) tryPick3d(t.clientX, t.clientY);
+        pickAt(t.clientX, t.clientY);
       }
     };
 
@@ -4026,6 +4067,26 @@
           }
           const labelFade = Math.max(0, 1 - regionalOpacityTop * 4);
 
+          // Tier-2 detail opacity ramp. Patch is eager-built at site
+          // creation so tier2Group exists even when curTier < 2; we
+          // override the dispatcher's "tier2 hidden when tier<2"
+          // decision and control visibility 100% via camR. ADR-072
+          // §Drift 7: range consolidated to 33→30.5 (was 50→33 on
+          // Moon — Mars's tighter window matches actual Tier-2 patch
+          // dimensions). Traverse polylines + end-dots + captions
+          // share this ramp via tier2DelayedReveal.
+          const detailFadeStart = 33;
+          // 30.5 → 30.32 (2026-06-01): hold detail fully visible right
+          // up to the new SPHERE_TO_FLAT_CAM_R floor, instead of
+          // peaking and then having a dead band before flat-patch.
+          const detailFadeEnd = 30.32;
+          const detailOpacity =
+            camR >= detailFadeStart
+              ? 0
+              : camR <= detailFadeEnd
+                ? 1
+                : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
+
           const selectedSiteId = selected?.id;
           // A neighbour whose marker sits under the selected site's magnified
           // imagery is drawn at its true place on a ~20× map, so its tag lands
@@ -4040,12 +4101,19 @@
             : null;
           const footUnit = footCtr ? latLonToUnitSphere(footCtr.lat, footCtr.lon) : null;
           const footR = (REGIONAL_PATCH_DIAMETER_WORLD_UNITS * 0.75) / planetRadius;
-          // The selected site's tag leaves first (camR 60 → 50): seen from
-          // straight above, its leader points at the camera; the panel title
-          // and crosshair carry it (#641). A site's own imagery tier no longer
-          // hides its tag — with nothing selected the LOD promotes and evicts
-          // sites as you zoom, and the tags blinked with it.
+          // The selected site's card and leader leave first (camR 60 → 50): seen
+          // from straight above, the leader points at the camera; the panel title
+          // and crosshair carry it (#641). Its icon stays, so there is always
+          // something to click when the panel is closed, until the site's own
+          // route / landing ring shows (the detail ramp) and takes over; a site
+          // with no such imagery keeps the icon down to the zoom floor. The 3D
+          // models still leave with the regional photo (2026-06). A site's own
+          // imagery tier no longer hides its tag — with nothing selected the LOD
+          // promotes and evicts sites as you zoom, and the tags blinked with it.
           const selectedFade = Math.max(0, Math.min(1, (camR - 50) / 10));
+          const ownDetail =
+            !!selected && (!!selected.hotspot_tier2_source || routeViewCenters.has(selected.id));
+          const selectedIconFade = ownDetail ? 1 - detailOpacity : 1;
           for (const mk of markers) {
             let underFootprint = false;
             if (footUnit && mk.siteId !== selectedSiteId) {
@@ -4053,13 +4121,10 @@
               underFootprint =
                 Math.hypot(u.x - footUnit.x, u.y - footUnit.y, u.z - footUnit.z) < footR;
             }
-            const fade =
-              mk.siteId === selectedSiteId
-                ? Math.min(labelFade, selectedFade)
-                : underFootprint
-                  ? labelFade
-                  : 1;
+            const isSel = mk.siteId === selectedSiteId;
+            const fade = isSel ? selectedIconFade : underFootprint ? labelFade : 1;
             siteTagFade.set(mk.siteId, mk.group.visible ? fade : 0);
+            siteCardFade.set(mk.siteId, isSel ? Math.min(labelFade, selectedFade) : 1);
           }
 
           // Site tags: content when the lists change (load, locale), then
@@ -4083,7 +4148,13 @@
             const cw = renderer.domElement.clientWidth;
             const ch = renderer.domElement.clientHeight;
             const centre = planetMesh.getWorldPosition(legendScratchB);
-            const tagAt = (key: string, obj: THREE.Object3D, opacity: number, boost = 0) => {
+            const tagAt = (
+              key: string,
+              obj: THREE.Object3D,
+              opacity: number,
+              boost = 0,
+              card = 1,
+            ) => {
               if (opacity <= 0.01) return;
               const wp = obj.getWorldPosition(siteTagPos);
               const facing =
@@ -4112,6 +4183,7 @@
                 y: ((1 - ndc.y) / 2) * ch,
                 opacity: focused,
                 boost,
+                card,
               });
             };
             for (const mk of markers)
@@ -4120,6 +4192,7 @@
                 mk.group,
                 siteTagFade.get(mk.siteId) ?? 0,
                 mk.siteId === selected?.id ? 10 : 0,
+                siteCardFade.get(mk.siteId) ?? 1,
               );
             // A place under the selected site's magnified imagery would sit on
             // the wrong ground: it fades with the reveal band, the rest stay.
@@ -4165,25 +4238,7 @@
           const tagsOn = stage.icon > 0.01;
           if (tagsOn !== tagStageOn) tagStageOn = tagsOn;
 
-          // Tier-2 detail opacity ramp. Patch is eager-built at site
-          // creation so tier2Group exists even when curTier < 2; we
-          // override the dispatcher's "tier2 hidden when tier<2"
-          // decision and control visibility 100% via camR. ADR-072
-          // §Drift 7: range consolidated to 33→30.5 (was 50→33 on
-          // Moon — Mars's tighter window matches actual Tier-2 patch
-          // dimensions). Traverse polylines + end-dots + captions
-          // share this ramp via tier2DelayedReveal.
-          const detailFadeStart = 33;
-          // 30.5 → 30.32 (2026-06-01): hold detail fully visible right
-          // up to the new SPHERE_TO_FLAT_CAM_R floor, instead of
-          // peaking and then having a dead band before flat-patch.
-          const detailFadeEnd = 30.32;
-          const detailOpacity =
-            camR >= detailFadeStart
-              ? 0
-              : camR <= detailFadeEnd
-                ? 1
-                : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
+          // (detailOpacity, the tier-2 detail ramp, is computed above with the tag fades.)
           // Regional CTX patch reveals EARLIER than the HiRISE detail
           // patch — the user wants to see the wider CTX context first
           // (~30km bbox) and only commit to the inner HiRISE area
@@ -5334,6 +5389,7 @@
         blocked={ringBlocked}
         onOpenPhoto={(src) => (panelLightbox = src)}
         onZoomTo={(_x, _y, factor) => zoomPatchBy(factor)}
+        onRingTap={reopenPanelAt}
       />
     {/if}
   </div>

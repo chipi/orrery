@@ -49,6 +49,7 @@
     onWheel,
     onOpenPhoto,
     onZoomTo,
+    onRingTap,
     blocked = [],
   }: {
     rings: PlacedRing[];
@@ -60,6 +61,8 @@
     onOpenPhoto?: (src: string) => void;
     /** Zoom the view in by `factor` around a screen point; false when already at the zoom limit. */
     onZoomTo?: (x: number, y: number, factor: number) => boolean;
+    /** First look at a tap on a ring (`id`) or badge at (x, y) in overlay px: true when the page handled it (no popover, no zoom). */
+    onRingTap?: (x: number, y: number, id?: string) => boolean;
     /** Screen rectangles (e.g. WebGL traverse stop pills) that ring labels keep clear of. */
     blocked?: Rect[];
   } = $props();
@@ -319,7 +322,7 @@
       aria-label={c.members.map((r) => r.annotation.label).join(', ')}
       data-testid="annotation-cluster"
       data-count={c.members.length}
-      onclick={() => clickCluster(c)}
+      onclick={() => !onRingTap?.(c.x, c.y) && clickCluster(c)}
       onpointerenter={(e) => e.pointerType !== 'touch' && (previewCluster = c.key)}
       onpointerleave={() => previewCluster === c.key && (previewCluster = null)}
       onfocus={(e) =>
@@ -349,7 +352,7 @@
       aria-expanded={annotationUi.openId === id}
       data-testid="annotation-ring"
       data-annotation-id={id}
-      onclick={() => toggle(id)}
+      onclick={() => !onRingTap?.(r.x, r.y, id) && toggle(id)}
       onpointerenter={(e) => enter(e, id)}
       onpointerleave={() => leave(id)}
       onfocus={(e) => focus(e, id)}

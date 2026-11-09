@@ -23,6 +23,11 @@ import type { MuseumPin } from '$lib/surface-scene/museum-layer';
 import type { EarthObject } from '$types/earth-object';
 import type { PanoramaAnnotation, SurfaceSite } from '$types/surface-site';
 
+/** Below this a site's tag is too faint to tap (the tag layer's own floor), so its marker is not a target either. */
+const SITE_PICK_MIN_FADE = 0.3;
+/** Reach of a marker's invisible hit sphere on screen, px (the tag layer's touch target is 44 px square). */
+const HIT_SPHERE_MAX_PX = 24;
+
 /** The slice of a rendered traverse the stop picker raycasts against. */
 export interface PickableTraverseLine {
   stopPins: THREE.Sprite[];
@@ -67,13 +72,17 @@ export interface StopPickHit {
   label?: string;
   lat?: number;
   lon?: number;
+  /** Set on the landing ring / patch pin: the site it marks (a click on it opens that site's panel). */
+  landingOf?: string;
 }
 
 export interface SurfacePickingContext {
   el3d: HTMLElement;
   camera: THREE.PerspectiveCamera;
   /** Surface markers (mutated in place by rebuildMarkers). */
-  markers: ReadonlyArray<{ group: THREE.Group }>;
+  markers: ReadonlyArray<{ group: THREE.Group; siteId?: string }>;
+  /** Opacity of a site's visible stand-in (its tag); a marker whose stand-in is faded out catches no clicks. */
+  getSiteFade?: (siteId: string) => number;
   /** Orbital markers (mutated in place by rebuildOrbitalMarkers). */
   orbitalMarkers: ReadonlyArray<OrbiterMarker>;
   traverseLines: ReadonlyArray<PickableTraverseLine>;
@@ -117,10 +126,38 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
     const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
     ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
     const targets: THREE.Object3D[] = [];
-    if (ctx.getPadsOn()) for (const mk of ctx.markers) targets.push(mk.group);
+    if (ctx.getPadsOn())
+      for (const mk of ctx.markers)
+        if (!mk.siteId || (ctx.getSiteFade?.(mk.siteId) ?? 1) > SITE_PICK_MIN_FADE)
+          targets.push(mk.group);
     if (ctx.getLayerOrbiters()) for (const om of ctx.orbitalMarkers) targets.push(om.dotGroup);
     const hits = ray.intersectObjects(targets, true);
-    const hit = hits.find((h) => typeof h.object.userData.siteId === 'string');
+    const surfaceGroups = new Set<THREE.Object3D>(ctx.markers.map((mk) => mk.group));
+    const centre = new THREE.Vector3();
+    const hit = hits.find((h) => {
+      if (typeof h.object.userData.siteId !== 'string') return false;
+      let root: THREE.Object3D = h.object;
+      let shown = true;
+      while (root.parent && !surfaceGroups.has(root)) {
+        shown &&= root.visible;
+        root = root.parent;
+      }
+      // Orbital markers keep their own rules.
+      if (!surfaceGroups.has(root)) return true;
+      // Raycasting ignores `visible` and opacity: a hidden or faded-out part is no target.
+      const mat = (h.object as THREE.Mesh).material as THREE.Material | undefined;
+      if (!shown || (mat && mat.visible !== false && mat.opacity < 0.05)) return false;
+      if (mat?.visible !== false) return true;
+      // A marker's invisible hit sphere is 3 world units wide: close in it covers
+      // most of the screen. Keep it as a touch-sized target around the marker.
+      const c = h.object.getWorldPosition(centre).project(camera);
+      return (
+        Math.hypot(
+          rect.left + ((c.x + 1) / 2) * rect.width - clientX,
+          rect.top + ((1 - c.y) / 2) * rect.height - clientY,
+        ) <= HIT_SPHERE_MAX_PX
+      );
+    });
     return hit ? (hit.object.userData.siteId as string) : null;
   }
 
@@ -307,6 +344,7 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
         label: ud.stopLabel,
         lat: ud.stopLat,
         lon: ud.stopLon,
+        landingOf: ud.roverId,
       };
     }
     if (ud.kind === 'traverse-end') {
@@ -325,6 +363,7 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
         label: site.landing_date ? m.surface_landed_on({ date: site.landing_date }) : undefined,
         lat: site.lat,
         lon: site.lon,
+        landingOf: site.id,
       };
     }
     return null;

@@ -18,6 +18,15 @@
  *   (Soyuz in ru where «Союз» belongs — src/lib/name-origins.js).
  * Base data (static/data/*.json not under i18n/): prose strings in data sets
  *   that have no en-US overlay directory or file — English with no translation path.
+ *
+ * --gate (validate-data, check-i18n-coverage): exits 1 on a missing file or key, empty, placeholder
+ * text, type or length mismatch, a string left identical to the English (overlays), and the same
+ * for messages. extraKey, extraFile, nameOverride and base data are reported, not gated.
+ * An identical string that is right (a name kept in English, a word spelled the same) is recorded
+ * in scripts/i18n-tools/coverage-reviewed.json as locale|file|field with a reason and a hash of
+ * the English and the translation, so an edit to either brings it back:
+ *   node scripts/i18n-coverage-scan.mjs --accept=<locale|*>|<file>|<field> --why="reason"
+ * (* records every locale where that field is flagged now). A stale exception fails the gate too.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -25,8 +34,9 @@ import { SKIP_KEY } from './i18n-manifest.mjs';
 import { designations, knownNamesIn } from './lib/translate-quality.mjs';
 import { ORIGIN_NAMES, nativeName } from '../src/lib/name-origins.js';
 import { KEEP_ENGLISH_FILES, keepEnglish } from './lib/native-skip.mjs';
+import { textHash } from './i18n-tools/term-match.mjs';
 
-const ROOT = path.resolve(import.meta.dirname, '..');
+const ROOT = process.env.I18N_COVERAGE_ROOT ?? path.resolve(import.meta.dirname, '..');
 const SRC = path.join(ROOT, 'i18n-src');
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {
@@ -34,7 +44,24 @@ const args = Object.fromEntries(
     return [k, v.join('=') || true];
   }),
 );
-const EX = Number(args.examples ?? 3);
+const GATED = new Set([
+  'missingFile',
+  'missingKey',
+  'empty',
+  'placeholderText',
+  'typeMismatch',
+  'lengthMismatch',
+  'sameAsEnglish',
+  'messages:missingFile',
+  'messages:missingKey',
+  'messages:empty',
+  'messages:sameAsEnglish',
+  'messages:placeholder',
+]);
+const REVIEWED_FILE =
+  process.env.I18N_COVERAGE_REVIEWED ??
+  path.join(ROOT, 'scripts/i18n-tools/coverage-reviewed.json');
+const EX = args.gate || args.accept ? Infinity : Number(args.examples ?? 3);
 const LOCALES = fs
   .readdirSync(SRC)
   .filter((d) => d !== 'en-US' && fs.statSync(path.join(SRC, d)).isDirectory())
@@ -100,11 +127,13 @@ const untranslated = (field, s) =>
 const sameByField = {};
 
 const report = {};
-const add = (loc, kindName, where) => {
+const found = []; // gated findings: { loc, kind, rel, at, en, tr }
+const add = (loc, kindName, where, rec) => {
   const r = (report[loc] ||= {});
   const k = (r[kindName] ||= { n: 0, ex: [] });
   k.n++;
   if (k.ex.length < EX) k.ex.push(where);
+  if (GATED.has(kindName)) found.push({ loc, kind: kindName, ...rec });
 };
 
 /** True when a value holds at least one non-empty string. */
@@ -120,19 +149,25 @@ function compare(loc, rel, en, tr, at = '') {
   const kt = kind(tr);
   if (kt === 'undefined') {
     if (ke === 'string' && en.trim() && !SKIP_KEY.test(at))
-      add(loc, 'missingKey', `${rel} :: ${at}`);
+      add(loc, 'missingKey', `${rel} :: ${at}`, { rel, at, en, tr: '' });
     else if ((ke === 'list' || ke === 'object') && hasText(en)) {
       // Count the strings inside a missing container once, as one missing key. An empty
       // en-US list (six launch pads carry `hotspot_annotations: []`) has nothing to
       // translate, so a locale without it shows no English.
-      add(loc, 'missingKey', `${rel} :: ${at} (whole ${ke})`);
+      add(loc, 'missingKey', `${rel} :: ${at} (whole ${ke})`, { rel, at, en: '', tr: '' });
     }
     return;
   }
-  if (ke !== kt) return add(loc, 'typeMismatch', `${rel} :: ${at} en=${ke} tr=${kt}`);
+  if (ke !== kt)
+    return add(loc, 'typeMismatch', `${rel} :: ${at} en=${ke} tr=${kt}`, {
+      rel,
+      at,
+      en: '',
+      tr: '',
+    });
   if (ke === 'string') {
     if (/^<[A-Z_ ]+>$/.test(tr.trim()))
-      return add(loc, 'placeholderText', `${rel} :: ${at} = ${tr}`);
+      return add(loc, 'placeholderText', `${rel} :: ${at} = ${tr}`, { rel, at, en, tr });
     if (SKIP_KEY.test(at)) return;
     // Origin-language rule: in a name's own locale the native form is used, so the
     // English form left in the text is a miss (link labels are English source titles).
@@ -155,7 +190,7 @@ function compare(loc, rel, en, tr, at = '') {
         );
         if (hit) add(loc, 'nativeNameMissing', `${rel} :: ${at} — ${n} → ${nat}`);
       }
-    if (en.trim() && !tr.trim()) add(loc, 'empty', `${rel} :: ${at}`);
+    if (en.trim() && !tr.trim()) add(loc, 'empty', `${rel} :: ${at}`, { rel, at, en, tr });
     else if (tr === en) {
       const field =
         at
@@ -163,7 +198,7 @@ function compare(loc, rel, en, tr, at = '') {
           .filter((s) => !/^\d+$/.test(s))
           .pop() ?? '';
       if (untranslated(field, en) && !SAME_OK[loc]?.includes(en) && !SAME_OK['*'].includes(en)) {
-        add(loc, 'sameAsEnglish', `${rel} :: ${at} — ${en.slice(0, 70)}`);
+        add(loc, 'sameAsEnglish', `${rel} :: ${at} — ${en.slice(0, 70)}`, { rel, at, en, tr });
         sameByField[field] = (sameByField[field] || 0) + 1;
       }
     }
@@ -171,13 +206,24 @@ function compare(loc, rel, en, tr, at = '') {
   }
   if (ke === 'list') {
     if (en.length !== tr.length && !(en.length === 0 && rel.startsWith('hotspot-metadata/')))
-      add(loc, 'lengthMismatch', `${rel} :: ${at} en=${en.length} tr=${tr.length}`);
+      add(loc, 'lengthMismatch', `${rel} :: ${at} en=${en.length} tr=${tr.length}`, {
+        rel,
+        at,
+        en: '',
+        tr: '',
+      });
     // Lists of objects with ids are matched by id; plain lists by index.
     const byId = en.every((x) => x && typeof x === 'object' && 'id' in x);
     en.forEach((x, i) => {
       const t = byId ? tr.find((y) => y && y.id === x.id) : tr[i];
       if (t !== undefined || !byId) compare(loc, rel, x, t, `${at}.${byId ? x.id : i}`);
-      else add(loc, 'missingKey', `${rel} :: ${at}.${x.id} (list item)`);
+      else
+        add(loc, 'missingKey', `${rel} :: ${at}.${x.id} (list item)`, {
+          rel,
+          at: `${at}.${x.id}`,
+          en: '',
+          tr: '',
+        });
     });
     return;
   }
@@ -191,7 +237,12 @@ function compare(loc, rel, en, tr, at = '') {
       if (k === 'name' && !at && typeof tr[k] === 'string')
         add(loc, 'nameOverride', `${where} = ${tr[k]}`);
       else if (typeof tr[k] === 'string' && /^<[A-Z_ ]+>$/.test(tr[k].trim()))
-        add(loc, 'placeholderText', `${where} = ${tr[k]}`);
+        add(loc, 'placeholderText', `${where} = ${tr[k]}`, {
+          rel,
+          at: at ? `${at}.${k}` : k,
+          en: '',
+          tr: tr[k],
+        });
       else add(loc, 'extraKey', where);
     }
   }
@@ -203,7 +254,7 @@ for (const loc of LOCALES) {
   for (const rel of enFiles) {
     const lp = path.join(SRC, loc, rel);
     if (!fs.existsSync(lp)) {
-      add(loc, 'missingFile', rel);
+      add(loc, 'missingFile', rel, { rel, at: '', en: '', tr: '' });
       continue;
     }
     const en = JSON.parse(fs.readFileSync(path.join(SRC, 'en-US', rel), 'utf8'));
@@ -229,19 +280,25 @@ const ph = (s) =>
 for (const loc of LOCALES) {
   const p = path.join(ROOT, 'messages', `${loc}.json`);
   if (!fs.existsSync(p)) {
-    add(loc, 'messages:missingFile', `messages/${loc}.json`);
+    add(loc, 'messages:missingFile', `messages/${loc}.json`, {
+      rel: 'messages.json',
+      at: '',
+      en: '',
+      tr: '',
+    });
     continue;
   }
   const m = JSON.parse(fs.readFileSync(p, 'utf8'));
   for (const [k, v] of Object.entries(msgEn)) {
     if (k.startsWith('$')) continue;
-    if (!(k in m)) add(loc, 'messages:missingKey', k);
+    const rec = { rel: 'messages.json', at: k, en: String(v), tr: String(m[k] ?? '') };
+    if (!(k in m)) add(loc, 'messages:missingKey', k, rec);
     else if (typeof v === 'string' && v.trim() && !String(m[k]).trim())
-      add(loc, 'messages:empty', k);
+      add(loc, 'messages:empty', k, rec);
     else if (m[k] === v && isProse(v))
-      add(loc, 'messages:sameAsEnglish', `${k} — ${v.slice(0, 70)}`);
+      add(loc, 'messages:sameAsEnglish', `${k} — ${v.slice(0, 70)}`, rec);
     else if (typeof v === 'string' && ph(v) !== ph(m[k]))
-      add(loc, 'messages:placeholder', `${k} en=[${ph(v)}] tr=[${ph(m[k])}]`);
+      add(loc, 'messages:placeholder', `${k} en=[${ph(v)}] tr=[${ph(m[k])}]`, rec);
   }
   for (const k of Object.keys(m))
     if (!k.startsWith('$') && !(k in msgEn)) add(loc, 'messages:extraKey', k);
@@ -289,6 +346,48 @@ for (const d of fs
       example: found[0][1].slice(0, 90),
     });
   }
+}
+
+const reviewedKey = (loc, rel, at) => `${loc}|${rel}|${at}`;
+const loadReviewed = () =>
+  fs.existsSync(REVIEWED_FILE) ? JSON.parse(fs.readFileSync(REVIEWED_FILE, 'utf8')) : {};
+const matches = (ok, f) => ok && ok.en === textHash(f.en) && ok.tr === textHash(f.tr);
+
+if (args.accept) {
+  const [who, rel, at] = String(args.accept).split('|');
+  if (!who || !rel || at === undefined || !args.why || args.why === true)
+    throw new Error('--accept=<locale|*>|<file>|<field> --why="reason"');
+  const hits = found.filter((f) => f.rel === rel && f.at === at && (who === '*' || f.loc === who));
+  if (!hits.length) throw new Error(`no finding at ${args.accept}`);
+  const all = loadReviewed();
+  for (const f of hits)
+    all[reviewedKey(f.loc, f.rel, f.at)] = {
+      why: args.why,
+      en: textHash(f.en),
+      tr: textHash(f.tr),
+    };
+  const sorted = Object.fromEntries(Object.entries(all).sort(([a], [b]) => (a < b ? -1 : 1)));
+  fs.writeFileSync(REVIEWED_FILE, `${JSON.stringify(sorted, null, 2)}\n`);
+  console.log(`reviewed ${hits.length}: ${hits.map((f) => f.loc).join(' ')} ${rel} ${at}`);
+  process.exit(0);
+}
+
+if (args.gate) {
+  const reviewed = loadReviewed();
+  const seen = new Set();
+  const left = [];
+  for (const f of found) {
+    const key = reviewedKey(f.loc, f.rel, f.at);
+    if (matches(reviewed[key], f)) seen.add(key);
+    else left.push(f);
+  }
+  for (const f of left) console.log(`${f.loc}\t${f.kind}\t${f.rel} ${f.at}\t${f.en.slice(0, 70)}`);
+  const stale = Object.keys(reviewed).filter((k) => !seen.has(k));
+  for (const k of stale) console.log(`stale exception (no longer matches a finding): ${k}`);
+  console.log(
+    `i18n-coverage: ${left.length} unreviewed, ${seen.size} reviewed, ${stale.length} stale — ${left.length || stale.length ? 'FAIL' : 'PASS'}`,
+  );
+  process.exit(left.length || stale.length ? 1 : 0);
 }
 
 // Output.

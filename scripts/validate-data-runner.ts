@@ -93,6 +93,14 @@ const TASKS: Task[] = [
     cmd: 'node',
     args: ['scripts/i18n-tools/dropped-sentences.mjs', 'tree=all', '--gate'],
   },
+  // Translation coverage: a missing file or key, an empty string, placeholder text, a type or length
+  // mismatch, or a string left identical to the English — overlays and UI messages, every locale.
+  // A string that is right as it is (a name kept in English) is in coverage-reviewed.json.
+  {
+    name: 'check-i18n-coverage',
+    cmd: 'node',
+    args: ['scripts/i18n-coverage-scan.mjs', '--gate'],
+  },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-universe-stars', cmd: 'tsx', args: ['scripts/validate-universe-stars.ts'] },
   {

@@ -106,6 +106,44 @@ test.describe('collectible cards (#547)', () => {
     expect(errors).toEqual([]);
   });
 
+  // The panels below load the card code on demand (lazy-card.ts): the CTA
+  // appears only once that chunk has arrived, so each one is checked here.
+  test('explore moon panel gets a MOONS card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/explore?id=jupiter:europa');
+    await openCard(page);
+    const card = page.locator('.backdrop .card');
+    await expect(card).toContainText('MOONS');
+    await expect(card).toContainText('Europa');
+    expect(errors).toEqual([]);
+  });
+
+  test('explore small-body panel gets a SMALL BODIES card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/explore?id=ceres');
+    await openCard(page);
+    const card = page.locator('.backdrop .card');
+    await expect(card).toContainText('SMALL BODIES');
+    await expect(card).toContainText('Ceres');
+    expect(errors).toEqual([]);
+  });
+
+  test('earth launch pad gets its FLEET card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/earth?site=lc-39a');
+    await openCard(page);
+    await expect(page.locator('.backdrop .card')).toContainText('FLEET');
+    expect(errors).toEqual([]);
+  });
+
+  test('earth object opens its canonical card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/earth?object=hubble');
+    await openCard(page);
+    await expect(page.locator('.backdrop .card')).toContainText('Hubble');
+    expect(errors).toEqual([]);
+  });
+
   test('OG share stub serves crawler tags and forwards humans into the app', async ({
     page,
     request,

@@ -93,6 +93,14 @@ const TASKS: Task[] = [
     cmd: 'node',
     args: ['scripts/i18n-tools/dropped-sentences.mjs', 'tree=all', '--gate'],
   },
+  // A translation far shorter or longer than the English for its locale (a dropped clause, English left
+  // in and the translation appended); bounds per locale and kind in length-ratio-bounds.json, reviewed
+  // ones in length-ratio-reviewed.json.
+  {
+    name: 'check-i18n-length-ratio',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/length-ratio.mjs', '--gate'],
+  },
   // An English string edited (or added) after the translations were last checked against it. CI has
   // no git history, so the English each translation was made from is a committed manifest of hashes;
   // after re-checking the translations of what this lists, refresh it (stale-overlays.mjs --manifest=write).

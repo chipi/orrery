@@ -11,6 +11,6 @@
     "L'equazione incapsula la conservazione dell'energia: l'energia meccanica totale su un'orbita kepleriana è costante, quindi ogni volta che conosci `r` puoi ricavare la velocità. Al perielio `r` è piccolo, il termine tra parentesi è grande, `v` è elevata. All'afelio `r` è grande, il termine si riduce, `v` cala. La Terra sfreccia attraverso il perielio a 30,3 km/s e avanza lentamente attraverso l'afelio a 29,3 km/s — stessa orbita, velocità diversa, stessa energia.",
     "In Orrery, vis-viva è ciò che calcola le letture di velocità che vedi sull'HUD di `/fly` mentre un veicolo spaziale passa vicino a un pianeta — e i numeri di energia di partenza e velocità di arrivo che alimentano la mappa di calore porkchop su `/plan`."
   ],
-  "formula_caption": "v da μ, r, a.",
+  "formula_caption": "v dal parametro gravitazionale μ, dal raggio attuale r e dal semiasse maggiore a.",
   "diagram_caption": "La velocità varia lungo l'orbita: alta al perielio, bassa all'afelio. La vis-viva lega la velocità al raggio."
 }

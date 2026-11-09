@@ -4,6 +4,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { reviewKey } from './number-drift.mjs';
 import { reviewKey as droppedKey } from './dropped-sentences.mjs';
+import { reviewKey as lengthKey } from './length-ratio.mjs';
 
 const LOCALES = [
   'de',
@@ -21,12 +22,13 @@ const LOCALES = [
   'ar',
 ];
 
-// Both finders are gated at zero: a finding is fixed in i18n-src or recorded, with a reason and a
+// The finders are gated at zero: a finding is fixed in i18n-src or recorded, with a reason and a
 // hash of the English and of the translation it was judged on, in a reviewed file. An edit to
 // either text brings the finding back.
 const GATES = [
   { name: 'number-drift', file: 'number-drift-reviewed.json', key: reviewKey },
   { name: 'dropped-sentences', file: 'dropped-sentences-reviewed.json', key: droppedKey },
+  { name: 'length-ratio', file: 'length-ratio-reviewed.json', key: lengthKey },
 ];
 
 for (const g of GATES) {
@@ -41,8 +43,10 @@ for (const g of GATES) {
         const [loc, rel, at] = k.split('|');
         if (k !== g.key(loc, rel, at)) bad.push(`${k}: malformed`);
         if (!LOCALES.includes(loc)) bad.push(`${k}: unknown locale`);
-        if (!existsSync(path.join('i18n-src', 'en-US', rel))) bad.push(`${k}: no such en-US file`);
-        if (!existsSync(path.join('i18n-src', loc, rel))) bad.push(`${k}: no such ${loc} file`);
+        const file = (l: string) =>
+          rel === 'messages' ? path.join('messages', `${l}.json`) : path.join('i18n-src', l, rel);
+        if (!existsSync(file('en-US'))) bad.push(`${k}: no such en-US file`);
+        if (!existsSync(file(loc))) bad.push(`${k}: no such ${loc} file`);
         if (!v.why?.trim()) bad.push(`${k}: needs a reason`);
         if (!/^[0-9a-f]{10}$/.test(v.en) || !/^[0-9a-f]{10}$/.test(v.tr))
           bad.push(`${k}: needs a hash of both texts`);

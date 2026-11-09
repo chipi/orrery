@@ -12,5 +12,5 @@
     "La maggior parte dei pianeti si trova vicino all'eclittica — la Terra la definisce (`i = 0°` per costruzione), e gli altri restano entro pochi gradi. Mercurio a 7° è l'eccezione. L'inclinazione selvaggia di Plutone di 17° è uno dei motivi per cui è stato retrocesso: i veri pianeti rimangono quasi complanari.",
     "Per i satelliti terrestri la storia dell'inclinazione è diversa e pragmatica. Equatoriale (0°) per i satelliti geostazionari di telecomunicazioni. ~28° per i lanci da Cape Canaveral che devono sfruttare la rotazione della Terra. ~51,6° per la SSI — scelta per permettere ai cosmonauti russi di lanciare da Bajkonur. Polare (~90°) per i satelliti di osservazione terrestre che hanno bisogno di coprire ogni latitudine. Eliosincrona (~98°) per le piattaforme scientifiche che vogliono un'illuminazione costante a ogni passaggio."
   ],
-  "diagram_caption": "Piano orbitale inclinato di angolo i. Nodo ascendente N."
+  "diagram_caption": "Piano orbitale inclinato di un angolo i rispetto al piano di riferimento. Il nodo ascendente N segna il punto in cui l'orbita attraversa il piano procedendo verso nord."
 }

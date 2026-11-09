@@ -1,0 +1,652 @@
+{
+  "ar|fleet/launch-site/cape-canaveral-lc-17.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "f41280c404",
+    "tr": "6b0ac99a99"
+  },
+  "ar|fleet/launch-site/semnan-imam-khomeini.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "5a92132729",
+    "tr": "3b0b6d1604"
+  },
+  "ar|messages|fleet_lineup_landmark_conquerors": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "e3d476d317",
+    "tr": "781f53c621"
+  },
+  "ar|missions/mars/mmx.json|events.4.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "158f572536",
+    "tr": "f29623fb5d"
+  },
+  "ar|programs/iss.json|tagline": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "2d42fd59cd",
+    "tr": "af258f3087"
+  },
+  "ar|programs/mir.json|tagline": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "eee12412e4",
+    "tr": "03d937e5bd"
+  },
+  "ar|science/orbits/orbit-regimes.json|diagram_caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "7ba2daae5d",
+    "tr": "aed7a0ee59"
+  },
+  "ar|science/space-stations/expedition-cadence.json|body_paragraphs.4": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "8be461946d",
+    "tr": "a9dc158c61"
+  },
+  "ar|science/space-stations/solar-power-budget.json|body_paragraphs.2": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "60f024fb5d",
+    "tr": "c396c3e57a"
+  },
+  "ar|site-stories/viking1-lander.json|chapters.0.subtitle": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "89a3598df5",
+    "tr": "f424877842"
+  },
+  "de|fleet/launch-site/cape-canaveral-lc-17.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "f41280c404",
+    "tr": "59dfded89d"
+  },
+  "de|fleet/launch-site/semnan-imam-khomeini.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "5a92132729",
+    "tr": "2009cd1646"
+  },
+  "de|messages|explore_iconic_tagline_placeholder": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "d674af5ac6",
+    "tr": "a489694927"
+  },
+  "de|messages|landing_card_lab_title": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "5074992b1a",
+    "tr": "d54ee344b9"
+  },
+  "de|original-work.json|writing.Fleet catalogue entries.what": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "0766b5ec6f",
+    "tr": "f844efa56a"
+  },
+  "de|programs/buran.json|tagline": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "68551cbddd",
+    "tr": "e13ecba99d"
+  },
+  "de|rockets/falcon-heavy.json|first": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "da28b15715",
+    "tr": "38cd736ca8"
+  },
+  "de|science/_landing.json|chapters.6.paragraphs.1": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "a529a029df",
+    "tr": "cd46ca7c3c"
+  },
+  "de|science/transfers/lambert-problem.json|intro_sentence": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "34f00c3260",
+    "tr": "119a0c205a"
+  },
+  "de|site-stories/beresheet.json|chapters.0.subtitle": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "03a5f9b789",
+    "tr": "513201aa71"
+  },
+  "de|site-stories/perseverance.json|chapters.0.images.0.caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "e76ab982fe",
+    "tr": "3cec9e3e51"
+  },
+  "es|iss-modules/harmony.json|description": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "9967ff8e92",
+    "tr": "06468d5ebe"
+  },
+  "es|iss-modules/quest.json|description": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "d269c03ec2",
+    "tr": "4ab50d0cfe"
+  },
+  "es|iss-modules/rassvet.json|function_detail": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "c4d3617a71",
+    "tr": "961f0c44c5"
+  },
+  "es|messages|library_intro_body_2": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "95b8b52efe",
+    "tr": "1bae3d9f2b"
+  },
+  "es|missions/moon/change4.json|events.2.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "dfed835862",
+    "tr": "ba1bd64bfe"
+  },
+  "es|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.what": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "ec00015f7c",
+    "tr": "9bba6f05e9"
+  },
+  "es|site-stories/mars3.json|chapters.0.subtitle": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "6e4f0db471",
+    "tr": "6a2071a192"
+  },
+  "es|site-stories/schiaparelli.json|chapters.0.images.0.caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "f1b76d845e",
+    "tr": "ba93dfa2ce"
+  },
+  "fr|fleet/launch-site/cape-canaveral-lc-17.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "f41280c404",
+    "tr": "e36beaae0c"
+  },
+  "fr|messages|fleet_cutaway_alt": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "3f998e5f9c",
+    "tr": "bcbb25bcfc"
+  },
+  "fr|messages|tiangong_toggle_timeline_aria": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "3236d503a3",
+    "tr": "3b753c7fab"
+  },
+  "fr|missions/earth/skylab-4.json|events.2.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "04d58eb183",
+    "tr": "ee318b0694"
+  },
+  "fr|missions/moon/lunar-prospector.json|vehicle_stage": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "de9822a206",
+    "tr": "c625978387"
+  },
+  "fr|programs/ros.json|seo_description": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "cc5c6f2d55",
+    "tr": "d5e4293852"
+  },
+  "fr|science/exoplanets/detecting-extraterrestrial-life.json|intro_sentence": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "909505bc90",
+    "tr": "825b5d053a"
+  },
+  "fr|science/mission-phases/lifting-entry.json|diagram_caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "a10e1ffd59",
+    "tr": "da5ed9d3ee"
+  },
+  "fr|science/propulsion/throttling-and-gimbaling.json|title": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "edf7051f71",
+    "tr": "67e704f9c6"
+  },
+  "fr|site-stories/luna17.json|chapters.0.images.0.caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "9b21b21801",
+    "tr": "6fcaed806a"
+  },
+  "hi|fleet/orbiter/lunar-orbiter-4.json|best_known_for": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "a27bd1aba2",
+    "tr": "e14539caae"
+  },
+  "hi|messages|chip_label_max_q": {
+    "why": "read: the chip label is the term alone; \"peak aerodynamic stress\" is what the term means",
+    "en": "f37cdc9656",
+    "tr": "43b4418169"
+  },
+  "hi|messages|privacy_email_body": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "23288c3eff",
+    "tr": "11abf8d0fa"
+  },
+  "hi|missions/moon/luna10.json|first": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "10fe69cd7c",
+    "tr": "c44f784a88"
+  },
+  "hi|missions/moon/luna17.json|events.1.note": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "0f5d2c67a1",
+    "tr": "68cdff6594"
+  },
+  "hi|programs/esa-human.json|tagline": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "fb410ec16c",
+    "tr": "c4a8cbd5a8"
+  },
+  "hi|programs/space-shuttle.json|tagline": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "62d27faadd",
+    "tr": "b123f83d26"
+  },
+  "hi|satellites/callisto.json|science_sections.1.why": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "96873fa251",
+    "tr": "b080706544"
+  },
+  "hi|site-stories/apollo12.json|chapters.0.images.0.caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "a496125376",
+    "tr": "a8ab772160"
+  },
+  "hi|site-stories/luna17.json|chapters.0.images.0.caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "9b21b21801",
+    "tr": "156ef80de4"
+  },
+  "hi|tiangong-modules/mengtian.json|description": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "dc1b55a2e8",
+    "tr": "ade071296e"
+  },
+  "it|fleet/observatory/hitomi.json|tagline": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "2132f182c0",
+    "tr": "099dca4fc7"
+  },
+  "it|messages|library_intro_body_1": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "a56bb69c37",
+    "tr": "01fd3e499c"
+  },
+  "it|messages|tiangong_toggle_timeline_aria": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "3236d503a3",
+    "tr": "f09c5c7181"
+  },
+  "it|missions/earth/liberty-bell-7.json|events.2.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "bdbf334a27",
+    "tr": "9c90e86c4c"
+  },
+  "it|missions/earth/skylab-4.json|events.2.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "04d58eb183",
+    "tr": "7687e12650"
+  },
+  "it|missions/mars/mariner9.json|events.2.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "4bba192d89",
+    "tr": "f81bfa9b89"
+  },
+  "it|science/orbits/keplerian-orbit.json|diagram_caption": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "afb9d3ae40",
+    "tr": "346868a7c5"
+  },
+  "it|science/propulsion/solar-sail.json|intro_sentence": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "6c303a4455",
+    "tr": "bd1cf0b426"
+  },
+  "ja|fleet/launch-site/cape-canaveral-lc-36b.json|best_known_for": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "c9d60f2707",
+    "tr": "995ef04c5e"
+  },
+  "ja|fleet/launch-site/cape-canaveral-lc-36b.json|tagline": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "f2fe48597c",
+    "tr": "6eb1b0360d"
+  },
+  "ja|messages|audio_resume_prompt": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "0e20b0a0e4",
+    "tr": "3acc0ab770"
+  },
+  "ja|messages|chip_label_max_q": {
+    "why": "read: the chip label is the term alone; \"peak aerodynamic stress\" is what the term means",
+    "en": "f37cdc9656",
+    "tr": "a58455b7ab"
+  },
+  "ja|missions/earth/otv-5.json|events.0.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "fb03490d00",
+    "tr": "ac2f533e50"
+  },
+  "ja|moon-sites/luna9.json|capability": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "96c5348aa9",
+    "tr": "79d7165e23"
+  },
+  "ja|museums/nasm-washington.json|items.lrv-apollo": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "2619aecbc8",
+    "tr": "05300c5173"
+  },
+  "ja|observatories/salt.json|highlights.1": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "d8db9cea2f",
+    "tr": "70e9741f8d"
+  },
+  "ja|science/mission-phases/comms-blackout.json|diagram_caption": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "638cef41cf",
+    "tr": "4b834bb938"
+  },
+  "ja|science/scales-time/_intro.json|seo_description": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "1d7149e62e",
+    "tr": "81d7250d54"
+  },
+  "ja|sourcing/gaps.json|gaps.2.checked.0": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "8b064ce766",
+    "tr": "7cdc973fb5"
+  },
+  "ko|earth-objects/galileo.json|description": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "37c3d2c141",
+    "tr": "115cc9a745"
+  },
+  "ko|fleet/launch-site/cape-canaveral-lc-36b.json|best_known_for": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "c9d60f2707",
+    "tr": "11a5eb4e98"
+  },
+  "ko|fleet/launch-site/cape-canaveral-lc-36b.json|tagline": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "f2fe48597c",
+    "tr": "a6de6165b5"
+  },
+  "ko|fleet/launch-site/semnan-imam-khomeini.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "5a92132729",
+    "tr": "94fcd5d1f0"
+  },
+  "ko|messages|audio_resume_prompt": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "0e20b0a0e4",
+    "tr": "7e1e0e5cba"
+  },
+  "ko|messages|chip_label_max_q": {
+    "why": "read: the chip label is the term alone; \"peak aerodynamic stress\" is what the term means",
+    "en": "f37cdc9656",
+    "tr": "88bede4abe"
+  },
+  "ko|missions/earth/skylab-4.json|events.0.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "aa791ab247",
+    "tr": "523539b8e3"
+  },
+  "ko|missions/earth/vostok-4.json|events.0.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "1eab806fc1",
+    "tr": "e5c4c0952c"
+  },
+  "ko|museums/nasm-washington.json|items.lrv-apollo": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "2619aecbc8",
+    "tr": "55887295f7"
+  },
+  "ko|site-stories/insight.json|chapters.2.images.0.caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "fe262483af",
+    "tr": "afcd13f91a"
+  },
+  "nl|fleet/launch-site/cape-canaveral-lc-17.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "f41280c404",
+    "tr": "59dfded89d"
+  },
+  "nl|fleet/launch-site/semnan-imam-khomeini.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "5a92132729",
+    "tr": "b62f470d63"
+  },
+  "nl|iss-modules/destiny.json|description": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "0db030de59",
+    "tr": "9ee0350a58"
+  },
+  "nl|iss-visitors/crew_dragon.json|function_detail": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "8c3c117537",
+    "tr": "a4c49c733c"
+  },
+  "nl|messages|lab_canvas_readonly_note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "94642630cc",
+    "tr": "b42e444d23"
+  },
+  "nl|missions/mars/mariner9.json|events.2.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "4bba192d89",
+    "tr": "146ea53f2b"
+  },
+  "nl|science/propulsion/ion-drive.json|intro_sentence": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "525549d449",
+    "tr": "6a1c052af2"
+  },
+  "nl|site-stories/schiaparelli.json|chapters.0.subtitle": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "a4ce106c36",
+    "tr": "614ed405a9"
+  },
+  "pt-BR|fleet/launch-site/cape-canaveral-lc-17.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "f41280c404",
+    "tr": "b9b0f5ba9c"
+  },
+  "pt-BR|fleet/launch-site/semnan-imam-khomeini.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "5a92132729",
+    "tr": "c9d6afc2cb"
+  },
+  "pt-BR|messages|landing_card_explore_title": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "08bc806d2b",
+    "tr": "64b9a8be71"
+  },
+  "pt-BR|messages|tiangong_toggle_timeline_aria": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "3236d503a3",
+    "tr": "a1223f443b"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-long-march-3b_webp.what": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "f934387677",
+    "tr": "e6117defa8"
+  },
+  "pt-BR|planets/donaldjohanson.json|fact": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "bcd3f09d56",
+    "tr": "c7c4317725"
+  },
+  "pt-BR|science/life-in-space/crew-selection.json|diagram_caption": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "c00cc3a13b",
+    "tr": "bf4a37a16b"
+  },
+  "pt-BR|science/mission-phases/eva.json|diagram_caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "d38387428c",
+    "tr": "4f555b1764"
+  },
+  "pt-BR|site-stories/insight.json|chapters.1.subtitle": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "8d80c04a60",
+    "tr": "5e1031b769"
+  },
+  "pt-BR|site-stories/schiaparelli.json|chapters.0.images.0.caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "f1b76d845e",
+    "tr": "1b7b46be85"
+  },
+  "pt-BR|tiangong-modules/mengtian.json|description": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "dc1b55a2e8",
+    "tr": "9c17812471"
+  },
+  "ru|fleet/launch-site/cape-canaveral-lc-17.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "f41280c404",
+    "tr": "1f809f665d"
+  },
+  "ru|fleet/launch-site/semnan-imam-khomeini.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "5a92132729",
+    "tr": "b3eeb8262c"
+  },
+  "ru|fleet/orbiter/chandrayaan1.json|tagline": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "d885a4f710",
+    "tr": "9e2ef14a94"
+  },
+  "ru|messages|microgravity_legend_prograde_retrograde_desc": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "06315dc44f",
+    "tr": "88b2ccbe47"
+  },
+  "ru|messages|observatory_kind_seti": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "e2a94caf0c",
+    "tr": "b87463b2e4"
+  },
+  "ru|missions/earth/apollo9.json|events.3.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "2a9ffd3bf6",
+    "tr": "d130f95b36"
+  },
+  "ru|missions/earth/gemini12.json|first": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "3f5c628a40",
+    "tr": "a443dff7f5"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-mars-viking_webp.what": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "51e2573c06",
+    "tr": "22f01b978a"
+  },
+  "ru|science/life-in-space/muscle-atrophy.json|diagram_caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "d6fa1c42b3",
+    "tr": "d9e26e21fe"
+  },
+  "ru|science/propulsion/engine-types.json|diagram_caption": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "d9e0a72f88",
+    "tr": "e93073242d"
+  },
+  "sr-Cyrl|fleet/launch-site/cape-canaveral-lc-17.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "f41280c404",
+    "tr": "ba59dcec02"
+  },
+  "sr-Cyrl|fleet/launch-site/cape-canaveral-lc-36b.json|best_known_for": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "c9d60f2707",
+    "tr": "6a1df9aa24"
+  },
+  "sr-Cyrl|fleet/launch-site/semnan-imam-khomeini.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "5a92132729",
+    "tr": "b1f3f815ec"
+  },
+  "sr-Cyrl|fleet/space-suit/starliner-suit.json|tagline": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "ac74fac5c4",
+    "tr": "e38cc94edd"
+  },
+  "sr-Cyrl|iss-modules/destiny.json|description": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "0db030de59",
+    "tr": "da0fc8f8b6"
+  },
+  "sr-Cyrl|iss-visitors/htv_x.json|description": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "51b11ecbdd",
+    "tr": "9e5a17e879"
+  },
+  "sr-Cyrl|messages|tiangong_toggle_timeline_aria": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "3236d503a3",
+    "tr": "99a5792232"
+  },
+  "sr-Cyrl|missions/earth/sigma-7.json|events.0.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "7c4edb62f6",
+    "tr": "88c446b471"
+  },
+  "sr-Cyrl|observatories/meerkat.json|highlights.0": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "73f4cf3f63",
+    "tr": "ef522cac35"
+  },
+  "sr-Cyrl|programs/viking.json|tagline": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "83a1c9fd9c",
+    "tr": "1eefe37dd9"
+  },
+  "sr-Cyrl|universe/named-stars/menkalinan.json|cultural": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "f4f0eab4a6",
+    "tr": "72eaf450f5"
+  },
+  "zh-CN|fleet/launch-site/cape-canaveral-lc-36b.json|best_known_for": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "c9d60f2707",
+    "tr": "a6a900f2eb"
+  },
+  "zh-CN|fleet/launch-site/cape-canaveral-lc-36b.json|tagline": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "f2fe48597c",
+    "tr": "d67befb485"
+  },
+  "zh-CN|fleet/launch-site/semnan-imam-khomeini.json|name": {
+    "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
+    "en": "5a92132729",
+    "tr": "42eee75586"
+  },
+  "zh-CN|messages|chip_label_max_q": {
+    "why": "read: the chip label is the term alone; \"peak aerodynamic stress\" is what the term means",
+    "en": "f37cdc9656",
+    "tr": "0b9ae50eb1"
+  },
+  "zh-CN|messages|explore_tt_extras_planet": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "466d71e18a",
+    "tr": "209ed3e1ae"
+  },
+  "zh-CN|missions/earth/otv-6.json|events.0.note": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "b02b1359da",
+    "tr": "d686fcab17"
+  },
+  "zh-CN|museums/nasm-washington.json|items.lrv-apollo": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "2619aecbc8",
+    "tr": "e6e8e03798"
+  },
+  "zh-CN|programs/great-observatories.json|outcome.2.md": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "26dcc8ba9b",
+    "tr": "c75a6b2697"
+  },
+  "zh-CN|science/scales-time/light-minute.json|intro_sentence": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "4432344759",
+    "tr": "54b877cb93"
+  },
+  "zh-CN|sourcing/gaps.json|gaps.2.checked.0": {
+    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
+    "en": "8b064ce766",
+    "tr": "72de617d5d"
+  },
+  "zh-CN|tiangong-visitors/shenzhou.json|function_detail": {
+    "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
+    "en": "6cbc1f50c1",
+    "tr": "a5ace4ce78"
+  }
+}

@@ -5,6 +5,42 @@
       "label": "Daaltrap van de LM (Antares)",
       "label_short": "LM Antares",
       "explain": "De onderste helft van de maanlander Antares van Apollo 14, die na de landing van februari 1971 op de Maan achterbleef."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-centraalstation",
+      "label_short": "ALSEP",
+      "explain": "Het Apollo 14 Lunar Surface Experiments Package, tijdens de eerste maanwandeling in februari 1971 ten westen van de maanlander opgesteld. LROC's beeld toont het met voetpaden die ervan wegleiden."
+    },
+    {
+      "id": "seismometer",
+      "label": "Passieve seismometer (LROC)",
+      "label_short": "Seismometer",
+      "explain": "LROC vermeldt de passieve seismometer van Apollo 14 als een eigen punt, ongeveer 3 m van het centraalstation (de ring overlapt de ALSEP-ring)."
+    },
+    {
+      "id": "flag",
+      "label": "Amerikaanse vlag (LROC-positie)",
+      "label_short": "Amerikaanse vlag",
+      "explain": "Het punt dat de hardwarelaag van LROC voor Apollo 14 aan de vlag geeft, ongeveer 10 m noordwest van de maanlander. De vlag zelf is te klein om te zien."
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Triplet-kraters",
+      "label_short": "Triplet-kraters",
+      "explain": "De groep kraters die LROC op zijn Apollo 14-kaart Triplet en Center Crater noemt, ongeveer 210 m zuidoost van de maanlander."
+    },
+    {
+      "id": "footpaths",
+      "label": "Voetpaden rond het ALSEP",
+      "label_short": "ALSEP-voetpaden",
+      "explain": "LROC's beeld van Apollo 14 toont de voetpaden van de astronauten als lijnen van verstoorde bodem; ze komen samen bij het ALSEP en lopen oostwaarts naar de maanlander (de gestippelde omtrek markeert het gebied)."
+    },
+    {
+      "id": "blast",
+      "label": "Uitblaaszone van de LM",
+      "label_short": "Uitblaaszone",
+      "explain": "LROC zegt dat de daalmotor rond de Apollo-landingsplaatsen een lichte halo heeft schoongeveegd, ook bij Apollo 14. Hier is het een vage lichte zone rond de maanlander."
     }
   ]
 }

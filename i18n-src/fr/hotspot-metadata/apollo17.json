@@ -11,6 +11,60 @@
       "label": "Rover lunaire (LRV)",
       "label_short": "LRV",
       "explain": "Le rover lunaire (LRV) d'Apollo 17. Voici l'endroit où LROC photographie aujourd'hui le rover, abandonné sur la Lune après la mission."
+    },
+    {
+      "id": "alsep",
+      "label": "Station centrale de l'ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Le paquet d'expériences de surface lunaire d'Apollo 17, à l'ouest du module lunaire dans la vallée Taurus-Littrow. L'image de LROC montre les instruments et le sentier en forme de croix où les géophones ont été déployés."
+    },
+    {
+      "id": "sep",
+      "label": "Émetteur du SEP",
+      "label_short": "Émetteur SEP",
+      "explain": "L'émetteur de l'expérience Surface Electrical Properties, qui sondait les propriétés électriques du sol. LROC le nomme SEP sur son image d'Apollo 17 ; ses antennes de 35 m ont été déployées ici."
+    },
+    {
+      "id": "flag",
+      "label": "Drapeau américain (position LROC)",
+      "label_short": "Drapeau US",
+      "explain": "Le point que la couche matériel d'Apollo 17 de LROC donne pour le drapeau, à environ 22 m au nord-nord-ouest du module lunaire. Le drapeau lui-même est trop petit pour être vu."
+    },
+    {
+      "id": "rudolph",
+      "label": "Cratère Rudolph",
+      "label_short": "Cratère Rudolph",
+      "explain": "Le cratère que LROC nomme Rudolph sur sa carte d'Apollo 17, à environ 290 m au nord-ouest du module lunaire."
+    },
+    {
+      "id": "poppie",
+      "label": "Cratère Poppie",
+      "label_short": "Cratère Poppie",
+      "explain": "Un petit cratère au sud du module lunaire que LROC nomme Poppie sur sa carte d'Apollo 17."
+    },
+    {
+      "id": "barjea",
+      "label": "Cratère Barjea",
+      "label_short": "Cratère Barjea",
+      "explain": "Un petit cratère brillant au sud-est du module lunaire que LROC nomme Barjea sur sa carte d'Apollo 17."
+    },
+    {
+      "id": "geophone-paths",
+      "label": "Sentiers des géophones",
+      "label_short": "Sentiers géoph.",
+      "explain": "L'image d'Apollo 17 de LROC montre un sentier en forme de croix à l'ouest du site d'alunissage, où les astronautes ont installé les géophones pour surveiller l'activité sismique (le contour en pointillés marque la zone)."
+    },
+    {
+      "id": "sep-rover-tracks",
+      "label": "Traces du rover vers le site du SEP",
+      "label_short": "Traces SEP",
+      "explain": "LROC note que Cernan a laissé des traces de rover vers l'est en déployant les antennes de 35 m du SEP. Elles vont de la zone du module lunaire vers l'émetteur (le contour en pointillés marque la zone)."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle du LM",
+      "label_short": "Zone de souffle",
+      "explain": "LROC note que le moteur de descente a éclairci le sol autour des sites d'alunissage d'Apollo ; à Apollo 17, le halo s'étend autour du module lunaire (un lobe peut marquer la trajectoire de descente)."
     }
   ],
   "panorama_caption": "Le site ALSEP dans la vallée Taurus-Littrow, EVA-1 (12 décembre 1972) : l'ensemble d'expériences, le Lunar Roving Vehicle et les massifs de la vallée, le panorama couleur de Jack Schmitt. Le dernier alunissage d'Apollo.",

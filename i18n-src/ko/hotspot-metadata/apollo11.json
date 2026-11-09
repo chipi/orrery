@@ -17,6 +17,42 @@
       "label": "레이저 거리 측정 반사경 (LRRR)",
       "label_short": "레이저 반사경",
       "explain": "Apollo 11이 남긴 레이저 거리 측정 반사경(LRRR). 지구의 관측소가 달에서 되돌아온 레이저 펄스의 시간을 잴 수 있게 해 준다. 지진계 패키지에서 북북서쪽으로 약 5 m 떨어진 곳에 놓였다."
+    },
+    {
+      "id": "flag",
+      "label": "미국 국기 (LROC 위치)",
+      "label_short": "미국 국기",
+      "explain": "LROC의 Apollo 11 장비 레이어가 국기의 위치로 제시하는 지점으로, 달 착륙선에서 서북서쪽으로 약 14 m 떨어져 있다. 국기 자체는 이 해상도에서 보기엔 너무 작다."
+    },
+    {
+      "id": "tv",
+      "label": "TV 카메라 (LROC 위치)",
+      "label_short": "TV 카메라",
+      "explain": "LROC의 Apollo 11 장비 레이어가 TV 카메라의 위치로 제시하는 지점으로, 달 착륙선에서 북서쪽으로 약 26 m 떨어져 있다. 그 자리에서는 영상에서 식별되는 것이 없다."
+    },
+    {
+      "id": "little-west",
+      "label": "Little West 분화구",
+      "label_short": "Little West",
+      "explain": "LROC가 Apollo 11 지도에서 Little West라고 부르는 분화구로, 달 착륙선에서 동쪽으로 약 75 m 떨어져 있다. 영상에서 희미한 발자국 길이 그쪽으로 이어진다."
+    },
+    {
+      "id": "double",
+      "label": "Double 분화구",
+      "label_short": "Double 분화구",
+      "explain": "LROC가 Apollo 11 주요 지점 지도에서 Double이라고 부르는 작은 분화구로, 달 착륙선에서 남서쪽으로 약 17 m 떨어져 있다."
+    },
+    {
+      "id": "footpath-little-west",
+      "label": "Little West로 가는 발자국 길",
+      "label_short": "발자국 길",
+      "explain": "LROC는 Apollo 11 지점 영상에서 우주비행사들의 길이 눈에 띈다고 말한다. 이 희미한 선은 달 착륙선에서 동쪽의 Little West 분화구로 이어진다(점선 윤곽은 한 점이 아니라 영역을 나타낸다)."
+    },
+    {
+      "id": "blast",
+      "label": "LM 하강 엔진 분사 영역",
+      "label_short": "분사 영역",
+      "explain": "LROC에 따르면 하강 엔진이 착륙 지점 둘레의 지면을 깎아 밝은 후광을 만들었으며, 엔진 아래의 가장 고운 입자가 날아간 결과로 보인다. Apollo 11에서는 달 착륙선 둘레에 폭 약 100 m의 밝은 영역으로 나타난다."
     }
   ],
   "panorama_caption": "고요의 기지, EVA-1. 버즈 올드린이 착륙 직후 LM Eagle과 미국 국기를 촬영했다. LM 주변에 보이는 Hasselblad 이음매와 색 번짐은 공개된 모자이크의 일부다.",

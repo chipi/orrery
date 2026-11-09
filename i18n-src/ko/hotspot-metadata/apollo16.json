@@ -17,6 +17,42 @@
       "label": "월면 로버 (LRV)",
       "label_short": "LRV",
       "explain": "Apollo 16의 월면 로버(LRV). 임무가 끝난 뒤 달에 남겨진 로버를 오늘날 LROC가 촬영하는 자리이다."
+    },
+    {
+      "id": "seismometer",
+      "label": "수동 지진계 (LROC)",
+      "label_short": "지진계",
+      "explain": "LROC는 Apollo 16 수동 지진계를 별도의 지점으로 올려 두었으며, 중앙 관측소에서 약 2 m 떨어져 있다(고리가 ALSEP 고리와 일치한다)."
+    },
+    {
+      "id": "flag",
+      "label": "미국 국기 (LROC 위치)",
+      "label_short": "미국 국기",
+      "explain": "LROC의 Apollo 16 장비 레이어가 국기의 위치로 제시하는 지점으로, 달 착륙선에서 북북서쪽으로 약 19 m 떨어져 있다. 국기 자체는 보기엔 너무 작다."
+    },
+    {
+      "id": "spot-crater",
+      "label": "Spot 분화구",
+      "label_short": "Spot 분화구",
+      "explain": "달 착륙선 남쪽에 있는 얕은 분화구로, LROC가 Apollo 16 지도에서 Spot이라고 부른다."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "ALSEP로 가는 발자국 길",
+      "label_short": "ALSEP 발자국 길",
+      "explain": "영상의 어두운 발자국 길과 로버 자국이 달 착륙선 일대에서 남서쪽의 장비 묶음까지 이어진다(점선 윤곽은 영역을 나타낸다)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "LRV로 가는 로버 자국",
+      "label_short": "로버 자국",
+      "explain": "영상의 어두운 자국이 달 착륙선에서 동쪽으로 뻗어, LROC가 올려 둔 월면차 주차 지점까지 이어진다(점선 윤곽은 영역을 나타낸다)."
+    },
+    {
+      "id": "blast",
+      "label": "LM 분사 영역",
+      "label_short": "분사 영역",
+      "explain": "LROC에 따르면 하강 엔진이 Apollo 착륙 지점 둘레의 지면을 밝게 만들었다. Apollo 16에서는 달 착륙선 둘레의 밝은 후광이 폭 약 170 m이다."
     }
   ]
 }

@@ -5,6 +5,42 @@
       "label": "LM-Abstiegsstufe (Antares)",
       "label_short": "LM Antares",
       "explain": "Die untere Hälfte der Mondlandefähre Antares von Apollo 14. Sie blieb nach der Landung im Februar 1971 auf dem Mond zurück."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-Zentralstation",
+      "label_short": "ALSEP",
+      "explain": "Das Apollo-14-Experimentpaket für die Mondoberfläche, beim ersten Mondspaziergang im Februar 1971 westlich der Mondlandefähre aufgebaut. Im LROC-Bild ist es mit davon wegführenden Fußpfaden zu sehen."
+    },
+    {
+      "id": "seismometer",
+      "label": "Passives Seismometer (LROC)",
+      "label_short": "Seismometer",
+      "explain": "LROC führt das passive Seismometer von Apollo 14 als eigenen Punkt auf, etwa 3 m von der Zentralstation entfernt (der Ring überlappt den ALSEP-Ring)."
+    },
+    {
+      "id": "flag",
+      "label": "US-Flagge (LROC-Position)",
+      "label_short": "US-Flagge",
+      "explain": "Der Punkt, den die Hardware-Ebene von LROC für Apollo 14 für die Flagge angibt, etwa 10 m nordwestlich der Mondlandefähre. Die Flagge selbst ist zu klein, um sichtbar zu sein."
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Triplet-Krater",
+      "label_short": "Triplet-Krater",
+      "explain": "Die Kratergruppe, die LROC auf seiner Apollo-14-Karte als Triplet und Center Crater beschriftet, etwa 210 m südöstlich der Mondlandefähre."
+    },
+    {
+      "id": "footpaths",
+      "label": "Fußpfade um das ALSEP",
+      "label_short": "ALSEP-Pfade",
+      "explain": "Das LROC-Bild von Apollo 14 zeigt die Fußpfade der Astronauten als Linien aufgewühlten Bodens; sie laufen am ALSEP zusammen und führen nach Osten zur Mondlandefähre (die gestrichelte Umrandung markiert das Gebiet)."
+    },
+    {
+      "id": "blast",
+      "label": "LM-Abgasbereich",
+      "label_short": "Abgasbereich",
+      "explain": "LROC zufolge hat das Abstiegstriebwerk um die Apollo-Landestellen, einschließlich Apollo 14, einen hellen Hof freigeblasen. Hier ist es eine schwache helle Zone um die Mondlandefähre."
     }
   ]
 }

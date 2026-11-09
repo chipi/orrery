@@ -17,6 +17,42 @@
       "label": "Mondauto (LRV)",
       "label_short": "LRV",
       "explain": "Das Lunar Roving Vehicle (LRV) von Apollo 16. Hier bildet LROC den Rover heute ab, der nach der Mission auf dem Mond zurückgelassen wurde."
+    },
+    {
+      "id": "seismometer",
+      "label": "Passives Seismometer (LROC)",
+      "label_short": "Seismometer",
+      "explain": "LROC führt das passive Seismometer von Apollo 16 als eigenen Punkt auf, etwa 2 m von der Zentralstation entfernt (der Ring fällt mit dem ALSEP-Ring zusammen)."
+    },
+    {
+      "id": "flag",
+      "label": "US-Flagge (LROC-Position)",
+      "label_short": "US-Flagge",
+      "explain": "Der Punkt, den die Hardware-Ebene von LROC für Apollo 16 für die Flagge angibt, etwa 19 m nordnordwestlich der Mondlandefähre. Die Flagge selbst ist zu klein, um sichtbar zu sein."
+    },
+    {
+      "id": "spot-crater",
+      "label": "Spot-Krater",
+      "label_short": "Spot-Krater",
+      "explain": "Ein flacher Krater südlich der Mondlandefähre, den LROC auf seiner Apollo-16-Karte als Spot beschriftet."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Fußpfade zum ALSEP",
+      "label_short": "ALSEP-Pfade",
+      "explain": "Dunkle Fußpfade und Rover-Spuren im Bild führen vom Bereich der Mondlandefähre nach Südwesten zum Instrumentenpaket (die gestrichelte Umrandung markiert das Gebiet)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Rover-Spur zum LRV",
+      "label_short": "Rover-Spur",
+      "explain": "Dunkle Spuren im Bild führen von der Mondlandefähre nach Osten zum Parkplatz des Lunar Roving Vehicle, den LROC aufführt (die gestrichelte Umrandung markiert das Gebiet)."
+    },
+    {
+      "id": "blast",
+      "label": "LM-Abgasbereich",
+      "label_short": "Abgasbereich",
+      "explain": "LROC zufolge hat das Abstiegstriebwerk den Boden um die Apollo-Landestellen aufgehellt. Bei Apollo 16 misst der helle Hof um die Mondlandefähre etwa 170 m im Durchmesser."
     }
   ]
 }

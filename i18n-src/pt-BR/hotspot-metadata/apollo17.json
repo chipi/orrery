@@ -11,6 +11,60 @@
       "label": "Veículo lunar (LRV)",
       "label_short": "LRV",
       "explain": "O veículo lunar (LRV) da Apollo 17. Aqui está o rover como o LROC o fotografa hoje, deixado na Lua após a missão."
+    },
+    {
+      "id": "alsep",
+      "label": "Estação central do ALSEP",
+      "label_short": "ALSEP",
+      "explain": "O pacote de experimentos da superfície lunar da Apollo 17, a oeste do módulo lunar no vale Taurus-Littrow. A imagem do LROC mostra os instrumentos e o caminho em forma de cruz onde os geofones foram dispostos."
+    },
+    {
+      "id": "sep",
+      "label": "Transmissor do SEP",
+      "label_short": "Transmissor SEP",
+      "explain": "O transmissor do experimento de Propriedades Elétricas da Superfície (SEP), que sondava as propriedades elétricas do solo. O LROC o chama de SEP em sua imagem da Apollo 17; suas antenas de 35 m foram estendidas aqui."
+    },
+    {
+      "id": "flag",
+      "label": "Bandeira dos EUA (posição LROC)",
+      "label_short": "Bandeira EUA",
+      "explain": "O ponto que a camada de equipamentos da Apollo 17 do LROC indica para a bandeira, a cerca de 22 m a nor-noroeste do módulo lunar. A bandeira em si é pequena demais para ser vista."
+    },
+    {
+      "id": "rudolph",
+      "label": "Cratera Rudolph",
+      "label_short": "Cratera Rudolph",
+      "explain": "A cratera que o LROC chama de Rudolph em seu mapa da Apollo 17, a cerca de 290 m a noroeste do módulo lunar."
+    },
+    {
+      "id": "poppie",
+      "label": "Cratera Poppie",
+      "label_short": "Cratera Poppie",
+      "explain": "Uma pequena cratera ao sul do módulo lunar que o LROC chama de Poppie em seu mapa da Apollo 17."
+    },
+    {
+      "id": "barjea",
+      "label": "Cratera Barjea",
+      "label_short": "Cratera Barjea",
+      "explain": "Uma pequena cratera brilhante a sudeste do módulo lunar que o LROC chama de Barjea em seu mapa da Apollo 17."
+    },
+    {
+      "id": "geophone-paths",
+      "label": "Trilhas dos geofones",
+      "label_short": "Trilhas geofones",
+      "explain": "A imagem da Apollo 17 do LROC mostra um caminho em forma de cruz a oeste do local de pouso, onde os astronautas instalaram os geofones para monitorar a atividade sísmica (o contorno tracejado marca a área)."
+    },
+    {
+      "id": "sep-rover-tracks",
+      "label": "Marcas do rover até o local do SEP",
+      "label_short": "Marcas do SEP",
+      "explain": "O LROC observa que Cernan deixou marcas do rover a leste quando estendeu as antenas de 35 m do SEP. Elas vão da área do módulo lunar até o transmissor (o contorno tracejado marca a área)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona do jato do LM",
+      "label_short": "Zona do jato",
+      "explain": "O LROC observa que o motor de descida clareou o solo ao redor dos locais de pouso da Apollo; na Apollo 17 o halo se espalha ao redor do módulo lunar (um lóbulo pode marcar a trajetória de descida)."
     }
   ],
   "panorama_caption": "O local do ALSEP no vale Taurus-Littrow, EVA-1 (12 de dezembro de 1972): o pacote de experimentos, o Veículo Lunar de Exploração e os maciços do vale, no panorama colorido de Jack Schmitt. O último pouso da Apollo.",

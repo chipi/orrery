@@ -17,6 +17,42 @@
       "label": "激光测距反射器（LRRR）",
       "label_short": "激光反射器",
       "explain": "Apollo 11 留下的激光测距反射器阵列（LRRR）：地球上的天文台可以测量被它从月球反射回来的激光脉冲的往返时间。它位于地震仪装置西北偏北约 5 m 处。"
+    },
+    {
+      "id": "flag",
+      "label": "美国国旗（LROC 位置）",
+      "label_short": "美国国旗",
+      "explain": "LROC 的 Apollo 11 设备图层给出的国旗位置，在 LM 西北偏西约 14 m 处。国旗本身太小，在此分辨率下看不见。"
+    },
+    {
+      "id": "tv",
+      "label": "电视摄像机（LROC 位置）",
+      "label_short": "电视摄像机",
+      "explain": "LROC 的 Apollo 11 设备图层给出的电视摄像机位置，在 LM 西北约 26 m 处。图像中该处没有可辨认的物体。"
+    },
+    {
+      "id": "little-west",
+      "label": "Little West 环形山",
+      "label_short": "Little West",
+      "explain": "LROC 在其 Apollo 11 地图上标为 Little West 的环形山，在 LM 以东约 75 m 处。图像中一条淡淡的足迹通向它。"
+    },
+    {
+      "id": "double",
+      "label": "Double 环形山",
+      "label_short": "Double",
+      "explain": "LROC 在其 Apollo 11 Featured Sites 地图上标为 Double 的小型环形山，在 LM 西南约 17 m 处。"
+    },
+    {
+      "id": "footpath-little-west",
+      "label": "通向 Little West 的足迹",
+      "label_short": "足迹",
+      "explain": "LROC 指出，在其 Apollo 11 着陆点图像中，宇航员走过的路径非常醒目。这条淡淡的线从 LM 向东通向 Little West 环形山（虚线轮廓标出的是一片区域，而非一个点）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM 下降发动机喷流区",
+      "label_short": "喷流区",
+      "explain": "LROC 指出，下降发动机在着陆点周围刮出一圈明亮的光晕，很可能是把发动机下方最细的颗粒吹走所致。在 Apollo 11，它表现为 LM 周围宽约 100 m 的明亮区域。"
     }
   ],
   "panorama_caption": "静海基地，EVA-1。巴兹·奥尔德林在着陆后不久拍下了 LM Eagle 和美国国旗。LM 附近可见的 Hasselblad 拼接缝和色差是已发布拼接图的一部分。",

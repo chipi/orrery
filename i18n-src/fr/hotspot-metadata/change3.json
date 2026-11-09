@@ -5,6 +5,18 @@
       "label": "Atterrisseur Chang'e 3",
       "label_short": "Chang'e 3",
       "explain": "L'atterrisseur chinois Chang'e 3, posé sur la Mer des Pluies le 14 décembre 2013, premier alunissage depuis 1976. Sous ce Soleil bas, il apparaît comme un seul pixel brillant avec une longue ombre."
+    },
+    {
+      "id": "crater-450m",
+      "label": "Cratère de 450 m à l'ouest de l'atterrisseur",
+      "label_short": "Cratère de 450 m",
+      "explain": "LROC note que Chang'e 3 s'est posé à environ 60 m à l'est du rebord d'un cratère de 450 m de large et de 40 m de profondeur, sur un épais dépôt de matériau volcanique."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle de Chang'e 3",
+      "label_short": "Zone de souffle",
+      "explain": "LROC a photographié le site avant et après l'alunissage et mesuré la zone de souffle du moteur ; la zone diffuse s'étend sur 40 à 50 m du nord au sud et 10 à 15 m d'est en ouest au-delà de la zone focalisée, plus claire."
     }
   ]
 }

@@ -5,6 +5,42 @@
       "label": "Estágio de descida do LM (Antares)",
       "label_short": "LM Antares",
       "explain": "A metade inferior do módulo lunar Antares da Apollo 14, deixada na Lua após o pouso de fevereiro de 1971."
+    },
+    {
+      "id": "alsep",
+      "label": "Estação central do ALSEP",
+      "label_short": "ALSEP",
+      "explain": "O pacote de experimentos da superfície lunar da Apollo 14, instalado a oeste do módulo lunar na primeira caminhada lunar, em fevereiro de 1971. A imagem do LROC o mostra com trilhas que partem dele."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismômetro passivo (LROC)",
+      "label_short": "Sismômetro",
+      "explain": "O LROC lista o sismômetro passivo da Apollo 14 como um ponto próprio, a cerca de 3 m da estação central (o anel se sobrepõe ao anel do ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Bandeira dos EUA (posição LROC)",
+      "label_short": "Bandeira EUA",
+      "explain": "O ponto que a camada de equipamentos da Apollo 14 do LROC indica para a bandeira, a cerca de 10 m a noroeste do módulo lunar. A bandeira em si é pequena demais para ser vista."
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Crateras Triplet",
+      "label_short": "Crateras Triplet",
+      "explain": "O grupo de crateras que o LROC chama de Triplet e Center Crater em seu mapa da Apollo 14, a cerca de 210 m a sudeste do módulo lunar."
+    },
+    {
+      "id": "footpaths",
+      "label": "Trilhas ao redor do ALSEP",
+      "label_short": "Trilhas ALSEP",
+      "explain": "A imagem da Apollo 14 do LROC mostra as trilhas dos astronautas como linhas de solo revolvido; elas convergem no ALSEP e seguem para leste em direção ao módulo lunar (o contorno tracejado marca a área)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona do jato do LM",
+      "label_short": "Zona do jato",
+      "explain": "O LROC observa que o motor de descida limpou um halo brilhante ao redor dos locais de pouso da Apollo, incluindo a Apollo 14. Aqui é uma tênue zona brilhante ao redor do módulo lunar."
     }
   ]
 }

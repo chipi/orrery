@@ -5,6 +5,12 @@
       "label": "Luna 21 Lander",
       "label_short": "Luna 21 Lander",
       "explain": "Der Lander Luna 21, der Lunochod 2 am 15. Januar 1973 im Le-Monnier-Krater absetzte. Seine Triebwerke legten rund um ihn eine 10 bis 20 m breite helle Zone frei; die Spuren des Rovers führen von ihm weg."
+    },
+    {
+      "id": "blast",
+      "label": "Luna-21-Abgasbereich",
+      "label_short": "Abgasbereich",
+      "explain": "LROC zufolge erzeugte das Landetriebwerk eine helle Zone, die sich etwa 10 bis 20 m um den Lander Luna 21 erstreckt."
     }
   ]
 }

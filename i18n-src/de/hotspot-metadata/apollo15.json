@@ -17,6 +17,36 @@
       "label": "Mondauto (LRV)",
       "label_short": "LRV",
       "explain": "Apollo 15 war die erste Mission mit einem Lunar Roving Vehicle (LRV). Hier bildet LROC den Rover heute ab, der nach der Mission auf dem Mond zurückgelassen wurde."
+    },
+    {
+      "id": "seismometer",
+      "label": "Passives Seismometer (LROC)",
+      "label_short": "Seismometer",
+      "explain": "LROC führt das passive Seismometer von Apollo 15 als eigenen Punkt auf, etwa 3 m von der Zentralstation entfernt (der Ring überlappt den ALSEP-Ring)."
+    },
+    {
+      "id": "flag",
+      "label": "US-Flagge (LROC-Position)",
+      "label_short": "US-Flagge",
+      "explain": "Der Punkt, den die Hardware-Ebene von LROC für Apollo 15 für die Flagge angibt, etwa 13 m nördlich der Mondlandefähre. Die Flagge selbst ist zu klein, um sichtbar zu sein."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Fußpfade zum ALSEP",
+      "label_short": "ALSEP-Pfade",
+      "explain": "Dunkle Fußpfade im Bild führen von der Mondlandefähre zum Instrumentenpaket nordwestlich davon (die gestrichelte Umrandung markiert das Gebiet)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Rover-Spur zum LRV",
+      "label_short": "Rover-Spur",
+      "explain": "Eine dunkle Linie im Bild führt von der Mondlandefähre nach Osten zum Parkplatz des Lunar Roving Vehicle, den LROC aufführt (die gestrichelte Umrandung markiert das Gebiet)."
+    },
+    {
+      "id": "blast",
+      "label": "LM-Abgasbereich",
+      "label_short": "Abgasbereich",
+      "explain": "LROC zufolge hat das Abstiegstriebwerk den Boden um die Apollo-Landestellen aufgehellt. Bei Apollo 15 ist die helle Zone ein Lappen, der sich südsüdöstlich der Mondlandefähre erstreckt."
     }
   ]
 }

@@ -5,6 +5,42 @@
       "label": "Etapa de descenso del LM (Antares)",
       "label_short": "LM Antares",
       "explain": "La mitad inferior del módulo lunar Antares del Apollo 14, que quedó en la Luna tras el alunizaje de febrero de 1971."
+    },
+    {
+      "id": "alsep",
+      "label": "Estación central del ALSEP",
+      "label_short": "ALSEP",
+      "explain": "El paquete de experimentos de la superficie lunar del Apollo 14, instalado al oeste del módulo lunar en la primera caminata lunar, en febrero de 1971. La imagen del LROC lo muestra con senderos que parten de él."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismómetro pasivo (LROC)",
+      "label_short": "Sismómetro",
+      "explain": "El LROC enumera el sismómetro pasivo del Apollo 14 como un punto propio, a unos 3 m de la estación central (el anillo se superpone al anillo del ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Bandera de EE. UU. (posición LROC)",
+      "label_short": "Bandera EE. UU.",
+      "explain": "El punto que la capa de equipamiento del Apollo 14 del LROC asigna a la bandera, a unos 10 m al noroeste del módulo lunar. La bandera en sí es demasiado pequeña para verse."
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Cráteres Triplet",
+      "label_short": "Cráteres Triplet",
+      "explain": "El grupo de cráteres que el LROC rotula Triplet y Center Crater en su mapa del Apollo 14, a unos 210 m al sureste del módulo lunar."
+    },
+    {
+      "id": "footpaths",
+      "label": "Senderos alrededor del ALSEP",
+      "label_short": "Senderos ALSEP",
+      "explain": "La imagen del LROC del Apollo 14 muestra los senderos de los astronautas como líneas de suelo removido; convergen en el ALSEP y van hacia el este, hasta el módulo lunar (el contorno discontinuo marca la zona)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona de chorro del LM",
+      "label_short": "Zona de chorro",
+      "explain": "El LROC señala que el motor de descenso barrió un halo brillante alrededor de los sitios de alunizaje del Apollo, incluido el del Apollo 14. Aquí es una tenue zona brillante alrededor del módulo lunar."
     }
   ]
 }

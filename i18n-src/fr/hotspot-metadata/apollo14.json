@@ -5,6 +5,42 @@
       "label": "Étage de descente du LM (Antares)",
       "label_short": "LM Antares",
       "explain": "La moitié inférieure du module lunaire Antares d'Apollo 14, restée sur la Lune après l'alunissage de février 1971."
+    },
+    {
+      "id": "alsep",
+      "label": "Station centrale de l'ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Le paquet d'expériences de surface lunaire d'Apollo 14, installé à l'ouest du module lunaire lors de la première sortie lunaire, en février 1971. L'image de LROC le montre avec des sentiers qui en partent."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismomètre passif (LROC)",
+      "label_short": "Sismomètre",
+      "explain": "LROC liste le sismomètre passif d'Apollo 14 comme un point à part, à environ 3 m de la station centrale (l'anneau chevauche celui de l'ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Drapeau américain (position LROC)",
+      "label_short": "Drapeau US",
+      "explain": "Le point que la couche matériel d'Apollo 14 de LROC donne pour le drapeau, à environ 10 m au nord-ouest du module lunaire. Le drapeau lui-même est trop petit pour être vu."
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Cratères Triplet",
+      "label_short": "Cratères Triplet",
+      "explain": "Le groupe de cratères que LROC nomme Triplet et Center Crater sur sa carte d'Apollo 14, à environ 210 m au sud-est du module lunaire."
+    },
+    {
+      "id": "footpaths",
+      "label": "Sentiers autour de l'ALSEP",
+      "label_short": "Sentiers ALSEP",
+      "explain": "L'image d'Apollo 14 de LROC montre les sentiers des astronautes comme des lignes de sol remué ; ils convergent vers l'ALSEP et courent vers l'est jusqu'au module lunaire (le contour en pointillés marque la zone)."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle du LM",
+      "label_short": "Zone de souffle",
+      "explain": "LROC note que le moteur de descente a balayé un halo clair autour des sites d'alunissage d'Apollo, dont celui d'Apollo 14. Ici, c'est une faible zone claire autour du module lunaire."
     }
   ]
 }

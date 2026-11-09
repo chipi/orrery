@@ -17,6 +17,36 @@
       "label": "Maanrover (LRV)",
       "label_short": "LRV",
       "explain": "Apollo 15 was de eerste missie met een Lunar Roving Vehicle (LRV). Dit is waar LROC de rover tegenwoordig vastlegt, achtergelaten op de Maan na de missie."
+    },
+    {
+      "id": "seismometer",
+      "label": "Passieve seismometer (LROC)",
+      "label_short": "Seismometer",
+      "explain": "LROC vermeldt de passieve seismometer van Apollo 15 als een eigen punt, ongeveer 3 m van het centraalstation (de ring overlapt de ALSEP-ring)."
+    },
+    {
+      "id": "flag",
+      "label": "Amerikaanse vlag (LROC-positie)",
+      "label_short": "Amerikaanse vlag",
+      "explain": "Het punt dat de hardwarelaag van LROC voor Apollo 15 aan de vlag geeft, ongeveer 13 m ten noorden van de maanlander. De vlag zelf is te klein om te zien."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Voetpaden naar het ALSEP",
+      "label_short": "ALSEP-voetpaden",
+      "explain": "Donkere voetpaden in het beeld lopen van de maanlander naar het instrumentenpakket ten noordwesten ervan (de gestippelde omtrek markeert het gebied)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Roversporen naar de LRV",
+      "label_short": "Roversporen",
+      "explain": "Een donkere lijn in het beeld loopt vanaf de maanlander oostwaarts naar de parkeerplek van het Lunar Roving Vehicle die LROC vermeldt (de gestippelde omtrek markeert het gebied)."
+    },
+    {
+      "id": "blast",
+      "label": "Uitblaaszone van de LM",
+      "label_short": "Uitblaaszone",
+      "explain": "LROC zegt dat de daalmotor de grond rond de Apollo-landingsplaatsen heeft opgehelderd. Bij Apollo 15 is de lichte zone een lob die zich uitstrekt naar het zuidzuidoosten van de maanlander."
     }
   ]
 }

@@ -17,6 +17,36 @@
       "label": "Rover lunare (LRV)",
       "label_short": "LRV",
       "explain": "L'Apollo 15 fu la prima missione a portare un rover lunare (LRV). Qui si vede il rover come lo fotografa oggi LROC, lasciato sulla Luna dopo la missione."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismometro passivo (LROC)",
+      "label_short": "Sismometro",
+      "explain": "LROC elenca il sismometro passivo dell'Apollo 15 come punto a sé, a circa 3 m dalla stazione centrale (l'anello si sovrappone a quello dell'ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Bandiera USA (posizione LROC)",
+      "label_short": "Bandiera USA",
+      "explain": "Il punto che il livello hardware dell'Apollo 15 di LROC indica per la bandiera, a circa 13 m a nord del modulo lunare. La bandiera in sé è troppo piccola per essere vista."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Sentieri verso l'ALSEP",
+      "label_short": "Sentieri ALSEP",
+      "explain": "Sentieri scuri nell'immagine vanno dal modulo lunare al pacchetto di strumenti a nord-ovest di esso (il contorno tratteggiato indica l'area)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Traccia del rover verso l'LRV",
+      "label_short": "Traccia rover",
+      "explain": "Una linea scura nell'immagine corre a est dal modulo lunare fino al punto di parcheggio del rover lunare (LRV) indicato da LROC (il contorno tratteggiato indica l'area)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona del getto del LM",
+      "label_short": "Zona del getto",
+      "explain": "LROC osserva che il motore di discesa ha schiarito il suolo attorno ai siti di allunaggio dell'Apollo. All'Apollo 15 la zona chiara è un lobo che si estende a sud-sud-est del modulo lunare."
     }
   ]
 }

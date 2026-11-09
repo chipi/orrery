@@ -11,6 +11,60 @@
       "label": "Mondauto (LRV)",
       "label_short": "LRV",
       "explain": "Das Lunar Roving Vehicle (LRV) von Apollo 17. Hier bildet LROC den Rover heute ab, der nach der Mission auf dem Mond zurückgelassen wurde."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-Zentralstation",
+      "label_short": "ALSEP",
+      "explain": "Das Apollo-17-Experimentpaket für die Mondoberfläche, westlich der Mondlandefähre im Taurus-Littrow-Tal. Das LROC-Bild zeigt die Instrumente und den kreuzförmigen Pfad, entlang dem die Geophone ausgelegt wurden."
+    },
+    {
+      "id": "sep",
+      "label": "SEP-Sender",
+      "label_short": "SEP-Sender",
+      "explain": "Der Sender des Experiments zu den elektrischen Eigenschaften der Oberfläche (SEP), mit dem die elektrischen Eigenschaften des Bodens untersucht wurden. LROC beschriftet ihn in seinem Apollo-17-Bild als SEP; hier wurden seine 35-m-Antennen ausgelegt."
+    },
+    {
+      "id": "flag",
+      "label": "US-Flagge (LROC-Position)",
+      "label_short": "US-Flagge",
+      "explain": "Der Punkt, den die Hardware-Ebene von LROC für Apollo 17 für die Flagge angibt, etwa 22 m nordnordwestlich der Mondlandefähre. Die Flagge selbst ist zu klein, um sichtbar zu sein."
+    },
+    {
+      "id": "rudolph",
+      "label": "Rudolph-Krater",
+      "label_short": "Rudolph-Krater",
+      "explain": "Der Krater, den LROC auf seiner Apollo-17-Karte als Rudolph beschriftet, etwa 290 m nordwestlich der Mondlandefähre."
+    },
+    {
+      "id": "poppie",
+      "label": "Poppie-Krater",
+      "label_short": "Poppie-Krater",
+      "explain": "Ein kleiner Krater südlich der Mondlandefähre, den LROC auf seiner Apollo-17-Karte als Poppie beschriftet."
+    },
+    {
+      "id": "barjea",
+      "label": "Barjea-Krater",
+      "label_short": "Barjea-Krater",
+      "explain": "Ein kleiner heller Krater südöstlich der Mondlandefähre, den LROC auf seiner Apollo-17-Karte als Barjea beschriftet."
+    },
+    {
+      "id": "geophone-paths",
+      "label": "Geophon-Fußpfade",
+      "label_short": "Geophon-Pfade",
+      "explain": "Das LROC-Bild von Apollo 17 zeigt westlich der Landestelle einen kreuzförmigen Pfad, auf dem die Astronauten die Geophone zur Überwachung seismischer Aktivität aufstellten (die gestrichelte Umrandung markiert das Gebiet)."
+    },
+    {
+      "id": "sep-rover-tracks",
+      "label": "Rover-Spuren zur SEP-Stelle",
+      "label_short": "SEP-Spuren",
+      "explain": "LROC zufolge hinterließ Cernan Rover-Spuren nach Osten, als er die 35-m-SEP-Antennen auslegte. Sie führen vom Bereich der Mondlandefähre zum Sender (die gestrichelte Umrandung markiert das Gebiet)."
+    },
+    {
+      "id": "blast",
+      "label": "LM-Abgasbereich",
+      "label_short": "Abgasbereich",
+      "explain": "LROC zufolge hat das Abstiegstriebwerk den Boden um die Apollo-Landestellen aufgehellt; bei Apollo 17 breitet sich der Hof um die Mondlandefähre aus (ein Lappen könnte den Abstiegspfad markieren)."
     }
   ],
   "panorama_caption": "Der ALSEP-Standort im Taurus-Littrow-Tal, EVA-1 (12. Dezember 1972): das Experimentpaket, das Mondauto (LRV) und die Bergmassive des Tals, Jack Schmitts Farbpanorama. Die letzte Apollo-Landung.",

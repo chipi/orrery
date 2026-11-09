@@ -17,6 +17,54 @@
       "label": "Surveyor 3 着陸機",
       "label_short": "Surveyor 3",
       "explain": "NASA のロボット着陸機。1967年4月20日、小さなクレーターの内側の斜面に着陸した。Apollo 12 は1969年11月にそこから約160 mの地点に着陸し、乗組員は11月20日にテレビカメラを含む約10 kgの部品を取り外した。"
+    },
+    {
+      "id": "flag",
+      "label": "米国旗（LROC の位置）",
+      "label_short": "米国旗",
+      "explain": "LROC の Apollo 12 機材レイヤーが旗の位置として示す点で、LM の北約16 mにある。旗そのものはこの解像度では小さすぎて見えない。"
+    },
+    {
+      "id": "seismometer",
+      "label": "受動地震計（LROC）",
+      "label_short": "地震計",
+      "explain": "LROC は Apollo 12 の受動地震計を独立した点として載せており、中央ステーションから約3 mの位置にある（リングは ALSEP のリングと重なる）。"
+    },
+    {
+      "id": "surveyor-crater",
+      "label": "Surveyor クレーター",
+      "label_short": "Surveyor",
+      "explain": "LROC が Apollo 12 の地図で Surveyor と呼ぶクレーター。内側に Surveyor 3 があり、LM はそこから約160 mの地点に着陸した。"
+    },
+    {
+      "id": "head",
+      "label": "Head クレーター",
+      "label_short": "Head",
+      "explain": "LM の西にある大きなクレーターで、LROC が Apollo 12 の地図で Head と呼ぶ。"
+    },
+    {
+      "id": "bench",
+      "label": "Bench クレーター",
+      "label_short": "Bench",
+      "explain": "LM の南西にあるクレーターで、LROC が Apollo 12 の地図で Bench と呼ぶ。"
+    },
+    {
+      "id": "block",
+      "label": "Block クレーター",
+      "label_short": "Block",
+      "explain": "LM の東にある小さなクレーターで、LROC が Apollo 12 の地図で Block と呼ぶ。"
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "ALSEP へ向かう足跡",
+      "label_short": "ALSEP への足跡",
+      "explain": "画像の暗い筋が、LM 付近とその北西にある観測機器パッケージを結んでいる。LROC の最初の月面歩行の経路レイヤーはこの通路に沿っている（破線の輪郭は範囲を示す）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM の噴射域",
+      "label_short": "噴射域",
+      "explain": "LROC によると、降下エンジンはすべての着陸地点で周囲の地面を明るくした。Apollo 12 では明るい領域が Surveyor クレーターの方へ引き伸ばされているため、輪郭はおおまかな目安にすぎない。"
     }
   ]
 }

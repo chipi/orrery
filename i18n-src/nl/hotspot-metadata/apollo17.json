@@ -11,6 +11,60 @@
       "label": "Maanrover (LRV)",
       "label_short": "LRV",
       "explain": "Het Lunar Roving Vehicle (LRV) van Apollo 17. Dit is waar LROC de rover tegenwoordig vastlegt, achtergelaten op de Maan na de missie."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-centraalstation",
+      "label_short": "ALSEP",
+      "explain": "Het Apollo 17 Lunar Surface Experiments Package, ten westen van de maanlander in de Taurus-Littrowvallei. LROC's beeld toont de instrumenten en het kruisvormige pad waar de geofoons werden uitgelegd."
+    },
+    {
+      "id": "sep",
+      "label": "SEP-zender",
+      "label_short": "SEP-zender",
+      "explain": "De zender van het experiment Surface Electrical Properties, dat de elektrische eigenschappen van de bodem onderzocht. LROC noemt hem SEP in zijn Apollo 17-beeld; hier werden zijn antennes van 35 m uitgelegd."
+    },
+    {
+      "id": "flag",
+      "label": "Amerikaanse vlag (LROC-positie)",
+      "label_short": "Amerikaanse vlag",
+      "explain": "Het punt dat de hardwarelaag van LROC voor Apollo 17 aan de vlag geeft, ongeveer 22 m noordnoordwest van de maanlander. De vlag zelf is te klein om te zien."
+    },
+    {
+      "id": "rudolph",
+      "label": "Krater Rudolph",
+      "label_short": "Krater Rudolph",
+      "explain": "De krater die LROC op zijn Apollo 17-kaart Rudolph noemt, ongeveer 290 m noordwest van de maanlander."
+    },
+    {
+      "id": "poppie",
+      "label": "Krater Poppie",
+      "label_short": "Krater Poppie",
+      "explain": "Een kleine krater ten zuiden van de maanlander die LROC op zijn Apollo 17-kaart Poppie noemt."
+    },
+    {
+      "id": "barjea",
+      "label": "Krater Barjea",
+      "label_short": "Krater Barjea",
+      "explain": "Een kleine, heldere krater ten zuidoosten van de maanlander die LROC op zijn Apollo 17-kaart Barjea noemt."
+    },
+    {
+      "id": "geophone-paths",
+      "label": "Voetpaden van de geofoons",
+      "label_short": "Geofoonpaden",
+      "explain": "LROC's beeld van Apollo 17 toont een kruisvormig pad ten westen van de landingsplaats waar de astronauten de geofoons opstelden om seismische activiteit te volgen (de gestippelde omtrek markeert het gebied)."
+    },
+    {
+      "id": "sep-rover-tracks",
+      "label": "Roversporen naar de SEP-locatie",
+      "label_short": "SEP-sporen",
+      "explain": "LROC zegt dat Cernan roversporen naar het oosten maakte toen hij de SEP-antennes van 35 m uitlegde. Ze lopen vanaf de omgeving van de maanlander naar de zender (de gestippelde omtrek markeert het gebied)."
+    },
+    {
+      "id": "blast",
+      "label": "Uitblaaszone van de LM",
+      "label_short": "Uitblaaszone",
+      "explain": "LROC zegt dat de daalmotor de grond rond de Apollo-landingsplaatsen heeft opgehelderd; bij Apollo 17 verspreidt de halo zich rond de maanlander (een lob kan het daaltraject markeren)."
     }
   ],
   "panorama_caption": "De ALSEP-locatie in de Taurus-Littrowvallei, EVA-1 (12 december 1972): het experimentenpakket, de Lunar Roving Vehicle en de bergmassieven van het dal, het kleurenpanorama van Jack Schmitt. De laatste Apollo-landing.",

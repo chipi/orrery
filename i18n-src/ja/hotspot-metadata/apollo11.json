@@ -17,6 +17,42 @@
       "label": "レーザー測距用反射鏡（LRRR）",
       "label_short": "反射鏡（LRRR）",
       "explain": "Apollo 11 が残したレーザー測距用の反射鏡（LRRR）。地球の観測所が、月から跳ね返ってきたレーザーパルスの時間を測れるようにする。地震計パッケージの北北西約5 mに置かれた。"
+    },
+    {
+      "id": "flag",
+      "label": "米国旗（LROC の位置）",
+      "label_short": "米国旗",
+      "explain": "LROC の Apollo 11 機材レイヤーが旗の位置として示す点で、LM の西北西約14 mにある。旗そのものはこの解像度では小さすぎて見えない。"
+    },
+    {
+      "id": "tv",
+      "label": "テレビカメラ（LROC の位置）",
+      "label_short": "テレビカメラ",
+      "explain": "LROC の Apollo 11 機材レイヤーがテレビカメラの位置として示す点で、LM の北西約26 mにある。その場所には画像で判別できるものは何もない。"
+    },
+    {
+      "id": "little-west",
+      "label": "Little West クレーター",
+      "label_short": "Little West",
+      "explain": "LROC が Apollo 11 の地図で Little West と呼ぶクレーターで、LM の東約75 mにある。画像にはそこへ向かう薄い足跡が写っている。"
+    },
+    {
+      "id": "double",
+      "label": "Double クレーター",
+      "label_short": "Double",
+      "explain": "LROC が Apollo 11 の Featured Sites 地図で Double と呼ぶ小さなクレーターで、LM の南西約17 mにある。"
+    },
+    {
+      "id": "footpath-little-west",
+      "label": "Little West へ向かう足跡",
+      "label_short": "足跡",
+      "explain": "LROC は、Apollo 11 着陸地点の画像では宇宙飛行士の足跡が目立つとしている。この薄い線は LM から東の Little West クレーターへ向かっている（破線の輪郭は点ではなく範囲を示す）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM 降下エンジンの噴射域",
+      "label_short": "噴射域",
+      "explain": "LROC によると、降下エンジンは着陸地点の周囲を削り取って明るい暈を作った。おそらくエンジン下から最も細かい粒子を吹き飛ばしたためである。Apollo 11 では LM の周囲に幅約100 mの明るい領域として見える。"
     }
   ],
   "panorama_caption": "静かの基地、EVA-1。バズ・オルドリンが着陸直後に LM Eagle と米国旗を撮影した。LM 付近に見える Hasselblad 画像のつなぎ目と色のずれは、公開されたモザイクの一部である。",

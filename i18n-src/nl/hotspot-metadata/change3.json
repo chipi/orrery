@@ -5,6 +5,18 @@
       "label": "Chang'e 3-lander",
       "label_short": "Chang'e 3-lander",
       "explain": "De Chinese lander Chang'e 3, die op 14 december 2013 landde op Mare Imbrium, de eerste maanlanding sinds 1976. Bij deze lage zon is hij één helder pixel met een lange schaduw."
+    },
+    {
+      "id": "crater-450m",
+      "label": "Krater van 450 m ten westen van de lander",
+      "label_short": "Krater van 450 m",
+      "explain": "LROC zegt dat Chang'e 3 ongeveer 60 m ten oosten van de rand van een krater van 450 m breed en 40 m diep landde, op een dik pakket vulkanisch materiaal."
+    },
+    {
+      "id": "blast",
+      "label": "Uitblaaszone van Chang'e 3",
+      "label_short": "Uitblaaszone",
+      "explain": "LROC legde de plek voor en na de landing vast en mat de uitblaaszone van de motor; de diffuse zone reikt 40 tot 50 m noord-zuid en 10 tot 15 m oost-west voorbij de helderdere, gerichte zone."
     }
   ]
 }

@@ -17,6 +17,36 @@
       "label": "Rover lunaire (LRV)",
       "label_short": "LRV",
       "explain": "Apollo 15 fut la première mission à emporter un rover lunaire (LRV). Voici l'endroit où LROC photographie aujourd'hui le rover, abandonné sur la Lune après la mission."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismomètre passif (LROC)",
+      "label_short": "Sismomètre",
+      "explain": "LROC liste le sismomètre passif d'Apollo 15 comme un point à part, à environ 3 m de la station centrale (l'anneau chevauche celui de l'ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Drapeau américain (position LROC)",
+      "label_short": "Drapeau US",
+      "explain": "Le point que la couche matériel d'Apollo 15 de LROC donne pour le drapeau, à environ 13 m au nord du module lunaire. Le drapeau lui-même est trop petit pour être vu."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Sentiers vers l'ALSEP",
+      "label_short": "Sentiers ALSEP",
+      "explain": "Des sentiers sombres sur l'image vont du module lunaire au paquet d'instruments situé au nord-ouest (le contour en pointillés marque la zone)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Traces du rover jusqu'au LRV",
+      "label_short": "Traces du rover",
+      "explain": "Une ligne sombre sur l'image part vers l'est depuis le module lunaire jusqu'à l'emplacement de stationnement du rover lunaire que LROC indique (le contour en pointillés marque la zone)."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle du LM",
+      "label_short": "Zone de souffle",
+      "explain": "LROC note que le moteur de descente a éclairci le sol autour des sites d'alunissage d'Apollo. À Apollo 15, la zone claire est un lobe qui s'étend au sud-sud-est du module lunaire."
     }
   ]
 }

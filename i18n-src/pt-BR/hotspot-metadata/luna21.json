@@ -5,6 +5,12 @@
       "label": "Módulo de pouso Luna 21",
       "label_short": "Módulo Luna 21",
       "explain": "O módulo de pouso da Luna 21, que deixou o Lunokhod 2 na cratera Le Monnier em 15 de janeiro de 1973. Os motores de descida limparam ao redor uma zona clara de 10 a 20 m de largura, e as trilhas do rover se afastam dele."
+    },
+    {
+      "id": "blast",
+      "label": "Zona do jato da Luna 21",
+      "label_short": "Zona do jato",
+      "explain": "O LROC observa que o motor de descida criou uma zona brilhante que se estende por cerca de 10 a 20 m ao redor do módulo de pouso da Luna 21."
     }
   ]
 }

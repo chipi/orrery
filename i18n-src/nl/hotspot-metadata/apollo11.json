@@ -17,6 +17,42 @@
       "label": "Laser-retroreflector (LRRR)",
       "label_short": "Retroreflector",
       "explain": "De laserretroreflector (LRRR) die Apollo 11 achterliet: een reflector waarmee observatoria op aarde de tijd meten die laserpulsen nodig hebben om van de Maan terug te kaatsen. Hij staat ongeveer 5 m noordnoordwest van het seismometerpakket."
+    },
+    {
+      "id": "flag",
+      "label": "Amerikaanse vlag (LROC-positie)",
+      "label_short": "Amerikaanse vlag",
+      "explain": "Het punt dat de hardwarelaag van LROC voor Apollo 11 aan de vlag geeft, ongeveer 14 m west-noordwest van de maanlander. De vlag zelf is te klein om op deze resolutie te zien."
+    },
+    {
+      "id": "tv",
+      "label": "TV-camera (LROC-positie)",
+      "label_short": "TV-camera",
+      "explain": "Het punt dat de hardwarelaag van LROC voor Apollo 11 aan de TV-camera geeft, ongeveer 26 m noordwest van de maanlander. Op die plek is niets te onderscheiden in het beeld."
+    },
+    {
+      "id": "little-west",
+      "label": "Krater Little West",
+      "label_short": "Little West",
+      "explain": "De krater die LROC op zijn Apollo 11-kaart Little West noemt, ongeveer 75 m ten oosten van de maanlander. Een vaag voetpad in het beeld loopt ernaartoe."
+    },
+    {
+      "id": "double",
+      "label": "Krater Double",
+      "label_short": "Krater Double",
+      "explain": "Een kleine krater die LROC op zijn Apollo 11 Featured Sites-kaart Double noemt, ongeveer 17 m zuidwest van de maanlander."
+    },
+    {
+      "id": "footpath-little-west",
+      "label": "Voetpad naar Little West",
+      "label_short": "Voetpad",
+      "explain": "LROC zegt dat de paden van de astronauten opvallen in zijn beeld van de Apollo 11-landingsplaats. Deze vage lijn loopt vanaf de maanlander oostwaarts naar de krater Little West (de gestippelde omtrek markeert het gebied, geen punt)."
+    },
+    {
+      "id": "blast",
+      "label": "Uitblaaszone van de LM-daalmotor",
+      "label_short": "Uitblaaszone",
+      "explain": "LROC zegt dat de daalmotor rond de landingsplaatsen een lichte halo heeft schoongeveegd, hoogstwaarschijnlijk doordat de fijnste deeltjes onder de motor vandaan zijn geblazen. Bij Apollo 11 is dat een lichte zone van ongeveer 100 m breed rond de maanlander."
     }
   ],
   "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin fotografeerde de LM Eagle en de Amerikaanse vlag kort na de landing. De zichtbare Hasselblad-naden en gekleurde overgangen bij de LM horen bij het gepubliceerde mozaïek.",

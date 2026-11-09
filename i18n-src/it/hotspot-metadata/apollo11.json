@@ -17,6 +17,42 @@
       "label": "Retroriflettore laser (LRRR)",
       "label_short": "Retroriflettore",
       "explain": "Il retroriflettore laser (LRRR) lasciato dall'Apollo 11: un riflettore che permette agli osservatori sulla Terra di cronometrare gli impulsi laser rimandati indietro dalla Luna. Si trova a circa 5 m a nord-nord-ovest del pacchetto del sismometro."
+    },
+    {
+      "id": "flag",
+      "label": "Bandiera USA (posizione LROC)",
+      "label_short": "Bandiera USA",
+      "explain": "Il punto che il livello hardware dell'Apollo 11 di LROC indica per la bandiera, a circa 14 m a ovest-nord-ovest del modulo lunare. La bandiera in sé è troppo piccola per essere vista a questa risoluzione."
+    },
+    {
+      "id": "tv",
+      "label": "Telecamera TV (posizione LROC)",
+      "label_short": "Telecamera TV",
+      "explain": "Il punto che il livello hardware dell'Apollo 11 di LROC indica per la telecamera TV, a circa 26 m a nord-ovest del modulo lunare. In quel punto nell'immagine non si distingue nulla."
+    },
+    {
+      "id": "little-west",
+      "label": "Cratere Little West",
+      "label_short": "Little West",
+      "explain": "Il cratere che LROC chiama Little West sulla sua mappa dell'Apollo 11, a circa 75 m a est del modulo lunare. Nell'immagine un debole sentiero corre verso di esso."
+    },
+    {
+      "id": "double",
+      "label": "Cratere Double",
+      "label_short": "Cratere Double",
+      "explain": "Un piccolo cratere che LROC chiama Double, a circa 17 m a sud-ovest del modulo lunare, sulla sua mappa dei siti in evidenza dell'Apollo 11."
+    },
+    {
+      "id": "footpath-little-west",
+      "label": "Sentiero verso Little West",
+      "label_short": "Sentiero",
+      "explain": "LROC osserva che i percorsi degli astronauti risaltano nella sua immagine del sito dell'Apollo 11. Questa debole linea porta a est dal modulo lunare verso il cratere Little West (il contorno tratteggiato indica l'area, non un punto)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona del getto del motore di discesa del LM",
+      "label_short": "Zona del getto",
+      "explain": "LROC osserva che il motore di discesa ha scavato un alone chiaro attorno ai siti di allunaggio, molto probabilmente spazzando via le particelle più fini da sotto il motore. All'Apollo 11 appare come una zona chiara larga circa 100 m attorno al modulo lunare."
     }
   ],
   "panorama_caption": "Base della Tranquillità, EVA-1. Buzz Aldrin fotografò il LM Eagle e la bandiera USA poco dopo l'allunaggio. Le cuciture Hasselblad visibili e le giunture cromatiche intorno al LM fanno parte del mosaico pubblicato.",

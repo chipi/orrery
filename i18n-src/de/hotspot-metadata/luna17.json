@@ -5,6 +5,18 @@
       "label": "Luna 17 Lander",
       "label_short": "Luna 17 Lander",
       "explain": "Der Lander Luna 17, der Lunochod 1 am 17. November 1970 im Mare Imbrium absetzte. Seine Landetriebwerke haben den Boden ringsum aufgehellt, sodass die Spuren des Rovers rund um den Lander gut zu erkennen sind."
+    },
+    {
+      "id": "blast",
+      "label": "Luna-17-Abgasbereich",
+      "label_short": "Abgasbereich",
+      "explain": "LROC zufolge wurde die Oberfläche um Luna 17 vom Abgas der Landetriebwerke aufgehellt, wodurch die Rover-Spuren in der Nähe des Landers hervortreten."
+    },
+    {
+      "id": "tracks",
+      "label": "Spuren von Lunokhod 1",
+      "label_short": "Rover-Spuren",
+      "explain": "LROC weist auf die Spuren von Lunokhod 1 hin, die an den Rampen auf der Ostseite des Landers beginnen und ihn umkreisen. Lunokhod 1 fuhr später 10,5 km (die gestrichelte Umrandung markiert das Gebiet)."
     }
   ]
 }

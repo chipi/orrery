@@ -17,6 +17,42 @@
       "label": "Vehículo lunar (LRV)",
       "label_short": "LRV",
       "explain": "El vehículo lunar (LRV) del Apollo 16. Aquí se ve el róver tal como lo fotografía hoy el LROC, abandonado en la Luna al terminar la misión."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismómetro pasivo (LROC)",
+      "label_short": "Sismómetro",
+      "explain": "El LROC enumera el sismómetro pasivo del Apollo 16 como un punto propio, a unos 2 m de la estación central (el anillo coincide con el anillo del ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Bandera de EE. UU. (posición LROC)",
+      "label_short": "Bandera EE. UU.",
+      "explain": "El punto que la capa de equipamiento del Apollo 16 del LROC asigna a la bandera, a unos 19 m al nor-noroeste del módulo lunar. La bandera en sí es demasiado pequeña para verse."
+    },
+    {
+      "id": "spot-crater",
+      "label": "Cráter Spot",
+      "label_short": "Cráter Spot",
+      "explain": "Un cráter poco profundo al sur del módulo lunar que el LROC rotula Spot en su mapa del Apollo 16."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Senderos hacia el ALSEP",
+      "label_short": "Senderos ALSEP",
+      "explain": "Senderos oscuros y huellas del róver en la imagen van desde la zona del módulo lunar hacia el suroeste, hasta el paquete de instrumentos (el contorno discontinuo marca la zona)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Huellas del róver hasta el LRV",
+      "label_short": "Huellas róver",
+      "explain": "Unas huellas oscuras en la imagen van hacia el este desde el módulo lunar hasta el lugar de estacionamiento del vehículo lunar que enumera el LROC (el contorno discontinuo marca la zona)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona de chorro del LM",
+      "label_short": "Zona de chorro",
+      "explain": "El LROC señala que el motor de descenso aclaró el suelo alrededor de los sitios de alunizaje del Apollo. En el Apollo 16 el halo brillante alrededor del módulo lunar mide unos 170 m de ancho."
     }
   ]
 }

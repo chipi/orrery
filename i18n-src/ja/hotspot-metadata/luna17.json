@@ -5,6 +5,18 @@
       "label": "Luna 17 着陸機",
       "label_short": "Luna 17 着陸機",
       "explain": "1970年11月17日に雨の海へ Lunokhod 1 を送り届けた Luna 17 の着陸機。降下エンジンで周囲の地面が明るくなり、着陸機を回り込むローバーの轍がよく目立つ。"
+    },
+    {
+      "id": "blast",
+      "label": "Luna 17 の噴射域",
+      "label_short": "噴射域",
+      "explain": "LROC によると、Luna 17 周囲の地表は降下エンジンの排気で明るくなり、そのため着陸機の近くではローバーの轍が目立つ。"
+    },
+    {
+      "id": "tracks",
+      "label": "Lunokhod 1 の轍",
+      "label_short": "ローバーの轍",
+      "explain": "LROC は、Lunokhod 1 の轍が着陸機の東側のスロープから始まり、着陸機を回り込んでいることを指摘している。Lunokhod 1 はのちに10.5 km走行した（破線の輪郭は範囲を示す）。"
     }
   ]
 }

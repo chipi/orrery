@@ -17,6 +17,42 @@
       "label": "Rover lunare (LRV)",
       "label_short": "LRV",
       "explain": "Il rover lunare (LRV) dell'Apollo 16. Qui si vede il rover come lo fotografa oggi LROC, lasciato sulla Luna dopo la missione."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismometro passivo (LROC)",
+      "label_short": "Sismometro",
+      "explain": "LROC elenca il sismometro passivo dell'Apollo 16 come punto a sé, a circa 2 m dalla stazione centrale (l'anello coincide con quello dell'ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Bandiera USA (posizione LROC)",
+      "label_short": "Bandiera USA",
+      "explain": "Il punto che il livello hardware dell'Apollo 16 di LROC indica per la bandiera, a circa 19 m a nord-nord-ovest del modulo lunare. La bandiera in sé è troppo piccola per essere vista."
+    },
+    {
+      "id": "spot-crater",
+      "label": "Cratere Spot",
+      "label_short": "Cratere Spot",
+      "explain": "Un cratere poco profondo a sud del modulo lunare che LROC chiama Spot sulla sua mappa dell'Apollo 16."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Sentieri verso l'ALSEP",
+      "label_short": "Sentieri ALSEP",
+      "explain": "Sentieri scuri e tracce del rover nell'immagine vanno dall'area del modulo lunare a sud-ovest verso il pacchetto di strumenti (il contorno tratteggiato indica l'area)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Traccia del rover verso l'LRV",
+      "label_short": "Traccia rover",
+      "explain": "Tracce scure nell'immagine corrono a est dal modulo lunare fino al punto di parcheggio del rover lunare (LRV) indicato da LROC (il contorno tratteggiato indica l'area)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona del getto del LM",
+      "label_short": "Zona del getto",
+      "explain": "LROC osserva che il motore di discesa ha schiarito il suolo attorno ai siti di allunaggio dell'Apollo. All'Apollo 16 l'alone chiaro attorno al modulo lunare è largo circa 170 m."
     }
   ]
 }

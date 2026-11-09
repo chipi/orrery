@@ -17,6 +17,42 @@
       "label": "Rover lunaire (LRV)",
       "label_short": "LRV",
       "explain": "Le rover lunaire (LRV) d'Apollo 16. Voici l'endroit où LROC photographie aujourd'hui le rover, abandonné sur la Lune après la mission."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismomètre passif (LROC)",
+      "label_short": "Sismomètre",
+      "explain": "LROC liste le sismomètre passif d'Apollo 16 comme un point à part, à environ 2 m de la station centrale (l'anneau coïncide avec celui de l'ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Drapeau américain (position LROC)",
+      "label_short": "Drapeau US",
+      "explain": "Le point que la couche matériel d'Apollo 16 de LROC donne pour le drapeau, à environ 19 m au nord-nord-ouest du module lunaire. Le drapeau lui-même est trop petit pour être vu."
+    },
+    {
+      "id": "spot-crater",
+      "label": "Cratère Spot",
+      "label_short": "Cratère Spot",
+      "explain": "Un cratère peu profond au sud du module lunaire que LROC nomme Spot sur sa carte d'Apollo 16."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Sentiers vers l'ALSEP",
+      "label_short": "Sentiers ALSEP",
+      "explain": "Des sentiers sombres et des traces de rover sur l'image vont de la zone du module lunaire vers le sud-ouest jusqu'au paquet d'instruments (le contour en pointillés marque la zone)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Traces du rover jusqu'au LRV",
+      "label_short": "Traces du rover",
+      "explain": "Des traces sombres sur l'image vont vers l'est depuis le module lunaire jusqu'à l'emplacement de stationnement du rover lunaire que LROC indique (le contour en pointillés marque la zone)."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle du LM",
+      "label_short": "Zone de souffle",
+      "explain": "LROC note que le moteur de descente a éclairci le sol autour des sites d'alunissage d'Apollo. À Apollo 16, le halo clair autour du module lunaire mesure environ 170 m de large."
     }
   ]
 }

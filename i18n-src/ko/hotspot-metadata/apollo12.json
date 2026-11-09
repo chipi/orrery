@@ -17,6 +17,54 @@
       "label": "Surveyor 3 착륙선",
       "label_short": "Surveyor 3",
       "explain": "NASA의 로봇 착륙선으로, 1967년 4월 20일 작은 크레이터의 안쪽 비탈에 내려앉았다. Apollo 12는 1969년 11월 그곳에서 약 160 m 떨어진 곳에 착륙했고, 승무원은 11월 20일 텔레비전 카메라를 포함해 약 10 kg의 부품을 떼어 냈다."
+    },
+    {
+      "id": "flag",
+      "label": "미국 국기 (LROC 위치)",
+      "label_short": "미국 국기",
+      "explain": "LROC의 Apollo 12 장비 레이어가 국기의 위치로 제시하는 지점으로, 달 착륙선에서 북쪽으로 약 16 m 떨어져 있다. 국기 자체는 이 해상도에서 보기엔 너무 작다."
+    },
+    {
+      "id": "seismometer",
+      "label": "수동 지진계 (LROC)",
+      "label_short": "지진계",
+      "explain": "LROC는 Apollo 12 수동 지진계를 별도의 지점으로 올려 두었으며, 중앙 관측소에서 약 3 m 떨어져 있다(고리가 ALSEP 고리와 겹친다)."
+    },
+    {
+      "id": "surveyor-crater",
+      "label": "Surveyor 분화구",
+      "label_short": "Surveyor 분화구",
+      "explain": "LROC가 Apollo 12 지도에서 Surveyor라고 부르는 분화구. Surveyor 3이 그 안에 있고, 달 착륙선은 그곳에서 약 160 m 떨어진 곳에 착륙했다."
+    },
+    {
+      "id": "head",
+      "label": "Head 분화구",
+      "label_short": "Head 분화구",
+      "explain": "달 착륙선 서쪽에 있는 큰 분화구로, LROC가 Apollo 12 지도에서 Head라고 부른다."
+    },
+    {
+      "id": "bench",
+      "label": "Bench 분화구",
+      "label_short": "Bench 분화구",
+      "explain": "달 착륙선 남서쪽에 있는 분화구로, LROC가 Apollo 12 지도에서 Bench라고 부른다."
+    },
+    {
+      "id": "block",
+      "label": "Block 분화구",
+      "label_short": "Block 분화구",
+      "explain": "달 착륙선 동쪽에 있는 작은 분화구로, LROC가 Apollo 12 지도에서 Block이라고 부른다."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "ALSEP로 가는 발자국 길",
+      "label_short": "ALSEP 발자국 길",
+      "explain": "영상의 어두운 자국이 달 착륙선 일대와 그 북서쪽의 장비 묶음을 잇는다. LROC의 첫 번째 월면 보행 이동 경로 레이어가 이 통로를 따른다(점선 윤곽은 영역을 나타낸다)."
+    },
+    {
+      "id": "blast",
+      "label": "LM 분사 영역",
+      "label_short": "분사 영역",
+      "explain": "LROC에 따르면 하강 엔진이 모든 착륙 지점 둘레의 지면을 밝게 만들었다. Apollo 12에서는 밝은 영역이 Surveyor 분화구 쪽으로 늘어나 있어서 윤곽은 대략적인 길잡이일 뿐이다."
     }
   ]
 }

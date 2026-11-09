@@ -11,6 +11,60 @@
       "label": "Vehículo lunar (LRV)",
       "label_short": "LRV",
       "explain": "El vehículo lunar (LRV) del Apollo 17. Aquí se ve el róver tal como lo fotografía hoy el LROC, abandonado en la Luna al terminar la misión."
+    },
+    {
+      "id": "alsep",
+      "label": "Estación central del ALSEP",
+      "label_short": "ALSEP",
+      "explain": "El paquete de experimentos de la superficie lunar del Apollo 17, al oeste del módulo lunar en el valle Taurus-Littrow. La imagen del LROC muestra los instrumentos y el sendero en forma de cruz donde se tendieron los geófonos."
+    },
+    {
+      "id": "sep",
+      "label": "Transmisor del SEP",
+      "label_short": "Transmisor SEP",
+      "explain": "El transmisor del experimento de propiedades eléctricas de la superficie (SEP), que sondeó las propiedades eléctricas del suelo. El LROC lo rotula SEP en su imagen del Apollo 17; aquí se tendieron sus antenas de 35 m."
+    },
+    {
+      "id": "flag",
+      "label": "Bandera de EE. UU. (posición LROC)",
+      "label_short": "Bandera EE. UU.",
+      "explain": "El punto que la capa de equipamiento del Apollo 17 del LROC asigna a la bandera, a unos 22 m al nor-noroeste del módulo lunar. La bandera en sí es demasiado pequeña para verse."
+    },
+    {
+      "id": "rudolph",
+      "label": "Cráter Rudolph",
+      "label_short": "Cráter Rudolph",
+      "explain": "El cráter que el LROC rotula Rudolph en su mapa del Apollo 17, a unos 290 m al noroeste del módulo lunar."
+    },
+    {
+      "id": "poppie",
+      "label": "Cráter Poppie",
+      "label_short": "Cráter Poppie",
+      "explain": "Un pequeño cráter al sur del módulo lunar que el LROC rotula Poppie en su mapa del Apollo 17."
+    },
+    {
+      "id": "barjea",
+      "label": "Cráter Barjea",
+      "label_short": "Cráter Barjea",
+      "explain": "Un pequeño cráter brillante al sureste del módulo lunar que el LROC rotula Barjea en su mapa del Apollo 17."
+    },
+    {
+      "id": "geophone-paths",
+      "label": "Senderos de los geófonos",
+      "label_short": "Sendas geófonos",
+      "explain": "La imagen del LROC del Apollo 17 muestra un sendero en forma de cruz al oeste del sitio de alunizaje, donde los astronautas instalaron los geófonos para vigilar la actividad sísmica (el contorno discontinuo marca la zona)."
+    },
+    {
+      "id": "sep-rover-tracks",
+      "label": "Huellas del róver hasta el sitio del SEP",
+      "label_short": "Huellas SEP",
+      "explain": "El LROC señala que Cernan dejó huellas del róver hacia el este al tender las antenas de 35 m del SEP. Van desde la zona del módulo lunar hasta el transmisor (el contorno discontinuo marca la zona)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona de chorro del LM",
+      "label_short": "Zona de chorro",
+      "explain": "El LROC señala que el motor de descenso aclaró el suelo alrededor de los sitios de alunizaje del Apollo; en el Apollo 17 el halo se extiende alrededor del módulo lunar (un lóbulo puede marcar la trayectoria de descenso)."
     }
   ],
   "panorama_caption": "El emplazamiento ALSEP en el valle Taurus-Littrow, EVA-1 (12 de diciembre de 1972): el paquete de experimentos, el vehículo lunar itinerante y los macizos del valle, en la panorámica en color de Jack Schmitt. El último alunizaje de Apollo.",

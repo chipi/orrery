@@ -17,6 +17,54 @@
       "label": "Atterrisseur Surveyor 3",
       "label_short": "Surveyor 3",
       "explain": "Atterrisseur robotique de la NASA posé le 20 avril 1967 sur la pente intérieure d'un petit cratère. Apollo 12 s'est posé à environ 160 m de lui en novembre 1969, et son équipage en a retiré environ 10 kg de pièces, dont la caméra de télévision, le 20 novembre."
+    },
+    {
+      "id": "flag",
+      "label": "Drapeau américain (position LROC)",
+      "label_short": "Drapeau US",
+      "explain": "Le point que la couche matériel d'Apollo 12 de LROC donne pour le drapeau, à environ 16 m au nord du module lunaire. Le drapeau lui-même est trop petit pour être vu à cette résolution."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismomètre passif (LROC)",
+      "label_short": "Sismomètre",
+      "explain": "LROC liste le sismomètre passif d'Apollo 12 comme un point à part, à environ 3 m de la station centrale (l'anneau chevauche celui de l'ALSEP)."
+    },
+    {
+      "id": "surveyor-crater",
+      "label": "Cratère Surveyor",
+      "label_short": "Cratère Surveyor",
+      "explain": "Le cratère que LROC nomme Surveyor sur sa carte d'Apollo 12. Surveyor 3 s'y trouve, et le module lunaire s'est posé à environ 160 m de là."
+    },
+    {
+      "id": "head",
+      "label": "Cratère Head",
+      "label_short": "Cratère Head",
+      "explain": "Un grand cratère à l'ouest du module lunaire que LROC nomme Head sur sa carte d'Apollo 12."
+    },
+    {
+      "id": "bench",
+      "label": "Cratère Bench",
+      "label_short": "Cratère Bench",
+      "explain": "Un cratère au sud-ouest du module lunaire que LROC nomme Bench sur sa carte d'Apollo 12."
+    },
+    {
+      "id": "block",
+      "label": "Cratère Block",
+      "label_short": "Cratère Block",
+      "explain": "Un petit cratère à l'est du module lunaire que LROC nomme Block sur sa carte d'Apollo 12."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Sentiers vers l'ALSEP",
+      "label_short": "Sentiers ALSEP",
+      "explain": "Des traînées sombres sur l'image relient la zone du module lunaire au paquet d'instruments situé au nord-ouest. La couche de LROC du parcours de la première sortie lunaire suit ce couloir (le contour en pointillés marque la zone)."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle du LM",
+      "label_short": "Zone de souffle",
+      "explain": "LROC note que le moteur de descente a éclairci le sol autour de chaque site d'alunissage. À Apollo 12, la zone claire est étirée vers le cratère Surveyor : le contour n'est donc qu'un repère approximatif."
     }
   ]
 }

@@ -17,6 +17,54 @@
       "label": "Módulo de aterrizaje Surveyor 3",
       "label_short": "Surveyor 3",
       "explain": "Módulo de aterrizaje robótico de la NASA que se posó el 20 de abril de 1967 en la ladera interior de un pequeño cráter. El Apollo 12 alunizó a unos 160 m de él en noviembre de 1969 y su tripulación retiró unos 10 kg de piezas, entre ellas la cámara de televisión, el 20 de noviembre."
+    },
+    {
+      "id": "flag",
+      "label": "Bandera de EE. UU. (posición LROC)",
+      "label_short": "Bandera EE. UU.",
+      "explain": "El punto que la capa de equipamiento del Apollo 12 del LROC asigna a la bandera, a unos 16 m al norte del módulo lunar. La bandera en sí es demasiado pequeña para verse con esta resolución."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismómetro pasivo (LROC)",
+      "label_short": "Sismómetro",
+      "explain": "El LROC enumera el sismómetro pasivo del Apollo 12 como un punto propio, a unos 3 m de la estación central (el anillo se superpone al anillo del ALSEP)."
+    },
+    {
+      "id": "surveyor-crater",
+      "label": "Cráter Surveyor",
+      "label_short": "Cráter Surveyor",
+      "explain": "El cráter que el LROC rotula Surveyor en su mapa del Apollo 12. En su interior está el Surveyor 3, y el módulo lunar alunizó a unos 160 m de distancia."
+    },
+    {
+      "id": "head",
+      "label": "Cráter Head",
+      "label_short": "Cráter Head",
+      "explain": "Un cráter grande al oeste del módulo lunar que el LROC rotula Head en su mapa del Apollo 12."
+    },
+    {
+      "id": "bench",
+      "label": "Cráter Bench",
+      "label_short": "Cráter Bench",
+      "explain": "Un cráter al suroeste del módulo lunar que el LROC rotula Bench en su mapa del Apollo 12."
+    },
+    {
+      "id": "block",
+      "label": "Cráter Block",
+      "label_short": "Cráter Block",
+      "explain": "Un pequeño cráter al este del módulo lunar que el LROC rotula Block en su mapa del Apollo 12."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Senderos hacia el ALSEP",
+      "label_short": "Senderos ALSEP",
+      "explain": "Unas huellas oscuras en la imagen unen la zona del módulo lunar con el paquete de instrumentos situado al noroeste. La capa del recorrido de la primera caminata lunar del LROC sigue este corredor (el contorno discontinuo marca la zona)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona de chorro del LM",
+      "label_short": "Zona de chorro",
+      "explain": "El LROC señala que el motor de descenso aclaró el suelo alrededor de cada sitio de alunizaje. En el Apollo 12 la zona brillante se estira hacia el cráter Surveyor, así que el contorno es solo una guía aproximada."
     }
   ]
 }

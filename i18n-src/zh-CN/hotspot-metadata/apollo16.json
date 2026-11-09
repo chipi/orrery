@@ -17,6 +17,42 @@
       "label": "月球车（LRV）",
       "label_short": "LRV",
       "explain": "Apollo 16 的月球车（LRV）。图中是 LROC 如今拍到的这辆月球车，任务结束后它被留在了月球上。"
+    },
+    {
+      "id": "seismometer",
+      "label": "被动地震仪（LROC）",
+      "label_short": "地震仪",
+      "explain": "LROC 把 Apollo 16 的被动地震仪单独列为一个点，距中央站约 2 m（圆环与 ALSEP 的圆环重合）。"
+    },
+    {
+      "id": "flag",
+      "label": "美国国旗（LROC 位置）",
+      "label_short": "美国国旗",
+      "explain": "LROC 的 Apollo 16 设备图层给出的国旗位置，在 LM 西北偏北约 19 m 处。国旗本身太小，看不见。"
+    },
+    {
+      "id": "spot-crater",
+      "label": "Spot 环形山",
+      "label_short": "Spot",
+      "explain": "LM 以南的一座浅环形山，LROC 在其 Apollo 16 地图上标为 Spot。"
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "通向 ALSEP 的足迹",
+      "label_short": "ALSEP 足迹",
+      "explain": "图像中的深色足迹和月球车辙从 LM 所在区域向西南通向仪器包（虚线轮廓标出的是一片区域）。"
+    },
+    {
+      "id": "lrv-track",
+      "label": "通向 LRV 的车辙",
+      "label_short": "月球车辙",
+      "explain": "图像中的深色车辙从 LM 向东通向 LROC 所列的月球车停放处（虚线轮廓标出的是一片区域）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM 喷流区",
+      "label_short": "喷流区",
+      "explain": "LROC 指出，下降发动机使阿波罗着陆点周围的地面变亮。在 Apollo 16，LM 周围的明亮光晕宽约 170 m。"
     }
   ]
 }

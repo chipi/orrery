@@ -641,7 +641,7 @@
           "label_short": "Lander",
           "lat_offset_m": 0,
           "lon_offset_m": 0,
-          "explain": "The landing platform that Opportunity left behind in Eagle Crater after driving off about a week after landing in January 2004. HiRISE sees it as a darker centre among the reddish airbags that cushioned the landing.",
+          "explain": "Opportunity's landing platform, left in Eagle Crater (about 22 m across) after the airbag-cushioned landing of January 2004. In HiRISE it is the bright dot in the dark bowl of the crater.",
           "source": [
             {
               "label": "HiRISE ESP_050177_1780",
@@ -652,7 +652,7 @@
               "url": "https://images.nasa.gov/details/PIA21494"
             }
           ],
-          "confidence": "medium-high: HiRISE ESP_050177_1780 is this patch's product; its caption puts the lander \"at the center of the bowl of Eagle Crater\". The patch is grayscale, so the airbag colour is not visible; the ring sits on the small bright dot (the lander) at the centre of the dark bowl of the ~20 m bright-rimmed crater that the rover tracks lead out of, measured in this product"
+          "confidence": "medium-high: HiRISE ESP_050177_1780 is this patch's product; its caption puts the lander \"at the center of the bowl of Eagle Crater\". The patch is grayscale, so the airbag colour is not visible; the ring sits on the small bright dot (the lander) at the centre of the dark bowl of the ~22 m bright-rimmed crater (PIA21494 gives 22 m) that the rover tracks lead out of, measured in this product"
         }
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/opportunity/tier2-ctx.jpg",

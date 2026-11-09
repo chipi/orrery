@@ -794,6 +794,7 @@
   let rings3d: PlacedRing[] = $state([]);
   let ringsHost: HTMLDivElement | undefined = $state();
   let ringsW = $state(0);
+  let ringBlocked: Rect[] = $state([]);
   let ringsH = $state(0);
   let flatPatchActive = $derived(flatPatchPhase !== 'hidden');
   // #360: when "zoom all the way" lands on an along-route HiRISE patch under
@@ -4261,6 +4262,23 @@
                   Math.abs(r.y - rings3d[i].y) > 0.25,
               );
             if (moved) rings3d = next;
+            // Traverse stop pills are WebGL sprites: tell the HTML ring labels where they sit.
+            const pills: Rect[] = [];
+            if (next.length > 0) {
+              for (const tl of traverseLines) {
+                for (const lb of tl.stopLabels ?? []) {
+                  const q = lb.visible ? (lb.userData.rectPx as number[] | null | undefined) : null;
+                  if (q)
+                    pills.push({
+                      x: Math.round(q[0]),
+                      y: Math.round(q[1]),
+                      w: Math.round(q[2] - q[0]),
+                      h: Math.round(q[3] - q[1]),
+                    });
+                }
+              }
+            }
+            if (JSON.stringify(pills) !== JSON.stringify(ringBlocked)) ringBlocked = pills;
           }
 
           // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
@@ -4670,6 +4688,7 @@
                   else pillRects.push(r);
                 }
                 lb.visible = pillShow;
+                lb.userData.rectPx = pillShow ? pillRects[pillRects.length - 1] : null;
                 // Near edge 16 px from the ring centre, whatever the width.
                 lb.center.x = flip ? 1 + 16 / wPx : -16 / wPx;
                 lb.scale.set(stopLabelH * (lb.userData.aspect ?? 4), stopLabelH, 1);
@@ -5268,6 +5287,7 @@
         rings={rings3d}
         width={ringsW}
         height={ringsH}
+        blocked={ringBlocked}
         onOpenPhoto={(src) => (panelLightbox = src)}
         onZoomTo={(_x, _y, factor) => zoomPatchBy(factor)}
       />

@@ -45,6 +45,7 @@
     onWheel,
     onOpenPhoto,
     onZoomTo,
+    blocked = [],
   }: {
     rings: PlacedRing[];
     width: number;
@@ -55,6 +56,8 @@
     onOpenPhoto?: (src: string) => void;
     /** Zoom the view in by `factor` around a screen point; false when already at the zoom limit. */
     onZoomTo?: (x: number, y: number, factor: number) => boolean;
+    /** Screen rectangles (e.g. WebGL traverse stop pills) that ring labels keep clear of. */
+    blocked?: Rect[];
   } = $props();
 
   let ladderReady = $state(false);
@@ -120,7 +123,7 @@
       singles.map((r) => ({ id: r.annotation.id, label: chipText(r.annotation), x: r.x, y: r.y })),
       { w: width, h: height },
       ringPx,
-      [...hudBlocked, ...badges.map((c) => ringFootprint(c, ringPx))],
+      [...hudBlocked, ...blocked, ...badges.map((c) => ringFootprint(c, ringPx))],
     ),
   );
   // A ring inside a cluster badge opens from the list too: anchored at its true spot.

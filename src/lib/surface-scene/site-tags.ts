@@ -294,6 +294,9 @@ export function centroidLatLon(points: Array<{ lat: number; lon: number }>): {
   };
 }
 
+/** Opacity of the tags outside an open fan. Below the hit-test floor, so they are not tappable. */
+const FAN_DIM = 0.22;
+
 export interface FanItem {
   key: string;
   /** Where the tag is drawn. */
@@ -680,7 +683,9 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
       const made = elFor(g.lead, g.keys.length);
       if (!made) continue;
       touch(made);
-      const opacity = stage.icon * Math.max(...g.keys.map((k) => byKey.get(k)!.opacity));
+      // While a fan is open the other tags recede (no cards, faint), so the fan reads alone.
+      const opacity =
+        stage.icon * Math.max(...g.keys.map((k) => byKey.get(k)!.opacity)) * (fan ? FAN_DIM : 1);
       shown.push({ g, ...made, opacity });
     }
     let fanItems: FanItem[] = [];
@@ -693,6 +698,7 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
           cardW: Math.max(...known.map((c) => c!.w), 190 * scale),
           cardDx: known[0]?.dx ?? full + 34 * scale,
           view: { w: root.clientWidth, h: root.clientHeight },
+          pad: 12,
         },
       );
       for (const it of fanItems) {
@@ -709,7 +715,7 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
     }
     // Icons-only stage: no cards, no thinning.
     const cards =
-      stage.card < 0.01
+      stage.card < 0.01 || fan
         ? new Map<string, number>()
         : thinCards(
             shown

@@ -439,6 +439,25 @@ describe('a group fans out on click (prod 0.9.7 feedback 3, Kourou)', () => {
       expect(o.side === 0 ? reach : -reach).toBeLessThanOrEqual(o.side === 0 ? phone.w : 0);
     }
   });
+  it('keeps every card inside the view with the safe margin, on both phone sides', () => {
+    const phone = { w: 390, h: 844 };
+    for (const px of [20, 195, 370])
+      for (const n of [2, 5, 9]) {
+        const out = fanLayout(group(n, px, 400), {
+          frame: 23,
+          cardW: 190,
+          cardDx: 34,
+          view: phone,
+          pad: 12,
+        });
+        for (const o of out) {
+          const x0 = o.side === 0 ? o.x - 11.5 : o.x - 34 - 190;
+          const x1 = o.side === 0 ? o.x + 34 + 190 : o.x + 11.5;
+          expect(x0).toBeGreaterThanOrEqual(12 - 1e-6);
+          expect(x1).toBeLessThanOrEqual(390 - 12 + 1e-6);
+        }
+      }
+  });
   it('shifts a fan at the screen edge back into view', () => {
     const out = fanLayout(group(4, 20, 20), opts);
     for (const o of out) {
@@ -511,5 +530,19 @@ describe('fan in the tag layer', () => {
     layer.setFan(['a', 'b']);
     layer.sync([near[0]], [], { icon: 1, size: 1, card: 1 });
     expect(layer.fanned()).toBe(false);
+  });
+  it('while a fan is open the other tags are faint, card-less and not tappable', () => {
+    const { layer, shown } = setup();
+    layer.setSpecs([spec('a', 1), spec('b', 2), spec('c', 1), spec('d', 1)]);
+    const far = { key: 'd', x: 400, y: 200, opacity: 1 };
+    layer.setFan(['a', 'b', 'c']);
+    layer.sync([...near, far], [], { icon: 1, size: 1, card: 1 });
+    const d = shown().find((e) => e.dataset.tag === 'd')!;
+    expect(d.classList.contains('site-tag--bare')).toBe(true);
+    expect(Number(d.style.opacity)).toBeLessThan(0.3);
+    expect(layer.hitTest(400, 200)).toBeNull();
+    layer.setFan(null);
+    layer.sync([...near, far], [], { icon: 1, size: 1, card: 1 });
+    expect(shown().find((e) => e.dataset.tag === 'd')!.style.opacity).toBe('');
   });
 });

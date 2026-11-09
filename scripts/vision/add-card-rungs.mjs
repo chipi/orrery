@@ -11,7 +11,8 @@
  *
  * Card hero = the image `pickHero()` resolves (src/lib/image-hero.ts): per surface
  * dir and entity, the override slot from static/data/<surface>-hero-overrides.json,
- * else 01. Card heroes get 320 + 640.
+ * else 01 — for entities that still have a gallery key (retired galleries are skipped).
+ * Card heroes get 320 + 640.
  *
  * `--all` also gives EVERY ladder entry a 320 rung: thumbnail grids show any image
  * at 96-330 device px (/credits: 2,277 thumbs = 572.5 MB after a full scroll;
@@ -72,6 +73,29 @@ const exists = (p) =>
     () => false,
   );
 
+// Surface → gallery manifest whose keys are the entities the app resolves a hero for. A
+// served dir with no key there is not a card: a retired place gallery that only keeps its
+// route/ leftovers, or missions/thumbnails (trajectory PNGs, not a gallery).
+const GALLERY_FILES = {
+  missions: 'mission-galleries',
+  fleet: 'fleet-galleries',
+  'moon-sites': 'moon-site-galleries',
+  'mars-sites': 'mars-site-galleries',
+  'earth-objects': 'earth-object-galleries',
+  planets: 'planet-galleries',
+  'small-bodies': 'small-body-galleries',
+  satellites: 'satellite-galleries',
+  belts: 'belt-galleries',
+  'iss-modules': 'iss-galleries',
+  'tiangong-modules': 'tiangong-galleries',
+};
+
+function galleryKeys(surface) {
+  return new Set(
+    Object.keys(JSON.parse(readFileSync(`static/data/${GALLERY_FILES[surface]}.json`, 'utf8'))),
+  );
+}
+
 function overrides(surface) {
   const f = `static/data/${surface}-hero-overrides.json`;
   if (!existsSync(f)) return {};
@@ -106,8 +130,9 @@ for (const [surface, dir] of Object.entries(SURFACES)) {
   const root = path.join(SERVED, dir);
   if (!existsSync(root)) continue;
   const ov = overrides(surface);
+  const keys = galleryKeys(surface);
   for (const e of await readdir(root, { withFileTypes: true })) {
-    if (!e.isDirectory()) continue;
+    if (!e.isDirectory() || !keys.has(e.name)) continue;
     const slot = (ov[e.name]?.slot ?? '01.jpg').replace(/\.[^.]+$/, '');
     const stem = `${dir}/${e.name}/${slot}`;
     if (!manifest[`/images/${stem}`]?.length) noLadder.push(stem);

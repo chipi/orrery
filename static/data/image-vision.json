@@ -9727,38 +9727,6 @@
       "scoring_cost_usd": 0.009276,
       "subject_match": true
     },
-    "/images/moon-sites/change4/04.jpg": {
-      "score": 8,
-      "subject": "Chang'e-4 lunar lander photographed on the far side of the Moon by the Yutu-2 rover, with rover wheel tracks visible in the foreground regolith and a north directional indicator in the upper right.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change4/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:46.382Z",
-      "scoring_cost_usd": 0.004758
-    },
-    "/images/moon-sites/change4/05.jpg": {
-      "score": 6,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) image of the Moon's cratered surface with white arrows indicating a small spacecraft or hardware object on the regolith, with a 100-meter scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.47,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change4/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:55.268Z",
-      "scoring_cost_usd": 0.0066809999999999994
-    },
     "/images/moon-sites/change5/01.jpg": {
       "score": 7,
       "subject": "Full-scale model of China's Chang'e-5 lunar sample-return spacecraft on display at a museum exhibition hall.",
@@ -9934,71 +9902,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T11:05:14.871Z",
       "scoring_cost_usd": 0.003561
-    },
-    "/images/moon-sites/luna17/02.jpg": {
-      "score": 7,
-      "subject": "Lunar Reconnaissance Orbiter Camera overhead view of the Luna 17 landing site on the Moon, showing the Lunokhod 1 rover tracks and lander with a 100-meter scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.38,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna17/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.0073230000000000005,
-      "subject_match": true
-    },
-    "/images/moon-sites/luna17/03.jpg": {
-      "score": 7,
-      "subject": "A museum display model of the Soviet Lunokhod lunar rover, showing its eight wire-mesh wheels, dish antenna, and solar panel lid in a simulated lunar surface setting.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna17/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:21.351Z",
-      "scoring_cost_usd": 0.005166
-    },
-    "/images/moon-sites/luna17/04.jpg": {
-      "score": 3,
-      "subject": "East German postage stamp commemorating the Lunokhod 1 lunar rover, labeled '1. Mobiles Mondlabor – Lunochod 1'",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna17/04.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:25.983Z",
-      "scoring_cost_usd": 0.004821000000000001
-    },
-    "/images/moon-sites/luna17/05.jpg": {
-      "score": 4,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) overhead image of the Moon's cratered surface with a white arrow indicating a small spacecraft or hardware feature and a 100-meter scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.47,
-        "y": 0.47
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna17/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:30.695Z",
-      "scoring_cost_usd": 0.0073409999999999994
     },
     "/images/moon-sites/luna24/01.jpg": {
       "score": 5,
@@ -14750,54 +14653,6 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.0068520000000000005,
       "subject_match": true
-    },
-    "/images/mars-sites/mangalyaan/03.jpg": {
-      "score": 2,
-      "subject": "Labeled diagram of a spacecraft showing solar arrays, propellant tank, and antenna components.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mangalyaan/03.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:18:18.726Z",
-      "scoring_cost_usd": 0.005091
-    },
-    "/images/mars-sites/mangalyaan/04.jpg": {
-      "score": 8,
-      "subject": "A spacecraft with gold thermal blanket and silver propulsion module being encapsulated inside a rocket fairing in an integration facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mangalyaan/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:29.835Z",
-      "scoring_cost_usd": 0.004815
-    },
-    "/images/mars-sites/mangalyaan/05.jpg": {
-      "score": 8,
-      "subject": "Orbital view of Earth showing the Indian subcontinent, Arabian Peninsula, and Indian Ocean with swirling storm systems visible",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mangalyaan/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:32.778Z",
-      "scoring_cost_usd": 0.006051000000000001
     },
     "/images/missions/mariner9/06.jpg": {
       "score": 2,

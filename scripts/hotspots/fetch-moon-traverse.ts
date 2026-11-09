@@ -346,7 +346,9 @@ async function doRover(rover: string): Promise<void> {
       t.id === 'start'
         ? 'Landing / drive start'
         : t.id === 'end'
-          ? 'Final position'
+          ? rover === 'apollo16'
+            ? 'LRV final parking (end of EVA 3)'
+            : 'Final position'
           : 'Along route',
     image: `/${path.relative('static', t.outputPath)}`,
     product_id: t.crop.productId,

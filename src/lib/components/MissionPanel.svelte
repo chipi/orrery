@@ -507,28 +507,25 @@
           <div class="credit">{mission.credit}</div>
         {/if}
       {:else if tab === 'flight'}
-        <!-- Trajectory thumbnail at the top of the FLIGHT tab —
-             pre-rendered at build time by scripts/fetch-assets.ts so
-             the panel shows flight data + the path it produces in
-             one place. Only missions with flight data have one
-             (mission-thumbnails.test.ts); asking for the rest 404ed on prod. -->
+        <!-- Trajectory thumbnail at the top of the FLIGHT tab — drawn ahead of time by
+             scripts/render-mission-thumbnails.ts from /fly's own trajectory code, so the panel
+             shows flight data + the path it produces in one place. Every mission has one
+             (mission-thumbnails.test.ts); those with no orbit data show a labelled placeholder. -->
         {#if blueprint}
           {@render blueprintFigure(blueprint)}
         {/if}
-        {#if mission.flight}
-          <figure class="flight-thumbnail">
-            <img
-              src="{assetOrigin}/images/missions/thumbnails/{mission.id}.png"
-              alt=""
-              loading="lazy"
-              onerror={(e) => {
-                const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-                if (fig) fig.style.display = 'none';
-              }}
-              decoding="async"
-            />
-          </figure>
-        {/if}
+        <figure class="flight-thumbnail">
+          <img
+            src="{assetOrigin}/images/missions/thumbnails/{mission.id}.webp"
+            alt=""
+            loading="lazy"
+            onerror={(e) => {
+              const fig = (e.currentTarget as HTMLImageElement).closest('figure');
+              if (fig) fig.style.display = 'none';
+            }}
+            decoding="async"
+          />
+        </figure>
         {#if flightCaveat}
           <div class="flight-caveat" role="note">
             {flightCaveat}

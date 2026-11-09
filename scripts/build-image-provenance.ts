@@ -2693,6 +2693,9 @@ async function buildWalkerFallbackEntries(existing: ProvenanceEntry[]): Promise<
   const allFiles = await walk('static/images');
   for (const localPath of allFiles) {
     if (VARIANT_RE.test(localPath)) continue; // skip derivative variants
+    // Mission trajectory thumbnails are Orrery's own drawings (original-work.json, /colophon),
+    // not sourced imagery: no provenance row.
+    if (localPath.startsWith('static/images/missions/thumbnails/')) continue;
     const served = staticToServed(localPath);
     if (covered.has(served)) continue;
     const segments = served.split('/');

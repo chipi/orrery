@@ -81,12 +81,14 @@ describe('cardForMission', () => {
     expect(spec.slug).toBe('www.orrerylearn.com/c/mission/apollo11');
     expect(spec.imagePath).toBe('/images/cards/mission/apollo11.jpg');
     expect(spec.shareHref).toBe('/c/mission/apollo11');
-    expect(spec.figureUrl).toBe('/images/missions/thumbnails/apollo11.png');
+    expect(spec.figureUrl).toBe('/images/missions/thumbnails/apollo11.webp');
   });
 
-  it('asks for no trajectory figure when the mission has no flight data (no thumbnail exists)', () => {
+  it('asks for the trajectory figure even without flight data (placeholder thumbnail exists)', () => {
     const noFlight = { ...APOLLO, flight: undefined } as unknown as Mission;
-    expect(cardForMission(noFlight, INDEX).figureUrl).toBeUndefined();
+    expect(cardForMission(noFlight, INDEX).figureUrl).toBe(
+      '/images/missions/thumbnails/apollo11.webp',
+    );
   });
 
   it('caps the story to the lead sentences', () => {

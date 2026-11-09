@@ -1552,35 +1552,28 @@ if (missionDriftFailed === 0) {
 }
 
 // ─── Mission trajectory-thumbnail coverage (#390) ─────────────────
-// "Trajectory thumbnail should not be optional." Every mission with a
-// flight block is now renderable by scripts/fetch-assets.ts (MOON →
-// cislunar; waypoints → Sun-centric path; planetary porkchop body →
-// transfer arc; SUN/COMET/ASTEROID → per-mission analytic distance), so
-// each must ship its thumbnail PNG. Fail-closed, parity with the hero
-// zero-gap + i18n gates. Fix: `npx tsx scripts/fetch-assets.ts --thumbnails-only`.
+// "Trajectory thumbnail should not be optional." Every mission has one: scripts/render-mission-thumbnails.ts draws /fly's own trajectory (heliocentric,
+// cislunar, Earth orbit) and a labelled placeholder where there is no orbit data. Fail-closed,
+// parity with the hero zero-gap + i18n gates. Fix: `npx tsx scripts/render-mission-thumbnails.ts`.
 let missionThumbFailed = 0;
 console.log('\nValidating mission trajectory-thumbnail coverage (#390)...');
 for (const dest of missionDataDirs) {
   const dir = join(DATA_ROOT, 'missions', dest);
   if (!existsSync(dir)) continue;
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
-    const m = JSON.parse(readFileSync(join(dir, file), 'utf8')) as {
-      id: string;
-      flight?: unknown;
-    };
-    if (!m.flight) continue;
-    const png = join('static/images/missions/thumbnails', `${m.id}.png`);
-    if (!existsSync(png)) {
+    const m = JSON.parse(readFileSync(join(dir, file), 'utf8')) as { id: string };
+    const thumb = join('static/images/missions/thumbnails', `${m.id}.webp`);
+    if (!existsSync(thumb)) {
       console.error(
-        `  ✗ ${dest}/${file}: has flight data but no trajectory thumbnail ` +
-          `(images/missions/thumbnails/${m.id}.png) — run fetch-assets --thumbnails-only`,
+        `  ✗ ${dest}/${file}: no trajectory thumbnail ` +
+          `(images/missions/thumbnails/${m.id}.webp) — run scripts/render-mission-thumbnails.ts`,
       );
       missionThumbFailed++;
     }
   }
 }
 if (missionThumbFailed === 0) {
-  console.log('  ✓ Every flight-block mission has a trajectory thumbnail');
+  console.log('  ✓ Every mission has a trajectory thumbnail');
 }
 
 // ──────────────────────────────────────────────────────────────────────

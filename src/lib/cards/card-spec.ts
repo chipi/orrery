@@ -158,9 +158,8 @@ export function cardForMission(
     fact: mission.first,
     factLabel: mission.first ? m.card_fact_first() : undefined,
     heroUrl,
-    // fetch-assets renders a trajectory PNG for every mission with flight data
-    // (mission-thumbnails.test.ts); the rest have none, so no figure is asked for.
-    figureUrl: mission.flight ? `/images/missions/thumbnails/${mission.id}.png` : undefined,
+    // render-mission-thumbnails draws one for every mission (mission-thumbnails.test.ts).
+    figureUrl: `/images/missions/thumbnails/${mission.id}.webp`,
     figureCaption: m.card_caption_trajectory(),
     creditLine: mission.credit ? `${m.card_label_sources()}: ${chip(mission.credit, 60)}` : '',
     slug: `${SLUG_HOST}/c/mission/${mission.id}`,

@@ -181,7 +181,7 @@
        prop). /explore keeps 80 px to clear its bottom-left PLANET SCALES
        card; /earth /moon /mars pass a small inset so the ruler is flush
        with the screen bottom (2026-06-28 user direction). */
-    bottom: var(--ruler-bottom, 80px);
+    bottom: max(var(--ruler-bottom, 80px), var(--ruler-clear, 0px));
     z-index: 1;
     pointer-events: none;
     color: rgba(255, 255, 255, 0.92);

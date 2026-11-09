@@ -1181,30 +1181,44 @@
       const r = el?.getBoundingClientRect();
       return r && r.width && r.height ? r : null;
     };
+    const clearProps = () => {
+      html.style.removeProperty('--ruler-left');
+      html.style.removeProperty('--ruler-clear');
+    };
     const check = () => {
       const ruler = [...document.querySelectorAll('.ruler')].map(visible).find(Boolean);
-      const chips = root.querySelector('.hud-controls');
-      if (!ruler || !chips || !visible(chips)) {
-        html.style.removeProperty('--ruler-left');
+      if (!ruler) {
+        clearProps();
         return;
       }
       let right = 0;
-      let bottom = 0;
-      for (const el of chips.querySelectorAll('*')) {
-        const r = visible(el);
-        if (!r) continue;
-        right = Math.max(right, r.right);
-        bottom = Math.max(bottom, r.bottom);
+      const chips = root.querySelector('.hud-controls');
+      if (chips && visible(chips)) {
+        let bottom = 0;
+        for (const el of chips.querySelectorAll('*')) {
+          const r = visible(el);
+          if (!r) continue;
+          right = Math.max(right, r.right);
+          bottom = Math.max(bottom, r.bottom);
+        }
+        if (ruler.top >= bottom + 8) right = 0;
       }
-      if (ruler.top >= bottom + 8) {
-        html.style.removeProperty('--ruler-left');
-        return;
-      }
+      // The locate chip sits at the ruler's default spot on /earth and /moon, so
+      // wherever they share rows the ruler steps right of it (not only on short windows).
       const locate = visible(document.querySelector('.locate-me'));
       if (locate && locate.top < ruler.bottom && locate.bottom > ruler.top) {
         right = Math.max(right, locate.right);
       }
-      html.style.setProperty('--ruler-left', `${Math.round(right + 12)}px`);
+      const left = right ? Math.round(right + 12) : 12;
+      if (right) html.style.setProperty('--ruler-left', `${left}px`);
+      else html.style.removeProperty('--ruler-left');
+      // On narrow windows the ruler's column runs under the centred footer: lift it clear.
+      const foot = visible(document.querySelector('.site-footer'));
+      if (foot && left < foot.right && left + ruler.width > foot.left) {
+        html.style.setProperty('--ruler-clear', `${Math.round(innerHeight - foot.top + 8)}px`);
+      } else {
+        html.style.removeProperty('--ruler-clear');
+      }
     };
     const schedule = () => {
       cancelAnimationFrame(raf);
@@ -1219,7 +1233,7 @@
       cancelAnimationFrame(raf);
       ro.disconnect();
       mo.disconnect();
-      html.style.removeProperty('--ruler-left');
+      clearProps();
     };
   });
   // .by(): a closure, so TS sees `selected` as SurfaceSite | null, not the

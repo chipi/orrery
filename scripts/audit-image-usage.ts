@@ -26,6 +26,10 @@
  *                   textures, source badges, flat-family covers, heroes).
  *   hotspot       — `/images/hotspots/**` surface-detail tiers (moon/mars geo).
  *
+ * Ladder rungs (`NN-320.webp`, listed in `static/data/image-ladder.json`) and
+ * same-stem siblings in another extension inherit their base's verdict; essay
+ * figure refs and `/images/cards/<kind>/<id>.jpg` share cards count as used.
+ *
  * Anything left over is UNKNOWN — a candidate orphan. Genuine, intentionally
  * retained exceptions live in ALLOWED_ORPHANS below with a reason.
  *
@@ -115,6 +119,22 @@ function main(): number {
     (p) => harvestRefs(fs.readFileSync(p, 'utf8'), refs),
   );
 
+  // Essay images are `"essays/<slug>/<name>"` refs (hero in static/data/essays,
+  // figure blocks in the en-US essay bodies); the essay pages build
+  // `/images/<ref>.webp` from them (imgSrc in routes/essays).
+  const essayFiles = [`${DATA_DIR}/i18n/en-US.essays.json`];
+  walk(
+    `${DATA_DIR}/essays`,
+    (_p, n) => n.endsWith('.json'),
+    (p) => essayFiles.push(p),
+  );
+  for (const p of essayFiles) {
+    for (const m of fs
+      .readFileSync(p, 'utf8')
+      .matchAll(/"(essays\/[A-Za-z0-9._-]+\/[A-Za-z0-9._-]+)"/g))
+      refs.add(`/images/${m[1]}.webp`);
+  }
+
   // 2. Gallery count caps + hero-override slots.
   const counts: Record<string, Record<string, number>> = {};
   for (const [cat, file] of Object.entries(GALLERY_MANIFESTS)) {
@@ -138,8 +158,30 @@ function main(): number {
     (p) => onDisk.push(p.replace(IMAGES_DIR, '/images')),
   );
 
+  // Display-ladder rungs: image-ladder.json maps `/images/<stem>` → widths. The
+  // largest width is the unsuffixed `<stem>.webp`; every smaller one is
+  // `<stem>-<w>.webp`, picked at runtime by srcsetFor()/ladderRungUrl().
+  const rungStem = new Map<string, string>();
+  const ladderPath = `${DATA_DIR}/image-ladder.json`;
+  if (fs.existsSync(ladderPath)) {
+    for (const [stem, widths] of Object.entries(readJSON<Record<string, number[]>>(ladderPath))) {
+      for (const w of widths.slice(0, -1)) rungStem.set(`${stem}-${w}.webp`, stem);
+    }
+  }
+  const EXTS = ['jpg', 'jpeg', 'png', 'webp'];
+
   // 4. Classify each distinct BASE image (variants inherit their base's verdict).
+  // A file also inherits from its same-stem siblings in other extensions: pages
+  // reference the served `.webp` while the `NN.1x1.jpg` crops reduce to `NN.jpg`.
   const classify = (p: string): Reason | null => {
+    const stem = rungStem.get(p) ?? p.replace(/\.(jpe?g|png|webp)$/i, '');
+    for (const ext of EXTS) {
+      const r = classifyBase(`${stem}.${ext}`);
+      if (r) return r;
+    }
+    return null;
+  };
+  const classifyBase = (p: string): Reason | null => {
     if (refs.has(p)) return 'referenced';
     const g = p.match(/^\/images\/([^/]+)\/([^/]+)\/(\d+)\.(jpe?g|png|webp)$/i);
     if (g && counts[g[1]] && parseInt(g[3], 10) <= (counts[g[1]][g[2]] ?? 0)) return 'gallery';
@@ -151,6 +193,15 @@ function main(): number {
     if (/^\/images\/hotspots\//.test(p)) return 'hotspot';
     if (/^\/images\/(planets|sun|small-bodies|satellites)\//.test(p)) return 'body';
     if (/^\/images\/[^/]+\/[^/]+\.(jpe?g|png|webp)$/i.test(p)) return 'card';
+    // Share cards (scripts/cards/generate-card-images.mjs): built as
+    // `/images/cards/<kind>/<id>.jpg` template literals in card-spec.ts and the
+    // /c/[kind]/[id], /fleet/[id], /missions/[id] og:image meta.
+    if (
+      /^\/images\/cards\/(fleet|mission|mars-site|moon-site|planet|moon|small-body)\/[^/]+\.jpg$/i.test(
+        p,
+      )
+    )
+      return 'card';
     return null;
   };
 

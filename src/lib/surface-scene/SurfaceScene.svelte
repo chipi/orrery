@@ -198,6 +198,8 @@
     observatoryTagSpec,
     focusFade,
     planetFill,
+    splitCamR,
+    centroidLatLon,
     siteTagSpec,
     tagStage,
     type Rect,
@@ -1676,6 +1678,7 @@
         if (s) enterRouteView(s);
       };
       window.__surfaceSceneExitRouteView = () => exitRouteView();
+      window.__surfaceSceneFaceLatLon = (lat, lon, r) => faceLatLonImpl?.(lat, lon, r);
     }
 
     loadSites(localeFromPage(page))
@@ -3120,6 +3123,54 @@
       },
     });
 
+    // Site tags are the visible markers, and their frames are small at the first zoom
+    // stage: hover and click go through the tag layer (44 px touch target) before the
+    // 3D raycast. A group zooms to the distance where its members get a frame each.
+    const tagPointer = (clientX: number, clientY: number) => {
+      const r = container!.getBoundingClientRect();
+      return siteTags.hitTest(clientX - r.left, clientY - r.top);
+    };
+    const tagPlace = (key: string): { lat: number; lon: number } | null => {
+      const id = key.slice(key.indexOf(':') + 1);
+      const p = key.startsWith('museum:')
+        ? museumsCache.find((x) => x.id === id)
+        : key.startsWith('scope:')
+          ? observatoriesCache.find((x) => x.id === id)
+          : sites.find((x) => x.id === id);
+      return p && p.lat != null && p.lon != null ? { lat: p.lat, lon: p.lon } : null;
+    };
+    const pickTagAt = (clientX: number, clientY: number): boolean => {
+      if (pickSatAt(clientX, clientY)) return false;
+      const hit = tagPointer(clientX, clientY);
+      if (!hit) return false;
+      if (hit.keys.length > 1) {
+        const pts = hit.keys.map(tagPlace).filter((p): p is { lat: number; lon: number } => !!p);
+        const target = splitCamR(
+          pts,
+          planetRadius,
+          camera.fov,
+          container!.clientHeight || 1,
+          siteTags.frameSize(),
+          zoomFloor(),
+        );
+        if (pts.length > 1 && target < camR - 0.05) {
+          const c = centroidLatLon(pts);
+          cue('select');
+          faceLatLonImpl?.(c.lat, c.lon, target);
+          return true;
+        }
+      }
+      cue('select');
+      const id = hit.lead.slice(hit.lead.indexOf(':') + 1);
+      if (hit.lead.startsWith('museum:')) selectMuseum(id, { face: true });
+      else if (hit.lead.startsWith('scope:')) selectObservatory(id, { face: true });
+      else {
+        selectedSat = null;
+        selectSite(id, { face: true });
+      }
+      return true;
+    };
+
     let hoveredSiteId: string | null = null;
     // /earth Earth-satellites use a separate raycast list (pickSatAt
     // raycasts against earthSats' hit spheres; pickSiteAt only sees
@@ -3144,6 +3195,9 @@
       const satId = pickSatAt(e.clientX, e.clientY);
       hoveredSatId = satId;
       hoveredSiteId = satId ? null : pickSiteAt(e.clientX, e.clientY);
+      const tagHit = satId ? null : tagPointer(e.clientX, e.clientY);
+      siteTags.setHover(tagHit?.lead ?? null);
+      el3d.style.cursor = tagHit ? 'pointer' : 'grab';
       const stopHit = pickStopAt(e.clientX, e.clientY);
       hoveredStopInfo = stopHit ? { ...stopHit, clientX: e.clientX, clientY: e.clientY } : null;
     };
@@ -3157,6 +3211,8 @@
       hoverRaf = 0;
       hoverEvent = null;
       hoveredSiteId = null;
+      siteTags.setHover(null);
+      el3d.style.cursor = 'grab';
       hoveredSatId = null;
       hoveredStopInfo = null;
     };
@@ -3257,7 +3313,7 @@
         // A photo pin opens its photo (#641); anything else picks as before.
         const photo = pickStopAt(e.clientX, e.clientY)?.image;
         if (photo) panelLightbox = photo;
-        else tryPick3d(e.clientX, e.clientY);
+        else if (!pickTagAt(e.clientX, e.clientY)) tryPick3d(e.clientX, e.clientY);
       }
     };
     // Suppress the browser context menu on right-click so right-drag
@@ -3401,7 +3457,7 @@
         const t = e.changedTouches[0];
         const photo = pickStopAt(t.clientX, t.clientY)?.image;
         if (photo) panelLightbox = photo;
-        else tryPick3d(t.clientX, t.clientY);
+        else if (!pickTagAt(t.clientX, t.clientY)) tryPick3d(t.clientX, t.clientY);
       }
     };
 

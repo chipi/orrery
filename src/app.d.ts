@@ -95,6 +95,7 @@ declare global {
     __surfaceSceneSelectSite?: (id: string) => void;
     __surfaceSceneFrameRoute?: (id: string) => void;
     __surfaceSceneExitRouteView?: () => void;
+    __surfaceSceneFaceLatLon?: (latDeg: number, lonDeg: number, targetR?: number) => void;
     /** /iss, /tiangong (StationRoute, as `__${config.id}PickAt`). */
     __issPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;
     __tiangongPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;

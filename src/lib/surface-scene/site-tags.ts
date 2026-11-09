@@ -274,6 +274,69 @@ export function planetFill(
   return pxR / (Math.min(canvasW, canvasH) / 2);
 }
 
+/** Straight-line distance between two surface points, in world units
+ *  (planet radius `r`). */
+export function surfaceChord(
+  a: { lat: number; lon: number },
+  b: { lat: number; lon: number },
+  r: number,
+): number {
+  const rad = Math.PI / 180;
+  const v = (p: { lat: number; lon: number }) => [
+    Math.cos(p.lat * rad) * Math.cos(p.lon * rad),
+    Math.sin(p.lat * rad),
+    Math.cos(p.lat * rad) * Math.sin(p.lon * rad),
+  ];
+  const [x1, y1, z1] = v(a);
+  const [x2, y2, z2] = v(b);
+  return r * Math.hypot(x1 - x2, y1 - y2, z1 - z2);
+}
+
+/** The point under the mean direction of `points` (degrees). */
+export function centroidLatLon(points: Array<{ lat: number; lon: number }>): {
+  lat: number;
+  lon: number;
+} {
+  const rad = Math.PI / 180;
+  let x = 0;
+  let y = 0;
+  let z = 0;
+  for (const p of points) {
+    x += Math.cos(p.lat * rad) * Math.cos(p.lon * rad);
+    y += Math.sin(p.lat * rad);
+    z += Math.cos(p.lat * rad) * Math.sin(p.lon * rad);
+  }
+  return {
+    lat: Math.atan2(y, Math.hypot(x, z)) / rad,
+    lon: Math.atan2(z, x) / rad,
+  };
+}
+
+/** Camera distance (from the planet's centre) at which every member of a
+ *  group has a frame of its own, looking straight down on the group: the
+ *  closest pair sets it (frames are squares, so a pair on the diagonal needs
+ *  √2 frames of screen distance; the camera's roll is unknown). Pairs closer than 1e-5 of the radius share a spot
+ *  and never split, so they do not count. Never closer than `floor`. */
+export function splitCamR(
+  members: Array<{ lat: number; lon: number }>,
+  planetRadius: number,
+  fovDeg: number,
+  canvasH: number,
+  framePx: number,
+  floor: number,
+): number {
+  let min = Infinity;
+  for (let i = 0; i < members.length; i++)
+    for (let j = i + 1; j < members.length; j++) {
+      const c = surfaceChord(members[i], members[j], planetRadius);
+      if (c > planetRadius * 1e-5 && c < min) min = c;
+    }
+  if (!Number.isFinite(min)) return floor;
+  const dist =
+    (0.95 * min * (canvasH / 2)) / (Math.tan((fovDeg * Math.PI) / 360) * framePx * Math.SQRT2);
+  return Math.max(floor, planetRadius + dist);
+}
+
 export interface TagStage {
   /** Icon opacity multiplier. */
   icon: number;
@@ -299,7 +362,7 @@ export const TAG_STAGES = {
   iconIn: [1.18, 1.34],
   grow: [1.34, 1.78],
   cardIn: [1.85, 2.55],
-  minSize: 0.7,
+  minSize: 0.55,
   focus: [38, 50],
 } as const;
 
@@ -441,6 +504,7 @@ const STYLE = `
 .site-tag__lead--l,.site-tag--left .site-tag__lead--r{display:none}
 .site-tag--left .site-tag__lead--l{display:inline}
 .site-tag--bare .site-tag__card,.site-tag--bare .site-tag__lead{display:none}
+.site-tag--hover{--tag-card:1}
 `;
 
 /** The DOM layer. `host` must be positioned; tags are placed in its
@@ -465,6 +529,7 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
     string,
     {
       shown: boolean;
+      hover?: boolean;
       bare: boolean;
       z: number;
       left?: boolean;
@@ -498,6 +563,16 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
     return { el, id };
   }
 
+  let hoverLead: string | null = null;
+  let lastHalf = full;
+  let lastShown: Array<{
+    lead: string;
+    keys: string[];
+    x: number;
+    y: number;
+    opacity: number;
+    z: number;
+  }> = [];
   let lastSize = -1;
   let lastCard = -1;
 
@@ -528,10 +603,10 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
     );
     const prio = new Map(live.map((f) => [f.key, specs.get(f.key)!.priority + (f.boost ?? 0)]));
     const byKey = new Map(live.map((f) => [f.key, f]));
-    // Frames plus a small gap may not touch.
+    // Frames may not overlap; touching is fine (two pads 0.5 km apart only clear 27 px at the closest zoom).
     const groups = clusterFrames(
       live.map((f) => ({ key: f.key, x: f.x, y: f.y, priority: prio.get(f.key)! })),
-      2 * half + 4,
+      2 * half,
     );
     const shown: Array<{ g: TagCluster; el: HTMLDivElement; id: string; opacity: number }> = [];
     for (const g of groups) {
@@ -577,10 +652,21 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
             blocked,
           );
     const seen = new Set<string>();
+    lastHalf = half;
+    lastShown = [];
     for (const { g, el, id, opacity } of shown) {
       seen.add(id);
       const st = state.get(id)!;
-      const side = cards.get(id);
+      // The hovered tag always shows its card (on the right unless that leaves the view),
+      // whatever the zoom stage or the thinning decided.
+      const hovered = hoverLead != null && g.lead === hoverLead;
+      if (hovered !== !!st.hover) {
+        el.classList.toggle('site-tag--hover', hovered);
+        st.hover = hovered;
+      }
+      let side = cards.get(id);
+      if (hovered && side == null)
+        side = st.card && g.x + st.card.dx + st.card.w > root.clientWidth ? 1 : 0;
       const bare = side == null;
       if (bare !== st.bare) {
         el.classList.toggle('site-tag--bare', bare);
@@ -594,7 +680,8 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
         st.left = left;
       }
       // Higher priority draws on top.
-      const z = prio.get(g.lead)!;
+      const z = hovered ? 1000 : prio.get(g.lead)!;
+      lastShown.push({ lead: g.lead, keys: g.keys, x: g.x, y: g.y, opacity, z });
       if (z !== st.z) {
         el.style.zIndex = String(10 + z);
         st.z = z;
@@ -611,9 +698,35 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
     }
   }
 
+  /** The tag under (x, y) in layer px: its drawn frame, grown to a `minHit` px square
+   *  (a touch target) when smaller. Nearest anchor wins, then the higher draw order. */
+  function hitTest(x: number, y: number, minHit = 44) {
+    const reach = Math.max(lastHalf, minHit / 2);
+    let best: (typeof lastShown)[number] | null = null;
+    let bestD = Infinity;
+    for (const s of lastShown) {
+      if (s.opacity < 0.3) continue;
+      const dx = Math.abs(x - s.x);
+      const dy = Math.abs(y - s.y);
+      if (dx > reach || dy > reach) continue;
+      const d = Math.hypot(dx, dy);
+      if (d < bestD - 0.5 || (Math.abs(d - bestD) <= 0.5 && best && s.z > best.z)) {
+        best = s;
+        bestD = d;
+      }
+    }
+    return best ? { lead: best.lead, keys: best.keys, x: best.x, y: best.y } : null;
+  }
+
   return {
     setSpecs,
     sync,
+    hitTest,
+    setHover: (lead: string | null) => {
+      hoverLead = lead;
+    },
+    /** Side of a frame at full size, px: what a group needs to split at the zoom it lands on. */
+    frameSize: () => 2 * full,
     dispose: () => root.remove(),
   };
 }

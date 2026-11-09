@@ -77,7 +77,7 @@ ellipse and the phase-angle lead between the planets.
 
 ---
 
-## When the art is back
-Drop the 6 files anywhere (e.g. `~/Desktop/higgsfield/<id>.png|.webp`) and tell me the folder. I'll
-convert each to `static/diagrams/science/<id>.webp`, visually verify the labels survived (regenerate
-any that garbled a number), run validate-diagrams + preflight, and commit.
+## Status: DONE
+- **Wired:** 2026-11-09 · commit d890e03 (6 diagrams: PNG → WebP 1600px q86, 320/640 rungs, provenance recorded)
+- **Spend:** 22 credits (model nano_banana_2 via Higgsfield; versions: lifting-entry v4, entry-footprint v2, escape-velocity v2, others v1)
+- **Validators:** ✓ validate-diagrams (104 refs resolved) · ✓ npm run validate-data (diagrams pass)

@@ -24,7 +24,8 @@
  * After --apply run `npx tsx scripts/rebuild-gallery-manifests.ts` (counts),
  * `node scripts/build-i18n-bundles.mjs`, `node scripts/mobile/build-offline-manifest.mjs` and
  * `npm run validate-image-integrity`. Refuses a slot that is not on disk, and dropping every
- * slot of a gallery.
+ * slot of a gallery unless `--whole` is given (the gallery is then retired: its directories go too,
+ * for a gallery whose slots were moved into another one).
  */
 import {
   readdirSync,
@@ -38,6 +39,7 @@ import {
 import { join } from 'node:path';
 
 const APPLY = process.argv.includes('--apply');
+const WHOLE = process.argv.includes('--whole');
 const slots = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 if (!slots.length) {
   console.error('usage: node scripts/drop-gallery-slots.mjs [--apply] <dir>/<id>/<NN> …');
@@ -81,7 +83,8 @@ for (const g of galleries.values()) {
     .filter(Boolean)
     .sort();
   const kept = all.filter((n) => !g.drop.has(n));
-  if (!kept.length) throw new Error(`${g.dir}/${g.id}: every slot would be dropped`);
+  if (!kept.length && !WHOLE)
+    throw new Error(`${g.dir}/${g.id}: every slot would be dropped (--whole retires the gallery)`);
   kept.forEach((n, i) => g.map.set(n, String(i + 1).padStart(2, '0')));
   const moves = [...g.map].filter(([a, b]) => a !== b).map(([a, b]) => `${a}→${b}`);
   console.log(
@@ -232,6 +235,7 @@ for (const g of galleries.values()) {
       if (op === 'mv') renameSync(join(d, name), join(d, `__tmp__${name}`));
     for (const [op, name, to] of plan)
       if (op === 'mv') renameSync(join(d, `__tmp__${name}`), join(d, to));
+    if (WHOLE && !readdirSync(d).length) rmSync(d, { recursive: true });
   }
 }
 

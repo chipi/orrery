@@ -7,21 +7,22 @@
  * Each sol is quoted from the photo's own caption (sol_source); Zhurong's are
  * converted from dates (approx). Pick by place, spread along the drive.
  *
- * Per rover:
- *   1. masters/mars-sites/<rover>/route/<id>.jpg ← url (full resolution, LFS)
- *   2. build-display-ladder --only mars-sites/<rover>/route (WebP base + rungs),
+ * Per rover (a route photo is a slot of the rover's place gallery: missions/<rover>, else
+ * mars-sites/<rover>; a photo keeps the slot its sidecar row names, a new one takes the next free one):
+ *   1. masters/<gallery>/NN.jpg ← url (full resolution, LFS)
+ *   2. build-display-ladder --only <gallery> (WebP base + rungs),
  *      add-card-rungs --stems=… (320 / 640 for the hover card / Journey row)
  *   3. position = the traverse point reached on that sol (point_sols), so the
  *      pin sits on the drawn path
  *   4. static/data/mars-traverses/<rover>.route-photos.json + has_route_photos
- * Then: apply-provenance-nasa.mjs (NASA ids) / the Commons rows, alt text in
- * 14 locales, image-approved.
+ * Then, as for any new gallery slot: the 1x1 crop, provenance (apply-provenance-nasa.mjs / the
+ * Commons rows), alt text in 14 locales, image-approved and the counts (rebuild-gallery-manifests.ts).
  *
  * Run: node --import tsx scripts/hotspots/fetch-route-photos.ts [--rover opportunity] [--skip-download]
  *      node --import tsx scripts/hotspots/fetch-route-photos.ts --annotations   (Apollo ring photos)
  */
 import { execFileSync } from 'node:child_process';
-import { existsSync, promises as fs } from 'node:fs';
+import { existsSync, promises as fs, readdirSync } from 'node:fs';
 import path from 'node:path';
 
 interface PhotoSpec {
@@ -140,23 +141,42 @@ async function main() {
   );
   const rovers = [...new Set(list.map((p) => p.rover))];
 
+  const missionCounts = JSON.parse(await fs.readFile('static/data/mission-galleries.json', 'utf8'));
+  const slotCount = (dir: string, root: string, ext: string) =>
+    existsSync(`${root}/${dir}`)
+      ? readdirSync(`${root}/${dir}`).filter((f) => new RegExp(`^\\d\\d\\.${ext}$`).test(f)).length
+      : 0;
+
   for (const rover of rovers) {
-    const photos = list.filter((p) => p.rover === rover);
-    const dir = `mars-sites/${rover}/route`;
+    const photos = list.filter((p) => p.rover === rover).sort((a, b) => a.sol - b.sol);
+    // The rover's place gallery, as the loaders resolve it: the mission gallery, else the site's own.
+    const gallery = missionCounts[rover] > 0 ? `missions/${rover}` : `mars-sites/${rover}`;
+    const sidecarPath = path.join('static/data/mars-traverses', `${rover}.route-photos.json`);
+    const prev: { id: string; image: string }[] = existsSync(sidecarPath)
+      ? JSON.parse(await fs.readFile(sidecarPath, 'utf8')).photos
+      : [];
+    // A photo keeps the slot it already has (it may be an older gallery photo); new ones take the
+    // next free numbers. The 1x1 crop, provenance, alt text and counts follow the gallery tools.
+    const slotOf = new Map(prev.map((p) => [p.id, p.image.replace(/^\/images\/|\.webp$/g, '')]));
+    let next =
+      Math.max(slotCount(gallery, 'static/images', 'webp'), slotCount(gallery, 'masters', 'jpg')) +
+      1;
+    for (const p of photos)
+      if (!slotOf.has(p.id)) slotOf.set(p.id, `${gallery}/${String(next++).padStart(2, '0')}`);
     if (!skipDownload) {
       for (const p of photos) {
-        await download(p.url, path.join('masters', dir, `${p.id}.jpg`));
+        await download(p.url, path.join('masters', `${slotOf.get(p.id)}.jpg`));
         console.log(`  ↓ ${rover}/${p.id}`);
       }
     }
-    execFileSync('node', ['scripts/vision/build-display-ladder.mjs', '--only', dirs.join(',')], {
+    execFileSync('node', ['scripts/vision/build-display-ladder.mjs', '--only', gallery], {
       stdio: 'inherit',
     });
     execFileSync(
       'node',
       [
         'scripts/vision/add-card-rungs.mjs',
-        `--stems=${photos.map((p) => `${dir}/${p.id}`).join(',')}`,
+        `--stems=${photos.map((p) => slotOf.get(p.id)).join(',')}`,
       ],
       { stdio: 'inherit' },
     );
@@ -165,27 +185,25 @@ async function main() {
     const tr = JSON.parse(await fs.readFile(trPath, 'utf8'));
     const sols: number[] | undefined = tr.point_sols;
     if (!sols?.length) throw new Error(`${rover}: no point_sols to place photos on`);
-    const out = photos
-      .sort((a, b) => a.sol - b.sol)
-      .map((p) => {
-        const i = pointAtSol(sols, p.sol);
-        const base = `/images/${dir}/${p.id}`;
-        const thumb = [320, 640]
-          .map((w) => `${base}-${w}.webp`)
-          .find((t) => existsSync(`static${t}`));
-        if (!existsSync(`static${base}.webp`)) throw new Error(`${base}.webp not built`);
-        return {
-          id: p.id,
-          sol: p.sol,
-          ...(p.approx ? { sol_approx: true } : {}),
-          lat: tr.points[i][0],
-          lon: tr.points[i][1],
-          image: `${base}.webp`,
-          thumb: thumb ?? `${base}.webp`,
-        };
-      });
+    const out = photos.map((p) => {
+      const i = pointAtSol(sols, p.sol);
+      const base = `/images/${slotOf.get(p.id)}`;
+      const thumb = [320, 640]
+        .map((w) => `${base}-${w}.webp`)
+        .find((t) => existsSync(`static${t}`));
+      if (!existsSync(`static${base}.webp`)) throw new Error(`${base}.webp not built`);
+      return {
+        id: p.id,
+        sol: p.sol,
+        ...(p.approx ? { sol_approx: true } : {}),
+        lat: tr.points[i][0],
+        lon: tr.points[i][1],
+        image: `${base}.webp`,
+        thumb: thumb ?? `${base}.webp`,
+      };
+    });
     await fs.writeFile(
-      path.join('static/data/mars-traverses', `${rover}.route-photos.json`),
+      sidecarPath,
       JSON.stringify({ rover_id: rover, photos: out }, null, 2) + '\n',
     );
     if (!tr.has_route_photos) {

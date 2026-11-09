@@ -49,11 +49,18 @@ interface Move {
   from: string;
   to: string;
   focal: [number, number];
+  /** `from` is already a gallery slot (1x1 crop and every manifest row exist): files + references only. */
+  slot: boolean;
 }
 const moves: Move[] = specs.map((s) => {
   const m = s.match(/^([a-z0-9/-]+)=([a-z0-9-]+\/[a-z0-9-]+\/\d\d)(?:@([\d.]+),([\d.]+))?$/);
   if (!m) throw new Error(`bad spec: ${s}`);
-  return { from: m[1], to: m[2], focal: [Number(m[3] ?? 0.5), Number(m[4] ?? 0.5)] };
+  return {
+    from: m[1],
+    to: m[2],
+    focal: [Number(m[3] ?? 0.5), Number(m[4] ?? 0.5)],
+    slot: /\/\d\d$/.test(m[1]) && existsSync(`static/images/${m[1]}.1x1.jpg`),
+  };
 });
 
 // Refuse before touching anything: source built, target the next contiguous free slot.
@@ -61,6 +68,10 @@ const nextFree = new Map<string, number>();
 for (const mv of moves) {
   if (!existsSync(`static/images/${mv.from}.webp`)) throw new Error(`not on disk: ${mv.from}`);
   if (!existsSync(`masters/${mv.from}.jpg`)) throw new Error(`no master: masters/${mv.from}.jpg`);
+  if (
+    readFileSync(`masters/${mv.from}.jpg`).subarray(0, 23).toString() === 'version https://git-lfs'
+  )
+    throw new Error(`master is an LFS pointer: git lfs pull -I masters/${mv.from}.jpg`);
   const dir = dirname(mv.to);
   if (!nextFree.has(dir)) {
     const nn = readdirSync(`static/images/${dir}`).filter((f) => /^\d\d\.webp$/.test(f)).length;
@@ -72,7 +83,10 @@ for (const mv of moves) {
   nextFree.set(dir, want + 1);
 }
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-const re = new RegExp(`/images/(${moves.map((m) => esc(m.from)).join('|')})(?=[.\\-"]|$)`, 'g');
+const re = new RegExp(
+  `/images/(${moves.map((m) => esc(m.from)).join('|')})(?=(?:-\\d+)?(?:[."]|$))`,
+  'g',
+);
 const target = new Map(moves.map((m) => [m.from, m.to]));
 const rewrite = (s: string) => s.replace(re, (_a, from) => `/images/${target.get(from)}`);
 const idOf = (p: string) => createHash('sha256').update(p).digest('hex').slice(0, 16);
@@ -144,14 +158,26 @@ for (const mv of moves) {
   mkdirSync(`static/images/${toDir}`, { recursive: true });
   mkdirSync(`masters/${toDir}`, { recursive: true });
   for (const name of readdirSync(`static/images/${dir}`)) {
-    const m = name.match(new RegExp(`^${esc(stem)}((?:-\\d+)?\\.webp)$`));
+    const m = name.match(new RegExp(`^${esc(stem)}((?:-\\d+)?\\.webp|\\.1x1\\.(?:jpg|webp))$`));
     if (m) renameSync(`static/images/${dir}/${name}`, `static/images/${toDir}/${nn}${m[1]}`);
   }
   renameSync(`masters/${mv.from}.jpg`, `masters/${mv.to}.jpg`);
+  const thumb = `static/credit-thumbs/images/${mv.from}.1x1.webp`;
+  if (mv.slot && existsSync(thumb)) {
+    mkdirSync(`static/credit-thumbs/images/${toDir}`, { recursive: true });
+    renameSync(thumb, `static/credit-thumbs/images/${mv.to}.1x1.webp`);
+  }
+}
+const fresh = moves.filter((m) => !m.slot);
+if (!fresh.length) {
+  console.log(
+    'slot moves only: run rebuild-gallery-manifests.ts and the builds listed in the header',
+  );
+  process.exit(0);
 }
 
 // The 1x1 crop, then everything a gallery slot carries for it.
-for (const mv of moves) {
+for (const mv of fresh) {
   const master = `masters/${mv.to}.jpg`;
   await generateVariants({
     sourcePath: master,
@@ -181,7 +207,7 @@ const edit = (p: string, fn: (j: any) => any) => {
 edit('static/data/image-provenance.json', (j) => {
   const rows: any[] = j.entries;
   const sorted = isSorted(rows.map((r) => r.path));
-  for (const m of moves) {
+  for (const m of fresh) {
     const row = rows.find((r) => r.path === webp(m));
     if (!row) throw new Error(`no provenance row for ${webp(m)}`);
     rows.push({ ...row, id: idOf(crop(m)), path: crop(m) });
@@ -195,7 +221,7 @@ for (const l of LOCALES)
   edit(`static/data/image-alt-text/${l}.json`, (j) => {
     const map = j.entries ?? j;
     const add: Record<string, string> = {};
-    for (const m of moves) {
+    for (const m of fresh) {
       if (!map[webp(m)]) throw new Error(`${l}: no alt text for ${webp(m)}`);
       add[crop(m)] = map[webp(m)];
     }
@@ -205,7 +231,7 @@ for (const l of LOCALES)
   });
 edit('scripts/i18n-tools/maps/alt-text-sources.json', (j) => {
   const add: Record<string, string> = {};
-  for (const m of moves) {
+  for (const m of fresh) {
     const h = createHash('sha1')
       .update(String(enAlt[webp(m)]))
       .digest('base64url')
@@ -217,7 +243,7 @@ edit('scripts/i18n-tools/maps/alt-text-sources.json', (j) => {
 });
 edit('static/data/image-vision.json', (j) => {
   const add: Record<string, unknown> = {};
-  for (const m of moves)
+  for (const m of fresh)
     add[`/images/${m.to}.jpg`] = {
       score: 8,
       subject: enAlt[webp(m)],
@@ -231,9 +257,9 @@ edit('static/data/image-vision.json', (j) => {
   return { ...j, entries: insertSorted(j.entries, add) };
 });
 edit('static/data/image-approved.json', (j) => {
-  const gone = new RegExp(`^/images/(${moves.map((m) => esc(m.to)).join('|')})(-\\d+)?\\.webp$`);
+  const gone = new RegExp(`^/images/(${fresh.map((m) => esc(m.to)).join('|')})(-\\d+)?\\.webp$`);
   const keep: string[] = j.approved.filter((p: string) => !gone.test(p));
-  for (const m of moves) keep.push(`/images/${m.to}.jpg`, crop(m));
+  for (const m of fresh) keep.push(`/images/${m.to}.jpg`, crop(m));
   j.approved = [...new Set(keep)].sort();
   j.count = j.approved.length;
   return j;

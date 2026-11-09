@@ -154,10 +154,11 @@ test.describe('collectible cards (#547)', () => {
     }
     // Unknown kind/id: adapter-static serves the SPA fallback for
     // never-prerendered paths — assert they carry NO og card tags rather
-    // than pinning the host's status code.
+    // than pinning the host's status code. Every page now carries the site's
+    // default og:image (social-meta.ts), so check for a card image, not any.
     for (const path of ['/c/unknown-kind/foo', '/c/mission/not-a-mission']) {
       const res = await request.get(path);
-      expect((await res.text()).includes('og:image'), path).toBe(false);
+      expect((await res.text()).includes('/images/cards/'), path).toBe(false);
     }
   });
 

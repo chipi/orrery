@@ -41804,23 +41804,22 @@
     {
       "id": "4128ec6eb40aa2d4",
       "path": "/images/missions/apollo-1/04.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:Apollo 1 Tribute three-part hatch.JPG",
+      "source_type": "nasa-images-api",
+      "title": "Apollo 1 Tribute (KSC-20170124-PH_KLS01_0129)",
       "author": "NASA/Kim Shiflett",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Apollo_1_Tribute_three-part_hatch.JPG",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Apollo_1_Tribute_three-part_hatch.JPG",
+      "source_url": "https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "Public domain",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": 150299724,
-      "nasa_id": null,
-      "fetched_at": "2026-11-08T07:14:25.764Z"
+      "pageid": null,
+      "nasa_id": "KSC-20170124-PH_KLS01_0129",
+      "fetched_at": "2026-11-09T00:21:17.899Z"
     },
     {
       "id": "50480bc5592d680a",
@@ -54737,13 +54736,12 @@
       "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
       "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": 174197328,
       "nasa_id": null,
-      "fetched_at": "2026-11-02T10:12:51.869Z"
+      "fetched_at": "2026-11-09T00:22:22.848Z"
     },
     {
       "id": "920fe456f5b546ff",

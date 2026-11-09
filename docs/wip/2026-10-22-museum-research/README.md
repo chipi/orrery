@@ -20,7 +20,7 @@ museums become a fleet category `museum`).
 ## Where things are
 
 - **Review page (operator ticks Yes/No per row):**
-  <https://claude.ai/artifact/VxPpzuU4gvv9tVvwMWibs6> (private to the operator, version 2).
+  <https://claude.ai/artifact/EJ8Wwi2Nt9x5uVueEvTcMw> (private to the operator; republished 2026-11-09 after the old page, VxPpzuU4gvv9tVvwMWibs6, answered "artifact not found" — ticks start empty).
   Decisions are stored in that artifact's database, collection `decisions`, one document per
   row: id = the row's `id` (below), body `{ d: "yes" | "no", at: ISO time }`. Read them with
   the `ArtifactData` tool, `action: "list"`, `collection: "decisions"`.
@@ -43,12 +43,12 @@ museums become a fleet category `museum`).
 
 ## What was done
 
-| Pass | How | Result |
-| --- | --- | --- |
-| 1 | 6 Sonnet agents, WebSearch, by object category | 129 rows; used the session's whole search budget |
-| 2 | 16 agents | failed: WebSearch budget exhausted; stopped |
-| 3 | 10 agents, museum-first by region, WebFetch only (Wikipedia/Commons search APIs, museum sites) | 73 new rows; 85 pass-1 rows verified (49 kept, 33 fixed, 3 dropped) |
-| fix | operator, 2026-10-22 | Endeavour: Samuel Oschin Air and Space Center, California Science Center, Los Angeles; grand opening 13 Nov 2026 (status `opens 2026-11-13`) |
+| Pass | How                                                                                            | Result                                                                                                                                       |
+| ---- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | 6 Sonnet agents, WebSearch, by object category                                                 | 129 rows; used the session's whole search budget                                                                                             |
+| 2    | 16 agents                                                                                      | failed: WebSearch budget exhausted; stopped                                                                                                  |
+| 3    | 10 agents, museum-first by region, WebFetch only (Wikipedia/Commons search APIs, museum sites) | 73 new rows; 85 pass-1 rows verified (49 kept, 33 fixed, 3 dropped)                                                                          |
+| fix  | operator, 2026-10-22                                                                           | Endeavour: Samuel Oschin Air and Space Center, California Science Center, Los Angeles; grand opening 13 Nov 2026 (status `opens 2026-11-13`) |
 
 Kinds: flown, backup, flown-part, test-article, sister-unit. Status: 87 confirmed, 109
 uncertain (mostly Wikipedia or a photo only, because the museum's own site blocked the

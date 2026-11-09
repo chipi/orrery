@@ -2206,10 +2206,10 @@
       "item": "Soyuz-30 descent module (1978)",
       "kind": "flown",
       "evidence": "https://ru.wikipedia.org/wiki/Союз-30",
-      "status": "uncertain",
+      "status": "dropped",
       "notes": "Evidence is Wikipedia/Commons only (museum site did not name the unit); quote: 'Спускаемый аппарат экспонируется в Музее космонавтики в Архипо-Осиповке'; en.wikipedia Museum of Polish Military Technology also lists a 'Soyuz 30 descent module' in Warsaw, so the location is contested; 7K-T, loose family match",
       "source": "pass3:ru",
-      "why": "pass 4 verify: CONFLICT: ru.wikipedia Soyuz-30 says the descent module is in Arkhipo-Osipovka, but en/pl sources put the real Soyuz 30 lander in Warsaw. At most one is real."
+      "why": "pass 4 verify: CONFLICT: ru.wikipedia Soyuz-30 says the descent module is in Arkhipo-Osipovka, but en/pl sources put the real Soyuz 30 lander in Warsaw. At most one is real. · 2026-11-09 decision: dropped — the original Soyuz 30 lander is documented in Warsaw (android.com.pl 2021-08-10: \"oryginalny lądownik\"; polskieradio; pl.wikipedia); the ru.wikipedia claim has no source"
     },
     {
       "ref": "soyuz-t",
@@ -2327,7 +2327,7 @@
       "status": "uncertain",
       "notes": "Soyuz 7K-T; mapped to nearest Orrery Soyuz entry. Wikipedia and Commons photos (2013/2014) only; pl Wikipedia says Fort IX Czerniaków branch, another Wikipedia article says the main Polish Army Museum building. Current location not confirmed on a museum page.",
       "source": "pass3:eastern",
-      "why": "pass 4 verify: pl.wikipedia: Soyuz 30 lander is now on the grounds of the Polish Army Museum (Al. Jerozolimskie), not Fort Czerniakow; museum id may be wrong and location current status unverified. Conflicts with Arkhipo-Osipovka row."
+      "why": "pass 4 verify: pl.wikipedia: Soyuz 30 lander is now on the grounds of the Polish Army Museum (Al. Jerozolimskie), not Fort Czerniakow; museum id may be wrong and location current status unverified. Conflicts with Arkhipo-Osipovka row. · 2026-11-09: kept — original lander (android.com.pl 2021-08-10, shown at Hala Koszyki that year); current hall in Warsaw not confirmed"
     },
     {
       "ref": "/science/history/sputnik-1957",

@@ -11,7 +11,7 @@
   "body_paragraphs": [
     "Konstantin Ziolkowski leitete die Raketengleichung 1903 her, Jahrzehnte bevor jemand eine flugfähige Rakete baute. Das Ergebnis hat die Unvermeidlichkeit der Physik: ∆v hängt vom `Isp` des Triebwerks und vom Verhältnis der Startmasse zur Endmasse ab — und zwar logarithmisch.",
     "Der Logarithmus ist der grausame Teil. Die doppelte Treibstoffmenge verdoppelt das ∆v nicht; sie addiert nur einen konstanten Betrag. Willst du doppelt so weit fliegen? Du brauchst eine exponentiell größere Rakete. Das ist die Tyrannei der Raketengleichung: Chemische Triebwerke (`Isp` ~300–450 s) stoßen bei etwa 10–15 km/s ∆v an eine Grenze, bevor das Masseverhältnis absurd wird. Um weiterzukommen, brauchst du einen höheren `Isp` (Ionentriebwerke, ~3000 s) oder Stufung (Tanks abwerfen, wenn sie leer sind) oder beides.",
-    "Saturn V: 7.800 Tonnen nass, 600 Tonnen trocken. Masseverhältnis 13. Isp ~330 s. ∆v ≈ 8,3 km/s — kaum genug für die translunare Injektion. Falcon 9 mit Wiederverwendung stößt an eine andere Grenze: Jedes Kilogramm bergbarer Hardware kostet dich proportional Nutzlast."
+    "Saturn V: etwa 2.940 Tonnen beim Start (Apollo 11), rund 225 Tonnen trocken. Masseverhältnis 13. Isp ~330 s. ∆v ≈ 8,3 km/s — kaum genug für die translunare Injektion. Falcon 9 mit Wiederverwendung stößt an eine andere Grenze: Jedes Kilogramm bergbarer Hardware kostet dich proportional Nutzlast."
   ],
   "formula_caption": "∆v aus spezifischem Impuls, Erdbeschleunigung g₀ und Masseverhältnis m₀/m_f.",
   "diagram_caption": "Kurve von ∆v versus Masseverhältnis: logarithmisch. Die Verdoppelung des Treibstoffs addiert nur einen konstanten ∆v-Betrag."

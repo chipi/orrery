@@ -649,7 +649,7 @@
   },
   "burn|ar|essays/comms.json :: body.8.md": {
     "why": "burned manuscript, not an engine",
-    "tr": "82a40f5210"
+    "tr": "26f37efa62"
   },
   "burn|ar|essays/delta-v.json :: body.26.md": {
     "why": "combustion sense: burn the machine on the way up (احرقها)",
@@ -812,8 +812,8 @@
     "tr": "7187a990d1"
   },
   "burn|de|essays/comms.json :: body.8.md": {
-    "why": "'burned manuscript' - fire damage, not an engine burn",
-    "tr": "46d09ca618"
+    "why": "burned manuscript, not an engine",
+    "tr": "877a7d5e93"
   },
   "burn|de|essays/delta-v.json :: body.26.md": {
     "why": "'burn it on the way up' = consume the machine, not an engine firing",
@@ -1020,8 +1020,8 @@
     "tr": "842ba944fb"
   },
   "burn|fr|essays/comms.json :: body.8.md": {
-    "why": "'burned manuscript' - fire damage",
-    "tr": "99263d4731"
+    "why": "burned manuscript, not an engine",
+    "tr": "921cc6dc27"
   },
   "burn|fr|essays/delta-v.json :: body.26.md": {
     "why": "'burn it on the way up' = consume the machine",
@@ -1145,7 +1145,7 @@
   },
   "burn|hi|essays/comms.json :: body.8.md": {
     "why": "burned manuscript, not an engine",
-    "tr": "5c19db254a"
+    "tr": "95df3e081b"
   },
   "burn|hi|essays/delta-v.json :: body.26.md": {
     "why": "combustion sense (burn the stage on the way up): जला दो",
@@ -1236,8 +1236,8 @@
     "tr": "b5d86a465d"
   },
   "burn|hi|science/propulsion/_intro.json :: paragraphs.2": {
-    "why": "\"इंजन चलाएँ\" correctly renders firing the engine",
-    "tr": "496576305f"
+    "why": "\"इंजन चलाएँ\" correctly renders firing the engine; re-read 2026-11-09 after the fact-check fixes",
+    "tr": "cff6a4ebec"
   },
   "burn|hi|science/propulsion/expander-cycle.json :: diagram_caption": {
     "why": "combustion/consumption sense, not an engine firing",
@@ -1288,8 +1288,8 @@
     "tr": "fbba9fe4d2"
   },
   "burn|it|essays/comms.json :: body.8.md": {
-    "why": "'burned manuscript' - fire damage",
-    "tr": "a7f2a47821"
+    "why": "burned manuscript, not an engine",
+    "tr": "3d465fb615"
   },
   "burn|it|essays/delta-v.json :: body.26.md": {
     "why": "'burn it on the way up' = consume the machine",
@@ -1420,8 +1420,8 @@
     "tr": "e74815f278"
   },
   "burn|ja|essays/comms.json :: body.8.md": {
-    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
-    "tr": "1ae505beaf"
+    "why": "burned manuscript, not an engine",
+    "tr": "a485b5e81f"
   },
   "burn|ja|essays/delta-v.json :: body.26.md": {
     "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
@@ -1496,8 +1496,8 @@
     "tr": "a5296688d6"
   },
   "burn|ko|essays/comms.json :: body.8.md": {
-    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
-    "tr": "e35159a5f7"
+    "why": "burned manuscript, not an engine",
+    "tr": "e14cfdf732"
   },
   "burn|ko|essays/delta-v.json :: body.26.md": {
     "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
@@ -1564,8 +1564,8 @@
     "tr": "2cd3f46750"
   },
   "burn|nl|essays/comms.json :: body.8.md": {
-    "why": "'burned manuscript' - fire damage",
-    "tr": "827639ecae"
+    "why": "burned manuscript, not an engine",
+    "tr": "52f6112993"
   },
   "burn|nl|essays/delta-v.json :: body.26.md": {
     "why": "'burn it on the way up' = consume the machine",
@@ -1608,8 +1608,8 @@
     "tr": "082a253951"
   },
   "burn|nl|science/history/_intro.json :: paragraphs.1": {
-    "why": "combustion / fire, not an engine firing",
-    "tr": "9c111e9e94"
+    "why": "combustion / fire, not an engine firing; re-read 2026-11-09 after the fact-check fixes",
+    "tr": "841a6e2626"
   },
   "burn|nl|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
     "why": "combustion / fire, not an engine firing",
@@ -1636,8 +1636,8 @@
     "tr": "a7e4975982"
   },
   "burn|nl|science/orbits/lagrange-points.json :: body_paragraphs.1": {
-    "why": "station-keeping burns = koerscorrecties",
-    "tr": "97e63d0944"
+    "why": "station-keeping burns = koerscorrecties; re-read 2026-11-09 after the fact-check fixes",
+    "tr": "16ec65ab83"
   },
   "burn|nl|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
     "why": "combustion / fire, not an engine firing",
@@ -1724,8 +1724,8 @@
     "tr": "890589dd71"
   },
   "burn|ru|essays/comms.json :: body.8.md": {
-    "why": "other sense: burned manuscript, not engine firing",
-    "tr": "5681a838ca"
+    "why": "burned manuscript, not an engine",
+    "tr": "decd764450"
   },
   "burn|ru|essays/delta-v.json :: body.26.md": {
     "why": "other sense: expend/consume the stage, not engine firing",
@@ -1880,8 +1880,8 @@
     "tr": "3c3ea193bf"
   },
   "burn|sr-Cyrl|essays/comms.json :: body.8.md": {
-    "why": "other sense: burned manuscript, not engine firing",
-    "tr": "65d721d930"
+    "why": "burned manuscript, not an engine",
+    "tr": "52cf3e43c3"
   },
   "burn|sr-Cyrl|essays/delta-v.json :: body.26.md": {
     "why": "other sense: expend/consume the stage, not engine firing",
@@ -2040,8 +2040,8 @@
     "tr": "a783b54d91"
   },
   "burn|zh-CN|essays/comms.json :: body.8.md": {
-    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
-    "tr": "ae14b2f045"
+    "why": "burned manuscript, not an engine",
+    "tr": "f4e5ca07d0"
   },
   "burn|zh-CN|essays/delta-v.json :: body.26.md": {
     "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
@@ -2884,8 +2884,8 @@
     "tr": "9c58d27f60"
   },
   "magnetosphere|ar|science/life-in-space/mars-human-architecture.json :: body_paragraphs.1": {
-    "why": "read 2026-11-04 (chunk 5): ar المجال المغناطيسي (magnetic field) where the sentence is about leaving Earth's protection, or a sentence-split artefact of the brief view",
-    "tr": "4a28304dd9"
+    "why": "the sentence is about leaving Earth's protection and says المجال المغناطيسي للأرض (Earth's magnetic field); re-read 2026-11-09 after the fact-check fixes",
+    "tr": "cdbef022ee"
   },
   "microgravity|ar|essays/asteroid-mining.json :: body.26.md": {
     "why": "read 2026-11-04 (chunk 2): the everyday word, weightlessness",

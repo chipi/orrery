@@ -2,7 +2,7 @@
   "title": "∆v come budget di missione",
   "intro_sentence": "L'unico numero che stabilisce se una missione è possibile: la variazione di velocità totale da spendere, sommata su ogni accensione.",
   "seo_title": "Budget di delta-v: la velocità totale di una missione",
-  "seo_description": "Il numero che dice se una missione è possibile: il delta-v totale da spendere, sommato su ogni accensione, dal lancio all'atterraggio.",
+  "seo_description": "Il primo numero che decide se una missione è possibile: il delta-v totale da spendere, sommato su ogni accensione, dal lancio all'atterraggio.",
   "narrative_101": [
     "La valuta dei voli spaziali non sono i dollari. È ∆v — pronunciato «delta-v» — e si misura in chilometri al secondo. Ogni accensione del tuo razzo costa un po' di ∆v. Ogni movimento che fai su una traiettoria ha un prezzo in km/s. Il budget ∆v della missione è semplicemente il totale progressivo: lancio + iniezione + correzioni di rotta + arrivo + atterraggio. Somma tutto, e quello è il tuo conto.",
     "Eccoci al colpo di scena spietato. Il tuo razzo non ha ∆v illimitato. Ha un limite massimo, fissato dall'equazione di Ciolkovskij, dettato interamente da quanta parte del tuo razzo è carburante e da quanto sono buoni i tuoi motori. Se il tuo conto supera il limite, la missione è impossibile. Buttarci dentro più soldi non risolve nulla. La matematica vince.",

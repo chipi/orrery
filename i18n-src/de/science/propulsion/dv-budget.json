@@ -2,7 +2,7 @@
   "title": "∆v als Missionsbudget",
   "intro_sentence": "Die Kennzahl, die bestimmt, ob eine Mission möglich ist – die gesamte Geschwindigkeitsänderung, die Sie aufwenden müssen, summiert über alle Manöver.",
   "seo_title": "Delta-v-Budget: Die Gesamtgeschwindigkeit einer Mission",
-  "seo_description": "Die eine Zahl, die entscheidet, ob eine Mission möglich ist: das gesamte Delta-v, summiert über alle Zündungen, vom Start bis zur Landung.",
+  "seo_description": "Die erste Zahl, die entscheidet, ob eine Mission möglich ist: das gesamte Delta-v, summiert über alle Zündungen, vom Start bis zur Landung.",
   "narrative_101": [
     "Das Geld der Raumfahrt sind keine Dollar. Es ist ∆v — gesprochen »delta-v« — und wird in Kilometern pro Sekunde gemessen. Jedes Triebwerksmanöver Ihrer Rakete kostet etwas ∆v. Jeder Schritt auf einer Flugbahn hat einen Preis in km/s. Das ∆v-Budget der Mission ist einfach die laufende Summe: Start + Einschuss + Kurskorrekturen + Ankunft + Landung. Addieren Sie alles, das ist Ihre Rechnung.",
     "Und jetzt kommt der Haken. Ihre Rakete hat nicht unbegrenzt ∆v. Sie hat eine harte Obergrenze, gesetzt durch die Ziolkowski-Gleichung, bestimmt allein davon, wie viel Ihrer Rakete Treibstoff ist und wie gut Ihre Triebwerke sind. Wenn Ihre Rechnung die Obergrenze überschreitet, ist die Mission unmöglich. Mehr Geld hineinzuwerfen hilft nicht. Die Mathematik gewinnt.",

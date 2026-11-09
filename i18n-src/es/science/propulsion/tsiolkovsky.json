@@ -11,7 +11,7 @@
   "body_paragraphs": [
     "Konstantín Tsiolkovski derivó la ecuación del cohete en 1903, décadas antes de que alguien construyera un cohete digno de volar. El resultado tiene la inevitabilidad de la física: ∆v depende del `Isp` del motor y de la relación entre la masa inicial y la masa final — y es logarítmica en esa relación.",
     "El logaritmo es la parte cruel. Duplicar el propelente no duplica el ∆v; añade una cantidad constante. ¿Quieres volar el doble de lejos? Necesitas un cohete exponencialmente más grande. Esa es la tiranía de la ecuación del cohete: los motores químicos (`Isp` ~300–450s) chocan contra un muro en torno a 10–15 km/s de ∆v, antes de que la relación de masas se vuelva absurda. Para ir más lejos necesitas un `Isp` mayor (motores iónicos, ~3000s) o etapas (soltar los tanques conforme se vacían), o ambas cosas.",
-    "Saturn V: 7800 toneladas en húmedo, 600 toneladas en seco. Relación de masas 13. Isp ~330s. ∆v ≈ 8,3 km/s — apenas suficiente para alcanzar la inyección translunar. La reutilización del Falcon 9 choca contra otro muro: cada kilogramo de hardware recuperable te cuesta una cantidad proporcional de carga útil."
+    "Saturn V: unas 2940 toneladas al despegue (Apollo 11), unas 225 toneladas en seco. Relación de masas 13. Isp ~330s. ∆v ≈ 8,3 km/s — apenas suficiente para alcanzar la inyección translunar. La reutilización del Falcon 9 choca contra otro muro: cada kilogramo de hardware recuperable te cuesta una cantidad proporcional de carga útil."
   ],
   "formula_caption": "∆v a partir del impulso específico, la aceleración gravitatoria g₀ y la relación de masas m₀/m_f.",
   "diagram_caption": "Curva de ∆v frente a relación de masas: logarítmica. Duplicar el propelente solo suma una cantidad constante de ∆v."

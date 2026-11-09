@@ -1,7 +1,7 @@
 {
   "title": "Qu'est-ce qu'un diagramme Porkchop Plot ?",
   "intro_sentence": "Carte de chaleur 2D du coût de trajectoire par couple (date de départ, durée de transit) — l'outil standard des fenêtres de tir. (Les diagrammes porkchop usuels tracent C3 et V∞ d'arrivée ; Orrery : échelle simplifiée en ∆v, km/s.)",
-  "seo_description": "Un diagramme porkchop donne le coût de trajectoire pour chaque date et durée de vol : l'outil des fenêtres de tir. Tracez le vôtre dans le planificateur.",
+  "seo_description": "Un diagramme porkchop donne le coût de trajectoire pour chaque date et durée de vol : l'outil des fenêtres de tir. Ouvrez-en un en direct dans le planificateur.",
   "narrative_101": [
     "Quand les planificateurs de mission veulent savoir si un voyage vers Mars est réalisable, ils ne calculent pas une trajectoire. Ils en calculent DES MILLIONS — chaque date de départ possible, chaque temps de transit possible, dans une grille géante — et ils créent une carte thermique. Les trajectoires bon marché apparaissent comme des zones bleu foncé, les chères comme du rouge. Le résultat, bizarrement, ressemble à une côtelette de porc. La zone bon marché est la viande de la côtelette ; la crête chère est l'os.",
     "Pourquoi s'embêter avec toute une carte thermique plutôt qu'avec une seule réponse optimale ? Parce que les vraies missions ont des contraintes. Peut-être qu'un pas de tir donné n'est disponible qu'en 2026. Peut-être faut-il atterrir avant la fin d'une saison de tempêtes de poussière. Peut-être qu'une fusée donnée n'est prête qu'à partir d'un certain mois. Le diagramme porkchop vous permet de voir TOUS les compromis d'un coup d'œil — choisissez la trajectoire assez économique qui tient dans votre calendrier réel.",

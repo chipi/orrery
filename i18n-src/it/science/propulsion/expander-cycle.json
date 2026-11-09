@@ -1,6 +1,6 @@
 {
   "title": "Ciclo espansore — alimentato dal calore, non dal fuoco",
-  "intro_sentence": "Il propellente criogenico assorbe calore dall'ugello, evapora e fa girare la turbopompa. Niente generatore di gas né precamera: il calore di scarto è la fonte di potenza. Pulito e affidabile, ma non scala a motori grandi.",
+  "intro_sentence": "Il propellente criogenico assorbe calore dall'ugello, evapora e fa girare la turbopompa. Niente generatore di gas né precamera: il calore di scarto è la fonte di potenza. Pulito e affidabile; la variante bleed scala.",
   "seo_title": "Ciclo expander del motore a razzo spiegato",
   "body_paragraphs": [
     "Una camera di combustione e un ugello sono ferocemente caldi, e un motore criogenico già pompa il suo propellente congelato attraverso i canali nelle pareti della camera per evitare che fondano — raffreddamento rigenerativo. Il ciclo espansore trasforma questo lavoro di raffreddamento nella centrale di potenza del motore. L'idrogeno liquido (o metano) entra nei canali delle pareti vicino all'ugello, assorbe un'enorme quantità di calore e si trasforma in un gas caldo ad alta pressione. Quel gas si espande attraverso la turbina per azionare la turbopompa, e solo allora viene inviato alla camera principale per bruciare. Nessun propellente viene bruciato solo per far funzionare le pompe, quindi il gas della turbina è innocuo, privo di fuliggine e delicato con l'hardware — ed è per questo che i motori a espansore sono notoriamente affidabili e riavviabili.",

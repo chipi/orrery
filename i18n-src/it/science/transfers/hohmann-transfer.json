@@ -1,7 +1,7 @@
 {
   "title": "Trasferimento di Hohmann",
   "intro_sentence": "Il viaggio più economico con due accensioni tra due orbite circolari coplanari — il riferimento con cui i pianificatori di missioni misurano tutto il resto.",
-  "seo_description": "Il viaggio a due accensioni più economico tra due orbite circolari, calcolato da Walter Hohmann nel 1925. Guarda l'ellisse e calcola delta-v e durata.",
+  "seo_description": "Il viaggio a due accensioni più economico tra due orbite circolari complanari, calcolato da Walter Hohmann nel 1925. Guarda l'ellisse, calcola delta-v e durata.",
   "narrative_101": [
     "Sei nell'orbita della Terra. Vuoi essere nell'orbita di Marte. Entrambe le orbite sono all'incirca cerchi attorno al Sole. Come fai a passare da una all'altra consumando il minor carburante possibile?",
     "La risposta, sviluppata da Walter Hohmann nel 1925, è sorprendentemente elegante. Trova un'ellisse che tocca appena l'orbita della Terra da un lato e appena l'orbita di Marte dall'altro. Accendi il motore brevemente per lasciare la Terra e unirti a quell'ellisse. Prosegui per inerzia per circa 8,5 mesi senza accendere il motore — la gravità fa il lavoro. Quando arrivi all'estremità opposta, accendi di nuovo per inserirti nell'orbita di Marte. In tutto, due accensioni. Fatto.",

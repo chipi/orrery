@@ -1,7 +1,7 @@
 {
   "title": "Transferencia de Hohmann",
   "intro_sentence": "El viaje más económico de dos encendidos entre dos órbitas circulares coplanares — la referencia contra la que los planificadores de misiones miden todo lo demás.",
-  "seo_description": "El viaje de dos encendidos más barato entre dos órbitas circulares, calculado por Walter Hohmann en 1925. Ve la elipse y calcula delta-v y tiempo de vuelo.",
+  "seo_description": "El viaje de dos encendidos más barato entre dos órbitas circulares coplanares, ideado por Walter Hohmann en 1925. Ve la elipse y calcula delta-v y tiempo.",
   "narrative_101": [
     "Estás en la órbita de la Tierra. Quieres estar en la órbita de Marte. Ambas órbitas son aproximadamente círculos alrededor del Sol. ¿Cómo pasas de una a otra con el mínimo combustible posible?",
     "La respuesta, hallada por Walter Hohmann en 1925, es sorprendentemente elegante. Busca una elipse que apenas roce la órbita de la Tierra por un lado y apenas roce la de Marte por el otro. Enciende brevemente el motor para dejar la Tierra e incorporarte a esa elipse. Avanza por inercia unos 8,5 meses sin encender el motor en absoluto — la gravedad hace el trabajo. Al llegar al extremo opuesto, enciende de nuevo para quedar en la órbita de Marte. Dos impulsos en total. Listo.",

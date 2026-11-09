@@ -11,7 +11,7 @@
   "body_paragraphs": [
     "Konstantin Tsiolkovski leidde de raketvergelijking in 1903 af, tientallen jaren voordat iemand een raket bouwde die het vliegen waard was. Het resultaat heeft de onvermijdelijkheid van de natuurkunde: ∆v hangt af van de `Isp` van de motor en de verhouding tussen begin- en eindmassa — en is logaritmisch in die verhouding.",
     "De logaritme is het genadeloze deel. Twee keer zoveel drijfstof verdubbelt ∆v niet; het voegt er een vaste hoeveelheid aan toe. Wil je twee keer zo ver vliegen? Dan heb je een exponentieel grotere raket nodig. Dit is de tirannie van de raketvergelijking: chemische motoren (`Isp` ~300-450 s) lopen tegen een muur aan bij ongeveer 10-15 km/s ∆v, voordat de massaverhouding absurd wordt. Om verder te komen heb je een hogere `Isp` nodig (ionenmotoren, ~3000 s) of meerdere trappen (gooi tanks af zodra ze leeg zijn), of allebei.",
-    "Saturn V: 7.800 ton nat, 600 ton droog. Massaverhouding 13. Isp ~330 s. ∆v ≈ 8,3 km/s — nauwelijks genoeg voor de translunaire injectie. Hergebruik van de Falcon 9 stuit op een andere muur: elke kilogram herstelbare hardware kost je evenredig veel nuttige lading."
+    "Saturn V: ongeveer 2.940 ton bij de lancering (Apollo 11), circa 225 ton droog. Massaverhouding 13. Isp ~330 s. ∆v ≈ 8,3 km/s — nauwelijks genoeg voor de translunaire injectie. Hergebruik van de Falcon 9 stuit op een andere muur: elke kilogram herstelbare hardware kost je evenredig veel nuttige lading."
   ],
   "formula_caption": "∆v uit specifieke impuls, zwaartekrachtversnelling g₀ en massaverhouding m₀/m_f.",
   "diagram_caption": "Curve van ∆v tegen massaverhouding: logaritmisch. Twee keer zoveel drijfstof voegt slechts een vaste hoeveelheid ∆v toe."

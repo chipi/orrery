@@ -2,7 +2,7 @@
   "title": "∆v as Mission Budget",
   "intro_sentence": "The single number that says whether a mission is possible — total velocity change you need to spend, summed over every burn.",
   "seo_title": "Delta-v Budget: Total Velocity a Mission Must Spend",
-  "seo_description": "The single number that says whether a mission is possible: the total delta-v you must spend, summed over every burn, from launch to landing.",
+  "seo_description": "The first number that decides whether a mission is possible: the total delta-v you must spend, summed over every burn, from launch to landing.",
   "narrative_101": [
     "Money for spaceflight isn't dollars. It's ∆v — pronounced \"delta-v\" — and it's measured in kilometres per second. Every burn your rocket does costs some ∆v. Every move you make on a trajectory has a price tag in km/s. The mission's ∆v budget is just the running total: launch + injection + course corrections + arrival + landing. Add it up, that's your bill.",
     "Now here's the killer twist. Your rocket doesn't have unlimited ∆v. It has a hard ceiling, set by the Tsiolkovsky equation, dictated entirely by how much of your rocket is fuel and how good your engines are. If your bill exceeds the ceiling, the mission is impossible. Throwing more money at it doesn't fix it. The math wins.",

@@ -397,7 +397,7 @@
       "cover": false
     },
     {
-      "title": "Luna 16-class",
+      "title": "Luna 16",
       "file": "/images/anatomy/luna-16.webp",
       "cover": false
     },
@@ -1134,7 +1134,7 @@
       "cover": false
     },
     {
-      "title": "Luna 16-class",
+      "title": "Luna 16",
       "file": "/images/anatomy-exploded/luna-16.webp",
       "cover": false
     },
@@ -1722,15 +1722,93 @@
   ],
   "site_illustrations": [
     {
+      "title": "Apollo 11",
+      "file": "/images/illustrations/sites/apollo11.webp",
+      "route": "/moon/apollo11",
+      "cover": false
+    },
+    {
+      "title": "Apollo 12",
+      "file": "/images/illustrations/sites/apollo12.webp",
+      "route": "/moon/apollo12",
+      "cover": false
+    },
+    {
+      "title": "Apollo 14",
+      "file": "/images/illustrations/sites/apollo14.webp",
+      "route": "/moon/apollo14",
+      "cover": false
+    },
+    {
       "title": "Apollo 15",
       "file": "/images/illustrations/sites/apollo15.webp",
       "route": "/moon/apollo15",
       "cover": false
     },
     {
+      "title": "Apollo 16",
+      "file": "/images/illustrations/sites/apollo16.webp",
+      "route": "/moon/apollo16",
+      "cover": false
+    },
+    {
+      "title": "Apollo 17",
+      "file": "/images/illustrations/sites/apollo17.webp",
+      "route": "/moon/apollo17",
+      "cover": false
+    },
+    {
+      "title": "Luna 17",
+      "file": "/images/illustrations/sites/luna17.webp",
+      "route": "/moon/luna17",
+      "cover": false
+    },
+    {
+      "title": "Luna 21",
+      "file": "/images/illustrations/sites/luna21.webp",
+      "route": "/moon/luna21",
+      "cover": false
+    },
+    {
+      "title": "Chang’e 3",
+      "file": "/images/illustrations/sites/change3.webp",
+      "route": "/moon/change3",
+      "cover": false
+    },
+    {
+      "title": "Chandrayaan-3",
+      "file": "/images/illustrations/sites/chandrayaan3.webp",
+      "route": "/moon/chandrayaan3",
+      "cover": false
+    },
+    {
+      "title": "Spirit",
+      "file": "/images/illustrations/sites/spirit.webp",
+      "route": "/mars/spirit",
+      "cover": false
+    },
+    {
+      "title": "Opportunity",
+      "file": "/images/illustrations/sites/opportunity.webp",
+      "route": "/mars/opportunity",
+      "cover": false
+    },
+    {
       "title": "Curiosity",
       "file": "/images/illustrations/sites/curiosity.webp",
       "route": "/mars/curiosity",
+      "cover": false
+    },
+    {
+      "title": "Perseverance",
+      "file": "/images/illustrations/sites/perseverance.webp",
+      "route": "/mars/perseverance",
+      "cover": false
+    },
+    {
+      "title": "Zhurong",
+      "file": "/images/illustrations/sites/zhurong.webp",
+      "route": "/mars/zhurong",
       "cover": false
     }
   ],
@@ -4041,7 +4119,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "site_illustrations": 2,
+    "site_illustrations": 15,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

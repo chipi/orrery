@@ -14,8 +14,21 @@
     $props();
 
   const ALT: Record<string, () => string> = {
+    apollo11: m.site_illustration_alt_apollo11,
+    apollo12: m.site_illustration_alt_apollo12,
+    apollo14: m.site_illustration_alt_apollo14,
     apollo15: m.site_illustration_alt_apollo15,
+    apollo16: m.site_illustration_alt_apollo16,
+    apollo17: m.site_illustration_alt_apollo17,
+    luna17: m.site_illustration_alt_luna17,
+    luna21: m.site_illustration_alt_luna21,
+    change3: m.site_illustration_alt_change3,
+    chandrayaan3: m.site_illustration_alt_chandrayaan3,
+    spirit: m.site_illustration_alt_spirit,
+    opportunity: m.site_illustration_alt_opportunity,
     curiosity: m.site_illustration_alt_curiosity,
+    perseverance: m.site_illustration_alt_perseverance,
+    zhurong: m.site_illustration_alt_zhurong,
   };
   let src = $derived(assetUrl(`/${illustration.file}`));
   let alt = $derived(ALT[illustration.siteId]?.() ?? illustration.title);

@@ -2,6 +2,36 @@
   "_comment": "Illustrated site maps: AI-generated block dioramas (Higgsfield nano_banana_2) traced from Orrery's own reference maps of LROC / HiRISE imagery and the mission traverse data. Shown in the site panel's STORY tab (first card) and on /moon/<id> and /mars/<id>; listed on /colophon. validate-data checks that the file and its ladder rungs exist.",
   "illustrations": [
     {
+      "siteId": "apollo11",
+      "body": "moon",
+      "title": "Apollo 11",
+      "file": "images/illustrations/sites/apollo11.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC NAC imagery and the Apollo 11 landing-site data"
+    },
+    {
+      "siteId": "apollo12",
+      "body": "moon",
+      "title": "Apollo 12",
+      "file": "images/illustrations/sites/apollo12.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC NAC imagery and the Apollo 12 landing-site data"
+    },
+    {
+      "siteId": "apollo14",
+      "body": "moon",
+      "title": "Apollo 14",
+      "file": "images/illustrations/sites/apollo14.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC NAC imagery and the Apollo 14 landing-site data"
+    },
+    {
       "siteId": "apollo15",
       "body": "moon",
       "title": "Apollo 15",
@@ -12,6 +42,86 @@
       "made_from": "Orrery reference map of LROC imagery and the Apollo 15 traverse data"
     },
     {
+      "siteId": "apollo16",
+      "body": "moon",
+      "title": "Apollo 16",
+      "file": "images/illustrations/sites/apollo16.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC imagery and the Apollo 16 traverse data"
+    },
+    {
+      "siteId": "apollo17",
+      "body": "moon",
+      "title": "Apollo 17",
+      "file": "images/illustrations/sites/apollo17.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC imagery and the Apollo 17 traverse data"
+    },
+    {
+      "siteId": "luna17",
+      "body": "moon",
+      "title": "Luna 17",
+      "file": "images/illustrations/sites/luna17.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC imagery and the Lunokhod 1 traverse data"
+    },
+    {
+      "siteId": "luna21",
+      "body": "moon",
+      "title": "Luna 21",
+      "file": "images/illustrations/sites/luna21.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC imagery and the Lunokhod 2 traverse data"
+    },
+    {
+      "siteId": "change3",
+      "body": "moon",
+      "title": "Chang’e 3",
+      "file": "images/illustrations/sites/change3.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC NAC imagery and the Yutu traverse data"
+    },
+    {
+      "siteId": "chandrayaan3",
+      "body": "moon",
+      "title": "Chandrayaan-3",
+      "file": "images/illustrations/sites/chandrayaan3.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC NAC imagery and the Pragyan traverse data"
+    },
+    {
+      "siteId": "spirit",
+      "body": "mars",
+      "title": "Spirit",
+      "file": "images/illustrations/sites/spirit.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of CTX imagery and the Spirit traverse data"
+    },
+    {
+      "siteId": "opportunity",
+      "body": "mars",
+      "title": "Opportunity",
+      "file": "images/illustrations/sites/opportunity.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of CTX imagery and the Opportunity traverse data"
+    },
+    {
       "siteId": "curiosity",
       "body": "mars",
       "title": "Curiosity",
@@ -20,6 +130,26 @@
       "tool": "higgsfield",
       "generated": "2026-11-09",
       "made_from": "Orrery reference map of HiRISE / CTX imagery and the Curiosity traverse data"
+    },
+    {
+      "siteId": "perseverance",
+      "body": "mars",
+      "title": "Perseverance",
+      "file": "images/illustrations/sites/perseverance.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of CTX imagery and the Perseverance traverse data"
+    },
+    {
+      "siteId": "zhurong",
+      "body": "mars",
+      "title": "Zhurong",
+      "file": "images/illustrations/sites/zhurong.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of CTX imagery and the Zhurong traverse data"
     }
   ]
 }

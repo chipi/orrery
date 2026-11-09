@@ -115,3 +115,136 @@ Sample of 20 remaining findings, drawn with a fixed shuffle seed (12 from de es 
 - Month names the repo's translations use that Intl does not give are covered only for ar, hi, ru, sr-Cyrl. Other locales were not audited for alternate spellings beyond what the full run surfaced (9 `md:` residue fields remain).
 - No hard gate was added; `--json` output is the interface for one. No CI wiring, no threshold file.
 - The "after" run was done once at the end; `npm run preflight` was not run (not asked, and only these files changed).
+
+---
+
+# Part 2 (2026-11-09): to zero, and a hard gate
+
+Operator decision: reach zero and gate it. Three steps: teach the finder its false-positive classes, fix the translation errors the finder then shows, record the rest in a small reviewed list.
+
+## Step 1: what the finder learned
+
+`scripts/i18n-tools/number-words.mjs` (new, table-driven per locale) and `number-drift.mjs`. Each class has unit tests (`number-drift-words.test.ts`, 111 tests, true positives included).
+
+- **Number words**, de nl fr es it pt-BR ru sr-Cyrl ar hi: units, teens, tens, hundreds, thousand, million/billion words, compounds (`sechsstündig`, `ventisettenne`, `четрнаестодневну`, `десетомилијарданског`), case forms (ru `двух`), ordinals, "one" words only where they cannot be articles, doubles (`втрое`, `doble`), Arabic duals (`مركبتَي`). A one-word or an article beside a tens word is not joined (`Sessanta e un ritardo` is 60, not 61).
+- **CJK and Korean numerals** with scales: `38万4,000`, `1億5000万`, `9.46万亿`, `一千亿亿`, `三十〜四十億`, ko `1억 4,000만`, `7천 4백만`, `9조 4,600억`, `4,500~6,500만` (scale shared across a range), 京/경, kanji decimal `一・七三一`, ko native numerals before a counter (`두 번째`, `두 곳`). Not numbers: ko `2만이` ("only 2"), `구경`, `조차`, `천문`; zh `千克` `兆瓦` (SI prefixes).
+- **Roman numerals** of two or more capitals on the translation side (`XXI`, `XXᵉ`, Cyrillic `ХХ`); a single letter is not read, and the English side never reads `Saturn V` (both sides agree: a name, not a number).
+- **Decades, short years, centuries**: `1960s` = `années 60` = `anni Sessanta` = `шестидесятые` = `ستينيات`, `1946-47` = `1946–1947`, `the 2100s` = `22. веку`, ar `العقد الثاني من القرن الحادي والعشرين` = 2010s, it `settecentesco` = 18th.
+- **Scales and units**: million/billion in every locale (`Mio.`, `Mrd.`, `млн`, `मिलियन`, `مليون`, ru `миллиардов`/`-миллиардолетний`, es `trillones`, fr `mille milliards`), `Gyr` `Myr` `Mpc` `Ga` `bn` `Mal` (fr only) `Mlj` (nl only), `$100M`, `36k`, `6.1 M km`, `0.7–1.3 billion` and `from 10 to 20 million` (scale shared), Indian grouping `3,33,000`, `10 prochains Ga`.
+- **Equivalences read from the English**: `3.2-gigapixel` = 32億画素 (SI prefix word), 10 ft = 3 m / 1.7 mi = 2.7 km / 4.4 lb = 2 kg (within 5 %), `23 and a half` = 23,5, `1/6` (the 1 is a word), `1-year` (an adjective), `24/7` (idiom), `1P/Halley` (a name), `10:00` = 10 h.
+- **Notation**: subscript digits on the translation side (`N₂O₄` = `N2O4`), a plain space after a Latin name is not thousands grouping (`Yutu-2 140 кг`, `Ariane 4 116회`), a scale is not carried from a name-number (`L2 a 1,5 milioni`).
+- **A value is present or it is not.** How often a number is said is no longer compared: `Launch Complex 17 (LC-17)` becomes `LC-17` in ten locales. Cost, measured below.
+
+### Before and after (all 38 trees, 13 locales)
+
+"before" is the previous part's "after" column (1,856); "after" is the finder as it stands, before the reviewed list is subtracted. The 27 left are all in the reviewed list.
+
+| tree | before | after |
+|---|---:|---:|
+| belts | 8 | 0 |
+| culture-doors | 5 | 0 |
+| deep-sky | 36 | 0 |
+| earth-objects | 20 | 1 |
+| essays | 135 | 1 |
+| fleet | 279 | 3 |
+| glossary | 5 | 0 |
+| hotspot-metadata | 0 | 0 |
+| iss-modules | 0 | 0 |
+| iss-visitors | 7 | 0 |
+| mars-sites | 16 | 0 |
+| mars-traverses | 2 | 2 |
+| missions | 316 | 3 |
+| moon-sites | 34 | 0 |
+| moon-traverses | 0 | 0 |
+| museums | 3 | 0 |
+| observatories | 13 | 0 |
+| orbit-regimes | 8 | 0 |
+| orbit-regimes-explore | 7 | 0 |
+| orbit-regimes-mars | 12 | 0 |
+| orbit-regimes-moon | 13 | 0 |
+| original-work | 32 | 0 |
+| planets | 22 | 0 |
+| programs | 106 | 0 |
+| rockets | 13 | 0 |
+| satellites | 43 | 0 |
+| scenarios | 1 | 0 |
+| science | 466 | 16 |
+| site-stories | 175 | 0 |
+| small-bodies | 5 | 0 |
+| sourcing | 0 | 0 |
+| sun | 7 | 0 |
+| tiangong-modules | 0 | 0 |
+| tiangong-visitors | 2 | 0 |
+| trajectories | 8 | 1 |
+| universe | 44 | 0 |
+| venus-sites | 0 | 0 |
+| videos | 13 | 0 |
+| **all trees** | **1856** | **27** |
+
+| locale | before | after |
+|---|---:|---:|
+| de | 85 | 1 |
+| es | 111 | 1 |
+| fr | 56 | 3 |
+| it | 145 | 1 |
+| pt-BR | 40 | 1 |
+| nl | 123 | 1 |
+| ru | 133 | 0 |
+| sr-Cyrl | 175 | 1 |
+| ja | 66 | 5 |
+| ko | 70 | 5 |
+| zh-CN | 381 | 4 |
+| hi | 95 | 0 |
+| ar | 376 | 4 |
+
+Milestones, the same run on all trees as classes were added: 1,856 → 503 (number words, CJK numerals, Roman numerals, decades, scale words) → 266 (value-present semantics, range scales, name-number spacing, Korean/Hindi/Arabic specifics) → 127 (conversions, idioms, `1/6`, subscripts, native Korean numerals) → 43 (27 reviewed below plus the 16 fields fixed) → 27 after the translation fixes.
+
+## Step 2: the last 43 were read one by one
+
+The remainder was far under the ~300 stop line, so every field was read against its English (127 at the point I started reading, 43 after the last finder tweaks).
+
+**Real errors, fixed in `i18n-src` (15 files, 16 fields):**
+
+| locale | field | error |
+|---|---|---|
+| ja | essays/comms `body.6.text` | "22 watts" written 23ワット (all 6 other locales say 22) |
+| ja | missions/earth/voskhod-2 `events.0.note` | `1965-03-1807時00分UTC`: the space between the date and the time was lost, so the 18th and the 07 ran together |
+| ja | fleet/crewed-spacecraft/buran-ok-gli `description` | the flight-control software and the 1988-11-15 orbital flight dropped |
+| ja | fleet/station/mir `description` | "almost 10 years" dropped |
+| ja | planets/saturn `bio` | 282,000 km rounded to 約 28 万; now 約 28.2 万 |
+| zh-CN | fleet/launch-site/baikonur-31-6 `description` | "Site 1/5" written 1号 |
+| zh-CN | programs/gemini `seo_title` | "1961-1966" dropped |
+| fr | programs/change `seo_title` | "Since 2007" dropped |
+| ru | programs/mangalyaan `seo_title` | "2013-2022" dropped |
+| nl | fleet/launch-site/lc-34 `best_known_for`, `tagline` | Apollo 7 launch date 1968-10-11 dropped (2 fields) |
+| nl | fleet/orbiter/messenger `description` | "mapped the planet for 4 years" and the 16 m crater dropped |
+| es, it, nl | programs/sputnik `seo_description` | "Sputnik 2 and 3 followed." dropped (rewritten inside the 160-character cap) |
+| ko | fleet/crewed-spacecraft/endeavour `description` | "Node 1 Unity" written "Unity" |
+
+**Reviewed exceptions, 27** (`number-drift-reviewed.json`, each with a reason and a hash of the English and the translation; any edit to either brings the finding back):
+
+- the English figure is written another way the finder does not read (14): "other 3 billion" as « 3 autres milliards » (fr ×2), "~10 selectees" as "une dizaine", "15 minutes" as "quarto d'ora", "24-hour day" as "etmaal", "at #1" as "no topo", "#1 problem" as "가장 큰 문제" / "首要问题", "100% oxygen" as "純酸素" / "纯氧" / "كله أكسجين" (3), "Flight 1" as "初飛行" / "首飞", "over 1 day" as "하루 만에", "1-2 m" as "متر إلى مترين", "~50 and ~62 kpc" with one unit (ar);
+- a rounded or approximate figure (3): "~333,000×" as 33万 (ja, ko, zh-CN);
+- a name or designation rendered natively (4): Naro-1 as 나로호 (ko ×2), Hartley 2 as 103P (ar), "2nd stage expendable" as "Einweg-Oberstufe" (de);
+- a date or day in another form (4): 19 October UTC as 20 October JST (ja ×2), "EOM 2018-10-31" as "fin de octubre" (es), "July 4" as an ordinal word (sr-Cyrl).
+
+## Step 3: the gates
+
+- `node scripts/i18n-tools/number-drift.mjs tree=all --gate` (every tree, every locale; exit 1 on any unreviewed finding or any exception that matches nothing) is the task `check-i18n-number-drift` in `scripts/validate-data-runner.ts`, so `npm run validate-data` and the build run it.
+- `scripts/i18n-tools/dropped-sentences.mjs` was brought to the same shape (`tree=all`, `--unreviewed`, `--gate`, `--accept`, hashed exceptions in `dropped-sentences-reviewed.json`) and is the task `check-i18n-dropped-sentences`. The 26 fields of `2026-11-09-dropped-sentences-review.md` became 20 reviewed entries (same reasons); the other 6 had been restored and are no longer flagged. Gate at zero: 0 unreviewed, 20 reviewed.
+- `scripts/i18n-tools/reviewed-gates.test.ts` guards both: every exception has a locale, existing files, a reason and two hashes, and each `--gate` run reports 0 unreviewed.
+- Recording a finding: `node scripts/i18n-tools/number-drift.mjs --accept='<locale|file|field>' --why='<reason>'` (same flags on `dropped-sentences.mjs`).
+- A new class of false positive is taught to the finder with a unit test, not recorded.
+
+## Cost of the finder change, measured
+
+Sensitivity check (not part of the gate): 6,000 random digit mutations in translations that pass (the last digit of one number +1, seed fixed): the finder before this part caught 98.2 %, now 91.4 %. In a second sample of 6,000 (image-path strings left out), 389 mutations only the old finder caught: 291 are a number the translation also says elsewhere in the same field (value-present semantics), 50 are matched by a number word, 21 by the short-year/decade rule, 24 by idioms and conversions, 3 by Roman numerals. Counting how often a number is said instead (95.8 % caught) shows 55 more fields; all 55 were read and every one was the translation saying a repeated number once ("Apollo 13 … the 13 explosion", "Merlin 1D throttles 40-100%, Raptor 2 throttles 40-100%" → "also"), none an error, so that counting is not enforced.
+
+## Not done / not verified
+
+- Detection stayed behind the old 98.2 % (above). A changed number that the English says twice and the translation says once, rightly or wrongly, is not reported.
+- Word readers are generous on purpose (any matching stem anywhere in the field counts): an unrelated word that starts with a number stem (ru `семинар`, de `Dreieck`, it `settembre`) reads as that number and can hide a dropped one. Measured only by the mutation sample above (50 of 6,000), not audited per locale.
+- Arabic duals are a list of nouns (`مترين` `ليلتين` …): a new dual noun will show up as a finding to accept or add.
+- The translation fixes were made by me in the same pass; no native-language review, and no science-reviewer pass on the seo_title and description rewrites.
+- `npm run preflight`, the full test suite, e2e and the build were not run; run here: `npm run validate-data` (all green, 21 tasks), the vitest files `number-drift*.test.ts` and `reviewed-gates.test.ts`, prettier and eslint on the touched files.
+- `static/data/i18n/*.json` bundles (gitignored) still hold the old text until `npm run build-i18n-bundles`.

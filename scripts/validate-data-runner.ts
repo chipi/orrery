@@ -78,6 +78,21 @@ const TASKS: Task[] = [
     cmd: 'node',
     args: ['scripts/i18n-tools/name-drift-scan.mjs'],
   },
+  // A number in the English that the translation lost or changed (the hill-sphere "80×" for
+  // 333,000×), over every tree and locale. A finding is fixed in i18n-src or recorded, with a
+  // reason and a hash of both texts, in number-drift-reviewed.json (2026-11-09; zero unreviewed).
+  {
+    name: 'check-i18n-number-drift',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/number-drift.mjs', 'tree=all', '--gate'],
+  },
+  // A translation shorter than the English by a sentence (dropped sentences / clauses), every tree
+  // and locale; reviewed ones live in dropped-sentences-reviewed.json.
+  {
+    name: 'check-i18n-dropped-sentences',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/dropped-sentences.mjs', 'tree=all', '--gate'],
+  },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-universe-stars', cmd: 'tsx', args: ['scripts/validate-universe-stars.ts'] },
   {

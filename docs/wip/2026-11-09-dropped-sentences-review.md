@@ -3,6 +3,8 @@
 26 fields flagged by `scripts/i18n-tools/dropped-sentences.mjs`. Each was compared sentence by sentence with en-US.
 Format: locale, tree, file, field, verdict, reason.
 
+The 20 of these still flagged by the finder are now recorded, with a hash of the English and the translation, in `scripts/i18n-tools/dropped-sentences-reviewed.json` and gated by `npm run validate-data` (`check-i18n-dropped-sentences`); the other 6 were restored and no longer flag. Record a new one with `dropped-sentences.mjs --accept='<locale|file|field>' --why='<reason>'`, not in this list.
+
 - nl, fleet, observatory/jwst.json, description: restored sentence (text was cut after "goud-gecoate": primary mirror and sunshield clause restored)
 - ru, mars-sites, curiosity.json, fact: restored words ("Mt." and "billion-year-by-billion-year"); finder misfire as well: English "Mt. Sharp" splits into an extra sentence at "Mt."
 - de, science, mission-phases/edl.json, narrative_101.1: restored words ("to slow the rest of the way"); finder misfire: steps joined by semicolon/colon

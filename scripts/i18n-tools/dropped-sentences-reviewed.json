@@ -1,0 +1,102 @@
+{
+  "ar|science/life-in-space/crew-dynamics-psychology.json|intro_sentence": {
+    "why": "false positive; two sentences joined by colon, nothing missing",
+    "en": "0a0bf5677e",
+    "tr": "57f092e823"
+  },
+  "ar|science/observation/wormholes.json|body_paragraphs.3": {
+    "why": "false positive; sentences joined by colon/dash, nothing missing",
+    "en": "06c0bb0de2",
+    "tr": "2041a33443"
+  },
+  "ar|science/transfers/hohmann-transfer.json|narrative_101.0": {
+    "why": "false positive; sentences joined by comma, nothing missing",
+    "en": "7f5f35e029",
+    "tr": "ad2178394e"
+  },
+  "de|science/mission-phases/_intro.json|paragraphs.1": {
+    "why": "false positive; sentences joined by commas/dash, nothing missing",
+    "en": "c017828a49",
+    "tr": "494584956a"
+  },
+  "de|science/mission-phases/edl.json|narrative_101.1": {
+    "why": "restored words (\"to slow the rest of the way\"); finder misfire: steps joined by semicolon/colon",
+    "en": "63b4af8c71",
+    "tr": "4c1a62a181"
+  },
+  "de|science/orbits/keplers-laws.json|narrative_101.0": {
+    "why": "false positive; sentences joined by commas, nothing missing",
+    "en": "9dbb4d8dd0",
+    "tr": "6d3324d0d0"
+  },
+  "de|science/orbits/semi-major-axis.json|body_paragraphs.1": {
+    "why": "false positive; short sentences (\"Form egal, Inklination egal\") merged by comma, nothing missing",
+    "en": "50925faf76",
+    "tr": "6553b5567e"
+  },
+  "de|science/scales-time/frames.json|body_paragraphs.1": {
+    "why": "false positive; sentences merged by semicolon, nothing missing",
+    "en": "fba4cadf5e",
+    "tr": "f0012b66ab"
+  },
+  "de|science/scales-time/frames.json|narrative_101.2": {
+    "why": "restored words (\"handoff ... patched-conics trick\", \"and sticks to it\"); finder misfire: sentences joined by colon/semicolon",
+    "en": "448c117b31",
+    "tr": "770523d7b9"
+  },
+  "de|science/transfers/gravity-assist.json|narrative_101.0": {
+    "why": "false positive; sentences joined by dash/colon notation (\"Sonde = Tennisball\"), nothing missing",
+    "en": "59a6dc4db3",
+    "tr": "7737100c09"
+  },
+  "de|science/transfers/patched-conics.json|body_paragraphs.0": {
+    "why": "false positive; sentences joined by dash, nothing missing",
+    "en": "4134831e75",
+    "tr": "bf96961bbe"
+  },
+  "ja|fleet/launcher/h3.json|description": {
+    "why": "false positive; sentences joined by the Japanese comma, terse language, nothing missing",
+    "en": "6571c060b4",
+    "tr": "3927c88296"
+  },
+  "ja|science/propulsion/fusion-propulsion.json|body_paragraphs.0": {
+    "why": "false positive; Japanese joins the last two sentences with a dash, nothing missing",
+    "en": "c8809f0fe6",
+    "tr": "69e18e4921"
+  },
+  "ko|science/planets/planetary-stats.json|intro_sentence": {
+    "why": "restored word (\"really\"); finder misfire: two short sentences joined by comma",
+    "en": "cb81921450",
+    "tr": "091e08305d"
+  },
+  "zh-CN|essays/asteroid-mining.json|body.25.md": {
+    "why": "false positive; CJK sentence joining (last two sentences merged with a dash/comma), nothing missing",
+    "en": "271029efe5",
+    "tr": "d3ed38f113"
+  },
+  "zh-CN|essays/comms.json|body.23.md": {
+    "why": "false positive; CJK sentence joining (sentences merged with a colon), nothing missing",
+    "en": "f35c14317f",
+    "tr": "c51e47f213"
+  },
+  "zh-CN|programs/iss.json|the_land.1.md": {
+    "why": "false positive; CJK sentence joining (\"But ... It is that ...\" merged by colon), nothing missing",
+    "en": "b3c812658f",
+    "tr": "9eade5295c"
+  },
+  "zh-CN|science/life-in-space/bone-density-loss.json|body_paragraphs.0": {
+    "why": "false positive; CJK sentence joining by colon, nothing missing",
+    "en": "cde955edcb",
+    "tr": "f107dd79c3"
+  },
+  "zh-CN|science/life-in-space/vestibular-adaptation.json|body_paragraphs.0": {
+    "why": "false positive; CJK sentence joining by comma, nothing missing",
+    "en": "8baec3cedb",
+    "tr": "9d82f7fc31"
+  },
+  "zh-CN|site-stories/opportunity.json|chapters.1.images.2.caption": {
+    "why": "false positive; caption sentence joined by comma after the dash, nothing missing",
+    "en": "d5ee14e572",
+    "tr": "f0e847bdd9"
+  }
+}

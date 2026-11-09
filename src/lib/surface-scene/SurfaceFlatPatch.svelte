@@ -561,7 +561,9 @@
     const startR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
     const endR = scaleAwareRadius(ROVER_FOOTPRINT_KM);
     // An annotation ring on the lander marks the start; the green dot would sit under it.
-    const ringClear = ringDiameter(viewW);
+    // Mapped tracks can begin a few metres off the lander coordinate (Luna 21: 12 m), which
+    // outgrows the ring's screen size at deep zoom, so a true-distance clearance applies too.
+    const ringClear = Math.max(ringDiameter(viewW), LANDER_RING_CLEAR_KM / kmPerPx);
     if (!placedRings.some((r) => Math.hypot(r.x - sp.x, r.y - sp.y) < ringClear)) {
       ctx.fillStyle = '#22c55e';
       ctx.beginPath();
@@ -829,6 +831,7 @@
   const MARKER_MAX_PX = 32;
   const ROVER_FOOTPRINT_KM = 0.003; // ~3 m (Curiosity-class, MER, Zhurong)
   const LANDER_FOOTPRINT_KM = 0.005; // ~5 m (Apollo LM, Phoenix, Viking)
+  const LANDER_RING_CLEAR_KM = 0.03; // inside the descent-engine blast zone
   // STOP_FOOTPRINT_KM was used by drawTraverseStops before 2026-06-03;
   // the pin now uses a fixed-pixel head (matching the 3D handoff) so
   // the per-stop footprint no longer drives its radius.

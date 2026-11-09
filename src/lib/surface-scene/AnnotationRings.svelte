@@ -70,6 +70,9 @@
   let root: HTMLDivElement | undefined = $state();
 
   const coarse = $derived(viewport.isCoarsePointer);
+  // Narrow screens: the curated short name instead of an ellipsis-cut one.
+  const chipText = (a: PlacedRing['annotation']): string =>
+    viewport.isNarrow && a.label_short ? a.label_short : a.label;
   const ringPx = $derived(ringDiameter(width));
   const visible = $derived(rings.filter((r) => ringInView(r.x, r.y, width, height)));
   const grouped = $derived(clusterRings(visible, ringPx));
@@ -90,7 +93,7 @@
   // HUD + side panel rectangles (relative to this overlay): labels keep clear of
   // them; a bottom sheet sits above the bottom ones.
   const HUD_SELECTOR =
-    'aside.panel, .tier-context-card, .hud-controls, .hud-top-mobile, .hud-layers, .hud-back, .hud-context-banner, .legend-3d, .surface-index-handle, .sidx, .hud-scale, .hud-latlon, .locate-me';
+    'nav, footer, aside.panel, .tier-context-card, .hud-controls, .hud-top-mobile, .hud-layers, .hud-back, .hud-context-banner, .legend-3d, .surface-index-handle, .sidx, .hud-scale, .hud-latlon, .locate-me';
   let hudBlocked: Rect[] = $state([]);
   let sheetBottom = $state(0);
   function measureHud(): void {
@@ -114,7 +117,7 @@
 
   const labels = $derived(
     layoutLabels(
-      singles.map((r) => ({ id: r.annotation.id, label: r.annotation.label, x: r.x, y: r.y })),
+      singles.map((r) => ({ id: r.annotation.id, label: chipText(r.annotation), x: r.x, y: r.y })),
       { w: width, h: height },
       ringPx,
       [...hudBlocked, ...badges.map((c) => ringFootprint(c, ringPx))],
@@ -256,6 +259,7 @@
   style:--ring-stroke="{RING_STROKE_PX}px"
   style:--hit-px="{HIT_PX}px"
   onwheel={onWheel}
+  style:--hl="#889fe7"
 >
   {#if fanned}
     <svg class="fan" {width} {height} aria-hidden="true">
@@ -317,24 +321,28 @@
       <span
         class="leader"
         class:active={lit}
-        class:vertical={lab.side === 'top'}
-        style:left={lab.side === 'top'
+        class:vertical={lab.side === 'top' || lab.side === 'bottom'}
+        style:left={lab.side === 'top' || lab.side === 'bottom'
           ? `${r.x}px`
           : `${lab.side === 'right' ? r.x + ringPx / 2 : r.x - ringPx / 2 - LEADER_PX}px`}
-        style:top={lab.side === 'top' ? `${r.y - ringPx / 2 - LEADER_PX}px` : `${r.y}px`}
-        style:width={lab.side === 'top' ? undefined : `${LEADER_PX}px`}
-        style:height={lab.side === 'top' ? `${LEADER_PX}px` : undefined}
+        style:top={lab.side === 'top'
+          ? `${r.y - ringPx / 2 - LEADER_PX}px`
+          : lab.side === 'bottom'
+            ? `${r.y + ringPx / 2}px`
+            : `${r.y}px`}
+        style:width={lab.side === 'top' || lab.side === 'bottom' ? undefined : `${LEADER_PX}px`}
+        style:height={lab.side === 'top' || lab.side === 'bottom' ? `${LEADER_PX}px` : undefined}
         aria-hidden="true"
       ></span>
       <span
         class="chip mono"
         class:active={lit}
         class:left={lab.side === 'left'}
-        class:top={lab.side === 'top'}
+        class:top={lab.side === 'top' || lab.side === 'bottom'}
         style:left="{lab.rect.x}px"
         style:top="{lab.rect.y}px"
         style:width="{lab.rect.w}px"
-        aria-hidden="true">{r.annotation.label}</span
+        aria-hidden="true">{chipText(r.annotation)}</span
       >
     {/if}
   {/each}
@@ -433,6 +441,8 @@
     pointer-events: none;
     overflow: hidden;
   }
+  /* --hl (set inline, #889fe7): the site's --color-tier-core #7b9cff blended 65/35 toward
+     a neutral grey, so it reads as a calm blue against the ring yellow, not cyan. */
   .ring {
     position: absolute;
     width: var(--hit-px);
@@ -502,16 +512,16 @@
   .ring:focus-visible .dot {
     transform: scale(1.15);
     border-width: 5px;
-    border-color: var(--color-teal, #4ecdc4);
-    background: rgba(78, 205, 196, 0.28);
+    border-color: var(--hl);
+    background: rgba(136, 159, 231, 0.28);
     box-shadow:
       0 0 0 1px rgba(0, 0, 0, 0.6),
-      0 0 22px 6px rgba(78, 205, 196, 0.85),
+      0 0 22px 6px rgba(136, 159, 231, 0.85),
       inset 0 0 0 1px rgba(0, 0, 0, 0.35);
   }
   .ring.active .dot::after,
   .ring:hover .dot::after {
-    border-color: var(--color-teal, #4ecdc4);
+    border-color: var(--hl);
   }
   .ring.active,
   .ring:hover,
@@ -549,7 +559,7 @@
     height: auto;
   }
   .leader.active {
-    background: var(--color-teal, #4ecdc4);
+    background: var(--hl);
     z-index: 5;
   }
   .chip {
@@ -582,9 +592,9 @@
   }
   .chip.active {
     z-index: 5;
-    border-color: var(--color-teal, #4ecdc4);
-    background: rgba(8, 40, 44, 0.96);
-    box-shadow: 0 0 10px rgba(78, 205, 196, 0.55);
+    border-color: var(--hl);
+    background: rgba(14, 20, 44, 0.96);
+    box-shadow: 0 0 10px rgba(136, 159, 231, 0.55);
   }
   .fan {
     position: absolute;
@@ -607,7 +617,7 @@
     max-width: 240px;
     padding: 6px 10px;
     background: rgba(5, 5, 20, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(136, 159, 231, 0.55);
     border-radius: 4px;
     color: var(--color-text-on-dark, #fff);
     font-size: 11px;
@@ -689,7 +699,7 @@
     letter-spacing: 0.06em;
   }
   .pop a {
-    color: var(--color-teal, #4ecdc4);
+    color: var(--hl);
   }
   .pop-close {
     position: absolute;

@@ -59,7 +59,12 @@ export async function surfaceHotspotsSidecar(): Promise<SurfaceHotspotsSidecar['
  * overlay file keep the sidecar's English strings.
  */
 export interface HotspotMetadataOverlay {
-  hotspot_annotations?: Array<{ id: string; label: string; explain?: string }>;
+  hotspot_annotations?: Array<{
+    id: string;
+    label: string;
+    label_short?: string;
+    explain?: string;
+  }>;
   panorama_annotations?: Array<{ id: string; label?: string; body?: string }>;
   panorama_caption?: string;
   compass_zero_direction?: string;
@@ -223,7 +228,7 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
  */
 function mergeAnnotations(
   defaults: import('$types/surface-site').HotspotAnnotation[],
-  overlay: Array<{ id: string; label: string; explain?: string }>,
+  overlay: Array<{ id: string; label: string; label_short?: string; explain?: string }>,
 ): import('$types/surface-site').HotspotAnnotation[] {
   const overlayById = new Map(overlay.map((o) => [o.id, o]));
   return defaults.map((d) => {

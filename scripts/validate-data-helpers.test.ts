@@ -510,6 +510,14 @@ describe('findHotspotAnnotationProblems', () => {
     ).toEqual([]);
   });
 
+  it('accepts a short label and flags an empty or long one', () => {
+    expect(findHotspotAnnotationProblems(site([{ ...good, label_short: 'LM' }]))).toEqual([]);
+    expect(findHotspotAnnotationProblems(site([{ ...good, label_short: '' }]))).toHaveLength(1);
+    expect(
+      findHotspotAnnotationProblems(site([{ ...good, label_short: 'x'.repeat(17) }])),
+    ).toHaveLength(1);
+  });
+
   it('flags duplicate ids, missing labels and non-finite offsets', () => {
     const p = findHotspotAnnotationProblems(
       site([good, { ...good }, { id: 'n', lat_offset_m: NaN, lon_offset_m: 1 }]),

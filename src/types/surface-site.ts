@@ -316,6 +316,9 @@ export interface PanoramaSetEntry {
 export interface HotspotAnnotation {
   id: string;
   label: string;
+  /** Shorter name for narrow screens ("PSEP"); the full label stays in the sheet and list.
+   *  Translated through the hotspot-metadata overlay like `label`. */
+  label_short?: string;
   lat_offset_m: number;
   lon_offset_m: number;
   gallery_image?: string;

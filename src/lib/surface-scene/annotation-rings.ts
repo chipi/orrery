@@ -45,7 +45,7 @@ export interface PlacedRing {
   y: number;
 }
 
-export type LabelSide = 'right' | 'left' | 'top';
+export type LabelSide = 'right' | 'left' | 'top' | 'bottom';
 
 export function ringDiameter(viewW: number): number {
   return Math.max(RING_MIN_PX, Math.min(RING_MAX_PX, Math.round(viewW * 0.032)));
@@ -79,6 +79,9 @@ export function labelRect(a: RingAnchor, width: number, side: LabelSide, ringPx:
   if (side === 'top') {
     return { x: a.x - width / 2, y: a.y - off - LABEL_HEIGHT_PX, w: width, h: LABEL_HEIGHT_PX };
   }
+  if (side === 'bottom') {
+    return { x: a.x - width / 2, y: a.y + off, w: width, h: LABEL_HEIGHT_PX };
+  }
   return {
     x: side === 'right' ? a.x + off : a.x - off - width,
     y: a.y - LABEL_HEIGHT_PX / 2,
@@ -101,7 +104,7 @@ export const ringFootprint = ringDisc;
 
 /**
  * Which labels fit. Rings always stay. A label tries the right of its ring, then
- * the left, then above it; a side is skipped when the chip would be clipped by
+ * the left, then above, then below it; a side is skipped when the chip would be clipped by
  * the view edge, run under a blocked rectangle (the side panel, HUD), or touch a
  * ring or an already placed label. Only when the full name fits on no side is a
  * shortened chip (ellipsis) tried, and a label that fits nowhere is dropped. Earlier anchors win a clash, so callers pass them in
@@ -120,7 +123,7 @@ export function layoutLabels(
     const widths = full > SHORT_LABEL_PX ? [full, SHORT_LABEL_PX] : [full];
     // the full name on any side beats a shortened chip on a preferred one
     search: for (const width of widths) {
-      for (const side of ['right', 'left', 'top'] as const) {
+      for (const side of ['right', 'left', 'top', 'bottom'] as const) {
         const rect = labelRect(a, width, side, ringPx);
         const inside =
           rect.x >= 0 && rect.y >= 0 && rect.x + rect.w <= view.w && rect.y + rect.h <= view.h;

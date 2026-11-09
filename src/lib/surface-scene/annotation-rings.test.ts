@@ -94,7 +94,7 @@ describe('layoutLabels', () => {
   });
 
   it('avoids blocked rectangles (HUD)', () => {
-    const blocked = [{ x: 0, y: 100, w: 800, h: 130 }];
+    const blocked = [{ x: 0, y: 100, w: 800, h: 200 }];
     expect(layoutLabels([a('lm', 200, 200)], view, ring, blocked).has('lm')).toBe(false);
   });
 
@@ -127,6 +127,19 @@ describe('layoutLabels', () => {
     expect(out.get('lm')).toBeDefined();
     expect(out.get('lm')!.rect.w).toBeLessThan(estimateLabelWidth(long));
     expect(out.get('lm')!.rect.x + out.get('lm')!.rect.w).toBeLessThanOrEqual(phone.w);
+  });
+
+  it('flips below the ring at the top edge or under the header', () => {
+    const header = [{ x: 0, y: 0, w: 800, h: 60 }];
+    const out = layoutLabels([a('alsep', 300, 70, 'ALSEP central station')], view, ring, header);
+    expect(out.get('alsep')?.side).toBe('bottom');
+    expect(out.get('alsep')!.rect.y).toBe(70 + ring / 2 + LEADER_PX);
+  });
+
+  it('flips above the ring at the bottom edge or over the footer bar', () => {
+    const footer = [{ x: 0, y: 560, w: 800, h: 40 }];
+    const out = layoutLabels([a('lm', 300, 550, 'Descent stage')], view, ring, footer);
+    expect(out.get('lm')?.side).toBe('top');
   });
 
   it('left chips end a leader length before the ring edge', () => {

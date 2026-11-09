@@ -37,7 +37,11 @@
   } from '$lib/surface-scene/surface-traverses';
   import { detailGroundKm } from '$lib/surface-scene/flat-patch-extent';
   import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
-  import { groundOffsetToScreen, type PlacedRing } from '$lib/surface-scene/annotation-rings';
+  import {
+    groundOffsetToScreen,
+    ringDiameter,
+    type PlacedRing,
+  } from '$lib/surface-scene/annotation-rings';
   import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
 
@@ -556,10 +560,14 @@
     const ep = pts[pts.length - 1];
     const startR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
     const endR = scaleAwareRadius(ROVER_FOOTPRINT_KM);
-    ctx.fillStyle = '#22c55e';
-    ctx.beginPath();
-    ctx.arc(sp.x, sp.y, startR, 0, Math.PI * 2);
-    ctx.fill();
+    // An annotation ring on the lander marks the start; the green dot would sit under it.
+    const ringClear = ringDiameter(viewW);
+    if (!placedRings.some((r) => Math.hypot(r.x - sp.x, r.y - sp.y) < ringClear)) {
+      ctx.fillStyle = '#22c55e';
+      ctx.beginPath();
+      ctx.arc(sp.x, sp.y, startR, 0, Math.PI * 2);
+      ctx.fill();
+    }
     ctx.fillStyle = tr.status === 'ACTIVE' ? '#ef4444' : '#f59e0b';
     ctx.beginPath();
     ctx.arc(ep.x, ep.y, endR, 0, Math.PI * 2);
@@ -911,6 +919,13 @@
     <span class="ctx-subline">
       {m.surface_true_scale_sub({ name: selected.name ?? selected.id })}
     </span>
+    {#if upsampling}
+      <span class="ctx-warn">
+        {config.planet === 'mars'
+          ? m.surface_flat_upsample_warning_mars()
+          : m.surface_flat_upsample_warning_moon()}
+      </span>
+    {/if}
   </div>
 
   <div class="hud-layers" role="group" aria-label={m.surface_flat_layer_toggles_aria()}>
@@ -953,11 +968,6 @@
   </div>
 
   {#if upsampling}
-    <div class="upsample-warning mono" aria-hidden="true">
-      {config.planet === 'mars'
-        ? m.surface_flat_upsample_warning_mars()
-        : m.surface_flat_upsample_warning_moon()}
-    </div>
     <div class="upsample-vignette" aria-hidden="true"></div>
   {/if}
 
@@ -1086,22 +1096,6 @@
   .mono {
     font-family: var(--font-mono, 'Space Mono', monospace);
   }
-  .upsample-warning {
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(255, 200, 80, 0.45);
-    color: #ffc850;
-    padding: 6px 12px;
-    border-radius: 3px;
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    backdrop-filter: blur(4px);
-    pointer-events: none;
-  }
   .upsample-vignette {
     position: absolute;
     inset: 0;
@@ -1127,6 +1121,16 @@
     border-radius: 4px;
     backdrop-filter: blur(4px);
     pointer-events: none;
+  }
+  /* the "approaching native pixel limit" notice is a line of the banner, never a second box over it */
+  .hud-context-banner .ctx-warn {
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255, 200, 80, 0.35);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: #ffc850;
+    text-align: center;
   }
   .hud-context-banner .ctx-eyebrow {
     font-size: 10px;
@@ -1170,6 +1174,10 @@
        (Exit zoom + layer chips) so it isn't tucked behind them. */
     .hud-context-banner {
       top: 56px;
+    }
+    /* the bottom "deepest zoom" chip already says it; here it would grow the banner over the imagery */
+    .hud-context-banner .ctx-warn {
+      display: none;
     }
   }
 </style>

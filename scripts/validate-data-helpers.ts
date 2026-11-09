@@ -484,6 +484,7 @@ export interface HotspotEntryForAnnotations {
   hotspot_annotations?: Array<{
     id?: string;
     label?: string;
+    label_short?: string;
     lat_offset_m?: number;
     lon_offset_m?: number;
     explain?: string;
@@ -509,6 +510,9 @@ export function findHotspotAnnotationProblems(
       if (!a.id || seen.has(a.id)) problems.push(`${at}: missing or duplicate id`);
       seen.add(a.id ?? '');
       if (!a.label) problems.push(`${at}: missing label`);
+      if (a.label_short !== undefined && (!a.label_short.trim() || a.label_short.length > 16)) {
+        problems.push(`${at}: label_short must be 1-16 characters`);
+      }
       const { lat_offset_m: lat, lon_offset_m: lon } = a;
       if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
         problems.push(`${at}: lat_offset_m / lon_offset_m must be finite numbers`);

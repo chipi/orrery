@@ -14,6 +14,7 @@
         {
           "id": "lm-descent-stage",
           "label": "Eagle descent stage",
+          "label_short": "Eagle LM",
           "lat_offset_m": 2.8,
           "lon_offset_m": -0.8,
           "explain": "The lower half of the Apollo 11 Lunar Module Eagle. It stayed on the Moon when the ascent stage lifted the crew off after the July 1969 landing.",
@@ -32,6 +33,7 @@
         {
           "id": "pse",
           "label": "Passive seismometer (PSEP)",
+          "label_short": "PSEP",
           "lat_offset_m": -25.6,
           "lon_offset_m": -0.8,
           "explain": "The Passive Seismic Experiment of the Early Apollo Scientific Experiments Package, set up south of the Lunar Module on 21 July 1969 to record moonquakes and impacts.",
@@ -50,6 +52,7 @@
         {
           "id": "lrrr",
           "label": "Laser retroreflector (LRRR)",
+          "label_short": "Retroreflector",
           "lat_offset_m": -19.2,
           "lon_offset_m": -2,
           "explain": "The Laser Ranging Retroreflector Array left by Apollo 11: a reflector that lets observatories on Earth time laser pulses bounced back from the Moon. Placed about 5 m north-north-west of the seismometer package.",
@@ -124,6 +127,7 @@
         {
           "id": "lm-descent-stage",
           "label": "Intrepid descent stage",
+          "label_short": "Intrepid LM",
           "lat_offset_m": -0.4,
           "lon_offset_m": 0,
           "explain": "The lower half of the Apollo 12 Lunar Module Intrepid, left on the Moon after the November 1969 landing close to the earlier Surveyor 3 probe.",
@@ -142,6 +146,7 @@
         {
           "id": "alsep",
           "label": "ALSEP central station",
+          "label_short": "ALSEP",
           "lat_offset_m": 89.6,
           "lon_offset_m": -90.8,
           "explain": "The Apollo 12 Lunar Surface Experiments Package, deployed on 19 November 1969. Its instruments included a passive seismometer, a magnetometer and a solar wind spectrometer, all wired to the central station.",
@@ -160,6 +165,7 @@
         {
           "id": "surveyor-3",
           "label": "Surveyor 3 lander",
+          "label_short": "Surveyor 3",
           "lat_offset_m": -103.6,
           "lon_offset_m": 118.4,
           "explain": "NASA robotic lander that touched down on 20 April 1967 on the inner slope of a small crater. Apollo 12 landed about 160 m from it in November 1969, and its crew removed about 10 kg of parts, including the TV camera, on 20 November.",
@@ -200,6 +206,7 @@
         {
           "id": "lm-descent-stage",
           "label": "Antares descent stage",
+          "label_short": "Antares LM",
           "lat_offset_m": -3.1,
           "lon_offset_m": -1.8,
           "explain": "The lower half of the Apollo 14 Lunar Module Antares, left on the Moon after the February 1971 landing.",
@@ -240,6 +247,7 @@
         {
           "id": "lm-descent-stage",
           "label": "Falcon descent stage",
+          "label_short": "Falcon LM",
           "lat_offset_m": -3.6,
           "lon_offset_m": -1.6,
           "explain": "The lower half of the Apollo 15 Lunar Module Falcon, left on the Moon after the July 1971 landing.",
@@ -258,6 +266,7 @@
         {
           "id": "alsep",
           "label": "ALSEP central station",
+          "label_short": "ALSEP",
           "lat_offset_m": 47.2,
           "lon_offset_m": -94,
           "explain": "The Apollo 15 Lunar Surface Experiments Package, deployed on 31 July 1971. Instruments listed by NASA: passive seismometer, magnetometer, solar wind spectrometer, suprathermal ion detector, cold cathode ion gauge, dust detector and a heat flow experiment.",
@@ -276,6 +285,7 @@
         {
           "id": "lrv",
           "label": "Lunar Roving Vehicle",
+          "label_short": "LRV",
           "lat_offset_m": -23.2,
           "lon_offset_m": 127.2,
           "explain": "Apollo 15 was the first mission to carry a Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission.",
@@ -316,6 +326,7 @@
         {
           "id": "lm-descent-stage",
           "label": "Orion descent stage",
+          "label_short": "Orion LM",
           "lat_offset_m": 1.2,
           "lon_offset_m": 2.4,
           "explain": "The lower half of the Apollo 16 Lunar Module Orion, left on the Moon after the April 1972 landing.",
@@ -334,6 +345,7 @@
         {
           "id": "alsep",
           "label": "ALSEP central station",
+          "label_short": "ALSEP",
           "lat_offset_m": -72.8,
           "lon_offset_m": -72,
           "explain": "The Apollo 16 Lunar Surface Experiments Package, switched on 21 April 1972. It carried a passive seismometer, an active seismometer, a magnetometer and a heat flow experiment; the heat flow experiment was lost on the first moonwalk when its cable was broken.",
@@ -352,6 +364,7 @@
         {
           "id": "lrv",
           "label": "Lunar Roving Vehicle",
+          "label_short": "LRV",
           "lat_offset_m": 16.8,
           "lon_offset_m": 83.2,
           "explain": "The Apollo 16 Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission.",
@@ -399,6 +412,7 @@
         {
           "id": "lm-descent-stage",
           "label": "Challenger descent stage",
+          "label_short": "Challenger LM",
           "lat_offset_m": -11.5,
           "lon_offset_m": 4,
           "explain": "The lower half of the Apollo 17 Lunar Module Challenger, left on the Moon after the December 1972 landing, the last crewed landing so far.",
@@ -418,6 +432,7 @@
         {
           "id": "lrv",
           "label": "Lunar Roving Vehicle",
+          "label_short": "LRV",
           "lat_offset_m": -54.5,
           "lon_offset_m": 136.5,
           "explain": "The Apollo 17 Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission.",

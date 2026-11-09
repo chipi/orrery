@@ -16,7 +16,7 @@ const CASES = [
   { path: '/mars', id: 'perseverance', lat: 18.44, lon: 77.45, emptyFrom: 60 },
   { path: '/moon', id: 'apollo11', lat: 0.674, lon: 23.473, emptyFrom: 36 },
 ];
-const STEPS = [60, 50, 45, 40, 36, 33, 31];
+const STEPS = [60, 50, 45, 40, 36, 33, 32, 31];
 
 async function panelOpen(page: Page): Promise<boolean> {
   return (await page.locator('aside.panel').count()) > 0;
@@ -33,7 +33,10 @@ async function closePanel(page: Page): Promise<void> {
 }
 
 /** Centre of whatever is visibly standing for the site right now, or null. */
-async function visibleTarget(page: Page, id: string): Promise<{ x: number; y: number } | null> {
+async function visibleTarget(
+  page: Page,
+  id: string,
+): Promise<{ x: number; y: number; tag: boolean } | null> {
   return page.evaluate((siteId) => {
     const ok = (e: Element) => {
       const cs = getComputedStyle(e);
@@ -57,8 +60,8 @@ async function visibleTarget(page: Page, id: string): Promise<{ x: number; y: nu
     if (!el) return null;
     const r = el.getBoundingClientRect();
     // A tag element is a 0x0 anchor at the icon's centre; card and leader hang off it.
-    if (el === tag) return { x: r.left, y: r.top };
-    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    if (el === tag) return { x: r.left, y: r.top, tag: true };
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2, tag: false };
   }, id);
 }
 
@@ -133,14 +136,13 @@ for (const c of CASES) {
 
     const failures: string[] = [];
     for (const r of STEPS) {
+      // Centred as selecting the site centres it (a rover: on its route's magnified centre).
       await page.evaluate(
-        ([a, o, rr]) =>
+        ([id, rr]) =>
           (
-            window as unknown as {
-              __surfaceSceneFaceLatLon: (a: number, o: number, r: number) => void;
-            }
-          ).__surfaceSceneFaceLatLon(a, o, rr),
-        [c.lat, c.lon, r],
+            window as unknown as { __surfaceSceneFaceSite: (id: string, r: number) => void }
+          ).__surfaceSceneFaceSite(id, rr),
+        [c.id, r] as [string, number],
       );
       await page.waitForTimeout(3500);
       if (await panelOpen(page)) await closePanel(page);
@@ -161,8 +163,19 @@ for (const c of CASES) {
       let target = await visibleTarget(page, c.id);
       let what = 'tag/ring';
       if (!target && r <= 33) {
-        target = await crosshair(page);
+        const ch = await crosshair(page);
+        target = ch && { ...ch, tag: false };
         what = 'landing ring under the crosshair';
+      }
+      // While the magnified patch shows, the icon and the crosshair are one mark: the
+      // icon sits where the photo marks the site, not on the true (off-photo) position.
+      if (target?.tag && r <= 32) {
+        const ch = await crosshair(page);
+        if (!ch) failures.push(`camR ${r}: no crosshair to compare the icon with`);
+        else if (Math.hypot(ch.x - target.x, ch.y - target.y) > 30)
+          failures.push(
+            `camR ${r}: icon at ${Math.round(target.x)},${Math.round(target.y)} is ${Math.round(Math.hypot(ch.x - target.x, ch.y - target.y))} px from the crosshair`,
+          );
       }
       if (!target) {
         failures.push(`camR ${r}: nothing visible to click`);
@@ -174,6 +187,26 @@ for (const c of CASES) {
         failures.push(`camR ${r}: clicking ${what} did not open the panel`);
       else await closePanel(page);
     }
+
+    // Flat true-scale view: the site's own mark reopens the panel too.
+    await page.evaluate(
+      ([a, o]) =>
+        (
+          window as unknown as {
+            __surfaceSceneFaceLatLon: (a: number, o: number, r: number) => void;
+          }
+        ).__surfaceSceneFaceLatLon(a, o, 30.05),
+      [c.lat, c.lon],
+    );
+    await expect(page.locator('.flat-patch canvas')).toBeVisible({ timeout: 15_000 });
+    await page.waitForTimeout(1500);
+    if (await panelOpen(page)) await closePanel(page);
+    const cv = (await page.locator('.flat-patch canvas').boundingBox())!;
+    // The site is the view centre (a touch portrait offsets it to 34 % of the height).
+    await click(page, isMobile, cv.x + cv.width / 2, cv.y + cv.height * (isMobile ? 0.34 : 0.5));
+    await page.waitForTimeout(800);
+    if (!(await panelOpen(page)))
+      failures.push('flat view: the site mark did not reopen the panel');
     expect(failures, failures.join('\n')).toEqual([]);
   });
 }

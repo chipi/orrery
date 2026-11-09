@@ -67,6 +67,8 @@
     detailBadge: string;
     /** Full-size view of an annotation's photo (the page's lightbox). */
     onOpenPhoto?: (src: string) => void;
+    /** The site's own mark was tapped: reopen its panel; true when it opened (false when already open). */
+    onReopen?: () => boolean;
   }
   let {
     selected,
@@ -77,6 +79,7 @@
     tint,
     detailBadge,
     onOpenPhoto,
+    onReopen,
   }: Props = $props();
   const tinted = (img: HTMLImageElement): HTMLImageElement | HTMLCanvasElement => {
     if (!tint) return img;
@@ -171,6 +174,8 @@
   // Drag state
   let dragging = $state(false);
   let lmx = 0;
+  let downX = 0;
+  let downY = 0;
   let lmy = 0;
 
   // Compute the deepest-zoom floor for the current site — used both
@@ -759,8 +764,8 @@
   // ─── Input handlers (pan + zoom) ───────────────────────────────────
   function onMouseDown(e: MouseEvent) {
     dragging = true;
-    lmx = e.clientX;
-    lmy = e.clientY;
+    lmx = downX = e.clientX;
+    lmy = downY = e.clientY;
   }
   function onMouseMove(e: MouseEvent) {
     if (!dragging) return;
@@ -778,6 +783,20 @@
   }
   function onMouseUp() {
     dragging = false;
+  }
+  /** (x, y) in canvas px is on the site's own spot: the lander dot, disc or ring drawn there. */
+  function nearSiteSpot(x: number, y: number): boolean {
+    if (!canvas || selected.lat == null || selected.lon == null) return false;
+    const p = project(selected.lat, selected.lon, canvas.width, canvas.height);
+    return Math.hypot(x - p.x, y - p.y) <= 24;
+  }
+  // A click (not a drag) on the site's spot reopens the panel when it is closed.
+  function onCanvasUp(e: MouseEvent) {
+    const wasClick = dragging && Math.hypot(e.clientX - downX, e.clientY - downY) < 5;
+    onMouseUp();
+    if (!wasClick || !canvas) return;
+    const r = canvas.getBoundingClientRect();
+    if (nearSiteSpot(e.clientX - r.left, e.clientY - r.top)) onReopen?.();
   }
   function onWheel(e: WheelEvent) {
     e.preventDefault();
@@ -927,7 +946,7 @@
     bind:this={canvas}
     onmousedown={onMouseDown}
     onmousemove={onMouseMove}
-    onmouseup={onMouseUp}
+    onmouseup={onCanvasUp}
     onmouseleave={onMouseUp}
     onwheel={onWheel}
   ></canvas>
@@ -940,6 +959,7 @@
       {onWheel}
       {onOpenPhoto}
       onZoomTo={zoomToPoint}
+      onRingTap={(x, y) => nearSiteSpot(x, y) && !!onReopen?.()}
     />
   {/if}
 

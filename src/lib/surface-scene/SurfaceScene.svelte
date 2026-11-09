@@ -1289,6 +1289,8 @@
    *  and not overlap it". Initialised to 0 (wide zoom → lander
    *  visible, crosshair hidden). */
   let regionalOpacityForUi = $state(0);
+  /** The selected site's tag-icon opacity (1 = its icon is the mark; the crosshair takes over as it goes). */
+  let selectedIconUi = $state(1);
 
   /**
    * Nation chip label + colour for the info card's site header.
@@ -1681,6 +1683,10 @@
       };
       window.__surfaceSceneExitRouteView = () => exitRouteView();
       window.__surfaceSceneFaceLatLon = (lat, lon, r) => faceLatLonImpl?.(lat, lon, r);
+      window.__surfaceSceneFaceSite = (id, r) => {
+        const s = sites.find((x) => x.id === id);
+        if (s) faceCameraAtSite?.(s, r);
+      };
     }
 
     loadSites(localeFromPage(page))
@@ -1772,6 +1778,8 @@
     const siteTagFade = new Map<string, number>();
     const siteCardFade = new Map<string, number>();
     const siteTagPos = new THREE.Vector3();
+    const crosshairWorld = new THREE.Vector3();
+    let crosshairWorldOn = false;
     let siteTagSources: unknown[] = [];
     // HUD panels over the canvas (detail panel, chips, legend, rulers): cards
     // keep clear of them. Re-read twice a second, not every frame.
@@ -3976,9 +3984,12 @@
             sx <= cw &&
             sy >= 0 &&
             sy <= ch;
+          crosshairWorld.copy(worldPos);
+          crosshairWorldOn = onFront;
           siteCrosshairScreen = { x: sx, y: sy, onScreen };
-        } else if (siteCrosshairScreen !== null) {
-          siteCrosshairScreen = null;
+        } else {
+          crosshairWorldOn = false;
+          if (siteCrosshairScreen !== null) siteCrosshairScreen = null;
         }
 
         // Surface Hotspots LOD (PRD-014 / RFC-017 S1).
@@ -4114,6 +4125,25 @@
           const ownDetail =
             !!selected && (!!selected.hotspot_tier2_source || routeViewCenters.has(selected.id));
           const selectedIconFade = ownDetail ? 1 - detailOpacity : 1;
+          // How much of the magnified patch (the route's CTX, ramped as in the tier-2 block below) shows.
+          const magnifiedRoute =
+            selected && !routeViewActive && routeViewCenters.has(selected.id)
+              ? (() => {
+                  const fr = frameCamRForRoute(selected.id);
+                  return fr != null
+                    ? Math.max(0, Math.min(1, (fr - camR) / 5))
+                    : regionalOpacityTop;
+                })()
+              : 0;
+          // The icon is on the magnified ground once the patch is ~40 % in.
+          const magnified = Math.min(
+            1,
+            Math.max(
+              magnifiedRoute,
+              routeViewCenters.has(selectedSiteId ?? '') ? detailOpacity : 0,
+            ) / 0.4,
+          );
+          if (Math.abs(selectedIconUi - selectedIconFade) > 0.01) selectedIconUi = selectedIconFade;
           for (const mk of markers) {
             let underFootprint = false;
             if (footUnit && mk.siteId !== selectedSiteId) {
@@ -4154,9 +4184,14 @@
               opacity: number,
               boost = 0,
               card = 1,
+              toCrosshair = 0,
             ) => {
               if (opacity <= 0.01) return;
               const wp = obj.getWorldPosition(siteTagPos);
+              // The selected site's icon rides to the crosshair as the magnified imagery
+              // (drawn larger than true scale, centred on the route) fades in, so it
+              // stays on the ground the photo shows (#641).
+              if (toCrosshair > 0 && crosshairWorldOn) wp.lerp(crosshairWorld, toCrosshair);
               const facing =
                 legendScratchC
                   .copy(wp)
@@ -4193,6 +4228,7 @@
                 siteTagFade.get(mk.siteId) ?? 0,
                 mk.siteId === selected?.id ? 10 : 0,
                 siteCardFade.get(mk.siteId) ?? 1,
+                mk.siteId === selected?.id ? magnified : 0,
               );
             // A place under the selected site's magnified imagery would sit on
             // the wrong ground: it fades with the reveal band, the rest stay.
@@ -5871,7 +5907,7 @@ sample      ${debugInfo.projectedPxSample}`}
       class="site-crosshair"
       style="left: {siteCrosshairScreen.x}px; top: {siteCrosshairScreen.y}px; opacity: {Math.min(
         1,
-        (regionalOpacityForUi - 0.25) * 4,
+        (regionalOpacityForUi - 0.25) * 4 * (1 - selectedIconUi),
       )}"
       aria-hidden="true"
       data-testid="site-crosshair"
@@ -5903,6 +5939,12 @@ sample      ${debugInfo.projectedPxSample}`}
         tint={flatPatchTint}
         detailBadge={detailBadgeLabel(flatPatchTarget ?? selected, config.planet)}
         onOpenPhoto={(src) => (panelLightbox = src)}
+        onReopen={() => {
+          if (panelOpen) return false;
+          cue('select');
+          panelOpen = true;
+          return true;
+        }}
         onClose={(exitKmPerPx) => closeFlatPatch(exitKmPerPx)}
       />
     </div>

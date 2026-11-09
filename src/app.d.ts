@@ -96,6 +96,8 @@ declare global {
     __surfaceSceneFrameRoute?: (id: string) => void;
     __surfaceSceneExitRouteView?: () => void;
     __surfaceSceneFaceLatLon?: (latDeg: number, lonDeg: number, targetR?: number) => void;
+    /** Test hook: face a site at camera distance `targetR`, centred as selecting it would (a rover: its route centre). */
+    __surfaceSceneFaceSite?: (id: string, targetR?: number) => void;
     /** /iss, /tiangong (StationRoute, as `__${config.id}PickAt`). */
     __issPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;
     __tiangongPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;

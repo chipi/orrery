@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso Chang'e 3",
+      "label_short": "Módulo Chang'e 3",
+      "explain": "O módulo de pouso chinês Chang'e 3, que pousou no Mare Imbrium em 14 de dezembro de 2013, o primeiro pouso lunar desde 1976. Com este Sol baixo, aparece como um único pixel brilhante com uma sombra longa."
+    }
+  ]
+}

@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "impact-smudge",
+      "label": "Impatto di Beresheet",
+      "label_short": "Impatto",
+      "explain": "La macchia scura dove il lander israeliano Beresheet si schiantò l'11 aprile 2019 sul Mare Serenitatis. Colpì il suolo con un angolo basso, da nord, circa 1000 m/s più veloce del previsto; la macchia misura circa 10 m e riduce la luminosità della superficie di circa il 10%."
+    }
+  ]
 }

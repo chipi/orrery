@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Luna 16 Abstiegsstufe",
+      "label_short": "Abstiegsstufe",
+      "explain": "Die untere Hälfte des sowjetischen Landers Luna 16, der im Mare Fecunditatis zurückblieb, nachdem die Rückkehrkapsel am 21. September 1970 mit etwa 101 Gramm Bodenprobe abgehoben hatte."
+    }
+  ]
 }

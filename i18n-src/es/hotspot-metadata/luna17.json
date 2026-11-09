@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de Luna 17",
+      "label_short": "Módulo Luna 17",
+      "explain": "El módulo de aterrizaje de Luna 17, que dejó a Lunokhod 1 en el Mare Imbrium el 17 de noviembre de 1970. Sus motores de descenso aclararon el suelo a su alrededor, y por eso destacan las huellas del róver que rodean el módulo."
+    }
+  ]
+}

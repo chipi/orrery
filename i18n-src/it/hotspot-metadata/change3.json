@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Lander di Chang'e 3",
+      "label_short": "Lander Chang'e 3",
+      "explain": "Il lander cinese Chang'e 3, atterrato sul Mare Imbrium il 14 dicembre 2013, il primo allunaggio dal 1976. Con il Sole così basso appare come un solo pixel luminoso con una lunga ombra."
+    }
+  ]
+}

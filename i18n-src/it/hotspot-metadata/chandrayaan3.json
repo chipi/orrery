@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Vikram (Chandrayaan-3)",
+      "label_short": "Lander Vikram",
+      "explain": "Il lander Vikram di Chandrayaan-3, atterrato il 23 agosto 2023 a circa 600 km dal polo sud. LRO lo ha ripreso quattro giorni dopo; l'alone luminoso è regolite smossa dal getto dei motori."
+    }
+  ],
   "panorama_caption": "Shiv Shakti Point — il primo panorama dal polo sud lunare. L'ombra del lander Vikram in primo piano; il rover Pragyan è stato deposto sulla regolite poco dopo questa immagine.",
   "compass_zero_direction": "asse +X della fotocamera del lander",
   "panorama_annotations": [

@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Luna 24-lander",
+      "label_short": "Luna 24-lander",
+      "explain": "De lander van Luna 24 op de rand van een krater in Mare Crisium. De missie boorde in augustus 1976 meer dan 2 m diep in de regoliet en bracht ongeveer 170 gram ervan terug."
+    }
+  ]
 }

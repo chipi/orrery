@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chandrayaan-3 Vikram 着陸機",
+      "label_short": "Vikram 着陸機",
+      "explain": "2023年8月23日、南極から約600 kmの地点に着陸した Chandrayaan-3 の Vikram 着陸機。4日後に LRO が撮影した。明るい暈は、ロケットの噴射で乱されたレゴリス。"
+    }
+  ],
   "panorama_caption": "シヴ・シャクティ・ポイント — 月の南極から初めてのパノラマ。手前に Vikram 着陸機の影。この画像の直後に Pragyan ローバーがレゴリスへ降ろされた。",
   "compass_zero_direction": "着陸機イメージャーの +X 軸",
   "panorama_annotations": [

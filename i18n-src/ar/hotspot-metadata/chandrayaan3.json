@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "مركبة هبوط Vikram",
+      "label_short": "Vikram",
+      "explain": "مركبة الهبوط Vikram من مهمة Chandrayaan-3 الهندية التي حطّت في 23 أغسطس 2023 على بعد نحو 600 كم من القطب الجنوبي. صوّرها LRO بعد أربعة أيام؛ والهالة المضيئة ريغوليث أثارته نفثة الصاروخ."
+    }
+  ],
   "panorama_caption": "نقطة شيف شاكتي — أول بانوراما من القطب الجنوبي للقمر. ظل مركبة الهبوط Vikram في المقدمة؛ ونزلت المركبة الجوّالة Pragyan إلى الثرى بعد هذه الصورة بقليل.",
   "compass_zero_direction": "المحور +X لمصوّر مركبة الهبوط",
   "panorama_annotations": [

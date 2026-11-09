@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Luna 16 降下段",
+      "label_short": "降下段",
+      "explain": "ソ連の着陸機 Luna 16 の下半分。1970年9月21日、約101グラムの土壌を積んだ帰還カプセルが離陸したあと、豊かの海に残された。"
+    }
+  ]
 }

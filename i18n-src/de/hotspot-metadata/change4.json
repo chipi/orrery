@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chang'e 4 Lander",
+      "label_short": "Chang'e 4 Lander",
+      "explain": "Chinas Lander Chang'e 4, der am 3. Januar 2019 im Von-Kármán-Krater die erste weiche Landung auf der Mondrückseite schaffte. Der helle Boden um ihn wurde von seinem Landetriebwerk freigeblasen."
+    },
+    {
+      "id": "yutu-2",
+      "label": "Yutu-2 Rover",
+      "label_short": "Yutu-2",
+      "explain": "Der Rover Yutu-2 am 7. Mai 2019, vier Monate nach der Landung, etwa 120 m westlich des Landers am Ende seiner ersten Spuren. Seitdem ist er weit von hier weggefahren."
+    }
+  ],
   "panorama_caption": "Das erste Panorama, das je von der Mondrückseite gesendet wurde. Der Von-Kármán-Krater im Südpol-Aitken-Becken. Der Rover Yutu-2 in mittlerer Entfernung; der Schatten der Landeeinheit unten links.",
   "compass_zero_direction": "+X-Achse der Lander-Kamera",
   "panorama_annotations": [

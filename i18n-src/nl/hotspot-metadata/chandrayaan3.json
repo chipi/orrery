@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chandrayaan-3-lander Vikram",
+      "label_short": "Lander Vikram",
+      "explain": "De lander Vikram van Chandrayaan-3, die op 23 augustus 2023 landde, ongeveer 600 km van de zuidpool. LRO fotografeerde hem vier dagen later; de heldere halo is regoliet dat door de uitlaatstraal is opgewaaid."
+    }
+  ],
   "panorama_caption": "Statio Shiv Shakti — het eerste panorama vanaf de zuidpool van de Maan. De schaduw van lander Vikram op de voorgrond; rover Pragyan werd kort na deze opname op het regoliet gezet.",
   "compass_zero_direction": "+X-as van de landercamera",
   "panorama_annotations": [

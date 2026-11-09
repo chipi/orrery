@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Stadio di discesa di Luna 16",
+      "label_short": "Stadio discesa",
+      "explain": "La metà inferiore del lander sovietico Luna 16, rimasta sul Mare Fecunditatis dopo che la capsula di ritorno è decollata il 21 settembre 1970 con circa 101 grammi di suolo."
+    }
+  ]
 }

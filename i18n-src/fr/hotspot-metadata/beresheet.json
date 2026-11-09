@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "impact-smudge",
+      "label": "Tache d'impact de Beresheet",
+      "label_short": "Tache d'impact",
+      "explain": "La tache sombre où l'atterrisseur israélien Beresheet s'est écrasé le 11 avril 2019 sur la Mer de la Sérénité. Il a frappé sous un angle faible, par le nord, environ 1000 m/s plus vite que prévu ; la tache mesure environ 10 m et réduit la luminosité de la surface d'environ 10 %."
+    }
+  ]
 }

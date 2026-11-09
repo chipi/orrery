@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de Chang'e 5",
+      "label_short": "Chang'e 5",
+      "explain": "El módulo de aterrizaje chino Chang'e 5 en el Oceanus Procellarum, fotografiado por LRO el día después de su alunizaje del 1 de diciembre de 2020. La misión de retorno de muestras trajo unos 1,7 kg de suelo lunar."
+    }
+  ]
+}

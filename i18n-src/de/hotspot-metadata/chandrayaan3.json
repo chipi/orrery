@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chandrayaan-3 Lander Vikram",
+      "label_short": "Lander Vikram",
+      "explain": "Indiens Lander Vikram von Chandrayaan-3, der am 23. August 2023 etwa 600 km vom Südpol entfernt aufsetzte. LRO nahm ihn vier Tage später auf; der helle Hof ist Regolith, den der Raketenstrahl aufgewirbelt hat."
+    }
+  ],
   "panorama_caption": "Statio Shiv Shakti — das erste Panorama vom Mondsüdpol. Im Vordergrund der Schatten des Landers Vikram; der Rover Pragyan wurde kurz nach dieser Aufnahme auf dem Regolith abgesetzt.",
   "compass_zero_direction": "+X-Achse der Lander-Kamera",
   "panorama_annotations": [

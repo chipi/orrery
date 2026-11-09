@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de Chang'e 3",
+      "label_short": "Chang'e 3",
+      "explain": "El módulo de aterrizaje chino Chang'e 3, que se posó en el Mare Imbrium el 14 de diciembre de 2013, el primer alunizaje desde 1976. Con este Sol bajo se ve como un solo píxel brillante con una sombra larga."
+    }
+  ]
+}

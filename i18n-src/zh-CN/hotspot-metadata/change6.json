@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "嫦娥六号着陆器",
+      "label_short": "嫦娥六号着陆器",
+      "explain": "位于月球背面阿波罗盆地的嫦娥六号着陆器，在2024年6月1日着陆约一周后被 LRO 拍下。周围颜色较亮的地面被着陆发动机扰动过。"
+    }
+  ]
+}

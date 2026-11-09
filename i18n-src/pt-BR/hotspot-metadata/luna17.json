@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso Luna 17",
+      "label_short": "Módulo Luna 17",
+      "explain": "O módulo de pouso da Luna 17, que deixou o Lunokhod 1 no Mare Imbrium em 17 de novembro de 1970. Os motores de descida clarearam o solo ao redor, e por isso as trilhas do rover em volta do módulo se destacam."
+    }
+  ]
+}

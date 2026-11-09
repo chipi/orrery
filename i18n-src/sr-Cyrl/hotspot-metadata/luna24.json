@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Лендер Luna 24",
+      "label_short": "Лендер Luna 24",
+      "explain": "Лендер Luna 24 на ободу кратера у Мору кризе. Мисија је у августу 1976. избушила више од 2 m реголита и донела око 170 грама на Земљу."
+    }
+  ]
 }

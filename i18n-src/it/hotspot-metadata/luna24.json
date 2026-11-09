@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Lander di Luna 24",
+      "label_short": "Lander Luna 24",
+      "explain": "Il lander di Luna 24 sul bordo di un cratere del Mare Crisium. La missione dell'agosto 1976 perforò oltre 2 m di regolite e ne riportò circa 170 grammi."
+    }
+  ]
 }

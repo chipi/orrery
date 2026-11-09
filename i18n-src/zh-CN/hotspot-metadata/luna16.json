@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Luna 16 下降级",
+      "label_short": "下降级",
+      "explain": "苏联 Luna 16 着陆器的下半部分。1970年9月21日，返回舱载着约101克月壤起飞后，它留在了丰富海。"
+    }
+  ]
 }

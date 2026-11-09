@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Atterrisseur SLIM",
+      "label_short": "SLIM",
+      "explain": "L'atterrisseur SLIM de la JAXA, posé le 19 janvier 2024 près du cratère Shioli. LRO l'a photographié cinq jours plus tard ; une légère variation de luminosité autour de lui marque l'endroit où le jet des moteurs a balayé la surface."
+    }
+  ]
+}

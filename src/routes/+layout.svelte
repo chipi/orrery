@@ -545,14 +545,14 @@
     aria-label={m.footer_aria()}
   >
     <nav class="footer-menu" aria-label={m.footer_links_aria()}>
-      <a class="footer-link" href={localHref(`/explore/hub`)}>{m.nav_group_explore()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/worlds`)}>{m.nav_group_worlds()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/catalog`)}>{m.nav_catalog()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/learn`)}>{m.nav_learn()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link footer-hub" href={localHref(`/explore/hub`)}>{m.nav_group_explore()}</a>
+      <span class="footer-sep footer-hub" aria-hidden="true">|</span>
+      <a class="footer-link footer-hub" href={localHref(`/worlds`)}>{m.nav_group_worlds()}</a>
+      <span class="footer-sep footer-hub" aria-hidden="true">|</span>
+      <a class="footer-link footer-hub" href={localHref(`/catalog`)}>{m.nav_catalog()}</a>
+      <span class="footer-sep footer-hub" aria-hidden="true">|</span>
+      <a class="footer-link footer-hub" href={localHref(`/learn`)}>{m.nav_learn()}</a>
+      <span class="footer-sep footer-hub" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href={localHref(`/credits`)}>{m.layout_footer_credits()}</a>
@@ -692,6 +692,14 @@
     border-radius: 4px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+  }
+  /* The four hub links exist for crawlers and wide screens; on a narrow
+     non-touch window they would make the strip wrap and run under the
+     bottom dock, so they drop out of the layout there (still in the DOM). */
+  @media (max-width: 900px) {
+    .footer-hub {
+      display: none;
+    }
   }
   /* Keep the footer strip to ONE line on phones. With the build date now
      in the version tooltip (not rendered), the strip is short enough that a

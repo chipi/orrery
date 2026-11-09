@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { footerLinkCount, landingGridCounts } from './_helpers/source-counts';
 
 /**
  * PRD-013 / Issue #74 — landing page at root /.
@@ -7,7 +8,7 @@ import { expect, test } from '@playwright/test';
  */
 
 test.describe('landing page (/)', () => {
-  test('renders hero, all 22 cards in 5 sections, and footer block; no console errors', async ({
+  test('renders hero, every card in its sections, and footer block; no console errors', async ({
     page,
   }) => {
     const errors: string[] = [];
@@ -25,10 +26,10 @@ test.describe('landing page (/)', () => {
     // 22 leaf cards (Explore's 8 scale shells + Worlds 4 + Plan&Fly 2 + Catalog 6
     // + Learn 2) under 5 section headers that mirror the nav groups.
     const cards = page.locator('[data-testid="landing-cards"] a.card');
-    await expect(cards).toHaveCount(22);
+    await expect(cards).toHaveCount(landingGridCounts().cards);
 
     const headings = page.locator('[data-testid="landing-cards"] .grid-section-heading');
-    await expect(headings).toHaveCount(5);
+    await expect(headings).toHaveCount(landingGridCounts().headings);
     await expect(headings.nth(0)).toHaveText(/EXPLORE/i);
     await expect(headings.nth(1)).toHaveText(/WORLDS/i);
     await expect(headings.nth(3)).toHaveText(/CATALOG/i);
@@ -53,7 +54,7 @@ test.describe('landing page (/)', () => {
     await expect(page.locator('.about-body')).toBeVisible();
     await expect(page.locator('.about-links')).toHaveCount(0);
 
-    // Persistent site-footer has 9 entries on desktop:
+    // Persistent site-footer: the count is read from +layout.svelte. It holds the four hub links,
     // Gallery, Credits, Colophon, Library, Glossary, Privacy (in the ABOUT menu),
     // License (external), README (external), and the v{version} · {date}
     // pill (which links to CHANGELOG). (Mobile drops the 3 'extra'
@@ -63,7 +64,7 @@ test.describe('landing page (/)', () => {
     // the opt-out toggle lives on, so it has to be reachable from every
     // screen. Glossary (/science/glossary, PRD-038) added 2026-10-31.
     const persistentLinks = page.locator('.site-footer .footer-link');
-    await expect(persistentLinks).toHaveCount(9);
+    await expect(persistentLinks).toHaveCount(footerLinkCount());
 
     // External README link opens in new tab.
     await expect(

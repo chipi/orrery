@@ -7,6 +7,7 @@
  * year filter narrows the visible rows.
  */
 import { test, expect } from '@playwright/test';
+import { historicDecadeCount } from './_helpers/source-counts';
 
 test.describe('/missions/launches Timeline + filters', () => {
   test('renders the timeline + FILTERS toggle in default state', async ({ page }) => {
@@ -45,7 +46,7 @@ test.describe('/missions/launches Timeline + filters', () => {
     await expect(page.locator('nav.filters')).toBeVisible();
     const decadeGroup = page.locator('.filter-group').filter({ hasText: /DECADE/i });
     await expect(decadeGroup).toBeVisible();
-    await expect(decadeGroup.locator('button.pill')).toHaveCount(7); // 1957-69 → 2020-26
+    await expect(decadeGroup.locator('button.pill')).toHaveCount(historicDecadeCount()); // one pill per static/data/launches-historic manifest
   });
 
   test('switching decade lazy-loads new manifest + URL syncs', async ({ page }) => {

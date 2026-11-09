@@ -65,6 +65,7 @@ function setup(
     sites?: SurfaceSite[];
     traverses?: Record<string, Traverse>;
     tier2PatchScale?: number;
+    composerActive?: boolean;
   } = {},
 ) {
   const state = { sites: over.sites ?? [], traverses: over.traverses ?? {} };
@@ -92,6 +93,7 @@ function setup(
     orbitalMarkers,
     hotspots,
     originalMaxTier,
+    composerActive: over.composerActive,
   };
   const api = createSurfaceMarkers(ctx);
   return {
@@ -345,6 +347,22 @@ describe('rebuildMarkers halos', () => {
     ) as THREE.LineSegments;
     const c = (ls.material as THREE.LineBasicMaterial).color;
     expect([c.r, c.g, c.b].map((v) => Math.round(v * 255))).toEqual([0x88, 0x9f, 0xe7]);
+  });
+
+  it('without the composer (minimal / low tiers) the hover bracket is plain sRGB #889fe7, so the renderer output encode lands on the same bytes', () => {
+    const rb = { lat_min: 10, lat_max: 12, lon_min: 20, lon_max: 24 };
+    const s = setup({
+      sites: [site({ id: 'a', lat: 11, lon: 22, region_bounds: rb })],
+      composerActive: false,
+    });
+    s.rebuildMarkers();
+    const ls = s.markers[0].hoverHalo!.children.find(
+      (c) => c instanceof THREE.LineSegments,
+    ) as THREE.LineSegments;
+    const c = (ls.material as THREE.LineBasicMaterial).color;
+    const srgb = c.clone().convertLinearToSRGB();
+    expect([srgb.r, srgb.g, srgb.b].map((v) => Math.round(v * 255))).toEqual([0x88, 0x9f, 0xe7]);
+    expect(c.r).toBeLessThan(0.3);
   });
 });
 

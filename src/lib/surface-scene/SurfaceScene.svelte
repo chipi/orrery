@@ -2658,6 +2658,7 @@
       orbitalMarkers,
       hotspots,
       originalMaxTier,
+      composerActive: composer !== null,
     });
 
     // Camera + controls.

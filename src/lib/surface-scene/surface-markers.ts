@@ -42,10 +42,22 @@ import type { SurfaceSite, Traverse } from '$types/surface-site';
 //   - rectangular: 4 corner brackets + soft fill, sized via aspect.
 //     Brighter / thicker than the selection-style brackets so the
 //     "I'm hovering this" cue beats the LROC patch underneath.
-// The surface composer has no OutputPass, so linear values reach the screen unencoded: a
-// colour must be given as its display bytes (Linear space), or #889fe7 shows as (63,88,204).
-const HOVER_BLUE = new THREE.Color().setHex(0x889fe7, THREE.LinearSRGBColorSpace);
-function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Object3D {
+// With the surface EffectComposer (no OutputPass) linear values reach the screen unencoded, so
+// the colour must be given as its display bytes (Linear space) or #889fe7 shows as (63,88,204).
+// Without the composer (minimal / low tiers) the renderer sRGB-encodes the output itself, so the
+// colour is plain sRGB.
+function hoverBlue(composerActive: boolean): THREE.Color {
+  return new THREE.Color().setHex(
+    0x889fe7,
+    composerActive ? THREE.LinearSRGBColorSpace : THREE.SRGBColorSpace,
+  );
+}
+function buildHoverHalo(
+  aspect: number | undefined,
+  diameter = 4.4,
+  composerActive = true,
+): THREE.Object3D {
+  const HOVER_BLUE = hoverBlue(composerActive);
   const group = new THREE.Group();
   // Corner-bracket hover affordance for every region-bounds site, incl.
   // near-square ones — matches the selection halo (no leftover circles).
@@ -218,6 +230,8 @@ export interface SurfaceMarkersContext {
   orbitalMarkers: OrbiterMarker[];
   hotspots: HotspotEntry[];
   originalMaxTier: Map<string, 0 | 1 | 2 | 3>;
+  /** False on the tiers that render without the EffectComposer (it changes how colours reach the screen). Default true. */
+  composerActive?: boolean;
 }
 
 export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
@@ -390,7 +404,11 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       // patch below.
       // Hover bracket keeps its historical 4.4/3.0 ratio over the
       // selection bracket, scaled to the same outer patch.
-      const hoverHalo = buildHoverHalo(haloAspect, haloOuterDiam * (4.4 / 3.0));
+      const hoverHalo = buildHoverHalo(
+        haloAspect,
+        haloOuterDiam * (4.4 / 3.0),
+        ctx.composerActive ?? true,
+      );
       group.add(northSpun(hoverHalo));
 
       // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).

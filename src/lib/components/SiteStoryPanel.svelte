@@ -50,8 +50,10 @@
     onLightbox?: (src: string) => void;
     /** Rendered between the intro paragraph and the first chapter. */
     afterIntro?: Snippet;
+    /** Rendered after the "surface" chapter, or after the last chapter when there is none. */
+    afterSurface?: Snippet;
   };
-  let { story, onLightbox = () => {}, afterIntro }: StoryProps = $props();
+  let { story, onLightbox = () => {}, afterIntro, afterSurface }: StoryProps = $props();
 
   // Index provenance by served path for O(1) badge lookups below.
   // The manifest may be absent (fresh checkout, script not yet run);
@@ -131,7 +133,9 @@
           {/each}
         </div>{/if}
     </section>
+    {#if afterSurface && chapter.id === 'surface'}{@render afterSurface()}{/if}
   {/each}
+  {#if afterSurface && !story.chapters.some((c) => c.id === 'surface')}{@render afterSurface()}{/if}
   {#if story.essay}
     {#await getEssay(story.essay, getLocale()) then essay}
       {#if essay}

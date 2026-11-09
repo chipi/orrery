@@ -6575,6 +6575,16 @@ sample      ${debugInfo.projectedPxSample}`}
             />
           {/if}
         {/snippet}
+        {#snippet cutawayGraphics()}
+          {#if panelAnatomy.some((a) => a.exploded)}
+            <SiteLandingPanel
+              part="exploded"
+              anatomy={panelAnatomy}
+              locale={localeFromPage(page)}
+              onOpen={(src) => (panelLightbox = src)}
+            />
+          {/if}
+        {/snippet}
         {#if panelStory}
           <SiteStoryPanel
             story={panelStory}
@@ -6583,9 +6593,11 @@ sample      ${debugInfo.projectedPxSample}`}
               if (selected) trackGalleryImageOpen('site', selected.id);
             }}
             afterIntro={landingGraphics}
+            afterSurface={cutawayGraphics}
           />
         {:else}
           {@render landingGraphics()}
+          {@render cutawayGraphics()}
         {/if}
       {:else if panelTab === 'journey'}
         {#if replayRange}

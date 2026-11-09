@@ -6426,23 +6426,22 @@
     {
       "id": "1cf4ca8eddc76b1b",
       "path": "/images/fleet-galleries/baikonur-1-5/03.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/baikonur-1-5",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Soyuz TMA-22 lifts off from Gagarin's Start.jpg",
+      "author": "NASA TV",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz_TMA-22_lifts_off_from_Gagarin%27s_Start.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Soyuz_TMA-22_lifts_off_from_Gagarin%27s_Start.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 17447427,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.959Z"
+      "fetched_at": "2026-11-09T15:09:48.033Z"
     },
     {
       "id": "967ce87fb6c869c8",
@@ -7643,23 +7642,22 @@
     {
       "id": "d4019e3fd5ef690e",
       "path": "/images/fleet-galleries/cape-canaveral-slc-41/05.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/cape-canaveral-slc-41",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Boeing OFT-2 Rollout at SLC-41 0252.jpg",
+      "author": "Kim Shiflett",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Boeing_OFT-2_Rollout_at_SLC-41_0252.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Boeing_OFT-2_Rollout_at_SLC-41_0252.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 118164052,
       "nasa_id": null,
-      "fetched_at": "2026-07-06T17:33:35.660Z"
+      "fetched_at": "2026-11-09T14:50:45.195Z"
     },
     {
       "id": "eb8acb08f95c15bd",
@@ -13434,23 +13432,22 @@
     {
       "id": "ca7bd280dce1ab66",
       "path": "/images/fleet-galleries/jiuquan-slc-43/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/jiuquan-slc-43",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Launch of Shenzhou 13.jpg",
+      "author": "Created by ForrestXYC, photoshopped by Ib",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_Shenzhou_13.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Launch_of_Shenzhou_13.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 116522008,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:09:49.286Z"
     },
     {
       "id": "9e4048ab93278554",
@@ -14900,23 +14897,22 @@
     {
       "id": "514455845db5b2ef",
       "path": "/images/fleet-galleries/lc-39a/05.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/lc-39a",
-      "author": "NASA / KSC",
-      "agency": "NASA / KSC",
-      "source_url": "https://commons.wikimedia.org/",
+      "source_type": "nasa-images-api",
+      "title": "CAPE KENNEDY, Fla. -- An aerial view of Launch Complex 39A at the Kennedy Space Center in  (KSC-66C-6962)",
+      "author": "NASA/KSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/KSC-66C-6962",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "nasa_id": "KSC-66C-6962",
+      "fetched_at": "2026-11-09T15:09:46.462Z"
     },
     {
       "id": "2996dc5b8d7a6bc6",
@@ -14984,44 +14980,42 @@
     {
       "id": "41c384ef687689f6",
       "path": "/images/fleet-galleries/lc-39b/04.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/lc-39b",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I at Pad 39B (KSC-20220411-PH-JBS01_0004)",
+      "author": "NASA/Ben Smegelsky",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
+      "source_url": "https://images.nasa.gov/details/KSC-20220411-PH-JBS01_0004",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "nasa_id": "KSC-20220411-PH-JBS01_0004",
+      "fetched_at": "2026-11-09T15:09:46.462Z"
     },
     {
       "id": "e27c950f4bd9981e",
       "path": "/images/fleet-galleries/lc-39b/05.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/lc-39b",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "KENNEDY SPACE CENTER, FLA. -  STS-81 Mission Specialist Jeff Wisoff prepares to enter the Space Shuttle Atlantis at Launch Pad 39B with help from White Room closeout crew members Danny Wyatt (center) and Al Rochford. (KSC-97pc154)",
+      "author": "NASA/KSC",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
+      "source_url": "https://images.nasa.gov/details/KSC-97pc154",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "nasa_id": "KSC-97pc154",
+      "fetched_at": "2026-11-09T15:09:46.462Z"
     },
     {
       "id": "efdc859e631ca101",
@@ -20645,23 +20639,22 @@
     {
       "id": "73af3e7a48d2eb5b",
       "path": "/images/fleet-galleries/plesetsk-43/03.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/plesetsk-43",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Soyuz 2.1b GLONASS-K2 13L launch 04.jpg",
+      "author": "Ministry of Defence of the Russian Federation",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz_2.1b_GLONASS-K2_13L_launch_04.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Soyuz_2.1b_GLONASS-K2_13L_launch_04.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 135906448,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:09:50.542Z"
     },
     {
       "id": "6c54fdb8e6ac959b",
@@ -23956,23 +23949,22 @@
     {
       "id": "3076a3b347a7e255",
       "path": "/images/fleet-galleries/soyuz-2/04.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/soyuz-2",
-      "author": "Roscosmos",
+      "source_type": "wikimedia-commons",
+      "title": "File:Soyuz 2 metop.jpg",
+      "author": "ru:Участник:Arie",
       "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz_2_metop.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Soyuz_2_metop.jpg",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 2834699,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T14:50:46.427Z"
     },
     {
       "id": "a48056ae34c81218",
@@ -25217,44 +25209,42 @@
     {
       "id": "8d17dac19812f535",
       "path": "/images/fleet-galleries/sriharikota-slp/04.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/sriharikota-slp",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Second Launch Pad.jpg",
+      "author": "Aakarsh K",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Second_Launch_Pad.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Second_Launch_Pad.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 70881131,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:09:51.792Z"
     },
     {
       "id": "b2f51137937a5b5d",
       "path": "/images/fleet-galleries/sriharikota-slp/05.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/sriharikota-slp",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:GSLV-F12, NVS-01 - Launch Vehicle at Second Launch Pad (SLP) of SDSC-SHAR 01.webp",
+      "author": "Indian Space Research Organisation",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GSLV-F12,_NVS-01_-_Launch_Vehicle_at_Second_Launch_Pad_(SLP)_of_SDSC-SHAR_01.webp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/GSLV-F12%2C_NVS-01_-_Launch_Vehicle_at_Second_Launch_Pad_%28SLP%29_of_SDSC-SHAR_01.webp",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 132383307,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:09:53.048Z"
     },
     {
       "id": "01fdd99bcb0cc164",
@@ -26046,44 +26036,42 @@
     {
       "id": "f2533e712e52831f",
       "path": "/images/fleet-galleries/tanegashima-yoshinobu/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/tanegashima-yoshinobu",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "Global Precipitation Measurement (GPM) Mission (201402280005HQ)",
+      "author": "NASA/Bill Ingalls",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
+      "source_url": "https://images.nasa.gov/details/201402280005HQ",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "201402280005HQ",
+      "fetched_at": "2026-11-09T15:09:46.462Z"
     },
     {
       "id": "c4edb93127a1425c",
       "path": "/images/fleet-galleries/tanegashima-yoshinobu/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/tanegashima-yoshinobu",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:H-IIB rocket carrying Kounotori 3 lifts off from the Tanegashima Space Center.jpg",
+      "author": "NASA TV",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:H-IIB_rocket_carrying_Kounotori_3_lifts_off_from_the_Tanegashima_Space_Center.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/H-IIB_rocket_carrying_Kounotori_3_lifts_off_from_the_Tanegashima_Space_Center.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 20365864,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:09:54.289Z"
     },
     {
       "id": "60bd6fbcd6cc8b5f",
@@ -26849,23 +26837,22 @@
     {
       "id": "10720443f06808d2",
       "path": "/images/fleet-galleries/vandenberg-slc-4e/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/vandenberg-slc-4e",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Iridium-1 Launch (32312419215).jpg",
+      "author": "SpaceX",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Iridium-1_Launch_(32312419215).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Iridium-1_Launch_%2832312419215%29.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 55030122,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:09:55.536Z"
     },
     {
       "id": "29f3537b062f1a81",

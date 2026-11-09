@@ -820,7 +820,7 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna16/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25497,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 309.1,
       "hotspot_context_source": "/images/hotspots/moon/luna16/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -7.1093,
@@ -838,7 +838,7 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna17/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna17/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 14336,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 281,
       "panorama_metadata": {
         "entry_yaw_deg": 150,
         "synthetic_regions": [
@@ -867,7 +867,7 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna21/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16128,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 281,
       "hotspot_context_source": "/images/hotspots/moon/luna21/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 19.4038,
@@ -884,7 +884,7 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna24/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 17152,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 281,
       "hotspot_context_source": "/images/hotspots/moon/luna24/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 6.1186,
@@ -935,7 +935,7 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/change3/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change3/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25856,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 876.2,
       "hotspot_context_source": "/images/hotspots/moon/change3/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 37.5244,
@@ -985,7 +985,7 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change4/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 26613,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 1515.5,
       "hotspot_context_source": "/images/hotspots/moon/change4/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -52.0517,
@@ -1003,7 +1003,7 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/change5/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change5/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25344,
-      "hotspot_tier2_ground_m": 1000,
+      "hotspot_tier2_ground_m": 1210,
       "panorama_metadata": {
         "entry_yaw_deg": 173,
         "synthetic_regions": [
@@ -1033,7 +1033,7 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/change6/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change6/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 27648,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 552,
       "panorama_metadata": {
         "entry_yaw_deg": 176,
         "synthetic_regions": [
@@ -1146,7 +1146,7 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/slim/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/slim/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 1000,
+      "hotspot_tier2_ground_m": 880,
       "hotspot_context_source": "/images/hotspots/moon/slim/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -19.9116,
@@ -1176,7 +1176,7 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/beresheet/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 27392,
-      "hotspot_tier2_ground_m": 1000,
+      "hotspot_tier2_ground_m": 490,
       "hotspot_context_source": "/images/hotspots/moon/beresheet/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 25.9984,

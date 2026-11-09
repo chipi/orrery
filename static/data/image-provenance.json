@@ -31557,22 +31557,24 @@
       "id": "6c00365047f1315a",
       "path": "/images/hotspots/moon/change4/tier2-lroc.jpg",
       "source_type": "direct-agency",
-      "title": "LROC NAC LROC_FEATURED_CHANGE4 — patch centred at -45.445°N 177.605°E",
+      "title": "LROC NAC M1311886645 (2019-05-07) — Chang'e 4 patch centred on the lander at -45.456°N 177.589°E",
       "author": "NASA/GSFC/Arizona State University",
       "agency": "NASA",
-      "source_url": "https://lroc.im-ldi.com/data/support/featured_sites/Change/4/M1370616052.jpg",
-      "image_url": "https://lroc.im-ldi.com/data/support/featured_sites/Change/4/M1370616052.jpg",
+      "source_url": "https://lroc.im-ldi.com/featured_sites/chang-e-4-landing-site/site_images/m1311886645",
+      "image_url": "https://lroc.im-ldi.com/data/support/featured_sites/Change/4/M1311886645.tif",
       "license_short": "LROC-EDU",
       "license_url": "https://lroc.im-ldi.com/about/terms",
       "license_rationale": "Image from the LROC website (Featured Image / Featured Site), not the public-domain PDS archive: copyrighted, but the LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09) permit educational use by schools, museums and other organisations without prior permission when credited “NASA/GSFC/Arizona State University”. Orrery is a non-commercial educational site; commercial reuse needs LROC permission.",
       "modifications": [
-        "cropped-2048x2048-around-site-coords",
+        "cropped-2048x2048-centred-on-lander",
         "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": "LROC_FEATURED_CHANGE4",
-      "fetched_at": "2026-06-25T21:50:42.284Z"
+      "nasa_id": "M1311886645",
+      "fetched_at": "2026-11-09T12:17:05.342Z",
+      "spacecraft_name": "Lunar Reconnaissance Orbiter",
+      "instrument": "LROC NAC"
     },
     {
       "id": "92e976cb821508ab",

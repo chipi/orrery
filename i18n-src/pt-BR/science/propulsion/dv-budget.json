@@ -1,6 +1,8 @@
 {
   "title": "∆v como Orçamento de Missão",
   "intro_sentence": "O único número que diz se uma missão é possível — mudança total de velocidade necessária, somada em cada queima.",
+  "seo_title": "Orçamento de delta-v: a velocidade total que a missão gasta",
+  "seo_description": "O número que diz se uma missão é possível: o delta-v total a gastar, somado em cada queima, do lançamento ao pouso.",
   "narrative_101": [
     "Dinheiro em voos espaciais não é em dólares. É ∆v — pronunciado \"delta-v\" — e é medido em quilômetros por segundo. Cada queima do seu foguete custa um pouco de ∆v. Cada movimento que você faz em uma trajetória tem um preço em km/s. O orçamento ∆v da missão é apenas o total acumulado: lançamento + injeção + correções de trajetória + chegada + pouso. Some tudo, essa é sua fatura.",
     "Agora vem o detalhe decisivo. Seu foguete não tem ∆v ilimitado. Tem um limite máximo, definido pela equação de Tsiolkovsky, ditado inteiramente por quanto do seu foguete é combustível e o quão bons seus motores são. Se sua fatura exceder o limite, a missão é impossível. Gastar mais dinheiro não resolve. A matemática vence.",

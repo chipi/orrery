@@ -1,6 +1,7 @@
 {
   "title": "Transferência de Hohmann",
   "intro_sentence": "A viagem de duas queimas mais barata entre duas órbitas circulares coplanares — e o referencial que planejadores de missão usam para medir tudo mais.",
+  "seo_description": "A viagem de duas queimas mais barata entre duas órbitas circulares, calculada por Walter Hohmann em 1925. Veja a elipse e calcule delta-v e tempo de voo.",
   "narrative_101": [
     "Você está em órbita terrestre. Quer estar em órbita marciana. Ambas as órbitas são aproximadamente círculos ao redor do Sol. Como chegar de uma para a outra gastando o mínimo possível de combustível?",
     "A resposta, elaborada por Walter Hohmann em 1925, é surpreendentemente elegante. Encontre uma elipse que apenas toca a órbita da Terra em um lado e apenas toca a órbita de Marte no outro. Acione seu motor brevemente para sair da Terra e ingressar naquela elipse. Navegue por cerca de 8,5 meses sem acionar o motor — a gravidade faz o trabalho. Quando chegar no extremo oposto, acione novamente para se estabilizar em órbita marciana. Duas queimas, no total. Pronto.",

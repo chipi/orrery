@@ -1,6 +1,7 @@
 {
   "title": "Lendo os Contornos",
   "intro_sentence": "A forma da zona barata revela a geometria das trajetórias viáveis — e onde estão os trade-offs.",
+  "seo_title": "Como ler um porkchop plot: os contornos",
   "narrative_101": [
     "Agora você conhece os eixos e a escala de cores. A próxima habilidade é ler a FORMA da zona barata. O lobo de azul-piscina não é apenas um borrão genérico — é um mapa literal de quais trajetórias funcionam e quais não funcionam.",
     "O clássico diagrama porkchop de Marte tem DOIS lobos baratos por janela de lançamento, lado a lado. Eles são chamados de trajetórias \"Tipo I\" e \"Tipo II\" — mesma janela, duas formas diferentes de contornar o Sol. O Tipo I segue o caminho curto (ângulo de transferência abaixo de 180 graus) e é mais rápido. O Tipo II segue o caminho longo (ângulo de transferência acima de 180 graus) e é mais lento, mas às vezes mais barato. Ambos são reais, ambos já foram utilizados.",

@@ -1,6 +1,7 @@
 {
   "title": "Coronagrafias",
   "intro_sentence": "Um disco oculto dentro do telescópio bloqueia a estrela hospedeira, de modo que o planeta ao lado dela — um bilhão de vezes mais fraco — se torna visível.",
+  "seo_title": "Coronógrafos: bloqueando a luz da estrela para ver planetas",
   "body_paragraphs": [
     "Uma estrela semelhante ao Sol ofusca seus planetas por um fator de cerca de 10⁹ em comprimentos de onda visíveis e 10⁶ no infravermelho. Os fótons do planeta não estão ausentes — estão afogados nas asas de difração da função de espalhamento de ponto (PSF) da estrela. A imagem direta de um exoplaneta só é possível se for possível suprimir essa PSF por muitas ordens de grandeza. Um coronógrafo faz exatamente isso.",
     "O coronógrafo clássico de Lyot (1930, inventado por Bernard Lyot para fotografia solar) coloca um disco opaco no plano focal do telescópio para bloquear a estrela e, mais adiante, uma segunda máscara para bloquear a luz difratada na borda da primeira. Os coronógrafos modernos de pupila apodizada e os coronógrafos de vórtice usam padrões de fase intrincados para levar a supressão a 10⁻⁹ ou melhor em regiões estreitas da imagem.",

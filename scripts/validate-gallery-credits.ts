@@ -26,7 +26,7 @@ const IMAGES = 'static/images';
 const KNOWN_MISSING = new Set<string>([]);
 
 /** Placeholder credits in galleries. 411 on 2026-11-01; on 2026-11-02 412 (MMX 01 honest placeholder), 409 (Galileo), 380 (credit-placeholders-find batch 1); 311 on 2026-11-08 (gallery replacements and drops), 309 on 2026-11-09 (credit-placeholders-find, missions), 251 (fleet galleries: 59 sourced), 242 (planets, sites, satellites, ISS, Earth objects: 14 sourced, 6 matches rejected by eye) 184 on 2026-11-09 (55 named Commons files: stale flag removed, pictures checked). 171 on 2026-11-09 (13 more sourced by finder + launch-site categories, 7 matches rejected by eye). Ratchet: lower it as they are fixed. */
-const PLACEHOLDER_CEILING = 96;
+const PLACEHOLDER_CEILING = 71;
 
 interface Row {
   path: string;

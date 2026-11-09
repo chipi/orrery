@@ -115,14 +115,18 @@ export function buildCtxMosaicProvenanceEntry(input: {
   siteId: string;
   centerLat: number;
   centerLon: number;
+  /** 'traverse-midpoint': rover crops are centred on the arc-length midpoint of the traverse (#360), not the site. */
+  centreOn?: 'traverse-midpoint';
 }): ProvenanceEntry {
   const provenancePath = input.outputPath.replace(/^static/, '');
   const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  const midpoint = input.centreOn === 'traverse-midpoint';
+  const where = `${input.centerLat.toFixed(3)}°N ${input.centerLon.toFixed(3)}°E`;
   return {
     id,
     path: provenancePath,
     source_type: 'derived-mosaic',
-    title: `Murray Lab Global CTX Mosaic V01 tile ${input.tileName} — regional patch centred at ${input.centerLat.toFixed(3)}°N ${input.centerLon.toFixed(3)}°E`,
+    title: `Murray Lab Global CTX Mosaic V01 tile ${input.tileName} — regional patch centred ${midpoint ? `on the traverse midpoint (${where})` : `at ${where}`}`,
     author:
       'Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX',
     agency: 'NASA',
@@ -133,7 +137,7 @@ export function buildCtxMosaicProvenanceEntry(input: {
     license_rationale:
       'Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.',
     modifications: [
-      'cropped-2048x2048-around-site-coords',
+      midpoint ? 'cropped-around-traverse-midpoint' : 'cropped-2048x2048-around-site-coords',
       'extracted-from-murray-lab-tile-zip',
       'reencoded-jpeg-q88',
     ],

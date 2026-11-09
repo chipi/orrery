@@ -260,6 +260,10 @@ async function main(): Promise<void> {
             siteId: f.siteId,
             centerLat: f.centre.lat,
             centerLon: f.centre.lon,
+            centreOn:
+              f.centre.lat !== site.lat || f.centre.lon !== site.lon
+                ? 'traverse-midpoint'
+                : undefined,
           });
         })
         .filter((e) => e !== null);

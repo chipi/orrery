@@ -29436,7 +29436,7 @@
       "id": "0b71a0381769e585",
       "path": "/images/hotspots/mars/curiosity/tier2-ctx.jpg",
       "source_type": "derived-mosaic",
-      "title": "Murray Lab Global CTX Mosaic V01 tile E136_N-08 — regional patch centred at -4.724°N 137.379°E",
+      "title": "Murray Lab Global CTX Mosaic V01 tile E136_N-08 — regional patch centred on the traverse midpoint (-4.724°N 137.379°E)",
       "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
       "agency": "NASA",
       "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E136_N-08.zip",
@@ -29445,7 +29445,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-2048x2048-around-site-coords",
+        "cropped-around-traverse-midpoint",
         "extracted-from-murray-lab-tile-zip",
         "reencoded-jpeg-q88"
       ],
@@ -30079,7 +30079,7 @@
       "id": "9def57576bf2807d",
       "path": "/images/hotspots/mars/opportunity/tier2-ctx.jpg",
       "source_type": "derived-mosaic",
-      "title": "Murray Lab Global CTX Mosaic V01 tile E-008_N-04 — regional patch centred at -2.165°N -5.505°E",
+      "title": "Murray Lab Global CTX Mosaic V01 tile E-008_N-04 — regional patch centred on the traverse midpoint (-2.165°N -5.505°E)",
       "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
       "agency": "NASA",
       "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E-008_N-04.zip",
@@ -30088,7 +30088,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-2048x2048-around-site-coords",
+        "cropped-around-traverse-midpoint",
         "extracted-from-murray-lab-tile-zip",
         "reencoded-jpeg-q88"
       ],
@@ -30150,7 +30150,7 @@
       "id": "e2f1e63c80039a93",
       "path": "/images/hotspots/mars/perseverance/tier2-ctx.jpg",
       "source_type": "derived-mosaic",
-      "title": "Murray Lab Global CTX Mosaic V01 tile E076_N16 — regional patch centred at 18.496°N 77.348°E",
+      "title": "Murray Lab Global CTX Mosaic V01 tile E076_N16 — regional patch centred on the traverse midpoint (18.496°N 77.348°E)",
       "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
       "agency": "NASA",
       "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E076_N16.zip",
@@ -30159,7 +30159,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-2048x2048-around-site-coords",
+        "cropped-around-traverse-midpoint",
         "extracted-from-murray-lab-tile-zip",
         "reencoded-jpeg-q88"
       ],
@@ -30627,7 +30627,7 @@
       "id": "682a622ce640cbec",
       "path": "/images/hotspots/mars/spirit/tier2-ctx.jpg",
       "source_type": "derived-mosaic",
-      "title": "Murray Lab Global CTX Mosaic V01 tile E172_N-16 — regional patch centred at -14.570°N 175.470°E",
+      "title": "Murray Lab Global CTX Mosaic V01 tile E172_N-16 — regional patch centred on the traverse midpoint (-14.570°N 175.470°E)",
       "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
       "agency": "NASA",
       "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E172_N-16.zip",
@@ -30636,7 +30636,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-2048x2048-around-site-coords",
+        "cropped-around-traverse-midpoint",
         "extracted-from-murray-lab-tile-zip",
         "reencoded-jpeg-q88"
       ],
@@ -30837,7 +30837,7 @@
       "id": "6f19fe2b3cfc4a27",
       "path": "/images/hotspots/mars/zhurong/tier2-ctx.jpg",
       "source_type": "derived-mosaic",
-      "title": "Murray Lab Global CTX Mosaic V01 tile E108_N24 — regional patch centred at 25.066°N 109.925°E",
+      "title": "Murray Lab Global CTX Mosaic V01 tile E108_N24 — regional patch centred on the traverse midpoint (25.066°N 109.925°E)",
       "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
       "agency": "NASA",
       "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E108_N24.zip",
@@ -30846,7 +30846,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-2048x2048-around-site-coords",
+        "cropped-around-traverse-midpoint",
         "extracted-from-murray-lab-tile-zip",
         "reencoded-jpeg-q88"
       ],

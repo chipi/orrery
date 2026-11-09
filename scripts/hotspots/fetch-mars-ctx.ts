@@ -71,7 +71,7 @@ function gcMetres(a: [number, number], b: [number, number]): number {
  * of just the landing zone at one end. Falls back to the landing coordinate
  * when the rover has no traverse file.
  */
-function cropCentre(roverId: string, lat: number, lon: number): { lat: number; lon: number } {
+export function cropCentre(roverId: string, lat: number, lon: number): { lat: number; lon: number } {
   const p = path.join(TRAVERSE_DIR, `${roverId}.json`);
   if (!existsSync(p)) return { lat, lon };
   const tr = JSON.parse(readFileSync(p, 'utf8')) as { points?: [number, number][] };
@@ -104,7 +104,7 @@ const MAX_OUTPUT_PX = 4096;
  * drive spans ~26 km, past the 15.4 km default. Never smaller than the
  * default; rounded up to 1 024 m. Non-rovers keep the default.
  */
-function cropPxFor(roverId: string, centre: { lat: number; lon: number }, mPerPx = 5): number {
+export function cropPxFor(roverId: string, centre: { lat: number; lon: number }, mPerPx = 5): number {
   const p = path.join(TRAVERSE_DIR, `${roverId}.json`);
   if (!existsSync(p)) return BASE_CROP_PX;
   const pts = (JSON.parse(readFileSync(p, 'utf8')) as { points?: [number, number][] }).points;

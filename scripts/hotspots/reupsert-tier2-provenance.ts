@@ -2,6 +2,7 @@
 import { existsSync, promises as fs } from 'node:fs';
 import path from 'node:path';
 import { tileNameForLatLon, tileUrlForName } from './ctx-mosaic.ts';
+import { cropCentre } from './fetch-mars-ctx.ts';
 import { LROC_CURATED_PRODUCTS, lrocProductIdToImgUrl } from './lroc-products.ts';
 import {
   buildCtxMosaicProvenanceEntry,
@@ -44,15 +45,18 @@ async function main(): Promise<void> {
     if (s.kind === 'orbiter' || s.lat == null || s.lon == null) continue;
     const outputPath = `static/images/hotspots/mars/${s.id}/tier2-ctx.jpg`;
     if (!existsSync(outputPath)) continue;
-    const tileName = tileNameForLatLon(s.lat, s.lon);
+    const centre = cropCentre(s.id, s.lat, s.lon);
+    const tileName = tileNameForLatLon(centre.lat, centre.lon);
     entries.push(
       buildCtxMosaicProvenanceEntry({
         outputPath,
         sourceUrl: tileUrlForName(tileName),
         tileName,
         siteId: s.id,
-        centerLat: s.lat,
-        centerLon: s.lon,
+        centerLat: centre.lat,
+        centerLon: centre.lon,
+        centreOn:
+          centre.lat !== s.lat || centre.lon !== s.lon ? 'traverse-midpoint' : undefined,
       }),
     );
   }

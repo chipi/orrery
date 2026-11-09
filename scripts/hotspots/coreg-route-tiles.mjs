@@ -55,9 +55,7 @@ async function grey(input, w, h, blur = 0) {
     .greyscale()
     .resize(w, h, { fit: 'fill', kernel: 'lanczos3' });
   if (blur >= 0.3) p = p.blur(blur);
-  const { data, info } = await p
-    .raw()
-    .toBuffer({ resolveWithObject: true });
+  const { data, info } = await p.raw().toBuffer({ resolveWithObject: true });
   return { g: Float32Array.from(data), w: info.width, h: info.height };
 }
 function sobel({ g, w, h }) {

@@ -4,6 +4,9 @@
   from the hub. The links come from a server load (`getEntityIndex`), never
   from client JS. `floating` pins it to the bottom of a full-screen scene
   (/moon /mars /venus /explore); otherwise it sits at the foot of the page.
+  On a phone the floating tab leaves the bottom edge (the HUD bar and the tab row
+  own it) for a left-edge "A–Z" tab above the INDEX tab; the links stay in this
+  same prerendered element, only the layout moves.
 -->
 <script lang="ts">
   import { localHref } from '$lib/locale';
@@ -23,7 +26,10 @@
 
 {#if links.length > 0}
   <details class="entity-index" class:floating data-testid="entity-index-{hub}">
-    <summary>{title}</summary>
+    <summary
+      ><span class="ei-full">{title}</span><span class="ei-short" aria-hidden="true">A–Z</span
+      ></summary
+    >
     <ul>
       {#each links as link (link.id)}
         <li><a href={localHref(`/${hub}/${link.id}`)}>{link.name}</a></li>
@@ -85,6 +91,10 @@
     }
   }
 
+  .ei-short {
+    display: none;
+  }
+
   /* Full-screen scenes have no page foot: a small tab at the bottom edge that
      opens upward, below the detail panels (z 30) so it never covers one. */
   .entity-index.floating {
@@ -119,5 +129,55 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 4px;
     columns: 2;
+  }
+
+  /* Phone: a left-edge pull tab just above the INDEX tab (--index-handle-top is
+     published on <html> by the scene; 50 % where there is none), the list opening
+     as a panel beside it. Out of the way of the bottom bar, the tab row and the
+     time dock, under the detail panels (z 30). */
+  @media (hover: none), (pointer: coarse) {
+    .entity-index.floating {
+      inset-inline-start: auto;
+      left: 0;
+      transform: none;
+      bottom: calc(100% - var(--index-handle-top, 50%) + 48px);
+      width: auto;
+      max-width: none;
+    }
+    .floating .ei-full {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .floating .ei-short {
+      display: inline;
+    }
+    .floating summary {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      padding: 12px 6px;
+      min-height: 0;
+      border-left: none;
+      border-radius: 0 6px 6px 0;
+      letter-spacing: 2px;
+    }
+    .floating ul {
+      position: fixed;
+      inset-inline-start: 40px;
+      right: 8px;
+      top: calc(var(--nav-height, 56px) + 56px);
+      bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+      transform: none;
+      width: auto;
+      max-height: none;
+    }
+    /* The flat ground view and the panorama own the whole screen. */
+    :global(html[data-surface-flat]) .entity-index.floating,
+    :global(html[data-surface-panorama]) .entity-index.floating {
+      display: none;
+    }
   }
 </style>

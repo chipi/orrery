@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy, untrack } from 'svelte';
+  import { onMount, onDestroy, untrack, type Snippet } from 'svelte';
   import { page } from '$app/state';
   import { afterNavigate, replaceState } from '$app/navigation';
   import { currentUrl } from '$lib/safe-replace-state';
@@ -301,6 +301,9 @@
     /** Height the host route's bottom-left button ("Center on my location")
      *  needs above the nation legend; the imagery card stacks above it. */
     locateReservePx?: number;
+    /** The host route's globe button ("View from my location"): on a phone it
+     *  becomes the first icon of the single bottom bar. */
+    barStart?: Snippet;
   }
   let {
     config,
@@ -318,6 +321,7 @@
     onRegimeOpen,
     onOrbitsInViewChange,
     locateReservePx = 0,
+    barStart,
   }: Props = $props();
 
   // AR (#150): earth/moon/mars have tabletop AR scenes. `body` matches
@@ -1110,11 +1114,26 @@
     else delete root.dataset.surfacePanorama;
     return () => delete root.dataset.surfacePanorama;
   });
+  // The flat ground view owns the bottom edge with its own bar: the host route's
+  // floating A–Z tab and the imagery card key their phone position off this.
+  $effect(() => {
+    const root = document.documentElement;
+    if (flatPatchActive) root.dataset.surfaceFlat = '';
+    else delete root.dataset.surfaceFlat;
+    return () => delete root.dataset.surfaceFlat;
+  });
   // The imagery card sits in the lower-left corner; the INDEX pull tab
   // (left edge, centred) moves up while the card is there so the two never
   // touch.
   let sceneRoot = $state<HTMLDivElement | undefined>();
   let indexHandleTop = $state<number | null>(null);
+  // On <html> too: the host route's A–Z tab sits just above the INDEX tab.
+  $effect(() => {
+    const root = document.documentElement;
+    if (indexHandleTop != null) root.style.setProperty('--index-handle-top', `${indexHandleTop}px`);
+    else root.style.removeProperty('--index-handle-top');
+    return () => root.style.removeProperty('--index-handle-top');
+  });
   const tierLayerCount = $derived(tierContext?.layers.length ?? 0);
   $effect(() => {
     void tierCardShown;
@@ -1722,7 +1741,7 @@
     // HUD panels over the canvas (detail panel, chips, legend, rulers): cards
     // keep clear of them. Re-read twice a second, not every frame.
     const SITE_TAG_HUD =
-      'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler';
+      'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler, .surface-bottom-bar';
     const ringScratch = new THREE.Vector3();
     let siteTagBlocked: Rect[] = [];
     let siteTagBlockedAt = -Infinity;
@@ -4453,7 +4472,9 @@
                       host: renderer.domElement.getBoundingClientRect(),
                       huds: sceneRoot
                         ? [
-                            ...sceneRoot.querySelectorAll('.distance-scale, .altitude-indicator'),
+                            ...sceneRoot.querySelectorAll(
+                              '.distance-scale, .altitude-indicator, .surface-bottom-bar',
+                            ),
                           ].map((e) => e.getBoundingClientRect())
                         : [],
                     };
@@ -5656,18 +5677,39 @@ sample      ${debugInfo.projectedPxSample}`}
        any planet"). -->
   <!-- …and not when almost landed (operator, #641): below ~4 % of the radius
        (≈ 150 km on Mars) the detail imagery is in and the scale bar says it. -->
-  {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen && altitudeKm >= config.radiusKm * 0.044}
-    <div class="altitude-indicator" class:beside-panel={panelOpen} aria-hidden="true">
-      {m.surface_altitude({
-        value:
-          altitudeKm >= 1000
-            ? m.unit_mm_value({ value: (altitudeKm / 1000).toFixed(1) })
-            : altitudeKm >= 1
-              ? m.mp_flight_unit_km({ value: altitudeKm.toFixed(0) })
-              : m.unit_m_value({ value: (altitudeKm * 1000).toFixed(0) }),
-      })}
-    </div>
-  {/if}
+  <!-- Phone: ONE compact bottom bar — the route's globe button, the scale bar and the
+       altitude readout in a single row above the tab row. Everywhere else the bar is
+       `display: contents`, so each child keeps its own corner. -->
+  <div
+    class="surface-bottom-bar"
+    class:drawer-open={mobileDrawerOpen}
+    class:flat={flatPatchActive}
+    class:beside-panel={panelOpen}
+  >
+    {@render barStart?.()}
+    <!-- Distance scale bar — appears whenever a tier-2 layer is fading in. Width +
+         label reflect the on-screen km scale at the current camera zoom (image 21
+         ask, 2026-06-03). Hidden during panorama: ground distance is meaningless
+         inside the inverted skybox. -->
+    {#if scaleBar && view === '3d' && !panoramaActive && !flatPatchActive}
+      <div class="distance-scale" class:beside-panel={panelOpen} data-testid="distance-scale">
+        <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
+        <div class="distance-scale-label mono">{scaleBar.label}</div>
+      </div>
+    {/if}
+    {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen && altitudeKm >= config.radiusKm * 0.044}
+      <div class="altitude-indicator" class:beside-panel={panelOpen} aria-hidden="true">
+        {m.surface_altitude({
+          value:
+            altitudeKm >= 1000
+              ? m.unit_mm_value({ value: (altitudeKm / 1000).toFixed(1) })
+              : altitudeKm >= 1
+                ? m.mp_flight_unit_km({ value: altitudeKm.toFixed(0) })
+                : m.unit_m_value({ value: (altitudeKm * 1000).toFixed(0) }),
+        })}
+      </div>
+    {/if}
+  </div>
 
   <!-- Persistent landing-site crosshair — same gold + cross-hair design
        as the flat-patch view (SurfaceFlatPatch drawMarkers). Pinned to
@@ -5766,18 +5808,6 @@ sample      ${debugInfo.projectedPxSample}`}
           {hoveredStopInfo.lon.toFixed(3)}°{hoveredStopInfo.lon >= 0 ? 'E' : 'W'}
         </span>
       {/if}
-    </div>
-  {/if}
-
-  <!-- Distance scale bar — appears in the bottom-right corner of the
-       3D canvas whenever a tier-2 layer is fading in. Width + label
-       reflect the on-screen km scale at the current camera zoom
-       (image 21 ask, 2026-06-03). Hidden during panorama since
-       ground distance is meaningless inside the inverted skybox. -->
-  {#if scaleBar && view === '3d' && !panoramaActive && !flatPatchActive}
-    <div class="distance-scale" class:beside-panel={panelOpen} data-testid="distance-scale">
-      <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
-      <div class="distance-scale-label mono">{scaleBar.label}</div>
     </div>
   {/if}
 
@@ -7708,6 +7738,63 @@ sample      ${debugInfo.projectedPxSample}`}
     font-size: 11px;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.92);
+  }
+  /* Phone: one bar above the tab row holds the route's globe button, the scale
+     and the altitude. Elsewhere it is transparent to layout. */
+  .surface-bottom-bar {
+    display: contents;
+  }
+  @media (hover: none), (pointer: coarse) {
+    .surface-bottom-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: fixed;
+      left: 8px;
+      right: 8px;
+      bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+      /* Under the detail panel (z 30), like the rest of the scene HUD. */
+      z-index: 28;
+      min-height: 40px;
+      padding: 0 10px;
+      background: rgba(8, 10, 22, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+    }
+    .surface-bottom-bar:not(:has(> *)),
+    .surface-bottom-bar.drawer-open,
+    .surface-bottom-bar.flat {
+      display: none;
+    }
+    .surface-bottom-bar .distance-scale,
+    .surface-bottom-bar .altitude-indicator {
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      backdrop-filter: none;
+      z-index: auto;
+    }
+    .surface-bottom-bar .distance-scale-bar {
+      max-width: 40vw;
+    }
+    .surface-bottom-bar .altitude-indicator {
+      margin-inline-start: auto;
+      white-space: nowrap;
+    }
+    /* The scale says how far in you are; with it shown the altitude would not fit. */
+    .surface-bottom-bar .distance-scale ~ .altitude-indicator {
+      display: none;
+    }
+    /* Landscape: the detail panel is a side drawer, so the bar ends at its edge. */
+    :global(html[data-touch][data-orientation='landscape']) .surface-bottom-bar.beside-panel {
+      right: calc(var(--panel-width) + 12px);
+    }
   }
   /* ─── ≥ 768 px — distance scale lifts back to bottom: 90 ───────── */
   @media (hover: hover) and (pointer: fine) {

@@ -275,22 +275,26 @@
   {regimes}
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
-/>
+>
+  {#snippet barStart()}
+    <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
+         bottom bar (the label stays for assistive tech and tests). -->
+    <button
+      type="button"
+      class="locate-me"
+      onclick={viewFromMyLocation}
+      disabled={locating}
+      data-testid="moon-locate-me"
+      title={m.moon_locate_me()}
+    >
+      <span class="locate-icon" aria-hidden="true">☾</span>
+      <span class="locate-label">{locating ? m.moon_locate_working() : m.moon_locate_me()}</span>
+    </button>
+  {/snippet}
+</SurfaceScene>
 
 <!-- #48 — observer view. Opt-in (no prompt on load): resolves the observer's
      location, orients to tonight's sub-Earth point + surfaces phase/visibility. -->
-<button
-  type="button"
-  class="locate-me"
-  onclick={viewFromMyLocation}
-  disabled={locating}
-  data-testid="moon-locate-me"
-  title={m.moon_locate_me()}
->
-  <span class="locate-icon" aria-hidden="true">☾</span>
-  {locating ? m.moon_locate_working() : m.moon_locate_me()}
-</button>
-
 {#if observerView}
   <div class="moon-observer" data-testid="moon-observer-readout">
     <div class="mo-eyebrow">{m.moon_view_eyebrow()}</div>
@@ -371,6 +375,30 @@
   :global(html[data-surface-panorama]) .locate-me,
   :global(html[data-surface-panorama]) .moon-observer {
     display: none;
+  }
+  /* Phone: an icon button in the scene's bottom bar; the words stay for screen readers. */
+  @media (hover: none), (pointer: coarse) {
+    .locate-me {
+      position: static;
+      width: 40px;
+      min-height: 40px;
+      padding: 0;
+      justify-content: center;
+      background: none;
+      border: none;
+      backdrop-filter: none;
+    }
+    .locate-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .locate-me .locate-icon {
+      font-size: 20px;
+    }
   }
   .locate-icon {
     color: #4ecdc4;

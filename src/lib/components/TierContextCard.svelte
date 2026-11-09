@@ -186,6 +186,16 @@
       transform: translateY(0);
     }
   }
+  /* Phone: the bottom bar (above the tab row) sits under the card; in the flat
+     ground view the bar is lower and has no tab row. */
+  @media (hover: none), (pointer: coarse) {
+    .tier-context-card {
+      bottom: var(--card-bottom, calc(104px + env(safe-area-inset-bottom, 0px)));
+    }
+    :global(html[data-surface-flat]) .tier-context-card {
+      bottom: calc(54px + env(safe-area-inset-bottom, 0px));
+    }
+  }
   /* Narrow window with a mouse: the detail panel (z 30) spans the window,
      so the card goes under it with the rest of the scene HUD. */
   @media (hover: hover) and (pointer: fine) and (max-width: 600px) {

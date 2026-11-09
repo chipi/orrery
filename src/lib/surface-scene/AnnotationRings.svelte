@@ -93,7 +93,7 @@
   // HUD + side panel rectangles (relative to this overlay): labels keep clear of
   // them; a bottom sheet sits above the bottom ones.
   const HUD_SELECTOR =
-    'nav, footer, aside.panel, .tier-context-card, .hud-controls, .hud-top-mobile, .hud-layers, .hud-back, .hud-context-banner, .legend-3d, .surface-index-handle, .sidx, .hud-scale, .hud-latlon, .locate-me';
+    'nav, footer, aside.panel, .tier-context-card, .hud-controls, .hud-top-mobile, .hud-layers, .hud-back, .hud-context-banner, .legend-3d, .surface-index-handle, .sidx, .hud-scale, .hud-latlon, .hud-bottom, .surface-bottom-bar, .locate-me';
   let hudBlocked: Rect[] = $state([]);
   let sheetBottom = $state(0);
   function measureHud(): void {

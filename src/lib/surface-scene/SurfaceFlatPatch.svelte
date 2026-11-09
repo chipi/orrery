@@ -864,7 +864,8 @@
   // Scale-bar length & label — pick a "round" km value that fits in
   // ~120 px of screen real estate.
   let scaleBar = $derived.by(() => {
-    const targetPx = 120;
+    // Shorter on a phone: the scale shares one line with the lat/lon readout.
+    const targetPx = viewW > 0 && viewW < 600 ? 64 : 120;
     const targetKm = targetPx * kmPerPx;
     const niceValues = [
       0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500,
@@ -919,6 +920,18 @@
     <span class="ctx-subline">
       {m.surface_true_scale_sub({ name: selected.name ?? selected.id })}
     </span>
+    {#if atDeepestZoom}
+      <span class="ctx-limit">
+        {m.surface_deepest_zoom({
+          limit:
+            config.planet === 'mars'
+              ? m.surface_zoom_limit_hirise()
+              : config.planet === 'earth'
+                ? m.surface_zoom_limit_commercial()
+                : m.surface_zoom_limit_lroc(),
+        })}
+      </span>
+    {/if}
     {#if upsampling}
       <span class="ctx-warn">
         {config.planet === 'mars'
@@ -954,17 +967,20 @@
     {/if}
   </div>
 
-  <div class="hud-scale" aria-hidden="true">
-    <span>{m.surface_flat_scale_label()}</span>
-    <span class="bar" style:width="{scaleBar.widthPx}px"></span>
-    <span class="mono">{scaleBar.label}</span>
-  </div>
+  <!-- One bar on a phone (scale + lat/lon on a line); two corner boxes elsewhere. -->
+  <div class="hud-bottom">
+    <div class="hud-scale" aria-hidden="true">
+      <span class="scale-word">{m.surface_flat_scale_label()}</span>
+      <span class="bar" style:width="{scaleBar.widthPx}px"></span>
+      <span class="mono">{scaleBar.label}</span>
+    </div>
 
-  <div class="hud-latlon mono" aria-hidden="true">
-    {m.surface_flat_lat_lon({
-      lon: centroidLon.toFixed(4),
-      lat: centroidLat.toFixed(4),
-    })}
+    <div class="hud-latlon mono" aria-hidden="true">
+      {m.surface_flat_lat_lon({
+        lon: centroidLon.toFixed(4),
+        lat: centroidLat.toFixed(4),
+      })}
+    </div>
   </div>
 
   {#if upsampling}
@@ -1055,6 +1071,9 @@
     color: #fff;
     border-color: rgba(78, 205, 196, 0.6);
   }
+  .hud-bottom {
+    display: contents;
+  }
   .hud-scale {
     position: absolute;
     bottom: 24px;
@@ -1132,6 +1151,10 @@
     color: #ffc850;
     text-align: center;
   }
+  /* phones only: the deepest-zoom notice is a line of the banner, not a bottom chip */
+  .hud-context-banner .ctx-limit {
+    display: none;
+  }
   .hud-context-banner .ctx-eyebrow {
     font-size: 10px;
     letter-spacing: 0.18em;
@@ -1174,9 +1197,59 @@
        (Exit zoom + layer chips) so it isn't tucked behind them. */
     .hud-context-banner {
       top: 56px;
+      /* shrink-to-fit inside the left:50 % box would wrap it at half the screen */
+      width: max-content;
+      max-width: calc(100% - 32px);
     }
-    /* the bottom "deepest zoom" chip already says it; here it would grow the banner over the imagery */
+    /* the deepest-zoom line says it; the pixel-limit line would only grow the banner over the imagery */
     .hud-context-banner .ctx-warn {
+      display: none;
+    }
+    .hud-context-banner .ctx-limit {
+      display: block;
+      margin-top: 4px;
+      padding-top: 4px;
+      border-top: 1px solid rgba(78, 205, 196, 0.35);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #4ecdc4;
+      text-align: center;
+    }
+    .deepest-zoom-chip {
+      display: none;
+    }
+    /* ONE bar at the bottom edge: scale and lat/lon on a line. */
+    .hud-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+      z-index: 5;
+      padding: 6px 10px;
+      background: rgba(5, 5, 20, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+    .hud-bottom .hud-scale,
+    .hud-bottom .hud-latlon {
+      position: static;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      backdrop-filter: none;
+    }
+    .hud-bottom .hud-scale {
+      gap: 8px;
+    }
+    .hud-bottom .scale-word {
       display: none;
     }
   }

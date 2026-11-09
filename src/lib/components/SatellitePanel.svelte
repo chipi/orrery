@@ -29,8 +29,8 @@
   } from '$lib/data';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { assetUrl } from '$lib/asset-url';
-  import { cardForSatellite, type CardSpec } from '$lib/cards/card-spec';
-  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { CardSpec } from '$lib/cards/card-spec';
+  import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import ScienceCard from './ScienceCard.svelte';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
@@ -93,8 +93,17 @@
   // #547 S5b — the collectible card (the loaded satellite list doubles
   // as the collection for numbering).
   let cardOpen = $state(false);
+  // The card code loads on demand (lazy-card.ts): fetched when a moon opens.
+  let cards = $state<CardModules | null>(null);
+  $effect(() => {
+    if (entry && !cards)
+      void loadCardModules().then(
+        (c) => (cards = c),
+        () => {},
+      );
+  });
   let cardSpec = $derived<CardSpec | null>(
-    entry ? cardForSatellite(entry, satellites, gallery[0]) : null,
+    entry && cards ? cards.spec.cardForSatellite(entry, satellites, gallery[0]) : null,
   );
 
   $effect(() => {
@@ -278,8 +287,8 @@
   onClose={() => (lightboxSrc = null)}
 />
 
-{#if cardSpec}
-  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{#if cardSpec && cards}
+  <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
 <style>

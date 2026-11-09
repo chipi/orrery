@@ -88,14 +88,8 @@
   import type { EarthObject } from '$types/earth-object';
   import type { Mission, MissionIndex } from '$types/mission';
   import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
-  import {
-    cardForFleet,
-    cardForMission,
-    cardForSite,
-    siteAliasMissionId,
-    type CardSpec,
-  } from '$lib/cards/card-spec';
-  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { CardSpec } from '$lib/cards/card-spec';
+  import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import {
     createSceneRenderer,
     disposeSceneRenderer,
@@ -1328,16 +1322,20 @@
   let cardAliasPending = $state(false);
   let cardFleetEntry = $state<FleetEntry | null>(null);
   let cardFleetIndex = $state<FleetIndexEntry[]>([]);
+  // The card code loads on demand (lazy-card.ts), in the alias loader below.
+  let cards = $state<CardModules | null>(null);
   let cardSpec = $derived.by<CardSpec | null>(() => {
     const site = selected as SurfaceSite | null;
-    if (!site) return null;
+    if (!site || !cards) return null;
     if (body === 'earth')
       return cardFleetEntry && cardFleetEntry.id === site.id
-        ? cardForFleet(cardFleetEntry, cardFleetIndex, panelGallery[0])
+        ? cards.spec.cardForFleet(cardFleetEntry, cardFleetIndex, panelGallery[0])
         : null;
     if (cardAliasPending) return null;
-    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
-    if (body === 'moon' || body === 'mars') return cardForSite(site, sites, body, panelGallery[0]);
+    if (cardAliasMission)
+      return cards.spec.cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
+    if (body === 'moon' || body === 'mars')
+      return cards.spec.cardForSite(site, sites, body, panelGallery[0]);
     return null; // venus non-aliased sites (none today) — no card
   });
   $effect(() => {
@@ -1378,6 +1376,7 @@
         const stillCurrent = () =>
           selected != null && selected.id === lastSelectedId && sid === lastSelectedId;
         try {
+          cards ??= await loadCardModules();
           if (body === 'earth') {
             if (cardFleetIndex.length === 0) cardFleetIndex = await getFleetIndex();
             const entry = await getFleet(sid, 'launch-site', localeFromPage(page));
@@ -1385,7 +1384,7 @@
             return;
           }
           if (cardMissionIndex.length === 0) cardMissionIndex = await getMissionIndex();
-          const aliasId = siteAliasMissionId(site, cardMissionIndex);
+          const aliasId = cards.spec.siteAliasMissionId(site, cardMissionIndex);
           if (!aliasId) {
             if (stillCurrent()) cardAliasPending = false;
             return;
@@ -6452,8 +6451,8 @@ sample      ${debugInfo.projectedPxSample}`}
     {/if}
   </Panel>
 
-  {#if cardSpec}
-    <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+  {#if cardSpec && cards}
+    <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
   {/if}
 
   <PanelLightbox

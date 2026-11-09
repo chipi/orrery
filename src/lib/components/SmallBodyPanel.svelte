@@ -7,8 +7,8 @@
   import Panel from './Panel.svelte';
   import { getSmallBodyGallery, getSmallBodyI18n, type SmallBodyI18n } from '$lib/data';
   import smallBodiesData from '$data/small-bodies.json';
-  import { cardForSmallBody, type CardSpec, type SmallBodyLike } from '$lib/cards/card-spec';
-  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { CardSpec, SmallBodyLike } from '$lib/cards/card-spec';
+  import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { formatKm } from '$lib/format';
   import type { ScienceSectionRef } from '$types/planet';
@@ -100,9 +100,18 @@
   // collection list for numbering; the overlay description (translated)
   // feeds the story when loaded.
   let cardOpen = $state(false);
+  // The card code loads on demand (lazy-card.ts): fetched when a body opens.
+  let cards = $state<CardModules | null>(null);
+  $effect(() => {
+    if (body && !cards)
+      void loadCardModules().then(
+        (c) => (cards = c),
+        () => {},
+      );
+  });
   let cardSpec = $derived<CardSpec | null>(
-    body
-      ? cardForSmallBody(
+    body && cards
+      ? cards.spec.cardForSmallBody(
           { ...body, description: overlay?.description ?? body.description },
           smallBodiesData.bodies as SmallBodyLike[],
           gallery[0],
@@ -388,8 +397,8 @@
   {/if}
 </Panel>
 
-{#if cardSpec}
-  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{#if cardSpec && cards}
+  <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
 <style>

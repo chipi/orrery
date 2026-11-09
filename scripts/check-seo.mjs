@@ -10,6 +10,8 @@
  *   - JSON-LD blocks that parse
  *   - exactly one <h1>
  *   - no robots noindex (a noindex leak drops a real page from search)
+ *   - entity pages (/missions/<id> … /lab/<id>): at least 80 words in <main> (160
+ *     characters for zh-CN and ja) — thinner is thin content, not a page
  * and the sitemaps (/sitemap.xml index + /sitemaps/<locale>.xml) must list
  * exactly the indexable pages.
  *
@@ -25,7 +27,8 @@ import { join, dirname, relative } from 'node:path';
 import { LOCALES as LOCALE_CODES, BASE_LOCALE } from './lib/locales.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const BUILD_DIR = join(__dirname, '..', 'build');
+// CHECK_SEO_BUILD_DIR lets check-seo.test.ts point the gate at a fixture build.
+const BUILD_DIR = process.env.CHECK_SEO_BUILD_DIR ?? join(__dirname, '..', 'build');
 const BASE = (process.env.VITE_BASE ?? '').replace(/\/+$/, '');
 const ORIGIN = 'https://www.orrerylearn.com';
 const DEFAULT_LOCALE = BASE_LOCALE;
@@ -33,6 +36,14 @@ const DEFAULT_LOCALE = BASE_LOCALE;
 // (pageTitle() keeps the rest within 60); this ceiling catches real regressions.
 const TITLE_MAX = 90;
 const DESCRIPTION_MAX = 160;
+// An entity page with less text than this in <main> is thin content (ADR-096):
+// words, or characters for the locales that write without spaces.
+const THIN_MIN_WORDS = 80;
+const THIN_MIN_CHARS = 160;
+const CHAR_COUNT_LOCALES = ['zh-CN', 'ja'];
+const ENTITY_ROUTE = /^\/(missions|fleet|moon|mars|venus|explore|lab)\/([^/]+)$/;
+// Index / app pages that sit under an entity prefix.
+const NOT_ENTITY = new Set(['/missions/launches', '/explore/hub']);
 
 /** Pages that are noindex by design (route without base, no locale prefix). */
 function isNoindexByDesign(route) {
@@ -87,6 +98,22 @@ const failures = new Map();
 function fail(rule, where) {
   if (!failures.has(rule)) failures.set(rule, []);
   failures.get(rule).push(where);
+}
+
+/** The visible text of <main>: scripts, styles and comments dropped, whitespace collapsed. */
+function mainText(html) {
+  const start = html.search(/<main[\s>]/);
+  const end = html.lastIndexOf('</main>');
+  if (start < 0 || end < start) return '';
+  return decode(
+    html
+      .slice(start, end)
+      .replace(/<(script|style)[\s\S]*?<\/\1>/g, ' ')
+      .replace(/<!--[\s\S]*?-->/g, ' ')
+      .replace(/<[^>]*>/g, ' '),
+  )
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function headOf(html) {
@@ -162,6 +189,20 @@ for (const file of files) {
 
   const h1s = (html.match(/<h1[\s>]/g) || []).length;
   if (h1s !== 1) fail('h1 count is not 1', `${where} (${h1s})`);
+
+  if (ENTITY_ROUTE.test(route) && !NOT_ENTITY.has(route)) {
+    const text = mainText(html);
+    const locale = LOCALE_CODES.find((l) => path.startsWith(`/${l}/`)) ?? DEFAULT_LOCALE;
+    if (CHAR_COUNT_LOCALES.includes(locale)) {
+      const chars = [...text.replace(/\s/g, '')].length;
+      if (chars < THIN_MIN_CHARS)
+        fail(`thin entity page (under ${THIN_MIN_CHARS} characters)`, `${where} (${chars})`);
+    } else {
+      const words = text ? text.split(' ').length : 0;
+      if (words < THIN_MIN_WORDS)
+        fail(`thin entity page (under ${THIN_MIN_WORDS} words)`, `${where} (${words})`);
+    }
+  }
 }
 
 // Sitemaps = indexable pages.

@@ -35,6 +35,7 @@
     solTickIndices,
     solTickSpacing,
   } from '$lib/surface-scene/surface-traverses';
+  import { detailGroundKm } from '$lib/surface-scene/flat-patch-extent';
   import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
 
@@ -216,7 +217,7 @@
     // The entryKmPerPx prop is kept for the exit-camR map but
     // intentionally unused here.
     void entryKmPerPx;
-    const detailKm = config.planet === 'mars' ? 1.5 : config.planet === 'earth' ? 0.5 : 1.0;
+    const detailKm = detailGroundKm(selected, config.planet);
     const vp =
       typeof window !== 'undefined'
         ? Math.max(300, Math.min(window.innerWidth, window.innerHeight))
@@ -449,7 +450,7 @@
     // black — the published HiRISE / LROC NAC ROI products cover well
     // past these footprints at their native resolution. Future: derive
     // exactly from the site's published source product.
-    const detailSizeKm = config.planet === 'mars' ? 1.5 : config.planet === 'earth' ? 0.5 : 1.0;
+    const detailSizeKm = detailGroundKm(selected, config.planet);
     const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
     const cosLat = Math.cos((selected.lat * Math.PI) / 180);
     const halfLat = detailSizeKm / 2 / kmPerDegLat;

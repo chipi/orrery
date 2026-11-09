@@ -18,6 +18,7 @@
  * 14 locales, image-approved.
  *
  * Run: node --import tsx scripts/hotspots/fetch-route-photos.ts [--rover opportunity] [--skip-download]
+ *      node --import tsx scripts/hotspots/fetch-route-photos.ts --annotations   (Apollo ring photos)
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, promises as fs } from 'node:fs';
@@ -51,8 +52,87 @@ function pointAtSol(sols: number[], sol: number): number {
   return i;
 }
 
+interface AnnotationFrame {
+  id: string;
+  url: string;
+  nasa_id?: string;
+  crop?: { left: number; top: number; width: number; height: number };
+}
+interface AnnotationRef {
+  frame?: string;
+  image?: string;
+  nasa_id?: string;
+}
+
+const ANNOTATION_LIST = 'scripts/hotspots/annotation-photos.json';
+const ANNOTATION_SIDECAR = 'static/data/moon-annotation-photos.json';
+
+/**
+ * Apollo hardware rings: one photo per annotation, shown when the ring is tapped.
+ * Input scripts/hotspots/annotation-photos.json: `frames` (NASA/Commons downloads →
+ * masters/moon-sites/annotations/<id>.jpg, optional crop for a film border) and
+ * `annotations` (site → ring id → a frame above, or an already-served gallery image
+ * reused as is). Writes static/data/moon-annotation-photos.json.
+ */
+async function annotations(skipDownload: boolean) {
+  const list = JSON.parse(await fs.readFile(ANNOTATION_LIST, 'utf8')) as {
+    frames: AnnotationFrame[];
+    annotations: Record<string, Record<string, AnnotationRef>>;
+  };
+  const dir = 'moon-sites/annotations';
+  if (!skipDownload) {
+    const { default: sharp } = await import('sharp');
+    for (const f of list.frames) {
+      const out = path.join('masters', dir, `${f.id}.jpg`);
+      if (existsSync(out)) continue;
+      const tmp = `${out}.part`;
+      await download(f.url, tmp);
+      if (f.crop) await sharp(tmp).extract(f.crop).jpeg({ quality: 95 }).toFile(out);
+      else await fs.copyFile(tmp, out);
+      await fs.rm(tmp);
+      console.log(`  ↓ ${f.id}`);
+    }
+  }
+  execFileSync('node', ['scripts/vision/build-display-ladder.mjs', '--only', dir], {
+    stdio: 'inherit',
+  });
+  execFileSync(
+    'node',
+    [
+      'scripts/vision/add-card-rungs.mjs',
+      `--stems=${list.frames.map((f) => `${dir}/${f.id}`).join(',')}`,
+    ],
+    { stdio: 'inherit' },
+  );
+
+  const frames = new Map(list.frames.map((f) => [f.id, f]));
+  const out: Record<
+    string,
+    Record<string, { image: string; thumb: string; nasa_id?: string }>
+  > = {};
+  for (const [site, rings] of Object.entries(list.annotations)) {
+    out[site] = {};
+    for (const [ring, ref] of Object.entries(rings)) {
+      const frame = ref.frame ? frames.get(ref.frame) : undefined;
+      if (ref.frame && !frame) throw new Error(`${site}/${ring}: unknown frame ${ref.frame}`);
+      const image = frame ? `/images/${dir}/${frame.id}.webp` : ref.image;
+      if (!image) throw new Error(`${site}/${ring}: needs frame or image`);
+      if (!existsSync(`static${image}`)) throw new Error(`${image} not built`);
+      const base = image.replace(/\.webp$/, '');
+      const thumb = [320, 640]
+        .map((w) => `${base}-${w}.webp`)
+        .find((t) => existsSync(`static${t}`));
+      const nasaId = frame?.nasa_id ?? ref.nasa_id;
+      out[site][ring] = { image, thumb: thumb ?? image, ...(nasaId ? { nasa_id: nasaId } : {}) };
+    }
+  }
+  await fs.writeFile(ANNOTATION_SIDECAR, JSON.stringify(out, null, 2) + '\n');
+  console.log(`annotations: ${Object.keys(out).length} sites → ${ANNOTATION_SIDECAR}`);
+}
+
 async function main() {
   const args = process.argv.slice(2);
+  if (args.includes('--annotations')) return annotations(args.includes('--skip-download'));
   const only = args.includes('--rover') ? args[args.indexOf('--rover') + 1] : undefined;
   const skipDownload = args.includes('--skip-download');
   const list = (JSON.parse(await fs.readFile(LIST, 'utf8')) as PhotoSpec[]).filter(

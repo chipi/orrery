@@ -250,6 +250,7 @@ const validateCislunarPhaseScienceMap = ajv.compile(
 const validateTraverse = ajv.compile(loadSchema('traverse.schema.json'));
 const validateTraverseRoutePatches = ajv.compile(loadSchema('traverse-route-patches.schema.json'));
 const validateTraverseRoutePhotos = ajv.compile(loadSchema('traverse-route-photos.schema.json'));
+const validateMoonAnnotationPhotos = ajv.compile(loadSchema('moon-annotation-photos.schema.json'));
 const validateSiteStory = ajv.compile(loadSchema('site-story.schema.json'));
 const validateSiteStoriesIndex = ajv.compile(loadSchema('site-stories-index.schema.json'));
 
@@ -731,6 +732,30 @@ for (const dir of ['mars-traverses', 'moon-traverses']) {
           ? validateTraverseRoutePhotos
           : validateTraverse,
     );
+  }
+}
+// Apollo ring photos: site → annotation id → served image + card thumb, all on disk.
+{
+  const annPath = join(DATA_ROOT, 'moon-annotation-photos.json');
+  validateFile(annPath, validateMoonAnnotationPhotos);
+  if (existsSync(annPath)) {
+    const sites = readJson(annPath) as Record<
+      string,
+      Record<string, { image: string; thumb: string }>
+    >;
+    for (const [site, rings] of Object.entries(sites)) {
+      for (const [ring, p] of Object.entries(rings)) {
+        for (const rel of [p.image, p.thumb]) {
+          if (existsSync(join(DATA_ROOT, '..', rel))) {
+            passed++;
+          } else {
+            failed++;
+            console.error('\n  ✗ moon-annotation-photos.json');
+            console.error(`      ${site}/${ring}: file missing on disk: ${rel}`);
+          }
+        }
+      }
+    }
   }
 }
 // launches-historic/<decade>.json share the launches.json manifest shape.

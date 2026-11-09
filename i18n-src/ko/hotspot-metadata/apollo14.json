@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 하강단 (Antares)",
+      "label_short": "LM Antares",
+      "explain": "Apollo 14 달 착륙선 Antares의 아래쪽 절반. 1971년 2월 착륙 뒤 달에 남겨졌다."
+    }
+  ]
+}

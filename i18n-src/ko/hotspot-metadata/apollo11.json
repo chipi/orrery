@@ -2,23 +2,21 @@
   "hotspot_annotations": [
     {
       "id": "lm-descent-stage",
-      "label": "LM 하강단 (Eagle)"
+      "label": "LM 하강단 (Eagle)",
+      "label_short": "LM Eagle",
+      "explain": "Apollo 11 달 착륙선 Eagle의 아래쪽 절반. 1969년 7월 착륙 뒤 상승단이 승무원을 태우고 이륙한 후에도 달에 남았다."
     },
     {
-      "id": "us-flag",
-      "label": "미국 국기 (LM에서 서쪽으로 ~8 m에 꽂음)"
+      "id": "pse",
+      "label": "수동 지진계 (PSEP)",
+      "label_short": "PSEP",
+      "explain": "초기 Apollo 과학 실험 패키지(EASEP)의 수동 지진 실험 장치(PSEP). 달 지진과 충돌을 기록하기 위해 1969년 7월 21일 달 착륙선 남쪽에 설치되었다."
     },
     {
       "id": "lrrr",
-      "label": "레이저 거리 측정 반사경 (LRRR)"
-    },
-    {
-      "id": "easep",
-      "label": "EASEP (간소화된 ALSEP 장비)"
-    },
-    {
-      "id": "plaque",
-      "label": "\"우리는 모든 인류를 위해 평화롭게 왔다\" 명판"
+      "label": "레이저 거리 측정 반사경 (LRRR)",
+      "label_short": "레이저 반사경",
+      "explain": "Apollo 11이 남긴 레이저 거리 측정 반사경(LRRR). 지구의 관측소가 달에서 되돌아온 레이저 펄스의 시간을 잴 수 있게 해 준다. 지진계 패키지에서 북북서쪽으로 약 5 m 떨어진 곳에 놓였다."
     }
   ],
   "panorama_caption": "고요의 기지, EVA-1. 버즈 올드린이 착륙 직후 LM Eagle과 미국 국기를 촬영했다. LM 주변에 보이는 Hasselblad 이음매와 색 번짐은 공개된 모자이크의 일부다.",

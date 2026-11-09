@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Степен за спуштање лунарног модула LM (Antares)",
+      "label_short": "LM Antares",
+      "explain": "Доња половина лунарног модула Antares мисије Apollo 14, остављена на Месецу после слетања у фебруару 1971."
+    }
+  ]
+}

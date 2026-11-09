@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Estágio de descida do LM (Challenger)",
+      "label_short": "LM Challenger",
+      "explain": "A metade inferior do módulo lunar Challenger da Apollo 17, deixada na Lua após o pouso de dezembro de 1972, o último pouso tripulado até hoje."
+    },
+    {
+      "id": "lrv",
+      "label": "Veículo lunar (LRV)",
+      "label_short": "LRV",
+      "explain": "O veículo lunar (LRV) da Apollo 17. Aqui está o rover como o LROC o fotografa hoje, deixado na Lua após a missão."
+    }
+  ],
   "panorama_caption": "O local do ALSEP no vale Taurus-Littrow, EVA-1 (12 de dezembro de 1972): o pacote de experimentos, o Veículo Lunar de Exploração e os maciços do vale, no panorama colorido de Jack Schmitt. O último pouso da Apollo.",
   "panorama_annotations": [
     {

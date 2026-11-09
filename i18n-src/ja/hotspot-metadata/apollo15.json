@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Falcon）",
+      "label_short": "LM Falcon",
+      "explain": "Apollo 15 の月着陸船 Falcon の下半分。1971年7月の着陸後、月面に残された。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央ステーション",
+      "label_short": "ALSEP",
+      "explain": "Apollo 15 の月面実験パッケージ（ALSEP）。1971年7月31日に設置された。NASA が挙げる機器は、受動地震計、磁力計、太陽風分光計、超熱イオン検出器、冷陰極イオンゲージ、ダスト検出器、熱流量実験装置。"
+    },
+    {
+      "id": "lrv",
+      "label": "月面走行車（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 15 は月面走行車（LRV）を初めて搭載したミッション。ここは、ミッション後に月面に残されたローバーを、今日 LROC が撮影している場所である。"
+    }
+  ]
+}

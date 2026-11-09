@@ -2,23 +2,21 @@
   "hotspot_annotations": [
     {
       "id": "lm-descent-stage",
-      "label": "LM 下降级（Eagle）"
+      "label": "LM 下降级（Eagle）",
+      "label_short": "LM Eagle",
+      "explain": "Apollo 11 登月舱 Eagle 的下半部分。1969 年 7 月着陆后，上升级载着乘组离开，下降级留在了月球上。"
     },
     {
-      "id": "us-flag",
-      "label": "美国国旗（插在 LM 以西约 8 米处）"
+      "id": "pse",
+      "label": "被动地震仪（PSEP）",
+      "label_short": "PSEP",
+      "explain": "早期 Apollo 科学实验包（EASEP）中的被动地震实验装置（PSEP），1969 年 7 月 21 日安放在登月舱以南，用来记录月震和撞击。"
     },
     {
       "id": "lrrr",
-      "label": "激光测距反射器（LRRR）"
-    },
-    {
-      "id": "easep",
-      "label": "EASEP（简化版 ALSEP 仪器包）"
-    },
-    {
-      "id": "plaque",
-      "label": "「我们为全人类和平而来」纪念牌"
+      "label": "激光测距反射器（LRRR）",
+      "label_short": "激光反射器",
+      "explain": "Apollo 11 留下的激光测距反射器阵列（LRRR）：地球上的天文台可以测量被它从月球反射回来的激光脉冲的往返时间。它位于地震仪装置西北偏北约 5 m 处。"
     }
   ],
   "panorama_caption": "静海基地，EVA-1。巴兹·奥尔德林在着陆后不久拍下了 LM Eagle 和美国国旗。LM 附近可见的 Hasselblad 拼接缝和色差是已发布拼接图的一部分。",

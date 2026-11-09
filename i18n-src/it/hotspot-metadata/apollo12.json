@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "La metà inferiore del modulo lunare Intrepid dell'Apollo 12, rimasta sulla Luna dopo l'allunaggio del novembre 1969, vicino alla sonda Surveyor 3 arrivata prima."
+    },
+    {
+      "id": "alsep",
+      "label": "Stazione centrale ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Il pacchetto di esperimenti sulla superficie lunare dell'Apollo 12 (ALSEP), dispiegato il 19 novembre 1969. Tra i suoi strumenti c'erano un sismometro passivo, un magnetometro e uno spettrometro del vento solare, tutti collegati via cavo alla stazione centrale."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Lander Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Lander robotico della NASA, posatosi il 20 aprile 1967 sul pendio interno di un piccolo cratere. L'Apollo 12 allunò a circa 160 m da esso nel novembre 1969 e il suo equipaggio asportò circa 10 kg di parti, tra cui la telecamera, il 20 novembre."
+    }
+  ]
+}

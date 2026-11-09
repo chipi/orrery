@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM-Abstiegsstufe (Antares)",
+      "label_short": "LM Antares",
+      "explain": "Die untere Hälfte der Mondlandefähre Antares von Apollo 14. Sie blieb nach der Landung im Februar 1971 auf dem Mond zurück."
+    }
+  ]
+}

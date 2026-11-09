@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Daaltrap van de LM (Orion)",
+      "label_short": "LM Orion",
+      "explain": "De onderste helft van de maanlander Orion van Apollo 16, die na de landing van april 1972 op de Maan achterbleef."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-centraalstation",
+      "label_short": "ALSEP",
+      "explain": "Het wetenschappelijke instrumentenpakket voor het maanoppervlak van Apollo 16 (ALSEP), ingeschakeld op 21 april 1972. Het bevatte een passieve seismometer, een actieve seismometer, een magnetometer en een warmtestroomexperiment; dat laatste ging tijdens de eerste maanwandeling verloren toen de kabel brak."
+    },
+    {
+      "id": "lrv",
+      "label": "Maanrover (LRV)",
+      "label_short": "LRV",
+      "explain": "Het Lunar Roving Vehicle (LRV) van Apollo 16. Dit is waar LROC de rover tegenwoordig vastlegt, achtergelaten op de Maan na de missie."
+    }
+  ]
+}

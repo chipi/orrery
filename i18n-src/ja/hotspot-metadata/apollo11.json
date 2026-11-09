@@ -2,23 +2,21 @@
   "hotspot_annotations": [
     {
       "id": "lm-descent-stage",
-      "label": "LM 降下段（Eagle）"
+      "label": "LM 降下段（Eagle）",
+      "label_short": "LM Eagle",
+      "explain": "Apollo 11 の月着陸船 Eagle の下半分。1969年7月の着陸後、上昇段が乗組員を乗せて離陸したあとも月面に残った。"
     },
     {
-      "id": "us-flag",
-      "label": "米国旗（LM の約 8 m 西に設置）"
+      "id": "pse",
+      "label": "受動地震計（PSEP）",
+      "label_short": "PSEP",
+      "explain": "初期アポロ科学実験パッケージ（EASEP）の受動地震実験装置（PSEP）。月震や衝突を記録するため、1969年7月21日に月着陸船の南側に設置された。"
     },
     {
       "id": "lrrr",
-      "label": "レーザー測距用反射鏡（LRRR）"
-    },
-    {
-      "id": "easep",
-      "label": "EASEP（簡易版 ALSEP パッケージ）"
-    },
-    {
-      "id": "plaque",
-      "label": "「全人類のために平和のうちに来た」の銘板"
+      "label": "レーザー測距用反射鏡（LRRR）",
+      "label_short": "反射鏡（LRRR）",
+      "explain": "Apollo 11 が残したレーザー測距用の反射鏡（LRRR）。地球の観測所が、月から跳ね返ってきたレーザーパルスの時間を測れるようにする。地震計パッケージの北北西約5 mに置かれた。"
     }
   ],
   "panorama_caption": "静かの基地、EVA-1。バズ・オルドリンが着陸直後に LM Eagle と米国旗を撮影した。LM 付近に見える Hasselblad 画像のつなぎ目と色のずれは、公開されたモザイクの一部である。",

@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Antares）",
+      "label_short": "LM Antares",
+      "explain": "Apollo 14 の月着陸船 Antares の下半分。1971年2月の着陸後、月面に残された。"
+    }
+  ]
+}

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Etapa de descenso del LM (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "La mitad inferior del módulo lunar Intrepid del Apollo 12, que quedó en la Luna tras el alunizaje de noviembre de 1969, cerca de la sonda Surveyor 3, anterior."
+    },
+    {
+      "id": "alsep",
+      "label": "Estación central del ALSEP",
+      "label_short": "ALSEP",
+      "explain": "El paquete de experimentos de la superficie lunar del Apollo 12 (ALSEP), desplegado el 19 de noviembre de 1969. Entre sus instrumentos había un sismómetro pasivo, un magnetómetro y un espectrómetro de viento solar, todos conectados por cable a la estación central."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Módulo de aterrizaje Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Módulo de aterrizaje robótico de la NASA que se posó el 20 de abril de 1967 en la ladera interior de un pequeño cráter. El Apollo 12 alunizó a unos 160 m de él en noviembre de 1969 y su tripulación retiró unos 10 kg de piezas, entre ellas la cámara de televisión, el 20 de noviembre."
+    }
+  ]
+}

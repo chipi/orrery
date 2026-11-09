@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM का अवतरण चरण (Antares)",
+      "label_short": "LM Antares",
+      "explain": "Apollo 14 के लूनर मॉड्यूल Antares का निचला आधा हिस्सा, जो फ़रवरी 1971 में उतरने के बाद चंद्रमा पर रह गया।"
+    }
+  ]
+}

@@ -2,23 +2,21 @@
   "hotspot_annotations": [
     {
       "id": "lm-descent-stage",
-      "label": "Stadio di discesa del LM (Eagle)"
+      "label": "Stadio di discesa del LM (Eagle)",
+      "label_short": "LM Eagle",
+      "explain": "La metà inferiore del modulo lunare Eagle dell'Apollo 11. Rimase sulla Luna quando lo stadio di risalita portò via l'equipaggio dopo l'allunaggio del luglio 1969."
     },
     {
-      "id": "us-flag",
-      "label": "Bandiera USA (piantata ~8 m a ovest del LM)"
+      "id": "pse",
+      "label": "Sismometro passivo (PSEP)",
+      "label_short": "PSEP",
+      "explain": "L'esperimento sismico passivo (PSEP) del pacchetto EASEP, installato a sud del modulo lunare il 21 luglio 1969 per registrare terremoti lunari e impatti."
     },
     {
       "id": "lrrr",
-      "label": "Retroriflettore laser (LRRR)"
-    },
-    {
-      "id": "easep",
-      "label": "EASEP (pacchetto ALSEP semplificato)"
-    },
-    {
-      "id": "plaque",
-      "label": "Targa «Siamo venuti in pace per tutta l'umanità»"
+      "label": "Retroriflettore laser (LRRR)",
+      "label_short": "Retroriflettore",
+      "explain": "Il retroriflettore laser (LRRR) lasciato dall'Apollo 11: un riflettore che permette agli osservatori sulla Terra di cronometrare gli impulsi laser rimandati indietro dalla Luna. Si trova a circa 5 m a nord-nord-ovest del pacchetto del sismometro."
     }
   ],
   "panorama_caption": "Base della Tranquillità, EVA-1. Buzz Aldrin fotografò il LM Eagle e la bandiera USA poco dopo l'allunaggio. Le cuciture Hasselblad visibili e le giunture cromatiche intorno al LM fanno parte del mosaico pubblicato.",

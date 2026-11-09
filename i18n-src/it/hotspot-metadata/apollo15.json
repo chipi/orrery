@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Falcon)",
+      "label_short": "LM Falcon",
+      "explain": "La metà inferiore del modulo lunare Falcon dell'Apollo 15, rimasta sulla Luna dopo l'allunaggio del luglio 1971."
+    },
+    {
+      "id": "alsep",
+      "label": "Stazione centrale ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Il pacchetto di esperimenti sulla superficie lunare dell'Apollo 15 (ALSEP), dispiegato il 31 luglio 1971. Strumenti elencati dalla NASA: sismometro passivo, magnetometro, spettrometro del vento solare, rivelatore di ioni sovratermici, misuratore di ioni a catodo freddo, rivelatore di polvere ed esperimento sul flusso di calore."
+    },
+    {
+      "id": "lrv",
+      "label": "Rover lunare (LRV)",
+      "label_short": "LRV",
+      "explain": "L'Apollo 15 fu la prima missione a portare un rover lunare (LRV). Qui si vede il rover come lo fotografa oggi LROC, lasciato sulla Luna dopo la missione."
+    }
+  ]
+}

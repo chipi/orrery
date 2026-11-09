@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "مرحلة الهبوط في LM (Antares)",
+      "label_short": "LM Antares",
+      "explain": "النصف السفلي من المركبة القمرية Antares التابعة لـ Apollo 14، تُرك على القمر بعد الهبوط في فبراير 1971."
+    }
+  ]
+}

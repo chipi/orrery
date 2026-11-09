@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 下降级（Challenger）",
+      "label_short": "LM Challenger",
+      "explain": "Apollo 17 登月舱 Challenger 的下半部分，1972 年 12 月着陆后留在月球上，这也是迄今最后一次载人登月。"
+    },
+    {
+      "id": "lrv",
+      "label": "月球车（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 17 的月球车（LRV）。图中是 LROC 如今拍到的这辆月球车，任务结束后它被留在了月球上。"
+    }
+  ],
   "panorama_caption": "陶拉斯-利特罗谷的 ALSEP 布设点，EVA-1（1972 年 12 月 12 日）：实验装置组、月球车和山谷周围的山体，杰克·施密特拍摄的彩色全景图。阿波罗最后一次登月。",
   "panorama_annotations": [
     {

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Étage de descente du LM (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "La moitié inférieure du module lunaire Intrepid d'Apollo 12, restée sur la Lune après l'alunissage de novembre 1969, près de la sonde Surveyor 3 arrivée plus tôt."
+    },
+    {
+      "id": "alsep",
+      "label": "Station centrale de l'ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Le paquet d'expériences de surface lunaire d'Apollo 12 (ALSEP), déployé le 19 novembre 1969. Ses instruments comprenaient un sismomètre passif, un magnétomètre et un spectromètre de vent solaire, tous reliés par câble à la station centrale."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Atterrisseur Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Atterrisseur robotique de la NASA posé le 20 avril 1967 sur la pente intérieure d'un petit cratère. Apollo 12 s'est posé à environ 160 m de lui en novembre 1969, et son équipage en a retiré environ 10 kg de pièces, dont la caméra de télévision, le 20 novembre."
+    }
+  ]
+}

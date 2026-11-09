@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Etapa de descenso del LM (Falcon)",
+      "label_short": "LM Falcon",
+      "explain": "La mitad inferior del módulo lunar Falcon del Apollo 15, que quedó en la Luna tras el alunizaje de julio de 1971."
+    },
+    {
+      "id": "alsep",
+      "label": "Estación central del ALSEP",
+      "label_short": "ALSEP",
+      "explain": "El paquete de experimentos de la superficie lunar del Apollo 15 (ALSEP), desplegado el 31 de julio de 1971. Instrumentos que enumera la NASA: sismómetro pasivo, magnetómetro, espectrómetro de viento solar, detector de iones supratérmicos, medidor de iones de cátodo frío, detector de polvo y un experimento de flujo de calor."
+    },
+    {
+      "id": "lrv",
+      "label": "Vehículo lunar (LRV)",
+      "label_short": "LRV",
+      "explain": "El Apollo 15 fue la primera misión que llevó un vehículo lunar (LRV). Aquí se ve el róver tal como lo fotografía hoy el LROC, abandonado en la Luna al terminar la misión."
+    }
+  ]
+}

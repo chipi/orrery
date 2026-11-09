@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 下降级（Orion）",
+      "label_short": "LM Orion",
+      "explain": "Apollo 16 登月舱 Orion 的下半部分，1972 年 4 月着陆后留在月球上。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央站",
+      "label_short": "ALSEP",
+      "explain": "Apollo 16 月面实验包（ALSEP），1972 年 4 月 21 日启动。它载有被动地震仪、主动地震仪、磁力计和热流实验装置；热流实验装置在第一次月面行走时因电缆被扯断而失效。"
+    },
+    {
+      "id": "lrv",
+      "label": "月球车（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 16 的月球车（LRV）。图中是 LROC 如今拍到的这辆月球车，任务结束后它被留在了月球上。"
+    }
+  ]
+}

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Estágio de descida do LM (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "A metade inferior do módulo lunar Intrepid da Apollo 12, deixada na Lua após o pouso de novembro de 1969, perto da sonda Surveyor 3, que chegara antes."
+    },
+    {
+      "id": "alsep",
+      "label": "Estação central do ALSEP",
+      "label_short": "ALSEP",
+      "explain": "O pacote de experimentos da superfície lunar da Apollo 12 (ALSEP), instalado em 19 de novembro de 1969. Seus instrumentos incluíam um sismômetro passivo, um magnetômetro e um espectrômetro de vento solar, todos ligados por cabo à estação central."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Módulo de pouso Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Módulo de pouso robótico da NASA que pousou em 20 de abril de 1967 na encosta interna de uma pequena cratera. A Apollo 12 pousou a cerca de 160 m dele em novembro de 1969, e sua tripulação retirou cerca de 10 kg de peças, incluindo a câmera de TV, em 20 de novembro."
+    }
+  ]
+}

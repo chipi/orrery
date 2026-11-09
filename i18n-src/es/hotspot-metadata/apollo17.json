@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Etapa de descenso del LM (Challenger)",
+      "label_short": "LM Challenger",
+      "explain": "La mitad inferior del módulo lunar Challenger del Apollo 17, que quedó en la Luna tras el alunizaje de diciembre de 1972, el último aterrizaje tripulado hasta ahora."
+    },
+    {
+      "id": "lrv",
+      "label": "Vehículo lunar (LRV)",
+      "label_short": "LRV",
+      "explain": "El vehículo lunar (LRV) del Apollo 17. Aquí se ve el róver tal como lo fotografía hoy el LROC, abandonado en la Luna al terminar la misión."
+    }
+  ],
   "panorama_caption": "El emplazamiento ALSEP en el valle Taurus-Littrow, EVA-1 (12 de diciembre de 1972): el paquete de experimentos, el vehículo lunar itinerante y los macizos del valle, en la panorámica en color de Jack Schmitt. El último alunizaje de Apollo.",
   "panorama_annotations": [
     {

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Daaltrap van de LM (Falcon)",
+      "label_short": "LM Falcon",
+      "explain": "De onderste helft van de maanlander Falcon van Apollo 15, die na de landing van juli 1971 op de Maan achterbleef."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-centraalstation",
+      "label_short": "ALSEP",
+      "explain": "Het wetenschappelijke instrumentenpakket voor het maanoppervlak van Apollo 15 (ALSEP), uitgezet op 31 juli 1971. Door NASA genoemde instrumenten: passieve seismometer, magnetometer, zonnewindspectrometer, detector voor suprathermische ionen, ionenmeter met koude kathode, stofdetector en een warmtestroomexperiment."
+    },
+    {
+      "id": "lrv",
+      "label": "Maanrover (LRV)",
+      "label_short": "LRV",
+      "explain": "Apollo 15 was de eerste missie met een Lunar Roving Vehicle (LRV). Dit is waar LROC de rover tegenwoordig vastlegt, achtergelaten op de Maan na de missie."
+    }
+  ]
+}

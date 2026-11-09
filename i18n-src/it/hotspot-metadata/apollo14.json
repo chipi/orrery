@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Antares)",
+      "label_short": "LM Antares",
+      "explain": "La metà inferiore del modulo lunare Antares dell'Apollo 14, rimasta sulla Luna dopo l'allunaggio del febbraio 1971."
+    }
+  ]
+}

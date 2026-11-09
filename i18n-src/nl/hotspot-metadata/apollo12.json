@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Daaltrap van de LM (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "De onderste helft van de maanlander Intrepid van Apollo 12, die na de landing van november 1969 op de Maan achterbleef, vlak bij de eerder geland sonde Surveyor 3."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-centraalstation",
+      "label_short": "ALSEP",
+      "explain": "Het wetenschappelijke instrumentenpakket voor het maanoppervlak van Apollo 12 (ALSEP), uitgezet op 19 november 1969. Tot de instrumenten behoorden een passieve seismometer, een magnetometer en een zonnewindspectrometer, allemaal met kabels verbonden met het centraalstation."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Lander Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Robotische lander van NASA die op 20 april 1967 neerkwam op de binnenhelling van een kleine krater. Apollo 12 landde in november 1969 op ongeveer 160 m ervandaan, en de bemanning haalde op 20 november zo'n 10 kg aan onderdelen weg, waaronder de televisiecamera."
+    }
+  ]
+}

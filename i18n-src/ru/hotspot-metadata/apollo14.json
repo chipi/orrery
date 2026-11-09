@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Посадочная ступень LM (Antares)",
+      "label_short": "LM Antares",
+      "explain": "Нижняя половина лунного модуля Antares миссии Apollo 14, оставшаяся на Луне после посадки в феврале 1971 года."
+    }
+  ]
+}

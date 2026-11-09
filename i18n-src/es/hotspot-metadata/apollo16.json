@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Etapa de descenso del LM (Orion)",
+      "label_short": "LM Orion",
+      "explain": "La mitad inferior del módulo lunar Orion del Apollo 16, que quedó en la Luna tras el alunizaje de abril de 1972."
+    },
+    {
+      "id": "alsep",
+      "label": "Estación central del ALSEP",
+      "label_short": "ALSEP",
+      "explain": "El paquete de experimentos de la superficie lunar del Apollo 16 (ALSEP), puesto en marcha el 21 de abril de 1972. Llevaba un sismómetro pasivo, un sismómetro activo, un magnetómetro y un experimento de flujo de calor; este último se perdió en el primer paseo lunar al romperse su cable."
+    },
+    {
+      "id": "lrv",
+      "label": "Vehículo lunar (LRV)",
+      "label_short": "LRV",
+      "explain": "El vehículo lunar (LRV) del Apollo 16. Aquí se ve el róver tal como lo fotografía hoy el LROC, abandonado en la Luna al terminar la misión."
+    }
+  ]
+}

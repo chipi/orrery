@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM-Abstiegsstufe (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "Die untere Hälfte der Mondlandefähre Intrepid von Apollo 12. Sie blieb nach der Landung im November 1969 auf dem Mond zurück, nahe der früher gelandeten Sonde Surveyor 3."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-Zentralstation",
+      "label_short": "ALSEP",
+      "explain": "Das Apollo-12-Experimentpaket für die Mondoberfläche (ALSEP), am 19. November 1969 aufgebaut. Zu seinen Instrumenten gehörten ein passives Seismometer, ein Magnetometer und ein Sonnenwind-Spektrometer, alle per Kabel mit der Zentralstation verbunden."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Lander Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Roboterlander der NASA, der am 20. April 1967 an der Innenwand eines kleinen Kraters aufsetzte. Apollo 12 landete im November 1969 etwa 160 m davon entfernt; die Besatzung baute am 20. November rund 10 kg Teile ab, darunter die Fernsehkamera."
+    }
+  ]
+}

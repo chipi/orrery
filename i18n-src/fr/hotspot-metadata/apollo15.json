@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Étage de descente du LM (Falcon)",
+      "label_short": "LM Falcon",
+      "explain": "La moitié inférieure du module lunaire Falcon d'Apollo 15, restée sur la Lune après l'alunissage de juillet 1971."
+    },
+    {
+      "id": "alsep",
+      "label": "Station centrale de l'ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Le paquet d'expériences de surface lunaire d'Apollo 15 (ALSEP), déployé le 31 juillet 1971. Instruments listés par la NASA : sismomètre passif, magnétomètre, spectromètre de vent solaire, détecteur d'ions suprathermiques, jauge à ions à cathode froide, détecteur de poussière et expérience de flux de chaleur."
+    },
+    {
+      "id": "lrv",
+      "label": "Rover lunaire (LRV)",
+      "label_short": "LRV",
+      "explain": "Apollo 15 fut la première mission à emporter un rover lunaire (LRV). Voici l'endroit où LROC photographie aujourd'hui le rover, abandonné sur la Lune après la mission."
+    }
+  ]
+}

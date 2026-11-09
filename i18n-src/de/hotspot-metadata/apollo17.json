@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM-Abstiegsstufe (Challenger)",
+      "label_short": "LM Challenger",
+      "explain": "Die untere Hälfte der Mondlandefähre Challenger von Apollo 17. Sie blieb nach der Landung im Dezember 1972 auf dem Mond zurück, der bisher letzten bemannten Landung."
+    },
+    {
+      "id": "lrv",
+      "label": "Mondauto (LRV)",
+      "label_short": "LRV",
+      "explain": "Das Lunar Roving Vehicle (LRV) von Apollo 17. Hier bildet LROC den Rover heute ab, der nach der Mission auf dem Mond zurückgelassen wurde."
+    }
+  ],
   "panorama_caption": "Der ALSEP-Standort im Taurus-Littrow-Tal, EVA-1 (12. Dezember 1972): das Experimentpaket, das Mondauto (LRV) und die Bergmassive des Tals, Jack Schmitts Farbpanorama. Die letzte Apollo-Landung.",
   "panorama_annotations": [
     {

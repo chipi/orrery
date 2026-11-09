@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Orion)",
+      "label_short": "LM Orion",
+      "explain": "La metà inferiore del modulo lunare Orion dell'Apollo 16, rimasta sulla Luna dopo l'allunaggio dell'aprile 1972."
+    },
+    {
+      "id": "alsep",
+      "label": "Stazione centrale ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Il pacchetto di esperimenti sulla superficie lunare dell'Apollo 16 (ALSEP), acceso il 21 aprile 1972. Comprendeva un sismometro passivo, un sismometro attivo, un magnetometro e un esperimento sul flusso di calore; quest'ultimo andò perso durante la prima passeggiata lunare, quando il suo cavo si spezzò."
+    },
+    {
+      "id": "lrv",
+      "label": "Rover lunare (LRV)",
+      "label_short": "LRV",
+      "explain": "Il rover lunare (LRV) dell'Apollo 16. Qui si vede il rover come lo fotografa oggi LROC, lasciato sulla Luna dopo la missione."
+    }
+  ]
+}

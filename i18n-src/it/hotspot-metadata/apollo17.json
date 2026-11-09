@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Challenger)",
+      "label_short": "LM Challenger",
+      "explain": "La metà inferiore del modulo lunare Challenger dell'Apollo 17, rimasta sulla Luna dopo l'allunaggio del dicembre 1972, l'ultimo allunaggio con equipaggio finora."
+    },
+    {
+      "id": "lrv",
+      "label": "Rover lunare (LRV)",
+      "label_short": "LRV",
+      "explain": "Il rover lunare (LRV) dell'Apollo 17. Qui si vede il rover come lo fotografa oggi LROC, lasciato sulla Luna dopo la missione."
+    }
+  ],
   "panorama_caption": "Il sito ALSEP nella valle Taurus-Littrow, EVA-1 (12 dicembre 1972): il pacchetto di esperimenti, il Lunar Roving Vehicle e i massicci della valle, nel panorama a colori di Jack Schmitt. L'ultimo allunaggio Apollo.",
   "panorama_annotations": [
     {

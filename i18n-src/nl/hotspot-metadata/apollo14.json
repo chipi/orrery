@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Daaltrap van de LM (Antares)",
+      "label_short": "LM Antares",
+      "explain": "De onderste helft van de maanlander Antares van Apollo 14, die na de landing van februari 1971 op de Maan achterbleef."
+    }
+  ]
+}

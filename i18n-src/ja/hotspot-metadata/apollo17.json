@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Challenger）",
+      "label_short": "LM Challenger",
+      "explain": "Apollo 17 の月着陸船 Challenger の下半分。1972年12月の着陸後、月面に残された。これは現在までのところ最後の有人月面着陸である。"
+    },
+    {
+      "id": "lrv",
+      "label": "月面走行車（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 17 の月面走行車（LRV）。ここは、ミッション後に月面に残されたローバーを、今日 LROC が撮影している場所である。"
+    }
+  ],
   "panorama_caption": "タウルス・リットロウ渓谷のALSEP設置地点、EVA-1（1972年12月12日）。観測装置一式、月面車、谷を囲む山塊を写したジャック・シュミットのカラーパノラマ。アポロ最後の着陸。",
   "panorama_annotations": [
     {

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM-Abstiegsstufe (Orion)",
+      "label_short": "LM Orion",
+      "explain": "Die untere Hälfte der Mondlandefähre Orion von Apollo 16. Sie blieb nach der Landung im April 1972 auf dem Mond zurück."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-Zentralstation",
+      "label_short": "ALSEP",
+      "explain": "Das Apollo-16-Experimentpaket für die Mondoberfläche (ALSEP), am 21. April 1972 eingeschaltet. Es enthielt ein passives Seismometer, ein aktives Seismometer, ein Magnetometer und ein Wärmeflussexperiment; Letzteres ging beim ersten Mondspaziergang verloren, als sein Kabel riss."
+    },
+    {
+      "id": "lrv",
+      "label": "Mondauto (LRV)",
+      "label_short": "LRV",
+      "explain": "Das Lunar Roving Vehicle (LRV) von Apollo 16. Hier bildet LROC den Rover heute ab, der nach der Mission auf dem Mond zurückgelassen wurde."
+    }
+  ]
+}

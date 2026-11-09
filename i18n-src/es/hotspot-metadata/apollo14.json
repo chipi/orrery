@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Etapa de descenso del LM (Antares)",
+      "label_short": "LM Antares",
+      "explain": "La mitad inferior del módulo lunar Antares del Apollo 14, que quedó en la Luna tras el alunizaje de febrero de 1971."
+    }
+  ]
+}

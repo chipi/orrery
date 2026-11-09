@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Orion）",
+      "label_short": "LM Orion",
+      "explain": "Apollo 16 の月着陸船 Orion の下半分。1972年4月の着陸後、月面に残された。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央ステーション",
+      "label_short": "ALSEP",
+      "explain": "Apollo 16 の月面実験パッケージ（ALSEP）。1972年4月21日に起動した。受動地震計、能動地震計、磁力計、熱流量実験装置を搭載していたが、熱流量実験装置は最初の月面歩行でケーブルが切れて失われた。"
+    },
+    {
+      "id": "lrv",
+      "label": "月面走行車（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 16 の月面走行車（LRV）。ここは、ミッション後に月面に残されたローバーを、今日 LROC が撮影している場所である。"
+    }
+  ]
+}

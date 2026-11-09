@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Estágio de descida do LM (Antares)",
+      "label_short": "LM Antares",
+      "explain": "A metade inferior do módulo lunar Antares da Apollo 14, deixada na Lua após o pouso de fevereiro de 1971."
+    }
+  ]
+}

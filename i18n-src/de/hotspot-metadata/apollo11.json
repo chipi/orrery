@@ -3,32 +3,20 @@
     {
       "id": "lm-descent-stage",
       "label": "LM-Abstiegsstufe (Eagle)",
-      "lat_offset_m": 0,
-      "lon_offset_m": 0
+      "label_short": "LM Eagle",
+      "explain": "Die untere Hälfte der Mondlandefähre Eagle von Apollo 11. Sie blieb auf dem Mond zurück, als die Aufstiegsstufe die Besatzung nach der Landung im Juli 1969 wieder abhob."
     },
     {
-      "id": "us-flag",
-      "label": "US-Flagge (~8 m westlich des LM aufgestellt)",
-      "lat_offset_m": 2,
-      "lon_offset_m": -8
+      "id": "pse",
+      "label": "Passives Seismometer (PSEP)",
+      "label_short": "PSEP",
+      "explain": "Das Passive Seismische Experiment (PSEP) des EASEP-Pakets, am 21. Juli 1969 südlich der Mondlandefähre aufgestellt, um Mondbeben und Einschläge aufzuzeichnen."
     },
     {
       "id": "lrrr",
       "label": "Laser-Retroreflektor (LRRR)",
-      "lat_offset_m": -10,
-      "lon_offset_m": 14
-    },
-    {
-      "id": "easep",
-      "label": "EASEP (vereinfachtes ALSEP-Paket)",
-      "lat_offset_m": -15,
-      "lon_offset_m": 18
-    },
-    {
-      "id": "plaque",
-      "label": "Plakette: „Wir kamen in Frieden für die gesamte Menschheit\"",
-      "lat_offset_m": 0,
-      "lon_offset_m": 0
+      "label_short": "Retroreflektor",
+      "explain": "Der von Apollo 11 zurückgelassene Laser-Retroreflektor (LRRR): ein Reflektor, mit dem Observatorien auf der Erde die Laufzeit von Laserpulsen messen, die vom Mond zurückgeworfen werden. Er steht etwa 5 m nordnordwestlich des Seismometer-Pakets."
     }
   ],
   "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin fotografierte die LM Eagle und die US-Flagge kurz nach der Landung. Sichtbare Hasselblad-Nähte und farbige Stitching-Ränder an der LM gehören zum veröffentlichten Mosaik.",

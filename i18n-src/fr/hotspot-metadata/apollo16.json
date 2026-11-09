@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Étage de descente du LM (Orion)",
+      "label_short": "LM Orion",
+      "explain": "La moitié inférieure du module lunaire Orion d'Apollo 16, restée sur la Lune après l'alunissage d'avril 1972."
+    },
+    {
+      "id": "alsep",
+      "label": "Station centrale de l'ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Le paquet d'expériences de surface lunaire d'Apollo 16 (ALSEP), mis en marche le 21 avril 1972. Il comprenait un sismomètre passif, un sismomètre actif, un magnétomètre et une expérience de flux de chaleur ; cette dernière a été perdue lors de la première sortie lunaire, quand son câble s'est rompu."
+    },
+    {
+      "id": "lrv",
+      "label": "Rover lunaire (LRV)",
+      "label_short": "LRV",
+      "explain": "Le rover lunaire (LRV) d'Apollo 16. Voici l'endroit où LROC photographie aujourd'hui le rover, abandonné sur la Lune après la mission."
+    }
+  ]
+}

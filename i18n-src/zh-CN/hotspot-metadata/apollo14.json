@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 下降级（Antares）",
+      "label_short": "LM Antares",
+      "explain": "Apollo 14 登月舱 Antares 的下半部分，1971 年 2 月着陆后留在月球上。"
+    }
+  ]
+}

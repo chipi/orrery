@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 下降级（Intrepid）",
+      "label_short": "LM Intrepid",
+      "explain": "Apollo 12 登月舱 Intrepid 的下半部分，1969 年 11 月着陆后留在月球上，靠近此前着陆的 Surveyor 3 探测器。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央站",
+      "label_short": "ALSEP",
+      "explain": "Apollo 12 月面实验包（ALSEP），1969 年 11 月 19 日部署。它的仪器包括一台被动地震仪、一台磁力计和一台太阳风谱仪，全部通过电缆连接到中央站。"
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Surveyor 3 着陆器",
+      "label_short": "Surveyor 3",
+      "explain": "NASA 的机器人着陆器，1967 年 4 月 20 日降落在一个小型撞击坑的内坡上。1969 年 11 月，Apollo 12 在距它约 160 m 处着陆，乘组于 11 月 20 日拆下约 10 kg 的部件，其中包括电视摄像机。"
+    }
+  ]
+}

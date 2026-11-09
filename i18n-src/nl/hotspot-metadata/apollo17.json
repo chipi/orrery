@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Daaltrap van de LM (Challenger)",
+      "label_short": "LM Challenger",
+      "explain": "De onderste helft van de maanlander Challenger van Apollo 17, die na de landing van december 1972 op de Maan achterbleef, de tot nu toe laatste bemande landing."
+    },
+    {
+      "id": "lrv",
+      "label": "Maanrover (LRV)",
+      "label_short": "LRV",
+      "explain": "Het Lunar Roving Vehicle (LRV) van Apollo 17. Dit is waar LROC de rover tegenwoordig vastlegt, achtergelaten op de Maan na de missie."
+    }
+  ],
   "panorama_caption": "De ALSEP-locatie in de Taurus-Littrowvallei, EVA-1 (12 december 1972): het experimentenpakket, de Lunar Roving Vehicle en de bergmassieven van het dal, het kleurenpanorama van Jack Schmitt. De laatste Apollo-landing.",
   "panorama_annotations": [
     {

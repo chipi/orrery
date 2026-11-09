@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM-Abstiegsstufe (Falcon)",
+      "label_short": "LM Falcon",
+      "explain": "Die untere Hälfte der Mondlandefähre Falcon von Apollo 15. Sie blieb nach der Landung im Juli 1971 auf dem Mond zurück."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-Zentralstation",
+      "label_short": "ALSEP",
+      "explain": "Das Apollo-15-Experimentpaket für die Mondoberfläche (ALSEP), am 31. Juli 1971 aufgebaut. Von der NASA genannte Instrumente: passives Seismometer, Magnetometer, Sonnenwind-Spektrometer, Detektor für suprathermische Ionen, Kaltkathoden-Ionisationsmanometer, Staubdetektor und ein Wärmeflussexperiment."
+    },
+    {
+      "id": "lrv",
+      "label": "Mondauto (LRV)",
+      "label_short": "LRV",
+      "explain": "Apollo 15 war die erste Mission mit einem Lunar Roving Vehicle (LRV). Hier bildet LROC den Rover heute ab, der nach der Mission auf dem Mond zurückgelassen wurde."
+    }
+  ]
+}

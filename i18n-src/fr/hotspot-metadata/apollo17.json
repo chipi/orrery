@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Étage de descente du LM (Challenger)",
+      "label_short": "LM Challenger",
+      "explain": "La moitié inférieure du module lunaire Challenger d'Apollo 17, restée sur la Lune après l'alunissage de décembre 1972, le dernier alunissage habité à ce jour."
+    },
+    {
+      "id": "lrv",
+      "label": "Rover lunaire (LRV)",
+      "label_short": "LRV",
+      "explain": "Le rover lunaire (LRV) d'Apollo 17. Voici l'endroit où LROC photographie aujourd'hui le rover, abandonné sur la Lune après la mission."
+    }
+  ],
   "panorama_caption": "Le site ALSEP dans la vallée Taurus-Littrow, EVA-1 (12 décembre 1972) : l'ensemble d'expériences, le Lunar Roving Vehicle et les massifs de la vallée, le panorama couleur de Jack Schmitt. Le dernier alunissage d'Apollo.",
   "panorama_annotations": [
     {

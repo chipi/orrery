@@ -201,6 +201,10 @@ Browse: `https://<PROD_TAILNET_FQDN>:8443/` — full app, with the live `/data` 
 
 ## Rollback
 
+> `release_tag` rollback (redeploy the previous release, then fix forward): see
+> [rollback.md](rollback.md). It supersedes the "Full rollback" recipe below once
+> the input is in `deploy-prod.yml`.
+
 What a deploy is made of decides how it rolls back. The workflow only runs on
 `main` (`if: github.ref == 'refs/heads/main'` on the deploy job), so dispatching
 it from an older tag, branch or commit does nothing: the job is skipped. Every

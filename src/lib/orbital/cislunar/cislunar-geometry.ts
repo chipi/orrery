@@ -952,7 +952,10 @@ function buildFromWaypoints(
             type: 'tei_coast',
             start_met_days: waypoints[hi][0],
             end_met_days: waypoints[waypoints.length - 1][0],
-            points: points.slice(hi),
+            // The hold sits on the arrival-day Moon; the trip home leaves the Moon where it is
+            // when the stay ends. Starting from the held point drew a chord across the plot
+            // (Apollo 11: 245,000 km) that no spacecraft flew.
+            points: [moonEciPos(dep_day_sim + waypoints[hi][0]), ...points.slice(hi + 1)],
           });
         }
       } else {

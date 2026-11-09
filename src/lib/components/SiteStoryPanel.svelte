@@ -8,6 +8,7 @@
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
   import { getEssay } from '$lib/data/science';
   import { localHref } from '$lib/locale';
+  import type { Snippet } from 'svelte';
 
   // Localized titles for the canonical chapter ids — the story JSON
   // files use a fixed vocabulary of chapter.id values (hardware /
@@ -47,8 +48,10 @@
   type StoryProps = {
     story: SiteStory;
     onLightbox?: (src: string) => void;
+    /** Rendered between the intro paragraph and the first chapter. */
+    afterIntro?: Snippet;
   };
-  let { story, onLightbox = () => {} }: StoryProps = $props();
+  let { story, onLightbox = () => {}, afterIntro }: StoryProps = $props();
 
   // Index provenance by served path for O(1) badge lookups below.
   // The manifest may be absent (fresh checkout, script not yet run);
@@ -89,6 +92,7 @@
 
 <div class="story" data-testid="site-story-panel">
   <p class="intro">{story.intro}</p>
+  {#if afterIntro}{@render afterIntro()}{/if}
   {#each story.chapters as chapter (chapter.id)}
     <section class="chapter">
       <header class="chapter-head">

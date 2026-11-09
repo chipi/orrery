@@ -180,6 +180,12 @@
   import type { PlacedRing, Rect as RingRect } from '$lib/surface-scene/annotation-rings';
   import { routePatchFlatTarget } from '$lib/surface-scene/flat-patch-extent';
   import {
+    DETAIL_FLY_TARGET_R,
+    mobileDrawerHidden,
+    nationFilterAway,
+    shouldFlyToDetail,
+  } from '$lib/surface-scene/surface-view-state';
+  import {
     createSkybox,
     teardownPanoramaSkybox,
     type SkyboxHandle,
@@ -2378,7 +2384,7 @@
     // already at deep zoom so the button doesn't bounce on click.
     flyToDetail = (site: SurfaceSite) => {
       if (site.lat == null || site.lon == null) return;
-      if (camR < 32) return;
+      if (!shouldFlyToDetail(camR)) return;
       const v = latLonToUnitSphere(site.lat, site.lon);
       planetMesh.updateMatrixWorld(true);
       const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld);
@@ -2395,8 +2401,8 @@
       // 30.1) so the crosshair appears as soon as the fly-in completes —
       // the button is the shortcut straight to full detail, distinct from
       // the manual 3D zoom band (30.32 → 30.1) that wheel/pinch now expose.
-      flyToR = 30.08;
-      camRTarget = 30.08;
+      flyToR = DETAIL_FLY_TARGET_R;
+      camRTarget = DETAIL_FLY_TARGET_R;
       flyFromOffset.copy(focusOffset);
       flyToOffset.set(0, 0, 0);
       flyStart = performance.now();
@@ -5682,7 +5688,7 @@
         <EnterSkyButton onEnter={() => void launchSkyScene()} />
       {/if}
     </div>
-    {#if !flatPatchActive}
+    {#if !mobileDrawerHidden({ routeViewActive, flatPatchActive })}
       <!-- Hide the orbital controls in flat-patch detail (same as panorama);
            they otherwise overlap the true-scale provenance card. -->
       <MobileDrawerGroup
@@ -6071,10 +6077,14 @@ sample      ${debugInfo.projectedPxSample}`}
   {#if !panoramaActive}
     <div
       class="legend-3d"
-      class:legend-3d--away={!(
-        view === '2d' ||
-        (tagStageOn && altitudeKm >= config.radiusKm * 0.044)
-      )}
+      class:legend-3d--away={nationFilterAway({
+        view,
+        tagStageOn,
+        altitudeKm,
+        radiusKm: config.radiusKm,
+        routeViewActive,
+        flatPatchActive,
+      })}
       class:beside-panel={panelOpen}
       bind:this={legendEl}
       role="group"
@@ -6550,14 +6560,16 @@ sample      ${debugInfo.projectedPxSample}`}
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
       {:else if panelTab === 'story' && (panelStory || panelAnatomy.length > 0 || panelSequence)}
-        {#if panelAnatomy.length > 0 || panelSequence}
-          <SiteLandingPanel
-            anatomy={panelAnatomy}
-            sequence={panelSequence}
-            locale={localeFromPage(page)}
-            onOpen={(src) => (panelLightbox = src)}
-          />
-        {/if}
+        {#snippet landingGraphics()}
+          {#if panelAnatomy.length > 0 || panelSequence}
+            <SiteLandingPanel
+              anatomy={panelAnatomy}
+              sequence={panelSequence}
+              locale={localeFromPage(page)}
+              onOpen={(src) => (panelLightbox = src)}
+            />
+          {/if}
+        {/snippet}
         {#if panelStory}
           <SiteStoryPanel
             story={panelStory}
@@ -6565,7 +6577,10 @@ sample      ${debugInfo.projectedPxSample}`}
               panelLightbox = src;
               if (selected) trackGalleryImageOpen('site', selected.id);
             }}
+            afterIntro={landingGraphics}
           />
+        {:else}
+          {@render landingGraphics()}
         {/if}
       {:else if panelTab === 'journey'}
         {#if replayRange}

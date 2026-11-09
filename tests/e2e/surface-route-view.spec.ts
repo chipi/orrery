@@ -77,4 +77,43 @@ test.describe('Route-view — frame the whole traverse (#380)', () => {
     await expect(page.locator('[data-testid="exit-route-view"]')).toHaveCount(0);
     await expect(page.locator('[data-testid="view-route"]')).toHaveCount(0);
   });
+
+  test('mars / curiosity — route view hides the nations filter strip and the mobile drawer', async ({
+    page,
+  }) => {
+    await page.goto('/mars?site=curiosity');
+    await waitForScene(page);
+    await expect(page.locator('[data-testid="view-route"]')).toBeVisible({ timeout: 15000 });
+    await page.evaluate(() =>
+      (
+        window as unknown as { __surfaceSceneFrameRoute: (i: string) => void }
+      ).__surfaceSceneFrameRoute('curiosity'),
+    );
+    await expect(page.locator('.legend-3d')).toHaveClass(/legend-3d--away/, { timeout: 5000 });
+    await expect(page.locator('.legend-3d')).toBeHidden();
+    await expect(page.getByRole('button', { name: /nations/i })).toHaveCount(0);
+  });
+
+  test('mars / curiosity — Zoom in from the route view lands in the zoomed view and stays', async ({
+    page,
+    isMobile,
+  }) => {
+    // Mobile closes the panel on entering the route view; the button lives in it.
+    test.skip(!!isMobile, 'Zoom in button is in the (closed) panel on touch');
+    await page.goto('/mars?site=curiosity');
+    await waitForScene(page);
+    await expect(page.locator('[data-testid="view-route"]')).toBeVisible({ timeout: 15000 });
+    await page.evaluate(() =>
+      (
+        window as unknown as { __surfaceSceneFrameRoute: (i: string) => void }
+      ).__surfaceSceneFrameRoute('curiosity'),
+    );
+    await expect(page.locator('[data-testid="exit-route-view"]')).toBeVisible({ timeout: 15000 });
+    await page.locator('[data-testid="zoom-to-detail"]').dispatchEvent('click');
+    const flat = page.locator('.flat-patch-wrapper');
+    await expect(flat).toBeVisible({ timeout: 10000 });
+    await page.waitForTimeout(3000);
+    await expect(flat).toBeVisible();
+    await expect(page.locator('[data-testid="exit-zoom"]')).toBeVisible();
+  });
 });

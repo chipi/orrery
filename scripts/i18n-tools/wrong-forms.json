@@ -4,7 +4,9 @@
     {
       "loc": "ar",
       "re": "مهبط",
-      "why": "a landing site, not a lander (مركبة الهبوط)"
+      "why": "a landing site, not a lander (مركبة الهبوط)",
+      "allow": ["i18n-src/ar/hotspot-metadata/apollo15.json"],
+      "allow_why": "there مهبط is 'cathode' (مقياس أيونات بمهبط بارد, the cold-cathode ion gauge), not a landing site"
     },
     {
       "loc": "ar",

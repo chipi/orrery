@@ -1668,6 +1668,8 @@
   "panorama_fullscreen_unsupported_title": "Fullscreen not supported in this browser",
   "panorama_mode_aria_label": "Ground-view panorama mode — press ESC to return to orbit",
   "panorama_no_data_body": "No transmitted data covers this region — the visible pattern is synthetic fill honouring the historical artifact.",
+  "panorama_unphotographed_tag": "NOT PHOTOGRAPHED",
+  "panorama_unphotographed_body": "This direction was not photographed at this site — the panorama covers only part of the horizon. The dotted grid marks the gap.",
   "panorama_no_data_tag": "NO DATA",
   "panorama_synthetic_nadir_body": "This region below the horizon was not captured (or is blocked by the lander deck). The visible pattern is synthetic.",
   "panorama_synthetic_nadir_tag": "SYNTHETIC NADIR",

@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "この地平線以下の領域は撮影されていない(あるいは着陸機の機体に隠れています)。表示されているパターンは合成です。",
   "panorama_no_data_tag": "データなし",
   "panorama_no_data_body": "送信されたデータがこの領域を含んでいません — 表示されているパターンは歴史的記録を尊重する合成補完です。",
+  "panorama_unphotographed_tag": "未撮影",
+  "panorama_unphotographed_body": "この方向は本地点で撮影されていません。パノラマは地平線の一部しかカバーしていません。点線のグリッドが欠けた部分を示します。",
   "panorama_annotation_dismiss_aria": "注釈を閉じる",
   "panorama_cycler_prev_aria": "前のパノラマ",
   "panorama_cycler_next_aria": "次のパノラマ",

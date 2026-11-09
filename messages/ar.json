@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "لم تُلتقط هذه المنطقة تحت الأفق (أو تحجبها منصة مركبة الهبوط). النمط الظاهر اصطناعي.",
   "panorama_no_data_tag": "لا توجد بيانات",
   "panorama_no_data_body": "لا تغطي البيانات المُرسلة هذه المنطقة — النمط الظاهر تعبئة اصطناعية تكريمًا للأثر التاريخي.",
+  "panorama_unphotographed_tag": "لم يُصوَّر",
+  "panorama_unphotographed_body": "لم يُصوَّر هذا الاتجاه في هذا الموقع: لا تغطي الصورة البانورامية سوى جزء من الأفق. تُحدِّد الشبكة المنقَّطة الفجوة.",
   "panorama_annotation_dismiss_aria": "إغلاق التعليق",
   "panorama_cycler_prev_aria": "البانوراما السابقة",
   "panorama_cycler_next_aria": "البانوراما التالية",

@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "Esta zona bajo el horizonte no fue capturada (o está oculta por la plataforma del lander). El patrón visible es sintético.",
   "panorama_no_data_tag": "SIN DATOS",
   "panorama_no_data_body": "Ningún dato transmitido cubre esta zona — el patrón visible es un relleno sintético que honra el artefacto histórico.",
+  "panorama_unphotographed_tag": "NO FOTOGRAFIADO",
+  "panorama_unphotographed_body": "Esta dirección no se fotografió en este lugar: el panorama solo cubre parte del horizonte. La cuadrícula punteada marca el hueco.",
   "panorama_annotation_dismiss_aria": "Cerrar anotación",
   "panorama_cycler_prev_aria": "Panorama anterior",
   "panorama_cycler_next_aria": "Panorama siguiente",

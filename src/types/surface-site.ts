@@ -244,15 +244,19 @@ export interface PanoramaMetadata {
    */
   real_extent_pct_vertical?: number;
   /**
-   * Declared synthetic-region pitch ranges. When the camera's pitch
-   * falls inside one of these, the renderer overlays a
+   * Declared synthetic regions. When the camera's pitch (and, if the region
+   * declares one, its yaw) falls inside one of these, the renderer overlays a
    * "this region was not photographed" microcopy. Pitch in degrees,
-   * +90 = zenith, -90 = nadir, 0 = horizon.
+   * +90 = zenith, -90 = nadir, 0 = horizon. Yaw in the `?yaw=` convention
+   * (0–360); a range with min > max wraps through 0 (#289: the wedge a
+   * partial panorama never photographed is yaw 270 → 270 − coverage).
    */
   synthetic_regions?: Array<{
     pitch_min_deg: number;
     pitch_max_deg: number;
-    kind: 'synthetic_sky' | 'synthetic_nadir' | 'no_data';
+    azimuth_min_deg?: number;
+    azimuth_max_deg?: number;
+    kind: 'synthetic_sky' | 'synthetic_nadir' | 'no_data' | 'unphotographed';
   }>;
   /**
    * The panorama's 0° yaw direction in real-world terms (e.g.

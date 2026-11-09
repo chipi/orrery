@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { getAllowlistEntry } from '../license-allowlist';
 
 /**
  * Append Surface Hotspots Tier 2 patches to image-provenance.json
@@ -513,14 +514,27 @@ export function buildLrocProvenanceEntry(input: {
  * partial-360); we pad it to equirectangular 4096×2048 for the
  * skybox renderer — recorded in `modifications`.
  */
+/** Who published a Tier-3 panorama, by its licence (Soviet missions are "Roscosmos", as in the mission data). */
+const PANORAMA_AGENCY: Record<PanoramaLicense, { agency: string; fromAllowlist: boolean }> = {
+  'PD-NASA': { agency: 'NASA', fromAllowlist: false },
+  'CC-BY-4.0': { agency: 'CNSA', fromAllowlist: false },
+  'CNSA-EDU': { agency: 'CNSA', fromAllowlist: false },
+  'ISRO-EDU': { agency: 'ISRO', fromAllowlist: true },
+  'JAXA-OPEN': { agency: 'JAXA', fromAllowlist: true },
+  'PD-Russia': { agency: 'Roscosmos', fromAllowlist: true },
+  'SpaceIL-EDU': { agency: 'SpaceIL', fromAllowlist: true },
+};
+
+type PanoramaLicense =
+  'PD-NASA' | 'CNSA-EDU' | 'CC-BY-4.0' | 'ISRO-EDU' | 'JAXA-OPEN' | 'PD-Russia' | 'SpaceIL-EDU';
+
 export function buildPanoramaProvenanceEntry(input: {
   siteId: string;
   publicPath: string;
   sourceLabel: string;
   sourceUrl: string;
   attribution: string;
-  license:
-    'PD-NASA' | 'CNSA-EDU' | 'CC-BY-4.0' | 'ISRO-EDU' | 'JAXA-OPEN' | 'PD-Russia' | 'SpaceIL-EDU';
+  license: PanoramaLicense;
   caption: string;
   /** Output equirectangular dimensions (PRD-022 / ADR-074, #286 Phase
    *  1A). Defaults to 4096×2048 — marquee showcase sites pass 8192×4096
@@ -532,18 +546,25 @@ export function buildPanoramaProvenanceEntry(input: {
   gain?: number;
 }): ProvenanceEntry {
   const id = createHash('sha256').update(input.publicPath).digest('hex').slice(0, 16);
+  // ISRO / JAXA / Soviet / SpaceIL sources take their licence URL and rationale
+  // from the allowlist — every non-NASA licence used to get CNSA's, and the
+  // agency below read "CNSA" for Chandrayaan-3, SLIM and Luna 17 (0.9.8).
+  const allow = PANORAMA_AGENCY[input.license].fromAllowlist
+    ? getAllowlistEntry(input.license)
+    : undefined;
   const licenseUrl =
     input.license === 'PD-NASA'
       ? 'https://www.nasa.gov/nasa-brand-center/images-and-media/'
       : input.license === 'CC-BY-4.0'
         ? 'https://creativecommons.org/licenses/by/4.0/'
-        : 'https://www.cnsa.gov.cn/english/';
+        : (allow?.url ?? 'https://www.cnsa.gov.cn/english/');
   const licenseRationale =
     input.license === 'PD-NASA'
       ? 'Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.'
       : input.license === 'CC-BY-4.0'
         ? 'Creative Commons Attribution 4.0 International. Source: academic publication / Wikimedia Commons. Permitted with attribution to the original authors.'
-        : 'China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.';
+        : (allow?.rationale ??
+          'China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.');
   // Map source URL → schema-valid source_type.
   // Wikimedia URLs → wikimedia-commons; PD-NASA → direct-agency;
   // anything else (e.g. CNSA direct from cnsa.gov.cn) → direct-other.
@@ -564,7 +585,7 @@ export function buildPanoramaProvenanceEntry(input: {
     source_type: sourceType,
     title: input.caption,
     author: input.attribution,
-    agency: input.license === 'PD-NASA' ? 'NASA' : 'CNSA',
+    agency: PANORAMA_AGENCY[input.license].agency,
     // For CC-BY-4.0 entries (e.g. Zhurong via Wikimedia Commons),
     // agency stays "CNSA" since that's who operated the rover; the
     // license tag carries the redistribution path. Identical to how

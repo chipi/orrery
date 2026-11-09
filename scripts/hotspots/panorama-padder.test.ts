@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import sharp from 'sharp';
 import {
   blackOutRects,
+  drawGapGraticule,
   padToEquirectangular,
   pullPushFill,
   whiteBorderToBlack,
@@ -113,5 +114,47 @@ describe('blackOutRects', () => {
     expect(at(90, 5)).toEqual([0, 0, 0]);
     expect(at(10, 5)).toEqual([200, 200, 200]);
     expect(at(90, 30)).toEqual([200, 200, 200]);
+  });
+});
+
+describe('gap graticule (#289)', () => {
+  it('draws dots only inside the unphotographed wedge, on the 15° lines', () => {
+    const w = 360;
+    const h = 180; // 1 px per degree
+    const canvas = Buffer.alloc(w * h * 3, 50);
+    drawGapGraticule(canvas, w, h, 180);
+    const px = (x: number, y: number) => canvas[(y * w + x) * 3];
+    expect(px(90, 90)).toBe(50); // photographed half: untouched
+    expect(px(195, 0)).toBeGreaterThan(50); // meridian 195° at a dot
+    expect(px(195, 3)).toBe(50); // between dots on that meridian
+    expect(px(200, 90)).toBeGreaterThan(50); // parallel at the horizon, a dot column
+    expect(px(203, 92)).toBe(50); // off every line
+  });
+
+  it('padToEquirectangular marks a partial panorama’s wedge, and only when asked', async () => {
+    const source = await sharp({
+      create: { width: 40, height: 10, channels: 3, background: { r: 40, g: 180, b: 60 } },
+    })
+      .png()
+      .toBuffer();
+    const opts = {
+      source,
+      srcAzimuthDeg: 180,
+      srcElevationTopDeg: 30,
+      srcElevationBottomDeg: 30,
+      outWidth: 360,
+      outHeight: 180,
+      jpegQuality: 100,
+    };
+    const marked = await sharp(await padToEquirectangular(opts))
+      .raw()
+      .toBuffer();
+    const plain = await sharp(await padToEquirectangular({ ...opts, gapGraticule: false }))
+      .raw()
+      .toBuffer();
+    const i = (90 * 360 + 200) * 3; // horizon parallel, inside the gap
+    expect(marked[i]).toBeGreaterThan(plain[i] + 20);
+    const j = (90 * 360 + 100) * 3; // inside the photograph
+    expect(Math.abs(marked[j] - plain[j])).toBeLessThan(3);
   });
 });

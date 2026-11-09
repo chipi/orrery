@@ -5741,6 +5741,7 @@ sample      ${debugInfo.projectedPxSample}`}
   <PanoramaSyntheticRegionMicrocopy
     active={panoramaActive}
     pitchDeg={panoramaPitchDeg}
+    yawDeg={panoramaYawDeg}
     syntheticRegions={activePanoramaMetadata?.synthetic_regions ?? null}
   />
 

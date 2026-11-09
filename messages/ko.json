@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "지평선 아래의 이 영역은 촬영되지 않았거나 착륙선 데크에 가려져 있습니다. 표시된 패턴은 합성입니다.",
   "panorama_no_data_tag": "데이터 없음",
   "panorama_no_data_body": "이 영역을 다루는 전송 데이터가 없습니다 — 표시된 패턴은 당시 영상의 특성에 맞춰 만든 합성 보충입니다.",
+  "panorama_unphotographed_tag": "촬영되지 않음",
+  "panorama_unphotographed_body": "이 방향은 이 지점에서 촬영되지 않았습니다. 파노라마는 지평선의 일부만 담고 있습니다. 점선 격자가 빈 부분을 표시합니다.",
   "panorama_annotation_dismiss_aria": "주석 닫기",
   "panorama_cycler_prev_aria": "이전 파노라마",
   "panorama_cycler_next_aria": "다음 파노라마",

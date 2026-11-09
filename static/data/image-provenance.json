@@ -30019,7 +30019,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA23136",
-      "fetched_at": "2026-11-06T08:57:34.855Z"
+      "fetched_at": "2026-11-09T00:04:09.858Z"
     },
     {
       "id": "7aa8775a371a1de8",
@@ -30826,7 +30826,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA03163",
-      "fetched_at": "2026-11-06T08:57:32.513Z"
+      "fetched_at": "2026-11-09T00:04:11.818Z"
     },
     {
       "id": "57e3c2b6e4a84993",
@@ -30896,7 +30896,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "NASA Viking Lander 2 panorama (1976, via Wikimedia Commons)",
-      "fetched_at": "2026-11-06T08:57:33.641Z"
+      "fetched_at": "2026-11-09T00:04:10.858Z"
     },
     {
       "id": "6f19fe2b3cfc4a27",
@@ -30966,7 +30966,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-28T17:08:09.945Z"
+      "fetched_at": "2026-11-09T00:04:12.725Z"
     },
     {
       "id": "4e18140b2402b7d4",
@@ -31281,7 +31281,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "Apollo 16 ALSEP Pan HR 2",
-      "fetched_at": "2026-06-28T17:07:10.233Z"
+      "fetched_at": "2026-11-09T00:03:56.989Z"
     },
     {
       "id": "a8df03c5ead7abee",
@@ -31344,7 +31344,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "Jack's Color ALSEP Pan North",
-      "fetched_at": "2026-11-05T18:46:35.694Z"
+      "fetched_at": "2026-11-09T00:04:00.009Z"
     },
     {
       "id": "80eb0edd5a42cca4",
@@ -31447,7 +31447,7 @@
       "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Chandrayaan-3_%E2%80%93_Image_of_Vikram_lander_on_lunar_surface_taken_by_Pragyan_rover_navcam_at_1104_IST%2C_30_August_2023_from_15_meters_away_%28with_text%29.webp",
       "license_short": "ISRO-EDU",
       "license_url": "https://www.isro.gov.in/",
-      "license_rationale": "ISRO publishes Chandrayaan-3 imagery on isro.gov.in for personal, educational and non-commercial use with attribution (no formal Creative Commons license). See the ISRO-EDU entry in license-allowlist.ts.",
+      "license_rationale": "Indian Space Research Organisation publishes Chandrayaan-2/3 (Moon) and Mangalyaan / MOM (Mars) imagery on isro.gov.in for \"personal, educational, and non-commercial\" use with attribution. No formal Creative Commons license. Mirrors the CNSA-EDU precedent for agencies that publish openly without formal CC licensing. Canonical attribution: \"ISRO / Chandrayaan-3 Team\" or similar mission-specific string.",
       "modifications": [
         "padded-to-4096x2048-equirectangular",
         "reencoded-jpeg-q88"
@@ -31455,7 +31455,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-28T17:07:10.233Z"
+      "fetched_at": "2026-11-09T00:06:09.832Z"
     },
     {
       "id": "0557fdc4155297fe",
@@ -31869,7 +31869,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-11-06T08:56:17.873Z"
+      "fetched_at": "2026-11-09T00:04:04.658Z"
     },
     {
       "id": "e1c2364d89600a03",
@@ -31935,7 +31935,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-11-06T08:56:18.729Z"
+      "fetched_at": "2026-11-09T00:04:05.404Z"
     },
     {
       "id": "a34764d76e6a9ad1",
@@ -32033,12 +32033,12 @@
       "source_type": "wikimedia-commons",
       "title": "Lunokhod 1 surface panorama — Mare Imbrium, Nov 1970. Rover deck + wheel tracks visible across the foreground. Lunokhod 1 returned 206 panoramas over its 322 Earth-day operation, all monochrome via the vidicon panoramic scanner. The first wheeled rover on another world. Soviet Academy of Sciences (PD-Russia).",
       "author": "Soviet Academy of Sciences · Lunokhod 1 vidicon TV camera",
-      "agency": "CNSA",
+      "agency": "Roscosmos",
       "source_url": "https://upload.wikimedia.org/wikipedia/en/8/86/Lk101.jpg",
       "image_url": "https://upload.wikimedia.org/wikipedia/en/8/86/Lk101.jpg",
       "license_short": "PD-Russia",
-      "license_url": "https://www.cnsa.gov.cn/english/",
-      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
+      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
+      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
       "modifications": [
         "padded-to-4096x2048-equirectangular",
         "reencoded-jpeg-q88"
@@ -32046,7 +32046,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-28T17:07:10.233Z"
+      "fetched_at": "2026-11-09T00:06:11.048Z"
     },
     {
       "id": "fdf926a7e9f73ec7",
@@ -32493,7 +32493,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "Luna 9 first surface photo (1966)",
-      "fetched_at": "2026-06-28T17:07:10.233Z"
+      "fetched_at": "2026-11-09T00:03:57.644Z"
     },
     {
       "id": "201b99bc3d3df986",
@@ -32546,12 +32546,12 @@
       "source_type": "direct-other",
       "title": "SLIM lander photographed by Sora-Q (LEV-2) micro-hopper after touchdown — Shioli crater. SLIM came down on its nose (engine fault during the final descent) but survived to operate for three days. Captured Jan 25 2024 by the 8 cm Sora-Q transformable hopper (TOMY / Sony / Doshisha co-development). No surface panorama system on SLIM; the Sora-Q stereo MBC frame is the canonical surface view. JAXA.",
       "author": "JAXA / TOMY / Sony Group / Doshisha University · Sora-Q (LEV-2) MBC",
-      "agency": "CNSA",
+      "agency": "JAXA",
       "source_url": "https://global.jaxa.jp/press/2024/01/images/20240125-4_e_01.jpg",
       "image_url": "https://global.jaxa.jp/press/2024/01/images/20240125-4_e_01.jpg",
       "license_short": "JAXA-OPEN",
-      "license_url": "https://www.cnsa.gov.cn/english/",
-      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
+      "license_url": "https://global.jaxa.jp/policy.html",
+      "license_rationale": "Japan Aerospace Exploration Agency publishes mission imagery (Hayabusa2, SLIM, MMX, ISAS planetary missions) under a permissive \"open data\" policy permitting non-commercial reuse with attribution. No formal Creative Commons label. Mirrors the CNSA-EDU / ISRO-EDU precedent. Canonical attribution: \"JAXA\" or mission-specific string (\"JAXA / SLIM Team\", \"JAXA / Sora-Q LEV-2\").",
       "modifications": [
         "padded-to-4096x2048-equirectangular",
         "reencoded-jpeg-q88"
@@ -32559,7 +32559,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-28T17:07:10.233Z"
+      "fetched_at": "2026-11-09T00:06:10.428Z"
     },
     {
       "id": "cd703ab2295232cf",

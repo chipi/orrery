@@ -165,7 +165,16 @@
       "hotspot_tier2_regional_ground_m": 15360,
       "hotspot_tier2_ground_m": 10240,
       "panorama_metadata": {
-        "entry_yaw_deg": 135
+        "entry_yaw_deg": 135,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 0,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/apollo16/context.webp",
       "hotspot_context_bounds": {
@@ -188,7 +197,16 @@
         "instrument": "Hasselblad 70mm",
         "caption": "The ALSEP site in the Taurus-Littrow valley, EVA-1 (12 December 1972): the experiment package, the Lunar Roving Vehicle and the valley's massifs, Jack Schmitt's colour pan. The last Apollo landing.",
         "credit_team": "NASA · Apollo 17 / ALSJ",
-        "entry_yaw_deg": 131
+        "entry_yaw_deg": 131,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 30,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "panorama_annotations": [
         {
@@ -227,6 +245,17 @@
         "lat_max": 25.8664,
         "lon_min": 308.3639,
         "lon_max": 315.6817
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 287.5,
+            "kind": "unphotographed"
+          }
+        ]
       }
     },
     "viking2-lander": {
@@ -245,6 +274,17 @@
         "lat_max": 51.0538,
         "lon_min": 129.2792,
         "lon_max": 139.3208
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 300,
+            "kind": "unphotographed"
+          }
+        ]
       }
     },
     "mars-pathfinder": {
@@ -479,6 +519,17 @@
         "lat_max": 7.8808,
         "lon_min": 132.2288,
         "lon_max": 139.0112
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 340,
+            "kind": "unphotographed"
+          }
+        ]
       }
     },
     "luna9": {
@@ -489,7 +540,16 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna9/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna9/tier2-regional.jpg",
       "panorama_metadata": {
-        "entry_yaw_deg": 240
+        "entry_yaw_deg": 240,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 210,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/luna9/context.webp",
       "hotspot_context_bounds": {
@@ -527,7 +587,16 @@
       "hotspot_tier2_regional_ground_m": 14336,
       "hotspot_tier2_ground_m": 1500,
       "panorama_metadata": {
-        "entry_yaw_deg": 150
+        "entry_yaw_deg": 150,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 30,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/luna17/context.webp",
       "hotspot_context_bounds": {
@@ -683,7 +752,16 @@
       "hotspot_tier2_regional_ground_m": 25344,
       "hotspot_tier2_ground_m": 1000,
       "panorama_metadata": {
-        "entry_yaw_deg": 173
+        "entry_yaw_deg": 173,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 70,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/change5/context.webp",
       "hotspot_context_bounds": {
@@ -704,7 +782,16 @@
       "hotspot_tier2_regional_ground_m": 27648,
       "hotspot_tier2_ground_m": 1500,
       "panorama_metadata": {
-        "entry_yaw_deg": 176
+        "entry_yaw_deg": 176,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 90,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/change6/context.webp",
       "hotspot_context_bounds": {
@@ -730,6 +817,18 @@
         "lat_max": 28.4468,
         "lon_min": 106.1927,
         "lon_max": 113.6573
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 150,
+            "kind": "unphotographed"
+          }
+        ],
+        "entry_yaw_deg": 210
       }
     },
     "chandrayaan3": {
@@ -747,7 +846,16 @@
         "credit_team": "ISRO · Chandrayaan-3 mission",
         "real_extent_pct_vertical": 50,
         "compass_zero_direction": "lander imager +X",
-        "entry_yaw_deg": 245
+        "entry_yaw_deg": 245,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 220,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "panorama_annotations": [
         {
@@ -792,6 +900,18 @@
         "lat_max": -6.7204,
         "lon_min": 18.4732,
         "lon_max": 32.0288
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 220,
+            "kind": "unphotographed"
+          }
+        ],
+        "entry_yaw_deg": 245
       }
     },
     "beresheet": {

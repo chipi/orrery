@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "Cette zone sous l'horizon n'a pas été capturée (ou est masquée par la plateforme de l'atterrisseur). Le motif visible est synthétique.",
   "panorama_no_data_tag": "AUCUNE DONNÉE",
   "panorama_no_data_body": "Aucune donnée transmise ne couvre cette zone — le motif visible est un remplissage synthétique honorant le fragment historique.",
+  "panorama_unphotographed_tag": "NON PHOTOGRAPHIÉ",
+  "panorama_unphotographed_body": "Cette direction n’a pas été photographiée sur ce site : le panorama ne couvre qu’une partie de l’horizon. La grille en pointillés marque la lacune.",
   "panorama_annotation_dismiss_aria": "Fermer l'annotation",
   "panorama_cycler_prev_aria": "Panorama précédent",
   "panorama_cycler_next_aria": "Panorama suivant",

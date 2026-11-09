@@ -1,7 +1,7 @@
 <!--
   Synthetic-region honest microcopy (PRD-022 / ADR-074, #286 Phase 2D).
 
-  Fires when the camera's pitch falls inside a declared
+  Fires when the camera's pitch (and yaw, for an azimuth range) falls inside a declared
   `panorama_metadata.synthetic_regions` range. Dashed-border centred
   banner: "This region of the sky was not photographed at this site
   — the visible pattern is synthetic."
@@ -10,6 +10,7 @@
     - synthetic_sky: above-horizon region, sky we couldn't see
     - synthetic_nadir: below-horizon region (lander deck, blocked)
     - no_data: missing data we filled in (Mars 3-style historical fragments)
+    - unphotographed: the azimuth wedge a partial panorama never covered (#289)
 
   Sites without `synthetic_regions` declared never see this — only
   sites with honest provenance metadata trip it.
@@ -17,24 +18,23 @@
 <script lang="ts">
   import type { PanoramaMetadata } from '$types/surface-site';
   import * as m from '$lib/paraglide/messages';
+  import { syntheticRegionAt } from '$lib/panorama-regions';
 
   interface Props {
     active: boolean;
     /** Current camera pitch in degrees, 0 = horizon, +90 = zenith, -90 = nadir. */
     pitchDeg: number;
+    /** Current camera yaw in degrees (0–360, the `?yaw=` convention). */
+    yawDeg?: number;
     syntheticRegions: PanoramaMetadata['synthetic_regions'] | null | undefined;
   }
-  let { active, pitchDeg, syntheticRegions }: Props = $props();
+  let { active, pitchDeg, yawDeg = 0, syntheticRegions }: Props = $props();
 
-  // Find the active region (first one whose pitch range contains
-  // pitchDeg). Returns null when none match.
-  let activeRegion = $derived.by(() => {
-    if (!active || !syntheticRegions || syntheticRegions.length === 0) return null;
-    return (
-      syntheticRegions.find((r) => pitchDeg >= r.pitch_min_deg && pitchDeg <= r.pitch_max_deg) ??
-      null
-    );
-  });
+  // The first region whose pitch range — and azimuth range, if it has one —
+  // contains the camera; null when none does.
+  let activeRegion = $derived(
+    active ? syntheticRegionAt(syntheticRegions, pitchDeg, yawDeg) : null,
+  );
 
   let microcopy = $derived.by(() => {
     if (!activeRegion) return null;
@@ -45,6 +45,11 @@
         return { tag: m.panorama_synthetic_nadir_tag(), body: m.panorama_synthetic_nadir_body() };
       case 'no_data':
         return { tag: m.panorama_no_data_tag(), body: m.panorama_no_data_body() };
+      case 'unphotographed':
+        return {
+          tag: m.panorama_unphotographed_tag(),
+          body: m.panorama_unphotographed_body(),
+        };
       default:
         return null;
     }

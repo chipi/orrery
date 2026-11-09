@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "Dit gebied onder de horizon is niet vastgelegd (of wordt door het landerdek geblokkeerd). Het zichtbare patroon is synthetisch.",
   "panorama_no_data_tag": "GEEN DATA",
   "panorama_no_data_body": "Geen overgedragen data dekt dit gebied — het zichtbare patroon is synthetische opvulling als eerbetoon aan het historische fragment.",
+  "panorama_unphotographed_tag": "NIET GEFOTOGRAFEERD",
+  "panorama_unphotographed_body": "Deze richting is op deze plek niet gefotografeerd: het panorama dekt maar een deel van de horizon. Het stippelraster markeert het gat.",
   "panorama_annotation_dismiss_aria": "Aantekening sluiten",
   "panorama_cycler_prev_aria": "Vorig panorama",
   "panorama_cycler_next_aria": "Volgend panorama",

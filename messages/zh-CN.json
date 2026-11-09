@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "地平线以下的该区域未被拍摄（或被着陆器甲板遮挡）。可见图案为合成内容。",
   "panorama_no_data_tag": "无数据",
   "panorama_no_data_body": "没有传回的数据覆盖此区域——可见图案为合成填充，以忠于这份历史记录。",
+  "panorama_unphotographed_tag": "未拍摄",
+  "panorama_unphotographed_body": "此方向未在该地点拍摄：全景图只覆盖了部分地平线。虚线网格标出了空缺。",
   "panorama_annotation_dismiss_aria": "关闭标注",
   "panorama_cycler_prev_aria": "上一张全景",
   "panorama_cycler_next_aria": "下一张全景",

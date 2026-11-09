@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "Esta área abaixo do horizonte não foi capturada (ou está bloqueada pelo deck do módulo). O padrão visível é sintético.",
   "panorama_no_data_tag": "SEM DADOS",
   "panorama_no_data_body": "Nenhum dado transmitido cobre esta região — o padrão visível é preenchimento sintético em homenagem ao artefato histórico.",
+  "panorama_unphotographed_tag": "NÃO FOTOGRAFADO",
+  "panorama_unphotographed_body": "Esta direção não foi fotografada neste local: o panorama cobre só parte do horizonte. A grade pontilhada marca a lacuna.",
   "panorama_annotation_dismiss_aria": "Fechar anotação",
   "panorama_cycler_prev_aria": "Panorama anterior",
   "panorama_cycler_next_aria": "Próximo panorama",

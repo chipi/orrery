@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "Dieser Bereich unterhalb des Horizonts wurde nicht erfasst (oder ist durch das Landerdeck verdeckt). Das sichtbare Muster ist synthetisch.",
   "panorama_no_data_tag": "KEINE DATEN",
   "panorama_no_data_body": "Keine übertragenen Daten decken diesen Bereich ab — das sichtbare Muster ist synthetische Füllung als Anerkennung des historischen Fragments.",
+  "panorama_unphotographed_tag": "NICHT FOTOGRAFIERT",
+  "panorama_unphotographed_body": "Diese Richtung wurde an diesem Ort nicht fotografiert – das Panorama deckt nur einen Teil des Horizonts ab. Das gepunktete Gitter markiert die Lücke.",
   "panorama_annotation_dismiss_aria": "Anmerkung schließen",
   "panorama_cycler_prev_aria": "Vorheriges Panorama",
   "panorama_cycler_next_aria": "Nächstes Panorama",

@@ -963,6 +963,8 @@
   "panorama_synthetic_nadir_body": "Questa zona sotto l'orizzonte non è stata acquisita (o è coperta dal piano del lander). Il motivo visibile è sintetico.",
   "panorama_no_data_tag": "NESSUN DATO",
   "panorama_no_data_body": "Nessun dato trasmesso copre questa zona — il motivo visibile è un riempimento sintetico che onora il frammento storico.",
+  "panorama_unphotographed_tag": "NON FOTOGRAFATO",
+  "panorama_unphotographed_body": "Questa direzione non è stata fotografata in questo sito: il panorama copre solo una parte dell’orizzonte. La griglia tratteggiata segna la lacuna.",
   "panorama_annotation_dismiss_aria": "Chiudi annotazione",
   "panorama_cycler_prev_aria": "Panorama precedente",
   "panorama_cycler_next_aria": "Panorama successivo",

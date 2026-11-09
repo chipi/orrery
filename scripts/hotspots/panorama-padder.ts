@@ -97,6 +97,49 @@ export interface PadInput {
    *  height. A mosaic's jagged
    *  outline otherwise left flat stair-step blocks (#641: Curiosity). */
   inpaintGaps?: boolean;
+  /** Mark the unphotographed azimuth wedge with a dotted 15° graticule, so it
+   *  reads as "this slice was not photographed" rather than missing data
+   *  (#289). On by default; only panoramas with an azimuth gap change. */
+  gapGraticule?: boolean;
+}
+
+/** Graticule spacing and dot pattern for the unphotographed wedge (#289). */
+const GRATICULE_STEP_DEG = 15;
+const GRATICULE_DOT_PX = 2;
+const GRATICULE_GAP_PX = 6;
+
+/**
+ * Draw a dotted graticule (meridians and parallels every GRATICULE_STEP_DEG)
+ * over the columns `fromCol .. width - 1` of an equirectangular RGB canvas:
+ * each dot lightens the pixel under it, so the pattern rides on the fill.
+ */
+export function drawGapGraticule(
+  canvas: Buffer,
+  width: number,
+  height: number,
+  fromCol: number,
+): void {
+  const pxPerDegX = width / 360;
+  const pxPerDegY = height / 180;
+  const period = GRATICULE_DOT_PX + GRATICULE_GAP_PX;
+  const onLine = (pos: number, pxPerDeg: number) => {
+    const deg = pos / pxPerDeg;
+    const nearest = Math.round(deg / GRATICULE_STEP_DEG) * GRATICULE_STEP_DEG;
+    return Math.abs(deg - nearest) * pxPerDeg < 1;
+  };
+  for (let row = 0; row < height; row++) {
+    const parallel = onLine(row, pxPerDegY);
+    for (let col = fromCol; col < width; col++) {
+      const meridian = onLine(col, pxPerDegX);
+      const dot =
+        (parallel && col % period < GRATICULE_DOT_PX) ||
+        (meridian && row % period < GRATICULE_DOT_PX);
+      if (!dot) continue;
+      const i = (row * width + col) * 3;
+      for (let c = 0; c < 3; c++)
+        canvas[i + c] = Math.min(255, Math.round(canvas[i + c] * 0.6 + 110));
+    }
+  }
 }
 
 /**
@@ -493,7 +536,12 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
     await pullPushFill(canvas, unknown, outWidth, outHeight);
   }
 
-  // 5. JPEG-encode.
+  // 5. The unphotographed wedge gets its graticule last, over whatever filled it.
+  if (srcOutWidth < outWidth && (input.gapGraticule ?? true)) {
+    drawGapGraticule(canvas, outWidth, outHeight, srcOutWidth);
+  }
+
+  // 6. JPEG-encode.
   const out = await sharp(canvas, { raw: { width: outWidth, height: outHeight, channels: 3 } })
     .jpeg({ quality: jpegQuality, mozjpeg: true })
     .toBuffer();

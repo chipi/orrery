@@ -674,6 +674,11 @@
    "reason": "crop position only: the centred cover crop cut the subject off",
    "approved_at": "2026-11-08",
    "position": "50% 15%"
+  },
+  "voskhod-11a57": {
+   "slot": "05.jpg",
+   "reason": "only normal-aspect image (exhibition photo); slots 01–04 are tall renders — operator 2026-11-09 (#550)",
+   "approved_at": "2026-11-09"
   }
  }
 }

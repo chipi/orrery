@@ -1776,6 +1776,12 @@
       "cover": false
     },
     {
+      "title": "Chang’e 4",
+      "file": "/images/illustrations/sites/change4.webp",
+      "route": "/moon/change4",
+      "cover": false
+    },
+    {
       "title": "Chandrayaan-3",
       "file": "/images/illustrations/sites/chandrayaan3.webp",
       "route": "/moon/chandrayaan3",
@@ -4119,7 +4125,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "site_illustrations": 15,
+    "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

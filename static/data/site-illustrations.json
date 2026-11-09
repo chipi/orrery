@@ -92,6 +92,16 @@
       "made_from": "Orrery reference map of LROC NAC imagery and the Yutu traverse data"
     },
     {
+      "siteId": "change4",
+      "body": "moon",
+      "title": "Chang’e 4",
+      "file": "images/illustrations/sites/change4.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC NAC imagery and the Yutu-2 traverse data"
+    },
+    {
       "siteId": "chandrayaan3",
       "body": "moon",
       "title": "Chandrayaan-3",

@@ -23,6 +23,7 @@
     luna17: m.site_illustration_alt_luna17,
     luna21: m.site_illustration_alt_luna21,
     change3: m.site_illustration_alt_change3,
+    change4: m.site_illustration_alt_change4,
     chandrayaan3: m.site_illustration_alt_chandrayaan3,
     spirit: m.site_illustration_alt_spirit,
     opportunity: m.site_illustration_alt_opportunity,

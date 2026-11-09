@@ -545,6 +545,14 @@
     aria-label={m.footer_aria()}
   >
     <nav class="footer-menu" aria-label={m.footer_links_aria()}>
+      <a class="footer-link" href={localHref(`/explore/hub`)}>{m.nav_group_explore()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/worlds`)}>{m.nav_group_worlds()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/catalog`)}>{m.nav_catalog()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/learn`)}>{m.nav_learn()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href={localHref(`/credits`)}>{m.layout_footer_credits()}</a>
@@ -693,6 +701,9 @@
     .footer-menu {
       gap: 5px;
       padding: 4px 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      max-width: calc(100vw - 20px);
     }
   }
   .footer-link {

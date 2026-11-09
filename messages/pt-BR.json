@@ -3708,6 +3708,7 @@
   "site_illustration_alt_change4": "Mapa ilustrado em bloco do local de pouso da Chang’e 4 na cratera Von Kármán: o módulo de pouso Chang’e 4 fica a leste, a posição do rover Yutu-2 em maio de 2019 está um pouco a oeste, e o percurso do rover serpenteia por uma longa distância para oeste e noroeste até sua última posição, marcada por um pequeno rover.",
   "surface_card_collapse_aria": "Recolher os detalhes do local",
   "surface_card_expand_aria": "Expandir os detalhes do local",
+  "surface_true_scale_short": "Vista do solo em escala real · imagens orbitais",
   "colophon_section_mission_trajectories": "Gráficos de trajetória das missões",
   "colophon_mission_trajectories_note": "Um esquema por missão, desenhado em código com o mesmo modelo de trajetória que o simulador /fly voa; não é gerado por IA. Os roteiros pelo sistema solar externo são comprimidos radialmente além de 1,6 UA e as órbitas terrestres são exageradas para ficarem legíveis; a legenda informa isso. Uma missão sem dados de órbita recebe um marcador rotulado, nunca uma trajetória inventada. Os rótulos nas imagens estão em inglês."
 }

@@ -3708,6 +3708,7 @@
   "site_illustration_alt_change4": "Carte illustrée en bloc du site d’alunissage de Chang’e 4, dans le cratère Von Kármán : l’atterrisseur Chang’e 4 se dresse à l’est, la position du rover Yutu-2 en mai 2019 se trouve un peu à l’ouest, et son itinéraire serpente longuement vers l’ouest et le nord-ouest jusqu’à sa dernière position, marquée par un petit rover.",
   "surface_card_collapse_aria": "Replier les détails du site",
   "surface_card_expand_aria": "Déplier les détails du site",
+  "surface_true_scale_short": "Vue du sol à l'échelle réelle · images orbitales",
   "colophon_section_mission_trajectories": "Tracés de trajectoire des missions",
   "colophon_mission_trajectories_note": "Un schéma par mission, tracé par code à partir du même modèle de trajectoire que celui que vole le simulateur /fly — pas généré par IA. Les tournées du système externe sont comprimées radialement au-delà de 1,6 UA et les orbites terrestres sont exagérées pour rester lisibles ; la légende le précise. Une mission sans données d’orbite reçoit un espace réservé étiqueté, jamais une trajectoire inventée. Les étiquettes des images sont en anglais."
 }

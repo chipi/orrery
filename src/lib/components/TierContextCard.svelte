@@ -19,8 +19,10 @@
     scaleNote?: string;
     /** /science page that explains the imagery layers (Moon / Mars only). */
     howItWorksHref?: string;
+    /** Flat true-scale ground view only: one line under the header, kept visible when collapsed. */
+    groundNote?: string;
   }
-  let { tierContext, scaleNote, howItWorksHref }: Props = $props();
+  let { tierContext, scaleNote, howItWorksHref, groundNote }: Props = $props();
 
   // Phone starts collapsed, desktop open; only a choice the viewer made is remembered.
   const STORE_KEY = 'orrery.surface.tierCardExpanded';
@@ -63,6 +65,9 @@
       <span aria-hidden="true">{expanded ? '▾' : '▸'}</span>
     </button>
   </div>
+  {#if groundNote}
+    <div class="tcc-ground" data-testid="tcc-ground-note">{groundNote}</div>
+  {/if}
   <div id="tcc-body" hidden={!expanded}>
     {#if tierContext.missionContext}
       <div class="tcc-mission">{tierContext.missionContext}</div>
@@ -135,6 +140,15 @@
     margin-bottom: 4px;
   }
   .tcc-collapsed .tcc-head {
+    margin-bottom: 0;
+  }
+  .tcc-ground {
+    margin-bottom: 4px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .tcc-collapsed .tcc-ground {
     margin-bottom: 0;
   }
   .tcc-toggle {
@@ -257,6 +271,10 @@
     }
     :global(html[data-surface-flat]) .tier-context-card {
       bottom: calc(54px + env(safe-area-inset-bottom, 0px));
+    }
+    /* the pixel-limit chip stacks on the flat view's bottom bar; the card rides above it */
+    :global(html[data-surface-flat][data-flat-limit]) .tier-context-card {
+      bottom: calc(100px + env(safe-area-inset-bottom, 0px));
     }
   }
   /* Narrow window with a mouse: the detail panel (z 30) spans the window,

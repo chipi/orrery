@@ -5832,6 +5832,7 @@ sample      ${debugInfo.projectedPxSample}`}
     <TierContextCard
       {tierContext}
       scaleNote={m.surface_tier_scale_note()}
+      groundNote={flatPatchActive ? m.surface_true_scale_short() : undefined}
       howItWorksHref={HOW_IMAGERY_WORKS[config.planet]
         ? localHref(HOW_IMAGERY_WORKS[config.planet]!)
         : undefined}

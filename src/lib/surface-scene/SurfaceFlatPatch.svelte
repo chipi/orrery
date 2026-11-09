@@ -884,6 +884,37 @@
     const label = chosen >= 1 ? `${chosen} km` : `${chosen * 1000} m`;
     return { widthPx, label };
   });
+
+  // One pixel-limit chip by the scale bar: the deepest-zoom stop says it more strongly
+  // than the upsample warning, so it wins when both apply.
+  let limitNotice = $derived.by(() => {
+    if (atDeepestZoom) {
+      return m.surface_deepest_zoom({
+        limit:
+          config.planet === 'mars'
+            ? m.surface_zoom_limit_hirise()
+            : config.planet === 'earth'
+              ? m.surface_zoom_limit_commercial()
+              : m.surface_zoom_limit_lroc(),
+      });
+    }
+    if (upsampling) {
+      return config.planet === 'mars'
+        ? m.surface_flat_upsample_warning_mars()
+        : m.surface_flat_upsample_warning_moon();
+    }
+    return '';
+  });
+
+  // The imagery card (SurfaceScene) lifts above the chip on a phone, where the chip stacks on the bar.
+  $effect(() => {
+    const root = document.documentElement;
+    if (limitNotice) root.dataset.flatLimit = '';
+    else delete root.dataset.flatLimit;
+    return () => {
+      delete root.dataset.flatLimit;
+    };
+  });
 </script>
 
 <div class="flat-patch" role="region" aria-label={m.mars_map_aria()}>
@@ -916,36 +947,6 @@
     {m.surface_flat_back_to_planet()}
   </button>
 
-  <!-- True-scale ground view context banner — tells you exactly what
-       you're looking at when you cross from the (stylized) sphere
-       into the (true-scale) flat-patch. Added back 2026-06-08 after
-       being briefly removed in the seamless-transition attempt. -->
-  <div class="hud-context-banner mono" aria-hidden="true">
-    <span class="ctx-eyebrow">{m.surface_true_scale_eyebrow()}</span>
-    <span class="ctx-subline">
-      {m.surface_true_scale_sub({ name: selected.name ?? selected.id })}
-    </span>
-    {#if atDeepestZoom}
-      <span class="ctx-limit">
-        {m.surface_deepest_zoom({
-          limit:
-            config.planet === 'mars'
-              ? m.surface_zoom_limit_hirise()
-              : config.planet === 'earth'
-                ? m.surface_zoom_limit_commercial()
-                : m.surface_zoom_limit_lroc(),
-        })}
-      </span>
-    {/if}
-    {#if upsampling}
-      <span class="ctx-warn">
-        {config.planet === 'mars'
-          ? m.surface_flat_upsample_warning_mars()
-          : m.surface_flat_upsample_warning_moon()}
-      </span>
-    {/if}
-  </div>
-
   <div class="hud-layers" role="group" aria-label={m.surface_flat_layer_toggles_aria()}>
     <button
       type="button"
@@ -972,12 +973,20 @@
     {/if}
   </div>
 
-  <!-- One bar on a phone (scale + lat/lon on a line); two corner boxes elsewhere. -->
+  <!-- One bar on a phone (scale + lat/lon on a line); two corner boxes elsewhere.
+       The pixel-limit chip sits by the scale bar: beside it on desktop, on the bar's top edge on a phone. -->
   <div class="hud-bottom">
-    <div class="hud-scale" aria-hidden="true">
-      <span class="scale-word">{m.surface_flat_scale_label()}</span>
-      <span class="bar" style:width="{scaleBar.widthPx}px"></span>
-      <span class="mono">{scaleBar.label}</span>
+    <div class="hud-scale-row">
+      <div class="hud-scale" aria-hidden="true">
+        <span class="scale-word">{m.surface_flat_scale_label()}</span>
+        <span class="bar" style:width="{scaleBar.widthPx}px"></span>
+        <span class="mono">{scaleBar.label}</span>
+      </div>
+      {#if limitNotice}
+        <div class="hud-limit-chip mono" aria-hidden="true" data-testid="flat-limit-chip">
+          {limitNotice}
+        </div>
+      {/if}
     </div>
 
     <div class="hud-latlon mono" aria-hidden="true">
@@ -991,26 +1000,6 @@
   {#if upsampling}
     <div class="upsample-vignette" aria-hidden="true"></div>
   {/if}
-
-  {#if atDeepestZoom}
-    <!-- Deepest-zoom microcopy — surfaces the kmPerPx floor as a
-         deliberate stop rather than a stuck app. Sits opposite the
-         layer chips so it doesn't fight the upsample warning when both
-         are active near the floor. -->
-    <div class="deepest-zoom-chip mono" aria-hidden="true">
-      {m.surface_deepest_zoom({
-        limit:
-          config.planet === 'mars'
-            ? m.surface_zoom_limit_hirise()
-            : config.planet === 'earth'
-              ? m.surface_zoom_limit_commercial()
-              : m.surface_zoom_limit_lroc(),
-      })}
-    </div>
-  {/if}
-  <!-- Earth shares the moon-warning copy in v1 (both read as "approaching
-       pixel limit"); a dedicated earth-warning paraglide key will land in
-       the slice that ships commercial-sat Earth insets. -->
 </div>
 
 <style>
@@ -1127,70 +1116,39 @@
     background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
     z-index: 2;
   }
-  /* True-scale ground view context banner — top-center pill. */
-  .hud-context-banner {
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    background: rgba(5, 5, 20, 0.92);
-    border: 1px solid rgba(78, 205, 196, 0.55);
-    color: #fff;
-    padding: 7px 16px;
-    border-radius: 4px;
-    backdrop-filter: blur(4px);
-    pointer-events: none;
-  }
-  /* the "approaching native pixel limit" notice is a line of the banner, never a second box over it */
-  .hud-context-banner .ctx-warn {
-    margin-top: 4px;
-    padding-top: 4px;
-    border-top: 1px solid rgba(255, 200, 80, 0.35);
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    color: #ffc850;
-    text-align: center;
-  }
-  /* phones only: the deepest-zoom notice is a line of the banner, not a bottom chip */
-  .hud-context-banner .ctx-limit {
-    display: none;
-  }
-  .hud-context-banner .ctx-eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #4ecdc4;
-  }
-  .hud-context-banner .ctx-subline {
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  /* Deepest-zoom chip — bottom-center HUD, paired with the upsample
-     warning at top-center so the two read as a "pixel-limit" status row
-     when both fire near the floor. */
-  .deepest-zoom-chip {
+  /* Pixel-limit notice: one small chip beside the scale bar, only while it applies. */
+  .hud-scale-row {
     position: absolute;
     bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
+    left: 24px;
+    right: 230px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .hud-scale-row .hud-scale {
+    position: static;
+    flex: none;
+  }
+  .hud-limit-chip {
+    min-width: 0;
+    max-width: 380px;
+    padding: 6px 10px;
     background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(78, 205, 196, 0.55);
-    color: #4ecdc4;
-    padding: 6px 12px;
+    border: 1px solid rgba(255, 200, 80, 0.45);
     border-radius: 3px;
     font-size: 10px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.06em;
+    color: #ffc850;
     backdrop-filter: blur(4px);
-    pointer-events: none;
-    text-transform: uppercase;
+  }
+  /* Desktop: "Exit zoom" (SurfaceScene, fixed top-right) owns the corner; the layer chips sit under it. */
+  @media (hover: hover) and (pointer: fine) {
+    .hud-layers {
+      top: 62px;
+    }
   }
   @media (hover: none), (pointer: coarse) {
     /* SurfaceScene already renders a prominent "Exit zoom" affordance on
@@ -1198,31 +1156,16 @@
     .hud-back {
       display: none;
     }
-    /* Clear the top-center context banner past the mobile top controls
-       (Exit zoom + layer chips) so it isn't tucked behind them. */
-    .hud-context-banner {
-      top: 56px;
-      /* shrink-to-fit inside the left:50 % box would wrap it at half the screen */
-      width: max-content;
-      max-width: calc(100% - 32px);
+    /* The scale row dissolves into the bar; the chip stacks on the bar's top edge. */
+    .hud-scale-row {
+      display: contents;
     }
-    /* the deepest-zoom line says it; the pixel-limit line would only grow the banner over the imagery */
-    .hud-context-banner .ctx-warn {
-      display: none;
-    }
-    .hud-context-banner .ctx-limit {
-      display: block;
-      margin-top: 4px;
-      padding-top: 4px;
-      border-top: 1px solid rgba(78, 205, 196, 0.35);
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #4ecdc4;
-      text-align: center;
-    }
-    .deepest-zoom-chip {
-      display: none;
+    .hud-limit-chip {
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 6px);
+      max-width: 100%;
+      white-space: normal;
     }
     /* ONE bar at the bottom edge: scale and lat/lon on a line. */
     .hud-bottom {

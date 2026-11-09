@@ -6,40 +6,40 @@
       "sol": 43,
       "lat": -14.573149,
       "lon": 175.478243,
-      "image": "/images/mars-sites/spirit/route/bonneville-approach.webp",
-      "thumb": "/images/mars-sites/spirit/route/bonneville-approach-320.webp"
+      "image": "/images/missions/spirit/11.webp",
+      "thumb": "/images/missions/spirit/11-320.webp"
     },
     {
       "id": "bonneville-rim",
       "sol": 68,
       "lat": -14.570107,
       "lon": 175.481359,
-      "image": "/images/mars-sites/spirit/route/bonneville-rim.webp",
-      "thumb": "/images/mars-sites/spirit/route/bonneville-rim-320.webp"
+      "image": "/images/missions/spirit/02.webp",
+      "thumb": "/images/missions/spirit/02-320.webp"
     },
     {
       "id": "larrys-lookout",
       "sol": 410,
       "lat": -14.591799,
       "lon": 175.522354,
-      "image": "/images/mars-sites/spirit/route/larrys-lookout.webp",
-      "thumb": "/images/mars-sites/spirit/route/larrys-lookout-320.webp"
+      "image": "/images/missions/spirit/12.webp",
+      "thumb": "/images/missions/spirit/12-320.webp"
     },
     {
       "id": "beside-home-plate",
       "sol": 1809,
       "lat": -14.607187,
       "lon": 175.528207,
-      "image": "/images/mars-sites/spirit/route/beside-home-plate.webp",
-      "thumb": "/images/mars-sites/spirit/route/beside-home-plate-320.webp"
+      "image": "/images/missions/spirit/13.webp",
+      "thumb": "/images/missions/spirit/13-320.webp"
     },
     {
       "id": "troy",
       "sol": 1891,
       "lat": -14.607409,
       "lon": 175.527217,
-      "image": "/images/mars-sites/spirit/route/troy.webp",
-      "thumb": "/images/mars-sites/spirit/route/troy-320.webp"
+      "image": "/images/missions/spirit/14.webp",
+      "thumb": "/images/missions/spirit/14-320.webp"
     }
   ]
 }

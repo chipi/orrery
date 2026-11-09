@@ -6,48 +6,48 @@
       "sol": 106,
       "lat": -4.590062,
       "lon": 137.4479,
-      "image": "/images/mars-sites/curiosity/route/yellowknife-overlook.webp",
-      "thumb": "/images/mars-sites/curiosity/route/yellowknife-overlook-320.webp"
+      "image": "/images/missions/curiosity/06.webp",
+      "thumb": "/images/missions/curiosity/06-320.webp"
     },
     {
       "id": "marias-pass",
       "sol": 995,
       "lat": -4.66795,
       "lon": 137.370177,
-      "image": "/images/mars-sites/curiosity/route/marias-pass.webp",
-      "thumb": "/images/mars-sites/curiosity/route/marias-pass-320.webp"
+      "image": "/images/missions/curiosity/07.webp",
+      "thumb": "/images/missions/curiosity/07-320.webp"
     },
     {
       "id": "murray-buttes",
       "sol": 1451,
       "lat": -4.693415,
       "lon": 137.352727,
-      "image": "/images/mars-sites/curiosity/route/murray-buttes.webp",
-      "thumb": "/images/mars-sites/curiosity/route/murray-buttes-320.webp"
+      "image": "/images/missions/curiosity/08.webp",
+      "thumb": "/images/missions/curiosity/08-320.webp"
     },
     {
       "id": "vera-rubin-ridge",
       "sol": 1785,
       "lat": -4.721847,
       "lon": 137.370652,
-      "image": "/images/mars-sites/curiosity/route/vera-rubin-ridge.webp",
-      "thumb": "/images/mars-sites/curiosity/route/vera-rubin-ridge-320.webp"
+      "image": "/images/missions/curiosity/09.webp",
+      "thumb": "/images/missions/curiosity/09-320.webp"
     },
     {
       "id": "glen-torridon",
       "sol": 2316,
       "lat": -4.726169,
       "lon": 137.37951,
-      "image": "/images/mars-sites/curiosity/route/glen-torridon.webp",
-      "thumb": "/images/mars-sites/curiosity/route/glen-torridon-320.webp"
+      "image": "/images/missions/curiosity/10.webp",
+      "thumb": "/images/missions/curiosity/10-320.webp"
     },
     {
       "id": "gediz-vallis",
       "sol": 4311,
       "lat": -4.786576,
       "lon": 137.408487,
-      "image": "/images/mars-sites/curiosity/route/gediz-vallis.webp",
-      "thumb": "/images/mars-sites/curiosity/route/gediz-vallis-320.webp"
+      "image": "/images/missions/curiosity/11.webp",
+      "thumb": "/images/missions/curiosity/11-320.webp"
     }
   ]
 }

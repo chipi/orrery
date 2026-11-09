@@ -622,38 +622,10 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "mars-sites/hope/01": {
-    "commons_file": "Emirates Mars Mission mockup at IAC 2021 01.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Emirates%20Mars%20Mission%20mockup%20at%20IAC%202021%2001.jpg",
-    "credit": "MBRSC (UAE Space Agency)",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "mars-sites/hope/03": {
-    "commons_file": "Emirates Mars Mission mockup at IAC 2021 01 (cropped).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Emirates%20Mars%20Mission%20mockup%20at%20IAC%202021%2001%20(cropped).jpg",
-    "credit": "MBRSC (UAE Space Agency)",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
   "mars-sites/hope/04": {
     "commons_file": "Hope crater 009A30.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Hope%20crater%20009A30.jpg",
     "credit": "MBRSC (UAE Space Agency)",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "mars-sites/insight/01": {
-    "commons_file": "PIA19664-MarsInSightLander-Assembly-20150430.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA19664-MarsInSightLander-Assembly-20150430.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "mars-sites/mangalyaan/01": {
-    "commons_file": "Mars Orbiter Mission in cleanroom (1).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Orbiter%20Mission%20in%20cleanroom%20(1).jpg",
-    "credit": "ISRO",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
@@ -713,13 +685,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "mars-sites/mars-pathfinder/01": {
-    "commons_file": "Mars Pathfinder Presidential Panorama.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Pathfinder%20Presidential%20Panorama.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
   "mars-sites/mars2/05": {
     "commons_file": "PrOP-M.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:PrOP-M.jpg",
@@ -750,13 +715,6 @@
   "mars-sites/mars3/04": {
     "commons_file": "Mars3 lander vsm.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Mars3%20lander%20vsm.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "mars-sites/mars6/01": {
-    "commons_file": "Mars 6.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%206.jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
@@ -886,13 +844,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "moon-sites/beresheet/01": {
-    "commons_file": "Beresheet model on Habima Square 20190222 01.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Beresheet%20model%20on%20Habima%20Square%2020190222%2001.jpg",
-    "credit": "SpaceIL",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
   "moon-sites/beresheet/02": {
     "commons_file": "Beresheet Crash Site Spotted LRO 03.png",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Beresheet%20Crash%20Site%20Spotted%20LRO%2003.png",
@@ -976,34 +927,6 @@
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "moon-sites/luna16/02": {
-    "commons_file": "Zio81 - Eclisse di Luna 16-08-08 (by).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Zio81%20-%20Eclisse%20di%20Luna%2016-08-08%20(by).jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
-  },
-  "moon-sites/luna16/03": {
-    "commons_file": "Возвращаемый аппарат автоматической станции \"Луна-16\".jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D0%BC%D1%8B%D0%B9%20%D0%B0%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8%20%22%D0%9B%D1%83%D0%BD%D0%B0-16%22.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
-  },
-  "moon-sites/luna16/04": {
-    "commons_file": "Eclipse Lunar Total del 15-16.05.2022.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Eclipse%20Lunar%20Total%20del%2015-16.05.2022.png",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
-  },
-  "moon-sites/luna16/05": {
-    "commons_file": "Eclipse Parcial de Luna Cumbre de Gran Canaria 16 julio 2019 (48306938426).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Eclipse%20Parcial%20de%20Luna%20Cumbre%20de%20Gran%20Canaria%2016%20julio%202019%20(48306938426).jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:26:18.186Z"
   },
   "moon-sites/luna21/01": {
     "commons_file": "Luna 21.jpg",

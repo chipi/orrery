@@ -7520,28 +7520,6 @@
     320,
     800
   ],
-  "/images/mars-sites/curiosity/01": [
-    320,
-    640,
-    920,
-    960
-  ],
-  "/images/mars-sites/curiosity/02": [
-    320,
-    640
-  ],
-  "/images/mars-sites/curiosity/03": [
-    320,
-    640
-  ],
-  "/images/mars-sites/curiosity/04": [
-    320,
-    967
-  ],
-  "/images/mars-sites/curiosity/05": [
-    320,
-    1280
-  ],
   "/images/mars-sites/exomars-rosalind-franklin/01": [
     320,
     640,
@@ -7568,63 +7546,21 @@
     1280,
     1920
   ],
-  "/images/mars-sites/hope/01": [
-    320,
-    591,
-    946,
-    960
-  ],
-  "/images/mars-sites/hope/02": [
-    320,
-    960
-  ],
-  "/images/mars-sites/hope/03": [
-    320,
-    640,
-    960
-  ],
-  "/images/mars-sites/insight/01": [
-    320,
-    640,
-    960
-  ],
-  "/images/mars-sites/insight/02": [
-    320,
-    1186
-  ],
-  "/images/mars-sites/insight/05": [
-    320,
-    1280
-  ],
-  "/images/mars-sites/mangalyaan/01": [
-    320,
-    640,
-    960
-  ],
-  "/images/mars-sites/mangalyaan/02": [
+  "/images/missions/mangalyaan/06": [
     320,
     988
   ],
-  "/images/mars-sites/mariner9/01": [
-    320,
-    640,
-    958
-  ],
-  "/images/mars-sites/mariner9/02": [
+  "/images/missions/mariner9/06": [
     320,
     1280
   ],
-  "/images/mars-sites/mariner9/03": [
-    320,
-    1280
-  ],
-  "/images/mars-sites/mariner9/04": [
+  "/images/missions/mariner9/07": [
     320,
     1280,
     2048,
     2995
   ],
-  "/images/mars-sites/mariner9/05": [
+  "/images/missions/mariner9/08": [
     300
   ],
   "/images/mars-sites/mars-odyssey/01": [
@@ -7649,73 +7585,38 @@
     320,
     1280
   ],
-  "/images/mars-sites/mars-pathfinder/01": [
-    320,
-    960
-  ],
-  "/images/mars-sites/mars-pathfinder/02": [
-    320,
-    640
-  ],
-  "/images/mars-sites/mars-pathfinder/03": [
-    320,
-    640,
-    819
-  ],
-  "/images/mars-sites/mars-pathfinder/04": [
-    256
-  ],
-  "/images/mars-sites/mars2/01": [
+  "/images/missions/mars2/04": [
     320,
     640,
     1280,
     1600
   ],
-  "/images/mars-sites/mars3/01": [
+  "/images/missions/mars3/05": [
     320,
     640,
     1280,
     1920
   ],
-  "/images/mars-sites/mars3/02": [
+  "/images/missions/mars3/06": [
     320,
     719,
     1150,
     1725
   ],
-  "/images/mars-sites/mars3/03": [
-    320,
-    689,
-    960
+  "/images/missions/mars3/07": [
+    320
   ],
-  "/images/mars-sites/mars3/04": [
-    320,
-    640
-  ],
-  "/images/mars-sites/mars6/01": [
-    250
-  ],
-  "/images/mars-sites/maven/01": [
-    320,
-    640,
-    848,
-    960
-  ],
-  "/images/mars-sites/maven/02": [
+  "/images/missions/maven/05": [
     320,
     1280
   ],
-  "/images/mars-sites/maven/03": [
+  "/images/missions/maven/06": [
     320,
     1280,
     2048,
     3000
   ],
-  "/images/mars-sites/maven/04": [
-    320,
-    1280
-  ],
-  "/images/mars-sites/maven/05": [
+  "/images/missions/maven/07": [
     320,
     1280,
     2048,
@@ -7741,103 +7642,88 @@
     320,
     640
   ],
-  "/images/mars-sites/opportunity/01": [
+  "/images/missions/opportunity/06": [
     320,
     640,
     960
   ],
-  "/images/mars-sites/opportunity/02": [
+  "/images/missions/opportunity/07": [
     320,
     1280
   ],
-  "/images/mars-sites/opportunity/03": [
-    320,
-    448
-  ],
-  "/images/mars-sites/opportunity/04": [
+  "/images/missions/opportunity/08": [
     320,
     1267
   ],
-  "/images/mars-sites/opportunity/05": [
+  "/images/missions/opportunity/09": [
     320,
     1280
   ],
-  "/images/mars-sites/perseverance/01": [
+  "/images/missions/perseverance/05": [
     320,
     640,
     1280
   ],
-  "/images/mars-sites/perseverance/02": [
-    320,
-    1280
-  ],
-  "/images/mars-sites/perseverance/03": [
-    320,
-    1280
-  ],
-  "/images/mars-sites/perseverance/04": [
+  "/images/missions/perseverance/06": [
     320,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/phoenix/01": [
+  "/images/missions/phoenix/06": [
     320,
     1280,
     1400
   ],
-  "/images/mars-sites/phoenix/02": [
+  "/images/missions/phoenix/07": [
     320,
     411
   ],
-  "/images/mars-sites/phoenix/03": [
+  "/images/missions/phoenix/08": [
     320,
     552
   ],
-  "/images/mars-sites/phoenix/04": [
+  "/images/missions/phoenix/09": [
     320,
     960
   ],
-  "/images/mars-sites/phoenix/05": [
-    320,
-    640
+  "/images/missions/phoenix/10": [
+    320
   ],
-  "/images/mars-sites/schiaparelli/01": [
+  "/images/missions/schiaparelli/06": [
     320,
     640,
     763
   ],
-  "/images/mars-sites/schiaparelli/02": [
+  "/images/missions/schiaparelli/07": [
     320,
     394
   ],
-  "/images/mars-sites/schiaparelli/03": [
+  "/images/missions/schiaparelli/08": [
     320,
     1190
   ],
-  "/images/mars-sites/schiaparelli/04": [
+  "/images/missions/schiaparelli/09": [
     320,
     1280,
     1920
   ],
-  "/images/mars-sites/spirit/01": [
+  "/images/missions/spirit/06": [
     320,
     640,
     1280,
     2048,
     3000
   ],
-  "/images/mars-sites/spirit/02": [
+  "/images/missions/spirit/07": [
     320,
     1280
   ],
-  "/images/mars-sites/spirit/03": [
-    320,
-    640
+  "/images/missions/spirit/08": [
+    320
   ],
-  "/images/mars-sites/spirit/04": [
-    320,
-    640
+  "/images/missions/spirit/09": [
+    320
   ],
   "/images/mars-sites/tgo/01": [
     320,
@@ -7859,46 +7745,17 @@
     320,
     1280
   ],
-  "/images/mars-sites/tianwen1-orbiter/01": [
-    320,
-    640,
-    960
-  ],
-  "/images/mars-sites/tianwen1-orbiter/02": [
-    320,
-    960
-  ],
-  "/images/mars-sites/tianwen1-orbiter/03": [
-    320,
-    960
-  ],
-  "/images/mars-sites/tianwen1-orbiter/04": [
+  "/images/missions/tianwen1/06": [
     320,
     1280,
     1920
   ],
-  "/images/mars-sites/viking1-lander/01": [
+  "/images/missions/viking1/06": [
     320,
     640,
     1280,
     2048,
     3072
-  ],
-  "/images/mars-sites/viking1-lander/02": [
-    207
-  ],
-  "/images/mars-sites/viking1-lander/03": [
-    320,
-    1280,
-    1744
-  ],
-  "/images/mars-sites/viking1-lander/04": [
-    320,
-    625
-  ],
-  "/images/mars-sites/viking1-lander/05": [
-    320,
-    640
   ],
   "/images/mars-sites/viking1-orbiter/01": [
     320,
@@ -7960,7 +7817,7 @@
     1280,
     1920
   ],
-  "/images/mars-sites/zhurong/04": [
+  "/images/mars-sites/zhurong/06": [
     320,
     1280,
     1818
@@ -10788,120 +10645,93 @@
     320,
     1280
   ],
-  "/images/moon-sites/apollo15/01": [
-    320,
-    640,
-    1263
-  ],
-  "/images/moon-sites/apollo15/02": [
+  "/images/missions/apollo15/06": [
     320,
     1249,
     1920
   ],
-  "/images/moon-sites/apollo15/03": [
+  "/images/missions/apollo15/07": [
     320,
     386
   ],
-  "/images/moon-sites/apollo15/04": [
+  "/images/missions/apollo15/08": [
     320,
     1000
   ],
-  "/images/moon-sites/apollo15/05": [
+  "/images/missions/apollo15/09": [
     320,
     1000
   ],
-  "/images/moon-sites/apollo16/01": [
+  "/images/missions/apollo16/06": [
     320,
     640,
     1280,
     1600
   ],
-  "/images/moon-sites/apollo16/02": [
+  "/images/missions/apollo16/07": [
     320,
     483
   ],
-  "/images/moon-sites/beresheet/01": [
-    320,
-    640,
-    1274,
-    1828
-  ],
-  "/images/moon-sites/beresheet/02": [
+  "/images/missions/beresheet/06": [
     320,
     1100
   ],
-  "/images/moon-sites/beresheet/03": [
+  "/images/missions/beresheet/07": [
     320,
     1139,
     1703
   ],
-  "/images/moon-sites/beresheet/04": [
+  "/images/missions/beresheet/08": [
     320,
     1189,
     1715
   ],
-  "/images/moon-sites/change3/01": [
-    320,
-    640,
-    960
-  ],
-  "/images/moon-sites/change3/02": [
-    320,
-    960
-  ],
-  "/images/moon-sites/change3/03": [
+  "/images/missions/change3/05": [
     320,
     576
   ],
-  "/images/moon-sites/change3/04": [
+  "/images/missions/change3/06": [
     320,
     952
   ],
-  "/images/moon-sites/change4/01": [
+  "/images/missions/change4/07": [
     320,
     640,
     1280,
     1600
   ],
-  "/images/moon-sites/change4/02": [
+  "/images/missions/change4/08": [
     320,
     1280,
     1920
   ],
-  "/images/moon-sites/change4/03": [
+  "/images/missions/change4/09": [
     320,
     1280,
     1920
   ],
-  "/images/moon-sites/luna16/01": [
+  "/images/missions/luna16/06": [
     320,
     680
   ],
-  "/images/moon-sites/luna16/03": [
-    320,
-    640,
-    719,
-    1150,
-    1456
-  ],
-  "/images/moon-sites/luna17/01": [
+  "/images/missions/luna17/06": [
     320,
     640,
     1000
   ],
-  "/images/moon-sites/luna21/01": [
+  "/images/missions/luna21/06": [
     320,
     640,
     1280,
     1440
   ],
-  "/images/moon-sites/luna21/02": [
+  "/images/missions/luna21/07": [
     320,
     1280,
     2048,
     3072
   ],
-  "/images/moon-sites/luna21/03": [
+  "/images/missions/luna21/08": [
     320,
     1280,
     1920
@@ -14361,7 +14191,7 @@
     2048,
     3072
   ],
-  "/images/mars-sites/hope/04": [
+  "/images/missions/hope-probe/05": [
     320,
     640,
     1024
@@ -14386,7 +14216,7 @@
     1150,
     1725
   ],
-  "/images/mars-sites/schiaparelli/05": [
+  "/images/missions/schiaparelli/10": [
     320,
     640,
     1280,
@@ -14532,7 +14362,7 @@
     2048,
     3072
   ],
-  "/images/moon-sites/beresheet/05": [
+  "/images/missions/beresheet/09": [
     320,
     640,
     1280,
@@ -14551,30 +14381,11 @@
     640,
     1125
   ],
-  "/images/moon-sites/luna16/02": [
-    320,
-    640,
-    900
-  ],
-  "/images/moon-sites/luna16/04": [
-    320,
-    640,
-    1280,
-    2048,
-    2560
-  ],
-  "/images/moon-sites/luna16/05": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/moon-sites/luna21/04": [
+  "/images/missions/luna21/09": [
     320,
     1000
   ],
-  "/images/moon-sites/luna21/05": [
+  "/images/missions/luna21/10": [
     320,
     1280,
     2048,
@@ -14796,7 +14607,7 @@
     2048,
     3072
   ],
-  "/images/mars-sites/insight/04": [
+  "/images/missions/insight/07": [
     320,
     640,
     1024
@@ -14869,11 +14680,6 @@
     1920
   ],
   "/images/fleet-galleries/progress-7k-tg/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/mars-sites/mars2/02": [
     320,
     1280,
     1920
@@ -15117,14 +14923,14 @@
     1280,
     1843
   ],
-  "/images/mars-sites/spirit/05": [
+  "/images/missions/spirit/10": [
     320,
     640,
     1280,
     2048,
     2486
   ],
-  "/images/mars-sites/insight/03": [
+  "/images/missions/insight/06": [
     320,
     640,
     1280,
@@ -18424,158 +18230,144 @@
     1024,
     2048
   ],
-  "/images/mars-sites/opportunity/route/endurance-layers": [
+  "/images/missions/opportunity/10": [
     320,
     640,
     1024
   ],
-  "/images/mars-sites/opportunity/route/erebus-horizon": [
+  "/images/missions/opportunity/11": [
     320,
     640,
     1280,
     2048,
     2154
   ],
-  "/images/mars-sites/opportunity/route/marathon-valley-pan": [
+  "/images/missions/opportunity/13": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/opportunity/route/perseverance-valley": [
+  "/images/missions/opportunity/12": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/opportunity/route/victoria-lip": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/mars-sites/spirit/route/beside-home-plate": [
+  "/images/missions/spirit/13": [
     320,
     640,
     1280,
     2048,
     2601
   ],
-  "/images/mars-sites/spirit/route/bonneville-approach": [
+  "/images/missions/spirit/11": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/spirit/route/bonneville-rim": [
+  "/images/missions/spirit/12": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/spirit/route/larrys-lookout": [
+  "/images/missions/spirit/14": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/spirit/route/troy": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/mars-sites/curiosity/route/gediz-vallis": [
+  "/images/missions/curiosity/11": [
     320,
     640,
     1280,
     2048,
     2924
   ],
-  "/images/mars-sites/curiosity/route/glen-torridon": [
+  "/images/missions/curiosity/10": [
     320,
     640,
     1280,
     1328
   ],
-  "/images/mars-sites/curiosity/route/marias-pass": [
+  "/images/missions/curiosity/07": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/curiosity/route/murray-buttes": [
+  "/images/missions/curiosity/08": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/curiosity/route/vera-rubin-ridge": [
+  "/images/missions/curiosity/09": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/curiosity/route/yellowknife-overlook": [
+  "/images/missions/curiosity/06": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/perseverance/route/bright-angel": [
+  "/images/missions/perseverance/11": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/perseverance/route/delta-approach": [
+  "/images/missions/perseverance/10": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/perseverance/route/landing-pan": [
+  "/images/missions/perseverance/07": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/perseverance/route/south-seitah": [
+  "/images/missions/perseverance/09": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/perseverance/route/toward-crater-rim": [
+  "/images/missions/perseverance/12": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/perseverance/route/van-zyl-overlook": [
+  "/images/missions/perseverance/08": [
     320,
     640,
     1280,
     2048,
     3072
   ],
-  "/images/mars-sites/zhurong/route/parachute-backshell": [
+  "/images/mars-sites/zhurong/07": [
     320,
     640,
     1280,
@@ -19298,21 +19090,21 @@
     2048,
     3072
   ],
-  "/images/moon-sites/apollo15/06": [
+  "/images/missions/apollo15/10": [
     320,
     640,
     1270,
     2032,
     3048
   ],
-  "/images/moon-sites/apollo16/03": [
+  "/images/missions/apollo16/08": [
     320,
     640,
     1236,
     1977,
     2966
   ],
-  "/images/moon-sites/apollo16/04": [
+  "/images/missions/apollo16/09": [
     320,
     640,
     1279,

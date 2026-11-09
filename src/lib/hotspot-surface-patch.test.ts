@@ -197,7 +197,7 @@ describe('buildHotspotSurfacePatch', () => {
     }
   });
 
-  it('adds a dot + accent halo per annotation, converting metres to world units, and drops those outside the patch', () => {
+  it('adds one anchor per annotation, converting metres to world units, and drops those outside the patch', () => {
     const ann = (id: string, lat: number, lon: number) =>
       ({ id, lat_offset_m: lat, lon_offset_m: lon }) as unknown as HotspotAnnotation;
     const g = buildHotspotSurfacePatch({
@@ -207,16 +207,14 @@ describe('buildHotspotSurfacePatch', () => {
       regionalGroundMeters: 15000,
       annotations: [ann('in', 100, 50), ann('out', 0, 100000)],
     });
-    const dots = g.children.filter((c) => c.userData.annotationId === 'in');
-    expect(dots).toHaveLength(2);
+    const anchors = g.children.filter((c) => c.userData.annotationId === 'in');
+    expect(anchors).toHaveLength(1);
+    expect(anchors[0] instanceof THREE.Mesh).toBe(false);
     expect(g.children.some((c) => c.userData.annotationId === 'out')).toBe(false);
     const detailDiameter = REGIONAL_PATCH_DIAMETER_WORLD_UNITS * (500 / 15000);
     const mToU = detailDiameter / 500;
-    const dot = dots[0];
-    expect(dot.position.x).toBeCloseTo(50 * mToU, 10); // east = +X
-    expect(dot.position.z).toBeCloseTo(-100 * mToU, 10); // north = -Z
-    const halo = dots[1] as THREE.Mesh;
-    expect((halo.material as THREE.MeshBasicMaterial).color.getHexString()).toBe('ff8800');
+    expect(anchors[0].position.x).toBeCloseTo(50 * mToU, 10); // east = +X
+    expect(anchors[0].position.z).toBeCloseTo(-100 * mToU, 10); // north = -Z
   });
 
   it('assumes a 1 km patch for annotations when groundMeters is absent', () => {

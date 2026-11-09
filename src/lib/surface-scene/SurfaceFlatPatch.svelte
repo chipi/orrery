@@ -36,6 +36,8 @@
     solTickSpacing,
   } from '$lib/surface-scene/surface-traverses';
   import { detailGroundKm } from '$lib/surface-scene/flat-patch-extent';
+  import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
+  import { groundOffsetToScreen, type PlacedRing } from '$lib/surface-scene/annotation-rings';
   import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
 
@@ -56,8 +58,10 @@
     /** Globe colour (0–1) at the site: greyscale imagery is tinted to it,
      *  matching the 3D patches (#641, Mars). */
     tint?: [number, number, number];
+    /** Full-size view of an annotation's photo (the page's lightbox). */
+    onOpenPhoto?: (src: string) => void;
   }
-  let { selected, config, traverses, entryKmPerPx, onClose, tint }: Props = $props();
+  let { selected, config, traverses, entryKmPerPx, onClose, tint, onOpenPhoto }: Props = $props();
   const tinted = (img: HTMLImageElement): HTMLImageElement | HTMLCanvasElement => {
     if (!tint) return img;
     const st = imageStats(img);
@@ -65,6 +69,8 @@
   };
 
   let canvas: HTMLCanvasElement | undefined = $state();
+  let viewW = $state(0);
+  let viewH = $state(0);
 
   // Touch-portrait: the bottom tier-context card overlays roughly the lower
   // third of the screen, so centre the imagery in the visible slot above it
@@ -222,8 +228,11 @@
       typeof window !== 'undefined'
         ? Math.max(300, Math.min(window.innerWidth, window.innerHeight))
         : 800;
-    kmPerPx = detailKm / (0.85 * vp);
-    initialKmPerPx = kmPerPx;
+    // Not `initialKmPerPx = kmPerPx`: reading it back made this effect depend on
+    // kmPerPx, so every wheel-in reset the view to the entry zoom.
+    const entryKm = detailKm / (0.85 * vp);
+    kmPerPx = entryKm;
+    initialKmPerPx = entryKm;
     autoExitFired = false;
   });
 
@@ -260,6 +269,19 @@
       y: H * flatCenterFrac - dyKm / kmPerPx, // +lat = up on screen
     };
   }
+
+  // Annotation rings: the ground offsets (metres from the site point = detail
+  // image centre) projected with the same view as the imagery, so each ring
+  // sits on its object at any zoom while its own size stays fixed.
+  const placedRings: PlacedRing[] = $derived.by(() => {
+    const list = selected.hotspot_annotations;
+    if (!list?.length || !layerDetail || selected.lat == null || selected.lon == null) return [];
+    const origin = project(selected.lat, selected.lon, viewW, viewH);
+    return list.map((annotation) => ({
+      annotation,
+      ...groundOffsetToScreen(annotation.lat_offset_m, annotation.lon_offset_m, kmPerPx, origin),
+    }));
+  });
 
   // ─── Drawing ───────────────────────────────────────────────────────
   function draw(): void {
@@ -656,6 +678,8 @@
     // minimum at wide zoom.
     if (traverses && traverses[selected.id]) return;
     if (selected.lat == null || selected.lon == null) return;
+    // The lander's own ring marks it; a filled disc would cover the hardware in the image.
+    if (layerDetail && selected.hotspot_annotations?.some((x) => x.explain)) return;
     const p = project(selected.lat, selected.lon, W, H);
     const tone = statusTone(selected.status, selected.kind, selected.site_role);
     const trueR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
@@ -701,6 +725,8 @@
       if (!canvas) return;
       canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
+      viewW = canvas.width;
+      viewH = canvas.height;
     };
     resize();
     const onResize = () => resize();
@@ -826,6 +852,17 @@
     onmouseleave={onMouseUp}
     onwheel={onWheel}
   ></canvas>
+
+  {#if placedRings.length > 0}
+    <AnnotationRings
+      rings={placedRings}
+      width={viewW}
+      height={viewH}
+      {onWheel}
+      {onOpenPhoto}
+      safeBottom={flatCenterFrac < 0.5 ? viewH * 0.44 : 0}
+    />
+  {/if}
 
   <button
     class="hud-back"

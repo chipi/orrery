@@ -174,6 +174,9 @@
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
   import SurfaceFlatPatch from '$lib/surface-scene/SurfaceFlatPatch.svelte';
+  import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
+  import SiteAnnotationList from '$lib/surface-scene/SiteAnnotationList.svelte';
+  import type { PlacedRing } from '$lib/surface-scene/annotation-rings';
   import { routePatchFlatTarget } from '$lib/surface-scene/flat-patch-extent';
   import {
     createSkybox,
@@ -780,6 +783,11 @@
   // so CSS opacity transitions can run; only 'hidden' unmounts.
   type FlatPatchPhase = 'hidden' | 'entering' | 'visible' | 'leaving';
   let flatPatchPhase: FlatPatchPhase = $state('hidden');
+  // Annotation rings over the 3D detail patch (projected per frame in animate).
+  let rings3d: PlacedRing[] = $state([]);
+  let ringsHost: HTMLDivElement | undefined = $state();
+  let ringsW = $state(0);
+  let ringsH = $state(0);
   let flatPatchActive = $derived(flatPatchPhase !== 'hidden');
   // #360: when "zoom all the way" lands on an along-route HiRISE patch under
   // the view centre, the flat-patch opens THAT patch instead of the landing.
@@ -1706,6 +1714,7 @@
     // keep clear of them. Re-read twice a second, not every frame.
     const SITE_TAG_HUD =
       'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler';
+    const ringScratch = new THREE.Vector3();
     let siteTagBlocked: Rect[] = [];
     let siteTagBlockedAt = -Infinity;
     // Traverse end caption: the scale-bar / altitude boxes it must dodge, re-measured at most
@@ -3345,6 +3354,9 @@
       onContextMenu,
     });
 
+    // A ring's tap target sits over the canvas: scrolling there still zooms.
+    if (ringsHost) lifecycle.on(ringsHost, 'wheel', onWheel, { passive: false });
+
     const c2 = canvas2d;
     const { draw2d, on2dClick } = createSurface2dMap({
       canvas: c2,
@@ -4131,13 +4143,6 @@
             h.tier2Group.visible = regionalOpacity > 0.01 || detailOpacity > 0.01;
             h.tier2Group.traverse((obj) => {
               if (!(obj instanceof THREE.Mesh)) return;
-              // Annotation pins (Apollo 11 flag, LRRR, EASEP …) hold their
-              // on-screen size: at a fixed world size the five, metres apart,
-              // stacked into one ring filling the view near the floor (#641).
-              if (obj.userData?.annotationId) {
-                obj.scale.setScalar(Math.min(1, Math.max(0.02, camR - 30)));
-                return;
-              }
               const layer = obj.userData?.layer;
               if (layer !== 'detail' && layer !== 'regional') return;
               // #360: for traverse rovers the landing regional CTX is replaced
@@ -4156,6 +4161,43 @@
               // fade to draw.
               mat.transparent = mat.opacity < 0.99 || !!(mat as THREE.MeshPhongMaterial).alphaMap;
             });
+          }
+
+          // Annotation rings: project the selected site's anchors (invisible
+          // objects on its detail patch) to screen; AnnotationRings draws them
+          // at a fixed size, so metres-apart objects stay separate rings.
+          {
+            const sel = selected;
+            const patch = sel ? hotspots.find((x) => x.siteId === sel.id)?.tier2Group : undefined;
+            const next: PlacedRing[] = [];
+            if (
+              patch?.visible &&
+              detailOpacity > 0.5 &&
+              !flatPatchActive &&
+              sel?.hotspot_annotations
+            ) {
+              const byId = new Map(sel.hotspot_annotations.map((a) => [a.id, a]));
+              const rw = renderer.domElement.clientWidth;
+              const rh = renderer.domElement.clientHeight;
+              for (const obj of patch.children) {
+                const annotation = byId.get(obj.userData?.annotationId);
+                if (!annotation) continue;
+                const ndc = obj.getWorldPosition(ringScratch).project(camera);
+                if (ndc.z >= 1) continue;
+                next.push({ annotation, x: ((ndc.x + 1) / 2) * rw, y: ((1 - ndc.y) / 2) * rh });
+              }
+              if (rw !== ringsW) ringsW = rw;
+              if (rh !== ringsH) ringsH = rh;
+            }
+            const moved =
+              next.length !== rings3d.length ||
+              next.some(
+                (r, i) =>
+                  r.annotation.id !== rings3d[i].annotation.id ||
+                  Math.abs(r.x - rings3d[i].x) > 0.25 ||
+                  Math.abs(r.y - rings3d[i].y) > 0.25,
+              );
+            if (moved) rings3d = next;
           }
 
           // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
@@ -5155,6 +5197,17 @@
     class:flat-patch-fading={flatPatchPhase !== 'hidden'}
     data-audio-stage="surface-scene"
   ></div>
+  <div class="rings-host" bind:this={ringsHost}>
+    {#if view === '3d' && rings3d.length > 0}
+      <AnnotationRings
+        rings={rings3d}
+        width={ringsW}
+        height={ringsH}
+        onOpenPhoto={(src) => (panelLightbox = src)}
+        safeBottom={viewport.isTouch && !viewport.isLandscape ? ringsH * 0.44 : 0}
+      />
+    {/if}
+  </div>
   <!-- 2D fallback canvas — equirectangular for /mars, lunar-polar-discs
        for /moon. On /earth (config.disable2D) the toggle button + view
        state are suppressed so the canvas stays permanently hidden;
@@ -5642,6 +5695,7 @@ sample      ${debugInfo.projectedPxSample}`}
         {traverses}
         entryKmPerPx={sphereKmPerPxAtSurface}
         tint={flatPatchTint}
+        onOpenPhoto={(src) => (panelLightbox = src)}
         onClose={(exitKmPerPx) => closeFlatPatch(exitKmPerPx)}
       />
     </div>
@@ -6226,6 +6280,10 @@ sample      ${debugInfo.projectedPxSample}`}
           <p class="editorial">{selected.fact}</p>
         {/if}
 
+        {#if selected.hotspot_annotations?.length}
+          <SiteAnnotationList annotations={selected.hotspot_annotations} />
+        {/if}
+
         {#if selected.capability}
           <section class="capability-block">
             <h3>{m.moon_panel_capability_title()}</h3>
@@ -6649,6 +6707,12 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .layer.hidden {
     display: none;
+  }
+  .rings-host {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
   }
   :global(.moon canvas) {
     display: block;

@@ -129,6 +129,33 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)',
     await page.waitForTimeout(800); // give the cross-fade + camera-back lerp time
     expect(errors).toEqual([]);
   });
+
+  // "What you're seeing" (0.9.8 pilot): yellow rings at the true ground position of
+  // human hardware, a list in the site panel, and a tap-to-explain popover.
+  test('moon / apollo15 — annotation rings, list and popover', async ({ page }) => {
+    await page.goto('/moon?site=apollo15');
+    await zoomIntoSurface(page);
+    await expect(page.locator('.flat-patch')).toBeVisible({ timeout: 8000 });
+    const rings = page.locator('.flat-patch [data-testid="annotation-ring"]');
+    await expect.poll(() => rings.count()).toBeGreaterThanOrEqual(3);
+    // Rings are buttons with an accessible name and a tap target of at least 44 px.
+    const lm = page.locator('.flat-patch').getByRole('button', { name: /falcon descent stage/i });
+    const box = await lm.boundingBox();
+    expect(box!.width).toBeGreaterThanOrEqual(44);
+    expect(box!.height).toBeGreaterThanOrEqual(44);
+    // The site panel lists the same objects.
+    const list = page.getByTestId('site-annotation-list');
+    await expect(list.getByRole('button')).toHaveCount(3);
+    // Tap a ring: popover with the explanation and a source link; Escape closes
+    // the popover and leaves the ground view open.
+    await lm.click({ force: true });
+    const pop = page.getByTestId('annotation-popover');
+    await expect(pop).toContainText(/Falcon/);
+    await expect(pop.getByRole('link', { name: /LROC/ })).toHaveAttribute('href', /^https:\/\//);
+    await page.keyboard.press('Escape');
+    await expect(pop).toBeHidden();
+    await expect(page.locator('.flat-patch')).toBeVisible();
+  });
 });
 
 test.describe('SurfaceFlatPatch — mobile smoke (mount-only)', () => {

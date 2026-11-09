@@ -421,7 +421,7 @@ Fleet entries, surface sites, and other localised records follow the same base +
 | `static/data/iss-modules.json` / `static/data/tiangong-modules.json` (any new id) | `i18n-src/en-US/{file}/{id}.json` |
 | `static/data/launches.json` (any new id) | (no overlay required — schema is monolingual) |
 
-`validate-data` enforces this at preflight (and pre-push) — missing overlays will fail before push. Other locales fall back to en-US, so en-US alone is enough to ship; translations follow in a separate commit per the i18n pipeline. **History note:** GH #83 (May 2026) shipped 11 constellation entries without overlays, causing CI e2e failures + a follow-up fix commit. Layer 1 validator (added that same day) prevents recurrence.
+`validate-data` enforces this at preflight (and pre-push) — missing overlays will fail before push. Since 0.9.8 the translations land in the same change: user-facing text ships in all 14 locales, and the `check-i18n-coverage` gate (`scripts/i18n-coverage-scan.mjs --gate`, reviewed exceptions in `scripts/i18n-tools/coverage-reviewed.json`) fails validate-data on English left in a locale file; `check-i18n-en-source` fails when an English string changes after its translations were checked (refresh `en-source-hashes.json` once they are — see `scripts/i18n-tools/README.md`). The runtime fallback to en-US still exists but is not a shipping path. **History note:** GH #83 (May 2026) shipped 11 constellation entries without overlays, causing CI e2e failures + a follow-up fix commit. Layer 1 validator (added that same day) prevents recurrence.
 
 ---
 

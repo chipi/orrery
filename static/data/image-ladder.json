@@ -7630,7 +7630,8 @@
     1725
   ],
   "/images/missions/mars3/07": [
-    320
+    320,
+    640
   ],
   "/images/missions/maven/05": [
     320,
@@ -7714,7 +7715,8 @@
     960
   ],
   "/images/missions/phoenix/10": [
-    320
+    320,
+    640
   ],
   "/images/missions/schiaparelli/06": [
     320,
@@ -7746,10 +7748,12 @@
     1280
   ],
   "/images/missions/spirit/08": [
-    320
+    320,
+    640
   ],
   "/images/missions/spirit/09": [
-    320
+    320,
+    640
   ],
   "/images/mars-sites/tgo/01": [
     320,
@@ -9454,6 +9458,7 @@
   ],
   "/images/missions/opportunity/02": [
     320,
+    640,
     1280,
     2048,
     3072

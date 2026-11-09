@@ -1,8 +1,14 @@
 import { existsSync, readFileSync, promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
+import gdal from 'gdal-async';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
-import { ensureCtxMosaicTile, tileNameForLatLon, tileUrlForName } from './ctx-mosaic.ts';
+import {
+  ensureCtxMosaicTile,
+  tileCentresForWindow,
+  tileNameForLatLon,
+  tileUrlForName,
+} from './ctx-mosaic.ts';
 
 /**
  * Mars Tier 2a (regional CTX layer) fetch orchestrator.
@@ -272,10 +278,31 @@ async function fetchOneCtx(
     console.log(`  · ${hotspot.id} dry-run → tile ${tileName} → ${outputPath}`);
     return null;
   }
-  const localTilePath = await ensureCtxMosaicTile(centre.lat, centre.lon);
   const cropPx = cropPxFor(hotspot.id, centre);
+  const srcPx = eastWestSourcePx(cropPx, centre.lat);
+  // Tile grid is 4 degrees; the tile raster is 5 m per pixel of arc at the equator.
+  const mPerDeg = (Math.PI / 180) * 3396190;
+  const tiles = tileCentresForWindow(
+    centre.lat,
+    centre.lon,
+    (cropPx * 5) / 2 / mPerDeg,
+    (srcPx * 5) / 2 / mPerDeg,
+  );
+  const tilePaths: string[] = [];
+  for (const t of tiles) tilePaths.push(await ensureCtxMosaicTile(t.lat, t.lon));
+  let localTilePath = tilePaths[0];
+  if (tilePaths.length > 1) {
+    // Same global grid and CRS, so a VRT needs no reprojection.
+    localTilePath = `/vsimem/ctx-${hotspot.id}.vrt`;
+    const vrt = await gdal.buildVRTAsync(localTilePath, tilePaths, [
+      '-srcnodata',
+      '0',
+      '-vrtnodata',
+      '0',
+    ]);
+    vrt.close();
+  }
   try {
-    const srcPx = eastWestSourcePx(cropPx, centre.lat);
     const widePath = `${outputPath}.wide.tmp.jpg`;
     const crop = await cropRemoteRasterToLatLon({
       localRasterPath: localTilePath,

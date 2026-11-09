@@ -47,9 +47,38 @@ import { spawnSync, spawn } from 'node:child_process';
 
 const TILE_CACHE_DIR = path.join('.image-cache', 'ctx-mosaic');
 const TILE_URL_BASE = 'https://murray-lab.caltech.edu/CTX/V01/tiles';
-/** Per-URL download attempts on flaky connections. Same shape as
- *  the HiRISE downloader. ZIP is one big blob — no resume. */
-const DOWNLOAD_MAX_ATTEMPTS = 3;
+/** Per-URL download attempts. The server gives ~0.5 MB/s per connection, so a
+ *  1.9 GB zip takes more than one 30 min attempt: each attempt resumes the
+ *  partial file (curl -C -). */
+const DOWNLOAD_MAX_ATTEMPTS = 24;
+
+/**
+ * Centres of every 4 degree tile a window of +-halfNsDeg latitude and
+ * +-halfEwDeg longitude around (lat, lon) touches, one point per tile. A
+ * window that crosses a tile edge has to be cut from a mosaic of the
+ * neighbours (Viking 1 sits 0.1 degrees from its tile's west edge).
+ */
+export function tileCentresForWindow(
+  lat: number,
+  lon: number,
+  halfNsDeg: number,
+  halfEwDeg: number,
+): Array<{ lat: number; lon: number }> {
+  const out: Array<{ lat: number; lon: number }> = [];
+  const seen = new Set<string>();
+  const lat0 = Math.floor((lat - halfNsDeg) / 4) * 4;
+  const lon0 = Math.floor((lon - halfEwDeg) / 4) * 4;
+  for (let la = lat0; la <= lat + halfNsDeg; la += 4) {
+    for (let lo = lon0; lo <= lon + halfEwDeg; lo += 4) {
+      const c = { lat: la + 2, lon: lo + 2 };
+      const name = tileNameForLatLon(c.lat, c.lon);
+      if (seen.has(name)) continue;
+      seen.add(name);
+      out.push(c);
+    }
+  }
+  return out;
+}
 
 /**
  * Compute the tile name `E{lon}_N{lat}` for the (lat, lon) point.
@@ -229,13 +258,14 @@ async function downloadWithRetry(url: string, outPath: string): Promise<void> {
     const label = attempt > 1 ? ` (attempt ${attempt}/${DOWNLOAD_MAX_ATTEMPTS})` : '';
     console.log(`  downloading ${url.slice(0, 80)}…${label}`);
     const t0 = Date.now();
-    if (existsSync(outPath)) await fs.unlink(outPath);
     try {
       await new Promise<void>((resolve, reject) => {
         const proc = spawn(
           'curl',
           [
             '-sSL',
+            '-C',
+            '-',
             '--fail',
             '--connect-timeout',
             '30',

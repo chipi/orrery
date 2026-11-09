@@ -30551,7 +30551,7 @@
       "id": "682a622ce640cbec",
       "path": "/images/hotspots/mars/spirit/tier2-ctx.jpg",
       "source_type": "derived-mosaic",
-      "title": "Murray Lab Global CTX Mosaic V01 tile E172_N-16 — regional patch centred on the traverse midpoint (-14.580°N 175.507°E)",
+      "title": "Murray Lab Global CTX Mosaic V01 tile E172_N-16 — regional patch centred on the traverse midpoint (-14.592°N 175.522°E)",
       "author": "Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX",
       "agency": "NASA",
       "source_url": "https://murray-lab.caltech.edu/CTX/V01/tiles/MurrayLab_GlobalCTXMosaic_V01_E172_N-16.zip",
@@ -30562,12 +30562,13 @@
       "modifications": [
         "cropped-around-traverse-midpoint",
         "extracted-from-murray-lab-tile-zip",
+        "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": "E172_N-16",
-      "fetched_at": "2026-06-24T13:56:00.103Z",
+      "fetched_at": "2026-11-09T16:58:46.680Z",
       "spacecraft_id": "mro",
       "spacecraft_name": "Mars Reconnaissance Orbiter",
       "instrument": "CTX"

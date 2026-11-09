@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { ctxShiftedCentre, eastWestSourcePx } from './fetch-mars-ctx.ts';
+import { tileCentresForWindow, tileNameForLatLon } from './ctx-mosaic.ts';
 
 describe('eastWestSourcePx (Murray CTX tiles are 5 m N-S but 5 x cos(lat) m E-W)', () => {
   it('is the crop size at the equator', () => {
@@ -27,5 +28,19 @@ describe('ctxShiftedCentre', () => {
     const c = ctxShiftedCentre({ lat: 47.66729, lon: 134.2809 }, { north: 285, east: 5 });
     expect(c.lat).toBeCloseTo(47.66729 + 285 / 59157.9, 5);
     expect(c.lon).toBeGreaterThan(134.2809);
+  });
+});
+
+describe('tileCentresForWindow', () => {
+  it('is one tile when the window stays inside it', () => {
+    expect(tileCentresForWindow(-4.72, 137.38, 0.15, 0.15)).toHaveLength(1);
+  });
+
+  it('adds the western neighbour for Viking 1 (0.1 degrees from its tile edge)', () => {
+    const names = tileCentresForWindow(22.27, -47.95, 0.13, 0.4).map((c) =>
+      tileNameForLatLon(c.lat, c.lon),
+    );
+    expect(names).toContain('E-048_N20');
+    expect(names).toContain('E-052_N20');
   });
 });

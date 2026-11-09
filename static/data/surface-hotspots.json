@@ -1343,6 +1343,10 @@
         "lat_max": -11.1892,
         "lon_min": 171.9769,
         "lon_max": 178.9631
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": -20,
+        "east": 210
       }
     },
     "opportunity": {
@@ -2507,7 +2511,8 @@
         "lat_max": 14.9108,
         "lon_min": 86.9796,
         "lon_max": 93.8804
-      }
+      },
+      "hotspot_tier2_force_product_id": "ESP_040363_1915"
     },
     "cape-canaveral-lc-36b": {
       "hotspot_model": "launchpad-generic",

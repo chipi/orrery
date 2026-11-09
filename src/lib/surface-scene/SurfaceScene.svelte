@@ -198,7 +198,6 @@
     observatoryTagSpec,
     focusFade,
     planetFill,
-    splitCamR,
     centroidLatLon,
     siteTagSpec,
     tagStage,
@@ -3139,27 +3138,29 @@
           : sites.find((x) => x.id === id);
       return p && p.lat != null && p.lon != null ? { lat: p.lat, lon: p.lon } : null;
     };
+    // Camera distance a fan was opened at (null while the camera is still flying), so
+    // zooming away from it collapses it.
+    let fanCamR: number | null = null;
     const pickTagAt = (clientX: number, clientY: number): boolean => {
       if (pickSatAt(clientX, clientY)) return false;
       const hit = tagPointer(clientX, clientY);
-      if (!hit) return false;
-      if (hit.keys.length > 1) {
-        const pts = hit.keys.map(tagPlace).filter((p): p is { lat: number; lon: number } => !!p);
-        const target = splitCamR(
-          pts,
-          planetRadius,
-          camera.fov,
-          container!.clientHeight || 1,
-          siteTags.frameSize(),
-          zoomFloor(),
-        );
-        if (pts.length > 1 && target < camR - 0.05) {
-          const c = centroidLatLon(pts);
-          cue('select');
-          faceLatLonImpl?.(c.lat, c.lon, target);
-          return true;
-        }
+      if (!hit) {
+        siteTags.setFan(null);
+        return false;
       }
+      if (hit.keys.length > 1) {
+        // A group fans out around its point; a modest zoom toward it helps but stays
+        // above the imagery tiers (camR 38), where the pictures are still sharp.
+        const pts = hit.keys.map(tagPlace).filter((p): p is { lat: number; lon: number } => !!p);
+        cue('select');
+        siteTags.setFan(hit.keys);
+        if (pts.length > 1 && camR > 46) {
+          const c = centroidLatLon(pts);
+          faceLatLonImpl?.(c.lat, c.lon, Math.max(38, 30 + (camR - 30) * 0.55));
+        }
+        return true;
+      }
+      siteTags.setFan(null);
       cue('select');
       const id = hit.lead.slice(hit.lead.indexOf(':') + 1);
       if (hit.lead.startsWith('museum:')) selectMuseum(id, { face: true });
@@ -4162,6 +4163,10 @@
           const fillNow = planetFill(camR, planetRadius, camera.fov, tagCw, tagCh);
           const fillFirst = planetFill(autoCamR, planetRadius, camera.fov, tagCw, tagCh);
           const stage = tagStage(fillNow / fillFirst);
+          if (!siteTags.fanned()) fanCamR = null;
+          else if (flyActive) fanCamR = null;
+          else if (fanCamR == null) fanCamR = camR;
+          else if (Math.abs(camR - fanCamR) > 0.04 * (fanCamR - 30) + 0.02) siteTags.setFan(null);
           siteTags.sync(tagFrames, siteTagBlocked, stage);
           // The nation legend arrives with the first icons (#641) — by zoom
           // stage, not by tags shown, so switching every nation off keeps

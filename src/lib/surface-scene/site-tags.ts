@@ -274,24 +274,6 @@ export function planetFill(
   return pxR / (Math.min(canvasW, canvasH) / 2);
 }
 
-/** Straight-line distance between two surface points, in world units
- *  (planet radius `r`). */
-export function surfaceChord(
-  a: { lat: number; lon: number },
-  b: { lat: number; lon: number },
-  r: number,
-): number {
-  const rad = Math.PI / 180;
-  const v = (p: { lat: number; lon: number }) => [
-    Math.cos(p.lat * rad) * Math.cos(p.lon * rad),
-    Math.sin(p.lat * rad),
-    Math.cos(p.lat * rad) * Math.sin(p.lon * rad),
-  ];
-  const [x1, y1, z1] = v(a);
-  const [x2, y2, z2] = v(b);
-  return r * Math.hypot(x1 - x2, y1 - y2, z1 - z2);
-}
-
 /** The point under the mean direction of `points` (degrees). */
 export function centroidLatLon(points: Array<{ lat: number; lon: number }>): {
   lat: number;
@@ -312,29 +294,81 @@ export function centroidLatLon(points: Array<{ lat: number; lon: number }>): {
   };
 }
 
-/** Camera distance (from the planet's centre) at which every member of a
- *  group has a frame of its own, looking straight down on the group: the
- *  closest pair sets it (frames are squares, so a pair on the diagonal needs
- *  √2 frames of screen distance; the camera's roll is unknown). Pairs closer than 1e-5 of the radius share a spot
- *  and never split, so they do not count. Never closer than `floor`. */
-export function splitCamR(
-  members: Array<{ lat: number; lon: number }>,
-  planetRadius: number,
-  fovDeg: number,
-  canvasH: number,
-  framePx: number,
-  floor: number,
-): number {
-  let min = Infinity;
-  for (let i = 0; i < members.length; i++)
-    for (let j = i + 1; j < members.length; j++) {
-      const c = surfaceChord(members[i], members[j], planetRadius);
-      if (c > planetRadius * 1e-5 && c < min) min = c;
-    }
-  if (!Number.isFinite(min)) return floor;
-  const dist =
-    (0.95 * min * (canvasH / 2)) / (Math.tan((fovDeg * Math.PI) / 360) * framePx * Math.SQRT2);
-  return Math.max(floor, planetRadius + dist);
+export interface FanItem {
+  key: string;
+  /** Where the tag is drawn. */
+  x: number;
+  y: number;
+  /** Card side: 0 right, 1 left. */
+  side: 0 | 1;
+  /** The member's true position; the leader line runs from here to (x, y). */
+  from: { x: number; y: number };
+}
+
+/** Fan a group out ("spiderfy", on click): each member's tag goes into a
+ *  column beside the group point, a leader line back to its true position.
+ *  Two columns (left and right of the point, split by where the members
+ *  really are) when both cards fit in `view`, else one column on the side
+ *  with room. Rows are `max(frame, 40) + 6` px apart, so neither frames nor
+ *  cards (which extend outward from their column) can touch. The whole fan
+ *  is shifted to stay inside `view`. */
+export function fanLayout(
+  points: Array<{ key: string; x: number; y: number }>,
+  o: {
+    frame: number;
+    cardW: number;
+    /** Card's left edge from the tag centre (its leader reach). */
+    cardDx: number;
+    view: { w: number; h: number };
+    pad?: number;
+  },
+): FanItem[] {
+  const n = points.length;
+  if (n === 0) return [];
+  const pad = o.pad ?? 8;
+  const pitch = Math.max(o.frame, 40) + 6;
+  const colX = Math.max(o.frame, 44) * 1.4;
+  const reach = o.cardDx + o.cardW;
+  let cx = points.reduce((s, p) => s + p.x, 0) / n;
+  let cy = points.reduce((s, p) => s + p.y, 0) / n;
+  const byX = [...points].sort((a, b) => a.x - b.x || (a.key < b.key ? -1 : 1));
+  const two = n > 1 && o.view.w >= 2 * (reach + colX) + 2 * pad;
+  type Col = { dir: 0 | 1; members: typeof points };
+  let cols: Col[];
+  if (two) {
+    const k = Math.ceil(n / 2);
+    cols = [
+      { dir: 1, members: byX.slice(0, k) },
+      { dir: 0, members: byX.slice(k) },
+    ];
+  } else {
+    // One column, on the side of the point with more room.
+    cols = [{ dir: cx > o.view.w / 2 ? 1 : 0, members: byX }];
+  }
+  const out: FanItem[] = [];
+  for (const col of cols) {
+    const rows = [...col.members].sort((a, b) => a.y - b.y || (a.key < b.key ? -1 : 1));
+    rows.forEach((p, i) => {
+      out.push({
+        key: p.key,
+        x: (col.dir === 0 ? 1 : -1) * (two ? colX : colX * 0.5),
+        y: (i - (rows.length - 1) / 2) * pitch,
+        side: col.dir,
+        from: { x: p.x, y: p.y },
+      });
+    });
+  }
+  // Shift so every frame and card is inside the view.
+  const half = o.frame / 2;
+  const left = Math.min(...out.map((i) => (i.side === 1 ? i.x - reach : i.x - half)));
+  const right = Math.max(...out.map((i) => (i.side === 0 ? i.x + reach : i.x + half)));
+  const top = Math.min(...out.map((i) => i.y)) - Math.max(half, 20);
+  const bottom = Math.max(...out.map((i) => i.y)) + Math.max(half, 20);
+  const shift = (lo: number, hi: number, min: number, max: number) =>
+    hi - lo > max - min ? min - lo : Math.max(0, min - lo) - Math.max(0, hi - max);
+  cx += shift(cx + left, cx + right, pad, o.view.w - pad);
+  cy += shift(cy + top, cy + bottom, pad, o.view.h - pad);
+  return out.map((i) => ({ ...i, x: cx + i.x, y: cy + i.y }));
 }
 
 export interface TagStage {
@@ -505,6 +539,7 @@ const STYLE = `
 .site-tag--left .site-tag__lead--l{display:inline}
 .site-tag--bare .site-tag__card,.site-tag--bare .site-tag__lead{display:none}
 .site-tag--hover{--tag-card:1}
+.site-tag-fan{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:5}
 `;
 
 /** The DOM layer. `host` must be positioned; tags are placed in its
@@ -564,6 +599,13 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
   }
 
   let hoverLead: string | null = null;
+  let fan: Set<string> | null = null;
+  // Leader lines of a fanned group, under the tags.
+  const fanSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  fanSvg.setAttribute('class', 'site-tag-fan');
+  fanSvg.setAttribute('aria-hidden', 'true');
+  root.appendChild(fanSvg);
+  let fanDrawn = false;
   let lastHalf = full;
   let lastShown: Array<{
     lead: string;
@@ -603,15 +645,23 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
     );
     const prio = new Map(live.map((f) => [f.key, specs.get(f.key)!.priority + (f.boost ?? 0)]));
     const byKey = new Map(live.map((f) => [f.key, f]));
+    // A fanned group's members leave the clustering; they are laid out below.
+    if (fan && live.filter((f) => fan!.has(f.key)).length < 2) fan = null;
+    const fanned = fan ? live.filter((f) => fan!.has(f.key)) : [];
+    const free = fan ? live.filter((f) => !fan!.has(f.key)) : live;
     // Frames may not overlap; touching is fine (two pads 0.5 km apart only clear 27 px at the closest zoom).
     const groups = clusterFrames(
-      live.map((f) => ({ key: f.key, x: f.x, y: f.y, priority: prio.get(f.key)! })),
+      free.map((f) => ({ key: f.key, x: f.x, y: f.y, priority: prio.get(f.key)! })),
       2 * half,
     );
-    const shown: Array<{ g: TagCluster; el: HTMLDivElement; id: string; opacity: number }> = [];
-    for (const g of groups) {
-      const made = elFor(g.lead, g.keys.length);
-      if (!made) continue;
+    const shown: Array<{
+      g: TagCluster;
+      el: HTMLDivElement;
+      id: string;
+      opacity: number;
+      fan?: FanItem;
+    }> = [];
+    const touch = (made: { el: HTMLDivElement; id: string }) => {
       const st = state.get(made.id) ?? { shown: false, bare: false, z: -1 };
       state.set(made.id, st);
       if (!st.shown) {
@@ -625,46 +675,77 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
         if (c && c.offsetWidth > 0)
           st.card = { dx: c.offsetLeft, dy: c.offsetTop, w: c.offsetWidth, h: c.offsetHeight };
       }
+    };
+    for (const g of groups) {
+      const made = elFor(g.lead, g.keys.length);
+      if (!made) continue;
+      touch(made);
       const opacity = stage.icon * Math.max(...g.keys.map((k) => byKey.get(k)!.opacity));
       shown.push({ g, ...made, opacity });
+    }
+    let fanItems: FanItem[] = [];
+    if (fanned.length) {
+      const known = fanned.map((f) => state.get(f.key)?.card).filter((c) => !!c);
+      fanItems = fanLayout(
+        fanned.map((f) => ({ key: f.key, x: f.x, y: f.y })),
+        {
+          frame: 2 * half,
+          cardW: Math.max(...known.map((c) => c!.w), 190 * scale),
+          cardDx: known[0]?.dx ?? full + 34 * scale,
+          view: { w: root.clientWidth, h: root.clientHeight },
+        },
+      );
+      for (const it of fanItems) {
+        const made = elFor(it.key, 1);
+        if (!made) continue;
+        touch(made);
+        shown.push({
+          g: { lead: it.key, keys: [it.key], x: it.x, y: it.y },
+          ...made,
+          opacity: stage.icon * byKey.get(it.key)!.opacity,
+          fan: it,
+        });
+      }
     }
     // Icons-only stage: no cards, no thinning.
     const cards =
       stage.card < 0.01
         ? new Map<string, number>()
         : thinCards(
-            shown.map(({ g, id }) => {
-              const c = state.get(id)!.card ?? { dx: 0, dy: 0, w: 0, h: 0 };
-              const box = (dx: number) => ({
-                x0: g.x + dx - pad,
-                y0: g.y + c.dy - pad,
-                x1: g.x + dx + c.w + pad,
-                y1: g.y + c.dy + c.h + pad,
-              });
-              return {
-                key: id,
-                priority: prio.get(g.lead)!,
-                frame: { x0: g.x - half, y0: g.y - half, x1: g.x + half, y1: g.y + half },
-                cards: [box(c.dx), box(-c.dx - c.w)],
-              };
-            }),
+            shown
+              .filter((s) => !s.fan)
+              .map(({ g, id }) => {
+                const c = state.get(id)!.card ?? { dx: 0, dy: 0, w: 0, h: 0 };
+                const box = (dx: number) => ({
+                  x0: g.x + dx - pad,
+                  y0: g.y + c.dy - pad,
+                  x1: g.x + dx + c.w + pad,
+                  y1: g.y + c.dy + c.h + pad,
+                });
+                return {
+                  key: id,
+                  priority: prio.get(g.lead)!,
+                  frame: { x0: g.x - half, y0: g.y - half, x1: g.x + half, y1: g.y + half },
+                  cards: [box(c.dx), box(-c.dx - c.w)],
+                };
+              }),
             { x0: 0, y0: 0, x1: root.clientWidth, y1: root.clientHeight },
             blocked,
           );
     const seen = new Set<string>();
     lastHalf = half;
     lastShown = [];
-    for (const { g, el, id, opacity } of shown) {
+    for (const { g, el, id, opacity, fan: fanItem } of shown) {
       seen.add(id);
       const st = state.get(id)!;
       // The hovered tag always shows its card (on the right unless that leaves the view),
       // whatever the zoom stage or the thinning decided.
-      const hovered = hoverLead != null && g.lead === hoverLead;
+      const hovered = !!fanItem || (hoverLead != null && g.lead === hoverLead);
       if (hovered !== !!st.hover) {
         el.classList.toggle('site-tag--hover', hovered);
         st.hover = hovered;
       }
-      let side = cards.get(id);
+      let side = fanItem ? fanItem.side : cards.get(id);
       if (hovered && side == null)
         side = st.card && g.x + st.card.dx + st.card.w > root.clientWidth ? 1 : 0;
       const bare = side == null;
@@ -680,7 +761,7 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
         st.left = left;
       }
       // Higher priority draws on top.
-      const z = hovered ? 1000 : prio.get(g.lead)!;
+      const z = fanItem ? (hoverLead === g.lead ? 1100 : 1050) : hovered ? 1000 : prio.get(g.lead)!;
       lastShown.push({ lead: g.lead, keys: g.keys, x: g.x, y: g.y, opacity, z });
       if (z !== st.z) {
         el.style.zIndex = String(10 + z);
@@ -695,6 +776,21 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
         el.style.display = 'none';
         st.shown = false;
       }
+    }
+    if (fanItems.length) {
+      fanSvg.innerHTML = fanItems
+        .map((it) => {
+          const c = specs.get(it.key)?.color ?? '#fff';
+          return (
+            `<line x1="${it.from.x.toFixed(1)}" y1="${it.from.y.toFixed(1)}" x2="${it.x.toFixed(1)}" y2="${it.y.toFixed(1)}" stroke="${c}" stroke-opacity="0.85" stroke-width="1.2"/>` +
+            `<circle cx="${it.from.x.toFixed(1)}" cy="${it.from.y.toFixed(1)}" r="3" fill="${c}" stroke="#0a0e1c" stroke-width="1"/>`
+          );
+        })
+        .join('');
+      fanDrawn = true;
+    } else if (fanDrawn) {
+      fanSvg.innerHTML = '';
+      fanDrawn = false;
     }
   }
 
@@ -722,6 +818,11 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
     setSpecs,
     sync,
     hitTest,
+    /** Fan these tags out around their group point (click on a group); null collapses. */
+    setFan: (keys: string[] | null) => {
+      fan = keys && keys.length > 1 ? new Set(keys) : null;
+    },
+    fanned: () => fan != null,
     setHover: (lead: string | null) => {
       hoverLead = lead;
     },

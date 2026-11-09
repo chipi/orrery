@@ -2,13 +2,12 @@
 import { describe, it, expect } from 'vitest';
 import {
   centroidLatLon,
+  fanLayout,
   clusterFrames,
   createSiteTagLayer,
   iconForSite,
   focusFade,
   planetFill,
-  splitCamR,
-  surfaceChord,
   tagStage,
   siteTagSpec,
   statusChipColor,
@@ -378,66 +377,139 @@ describe('hitTest: a 44 px touch target whatever the drawn size', () => {
   });
 });
 
-describe('a group splits when you zoom into it (prod 0.9.7 feedback 3, Kourou)', () => {
-  const kourou = [
-    { lat: 5.232, lon: -52.776 }, // ELA-2
-    { lat: 5.239, lon: -52.769 }, // ELA-3
-    { lat: 5.2365, lon: -52.7753 }, // ZLV, 0.5 km from ELA-2
-  ];
-  const fov = 45;
-  const ch = 840;
-  const projectedPx = (chord: number, camR: number) =>
-    (chord * (ch / 2)) / (Math.tan((fov * Math.PI) / 360) * (camR - 30));
-
-  it('measures the Kourou pads (ZLV is half a km from ELA-2)', () => {
-    const km = (a: number, b: number) => (surfaceChord(kourou[a], kourou[b], 30) / 30) * 6371;
-    expect(km(0, 2)).toBeGreaterThan(0.4);
-    expect(km(0, 2)).toBeLessThan(0.7);
-    expect(km(0, 1)).toBeGreaterThan(1);
-  });
-  it('touching frames do not group: an icon 27 px away is its own tag', () => {
-    const items = [
-      { key: 'a', x: 0, y: 0, priority: 0 },
-      { key: 'b', x: 27.2, y: 0, priority: 0 },
-    ];
-    expect(clusterFrames(items, 27.2)).toHaveLength(2);
-  });
-  it('the target distance gives every member a frame of its own', () => {
-    const framePx = 27.2; // Earth, full size
-    const target = splitCamR(kourou, 30, fov, ch, framePx, 30.08);
-    expect(target).toBeGreaterThanOrEqual(30.08);
-    // At the target (or the floor, where the pair is only just clear) the group has split.
-    const rad = Math.PI / 180;
-    const items = kourou.map((p, i) => ({
-      key: String(i),
-      x: projectedPx((p.lon - kourou[0].lon) * Math.cos(5.2 * rad) * rad * 30, target),
-      y: projectedPx((p.lat - kourou[0].lat) * rad * 30, target),
-      priority: 0,
+describe('a group fans out on click (prod 0.9.7 feedback 3, Kourou)', () => {
+  const view = { w: 1440, h: 840 };
+  const opts = { frame: 27, cardW: 190, cardDx: 56, view };
+  type R = { x0: number; y0: number; x1: number; y1: number };
+  const hit = (a: R, b: R) => a.x0 < b.x1 && b.x0 < a.x1 && a.y0 < b.y1 && b.y0 < a.y1;
+  const group = (n: number, x = 700, y = 420) =>
+    Array.from({ length: n }, (_, i) => ({
+      key: 'k' + i,
+      x: x + (i % 3) * 2,
+      y: y + Math.floor(i / 3) * 2,
     }));
-    expect(clusterFrames(items, framePx - 1).length).toBe(3);
+
+  it('keeps every leader on the true position of its member', () => {
+    const pts = group(5);
+    const out = fanLayout(pts, opts);
+    expect(out.map((o) => o.key).sort()).toEqual(pts.map((p) => p.key).sort());
+    for (const o of out) {
+      const p = pts.find((q) => q.key === o.key)!;
+      expect(o.from).toEqual({ x: p.x, y: p.y });
+    }
   });
-  it('a wider group asks for a farther camera, never below the floor', () => {
-    const wide = [
-      { lat: 5.2626, lon: -52.7907 },
-      { lat: 5.3019, lon: -52.8346 },
-    ];
-    const far = splitCamR(wide, 30, fov, ch, 27.2, 30.08);
-    const near = splitCamR(kourou, 30, fov, ch, 27.2, 30.08);
-    expect(far).toBeGreaterThan(near);
-    expect(far).toBeLessThan(33);
-    expect(splitCamR([kourou[0], kourou[0]], 30, fov, ch, 27.2, 30.08)).toBe(30.08);
+  it('never lets two frames touch, from 2 to 14 members, at any zoom stage size', () => {
+    for (let n = 2; n <= 14; n++)
+      for (const frame of [15, 27, 44]) {
+        const out = fanLayout(group(n), { ...opts, frame });
+        const r = (x: number, y: number) => ({
+          x0: x - frame / 2,
+          y0: y - frame / 2,
+          x1: x + frame / 2,
+          y1: y + frame / 2,
+        });
+        for (let a = 0; a < out.length; a++)
+          for (let b = a + 1; b < out.length; b++)
+            expect(hit(r(out[a].x, out[a].y), r(out[b].x, out[b].y))).toBe(false);
+      }
   });
-  it('a pair half a km apart (ZLV, ELA-2) counts: the group goes to the floor, not to the wider pair', () => {
-    const group = [
-      { lat: 5.2626, lon: -52.7907 },
-      { lat: 5.3019, lon: -52.8346 },
-      { lat: 5.2626, lon: -52.7907 + 0.0007 },
-    ];
-    expect(splitCamR(group, 30, fov, ch, 27.2, 30.08)).toBe(30.08);
+  it('rows are far enough apart that cards in one column do not touch', () => {
+    const out = fanLayout(group(12), opts);
+    for (const side of [0, 1] as const) {
+      const ys = out
+        .filter((o) => o.side === side)
+        .map((o) => o.y)
+        .sort((a, b) => a - b);
+      for (let i = 1; i < ys.length; i++) expect(ys[i] - ys[i - 1]).toBeGreaterThanOrEqual(40);
+    }
+  });
+  it('uses two columns on a desktop and cards extend outward from each', () => {
+    const out = fanLayout(group(6), opts);
+    expect(new Set(out.map((o) => o.side))).toEqual(new Set([0, 1]));
+    for (const o of out) expect(o.side === 0 ? o.x > 700 : o.x < 700).toBe(true);
+  });
+  it('falls back to one column on a phone and stays in view', () => {
+    const phone = { w: 390, h: 844 };
+    const out = fanLayout(group(6, 300, 400), { frame: 23, cardW: 150, cardDx: 48, view: phone });
+    expect(new Set(out.map((o) => o.side)).size).toBe(1);
+    for (const o of out) {
+      expect(o.y).toBeGreaterThan(0);
+      expect(o.y).toBeLessThan(phone.h);
+      const reach = o.side === 0 ? o.x + 48 + 150 : o.x - 48 - 150;
+      expect(o.side === 0 ? reach : -reach).toBeLessThanOrEqual(o.side === 0 ? phone.w : 0);
+    }
+  });
+  it('shifts a fan at the screen edge back into view', () => {
+    const out = fanLayout(group(4, 20, 20), opts);
+    for (const o of out) {
+      expect(o.x - 13.5).toBeGreaterThanOrEqual(0);
+      expect(o.y - 13.5).toBeGreaterThanOrEqual(0);
+    }
   });
   it('centres on the mean direction', () => {
-    const c = centroidLatLon(kourou);
+    const c = centroidLatLon([
+      { lat: 5.232, lon: -52.776 },
+      { lat: 5.239, lon: -52.769 },
+      { lat: 5.2365, lon: -52.7753 },
+    ]);
     expect(c.lat).toBeCloseTo(5.236, 2);
     expect(c.lon).toBeCloseTo(-52.7734, 2);
+  });
+});
+
+describe('fan in the tag layer', () => {
+  const setup = () => {
+    const host = document.createElement('div');
+    document.body.appendChild(host);
+    const layer = createSiteTagLayer(host);
+    layer.setSpecs([spec('a', 1), spec('b', 2), spec('c', 1)]);
+    const shown = () =>
+      [...host.querySelectorAll<HTMLElement>('.site-tag')].filter(
+        (e) => e.style.display !== 'none',
+      );
+    return { host, layer, shown };
+  };
+  const near = [
+    { key: 'a', x: 100, y: 100, opacity: 1 },
+    { key: 'b', x: 103, y: 101, opacity: 1 },
+    { key: 'c', x: 101, y: 103, opacity: 1 },
+  ];
+  it('shows one tag per member with their own cards and leader lines, and collapses', () => {
+    const { host, layer, shown } = setup();
+    layer.sync(near, [], { icon: 1, size: 0.55, card: 0 });
+    expect(shown()).toHaveLength(1);
+    layer.setFan(['a', 'b', 'c']);
+    layer.sync(near, [], { icon: 1, size: 0.55, card: 0 });
+    expect(layer.fanned()).toBe(true);
+    expect(
+      shown()
+        .map((e) => e.dataset.tag)
+        .sort(),
+    ).toEqual(['a', 'b', 'c']);
+    for (const e of shown()) expect(e.classList.contains('site-tag--bare')).toBe(false);
+    expect(host.querySelectorAll('.site-tag-fan line')).toHaveLength(3);
+    layer.setFan(null);
+    layer.sync(near, [], { icon: 1, size: 0.55, card: 0 });
+    expect(shown()).toHaveLength(1);
+    expect(host.querySelectorAll('.site-tag-fan line')).toHaveLength(0);
+  });
+  it('fanned tags are clickable at their fan position, not at the group point', () => {
+    const { layer } = setup();
+    layer.setFan(['a', 'b', 'c']);
+    layer.sync(near, [], { icon: 1, size: 1, card: 1 });
+    expect(layer.hitTest(100, 100)?.keys.length ?? 1).toBe(1);
+    const hits = new Set<string>();
+    for (let x = 0; x < 600; x += 6)
+      for (let y = 0; y < 300; y += 6) {
+        const h = layer.hitTest(x, y);
+        if (h) hits.add(h.lead);
+      }
+    expect([...hits].sort()).toEqual(['a', 'b', 'c']);
+  });
+  it('a fan of one live member collapses on its own', () => {
+    const { layer } = setup();
+    layer.setFan(['a', 'b']);
+    layer.sync([near[0]], [], { icon: 1, size: 1, card: 1 });
+    expect(layer.fanned()).toBe(false);
   });
 });

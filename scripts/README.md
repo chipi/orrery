@@ -106,6 +106,7 @@ tables); keep it.
 | replace reviewed dead links everywhere they are written (all locales, labels too) | `apply-link-fixes.mjs <map.json>` (probes every replacement first; maps under `link-fixes/`) | by hand |
 | where a shipped image really comes from (placeholder credit, invented title, no row): NASA Images + Commons search, 64-bit dHash per candidate, look at every match | `image-find-source.mjs --q "<subject>" [--cat "<category>"] --out <map.json> <image>…` (one candidate: `image-match.mjs`) | by hand |
 | the same for every placeholder credit in some surfaces at once (grouped by entity, crops follow their image when the re-crop matches, resumable) | `credit-placeholders-find.mjs --surface <a,b> --out <file.json>` | by hand; look at every match with d > 4 before applying |
+| every fleet-gallery 1x1 crop against its base image (local re-crop, dHash ≤ 6): a crop that reproduces gets its base's source and `crop-verified-from-base` (row created if missing); the others are listed and left alone | `credit-placeholders-find.mjs --all-crops [--surface fleet-galleries] [--apply]` | by hand; no network |
 | credit rows to the real Commons file, once the match is known (creates a missing row) | `backfill-provenance-commons.ts <map.json>` | by hand |
 | credit rows to the real NASA Images item, once the match is known (creates a missing row) | `apply-provenance-nasa.mjs <map.json>` | by hand |
 | credit rows to an image on an agency's own website (direct-agency; licence from the allowlist) | `apply-provenance-agency.mjs <map.json>` | by hand |

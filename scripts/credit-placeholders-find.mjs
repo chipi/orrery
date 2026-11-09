@@ -16,22 +16,32 @@
  *
  * Usage: node scripts/credit-placeholders-find.mjs --surface missions,mars-sites --out <file.json>
  *        [--parallel 2] [--max 8]
+ *
+ * `--all-crops` (local files only, no network): re-crop the base image of every `.1x1.jpg` of the
+ * chosen surfaces (default fleet-galleries) and compare with the shipped crop (dHash ≤ 6). A crop that
+ * reproduces gets its base's source: its row is kept (or created when --apply) with the modification
+ * `crop-verified-from-base`. One that does not is listed under "not reproducing" and its row is left
+ * as it is (never given a source). Without --apply it only prints; --apply writes image-provenance.json.
+ *   node scripts/credit-placeholders-find.mjs --all-crops [--surface fleet-galleries] [--apply]
  */
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import sharp from 'sharp';
 import { dhash, distance } from './lib/dhash.mjs';
-import { findSources } from './lib/image-source.mjs';
 
 const args = process.argv.slice(2);
 const opt = (name, dflt) => {
   const i = args.indexOf(`--${name}`);
   return i === -1 ? dflt : args[i + 1];
 };
-const surfaces = String(opt('surface', '')).split(',').filter(Boolean);
+const allCrops = args.includes('--all-crops');
+const surfaces = String(opt('surface', allCrops ? 'fleet-galleries' : ''))
+  .split(',')
+  .filter(Boolean);
 const out = opt('out');
 const parallel = Number(opt('parallel', 2));
 const max = Number(opt('max', 8));
-if (!surfaces.length || !out) {
+if (!surfaces.length || (!out && !allCrops)) {
   console.error(
     'usage: node scripts/credit-placeholders-find.mjs --surface <a,b> --out <file.json>',
   );
@@ -86,6 +96,61 @@ async function cropMatches(stem, crop) {
     .toBuffer();
   return distance(await dhash(mine), await dhash(readFileSync(`static${crop}`))) <= 6;
 }
+
+if (allCrops) {
+  const doc = JSON.parse(readFileSync('static/data/image-provenance.json', 'utf8'));
+  const row = new Map(doc.entries.map((e) => [e.path, e]));
+  const verified = [];
+  const notReproducing = [];
+  const noBase = [];
+  const created = [];
+  for (const surface of surfaces) {
+    for (const entity of readdirSync(`static/images/${surface}`)) {
+      for (const f of readdirSync(`static/images/${surface}/${entity}`)) {
+        if (!f.endsWith('.1x1.jpg')) continue;
+        const crop = `/images/${surface}/${entity}/${f}`;
+        const base = crop.replace(/\.1x1\.jpg$/, '.webp');
+        const baseRow = row.get(base);
+        if (!existsSync(`static${base}`) || !baseRow) {
+          noBase.push(crop);
+          continue;
+        }
+        if (!(await cropMatches(base, crop))) {
+          notReproducing.push(crop);
+          continue;
+        }
+        verified.push(crop);
+        const mod = 'crop-verified-from-base';
+        const cur = row.get(crop);
+        if (cur) {
+          if (!cur.modifications.includes(mod)) cur.modifications.push(mod);
+        } else {
+          const e = {
+            ...baseRow,
+            id: createHash('sha256').update(crop).digest('hex').slice(0, 16),
+            path: crop,
+            modifications: ['cropped-1x1', mod],
+          };
+          doc.entries.push(e);
+          row.set(crop, e);
+          created.push(crop);
+        }
+      }
+    }
+  }
+  console.log(
+    `crops: ${verified.length} reproduce from their base (${created.length} rows to create), ` +
+      `${notReproducing.length} do not, ${noBase.length} without a base row/file`,
+  );
+  for (const p of notReproducing) console.log(`NOT REPRODUCING ${p}`);
+  for (const p of noBase) console.log(`NO BASE ${p}`);
+  if (args.includes('--apply')) {
+    writeFileSync('static/data/image-provenance.json', JSON.stringify(doc, null, 2) + '\n');
+    console.log('image-provenance.json written');
+  }
+  process.exit(0);
+}
+const { findSources } = await import('./lib/image-source.mjs');
 
 const todo = [...groups.entries()].filter(([key]) => !state.done.includes(key));
 console.log(

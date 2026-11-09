@@ -34,7 +34,7 @@
   {
     "id": "soyuz",
     "name": "Soyuz",
-    "tagline": "The spacecraft that began in tragedy, paid the highest price in spaceflight — and became the most reliable, longest-serving ride to orbit ever built.",
+    "tagline": "The spacecraft that began in tragedy, paid the highest price in spaceflight — and became the longest-serving crewed spacecraft design ever built.",
     "kind": "crewed-campaign",
     "agency": "Roscosmos",
     "agencies": [
@@ -129,7 +129,7 @@
   {
     "id": "salyut",
     "name": "Salyut",
-    "tagline": "The world's first space stations — two secret programmes hidden under one name, a hard and sometimes deadly decade of learning to live in orbit, and the direct ancestor of every station since.",
+    "tagline": "The world's first space stations — two secret programmes hidden under one name, a hard and sometimes deadly decade of learning to live in orbit, and the ancestor of Mir and the Russian line of stations.",
     "kind": "station",
     "agency": "Roscosmos",
     "agencies": [
@@ -178,7 +178,7 @@
   {
     "id": "buran",
     "name": "Buran",
-    "tagline": "The Soviet space shuttle that looked like America's, flew better in one respect — and flew exactly once, uncrewed and flawless, before the country that built it disappeared out from under it.",
+    "tagline": "The Soviet space shuttle that looked like America's, flew better in one respect — and flew exactly once, uncrewed, landing automatically, before the country that built it disappeared out from under it.",
     "kind": "crewed-campaign",
     "agency": "Roscosmos",
     "agencies": [
@@ -277,7 +277,7 @@
   {
     "id": "spacex",
     "name": "SpaceX — Falcon & Dragon",
-    "tagline": "A startup that nearly went broke made rockets reusable, cut the price of orbit, and gave the United States back its own ride to space.",
+    "tagline": "A startup that nearly went broke made orbital boosters routinely reusable, cut the price of orbit, and gave the United States back its own ride to space.",
     "kind": "crewed-campaign",
     "agency": "SpaceX",
     "agencies": [
@@ -293,7 +293,7 @@
   {
     "id": "starlink",
     "name": "Starlink",
-    "tagline": "The first megaconstellation — thousands of satellites that brought the internet to the whole planet, and remade low Earth orbit in the process.",
+    "tagline": "The first megaconstellation — thousands of satellites that brought broadband internet to much of the planet, and remade low Earth orbit in the process.",
     "kind": "infrastructure",
     "agency": "SpaceX",
     "agencies": [
@@ -393,7 +393,7 @@
   {
     "id": "chandrayaan",
     "name": "Chandrayaan",
-    "tagline": "India's Moon program — it found the water that changed how we see the Moon, then became the first nation ever to land near the south pole.",
+    "tagline": "India's Moon program — it detected water on the Moon, then made the first landing that close to the south pole.",
     "kind": "robotic-campaign",
     "agency": "ISRO",
     "agencies": [
@@ -443,7 +443,7 @@
   {
     "id": "jwst",
     "name": "James Webb Space Telescope",
-    "tagline": "The successor to Hubble — a gold mirror the size of a house, folded into a rocket, unfurled a million miles away to see the first light in the universe.",
+    "tagline": "The successor to Hubble — a gold mirror the size of a house, folded into a rocket, unfurled a million miles away to see some of the earliest galaxies in the universe.",
     "kind": "robotic-campaign",
     "agency": "NASA",
     "agencies": [
@@ -477,7 +477,7 @@
   {
     "id": "esa-science",
     "name": "ESA — Space Science",
-    "tagline": "Europe's robotic science fleet — the first spacecraft to land on a comet, the most precise map of the galaxy ever made, and a telescope hunting the dark universe.",
+    "tagline": "Europe's robotic science fleet — the first spacecraft to orbit a comet and make the first comet landing, the most precise map of the galaxy ever made, and a telescope hunting the dark universe.",
     "kind": "robotic-campaign",
     "agency": "ESA",
     "agencies": [
@@ -639,7 +639,7 @@
   {
     "id": "new-horizons",
     "name": "New Horizons",
-    "tagline": "It took nine and a half years and the fastest launch in history to reach Pluto — and the dead ball of ice everyone expected turned out to be a young, active world.",
+    "tagline": "It took nine and a half years and the fastest launch from Earth on record to reach Pluto — and the dead ball of ice everyone expected turned out to be a young, active world.",
     "kind": "robotic-campaign",
     "agency": "NASA",
     "agencies": [
@@ -655,7 +655,7 @@
   {
     "id": "mariner",
     "name": "Mariner",
-    "tagline": "Before any other planet was more than a smudge in a telescope, a run of small American probes went out to see them — and returned the first photographs ever taken of another world.",
+    "tagline": "Before any other planet was more than a smudge in a telescope, a run of small American probes went out to see them — and returned the first close-up photographs of other planets.",
     "kind": "robotic-campaign",
     "agency": "NASA",
     "agencies": [

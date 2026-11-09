@@ -1,8 +1,8 @@
 {
   "name": "Starlink",
-  "tagline": "The first megaconstellation — thousands of satellites that brought the internet to the whole planet, and remade low Earth orbit in the process.",
+  "tagline": "The first megaconstellation — thousands of satellites that brought broadband internet to much of the planet, and remade low Earth orbit in the process.",
   "seo_title": "Starlink: The First Megaconstellation",
-  "seo_description": "SpaceX's Starlink, the first megaconstellation: thousands of satellites that brought the internet to the whole planet, from the first 60 in 2019.",
+  "seo_description": "SpaceX's Starlink, the first megaconstellation: thousands of satellites that brought broadband internet to much of the planet, from the first 60 in 2019.",
   "the_land": [
     { "type": "prose", "md": "For sixty years, satellites were rare and precious things — a few hundred expensive spacecraft, each in its own orbit, most of them large and far away. Starlink broke that model completely. Instead of a handful of big satellites in high orbit, it flies thousands of small ones close to Earth, flat-packed and launched sixty at a time, forming a mesh that blankets the planet. By the mid-2020s more than half of all active satellites in orbit were Starlinks — a single company's constellation outnumbering everything humanity had ever launched before it, combined." },
     { "type": "prose", "md": "The reason to fly so many, so low, is physics. Internet from the traditional communications satellites in geostationary orbit is slow, because the signal has to travel 36,000 kilometres each way. Starlink's satellites orbit at around 550 kilometres, close enough that the round-trip delay feels like ground-based broadband — but staying that low means each satellite covers only a small patch of ground for a few minutes at a time, so you need a swarm of them, constantly handing you off from one to the next, to cover anywhere at all." }

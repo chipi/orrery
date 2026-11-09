@@ -2,6 +2,7 @@ import { get, type FetchLike } from './core';
 import { getSiteStory, type SiteStory } from './site-stories';
 import { getMission, getMissionIndex } from './missions';
 import { getFleet } from './fleet';
+import { getSiteIllustration, type SiteIllustration } from './site-illustrations';
 import type { FleetIndexEntry } from '$types/fleet';
 import type { SurfaceSite } from '$types/surface-site';
 
@@ -30,6 +31,7 @@ export interface SiteEntity {
   site: SurfaceSite;
   text: SiteText;
   story: SiteStory | null;
+  illustration: SiteIllustration | null;
   mission: SiteMission | null;
 }
 
@@ -54,7 +56,14 @@ export async function getSiteEntity(
     (locale === 'en-US' ? null : await overlay(`i18n/en-US/${body}-sites/${id}.json`)) ??
     {};
   const story = await getSiteStory(id, locale, fetchFn);
-  return { site, text, story, mission: await siteMission(site.mission_id, locale, fetchFn) };
+  const illustration = await getSiteIllustration(id, fetchFn);
+  return {
+    site,
+    text,
+    story,
+    illustration,
+    mission: await siteMission(site.mission_id, locale, fetchFn),
+  };
 }
 
 async function siteMission(

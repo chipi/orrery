@@ -14,6 +14,7 @@
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
+  import SiteIllustrationFigure from '$lib/components/SiteIllustrationFigure.svelte';
   import type { SiteBody, SiteEntity } from '$lib/data/site-entity';
 
   let { body, entity, mapTitle }: { body: SiteBody; entity: SiteEntity; mapTitle: string } =
@@ -62,6 +63,10 @@
     <h1>{name}</h1>
     {#if text.site_name}<p class="lede">{text.site_name}</p>{/if}
   </header>
+
+  {#if entity.illustration}
+    <div class="site-map"><SiteIllustrationFigure illustration={entity.illustration} /></div>
+  {/if}
 
   {#if text.fact}<p class="dispatch">{text.fact}</p>{/if}
 

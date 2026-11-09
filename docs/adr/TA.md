@@ -70,7 +70,7 @@ The production app ships a set of user-facing routes (the core experience below;
 | Programs | **42** |
 | Descent profiles | **77** |
 | Launch profiles | **40** |
-| AJV schemas | **84** |
+| AJV schemas | **85** |
 | Essays | **13** |
 
 _Top-level routes: catalog · colophon · credits · earth · essays · explore · fleet · fly · gallery · iss · lab · learn · library · live · mars · missions · moon · patches · plan · posters · privacy · programs · science · sourcing · tiangong · venus · worlds_

@@ -242,6 +242,7 @@ const validateLabIllustrationProvenance = ajv.compile(
   loadSchema('lab-illustration-provenance.schema.json'),
 );
 const validateOriginalWork = ajv.compile(loadSchema('original-work.schema.json'));
+const validateSiteIllustrations = ajv.compile(loadSchema('site-illustrations.schema.json'));
 const validateAgencyArchives = ajv.compile(loadSchema('agency-archives.schema.json'));
 const validateSourceFetchProvenance = ajv.compile(
   loadSchema('source-fetch-provenance.schema.json'),
@@ -720,6 +721,43 @@ validateFile(
   validateLabIllustrationProvenance,
 );
 validateFile(join(DATA_ROOT, 'original-work.json'), validateOriginalWork);
+validateFile(join(DATA_ROOT, 'site-illustrations.json'), validateSiteIllustrations);
+// Every illustrated site map must ship its base file, its ladder entry, the rungs the
+// ladder names, and an English alt + caption message.
+{
+  const p = join(DATA_ROOT, 'site-illustrations.json');
+  if (existsSync(p)) {
+    const rows = (
+      readJson(p) as { illustrations: { siteId: string; body: string; file: string }[] }
+    ).illustrations;
+    const ladder = readJson(join(DATA_ROOT, 'image-ladder.json')) as Record<string, number[]>;
+    const en = readJson('messages/en-US.json') as Record<string, string>;
+    for (const r of rows) {
+      const stem = '/' + r.file.replace(/\.webp$/, '');
+      const widths = ladder[stem] ?? [];
+      const need = [
+        r.file,
+        ...widths.slice(0, -1).map((w) => r.file.replace(/\.webp$/, `-${w}.webp`)),
+      ];
+      const missing = need.filter((f) => !existsSync(join('static', f)));
+      const keys = [`site_illustration_alt_${r.siteId}`, `site_illustration_caption_${r.body}`];
+      const noMsg = keys.filter((k) => !en[k]);
+      if (!widths.length || missing.length || noMsg.length) {
+        failed++;
+        console.error(
+          `\n  ✗ site-illustrations.json: ${r.siteId}: ` +
+            [
+              widths.length ? '' : `no ladder entry for ${stem}`,
+              missing.length ? `missing ${missing.join(', ')}` : '',
+              noMsg.length ? `missing messages ${noMsg.join(', ')}` : '',
+            ]
+              .filter(Boolean)
+              .join('; '),
+        );
+      } else passed++;
+    }
+  }
+}
 validateFile(join(DATA_ROOT, 'agency-archives.json'), validateAgencyArchives);
 validateFile(join(DATA_ROOT, 'source-fetch-provenance.json'), validateSourceFetchProvenance);
 validateFile(join(DATA_ROOT, 'cislunar-phase-science-map.json'), validateCislunarPhaseScienceMap);

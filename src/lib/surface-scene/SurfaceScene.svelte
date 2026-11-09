@@ -212,6 +212,8 @@
   import type { SurfaceSite, Traverse } from '$types/surface-site';
   import Panel from '$lib/components/Panel.svelte';
   import SiteStoryPanel from '$lib/components/SiteStoryPanel.svelte';
+  import SiteIllustrationFigure from '$lib/components/SiteIllustrationFigure.svelte';
+  import { getSiteIllustration, type SiteIllustration } from '$lib/data/site-illustrations';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
@@ -1356,6 +1358,18 @@
   // Loaded from static/data/site-stories/<id>.json. Null when no
   // story file exists for this site → tab is hidden.
   let panelStory: SiteStory | null = $state(null);
+  // The illustrated site map: first card of the STORY tab (static/data/site-illustrations.json).
+  let panelIllustration: SiteIllustration | null = $state(null);
+  $effect(() => {
+    const id = selected?.id ?? null;
+    panelIllustration = null;
+    if (!id) return;
+    void getSiteIllustration(id)
+      .then((i) => {
+        if (selected?.id === id) panelIllustration = i;
+      })
+      .catch(dataLoadFailed);
+  });
   // #547 S5 — the collectible card. One wiring serves every body this
   // scene hosts: earth pads resolve their FLEET card (the site IS the
   // fleet launch-site entry), moon/mars/venus sites that alias a mission
@@ -6426,7 +6440,16 @@ sample      ${debugInfo.projectedPxSample}`}
           </PanelGalleryGrid>
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
-      {:else if panelTab === 'story' && (panelStory || panelAnatomy.length > 0 || panelSequence)}
+      {:else if panelTab === 'story' && (panelStory || panelIllustration || panelAnatomy.length > 0 || panelSequence)}
+        {#if panelIllustration}
+          <SiteIllustrationFigure
+            illustration={panelIllustration}
+            onOpen={(src) => {
+              panelLightbox = src;
+              if (selected) trackGalleryImageOpen('site', selected.id);
+            }}
+          />
+        {/if}
         {#if panelAnatomy.length > 0 || panelSequence}
           <SiteLandingPanel
             anatomy={panelAnatomy}

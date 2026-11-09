@@ -155,3 +155,6 @@
   font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 13px;
 }
+.entity .site-map {
+  margin: 24px 0;
+}

@@ -30,6 +30,7 @@
     exploded_art: Diagram[];
     landing_art?: (Diagram & { route: string })[];
     blueprint_art?: (Diagram & { route: string })[];
+    site_illustrations?: (Diagram & { route: string })[];
     diagrams_science: Diagram[];
     posters: Poster[];
     lab_illustrations: Diagram[];
@@ -163,6 +164,12 @@
           <li>
             <a href="#sec-blueprints">{m.colophon_section_blueprints()}</a>
             <span class="counts">· {data.blueprint_art.length}</span>
+          </li>
+        {/if}
+        {#if data.site_illustrations && data.site_illustrations.length > 0}
+          <li>
+            <a href="#sec-site-illustrations">{m.colophon_section_site_illustrations()}</a>
+            <span class="counts">· {data.site_illustrations.length}</span>
           </li>
         {/if}
         <li>
@@ -348,6 +355,38 @@
       </ul>
       {@render showAll('posters', data.posters.length)}
     </section>
+
+    <!-- Illustrated site maps: AI-generated block dioramas (site panel STORY tab, /moon/<id>, /mars/<id>). -->
+    {#if data.site_illustrations && data.site_illustrations.length > 0}
+      <section class="block" aria-labelledby="sec-site-illustrations">
+        <h2 id="sec-site-illustrations">
+          {m.colophon_section_site_illustrations()}<span class="count"
+            >{data.site_illustrations.length}</span
+          >
+        </h2>
+        <p class="block-note">{m.colophon_site_illustrations_note()}</p>
+        <ul class="thumb-grid wide">
+          {#each shown('site-illustrations', data.site_illustrations) as d (d.file)}
+            <li class="thumb-card">
+              <button
+                type="button"
+                class="thumb-open"
+                onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: d.route })}
+              >
+                <img
+                  {...responsive(srcOf(d.file), IMAGE_SIZES.colophonWide)}
+                  alt={d.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <span class="thumb-title">{d.title}</span>
+            </li>
+          {/each}
+        </ul>
+        {@render showAll('site-illustrations', data.site_illustrations.length)}
+      </section>
+    {/if}
 
     <!-- Physics Lab illustrations: ORRERY originals, AI-generated (/lab).
          Renders only once an approved batch lands (empty at v0.9 ship). -->

@@ -1,0 +1,25 @@
+{
+  "_comment": "Illustrated site maps: AI-generated block dioramas (Higgsfield nano_banana_2) traced from Orrery's own reference maps of LROC / HiRISE imagery and the mission traverse data. Shown in the site panel's STORY tab (first card) and on /moon/<id> and /mars/<id>; listed on /colophon. validate-data checks that the file and its ladder rungs exist.",
+  "illustrations": [
+    {
+      "siteId": "apollo15",
+      "body": "moon",
+      "title": "Apollo 15",
+      "file": "images/illustrations/sites/apollo15.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of LROC imagery and the Apollo 15 traverse data"
+    },
+    {
+      "siteId": "curiosity",
+      "body": "mars",
+      "title": "Curiosity",
+      "file": "images/illustrations/sites/curiosity.webp",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-11-09",
+      "made_from": "Orrery reference map of HiRISE / CTX imagery and the Curiosity traverse data"
+    }
+  ]
+}

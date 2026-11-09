@@ -1720,6 +1720,20 @@
       "cover": false
     }
   ],
+  "site_illustrations": [
+    {
+      "title": "Apollo 15",
+      "file": "/images/illustrations/sites/apollo15.webp",
+      "route": "/moon/apollo15",
+      "cover": false
+    },
+    {
+      "title": "Curiosity",
+      "file": "/images/illustrations/sites/curiosity.webp",
+      "route": "/mars/curiosity",
+      "cover": false
+    }
+  ],
   "lab_illustrations": [
     {
       "title": "Apollo Round Trip",
@@ -4027,6 +4041,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
+    "site_illustrations": 2,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,

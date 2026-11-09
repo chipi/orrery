@@ -425,9 +425,28 @@
           "type": "integer",
           "minimum": 1
         },
+        "site_illustrations": {
+          "type": "integer",
+          "minimum": 1
+        },
         "blueprint_art": {
           "type": "integer",
           "minimum": 1
+        }
+      }
+    },
+    "site_illustrations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["title", "file", "cover", "route"],
+        "additionalProperties": true,
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "file": { "type": "string", "pattern": "^/.+" },
+          "cover": { "type": "boolean" },
+          "route": { "type": "string", "pattern": "^/(moon|mars)/[a-z0-9-]+$" }
         }
       }
     },

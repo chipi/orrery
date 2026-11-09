@@ -165,11 +165,15 @@
     font-size: 14px;
     cursor: pointer;
   }
-  .tcc-toggle:hover,
+  .tcc-toggle:hover {
+    color: #889fe7;
+    background: rgba(136, 159, 231, 0.1);
+  }
   .tcc-toggle:focus-visible {
     color: #889fe7;
     background: rgba(136, 159, 231, 0.1);
-    outline: none;
+    outline: 2px solid #889fe7;
+    outline-offset: -2px;
   }
   .tcc-head > .tcc-chip {
     margin-left: auto;

@@ -1687,6 +1687,25 @@
         const s = sites.find((x) => x.id === id);
         if (s) faceCameraAtSite?.(s, r);
       };
+      // Test hook: where a site's own spot is drawn now, client px — through the route's
+      // magnified frame (toDrawn) when it has one. Null when behind the globe.
+      window.__surfaceSceneDrawnSiteXY = (id) => {
+        const s = sites.find((x) => x.id === id);
+        if (!s || s.lat == null || s.lon == null) return null;
+        const d = traverseLines.find((t) => t.roverId === id)?.toDrawn?.(s.lat, s.lon) ?? [
+          s.lat,
+          s.lon,
+        ];
+        const u = latLonToUnitSphere(d[0], d[1]);
+        planetMesh.updateMatrixWorld(true);
+        const wp = new THREE.Vector3(u.x, u.y, u.z)
+          .multiplyScalar(planetRadius)
+          .applyMatrix4(planetMesh.matrixWorld);
+        const ndc = wp.project(camera);
+        if (ndc.z >= 1) return null;
+        const r = renderer.domElement.getBoundingClientRect();
+        return { x: r.left + ((ndc.x + 1) / 2) * r.width, y: r.top + ((1 - ndc.y) / 2) * r.height };
+      };
     }
 
     loadSites(localeFromPage(page))
@@ -1778,8 +1797,6 @@
     const siteTagFade = new Map<string, number>();
     const siteCardFade = new Map<string, number>();
     const siteTagPos = new THREE.Vector3();
-    const crosshairWorld = new THREE.Vector3();
-    let crosshairWorldOn = false;
     let siteTagSources: unknown[] = [];
     // HUD panels over the canvas (detail panel, chips, legend, rulers): cards
     // keep clear of them. Re-read twice a second, not every frame.
@@ -3984,11 +4001,8 @@
             sx <= cw &&
             sy >= 0 &&
             sy <= ch;
-          crosshairWorld.copy(worldPos);
-          crosshairWorldOn = onFront;
           siteCrosshairScreen = { x: sx, y: sy, onScreen };
         } else {
-          crosshairWorldOn = false;
           if (siteCrosshairScreen !== null) siteCrosshairScreen = null;
         }
 
@@ -4125,25 +4139,6 @@
           const ownDetail =
             !!selected && (!!selected.hotspot_tier2_source || routeViewCenters.has(selected.id));
           const selectedIconFade = ownDetail ? 1 - detailOpacity : 1;
-          // How much of the magnified patch (the route's CTX, ramped as in the tier-2 block below) shows.
-          const magnifiedRoute =
-            selected && !routeViewActive && routeViewCenters.has(selected.id)
-              ? (() => {
-                  const fr = frameCamRForRoute(selected.id);
-                  return fr != null
-                    ? Math.max(0, Math.min(1, (fr - camR) / 5))
-                    : regionalOpacityTop;
-                })()
-              : 0;
-          // The icon is on the magnified ground once the patch is ~40 % in.
-          const magnified = Math.min(
-            1,
-            Math.max(
-              magnifiedRoute,
-              routeViewCenters.has(selectedSiteId ?? '') ? detailOpacity : 0,
-            ) / 0.4,
-          );
-          if (Math.abs(selectedIconUi - selectedIconFade) > 0.01) selectedIconUi = selectedIconFade;
           for (const mk of markers) {
             let underFootprint = false;
             if (footUnit && mk.siteId !== selectedSiteId) {
@@ -4184,14 +4179,9 @@
               opacity: number,
               boost = 0,
               card = 1,
-              toCrosshair = 0,
             ) => {
               if (opacity <= 0.01) return;
               const wp = obj.getWorldPosition(siteTagPos);
-              // The selected site's icon rides to the crosshair as the magnified imagery
-              // (drawn larger than true scale, centred on the route) fades in, so it
-              // stays on the ground the photo shows (#641).
-              if (toCrosshair > 0 && crosshairWorldOn) wp.lerp(crosshairWorld, toCrosshair);
               const facing =
                 legendScratchC
                   .copy(wp)
@@ -4228,7 +4218,6 @@
                 siteTagFade.get(mk.siteId) ?? 0,
                 mk.siteId === selected?.id ? 10 : 0,
                 siteCardFade.get(mk.siteId) ?? 1,
-                mk.siteId === selected?.id ? magnified : 0,
               );
             // A place under the selected site's magnified imagery would sit on
             // the wrong ground: it fades with the reveal band, the rest stay.
@@ -4268,6 +4257,11 @@
           else if (fanCamR == null) fanCamR = camR;
           else if (Math.abs(camR - fanCamR) > 0.04 * (fanCamR - 30) + 0.02) siteTags.setFan(null);
           siteTags.sync(tagFrames, siteTagBlocked, stage);
+          // The crosshair takes over wherever the icon is not drawn (off the view, say).
+          const iconUi = tagFrames.some((f) => f.key === `site:${selectedSiteId}`)
+            ? selectedIconFade
+            : 0;
+          if (Math.abs(selectedIconUi - iconUi) > 0.01) selectedIconUi = iconUi;
           // The nation legend arrives with the first icons (#641) — by zoom
           // stage, not by tags shown, so switching every nation off keeps
           // the switches.

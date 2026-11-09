@@ -167,15 +167,42 @@ for (const c of CASES) {
         target = ch && { ...ch, tag: false };
         what = 'landing ring under the crosshair';
       }
-      // While the magnified patch shows, the icon and the crosshair are one mark: the
-      // icon sits where the photo marks the site, not on the true (off-photo) position.
-      if (target?.tag && r <= 32) {
-        const ch = await crosshair(page);
-        if (!ch) failures.push(`camR ${r}: no crosshair to compare the icon with`);
-        else if (Math.hypot(ch.x - target.x, ch.y - target.y) > 30)
+      // While the route is magnified (camR 36 down to 32) the icon stands where the photo shows
+      // the site: its drawn spot (through the route's magnified frame, not an offset from it).
+      // Off the view (a long route on a phone) the crosshair stands in instead. At 31 the icon
+      // has mostly handed over (below the tap floor), so it is not checked.
+      if (r >= 32 && r <= 36) {
+        const spot = await page.evaluate(
+          (id) =>
+            (
+              window as unknown as {
+                __surfaceSceneDrawnSiteXY: (i: string) => { x: number; y: number } | null;
+              }
+            ).__surfaceSceneDrawnSiteXY(id),
+          c.id,
+        );
+        const vp = page.viewportSize()!;
+        const inView =
+          !!spot && spot.x > 60 && spot.x < vp.width - 60 && spot.y > 90 && spot.y < vp.height - 60;
+        if (inView && !target?.tag)
           failures.push(
-            `camR ${r}: icon at ${Math.round(target.x)},${Math.round(target.y)} is ${Math.round(Math.hypot(ch.x - target.x, ch.y - target.y))} px from the crosshair`,
+            `camR ${r}: no icon at the drawn landing ${Math.round(spot!.x)},${Math.round(spot!.y)}`,
           );
+        else if (inView && Math.hypot(spot!.x - target!.x, spot!.y - target!.y) > 30)
+          failures.push(
+            `camR ${r}: icon at ${Math.round(target!.x)},${Math.round(target!.y)} is ${Math.round(Math.hypot(spot!.x - target!.x, spot!.y - target!.y))} px from the drawn landing`,
+          );
+      }
+      // The crosshair (the route centre) stays a tap target too.
+      if (r <= 32) {
+        const ch = await crosshair(page);
+        if (ch) {
+          await click(page, isMobile, ch.x, ch.y);
+          await page.waitForTimeout(800);
+          if (!(await panelOpen(page)))
+            failures.push(`camR ${r}: the crosshair did not reopen the panel`);
+          else await closePanel(page);
+        }
       }
       if (!target) {
         failures.push(`camR ${r}: nothing visible to click`);

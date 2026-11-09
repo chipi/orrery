@@ -29820,7 +29820,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-around-traverse-midpoint",
+        "cropped-around-site-coords",
         "extracted-from-murray-lab-tile-zip",
         "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
@@ -29891,7 +29891,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-around-traverse-midpoint",
+        "cropped-around-site-coords",
         "extracted-from-murray-lab-tile-zip",
         "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
@@ -29962,7 +29962,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-around-traverse-midpoint",
+        "cropped-around-site-coords",
         "extracted-from-murray-lab-tile-zip",
         "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
@@ -30443,7 +30443,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-around-traverse-midpoint",
+        "cropped-around-site-coords",
         "extracted-from-murray-lab-tile-zip",
         "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
@@ -30514,7 +30514,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-around-traverse-midpoint",
+        "cropped-around-site-coords",
         "extracted-from-murray-lab-tile-zip",
         "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
@@ -30635,7 +30635,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-around-traverse-midpoint",
+        "cropped-around-site-coords",
         "extracted-from-murray-lab-tile-zip",
         "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
@@ -30706,7 +30706,7 @@
       "license_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555",
       "license_rationale": "Murray Lab CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555). Underlying CTX imagery from NASA/JPL-Caltech/MSSS is U.S. Government work (17 U.S.C. §105). Use of the mosaic requires citation of the Dickson 2024 paper.",
       "modifications": [
-        "cropped-around-traverse-midpoint",
+        "cropped-around-site-coords",
         "extracted-from-murray-lab-tile-zip",
         "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"

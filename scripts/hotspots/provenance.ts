@@ -117,16 +117,21 @@ export function buildCtxMosaicProvenanceEntry(input: {
   centerLon: number;
   /** 'traverse-midpoint': rover crops are centred on the arc-length midpoint of the traverse (#360), not the site. */
   centreOn?: 'traverse-midpoint';
+  /** The window is cut this far north / east of the nominal centre so it registers with the HiRISE patch. */
+  ctxShiftM?: { north: number; east: number };
 }): ProvenanceEntry {
   const provenancePath = input.outputPath.replace(/^static/, '');
   const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
   const midpoint = input.centreOn === 'traverse-midpoint';
+  const shifted = input.ctxShiftM
+    ? `, cut ${input.ctxShiftM.north} m north and ${input.ctxShiftM.east} m east of the site so it registers with the HiRISE detail patch`
+    : '';
   const where = `${input.centerLat.toFixed(3)}°N ${input.centerLon.toFixed(3)}°E`;
   return {
     id,
     path: provenancePath,
     source_type: 'derived-mosaic',
-    title: `Murray Lab Global CTX Mosaic V01 tile ${input.tileName} — regional patch centred ${midpoint ? `on the traverse midpoint (${where})` : `at ${where}`}`,
+    title: `Murray Lab Global CTX Mosaic V01 tile ${input.tileName} — regional patch centred ${midpoint ? `on the traverse midpoint (${where})` : `at ${where}`}${shifted}`,
     author:
       'Caltech Murray Lab (J. Dickson et al. 2024) · derived from NASA / JPL-Caltech / MSSS CTX',
     agency: 'NASA',

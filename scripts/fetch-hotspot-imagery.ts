@@ -260,10 +260,14 @@ async function main(): Promise<void> {
             siteId: f.siteId,
             centerLat: f.centre.lat,
             centerLon: f.centre.lon,
-            centreOn:
-              f.centre.lat !== site.lat || f.centre.lon !== site.lon
-                ? 'traverse-midpoint'
-                : undefined,
+            centreOn: existsSync(`static/data/mars-traverses/${f.siteId}.json`)
+              ? 'traverse-midpoint'
+              : undefined,
+            ctxShiftM: (
+              sidecar.entries[f.siteId] as {
+                hotspot_tier2_ctx_shift_m?: { north: number; east: number };
+              }
+            )?.hotspot_tier2_ctx_shift_m,
           });
         })
         .filter((e) => e !== null);

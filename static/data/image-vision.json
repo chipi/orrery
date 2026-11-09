@@ -29426,6 +29426,32 @@
       "rejected_by": null,
       "scored_at": "2026-11-09T10:53:55.756Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/opportunity/14.jpg": {
+      "score": 8,
+      "subject": "Orbital view from HiRISE of Eagle Crater on Meridiani Planum, Mars, with the bright Opportunity landing platform inside it at upper right and the backshell and parachute near the lower left corner.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.745,
+        "y": 0.32
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T13:32:45.179Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/insight/08.jpg": {
+      "score": 8,
+      "subject": "Three HiRISE close-ups of the InSight landing site on Mars: the lander, its heat shield and its parachute, with the lander at the centre inside a dark patch blasted by its descent rockets.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T13:32:45.179Z",
+      "scoring_cost_usd": 0
     }
   }
 }

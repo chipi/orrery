@@ -40,3 +40,11 @@ Several site points are the centre of the HiRISE frame, not the hardware: Phoeni
 - Coordinates for Viking 1/2 and Spirit landers, used only to explain the drops, are from memory and were not fetched. Phoenix and Curiosity drops cite fetched pages.
 - Not checked: PIA21494 and PIA22875 full captions beyond the first lines (NASA API); licences/provenance of candidates; photo for Opportunity and InSight are candidates only, nothing added to the repo.
 - No in-app render, no `validate-data`, no i18n (English only).
+
+## Wired (2026-11-09, second pass)
+
+Rings in `static/data/surface-hotspots.json` + 13-locale `i18n-src/<loc>/hotspot-metadata/<site>.json`; photos in the shared `moon-annotation-photos.json` (site ids do not collide; `getMarsSites` now joins it like `getMoonSites`). 8 rings: schiaparelli backshell+parachute, opportunity lander (Eagle Crater), zhurong Tianwen-1 lander, insight lander (second check held: the 087004 patch registered on ESP_058005 by terrain cross-correlation 0.51 carries the labelled lander to the ring within ~10 m, same bright pair in a dark halo in both), and, after the patches below were re-cut on the landers, phoenix, viking2-lander and spirit.
+
+Patches re-cut on the lander (centre = site point = HiRISE-measured lander): phoenix (PSP_008591_2485; the old patch was 1.1 km east), viking1-lander (ESP_046170_2025; the old site point 22.4856 N was 13 km north of the lander at 22.27 N), viking2-lander (PSP_001501_2280; NSSDCA 47.6673 N 134.2809 E is within 4 m of the lander), spirit (PSP_001513_1655; old patch 0.4 km west). Opportunity (42 m), InSight (44 m) and Zhurong (128 m) were re-centred on their landers in the product they already used. CTX regional re-cut for phoenix and both Vikings. Coordinates changed in `mars-sites.json` and `descent-profiles/{phoenix,spirit,insight,opportunity,viking1}.json`.
+
+Not ringed: Viking 1 (the lander is probably the bright spot with a dark shadow now at the patch centre, but the HiRISE labelled cutout could not be registered, so it is not certain); backshell, parachute and heat shields at Phoenix, Viking 1/2, Spirit (outside the 512 m patch or not placed in the product). Not checked: authoritative coordinates of sites without a lander image in this pass (mars3, beagle2, curiosity, perseverance, pathfinder, schiaparelli's impact site).

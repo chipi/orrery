@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso da Spirit",
+      "label_short": "Módulo de pouso",
+      "explain": "A plataforma de pouso que levou o rover Spirit à cratera Gusev em 4 de janeiro de 2004 e ficou para trás. A pequena cratera logo a noroeste é a que a equipe do rover batizou de Sleepy Hollow."
+    }
+  ],
   "panorama_caption": "O panorama McMurdo do Spirit, feito a partir de Low Ridge, ao lado de Home Plate, enquanto o rover atravessava o inverno marciano de 2006 (sóis 814–932). No horizonte, a colina Husband, com as dunas onduladas de El Dorado ao pé."
 }

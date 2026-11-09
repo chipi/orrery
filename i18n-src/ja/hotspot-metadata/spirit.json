@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Spirit の着陸機",
+      "label_short": "着陸機",
+      "explain": "2004年1月4日に Spirit をグセフ・クレーターへ運び、そのまま残された着陸プラットフォーム。すぐ北西の小さなクレーターは、探査チームが Sleepy Hollow と名付けたもの。"
+    }
+  ],
   "panorama_caption": "Spirit が 2006年の火星の冬を越す間に、Home Plate そばの Low Ridge から撮影した McMurdo パノラマ（ソル 814〜932）。地平線にハズバンド・ヒル、その麓に El Dorado の波打つ砂丘。"
 }

@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Tianwen-1-lander",
+      "label_short": "Lander",
+      "explain": "De Tianwen-1-lander, in het midden van het patroon dat zijn landingsmotoren in het stof bliezen. De rover Zhurong reed er na de landing op 14 mei 2021 vanaf."
+    }
+  ]
+}

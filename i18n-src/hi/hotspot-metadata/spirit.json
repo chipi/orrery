@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Spirit लैंडर",
+      "label_short": "लैंडर",
+      "explain": "वह लैंडिंग प्लेटफ़ॉर्म जो 4 जनवरी 2004 को Spirit रोवर को गुसेव क्रेटर तक लाया और वहीं रह गया। उसके ठीक उत्तर-पश्चिम का छोटा क्रेटर वही है जिसे रोवर टीम ने Sleepy Hollow नाम दिया।"
+    }
+  ],
   "panorama_caption": "Spirit का McMurdo पैनोरमा, जिसे रोवर ने 2006 की मंगल-सर्दी बिताते समय Home Plate के पास Low Ridge से खींचा (सोल 814–932)। क्षितिज पर हसबैंड हिल, और उसकी तलहटी में El Dorado के लहरदार टीले।"
 }

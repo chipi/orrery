@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Spirit-lander",
+      "label_short": "Lander",
+      "explain": "Het landingsplatform dat de rover Spirit op 4 januari 2004 naar de Gusev-krater bracht en daar achterbleef. De kleine krater direct ten noordwesten ervan is de krater die het roverteam Sleepy Hollow noemde."
+    }
+  ],
   "panorama_caption": "Het McMurdo-panorama van Spirit, opgenomen vanaf Low Ridge naast Home Plate terwijl de rover de marswinter van 2006 uitzat (sol 814–932). Aan de horizon Husband Hill, aan de voet ervan de geribbelde duinen van El Dorado."
 }

@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo InSight",
+      "label_short": "InSight",
+      "explain": "El módulo de aterrizaje InSight de la NASA, de unos 6 m de ancho con los paneles solares desplegados. Sus cohetes de descenso barrieron el suelo a su alrededor y dejaron una mancha oscura."
+    }
+  ]
+}

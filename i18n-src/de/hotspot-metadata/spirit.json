@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Spirit-Lander",
+      "label_short": "Lander",
+      "explain": "Die Landeplattform, die den Rover Spirit am 4. Januar 2004 in den Gusev-Krater brachte und dort zurückblieb. Der kleine Krater unmittelbar nordwestlich davon ist der, den das Rover-Team Sleepy Hollow nannte."
+    }
+  ],
   "panorama_caption": "Das McMurdo-Panorama von Spirit, aufgenommen vom Low Ridge neben Home Plate, während der Rover den Marswinter 2006 überstand (Sol 814–932). Am Horizont der Husband Hill, an seinem Fuß die geriffelten Dünen von El Dorado."
 }

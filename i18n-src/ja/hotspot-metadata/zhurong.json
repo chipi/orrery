@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Tianwen-1 着陸機",
+      "label_short": "着陸機",
+      "explain": "Tianwen-1 着陸機。降下エンジンが塵に吹き付けた模様の中心にある。Zhurong ローバーは2021年5月14日の着陸後にここから走り出した。"
+    }
+  ]
+}

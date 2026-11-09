@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Spirit 着陆器",
+      "label_short": "着陆器",
+      "explain": "2004 年 1 月 4 日把 Spirit 火星车送到古瑟夫撞击坑、此后留在原地的着陆平台。其西北侧的小撞击坑被火星车团队命名为 Sleepy Hollow。"
+    }
+  ],
   "panorama_caption": "Spirit 在 2006 年度过火星冬季期间，于 Home Plate 旁的 Low Ridge 拍摄的 McMurdo 全景（火星日 814–932）。地平线上是赫斯本德山，山脚下是 El Dorado 波纹沙丘。"
 }

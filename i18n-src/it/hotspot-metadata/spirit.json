@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Lander di Spirit",
+      "label_short": "Lander",
+      "explain": "La piattaforma di atterraggio che portò il rover Spirit nel cratere Gusev il 4 gennaio 2004 e rimase lì. Il piccolo cratere subito a nord-ovest è quello che il team del rover chiamò Sleepy Hollow."
+    }
+  ],
   "panorama_caption": "Il panorama McMurdo di Spirit, ripreso da Low Ridge, accanto a Home Plate, mentre il rover superava l'inverno marziano del 2006 (sol 814–932). All'orizzonte Husband Hill, ai suoi piedi le dune increspate di El Dorado."
 }

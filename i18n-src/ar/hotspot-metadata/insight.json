@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "مركبة الهبوط InSight",
+      "label_short": "InSight",
+      "explain": "مركبة الهبوط InSight التابعة لوكالة NASA، ويبلغ عرضها نحو 6 أمتار حين تُفرد ألواحها الشمسية. نسفت صواريخ هبوطها الأرض من حولها فتركت بقعة داكنة."
+    }
+  ]
+}

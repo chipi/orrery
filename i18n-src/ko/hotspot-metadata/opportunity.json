@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander-eagle-crater",
+      "label": "이글 분화구의 착륙선",
+      "label_short": "착륙선",
+      "explain": "Opportunity가 남기고 간 착륙 플랫폼으로, 이글 분화구 안에 놓여 있다. 로버는 2004년 1월 착륙하고 약 일주일 뒤에 내려갔다. HiRISE에서는 착륙 충격을 흡수한 붉은 기색의 에어백 가운데 더 어두운 중심으로 보인다."
+    }
+  ],
   "panorama_caption": "이글 분화구 가장자리에서 찍은 Opportunity의 'Lion King' 파노라마(솔 58·60) — 분화구 바닥의 착륙선과 에어백 자국, 분화구 밖으로 이어지는 로버의 바퀴 자국, 그 너머의 메리디아니 평원."
 }

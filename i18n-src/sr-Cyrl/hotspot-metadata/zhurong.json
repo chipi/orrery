@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Лендер Tianwen-1",
+      "label_short": "Лендер",
+      "explain": "Лендер Tianwen-1 у средишту узорка који су његови мотори за спуштање издували у прашини. Ровер Zhurong сишао је с њега након слетања 14. маја 2021."
+    }
+  ]
+}

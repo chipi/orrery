@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Посадочный аппарат InSight",
+      "label_short": "InSight",
+      "explain": "Посадочный аппарат NASA InSight шириной около 6 м с раскрытыми солнечными батареями. Его тормозные двигатели обдули грунт вокруг, оставив тёмное пятно."
+    }
+  ]
+}

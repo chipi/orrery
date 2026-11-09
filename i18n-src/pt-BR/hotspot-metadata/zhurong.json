@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso Tianwen-1",
+      "label_short": "Módulo de pouso",
+      "explain": "O módulo de pouso Tianwen-1, no centro do padrão que seus motores de descida sopraram na poeira. O rover Zhurong saiu dele depois do pouso de 14 de maio de 2021."
+    }
+  ]
+}

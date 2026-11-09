@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Spirit 착륙선",
+      "label_short": "착륙선",
+      "explain": "2004년 1월 4일 Spirit 로버를 구세프 분화구로 실어 와 그대로 남은 착륙 플랫폼. 바로 북서쪽의 작은 분화구는 로버 팀이 Sleepy Hollow라고 이름 붙였다."
+    }
+  ],
   "panorama_caption": "Spirit이 2006년 화성의 겨울을 나는 동안 Home Plate 옆 Low Ridge에서 촬영한 McMurdo 파노라마(솔 814–932). 지평선에 허즈번드 언덕, 그 기슭에 El Dorado의 물결무늬 모래언덕."
 }

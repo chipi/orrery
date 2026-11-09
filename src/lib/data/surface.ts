@@ -79,7 +79,7 @@ async function hotspotMetadataOverlay(
   );
 }
 
-/** moon-annotation-photos.json: site id -> annotation id -> photo. */
+/** moon-annotation-photos.json (Moon and Mars sites; ids do not collide): site id -> annotation id -> photo. */
 export type AnnotationPhotos = Record<
   string,
   Record<string, import('$types/surface-site').HotspotAnnotationPhoto>
@@ -272,7 +272,11 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
   // Parallel fan-out — see getMoonSites for the rationale. Same
   // structure: baseList + hotspots in parallel, then 27 per-site
   // overlay merges concurrently instead of sequentially.
-  const [baseList, hotspots] = await Promise.all([marsSites(), surfaceHotspotsSidecar()]);
+  const [baseList, hotspots, photos] = await Promise.all([
+    marsSites(),
+    surfaceHotspotsSidecar(),
+    annotationPhotos(),
+  ]);
   return Promise.all(
     baseList.map(async (s) => {
       const overlay = await get<Partial<MarsSite>>(`i18n/${locale}/mars-sites/${s.id}.json`).catch(
@@ -285,7 +289,11 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
           : await get<Partial<MarsSite>>(`i18n/en-US/mars-sites/${s.id}.json`).catch(() => null));
       const localised = fallback ? { ...s, ...fallback } : s;
       const hotspot = hotspots[s.id];
-      return withHotspotOverlay(hotspot ? { ...localised, ...hotspot } : localised, locale);
+      const merged = await withHotspotOverlay(
+        hotspot ? { ...localised, ...hotspot } : localised,
+        locale,
+      );
+      return attachAnnotationPhotos(merged, photos);
     }),
   );
 }

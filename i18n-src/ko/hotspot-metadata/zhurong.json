@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Tianwen-1 착륙선",
+      "label_short": "착륙선",
+      "explain": "Tianwen-1 착륙선으로, 하강 엔진이 먼지에 날려 만든 무늬의 한가운데에 있다. Zhurong 로버는 2021년 5월 14일 착륙한 뒤 여기서 내려왔다."
+    }
+  ]
+}

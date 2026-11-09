@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo Phoenix",
+      "label_short": "Phoenix",
+      "explain": "El módulo de aterrizaje Phoenix de la NASA, que tocó suelo el 25 de mayo de 2008. Se ve como un punto brillante en medio del suelo oscuro que soplaron sus motores de descenso; HiRISE tomó esta imagen 22 horas después del aterrizaje."
+    }
+  ]
+}

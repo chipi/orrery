@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Atterrisseur InSight",
+      "label_short": "InSight",
+      "explain": "L'atterrisseur InSight de la NASA, large d'environ 6 m avec ses panneaux solaires déployés. Ses rétrofusées ont soufflé le sol autour de lui et laissé une tache sombre."
+    }
+  ]
+}

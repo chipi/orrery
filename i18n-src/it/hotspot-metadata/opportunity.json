@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander-eagle-crater",
+      "label": "Lander nel cratere Eagle",
+      "label_short": "Lander",
+      "explain": "La piattaforma di atterraggio lasciata da Opportunity nel cratere Eagle: il rover ne scese circa una settimana dopo l'atterraggio del gennaio 2004. HiRISE la vede come un centro più scuro tra gli airbag rossastri che attutirono l'atterraggio."
+    }
+  ],
   "panorama_caption": "Il panorama «Lion King» di Opportunity dal bordo del cratere Eagle, sol 58 e 60 — il lander e i segni dei suoi airbag sul fondo del cratere, le tracce del rover che ne esce e, oltre, le pianure di Meridiani Planum."
 }

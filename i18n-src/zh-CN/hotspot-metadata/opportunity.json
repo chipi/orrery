@@ -1,4 +1,11 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander-eagle-crater",
+      "label": "鹰撞击坑中的着陆器",
+      "label_short": "着陆器",
+      "explain": "Opportunity 火星车留在鹰撞击坑中的着陆平台。火星车在 2004 年 1 月着陆约一周后驶离。在 HiRISE 图像中，它是缓冲着陆的偏红色气囊中间一块较暗的中心。"
+    }
+  ],
   "panorama_caption": "Opportunity 在鹰撞击坑边缘拍摄的“Lion King”全景图（火星日 58 和 60）——坑底的着陆器和气囊痕迹、巡视器驶出撞击坑的车辙，以及远处的子午线高原。"
 }

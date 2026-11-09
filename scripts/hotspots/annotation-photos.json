@@ -90,6 +90,20 @@
     "change5": { "lander": { "image": "/images/missions/change5/04.webp" } },
     "chandrayaan3": { "lander": { "image": "/images/missions/chandrayaan3/02.webp" } },
     "slim": { "lander": { "image": "/images/missions/slim/02.webp" } },
-    "beresheet": { "impact-smudge": { "image": "/images/missions/beresheet/02.webp" } }
+    "beresheet": { "impact-smudge": { "image": "/images/missions/beresheet/02.webp" } },
+    "schiaparelli": {
+      "backshell-parachute": {
+        "image": "/images/missions/schiaparelli/07.webp",
+        "nasa_id": "pia21132"
+      }
+    },
+    "opportunity": {
+      "lander-eagle-crater": {
+        "image": "/images/missions/opportunity/14.webp",
+        "nasa_id": "pia21494"
+      }
+    },
+    "zhurong": { "lander": { "image": "/images/mars-sites/zhurong/05.webp" } },
+    "insight": { "lander": { "image": "/images/missions/insight/08.webp", "nasa_id": "pia22875" } }
   }
 }

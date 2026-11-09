@@ -133,5 +133,32 @@
       "image": "/images/missions/beresheet/02.webp",
       "thumb": "/images/missions/beresheet/02-320.webp"
     }
+  },
+  "schiaparelli": {
+    "backshell-parachute": {
+      "image": "/images/missions/schiaparelli/07.webp",
+      "thumb": "/images/missions/schiaparelli/07-320.webp",
+      "nasa_id": "pia21132"
+    }
+  },
+  "opportunity": {
+    "lander-eagle-crater": {
+      "image": "/images/missions/opportunity/14.webp",
+      "thumb": "/images/missions/opportunity/14-320.webp",
+      "nasa_id": "pia21494"
+    }
+  },
+  "zhurong": {
+    "lander": {
+      "image": "/images/mars-sites/zhurong/05.webp",
+      "thumb": "/images/mars-sites/zhurong/05-320.webp"
+    }
+  },
+  "insight": {
+    "lander": {
+      "image": "/images/missions/insight/08.webp",
+      "thumb": "/images/missions/insight/08-320.webp",
+      "nasa_id": "pia22875"
+    }
   }
 }

@@ -5,6 +5,12 @@
       "label": "Módulo de pouso Phoenix",
       "label_short": "Phoenix",
       "explain": "O módulo de pouso Phoenix da NASA, que pousou em 25 de maio de 2008. Aparece como um ponto brilhante no meio do solo escuro que seus motores de descida varreram; o HiRISE fez esta imagem 22 horas depois do pouso."
+    },
+    {
+      "id": "heat-shield",
+      "label": "Impacto do escudo térmico",
+      "label_short": "Escudo térmico",
+      "explain": "Aqui o escudo térmico da Phoenix atingiu o solo, a cerca de 190 m a lés-sudeste do módulo de pouso: uma mancha escura de solo revolvido onde ele bateu e quicou."
     }
   ]
 }

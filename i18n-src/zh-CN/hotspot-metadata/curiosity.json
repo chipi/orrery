@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "Curiosity 于 2012 年 8 月 6 日在此着陆，团队将此处命名为 Bradbury Landing。在 2012 年 8 月 17 日拍摄的这幅 HiRISE 图像中，火星车是将它降下的火箭吹扫过的暗色地面中的一对亮点。火星车早已驶离。"
+    }
+  ],
   "panorama_caption": "位于 Gediz Vallis 沟道中的 Curiosity——巡视器在第 4220 个火星日钻取 Mammoth Lakes 样品（它在火星上的第 41 个样品）后拍摄的 360° 景观。左侧是刚完成钻探的机械臂；右侧是巡视器甲板；上方条带是真实的火星天空；中央向下延伸的是 Gediz Vallis 沟道——火星上首次发现纯硫晶体的地方。",
   "compass_zero_direction": "巡视器正前方",
   "panorama_annotations": [

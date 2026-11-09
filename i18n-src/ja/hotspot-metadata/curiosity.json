@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "Curiosity が2012年8月6日に着陸した地点で、チームが Bradbury Landing と名付けた。2012年8月17日撮影のこの HiRISE 画像では、ローバーは、降下を担ったロケットが掃いた暗い地面の中の2つの明るい点。ローバーはとうの昔に走り去った。"
+    }
+  ],
   "panorama_caption": "Gediz Vallis の溝にいる Curiosity — 火星で 41 本目となる試料 Mammoth Lakes を掘削した後、ソル 4220 に撮影した 360° 画像。左には掘削を終えたばかりのロボットアーム、右にはローバーの甲板、上部の帯には本物の火星の空、中央を下っていくのが Gediz Vallis の溝 — 火星で初めて純粋な硫黄の結晶が見つかった場所だ。",
   "compass_zero_direction": "ローバーの前方",
   "panorama_annotations": [

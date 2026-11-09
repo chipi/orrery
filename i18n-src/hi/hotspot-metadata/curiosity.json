@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "यहाँ Curiosity 6 अगस्त 2012 को उतरा, जिस जगह को टीम ने Bradbury Landing नाम दिया। 17 अगस्त 2012 की इस HiRISE छवि में रोवर दो चमकीले बिंदुओं की जोड़ी है, जो उसे उतारने वाले रॉकेटों से साफ़ हुई गहरी ज़मीन में है। वह बहुत पहले यहाँ से आगे बढ़ चुका है।"
+    }
+  ],
   "panorama_caption": "Gediz Vallis चैनल में Curiosity — sol 4220 का रोवर का 360° दृश्य, Mammoth Lakes नमूने की ड्रिलिंग के बाद, जो मंगल पर उसका 41वाँ नमूना था। बाईं ओर रोबोटिक भुजा, जिसने अभी ड्रिलिंग पूरी की है; दाईं ओर रोवर का डेक; ऊपरी पट्टी में असली मंगल आकाश; बीच से उतरता Gediz Vallis चैनल — वह पहली जगह जहाँ मंगल पर शुद्ध गंधक के क्रिस्टल मिले।",
   "compass_zero_direction": "रोवर का अगला भाग",
   "panorama_annotations": [

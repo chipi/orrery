@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "Curiosity가 2012년 8월 6일 내려앉은 곳으로, 팀이 Bradbury Landing이라고 이름 붙였다. 2012년 8월 17일에 찍은 이 HiRISE 영상에서 로버는 로버를 내려놓은 로켓이 쓸어낸 어두운 땅 속의 밝은 점 두 개다. 로버는 오래전에 떠났다."
+    }
+  ],
   "panorama_caption": "Gediz Vallis 수로에 있는 Curiosity — 화성에서 41번째 시료인 Mammoth Lakes를 시추한 뒤 솔 4220에 찍은 360° 풍경. 왼쪽에는 막 시추를 마친 로봇 팔, 오른쪽에는 로버 갑판, 위쪽 띠에는 진짜 화성 하늘, 가운데로 내려가는 Gediz Vallis 수로 — 화성에서 순수한 황 결정이 처음 발견된 곳이다.",
   "compass_zero_direction": "로버 정면",
   "panorama_annotations": [

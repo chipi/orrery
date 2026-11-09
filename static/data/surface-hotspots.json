@@ -1302,6 +1302,22 @@
             }
           ],
           "confidence": "high: HiRISE PSP_001513_1655 is this patch's product; its caption puts the lander (area B) beside the crater named Sleepy Hollow, to the crater's south-east. The ring sits on the bright lander beside that small crater; the offset of the labelled box from Bonneville Crater predicts the position within ~25 m"
+        },
+        {
+          "id": "sleepy-hollow",
+          "label": "Sleepy Hollow crater",
+          "label_short": "Sleepy Hollow",
+          "lat_offset_m": 6.5,
+          "lon_offset_m": -11,
+          "ring_size": "small",
+          "explain": "A small crater less than 20 m across, just northwest of the lander, that the Spirit rover team named Sleepy Hollow. The ring marks its centre.",
+          "source": [
+            {
+              "label": "HiRISE PSP_001513_1655",
+              "url": "https://www.uahirise.org/PSP_001513_1655"
+            }
+          ],
+          "confidence": "high: HiRISE PSP_001513_1655 is this patch's product; its caption puts the lander beside the crater Sleepy Hollow, to the crater's south-east. The ring centre (about 11 m west, 6.5 m north of the lander) is read off the patch: a bowl with a shadowed north-west wall, 16-20 m across by eye"
         }
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/spirit/tier2-ctx.jpg",
@@ -1350,6 +1366,26 @@
             }
           ],
           "confidence": "medium-high: HiRISE ESP_050177_1780 is this patch's product; its caption puts the lander \"at the center of the bowl of Eagle Crater\". The patch is grayscale, so the airbag colour is not visible; the ring sits on the small bright dot (the lander) at the centre of the dark bowl of the ~22 m bright-rimmed crater (PIA21494 gives 22 m) that the rover tracks lead out of, measured in this product"
+        },
+        {
+          "id": "eagle-crater",
+          "label": "Eagle Crater",
+          "label_short": "Eagle Crater",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "area_radius_m": 11,
+          "explain": "The small crater, about 22 m across, in which Opportunity came to rest after its airbag landing in January 2004. The dashed outline shows it at true size; the lander is the bright dot at its centre.",
+          "source": [
+            {
+              "label": "HiRISE ESP_050177_1780",
+              "url": "https://www.uahirise.org/ESP_050177_1780"
+            },
+            {
+              "label": "NASA PIA21494 (Eagle Crater from HiRISE)",
+              "url": "https://images.nasa.gov/details/PIA21494"
+            }
+          ],
+          "confidence": "high: HiRISE ESP_050177_1780 is this patch's product; its caption puts the lander \"at the center of the bowl of Eagle Crater\", and the patch shows the lander at the centre of the one bright-rimmed crater with a dark floor. The 22 m size is the figure already used for the lander ring (PIA21494, not re-read); the dashed circle (radius 11 m) is concentric with the lander ring"
         }
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/opportunity/tier2-ctx.jpg",
@@ -1382,7 +1418,27 @@
       "hotspot_tier3_panorama": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "bradbury-landing",
+          "label": "Bradbury Landing",
+          "label_short": "Bradbury Landing",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "explain": "Where Curiosity touched down on 6 August 2012, a spot the team named Bradbury Landing. In this HiRISE image, taken on 17 August 2012, the rover is the pair of bright dots in the dark ground scoured by the rockets that lowered it. It has long since driven away.",
+          "source": [
+            {
+              "label": "HiRISE ESP_028401_1755",
+              "url": "https://www.uahirise.org/ESP_028401_1755"
+            },
+            {
+              "label": "NASA Mars Science Laboratory",
+              "url": "https://science.nasa.gov/mission/msl-curiosity/"
+            }
+          ],
+          "confidence": "medium-high: HiRISE ESP_028401_1755 is this patch's product (17 August 2012, 11 days after landing). The rover is the only bright object, a pair of dots, at the centre of the dark landing blast pattern, measured to about 1 m; not registered against the labelled cut-out at pixel level. The mission team's traverse starts 114 m north and 69 m east of it in this product's georeferencing"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg",
       "panorama_metadata": {
         "sol": 4220,
@@ -1448,7 +1504,27 @@
       "hotspot_tier3_panorama": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "landing",
+          "label": "Perseverance landing point",
+          "label_short": "Landing point",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "explain": "Where Perseverance touched down on 18 February 2021. In this HiRISE image, taken the next day, the rover is the small bright object with a shadow at the centre, between two bright patches of ground cleared by the rockets that lowered it. It has long since driven away.",
+          "source": [
+            {
+              "label": "HiRISE ESP_068294_1985",
+              "url": "https://www.uahirise.org/ESP_068294_1985"
+            },
+            {
+              "label": "NASA Mars 2020 Perseverance",
+              "url": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+            }
+          ],
+          "confidence": "medium-high: HiRISE ESP_068294_1985 is this patch's product (19 February 2021, the day after landing). The rover (a small bright object with a shadow between two bright blast zones) was matched to the HiRISE team's labelled cut-out of the same product and sits at the patch centre, measured to about 1 m. The mission team's traverse starts 191 m north and 63 m west of it in this product's georeferencing"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/perseverance/tier2-ctx.jpg",
       "panorama_metadata": {
         "sol": 3,
@@ -1531,6 +1607,21 @@
             }
           ],
           "confidence": "high: HiRISE PSP_008591_2485 is this patch's product (Phoenix hardware, 22 hours after landing); its labelled cutout shows the lander as a bright dot with a dark blast halo. The ring sits on the compact bright dot at the centre of the halo nearest the published landing position; heat shield and backshell are outside the 512 m patch"
+        },
+        {
+          "id": "heat-shield",
+          "label": "Heat shield impact",
+          "label_short": "Heat shield",
+          "lat_offset_m": -87,
+          "lon_offset_m": 172.5,
+          "explain": "Where Phoenix's heat shield hit the ground, about 190 m east-south-east of the lander: a dark patch of disturbed ground where it struck and bounced.",
+          "source": [
+            {
+              "label": "HiRISE PSP_008591_2485",
+              "url": "https://www.uahirise.org/PSP_008591_2485"
+            }
+          ],
+          "confidence": "medium-high: HiRISE PSP_008591_2485 is this patch's product; its caption describes the heat shield as a dark marking, disturbance of the ground from impact and bouncing. Matched to the dark blob with a tail by the lander-to-parachute geometry in its cut-outs (distance ratio 1.6 in the raster against 1.9 in the cut-out, angle 44 against 39 degrees); position measured in the north-up patch (172 m east, 87 m south of the lander)"
         }
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/phoenix/tier2-ctx.jpg",

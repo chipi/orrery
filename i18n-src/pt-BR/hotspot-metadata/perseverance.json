@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "landing",
+      "label": "Pouso da Perseverance",
+      "label_short": "Pouso",
+      "explain": "Aqui a Perseverance tocou o solo em 18 de fevereiro de 2021. Nesta imagem do HiRISE, feita no dia seguinte, o rover é o pequeno objeto brilhante com sombra no centro, entre duas áreas brilhantes de solo limpas pelos foguetes que o baixaram. Ele já se foi há muito tempo."
+    }
+  ],
   "panorama_caption": "O primeiro panorama de 360° do Perseverance — três dias após o pouso. O deck do rover domina o primeiro plano; o fundo da cratera Jezero e a borda distante aparecem acima do horizonte; o céu marciano real nas faixas superiores.",
   "compass_zero_direction": "eixo +X do rover",
   "panorama_annotations": [

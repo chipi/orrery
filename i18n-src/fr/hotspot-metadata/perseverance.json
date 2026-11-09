@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "landing",
+      "label": "Atterrissage de Perseverance",
+      "label_short": "Atterrissage",
+      "explain": "C'est ici que Perseverance s'est posé le 18 février 2021. Sur cette image HiRISE prise le lendemain, le rover est le petit objet brillant avec son ombre au centre, entre deux zones claires de sol dégagées par les fusées qui l'ont descendu. Il est parti depuis longtemps."
+    }
+  ],
   "panorama_caption": "Le premier panorama à 360° de Perseverance — trois jours après l'atterrissage. Le pont du rover occupe le premier plan ; le fond du cratère Jezero et son bord lointain apparaissent au-dessus de l'horizon ; le vrai ciel martien dans les bandes supérieures.",
   "compass_zero_direction": "axe +X du rover",
   "panorama_annotations": [

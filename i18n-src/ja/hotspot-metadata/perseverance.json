@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "landing",
+      "label": "Perseverance の着陸地点",
+      "label_short": "着陸地点",
+      "explain": "Perseverance が2021年2月18日に着陸した地点。翌日撮影されたこの HiRISE 画像では、ローバーは中央にある影を伴う小さな明るい物体で、降下を担ったロケットが露出させた2つの明るい地面の間にある。ローバーはとうの昔に走り去った。"
+    }
+  ],
   "panorama_caption": "Perseverance 初の 360° パノラマ — 着陸の 3 日後。手前はローバーの甲板が大きく占め、地平線の上に Jezero クレーターの底と遠くの縁が見え、上部の帯には本物の火星の空が写っている。",
   "compass_zero_direction": "ローバーの +X 軸",
   "panorama_annotations": [

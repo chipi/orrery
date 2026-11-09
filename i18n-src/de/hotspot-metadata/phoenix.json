@@ -5,6 +5,12 @@
       "label": "Phoenix-Lander",
       "label_short": "Phoenix-Lander",
       "explain": "Der Phoenix-Lander der NASA, der am 25. Mai 2008 aufsetzte. Er zeigt sich als heller Punkt inmitten des dunklen Bodens, den seine Landetriebwerke freigeblasen haben; HiRISE nahm dieses Bild 22 Stunden nach der Landung auf."
+    },
+    {
+      "id": "heat-shield",
+      "label": "Aufprall des Hitzeschilds",
+      "label_short": "Hitzeschild",
+      "explain": "Hier traf der Hitzeschild von Phoenix auf den Boden, etwa 190 m ostsüdöstlich des Landers: ein dunkler Fleck aufgewühlten Bodens, wo er aufschlug und abprallte."
     }
   ]
 }

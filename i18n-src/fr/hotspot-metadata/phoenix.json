@@ -5,6 +5,12 @@
       "label": "Atterrisseur Phoenix",
       "label_short": "Phoenix",
       "explain": "L'atterrisseur Phoenix de la NASA, posé le 25 mai 2008. Il apparaît comme un point brillant au milieu du sol sombre soufflé par ses moteurs de descente ; HiRISE a pris cette image 22 heures après l'atterrissage."
+    },
+    {
+      "id": "heat-shield",
+      "label": "Impact du bouclier thermique",
+      "label_short": "Bouclier",
+      "explain": "C'est ici que le bouclier thermique de Phoenix a heurté le sol, à environ 190 m à l'est-sud-est de l'atterrisseur : une tache sombre de sol bouleversé là où il a frappé et rebondi."
     }
   ]
 }

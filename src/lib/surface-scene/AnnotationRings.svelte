@@ -32,6 +32,7 @@
     layoutLabels,
     ringDiameter,
     ringFootprint,
+    nestedRingPx,
     ringPxFor,
     placeCard,
     ringInView,
@@ -88,7 +89,7 @@
   const isArea = (r: PlacedRing): boolean => !!r.radiusPx;
   // Own drawn size: smaller for craters, a small handle for an area, else the shared ring size.
   const pxOf = (r: PlacedRing): number =>
-    isArea(r) ? AREA_HANDLE_PX : ringPxFor(r.annotation, ringPx);
+    isArea(r) ? AREA_HANDLE_PX : nestedRingPx(r, rings, ringPxFor(r.annotation, ringPx));
   const grouped = $derived(clusterRings(visible, ringPx));
 
   // A fanned-out cluster: its rings move onto a circle round the badge until

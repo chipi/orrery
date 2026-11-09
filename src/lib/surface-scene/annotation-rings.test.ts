@@ -7,6 +7,8 @@ import {
   AREA_HANDLE_PX,
   areaRadiusPx,
   interactivePosition,
+  nestedRingPx,
+  NESTED_RING_MIN_PX,
   ringPxFor,
   CLUSTER_MIN,
   clusterRings,
@@ -366,5 +368,39 @@ describe('layoutLabels short names and edge rings', () => {
     expect(lab).toBeDefined();
     expect(lab.rect.x).toBeGreaterThanOrEqual(0);
     expect(lab.rect.x + lab.rect.w).toBeLessThanOrEqual(view.w);
+  });
+});
+
+describe('a ring at the centre of a true-size area', () => {
+  const lander = { id: 'lander', label: 'Lander', lat_offset_m: 0, lon_offset_m: 0 };
+  const crater = { ...lander, id: 'crater', label: 'Crater', area_radius_m: 11 };
+  const other = { ...lander, id: 'other', label: 'Other', lon_offset_m: 400 };
+  const at = (a: typeof lander, x: number, radiusPx?: number): PlacedRing => ({
+    annotation: a,
+    x,
+    y: 300,
+    radiusPx,
+  });
+
+  it('shrinks to the outline radius when the outline is about the ring size (Eagle Crater)', () => {
+    const rings = [at(lander, 500), at(crater, 500, 31)];
+    expect(nestedRingPx(rings[0], rings, 44)).toBe(31);
+    expect(nestedRingPx(rings[0], rings, 32)).toBe(31);
+  });
+
+  it('keeps a floor, and leaves the ring alone when the outline is already well clear', () => {
+    const tight = [at(lander, 500), at(crater, 500, 6)];
+    expect(nestedRingPx(tight[0], tight, 32)).toBe(NESTED_RING_MIN_PX);
+    const wide = [at(lander, 500), at(crater, 500, 120)];
+    expect(nestedRingPx(wide[0], wide, 32)).toBe(32);
+  });
+
+  it('ignores an area that is not concentric, an undrawn area and the area itself', () => {
+    const apart = [at(other, 900), at(crater, 500, 31)];
+    expect(nestedRingPx(apart[0], apart, 32)).toBe(32);
+    const hidden = [at(lander, 500), at(crater, 500, 1)];
+    expect(nestedRingPx(hidden[0], hidden, 32)).toBe(32);
+    const rings = [at(lander, 500), at(crater, 500, 31)];
+    expect(nestedRingPx(rings[1], rings, 14)).toBe(14);
   });
 });

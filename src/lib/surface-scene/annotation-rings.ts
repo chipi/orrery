@@ -64,6 +64,26 @@ export function ringPxFor(a: HotspotAnnotation, basePx: number): number {
   return a.ring_size === 'small' ? Math.round(basePx * SMALL_RING_FACTOR) : basePx;
 }
 
+/** Smallest a ring is drawn when it shrinks to sit inside an area's outline. */
+export const NESTED_RING_MIN_PX = 16;
+
+/**
+ * Drawn diameter of a ring that sits at the centre of a true-size area outline
+ * (a lander in its crater). Its diameter stays at or under the outline's radius,
+ * so the outline reads as the thing around the ring and not a second ring of the
+ * same size. The outline keeps its true size; only the ring gives way. Other rings
+ * keep `basePx`, which is also the answer when no area is drawn round it.
+ */
+export function nestedRingPx(r: PlacedRing, all: PlacedRing[], basePx: number): number {
+  if (r.radiusPx) return basePx;
+  let fit = basePx;
+  for (const a of all) {
+    if (a === r || !a.radiusPx || a.radiusPx < 2) continue;
+    if (Math.hypot(a.x - r.x, a.y - r.y) > Math.max(2, a.radiusPx * 0.25)) continue;
+    fit = Math.min(fit, Math.max(NESTED_RING_MIN_PX, Math.round(a.radiusPx)));
+  }
+  return fit;
+}
 /** Screen radius of an area annotation: its ground radius over the ground size of a pixel; undefined for a point. */
 export function areaRadiusPx(a: HotspotAnnotation, mPerPx: number): number | undefined {
   return a.area_radius_m && mPerPx > 0 ? a.area_radius_m / mPerPx : undefined;

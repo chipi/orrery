@@ -30916,23 +30916,25 @@
     {
       "id": "4e18140b2402b7d4",
       "path": "/images/hotspots/moon/apollo11/tier2-lroc.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo11",
-      "author": "NASA",
+      "source_type": "direct-agency",
+      "title": "LROC NAC M175124932R — Apollo 11 patch centred on the LM at 0.674°N 23.473°E",
+      "author": "NASA/GSFC/Arizona State University",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://lroc.im-ldi.com/featured_sites/apollo-11/site_images/m175124932r",
+      "image_url": "https://lroc.im-ldi.com/data/support/featured_sites/Apollo/11/M175124932R.tif",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "Image from the LROC website (Featured Image / Featured Site), not the public-domain PDS archive: copyrighted, but the LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09) permit educational use by schools, museums and other organisations without prior permission when credited “NASA/GSFC/Arizona State University”. Orrery is a non-commercial educational site; commercial reuse needs LROC permission.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "cropped-2048x2048-centred-on-lm",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "M175124932R",
+      "fetched_at": "2026-11-09T08:19:29.595Z",
+      "spacecraft_name": "Lunar Reconnaissance Orbiter",
+      "instrument": "LROC NAC"
     },
     {
       "id": "438893ff862a8ccf",
@@ -30979,23 +30981,25 @@
     {
       "id": "40dbdd8d348cca1f",
       "path": "/images/hotspots/moon/apollo12/tier2-lroc.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo12",
-      "author": "NASA",
+      "source_type": "direct-agency",
+      "title": "LROC NAC M175428601R — Apollo 12 patch centred on the LM at -3.013°N -23.422°E",
+      "author": "NASA/GSFC/Arizona State University",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://lroc.im-ldi.com/featured_sites/apollo-12/site_images/m175428601r",
+      "image_url": "https://lroc.im-ldi.com/data/support/featured_sites/Apollo/12/M175428601R.tif",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "Image from the LROC website (Featured Image / Featured Site), not the public-domain PDS archive: copyrighted, but the LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09) permit educational use by schools, museums and other organisations without prior permission when credited “NASA/GSFC/Arizona State University”. Orrery is a non-commercial educational site; commercial reuse needs LROC permission.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "cropped-2048x2048-centred-on-lm",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "M175428601R",
+      "fetched_at": "2026-11-09T08:19:29.596Z",
+      "spacecraft_name": "Lunar Reconnaissance Orbiter",
+      "instrument": "LROC NAC"
     },
     {
       "id": "4f067b4768a01f2b",
@@ -31042,23 +31046,25 @@
     {
       "id": "dd52df60b20b4e05",
       "path": "/images/hotspots/moon/apollo14/tier2-lroc.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo14",
-      "author": "NASA",
+      "source_type": "direct-agency",
+      "title": "LROC NAC M168319885LR — Apollo 14 patch centred on the LM at -3.646°N -17.472°E",
+      "author": "NASA/GSFC/Arizona State University",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://lroc.im-ldi.com/featured_sites/apollo-14/site_images/m168319885lr",
+      "image_url": "https://lroc.im-ldi.com/data/support/featured_sites/Apollo/14/M168319885LR.tif",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "Image from the LROC website (Featured Image / Featured Site), not the public-domain PDS archive: copyrighted, but the LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09) permit educational use by schools, museums and other organisations without prior permission when credited “NASA/GSFC/Arizona State University”. Orrery is a non-commercial educational site; commercial reuse needs LROC permission.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "cropped-2048x2048-centred-on-lm",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "M168319885LR",
+      "fetched_at": "2026-11-09T08:19:29.596Z",
+      "spacecraft_name": "Lunar Reconnaissance Orbiter",
+      "instrument": "LROC NAC"
     },
     {
       "id": "399eb774f029ee66",
@@ -31105,23 +31111,25 @@
     {
       "id": "904f58236cd829f9",
       "path": "/images/hotspots/moon/apollo15/tier2-lroc.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo15",
-      "author": "NASA",
+      "source_type": "direct-agency",
+      "title": "LROC NAC M175252641LR — Apollo 15 patch centred on the LM at 26.132°N 3.633°E",
+      "author": "NASA/GSFC/Arizona State University",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://lroc.im-ldi.com/featured_sites/apollo-15/site_images/m175252641lr",
+      "image_url": "https://lroc.im-ldi.com/data/support/featured_sites/Apollo/15/M175252641LR.tif",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "Image from the LROC website (Featured Image / Featured Site), not the public-domain PDS archive: copyrighted, but the LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09) permit educational use by schools, museums and other organisations without prior permission when credited “NASA/GSFC/Arizona State University”. Orrery is a non-commercial educational site; commercial reuse needs LROC permission.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "cropped-2048x2048-centred-on-lm",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "M175252641LR",
+      "fetched_at": "2026-11-09T08:19:29.596Z",
+      "spacecraft_name": "Lunar Reconnaissance Orbiter",
+      "instrument": "LROC NAC"
     },
     {
       "id": "064d24829e014668",
@@ -31168,23 +31176,25 @@
     {
       "id": "d0a8d11b632efa48",
       "path": "/images/hotspots/moon/apollo16/tier2-lroc.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo16",
-      "author": "NASA",
+      "source_type": "direct-agency",
+      "title": "LROC NAC M175179080LR — Apollo 16 patch centred on the LM at -8.973°N 15.501°E",
+      "author": "NASA/GSFC/Arizona State University",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://lroc.im-ldi.com/featured_sites/apollo-16/site_images/m175179080lr",
+      "image_url": "https://lroc.im-ldi.com/data/support/featured_sites/Apollo/16/M175179080LR.tif",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "Image from the LROC website (Featured Image / Featured Site), not the public-domain PDS archive: copyrighted, but the LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09) permit educational use by schools, museums and other organisations without prior permission when credited “NASA/GSFC/Arizona State University”. Orrery is a non-commercial educational site; commercial reuse needs LROC permission.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "cropped-2048x2048-centred-on-lm",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "M175179080LR",
+      "fetched_at": "2026-11-09T08:19:29.596Z",
+      "spacecraft_name": "Lunar Reconnaissance Orbiter",
+      "instrument": "LROC NAC"
     },
     {
       "id": "9ebced246e3df67e",
@@ -31231,23 +31241,26 @@
     {
       "id": "a8df03c5ead7abee",
       "path": "/images/hotspots/moon/apollo17/tier2-lroc.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo17",
-      "author": "NASA",
+      "source_type": "direct-agency",
+      "title": "LROC NAC M172717297R — Apollo 17 patch centred on the LM at 20.191°N 30.772°E",
+      "author": "NASA/GSFC/Arizona State University",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://lroc.im-ldi.com/featured_sites/apollo-17/site_images/m172717297r",
+      "image_url": "https://lroc.im-ldi.com/data/support/featured_sites/Apollo/17/M172717297R.tif",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "Image from the LROC website (Featured Image / Featured Site), not the public-domain PDS archive: copyrighted, but the LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09) permit educational use by schools, museums and other organisations without prior permission when credited “NASA/GSFC/Arizona State University”. Orrery is a non-commercial educational site; commercial reuse needs LROC permission.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "cropped-2048x2048-centred-on-lm",
+        "p2-p98-linear-stretch-to-8bit",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "M172717297R",
+      "fetched_at": "2026-11-09T08:19:29.596Z",
+      "spacecraft_name": "Lunar Reconnaissance Orbiter",
+      "instrument": "LROC NAC"
     },
     {
       "id": "28f2114fe926310d",

@@ -82,7 +82,7 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo11/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 819.2,
       "hotspot_context_source": "/images/hotspots/moon/apollo11/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -5.9256,
@@ -103,7 +103,7 @@
       },
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo12/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 819.2,
       "hotspot_context_source": "/images/hotspots/moon/apollo12/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -9.6056,
@@ -121,7 +121,7 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo14/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 921.6,
       "panorama_metadata": {
         "entry_yaw_deg": 155
       },
@@ -145,7 +145,7 @@
       },
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo15/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 819.2,
       "hotspot_context_source": "/images/hotspots/moon/apollo15/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 19.5344,
@@ -163,7 +163,7 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo16/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 819.2,
       "panorama_metadata": {
         "entry_yaw_deg": 135,
         "synthetic_regions": [
@@ -219,7 +219,7 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo17/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 1024,
       "hotspot_context_source": "/images/hotspots/moon/apollo17/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 13.5944,

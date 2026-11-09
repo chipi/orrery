@@ -817,7 +817,27 @@
       "hotspot_model": "luna-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/luna16/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "descent-stage",
+          "label": "Luna 16 descent stage",
+          "label_short": "Descent stage",
+          "lat_offset_m": 0.3,
+          "lon_offset_m": 0.8,
+          "explain": "The lower half of the Soviet Luna 16 lander, left on Mare Fecunditatis after the sample-return capsule lifted off on 21 September 1970 with about 101 grams of soil.",
+          "source": [
+            {
+              "label": "LROC Featured Site frame",
+              "url": "https://lroc.im-ldi.com/featured_sites/luna-16/site_images/m141899500l"
+            },
+            {
+              "label": "LROC post 10",
+              "url": "https://lroc.im-ldi.com/images/10"
+            }
+          ],
+          "confidence": "one source (LROC Luna 16 featured image text + LROC Featured Site frame M141899500L whose feature pixel is the crop centre); object unmistakable: bright body with dark shadow in a blast halo"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna16/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25497,
       "hotspot_tier2_ground_m": 309.1,
@@ -834,7 +854,31 @@
       "hotspot_model": "lunokhod-rover",
       "hotspot_tier2_source": "/images/hotspots/moon/luna17/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 17 lander",
+          "label_short": "Luna 17 lander",
+          "lat_offset_m": 0.8,
+          "lon_offset_m": 1,
+          "explain": "The Luna 17 lander that delivered Lunokhod 1 to Mare Imbrium on 17 November 1970. Its descent engines brightened the surface around it, which makes the rover tracks circling the lander stand out.",
+          "source": [
+            {
+              "label": "LROC position layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_lunokhod_lms.geojson"
+            },
+            {
+              "label": "LROC post 11",
+              "url": "https://lroc.im-ldi.com/images/11"
+            },
+            {
+              "label": "LROC post 402",
+              "url": "https://lroc.im-ldi.com/images/402"
+            }
+          ],
+          "confidence": "two sources (LROC lander coordinate layer + LROC \"Lunokhod 1 Revisited\" text describing the lander with tracks circling it); LROC does not annotate this frame, identification by eye from the matching tracks-around-lander pattern"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna17/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna17/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 14336,
@@ -864,7 +908,27 @@
       "hotspot_model": "lunokhod-rover",
       "hotspot_tier2_source": "/images/hotspots/moon/luna21/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 21 lander",
+          "label_short": "Luna 21 lander",
+          "lat_offset_m": 0.7,
+          "lon_offset_m": 0.5,
+          "explain": "The Luna 21 lander that delivered Lunokhod 2 to Le Monnier crater on 15 January 1973. Its descent engines scoured a bright zone 10 to 20 m wide around it, and the rover tracks lead away from it.",
+          "source": [
+            {
+              "label": "LROC position layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_lunokhod_lms.geojson"
+            },
+            {
+              "label": "LROC post 15",
+              "url": "https://lroc.im-ldi.com/images/15"
+            }
+          ],
+          "confidence": "two sources (LROC \"Luna 21 Lander\" featured image of this very frame M122007650L + LROC lander coordinate layer); bright body with dark shadow inside the blast zone"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna21/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16128,
       "hotspot_tier2_ground_m": 281,
@@ -881,7 +945,27 @@
       "hotspot_model": "luna-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/luna24/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 24 lander",
+          "label_short": "Luna 24 lander",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": -0.7,
+          "explain": "The Luna 24 lander on the rim of a crater in Mare Crisium. The August 1976 mission drilled over 2 m into the regolith and returned about 170 grams of it.",
+          "source": [
+            {
+              "label": "LROC Featured Site frame",
+              "url": "https://lroc.im-ldi.com/featured_sites/luna-24/site_images/m137136039r"
+            },
+            {
+              "label": "LROC post 9",
+              "url": "https://lroc.im-ldi.com/images/9"
+            }
+          ],
+          "confidence": "one source (LROC Soviet sample-return post, Luna 24 NAC frames; no coordinate or arrow for this frame); bright specks and dark shadow at the crop centre on the rim of a 64 m crater"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna24/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 17152,
       "hotspot_tier2_ground_m": 281,
@@ -931,7 +1015,27 @@
       "hotspot_model": "chang-e-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/change3/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 3 lander",
+          "label_short": "Chang'e 3 lander",
+          "lat_offset_m": 48.3,
+          "lon_offset_m": 3,
+          "explain": "China's Chang'e 3 lander, which touched down in Mare Imbrium on 14 December 2013, the first lunar landing since 1976. At this low Sun it shows as one bright pixel with a long shadow.",
+          "source": [
+            {
+              "label": "LROC post 637",
+              "url": "https://lroc.im-ldi.com/images/637"
+            },
+            {
+              "label": "LROC post 929",
+              "url": "https://lroc.im-ldi.com/images/929"
+            }
+          ],
+          "confidence": "one source with a caveat (LROC 'Chang'e 3 Lander and Rover From Above', sibling frame M1142582775R taken the same pass 4 h earlier, lander = bright dot with dark streaks to its east); matched by that pattern. The dot is 50 m north of the patch centre although the patch centre is LROC's lander coordinate, so the registration or my match is off by that much. Medium confidence"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/change3/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change3/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25856,
@@ -949,7 +1053,47 @@
       "hotspot_model": "chang-e-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/change4/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 4 lander",
+          "label_short": "Chang'e 4 lander",
+          "lat_offset_m": -14.1,
+          "lon_offset_m": -4.4,
+          "explain": "China's Chang'e 4 lander, which made the first soft landing on the far side of the Moon on 3 January 2019, in Von Kármán crater. The bright ground around it was swept by its landing engine.",
+          "source": [
+            {
+              "label": "LROC Featured Site frame",
+              "url": "https://lroc.im-ldi.com/featured_sites/chang-e-4-landing-site/site_images/m1311886645"
+            },
+            {
+              "label": "LROC position layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_change_4_lms.geojson"
+            }
+          ],
+          "confidence": "two sources (LROC lander coordinate layer + LROC Featured Sites frame M1311886645); the lander's shadow inside a bright blast zone sits at the layer position"
+        },
+        {
+          "id": "yutu-2",
+          "label": "Yutu-2 rover",
+          "label_short": "Yutu-2",
+          "lat_offset_m": 28.9,
+          "lon_offset_m": -128.8,
+          "explain": "The Yutu-2 rover as it was on 7 May 2019, four months after landing, about 120 m west of the lander at the end of its first tracks. It has driven far from here since.",
+          "source": [
+            {
+              "label": "LROC Featured Site frame",
+              "url": "https://lroc.im-ldi.com/featured_sites/chang-e-4-landing-site/site_images/m1311886645"
+            },
+            {
+              "label": "LROC position layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_change_4_rover_points.geojson"
+            }
+          ],
+          "confidence": "two sources (LROC rover-position layer for this exact frame + the dark rover with a white highlight at the end of the track in the image, 12 m from the layer point)",
+          "as_of": "2019-05-07"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/change4/tier3-pan.jpg",
       "showcase": true,
       "panorama_metadata": {
@@ -999,7 +1143,23 @@
       "hotspot_model": "chang-e-lander-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/change5/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 5 lander",
+          "label_short": "Chang'e 5 lander",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": 0.6,
+          "explain": "China's Chang'e 5 lander in Oceanus Procellarum, imaged by LRO the day after its 1 December 2020 touchdown. The sample-return mission brought back about 1.7 kg of lunar soil.",
+          "source": [
+            {
+              "label": "LROC post 1172",
+              "url": "https://lroc.im-ldi.com/images/1172"
+            }
+          ],
+          "confidence": "two sources (LROC 'First Look: Chang'e 5': 'The lander is the bright spot in the center of the outline' + the label drawn on this image; LROC-computed coordinates 43.0576 N, 308.0839 E +/-20 m)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/change5/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change5/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25344,
@@ -1029,7 +1189,23 @@
       "hotspot_model": "chang-e-lander-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/change6/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 6 lander",
+          "label_short": "Chang'e 6 lander",
+          "lat_offset_m": 0.8,
+          "lon_offset_m": 0.5,
+          "explain": "China's Chang'e 6 lander on the far side, in the Apollo basin, imaged by LRO about a week after its 1 June 2024 landing. The brighter ground around it was disturbed by the landing engine.",
+          "source": [
+            {
+              "label": "LROC post 1374",
+              "url": "https://lroc.im-ldi.com/images/1374"
+            }
+          ],
+          "confidence": "one source (LROC 'First Look: Chang'e 6': 'The lander is seen as the small cluster of bright pixels in the center of the image', on the rim of an eroded ~50 m crater; coordinates 41.6385 S, 206.0148 E +/-30 m)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/change6/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change6/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 27648,
@@ -1089,7 +1265,23 @@
       "hotspot_model": "chandrayaan-3-vikram",
       "hotspot_tier2_source": "/images/hotspots/moon/chandrayaan3/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chandrayaan-3 Vikram lander",
+          "label_short": "Vikram lander",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0.8,
+          "explain": "India's Chandrayaan-3 Vikram lander, which touched down on 23 August 2023 about 600 km from the south pole. LRO imaged it four days later; the bright halo is regolith disturbed by the rocket plume.",
+          "source": [
+            {
+              "label": "LROC post 1314",
+              "url": "https://lroc.im-ldi.com/images/1314"
+            }
+          ],
+          "confidence": "two sources (LROC post: 'Chandrayaan-3 lander is in the center of the image, its dark shadow is visible against the bright halo'; LROC coordinates 69.3741 S, 32.32 E)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg",
       "showcase": true,
       "panorama_metadata": {
@@ -1142,7 +1334,23 @@
       "hotspot_model": "slim-precision-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/slim/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "SLIM lander",
+          "label_short": "SLIM lander",
+          "lat_offset_m": -1.3,
+          "lon_offset_m": 0.9,
+          "explain": "JAXA's SLIM lander, which landed on 19 January 2024 near Shioli crater. LRO imaged it five days later; a faint change in brightness around it marks where the engine exhaust swept the surface.",
+          "source": [
+            {
+              "label": "LROC post 1358",
+              "url": "https://lroc.im-ldi.com/images/1358"
+            }
+          ],
+          "confidence": "two sources (LROC post: 'The SLIM lander on the lunar surface (13.3160 S, 25.2510 E)' + the arrow drawn on this image)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/slim/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/slim/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
@@ -1173,7 +1381,23 @@
       "hotspot_tier2_source": "/images/hotspots/moon/beresheet/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "crashed": true,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "impact-smudge",
+          "label": "Beresheet impact smudge",
+          "label_short": "Impact smudge",
+          "lat_offset_m": -4.3,
+          "lon_offset_m": 0.2,
+          "explain": "The dark smudge where the Israeli Beresheet lander crashed on 11 April 2019 in Mare Serenitatis. It hit at a low angle, from the north, about 1000 m/s faster than planned; the smudge is about 10 m across and lowers the surface brightness by about 10%.",
+          "source": [
+            {
+              "label": "LROC post 1101",
+              "url": "https://lroc.im-ldi.com/images/1101"
+            }
+          ],
+          "confidence": "two sources (LROC post: dark elongated 'smudge' about 10 m across at 32.5956 N, 19.3496 E, 95% interval 20 m x 8 m + the box drawn on this image)"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/beresheet/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 27392,
       "hotspot_tier2_ground_m": 490,

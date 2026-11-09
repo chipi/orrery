@@ -81,6 +81,15 @@
     "apollo17": {
       "lm-descent-stage": { "frame": "as17-134-20382" },
       "lrv": { "image": "/images/missions/apollo17/01.webp", "nasa_id": "as17-147-22526" }
-    }
+    },
+    "luna16": { "descent-stage": { "image": "/images/missions/luna16/03.webp" } },
+    "luna17": { "lander": { "image": "/images/missions/luna17/01.webp" } },
+    "luna21": { "lander": { "image": "/images/missions/luna21/01.webp" } },
+    "luna24": { "lander": { "image": "/images/missions/luna24/01.webp" } },
+    "change3": { "lander": { "image": "/images/missions/change3/05.webp" } },
+    "change5": { "lander": { "image": "/images/missions/change5/04.webp" } },
+    "chandrayaan3": { "lander": { "image": "/images/missions/chandrayaan3/02.webp" } },
+    "slim": { "lander": { "image": "/images/missions/slim/02.webp" } },
+    "beresheet": { "impact-smudge": { "image": "/images/missions/beresheet/02.webp" } }
   }
 }

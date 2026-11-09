@@ -844,9 +844,9 @@
   /* .agency-row / .agency-badge / .status base now from AgencyRow.svelte;
      status chips converted from filled to the shared bordered treatment. */
   .status-active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.08);
+    color: #889fe7;
+    border-color: rgba(136, 159, 231, 0.4);
+    background: rgba(136, 159, 231, 0.08);
   }
   .status-flown {
     color: #4b9cd3;

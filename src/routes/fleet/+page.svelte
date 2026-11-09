@@ -823,8 +823,8 @@
      so chrome can't visually drift. */
 
   .status-pill.status-active.active {
-    background: rgba(78, 205, 196, 0.25);
-    border-color: rgba(78, 205, 196, 0.55);
+    background: rgba(136, 159, 231, 0.25);
+    border-color: rgba(136, 159, 231, 0.55);
   }
   .status-pill.status-flown.active {
     background: rgba(75, 156, 211, 0.25);
@@ -951,8 +951,8 @@
     text-align: center;
   }
   .list-status.status-active {
-    background: rgba(78, 205, 196, 0.18);
-    color: #4ecdc4;
+    background: rgba(136, 159, 231, 0.18);
+    color: #889fe7;
   }
   .list-status.status-flown {
     background: rgba(75, 156, 211, 0.18);

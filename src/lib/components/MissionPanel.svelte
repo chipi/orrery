@@ -961,9 +961,9 @@
   }
   /* .agency-row / .agency-badge / .status + .quality base now from AgencyRow.svelte. */
   .status-active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.08);
+    color: #889fe7;
+    border-color: rgba(136, 159, 231, 0.4);
+    background: rgba(136, 159, 231, 0.08);
   }
   .status-flown {
     color: rgba(255, 255, 255, 0.5);
@@ -971,9 +971,9 @@
     background: rgba(255, 255, 255, 0.03);
   }
   .status-planned {
-    color: var(--color-accent-text, #5070ff);
-    border-color: rgba(68, 102, 255, 0.4);
-    background: rgba(68, 102, 255, 0.08);
+    color: #889fe7;
+    border-color: rgba(136, 159, 231, 0.4);
+    background: rgba(136, 159, 231, 0.08);
   }
   .status-cancelled {
     color: rgba(255, 255, 255, 0.5);

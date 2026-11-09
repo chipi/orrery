@@ -178,9 +178,9 @@
    stronger 0.55/0.12 fleet values; missions had already dialled down
    to 0.4/0.08 to clear AA). One canonical palette for both routes. */
 .entity-card-grid .card-status.status-active {
-  color: #4ecdc4;
-  border-color: rgba(78, 205, 196, 0.4);
-  background: rgba(78, 205, 196, 0.08);
+  color: #889fe7;
+  border-color: rgba(136, 159, 231, 0.4);
+  background: rgba(136, 159, 231, 0.08);
 }
 .entity-card-grid .card-status.status-flown {
   color: rgba(255, 255, 255, 0.7);
@@ -198,9 +198,10 @@
   background: rgba(255, 153, 102, 0.08);
 }
 .entity-card-grid .card-status.status-planned {
-  color: #7b96ff;
-  border-color: rgba(123, 150, 255, 0.45);
-  background: rgba(68, 102, 255, 0.1);
+  color: #889fe7;
+  border-color: rgba(136, 159, 231, 0.45);
+  background: rgba(136, 159, 231, 0.1);
+  border-style: dashed;
 }
 .entity-card-grid .card-status.status-cancelled {
   color: rgba(255, 255, 255, 0.5);

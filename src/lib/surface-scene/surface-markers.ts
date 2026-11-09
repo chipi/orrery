@@ -42,7 +42,9 @@ import type { SurfaceSite, Traverse } from '$types/surface-site';
 //   - rectangular: 4 corner brackets + soft fill, sized via aspect.
 //     Brighter / thicker than the selection-style brackets so the
 //     "I'm hovering this" cue beats the LROC patch underneath.
-const HOVER_BLUE = 0x889fe7;
+// The surface composer has no OutputPass, so linear values reach the screen unencoded: a
+// colour must be given as its display bytes (Linear space), or #889fe7 shows as (63,88,204).
+const HOVER_BLUE = new THREE.Color().setHex(0x889fe7, THREE.LinearSRGBColorSpace);
 function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Object3D {
   const group = new THREE.Group();
   // Corner-bracket hover affordance for every region-bounds site, incl.

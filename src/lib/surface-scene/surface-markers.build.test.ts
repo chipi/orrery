@@ -335,6 +335,17 @@ describe('rebuildMarkers halos', () => {
     // hover halo is a bracket set for region sites, a disc + ring otherwise
     expect(mk.hoverHalo!.children.some((c) => c instanceof THREE.LineSegments)).toBe(true);
   });
+
+  it('hover bracket colour holds the display bytes of #889fe7 (no OutputPass on the surface composer)', () => {
+    const rb = { lat_min: 10, lat_max: 12, lon_min: 20, lon_max: 24 };
+    const s = setup({ sites: [site({ id: 'a', lat: 11, lon: 22, region_bounds: rb })] });
+    s.rebuildMarkers();
+    const ls = s.markers[0].hoverHalo!.children.find(
+      (c) => c instanceof THREE.LineSegments,
+    ) as THREE.LineSegments;
+    const c = (ls.material as THREE.LineBasicMaterial).color;
+    expect([c.r, c.g, c.b].map((v) => Math.round(v * 255))).toEqual([0x88, 0x9f, 0xe7]);
+  });
 });
 
 describe('rebuildMarkers hotspot LOD enrolment', () => {

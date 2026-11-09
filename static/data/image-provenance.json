@@ -7744,64 +7744,61 @@
       "id": "e5098c92f88186d9",
       "path": "/images/fleet-galleries/cargo-dragon-v1/01.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — cargo-dragon-v1 / \"fleet cargo-dragon-v1\"",
-      "author": "SpaceX",
-      "agency": "SpaceX",
-      "source_url": "https://images.nasa.gov/search?q=fleet+cargo-dragon-v1&media_type=image&keywords=cargo-dragon-v1",
+      "title": "SpaceX CRS-21 Live Launch Coverage  (KSC-20201206-PH-KLS01_0083)",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/KSC-20201206-PH-KLS01_0083",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.875Z"
+      "nasa_id": "KSC-20201206-PH-KLS01_0083",
+      "fetched_at": "2026-11-09T15:37:50.887Z"
     },
     {
       "id": "aa966669f41fdbaf",
       "path": "/images/fleet-galleries/cargo-dragon-v1/02.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — cargo-dragon-v1 / \"fleet cargo-dragon-v1\"",
-      "author": "SpaceX",
-      "agency": "SpaceX",
-      "source_url": "https://images.nasa.gov/search?q=fleet+cargo-dragon-v1&media_type=image&keywords=cargo-dragon-v1",
+      "title": "SpaceX CRS-21 Live Launch Coverage (KSC-20201206-PH-AWG04_0020)",
+      "author": "NASA/Tony Gray and Kenny Allen",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/KSC-20201206-PH-AWG04_0020",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.875Z"
+      "nasa_id": "KSC-20201206-PH-AWG04_0020",
+      "fetched_at": "2026-11-09T15:37:50.888Z"
     },
     {
       "id": "cc259ee86e7d9215",
       "path": "/images/fleet-galleries/cargo-dragon-v1/03.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — cargo-dragon-v1 / \"fleet cargo-dragon-v1\"",
-      "author": "SpaceX",
-      "agency": "SpaceX",
-      "source_url": "https://images.nasa.gov/search?q=fleet+cargo-dragon-v1&media_type=image&keywords=cargo-dragon-v1",
+      "title": "SpaceX CRS-21 Live Launch Coverage  (KSC-20201206-PH-KLS01_0143)",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/KSC-20201206-PH-KLS01_0143",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.875Z"
+      "nasa_id": "KSC-20201206-PH-KLS01_0143",
+      "fetched_at": "2026-11-09T15:37:50.888Z"
     },
     {
       "id": "0df845642c312e31",
@@ -12383,44 +12380,42 @@
     {
       "id": "d80f6efdec9c4c79",
       "path": "/images/fleet-galleries/hope/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/hope",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mars - Olympus Mons - Orbit 12 - Hope Mission (51575361799).png",
+      "author": "Andrea Luck from Glasgow, Scotland, United Kingdom",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mars_-_Olympus_Mons_-_Orbit_12_-_Hope_Mission_(51575361799).png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mars_-_Olympus_Mons_-_Orbit_12_-_Hope_Mission_%2851575361799%29.png",
+      "license_short": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_rationale": "Creative Commons Attribution 2.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 121286630,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:37:30.721Z"
     },
     {
       "id": "bf143c0f56f278e8",
       "path": "/images/fleet-galleries/hope/03.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/hope",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Emirates Mars Mission mockup at IAC 2021 02.jpg",
+      "author": "BugWarp",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 111795920,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:37:31.994Z"
     },
     {
       "id": "fb741947134b601e",
@@ -13452,23 +13447,22 @@
     {
       "id": "9e4048ab93278554",
       "path": "/images/fleet-galleries/jiuquan-slc-43/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/jiuquan-slc-43",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou 22 CZ-2F Y22 launch 09.png",
+      "author": "中国新闻社",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_22_CZ-2F_Y22_launch_09.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Shenzhou_22_CZ-2F_Y22_launch_09.png",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 192307055,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:37:33.242Z"
     },
     {
       "id": "09776c0850943b8b",
@@ -13494,23 +13488,22 @@
     {
       "id": "2a39115dfe163e48",
       "path": "/images/fleet-galleries/jiuquan-slc-43/04.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/jiuquan-slc-43",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou 14 roll out.jpg",
+      "author": "China News Service",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_14_roll_out.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Shenzhou_14_roll_out.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 118435313,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:37:34.491Z"
     },
     {
       "id": "a06c080b038ce602",
@@ -14238,23 +14231,22 @@
     {
       "id": "6635f1d5a4c3a61f",
       "path": "/images/fleet-galleries/kourou-ela-3/03.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/kourou-ela-3",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Ariane 5 launch pad.jpg",
+      "author": "Philippe Semanaz / Philou.cn (username on Flickr)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ariane_5_launch_pad.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Ariane_5_launch_pad.jpg",
+      "license_short": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 2.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 1489653,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:37:35.763Z"
     },
     {
       "id": "822a7072be8360f5",
@@ -19582,23 +19574,24 @@
     {
       "id": "ec86a31455b69919",
       "path": "/images/fleet-galleries/orion/03.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — orion / \"fleet orion\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Updated ICPS front (805037675635).png",
+      "author": "Uploaded by Patricia Moore",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+orion&media_type=image&keywords=orion",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Updated_ICPS_front_(805037675635).png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Updated_ICPS_front_%28805037675635%29.png",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "reencoded-jpeg",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 134744780,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.894Z"
+      "fetched_at": "2026-11-09T15:37:37.038Z"
     },
     {
       "id": "4ea7b6b093b33f91",
@@ -22733,44 +22726,44 @@
     {
       "id": "fb4c408148240350",
       "path": "/images/fleet-galleries/saturn-v/01.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — saturn-v / \"fleet saturn-v\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Launch of Apollo 8 lunar orbit mission - 44568285330.jpg",
+      "author": "NASA Goddard Photo and Video",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+saturn-v&media_type=image&keywords=saturn-v",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_Apollo_8_lunar_orbit_mission_-_44568285330.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Launch_of_Apollo_8_lunar_orbit_mission_-_44568285330.jpg",
+      "license_short": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_rationale": "Creative Commons Attribution 2.0",
       "modifications": [
         "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "reencoded-jpeg",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 194634676,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.898Z"
+      "fetched_at": "2026-11-09T15:37:38.268Z"
     },
     {
       "id": "ec0feb51b282e602",
       "path": "/images/fleet-galleries/saturn-v/02.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — saturn-v / \"fleet saturn-v\"",
-      "author": "NASA",
+      "title": "Launch of Apollo 8 lunar orbit mission (S68-56050)",
+      "author": "NASA/JSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+saturn-v&media_type=image&keywords=saturn-v",
+      "source_url": "https://images.nasa.gov/details/S68-56050",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.898Z"
+      "nasa_id": "S68-56050",
+      "fetched_at": "2026-11-09T15:37:50.888Z"
     },
     {
       "id": "9a384f83abea5393",
@@ -22797,22 +22790,21 @@
       "id": "585a82abf9f63dc2",
       "path": "/images/fleet-galleries/saturn-v/04.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — saturn-v / \"fleet saturn-v\"",
-      "author": "NASA",
+      "title": "PRELAUNCH - APOLLO 17 (ROLLOUT) (S72-54813)",
+      "author": "NASA/JSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+saturn-v&media_type=image&keywords=saturn-v",
+      "source_url": "https://images.nasa.gov/details/S72-54813",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.898Z"
+      "nasa_id": "S72-54813",
+      "fetched_at": "2026-11-09T15:37:50.888Z"
     },
     {
       "id": "3cf0111b6f82d5df",
@@ -23703,44 +23695,42 @@
     {
       "id": "3e97195bd9000742",
       "path": "/images/fleet-galleries/sokol-kv-2/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/sokol-kv-2",
-      "author": "Roscosmos",
+      "source_type": "wikimedia-commons",
+      "title": "File:Sokol KV2.JPG",
+      "author": "Vassili Petrovitch",
       "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sokol_KV2.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Sokol_KV2.JPG",
+      "license_short": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 10012476,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:37:39.494Z"
     },
     {
       "id": "0549228498130cdc",
       "path": "/images/fleet-galleries/sokol-kv-2/03.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/sokol-kv-2",
-      "author": "Roscosmos",
+      "source_type": "wikimedia-commons",
+      "title": "File:Sokol KV-2 emergency spacesuit - geograph.org.uk - 6029935.jpg",
+      "author": "Robin Drayton",
       "agency": "Roscosmos",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-Russia",
-      "license_url": "https://en.wikipedia.org/wiki/Russian_copyright_law",
-      "license_rationale": "Soviet government works pre-1973 and many Russian Federation government works are public domain under §1259 of the Civil Code.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sokol_KV-2_emergency_spacesuit_-_geograph.org.uk_-_6029935.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sokol_KV-2_emergency_spacesuit_-_geograph.org.uk_-_6029935.jpg",
+      "license_short": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 2.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 143181431,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-09T15:37:40.745Z"
     },
     {
       "id": "fdeac28af0f4001f",
@@ -25086,23 +25076,24 @@
     {
       "id": "213f30e55cf3fbca",
       "path": "/images/fleet-galleries/spitzer/04.webp",
-      "source_type": "nasa-images-api",
-      "title": "NASA Images search result — spitzer / \"fleet spitzer\"",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Andromeda galaxy Ssc2005-20a1.jpg",
+      "author": "NASA/JPL-Caltech/K. Gordon (University of Arizona)",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+spitzer&media_type=image&keywords=spitzer",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Andromeda_galaxy_Ssc2005-20a1.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Andromeda_galaxy_Ssc2005-20a1.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain",
       "modifications": [
         "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "reencoded-jpeg",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 5566366,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.901Z"
+      "fetched_at": "2026-11-09T15:37:41.975Z"
     },
     {
       "id": "ef7c34881dca8431",
@@ -25249,44 +25240,42 @@
     {
       "id": "01fdd99bcb0cc164",
       "path": "/images/fleet-galleries/starbase-orbital-a/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/starbase-orbital-a",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Starship SN9 Launch Pad and Build Site.jpg",
+      "author": "Jared Krahn",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Starship_SN9_Launch_Pad_and_Build_Site.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Starship_SN9_Launch_Pad_and_Build_Site.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 99400216,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:37:43.220Z"
     },
     {
       "id": "2ed7a8da32cfaad5",
       "path": "/images/fleet-galleries/starbase-orbital-a/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/starbase-orbital-a",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Starship full stack with Jeep.jpg",
+      "author": "Hotel Pika",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Starship_full_stack_with_Jeep.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Starship_full_stack_with_Jeep.jpg",
+      "license_short": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 2.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 115686496,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:37:44.469Z"
     },
     {
       "id": "03aa12bdd4b57066",
@@ -26671,22 +26660,21 @@
       "id": "9682d64ffbc68387",
       "path": "/images/fleet-galleries/titan-ii-glv/02.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — titan-ii-glv / \"fleet titan-ii-glv\"",
-      "author": "NASA",
+      "title": "Aerial view Gemini/Titan-II launch vehicle #1 liftoff at Cape Kennedy (S64-22412)",
+      "author": "NASA/JSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+titan-ii-glv&media_type=image&keywords=titan-ii-glv",
+      "source_url": "https://images.nasa.gov/details/S64-22412",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.903Z"
+      "nasa_id": "S64-22412",
+      "fetched_at": "2026-11-09T15:37:50.888Z"
     },
     {
       "id": "8c6d085036a420b5",
@@ -26712,43 +26700,41 @@
       "id": "ccc2f35f5bb7cb46",
       "path": "/images/fleet-galleries/titan-ii-glv/04.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — titan-ii-glv / \"fleet titan-ii-glv\"",
-      "author": "NASA",
+      "title": "MATING - GEMINI-TITAN (GT)-3 - CAPE (S65-17337)",
+      "author": "NASA/JSC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+titan-ii-glv&media_type=image&keywords=titan-ii-glv",
+      "source_url": "https://images.nasa.gov/details/S65-17337",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.903Z"
+      "nasa_id": "S65-17337",
+      "fetched_at": "2026-11-09T15:37:50.888Z"
     },
     {
       "id": "cf2997370fce822d",
       "path": "/images/fleet-galleries/titan-ii-glv/05.webp",
       "source_type": "nasa-images-api",
-      "title": "NASA Images search result — titan-ii-glv / \"fleet titan-ii-glv\"",
-      "author": "NASA",
+      "title": "Launch Vehicles (8896263)",
+      "author": "NASA/MSFC",
       "agency": "NASA",
-      "source_url": "https://images.nasa.gov/search?q=fleet+titan-ii-glv&media_type=image&keywords=titan-ii-glv",
+      "source_url": "https://images.nasa.gov/details/8896263",
       "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-nasa-images-api",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.903Z"
+      "nasa_id": "8896263",
+      "fetched_at": "2026-11-09T15:37:50.888Z"
     },
     {
       "id": "5eb9da4aba7f9b6a",
@@ -28640,86 +28626,82 @@
     {
       "id": "42c651683ea5ed3c",
       "path": "/images/fleet-galleries/wenchang-lc-101/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/wenchang-lc-101",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:嫦娥五号拟于11月下旬发射.webm",
+      "author": "中国新闻网",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%E5%AB%A6%E5%A8%A5%E4%BA%94%E5%8F%B7%E6%8B%9F%E4%BA%8E11%E6%9C%88%E4%B8%8B%E6%97%AC%E5%8F%91%E5%B0%84.webm",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/%E5%AB%A6%E5%A8%A5%E4%BA%94%E5%8F%B7%E6%8B%9F%E4%BA%8E11%E6%9C%88%E4%B8%8B%E6%97%AC%E5%8F%91%E5%B0%84.webm",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 96647688,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:37:45.726Z"
     },
     {
       "id": "6f5e96ebcdac36e4",
       "path": "/images/fleet-galleries/wenchang-lc-101/02.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/wenchang-lc-101",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Launch of Tianhe Core Module.jpg",
+      "author": "China News Service",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_Tianhe_Core_Module.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Launch_of_Tianhe_Core_Module.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 104644762,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:37:46.975Z"
     },
     {
       "id": "8f767cfebc03a10f",
       "path": "/images/fleet-galleries/wenchang-lc-101/04.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/wenchang-lc-101",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Tianwen-1 launch 02.jpg",
+      "author": "中新网",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tianwen-1_launch_02.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Tianwen-1_launch_02.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 92534381,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:37:48.226Z"
     },
     {
       "id": "6f8ae256377d2cde",
       "path": "/images/fleet-galleries/wenchang-lc-101/05.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/wenchang-lc-101",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:Wenchang Space Launch Site 02.jpg",
+      "author": "Shujianyang",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wenchang_Space_Launch_Site_02.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Wenchang_Space_Launch_Site_02.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 123869102,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-11-09T15:37:49.473Z"
     },
     {
       "id": "813d3ed4effb734f",

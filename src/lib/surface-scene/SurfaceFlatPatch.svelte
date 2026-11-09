@@ -63,10 +63,21 @@
     /** Globe colour (0–1) at the site: greyscale imagery is tinted to it,
      *  matching the 3D patches (#641, Mars). */
     tint?: [number, number, number];
+    /** Short imagery label for the DETAIL badge, e.g. "~0.5 m/px · NAIP". */
+    detailBadge: string;
     /** Full-size view of an annotation's photo (the page's lightbox). */
     onOpenPhoto?: (src: string) => void;
   }
-  let { selected, config, traverses, entryKmPerPx, onClose, tint, onOpenPhoto }: Props = $props();
+  let {
+    selected,
+    config,
+    traverses,
+    entryKmPerPx,
+    onClose,
+    tint,
+    detailBadge,
+    onOpenPhoto,
+  }: Props = $props();
   const tinted = (img: HTMLImageElement): HTMLImageElement | HTMLCanvasElement => {
     if (!tint) return img;
     const st = imageStats(img);
@@ -505,13 +516,7 @@
       ctx.font = "bold 9px 'Space Mono', monospace";
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
-      const px =
-        config.planet === 'mars'
-          ? '25 cm/px · HiRISE'
-          : config.planet === 'earth'
-            ? '~30 cm/px · commercial sat'
-            : '50 cm/px · LROC NAC';
-      ctx.fillText(`DETAIL · ${px}`, x + 6, y + 6);
+      ctx.fillText(`DETAIL · ${detailBadge}`, x + 6, y + 6);
     }
   }
 

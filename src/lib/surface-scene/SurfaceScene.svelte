@@ -63,6 +63,14 @@
     type TraverseLine,
   } from '$lib/surface-scene/surface-traverses';
   import { formatNumber } from '$lib/format';
+  import {
+    KAGUYA_REGIONAL_MOON_SITES,
+    KAGUYA_DETAIL_MOON_SITES,
+    GSI_DETAIL_EARTH_PADS,
+    LINZ_DETAIL_EARTH_PADS,
+    detailBadgeLabel,
+    regionalCropSpec,
+  } from '$lib/surface-scene/tier-layer-spec';
   import { getImageAlt } from '$lib/image-alt';
   import { getLocale } from '$lib/paraglide/runtime';
   import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
@@ -814,33 +822,6 @@
   // while still fading in).
   let flatPatchTransitionTimer: ReturnType<typeof setTimeout> | null = null;
   const FLAT_PATCH_FADE_MS = 220;
-  // #361: /moon landers whose regional context layer comes from JAXA's
-  // SELENE (Kaguya) Terrain Camera rather than LROC NAC ROI — drives the
-  // on-canvas "Regional view" credit so the imagery is honestly attributed
-  // (these are the only Moon sites fetch-moon-kaguya-regional.ts wired).
-  // Apollo + any future LROC-sourced regional keep the LROC credit.
-  const KAGUYA_REGIONAL_MOON_SITES = new Set([
-    'luna9',
-    'luna16',
-    'luna17',
-    'luna21',
-    'luna24',
-    'change3',
-    'change4',
-    'change5',
-    'change6',
-    'chandrayaan3',
-    'slim',
-    'beresheet',
-  ]);
-  // #361: /moon landers whose DETAIL layer is the Kaguya regional (failover) —
-  // no LROC Featured Image exists, so fetch-moon-featured-images.ts copied the
-  // Kaguya crop in. Keep KAGUYA_DETAIL_MOON_SITES in sync with that script's
-  // failover set. Drives the on-canvas "Detail view" credit honestly.
-  const KAGUYA_DETAIL_MOON_SITES = new Set(['luna9']);
-  const GSI_DETAIL_EARTH_PADS = new Set(['tanegashima-yoshinobu', 'uchinoura']);
-  /** LINZ 0.1 m aerial survey, read to 0.25 m/px (fetch-earth-pads.ts LINZ_SURVEY). */
-  const LINZ_DETAIL_EARTH_PADS = new Set(['rocket-lab-lc-1']);
   const EOX_CLOUDLESS_TITLE = 'EOxCloudless Sentinel-2 cloudless 2025';
   const EOX_CLOUDLESS_AUTHOR =
     'EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2025)';
@@ -4944,14 +4925,15 @@
                   // cloudless 2025 mosaic for every pad (fetch-earth-pads.ts);
                   // the detail branch below dispatches per-pad source. Same
                   // false-provenance trap as the 2026-06 Mars fix.
+                  const eoxCrop = regionalCropSpec(site, 'earth');
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
                     sourceTitle: EOX_CLOUDLESS_TITLE,
                     sourceAuthor: EOX_CLOUDLESS_AUTHOR,
                     resolutionText: m.surface_res_crop({
-                      res: m.unit_mpx_value({ value: '10' }),
-                      crop: '1600',
-                      km: m.mp_flight_unit_km({ value: '16' }),
+                      res: m.unit_mpx_value({ value: formatNumber(eoxCrop.mPerPx, locale, 0) }),
+                      crop: String(eoxCrop.cropPx),
+                      km: m.mp_flight_unit_km({ value: formatNumber(eoxCrop.groundKm, locale, 0) }),
                     }),
                     sourceUrl: 'https://cloudless.eox.at/',
                     licenseShort: 'CC-BY-NC-SA-4.0',
@@ -4986,14 +4968,15 @@
                   // Camera (#361) — the CTX-equivalent context for the 12
                   // landers with no LROC NAC ROI regional. ~6 m/px TC COG,
                   // window-cropped via USGS Astrogeology ARD.
+                  const kagCrop = regionalCropSpec(site, 'moon');
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'Kaguya (SELENE) TC',
                     sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
                     resolutionText: m.surface_res_crop({
-                      res: m.unit_mpx_value({ value: '6' }),
-                      crop: '2560',
-                      km: m.mp_flight_unit_km({ value: '16' }),
+                      res: m.unit_mpx_value({ value: formatNumber(kagCrop.mPerPx, locale, 0) }),
+                      crop: String(kagCrop.cropPx),
+                      km: m.mp_flight_unit_km({ value: formatNumber(kagCrop.groundKm, locale, 0) }),
                     }),
                     sourceUrl: 'https://www.kaguya.jaxa.jp/',
                     licenseShort: 'JAXA-OPEN',
@@ -5001,14 +4984,17 @@
                 } else {
                   // Moon regional layer — LROC NAC ROI mosaic (Apollo set),
                   // cropped at a wider 3072² window (~15 km).
+                  const lrocCrop = regionalCropSpec(site, 'moon');
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'LROC NAC ROI',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
                     resolutionText: m.surface_res_crop({
-                      res: m.unit_mpx_value({ value: '5' }),
-                      crop: '3072',
-                      km: m.mp_flight_unit_km({ value: '15' }),
+                      res: m.unit_mpx_value({ value: formatNumber(lrocCrop.mPerPx, locale, 0) }),
+                      crop: String(lrocCrop.cropPx),
+                      km: m.mp_flight_unit_km({
+                        value: formatNumber(lrocCrop.groundKm, locale, 0),
+                      }),
                     }),
                     sourceUrl: 'https://pds.lroc.im-ldi.com/',
                     licenseShort: 'PD-NASA',
@@ -5103,7 +5089,7 @@
                     layerLabel: m.surface_layer_detail(),
                     sourceTitle: 'Kaguya (SELENE) TC',
                     sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
-                    resolutionText: `~${m.unit_mpx_value({ value: '6' })}`,
+                    resolutionText: `~${m.unit_mpx_value({ value: formatNumber(regionalCropSpec(site, 'moon').mPerPx, locale, 0) })}`,
                     sourceUrl: 'https://www.kaguya.jaxa.jp/',
                     licenseShort: 'JAXA-OPEN',
                   });
@@ -5859,6 +5845,7 @@ sample      ${debugInfo.projectedPxSample}`}
         {traverses}
         entryKmPerPx={sphereKmPerPxAtSurface}
         tint={flatPatchTint}
+        detailBadge={detailBadgeLabel(flatPatchTarget ?? selected, config.planet)}
         onOpenPhoto={(src) => (panelLightbox = src)}
         onClose={(exitKmPerPx) => closeFlatPatch(exitKmPerPx)}
       />

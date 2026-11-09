@@ -74,7 +74,7 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     // canvas.
     disable2D: true,
     // Halve the stylized Tier-2 patches: at Earth's km/unit ratio the
-    // shared 3.0u disc reads ~640 km for a 16 km image — ~4× more
+    // shared 3.0u disc reads ~640 km for a 32 km image — ~4× more
     // exaggerated than on /moon (2026-09-11 operator feedback).
     tier2PatchScale: 0.5,
     // Science Lens panel for the unified /earth route (#303 fix). Pre-

@@ -227,9 +227,15 @@ Carried from the 2026-11-05 list; not re-verified in this pass.
 
 ### Infra, tooling, tests
 
-- No deploy rollback (`build.prev` nowhere); observability outage drill not run; launch-data retry
-  unproven on a real LL2 5xx; lab-api DCR consent page (#597); git-history PNG purge (needs the
-  operator's approval); launch webcasts, image-source adapters' leftovers, LROC TODOs.
+- Deploy rollback: decided 2026-11-09 — redeploy the last good release (`release_tag` input on
+  Deploy prod, patch for the operator to apply) and fix forward; no `build.prev`. Observability
+  outage drill not run; git-history PNG purge (needs the operator's approval); launch webcasts,
+  image-source adapters' leftovers, LROC TODOs. #597 consent page in 0.9.8, closes after the
+  deploy with a live check.
+- LL2 5xx retry: closed 2026-11-09 (operator). Shipped in v0.9.3; LL2 504s were logged on
+  2026-10-23/25/28/29/31, none since, so the retry has not fired on prod yet. Each o11y review
+  checks VictoriaLogs `_time:30d app:orrery "ll2 retry"` — a `↻ ll2 retry` line followed by
+  `✓ ll2 upcoming` is the proof.
 - Tests that hard-code counts (all still there): `tests/e2e/missions.spec.ts:59,70,76,96,103`
   (MARS 20, MOON 32, JUPITER 5 cards), `launches-timeline.spec.ts:48` (7 decade pills; becomes 8
   when 2027–36 opens), `landing.spec.ts:28,66` (22 cards, 9 footer links). Non-unique `{#each}` keys, latent only:

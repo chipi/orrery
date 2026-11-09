@@ -25,8 +25,8 @@ const IMAGES = 'static/images';
 /** Gallery slots with no credit row (no old row to restore). Source them, then delete the line. */
 const KNOWN_MISSING = new Set<string>([]);
 
-/** Placeholder credits in galleries. 411 on 2026-11-01; on 2026-11-02 412 (MMX 01 honest placeholder), 409 (Galileo), 380 (credit-placeholders-find batch 1); 311 on 2026-11-08 (gallery replacements and drops), 309 on 2026-11-09 (credit-placeholders-find, missions). Ratchet: lower it as they are fixed. */
-const PLACEHOLDER_CEILING = 309;
+/** Placeholder credits in galleries. 411 on 2026-11-01; on 2026-11-02 412 (MMX 01 honest placeholder), 409 (Galileo), 380 (credit-placeholders-find batch 1); 311 on 2026-11-08 (gallery replacements and drops), 309 on 2026-11-09 (credit-placeholders-find, missions), 251 (fleet galleries: 59 sourced) Ratchet: lower it as they are fixed. */
+const PLACEHOLDER_CEILING = 251;
 
 interface Row {
   path: string;

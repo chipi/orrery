@@ -94883,8 +94883,8 @@
       "instrument": "LROC WAC"
     },
     {
-      "id": "d6a0241e0cbb6a35",
-      "path": "/images/moon-sites/annotations/as11-40-5948.webp",
+      "id": "01138e85871258e8",
+      "path": "/images/missions/apollo11/06.webp",
       "source_type": "nasa-images-api",
       "title": "Astronaut Edwin Aldrin after deployment of EASEP on surface of moon (as11-40-5948)",
       "author": "NASA/JSC",
@@ -94903,8 +94903,8 @@
       "fetched_at": "2026-11-09T09:14:31.769Z"
     },
     {
-      "id": "413f688e1c21873b",
-      "path": "/images/moon-sites/annotations/as12-46-6749.webp",
+      "id": "f381cd19d797e19f",
+      "path": "/images/missions/apollo12/06.webp",
       "source_type": "nasa-images-api",
       "title": "Astronaut Alan Bean works on Modular Equipment Stowage Assembly (as12-46-6749)",
       "author": "NASA/JSC",
@@ -94923,8 +94923,8 @@
       "fetched_at": "2026-11-09T09:14:31.769Z"
     },
     {
-      "id": "bc2f649b578d6276",
-      "path": "/images/moon-sites/annotations/as12-47-6918.webp",
+      "id": "3d2e78a388d47d30",
+      "path": "/images/missions/apollo12/07.webp",
       "source_type": "nasa-images-api",
       "title": "Apollo 12 Mission image - View of part of the deployed Apollo Lunar Surface Experiment Package (ALSEP)  (as12-47-6918)",
       "author": "NASA/JSC",
@@ -94943,8 +94943,8 @@
       "fetched_at": "2026-11-09T09:14:31.769Z"
     },
     {
-      "id": "4b5cf5925249e165",
-      "path": "/images/moon-sites/annotations/as16-107-17436.webp",
+      "id": "2201a1e2eb4003ef",
+      "path": "/images/moon-sites/apollo16/03.webp",
       "source_type": "nasa-images-api",
       "title": "View of the Lunar Module \"Orion\" and Lunar Roving Vehicle during first EVA (as16-107-17436)",
       "author": "NASA/JSC",
@@ -94963,8 +94963,8 @@
       "fetched_at": "2026-11-09T09:14:31.769Z"
     },
     {
-      "id": "6ef182398935a8b1",
-      "path": "/images/moon-sites/annotations/as16-113-18347.webp",
+      "id": "06a0abdd49ec920a",
+      "path": "/images/moon-sites/apollo16/04.webp",
       "source_type": "nasa-images-api",
       "title": "Partial view of the deployed Apollo Lunar Surface Experiments Package (as16-113-18347)",
       "author": "NASA/JSC",
@@ -94983,8 +94983,8 @@
       "fetched_at": "2026-11-09T09:14:31.769Z"
     },
     {
-      "id": "f60ac67e56bc92fb",
-      "path": "/images/moon-sites/annotations/as17-134-20382.webp",
+      "id": "d97efd04d55e2862",
+      "path": "/images/missions/apollo17/06.webp",
       "source_type": "nasa-images-api",
       "title": "Apollo 17 Mission image - station Lunar Module (LM),LM,LRV,Flag, LMP (as17-134-20382)",
       "author": "NASA/JSC",
@@ -95003,8 +95003,8 @@
       "fetched_at": "2026-11-09T09:14:31.769Z"
     },
     {
-      "id": "a43c22d234f254e5",
-      "path": "/images/moon-sites/annotations/as15-87-11845.webp",
+      "id": "35b01fb4dd0b303e",
+      "path": "/images/moon-sites/apollo15/06.webp",
       "source_type": "wikimedia-commons",
       "title": "File:AS15-87-11845 (21039601833).jpg",
       "author": "Project Apollo Archive",
@@ -95022,6 +95022,147 @@
       "pageid": 44124119,
       "nasa_id": null,
       "fetched_at": "2026-11-09T09:14:33.198Z"
+    },
+    {
+      "id": "54217c03f29b5d4e",
+      "path": "/images/missions/apollo11/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Astronaut Edwin Aldrin after deployment of EASEP on surface of moon (as11-40-5948)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/as11-40-5948",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "as11-40-5948",
+      "fetched_at": "2026-11-09T09:14:31.769Z"
+    },
+    {
+      "id": "386dd74b7f350367",
+      "path": "/images/missions/apollo12/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Astronaut Alan Bean works on Modular Equipment Stowage Assembly (as12-46-6749)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/as12-46-6749",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "as12-46-6749",
+      "fetched_at": "2026-11-09T09:14:31.769Z"
+    },
+    {
+      "id": "b025455b3c054ba6",
+      "path": "/images/missions/apollo12/07.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Apollo 12 Mission image - View of part of the deployed Apollo Lunar Surface Experiment Package (ALSEP)  (as12-47-6918)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/as12-47-6918",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "as12-47-6918",
+      "fetched_at": "2026-11-09T09:14:31.769Z"
+    },
+    {
+      "id": "e8e9e20686d17506",
+      "path": "/images/moon-sites/apollo15/06.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:AS15-87-11845 (21039601833).jpg",
+      "author": "Project Apollo Archive",
+      "agency": "Project Apollo Archive",
+      "source_url": "https://commons.wikimedia.org/wiki/File:AS15-87-11845_(21039601833).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/AS15-87-11845_%2821039601833%29.jpg",
+      "license_short": "PD-Old",
+      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "downloaded-via-commons-api",
+        "cropped-film-border"
+      ],
+      "revid": null,
+      "pageid": 44124119,
+      "nasa_id": null,
+      "fetched_at": "2026-11-09T09:14:33.198Z"
+    },
+    {
+      "id": "b797c8159c778523",
+      "path": "/images/moon-sites/apollo16/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "View of the Lunar Module \"Orion\" and Lunar Roving Vehicle during first EVA (as16-107-17436)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/as16-107-17436",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "as16-107-17436",
+      "fetched_at": "2026-11-09T09:14:31.769Z"
+    },
+    {
+      "id": "5004ce366912a6f3",
+      "path": "/images/moon-sites/apollo16/04.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Partial view of the deployed Apollo Lunar Surface Experiments Package (as16-113-18347)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/as16-113-18347",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "as16-113-18347",
+      "fetched_at": "2026-11-09T09:14:31.769Z"
+    },
+    {
+      "id": "d8628d0c96016e3c",
+      "path": "/images/missions/apollo17/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Apollo 17 Mission image - station Lunar Module (LM),LM,LRV,Flag, LMP (as17-134-20382)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/as17-134-20382",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "as17-134-20382",
+      "fetched_at": "2026-11-09T09:14:31.769Z"
     }
   ]
 }

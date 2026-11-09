@@ -2,36 +2,43 @@
   "frames": [
     {
       "id": "as11-40-5948",
+      "slot": "missions/apollo11/06",
       "nasa_id": "as11-40-5948",
       "url": "https://images-assets.nasa.gov/image/as11-40-5948/as11-40-5948~orig.jpg"
     },
     {
       "id": "as12-46-6749",
+      "slot": "missions/apollo12/06",
       "nasa_id": "as12-46-6749",
       "url": "https://images-assets.nasa.gov/image/as12-46-6749/as12-46-6749~orig.jpg"
     },
     {
       "id": "as12-47-6918",
+      "slot": "missions/apollo12/07",
       "nasa_id": "as12-47-6918",
       "url": "https://images-assets.nasa.gov/image/as12-47-6918/as12-47-6918~orig.jpg"
     },
     {
       "id": "as15-87-11845",
+      "slot": "moon-sites/apollo15/06",
       "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/AS15-87-11845_%2821039601833%29.jpg",
       "crop": { "left": 100, "top": 120, "width": 3860, "height": 3890 }
     },
     {
       "id": "as16-107-17436",
+      "slot": "moon-sites/apollo16/03",
       "nasa_id": "as16-107-17436",
       "url": "https://images-assets.nasa.gov/image/as16-107-17436/as16-107-17436~orig.jpg"
     },
     {
       "id": "as16-113-18347",
+      "slot": "moon-sites/apollo16/04",
       "nasa_id": "as16-113-18347",
       "url": "https://images-assets.nasa.gov/image/as16-113-18347/as16-113-18347~orig.jpg"
     },
     {
       "id": "as17-134-20382",
+      "slot": "missions/apollo17/06",
       "nasa_id": "as17-134-20382",
       "url": "https://images-assets.nasa.gov/image/as17-134-20382/as17-134-20382~orig.jpg"
     }

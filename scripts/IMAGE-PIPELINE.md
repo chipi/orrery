@@ -336,6 +336,7 @@ Image-related scripts split by role. The WebP-ladder + vision scripts live in `s
 | `flag-image.ts` | Marks a slot for re-sourcing (via `image-curation.json` deny-list). | Review |
 | `score-images.ts` | Generates the audit HTML for human review. | Review |
 | `prune-image-slots.ts` | Removes a flagged slot + cascades manifest update. | After flagging |
+| `move-image-to-gallery.ts` | Moves a built image ladder + master into a gallery as the next numbered slot (1x1, provenance, alt, vision, approved, phash, ladder) — one library per place. | Adding a photo that lives outside the gallery |
 | `prune-orphan-images.ts` | Removes disk files not referenced by any sidecar. | Cleanup |
 | `fill-gallery-gaps.ts` | Re-fetches into pruned slots. | After pruning |
 

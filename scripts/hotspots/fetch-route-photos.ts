@@ -54,6 +54,7 @@ function pointAtSol(sols: number[], sol: number): number {
 
 interface AnnotationFrame {
   id: string;
+  slot: string;
   url: string;
   nasa_id?: string;
   crop?: { left: number; top: number; width: number; height: number };
@@ -70,7 +71,9 @@ const ANNOTATION_SIDECAR = 'static/data/moon-annotation-photos.json';
 /**
  * Apollo hardware rings: one photo per annotation, shown when the ring is tapped.
  * Input scripts/hotspots/annotation-photos.json: `frames` (NASA/Commons downloads →
- * masters/moon-sites/annotations/<id>.jpg, optional crop for a film border) and
+ * masters/<slot>.jpg, the next free numbered slot of the place's own gallery, optional crop for a
+ * film border; the 1x1 crop, provenance, alt text and counts follow the gallery tools, as for any
+ * new slot) and
  * `annotations` (site → ring id → a frame above, or an already-served gallery image
  * reused as is). Writes static/data/moon-annotation-photos.json.
  */
@@ -79,11 +82,11 @@ async function annotations(skipDownload: boolean) {
     frames: AnnotationFrame[];
     annotations: Record<string, Record<string, AnnotationRef>>;
   };
-  const dir = 'moon-sites/annotations';
+  const dirs = [...new Set(list.frames.map((f) => path.dirname(f.slot)))];
   if (!skipDownload) {
     const { default: sharp } = await import('sharp');
     for (const f of list.frames) {
-      const out = path.join('masters', dir, `${f.id}.jpg`);
+      const out = path.join('masters', `${f.slot}.jpg`);
       if (existsSync(out)) continue;
       const tmp = `${out}.part`;
       await download(f.url, tmp);
@@ -93,15 +96,12 @@ async function annotations(skipDownload: boolean) {
       console.log(`  ↓ ${f.id}`);
     }
   }
-  execFileSync('node', ['scripts/vision/build-display-ladder.mjs', '--only', dir], {
+  execFileSync('node', ['scripts/vision/build-display-ladder.mjs', '--only', dirs.join(',')], {
     stdio: 'inherit',
   });
   execFileSync(
     'node',
-    [
-      'scripts/vision/add-card-rungs.mjs',
-      `--stems=${list.frames.map((f) => `${dir}/${f.id}`).join(',')}`,
-    ],
+    ['scripts/vision/add-card-rungs.mjs', `--stems=${list.frames.map((f) => f.slot).join(',')}`],
     { stdio: 'inherit' },
   );
 
@@ -115,7 +115,7 @@ async function annotations(skipDownload: boolean) {
     for (const [ring, ref] of Object.entries(rings)) {
       const frame = ref.frame ? frames.get(ref.frame) : undefined;
       if (ref.frame && !frame) throw new Error(`${site}/${ring}: unknown frame ${ref.frame}`);
-      const image = frame ? `/images/${dir}/${frame.id}.webp` : ref.image;
+      const image = frame ? `/images/${frame.slot}.webp` : ref.image;
       if (!image) throw new Error(`${site}/${ring}: needs frame or image`);
       if (!existsSync(`static${image}`)) throw new Error(`${image} not built`);
       const base = image.replace(/\.webp$/, '');
@@ -149,7 +149,7 @@ async function main() {
         console.log(`  ↓ ${rover}/${p.id}`);
       }
     }
-    execFileSync('node', ['scripts/vision/build-display-ladder.mjs', '--only', dir], {
+    execFileSync('node', ['scripts/vision/build-display-ladder.mjs', '--only', dirs.join(',')], {
       stdio: 'inherit',
     });
     execFileSync(

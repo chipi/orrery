@@ -9411,38 +9411,30 @@
       "scoring_cost_usd": 0.003291
     },
     "/images/moon-sites/apollo16/03.jpg": {
-      "score": 6,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) overhead view of the Apollo 16 landing site on the Moon, with a white arrow indicating the approximate touchdown location amid lunar surface features and ray patterns.",
+      "score": 8,
+      "subject": "The Apollo 16 Lunar Module Orion and the Lunar Roving Vehicle in the Descartes Highlands, seen during the first moonwalk.",
       "category": "surface",
       "focal_point": {
-        "x": 0.42,
-        "y": 0.44
+        "x": 0.5,
+        "y": 0.5
       },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo16/03.1x1.jpg"
-      },
+      "subject_match": true,
       "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.008154,
-      "subject_match": true
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
     },
     "/images/moon-sites/apollo16/04.jpg": {
-      "score": 7,
-      "subject": "High-resolution orbital photograph of the Moon's cratered surface showing multiple impact craters and ray systems against black space.",
-      "category": "orbital",
+      "score": 8,
+      "subject": "Part of the deployed Apollo 16 ALSEP on the Moon: the passive seismometer in the foreground, the central station in the centre background and the nuclear power unit at left.",
+      "category": "surface",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo16/04.1x1.jpg"
-      },
+      "subject_match": true,
       "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.008784,
-      "subject_match": true
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
     },
     "/images/moon-sites/apollo16/02.jpg": {
       "score": 7,
@@ -32403,6 +32395,71 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-08T10:35:13.592Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo11/06.jpg": {
+      "score": 8,
+      "subject": "Apollo 11 science package after deployment on the Moon: the passive seismometer in the foreground, the laser retroreflector beyond it, the flag and the Lunar Module in the distance.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.369Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo12/06.jpg": {
+      "score": 8,
+      "subject": "An Apollo 12 astronaut works at the equipment stowage compartment on the side of the Lunar Module, whose descent stage and landing legs rest on grey lunar soil.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo12/07.jpg": {
+      "score": 8,
+      "subject": "Part of the deployed Apollo 12 ALSEP science station on the Moon: the central station, the largest object, with the passive seismometer in the foreground and an instrument standing on legs.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/moon-sites/apollo15/06.jpg": {
+      "score": 8,
+      "subject": "The central station of the Apollo 15 ALSEP in the foreground, covered in gold foil, with the lunar-surface magnetometer far off on the plain at the end of a cable.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo17/06.jpg": {
+      "score": 8,
+      "subject": "An Apollo 17 astronaut stands near the deployed flag in the Taurus-Littrow Valley, with the Lunar Module in the left background and the Lunar Roving Vehicle at right.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.370Z",
       "scoring_cost_usd": 0
     }
   }

@@ -6,25 +6,25 @@
       "nasa_id": "as11-40-5927"
     },
     "pse": {
-      "image": "/images/moon-sites/annotations/as11-40-5948.webp",
-      "thumb": "/images/moon-sites/annotations/as11-40-5948-320.webp",
+      "image": "/images/missions/apollo11/06.webp",
+      "thumb": "/images/missions/apollo11/06-320.webp",
       "nasa_id": "as11-40-5948"
     },
     "lrrr": {
-      "image": "/images/moon-sites/annotations/as11-40-5948.webp",
-      "thumb": "/images/moon-sites/annotations/as11-40-5948-320.webp",
+      "image": "/images/missions/apollo11/06.webp",
+      "thumb": "/images/missions/apollo11/06-320.webp",
       "nasa_id": "as11-40-5948"
     }
   },
   "apollo12": {
     "lm-descent-stage": {
-      "image": "/images/moon-sites/annotations/as12-46-6749.webp",
-      "thumb": "/images/moon-sites/annotations/as12-46-6749-320.webp",
+      "image": "/images/missions/apollo12/06.webp",
+      "thumb": "/images/missions/apollo12/06-320.webp",
       "nasa_id": "as12-46-6749"
     },
     "alsep": {
-      "image": "/images/moon-sites/annotations/as12-47-6918.webp",
-      "thumb": "/images/moon-sites/annotations/as12-47-6918-320.webp",
+      "image": "/images/missions/apollo12/07.webp",
+      "thumb": "/images/missions/apollo12/07-320.webp",
       "nasa_id": "as12-47-6918"
     },
     "surveyor-3": {
@@ -47,8 +47,8 @@
       "nasa_id": "as15-88-11866"
     },
     "alsep": {
-      "image": "/images/moon-sites/annotations/as15-87-11845.webp",
-      "thumb": "/images/moon-sites/annotations/as15-87-11845-320.webp"
+      "image": "/images/moon-sites/apollo15/06.webp",
+      "thumb": "/images/moon-sites/apollo15/06-320.webp"
     },
     "lrv": {
       "image": "/images/moon-sites/apollo15/02.webp",
@@ -58,20 +58,20 @@
   },
   "apollo16": {
     "lm-descent-stage": {
-      "image": "/images/moon-sites/annotations/as16-107-17436.webp",
-      "thumb": "/images/moon-sites/annotations/as16-107-17436-320.webp",
+      "image": "/images/moon-sites/apollo16/03.webp",
+      "thumb": "/images/moon-sites/apollo16/03-320.webp",
       "nasa_id": "as16-107-17436"
     },
     "alsep": {
-      "image": "/images/moon-sites/annotations/as16-113-18347.webp",
-      "thumb": "/images/moon-sites/annotations/as16-113-18347-320.webp",
+      "image": "/images/moon-sites/apollo16/04.webp",
+      "thumb": "/images/moon-sites/apollo16/04-320.webp",
       "nasa_id": "as16-113-18347"
     }
   },
   "apollo17": {
     "lm-descent-stage": {
-      "image": "/images/moon-sites/annotations/as17-134-20382.webp",
-      "thumb": "/images/moon-sites/annotations/as17-134-20382-320.webp",
+      "image": "/images/missions/apollo17/06.webp",
+      "thumb": "/images/missions/apollo17/06-320.webp",
       "nasa_id": "as17-134-20382"
     },
     "lrv": {

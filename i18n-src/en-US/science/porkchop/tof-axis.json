@@ -1,8 +1,7 @@
 {
   "title": "Time-of-Flight Axis",
   "intro_sentence": "How long the trip takes — running up the Y-axis, in days for inner planets and years for the outer ones.",
-  "seo_title": "Porkchop Plot Time-of-Flight Axis: Trip Duration |||",
-  "seo_description": "Porkchop Plot Time-of-Flight Axis: Trip Duration |||",
+  "seo_title": "Porkchop Plot Time-of-Flight Axis: Trip Duration",
   "narrative_101": [
     "If the X-axis tells you WHEN you leave, the Y-axis tells you HOW LONG the trip takes. Bottom of the chart: fast, short trips. Top of the chart: slow, long trips. For Mars-class destinations the axis spans roughly 100 to 500 days. For Jupiter it's years.",
     "Now you can read the entire trade-off in one glance. Walk straight up a column on the porkchop — that's the SAME launch date but different transit times. Near the bottom (fast trip) the cells turn red — fast trips are expensive because you're forcing a steep transfer ellipse. Higher up (slower trip) the cells go cool blue — that's the natural Hohmann band where the math wants the trip to take.",

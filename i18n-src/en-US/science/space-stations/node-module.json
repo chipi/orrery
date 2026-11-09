@@ -1,8 +1,7 @@
 {
   "title": "Node Module",
   "intro_sentence": "A pressurized hub with multiple docking ports — the structural connector that lets a station branch.",
-  "seo_title": "Space Station Node Modules: Hubs With Docking Ports |||",
-  "seo_description": "Space Station Node Modules: Hubs With Docking Ports |||",
+  "seo_title": "Space Station Node Modules: Hubs With Docking Ports",
   "narrative_101": [
     "A node is a special kind of pressurized module: it doesn't host experiments or crew quarters, it just connects other modules together. Picture a hexagonal box where each face has a docking port. Bolt one node to a launching rocket, send it up, then dock five more modules to the five remaining ports and you've grown your station from one module into six.",
     "The ISS has three: Unity (Node 1), Harmony (Node 2), and Tranquility (Node 3). Each one is the central junction for one segment of the station — Unity glues the Russian and US sides together; Harmony connects the US lab cluster to the Japanese and European modules; Tranquility carries the Cupola observation dome.",

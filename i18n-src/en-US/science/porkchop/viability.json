@@ -1,8 +1,7 @@
 {
   "title": "Reading Viability",
   "intro_sentence": "A cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map.",
-  "seo_title": "Porkchop Plot Viability: Can Your Rocket Make the Trip? |||",
-  "seo_description": "Porkchop Plot Viability: Can Your Rocket Make the Trip? |||",
+  "seo_title": "Porkchop Plot Viability: Can Your Rocket Make the Trip?",
   "narrative_101": [
     "Here's the question that turns a porkchop from a pretty heatmap into a real mission decision: can my rocket actually fly this? Each rocket — Falcon Heavy, SLS, Atlas V, you name it — has a published ∆v capability for a given payload mass. Compare that ceiling to the porkchop's per-cell costs and you have a yes/no map.",
     "Cells where the rocket's capability exceeds the cost are doable, with margin to spare. Cells where capability matches cost exactly are doable but tight — risky, no slack for things going wrong. Cells where the cost exceeds the capability? That trajectory is simply not flyable with that rocket. You can want it all you want; physics says no.",

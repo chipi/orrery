@@ -1,8 +1,7 @@
 {
   "title": "Launch + Ascent",
   "intro_sentence": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",
-  "seo_title": "Rocket Launch and Ascent: The Ten Violent Minutes |||",
-  "seo_description": "Rocket Launch and Ascent: The Ten Violent Minutes |||",
+  "seo_title": "Rocket Launch and Ascent: The Ten Violent Minutes",
   "narrative_101": [
     "Most of the danger in spaceflight happens in the first eight minutes. The rocket lights, fights its own weight to lift off the pad, climbs through air dense enough to tear it apart, and accelerates from zero to seven and a half kilometres per second by the time the engine shuts off. If anything goes wrong during ascent, there is rarely time to fix it.",
     "The arithmetic is brutal. Reaching orbit takes ~9.4 km/s of ∆v, but only ~7.9 km/s actually contributes to orbital speed. The rest is wasted on \"gravity loss\" (you have to keep firing just to hold the rocket up while it climbs) and \"drag loss\" (the atmosphere pushing back). Engineers spend years optimising the pitch program — exactly when and how much to tilt — to minimise these losses.",

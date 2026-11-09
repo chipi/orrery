@@ -1,8 +1,7 @@
 {
   "title": "Radiation exposure",
   "intro_sentence": "Galactic cosmic rays + solar particle events + Earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human Mars mission.",
-  "seo_title": "Space Radiation: Astronaut Exposure on the Way to Mars |||",
-  "seo_description": "Space Radiation: Astronaut Exposure on the Way to Mars |||",
+  "seo_title": "Space Radiation: Astronaut Exposure on the Way to Mars",
   "body_paragraphs": [
     "Earth's surface gets about 3 mSv (millisieverts) of background radiation per year — radon, rocks, food, cosmic rays attenuated by 100 km of atmosphere. The ISS, in low Earth orbit and still partially shielded by the magnetosphere, gets about **150 mSv per year**. Deep space, outside the magnetosphere, gets about **600 mSv per year** — and that's with no solar storms.",
     "Three sources matter. **Galactic cosmic rays (GCR)** are high-energy nuclei from outside the solar system, mostly hydrogen and helium but with a small tail of heavy ions (iron, mostly) that punch through aluminium hulls and shred DNA along the way. They're the steady background. **Solar particle events (SPE)** are bursts of mostly-proton radiation from coronal mass ejections; one bad one in deep space could deliver a lethal dose in hours. **Trapped radiation** (Van Allen belts) is a Low Earth Orbit problem — ISS is below the inner belt, but transiting through it (e.g. Apollo translunar injection) builds up dose quickly.",

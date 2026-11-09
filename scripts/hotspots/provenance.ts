@@ -456,9 +456,24 @@ export function buildLinzProvenanceEntry(input: {
   };
 }
 
+export const LROC_TERMS_URL = 'https://lroc.im-ldi.com/about/terms';
+export const LROC_WEBSITE_RATIONALE =
+  'Image from the LROC website (Featured Image / Featured Site), not the public-domain PDS archive: copyrighted, but the LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09) permit educational use by schools, museums and other organisations without prior permission when credited “NASA/GSFC/Arizona State University”. Orrery is a non-commercial educational site; commercial reuse needs LROC permission.';
+
+/** PDS-archive products (pds.lroc.*) are public domain; everything else on the LROC site is copyrighted. */
+export function isLrocPdsUrl(sourceUrl: string): boolean {
+  try {
+    return new URL(sourceUrl).hostname.startsWith('pds.');
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Build an image-provenance entry for an LROC-derived Moon hotspot
  * patch. Same shape as HiRISE; different attribution + URLs.
+ * PDS products are PD-NASA; LROC-website products (Featured Images
+ * etc.) are LROC-EDU — copyrighted, educational use with credit.
  */
 export function buildLrocProvenanceEntry(input: {
   outputPath: string;
@@ -470,19 +485,21 @@ export function buildLrocProvenanceEntry(input: {
 }): ProvenanceEntry {
   const provenancePath = input.outputPath.replace(/^static/, '');
   const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  const pds = isLrocPdsUrl(input.sourceUrl);
   return {
     id,
     path: provenancePath,
     source_type: 'direct-agency',
     title: `LROC NAC ${input.productId} — patch centred at ${input.centerLat.toFixed(3)}°N ${input.centerLon.toFixed(3)}°E`,
-    author: 'NASA / GSFC / Arizona State University',
+    author: pds ? 'NASA / GSFC / Arizona State University' : 'NASA/GSFC/Arizona State University',
     agency: 'NASA',
     source_url: input.sourceUrl,
     image_url: input.sourceUrl,
-    license_short: 'PD-NASA',
-    license_url: 'https://www.nasa.gov/nasa-brand-center/images-and-media/',
-    license_rationale:
-      'LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.',
+    license_short: pds ? 'PD-NASA' : 'LROC-EDU',
+    license_url: pds ? 'https://www.nasa.gov/nasa-brand-center/images-and-media/' : LROC_TERMS_URL,
+    license_rationale: pds
+      ? 'LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.'
+      : LROC_WEBSITE_RATIONALE,
     modifications: [
       'cropped-around-site-coords',
       'band1-reflectance-contrast-stretch-to-8bit',

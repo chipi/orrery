@@ -1207,6 +1207,10 @@
             "kind": "unphotographed"
           }
         ]
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 120,
+        "east": 60
       }
     },
     "viking2-lander": {
@@ -1279,6 +1283,10 @@
         "lat_max": 22.4757,
         "lon_min": 323.1997,
         "lon_max": 330.3549
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 240,
+        "east": 60
       }
     },
     "spirit": {
@@ -1701,6 +1709,10 @@
             "kind": "unphotographed"
           }
         ]
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 60,
+        "east": 5
       }
     },
     "luna9": {
@@ -1998,6 +2010,10 @@
         "lat_max": -41.6692,
         "lon_min": 197.2147,
         "lon_max": 206.7853
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 210,
+        "east": 20
       }
     },
     "change3": {
@@ -2302,6 +2318,10 @@
           }
         ],
         "entry_yaw_deg": 210
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 170,
+        "east": -95
       }
     },
     "chandrayaan3": {
@@ -2512,7 +2532,11 @@
         "lon_min": 86.9796,
         "lon_max": 93.8804
       },
-      "hotspot_tier2_force_product_id": "ESP_040363_1915"
+      "hotspot_tier2_force_product_id": "ESP_040363_1915",
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 140,
+        "east": -35
+      }
     },
     "cape-canaveral-lc-36b": {
       "hotspot_model": "launchpad-generic",

@@ -545,14 +545,14 @@
     aria-label={m.footer_aria()}
   >
     <nav class="footer-menu" aria-label={m.footer_links_aria()}>
-      <a class="footer-link footer-hub" href={localHref(`/explore/hub`)}>{m.nav_group_explore()}</a>
-      <span class="footer-sep footer-hub" aria-hidden="true">|</span>
-      <a class="footer-link footer-hub" href={localHref(`/worlds`)}>{m.nav_group_worlds()}</a>
-      <span class="footer-sep footer-hub" aria-hidden="true">|</span>
-      <a class="footer-link footer-hub" href={localHref(`/catalog`)}>{m.nav_catalog()}</a>
-      <span class="footer-sep footer-hub" aria-hidden="true">|</span>
-      <a class="footer-link footer-hub" href={localHref(`/learn`)}>{m.nav_learn()}</a>
-      <span class="footer-sep footer-hub" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/explore/hub`)}>{m.nav_group_explore()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/worlds`)}>{m.nav_group_worlds()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/catalog`)}>{m.nav_catalog()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/learn`)}>{m.nav_learn()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href={localHref(`/credits`)}>{m.layout_footer_credits()}</a>
@@ -693,25 +693,25 @@
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
   }
-  /* The four hub links exist for crawlers and wide screens; on a narrow
-     non-touch window they would make the strip wrap and run under the
-     bottom dock, so they drop out of the layout there (still in the DOM). */
-  @media (max-width: 900px) {
-    .footer-hub {
-      display: none;
-    }
-  }
-  /* Keep the footer strip to ONE line on phones. With the build date now
-     in the version tooltip (not rendered), the strip is short enough that a
-     slightly tighter gap/padding fits narrow viewports without wrapping to
-     multiple lines (was 74px tall at 375px) or clipping the leading link. */
-  @media (max-width: 420px) {
+  /* Non-touch windows narrower than the strip: it wraps (all links stay
+     reachable). Up to 600 px it is two compact lines kept under 44 px so it
+     fits in the 50 px band below the bottom time dock; from 601 px a dock
+     on screen sets --footer-dock-right and the strip stays right of it. */
+  @media (max-width: 600px) {
     .footer-menu {
-      gap: 5px;
-      padding: 4px 6px;
+      gap: 0 5px;
+      padding: 1px 6px;
       flex-wrap: wrap;
       justify-content: flex-end;
       max-width: calc(100vw - 20px);
+    }
+  }
+  @media (min-width: 601px) and (max-width: 1300px) {
+    .footer-menu {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      row-gap: 0;
+      max-width: calc(100vw - var(--footer-dock-right, 0px) - 10px);
     }
   }
   .footer-link {

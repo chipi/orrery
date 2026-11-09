@@ -23,6 +23,8 @@ export interface NationFilterVisibilityInput {
   radiusKm: number;
   routeViewActive: boolean;
   flatPatchActive: boolean;
+  /** Zoom-in fly in progress (altitude still high until the patch opens). */
+  detailFlying?: boolean;
 }
 
 /**
@@ -33,7 +35,7 @@ export interface NationFilterVisibilityInput {
  */
 export function nationFilterAway(i: NationFilterVisibilityInput): boolean {
   if (i.view === '2d') return false;
-  if (i.routeViewActive || i.flatPatchActive) return true;
+  if (i.routeViewActive || i.flatPatchActive || i.detailFlying) return true;
   return !(i.tagStageOn && i.altitudeKm >= i.radiusKm * 0.044);
 }
 
@@ -41,6 +43,8 @@ export function nationFilterAway(i: NationFilterVisibilityInput): boolean {
 export function mobileDrawerHidden(i: {
   routeViewActive: boolean;
   flatPatchActive: boolean;
+  /** Zoom-in fly in progress (altitude still high until the patch opens). */
+  detailFlying?: boolean;
 }): boolean {
-  return i.routeViewActive || i.flatPatchActive;
+  return i.routeViewActive || i.flatPatchActive || !!i.detailFlying;
 }

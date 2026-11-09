@@ -28,6 +28,9 @@ describe('nationFilterAway', () => {
   it('hides it in flat-patch zoom', () => {
     expect(nationFilterAway({ ...base, flatPatchActive: true })).toBe(true);
   });
+  it('hides it for the whole Zoom-in fly (altitude is still above threshold)', () => {
+    expect(nationFilterAway({ ...base, detailFlying: true })).toBe(true);
+  });
   it('the 2D map always shows it', () => {
     expect(nationFilterAway({ ...base, view: '2d', routeViewActive: true })).toBe(false);
   });
@@ -37,6 +40,9 @@ describe('mobileDrawerHidden', () => {
   it('hides in route view and flat patch only', () => {
     expect(mobileDrawerHidden({ routeViewActive: true, flatPatchActive: false })).toBe(true);
     expect(mobileDrawerHidden({ routeViewActive: false, flatPatchActive: true })).toBe(true);
+    expect(
+      mobileDrawerHidden({ routeViewActive: false, flatPatchActive: false, detailFlying: true }),
+    ).toBe(true);
     expect(mobileDrawerHidden({ routeViewActive: false, flatPatchActive: false })).toBe(false);
   });
 });

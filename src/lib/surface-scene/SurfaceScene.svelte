@@ -909,6 +909,8 @@
   // detail tiles + regional context) pulled back past the normal detail-reveal
   // band. Toggled from the panel; mutually exclusive with panorama/flat-patch.
   let routeViewActive = $state(false);
+  // True for the whole Zoom-in fly (camera flying to DETAIL_FLY_TARGET_R), before the flat patch opens.
+  let detailFlying = $state(false);
 
   // Mobile: the detail panel is full-screen, so entering panorama / flat-patch
   // from it would hide the very view you just asked for. Auto-dismiss the panel
@@ -3631,6 +3633,8 @@
           if (st >= 1) flySunFrom = flySunTo = null;
         }
         let cameraChanged = false;
+        const detailFlyNow = flyActive && flyToR === DETAIL_FLY_TARGET_R;
+        if (detailFlyNow !== detailFlying) detailFlying = detailFlyNow;
         if (flyActive) {
           const t = (now - flyStart) / FLY_DURATION_MS;
           if (t >= 1) {
@@ -5688,7 +5692,7 @@
         <EnterSkyButton onEnter={() => void launchSkyScene()} />
       {/if}
     </div>
-    {#if !mobileDrawerHidden({ routeViewActive, flatPatchActive })}
+    {#if !mobileDrawerHidden({ routeViewActive, flatPatchActive, detailFlying })}
       <!-- Hide the orbital controls in flat-patch detail (same as panorama);
            they otherwise overlap the true-scale provenance card. -->
       <MobileDrawerGroup
@@ -6084,6 +6088,7 @@ sample      ${debugInfo.projectedPxSample}`}
         radiusKm: config.radiusKm,
         routeViewActive,
         flatPatchActive,
+        detailFlying,
       })}
       class:beside-panel={panelOpen}
       bind:this={legendEl}

@@ -2,13 +2,13 @@
   "hotspot_annotations": [
     {
       "id": "lander",
-      "label": "Módulo de Chang'e 3",
+      "label": "Módulo de aterrizaje de Chang'e 3",
       "label_short": "Chang'e 3",
       "explain": "El módulo de aterrizaje chino Chang'e 3, que se posó en el Mare Imbrium el 14 de diciembre de 2013, el primer alunizaje desde 1976. El anillo marca el lugar del módulo en el centro de este recorte; allí hay un punto brillante sin sombra, y LROC no indica qué píxel es el módulo."
     },
     {
       "id": "crater-450m",
-      "label": "Cráter de 450 m al oeste del módulo",
+      "label": "Cráter de 450 m al oeste del módulo de aterrizaje",
       "label_short": "Cráter de 450 m",
       "explain": "El LROC señala que Chang'e 3 alunizó a unos 60 m al este del borde de un cráter de 450 m de ancho y 40 m de profundidad, sobre un grueso depósito de material volcánico."
     },

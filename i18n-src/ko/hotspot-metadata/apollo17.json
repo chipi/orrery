@@ -62,8 +62,8 @@
     },
     {
       "id": "blast",
-      "label": "LM 분사 영역",
-      "label_short": "분사 영역",
+      "label": "LM 플룸 영향 영역",
+      "label_short": "플룸 영향 영역",
       "explain": "LROC에 따르면 하강 엔진이 Apollo 착륙 지점 둘레의 지면을 밝게 만들었다. Apollo 17에서는 후광이 달 착륙선 둘레로 퍼져 있다(돌출부는 하강 경로를 나타낼 수 있다)."
     }
   ],

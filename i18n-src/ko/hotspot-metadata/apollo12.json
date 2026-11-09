@@ -62,8 +62,8 @@
     },
     {
       "id": "blast",
-      "label": "LM 분사 영역",
-      "label_short": "분사 영역",
+      "label": "LM 플룸 영향 영역",
+      "label_short": "플룸 영향 영역",
       "explain": "LROC에 따르면 하강 엔진이 모든 착륙 지점 둘레의 지면을 밝게 만들었다. Apollo 12에서는 밝은 영역이 Surveyor 분화구 쪽으로 늘어나 있어서 윤곽은 대략적인 길잡이일 뿐이다."
     }
   ]

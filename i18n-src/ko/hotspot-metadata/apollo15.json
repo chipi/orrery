@@ -44,8 +44,8 @@
     },
     {
       "id": "blast",
-      "label": "LM 분사 영역",
-      "label_short": "분사 영역",
+      "label": "LM 플룸 영향 영역",
+      "label_short": "플룸 영향 영역",
       "explain": "LROC에 따르면 하강 엔진이 Apollo 착륙 지점 둘레의 지면을 밝게 만들었다. Apollo 15에서는 밝은 영역이 달 착륙선의 남남동쪽으로 뻗은 돌출부이다."
     }
   ]

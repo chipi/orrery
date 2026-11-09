@@ -3,3 +3,10 @@
 // static hosting anyway.
 export const prerender = false;
 export const ssr = false;
+
+import { loadLabMessages } from '$lib/lab/t';
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = async () => {
+  await loadLabMessages();
+};

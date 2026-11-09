@@ -8,7 +8,7 @@ The `/lab` Physics Lab UI (`routes/lab`, `routes/lab/callback`, `routes/dev/lab-
 - **Serialization** — `codec.ts`: one codec for `?nb=1.<base64url>`, localStorage and `.orrlab.json`; `decode` clamps untrusted input.
 - **Figures** — `FigureRenderer.svelte` dispatches a `FigureSpec` by `kind` to the `*Canvas.svelte` heroes; `hero-canvas.ts` is their shared chrome, `figure-style.ts` the fidelity-register styling.
 - **Ask** — `ask/`: LLM ask-box client (`Ask.svelte`, `ask-state.svelte.ts`, `auth.ts` OAuth 2.1 PKCE client, `config.ts`, `ask-switch.svelte.ts`). `ask-scenario.ts` (root) is the contract shared with `server/lab-api/`.
-- **Other** — `t.ts` (dotted-key to paraglide resolver), `report-card.ts` (PNG share card), `ConnRocketStats.svelte` (rockets.json rows linking to /plan).
+- **Other** — `t.ts` (dotted-key resolver over the generated per-locale tables in `messages/`; pages `await loadLabMessages()` in their load), `report-card.ts` (PNG share card), `ConnRocketStats.svelte` (rockets.json rows linking to /plan).
 
 ## Look-alikes and conventions
 

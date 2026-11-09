@@ -4,7 +4,7 @@ import { REGISTRY, defaultInputs } from '$lib/physics/registry';
 import { GOALS } from '$lib/physics/registry/goals';
 import { allIllustrations } from './illustration';
 import type { FormulaResult } from '$lib/physics/spec';
-import { LAB_MESSAGES } from './lab-messages';
+import LAB_MESSAGES from './messages/en-US';
 
 /**
  * Resolver key-parity (S3d review M2). The `t` resolver maps a dotted registry key
@@ -16,7 +16,7 @@ import { LAB_MESSAGES } from './lab-messages';
  * resolves. As S3e/S4 add formulas, this catches an unauthored key at test time.
  */
 const en = JSON.parse(readFileSync('messages/en-US.json', 'utf8')) as Record<string, string>;
-// t() looks keys up in the generated lab table, not the whole catalogue.
+// t() looks keys up in the generated per-locale lab tables, not the whole catalogue.
 const resolves = (key: string): boolean => key.replace(/[.-]/g, '_') in LAB_MESSAGES;
 
 function collectFromResult(res: FormulaResult, add: (k?: string) => void): void {
@@ -211,7 +211,7 @@ describe('lab i18n · resolver key parity', () => {
       .sort();
     expect(
       Object.keys(LAB_MESSAGES).sort(),
-      'stale src/lib/lab/lab-messages.ts — run node scripts/i18n-tools/gen-lab-messages.mjs',
+      'stale src/lib/lab/messages/*.ts — run node scripts/i18n-tools/gen-lab-messages.mjs',
     ).toEqual(want);
   });
 

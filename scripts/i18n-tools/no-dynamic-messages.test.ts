@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 // Indexing the paraglide module with a computed key (m[`x_${id}`], or casting it
 // to a Record) makes the bundler keep all ~11k messages in one chunk: 3 MB on
 // /science, /explore and /lab until 2026-10-30. Use an explicit table of message
-// functions instead (src/lib/science-tab-label.ts, src/lib/lab/lab-messages.ts).
+// functions instead (src/lib/science-tab-label.ts, src/lib/lab/t.ts).
 const files = execFileSync('git', ['ls-files', 'src/**/*.ts', 'src/**/*.svelte'], {
   encoding: 'utf8',
 })

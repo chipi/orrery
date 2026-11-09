@@ -27,7 +27,8 @@ per section. Day-to-day rules live in [AGENTS.md §"i18n rules"](../../../AGENTS
 | Precompute porkchops | `npm run precompute-porkchops` | Build prereq (auto-chained) |
 | Tech BOM | `npm run build-tech-bom` / `check-tech-bom` | Regenerate / CI-verify license BOM |
 | Site-stories index | `tsx scripts/build-site-stories-index.ts` | After authoring a new site story |
-| Colophon original-work | `node scripts/build-original-work.mjs` | After adding an original diagram |
+| Colophon original-work | `node scripts/build-original-work.mjs` | After adding an original diagram or a mission |
+| Mission trajectory thumbnails | `tsx scripts/render-mission-thumbnails.ts` | After adding a mission or changing flight data; runbook `docs/guides/mission-thumbnail-runbook.md` |
 | Model references | `tsx scripts/build-model-references.ts` | After a showcase model, fleet link or landmark source changes |
 | Cislunar waypoints | `tsx scripts/cislunar/generate-*-waypoints.ts` | Bake Tier 1.5 trajectory for a mission |
 | Fleet link repair | `tsx scripts/migrate-fleet-linked-*.ts` | When `validate-data` emits the fix-hint |

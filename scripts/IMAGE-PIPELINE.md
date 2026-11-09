@@ -389,7 +389,7 @@ with `Cannot find module …/node-v141…/gdal.node`. Each fetcher **self-credit
 
 **To regenerate panoramas after a `panorama-padder.ts` change:** `node --import tsx scripts/hotspots/fetch-moon-panoramas.ts` (+ `fetch-mars-panoramas.ts`) — offline from cache. **To populate along-route patches:** `… fetch-moon-traverse.ts --rover <id>` (omit `--rover` for all five). The skybox opens centred on yaw 0 / horizon (`enterPanorama` in `SurfaceScene.svelte`).
 
-**Verifying provenance/attribution for a change set — do NOT full-rebuild.** `build-image-provenance.ts` re-hashes all ~9,600 images and rewrites the whole manifest; only run it after a broad sourcing pass. For a handful of changes the fetchers already upserted their entries — confirm coverage with the **read-only** `npm run validate-data` (licenses, attribution, on-disk, dupes, gallery counts; 0-write). Generated/AI art (mission trajectory thumbnails, `/posters`, anatomy webp) lives in `static/data/original-work.json`, not `image-provenance.json`.
+**Verifying provenance/attribution for a change set — do NOT full-rebuild.** `build-image-provenance.ts` re-hashes all ~9,600 images and rewrites the whole manifest; only run it after a broad sourcing pass. For a handful of changes the fetchers already upserted their entries — confirm coverage with the **read-only** `npm run validate-data` (licenses, attribution, on-disk, dupes, gallery counts; 0-write). Generated/AI art and art drawn in code (mission trajectory thumbnails — `scripts/render-mission-thumbnails.ts`, runbook `docs/guides/mission-thumbnail-runbook.md` —, `/posters`, anatomy webp) lives in `static/data/original-work.json`, not `image-provenance.json`.
 
 ---
 

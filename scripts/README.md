@@ -23,6 +23,13 @@ before you open the file:
 Conventions: tsx or .mjs, colocated `*.test.ts` where logic warrants it;
 script headers cite the ADR/PRD/RFC that governs them — keep that up.
 
+## Mission thumbnails — which tool, when
+
+| Question | Run |
+|---|---|
+| draw / refresh the 736×414 trajectory thumbnail of a mission (all 126 on a full run; deterministic) | `npx tsx scripts/render-mission-thumbnails.ts [--only=<id>,…] [--out=<dir> --png=<dir>]` — runbook `docs/guides/mission-thumbnail-runbook.md` (skill `orrery-mission-thumbnails`) |
+| the font its labels use | `scripts/assets/fonts/SpaceMono-Regular.ttf` + `OFL.txt` (SIL OFL 1.1; build-time only, node-canvas cannot read the site's woff2) |
+
 ## Translations — which tool, when
 
 Every locale but en-US is a translation of `i18n-src/en-US/**` (content

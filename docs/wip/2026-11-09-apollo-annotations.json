@@ -24,9 +24,10 @@
           "north_of_lm_m": 0,
           "source": [
             "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf (Apollo 11 LM 0.67416 N, 23.47314 E, +/-0.3 m)",
-            "https://lroc.im-ldi.com/geojson/luna_apollo_11_hardware.geojson (Landing Module, same coordinates); LROC Site Images page apollo-11/site_images/m175124932r feature pixel line 33482 sample 1887 = same point"
+            "https://lroc.im-ldi.com/geojson/luna_apollo_11_hardware.geojson (Landing Module, same coordinates); LROC Site Images page apollo-11/site_images/m175124932r feature pixel line 33482 sample 1887 = same point",
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C (mission page; LM landing coordinates)"
           ],
-          "confidence": "one source (three LROC products agree; the object is unmistakable in the frame)",
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame",
           "explain_en": "The lower half of the Apollo 11 Lunar Module Eagle. It stayed on the Moon when the ascent stage lifted the crew off after the July 1969 landing."
         },
         {
@@ -94,9 +95,10 @@
           "north_of_lm_m": 0,
           "source": [
             "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf (Apollo 12 LM -3.0128, 336.5781 E = -23.4219, +/-2.2 m)",
-            "https://lroc.im-ldi.com/geojson/luna_apollo_12_hardware.geojson (Landing Module -3.01279, -23.42192)"
+            "https://lroc.im-ldi.com/geojson/luna_apollo_12_hardware.geojson (Landing Module -3.01279, -23.42192)",
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C (mission page; LM landing coordinates)"
           ],
-          "confidence": "one source (LROC products agree; object unmistakable in the frame)",
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame",
           "explain_en": "The lower half of the Apollo 12 Lunar Module Intrepid, left on the Moon after the November 1969 landing close to the earlier Surveyor 3 probe."
         },
         {
@@ -131,7 +133,7 @@
             "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A (landing 20 April 1967, coordinates quoted from LRO images; \"within about 180 m\" of the Apollo 12 LM)"
           ],
           "confidence": "two sources (LROC table + LROC labelled image; NSSDCA repeats the LROC coordinates, not independent)",
-          "explain_en": "NASA robotic lander that touched down on 20 April 1967 on the inner slope of a small crater. Apollo 12 landed within about 180 m of it in November 1969."
+          "explain_en": "NASA robotic lander that touched down on 20 April 1967 on the inner slope of a small crater. Apollo 12 landed about 160 m from it in November 1969, and its crew removed about 10 kg of parts, including the TV camera, on 20 November."
         }
       ],
       "held": [],
@@ -157,7 +159,24 @@
         "lat_offset_m": -3.1,
         "lon_offset_m": -1.8
       },
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lm-descent-stage",
+          "label": "Antares descent stage",
+          "lat_offset_m": -3.1,
+          "lon_offset_m": -1.8,
+          "px": 1020,
+          "py": 1031,
+          "east_of_lm_m": 0,
+          "north_of_lm_m": 0,
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf (Apollo 14 LM -3.64589, 342.52806 E = -17.47194)",
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-008C (mission page; LM landing coordinates)"
+          ],
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame",
+          "explain_en": "The lower half of the Apollo 14 Lunar Module Antares, left on the Moon after the February 1971 landing."
+        }
+      ],
       "held": [
         {
           "id": "alsep",
@@ -203,7 +222,7 @@
             "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C (LM 26.13239 N, 3.63330 E)",
             "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson (Landing Module)"
           ],
-          "confidence": "two sources (LROC + NASA NSSDCA identical coordinates)",
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame",
           "explain_en": "The lower half of the Apollo 15 Lunar Module Falcon, left on the Moon after the July 1971 landing."
         },
         {
@@ -234,10 +253,11 @@
           "north_of_lm_m": -19.7,
           "source": [
             "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf (Apollo 15 LRV 26.13174 N, 3.63803 E, +/-0.5 m)",
-            "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson (Lunar Roving Vehicle)"
+            "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson (Lunar Roving Vehicle)",
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C (mission page, Lunar Roving Vehicle)"
           ],
           "confidence": "one source (LROC table and layer; dark rover blob at the end of a track under the ring)",
-          "explain_en": "Apollo 15 was the first mission to carry a Lunar Roving Vehicle. This is where LROC finds it after the last drive; it was left on the Moon."
+          "explain_en": "Apollo 15 was the first mission to carry a Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission."
         }
       ],
       "held": [],
@@ -271,9 +291,10 @@
           "north_of_lm_m": 0,
           "source": [
             "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf (Apollo 16 LM -8.9734, 15.5011, +/-3.0 m)",
-            "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson (Landing Module)"
+            "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson (Landing Module)",
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C (mission page; LM landing coordinates)"
           ],
-          "confidence": "one source (LROC products agree; object unmistakable in the frame)",
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame",
           "explain_en": "The lower half of the Apollo 16 Lunar Module Orion, left on the Moon after the April 1972 landing."
         },
         {
@@ -291,7 +312,7 @@
             "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C (central station 8.9754 S, 15.4981 E; ~20 m from LROC, \"turned on at 19:38 UT on 21 April 1972\")"
           ],
           "confidence": "two sources (LROC + NASA NSSDCA; agree on area to ~20 m, pixel from LROC, hardware cluster visible under the ring)",
-          "explain_en": "The Apollo 16 Lunar Surface Experiments Package, switched on 21 April 1972. NASA lists a passive seismometer, an active seismometer, a magnetometer and a heat flow experiment."
+          "explain_en": "The Apollo 16 Lunar Surface Experiments Package, switched on 21 April 1972. It carried a passive seismometer, an active seismometer, a magnetometer and a heat flow experiment; the heat flow experiment was lost on the first moonwalk when its cable was broken."
         },
         {
           "id": "lrv",
@@ -307,7 +328,7 @@
             "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson (Lunar Roving Vehicle)"
           ],
           "confidence": "one source (LROC table and layer; dark rover blob at the end of a track under the ring)",
-          "explain_en": "The Apollo 16 Lunar Roving Vehicle as LROC finds it after the mission; it was left on the Moon."
+          "explain_en": "The Apollo 16 Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission."
         }
       ],
       "held": [],
@@ -341,10 +362,12 @@
           "north_of_lm_m": 0,
           "source": [
             "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf (Apollo 17 LM 20.1911, 30.7723, +/-3.5 m)",
-            "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson (Landing Module)"
+            "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson (Landing Module)",
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096C (mission page; LM landing coordinates)"
           ],
-          "confidence": "one source (LROC products agree; object unmistakable in the frame)",
-          "explain_en": "The lower half of the Apollo 17 Lunar Module Challenger, left on the Moon after the December 1972 landing, the last crewed landing so far."
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame",
+          "explain_en": "The lower half of the Apollo 17 Lunar Module Challenger, left on the Moon after the December 1972 landing, the last crewed landing so far.",
+          "as_of": "2026-11"
         },
         {
           "id": "lrv",
@@ -360,7 +383,7 @@
             "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson (Lunar Roving Vehicle)"
           ],
           "confidence": "one source (LROC table and layer; dark rover blob at the end of a track under the ring)",
-          "explain_en": "The Apollo 17 Lunar Roving Vehicle as LROC finds it after the mission; it was left on the Moon."
+          "explain_en": "The Apollo 17 Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission."
         }
       ],
       "held": [

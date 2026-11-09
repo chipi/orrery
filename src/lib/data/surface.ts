@@ -52,14 +52,14 @@ export async function surfaceHotspotsSidecar(): Promise<SurfaceHotspotsSidecar['
 /**
  * Per-site, per-locale hotspot-metadata overlay (PRD-014 / RFC-017
  * §S6, ADR-074 §i18n). Carries the translated user-visible strings of
- * the surface-hotspots sidecar: Tier-2 annotation labels, panorama
+ * the surface-hotspots sidecar: Tier-2 annotation labels + explanations, panorama
  * annotation labels + bodies (matched by id), the panorama caption and
  * the compass zero-direction text. Positions, ids and every other
  * sidecar field stay in surface-hotspots.json. Sites without an
  * overlay file keep the sidecar's English strings.
  */
 export interface HotspotMetadataOverlay {
-  hotspot_annotations?: Array<{ id: string; label: string }>;
+  hotspot_annotations?: Array<{ id: string; label: string; explain?: string }>;
   panorama_annotations?: Array<{ id: string; label?: string; body?: string }>;
   panorama_caption?: string;
   compass_zero_direction?: string;
@@ -72,6 +72,31 @@ async function hotspotMetadataOverlay(
   return get<HotspotMetadataOverlay>(`i18n/${locale}/hotspot-metadata/${siteId}.json`).catch(
     () => null,
   );
+}
+
+/** moon-annotation-photos.json: site id -> annotation id -> photo. */
+export type AnnotationPhotos = Record<
+  string,
+  Record<string, import('$types/surface-site').HotspotAnnotationPhoto>
+>;
+
+/** The sidecar is optional: a missing file means no photos, never a failed load. */
+async function annotationPhotos(): Promise<AnnotationPhotos> {
+  return get<AnnotationPhotos>('moon-annotation-photos.json').catch(() => ({}));
+}
+
+/** Join each annotation's photo (by site id + annotation id); annotations without one are untouched. */
+export function attachAnnotationPhotos<
+  T extends { id: string; hotspot_annotations?: import('$types/surface-site').HotspotAnnotation[] },
+>(site: T, photos: AnnotationPhotos): T {
+  const bySite = photos[site.id];
+  if (!bySite || !site.hotspot_annotations) return site;
+  return {
+    ...site,
+    hotspot_annotations: site.hotspot_annotations.map((a) =>
+      bySite[a.id] ? { ...a, photo: bySite[a.id] } : a,
+    ),
+  };
 }
 
 type HotspotFields = Pick<
@@ -154,7 +179,11 @@ export async function withHotspotOverlay<T extends HotspotFields & { id: string 
 export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
   // baseList + hotspots run in parallel — both are single-fetch JSON
   // and they don't depend on each other.
-  const [baseList, hotspots] = await Promise.all([moonSites(), surfaceHotspotsSidecar()]);
+  const [baseList, hotspots, photos] = await Promise.all([
+    moonSites(),
+    surfaceHotspotsSidecar(),
+    annotationPhotos(),
+  ]);
   // Per-site overlay merge — fan out across all 27 sites instead of
   // awaiting one at a time. Each iteration does up to four nested
   // fetches (locale overlay, en-US fallback, hotspot metadata, hotspot
@@ -176,7 +205,11 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
           : await get<Partial<MoonSite>>(`i18n/en-US/moon-sites/${s.id}.json`).catch(() => null));
       const localised = fallback ? { ...s, ...fallback } : s;
       const hotspot = hotspots[s.id];
-      return withHotspotOverlay(hotspot ? { ...localised, ...hotspot } : localised, locale);
+      const merged = await withHotspotOverlay(
+        hotspot ? { ...localised, ...hotspot } : localised,
+        locale,
+      );
+      return attachAnnotationPhotos(merged, photos);
     }),
   );
 }
@@ -190,7 +223,7 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
  */
 function mergeAnnotations(
   defaults: import('$types/surface-site').HotspotAnnotation[],
-  overlay: Array<{ id: string; label: string }>,
+  overlay: Array<{ id: string; label: string; explain?: string }>,
 ): import('$types/surface-site').HotspotAnnotation[] {
   const overlayById = new Map(overlay.map((o) => [o.id, o]));
   return defaults.map((d) => {

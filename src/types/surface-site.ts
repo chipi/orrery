@@ -319,6 +319,33 @@ export interface HotspotAnnotation {
   lat_offset_m: number;
   lon_offset_m: number;
   gallery_image?: string;
+  /** One or two sentences shown in the tap-to-explain popover and the
+   *  "What you're seeing" list. Translated through the hotspot-metadata overlay. */
+  explain?: string;
+  /** Authoritative pages that place the object in this image (LROC, NASA NSSDCA …).
+   *  Required whenever `explain` is set; labels are proper names, not translated. */
+  source?: HotspotAnnotationSource[];
+  /** How the position was established, for reviewers (not shown to readers). */
+  confidence?: string;
+  /** Month a time-sensitive claim in `explain` was last checked (YYYY-MM). */
+  as_of?: string;
+  /** Photo shown in the popover; joined from moon-annotation-photos.json at load. */
+  photo?: HotspotAnnotationPhoto;
+}
+
+export interface HotspotAnnotationPhoto {
+  /** Full image (opens in the lightbox). */
+  image: string;
+  /** 320 px rung for the popover. */
+  thumb: string;
+  nasa_id?: string;
+  /** Alt text in the reader's language; the annotation label stands in when absent. */
+  alt?: string;
+}
+
+export interface HotspotAnnotationSource {
+  label: string;
+  url: string;
 }
 
 /**

@@ -33,6 +33,8 @@ import {
   findLaunchesOrphanLauncherRefs,
   findLaunchesOrphanRocketMappingTargets,
   scienceReviewHash,
+  findHotspotAnnotationProblems,
+  type HotspotEntryForAnnotations,
   type FleetRef,
   type LicenseWaiver,
   type SiteType,
@@ -2256,6 +2258,9 @@ let surfaceHotspotVariantFailed = 0;
       return v && v.length > 0 ? v : source;
     };
     const entries = sidecar.entries ?? {};
+    problems.push(
+      ...findHotspotAnnotationProblems(entries as Record<string, HotspotEntryForAnnotations>),
+    );
     for (const [siteId, e] of Object.entries(entries)) {
       for (const field of ['hotspot_tier2_source', 'hotspot_tier2_regional_source'] as const) {
         const source = e[field];
@@ -2273,7 +2278,9 @@ let surfaceHotspotVariantFailed = 0;
     problems.push(`surface-hotspot variant check error: ${(err as Error).message}`);
   }
   if (problems.length === 0) {
-    console.log('  ✓ every surface-hotspot Tier-2 detail + regional source resolves on disk');
+    console.log(
+      '  ✓ every surface-hotspot Tier-2 source resolves on disk; annotations have ids, in-image offsets and sources',
+    );
   } else {
     for (const p of problems) console.log(`  ✗ ${p}`);
     surfaceHotspotVariantFailed = problems.length;

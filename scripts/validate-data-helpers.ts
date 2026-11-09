@@ -478,3 +478,54 @@ export function findProvenanceFailures(args: {
 
   return failures;
 }
+
+export interface HotspotEntryForAnnotations {
+  hotspot_tier2_ground_m?: number;
+  hotspot_annotations?: Array<{
+    id?: string;
+    label?: string;
+    lat_offset_m?: number;
+    lon_offset_m?: number;
+    explain?: string;
+    source?: Array<{ label?: string; url?: string }>;
+    confidence?: string;
+  }>;
+}
+
+/**
+ * Tier-2 annotation rules: unique ids, a label, finite offsets inside the detail
+ * image, and — for any annotation that explains an object — the page that places
+ * it in the image (https) and how the position was established.
+ */
+export function findHotspotAnnotationProblems(
+  entries: Record<string, HotspotEntryForAnnotations>,
+): string[] {
+  const problems: string[] = [];
+  for (const [siteId, e] of Object.entries(entries)) {
+    const half = (e.hotspot_tier2_ground_m ?? 1000) / 2;
+    const seen = new Set<string>();
+    for (const a of e.hotspot_annotations ?? []) {
+      const at = `surface-hotspots "${siteId}" annotation "${a.id ?? '?'}"`;
+      if (!a.id || seen.has(a.id)) problems.push(`${at}: missing or duplicate id`);
+      seen.add(a.id ?? '');
+      if (!a.label) problems.push(`${at}: missing label`);
+      const { lat_offset_m: lat, lon_offset_m: lon } = a;
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+        problems.push(`${at}: lat_offset_m / lon_offset_m must be finite numbers`);
+      } else if (Math.abs(lat as number) > half || Math.abs(lon as number) > half) {
+        problems.push(`${at}: offset (${lat}, ${lon}) m is outside the ${half * 2} m detail image`);
+      }
+      if (a.explain !== undefined) {
+        if (!a.explain.trim()) problems.push(`${at}: empty explain`);
+        if (!a.source?.length) problems.push(`${at}: explain without a source`);
+        for (const s of a.source ?? []) {
+          if (!s.label || !s.url?.startsWith('https://')) {
+            problems.push(`${at}: source needs a label and an https url`);
+          }
+        }
+        if (!a.confidence) problems.push(`${at}: explain without confidence`);
+      }
+    }
+  }
+  return problems;
+}

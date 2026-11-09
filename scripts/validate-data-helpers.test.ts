@@ -4,6 +4,7 @@ import {
   findBidirectionalFleetMissionDrift,
   findBidirectionalFleetSiteDrift,
   findProvenanceFailures,
+  findHotspotAnnotationProblems,
   type LicenseWaiver,
   type FleetEntryMinimal,
   type FleetRef,
@@ -482,5 +483,57 @@ describe('findProvenanceFailures (ADR-047 Milestone C)', () => {
     expect(kinds).toContain('duplicate-path');
     expect(kinds).toContain('license-not-allowed');
     expect(kinds).toContain('missing-file');
+  });
+});
+
+// ─── findHotspotAnnotationProblems ───────────────────────────────────
+
+describe('findHotspotAnnotationProblems', () => {
+  const good = {
+    id: 'lm',
+    label: 'Descent stage',
+    lat_offset_m: 3,
+    lon_offset_m: -2,
+    explain: 'The lower half of the lander.',
+    source: [{ label: 'LROC', url: 'https://www.lroc.asu.edu/' }],
+    confidence: 'one source',
+  };
+  const site = (a: object[], ground = 819.2) => ({
+    s: { hotspot_tier2_ground_m: ground, hotspot_annotations: a },
+  });
+
+  it('accepts a fully sourced annotation and a plain label-only one', () => {
+    expect(
+      findHotspotAnnotationProblems(
+        site([good, { id: 'x', label: 'X', lat_offset_m: 0, lon_offset_m: 0 }]),
+      ),
+    ).toEqual([]);
+  });
+
+  it('flags duplicate ids, missing labels and non-finite offsets', () => {
+    const p = findHotspotAnnotationProblems(
+      site([good, { ...good }, { id: 'n', lat_offset_m: NaN, lon_offset_m: 1 }]),
+    );
+    expect(p.some((x) => x.includes('duplicate id'))).toBe(true);
+    expect(p.some((x) => x.includes('missing label'))).toBe(true);
+    expect(p.some((x) => x.includes('finite'))).toBe(true);
+  });
+
+  it('flags an offset outside the detail image', () => {
+    const p = findHotspotAnnotationProblems(site([{ ...good, lon_offset_m: 500 }]));
+    expect(p).toEqual([expect.stringContaining('outside the 819.2 m detail image')]);
+  });
+
+  it('requires a source and confidence once an annotation explains an object', () => {
+    const p = findHotspotAnnotationProblems(site([{ ...good, source: [], confidence: undefined }]));
+    expect(p.some((x) => x.includes('without a source'))).toBe(true);
+    expect(p.some((x) => x.includes('without confidence'))).toBe(true);
+  });
+
+  it('rejects a non-https source url', () => {
+    const p = findHotspotAnnotationProblems(
+      site([{ ...good, source: [{ label: 'LROC', url: 'http://x' }] }]),
+    );
+    expect(p).toEqual([expect.stringContaining('https url')]);
   });
 });

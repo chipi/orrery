@@ -96,4 +96,4 @@
 | ADR-093 | Journey instrumentation, event naming for Umami reports, no session replay | Accepted | Sep 2026 |
 | ADR-094 | Server-side observability for lab-api and mcp (GlitchTip errors, OTLP traces, internal `/metrics`, access logs, Umami tool events, LiteLLM→Langfuse metadata) | Accepted | Oct 2026 |
 | ADR-095 | Eccentric planets, the JPL reference and vector v∞ in the shared transfer model (`/fly`, `/plan`, Lab porkchops) | Accepted | Nov 2026 |
-| ADR-096 | Indexable entity pages (missions, fleet, sites, bodies, Lab formulas) and the SEO surface: head tags, JSON-LD, split sitemaps, mirror noindex, the `check-seo` gate | Proposed | Nov 2026 |
+| ADR-096 | Indexable entity pages (missions, fleet, sites, bodies, Lab formulas) and the SEO surface: head tags, JSON-LD, split sitemaps, mirror noindex, the `check-seo` gate | Accepted | Nov 2026 |

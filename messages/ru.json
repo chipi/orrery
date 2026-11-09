@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "Пауза",
   "journey_replay_scrub": "Сол на маршруте",
   "journey_elevation": "Высота по маршруту",
-  "journey_elevation_range": "от {min} до {max} м · перепад {climb} м"
+  "journey_elevation_range": "от {min} до {max} м · перепад {climb} м",
+  "entity_index_missions": "Все миссии А–Я",
+  "entity_index_fleet": "Весь флот А–Я",
+  "entity_index_moon": "Все места на Луне А–Я",
+  "entity_index_mars": "Все места на Марсе А–Я",
+  "entity_index_venus": "Все места на Венере А–Я",
+  "entity_index_explore": "Все небесные тела А–Я"
 }

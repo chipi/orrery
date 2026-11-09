@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "Pause",
   "journey_replay_scrub": "Sol on the drive",
   "journey_elevation": "Elevation along the drive",
-  "journey_elevation_range": "{min} to {max} m · {climb} m of relief"
+  "journey_elevation_range": "{min} to {max} m · {climb} m of relief",
+  "entity_index_missions": "All missions A–Z",
+  "entity_index_fleet": "All fleet entries A–Z",
+  "entity_index_moon": "All Moon sites A–Z",
+  "entity_index_mars": "All Mars sites A–Z",
+  "entity_index_venus": "All Venus sites A–Z",
+  "entity_index_explore": "All bodies A–Z"
 }

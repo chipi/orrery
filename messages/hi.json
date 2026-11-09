@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "विराम दें",
   "journey_replay_scrub": "यात्रा का सोल",
   "journey_elevation": "यात्रा के साथ ऊँचाई",
-  "journey_elevation_range": "{min} से {max} मी · {climb} मी का उतार-चढ़ाव"
+  "journey_elevation_range": "{min} से {max} मी · {climb} मी का उतार-चढ़ाव",
+  "entity_index_missions": "सभी मिशन (वर्णानुक्रम)",
+  "entity_index_fleet": "बेड़े की सभी प्रविष्टियाँ (वर्णानुक्रम)",
+  "entity_index_moon": "चंद्रमा के सभी स्थल (वर्णानुक्रम)",
+  "entity_index_mars": "मंगल के सभी स्थल (वर्णानुक्रम)",
+  "entity_index_venus": "शुक्र के सभी स्थल (वर्णानुक्रम)",
+  "entity_index_explore": "सभी खगोलीय पिंड (वर्णानुक्रम)"
 }

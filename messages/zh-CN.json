@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "暂停",
   "journey_replay_scrub": "行驶的火星日",
   "journey_elevation": "沿途海拔",
-  "journey_elevation_range": "{min} 至 {max} 米 · 落差 {climb} 米"
+  "journey_elevation_range": "{min} 至 {max} 米 · 落差 {climb} 米",
+  "entity_index_missions": "全部任务（按拼音排序）",
+  "entity_index_fleet": "全部舰队条目（按拼音排序）",
+  "entity_index_moon": "全部月球地点（按拼音排序）",
+  "entity_index_mars": "全部火星地点（按拼音排序）",
+  "entity_index_venus": "全部金星地点（按拼音排序）",
+  "entity_index_explore": "全部天体（按拼音排序）"
 }

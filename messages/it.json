@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "Pausa",
   "journey_replay_scrub": "Sol del percorso",
   "journey_elevation": "Quota lungo il percorso",
-  "journey_elevation_range": "da {min} a {max} m · {climb} m di dislivello"
+  "journey_elevation_range": "da {min} a {max} m · {climb} m di dislivello",
+  "entity_index_missions": "Tutte le missioni A–Z",
+  "entity_index_fleet": "Tutta la flotta A–Z",
+  "entity_index_moon": "Tutti i siti lunari A–Z",
+  "entity_index_mars": "Tutti i siti di Marte A–Z",
+  "entity_index_venus": "Tutti i siti di Venere A–Z",
+  "entity_index_explore": "Tutti i corpi celesti A–Z"
 }

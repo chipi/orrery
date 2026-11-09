@@ -1,4 +1,6 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   import { onMount, onDestroy } from 'svelte';
@@ -1948,6 +1950,8 @@
     <HoverTooltip {hoverData} expanded={tooltipExpanded} {container} />
   {/if}
 </div>
+
+<EntityIndex hub="explore" title={m.entity_index_explore()} links={data.entityIndex} floating />
 
 <PlanetPanel
   planet={selectedPlanet}

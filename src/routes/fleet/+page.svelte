@@ -1,4 +1,6 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
@@ -757,6 +759,7 @@
       </ul>
     {/if}
   {/if}
+  <EntityIndex hub="fleet" title={m.entity_index_fleet()} links={data.entityIndex} />
 </div>
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic

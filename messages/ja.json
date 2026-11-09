@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "一時停止",
   "journey_replay_scrub": "走行のソル",
   "journey_elevation": "走行ルートの標高",
-  "journey_elevation_range": "{min}〜{max} m・高低差 {climb} m"
+  "journey_elevation_range": "{min}〜{max} m・高低差 {climb} m",
+  "entity_index_missions": "全ミッション（五十音順）",
+  "entity_index_fleet": "全フリート項目（五十音順）",
+  "entity_index_moon": "月の全地点（五十音順）",
+  "entity_index_mars": "火星の全地点（五十音順）",
+  "entity_index_venus": "金星の全地点（五十音順）",
+  "entity_index_explore": "全天体（五十音順）"
 }

@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "Pausieren",
   "journey_replay_scrub": "Sol der Fahrt",
   "journey_elevation": "Höhe entlang der Fahrt",
-  "journey_elevation_range": "{min} bis {max} m · {climb} m Höhenunterschied"
+  "journey_elevation_range": "{min} bis {max} m · {climb} m Höhenunterschied",
+  "entity_index_missions": "Alle Missionen A–Z",
+  "entity_index_fleet": "Alle Flotteneinträge A–Z",
+  "entity_index_moon": "Alle Mondstandorte A–Z",
+  "entity_index_mars": "Alle Marsstandorte A–Z",
+  "entity_index_venus": "Alle Venusstandorte A–Z",
+  "entity_index_explore": "Alle Himmelskörper A–Z"
 }

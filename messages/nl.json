@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "Pauze",
   "journey_replay_scrub": "Sol van de rit",
   "journey_elevation": "Hoogte langs de rit",
-  "journey_elevation_range": "{min} tot {max} m · {climb} m hoogteverschil"
+  "journey_elevation_range": "{min} tot {max} m · {climb} m hoogteverschil",
+  "entity_index_missions": "Alle missies A–Z",
+  "entity_index_fleet": "Alle vlootitems A–Z",
+  "entity_index_moon": "Alle maanlocaties A–Z",
+  "entity_index_mars": "Alle Mars-locaties A–Z",
+  "entity_index_venus": "Alle Venus-locaties A–Z",
+  "entity_index_explore": "Alle hemellichamen A–Z"
 }

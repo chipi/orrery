@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "일시정지",
   "journey_replay_scrub": "주행 솔",
   "journey_elevation": "주행 경로의 고도",
-  "journey_elevation_range": "{min}~{max}m · 고도차 {climb}m"
+  "journey_elevation_range": "{min}~{max}m · 고도차 {climb}m",
+  "entity_index_missions": "모든 임무 (가나다순)",
+  "entity_index_fleet": "모든 함대 항목 (가나다순)",
+  "entity_index_moon": "달의 모든 지점 (가나다순)",
+  "entity_index_mars": "화성의 모든 지점 (가나다순)",
+  "entity_index_venus": "금성의 모든 지점 (가나다순)",
+  "entity_index_explore": "모든 천체 (가나다순)"
 }

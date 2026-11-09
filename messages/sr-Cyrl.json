@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "Пауза",
   "journey_replay_scrub": "Сол на путу",
   "journey_elevation": "Висина дуж пута",
-  "journey_elevation_range": "од {min} до {max} м · разлика {climb} м"
+  "journey_elevation_range": "од {min} до {max} м · разлика {climb} м",
+  "entity_index_missions": "Све мисије А–Ш",
+  "entity_index_fleet": "Цела флота А–Ш",
+  "entity_index_moon": "Сва места на Месецу А–Ш",
+  "entity_index_mars": "Сва места на Марсу А–Ш",
+  "entity_index_venus": "Сва места на Венери А–Ш",
+  "entity_index_explore": "Сва небеска тела А–Ш"
 }

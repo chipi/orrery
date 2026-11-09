@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "Pause",
   "journey_replay_scrub": "Sol du trajet",
   "journey_elevation": "Altitude le long du trajet",
-  "journey_elevation_range": "de {min} à {max} m · {climb} m de dénivelé"
+  "journey_elevation_range": "de {min} à {max} m · {climb} m de dénivelé",
+  "entity_index_missions": "Toutes les missions A–Z",
+  "entity_index_fleet": "Toute la flotte A–Z",
+  "entity_index_moon": "Tous les sites lunaires A–Z",
+  "entity_index_mars": "Tous les sites martiens A–Z",
+  "entity_index_venus": "Tous les sites vénusiens A–Z",
+  "entity_index_explore": "Tous les corps célestes A–Z"
 }

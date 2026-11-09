@@ -1,4 +1,6 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
@@ -818,6 +820,7 @@
       {/each}
     </ul>
   {/if}
+  <EntityIndex hub="missions" title={m.entity_index_missions()} links={data.entityIndex} />
 </div>
 
 <MissionPanel mission={selectedMission} open={panelOpen} onClose={closePanel} onFly={flyMission} />

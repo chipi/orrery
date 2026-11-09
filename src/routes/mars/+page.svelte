@@ -1,4 +1,6 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   // /mars is now a thin shell over the shared SurfaceScene component
@@ -255,6 +257,8 @@
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
 />
+
+<EntityIndex hub="mars" title={m.entity_index_mars()} links={data.entityIndex} floating />
 
 <TourAnchors route="mars" anchors={MARS_TOUR_ANCHORS} />
 

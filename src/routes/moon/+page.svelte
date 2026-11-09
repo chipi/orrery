@@ -1,4 +1,6 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   // /moon is now a thin shell over the shared SurfaceScene component
@@ -311,6 +313,8 @@
     </div>
   </div>
 {/if}
+
+<EntityIndex hub="moon" title={m.entity_index_moon()} links={data.entityIndex} floating />
 
 <TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
 

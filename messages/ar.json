@@ -3672,5 +3672,11 @@
   "journey_replay_pause": "إيقاف مؤقت",
   "journey_replay_scrub": "اليوم المريخي في الرحلة",
   "journey_elevation": "الارتفاع على طول الرحلة",
-  "journey_elevation_range": "من {min} إلى {max} م · تضاريس {climb} م"
+  "journey_elevation_range": "من {min} إلى {max} م · تضاريس {climb} م",
+  "entity_index_missions": "جميع المهام (أبجدياً)",
+  "entity_index_fleet": "جميع عناصر الأسطول (أبجدياً)",
+  "entity_index_moon": "جميع مواقع القمر (أبجدياً)",
+  "entity_index_mars": "جميع مواقع المريخ (أبجدياً)",
+  "entity_index_venus": "جميع مواقع الزهرة (أبجدياً)",
+  "entity_index_explore": "جميع الأجرام (أبجدياً)"
 }

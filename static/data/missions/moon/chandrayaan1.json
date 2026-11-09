@@ -41,8 +41,8 @@
       "departure": "spacecraft"
     },
     "cruise": {
-      "tcm_count": 5,
-      "source": "ISRO Chandrayaan-1 Mission Operations Report"
+      "tcm_count": 0,
+      "source": "ISRO Chandrayaan-1 releases via esa.int/Enabling_Support/Operations/Chandrayaan-1_now_in_lunar_transfer_trajectory: the fifth burn (TLI) was 2008-11-04 00:26 CET (2008-11-03 23:26 UTC, MET 12.94); one minimal trajectory correction after insertion was reported with no date, so none is listed. The five TCM events that stood here (MET 9.8 to 13.85) had no source and were removed."
     },
     "arrival": {
       "v_infinity_km_s": 0.85,
@@ -63,40 +63,10 @@
         "description": "Sriharikota, India, 2008-10-22. Chandrayaan-1 — India's first lunar mission. Carried 11 instruments including NASA's M³ (Moon Mineralogy Mapper) that would later be credited with the first detection of widespread water on the Moon."
       },
       {
-        "met_days": 12,
+        "met_days": 12.94,
         "type": "tli_or_tmi",
         "label": "Trans-lunar injection",
         "description": "Series of phasing perigee burns lifted Chandrayaan-1 from Earth orbit to lunar transfer — same energy-saving Earth-orbit raising strategy ISRO would reuse on Mangalyaan."
-      },
-      {
-        "met_days": 9.8,
-        "type": "tcm",
-        "label": "TCM-1",
-        "description": "Post-TLI cleanup burn."
-      },
-      {
-        "met_days": 11.15,
-        "type": "tcm",
-        "label": "TCM-2",
-        "description": "Mid-cruise refinement."
-      },
-      {
-        "met_days": 12,
-        "type": "tcm",
-        "label": "TCM-3",
-        "description": "Mid-cruise refinement."
-      },
-      {
-        "met_days": 12.5,
-        "type": "tcm",
-        "label": "TCM-4",
-        "description": "Approach-phase refinement."
-      },
-      {
-        "met_days": 13.85,
-        "type": "tcm",
-        "label": "TCM-5 — final pre-LOI",
-        "description": "Final approach targeting."
       },
       {
         "met_days": 17,
@@ -501,115 +471,115 @@
           4619
         ],
         [
-          7.1768,
+          7.2101,
           -71162,
           0,
           -17654
         ],
         [
-          8.0102,
+          8.2001,
           -171653,
           0,
           -115138
         ],
         [
-          9.5,
+          9.97,
           -196221,
           0,
           -190350
         ],
         [
-          10.9898,
+          11.7399,
           -120297,
           0,
           -168078
         ],
         [
-          11.8232,
+          12.7299,
           -19807,
           0,
           -70593
         ],
         [
-          12,
+          12.94,
           4761,
           0,
           4619
         ],
         [
-          12.015,
+          12.9522,
           -6581,
           0,
           9270
         ],
         [
-          12.0473,
+          12.9784,
           -24391,
           0,
           6862
         ],
         [
-          12.113,
+          13.0318,
           -47777,
           0,
           -2484
         ],
         [
-          12.2269,
+          13.1243,
           -75565,
           0,
           -18301
         ],
         [
-          12.4012,
+          13.2659,
           -106362,
           0,
           -39796
         ],
         [
-          12.6451,
+          13.4641,
           -138624,
           0,
           -65889
         ],
         [
-          12.9644,
+          13.7234,
           -170733,
           0,
           -95273
         ],
         [
-          13.3609,
+          14.0455,
           -201079,
           0,
           -126475
         ],
         [
-          13.8327,
+          14.4288,
           -228140,
           0,
           -157930
         ],
         [
-          14.3741,
+          14.8686,
           -250559,
           0,
           -188060
         ],
         [
-          14.9759,
+          15.3575,
           -267213,
           0,
           -215355
         ],
         [
-          15.6258,
+          15.8855,
           -277266,
           0,
           -238445
         ],
         [
-          16.3093,
+          16.4408,
           -280213,
           0,
           -256175
@@ -667,7 +637,7 @@
           267000
         ],
         [
-          12,
+          12.94,
           255,
           380000
         ]

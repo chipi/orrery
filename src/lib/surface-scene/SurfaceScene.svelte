@@ -6059,7 +6059,10 @@ sample      ${debugInfo.projectedPxSample}`}
           {#if inlineRegime && onRegimeOpen}
             <RegimeChip regime={inlineRegime} onClick={() => onRegimeOpen?.(inlineRegime.id)} />
           {/if}
-          <span class="status" style="color: {tone.color}; border-color: {tone.color}">
+          <span
+            class="status"
+            style="color: {tone.color}; border-color: {tone.color}; border-style: {tone.outline}"
+          >
             {tone.label}
           </span>
         </AgencyRow>

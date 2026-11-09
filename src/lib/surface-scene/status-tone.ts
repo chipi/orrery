@@ -20,6 +20,8 @@ import * as m from '$lib/paraglide/messages';
 export interface StatusBadgeTone {
   label: string;
   color: string;
+  /** PLANNED shares ACTIVE's blue; a dashed outline tells the two apart. */
+  outline: 'solid' | 'dashed';
 }
 
 /** A launch pad that has ended service reads "RETIRED" (the fleet's word),
@@ -34,20 +36,22 @@ export function statusTone(
       return {
         label: kind === 'orbiter' ? m.surface_status_in_orbit() : m.surface_status_active(),
         color: '#889fe7',
+        outline: 'solid',
       };
     case 'CRASHED':
-      return { label: m.surface_status_crashed(), color: '#ff6b6b' };
+      return { label: m.surface_status_crashed(), color: '#ff6b6b', outline: 'solid' };
     case 'LOST':
-      return { label: m.surface_status_lost(), color: '#ff8c42' };
+      return { label: m.surface_status_lost(), color: '#ff8c42', outline: 'solid' };
     case 'PLANNED':
-      return { label: m.surface_status_planned(), color: '#7b9cff' };
+      return { label: m.surface_status_planned(), color: '#7b9cff', outline: 'dashed' };
     case 'ENDED':
       return {
         label: role === 'launch-pad' ? m.surface_status_retired() : m.surface_status_ended(),
         color: 'rgba(255,255,255,0.5)',
+        outline: 'solid',
       };
     case 'FLOWN':
     default:
-      return { label: m.surface_status_flown(), color: 'rgba(255,255,255,0.5)' };
+      return { label: m.surface_status_flown(), color: 'rgba(255,255,255,0.5)', outline: 'solid' };
   }
 }

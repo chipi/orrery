@@ -25,6 +25,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { computeMissionApply, type MissionApplyDefaults } from '../src/lib/fly-mission-apply';
+import { flyTrajectoryPath } from '../src/lib/fly-trajectory-ids';
 import { earthPos, destinationPos } from '../src/lib/physics/transfer/mission-arc';
 import { predictShipPosAtMet } from '../src/lib/physics/transfer/predict-ship-pos';
 import { PLANET_SIZES, findFlybyPlanetFromLabel } from '../src/lib/orbital/find-flyby-planet';
@@ -51,7 +52,7 @@ const SCALE_3D = 80;
 const SHIP_VISIBLE_RADIUS = 0.4;
 
 const MISSIONS_DIR = join('static', 'data', 'missions');
-const TRAJ_DIR = join('static', 'data', 'trajectories');
+const DATA_DIR = join('static', 'data');
 
 const DEFAULTS: MissionApplyDefaults = {
   depFallback: 0,
@@ -226,10 +227,11 @@ function main() {
     );
     if (cinemaEvents.length === 0) continue;
 
-    // Trajectory override (iconic missions ship a labeled-waypoints file).
+    // Trajectory override: the file /fly flies (fly-trajectories/ wins over trajectories/).
     let override: { waypoints: unknown[] } | undefined;
-    const trajPath = join(TRAJ_DIR, `${entry.id}.json`);
-    if (existsSync(trajPath)) {
+    const rel = flyTrajectoryPath(entry.id);
+    const trajPath = rel ? join(DATA_DIR, rel) : null;
+    if (trajPath && existsSync(trajPath)) {
       const t = JSON.parse(readFileSync(trajPath, 'utf-8'));
       if (Array.isArray(t.waypoints) && t.waypoints.length >= 2)
         override = { waypoints: t.waypoints };

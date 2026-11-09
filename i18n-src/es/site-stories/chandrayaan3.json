@@ -1,5 +1,5 @@
 {
-  "intro": "Chandrayaan-3 aterrizó cerca del polo sur lunar el 23 de agosto de 2023: fue el primer alunizaje suave de la India y el aterrizaje más próximo al polo sur realizado por ninguna nación. El módulo de aterrizaje Vikram desplegó el rover Pragyan, que recorrió unos 100 m a lo largo de 14 días en busca de hielo de agua en terreno permanentemente en sombra. La India se convirtió en la cuarta nación en posarse suavemente sobre la Luna, después de la URSS, Estados Unidos y China.",
+  "intro": "Chandrayaan-3 aterrizó cerca del polo sur lunar el 23 de agosto de 2023: fue el primer alunizaje suave de la India y el aterrizaje más cercano al polo sur hasta entonces (a unos 69° S; el IM-2 de Intuitive Machines aterrizó después a unos 84,8° S). El módulo de aterrizaje Vikram desplegó el rover Pragyan, que recorrió unos 100 m a lo largo de 14 días en busca de hielo de agua en terreno permanentemente en sombra. La India se convirtió en la cuarta nación en posarse suavemente sobre la Luna, después de la URSS, Estados Unidos y China.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
       "images": [
         {
           "src": "/images/missions/chandrayaan3/04.webp",
-          "caption": "El módulo de aterrizaje Vikram sobre la superficie del polo sur: el contacto con el suelo se produjo a 69,37° S, el alunizaje de latitud más alta jamás realizado."
+          "caption": "El módulo de aterrizaje Vikram sobre la superficie del polo sur: el contacto con el suelo se produjo a 69,37° S, el alunizaje de latitud más alta hasta entonces."
         }
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "intro": "A Chandrayaan-3 pousou perto do polo sul lunar em 23 de agosto de 2023 — o primeiro pouso suave da Índia na Lua e o pouso mais próximo do polo sul já realizado por qualquer nação. O módulo de pouso Vikram liberou o rover Pragyan, que percorreu cerca de 100 m ao longo de 14 dias em busca de gelo de água em terreno permanentemente sombreado. A Índia tornou-se a quarta nação a realizar um pouso suave na Lua, depois da URSS, dos EUA e da China.",
+  "intro": "A Chandrayaan-3 pousou perto do polo sul lunar em 23 de agosto de 2023 — o primeiro pouso suave da Índia na Lua e o pouso mais próximo do polo sul até então (cerca de 69° S; o IM-2 da Intuitive Machines pousou depois a cerca de 84,8° S). O módulo de pouso Vikram liberou o rover Pragyan, que percorreu cerca de 100 m ao longo de 14 dias em busca de gelo de água em terreno permanentemente sombreado. A Índia tornou-se a quarta nação a realizar um pouso suave na Lua, depois da URSS, dos EUA e da China.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
       "images": [
         {
           "src": "/images/missions/chandrayaan3/04.webp",
-          "caption": "O módulo de pouso Vikram na superfície polar sul — toque no solo a 69,37°S, o pouso lunar de maior latitude já realizado."
+          "caption": "O módulo de pouso Vikram na superfície polar sul — toque no solo a 69,37°S, o pouso lunar de maior latitude até então."
         }
       ]
     }

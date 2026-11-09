@@ -1,5 +1,5 @@
 {
-  "intro": "Chandrayaan-3 è atterrato vicino al polo sud lunare il 23 agosto 2023: il primo allunaggio morbido dell'India e l'atterraggio più vicino al polo sud mai compiuto da una nazione. Il lander Vikram ha dispiegato il rover Pragyan, che nell'arco di 14 giorni ha percorso circa 100 m alla ricerca di ghiaccio d'acqua in un terreno perennemente in ombra. L'India è diventata così la quarta nazione ad allunare in modo morbido, dopo URSS, USA e Cina.",
+  "intro": "Chandrayaan-3 è atterrato vicino al polo sud lunare il 23 agosto 2023: il primo allunaggio morbido dell'India e l'atterraggio più vicino al polo sud fino ad allora (circa 69° S; IM-2 di Intuitive Machines è atterrato dopo a circa 84,8° S). Il lander Vikram ha dispiegato il rover Pragyan, che nell'arco di 14 giorni ha percorso circa 100 m alla ricerca di ghiaccio d'acqua in un terreno perennemente in ombra. L'India è diventata così la quarta nazione ad allunare in modo morbido, dopo URSS, USA e Cina.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
       "images": [
         {
           "src": "/images/missions/chandrayaan3/04.webp",
-          "caption": "Il lander Vikram sulla superficie del polo sud: allunaggio a 69,37° S, quello alla latitudine più alta mai realizzato."
+          "caption": "Il lander Vikram sulla superficie del polo sud: allunaggio a 69,37° S, quello alla latitudine più alta fino ad allora."
         }
       ]
     }

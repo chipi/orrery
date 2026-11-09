@@ -9,6 +9,7 @@
  * Tier 2 (published) interpolates pre-supplied waypoints. The
  * dispatch lives in buildCislunarTrajectory().
  */
+import { sampleSplineAcrossWaypoints } from '$lib/trajectory-spline';
 
 // ─── Constants (Earth-Moon system) ─────────────────────────────
 export const MU_EARTH_KM3_S2 = 398600.4418;
@@ -982,5 +983,59 @@ function buildFromWaypoints(
 
   const moon_track: Vec3Km[] = waypoints.map(([metDays]) => moonEciPos(dep_day_sim + metDays));
 
+  for (const ph of phases) ph.points = smoothPhasePoints(ph.points);
   return { phases, moon_track, closest_approach_km };
+}
+
+/** Samples per authored segment when a waypoint phase is drawn. */
+export const SMOOTH_SAMPLES_PER_SEGMENT = 8;
+
+/** A segment whose spline strays further than this fraction of its own length from the straight
+ *  chord stays a chord: Catmull-Rom overshoots where a long hop sits between short ones (a spiral
+ *  ending in a 400,000 km leap sent Chandrayaan-3's path to twice the Moon's distance). */
+const MAX_SPLINE_DEVIATION = 0.25;
+
+/** A waypoint phase is a coarse polyline (about 30 points over days, with chords up to 60,000 km);
+ *  drawn as is, it shows corners and polygon spirals. This runs it through the same Catmull-Rom
+ *  sampler /fly uses for heliocentric paths (`sampleSplineAcrossWaypoints`), uniform in point index,
+ *  passing through every authored point. */
+export function smoothPhasePoints(
+  points: Vec3Km[],
+  perSegment = SMOOTH_SAMPLES_PER_SEGMENT,
+): Vec3Km[] {
+  const n = points.length;
+  if (n < 3) return points;
+  const sampled = sampleSplineAcrossWaypoints(
+    points.map((p, i) => ({ x: p.x, y: p.y, z: p.z, met_days: i })),
+    0,
+    n - 1,
+    (n - 1) * perSegment + 1,
+  );
+  const out: Vec3Km[] = [points[0]];
+  for (let k = 0; k < n - 1; k++) {
+    const a = points[k];
+    const b = points[k + 1];
+    const len = Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z);
+    const seg: Vec3Km[] = [];
+    let straight = false;
+    for (let j = 1; j <= perSegment; j++) {
+      const s = sampled[k * perSegment + j];
+      const t = j / perSegment;
+      const lerp = { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, z: a.z + (b.z - a.z) * t };
+      if (Math.hypot(s.x - lerp.x, s.y - lerp.y, s.z - lerp.z) > MAX_SPLINE_DEVIATION * len) {
+        straight = true;
+      }
+      seg.push(j === perSegment ? { x: b.x, y: b.y, z: b.z } : { x: s.x, y: s.y, z: s.z });
+      if (straight) break;
+    }
+    if (straight) {
+      seg.length = 0;
+      for (let j = 1; j <= perSegment; j++) {
+        const t = j / perSegment;
+        seg.push({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, z: a.z + (b.z - a.z) * t });
+      }
+    }
+    out.push(...seg);
+  }
+  return out;
 }

@@ -308,6 +308,13 @@ function cislunarScene(m: MissionRec): Scene {
       kind: 'launch',
     });
   if (moonAt) scene.marks.push({ p: moonAt, label: 'LUNAR ARRIVAL', kind: 'burn', body: 'moon' });
+  const tei = ct.phases.find((ph) => ph.type === 'tei_coast' && ph.points.length > 1);
+  if (tei && moonAt && tei.points[0]) {
+    const q = P(tei.points[0]);
+    if (Math.hypot(q.x - moonAt.x, q.y - moonAt.y) > 0.08) {
+      scene.marks.push({ p: q, label: 'LUNAR DEPARTURE', kind: 'burn', body: 'moon' });
+    }
+  }
   if (
     lastP &&
     !r.isReturnTrip &&

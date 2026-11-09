@@ -9,6 +9,7 @@ import {
   translunarCoast,
   transEarthCoast,
   keplerianArcEarthFocus,
+  SMOOTH_SAMPLES_PER_SEGMENT,
   buildCislunarTrajectory,
   type CislunarProfile,
   type Vec3Km,
@@ -238,7 +239,7 @@ describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
       };
       const traj = buildCislunarTrajectory(profile, { ...baseOpts, is_return_trip: true });
       expect(traj.phases.length).toBe(1);
-      expect(traj.phases[0].points.length).toBe(wp.length);
+      expect(traj.phases[0].points.length).toBe((wp.length - 1) * SMOOTH_SAMPLES_PER_SEGMENT + 1);
       // Turned by the Moon's phase at departure (waypoints are authored for sim-day 0).
       const ph = (2 * Math.PI * baseOpts.dep_day_sim) / T_MOON_DAYS;
       const p0 = traj.phases[0].points[0];

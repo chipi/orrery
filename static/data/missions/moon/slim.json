@@ -676,7 +676,14 @@
           61042
         ]
       ],
-      "waypoints_source": "JAXA SLIM milestones only: launch 2023-09-06, lunar orbit insertion 2023-12-25, landing 2024-01-19 (no orbit table published). The path is one schematic transfer ellipse from a 250 km perigee to the Moon between those dates, then a 600 km lunar orbit; the real months-long low-energy trajectory is not drawn."
+      "waypoints_source": "JAXA SLIM milestones (en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon): launch 2023-09-06, lunar orbit insertion 2023-12-25, landing 2024-01-19; no orbit table found, so one schematic transfer ellipse from a 250 km perigee (parking_orbit) to the Moon between those dates, then the 600 km lunar orbit.",
+      "lunar_orbits": [
+        [
+          110,
+          600,
+          600
+        ]
+      ]
     }
   }
 }

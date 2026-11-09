@@ -28,6 +28,7 @@ script headers cite the ADR/PRD/RFC that governs them — keep that up.
 | Question | Run |
 |---|---|
 | draw / refresh the 736×414 trajectory thumbnail of a mission (all 126 on a full run; deterministic) | `npx tsx scripts/render-mission-thumbnails.ts [--only=<id>,…] [--out=<dir> --png=<dir>]` — runbook `docs/guides/mission-thumbnail-runbook.md` (skill `orrery-mission-thumbnails`) |
+| rebuild the cislunar waypoints of Earth-orbit-raising Moon missions (Chandrayaan-1/-3, SLIM) from the published orbit tables in the mission JSON (`cislunar_profile.orbit_raising`, `lunar_orbits`, `waypoints_source`) | `npx tsx scripts/cislunar/generate-hybrid-waypoints.ts static/data/missions/moon/<id>.json` — then re-render the thumbnail, `node scripts/mobile/build-offline-manifest.mjs`, `npm run validate-data` |
 | the font its labels use | `scripts/assets/fonts/SpaceMono-Regular.ttf` + `OFL.txt` (SIL OFL 1.1; build-time only, node-canvas cannot read the site's woff2) |
 
 ## Translations — which tool, when

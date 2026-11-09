@@ -61,6 +61,10 @@ export interface CislunarProfile {
   return?: { type?: 'none' | 'tei_direct' | 'tei_lor'; dv_kms?: number };
   waypoints_km?: Array<[number, number, number, number]>;
   waypoints_source?: string;
+  /** Published Earth-orbit-raising burns: [met_days, perigee_alt_km, apogee_alt_km] of the orbit each burn leaves. */
+  orbit_raising?: Array<[number, number, number]>;
+  /** Published lunar orbits after arrival: [met_days, perilune_alt_km, apolune_alt_km]. */
+  lunar_orbits?: Array<[number, number, number]>;
 }
 
 export interface BuildCislunarOptions {

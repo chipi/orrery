@@ -171,6 +171,8 @@ export interface CislunarProfile {
   return?: { type?: CislunarReturnType; dv_kms?: number };
   waypoints_km?: Array<[number, number, number, number]>;
   waypoints_source?: string;
+  orbit_raising?: Array<[number, number, number]>;
+  lunar_orbits?: Array<[number, number, number]>;
 }
 
 export interface FlightParams {

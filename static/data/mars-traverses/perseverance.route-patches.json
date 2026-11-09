@@ -3,8 +3,8 @@
   "patches": [
     {
       "id": "sol-58",
-      "lat": 18.44486,
-      "lon": 77.45102,
+      "lat": 18.445093,
+      "lon": 77.451864,
       "kind": "helicopter",
       "label": "Ingenuity Flight 1",
       "image": "/images/hotspots/mars/perseverance/traverse/sol-58.webp",
@@ -58,7 +58,7 @@
     },
     {
       "id": "km-01",
-      "lat": 18.436708,
+      "lat": 18.436715,
       "lon": 77.451399,
       "kind": "route",
       "image": "/images/hotspots/mars/perseverance/traverse/km-01.webp",

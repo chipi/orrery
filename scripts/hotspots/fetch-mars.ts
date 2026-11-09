@@ -52,9 +52,38 @@ interface SurfaceHotspotsSidecar {
       hotspot_tier_max?: number;
       hotspot_tier2_source?: string;
       hotspot_tier2_force_product_id?: string;
+      hotspot_tier2_frame_shift_m?: FrameShiftM;
       location_uncertainty_m?: number;
     }
   >;
+}
+
+/**
+ * A HiRISE product's own georeference can sit hundreds of metres off the
+ * Murray CTX mosaic the scene draws under it (Perseverance 205 m, Curiosity
+ * 145 m, measured by feature matching). `hotspot_tier2_frame_shift_m` records
+ * how far north / east of its nominal position the patch's ground really is
+ * in the CTX frame; the site point is that shifted position, so the crop is cut
+ * at the site point minus the shift (the rover stays at the patch centre).
+ */
+export interface FrameShiftM {
+  north: number;
+  east: number;
+}
+
+const MARS_M_PER_DEG = (Math.PI / 180) * 3389500;
+
+export function productFrameTarget(
+  lat: number,
+  lon: number,
+  shift?: FrameShiftM,
+): { lat: number; lon: number } {
+  if (!shift) return { lat, lon };
+  const outLat = lat - shift.north / MARS_M_PER_DEG;
+  return {
+    lat: outLat,
+    lon: lon - shift.east / (MARS_M_PER_DEG * Math.cos((outLat * Math.PI) / 180)),
+  };
 }
 
 interface MarsSite {
@@ -179,6 +208,7 @@ async function fetchOne(
     id: string;
     hotspot_tier2_source?: string;
     hotspot_tier2_force_product_id?: string;
+    hotspot_tier2_frame_shift_m?: FrameShiftM;
     location_uncertainty_m?: number;
   },
   site: Required<MarsSite>,
@@ -192,6 +222,7 @@ async function fetchOne(
   // frames each at the 50 km radius). The PIP test is the actual
   // geometric gate, so the wider pre-filter only adds false-positive
   // distance-filter hits, not false-positive PIP hits.
+  const target = productFrameTarget(site.lat, site.lon, hotspot.hotspot_tier2_frame_shift_m);
   const uncertaintyKm = (hotspot.location_uncertainty_m ?? 50) / 1000;
   const searchRadiusKm = Math.max(100, uncertaintyKm + 50);
 
@@ -202,8 +233,8 @@ async function fetchOne(
   if (hotspot.hotspot_tier2_force_product_id) {
     ranked.push({
       productId: hotspot.hotspot_tier2_force_product_id,
-      centerLat: site.lat,
-      centerLon: site.lon,
+      centerLat: target.lat,
+      centerLon: target.lon,
       mapScale: 0,
       incidenceAngle: 50,
       startTime: '',
@@ -215,8 +246,8 @@ async function fetchOne(
     return null;
   } else {
     const candidates = await findHiriseCandidates({
-      targetLat: site.lat,
-      targetLon: site.lon,
+      targetLat: target.lat,
+      targetLon: target.lon,
       searchRadiusKm,
     });
     ranked.push(...candidates.slice(0, MAX_CANDIDATES_PER_SITE));
@@ -252,8 +283,8 @@ async function fetchOne(
     try {
       const crop = await cropRemoteRasterToLatLon({
         sourceUrl,
-        targetLat: site.lat,
-        targetLon: site.lon,
+        targetLat: target.lat,
+        targetLon: target.lon,
         outputPath,
         cropSize: 2048,
         jpegQuality: 88,

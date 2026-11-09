@@ -139,6 +139,7 @@ export function buildCtxMosaicProvenanceEntry(input: {
     modifications: [
       midpoint ? 'cropped-around-traverse-midpoint' : 'cropped-2048x2048-around-site-coords',
       'extracted-from-murray-lab-tile-zip',
+      'resampled-east-west-to-square-5m-pixels',
       'reencoded-jpeg-q88',
     ],
     revid: null,

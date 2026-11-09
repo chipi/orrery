@@ -71,7 +71,11 @@ function gcMetres(a: [number, number], b: [number, number]): number {
  * of just the landing zone at one end. Falls back to the landing coordinate
  * when the rover has no traverse file.
  */
-export function cropCentre(roverId: string, lat: number, lon: number): { lat: number; lon: number } {
+export function cropCentre(
+  roverId: string,
+  lat: number,
+  lon: number,
+): { lat: number; lon: number } {
   const p = path.join(TRAVERSE_DIR, `${roverId}.json`);
   if (!existsSync(p)) return { lat, lon };
   const tr = JSON.parse(readFileSync(p, 'utf8')) as { points?: [number, number][] };
@@ -104,7 +108,11 @@ const MAX_OUTPUT_PX = 4096;
  * drive spans ~26 km, past the 15.4 km default. Never smaller than the
  * default; rounded up to 1 024 m. Non-rovers keep the default.
  */
-export function cropPxFor(roverId: string, centre: { lat: number; lon: number }, mPerPx = 5): number {
+export function cropPxFor(
+  roverId: string,
+  centre: { lat: number; lon: number },
+  mPerPx = 5,
+): number {
   const p = path.join(TRAVERSE_DIR, `${roverId}.json`);
   if (!existsSync(p)) return BASE_CROP_PX;
   const pts = (JSON.parse(readFileSync(p, 'utf8')) as { points?: [number, number][] }).points;
@@ -119,6 +127,18 @@ export function cropPxFor(roverId: string, centre: { lat: number; lon: number },
   }
   const groundM = Math.ceil((2 * half * 1.15) / 1024) * 1024;
   return Math.max(BASE_CROP_PX, Math.ceil(groundM / mPerPx));
+}
+
+/**
+ * The Murray Lab tiles are Equirectangular with the standard parallel at 0:
+ * a pixel is 5 m north-south everywhere but only 5 x cos(lat) m east-west, so
+ * a square crop of the raster is stretched wide by 1 / cos(lat) (5 % at
+ * Jezero, 9 % at Zhurong, 49 % at Viking 2) while the scene draws the patch
+ * as a square at 5 m/px. To get square ground pixels, cut a window
+ * 1 / cos(lat) times wider than the output and squeeze it back to cropPx.
+ */
+export function eastWestSourcePx(cropPx: number, latDeg: number): number {
+  return Math.ceil(cropPx / Math.cos((latDeg * Math.PI) / 180));
 }
 
 export interface MarsCtxFetchResult {
@@ -229,15 +249,33 @@ async function fetchOneCtx(
   const localTilePath = await ensureCtxMosaicTile(centre.lat, centre.lon);
   const cropPx = cropPxFor(hotspot.id, centre);
   try {
+    const srcPx = eastWestSourcePx(cropPx, centre.lat);
+    const widePath = `${outputPath}.wide.tmp.jpg`;
     const crop = await cropRemoteRasterToLatLon({
       localRasterPath: localTilePath,
       targetLat: centre.lat,
       targetLon: centre.lon,
-      outputPath,
-      cropSize: cropPx,
-      jpegQuality: 88,
-      requireCentered: cropPx > BASE_CROP_PX,
+      outputPath: widePath,
+      cropSize: srcPx,
+      jpegQuality: 95,
+      requireCentered: true,
     });
+    const wide = await fs.readFile(widePath);
+    await fs.rm(widePath);
+    const wideMeta = await sharp(wide).metadata();
+    await fs.writeFile(
+      outputPath,
+      await sharp(wide)
+        .extract({
+          left: 0,
+          top: Math.floor(((wideMeta.height ?? srcPx) - cropPx) / 2),
+          width: wideMeta.width ?? srcPx,
+          height: cropPx,
+        })
+        .resize(cropPx, cropPx, { fit: 'fill', kernel: 'lanczos3' })
+        .jpeg({ quality: 88 })
+        .toBuffer(),
+    );
     // Full-resolution crop → masters/ (Git LFS), like the route tiles.
     const full = await fs.readFile(outputPath);
     const masterPath = path.join(

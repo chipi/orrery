@@ -29400,12 +29400,13 @@
       "modifications": [
         "cropped-around-traverse-midpoint",
         "extracted-from-murray-lab-tile-zip",
+        "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": "E136_N-08",
-      "fetched_at": "2026-11-05T11:05:18.338Z",
+      "fetched_at": "2026-11-09T16:08:11.922Z",
       "spacecraft_id": "mro",
       "spacecraft_name": "Mars Reconnaissance Orbiter",
       "instrument": "CTX"
@@ -29414,7 +29415,7 @@
       "id": "ae4883bdbc1a0d52",
       "path": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
       "source_type": "direct-agency",
-      "title": "HiRISE ESP_028401_1755 — patch centred at -4.591°N 137.440°E",
+      "title": "HiRISE ESP_028401_1755 — patch cut at -4.591°N 137.440°E in the product's own georeference, placed at -4.589°N 137.440°E (145 m north of it, registered to the CTX mosaic)",
       "author": "NASA / JPL-Caltech / University of Arizona",
       "agency": "NASA",
       "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_028400_028499/ESP_028401_1755/ESP_028401_1755_RED.JP2",
@@ -30114,12 +30115,13 @@
       "modifications": [
         "cropped-around-traverse-midpoint",
         "extracted-from-murray-lab-tile-zip",
+        "resampled-east-west-to-square-5m-pixels",
         "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": "E076_N16",
-      "fetched_at": "2026-11-05T11:14:16.080Z",
+      "fetched_at": "2026-11-09T16:08:09.602Z",
       "spacecraft_id": "mro",
       "spacecraft_name": "Mars Reconnaissance Orbiter",
       "instrument": "CTX"
@@ -30128,7 +30130,7 @@
       "id": "a1ea750fb43b8da4",
       "path": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
       "source_type": "direct-agency",
-      "title": "HiRISE ESP_068294_1985 — patch centred at 18.441°N 77.452°E",
+      "title": "HiRISE ESP_068294_1985 — patch cut at 18.441°N 77.452°E in the product's own georeference, placed at 18.445°N 77.452°E (205 m north of it, registered to the CTX mosaic)",
       "author": "NASA / JPL-Caltech / University of Arizona",
       "agency": "NASA",
       "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_068200_068299/ESP_068294_1985/ESP_068294_1985_RED.JP2",

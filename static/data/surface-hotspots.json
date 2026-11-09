@@ -1415,6 +1415,10 @@
       "hotspot_model": "curiosity-class",
       "hotspot_tier2_source": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
       "hotspot_tier2_force_product_id": "ESP_028401_1755",
+      "hotspot_tier2_frame_shift_m": {
+        "north": 145,
+        "east": -15
+      },
       "hotspot_tier3_panorama": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
@@ -1436,7 +1440,7 @@
               "url": "https://science.nasa.gov/mission/msl-curiosity/"
             }
           ],
-          "confidence": "medium-high: HiRISE ESP_028401_1755 is this patch's product (17 August 2012, 11 days after landing). The rover is the only bright object, a pair of dots, at the centre of the dark landing blast pattern, measured to about 1 m; not registered against the labelled cut-out at pixel level. The mission team's traverse starts 114 m north and 69 m east of it in this product's georeferencing"
+          "confidence": "medium-high: HiRISE ESP_028401_1755 is this patch's product (17 August 2012, 11 days after landing). The rover is the only bright object, a pair of dots, at the centre of the dark landing blast pattern, measured to about 1 m; the HiRISE team's labelled cut-out of the same product shows the same object in the same dark pattern; a pixel-level registration of that cut-out failed (the patch is stretched too differently), so the ring rests on this being the only compact bright object in the 512 m patch (strongest by 36 %, within 1 m of the centre). The patch sits 145 m north of its own georeference so it registers with the CTX mosaic (feature-matched, within 5 m); the mission team's traverse starts 31 m south and 83 m east of the rover"
         }
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg",
@@ -1501,6 +1505,10 @@
       "hotspot_model": "perseverance-rover",
       "hotspot_tier2_source": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
       "hotspot_tier2_force_product_id": "ESP_068294_1985",
+      "hotspot_tier2_frame_shift_m": {
+        "north": 205,
+        "east": -15
+      },
       "hotspot_tier3_panorama": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
@@ -1522,7 +1530,7 @@
               "url": "https://science.nasa.gov/mission/mars-2020-perseverance/"
             }
           ],
-          "confidence": "medium-high: HiRISE ESP_068294_1985 is this patch's product (19 February 2021, the day after landing). The rover (a small bright object with a shadow between two bright blast zones) was matched to the HiRISE team's labelled cut-out of the same product and sits at the patch centre, measured to about 1 m. The mission team's traverse starts 191 m north and 63 m west of it in this product's georeferencing"
+          "confidence": "medium-high: HiRISE ESP_068294_1985 is this patch's product (19 February 2021, the day after landing). The rover (a small bright object with a shadow between two bright blast zones) was matched to the HiRISE team's labelled cut-out of the same product and sits at the patch centre, measured to about 1 m. The patch sits 205 m north of its own georeference so it registers with the CTX mosaic (feature-matched, within 5 m); the mission team's traverse starts 14 m south and 47 m west of the rover"
         }
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/perseverance/tier2-ctx.jpg",

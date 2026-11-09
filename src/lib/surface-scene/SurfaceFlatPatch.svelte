@@ -38,6 +38,7 @@
   import { detailGroundKm } from '$lib/surface-scene/flat-patch-extent';
   import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
   import {
+    areaRadiusPx,
     groundOffsetToScreen,
     ringDiameter,
     type PlacedRing,
@@ -284,6 +285,7 @@
     return list.map((annotation) => ({
       annotation,
       ...groundOffsetToScreen(annotation.lat_offset_m, annotation.lon_offset_m, kmPerPx, origin),
+      radiusPx: areaRadiusPx(annotation, kmPerPx * 1000),
     }));
   });
 

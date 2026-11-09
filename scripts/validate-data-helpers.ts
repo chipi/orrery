@@ -490,6 +490,8 @@ export interface HotspotEntryForAnnotations {
     explain?: string;
     source?: Array<{ label?: string; url?: string }>;
     confidence?: string;
+    area_radius_m?: number;
+    ring_size?: string;
   }>;
 }
 
@@ -518,6 +520,15 @@ export function findHotspotAnnotationProblems(
         problems.push(`${at}: lat_offset_m / lon_offset_m must be finite numbers`);
       } else if (Math.abs(lat as number) > half || Math.abs(lon as number) > half) {
         problems.push(`${at}: offset (${lat}, ${lon}) m is outside the ${half * 2} m detail image`);
+      }
+      if (
+        a.area_radius_m !== undefined &&
+        !(Number.isFinite(a.area_radius_m) && a.area_radius_m > 0)
+      ) {
+        problems.push(`${at}: area_radius_m must be a positive number`);
+      }
+      if (a.ring_size !== undefined && a.ring_size !== 'small') {
+        problems.push(`${at}: ring_size must be "small"`);
       }
       if (a.explain !== undefined) {
         if (!a.explain.trim()) problems.push(`${at}: empty explain`);

@@ -4,6 +4,10 @@ import {
   LEADER_PX,
   RING_MAX_PX,
   RING_MIN_PX,
+  AREA_HANDLE_PX,
+  areaRadiusPx,
+  interactivePosition,
+  ringPxFor,
   CLUSTER_MIN,
   clusterRings,
   estimateLabelWidth,
@@ -273,5 +277,58 @@ describe('placeCard', () => {
     const p = placeCard({ x: 10, y: 5 }, size, 'left', { w: 240, h: 200 });
     expect(p.x).toBeGreaterThanOrEqual(8);
     expect(p.y).toBeGreaterThanOrEqual(8);
+  });
+});
+
+describe('areas and small rings', () => {
+  const area = {
+    id: 'blast',
+    label: 'Blast zone',
+    lat_offset_m: 0,
+    lon_offset_m: 0,
+    area_radius_m: 87,
+  };
+  const crater = {
+    id: 'c',
+    label: 'Crater',
+    lat_offset_m: 0,
+    lon_offset_m: 0,
+    ring_size: 'small' as const,
+  };
+  const hardware = { id: 'h', label: 'Hardware', lat_offset_m: 0, lon_offset_m: 0 };
+
+  it('draws an area at its true ground radius: 87 m at 0.4 m/px is 217.5 px, at 1.6 m/px 54 px', () => {
+    expect(areaRadiusPx(area, 0.4)).toBeCloseTo(217.5);
+    expect(areaRadiusPx(area, 1.6)).toBeCloseTo(54.375);
+  });
+
+  it('gives a point annotation no radius', () => {
+    expect(areaRadiusPx(hardware, 0.4)).toBeUndefined();
+    expect(areaRadiusPx(area, 0)).toBeUndefined();
+  });
+
+  it('makes a crater ring smaller than a hardware ring and leaves hardware alone', () => {
+    expect(ringPxFor(crater, 32)).toBeLessThan(32);
+    expect(ringPxFor(crater, 32)).toBe(Math.round(32 * 0.6));
+    expect(ringPxFor(hardware, 32)).toBe(32);
+  });
+
+  it('taps and labels an area at the top of its outline, not at its centre', () => {
+    const placed: PlacedRing = { annotation: area, x: 500, y: 400, radiusPx: 100 };
+    expect(interactivePosition(placed)).toMatchObject({ x: 500, y: 300 });
+    const point: PlacedRing = { annotation: hardware, x: 500, y: 400 };
+    expect(interactivePosition(point)).toBe(point);
+  });
+
+  it("spaces a label by the anchor's own ring size", () => {
+    const base = labelRect({ id: 'a', x: 100, y: 100 }, 80, 'right', 32);
+    const small = labelRect({ id: 'a', x: 100, y: 100 }, 80, 'right', AREA_HANDLE_PX);
+    expect(base.x - small.x).toBe((32 - AREA_HANDLE_PX) / 2);
+    const placed = layoutLabels(
+      [{ id: 'a', x: 100, y: 100, label: 'x', ringPx: AREA_HANDLE_PX }],
+      { w: 400, h: 300 },
+      32,
+    );
+    expect(placed.get('a')?.rect.x).toBe(small.x);
   });
 });

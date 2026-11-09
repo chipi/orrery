@@ -22,14 +22,17 @@
   import { viewport } from '$lib/viewport.svelte';
   import { annotationUi } from '$lib/surface-scene/annotation-ui.svelte';
   import {
+    AREA_HANDLE_PX,
     HIT_PX,
     LEADER_PX,
     RING_STROKE_PX,
     clusterRings,
     fanOutPositions,
+    interactivePosition,
     layoutLabels,
     ringDiameter,
     ringFootprint,
+    ringPxFor,
     placeCard,
     ringInView,
     separationFactor,
@@ -77,7 +80,15 @@
   const chipText = (a: PlacedRing['annotation']): string =>
     viewport.isNarrow && a.label_short ? a.label_short : a.label;
   const ringPx = $derived(ringDiameter(width));
-  const visible = $derived(rings.filter((r) => ringInView(r.x, r.y, width, height)));
+  // An area is tapped and labelled at the top of its dashed outline (interactivePosition).
+  const visible = $derived(
+    rings.map(interactivePosition).filter((r) => ringInView(r.x, r.y, width, height)),
+  );
+  const areas = $derived(rings.filter((r) => r.radiusPx && r.radiusPx >= 2));
+  const isArea = (r: PlacedRing): boolean => !!r.radiusPx;
+  // Own drawn size: smaller for craters, a small handle for an area, else the shared ring size.
+  const pxOf = (r: PlacedRing): number =>
+    isArea(r) ? AREA_HANDLE_PX : ringPxFor(r.annotation, ringPx);
   const grouped = $derived(clusterRings(visible, ringPx));
 
   // A fanned-out cluster: its rings move onto a circle round the badge until
@@ -120,7 +131,13 @@
 
   const labels = $derived(
     layoutLabels(
-      singles.map((r) => ({ id: r.annotation.id, label: chipText(r.annotation), x: r.x, y: r.y })),
+      singles.map((r) => ({
+        id: r.annotation.id,
+        label: chipText(r.annotation),
+        x: r.x,
+        y: r.y,
+        ringPx: pxOf(r),
+      })),
       { w: width, h: height },
       ringPx,
       [...hudBlocked, ...blocked, ...badges.map((c) => ringFootprint(c, ringPx))],
@@ -273,6 +290,21 @@
     </svg>
   {/if}
 
+  {#if areas.length > 0}
+    <svg class="areas" {width} {height} aria-hidden="true" data-testid="annotation-areas">
+      {#each areas as r (r.annotation.id)}
+        <circle
+          class:lit={isLit(r.annotation.id)}
+          cx={r.x}
+          cy={r.y}
+          r={r.radiusPx}
+          data-annotation-id={r.annotation.id}
+          data-radius-px={Math.round(r.radiusPx ?? 0)}
+        />
+      {/each}
+    </svg>
+  {/if}
+
   {#each badges as c, i (c.key)}
     <button
       type="button"
@@ -300,12 +332,15 @@
     {@const id = r.annotation.id}
     {@const lab = labels.get(id)}
     {@const lit = isLit(id)}
+    {@const rpx = pxOf(r)}
     <button
       type="button"
       class="ring"
       class:active={lit}
+      class:area={isArea(r)}
       style:left="{r.x}px"
       style:top="{r.y}px"
+      style:--ring-px="{rpx}px"
       style:--delay="{-i * 0.8}s"
       aria-label={r.annotation.label}
       aria-haspopup="dialog"
@@ -327,11 +362,11 @@
         class:vertical={lab.side === 'top' || lab.side === 'bottom'}
         style:left={lab.side === 'top' || lab.side === 'bottom'
           ? `${r.x}px`
-          : `${lab.side === 'right' ? r.x + ringPx / 2 : r.x - ringPx / 2 - LEADER_PX}px`}
+          : `${lab.side === 'right' ? r.x + rpx / 2 : r.x - rpx / 2 - LEADER_PX}px`}
         style:top={lab.side === 'top'
-          ? `${r.y - ringPx / 2 - LEADER_PX}px`
+          ? `${r.y - rpx / 2 - LEADER_PX}px`
           : lab.side === 'bottom'
-            ? `${r.y + ringPx / 2}px`
+            ? `${r.y + rpx / 2}px`
             : `${r.y}px`}
         style:width={lab.side === 'top' || lab.side === 'bottom' ? undefined : `${LEADER_PX}px`}
         style:height={lab.side === 'top' || lab.side === 'bottom' ? `${LEADER_PX}px` : undefined}
@@ -419,6 +454,11 @@
       <h4>{open.annotation.label}</h4>
       {#if open.annotation.explain}
         <p>{open.annotation.explain}</p>
+      {/if}
+      {#if open.annotation.position_lroc_only}
+        <p class="position-note mono" data-testid="annotation-position-note">
+          {m.surface_annotation_position_lroc()}
+        </p>
       {/if}
       {#if open.annotation.source?.length}
         <p class="sources mono">
@@ -530,6 +570,42 @@
   .ring:hover,
   .ring:focus-visible {
     z-index: 6;
+  }
+  /* an area is a dashed outline at true size; its tap handle is a small solid dot on the outline */
+  .areas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .areas circle {
+    fill: rgba(255, 200, 80, 0.06);
+    stroke: var(--color-gold, #ffc850);
+    stroke-width: 2.5;
+    stroke-dasharray: 9 7;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9));
+    transition: stroke 160ms;
+  }
+  .areas circle.lit {
+    stroke: var(--hl);
+    stroke-width: 3.5;
+    fill: rgba(136, 159, 231, 0.12);
+  }
+  .ring.area .dot {
+    border: 2px solid rgba(0, 0, 0, 0.65);
+    background: var(--color-gold, #ffc850);
+    box-shadow: 0 0 6px 1px rgba(255, 200, 80, 0.5);
+  }
+  .ring.area .dot::after {
+    display: none;
+  }
+  .ring.area.active .dot,
+  .ring.area:hover .dot,
+  .ring.area:focus-visible .dot {
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.65);
+    background: var(--hl);
+    box-shadow: 0 0 10px 3px rgba(136, 159, 231, 0.85);
   }
   .cluster .dot {
     display: grid;
@@ -695,6 +771,11 @@
   }
   .pop p {
     margin: 0 0 6px;
+  }
+  .pop .position-note {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.65);
   }
   .pop .sources {
     margin: 8px 0 0;

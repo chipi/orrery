@@ -217,6 +217,28 @@ describe('buildHotspotSurfacePatch', () => {
     expect(anchors[0].position.z).toBeCloseTo(-100 * mToU, 10); // north = -Z
   });
 
+  it('gives an area anchor its true ground radius in patch units and a point anchor none', () => {
+    const g = buildHotspotSurfacePatch({
+      siteId: 's',
+      accentColor: '#fff',
+      groundMeters: 500,
+      regionalGroundMeters: 15000,
+      annotations: [
+        {
+          id: 'blast',
+          lat_offset_m: 0,
+          lon_offset_m: 0,
+          area_radius_m: 87,
+        } as unknown as HotspotAnnotation,
+        { id: 'pt', lat_offset_m: 5, lon_offset_m: 5 } as unknown as HotspotAnnotation,
+      ],
+    });
+    const mToU = (REGIONAL_PATCH_DIAMETER_WORLD_UNITS * (500 / 15000)) / 500;
+    const by = (id: string) => g.children.find((c) => c.userData.annotationId === id)!;
+    expect(by('blast').userData.radiusU).toBeCloseTo(87 * mToU, 10);
+    expect(by('pt').userData.radiusU).toBeUndefined();
+  });
+
   it('assumes a 1 km patch for annotations when groundMeters is absent', () => {
     const g = buildHotspotSurfacePatch({
       siteId: 's',

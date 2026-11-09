@@ -538,6 +538,18 @@ describe('findHotspotAnnotationProblems', () => {
     expect(p.some((x) => x.includes('without confidence'))).toBe(true);
   });
 
+  it('accepts an area radius and a small ring, rejects a zero radius and an unknown size', () => {
+    expect(
+      findHotspotAnnotationProblems(site([{ ...good, area_radius_m: 87, ring_size: 'small' }])),
+    ).toEqual([]);
+    expect(findHotspotAnnotationProblems(site([{ ...good, area_radius_m: 0 }]))).toEqual([
+      expect.stringContaining('area_radius_m'),
+    ]);
+    expect(findHotspotAnnotationProblems(site([{ ...good, ring_size: 'big' }]))).toEqual([
+      expect.stringContaining('ring_size'),
+    ]);
+  });
+
   it('rejects a non-https source url', () => {
     const p = findHotspotAnnotationProblems(
       site([{ ...good, source: [{ label: 'LROC', url: 'http://x' }] }]),

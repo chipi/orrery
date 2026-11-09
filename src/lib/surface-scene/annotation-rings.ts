@@ -36,6 +36,8 @@ export interface RingAnchor {
   id: string;
   x: number;
   y: number;
+  /** This ring's own drawn diameter when it differs from the shared one (small crater rings). */
+  ringPx?: number;
 }
 
 /** A ring with its projected screen position (CSS px, relative to the overlay). */
@@ -43,12 +45,36 @@ export interface PlacedRing {
   annotation: HotspotAnnotation;
   x: number;
   y: number;
+  /** Ground radius of an area annotation in screen px (dashed outline at true size). */
+  radiusPx?: number;
 }
 
 export type LabelSide = 'right' | 'left' | 'top' | 'bottom';
 
 export function ringDiameter(viewW: number): number {
   return Math.max(RING_MIN_PX, Math.min(RING_MAX_PX, Math.round(viewW * 0.032)));
+}
+
+/** Craters get a smaller ring than hardware. */
+export const SMALL_RING_FACTOR = 0.6;
+/** An area's tap handle (a small dot on its dashed outline), not a ring. */
+export const AREA_HANDLE_PX = 14;
+
+export function ringPxFor(a: HotspotAnnotation, basePx: number): number {
+  return a.ring_size === 'small' ? Math.round(basePx * SMALL_RING_FACTOR) : basePx;
+}
+
+/** Screen radius of an area annotation: its ground radius over the ground size of a pixel; undefined for a point. */
+export function areaRadiusPx(a: HotspotAnnotation, mPerPx: number): number | undefined {
+  return a.area_radius_m && mPerPx > 0 ? a.area_radius_m / mPerPx : undefined;
+}
+
+/**
+ * Where an area is tapped and labelled: the top of its outline (an area centred on a
+ * lander would otherwise stack its tap target on the lander ring). A point is unchanged.
+ */
+export function interactivePosition(r: PlacedRing): PlacedRing {
+  return r.radiusPx ? { ...r, y: r.y - r.radiusPx } : r;
 }
 
 /** Screen position of a ground offset (metres north / east of the site point).
@@ -117,14 +143,14 @@ export function layoutLabels(
   blocked: Rect[] = [],
 ): Map<string, { side: LabelSide; rect: Rect }> {
   const placed = new Map<string, { side: LabelSide; rect: Rect }>();
-  const discs = [...anchors.map((a) => ringDisc(a, ringPx)), ...blocked];
+  const discs = [...anchors.map((a) => ringDisc(a, a.ringPx ?? ringPx)), ...blocked];
   for (const [i, a] of anchors.entries()) {
     const full = estimateLabelWidth(a.label);
     const widths = full > SHORT_LABEL_PX ? [full, SHORT_LABEL_PX] : [full];
     // the full name on any side beats a shortened chip on a preferred one
     search: for (const width of widths) {
       for (const side of ['right', 'left', 'top', 'bottom'] as const) {
-        const rect = labelRect(a, width, side, ringPx);
+        const rect = labelRect(a, width, side, a.ringPx ?? ringPx);
         const inside =
           rect.x >= 0 && rect.y >= 0 && rect.x + rect.w <= view.w && rect.y + rect.h <= view.h;
         if (!inside) continue;

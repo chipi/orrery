@@ -334,6 +334,14 @@ export interface HotspotAnnotation {
   as_of?: string;
   /** Photo shown in the popover; joined from moon-annotation-photos.json at load. */
   photo?: HotspotAnnotationPhoto;
+  /** An area (blast zone, footpaths, a crater interior), not a point: drawn as a dashed
+   *  circle of this ground radius in metres at true size, centred on the offsets. */
+  area_radius_m?: number;
+  /** 'small' draws a smaller ring (craters), so it does not read as hardware. */
+  ring_size?: 'small';
+  /** The object is not visible in the image: the position comes from LROC's coordinates
+   *  only, and the popover says so. */
+  position_lroc_only?: boolean;
 }
 
 export interface HotspotAnnotationPhoto {

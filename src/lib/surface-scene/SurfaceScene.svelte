@@ -1772,6 +1772,7 @@
     const SITE_TAG_HUD =
       'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler, .surface-bottom-bar';
     const ringScratch = new THREE.Vector3();
+    const ringEdgeScratch = new THREE.Vector3();
     let siteTagBlocked: Rect[] = [];
     let siteTagBlockedAt = -Infinity;
     // Traverse end caption: the scale-bar / altitude boxes it must dodge, re-measured at most
@@ -4248,7 +4249,17 @@
                 if (!annotation) continue;
                 const ndc = obj.getWorldPosition(ringScratch).project(camera);
                 if (ndc.z >= 1) continue;
-                next.push({ annotation, x: ((ndc.x + 1) / 2) * rw, y: ((1 - ndc.y) / 2) * rh });
+                const x = ((ndc.x + 1) / 2) * rw;
+                const y = ((1 - ndc.y) / 2) * rh;
+                // An area: its ground radius (anchor userData.radiusU, patch-local units) projected
+                // one radius along the patch's east axis, so the dashed outline keeps its true size.
+                const radiusU = obj.userData?.radiusU as number | undefined;
+                let radiusPx: number | undefined;
+                if (radiusU) {
+                  const edge = obj.localToWorld(ringEdgeScratch.set(radiusU, 0, 0)).project(camera);
+                  radiusPx = Math.hypot(((edge.x - ndc.x) / 2) * rw, ((edge.y - ndc.y) / 2) * rh);
+                }
+                next.push({ annotation, x, y, radiusPx });
               }
               if (rw !== ringsW) ringsW = rw;
               if (rh !== ringsH) ringsH = rh;
@@ -4259,7 +4270,8 @@
                 (r, i) =>
                   r.annotation.id !== rings3d[i].annotation.id ||
                   Math.abs(r.x - rings3d[i].x) > 0.25 ||
-                  Math.abs(r.y - rings3d[i].y) > 0.25,
+                  Math.abs(r.y - rings3d[i].y) > 0.25 ||
+                  Math.abs((r.radiusPx ?? 0) - (rings3d[i].radiusPx ?? 0)) > 0.5,
               );
             if (moved) rings3d = next;
             // Traverse stop pills are WebGL sprites: tell the HTML ring labels where they sit.

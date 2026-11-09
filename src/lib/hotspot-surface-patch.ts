@@ -352,7 +352,13 @@ function addAnnotationAnchors(
     if (Math.sqrt(x * x + z * z) > radius * 1.05) continue;
     const anchor = new THREE.Object3D();
     anchor.position.set(x, Z_FIGHT_OFFSET_Y + 0.003, z);
-    anchor.userData = { siteId, annotationId: a.id, kind: 'annotation-anchor' };
+    anchor.userData = {
+      siteId,
+      annotationId: a.id,
+      kind: 'annotation-anchor',
+      // an area's true ground radius in patch units (AnnotationRings draws the dashed outline)
+      radiusU: a.area_radius_m ? a.area_radius_m * M_TO_U : undefined,
+    };
     g.add(anchor);
   }
 }

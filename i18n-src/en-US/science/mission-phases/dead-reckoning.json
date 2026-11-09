@@ -1,6 +1,8 @@
 {
   "title": "Dead reckoning",
   "intro_sentence": "Integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes.",
+  "seo_title": "Dead Reckoning in Space: Navigating by Accelerometer |||",
+  "seo_description": "Dead Reckoning in Space: Navigating by Accelerometer |||",
   "body_paragraphs": [
     "Between burns and outside the range of useful celestial landmarks, a spacecraft tracks its own state by integrating the output of its inertial measurement unit (IMU): three accelerometers measuring linear acceleration, three gyroscopes measuring rotation rate. Integrate acceleration once → velocity. Integrate again → position. Combined with the orientation from [star trackers](mission-phases/star-trackers), the spacecraft can propagate its full state vector forward in time without any external help.",
     "The fundamental problem is **drift**. Every accelerometer has a small bias (~10⁻⁵ m/s² on a navigation-grade IMU); over 1 day that bias integrated twice contributes ~3.7 km of position error. Over a 6-month cruise to Mars, dead-reckoning error builds up to thousands of km even with the best space-rated IMUs (which are far better than the consumer-grade ones in your phone). This is why every interplanetary mission carries [trajectory correction maneuvers](mission-phases/tcm) on its budget: the cruise dispersion has to be measured against ground tracking and the spacecraft has to physically adjust its course.",

@@ -91,6 +91,24 @@ export function pageTitle(main: string, section?: string, max = 60): string {
   return short.length <= max ? short : join(topic, 'Orrery');
 }
 
+/**
+ * The `<title>` of a page that carries an editorial `seo_title` (written for the
+ * results page): kept whole — pageTitle() would cut it at a colon — with the
+ * " · Orrery" brand added only while the result stays within `max`. Without a
+ * `seo_title` the page keeps its existing `fallback` title.
+ */
+export function seoPageTitle(seoTitle: string | undefined, fallback: string, max = 60): string {
+  const t = seoTitle?.trim();
+  if (!t) return fallback;
+  const branded = `${t} · Orrery`;
+  return branded.length <= max ? branded : t;
+}
+
+/** The meta description: an editorial `seo_description` as written, else `fallback` (both capped by metaDescription). */
+export function seoDescription(seoDescription: string | undefined, fallback: string): string {
+  return metaDescription(seoDescription?.trim() || fallback);
+}
+
 /** Absolute production URL for a canonical route in a given locale. */
 export function canonicalUrl(route: string, locale: LocaleCode): string {
   return SITE_ORIGIN + localizedPath(route, locale);

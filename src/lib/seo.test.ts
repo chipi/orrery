@@ -9,6 +9,8 @@ import {
   metaDescription,
   ogLocale,
   pageTitle,
+  seoDescription,
+  seoPageTitle,
   ogLocaleAlternates,
 } from './seo';
 import { SUPPORTED_LOCALES } from './locale';
@@ -118,6 +120,46 @@ describe('pageTitle', () => {
   it('drops the section when the topic alone still does not fit with it', () => {
     const topic = 'A'.repeat(45);
     expect(pageTitle(`${topic} — more`, 'Wissenschaft')).toBe(`${topic} · Orrery`);
+  });
+});
+
+describe('seoPageTitle', () => {
+  const fallback = 'The Wall · Essays · Orrery';
+
+  it('falls back to the existing title when there is no seo_title', () => {
+    expect(seoPageTitle(undefined, fallback)).toBe(fallback);
+    expect(seoPageTitle('', fallback)).toBe(fallback);
+    expect(seoPageTitle('   ', fallback)).toBe(fallback);
+  });
+
+  it('uses the seo_title with the brand when it fits', () => {
+    expect(seoPageTitle('Artemis Program: NASA’s Return to the Moon', fallback)).toBe(
+      'Artemis Program: NASA’s Return to the Moon · Orrery',
+    );
+  });
+
+  it('keeps a colon title whole and drops the brand instead of cutting at the colon', () => {
+    const t = 'Why Going to Mars Is So Hard: Time, Mass and the Body';
+    expect(seoPageTitle(t, fallback)).toBe(t);
+    expect(seoPageTitle(t, fallback, 70)).toBe(`${t} · Orrery`);
+  });
+});
+
+describe('seoDescription', () => {
+  const fallback = 'A poetic dek that stays the description when no seo_description exists.';
+
+  it('falls back to the existing text when there is no seo_description', () => {
+    expect(seoDescription(undefined, fallback)).toBe(fallback);
+    expect(seoDescription(' ', fallback)).toBe(fallback);
+  });
+
+  it('uses the seo_description as written', () => {
+    const d = 'Delta-v is the velocity budget every spacecraft spends.';
+    expect(seoDescription(d, fallback)).toBe(d);
+  });
+
+  it('still caps either source at the meta-description length', () => {
+    expect(seoDescription('word '.repeat(80), fallback).length).toBeLessThanOrEqual(160);
   });
 });
 

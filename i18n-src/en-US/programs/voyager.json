@@ -1,6 +1,8 @@
 {
   "name": "Voyager",
   "tagline": "Two probes launched in 1977 to tour the outer planets — and never came back. Half a century on, they are still flying, and still calling home from between the stars.",
+  "seo_title": "Voyager 1 and 2: Humanity's Farthest Spacecraft",
+  "seo_description": "Launched in 1977, the two Voyager probes toured the outer planets and are still sending data from interstellar space. Their route and instruments.",
   "the_land": [
     { "type": "prose", "md": "Once every 176 years, the four giant planets line up on the same side of the Sun. In the mid-1960s a young engineer at NASA's Jet Propulsion Laboratory, Gary Flandro, worked out what that alignment made possible: a single spacecraft could swing past Jupiter, use the planet's gravity to fling itself on to Saturn, then Uranus, then Neptune — visiting all four in one flight that would otherwise take decades of separate missions. The catch was the calendar. The window opened in the late 1970s. Miss it, and the next chance would come in the 2150s." },
     { "type": "prose", "md": "The outer solar system was, at that point, almost entirely unexplored. The Pioneers were only just reaching Jupiter; Uranus and Neptune had never been anything but points of light in a telescope. NASA seized the alignment and built two nearly identical robots to fly the tour — rugged, nuclear-powered, and carrying the best cameras and instruments of the day, aimed at worlds no one had ever seen up close." }

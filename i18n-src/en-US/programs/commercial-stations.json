@@ -1,6 +1,8 @@
 {
   "name": "Commercial Stations",
   "tagline": "The private outposts meant to replace the ISS — a bet that low Earth orbit can become a business, not just a government program.",
+  "seo_title": "Commercial Space Stations: Replacing the ISS",
+  "seo_description": "The private space stations meant to replace the ISS after its retirement in 2030: Vast Haven-1, Axiom Station and Orbital Reef in 2027, and Starlab in 2029.",
   "the_land": [
     { "type": "prose", "md": "The International Space Station is the largest thing humanity has ever built in orbit, and it is going to be deliberately destroyed. Around 2030, after more than three decades of continuous crewed operation, the ISS will be guided down to burn up over the Pacific — because it is aging, expensive to maintain, and its partners have decided the future of low Earth orbit belongs to private companies rather than government agencies. The Commercial Stations are what is supposed to take its place." },
     { "type": "prose", "md": "This is a genuine change in model, not just in hardware. For sixty years, space stations were built and run by nations. The plan now is for NASA and its partners to stop operating stations altogether and instead buy time aboard privately-owned ones — the same handover that gave commercial companies the job of launching cargo and crew, extended to the destination itself. Several ventures are racing to build the outposts NASA and others will rent: Axiom Station, Orbital Reef, Starlab, and more." }

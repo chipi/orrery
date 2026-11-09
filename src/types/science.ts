@@ -79,6 +79,9 @@ export interface ScienceSectionOverlay {
   narrative_101?: string[];
   formula_caption?: string;
   diagram_caption?: string;
+  /** Optional results-page title / description (SEO); fall back to title / intro_sentence. */
+  seo_title?: string;
+  seo_description?: string;
 }
 
 export type ScienceSection = ScienceSectionBase & ScienceSectionOverlay;
@@ -88,6 +91,9 @@ export type ScienceSection = ScienceSectionBase & ScienceSectionOverlay;
 export interface ScienceTabIntro {
   headline: string;
   paragraphs: string[];
+  /** Optional results-page title / description (SEO) for the tab page. */
+  seo_title?: string;
+  seo_description?: string;
 }
 
 /** A single chapter inside the /science landing narrative — heading, optional
@@ -112,6 +118,9 @@ export interface ScienceLandingTool {
  * `i18n/[locale]/science/_landing.json` per ADR-017. */
 export interface ScienceLanding {
   intro_heading: string;
+  /** Optional results-page title / description (SEO) for /science. */
+  seo_title?: string;
+  seo_description?: string;
   intro_paragraphs: string[];
   chapters: ScienceLandingChapter[];
   tools_heading: string;

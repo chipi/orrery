@@ -9,7 +9,7 @@
   content and translate only the bracket text.
 -->
 <script lang="ts">
-  import { metaDescription } from '$lib/seo';
+  import { seoDescription, seoPageTitle } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
   import { parseInline } from '$lib/science-inline';
@@ -26,8 +26,11 @@
 </script>
 
 <svelte:head>
-  <title>{m.science_page_title()}</title>
-  <meta name="description" content={metaDescription(m.science_meta_description())} />
+  <title>{seoPageTitle(landing?.seo_title, m.science_page_title())}</title>
+  <meta
+    name="description"
+    content={seoDescription(landing?.seo_description, m.science_meta_description())}
+  />
 </svelte:head>
 
 <header class="hero">

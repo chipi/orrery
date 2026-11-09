@@ -1,6 +1,8 @@
 {
   "title": "Tsiolkovsky Rocket Equation",
   "intro_sentence": "How much velocity change you can buy from a given engine and a given propellant load — the equation that makes spaceflight a logarithmic problem.",
+  "seo_title": "Tsiolkovsky Rocket Equation (with Calculator)",
+  "seo_description": "How much delta-v a given engine and propellant load buys. The rocket equation makes spaceflight logarithmic; try the numbers in the Physics Lab.",
   "narrative_101": [
     "Konstantin Tsiolkovsky was a deaf Russian schoolteacher who thought about spaceflight in his spare time, decades before anyone could actually build a rocket. In 1903 he wrote down an equation that nobody could escape, and we still haven't. It says: the ∆v you can squeeze out of a rocket depends on two things — how good your engine is, and how much of your rocket is fuel. And the relationship is LOGARITHMIC.",
     "The logarithm is the trap. If your rocket is half fuel, you get a certain ∆v. To double that ∆v, you don't make your rocket two-thirds fuel — you have to make it about 75% fuel. To triple it, closer to 87–88% fuel. The numbers run away from you exponentially. This is why a Saturn V is a 110-metre tower that's almost entirely propellant — the spacecraft is a tiny capsule on top.",

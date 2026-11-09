@@ -1,6 +1,8 @@
 {
   "name": "Viking",
   "tagline": "In 1976 two American landers set down on Mars, sent back the first clear photographs from its surface — and ran an experiment to answer the oldest question about the planet: is anything alive there?",
+  "seo_title": "Viking Mars Landers: NASA's 1976 Mars Mission",
+  "seo_description": "In 1976 two American Viking landers set down on Mars, sent back the first clear photographs from its surface and ran biology experiments to look for life.",
   "the_land": [
     { "type": "prose", "md": "By the mid-1970s Mars had been glimpsed but never touched. Mariner flybys and one orbiter had replaced the old dream of canals and civilisations with a colder picture — a cratered, apparently dead desert — but the surface itself remained unknown, and the question that had haunted Mars for a century was still open. Was there life? A photograph from orbit could not answer it. Someone had to land, look, and test the soil." },
     { "type": "prose", "md": "Viking was the most ambitious interplanetary mission the United States had yet attempted: two identical spacecraft, each an orbiter carrying a lander, sent to reach Mars, choose a safe spot from above, and set a robot down gently on a world whose surface no one had seen from the ground. Nothing had ever landed on Mars and worked; the Soviet attempts had failed within seconds. Viking had to succeed twice." }

@@ -1,6 +1,8 @@
 {
   "title": "True Anomaly",
   "intro_sentence": "The angle that tells you where on the orbit a body is right now, measured from perihelion.",
+  "seo_title": "True Anomaly: Where a Body Is on Its Orbit |||",
+  "seo_description": "True Anomaly: Where a Body Is on Its Orbit |||",
   "narrative_101": [
     "Imagine a planet running around its ellipse. We've already given it a size, a shape, a tilt. The one thing we still need is: where is it on the loop right this instant? That's the true anomaly. Stand at the Sun, point at the planet's closest pass, and measure the angle to where the planet actually is. That's it.",
     "But here's the catch — and this is where Kepler's second law sneaks in. The planet doesn't sweep this angle at a steady pace. Near the close pass it whips around fast. Out at the far end it lumbers. So if you ask 'how many degrees per day?', the answer changes constantly throughout the orbit.",

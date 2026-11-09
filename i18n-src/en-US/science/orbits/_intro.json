@@ -1,5 +1,7 @@
 {
   "headline": "Orbits — gravity is the only physics that matters.",
+  "seo_title": "Orbital Mechanics: Orbits, Kepler, Lagrange Points",
+  "seo_description": "Kepler's laws, eccentricity, inclination, Lagrange points, escape velocity and orbit regimes (LEO, GEO, SSO) explained with interactive diagrams.",
   "paragraphs": [
     "An orbit is what happens when you fall toward something but keep missing it. Throw a ball off a tower hard enough and the ground curves away faster than the ball drops — the ball never lands. Every spacecraft, every moon, every planet is doing exactly that trick around something heavier.",
     "All orbits are ellipses, every single one. The Sun (or Earth, or whatever you're orbiting) sits at one focal point of the ellipse, never the centre. Six numbers — size, shape, three angles, and a clock position — describe any orbit perfectly. The sections in this tab unpack each of those numbers, and the master equation (vis-viva) that ties them all together.",

@@ -18,7 +18,7 @@
   import { scienceTabLabel, scienceTabTitle } from '$lib/science-tab-label';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
-  import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
+  import { canonicalUrl, pageTitle, seoDescription, seoPageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
   import { getLocale } from '$lib/paraglide/runtime';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
@@ -113,11 +113,17 @@
   );
 
   const tabLabel = scienceTabLabel;
+  let pageTitleText = $derived(
+    seoPageTitle(section.seo_title, pageTitle(section.title, ogTitle(m.science_page_title()))),
+  );
 </script>
 
 <svelte:head>
-  <title>{pageTitle(section.title, ogTitle(m.science_page_title()))}</title>
-  <meta name="description" content={metaDescription(section.intro_sentence)} />
+  <title>{pageTitleText}</title>
+  <meta
+    name="description"
+    content={seoDescription(section.seo_description, section.intro_sentence)}
+  />
 </svelte:head>
 <JsonLd data={jsonLd} />
 

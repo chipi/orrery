@@ -1,6 +1,8 @@
 {
   "name": "Pioneer",
   "tagline": "Before Voyager could tour the outer planets, someone had to prove the road was survivable. Two small probes went first — through the asteroid belt, past Jupiter, and out.",
+  "seo_title": "Pioneer 10 and 11: Probes Through the Asteroid Belt",
+  "seo_description": "NASA's Pioneer 10 and 11 (1972, 1973) proved the road to the outer planets was survivable: through the asteroid belt, past Jupiter, and out.",
   "the_land": [
     { "type": "prose", "md": "In the early 1970s the outer solar system was not just unexplored; it was thought to be dangerous to reach. Between Mars and Jupiter lay the asteroid belt, and no one knew whether a spacecraft could cross it without being destroyed by debris. Beyond it, Jupiter's radiation belts were understood to be lethal to electronics. The giant planets were worth visiting, but the path to them ran through two hazards no machine had ever faced." },
     { "type": "prose", "md": "The Pioneers were the scouts sent to find out. Small, spin-stabilised, and comparatively simple, Pioneer 10 and 11 were built to go first — to test whether the belt could be crossed and whether a probe could survive a close pass by Jupiter — so that the far more expensive Voyagers, already being planned, would know what they were flying into." }

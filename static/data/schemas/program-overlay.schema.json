@@ -13,6 +13,8 @@
       "minLength": 1,
       "description": "One-line hook, shown on the index card + hero (the best_known_for)."
     },
+    "seo_title": { "type": "string", "minLength": 1, "maxLength": 60, "description": "Optional results-page <title> (before the Orrery suffix); the page falls back to its usual title when absent." },
+    "seo_description": { "type": "string", "minLength": 1, "maxLength": 160, "description": "Optional meta description; the page falls back to its usual description when absent." },
     "the_land": { "$ref": "#/$defs/body", "description": "Where the world + technology stood; why the program existed. Neutral, honest." },
     "goals": { "$ref": "#/$defs/body", "description": "What the agency set out to do — objectives + hoped-for outcomes." },
     "outcome": { "$ref": "#/$defs/body", "description": "What came of it — met, missed, cancelled, open. Stated, not graded." },

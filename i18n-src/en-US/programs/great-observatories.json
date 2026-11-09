@@ -1,6 +1,8 @@
 {
   "name": "The Great Observatories",
   "tagline": "NASA's plan to see the whole universe — four flagship telescopes, one for each kind of light, and the lineage of great space eyes that followed.",
+  "seo_title": "NASA Great Observatories: Hubble, Chandra, Spitzer",
+  "seo_description": "NASA's plan to see the whole universe: four flagship space telescopes, one per kind of light. Hubble (1990), Compton (1991), Chandra (1999), Spitzer (2003).",
   "the_land": [
     { "type": "prose", "md": "The light the universe gives off is not just the visible colours our eyes evolved to catch. The hottest, most violent objects shine in X-rays and gamma rays; the coldest, dustiest, most distant ones glow only in the infrared. To see the cosmos whole, you need eyes for every band of the spectrum — and, crucially, you need them above the atmosphere, which absorbs most of those wavelengths before they reach the ground. In the 1980s NASA set out to build exactly that: a coordinated set of flagship space telescopes, each optimized for a different slice of light." },
     { "type": "prose", "md": "The result was the Great Observatories program — four spacecraft, deliberately conceived as a family: Hubble for visible and ultraviolet, Compton for gamma rays, Chandra for X-rays, and Spitzer for the infrared. Between roughly 1990 and 2003 all four reached orbit, and for the first time humanity could look at the same object across the entire electromagnetic spectrum at once. Officially, those four are 'the Great Observatories.' But from our vantage decades later, they read as the opening chapter of a single, continuing NASA project: the building of ever-greater eyes in space." }

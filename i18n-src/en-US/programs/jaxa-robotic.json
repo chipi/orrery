@@ -1,6 +1,8 @@
 {
   "name": "JAXA — Moon and Planets",
   "tagline": "Japan's ingenious, resource-light exploration of the Moon and planets — famous for missions that fail halfway and get rescued by cleverness.",
+  "seo_title": "JAXA Moon and Planet Missions: Kaguya to SLIM",
+  "seo_description": "Japan's resource-light exploration of the Moon and planets, famous for missions rescued by cleverness: Kaguya (2007), Akatsuki (2010), SLIM Moon lander (2023).",
   "the_land": [
     { "type": "prose", "md": "Japan does robotic exploration differently from the superpowers. It flies fewer missions, on smaller budgets, aimed at narrow and often audacious goals — and it has a distinct habit of turning near-catastrophe into triumph through ingenuity. Where NASA builds flagships with deep redundancy and ESA flies large international observatories, JAXA's ISAS institute tends to send one clever, lightly-built spacecraft to do one hard thing, and then improvise brilliantly when something breaks. It usually does break; the missions are famous for being saved." },
     { "type": "prose", "md": "This is the counterpart to Hayabusa's asteroid work: JAXA's exploration of the Moon and the planets. It includes Kaguya, the largest lunar mission since Apollo; Akatsuki, a Venus orbiter that failed at arrival and was recovered five years later; and SLIM, a small lander that touched the Moon with a precision no one had achieved and then kept working upside down. Together they define a national style — lean, focused, and relentlessly resourceful." }

@@ -13,7 +13,7 @@
   import { localizeHref, getLocale } from '$lib/paraglide/runtime';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
-  import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
+  import { canonicalUrl, pageTitle, seoDescription, seoPageTitle } from '$lib/seo';
   import { essayInlineHtml, essayPlainText } from '$lib/essay-md';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
@@ -70,8 +70,8 @@
 </script>
 
 <svelte:head>
-  <title>{pageTitle(essay.title, m.essays_title())}</title>
-  <meta name="description" content={metaDescription(dekText)} />
+  <title>{seoPageTitle(essay.seo_title, pageTitle(essay.title, m.essays_title()))}</title>
+  <meta name="description" content={seoDescription(essay.seo_description, dekText)} />
 </svelte:head>
 <JsonLd data={jsonLd} />
 

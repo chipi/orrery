@@ -1,6 +1,8 @@
 {
   "title": "Mars surface imagery — how the layers work",
   "intro_sentence": "Zoom from the whole planet down to a rover's wheel tracks and you are looking at six layers of imagery from orbiters and rovers, stacked on top of each other and swapped in as you get closer.",
+  "seo_title": "Mars Surface Imagery: How the Map Layers Work |||",
+  "seo_description": "Mars Surface Imagery: How the Map Layers Work |||",
   "narrative_101": [
     "No single camera can show you both the whole of Mars and a rover. A view of the full globe resolves several kilometres per pixel; the sharpest camera in orbit resolves a quarter of a metre but sees a strip only a few kilometres wide. So the map keeps several layers, each sharper and smaller than the one below, and shows whichever one fits the view, the same idea online maps use on Earth.",
     "Think of it as a stack of slices hovering one above the other. The bottom slice is one image of the whole planet. Each slice above covers less ground in more detail. At the very top you are standing on the surface, looking through the rover's own cameras.",

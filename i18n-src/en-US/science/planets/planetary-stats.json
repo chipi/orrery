@@ -1,6 +1,8 @@
 {
   "title": "Planetary Stats",
   "intro_sentence": "How different is Jupiter from Earth, really? Eleven times the diameter. Two and a half times the surface gravity.",
+  "seo_title": "Planet Facts: Size, Gravity, Day and Year Compared |||",
+  "seo_description": "Planet Facts: Size, Gravity, Day and Year Compared |||",
   "narrative_101": [
     "When you hear \"Jupiter is the biggest planet\", that's roughly true — but \"big\" hides multiple separate facts. Jupiter is 11× Earth's diameter, 318× Earth's mass, but only 2.53× Earth's surface gravity. Why doesn't 318× mass mean 318× gravity? Because gravity at the surface depends on both mass and the distance from the centre — and Jupiter's surface is 11× farther out than Earth's. The two effects almost cancel. Jupiter is huge, but standing on its 1-bar level (the conventional \"surface\" for a gas giant) you'd weigh 2.5× what you weigh on Earth — not 300×.",
     "Mars is the opposite trade-off. Mars has only 11% of Earth's mass, but it has 53% of Earth's diameter. That makes its surface gravity 38% of Earth's — much higher than the mass ratio alone would predict, because you're closer to a smaller centre. The relationship that makes both cases sensible: surface gravity scales as mass / radius². For a planet of average density, gravity scales linearly with radius. Saturn (9.14× Earth's diameter) has surface gravity almost equal to Earth's (1.07 g) because Saturn is much less dense than Earth — Saturn is mostly hydrogen-helium, less than 0.7× water's density.",

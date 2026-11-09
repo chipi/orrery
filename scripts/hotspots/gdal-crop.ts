@@ -62,6 +62,10 @@ export interface CropInput {
    *  POST_CROP_BLACK_FRAC, 0.4). Route tiles pass a stricter value so a
    *  frame edge cutting through the tile sends the picker to the next scene. */
   maxBlackFrac?: number;
+  /** Window height in pixels when it differs from `cropSize` (the width).
+   *  Only for rasters that are not warped north-up; the output is
+   *  cropSize x cropHeight. */
+  cropHeight?: number;
 }
 
 export interface CropResult {
@@ -131,6 +135,7 @@ const DOWNLOAD_MAX_ATTEMPTS = 3;
  */
 export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropResult> {
   const cropSize = input.cropSize ?? 2048;
+  const cropHeight = input.cropHeight ?? cropSize;
   const jpegQuality = input.jpegQuality ?? 88;
 
   if (!input.sourceUrl && !input.localRasterPath) {
@@ -194,10 +199,10 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
     // smaller than 2048 (we accept it and pad rather than fail).
     const half = Math.floor(cropSize / 2);
     let left = Math.round(px - half);
-    let top = Math.round(py - half);
+    let top = Math.round(py - Math.floor(cropHeight / 2));
     if (
       input.requireCentered &&
-      (left < 0 || top < 0 || left + cropSize > width || top + cropSize > height)
+      (left < 0 || top < 0 || left + cropSize > width || top + cropHeight > height)
     ) {
       throw new CropError(
         'TARGET_NEAR_EDGE',
@@ -205,9 +210,9 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
       );
     }
     left = Math.max(0, Math.min(width - cropSize, left));
-    top = Math.max(0, Math.min(height - cropSize, top));
+    top = Math.max(0, Math.min(height - cropHeight, top));
     const actualW = Math.min(cropSize, width - left);
-    const actualH = Math.min(cropSize, height - top);
+    const actualH = Math.min(cropHeight, height - top);
 
     // Read the window for each band. LROC NAC + HiRISE single-band
     // greyscale → 1 band. HiRISE RGB → 3 bands. Future colour

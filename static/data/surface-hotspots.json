@@ -1257,6 +1257,10 @@
             "kind": "unphotographed"
           }
         ]
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 285,
+        "east": 5
       }
     },
     "mars-pathfinder": {
@@ -1408,6 +1412,10 @@
         "lat_max": 1.4308,
         "lon_min": -8.9127,
         "lon_max": -2.1473
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 229,
+        "east": 110
       }
     },
     "curiosity": {
@@ -1635,7 +1643,11 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/phoenix/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 255,
+        "east": -40
+      }
     },
     "insight": {
       "hotspot_tier_max": 3,
@@ -2474,6 +2486,10 @@
         "lat_max": 1.3108,
         "lon_min": -9.593,
         "lon_max": -2.827
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 220,
+        "east": 160
       }
     },
     "beagle2": {

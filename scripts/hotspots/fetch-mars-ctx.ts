@@ -41,6 +41,7 @@ interface SurfaceHotspotsSidecar {
     {
       hotspot_tier_max?: number;
       hotspot_tier2_regional_source?: string;
+      hotspot_tier2_ctx_shift_m?: { north: number; east: number };
       location_uncertainty_m?: number;
     }
   >;
@@ -141,6 +142,24 @@ export function eastWestSourcePx(cropPx: number, latDeg: number): number {
   return Math.ceil(cropPx / Math.cos((latDeg * Math.PI) / 180));
 }
 
+/**
+ * Where to cut the CTX so it lines up with the HiRISE detail patch drawn at the
+ * site. The detail patch's ground sits `hotspot_tier2_ctx_shift_m` metres
+ * north / east of the site point in the CTX mosaic's own georeference (feature
+ * matched), so the window is cut that much north / east of the nominal centre:
+ * the CTX is then drawn shifted onto the patch and the site point stays the
+ * published or measured coordinate.
+ */
+export function ctxShiftedCentre(
+  centre: { lat: number; lon: number },
+  shift?: { north: number; east: number },
+): { lat: number; lon: number } {
+  if (!shift) return centre;
+  const mPerDeg = (Math.PI / 180) * MARS_RADIUS_M;
+  const lat = centre.lat + shift.north / mPerDeg;
+  return { lat, lon: centre.lon + shift.east / (mPerDeg * Math.cos((lat * Math.PI) / 180)) };
+}
+
 export interface MarsCtxFetchResult {
   siteId: string;
   /** Source pixels cropped (ground = cropPx × resolutionMPerPx). */
@@ -232,13 +251,20 @@ export async function fetchMarsCtxHotspots(
 }
 
 async function fetchOneCtx(
-  hotspot: { id: string; hotspot_tier2_regional_source?: string },
+  hotspot: {
+    id: string;
+    hotspot_tier2_regional_source?: string;
+    hotspot_tier2_ctx_shift_m?: { north: number; east: number };
+  },
   site: Required<MarsSite>,
   input: FetchMarsCtxHotspotsInput,
 ): Promise<MarsCtxFetchResult | null> {
   // #360: centre the regional CTX on the rover's traverse midpoint (not the
   // landing site) so the whole drive fits in the 15.4 km context patch.
-  const centre = cropCentre(hotspot.id, site.lat, site.lon);
+  const centre = ctxShiftedCentre(
+    cropCentre(hotspot.id, site.lat, site.lon),
+    hotspot.hotspot_tier2_ctx_shift_m,
+  );
   const tileName = tileNameForLatLon(centre.lat, centre.lon);
   const sourceUrl = tileUrlForName(tileName);
   const outputPath = `static${hotspot.hotspot_tier2_regional_source}`;
@@ -257,6 +283,7 @@ async function fetchOneCtx(
       targetLon: centre.lon,
       outputPath: widePath,
       cropSize: srcPx,
+      cropHeight: cropPx,
       jpegQuality: 95,
       requireCentered: true,
     });
@@ -268,7 +295,7 @@ async function fetchOneCtx(
       await sharp(wide)
         .extract({
           left: 0,
-          top: Math.floor(((wideMeta.height ?? srcPx) - cropPx) / 2),
+          top: 0,
           width: wideMeta.width ?? srcPx,
           height: cropPx,
         })

@@ -201,6 +201,12 @@ export interface SurfaceSite {
    */
   hotspot_tier2_frame_shift_m?: { north: number; east: number };
   /**
+   * Mars: the HiRISE detail patch's ground sits this far north / east of the
+   * site point in the CTX mosaic's georeference; fetch-mars-ctx.ts cuts the CTX
+   * that far off-centre so it registers with the patch (site point unchanged).
+   */
+  hotspot_tier2_ctx_shift_m?: { north: number; east: number };
+  /**
    * Path to the equirectangular Tier 3 ground-view panorama for
    * this site (V2 / #118). PD-NASA: Apollo Lunar Surface Journal
    * panoramas for Moon, NASA/JPL-Caltech/MSSS Mastcam-Z for Mars.

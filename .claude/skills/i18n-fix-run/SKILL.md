@@ -55,7 +55,13 @@ then re-translate the kept fields with step 2.
 4. UI strings touched: `npx vitest run scripts/i18n-tools/ui-label-audit.test.ts`. A
    fixed baseline entry fails it too — prune with
    `node scripts/i18n-tools/ui-label-audit.mjs all --prune`.
-5. Commit with the numbers (fields, failures, sample verdicts) and what was NOT checked.
+5. English source edited (or added)? `node scripts/i18n-tools/stale-overlays.mjs --manifest=check`
+   lists the strings whose English differs from the one the translations were checked
+   against (the `validate-data` gate `check-i18n-en-source`). Re-check each locale of every
+   listed string (`--fields` shows what it had), fix with `apply-edits.mjs`, then
+   `--manifest=write` and commit the manifest with the translations. Never refresh it
+   before the re-check.
+6. Commit with the numbers (fields, failures, sample verdicts) and what was NOT checked.
 
 UI runs (`translate-v07-ui.mjs`, `retranslate-fields.mjs` on `messages`) send
 `UI_LABEL_RULES` and the meanings in `ui-senses.json` with each key, and refuse an

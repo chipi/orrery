@@ -93,6 +93,14 @@ const TASKS: Task[] = [
     cmd: 'node',
     args: ['scripts/i18n-tools/dropped-sentences.mjs', 'tree=all', '--gate'],
   },
+  // An English string edited (or added) after the translations were last checked against it. CI has
+  // no git history, so the English each translation was made from is a committed manifest of hashes;
+  // after re-checking the translations of what this lists, refresh it (stale-overlays.mjs --manifest=write).
+  {
+    name: 'check-i18n-en-source',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/stale-overlays.mjs', '--manifest=check'],
+  },
   // Translation coverage: a missing file or key, an empty string, placeholder text, a type or length
   // mismatch, or a string left identical to the English — overlays and UI messages, every locale.
   // A string that is right as it is (a name kept in English) is in coverage-reviewed.json.

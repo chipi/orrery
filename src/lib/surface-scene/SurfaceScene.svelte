@@ -177,7 +177,7 @@
   import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
   import { annotationUi } from '$lib/surface-scene/annotation-ui.svelte';
   import SiteAnnotationList from '$lib/surface-scene/SiteAnnotationList.svelte';
-  import type { PlacedRing } from '$lib/surface-scene/annotation-rings';
+  import type { PlacedRing, Rect as RingRect } from '$lib/surface-scene/annotation-rings';
   import { routePatchFlatTarget } from '$lib/surface-scene/flat-patch-extent';
   import {
     createSkybox,
@@ -794,7 +794,7 @@
   let rings3d: PlacedRing[] = $state([]);
   let ringsHost: HTMLDivElement | undefined = $state();
   let ringsW = $state(0);
-  let ringBlocked: Rect[] = $state([]);
+  let ringBlocked: RingRect[] = $state([]);
   let ringsH = $state(0);
   let flatPatchActive = $derived(flatPatchPhase !== 'hidden');
   // #360: when "zoom all the way" lands on an along-route HiRISE patch under
@@ -4263,7 +4263,7 @@
               );
             if (moved) rings3d = next;
             // Traverse stop pills are WebGL sprites: tell the HTML ring labels where they sit.
-            const pills: Rect[] = [];
+            const pills: RingRect[] = [];
             if (next.length > 0) {
               for (const tl of traverseLines) {
                 for (const lb of tl.stopLabels ?? []) {

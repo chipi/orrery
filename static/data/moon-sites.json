@@ -519,8 +519,8 @@
     "nation": "China",
     "year": 2013,
     "landing_date": "2013-12-14",
-    "lat": 44.12,
-    "lon": -19.51,
+    "lat": 44.1214,
+    "lon": -19.5116,
     "region_bounds": {
       "lat_min": 44.11,
       "lat_max": 44.13,
@@ -1183,8 +1183,8 @@
     "nation": "Israel",
     "year": 2019,
     "landing_date": "2019-04-11",
-    "lat": 32.594,
-    "lon": 19.348,
+    "lat": 32.5956,
+    "lon": 19.3496,
     "region_bounds": {
       "lat_min": 32.58,
       "lat_max": 32.61,

@@ -1124,6 +1124,7 @@
     right: 230px;
     z-index: 5;
     display: flex;
+    direction: ltr;
     align-items: center;
     gap: 8px;
     pointer-events: none;
@@ -1133,6 +1134,7 @@
     flex: none;
   }
   .hud-limit-chip {
+    unicode-bidi: plaintext;
     min-width: 0;
     max-width: 380px;
     padding: 6px 10px;
@@ -1148,6 +1150,10 @@
   @media (hover: hover) and (pointer: fine) {
     .hud-layers {
       top: 62px;
+    }
+    /* The site footer sits bottom-left in rtl (the panel keeps the right): the bar rides above it. */
+    :global([dir='rtl']) .hud-scale-row {
+      bottom: 44px;
     }
   }
   @media (hover: none), (pointer: coarse) {

@@ -170,6 +170,7 @@ export interface CislunarProfile {
   };
   return?: { type?: CislunarReturnType; dv_kms?: number };
   waypoints_km?: Array<[number, number, number, number]>;
+  waypoints_source?: string;
 }
 
 export interface FlightParams {

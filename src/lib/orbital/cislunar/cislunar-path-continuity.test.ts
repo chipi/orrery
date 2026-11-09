@@ -141,3 +141,29 @@ describe('cislunar waypoint trajectories — no long straight chord is drawn', (
     });
   }
 });
+
+// The Moon is 384,400 km away; Earth-orbit raising and the stay at the Moon stay inside this. The
+// old Chandrayaan-3 waypoints held the craft at 760,637 km for 40 days.
+const MAX_CRAFT_KM = 420_000;
+
+describe('cislunar waypoint trajectories — the craft stays near the Earth-Moon system', () => {
+  for (const m of missions) {
+    it(`${m.id}: no authored waypoint is farther than ${MAX_CRAFT_KM} km from Earth`, () => {
+      const far = m.flight!.cislunar_profile!.waypoints_km!.filter(
+        ([, x, y, z]) => Math.hypot(x, y, z) > MAX_CRAFT_KM,
+      );
+      expect(far.length, `${m.id}: ${far.length} waypoints beyond ${MAX_CRAFT_KM} km`).toBe(0);
+    });
+  }
+});
+
+describe('cislunar waypoint trajectories — the craft is never inside the Earth', () => {
+  for (const m of missions) {
+    it(`${m.id}: no authored waypoint is closer than one Earth radius to Earth's centre`, () => {
+      const inside = m.flight!.cislunar_profile!.waypoints_km!.filter(
+        ([, x, y, z]) => Math.hypot(x, y, z) < 6378,
+      );
+      expect(inside.length, `${m.id}: ${inside.length} waypoints inside the Earth`).toBe(0);
+    });
+  }
+});

@@ -550,6 +550,10 @@
                   "type": "number"
                 }
               }
+            },
+            "waypoints_source": {
+              "type": "string",
+              "description": "Where an authored waypoints_km set comes from (published orbit table, report, date). Present when the waypoints were built from published figures rather than resampled from the analytic profile."
             }
           }
         },

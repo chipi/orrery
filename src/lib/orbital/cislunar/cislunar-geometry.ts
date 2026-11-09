@@ -60,6 +60,7 @@ export interface CislunarProfile {
   };
   return?: { type?: 'none' | 'tei_direct' | 'tei_lor'; dv_kms?: number };
   waypoints_km?: Array<[number, number, number, number]>;
+  waypoints_source?: string;
 }
 
 export interface BuildCislunarOptions {

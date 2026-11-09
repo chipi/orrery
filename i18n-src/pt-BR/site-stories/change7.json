@@ -1,0 +1,38 @@
+{
+  "intro": "A Chang'e 7 é o batedor robótico da China para o polo sul da Lua, antes do pouso tripulado que a China planeja. Um único lançamento leva um orbitador e um módulo de pouso e, no módulo, um rover e uma pequena sonda saltadora projetada para pular para dentro de uma cratera em sombra permanente, aonde a luz do Sol nunca chega e onde o gelo de água pode ter se conservado por bilhões de anos. O alvo noticiado é uma crista ao lado da cratera Shackleton, quase no polo. O lançamento, previsto para o fim de agosto de 2026, foi cancelado em 23 de agosto: a missão “não atende às condições de lançamento”, disse a China, sem dar um motivo específico nem nova data.",
+  "chapters": [
+    {
+      "id": "plan",
+      "title": "O plano",
+      "subtitle": "Um orbitador, um módulo de pouso, um rover e uma sonda saltadora",
+      "images": [
+        {
+          "src": "/images/moon-sites/change7/01.webp",
+          "caption": "Concepção artística da Chang'e 7 no polo sul: o rover (à esquerda), o módulo de pouso com seu alto painel solar e a pequena sonda saltadora (à direita). O orbitador fica no alto, mapeando a região polar e apoiando os veículos no solo; o satélite chinês Queqiao-2 retransmite os sinais deles para a Terra. CNSA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "O lançamento",
+      "subtitle": "Um Long March 5 a partir de Wenchang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/long-march-5/03.webp",
+          "caption": "Um Long March 5 em seu prédio de montagem em Wenchang, na ilha de Hainan. A Chang'e 7 deve voar nesse foguete pesado a partir da plataforma 101 — o mesmo tipo de foguete e a mesma plataforma que lançaram a Chang'e 5 e a Chang'e 6."
+        }
+      ]
+    },
+    {
+      "id": "lineage",
+      "title": "O que veio antes",
+      "subtitle": "Do lado oculto ao polo",
+      "images": [
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "O Yutu-2, o rover que a Chang'e 4 pousou no lado oculto da Lua em janeiro de 2019 — o primeiro pouso suave ali. A Chang'e 7 é o próximo passo: ir ao polo e às crateras em sombra onde o gelo pode estar. Depois dela, a Chang'e 8 deve testar a construção com os próprios materiais da Lua, para a Estação Internacional de Pesquisa Lunar que a China lidera perto do polo, com uma estação básica prevista para por volta de 2035."
+        }
+      ]
+    }
+  ]
+}

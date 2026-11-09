@@ -1,0 +1,38 @@
+{
+  "intro": "Chang'e 7 ist Chinas robotischer Kundschafter für den Mondsüdpol, vor der geplanten bemannten Landung. Ein Start bringt einen Orbiter und einen Lander ins All, und auf dem Lander einen Rover sowie eine kleine Hüpfsonde, die in einen ständig beschatteten Krater springen soll – dorthin, wo nie Sonnenlicht hinfällt und Wassereis womöglich Milliarden Jahre überdauert hat. Das berichtete Ziel ist ein Höhenrücken neben dem Shackleton-Krater, fast direkt am Pol. Der für Ende August 2026 vorgesehene Start wurde am 23. August abgesagt: Die Mission „erfüllt die Startbedingungen nicht“, so China, ohne einen konkreten Grund oder einen neuen Termin zu nennen.",
+  "chapters": [
+    {
+      "id": "plan",
+      "title": "Der Plan",
+      "subtitle": "Ein Orbiter, ein Lander, ein Rover und eine Hüpfsonde",
+      "images": [
+        {
+          "src": "/images/moon-sites/change7/01.webp",
+          "caption": "Künstlerische Darstellung von Chang'e 7 am Südpol: der Rover (links), der Lander mit seinem hohen Solarpaneel und die kleine Hüpfsonde (rechts). Der Orbiter bleibt darüber, kartiert die Polregion und unterstützt die Fahrzeuge am Boden; Chinas Satellit Queqiao-2 leitet ihre Signale zur Erde weiter. CNSA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Der Start",
+      "subtitle": "Eine Long March 5 von Wenchang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/long-march-5/03.webp",
+          "caption": "Eine Long March 5 in der Montagehalle in Wenchang auf der Insel Hainan. Chang'e 7 soll mit dieser Schwerlastrakete von Startrampe 101 abheben – dem gleichen Raketentyp und der gleichen Rampe, von der aus Chang'e 5 und Chang'e 6 gestartet sind."
+        }
+      ]
+    },
+    {
+      "id": "lineage",
+      "title": "Was vorausging",
+      "subtitle": "Von der Mondrückseite zum Pol",
+      "images": [
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Yutu-2, der Rover, den Chang'e 4 im Januar 2019 auf der Mondrückseite absetzte – die erste weiche Landung dort. Chang'e 7 ist der nächste Schritt: zum Pol und in die beschatteten Krater, wo das Eis liegen könnte. Danach soll Chang'e 8 erproben, mit dem Material des Mondes selbst zu bauen – für die Internationale Mondforschungsstation, die China nahe dem Pol anführt und von der bis etwa 2035 eine Basisstation geplant ist."
+        }
+      ]
+    }
+  ]
+}

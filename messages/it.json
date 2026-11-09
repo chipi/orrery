@@ -3710,5 +3710,6 @@
   "surface_card_expand_aria": "Espandi i dettagli del sito",
   "surface_true_scale_short": "Vista del suolo in scala reale · immagini orbitali",
   "colophon_section_mission_trajectories": "Grafici delle traiettorie delle missioni",
-  "colophon_mission_trajectories_note": "Uno schema per missione, disegnato dal codice con lo stesso modello di traiettoria che vola il simulatore /fly; non è generato con IA. I tour del sistema esterno sono compressi radialmente oltre 1,6 UA e le orbite terrestri sono esagerate per renderle leggibili; la didascalia lo dice. Una missione senza dati orbitali riceve un segnaposto etichettato, mai una traiettoria inventata. Le etichette nelle immagini sono in inglese."
+  "colophon_mission_trajectories_note": "Uno schema per missione, disegnato dal codice con lo stesso modello di traiettoria che vola il simulatore /fly; non è generato con IA. I tour del sistema esterno sono compressi radialmente oltre 1,6 UA e le orbite terrestri sono esagerate per renderle leggibili; la didascalia lo dice. Una missione senza dati orbitali riceve un segnaposto etichettato, mai una traiettoria inventata. Le etichette nelle immagini sono in inglese.",
+  "layout_footer_more": "Altro"
 }

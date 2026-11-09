@@ -3710,5 +3710,6 @@
   "surface_card_expand_aria": "Déplier les détails du site",
   "surface_true_scale_short": "Vue du sol à l'échelle réelle · images orbitales",
   "colophon_section_mission_trajectories": "Tracés de trajectoire des missions",
-  "colophon_mission_trajectories_note": "Un schéma par mission, tracé par code à partir du même modèle de trajectoire que celui que vole le simulateur /fly — pas généré par IA. Les tournées du système externe sont comprimées radialement au-delà de 1,6 UA et les orbites terrestres sont exagérées pour rester lisibles ; la légende le précise. Une mission sans données d’orbite reçoit un espace réservé étiqueté, jamais une trajectoire inventée. Les étiquettes des images sont en anglais."
+  "colophon_mission_trajectories_note": "Un schéma par mission, tracé par code à partir du même modèle de trajectoire que celui que vole le simulateur /fly — pas généré par IA. Les tournées du système externe sont comprimées radialement au-delà de 1,6 UA et les orbites terrestres sont exagérées pour rester lisibles ; la légende le précise. Une mission sans données d’orbite reçoit un espace réservé étiqueté, jamais une trajectoire inventée. Les étiquettes des images sont en anglais.",
+  "layout_footer_more": "Plus"
 }

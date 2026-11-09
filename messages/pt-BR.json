@@ -3710,5 +3710,6 @@
   "surface_card_expand_aria": "Expandir os detalhes do local",
   "surface_true_scale_short": "Vista do solo em escala real · imagens orbitais",
   "colophon_section_mission_trajectories": "Gráficos de trajetória das missões",
-  "colophon_mission_trajectories_note": "Um esquema por missão, desenhado em código com o mesmo modelo de trajetória que o simulador /fly voa; não é gerado por IA. Os roteiros pelo sistema solar externo são comprimidos radialmente além de 1,6 UA e as órbitas terrestres são exageradas para ficarem legíveis; a legenda informa isso. Uma missão sem dados de órbita recebe um marcador rotulado, nunca uma trajetória inventada. Os rótulos nas imagens estão em inglês."
+  "colophon_mission_trajectories_note": "Um esquema por missão, desenhado em código com o mesmo modelo de trajetória que o simulador /fly voa; não é gerado por IA. Os roteiros pelo sistema solar externo são comprimidos radialmente além de 1,6 UA e as órbitas terrestres são exageradas para ficarem legíveis; a legenda informa isso. Uma missão sem dados de órbita recebe um marcador rotulado, nunca uma trajetória inventada. Os rótulos nas imagens estão em inglês.",
+  "layout_footer_more": "Mais"
 }

@@ -57,6 +57,27 @@
   // Global command palette (RFC-031 S5) — Cmd/Ctrl-K jump-to-anything. Route
   // destinations; labels reuse the nav strings so they stay localised. The
   // TV/keyboard escape hatch that beats D-pad-ing across long lists.
+  let footerMoreOpen = $state(false);
+  // The full link strip is ~720 px wide: compact (More button) below 1000 px, and
+  // below 1450 px on /explore, where the bottom time dock (to 542 px) shares the edge.
+  let narrow1000 = $state(false);
+  let narrowExplore = $state(false);
+
+  onMount(() => {
+    const q1 = window.matchMedia('(max-width: 1000px)');
+    const q2 = window.matchMedia('(max-width: 1450px)');
+    const sync = () => {
+      narrow1000 = q1.matches;
+      narrowExplore = q2.matches;
+    };
+    sync();
+    q1.addEventListener('change', sync);
+    q2.addEventListener('change', sync);
+    return () => {
+      q1.removeEventListener('change', sync);
+      q2.removeEventListener('change', sync);
+    };
+  });
   let commandOpen = $state(false);
   let commandItems = $derived([
     { id: 'home', label: m.nav_home(), href: '/', keywords: 'landing start' },
@@ -101,6 +122,7 @@
   // noindex instead (isMirrorBuild).
   const mirrorBuild = isMirrorBuild(base);
   let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
+  let footerCompact = $derived(narrow1000 || (narrowExplore && seoRoute === '/explore'));
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
   // Card share stubs (#547, /c/*) and the OAuth callback are en-US-only pages
   // prerendered at the bare path that set their own noindex — advertising 14
@@ -542,28 +564,44 @@
   <footer
     class="site-footer"
     class:immersive-hidden={immersiveMode.active}
+    class:more-open={footerMoreOpen}
     aria-label={m.footer_aria()}
   >
-    <nav class="footer-menu" aria-label={m.footer_links_aria()}>
-      <a class="footer-link" href={localHref(`/explore/hub`)}>{m.nav_group_explore()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/worlds`)}>{m.nav_group_worlds()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/catalog`)}>{m.nav_catalog()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/learn`)}>{m.nav_learn()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/credits`)}>{m.layout_footer_credits()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/colophon`)}>{m.layout_footer_colophon()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/library`)}>{m.layout_footer_library()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href={localHref(`/science/glossary`)}>{m.layout_footer_glossary()}</a>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <!-- ABOUT is a hover-only group: not itself a link, just a label.
+    <nav
+      class="footer-menu"
+      class:compact={footerCompact}
+      class:more-open={footerMoreOpen}
+      aria-label={m.footer_links_aria()}
+      onkeydown={(e) => {
+        if (e.key === 'Escape') footerMoreOpen = false;
+      }}
+      onfocusout={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) footerMoreOpen = false;
+      }}
+    >
+      <div class="footer-links" id="footer-links">
+        <a class="footer-link" href={localHref(`/explore/hub`)}>{m.nav_group_explore()}</a>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a class="footer-link" href={localHref(`/worlds`)}>{m.nav_group_worlds()}</a>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a class="footer-link" href={localHref(`/catalog`)}>{m.nav_catalog()}</a>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a class="footer-link" href={localHref(`/learn`)}>{m.nav_learn()}</a>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a class="footer-link" href="{base}{localizeHref('/gallery')}"
+          >{m.layout_footer_gallery()}</a
+        >
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a class="footer-link" href={localHref(`/credits`)}>{m.layout_footer_credits()}</a>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a class="footer-link" href={localHref(`/colophon`)}>{m.layout_footer_colophon()}</a>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a class="footer-link" href={localHref(`/library`)}>{m.layout_footer_library()}</a>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a class="footer-link" href={localHref(`/science/glossary`)}>{m.layout_footer_glossary()}</a
+        >
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <!-- ABOUT is a hover-only group: not itself a link, just a label.
            The submenu (LICENSE + README) sits in a popover ABOVE the
            label; reveals on hover/focus-within (2026-06-15 user
            direction: "let's add about section in footer and move
@@ -573,44 +611,52 @@
            does the same what those options do now"). Designed to
            grow as more about-style items land (imprint, privacy, …)
            without re-flowing the inline footer strip. -->
-      <span class="footer-about-group">
-        <span class="footer-about-label" aria-haspopup="menu">{m.layout_footer_about()}</span>
-        <ul class="footer-about-menu" role="menu" aria-label={m.footer_about_aria()}>
-          <li role="none">
-            <a class="footer-link footer-link-extra" href={localHref(`/privacy`)} role="menuitem"
-              >{m.layout_footer_privacy()}</a
-            >
-          </li>
-          <li role="none">
-            <a
-              class="footer-link footer-link-extra"
-              href="https://github.com/chipi/orrery/blob/main/LICENSE"
-              target="_blank"
-              rel="noopener noreferrer external"
-              hreflang="en"
-              role="menuitem">{m.layout_footer_license()}</a
-            >
-          </li>
-          <li role="none">
-            <a
-              class="footer-link footer-link-extra"
-              href="https://github.com/chipi/orrery#readme"
-              target="_blank"
-              rel="noopener noreferrer external"
-              hreflang="en"
-              role="menuitem">{m.layout_footer_readme()}</a
-            >
-          </li>
-        </ul>
-      </span>
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <a
-        class="footer-link footer-version"
-        href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md"
-        target="_blank"
-        rel="noopener noreferrer external"
-        title="{m.version_info_title()}: v{displayVersion} · {__BUILD_DATE__}"
-        hreflang="en">v{displayVersion}</a
+        <span class="footer-about-group">
+          <span class="footer-about-label" aria-haspopup="menu">{m.layout_footer_about()}</span>
+          <ul class="footer-about-menu" role="menu" aria-label={m.footer_about_aria()}>
+            <li role="none">
+              <a class="footer-link footer-link-extra" href={localHref(`/privacy`)} role="menuitem"
+                >{m.layout_footer_privacy()}</a
+              >
+            </li>
+            <li role="none">
+              <a
+                class="footer-link footer-link-extra"
+                href="https://github.com/chipi/orrery/blob/main/LICENSE"
+                target="_blank"
+                rel="noopener noreferrer external"
+                hreflang="en"
+                role="menuitem">{m.layout_footer_license()}</a
+              >
+            </li>
+            <li role="none">
+              <a
+                class="footer-link footer-link-extra"
+                href="https://github.com/chipi/orrery#readme"
+                target="_blank"
+                rel="noopener noreferrer external"
+                hreflang="en"
+                role="menuitem">{m.layout_footer_readme()}</a
+              >
+            </li>
+          </ul>
+        </span>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <a
+          class="footer-link footer-version"
+          href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md"
+          target="_blank"
+          rel="noopener noreferrer external"
+          title="{m.version_info_title()}: v{displayVersion} · {__BUILD_DATE__}"
+          hreflang="en">v{displayVersion}</a
+        >
+      </div>
+      <button
+        type="button"
+        class="footer-more-btn"
+        aria-expanded={footerMoreOpen}
+        aria-controls="footer-links"
+        onclick={() => (footerMoreOpen = !footerMoreOpen)}>{m.layout_footer_more()}</button
       >
     </nav>
   </footer>
@@ -674,6 +720,10 @@
     z-index: 35;
     pointer-events: none;
   }
+  /* An open More popover must out-stack the explore time dock (z-index 40). */
+  .site-footer.more-open {
+    z-index: 60;
+  }
   /* Touch: the floating footer is hidden entirely — its links move into the
      nav hamburger drawer as a bottom section (see Nav.svelte). This frees the
      whole bottom edge for each route's drawer buttons instead of the strip
@@ -692,27 +742,6 @@
     border-radius: 4px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-  }
-  /* Non-touch windows narrower than the strip: it wraps (all links stay
-     reachable). Up to 600 px it is two compact lines kept under 44 px so it
-     fits in the 50 px band below the bottom time dock; from 601 px a dock
-     on screen sets --footer-dock-right and the strip stays right of it. */
-  @media (max-width: 600px) {
-    .footer-menu {
-      gap: 0 5px;
-      padding: 1px 6px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      max-width: calc(100vw - 20px);
-    }
-  }
-  @media (min-width: 601px) and (max-width: 1300px) {
-    .footer-menu {
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      row-gap: 0;
-      max-width: calc(100vw - var(--footer-dock-right, 0px) - 10px);
-    }
   }
   .footer-link {
     pointer-events: auto;
@@ -838,4 +867,104 @@
      visible when the user explicitly opens it. The .footer-sep-extra
      class is no longer used (the popover replaces the inline
      separators) — drops out naturally. */
+
+  /* Wide windows: the links are one inline strip (the wrapper adds no box)
+     and the More button is not shown. */
+  .footer-links {
+    display: contents;
+  }
+  .footer-more-btn {
+    display: none;
+  }
+  /* Compact strip (JS class, see footerCompact): windows narrower than the full strip (about 720 px) whose bottom edge also
+     carries /explore's dock (to 542 px) and scale panel: the strip is ONE short
+     line, a More button, and the 13 links open in a popover above it. The button's
+     hit area is stretched to 44 px by ::after without making the strip taller. */
+  .footer-menu.compact {
+    position: relative;
+    flex-wrap: nowrap;
+  }
+  .footer-menu.compact .footer-more-btn {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    pointer-events: auto;
+    margin: 0;
+    padding: 2px 4px;
+    background: none;
+    border: 0;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+  }
+  .footer-menu.compact .footer-more-btn::after {
+    content: '';
+    position: absolute;
+    inset: -15px -8px;
+  }
+  .footer-menu.compact .footer-more-btn:hover,
+  .footer-menu.compact .footer-more-btn:focus-visible,
+  .footer-menu.compact.more-open .footer-more-btn {
+    color: #4ecdc4;
+    outline: none;
+  }
+  .footer-menu.compact .footer-more-btn:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .footer-menu.compact .footer-links {
+    display: none;
+  }
+  .footer-menu.compact.more-open .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    inset-inline-end: 0;
+    bottom: calc(100% + 4px);
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
+    padding: 6px 12px;
+    white-space: nowrap;
+    background: rgba(4, 4, 12, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .footer-menu.compact .footer-links .footer-sep,
+  .footer-menu.compact .footer-links .footer-about-label,
+  .footer-menu.compact .footer-links .footer-about-menu::after {
+    display: none;
+  }
+  .footer-menu.compact .footer-links .footer-about-group {
+    display: contents;
+  }
+  .footer-menu.compact .footer-links .footer-about-menu {
+    display: contents;
+    pointer-events: auto;
+    padding: 0;
+    gap: 0;
+    background: none;
+    border: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .footer-menu.compact .footer-links .footer-about-menu li {
+    text-align: start;
+    line-height: 1.2;
+    font-size: 10px;
+    display: flex;
+  }
+  .footer-menu.compact .footer-links .footer-about-menu .footer-link-extra {
+    pointer-events: auto;
+  }
+  .footer-menu.compact .footer-links .footer-link {
+    padding: 1px 0;
+    line-height: 1.2;
+  }
 </style>

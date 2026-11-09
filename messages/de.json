@@ -3710,5 +3710,6 @@
   "surface_card_expand_aria": "Standortdetails ausklappen",
   "surface_true_scale_short": "Bodenansicht im echten Maßstab · Orbitalaufnahmen",
   "colophon_section_mission_trajectories": "Flugbahn-Diagramme der Missionen",
-  "colophon_mission_trajectories_note": "Pro Mission ein Schema, per Code aus demselben Flugbahnmodell gezeichnet, das der /fly-Simulator fliegt – nicht KI-generiert. Touren durch das äußere Sonnensystem sind jenseits von 1,6 AE radial gestaucht, und Umlaufbahnen um die Erde sind übertrieben groß gezeichnet, damit sie lesbar bleiben; die Bildunterschrift weist darauf hin. Eine Mission ohne Umlaufbahn-Daten erhält einen beschrifteten Platzhalter, nie eine erfundene Flugbahn. Die Beschriftungen in den Bildern sind englisch."
+  "colophon_mission_trajectories_note": "Pro Mission ein Schema, per Code aus demselben Flugbahnmodell gezeichnet, das der /fly-Simulator fliegt – nicht KI-generiert. Touren durch das äußere Sonnensystem sind jenseits von 1,6 AE radial gestaucht, und Umlaufbahnen um die Erde sind übertrieben groß gezeichnet, damit sie lesbar bleiben; die Bildunterschrift weist darauf hin. Eine Mission ohne Umlaufbahn-Daten erhält einen beschrifteten Platzhalter, nie eine erfundene Flugbahn. Die Beschriftungen in den Bildern sind englisch.",
+  "layout_footer_more": "Mehr"
 }

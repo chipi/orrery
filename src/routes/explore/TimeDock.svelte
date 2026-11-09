@@ -434,17 +434,6 @@
     }
   }
 
-  /* The site footer is bottom-right and about 720 px wide. Below ~1300 px a
-     single line would run under this dock (209..542 px), so while a dock is on
-     screen the footer is confined to the space right of it (--footer-dock-right
-     = dock right edge + gap) and wraps. Below 601 px the footer is two compact
-     lines that fit under the dock instead (see +layout.svelte). */
-  @media (min-width: 601px) and (max-width: 1300px) {
-    :global(html:has(.time-controls:not(.context-hidden))) {
-      --footer-dock-right: 551px;
-    }
-  }
-
   /* Compact REFERENCES button inside .time-controls — mobile only. */
   .earth-compact {
     display: none;

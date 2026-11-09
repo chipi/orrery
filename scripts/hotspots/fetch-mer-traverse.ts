@@ -103,8 +103,11 @@ const ROVERS: Record<string, RoverSpec> = {
       OPP_LON0 + (x / (IAU_MARS_RADIUS_M * Math.cos(OPP_LAT0 / DEG))) * DEG,
     ],
     ties: [
-      // Eagle crater's centre on PSP_001414_1780.
-      { sol: 1, lat: -1.94979, lon: -5.52765 },
+      // The lander in Eagle crater on ESP_050177_1780, the frame of the site patch and its ring
+      // (surface-hotspots opportunity.lander-eagle-crater). On PSP_001414_1780 it sits 93 m west
+      // (-1.94979, -5.52765, where this tie was); the offset tapers to zero at the next tie, and
+      // the route tiles and photos move by the same tapering offset (images unchanged).
+      { sol: 1, lat: -1.94979, lon: -5.52608 },
       // Duck Bay on Victoria's rim, PSP_001414_1780 (the Eagle tie alone puts
       // it there; kept so the Cape York tie does not pull it off).
       { sol: 952, lat: -2.05421, lon: -5.50873 },

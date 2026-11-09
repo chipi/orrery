@@ -652,7 +652,7 @@
               "url": "https://images.nasa.gov/details/PIA21494"
             }
           ],
-          "confidence": "medium-high: HiRISE ESP_050177_1780 is this patch's product; its caption puts the lander \"at the center of the bowl of Eagle Crater\". The patch is grayscale, so the airbag colour is not visible; the ring sits on the dark centre of the one ~20 m bright-rimmed crater with the dark streak pattern of the released colour cutout"
+          "confidence": "medium-high: HiRISE ESP_050177_1780 is this patch's product; its caption puts the lander \"at the center of the bowl of Eagle Crater\". The patch is grayscale, so the airbag colour is not visible; the ring sits on the small bright dot (the lander) at the centre of the dark bowl of the ~20 m bright-rimmed crater that the rover tracks lead out of, measured in this product"
         }
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/opportunity/tier2-ctx.jpg",

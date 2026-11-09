@@ -783,6 +783,35 @@
     kmPerPx = Math.max(minKmPerPx, Math.min(10, kmPerPx * factor));
   }
 
+  // Cluster badge click: pan the badge to the view centre while zooming in by
+  // `factor`. False when the zoom floor is already reached (the badge then fans out).
+  let zoomRaf = 0;
+  onMount(() => () => cancelAnimationFrame(zoomRaf));
+  function zoomToPoint(x: number, y: number, factor: number): boolean {
+    const minKmPerPx = Math.max(nativeKmPerPx * 0.5, deepestZoomFloor() * 0.05);
+    const fromKm = kmPerPx;
+    const toKm = Math.max(minKmPerPx, fromKm / factor);
+    if (toKm > fromKm * 0.98) return false;
+    const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
+    const kmPerDegLon = kmPerDegLat * Math.cos((centroidLat * Math.PI) / 180);
+    const toLat = centroidLat + ((viewH * flatCenterFrac - y) * fromKm) / kmPerDegLat;
+    const toLon = centroidLon + ((x - viewW / 2) * fromKm) / kmPerDegLon;
+    const fromLat = centroidLat;
+    const fromLon = centroidLon;
+    const t0 = performance.now();
+    cancelAnimationFrame(zoomRaf);
+    const step = (now: number) => {
+      const t = Math.min(1, (now - t0) / 420);
+      const e = 1 - Math.pow(1 - t, 3);
+      centroidLat = fromLat + (toLat - fromLat) * e;
+      centroidLon = fromLon + (toLon - fromLon) * e;
+      kmPerPx = fromKm * Math.pow(toKm / fromKm, e);
+      if (t < 1) zoomRaf = requestAnimationFrame(step);
+    };
+    zoomRaf = requestAnimationFrame(step);
+    return true;
+  }
+
   // Scale-aware marker sizing per ADR-072 §"scale-aware marker rule".
   // Each marker has a real-world footprint in km. Displayed pixel size
   // is footprintKm / kmPerPx (= true scale), floored at MIN_VISIBLE_PX
@@ -860,7 +889,7 @@
       height={viewH}
       {onWheel}
       {onOpenPhoto}
-      safeBottom={flatCenterFrac < 0.5 ? viewH * 0.44 : 0}
+      onZoomTo={zoomToPoint}
     />
   {/if}
 

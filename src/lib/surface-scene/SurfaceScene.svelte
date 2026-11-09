@@ -175,6 +175,7 @@
   import { statusTone } from '$lib/surface-scene/status-tone';
   import SurfaceFlatPatch from '$lib/surface-scene/SurfaceFlatPatch.svelte';
   import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
+  import { annotationUi } from '$lib/surface-scene/annotation-ui.svelte';
   import SiteAnnotationList from '$lib/surface-scene/SiteAnnotationList.svelte';
   import type { PlacedRing } from '$lib/surface-scene/annotation-rings';
   import { routePatchFlatTarget } from '$lib/surface-scene/flat-patch-extent';
@@ -857,6 +858,8 @@
   // back up past the trigger threshold (otherwise the patch would
   // immediately re-open on the next frame).
   let closeFlatPatch: (exitKmPerPx?: number) => void = $state(() => {});
+  // Cluster badge click on the 3D detail patch: dolly in by `factor`; false at the floor.
+  let zoomPatchBy: (factor: number) => boolean = () => false;
 
   // Surface Hotspots mode (PRD-014 / RFC-017 §S7). 'auto' = LOD
   // dispatcher picks tier from screen-projected size; 'low' = all
@@ -1202,8 +1205,14 @@
   });
   // .by(): a closure, so TS sees `selected` as SurfaceSite | null, not the
   // `null` it narrows the top-level initialiser to.
+  // A phone's annotation sheet takes the card's place so the rings stay visible.
   const tierCardShown = $derived.by(
-    () => view === '3d' && !!tierContext && !panoramaActive && selected?.kind !== 'orbiter',
+    () =>
+      view === '3d' &&
+      !!tierContext &&
+      !panoramaActive &&
+      selected?.kind !== 'orbiter' &&
+      !(viewport.isCoarsePointer && annotationUi.openId),
   );
   // Mobile: true while any accordion tab is open — hides the altitude pill so
   // the open drawer has room (2026-07 user direction).
@@ -2680,6 +2689,13 @@
     // animates the camera back out and the trigger doesn't re-fire
     // on the next frame. Drive the 'leaving' phase (sphere fading
     // back in, flat patch fading out over 600 ms) before unmounting.
+    zoomPatchBy = (factor) => {
+      const next = Math.max(zoomFloor(), 30 + (camRTarget - 30) / factor);
+      if (next > camRTarget - 0.01) return false;
+      camRTarget = next;
+      flyActive = false;
+      return true;
+    };
     closeFlatPatch = (exitKmPerPx?: number) => {
       if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
       flatPatchPhase = 'leaving';
@@ -5204,7 +5220,7 @@
         width={ringsW}
         height={ringsH}
         onOpenPhoto={(src) => (panelLightbox = src)}
-        safeBottom={viewport.isTouch && !viewport.isLandscape ? ringsH * 0.44 : 0}
+        onZoomTo={(_x, _y, factor) => zoomPatchBy(factor)}
       />
     {/if}
   </div>

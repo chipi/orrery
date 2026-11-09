@@ -3,24 +3,39 @@
   rovers, experiment packages) on the surface close-ups. Rings keep a FIXED
   screen size (annotation-rings.ts); the caller projects the positions each
   frame, so the same overlay serves the flat ground view and the 3D detail
-  patch. A ring is a button (44 px tap target, 16 px drawn ring); a tap opens a
-  popover with the explanation + source links. Labels sit beside the rings and
-  are dropped where they would collide; the rings never are.
+  patch.
+
+  Hover (or keyboard focus) turns a ring cyan, brings it to the front,
+  highlights its label chip and shows a small preview card (name + thumbnail,
+  same look as the traverse route-photo card). A click / tap opens the full
+  popover; on a coarse pointer that is a bottom sheet, kept clear of the HUD.
+  Three or more rings that overlap at the current zoom merge into one count
+  badge: a click zooms in until they separate, or fans them out at the zoom
+  limit. Labels sit beside the rings, flip away from view edges and the side
+  panel, and are dropped where they would collide; the rings never are.
 -->
 <script lang="ts">
   import { onMount } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { dataLoadFailed } from '$lib/data/core';
+  import { viewport } from '$lib/viewport.svelte';
   import { annotationUi } from '$lib/surface-scene/annotation-ui.svelte';
   import {
     HIT_PX,
     LEADER_PX,
     RING_STROKE_PX,
+    clusterRings,
+    fanOutPositions,
     layoutLabels,
     ringDiameter,
-    type PlacedRing,
+    ringFootprint,
+    placeCard,
     ringInView,
+    separationFactor,
+    type PlacedRing,
+    type Rect,
+    type RingCluster,
   } from '$lib/surface-scene/annotation-rings';
 
   let {
@@ -29,7 +44,7 @@
     height,
     onWheel,
     onOpenPhoto,
-    safeBottom = 0,
+    onZoomTo,
   }: {
     rings: PlacedRing[];
     width: number;
@@ -38,8 +53,8 @@
     onWheel?: (e: WheelEvent) => void;
     /** A tap on the popover photo opens it full-size (the page's lightbox). */
     onOpenPhoto?: (src: string) => void;
-    /** Px at the bottom a popover must stay clear of (the phone's context card). */
-    safeBottom?: number;
+    /** Zoom the view in by `factor` around a screen point; false when already at the zoom limit. */
+    onZoomTo?: (x: number, y: number, factor: number) => boolean;
   } = $props();
 
   let ladderReady = $state(false);
@@ -48,45 +63,184 @@
     .catch(dataLoadFailed);
 
   const POP_W = 264;
+  const CARD_W = 224;
+  // 200 px photo at 4:3 + name line + padding / name lines only
+  const CARD_H_PHOTO = 188;
+  const CARD_H_LINE = 16;
   let root: HTMLDivElement | undefined = $state();
 
+  const coarse = $derived(viewport.isCoarsePointer);
   const ringPx = $derived(ringDiameter(width));
   const visible = $derived(rings.filter((r) => ringInView(r.x, r.y, width, height)));
+  const grouped = $derived(clusterRings(visible, ringPx));
+
+  // A fanned-out cluster: its rings move onto a circle round the badge until
+  // the zoom changes the grouping (the key then no longer matches).
+  let fanKey: string | null = $state(null);
+  const fanned = $derived(grouped.clusters.find((c) => c.key === fanKey));
+  const fanPos = $derived(fanned ? fanOutPositions(fanned, ringPx) : null);
+  const badges = $derived(grouped.clusters.filter((c) => c !== fanned));
+  const singles = $derived(
+    [...grouped.singles, ...(fanned?.members ?? [])].map((r) => {
+      const p = fanPos?.get(r.annotation.id);
+      return p ? { ...r, ...p } : r;
+    }),
+  );
+
+  // HUD + side panel rectangles (relative to this overlay): labels keep clear of
+  // them; a bottom sheet sits above the bottom ones.
+  const HUD_SELECTOR =
+    'aside.panel, .tier-context-card, .hud-controls, .hud-top-mobile, .hud-layers, .hud-back, .hud-context-banner, .legend-3d, .surface-index-handle, .sidx, .hud-scale, .hud-latlon, .locate-me';
+  let hudBlocked: Rect[] = $state([]);
+  let sheetBottom = $state(0);
+  function measureHud(): void {
+    if (!root) return;
+    const o = root.getBoundingClientRect();
+    const blocked: Rect[] = [];
+    let bottom = 0;
+    for (const el of document.querySelectorAll(HUD_SELECTOR)) {
+      const b = el.getBoundingClientRect();
+      const x = Math.max(0, b.left - o.left);
+      const y = Math.max(0, b.top - o.top);
+      const w = Math.min(o.width, b.right - o.left) - x;
+      const h = Math.min(o.height, b.bottom - o.top) - y;
+      if (w <= 0 || h <= 0) continue;
+      blocked.push({ x: Math.round(x), y: Math.round(y), w: Math.round(w), h: Math.round(h) });
+      if (y > o.height * 0.6) bottom = Math.max(bottom, o.height - y + 6);
+    }
+    if (JSON.stringify(blocked) !== JSON.stringify(hudBlocked)) hudBlocked = blocked;
+    if (Math.abs(bottom - sheetBottom) > 0.5) sheetBottom = bottom;
+  }
+
   const labels = $derived(
     layoutLabels(
-      visible.map((r) => ({ id: r.annotation.id, label: r.annotation.label, x: r.x, y: r.y })),
+      singles.map((r) => ({ id: r.annotation.id, label: r.annotation.label, x: r.x, y: r.y })),
       { w: width, h: height },
       ringPx,
+      [...hudBlocked, ...badges.map((c) => ringFootprint(c, ringPx))],
     ),
   );
-  const open = $derived(visible.find((r) => r.annotation.id === annotationUi.openId));
+  // A ring inside a cluster badge opens from the list too: anchored at its true spot.
+  const open = $derived(
+    singles.find((r) => r.annotation.id === annotationUi.openId) ??
+      visible.find((r) => r.annotation.id === annotationUi.openId),
+  );
 
   const popLeft = $derived(open ? Math.max(8, Math.min(open.x - POP_W / 2, width - POP_W - 8)) : 0);
   // Side with room for a photo popover (~330 px); otherwise the roomier side, scrolling.
-  const spaceBelow = $derived(open ? height - safeBottom - open.y - HIT_PX / 2 - 8 : 0);
+  const spaceBelow = $derived(open ? height - open.y - HIT_PX / 2 - 8 : 0);
   const spaceAbove = $derived(open ? open.y - HIT_PX / 2 - 8 : 0);
-  const popRoom = $derived(Math.max(spaceBelow, spaceAbove));
   const popBelow = $derived(spaceBelow >= 330 || spaceBelow >= spaceAbove);
+  // Bottom sheet (coarse pointer): full width above the bottom HUD, never taller
+  // than the room under the ring so the ring stays visible.
+  const sheetMax = $derived(
+    open
+      ? Math.max(150, Math.min(height * 0.55, height - sheetBottom - (open.y + HIT_PX / 2 + 8)))
+      : 0,
+  );
+  const sheetW = $derived(Math.min(480, width - 16));
+  const popRoom = $derived(coarse ? sheetMax : Math.max(spaceBelow, spaceAbove));
+
+  // Preview card: mouse / pen hover or keyboard focus only, never on touch.
+  let previewId: string | null = $state(null);
+  let previewCluster: string | null = $state(null);
+  const preview = $derived.by(() => {
+    if (coarse) return null;
+    if (previewCluster) {
+      const c = badges.find((b) => b.key === previewCluster);
+      if (c) {
+        return {
+          x: c.x,
+          y: c.y,
+          side: 'right' as const,
+          names: c.members.map((r) => r.annotation.label),
+          annotation: undefined,
+        };
+      }
+    }
+    const r = singles.find((x) => x.annotation.id === previewId);
+    if (!r || annotationUi.openId === r.annotation.id) return null;
+    return {
+      x: r.x,
+      y: r.y,
+      // the card goes on the side opposite the label chip so both stay readable
+      side: labels.get(r.annotation.id)?.side === 'right' ? ('left' as const) : ('right' as const),
+      names: undefined,
+      annotation: r.annotation,
+    };
+  });
+  const cardPos = $derived.by(() => {
+    if (!preview) return null;
+    const h = preview.names
+      ? 20 + preview.names.length * CARD_H_LINE
+      : preview.annotation?.photo
+        ? CARD_H_PHOTO
+        : 34;
+    const p = placeCard(
+      preview,
+      { w: CARD_W, h },
+      preview.side,
+      { w: width, h: height },
+      hudBlocked,
+    );
+    return { left: p.x, top: p.y };
+  });
+
+  const isLit = (id: string): boolean =>
+    annotationUi.highlightId === id || annotationUi.openId === id || previewId === id;
 
   function toggle(id: string): void {
     annotationUi.openId = annotationUi.openId === id ? null : id;
     annotationUi.highlightId = annotationUi.openId;
   }
 
+  function clickCluster(c: RingCluster): void {
+    if (fanKey === c.key) {
+      fanKey = null;
+      return;
+    }
+    if (!onZoomTo?.(c.x, c.y, separationFactor(c.members, ringPx))) fanKey = c.key;
+  }
+
+  function enter(e: PointerEvent, id: string): void {
+    if (e.pointerType === 'touch') return;
+    annotationUi.highlightId = id;
+    previewId = id;
+  }
+  function leave(id: string): void {
+    if (previewId === id) previewId = null;
+    if (annotationUi.highlightId === id && annotationUi.openId !== id)
+      annotationUi.highlightId = null;
+  }
+  function focus(e: FocusEvent, id: string): void {
+    if (!(e.currentTarget as HTMLElement).matches(':focus-visible')) return;
+    annotationUi.highlightId = id;
+    previewId = id;
+  }
+
   onMount(() => {
     // Capture phase: Escape closes the popover first and never reaches the flat
     // view's own Escape handler (which would leave the ground view).
     const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape' || !annotationUi.openId) return;
-      e.stopPropagation();
-      annotationUi.openId = null;
+      if (e.key !== 'Escape') return;
+      if (annotationUi.openId) {
+        e.stopPropagation();
+        annotationUi.openId = null;
+      } else if (fanKey) {
+        e.stopPropagation();
+        fanKey = null;
+      }
     };
     const onDown = (e: PointerEvent) => {
       if (annotationUi.openId && !root?.contains(e.target as Node)) annotationUi.openId = null;
+      if (fanKey && !(e.target as Element).closest?.('[data-testid^="annotation-"]')) fanKey = null;
     };
     window.addEventListener('keydown', onKey, true);
     window.addEventListener('pointerdown', onDown, true);
+    measureHud();
+    const timer = setInterval(measureHud, 300);
     return () => {
+      clearInterval(timer);
       window.removeEventListener('keydown', onKey, true);
       window.removeEventListener('pointerdown', onDown, true);
       annotationUi.openId = null;
@@ -103,13 +257,46 @@
   style:--hit-px="{HIT_PX}px"
   onwheel={onWheel}
 >
-  {#each visible as r, i (r.annotation.id)}
+  {#if fanned}
+    <svg class="fan" {width} {height} aria-hidden="true">
+      {#each fanned.members as r (r.annotation.id)}
+        {@const p = fanPos?.get(r.annotation.id)}
+        {#if p}<line x1={fanned.x} y1={fanned.y} x2={p.x} y2={p.y} />{/if}
+      {/each}
+    </svg>
+  {/if}
+
+  {#each badges as c, i (c.key)}
+    <button
+      type="button"
+      class="ring cluster"
+      class:active={previewCluster === c.key ||
+        c.members.some((r) => annotationUi.highlightId === r.annotation.id)}
+      style:left="{c.x}px"
+      style:top="{c.y}px"
+      style:--delay="{-i * 0.8}s"
+      aria-label={c.members.map((r) => r.annotation.label).join(', ')}
+      data-testid="annotation-cluster"
+      data-count={c.members.length}
+      onclick={() => clickCluster(c)}
+      onpointerenter={(e) => e.pointerType !== 'touch' && (previewCluster = c.key)}
+      onpointerleave={() => previewCluster === c.key && (previewCluster = null)}
+      onfocus={(e) =>
+        (e.currentTarget as HTMLElement).matches(':focus-visible') && (previewCluster = c.key)}
+      onblur={() => previewCluster === c.key && (previewCluster = null)}
+    >
+      <span class="dot"><span class="count mono">{c.members.length}</span></span>
+    </button>
+  {/each}
+
+  {#each singles as r, i (r.annotation.id)}
     {@const id = r.annotation.id}
     {@const lab = labels.get(id)}
+    {@const lit = isLit(id)}
     <button
       type="button"
       class="ring"
-      class:active={annotationUi.highlightId === id || annotationUi.openId === id}
+      class:active={lit}
       style:left="{r.x}px"
       style:top="{r.y}px"
       style:--delay="{-i * 0.8}s"
@@ -119,25 +306,31 @@
       data-testid="annotation-ring"
       data-annotation-id={id}
       onclick={() => toggle(id)}
-      onpointerenter={() => (annotationUi.highlightId = id)}
-      onpointerleave={() => {
-        if (annotationUi.highlightId === id && annotationUi.openId !== id)
-          annotationUi.highlightId = null;
-      }}
+      onpointerenter={(e) => enter(e, id)}
+      onpointerleave={() => leave(id)}
+      onfocus={(e) => focus(e, id)}
+      onblur={() => leave(id)}
     >
       <span class="dot"></span>
     </button>
     {#if lab}
       <span
         class="leader"
-        style:left="{lab.side === 'right' ? r.x + ringPx / 2 : r.x - ringPx / 2 - LEADER_PX}px"
-        style:top="{r.y}px"
-        style:width="{LEADER_PX}px"
+        class:active={lit}
+        class:vertical={lab.side === 'top'}
+        style:left={lab.side === 'top'
+          ? `${r.x}px`
+          : `${lab.side === 'right' ? r.x + ringPx / 2 : r.x - ringPx / 2 - LEADER_PX}px`}
+        style:top={lab.side === 'top' ? `${r.y - ringPx / 2 - LEADER_PX}px` : `${r.y}px`}
+        style:width={lab.side === 'top' ? undefined : `${LEADER_PX}px`}
+        style:height={lab.side === 'top' ? `${LEADER_PX}px` : undefined}
         aria-hidden="true"
       ></span>
       <span
         class="chip mono"
+        class:active={lit}
         class:left={lab.side === 'left'}
+        class:top={lab.side === 'top'}
         style:left="{lab.rect.x}px"
         style:top="{lab.rect.y}px"
         style:width="{lab.rect.w}px"
@@ -146,18 +339,45 @@
     {/if}
   {/each}
 
+  {#if preview && cardPos}
+    <div
+      class="card"
+      data-testid="annotation-preview"
+      style:left="{cardPos.left}px"
+      style:top="{cardPos.top}px"
+      style:width={preview.names ? undefined : `${CARD_W}px`}
+      aria-hidden="true"
+    >
+      {#if preview.names}
+        {#each preview.names as name (name)}
+          <span class="name mono">{name}</span>
+        {/each}
+      {:else if preview.annotation}
+        {#if preview.annotation.photo}
+          <img class="photo-thumb" src={preview.annotation.photo.thumb} alt="" />
+        {/if}
+        <span class="name mono">{preview.annotation.label}</span>
+      {/if}
+    </div>
+  {/if}
+
   {#if open}
     <div
       class="pop"
+      class:sheet={coarse}
       role="dialog"
       aria-label={open.annotation.label}
       data-testid="annotation-popover"
       style:--photo-h="{popRoom < 330 ? 88 : 140}px"
-      style:left="{popLeft}px"
-      style:width="{POP_W}px"
-      style:max-height="{Math.max(120, popBelow ? spaceBelow : spaceAbove)}px"
-      style:top={popBelow ? `${open.y + HIT_PX / 2}px` : undefined}
-      style:bottom={popBelow ? undefined : `${height - open.y + HIT_PX / 2}px`}
+      style:left={coarse ? `${(width - sheetW) / 2}px` : `${popLeft}px`}
+      style:width="{coarse ? sheetW : POP_W}px"
+      style:max-height="{coarse ? sheetMax : Math.max(120, popBelow ? spaceBelow : spaceAbove)}px"
+      style:top={coarse ? undefined : popBelow ? `${open.y + HIT_PX / 2}px` : undefined}
+      style:bottom={coarse
+        ? `${sheetBottom}px`
+        : popBelow
+          ? undefined
+          : `${height - open.y + HIT_PX / 2}px`}
     >
       <button
         type="button"
@@ -226,6 +446,7 @@
     cursor: pointer;
     pointer-events: auto;
     touch-action: manipulation;
+    z-index: 2;
   }
   .dot {
     position: relative;
@@ -275,20 +496,38 @@
       animation: none;
     }
   }
+  /* hover / focus / list highlight: cyan accent, thicker stroke, brighter glow, in front */
   .ring.active .dot,
   .ring:hover .dot,
   .ring:focus-visible .dot {
-    transform: scale(1.1);
-    border-color: #ffe08a;
-    background: rgba(255, 200, 80, 0.26);
+    transform: scale(1.15);
+    border-width: 5px;
+    border-color: var(--color-teal, #4ecdc4);
+    background: rgba(78, 205, 196, 0.28);
     box-shadow:
       0 0 0 1px rgba(0, 0, 0, 0.6),
-      0 0 18px 4px rgba(255, 210, 100, 0.75),
+      0 0 22px 6px rgba(78, 205, 196, 0.85),
       inset 0 0 0 1px rgba(0, 0, 0, 0.35);
   }
+  .ring.active .dot::after,
+  .ring:hover .dot::after {
+    border-color: var(--color-teal, #4ecdc4);
+  }
   .ring.active,
-  .ring:hover {
-    z-index: 2;
+  .ring:hover,
+  .ring:focus-visible {
+    z-index: 6;
+  }
+  .cluster .dot {
+    display: grid;
+    place-items: center;
+  }
+  .count {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
   }
   .ring:focus-visible {
     outline: none;
@@ -303,6 +542,15 @@
     background: rgba(255, 200, 80, 0.85);
     box-shadow: 0 0 2px #000;
     pointer-events: none;
+    z-index: 1;
+  }
+  .leader.vertical {
+    width: 1px;
+    height: auto;
+  }
+  .leader.active {
+    background: var(--color-teal, #4ecdc4);
+    z-index: 5;
   }
   .chip {
     position: absolute;
@@ -321,9 +569,67 @@
     border-radius: 11px;
     backdrop-filter: blur(4px);
     pointer-events: none;
+    z-index: 1;
+    transition:
+      border-color 160ms,
+      background-color 160ms;
   }
   .chip.left {
     text-align: right;
+  }
+  .chip.top {
+    text-align: center;
+  }
+  .chip.active {
+    z-index: 5;
+    border-color: var(--color-teal, #4ecdc4);
+    background: rgba(8, 40, 44, 0.96);
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.55);
+  }
+  .fan {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .fan line {
+    stroke: rgba(255, 200, 80, 0.7);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+  }
+  /* same look as the route-photo hover card (SurfaceScene .traverse-stop-tooltip) */
+  .card {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 240px;
+    padding: 6px 10px;
+    background: rgba(5, 5, 20, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: var(--color-text-on-dark, #fff);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    z-index: 8;
+  }
+  .card .photo-thumb {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+  .card .name {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(255, 220, 140, 0.95);
+    text-transform: uppercase;
   }
   .mono {
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -342,6 +648,14 @@
     overflow-y: auto;
     font-size: 12px;
     line-height: 1.45;
+    z-index: 9;
+  }
+  /* coarse pointer: a bottom sheet above the bottom HUD (left / width / bottom set inline) */
+  .pop.sheet {
+    max-width: none;
+    border-radius: 10px;
+    padding: 14px 16px 14px;
+    font-size: 13px;
   }
   .pop-photo {
     display: block;

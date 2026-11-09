@@ -3,12 +3,21 @@
  * sign of a changed fact (the 2026-10-31 hill-sphere "80×" for 333,000× was one). Read-only.
  *
  *   node scripts/i18n-tools/number-drift.mjs [tree=science|all] [locales=all] [--list] [--changed]
- *                                            [--json] [--no-dates]
+ *                                            [--json] [--no-dates] [--unreviewed] [--gate]
  *
  * Numbers are compared as values: "149,597,870,700", "149.597.870.700", "149 597 870 700" and
- * "1,5"/"1.5" are the same; Eastern Arabic and Devanagari digits are read as digits. A number
- * the translation writes as a word ("two", "zwei") or rounds is reported too — read the list,
- * it is a finder, not a verdict. Years, ordinals and list numbers count like any other number.
+ * "1,5"/"1.5" are the same; Eastern Arabic and Devanagari digits are read as digits. A value is
+ * present or it is not (how often it is said is not compared). It is a finder, not a verdict.
+ *
+ * What counts as the same value, besides the digits (the readers live in number-words.mjs):
+ *  - number words per locale: "sechsstündig", "ventisettenne", "двух", "اثني عشر", ordinals,
+ *    "two and a half" (one words and articles are not read); Roman numerals of two or more
+ *    capitals (the English side never reads "Saturn V"); CJK numerals and scales "38万4,000",
+ *    "1억 4,000만", "9.46万亿";
+ *  - decades, short years and centuries: 1960s = années 60 = шестидесятые, 1946-47 = 1946–1947,
+ *    the 2100s = 22. веку;
+ *  - scales and units: million/billion in every locale (Mio., Mrd., млн, 억 …), Gyr/Myr/Mpc/Ga/bn,
+ *    "$100M", "36k", "3.2-gigapixel" = 32億画素, a scale shared across a range "0.7–1.3 billion".
  *
  * Dates are compared as dates, not as the numbers inside them: "February 12" = "12.02." =
  * "12 февраля" = "2月12日" = "12 de febrero" all become the token md:02-12; "February 1997" and
@@ -19,11 +28,18 @@
  * beside it is not a date here and is ignored on both sides.
  *
  * tree=all walks every tree under i18n-src/en-US (directories and single .json files).
- * --json prints { trees: { <tree>: { <locale>: { fields, withMissing } } }, totals: { <locale>: n,
- * all: n } } for a gate to consume. --no-dates switches the date handling off (the old behaviour).
+ * --json prints { trees: { <tree>: { <locale>: { fields, withMissing, reviewed } } }, totals:
+ * { <locale>: n, all: n } }. --no-dates switches the date handling off (the old behaviour).
+ *
+ * number-drift-reviewed.json holds findings a person read and left (a unit converted, a name
+ * dropped on purpose), keyed locale|file|field with a hash of the English and of the translation,
+ * so an edit to either brings the finding back. --unreviewed subtracts them; --gate does too over
+ * every tree and locale and exits 1 on a finding left or an exception that matches nothing.
  */
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { isMain } from './garble-lib.mjs';
+import { textHash } from './term-match.mjs';
+import { HALF, cjkNumbers, romanNumbers, wordNumbers } from './number-words.mjs';
 
 const ALL_LOCS = [
   'de',
@@ -48,32 +64,49 @@ const ascii = (s) =>
     .replace(/[٠-٩०-९]/g, (c) => DIGITS[c])
     .replace(/(\d)٫(\d)/g, '$1.$2')
     .replace(/(\d)٬(\d)/g, '$1,$2');
-// CJK myriad units: 1.5亿 = 150,000,000, 38万 = 380,000 (ko 만 / 억 likewise).
 // Scale words after a number, per language (longest first: "mil millones" before "mil").
+// CJK scales (万 億 만 억 조) are read with the CJK numerals in number-words.mjs.
 const SCALE = [
   [/^mil\s+millones\b/i, 1e9],
+  [/^(लाख\s+करोड़|लाख\s+करोड)/u, 1e12],
   [
-    /^(thousand|tausend|mille|mil|mila|duizend|тыс\.?|тысяч[аи]?|хиљад[аеи]?|हज़ार|हजार|آلاف|ألف)(?![\p{L}])/iu,
+    /^(thousand|tausend|mille|mil|mila|duizend|тыс\.?|тысяч[аи]?|хиљад[аеиу]?|хиљ\.?|हज़ार|हजार|آلاف|ألف)(?![\p{L}])/iu,
     1e3,
   ],
   [
-    /^(million|millions|millionen|million|millón|millones|milione|milioni|milhão|milhões|miljoen|млн\.?|миллион[аов]*|милион[аи]?|مليون|ملايين)(?![\p{L}])/iu,
+    /^(million|millions|millionen|million|millón|millones|milione|milioni|milhão|milhões|miljoen|mio\.?|mln\.?|млн\.?|миллион(?:ов|ам|ах|ом|а|е|у|ы)?|милион[аи]?|мільйон|مليون|ملايين|मिलियन)(?![\p{L}\p{M}])|^миллион(?=олетн|н)/iu,
     1e6,
   ],
   [
-    /^(billion|billions|milliarde|milliarden|milliard|milliards|miliardo|miliardi|bilhão|bilhões|miljard|млрд\.?|миллиард[аов]*|милијард[аеи]?|مليار|مليارات|अरब)(?![\p{L}])/iu,
+    /^(billion|billions|milliarde|milliarden|milliard|milliards|miliardo|miliardi|bilhão|bilhões|miljard|mrd\.?|mld\.?|md\.?|mds\.?|млрд\.?|миллиард(?:ов|ам|ах|ом|а|е|у|ы)?|милијард[аеиу]?|مليار|مليارات|بليون|अरब|बिलियन)(?![\p{L}\p{M}])|^миллиард(?=олетн|н)/iu,
     1e9,
   ],
   [
-    /^(trillion|billionen|billion de|bilión|billones|trilhão|trilhões|biljoen|трлн\.?|триллион[аов]*|трилион[аи]?|تريليون)(?![\p{L}])/iu,
+    /^(trillion|billionen|bio\.?|billion de|bilión|billones|trilhão|trilhões|biljoen|трлн\.?|триллион[аов]*|трилион[аи]?|تريليون|ट्रिलियन)(?![\p{L}\p{M}])/iu,
     1e12,
   ],
   [/^(quadrillion)(?![\p{L}])/iu, 1e15],
-  [/^(quintillion)(?![\p{L}])/iu, 1e18],
+  [
+    /^(quintillion|क्विंटिलियन|كوينتيليونات?|квинтиллион(?:ов|а|ам|ах|ом|е|у|ы)?|квинтилион[аи]?)(?![\p{L}\p{M}])/iu,
+    1e18,
+  ],
+  [/^(खरब)/u, 1e11],
   [/^(लाख)/u, 1e5],
   [/^(करोड़|करोड)/u, 1e7],
 ];
-const MYRIAD = { 万: 1e4, 萬: 1e4, 만: 1e4, 亿: 1e8, 億: 1e8, 억: 1e8 };
+// Case-sensitive unit abbreviations: 4.6 Gyr = 4.6 billion years, 3.5 Ga, 290 Mpc.
+const ABBR = [
+  [/^(Gyr|Gpc|Gly|Ga|bn)(?![A-Za-z])/u, 1e9],
+  [/^(Myr|Mpc|Mly|Ma)(?![A-Za-z])/u, 1e6],
+  [/^(kyr|kpc|كيلوبارسك)(?![A-Za-z])/u, 1e3],
+  [/^Гпк/u, 1e9],
+  [/^Мпк/u, 1e6],
+  [/^кпк/u, 1e3],
+  [/^M(?=\s?[$€£¥])/u, 1e6],
+  [/^Md?s?(?=\s?[$€£¥])|^Mrd(?=\s?[$€£¥])/u, 1e9],
+];
+// "$100M", "$1.5B": a currency sign before the number makes M / B / K a scale.
+const CURRENCY_SUFFIX = { M: 1e6, B: 1e9, K: 1e3 };
 
 // ---- dates ---------------------------------------------------------------------------------
 
@@ -314,71 +347,148 @@ export function dateTokens(s, loc = 'en-US') {
 // groups of three are dropped; a remaining single , or . is a decimal point.
 // fr / de / nl / sr-Cyrl use the long scale: billion = 10^12, trillion = 10^18 (sr трилион).
 const LONG_SCALE = new Set(['fr', 'de', 'nl', 'sr-Cyrl']);
+// A plain space between digits groups thousands ("149 597 870 700"). After a Latin or Cyrillic name
+// it is two numbers ("Yutu-2 140 кг", "Luna 24 2 000"); in the locales that do not set numbers off
+// with spaces a space after a Latin word is not grouping either ("Surveyor 3 163 米").
+const GROUP = String.raw`\d{1,3}(?:[.,\u00a0\u202f ]\d{3}(?!\d))+(?:[.,]\d+)?`;
+const GROUP_TIGHT = String.raw`\d{1,3}(?:[.,\u00a0\u202f]\d{3}(?!\d))+(?:[.,]\d+)?`;
+const INDIAN = String.raw`\d{1,2}(?:,\d{2})+,\d{3}(?!\d)`;
+const NAMED = String.raw`(?<![A-Za-zÀ-ɏЀ-ӿ\d])(?<![A-Za-zЀ-ӿ]-)`;
+const NUM_RE = new RegExp(
+  String.raw`${NAMED}${GROUP}|(?<!\d)${INDIAN}|(?<!\d)${GROUP_TIGHT}|\d+(?:[.,]\d+)?`,
+  'gu',
+);
+const NUM_RE_GUARDED = new RegExp(
+  String.raw`${NAMED}(?<![A-Za-z]\s)${GROUP}|(?<!\d)${INDIAN}|(?<!\d)${GROUP_TIGHT}|\d+(?:[.,]\d+)?`,
+  'gu',
+);
+const GUARDED_GROUPING = new Set(['ja', 'zh-CN', 'ko', 'hi', 'ar']);
+const CJK_LOCS = new Set(['ja', 'zh-CN', 'ko']);
+const RANGE_GAP =
+  /^(?:[–~〜～-]|[\s\u00a0][–-][\s\u00a0]|[\s\u00a0](?:to|bis|à|al?|até|tot|до|и|e|and|y|et|und|en|ou|o|oder|или)[\s\u00a0])(?:US|R|C|A)?[$€£¥~]?[\s\u00a0]?$/iu;
 export function numbers(s, loc = 'en-US', dates = true) {
   const out = [];
   let t = ascii(s)
     .replace(/\[[^\]]*\]\([^)]*\)/g, (m) => m.replace(/\(.*\)$/, '')) // drop link targets
-    .replace(/https?:\/\/\S+/g, '');
+    .replace(/https?:\/\/\S+/g, '')
+    .replace(/(\d):00(?!\d)/g, '$1'); // 10:00 is "10 h": the minutes are not a number
   if (dates) {
     const d = dateTokens(t, loc);
     t = d.rest;
     out.push(...d.tokens);
   }
-  for (const m of t.matchAll(
-    /(?<!\d)\d{1,3}(?:[.,\u00a0\u202f ]\d{3}(?!\d))+(?:[.,]\d+)?|\d+(?:[.,]\d+)?/g,
-  )) {
+  if (CJK_LOCS.has(loc)) {
+    t = t.replace(/(\d),(?=\d{4}[年년])/g, '$1, ');
+    const c = cjkNumbers(t, loc, SPAN);
+    t = c.rest;
+    out.push(...c.values);
+  }
+  const found = [];
+  for (const m of t.matchAll(GUARDED_GROUPING.has(loc) ? NUM_RE_GUARDED : NUM_RE)) {
     let n = m[0].replace(/[\u00a0\u202f ]/g, '');
     if (/[.,]\d{3}(?:[.,]|$)/.test(n) && /^\d{1,3}([.,]\d{3})+([.,]\d+)?$/.test(n)) {
       const dec = n.match(/[.,](\d{1,2}|\d{4,})$/);
       n = dec
         ? n.slice(0, -dec[0].length).replace(/[.,]/g, '') + '.' + dec[1]
         : n.replace(/[.,]/g, '');
-    } else n = n.replace(',', '.');
-    const after = t.slice(m.index + m[0].length);
-    const rest = after.replace(/^[\s\u00a0-]+/, '');
-    const scale = SCALE.find(([re]) => re.test(rest));
-    let unit = MYRIAD[after[0]] ?? (scale && rest !== after ? scale[1] : 1);
+    } else if (/^\d{1,2}(,\d{2})+,\d{3}$/.test(n))
+      n = n.replace(/,/g, ''); // Indian grouping 3,33,000
+    else n = n.replace(',', '.');
+    const end = m.index + m[0].length;
+    const after = t.slice(end);
+    const rest = after.replace(/^[\s\u00a0+-]+/, '');
+    let unit = 1;
+    const scale = rest !== after ? SCALE.find(([re]) => re.test(rest)) : null;
+    const abbr = ABBR.find(([re]) => re.test(rest));
+    if (scale) unit = scale[1];
+    else if (abbr) unit = abbr[1];
+    else if (
+      CURRENCY_SUFFIX[after[0]] &&
+      /[$€£¥]\s?~?$/.test(t.slice(0, m.index)) &&
+      !/^[A-Za-z]/.test(after.slice(1))
+    )
+      unit = CURRENCY_SUFFIX[after[0]];
+    else if (
+      (after[0] === 'M' || after[0] === 'k') &&
+      !/^[A-Za-z]/.test(after.slice(1)) &&
+      !/[A-Za-z-]$/.test(t.slice(0, m.index))
+    )
+      unit = after[0] === 'M' ? 1e6 : 1e3;
+    else if (/^M\s(km|mi|miles|किमी|км|كم|公里|キロ|킬로)(?![A-Za-z])/u.test(rest)) unit = 1e6;
+    else if (/^M(?![A-Za-z])/u.test(rest) && /[$€£¥]\s?~?$/.test(t.slice(0, m.index))) unit = 1e6;
     if (LONG_SCALE.has(loc)) {
       if (/^(billions?|billionen?|biljoen|билион[аи]?)(?![\p{L}])/iu.test(rest)) unit = 1e12;
       if (/^(trillions?|trillionen?|triljoen|трилион[аи]?)(?![\p{L}])/iu.test(rest)) unit = 1e18;
     }
-    const v = Math.round(Number(n) * unit * 1e6) / 1e6;
-    // 1億5000万: a 億 value followed directly by a 万 value is one number.
-    const prev = out.length && t.slice(0, m.index).match(/[億亿억]$/) ? out.pop() : null;
-    out.push(String(prev !== null && unit === 1e4 ? Number(prev) + v : v));
-    if (prev !== null && unit !== 1e4) out.splice(-1, 0, prev);
+    found.push({ n: Number(n), unit, at: m.index, end });
   }
+  // "0.7–1.3 billion": the scale after the second number of a range is the first number's too.
+  for (let i = found.length - 2; i >= 0; i--) {
+    const a = found[i];
+    const b = found[i + 1];
+    if (a.unit === 1 && b.unit > 1 && RANGE_GAP.test(t.slice(a.end, b.at))) a.unit = b.unit;
+  }
+  for (const f of found) out.push(String(Math.round(f.n * f.unit * 1e6) / 1e6));
   return out;
 }
 
-// English values missing from the translation, and values only the translation has.
+// A year written short ("1946-47", "late 1950s" -> "50") and a century ("the 2100s" -> "22nd").
+function sameYear(m, has) {
+  if (/^\d{4}$/.test(m)) {
+    const y = Number(m);
+    if (y % 100 >= 10 && has.has(String(y % 100))) return true;
+    if (y % 100 === 0) return has.has(String(y / 100)) || has.has(String(y / 100 + 1));
+  }
+  if (/^[1-9]\d$/.test(m)) return [1800, 1900, 2000].some((c) => has.has(String(c + Number(m))));
+  return false;
+}
+
+// English values missing from the translation, and values only the translation has. A value is
+// present or it is not: how many times it is said is not compared (a translation may say a name
+// once where the English says it twice). Words, Roman numerals and short years count as the value.
 export function drift(en, tr, loc, dates = true) {
-  const have = numbers(tr, loc, dates);
+  const digits = numbers(tr, loc, dates);
+  const have = new Set([...digits, ...wordNumbers(tr, loc), ...romanNumbers(tr)]);
   const enAll = numbers(en, 'en-US', dates);
-  const missing = enAll.filter((n) => {
-    const i = have.indexOf(n);
-    if (i < 0) return true;
-    have.splice(i, 1);
-    return false;
-  });
+  const missing = [...new Set(enAll)].filter((n) => !have.has(n));
   if (dates) {
     // The day number is the old test. A date the translation writes with a month name Intl does not
     // know still has its day (md missing, plain day present); and "Soyuz 14 jul 1974" read as a
     // date by the translation side leaves a day the English has as a plain number.
     const day = (t) => (t.startsWith('md:') ? String(Number(t.slice(-2))) : null);
-    const take = (arr, pred) => {
-      const i = arr.findIndex(pred);
-      if (i < 0) return false;
-      arr.splice(i, 1);
-      return true;
-    };
     for (const m of [...missing]) {
       const d = day(m);
-      const ok = d !== null ? take(have, (h) => h === d) : take(have, (h) => day(h) === m);
+      const ok = d !== null ? have.has(d) : [...have].some((h) => day(h) === m);
       if (ok) missing.splice(missing.indexOf(m), 1);
     }
   }
-  const extra = have.filter((n) => !enAll.includes(n));
+  // "3.2-gigapixel" -> 32億 画素: a number the English gives with an SI prefix word.
+  for (const m of [...missing]) {
+    const pre = new RegExp(
+      `(?<![\\d.,])${m.replace('.', '\\.')}[\\s-]?(kilo|mega|giga|tera)`,
+      'i',
+    ).exec(en);
+    const f = pre && { kilo: 1e3, mega: 1e6, giga: 1e9, tera: 1e12 }[pre[1].toLowerCase()];
+    if (f && have.has(String(Math.round(Number(m) * f * 1e6) / 1e6)))
+      missing.splice(missing.indexOf(m), 1);
+  }
+  // "23 and a half" -> 23,5
+  for (const m of [...missing])
+    if (new RegExp(`(?<![\\d.,])${m} and a half`).test(en) && have.has(m + '.5'))
+      missing.splice(missing.indexOf(m), 1);
+  // "1/6 g": the numerator of a fraction is a word in the translation ("sixième", "六分之一").
+  if (missing.includes('1') && /(?<![\d.,])1\/\d/.test(en)) missing.splice(missing.indexOf('1'), 1);
+  const half = HALF[loc];
+  for (const m of [...missing]) {
+    const ok =
+      sameYear(m, have) ||
+      (half &&
+        /^\d+\.5$/.test(m) &&
+        half.test(tr) &&
+        (m === '1.5' || have.has(String(Math.floor(Number(m))))));
+    if (ok) missing.splice(missing.indexOf(m), 1);
+  }
+  const extra = digits.filter((n) => !enAll.includes(n));
   return { missing, extra };
 }
 
@@ -408,10 +518,22 @@ export const allTrees = () =>
 const treePath = (tree) =>
   existsSync(`${SRC}/${tree}`) ? `${SRC}/${tree}` : `${SRC}/${tree}.json`;
 
-// Scan one tree for one locale. Calls onHit(file, at, missing, extra) per field with a miss.
-export function scan(tree, loc, { changed = false, dates = true, onHit } = {}) {
+// ---- reviewed exceptions -------------------------------------------------------------------
+// A finding judged by a person and left as it is (a unit converted, a name dropped on purpose, a
+// number the translation rounds). Keyed locale|file|field; it holds only while both the English
+// and the translation are the text it was judged on, so any edit to either brings it back.
+const REVIEWED_FILE = 'scripts/i18n-tools/number-drift-reviewed.json';
+export const reviewKey = (loc, rel, at) => `${loc}|${rel}|${at}`;
+export const loadReviewed = (file = REVIEWED_FILE) =>
+  existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : {};
+
+// Scan one tree for one locale. Calls onHit(file, at, missing, extra, en, tr) per field with a
+// miss that is not in `reviewed` (an object from loadReviewed); `seen` collects the reviewed keys
+// that still match, so the caller can tell which entries have gone stale.
+export function scan(tree, loc, { changed = false, dates = true, onHit, reviewed, seen } = {}) {
   let fields = 0;
   let hits = 0;
+  let skipped = 0;
   for (const f of walk(treePath(tree))) {
     const tf = f.replace('/en-US', `/${loc}`);
     if (!existsSync(tf)) continue;
@@ -425,15 +547,22 @@ export function scan(tree, loc, { changed = false, dates = true, onHit } = {}) {
       const { missing, extra } = drift(e, t, loc, dates);
       if (!missing.length) continue;
       if (changed && !extra.length) continue;
+      const key = reviewKey(loc, f.slice(SRC.length + 1), at);
+      const r = reviewed?.[key];
+      if (r && r.en === textHash(e) && r.tr === textHash(t)) {
+        skipped++;
+        seen?.add(key);
+        continue;
+      }
       hits++;
-      onHit?.(f, at, missing, extra);
+      onHit?.(f, at, missing, extra, e, t);
     }
   }
-  return { fields, withMissing: hits };
+  return { fields, withMissing: hits, reviewed: skipped };
 }
 
 function main(argv) {
-  const args = argv.slice(2);
+  const args = argv.slice(2).map((a) => a.replace(/^(tree|locales)=/, ''));
   const tree = args.find((a) => !a.startsWith('--') && !a.includes(',')) ?? 'science';
   const locArg = args.find(
     (a) => a.includes(',') || (/^[a-z]{2}(-[A-Za-z]+)?$/.test(a) && a !== tree),
@@ -443,21 +572,30 @@ function main(argv) {
   // English lacks — a replaced value, the shape of a changed fact (unit conversions show too).
   const CHANGED = args.includes('--changed');
   const JSON_OUT = args.includes('--json');
+  // --gate: every tree and locale, minus the reviewed exceptions; exit 1 on any finding left or any
+  // exception that no longer matches a finding. --unreviewed: the same subtraction, report only.
+  const GATE = args.includes('--gate');
+  const UNREVIEWED = GATE || args.includes('--unreviewed');
   const dates = !args.includes('--no-dates');
-  const locs = locArg ? locArg.split(',') : ALL_LOCS;
-  const trees = tree === 'all' ? allTrees() : [tree];
+  const locs = locArg && !GATE ? locArg.split(',') : ALL_LOCS;
+  const trees = tree === 'all' || GATE ? allTrees() : [tree];
+  const reviewed = UNREVIEWED ? loadReviewed() : undefined;
+  const seen = new Set();
 
   const result = {};
   const totals = {};
   let grand = 0;
+  let reviewedCount = 0;
   for (const tr of trees) {
     result[tr] = {};
     for (const loc of locs) {
       result[tr][loc] = scan(tr, loc, {
         changed: CHANGED,
         dates,
+        reviewed,
+        seen,
         onHit: (f, at, missing, extra) => {
-          if (LIST && !JSON_OUT)
+          if ((LIST || GATE) && !JSON_OUT)
             console.log(
               `${loc}\t${f.slice(SRC.length + 1)} ${at}\tmissing ${missing.join(', ')}${extra.length ? ` | extra ${extra.join(', ')}` : ''}`,
             );
@@ -465,7 +603,16 @@ function main(argv) {
       });
       totals[loc] = (totals[loc] ?? 0) + result[tr][loc].withMissing;
       grand += result[tr][loc].withMissing;
+      reviewedCount += result[tr][loc].reviewed;
     }
+  }
+  if (GATE) {
+    const stale = Object.keys(reviewed).filter((k) => !seen.has(k));
+    for (const k of stale) console.log(`stale exception (no longer matches a finding): ${k}`);
+    console.log(
+      `number-drift: ${grand} unreviewed, ${reviewedCount} reviewed, ${stale.length} stale — ${grand || stale.length ? 'FAIL' : 'PASS'}`,
+    );
+    process.exit(grand || stale.length ? 1 : 0);
   }
   if (JSON_OUT)
     console.log(JSON.stringify({ trees: result, totals: { ...totals, all: grand } }, null, 2));

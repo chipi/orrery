@@ -138,6 +138,7 @@ describe('number-drift --json', () => {
     expect(out.trees.videos.de).toEqual({
       fields: expect.any(Number),
       withMissing: expect.any(Number),
+      reviewed: expect.any(Number),
     });
     expect(out.totals.all).toBe(out.totals.de + out.totals.ja);
   });

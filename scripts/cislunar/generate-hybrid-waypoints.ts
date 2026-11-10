@@ -240,7 +240,7 @@ function authoredFromOrbitTables(): void {
   const profile = flight!.cislunar_profile!;
   const raising = profile.orbit_raising ?? [];
   const lunar = profile.lunar_orbits ?? [];
-  const evs = cislunarEventTimes(flight!.events);
+  const evs = cislunarEventTimes(flight!.events) ?? {};
   const arrival = evs.arrival;
   if (arrival == null || !lunar.length) {
     console.error(`${file}: orbit tables need an arrival event and lunar_orbits`);

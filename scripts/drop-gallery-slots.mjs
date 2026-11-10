@@ -197,8 +197,14 @@ const reheroes = [];
 for (const g of galleries.values()) {
   const surface = OVERRIDE_SURFACE[g.dir];
   const f = `static/data/${surface}-hero-overrides.json`;
-  if (!surface || !existsSync(f)) continue;
-  const text = readFileSync(f, 'utf8');
+  if (!surface) continue;
+  let text;
+  try {
+    text = readFileSync(f, 'utf8');
+  } catch (e) {
+    if (e.code === 'ENOENT') continue;
+    throw e;
+  }
   const j = JSON.parse(text);
   const o = j.overrides?.[g.id];
   if (!o) continue;

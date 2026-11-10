@@ -1,4 +1,12 @@
-import { createReadStream, existsSync, mkdirSync, writeFileSync, promises as fs } from 'node:fs';
+import {
+  closeSync,
+  createReadStream,
+  existsSync,
+  mkdirSync,
+  openSync,
+  writeFileSync,
+  promises as fs,
+} from 'node:fs';
 import path from 'node:path';
 import { spawnSync, spawn } from 'node:child_process';
 
@@ -228,7 +236,12 @@ const SYSTEM_CA_BUNDLES = [
 ];
 function ensureCaBundle(): string | null {
   const bundle = path.join(TILE_CACHE_DIR, 'ca-bundle.pem');
-  if (existsSync(bundle)) return bundle;
+  try {
+    closeSync(openSync(bundle, 'r'));
+    return bundle;
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+  }
   mkdirSync(TILE_CACHE_DIR, { recursive: true });
   const system = SYSTEM_CA_BUNDLES.find((b) => existsSync(b));
   if (!system) return null;
@@ -240,7 +253,11 @@ function ensureCaBundle(): string | null {
   if (conv.status !== 0) return null;
   const sysPem = spawnSync('cat', [system, pem], { encoding: 'buffer', maxBuffer: 64 << 20 });
   if (sysPem.status !== 0) return null;
-  writeFileSync(bundle, sysPem.stdout);
+  try {
+    writeFileSync(bundle, sysPem.stdout, { flag: 'wx' });
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code !== 'EEXIST') throw e;
+  }
   return bundle;
 }
 

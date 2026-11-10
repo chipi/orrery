@@ -81,7 +81,7 @@ export interface BuildCislunarOptions {
 export function cislunarEventTimes(
   events:
     readonly { type: string; met_days?: number; label?: string; label_en?: string }[] | undefined,
-): BuildCislunarOptions['events'] {
+): NonNullable<BuildCislunarOptions['events']> {
   const first = (
     pred: (e: { type: string; label?: string; label_en?: string }) => boolean,
   ): number | undefined =>

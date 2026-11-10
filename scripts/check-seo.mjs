@@ -194,7 +194,8 @@ for (const file of files) {
   for (const code of [...LOCALE_CODES, 'x-default'])
     if (!langs.has(code)) fail('hreflang set incomplete', `${where} (missing ${code})`);
   for (const [, , href] of alts) {
-    const target = href.startsWith(ORIGIN) ? href.slice(ORIGIN.length) : href;
+    const url = URL.canParse(href) ? new URL(href) : null;
+    const target = url?.origin === ORIGIN ? url.pathname + url.search + url.hash : href;
     if (!builtPaths.has(target)) fail('hreflang target not built', `${where} → ${href}`);
   }
   const selfAlt = alts.find((m) => m[2] === expected);

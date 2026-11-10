@@ -375,12 +375,12 @@ export function isAllowedLicense(licenseShort: string): boolean {
  * to fail closed or look up a waiver.
  */
 export function normaliseLicenseShortName(raw: string): string {
-  const cleaned = raw
-    .replace(/<[^>]*>/g, '')
-    .replace(/[<>]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .toUpperCase();
+  let untagged = raw;
+  for (let prev = ''; prev !== untagged;) {
+    prev = untagged;
+    untagged = untagged.replace(/<[^>]*>/g, '');
+  }
+  const cleaned = untagged.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim().toUpperCase();
   if (!cleaned) return raw;
   switch (cleaned) {
     case 'PUBLIC DOMAIN':

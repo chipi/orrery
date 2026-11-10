@@ -37,13 +37,26 @@ const LIST = 'scripts/hotspots/route-photos.json';
 const UA = 'Mozilla/5.0 (Orrery route-photos; +https://github.com/chipi/orrery)';
 
 async function download(url: string, out: string): Promise<void> {
-  if (existsSync(out)) return;
-  const res = await fetch(url, { headers: { 'user-agent': UA } });
-  if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
-  const type = res.headers.get('content-type') ?? '';
-  if (!type.startsWith('image/')) throw new Error(`${url}: not an image (${type})`);
   await fs.mkdir(path.dirname(out), { recursive: true });
-  await fs.writeFile(out, Buffer.from(await res.arrayBuffer()));
+  let fh: fs.FileHandle;
+  try {
+    fh = await fs.open(out, 'wx');
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === 'EEXIST') return;
+    throw e;
+  }
+  try {
+    const res = await fetch(url, { headers: { 'user-agent': UA } });
+    if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+    const type = res.headers.get('content-type') ?? '';
+    if (!type.startsWith('image/')) throw new Error(`${url}: not an image (${type})`);
+    await fh.writeFile(Buffer.from(await res.arrayBuffer()));
+  } catch (e) {
+    await fh.close();
+    await fs.rm(out, { force: true });
+    throw e;
+  }
+  await fh.close();
 }
 
 /** Point index reached on `sol`: the last point whose sol is ≤ it. */
@@ -152,9 +165,13 @@ async function main() {
     // The rover's place gallery, as the loaders resolve it: the mission gallery, else the site's own.
     const gallery = missionCounts[rover] > 0 ? `missions/${rover}` : `mars-sites/${rover}`;
     const sidecarPath = path.join('static/data/mars-traverses', `${rover}.route-photos.json`);
-    const prev: { id: string; image: string }[] = existsSync(sidecarPath)
-      ? JSON.parse(await fs.readFile(sidecarPath, 'utf8')).photos
-      : [];
+    const prev: { id: string; image: string }[] = await fs.readFile(sidecarPath, 'utf8').then(
+      (t) => JSON.parse(t).photos,
+      (e) => {
+        if (e.code === 'ENOENT') return [];
+        throw e;
+      },
+    );
     // A photo keeps the slot it already has (it may be an older gallery photo); new ones take the
     // next free numbers. The 1x1 crop, provenance, alt text and counts follow the gallery tools.
     const slotOf = new Map(prev.map((p) => [p.id, p.image.replace(/^\/images\/|\.webp$/g, '')]));

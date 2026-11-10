@@ -184,7 +184,6 @@ if (allCrops) {
           noBase.push(crop);
           continue;
         }
-        let how = 'recipe';
         if (!(await cropMatches(base, crop))) {
           if (!findInside) {
             notReproducing.push(crop);
@@ -195,7 +194,7 @@ if (allCrops) {
             notFromBase.push({ crop, ...f });
             continue;
           }
-          how = `found at ${f.scale.toFixed(2)} of short side, x ${f.x.toFixed(2)} y ${f.y.toFixed(2)}, ncc ${f.score.toFixed(3)}`;
+          const how = `found at ${f.scale.toFixed(2)} of short side, x ${f.x.toFixed(2)} y ${f.y.toFixed(2)}, ncc ${f.score.toFixed(3)}`;
           foundInside.push({ crop, how });
         }
         verified.push(crop);

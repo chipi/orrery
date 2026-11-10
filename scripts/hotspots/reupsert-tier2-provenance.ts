@@ -55,8 +55,7 @@ async function main(): Promise<void> {
         siteId: s.id,
         centerLat: centre.lat,
         centerLon: centre.lon,
-        centreOn:
-          centre.lat !== s.lat || centre.lon !== s.lon ? 'traverse-midpoint' : undefined,
+        centreOn: centre.lat !== s.lat || centre.lon !== s.lon ? 'traverse-midpoint' : undefined,
       }),
     );
   }

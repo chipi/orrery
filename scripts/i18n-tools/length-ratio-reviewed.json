@@ -339,6 +339,36 @@
     "en": "1d7149e62e",
     "tr": "81d7250d54"
   },
+  "ja|source-logos.json|ciclops": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "55dfc4ef74",
+    "tr": "243d46bc22"
+  },
+  "ja|source-logos.json|jhuapl": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "a070a750bf",
+    "tr": "d5433033e8"
+  },
+  "ja|source-logos.json|nasa-ctx": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "15282e3d0f",
+    "tr": "bb82199989"
+  },
+  "ja|source-logos.json|nasa-hirise": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "e07e3b1bd3",
+    "tr": "f4eff8b6a3"
+  },
+  "ja|source-logos.json|pds-geosciences": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "0e74ffd23c",
+    "tr": "6c75f820b2"
+  },
+  "ja|source-logos.json|swri": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "a4db8fba72",
+    "tr": "a3ab4a6ac2"
+  },
   "ja|sourcing/gaps.json|gaps.2.checked.0": {
     "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
     "en": "8b064ce766",
@@ -393,6 +423,11 @@
     "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
     "en": "fe262483af",
     "tr": "afcd13f91a"
+  },
+  "ko|source-logos.json|pds-geosciences": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "0e74ffd23c",
+    "tr": "abe64fef20"
   },
   "nl|fleet/launch-site/cape-canaveral-lc-17.json|name": {
     "why": "read: the place name with its short designation; the long form or the alias in parentheses is left out",
@@ -638,6 +673,21 @@
     "why": "read: a concise rendering (compact script or tighter phrasing); every fact is kept, at most a figure of speech is left out",
     "en": "4432344759",
     "tr": "54b877cb93"
+  },
+  "zh-CN|source-logos.json|ciclops": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "55dfc4ef74",
+    "tr": "adcf2c0d2a"
+  },
+  "zh-CN|source-logos.json|nasa-ctx": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "15282e3d0f",
+    "tr": "fd0ffb33d5"
+  },
+  "zh-CN|source-logos.json|pds-geosciences": {
+    "why": "complete: the long Latin proper names and institution/mission names are kept verbatim by rule, so the ratio exceeds the bound; no content missing",
+    "en": "0e74ffd23c",
+    "tr": "89698df595"
   },
   "zh-CN|sourcing/gaps.json|gaps.2.checked.0": {
     "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",

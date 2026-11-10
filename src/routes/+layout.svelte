@@ -59,7 +59,7 @@
   // TV/keyboard escape hatch that beats D-pad-ing across long lists.
   let footerMoreOpen = $state(false);
   // The full link strip is ~720 px wide: compact (More button) below 1000 px, and
-  // below 1450 px on /explore, where the bottom time dock (to 542 px) shares the edge.
+  // below 1450 px on the floating-A-Z-tab routes (/explore also has the time dock, to 542 px).
   let narrow1000 = $state(false);
   let narrowExplore = $state(false);
 
@@ -122,7 +122,12 @@
   // noindex instead (isMirrorBuild).
   const mirrorBuild = isMirrorBuild(base);
   let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
-  let footerCompact = $derived(narrow1000 || (narrowExplore && seoRoute === '/explore'));
+  // Routes with the floating A-Z tab (EntityIndex `floating`): it parks beside the
+  // compact footer's More button below 1450 px, so the footer must be compact there.
+  const FLOATING_TAB_ROUTES = ['/explore', '/mars', '/moon', '/venus'];
+  let footerCompact = $derived(
+    narrow1000 || (narrowExplore && FLOATING_TAB_ROUTES.includes(seoRoute)),
+  );
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
   // Card share stubs (#547, /c/*) and the OAuth callback are en-US-only pages
   // prerendered at the bare path that set their own noindex — advertising 14

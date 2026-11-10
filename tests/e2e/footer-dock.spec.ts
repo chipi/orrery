@@ -167,3 +167,58 @@ for (const size of HUD_SIZES) {
     });
   });
 }
+
+/**
+ * The floating A-Z tab exists on every full-screen scene (/explore, /mars, /moon,
+ * /venus). On a non-touch window it must own pixels of its own: clear of the
+ * footer (strip or More button), the time dock, the scale panel, the HUD chips
+ * and the surface HUD (distance scale, index handle, controls), and topmost at
+ * its own centre (nothing painted over it, no ghost text behind a footer link).
+ */
+const TAB_ROUTES = ['/explore', '/mars', '/moon', '/venus'];
+const TAB_NEIGHBOURS: Array<[string, string]> = [
+  ['footer', '.footer-menu'],
+  ['dock', '.time-controls'],
+  ['scale panel', '.scale-strip'],
+  ['chips', '.ctrl-row.chips'],
+  ['surface hud', '.hud-controls'],
+  ['distance scale', '.distance-scale'],
+  ['surface index', '.surface-index-desktop'],
+  ['side panel', '.detail-panel'],
+];
+
+for (const route of TAB_ROUTES) {
+  for (const size of HUD_SIZES) {
+    const key = `${size.width}x${size.height}`;
+    test.describe(`A-Z tab ${route} — ${key} non-touch`, () => {
+      test.use({ viewport: size, hasTouch: false, isMobile: false });
+
+      test('the tab clears the footer and the HUD, and nothing paints over it', async ({
+        page,
+      }) => {
+        await page.goto(route, { waitUntil: 'networkidle' });
+        await page.waitForTimeout(500);
+        const tab = page.locator('.entity-index.floating summary');
+        await expect(tab).toBeVisible();
+        const t = await box(tab);
+        const clashes: string[] = [];
+        for (const [name, sel] of TAB_NEIGHBOURS) {
+          const l = page.locator(sel).first();
+          if (!(await l.isVisible())) continue;
+          const o = await box(l);
+          if (intersects(t, o)) clashes.push(`${name} ${JSON.stringify(o)}`);
+        }
+        expect(clashes, `tab ${JSON.stringify(t)} overlaps: ${clashes.join('; ')}`).toEqual([]);
+        const covered = await tab.evaluate((el) => {
+          const r = el.getBoundingClientRect();
+          const hits = document.elementsFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+          return hits
+            .slice(0, hits.indexOf(el) < 0 ? hits.length : hits.indexOf(el))
+            .filter((h) => !el.contains(h))
+            .map((h) => `${h.tagName.toLowerCase()}.${h.className}`);
+        });
+        expect(covered, `painted over the tab: ${covered.join(', ')}`).toEqual([]);
+      });
+    });
+  }
+}

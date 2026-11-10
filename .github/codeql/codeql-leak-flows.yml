@@ -4,9 +4,10 @@
 # server code only. A new flow in src/ (outside the paths below) or server/ is reported here.
 name: leak-flows
 disable-default-queries: true
-queries:
-  - uses: codeql/javascript-queries:Security/CWE-200/FileAccessToHttp.ql
-  - uses: codeql/javascript-queries:Security/CWE-912/HttpToFileAccess.ql
+# Pack queries go under `packs:` (`queries: - uses:` takes a local path or an owner/repo@ref).
+packs:
+  - codeql/javascript-queries:Security/CWE-200/FileAccessToHttp.ql
+  - codeql/javascript-queries:Security/CWE-912/HttpToFileAccess.ql
 paths:
   - src
   - server

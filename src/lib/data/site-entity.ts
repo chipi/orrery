@@ -56,7 +56,7 @@ export async function getSiteEntity(
     (locale === 'en-US' ? null : await overlay(`i18n/en-US/${body}-sites/${id}.json`)) ??
     {};
   const story = await getSiteStory(id, locale, fetchFn);
-  const illustration = await getSiteIllustration(id, fetchFn);
+  const illustration = await getSiteIllustration(id, locale, fetchFn);
   return {
     site,
     text,

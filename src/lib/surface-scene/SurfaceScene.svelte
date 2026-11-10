@@ -227,7 +227,6 @@
   import type { SurfaceSite, Traverse } from '$types/surface-site';
   import Panel from '$lib/components/Panel.svelte';
   import SiteStoryPanel from '$lib/components/SiteStoryPanel.svelte';
-  import SiteIllustrationFigure from '$lib/components/SiteIllustrationFigure.svelte';
   import { getSiteIllustration, type SiteIllustration } from '$lib/data/site-illustrations';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -1357,7 +1356,7 @@
     const id = selected?.id ?? null;
     panelIllustration = null;
     if (!id) return;
-    void getSiteIllustration(id)
+    void getSiteIllustration(id, getLocale())
       .then((i) => {
         if (selected?.id === id) panelIllustration = i;
       })
@@ -6536,14 +6535,17 @@ sample      ${debugInfo.projectedPxSample}`}
           {/if}
         </div>
 
+        <!-- Loaded with the first site map: its 14-locale alt texts kept the surface routes over their JS budget. -->
         {#if panelIllustration}
-          <SiteIllustrationFigure
-            illustration={panelIllustration}
-            onOpen={(src) => {
-              panelLightbox = src;
-              if (selected) trackGalleryImageOpen('site', selected.id);
-            }}
-          />
+          {#await import('$lib/components/SiteIllustrationFigure.svelte') then { default: SiteIllustrationFigure }}
+            <SiteIllustrationFigure
+              illustration={panelIllustration}
+              onOpen={(src) => {
+                panelLightbox = src;
+                if (selected) trackGalleryImageOpen('site', selected.id);
+              }}
+            />
+          {/await}
         {/if}
 
         {#if selected.left}

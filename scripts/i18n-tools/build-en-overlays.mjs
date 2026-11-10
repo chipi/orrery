@@ -84,6 +84,13 @@ const SURFACES = {
     }
     return [{ rel: 'videos', doc }];
   },
+  // illustrated site maps: the image description by siteId (src/lib/data/site-illustrations.ts)
+  'site-illustrations': () => {
+    const m = JSON.parse(fs.readFileSync('static/data/site-illustrations.json', 'utf8'));
+    const doc = {};
+    for (const e of m.illustrations) if (e.alt) doc[e.siteId] = { alt: e.alt };
+    return [{ rel: 'site-illustrations', doc }];
+  },
   // /colophon original-work: per section, entries keyed like src/lib/original-work.ts
   // originalWorkKey (file, else thumbnail, else the English title; dots → _)
   'original-work': () => {

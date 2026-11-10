@@ -74,6 +74,11 @@
     "en": "460d15abb6",
     "tr": "542b78372b"
   },
+  "ja|site-illustrations.json|perseverance.alt": {
+    "why": "\"Flight 1\" is the first flight (初飛行 / 첫 비행 / 首飞): the 1 is the ordinal word",
+    "en": "26ad5f3796",
+    "tr": "45c22da8f3"
+  },
   "ko|fleet/launch-site/naro-space-center.json|best_known_for": {
     "why": "\"Naro-1\" is the rocket's Korean name \"나로호\"",
     "en": "f9d84140ed",
@@ -98,6 +103,11 @@
     "why": "\"~333,000x\" is \"약 33만 배\" (the English is also approximate)",
     "en": "460d15abb6",
     "tr": "e557922dcf"
+  },
+  "ko|site-illustrations.json|perseverance.alt": {
+    "why": "\"Flight 1\" is the first flight (初飛行 / 첫 비행 / 首飞): the 1 is the ordinal word",
+    "en": "26ad5f3796",
+    "tr": "200038669e"
   },
   "nl|science/life-in-space/sleep-nutrition-circadian.json|body_paragraphs.0": {
     "why": "\"per 24-hour day\" is \"per etmaal\", the Dutch word for a 24-hour day",
@@ -133,5 +143,10 @@
     "why": "\"~333,000x\" is \"约33万倍\" (the English is also approximate)",
     "en": "460d15abb6",
     "tr": "81310e966d"
+  },
+  "zh-CN|site-illustrations.json|perseverance.alt": {
+    "why": "\"Flight 1\" is the first flight (初飛行 / 첫 비행 / 首飞): the 1 is the ordinal word",
+    "en": "26ad5f3796",
+    "tr": "185e960e69"
   }
 }

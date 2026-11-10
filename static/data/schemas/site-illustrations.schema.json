@@ -12,12 +12,13 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["siteId", "body", "title", "file", "model", "tool", "generated", "made_from"],
+        "required": ["siteId", "body", "title", "alt", "file", "model", "tool", "generated", "made_from"],
         "additionalProperties": false,
         "properties": {
           "siteId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
           "body": { "enum": ["moon", "mars"] },
           "title": { "type": "string", "minLength": 1 },
+          "alt": { "type": "string", "minLength": 1 },
           "file": { "type": "string", "pattern": "^images/illustrations/sites/[a-z0-9-]+\\.webp$" },
           "model": { "type": "string", "minLength": 1 },
           "tool": { "type": "string", "minLength": 1 },

@@ -106,6 +106,16 @@ describe('getSiteEntity', () => {
     expect(some?.illustration?.file).toBe('images/illustrations/sites/apollo11.webp');
   });
 
+  it('localizes the site illustration alt from the locale overlay, else keeps the English', async () => {
+    files['site-illustrations.json'] = {
+      illustrations: [{ siteId: 'apollo11', body: 'moon', alt: 'Block map.' }],
+    };
+    expect((await getSiteEntity('moon', 'apollo11', 'de'))?.illustration?.alt).toBe('Block map.');
+    files['i18n/de/site-illustrations.json'] = { apollo11: { alt: 'Blockkarte.' } };
+    expect((await getSiteEntity('moon', 'apollo11', 'de'))?.illustration?.alt).toBe('Blockkarte.');
+    expect((await getSiteEntity('moon', 'apollo11', 'en-US'))?.illustration?.alt).toBe('Block map.');
+  });
+
   it('adds the mission that flew to the site, with its hardware', async () => {
     files['moon-sites.json'] = [{ id: 'apollo11', mission_id: 'a11' }];
     files['missions/index.json'] = [{ id: 'a11', dest: 'Moon' }];

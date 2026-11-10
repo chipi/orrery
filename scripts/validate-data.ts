@@ -723,7 +723,7 @@ validateFile(
 validateFile(join(DATA_ROOT, 'original-work.json'), validateOriginalWork);
 validateFile(join(DATA_ROOT, 'site-illustrations.json'), validateSiteIllustrations);
 // Every illustrated site map must ship its base file, its ladder entry, the rungs the
-// ladder names, and an English alt + caption message.
+// ladder names and a caption message (the alt is a schema-required field + a locale overlay).
 {
   const p = join(DATA_ROOT, 'site-illustrations.json');
   if (existsSync(p)) {
@@ -740,7 +740,7 @@ validateFile(join(DATA_ROOT, 'site-illustrations.json'), validateSiteIllustratio
         ...widths.slice(0, -1).map((w) => r.file.replace(/\.webp$/, `-${w}.webp`)),
       ];
       const missing = need.filter((f) => !existsSync(join('static', f)));
-      const keys = [`site_illustration_alt_${r.siteId}`, `site_illustration_caption_${r.body}`];
+      const keys = [`site_illustration_caption_${r.body}`];
       const noMsg = keys.filter((k) => !en[k]);
       if (!widths.length || missing.length || noMsg.length) {
         failed++;

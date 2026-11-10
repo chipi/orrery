@@ -59,9 +59,14 @@ async function visibleTarget(
       ].find(ok);
     if (!el) return null;
     const r = el.getBoundingClientRect();
+    const isTag = el === tag;
     // A tag element is a 0x0 anchor at the icon's centre; card and leader hang off it.
-    if (el === tag) return { x: r.left, y: r.top, tag: true };
-    return { x: r.left + r.width / 2, y: r.top + r.height / 2, tag: false };
+    const x = isTag ? r.left : r.left + r.width / 2;
+    const y = isTag ? r.top : r.top + r.height / 2;
+    // Drawn under a HUD bar (a landscape phone's bottom bar) it is not there to tap.
+    const hit = document.elementFromPoint(x, y);
+    if (isTag ? hit?.tagName !== 'CANVAS' : !hit || !el.contains(hit)) return null;
+    return { x, y, tag: isTag };
   }, id);
 }
 
@@ -182,8 +187,19 @@ for (const c of CASES) {
           c.id,
         );
         const vp = page.viewportSize()!;
+        // Not drawn under a HUD bar either (a landscape phone's bottom bar).
+        const bare =
+          !!spot &&
+          (await page.evaluate(
+            ([x, y]) => document.elementFromPoint(x, y)?.tagName === 'CANVAS',
+            [spot.x, spot.y],
+          ));
         const inView =
-          !!spot && spot.x > 60 && spot.x < vp.width - 60 && spot.y > 90 && spot.y < vp.height - 60;
+          bare &&
+          spot!.x > 60 &&
+          spot!.x < vp.width - 60 &&
+          spot!.y > 90 &&
+          spot!.y < vp.height - 60;
         if (inView && !target?.tag)
           failures.push(
             `camR ${r}: no icon at the drawn landing ${Math.round(spot!.x)},${Math.round(spot!.y)}`,
@@ -229,8 +245,13 @@ for (const c of CASES) {
     await page.waitForTimeout(1500);
     if (await panelOpen(page)) await closePanel(page);
     const cv = (await page.locator('.flat-patch canvas').boundingBox())!;
-    // The site is the view centre (a touch portrait offsets it to 34 % of the height).
-    await click(page, isMobile, cv.x + cv.width / 2, cv.y + cv.height * (isMobile ? 0.34 : 0.5));
+    // The site is the view centre (a touch portrait, not a landscape phone, offsets it to 34 % of the height).
+    await click(
+      page,
+      isMobile,
+      cv.x + cv.width / 2,
+      cv.y + cv.height * (isMobile && cv.height > cv.width ? 0.34 : 0.5),
+    );
     await page.waitForTimeout(800);
     if (!(await panelOpen(page)))
       failures.push('flat view: the site mark did not reopen the panel');

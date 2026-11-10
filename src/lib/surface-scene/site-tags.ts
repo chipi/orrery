@@ -641,14 +641,14 @@ export function createSiteTagLayer(host: HTMLElement, opts: { scale?: number } =
       lastCard = stage.card;
     }
     const half = full * stage.size;
-    // A tag under a HUD panel is hidden whole (frame and card).
+    // A tag whose spot lies under a HUD panel is hidden whole (frame and card). Only the spot
+    // counts: a thin bar grazing the frame's edge (a landscape phone's bottom bar sits a few px
+    // under the centred site) must not take the selected site's only tap target away.
     const live = frames.filter(
       (f) =>
         f.opacity * stage.icon > 0.01 &&
         specs.has(f.key) &&
-        !blocked.some((b) =>
-          overlaps(b, { x0: f.x - half, y0: f.y - half, x1: f.x + half, y1: f.y + half }),
-        ),
+        !blocked.some((b) => f.x >= b.x0 && f.x <= b.x1 && f.y >= b.y0 && f.y <= b.y1),
     );
     const prio = new Map(live.map((f) => [f.key, specs.get(f.key)!.priority + (f.boost ?? 0)]));
     const byKey = new Map(live.map((f) => [f.key, f]));

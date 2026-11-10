@@ -187,9 +187,10 @@ function main(): number {
     if (g && counts[g[1]] && parseInt(g[3], 10) <= (counts[g[1]][g[2]] ?? 0)) return 'gallery';
     if (g && heroSlots.has(`${g[2]}::${g[3]}.${g[4]}`)) return 'hero-override';
     if (/\/01\.(jpe?g|png|webp)$/i.test(p)) return 'hero-01';
-    // MissionPanel FLIGHT tab builds `…/thumbnails/{mission.id}.webp` as a
-    // template literal — invisible to the path-literal harvest, but live.
-    if (/^\/images\/missions\/thumbnails\/[^/]+\.webp$/i.test(p)) return 'referenced';
+    // MissionPanel FLIGHT tab builds `…/thumbnails/{mission.id}.webp` and the share card its label-free
+    // crop `…/thumbnails/card/{mission.id}.webp` as template literals — invisible to the path-literal
+    // harvest, but live.
+    if (/^\/images\/missions\/thumbnails\/(card\/)?[^/]+\.webp$/i.test(p)) return 'referenced';
     if (/^\/images\/hotspots\//.test(p)) return 'hotspot';
     if (/^\/images\/(planets|sun|small-bodies|satellites)\//.test(p)) return 'body';
     if (/^\/images\/[^/]+\/[^/]+\.(jpe?g|png|webp)$/i.test(p)) return 'card';

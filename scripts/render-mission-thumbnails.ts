@@ -6,6 +6,9 @@
  *   npx tsx scripts/render-mission-thumbnails.ts --only=apollo11,voyager-2
  *   npx tsx scripts/render-mission-thumbnails.ts --out=/tmp/x --no-ladder   # preview, touches nothing in the repo
  *
+ * Every run also writes the card variant to thumbnails/card/<id>.webp: 420 x 312, same geometry and style,
+ * no labels, no caption, cropped tight to the drawn content (the collectible card's figure slot).
+ *
  * Geometry is never re-derived here: `computeMissionApply` (heliocentric spline / Keplerian arc,
  * cislunar phases), `getEarthOrbitCoast` (Earth-orbit descriptors), `orbitPath` / `earthOrbitPath`
  * (rings) and `predictShipPosAtMet` (event positions). Which trajectory file /fly loads comes from
@@ -43,6 +46,8 @@ import { LUNAR_LOCAL_PHASE_TYPES } from '../src/lib/three/fly-cislunar-overlays'
 
 export const THUMB_W = 736;
 export const THUMB_H = 414;
+export const CARD_W = 420;
+export const CARD_H = 312;
 const WEBP_QUALITY = 82;
 const REPO = process.cwd();
 const DATA = join(REPO, 'static/data');
@@ -358,22 +363,35 @@ export function sceneFor(m: MissionRec): Scene {
 // ---------------------------------------------------------------- painting
 const SW = THUMB_W / 368; // style was designed at the panel's 368 px
 
+/** Canvas geometry. The panel thumbnail is 736 x 414 with labels and a caption; the card variant is a
+ *  label-free 4:3 crop sized at 3x the card's figure slot (about 140 x 104 CSS px). */
+interface Geo {
+  W: number;
+  H: number;
+  sw: number;
+  card: boolean;
+}
+const PANEL: Geo = { W: THUMB_W, H: THUMB_H, sw: SW, card: false };
+const CARD: Geo = { W: CARD_W, H: CARD_H, sw: 2.2, card: true };
+
 function circle(ctx: CanvasRenderingContext2D, x: number, y: number, r: number) {
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI * 2);
 }
 
-function paint(m: MissionRec, scene: Scene) {
-  const W = THUMB_W;
-  const H = THUMB_H;
+function paint(m: MissionRec, scene: Scene, geo: Geo = PANEL) {
+  const W = geo.W;
+  const H = geo.H;
   const cv = createCanvas(W, H);
   const ctx = cv.getContext('2d');
   ctx.fillStyle = BG;
   ctx.fillRect(0, 0, W, H);
 
-  if (scene.kind === 'placeholder') paintPlaceholder(ctx, scene);
-  else if (scene.kind === 'leo') paintLeo(ctx, scene);
-  else paintPlot(ctx, scene);
+  if (scene.kind === 'placeholder') paintPlaceholder(ctx, scene, geo);
+  else if (scene.kind === 'leo') paintLeo(ctx, scene, geo);
+  else paintPlot(ctx, scene, geo);
+
+  if (geo.card) return cv;
 
   ctx.font = `${6.6 * SW}px ${FONT}`;
   ctx.textBaseline = 'alphabetic';
@@ -384,16 +402,26 @@ function paint(m: MissionRec, scene: Scene) {
   return cv;
 }
 
-function paintPlot(ctx: CanvasRenderingContext2D, scene: Scene) {
-  const W = THUMB_W;
-  const H = THUMB_H;
-  const pad = 26 * SW;
-  const padTop = 24 * SW;
+function paintPlot(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
+  const SW = geo.sw;
+  const W = geo.W;
+  const H = geo.H;
+  const pad = (geo.card ? 10 : 26) * SW;
+  const padTop = (geo.card ? 10 : 24) * SW;
   let minX = 1e9;
   let maxX = -1e9;
   let minY = 1e9;
   let maxY = -1e9;
-  for (const p of scene.fit) {
+  // The card crop frames what is drawn solid (paths, bodies, event dots), not the dashed orbit rings.
+  const fit = geo.card
+    ? [
+        ...scene.paths.flatMap((p) => p.pts),
+        ...scene.discs.map((d) => d.p),
+        ...scene.marks.map((mk) => mk.p),
+        ...(scene.kind === 'helio' ? [{ x: 0, y: 0 }] : []),
+      ]
+    : scene.fit;
+  for (const p of fit) {
     minX = Math.min(minX, p.x);
     maxX = Math.max(maxX, p.x);
     minY = Math.min(minY, p.y);
@@ -535,6 +563,7 @@ function paintPlot(ctx: CanvasRenderingContext2D, scene: Scene) {
       ctx.fill();
     }
   }
+  if (geo.card) return;
   ctx.font = `${7.5 * SW}px ${FONT}`;
   ctx.textBaseline = 'middle';
   for (let i = 0; i < scene.marks.length; i++) {
@@ -589,13 +618,14 @@ function paintPlot(ctx: CanvasRenderingContext2D, scene: Scene) {
   }
 }
 
-function paintLeo(ctx: CanvasRenderingContext2D, scene: Scene) {
-  const W = THUMB_W;
-  const H = THUMB_H;
+function paintLeo(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
+  const SW = geo.sw;
+  const W = geo.W;
+  const H = geo.H;
   const c = scene.leo!;
   const cx = W / 2;
-  const cy = H / 2 - 4 * SW;
-  const R = Math.min(W, H) * 0.22;
+  const cy = geo.card ? H / 2 : H / 2 - 4 * SW;
+  const R = Math.min(W, H) * (geo.card ? 0.28 : 0.22);
   // Orbit radius is exaggerated (real LEO is about 1.06 Earth radii) so the ring reads; the caption
   // says not to scale. Inclination only tilts the ring on screen (steeper orbit, steeper ring).
   const orbR = R * 1.7;
@@ -682,6 +712,7 @@ function paintLeo(ctx: CanvasRenderingContext2D, scene: Scene) {
   circle(ctx, a1.X, a1.Y, 6.5 * SW);
   ctx.stroke();
 
+  if (geo.card) return;
   ctx.font = `${7.5 * SW}px ${FONT}`;
   ctx.textBaseline = 'middle';
   ctx.fillStyle = PAPER;
@@ -702,12 +733,13 @@ function paintLeo(ctx: CanvasRenderingContext2D, scene: Scene) {
   ctx.textAlign = 'left';
 }
 
-function paintPlaceholder(ctx: CanvasRenderingContext2D, scene: Scene) {
-  const W = THUMB_W;
-  const H = THUMB_H;
+function paintPlaceholder(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
+  const SW = geo.sw;
+  const W = geo.W;
+  const H = geo.H;
   const cx = W / 2;
-  const cy = H / 2 - 22 * SW;
-  const R = 34 * SW;
+  const cy = geo.card ? H / 2 : H / 2 - 22 * SW;
+  const R = geo.card ? H * 0.24 : 34 * SW;
   const h = ctx.createRadialGradient(cx, cy, R * 0.95, cx, cy, R * 1.9);
   h.addColorStop(0, 'rgba(136,159,231,0.30)');
   h.addColorStop(1, 'rgba(136,159,231,0)');
@@ -726,6 +758,7 @@ function paintPlaceholder(ctx: CanvasRenderingContext2D, scene: Scene) {
   circle(ctx, cx, cy, R * 1.7);
   ctx.stroke();
   ctx.setLineDash([]);
+  if (geo.card) return;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'alphabetic';
   const fit = (text: string, px: number, maxW: number) => {
@@ -749,8 +782,8 @@ function paintPlaceholder(ctx: CanvasRenderingContext2D, scene: Scene) {
 }
 
 // ---------------------------------------------------------------- run
-async function encode(m: MissionRec, scene: Scene): Promise<Buffer> {
-  const png = paint(m, scene).toBuffer('image/png');
+async function encode(m: MissionRec, scene: Scene, geo: Geo = PANEL): Promise<Buffer> {
+  const png = paint(m, scene, geo).toBuffer('image/png');
   return sharp(png).webp({ quality: WEBP_QUALITY }).toBuffer();
 }
 
@@ -758,12 +791,14 @@ export async function renderAll(
   opts: { only?: string[]; outDir?: string; ladder?: boolean; pngs?: string } = {},
 ) {
   const outDir = opts.outDir ?? THUMB_DIR;
-  mkdirSync(outDir, { recursive: true });
+  const cardDir = join(outDir, 'card');
+  mkdirSync(cardDir, { recursive: true });
   const all = loadMissions();
   const todo = opts.only?.length ? all.filter((m) => opts.only!.includes(m.id)) : all;
   const stats = {
     written: 0,
     bytes: 0,
+    cardBytes: 0,
     placeholders: 0,
     failed: [] as string[],
     kinds: {} as Record<string, number>,
@@ -778,12 +813,15 @@ export async function renderAll(
     }
     const buf = await encode(m, scene);
     writeFileSync(join(outDir, `${m.id}.webp`), buf);
+    const cardBuf = await encode(m, scene, CARD);
+    writeFileSync(join(cardDir, `${m.id}.webp`), cardBuf);
     if (opts.pngs) {
       mkdirSync(opts.pngs, { recursive: true });
       writeFileSync(join(opts.pngs, `${m.id}.png`), paint(m, scene).toBuffer('image/png'));
     }
     stats.written++;
     stats.bytes += buf.length;
+    stats.cardBytes += cardBuf.length;
     stats.kinds[scene.kind] = (stats.kinds[scene.kind] ?? 0) + 1;
     if (scene.kind === 'placeholder') stats.placeholders++;
   }
@@ -792,6 +830,7 @@ export async function renderAll(
     for (const m of todo) {
       if (!stats.failed.some((f) => f.startsWith(`${m.id}:`)))
         ladder[`/images/missions/thumbnails/${m.id}`] = [THUMB_W];
+      ladder[`/images/missions/thumbnails/card/${m.id}`] = [CARD_W];
     }
     writeFileSync(LADDER, JSON.stringify(ladder, null, 2) + '\n');
     // retire the old 240 px PNGs this generator replaces
@@ -815,7 +854,7 @@ if (process.argv[1]?.endsWith('render-mission-thumbnails.ts')) {
   })
     .then((s) => {
       console.log(
-        `thumbnails: ${s.written} written (${(s.bytes / 1024).toFixed(0)} KB), ${s.placeholders} placeholders, kinds ${JSON.stringify(s.kinds)}`,
+        `thumbnails: ${s.written} written (${(s.bytes / 1024).toFixed(0)} KB + card ${(s.cardBytes / 1024).toFixed(0)} KB), ${s.placeholders} placeholders, kinds ${JSON.stringify(s.kinds)}`,
       );
       if (s.failed.length) {
         console.error(`FAILED ${s.failed.length}:\n  ${s.failed.join('\n  ')}`);

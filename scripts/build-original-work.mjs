@@ -170,7 +170,8 @@ const blueprintArt = JSON.parse(readFileSync('src/lib/blueprint-ids.json', 'utf8
 
 // Mission trajectory thumbnails — one per mission, drawn in code by scripts/render-mission-thumbnails.ts
 // from /fly's own trajectory code (static/images/missions/thumbnails/{id}.webp); ids from the mission
-// index so a new mission shows up on the next run; the route opens that mission's panel.
+// index so a new mission shows up on the next run; the route opens that mission's panel. The label-free card
+// crops in thumbnails/card/ are the same drawings, not listed separately.
 const missionTrajectories = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8'))
   .map((m) => m.id)
   .sort()

@@ -2,10 +2,17 @@
 
 Every mission has one drawing of where it goes: `static/images/missions/thumbnails/<id>.webp`, 736 × 414
 (16:9, 2x of the mission panel's image box), shown on the FLIGHT tab of the mission panel and on the
-collectible card (`/cards/mission/<id>`). They are **Orrery's own work, drawn in code** (not AI-generated, not
+collectible card (`/cards/mission/<id>`, which uses the label-free crop below). They are **Orrery's own work, drawn in code** (not AI-generated, not
 sourced), credited on `/colophon` under "Mission trajectory plots". Companion to the
 [mission-addition runbook](mission-addition-runbook.md); the trajectory data itself is covered by
 [mission-trajectories.md](mission-trajectories.md).
+
+Next to each one sits the **card variant**, `static/images/missions/thumbnails/card/<id>.webp`: 420 × 312 (4:3, 3x the
+card's figure slot of about 140 × 104 CSS px), same geometry and style but **no labels and no caption line**, cropped tight to
+what is drawn solid (paths, body discs, event dots; the dashed orbit rings do not widen the frame) with a small margin.
+Placeholders get one too (the Earth disc alone: the card already names the mission). The card variants are crops of the same
+drawings, so they are not separate `/colophon` entries (`original-work.json` lists the 126 plots) and, like the plots,
+never enter `image-approved`.
 
 Generator: `scripts/render-mission-thumbnails.ts` (`fetch-assets.ts --thumbnails-only` calls it). It reads the
 mission JSON and draws what `/fly` flies: it never re-derives a trajectory.
@@ -33,7 +40,7 @@ node scripts/build-original-work.mjs                                       # col
 
 A full run is deterministic: running it twice leaves no diff, so a refresh is a reviewable diff of exactly the
 missions whose data or algorithm changed. After a new mission run the full command once (the `--only` form
-does not add the ladder entry `/images/missions/thumbnails/<id>` = `[736]`), then:
+does not add the ladder entries `/images/missions/thumbnails/<id>` = `[736]` and `/images/missions/thumbnails/card/<id>` = `[420]`), then:
 
 ```bash
 npm run validate-data          # fails closed on a mission with no thumbnail (.webp)
@@ -55,8 +62,8 @@ cannot read the site's woff2). Nothing is fetched.
 - Radial scale is compressed beyond 1.6 AU (`r' = 1.6 sqrt(r / 1.6)`, angle kept) for outer-system tours and the
   caption says `RADIAL SCALE COMPRESSED`; inner missions are to scale. Earth-orbit rings are drawn at 1.7 Earth
   radii and captioned `NOT TO SCALE`.
-- One render per mission, 736 × 414, WebP quality 82 (about 9 KB). There is no 1x rung and no separate card
-  render: the card shows the same file at 96 px, where only the path and discs read (labels do not).
+- Two renders per mission, both WebP quality 82: 736 × 414 for the panel (about 9 KB) and the 420 × 312 card crop
+  (about 5 KB, no text at all: labels do not read at card size). There is no 1x rung.
 - Labels are baked into the picture in English. A new label word means a new generator branch, not a per-locale
   string.
 

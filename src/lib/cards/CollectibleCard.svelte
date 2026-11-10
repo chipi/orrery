@@ -109,7 +109,7 @@
         {/each}
       </dl>
       {#if spec.figureUrl && !figFailed}
-        <figure class="fig">
+        <figure class="fig" class:anatomy={spec.figureKind === 'anatomy'}>
           <img
             src={assetUrl(spec.figureUrl)}
             alt=""
@@ -117,7 +117,6 @@
             decoding="async"
             onerror={() => (figFailed = true)}
           />
-          {#if spec.figureCaption}<figcaption>{spec.figureCaption}</figcaption>{/if}
         </figure>
       {/if}
     </div>
@@ -245,9 +244,11 @@
   }
   .stats {
     margin: 0;
-    flex: 1;
+    flex: 0 1 auto;
+    min-width: 0;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Columns as wide as their values, so the figure gets the rest of the row. */
+    grid-template-columns: repeat(2, minmax(0, max-content));
     gap: 7px 12px;
   }
   .stat dt {
@@ -272,13 +273,19 @@
   }
   .fig {
     margin: 0;
-    flex: none;
-    width: 96px;
+    flex: 1 1 0;
+    min-width: 96px;
+    min-height: 96px;
+    align-self: stretch;
+    display: flex;
     text-align: center;
   }
+  /* The figure takes the full height of the stats block beside it. */
   .fig img {
-    width: 96px;
-    height: 72px;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
     object-fit: contain;
     /* Monochrome register — the figure is drafted, not decorative.
        screen-blend sinks the thumbnail's dark background into the card
@@ -286,13 +293,10 @@
     mix-blend-mode: screen;
     filter: grayscale(1) brightness(1.9) contrast(1.15);
   }
-  .fig figcaption {
-    text-transform: uppercase;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    letter-spacing: 1.5px;
-    color: var(--card-faint);
-    margin-top: 2px;
+  /* Anatomy drawings are black linework on a white sheet: inverted, the sheet becomes the card's
+     black and the drawing reads white. */
+  .fig.anatomy img {
+    filter: invert(1) grayscale(1) contrast(1.15);
   }
 
   .fact {

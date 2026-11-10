@@ -1,6 +1,6 @@
 ---
 name: orrery-mission-thumbnails
-description: Add, refresh or check a mission's trajectory thumbnail (static/images/missions/thumbnails/<id>.webp) — the 736x414 plot drawn from /fly's own trajectory code, its placeholder for missions with no orbit data, the style rules, the checks and the colophon credit.
+description: Add, refresh or check a mission's trajectory thumbnail (static/images/missions/thumbnails/<id>.webp) — the 736x414 plot drawn from /fly's own trajectory code (plus its label-free 420x312 card crop in thumbnails/card/), its placeholder for missions with no orbit data, the style rules, the checks and the colophon credit.
 when_to_use: Use when asked to "add a mission thumbnail", "refresh the trajectory thumbnails", "a mission has no thumbnail", "the thumbnail looks wrong", after adding a mission or changing flight data, waypoints, fly-trajectories, the Earth-orbit registry or the cislunar geometry, or when validate-data says "no trajectory thumbnail".
 ---
 

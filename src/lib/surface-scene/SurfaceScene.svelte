@@ -5410,7 +5410,7 @@
     data-audio-stage="surface-scene"
   ></div>
   <div class="rings-host" bind:this={ringsHost}>
-    {#if view === '3d' && rings3d.length > 0}
+    {#if view === '3d' && !flatPatchActive && rings3d.length > 0}
       <AnnotationRings
         rings={rings3d}
         width={ringsW}

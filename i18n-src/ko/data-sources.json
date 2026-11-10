@@ -13,11 +13,11 @@
   "models-ref-nssdca": "NASA 우주과학 데이터 통합 아카이브(NSSDCA)의 우주선·발사체 페이지로, /fly와 /fleet 크기 비교용으로 모델링한 기체와 로켓의 질량·길이·지름을 확인한 출처입니다.",
   "models-ref-nasa": "NASA의 임무·기체·역사 페이지(nasa.gov, history.nasa.gov, science.nasa.gov)로, /fly와 /fleet 크기 비교용으로 모델링한 유인 캡슐, 화물선, 우주왕복선 궤도선, 발사체의 치수를 확인한 출처입니다.",
   "models-ref-nps": "국립공원관리청의 자유의 여신상 페이지 «Statue Statistics»로, 지면에서 횃불 끝까지 92.99 m와 받침대·동상 자체의 치수를 확인한 출처입니다. /fleet 발사체 크기 비교에서 로켓 옆에 서 있는 비교 인물상입니다.",
-  "models-ref-esa": "유럽우주국(ESA) 페이지(ATV, 아리안, 로제타 등)로, /fly와 /fleet 크기 비교용으로 모델링한 유럽 기체와 발사체의 치수를 확인한 출처입니다.",
+  "models-ref-esa": "유럽우주국(ESA) 페이지(ATV, 아리안, Rosetta 등)로, /fly와 /fleet 크기 비교용으로 모델링한 유럽 기체와 발사체의 치수를 확인한 출처입니다.",
   "models-ref-jaxa": "JAXA의 H-IIA, H3, M-V 및 보급선 HTV / HTV-X 페이지로, /fly와 /fleet 크기 비교용으로 모델링한 일본 발사체와 화물선의 치수를 확인한 출처입니다.",
-  "models-ref-isro": "ISRO의 발사체와 가간얀 페이지(PSLV, GSLV Mk III / LVM3, 유인 모듈)로, /fly와 /fleet 크기 비교용으로 모델링한 인도 기체의 치수를 확인한 출처입니다.",
-  "models-ref-agencies": "우주 기관과 제작사의 공식 페이지(로스코스모스, 스페이스X, 유나이티드 론치 얼라이언스, 보잉, 노스럽 그러먼, 파이어플라이, 아리안스페이스, 중국유인우주국과 CASC, 미국 우주군)로, 발사체와 우주선 모델의 기체 치수를 확인한 출처입니다.",
-  "models-ref-independent": "독립적인 우주 비행 자료와 박물관 페이지(군터의 우주 페이지, Encyclopedia Astronautica, RussianSpaceWeb, 스미스소니언 국립항공우주박물관, 슈파이어 기술박물관 등)로, 소련·우주왕복선·부란 시대 기체의 크기를 확인한 출처입니다.",
+  "models-ref-isro": "ISRO의 발사체와 Gaganyaan 페이지(PSLV, GSLV Mk III / LVM3, 유인 모듈)로, /fly와 /fleet 크기 비교용으로 모델링한 인도 기체의 치수를 확인한 출처입니다.",
+  "models-ref-agencies": "우주 기관과 제작사의 공식 페이지(Roscosmos, SpaceX, 유나이티드 론치 얼라이언스, 보잉, 노스럽 그러먼, 파이어플라이, 아리안스페이스, 중국유인우주국과 CASC, 미국 우주군)로, 발사체와 우주선 모델의 기체 치수를 확인한 출처입니다.",
+  "models-ref-independent": "독립적인 우주 비행 자료와 박물관 페이지(군터의 우주 페이지, Encyclopedia Astronautica, RussianSpaceWeb, 스미스소니언 국립항공우주박물관, 슈파이어 기술박물관 등)로, 소련·우주왕복선·Buran 시대 기체의 크기를 확인한 출처입니다.",
   "nasa-mmgis-rover-traverses": "Curiosity와 Perseverance 로버 팀이 공개한 주행 경로로, 화성 표면 보기에 솔과 주행 거리와 함께 그려집니다.",
   "pds-mer-traverses": "Spirit와 Opportunity 과학 팀이 공개한 주행 경로로, 화성 표면 보기에 솔과 주행 거리와 함께 그려집니다."
 }

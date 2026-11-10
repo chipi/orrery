@@ -342,3 +342,17 @@ body.exhibit-mode .earth-compare,
 body.exhibit-mode .cta-row {
   display: none !important;
 }
+
+/* Before hydration a button's handler is not attached yet and a tap on it is lost (0.9.8
+   measurement: up to ~4 s on a first visit over slow 3G with a 4x slower CPU). A button still
+   waiting after 600 ms dims and shows a busy cursor; fast loads never see it. Links work
+   before hydration and are left alone. */
+@keyframes pre-hydrate-wait {
+  to {
+    opacity: 0.55;
+    cursor: progress;
+  }
+}
+html:not([data-hydrated]) :is(button, [role='button'], select) {
+  animation: pre-hydrate-wait 0.2s ease 0.6s forwards;
+}

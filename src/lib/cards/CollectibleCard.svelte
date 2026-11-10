@@ -247,9 +247,14 @@
     flex: 0 1 auto;
     min-width: 0;
     display: grid;
-    /* Columns as wide as their values, so the figure gets the rest of the row. */
-    grid-template-columns: repeat(2, minmax(0, max-content));
+    /* Columns as wide as their values up to 96 px (longer values end in an ellipsis), so the
+       figure gets the rest of the row. */
+    grid-template-columns: repeat(2, fit-content(96px));
     gap: 7px 12px;
+  }
+  .stat {
+    min-width: 0;
+    overflow: hidden;
   }
   .stat dt {
     text-transform: uppercase;
@@ -295,8 +300,24 @@
   }
   /* Anatomy drawings are black linework on a white sheet: inverted, the sheet becomes the card's
      black and the drawing reads white. */
+  /* The img box is the drawing itself (no letterbox), so the edge fade lands on the sheet's
+     edge and hides its grey border. */
+  .fig.anatomy {
+    align-items: center;
+    justify-content: center;
+  }
   .fig.anatomy img {
+    flex: none;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    /* About the stats block's height: a tall drawing (a launcher) must not grow the card. */
+    max-height: 112px;
     filter: invert(1) grayscale(1) contrast(1.15);
+    mask-image:
+      linear-gradient(to right, transparent, #000 10%, #000 90%, transparent),
+      linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+    mask-composite: intersect;
   }
 
   .fact {

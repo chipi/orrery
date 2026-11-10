@@ -36,3 +36,11 @@ export function historicDecadeCount(): number {
     /^\d{4}-\d{4}\.json$/.test(f),
   ).length;
 }
+
+/** Annotations with an explanation for one site in surface-hotspots.json — the rows SiteAnnotationList shows. */
+export function explainedAnnotationCount(siteId: string): number {
+  const doc = JSON.parse(read('static/data/surface-hotspots.json')) as {
+    entries: Record<string, { hotspot_annotations?: { explain?: unknown }[] }>;
+  };
+  return (doc.entries[siteId]?.hotspot_annotations ?? []).filter((a) => a.explain).length;
+}

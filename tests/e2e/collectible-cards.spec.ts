@@ -84,7 +84,8 @@ test.describe('collectible cards (#547)', () => {
     await expect(card).toContainText('FLEET');
     await expect(card).toContainText('Saturn V');
     await expect(card).toContainText('FIRST FLIGHT');
-    await expect(card).toContainText('ANATOMY');
+    // The anatomy figure carries no caption; it is the inverted drawing.
+    await expect(card.locator('figure.fig.anatomy img')).toBeVisible();
     expect(errors).toEqual([]);
   });
 

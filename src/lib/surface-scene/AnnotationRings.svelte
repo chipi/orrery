@@ -222,6 +222,26 @@
     annotationUi.highlightId = annotationUi.openId;
   }
 
+  /** Rings a few metres apart (the Apollo 15 flag beside the LM) overlap their tap targets; the
+   *  button on top would take a tap aimed at its neighbour's centre. The ring whose centre is
+   *  nearest the tap wins. Keyboard activation (no pointer position) keeps the focused ring. */
+  function tappedRing(e: MouseEvent, fallback: string): string {
+    if (!root || e.detail === 0) return fallback;
+    const box = root.getBoundingClientRect();
+    const x = e.clientX - box.left;
+    const y = e.clientY - box.top;
+    let best = fallback;
+    let bestD = Infinity;
+    for (const r of singles) {
+      const d = Math.hypot(r.x - x, r.y - y);
+      if (d <= HIT_PX / 2 && d < bestD) {
+        bestD = d;
+        best = r.annotation.id;
+      }
+    }
+    return best;
+  }
+
   function clickCluster(c: RingCluster): void {
     if (fanKey === c.key) {
       fanKey = null;
@@ -352,7 +372,11 @@
       aria-expanded={annotationUi.openId === id}
       data-testid="annotation-ring"
       data-annotation-id={id}
-      onclick={() => !onRingTap?.(r.x, r.y, id) && toggle(id)}
+      onclick={(e) => {
+        const hit = tappedRing(e, id);
+        const h = singles.find((s) => s.annotation.id === hit) ?? r;
+        if (!onRingTap?.(h.x, h.y, hit)) toggle(hit);
+      }}
       onpointerenter={(e) => enter(e, id)}
       onpointerleave={() => leave(id)}
       onfocus={(e) => focus(e, id)}

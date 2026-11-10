@@ -1,6 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { clickViaEvaluate } from './_helpers/click-via-evaluate';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { explainedAnnotationCount } from './_helpers/source-counts';
 
 /**
  * SurfaceFlatPatch — sphere → flat ground-patch transition view
@@ -145,7 +146,7 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)',
     expect(box!.height).toBeGreaterThanOrEqual(44);
     // The site panel lists the same objects.
     const list = page.getByTestId('site-annotation-list');
-    await expect(list.getByRole('button')).toHaveCount(3);
+    await expect(list.getByRole('button')).toHaveCount(explainedAnnotationCount('apollo15'));
     // Tap a ring: popover with the explanation and a source link; Escape closes
     // the popover and leaves the ground view open.
     await lm.click({ force: true });

@@ -6,6 +6,9 @@ import { expect, test, type Locator } from '@playwright/test';
  * Below 1000 px (1450 px on /explore) it collapses to one short line with a More button that opens
  * the full link list. Touch hides the footer, so these run with touch off.
  */
+// /explore renders the 3D solar system: on the GPU-less CI runner (SwiftShader) a frame costs more the
+// more pixels the window has, so the page needs 13 s at 375x812 and over 30 s at 1440x900 (CI run
+// 42809273586, mobile projects). These tests only measure layout, so they get the tripled budget.
 const SIZES = [
   { name: '375x812', width: 375, height: 812 },
   { name: '800x375', width: 800, height: 375 },
@@ -27,6 +30,7 @@ for (const size of SIZES) {
     });
 
     test('/explore: footer box clears the time dock and the scale panel', async ({ page }) => {
+      test.slow();
       await page.goto('/explore', { waitUntil: 'networkidle' });
       const dock = page.locator('.time-controls');
       const scale = page.locator('.scale-strip');
@@ -93,6 +97,7 @@ for (const size of SIZES) {
     });
 
     test('every link is visible and not covered by the dock or any panel', async ({ page }) => {
+      test.slow();
       await page.goto('/explore', { waitUntil: 'networkidle' });
       const more = page.locator('.footer-more-btn');
       if (!(await more.isVisible())) return;
@@ -147,6 +152,7 @@ for (const size of HUD_SIZES) {
     test.use({ viewport: size, hasTouch: false, isMobile: false });
 
     test('no two HUD parts intersect', async ({ page }) => {
+      test.slow();
       await page.goto('/explore', { waitUntil: 'networkidle' });
       await expect(page.locator('.time-controls')).toBeVisible();
       await page.waitForTimeout(500);
@@ -196,6 +202,7 @@ for (const route of TAB_ROUTES) {
       test('the tab clears the footer and the HUD, and nothing paints over it', async ({
         page,
       }) => {
+        test.slow(route === '/explore');
         await page.goto(route, { waitUntil: 'networkidle' });
         await page.waitForTimeout(500);
         const tab = page.locator('.entity-index.floating summary');

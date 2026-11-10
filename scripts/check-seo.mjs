@@ -271,8 +271,10 @@ if (failures.size) {
     console.error(`  ✗ ${rule}: ${list.length}`);
     for (const w of list.slice(0, 40)) console.error(`      ${w}`);
   }
-  process.exit(1);
+  // exitCode, not process.exit(): exit() can drop the end of a piped stderr report.
+  process.exitCode = 1;
+} else {
+  console.log(
+    `check-seo: PASS (${mode}, ${files.length} pages${BASE ? '' : `, ${indexable.size} indexable`})`,
+  );
 }
-console.log(
-  `check-seo: PASS (${mode}, ${files.length} pages${BASE ? '' : `, ${indexable.size} indexable`})`,
-);

@@ -69,38 +69,19 @@
     // diameters + 7 gaps) fills the canvas with comfortable padding.
     const padX = 16;
     const padTop = 32;
-    const padBottom = 56; // room for name + diameter + scale note
     // Bigger gap helps the inner-planet cluster (Earth/Venus/Mars/
     // Mercury) breathe — at the small end the planet bodies are 2-6
     // px wide so the gap is what gives the labels room to land.
     const gapPx = 28;
-    const usableW = cssW - 2 * padX - gapPx * (SIZES.length - 1);
-    const sumR = SIZES.reduce((acc, s) => acc + s.r, 0);
-    // First scale candidate: fit horizontally.
-    const scaleH = usableW / (2 * sumR);
-    // Second cap: Jupiter (the biggest sphere) can't exceed half the
-    // available vertical space minus padTop/padBottom.
-    const maxVerticalDiam = cssH - padTop - padBottom;
+    // Each label is two 11 px lines (name, diameter); rows stack below the baseline.
+    const ROW_PITCH = 30;
+    const FIRST_ROW = 14;
+    const SOURCE_LINE = 22; // the "Diameters in km · Source" line at the bottom
+    const PAD_BETWEEN = 8;
     const jupiterR = SIZES.find((s) => s.id === 'jupiter')?.r ?? 69911;
-    const scaleV = maxVerticalDiam / (2 * jupiterR);
-    const scale = Math.min(scaleH, scaleV);
+    const sumR = SIZES.reduce((acc, s) => acc + s.r, 0);
+    ctx.font = "11px 'Space Mono', monospace";
 
-    // Baseline: planets sit on a common imaginary line so size
-    // differences read at a glance. Place the line at
-    // padTop + maxDiameter so all planets fit above the bottom labels.
-    const maxDiam = 2 * jupiterR * scale;
-    const baselineY = padTop + maxDiam;
-
-    // Lay each planet out horizontally, drawing a sphere with a
-    // radial gradient lit from the upper-left (illusion of 3D).
-    const totalRenderW =
-      SIZES.reduce((acc, s) => acc + 2 * s.r * scale, 0) + gapPx * (SIZES.length - 1);
-    const startX = padX + (cssW - 2 * padX - totalRenderW) / 2;
-
-    // First pass: compute each planet's centre + label width so we
-    // can stagger overlapping labels. Inner planets pack tight at
-    // true relative scale; without staggering "MERCURYVENUSEARTHMARS"
-    // smushes into one blob.
     type Layout = {
       cx: number;
       cy: number;
@@ -108,40 +89,57 @@
       nameLabel: string;
       kmLabel: string;
       labelW: number;
-      altRow: boolean;
+      /** Label centre, clamped so the label stays inside the canvas. */
+      labelX: number;
+      row: number;
     };
-    ctx.font = "11px 'Space Mono', monospace";
-    const layouts: Layout[] = [];
-    let cursorX = startX;
-    for (const s of SIZES) {
-      const radius = Math.max(2, s.r * scale);
-      const cx = cursorX + radius;
-      const cy = baselineY - radius;
-      const nameLabel = s.name.toUpperCase();
-      const labelW = Math.max(ctx.measureText(nameLabel).width, ctx.measureText(s.km).width);
-      layouts.push({ cx, cy, radius, nameLabel, kmLabel: s.km, labelW, altRow: false });
-      cursorX += 2 * radius + gapPx;
-    }
-    // Second pass: track the rightmost label edge per row separately
-    // so consecutive labels on the same row never collide. Each
-    // planet is greedy-assigned to row 1 if it fits there, else row 2.
-    let endRow1 = -Infinity;
-    let endRow2 = -Infinity;
-    const PAD_BETWEEN = 6;
-    for (const lay of layouts) {
-      const labelLeft = lay.cx - lay.labelW / 2;
-      const labelRight = lay.cx + lay.labelW / 2;
-      if (labelLeft >= endRow1 + PAD_BETWEEN) {
-        lay.altRow = false;
-        endRow1 = labelRight;
-      } else {
-        lay.altRow = true;
-        endRow2 = labelRight;
+
+    // Lay the planets out for a given label-row budget; returns how many rows the labels
+    // need. Inner planets pack tight at true relative scale, so their labels stagger onto
+    // further rows (each row checks its own right edge, so no two labels collide).
+    const layoutFor = (rows: number) => {
+      const padBottom = FIRST_ROW + rows * ROW_PITCH + SOURCE_LINE;
+      const usableW = cssW - 2 * padX - gapPx * (SIZES.length - 1);
+      const scaleH = usableW / (2 * sumR);
+      const scaleV = (cssH - padTop - padBottom) / (2 * jupiterR);
+      const scale = Math.max(0.0001, Math.min(scaleH, scaleV));
+      // Planets sit on a common baseline so size differences read at a glance.
+      const baselineY = padTop + 2 * jupiterR * scale;
+      const totalRenderW =
+        SIZES.reduce((acc, s) => acc + 2 * s.r * scale, 0) + gapPx * (SIZES.length - 1);
+      let cursorX = padX + (cssW - 2 * padX - totalRenderW) / 2;
+      const layouts: Layout[] = [];
+      const rowEnd: number[] = [];
+      for (const s of SIZES) {
+        const radius = Math.max(2, s.r * scale);
+        const cx = cursorX + radius;
+        const nameLabel = s.name.toUpperCase();
+        const labelW = Math.max(ctx.measureText(nameLabel).width, ctx.measureText(s.km).width);
+        const labelX = Math.min(Math.max(cx, padX + labelW / 2), cssW - padX - labelW / 2);
+        let row = 0;
+        while (row < rowEnd.length && labelX - labelW / 2 < rowEnd[row] + PAD_BETWEEN) row++;
+        rowEnd[row] = labelX + labelW / 2;
+        layouts.push({
+          cx,
+          cy: baselineY - radius,
+          radius,
+          nameLabel,
+          kmLabel: s.km,
+          labelW,
+          labelX,
+          row,
+        });
+        cursorX += 2 * radius + gapPx;
       }
+      return { layouts, baselineY, rowsUsed: rowEnd.length };
+    };
+    let rows = 2;
+    let plan = layoutFor(rows);
+    while (plan.rowsUsed > rows && rows < SIZES.length) {
+      rows = plan.rowsUsed;
+      plan = layoutFor(rows);
     }
-    // endRow2 referenced only to keep ESLint quiet about an unused
-    // value; the important state mutation already happened above.
-    void endRow2;
+    const { layouts, baselineY } = plan;
 
     for (let i = 0; i < SIZES.length; i++) {
       const s = SIZES[i];
@@ -193,26 +191,24 @@
         ctx.restore();
       }
 
-      // Labels: name + diameter below the baseline. Stagger to a
-      // second row when an inner planet's label would otherwise
-      // overlap its neighbour's. Add a thin leader-line from the
-      // baseline to the label so the eye links the body to its text.
-      const labelTopY = baselineY + (lay.altRow ? 32 : 14);
+      // Labels: name + diameter below the baseline, on the row the layout gave them.
+      // A thin leader-line links a staggered or shifted label to its body.
+      const labelTopY = baselineY + FIRST_ROW + lay.row * ROW_PITCH;
       ctx.textAlign = 'center';
-      if (lay.altRow) {
+      if (lay.row > 0 || Math.abs(lay.labelX - cx) > 1) {
         ctx.strokeStyle = isThis ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.18)';
         ctx.lineWidth = 0.6;
         ctx.beginPath();
         ctx.moveTo(cx, baselineY + 1);
-        ctx.lineTo(cx, labelTopY - 8);
+        ctx.lineTo(lay.labelX, labelTopY - 9);
         ctx.stroke();
       }
       ctx.font = `${isThis ? 'bold ' : ''}11px 'Space Mono', monospace`;
       ctx.fillStyle = isThis ? '#fff' : 'rgba(255,255,255,0.85)';
-      ctx.fillText(lay.nameLabel, cx, labelTopY);
+      ctx.fillText(lay.nameLabel, lay.labelX, labelTopY);
       ctx.font = "11px 'Space Mono', monospace";
       ctx.fillStyle = isThis ? s.col : 'rgba(255,255,255,0.6)';
-      ctx.fillText(lay.kmLabel, cx, labelTopY + 13);
+      ctx.fillText(lay.kmLabel, lay.labelX, labelTopY + 13);
     }
 
     // Baseline tick (subtle horizontal line under all planets).

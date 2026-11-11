@@ -77,7 +77,7 @@ the operator approving per screen, then the change, then e2e.
 
 ## Definition of done — every slice
 
-Operator, 2026-11-11 ("no partial updates, quality over speed"; plan lines 465–479 in
+Operator, 2026-11-11 ("no partial updates, quality over speed"; plan lines 467–481 in
 `docs/wip/2026-11-11-ux-feedback-plan.md`). A slice is reported done only when the lead has checked
 all of these, with the command and its output:
 
@@ -108,9 +108,9 @@ Then the operator gets a short status and small before/after screenshots (13-inc
 | `npm run preflight` (pre-push hook)                                      | typecheck, lint, tests, `validate-data` and build. Does not run e2e and is not a byte-for-byte mirror of CI (see `CLAUDE.md`)    |
 
 A new shared rule that can be checked arrives with its check. Accepted rules with no guard yet: the
-link/accent colour (UXD-001, a repo-wide search for the old teal is the slice's check) and the home
-route-card title (UXD-003). Proposed rules with a guard planned in their slice: the panorama opening
-heading (UXD-007, e2e in slice D2), the deep-sky viewer fit (UXD-009), the ruler science cards
+link/accent colour (UXD-001, a repo-wide search for the old teal is the slice's check), the home
+route-card title (UXD-003), and three rules whose guard is planned in their slice: the panorama
+opening heading (UXD-007, e2e in slice D2), the deep-sky viewer fit (UXD-009), the ruler science cards
 (UXD-010, a unit test over the data in slice B2).
 
 ## Open
@@ -146,16 +146,13 @@ Nothing below is a UXD. Each moves to one when the operator answers.
 MW3 (Sagittarius A\* panel gets the EHT 2022 image as its hero; the lensing render becomes an
 explicit action). It is planned in slice B3 and becomes a UXD with the slice's screenshots.
 
-**To check at the end (operator, 2026-11-11)** — plan lines 460–463: science diagrams and Lab art
+**To check at the end (operator, 2026-11-11)** — plan lines 462–465: science diagrams and Lab art
 keep their own colours for now; review whether they should also move to the new palette once the UI
 blue is in place.
 
-**Unreconciled between decisions** (found while writing this document, not decided anywhere):
+**Unreconciled between decisions** (found while writing this document, not decided anywhere; the
+`#889fe7` question is settled: it stays beside blue D, UXD-001, plan line 460):
 
-- The surface scenes' hover and ACTIVE-status colour is `#889fe7` (`HOVER_BLUE`,
-  `src/lib/surface-scene/surface-markers.ts` line 45; approved by the operator on 2026-11-09 with
-  before/after screenshots). UXD-001 sets the UI blue to `#5070ff`. Whether the two stay distinct
-  or unify is not stated in any source.
 - The plan says "lead/overview 15–16 px" for Q2; the tokens say 16 px, 15 px under 600 px width
   (UXD-002 records the tokens).
 

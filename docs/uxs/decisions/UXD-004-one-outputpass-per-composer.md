@@ -1,6 +1,6 @@
 # UXD-004 — One OutputPass per composer; colour textures sRGB, data maps linear
 
-- **Status**: accepted for the rule. The Mars descent contrast is still under review (plan line 459).
+- **Status**: accepted. The Fly Mars descent look is accepted "for now" after the second pass (plan line 460).
 - **Date**: 2026-11-11 (proposed and decided)
 - **Decider**: the operator — "Surface colour pipeline (OutputPass) → now, 0.9.9 (operator
   2026-11-11). Extended to every composer + sRGB tagging of all colour textures"
@@ -41,7 +41,8 @@ are already sRGB-aware.
 agree we should fix washed out look on launches and descents" (operator 2026-11-11,
 `docs/wip/2026-11-11-ux-feedback-plan.md` line 459). That line records a second pass in the same
 slice (atmosphere shell, sky gradient, ambient light, launch exposure) and says "descent contrast
-still under review". Operator context from the brief: Explore (E2) and Fly 2D (FY1) were already
+still under review". The operator then accepted the descent after the second pass "for now" (contrast can be
+revisited later; operator go, 2026-11-11, plan line 460). Operator context from the brief: Explore (E2) and Fly 2D (FY1) were already
 "too dark", so a lighter result is welcome, tuned so glow and bloom do not blow out (brief lines
 43–44).
 

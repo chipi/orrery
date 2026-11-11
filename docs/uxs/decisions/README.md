@@ -72,10 +72,10 @@ How the rule is checked (the guard), or what is not checked yet.
 | [UXD-004](UXD-004-one-outputpass-per-composer.md)            | One OutputPass per composer; colour textures sRGB, data maps linear                               | accepted | 2026-11-11 |
 | [UXD-005](UXD-005-no-staging-verify-on-prod.md)              | No staging: Pages serves only the docs; releases go straight to prod and are verified there       | accepted | 2026-11-10 |
 | [UXD-006](UXD-006-mars-moon-square-brackets-dropped.md)      | Mars/Moon square brackets on detailed locations: not aligned, dropped                             | rejected | 2026-11-11 |
-| [UXD-007](UXD-007-panorama-opens-facing-the-photo.md)        | A site panorama opens facing the real photo, not the generated fill                               | proposed | 2026-11-11 |
-| [UXD-008](UXD-008-star-panel-one-hero-and-in-the-sky-tab.md) | Star panel: one hero, the constellation finder in an "In the sky" tab, a Gallery tab for more     | proposed | 2026-11-11 |
-| [UXD-009](UXD-009-deep-sky-viewer-fits-one-screen.md)        | The deep-sky viewer fits one screen; facts read label above value                                 | proposed | 2026-11-11 |
-| [UXD-010](UXD-010-ruler-regimes-each-get-their-own-science-card.md) | Each Explore ruler regime gets its own best science card, no repeats within a ruler        | proposed | 2026-11-11 |
+| [UXD-007](UXD-007-panorama-opens-facing-the-photo.md)        | A site panorama opens facing the real photo, not the generated fill                               | accepted | 2026-11-11 |
+| [UXD-008](UXD-008-star-panel-one-hero-and-in-the-sky-tab.md) | Star panel: one hero, the constellation finder in an "In the sky" tab, a Gallery tab for more     | accepted | 2026-11-11 |
+| [UXD-009](UXD-009-deep-sky-viewer-fits-one-screen.md)        | The deep-sky viewer fits one screen; facts read label above value                                 | accepted | 2026-11-11 |
+| [UXD-010](UXD-010-ruler-regimes-each-get-their-own-science-card.md) | Each Explore ruler regime gets its own best science card, no repeats within a ruler        | accepted | 2026-11-11 |
 | [UXD-011](UXD-011-decisions-apply-project-wide.md)           | Decisions apply project-wide, no partial updates; screenshots after each slice                    | accepted | 2026-11-11 |
 
 Open questions (D1 to D7, Q3 to Q10) are not records; they are listed in

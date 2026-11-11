@@ -7,7 +7,7 @@
   segment so I can visually validate" (operator note `decisions-apply-project-wide`, modified
   2026-11-11); "Definition of done — every slice (operator, 2026-11-11: no partial updates,
   quality over speed)" and "Checks and balances (operator, 2026-11-11: invest time up front)"
-  (`docs/wip/2026-11-11-ux-feedback-plan.md` lines 465 and 481)
+  (`docs/wip/2026-11-11-ux-feedback-plan.md` lines 467 and 483)
 - **Answers**: the whole feedback list; every slice
 - **Changes**: UXS-000 §How a UX change moves and §Definition of done (this series). AGENTS.md has
   no line for it yet.
@@ -31,7 +31,7 @@ The sources record the rule and no alternatives.
    the rule (site-wide where possible), obsolete tests are removed; no suite is left red or skipped.
 3. **Each slice runs the same way**: a read-only brief first; implementation against it; an
    independent checker that did not write the code re-runs the searches and the suites; the lead
-   reads the evidence and the screenshots, then reports (plan lines 481–492).
+   reads the evidence and the screenshots, then reports (plan lines 483–494).
 4. **Screenshots after each slice**: a small set of downscaled before/after shots, desktop 13-inch
    laptop and phone, for the operator to validate visually.
 

@@ -8,8 +8,8 @@ Companion to the [image bill of materials](../static/data/image-provenance.json)
 
 | | |
 |---|---|
-| **Project** | `orrery@0.9.7` |
-| **Generated** | 2026-11-08 |
+| **Project** | `orrery@0.9.8` |
+| **Generated** | 2026-11-11 |
 | **Total packages** | 898 (187 runtime · 711 development) |
 | **Top-level runtime deps** | 28 |
 | **Top-level dev deps** | 35 |

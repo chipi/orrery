@@ -8,6 +8,44 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [0.9.8] — 2026-11-11
+
+A surfaces and polish release: sharper Mars and Moon imagery with more annotation rings, a
+trajectory thumbnail for every mission, cleaner share cards, the prod bugs reported on 0.9.7,
+fewer placeholder credits and stricter translation gates.
+
+### Added
+
+- **Mission trajectory thumbnails** for all 126 missions, drawn from /fly's own trajectory code.
+- **Illustrated site maps** for 14 landing sites, with their image descriptions in 14 locales.
+- **More annotation rings** on the Moon and Mars.
+- **Translation gates**: coverage, English source-hash and length-ratio checks; en-US overlays for
+  data sources and source logos, so their 13 translations are checked (33 names corrected).
+- **Tooling**: `audit:images` classifies display-ladder rungs and cards; a CodeQL leak-flow job.
+
+### Changed
+
+- **Surface imagery**: Mars CTX regional layers are square-pixel and registered; Perseverance and
+  Curiosity route tiles sit on the CTX frame (50–250 m); Phoenix is north-up; Earth pad patches
+  cover 32 km.
+- **Share cards**: a larger, label-free trajectory figure, inverted anatomy drawings, no captions;
+  420 cards re-rendered.
+- **Credits**: the placeholder ceiling drops from 239 to 71; all 1246 gallery square thumbnails are
+  traced to their slot and 25 stale ones re-cut.
+- **Footer**: "More" collapses below 1000 px (1450 px on the scene routes).
+- Buttons dim while the page is still waiting for hydration after 600 ms.
+
+### Fixed
+
+- Globe: hover labels, smaller first icons, a click on a tag group fans it out.
+- Surface: no nations footer in route view; Story tab order; the cutaway follows the surface
+  chapter.
+- Zoom dead zone: the selected site keeps a clickable icon down to its route or ring, and
+  invisible markers no longer catch clicks.
+- A tap where ring targets overlap opens the nearest ring.
+- /explore HUD overlaps; the A–Z tab never sits under the footer.
+- `check-seo` no longer truncates its report.
+
 ## [0.9.7] — 2026-11-08
 
 A surfaces and accuracy release: site tags arrive by zoom stage on every body, a landing site's

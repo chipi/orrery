@@ -36,7 +36,7 @@ npm run test:e2e:mobile:preview    # skip the build — iterate against an exist
 
 **What it asserts** (`tests/e2e/mobile/streaming.spec.ts`):
 
-- the landing hero `<img>` is served **absolute-to-CDN** (`chipi.github.io/orrery/images/…`), not the local bundle;
+- the landing hero `<img>` is served **absolute-to-CDN** (`www.orrerylearn.com/images/…`, the default `STREAM_ORIGIN`), not the local bundle;
 - every `/images/` + `/audio/` request goes to the **CDN origin**, never the on-device origin;
 - streamed + pruned buckets **404 locally** (`de.json`, `4k_moon.jpg`, hero image) while the on-device set is served (`en-US.json`, `2k_moon.jpg`, the downscaled base-4K `4k_io.jpg`);
 - the service-worker precache manifest is **en-US only**;
@@ -49,7 +49,7 @@ npm run test:e2e:mobile:preview    # skip the build — iterate against an exist
    prune never touches — it would serve the very files we removed. The suite
    uses `scripts/mobile/serve-build.mjs` (a `sirv` static server over `build/`),
    the exact tree Capacitor ships. Missing files 404 — that's the point.
-2. **The CDN origin is stubbed**, so a GitHub Pages outage never turns it red.
+2. **The CDN origin is stubbed**, so an outage of the live site never turns it red.
 
 Config: `playwright.mobile.config.ts` (separate from the browser
 `playwright.config.ts` — the two serve different `build/` artefacts). Override
@@ -127,7 +127,7 @@ automated device-free:
 
 - [ ] **Safe-area** — nav + content clear the notch/Dynamic Island and the home indicator, portrait **and** landscape, on at least one notched device.
 - [ ] **Scroll** — touch scrolling works on long routes (the `SafeAreaViewController` shim force-enables it).
-- [ ] **Share** — the native share sheet opens and shares a **public** `chipi.github.io` URL (never `capacitor://localhost`).
+- [ ] **Share** — the native share sheet opens and shares a **public** `www.orrerylearn.com` URL (never `capacitor://localhost`).
 - [ ] **Deep link** — `orrery://fly?mission=curiosity` (and a `//`-in-query variant) opens the right route from cold and warm start.
 - [ ] **Locale** — set the device to German: UI + overlays render German (streamed `de.json`), and no `/de/*` route 404s.
 - [ ] **Offline** — airplane mode after first load: en-US routes + 2K textures still render; streamed imagery degrades gracefully.

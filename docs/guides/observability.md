@@ -4,12 +4,11 @@ Operator guide for browser telemetry. **Source of truth: [ADR-082](../adr/ADR-08
 
 > **The error sink is self-hosted [GlitchTip](https://glitchtip.com/), not Sentry SaaS.** We use the `@sentry/sveltekit` SDK, but it points at our self-hosted GlitchTip at `telemetry.orrerylearn.com`. Anywhere below that still says "Sentry org / ingest.sentry.io", read "GlitchTip project".
 
-**The env ladder (ADR-082).** Both browser integrations report on three isolated rungs — **prod** (`orrerylearn.com`), **staging** (`chipi.github.io/orrery`), and the maintainer's **local `vite dev`** — each with its own GlitchTip project + Umami site, tagged by environment:
+**The env ladder (ADR-082).** Both browser integrations report on two isolated rungs — **prod** (`orrerylearn.com`) and the maintainer's **local `vite dev`** (there is no staging rung since the 2026-11 no-staging decision) — each with its own GlitchTip project + Umami site, tagged by environment:
 
 | Rung | GlitchTip project | Umami site | env tag | selected by |
 |---|---|---|---|---|
-| prod | 4 | prod | `production` | `deploy-prod.yml` (`prod` GH env) |
-| staging | 6 | staging | `staging` | `staging.yml` (`staging` GH env) |
+| prod | 18 | prod | `prod` | `deploy-prod.yml` (`prod` GH env) |
 | dev | 7 | dev | `dev` | `sentry.ts` / `analytics.ts` fallback, over the Tailscale `homelab` host |
 
 The integration shape is **env-gated, fork-silent by construction.** Deploy rungs bake `PUBLIC_*` from GH environment secrets a fork doesn't have; the dev rung's endpoints resolve only on our tailnet (`homelab`), so a stranger's `vite dev` transport-fails silently. `vite preview` / CI / screenshots are not `dev` and carry no baked vars → silent. No committed secrets — only the public DSN/site-id browser ids, which ship in the bundle by design.
@@ -30,14 +29,14 @@ See **[`src/lib/observability/sentry.ts`](../../src/lib/observability/sentry.ts)
 
 ### One-time setup (GlitchTip projects — one per rung)
 
-Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: **project 18** `orrery-prod` (prod), **project 6** `orrery` (staging), **project 30** `orrery-dev` (dev). Each project's **Settings → Client Keys (DSN)** gives a public DSN of the form `http(s)://<32-hex-key>@<host>/<project-id>` — the project id at the end is what routes events to the right rung.
+Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: **project 18** `orrery-prod` (prod), **project 30** `orrery-dev` (dev). Each project's **Settings → Client Keys (DSN)** gives a public DSN of the form `http(s)://<32-hex-key>@<host>/<project-id>` — the project id at the end is what routes events to the right rung.
 
-- **prod / staging** DSNs are set as the `PUBLIC_SENTRY_DSN` secret inside the **`prod`** and **`staging`** GH environments respectively (Repo → Settings → Environments → pick env → Secrets). Never at the repo level — the environment gate is the point.
+- The **prod** DSN is set as the `PUBLIC_SENTRY_DSN` secret inside the **`prod`** GH environment (Repo → Settings → Environments → pick env → Secrets). Never at the repo level — the environment gate is the point.
 - **dev** DSN is the `DEV_SENTRY_DSN` constant in `src/lib/observability/sentry.ts` (project 30, via the tailnet TLS node `glitchtip.tail6d0ed4.ts.net`; `homelab:8090` is loopback-only on the mini and never worked from a laptop). It's committed on purpose: a DSN is a public browser id, and the `homelab` host is tailnet-only, so it's inert off the tailnet.
 
 ### CI wiring (already in the workflows)
 
-- `deploy-prod.yml` (`environment: prod`) and `staging.yml` (`environment: staging`) each thread their environment's `PUBLIC_SENTRY_DSN` + `PUBLIC_UMAMI_*` into the build `env:` block, with `PUBLIC_SENTRY_ENVIRONMENT` = `production` / `staging`. SvelteKit inlines them at build time. A fork lacks both environments → empty → SDK no-ops.
+- `deploy-prod.yml` (`environment: prod`) threads the environment's `PUBLIC_SENTRY_DSN` + `PUBLIC_UMAMI_*` into the build `env:` block, with `PUBLIC_SENTRY_ENVIRONMENT` = `prod`. SvelteKit inlines them at build time. A fork lacks the environment → empty → SDK no-ops.
 - There is **no repo-level `SENTRY_DSN_WEB` secret** anymore (that was the old single-env design); the value lives per-GH-environment.
 
 ### Local-dev posture (the dev rung)
@@ -47,7 +46,7 @@ Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: 
 
 ### Verifying it works
 
-Pick the rung. For **dev**: run `vite dev` on the tailnet, force-throw from the console, and confirm the event lands in GlitchTip **project 30** (`orrery-dev`) tagged `environment=dev` + your `worktree`. For a **deploy rung**: visit the route (`orrerylearn.com` for prod, `chipi.github.io/orrery` for staging) and do the same — it lands in project **18** (`orrery-prod`) / **6** (`orrery`) tagged `production` / `staging`:
+Pick the rung. For **dev**: run `vite dev` on the tailnet, force-throw from the console, and confirm the event lands in GlitchTip **project 30** (`orrery-dev`) tagged `environment=dev` + your `worktree`. For the **deploy rung**: visit `orrerylearn.com` and do the same — it lands in project **18** (`orrery-prod`) tagged `prod`:
 
 ```js
 setTimeout(() => { throw new Error('GlitchTip smoke test'); }, 0);
@@ -57,7 +56,7 @@ The event shows `request.url` as the route path only (no query), `request.header
 
 ### Umami (usage analytics) — same ladder
 
-Umami mirrors the above (ADR-081): prod/staging bake `PUBLIC_UMAMI_HOST` + `PUBLIC_UMAMI_WEBSITE_ID` (their own site ids) from the matching GH environment; `vite dev` falls back to the "Orrery (dev)" site `90cbabf7…` on the tailnet node `https://umami.tail6d0ed4.ts.net`. prod/staging share the host `analytics.orrerylearn.com` edge for deploys, `homelab` for dev. Fork-silence + the "not `dev` → silent" rule are identical. Event registry + privacy scrubbing live in `src/lib/analytics.ts`.
+Umami mirrors the above (ADR-081): prod bakes `PUBLIC_UMAMI_HOST` + `PUBLIC_UMAMI_WEBSITE_ID` (its own site id) from the `prod` GH environment; `vite dev` falls back to the "Orrery (dev)" site `90cbabf7…` on the tailnet node `https://umami.tail6d0ed4.ts.net`. prod uses the `analytics.orrerylearn.com` edge, dev the tailnet node. Fork-silence + the "not `dev` → silent" rule are identical. Event registry + privacy scrubbing live in `src/lib/analytics.ts`.
 
 **Opt-out (ADR-092).** A fourth thing can switch analytics off, ahead of the ladder: `analyticsSuppressed()` in `src/lib/analytics-optout.ts` — the `orrery_analytics_optout` cookie (set from the toggle on `/privacy`), `navigator.globalPrivacyControl`, or `navigator.doNotTrack`. It gates the script injection itself, not just `track()`, because Umami's autotrack binds history listeners at load that cannot be unbound. If you are debugging "why are there no events from my browser", check GPC/DNT and that cookie **before** the env vars. There is no consent banner and none is required — see ADR-092 for the reasoning and `/privacy` for what users are told.
 
@@ -184,12 +183,11 @@ our probes, old-build chunks) with what each returns now. The runbook is the
 ## Architecture summary
 
 ```
-┌──────── browser (prod orrerylearn.com · staging chipi.github.io) ───────┐
+┌──────── browser (prod orrerylearn.com) ─────────────────────────────────┐
 │  SvelteKit app                                                          │
 │    → hooks.client.ts → initSentry()   +   +layout → initAnalytics()     │
 │        DSN/site id resolves for the rung? (ADR-082)                      │
 │          prod  → GlitchTip 18 + Umami prod   (env=prod)                  │
-│          staging → GlitchTip 6 + Umami staging (env=staging)             │
 │          vite dev → GlitchTip 7 + Umami dev  (env=dev, via homelab)      │
 │          else (fork / preview / CI) → no-op                             │
 │                ↓ (self-hosted, Cloudflare-fronted)                      │

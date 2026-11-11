@@ -18,9 +18,8 @@ Umami so the events answer questions**. Decisions: [ADR-081](../adr/ADR-081.md)
   heatmaps — see below.
 - **Direct SQL, no credentials needed, on the mini:**
   `docker exec -it umami-db psql -U umami -d umami`
-- **Sites:** prod `4a25d8da…` (orrerylearn.com), staging `6e7ddfce…`
-  (chipi.github.io), dev "Orrery (dev)" `90cbabf7…` (on the tailnet node `umami.tail6d0ed4.ts.net`). Three isolated sites — check which one
-  you're looking at before drawing conclusions.
+- **Sites:** prod `4a25d8da…` (orrerylearn.com), dev "Orrery (dev)" `90cbabf7…` (on the tailnet node `umami.tail6d0ed4.ts.net`). Two live, isolated sites — check which one
+  you're looking at before drawing conclusions. The old staging site `6e7ddfce…` (chipi.github.io) is retired (2026-11 no-staging decision) and holds history only.
 
 ## What this Umami build actually offers
 
@@ -142,8 +141,8 @@ event in `EVENT_NAMES` with no rows is a bug report, not a usage statistic.
 
 ## Before you trust a number
 
-- **Check the site** — prod / staging / dev are separate; staging gets CI and
-  deploy-smoke traffic.
+- **Check the site** — prod / dev are separate (the retired staging site took CI and
+  deploy-smoke traffic).
 - **Opted-out visitors are invisible** (ADR-092: opt-out cookie, GPC, or DNT
   suppress everything, including the script — and, since the 2026-09-10 review,
   Sentry crash reports too). Totals under-count real traffic by an unknown
@@ -196,7 +195,7 @@ Exploration rate — of sessions that opened `/explore`, how many interacted:
 ```sql
 with explorers as (
   select distinct session_id from website_event
-  -- regex, not '/explore%': localized routes are /de/explore and staging is
+  -- regex, not '/explore%': localized routes are /de/explore and the retired staging data is
   -- served under an /orrery base.
   where website_id = :site and url_path ~ '(^|/)explore(/|$)'
 ),

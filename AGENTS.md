@@ -88,13 +88,13 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | 3D rendering | Three.js r128, local bundle | ADR-001 |
 | Bundler | Vite (via SvelteKit) | ADR-012 |
 | Routing | History API via SvelteKit router | ADR-013 |
-| CI + staging | GitHub Actions + GitHub Pages (staging tier; dev → staging → prod) | ADR-014 |
+| CI + deploy | GitHub Actions; the app ships to the self-hosted VPS (dev → prod, no staging); GitHub Pages serves only the project docs | ADR-014 |
 | Unit tests | Vitest | ADR-015 |
 | E2e tests | Playwright | ADR-015 |
 | External assets | Resolved at build time | ADR-016 |
 | Imagery sourcing | Agency-first fetch priority; NASA as fallback library | ADR-046 |
 | Outbound LEARN links | Agency-first per-link provenance; native-language priority; `rel="noopener noreferrer external"` + `hreflang` everywhere; public `/library` bill-of-links; link-checker chained into `npm run fetch` | ADR-051 |
-| SEO surface | Indexable entity pages (`/missions/[id]`, `/fleet/[id]`, `/moon\|mars\|venus/[id]`, `/explore/[id]`, `/lab/[id]`) in 14 locales from the panels' data; `pageTitle()` / `metaDescription()`; OG + Twitter from `hooks.server.ts`; JSON-LD; split sitemaps from `scripts/site-routes.mjs`; staging mirror noindex; `check-seo.mjs` gate in every build. A change to what a panel shows should reach its entity page | ADR-096 |
+| SEO surface | Indexable entity pages (`/missions/[id]`, `/fleet/[id]`, `/moon\|mars\|venus/[id]`, `/explore/[id]`, `/lab/[id]`) in 14 locales from the panels' data; `pageTitle()` / `metaDescription()`; OG + Twitter from `hooks.server.ts`; JSON-LD; split sitemaps from `scripts/site-routes.mjs`; base-path mirror builds noindex; `check-seo.mjs` gate in every build. A change to what a panel shows should reach its entity page | ADR-096 |
 | Provenance + license stewardship | Per-image manifest + text manifest + fail-closed validate-data; public `/credits` page | ADR-047 |
 | i18n | Paraglide-js + locale overlay files | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
@@ -248,7 +248,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   ├── earth-objects.json        ← satellites + observatories (`fleet_refs` per ADR-052)
 │   │   ├── planets.json
 │   │   └── rockets.json
-│   └── .nojekyll           ← required for GitHub Pages
+│   └── .nojekyll           ← legacy: the app no longer ships to GitHub Pages
 │
 ├── scripts/                            ← standing build-time tools (full map: docs/reference/tooling/)
 │   │                                      one-shots live in scripts/_archive/ (see tooling/archive.md)
@@ -280,9 +280,9 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 └── .github/workflows/
     ├── ci.yml
     ├── docker-e2e.yml         # canonical Playwright gate + GHCR publish (ADR-071 supersedes ADR-066 trigger surface)
-    ├── deploy-docs.yml        # docs site, CI-gated (ADR-070)
-    ├── staging.yml            # full app+docs, docker-e2e-gated (ADR-070, retargeted by ADR-071)
+    ├── deploy-docs.yml        # docs-only gh-pages publish + root forwarder, CI-gated (ADR-070)
     ├── deploy-prod.yml        # tailnet VPS deploy, manual (#260)
+    ├── validate-prod.yml      # deep validation after every prod deploy + daily
     ├── refresh-launches.yml   # cron — launches.json refresh
     ├── regen-snapshots.yml    # manual — visual-baseline regen
     └── release.yml            # tag → GitHub Release
@@ -294,7 +294,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 
 **Before reaching for a script, check [`docs/reference/tooling/`](docs/reference/tooling/README.md)** — the canonical map of every *standing* tool (build/CI, data validation, image pipeline, content pipelines) with what/when/gotchas. It supersedes guessing from `scripts/` filenames: one-shot wave/slice/migration scripts now live in `scripts/_archive/` (don't re-run them — read for the recipe, then use the standing tool). Deep end-to-end references stay authoritative: [TA.md §pipelines](docs/adr/TA.md), [`scripts/IMAGE-PIPELINE.md`](scripts/IMAGE-PIPELINE.md), the `docs/guides/` runbooks.
 
-Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run validate-data` (data gates), `npm run validate-prod` (**post-deploy** live-site validator — browser-based, ~60 checks incl. a regression guard per prod fix; `VALIDATE_URL=…` to target staging/local; see `docs/ops/prod-validator.md`), `npm run audit:images` (every shipped image is used), `npm run fetch-assets` (stages to `_staging/` → review at `/dev/staging` → `npm run build-image-provenance -- --offline`), `npm run images:hotspots` (Mars/Moon surface detail, Node 22 + gdal). New standing tool → add a row to the matching tooling page; retired tool → move to `_archive/` + note in `tooling/archive.md`.
+Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run validate-data` (data gates), `npm run validate-prod` (**post-deploy** live-site validator — browser-based, ~60 checks incl. a regression guard per prod fix; `VALIDATE_URL=…` to target a local preview; see `docs/ops/prod-validator.md`), `npm run audit:images` (every shipped image is used), `npm run fetch-assets` (stages to `_staging/` → review at `/dev/staging` → `npm run build-image-provenance -- --offline`), `npm run images:hotspots` (Mars/Moon surface detail, Node 22 + gdal). New standing tool → add a row to the matching tooling page; retired tool → move to `_archive/` + note in `tooling/archive.md`.
 
 ---
 
@@ -788,7 +788,7 @@ Hooks self-activate after `npm install` via the `prepare` script (`git config co
 
 ### Before tagging or releasing — full local e2e on BOTH projects
 
-**The pre-push hook is not enough to ship a release.** It runs preflight, which excludes e2e. The CI e2e gate is what holds the auto-deploy chain (`ci.yml` → `docker-e2e.yml` → `staging.yml`) together (per ADR-071); if docker-e2e is red on the tagged commit, the GH Pages deploy never fires and shipping turns into a CI ping-pong.
+**The pre-push hook is not enough to ship a release.** It runs preflight, which excludes e2e. The CI e2e gate (`ci.yml` → `docker-e2e.yml`, per ADR-071) is what proves a commit is safe to deploy; the prod deploy itself is a manual dispatch, so a red docker-e2e on the tagged commit is only caught if you look. Check it before dispatching "Deploy to prod VPS (orrery)".
 
 **Rule: before moving a tag or cutting a GitHub Release, run the full e2e suite locally against both viewports until both are clean.**
 
@@ -817,7 +817,7 @@ The bot regenerates the four linux baselines (credits-head + science-tabs × des
 
 **Pre-tag dry run checklist:**
 
-1. `npm run preflight` — green (it now includes `npm run docs:build`, the VitePress site; a docs build error otherwise first shows up in Deploy preview / Deploy docs after the merge)
+1. `npm run preflight` — green (it now includes `npm run docs:build`, the VitePress site; a docs build error otherwise first shows up in Deploy docs after the merge)
 2. `npm run test:e2e -- --workers=1` — both projects green (or known-broken specs explicitly skipped with a comment)
 3. `git push` — pre-push hook runs preflight again, must pass
 4. Push completes — wait for CI + e2e workflows on main, confirm both green
@@ -935,10 +935,10 @@ Where the body comes from the matching `## [X.Y.Z]` section in `CHANGELOG.md` (e
 | Action | What it does | What it doesn't do |
 |---|---|---|
 | `git tag v0.6.1` + `git push --tags` | Tag exists; gh sees it; CI deploy chain MAY fire | No GH Release entry; no release notes; no notification |
-| `gh release create v0.6.1 …` | Creates the Release entry tied to the tag | Doesn't trigger Pages deploy; doesn't move the tag |
-| `gh workflow run "Deploy preview" --ref main` | Manually publishes the **staging** site (GitHub Pages) from current main | Doesn't tag; doesn't create a Release; **does NOT touch prod** (the VPS) |
+| `gh release create v0.6.1 …` | Creates the Release entry tied to the tag | Doesn't deploy anything; doesn't move the tag |
+| `gh workflow run "Deploy to prod VPS (orrery)" --ref main` | Deploys current main to **prod** (the VPS); `validate-prod.yml` then validates it automatically | Doesn't tag; doesn't create a Release |
 
-All three steps are needed for a complete release: tag + GH Release + deploy. The **staging** deploy (GitHub Pages, workflow "Deploy preview" / `preview.yml`) auto-fires from a push-to-main IF the CI + e2e workflows pass; if either is red, use `workflow_dispatch` to force it. **Prod (the VPS) is a separate, always-manual step** — `gh workflow run "Deploy to prod VPS (orrery)"` — never auto-triggered. Tiers: **dev → staging (GitHub Pages) → prod (VPS)**; see TA.md §pipelines "Deploy tiers".
+All three steps are needed for a complete release: tag + GH Release + deploy. There is **no staging tier** (2026-11 decision): the flow is **merge → `gh workflow run "Deploy to prod VPS (orrery)" --ref main` → validate-prod**. The deploy is always manual, never auto-triggered, so dispatch it only for a commit whose CI + docker-e2e are green. GitHub Pages serves only the project docs (`deploy-docs.yml`, CI-gated). Tiers: **dev → prod (VPS)**; see TA.md §pipelines "Deploy tiers".
 
 ---
 

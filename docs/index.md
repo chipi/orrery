@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: ↗ Launch the app
-      link: https://chipi.github.io/orrery/
+      link: https://www.orrerylearn.com/
     - theme: alt
       text: User guide
       link: /guides/user-guide
@@ -48,7 +48,7 @@ features:
 
 Source: **[github.com/chipi/orrery](https://github.com/chipi/orrery)**
 
-Live build: **[chipi.github.io/orrery](https://chipi.github.io/orrery/)** — every screen, fully offline-capable after first load. First-time visitors land on a 30-second orientation page; returning users skip past in one click via the nav.
+Live build: **[www.orrerylearn.com](https://www.orrerylearn.com/)** — every screen, fully offline-capable after first load. First-time visitors land on a 30-second orientation page; returning users skip past in one click via the nav.
 
 ## Documentation layout
 
@@ -101,7 +101,7 @@ The **Flight Director banner** on `/fly` narrates 5 physics phases (Departure ·
 
 ## How it's built
 
-**Stack:** SvelteKit + Three.js r128 + TypeScript (strict) + Vite. No backend, no database. Pure static SPA. PWA-installable, offline-capable after first paint. Hosted free on GitHub Pages.
+**Stack:** SvelteKit + Three.js r128 + TypeScript (strict) + Vite. No backend, no database. Pure static SPA. PWA-installable, offline-capable after first paint. Self-hosted on a VPS; GitHub Pages serves only these docs.
 
 **Data:** All static JSON under `static/data/`. 33 ajv schemas validate every file fail-closed at build time. Locale overlays for 14 languages. Pre-computed Lambert porkchop grids for 9 destinations.
 

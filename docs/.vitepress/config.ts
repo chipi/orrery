@@ -45,7 +45,7 @@ export default defineConfig({
     /(?:^|\/)\.\.\/wip\//,
     // The essay-voice guide quotes live-APP deep-links as illustrative
     // examples (`[dead reckoning](/science/…)`, `/missions`). These target
-    // the running Orrery app (chipi.github.io/orrery/…), not the docs site,
+    // the running Orrery app (www.orrerylearn.com/…), not the docs site,
     // so vitepress rightly can't resolve them as its own routes.
     /^\/(?:missions|fleet|programs|plan|fly|earth|moon|mars|iss|tiangong|explore|science|essays)(?:\/|$)/,
   ],
@@ -95,7 +95,7 @@ export default defineConfig({
           { text: 'PRD index', link: '/prd/index' },
         ],
       },
-      { text: '↗ Live App', link: 'https://chipi.github.io/orrery/' },
+      { text: '↗ Live App', link: 'https://www.orrerylearn.com/' },
     ],
 
     sidebar: generateSidebar(sidebarOptions),

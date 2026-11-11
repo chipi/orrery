@@ -304,3 +304,111 @@ per screen, then the change, then e2e on all three Playwright projects.
 | ID | Point |
 |---|---|
 | LA1 | Assess a camera on top during launch, moving around for better effects, rather than always the same side view. The operator has example shots to share. (D6) |
+
+---
+
+# Slice plan (deduplicated, 2026-11-11)
+
+Built from three read-only code maps of every item (where it lives, what it does now, the cause).
+The 119 points above reduce to the slices below. Each slice is small enough to check in one sitting:
+before/after screenshots of the named screens (desktop 1440x900 + phone 390x844, landscape where it
+matters), the named e2e specs on all three Playwright projects, and the operator's yes before the
+next slice that builds on it. One slice = one or a few commits on `tech-debt/0.9.9`.
+
+Already checked, no work: **CR3** — all 1,203 Moon/Mars/Earth surface tiles map to a credit entry
+(539 hotspot provenance rows with author, licence, source); on-screen attribution in the scenes was
+not audited.
+
+## A. Foundations (needs Q1, Q2)
+
+| Slice | Points | Change | Done when |
+|---|---|---|---|
+| A1 Type scale | X1, P1, P2 | 4–5 type tokens in `tokens.css`; the 11 panel `.editorial` rules (Crimson italic 13–14 px, 60 %) become upright body size; labels (`.stat-label`/`.cell-label` 6 px at 25 %, eyebrows 8 px) ≥ the floor at ~55 %; 7–8 px strings raised | no panel text under the floor (computed-style e2e on 6 panel types); shots of every panel type |
+| A2 Page shell | RP1, CR1, LI1, G1, G2, G5 | one page-shell class (container, h1, lead, section label); credits/library/deep-sky/posters italic leads become the upright lead; gallery hub strip text aligned with the title; the double nav padding on gallery hub/patches/sourcing removed | shots of credits, colophon, library, gallery hub, deep-sky, posters, patches, programs, sourcing aligned on one grid |
+| A3 Link and accent colour | X2, G4, teal redesign | one link token (Q1 blue); teal (`#4ecdc4`, ~640 uses in ~123 files) replaced in UI by the token; science diagrams and Lab art keep theirs (2026-11-09 rule) | grep: no teal in UI files outside the allow-list; shots of credits, colophon, library, posters, science, explore HUD |
+| A4 One chip and filter | C1, C3, G3, PG1, MI1, FL1, E8, ISS1 | one `Chip` (≈28–32 px, ≥11 px text, one active colour) for Explore/Worlds layer chips, gallery pills, programs group-by, missions/fleet/launches filters; the filter count sits right after the FILTERS label; the Explore level reset becomes the shared "Reset view" button; ISS "Watch live" becomes a chip | shots of explore, moon, earth, missions, fleet, launches, deep-sky, programs, iss; e2e for those routes |
+| A5 Chip groups | C2, W7 | Q5: group every world (On ground / In space) or flatten Earth | Earth column no longer collides with the ruler at 768 px high |
+| A6 Nav bar | N1 | on desktop pointers the right-hand toggles drop to ~32 px with a tighter gap; rarely used ones (contrast, share, debug) move into one menu | nav bar height and right cluster match the main links; touch keeps 44 px |
+
+## B. Panel shell (needs Q3, Q6)
+
+| Slice | Points | Change | Done when |
+|---|---|---|---|
+| B1 Hero, close, actions | P3, P4, P5, EP4, MI4 | no hover glow on the hero (focus ring for keyboard only); close/back buttons per Q6; "Collector card" → "Share" (Q3) and the action buttons (plan, explore surface, fly, share) become one compact row near the top of Overview | shots of planet, mission, fleet, surface-site panels, scrolled and unscrolled |
+| B2 Science links | S1, S2, O6 | a shared helper caps every panel at 5; the MissionPanel push-chain (up to ~21 cards) becomes a ranked pick by mission type/phase; generic defaults replaced by curated per-body lists; orbit-regime links varied (keplers-laws and apsides repeat 4–5×) | no panel > 5; no two panels of one type with the same list (unit test over the data) |
+| B3 Outer panels and stars | SN2, MW3, MW5 | star and outer-level panels follow the planet pattern: one hero, a Gallery tab, the constellation finder in a tab; deep-sky images as heroes where one exists | shots of a star with photo, Milky Way, Local Group, Laniakea panels |
+
+## C. Explore
+
+| Slice | Points | Change | Done when |
+|---|---|---|---|
+| C1 Select = focus | E3, E5, SS4, I4, EP1, IM5, IM6 | one `focusBody` for planets, moons, small bodies, belts; every entry point (scene click, index, who-lives-here, panel links, iconic milestone boxes) selects and focuses; turning a chip off clears a selection of that kind; links only for bodies in the scene (Pallas, Hygiea, Quaoar, Sedna become plain text or get data); New Horizons opens the mission panel; mission links per Q4, newest first | e2e: every entry point leaves the body selected and centred; chip-off clears it |
+| C2 Readability | E2, SN1, MW1, MW2, MW4, MW6 | per-level exposure/ambient lift; light-year rings as fat lines with readable labels; one shared label declutter + steady label offset for the outer levels; hover/selection ring on every pickable; the Sun/Milky Way anchor ring becomes the neighbourhood-style small dot + ring on hover | shots per level at default zoom, daylight-brightness check |
+| C3 HUD fixes | E4, SS1, SS2, SS3 | fixed-width scale bar with the value changing; Vega pill only on hover/selection; level picker opens leftward at the right edge; planet-scales overlay redrawn readable | shots at three zooms; picker fully on screen at 1280 px |
+| C4 Orbit ruler | O1, O2, O3, O7, W2, W4 | one row per regime; hover/click draws the regime as rings in the scene; body thumbnails instead of grey dots; collapsible; the locate button and "As seen from you" readout join one bottom-left stack with the ruler | shots on explore, earth, moon, mars; no overlap at 1280x720 and 1440x900 |
+| C5 Ruler data | O4, O5 | founding missions linked where the mission exists (Pioneer 10, Voyager 1/2, Dawn, New Horizons, Parker, Solar Orbiter, Mariner 4/10, Mars Express, Hope); country codes stripped; lists reviewed after H | every listed mission that exists is a link |
+| C6 Index | I1, I2, I3, WM3 | Explore index rows get a meta line (type, distance, diameter, moons) and kind filters; planet dots in each planet's colour; Moon/Mars index dots use the nation colours (`colorFor(site)`) like the footer | shots of both indexes |
+| C7 Iconic missions | IM1, IM2, IM3, IM4, IM7 | title = "Hover any spacecraft…", "why one plane" behind (i); chip first in its row; milestone boxes sharp (screen-constant), date + number in the header, milestone name in the body, mission name once | shots at default and zoomed |
+| C8 Explore navigation | E1, W1, E7, E9, E10 | one shell table feeds nav, hub, home grid, picker; breadcrumb/picker uses the home-page icons and per-level text; a per-level "what you are looking at" card (TierContextCard pattern) with science links; one welcome hint for Explore and Worlds; second-level nav per D4 | shots of each level; sitemap per D4 |
+| C9 Explore → Worlds | E6 | per D5: "Go to Mars" in the planet panel and "Back to Explore" on the world page, or switch on zoom | link both ways for Earth, Moon, Mars, Venus |
+| C10 Planet heroes | EP2, EP3 | full-disc true-colour heroes for every planet (Mars first); artist concepts and mission shots kept out of the hero slot | shots of all 9 planet panels next to the 3D body |
+
+## D. Worlds
+
+| Slice | Points | Change | Done when |
+|---|---|---|---|
+| D1 Orbiter selection | W3 | the selected orbiter stays visible after the fly-to (today low orbiters hide when altitude flips `orbitsInView`); the view shifts left of the open panel | shots: LRO, Lunar Prospector, MRO selected with the panel open |
+| D2 Panel order for sites and orbiters | W6, WM1 | a photo first on every site; orbiters get a "Details" tab with "The spacecraft" cutaway, not "On the surface" | shots of 3 landers, 3 orbiters |
+| D3 Venus galleries | VE1 | `getVenusSiteGallery` stops returning [] and uses the Moon/Mars ladder (mission + fleet galleries exist: 3–4 images each) | gallery and hero on Venera 13, Vega 1, Vega 2 |
+| D4 Moon traverses | WM2 | per Q8: line style only, or Mars parity (patches, photos, stops, densify Chang'e 3 and Chandrayaan-3's 9-point routes) | shots side by side |
+| D5 Brackets | W5 | after a screenshot (both bodies draw brackets in code) | — |
+
+## E. Catalog
+
+| Slice | Points | Change | Done when |
+|---|---|---|---|
+| E1 Program page | PG2, PG3, PG4, PG5, PG6 | empty sections hidden; one mini-card for related programs (above "Go deeper"), surface sites (after Missions) and compact hardware cards; the mission detail keeps a fixed height | shots of Sputnik, Apollo, Cassini, Mars rovers |
+| E2 Program data | PG7, PG8, PG9 | roster links to missions and hardware that exist (lists in the map); a `milestone` flag and "Milestones" section where rows are segments (Cassini) | every roster row naming an existing mission or fleet entry links |
+| E3 Missions page | MI2, MI3 | one agency palette (three exist today); colour dots in the agency filter; era strip redesign per D7 | shots |
+| E4 Fleet | FL2, FL3 | line-up as a first-class view toggle; crew tab → "Missions": compact list, no portraits, links only to missions that exist, one count; `gemini-3` → `gemini3` id normalisation | Crew Dragon, Soyuz, Gemini shots; no dead mission links |
+| E5 ISS | ISS2 | assembly player at a fixed height | no height change across phases |
+
+## F. Pages
+
+| Slice | Points | Change | Done when |
+|---|---|---|---|
+| F1 Credits and colophon | CR2, CO1, CO2, CO3 | one collapse approach (Q7) for both; colophon totals line from `original-work.json` totals; cutaways split into spacecraft and launchers (Q9) | shots; TOC anchors open their section |
+| F2 Library | LI2, LI3 | after Q10 | — |
+| F3 Home | H1, H2, H3 | hero capped so the intro and actions are above the fold at 1440x900 and 1366x768; Lab card in Learn (needs a glyph) | shots at 1366x768, 1440x900, 390x844 |
+
+## G. Plan, Fly, Launch
+
+| Slice | Points | Change | Done when |
+|---|---|---|---|
+| G1 Plan → Fly | PL1, PL2, PL3, FY3 | destinations grouped (inner, asteroids, Jupiter/Saturn systems, outer); the chosen rocket and a default payload carried to Fly (`rocket=` param, `vehicle`, `fleet_refs`) so the launch sequence starts; launch and descent beats as markers on the play bar | e2e: plan → fly shows rocket, payload, working launch, markers |
+| G2 Fly visuals | FY1, FY4 | brighter 2D rings and stars; the destination body drawn (today Earth and Mars are hard-coded); HUD rows as label/value grid, wrapping only inside the value | shots of a Mars, Jupiter and Moon flight |
+| G3 Ascent | FY2, LA1 | downrange drawn ground-relative so the first seconds rise vertically; new camera shots after the operator's examples (D6) | ascent frames 0–20 s show vertical climb |
+
+## H. Content (research; runs alongside)
+
+MI5 + PG7 + FL3 ids: add Kaguya/SELENE and Chandrayaan-2; propose the next candidates from the
+gaps found (program rows, fleet craft, sites without a mission entry) for the operator to pick.
+
+## I. Last
+
+GH1 — README and docs refreshed with text and screenshots of the finished UI.
+
+## Questions for the operator (asked once, before the slice that needs them)
+
+- Q1 Link/accent blue: `#889fe7` (status chips, rings) or `#7fb0e0` (gallery, programs)? Links only, or every UI teal?
+- Q2 Text floor 10 or 11 px? Lead text in Space Mono upright (as Gallery)? Keep Crimson italic only for quotes and captions?
+- Q3 "Share": renamed card overlay, or a real share-link action?
+- Q4 A mission link in a body panel: open the mission panel in place, or go to /missions?
+- Q5 Chip groups: group every world, or flatten Earth?
+- Q6 Panel close X: scrolls away with the content, or a slim fixed header bar?
+- Q7 Credits/colophon length: every section collapsed with its count, or "first N + show all"?
+- Q8 Moon traverses: line style only, or the Mars extras (patches, photos, stops)?
+- Q9 "Launcher sketches": the launchers inside the 198 cutaways, or the exploded launcher art?
+- Q10 Library: which "JPL planetary models", and which landing/rover research items?
+- Need a screenshot or URL: G5/G6 (which gallery page; the bottom line), O6 ("light minute / light year" — the regime data has neither), W5 (brackets — both bodies draw them), SN2 ("the zodiac chart" — none exists), MW3 (the Sag A* image), W6 (which sites show graphics).
+- D1–D7 above.

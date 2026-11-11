@@ -192,7 +192,7 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;
     padding: 10px 12px 8px;
-    width: 188px;
+    width: 208px;
     /* Cap height so dense rulers (/explore 8 zones) never overflow off
        the top edge when other overlays (iconic-mission legend, etc.)
        are also showing on the left rail (2026-06-22 user direction
@@ -239,7 +239,7 @@
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 4px;
-    padding: 5px 8px;
+    padding: 4px 8px;
     color: inherit;
     font: inherit;
     cursor: pointer;
@@ -270,6 +270,7 @@
     letter-spacing: 0.06em;
   }
   .band-alt {
+    white-space: nowrap;
     color: rgba(255, 255, 255, 0.62);
     font-size: var(--size-label);
   }

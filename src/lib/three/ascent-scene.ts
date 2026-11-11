@@ -397,7 +397,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const scene = new THREE.Scene();
   // Sky colour is altitude-driven in setState: daylight blue on the pad →
   // deep black by ~70 km, the signature "blue sky to space" of an ascent.
-  const SKY_GROUND = new THREE.Color('#5b8fc9');
+  const SKY_GROUND = new THREE.Color('#25559a');
   const SKY_SPACE = new THREE.Color('#03040a');
   scene.background = SKY_GROUND.clone();
 
@@ -411,10 +411,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // × Math.PI to restore the r128 look under three r155+ physical lights (#203).
   // The dark, un-×π ambient here before was what crushed the Earth to black.
   const sunDir = new THREE.Vector3(0.32, 0.5, 0.8).normalize();
-  const sun = new THREE.DirectionalLight(0xfff4d0, 1.6 * Math.PI);
+  const sun = new THREE.DirectionalLight(0xfff4d0, 1.2 * Math.PI);
   sun.position.copy(sunDir).multiplyScalar(1000);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight(0xeeeeff, 0.7 * Math.PI));
+  scene.add(new THREE.AmbientLight(0xeeeeff, 0.3 * Math.PI));
 
   const texLoader = new THREE.TextureLoader();
   const loadColor = (url?: string): THREE.Texture | null => {
@@ -478,7 +478,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     new THREE.MeshBasicMaterial({
       color: 0x8ec5ff,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.15,
       side: THREE.BackSide,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
@@ -493,8 +493,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const skyMat = new THREE.ShaderMaterial({
     uniforms: {
       uAlt: { value: 0 },
-      uHorizon: { value: new THREE.Color(0xbcd6ec) },
-      uZenith: { value: new THREE.Color(0x2f6fd0) },
+      uHorizon: { value: new THREE.Color(0x4a7bbb) },
+      uZenith: { value: new THREE.Color(0x153f95) },
     },
     side: THREE.BackSide,
     transparent: true,

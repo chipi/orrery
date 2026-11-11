@@ -88,6 +88,36 @@ describe('colour pipeline rule', () => {
     expect(bad).toEqual([]);
   });
 
+  it('composer scenes feed colours to shaders through THREE.Color, not GLSL literals', () => {
+    // A raw sRGB literal in a fragment shader is treated as linear and the OutputPass then encodes it
+    // a second time (pale sky). THREE.Color uniforms are converted to linear by ColorManagement.
+    const composerScenes = [
+      'lib/three/ascent-scene.ts',
+      'lib/three/descent-scene.ts',
+      'lib/three/fly-helio-scene.ts',
+      'lib/three/explore-solar-scene.ts',
+      'lib/universe/milky-way-scene.ts',
+      'lib/universe/local-group-scene.ts',
+    ];
+    const bad: string[] = [];
+    for (const p of composerScenes) {
+      const f = files.find((x) => x.path === p);
+      expect(f, p).toBeDefined();
+      f!.lines.forEach((l, i) => {
+        if (code(l) && /vec[34]\(\s*[0-9.]+\s*,\s*[0-9.]+\s*,\s*[0-9.]+/.test(l)) {
+          bad.push(`${rel(p)}:${i + 1}`);
+        }
+        if (
+          code(l) &&
+          /\bu(?:Horizon|Zenith|Color|Tint)\w*:\s*\{\s*value:\s*(?!\s|new THREE\.Color)/.test(l)
+        ) {
+          bad.push(`${rel(p)}:${i + 1}`);
+        }
+      });
+    }
+    expect(bad).toEqual([]);
+  });
+
   it('C: the data maps are tagged NoColorSpace explicitly', () => {
     const dataMapFiles = [
       'lib/three/launch-ground.ts',

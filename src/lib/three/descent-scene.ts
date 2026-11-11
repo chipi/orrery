@@ -185,10 +185,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // ── Lighting: a warm sun toward the camera hemisphere + a cool fill so the
   //    shadowed limb never crushes to black (×π for r155+ physical lights, #203).
   const sunDir = new THREE.Vector3(0.35, 0.55, 0.75).normalize();
-  const sun = new THREE.DirectionalLight(0xfff4d0, 1.6 * Math.PI);
+  const sun = new THREE.DirectionalLight(0xfff4d0, 1.0 * Math.PI);
   sun.position.copy(sunDir).multiplyScalar(1000);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight(0xeeeeff, 0.7 * Math.PI));
+  scene.add(new THREE.AmbientLight(0xeeeeff, 0.3 * Math.PI));
 
   // ── Destination body: a big textured sphere a full radius below the landing
   //    site (surface at y=0), oriented so the site's geography sits under the

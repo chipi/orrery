@@ -425,7 +425,7 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 
 ## Answers (2026-11-11)
 
-- Q1: blue D, `#5070ff` (today's global link colour, `--color-accent-text`) — confirmed by the operator after the sheet. Open: links only, or every UI teal.
+- Q1: blue D, `#5070ff` (today's global link colour, `--color-accent-text`) — confirmed by the operator after the sheet. Scope: every UI teal (links, HUD chips, home glyphs, panels); science diagrams and Lab art keep their own colours (operator 2026-11-11).
 - Q2: floor 11 px everywhere; labels 11 px at ~60 %; body 14 px; lead/overview 15–16 px upright in the body font; italic only for quotes and photo captions, ≥ 14 px.
 - SN2 (Antares, `/explore?goto=antares`): "the zodiac chart" is the constellation finder figure
   ("Scorpius from the Sun's sky") that `StarPanel` stacks under the star portrait, above the tabs —

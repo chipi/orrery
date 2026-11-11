@@ -204,6 +204,10 @@ test.describe('type floor — no text under 11 px, italic ≥ 14 px, small text 
       const tiny = await tinyText(page);
       const report = tiny.map((o) => `${o.why} ${o.sel} "${o.text}"`);
       expect(report, `type rule broken on ${screen.name}`).toEqual([]);
+      const overflowX = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      );
+      expect(overflowX, `page scrolls sideways on ${screen.name}`).toBeLessThanOrEqual(1);
     });
   }
 });
@@ -227,4 +231,21 @@ test.describe('panel overview is an upright lead in the body font (UX A1 / Q2)',
     const color = await label.evaluate((el) => getComputedStyle(el).color);
     expect(Number(color.match(/, ([0-9.]+)\)$/)?.[1] ?? 1)).toBeGreaterThanOrEqual(0.58);
   });
+});
+
+test.describe('bigger labels do not push card grids off screen (UX A1 layout)', () => {
+  for (const route of ['/fleet', '/missions']) {
+    test(`${route}: every card sits inside the viewport`, async ({ page }) => {
+      await page.goto(LOC + route);
+      const cards = page.locator('.entity-card-grid .card');
+      await expect(cards.first()).toBeVisible({ timeout: 15_000 });
+      const stray = await cards.evaluateAll((els) =>
+        els
+          .map((el) => el.getBoundingClientRect())
+          .filter((r) => r.width > 0 && (r.right > innerWidth + 1 || r.left < -1))
+          .map((r) => `${Math.round(r.left)}..${Math.round(r.right)} of ${innerWidth}`),
+      );
+      expect(stray.slice(0, 5)).toEqual([]);
+    });
+  }
 });

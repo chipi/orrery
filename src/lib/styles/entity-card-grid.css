@@ -51,6 +51,7 @@
 }
 
 .entity-card-grid .card-li {
+  min-width: 0;
   position: relative;
   height: 100%;
 }
@@ -64,7 +65,7 @@
   border-radius: 8px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 4px 1fr;
+  grid-template-columns: 4px minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   cursor: pointer;
   color: inherit;
@@ -135,7 +136,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 4px 8px;
   margin-bottom: 4px;
 }
 

@@ -48,7 +48,7 @@
   .agency-row :global(.status),
   .agency-row :global(.quality) {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     padding: 3px 8px;

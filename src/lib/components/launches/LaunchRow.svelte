@@ -149,7 +149,7 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #ff5252;
     font-family: var(--font-mono, 'Space Mono', monospace);
     text-transform: uppercase;
@@ -194,9 +194,7 @@
 
   .editorial-note {
     margin: 4px 0 0;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     color: rgba(230, 232, 238, 0.85);
   }
 
@@ -209,7 +207,7 @@
     border-radius: 2px;
     color: #4ecdc4;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-decoration: none;
@@ -235,7 +233,7 @@
 
   .tier {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     padding: 3px 8px;
     border-radius: 2px;
     text-transform: uppercase;
@@ -257,7 +255,7 @@
 
   .status {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(230, 232, 238, 0.7);
   }
 

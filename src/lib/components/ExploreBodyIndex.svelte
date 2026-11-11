@@ -144,7 +144,7 @@
     cursor: pointer;
   }
   .bidx-count {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: var(--text-dim, #9a9aa7);
     margin-bottom: 4px;

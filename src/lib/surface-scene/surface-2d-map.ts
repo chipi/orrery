@@ -227,7 +227,7 @@ export function createSurface2dMap(ctx: Surface2dMapContext): Surface2dMap {
       }
 
       // Disc label
-      ctx2.font = "bold 9px 'Space Mono',monospace";
+      ctx2.font = "bold 11px 'Space Mono',monospace";
       ctx2.fillStyle = labelColor;
       ctx2.textAlign = 'center';
       ctx2.fillText(labelText, cx, cy + discR + 24);
@@ -269,7 +269,7 @@ export function createSurface2dMap(ctx: Surface2dMapContext): Surface2dMap {
         ctx2.fill();
 
         // Site label
-        ctx2.font = "7px 'Space Mono',monospace";
+        ctx2.font = "11px 'Space Mono',monospace";
         ctx2.fillStyle = color + 'cc';
         ctx2.shadowColor = 'rgba(0,0,0,0.85)';
         ctx2.shadowBlur = 4;
@@ -392,7 +392,7 @@ export function createSurface2dMap(ctx: Surface2dMapContext): Surface2dMap {
     if (ctx.getLayerOrbiters()) {
       const strip = mapY - 16;
       let x = mapX;
-      ctx2.font = "bold 7px 'Space Mono',monospace";
+      ctx2.font = "bold 11px 'Space Mono',monospace";
       ctx2.fillStyle = 'rgba(255,255,255,0.5)';
       ctx2.textAlign = 'left';
       ctx2.fillText('IN ORBIT', x, strip);

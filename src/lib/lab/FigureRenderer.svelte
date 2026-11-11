@@ -431,26 +431,26 @@
 
   .axis-label {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: var(--size-label);
     fill: rgba(78, 205, 196, 0.65);
     letter-spacing: 0.5px;
   }
 
   .series-label {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: var(--size-label);
     fill: rgba(78, 205, 196, 0.8);
   }
 
   .tick-label {
     font-family: 'Space Mono', monospace;
-    font-size: 7.5px;
+    font-size: var(--size-label);
     fill: rgba(78, 205, 196, 0.55);
   }
 
   .mark-label {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: var(--size-label);
     fill: #ffc850;
   }
 
@@ -463,21 +463,21 @@
 
   .fallback-prov {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: var(--size-label);
     fill: rgba(255, 200, 80, 0.6);
   }
 
   /* Honesty line — always rendered, 8px Space Mono, matches ImageCredit convention */
   .honesty-prov {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: var(--size-label);
     fill: rgba(78, 205, 196, 0.5);
     letter-spacing: 0.5px;
   }
 
   .honesty-assumptions {
     font-family: 'Space Mono', monospace;
-    font-size: 7px;
+    font-size: var(--size-label);
     fill: rgba(255, 200, 80, 0.4);
     letter-spacing: 0.3px;
   }

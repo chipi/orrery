@@ -57,7 +57,7 @@
     padding: 2px 6px;
     color: rgba(230, 232, 238, 0.6);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     cursor: pointer;
@@ -91,7 +91,7 @@
 
   .role {
     color: #ffc850;
-    font-size: 9px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     min-width: 80px;

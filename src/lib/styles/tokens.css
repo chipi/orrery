@@ -41,8 +41,19 @@
 
   /* Sizes */
   --size-nav-title: 30px;
-  --size-label: 10px;
   --size-link: 12px;
+
+  /* Type scale (UX A1 / Q2). The floor is 11px everywhere; labels are 11px at
+     60% white, body 14px, panel overview/lead text 16px (15px on phones), all upright in the
+     body font (Space Mono). Italic Crimson Pro is only for real quotes and
+     photo captions, at --size-caption. Canvas/WebGL label textures are out
+     of scope. */
+  --size-label: 11px;
+  --size-meta: 12px;
+  --size-body: 14px;
+  --size-lead: 16px;
+  --size-caption: 14px;
+  --color-text-label: rgba(255, 255, 255, 0.6);
 
   /* Spacing */
   /* Total nav footprint. Includes the iOS status-bar / Dynamic Island safe
@@ -72,6 +83,12 @@
   --color-roscosmos: #8b0000;
   --color-jaxa: #003087;
   --color-spacex: #005288;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --size-lead: 15px;
+  }
 }
 
 /* ─── High-contrast mode (v0.1.10 / Theme C.C2 / issue #18) ─────────

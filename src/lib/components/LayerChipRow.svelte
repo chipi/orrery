@@ -96,7 +96,7 @@
     border: 0;
     color: rgba(255, 255, 255, 0.72);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9.5px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
     text-align: left;

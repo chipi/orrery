@@ -420,7 +420,7 @@
   .chip {
     display: inline-block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     padding: 4px 9px;
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -499,11 +499,12 @@
     display: block;
   }
   .fig figcaption {
-    font-size: 13px;
+    font-size: var(--size-caption);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.55);
     margin-top: 8px;
-    font-style: italic;
+    font-style: italic; /* a1-keep: caption */
+    font-family: 'Crimson Pro', serif;
   }
   .timeline {
     list-style: none;
@@ -628,7 +629,7 @@
   }
   .d-meta {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
@@ -711,7 +712,7 @@
   }
   .surface-list .s-body {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
@@ -736,10 +737,10 @@
   .see-also .k {
     display: inline-block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
     padding: 1px 6px;
@@ -762,10 +763,10 @@
   .hardware .role {
     display: block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .rel {
     color: #cfe3fb;

@@ -202,7 +202,7 @@
     word-break: break-word;
   }
   .scan-eyebrow {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(78, 205, 196, 0.85);
     margin-bottom: 6px;
@@ -220,9 +220,9 @@
     min-width: 0;
   }
   .scan-label {
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     letter-spacing: 1.3px;
-    font-size: 9px;
+    font-size: var(--size-label);
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;

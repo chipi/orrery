@@ -242,7 +242,7 @@ html.ar-active
   border-radius: 4px;
   color: var(--color-teal, #4ecdc4);
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 10px;
+  font-size: var(--size-label);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -300,8 +300,6 @@ html.ar-active
   border: 1px solid var(--color-border, rgba(255, 255, 255, 0.09));
   border-radius: var(--border-radius-lg, 6px);
   color: #eaf6f5;
-  font-family: var(--font-editorial, 'Crimson Pro', serif);
-  font-style: italic;
   font-size: 15px;
   line-height: 1.35;
   text-align: center;

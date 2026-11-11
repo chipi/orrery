@@ -144,7 +144,7 @@
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   font-weight: 700;
   padding: 3px 8px 3px 4px;
@@ -167,7 +167,7 @@
 
 .entity-card-grid .card-status {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   font-weight: 700;
   padding: 3px 8px;
@@ -222,7 +222,7 @@
    matches. */
 .entity-card-grid .card-quality {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   font-weight: 700;
   padding: 3px 6px;
@@ -278,7 +278,7 @@
 }
 .entity-card-grid .card-type {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
@@ -287,7 +287,7 @@
   display: flex;
   gap: 10px;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 8px;
+  font-size: var(--size-label);
   letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.65);
   margin: 0;
@@ -304,7 +304,7 @@
 }
 .entity-card-grid .card-first {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 9px;
+  font-size: var(--size-label);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
   margin: 0;

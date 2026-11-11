@@ -328,9 +328,9 @@
   }
   .wave-caption {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-align: center;
     margin-top: 3px;
   }

@@ -308,7 +308,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(160, 200, 255, 0.85);
     text-transform: uppercase;
@@ -328,9 +328,9 @@
   }
   .stat-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-transform: uppercase;
     margin-bottom: 4px;
   }
@@ -349,9 +349,9 @@
     background: transparent;
     border: 0;
     border-bottom: 2px solid transparent;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     padding: 8px 12px;
     cursor: pointer;
@@ -365,13 +365,6 @@
     color: rgba(255, 255, 255, 0.8);
     outline: none;
   }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-  }
   .editorial.empty {
     color: rgba(255, 255, 255, 0.4);
   }
@@ -382,9 +375,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 4px;
     text-transform: uppercase;
   }
@@ -437,7 +430,7 @@
     padding: 12px;
     border-radius: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     font-weight: 700;
     display: flex;

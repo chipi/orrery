@@ -396,9 +396,9 @@
   }
   .type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 4px;
   }
   .name {
@@ -423,9 +423,9 @@
   .stat-label,
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .stat-value,
@@ -444,14 +444,6 @@
 
   /* .tabs / .tab-content moved to src/lib/styles/panel-tabs.css (v0.1.10) */
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 12px 0;
-  }
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -474,9 +466,9 @@
   }
   .shape-meta {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.22);
+    color: var(--color-text-label);
     margin-bottom: 6px;
   }
   .shape-display {
@@ -484,8 +476,8 @@
     align-items: center;
     gap: 12px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
   .shape-ellipse {
     width: var(--shape-w, 70px);
@@ -497,15 +489,15 @@
 
   .dist-row {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    color: rgba(255, 255, 255, 0.35);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-bottom: 10px;
   }
 
   .src {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.15);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.8;
   }
 
@@ -525,7 +517,7 @@
     cursor: pointer;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     font-weight: 700;
     transition:

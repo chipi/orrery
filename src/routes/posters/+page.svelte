@@ -140,9 +140,7 @@
     margin: 0 0 12px;
   }
   .lede {
-    font-family: var(--font-editorial), 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 17px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.75);
     max-width: 760px;
     margin: 0 auto;

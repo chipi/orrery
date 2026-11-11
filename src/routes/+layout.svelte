@@ -746,7 +746,7 @@
   .footer-link {
     pointer-events: auto;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
@@ -761,15 +761,15 @@
   }
   .footer-sep {
     pointer-events: none;
-    color: rgba(255, 255, 255, 0.22);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     user-select: none;
   }
   .footer-version {
     pointer-events: auto;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     /* Was 0.4 — bumped to 0.6 (F3) to clear AA at 10 px against the
        page background. */
@@ -794,7 +794,7 @@
   }
   .footer-about-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -894,7 +894,7 @@
     background: none;
     border: 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -957,7 +957,7 @@
   .footer-menu.compact .footer-links .footer-about-menu li {
     text-align: start;
     line-height: 1.2;
-    font-size: 10px;
+    font-size: var(--size-label);
     display: flex;
   }
   .footer-menu.compact .footer-links .footer-about-menu .footer-link-extra {

@@ -600,7 +600,7 @@
     color: #4ecdc4;
   }
   .debug-page-label {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(220, 230, 245, 0.7);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -611,7 +611,7 @@
     gap: 10px;
   }
   .debug-fps {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(220, 230, 245, 0.7);
   }
   .debug-close {
@@ -636,7 +636,7 @@
     border: none;
     color: rgba(220, 230, 245, 0.7);
     font-family: inherit;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 6px 8px;
@@ -671,7 +671,7 @@
   .debug-row-heading {
     color: rgba(220, 230, 245, 0.85);
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     padding-bottom: 4px;
   }
@@ -700,7 +700,7 @@
   }
   .debug-slider-val {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(94, 234, 212, 0.8);
     min-width: 32px;
     text-align: right;
@@ -713,7 +713,7 @@
   }
   .debug-key {
     color: rgba(94, 234, 212, 0.8);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
   }
@@ -725,13 +725,12 @@
   }
   .debug-stub {
     margin-top: 8px;
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(220, 230, 245, 0.5);
-    font-style: italic;
   }
   .debug-val em {
     color: rgba(220, 230, 245, 0.5);
     font-style: italic;
-    font-size: 9px;
+    font-size: var(--size-label);
   }
 </style>

@@ -75,7 +75,7 @@
   }
   .crs__heading {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: rgba(255, 200, 80, 0.75);
@@ -122,13 +122,13 @@
   }
   .crs__name {
     font-family: 'Space Mono', monospace;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     color: #e8e8e8;
     white-space: nowrap;
   }
   .crs__stats {
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     color: rgba(200, 222, 235, 0.7);
     margin-left: auto;
     text-align: right;

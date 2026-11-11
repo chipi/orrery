@@ -192,9 +192,9 @@
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 3px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     cursor: pointer;
@@ -233,8 +233,8 @@
     white-space: nowrap;
   }
   .caret {
-    font-size: 9px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-left: 2px;
   }
 
@@ -289,7 +289,7 @@
     padding: 12px;
     color: rgba(230, 232, 238, 0.5);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     text-align: center;
   }
 
@@ -304,7 +304,7 @@
     border-radius: 2px;
     color: rgba(255, 255, 255, 0.75);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     cursor: pointer;
     text-align: left;

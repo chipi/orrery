@@ -281,8 +281,8 @@
     position: absolute;
     top: 0;
     left: 4px;
-    font-size: 0.62rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     font-variant-numeric: tabular-nums;
   }
   .rail {
@@ -310,7 +310,7 @@
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.95);
     cursor: pointer;
-    font-size: 0.66rem;
+    font-size: var(--size-label);
     font-weight: 600;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -374,7 +374,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 0.56rem;
+    font-size: var(--size-label);
     font-weight: 500;
     letter-spacing: 0.01em;
     color: rgba(255, 255, 255, 0.62);

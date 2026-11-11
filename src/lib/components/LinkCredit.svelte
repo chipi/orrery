@@ -65,9 +65,9 @@
     gap: 6px;
     align-items: baseline;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.4px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-top: 2px;
     line-height: 1.4;
   }

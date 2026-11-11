@@ -806,7 +806,7 @@
     margin-top: 6px;
   }
   .inj-fuel-label {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #b58a4a;
   }
@@ -824,13 +824,13 @@
     transition: width 0.12s linear;
   }
   .inj-fuel-pct {
-    font-size: 9px;
+    font-size: var(--size-label);
     color: #ffcf6a;
     width: 30px;
     text-align: left;
   }
   .inj-dv {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffbe7a;
     margin-top: 3px;
@@ -960,7 +960,7 @@
     transform: translateX(0);
   }
   .dossier-title {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #5ac8ff;
     margin: 0 0 8px;
@@ -969,7 +969,7 @@
     align-items: center;
   }
   .rep {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #ffbe4a;
     border: 1px solid rgba(255, 190, 74, 0.5);
@@ -987,7 +987,7 @@
     text-align: left;
   }
   .dossier dt {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #7d99b5;
   }
@@ -1032,7 +1032,7 @@
     background: rgba(255, 255, 255, 0.35);
   }
   .beat .lbl {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(200, 225, 255, 0.5);
     white-space: nowrap;

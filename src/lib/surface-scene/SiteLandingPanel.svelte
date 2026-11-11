@@ -193,8 +193,8 @@
   .anatomy-caption {
     margin: 0;
     font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 11.5px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.5);
   }
 </style>

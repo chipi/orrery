@@ -105,10 +105,10 @@
   }
   .vlabel {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
   figcaption {
     display: flex;
@@ -131,7 +131,7 @@
     color: rgba(255, 255, 255, 0.62);
   }
   .where {
-    font-size: 9.5px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.7);
   }

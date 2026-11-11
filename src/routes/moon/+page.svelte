@@ -421,7 +421,7 @@
     backdrop-filter: blur(6px);
   }
   .mo-eyebrow {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.18em;
     color: rgba(78, 205, 196, 0.85);
     margin-bottom: 6px;

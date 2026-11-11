@@ -103,7 +103,7 @@
     border-radius: 4px;
     backdrop-filter: blur(6px);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     min-width: 180px;
@@ -128,10 +128,10 @@
      7px/2px/0.35 — looked off when stacked together). */
   .row dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     margin: 0;
     display: inline-flex;
     align-items: baseline;
@@ -139,7 +139,7 @@
   }
   .row dd {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 700;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;

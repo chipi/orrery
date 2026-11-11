@@ -415,7 +415,7 @@
     border-radius: 4px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     font-weight: 700;
     cursor: pointer;
@@ -444,7 +444,7 @@
   .agency-badge,
   .status {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     padding: 3px 8px;
@@ -494,9 +494,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .cell-value {
@@ -511,19 +511,9 @@
     border-left: 3px solid var(--accent, #4466ff);
     background: rgba(255, 255, 255, 0.02);
     border-radius: 2px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.5;
-  }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 14px;
   }
   .mission-link {
     align-self: flex-start;
@@ -536,7 +526,7 @@
     text-decoration: none;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     transition: all 0.15s;
@@ -549,8 +539,8 @@
   }
   .credit {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
@@ -564,7 +554,7 @@
     flex-direction: column;
     gap: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
   }
   .related-orbital-concepts li {
     display: flex;

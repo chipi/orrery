@@ -67,15 +67,15 @@
     padding: 8px 0 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     line-height: 1.5;
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .image-credit .title {
     margin: 0 0 4px;
     color: rgba(255, 255, 255, 0.75);
-    font-size: 9px;
+    font-size: var(--size-label);
   }
   .image-credit .meta {
     margin: 0 0 4px;
@@ -108,7 +108,6 @@
   .image-credit .disclaimer {
     margin: 0 0 4px;
     color: rgba(255, 255, 255, 0.4);
-    font-style: italic;
   }
   .image-credit .disclaimer:last-child {
     margin-bottom: 0;

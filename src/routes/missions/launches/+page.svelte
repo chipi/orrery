@@ -465,7 +465,7 @@
     border-radius: 3px;
     color: #ff5252;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     cursor: pointer;
@@ -489,7 +489,7 @@
     padding-top: 14px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(230, 232, 238, 0.6);
     line-height: 1.6;

@@ -87,7 +87,7 @@
     padding: 0.4rem 0.55rem;
   }
   .cell-label {
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--muted, #9aa4bf);

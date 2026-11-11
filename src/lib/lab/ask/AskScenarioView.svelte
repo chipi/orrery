@@ -149,7 +149,7 @@
   }
   .ask-scenario__step {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     color: rgba(78, 205, 196, 0.7);
     flex: 0 0 auto;
     padding-top: 0.1rem;
@@ -178,10 +178,10 @@
   }
   .ask-scenario__io dt {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin: 0;
   }
   .ask-scenario__io dd {
@@ -217,9 +217,9 @@
   }
   .ask-scenario__assume {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin: 0.25rem 0 0;
   }
   .ask-scenario__assume-label {

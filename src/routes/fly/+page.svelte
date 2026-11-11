@@ -4678,7 +4678,7 @@
     margin-top: 3px;
   }
   .oi-status {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffbe7a;
     margin-top: 3px;
@@ -4704,7 +4704,6 @@
   }
   .cislunar-hero-comp {
     opacity: 0.7;
-    font-style: italic;
   }
   /* Tier-1 Earth-orbit re-entry debug (RFC-034 §13). */
   .tier1-debug {
@@ -4832,7 +4831,7 @@
     transform: translate(-50%, 0);
     white-space: nowrap;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.4px;
     text-transform: uppercase;
     color: rgba(45, 212, 168, 0.85);
@@ -4876,9 +4875,7 @@
   }
   .active-event-description {
     color: rgba(255, 255, 255, 0.82);
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-lead);
     line-height: 1.45;
     letter-spacing: 0.2px;
     text-transform: none;
@@ -5222,9 +5219,7 @@
     transition: opacity 200ms linear;
   }
   .opening-story {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.88);
     letter-spacing: 0.3px;
@@ -5273,7 +5268,7 @@
   }
   .opening-fleet-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3.5px;
     color: rgba(255, 200, 80, 0.78);
     text-transform: uppercase;
@@ -5583,16 +5578,12 @@
     letter-spacing: 3px;
   }
   .opening-fleet-tagline {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-lead);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.78);
   }
   .opening-fleet-bio {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.82);
     /* Multi-line clamp for long bios — keep card compact */
@@ -5705,9 +5696,7 @@
   }
   .hud-demo-hint {
     margin: 4px 0 6px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-size: var(--size-meta);
     color: rgba(255, 200, 80, 0.85);
     line-height: 1.4;
   }
@@ -6030,9 +6019,7 @@
   }
   .hud-trajectory-caveat {
     margin: 8px 0 0;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 12px;
-    font-style: italic;
+    font-size: var(--size-meta);
     line-height: 1.35;
     color: rgba(255, 220, 180, 0.95);
     border-top: 1px solid rgba(255, 200, 80, 0.25);
@@ -6243,7 +6230,7 @@
   }
   .fd-stage-tooltip-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 0.08em;
     color: #ffc850;
@@ -6322,7 +6309,7 @@
   }
   .milestone-tooltip-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 0.06em;
     color: #fff;
@@ -6335,9 +6322,7 @@
     letter-spacing: 0.05em;
   }
   .milestone-tooltip-desc {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.78);
     margin-top: 2px;
@@ -6501,7 +6486,7 @@
       text-overflow: ellipsis;
     }
     .fly-mini-hud .mh-phase {
-      font-size: 10px;
+      font-size: var(--size-label);
       letter-spacing: 1.5px;
       color: #7fd4ff;
       white-space: nowrap;
@@ -6532,7 +6517,7 @@
       border: 1px solid rgba(255, 255, 255, 0.14);
       color: rgba(255, 255, 255, 0.6);
       font-family: var(--font-mono, 'Space Mono', monospace);
-      font-size: 10px;
+      font-size: var(--size-label);
       letter-spacing: 1.5px;
       border-radius: 6px;
       cursor: pointer;
@@ -6818,16 +6803,12 @@
   }
   .event-note {
     margin: 4px 0 0;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-size: var(--size-meta);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.6);
   }
   .empty {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.4);
   }
 </style>

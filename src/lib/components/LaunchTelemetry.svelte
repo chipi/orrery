@@ -314,7 +314,7 @@
   .console-title em {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #6ea6cc;
   }
@@ -355,7 +355,7 @@
     position: absolute;
     top: 1px;
     right: 4px;
-    font-size: 10px;
+    font-size: var(--size-label);
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
   }
   .dual {
@@ -380,12 +380,12 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: #8fbfe0;
   }
   .fuel-headline {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #cfe3f5;
     line-height: 1.3;
   }
@@ -404,14 +404,14 @@
   .rlabel {
     flex: 0 0 58px;
     width: 58px;
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #7d99b5;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   .blabel {
-    font-size: 9px;
+    font-size: var(--size-label);
     color: #ffbe7a;
   }
   .rfill.srb {
@@ -435,7 +435,7 @@
     transition: width 0.12s linear;
   }
   .rpct {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #eaf2ff;
     width: 34px;
     text-align: right;
@@ -469,7 +469,7 @@
     right: 5px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 9px;
+    font-size: var(--size-label);
     color: #eaf2ff;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
   }
@@ -494,7 +494,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #a9c6dc;
   }

@@ -89,7 +89,7 @@
   outline: none;
 }
 .entity-browse-page .filters-eyebrow {
-  font-size: 8px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
 }
 .entity-browse-page .filters-chevron {
@@ -107,7 +107,7 @@
 }
 .entity-browse-page .filters-count {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 9px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
 }
 .entity-browse-page .count-fraction {
@@ -131,7 +131,7 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 3px;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 10px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   cursor: pointer;
 }
@@ -162,7 +162,7 @@
 }
 .entity-browse-page .filter-label {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.6);
   margin-right: 4px;
@@ -178,7 +178,7 @@
   border-radius: 3px;
   color: rgba(255, 255, 255, 0.6);
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 8px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   font-weight: 700;
   cursor: pointer;

@@ -938,8 +938,8 @@
   .blueprint figcaption {
     margin: 8px 0 0;
     font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 11.5px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.55);
   }
   .blueprint-title {
@@ -994,9 +994,9 @@
   }
   .type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
   }
 
@@ -1019,9 +1019,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .cell-value {
@@ -1031,7 +1031,7 @@
     font-weight: 700;
   }
   .cell-value.short {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.65);
   }
@@ -1056,8 +1056,7 @@
      standfirst — prominent roman serif, brighter than the italic
      .editorial below, set apart by a hairline. */
   .dispatch {
-    font-family: 'Crimson Pro', serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.92);
     margin: 0 0 14px;
@@ -1067,7 +1066,7 @@
 
   .first {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     padding: 10px 12px;
@@ -1077,19 +1076,10 @@
     margin-bottom: 12px;
   }
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.6;
-    margin: 0 0 14px;
-  }
-
   .credit {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
@@ -1138,7 +1128,7 @@
     border-radius: 4px;
     color: #ffd2c0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     text-decoration: none;
@@ -1163,7 +1153,7 @@
     border-radius: 4px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     font-weight: 700;
     cursor: pointer;
@@ -1302,7 +1292,7 @@
     overflow: hidden;
   }
   .spec-cta .spec-label {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2.5px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1347,7 +1337,7 @@
   }
   .flight-caveat {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #ffc850;
     background: rgba(255, 200, 80, 0.18);
@@ -1361,9 +1351,7 @@
     padding-top: 4px;
   }
   .science-blurb {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-lead);
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.7);
     margin: 0 0 14px;
@@ -1392,7 +1380,7 @@
   }
   .flight-rows dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(180, 200, 255, 0.55);
     align-self: center;
@@ -1411,9 +1399,7 @@
     color: #ffc850;
   }
   .flight-source {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(180, 200, 255, 0.5);
     margin: 6px 0 0;
     line-height: 1.4;
@@ -1443,7 +1429,7 @@
   }
   .flight-events .event-type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.85);
   }

@@ -1003,8 +1003,8 @@
   }
   .id {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9.5px;
+    font-size: var(--size-label);
     letter-spacing: 1.4px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
 </style>

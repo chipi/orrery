@@ -281,7 +281,7 @@
 
   .lab__picker-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(78, 205, 196, 0.65);
     text-transform: uppercase;

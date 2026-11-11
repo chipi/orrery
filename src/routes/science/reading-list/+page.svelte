@@ -339,9 +339,7 @@
     color: #ffc850;
   }
   .head .lede {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 20px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     margin: 0 0 16px;
     color: rgba(255, 255, 255, 0.92);
@@ -450,7 +448,7 @@
     text-transform: uppercase;
     padding: 1px 6px;
     border-radius: 2px;
-    font-size: 10px;
+    font-size: var(--size-label);
   }
   .audience-beginner {
     background: rgba(78, 205, 196, 0.18);
@@ -465,8 +463,7 @@
     color: #c1440e;
   }
   .blurb {
-    font-family: 'Crimson Pro', serif;
-    font-size: 16px;
+    font-size: var(--size-lead);
     line-height: 1.55;
     margin: 0;
     color: rgba(255, 255, 255, 0.82);

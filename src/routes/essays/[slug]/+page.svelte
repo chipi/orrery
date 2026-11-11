@@ -178,9 +178,7 @@
     margin: 0 0 16px;
   }
   .dek {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 20px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.72);
     margin: 0;
@@ -281,7 +279,7 @@
     border-bottom-color: #7fb0e0;
   }
   .body :global(em) {
-    font-style: italic;
+    font-style: italic; /* a1-keep: inline emphasis */
   }
   .body :global(strong) {
     font-weight: 600;
@@ -321,9 +319,9 @@
   .doors .tag {
     margin-left: 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 </style>

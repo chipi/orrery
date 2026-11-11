@@ -320,9 +320,7 @@
     margin: 0 0 16px;
   }
   .intro {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 16px;
+    font-size: var(--size-lead);
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 12px;
@@ -359,8 +357,6 @@
     margin: 0 0 6px;
   }
   .data-sources p {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
     font-size: 16px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
@@ -474,7 +470,7 @@
   .src-counts {
     /* Was 0.4 — bumped to 0.65 (F3) for AA at 10 px. */
     color: rgba(255, 255, 255, 0.65);
-    font-size: 10px;
+    font-size: var(--size-label);
   }
   .src-license .lbl {
     /* Was 0.4 — bumped to 0.6 (F3); still clearly secondary vs the
@@ -510,7 +506,7 @@
     color: #4ecdc4;
     padding: 1px 6px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -556,15 +552,14 @@
     margin-bottom: 6px;
   }
   .ln-row.meta {
-    font-size: 10px;
+    font-size: var(--size-label);
     /* Was 0.45 — bumped to 0.65 (F3) to clear AA at 10 px non-bold. */
     color: rgba(255, 255, 255, 0.65);
   }
   .ln-row.rationale {
-    font-size: 10px;
+    font-size: var(--size-label);
     /* Was 0.45 — bumped to 0.65 (F3). Italic + dim hierarchy preserved. */
     color: rgba(255, 255, 255, 0.65);
-    font-style: italic;
   }
   .ln-row .lbl {
     /* Was 0.35 — bumped to 0.55 (F3). Still clearly secondary against
@@ -587,7 +582,7 @@
   .ln-tier {
     padding: 0 6px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }

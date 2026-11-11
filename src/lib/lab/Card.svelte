@@ -398,9 +398,9 @@
   .card__assumptions {
     margin: 0.2rem 0 0;
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 
   .card__assumptions-label {
@@ -422,10 +422,10 @@
 
   .card__learn-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 
   .card__learn-link {
@@ -475,9 +475,8 @@
   .card__no-inputs {
     margin: 0;
     font-family: 'Space Mono', monospace;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     color: rgba(232, 232, 232, 0.55);
-    font-style: italic;
   }
 
   /* ─── Controls ───────────────────────────────────────────────────────── */
@@ -497,7 +496,7 @@
 
   .card__label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(78, 205, 196, 0.75);
     text-transform: uppercase;
@@ -508,7 +507,7 @@
 
   /* Wired input — gold "derived" chip + read-only value cell */
   .card__wired-chip {
-    font-size: 0.55rem;
+    font-size: var(--size-label);
     color: #ffc850;
     letter-spacing: 0.5px;
   }
@@ -528,7 +527,7 @@
   }
 
   .card__derived-unit {
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     margin-left: 0.25rem;
     color: rgba(255, 200, 80, 0.6);
     font-weight: normal;
@@ -637,9 +636,9 @@
 
   .card__readout-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     text-transform: uppercase;
   }
 
@@ -651,7 +650,7 @@
   }
 
   .card__readout-unit {
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     margin-left: 0.2rem;
     color: rgba(78, 205, 196, 0.8);
     font-weight: normal;

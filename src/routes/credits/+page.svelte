@@ -733,10 +733,10 @@
     flex: 0 0 auto;
     min-width: 46px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .audio-text {
     display: flex;
@@ -787,8 +787,8 @@
     font-size: 12.5px;
   }
   .insignia-meta {
-    font-size: 10.5px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
   .insignia-meta a {
     color: inherit;
@@ -869,9 +869,9 @@
   }
   .d-row {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
     display: flex;
     flex-wrap: wrap;
@@ -955,9 +955,7 @@
     margin: 0 0 16px;
   }
   .intro {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 16px;
+    font-size: var(--size-lead);
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 12px;
@@ -1087,8 +1085,8 @@
     gap: 8px;
   }
   .bom-count {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 10px;
+    color: var(--color-text-label);
+    font-size: var(--size-label);
   }
 
   .photo-list,
@@ -1141,9 +1139,9 @@
   .ph-row,
   .t-row {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 2px;
     display: flex;
     flex-wrap: wrap;
@@ -1170,7 +1168,6 @@
   }
   .ph-row.mods {
     color: rgba(255, 255, 255, 0.55);
-    font-style: italic;
   }
   /* Satellite attribution chip — links surface imagery to the spacecraft
      that captured it (#360). */
@@ -1181,7 +1178,7 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.85em;
+    font-size: max(var(--size-label), 0.85em);
     color: #ffd479 !important;
     border-bottom: 1px dotted rgba(255, 212, 121, 0.45) !important;
   }
@@ -1199,7 +1196,7 @@
     color: #4ecdc4;
     padding: 1px 5px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -1224,7 +1221,7 @@
     color: #4ecdc4;
     padding: 1px 6px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -1233,7 +1230,7 @@
   }
   .t-snippet {
     font-family: 'Crimson Pro', serif;
-    font-style: italic;
+    font-style: italic; /* a1-keep: quote */
     font-size: 14px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.75);
@@ -1241,8 +1238,8 @@
   }
   .t-loc {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin: 0;
   }
   .t-loc code {

@@ -96,7 +96,7 @@
     margin-bottom: 6px;
   }
   .lbl {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #8fbfe0;
     width: 58px;
@@ -135,7 +135,7 @@
     font-weight: 700;
   }
   .unit {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: #6ea6cc;
     margin-top: 6px;

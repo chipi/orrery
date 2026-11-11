@@ -112,7 +112,7 @@
   }
 
   .hint {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.65);
     letter-spacing: 0.05em;
   }

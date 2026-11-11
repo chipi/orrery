@@ -421,7 +421,7 @@
   .system-schematic .dot-label {
     fill: rgba(210, 232, 255, 0.75);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6.5px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-anchor: middle;
   }
@@ -461,7 +461,7 @@
   }
   .pl-facts {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(159, 232, 226, 0.85);
   }
@@ -480,10 +480,10 @@
   }
   .hero-caption {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin: 4px 0 0;
   }
   .kind-row {
@@ -500,7 +500,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: var(--accent, rgba(255, 255, 255, 0.6));
   }
@@ -511,14 +511,6 @@
     color: var(--color-text);
     line-height: 1;
     margin: 6px 0 12px;
-  }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 12px;
   }
   .editorial.empty {
     color: rgba(255, 255, 255, 0.4);
@@ -536,9 +528,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 2px;
   }
   .cell-value {

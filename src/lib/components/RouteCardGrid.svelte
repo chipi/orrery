@@ -212,14 +212,6 @@
               <circle cx="24" cy="16" r="5" fill="url(#ic-glow-teal)" />
               <ellipse cx="24" cy="16" rx="2" ry="3" fill="url(#ic-craft)" />
               <ellipse cx="24" cy="22" rx="1.6" ry="1.6" fill="#ffc850" opacity="0.85" />
-              <text
-                x="24"
-                y="33"
-                font-family="'Space Mono', monospace"
-                font-size="4.5"
-                fill="rgba(255,255,255,0.45)"
-                text-anchor="middle">T+254 d</text
-              >
             {:else if card.route === '/fleet'}
               <!-- Three spacecraft silhouettes, layered with depth (back row dim, front bright teal) -->
               <g opacity="0.55">
@@ -780,8 +772,6 @@
     color: var(--color-text);
   }
   .card-title {
-    font-family: var(--font-editorial), 'Crimson Pro', serif;
-    font-style: italic;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.92);
   }

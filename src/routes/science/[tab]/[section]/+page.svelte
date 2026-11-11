@@ -287,9 +287,7 @@
     margin: 0 0 8px;
   }
   .lede {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 17px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 24px;
   }
@@ -326,9 +324,9 @@
   .section-photo figcaption {
     padding: 8px 12px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
@@ -348,7 +346,7 @@
   }
   .narrative-101 .badge {
     font-family: var(--font-display);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #4ecdc4;
@@ -435,7 +433,7 @@
     width: 56px;
     padding: 2px 6px;
     margin-right: 8px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center;

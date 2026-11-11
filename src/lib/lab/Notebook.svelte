@@ -664,7 +664,7 @@
   }
   .nb__conn-hook-label {
     display: block;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.09em;
@@ -675,7 +675,6 @@
     margin: 0;
     line-height: 1.55;
     color: #d8d8d8;
-    font-style: italic;
   }
   .nb__conn-links {
     list-style: none;
@@ -710,7 +709,7 @@
   }
   .nb__conn-agency {
     flex-shrink: 0;
-    font-size: 0.64rem;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -732,7 +731,7 @@
     display: block;
     color: #4ecdc4;
     font-weight: 700;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 0.2rem;
@@ -783,7 +782,7 @@
   /* Visible function label (UX review: five icon-only buttons were opaque). */
   .nb__tool-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.45rem;
+    font-size: var(--size-label);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: rgba(232, 232, 232, 0.6);
@@ -858,7 +857,7 @@
     right: 12px;
     z-index: 15;
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: rgba(78, 205, 196, 0.9);
@@ -871,7 +870,7 @@
 
   .nb__goal-kicker {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(78, 205, 196, 0.6);
@@ -901,7 +900,7 @@
   .nb__goal-prereq {
     margin: 0.45rem 0 0;
     font-family: 'Space Mono', monospace;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     letter-spacing: 0.3px;
     color: rgba(232, 232, 232, 0.78);
     display: inline-block;
@@ -998,7 +997,7 @@
     color: #ffc850;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     margin-right: 0.4rem;
   }
 
@@ -1106,7 +1105,7 @@
 
   .nb__add-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: rgba(78, 205, 196, 0.65);

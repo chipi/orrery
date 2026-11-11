@@ -108,10 +108,10 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .name {
     font-family: 'Bebas Neue', sans-serif;
@@ -128,9 +128,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 2px;
   }
   .cell-value {
@@ -143,20 +143,12 @@
   }
   .caption {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin: 14px 0 0;
     line-height: 1.5;
-  }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 12px;
   }
   .prose {
     font-size: 14px;
@@ -169,9 +161,9 @@
   }
   .library-heading {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 0 0 8px;
   }
   .learn-list {

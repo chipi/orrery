@@ -135,8 +135,8 @@
   }
   .qr-url {
     max-width: 160px;
-    font-size: 9px;
-    color: rgba(255, 255, 255, 0.45);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     word-break: break-all;
     text-align: center;
   }

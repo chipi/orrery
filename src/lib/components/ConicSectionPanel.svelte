@@ -137,7 +137,7 @@
   }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffc850;
     margin-bottom: 4px;
@@ -161,9 +161,7 @@
   }
   .blurb {
     margin: 0 0 6px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-lead);
     line-height: 1.35;
     color: rgba(255, 255, 255, 0.7);
   }
@@ -184,9 +182,9 @@
   }
   .vital dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 0;
   }
   .vital dd {
@@ -196,14 +194,14 @@
     margin: 0;
   }
   .unit {
-    font-size: 8px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-left: 2px;
   }
   .link {
     margin-top: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
   }

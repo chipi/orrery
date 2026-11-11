@@ -221,10 +221,10 @@
   }
   .ruler-title {
     margin: 0 0 8px;
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 0.15em;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .ruler-bands {
     list-style: none;
@@ -271,7 +271,7 @@
   }
   .band-alt {
     color: rgba(255, 255, 255, 0.62);
-    font-size: 10px;
+    font-size: var(--size-label);
   }
   .surface-row {
     margin-top: 6px;
@@ -281,8 +281,8 @@
     align-items: center;
     gap: 8px;
     border-top: 1px dashed rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.45);
-    font-size: 10px;
+    color: var(--color-text-label);
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
   }
   .surface-line {
@@ -316,11 +316,11 @@
   @media (max-width: 720px) {
     .ruler {
       width: 152px;
-      font-size: 10px;
+      font-size: var(--size-label);
       padding: 6px 8px 4px;
     }
     .ruler-title {
-      font-size: 8px;
+      font-size: var(--size-label);
       letter-spacing: 0.12em;
       margin-bottom: 4px;
     }
@@ -330,11 +330,11 @@
       gap: 6px;
     }
     .band-alt {
-      font-size: 9px;
+      font-size: var(--size-label);
     }
     .surface-row {
       padding: 4px 6px 1px;
-      font-size: 9px;
+      font-size: var(--size-label);
     }
   }
 </style>

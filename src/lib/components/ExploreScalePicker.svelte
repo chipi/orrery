@@ -179,7 +179,7 @@
   }
   .caret {
     opacity: 0.7;
-    font-size: 10px;
+    font-size: var(--size-label);
   }
 
   /* Popover ladder: hidden until open, then drops down below the chip. */

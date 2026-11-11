@@ -224,7 +224,7 @@
   }
   .banner-eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     color: #ffc850;
     margin-bottom: 8px;
@@ -242,9 +242,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 0;
   }
   .cell-value {
@@ -263,9 +263,7 @@
     margin: 0;
     padding-top: 8px;
     border-top: 1px solid rgba(255, 200, 80, 0.18);
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.78);
   }
   .banner-foot.banner-foot-secondary {
@@ -280,7 +278,7 @@
   .banner-link {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
     text-decoration: none;

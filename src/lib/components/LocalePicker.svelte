@@ -173,10 +173,10 @@
   }
   .option .tag {
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .option.active .tag {
     color: #4ecdc4;

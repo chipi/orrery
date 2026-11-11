@@ -204,7 +204,7 @@
     flex: 1;
     padding: 5px 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.62);
     background: rgba(255, 255, 255, 0.04);
@@ -223,7 +223,7 @@
     border-color: rgba(78, 205, 196, 0.5);
   }
   .si-count {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: var(--text-dim, #9a9aa7);
     margin-bottom: 4px;
@@ -279,7 +279,7 @@
   .si-section {
     padding: 10px 10px 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--text-dim, #9a9aa7);
@@ -295,7 +295,7 @@
     font-size: 13px;
   }
   .si-con {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(159, 232, 226, 0.8);
     flex: none;
   }

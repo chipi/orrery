@@ -232,7 +232,7 @@
   }
   .type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     color: rgba(255, 220, 100, 0.5);
     margin-bottom: 4px;
@@ -259,9 +259,9 @@
   .stat-label,
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .stat-value,
@@ -276,8 +276,8 @@
   }
   .cell-sub {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.3);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-top: 2px;
   }
 
@@ -287,14 +287,6 @@
     border-bottom-color: #ffc850;
   }
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 12px 0;
-  }
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -309,8 +301,8 @@
   }
   .src {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.15);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.8;
   }
 

@@ -214,7 +214,7 @@
   }
   .pin-credit {
     margin: 2px 0 0;
-    font-size: 0.85em;
+    font-size: max(var(--size-label), 0.85em);
     color: #8b93a4;
   }
   .pin-credit a,
@@ -227,7 +227,7 @@
     padding: 2px 8px;
     border-radius: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 0.06em;
   }
@@ -278,16 +278,16 @@
   }
   .launch-meta {
     display: block;
-    font-size: 0.82em;
+    font-size: max(var(--size-label), 0.82em);
     color: #8b93a4;
   }
   .launch-watch {
     white-space: nowrap;
-    font-size: 0.85em;
+    font-size: max(var(--size-label), 0.85em);
   }
   .all-launches {
     margin-top: 14px;
-    font-size: 0.9em;
+    font-size: max(var(--size-label), 0.9em);
   }
   .all-launches a {
     color: #9fc3ff;

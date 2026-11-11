@@ -827,7 +827,7 @@
     border-radius: 4px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     font-weight: 700;
     cursor: pointer;
@@ -870,7 +870,7 @@
   }
   .category-chip {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     padding: 3px 8px;
@@ -888,9 +888,7 @@
   }
   .tagline {
     margin: 0 0 6px;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 14px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.4;
   }
@@ -1009,7 +1007,7 @@
     text-align: left;
   }
   .spec-cta .spec-label {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2.5px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1040,8 +1038,7 @@
      as a magazine standfirst: prominent roman serif, brighter than the italic
      .description below, set apart by a hairline. Matches MissionPanel. */
   .dispatch {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.92);
     margin: 0 0 14px;
@@ -1051,9 +1048,7 @@
 
   .description {
     margin: 0 0 14px;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 14px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.5;
   }
@@ -1070,10 +1065,10 @@
   }
   .spec dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9.5px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 1px;
   }
   .spec dd {
@@ -1087,10 +1082,10 @@
   .section-h {
     margin: 14px 0 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-weight: normal;
   }
   /* PRD-032 — engine ↔ launcher cross-reference list. */
@@ -1130,8 +1125,8 @@
   }
   .xref-sub {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.45);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
   .site-list {
     list-style: none;
@@ -1165,9 +1160,7 @@
 
   .credit {
     margin: 16px 0 0;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.4);
     line-height: 1.5;
   }
@@ -1218,8 +1211,8 @@
   .anatomy-caption {
     margin: 8px 0 0;
     font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 11.5px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.5);
   }
 
@@ -1294,8 +1287,8 @@
   }
   .crew-role {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9.5px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
@@ -1320,10 +1313,10 @@
   .tier h4 {
     margin: 0 0 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: normal;
   }
   .tier ul {

@@ -321,7 +321,7 @@
     z-index: 300;
     pointer-events: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.05em;
     color: #9fe0ff;
     background: rgba(6, 12, 22, 0.72);
@@ -431,7 +431,7 @@
   }
   .ro .k {
     color: #6b7d94;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 0.16em;
   }
   .ro .v {
@@ -575,7 +575,7 @@
       gap: 0.22rem;
     }
     .ro .k {
-      font-size: 0.56rem;
+      font-size: var(--size-label);
       letter-spacing: 0.08em;
     }
     .ro .v {

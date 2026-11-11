@@ -361,7 +361,7 @@
     position: absolute;
     transform: translateX(-50%);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     color: rgba(180, 200, 255, 0.55);
     letter-spacing: 1px;
   }
@@ -399,7 +399,7 @@
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: rgba(255, 200, 80, 0.85);
     background: rgba(8, 10, 22, 0.85);
@@ -459,7 +459,7 @@
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 700;
     color: #4ecdc4;
     letter-spacing: 1px;
@@ -473,7 +473,7 @@
     top: 4px;
     right: 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.7);
     background: transparent;
@@ -526,7 +526,7 @@
     align-items: center;
     gap: 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: rgba(180, 200, 255, 0.85);
   }
@@ -544,7 +544,7 @@
   .rm-reset {
     margin-left: auto;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.7);
     background: transparent;

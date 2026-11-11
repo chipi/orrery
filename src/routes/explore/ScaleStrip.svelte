@@ -134,7 +134,7 @@
   }
   .scale-schematic-size {
     color: #9fb2cf;
-    font-size: 10px;
+    font-size: var(--size-label);
     margin-bottom: 4px;
   }
   .scale-schematic-note {
@@ -149,12 +149,12 @@
     margin-bottom: 6px;
   }
   .scale-ladder .rung {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 1px 5px;
     border-radius: 3px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     background: rgba(255, 255, 255, 0.04);
   }
   .scale-ladder .rung.active {
@@ -177,8 +177,8 @@
     color: #9fe8e2;
   }
   .scale-light {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-top: 2px;
   }
   .scale-bar-wrap {
@@ -197,14 +197,14 @@
     min-width: 12px;
   }
   .scale-bar-label {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.7);
   }
   .scale-context {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin-top: 6px;
   }
 

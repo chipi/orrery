@@ -433,3 +433,10 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
   the constellation finder in its own tab ("In the sky") with the constellation named and linked, a
   Gallery tab when there is more than one image. Same screen: "5 LY" ring label collides with
   "Barnard's Star" (C2 label declutter); the italic lead (A1).
+- G5/G6 ("gallery item page" = the deep-sky full-screen viewer, `/gallery/deep-sky`, e.g. Mystic
+  Mountain): the fact labels OBJECT · CONSTELLATION · DISTANCE · CAPTURED sit at the very bottom edge
+  of the window, so their values fall below it and the row reads as labels with the values hidden. Fix
+  (slice F4, new): the viewer fits one screen — image height capped so caption, credit line and the
+  facts row with values are visible at 1440x900 and 1366x768 without scrolling; facts as label above
+  value. Same screen: the italic caption (A1, Q2 keeps italic only for real captions — this is one, so
+  it stays italic at ≥ 14 px) and the teal-ish facility line (A3).

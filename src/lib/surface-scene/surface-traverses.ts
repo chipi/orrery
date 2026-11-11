@@ -261,6 +261,7 @@ function buildTraverseCaption(
     ctx2.fillText(text.toUpperCase(), canvas.width / 2, canvas.height / 2);
   }
   const texture = new THREE.Texture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;
@@ -312,6 +313,7 @@ function buildTraverseStopPin(hexColor: number): {
     ctx2.fill();
   }
   const texture = new THREE.Texture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;
@@ -357,6 +359,7 @@ function buildTraversePhotoPin(): { sprite: THREE.Sprite; texture: THREE.Texture
     ctx2.fill();
   }
   const texture = new THREE.Texture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;
@@ -415,6 +418,7 @@ function buildTraverseText(
     ctx2.fillText(text, padX, H / 2 + 2);
   }
   const texture = new THREE.Texture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;

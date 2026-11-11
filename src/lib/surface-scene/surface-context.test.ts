@@ -161,4 +161,22 @@ describe('buildContextCap', () => {
     expect(cap.userData).toEqual({ siteId: 'apollo17', layer: 'context' });
     mat.dispose();
   });
+
+  it('decodes the loaded texture as sRGB, so the cap matches the encoded output', () => {
+    const tex = new THREE.Texture() as unknown as THREE.Texture<HTMLImageElement>;
+    vi.spyOn(THREE.TextureLoader.prototype, 'load').mockImplementation((_url, onLoad) => {
+      onLoad?.(tex);
+      return tex;
+    });
+    const cap = buildContextCap({
+      siteId: 'apollo17',
+      textureUrl: '/images/hotspots/moon/apollo17/context.webp',
+      bounds: { lat_min: 19, lat_max: 21, lon_min: 30, lon_max: 32 },
+      planetRadius: 30,
+    });
+    const mat = cap.material as THREE.MeshPhongMaterial;
+    expect(mat.map).toBe(tex);
+    expect(tex.colorSpace).toBe(THREE.SRGBColorSpace);
+    mat.dispose();
+  });
 });

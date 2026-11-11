@@ -40,10 +40,14 @@ The UI accent colour is **blue D, `#5070ff`**, which is today's global link colo
 (`--color-accent-text`). It replaces **every UI teal**: links, HUD chips, home glyphs and panels.
 There is no cyan or teal anywhere in the UI.
 
+**The muted blue `#889fe7` stays alongside D**: D (`#5070ff`) for links and accents, `#889fe7` for
+annotation rings, hover and status states (operator go, 2026-11-11, `docs/wip/2026-11-11-ux-feedback-plan.md`,
+line starting "- Operator go, 2026-11-11 (session", line 460).
+
 **Science diagrams and Lab art keep their own colours** (the `/science` diagram style and the Lab
 goal art are unaffected; operator 2026-11-09 and 2026-11-11). This is "for now": the operator listed
 "review whether they should also move to the new palette once the UI blue is in place" as an
-end-of-work check (plan lines 460–463).
+end-of-work check (plan lines 462–465).
 
 ## Consequences
 
@@ -54,13 +58,12 @@ end-of-work check (plan lines 460–463).
   (Moon tidal-lock overlay, Earth limb glow, microgravity axes, Lab canvases, fly velocity arrows,
   universe scenes, `epoch-bands`) and says which stay
   (`docs/wip/2026-11-09-0.9.9-redesign.md` lines 18–22).
-- Not decided in any source: the relation between `#5070ff` and the surface scenes' `#889fe7`
-  (`HOVER_BLUE`, `src/lib/surface-scene/surface-markers.ts` line 45), which the operator approved
-  on 2026-11-09. Listed in UXS-000 §Open.
+- The surface scenes keep `#889fe7` (`HOVER_BLUE`, `src/lib/surface-scene/surface-markers.ts` line 45) for rings,
+  hover and status states, next to D (plan line 460).
 - The status tones ACTIVE `#889fe7` and PLANNED `#7b9cff` are near-identical; the redesign note says
   to "revisit with the new palette" (lines 23–25). Open.
 
 ## Verification
 
 Not guarded yet. The slice's check is a repo-wide search for `#4ecdc4` and `rgba(78,205,196` with a
-documented allow-list (plan line 484). No test asserts it today.
+documented allow-list (plan line 486). No test asserts it today.

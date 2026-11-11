@@ -1,12 +1,11 @@
 # UXD-010 — Each Explore ruler regime gets its own best science card, no repeats within a ruler
 
-- **Status**: proposed
-- **Date**: 2026-11-11 (proposed; the operator's point and clarification)
+- **Status**: accepted
+- **Date**: 2026-11-11 (the operator's point and clarification, then the go)
 - **Decider**: the operator raised O6 ("all orbit panes repeat the same science links … variety,
   different per pane, best matches, no repetition", `docs/wip/2026-11-11-ux-feedback-plan.md` line
   177) and showed the GIANTS pane (lines 445–450). "Slice B2 gives every regime its own best match,
-  no repeats within a ruler" is the lead's resolution under "Answers (2026-11-11)". Awaiting the operator's go, when its slice (B2) is
-  reviewed.
+  no repeats within a ruler" is the lead's resolution under "Answers (2026-11-11)". The operator, 2026-11-11 (session go after the UXD check), recorded in `docs/wip/2026-11-11-ux-feedback-plan.md`, line starting "- Operator go, 2026-11-11 (session" (line 460): the fixes for W6, SN2, G5/G6 and O6 "are accepted as decided".
 - **Answers**: O6, S1, S2; slice B2 (science links)
 - **Changes**: UXS-014 / UXS-016 (no ruler section exists today; see UXS-000 §Next). The cap of five
   science links per panel (S2) is part of the same slice.

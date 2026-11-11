@@ -131,6 +131,7 @@ per screen, then the change, then e2e on all three Playwright projects.
 | H5 | Is video instead of the welcome hero graphic the right approach? (D2) |
 | H6 | Test making a video with Higgsfield in this visual language, bringing more of the website into it. (D2, paid) |
 | H7 | Complete redesign now, after the fact? (D1) |
+| H8 | Home typography and styling in all aspects: route-card titles are upright Space Mono since A1 (operator chose this over Crimson); revisit with the rest of the page. |
 
 ## Explore — overall
 
@@ -427,6 +428,7 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 
 - Q1: blue D, `#5070ff` (today's global link colour, `--color-accent-text`) — confirmed by the operator after the sheet. Scope: every UI teal (links, HUD chips, home glyphs, panels); science diagrams and Lab art keep their own colours (operator 2026-11-11).
 - Q2: floor 11 px everywhere; labels 11 px at ~60 %; body 14 px; lead/overview 15–16 px upright in the body font; italic only for quotes and photo captions, ≥ 14 px.
+- A1 follow-up (operator 2026-11-11): home route-card titles stay upright Space Mono (option a; were Crimson italic). All other home styling is settled in the home-page slice (H1–H8), covering every aspect of the page. The 4.5 px "T+254 d" text on the route-card icons stays deleted.
 - SN2 (Antares, `/explore?goto=antares`): "the zodiac chart" is the constellation finder figure
   ("Scorpius from the Sun's sky") that `StarPanel` stacks under the star portrait, above the tabs —
   together they push Overview below the fold. Slice B3: one hero at the top (photo, else the portrait),
@@ -452,8 +454,8 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
   the centre of the real photo region (per-site initial heading from the panorama's photo span), on
   every site with a panorama; e2e asserts the initial view centre is inside the photo span.
 - Surface colour fix (OutputPass) done on the branch: code `8e9a7c8d1d9`, docs `a07218d5429`;
-  before/after shots sent for approval. /iss and /tiangong share the composer but use ACES tone mapping
-  — left unchanged (one flag) pending the operator.
+  before/after shots sent for approval. /iss and /tiangong (and every other composer) now end in the
+  OutputPass too (output-step slice, 2026-11-11; operator decision: one OutputPass per composer).
 
 ## To check at the end (operator, 2026-11-11)
 

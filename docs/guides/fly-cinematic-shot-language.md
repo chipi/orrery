@@ -131,6 +131,11 @@ Use `EffectComposer` with this order:
 6. `THREE.ACESFilmicToneMapping` on renderer; `toneMappingExposure 1.0–1.2`.
    **Single most important line for cinematic feel** — HDR Sun → SDR display.
 
+**Composer note (2026-11-11):** the composer renders into linear targets, so the renderer's tone
+mapping (item 6) and the sRGB encode only reach the screen through a final `OutputPass`. Every Orrery
+composer ends in exactly one, after vignette (`fly-helio-scene.ts`, `ascent-renderer.ts`); without it
+the ACES line had no effect on composer tiers. See `docs/adr/TA.md` (composer pipeline).
+
 ### T8. Skydome with structure
 Replace solid-black with a cubemap skydome: sparse star field (Hipparcos-
 weighted magnitudes), faint Milky Way band, near-imperceptible warm

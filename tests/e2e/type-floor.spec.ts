@@ -45,14 +45,16 @@ async function tinyText(page: Page): Promise<Offender[]> {
         if (m) size *= Math.hypot(m.a, m.b);
       }
       const cs = getComputedStyle(el);
-      const col = cs.color.match(/^rgba?\(255, 255, 255(?:, ([0-9.]+))?\)$/);
-      const alpha = col ? Number(col[1] ?? 1) : 1;
+      const col = cs.color.match(/^rgba?\([0-9.]+, [0-9.]+, [0-9.]+(?:, ([0-9.]+))?\)$/);
+      let alpha = col ? Number(col[1] ?? 1) : 1;
+      for (let a: Element | null = el; a; a = a.parentElement)
+        alpha *= Number(getComputedStyle(a).opacity);
       const why =
         size < floor - 0.01
           ? `${Math.round(size * 100) / 100}px`
           : cs.fontStyle === 'italic' && size < 14 - 0.01
             ? `italic ${size}px`
-            : size < 12 && alpha < 0.5 && /[\p{L}\p{N}]/u.test(text)
+            : size < 12 && alpha < 0.58 && /[\p{L}\p{N}]/u.test(text)
               ? `${size}px at alpha ${alpha}`
               : '';
       if (why) {
@@ -189,7 +191,7 @@ const EXTRA: Screen[] = [
   })),
 ];
 
-test.describe('type floor — no text under 11 px, italic ≥ 14 px, small text ≥ 0.5 alpha (UX A1 / Q2)', () => {
+test.describe('type floor — no text under 11 px, italic ≥ 14 px, small text ≥ 0.58 alpha (UX A1 / Q2)', () => {
   test.setTimeout(60_000);
   for (const screen of [...SCREENS, ...EXTRA]) {
     test(screen.name, async ({ page }) => {

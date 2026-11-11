@@ -101,7 +101,7 @@
     font-size: 0.7rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--muted, #9aa4bf);
+    color: var(--color-text-label);
   }
   .name {
     font-size: 1.1rem;
@@ -129,7 +129,7 @@
     font-size: var(--size-label);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--muted, #9aa4bf);
+    color: var(--color-text-label);
   }
   .cell-value {
     font-size: 0.82rem;
@@ -141,7 +141,7 @@
   .unit {
     font-size: var(--size-label);
     font-weight: 400;
-    color: var(--muted, #9aa4bf);
+    color: var(--color-text-label);
   }
   .learn-link {
     display: inline-block;

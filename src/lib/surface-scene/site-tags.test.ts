@@ -13,6 +13,7 @@ import {
   statusChipColor,
   tagAccent,
   tagMarkup,
+  TAG_STAGES,
   thinCards,
   type CardCandidate,
   type TagSpec,
@@ -228,6 +229,21 @@ describe('tagMarkup', () => {
     const grp = tagMarkup(spec('a'), 1, 4);
     expect(grp.frame).toContain('>4</text>');
     expect(grp.card).toContain('+3');
+  });
+
+  it('keeps every on-screen text at 11 px or more, down to the smallest grow stage (A1)', () => {
+    const smallest = tagStage(0).size;
+    expect(smallest).toBe(TAG_STAGES.minSize);
+    for (const scale of [0.5, 0.75, 1, 1.4]) {
+      const { frame, card } = tagMarkup(spec('a'), scale, 4);
+      // The frame <svg> is scaled by --tag-s (>= minSize); the badge text must be counter-scaled
+      // by 1/--tag-s, so its on-screen size is the font-size attribute itself.
+      expect(frame).toContain('transform:scale(calc(1 / var(--tag-s,1)))');
+      const font = Number(frame.match(/<text[^>]*font-size="([0-9.]+)"/)![1]);
+      expect(font * smallest * (1 / smallest)).toBeGreaterThanOrEqual(11);
+      const cardPx = Number(card.match(/font-size:([0-9.]+)px/)![1]);
+      expect(cardPx).toBeGreaterThanOrEqual(11);
+    }
   });
 });
 

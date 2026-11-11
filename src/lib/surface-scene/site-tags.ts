@@ -510,7 +510,7 @@ export function tagMarkup(spec: TagSpec, scale = 1, count = 1): { frame: string;
     `<g transform="translate(0,-1) scale(${(0.92 * scale).toFixed(3)})">${TAG_ICONS[spec.icon]}</g>` +
     `<rect x="${-h + 5}" y="${h - 5}" width="${Math.round(5 * scale) + 1}" height="2" fill="${st}"/>` +
     (count > 1
-      ? `<g transform="translate(${-h},${-h})"><circle r="${8 * scale + 2}" fill="${col}"/><text text-anchor="middle" dy="0.35em" font-size="${Math.max(11, 10 * scale + 1).toFixed(1)}" font-weight="700" fill="#0a0e1c" font-family="inherit">${count}</text></g>`
+      ? `<g transform="translate(${-h},${-h})"><g style="transform:scale(calc(1 / var(--tag-s,1)))"><circle r="${8 * scale + 2}" fill="${col}"/><text text-anchor="middle" dy="0.35em" font-size="${Math.max(11, 10 * scale + 1).toFixed(1)}" font-weight="700" fill="#0a0e1c" font-family="inherit">${count}</text></g></g>`
       : '') +
     [1, -1]
       .map(

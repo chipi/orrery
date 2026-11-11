@@ -475,3 +475,16 @@ A slice is reported done only when the lead has checked all of these, with the c
    standard i18n tools; `validate-data` green.
 
 Then the operator gets a short status and small before/after screenshots (13" laptop + phone).
+
+## Checks and balances — how every slice runs (operator, 2026-11-11: invest time up front)
+
+1. **Before code (sonnet, read-only):** a short slice brief — the exact search patterns that define
+   "old" (e.g. `font-size: [0-9]px` under 11, `#4ecdc4`, `rgba(78,205,196`), the full list of hits
+   across the repo, the allow-list with reasons, the docs and tests that state or guard the rule. The
+   implementer works from that list, not from sample screens.
+2. **Implement (sonnet):** against the brief; tests move with the work.
+3. **Independent check (haiku for the mechanical part, sonnet for judgement):** a fresh agent that did
+   not write the code re-runs the brief's searches, the definition-of-done items and the affected
+   suites on all three Playwright projects, and reviews the diff against the brief. Findings go back to
+   the implementer; the slice loops until the checker reports clean.
+4. **Lead:** reads the checker's evidence, looks at the screenshots, then reports to the operator.

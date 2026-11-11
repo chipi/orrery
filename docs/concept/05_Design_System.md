@@ -105,6 +105,8 @@ Used for card accent borders (3px top), pin markers, label text, and logo backgr
 
 ## 3. Typography
 
+> Type scale and the 11 px floor: decision record [UXD-002](../uxs/decisions/UXD-002-type-scale-and-the-11px-floor.md).
+
 ### 3.1 Typefaces
 
 Three typefaces only, all loaded from Google Fonts:

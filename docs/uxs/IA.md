@@ -217,6 +217,8 @@ color-tier-deep:  #ff9966    Deep links (peer-reviewed papers)
 
 ### Typography tokens
 
+> Decision record: [UXD-002](decisions/UXD-002-type-scale-and-the-11px-floor.md) (11 px floor, labels at 60 %, upright leads, italic only for quotes and captions).
+
 ```
 font-display:   'Bebas Neue', sans-serif    Titles, screen names, mission names
 font-mono:      'Space Mono', monospace     All data, labels, HUD values, UI chrome

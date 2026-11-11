@@ -126,6 +126,7 @@ Runbook: the `orrery-link-health` skill. The two outbound checkers share
 | Question | Run | Where it runs |
 | --- | --- | --- |
 | does every indexable page have one title (not the bare brand, ≤90 chars), one description (≤160), a self-referencing canonical, the full hreflang set with built targets, og:title / og:url / og:image and a Twitter card, JSON-LD that parses and one H1, with no noindex leak, and (entity pages) at least the locale's character floor (`THIN_MIN_CHARS`, ADR-096 decision 12) of text in `<main>` — and do the sitemaps list exactly those pages; on the GH Pages mirror (`VITE_BASE`), is every page noindex with no canonical | `check-seo.mjs` | every `npm run build` |
+| tell Bing, Yandex and the other IndexNow engines which URLs exist: reads the live `/sitemap.xml` index and every locale sitemap, dedupes, and POSTs in batches of ≤ 10,000 after checking `static/<key>.txt` is live (`--dry-run` sends nothing; `--since YYYY-MM-DD`; `--base`; `--key`) | `indexnow-submit.mjs` (`npm run indexnow`; runbook `docs/ops/indexnow.md`) | by hand, once after each verified prod deploy; the real submission needs the operator's go |
 
 The SEO code it checks: `src/lib/seo.ts` (canonical, hreflang, `metaDescription`,
 `pageTitle`, `isMirrorBuild`), `src/lib/social-meta.ts` (Open Graph + Twitter,

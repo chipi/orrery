@@ -128,6 +128,7 @@
     "preflight:full": "node scripts/with-lock.mjs preflight -- npm run preflight:full:body",
     "build-i18n-bundles": "node scripts/build-i18n-bundles.mjs",
     "validate-prod": "node scripts/validate-prod.mjs",
+    "indexnow": "node scripts/indexnow-submit.mjs",
     "build-cards": "node scripts/cards/generate-card-images.mjs"
   },
   "devDependencies": {

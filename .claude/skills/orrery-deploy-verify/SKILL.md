@@ -55,6 +55,18 @@ a real prod error in project 18 shows source context.
 workstation's key is refused — container logs and `docker inspect` go through the prod
 session. Ask it only for that.
 
+## 6. IndexNow
+
+```bash
+npm run indexnow -- --dry-run
+```
+
+Reads our own sitemaps, prints counts per locale and the batch plan, checks the key file
+(`static/<key>.txt`) is live at the site root, sends nothing. A "key file NOT live" warning
+means the deploy did not ship it: fix that first. The real submission (`npm run indexnow`)
+only with the operator's go; the first one is after the 0.9.9 deploy. Runbook:
+`docs/ops/indexnow.md`.
+
 ## Report
 
 Per check: PASS/FAIL with the command and an output fragment; and a NOT CHECKED list

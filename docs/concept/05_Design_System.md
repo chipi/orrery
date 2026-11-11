@@ -133,10 +133,10 @@ Never mix faces within a semantic role. Descriptions and overviews are Space Mon
 | Mission name (card) | Bebas Neue | 20–26px | — | 2px |
 | Section label | Space Mono | 11px | 700 | 3px |
 | Data label | Space Mono | 11px (60% white) | 400 | 2px |
-| Data value | Space Mono | 10–14px | 700 | — |
+| Data value | Space Mono | 12–14px | 700 | — |
 | Body label / button | Space Mono | 11–12px | 700 | 2px |
 | Metadata / credit | Space Mono | 11px | 400 | 1px |
-| Description / lead | Space Mono | 15–16px (`--size-lead`) | 400 upright | — |
+| Description / lead | Space Mono | 16px, 15px under 600px width (`--size-lead`) | 400 upright | — |
 | Photo caption / quote | Crimson Pro | 14px (`--size-caption`) | 400 italic | — |
 
 ### 3.3 Type rendering notes
@@ -291,7 +291,7 @@ The abbreviation is always visible. The real logo loads on top. Never breaks off
 
 ```css
 padding: 4-5px 11-12px;
-font-size: 7px; letter-spacing: 2px; font-weight: 700;
+font-size: 11px; letter-spacing: 2px; font-weight: 700;
 border: 1px solid rgba(255,255,255,0.1);
 border-radius: 3px;
 color: rgba(255,255,255,0.35);
@@ -303,8 +303,8 @@ Active state: `background: rgba(68,102,255,0.25); border-color: rgba(68,102,255,
 
 ```css
 grid-column: 1 / -1;
-font-size: 7px; letter-spacing: 3px; font-weight: 700;
-color: rgba(255,255,255,0.22);
+font-size: 11px; letter-spacing: 3px; font-weight: 700;
+color: rgba(255,255,255,0.6);
 border-bottom: 1px solid rgba(255,255,255,0.05);
 padding: 6px 0 4px;
 ```
@@ -320,7 +320,7 @@ border-radius: 4px;
 padding: 8–9px 10–11px;
 ```
 
-Label: Space Mono 6px, letter-spacing 2px, `rgba(255,255,255,0.25)`. Value: Space Mono 10–12px, weight 700, white.
+Label: Space Mono 11px, letter-spacing 2px, `rgba(255,255,255,0.6)`. Value: Space Mono 12px, weight 700, white.
 
 ### 5.10 Educational link row
 
@@ -330,11 +330,11 @@ A single link entry within a tier section:
 [●] Link label text                                              ↗
 ```
 
-The dot is 5×5px in the tier colour. The label is Space Mono 9–10px at 65–68% opacity. The arrow `↗` is Space Mono at 20% opacity. The full row has 7–8px horizontal padding, 7px vertical, 4px border radius, and transitions to `rgba(255,255,255,0.05–0.07)` on hover.
+The dot is 5×5px in the tier colour. The label is Space Mono 11px at 65–68% opacity. The arrow `↗` is Space Mono at 20% opacity. The full row has 7–8px horizontal padding, 7px vertical, 4px border radius, and transitions to `rgba(255,255,255,0.05–0.07)` on hover.
 
 ### 5.11 Gallery grid
 
-3×3 grid of images, gap 4px. Each cell: `aspect-ratio: 1; overflow: hidden; border-radius: 3px; background: #0a0a18`. The image is `object-fit: cover; loading: lazy`. Credit footer below the grid: Space Mono 6.5–7px at 15–18% opacity.
+3×3 grid of images, gap 4px. Each cell: `aspect-ratio: 1; overflow: hidden; border-radius: 3px; background: #0a0a18`. The image is `object-fit: cover; loading: lazy`. Credit footer below the grid: Space Mono 11px at 60% opacity.
 
 For NASA missions: live-fetched from the NASA Images API. For others: curated Wikimedia Commons URLs. For unresolved gaps: honest placeholder text.
 

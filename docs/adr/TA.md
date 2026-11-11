@@ -308,6 +308,8 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **Translation pipeline** — LLM-first-pass plus `argos-translate` offline-NMT batch fallback per ADR-033. `scripts/wave23/{catalog,maps,apply-translations}.ts` is the toolchain. sr-Cyrl is manually authored per ADR-043 (no Cyrillic Serbian model in argos).
 
+**Type scale** — `src/lib/styles/tokens.css` (UX A1 / Q2): floor 11 px for all DOM text (`--size-label` 11 px at 60 % white, `--size-meta` 12, `--size-body` 14, `--size-lead` 15 upright in Space Mono for panel overviews via the shared `.editorial` in `panel-tabs.css`, `--size-caption` 15). Crimson Pro italic is only for real quotes and photo captions. Guarded by `tests/e2e/type-floor.spec.ts`.
+
 **Font + script strategy** — Wave 1 (Latin + Cyrillic) uses bundled Inter + Crimson Pro per ADR-032. Wave 2 CJK uses Noto Sans CJK + Noto Serif CJK per ADR-044. Arabic uses Noto Sans Arabic + RTL `dir="rtl"` per ADR-045. Serbian Cyrillic gates the font load per ADR-043.
 
 ### Test infrastructure

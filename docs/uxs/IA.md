@@ -220,14 +220,14 @@ color-tier-deep:  #ff9966    Deep links (peer-reviewed papers)
 ```
 font-display:   'Bebas Neue', sans-serif    Titles, screen names, mission names
 font-mono:      'Space Mono', monospace     All data, labels, HUD values, UI chrome
-font-editorial: 'Crimson Pro', serif        Editorial descriptions, fact text (always italic)
+font-editorial: 'Crimson Pro', serif        Real quotes and photo captions only (italic, >= 14px)
 
 size-nav-title:   26px    Nav bar wordmark
 size-panel-title: 32–42px Panel planet/mission name (varies by name length)
-size-hud-value:   10–16px HUD telemetry values
-size-label:       7–8px   UI labels (Space Mono, letter-spacing 2px)
-size-data:        9–11px  Data values
-size-editorial:   12–13px Crimson Pro italic body text
+size-hud-value:   11–16px HUD telemetry values
+size-label:       11px    UI labels (Space Mono, letter-spacing 2px, 60% white) = --size-label; floor for ALL text
+size-data:        12–14px Data values (--size-meta 12px, --size-body 14px)
+size-lead:        15px    Panel overview / lead text, upright Space Mono (--size-lead); captions 15px Crimson italic (--size-caption)
 ```
 
 ### Spacing tokens

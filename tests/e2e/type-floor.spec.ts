@@ -33,6 +33,8 @@ async function tinyText(page: Page): Promise<Offender[]> {
       const el = n.parentElement;
       if (!text || !el || seen.has(el) || skip.has(el.tagName)) continue;
       seen.add(el);
+      // Lab science figures are viewBox-scaled charts with their own sizes (allow-listed in A1).
+      if (el.closest('svg.figure-root')) continue;
       if (!el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) continue;
       const rect = el.getBoundingClientRect();
       if (rect.width <= 1 || rect.height <= 1) continue;

@@ -7,13 +7,34 @@
  * advertise a URL the build did not emit, nor miss one it did. URLs are prod
  * URLs from $lib/seo, matching the on-page canonical and hreflang tags exactly.
  *
- * No <lastmod>: CI builds from a depth-1 checkout (and .git is not in the
- * Docker context), so per-route dates would all be the build commit's date —
- * Google ignores a lastmod that does not track real changes.
+ * <lastmod> comes from the committed manifest generated/route-lastmod.json
+ * (scripts/build-route-lastmod.mjs, `npm run route-lastmod`, regenerated in the
+ * release PR): the date git last changed the files the page is built from.
+ * It cannot be computed at build time — CI builds from a depth-1 checkout and
+ * .git is not in the Docker context, so every date would be the build commit's,
+ * and Google ignores a lastmod that does not track real change. A route missing
+ * from the manifest gets NO <lastmod>, never a fabricated one.
  */
 import { collectCanonicalRoutes } from '../../scripts/site-routes.mjs';
 import { SUPPORTED_LOCALES, type LocaleCode } from '$lib/locale';
 import { canonicalUrl, hreflangAlternates, SITE_ORIGIN } from '$lib/seo';
+import manifest from './generated/route-lastmod.json';
+
+export type LastmodEntry = string | ({ '*': string } & Record<string, string>);
+
+/** One manifest value for one locale: a plain date, or the locale's exception, else the default. */
+export function pickLastmod(
+  entry: LastmodEntry | undefined,
+  locale: LocaleCode,
+): string | undefined {
+  if (entry === undefined) return undefined;
+  return typeof entry === 'string' ? entry : (entry[locale] ?? entry['*']);
+}
+
+/** YYYY-MM-DD the page's content last changed in this locale, or undefined when unknown. */
+export function lastmodFor(route: string, locale: LocaleCode): string | undefined {
+  return pickLastmod((manifest as Record<string, LastmodEntry>)[route], locale);
+}
 
 function xmlEscape(s: string): string {
   return s
@@ -55,7 +76,9 @@ export function localeSitemapXml(locale: LocaleCode): string {
           `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${xmlEscape(a.href)}"/>`,
       )
       .join('\n');
-    return `  <url>\n    <loc>${xmlEscape(canonicalUrl(route, locale))}</loc>\n${alternates}\n  </url>`;
+    const lastmod = lastmodFor(route, locale);
+    const lastmodTag = lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : '';
+    return `  <url>\n    <loc>${xmlEscape(canonicalUrl(route, locale))}</loc>\n${lastmodTag}${alternates}\n  </url>`;
   });
   return (
     `<?xml version="1.0" encoding="UTF-8"?>\n` +

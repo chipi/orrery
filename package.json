@@ -68,6 +68,7 @@
     "build-video-provenance": "tsx scripts/build-video-provenance.ts",
     "check-learn-links": "tsx scripts/check-learn-links.ts",
     "precompute-porkchops": "tsx scripts/precompute-porkchops.ts",
+    "route-lastmod": "node scripts/build-route-lastmod.mjs",
     "build-tech-bom": "tsx scripts/build-tech-bom.ts",
     "check-tech-bom": "tsx scripts/build-tech-bom.ts --check",
     "check-no-secrets": "tsx scripts/check-no-secrets.ts",

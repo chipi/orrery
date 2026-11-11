@@ -454,3 +454,8 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 - Surface colour fix (OutputPass) done on the branch: code `8e9a7c8d1d9`, docs `a07218d5429`;
   before/after shots sent for approval. /iss and /tiangong share the composer but use ACES tone mapping
   — left unchanged (one flag) pending the operator.
+
+## To check at the end (operator, 2026-11-11)
+
+- Science diagrams and Lab art keep their own colours **for now** — review whether they should also
+  move to the new palette once the UI blue (D) is in place.

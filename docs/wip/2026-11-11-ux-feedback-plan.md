@@ -427,3 +427,9 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 
 - Q1: blue D, `#5070ff` (today's global link colour, `--color-accent-text`). Open: links only, or every UI teal.
 - Q2: floor 11 px everywhere; labels 11 px at ~60 %; body 14 px; lead/overview 15–16 px upright in the body font; italic only for quotes and photo captions, ≥ 14 px.
+- SN2 (Antares, `/explore?goto=antares`): "the zodiac chart" is the constellation finder figure
+  ("Scorpius from the Sun's sky") that `StarPanel` stacks under the star portrait, above the tabs —
+  together they push Overview below the fold. Slice B3: one hero at the top (photo, else the portrait),
+  the constellation finder in its own tab ("In the sky") with the constellation named and linked, a
+  Gallery tab when there is more than one image. Same screen: "5 LY" ring label collides with
+  "Barnard's Star" (C2 label declutter); the italic lead (A1).

@@ -1,8 +1,6 @@
-diff --git a/.github/workflows/deploy-prod.yml b/.github/workflows/deploy-prod.yml
-index 08d40ff..f5df23c 100644
 --- a/.github/workflows/deploy-prod.yml
 +++ b/.github/workflows/deploy-prod.yml
-@@ -143,8 +143,8 @@ jobs:
+@@ -143,8 +143,8 @@
            # `short` output preserved for the Sentry release labelling
            # downstream — Sentry wants HEAD's actual commit SHA on the
            # release, not the image tag (the deployed code is HEAD; the
@@ -13,7 +11,7 @@ index 08d40ff..f5df23c 100644
            # `git rev-parse --short` varies its length with the clone.
            echo "short=$(git rev-parse HEAD | cut -c1-8)" >> "$GITHUB_OUTPUT"
            echo "::notice::Deploying with ORRERY_PIPELINE_IMAGE_TAG=$TAG"
-@@ -200,7 +200,7 @@ jobs:
+@@ -200,7 +200,7 @@
            # keep the repo clean. Browser-only; never point at the tailnet
            # homelab:8090 (unreachable for public users).
            PUBLIC_SENTRY_DSN: ${{ secrets.PUBLIC_SENTRY_DSN }}
@@ -22,3 +20,14 @@ index 08d40ff..f5df23c 100644
            PUBLIC_SENTRY_ENVIRONMENT: prod
            PUBLIC_SENTRY_RELEASE: gha-${{ steps.sha.outputs.short }}
            # Self-hosted Umami — mirrors the Sentry wiring above exactly: the
+@@ -387,8 +387,8 @@
+             # Use the box's tailnet IP, where the gateway also binds (prod-podcast
+             # 100.124.111.115:4001, verified reachable). #464 deploy-day fix.
+             printf '%s=%s\n' ORRERY_LITELLM_BASE_URL 'http://100.124.111.115:4001'
+-            printf '%s=%s\n' ORRERY_LAB_CORS_ORIGINS 'https://orrerylearn.com,https://www.orrerylearn.com,https://chipi.github.io'
+-            printf '%s=%s\n' ORRERY_LAB_WEB_REDIRECT_URIS 'https://orrerylearn.com/lab/callback,https://www.orrerylearn.com/lab/callback,https://chipi.github.io/orrery/lab/callback'
++            printf '%s=%s\n' ORRERY_LAB_CORS_ORIGINS 'https://orrerylearn.com,https://www.orrerylearn.com'
++            printf '%s=%s\n' ORRERY_LAB_WEB_REDIRECT_URIS 'https://orrerylearn.com/lab/callback,https://www.orrerylearn.com/lab/callback'
+             # Server observability (ADR-094). Release follows homelab ADR-0010
+             # (`sha-<7>`, the same value as traces' service.version).
+             printf '%s=%s\n' ORRERY_RELEASE            "sha-${GITHUB_SHA::7}"

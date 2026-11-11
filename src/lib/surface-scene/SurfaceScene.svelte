@@ -1831,6 +1831,7 @@
           camera,
           width: container.clientWidth,
           height: container.clientHeight,
+          outputPass: true,
         })
       : null;
     const composer = composerSetup?.composer ?? null;
@@ -2688,7 +2689,6 @@
       orbitalMarkers,
       hotspots,
       originalMaxTier,
-      composerActive: composer !== null,
     });
 
     // Camera + controls.

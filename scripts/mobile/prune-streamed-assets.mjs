@@ -9,7 +9,7 @@
  * heavy buckets from `build/` so `cap sync` never copies them into the
  * native app. At runtime those URLs 404 against the local bundle and the
  * service-worker runtimeCaching rules (S3) fetch + cache them from
- * https://chipi.github.io/orrery instead.
+ * https://www.orrerylearn.com (the default STREAM_ORIGIN) instead.
  *
  * Pruned buckets:
  *   - build/images/                  gallery + hero + surface imagery (~1.6 GB)

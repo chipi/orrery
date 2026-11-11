@@ -3,8 +3,8 @@ import { LOCALES } from './lib/locales.mjs';
  * GH Pages compatibility helpers.
  *
  * Everything in this file exists *only* to make the prerender work
- * when the app is deployed to a subdirectory mount (GitHub Pages
- * at `chipi.github.io/orrery/`, activated via `VITE_BASE=/orrery/`).
+ * when the app is deployed to a subdirectory mount (`VITE_BASE=/orrery/`;
+ * the GitHub Pages app mirror used this until the 2026-11 no-staging decision).
  * The VPS deploy mounts at root and does NOT need any of this — the
  * helper functions exported here return `undefined` / inert values
  * when `base` is empty, so the canonical no-base build is unaffected.

@@ -294,9 +294,10 @@
   .filters {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* Left-aligned under the page title (UXD-012 page shell). */
+    justify-content: flex-start;
     gap: 10px;
-    margin: 0 auto 30px;
+    margin: 0 0 30px;
     max-width: 900px;
   }
   .chip {

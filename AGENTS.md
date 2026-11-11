@@ -956,6 +956,8 @@ Where the body comes from the matching `## [X.Y.Z]` section in `CHANGELOG.md` (e
 | `gh release create v0.6.1 …` | Creates the Release entry tied to the tag | Doesn't deploy anything; doesn't move the tag |
 | `gh workflow run "Deploy to prod VPS (orrery)" --ref main` | Deploys current main to **prod** (the VPS); `validate-prod.yml` then validates it automatically | Doesn't tag; doesn't create a Release |
 
+After the deploy is verified (`orrery-deploy-verify`), run `npm run indexnow -- --dry-run` and, with the operator's go, `npm run indexnow` (IndexNow submission of every sitemap URL; `docs/ops/indexnow.md`). It is not a release gate and CI does not run it.
+
 All three steps are needed for a complete release: tag + GH Release + deploy. There is **no staging tier** (2026-11 decision): the flow is **merge → `gh workflow run "Deploy to prod VPS (orrery)" --ref main` → validate-prod**. The deploy is always manual, never auto-triggered, so dispatch it only for a commit whose CI + docker-e2e are green. GitHub Pages serves only the project docs (`deploy-docs.yml`, CI-gated). Tiers: **dev → prod (VPS)**; see TA.md §pipelines "Deploy tiers".
 
 ---

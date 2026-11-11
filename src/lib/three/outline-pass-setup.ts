@@ -18,6 +18,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import * as THREE from 'three';
 
 import { OUTLINE_PASS } from '$lib/three-constants';
@@ -34,6 +35,11 @@ export interface OutlinePassSetupInput {
    *  UnrealBloomPass after the outline pass. Pass `null` (or omit)
    *  to skip — minimal/low quality tiers skip bloom this way. */
   bloom?: { strength: number; radius: number; threshold: number } | null;
+  /** Append an OutputPass as the last pass. The composer renders into linear targets, so without it
+   *  colours reach the screen unencoded (#889fe7 shows as 63,88,204); the pass applies the
+   *  renderer's output colour space + tone mapping once. Off by default: the station routes set an
+   *  ACES tone mapping on their renderer that the pass would newly apply. */
+  outputPass?: boolean;
   /** Composer pixel ratio cap. Defaults to `Math.min(dpr, 2)`. */
   pixelRatioCap?: number;
 }
@@ -72,6 +78,8 @@ export function createOutlinePassSetup(input: OutlinePassSetupInput): OutlinePas
     );
     composer.addPass(bloomPass);
   }
+
+  if (input.outputPass) composer.addPass(new OutputPass());
 
   return { composer, outlinePass, bloomPass };
 }

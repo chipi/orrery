@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import {
   kickOffBackgroundDetect,
   resolveQualitySync,
@@ -88,7 +89,7 @@ export function createExploreRenderStack(
   // highlights (bloomed Sun + lit planet sides) don't clip to flat
   // white. Matches the /fly helio scene's stack (#322).
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
+  renderer.toneMappingExposure = 1.15;
   // PRD-023 Slice A — enable shadow maps for Saturn's ring-shadow
   // effect. PCFSoftShadowMap is the cheap default; we scope the
   // perf cost by setting castShadow only on the ring mesh and
@@ -253,6 +254,7 @@ export function createExploreRenderStack(
     );
     composer.addPass(bloomPass);
   }
+  composer.addPass(new OutputPass());
 
   return {
     scene,

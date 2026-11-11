@@ -316,6 +316,7 @@ function buildPinTexture(): THREE.CanvasTexture {
   ctx.fill();
   ctx.globalCompositeOperation = 'source-over';
   const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.needsUpdate = true;
   return tex;
 }

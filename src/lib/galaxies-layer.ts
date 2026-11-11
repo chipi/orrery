@@ -111,6 +111,7 @@ function buildGalaxySpriteTexture(name: string, color: string): THREE.Texture {
     ctx.fillText(name.toUpperCase(), canvas.width / 2, 78);
   }
   const texture = new THREE.Texture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;

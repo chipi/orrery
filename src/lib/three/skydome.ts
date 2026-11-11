@@ -72,6 +72,7 @@ function buildSkydomeTexture(): THREE.CanvasTexture {
   paintStarField(ctx, 1500);
 
   const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.needsUpdate = true;
   return tex;
 }

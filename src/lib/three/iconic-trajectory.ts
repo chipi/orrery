@@ -196,6 +196,7 @@ function buildLaunchMarkerSprite(color: string): {
     ctx.fill();
   }
   const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
   const material = new THREE.SpriteMaterial({
     map: texture,
@@ -262,6 +263,7 @@ function buildEncounterMarkerSprite(color: string): {
     }
   }
   const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
   const material = new THREE.SpriteMaterial({
     map: texture,
@@ -337,6 +339,7 @@ function buildLabelSprite(
     ctx.fillText(date, padX + 12, padY + 72);
   }
   const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
   const material = new THREE.SpriteMaterial({
     map: texture,
@@ -386,6 +389,7 @@ export function buildDirectionLabelSprite(text: string, color: string): THREE.Sp
     ctx.fillText(text, padX + 12, canvas.height / 2 + 1);
   }
   const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
   const sprite = new THREE.Sprite(
     new THREE.SpriteMaterial({

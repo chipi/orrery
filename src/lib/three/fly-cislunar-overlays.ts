@@ -177,6 +177,7 @@ export function buildCislunarSpacecraftSprite(): CislunarSpacecraftSprite {
     tctx.fill();
   }
   const cisScTex = new THREE.CanvasTexture(cisScCanvas);
+  cisScTex.colorSpace = THREE.SRGBColorSpace;
   cisScTex.minFilter = THREE.LinearFilter;
   cisScTex.magFilter = THREE.LinearFilter;
   const cislunarSpacecraft = new THREE.Sprite(
@@ -220,6 +221,7 @@ export function buildAnnotationSprite(
     ctx2.fillText(line2, canvas.width / 2, 66);
   }
   const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.minFilter = THREE.LinearFilter;
   const sprite = new THREE.Sprite(
     new THREE.SpriteMaterial({ map: tex, depthWrite: false, depthTest: false }),

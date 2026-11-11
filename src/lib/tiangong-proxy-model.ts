@@ -62,6 +62,7 @@ function makeSolarArrayTexture(): THREE.CanvasTexture {
     }
   }
   const tex = new THREE.CanvasTexture(cvs);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.wrapS = THREE.RepeatWrapping;
   tex.wrapT = THREE.RepeatWrapping;
   return tex;

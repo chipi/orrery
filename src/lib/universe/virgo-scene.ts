@@ -36,6 +36,7 @@ function radialTexture(stops: Array<[number, string]>, size = 128): THREE.Canvas
   ctx.arc(c, c, c, 0, Math.PI * 2);
   ctx.fill();
   const t = new THREE.CanvasTexture(cvs);
+  t.colorSpace = THREE.SRGBColorSpace;
   t.minFilter = THREE.LinearFilter;
   t.magFilter = THREE.LinearFilter;
   return t;
@@ -67,6 +68,7 @@ function labelSprite(text: string): {
   ctx.fillStyle = 'rgba(200,214,255,0.9)';
   ctx.fillText(upper, w / 2, h / 2);
   const texture = new THREE.CanvasTexture(cvs);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;
   const sprite = new THREE.Sprite(

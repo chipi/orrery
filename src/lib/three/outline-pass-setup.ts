@@ -37,8 +37,8 @@ export interface OutlinePassSetupInput {
   bloom?: { strength: number; radius: number; threshold: number } | null;
   /** Append an OutputPass as the last pass. The composer renders into linear targets, so without it
    *  colours reach the screen unencoded (#889fe7 shows as 63,88,204); the pass applies the
-   *  renderer's output colour space + tone mapping once. Off by default: the station routes set an
-   *  ACES tone mapping on their renderer that the pass would newly apply. */
+   *  renderer's output colour space + tone mapping once (the station routes' ACES included). Every
+   *  caller passes it; it stays opt-in so a new caller chooses on purpose. Rule: src/lib/three/README.md. */
   outputPass?: boolean;
   /** Composer pixel ratio cap. Defaults to `Math.min(dpr, 2)`. */
   pixelRatioCap?: number;

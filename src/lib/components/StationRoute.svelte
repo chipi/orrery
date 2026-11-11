@@ -516,7 +516,7 @@
     // highlights from clipping flat-white when the bloom pass +
     // bright Earth backdrop stack on the sun-lit side of the station.
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.05;
+    renderer.toneMappingExposure = 1.25;
     // Hero IBL — the PBR station proxy (MeshStandard) gets real reflections.
     // The Earth backdrop is MeshPhong (unaffected); ACES is already on above.
     scene.environment = heroEnvironment(renderer);
@@ -578,17 +578,19 @@
       width: container.clientWidth,
       height: container.clientHeight,
       pixelRatioCap: quality.pixelRatioCap,
+      outputPass: true,
       bloom: quality.bloomEnabled
         ? {
             strength: quality.bloomStrength,
             radius: quality.bloomRadius,
             // #323 — Earth's lit day side is intrinsically bright;
-            // lift the threshold ≥ 0.95 so ONLY the atmospheric limb
+            // lift the threshold to ≥ 1.15 (the OutputPass sRGB-encodes the
+            // bloom, so a 0.95 floor haloed the white modules) so ONLY the atmospheric limb
             // blooms (not the whole day side becoming a halo). The
             // base tier value (0.9–0.94) is tuned for /fly's helio
             // scene where bright Sun + dim planets give bloom room
             // to breathe — different here.
-            threshold: Math.max(quality.bloomThreshold, 0.95),
+            threshold: Math.max(quality.bloomThreshold, 1.15),
           }
         : null,
     });
@@ -650,6 +652,7 @@
     // exists so a deliberate zoom toward the backdrop reads sharply
     // and stays consistent with the surface routes.
     const earthBackdropTex2k = texLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
+    earthBackdropTex2k.colorSpace = THREE.SRGBColorSpace;
     let earthBackdropTex4k: THREE.Texture | null = null;
     let earthBackdrop4kLoadStarted = false;
     let earthBackdropLodLevel: '2k' | '4k' = '2k';
@@ -684,6 +687,7 @@
           texLoader.load(
             `${base}/textures/4k_earth_daymap.jpg`,
             (tex) => {
+              tex.colorSpace = THREE.SRGBColorSpace;
               earthBackdropTex4k = tex;
             },
             undefined,

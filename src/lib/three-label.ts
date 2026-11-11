@@ -101,6 +101,7 @@ export function buildLabel(opts: LabelOptions): BuiltLabel {
     ctx.fillText(upperText, canvas.width / 2, canvas.height / 2);
   }
   const texture = new THREE.Texture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;

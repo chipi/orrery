@@ -744,6 +744,15 @@ SVG UI text and for the 2D UI canvases —
   Canvases that ARE UI and meet the floor: plan/+page.svelte, SurfaceFlatPatch,
     surface-2d-map.ts, SizesCanvas, ConstellationFinder, InstrumentTiles.
 
+Page shell (src/lib/styles/page-shell.css, UX A2, docs/uxs/decisions/UXD-012-one-page-shell.md):
+  every text page uses .page-shell (1080px; --reading 760, --wide 1400, --inset in the
+  science host), .page-crumb, .page-title (Bebas --size-title clamp(40px, 8vw, 64px)),
+  .page-lead (--size-lead upright), .page-section-label (11px 700 uppercase 60% white),
+  .page-section-title (Bebas 28px). No page defines its own h1 / lead / container rules
+  and no page adds --nav-height padding (the nav is sticky, already in flow). Kept
+  exceptions carry `a2-keep: <why>`. Not on the shell: home (home slice), scenes, Lab,
+  missions/launches/fleet browse tools. Enforced by tests/e2e/page-shell.spec.ts.
+
 Nav bar:        height 52px, z-index 20
 Panel (mobile): bottom sheet, full width
 Panel (desktop): right drawer, 314px wide

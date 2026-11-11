@@ -72,6 +72,9 @@
        A rectangular 16:9-ish frame avoids the bottom-half emptiness
        that came with the previous 540 px container. */
     aspect-ratio: 16 / 7;
+    /* On a phone 16:7 is ~150 px, too short for the inner planets' labels, which
+       stagger onto three rows at the 11 px floor (header + bodies + 3 rows + source). */
+    min-height: 230px;
     max-height: calc(100vh - 110px);
   }
   .sizes-canvas-wrap :global(canvas) {

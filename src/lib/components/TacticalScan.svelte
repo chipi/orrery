@@ -219,22 +219,21 @@
        a wide DE label truncates instead of overflowing the envelope. */
     min-width: 0;
   }
+  /* At the 11 px floor a long value (the light-time row) no longer fits one line:
+     the label stays whole and the value wraps under itself, right-aligned. */
   .scan-label {
     color: var(--color-text-label);
     letter-spacing: 1.3px;
     font-size: var(--size-label);
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    flex: 0 0 auto;
     white-space: nowrap;
   }
   .scan-value {
     color: rgba(255, 255, 255, 0.92);
     font-weight: 700;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    text-align: right;
+    overflow-wrap: anywhere;
   }
   /* Surface routes (#382): pin to the right edge, stacked above the
      altitude chip (which sits at right:12px / bottom:56px in

@@ -361,7 +361,7 @@ not audited.
 | D2 Panel order for sites and orbiters | W6, WM1 | a photo first on every site; orbiters get a "Details" tab with "The spacecraft" cutaway, not "On the surface" | shots of 3 landers, 3 orbiters |
 | D3 Venus galleries | VE1 | `getVenusSiteGallery` stops returning [] and uses the Moon/Mars ladder (mission + fleet galleries exist: 3–4 images each) | gallery and hero on Venera 13, Vega 1, Vega 2 |
 | D4 Moon traverses | WM2 | per Q8: line style only, or Mars parity (patches, photos, stops, densify Chang'e 3 and Chandrayaan-3's 9-point routes) | shots side by side |
-| D5 Brackets | W5 | after a screenshot (both bodies draw brackets in code) | — |
+| D5 Brackets | W5 | DROPPED (operator 2026-11-11) | — |
 
 ## E. Catalog
 
@@ -446,3 +446,4 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
   match, no repeats within a ruler. Same screen confirms: Pioneer 10 / Voyager 2 not linked and "(USA)"
   in the labels (C5), SCATTERED wrapping to two lines (C4/O1), the close X drawn over the scrolled text
   (B1/P4), the Vega pill behind the panel (C3/SS1), oversized chips (A4), italic science card (A1).
+- W5 (Mars/Moon square brackets): dropped by the operator (2026-11-11); slice D5 removed.

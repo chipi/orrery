@@ -227,7 +227,7 @@
   .chapter-sub {
     font-size: 11px;
     line-height: 1.45;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
   }
   .images {

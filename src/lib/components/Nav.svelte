@@ -1271,7 +1271,7 @@
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .drawer-group-item {
     padding-left: 32px;
@@ -1360,7 +1360,7 @@
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-left-color: transparent;
   }
   /* "About" sub-group in the drawer footer — a muted first-cap sub-heading
@@ -1386,7 +1386,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     text-decoration: none;
   }
   .drawer-version:hover,

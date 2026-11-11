@@ -296,7 +296,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin-bottom: 14px;
   }
   .crumb a {
@@ -624,7 +624,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .lb-scope {
     color: #9fc4ea;

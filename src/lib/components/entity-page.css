@@ -17,7 +17,7 @@
   font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 11px;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-text-label);
   margin-bottom: 18px;
 }
 .entity .crumb a {
@@ -71,7 +71,7 @@
   font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 11px;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-label);
 }
 .entity .facts dd {
   margin: 2px 0 0;

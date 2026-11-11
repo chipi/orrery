@@ -334,7 +334,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-top: 12px;
   }
   .narrative-101 {
@@ -375,7 +375,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-top: 8px;
   }
   .body {

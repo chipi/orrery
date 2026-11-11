@@ -396,7 +396,7 @@
   }
   .section-hint {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     padding: 2px 10px 4px;
   }
   .active-tier {
@@ -519,7 +519,7 @@
   .sheet-help {
     margin: 2px 10px 4px;
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
     letter-spacing: 0.5px;
   }

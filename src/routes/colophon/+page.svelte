@@ -644,7 +644,7 @@
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 12px;
   }
   .toc ul {
@@ -867,7 +867,7 @@
   .it-where {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-decoration: none;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
   }

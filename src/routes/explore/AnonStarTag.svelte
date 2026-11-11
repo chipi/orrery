@@ -43,7 +43,7 @@
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     flex: 0 0 auto;
   }
   .anon-facts {

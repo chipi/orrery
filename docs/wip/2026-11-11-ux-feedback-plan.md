@@ -412,3 +412,13 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 - Q10 Library: which "JPL planetary models", and which landing/rover research items?
 - Need a screenshot or URL: G5/G6 (which gallery page; the bottom line), O6 ("light minute / light year" — the regime data has neither), W5 (brackets — both bodies draw them), SN2 ("the zodiac chart" — none exists), MW3 (the Sag A* image), W6 (which sites show graphics).
 - D1–D7 above.
+
+## Clarifications from the operator's screenshots (2026-11-11)
+
+- MW3 (Sagittarius A*, `/explore?bh=sagittarius-a-star`): selecting Sag A* replaces the main area with
+  the gravitational-lensing ray-trace (a blurry render) and opens a text-only panel whose subtitle names
+  the "Event Horizon Telescope image 2022" — but no image is shown anywhere, and the repo has no EHT
+  image yet. Slice B3: the panel gets the EHT 2022 image as its hero (ESO/EHT Collaboration, CC BY 4.0
+  — fetch with the existing image tools, provenance row); the Milky Way view stays in the main area; the
+  lensing render becomes an explicit action in the panel ("See the lensing simulation"). Same screen
+  also shows teal values and "Read more" (A3) and the italic science card (A1).

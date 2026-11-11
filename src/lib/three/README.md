@@ -34,6 +34,11 @@ direct-render tier or scene shows ACES + sRGB. Rules (guarded by `output-step-ru
   mask, anything not a colour) sets `THREE.NoColorSpace` explicitly.** An untagged texture is read
   as linear and comes out lighter than authored once the OutputPass encodes.
 - Hex `THREE.Color` constants are already sRGB-aware (`ColorManagement`); do not pre-convert them.
+- **Shader colours are `THREE.Color` uniforms; no raw `vec3`/`vec4` colour literals in GLSL** (0 and 1
+  are fine). A colour-named uniform (`uColor`, `uHorizon`, `rimColor`, ...) is `new THREE.Color(hex)`,
+  never an array or `Vector3`. A raw sRGB literal is read as linear and the OutputPass encodes it a
+  second time (pale colours). Guarded by `output-step-rule.test.ts`
+  (exceptions are listed there with a reason).
 - Bloom thresholds, exposure and light intensities are tuned against the OutputPass output, not
   against raw linear values.
 

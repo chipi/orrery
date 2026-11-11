@@ -71,8 +71,13 @@ describe('colour pipeline rule', () => {
       /new (?:THREE\.)?(?:CanvasTexture|Texture|DataTexture)\(|(?:[Ll]oader|TextureLoader\(\)|\btl)\.load\(/;
     const bad: string[] = [];
     for (const f of files) {
+      // any variable bound to a TextureLoader (const tx = new THREE.TextureLoader(); tx.load(...))
+      const bound = f.lines
+        .map((l) => /(?:const|let)\s+(\w+)\s*=[^;]*new (?:THREE\.)?TextureLoader\(/.exec(l)?.[1])
+        .filter(Boolean);
+      const loaderVar = bound.length ? new RegExp(`\\b(?:${bound.join('|')})\\.load\\(`) : null;
       f.lines.forEach((l, i) => {
-        if (!code(l) || !create.test(l)) return;
+        if (!code(l) || !(create.test(l) || loaderVar?.test(l))) return;
         const win = f.lines.slice(i, i + 15);
         // `const x = new ...` / `const x = loader.load(url)` must tag x itself; a loader call with a
         // callback tags the parameter the callback receives.
@@ -81,37 +86,75 @@ describe('colour pipeline rule', () => {
         if (!name || /\(\s*$/.test(l)) {
           target = /\(?\b(\w+)(?::[^)]*)?\)?\s*=>/.exec(win.join('\n'))?.[1] ?? name;
         }
-        const tag = target ? new RegExp(`\\b${target}\\.colorSpace\\s*=`) : /^$/;
+        const tag = target ? new RegExp(`\\b${target}\\.colorSpace\\s*=`) : /(?!)/;
         if (!win.some((w) => tag.test(w))) bad.push(`${rel(f.path)}:${i + 1}`);
       });
     }
     expect(bad).toEqual([]);
   });
 
-  it('composer scenes feed colours to shaders through THREE.Color, not GLSL literals', () => {
+  it('shader colours reach the composer as THREE.Color, never as raw GLSL literals', () => {
     // A raw sRGB literal in a fragment shader is treated as linear and the OutputPass then encodes it
-    // a second time (pale sky). THREE.Color uniforms are converted to linear by ColorManagement.
-    const composerScenes = [
+    // a second time (pale colours). THREE.Color uniforms are converted to linear by ColorManagement.
+    const shaderFiles = [
       'lib/three/ascent-scene.ts',
       'lib/three/descent-scene.ts',
       'lib/three/fly-helio-scene.ts',
+      'lib/three/fly-helio-overlays.ts',
+      'lib/three/fly-helio-mission.ts',
+      'lib/three/fly-cislunar-overlays.ts',
       'lib/three/explore-solar-scene.ts',
       'lib/universe/milky-way-scene.ts',
       'lib/universe/local-group-scene.ts',
+      'lib/universe/point-field.ts',
+      'lib/universe/black-hole-scene.ts',
     ];
+    // Whole-file exceptions: the shader owns its whole output transform.
+    const skipFile: Record<string, string> = {
+      'lib/universe/black-hole-scene.ts':
+        'direct-render full-screen shader (no composer); it tone-maps and gammas itself, so its literals are display values',
+    };
+    // `file:line-pattern` exceptions with the reason.
+    const allow: Array<[string, RegExp, string]> = [
+      [
+        'lib/universe/point-field.ts',
+        /vColor \* 0\.6 \+ vec3\(0\.4\)/,
+        'whitening amount added to a linear vertex colour (an intensity), not an authored colour',
+      ],
+    ];
+    const invariant = (args: string) =>
+      args.split(',').every((a) => /^\s*[01](?:\.0*)?\s*$/.test(a));
+    const colourName = /(?:Color|Tint|Horizon|Zenith|Rim|Glow|Base|Tip|Hue)/;
     const bad: string[] = [];
-    for (const p of composerScenes) {
+    for (const p of shaderFiles) {
       const f = files.find((x) => x.path === p);
       expect(f, p).toBeDefined();
+      if (skipFile[p]) continue;
       f!.lines.forEach((l, i) => {
-        if (code(l) && /vec[34]\(\s*[0-9.]+\s*,\s*[0-9.]+\s*,\s*[0-9.]+/.test(l)) {
-          bad.push(`${rel(p)}:${i + 1}`);
+        if (!code(l) || allow.some(([ap, re]) => ap === p && re.test(l))) return;
+        const at = `${rel(p)}:${i + 1}`;
+        // vec3/vec4 colour literals (0 and 1 are the same in both spaces)
+        for (const m of l.matchAll(/vec[34]\(\s*([-0-9.]+(?:\s*,\s*[-0-9.]+){2,3})\s*[,)]/g)) {
+          if (!invariant(m[1])) bad.push(at);
         }
+        // single-argument vec3(x) used as a colour (assigned to a colour / gl_FragColor)
+        if (/(?:gl_FragColor|\b\w*[Cc]ol\w*)\s*[-+*]?=[^;]*vec3\(\s*[-0-9.]+\s*\)/.test(l)) {
+          const v = /vec3\(\s*([-0-9.]+)\s*\)/.exec(l)![1];
+          if (!invariant(v)) bad.push(at);
+        }
+        // uniforms: an array/number triple anywhere, or a colour-named uniform that is not a THREE.Color
+        if (/\bu[A-Z]\w*:\s*\{\s*value:\s*\[\s*[-0-9.]+\s*,\s*[-0-9.]+\s*,\s*[-0-9.]+/.test(l))
+          bad.push(at);
+        const named = /(?:\b(u[A-Z]\w*)\s*:|uniforms\.(\w+)\s*=)\s*\{\s*value:\s*(.*)$/.exec(l);
+        const uname = named?.[1] ?? named?.[2];
         if (
-          code(l) &&
-          /\bu(?:Horizon|Zenith|Color|Tint)\w*:\s*\{\s*value:\s*(?!\s|new THREE\.Color)/.test(l)
+          named &&
+          uname &&
+          colourName.test(uname) &&
+          !/Opacity|Strength|Power/.test(uname) &&
+          !/^new THREE\.Color\(/.test(named[3])
         ) {
-          bad.push(`${rel(p)}:${i + 1}`);
+          bad.push(at);
         }
       });
     }

@@ -55,7 +55,35 @@ revisited later; operator go, 2026-11-11, plan line 460). Operator context from 
 
 ## Verification
 
-`src/lib/three/output-step-rule.test.ts`: every `new EffectComposer(` file also contains
-`new OutputPass(`, both `createOutlinePassSetup({` users pass `outputPass: true`, and texture
-creations carry a `colorSpace` within a window (the brief's checks A to C, lines 58–63). No visual
-baseline covers a 3D canvas. Not verified by this document: that the test passes today.
+`src/lib/three/output-step-rule.test.ts` (run `npx vitest run src/lib/three/`: 21 files, 189 tests
+passed, 2026-11-11):
+
+- **A (per chain):** each `EffectComposer` chain has exactly one `new OutputPass(`, and it is the
+  last `addPass`/`insertPass` call; six composer sites. Mutation-checked: a duplicated pass and a
+  pass moved before bloom both fail.
+- **B:** both `createOutlinePassSetup({` users pass `outputPass: true`.
+- **C (per variable):** every texture creation (`CanvasTexture`/`Texture`/`DataTexture`, any
+  `.load(` on a TextureLoader, chained or variable-bound) tags the variable it creates, or the
+  callback parameter, within 14 lines; the four data maps carry `NoColorSpace`. Mutation-checked,
+  including `const tx = new THREE.TextureLoader(); tx.load(...)`.
+- **Shader colours:** the composer scenes and their shader files (ascent, descent, helio and its
+  overlays and mission, cislunar overlays, solar, Milky Way, Local Group, point-field) pass colours
+  as `THREE.Color`: no `vec3`/`vec4` colour literals other than 0 and 1, no array or non-Color
+  colour uniforms. Allow-listed with reasons: the black-hole shader (direct render, tone-maps
+  itself) and one point-field whitening term. Mutation-checked on each branch.
+
+`src/lib/three/outline-pass-setup.test.ts` (helper ends with one OutputPass) and
+`texture-colour-space.test.ts` (built stations, skydome, flare, hero maps) cover the builders.
+
+e2e, production build of a9d0ccea983, `--workers=1`, desktop-chromium, mobile-chromium and
+mobile-landscape-chromium, specs iss, tiangong, explore, explore-milky-way, fly, fly-launch,
+fly-descent, fly-cislunar, fly-render-validation, visual: 324 passed, 0 failed, 114 skipped.
+
+Slice commits: `78ca77e3fab` (composers, 53 textures, first retune), `9fdf4cc4a6b` (docs),
+`2adb8d7aa02` (moon texture tag, check A and C hardening), `55d3acfabed` (launch and descent
+wash-out fix, shader-colour guard), `2ae64cf6a0a` (exposure value in the shot-language guide), and
+the commit that carries this text (guard extended, TA/README/UXD updated). `fly-cinematic-gap-analysis.md`
+was touched in `9fdf4cc4a6b` (status note under the pass table).
+
+No visual baseline covers a 3D canvas, so the look rests on the operator-reviewed before/after
+sheets. Real-GPU and Safari rendering were not checked.

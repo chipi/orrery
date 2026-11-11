@@ -312,7 +312,7 @@ describe('patch texture loading', () => {
     const tex = new THREE.Texture();
     loads[0].onLoad(tex);
     expect(mat.map).toBe(tex);
-    expect(tex.colorSpace).toBe(THREE.NoColorSpace);
+    expect(tex.colorSpace).toBe(THREE.SRGBColorSpace);
     expect(tex.wrapS).toBe(THREE.ClampToEdgeWrapping);
     expect(tex.anisotropy).toBe(16);
   });

@@ -1873,6 +1873,7 @@
     const planetMap2k = textureLoader.load(config.textureUrl, (tex) => {
       globeColourAt = globeSampler(tex.image as HTMLImageElement);
     });
+    planetMap2k.colorSpace = THREE.SRGBColorSpace;
     const planetRadius = 30;
     // Axial-tilt group wraps the planet mesh so Mars's 25.19° obliquity
     // is visible (no-op rotation for Moon's ~0°). Orbital markers
@@ -1914,6 +1915,7 @@
       textureLoader.load(
         config.textureUrl4k,
         (tex) => {
+          tex.colorSpace = THREE.SRGBColorSpace;
           planetMap4k = tex;
         },
         undefined,

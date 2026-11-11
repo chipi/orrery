@@ -55,6 +55,7 @@ export interface MoonGhostHandle {
 
 export function buildMoonGhost(opts: MoonGhostOpts): MoonGhostHandle {
   const map = opts.textureLoader.load(opts.textureUrl);
+  map.colorSpace = THREE.SRGBColorSpace;
   const geo = new THREE.SphereGeometry(opts.radiusUnits, 32, 32);
   const mat = new THREE.MeshPhongMaterial({ map, color: 0xffffff, shininess: 4 });
   const mesh = new THREE.Mesh(geo, mat);

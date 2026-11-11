@@ -198,6 +198,7 @@ export function buildMarsMoons(opts: MarsMoonsOpts): MarsLayerHandle {
   function moonMaterial(url: string | undefined): THREE.MeshBasicMaterial {
     if (url) {
       const map = loader.load(url);
+      map.colorSpace = THREE.SRGBColorSpace;
       const mat = new THREE.MeshBasicMaterial({ map });
       disposables.push({ dispose: () => map.dispose() });
       disposables.push(mat);

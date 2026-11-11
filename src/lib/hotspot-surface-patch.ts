@@ -457,9 +457,9 @@ interface PatchMaterialOptions {
 const PATCH_FEATHER_EDGE = 0.12;
 
 // Patches shade and decode exactly like the planet sphere (SurfaceScene
-// planetMaterial: Phong, shininess 4, texture without a colour space) and the
-// context cap, so imagery meets the globe at the same brightness. A Standard
-// material with an sRGB-decoded texture read as a darker square (#641).
+// planetMaterial: Phong, shininess 4, sRGB texture) and the context cap, so
+// imagery meets the globe at the same brightness. A Standard material read as
+// a darker square (#641).
 function createPatchMaterial(
   textureUrl: string | undefined,
   opts: PatchMaterialOptions = {},
@@ -515,6 +515,7 @@ function createPatchMaterial(
         tex.dispose();
         return;
       }
+      tex.colorSpace = THREE.SRGBColorSpace;
       // Patch textures are 1:1 already (per RFC-022 §6.1 variant set);
       // disable wrapping so an undersize source doesn't tile.
       tex.wrapS = THREE.ClampToEdgeWrapping;

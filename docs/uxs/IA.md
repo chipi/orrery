@@ -58,7 +58,7 @@ One topbar pattern: the persistent 52px nav bar.
 - Backdrop-filter: `blur(14px)`
 - Z-index: `20`
 
-Left region: ORRERY wordmark (Bebas Neue 26px, letter-spacing 4px) + "MISSION SIMULATOR" subtitle (Space Mono 8px, rgba(255,255,255,0.22)).
+Left region: ORRERY wordmark (Bebas Neue 26px, letter-spacing 4px) + "MISSION SIMULATOR" subtitle (Space Mono 11px, rgba(255,255,255,0.6)).
 
 Centre region: six screen links. Active screen: white text, `rgba(68,102,255,0.28)` background, `rgba(68,102,255,0.55)` border. Inactive: `rgba(255,255,255,0.28)`, transparent border, hover to `rgba(255,255,255,0.85)`.
 
@@ -222,12 +222,12 @@ font-display:   'Bebas Neue', sans-serif    Titles, screen names, mission names
 font-mono:      'Space Mono', monospace     All data, labels, HUD values, UI chrome
 font-editorial: 'Crimson Pro', serif        Real quotes and photo captions only (italic, >= 14px)
 
-size-nav-title:   26px    Nav bar wordmark
+size-nav-title:   30px    Nav bar wordmark
 size-panel-title: 32–42px Panel planet/mission name (varies by name length)
 size-hud-value:   11–16px HUD telemetry values
 size-label:       11px    UI labels (Space Mono, letter-spacing 2px, 60% white) = --size-label; floor for ALL text
 size-data:        12–14px Data values (--size-meta 12px, --size-body 14px)
-size-lead:        15px    Panel overview / lead text, upright Space Mono (--size-lead); captions 15px Crimson italic (--size-caption)
+size-lead:        16px    Panel overview / lead text, upright Space Mono (--size-lead; 15px under 600px width); captions 14px Crimson italic (--size-caption)
 ```
 
 ### Spacing tokens

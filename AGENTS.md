@@ -726,11 +726,23 @@ font-display:   'Bebas Neue'    titles, names
 font-mono:      'Space Mono'    data, labels, HUD
 font-editorial: 'Crimson Pro'   real quotes + photo captions only (italic, >= 14px)
 
-Type scale (src/lib/styles/tokens.css, UX A1 / Q2): floor 11px everywhere —
-  --size-label 11px (60% white) · --size-meta 12px · --size-body 14px ·
-  --size-lead 15px (panel overview, upright in Space Mono) · --size-caption 15px.
-  No text below 11px; no italic outside quotes and photo captions.
-  Enforced by tests/e2e/type-floor.spec.ts.
+Type scale (src/lib/styles/tokens.css, UX A1 / Q2): floor 11px for all DOM and
+SVG UI text and for the 2D UI canvases —
+  --size-label 11px (60% white, --color-text-label) · --size-meta 12px ·
+  --size-body 14px · --size-lead 16px (15px under 600px width; panel overview,
+  upright in Space Mono) · --size-caption 14px (Crimson italic).
+  No text below 11px; no italic outside real quotes and photo captions
+  (mark each kept italic line `a1-keep: <why>`). Text under 12px keeps an
+  effective alpha >= 0.58. Enforced by tests/e2e/type-floor.spec.ts.
+  Canvas / WebGL text outside the floor (allow-list):
+    deferred to slice C2 — 3D sprite labels (src/lib/three/explore-scene-host.ts,
+      fly-frame-runner.ts, three-label.ts, src/lib/universe/*-scene.ts);
+    keep their own sizes — science charts (CausalityMap, HrDiagram,
+      MassPeriodChart), Lab canvases (src/lib/lab/*Canvas.svelte, hero-canvas.ts,
+      FigureRenderer SVG), station-blueprint.ts texture, static/ diagrams, and
+      dev tools (DebugPanel, AscentCameraDebug, FlybyDebugViewer, src/routes/dev/).
+  Canvases that ARE UI and meet the floor: plan/+page.svelte, SurfaceFlatPatch,
+    surface-2d-map.ts, SizesCanvas, ConstellationFinder.
 
 Nav bar:        height 52px, z-index 20
 Panel (mobile): bottom sheet, full width

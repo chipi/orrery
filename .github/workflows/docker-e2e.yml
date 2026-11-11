@@ -10,8 +10,8 @@ name: docker-e2e
 #   1. After CI succeeds on main — workflow_run gate. CI is fast
 #      (~2-3 min); docker-e2e is heavy (~17-25 min). Chaining means a
 #      cheap typecheck/lint/unit-test failure short-circuits the heavy
-#      docker build + Playwright run, and the downstream staging.yml
-#      deploys only when both CI and docker-e2e are green.
+#      docker build + Playwright run. deploy-prod is a manual dispatch:
+#      dispatch it only for a sha where both CI and docker-e2e are green.
 #   2. Manual workflow_dispatch — ad-hoc reruns.
 #   3. Nightly cron — catches EXTERNAL state drift (CDN outages,
 #      upstream asset URL changes, Wikimedia rate-limit issues) that
@@ -31,8 +31,8 @@ on:
     branches: [main]
   # Opt-in branches run e2e on push, in parallel with their CI. Not via
   # workflow_run: a workflow_run-triggered run is recorded against main's head,
-  # so staging.yml (workflow_run of this, branches: [main]) would accept it and
-  # deploy main on a branch's result. A push run carries its own branch.
+  # so a green branch run would read as a green run for main's head. A push run
+  # carries its own branch.
   push:
     branches: ['e2e/**', 'tech-debt/**']
   workflow_dispatch:
@@ -570,8 +570,7 @@ jobs:
   # publish jobs are skipped instead of failing (0.9.2: cron-gate made their
   # implicit success() false), this run stayed green, nothing alerted, and
   # deploy-prod refused the sha hours later (run 41292320853). Fail here so the
-  # skip shows up on main straight away. A red run also holds staging.yml, which
-  # deploys only after a successful run.
+  # skip shows up on main straight away.
   publish-check:
     needs: [docker-e2e, publish-manifest]
     if: |

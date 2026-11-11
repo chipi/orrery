@@ -8,16 +8,15 @@ name: Auto-publish GH Release on tag push
 # This is the third leg of the release flow:
 #   1. `git tag vX.Y.Z` + `git push --tags`   → this workflow fires
 #   2. `gh release create …`                  → no longer manual
-#   3. `Deploy staging` workflow              → chained from CI + e2e
+#   3. `Deploy to prod VPS (orrery)` workflow → manual dispatch, then validate-prod
 #
 # Before v0.6.2 the maintainer had to manually run `gh release create`
 # after every tag push. That step was skipped for v0.6.0 + v0.6.1
 # (tags existed; Releases didn't) until the v0.6.1 retrospective.
 # Closes GH issue #135.
 #
-# **Does NOT** trigger the Pages deploy. That still chains through
-# ci.yml → e2e.yml → staging.yml. Use `gh workflow run "Deploy staging"`
-# if the e2e gate blocks auto-deploy and you want to force a publish.
+# **Does NOT** deploy the app. Releases go straight to prod:
+# `gh workflow run "Deploy to prod VPS (orrery)" --ref main`.
 
 on:
   push:

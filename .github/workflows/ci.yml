@@ -114,7 +114,7 @@ jobs:
         env:
           SENTRY_SOURCEMAPS: '1'
       # The docs site (VitePress) is otherwise built only by the deploy workflows after a merge:
-      # a bare <page> in a guide passed every PR check and broke Deploy preview + Deploy docs
+      # a bare <page> in a guide passed every PR check and broke Deploy docs
       # on main (2026-10-31). Building it here makes the required `ci` check catch it.
       - name: Docs build (VitePress)
         run: npm run docs:build

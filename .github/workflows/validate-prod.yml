@@ -16,9 +16,9 @@ name: Validate prod
 # 6-hourly cadence never pollutes GlitchTip project 18 (orrery-prod).
 
 on:
-  # Deep-validate the moment a prod deploy completes — mirrors the staging chain
-  # (Deploy preview → Validate staging). The job-level guard below only proceeds
-  # when the deploy actually SUCCEEDED.
+  # Deep-validate the moment a prod deploy completes: with no staging tier, this is
+  # the post-release gate. The job-level guard below only proceeds when the deploy
+  # actually SUCCEEDED.
   workflow_run:
     workflows: ['Deploy to prod VPS (orrery)']
     types: [completed]

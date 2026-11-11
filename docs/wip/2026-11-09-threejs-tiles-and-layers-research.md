@@ -3,6 +3,8 @@
 Status: research only, 2026-11-09. Nothing was installed or built. Facts marked **[V]** were checked this
 session (npm registry, GitHub API, a live HTTP request, or our source); **[U]** is unverified.
 
+Update 2026-11-11: the colour pipeline (OutputPass on every composer, `SRGBColorSpace` on colour textures, `NoColorSpace` on data maps) is done (output-step slice; rule in `docs/adr/TA.md`). The rows below that call it open describe the state on 2026-11-09.
+
 ## 1. What we have today
 
 | Area | Fact | Where |

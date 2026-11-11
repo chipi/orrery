@@ -19,6 +19,24 @@ these first before hand-rolling raf loops, listener registries, or
 | Object3D disposal walk | `disposeObject3D` (existing) | recursive geometry / material / texture dispose |
 | Soft-edged alpha mask for a square patch | `featherMask(edge)` | smoothstep fade over the outer `edge` fraction; each call returns its own texture over one cached buffer, so `disposeObject3D` on one patch never strips the mask from the others (#641) |
 
+## Colour pipeline — one output step
+
+Composer targets are linear. The renderer's `toneMapping`, `toneMappingExposure` and
+`outputColorSpace` apply only when drawing straight to the canvas, so a composer scene without a
+final `OutputPass` shows raw linear values (darker, higher contrast, ACES ignored) while a
+direct-render tier or scene shows ACES + sRGB. Rules (guarded by `output-step-rule.test.ts`):
+
+- **Every `EffectComposer` ends in exactly one `OutputPass`, last** — after bloom, bokeh, film and
+  vignette. `createOutlinePassSetup({ outputPass: true })` does it for the surface and station routes;
+  `explore-render-stack.ts`, `ascent-renderer.ts`, `fly-helio-scene.ts`, `milky-way-scene.ts` and
+  `local-group-scene.ts` add their own. A new composer adds one in the same change.
+- **Every colour texture sets `colorSpace = THREE.SRGBColorSpace`; every data map (roughness, alpha
+  mask, anything not a colour) sets `THREE.NoColorSpace` explicitly.** An untagged texture is read
+  as linear and comes out lighter than authored once the OutputPass encodes.
+- Hex `THREE.Color` constants are already sRGB-aware (`ColorManagement`); do not pre-convert them.
+- Bloom thresholds, exposure and light intensities are tuned against the OutputPass output, not
+  against raw linear values.
+
 ## Critical contract — `document.hidden` pause
 
 `docs/adr/TA.md` declares every 3D scene **must** pause its raf loop

@@ -134,6 +134,10 @@ We currently have **no post stack**. Single highest-impact addition.
 **Action:** add `THREE.ACESFilmicToneMapping` to the renderer in the
 *next commit*. Zero risk, immediate visual upgrade across every shot.
 
+**Status (2026-11-11):** ACES only takes effect on a composer tier through a final `OutputPass`; every
+composer (`fly-helio-scene.ts`, `ascent-renderer.ts`, and the rest) now ends in one, so the ACES line
+above is live on all tiers (`docs/adr/TA.md`, composer pipeline).
+
 ---
 
 ## Lifecycle-specific gaps (what to do next)

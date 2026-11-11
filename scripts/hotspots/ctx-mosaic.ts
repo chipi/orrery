@@ -4,7 +4,8 @@ import {
   existsSync,
   mkdirSync,
   openSync,
-  writeFileSync,
+  rmSync,
+  writeSync,
   promises as fs,
 } from 'node:fs';
 import path from 'node:path';
@@ -236,28 +237,32 @@ const SYSTEM_CA_BUNDLES = [
 ];
 function ensureCaBundle(): string | null {
   const bundle = path.join(TILE_CACHE_DIR, 'ca-bundle.pem');
-  try {
-    closeSync(openSync(bundle, 'r'));
-    return bundle;
-  } catch (e) {
-    if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
-  }
   mkdirSync(TILE_CACHE_DIR, { recursive: true });
+  // One exclusive open: an existing bundle is reused, a new one is written through this handle.
+  let fd: number;
+  try {
+    fd = openSync(bundle, 'wx');
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === 'EEXIST') return bundle;
+    throw e;
+  }
+  const fail = (): null => {
+    closeSync(fd);
+    rmSync(bundle, { force: true });
+    return null;
+  };
   const system = SYSTEM_CA_BUNDLES.find((b) => existsSync(b));
-  if (!system) return null;
+  if (!system) return fail();
   const der = path.join(TILE_CACHE_DIR, 'aia-intermediate.der');
   const pem = path.join(TILE_CACHE_DIR, 'aia-intermediate.pem');
   const dl = spawnSync('curl', ['-sS', '--fail', '-o', der, AIA_INTERMEDIATE_URL]);
-  if (dl.status !== 0) return null;
+  if (dl.status !== 0) return fail();
   const conv = spawnSync('openssl', ['x509', '-inform', 'DER', '-in', der, '-out', pem]);
-  if (conv.status !== 0) return null;
+  if (conv.status !== 0) return fail();
   const sysPem = spawnSync('cat', [system, pem], { encoding: 'buffer', maxBuffer: 64 << 20 });
-  if (sysPem.status !== 0) return null;
-  try {
-    writeFileSync(bundle, sysPem.stdout, { flag: 'wx' });
-  } catch (e) {
-    if ((e as NodeJS.ErrnoException).code !== 'EEXIST') throw e;
-  }
+  if (sysPem.status !== 0) return fail();
+  writeSync(fd, sysPem.stdout);
+  closeSync(fd);
   return bundle;
 }
 

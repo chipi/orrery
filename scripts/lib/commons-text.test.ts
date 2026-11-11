@@ -15,9 +15,9 @@ describe('plainText (Commons extmetadata → credit text)', () => {
   it('leaves no tag behind when stripping one reveals another', () => {
     expect(plainText('<<b>script>alert(1)')).toBe('scriptalert(1)');
     expect(plainText('<scr<b>ipt>x')).toBe('iptx');
-    expect(plainText('<s<i style="display:none">a</i>pan style="display:none">b</s')).not.toMatch(
-      /[<>]/,
-    );
+    expect(
+      plainText('<s<i style="display:none">a</i>pan style="display:none">b</s') ?? '',
+    ).not.toMatch(/[<>]/);
   });
 
   it('returns null for empty input', () => {

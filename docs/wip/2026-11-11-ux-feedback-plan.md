@@ -447,3 +447,10 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
   in the labels (C5), SCATTERED wrapping to two lines (C4/O1), the close X drawn over the scrolled text
   (B1/P4), the Vega pill behind the panel (C3/SS1), oversized chips (A4), italic science card (A1).
 - W5 (Mars/Moon square brackets): dropped by the operator (2026-11-11); slice D5 removed.
+- W6 ("Stand here"): inside the panorama the view opens facing the generated fill that pads a partial
+  panorama, and the operator has to rotate to find the real photo. Slice D2: the panorama opens facing
+  the centre of the real photo region (per-site initial heading from the panorama's photo span), on
+  every site with a panorama; e2e asserts the initial view centre is inside the photo span.
+- Surface colour fix (OutputPass) done on the branch: code `8e9a7c8d1d9`, docs `a07218d5429`;
+  before/after shots sent for approval. /iss and /tiangong share the composer but use ACES tone mapping
+  — left unchanged (one flag) pending the operator.

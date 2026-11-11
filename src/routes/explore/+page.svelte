@@ -2311,7 +2311,7 @@
   @media (max-height: 759px) {
     .ruler-desktop-only {
       --ruler-top-clear: 0px;
-      --ruler-left: 159px;
+      --ruler-left: 196px;
     }
   }
   @media (max-width: 600px) {

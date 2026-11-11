@@ -59,7 +59,7 @@
   }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(160, 200, 255, 0.85);
     text-transform: uppercase;

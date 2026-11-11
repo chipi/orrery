@@ -236,14 +236,14 @@
   }
   .earth-compare-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1.4px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     line-height: 1.4;
   }
   .earth-compare-label .ratio {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.2px;
   }
 
@@ -450,7 +450,7 @@
   }
   .earth-compact-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     line-height: 1;
     color: rgba(255, 255, 255, 0.82);

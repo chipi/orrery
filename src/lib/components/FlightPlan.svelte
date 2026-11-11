@@ -81,14 +81,14 @@
   }
   .compact .k {
     color: #ffbe4a;
-    font-size: 10px;
+    font-size: var(--size-label);
   }
   .plan {
     font-family: var(--font-mono, 'Space Mono', monospace);
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   }
   .title {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #5ac8ff;
     margin: 0 0 6px;
@@ -136,11 +136,11 @@
     color: #ffbe4a;
   }
   .mark {
-    font-size: 10px;
+    font-size: var(--size-label);
     text-align: center;
   }
   .time {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #7d99b5;
     font-variant-numeric: tabular-nums;
   }

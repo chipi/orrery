@@ -579,7 +579,7 @@
   }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffc850;
     text-align: left;
@@ -612,16 +612,14 @@
     transition: color 120ms;
   }
   .lens-body {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.78);
     margin-bottom: 6px;
   }
   .lens-link {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
   }
@@ -635,7 +633,7 @@
   }
   .foundations-eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(255, 200, 80, 0.65);
     margin-bottom: 6px;
@@ -714,15 +712,13 @@
   }
   .row-name {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.92);
   }
   .row-desc {
     margin: 2px 0 0 22px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-size: var(--size-meta);
     line-height: 1.3;
     color: rgba(255, 255, 255, 0.55);
   }
@@ -732,7 +728,7 @@
     color: rgba(255, 215, 102, 0.85);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 215, 102, 0.25);

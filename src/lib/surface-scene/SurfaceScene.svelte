@@ -6926,7 +6926,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.78);
     text-transform: uppercase;
@@ -7242,7 +7242,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 50%, transparent);
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 600;
     letter-spacing: 0.2px;
     text-transform: uppercase;
@@ -7285,7 +7285,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 3px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.6px;
     text-transform: uppercase;
     cursor: pointer;
@@ -7438,7 +7438,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 1px solid rgba(255, 255, 255, 0.22);
     color: rgba(255, 255, 255, 0.78);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8.5px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-align: center;
@@ -7484,7 +7484,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 1px solid rgba(190, 195, 210, 0.4);
     color: #d6d9e2;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     line-height: 1.15;
     letter-spacing: 0.04em;
     text-align: center;
@@ -7512,7 +7512,7 @@ sample      ${debugInfo.projectedPxSample}`}
     .hud-controls :global(.chip),
     .ctrl-row.chips :global(.chip) {
       padding: 0 10px;
-      font-size: 10px;
+      font-size: var(--size-label);
       min-width: 110px;
     }
     .hud-controls :global(.toggle) {
@@ -7603,7 +7603,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 1px solid rgba(190, 195, 210, 0.4);
     color: #d6d9e2;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.04em;
     border-radius: 4px;
     cursor: pointer;
@@ -7628,7 +7628,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 1px solid rgba(193, 68, 14, 0.5);
     color: #ffc850;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     border-radius: 4px;
   }
@@ -7658,7 +7658,7 @@ sample      ${debugInfo.projectedPxSample}`}
     background: rgba(4, 5, 14, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 1.2px;
     color: rgba(255, 255, 255, 0.65);
@@ -7724,7 +7724,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 4px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     font-weight: 700;
     cursor: pointer;
@@ -7788,7 +7788,7 @@ sample      ${debugInfo.projectedPxSample}`}
   /* #641 contrast: was 6 px at 25 %. */
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 3px;
@@ -7800,7 +7800,7 @@ sample      ${debugInfo.projectedPxSample}`}
     font-weight: 700;
   }
   .cell-value.short {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
   }
@@ -7814,15 +7814,13 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .left-block h3 {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     margin: 0 0 6px;
     color: var(--accent, #4466ff);
   }
   .left-block p {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.5;
     margin: 0;
@@ -7833,22 +7831,12 @@ sample      ${debugInfo.projectedPxSample}`}
      brighter than the italic .editorial, set apart by a hairline. Matches
      Mission/FleetEntryPanel. */
   .site-dispatch {
-    font-family: 'Crimson Pro', serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.92);
     margin: 0 0 14px;
     padding-bottom: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 14px;
   }
 
   .capability-block {
@@ -7860,14 +7848,14 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .capability-block h3 {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #4ecdc4;
     margin: 0 0 4px;
   }
   .capability-block p {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
     line-height: 1.5;
@@ -7884,7 +7872,7 @@ sample      ${debugInfo.projectedPxSample}`}
     text-decoration: none;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     transition: all 0.15s;
@@ -7904,9 +7892,9 @@ sample      ${debugInfo.projectedPxSample}`}
   .launches-from-here h3 {
     margin: 0 0 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2.5px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     font-weight: 700;
   }
   .launches-from-here-chips {
@@ -7926,7 +7914,7 @@ sample      ${debugInfo.projectedPxSample}`}
     text-decoration: none;
     border-radius: 999px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     font-weight: 700;
     transition: all 0.15s;
@@ -7941,8 +7929,8 @@ sample      ${debugInfo.projectedPxSample}`}
 
   .credit {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
@@ -8100,7 +8088,7 @@ sample      ${debugInfo.projectedPxSample}`}
     max-width: 240px;
   }
   .traverse-stop-tooltip .sol {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     color: rgba(255, 220, 140, 0.95);
     text-transform: uppercase;

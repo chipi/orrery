@@ -151,7 +151,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .block-h {
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--muted, #9aa4bf);

@@ -128,22 +128,19 @@
   }
   .tab-intro .badge {
     font-family: var(--font-display);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #4ecdc4;
     margin: 0 0 10px;
   }
   .tab-intro .headline {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 17px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.95);
     margin: 0 0 14px;
   }
   .tab-intro p:not(.badge):not(.headline) {
-    font-family: 'Crimson Pro', serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 12px;

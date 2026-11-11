@@ -58,9 +58,7 @@
     color: var(--color-text);
   }
   .hub-intro {
-    font-family: var(--font-editorial), 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 16px;
+    font-size: var(--size-lead);
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.82);
     margin: 0;

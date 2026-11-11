@@ -111,9 +111,9 @@
   }
   .caption {
     font-family: 'Crimson Pro', serif;
-    font-size: 14px;
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.7);
-    font-style: italic;
+    font-style: italic; /* a1-keep: caption */
     margin: 0;
     line-height: 1.5;
   }
@@ -190,9 +190,9 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2px;
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .agency {
     text-transform: uppercase;

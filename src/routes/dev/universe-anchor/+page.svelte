@@ -175,7 +175,7 @@
   }
   .tag {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #4ecdc4;
     border: 1px solid rgba(78, 205, 196, 0.4);
@@ -213,9 +213,9 @@
     margin: 4px 0 8px;
   }
   .note {
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin: 0;
   }
 </style>

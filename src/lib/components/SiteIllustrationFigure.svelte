@@ -78,9 +78,9 @@
   }
   figcaption {
     font-family: 'Crimson Pro', serif;
-    font-size: 13px;
+    font-size: var(--size-caption);
     line-height: 1.45;
-    font-style: italic;
+    font-style: italic; /* a1-keep: caption */
     color: rgba(255, 255, 255, 0.6);
   }
 </style>

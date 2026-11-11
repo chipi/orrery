@@ -264,7 +264,7 @@
     border-radius: 999px;
     color: rgba(207, 224, 255, 0.75);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.4px;
     text-transform: uppercase;
     cursor: pointer;
@@ -283,7 +283,7 @@
     height: 13px;
   }
   .sidx-count {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: var(--color-text-dim);
     margin-bottom: 4px;
@@ -351,7 +351,7 @@
   }
   .row-meta {
     flex-shrink: 0;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.4px;
     color: var(--color-text-dim);
     text-transform: uppercase;

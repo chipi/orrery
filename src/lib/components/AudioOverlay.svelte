@@ -1532,9 +1532,9 @@
     gap: 6px;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .persona-tag {
     text-transform: uppercase;
@@ -1605,10 +1605,10 @@
   .tour-note {
     flex-basis: 100%;
     margin: 6px 0 0;
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.4;
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
   .tour-note :global(strong) {
     color: rgba(201, 170, 111, 0.85);
@@ -1696,9 +1696,9 @@
     cursor: not-allowed;
   }
   .tour-meta {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-family: var(--font-mono, monospace);
     text-transform: none;
   }

@@ -140,13 +140,13 @@
 
   .credit {
     font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.45);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
 
   .nasa-id {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.35);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
   .mono {
     font-family: 'Space Mono', 'Courier New', monospace;

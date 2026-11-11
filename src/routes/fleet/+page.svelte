@@ -944,7 +944,7 @@
   }
   .list-status {
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
     padding: 1px 6px;
     border-radius: 3px;

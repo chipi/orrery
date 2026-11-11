@@ -246,7 +246,6 @@
   }
   .input::placeholder {
     color: rgba(255, 255, 255, 0.45);
-    font-style: italic;
   }
   .results {
     list-style: none;
@@ -284,16 +283,14 @@
   .result-meta {
     grid-area: meta;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(78, 205, 196, 0.85);
     text-transform: uppercase;
   }
   .result-intro {
     grid-area: intro;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.4;
   }
@@ -308,9 +305,9 @@
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   kbd {
     display: inline-block;
@@ -319,7 +316,7 @@
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.05);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.85);
     margin-right: 2px;
   }

@@ -323,29 +323,19 @@
     line-height: 1;
     margin: 0;
   }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.6;
-    margin: 0 0 12px;
-  }
   .function-block {
     margin: 0 0 14px;
     padding: 10px 12px;
     border-left: 3px solid #4ecdc4;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 2px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.5;
   }
   .first {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     padding: 10px 12px;
@@ -368,9 +358,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .cell-value {
@@ -380,14 +370,14 @@
     font-weight: 700;
   }
   .cell-value.short {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.65);
   }
   .credit {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
@@ -418,12 +408,12 @@
   }
   .related-science h3 {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     /* Muted accent, distinct from INTRO teal / CORE blue / DEEP gold
        so the related-science cluster reads as a footer cross-link,
        not a fourth link-tier. */
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin: 0 0 6px;
     text-transform: uppercase;
   }
@@ -446,7 +436,7 @@
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.75);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     text-decoration: none;
     line-height: 1.5;
     min-height: 44px;
@@ -461,8 +451,8 @@
   }
   .anatomy-caption {
     font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.55);
     line-height: 1.5;
     margin: 0 0 12px;

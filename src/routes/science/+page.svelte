@@ -131,9 +131,7 @@
     margin: 0 0 8px;
   }
   .lede {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 16px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.7);
     max-width: 560px;
     margin: 0;
@@ -162,7 +160,6 @@
     margin: 0 0 14px;
   }
   .chapter .kicker {
-    font-style: italic;
     color: rgba(255, 255, 255, 0.7);
   }
   .chapter a {
@@ -201,8 +198,8 @@
     border-left: 2px solid rgba(78, 205, 196, 0.3);
   }
   .closing {
-    font-style: italic;
     color: rgba(255, 255, 255, 0.7);
+    font-size: var(--size-lead);
   }
   .empty {
     font-family: var(--font-mono, 'Space Mono', monospace);

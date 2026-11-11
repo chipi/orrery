@@ -52,7 +52,7 @@
   .seeing h3 {
     margin: 0 0 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 400;
     letter-spacing: 0.14em;
     text-transform: uppercase;

@@ -83,7 +83,7 @@
   }
   .cr-retain {
     margin-top: 3px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.6);
   }

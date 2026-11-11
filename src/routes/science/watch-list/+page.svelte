@@ -378,9 +378,7 @@
     color: #ffc850;
   }
   .head .lede {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 20px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     margin: 0 0 16px;
     color: rgba(255, 255, 255, 0.92);
@@ -485,8 +483,7 @@
     color: rgba(255, 255, 255, 0.55);
   }
   .blurb {
-    font-family: 'Crimson Pro', serif;
-    font-size: 16px;
+    font-size: var(--size-lead);
     line-height: 1.55;
     margin: 0;
     color: rgba(255, 255, 255, 0.82);

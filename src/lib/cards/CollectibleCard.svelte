@@ -176,7 +176,7 @@
   .collection {
     text-transform: uppercase;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: var(--card-grey);
     border: 1px solid var(--card-hairline);
@@ -230,8 +230,6 @@
   }
   .story {
     margin: 0;
-    font-family: var(--font-editorial, 'Crimson Pro', serif);
-    font-style: italic;
     font-size: 15px;
     line-height: 1.35;
     color: rgba(255, 255, 255, 0.88);
@@ -259,7 +257,7 @@
   .stat dt {
     text-transform: uppercase;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1.2px;
     color: var(--card-grey);
   }
@@ -325,7 +323,7 @@
     padding-top: 8px;
     border-top: 1px solid var(--card-hairline);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9.5px;
+    font-size: var(--size-label);
     letter-spacing: 0.6px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.82);
@@ -342,7 +340,7 @@
     padding: 8px 16px 12px;
     border-top: 1px solid var(--card-hairline);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 0.8px;
     color: var(--card-faint);
     /* №/slug/credit are LTR tokens — keep internal order in RTL locales. */
@@ -361,7 +359,7 @@
   }
   .foot-credit {
     margin-top: 3px;
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 0.6px;
     white-space: nowrap;
     overflow: hidden;

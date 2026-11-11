@@ -98,7 +98,7 @@
   }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffc850;
     margin-bottom: 6px;
@@ -116,7 +116,7 @@
     flex-direction: column;
     gap: 2px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.85);
   }
   .row-head {
@@ -126,11 +126,9 @@
   }
   .desc {
     margin-left: 22px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.35;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .swatch {
     display: block;
@@ -151,7 +149,7 @@
   .link {
     margin-top: 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
   }

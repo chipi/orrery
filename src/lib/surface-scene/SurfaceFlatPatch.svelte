@@ -462,7 +462,7 @@
     ctx.strokeRect(x, y, w, h);
     // Label in corner — REGIONAL · CTX (Mars) / LROC WAC (Moon).
     ctx.fillStyle = '#ffc850';
-    ctx.font = "bold 10px 'Space Mono', monospace";
+    ctx.font = "bold 11px 'Space Mono', monospace";
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     const KIND: Record<string, () => string> = {
@@ -518,7 +518,7 @@
     ctx.strokeRect(x, y, w, h);
     if (w > 80) {
       ctx.fillStyle = '#4ecdc4';
-      ctx.font = "bold 9px 'Space Mono', monospace";
+      ctx.font = "bold 11px 'Space Mono', monospace";
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
       ctx.fillText(`DETAIL · ${detailBadge}`, x + 6, y + 6);
@@ -1054,7 +1054,7 @@
     padding: 6px 12px;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     cursor: pointer;
     backdrop-filter: blur(4px);
@@ -1081,7 +1081,7 @@
     padding: 6px 10px;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     cursor: pointer;
     backdrop-filter: blur(4px);
@@ -1104,7 +1104,7 @@
     padding: 6px 10px;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     display: flex;
     align-items: center;
@@ -1127,7 +1127,7 @@
     padding: 6px 10px;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     backdrop-filter: blur(4px);
   }
@@ -1166,7 +1166,7 @@
     background: rgba(5, 5, 20, 0.88);
     border: 1px solid rgba(255, 200, 80, 0.45);
     border-radius: 3px;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
     color: #ffc850;
     backdrop-filter: blur(4px);

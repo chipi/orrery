@@ -100,9 +100,7 @@
     /* Per-body context — small italic prefix above the title that
      * answers "why this section, for this body". Italicised serif to
      * differentiate from the encyclopedia content below. */
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.6);
     margin: 0 0 6px;
@@ -117,9 +115,7 @@
     margin: 0 0 4px;
   }
   .intro {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-lead);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
     margin: 0 0 6px;
@@ -150,15 +146,15 @@
   }
   .tab-tag {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(78, 205, 196, 0.85);
     text-transform: uppercase;
   }
   .more {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 </style>

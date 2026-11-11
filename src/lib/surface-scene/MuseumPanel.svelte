@@ -146,11 +146,11 @@
   h3 {
     margin: 8px 0 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   ul {
     list-style: none;

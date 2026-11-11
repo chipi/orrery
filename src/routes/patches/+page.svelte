@@ -233,10 +233,10 @@
   .b-credit {
     display: block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-decoration: none;
     margin-top: 2px;
   }

@@ -563,9 +563,9 @@
     padding: 0 8px;
     background: rgba(8, 10, 22, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.2px;
     text-align: center;
     border-radius: 999px;
@@ -602,7 +602,7 @@
     margin-bottom: 8px;
     padding: 4px 10px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     color: rgba(207, 224, 255, 0.6);
     background: rgba(15, 18, 35, 0.55);
@@ -692,9 +692,7 @@
   .paths-legend-tagline {
     margin: 4px 0 8px;
     padding: 8px 8px 10px;
-    font-family: 'Crimson Pro', 'Space Mono', serif;
-    font-style: italic;
-    font-size: 13.5px;
+    font-size: var(--size-lead);
     line-height: 1.45;
     color: rgba(221, 228, 255, 0.78);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -797,7 +795,7 @@
     }
     .chip {
       padding: 0 10px;
-      font-size: 10px;
+      font-size: var(--size-label);
       letter-spacing: 1.5px;
     }
   }

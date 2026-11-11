@@ -381,7 +381,6 @@
   .label.landmark {
     cursor: default;
     opacity: 0.7;
-    font-style: italic;
   }
   .capped {
     position: absolute;
@@ -394,9 +393,8 @@
     font-variant-numeric: tabular-nums;
   }
   .label .part {
-    font-size: 0.66rem;
+    font-size: var(--size-label);
     opacity: 0.75;
-    font-style: italic;
   }
   .label .h {
     opacity: 0.6;
@@ -420,7 +418,7 @@
     position: absolute;
     left: 6px;
     transform: translateY(-50%);
-    font-size: 0.66rem;
+    font-size: var(--size-label);
     opacity: 0.65;
     font-variant-numeric: tabular-nums;
     border-bottom: 1px solid rgba(230, 236, 245, 0.25);

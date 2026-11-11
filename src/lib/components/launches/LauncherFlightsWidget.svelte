@@ -105,7 +105,7 @@
   .section-title {
     margin: 0 0 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(230, 232, 238, 0.6);
     text-transform: uppercase;
     letter-spacing: 1px;

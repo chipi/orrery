@@ -1933,9 +1933,9 @@
   .mod-meta {
     display: block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin-top: 4px;
   }
   .hud-controls {
@@ -2031,7 +2031,7 @@
     color: rgba(255, 255, 255, 0.78);
     border: 1px solid rgba(255, 255, 255, 0.18);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     padding: 0;
     cursor: pointer;
@@ -2083,9 +2083,9 @@
   }
   .hint {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     background: rgba(8, 10, 22, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 6px 10px;
@@ -2131,7 +2131,7 @@
   }
   .banner {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.04em;
     line-height: 1.45;
     color: #ffc850;

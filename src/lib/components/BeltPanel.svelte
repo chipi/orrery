@@ -311,7 +311,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(184, 164, 112, 0.85);
     text-transform: uppercase;
@@ -331,9 +331,9 @@
   }
   .stat-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-transform: uppercase;
     margin-bottom: 4px;
   }
@@ -354,9 +354,9 @@
     border: none;
     border-bottom: 2px solid transparent;
     padding: 8px 4px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     cursor: pointer;
     transition:
@@ -367,14 +367,6 @@
     color: rgba(184, 164, 112, 0.9);
     border-color: rgba(184, 164, 112, 0.7);
   }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 12px;
-  }
   .editorial.empty {
     color: rgba(255, 255, 255, 0.5);
   }
@@ -383,9 +375,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-bottom: 4px;
   }
   .cell-value {
@@ -403,8 +395,8 @@
      serif treatment elsewhere. */
   .caption {
     font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
     margin: 6px 0 0;
@@ -431,15 +423,15 @@
   }
   .science-cta {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.8px;
     color: rgba(78, 205, 196, 0.95);
     text-transform: uppercase;
   }
   .science-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     letter-spacing: 1.2px;
   }
   .member-list {
@@ -473,7 +465,7 @@
     outline: none;
   }
   .member-cta {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.4px;
     color: rgba(78, 205, 196, 0.7);
     white-space: nowrap;
@@ -505,7 +497,7 @@
   }
   .tier-pill {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     padding: 2px 6px;

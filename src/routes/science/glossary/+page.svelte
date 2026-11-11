@@ -83,9 +83,7 @@
     color: #ffc850;
   }
   .lede {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 20px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     margin: 0 0 16px;
     color: rgba(255, 255, 255, 0.78);
@@ -183,7 +181,7 @@
   }
   .k {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #7fb0e0;

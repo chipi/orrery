@@ -132,7 +132,7 @@
   }
   .status {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 3px 9px;
@@ -170,7 +170,7 @@
   }
   .chip {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     padding: 3px 8px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -186,7 +186,7 @@
   .k {
     display: block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #7fb0e0;

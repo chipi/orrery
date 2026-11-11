@@ -586,7 +586,7 @@
     gap: 10px;
   }
   .lamp {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #55606e;
     border: 1px solid rgba(120, 130, 145, 0.3);
@@ -654,7 +654,7 @@
     text-align: right;
   }
   .dossier-title {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #7fd4ff;
     margin: 0 0 8px;
@@ -663,7 +663,7 @@
     align-items: center;
   }
   .rep {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #7fd4ff;
     border: 1px solid rgba(127, 212, 255, 0.4);
@@ -681,7 +681,7 @@
     margin: 0;
   }
   .dossier dt {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #7d99b5;
   }
@@ -726,7 +726,7 @@
     background: rgba(255, 255, 255, 0.35);
   }
   .beat .lbl {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(240, 220, 200, 0.5);
     white-space: nowrap;
@@ -859,7 +859,7 @@
     color: #fff;
   }
   .descent-mstrip .ms-val i {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-style: normal;
     color: #7d99b5;
     margin-left: 2px;

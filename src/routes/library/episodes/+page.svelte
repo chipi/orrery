@@ -298,7 +298,7 @@
   }
   .tour-chip {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #c9aa6f;
@@ -407,7 +407,6 @@
   }
   .ep-sources-pending {
     color: rgba(255, 255, 255, 0.55);
-    font-style: italic;
   }
 
   .ep-empty {

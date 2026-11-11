@@ -74,10 +74,10 @@
   >
     <svg width="68" height="68" viewBox="-34 -34 68 68" aria-hidden="true">
       <circle r="30" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />
-      <text x="0" y="-22" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.65)">N</text>
-      <text x="22" y="3" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.25)">E</text>
-      <text x="0" y="26" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.25)">S</text>
-      <text x="-22" y="3" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.25)">W</text>
+      <text x="0" y="-22" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.65)">N</text>
+      <text x="22" y="3" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.25)">E</text>
+      <text x="0" y="26" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.25)">S</text>
+      <text x="-22" y="3" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.25)">W</text>
       <!-- The arrow always renders so the compass gives visual
            feedback as the user pans the camera. When the site
            declares a compass_zero_direction (e.g. "rover forward",

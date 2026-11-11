@@ -744,7 +744,7 @@
     margin-bottom: 4px;
   }
   .card .name {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     color: rgba(255, 220, 140, 0.95);
     text-transform: uppercase;
@@ -802,13 +802,13 @@
     margin: 0 0 6px;
   }
   .pop .position-note {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
     color: rgba(255, 255, 255, 0.65);
   }
   .pop .sources {
     margin: 8px 0 0;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
   }
   .pop a {

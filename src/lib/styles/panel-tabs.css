@@ -39,17 +39,14 @@
   padding: 10px 10px;
   min-height: 44px;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  /* 10px to match /mars's .tab-btn — 8px was too small to read
-   * across MissionPanel, PlanetPanel, SunPanel, /earth, /moon,
-   * StationModulePanel, SmallBodyPanel (2026-05-22 feedback). */
-  font-size: 10px;
+  font-size: var(--size-label);
   letter-spacing: 1.6px;
   white-space: nowrap;
   font-weight: 700;
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-label);
   cursor: pointer;
   margin-bottom: -1px;
   transition:
@@ -66,6 +63,17 @@
 
 .tab-content {
   flex: 1;
+}
+
+/* Panel overview / lead text — one rule for every panel (Planet, Mission,
+   Sun, Satellite, SmallBody, Belt, Star, Regime, StationModule, EarthObject,
+   Exoplanet, the surface site panel). Upright in the body font at lead size
+   (UX A1 / Q2); the panels no longer carry their own copy. */
+.editorial {
+  font-size: var(--size-lead);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 14px;
 }
 
 /* ─── Hero (first gallery image, above tabs) ───────────────────── */
@@ -102,9 +110,7 @@
 }
 
 .empty-tab {
-  font-family: 'Crimson Pro', serif;
-  font-style: italic;
-  font-size: 12px;
+  font-size: var(--size-meta);
   color: rgba(255, 255, 255, 0.4);
   margin: 0;
 }
@@ -121,7 +127,7 @@
 }
 .mission-list li {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 11px;
+  font-size: var(--size-label);
   color: rgba(255, 255, 255, 0.85);
   padding: 6px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -217,7 +223,7 @@
   background: rgba(8, 12, 22, 0.82);
   color: #dfe6f2;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 9px;
+  font-size: var(--size-label);
   pointer-events: none;
 }
 
@@ -244,7 +250,7 @@
   right: 0;
   text-align: center;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 8px;
+  font-size: var(--size-label);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: rgba(127, 176, 224, 0.85);
@@ -264,9 +270,9 @@
 }
 .gallery-credit {
   margin: 4px 0 0;
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-label);
 }
 
 /* ─── In-overview SCIENCE section (B2 — 2026-06-21) ────────────────
@@ -291,10 +297,10 @@
 }
 .library-heading {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 8px;
+  font-size: var(--size-label);
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-label);
   margin: 0 0 12px;
 }
 
@@ -304,7 +310,7 @@
 }
 .link-tier h3 {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   margin: 0 0 6px;
 }
@@ -336,7 +342,7 @@
   border-radius: 4px;
   color: rgba(255, 255, 255, 0.75);
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 9px;
+  font-size: var(--size-label);
   text-decoration: none;
   line-height: 1.5;
   min-height: 44px;

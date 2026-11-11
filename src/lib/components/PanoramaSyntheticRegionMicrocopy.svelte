@@ -88,8 +88,8 @@
   }
 
   .tag {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.45);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     letter-spacing: 0.12em;
     margin-bottom: 6px;
   }

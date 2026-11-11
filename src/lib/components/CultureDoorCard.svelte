@@ -63,7 +63,7 @@
   }
   .cd-badge {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     padding: 2px 6px;
     border-radius: 3px;
@@ -91,9 +91,9 @@
   }
   .cd-meta {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-top: 3px;
   }
   .cd-blurb {
@@ -111,7 +111,7 @@
     color: #4ecdc4;
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
   }
   .cd-links :global(a:hover) {

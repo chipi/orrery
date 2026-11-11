@@ -248,16 +248,14 @@
 
   .editorial-note {
     margin: 4px 0 0;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(230, 232, 238, 0.85);
   }
 
   .meta {
     margin: 6px 0 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(230, 232, 238, 0.6);
   }
 </style>

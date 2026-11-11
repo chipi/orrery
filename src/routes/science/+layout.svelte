@@ -296,7 +296,7 @@
     /* Mobile-hidden, desktop-restored at @min-width: 769. The
        keyboard-shortcut chip has no meaning on a phone. */
     display: none;
-    font-size: 9px;
+    font-size: var(--size-label);
     padding: 1px 4px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.15);

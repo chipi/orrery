@@ -632,7 +632,7 @@
     z-index: 2;
     margin: 0;
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.04em;
     color: rgba(232, 232, 232, 0.55);
     pointer-events: none;
@@ -714,7 +714,7 @@
   }
   .canvas__wiresum {
     flex: 1;
-    font-size: 8px;
+    font-size: var(--size-label);
     color: rgba(255, 200, 80, 0.85);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -734,7 +734,7 @@
     border-radius: 8px;
     padding: 2px 8px;
     color: #4ecdc4;
-    font-size: 9px;
+    font-size: var(--size-label);
     background: rgba(78, 205, 196, 0.12);
   }
   .canvas__inputs {
@@ -751,8 +751,8 @@
     flex-wrap: wrap;
   }
   .canvas__unwire-btn {
-    font-size: 8px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 4px;
@@ -853,7 +853,7 @@
   }
   .canvas__palette-domain {
     color: rgba(78, 205, 196, 0.8);
-    font-size: 9px;
+    font-size: var(--size-label);
     width: 64px;
   }
   .canvas__confirm {
@@ -882,7 +882,7 @@
   }
   .canvas__confirm-upstream {
     color: rgba(255, 200, 80, 0.9);
-    font-size: 10px;
+    font-size: var(--size-label);
     margin-left: 6px;
   }
   .canvas__confirm-summary {

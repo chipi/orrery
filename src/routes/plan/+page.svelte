@@ -532,7 +532,7 @@
 
     // Axes
     ctx.fillStyle = 'rgba(255,255,255,0.55)';
-    ctx.font = "9px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     const xTicks = 5;
@@ -547,13 +547,13 @@
       ctx.stroke();
       ctx.fillText(dayToShortDate(d), x, MT + PH + 8);
     }
-    ctx.font = "8px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.fillText(m.plan_axis_departure_window(), ML + PW / 2, MT + PH + 26);
 
     // Y-axis ticks. Outer-planet grids (Jupiter, Saturn) render TOF
     // in years (per ADR-026 §Y-axis units, auto-switch threshold = 730d).
-    ctx.font = "9px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.55)';
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
@@ -574,7 +574,7 @@
     ctx.save();
     ctx.translate(14, MT + PH / 2);
     ctx.rotate(-Math.PI / 2);
-    ctx.font = "8px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -585,7 +585,7 @@
     );
     ctx.restore();
 
-    ctx.font = "9px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
@@ -1352,9 +1352,9 @@
   }
   .selector-key {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: 700;
   }
   .dest-select {
@@ -1385,7 +1385,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: rgba(255, 255, 255, 0.7);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     border-radius: 4px;
@@ -1444,7 +1444,7 @@
     border: 1px solid rgba(193, 68, 14, 0.55);
     color: #ffc850;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     border-radius: 4px;
   }
@@ -1530,8 +1530,8 @@
   }
   .loading-pct {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    color: rgba(255, 255, 255, 0.3);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-top: 8px;
     letter-spacing: 2px;
   }
@@ -1579,7 +1579,7 @@
   }
   .explainer > summary::before {
     content: '▸';
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(68, 102, 255, 0.85);
     transition: transform 150ms ease;
     display: inline-block;
@@ -1589,7 +1589,7 @@
   }
   .explainer-title {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: var(--color-accent-text, #5070ff);
     font-weight: 700;
@@ -1600,9 +1600,7 @@
   }
   .explainer-intro {
     margin: 0 0 10px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.45;
   }
@@ -1614,7 +1612,7 @@
   }
   .explainer-list dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(78, 205, 196, 0.85);
     font-weight: 700;
@@ -1623,7 +1621,7 @@
   .explainer-list dd {
     margin: 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
   }
@@ -1658,8 +1656,8 @@
     display: flex;
     justify-content: space-between;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     letter-spacing: 1px;
   }
   @media (max-width: 767px) {
@@ -1682,9 +1680,7 @@
     color: var(--color-text);
   }
   .empty-hint {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     color: rgba(255, 255, 255, 0.5);
     line-height: 1.5;
     margin: 0;
@@ -1704,7 +1700,7 @@
   }
   .rocket-link {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: var(--color-tier-intro);
     text-decoration: none;
@@ -1741,9 +1737,9 @@
   }
   .readout-grid .cell .label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .readout-grid .cell .value {
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -1760,9 +1756,9 @@
   }
   .label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
   }
   .value {
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -1796,7 +1792,7 @@
     border-radius: 4px;
     color: rgba(255, 200, 80, 0.85);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     cursor: pointer;
     transition:
@@ -1813,11 +1809,9 @@
   }
   .sandbox-hint {
     margin: 3px 0 0;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.3;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .sandbox-pinned {
     display: flex;
@@ -1828,14 +1822,14 @@
   }
   .sandbox-eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffc850;
   }
   .sandbox-pin-summary {
     flex: 1;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.78);
   }
   .sandbox-clear {
@@ -1843,7 +1837,7 @@
     border: none;
     color: rgba(255, 200, 80, 0.7);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     cursor: pointer;
     padding: 2px 4px;
@@ -1869,9 +1863,9 @@
   }
   .sandbox-row dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin: 0;
   }
   .sandbox-row dd {
@@ -1888,9 +1882,9 @@
     color: #4ecdc4;
   }
   .sandbox-tag {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-left: 4px;
   }
 
@@ -1957,7 +1951,7 @@
     text-align: center;
     line-height: 24px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -1969,9 +1963,7 @@
     border-radius: 4px;
     background: rgba(255, 200, 80, 0.12);
     border: 1px solid rgba(255, 200, 80, 0.35);
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 13px;
-    font-style: italic;
+    font-size: var(--size-body);
     line-height: 1.35;
     color: rgba(255, 235, 200, 0.92);
   }
@@ -1986,7 +1978,7 @@
     border-radius: 4px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     font-weight: 700;
     cursor: pointer;

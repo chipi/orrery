@@ -417,7 +417,7 @@
     border-radius: 4px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     font-weight: 700;
     cursor: pointer;
@@ -443,7 +443,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: var(--accent, rgba(255, 255, 255, 0.6));
   }
@@ -458,19 +458,12 @@
   /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
      matches the rest of the detail-panel family (Planet, Sun, Mission,
      Fleet, Station). */
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-  }
   .editorial.empty {
     color: rgba(255, 255, 255, 0.4);
   }
   .note {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.8);
     margin-top: 12px;
@@ -485,9 +478,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 2px;
   }
   .cell-value {
@@ -503,7 +496,7 @@
     padding-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.7);
   }
   .learn-list {

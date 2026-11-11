@@ -254,7 +254,7 @@
   .band-meta {
     margin-top: 2px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.78);
     line-height: 1;
     text-overflow: ellipsis;
@@ -293,7 +293,7 @@
     position: absolute;
     top: 2px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.72);
     transform: translateX(-50%);
     pointer-events: none;
@@ -366,7 +366,7 @@
      contrast vs the page; the bump makes the count legible at a
      glance instead of squinting. */
   .chip-count {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.78);
     background: rgba(255, 255, 255, 0.08);
     padding: 1px 5px;

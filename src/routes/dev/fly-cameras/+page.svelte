@@ -230,7 +230,7 @@
     padding: 6px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     color: #7a8aa5;
-    font-size: 10px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -269,7 +269,7 @@
     background: rgba(78, 205, 196, 0.05);
   }
   .badge {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 700;
     padding: 2px 6px;
     border-radius: 3px;

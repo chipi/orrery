@@ -100,7 +100,7 @@
   }
   .time-lens .tl-foot {
     margin-top: 8px;
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.4;
     color: #7a8299;
   }

@@ -240,7 +240,7 @@
     margin: 0 0 14px;
   }
   .intro :global(em) {
-    font-style: italic;
+    font-style: italic; /* a1-keep: inline emphasis */
     color: #cfe3fb;
   }
   .lede {
@@ -320,10 +320,10 @@
     align-items: center;
     gap: 7px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
   .c-title-row {
     display: flex;

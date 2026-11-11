@@ -87,10 +87,10 @@
   h4 {
     margin: 0 0 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: normal;
   }
   ul {

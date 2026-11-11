@@ -799,7 +799,7 @@
     gap: 3px;
   }
   .caret {
-    font-size: 0.7em;
+    font-size: max(var(--size-label), 0.7em);
     opacity: 0.65;
     transition: transform 0.15s;
   }
@@ -1372,9 +1372,9 @@
     display: block;
     padding: 9px 18px 2px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.38);
+    color: var(--color-text-label);
   }
   .drawer-about-item {
     padding-left: 32px;

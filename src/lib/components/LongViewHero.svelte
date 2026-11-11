@@ -180,7 +180,7 @@
   }
   .lv-kicker {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: clamp(10px, 1.6vw, 13px);
+    font-size: clamp(11px, 1.6vw, 13px);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #9fb8f0;

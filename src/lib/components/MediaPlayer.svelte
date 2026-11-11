@@ -259,12 +259,12 @@
   }
   .vp-caption {
     margin: 2px 0 0;
-    font-size: 0.88em;
+    font-size: max(var(--size-label), 0.88em);
     color: #aeb7c7;
   }
   .vp-credit {
     margin: 6px 0 0;
-    font-size: 0.8em;
+    font-size: max(var(--size-label), 0.8em);
     color: #8b93a4;
   }
   .vp-credit a {

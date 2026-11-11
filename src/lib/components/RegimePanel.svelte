@@ -11,7 +11,7 @@
     .head     — kind eyebrow (regime short, regime-coloured)
                + name (Bebas Neue big title)
                + stat-row (altitude + first-year)
-    .editorial — comparison line + story paragraph (Crimson Pro italic)
+    .editorial — comparison line + story paragraph (shared, panel-tabs.css)
     Residents — agency-dot list (Space Mono mono labels)
     Firsts    — year + label list
     ScienceCard — standard /science cross-link card
@@ -201,7 +201,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: var(--regime-color);
     text-transform: uppercase;
@@ -222,9 +222,9 @@
   }
   .stat-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-transform: uppercase;
     margin-bottom: 4px;
   }
@@ -234,21 +234,11 @@
     color: var(--color-text);
   }
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 14px;
-  }
-
   .story {
     margin-bottom: 14px;
   }
   .story-text {
-    font-family: 'Crimson Pro', serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.88);
     margin: 0;
@@ -256,9 +246,9 @@
 
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 6px;
     text-transform: uppercase;
   }
@@ -327,7 +317,7 @@
     outline: none;
   }
   .resident-arrow {
-    font-size: 9px;
+    font-size: var(--size-label);
     opacity: 0.75;
     margin-left: 2px;
   }
@@ -339,10 +329,10 @@
   }
   .library-heading {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 10px;
     font-weight: 700;
   }

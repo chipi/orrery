@@ -313,9 +313,7 @@
     margin: 0 0 12px;
   }
   .lede {
-    font-family: var(--font-editorial), 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 17px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.75);
     max-width: 760px;
     margin: 0 auto;
@@ -356,7 +354,7 @@
   .chip .n {
     margin-left: 7px;
     opacity: 0.8;
-    font-size: 10px;
+    font-size: var(--size-label);
   }
   .chip.active .n {
     opacity: 0.75;
@@ -449,7 +447,7 @@
     align-items: center;
     gap: 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: #9fc4ea;
@@ -470,10 +468,10 @@
   }
   .t-desig {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .t-desig::before {
     content: '·';
@@ -586,8 +584,8 @@
   }
   .lb-caption {
     font-family: var(--font-editorial), 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 16px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.82);
     margin: 0 0 14px;
@@ -607,10 +605,10 @@
   }
   .lb-facts dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .lb-facts dd {

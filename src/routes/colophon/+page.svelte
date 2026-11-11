@@ -905,10 +905,10 @@
   }
   .iv-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8.5px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .icon-card .it-title,
   .icon-card .it-what {
@@ -962,7 +962,7 @@
   }
   .ep-action {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-decoration: none;
     padding: 2px 8px;

@@ -56,7 +56,7 @@ export function createAscentRenderer(
   renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
   renderer.setSize(w, h);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 0.8;
+  renderer.toneMappingExposure = 1.0;
   // Hero IBL — the bespoke launcher (metalness ~0.45) + earth curve pick up
   // real reflections/glints. The pad is rough (barely reflects) and the sky /
   // exhaust glows are MeshBasic (untouched). Layers on top of the scene's own

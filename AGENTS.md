@@ -724,7 +724,13 @@ Gold:          #ffc850
 
 font-display:   'Bebas Neue'    titles, names
 font-mono:      'Space Mono'    data, labels, HUD
-font-editorial: 'Crimson Pro'   descriptions (always italic)
+font-editorial: 'Crimson Pro'   real quotes + photo captions only (italic, >= 14px)
+
+Type scale (src/lib/styles/tokens.css, UX A1 / Q2): floor 11px everywhere —
+  --size-label 11px (60% white) · --size-meta 12px · --size-body 14px ·
+  --size-lead 15px (panel overview, upright in Space Mono) · --size-caption 15px.
+  No text below 11px; no italic outside quotes and photo captions.
+  Enforced by tests/e2e/type-floor.spec.ts.
 
 Nav bar:        height 52px, z-index 20
 Panel (mobile): bottom sheet, full width

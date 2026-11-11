@@ -134,7 +134,7 @@ Every mission in Orrery is defined by a JavaScript object conforming to this sch
 | `arr` | string | Arrival date, human-readable. e.g. `"Aug 6, 2012"` |
 | `tof` | number or null | Transit time in days. `null` for TBD planned missions |
 | `vehicle` | string | Launch vehicle name |
-| `description` | string | Editorial description, 2–4 sentences, Crimson Pro italic in UI |
+| `description` | string | Editorial description, 2–4 sentences, Space Mono upright lead in UI |
 | `data_quality` | string | `"good"`, `"partial"`, `"reconstructed"`, or `"planned"` |
 | `credit` | string | Full image/data credit line |
 | `links` | array | Array of `{l, u, t}` educational link objects (see 2.3) |

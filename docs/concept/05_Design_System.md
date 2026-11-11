@@ -120,9 +120,9 @@ Three typefaces only, all loaded from Google Fonts:
 |---|---|---|
 | **Bebas Neue** | Hero names, screen titles, mission names | All-caps, wide letter-spacing (2–4px). The "poster" voice — bold, spatial, unapologetic |
 | **Space Mono** | All UI elements — labels, data values, buttons, nav, metadata | Monospace precision. Numbers align. Technical without being cold |
-| **Crimson Pro italic** | Descriptions, editorial text, facts, quotes | Humanist serif. Emotional and precise in the same stroke. The "historian" voice |
+| **Crimson Pro italic** | Real quotes and photo captions only (14px minimum) | Humanist serif. The "historian" voice — kept for the few places that are literally quoted or captioned |
 
-Never mix faces within a semantic role. Descriptions are always Crimson Pro italic. Data is always Space Mono. Titles are always Bebas Neue.
+Never mix faces within a semantic role. Descriptions and overviews are Space Mono upright (lead size). Data is always Space Mono. Titles are always Bebas Neue. Nothing is set below 11px (UX A1 / Q2).
 
 ### 3.2 Type scale
 
@@ -131,21 +131,21 @@ Never mix faces within a semantic role. Descriptions are always Crimson Pro ital
 | Screen title | Bebas Neue | 20–26px | — | 3–4px |
 | Mission/object name (hero) | Bebas Neue | 26–42px | — | 2–3px |
 | Mission name (card) | Bebas Neue | 20–26px | — | 2px |
-| Section label | Space Mono | 7px | 700 | 3px |
-| Data label | Space Mono | 6–7px | 400 | 2px |
+| Section label | Space Mono | 11px | 700 | 3px |
+| Data label | Space Mono | 11px (60% white) | 400 | 2px |
 | Data value | Space Mono | 10–14px | 700 | — |
-| Body label / button | Space Mono | 7–9px | 700 | 2px |
-| Metadata / credit | Space Mono | 6–7px | 400 | 1px |
-| Description | Crimson Pro | 11–13px | 400 italic | — |
-| Fact / editorial | Crimson Pro | 12–13px | 400 italic | — |
+| Body label / button | Space Mono | 11–12px | 700 | 2px |
+| Metadata / credit | Space Mono | 11px | 400 | 1px |
+| Description / lead | Space Mono | 15–16px (`--size-lead`) | 400 upright | — |
+| Photo caption / quote | Crimson Pro | 14px (`--size-caption`) | 400 italic | — |
 
 ### 3.3 Type rendering notes
 
 - All labels use `letter-spacing` explicitly — never rely on browser defaults
 - Section labels are ALL CAPS by content, not CSS `text-transform`
 - Bebas Neue renders well at all sizes; use it large — 26px minimum for mission names
-- Space Mono at 7px is the practical minimum for readability on dark backgrounds
-- Crimson Pro italic is the emotional register — use it only for descriptions and facts, never for data
+- Floor is 11px for every text (UX A1 / Q2); labels 11px at 60% white (`--size-label`, `--color-text-label`), meta 12px, body 14px, lead 15–16px
+- Crimson Pro italic is only for real quotes and photo captions, never for data or overviews
 
 ---
 
@@ -212,7 +212,7 @@ Consistent across all six screens. Height 52px. Translucent dark background with
 
 Active nav item: white text, `rgba(68,102,255,0.2)` background, `rgba(68,102,255,0.45)` border.
 
-The wordmark is always `font-family: 'Bebas Neue'; font-size: 26px; letter-spacing: 4px`. The subtitle is Space Mono 8px at 20% opacity.
+The wordmark is always `font-family: 'Bebas Neue'; font-size: 26px; letter-spacing: 4px`. The subtitle is Space Mono 11px at 60% opacity.
 
 ### 5.2 3D / 2D view toggle
 
@@ -245,7 +245,7 @@ The panel always contains, top to bottom:
 2. Tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
 3. Stats grid (2-column)
 4. Signature element (the "still on the surface" section for Moon; the "scale fact" for Earth orbit; the editorial fact for planets)
-5. Description (Crimson Pro italic)
+5. Description (lead text, Space Mono upright)
 6. Educational links
 7. Credit footer
 
@@ -259,8 +259,8 @@ Structure:
 1. 3px agency colour top border
 2. Header: agency logo (52×52px) + mission name (Bebas Neue) + status pills + data quality badge + collaborator chips
 3. Stats strip: 3-column grid (departure / transit / Δv or payload) — `rgba(7,7,15,1)` background
-4. Description: Crimson Pro italic + "first" badge if applicable
-5. Bottom prompt: "CLICK TO PREVIEW ›" — Space Mono 7px, `text-dim`
+4. Description: Space Mono upright + "first" badge if applicable
+5. Bottom prompt: "CLICK TO PREVIEW ›" — Space Mono 11px, `text-dim`
 
 Selected card: `border-color: rgba(68,102,255,0.7)` + `box-shadow: 0 0 20px rgba(68,102,255,0.2)`.
 
@@ -270,7 +270,7 @@ Selected card: `border-color: rgba(68,102,255,0.7)` + `box-shadow: 0 0 20px rgba
 [● ACTIVE]  [FLOWN]  [◌ PLANNED]  [★ MINE]
 ```
 
-All pills: `font-size: 7px; letter-spacing: 2px; font-weight: 700; padding: 3px 8px; border-radius: 3px`.
+All pills: `font-size: 11px; letter-spacing: 2px; font-weight: 700; padding: 3px 8px; border-radius: 3px`.
 
 The ACTIVE pill includes a pulsing dot (`animation: pulse 1.5s infinite`) in the status colour.
 

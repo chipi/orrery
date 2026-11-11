@@ -458,6 +458,7 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
   OutputPass too (output-step slice, 2026-11-11; operator decision: one OutputPass per composer).
 - Output step, Fly launch and Mars descent (operator 2026-11-11, after the before/after sheets): "I agree we should fix washed out look on launches and descents". Fixed in the same slice (second pass: atmosphere shell, sky gradient, ambient light, launch exposure); descent contrast still under review.
 - Operator go, 2026-11-11 (session, after the UXD check): the fixes written above for W6, SN2, G5/G6 and O6 are accepted as decided (UXD-007 … UXD-010). The muted ring/state blue `#889fe7` stays alongside blue D (`#5070ff`): D for links and accents, `#889fe7` for annotation rings, hover and status states. Fly Mars descent after the second pass: accepted "for now" (contrast can be revisited later).
+- A2 page shell (operator 2026-11-11, "I agree with all recommendations to 1-6", on the A2 brief questions): (1) section labels use the design-system label, 11 px at 60 % white, not `#7fb0e0`; (2) G1 gallery strip text flush with the title; (3) program pages move to Space Mono, long-form essay and science prose keeps upright Crimson; (4) missions, launches and fleet stay tools with no visible title; (5) page text uses the standard text white, not `#dde4ff`; (6) hubs widen to the 1080 px page width.
 
 ## To check at the end (operator, 2026-11-11)
 

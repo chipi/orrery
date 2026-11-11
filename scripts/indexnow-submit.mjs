@@ -15,8 +15,8 @@
  * engines fetch it from the site to verify ownership. Before a real submission
  * the file must be live at <base>/<key>.txt (else abort); a dry run only warns.
  *
- * --since filters by <lastmod>. Our sitemaps carry no lastmod today (see
- * src/lib/sitemap.ts), so a URL without one is KEPT: unknown is not "old".
+ * --since filters by <lastmod> (src/lib/sitemap.ts, from the committed
+ * route-lastmod.json). A URL without one is KEPT: unknown is not "old".
  *
  * Exit 0: dry run finished, or every batch answered 200/202. Exit 1: key file
  * not live, a sitemap unreadable, or any batch non-2xx. Exit 2: bad arguments.

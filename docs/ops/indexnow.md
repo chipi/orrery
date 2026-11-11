@@ -21,9 +21,12 @@ npm run indexnow -- --base https://www.orrerylearn.com --key <key>
 
 1. Reads `<base>/sitemap.xml`, follows it to every `/sitemaps/<locale>.xml`, collects each
    `<loc>` (and `<lastmod>`), dedupes. Today: 14 locales, ~12,000 URLs.
-2. `--since YYYY-MM-DD` keeps URLs whose `<lastmod>` is on or after the date. Our sitemaps carry
-   no `<lastmod>` (`src/lib/sitemap.ts`), so URLs without one are kept: `--since` does not
-   narrow anything until the sitemaps get one.
+2. `--since YYYY-MM-DD` keeps URLs whose `<lastmod>` is on or after the date. Every URL in our
+   sitemaps carries one (the date git last changed the page's content, from
+   `src/lib/generated/route-lastmod.json`, regenerated in the release PR), so `--since` narrows to
+   the pages changed since the date. A URL without one is kept: unknown is not "old". Run it
+   against a deploy whose sitemaps have `<lastmod>`; the sitemaps of a deploy before that have none and
+   `--since` sends everything.
 3. Checks the key file is live at `<base>/<key>.txt` with exactly the key as body. A real run
    aborts (exit 1) if not; a dry run prints a warning and goes on. The key file is
    `static/<key>.txt`, committed, public by design (the engines fetch it to verify ownership);

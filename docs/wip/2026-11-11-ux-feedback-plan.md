@@ -422,3 +422,8 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
   — fetch with the existing image tools, provenance row); the Milky Way view stays in the main area; the
   lensing render becomes an explicit action in the panel ("See the lensing simulation"). Same screen
   also shows teal values and "Read more" (A3) and the italic science card (A1).
+
+## Answers (2026-11-11)
+
+- Q1: blue D, `#5070ff` (today's global link colour, `--color-accent-text`). Open: links only, or every UI teal.
+- Q2: floor 11 px everywhere; labels 11 px at ~60 %; body 14 px; lead/overview 15–16 px upright in the body font; italic only for quotes and photo captions, ≥ 14 px.

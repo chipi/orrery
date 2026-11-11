@@ -644,9 +644,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       // scales gracefully (disabled on minimal/low, stronger on cinematic).
       mwScene = mod.createMilkyWayScene(data, {
         enabled: quality.bloomEnabled,
-        strength: Math.min(0.5, Math.max(0.32, quality.bloomStrength)),
+        strength: Math.min(0.9, Math.max(0.8, quality.bloomStrength)),
         radius: 0.6,
-        threshold: 0.62,
+        threshold: 0.5,
       });
       const w = bridge.container?.clientWidth ?? 1;
       const h = bridge.container?.clientHeight ?? 1;
@@ -697,9 +697,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       LG_FAR = LG_SCENE_RADIUS * 40;
       lgScene = mod.createLocalGroupScene(data, {
         enabled: quality.bloomEnabled,
-        strength: Math.min(0.36, Math.max(0.28, quality.bloomStrength)),
-        radius: 0.62,
-        threshold: 0.7,
+        strength: Math.min(0.9, Math.max(0.8, quality.bloomStrength)),
+        radius: 0.8,
+        threshold: 0.5,
       });
       lgScene.setSize(bridge.container?.clientWidth ?? 1, bridge.container?.clientHeight ?? 1);
       return lgScene;

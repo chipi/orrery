@@ -30,6 +30,7 @@ export function featherMask(edge = 0.18): THREE.Texture {
     }
   }
   const tex = new THREE.DataTexture(data, n, n, THREE.RGBAFormat);
+  tex.colorSpace = THREE.NoColorSpace;
   tex.needsUpdate = true;
   cache.set(edge, tex);
   return fresh(tex);

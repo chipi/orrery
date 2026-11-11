@@ -146,6 +146,7 @@ function foilRoughnessTexture(): THREE.Texture {
   }
   ctx.putImageData(img, 0, 0);
   const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.NoColorSpace;
   t.wrapS = t.wrapT = THREE.RepeatWrapping;
   foilRough = t;
   return t;

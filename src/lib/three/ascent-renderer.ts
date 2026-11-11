@@ -14,6 +14,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
 import type { FlightPhaseScene } from './flight-phase-scene';
 import { heroEnvironment } from './hero-materials';
@@ -55,7 +56,7 @@ export function createAscentRenderer(
   renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
   renderer.setSize(w, h);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+  renderer.toneMappingExposure = 0.8;
   // Hero IBL — the bespoke launcher (metalness ~0.45) + earth curve pick up
   // real reflections/glints. The pad is rough (barely reflects) and the sky /
   // exhaust glows are MeshBasic (untouched). Layers on top of the scene's own
@@ -69,8 +70,9 @@ export function createAscentRenderer(
   composer.addPass(new FilmPass(0.1));
   const vignette = new ShaderPass(VignetteShader);
   vignette.uniforms['offset'].value = 0.95;
-  vignette.uniforms['darkness'].value = 0.55;
+  vignette.uniforms['darkness'].value = 1.0;
   composer.addPass(vignette);
+  composer.addPass(new OutputPass());
 
   return {
     renderer,

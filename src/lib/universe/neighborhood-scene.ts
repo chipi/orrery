@@ -138,6 +138,7 @@ function makeSunSprite(): THREE.Sprite {
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, size, size);
   const tex = new THREE.CanvasTexture(cvs);
+  tex.colorSpace = THREE.SRGBColorSpace;
   const mat = new THREE.SpriteMaterial({
     map: tex,
     transparent: true,
@@ -176,7 +177,9 @@ function makeHaloTexture(): THREE.CanvasTexture {
   ctx.beginPath();
   ctx.arc(c, c, s * 0.36, 0, Math.PI * 2);
   ctx.stroke();
-  return new THREE.CanvasTexture(cvs);
+  const tex = new THREE.CanvasTexture(cvs);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
 }
 
 /** Canvas-backed text sprite for a star name (world-scaled; caller sizes it). */
@@ -204,6 +207,7 @@ function makeLabelSprite(text: string): { sprite: THREE.Sprite; texture: THREE.C
   ctx.fillStyle = 'rgba(223, 236, 247, 0.92)';
   ctx.fillText(upper, pad, h / 2 + 1);
   const texture = new THREE.CanvasTexture(cvs);
+  texture.colorSpace = THREE.SRGBColorSpace;
   const sprite = new THREE.Sprite(
     new THREE.SpriteMaterial({
       map: texture,
@@ -260,7 +264,9 @@ function makeDotTexture(): THREE.CanvasTexture {
   ctx.beginPath();
   ctx.arc(c, c, c, 0, Math.PI * 2);
   ctx.fill();
-  return new THREE.CanvasTexture(cvs);
+  const tex = new THREE.CanvasTexture(cvs);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
 }
 
 export function createNeighborhoodScene(opts: NeighborhoodOptions): NeighborhoodScene {

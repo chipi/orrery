@@ -14,6 +14,7 @@ import * as THREE from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import type { MilkyWaySchematic } from '$lib/data';
 import * as m from '$lib/paraglide/messages';
 import {
@@ -58,9 +59,9 @@ export interface MilkyWayBloomOptions {
 }
 const DEFAULT_BLOOM: MilkyWayBloomOptions = {
   enabled: true,
-  strength: 0.34,
-  radius: 0.62,
-  threshold: 0.7,
+  strength: 0.8,
+  radius: 0.6,
+  threshold: 0.5,
 };
 
 const COOL = [0.82, 0.93, 0.96]; // arm star colour — teal-white (brand), not pure blue
@@ -78,6 +79,7 @@ function radialTexture(stops: Array<[number, string]>, size = 128): THREE.Canvas
   ctx.arc(c, c, c, 0, Math.PI * 2);
   ctx.fill();
   const t = new THREE.CanvasTexture(cvs);
+  t.colorSpace = THREE.SRGBColorSpace;
   t.needsUpdate = true;
   t.minFilter = THREE.LinearFilter;
   t.magFilter = THREE.LinearFilter;
@@ -113,6 +115,7 @@ function labelSprite(
   ctx.fillStyle = color;
   ctx.fillText(upper, w / 2, h / 2);
   const texture = new THREE.CanvasTexture(cvs);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;
@@ -381,6 +384,7 @@ export function createMilkyWayScene(
     dctx.stroke();
   }
   const dustTex = track(new THREE.CanvasTexture(dust));
+  dustTex.colorSpace = THREE.SRGBColorSpace;
   dustTex.needsUpdate = true;
   const dustPlane = new THREE.Mesh(
     track(new THREE.PlaneGeometry(R * 2, R * 2)),
@@ -742,6 +746,7 @@ export function createMilkyWayScene(
       bloom.threshold,
     );
     composer.addPass(bloomPass);
+    composer.addPass(new OutputPass());
     boundRenderer = renderer;
   }
 

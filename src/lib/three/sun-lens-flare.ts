@@ -139,6 +139,7 @@ function buildGhostTexture(color: string): THREE.CanvasTexture {
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, SIZE, SIZE);
   const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.needsUpdate = true;
   return tex;
 }

@@ -64,6 +64,7 @@ function makeGlintTexture(color: string): THREE.CanvasTexture {
   ctx.arc(c, c, c, 0, Math.PI * 2);
   ctx.fill();
   const tex = new THREE.CanvasTexture(cvs);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.needsUpdate = true;
   tex.minFilter = THREE.LinearFilter;
   tex.magFilter = THREE.LinearFilter;
@@ -95,6 +96,7 @@ function makeLabelSprite(text: string): {
   ctx.fillStyle = 'rgba(233,238,252,0.96)';
   ctx.fillText(upper, w / 2, h / 2);
   const tex = new THREE.CanvasTexture(cvs);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.needsUpdate = true;
   tex.minFilter = THREE.LinearFilter;
   tex.magFilter = THREE.LinearFilter;

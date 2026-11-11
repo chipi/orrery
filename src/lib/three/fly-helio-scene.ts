@@ -5,6 +5,7 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
 import { buildSkydome } from './skydome';
 import { buildSunLensFlare, type SunLensFlare } from './sun-lens-flare';
@@ -408,9 +409,12 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   if (opts.quality.vignetteEnabled) {
     vignettePass = new ShaderPass(VignetteShader);
     vignettePass.uniforms['offset'].value = 0.95;
-    vignettePass.uniforms['darkness'].value = 0.6;
+    vignettePass.uniforms['darkness'].value = 1.0;
     composer.addPass(vignettePass);
   }
+  // Last: the composer targets are linear, so this applies the renderer's ACES + sRGB once
+  // (after every effect, so grain and vignette modulate linear light like the rest).
+  composer.addPass(new OutputPass());
   // Procedural skydome — wave 2/3 punch #9. Large inverted sphere with
   // a CanvasTexture painting a Milky Way band gradient + sparse bright
   // stars. Augments the Points-based starfield rather than replacing it
@@ -462,11 +466,17 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // Texture loader shared by Sun + Earth + every destination body.
   const texLoader = new THREE.TextureLoader();
   const sunTex = texLoader.load(opts.bodyTextures.sun);
+  sunTex.colorSpace = THREE.SRGBColorSpace;
   const earthTex = texLoader.load(opts.bodyTextures.earth);
+  earthTex.colorSpace = THREE.SRGBColorSpace;
   const destinationTextures: Partial<Record<DestinationId, THREE.Texture>> = {};
   for (const id of Object.keys(DEST_STYLE) as DestinationId[]) {
     const url = opts.bodyTextures[id as keyof HelioSceneOptions['bodyTextures']];
-    if (url) destinationTextures[id] = texLoader.load(url);
+    if (url) {
+      const destTex = texLoader.load(url);
+      destTex.colorSpace = THREE.SRGBColorSpace;
+      destinationTextures[id] = destTex;
+    }
   }
 
   // Sun — textured emissive core + additive-blend halo. The texture

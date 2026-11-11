@@ -63,6 +63,7 @@ export function stringerRoughness(repeat = 80): THREE.Texture {
     }
     x.putImageData(img, 0, 0);
     stringer = new THREE.CanvasTexture(c);
+    stringer.colorSpace = THREE.NoColorSpace;
   }
   const t = stringer.clone();
   t.needsUpdate = true;

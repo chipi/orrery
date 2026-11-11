@@ -16,6 +16,7 @@ import * as THREE from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import { logSpiralPoint, makeRng } from './milky-way-visual';
 import type { LocalGroupData, LocalGroupMember, LocalGroupKind } from '$lib/data';
 
@@ -36,13 +37,13 @@ export interface LocalGroupBloomOptions {
   radius: number;
   threshold: number;
 }
-// Matched to the Milky Way scene's restrained bloom (strength 0.34 / threshold 0.70)
-// so the Local Group reads with the same warmth, not blown-out white cores.
+// The composer ends in an OutputPass (sRGB encode lifts dim bloom), so the glow is tuned against
+// that output: the same warm, unclipped cores as the Milky Way scene (strength 0.8 / threshold 0.5).
 const DEFAULT_BLOOM: LocalGroupBloomOptions = {
   enabled: true,
-  strength: 0.34,
-  radius: 0.62,
-  threshold: 0.7,
+  strength: 0.8,
+  radius: 0.8,
+  threshold: 0.5,
 };
 
 /** Scene units per schematic layout unit (the MW↔Andromeda gap is 2.5 layout units). */
@@ -60,6 +61,7 @@ function radialTexture(stops: Array<[number, string]>, size = 128): THREE.Canvas
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, size, size);
   const t = new THREE.CanvasTexture(cvs);
+  t.colorSpace = THREE.SRGBColorSpace;
   t.needsUpdate = true;
   return t;
 }
@@ -92,6 +94,7 @@ function labelSprite(
   ctx.fillStyle = color;
   ctx.fillText(upper, w / 2, h / 2);
   const texture = new THREE.CanvasTexture(cvs);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;
   const sprite = new THREE.Sprite(
@@ -359,6 +362,7 @@ export function createLocalGroupScene(
       bloom.threshold,
     );
     composer.addPass(bloomPass);
+    composer.addPass(new OutputPass());
     boundRenderer = renderer;
   }
 

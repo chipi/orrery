@@ -58,6 +58,7 @@ function makeBannerTexture(opts: {
   ctx.fillText(opts.text, textX, h / 2 + 4);
 
   const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.anisotropy = 4;
   return tex;
 }

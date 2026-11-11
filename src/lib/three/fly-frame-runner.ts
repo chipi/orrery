@@ -341,7 +341,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         grad.addColorStop(1, 'rgba(255,140,60,0)');
         g.fillStyle = grad;
         g.fillRect(0, 0, 64, 64);
-        return new THREE.CanvasTexture(c);
+        const tex = new THREE.CanvasTexture(c);
+        tex.colorSpace = THREE.SRGBColorSpace;
+        return tex;
       })(),
       transparent: true,
       depthWrite: false,

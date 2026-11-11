@@ -130,6 +130,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
 
   // Earth at origin. True physical radius scaled by SCALE_CISLUNAR.
   const earthTex2k = texLoader.load(opts.earthTextureUrl);
+  earthTex2k.colorSpace = THREE.SRGBColorSpace;
   let earthTex4k: THREE.Texture | null = null;
   let earth4kLoadStarted = false;
   let earthLodLevel: '2k' | '4k' = '2k';
@@ -146,6 +147,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
 
   // Moon — position updated each frame from moonEciPos(simDay).
   const moonTex2k = texLoader.load(opts.moonTextureUrl);
+  moonTex2k.colorSpace = THREE.SRGBColorSpace;
   let moonTex4k: THREE.Texture | null = null;
   let moon4kLoadStarted = false;
   let moonLodLevel: '2k' | '4k' = '2k';
@@ -166,6 +168,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     texLoader.load(
       opts.earthTextureUrl4k,
       (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
         earthTex4k = tex;
       },
       undefined,
@@ -180,6 +183,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     texLoader.load(
       opts.moonTextureUrl4k,
       (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
         moonTex4k = tex;
       },
       undefined,

@@ -129,7 +129,7 @@ describe('initDeepLinks — native platform', () => {
     initDeepLinks();
     await new Promise((r) => setTimeout(r, 0));
 
-    if (capture.handler) capture.handler({ url: 'https://chipi.github.io/orrery/fly' });
+    if (capture.handler) capture.handler({ url: 'https://cdn.example.test/orrery/fly' });
     expect(goto).not.toHaveBeenCalled();
   });
 

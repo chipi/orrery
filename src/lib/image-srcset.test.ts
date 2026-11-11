@@ -10,15 +10,15 @@ describe('srcsetFor', () => {
 
   it('builds a WebP srcset with the largest as the unsuffixed base + src', () => {
     const r = srcsetFor(
-      'https://chipi.github.io/orrery/images/missions/curiosity/01.jpg',
+      'https://cdn.example.test/orrery/images/missions/curiosity/01.jpg',
       manifest,
     );
     expect(r).toEqual({
-      src: 'https://chipi.github.io/orrery/images/missions/curiosity/01.webp',
+      src: 'https://cdn.example.test/orrery/images/missions/curiosity/01.webp',
       srcset:
-        'https://chipi.github.io/orrery/images/missions/curiosity/01-1280.webp 1280w, ' +
-        'https://chipi.github.io/orrery/images/missions/curiosity/01-2048.webp 2048w, ' +
-        'https://chipi.github.io/orrery/images/missions/curiosity/01.webp 3072w',
+        'https://cdn.example.test/orrery/images/missions/curiosity/01-1280.webp 1280w, ' +
+        'https://cdn.example.test/orrery/images/missions/curiosity/01-2048.webp 2048w, ' +
+        'https://cdn.example.test/orrery/images/missions/curiosity/01.webp 3072w',
     });
   });
 

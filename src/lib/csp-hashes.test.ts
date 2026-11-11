@@ -32,14 +32,13 @@ describe('CSP script-src hashes', () => {
   });
 
   it('allows every Umami tracker host the app can load', () => {
-    const src = ['src/lib/analytics.ts', 'src/lib/target-env.ts']
-      .map((f) => readFileSync(f, 'utf8'))
-      .join('\n');
-    const hosts = [...src.matchAll(/(?:DEV_UMAMI_HOST =|umamiHost:)\s*'(https:\/\/[^']+)'/g)].map(
-      (m) => m[1],
-    );
-    expect(hosts.length).toBeGreaterThan(1);
-    for (const h of hosts) expect(scriptSrc).toContain(h.replace(/\/$/, ''));
+    const src = readFileSync('src/lib/analytics.ts', 'utf8');
+    const hosts = [...src.matchAll(/DEV_UMAMI_HOST =\s*'(https:\/\/[^']+)'/g)].map((m) => m[1]);
+    expect(hosts).toHaveLength(1);
+    // The prod host arrives through the deploy's PUBLIC_UMAMI_HOST, so it is not in the source.
+    for (const h of [...hosts, 'https://analytics.orrerylearn.com']) {
+      expect(scriptSrc).toContain(h.replace(/\/$/, ''));
+    }
   });
 
   it('has no unsafe-inline or unsafe-eval', () => {

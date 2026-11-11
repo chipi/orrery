@@ -3,7 +3,7 @@
  * the not-found page. Returns the corrected URL, or null when the path has no `&`
  * after its first character.
  *
- * `pathname` is the full URL path, so it already carries the app's base (staging's
+ * `pathname` is the full URL path, so it already carries the app's base (a subpath deploy's
  * `/orrery`); it must not be prefixed again. A real query string, if present, is
  * kept and the mistyped params are appended to it with `&`.
  */

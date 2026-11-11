@@ -164,7 +164,7 @@ describe('seoDescription', () => {
 });
 
 describe('isMirrorBuild', () => {
-  it('is true only for a build under a base path (GH Pages staging)', () => {
+  it('is true only for a build under a base path (a mirror)', () => {
     expect(isMirrorBuild('/orrery')).toBe(true);
     expect(isMirrorBuild('')).toBe(false);
   });

@@ -43,7 +43,7 @@ const config = {
           'unsafe-hashes',
           'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=',
           'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=',
-          // Every Umami tracker host the app can load (analytics.ts, target-env.ts).
+          // Every Umami tracker host the app can load (analytics.ts).
           'https://analytics.orrerylearn.com',
           'https://umami.tail6d0ed4.ts.net',
         ],

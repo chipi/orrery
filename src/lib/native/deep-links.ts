@@ -10,8 +10,8 @@ import { goto } from '$app/navigation';
  * Registered in ios/App/App/Info.plist (CFBundleURLTypes) and
  * android/.../AndroidManifest.xml (intent-filter, scheme="orrery").
  *
- * Universal/App Links (https://chipi.github.io/orrery/…) are a follow-up
- * (need apple-app-site-association + Digital Asset Links on the GH Pages
+ * Universal/App Links (https://www.orrerylearn.com/…) are a follow-up
+ * (need apple-app-site-association + Digital Asset Links on the prod
  * domain). No-op in the browser build.
  */
 /**

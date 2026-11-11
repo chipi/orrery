@@ -29,15 +29,15 @@ beforeEach(() => {
 
 describe('sentry native shell (Capacitor iOS)', () => {
   it('rides the environment TIER (not mobile-ios) + platform=ios SEGMENT tag, via @sentry/capacitor', () => {
-    publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@telemetry.example/6'; // staging project
-    publicEnv.PUBLIC_SENTRY_ENVIRONMENT = 'staging';
+    publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@telemetry.example/6';
+    publicEnv.PUBLIC_SENTRY_ENVIRONMENT = 'canary';
 
     initSentry();
 
     expect(capInit).toHaveBeenCalledTimes(1);
     expect(webInit).not.toHaveBeenCalled(); // native never takes the sveltekit path
     const [options, sibling] = capInit.mock.calls[0];
-    expect(options.environment).toBe('staging'); // the TIER — NOT 'mobile-ios'
+    expect(options.environment).toBe('canary'); // the TIER — NOT 'mobile-ios'
     expect(options.initialScope.tags.platform).toBe('ios'); // the SEGMENT
     expect(options.initialScope.tags.component).toBe('orrery');
     expect(sibling).toBe(svelteInit); // native = capacitor init + the JS svelte sibling

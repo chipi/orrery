@@ -28,18 +28,17 @@ import { init as sentrySvelteInit } from '@sentry/svelte';
 import { Capacitor } from '@capacitor/core';
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
-import { MOBILE_INTERNAL, targetConfig } from '../target-env';
 import { isGuardReloading } from './preload-guard';
 import { scrubBreadcrumb } from './scrub-breadcrumb';
 
 // Git branch, injected by vite.config's `define`. Tags dev events by worktree.
 declare const __DEV_WORKTREE__: string;
 
-// Dev rung of the env ladder (dev → staging → prod). In `vite dev`, with no deploy-injected
+// Dev rung of the env ladder (dev → prod). In `vite dev`, with no deploy-injected
 // PUBLIC_SENTRY_* override, errors go to the dedicated dev GlitchTip project 30 (orrery-dev)
 // through its tailnet TLS node. Only a device ON the tailnet resolves that name (and the ACL
 // admits only the operator's machines), so a stranger who checks out + runs the repo reports
-// nothing (the transport silently fails). Staging/prod builds set PUBLIC_SENTRY_* and override
+// nothing (the transport silently fails). Deployed builds set PUBLIC_SENTRY_* and override
 // this. Not `homelab:8090`: GlitchTip listens on the mini's loopback there, so the old
 // fallback reached nothing (ADR-082 amendment 2026-10-17). The DSN key is a public browser
 // id (ships in the bundle) — safe to commit.
@@ -57,32 +56,26 @@ function isLoopbackHost(): boolean {
 
 /**
  * Initialise Sentry. No-op when the resolved DSN is empty (fork / non-dev build
- * with no baked env). `vite dev` reports to the dev rung; internal mobile builds
- * to the runtime target's tier (ADR-083).
+ * with no baked env). `vite dev` reports to the dev rung.
  *
  * Safe to call at module-eval time of `src/hooks.client.ts` — Sentry's
  * `init()` is idempotent and the early-return paths fire before any
  * SDK side effects.
  */
 export function initSentry(): void {
-  // ADR-083: an INTERNAL mobile build resolves the DSN + tier from the runtime
-  // target (staging/prod). Web + App Store release (`MOBILE_INTERNAL` false)
-  // take the env ladder: a deploy-injected DSN (staging/prod) wins; in `vite dev`
-  // fall back to the dev DSN; otherwise (non-dev build, no env) stay fork-silent.
-  const target = MOBILE_INTERNAL ? targetConfig() : null;
-  const dsn = target
-    ? target.sentryDsn
-    : publicEnv.PUBLIC_SENTRY_DSN || (dev ? DEV_SENTRY_DSN : '');
+  // The env ladder: a deploy-injected DSN wins; in `vite dev` fall back to the dev
+  // DSN; otherwise (non-dev build, no env) stay fork-silent.
+  const dsn = publicEnv.PUBLIC_SENTRY_DSN || (dev ? DEV_SENTRY_DSN : '');
   if (!dsn) return;
 
-  // A deploy-baked DSN (staging/prod) running on a loopback origin is a mirrored copy
-  // of a deployed bundle, not a real visitor (#556-#559: the staging Pages build served
-  // on http://127.0.0.1:<random>/orrery/ by an external harness — NOT identified; none of
+  // A deploy-baked DSN running on a loopback origin is a mirrored copy of a deployed
+  // bundle, not a real visitor (#556-#559: a Pages build of the app served on
+  // http://127.0.0.1:<random>/orrery/ by an external harness — NOT identified; none of
   // this repo's workflows does it). Keep reporting (local debugging of a deployed bundle
   // stays visible) but re-tag the environment `<tier>-loopback`, so these events never
-  // count as staging/prod. `vite dev` (dev DSN), Capacitor shells (http://localhost in
-  // the WebView) and internal mobile builds (own target) are unaffected.
-  const loopbackMirror = !target && !dev && Capacitor.getPlatform() === 'web' && isLoopbackHost();
+  // count as the real tier. `vite dev` (dev DSN) and Capacitor shells (http://localhost
+  // in the WebView) are unaffected.
+  const loopbackMirror = !dev && Capacitor.getPlatform() === 'web' && isLoopbackHost();
 
   // The same web bundle runs on the web AND inside the Capacitor iOS/Android/TV
   // shells (WKWebView/WebView). Every event carries a `platform` tag
@@ -95,21 +88,17 @@ export function initSentry(): void {
 
   const options = {
     dsn,
-    // Environment = the TIER (dev/staging/prod), uniform for web AND native (ADR-082
+    // Environment = the TIER (dev/prod), uniform for web AND native (ADR-082
     // amendment): deploy-injected PUBLIC_SENTRY_ENVIRONMENT wins, `vite dev` → `dev`,
-    // else `prod`. Mobile rides the SAME ladder — a simulator build bakes the staging
-    // DSN+env (→ staging project 6), a release build bakes prod (→ prod project 18). The
-    // `platform` tag below is the SEGMENT that splits app from browser; overloading
-    // `environment` with the platform (the old `mobile-<platform>`) collided with the tier.
-    // Internal builds (ADR-083) take the tier from the runtime target instead.
-    environment: target
-      ? target.sentryEnvironment
-      : `${publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod')}${loopbackMirror ? '-loopback' : ''}`,
+    // else `prod`. Mobile rides the SAME ladder. The `platform` tag below is the SEGMENT
+    // that splits app from browser; overloading `environment` with the platform (the old
+    // `mobile-<platform>`) collided with the tier.
+    environment: `${publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod')}${loopbackMirror ? '-loopback' : ''}`,
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
 
     // Tag every event `component: orrery` (+ `platform`) so streams stay separable in the
     // self-hosted GlitchTip shared with the podcast app. Per-environment projects: prod = 18,
-    // staging = 6, dev = 7 (the DSN's project id selects it). In dev, also tag the worktree
+    // dev = 7 (the DSN's project id selects it). In dev, also tag the worktree
     // (git branch) so parallel local sessions are distinguishable.
     initialScope: {
       tags: {

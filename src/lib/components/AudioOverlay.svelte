@@ -1341,7 +1341,7 @@
     font-family: var(--font-display, inherit);
     font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
 
   .overlay-title {
@@ -1461,7 +1461,7 @@
   .scope-tab {
     flex: 1;
     background: transparent;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     padding: 6px 8px;
@@ -1732,7 +1732,7 @@
     font-size: 11px;
     line-height: 1.5;
     letter-spacing: 0.3px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .origin-disclosure a {
     color: rgba(150, 175, 255, 0.8);

@@ -154,7 +154,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin-bottom: 8px;
   }
   .crumb a {
@@ -240,7 +240,7 @@
   .fig .credit {
     display: block;
     margin-top: 3px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-size: 11px;
   }
   /* A section opens like a chapter: its number, the title in the display face, a short

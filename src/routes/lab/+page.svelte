@@ -215,7 +215,7 @@
   .lab__canvas-note {
     margin-top: 8px;
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 
   /* Graph-paper background grid (32px major, 8px minor — figure-style.ts tokens) */

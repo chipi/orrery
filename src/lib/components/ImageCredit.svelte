@@ -107,7 +107,7 @@
   .image-credit .modifications,
   .image-credit .disclaimer {
     margin: 0 0 4px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .image-credit .disclaimer:last-child {
     margin-bottom: 0;

@@ -371,7 +371,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin-bottom: 6px;
   }
   .crumb a {
@@ -399,7 +399,7 @@
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   h1 {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;

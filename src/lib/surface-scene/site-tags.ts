@@ -510,7 +510,7 @@ export function tagMarkup(spec: TagSpec, scale = 1, count = 1): { frame: string;
     `<g transform="translate(0,-1) scale(${(0.92 * scale).toFixed(3)})">${TAG_ICONS[spec.icon]}</g>` +
     `<rect x="${-h + 5}" y="${h - 5}" width="${Math.round(5 * scale) + 1}" height="2" fill="${st}"/>` +
     (count > 1
-      ? `<g transform="translate(${-h},${-h})"><circle r="${8 * scale + 2}" fill="${col}"/><text text-anchor="middle" dy="0.35em" font-size="${(10 * scale + 1).toFixed(1)}" font-weight="700" fill="#0a0e1c" font-family="inherit">${count}</text></g>`
+      ? `<g transform="translate(${-h},${-h})"><circle r="${8 * scale + 2}" fill="${col}"/><text text-anchor="middle" dy="0.35em" font-size="${Math.max(11, 10 * scale + 1).toFixed(1)}" font-weight="700" fill="#0a0e1c" font-family="inherit">${count}</text></g>`
       : '') +
     [1, -1]
       .map(
@@ -524,7 +524,7 @@ export function tagMarkup(spec: TagSpec, scale = 1, count = 1): { frame: string;
     ? ` · <span style="color:${st}">${esc(spec.statusLabel)}</span>`
     : '';
   const card =
-    `<div class="site-tag__card" style="left:${ex + 4 * scale}px;top:${ly - 15 * scale}px;border-left-color:${col};font-size:${(11.5 * scale).toFixed(1)}px">` +
+    `<div class="site-tag__card" style="left:${ex + 4 * scale}px;top:${ly - 15 * scale}px;border-left-color:${col};font-size:${Math.max(11, 11.5 * scale).toFixed(1)}px">` +
     `<div class="site-tag__name">${esc(spec.name)}${count > 1 ? ` <span style="color:${col}">+${count - 1}</span>` : ''}</div>` +
     `<div class="site-tag__facts"><span style="color:${col}">${esc(spec.type)}</span>${facts}${status}</div>` +
     `</div>`;
@@ -539,7 +539,7 @@ const STYLE = `
 .site-tag__card{transform:translateY(calc((1 - var(--tag-card,1)) * 6px))}
 .site-tag__card{position:absolute;white-space:nowrap;padding:.42em .85em .5em .78em;background:linear-gradient(180deg,rgba(28,35,58,.86),rgba(8,11,22,.9));border:1px solid rgba(255,255,255,.12);border-left:2px solid;border-radius:2px;box-shadow:0 4px 14px rgba(0,0,0,.45);backdrop-filter:blur(4px)}
 .site-tag__name{letter-spacing:.08em;color:#f4f7fb;line-height:1.3;text-transform:uppercase}
-.site-tag__facts{font-size:.78em;letter-spacing:.12em;color:#9aa6bf;line-height:1.45;margin-top:1px;text-transform:uppercase}
+.site-tag__facts{font-size:max(11px,.78em);letter-spacing:.12em;color:#9aa6bf;line-height:1.45;margin-top:1px;text-transform:uppercase}
 .site-tag__lead--l,.site-tag--left .site-tag__lead--r{display:none}
 .site-tag--left .site-tag__lead--l{display:inline}
 .site-tag--bare .site-tag__card,.site-tag--bare .site-tag__lead{display:none}

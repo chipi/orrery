@@ -331,7 +331,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 8px 0 0;
   }
   .newest {
@@ -393,7 +393,7 @@
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 12px;
   }
   .toc ul {
@@ -463,7 +463,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
     max-width: 720px;
   }

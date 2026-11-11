@@ -5805,7 +5805,7 @@
     align-items: baseline;
   }
   .hud-key {
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -6339,7 +6339,7 @@
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 3px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
@@ -6755,7 +6755,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
   .comm-key {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -6792,7 +6792,7 @@
   .event-time {
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     margin-right: 8px;
   }
   .event-label {

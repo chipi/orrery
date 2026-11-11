@@ -130,10 +130,12 @@ Never mix faces within a semantic role. Descriptions and overviews are Space Mon
 
 | Role | Face | Size | Weight | Letter-spacing |
 |---|---|---|---|---|
+| Page title (text pages, `.page-title`) | Bebas Neue | `clamp(40px, 8vw, 64px)` (`--size-title`) | — | 1px |
 | Screen title | Bebas Neue | 20–26px | — | 3–4px |
 | Mission/object name (hero) | Bebas Neue | 26–42px | — | 2–3px |
 | Mission name (card) | Bebas Neue | 20–26px | — | 2px |
-| Section label | Space Mono | 11px | 700 | 3px |
+| Section label (`.page-section-label`) | Space Mono | 11px, 60% white, uppercase | 700 | 3px |
+| Page section title (`.page-section-title`) | Bebas Neue | 28px | — | 2px |
 | Data label | Space Mono | 11px (60% white) | 400 | 2px |
 | Data value | Space Mono | 12–14px | 700 | — |
 | Body label / button | Space Mono | 11–12px | 700 | 2px |
@@ -144,7 +146,7 @@ Never mix faces within a semantic role. Descriptions and overviews are Space Mon
 ### 3.3 Type rendering notes
 
 - All labels use `letter-spacing` explicitly — never rely on browser defaults
-- Section labels are ALL CAPS by content, not CSS `text-transform`
+- Section labels are uppercase through CSS `text-transform` (`.page-section-label`), so translations keep their own case in the source
 - Bebas Neue renders well at all sizes; use it large — 26px minimum for mission names
 - Floor is 11px for every text (UX A1 / Q2); labels 11px at 60% white (`--size-label`, `--color-text-label`), meta 12px, body 14px, lead 15–16px
 - Crimson Pro italic is only for real quotes and photo captions, never for data or overviews
@@ -199,6 +201,21 @@ Cards use CSS Grid with `auto-fill` and `minmax(280–290px, 1fr)`. Gap is 12–
 | Toggle pill buttons | 16px |
 | Close button | 50% (circle) |
 | Agency logo container | 6–8px |
+
+### 4.6 Page shell (text pages, UXD-012)
+
+Every text page (credits, colophon, library, gallery and its sub-pages, posters, patches, sourcing, programs, privacy, live, essays, science, the four hubs, the entity pages) uses `src/lib/styles/page-shell.css`. A page adds the classes to its own elements and defines no h1, lead or container rules of its own; no page adds `--nav-height` padding (the nav is sticky and already takes its height in flow).
+
+| Class | Values |
+|---|---|
+| `.page-shell` | `max-width: 1080px`, centred, `padding: 24px 20px 80px`; `--reading` 760px, `--wide` 1400px, `--inset` (the science host owns the container) |
+| `.page-crumb` | Space Mono 11px, 1px spacing, 60% white |
+| `.page-title` | Bebas Neue `--size-title` (`clamp(40px, 8vw, 64px)`), 1px spacing, line-height 1.05 |
+| `.page-lead` | `--size-lead` (16px, 15px under 600px) upright Space Mono, 78% white, 64ch |
+| `.page-section-label` | §5.8 values, uppercase; `--rule` adds the top rule |
+| `.page-section-title` | Bebas Neue 28px, 2px spacing |
+
+Not on the shell: the home page (home slice, H8), the scene routes, the Lab, the missions/launches/fleet browse tools, card stubs and dev pages.
 
 ---
 
@@ -311,7 +328,7 @@ border-bottom: 1px solid rgba(255,255,255,0.05);
 padding: 6px 0 4px;
 ```
 
-Content examples: `YOUR MISSIONS`, `CURRENTLY ACTIVE`, `MISSION ARCHIVE — PATH TO MARS`.
+Content examples: `YOUR MISSIONS`, `CURRENTLY ACTIVE`, `MISSION ARCHIVE — PATH TO MARS`. The same values are the text pages' section label, `.page-section-label` (§4.6, UXD-012).
 
 ### 5.9 Stats cell
 

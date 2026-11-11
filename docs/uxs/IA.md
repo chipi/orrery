@@ -184,6 +184,10 @@ Regions that persist across or within a screen.
 
 **HUD panels** — fly screen has four fixed-position panels (left identity, right navigation, right systems, CAPCOM panels). These are screen-specific, not shared shell regions.
 
+## §page-shell
+
+Text pages (everything that is not a scene, the home page, the Lab or a browse tool) share one shell, `src/lib/styles/page-shell.css` ([UXD-012](decisions/UXD-012-one-page-shell.md)): `.page-shell` container (1080px; `--reading` 760px; `--wide` 1400px; `--inset` inside the science host), `.page-crumb`, `.page-title` (Bebas `clamp(40px, 8vw, 64px)`), `.page-lead` (`--size-lead` upright), `.page-section-label` (11px 700 uppercase 60% white) and `.page-section-title` (Bebas 28px). The container starts right under the sticky nav with 24px of air; no page adds `--nav-height`. Full table: Design System §4.6.
+
 ---
 
 ## §shared-tokens

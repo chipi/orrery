@@ -12,10 +12,11 @@ import { collectCanonicalRoutes } from '../../scripts/site-routes.mjs';
  *
  * Optional: A1_SHOT_DIR=<dir> also saves one screenshot per screen (used for
  * the before/after review sheets); A1_VIEWPORT=390x844 overrides the project
- * viewport for that run.
+ * viewport for that run; A1_LOCALE=de (or ar) prefixes the named screens.
  */
 
 const FLOOR = 11;
+const LOC = process.env.A1_LOCALE ? `/${process.env.A1_LOCALE}` : '';
 
 const vp = process.env.A1_VIEWPORT?.match(/^(\d+)x(\d+)$/);
 if (vp) test.use({ viewport: { width: Number(vp[1]), height: Number(vp[2]) } });
@@ -78,35 +79,35 @@ const SCREENS: Screen[] = [
   {
     name: 'explore-planet-panel',
     open: async (page) => {
-      await page.goto('/explore?id=mars');
+      await page.goto(LOC + '/explore?id=mars');
       await panelReady(page);
     },
   },
   {
     name: 'mission-panel',
     open: async (page) => {
-      await page.goto('/missions?id=curiosity');
+      await page.goto(LOC + '/missions?id=curiosity');
       await panelReady(page);
     },
   },
   {
     name: 'fleet-panel',
     open: async (page) => {
-      await page.goto('/fleet?id=saturn-v');
+      await page.goto(LOC + '/fleet?id=saturn-v');
       await panelReady(page);
     },
   },
   {
     name: 'moon-site-panel',
     open: async (page) => {
-      await page.goto('/moon?site=apollo11', { waitUntil: 'networkidle' });
+      await page.goto(LOC + '/moon?site=apollo11', { waitUntil: 'networkidle' });
       await panelReady(page);
     },
   },
   {
     name: 'missions-filters-open',
     open: async (page) => {
-      await page.goto('/missions');
+      await page.goto(LOC + '/missions');
       const toggle = page.locator('button.filters-toggle');
       await expect(page.locator('[data-testid^="mission-card-"]').first()).toBeVisible({
         timeout: 20_000,
@@ -120,14 +121,14 @@ const SCREENS: Screen[] = [
   {
     name: 'credits',
     open: async (page) => {
-      await page.goto('/credits', { waitUntil: 'networkidle' });
+      await page.goto(LOC + '/credits', { waitUntil: 'networkidle' });
       await expect(page.locator('article.source-block').first()).toBeVisible({ timeout: 15_000 });
     },
   },
   {
     name: 'gallery-deep-sky',
     open: async (page) => {
-      await page.goto('/gallery/deep-sky', { waitUntil: 'networkidle' });
+      await page.goto(LOC + '/gallery/deep-sky', { waitUntil: 'networkidle' });
       await expect(page.locator('.masonry figure button').first()).toBeVisible({
         timeout: 15_000,
       });
@@ -206,7 +207,7 @@ test.describe('panel overview is an upright lead in the body font (UX A1 / Q2)',
   test('planet panel .editorial: upright, Space Mono, ≥ 15 px; stat labels ≥ 0.58 alpha', async ({
     page,
   }) => {
-    await page.goto('/explore?id=mars');
+    await page.goto(LOC + '/explore?id=mars');
     await panelReady(page);
     const lead = page.locator('aside.panel .editorial').first();
     await expect(lead).toBeVisible();

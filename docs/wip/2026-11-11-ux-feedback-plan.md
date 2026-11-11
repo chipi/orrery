@@ -440,3 +440,9 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
   facts row with values are visible at 1440x900 and 1366x768 without scrolling; facts as label above
   value. Same screen: the italic caption (A1, Q2 keeps italic only for real captions — this is one, so
   it stays italic at ≥ 14 px) and the teal-ish facility line (A3).
+- O6 (`/explore?regime=GIANTS`): the pane's one science card is "Planetary stats" — the same as
+  TERRESTRIAL; across the Explore ruler `keplers-laws`, `apsides` and `hill-sphere` also repeat
+  (SUN has `light-minute`, which the operator remembered). Slice B2 gives every regime its own best
+  match, no repeats within a ruler. Same screen confirms: Pioneer 10 / Voyager 2 not linked and "(USA)"
+  in the labels (C5), SCATTERED wrapping to two lines (C4/O1), the close X drawn over the scrolled text
+  (B1/P4), the Vega pill behind the panel (C3/SS1), oversized chips (A4), italic science card (A1).

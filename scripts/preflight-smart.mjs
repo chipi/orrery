@@ -11,7 +11,7 @@
  *   docs/.md only           -> check-no-secrets
  *   + any docs/** change    -> docs:build too (VitePress; it is otherwise first built by the
  *                              deploy workflows after a merge — 2026-10-31 a bare <page> in a
- *                              guide broke Deploy preview + Deploy docs on main)
+ *                              guide broke Deploy docs on main)
  *   static/data/** only     -> validate-data + build
  *   messages/*.json only    -> i18n:compile + typecheck + build
  *   src/**.svelte/.ts only  -> typecheck + lint + vitest --changed + build

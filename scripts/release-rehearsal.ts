@@ -288,9 +288,9 @@ console.log(`
     4. Wait for the CI + e2e workflows to go green on main.
     5. Publish the draft GH Release:
          gh release edit ${version} --draft=false --latest
-    6. The Deploy preview workflow auto-fires from the e2e success.
-       If e2e is red on the tagged commit, force the deploy:
-         gh workflow run "Deploy preview" --ref main
+    6. Deploy to prod (there is no staging) once CI + docker-e2e are green on the tagged commit:
+         gh workflow run "Deploy to prod VPS (orrery)" --ref main
+       validate-prod then runs on the deploy.
 
   Release-readiness rule lived up to: preflight + e2e both green
   locally BEFORE any tag landed.

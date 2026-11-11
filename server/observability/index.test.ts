@@ -113,17 +113,6 @@ describe('obsConfigFromEnv', () => {
     }
   });
 
-  it('staging uses the staging targets, never dev or prod ones, and pushes no logs', () => {
-    const cfg = obsConfigFromEnv('orrery-mcp', {
-      ORRERY_ENVIRONMENT: 'staging',
-      NODE_ENV: 'production',
-    });
-    expect(cfg.environment).toBe('staging');
-    expect(cfg.sentryDsn).toMatch(/@telemetry\.orrerylearn\.com\/6$/); // staging project 6
-    expect(cfg.umami?.websiteId).toBe('6e7ddfce-1437-49b9-8b77-a36d3584ccad'); // staging site
-    expect(cfg.logsPushUrl).toBeUndefined(); // a staging host ships stdout via Alloy
-  });
-
   it('tests (NODE_ENV=test) never send', () => {
     const cfg = obsConfigFromEnv('orrery-mcp', { NODE_ENV: 'test' });
     expect(cfg.environment).toBe('test');

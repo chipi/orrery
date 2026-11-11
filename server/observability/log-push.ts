@@ -3,7 +3,7 @@
  * containers' stdout to VictoriaLogs; a laptop has no Alloy, so a local server run
  * pushes its own lines straight to the tailnet VictoriaLogs jsonline endpoint with
  * the same stream fields, `environment=dev`. Only enabled when a push URL is
- * configured (the dev default; never prod/staging, never tests).
+ * configured (the dev default; never prod, never tests).
  *
  * Best-effort by design: lines are batched, a failed push drops that batch (one
  * stderr note, then silent), and nothing here can throw into the server.

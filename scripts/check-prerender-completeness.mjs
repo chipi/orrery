@@ -5,7 +5,7 @@
  * Background: in the 2026-06-16 #342 docker-e2e cycle, a misconfigured
  * `handleHttpError` allowed the prerender to suppress 404s and
  * `npm run build` happily exited green while emitting only the en-US
- * tree (18 HTML files instead of the expected ~340). Deploy preview
+ * tree (18 HTML files instead of the expected ~340). The Pages publish
  * pushed that incomplete artifact to gh-pages, and every locale-root
  * URL ended up serving the en-US fallback via nginx. CI was green;
  * the site was broken. That's the failure mode this check exists

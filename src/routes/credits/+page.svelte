@@ -879,7 +879,7 @@
     align-items: baseline;
   }
   .d-row .lbl {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .d-row a {
     color: #4ecdc4;
@@ -929,7 +929,7 @@
     color: rgba(201, 170, 111, 0.85);
   }
   .storage-fine {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-size: 12px;
   }
 
@@ -1149,7 +1149,7 @@
     align-items: baseline;
   }
   .ph-row .lbl {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .ph-row a,
   .t-row a {
@@ -1164,10 +1164,10 @@
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 4px;
     border-radius: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .ph-row.mods {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   /* Satellite attribution chip — links surface imagery to the spacecraft
      that captured it (#360). */
@@ -1203,7 +1203,7 @@
   }
   .ph-row.stems {
     margin-top: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     gap: 4px;
   }
   .stem-sep {
@@ -1226,7 +1226,7 @@
     text-transform: uppercase;
   }
   .t-rel {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .t-snippet {
     font-family: 'Crimson Pro', serif;

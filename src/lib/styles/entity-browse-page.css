@@ -57,7 +57,7 @@
   transition: border-color 120ms;
 }
 .entity-browse-page .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-label);
 }
 .entity-browse-page .search-input:focus {
   outline: none;
@@ -94,7 +94,7 @@
 }
 .entity-browse-page .filters-chevron {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-label);
 }
 
 /* Inline count chip on the right end of the filters toggle bar.
@@ -114,7 +114,7 @@
   color: #4ecdc4;
 }
 .entity-browse-page .count-total-only {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-label);
 }
 
 /* CLEAR FILTERS chip — visible inside the expanded strip only when

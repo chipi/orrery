@@ -163,7 +163,7 @@
   }
   .crumb .sep {
     margin: 0 8px;
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--color-text-label);
   }
   .head {
     margin-bottom: 32px;
@@ -234,7 +234,7 @@
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0.3px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin-top: 9px;
   }
   .fig .credit {
@@ -297,7 +297,7 @@
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 12px;
   }
   .doors ul,

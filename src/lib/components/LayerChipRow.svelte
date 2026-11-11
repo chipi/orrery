@@ -120,7 +120,7 @@
     background: var(--body-tint, #4ecdc4);
   }
   .chip-group:not(.active) {
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
   .chip-group:hover,
   .chip-group:focus-visible {

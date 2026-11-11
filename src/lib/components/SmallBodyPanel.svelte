@@ -459,7 +459,7 @@
      matches the rest of the detail-panel family (Planet, Sun, Mission,
      Fleet, Station). */
   .editorial.empty {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .note {
     font-family: var(--font-mono, 'Space Mono', monospace);

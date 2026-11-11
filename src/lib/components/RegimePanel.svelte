@@ -292,7 +292,7 @@
     line-height: 1.45;
   }
   .firsts-year {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-weight: 700;
   }
   .resident-link,

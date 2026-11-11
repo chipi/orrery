@@ -311,7 +311,7 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-retired {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.03);
   }

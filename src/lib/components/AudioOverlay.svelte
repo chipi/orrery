@@ -1560,11 +1560,11 @@
   }
   .route-tag {
     font-family: var(--font-mono, monospace);
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .dur-tag {
     font-variant-numeric: tabular-nums;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .heard-tag {
     color: rgba(111, 201, 159, 0.85);
@@ -1715,7 +1715,7 @@
     margin: 0;
     padding: 12px 18px 16px;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     line-height: 1.5;
   }
   .inventory-empty.error {
@@ -1740,7 +1740,7 @@
     text-decoration-color: rgba(150, 175, 255, 0.4);
   }
   .origin-detail {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
 
   .cc-toggle {

@@ -90,7 +90,7 @@
   .enter-ar.ios-fallback {
     background: transparent;
     border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     cursor: help;
   }
 </style>

@@ -513,7 +513,7 @@
     margin: 6px 0 12px;
   }
   .editorial.empty {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .prose {
     font-size: 14px;

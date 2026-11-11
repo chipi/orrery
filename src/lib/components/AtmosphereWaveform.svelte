@@ -339,6 +339,6 @@
     margin-right: 4px;
   }
   .wave-hint {
-    color: rgba(255, 255, 255, 0.38);
+    color: var(--color-text-label);
   }
 </style>

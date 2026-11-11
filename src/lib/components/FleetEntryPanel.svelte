@@ -1161,7 +1161,7 @@
   .credit {
     margin: 16px 0 0;
     font-size: var(--size-meta);
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     line-height: 1.5;
   }
 

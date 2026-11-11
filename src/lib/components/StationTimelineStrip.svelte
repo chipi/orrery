@@ -255,7 +255,7 @@
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 0 0 0.75rem 0;
     font-weight: 600;
   }

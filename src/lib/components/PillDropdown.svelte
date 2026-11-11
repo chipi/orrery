@@ -274,7 +274,7 @@
     border-color: rgba(68, 102, 255, 0.6);
   }
   .search::placeholder {
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     text-transform: none;
     letter-spacing: 0;
   }
@@ -287,7 +287,7 @@
   .empty {
     margin: 0;
     padding: 12px;
-    color: rgba(230, 232, 238, 0.5);
+    color: rgba(230, 232, 238, 0.6);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     text-align: center;

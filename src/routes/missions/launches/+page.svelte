@@ -477,7 +477,7 @@
   .loading,
   .empty {
     padding: 40px 16px;
-    color: rgba(230, 232, 238, 0.5);
+    color: rgba(230, 232, 238, 0.6);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;

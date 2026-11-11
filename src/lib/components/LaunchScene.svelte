@@ -1034,7 +1034,7 @@
   .beat .lbl {
     font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(200, 225, 255, 0.5);
+    color: rgba(200, 225, 255, 0.6);
     white-space: nowrap;
     display: inline-block;
   }

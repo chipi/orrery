@@ -185,7 +185,7 @@
     line-height: 1.15;
   }
   .ll-note {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   @media (min-width: 601px) {
     .lens-legend {

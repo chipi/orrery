@@ -234,7 +234,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 3px;
-    color: rgba(255, 220, 100, 0.5);
+    color: rgba(255, 220, 100, 0.6);
     margin-bottom: 4px;
   }
   .name {

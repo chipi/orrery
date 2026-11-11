@@ -77,7 +77,7 @@
   .month-count {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: rgba(230, 232, 238, 0.5);
+    color: rgba(230, 232, 238, 0.6);
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }

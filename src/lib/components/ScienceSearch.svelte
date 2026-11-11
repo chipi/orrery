@@ -245,7 +245,7 @@
     outline: none;
   }
   .input::placeholder {
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
   .results {
     list-style: none;
@@ -298,7 +298,7 @@
     padding: 14px 18px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
   .hint {
     padding: 8px 18px;

@@ -47,11 +47,11 @@ export function statusTone(
     case 'ENDED':
       return {
         label: role === 'launch-pad' ? m.surface_status_retired() : m.surface_status_ended(),
-        color: 'rgba(255,255,255,0.5)',
+        color: 'rgba(255,255,255,0.6)',
         outline: 'solid',
       };
     case 'FLOWN':
     default:
-      return { label: m.surface_status_flown(), color: 'rgba(255,255,255,0.5)', outline: 'solid' };
+      return { label: m.surface_status_flown(), color: 'rgba(255,255,255,0.6)', outline: 'solid' };
   }
 }

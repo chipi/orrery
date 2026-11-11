@@ -267,7 +267,7 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 1px;
-    color: rgba(78, 205, 196, 0.55);
+    color: rgba(78, 205, 196, 0.6);
     margin: 0;
     text-transform: uppercase;
   }

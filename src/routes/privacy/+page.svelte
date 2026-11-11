@@ -49,10 +49,14 @@
   <meta name="description" content={metaDescription(m.privacy_page_intro())} />
 </svelte:head>
 
-<section class="privacy" aria-labelledby="privacy-title" data-route-ready="true">
+<section
+  class="privacy page-shell page-shell--reading"
+  aria-labelledby="privacy-title"
+  data-route-ready="true"
+>
   <header class="head">
-    <h1 id="privacy-title">{m.privacy_page_title()}</h1>
-    <p class="intro">{m.privacy_page_intro()}</p>
+    <h1 id="privacy-title" class="page-title">{m.privacy_page_title()}</h1>
+    <p class="intro page-lead">{m.privacy_page_intro()}</p>
   </header>
 
   <article class="card control-card" aria-labelledby="privacy-controls-title">
@@ -145,23 +149,8 @@
 </section>
 
 <style>
-  .privacy {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 24px 16px 96px;
-    color: var(--fg, #e8e8ea);
-  }
-  .head h1 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: clamp(24px, 5vw, 34px);
-    margin: 0 0 12px;
-    letter-spacing: 0.02em;
-  }
-  .intro {
-    font-size: 15px;
-    line-height: 1.65;
-    opacity: 0.9;
-    margin: 0 0 28px;
+  .head {
+    margin-bottom: 28px;
   }
   .card {
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -170,6 +159,7 @@
     margin-bottom: 16px;
     background: rgba(255, 255, 255, 0.02);
   }
+  /* a2-keep: card titles inside the opt-out cards, not page section headings */
   .card h2 {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 14px;
@@ -243,10 +233,5 @@
   }
   .card a {
     color: var(--accent, #7cc7ff);
-  }
-  @media (max-width: 480px) {
-    .privacy {
-      padding-inline: 14px;
-    }
   }
 </style>

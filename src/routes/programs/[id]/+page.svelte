@@ -151,8 +151,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="program">
-  <nav class="crumb">
+<article class="program page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref(`/programs`)}>{m.programs_index_title()}</a>
     <span class="sep">›</span>
     <span>{p.name}</span>
@@ -168,12 +168,12 @@
         >
       </p>
       <div class="title-row">
-        <h1>{p.name}</h1>
+        <h1 class="page-title">{p.name}</h1>
         {#if badges[`program:${p.id}`]}
           <img class="prog-badge" src={assetUrl(badges[`program:${p.id}`])} alt="" />
         {/if}
       </div>
-      <p class="tagline">{p.tagline}</p>
+      <p class="tagline page-lead">{p.tagline}</p>
       <p class="chips">
         <span class="chip">{KIND_LABEL[p.kind]?.() ?? p.kind}</span>
         <span class="chip chip-status status-{p.status.toLowerCase()}"
@@ -194,7 +194,7 @@
 
   {#each sections as sec (sec.label)}
     <section class="spine">
-      <h2>{sec.label}</h2>
+      <h2 class="page-section-label page-section-label--rule">{sec.label}</h2>
       {#each sec.blocks as block, i (i)}
         {#if block.type === 'prose'}
           <p>{block.md}</p>
@@ -219,7 +219,7 @@
 
   {#if modules.length}
     <section class="assembly">
-      <h2>{m.program_assembly_h()}</h2>
+      <h2 class="page-section-label page-section-label--rule">{m.program_assembly_h()}</h2>
       <ol class="timeline mod-timeline">
         {#each modules as m, i (i)}
           <li>
@@ -243,7 +243,7 @@
   {/if}
 
   <section class="roster">
-    <h2>{m.program_section_missions()}</h2>
+    <h2 class="page-section-label page-section-label--rule">{m.program_section_missions()}</h2>
     <div class="roster-split" class:solo={!hasClickable}>
       <ol class="timeline">
         {#each missions as r, i (i)}
@@ -294,7 +294,7 @@
       {/if}
     </div>
 
-    <h2>{m.program_section_hardware()}</h2>
+    <h2 class="page-section-label page-section-label--rule">{m.program_section_hardware()}</h2>
     <ul class="hardware">
       {#each fleet as r, i (i)}
         <li>
@@ -307,7 +307,7 @@
 
   {#if p.surface_sites && p.surface_sites.length}
     <section class="surface">
-      <h2>{m.programs_on_surface()}</h2>
+      <h2 class="page-section-label page-section-label--rule">{m.programs_on_surface()}</h2>
       <ul class="surface-list">
         {#each p.surface_sites as s (s.surface + s.site)}
           <li>
@@ -325,7 +325,7 @@
 
   {#if p.see_also && p.see_also.length}
     <section class="see-also">
-      <h2>{m.programs_go_deeper()}</h2>
+      <h2 class="page-section-label page-section-label--rule">{m.programs_go_deeper()}</h2>
       <ul>
         {#each p.see_also as s (s.href)}
           <li>
@@ -340,7 +340,7 @@
 
   {#if p.related_programs && p.related_programs.length}
     <section class="related">
-      <h2>{m.programs_related()}</h2>
+      <h2 class="page-section-label page-section-label--rule">{m.programs_related()}</h2>
       <p>
         {#each p.related_programs as rid (rid)}
           <a class="rel" href={localHref(`/programs/${rid}`)}>{pretty(rid)}</a>
@@ -350,7 +350,7 @@
   {/if}
 
   <section class="sources">
-    <h2>{m.program_section_sources()}</h2>
+    <h2 class="page-section-label page-section-label--rule">{m.program_section_sources()}</h2>
     <ul>
       {#each p.links as l (l.u)}
         <li><a href={l.u} target="_blank" rel="noopener noreferrer">{l.l} ↗</a></li>
@@ -360,23 +360,8 @@
 </article>
 
 <style>
-  .program {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 10px 20px 80px;
-    font-family: var(--font-editorial, 'Crimson Pro', serif);
-    color: var(--color-text, #eef);
-  }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--color-text-label);
-    margin-bottom: 6px;
-  }
   .crumb a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
+    text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 6px;
@@ -400,19 +385,6 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-text-label);
-  }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(40px, 9vw, 72px);
-    line-height: 1;
-    letter-spacing: 1px;
-    margin: 6px 0 10px;
-  }
-  .tagline {
-    font-size: 19px;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 40ch;
   }
   .chips {
     margin-top: 14px;
@@ -443,21 +415,9 @@
   .spine {
     margin: 0 0 34px;
   }
-  .spine h2,
-  .roster h2,
-  .assembly h2,
-  .surface h2,
-  .see-also h2,
-  .related h2,
-  .sources h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #7fb0e0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 14px;
-    margin: 0 0 14px;
+  /* Sections carry their own spacing; the label sits at their top. */
+  .program .page-section-label {
+    margin-top: 0;
   }
   .spine p {
     font-size: 17px;

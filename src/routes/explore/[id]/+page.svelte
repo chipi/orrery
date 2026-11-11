@@ -40,8 +40,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="entity">
-  <nav class="crumb">
+<article class="entity page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref('/explore')}>{section}</a>
     <span class="sep">›</span>
     <span>{body.name}</span>
@@ -49,8 +49,8 @@
 
   <header>
     {#if body.type}<p class="meta">{body.type}</p>{/if}
-    <h1>{body.name}</h1>
-    {#if body.fact}<p class="lede">{body.fact}</p>{/if}
+    <h1 class="page-title">{body.name}</h1>
+    {#if body.fact}<p class="lede page-lead">{body.fact}</p>{/if}
   </header>
 
   {#if body.text}<p class="dispatch">{body.text}</p>{/if}
@@ -69,7 +69,7 @@
 
   {#if data.science.length}
     <section class="science">
-      <h2>{m.panel_tab_science()}</h2>
+      <h2 class="page-section-label">{m.panel_tab_science()}</h2>
       <ul class="linklist wide">
         {#each data.science as sec (sec.href)}
           <li>
@@ -84,7 +84,7 @@
 
   {#if body.visits.length}
     <section class="visits">
-      <h2>{m.panel_tab_missions()}</h2>
+      <h2 class="page-section-label">{m.panel_tab_missions()}</h2>
       <ul>
         {#each body.visits as v (v)}<li>{v}</li>{/each}
       </ul>

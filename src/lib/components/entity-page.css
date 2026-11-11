@@ -1,28 +1,17 @@
 /*
- * Shared layout of the indexable entity pages (0.9.8 SEO): /missions/<id>,
- * /fleet/<id>, /<body>/<site>, /explore/<id>, /lab/<formula>. Plain CSS scoped
- * by the .entity root class; each page imports it.
+ * Content layout of the indexable entity pages (0.9.8 SEO): /missions/<id>,
+ * /fleet/<id>, /<body>/<site>, /explore/<id>, /lab/<formula>. The container,
+ * crumb, title, lead and section label come from the page shell
+ * (src/lib/styles/page-shell.css, UXD-012); this file styles what is inside.
  */
 .entity {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 72px 20px 64px;
-  color: rgba(255, 255, 255, 0.86);
   line-height: 1.6;
 }
 .entity p {
   margin: 0 0 14px;
 }
-.entity .crumb {
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: var(--color-text-label);
-  margin-bottom: 18px;
-}
 .entity .crumb a {
-  color: rgba(255, 255, 255, 0.65);
-  text-decoration: none;
+  text-decoration: underline;
 }
 .entity .crumb .sep {
   margin: 0 6px;
@@ -33,16 +22,6 @@
   letter-spacing: 1px;
   color: var(--color-text-label);
   margin: 0 0 6px;
-}
-.entity h1 {
-  font-size: clamp(28px, 6vw, 44px);
-  line-height: 1.1;
-  margin: 0 0 12px;
-  color: #fff;
-}
-.entity .lede {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.78);
 }
 .entity .hero {
   margin: 24px 0;
@@ -82,12 +61,7 @@
 .entity .learn a {
   color: #7fb0e0;
 }
-.entity h2 {
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: var(--color-text-label);
+.entity .page-section-label {
   margin: 28px 0 8px;
 }
 .entity ol,

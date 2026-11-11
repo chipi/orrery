@@ -1,0 +1,75 @@
+/* One page shell for every text page (UXD-012, slice A2). Container, title, lead, crumb and
+   section headings live here; a page adds the classes to its own elements and keeps its own
+   class for hooks. Pages must not redefine h1/lead/container rules (scoped rules would win). */
+
+.page-shell {
+  max-width: var(--page-width, 1080px);
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+  color: var(--color-text);
+}
+.page-shell--reading {
+  --page-width: 760px;
+}
+.page-shell--wide {
+  --page-width: 1400px;
+}
+/* The host layout (science) owns the container and its spacing; a width modifier
+   (--reading) still caps the measure. */
+.page-shell--inset {
+  max-width: var(--page-width, none);
+  margin: 0;
+  padding: 0;
+}
+
+.page-crumb {
+  font-family: 'Space Mono', monospace;
+  font-size: var(--size-label);
+  letter-spacing: 1px;
+  color: var(--color-text-label);
+  margin: 0 0 14px;
+}
+.page-crumb a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: var(--size-title);
+  letter-spacing: 1px;
+  line-height: 1.05;
+  margin: 0 0 10px;
+  color: var(--color-text);
+}
+
+.page-lead {
+  font-size: var(--size-lead);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 64ch;
+  margin: 0 0 12px;
+  font-style: normal;
+}
+
+.page-section-label {
+  --page-label-color: var(--color-text-label);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: var(--size-label);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--page-label-color);
+  margin: 32px 0 16px;
+}
+.page-section-label--rule {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+}
+
+.page-section-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--color-text);
+  margin: 0 0 16px;
+}

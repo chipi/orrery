@@ -31,61 +31,25 @@
   } = $props();
 </script>
 
-<article class="section-hub">
+<article class="section-hub page-shell">
   <header class="hub-head">
-    <h1>{heading}</h1>
-    <p class="hub-intro">{intro}</p>
+    <h1 class="page-title">{heading}</h1>
+    <p class="hub-intro page-lead">{intro}</p>
   </header>
 
   <RouteCardGrid {cards} hrefFor={(route) => localHref(route)} {gridTestId} {gridAudioStage} />
 </article>
 
 <style>
-  .section-hub {
-    margin: 0 auto;
-    padding: 16px 16px 32px;
-    color: var(--color-text);
-  }
   .hub-head {
-    padding: 8px 0 24px;
-    max-width: 60ch;
+    padding-bottom: 12px;
   }
-  .hub-head h1 {
-    font-family: var(--font-display);
-    font-size: 32px;
-    letter-spacing: 4px;
-    margin: 0 0 12px;
-    color: var(--color-text);
-  }
-  .hub-intro {
-    font-size: var(--size-lead);
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.82);
-    margin: 0;
-  }
-
-  @media (min-width: 768px) {
-    .section-hub {
-      padding: 24px 24px 48px;
-      max-width: 720px;
-    }
-    .hub-head h1 {
-      font-size: 44px;
-      letter-spacing: 5px;
-    }
-    .hub-intro {
-      font-size: 18px;
-    }
-  }
-  @media (min-width: 1024px) {
-    .section-hub {
-      max-width: 880px;
-    }
-  }
-  /* TV / 10-foot landscape (RFC-031 S6): full-width grid so every box sits in
+  /* a2-keep: TV / 10-foot layout (RFC-031 S6), not the page shell.
+     TV / 10-foot landscape (RFC-031 S6): full-width grid so every box sits in
      one screen for D-pad navigation. */
   @media (hover: none) and (pointer: coarse) and (min-width: 1100px) and (max-resolution: 1.5dppx) {
     .section-hub {
+      /* a2-keep: TV full-width grid */
       max-width: none;
       width: 100%;
       box-sizing: border-box;

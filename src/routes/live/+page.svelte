@@ -49,10 +49,10 @@
   <meta name="description" content={metaDescription(m.live_intro())} />
 </svelte:head>
 
-<section class="live" aria-labelledby="live-title" data-route-ready="true">
+<section class="live page-shell" aria-labelledby="live-title" data-route-ready="true">
   <header class="live-head">
-    <h1 id="live-title">{m.live_title()}</h1>
-    <p class="live-intro">{m.live_intro()}</p>
+    <h1 id="live-title" class="page-title">{m.live_title()}</h1>
+    <p class="live-intro page-lead">{m.live_intro()}</p>
   </header>
 
   <!-- Pinned permanent stream (ISS) — click-to-load facade, honest live badge. -->
@@ -98,7 +98,7 @@
 
   <!-- Launch broadcasts — time-gated; link-out (we hold the launch page, not the stream). -->
   <section class="launches" aria-labelledby="live-launches">
-    <h2 id="live-launches">{m.live_launches_heading()}</h2>
+    <h2 id="live-launches" class="page-section-label">{m.live_launches_heading()}</h2>
     {#if !loaded}
       <p class="muted">{m.live_loading()}</p>
     {:else if launchFeeds.length === 0}
@@ -146,19 +146,8 @@
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
 <style>
-  .live {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 16px 64px;
-    color: #dfe6f2;
-  }
-  .live-head h1 {
-    margin: 0 0 6px;
-  }
-  .live-intro {
-    margin: 0 0 20px;
-    color: #aeb7c7;
-    max-width: 60ch;
+  .live-head {
+    margin-bottom: 20px;
   }
   .pin {
     margin-bottom: 28px;
@@ -243,11 +232,6 @@
     position: absolute;
     top: 10px;
     left: 10px;
-  }
-  .launches h2 {
-    font-size: 1.05rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 6px;
   }
   .muted {
     color: #8b93a4;

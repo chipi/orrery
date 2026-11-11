@@ -53,6 +53,7 @@
   --size-body: 14px;
   --size-lead: 16px;
   --size-caption: 14px;
+  --size-title: clamp(40px, 8vw, 64px); /* page h1, UXD-012 */
   --color-text-label: rgba(255, 255, 255, 0.6);
 
   /* Spacing */

@@ -137,8 +137,8 @@
   </nav>
 
   <header>
-    <h1>{section.title}</h1>
-    <p class="lede">{section.intro_sentence}</p>
+    <h1 class="page-title">{section.title}</h1>
+    <p class="lede page-lead">{section.intro_sentence}</p>
   </header>
 
   {#if section.diagram}
@@ -208,7 +208,7 @@
 
   {#if section.see_in_app && section.see_in_app.length > 0}
     <section class="see-in-app">
-      <h2>{m.science_see_in_app()}</h2>
+      <h2 class="page-section-label">{m.science_see_in_app()}</h2>
       <ul>
         {#each section.see_in_app as link (link.route + link.context_key)}
           <li>
@@ -231,7 +231,7 @@
 
   {#if section.links.length > 0}
     <section class="learn-more">
-      <h2>{m.science_learn_more()}</h2>
+      <h2 class="page-section-label">{m.science_learn_more()}</h2>
       <ul>
         {#each section.links as link (link.u)}
           <li>
@@ -280,16 +280,8 @@
     margin: 0 8px;
     opacity: 0.6;
   }
-  h1 {
-    font-family: var(--font-display);
-    font-size: 28px;
-    letter-spacing: 4px;
-    margin: 0 0 8px;
-  }
-  .lede {
-    font-size: var(--size-lead);
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 24px;
+  header {
+    margin-bottom: 24px;
   }
   .hero-diagram {
     margin: 0 0 24px;
@@ -393,12 +385,8 @@
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .see-in-app h2,
-  .learn-more h2 {
-    font-family: var(--font-display);
-    font-size: 14px;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.6);
+  .see-in-app .page-section-label,
+  .learn-more .page-section-label {
     margin: 0 0 12px;
   }
   .see-in-app ul,

@@ -61,7 +61,7 @@
 </nav>
 
 <header class="tab-hero">
-  <h1>{tabLabel(data.tab)}</h1>
+  <h1 class="page-title">{tabLabel(data.tab)}</h1>
 </header>
 
 <figure class="tab-cover">
@@ -101,12 +101,6 @@
   }
   .tab-hero {
     margin-bottom: 16px;
-  }
-  h1 {
-    font-family: var(--font-display);
-    font-size: 28px;
-    letter-spacing: 4px;
-    margin: 0;
   }
   .tab-cover {
     margin: 0 0 24px;

@@ -50,10 +50,10 @@
   <meta name="description" content={metaDescription(m.gallery_meta_description())} />
 </svelte:head>
 
-<article class="gallery-hub" data-route-ready="true">
+<article class="gallery-hub page-shell" data-route-ready="true">
   <header>
-    <h1>{m.gallery_h1()}</h1>
-    <p class="lede">{m.gallery_lede()}</p>
+    <h1 class="page-title">{m.gallery_h1()}</h1>
+    <p class="lede page-lead">{m.gallery_lede()}</p>
   </header>
 
   <div class="strips">
@@ -109,25 +109,6 @@
 </article>
 
 <style>
-  .gallery-hub {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 24px) 20px 80px;
-    color: var(--color-text, #eef);
-  }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(40px, 8vw, 64px);
-    letter-spacing: 1px;
-    margin: 0 0 10px;
-  }
-  .lede {
-    font-size: 17px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 60ch;
-  }
-
   .strips {
     display: flex;
     flex-direction: column;
@@ -138,7 +119,8 @@
     position: relative;
     display: block;
     height: clamp(168px, 25vh, 240px);
-    border-radius: 14px;
+    /* G1 (UXD-012): a band whose text starts on the page title's left edge. */
+    border-radius: 0 14px 14px 0;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
@@ -191,9 +173,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 clamp(24px, 5vw, 56px);
+    padding-inline: 0 clamp(24px, 5vw, 56px);
     max-width: min(560px, 64%);
   }
+  /* a2-keep: card title inside an image strip, not a page section heading */
   .strip-text h2 {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;
     font-size: clamp(30px, 4.6vw, 46px);

@@ -60,15 +60,15 @@
   <meta name="description" content={metaDescription(m.essays_seo_description())} />
 </svelte:head>
 
-<section class="longview" data-route-ready="true">
+<section class="longview page-shell" data-route-ready="true">
   <header class="head">
     <LongViewHero />
-    <p class="intro">{m.essays_intro()}</p>
+    <p class="intro page-lead">{m.essays_intro()}</p>
   </header>
 
   {#each groups as g (g.key)}
     <section class="movement">
-      <h2>{g.label}</h2>
+      <h2 class="page-section-label page-section-label--rule">{g.label}</h2>
       <p class="mv-blurb">{g.blurb}</p>
       <div class="cards">
         {#each g.essays as e (e.slug)}
@@ -93,31 +93,10 @@
 </section>
 
 <style>
-  .longview {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 14px 20px 96px;
-    color: var(--color-text, #eef);
-  }
-  .intro {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 20px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 64ch;
-    margin: 0 0 8px;
-  }
   .movement {
     margin-top: 44px;
   }
-  .movement h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #7fb0e0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 18px;
+  .movement .page-section-label {
     margin: 0 0 4px;
   }
   .mv-blurb {

@@ -266,12 +266,12 @@
   <meta name="description" content={metaDescription(m.credits_intro_body_2())} />
 </svelte:head>
 
-<section class="credits" aria-labelledby="credits-title" data-route-ready="true">
+<section class="credits page-shell" aria-labelledby="credits-title" data-route-ready="true">
   <header class="head">
-    <h1 id="credits-title">{m.credits_title()}</h1>
-    <h2>{m.credits_intro_heading()}</h2>
-    <p class="intro">{m.credits_intro_body_1()}</p>
-    <p class="intro">{m.credits_intro_body_2()}</p>
+    <h1 id="credits-title" class="page-title">{m.credits_title()}</h1>
+    <h2 class="page-section-label">{m.credits_intro_heading()}</h2>
+    <p class="intro page-lead">{m.credits_intro_body_1()}</p>
+    <p class="intro page-lead">{m.credits_intro_body_2()}</p>
     <p class="totals">
       {m.credits_totals({
         photos: totals.photos,
@@ -315,7 +315,7 @@
             />
           {/if}
           <div class="src-meta">
-            <h2>
+            <h2 class="page-section-title">
               <a href={group.source.url} target="_blank" rel="noopener noreferrer">
                 {group.source.name}
               </a>
@@ -933,32 +933,9 @@
     font-size: 12px;
   }
 
-  .credits {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 24px 16px 96px;
-    color: #dde4ff;
-  }
-  .head h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    letter-spacing: 4px;
-    margin: 0 0 4px;
-    color: #fff;
-  }
-  .head h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-    margin: 0 0 16px;
-  }
-  .intro {
-    font-size: var(--size-lead);
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 12px;
+  /* The section label sits right under the title here. */
+  .head .page-section-label {
+    margin-top: 0;
   }
   .totals,
   .disclaimer {
@@ -1047,12 +1024,8 @@
     object-fit: contain;
     flex-shrink: 0;
   }
-  .src-meta h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
-    margin: 0 0 4px;
-    color: #fff;
+  .src-meta .page-section-title {
+    margin-bottom: 4px;
   }
   .src-meta a {
     color: #fff;
@@ -1250,9 +1223,6 @@
   }
 
   @media (min-width: 768px) {
-    .credits {
-      padding: 36px 32px 96px;
-    }
     .toc ul {
       grid-template-columns: 1fr 1fr;
     }

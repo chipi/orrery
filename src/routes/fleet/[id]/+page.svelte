@@ -81,8 +81,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="entity">
-  <nav class="crumb">
+<article class="entity page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref('/fleet')}>{section}</a>
     <span class="sep">›</span>
     <span>{entry.name}</span>
@@ -93,8 +93,8 @@
       {entry.agency} · {CATEGORY[entry.category]?.() ?? entry.category} ·
       <span class="status">{fleetStatusLabel(entry.status)}</span>
     </p>
-    <h1>{entry.name}</h1>
-    {#if entry.tagline}<p class="lede">{entry.tagline}</p>{/if}
+    <h1 class="page-title">{entry.name}</h1>
+    {#if entry.tagline}<p class="lede page-lead">{entry.tagline}</p>{/if}
   </header>
 
   {#if data.hero}
@@ -150,7 +150,7 @@
 
   {#if data.missions.length}
     <section class="missions">
-      <h2>{m.panel_tab_missions()}</h2>
+      <h2 class="page-section-label">{m.panel_tab_missions()}</h2>
       <ul class="linklist">
         {#each data.missions as mission (mission.id)}
           <li>
@@ -165,7 +165,7 @@
 
   {#if data.crewed.length}
     <section class="crew">
-      <h2>{m.panel_tab_crew()}</h2>
+      <h2 class="page-section-label">{m.panel_tab_crew()}</h2>
       <ul>
         {#each data.crewed as fl (fl.designation)}
           <li>
@@ -181,7 +181,7 @@
 
   {#if data.sites.length}
     <section class="sites">
-      <h2>{siteHeading}</h2>
+      <h2 class="page-section-label">{siteHeading}</h2>
       <ul class="linklist wide">
         {#each data.sites as site (site.href)}
           <li>
@@ -197,7 +197,7 @@
   {#each [{ title: m.fleet_engines_heading(), items: data.engines }, { title: m.fleet_used_on(), items: data.usedOn }, { title: section, items: data.alongside }, { title: CATEGORY[entry.category]?.() ?? entry.category, items: data.kin }] as group (group.title)}
     {#if group.items.length}
       <section class="related">
-        <h2>{group.title}</h2>
+        <h2 class="page-section-label">{group.title}</h2>
         <ul class="linklist">
           {#each group.items as h (h.id)}
             <li>
@@ -212,7 +212,7 @@
 
   {#if data.museums.length}
     <section class="museums">
-      <h2>{m.museum_block_heading()}</h2>
+      <h2 class="page-section-label">{m.museum_block_heading()}</h2>
       <ul>
         {#each data.museums as museum (museum.id)}
           <li>

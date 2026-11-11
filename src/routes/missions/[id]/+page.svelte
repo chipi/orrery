@@ -59,8 +59,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="entity">
-  <nav class="crumb">
+<article class="entity page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref('/missions')}>{section}</a>
     <span class="sep">›</span>
     <span>{name}</span>
@@ -71,8 +71,8 @@
       {mission.agency} · {mission.year} ·
       <span class="status">{missionStatusLabel(mission.status)}</span>
     </p>
-    <h1>{name}</h1>
-    {#if mission.first}<p class="lede">{mission.first}</p>{/if}
+    <h1 class="page-title">{name}</h1>
+    {#if mission.first}<p class="lede page-lead">{mission.first}</p>{/if}
   </header>
 
   {#if data.hero}
@@ -132,7 +132,7 @@
 
   {#if mission.events?.length}
     <section class="events">
-      <h2>{m.mp_flight_section_events()}</h2>
+      <h2 class="page-section-label">{m.mp_flight_section_events()}</h2>
       <ol>
         {#each mission.events as ev, i (i)}
           <li>

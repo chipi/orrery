@@ -26,10 +26,10 @@
   <meta name="description" content={metaDescription(m.glossary_meta_description())} />
 </svelte:head>
 
-<article class="glossary" data-route-ready="true">
+<article class="glossary page-shell page-shell--inset page-shell--reading" data-route-ready="true">
   <header>
-    <h1>{m.glossary_h1()}</h1>
-    <p class="lede">{m.glossary_intro()}</p>
+    <h1 class="page-title">{m.glossary_h1()}</h1>
+    <p class="lede page-lead">{m.glossary_intro()}</p>
   </header>
 
   <nav class="az" aria-label={m.glossary_jump()}>
@@ -69,30 +69,6 @@
 </article>
 
 <style>
-  .glossary {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 32px 24px 80px;
-    color: var(--color-text, #eef);
-  }
-  h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    letter-spacing: 2px;
-    margin: 0 0 8px;
-    color: #ffc850;
-  }
-  .lede {
-    font-size: var(--size-lead);
-    line-height: 1.5;
-    margin: 0 0 16px;
-    color: rgba(255, 255, 255, 0.78);
-  }
-  @media (max-width: 600px) {
-    .glossary {
-      padding: 20px 16px 60px;
-    }
-  }
   /* the /science layout scrolls in its own box below the site nav, so 0 is under the nav */
   .az {
     position: sticky;

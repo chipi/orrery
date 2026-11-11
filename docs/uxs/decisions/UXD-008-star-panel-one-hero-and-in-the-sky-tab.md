@@ -1,14 +1,11 @@
 # UXD-008 — Star panel: one hero, the constellation finder in an "In the sky" tab, a Gallery tab for more
 
-- **Status**: accepted
-- **Date**: 2026-11-11 (the operator's point and the clarification) · fix as recorded in the plan
+- **Status**: proposed
+- **Date**: 2026-11-11 (proposed; the operator's point and clarification)
 - **Decider**: the operator raised the point (SN2, `docs/wip/2026-11-11-ux-feedback-plan.md` line
   206: "all images placed on top push the overview down … one hero image, a gallery tab for more
   images, and a dedicated pattern for linking stars to zodiac signs") and, on the Antares screenshot,
-  clarified that "the zodiac chart" is the constellation finder figure (lines 432–437). The tab layout
-  is the lead's resolution under "Answers (2026-11-11)", slice B3. No separate operator "go" line
-  exists in the sources; accepted here as the plan's recorded answer, confirmed by the slice's
-  screenshots.
+  clarified that "the zodiac chart" is the constellation finder figure (lines 432–437). The tab layout is the lead's resolution (slice B3). Awaiting the operator's go, when its slice (B3) is reviewed.
 - **Answers**: SN2; slice B3 (outer panels and stars)
 - **Changes**: UXS-001 (detail panel tabs; no star-panel section today) and UXS-014 §Selecting and
   understanding an object (see UXS-000 §Next).

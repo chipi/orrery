@@ -2,8 +2,8 @@
 
 - **Status**: accepted
 - **Date**: 2026-11-11 (proposed and decided)
-- **Decider**: the operator — Q2 answered 2026-11-11 (`docs/wip/2026-11-11-ux-feedback-plan.md`
-  line 430, "Answers (2026-11-11)"); slice A1 brief `docs/wip/2026-11-11-slice-A1-brief.md` lines 6–9
+- **Decider**: the operator, as recorded in the plan under "Answers (2026-11-11)" for Q2 (`docs/wip/2026-11-11-ux-feedback-plan.md`
+  line 430; the plan does not say where the answer was given); slice A1 brief `docs/wip/2026-11-11-slice-A1-brief.md` lines 6–9
 - **Answers**: X1, P1, P2, CR1, LI1, G2, G5, Q2; slice A1 (type scale)
 - **Changes**: `src/lib/styles/tokens.css` (type scale block); IA §shared-tokens (typography
   tokens); `docs/concept/05_Design_System.md` typography and panel rules; AGENTS.md "Design system"
@@ -16,7 +16,7 @@ Operator list: "some text is too tiny; many panels start with a smaller italic f
 (X1); overview texts "too tiny and italic; they should not be italic or smaller than other texts"
 (P1); labels "too small and barely readable" (P2). At the A1 baseline (`9dda8b6813f`) the A1 brief
 counted 734 literal font sizes below 11 px (414 to change in 121 files), 99 `font-style: italic`
-(82 to change) and 12 panel `.editorial` rules in Crimson italic 13–14 px at 60 % (brief lines 16–20).
+(82 to change) (brief lines 16–20). The plan describes the panel `.editorial` rules as 11 rules in Crimson italic 13–14 px at 60 % (plan line 327); the brief counts 12 (+4 `.empty` variants) (brief line 19). The mismatch is not reconciled here.
 `--size-label` was 10 px and unused.
 
 ## Options
@@ -55,8 +55,8 @@ science charts and Lab canvases keep their own sizes (brief lines 22–28).
 ## Consequences
 
 - Done in slice A1 (commits `7661b4242a7`, `5fa57c98522`, `16050434512`, `68e239c3831`,
-  `3222209b859`): tokens, 414-line CSS pass, upright leads, the e2e below, 43 regenerated visual
-  baselines. The slice is in review, not yet signed off by the operator.
+  `3222209b859`, plus the test commits `aeba55baba1` and `7c87288441f`): tokens, the CSS pass, upright leads, the e2e below, visual
+  baselines regenerated. The slice is in review, not yet signed off by the operator.
 - Panel overview text and page leads are upright Space Mono; Crimson Pro italic never carries data
   or an overview.
 - The A1 brief records every allow-list entry, and AGENTS.md carries the canvas allow-list.

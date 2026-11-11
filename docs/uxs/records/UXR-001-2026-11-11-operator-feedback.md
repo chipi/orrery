@@ -50,10 +50,10 @@ counting the id rows in the file gives 120 (including GH1 and the dropped W5). N
   phase that needs them. Q1 and Q2 were answered on 2026-11-11 ([UXD-001](../decisions/UXD-001-ui-accent-blue-replaces-teal.md),
   [UXD-002](../decisions/UXD-002-type-scale-and-the-11px-floor.md)); the rest are open
   ([UXS-000 §Open](../UXS-000-orrery-ux-architecture.md#open)).
-- **Clarifications from the operator's screenshots** (2026-11-11, plan lines 417–458) resolved MW3,
-  SN2, G5 and G6, O6, W5 and W6. They produced [UXD-006](../decisions/UXD-006-mars-moon-square-brackets-dropped.md)
-  to [UXD-010](../decisions/UXD-010-ruler-regimes-each-get-their-own-science-card.md); MW3 is planned in
-  slice B3 without a recorded operator go.
+- **Clarifications from the operator's screenshots** (2026-11-11, plan lines 417–458) covered MW3,
+  SN2, G5 and G6, O6, W5 and W6. They produced [UXD-006](../decisions/UXD-006-mars-moon-square-brackets-dropped.md) (dropped) and the proposals [UXD-007](../decisions/UXD-007-panorama-opens-facing-the-photo.md)
+  to [UXD-010](../decisions/UXD-010-ruler-regimes-each-get-their-own-science-card.md); MW3 is planned in slice B3 and the proposals in their own
+  slices, all without a recorded operator go.
 - **Already checked, no work**: CR3. All 1,203 Moon, Mars and Earth surface tiles map to a credit
   entry (539 hotspot provenance rows); on-screen attribution in the scenes was not audited (plan
   lines 319–321).

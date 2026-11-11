@@ -4,7 +4,7 @@
 - **Date**: 2026-11-11 (proposed and decided)
 - **Decider**: the operator — "we cannot have partial updates, we have to sync the entire project
   with all decisions we are doing. quality over speed" and "provide smaller screenshots after each
-  segment so I can visually validate" (memory note `decisions-apply-project-wide`, modified
+  segment so I can visually validate" (operator note `decisions-apply-project-wide`, modified
   2026-11-11); "Definition of done — every slice (operator, 2026-11-11: no partial updates,
   quality over speed)" and "Checks and balances (operator, 2026-11-11: invest time up front)"
   (`docs/wip/2026-11-11-ux-feedback-plan.md` lines 465 and 481)
@@ -15,7 +15,7 @@
 ## Context
 
 A decision applied to the screens that were looked at but not to the rest leaves the site
-inconsistent, which is what the operator's feedback list was about (memory `decisions-apply-project-wide`).
+inconsistent, which is what the operator's feedback list was about (operator note `decisions-apply-project-wide`).
 
 ## Options
 

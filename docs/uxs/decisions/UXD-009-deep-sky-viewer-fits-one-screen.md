@@ -1,13 +1,11 @@
 # UXD-009 — The deep-sky viewer fits one screen; facts read label above value
 
-- **Status**: accepted
-- **Date**: 2026-11-11 (the operator's points and the clarification) · fix as recorded in the plan
+- **Status**: proposed
+- **Date**: 2026-11-11 (proposed; the operator's point and clarification)
 - **Decider**: the operator raised G5 ("italic opening text for no reason") and G6 ("at the bottom,
   a muted line … looks like labels without real values", `docs/wip/2026-11-11-ux-feedback-plan.md`
   lines 99–100) and identified the screen from a screenshot: the "gallery item page" is the deep-sky
-  full-screen viewer (lines 438–444). The fix is the lead's resolution under "Answers (2026-11-11)",
-  slice F4 (new). No separate operator "go" line on the fix exists in the sources; accepted here as
-  the plan's recorded answer, confirmed by the slice's screenshots.
+  full-screen viewer (lines 438–444). The fix is the lead's resolution under "Answers (2026-11-11)". Awaiting the operator's go, when its slice (F4) is reviewed.
 - **Answers**: G5, G6; slice F4 (deep-sky viewer fit, added after the original slice plan)
 - **Changes**: the spec that will cover the gallery (no UXS covers `/gallery/deep-sky` today; see
   UXS-000 §Next).

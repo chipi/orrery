@@ -48,7 +48,7 @@ the design system own the visual and interaction contract.
   differs from `tokens.css` is a mismatch to log, not a second source.
 - **The UXS boxes are not a record of what shipped.** Each UXS carries an as-built note (2026-10-16,
   for example `UXS-001.md` line 93): for shipped behaviour read `docs/adr/TA.md` and `CHANGELOG.md`.
-- **Operator memory notes are inputs, not authority.** A decision first recorded in a private
+- **Operator operator notes are inputs, not authority.** A decision first recorded in a private
   note counts once it has a UXD or a backfill row that quotes its source and date.
 
 ## How a UX change moves
@@ -107,11 +107,11 @@ Then the operator gets a short status and small before/after screenshots (13-inc
 | `npm run docs:build`                                                     | every page under `docs/` builds with VitePress; no unresolved link                                                               |
 | `npm run preflight` (pre-push hook)                                      | typecheck, lint, tests, `validate-data` and build. Does not run e2e and is not a byte-for-byte mirror of CI (see `CLAUDE.md`)    |
 
-A new shared rule that can be checked arrives with its check. Rules decided so far that have no
-guard yet: the link/accent colour (UXD-001, a repo-wide search for the old teal is the slice's
-check), the home route-card title (UXD-003), the panorama opening heading (UXD-007, e2e planned in
-slice D2), the deep-sky viewer fit (UXD-009), the ruler science cards (UXD-010, a unit test over the
-data is planned in slice B2).
+A new shared rule that can be checked arrives with its check. Accepted rules with no guard yet: the
+link/accent colour (UXD-001, a repo-wide search for the old teal is the slice's check) and the home
+route-card title (UXD-003). Proposed rules with a guard planned in their slice: the panorama opening
+heading (UXD-007, e2e in slice D2), the deep-sky viewer fit (UXD-009), the ruler science cards
+(UXD-010, a unit test over the data in slice B2).
 
 ## Open
 
@@ -168,7 +168,8 @@ Read at commit `9fdf4cc4a6b`. Logged, not resolved here (another change set is e
 | SC-1  | Nav bar height 52 px: `IA.md` lines 52–55, 179, 236; `AGENTS.md` line 747; `05_Design_System.md` lines 158, 207       | `--nav-bar-height: 60px` in `tokens.css`                                        |
 | SC-2  | Desktop panel width 314 px: `IA.md` lines 181, 237; `AGENTS.md` lines 501, 749; `05_Design_System.md` line 167         | `--panel-width: 400px` in `tokens.css` (its own comment: 314 → 360 → 400)       |
 | SC-3  | `--color-text-dim` is `rgba(255,255,255,0.35)`: `IA.md` line 203; `05_Design_System.md` line 51 (0.25–0.35)             | `--color-text-dim: rgba(255, 255, 255, 0.6)` in `tokens.css`                    |
-| SC-4  | Teal `#4ecdc4` is a design colour (`IA.md` line 198; `AGENTS.md` line 720; `05_Design_System.md` line 48; UXS-002/003 hud and CAPCOM colours)         | UXD-001: every UI teal becomes blue; the slice that does it is A3 (not started) |
+| SC-4  | Spec versus decision (not spec versus code): teal `#4ecdc4` is a design colour (`IA.md` line 198; `AGENTS.md` line 720; `05_Design_System.md` line 48; UXS-002/003 HUD and CAPCOM colours) | UXD-001 says every UI teal becomes blue, but `tokens.css` lines 14 and 33 (`--color-teal`, `--color-tier-intro`) still define `#4ecdc4` until slice A3 |
+| SC-5  | `IA.md` line 197 and `AGENTS.md` line 719 name the accent `#4466ff` ("Primary accent", "Accent blue") | `tokens.css` line 9 `--color-accent: #4466ff` (brand: borders, outlines, fills) and line 13 `--color-accent-text: #5070ff` (the accent as text). UXD-001 calls `#5070ff` the "link blue" / UI accent. Which token is the UI accent, and whether `#4466ff` stays for borders and fills, is left for slice A3 to settle |
 
 ## Next — lines that must link to a UXD
 

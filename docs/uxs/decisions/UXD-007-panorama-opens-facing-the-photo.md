@@ -1,13 +1,10 @@
 # UXD-007 — A site panorama opens facing the real photo, not the generated fill
 
-- **Status**: accepted
-- **Date**: 2026-11-11 (the operator's point and the clarification) · fix as recorded in the plan
+- **Status**: proposed
+- **Date**: 2026-11-11 (proposed; the operator's point and clarification)
 - **Decider**: the operator raised the point (W6, `docs/wip/2026-11-11-ux-feedback-plan.md` line 271:
   "Stand here" must always show an image) and clarified it from the screen (line 452: the view opens
-  facing the generated fill and "the operator has to rotate to find the real photo"). The fix
-  described below is the lead's resolution, written under "Answers (2026-11-11)" (lines 452–455). No
-  separate operator "go" line on the fix exists in the sources; it is accepted here as the plan's
-  recorded answer and is confirmed by the slice's screenshots.
+  facing the generated fill and "the operator has to rotate to find the real photo"). The fix described below is the lead's resolution (plan lines 452–455). Awaiting the operator's go, when its slice (D2) is reviewed.
 - **Answers**: W6; slice D2 (panel order for sites and orbiters)
 - **Changes**: UXS-006 and the surface spec set (no panorama section exists yet; see UXS-000 §Next);
   ADR-074 (panorama schema and renderer) is the architecture record, not changed.

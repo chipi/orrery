@@ -5,7 +5,7 @@
 - **Decider**: the operator. Blue D confirmed "after the sheet" (`docs/wip/2026-11-11-ux-feedback-plan.md`
   line 429, commit `9dda8b6813f` "Q1 blue D confirmed"); scope to every UI teal, and science
   diagrams and Lab art keep their own colours, "operator 2026-11-11" (same line). Teal ruled out
-  and 0.9.9 named as the redesign arc: operator, 2026-11-09 (memory notes `no-cyan`, `099-redesign`;
+  and 0.9.9 named as the redesign arc: operator, 2026-11-09 (operator notes `no-cyan`, `099-redesign`;
   `docs/wip/2026-11-09-0.9.9-redesign.md` line 3).
 - **Answers**: X2, G4, Q1; slice A3 (link and accent colour)
 - **Changes**: `src/lib/styles/tokens.css` (`--color-teal`, `--color-tier-intro`, `--color-accent-text`);
@@ -16,11 +16,11 @@
 ## Context
 
 - The operator ruled out cyan and teal for UI states as "out of palette" and "so fake" on
-  2026-11-09 (memory `no-cyan`; `docs/wip/2026-11-09-0.9.9-redesign.md` line 7). 0.9.8 replaced
+  2026-11-09 (operator note `no-cyan`; `docs/wip/2026-11-09-0.9.9-redesign.md` line 7). 0.9.8 replaced
   only the surface-scene states with the muted blue `#889fe7` (marker hover, the ACTIVE status
   tone, the start of the route sol ramp, the 3D outline pass).
 - The same teal `#4ecdc4` is the site's brand accent: about 780 uses in 147 files at 2026-11-09
-  (`099-redesign` memory), about 640 uses in about 123 files in the slice plan (plan line 329,
+  (operator note `099-redesign`), about 640 uses in about 123 files in the slice plan (plan line 329,
   later count). `tokens.css` holds it as `--color-teal` and `--color-tier-intro`.
 - The operator's list asks for it directly: links on credits, colophon and library are "a turquoise
   colour"; use the muted blue "used in many places; nothing close to glowing" (X2); the muted blue

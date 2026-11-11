@@ -29,11 +29,13 @@ There is **no staging tier**. The release flow is merge to `main`, the manual pr
 (`gh workflow run "Deploy to prod VPS (orrery)" --ref main`, for a commit whose CI and docker-e2e
 are green), then validate-prod. **GitHub Pages serves only the docs.**
 
-**For UX review this means** (operator, 2026-11-10, memory note `validate-staging-before-prod`,
-modified 2026-11-11): after the prod deploy, each change in the release is driven on
-`https://www.orrerylearn.com` and reported pass or fail with evidence per item; green validate-prod
-alone does not prove the shipped changes work. The local release gate (full e2e on all three
-Playwright projects, `preflight:coverage`, `build:mobile`) carries the weight staging used to.
+**For UX review.** The operator said on 2026-10-17 that green workflows check generic health, not the
+specific changes shipped: "validate the things we did actually work with the deploy" (operator note
+`validate-staging-before-prod`, which says this earlier rule "still holds in spirit" after the staging
+removal). Practice since 0.9.9, recorded in that note and not a separate decision: after the prod
+deploy, each change in the release is driven on `https://www.orrerylearn.com` and reported pass or
+fail with evidence per item; the local release gate (full e2e on all three Playwright projects,
+`preflight:coverage`, `build:mobile`) carries the weight staging used to.
 
 ## Consequences
 

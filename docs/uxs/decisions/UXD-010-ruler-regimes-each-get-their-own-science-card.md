@@ -1,13 +1,12 @@
 # UXD-010 — Each Explore ruler regime gets its own best science card, no repeats within a ruler
 
-- **Status**: accepted
-- **Date**: 2026-11-11 (the operator's point and the clarification) · fix as recorded in the plan
+- **Status**: proposed
+- **Date**: 2026-11-11 (proposed; the operator's point and clarification)
 - **Decider**: the operator raised O6 ("all orbit panes repeat the same science links … variety,
   different per pane, best matches, no repetition", `docs/wip/2026-11-11-ux-feedback-plan.md` line
   177) and showed the GIANTS pane (lines 445–450). "Slice B2 gives every regime its own best match,
-  no repeats within a ruler" is the lead's resolution under "Answers (2026-11-11)". No separate
-  operator "go" line exists in the sources; accepted here as the plan's recorded answer, confirmed
-  by the slice's screenshots and the unit test.
+  no repeats within a ruler" is the lead's resolution under "Answers (2026-11-11)". Awaiting the operator's go, when its slice (B2) is
+  reviewed.
 - **Answers**: O6, S1, S2; slice B2 (science links)
 - **Changes**: UXS-014 / UXS-016 (no ruler section exists today; see UXS-000 §Next). The cap of five
   science links per panel (S2) is part of the same slice.
@@ -16,8 +15,13 @@
 
 On `/explore?regime=GIANTS` the pane's one science card is "Planetary stats", the same as
 TERRESTRIAL. Across the Explore ruler `keplers-laws`, `apsides` and `hill-sphere` also repeat. The
-operator remembered a "light minute / light year" pair; the regime data has neither, and only SUN has
-`light-minute` (plan lines 445–448).
+regime data (`science_link` per `orbit-regimes-explore/*` entry in
+`static/data/i18n/en-US.core.json`, read at `9fdf4cc4a6b`) holds: SUN `scales-time/light-minute`;
+TERRESTRIAL and GIANTS `planets/planetary-stats`; BELT and KUIPER `orbits/keplers-laws`;
+HELIOPAUSE and OORT `orbits/hill-sphere`; SCATTERED `orbits/apsides`. No regime links `light-year`.
+The operator remembered a "light minute / light year" pair (plan lines 445–448); the data confirms
+light-minute on SUN only. The plan's note that the regime data has neither is wrong about
+light-minute.
 
 ## Options
 

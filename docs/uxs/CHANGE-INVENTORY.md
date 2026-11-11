@@ -31,8 +31,8 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | B1 | Hero, close and actions: no hover glow, close per Q6, "Share", one compact action row near the top | P3, P4, P5, EP4, MI4 | none yet | planned | planet, mission, fleet and surface-site panels | `05_Design_System.md` panel anatomy, UXS-001 | Q3, Q6 |
-| B2 | Science links: a shared cap of five per panel, ranked picks, every ruler regime its own card | S1, S2, O6 | UXD-010 | planned | every panel, the orbit ruler | UXS-001, UXS-014 | — |
-| B3 | Outer panels and stars: one hero, a Gallery tab, the constellation finder in "In the sky"; deep-sky heroes; the EHT image for Sagittarius A\* | SN2, MW3, MW5 | UXD-008 | planned | star, Milky Way, Local Group, Laniakea panels | UXS-001, UXS-014, UXS-016 | — (MW3 has no recorded go) |
+| B2 | Science links: a shared cap of five per panel, ranked picks, every ruler regime its own card | S1, S2, O6 | UXD-010 (proposed) | planned | every panel, the orbit ruler | UXS-001, UXS-014 | — |
+| B3 | Outer panels and stars: one hero, a Gallery tab, the constellation finder in "In the sky"; deep-sky heroes; the EHT image for Sagittarius A\* | SN2, MW3, MW5 | UXD-008 (proposed) | planned | star, Milky Way, Local Group, Laniakea panels | UXS-001, UXS-014, UXS-016 | — (MW3 has no recorded go) |
 
 ## Explore
 
@@ -54,7 +54,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | D1 | Orbiter selection: the selected orbiter stays visible; the view shifts left of the panel | W3 | none yet | planned | moon, mars, earth, venus | UXS-005, UXS-006, ADR-072 | — |
-| D2 | Panel order for sites and orbiters: a photo first; a "Details" tab for orbiters; a panorama that opens facing the real photo | W6, WM1 | UXD-007 | planned | surface-site and orbiter panels, panoramas | UXS-006, ADR-074 | — |
+| D2 | Panel order for sites and orbiters: a photo first; a "Details" tab for orbiters; a panorama that opens facing the real photo | W6, WM1 | UXD-007 (proposed) | planned | surface-site and orbiter panels, panoramas | UXS-006, ADR-074 | — |
 | D3 | Venus galleries | VE1 | none yet | planned | venus | UXS-006 | — |
 | D4 | Moon traverses: line style only, or Mars parity | WM2 | none yet | planned | moon | UXS-006 | Q8 |
 | D5 | Square brackets on Mars and Moon locations | W5 | UXD-006 (rejected) | dropped (operator, 2026-11-11) | — | — | — |
@@ -76,7 +76,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 | F1 | Credits and colophon: one collapse approach, a totals line, cutaways split | CR2, CO1, CO2, CO3 | none yet | planned | credits, colophon | a page-shell section | Q7, Q9 |
 | F2 | Library additions | LI2, LI3 | none yet | planned | library | a page-shell section | Q10 |
 | F3 | Home: hero capped, the Lab card in Learn, more engaging above the fold | H1, H2, H3 (H8 settled for card titles only) | UXD-003 (card titles) | planned | home | IA §home-cards, UXS-013 | D1, D2, D3 |
-| F4 | The deep-sky viewer fits one screen; facts label above value | G5, G6 | UXD-009 | planned (added after the slice plan) | `/gallery/deep-sky` | a gallery spec (none today) | — |
+| F4 | The deep-sky viewer fits one screen; facts label above value | G5, G6 | UXD-009 (proposed) | planned (added after the slice plan) | `/gallery/deep-sky` | a gallery spec (none today) | — |
 
 ## Plan, Fly, Launch
 
@@ -97,5 +97,5 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 
 | Item | Change | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- |
-| Output step | One OutputPass per composer, sRGB colour textures, data maps linear | UXD-004 | in review | `/iss`, `/tiangong`, `/explore`, `/fly`, surface routes | `docs/adr/TA.md` (done at `9fdf4cc4a6b`), AGENTS.md | operator review of the Fly launch and descent look |
+| Output step | One OutputPass per composer, sRGB colour textures, data maps linear | UXD-004 | in review | `/iss`, `/tiangong`, `/explore`, `/fly`, surface routes | `docs/adr/TA.md` (done at `9fdf4cc4a6b`), AGENTS.md | the operator's review of the Mars descent contrast (plan line 459) |
 | Staging removal | No staging; Pages serves only the docs | UXD-005, ADR-097 | done (items 1.1 to 1.5 of the 0.9.9 plan); item 1.6 (a patch the operator applies) and the post-deploy leftovers are outside this register | CI, docs | AGENTS.md, `CLAUDE.md`, `docs/ops/*` | — |

@@ -90,6 +90,8 @@ export default defineConfig({
         text: 'Decisions',
         items: [
           { text: 'Architecture (TA.md)', link: '/adr/TA' },
+          { text: 'UX architecture (UXS-000)', link: '/uxs/UXS-000-orrery-ux-architecture' },
+          { text: 'UX decisions (UXD)', link: '/uxs/decisions/README' },
           { text: 'ADR index', link: '/adr/index' },
           { text: 'RFC index', link: '/rfc/index' },
           { text: 'PRD index', link: '/prd/index' },

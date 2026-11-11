@@ -456,6 +456,8 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 - Surface colour fix (OutputPass) done on the branch: code `8e9a7c8d1d9`, docs `a07218d5429`;
   before/after shots sent for approval. /iss and /tiangong (and every other composer) now end in the
   OutputPass too (output-step slice, 2026-11-11; operator decision: one OutputPass per composer).
+- Output step, Fly launch and Mars descent (operator 2026-11-11, after the before/after sheets): "I agree we should fix washed out look on launches and descents". Fixed in the same slice (second pass: atmosphere shell, sky gradient, ambient light, launch exposure); descent contrast still under review.
+- Operator go, 2026-11-11 (session, after the UXD check): the fixes written above for W6, SN2, G5/G6 and O6 are accepted as decided (UXD-007 … UXD-010). The muted ring/state blue `#889fe7` stays alongside blue D (`#5070ff`): D for links and accents, `#889fe7` for annotation rings, hover and status states. Fly Mars descent after the second pass: accepted "for now" (contrast can be revisited later).
 
 ## To check at the end (operator, 2026-11-11)
 

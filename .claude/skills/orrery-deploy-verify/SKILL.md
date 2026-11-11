@@ -1,29 +1,27 @@
 ---
 name: orrery-deploy-verify
-description: Verify an Orrery staging or prod deploy end to end with the access that already exists — validate-prod against the URL, the o11y-review skill for logs and GlitchTip since the deploy, an Umami event check, source maps (a live chunk carries a debug id that GlitchTip resolves; Cloudflare isn't serving stale chunks) and prod container logs — before asking the homelab or prod sessions.
-when_to_use: Use when asked "check staging", "did the deploy work", "verify prod", "is staging isolated", "validate the deploy", after a "Deploy preview" / "Deploy to prod VPS (orrery)" run finishes, and always between the staging deploy and dispatching prod.
+description: Verify an Orrery prod deploy end to end with the access that already exists — validate-prod against the URL, the o11y-review skill for logs and GlitchTip since the deploy, an Umami event check, source maps (a live chunk carries a debug id that GlitchTip resolves; Cloudflare isn't serving stale chunks) and prod container logs — before asking the homelab or prod sessions.
+when_to_use: Use when asked "did the deploy work", "verify prod", "validate the deploy", after a "Deploy to prod VPS (orrery)" run finishes, and right after every release (there is no staging tier since 2026-11).
 ---
 
 # orrery-deploy-verify
 
-Memory rule: validate staging (this change set, evidence per item) before dispatching prod.
+There is no staging tier (2026-11 no-staging decision): a release goes merge → deploy → this check. Prove this change set (evidence per item) on prod right after the deploy.
 On 2026-10-16/17 most of this was done by messaging the homelab and prod sessions; the
 access to do it directly already exists.
 
 ## 1. The site
 
 ```bash
-VALIDATE_URL=https://chipi.github.io/orrery node scripts/validate-prod.mjs     # staging
-VALIDATE_URL=https://www.orrerylearn.com    node scripts/validate-prod.mjs     # prod
+VALIDATE_URL=https://www.orrerylearn.com node scripts/validate-prod.mjs
 ```
 
-Opts out of analytics; checks headers, routes, 404s, data, the Umami SRI pin. Staging:
-first wait until `/orrery/_deploy-sha.txt` equals the deployed SHA (Pages publish lag).
+Opts out of analytics; checks headers, routes, 404s, data, the Umami SRI pin.
 
 ## 2. Logs, errors, traces since the deploy
 
 Load **`o11y-review`** (shared skill) for project `orrery` from the deploy time: VictoriaLogs
-`app:orrery`, GlitchTip (prod 18, staging 6, dev 30, lab-api 31, mcp 32), traces.
+`app:orrery`, GlitchTip (prod 18, dev 30, lab-api 31, mcp 32), traces.
 Raw queries when needed (tailnet, read-only):
 
 ```bash
@@ -35,7 +33,7 @@ curl -s --get $VL/select/logsql/query --data-urlencode 'query=_time:1h container
 ## 3. Analytics
 
 Umami lives on the mini (`/work/agentic-ai-homelab/docs/recipes/agent-access.md` §6). Prod
-site 4a25d8da, staging 6e7ddfce, dev 90cbabf7. Bot UAs are dropped (`{"beep":"boop"}`); a
+site 4a25d8da, dev 90cbabf7 (the old staging site 6e7ddfce is retired). Bot UAs are dropped (`{"beep":"boop"}`); a
 stored event answers `{"cache":…}`. If this machine has no key for the mini, that's the
 one thing to ask homelab for.
 

@@ -86,7 +86,7 @@ If `git` isn't accessible (e.g. CI shallow-clone edge case) the check falls back
 
 ### Tag + GitHub Release + Deploy are three separate actions
 
-After `git push --tags`, the tag exists but there's no GitHub Release entry and no auto-deploy. Run `gh release create vX.Y.Z --notes-file ...` to cut the Release. If the e2e gate blocked the auto-deploy, run `gh workflow run "Deploy preview" --ref main` to force the publish. AGENTS.md has the full table of what each action does and doesn't do.
+After `git push --tags`, the tag exists but there's no GitHub Release entry and no deploy. Run `gh release create vX.Y.Z --notes-file ...` to cut the Release. There is no staging: deploy with `gh workflow run "Deploy to prod VPS (orrery)" --ref main` (only for a commit with green CI + docker-e2e); `validate-prod.yml` then validates it. AGENTS.md has the full table of what each action does and doesn't do.
 
 ---
 

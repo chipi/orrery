@@ -160,6 +160,12 @@ Log shipping uses the shared node Alloy (infra repo ADR-121, `ops/observability/
 
 ## Triggering a deploy
 
+There is no staging tier (2026-11 no-staging decision). Every release goes straight to prod:
+**merge to main → `gh workflow run "Deploy to prod VPS (orrery)" --ref main` → validate-prod** (the
+deploy's own `validate` job, then `validate-prod.yml` on the deploy's completion). Dispatch it only for a
+commit whose CI and docker-e2e are green. GitHub Pages serves only the project docs
+(`deploy-docs.yml`), never the app.
+
 Until the workflow is upgraded to `push: branches: [main]`, all deploys are manual:
 
 ```bash
@@ -255,10 +261,9 @@ commit while the bundle is built from the revert.
 3. Run the `orrery-deploy-verify` skill (`.claude/skills/orrery-deploy-verify`: logs, GlitchTip since the deploy,
    Umami events, source maps).
 
-Staging (GitHub Pages, `staging.yml`) needs no rollback procedure of its own:
-it redeploys from main after every green docker-e2e, so the revert commit
-above fixes staging too. It can also be re-run by hand with
-`gh workflow run "Deploy preview" --ref main`.
+There is no staging tier (2026-11 no-staging decision): the revert commit goes
+straight through the same deploy, and `validate-prod` checks it. GitHub Pages
+serves only the docs, so a rollback never touches it.
 
 ---
 

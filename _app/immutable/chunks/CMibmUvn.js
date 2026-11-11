@@ -1,0 +1,1 @@
+import{C as e,dt as t,or as n}from"./DMsMyPaj2.js";function r(r,i,a,o,s=8){let c=new t(new e(a,a,r.distanceTo(i),s),o);return c.position.copy(r).add(i).multiplyScalar(.5),c.quaternion.setFromUnitVectors(new n(0,1,0),i.clone().sub(r).normalize()),c}export{r as t};

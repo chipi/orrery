@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-8M7qt8SpAXa1BeKv/d14G1Tifxpf1LLq9Bk1kcbzd4c='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/38.B3WxiQju.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BfekGzoj2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="it_IT"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--j8p91s--><meta name="description" content="cos A = cos i / cos φ: per raggiungere l'inclinazione i dalla latitudine φ, punta all'azimut A. Non puoi lanciarti a un'inclinazione inferiore alla tua…"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Azimut di lancio","description":"cos A = cos i / cos φ: per raggiungere l'inclinazione i dalla latitudine φ, punta all'azimut A. Non puoi lanciarti a un'inclinazione inferiore alla tua…","url":"https://www.orrerylearn.com/it/lab/launch-azimuth","mainEntityOfPage":"https://www.orrerylearn.com/it/lab/launch-azimuth","inLanguage":"it","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Laboratorio di Fisica","item":"https://www.orrerylearn.com/it/lab"},{"@type":"ListItem","position":2,"name":"Azimut di lancio","item":"https://www.orrerylearn.com/it/lab/launch-azimuth"}]}]</script><!----><!----><title>Azimut di lancio · Laboratorio di Fisica · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/katex.DpBKu6kX.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Azimut di lancio · Laboratorio di Fisica"/><meta property="og:description" content="cos A = cos i / cos φ: per raggiungere l'inclinazione i dalla latitudine φ, punta all'azimut A. Non puoi lanciarti a un'inclinazione inferiore alla tua…"/><meta property="og:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Un sole luminoso, orbite inclinate e un arco di trasferimento evidenziato tra due pianeti."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Azimut di lancio · Laboratorio di Fisica"/><meta name="twitter:description" content="cos A = cos i / cos φ: per raggiungere l'inclinazione i dalla latitudine φ, punta all'azimut A. Non puoi lanciarti a un'inclinazione inferiore alla tua…"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta name="twitter:image:alt" content="Un sole luminoso, orbite inclinate e un arco di trasferimento evidenziato tra due pianeti."/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">Vai al contenuto</a> <nav aria-label="Navigazione principale" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — pagina iniziale"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">HOME</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">ESPLORA<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">MONDI<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VOLO</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PIANIFICA</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATALOGO<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">IMPARA<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Apri menu di navigazione" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Fai il tour guidato" aria-pressed="false" title="Fai il tour guidato"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Lingua" aria-haspopup="listbox" aria-expanded="false" title="Scegli lingua">IT</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Mostra/nascondi la lente scientifica (non disponibile in questa pagina)" aria-pressed="false" title="Mostra layer di fisica (sovrapposizioni di meccanica orbitale) (non disponibile in questa pagina)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Attiva/disattiva la modalità ad alto contrasto" aria-pressed="false" title="Attiva/disattiva la modalità ad alto contrasto">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="IMPOSTAZIONI" aria-haspopup="dialog" aria-expanded="false" title="IMPOSTAZIONI"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Condividi questa vista" title="Condividi questa vista"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="Mostra/nascondi i livelli di debug" aria-pressed="false" title="Modalità debug — overlay per sviluppatori"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/lab">Laboratorio di Fisica</a> <span class="sep">›</span> <span>Azimut di lancio</span></nav> <h1>Azimut di lancio</h1> <!--[0--><div class="equation"><!----><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>A</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>i</mi><mi mathvariant="normal">/</mi><mi>cos</mi><mo>⁡</mo><mi>φ</mi></mrow><annotation encoding="application/x-tex">\cos A = \cos i / \cos\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">i</span><span class="mord">/</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">φ</span></span></span></span></span><!----></div><!--]--> <!--[0--><p class="dispatch">cos A = cos i / cos φ: per raggiungere l'inclinazione i dalla latitudine φ, punta all'azimut A. Non puoi lanciarti a un'inclinazione inferiore alla tua latitudine — l'equazione stessa lo rifiuta (|cos A| ≤ 1).</p><!--]--> <!--[0--><section class="parameters"><h2>Parametri</h2> <dl class="facts"><!--[--><div><dt>Latitudine del sito di lancio [deg]</dt> <dd>28,5 (0 – 90)</dd></div><div><dt>Inclinazione di destinazione [deg]</dt> <dd>51,6 (0 – 145)</dd></div><!--]--></dl></section><!--]--> <!--[0--><section class="results"><h2>Risultati</h2> <dl class="facts"><!--[--><div><dt>Rotta di lancio (bussola)</dt> <dd>45,02 deg</dd></div><!--]--></dl></section><!--]--> <!--[0--><p class="assumptions"><strong>Ipotesi:</strong> Terra non rotante (ignora la virata di velocità del sito di lancio) · Terra sferica</p><!--]--> <!--[0--><section class="builds-on"><h2>Si basa su:</h2> <ul class="linklist"><!--[--><li><a href="/orrery/lab/launch-site">Sito di lancio</a></li><!--]--></ul></section><!--]--> <!--[0--><section class="same-domain"><h2>Laboratorio di Fisica</h2> <ul class="linklist"><!--[--><li><a href="/orrery/lab/tsiolkovsky">L'equazione di Ciolkovskij</a></li><li><a href="/orrery/lab/dv-to-orbit">Δv per l'orbita</a></li><li><a href="/orrery/lab/reach-orbit-verdict">Raggiungere l'orbita</a></li><li><a href="/orrery/lab/rocket-sizing">Dimensionamento del razzo</a></li><li><a href="/orrery/lab/liftoff-thrust">Spinta al decollo</a></li><li><a href="/orrery/lab/ascent-guidance">Guida di ascesa (il computer di volo)</a></li><!--]--></ul></section><!--]--> <!--[0--><p class="learn"><span>Scopri di più</span> <!--[0--><a href="/orrery/science/orbits/inclination">Nell'enciclopedia</a><!--]--> <!--[0--><a href="https://en.wikipedia.org/wiki/Launch_window" target="_blank" rel="noopener noreferrer">Wikipedia ↗</a><!--]--></p><!--]--> <p class="actions"><a class="cta" href="/orrery/lab">→ Apri in Orrery</a></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Piè di pagina del sito"><nav class="footer-menu svelte-12qhfyh" aria-label="Collegamenti a piè di pagina"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">ESPLORA</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">MONDI</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">CATALOGO</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">IMPARA</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galleria</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Crediti</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colophon</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Biblioteca</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">Glossario</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">Informazioni</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="Informazioni"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">Privacy</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licenza</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Versione build + data di deploy (apre CHANGELOG su GitHub): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">Altro</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 38],
+									data: [null,{type:"data",data:{id:"launch-azimuth",title:"Azimut di lancio",inWords:"cos A = cos i / cos φ: per raggiungere l'inclinazione i dalla latitudine φ, punta all'azimut A. Non puoi lanciarti a un'inclinazione inferiore alla tua latitudine — l'equazione stessa lo rifiuta (|cos A| ≤ 1).",equation:"\u003Cspan class=\"katex-display\">\u003Cspan class=\"katex\">\u003Cspan class=\"katex-mathml\">\u003Cmath xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\">\u003Csemantics>\u003Cmrow>\u003Cmi>cos\u003C/mi>\u003Cmo>⁡\u003C/mo>\u003Cmi>A\u003C/mi>\u003Cmo>=\u003C/mo>\u003Cmi>cos\u003C/mi>\u003Cmo>⁡\u003C/mo>\u003Cmi>i\u003C/mi>\u003Cmi mathvariant=\"normal\">/\u003C/mi>\u003Cmi>cos\u003C/mi>\u003Cmo>⁡\u003C/mo>\u003Cmi>φ\u003C/mi>\u003C/mrow>\u003Cannotation encoding=\"application/x-tex\">\\cos A = \\cos i / \\cos\\varphi\u003C/annotation>\u003C/semantics>\u003C/math>\u003C/span>\u003Cspan class=\"katex-html\" aria-hidden=\"true\">\u003Cspan class=\"katex-base\">\u003Cspan class=\"katex-strut\" style=\"height:0.6833em;\">\u003C/span>\u003Cspan class=\"mop\">cos\u003C/span>\u003Cspan class=\"mspace\" style=\"margin-right:0.1667em;\">\u003C/span>\u003Cspan class=\"mord mathnormal\">A\u003C/span>\u003Cspan class=\"mspace\" style=\"margin-right:0.2778em;\">\u003C/span>\u003Cspan class=\"mrel\">=\u003C/span>\u003Cspan class=\"mspace\" style=\"margin-right:0.2778em;\">\u003C/span>\u003C/span>\u003Cspan class=\"katex-base\">\u003Cspan class=\"katex-strut\" style=\"height:1em;vertical-align:-0.25em;\">\u003C/span>\u003Cspan class=\"mop\">cos\u003C/span>\u003Cspan class=\"mspace\" style=\"margin-right:0.1667em;\">\u003C/span>\u003Cspan class=\"mord mathnormal\">i\u003C/span>\u003Cspan class=\"mord\">/\u003C/span>\u003Cspan class=\"mspace\" style=\"margin-right:0.1667em;\">\u003C/span>\u003Cspan class=\"mop\">cos\u003C/span>\u003Cspan class=\"mspace\" style=\"margin-right:0.1667em;\">\u003C/span>\u003Cspan class=\"mord mathnormal\">φ\u003C/span>\u003C/span>\u003C/span>\u003C/span>\u003C/span>",parameters:[{label:"Latitudine del sito di lancio [deg]",value:"28,5 (0 – 90)"},{label:"Inclinazione di destinazione [deg]",value:"51,6 (0 – 145)"}],outputs:["Rotta di lancio (bussola)"],results:[{label:"Rotta di lancio (bussola)",value:"45,02 deg"}],assumptions:["Terra non rotante (ignora la virata di velocità del sito di lancio)","Terra sferica"],buildsOn:[{id:"launch-site",title:"Sito di lancio"}],sameDomain:[{id:"tsiolkovsky",title:"L'equazione di Ciolkovskij"},{id:"dv-to-orbit",title:"Δv per l'orbita"},{id:"reach-orbit-verdict",title:"Raggiungere l'orbita"},{id:"rocket-sizing",title:"Dimensionamento del razzo"},{id:"liftoff-thrust",title:"Spinta al decollo"},{id:"ascent-guidance",title:"Guida di ascesa (il computer di volo)"}],citation:"orbits/inclination",learnMore:{url:"https://en.wikipedia.org/wiki/Launch_window",source:"wikipedia"}},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

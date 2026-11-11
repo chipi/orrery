@@ -1,1 +1,0 @@
-import{U as e,V as t}from"../chunks/B_cCGZcS.js";import"../chunks/xihTtKlq.js";import"../chunks/kkhV3oBX.js";var n=e(`<p>Not found</p>`);function r(e){t(e,n())}export{r as component};

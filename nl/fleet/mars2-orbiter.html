@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="nl" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-0iaBINSsDFW3oh7d2A8oaFUHT3SAUnFCvsncQQJYMXU='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/32.Ba_7_NXM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CstHmmpA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xe7y8WPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BSzmrz8C2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKUbgPvw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ehZykTWQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bp-JR0aQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCW0Q--42.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5yvoOgk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/fB72kKMI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BAkaTcaq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="nl_NL"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--6cxttz--><meta name="description" content="Sovjetorbiter naast Mars 2 — tweede ruimtevaartuig ooit in een Marsbaan (13 dagen na Mariner 9)."/> <!--[0--><meta property="og:image" content="https://www.orrerylearn.com/images/cards/fleet/mars2-orbiter.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!--]--><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Mars 2 Orbiter","description":"Sovjetorbiter naast Mars 2 — tweede ruimtevaartuig ooit in een Marsbaan (13 dagen na Mariner 9).","url":"https://www.orrerylearn.com/nl/fleet/mars2-orbiter","mainEntityOfPage":"https://www.orrerylearn.com/nl/fleet/mars2-orbiter","inLanguage":"nl","image":"https://www.orrerylearn.com/orrery/images/fleet-galleries/mars2-orbiter/03.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Vloot","item":"https://www.orrerylearn.com/nl/fleet"},{"@type":"ListItem","position":2,"name":"Mars 2 Orbiter","item":"https://www.orrerylearn.com/nl/fleet/mars2-orbiter"}]}]</script><!----><!----><title>Mars 2 Orbiter · Vloot · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Mars 2 Orbiter · Vloot"/><meta property="og:description" content="Sovjetorbiter naast Mars 2 — tweede ruimtevaartuig ooit in een Marsbaan (13 dagen na Mariner 9)."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Mars 2 Orbiter · Vloot"/><meta name="twitter:description" content="Sovjetorbiter naast Mars 2 — tweede ruimtevaartuig ooit in een Marsbaan (13 dagen na Mariner 9)."/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/fleet/mars2-orbiter.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">Naar de inhoud</a> <nav aria-label="Hoofdnavigatie" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — start"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">START</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">VERKENNEN<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">WERELDEN<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VLIEG</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PLANNEN</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATALOGUS<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">LEREN<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Navigatiemenu openen" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Volg de rondleiding" aria-pressed="false" title="Volg de rondleiding"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Taal" aria-haspopup="listbox" aria-expanded="false" title="Kies taal">NL</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Wetenschapslens tonen/verbergen (niet beschikbaar op deze pagina)" aria-pressed="false" title="Toon natuurkundige laag (overlays voor baanmechanica) (niet beschikbaar op deze pagina)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Hoogcontrastmodus aan/uit" aria-pressed="false" title="Hoogcontrastmodus aan/uit">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="INSTELLINGEN" aria-haspopup="dialog" aria-expanded="false" title="INSTELLINGEN"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Deel deze weergave" title="Deel deze weergave"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="Debuglagen tonen/verbergen" aria-pressed="false" title="Debugmodus — ontwikkelaarsoverlays"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/fleet">Vloot</a> <span class="sep">›</span> <span>Mars 2 Orbiter</span></nav> <header><p class="meta">Roscosmos · Orbiter · <span class="status">BUITEN GEBRUIK</span></p> <h1>Mars 2 Orbiter</h1> <!--[0--><p class="lede">Sovjetorbiter naast Mars 2 — tweede ruimtevaartuig ooit in een Marsbaan (13 dagen na Mariner 9). Actief 1971-11-27 tot 1972-08</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/fleet-galleries/mars2-orbiter/03.webp" alt="Mars 2 Orbiter" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <!--[0--><p class="description">De orbitale component van de Sovjetische Mars 2-missie. Gelanceerd op 1971-05-19 met een Proton-K vanuit Bajkonoer, Mars 2 bereikte Mars op 1971-11-27 — slechts 13 dagen nadat Mariner 9 de eerste Mars-orbiter werd. De lander probeerde af te dalen op 1971-11-27, maar de parachute opende niet en de lander stortte neer (het eerste door de mens gemaakte object op Mars, maar geen telemetrie). De orbiter was veel succesvoller, met ruim 60 beelden en uitgebreide metingen van de bovenste atmosfeer, magnetisch veld en oppervlaktetemperaturen tijdens dezelfde globale stofstorm die de vroege beeldvorming van Mariner 9 belemmerde. Voorzien van infrarood- en ultravioletspectrometers, fotometers, een Lyman-alpha-sensor, magnetometer, plasmanalysator en kosmische-stralings-detectoren — dezelfde instrumentatie als de Mars 3 Orbiter. Einde missie op 1972-08-22 na 362 banen.</p><!--]--> <!--[0--><p class="known">Sovjet-orbiter die Mars 2 vergezelde — tweede ruimtevaartuig ooit in een baan om Mars (13 dagen na Mariner 9). Actief 1971-11-27 tot 1972-08</p><!--]--> <dl class="facts"><div><dt>BOUWER</dt> <dd>NPO Lavochkin</dd></div> <div><dt>LAND</dt> <dd>Sovjet-Unie</dd></div> <div><dt>Eerste vlucht</dt> <dd>1971-05-19</dd></div> <!--[-1--><!--]--> <div><dt>ERA</dt> <dd>1969-1981</dd></div> <div><dt>Tijdperk</dt> <dd>Maantijdperk</dd></div> <!--[--><!--]--></dl> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[0--><section class="sites"><h2>Werkbaan</h2> <ul class="linklist wide"><!--[--><li><a href="/orrery/mars/mars2">Lander Mars 2</a> <!--[0--><span class="year">Ongeveer 45°Z, 313°O (Hellas-bassin)</span><!--]--> <!--[0--><span class="note">Het eerste door mensenhanden vervaardigde object dat het Marsoppervlak bereikt — door inslag. De parachute van de lander faalde tijdens de landing op 27 november 1971; het crashte met hoge snelheid in de Hellas-regio. De orbitercomponent bleef acht maanden lang gegevens terugsturen. Mars 2 markeerde het begin van de Sovjet-poging om de Amerikanen voorbij te streven met een landing op het Marsoppervlak in het lanceervenster van 1971.</span><!--]--></li><!--]--></ul></section><!--]--> <!--[--><!--[-1--><!--]--><!--[-1--><!--]--><!--[-1--><!--]--><!--[0--><section class="related"><h2>Orbiter</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/mars3-orbiter">Mars 3 Orbiter</a> <!--[0--><span class="note">Sovjet-orbiter bij Mars 3 — in een baan om Mars van 1971-12-02 tot 1972-08; eerste temperatuurmetingen van de hoge atmosfeer van Mars</span><!--]--></li><li><a href="/orrery/fleet/luna10">Luna 10</a> <!--[0--><span class="note">Eerste ruimtevaartuig in een baan om de Maan (of een ander hemellichaam dan de Aarde) — maanbaan op 1966-04-03, drie jaar vóór Apollo 8</span><!--]--></li><li><a href="/orrery/fleet/phobos-2">Phobos 2</a> <!--[0--><span class="note">Laatste Sovjet-planetaire missie; verloren bij nadering tot Phobos</span><!--]--></li><li><a href="/orrery/fleet/mariner-9">Mariner 9</a> <!--[0--><span class="note">Eerste ruimtevaartuig in een baan om een andere planeet</span><!--]--></li><li><a href="/orrery/fleet/pioneer-10">Pioneer 10</a> <!--[0--><span class="note">Eerste ruimtevaartuig dat de asteroïdengordel doorkruiste</span><!--]--></li><li><a href="/orrery/fleet/pioneer-11">Pioneer 11</a> <!--[0--><span class="note">Eerste sonde die Saturnus bereikte — Jupiter-flyby 1974 en daarna Saturnus 1979 via een zwaartekrachtassist</span><!--]--></li><!--]--></ul></section><!--]--><!--]--> <!--[-1--><!--]--> <p class="actions"><a class="cta" href="/orrery/fleet?id=mars2-orbiter">→ Openen in Orrery</a></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Voettekst van de site"><nav class="footer-menu svelte-12qhfyh" aria-label="Links in de voettekst"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">VERKENNEN</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">WERELDEN</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">CATALOGUS</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">LEREN</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galerij</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Credits</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colofon</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Bibliotheek</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">Woordenlijst</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">Over</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="Over"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">Privacy</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licentie</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Buildversie + deploydatum (opent CHANGELOG op GitHub): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">Meer</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 32],
+									data: [null,{type:"data",data:{card:"https://www.orrerylearn.com/images/cards/fleet/mars2-orbiter.jpg",entry:{id:"mars2-orbiter",name:"Mars 2 Orbiter",category:"orbiter",agency:"Roscosmos",country:"USSR",manufacturer:"NPO Lavochkin",first_flight:"1971-05-19",status:"RETIRED",era:"1969-1981",epoch:"lunar-era",best_known_for:"Sovjet-orbiter die Mars 2 vergezelde — tweede ruimtevaartuig ooit in een baan om Mars (13 dagen na Mariner 9). Actief 1971-11-27 tot 1972-08",credit:"The orbital half of the Soviet Mars 2 mission. Launched 1971-05-19 on a Proton-K from Baikonur, Mars 2 reached Mars 1971-11-27 — just 13 days after Mariner 9 became the first Mars orbiter. Its lander attempted descent on 1971-11-27 but its parachute failed to deploy and the lander crashed (the first man-made object on Mars, but no telemetry). The orbiter half was much more successful, returning ~60 image frames + extensive measurements of the upper atmosphere, magnetic field, and surface temperatures during the same global dust storm that compromised Mariner 9's early imaging. Carried infrared and ultraviolet spectrometers, photometers, a Lyman-alpha sensor, magnetometer, plasma analyser, and cosmic-ray detectors — the same instrument suite as Mars 3 Orbiter. End of mission 1972-08-22 after 362 orbits.",links:[{l:"Mars 2 — Wikipedia",u:"https://en.wikipedia.org/wiki/Mars_2",t:"intro"},{l:"Mars 2 — NASA / NSSDCA",u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-045A",t:"core"}],linked_missions:[],linked_sites:[{type:"mars",site_id:"mars2"}],tagline:"Sovjetorbiter naast Mars 2 — tweede ruimtevaartuig ooit in een Marsbaan (13 dagen na Mariner 9). Actief 1971-11-27 tot 1972-08",description:"De orbitale component van de Sovjetische Mars 2-missie. Gelanceerd op 1971-05-19 met een Proton-K vanuit Bajkonoer, Mars 2 bereikte Mars op 1971-11-27 — slechts 13 dagen nadat Mariner 9 de eerste Mars-orbiter werd. De lander probeerde af te dalen op 1971-11-27, maar de parachute opende niet en de lander stortte neer (het eerste door de mens gemaakte object op Mars, maar geen telemetrie). De orbiter was veel succesvoller, met ruim 60 beelden en uitgebreide metingen van de bovenste atmosfeer, magnetisch veld en oppervlaktetemperaturen tijdens dezelfde globale stofstorm die de vroege beeldvorming van Mariner 9 belemmerde. Voorzien van infrarood- en ultravioletspectrometers, fotometers, een Lyman-alpha-sensor, magnetometer, plasmanalysator en kosmische-stralings-detectoren — dezelfde instrumentatie als de Mars 3 Orbiter. Einde missie op 1972-08-22 na 362 banen."},missions:[],alongside:[],kin:[{id:"mars3-orbiter",name:"Mars 3 Orbiter",tagline:"Sovjet-orbiter bij Mars 3 — in een baan om Mars van 1971-12-02 tot 1972-08; eerste temperatuurmetingen van de hoge atmosfeer van Mars"},{id:"luna10",name:"Luna 10",tagline:"Eerste ruimtevaartuig in een baan om de Maan (of een ander hemellichaam dan de Aarde) — maanbaan op 1966-04-03, drie jaar vóór Apollo 8"},{id:"phobos-2",name:"Phobos 2",tagline:"Laatste Sovjet-planetaire missie; verloren bij nadering tot Phobos"},{id:"mariner-9",name:"Mariner 9",tagline:"Eerste ruimtevaartuig in een baan om een andere planeet"},{id:"pioneer-10",name:"Pioneer 10",tagline:"Eerste ruimtevaartuig dat de asteroïdengordel doorkruiste"},{id:"pioneer-11",name:"Pioneer 11",tagline:"Eerste sonde die Saturnus bereikte — Jupiter-flyby 1974 en daarna Saturnus 1979 via een zwaartekrachtassist"}],engines:[],usedOn:[],sites:[{type:"mars",href:"/mars/mars2",name:"Lander Mars 2",place:"Ongeveer 45°Z, 313°O (Hellas-bassin)",text:"Het eerste door mensenhanden vervaardigde object dat het Marsoppervlak bereikt — door inslag. De parachute van de lander faalde tijdens de landing op 27 november 1971; het crashte met hoge snelheid in de Hellas-regio. De orbitercomponent bleef acht maanden lang gegevens terugsturen. Mars 2 markeerde het begin van de Sovjet-poging om de Amerikanen voorbij te streven met een landing op het Marsoppervlak in het lanceervenster van 1971."}],crewed:[],museums:[],hero:"/orrery/images/fleet-galleries/mars2-orbiter/03.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

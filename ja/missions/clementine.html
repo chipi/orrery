@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-aoi6j8FCQEG3M7sdIQP/3zz8BEEZNgDLMGwXo6y+O58='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/47.DNtfTY28.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B6T0Q7xV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BPm_otwg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="ja_JP"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--agldnw--><meta name="description" content="NASA／米国防総省の共同月ミッション；月の極に水氷の最初の手がかり 主に戦略防衛構想の技術実証機として設計されたClementineは、10週間にわたって月周回軌道にとどまり、月の初めての体系的な全球地形図とマルチスペクトル地図を送り返した。"/> <meta property="og:image" content="https://www.orrerylearn.com/images/cards/mission/clementine.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Clementine","description":"NASA／米国防総省の共同月ミッション；月の極に水氷の最初の手がかり 主に戦略防衛構想の技術実証機として設計されたClementineは、10週間にわたって月周回軌道にとどまり、月の初めての体系的な全球地形図とマルチスペクトル地図を送り返した。","url":"https://www.orrerylearn.com/ja/missions/clementine","mainEntityOfPage":"https://www.orrerylearn.com/ja/missions/clementine","inLanguage":"ja","image":"https://www.orrerylearn.com/orrery/images/missions/clementine/01.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ミッションカタログ","item":"https://www.orrerylearn.com/ja/missions"},{"@type":"ListItem","position":2,"name":"Clementine","item":"https://www.orrerylearn.com/ja/missions/clementine"}]}]</script><!----><!----><title>Clementine · ミッションカタログ · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Clementine · ミッションカタログ"/><meta property="og:description" content="NASA／米国防総省の共同月ミッション；月の極に水氷の最初の手がかり 主に戦略防衛構想の技術実証機として設計されたClementineは、10週間にわたって月周回軌道にとどまり、月の初めての体系的な全球地形図とマルチスペクトル地図を送り返した。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Clementine · ミッションカタログ"/><meta name="twitter:description" content="NASA／米国防総省の共同月ミッション；月の極に水氷の最初の手がかり 主に戦略防衛構想の技術実証機として設計されたClementineは、10週間にわたって月周回軌道にとどまり、月の初めての体系的な全球地形図とマルチスペクトル地図を送り返した。"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/mission/clementine.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">本文へスキップ</a> <nav aria-label="メインナビゲーション" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — ホーム"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">ホーム</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">探索<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">世界<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">フライ</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">プラン</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">カタログ<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">学習<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="ナビゲーションメニューを開く" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="ツアーを始める" aria-pressed="false" title="ツアーを始める"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="言語" aria-haspopup="listbox" aria-expanded="false" title="言語を選択">JA</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="サイエンスレンズを切り替え（このページでは使用できません）" aria-pressed="false" title="物理レイヤーを表示 (軌道力学オーバーレイ)（このページでは使用できません）"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="高コントラストモードを切り替える" aria-pressed="false" title="高コントラストモードを切り替える">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="設定" aria-haspopup="dialog" aria-expanded="false" title="設定"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="このビューを共有" title="このビューを共有"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="デバッグオーバーレイを切り替え" aria-pressed="false" title="デバッグモード — 開発者オーバーレイ"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/missions">ミッションカタログ</a> <span class="sep">›</span> <span>Clementine</span></nav> <header><p class="meta">NASA · 1994 · <span class="status">飛行済み</span></p> <h1>Clementine</h1> <!--[0--><p class="lede">NASA／米国防総省の共同月ミッション；月の極に水氷の最初の手がかり</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/missions/clementine/01.webp" alt="Clementine" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <dl class="facts"><div><dt>機関</dt> <dd>U.S. Naval Research Laboratory / NASA (joint Department of Defense-NASA mission)</dd></div> <div><dt>出発</dt> <dd>1994-01-25</dd></div> <div><dt>到着</dt> <dd>1994-02-19</dd></div> <div><dt>飛行期間</dt> <dd>25日</dd></div> <div><dt>ΔV</dt> <dd>~3.5 km/s</dd></div> <!--[0--><div><dt>機体</dt> <dd><!--[-1-->Titan II G<!--]--></dd></div><!--]--> <!--[0--><div><dt>ペイロード</dt> <dd><!--[0--><a href="/orrery/fleet/clementine">乾燥質量227 kg；推進剤込み424 kg；固体キックモーター込みの打上げ時1690 kg</a><!--]--></dd></div><!--]--></dl> <!--[0--><p class="description">主に戦略防衛構想の技術実証機として設計されたClementineは、10週間にわたって月周回軌道にとどまり、月の初めての体系的な全球地形図とマルチスペクトル地図を送り返した。月の南極でのバイスタティックレーダー測定は、水氷の存在を示す初の気をそそる兆候をもたらした――この結果には異論があったが、のちにLunar Prospector（水素）、LCROSS、Chandrayaan-1が水氷の証拠を見つけた。小惑星ジオグラフォスへのフライバイを行う後続ミッションは、スラスタの誤作動で探査機の推進剤が尽きたため失敗した。</p><!--]--> <!--[0--><section class="events"><h2>イベント</h2> <ol><!--[--><li><strong>打ち上げ</strong><!--[0--> — ヴァンデンバーグ空軍基地から Titan II G。<!--]--></li><li><strong>LOI</strong><!--[0--> — 月軌道投入 1994-02-19。<!--]--></li><li><strong>マッピング開始</strong><!--[0--> — 体系的な多スペクトル・地形マッピング開始。<!--]--></li><li><strong>出発</strong><!--[0--> — ジオグラフォス小惑星フライバイのため月軌道を離れる。<!--]--></li><li><strong>スラスター故障</strong><!--[0--> — スラスタ故障で推進剤枯渇；小惑星遭遇中止。<!--]--></li><!--]--></ol></section><!--]--> <p class="actions"><a class="cta" href="/orrery/missions?id=clementine">→ Orreryで開く</a> <!--[0--><a class="cta" href="/orrery/fly?mission=clementine">このミッションを飛ぶ</a><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="サイトフッター"><nav class="footer-menu svelte-12qhfyh" aria-label="フッターリンク"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">探索</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">世界</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">カタログ</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">学習</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">ギャラリー</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">クレジット</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">奥付</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">ライブラリ</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">用語集</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">このサイトについて</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="このサイトについて"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">プライバシー</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">ライセンス</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="ビルドバージョン+デプロイ日時（GitHubのCHANGELOGを開く）: v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">その他</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 47],
+									data: [null,(function(a){return {type:"data",data:{mission:{id:"clementine",agency:"NASA",agency_full:"U.S. Naval Research Laboratory / NASA (joint Department of Defense-NASA mission)",sector:"gov",dest:"MOON",color:"#0B3D91",year:1994,status:"FLOWN",departure_date:"1994-01-25",arrival_date:"1994-02-19",transit_days:25,vehicle:"Titan II G",payload:"乾燥質量227 kg；推進剤込み424 kg；固体キックモーター込みの打上げ時1690 kg",delta_v:"~3.5 km/s",data_quality:"good",credit:"© U.S. NRL / NASA — declassified DoD mission. Purpose: technology demonstration for SDI, mapped Moon as bonus. Found first hints of water ice at lunar poles.",links:[{l:"Clementine — Wikipedia",u:"https://en.wikipedia.org/wiki/Clementine_(spacecraft)",t:"intro"},{l:"Clementine (NSSDCA)",u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1994-004A",t:"core"}],flight_data_quality:"measured",fleet_refs:[{id:"clementine",role:"spacecraft"}],flight:{launch:{vehicle_stage:"探査機側の Star-37 キック段（Titan II G は地球低軌道まで）",departure:"spacecraft",mass_at_tli_kg:1690,source:"NASA NSSDCA Clementine archive; NRL Clementine Mission Report (1994)"},cruise:{tcm_count:3,source:"NRL Clementine Mission Report (1994); used phasing loops + lunar gravity assist"},arrival:{v_infinity_km_s:.85,periapsis_km:425,inclination_deg:90,orbit_insertion_dv_km_s:.56,source:"NRL Clementine Mission Report (1994); polar mapping orbit"},totals:{total_dv_km_s:3.5,source:"NRL Clementine Mission Report (1994)"},events:[{met_days:0,type:"launch",label:"打ち上げ",description:"ヴァンデンバーグ空軍基地から Titan II G。",label_en:"Launch — Titan II"},{met_days:9,type:"tli_or_tmi",label:"月遷移軌道投入",description:"1994-02-03、低軌道での8日間の点検の後。固体燃料モーター STAR 37FM が Clementine を位相調整ループに投入し、探査機は月に到達する前に2回地球の近くを通過した。",label_en:"Trans-lunar injection"},{met_days:10,type:"tcm",label:"TCM-1",description:"月遷移軌道投入後の最初の後始末。",label_en:"TCM-1"},{met_days:10.24,type:"tcm",label:"TCM-2",description:"巡航中間の精密化。",label_en:"TCM-2"},{met_days:12.75,type:"tcm",label:"TCM-3——月周回軌道投入前の最後",description:"月周回軌道投入前の最終接近照準。",label_en:"TCM-3 — final pre-LOI"},{met_days:25,type:"arrival",label:"LOI",description:"月軌道投入 1994-02-19。",label_en:"Lunar approach"},{met_days:25.05,type:"edl_or_oi",label:"月周回軌道投入",description:a,label_en:"Lunar orbit insertion"}],cislunar_profile:{source_tier:"tier_1_5_hybrid",parking_orbit:{altitude_km:250,inclination_deg:67,revs:2},tli:{dv_kms:3.05},translunar:{type:"direct"},lunar_arrival:{type:"orbit",altitude_km:425,inclination_deg:90,periselene_km:425},return:{type:"none"},waypoints_km:[[0,6628,0,0],[.0001,6628,-1,0],[.5314,4877,-4115,1747],[.797,2924,-5461,2318],[1.0627,575,-6067,2575],[1.3284,-1855,-5850,2483],[1.5941,-4037,-4839,2054],[1.8598,-5662,-3158,1341],[2.1255,-6516,-1053,447],[2.3911,-6486,1192,-506],[2.6568,-5577,3276,-1391],[2.9225,-3910,4917,-2087],[3.1882,-1709,5894,-2502],[3.4539,728,6057,-2571],[3.7195,3061,5398,-2292],[3.9852,4978,4009,-1702],[4.2509,6219,2076,-881],[4.5166,6618,-141,60],[4.7823,6119,-2343,994],[5.048,4775,-4221,1792],[5.3136,2786,-5523,2345],[5.5793,422,-6076,2579],[5.845,-2000,-5804,2464],[6.1107,-4153,-4745,2014],[6.3764,-5746,-3040,1290],[6.642,-6546,-915,388],[6.9077,-6456,1331,-565],[7.1734,-5491,3393,-1440],[7.4391,-3782,4996,-2121],[7.7048,-1559,5922,-2514],[7.9705,881,6046,-2566],[8.2361,3199,5336,-2265],[8.5018,5079,3903,-1657],[8.7675,6269,1942,-824],[9,6628,0,0],[9.2989,6867,0,-67],[9.5645,7091,0,-130],[9.8302,7325,0,-198],[10,7480,0,-244],[10.24,7709,0,-311],[10.6273,8099,0,-429],[10.893,8384,0,-517],[11.1586,8684,0,-611],[11.4243,9000,0,-712],[11.69,9333,0,-819],[11.9557,9685,0,-935],[12.2214,10057,0,-1058],[12.487,10450,0,-1191],[12.75,10862,0,-1333],[13.0184,11309,0,-1488],[13.2841,11778,0,-1653],[13.5498,12277,0,-1832],[13.8155,12808,0,-2024],[14.0811,13374,0,-2232],[14.3468,13978,0,-2457],[14.6125,14624,0,-2702],[14.8782,15316,0,-2967],[15.1439,16057,0,-3255],[15.4095,16854,0,-3568],[15.6752,17711,0,-3910],[15.9409,18634,0,-4283],[16.2066,19633,0,-4692],[16.4723,20714,0,-5140],[16.738,21885,0,-5632],[17.0036,23158,0,-6174],[17.2693,24545,0,-6771],[17.535,26059,0,-7432],[17.8007,27718,0,-8165],[18.0664,29539,0,-8980],[18.332,31542,0,-9887],[18.5977,33752,0,-10901],[18.8634,36198,0,-12038],[19.1291,38919,0,-13318],[19.3948,41950,0,-14762],[19.6605,45338,0,-16396],[19.9261,49138,0,-18252],[20.1918,53416,0,-20368],[20.4575,58253,0,-22791],[20.7232,63748,0,-25580],[20.9889,70005,0,-28796],[21.2545,77156,0,-32521],[21.5202,85355,0,-36849],[21.7859,94787,0,-41895],[22.0516,105683,0,-47809],[22.3173,118276,0,-54744],[22.583,132817,0,-62875],[22.8486,149567,0,-72394],[23.1143,168747,0,-83485],[23.38,190481,0,-96294],[23.6457,214692,0,-110878],[23.9114,240838,0,-127033],[24.177,267829,0,-144244],[24.4427,293827,0,-161536],[24.7084,316252,0,-177439],[25.05,335001,0,-192885],[25.2398,334791,992,-192764],[25.5055,333901,1967,-192252],[25.7711,332679,2097,-191548],[26.0368,331650,1327,-190955],[26.3025,331254,-14,-190727]]}},name:"Clementine",type:"軌道機 · 飛行済み",first:"NASA／米国防総省の共同月ミッション；月の極に水氷の最初の手がかり",description:"主に戦略防衛構想の技術実証機として設計されたClementineは、10週間にわたって月周回軌道にとどまり、月の初めての体系的な全球地形図とマルチスペクトル地図を送り返した。月の南極でのバイスタティックレーダー測定は、水氷の存在を示す初の気をそそる兆候をもたらした――この結果には異論があったが、のちにLunar Prospector（水素）、LCROSS、Chandrayaan-1が水氷の証拠を見つけた。小惑星ジオグラフォスへのフライバイを行う後続ミッションは、スラスタの誤作動で探査機の推進剤が尽きたため失敗した。",events:[{met:0,label:"打ち上げ",note:"ヴァンデンバーグ空軍基地から Titan II G。",type:"nominal"},{met:25,label:"LOI",note:"月軌道投入 1994-02-19。",type:"nominal"},{met:30,label:"マッピング開始",note:"体系的な多スペクトル・地形マッピング開始。",type:"info"},{met:95,label:"出発",note:"ジオグラフォス小惑星フライバイのため月軌道を離れる。",type:"nominal"},{met:100,label:"スラスター故障",note:"スラスタ故障で推進剤枯渇；小惑星遭遇中止。",type:"warning"}],vehicle_stage:"探査機側の Star-37 キック段（Titan II G は地球低軌道まで）",flight_events:[{met:9,label:"月遷移軌道投入",description:"1994-02-03、低軌道での8日間の点検の後。固体燃料モーター STAR 37FM が Clementine を位相調整ループに投入し、探査機は月に到達する前に2回地球の近くを通過した。"},{met:10,label:"TCM-1",description:"月遷移軌道投入後の最初の後始末。"},{met:10.24,label:"TCM-2",description:"巡航中間の精密化。"},{met:12.75,label:"TCM-3——月周回軌道投入前の最後",description:"月周回軌道投入前の最終接近照準。"},{met:25.05,label:"月周回軌道投入",description:a}]},hero:"/orrery/images/missions/clementine/01.webp"},uses:{params:["id"]}}}("1994-02-19。415 × 2,940 km の極軌道に捕捉された。71日間にわたり複数の波長で月面を地図化した——初の全球高解像度マルチスペクトル月面図である。二局レーダー実験のデータはのちに（議論を呼びつつ）月の南極に水の氷がある証拠と解釈され、この発見が LRO とその後のすべての氷探査ミッションの引き金となった。"))],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

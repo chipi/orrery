@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-prGwaNA4SatjelKcxKmQNdWUHLf7qzWcbsBkunHknWU='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/47.DNtfTY28.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B6T0Q7xV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BPm_otwg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="pt_BR"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--agldnw--><meta name="description" content="Primeira orbitadora polar de Júpiter; primeira utilização de energia solar além do cinturão de asteroides Juno entrou na órbita de Júpiter em 2016-07-05…"/> <meta property="og:image" content="https://www.orrerylearn.com/images/cards/mission/juno.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Juno","description":"Primeira orbitadora polar de Júpiter; primeira utilização de energia solar além do cinturão de asteroides Juno entrou na órbita de Júpiter em 2016-07-05…","url":"https://www.orrerylearn.com/pt-BR/missions/juno","mainEntityOfPage":"https://www.orrerylearn.com/pt-BR/missions/juno","inLanguage":"pt-BR","image":"https://www.orrerylearn.com/orrery/images/missions/juno/01.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Catálogo de missões","item":"https://www.orrerylearn.com/pt-BR/missions"},{"@type":"ListItem","position":2,"name":"Juno","item":"https://www.orrerylearn.com/pt-BR/missions/juno"}]}]</script><!----><!----><title>Juno · Catálogo de missões · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Juno · Catálogo de missões"/><meta property="og:description" content="Primeira orbitadora polar de Júpiter; primeira utilização de energia solar além do cinturão de asteroides Juno entrou na órbita de Júpiter em 2016-07-05…"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Juno · Catálogo de missões"/><meta name="twitter:description" content="Primeira orbitadora polar de Júpiter; primeira utilização de energia solar além do cinturão de asteroides Juno entrou na órbita de Júpiter em 2016-07-05…"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/mission/juno.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">Pular para o conteúdo</a> <nav aria-label="Navegação principal" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — início"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">INÍCIO</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">EXPLORAR<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">MUNDOS<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VOAR</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PLANEJAR</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATÁLOGO<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">APRENDER<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Abrir menu de navegação" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Fazer o tour guiado" aria-pressed="false" title="Fazer o tour guiado"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Idioma" aria-haspopup="listbox" aria-expanded="false" title="Escolher idioma">PT</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Mostrar/ocultar a lente científica (indisponível nesta página)" aria-pressed="false" title="Mostrar camada de física (sobreposições de mecânica orbital) (indisponível nesta página)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Ativar/desativar o modo de alto contraste" aria-pressed="false" title="Ativar/desativar o modo de alto contraste">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="CONFIGURAÇÕES" aria-haspopup="dialog" aria-expanded="false" title="CONFIGURAÇÕES"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Compartilhar esta visão" title="Compartilhar esta visão"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="Mostrar/ocultar sobreposições de depuração" aria-pressed="false" title="Modo de depuração — sobreposições de desenvolvedor"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/missions">Catálogo de missões</a> <span class="sep">›</span> <span>Juno</span></nav> <header><p class="meta">NASA · 2011 · <span class="status">ATIVA</span></p> <h1>Juno</h1> <!--[0--><p class="lede">Primeira orbitadora polar de Júpiter; primeira utilização de energia solar além do cinturão de asteroides</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/missions/juno/01.webp" alt="Juno" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <dl class="facts"><div><dt>AGÊNCIA</dt> <dd>National Aeronautics and Space Administration / Jet Propulsion Laboratory / Southwest Research Institute (principal investigator)</dd></div> <div><dt>PARTIDA</dt> <dd>2011-08-05</dd></div> <div><dt>CHEGADA</dt> <dd>2016-07-05</dd></div> <div><dt>TEMPO DE VOO</dt> <dd>1796 dias</dd></div> <div><dt>∆V</dt> <dd>~3,7 km/s (inserção em órbita de Júpiter)</dd></div> <!--[0--><div><dt>LANÇADOR</dt> <dd><!--[0--><a href="/orrery/fleet/atlas-v">Atlas V 551</a><!--]--></dd></div><!--]--> <!--[0--><div><dt>CARGA ÚTIL</dt> <dd><!--[0--><a href="/orrery/fleet/juno">Orbitador polar de Júpiter; primeira espaçonave movida a energia solar a chegar a Júpiter (painéis solares de tripla junção de ~50 m² que fornecem ~14 kW na Terra, ~500 W em Júpiter)</a><!--]--></dd></div><!--]--></dl> <!--[0--><p class="description">Juno entrou na órbita de Júpiter em 2016-07-05 seguindo uma trajetória polar altamente elíptica de 53 dias que a leva de dentro dos cinturões de radiação (perijove ~4200 km acima do topo das nuvens) até além de Calisto. Alimentada por energia solar — seus arranjos de junção tripla com ~50 m² entregam 14 kW na Terra, mas apenas ~500 W em Júpiter, a primeira vez que energia solar é utilizada a essa distância. Confirmou que Júpiter possui um núcleo rochoso diluído (sem uma fronteira bem definida), mediu a disposição do ciclone polar (oito tempestades circunpolares ao redor do polo norte e cinco, depois seis, ao redor do sul) e capturou imagens do vulcanismo de Io com detalhes sem precedentes em 2023. A missão estendida inclui sobrevoos de todas as quatro luas galileanas até 2025.</p><!--]--> <!--[0--><section class="events"><h2>EVENTOS</h2> <ol><!--[--><li><strong>LANÇAMENTO</strong><!--[0--> — Atlas V 551 eleva a Juno de Cabo Canaveral.<!--]--></li><li><strong>ASSISTÊNCIA GRAVITACIONAL TERRESTRE</strong><!--[0--> — O estilingue eleva a energia heliocêntrica o suficiente para alcançar Júpiter.<!--]--></li><li><strong>INSERÇÃO EM ÓRBITA DE JÚPITER</strong><!--[0--> — Queima de 35 minutos do motor principal coloca a Juno em órbita polar de Júpiter.<!--]--></li><!--]--></ol></section><!--]--> <p class="actions"><a class="cta" href="/orrery/missions?id=juno">→ Abrir no Orrery</a> <!--[0--><a class="cta" href="/orrery/fly?mission=juno">ACOMPANHAR A MISSÃO EM VOO</a><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Rodapé do site"><nav class="footer-menu svelte-12qhfyh" aria-label="Links do rodapé"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">EXPLORAR</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">MUNDOS</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">CATÁLOGO</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">APRENDER</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galeria</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Créditos</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colofão</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Biblioteca</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">Glossário</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">Sobre</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="Sobre"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">Privacidade</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licença</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Versão da build + data de deploy (abre o CHANGELOG no GitHub): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">Mais</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 47],
+									data: [null,{type:"data",data:{mission:{id:"juno",agency:"NASA",agency_full:"National Aeronautics and Space Administration / Jet Propulsion Laboratory / Southwest Research Institute (principal investigator)",sector:"gov",dest:"JUPITER",color:"#0B3D91",year:2011,status:"ACTIVE",departure_date:"2011-08-05",arrival_date:"2016-07-05",transit_days:1796,vehicle:"Atlas V 551",payload:"Orbitador polar de Júpiter; primeira espaçonave movida a energia solar a chegar a Júpiter (painéis solares de tripla junção de ~50 m² que fornecem ~14 kW na Terra, ~500 W em Júpiter)",delta_v:"~3,7 km/s (inserção em órbita de Júpiter)",data_quality:"partial",flight_data_quality:"sparse",credit:"© NASA / JPL-Caltech / Southwest Research Institute — U.S. Government work, public domain. Juno is the first spacecraft to enter a polar orbit around Jupiter, allowing it to map the planet's magnetic field, gravity field, and atmospheric chemistry below the cloud tops. Highly elliptical 53-day orbit takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto's distance. Confirmed Jupiter has a 'diluted' rocky core (not a sharp boundary), measured the polar cyclone configuration (eight circumpolar storms around the north pole, five, later six, around the south), imaged Io's volcanism in unprecedented detail (close-pass 2023-12-30, ~1500 km altitude). Mission extension through September 2025 includes flybys of all four Galilean moons.",links:[{l:"Juno — Wikipedia",u:"https://en.wikipedia.org/wiki/Juno_(spacecraft)",t:"intro"},{l:"NASA Science — Juno mission overview",u:"https://science.nasa.gov/mission/juno/",t:"intro"},{l:"JunoCam — public image processing community (anyone can edit raw Junocam images)",u:"https://www.missionjuno.swri.edu/junocam",t:"core"},{l:"Southwest Research Institute — Juno mission home",u:"https://www.missionjuno.swri.edu/",t:"core"},{l:"The Planetary Society — Juno mission profile",u:"https://www.planetary.org/space-missions/juno",t:"core"},{l:"Bolton et al. (2017) — Jupiter's interior and deep atmosphere: The initial pole-to-pole passes (Science 356)",u:"https://www.science.org/doi/10.1126/science.aal2108",t:"deep"},{l:"NSSDCA — Juno master catalog entry",u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-040A",t:"deep"}],fleet_refs:[{id:"atlas-v",role:"launcher"},{id:"juno",role:"spacecraft"}],flight:{arrival:{orbit_insertion_dv_km_s:.542,source:"Juno (spacecraft) — Wikipedia (JOI: 2,102 s, 542 m/s)"},events:[{met_days:0,type:"launch",label:"LANÇAMENTO",description:"Atlas V 551 eleva a Juno de Cabo Canaveral.",label_en:"Launch — Atlas V 551"},{met_days:796,type:"flyby",label:"ASSISTÊNCIA GRAVITACIONAL TERRESTRE",description:"O estilingue eleva a energia heliocêntrica o suficiente para alcançar Júpiter.",label_en:"Earth — gravity assist"},{met_days:1796,type:"edl_or_oi",label:"INSERÇÃO EM ÓRBITA DE JÚPITER",description:"Queima de 35 minutos do motor principal coloca a Juno em órbita polar de Júpiter.",label_en:"Jupiter orbit insertion"}],interplanetary_profile:{source_tier:"tier_1_5_hybrid",reference_frame:"heliocentric_ecliptic_J2000",departure_body:"earth",arrival_body:"jupiter",transfer_type:"earth_gravity_assist",waypoints_helio_au:[[0,1,0,0],[180,1.5,.4,.05],[365,2,.8,.1],[600,2.3,1.3,.15],[749,1,1,.05],[1000,1.7,-.4,.1],[1400,3.2,-2.5,.2],[1796,4.7,-2.3,.3]]}},name:"Juno",type:"Orbitador · ATIVA",first:"Primeira orbitadora polar de Júpiter; primeira utilização de energia solar além do cinturão de asteroides",description:"Juno entrou na órbita de Júpiter em 2016-07-05 seguindo uma trajetória polar altamente elíptica de 53 dias que a leva de dentro dos cinturões de radiação (perijove ~4200 km acima do topo das nuvens) até além de Calisto. Alimentada por energia solar — seus arranjos de junção tripla com ~50 m² entregam 14 kW na Terra, mas apenas ~500 W em Júpiter, a primeira vez que energia solar é utilizada a essa distância. Confirmou que Júpiter possui um núcleo rochoso diluído (sem uma fronteira bem definida), mediu a disposição do ciclone polar (oito tempestades circunpolares ao redor do polo norte e cinco, depois seis, ao redor do sul) e capturou imagens do vulcanismo de Io com detalhes sem precedentes em 2023. A missão estendida inclui sobrevoos de todas as quatro luas galileanas até 2025.",events:[{met:0,label:"LANÇAMENTO",note:"Atlas V 551 eleva a Juno de Cabo Canaveral.",type:"nominal"},{met:796,label:"ASSISTÊNCIA GRAVITACIONAL TERRESTRE",note:"O estilingue eleva a energia heliocêntrica o suficiente para alcançar Júpiter.",type:"nominal"},{met:1796,label:"INSERÇÃO EM ÓRBITA DE JÚPITER",note:"Queima de 35 minutos do motor principal coloca a Juno em órbita polar de Júpiter.",type:"nominal"}]},hero:"/orrery/images/missions/juno/01.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

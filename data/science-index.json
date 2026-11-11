@@ -199,8 +199,8 @@
     "tab": "life-in-space",
     "section": "bone-density-loss",
     "title": "Bone density loss",
-    "intro": "Astronauts lose roughly 1–2% of bone mass per month in microgravity — the same rate as elderly osteoporosis, but compressed and reversible-ish.",
-    "haystack": "bone density loss astronauts lose roughly 1–2% of bone mass per month in microgravity — the same rate as elderly osteoporosis, but compressed and reversible-ish. bone is a living tissue that constantly remodels itself: osteoblasts lay new bone down, osteoclasts dissolve old bone away, and on earth the loading from walking, lifting, and just standing keeps the two roughly balanced. take that loading away in orbit and the balance tips. resorption keeps going at its normal rate; new-bone deposition slows. the result is a net loss of about 1–2% per month, concentrated in the weight-bearing structures: lumbar spine, pelvis, femoral neck, calcaneus."
+    "intro": "Astronauts lose roughly 1–2% of bone mass per month in microgravity — about ten times the 1–2% a year of elderly osteoporosis, and partly reversible.",
+    "haystack": "bone density loss astronauts lose roughly 1–2% of bone mass per month in microgravity — about ten times the 1–2% a year of elderly osteoporosis, and partly reversible. bone is a living tissue that constantly remodels itself: osteoblasts lay new bone down, osteoclasts dissolve old bone away, and on earth the loading from walking, lifting, and just standing keeps the two roughly balanced. take that loading away in orbit and the balance tips. resorption keeps going at its normal rate; new-bone deposition slows. the result is a net loss of about 1–2% per month, concentrated in the weight-bearing structures: lumbar spine, pelvis, femoral neck, calcaneus."
   },
   {
     "tab": "life-in-space",
@@ -277,7 +277,7 @@
     "section": "long-duration-effects",
     "title": "Long-duration effects",
     "intro": "Six months is the standard ISS rotation; one year has been done twice; Mars is three years. Each step extends the dose of every other effect — and adds new ones we can't yet fully reverse.",
-    "haystack": "long-duration effects six months is the standard iss rotation; one year has been done twice; mars is three years. each step extends the dose of every other effect — and adds new ones we can't yet fully reverse. roughly 70% of long-duration crew develop **sans** — space-associated neuro-ocular syndrome — a constellation of optic-disc swelling, posterior eyeball flattening, choroidal folds, and increased optic-nerve-sheath diameter. the leading hypothesis is fluid shift to the head increasing intracranial pressure; the changes don't fully reverse within a year of return for some crew. sans is the single most concerning physiologic finding from long-duration spaceflight."
+    "haystack": "long-duration effects six months is the standard iss rotation; one year has been done twice; mars is three years. each step extends the dose of every other effect — and adds new ones we can't yet fully reverse. roughly 60% of long-duration crew develop **sans** — space-associated neuro-ocular syndrome — a constellation of optic-disc swelling, posterior eyeball flattening, choroidal folds, and increased optic-nerve-sheath diameter. the leading hypothesis is fluid shift to the head increasing intracranial pressure; the changes don't fully reverse within a year of return for some crew. sans is the single most concerning physiologic finding from long-duration spaceflight."
   },
   {
     "tab": "life-in-space",
@@ -340,7 +340,7 @@
     "section": "radiation-exposure",
     "title": "Radiation exposure",
     "intro": "Galactic cosmic rays + solar particle events + Earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human Mars mission.",
-    "haystack": "radiation exposure galactic cosmic rays + solar particle events + earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human mars mission. earth's surface gets about 3 msv (millisieverts) of background radiation per year — radon, rocks, food, cosmic rays attenuated by 100 km of atmosphere. the iss, in low earth orbit and still partially shielded by the magnetosphere, gets about **150 msv per year**. deep space, outside the magnetosphere, gets about **600 msv per year** — and that's with no solar storms."
+    "haystack": "radiation exposure galactic cosmic rays + solar particle events + earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human mars mission. earth's surface gets about 3 msv (millisieverts) of background radiation per year — radon, rocks, food, cosmic rays attenuated by 100 km of atmosphere. the iss, in low earth orbit and still partially shielded by the magnetosphere, gets about **200 msv per year**. deep space, outside the magnetosphere, gets about **600 msv per year** — and that's with no solar storms."
   },
   {
     "tab": "life-in-space",
@@ -983,8 +983,8 @@
     "tab": "propulsion",
     "section": "expander-cycle",
     "title": "Expander cycle — powered by heat, not fire",
-    "intro": "Let the cryogenic fuel soak up heat off the engine's own nozzle, flash to gas, and spin the turbopump with it. No gas generator, no preburner — the engine's waste heat is the power source. Clean and reliable, but it cannot scale up.",
-    "haystack": "expander cycle — powered by heat, not fire let the cryogenic fuel soak up heat off the engine's own nozzle, flash to gas, and spin the turbopump with it. no gas generator, no preburner — the engine's waste heat is the power source. clean and reliable, but it cannot scale up. a rocket chamber and nozzle are ferociously hot, and a cryogenic engine already pumps its freezing fuel through channels in the chamber walls to keep them from melting — regenerative cooling. the expander cycle turns that cooling job into the engine's power plant. liquid hydrogen (or methane) enters the wall channels near the nozzle, absorbs a huge amount of heat, and flashes into a hot, high-pressure gas. that gas is expanded through the turbine to drive the turbopump, and only then is it delivered to the main chamber to burn. no propellant is set on fire just to run the pumps, so the turbine gas is benign, soot-free, and gentle on the hardware — which is why expander engines are famously reliable and restartable."
+    "intro": "Let the cryogenic fuel soak up heat off the engine's own nozzle, flash to gas, and spin the turbopump with it. No gas generator, no preburner — the engine's waste heat is the power source. Clean and reliable; bleed versions scale up.",
+    "haystack": "expander cycle — powered by heat, not fire let the cryogenic fuel soak up heat off the engine's own nozzle, flash to gas, and spin the turbopump with it. no gas generator, no preburner — the engine's waste heat is the power source. clean and reliable; bleed versions scale up. a rocket chamber and nozzle are ferociously hot, and a cryogenic engine already pumps its freezing fuel through channels in the chamber walls to keep them from melting — regenerative cooling. the expander cycle turns that cooling job into the engine's power plant. liquid hydrogen (or methane) enters the wall channels near the nozzle, absorbs a huge amount of heat, and flashes into a hot, high-pressure gas. that gas is expanded through the turbine to drive the turbopump, and only then is it delivered to the main chamber to burn. no propellant is set on fire just to run the pumps, so the turbine gas is benign, soot-free, and gentle on the hardware — which is why expander engines are famously reliable and restartable."
   },
   {
     "tab": "propulsion",

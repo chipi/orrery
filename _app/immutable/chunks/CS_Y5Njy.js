@@ -1,0 +1,1 @@
+import{B as e,U as t,V as n,X as r,bt as i,gt as a,lt as o,nt as s,yt as c}from"./B8c3XTJR.js";import"./xihTtKlq.js";var l=t(`<h1 class="sr-only svelte-u853k4"> </h1>`);function u(t,u){i(u,!0);let d=a(()=>u.title.replace(/\s*[·|—–-]\s*Orrery\s*$/u,``));var f=l(),p=o(f,!0);s(()=>e(p,r(d))),n(t,f),c()}export{u as t};

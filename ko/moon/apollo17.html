@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-/+r06F9R3z6eEktRctBuQ7ZyHkSbeq4LSBha+Vbo8+U='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/50.B7pBZgXH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DljCkBDP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BHPp9r622.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BZt7FIzy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B5qT6Uiu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/fB72kKMI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="ko_KR"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--ejvpnx--><meta name="description" content="인류가 달을 마지막으로 방문한 시간. 유진 서넌은 달의 표면을 걸었던 마지막 인물이었습니다. 사다리를 오르기 전에 그는 이렇게 말했습니다: '우리는 왔던 그대로 떠나며, 신의 뜻이라면 우리는 돌아올 것입니다.' 달에서 유일하게 훈련받은 지질학자인 해리슨 슈미트는 달 지질학에 대한…"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Apollo 17","description":"인류가 달을 마지막으로 방문한 시간. 유진 서넌은 달의 표면을 걸었던 마지막 인물이었습니다. 사다리를 오르기 전에 그는 이렇게 말했습니다: '우리는 왔던 그대로 떠나며, 신의 뜻이라면 우리는 돌아올 것입니다.' 달에서 유일하게 훈련받은 지질학자인 해리슨 슈미트는 달 지질학에 대한…","url":"https://www.orrerylearn.com/ko/moon/apollo17","mainEntityOfPage":"https://www.orrerylearn.com/ko/moon/apollo17","inLanguage":"ko","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"달 지도","item":"https://www.orrerylearn.com/ko/moon"},{"@type":"ListItem","position":2,"name":"Apollo 17","item":"https://www.orrerylearn.com/ko/moon/apollo17"}]}]</script><!----><!----><title>Apollo 17 · 달 지도 · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/SiteIllustrationFigure.BdZo7aBR.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Apollo 17 · 달 지도"/><meta property="og:description" content="인류가 달을 마지막으로 방문한 시간. 유진 서넌은 달의 표면을 걸었던 마지막 인물이었습니다. 사다리를 오르기 전에 그는 이렇게 말했습니다: '우리는 왔던 그대로 떠나며, 신의 뜻이라면 우리는 돌아올 것입니다.' 달에서 유일하게 훈련받은 지질학자인 해리슨 슈미트는 달 지질학에 대한…"/><meta property="og:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="빛나는 태양, 기울어진 궤도, 그리고 두 행성을 잇는 강조된 전이 궤도 호."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Apollo 17 · 달 지도"/><meta name="twitter:description" content="인류가 달을 마지막으로 방문한 시간. 유진 서넌은 달의 표면을 걸었던 마지막 인물이었습니다. 사다리를 오르기 전에 그는 이렇게 말했습니다: '우리는 왔던 그대로 떠나며, 신의 뜻이라면 우리는 돌아올 것입니다.' 달에서 유일하게 훈련받은 지질학자인 해리슨 슈미트는 달 지질학에 대한…"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta name="twitter:image:alt" content="빛나는 태양, 기울어진 궤도, 그리고 두 행성을 잇는 강조된 전이 궤도 호."/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">본문으로 건너뛰기</a> <nav aria-label="주 내비게이션" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — 홈"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">홈</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">탐색<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">천체<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">비행</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">계획</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">카탈로그<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">학습<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="내비게이션 메뉴 열기" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="투어 시작" aria-pressed="false" title="투어 시작"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="언어" aria-haspopup="listbox" aria-expanded="false" title="언어 선택">KO</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="과학 렌즈 전환 (이 페이지에서는 사용할 수 없음)" aria-pressed="false" title="물리 레이어 표시 (궤도역학 오버레이) (이 페이지에서는 사용할 수 없음)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="고대비 모드 전환" aria-pressed="false" title="고대비 모드 전환">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="설정" aria-haspopup="dialog" aria-expanded="false" title="설정"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="이 화면 공유" title="이 화면 공유"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="디버그 오버레이 전환" aria-pressed="false" title="디버그 모드 — 개발자 오버레이"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/moon">달 지도</a> <span class="sep">›</span> <span>Apollo 17</span></nav> <header><p class="meta">NASA · 1972 · <span class="status">completed</span></p> <h1>Apollo 17</h1> <!--[0--><p class="lede">타우루스-리트로 계곡</p><!--]--></header> <!--[0--><div class="site-map"><figure class="site-illustration svelte-1w5ocyb" data-testid="site-illustration"><!--[-1--><img src="/orrery/images/illustrations/sites/apollo17.webp" alt="타우루스-리트로 계곡에 있는 Apollo 17 착륙 지점을 입체 블록으로 그린 일러스트 지도. 계곡 바닥에 Challenger 달 착륙선, ALSEP 과학 기지, 월면차가 있고 North Massif, South Massif, Sculptured Hills에 둘러싸여 있으며, 이동 경로는 스테이션 1~9로 이어집니다." loading="lazy" decoding="async" class="svelte-1w5ocyb" onload="this.__e=event" onerror="this.__e=event"/><!--]--> <figcaption class="svelte-1w5ocyb">LROC 영상과 임무 이동 경로 데이터를 바탕으로 한 일러스트 — 축척과 다름</figcaption></figure><!----></div><!--]--> <!--[0--><p class="dispatch">인류가 달을 마지막으로 방문한 시간. 유진 서넌은 달의 표면을 걸었던 마지막 인물이었습니다. 사다리를 오르기 전에 그는 이렇게 말했습니다: '우리는 왔던 그대로 떠나며, 신의 뜻이라면 우리는 돌아올 것입니다.' 달에서 유일하게 훈련받은 지질학자인 해리슨 슈미트는 달 지질학에 대한 우리의 이해를 재편성한 표본들을 수집했습니다.</p><!--]--> <dl class="facts"><!--[0--><div><dt>착륙</dt> <dd>1972-12-11</dd></div><!--]--> <div><dt>위도</dt> <dd>20.19°</dd></div> <div><dt>경도</dt> <dd>30.77°</dd></div> <!--[0--><div><dt>월면 체류 시간</dt> <dd>3.12일</dd></div><!--]--> <!--[0--><div><dt>선외 활동 시간</dt> <dd>22.08시간</dd></div><!--]--> <!--[0--><div><dt>시료</dt> <dd>110.5 kg</dd></div><!--]--> <!--[0--><div><dt>승무원</dt> <dd>유진 서넌,해리슨 슈미트</dd></div><!--]--></dl> <!--[0--><p>하강 단계 · ALSEP · LRV 로버 · 깃발 · 명판: '인류가 달에 대한 첫 탐사를 완료한 곳입니다. 우리가 찾아온 평화의 정신이 모든 인류의 삶에 반영되기를 바랍니다.'"</p><!--]--> <!--[0--><p>행성 표면에 훈련된 지질학자 최초 — 유인 화성 임무는 조종사만이 아니라 과학자를 포함해야 한다는 선례.</p><!--]--> <!--[0--><section class="story"><p>Apollo 17호는 1972년 12월 11일 타우루스-리트로 계곡에 착륙했습니다. 유인 달 탐사로는 마지막이었고, 전문 지질학자(해리슨 슈미트)가 달 표면에 선 유일한 임무였습니다. 서넌과 슈미트는 세 차례의 선외 활동(EVA)으로 22시간을 밖에서 보내며 35km를 주행했고, 35억 년 전 용암 분수에서 생긴 화산 유리 구슬인 유명한 오렌지 토양을 포함해 110kg의 시료를 가져왔습니다. 서넌의 발자국은 다른 세계에 남은 인류의 가장 최근 흔적입니다.</p> <ol><!--[--><li><strong>하드웨어</strong><!--[0--> — America + Challenger + LRV-3<!--]--></li><li><strong>발사</strong><!--[0--> — 1972년 12월 7일 — 마지막 Saturn V 비행<!--]--></li><li><strong>표면</strong><!--[0--> — 타우루스-리트로 계곡 — 1972년 12월 11일 착륙<!--]--></li><li><strong>과학</strong><!--[0--> — 달에 간 최초의 정식 훈련 받은 지질학자<!--]--></li><!--]--></ol></section><!--]--> <!--[-1--><!--]--> <p class="actions"><a class="cta" href="/orrery/moon?site=apollo17">→ Orrery에서 열기</a> <!--[-1--><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="사이트 바닥글"><nav class="footer-menu svelte-12qhfyh" aria-label="바닥글 링크"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">탐색</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">천체</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">카탈로그</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">학습</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">갤러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">크레딧</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">판권</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">라이브러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">용어집</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">소개</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="소개"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">개인정보 보호</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">라이선스</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="빌드 버전 + 배포 날짜 (GitHub의 CHANGELOG 열기): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">더보기</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 50],
+									data: [null,{type:"data",data:{entity:{site:{id:"apollo17",marker:"crewed",kind:"surface",agency:"NASA",nation:"USA",year:1972,landing_date:"1972-12-11",lat:20.1911,lon:30.77231,region_bounds:{lat_min:20.11,lat_max:20.28,lon_min:30.65,lon_max:30.9},region_kind:"traverse_bbox",crewed:true,status:"FLOWN",surface_status:"completed",surface_duration_days:3.12,eva_duration_hours:22.08,samples_kg:110.5,data_quality:"good",credit:"© NASA — Apollo 17 mission report. Public domain. Last crewed lunar landing of the 20th century.",fleet_refs:[{id:"apollo-csm-block-ii",role:"spacecraft"},{id:"apollo-lm",role:"spacecraft"},{id:"lrv-apollo",role:"payload"}],links:[{l:"Apollo 17 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_17",t:"intro"},{l:"Cernan, last man on the Moon (NASA)",u:"https://www.nasa.gov/missions/apollo/apollo-17/remembering-gene-cernan/",t:"intro"}]},text:{name:"Apollo 17",mission_type:"유인 착륙선 · 로버",site_name:"타우루스-리트로 계곡",crew:["유진 서넌","해리슨 슈미트"],left:"하강 단계 · ALSEP · LRV 로버 · 깃발 · 명판: '인류가 달에 대한 첫 탐사를 완료한 곳입니다. 우리가 찾아온 평화의 정신이 모든 인류의 삶에 반영되기를 바랍니다.'\"",fact:"인류가 달을 마지막으로 방문한 시간. 유진 서넌은 달의 표면을 걸었던 마지막 인물이었습니다. 사다리를 오르기 전에 그는 이렇게 말했습니다: '우리는 왔던 그대로 떠나며, 신의 뜻이라면 우리는 돌아올 것입니다.' 달에서 유일하게 훈련받은 지질학자인 해리슨 슈미트는 달 지질학에 대한 우리의 이해를 재편성한 표본들을 수집했습니다.",capability:"행성 표면에 훈련된 지질학자 최초 — 유인 화성 임무는 조종사만이 아니라 과학자를 포함해야 한다는 선례."},story:{site:"apollo17",intro:"Apollo 17호는 1972년 12월 11일 타우루스-리트로 계곡에 착륙했습니다. 유인 달 탐사로는 마지막이었고, 전문 지질학자(해리슨 슈미트)가 달 표면에 선 유일한 임무였습니다. 서넌과 슈미트는 세 차례의 선외 활동(EVA)으로 22시간을 밖에서 보내며 35km를 주행했고, 35억 년 전 용암 분수에서 생긴 화산 유리 구슬인 유명한 오렌지 토양을 포함해 110kg의 시료를 가져왔습니다. 서넌의 발자국은 다른 세계에 남은 인류의 가장 최근 흔적입니다.",essay:void 0,chapters:[{id:"hardware",title:"하드웨어",subtitle:"America + Challenger + LRV-3",images:[{src:"/images/missions/apollo17/01.webp",caption:"Apollo 17 승무원 단체 사진 — 유진 서넌(사령관), 론 에번스(사령선 조종사), 해리슨 \"잭\" 슈미트(달착륙선 조종사, 과학자 우주비행사)."}]},{id:"launch",title:"발사",subtitle:"1972년 12월 7일 — 마지막 Saturn V 비행",images:[{src:"/images/missions/apollo17/02.webp",caption:"Saturn V의 첫 야간 발사, 1972년 12월 7일 05:33 UTC — 700km 떨어진 곳에서도 보였습니다. 마지막 Apollo이자 마지막 Saturn V였습니다."}]},{id:"surface",title:"표면",subtitle:"타우루스-리트로 계곡 — 1972년 12월 11일 착륙",images:[{src:"/images/missions/apollo17/03.webp",caption:"서넌과 깃발, 그 위로 떠 있는 지구 — \"달 위의 마지막 사람\"."},{src:"/images/missions/apollo17/04.webp",caption:"슈미트가 쇼티 분화구에서 오렌지 토양을 발견하는 모습 — 35억 년 전 용암 분수 분출로 생긴 화산 유리 구슬입니다."},{src:"/images/hotspots/moon/apollo17/tier3-pan.jpg",caption:"타우루스-리트로 계곡 파노라마 — Challenger 하강단, LRV, 멀리 보이는 Tortilla Flat."}]},{id:"science",title:"과학",subtitle:"달에 간 최초의 정식 훈련 받은 지질학자",images:[{src:"/images/missions/apollo17/05.webp",caption:"시료 70017 — 인류가 마지막으로 채취한 달 시료로, 1972년 12월 14일 이륙 전 서넌의 마지막 임무였습니다."}]}]},illustration:{siteId:"apollo17",body:"moon",title:"Apollo 17",file:"images/illustrations/sites/apollo17.webp",model:"nano_banana_2",tool:"higgsfield",generated:"2026-11-09",made_from:"Orrery reference map of LROC imagery and the Apollo 17 traverse data",alt:"타우루스-리트로 계곡에 있는 Apollo 17 착륙 지점을 입체 블록으로 그린 일러스트 지도. 계곡 바닥에 Challenger 달 착륙선, ALSEP 과학 기지, 월면차가 있고 North Massif, South Massif, Sculptured Hills에 둘러싸여 있으며, 이동 경로는 스테이션 1~9로 이어집니다."},mission:null}},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

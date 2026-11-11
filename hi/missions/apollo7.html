@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-Z3R44i7dq/QOsTk6TDHcDglOAzO/r/iZMDXPLeMfDow='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/47.DNtfTY28.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B6T0Q7xV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BPm_otwg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="hi_IN"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--agldnw--><meta name="description" content="पहली मानवयुक्त Apollo उड़ान — पृथ्वी-कक्षा में CSM परीक्षण पहली मानवयुक्त Apollo उड़ान, Apollo 1 की आग (1967-01-27) के 21 महीने बाद, जिसमें ग्रिसम, व्हाइट और…"/> <meta property="og:image" content="https://www.orrerylearn.com/images/cards/mission/apollo7.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Apollo 7","description":"पहली मानवयुक्त Apollo उड़ान — पृथ्वी-कक्षा में CSM परीक्षण पहली मानवयुक्त Apollo उड़ान, Apollo 1 की आग (1967-01-27) के 21 महीने बाद, जिसमें ग्रिसम, व्हाइट और…","url":"https://www.orrerylearn.com/hi/missions/apollo7","mainEntityOfPage":"https://www.orrerylearn.com/hi/missions/apollo7","inLanguage":"hi","image":"https://www.orrerylearn.com/orrery/images/missions/apollo7/01.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"मिशन कैटलॉग","item":"https://www.orrerylearn.com/hi/missions"},{"@type":"ListItem","position":2,"name":"Apollo 7","item":"https://www.orrerylearn.com/hi/missions/apollo7"}]}]</script><!----><!----><title>Apollo 7 · मिशन कैटलॉग · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Apollo 7 · मिशन कैटलॉग"/><meta property="og:description" content="पहली मानवयुक्त Apollo उड़ान — पृथ्वी-कक्षा में CSM परीक्षण पहली मानवयुक्त Apollo उड़ान, Apollo 1 की आग (1967-01-27) के 21 महीने बाद, जिसमें ग्रिसम, व्हाइट और…"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Apollo 7 · मिशन कैटलॉग"/><meta name="twitter:description" content="पहली मानवयुक्त Apollo उड़ान — पृथ्वी-कक्षा में CSM परीक्षण पहली मानवयुक्त Apollo उड़ान, Apollo 1 की आग (1967-01-27) के 21 महीने बाद, जिसमें ग्रिसम, व्हाइट और…"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/mission/apollo7.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">मुख्य सामग्री पर जाएँ</a> <nav aria-label="मुख्य नेविगेशन" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — मुख्य पृष्ठ"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">मुख्य पृष्ठ</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">अन्वेषण<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">दुनियाएँ<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">उड़ान</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">योजना</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">सूची<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">जानें<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="नेविगेशन मेनू खोलें" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="टूर लें" aria-pressed="false" title="टूर लें"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="भाषा" aria-haspopup="listbox" aria-expanded="false" title="भाषा चुनें">HI</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="विज्ञान लेंस टॉगल करें (इस पेज पर उपलब्ध नहीं)" aria-pressed="false" title="भौतिकी परत दिखाएँ (कक्षीय यांत्रिकी ओवरले) (इस पेज पर उपलब्ध नहीं)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="उच्च कंट्रास्ट मोड टॉगल करें" aria-pressed="false" title="उच्च कंट्रास्ट मोड टॉगल करें">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="सेटिंग्स" aria-haspopup="dialog" aria-expanded="false" title="सेटिंग्स"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="यह दृश्य साझा करें" title="यह दृश्य साझा करें"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="डिबग ओवरले टॉगल करें" aria-pressed="false" title="डिबग मोड — डेवलपर ओवरले"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/missions">मिशन कैटलॉग</a> <span class="sep">›</span> <span>Apollo 7</span></nav> <header><p class="meta">NASA · 1968 · <span class="status">उड़ान पूर्ण</span></p> <h1>Apollo 7</h1> <!--[0--><p class="lede">पहली मानवयुक्त Apollo उड़ान — पृथ्वी-कक्षा में CSM परीक्षण</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/missions/apollo7/01.webp" alt="Apollo 7" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <dl class="facts"><div><dt>एजेंसी</dt> <dd>National Aeronautics and Space Administration / Manned Spacecraft Center</dd></div> <div><dt>प्रस्थान</dt> <dd>1968-10-11</dd></div> <div><dt>आगमन</dt> <dd>1968-10-11</dd></div> <div><dt>पारगमन समय</dt> <dd>—</dd></div> <div><dt>∆v</dt> <dd>~9.5 km/s (LEO तक)</dd></div> <!--[0--><div><dt>यान</dt> <dd><!--[0--><a href="/orrery/fleet/saturn-ib">Saturn IB (AS-205)</a><!--]--></dd></div><!--]--> <!--[0--><div><dt>पेलोड</dt> <dd><!--[0--><a href="/orrery/fleet/apollo-csm-block-ii">14781 kg प्रक्षेपित (Apollo 7 CSM (CSM-101), LM नहीं)</a><!--]--></dd></div><!--]--></dl> <!--[0--><p class="description">पहली मानवयुक्त Apollo उड़ान, Apollo 1 की आग (1967-01-27) के 21 महीने बाद, जिसमें ग्रिसम, व्हाइट और शैफ़ी की लॉन्च पैड पर मृत्यु हुई थी। Apollo 7 ने पुनर्डिज़ाइन किए गए Block II Command and Service Module को पृथ्वी की कक्षा में परखा — जीवन-रक्षक प्रणाली, विद्युत, प्रणोदन (SPS आठ बार दागा गया), तापीय नियंत्रण, और मानवयुक्त अमेरिकी यान से दुनिया का पहला सीधा टीवी प्रसारण। शिरा (पूरे समय ज़ुकाम और चिड़चिड़ापन) ने पुनः प्रवेश के समय हेलमेट पहनने के सवाल पर ह्यूस्टन की बात नहीं मानी, जिससे मिशन नियंत्रण ने तय किया कि तीनों में से कोई अंतरिक्ष यात्री फिर नहीं उड़ेगा। 10 दिन 20 घंटे की उड़ान ने दो महीने बाद Apollo 8 की चंद्र-कक्षा के जोखिम भरे दाँव का रास्ता साफ़ किया।</p><!--]--> <!--[0--><section class="events"><h2>घटनाएँ</h2> <ol><!--[--><li><strong>प्रक्षेपण</strong><!--[0--> — Cape Kennedy LC-34 से Saturn IB (AS-205), 1968-10-11 15:02 UTC।<!--]--></li><li><strong>कक्षा प्रविष्टि</strong><!--[0--> — CSM, S-IVB से अलग होकर 228 × 285 किमी पृथ्वी कक्षा में प्रवेश करता है, झुकाव 31.6°। SPS ईंधन संदहन क्रम (11 दिनों में 8 दहन) उस प्रणोदन को सिद्ध करता है जो चंद्रमा पर LOI + TEI करेगा।<!--]--></li><li><strong>पहला लाइव टीवी प्रसारण</strong><!--[0--> — “सब कुछ के ऊपर बने इस प्यारे Apollo कमरे से नमस्कार।” अमेरिकी चालक दल वाले अंतरिक्ष यान से पहला सीधा टीवी प्रसारण।<!--]--></li><li><strong>समुद्र में अवतरण</strong><!--[0--> — CM 1968-10-22 11:11 UTC को 163 कक्षाओं / 74 लाख किमी / 10 दि 20 घं के बाद उत्तरी अटलांटिक में उतरा। USS Essex ने उसे समुद्र से निकाला।<!--]--></li><!--]--></ol></section><!--]--> <p class="actions"><a class="cta" href="/orrery/missions?id=apollo7">→ Orrery में खोलें</a> <!--[-1--><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="साइट फ़ुटर"><nav class="footer-menu svelte-12qhfyh" aria-label="फ़ुटर लिंक"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">अन्वेषण</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">दुनियाएँ</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">सूची</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">जानें</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">गैलरी</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">श्रेय</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">कोलोफ़ोन</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">पुस्तकालय</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">शब्दावली</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">परिचय</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="परिचय"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">गोपनीयता</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">लाइसेंस</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="बिल्ड संस्करण + तैनाती तिथि (GitHub पर CHANGELOG खोलता है): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">अधिक</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 47],
+									data: [null,{type:"data",data:{mission:{id:"apollo7",agency:"NASA",agency_full:"National Aeronautics and Space Administration / Manned Spacecraft Center",sector:"gov",dest:"EARTH",color:"#0B3D91",year:1968,status:"FLOWN",departure_date:"1968-10-11",arrival_date:"1968-10-11",transit_days:0,round_trip:true,vehicle:"Saturn IB (AS-205)",payload:"14781 kg प्रक्षेपित (Apollo 7 CSM (CSM-101), LM नहीं)",delta_v:"~9.5 km/s (LEO तक)",data_quality:"good",credit:"© NASA — Apollo 7 mission report. Public domain. First crewed Apollo flight — Earth-orbit CSM shakedown.",links:[{l:"Apollo 7 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_7",t:"intro"},{l:"Apollo 7 mission overview (NASA)",u:"https://www.nasa.gov/mission/apollo-7/",t:"intro"}],flight_data_quality:"reconstructed",fleet_refs:[{id:"saturn-ib",role:"launcher"},{id:"apollo-csm-block-ii",role:"spacecraft"},{id:"lc-34",role:"launch-site"}],name:"Apollo 7",type:"मानवयुक्त पृथ्वी-कक्षा · उड़ान पूर्ण",first:"पहली मानवयुक्त Apollo उड़ान — पृथ्वी-कक्षा में CSM परीक्षण",description:"पहली मानवयुक्त Apollo उड़ान, Apollo 1 की आग (1967-01-27) के 21 महीने बाद, जिसमें ग्रिसम, व्हाइट और शैफ़ी की लॉन्च पैड पर मृत्यु हुई थी। Apollo 7 ने पुनर्डिज़ाइन किए गए Block II Command and Service Module को पृथ्वी की कक्षा में परखा — जीवन-रक्षक प्रणाली, विद्युत, प्रणोदन (SPS आठ बार दागा गया), तापीय नियंत्रण, और मानवयुक्त अमेरिकी यान से दुनिया का पहला सीधा टीवी प्रसारण। शिरा (पूरे समय ज़ुकाम और चिड़चिड़ापन) ने पुनः प्रवेश के समय हेलमेट पहनने के सवाल पर ह्यूस्टन की बात नहीं मानी, जिससे मिशन नियंत्रण ने तय किया कि तीनों में से कोई अंतरिक्ष यात्री फिर नहीं उड़ेगा। 10 दिन 20 घंटे की उड़ान ने दो महीने बाद Apollo 8 की चंद्र-कक्षा के जोखिम भरे दाँव का रास्ता साफ़ किया।",events:[{met:0,label:"प्रक्षेपण",note:"Cape Kennedy LC-34 से Saturn IB (AS-205), 1968-10-11 15:02 UTC।",type:"nominal"},{met:.1,label:"कक्षा प्रविष्टि",note:"CSM, S-IVB से अलग होकर 228 × 285 किमी पृथ्वी कक्षा में प्रवेश करता है, झुकाव 31.6°। SPS ईंधन संदहन क्रम (11 दिनों में 8 दहन) उस प्रणोदन को सिद्ध करता है जो चंद्रमा पर LOI + TEI करेगा।",type:"nominal"},{met:1.2,label:"पहला लाइव टीवी प्रसारण",note:"“सब कुछ के ऊपर बने इस प्यारे Apollo कमरे से नमस्कार।” अमेरिकी चालक दल वाले अंतरिक्ष यान से पहला सीधा टीवी प्रसारण।",type:"info"},{met:10.8,label:"समुद्र में अवतरण",note:"CM 1968-10-22 11:11 UTC को 163 कक्षाओं / 74 लाख किमी / 10 दि 20 घं के बाद उत्तरी अटलांटिक में उतरा। USS Essex ने उसे समुद्र से निकाला।",type:"nominal"}]},hero:"/orrery/images/missions/apollo7/01.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

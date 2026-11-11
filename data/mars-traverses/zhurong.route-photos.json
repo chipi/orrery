@@ -5,19 +5,19 @@
       "id": "selfie-with-lander",
       "sol": 18,
       "sol_approx": true,
-      "lat": 25.062192,
-      "lon": 109.925966,
-      "image": "/images/mars-sites/zhurong/04.webp",
-      "thumb": "/images/mars-sites/zhurong/04-320.webp"
+      "lat": 25.062562,
+      "lon": 109.926248,
+      "image": "/images/mars-sites/zhurong/06.webp",
+      "thumb": "/images/mars-sites/zhurong/06-320.webp"
     },
     {
       "id": "parachute-backshell",
       "sol": 67,
       "sol_approx": true,
-      "lat": 25.054951,
-      "lon": 109.924702,
-      "image": "/images/mars-sites/zhurong/route/parachute-backshell.webp",
-      "thumb": "/images/mars-sites/zhurong/route/parachute-backshell-320.webp"
+      "lat": 25.055321,
+      "lon": 109.924984,
+      "image": "/images/mars-sites/zhurong/07.webp",
+      "thumb": "/images/mars-sites/zhurong/07-320.webp"
     }
   ]
 }

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-+fo+5zUqFxnirHEAyKDX2/2M5u4QOcx81eLClY3AVXs='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/32.Ba_7_NXM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CstHmmpA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xe7y8WPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BSzmrz8C2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKUbgPvw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ehZykTWQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bp-JR0aQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCW0Q--42.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5yvoOgk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/fB72kKMI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BAkaTcaq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="es_ES"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--6cxttz--><meta name="description" content="Primeras imágenes en color de la superficie venusiana — sobrevivió 127 minutos en condiciones de 457 °C / 89 atm Pareja de módulos de aterrizaje soviéticos en…"/> <!--[-1--><!--]--><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Venera 13","description":"Primeras imágenes en color de la superficie venusiana — sobrevivió 127 minutos en condiciones de 457 °C / 89 atm Pareja de módulos de aterrizaje soviéticos en…","url":"https://www.orrerylearn.com/es/fleet/venera-13","mainEntityOfPage":"https://www.orrerylearn.com/es/fleet/venera-13","inLanguage":"es","image":"https://www.orrerylearn.com/orrery/images/fleet-galleries/venera-13/02.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Flota","item":"https://www.orrerylearn.com/es/fleet"},{"@type":"ListItem","position":2,"name":"Venera 13","item":"https://www.orrerylearn.com/es/fleet/venera-13"}]}]</script><!----><!----><title>Venera 13 · Flota · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Venera 13 · Flota"/><meta property="og:description" content="Primeras imágenes en color de la superficie venusiana — sobrevivió 127 minutos en condiciones de 457 °C / 89 atm Pareja de módulos de aterrizaje soviéticos en…"/><meta property="og:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Un sol resplandeciente, órbitas inclinadas y un arco de transferencia resaltado entre dos planetas."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Venera 13 · Flota"/><meta name="twitter:description" content="Primeras imágenes en color de la superficie venusiana — sobrevivió 127 minutos en condiciones de 457 °C / 89 atm Pareja de módulos de aterrizaje soviéticos en…"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta name="twitter:image:alt" content="Un sol resplandeciente, órbitas inclinadas y un arco de transferencia resaltado entre dos planetas."/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">Saltar al contenido</a> <nav aria-label="Navegación principal" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — inicio"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">INICIO</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">EXPLORAR<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">MUNDOS<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VOLAR</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PLANIFICAR</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATÁLOGO<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">APRENDER<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Abrir menú de navegación" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Hacer el recorrido guiado" aria-pressed="false" title="Hacer el recorrido guiado"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Idioma" aria-haspopup="listbox" aria-expanded="false" title="Elegir idioma">ES</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Mostrar u ocultar la lente científica (no disponible en esta página)" aria-pressed="false" title="Mostrar capa de física (superposiciones de mecánica orbital) (no disponible en esta página)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Activar o desactivar el modo de alto contraste" aria-pressed="false" title="Activar o desactivar el modo de alto contraste">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="AJUSTES" aria-haspopup="dialog" aria-expanded="false" title="AJUSTES"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Compartir esta vista" title="Compartir esta vista"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="Mostrar u ocultar las capas de depuración" aria-pressed="false" title="Modo de depuración — superposiciones de desarrollador"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/fleet">Flota</a> <span class="sep">›</span> <span>Venera 13</span></nav> <header><p class="meta">Roscosmos · Módulo de descenso · <span class="status">RETIRADO</span></p> <h1>Venera 13</h1> <!--[0--><p class="lede">Primeras imágenes en color de la superficie venusiana — sobrevivió 127 minutos en condiciones de 457 °C / 89 atm</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/fleet-galleries/venera-13/02.webp" alt="Venera 13" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <!--[0--><p class="description">Pareja de módulos de aterrizaje soviéticos en Venus (con Venera 14). Lanzados el 1981-10-30 en un Proton-K / D-1. Llegada a Venus el 1982-03-01: la cápsula de descenso de titanio, de 760 kg, entró en la atmósfera a 11,2 km/s, desplegó un paracaídas a través de la bruma superior, lo soltó a 47 km de altitud y cayó libremente por la atmósfera inferior con un freno de disco para el descenso final. Aterrizaje en la superficie a 7,5° S, 303° E (flanco volcánico de Phoebe Regio). Primeras imágenes panorámicas en color de la superficie venusiana; primer análisis de la composición del suelo por fluorescencia de rayos X (basáltico, como el fondo oceánico terrestre); primeras grabaciones acústicas desde otro planeta. Funcionó 127 minutos — mucho más allá de los 32 minutos de vida útil prevista — antes de que fallara la electrónica de silicio en un entorno de 457 °C y 89 atmósferas de CO₂.</p><!--]--> <!--[0--><p class="known">Primeras imágenes en color de la superficie de Venus — supervivencia de 127 minutos en condiciones de 457 °C / 89 atm</p><!--]--> <dl class="facts"><div><dt>FABRICANTE</dt> <dd>NPO Lavochkin</dd></div> <div><dt>PAÍS</dt> <dd>URSS / Rusia</dd></div> <div><dt>Primer vuelo</dt> <dd>1981-10-30</dd></div> <!--[-1--><!--]--> <div><dt>ERA</dt> <dd>1981-2011</dd></div> <div><dt>Época</dt> <dd>Montaje de la EEI</dd></div> <!--[--><!--]--></dl> <!--[0--><section class="missions"><h2>MISIONES</h2> <ul class="linklist"><!--[--><li><a href="/orrery/missions/venera-13">Venera 13</a> <span class="year">1981</span> <!--[0--><span class="note">Mayor supervivencia en superficie de cualquier misión a Venus (127 min); primeras panorámicas a color y primer audio de la superficie de otro planeta</span><!--]--></li><!--]--></ul></section><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[--><!--[-1--><!--]--><!--[-1--><!--]--><!--[0--><section class="related"><h2>Flota</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/proton-k">Proton-K</a> <!--[0--><span class="note">El caballo de batalla de carga pesada soviético / ruso 1967-2012 — Salyut, Mir, Venera, Vega, devolución de muestras Luna</span><!--]--></li><!--]--></ul></section><!--]--><!--[0--><section class="related"><h2>Módulo de descenso</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/luna24">Luna 24</a> <!--[0--><span class="note">Última misión lunar soviética exitosa: trajo 170 g de regolito de Mare Crisium el 1976-08-22; última muestra lunar hasta Chang'e 5</span><!--]--></li><li><a href="/orrery/fleet/mars6">Mars 6</a> <!--[0--><span class="note">Aterrizador soviético a Marte de 1973 — primera telemetría de descenso de la atmósfera de Marte (224 s, en su mayoría corrompida)</span><!--]--></li><li><a href="/orrery/fleet/mars-2">Mars 2</a> <!--[0--><span class="note">Primer objeto fabricado por el ser humano en alcanzar la superficie de Marte; el aterrizador se estrelló (1971)</span><!--]--></li><li><a href="/orrery/fleet/mars-3">Mars 3</a> <!--[0--><span class="note">Primer aterrizaje suave en Marte; 14,5 s de transmisión desde la superficie</span><!--]--></li><li><a href="/orrery/fleet/luna-16">Luna 16</a> <!--[0--><span class="note">Primer retorno robótico de muestras lunares</span><!--]--></li><li><a href="/orrery/fleet/venera-7">Venera 7-class</a> <!--[0--><span class="note">Primer aterrizaje suave en otro planeta y primer envío de datos desde la superficie de otro planeta (Venus, 1970)</span><!--]--></li><!--]--></ul></section><!--]--><!--]--> <!--[-1--><!--]--> <p class="actions"><a class="cta" href="/orrery/fleet?id=venera-13">→ Abrir en Orrery</a></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Pie de página del sitio"><nav class="footer-menu svelte-12qhfyh" aria-label="Enlaces del pie de página"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">EXPLORAR</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">MUNDOS</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">CATÁLOGO</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">APRENDER</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galería</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Créditos</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colofón</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Biblioteca</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">Glosario</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">Acerca de</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="Acerca de"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">Privacidad</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licencia</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Versión de compilación + fecha de despliegue (abre CHANGELOG en GitHub): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">Más</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 32],
+									data: [null,{type:"data",data:{card:null,entry:{id:"venera-13",name:"Venera 13",category:"lander",agency:"Roscosmos",country:"USSR / Russia",manufacturer:"NPO Lavochkin",first_flight:"1981-10-30",status:"RETIRED",era:"1981-2011",epoch:"iss-assembly",best_known_for:"Primeras imágenes en color de la superficie de Venus — supervivencia de 127 minutos en condiciones de 457 °C / 89 atm",credit:"Soviet Venus lander pair (with Venera 14). Launched 1981-10-30 on a Proton-K / D-1 from Baikonur. Venus arrival 1982-03-01: the 760 kg titanium descent capsule separated from the flyby bus, entered the atmosphere at 11.2 km/s, deployed a parachute through the upper haze, then jettisoned the chute at 47 km and free-fell through the lower atmosphere with a disc-brake for terminal descent. Surface touchdown at 7.5°S, 303°E (Phoebe Regio) at 7.4 m/s. First panoramic colour images of the Venusian surface; first X-ray fluorescence soil-composition analysis (basaltic, similar to terrestrial ocean-floor leucite basalt); first acoustic recordings from another planet (microphone picked up wind + impact sounds). The lander operated 127 minutes — far beyond the 32-minute design life — before silicon-electronic failure in the 457 °C, 89-atmosphere CO₂ environment.",links:[{l:"Venera 13 — Wikipedia",u:"https://en.wikipedia.org/wiki/Venera_13",t:"intro"},{l:"Venera 13 — NSSDCA",u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-106A",t:"core"},{l:"The Planetary Society — Every picture from Venus's surface ever",u:"https://www.planetary.org/articles/every-picture-from-venus-surface-ever",t:"core"},{l:"Don P. Mitchell — Venera 13 imagery + acoustic recordings",u:"https://mentallandscape.com/V_DigitalImages.htm",t:"deep"}],linked_missions:["venera-13"],tagline:"Primeras imágenes en color de la superficie venusiana — sobrevivió 127 minutos en condiciones de 457 °C / 89 atm",description:"Pareja de módulos de aterrizaje soviéticos en Venus (con Venera 14). Lanzados el 1981-10-30 en un Proton-K / D-1. Llegada a Venus el 1982-03-01: la cápsula de descenso de titanio, de 760 kg, entró en la atmósfera a 11,2 km/s, desplegó un paracaídas a través de la bruma superior, lo soltó a 47 km de altitud y cayó libremente por la atmósfera inferior con un freno de disco para el descenso final. Aterrizaje en la superficie a 7,5° S, 303° E (flanco volcánico de Phoebe Regio). Primeras imágenes panorámicas en color de la superficie venusiana; primer análisis de la composición del suelo por fluorescencia de rayos X (basáltico, como el fondo oceánico terrestre); primeras grabaciones acústicas desde otro planeta. Funcionó 127 minutos — mucho más allá de los 32 minutos de vida útil prevista — antes de que fallara la electrónica de silicio en un entorno de 457 °C y 89 atmósferas de CO₂."},missions:[{id:"venera-13",name:"Venera 13",first:"Mayor supervivencia en superficie de cualquier misión a Venus (127 min); primeras panorámicas a color y primer audio de la superficie de otro planeta",year:1981}],alongside:[{id:"proton-k",name:"Proton-K",tagline:"El caballo de batalla de carga pesada soviético / ruso 1967-2012 — Salyut, Mir, Venera, Vega, devolución de muestras Luna"}],kin:[{id:"luna24",name:"Luna 24",tagline:"Última misión lunar soviética exitosa: trajo 170 g de regolito de Mare Crisium el 1976-08-22; última muestra lunar hasta Chang'e 5"},{id:"mars6",name:"Mars 6",tagline:"Aterrizador soviético a Marte de 1973 — primera telemetría de descenso de la atmósfera de Marte (224 s, en su mayoría corrompida)"},{id:"mars-2",name:"Mars 2",tagline:"Primer objeto fabricado por el ser humano en alcanzar la superficie de Marte; el aterrizador se estrelló (1971)"},{id:"mars-3",name:"Mars 3",tagline:"Primer aterrizaje suave en Marte; 14,5 s de transmisión desde la superficie"},{id:"luna-16",name:"Luna 16",tagline:"Primer retorno robótico de muestras lunares"},{id:"venera-7",name:"Venera 7-class",tagline:"Primer aterrizaje suave en otro planeta y primer envío de datos desde la superficie de otro planeta (Venus, 1970)"}],engines:[],usedOn:[],sites:[],crewed:[],museums:[],hero:"/orrery/images/fleet-galleries/venera-13/02.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

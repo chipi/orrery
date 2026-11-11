@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-CBpXqvNtrIxRsTPSDU9mPW2xpthh47n75AoYMUBWxXg='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/32.Ba_7_NXM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CstHmmpA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xe7y8WPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BSzmrz8C2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKUbgPvw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ehZykTWQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bp-JR0aQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCW0Q--42.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5yvoOgk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/fB72kKMI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BAkaTcaq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="hi_IN"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--6cxttz--><meta name="description" content="Vega 1 की बहन — सोवियत शुक्र + हैली धूमकेतु का दूसरा दोहरा मिशन: लैंडर + गुब्बारा, फिर हैली धूमकेतु की फ्लाईबाई Vega 1 का हूबहू जुड़वाँ, 1984-12-21 को…"/> <!--[-1--><!--]--><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Vega 2","description":"Vega 1 की बहन — सोवियत शुक्र + हैली धूमकेतु का दूसरा दोहरा मिशन: लैंडर + गुब्बारा, फिर हैली धूमकेतु की फ्लाईबाई Vega 1 का हूबहू जुड़वाँ, 1984-12-21 को…","url":"https://www.orrerylearn.com/hi/fleet/vega-2","mainEntityOfPage":"https://www.orrerylearn.com/hi/fleet/vega-2","inLanguage":"hi","image":"https://www.orrerylearn.com/orrery/images/fleet-galleries/vega-2/03.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"बेड़ा","item":"https://www.orrerylearn.com/hi/fleet"},{"@type":"ListItem","position":2,"name":"Vega 2","item":"https://www.orrerylearn.com/hi/fleet/vega-2"}]}]</script><!----><!----><title>Vega 2 · बेड़ा · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Vega 2 · बेड़ा"/><meta property="og:description" content="Vega 1 की बहन — सोवियत शुक्र + हैली धूमकेतु का दूसरा दोहरा मिशन: लैंडर + गुब्बारा, फिर हैली धूमकेतु की फ्लाईबाई Vega 1 का हूबहू जुड़वाँ, 1984-12-21 को…"/><meta property="og:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="एक चमकता सूर्य, झुकी हुई कक्षाएँ और दो ग्रहों के बीच उभरा हुआ स्थानांतरण चाप।"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Vega 2 · बेड़ा"/><meta name="twitter:description" content="Vega 1 की बहन — सोवियत शुक्र + हैली धूमकेतु का दूसरा दोहरा मिशन: लैंडर + गुब्बारा, फिर हैली धूमकेतु की फ्लाईबाई Vega 1 का हूबहू जुड़वाँ, 1984-12-21 को…"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta name="twitter:image:alt" content="एक चमकता सूर्य, झुकी हुई कक्षाएँ और दो ग्रहों के बीच उभरा हुआ स्थानांतरण चाप।"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">मुख्य सामग्री पर जाएँ</a> <nav aria-label="मुख्य नेविगेशन" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — मुख्य पृष्ठ"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">मुख्य पृष्ठ</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">अन्वेषण<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">दुनियाएँ<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">उड़ान</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">योजना</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">सूची<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">जानें<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="नेविगेशन मेनू खोलें" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="टूर लें" aria-pressed="false" title="टूर लें"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="भाषा" aria-haspopup="listbox" aria-expanded="false" title="भाषा चुनें">HI</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="विज्ञान लेंस टॉगल करें (इस पेज पर उपलब्ध नहीं)" aria-pressed="false" title="भौतिकी परत दिखाएँ (कक्षीय यांत्रिकी ओवरले) (इस पेज पर उपलब्ध नहीं)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="उच्च कंट्रास्ट मोड टॉगल करें" aria-pressed="false" title="उच्च कंट्रास्ट मोड टॉगल करें">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="सेटिंग्स" aria-haspopup="dialog" aria-expanded="false" title="सेटिंग्स"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="यह दृश्य साझा करें" title="यह दृश्य साझा करें"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="डिबग ओवरले टॉगल करें" aria-pressed="false" title="डिबग मोड — डेवलपर ओवरले"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/fleet">बेड़ा</a> <span class="sep">›</span> <span>Vega 2</span></nav> <header><p class="meta">Soviet IKI · परिक्रमा यान · <span class="status">सेवा से बाहर</span></p> <h1>Vega 2</h1> <!--[0--><p class="lede">Vega 1 की बहन — सोवियत शुक्र + हैली धूमकेतु का दूसरा दोहरा मिशन: लैंडर + गुब्बारा, फिर हैली धूमकेतु की फ्लाईबाई</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/fleet-galleries/vega-2/03.webp" alt="Vega 2" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <!--[0--><p class="description">Vega 1 का हूबहू जुड़वाँ, 1984-12-21 को प्रक्षेपित (Vega 1 के 6 दिन बाद)। कुल लगभग 4900 किग्रा, जिसमें लगभग 1500 किग्रा का अवरोहण मॉड्यूल शामिल है, जिसमें Venera-शैली का दूसरा लैंडर और हीलियम एरोस्टेट था। शुक्र पर आगमन 1985-06-15: लैंडर 8.5°S, 164.5°E (एफ्रोडाइट टेरा) पर उतरा और 57 मिनट तक सतह के वैज्ञानिक आँकड़े भेजे; गुब्बारा Vega 1 के गुब्बारे के साथ 46 घंटे तक बादलों की परत में तैरता रहा। फ्लाईबाई यान आगे बढ़ा और 1986-03-09 को 8030 किमी की दूरी पर हैली धूमकेतु (1P/Halley) से मिला — यान-बेड़े की हैली से दूसरी भेंट, Vega 1 के 3 दिन बाद और Giotto से 5 दिन पहले। Vega 1 + Vega 2 की ट्रैकिंग ने हैली के केंद्रक की स्थिति 50 किमी के भीतर तक परिष्कृत कर दी, ताकि Giotto बहुत निकट से गुज़र सके।</p><!--]--> <!--[0--><p class="known">Vega 1 का सहोदर — सोवियत शुक्र + हैली का दूसरा दोहरा मिशन, 1986-03-09 को हैली फ्लाईबाई</p><!--]--> <dl class="facts"><div><dt>निर्माता</dt> <dd>NPO Lavochkin</dd></div> <div><dt>देश</dt> <dd>सोवियत संघ / रूस</dd></div> <div><dt>पहली उड़ान</dt> <dd>1984-12-21</dd></div> <!--[-1--><!--]--> <div><dt>युग</dt> <dd>1981-2011</dd></div> <div><dt>कालखंड</dt> <dd>आईएसएस निर्माण</dd></div> <!--[--><!--]--></dl> <!--[0--><section class="missions"><h2>मिशन</h2> <ul class="linklist"><!--[--><li><a href="/orrery/missions/vega-2">Vega 2</a> <span class="year">1984</span> <!--[0--><span class="note">शुक्र की उच्चभूमि-प्रकार की मिट्टी का पहला रासायनिक विश्लेषण (एफ्रोडाइट टेरा, 1985); Vega 1 के साथ हैली धूमकेतु की जोड़ी-मुलाक़ात ने Giotto के लक्ष्य-निर्धारण में योगदान दिया</span><!--]--></li><!--]--></ul></section><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[--><!--[-1--><!--]--><!--[-1--><!--]--><!--[0--><section class="related"><h2>बेड़ा</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/proton-k">Proton-K</a> <!--[0--><span class="note">सोवियत / रूसी भारी प्रक्षेपण का मुख्य सहारा 1967-2012 — Salyut, Mir, Venera, Vega, Luna नमूना-वापसी</span><!--]--></li><!--]--></ul></section><!--]--><!--[0--><section class="related"><h2>परिक्रमा यान</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/vega-1">Vega 1</a> <!--[0--><span class="note">सोवियत शुक्र + हैली धूमकेतु का दोहरा मिशन — Venera लैंडर, पहला अंतरग्रहीय गुब्बारा, फिर हैली धूमकेतु की फ्लाईबाई</span><!--]--></li><li><a href="/orrery/fleet/giotto">Giotto</a> <!--[0--><span class="note">धूमकेतु के नाभिक की पहली करीबी छवियाँ — 1986 में हैली धूमकेतु के पास 68 किमी/से की गति से 596 किमी की दूरी पर पहुँचा</span><!--]--></li><li><a href="/orrery/fleet/phobos-2">Phobos 2</a> <!--[0--><span class="note">अंतिम सोवियत ग्रहीय मिशन; फ़ोबोस के निकट पहुँचते समय खो गया</span><!--]--></li><li><a href="/orrery/fleet/galileo">Galileo</a> <!--[0--><span class="note">पहला बृहस्पति ऑर्बिटर; 8 वर्षों तक मापन</span><!--]--></li><li><a href="/orrery/fleet/magellan">Magellan</a> <!--[0--><span class="note">राडार ने शुक्र की सतह के 98% को मैप किया</span><!--]--></li><li><a href="/orrery/fleet/ulysses">Ulysses</a> <!--[0--><span class="note">क्रांतिवृत्त के ऊपर और नीचे से सूर्य के ध्रुवों का अवलोकन करने वाला पहला अंतरिक्ष यान — 1992 में बृहस्पति से गुरुत्व-सहायता</span><!--]--></li><!--]--></ul></section><!--]--><!--]--> <!--[-1--><!--]--> <p class="actions"><a class="cta" href="/orrery/fleet?id=vega-2">→ Orrery में खोलें</a></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="साइट फ़ुटर"><nav class="footer-menu svelte-12qhfyh" aria-label="फ़ुटर लिंक"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">अन्वेषण</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">दुनियाएँ</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">सूची</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">जानें</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">गैलरी</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">श्रेय</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">कोलोफ़ोन</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">पुस्तकालय</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">शब्दावली</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">परिचय</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="परिचय"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">गोपनीयता</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">लाइसेंस</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="बिल्ड संस्करण + तैनाती तिथि (GitHub पर CHANGELOG खोलता है): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">अधिक</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 32],
+									data: [null,{type:"data",data:{card:null,entry:{id:"vega-2",name:"Vega 2",category:"orbiter",agency:"Soviet IKI",country:"USSR / Russia",manufacturer:"NPO Lavochkin",first_flight:"1984-12-21",status:"RETIRED",era:"1981-2011",epoch:"iss-assembly",best_known_for:"Vega 1 का सहोदर — सोवियत शुक्र + हैली का दूसरा दोहरा मिशन, 1986-03-09 को हैली फ्लाईबाई",credit:"Identical twin of Vega 1, launched 1984-12-21 (6 days after Vega 1) from Baikonur on a Proton-K / D-1. About 4900 kg in total, including a ~1500 kg descent module with second Venera-style lander + helium aerostat. Venus arrival 1985-06-15: lander touched down at 8.5°S, 164.5°E (Aphrodite Terra), returned 57 minutes of surface science before failure; balloon floated in the cloud deck for 46 hours alongside Vega 1's. The flyby bus continued on its 9-month cruise and encountered comet 1P/Halley 1986-03-09 at 8030 km — the second Halley encounter of the armada, 3 days after Vega 1 and 5 days before Giotto. Vega 1 + Vega 2 data was the basis for Giotto's much closer Halley approach: ESA used the Soviet tracking to refine the nucleus position to within 50 km.",links:[{l:"Vega 2 — Wikipedia",u:"https://en.wikipedia.org/wiki/Vega_2",t:"intro"},{l:"Vega programme — ESA",u:"https://www.esa.int/About_Us/ESOC/Giotto_approach_to_Comet_Halley",t:"core"},{l:"Vega 2 — NSSDCA",u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1984-128A",t:"core"},{l:"Sagdeev et al. (1986) — Vega + the Halley armada (Nature 321)",u:"https://www.nature.com/articles/321259a0",t:"deep"}],linked_missions:["vega-2"],tagline:"Vega 1 की बहन — सोवियत शुक्र + हैली धूमकेतु का दूसरा दोहरा मिशन: लैंडर + गुब्बारा, फिर हैली धूमकेतु की फ्लाईबाई",description:"Vega 1 का हूबहू जुड़वाँ, 1984-12-21 को प्रक्षेपित (Vega 1 के 6 दिन बाद)। कुल लगभग 4900 किग्रा, जिसमें लगभग 1500 किग्रा का अवरोहण मॉड्यूल शामिल है, जिसमें Venera-शैली का दूसरा लैंडर और हीलियम एरोस्टेट था। शुक्र पर आगमन 1985-06-15: लैंडर 8.5°S, 164.5°E (एफ्रोडाइट टेरा) पर उतरा और 57 मिनट तक सतह के वैज्ञानिक आँकड़े भेजे; गुब्बारा Vega 1 के गुब्बारे के साथ 46 घंटे तक बादलों की परत में तैरता रहा। फ्लाईबाई यान आगे बढ़ा और 1986-03-09 को 8030 किमी की दूरी पर हैली धूमकेतु (1P/Halley) से मिला — यान-बेड़े की हैली से दूसरी भेंट, Vega 1 के 3 दिन बाद और Giotto से 5 दिन पहले। Vega 1 + Vega 2 की ट्रैकिंग ने हैली के केंद्रक की स्थिति 50 किमी के भीतर तक परिष्कृत कर दी, ताकि Giotto बहुत निकट से गुज़र सके।"},missions:[{id:"vega-2",name:"Vega 2",first:"शुक्र की उच्चभूमि-प्रकार की मिट्टी का पहला रासायनिक विश्लेषण (एफ्रोडाइट टेरा, 1985); Vega 1 के साथ हैली धूमकेतु की जोड़ी-मुलाक़ात ने Giotto के लक्ष्य-निर्धारण में योगदान दिया",year:1984}],alongside:[{id:"proton-k",name:"Proton-K",tagline:"सोवियत / रूसी भारी प्रक्षेपण का मुख्य सहारा 1967-2012 — Salyut, Mir, Venera, Vega, Luna नमूना-वापसी"}],kin:[{id:"vega-1",name:"Vega 1",tagline:"सोवियत शुक्र + हैली धूमकेतु का दोहरा मिशन — Venera लैंडर, पहला अंतरग्रहीय गुब्बारा, फिर हैली धूमकेतु की फ्लाईबाई"},{id:"giotto",name:"Giotto",tagline:"धूमकेतु के नाभिक की पहली करीबी छवियाँ — 1986 में हैली धूमकेतु के पास 68 किमी/से की गति से 596 किमी की दूरी पर पहुँचा"},{id:"phobos-2",name:"Phobos 2",tagline:"अंतिम सोवियत ग्रहीय मिशन; फ़ोबोस के निकट पहुँचते समय खो गया"},{id:"galileo",name:"Galileo",tagline:"पहला बृहस्पति ऑर्बिटर; 8 वर्षों तक मापन"},{id:"magellan",name:"Magellan",tagline:"राडार ने शुक्र की सतह के 98% को मैप किया"},{id:"ulysses",name:"Ulysses",tagline:"क्रांतिवृत्त के ऊपर और नीचे से सूर्य के ध्रुवों का अवलोकन करने वाला पहला अंतरिक्ष यान — 1992 में बृहस्पति से गुरुत्व-सहायता"}],engines:[],usedOn:[],sites:[],crewed:[],museums:[],hero:"/orrery/images/fleet-galleries/vega-2/03.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

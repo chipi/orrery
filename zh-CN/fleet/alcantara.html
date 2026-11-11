@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-J9Yn7HX6C9HpANg2UaDw7EQn8Eoc1enC1x4/mT1Keq8='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/32.Ba_7_NXM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CstHmmpA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xe7y8WPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BSzmrz8C2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKUbgPvw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ehZykTWQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bp-JR0aQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCW0Q--42.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5yvoOgk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/fB72kKMI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BAkaTcaq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="zh_CN"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--6cxttz--><meta name="description" content="巴西的赤道发射中心：VLS-1的失败、2003年发射台爆炸、探空火箭 阿尔坎塔拉位于巴西北部沿海的马拉尼昂州，南纬2.3度，是最靠近赤道的发射场之一。建设始于1982年，由巴西空军为巴西航天局运营。首次发射是1990年2月21日的Sonda 2探空火箭。"/> <!--[0--><meta property="og:image" content="https://www.orrerylearn.com/images/cards/fleet/alcantara.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!--]--><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"阿尔坎塔拉航天中心","description":"巴西的赤道发射中心：VLS-1的失败、2003年发射台爆炸、探空火箭 阿尔坎塔拉位于巴西北部沿海的马拉尼昂州，南纬2.3度，是最靠近赤道的发射场之一。建设始于1982年，由巴西空军为巴西航天局运营。首次发射是1990年2月21日的Sonda 2探空火箭。","url":"https://www.orrerylearn.com/zh-CN/fleet/alcantara","mainEntityOfPage":"https://www.orrerylearn.com/zh-CN/fleet/alcantara","inLanguage":"zh-CN","image":"https://www.orrerylearn.com/orrery/images/fleet-galleries/alcantara/01.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"航天器","item":"https://www.orrerylearn.com/zh-CN/fleet"},{"@type":"ListItem","position":2,"name":"阿尔坎塔拉航天中心","item":"https://www.orrerylearn.com/zh-CN/fleet/alcantara"}]}]</script><!----><!----><title>阿尔坎塔拉航天中心 · 航天器 · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="阿尔坎塔拉航天中心 · 航天器"/><meta property="og:description" content="巴西的赤道发射中心：VLS-1的失败、2003年发射台爆炸、探空火箭 阿尔坎塔拉位于巴西北部沿海的马拉尼昂州，南纬2.3度，是最靠近赤道的发射场之一。建设始于1982年，由巴西空军为巴西航天局运营。首次发射是1990年2月21日的Sonda 2探空火箭。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="阿尔坎塔拉航天中心 · 航天器"/><meta name="twitter:description" content="巴西的赤道发射中心：VLS-1的失败、2003年发射台爆炸、探空火箭 阿尔坎塔拉位于巴西北部沿海的马拉尼昂州，南纬2.3度，是最靠近赤道的发射场之一。建设始于1982年，由巴西空军为巴西航天局运营。首次发射是1990年2月21日的Sonda 2探空火箭。"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/fleet/alcantara.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">跳到主要内容</a> <nav aria-label="主导航" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery——首页"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">首页</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">探索<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">星球<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">飞行</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">规划</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">目录<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">学习<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="打开导航菜单" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="开始导览" aria-pressed="false" title="开始导览"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="语言" aria-haspopup="listbox" aria-expanded="false" title="选择语言">ZH</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="切换科学视角（此页面不可用）" aria-pressed="false" title="显示物理层（轨道力学叠加）（此页面不可用）"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="切换高对比度模式" aria-pressed="false" title="切换高对比度模式">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="设置" aria-haspopup="dialog" aria-expanded="false" title="设置"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="分享此视图" title="分享此视图"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="切换调试叠加层" aria-pressed="false" title="调试模式 — 开发者叠加层"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/fleet">航天器</a> <span class="sep">›</span> <span>阿尔坎塔拉航天中心</span></nav> <header><p class="meta">AEB · 发射场 · <span class="status">运行中</span></p> <h1>阿尔坎塔拉航天中心</h1> <!--[0--><p class="lede">巴西的赤道发射中心：VLS-1的失败、2003年发射台爆炸、探空火箭</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/fleet-galleries/alcantara/01.webp" alt="阿尔坎塔拉航天中心" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <!--[0--><p class="description">阿尔坎塔拉位于巴西北部沿海的马拉尼昂州，南纬2.3度，是最靠近赤道的发射场之一。建设始于1982年，由巴西空军为巴西航天局运营。首次发射是1990年2月21日的Sonda 2探空火箭。巴西的卫星运载火箭VLS-1两次飞行均告失败，分别在1997年11月2日和1999年12月11日。2003年8月22日，第三枚VLS-1在发射前两天于发射台上爆炸，造成21人死亡。阿尔坎塔拉至今没有一次轨道发射成功：Innospace的Hanbit-Nano于2025年12月失败。探空火箭和试验飞行器仍在飞行，2019年与美国的协议涵盖外国发射，而该场址建在1980年有300多户家庭被迁走的土地上。</p><!--]--> <!--[-1--><!--]--> <dl class="facts"><div><dt>制造商</dt> <dd>Brazilian Air Force (DCTA / Alcântara Launch Center)</dd></div> <div><dt>国家</dt> <dd>巴西</dd></div> <div><dt>首飞</dt> <dd>1997-11-02</dd></div> <!--[-1--><!--]--> <div><dt>时代</dt> <dd>1981-2011</dd></div> <div><dt>时期</dt> <dd>航天飞机与Mir</dd></div> <!--[--><!--]--></dl> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[--><!--[-1--><!--]--><!--[-1--><!--]--><!--[-1--><!--]--><!--[0--><section class="related"><h2>发射场</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/kourou-ela-3">库鲁 ELA-3</a> <!--[0--><span class="note">Ariane 5 的主发射台——在十年间发射了 JWST、Galileo 及四分之一的地球同步商业卫星</span><!--]--></li><li><a href="/orrery/fleet/tanegashima-yoshinobu">种子岛 吉信 LP-1</a> <!--[0--><span class="note">日本重型发射门户——H-IIA与H3，HTV / HTV-X货运飞船飞往国际空间站</span><!--]--></li><li><a href="/orrery/fleet/jiuquan-slc-43">酒泉 SLC-43</a> <!--[0--><span class="note">中国载人航天发射台——每一支神舟乘组</span><!--]--></li><li><a href="/orrery/fleet/wallops-lc-0">瓦洛普斯 0号发射台（MARS LP-0A和0B）</a> <!--[0--><span class="note">为国际空间站运送Cygnus货运飞船的Antares发射台（2013—2023年），也是Minotaur V发射月球探测器LADEE之处</span><!--]--></li><li><a href="/orrery/fleet/xichang-lc-2">西昌 LC-2</a> <!--[0--><span class="note">长征三号甲/乙系列——中国大多数GTO商业发射和北斗GNSS部署</span><!--]--></li><li><a href="/orrery/fleet/sriharikota-slp">斯里赫里戈达 SLP</a> <!--[0--><span class="note">印度重型发射台——GSLV Mk III / LVM3，通向Chandrayaan-3，以及即将开始的Gaganyaan载人项目</span><!--]--></li><!--]--></ul></section><!--]--><!--]--> <!--[-1--><!--]--> <p class="actions"><a class="cta" href="/orrery/fleet?id=alcantara">→ 在 Orrery 中打开</a></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="网站页脚"><nav class="footer-menu svelte-12qhfyh" aria-label="页脚链接"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">探索</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">星球</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">目录</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">学习</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">图库</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">致谢</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">版权信息</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">资料库</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">术语表</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">关于</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="关于"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">隐私</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">许可证</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="构建版本 + 部署日期（在GitHub上打开CHANGELOG）: v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">更多</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 32],
+									data: [null,{type:"data",data:{card:"https://www.orrerylearn.com/images/cards/fleet/alcantara.jpg",entry:{id:"alcantara",name:"阿尔坎塔拉航天中心",category:"launch-site",agency:"AEB",country:"Brazil",manufacturer:"Brazilian Air Force (DCTA / Alcântara Launch Center)",first_flight:"1997-11-02",status:"ACTIVE",era:"1981-2011",epoch:"shuttle-and-mir",lat:-2.3177,lon:-44.3678,best_known_for:"巴西的赤道发射中心：VLS-1的失败、2003年发射台爆炸、探空火箭",credit:"Facts from the Wikipedia articles on the Alcântara Space Center and VLS-1, including its launch list. The centre is a launch facility of the Brazilian Space Agency (AEB) and is operated by the Brazilian Air Force; it was named Alcântara Launch Center until 2021. Coordinates are the VLS pad on English Wikipedia.",links:[{l:"Programa de Desenvolvimento Integrado para o Centro Espacial de Alcântara — AEB",u:"https://www.gov.br/aeb/pt-br/programa-espacial-brasileiro/politica-organizacoes-programa-e-projetos/programa-de-desenvolvimento-integrado-para-o-centro-espacial-de-alcantara-2013-pdi-cea",t:"intro"},{l:"Alcântara Space Center — Wikipedia",u:"https://en.wikipedia.org/wiki/Alc%C3%A2ntara_Space_Center",t:"core"},{l:"Alcantara — Encyclopedia Astronautica",u:"https://www.astronautix.com/a/alcantara.html",t:"deep"}],linked_missions:[],tagline:"巴西的赤道发射中心：VLS-1的失败、2003年发射台爆炸、探空火箭",description:"阿尔坎塔拉位于巴西北部沿海的马拉尼昂州，南纬2.3度，是最靠近赤道的发射场之一。建设始于1982年，由巴西空军为巴西航天局运营。首次发射是1990年2月21日的Sonda 2探空火箭。巴西的卫星运载火箭VLS-1两次飞行均告失败，分别在1997年11月2日和1999年12月11日。2003年8月22日，第三枚VLS-1在发射前两天于发射台上爆炸，造成21人死亡。阿尔坎塔拉至今没有一次轨道发射成功：Innospace的Hanbit-Nano于2025年12月失败。探空火箭和试验飞行器仍在飞行，2019年与美国的协议涵盖外国发射，而该场址建在1980年有300多户家庭被迁走的土地上。"},missions:[],alongside:[],kin:[{id:"kourou-ela-3",name:"库鲁 ELA-3",tagline:"Ariane 5 的主发射台——在十年间发射了 JWST、Galileo 及四分之一的地球同步商业卫星"},{id:"tanegashima-yoshinobu",name:"种子岛 吉信 LP-1",tagline:"日本重型发射门户——H-IIA与H3，HTV / HTV-X货运飞船飞往国际空间站"},{id:"jiuquan-slc-43",name:"酒泉 SLC-43",tagline:"中国载人航天发射台——每一支神舟乘组"},{id:"wallops-lc-0",name:"瓦洛普斯 0号发射台（MARS LP-0A和0B）",tagline:"为国际空间站运送Cygnus货运飞船的Antares发射台（2013—2023年），也是Minotaur V发射月球探测器LADEE之处"},{id:"xichang-lc-2",name:"西昌 LC-2",tagline:"长征三号甲/乙系列——中国大多数GTO商业发射和北斗GNSS部署"},{id:"sriharikota-slp",name:"斯里赫里戈达 SLP",tagline:"印度重型发射台——GSLV Mk III / LVM3，通向Chandrayaan-3，以及即将开始的Gaganyaan载人项目"}],engines:[],usedOn:[],sites:[],crewed:[],museums:[],hero:"/orrery/images/fleet-galleries/alcantara/01.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

@@ -550,6 +550,20 @@
                   "type": "number"
                 }
               }
+            },
+            "waypoints_source": {
+              "type": "string",
+              "description": "Where an authored waypoints_km set comes from (published orbit table, report, date). Present when the waypoints were built from published figures rather than resampled from the analytic profile."
+            },
+            "orbit_raising": {
+              "type": "array",
+              "description": "Published Earth-orbit-raising burns: [met_days, perigee_alt_km, apogee_alt_km] of the orbit each burn leaves (Chandrayaan-class missions). With lunar_orbits, generate-hybrid-waypoints.ts builds waypoints_km from these tables.",
+              "items": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number" } }
+            },
+            "lunar_orbits": {
+              "type": "array",
+              "description": "Published lunar orbits after arrival: [met_days, perilune_alt_km, apolune_alt_km].",
+              "items": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number" } }
             }
           }
         },

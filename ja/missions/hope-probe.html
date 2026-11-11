@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-5c5t0k94qfPzKHqX/qRZcKEuFQfdS5/VtfP+DTpGESU='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/47.DNtfTY28.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B6T0Q7xV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BPm_otwg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="ja_JP"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--agldnw--><meta name="description" content="アラブ初の惑星間ミッション エミレーツ火星探査計画（Emirates Mars Mission）——「アル・アマル」（希望）——は、2021年のUAE連邦樹立50周年を記念して2014年に構想されました。"/> <meta property="og:image" content="https://www.orrerylearn.com/images/cards/mission/hope-probe.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Hope探査機","description":"アラブ初の惑星間ミッション エミレーツ火星探査計画（Emirates Mars Mission）——「アル・アマル」（希望）——は、2021年のUAE連邦樹立50周年を記念して2014年に構想されました。","url":"https://www.orrerylearn.com/ja/missions/hope-probe","mainEntityOfPage":"https://www.orrerylearn.com/ja/missions/hope-probe","inLanguage":"ja","image":"https://www.orrerylearn.com/orrery/images/missions/hope-probe/04.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ミッションカタログ","item":"https://www.orrerylearn.com/ja/missions"},{"@type":"ListItem","position":2,"name":"Hope探査機","item":"https://www.orrerylearn.com/ja/missions/hope-probe"}]}]</script><!----><!----><title>Hope探査機 · ミッションカタログ · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Hope探査機 · ミッションカタログ"/><meta property="og:description" content="アラブ初の惑星間ミッション エミレーツ火星探査計画（Emirates Mars Mission）——「アル・アマル」（希望）——は、2021年のUAE連邦樹立50周年を記念して2014年に構想されました。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Hope探査機 · ミッションカタログ"/><meta name="twitter:description" content="アラブ初の惑星間ミッション エミレーツ火星探査計画（Emirates Mars Mission）——「アル・アマル」（希望）——は、2021年のUAE連邦樹立50周年を記念して2014年に構想されました。"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/mission/hope-probe.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">本文へスキップ</a> <nav aria-label="メインナビゲーション" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — ホーム"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">ホーム</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">探索<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">世界<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">フライ</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">プラン</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">カタログ<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">学習<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="ナビゲーションメニューを開く" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="ツアーを始める" aria-pressed="false" title="ツアーを始める"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="言語" aria-haspopup="listbox" aria-expanded="false" title="言語を選択">JA</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="サイエンスレンズを切り替え（このページでは使用できません）" aria-pressed="false" title="物理レイヤーを表示 (軌道力学オーバーレイ)（このページでは使用できません）"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="高コントラストモードを切り替える" aria-pressed="false" title="高コントラストモードを切り替える">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="設定" aria-haspopup="dialog" aria-expanded="false" title="設定"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="このビューを共有" title="このビューを共有"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="デバッグオーバーレイを切り替え" aria-pressed="false" title="デバッグモード — 開発者オーバーレイ"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/missions">ミッションカタログ</a> <span class="sep">›</span> <span>Hope探査機</span></nav> <header><p class="meta">UAESA · 2020 · <span class="status">運用中</span></p> <h1>Hope探査機</h1> <!--[0--><p class="lede">アラブ初の惑星間ミッション</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/missions/hope-probe/04.webp" alt="Hope探査機" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <dl class="facts"><div><dt>機関</dt> <dd>United Arab Emirates Space Agency / Mohammed bin Rashid Space Centre</dd></div> <div><dt>出発</dt> <dd>2020-07-19</dd></div> <div><dt>到着</dt> <dd>2021-02-09</dd></div> <div><dt>飛行期間</dt> <dd>205日</dd></div> <div><dt>ΔV</dt> <dd>~3.5 km/s</dd></div> <!--[0--><div><dt>機体</dt> <dd><!--[0--><a href="/orrery/fleet/h-iia">H-IIA 202（種子島から）</a><!--]--></dd></div><!--]--> <!--[0--><div><dt>ペイロード</dt> <dd><!--[-1-->1350 kg<!--]--></dd></div><!--]--></dl> <!--[0--><p class="description">エミレーツ火星探査計画（Emirates Mars Mission）——「アル・アマル」（希望）——は、2021年のUAE連邦樹立50周年を記念して2014年に構想されました。MBRSCのチームはコロラド大学、アリゾナ州立大学、カリフォルニア大学バークレー校と提携して探査機を設計・統合しましたが、製造は自分たちで行いました。科学観測軌道（周期55時間、約20,000 km × 43,000 km）はすべての経度と時間帯をカバーし、他のどの火星周回機にも解像できない気象パターンを捉えています。ミッションは初挑戦で成功し、UAEは火星に到達した5番目の機関となりました。</p><!--]--> <!--[0--><section class="events"><h2>イベント</h2> <ol><!--[--><li><strong>打上げ</strong><!--[0--> — 種子島からの H-IIA 202 — 三菱重工業が打上げを提供した。<!--]--></li><li><strong>TCM-1</strong><!--[0--> — 初回軌道修正。<!--]--></li><li><strong>火星周回軌道投入</strong><!--[0--> — 27分間のスラスタ噴射でHopeを火星周回軌道に投入 2021-02-09。<!--]--></li><li><strong>科学軌道</strong><!--[0--> — トリミング機動によってHopeを55時間の科学軌道に投入。<!--]--></li><!--]--></ol></section><!--]--> <p class="actions"><a class="cta" href="/orrery/missions?id=hope-probe">→ Orreryで開く</a> <!--[0--><a class="cta" href="/orrery/fly?mission=hope-probe">このミッションを飛ぶ</a><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="サイトフッター"><nav class="footer-menu svelte-12qhfyh" aria-label="フッターリンク"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">探索</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">世界</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">カタログ</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">学習</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">ギャラリー</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">クレジット</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">奥付</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">ライブラリ</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">用語集</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">このサイトについて</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="このサイトについて"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">プライバシー</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">ライセンス</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="ビルドバージョン+デプロイ日時（GitHubのCHANGELOGを開く）: v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">その他</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 47],
+									data: [null,{type:"data",data:{mission:{id:"hope-probe",agency:"UAESA",agency_full:"United Arab Emirates Space Agency / Mohammed bin Rashid Space Centre",sector:"gov",dest:"MARS",color:"#00833F",year:2020,status:"ACTIVE",departure_date:"2020-07-19",arrival_date:"2021-02-09",transit_days:205,vehicle:"H-IIA 202（種子島から）",payload:"1350 kg",delta_v:"~3.5 km/s",data_quality:"good",credit:"© UAE Space Agency / MBRSC. First Arab interplanetary mission. Studies Mars atmospheric dynamics from a science orbit not covered by other Mars orbiters.",links:[{l:"Emirates Mars Mission — Wikipedia",u:"https://en.wikipedia.org/wiki/Emirates_Mars_Mission",t:"intro"},{l:"Hope Probe (MBRSC)",u:"https://www.mbrsc.ae/missions-and-projects/",t:"intro"}],flight_data_quality:"measured",fleet_refs:[{id:"h-iia",role:"launcher"}],flight:{launch:{vehicle_stage:"H-IIA 第2段",c3_km2_s2:14,mass_at_tli_kg:1350,source:"MBRSC Hope Probe Mission Press Kit (2020-07); MHI H-IIA flight data"},cruise:{tcm_count:5,source:"MBRSC Hope Probe Mission Operations Report"},arrival:{v_infinity_km_s:2.8,periapsis_km:20000,inclination_deg:25,orbit_insertion_dv_km_s:1.05,source:"MBRSC Hope MOI Report (2021-02); high-altitude science orbit"},totals:{total_dv_km_s:3.5,tli_or_tmi_dv_km_s:2,source:"MBRSC Hope Probe Mission Press Kit (2020-07)"},events:[{met_days:0,type:"launch",label:"打上げ",description:"種子島からの H-IIA 202 — 三菱重工業が打上げを提供した。",label_en:"Launch — H-IIA"},{met_days:.005,type:"tli_or_tmi",label:"打上げ",description:"種子島からの H-IIA 202 — 三菱重工業が打上げを提供した。",label_en:"Trans-Mars injection"},{met_days:25,type:"tcm",label:"TCM-1",description:"初回軌道修正。",label_en:"TCM-1"},{met_days:41,type:"tcm",label:"TCM-2",description:"巡航中間の精密化。",label_en:"TCM-2"},{met_days:71.75,type:"tcm",label:"TCM-3",description:"巡航中間の精密化。",label_en:"TCM-3"},{met_days:100,type:"tcm",label:"TCM-4",description:"接近フェーズの調整。",label_en:"TCM-4"},{met_days:102.5,type:"tcm",label:"TCM-5——火星周回軌道投入前の最後",description:"火星周回軌道投入に向けて接近照準を詰める。",label_en:"TCM-5 — final pre-MOI"},{met_days:205,type:"arrival",label:"火星周回軌道投入",description:"27分間のスラスタ噴射でHopeを火星周回軌道に投入 2021-02-09。",label_en:"Mars approach"},{met_days:205.01,type:"edl_or_oi",label:"火星周回軌道投入",description:"27分間のスラスタ噴射でHopeを火星周回軌道に投入 2021-02-09。",label_en:"Mars orbit insertion"}],interplanetary_profile:{source_tier:"tier_1_5_hybrid",reference_frame:"heliocentric_ecliptic_J2000",departure_body:"earth",arrival_body:"mars",transfer_type:"type1_lambert",tcm_count:5,waypoints_helio_au:[[0,.455966,0,-.889997],[2.1743,.493505,0,-.873517],[4.3487,.530417,0,-.855916],[6.523,.566626,0,-.837176],[8.6974,.602002,0,-.817207],[10.8717,.636628,0,-.796221],[13.0461,.670407,0,-.774173],[15.2204,.703273,0,-.751071],[17.3948,.735298,0,-.727072],[19.5691,.766348,0,-.702107],[21.7435,.796437,0,-.676263],[25,.8397,0,-.636048],[26.0922,.853716,0,-.622176],[28.2665,.880833,0,-.593994],[30.4409,.906992,0,-.565162],[32.6152,.931985,0,-.535604],[34.7896,.956002,0,-.505486],[36.9639,.978988,0,-.474822],[39.1383,1.000826,0,-.443601],[41,1.01872,0,-.416513],[43.487,1.041432,0,-.379842],[45.6613,1.060079,0,-.347338],[47.8357,1.077732,0,-.314507],[50.01,1.094264,0,-.281349],[52.1844,1.109732,0,-.247918],[54.3587,1.124218,0,-.214266],[56.5331,1.137557,0,-.180396],[58.7074,1.149894,0,-.146367],[60.8818,1.161261,0,-.112214],[63.0561,1.171487,0,-.07795],[65.2305,1.18077,0,-.043625],[67.4048,1.189074,0,-.009262],[69.5792,1.196312,0,.025109],[71.75,1.202631,0,.059405],[73.9278,1.20799,0,.093764],[76.1022,1.212353,0,.127991],[78.2765,1.215844,0,.162126],[80.4509,1.218362,0,.196132],[82.6252,1.219974,0,.229991],[84.7996,1.220756,0,.263695],[86.9739,1.220577,0,.297191],[89.1483,1.219572,0,.330486],[91.3226,1.21777,0,.363565],[93.497,1.215044,0,.396369],[95.6713,1.211561,0,.428925],[97.8457,1.207294,0,.461205],[100,1.202238,0,.49287],[102.5,1.195517,0,.529266],[104.3687,1.18978,0,.556158],[106.5431,1.182433,0,.587132],[108.7174,1.174418,0,.617775],[110.8918,1.165656,0,.648025],[113.0661,1.156211,0,.677895],[115.2405,1.14614,0,.707398],[117.4148,1.135348,0,.736457],[119.5892,1.123943,0,.765117],[121.7635,1.111947,0,.793376],[123.9379,1.099273,0,.821151],[126.1122,1.086046,0,.848513],[128.2866,1.072246,0,.875427],[130.4609,1.057842,0,.901848],[132.6353,1.042925,0,.927832],[134.8096,1.027458,0,.953326],[136.984,1.011453,0,.978322],[139.1583,.994975,0,1.002861],[141.3327,.977972,0,1.026869],[143.507,.960494,0,1.050379],[145.6813,.942581,0,1.073415],[147.8557,.92417,0,1.095882],[150.03,.905341,0,1.117853],[152.2044,.886107,0,1.139326],[154.3787,.866418,0,1.160213],[156.5531,.846358,0,1.180603],[158.7274,.825915,0,1.200459],[160.9018,.805074,0,1.219737],[163.0761,.783897,0,1.238506],[165.2505,.762362,0,1.256709],[167.4248,.740483,0,1.274344],[169.5992,.718302,0,1.29146],[171.7735,.695788,0,1.307979],[173.9479,.67298,0,1.323942],[176.1222,.649903,0,1.339379],[178.2966,.626521,0,1.354187],[180.4709,.60289,0,1.368455],[182.6453,.579017,0,1.382176],[184.8196,.554879,0,1.395265],[186.994,.530529,0,1.407817],[189.1683,.505961,0,1.419795],[191.3427,.481175,0,1.431157],[193.517,.456206,0,1.441977],[195.6914,.431046,0,1.452195],[197.8657,.40571,0,1.461816],[200.0401,.380221,0,1.470891],[202.2144,.354571,0,1.479337],[205.01,.32138,0,1.48938],[206.5631,.314702,0,1.490806],[208.7375,.314702,0,1.490806],[210.9118,.314702,0,1.490806],[213.0862,.314702,0,1.490806],[215.2605,.314702,0,1.490806]]}},name:"Hope探査機",type:"軌道機 · 運用中",first:"アラブ初の惑星間ミッション",description:"エミレーツ火星探査計画（Emirates Mars Mission）——「アル・アマル」（希望）——は、2021年のUAE連邦樹立50周年を記念して2014年に構想されました。MBRSCのチームはコロラド大学、アリゾナ州立大学、カリフォルニア大学バークレー校と提携して探査機を設計・統合しましたが、製造は自分たちで行いました。科学観測軌道（周期55時間、約20,000 km × 43,000 km）はすべての経度と時間帯をカバーし、他のどの火星周回機にも解像できない気象パターンを捉えています。ミッションは初挑戦で成功し、UAEは火星に到達した5番目の機関となりました。",events:[{met:0,label:"打上げ",note:"種子島からの H-IIA 202 — 三菱重工業が打上げを提供した。",type:"nominal"},{met:25,label:"TCM-1",note:"初回軌道修正。",type:"nominal"},{met:205,label:"火星周回軌道投入",note:"27分間のスラスタ噴射でHopeを火星周回軌道に投入 2021-02-09。",type:"nominal"},{met:250,label:"科学軌道",note:"トリミング機動によってHopeを55時間の科学軌道に投入。",type:"info"}],vehicle_stage:"H-IIA 第2段",flight_events:[{met:41,label:"TCM-2",description:"巡航中間の精密化。"},{met:71.75,label:"TCM-3",description:"巡航中間の精密化。"},{met:100,label:"TCM-4",description:"接近フェーズの調整。"},{met:102.5,label:"TCM-5——火星周回軌道投入前の最後",description:"火星周回軌道投入に向けて接近照準を詰める。"}]},hero:"/orrery/images/missions/hope-probe/04.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

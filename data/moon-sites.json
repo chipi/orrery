@@ -234,8 +234,8 @@
     "nation": "USA",
     "year": 1969,
     "landing_date": "1969-07-20",
-    "lat": 0.67,
-    "lon": 23.47,
+    "lat": 0.67414,
+    "lon": 23.47316,
     "region_bounds": {
       "lat_min": 0.63,
       "lat_max": 0.71,
@@ -282,8 +282,8 @@
     "nation": "USA",
     "year": 1969,
     "landing_date": "1969-11-19",
-    "lat": -3.01,
-    "lon": -23.42,
+    "lat": -3.0128,
+    "lon": -23.42189,
     "region_bounds": {
       "lat_min": -3.05,
       "lat_max": -2.97,
@@ -325,8 +325,8 @@
     "nation": "USA",
     "year": 1971,
     "landing_date": "1971-02-05",
-    "lat": -3.65,
-    "lon": -17.47,
+    "lat": -3.6459,
+    "lon": -17.47193,
     "region_bounds": {
       "lat_min": -3.7,
       "lat_max": -3.6,
@@ -368,8 +368,8 @@
     "nation": "USA",
     "year": 1971,
     "landing_date": "1971-07-30",
-    "lat": 26.13,
-    "lon": 3.63,
+    "lat": 26.13237,
+    "lon": 3.63333,
     "region_bounds": {
       "lat_min": 25.96,
       "lat_max": 26.16,
@@ -420,8 +420,8 @@
     "nation": "USA",
     "year": 1972,
     "landing_date": "1972-04-21",
-    "lat": -8.97,
-    "lon": 15.5,
+    "lat": -8.97341,
+    "lon": 15.501,
     "region_bounds": {
       "lat_min": -9.12,
       "lat_max": -8.81,
@@ -467,8 +467,8 @@
     "nation": "USA",
     "year": 1972,
     "landing_date": "1972-12-11",
-    "lat": 20.19,
-    "lon": 30.77,
+    "lat": 20.1911,
+    "lon": 30.77231,
     "region_bounds": {
       "lat_min": 20.11,
       "lat_max": 20.28,
@@ -519,8 +519,8 @@
     "nation": "China",
     "year": 2013,
     "landing_date": "2013-12-14",
-    "lat": 44.12,
-    "lon": -19.51,
+    "lat": 44.1214,
+    "lon": -19.5116,
     "region_bounds": {
       "lat_min": 44.11,
       "lat_max": 44.13,
@@ -842,7 +842,7 @@
     "surface_status": "planned",
     "samples_kg": 0,
     "data_quality": "partial",
-    "credit": "© CNSA — Chang'e 7. China's robotic precursor at the lunar south pole: orbiter, lander, rover and a small hopping probe to look into permanently shadowed craters for water ice. Reported target near the rim of Shackleton crater (about 88.8°S, 123.4°E). The launch, due in late August 2026, was called off on 23 August with no reason or new date given.",
+    "credit": "© CNSA — Chang'e 7. China's robotic precursor at the lunar south pole: orbiter, lander, rover and a small hopping probe to look into permanently shadowed craters for water ice. Reported target near the rim of Shackleton crater (about 88.8°S, 123.4°E). The launch, due in late August 2026, was called off on 23 August with no specific reason or new date given.",
     "links": [
       {
         "l": "Chang'e 7 — Wikipedia",
@@ -1183,8 +1183,8 @@
     "nation": "Israel",
     "year": 2019,
     "landing_date": "2019-04-11",
-    "lat": 32.594,
-    "lon": 19.348,
+    "lat": 32.5956,
+    "lon": 19.3496,
     "region_bounds": {
       "lat_min": 32.58,
       "lat_max": 32.61,

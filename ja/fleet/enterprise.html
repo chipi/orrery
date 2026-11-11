@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-KltOpSiN+719caxWyznTqKVjqZtNeLRdouvBk6dfOWw='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/32.Ba_7_NXM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CstHmmpA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xe7y8WPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BSzmrz8C2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKUbgPvw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ehZykTWQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bp-JR0aQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCW0Q--42.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5yvoOgk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/fB72kKMI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BAkaTcaq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="ja_JP"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--6cxttz--><meta name="description" content="OV-101 — プロトタイプのシャトル。Star Trekファンの運動によりConstitutionから改名。"/> <!--[0--><meta property="og:image" content="https://www.orrerylearn.com/images/cards/fleet/enterprise.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!--]--><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Space Shuttle Enterprise","description":"OV-101 — プロトタイプのシャトル。Star Trekファンの運動によりConstitutionから改名。","url":"https://www.orrerylearn.com/ja/fleet/enterprise","mainEntityOfPage":"https://www.orrerylearn.com/ja/fleet/enterprise","inLanguage":"ja","image":"https://www.orrerylearn.com/orrery/images/fleet-galleries/enterprise/01.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"フリート","item":"https://www.orrerylearn.com/ja/fleet"},{"@type":"ListItem","position":2,"name":"Space Shuttle Enterprise","item":"https://www.orrerylearn.com/ja/fleet/enterprise"}]}]</script><!----><!----><title>Space Shuttle Enterprise · フリート · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Space Shuttle Enterprise · フリート"/><meta property="og:description" content="OV-101 — プロトタイプのシャトル。Star Trekファンの運動によりConstitutionから改名。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Space Shuttle Enterprise · フリート"/><meta name="twitter:description" content="OV-101 — プロトタイプのシャトル。Star Trekファンの運動によりConstitutionから改名。"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/fleet/enterprise.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">本文へスキップ</a> <nav aria-label="メインナビゲーション" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — ホーム"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">ホーム</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">探索<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">世界<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">フライ</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">プラン</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">カタログ<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">学習<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="ナビゲーションメニューを開く" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="ツアーを始める" aria-pressed="false" title="ツアーを始める"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="言語" aria-haspopup="listbox" aria-expanded="false" title="言語を選択">JA</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="サイエンスレンズを切り替え（このページでは使用できません）" aria-pressed="false" title="物理レイヤーを表示 (軌道力学オーバーレイ)（このページでは使用できません）"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="高コントラストモードを切り替える" aria-pressed="false" title="高コントラストモードを切り替える">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="設定" aria-haspopup="dialog" aria-expanded="false" title="設定"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="このビューを共有" title="このビューを共有"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="デバッグオーバーレイを切り替え" aria-pressed="false" title="デバッグモード — 開発者オーバーレイ"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/fleet">フリート</a> <span class="sep">›</span> <span>Space Shuttle Enterprise</span></nav> <header><p class="meta">NASA · 有人 · <span class="status">退役</span></p> <h1>Space Shuttle Enterprise</h1> <!--[0--><p class="lede">OV-101 — プロトタイプのシャトル。Star Trekファンの運動によりConstitutionから改名。1977年の大気圏内試験を実施；軌道には到達せず</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/fleet-galleries/enterprise/01.webp" alt="Space Shuttle Enterprise" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <!--[0--><p class="description">当初はConstitutionと呼ばれていましたが、1976年にシャトルの命名が行われた際、Star Trekファンが組織したファンレターキャンペーンによってEnterpriseに改名されました。接近着陸試験（ALT）用のプロトタイプとして建造され、1977年にエドワーズ空軍基地上空で、Shuttle Carrier Aircraftに載せた8回の係留飛行と5回の自由飛行を実施しました。1977-08-12の最初の自由飛行ではフレッド・ヘイズとゴードン・フラートンが操縦し、オービターが滑空して着陸できることを実証しました。推進装置も、実働する耐熱（TPS）タイルも備えていませんでした。Enterpriseを飛行可能な機体に改造するのは、構造用予備部品から新しいオービターを造るより負担が大きいと見積もられたため、代わりにChallengerが建造されました。現在はニューヨークのIntrepid Sea, Air &amp; Space Museumに展示されています。</p><!--]--> <!--[0--><p class="known">プロトタイプシャトル；1977年の大気圏内投下試験；軌道到達なし</p><!--]--> <dl class="facts"><div><dt>製造者</dt> <dd>Rockwell International</dd></div> <div><dt>国</dt> <dd>アメリカ</dd></div> <div><dt>初飛行</dt> <dd>1977-08-12</dd></div> <!--[-1--><!--]--> <div><dt>時代</dt> <dd>1969-1981</dd></div> <div><dt>時期</dt> <dd>シャトルとMir</dd></div> <!--[--><div><dt>全長</dt> <dd>37.237 m</dd></div><!--]--></dl> <!--[-1--><!--]--> <!--[0--><section class="crew"><h2>乗員</h2> <ul><!--[--><li><!--[-1-->CAPTIVE-INERT 1 (1977-02-18) · first carrying flight on a Boeing 747 SCA; unmanned; no separation<!--]--> — </li><li><!--[-1-->FREE FLIGHT 1 (1977-08-12) · first free flight from the SCA; Haise + Fullerton; first proof Shuttle could glide + land<!--]--> — </li><li><!--[-1-->FREE FLIGHT 2 (1977-09-13) · 2nd free flight; Engle + Truly; pitch-up landing test<!--]--> — </li><li><!--[-1-->FREE FLIGHT 4 (1977-10-12) · 4th free flight; first without tailcone — full orbital aerodynamics<!--]--> — </li><li><!--[-1-->FREE FLIGHT 5 (1977-10-26) · 5th + final free flight; first dry-runway landing; closed the ALT programme<!--]--> — </li><!--]--></ul></section><!--]--> <!--[-1--><!--]--> <!--[--><!--[-1--><!--]--><!--[-1--><!--]--><!--[-1--><!--]--><!--[0--><section class="related"><h2>有人</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/columbia">Space Shuttle Columbia</a> <!--[0--><span class="note">OV-102 — 宇宙へ飛んだ最初のシャトル・オービター（STS-1、1981年4月12日）；STS-107の再突入で喪失（2003年2月1日）</span><!--]--></li><li><a href="/orrery/fleet/space-shuttle-orbiter">Space Shuttleオービター</a> <!--[0--><span class="note">再使用可能な翼の軌道乗組員車</span><!--]--></li><li><a href="/orrery/fleet/challenger">Space Shuttle Challenger</a> <!--[0--><span class="note">OV-099 — 2番目の運用シャトル。1986年1月28日のSTS-51-Lで打ち上げから73秒後に喪失。乗組員7名全員（教師クリスタ・マコーリフを含む）が犠牲に</span><!--]--></li><li><a href="/orrery/fleet/discovery">Space Shuttle Discovery</a> <!--[0--><span class="note">OV-103 — 3番目のシャトル。Hubbleを放出（STS-31、1990年）、飛行再開ミッションを2回とも担当。39ミッションで全オービター中最多</span><!--]--></li><li><a href="/orrery/fleet/atlantis">Space Shuttle Atlantis</a> <!--[0--><span class="note">OV-104 — 4番目のシャトル。最終ミッションSTS-135（2011年）と、最後のHubble整備ミッションSTS-125（2009年）を実施し、GalileoとMagellanを放出</span><!--]--></li><li><a href="/orrery/fleet/apollo-csm-block-ii">Apollo CSM Block II</a> <!--[0--><span class="note">月対応のCommand+Service Module</span><!--]--></li><!--]--></ul></section><!--]--><!--]--> <!--[0--><section class="museums"><h2>見られる場所</h2> <ul><!--[--><li><strong>イントレピッド海上航空宇宙博物館</strong>, ニューヨーク<!--[0--> — Space Shuttle Enterprise。1977年の進入着陸試験で飛行した試験用オービター<!--]--></li><!--]--></ul></section><!--]--> <p class="actions"><a class="cta" href="/orrery/fleet?id=enterprise">→ Orreryで開く</a></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="サイトフッター"><nav class="footer-menu svelte-12qhfyh" aria-label="フッターリンク"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">探索</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">世界</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">カタログ</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">学習</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">ギャラリー</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">クレジット</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">奥付</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">ライブラリ</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">用語集</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">このサイトについて</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="このサイトについて"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">プライバシー</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">ライセンス</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="ビルドバージョン+デプロイ日時（GitHubのCHANGELOGを開く）: v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">その他</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 32],
+									data: [null,{type:"data",data:{card:"https://www.orrerylearn.com/images/cards/fleet/enterprise.jpg",entry:{id:"enterprise",name:"Space Shuttle Enterprise",category:"crewed-spacecraft",agency:"NASA",country:"USA",manufacturer:"Rockwell International",first_flight:"1977-08-12",status:"RETIRED",era:"1969-1981",epoch:"shuttle-and-mir",best_known_for:"プロトタイプシャトル；1977年の大気圏内投下試験；軌道到達なし",credit:"Originally called Constitution, renamed Enterprise after a fan-letter campaign organized by Star Trek fans in 1976 when the shuttle was being named. Built as a prototype for the Approach and Landing Tests (ALT) — eight captive flights and five free flights from the Shuttle Carrier Aircraft (a modified Boeing 747) over Edwards Air Force Base in 1977. First free flight 1977-08-12 piloted by Fred Haise + Gordon Fullerton — proved the orbiter could glide and land. Did NOT contain propulsion or active TPS tiles; converting Enterprise to a flight-rated vehicle was estimated heavier than building a new orbiter from structural spares, so Challenger was built instead and Enterprise was relegated to ground-test / fit-check duty. Used for vibration testing, launch-pad fit-checks at LC-39, and eventually displayed at the Smithsonian Air and Space Museum's Udvar-Hazy Center 2004-2012, then transferred to the Intrepid Sea, Air & Space Museum in NYC.",links:[{l:"Space Shuttle Enterprise — Wikipedia",u:"https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise",t:"intro"},{l:"Approach and Landing Tests (ALT) — Wikipedia",u:"https://en.wikipedia.org/wiki/Approach_and_Landing_Tests",t:"core"},{l:"Enterprise at Intrepid Museum (NYC)",u:"https://intrepidmuseum.org/space-shuttle-pavilion",t:"core"},{l:"Wikipedia — dimensions",u:"https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",t:"deep"}],linked_missions:[],flights:[{mission_id:"enterprise-cf-1",flight_designation:"CAPTIVE-INERT 1 (1977-02-18) · first carrying flight on a Boeing 747 SCA; unmanned; no separation"},{mission_id:"enterprise-ff-1",flight_designation:"FREE FLIGHT 1 (1977-08-12) · first free flight from the SCA; Haise + Fullerton; first proof Shuttle could glide + land"},{mission_id:"enterprise-ff-2",flight_designation:"FREE FLIGHT 2 (1977-09-13) · 2nd free flight; Engle + Truly; pitch-up landing test"},{mission_id:"enterprise-ff-4",flight_designation:"FREE FLIGHT 4 (1977-10-12) · 4th free flight; first without tailcone — full orbital aerodynamics"},{mission_id:"enterprise-ff-5",flight_designation:"FREE FLIGHT 5 (1977-10-26) · 5th + final free flight; first dry-runway landing; closed the ALT programme"}],specs:{length_m:37.237,wingspan_m:23.79,payload_bay_diameter_m:4.6},tagline:"OV-101 — プロトタイプのシャトル。Star Trekファンの運動によりConstitutionから改名。1977年の大気圏内試験を実施；軌道には到達せず",description:"当初はConstitutionと呼ばれていましたが、1976年にシャトルの命名が行われた際、Star Trekファンが組織したファンレターキャンペーンによってEnterpriseに改名されました。接近着陸試験（ALT）用のプロトタイプとして建造され、1977年にエドワーズ空軍基地上空で、Shuttle Carrier Aircraftに載せた8回の係留飛行と5回の自由飛行を実施しました。1977-08-12の最初の自由飛行ではフレッド・ヘイズとゴードン・フラートンが操縦し、オービターが滑空して着陸できることを実証しました。推進装置も、実働する耐熱（TPS）タイルも備えていませんでした。Enterpriseを飛行可能な機体に改造するのは、構造用予備部品から新しいオービターを造るより負担が大きいと見積もられたため、代わりにChallengerが建造されました。現在はニューヨークのIntrepid Sea, Air & Space Museumに展示されています。"},missions:[],alongside:[],kin:[{id:"columbia",name:"Space Shuttle Columbia",tagline:"OV-102 — 宇宙へ飛んだ最初のシャトル・オービター（STS-1、1981年4月12日）；STS-107の再突入で喪失（2003年2月1日）"},{id:"space-shuttle-orbiter",name:"Space Shuttleオービター",tagline:"再使用可能な翼の軌道乗組員車"},{id:"challenger",name:"Space Shuttle Challenger",tagline:"OV-099 — 2番目の運用シャトル。1986年1月28日のSTS-51-Lで打ち上げから73秒後に喪失。乗組員7名全員（教師クリスタ・マコーリフを含む）が犠牲に"},{id:"discovery",name:"Space Shuttle Discovery",tagline:"OV-103 — 3番目のシャトル。Hubbleを放出（STS-31、1990年）、飛行再開ミッションを2回とも担当。39ミッションで全オービター中最多"},{id:"atlantis",name:"Space Shuttle Atlantis",tagline:"OV-104 — 4番目のシャトル。最終ミッションSTS-135（2011年）と、最後のHubble整備ミッションSTS-125（2009年）を実施し、GalileoとMagellanを放出"},{id:"apollo-csm-block-ii",name:"Apollo CSM Block II",tagline:"月対応のCommand+Service Module"}],engines:[],usedOn:[],sites:[],crewed:[{mission:"CAPTIVE-INERT 1 (1977-02-18) · first carrying flight on a Boeing 747 SCA; unmanned; no separation",missionId:null,designation:"CAPTIVE-INERT 1 (1977-02-18) · first carrying flight on a Boeing 747 SCA; unmanned; no separation",crew:[]},{mission:"FREE FLIGHT 1 (1977-08-12) · first free flight from the SCA; Haise + Fullerton; first proof Shuttle could glide + land",missionId:null,designation:"FREE FLIGHT 1 (1977-08-12) · first free flight from the SCA; Haise + Fullerton; first proof Shuttle could glide + land",crew:[]},{mission:"FREE FLIGHT 2 (1977-09-13) · 2nd free flight; Engle + Truly; pitch-up landing test",missionId:null,designation:"FREE FLIGHT 2 (1977-09-13) · 2nd free flight; Engle + Truly; pitch-up landing test",crew:[]},{mission:"FREE FLIGHT 4 (1977-10-12) · 4th free flight; first without tailcone — full orbital aerodynamics",missionId:null,designation:"FREE FLIGHT 4 (1977-10-12) · 4th free flight; first without tailcone — full orbital aerodynamics",crew:[]},{mission:"FREE FLIGHT 5 (1977-10-26) · 5th + final free flight; first dry-runway landing; closed the ALT programme",missionId:null,designation:"FREE FLIGHT 5 (1977-10-26) · 5th + final free flight; first dry-runway landing; closed the ALT programme",crew:[]}],museums:[{id:"intrepid-museum",name:"イントレピッド海上航空宇宙博物館",city:"ニューヨーク",item:"Space Shuttle Enterprise。1977年の進入着陸試験で飛行した試験用オービター"}],hero:"/orrery/images/fleet-galleries/enterprise/01.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

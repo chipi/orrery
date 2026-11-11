@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-IEFRN4xN/+oM9hzQICgSbMaO10UtG0nRDHqagf1Mei4='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/47.DNtfTY28.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B6T0Q7xV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BPm_otwg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="zh_CN"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--agldnw--><meta name="description" content="月球背面首次软着陆 月球背面无法与地球直接进行无线电通视。为了在那里着陆，中国先把鹊桥中继卫星发射到地月系L2拉格朗日点的晕轨道上——在那里可以同时看到月球背面和地球。有了这一基础设施，嫦娥四号成为首个在月球背面软着陆的航天器。"/> <meta property="og:image" content="https://www.orrerylearn.com/images/cards/mission/change4.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"嫦娥四号 / 玉兔二号","description":"月球背面首次软着陆 月球背面无法与地球直接进行无线电通视。为了在那里着陆，中国先把鹊桥中继卫星发射到地月系L2拉格朗日点的晕轨道上——在那里可以同时看到月球背面和地球。有了这一基础设施，嫦娥四号成为首个在月球背面软着陆的航天器。","url":"https://www.orrerylearn.com/zh-CN/missions/change4","mainEntityOfPage":"https://www.orrerylearn.com/zh-CN/missions/change4","inLanguage":"zh-CN","image":"https://www.orrerylearn.com/orrery/images/missions/change4/07.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"任务目录","item":"https://www.orrerylearn.com/zh-CN/missions"},{"@type":"ListItem","position":2,"name":"嫦娥四号 / 玉兔二号","item":"https://www.orrerylearn.com/zh-CN/missions/change4"}]}]</script><!----><!----><title>嫦娥四号 / 玉兔二号 · 任务目录 · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="嫦娥四号 / 玉兔二号 · 任务目录"/><meta property="og:description" content="月球背面首次软着陆 月球背面无法与地球直接进行无线电通视。为了在那里着陆，中国先把鹊桥中继卫星发射到地月系L2拉格朗日点的晕轨道上——在那里可以同时看到月球背面和地球。有了这一基础设施，嫦娥四号成为首个在月球背面软着陆的航天器。"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="嫦娥四号 / 玉兔二号 · 任务目录"/><meta name="twitter:description" content="月球背面首次软着陆 月球背面无法与地球直接进行无线电通视。为了在那里着陆，中国先把鹊桥中继卫星发射到地月系L2拉格朗日点的晕轨道上——在那里可以同时看到月球背面和地球。有了这一基础设施，嫦娥四号成为首个在月球背面软着陆的航天器。"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/mission/change4.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">跳到主要内容</a> <nav aria-label="主导航" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery——首页"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">首页</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">探索<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">星球<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">飞行</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">规划</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">目录<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">学习<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="打开导航菜单" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="开始导览" aria-pressed="false" title="开始导览"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="语言" aria-haspopup="listbox" aria-expanded="false" title="选择语言">ZH</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="切换科学视角（此页面不可用）" aria-pressed="false" title="显示物理层（轨道力学叠加）（此页面不可用）"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="切换高对比度模式" aria-pressed="false" title="切换高对比度模式">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="设置" aria-haspopup="dialog" aria-expanded="false" title="设置"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="分享此视图" title="分享此视图"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="切换调试叠加层" aria-pressed="false" title="调试模式 — 开发者叠加层"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/missions">任务目录</a> <span class="sep">›</span> <span>嫦娥四号 / 玉兔二号</span></nav> <header><p class="meta">CNSA · 2018 · <span class="status">运行中</span></p> <h1>嫦娥四号 / 玉兔二号</h1> <!--[0--><p class="lede">月球背面首次软着陆</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/missions/change4/07.webp" alt="嫦娥四号 / 玉兔二号" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <dl class="facts"><div><dt>机构</dt> <dd>China National Space Administration / China Academy of Space Technology</dd></div> <div><dt>出发</dt> <dd>2018-12-07</dd></div> <div><dt>到达</dt> <dd>2019-01-03</dd></div> <div><dt>飞行时间</dt> <dd>27天</dd></div> <div><dt>∆V</dt> <dd>~3 km/s</dd></div> <!--[0--><div><dt>运载火箭</dt> <dd><!--[0--><a href="/orrery/fleet/long-march-3b">长征三号B</a><!--]--></dd></div><!--]--> <!--[0--><div><dt>有效载荷</dt> <dd><!--[0--><a href="/orrery/fleet/yutu-2">发射质量 3780 kg；玉兔二号月球车 140 kg</a><!--]--></dd></div><!--]--></dl> <!--[0--><p class="description">月球背面无法与地球直接进行无线电通视。为了在那里着陆，中国先把鹊桥中继卫星发射到地月系L2拉格朗日点的晕轨道上——在那里可以同时看到月球背面和地球。有了这一基础设施，嫦娥四号成为首个在月球背面软着陆的航天器。玉兔二号月球车自2019年1月起一直在工作，截至2024年已行驶约1.6 km，是历史上工作时间最长的月球车。</p><!--]--> <!--[0--><section class="events"><h2>事件</h2> <ol><!--[--><li><strong>发射</strong><!--[0--> — 来自西昌的长征三号B运载火箭。<!--]--></li><li><strong>月球轨道插入</strong><!--[0--> — 月球轨道插入。<!--]--></li><li><strong>接触</strong><!--[0--> — 着陆器在Von Kármán撞击坑着陆（2019年1月3日）——第一个到达月球背面的航天器。所有通信都通过位于地球-月球 L2的鹊桥中继卫星进行。<!--]--></li><li><strong>玉兔二号已部署</strong><!--[0--> — 月球车沿斜坡下行。<!--]--></li><!--]--></ol></section><!--]--> <p class="actions"><a class="cta" href="/orrery/missions?id=change4">→ 在 Orrery 中打开</a> <!--[0--><a class="cta" href="/orrery/fly?mission=change4">飞行此任务</a><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="网站页脚"><nav class="footer-menu svelte-12qhfyh" aria-label="页脚链接"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">探索</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">星球</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">目录</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">学习</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">图库</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">致谢</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">版权信息</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">资料库</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">术语表</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">关于</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="关于"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">隐私</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">许可证</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="构建版本 + 部署日期（在GitHub上打开CHANGELOG）: v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">更多</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 47],
+									data: [null,{type:"data",data:{mission:{id:"change4",agency:"CNSA",agency_full:"China National Space Administration / China Academy of Space Technology",sector:"gov",dest:"MOON",color:"#DE2910",year:2018,status:"ACTIVE",departure_date:"2018-12-07",arrival_date:"2019-01-03",transit_days:27,vehicle:"长征三号B",payload:"发射质量 3780 kg；玉兔二号月球车 140 kg",delta_v:"~3 km/s",data_quality:"good",credit:"© CNSA. First soft-landing on the lunar far side — required the Queqiao relay satellite at Earth-Moon L2 for communications. Yutu-2 has driven ~1.6 km as of 2024, the longest-operating lunar rover in history.",links:[{l:"Chang'e 4 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_4",t:"intro"},{l:"中国探月与深空探测网 (CLEP)",u:"http://www.clep.org.cn/",t:"intro"},{l:"嫦娥四号 — 中文维基百科",u:"https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E5%9B%9B%E5%8F%B7",t:"core"},{l:"Queqiao relay — Wikipedia",u:"https://en.wikipedia.org/wiki/Queqiao_relay_satellite",t:"core"}],flight_data_quality:"measured",fleet_refs:[{id:"long-march-3b",role:"launcher"},{id:"change-4",role:"spacecraft"},{id:"yutu-2",role:"payload"}],flight:{launch:{vehicle_stage:"长征三号B 第三级",mass_at_tli_kg:3780,source:"CNSA Chang'e 4 Mission Report (2019)"},cruise:{tcm_count:4,source:"CNSA Chang'e 4 Mission Operations Report"},arrival:{v_infinity_km_s:.85,periapsis_km:100,inclination_deg:90,orbit_insertion_dv_km_s:.78,source:"CNSA Chang'e 4 LOI Report (2018-12)",entry_velocity_km_s:1.692,edl_system:"powered",edl_duration_s:719,touchdown_velocity_ms:1},totals:{total_dv_km_s:3,source:"CNSA Chang'e 4 Mission Report (2019)"},events:[{met_days:0,type:"launch",label:"发射",description:"来自西昌的长征三号B运载火箭。",label_en:"Launch — Long March 3B/E"},{met_days:.05,type:"tli_or_tmi",label:"发射",description:"来自西昌的长征三号B运载火箭。",label_en:"Trans-lunar injection"},{met_days:1.19,type:"tcm",label:"MCC-1",description:"首次轨道修正。",label_en:"MCC-1"},{met_days:2.08,type:"tcm",label:"MCC-2",description:"巡航中途精修。",label_en:"MCC-2"},{met_days:2.97,type:"tcm",label:"MCC-3",description:"巡航中途精修。",label_en:"MCC-3"},{met_days:4.9,type:"tcm",label:"MCC-4——进入环月轨道前最后一次",description:"进入环月轨道前的最终接近瞄准。",label_en:"MCC-4 — final pre-LOI"},{met_days:5,type:"arrival",label:"月球轨道插入",description:"月球轨道插入。",label_en:"Lunar orbit insertion"},{met_days:27,type:"edl_or_oi",label:"接触",description:"着陆器在Von Kármán撞击坑着陆（2019年1月3日）——第一个到达月球背面的航天器。所有通信都通过位于地球-月球 L2的鹊桥中继卫星进行。",label_en:"Lunar far-side landing — Von Kármán crater"}],cislunar_profile:{source_tier:"tier_1_5_hybrid",parking_orbit:{altitude_km:200,inclination_deg:28.5,revs:1},tli:{dv_kms:3.15},translunar:{type:"direct"},lunar_arrival:{type:"orbit_and_land",altitude_km:100,inclination_deg:90,periselene_km:100},return:{type:"none"},waypoints_km:[[0,6578,0,0],[.05,6578,0,0],[.5727,6832,0,-10],[.8591,6977,0,-15],[1.19,7150,0,-22],[1.4318,7281,0,-28],[1.7182,7441,0,-34],[2.08,7650,0,-43],[2.2909,7776,0,-48],[2.5773,7953,0,-55],[2.97,8204,0,-66],[3.15,8323,0,-71],[3.4364,8519,0,-79],[3.7227,8721,0,-88],[4.0091,8930,0,-97],[4.2955,9147,0,-107],[4.5818,9371,0,-117],[5,9714,0,-132],[5.1545,9846,0,-138],[5.4409,10097,0,-149],[5.7273,10357,0,-161],[6.0136,10628,0,-174],[6.3,10909,0,-187],[6.5864,11202,0,-201],[6.8727,11506,0,-216],[7.1591,11823,0,-231],[7.4455,12152,0,-247],[7.7318,12496,0,-264],[8.0182,12854,0,-281],[8.3045,13228,0,-300],[8.5909,13618,0,-319],[8.8773,14025,0,-340],[9.1636,14451,0,-362],[9.45,14896,0,-384],[9.7364,15362,0,-409],[10.0227,15849,0,-434],[10.3091,16360,0,-461],[10.5955,16896,0,-489],[10.8818,17458,0,-519],[11.1682,18048,0,-551],[11.4545,18668,0,-585],[11.7409,19319,0,-620],[12.0273,20005,0,-658],[12.3136,20728,0,-698],[12.6,21489,0,-741],[12.8864,22293,0,-786],[13.1727,23141,0,-834],[13.4591,24037,0,-885],[13.7455,24986,0,-940],[14.0318,25990,0,-998],[14.3182,27055,0,-1060],[14.6045,28184,0,-1127],[14.8909,29384,0,-1198],[15.1773,30660,0,-1274],[15.4636,32018,0,-1355],[15.75,33466,0,-1443],[16.0364,35011,0,-1537],[16.3227,36661,0,-1639],[16.6091,38427,0,-1748],[16.8955,40318,0,-1866],[17.1818,42348,0,-1993],[17.4682,44528,0,-2131],[17.7545,46873,0,-2280],[18.0409,49400,0,-2441],[18.3273,52125,0,-2617],[18.6136,55069,0,-2808],[18.9,58255,0,-3017],[19.1864,61707,0,-3244],[19.4727,65454,0,-3493],[19.7591,69528,0,-3765],[20.0455,73964,0,-4064],[20.3318,78801,0,-4392],[20.6182,84083,0,-4752],[20.9045,89860,0,-5150],[21.1909,96186,0,-5588],[21.4773,103123,0,-6072],[21.7636,110736,0,-6608],[22.05,119097,0,-7201],[22.3364,128285,0,-7858],[22.6227,138381,0,-8585],[22.9091,149469,0,-9391],[23.1955,161631,0,-10282],[23.4818,174943,0,-11267],[23.7682,189466,0,-12352],[24.0545,205240,0,-13542],[24.3409,222261,0,-14841],[24.6273,240452,0,-16246],[24.9136,259661,0,-17749],[25.2,279623,0,-19334],[25.4864,299937,0,-20976],[25.7727,320047,0,-22635],[26.0591,339240,0,-24260],[26.3455,356673,0,-25789],[26.6318,371431,0,-27149],[27,385181,0,-28545],[27.2045,384976,841,-28530],[27.4909,384109,1670,-28466],[27.7773,382917,1784,-28377],[28.0636,381910,1135,-28303],[28.35,381516,0,-28273]]}},name:"嫦娥四号 / 玉兔二号",type:"月球背面着陆器 · 月球车 · 运行中",first:"月球背面首次软着陆",description:"月球背面无法与地球直接进行无线电通视。为了在那里着陆，中国先把鹊桥中继卫星发射到地月系L2拉格朗日点的晕轨道上——在那里可以同时看到月球背面和地球。有了这一基础设施，嫦娥四号成为首个在月球背面软着陆的航天器。玉兔二号月球车自2019年1月起一直在工作，截至2024年已行驶约1.6 km，是历史上工作时间最长的月球车。",events:[{met:0,label:"发射",note:"来自西昌的长征三号B运载火箭。",type:"nominal"},{met:5,label:"月球轨道插入",note:"月球轨道插入。",type:"nominal"},{met:27,label:"接触",note:"着陆器在Von Kármán撞击坑着陆（2019年1月3日）——第一个到达月球背面的航天器。所有通信都通过位于地球-月球 L2的鹊桥中继卫星进行。",type:"nominal"},{met:27.01,label:"玉兔二号已部署",note:"月球车沿斜坡下行。",type:"info"}],vehicle_stage:"长征三号B 第三级",flight_events:[{met:1.19,label:"MCC-1",description:"首次轨道修正。"},{met:2.08,label:"MCC-2",description:"巡航中途精修。"},{met:2.97,label:"MCC-3",description:"巡航中途精修。"},{met:4.9,label:"MCC-4——进入环月轨道前最后一次",description:"进入环月轨道前的最终接近瞄准。"}]},hero:"/orrery/images/missions/change4/07.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

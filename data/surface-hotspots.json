@@ -13,33 +13,164 @@
       "hotspot_annotations": [
         {
           "id": "lm-descent-stage",
-          "label": "LM Descent Stage (Eagle)",
-          "lat_offset_m": 0,
-          "lon_offset_m": 0
+          "label": "Eagle descent stage",
+          "label_short": "Eagle LM",
+          "lat_offset_m": 2.8,
+          "lon_offset_m": -0.8,
+          "explain": "The lower half of the Apollo 11 Lunar Module Eagle. It stayed on the Moon when the ascent stage lifted the crew off after the July 1969 landing.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"
+            }
+          ],
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame"
         },
         {
-          "id": "us-flag",
-          "label": "U.S. flag (planted ~8 m west of LM)",
-          "lat_offset_m": 2,
-          "lon_offset_m": -8
+          "id": "pse",
+          "label": "Passive seismometer (PSEP)",
+          "label_short": "PSEP",
+          "lat_offset_m": -25.6,
+          "lon_offset_m": -0.8,
+          "explain": "The Passive Seismic Experiment of the Early Apollo Scientific Experiments Package, set up south of the Lunar Module on 21 July 1969 to record moonquakes and impacts.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"
+            }
+          ],
+          "confidence": "two sources (LROC + NASA NSSDCA; agree on area to ~10 m, pixel from LROC)"
         },
         {
           "id": "lrrr",
-          "label": "Laser Ranging Retroreflector (LRRR)",
-          "lat_offset_m": -10,
-          "lon_offset_m": 14
+          "label": "Laser retroreflector (LRRR)",
+          "label_short": "Retroreflector",
+          "lat_offset_m": -19.2,
+          "lon_offset_m": -2,
+          "explain": "The Laser Ranging Retroreflector Array left by Apollo 11: a reflector that lets observatories on Earth time laser pulses bounced back from the Moon. Placed about 5 m north-north-west of the seismometer package.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_11_hardware.geojson"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"
+            }
+          ],
+          "confidence": "two sources (LROC layer + NASA NSSDCA relative position)"
         },
         {
-          "id": "easep",
-          "label": "EASEP (simplified ALSEP package)",
-          "lat_offset_m": -15,
-          "lon_offset_m": 18
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "lat_offset_m": 10.2,
+          "lon_offset_m": -12.9,
+          "position_lroc_only": true,
+          "explain": "The point LROC's Apollo 11 hardware layer gives for the flag, about 14 m west-north-west of the Lunar Module. The flag itself is too small to see at this resolution.",
+          "source": [
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_11_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates; low: LROC hardware-layer point (no uncertainty given, not in the 2016 table); the flag is not resolvable at 0.4 m/px"
         },
         {
-          "id": "plaque",
-          "label": "\"We came in peace for all mankind\" plaque",
-          "lat_offset_m": 0,
-          "lon_offset_m": 0
+          "id": "tv",
+          "label": "TV camera (LROC position)",
+          "label_short": "TV camera",
+          "lat_offset_m": 22.1,
+          "lon_offset_m": -18.8,
+          "position_lroc_only": true,
+          "explain": "The point LROC's Apollo 11 hardware layer gives for the TV camera, about 26 m north-west of the Lunar Module. Nothing is resolvable in the image at that spot.",
+          "source": [
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_11_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates; low: LROC hardware-layer point (no uncertainty given); nothing resolvable at the point"
+        },
+        {
+          "id": "little-west",
+          "label": "Little West crater",
+          "label_short": "Little West",
+          "lat_offset_m": 7,
+          "lon_offset_m": 73.8,
+          "ring_size": "small",
+          "explain": "The crater LROC labels Little West on its Apollo 11 map, about 75 m east of the Lunar Module. A faint footpath in the image runs toward it.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            },
+            {
+              "label": "LROC post 65",
+              "url": "https://lroc.im-ldi.com/images/65"
+            }
+          ],
+          "confidence": "LROC label (Featured Sites nomenclature layer); medium: label point sits on the crater (dark shadowed floor, bright rim) in the image"
+        },
+        {
+          "id": "double",
+          "label": "Double crater",
+          "label_short": "Double crater",
+          "lat_offset_m": -8.1,
+          "lon_offset_m": -14.1,
+          "ring_size": "small",
+          "explain": "A small crater LROC labels Double, about 17 m south-west of the Lunar Module, on its Apollo 11 Featured Sites map.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label (Featured Sites nomenclature layer); low: label point 17 m south-west of the Lunar Module; a crater is nearby but the ring is not clearly centred on one"
+        },
+        {
+          "id": "footpath-little-west",
+          "label": "Footpath toward Little West",
+          "label_short": "Footpath",
+          "lat_offset_m": -6,
+          "lon_offset_m": 37,
+          "area_radius_m": 22,
+          "explain": "LROC says the astronaut paths stand out in its image of the Apollo 11 site. This faint line leads east from the Lunar Module toward Little West crater (the dashed outline marks the area, not a point).",
+          "source": [
+            {
+              "label": "LROC traverse layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_11_traverse.geojson"
+            },
+            {
+              "label": "LROC post 65",
+              "url": "https://lroc.im-ldi.com/images/65"
+            }
+          ],
+          "confidence": "LROC Apollo 11 traverse layer + visible line in the image; medium: a faint dark line east of the Lunar Module lies inside the ring; centre point of an area about 45 m across"
+        },
+        {
+          "id": "blast",
+          "label": "LM descent-engine blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": 2.8,
+          "lon_offset_m": -0.8,
+          "area_radius_m": 60,
+          "explain": "LROC says the descent engine scoured a bright halo around the landing sites, most likely by blowing the finest particles away from below the engine. At Apollo 11 it shows as a bright zone about 100 m across around the Lunar Module.",
+          "source": [
+            {
+              "label": "LROC post 363",
+              "url": "https://lroc.im-ldi.com/posts/363"
+            }
+          ],
+          "confidence": "LROC halo description + visible bright halo centred on the LM; medium: the bright halo around the Lunar Module is visible; ring radius 60 m is read off the image (an irregular area, not a circle)"
         }
       ],
       "panorama_metadata": {
@@ -82,7 +213,7 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo11/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 819.2,
       "hotspot_context_source": "/images/hotspots/moon/apollo11/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -5.9256,
@@ -96,14 +227,207 @@
       "hotspot_model": "apollo-lm",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo12/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lm-descent-stage",
+          "label": "Intrepid descent stage",
+          "label_short": "Intrepid LM",
+          "lat_offset_m": -0.4,
+          "lon_offset_m": 0,
+          "explain": "The lower half of the Apollo 12 Lunar Module Intrepid, left on the Moon after the November 1969 landing close to the earlier Surveyor 3 probe.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C"
+            }
+          ],
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame"
+        },
+        {
+          "id": "alsep",
+          "label": "ALSEP central station",
+          "label_short": "ALSEP",
+          "lat_offset_m": 89.6,
+          "lon_offset_m": -90.8,
+          "explain": "The Apollo 12 Lunar Surface Experiments Package, deployed on 19 November 1969. Its instruments included a passive seismometer, a magnetometer and a solar wind spectrometer, all wired to the central station.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C"
+            }
+          ],
+          "confidence": "two sources (LROC + NASA NSSDCA; agree on area to ~16 m, pixel from LROC, hardware cluster visible under the ring)"
+        },
+        {
+          "id": "surveyor-3",
+          "label": "Surveyor 3 lander",
+          "label_short": "Surveyor 3",
+          "lat_offset_m": -103.6,
+          "lon_offset_m": 118.4,
+          "explain": "NASA robotic lander that touched down on 20 April 1967 on the inner slope of a small crater. Apollo 12 landed about 160 m from it in November 1969, and its crew removed about 10 kg of parts, including the TV camera, on 20 November.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A"
+            }
+          ],
+          "confidence": "two sources (LROC table + LROC labelled image; NSSDCA repeats the LROC coordinates, not independent)"
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "lat_offset_m": 14.7,
+          "lon_offset_m": -5.5,
+          "position_lroc_only": true,
+          "explain": "The point LROC's Apollo 12 hardware layer gives for the flag, about 16 m north of the Lunar Module. The flag itself is too small to see at this resolution.",
+          "source": [
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_12_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates; low: LROC hardware-layer point (no uncertainty given); the flag is not resolvable"
+        },
+        {
+          "id": "seismometer",
+          "label": "Passive seismometer (LROC)",
+          "label_short": "Seismometer",
+          "lat_offset_m": 88.4,
+          "lon_offset_m": -87.8,
+          "explain": "LROC lists the Apollo 12 passive seismometer as its own point, about 3 m from the central station (ring overlaps the ALSEP ring).",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_12_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates (PSE, 2016 table +/-2.6 m); medium: 3 m from the ALSEP ring (rings overlap); the central-station cluster and its trails are visible"
+        },
+        {
+          "id": "surveyor-crater",
+          "label": "Surveyor crater",
+          "label_short": "Surveyor crater",
+          "lat_offset_m": -97.7,
+          "lon_offset_m": 58.1,
+          "ring_size": "small",
+          "explain": "The crater LROC labels Surveyor on its Apollo 12 map. Surveyor 3 lies inside it, and the Lunar Module landed about 160 m away.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            },
+            {
+              "label": "LROC post 141",
+              "url": "https://lroc.im-ldi.com/posts/141"
+            }
+          ],
+          "confidence": "LROC label (Featured Sites nomenclature layer); medium: label point is inside the ~100 m crater south-east of the LM; Surveyor 3 lies on its east side"
+        },
+        {
+          "id": "head",
+          "label": "Head crater",
+          "label_short": "Head crater",
+          "lat_offset_m": -32,
+          "lon_offset_m": -123,
+          "ring_size": "small",
+          "explain": "A large crater west of the Lunar Module that LROC labels Head on its Apollo 12 map.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label, moved by eye; low: label point (148 m west of the LM) sits on the edge of the large shadowed crater at the left of the frame; ring moved 24 m to the visible crater centre"
+        },
+        {
+          "id": "bench",
+          "label": "Bench crater",
+          "label_short": "Bench crater",
+          "lat_offset_m": -212,
+          "lon_offset_m": -258,
+          "ring_size": "small",
+          "explain": "A crater south-west of the Lunar Module that LROC labels Bench on its Apollo 12 map.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label, moved by eye; low: label point 320 m south-west of the LM; the crater is at the lower-left corner of the frame, ring moved 20 m to its visible centre"
+        },
+        {
+          "id": "block",
+          "label": "Block crater",
+          "label_short": "Block crater",
+          "lat_offset_m": -18.9,
+          "lon_offset_m": 112.6,
+          "ring_size": "small",
+          "explain": "A small crater east of the Lunar Module that LROC labels Block on its Apollo 12 map.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label (Featured Sites nomenclature layer); medium: ring sits on a small bright-rimmed crater with a boulder, 113 m east of the LM"
+        },
+        {
+          "id": "footpath-alsep",
+          "label": "Footpaths to the ALSEP",
+          "label_short": "ALSEP footpaths",
+          "lat_offset_m": 53,
+          "lon_offset_m": -59,
+          "area_radius_m": 45,
+          "explain": "Dark trails in the image link the Lunar Module area to the instrument package north-west of it. LROC's first moonwalk traverse layer follows this corridor (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC traverse layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_12_eva1.geojson"
+            }
+          ],
+          "confidence": "LROC EVA 1 traverse layer (luna_apollo_12_eva1) + visible dark trails; medium: dark trails run from the LM area to the ALSEP cluster inside the ring (area about 90 m across)"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": -0.4,
+          "lon_offset_m": 0,
+          "area_radius_m": 80,
+          "explain": "LROC says the descent engine brightened the ground around every landing site. At Apollo 12 the bright zone is stretched toward Surveyor crater, so the outline is only a rough guide.",
+          "source": [
+            {
+              "label": "LROC post 363",
+              "url": "https://lroc.im-ldi.com/posts/363"
+            }
+          ],
+          "confidence": "LROC halo description; centred on the LM; low: the bright zone around the LM is big and lopsided because Surveyor crater brightens it; centre and 80 m radius are approximate"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
       "panorama_metadata": {
         "entry_yaw_deg": 100
       },
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo12/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 819.2,
       "hotspot_context_source": "/images/hotspots/moon/apollo12/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -9.6056,
@@ -117,11 +441,141 @@
       "hotspot_model": "apollo-lm",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo14/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lm-descent-stage",
+          "label": "Antares descent stage",
+          "label_short": "Antares LM",
+          "lat_offset_m": -3.1,
+          "lon_offset_m": -1.8,
+          "explain": "The lower half of the Apollo 14 Lunar Module Antares, left on the Moon after the February 1971 landing.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-008C"
+            }
+          ],
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame"
+        },
+        {
+          "id": "alsep",
+          "label": "ALSEP central station",
+          "label_short": "ALSEP",
+          "lat_offset_m": 48.4,
+          "lon_offset_m": -175.5,
+          "explain": "The Apollo 14 Lunar Surface Experiments Package, set up west of the Lunar Module on the first moonwalk in February 1971. LROC's image shows it with footpaths leading away from it.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_14_hardware.geojson"
+            },
+            {
+              "label": "Phys.org",
+              "url": "https://phys.org/news/2011-02-lro-apollo-crew-majestic-view.html"
+            }
+          ],
+          "confidence": "LROC coordinates (ALSEP, 2016 table +/-0.4 m); high: dark equipment spot with trails east of it lies under the ring"
+        },
+        {
+          "id": "seismometer",
+          "label": "Passive seismometer (LROC)",
+          "label_short": "Seismometer",
+          "lat_offset_m": 51.8,
+          "lon_offset_m": -175.2,
+          "explain": "LROC lists the Apollo 14 passive seismometer as its own point, about 3 m from the central station (ring overlaps the ALSEP ring).",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_14_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates (PSE, 2016 table +/-0.4 m); medium: 3.4 m from the ALSEP ring (rings overlap)"
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "lat_offset_m": 3.1,
+          "lon_offset_m": -9.3,
+          "position_lroc_only": true,
+          "explain": "The point LROC's Apollo 14 hardware layer gives for the flag, about 10 m north-west of the Lunar Module. The flag itself is too small to see.",
+          "source": [
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_14_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates; low: LROC hardware-layer point (no uncertainty given); not resolvable"
+        },
+        {
+          "id": "triplet-craters",
+          "label": "Triplet craters",
+          "label_short": "Triplet craters",
+          "lat_offset_m": -138,
+          "lon_offset_m": 127,
+          "ring_size": "small",
+          "explain": "The group of craters LROC labels Triplet and Center Crater on its Apollo 14 map, about 210 m south-east of the Lunar Module.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label (Triplet / Center Crater), moved by eye 14 m; medium: ring sits on the middle crater of the bright three-crater group south-east of the LM"
+        },
+        {
+          "id": "footpaths",
+          "label": "Footpaths around the ALSEP",
+          "label_short": "ALSEP footpaths",
+          "lat_offset_m": 34,
+          "lon_offset_m": -117,
+          "area_radius_m": 60,
+          "explain": "LROC's Apollo 14 image shows the astronaut footpaths as lines of disturbed soil; they converge on the ALSEP and run east toward the Lunar Module (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC traverse layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_14_eva1.geojson"
+            },
+            {
+              "label": "Phys.org",
+              "url": "https://phys.org/news/2011-02-lro-apollo-crew-majestic-view.html"
+            }
+          ],
+          "confidence": "LROC EVA 1 traverse layer (luna_apollo_14_eva1) + visible dark trails; high: trails east of the ALSEP lie under the ring (area about 120 m across)"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": -3.1,
+          "lon_offset_m": -1.8,
+          "area_radius_m": 87,
+          "explain": "LROC says the descent engine scoured a bright halo around the Apollo landing sites, including Apollo 14. Here it is a faint bright zone around the Lunar Module.",
+          "source": [
+            {
+              "label": "LROC post 363",
+              "url": "https://lroc.im-ldi.com/posts/363"
+            }
+          ],
+          "confidence": "LROC halo description + visible halo centred on the LM; medium: a faint bright halo around the LM matches the 87 m radius"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo14/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 921.6,
       "panorama_metadata": {
         "entry_yaw_deg": 155
       },
@@ -138,14 +592,159 @@
       "hotspot_model": "apollo-lm-extended",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo15/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lm-descent-stage",
+          "label": "Falcon descent stage",
+          "label_short": "Falcon LM",
+          "lat_offset_m": -3.6,
+          "lon_offset_m": -1.6,
+          "explain": "The lower half of the Apollo 15 Lunar Module Falcon, left on the Moon after the July 1971 landing.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+            }
+          ],
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame"
+        },
+        {
+          "id": "alsep",
+          "label": "ALSEP central station",
+          "label_short": "ALSEP",
+          "lat_offset_m": 47.2,
+          "lon_offset_m": -94,
+          "explain": "The Apollo 15 Lunar Surface Experiments Package, deployed on 31 July 1971. Instruments listed by NASA: passive seismometer, magnetometer, solar wind spectrometer, suprathermal ion detector, cold cathode ion gauge, dust detector and a heat flow experiment.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+            }
+          ],
+          "confidence": "two sources (LROC + NASA NSSDCA, within ~3 m)"
+        },
+        {
+          "id": "lrv",
+          "label": "Lunar Roving Vehicle",
+          "label_short": "LRV",
+          "lat_offset_m": -23.2,
+          "lon_offset_m": 127.2,
+          "explain": "Apollo 15 was the first mission to carry a Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+            }
+          ],
+          "confidence": "one source (LROC table and layer; dark rover blob at the end of a track under the ring)"
+        },
+        {
+          "id": "seismometer",
+          "label": "Passive seismometer (LROC)",
+          "label_short": "Seismometer",
+          "lat_offset_m": 48.6,
+          "lon_offset_m": -96.9,
+          "explain": "LROC lists the Apollo 15 passive seismometer as its own point, about 3 m from the central station (ring overlaps the ALSEP ring).",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates (PSE, 2016 table +/-0.3 m); medium: 3.4 m from the ALSEP ring (rings overlap); dark cluster with trails is visible"
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "lat_offset_m": 8.9,
+          "lon_offset_m": 0.5,
+          "position_lroc_only": true,
+          "explain": "The point LROC's Apollo 15 hardware layer gives for the flag, about 13 m north of the Lunar Module. The flag itself is too small to see.",
+          "source": [
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates; low: LROC hardware-layer point (no uncertainty given); not resolvable"
+        },
+        {
+          "id": "footpath-alsep",
+          "label": "Footpaths to the ALSEP",
+          "label_short": "ALSEP footpaths",
+          "lat_offset_m": 15,
+          "lon_offset_m": -41,
+          "area_radius_m": 35,
+          "explain": "Dark footpaths in the image run from the Lunar Module to the instrument package north-west of it (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC traverse layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_15_eva1.geojson"
+            }
+          ],
+          "confidence": "Visible dark trails + LROC EVA traverse layers; medium: dense dark trails between the LM and the ALSEP cluster lie under the ring (area about 70 m across)"
+        },
+        {
+          "id": "lrv-track",
+          "label": "Rover track to the LRV",
+          "label_short": "Rover track",
+          "lat_offset_m": -20,
+          "lon_offset_m": 64,
+          "area_radius_m": 55,
+          "explain": "A dark line in the image runs east from the Lunar Module to the Lunar Roving Vehicle parking spot LROC lists (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson"
+            }
+          ],
+          "confidence": "Visible track + LROC LRV point; medium: a single dark line runs from the LM east to the LRV; ring centred on its middle (area about 110 m long)"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": -42,
+          "lon_offset_m": 11,
+          "area_radius_m": 75,
+          "explain": "LROC says the descent engine brightened the ground around the Apollo landing sites. At Apollo 15 the bright zone is a lobe extending south-south-east of the Lunar Module.",
+          "source": [
+            {
+              "label": "LROC post 363",
+              "url": "https://lroc.im-ldi.com/posts/363"
+            }
+          ],
+          "confidence": "LROC halo description + visible lobe south-south-east of the LM; medium: the bright lobe is off-centre (centre about 40 m south-south-east of the LM, radius 75 m by eye)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
       "panorama_metadata": {
         "entry_yaw_deg": 180
       },
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo15/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 819.2,
       "hotspot_context_source": "/images/hotspots/moon/apollo15/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 19.5344,
@@ -159,13 +758,179 @@
       "hotspot_model": "apollo-lm-extended",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo16/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lm-descent-stage",
+          "label": "Orion descent stage",
+          "label_short": "Orion LM",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": 2.4,
+          "explain": "The lower half of the Apollo 16 Lunar Module Orion, left on the Moon after the April 1972 landing.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C"
+            }
+          ],
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame"
+        },
+        {
+          "id": "alsep",
+          "label": "ALSEP central station",
+          "label_short": "ALSEP",
+          "lat_offset_m": -72.8,
+          "lon_offset_m": -72,
+          "explain": "The Apollo 16 Lunar Surface Experiments Package, switched on 21 April 1972. It carried a passive seismometer, an active seismometer, a magnetometer and a heat flow experiment; the heat flow experiment was lost on the first moonwalk when its cable was broken.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C"
+            }
+          ],
+          "confidence": "two sources (LROC + NASA NSSDCA; agree on area to ~20 m, pixel from LROC, hardware cluster visible under the ring)"
+        },
+        {
+          "id": "lrv",
+          "label": "Lunar Roving Vehicle",
+          "label_short": "LRV",
+          "lat_offset_m": 16.8,
+          "lon_offset_m": 83.2,
+          "explain": "The Apollo 16 Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            }
+          ],
+          "confidence": "one source (LROC table and layer; dark rover blob at the end of a track under the ring)"
+        },
+        {
+          "id": "seismometer",
+          "label": "Passive seismometer (LROC)",
+          "label_short": "Seismometer",
+          "lat_offset_m": -73.7,
+          "lon_offset_m": -70.7,
+          "explain": "LROC lists the Apollo 16 passive seismometer as its own point, about 2 m from the central station (ring coincides with the ALSEP ring).",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates (PSE, 2016 table +/-2.5 m); medium: 1.8 m from the ALSEP ring (rings nearly coincide)"
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "lat_offset_m": 17.1,
+          "lon_offset_m": -7.8,
+          "position_lroc_only": true,
+          "explain": "The point LROC's Apollo 16 hardware layer gives for the flag, about 19 m north-north-west of the Lunar Module. The flag itself is too small to see.",
+          "source": [
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates; low: LROC hardware-layer point (no uncertainty given); not resolvable"
+        },
+        {
+          "id": "spot-crater",
+          "label": "Spot crater",
+          "label_short": "Spot crater",
+          "lat_offset_m": -300.4,
+          "lon_offset_m": 39.2,
+          "ring_size": "small",
+          "explain": "A shallow crater south of the Lunar Module that LROC labels Spot on its Apollo 16 map.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label (Featured Sites nomenclature layer); low: label point 300 m south of the LM sits on the east side of a shallow eroded crater with a bright west half"
+        },
+        {
+          "id": "footpath-alsep",
+          "label": "Footpaths to the ALSEP",
+          "label_short": "ALSEP footpaths",
+          "lat_offset_m": -26,
+          "lon_offset_m": -40,
+          "area_radius_m": 45,
+          "explain": "Dark footpaths and rover tracks in the image run from the Lunar Module area south-west to the instrument package (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC traverse layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_16_eva1.geojson"
+            }
+          ],
+          "confidence": "Visible dark trails + LROC EVA traverse layers; medium: dark trails between the LM and the ALSEP lie under the ring (area about 90 m across)"
+        },
+        {
+          "id": "lrv-track",
+          "label": "Rover track to the LRV",
+          "label_short": "Rover track",
+          "lat_offset_m": 15,
+          "lon_offset_m": 42,
+          "area_radius_m": 40,
+          "explain": "Dark tracks in the image run east from the Lunar Module to the Lunar Roving Vehicle parking spot LROC lists (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson"
+            }
+          ],
+          "confidence": "Visible tracks + LROC LRV point; medium: dark tracks run from the LM east to the LRV; ring centred on them (area about 80 m long)"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": 2.4,
+          "area_radius_m": 87,
+          "explain": "LROC says the descent engine brightened the ground around the Apollo landing sites. At Apollo 16 the bright halo around the Lunar Module is about 170 m across.",
+          "source": [
+            {
+              "label": "LROC post 363",
+              "url": "https://lroc.im-ldi.com/posts/363"
+            }
+          ],
+          "confidence": "LROC halo description + visible bright halo centred on the LM; high: the bright halo around the LM matches the 87 m radius"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo16/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 819.2,
       "panorama_metadata": {
-        "entry_yaw_deg": 135
+        "entry_yaw_deg": 135,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 0,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/apollo16/context.webp",
       "hotspot_context_bounds": {
@@ -182,13 +947,216 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lm-descent-stage",
+          "label": "Challenger descent stage",
+          "label_short": "Challenger LM",
+          "lat_offset_m": -11.5,
+          "lon_offset_m": 4,
+          "explain": "The lower half of the Apollo 17 Lunar Module Challenger, left on the Moon after the December 1972 landing, the last crewed landing so far.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "NASA NSSDCA",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096C"
+            }
+          ],
+          "confidence": "two sources (LROC coordinates + NASA NSSDCA mission page); object unmistakable in the frame",
+          "as_of": "2026-11"
+        },
+        {
+          "id": "lrv",
+          "label": "Lunar Roving Vehicle",
+          "label_short": "LRV",
+          "lat_offset_m": -54.5,
+          "lon_offset_m": 136.5,
+          "explain": "The Apollo 17 Lunar Roving Vehicle. Where LROC images the rover today, left on the Moon after the mission.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            }
+          ],
+          "confidence": "one source (LROC table and layer; dark rover blob at the end of a track under the ring)"
+        },
+        {
+          "id": "alsep",
+          "label": "ALSEP central station",
+          "label_short": "ALSEP",
+          "lat_offset_m": 24.9,
+          "lon_offset_m": -189.5,
+          "explain": "The Apollo 17 Lunar Surface Experiments Package, west of the Lunar Module in the Taurus-Littrow valley. LROC's image shows the instruments and the cross-shaped path where the geophones were laid out.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson"
+            },
+            {
+              "label": "LROC post 72",
+              "url": "https://lroc.im-ldi.com/posts/72"
+            }
+          ],
+          "confidence": "LROC coordinates (ALSEP, 2016 table +/-3.5 m); high: dark equipment spot with a cross of trails lies under the ring"
+        },
+        {
+          "id": "sep",
+          "label": "SEP transmitter",
+          "label_short": "SEP transmitter",
+          "lat_offset_m": 15.8,
+          "lon_offset_m": 131.5,
+          "explain": "The transmitter of the Surface Electrical Properties experiment, which probed the electrical properties of the soil. LROC labels it SEP in its Apollo 17 image; its 35 m antennas were laid out here.",
+          "source": [
+            {
+              "label": "LROC",
+              "url": "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+            },
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson"
+            },
+            {
+              "label": "LROC post 72",
+              "url": "https://lroc.im-ldi.com/posts/72"
+            }
+          ],
+          "confidence": "LROC coordinates (SEP, 2016 table +/-3.7 m); high: ring sits on the dark spot at the end of the tracks east of the LM"
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "lat_offset_m": 9.3,
+          "lon_offset_m": -2.9,
+          "position_lroc_only": true,
+          "explain": "The point LROC's Apollo 17 hardware layer gives for the flag, about 22 m north-north-west of the Lunar Module. The flag itself is too small to see.",
+          "source": [
+            {
+              "label": "LROC hardware layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson"
+            }
+          ],
+          "confidence": "LROC coordinates; low: LROC hardware-layer point (no uncertainty given); not resolvable at 0.5 m/px"
+        },
+        {
+          "id": "rudolph",
+          "label": "Rudolph crater",
+          "label_short": "Rudolph crater",
+          "lat_offset_m": 132.2,
+          "lon_offset_m": -248.7,
+          "ring_size": "small",
+          "explain": "The crater LROC labels Rudolph on its Apollo 17 map, about 290 m north-west of the Lunar Module.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label (Featured Sites nomenclature layer); medium: ring sits on the bright-rimmed crater with a dark floor north-west of the LM"
+        },
+        {
+          "id": "poppie",
+          "label": "Poppie crater",
+          "label_short": "Poppie crater",
+          "lat_offset_m": -113.4,
+          "lon_offset_m": -4,
+          "ring_size": "small",
+          "explain": "A small crater south of the Lunar Module that LROC labels Poppie on its Apollo 17 map.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label (Featured Sites nomenclature layer); medium: ring sits on a small dark crater 100 m south of the LM"
+        },
+        {
+          "id": "barjea",
+          "label": "Barjea crater",
+          "label_short": "Barjea crater",
+          "lat_offset_m": -189.2,
+          "lon_offset_m": 124.1,
+          "ring_size": "small",
+          "explain": "A small bright crater south-east of the Lunar Module that LROC labels Barjea on its Apollo 17 map.",
+          "source": [
+            {
+              "label": "LROC nomenclature layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+            }
+          ],
+          "confidence": "LROC label (Featured Sites nomenclature layer); high: ring sits on a small bright-rimmed crater"
+        },
+        {
+          "id": "geophone-paths",
+          "label": "Geophone footpaths",
+          "label_short": "Geophone paths",
+          "lat_offset_m": -8,
+          "lon_offset_m": -132,
+          "area_radius_m": 45,
+          "explain": "LROC's Apollo 17 image shows a cross-shaped path west of the landing site where the astronauts set up the geophones to monitor seismic activity (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC post 72",
+              "url": "https://lroc.im-ldi.com/posts/72"
+            }
+          ],
+          "confidence": "LROC image text + visible cross of trails; high: the cross-shaped trail LROC describes west of the landing site lies under the ring"
+        },
+        {
+          "id": "sep-rover-tracks",
+          "label": "Rover tracks to the SEP site",
+          "label_short": "SEP tracks",
+          "lat_offset_m": 2,
+          "lon_offset_m": 68,
+          "area_radius_m": 35,
+          "explain": "LROC says Cernan made rover tracks to the east when he laid out the 35 m SEP antennas. They run from the Lunar Module area toward the transmitter (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC post 72",
+              "url": "https://lroc.im-ldi.com/posts/72"
+            }
+          ],
+          "confidence": "LROC image text + visible tracks; high: dark tracks run from the LM area east to the SEP spot inside the ring"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": -11.5,
+          "lon_offset_m": 4,
+          "area_radius_m": 87,
+          "explain": "LROC says the descent engine brightened the ground around the Apollo landing sites; at Apollo 17 the halo spreads around the Lunar Module (a lobe may mark the descent path).",
+          "source": [
+            {
+              "label": "LROC post 363",
+              "url": "https://lroc.im-ldi.com/posts/363"
+            }
+          ],
+          "confidence": "LROC halo description + visible bright halo centred on the LM; high: bright halo around the LM matches the 87 m radius; LROC notes a lobe that may mark the descent path"
+        }
+      ],
       "panorama_metadata": {
         "date": "1972-12-12",
         "instrument": "Hasselblad 70mm",
         "caption": "The ALSEP site in the Taurus-Littrow valley, EVA-1 (12 December 1972): the experiment package, the Lunar Roving Vehicle and the valley's massifs, Jack Schmitt's colour pan. The last Apollo landing.",
         "credit_team": "NASA · Apollo 17 / ALSJ",
-        "entry_yaw_deg": 131
+        "entry_yaw_deg": 131,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 30,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "panorama_annotations": [
         {
@@ -201,7 +1169,7 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo17/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 10240,
+      "hotspot_tier2_ground_m": 1024,
       "hotspot_context_source": "/images/hotspots/moon/apollo17/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 13.5944,
@@ -214,6 +1182,7 @@
       "hotspot_tier_max": 3,
       "hotspot_model": "viking-tripod",
       "hotspot_tier2_source": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_046170_2025",
       "hotspot_tier3_panorama": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
@@ -227,14 +1196,50 @@
         "lat_max": 25.8664,
         "lon_min": 308.3639,
         "lon_max": 315.6817
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 287.5,
+            "kind": "unphotographed"
+          }
+        ]
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 120,
+        "east": 60
       }
     },
     "viking2-lander": {
       "hotspot_tier_max": 3,
       "hotspot_model": "viking-tripod",
       "hotspot_tier2_source": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "PSP_001501_2280",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Viking 2 lander",
+          "label_short": "Viking 2 lander",
+          "lat_offset_m": -0.3,
+          "lon_offset_m": -1,
+          "explain": "NASA's Viking 2 lander, about 3 m across, which landed in Utopia Planitia on 3 September 1976. It shows as a bright spot with a dark shadow beside it.",
+          "source": [
+            {
+              "label": "HiRISE PSP_001501_2280",
+              "url": "https://www.uahirise.org/PSP_001501_2280"
+            },
+            {
+              "label": "NASA NSSDCA: Viking 2 Lander",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-083C"
+            }
+          ],
+          "confidence": "high: HiRISE PSP_001501_2280 is this patch's product and states the lander is precisely located in it. The ring sits on the bright spot with a dark shadow, 4 m from the NSSDCA landing coordinate (47.6673 N, 134.2809 E), in the same polygonal-terrain setting as the labelled lander enlargement"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/viking2-lander/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
@@ -245,6 +1250,21 @@
         "lat_max": 51.0538,
         "lon_min": 129.2792,
         "lon_max": 139.3208
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 300,
+            "kind": "unphotographed"
+          }
+        ]
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 285,
+        "east": 5
       }
     },
     "mars-pathfinder": {
@@ -263,6 +1283,10 @@
         "lat_max": 22.4757,
         "lon_min": 323.1997,
         "lon_max": 330.3549
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 240,
+        "east": 60
       }
     },
     "spirit": {
@@ -271,7 +1295,43 @@
       "hotspot_tier2_source": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
       "hotspot_tier2_force_product_id": "PSP_001513_1655",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Spirit lander",
+          "label_short": "Lander",
+          "lat_offset_m": -0.3,
+          "lon_offset_m": 0.9,
+          "explain": "The landing platform that carried the Spirit rover to Gusev Crater on 4 January 2004 and stayed behind. The small crater just northwest of it is the one the rover team named Sleepy Hollow.",
+          "source": [
+            {
+              "label": "HiRISE PSP_001513_1655",
+              "url": "https://www.uahirise.org/PSP_001513_1655"
+            },
+            {
+              "label": "NASA NSSDCA: Spirit",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+            }
+          ],
+          "confidence": "high: HiRISE PSP_001513_1655 is this patch's product; its caption puts the lander (area B) beside the crater named Sleepy Hollow, to the crater's south-east. The ring sits on the bright lander beside that small crater; the offset of the labelled box from Bonneville Crater predicts the position within ~25 m"
+        },
+        {
+          "id": "sleepy-hollow",
+          "label": "Sleepy Hollow crater",
+          "label_short": "Sleepy Hollow",
+          "lat_offset_m": 6.5,
+          "lon_offset_m": -11,
+          "ring_size": "small",
+          "explain": "A small crater less than 20 m across, just northwest of the lander, that the Spirit rover team named Sleepy Hollow. The ring marks its centre.",
+          "source": [
+            {
+              "label": "HiRISE PSP_001513_1655",
+              "url": "https://www.uahirise.org/PSP_001513_1655"
+            }
+          ],
+          "confidence": "high: HiRISE PSP_001513_1655 is this patch's product; its caption puts the lander beside the crater Sleepy Hollow, to the crater's south-east. The ring centre (about 11 m west, 6.5 m north of the lander) is read off the patch: a bowl with a shadowed north-west wall, 16-20 m across by eye"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/spirit/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/spirit/tier3-pan.jpg",
       "panorama_metadata": {
@@ -291,6 +1351,10 @@
         "lat_max": -11.1892,
         "lon_min": 171.9769,
         "lon_max": 178.9631
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": -20,
+        "east": 210
       }
     },
     "opportunity": {
@@ -299,7 +1363,47 @@
       "hotspot_tier2_source": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
       "hotspot_tier2_force_product_id": "ESP_050177_1780",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander-eagle-crater",
+          "label": "Lander in Eagle Crater",
+          "label_short": "Lander",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "explain": "Opportunity's landing platform, left in Eagle Crater (about 22 m across) after the airbag-cushioned landing of January 2004. In HiRISE it is the bright dot in the dark bowl of the crater.",
+          "source": [
+            {
+              "label": "HiRISE ESP_050177_1780",
+              "url": "https://www.uahirise.org/ESP_050177_1780"
+            },
+            {
+              "label": "NASA PIA21494 (Eagle Crater from HiRISE)",
+              "url": "https://images.nasa.gov/details/PIA21494"
+            }
+          ],
+          "confidence": "medium-high: HiRISE ESP_050177_1780 is this patch's product; its caption puts the lander \"at the center of the bowl of Eagle Crater\". The patch is grayscale, so the airbag colour is not visible; the ring sits on the small bright dot (the lander) at the centre of the dark bowl of the ~22 m bright-rimmed crater (PIA21494 gives 22 m) that the rover tracks lead out of, measured in this product"
+        },
+        {
+          "id": "eagle-crater",
+          "label": "Eagle Crater",
+          "label_short": "Eagle Crater",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "area_radius_m": 11,
+          "explain": "The small crater, about 22 m across, in which Opportunity came to rest after its airbag landing in January 2004. The dashed outline shows it at true size; the lander is the bright dot at its centre.",
+          "source": [
+            {
+              "label": "HiRISE ESP_050177_1780",
+              "url": "https://www.uahirise.org/ESP_050177_1780"
+            },
+            {
+              "label": "NASA PIA21494 (Eagle Crater from HiRISE)",
+              "url": "https://images.nasa.gov/details/PIA21494"
+            }
+          ],
+          "confidence": "high: HiRISE ESP_050177_1780 is this patch's product; its caption puts the lander \"at the center of the bowl of Eagle Crater\", and the patch shows the lander at the centre of the one bright-rimmed crater with a dark floor. The 22 m size is the figure already used for the lander ring (PIA21494, not re-read); the dashed circle (radius 11 m) is concentric with the lander ring"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/opportunity/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
       "panorama_metadata": {
@@ -320,16 +1424,45 @@
         "lat_max": 1.4308,
         "lon_min": -8.9127,
         "lon_max": -2.1473
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 229,
+        "east": 110
       }
     },
     "curiosity": {
       "hotspot_tier_max": 3,
       "hotspot_model": "curiosity-class",
       "hotspot_tier2_source": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_028401_1755",
+      "hotspot_tier2_frame_shift_m": {
+        "north": 145,
+        "east": -15
+      },
       "hotspot_tier3_panorama": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "bradbury-landing",
+          "label": "Bradbury Landing",
+          "label_short": "Bradbury Landing",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "explain": "Where Curiosity touched down on 6 August 2012, a spot the team named Bradbury Landing. In this HiRISE image, taken on 17 August 2012, the rover is the pair of bright dots in the dark ground scoured by the rockets that lowered it. It has long since driven away.",
+          "source": [
+            {
+              "label": "HiRISE ESP_028401_1755",
+              "url": "https://www.uahirise.org/ESP_028401_1755"
+            },
+            {
+              "label": "NASA Mars Science Laboratory",
+              "url": "https://science.nasa.gov/mission/msl-curiosity/"
+            }
+          ],
+          "confidence": "medium-high: HiRISE ESP_028401_1755 is this patch's product (17 August 2012, 11 days after landing). The rover is the only bright object, a pair of dots, at the centre of the dark landing blast pattern, measured to about 1 m; the HiRISE team's labelled cut-out of the same product shows the same object in the same dark pattern; a pixel-level registration of that cut-out failed (the patch is stretched too differently), so the ring rests on this being the only compact bright object in the 512 m patch (strongest by 36 %, within 1 m of the centre). The patch sits 145 m north of its own georeference so it registers with the CTX mosaic (feature-matched, within 5 m); the mission team's traverse starts 31 m south and 83 m east of the rover"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg",
       "panorama_metadata": {
         "sol": 4220,
@@ -391,10 +1524,35 @@
       "hotspot_tier_max": 3,
       "hotspot_model": "perseverance-rover",
       "hotspot_tier2_source": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_068294_1985",
+      "hotspot_tier2_frame_shift_m": {
+        "north": 205,
+        "east": -15
+      },
       "hotspot_tier3_panorama": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "landing",
+          "label": "Perseverance landing point",
+          "label_short": "Landing point",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "explain": "Where Perseverance touched down on 18 February 2021. In this HiRISE image, taken the next day, the rover is the small bright object with a shadow at the centre, between two bright patches of ground cleared by the rockets that lowered it. It has long since driven away.",
+          "source": [
+            {
+              "label": "HiRISE ESP_068294_1985",
+              "url": "https://www.uahirise.org/ESP_068294_1985"
+            },
+            {
+              "label": "NASA Mars 2020 Perseverance",
+              "url": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+            }
+          ],
+          "confidence": "medium-high: HiRISE ESP_068294_1985 is this patch's product (19 February 2021, the day after landing). The rover (a small bright object with a shadow between two bright blast zones) was matched to the HiRISE team's labelled cut-out of the same product and sits at the patch centre, measured to about 1 m. The patch sits 205 m north of its own georeference so it registers with the CTX mosaic (feature-matched, within 5 m); the mission team's traverse starts 14 m south and 47 m west of the rover"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/perseverance/tier2-ctx.jpg",
       "panorama_metadata": {
         "sol": 3,
@@ -456,19 +1614,80 @@
       "hotspot_tier_max": 3,
       "hotspot_model": "phoenix-class",
       "hotspot_tier2_source": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "PSP_008591_2485",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Phoenix lander",
+          "label_short": "Phoenix lander",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "explain": "NASA's Phoenix lander, which touched down on 25 May 2008. It shows as a bright dot in the middle of the dark ground its descent engines blasted; this image was taken 22 hours after landing.",
+          "source": [
+            {
+              "label": "HiRISE PSP_008591_2485",
+              "url": "https://www.uahirise.org/PSP_008591_2485"
+            },
+            {
+              "label": "NASA NSSDCA: Phoenix",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A"
+            }
+          ],
+          "confidence": "high: HiRISE PSP_008591_2485 is this patch's product (Phoenix hardware, 22 hours after landing); its labelled cutout shows the lander as a bright dot with a dark blast halo. The ring sits on the compact bright dot at the centre of the halo nearest the published landing position; heat shield and backshell are outside the 512 m patch"
+        },
+        {
+          "id": "heat-shield",
+          "label": "Heat shield impact",
+          "label_short": "Heat shield",
+          "lat_offset_m": -87,
+          "lon_offset_m": 172.5,
+          "explain": "Where Phoenix's heat shield hit the ground, about 190 m east-south-east of the lander: a dark patch of disturbed ground where it struck and bounced.",
+          "source": [
+            {
+              "label": "HiRISE PSP_008591_2485",
+              "url": "https://www.uahirise.org/PSP_008591_2485"
+            }
+          ],
+          "confidence": "medium-high: HiRISE PSP_008591_2485 is this patch's product; its caption describes the heat shield as a dark marking, disturbance of the ground from impact and bouncing. Matched to the dark blob with a tail by the lander-to-parachute geometry in its cut-outs (distance ratio 1.6 in the raster against 1.9 in the cut-out, angle 44 against 39 degrees); position measured in the north-up patch (172 m east, 87 m south of the lander)"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/phoenix/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
-      "hotspot_tier2_regional_ground_m": 15360
+      "hotspot_tier2_regional_ground_m": 15360,
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 255,
+        "east": -40
+      }
     },
     "insight": {
       "hotspot_tier_max": 3,
       "hotspot_model": "insight-lander",
       "hotspot_tier2_source": "/images/hotspots/mars/insight/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_087004_1845",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "InSight lander",
+          "label_short": "InSight lander",
+          "lat_offset_m": 0.5,
+          "lon_offset_m": 0,
+          "explain": "NASA's InSight lander, about 6 m wide with its solar arrays out. Its descent rockets blasted the ground around it, leaving the dark patch.",
+          "source": [
+            {
+              "label": "HiRISE ESP_058005_1845",
+              "url": "https://www.uahirise.org/ESP_058005_1845"
+            },
+            {
+              "label": "NASA PIA22875 (same observation)",
+              "url": "https://images.nasa.gov/details/PIA22875"
+            }
+          ],
+          "confidence": "medium-high: HiRISE ESP_058005_1845 (11 Dec 2018, a different product of the same static lander) labels the lander at the centre of a dark halo. The two products were registered on the terrain (cross-correlation 0.51); that offset carries the labelled lander to the ring within ~10 m, and both products show the same bright pair with a dark spot at the centre of a dark halo (fainter in 2025). Not a same-product label"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/insight/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/insight/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
@@ -479,6 +1698,21 @@
         "lat_max": 7.8808,
         "lon_min": 132.2288,
         "lon_max": 139.0112
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 340,
+            "kind": "unphotographed"
+          }
+        ]
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 60,
+        "east": 5
       }
     },
     "luna9": {
@@ -489,7 +1723,16 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna9/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna9/tier2-regional.jpg",
       "panorama_metadata": {
-        "entry_yaw_deg": 240
+        "entry_yaw_deg": 240,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 210,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/luna9/context.webp",
       "hotspot_context_bounds": {
@@ -504,10 +1747,30 @@
       "hotspot_model": "luna-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/luna16/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "descent-stage",
+          "label": "Luna 16 descent stage",
+          "label_short": "Descent stage",
+          "lat_offset_m": 0.3,
+          "lon_offset_m": 0.8,
+          "explain": "The lower half of the Soviet Luna 16 lander, left on Mare Fecunditatis after the sample-return capsule lifted off on 21 September 1970 with about 101 grams of soil.",
+          "source": [
+            {
+              "label": "LROC Featured Site frame",
+              "url": "https://lroc.im-ldi.com/featured_sites/luna-16/site_images/m141899500l"
+            },
+            {
+              "label": "LROC post 10",
+              "url": "https://lroc.im-ldi.com/images/10"
+            }
+          ],
+          "confidence": "one source (LROC Luna 16 featured image text + LROC Featured Site frame M141899500L whose feature pixel is the crop centre); object unmistakable: bright body with dark shadow in a blast halo"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna16/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25497,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 309.1,
       "hotspot_context_source": "/images/hotspots/moon/luna16/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -7.1093,
@@ -521,13 +1784,86 @@
       "hotspot_model": "lunokhod-rover",
       "hotspot_tier2_source": "/images/hotspots/moon/luna17/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 17 lander",
+          "label_short": "Luna 17 lander",
+          "lat_offset_m": 0.8,
+          "lon_offset_m": 1,
+          "explain": "The Luna 17 lander that delivered Lunokhod 1 to Mare Imbrium on 17 November 1970. Its descent engines brightened the surface around it, which makes the rover tracks circling the lander stand out.",
+          "source": [
+            {
+              "label": "LROC position layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_lunokhod_lms.geojson"
+            },
+            {
+              "label": "LROC post 11",
+              "url": "https://lroc.im-ldi.com/images/11"
+            },
+            {
+              "label": "LROC post 402",
+              "url": "https://lroc.im-ldi.com/images/402"
+            }
+          ],
+          "confidence": "two sources (LROC lander coordinate layer + LROC \"Lunokhod 1 Revisited\" text describing the lander with tracks circling it); LROC does not annotate this frame, identification by eye from the matching tracks-around-lander pattern"
+        },
+        {
+          "id": "blast",
+          "label": "Luna 17 blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": 6,
+          "lon_offset_m": 4,
+          "area_radius_m": 25,
+          "explain": "LROC says the surface around Luna 17 was brightened by the exhaust of its descent engines, which makes the rover tracks stand out near the lander.",
+          "source": [
+            {
+              "label": "LROC post 402",
+              "url": "https://lroc.im-ldi.com/images/402"
+            },
+            {
+              "label": "LROC post 11",
+              "url": "https://lroc.im-ldi.com/images/11"
+            }
+          ],
+          "confidence": "LROC post 402 text + visible bright halo; high: bright halo around the lander lies under the ring (radius 25 m by eye)"
+        },
+        {
+          "id": "tracks",
+          "label": "Lunokhod 1 tracks",
+          "label_short": "Rover tracks",
+          "lat_offset_m": -5,
+          "lon_offset_m": 10,
+          "area_radius_m": 20,
+          "explain": "LROC points out the Lunokhod 1 tracks starting at the ramps on the east side of the lander and circling it. Lunokhod 1 later drove 10.5 km (the dashed outline marks the area).",
+          "source": [
+            {
+              "label": "LROC post 402",
+              "url": "https://lroc.im-ldi.com/images/402"
+            },
+            {
+              "label": "LROC post 11",
+              "url": "https://lroc.im-ldi.com/images/11"
+            }
+          ],
+          "confidence": "LROC posts 402 / 11 text + visible tracks; high: dark loops and tracks around the lander lie under the ring (area about 40 m across)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna17/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna17/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 14336,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 281,
       "panorama_metadata": {
-        "entry_yaw_deg": 150
+        "entry_yaw_deg": 150,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 30,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/luna17/context.webp",
       "hotspot_context_bounds": {
@@ -542,10 +1878,46 @@
       "hotspot_model": "lunokhod-rover",
       "hotspot_tier2_source": "/images/hotspots/moon/luna21/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 21 lander",
+          "label_short": "Luna 21 lander",
+          "lat_offset_m": 0.7,
+          "lon_offset_m": 0.5,
+          "explain": "The Luna 21 lander that delivered Lunokhod 2 to Le Monnier crater on 15 January 1973. Its descent engines scoured a bright zone 10 to 20 m wide around it, and the rover tracks lead away from it.",
+          "source": [
+            {
+              "label": "LROC position layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_lunokhod_lms.geojson"
+            },
+            {
+              "label": "LROC post 15",
+              "url": "https://lroc.im-ldi.com/images/15"
+            }
+          ],
+          "confidence": "two sources (LROC \"Luna 21 Lander\" featured image of this very frame M122007650L + LROC lander coordinate layer); bright body with dark shadow inside the blast zone"
+        },
+        {
+          "id": "blast",
+          "label": "Luna 21 blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": 6,
+          "lon_offset_m": -7,
+          "area_radius_m": 16,
+          "explain": "LROC says the descent engine made a bright zone extending out some 10 to 20 m around the Luna 21 lander.",
+          "source": [
+            {
+              "label": "LROC post 15",
+              "url": "https://lroc.im-ldi.com/images/15"
+            }
+          ],
+          "confidence": "LROC post 15 text + visible bright zone; high: the bright zone west of the lander lies under the ring (radius 16 m by eye)"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna21/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16128,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 281,
       "hotspot_context_source": "/images/hotspots/moon/luna21/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 19.4038,
@@ -559,10 +1931,46 @@
       "hotspot_model": "luna-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/luna24/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 24 lander",
+          "label_short": "Luna 24 lander",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": -0.7,
+          "explain": "The Luna 24 lander on the rim of a crater in Mare Crisium. The August 1976 mission drilled over 2 m into the regolith and returned about 170 grams of it.",
+          "source": [
+            {
+              "label": "LROC Featured Site frame",
+              "url": "https://lroc.im-ldi.com/featured_sites/luna-24/site_images/m137136039r"
+            },
+            {
+              "label": "LROC post 9",
+              "url": "https://lroc.im-ldi.com/images/9"
+            }
+          ],
+          "confidence": "one source (LROC Soviet sample-return post, Luna 24 NAC frames; no coordinate or arrow for this frame); bright specks and dark shadow at the crop centre on the rim of a 64 m crater"
+        },
+        {
+          "id": "crater-60m",
+          "label": "60 m crater at Luna 24",
+          "label_short": "60 m crater",
+          "lat_offset_m": -35,
+          "lon_offset_m": 20,
+          "area_radius_m": 30,
+          "explain": "LROC describes Luna 24 sitting on the edge of a crater 60 m across. The lander is on its north-west rim.",
+          "source": [
+            {
+              "label": "LROC post 9",
+              "url": "https://lroc.im-ldi.com/images/9"
+            }
+          ],
+          "confidence": "LROC post 9 text + crater centre by eye (no coordinate); medium: the lander is at the north-west rim of a crater about 55-60 m across; ring at the visible crater centre"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna24/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 17152,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 281,
       "hotspot_context_source": "/images/hotspots/moon/luna24/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 6.1186,
@@ -602,6 +2010,10 @@
         "lat_max": -41.6692,
         "lon_min": 197.2147,
         "lon_max": 206.7853
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 210,
+        "east": 20
       }
     },
     "change3": {
@@ -609,11 +2021,68 @@
       "hotspot_model": "chang-e-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/change3/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 3 lander",
+          "label_short": "Chang'e 3 lander",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "explain": "China's Chang'e 3 lander, which touched down in Mare Imbrium on 14 December 2013, the first lunar landing since 1976. The ring marks the lander's site at the centre of this patch; a bright dot without a shadow sits there, and LROC does not say which pixel is the lander.",
+          "source": [
+            {
+              "label": "LROC post 637",
+              "url": "https://lroc.im-ldi.com/images/637"
+            },
+            {
+              "label": "LROC post 929",
+              "url": "https://lroc.im-ldi.com/images/929"
+            }
+          ],
+          "confidence": "LROC's lander coordinate (44.1214 N, 340.4884 E), which is the centre of this patch; moved there from a bright dot with a long shadow 48 m north that an earlier pass matched by pattern. A second bright dot without a shadow sits on the centre; LROC's text (post 637) gives no pixel position for the lander. Medium confidence"
+        },
+        {
+          "id": "crater-450m",
+          "label": "450 m crater west of lander",
+          "label_short": "450 m crater",
+          "lat_offset_m": 48,
+          "lon_offset_m": -283,
+          "area_radius_m": 225,
+          "explain": "LROC says Chang'e 3 landed about 60 m east of the rim of a 450 m crater, 40 m deep, on a thick deposit of volcanic material.",
+          "source": [
+            {
+              "label": "LROC post 637",
+              "url": "https://lroc.im-ldi.com/images/637"
+            },
+            {
+              "label": "LROC post 929",
+              "url": "https://lroc.im-ldi.com/images/929"
+            }
+          ],
+          "confidence": "LROC post 637 text (rim 60 m west of the lander, diameter 450 m) + crater centre by eye; medium: bright inner east wall and dark floor visible at the position; centre derived, not an LROC coordinate"
+        },
+        {
+          "id": "blast",
+          "label": "Chang'e 3 blast zone",
+          "label_short": "Blast zone",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "area_radius_m": 30,
+          "position_lroc_only": true,
+          "explain": "LROC imaged the site before and after landing and measured the engine blast zone; the diffuse zone reaches 40 to 50 m north-south and 10 to 15 m east-west beyond the brighter focused zone.",
+          "source": [
+            {
+              "label": "LROC post 929",
+              "url": "https://lroc.im-ldi.com/images/929"
+            }
+          ],
+          "confidence": "LROC post 929 text; centred on the lander ring (not visible at this Sun angle); low: elongated roughly north-south; not distinguishable at 78 deg incidence, so the ring cannot be checked against the image"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/change3/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change3/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25856,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 876.2,
       "hotspot_context_source": "/images/hotspots/moon/change3/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 37.5244,
@@ -627,7 +2096,47 @@
       "hotspot_model": "chang-e-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/change4/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 4 lander",
+          "label_short": "Chang'e 4 lander",
+          "lat_offset_m": -14.1,
+          "lon_offset_m": -4.4,
+          "explain": "China's Chang'e 4 lander, which made the first soft landing on the far side of the Moon on 3 January 2019, in Von Kármán crater. The bright ground around it was swept by its landing engine.",
+          "source": [
+            {
+              "label": "LROC Featured Site frame",
+              "url": "https://lroc.im-ldi.com/featured_sites/chang-e-4-landing-site/site_images/m1311886645"
+            },
+            {
+              "label": "LROC position layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_change_4_lms.geojson"
+            }
+          ],
+          "confidence": "two sources (LROC lander coordinate layer + LROC Featured Sites frame M1311886645); the lander's shadow inside a bright blast zone sits at the layer position"
+        },
+        {
+          "id": "yutu-2",
+          "label": "Yutu-2 rover",
+          "label_short": "Yutu-2",
+          "lat_offset_m": 28.9,
+          "lon_offset_m": -128.8,
+          "explain": "The Yutu-2 rover as it was on 7 May 2019, four months after landing, about 120 m west of the lander at the end of its first tracks. It has driven far from here since.",
+          "source": [
+            {
+              "label": "LROC Featured Site frame",
+              "url": "https://lroc.im-ldi.com/featured_sites/chang-e-4-landing-site/site_images/m1311886645"
+            },
+            {
+              "label": "LROC position layer",
+              "url": "https://lroc.im-ldi.com/geojson/luna_change_4_rover_points.geojson"
+            }
+          ],
+          "confidence": "two sources (LROC rover-position layer for this exact frame + the dark rover with a white highlight at the end of the track in the image, 12 m from the layer point)",
+          "as_of": "2019-05-07"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/change4/tier3-pan.jpg",
       "showcase": true,
       "panorama_metadata": {
@@ -663,7 +2172,7 @@
       ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change4/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 26613,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 1515.5,
       "hotspot_context_source": "/images/hotspots/moon/change4/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -52.0517,
@@ -677,13 +2186,38 @@
       "hotspot_model": "chang-e-lander-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/change5/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 5 lander",
+          "label_short": "Chang'e 5 lander",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": 0.6,
+          "explain": "China's Chang'e 5 lander in Oceanus Procellarum, imaged by LRO the day after its 1 December 2020 touchdown. The sample-return mission brought back about 1.7 kg of lunar soil.",
+          "source": [
+            {
+              "label": "LROC post 1172",
+              "url": "https://lroc.im-ldi.com/images/1172"
+            }
+          ],
+          "confidence": "two sources (LROC 'First Look: Chang'e 5': 'The lander is the bright spot in the center of the outline' + the label drawn on this image; LROC-computed coordinates 43.0576 N, 308.0839 E +/-20 m)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/change5/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change5/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 25344,
-      "hotspot_tier2_ground_m": 1000,
+      "hotspot_tier2_ground_m": 1210,
       "panorama_metadata": {
-        "entry_yaw_deg": 173
+        "entry_yaw_deg": 173,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 70,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/change5/context.webp",
       "hotspot_context_bounds": {
@@ -698,13 +2232,38 @@
       "hotspot_model": "chang-e-lander-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/change6/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 6 lander",
+          "label_short": "Chang'e 6 lander",
+          "lat_offset_m": 0.8,
+          "lon_offset_m": 0.5,
+          "explain": "China's Chang'e 6 lander on the far side, in the Apollo basin, imaged by LRO about a week after its 1 June 2024 landing. The brighter ground around it was disturbed by the landing engine.",
+          "source": [
+            {
+              "label": "LROC post 1374",
+              "url": "https://lroc.im-ldi.com/images/1374"
+            }
+          ],
+          "confidence": "one source (LROC 'First Look: Chang'e 6': 'The lander is seen as the small cluster of bright pixels in the center of the image', on the rim of an eroded ~50 m crater; coordinates 41.6385 S, 206.0148 E +/-30 m)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/change6/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/change6/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 27648,
-      "hotspot_tier2_ground_m": 1500,
+      "hotspot_tier2_ground_m": 552,
       "panorama_metadata": {
-        "entry_yaw_deg": 176
+        "entry_yaw_deg": 176,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 90,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "hotspot_context_source": "/images/hotspots/moon/change6/context.webp",
       "hotspot_context_bounds": {
@@ -718,8 +2277,25 @@
       "hotspot_tier_max": 3,
       "hotspot_model": "tianwen-zhurong",
       "hotspot_tier2_source": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_075625_2055",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Tianwen-1 lander",
+          "label_short": "Lander",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0,
+          "explain": "The Tianwen-1 lander, at the centre of the pattern its descent engines blasted into the dust. The Zhurong rover drove off it after the 14 May 2021 landing.",
+          "source": [
+            {
+              "label": "HiRISE ESP_069665_2055",
+              "url": "https://www.uahirise.org/ESP_069665_2055"
+            }
+          ],
+          "confidence": "medium-high: HiRISE ESP_069665_2055 (6 June 2021, a different product of the same static lander) labels the lander at the centre of its blast pattern; the two products were set side by side at the same coordinates and show the same bow-tie of two bright streaks, the same crater to the south-east and the same bright crescents (terrain cross-correlation 0.64). Not a same-product label"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/zhurong/tier2-ctx.jpg",
       "hotspot_tier3_panorama": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
       "hotspot_tier2_ground_m": 512,
@@ -730,6 +2306,22 @@
         "lat_max": 28.4468,
         "lon_min": 106.1927,
         "lon_max": 113.6573
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 150,
+            "kind": "unphotographed"
+          }
+        ],
+        "entry_yaw_deg": 210
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 170,
+        "east": -95
       }
     },
     "chandrayaan3": {
@@ -737,7 +2329,23 @@
       "hotspot_model": "chandrayaan-3-vikram",
       "hotspot_tier2_source": "/images/hotspots/moon/chandrayaan3/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chandrayaan-3 Vikram lander",
+          "label_short": "Vikram lander",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0.8,
+          "explain": "India's Chandrayaan-3 Vikram lander, which touched down on 23 August 2023 about 600 km from the south pole. LRO imaged it four days later; the bright halo is regolith disturbed by the rocket plume.",
+          "source": [
+            {
+              "label": "LROC post 1314",
+              "url": "https://lroc.im-ldi.com/images/1314"
+            }
+          ],
+          "confidence": "two sources (LROC post: 'Chandrayaan-3 lander is in the center of the image, its dark shadow is visible against the bright halo'; LROC coordinates 69.3741 S, 32.32 E)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg",
       "showcase": true,
       "panorama_metadata": {
@@ -747,7 +2355,16 @@
         "credit_team": "ISRO · Chandrayaan-3 mission",
         "real_extent_pct_vertical": 50,
         "compass_zero_direction": "lander imager +X",
-        "entry_yaw_deg": 245
+        "entry_yaw_deg": 245,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 220,
+            "kind": "unphotographed"
+          }
+        ]
       },
       "panorama_annotations": [
         {
@@ -781,17 +2398,45 @@
       "hotspot_model": "slim-precision-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/slim/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "SLIM lander",
+          "label_short": "SLIM lander",
+          "lat_offset_m": -1.3,
+          "lon_offset_m": 0.9,
+          "explain": "JAXA's SLIM lander, which landed on 19 January 2024 near Shioli crater. LRO imaged it five days later; a faint change in brightness around it marks where the engine exhaust swept the surface.",
+          "source": [
+            {
+              "label": "LROC post 1358",
+              "url": "https://lroc.im-ldi.com/images/1358"
+            }
+          ],
+          "confidence": "two sources (LROC post: 'The SLIM lander on the lunar surface (13.3160 S, 25.2510 E)' + the arrow drawn on this image)"
+        }
+      ],
       "hotspot_tier3_panorama": "/images/hotspots/moon/slim/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/slim/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 15360,
-      "hotspot_tier2_ground_m": 1000,
+      "hotspot_tier2_ground_m": 880,
       "hotspot_context_source": "/images/hotspots/moon/slim/context.webp",
       "hotspot_context_bounds": {
         "lat_min": -19.9116,
         "lat_max": -6.7204,
         "lon_min": 18.4732,
         "lon_max": 32.0288
+      },
+      "panorama_metadata": {
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": 90,
+            "azimuth_min_deg": 270,
+            "azimuth_max_deg": 220,
+            "kind": "unphotographed"
+          }
+        ],
+        "entry_yaw_deg": 245
       }
     },
     "beresheet": {
@@ -800,10 +2445,26 @@
       "hotspot_tier2_source": "/images/hotspots/moon/beresheet/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "crashed": true,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "impact-smudge",
+          "label": "Beresheet impact smudge",
+          "label_short": "Impact smudge",
+          "lat_offset_m": -4.3,
+          "lon_offset_m": 0.2,
+          "explain": "The dark smudge where the Israeli Beresheet lander crashed on 11 April 2019 in Mare Serenitatis. It hit at a low angle, from the north, about 1000 m/s faster than planned; the smudge is about 10 m across and lowers the surface brightness by about 10%.",
+          "source": [
+            {
+              "label": "LROC post 1101",
+              "url": "https://lroc.im-ldi.com/images/1101"
+            }
+          ],
+          "confidence": "two sources (LROC post: dark elongated 'smudge' about 10 m across at 32.5956 N, 19.3496 E, 95% interval 20 m x 8 m + the box drawn on this image)"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/moon/beresheet/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 27392,
-      "hotspot_tier2_ground_m": 1000,
+      "hotspot_tier2_ground_m": 490,
       "hotspot_context_source": "/images/hotspots/moon/beresheet/context.webp",
       "hotspot_context_bounds": {
         "lat_min": 25.9984,
@@ -819,7 +2480,27 @@
       "hotspot_tier2_force_product_id": "ESP_048120_1780",
       "location_uncertainty_m": 50,
       "crashed": true,
-      "hotspot_annotations": [],
+      "hotspot_annotations": [
+        {
+          "id": "backshell-parachute",
+          "label": "Backshell and parachute",
+          "label_short": "Backshell+chute",
+          "lat_offset_m": 141.5,
+          "lon_offset_m": 160.8,
+          "explain": "The parachute and, just south of it, the 2.4 m backshell of ESA's Schiaparelli lander. Both separated as planned before the lander crashed on 19 October 2016. The parachute is many times brighter than the ground around it.",
+          "source": [
+            {
+              "label": "HiRISE ESP_048120_1780",
+              "url": "https://www.uahirise.org/ESP_048120_1780"
+            },
+            {
+              "label": "NASA PIA21132 (same observation)",
+              "url": "https://images.nasa.gov/details/PIA21132"
+            }
+          ],
+          "confidence": "high: HiRISE ESP_048120_1780 is this patch's product and its caption places the parachute and the 2.4 m backshell south of it at lower left; the parachute crescent with the round backshell just south of it matches the released cutout shape for shape"
+        }
+      ],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/schiaparelli/tier2-ctx.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_ground_m": 15360,
@@ -829,6 +2510,10 @@
         "lat_max": 1.3108,
         "lon_min": -9.593,
         "lon_max": -2.827
+      },
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 220,
+        "east": 160
       }
     },
     "beagle2": {
@@ -846,6 +2531,11 @@
         "lat_max": 14.9108,
         "lon_min": 86.9796,
         "lon_max": 93.8804
+      },
+      "hotspot_tier2_force_product_id": "ESP_040363_1915",
+      "hotspot_tier2_ctx_shift_m": {
+        "north": 140,
+        "east": -35
       }
     },
     "cape-canaveral-lc-36b": {
@@ -854,7 +2544,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.4693,
@@ -877,7 +2567,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.5595,
@@ -900,7 +2590,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.5807,
@@ -923,7 +2613,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-14/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-14/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.4891,
@@ -946,7 +2636,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-34/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-34/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.5194,
@@ -969,7 +2659,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-39a/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39a/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.6059,
@@ -992,7 +2682,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-39b/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39b/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.625,
@@ -1015,7 +2705,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/lc-5/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-5/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.4355,
@@ -1038,7 +2728,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/starbase-orbital-a/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/starbase-orbital-a/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 25.9947,
@@ -1061,7 +2751,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/vandenberg-slc-4e/tier3-pan.jpg",
       "panorama_metadata": {
@@ -1105,7 +2795,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-2/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-2/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.2205,
@@ -1128,7 +2818,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-3/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-3/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.2275,
@@ -1151,7 +2841,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-4/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-4/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.2511,
@@ -1174,7 +2864,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 30.3984,
@@ -1197,7 +2887,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/baikonur-1-5/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-1-5/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/baikonur-1-5/tier3-pan.jpg",
       "panorama_metadata": {
@@ -1240,7 +2930,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/baikonur-200/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-200/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 46.0285,
@@ -1263,7 +2953,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/baikonur-31-6/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-31-6/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/baikonur-31-6/tier3-pan.jpg",
       "panorama_metadata": {
@@ -1307,7 +2997,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/plesetsk-41-1/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-41-1/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 62.9185,
@@ -1330,7 +3020,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/plesetsk-43/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-43/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 62.9155,
@@ -1353,7 +3043,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/jiuquan-slc-43/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/jiuquan-slc-43/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/jiuquan-slc-43/tier3-pan.jpg",
       "panorama_metadata": {
@@ -1397,7 +3087,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 38.8375,
@@ -1420,7 +3110,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/wenchang-lc-101/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/wenchang-lc-101/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/wenchang-lc-101/tier3-pan.jpg",
       "panorama_metadata": {
@@ -1464,7 +3154,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/xichang-lc-2/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-2/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.234,
@@ -1487,7 +3177,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/xichang-lc-3/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-3/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.2355,
@@ -1510,7 +3200,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/sriharikota-slp/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/sriharikota-slp/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "hotspot_tier3_panorama": "/images/hotspots/earth/sriharikota-slp/tier3-pan.jpg",
       "panorama_metadata": {
@@ -1553,7 +3243,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-zlv/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-zlv/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.225,
@@ -1576,7 +3266,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/kourou-els/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-els/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 5.2904,
@@ -1599,7 +3289,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-lc-17/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-lc-17/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 28.4444,
@@ -1622,7 +3312,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/wallops-lc-0/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/wallops-lc-0/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 37.8317,
@@ -1645,7 +3335,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/uchinoura/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/uchinoura/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 31.25,
@@ -1668,7 +3358,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/baikonur-81/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-81/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 46.0593,
@@ -1691,7 +3381,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/vostochny-1s/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/vostochny-1s/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 51.8713,
@@ -1714,7 +3404,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/wenchang-lc-201/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/wenchang-lc-201/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 19.6069,
@@ -1737,7 +3427,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/rocket-lab-lc-1/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/rocket-lab-lc-1/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": -39.2638,
@@ -1760,7 +3450,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/naro-space-center/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/naro-space-center/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 34.4204,
@@ -1783,7 +3473,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/sohae/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/sohae/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 39.6486,
@@ -1806,7 +3496,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/semnan-imam-khomeini/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/semnan-imam-khomeini/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 35.2231,
@@ -1829,7 +3519,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/palmachim/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/palmachim/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 31.8729,
@@ -1852,7 +3542,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/woomera/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/woomera/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 50,
       "region_bounds": {
         "lat_min": -30.9832,
@@ -1875,7 +3565,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/hammaguir/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/hammaguir/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": 30.7666,
@@ -1898,7 +3588,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/san-marco/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/san-marco/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 700,
       "region_bounds": {
         "lat_min": -2.9498,
@@ -1921,7 +3611,7 @@
       "hotspot_tier2_source": "/images/hotspots/earth/alcantara/tier2-detail.jpg",
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/alcantara/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
+      "hotspot_tier2_regional_ground_m": 32000,
       "location_uncertainty_m": 10,
       "region_bounds": {
         "lat_min": -2.3292,

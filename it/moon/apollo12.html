@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-V0fUELKMU5f6E7yGLBCcrix6JrEVaCaKxrAHi1alUpo='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/50.B7pBZgXH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DljCkBDP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BHPp9r622.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BZt7FIzy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B5qT6Uiu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/fB72kKMI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="it_IT"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--ejvpnx--><meta name="description" content="L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dalla sonda automatica Surveyor 3 (1967)."/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Apollo 12","description":"L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dalla sonda automatica Surveyor 3 (1967).","url":"https://www.orrerylearn.com/it/moon/apollo12","mainEntityOfPage":"https://www.orrerylearn.com/it/moon/apollo12","inLanguage":"it","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mappa lunare","item":"https://www.orrerylearn.com/it/moon"},{"@type":"ListItem","position":2,"name":"Apollo 12","item":"https://www.orrerylearn.com/it/moon/apollo12"}]}]</script><!----><!----><title>Apollo 12 · Mappa lunare · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/SiteIllustrationFigure.BdZo7aBR.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Apollo 12 · Mappa lunare"/><meta property="og:description" content="L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dalla sonda automatica Surveyor 3 (1967)."/><meta property="og:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Un sole luminoso, orbite inclinate e un arco di trasferimento evidenziato tra due pianeti."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Apollo 12 · Mappa lunare"/><meta name="twitter:description" content="L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dalla sonda automatica Surveyor 3 (1967)."/><meta name="twitter:image" content="https://www.orrerylearn.com/images/og-default.jpg"/><meta name="twitter:image:alt" content="Un sole luminoso, orbite inclinate e un arco di trasferimento evidenziato tra due pianeti."/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">Vai al contenuto</a> <nav aria-label="Navigazione principale" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — pagina iniziale"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">HOME</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">ESPLORA<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">MONDI<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VOLO</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PIANIFICA</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATALOGO<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">IMPARA<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Apri menu di navigazione" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Fai il tour guidato" aria-pressed="false" title="Fai il tour guidato"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Lingua" aria-haspopup="listbox" aria-expanded="false" title="Scegli lingua">IT</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Mostra/nascondi la lente scientifica (non disponibile in questa pagina)" aria-pressed="false" title="Mostra layer di fisica (sovrapposizioni di meccanica orbitale) (non disponibile in questa pagina)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Attiva/disattiva la modalità ad alto contrasto" aria-pressed="false" title="Attiva/disattiva la modalità ad alto contrasto">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="IMPOSTAZIONI" aria-haspopup="dialog" aria-expanded="false" title="IMPOSTAZIONI"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Condividi questa vista" title="Condividi questa vista"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="Mostra/nascondi i livelli di debug" aria-pressed="false" title="Modalità debug — overlay per sviluppatori"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/moon">Mappa lunare</a> <span class="sep">›</span> <span>Apollo 12</span></nav> <header><p class="meta">NASA · 1969 · <span class="status">completed</span></p> <h1>Apollo 12</h1> <!--[0--><p class="lede">Oceanus Procellarum</p><!--]--></header> <!--[0--><div class="site-map"><figure class="site-illustration svelte-1w5ocyb" data-testid="site-illustration"><!--[-1--><img src="/orrery/images/illustrations/sites/apollo12.webp" alt="Mappa illustrata a blocco del sito di allunaggio di Apollo 12 nell’oceano delle Tempeste: il modulo lunare Intrepid, la bandiera statunitense e la stazione ALSEP sono accanto al cratere Surveyor, dove si trova la sonda Surveyor 3; sono indicati i crateri Head, Bench e Block, e deboli tracce di percorso serpeggiano tra di essi." loading="lazy" decoding="async" class="svelte-1w5ocyb" onload="this.__e=event" onerror="this.__e=event"/><!--]--> <figcaption class="svelte-1w5ocyb">Illustrazione basata su immagini LROC e sui dati del percorso della missione — non in scala</figcaption></figure><!----></div><!--]--> <!--[0--><p class="dispatch">L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dalla sonda automatica Surveyor 3 (1967). Ne recuperarono alcuni pezzi da riportare sulla Terra, dimostrando che i veicoli spaziali sopravvivono per anni sulla Luna senza danni da radiazioni o micrometeoriti. Una prova di fattibilità per future missioni con rendezvous.</p><!--]--> <dl class="facts"><!--[0--><div><dt>ATTERRAGGIO</dt> <dd>1969-11-19</dd></div><!--]--> <div><dt>LATITUDINE</dt> <dd>-3.01°</dd></div> <div><dt>LONGITUDINE</dt> <dd>-23.42°</dd></div> <!--[0--><div><dt>PERMANENZA IN SUPERFICIE</dt> <dd>1.31 giorni</dd></div><!--]--> <!--[0--><div><dt>ATTIVITÀ EXTRAVEICOLARE</dt> <dd>7.75 h</dd></div><!--]--> <!--[0--><div><dt>CAMPIONI</dt> <dd>34.4 kg</dd></div><!--]--> <!--[0--><div><dt>EQUIPAGGIO</dt> <dd>Pete Conrad,Alan Bean</dd></div><!--]--></dl> <!--[0--><p>Stadio di discesa · ALSEP · bandiera · componenti recuperate del Surveyor 3</p><!--]--> <!--[0--><p>Primo allunaggio di precisione in un punto prestabilito — presupposto di qualsiasi architettura di ritorno di campioni basata sul rendezvous, anche per Marte.</p><!--]--> <!--[0--><section class="story"><p>Apollo 12 allunò nell'Oceanus Procellarum il 19 novembre 1969: un atterraggio di precisione a breve distanza a piedi dal lander robotico Surveyor 3, posatosi due anni e mezzo prima. Conrad e Bean trascorsero 31 ore sulla superficie nel corso di due EVA e riportarono a Terra 34 kg di campioni, insieme a parti del Surveyor 3 da sottoporre ad analisi. Dimostrò che un Apollo con equipaggio poteva raggiungere un bersaglio preciso sulla superficie lunare.</p> <ol><!--[--><li><strong>Equipaggiamento</strong><!--[0--> — Yankee Clipper + Intrepid<!--]--></li><li><strong>Lancio</strong><!--[0--> — 14 novembre 1969 — colpiti da un fulmine due volte nel primo minuto<!--]--></li><li><strong>Superficie</strong><!--[0--> — Oceanus Procellarum — allunaggio il 19 novembre 1969<!--]--></li><!--]--></ol></section><!--]--> <!--[-1--><!--]--> <p class="actions"><a class="cta" href="/orrery/moon?site=apollo12">→ Apri in Orrery</a> <!--[-1--><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Piè di pagina del sito"><nav class="footer-menu svelte-12qhfyh" aria-label="Collegamenti a piè di pagina"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">ESPLORA</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">MONDI</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">CATALOGO</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">IMPARA</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galleria</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Crediti</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colophon</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Biblioteca</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">Glossario</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">Informazioni</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="Informazioni"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">Privacy</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licenza</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Versione build + data di deploy (apre CHANGELOG su GitHub): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">Altro</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 50],
+									data: [null,{type:"data",data:{entity:{site:{id:"apollo12",marker:"crewed",kind:"surface",agency:"NASA",nation:"USA",year:1969,landing_date:"1969-11-19",lat:-3.0128,lon:-23.42189,region_bounds:{lat_min:-3.05,lat_max:-2.97,lon_min:-23.46,lon_max:-23.38},region_kind:"landing_ellipse",crewed:true,status:"FLOWN",surface_status:"completed",surface_duration_days:1.31,eva_duration_hours:7.75,samples_kg:34.4,data_quality:"good",credit:"© NASA — Apollo 12 mission report. Public domain. Surveyor 3 components retrieved by Conrad and Bean.",fleet_refs:[{id:"apollo-csm-block-ii",role:"spacecraft"},{id:"apollo-lm",role:"spacecraft"}],links:[{l:"Apollo 12 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_12",t:"intro"}]},text:{name:"Apollo 12",mission_type:"Lander con equipaggio",site_name:"Oceanus Procellarum",crew:["Pete Conrad","Alan Bean"],left:"Stadio di discesa · ALSEP · bandiera · componenti recuperate del Surveyor 3",fact:"L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dalla sonda automatica Surveyor 3 (1967). Ne recuperarono alcuni pezzi da riportare sulla Terra, dimostrando che i veicoli spaziali sopravvivono per anni sulla Luna senza danni da radiazioni o micrometeoriti. Una prova di fattibilità per future missioni con rendezvous.",capability:"Primo allunaggio di precisione in un punto prestabilito — presupposto di qualsiasi architettura di ritorno di campioni basata sul rendezvous, anche per Marte."},story:{site:"apollo12",intro:"Apollo 12 allunò nell'Oceanus Procellarum il 19 novembre 1969: un atterraggio di precisione a breve distanza a piedi dal lander robotico Surveyor 3, posatosi due anni e mezzo prima. Conrad e Bean trascorsero 31 ore sulla superficie nel corso di due EVA e riportarono a Terra 34 kg di campioni, insieme a parti del Surveyor 3 da sottoporre ad analisi. Dimostrò che un Apollo con equipaggio poteva raggiungere un bersaglio preciso sulla superficie lunare.",essay:void 0,chapters:[{id:"hardware",title:"Equipaggiamento",subtitle:"Yankee Clipper + Intrepid",images:[{src:"/images/missions/apollo12/01.webp",caption:"Ritratto dell'equipaggio dell'Apollo 12 — Pete Conrad (CDR), Dick Gordon (CMP), Al Bean (LMP)."}]},{id:"launch",title:"Lancio",subtitle:"14 novembre 1969 — colpiti da un fulmine due volte nel primo minuto",images:[{src:"/images/missions/apollo12/02.webp",caption:"Il Saturn V SA-507 si solleva attraverso un acquazzone. I fulmini colpirono il veicolo a T+36 s e T+52 s, mettendo fuori uso l'alimentazione delle celle a combustibile; il comando SCE su AUX salvò la missione."}]},{id:"surface",title:"Superficie",subtitle:"Oceanus Procellarum — allunaggio il 19 novembre 1969",images:[{src:"/images/missions/apollo12/03.webp",caption:"Conrad accanto al lander Surveyor 3 — l'Apollo 12 allunò a 163 m di distanza, il primo allunaggio di precisione."},{src:"/images/missions/apollo12/04.webp",caption:"La stazione scientifica ALSEP dopo il dispiegamento — il primo osservatorio geofisico lunare di lunga durata."},{src:"/images/hotspots/moon/apollo12/tier3-pan.jpg",caption:"Panorama del sito di atterraggio dell'Apollo 12 — lo stadio di discesa dell'Intrepid, l'ALSEP e il Surveyor 3 nella stessa inquadratura."}]}]},illustration:{siteId:"apollo12",body:"moon",title:"Apollo 12",file:"images/illustrations/sites/apollo12.webp",model:"nano_banana_2",tool:"higgsfield",generated:"2026-11-09",made_from:"Orrery reference map of LROC NAC imagery and the Apollo 12 landing-site data",alt:"Mappa illustrata a blocco del sito di allunaggio di Apollo 12 nell’oceano delle Tempeste: il modulo lunare Intrepid, la bandiera statunitense e la stazione ALSEP sono accanto al cratere Surveyor, dove si trova la sonda Surveyor 3; sono indicati i crateri Head, Bench e Block, e deboli tracce di percorso serpeggiano tra di essi."},mission:null}},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

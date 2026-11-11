@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-7Y6939d6gtBqLhV3xZTreTP04E/sDiMsN58/1A+u01Y='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/32.Ba_7_NXM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CstHmmpA2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xe7y8WPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BSzmrz8C2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKUbgPvw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ehZykTWQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bp-JR0aQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCW0Q--42.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5yvoOgk.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/fB72kKMI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BAkaTcaq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="fr_FR"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="ko_KR"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--6cxttz--><meta name="description" content="L'étage supérieur cryogénique d'Ariane, trois décennies de service Le HM7B est le moteur d'étage supérieur fonctionnant à l'hydrogène qui donnait aux fusées…"/> <!--[0--><meta property="og:image" content="https://www.orrerylearn.com/images/cards/fleet/hm7b.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!--]--><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"HM7B","description":"L'étage supérieur cryogénique d'Ariane, trois décennies de service Le HM7B est le moteur d'étage supérieur fonctionnant à l'hydrogène qui donnait aux fusées…","url":"https://www.orrerylearn.com/fr/fleet/hm7b","mainEntityOfPage":"https://www.orrerylearn.com/fr/fleet/hm7b","inLanguage":"fr","image":"https://www.orrerylearn.com/orrery/images/fleet-galleries/hm7b/01.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Flotte","item":"https://www.orrerylearn.com/fr/fleet"},{"@type":"ListItem","position":2,"name":"HM7B","item":"https://www.orrerylearn.com/fr/fleet/hm7b"}]}]</script><!----><!----><title>HM7B · Flotte · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="HM7B · Flotte"/><meta property="og:description" content="L'étage supérieur cryogénique d'Ariane, trois décennies de service Le HM7B est le moteur d'étage supérieur fonctionnant à l'hydrogène qui donnait aux fusées…"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="HM7B · Flotte"/><meta name="twitter:description" content="L'étage supérieur cryogénique d'Ariane, trois décennies de service Le HM7B est le moteur d'étage supérieur fonctionnant à l'hydrogène qui donnait aux fusées…"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/fleet/hm7b.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">Aller au contenu</a> <nav aria-label="Navigation principale" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — accueil"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">ACCUEIL</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">EXPLORER<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">MONDES<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VOL</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PLANIFIER</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATALOGUE<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">APPRENDRE<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Ouvrir le menu de navigation" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Faire la visite" aria-pressed="false" title="Faire la visite"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Langue" aria-haspopup="listbox" aria-expanded="false" title="Choisir la langue">FR</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Activer la lentille scientifique (indisponible sur cette page)" aria-pressed="false" title="Afficher la couche de physique (superpositions de mécanique orbitale) (indisponible sur cette page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Activer le mode contraste élevé" aria-pressed="false" title="Activer le mode contraste élevé">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="PARAMÈTRES" aria-haspopup="dialog" aria-expanded="false" title="PARAMÈTRES"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Partager cette vue" title="Partager cette vue"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="Afficher ou masquer les surcouches de débogage" aria-pressed="false" title="Mode débogage — surcouches développeur"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/fleet">Flotte</a> <span class="sep">›</span> <span>HM7B</span></nav> <header><p class="meta">ESA · Moteur · <span class="status">RETIRÉ</span></p> <h1>HM7B</h1> <!--[0--><p class="lede">L'étage supérieur cryogénique d'Ariane, trois décennies de service</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/fleet-galleries/hm7b/01.webp" alt="HM7B" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <!--[0--><p class="description">Le HM7B est le moteur d'étage supérieur fonctionnant à l'hydrogène qui donnait aux fusées Ariane une impulsion énergétique élevée après l'arrêt de l'étage principal. Fonctionnant selon un cycle à générateur de gaz avec LOX et LH2, il a effectué son premier vol sur Ariane 2 en mai 1986 et a continué jusqu'à la fin de la vie opérationnelle d'Ariane 5 en juillet 2023. Sa petite taille cache une impulsion spécifique élevée qui en faisait le moteur de référence pour les injections en orbite de transfert géostationnaire, transportant des satellites commerciaux et des charges utiles scientifiques — dont Rosetta, Mars Express et Venus Express — vers leurs trajectoires de départ pendant plus de trois décennies.</p><!--]--> <!--[0--><p class="known">Moteur d'étage supérieur cryogénique européen — cheval de bataille d'Ariane pour les trajectoires translunaires</p><!--]--> <dl class="facts"><div><dt>CONSTRUCTEUR</dt> <dd>Snecma (Safran)</dd></div> <div><dt>PAYS</dt> <dd>Europe</dd></div> <div><dt>Premier vol</dt> <dd>1986-05-31</dd></div> <!--[0--><div><dt>Dernier vol</dt> <dd>2023-07-05</dd></div><!--]--> <div><dt>ÈRE</dt> <dd>1981-2011</dd></div> <div><dt>Époque</dt> <dd>Navette et Mir</dd></div> <!--[--><div><dt>Masse</dt> <dd>165 kg</dd></div><div><dt>Cycle</dt> <dd>générateur de gaz</dd></div><div><dt>Ergols</dt> <dd>LOX / LH2</dd></div><div><dt>Poussée</dt> <dd>64,7 kN (vide)</dd></div><div><dt>Impulsion spécifique</dt> <dd>446 s (vide)</dd></div><!--]--></dl> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[--><!--[-1--><!--]--><!--[0--><section class="related"><h2>Utilisé sur</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/ariane-5">Ariane 5</a> <!--[0--><span class="note">A lancé Rosetta, JWST et le système de navigation Galileo (ESA)</span><!--]--></li><li><a href="/orrery/fleet/ariane-1">Ariane 1</a> <!--[0--><span class="note">Premier lanceur orbital indépendant de l'Europe — a ouvert l'ère des satellites de télécoms commerciaux de l'ESA, a lancé Giotto vers Halley</span><!--]--></li><!--]--></ul></section><!--]--><!--[-1--><!--]--><!--[0--><section class="related"><h2>Moteur</h2> <ul class="linklist"><!--[--><li><a href="/orrery/fleet/vulcain-2">Vulcain 2</a> <!--[0--><span class="note">Moteur européen à hydrogène de l'étage principal — chaque Ariane 5 en dépendait</span><!--]--></li><li><a href="/orrery/fleet/rs-25">RS-25 (SSME)</a> <!--[0--><span class="note">Réutilisable, alimenté à l'hydrogène, et toujours en vol sur SLS</span><!--]--></li><li><a href="/orrery/fleet/vikas">Vikas</a> <!--[0--><span class="note">Le Viking indien, construit sous licence — trois décennies à propulser PSLV et GSLV</span><!--]--></li><li><a href="/orrery/fleet/viking">Viking</a> <!--[0--><span class="note">Le moteur français devenu le cheval de bataille de l'Inde</span><!--]--></li><li><a href="/orrery/fleet/rd-180">RD-180</a> <!--[0--><span class="note">Combustion étagée oxydante russe que les États-Unis ne pouvaient pas reproduire</span><!--]--></li><li><a href="/orrery/fleet/le-5b">LE-5B</a> <!--[0--><span class="note">L'étage supérieur redémarrable du Japon, utilisé sur les lanceurs H-IIA et H3</span><!--]--></li><!--]--></ul></section><!--]--><!--]--> <!--[-1--><!--]--> <p class="actions"><a class="cta" href="/orrery/fleet?id=hm7b">→ Ouvrir dans Orrery</a></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Pied de page du site"><nav class="footer-menu svelte-12qhfyh" aria-label="Liens du pied de page"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">EXPLORER</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">MONDES</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">CATALOGUE</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">APPRENDRE</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galerie</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Crédits</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colophon</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Bibliothèque</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">Glossaire</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">À propos</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="À propos"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">Confidentialité</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licence</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Version de build + date de déploiement (ouvre le CHANGELOG sur GitHub): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">Plus</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 32],
+									data: [null,{type:"data",data:{card:"https://www.orrerylearn.com/images/cards/fleet/hm7b.jpg",entry:{id:"hm7b",name:"HM7B",category:"engine",agency:"ESA",country:"Europe",manufacturer:"Snecma (Safran)",first_flight:"1986-05-31",last_flight:"2023-07-05",status:"RETIRED",era:"1981-2011",epoch:"shuttle-and-mir",best_known_for:"Moteur d'étage supérieur cryogénique européen — cheval de bataille d'Ariane pour les trajectoires translunaires",specs:{cycle:"gas-generator",propellant:"LOX / LH2",thrust_kn_vac:64.7,isp_vac_s:446,mass_kg:165},credit:"Engine registry (PRD-032). Public-source nominal specs; ESA imagery.",links:[{l:"HM7B — Wikipedia",u:"https://en.wikipedia.org/wiki/HM7B",t:"intro"}],tagline:"L'étage supérieur cryogénique d'Ariane, trois décennies de service",description:"Le HM7B est le moteur d'étage supérieur fonctionnant à l'hydrogène qui donnait aux fusées Ariane une impulsion énergétique élevée après l'arrêt de l'étage principal. Fonctionnant selon un cycle à générateur de gaz avec LOX et LH2, il a effectué son premier vol sur Ariane 2 en mai 1986 et a continué jusqu'à la fin de la vie opérationnelle d'Ariane 5 en juillet 2023. Sa petite taille cache une impulsion spécifique élevée qui en faisait le moteur de référence pour les injections en orbite de transfert géostationnaire, transportant des satellites commerciaux et des charges utiles scientifiques — dont Rosetta, Mars Express et Venus Express — vers leurs trajectoires de départ pendant plus de trois décennies."},missions:[],alongside:[],kin:[{id:"vulcain-2",name:"Vulcain 2",tagline:"Moteur européen à hydrogène de l'étage principal — chaque Ariane 5 en dépendait"},{id:"rs-25",name:"RS-25 (SSME)",tagline:"Réutilisable, alimenté à l'hydrogène, et toujours en vol sur SLS"},{id:"vikas",name:"Vikas",tagline:"Le Viking indien, construit sous licence — trois décennies à propulser PSLV et GSLV"},{id:"viking",name:"Viking",tagline:"Le moteur français devenu le cheval de bataille de l'Inde"},{id:"rd-180",name:"RD-180",tagline:"Combustion étagée oxydante russe que les États-Unis ne pouvaient pas reproduire"},{id:"le-5b",name:"LE-5B",tagline:"L'étage supérieur redémarrable du Japon, utilisé sur les lanceurs H-IIA et H3"}],engines:[],usedOn:[{id:"ariane-5",name:"Ariane 5",tagline:"A lancé Rosetta, JWST et le système de navigation Galileo (ESA)"},{id:"ariane-1",name:"Ariane 1",tagline:"Premier lanceur orbital indépendant de l'Europe — a ouvert l'ère des satellites de télécoms commerciaux de l'ESA, a lancé Giotto vers Halley"}],sites:[],crewed:[],museums:[],hero:"/orrery/images/fleet-galleries/hm7b/01.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

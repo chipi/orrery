@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-LJo9sL2HC04EBXSO1fCi1DU7+CuW2gZQHvQ95KJYv3Q='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/47.DNtfTY28.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B6T0Q7xV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BPm_otwg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="ko_KR"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--agldnw--><meta name="description" content="중국 최초의 달 연착륙; 중국 최초의 달 로버 Yutu를 배치 Chang'e 3은 CNSA Chang'e 계획의 첫 번째 착륙선(세 번째 임무)이자, 1976년 소련의 Luna 24 이후 달에서 처음 성공한 연착륙이었습니다 — 37년 만입니다."/> <meta property="og:image" content="https://www.orrerylearn.com/images/cards/mission/change3.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Chang'e 3","description":"중국 최초의 달 연착륙; 중국 최초의 달 로버 Yutu를 배치 Chang'e 3은 CNSA Chang'e 계획의 첫 번째 착륙선(세 번째 임무)이자, 1976년 소련의 Luna 24 이후 달에서 처음 성공한 연착륙이었습니다 — 37년 만입니다.","url":"https://www.orrerylearn.com/ko/missions/change3","mainEntityOfPage":"https://www.orrerylearn.com/ko/missions/change3","inLanguage":"ko","image":"https://www.orrerylearn.com/orrery/images/missions/change3/01.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"임무 카탈로그","item":"https://www.orrerylearn.com/ko/missions"},{"@type":"ListItem","position":2,"name":"Chang'e 3","item":"https://www.orrerylearn.com/ko/missions/change3"}]}]</script><!----><!----><title>Chang'e 3 · 임무 카탈로그 · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Chang'e 3 · 임무 카탈로그"/><meta property="og:description" content="중국 최초의 달 연착륙; 중국 최초의 달 로버 Yutu를 배치 Chang'e 3은 CNSA Chang'e 계획의 첫 번째 착륙선(세 번째 임무)이자, 1976년 소련의 Luna 24 이후 달에서 처음 성공한 연착륙이었습니다 — 37년 만입니다."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Chang'e 3 · 임무 카탈로그"/><meta name="twitter:description" content="중국 최초의 달 연착륙; 중국 최초의 달 로버 Yutu를 배치 Chang'e 3은 CNSA Chang'e 계획의 첫 번째 착륙선(세 번째 임무)이자, 1976년 소련의 Luna 24 이후 달에서 처음 성공한 연착륙이었습니다 — 37년 만입니다."/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/mission/change3.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">본문으로 건너뛰기</a> <nav aria-label="주 내비게이션" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — 홈"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">홈</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">탐색<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">천체<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">비행</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">계획</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">카탈로그<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">학습<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="내비게이션 메뉴 열기" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="투어 시작" aria-pressed="false" title="투어 시작"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="언어" aria-haspopup="listbox" aria-expanded="false" title="언어 선택">KO</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="과학 렌즈 전환 (이 페이지에서는 사용할 수 없음)" aria-pressed="false" title="물리 레이어 표시 (궤도역학 오버레이) (이 페이지에서는 사용할 수 없음)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="고대비 모드 전환" aria-pressed="false" title="고대비 모드 전환">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="설정" aria-haspopup="dialog" aria-expanded="false" title="설정"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="이 화면 공유" title="이 화면 공유"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="디버그 오버레이 전환" aria-pressed="false" title="디버그 모드 — 개발자 오버레이"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/missions">임무 카탈로그</a> <span class="sep">›</span> <span>Chang'e 3</span></nav> <header><p class="meta">CNSA · 2013 · <span class="status">비행 완료</span></p> <h1>Chang'e 3</h1> <!--[0--><p class="lede">중국 최초의 달 연착륙; 중국 최초의 달 로버 Yutu를 배치</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/missions/change3/01.webp" alt="Chang'e 3" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <dl class="facts"><div><dt>기관</dt> <dd>China National Space Administration</dd></div> <div><dt>출발</dt> <dd>2013-12-01</dd></div> <div><dt>도착</dt> <dd>2013-12-14</dd></div> <div><dt>비행 기간</dt> <dd>13일</dd></div> <div><dt>∆V</dt> <dd>~3.8 km/s</dd></div> <!--[0--><div><dt>발사체</dt> <dd><!--[0--><a href="/orrery/fleet/long-march-3b">Long March 3B / E</a><!--]--></dd></div><!--]--> <!--[0--><div><dt>탑재체</dt> <dd><!--[0--><a href="/orrery/fleet/change-3">발사 질량 3780 kg; 착륙선 1200 kg; Yutu 로버 140 kg</a><!--]--></dd></div><!--]--></dl> <!--[0--><p class="description">Chang'e 3은 CNSA Chang'e 계획의 첫 번째 착륙선(세 번째 임무)이자, 1976년 소련의 Luna 24 이후 달에서 처음 성공한 연착륙이었습니다 — 37년 만입니다. Long March 3B는 2013년 12월 달로 곧장 가는 궤적으로 발사되었고, 달 궤도 진입 전에 중간 궤도 수정을 한 번만 했습니다. 착륙선은 12월 14일 비의 바다에 내려앉아 Yutu(옥토끼) 로버를 내보냈고, 이 로버는 두 번째 달 낮에 이동 장치 고장으로 주행이 끝났음에도 31개월 동안 작동했습니다. Chang'e 3 착륙선은 그 뒤로도 수년간 촬영을 이어 갔습니다.</p><!--]--> <!--[0--><section class="events"><h2>이벤트</h2> <ol><!--[--><li><strong>발사</strong><!--[0--> — 시창에서 Long March 3B 발사, 2013-12-01.<!--]--></li><li><strong>TLI</strong><!--[0--> — LM-3B 상단부에서의 직접 달 궤도 투입.<!--]--></li><li><strong>달 궤도 진입</strong><!--[0--> — 2013년 12월 6일 100km 원형 달 궤도로 포획.<!--]--></li><li><strong>착륙</strong><!--[0--> — 비의 바다에서 2013년 12월 14일 연착륙. Luna 24(1976) 이후 처음으로 연착륙. 수 시간 후 Yutu 탐사로봇 배치.<!--]--></li><!--]--></ol></section><!--]--> <p class="actions"><a class="cta" href="/orrery/missions?id=change3">→ Orrery에서 열기</a> <!--[0--><a class="cta" href="/orrery/fly?mission=change3">이 임무 비행하기</a><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="사이트 바닥글"><nav class="footer-menu svelte-12qhfyh" aria-label="바닥글 링크"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">탐색</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">천체</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">카탈로그</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">학습</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">갤러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">크레딧</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">판권</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">라이브러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">용어집</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">소개</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="소개"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">개인정보 보호</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">라이선스</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="빌드 버전 + 배포 날짜 (GitHub의 CHANGELOG 열기): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">더보기</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 47],
+									data: [null,(function(a){return {type:"data",data:{mission:{id:"change3",agency:"CNSA",agency_full:"China National Space Administration",sector:"gov",dest:"MOON",color:"#DE2910",year:2013,status:"FLOWN",departure_date:"2013-12-01",arrival_date:"2013-12-14",transit_days:13,vehicle:"Long March 3B / E",payload:"발사 질량 3780 kg; 착륙선 1200 kg; Yutu 로버 140 kg",delta_v:"~3.8 km/s",data_quality:"good",credit:"© China National Space Administration. First successful uncrewed lunar landing for 37 years (since Luna 24, 1976). Mare Imbrium site; Yutu rover operated through 31 lunar days despite locomotion failure on day 42.",links:[{l:"Chang'e 3 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_3",t:"intro"},{l:"嫦娥三号 — 中文维基百科",u:"https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E4%B8%89%E5%8F%B7",t:"core"},{l:"Chang'e 3 (NASA NSSDCA)",u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-070A",t:"core"}],flight_data_quality:"sparse",fleet_refs:[{id:"long-march-3b",role:"launcher"},{id:"change-3",role:"spacecraft"},{id:"yutu",role:"spacecraft"}],flight:{launch:{vehicle_stage:"Long March 3B/E와 YZ-1 상단",mass_at_tli_kg:3780,source:"CNSA mission archive; Xinhua News official release 2013-12-02"},cruise:{tcm_count:0,source:"CNSA mission archive; first TCM 36 hours after launch, second TCM at lunar orbit insertion"},arrival:{v_infinity_km_s:2.4,periapsis_km:100,inclination_deg:90,source:"CNSA mission archive; lunar-orbit insertion 2013-12-06, landing 2013-12-14",entry_velocity_km_s:1.692,edl_system:"powered",edl_duration_s:719,touchdown_velocity_ms:1},totals:{total_dv_km_s:3.8,tli_or_tmi_dv_km_s:3.1,source:"Long March 3B/E capability + lunar TCMs + powered descent ∆v (~1.7 km/s)"},events:[{met_days:0,type:"launch",label:"발사",description:"시창에서 Long March 3B 발사, 2013-12-01.",label_en:"Launch — Long March 3B/E"},{met_days:.01,type:"tli_or_tmi",label:"TLI",description:"LM-3B 상단부에서의 직접 달 궤도 투입.",label_en:"Trans-lunar injection"},{met_days:5,type:"loi",label:"달 궤도 진입",description:"2013년 12월 6일 100km 원형 달 궤도로 포획.",label_en:"Lunar orbit insertion"},{met_days:13,type:"edl_or_oi",label:"착륙",description:"비의 바다에서 2013년 12월 14일 연착륙. Luna 24(1976) 이후 처음으로 연착륙. 수 시간 후 Yutu 탐사로봇 배치.",label_en:"Lunar powered descent + landing — Mare Imbrium"},{met_days:14,type:"arrival",label:"Yutu 로버 표면 운용",description:a,label_en:"Yutu rover surface operations"}],cislunar_profile:{source_tier:"tier_1_5_hybrid",parking_orbit:{altitude_km:200,inclination_deg:28.5,revs:1},tli:{dv_kms:3.1},translunar:{type:"direct"},lunar_arrival:{type:"orbit_and_land",altitude_km:100,inclination_deg:90,periselene_km:100},return:{type:"none"},waypoints_km:[[0,6578,0,0],[.01,6578,0,0],[.297,7296,0,483],[.4455,7709,0,776],[.5939,8154,0,1104],[.7424,8635,0,1471],[.8909,9157,0,1885],[1.0394,9725,0,2351],[1.1879,10346,0,2879],[1.3364,11026,0,3479],[1.4848,11775,0,4164],[1.6333,12604,0,4948],[1.7818,13525,0,5851],[1.9303,14554,0,6896],[2.0788,15709,0,8114],[2.2273,17015,0,9539],[2.3758,18500,0,11219],[2.5242,20202,0,13218],[2.6727,22167,0,15612],[2.8212,24454,0,18506],[2.9697,27142,0,22040],[3.1182,30335,0,26406],[3.2667,34165,0,31858],[3.4152,38812,0,38755],[3.5636,44531,0,47621],[3.7121,51646,0,59164],[3.8606,60596,0,74405],[4.0091,71956,0,94800],[4.1576,86392,0,122300],[4.3061,104430,0,159118],[4.4545,125860,0,206844],[4.603,148274,0,263608],[4.7515,165201,0,318747],[4.9,167375,0,351883],[5,157825,0,352521],[5.197,157509,1495,351815],[5.3455,157000,1828,350678],[5.4939,156527,1257,349623],[5.6424,156324,67,349170],[5.7909,156491,-1157,349541],[5.9394,156945,-1809,350557],[6.0879,157463,-1569,351713],[6.2364,157789,-556,352441],[6.3848,157762,732,352380],[6.5333,157395,1658,351562],[6.6818,156870,1767,350389],[6.8303,156445,1004,349440],[6.9788,156214,0,349217],[7.1273,156101,0,349317],[7.2758,156364,0,349258],[7.4242,156364,0,349258],[7.5727,156364,0,349258],[7.7212,156364,0,349258],[7.8697,156364,0,349258],[8.0182,156364,0,349258],[8.1667,156364,0,349258],[8.3152,156364,0,349258],[8.4636,156364,0,349258],[8.6121,156364,0,349258],[8.7606,156364,0,349258],[8.9091,156364,0,349258],[9.0576,156364,0,349258],[9.2061,156364,0,349258],[9.3545,156364,0,349258],[9.503,156364,0,349258],[9.6515,156364,0,349258],[9.8,156364,0,349258],[9.9485,156364,0,349258],[10.097,156364,0,349258],[10.2455,156364,0,349258],[10.3939,156364,0,349258],[10.5424,156364,0,349258],[10.6909,156364,0,349258],[10.8394,156364,0,349258],[10.9879,156364,0,349258],[11.1364,156364,0,349258],[11.2848,156364,0,349258],[11.4333,156364,0,349258],[11.5818,156364,0,349258],[11.7303,156364,0,349258],[11.8788,156364,0,349258],[12.0273,156364,0,349258],[12.1758,156364,0,349258],[12.3242,156364,0,349258],[12.4727,156364,0,349258],[12.6212,156364,0,349258],[12.7697,156364,0,349258],[12.9182,156364,0,349258],[13,156364,0,349258],[13.2152,156364,0,349258],[13.3636,156364,0,349258],[13.5121,156364,0,349258],[13.6606,156364,0,349258],[13.8091,156364,0,349258],[14,156364,0,349258],[14.1061,156364,0,349258],[14.2545,156364,0,349258],[14.403,156364,0,349258],[14.5515,156364,0,349258],[14.7,156364,0,349258]]}},name:"Chang'e 3",type:"무인 착륙선 + 로버 · 비행 완료",first:"중국 최초의 달 연착륙; 중국 최초의 달 로버 Yutu를 배치",description:"Chang'e 3은 CNSA Chang'e 계획의 첫 번째 착륙선(세 번째 임무)이자, 1976년 소련의 Luna 24 이후 달에서 처음 성공한 연착륙이었습니다 — 37년 만입니다. Long March 3B는 2013년 12월 달로 곧장 가는 궤적으로 발사되었고, 달 궤도 진입 전에 중간 궤도 수정을 한 번만 했습니다. 착륙선은 12월 14일 비의 바다에 내려앉아 Yutu(옥토끼) 로버를 내보냈고, 이 로버는 두 번째 달 낮에 이동 장치 고장으로 주행이 끝났음에도 31개월 동안 작동했습니다. Chang'e 3 착륙선은 그 뒤로도 수년간 촬영을 이어 갔습니다.",flight_events:[{met:14,label:"Yutu 로버 표면 운용",description:a}],events:[{met:0,label:"발사",note:"시창에서 Long March 3B 발사, 2013-12-01.",type:"nominal"},{met:.01,label:"TLI",note:"LM-3B 상단부에서의 직접 달 궤도 투입.",type:"nominal"},{met:5,label:"달 궤도 진입",note:"2013년 12월 6일 100km 원형 달 궤도로 포획.",type:"nominal"},{met:13,label:"착륙",note:"비의 바다에서 2013년 12월 14일 연착륙. Luna 24(1976) 이후 처음으로 연착륙. 수 시간 후 Yutu 탐사로봇 배치.",type:"nominal"}],vehicle_stage:"Long March 3B/E와 YZ-1 상단"},hero:"/orrery/images/missions/change3/01.webp"},uses:{params:["id"]}}}("Yutu(옥토끼)는 2013년 12월 15일 착륙선 경사로를 내려와 약 114 m를 주행했지만, 42일째 기계 고장으로 주행이 멈췄다. 착륙선은 이후 여러 해 동안 표면 과학 관측을 이어 갔고, Yutu는 멈춘 자리에서 계속 신호를 보냈다."))],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

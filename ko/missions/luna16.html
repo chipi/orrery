@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-LT/NPtzoK/qUvH2UoeB2VlVCqOZUQAU7yxj2QmLmbCA='">
+		<link href="/orrery/_app/immutable/entry/start.D-ySRTqK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1R8d-LZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B8c3XTJR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoPIZja7.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dw3b-7re.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pv9_4pPR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.BbnKfRA_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/tMfVSahd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF00pAzd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EkALV9Fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BNPdMgK4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhKkDYQh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/COhYPHmh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C-FwHi15.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dxb7sdoP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/WJVfhIqD.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BYmOQUis.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BctpzlrN.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CzkdBmKc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYWdLNcL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BvUKU0Vy.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C902VjzU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DXBbojk5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/FpQzJZ0a.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/dLGv59JS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C9A5jXkF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/8nbbR3UY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BmSC6H5z2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/47.DNtfTY28.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DZ352NPX.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CCcf8UYS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DCr1T7lW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B6T0Q7xV.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BPm_otwg.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RxKfLAlU2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CaVPfnuC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DA0RYNGD.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><!--[0--><!--[0--><meta name="robots" content="noindex"/><!--]--><!--]--> <meta property="og:locale" content="ko_KR"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--agldnw--><meta name="description" content="최초의 로봇 달 시료 귀환; 미국 외 국가 최초의 달 시료 Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서…"/> <meta property="og:image" content="https://www.orrerylearn.com/images/cards/mission/luna16.jpg"/> <meta property="og:image:width" content="1080"/> <meta property="og:image:height" content="1440"/><!----><!--65zpze--><!----><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Luna 16","description":"최초의 로봇 달 시료 귀환; 미국 외 국가 최초의 달 시료 Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서…","url":"https://www.orrerylearn.com/ko/missions/luna16","mainEntityOfPage":"https://www.orrerylearn.com/ko/missions/luna16","inLanguage":"ko","image":"https://www.orrerylearn.com/orrery/images/missions/luna16/05.webp","author":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]},"publisher":{"@type":"Organization","name":"Orrery","url":"https://www.orrerylearn.com/","sameAs":["https://github.com/chipi/orrery"]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"임무 카탈로그","item":"https://www.orrerylearn.com/ko/missions"},{"@type":"ListItem","position":2,"name":"Luna 16","item":"https://www.orrerylearn.com/ko/missions/luna16"}]}]</script><!----><!----><title>Luna 16 · 임무 카탈로그 · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Dac-8JEt.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/entity-page.CeqlInbn.css" rel="stylesheet">
+  <meta property="og:type" content="website"/><meta property="og:site_name" content="Orrery"/><meta property="og:title" content="Luna 16 · 임무 카탈로그"/><meta property="og:description" content="최초의 로봇 달 시료 귀환; 미국 외 국가 최초의 달 시료 Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서…"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Luna 16 · 임무 카탈로그"/><meta name="twitter:description" content="최초의 로봇 달 시료 귀환; 미국 외 국가 최초의 달 시료 Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서…"/><meta name="twitter:image" content="https://www.orrerylearn.com/images/cards/mission/luna16.jpg"/></head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><a class="skip-link svelte-12qhfyh" href="#main-content">본문으로 건너뛰기</a> <nav aria-label="주 내비게이션" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — 홈"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">홈</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">탐색<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">천체<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">비행</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">계획</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">카탈로그<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">학습<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="내비게이션 메뉴 열기" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="투어 시작" aria-pressed="false" title="투어 시작"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="언어" aria-haspopup="listbox" aria-expanded="false" title="언어 선택">KO</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="과학 렌즈 전환 (이 페이지에서는 사용할 수 없음)" aria-pressed="false" title="물리 레이어 표시 (궤도역학 오버레이) (이 페이지에서는 사용할 수 없음)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="고대비 모드 전환" aria-pressed="false" title="고대비 모드 전환">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="설정" aria-haspopup="dialog" aria-expanded="false" title="설정"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="이 화면 공유" title="이 화면 공유"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="디버그 오버레이 전환" aria-pressed="false" title="디버그 모드 — 개발자 오버레이"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main id="main-content" tabindex="-1" class="svelte-12qhfyh"><!--[-1--><!--[--><!----> <article class="entity"><nav class="crumb"><a href="/orrery/missions">임무 카탈로그</a> <span class="sep">›</span> <span>Luna 16</span></nav> <header><p class="meta">Roscosmos · 1970 · <span class="status">비행 완료</span></p> <h1>Luna 16</h1> <!--[0--><p class="lede">최초의 로봇 달 시료 귀환; 미국 외 국가 최초의 달 시료</p><!--]--></header> <!--[0--><figure class="hero"><img src="/orrery/images/missions/luna16/05.webp" alt="Luna 16" decoding="async" onload="this.__e=event" onerror="this.__e=event"/></figure><!--]--> <!--[-1--><!--]--> <dl class="facts"><div><dt>기관</dt> <dd>Soviet Academy of Sciences (continued by Roscosmos)</dd></div> <div><dt>출발</dt> <dd>1970-09-12</dd></div> <div><dt>도착</dt> <dd>1970-09-20</dd></div> <div><dt>비행 기간</dt> <dd>8일</dd></div> <div><dt>∆V</dt> <dd>~3.5 km/s</dd></div> <!--[0--><div><dt>발사체</dt> <dd><!--[0--><a href="/orrery/fleet/proton-k">Proton-K / D</a><!--]--></dd></div><!--]--> <!--[0--><div><dt>탑재체</dt> <dd><!--[0--><a href="/orrery/fleet/luna-16">발사 질량 5727 kg; 착륙선 1880 kg; 회수한 달 레골리스 0.101 kg</a><!--]--></dd></div><!--]--></dl> <!--[0--><p class="description">Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서 레골리스 101 g을 가져왔습니다 — Apollo 탑재량의 일부에 불과했지만, 다른 접근 방식에 대한 중요한 개념 증명이었습니다. 임무는 Proton-K 부스터와 직접 귀환 방식을 사용했습니다: 표면으로 하강, 드릴 코어 채취, 상승단 발사, 카자흐스탄으로의 탄도 귀환 캡슐. 이 기술은 Luna 20과 Luna 24에 다시 쓰였습니다.</p><!--]--> <!--[0--><section class="events"><h2>이벤트</h2> <ol><!--[--><li><strong>발사</strong><!--[0--> — 바이코누르에서 Proton-K 발사, 1970-09-12.<!--]--></li><li><strong>TLI</strong><!--[0--> — Blok-D 상단 스테이지에서의 달 직항 궤도 투입.<!--]--></li><li><strong>TCM</strong><!--[0--> — 4.5일 항행 중 중간 궤도 수정.<!--]--></li><li><strong>착륙</strong><!--[0--> — 풍요의 바다에 연착륙 1970-09-20. 표면 운영 + 드릴 코어 채취 (101 g).<!--]--></li><li><strong>시료 귀환</strong><!--[0--> — 카자흐스탄에서 캡슐 회수 1970-09-24. 최초의 무인 달 샘플 귀환.<!--]--></li><!--]--></ol></section><!--]--> <p class="actions"><a class="cta" href="/orrery/missions?id=luna16">→ Orrery에서 열기</a> <!--[0--><a class="cta" href="/orrery/fly?mission=luna16">이 임무 비행하기</a><!--]--></p></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="사이트 바닥글"><nav class="footer-menu svelte-12qhfyh" aria-label="바닥글 링크"><div class="footer-links svelte-12qhfyh" id="footer-links"><a class="footer-link svelte-12qhfyh" href="/orrery/explore/hub">탐색</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/worlds">천체</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/catalog">카탈로그</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/learn">학습</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/gallery">갤러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">크레딧</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">판권</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">라이브러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">용어집</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">소개</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="소개"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">개인정보 보호</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">라이선스</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="빌드 버전 + 배포 날짜 (GitHub의 CHANGELOG 열기): v0.9.7 · 2026-11-11" hreflang="en">v0.9.7</a></div> <button type="button" class="footer-more-btn svelte-12qhfyh" aria-expanded="false" aria-controls="footer-links">더보기</button></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_owm7nj = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_owm7nj.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.D-ySRTqK.js"),
+							import("/orrery/_app/immutable/entry/app.CoPIZja7.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 47],
+									data: [null,{type:"data",data:{mission:{id:"luna16",agency:"Roscosmos",agency_full:"Soviet Academy of Sciences (continued by Roscosmos)",sector:"gov",dest:"MOON",color:"#cc4444",year:1970,status:"FLOWN",departure_date:"1970-09-12",arrival_date:"1970-09-20",transit_days:8,round_trip:true,vehicle:"Proton-K / D",payload:"발사 질량 5727 kg; 착륙선 1880 kg; 회수한 달 레골리스 0.101 kg",delta_v:"~3.5 km/s",data_quality:"good",credit:"© Soviet Academy of Sciences (historical). First robotic sample-return mission from another world — Apollo 11 had returned crewed samples 14 months earlier.",links:[{l:"Luna 16 — Wikipedia",u:"https://en.wikipedia.org/wiki/Luna_16",t:"intro"},{l:"Луна-16 — русская Википедия",u:"https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-16",t:"core"},{l:"Luna 16 (NASA NSSDCA)",u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-072A",t:"core"},{l:"Siddiqi — Beyond Earth (NASA SP-2018-4041)",u:"https://www.nasa.gov/history/history-publications-and-resources/nasa-history-series/beyond-earth/",t:"deep"}],flight_data_quality:"sparse",fleet_refs:[{id:"proton-k",role:"launcher"},{id:"luna-16",role:"spacecraft"}],flight:{launch:{vehicle_stage:"Blok-D 상단",mass_at_tli_kg:5727,source:"NASA NSSDCA Luna 16 archive"},cruise:{tcm_count:1,source:"NASA NSSDCA Luna 16 archive"},arrival:{v_infinity_km_s:2.3,periapsis_km:110,inclination_deg:70,source:"NASA NSSDCA Luna 16 archive; lunar-orbit insertion 1970-09-17",entry_velocity_km_s:1.692,edl_system:"powered",edl_duration_s:362,touchdown_velocity_ms:1},totals:{total_dv_km_s:3.5,tli_or_tmi_dv_km_s:3.1,source:"Siddiqi 'Beyond Earth' (NASA SP-2018-4041); Proton-K/D capability + lunar TCMs + descent + ascent + Earth-return ∆v"},events:[{met_days:0,type:"launch",label:"발사",description:"바이코누르에서 Proton-K 발사, 1970-09-12.",label_en:"Launch — Proton-K / Blok D"},{met_days:.005,type:"tli_or_tmi",label:"TLI",description:"Blok-D 상단 스테이지에서의 달 직항 궤도 투입.",label_en:"Trans-lunar injection"},{met_days:5,type:"tcm",label:"TCM",description:"4.5일 항행 중 중간 궤도 수정.",label_en:"Mid-course correction + lunar orbit insertion"},{met_days:8,type:"edl_or_oi",label:"착륙",description:"풍요의 바다에 연착륙 1970-09-20. 표면 운영 + 드릴 코어 채취 (101 g).",label_en:"Lunar powered descent + sample collection — Mare Fecunditatis"},{met_days:9,type:"arrival",label:"시료 귀환",description:"카자흐스탄에서 캡슐 회수 1970-09-24. 최초의 무인 달 샘플 귀환.",label_en:"Ascent + Earth return — Kazakhstan"}],cislunar_profile:{source_tier:"tier_1_5_hybrid",parking_orbit:{altitude_km:200,inclination_deg:51.5,revs:1},tli:{dv_kms:3.1},translunar:{type:"direct"},lunar_arrival:{type:"orbit_and_land",altitude_km:110,inclination_deg:70,periselene_km:110},return:{type:"tei_direct",dv_kms:2.7},waypoints_km:[[0,6578,0,0],[.005,6578,0,0],[.3232,7380,0,542],[.4848,7837,0,869],[.6465,8334,0,1240],[.8081,8875,0,1660],[.9697,9468,0,2138],[1.1313,10119,0,2684],[1.2929,10838,0,3311],[1.4545,11635,0,4033],[1.6162,12523,0,4870],[1.7778,13520,0,5846],[1.9394,14643,0,6989],[2.101,15919,0,8339],[2.2626,17378,0,9944],[2.4242,19059,0,11867],[2.5859,21014,0,14196],[2.7475,23309,0,17043],[2.9091,26030,0,20561],[3.0707,29294,0,24963],[3.2323,33260,0,30549],[3.3939,38146,0,37750],[3.5556,44250,0,47176],[3.7172,51986,0,59728],[3.8788,61921,0,76725],[4.0404,74808,0,100095],[4.202,91492,0,132427],[4.3636,112496,0,176529],[4.5253,136775,0,233339],[4.6869,159169,0,296253],[4.8485,168802,0,344322],[5,157829,0,352530],[5.1717,157734,894,352318],[5.3333,157493,1536,351780],[5.4949,157159,1834,351034],[5.6566,156806,1725,350246],[5.8182,156513,1233,349591],[5.9798,156344,467,349214],[6.1414,156338,-403,349200],[6.303,156495,-1184,349550],[6.4646,156781,-1702,350189],[6.6263,157132,-1840,350974],[6.7879,157470,-1570,351729],[6.9495,157720,-951,352287],[7.1111,157826,-121,352524],[7.2727,157765,737,352388],[7.4343,157551,1431,351909],[7.596,157230,1807,351192],[7.7576,156874,1780,350398],[8,156446,1026,349442],[8.0808,156366,635,349262],[8.2424,156106,0,349261],[8.404,-137496,0,354496],[8.5657,-144329,0,318613],[8.7273,-138656,0,265898],[8.8889,-125918,0,211974],[9,-115711,0,178875],[9.2121,-96784,0,128176],[9.3737,-84218,0,99555],[9.5354,-73535,0,77754],[9.697,-64577,0,61117],[9.8586,-57079,0,48319],[10.0202,-50781,0,38370],[10.1818,-45456,0,30546],[10.3434,-40919,0,24321],[10.5051,-37022,0,19315],[10.6667,-33648,0,15247],[10.8283,-30703,0,11911],[10.9899,-28115,0,9152],[11.1515,-25822,0,6851],[11.3131,-23779,0,4919],[11.4747,-21947,0,3286],[11.6364,-20294,0,1897],[11.798,-18796,0,712],[11.9596,-17430,0,-306],[12.1212,-16180,0,-1182],[12.2828,-15030,0,-1939],[12.4444,-13969,0,-2595],[12.6061,-12985,0,-3165],[12.7677,-12069,0,-3660],[12.9293,-11215,0,-4092],[13.0909,-10414,0,-4468],[13.2525,-9662,0,-4795],[13.4141,-8954,0,-5079],[13.5758,-8284,0,-5326],[13.7374,-7650,0,-5540],[13.899,-7048,0,-5724],[14.0606,-6474,0,-5882],[14.2222,-5926,0,-6016],[14.3838,-5402,0,-6128],[14.5455,-4900,0,-6222],[14.7071,-4417,0,-6297],[14.8687,-3953,0,-6356],[15.0303,-3505,0,-6401],[15.1919,-3072,0,-6431],[15.3535,-2652,0,-6449],[15.5152,-2246,0,-6454],[15.6768,-1850,0,-6449],[15.8384,-1466,0,-6432],[16,-1091,0,-6406]]}},name:"Luna 16",type:"무인 시료 귀환 · 비행 완료",first:"최초의 로봇 달 시료 귀환; 미국 외 국가 최초의 달 시료",description:"Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서 레골리스 101 g을 가져왔습니다 — Apollo 탑재량의 일부에 불과했지만, 다른 접근 방식에 대한 중요한 개념 증명이었습니다. 임무는 Proton-K 부스터와 직접 귀환 방식을 사용했습니다: 표면으로 하강, 드릴 코어 채취, 상승단 발사, 카자흐스탄으로의 탄도 귀환 캡슐. 이 기술은 Luna 20과 Luna 24에 다시 쓰였습니다.",events:[{met:0,label:"발사",note:"바이코누르에서 Proton-K 발사, 1970-09-12.",type:"nominal"},{met:.005,label:"TLI",note:"Blok-D 상단 스테이지에서의 달 직항 궤도 투입.",type:"nominal"},{met:5,label:"TCM",note:"4.5일 항행 중 중간 궤도 수정.",type:"info"},{met:8,label:"착륙",note:"풍요의 바다에 연착륙 1970-09-20. 표면 운영 + 드릴 코어 채취 (101 g).",type:"nominal"},{met:9,label:"시료 귀환",note:"카자흐스탄에서 캡슐 회수 1970-09-24. 최초의 무인 달 샘플 귀환.",type:"nominal"}],vehicle_stage:"Blok-D 상단"},hero:"/orrery/images/missions/luna16/05.webp"},uses:{params:["id"]}}],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

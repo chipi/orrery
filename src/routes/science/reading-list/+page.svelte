@@ -217,14 +217,14 @@
   <meta name="description" content={metaDescription(m.reading_list_meta_description())} />
 </svelte:head>
 
-<article class="resources">
+<article class="resources page-shell page-shell--inset page-shell--reading">
   <header class="head">
-    <h1>{m.reading_list_title()}</h1>
-    <p class="lede">{m.reading_list_lede()}</p>
+    <h1 class="page-title">{m.reading_list_title()}</h1>
+    <p class="lede page-lead">{m.reading_list_lede()}</p>
   </header>
 
   <section class="block">
-    <h2>{m.reading_list_section_books()}</h2>
+    <h2 class="page-section-title">{m.reading_list_section_books()}</h2>
     <ul class="entries">
       {#each books as book (book.title)}
         <li class="entry">
@@ -263,7 +263,7 @@
   </section>
 
   <section class="block">
-    <h2>{m.reading_list_section_references()}</h2>
+    <h2 class="page-section-title">{m.reading_list_section_references()}</h2>
     <ul class="entries">
       {#each references as ref (ref.title)}
         <li class="entry">
@@ -290,7 +290,7 @@
   </section>
 
   <section class="block">
-    <h2>{m.reading_list_section_blogs()}</h2>
+    <h2 class="page-section-title">{m.reading_list_section_blogs()}</h2>
     <ul class="entries">
       {#each blogs as blog (blog.title)}
         <li class="entry">
@@ -325,35 +325,11 @@
 </article>
 
 <style>
-  .resources {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 32px 24px 80px;
-    color: var(--color-text);
-  }
-  .head h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    letter-spacing: 2px;
-    margin: 0 0 8px;
-    color: #ffc850;
-  }
-  .head .lede {
-    font-size: var(--size-lead);
-    line-height: 1.5;
-    margin: 0 0 16px;
-    color: rgba(255, 255, 255, 0.92);
-  }
   .block {
     margin-top: 40px;
   }
-  .block h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 1.5px;
-    margin: 0 0 16px;
-    color: #4ecdc4;
-    border-bottom: 1px solid rgba(78, 205, 196, 0.3);
+  .block .page-section-title {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 6px;
   }
   .entries {
@@ -469,15 +445,6 @@
     color: rgba(255, 255, 255, 0.82);
   }
   @media (max-width: 600px) {
-    .resources {
-      padding: 20px 16px 60px;
-    }
-    .head h1 {
-      font-size: 40px;
-    }
-    .head .lede {
-      font-size: 17px;
-    }
     .entry {
       gap: 12px;
     }

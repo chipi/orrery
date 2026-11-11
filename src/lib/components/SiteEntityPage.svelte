@@ -48,8 +48,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="entity">
-  <nav class="crumb">
+<article class="entity page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref(`/${body}`)}>{section}</a>
     <span class="sep">›</span>
     <span>{name}</span>
@@ -60,8 +60,8 @@
       {site.agency} · {site.year} ·
       <span class="status">{surfaceStatusLabel(site.surface_status ?? site.status)}</span>
     </p>
-    <h1>{name}</h1>
-    {#if text.site_name}<p class="lede">{text.site_name}</p>{/if}
+    <h1 class="page-title">{name}</h1>
+    {#if text.site_name}<p class="lede page-lead">{text.site_name}</p>{/if}
   </header>
 
   {#if entity.illustration}
@@ -129,7 +129,7 @@
 
   {#if entity.mission}
     <section class="mission">
-      <h2>{ogTitle(m.missions_page_title())}</h2>
+      <h2 class="page-section-label">{ogTitle(m.missions_page_title())}</h2>
       <ul class="linklist wide">
         <li>
           <a href={localHref(`/missions/${entity.mission.id}`)}>{entity.mission.name}</a>
@@ -139,7 +139,7 @@
     </section>
     {#if entity.mission.hardware.length}
       <section class="hardware">
-        <h2>{ogTitle(m.fleet_page_title()).split(/\s[—–]\s/)[0]}</h2>
+        <h2 class="page-section-label">{ogTitle(m.fleet_page_title()).split(/\s[—–]\s/)[0]}</h2>
         <ul class="linklist wide">
           {#each entity.mission.hardware as h (h.id)}
             <li>

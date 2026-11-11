@@ -34,8 +34,8 @@
 </svelte:head>
 
 <header class="hero">
-  <h1>{m.science_heading()}</h1>
-  <p class="lede">{m.science_intro()}</p>
+  <h1 class="page-title">{m.science_heading()}</h1>
+  <p class="lede page-lead">{m.science_intro()}</p>
   <img
     class="hero-banner"
     {...responsive(
@@ -51,7 +51,7 @@
 {#if landing}
   <article class="story">
     <section class="chapter">
-      <h2>{landing.intro_heading}</h2>
+      <h2 class="page-section-title">{landing.intro_heading}</h2>
       {#each landing.intro_paragraphs as para, i (i)}
         <p class={i === 0 ? 'kicker' : undefined}>
           {#each parseInline(para) as seg, j (j)}{#if seg.kind === 'text'}{seg.value}{:else}<a
@@ -63,7 +63,7 @@
 
     {#each landing.chapters as chapter, idx (idx)}
       <section class="chapter">
-        <h2>{chapter.heading}</h2>
+        <h2 class="page-section-title">{chapter.heading}</h2>
         {#if chapter.diagram}
           <figure class="story-fig">
             <img
@@ -88,7 +88,7 @@
     {/each}
 
     <section class="chapter">
-      <h2>{landing.tools_heading}</h2>
+      <h2 class="page-section-title">{landing.tools_heading}</h2>
       <p>{landing.tools_intro}</p>
       <ul class="tools">
         {#each landing.tools as tool, i (i)}
@@ -124,18 +124,6 @@
     border-radius: 8px;
     margin: 0 auto 16px;
   }
-  .hero h1 {
-    font-family: var(--font-display);
-    font-size: 32px;
-    letter-spacing: 4px;
-    margin: 0 0 8px;
-  }
-  .lede {
-    font-size: var(--size-lead);
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 560px;
-    margin: 0;
-  }
   .story {
     margin: 0 0 56px;
     padding: 24px 0 0;
@@ -144,12 +132,8 @@
   .chapter {
     margin: 0 0 36px;
   }
-  .chapter h2 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.95);
-    margin: 0 0 14px;
+  .chapter .page-section-title {
+    margin-bottom: 14px;
   }
   .chapter p,
   .chapter li {

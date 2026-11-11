@@ -21,15 +21,15 @@
   <meta name="description" content={metaDescription(m.patches_meta_description())} />
 </svelte:head>
 
-<article class="patches" data-route-ready="true">
+<article class="patches page-shell" data-route-ready="true">
   <header>
-    <nav class="crumb">
+    <nav class="crumb page-crumb">
       <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"
         >›</span
       ><span>{m.patches_crumb()}</span>
     </nav>
-    <h1>{m.patches_h1()}</h1>
-    <p class="lede">
+    <h1 class="page-title">{m.patches_h1()}</h1>
+    <p class="lede page-lead">
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.patches_lede({
         link: `<a href="${base}${localizeHref('/sourcing')}">${m.patches_link_sourcing()}</a>`,
@@ -38,7 +38,7 @@
   </header>
 
   <section class="group">
-    <h2>{m.patches_group_programs()}</h2>
+    <h2 class="page-section-label page-section-label--rule">{m.patches_group_programs()}</h2>
     <div class="grid">
       {#each data.programs as p (p.key)}
         <figure class="badge-card">
@@ -68,7 +68,7 @@
   </section>
 
   <section class="group">
-    <h2>{m.patches_group_missions()}</h2>
+    <h2 class="page-section-label page-section-label--rule">{m.patches_group_missions()}</h2>
     <div class="grid">
       {#each data.missions as mi (mi.key)}
         <figure class="badge-card">
@@ -99,7 +99,7 @@
 
   {#if data.fleet.length}
     <section class="group">
-      <h2>{m.credits_category_fleet()}</h2>
+      <h2 class="page-section-label page-section-label--rule">{m.credits_category_fleet()}</h2>
       <div class="grid">
         {#each data.fleet as fl (fl.key)}
           <figure class="badge-card">
@@ -141,51 +141,16 @@
 </article>
 
 <style>
-  .patches {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 24px) 20px 80px;
-    color: var(--color-text, #eef);
-  }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--color-text-label);
-    margin-bottom: 14px;
-  }
   .crumb a {
-    color: rgba(255, 255, 255, 0.7);
     text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
   }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(40px, 8vw, 64px);
-    letter-spacing: 1px;
-    margin: 0 0 10px;
-  }
-  .lede {
-    font-size: 17px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 62ch;
-  }
+  /* a2-keep: link colour inside the lead and footer; colour is slice A3's */
   .lede :global(a),
   .patches-footer :global(a) {
     color: #cfe3fb;
-  }
-  .group h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #7fb0e0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 16px;
-    margin: 40px 0 20px;
   }
   .grid {
     display: grid;

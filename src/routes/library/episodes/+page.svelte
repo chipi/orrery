@@ -124,10 +124,10 @@
   <meta name="description" content={metaDescription(m.library_episodes_meta_description())} />
 </svelte:head>
 
-<section class="ep-index" aria-labelledby="ep-index-title" data-route-ready="true">
+<section class="ep-index page-shell" aria-labelledby="ep-index-title" data-route-ready="true">
   <header class="ep-index-head">
-    <h1 id="ep-index-title">{m.library_episodes_h1()}</h1>
-    <p class="ep-index-blurb">{m.library_episodes_intro()}</p>
+    <h1 id="ep-index-title" class="page-title">{m.library_episodes_h1()}</h1>
+    <p class="ep-index-blurb page-lead">{m.library_episodes_intro()}</p>
     <p class="ep-index-origin-disclosure">{m.audio_origin_disclosure_text()}</p>
     {#if loaded && provenance}
       <p class="ep-index-meta">
@@ -220,25 +220,8 @@
 </section>
 
 <style>
-  .ep-index {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 24px 18px 80px;
-    color: var(--color-text);
-  }
   .ep-index-head {
     margin-bottom: 24px;
-  }
-  .ep-index-head h1 {
-    margin: 0 0 8px;
-    font-size: 28px;
-    font-weight: 500;
-  }
-  .ep-index-blurb {
-    margin: 0 0 6px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-    line-height: 1.55;
   }
   .ep-index-meta {
     margin: 0;
@@ -435,11 +418,5 @@
   .ep-foot-sep {
     color: rgba(255, 255, 255, 0.25);
     margin: 0 8px;
-  }
-
-  @media (min-width: 768px) {
-    .ep-index {
-      padding: 36px 32px 96px;
-    }
   }
 </style>

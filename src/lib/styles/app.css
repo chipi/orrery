@@ -3,6 +3,7 @@
 @import './panel-tabs.css';
 @import './entity-card-grid.css';
 @import './entity-browse-page.css';
+@import './page-shell.css';
 
 * {
   box-sizing: border-box;

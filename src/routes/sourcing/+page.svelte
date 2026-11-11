@@ -26,10 +26,10 @@
   <meta name="description" content={metaDescription(m.sourcing_meta_description())} />
 </svelte:head>
 
-<article class="sourcing" data-route-ready="true">
+<article class="sourcing page-shell page-shell--reading" data-route-ready="true">
   <header>
-    <h1>{m.sourcing_h1()}</h1>
-    <p class="lede">{data.note}</p>
+    <h1 class="page-title">{m.sourcing_h1()}</h1>
+    <p class="lede page-lead">{data.note}</p>
   </header>
 
   {#if data.gaps.length === 0}
@@ -90,23 +90,6 @@
 </article>
 
 <style>
-  .sourcing {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 24px) 20px 80px;
-    color: var(--color-text, #eef);
-  }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(38px, 8vw, 60px);
-    letter-spacing: 1px;
-    margin: 0 0 12px;
-  }
-  .lede {
-    font-size: 16px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.72);
-  }
   .empty {
     color: rgba(255, 255, 255, 0.6);
     margin-top: 30px;

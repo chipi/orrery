@@ -56,15 +56,15 @@
   <meta name="description" content={metaDescription(m.posters_lede())} />
 </svelte:head>
 
-<article class="gallery" data-route-ready="true">
+<article class="gallery page-shell page-shell--wide" data-route-ready="true">
   <header>
-    <nav class="crumb">
+    <nav class="crumb page-crumb">
       <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"
         >›</span
       ><span>{m.gallery_posters_title()}</span>
     </nav>
-    <h1>{m.posters_h1()}</h1>
-    <p class="lede">{m.posters_lede()}</p>
+    <h1 class="page-title">{m.posters_h1()}</h1>
+    <p class="lede page-lead">{m.posters_lede()}</p>
   </header>
 
   <!-- Spatial roving (RFC-031 S1): one Tab stop; arrows / TV D-pad move between
@@ -109,42 +109,14 @@
 </article>
 
 <style>
-  .gallery {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 32px 24px 64px;
-    color: var(--color-text);
-  }
   header {
-    text-align: center;
     margin-bottom: 36px;
   }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--color-text-label);
-    margin-bottom: 14px;
-  }
   .crumb a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
+    text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
-  }
-  h1 {
-    font-family: var(--font-display);
-    font-size: 42px;
-    letter-spacing: 10px;
-    margin: 0 0 12px;
-  }
-  .lede {
-    font-size: var(--size-lead);
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 760px;
-    margin: 0 auto;
-    line-height: 1.55;
   }
   .grid {
     display: grid;
@@ -209,17 +181,10 @@
     }
   }
   @media (max-width: 639px) {
-    .gallery {
-      padding: 16px 16px 32px;
-    }
     .grid {
       grid-template-columns: 1fr;
       max-width: 480px;
       margin: 0 auto;
-    }
-    h1 {
-      font-size: 32px;
-      letter-spacing: 6px;
     }
   }
 </style>

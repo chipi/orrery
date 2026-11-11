@@ -108,7 +108,7 @@
   <meta name="description" content={metaDescription(m.programs_seo_description())} />
 </svelte:head>
 
-<div class="programs-index">
+<div class="programs-index page-shell">
   <header class="head">
     {#if patchWall.length}
       <div class="patch-wall" aria-hidden="true">
@@ -117,13 +117,14 @@
         {/each}
       </div>
     {/if}
-    <h1>{m.programs_index_title()}</h1>
-    <p class="intro">
+    <h1 class="page-title">{m.programs_index_title()}</h1>
+    <p class="intro page-lead">
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output only, no user input -->
       {@html m.programs_index_intro({
         program: `<em>${m.programs_index_intro_program()}</em>`,
       })}
     </p>
+    <!-- a2-keep: toolbar hint under the lead, not an opening paragraph -->
     <p class="lede">{m.programs_index_browse_hint()}</p>
     <div class="toggle" role="group" aria-label={m.programs_group_aria()}>
       <button class:active={mode === 'era'} onclick={() => (mode = 'era')}
@@ -140,7 +141,7 @@
 
   {#each groups as g (g.key)}
     <section class="group">
-      <h2>{g.heading}</h2>
+      <h2 class="page-section-label page-section-label--rule">{g.heading}</h2>
       <div class="cards">
         {#each g.items as p (p.id)}
           <a class="card" href={localHref(`/programs/${p.id}`)}>
@@ -178,15 +179,6 @@
 </div>
 
 <style>
-  .programs-index {
-    max-width: 1040px;
-    margin: 0 auto;
-    /* The sticky nav already occupies its height in flow (like /library, /fleet),
-       so only breathing room here — NOT another --nav-height, which double-counted
-       it and left a ~60px gap above the title. */
-    padding: 24px 20px 80px;
-    color: var(--color-text, #eef);
-  }
   /* Opening graphic — a masked band of program mission patches (#programs hero). */
   .patch-wall {
     display: flex;
@@ -226,23 +218,12 @@
       height: 44px;
     }
   }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(40px, 8vw, 64px);
-    letter-spacing: 1px;
-    margin: 0 0 8px;
-  }
-  .intro {
-    font-size: 18px;
-    line-height: 1.62;
-    color: rgba(255, 255, 255, 0.84);
-    max-width: 66ch;
-    margin: 0 0 14px;
-  }
+  /* a2-keep: inline emphasis inside the lead (A1 decision 3); its colour is slice A3's */
   .intro :global(em) {
     font-style: italic; /* a1-keep: inline emphasis */
     color: #cfe3fb;
   }
+  /* a2-keep: toolbar hint, not the page lead */
   .lede {
     font-size: 13px;
     line-height: 1.5;
@@ -277,16 +258,6 @@
     background: rgba(127, 176, 224, 0.18);
     border-color: rgba(127, 176, 224, 0.6);
     color: #cfe3fb;
-  }
-  .group h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #7fb0e0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 16px;
-    margin: 34px 0 16px;
   }
   .cards {
     display: grid;

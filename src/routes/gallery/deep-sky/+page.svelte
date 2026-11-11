@@ -144,15 +144,15 @@
   <meta name="description" content={metaDescription(m.deepsky_meta_description())} />
 </svelte:head>
 
-<article class="gallery" data-route-ready="true">
+<article class="gallery page-shell page-shell--wide" data-route-ready="true">
   <header>
-    <nav class="crumb">
+    <nav class="crumb page-crumb">
       <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"
         >›</span
       ><span>{m.deepsky_name()}</span>
     </nav>
-    <h1>{m.deepsky_h1()}</h1>
-    <p class="lede">{m.deepsky_lede({ count: data.images.length })}</p>
+    <h1 class="page-title">{m.deepsky_h1()}</h1>
+    <p class="lede page-lead">{m.deepsky_lede({ count: data.images.length })}</p>
   </header>
 
   <div class="filters" role="tablist" aria-label={m.deepsky_filter_observatory()}>
@@ -282,42 +282,14 @@
 {/if}
 
 <style>
-  .gallery {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 32px 24px 64px;
-    color: var(--color-text);
-  }
   header {
-    text-align: center;
     margin-bottom: 26px;
   }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--color-text-label);
-    margin-bottom: 14px;
-  }
   .crumb a {
-    color: rgba(255, 255, 255, 0.7);
     text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
-  }
-  h1 {
-    font-family: var(--font-display);
-    font-size: 42px;
-    letter-spacing: 10px;
-    margin: 0 0 12px;
-  }
-  .lede {
-    font-size: var(--size-lead);
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 760px;
-    margin: 0 auto;
-    line-height: 1.55;
   }
   .filters {
     display: flex;
@@ -544,6 +516,7 @@
     margin-top: 16px;
     max-width: 680px;
   }
+  /* a2-keep: lightbox figure title, not a page section heading */
   .lb-figure h2 {
     font-family: var(--font-display);
     font-size: 26px;
@@ -703,15 +676,8 @@
     .tile.feature {
       grid-row: span 1;
     }
-    h1 {
-      font-size: 32px;
-      letter-spacing: 6px;
-    }
   }
   @media (max-width: 480px) {
-    .gallery {
-      padding: 16px 14px 32px;
-    }
     .masonry {
       grid-auto-rows: 150px;
     }

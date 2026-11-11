@@ -128,10 +128,10 @@
   {/if}
 {/snippet}
 
-<section class="colophon" aria-labelledby="colophon-title" data-route-ready="true">
+<section class="colophon page-shell" aria-labelledby="colophon-title" data-route-ready="true">
   <header class="head">
-    <h1 id="colophon-title">{m.colophon_title()}</h1>
-    <p class="intro">{m.colophon_intro()}</p>
+    <h1 id="colophon-title" class="page-title">{m.colophon_title()}</h1>
+    <p class="intro page-lead">{m.colophon_intro()}</p>
     <p class="attribution">{m.colophon_attribution()}</p>
     <p class="reused">
       <a href={localHref(`/credits`)}>{m.colophon_reused_link()} →</a>
@@ -224,7 +224,7 @@
 
     <!-- Showpiece: generated watercolor cutaways + pencil sketches (#367). -->
     <section class="block" aria-labelledby="sec-cutaways">
-      <h2 id="sec-cutaways">
+      <h2 id="sec-cutaways" class="page-section-title">
         {m.colophon_section_cutaways()}<span class="count">{data.anatomy_art.length}</span>
       </h2>
       <ul class="thumb-grid wide">
@@ -251,7 +251,7 @@
 
     <!-- Exploded cutaways: launchers stage by stage, landers and rovers part by part. -->
     <section class="block" aria-labelledby="sec-exploded">
-      <h2 id="sec-exploded">
+      <h2 id="sec-exploded" class="page-section-title">
         {m.colophon_section_exploded()}<span class="count">{data.exploded_art.length}</span>
       </h2>
       <ul class="thumb-grid wide">
@@ -279,7 +279,7 @@
     <!-- Landing sequences: how each surface site's craft came down (top of its STORY tab). -->
     {#if data.landing_art && data.landing_art.length > 0}
       <section class="block" aria-labelledby="sec-landing">
-        <h2 id="sec-landing">
+        <h2 id="sec-landing" class="page-section-title">
           {m.colophon_section_landing()}<span class="count">{data.landing_art.length}</span>
         </h2>
         <ul class="thumb-grid wide">
@@ -308,7 +308,7 @@
     <!-- Mission blueprints: a planning sheet per mission (mission panel OVERVIEW and FLIGHT). -->
     {#if data.blueprint_art && data.blueprint_art.length > 0}
       <section class="block" aria-labelledby="sec-blueprints">
-        <h2 id="sec-blueprints">
+        <h2 id="sec-blueprints" class="page-section-title">
           {m.colophon_section_blueprints()}<span class="count">{data.blueprint_art.length}</span>
         </h2>
         <ul class="thumb-grid wide">
@@ -336,7 +336,7 @@
 
     <!-- Gallery posters: ORRERY originals, AI-generated (/posters). -->
     <section class="block" aria-labelledby="sec-posters">
-      <h2 id="sec-posters">
+      <h2 id="sec-posters" class="page-section-title">
         {m.colophon_gallery_posters()}<span class="count">{data.posters.length}</span>
       </h2>
       <p class="block-note">
@@ -366,7 +366,7 @@
     <!-- Mission trajectory plots: drawn in code from /fly's trajectory model (scripts/render-mission-thumbnails.ts), one per mission. -->
     {#if data.mission_trajectories && data.mission_trajectories.length > 0}
       <section class="block" aria-labelledby="sec-mission-trajectories">
-        <h2 id="sec-mission-trajectories">
+        <h2 id="sec-mission-trajectories" class="page-section-title">
           {m.colophon_section_mission_trajectories()}<span class="count"
             >{data.mission_trajectories.length}</span
           >
@@ -398,7 +398,7 @@
     <!-- Illustrated site maps: AI-generated block dioramas (site panel STORY tab, /moon/<id>, /mars/<id>). -->
     {#if data.site_illustrations && data.site_illustrations.length > 0}
       <section class="block" aria-labelledby="sec-site-illustrations">
-        <h2 id="sec-site-illustrations">
+        <h2 id="sec-site-illustrations" class="page-section-title">
           {m.colophon_section_site_illustrations()}<span class="count"
             >{data.site_illustrations.length}</span
           >
@@ -431,7 +431,7 @@
          Renders only once an approved batch lands (empty at v0.9 ship). -->
     {#if data.lab_illustrations && data.lab_illustrations.length > 0}
       <section class="block" aria-labelledby="sec-lab-illustrations">
-        <h2 id="sec-lab-illustrations">
+        <h2 id="sec-lab-illustrations" class="page-section-title">
           {m.colophon_lab_illustrations()}<span class="count">{data.lab_illustrations.length}</span>
         </h2>
         <p class="block-note">
@@ -465,7 +465,7 @@
 
     <!-- Hand-authored SVG diagrams: real thumbnails. -->
     <section class="block" aria-labelledby="sec-diagrams">
-      <h2 id="sec-diagrams">
+      <h2 id="sec-diagrams" class="page-section-title">
         {m.colophon_section_diagrams()}<span class="count">{data.diagrams_science.length}</span>
       </h2>
       <ul class="thumb-grid">
@@ -522,7 +522,7 @@
          inline SVG from the icon registry (crisp, theme-coloured) rather
          than a rasterised preview. -->
     <section class="block" aria-labelledby="sec-ui">
-      <h2 id="sec-ui">
+      <h2 id="sec-ui" class="page-section-title">
         {m.colophon_section_ui()}<span class="count">{ICON_SHOWCASE.length}</span>
       </h2>
       <ul class="icon-grid">
@@ -550,7 +550,7 @@
     </section>
 
     <section class="block" aria-labelledby="sec-writing">
-      <h2 id="sec-writing">
+      <h2 id="sec-writing" class="page-section-title">
         {m.colophon_section_writing()}<span class="count">{data.writing.length}</span>
       </h2>
       <ul class="item-list">
@@ -567,7 +567,7 @@
 
     {#if episodes.length > 0}
       <section class="block" aria-labelledby="sec-tours">
-        <h2 id="sec-tours">
+        <h2 id="sec-tours" class="page-section-title">
           {m.colophon_section_tours()}<span class="count">{episodes.length}</span>
         </h2>
         <p class="tours-note">{m.colophon_tours_note()}</p>
@@ -625,12 +625,6 @@
 {/if}
 
 <style>
-  .colophon {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 48px 20px 96px;
-    color: rgba(255, 255, 255, 0.85);
-  }
   /* Jump-link TOC — visual twin of /credits' sources index. */
   .toc {
     margin: 28px 0 16px;
@@ -682,20 +676,6 @@
   .head {
     margin-bottom: 40px;
   }
-  h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 44px;
-    letter-spacing: 3px;
-    margin: 0 0 12px;
-    color: #fff;
-  }
-  .intro {
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 720px;
-    color: rgba(255, 255, 255, 0.78);
-    margin: 0 0 10px;
-  }
   .attribution {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
@@ -716,12 +696,8 @@
   .block {
     margin-top: 40px;
   }
-  .block h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
-    letter-spacing: 2px;
-    color: #fff;
-    margin: 0 0 16px;
+  /* The section title carries an item count beside it. */
+  .block .page-section-title {
     display: flex;
     align-items: baseline;
     gap: 10px;

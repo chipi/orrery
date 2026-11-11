@@ -138,12 +138,12 @@
   <meta name="description" content={metaDescription(m.library_intro_body_1())} />
 </svelte:head>
 
-<section class="library" aria-labelledby="library-title" data-route-ready="true">
+<section class="library page-shell" aria-labelledby="library-title" data-route-ready="true">
   <header class="head">
-    <h1 id="library-title">{m.library_title()}</h1>
-    <h2>{m.library_intro_heading()}</h2>
-    <p class="intro">{m.library_intro_body_1()}</p>
-    <p class="intro">{m.library_intro_body_2()}</p>
+    <h1 id="library-title" class="page-title">{m.library_title()}</h1>
+    <h2 class="page-section-label">{m.library_intro_heading()}</h2>
+    <p class="intro page-lead">{m.library_intro_body_1()}</p>
+    <p class="intro page-lead">{m.library_intro_body_2()}</p>
     <p class="totals">
       {m.library_totals({
         links: totals.links,
@@ -227,7 +227,7 @@
             />
           {/if}
           <div class="src-meta">
-            <h2>
+            <h2 class="page-section-title">
               <a href={group.source.url} target="_blank" rel="noopener noreferrer external">
                 {group.source.name}
               </a>
@@ -298,32 +298,9 @@
 </section>
 
 <style>
-  .library {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 24px 16px 96px;
-    color: #dde4ff;
-  }
-  .head h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    letter-spacing: 4px;
-    margin: 0 0 4px;
-    color: #fff;
-  }
-  .head h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-    margin: 0 0 16px;
-  }
-  .intro {
-    font-size: var(--size-lead);
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 12px;
+  /* The section label sits right under the title here. */
+  .head .page-section-label {
+    margin-top: 0;
   }
   .totals,
   .newest,
@@ -446,12 +423,8 @@
     object-fit: contain;
     flex-shrink: 0;
   }
-  .src-meta h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
-    margin: 0 0 4px;
-    color: #fff;
+  .src-meta .page-section-title {
+    margin-bottom: 4px;
   }
   .src-meta a {
     color: #fff;
@@ -608,9 +581,6 @@
   }
 
   @media (min-width: 768px) {
-    .library {
-      padding: 36px 32px 96px;
-    }
     .toc ul {
       grid-template-columns: 1fr 1fr;
     }

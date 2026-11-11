@@ -26,7 +26,6 @@
   import ExhibitOverlay from '$lib/components/ExhibitOverlay.svelte';
   import { exhibit } from '$lib/exhibit.svelte';
   import DebugPanel from '$lib/components/DebugPanel.svelte';
-  import { reconcilePrerenderedAssetOrigins } from '$lib/target-env';
   import {
     createDebugPanelContext,
     type RenderingDebugRegistration,
@@ -416,10 +415,6 @@
     // + event API.
     initAnalytics();
     startEngagementHeartbeat();
-    // Internal builds (ADR-083): the first prerendered page's images carry the
-    // build-default origin; rewrite them to the active target so assets follow
-    // the switch too. No-op in web/release.
-    reconcilePrerenderedAssetOrigins();
     // Stamp the session with the running build so the live version
     // distribution is visible in the dashboard — a cohort stuck on an old
     // build (e.g. the iOS-precache freeze) is then obvious, not a surprise.

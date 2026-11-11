@@ -275,7 +275,7 @@ Operator decision (2026-10-30). These stay exactly as written in every locale. A
 "fix" that translates one of them is a regression:
 
 - **Developer panels and debug readouts**: `DebugPanel`, `FlybyDebugViewer`,
-  `AscentCameraDebug`, `TargetEnvSwitcher`, the `label` of `DebugPanelRegistrar` /
+  `AscentCameraDebug`, the `label` of `DebugPanelRegistrar` /
   `RenderingDebugRegistrar`, anything inside `{#if …debug…}` or a `{#snippet …Debug…}`
   (the /fly Tier-1 and cislunar debug readouts, the coast-camera readout, the
   surface-scene debug box), and everything under `src/routes/dev/`.

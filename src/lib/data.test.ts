@@ -1206,7 +1206,7 @@ describe('getImageProvenance (per-image lookup)', () => {
     // `https://<host>${base}${knownPath}`. Under test `base` is empty, so exercise
     // the origin (scheme + host) strip; base-prefix stripping is covered by the
     // pure normalizeImageKey tests below.
-    const entry = await getImageProvenance(`https://chipi.github.io${knownPath}`);
+    const entry = await getImageProvenance(`https://cdn.example.test${knownPath}`);
     expect(entry).not.toBeNull();
     expect(entry!.path).toBe(knownPath);
   });
@@ -1220,7 +1220,7 @@ describe('normalizeImageKey (provenance-key normalisation — RFC-030)', () => {
   });
 
   it('strips a mobile stream origin (scheme + host), keeping the path', () => {
-    expect(normalizeImageKey('https://chipi.github.io/images/missions/curiosity/01.webp')).toBe(
+    expect(normalizeImageKey('https://cdn.example.test/images/missions/curiosity/01.webp')).toBe(
       '/images/missions/curiosity/01.webp',
     );
     // http origin + a port are stripped too.
@@ -1231,7 +1231,7 @@ describe('normalizeImageKey (provenance-key normalisation — RFC-030)', () => {
 
   it('strips a configured base-path prefix after the origin', () => {
     // Mobile: origin then `${base}` — both must come off.
-    expect(normalizeImageKey('https://chipi.github.io/orrery/images/x/01.webp', '/orrery')).toBe(
+    expect(normalizeImageKey('https://cdn.example.test/orrery/images/x/01.webp', '/orrery')).toBe(
       '/images/x/01.webp',
     );
     // Web with a base path.

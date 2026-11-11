@@ -6,8 +6,8 @@ describe('suggestedCorrection', () => {
     expect(suggestedCorrection('/missions&debug=1', '')).toBe('/missions?debug=1');
   });
 
-  it('does not double the base on a subpath deploy (staging /orrery)', () => {
-    // Was /orrery/orrery/missions?debug=1 on staging (2026-10-17).
+  it('does not double the base on a subpath deploy (/orrery)', () => {
+    // Was /orrery/orrery/missions?debug=1 on the Pages build (2026-10-17).
     expect(suggestedCorrection('/orrery/missions&debug=1', '')).toBe('/orrery/missions?debug=1');
   });
 

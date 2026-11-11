@@ -7,8 +7,8 @@
  *
  * ── Enablement: the env ladder (mirrors sentry.ts; ADR-082) ──────────
  * Gated on host + website id resolving for the current rung, NOT on
- * hostname. Three rungs, each its own isolated Umami site:
- *   • deploy (staging/prod) bakes `PUBLIC_UMAMI_HOST` +
+ * hostname. Two rungs, each its own isolated Umami site:
+ *   • deploy (prod) bakes `PUBLIC_UMAMI_HOST` +
  *     `PUBLIC_UMAMI_WEBSITE_ID` → analytics live, tagged by environment;
  *   • `vite dev` with no override falls back to the DEV_UMAMI_* defaults
  *     below — the dev site, reachable ONLY over the Tailscale `homelab`
@@ -86,27 +86,23 @@
 
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
-import { MOBILE_INTERNAL, targetConfig } from './target-env';
 import { analyticsSuppressed } from './analytics-optout';
 
 // Dev rung of the env ladder (mirrors sentry.ts). In `vite dev`, with no deploy-injected
 // PUBLIC_UMAMI_* override, analytics go to the "Orrery (dev)" Umami site (created
 // 2026-10-17, operator decision) through its tailnet TLS node. Only the operator's
-// machines reach it; a stranger who runs the repo silently sends nothing. Staging/prod
-// override via env. The old `homelab:3001` was loopback-only on the mini and its site id
+// machines reach it; a stranger who runs the repo silently sends nothing. The prod deploy
+// overrides via env. The old `homelab:3001` was loopback-only on the mini and its site id
 // didn't exist, so dev analytics recorded nothing (ADR-082 amendment 2026-10-17).
 const DEV_UMAMI_HOST = 'https://umami.tail6d0ed4.ts.net';
 const DEV_UMAMI_WEBSITE_ID = '90cbabf7-ae88-45c9-a417-0cd808749602';
 
-/** The self-hosted Umami host for the current rung: on an INTERNAL mobile build
- *  (ADR-083) the runtime target's host; else an env override (staging/prod) or, in
+/** The self-hosted Umami host for the current rung: the deploy's env override or, in
  *  `vite dev`, the dev default. Empty otherwise (fork / non-dev build) → silent. */
 function umamiHost(): string {
-  if (MOBILE_INTERNAL) return targetConfig().umamiHost.replace(/\/$/, '');
   return (publicEnv.PUBLIC_UMAMI_HOST || (dev ? DEV_UMAMI_HOST : '')).replace(/\/$/, '');
 }
 function umamiWebsiteId(): string {
-  if (MOBILE_INTERNAL) return targetConfig().umamiWebsiteId;
   return publicEnv.PUBLIC_UMAMI_WEBSITE_ID || (dev ? DEV_UMAMI_WEBSITE_ID : '');
 }
 
@@ -246,7 +242,7 @@ export function isLikelyBot(): boolean {
 }
 
 /** Analytics fires when a host + website id resolve for the current rung — a deploy env
- *  override (staging/prod) or the `vite dev` default — AND the user has not opted out
+ *  override (prod) or the `vite dev` default — AND the user has not opted out
  *  (cookie) and their browser is not signalling GPC/DNT. Fork-silent by construction: a
  *  non-dev build with no env vars resolves neither, so no script is injected and every
  *  `track()` is a no-op. Mirrors `sentry.ts`. */

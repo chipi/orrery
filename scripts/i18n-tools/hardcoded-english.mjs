@@ -24,7 +24,6 @@ export const SKIP_FILES = new Set([
   'src/lib/components/DebugPanel.svelte',
   'src/lib/components/FlybyDebugViewer.svelte',
   'src/lib/components/AscentCameraDebug.svelte',
-  'src/lib/components/TargetEnvSwitcher.svelte',
 ]);
 const DEBUG_COMPONENTS = new Set(['DebugPanelRegistrar', 'RenderingDebugRegistrar']);
 const ATTRS = new Set([

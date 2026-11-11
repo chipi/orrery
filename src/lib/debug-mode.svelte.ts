@@ -1,6 +1,6 @@
 // Global debug mode (task #54) — one menu toggle gates every debug overlay: the
 // generic DebugPanel and the AR diagnostic HUD. Available in EVERY build (so a
-// prod/staging build on a device can flip it on to diagnose), defaults OFF, and
+// prod build on a device can flip it on to diagnose), defaults OFF, and
 // persists across reloads. `?debug=1` still works (it just sets this on).
 const STORAGE_KEY = 'orrery.debug';
 

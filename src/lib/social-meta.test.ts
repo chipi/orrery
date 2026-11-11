@@ -75,7 +75,7 @@ describe('addSocialMeta', () => {
     expect(addSocialMeta('<p>chunk</p>', ALT)).toBe('<p>chunk</p>');
   });
 
-  it('omits og:url and descriptions it does not have (staging mirror, no description)', () => {
+  it('omits og:url and descriptions it does not have (base-path mirror, no description)', () => {
     const out = addSocialMeta(page('<title>X</title>'), ALT);
     expect(out).not.toContain('og:url');
     expect(out).not.toContain('og:description');

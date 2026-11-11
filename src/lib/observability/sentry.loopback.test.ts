@@ -2,8 +2,8 @@
 // @vitest-environment-options { "url": "http://127.0.0.1:34773/orrery/science/cosmology" }
 import { afterEach, describe, expect, it, vi, beforeEach } from 'vitest';
 
-// #556-#559: a deploy-baked (staging/prod) DSN running on a loopback origin keeps
-// reporting but is re-tagged `<tier>-loopback`, so it never counts as staging/prod.
+// #556-#559: a deploy-baked (deployed) DSN running on a loopback origin keeps
+// reporting but is re-tagged `<tier>-loopback`, so it never counts as the real tier.
 // Native shells (http://localhost WebView), `vite dev` and real hosts are unaffected.
 const { initMock, platform, devFlag } = vi.hoisted(() => ({
   initMock: vi.fn(),
@@ -29,7 +29,7 @@ beforeEach(() => {
   devFlag.v = false;
   for (const k of Object.keys(publicEnv)) delete (publicEnv as Record<string, unknown>)[k];
   publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@glitch.example/6';
-  publicEnv.PUBLIC_SENTRY_ENVIRONMENT = 'staging';
+  publicEnv.PUBLIC_SENTRY_ENVIRONMENT = 'canary';
 });
 
 afterEach(() => {
@@ -44,8 +44,8 @@ const initEnv = () => {
 const onHost = (hostname: string) => vi.stubGlobal('location', { ...window.location, hostname });
 
 describe('sentry loopback re-tagging', () => {
-  it('web build with a baked staging DSN on 127.0.0.1 still inits, as staging-loopback', () => {
-    expect(initEnv()).toBe('staging-loopback');
+  it('web build with a baked DSN on 127.0.0.1 still inits, as canary-loopback', () => {
+    expect(initEnv()).toBe('canary-loopback');
     expect(initMock.mock.calls[0][0].dsn).toBe('https://pub@glitch.example/6');
   });
 
@@ -60,10 +60,10 @@ describe('sentry loopback re-tagging', () => {
 
   it('a real host keeps the plain tier (no re-tag)', () => {
     onHost('www.orrerylearn.com');
-    expect(initEnv()).toBe('staging');
+    expect(initEnv()).toBe('canary');
     initMock.mockClear();
     onHost('127.0.0.2.example.com');
-    expect(initEnv()).toBe('staging');
+    expect(initEnv()).toBe('canary');
   });
 
   it('vite dev on loopback stays the dev rung (no -loopback)', () => {
@@ -75,6 +75,6 @@ describe('sentry loopback re-tagging', () => {
   it('a Capacitor shell (WebView on localhost) keeps its tier', () => {
     platform.v = 'ios';
     onHost('localhost');
-    expect(initEnv()).toBe('staging');
+    expect(initEnv()).toBe('canary');
   });
 });

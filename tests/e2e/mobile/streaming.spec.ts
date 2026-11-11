@@ -11,17 +11,17 @@ import { test, expect } from '@playwright/test';
  * stays offline-usable, and that the 4K textures are gated off. The genuinely
  * native surface (safe-area, plugins, WebGL context-loss) is Layer 2/3.
  *
- * Network-independent: the GitHub Pages origin is stubbed, so a CDN outage
+ * Network-independent: the stream origin is stubbed, so a CDN outage
  * never turns this red.
  */
 
-const CDN = 'https://chipi.github.io/orrery';
+const CDN = 'https://www.orrerylearn.com';
 
 test.describe('mobile stream-heavy contract', () => {
   test('landing hero image is served from the stream CDN, not the local bundle', async ({
     page,
   }) => {
-    // Stub the CDN so the run never depends on chipi.github.io being reachable.
+    // Stub the CDN so the run never depends on the live site being reachable.
     await page.route(`${CDN}/**`, (route) =>
       route.fulfill({ status: 200, contentType: 'image/webp', body: Buffer.from([]) }),
     );

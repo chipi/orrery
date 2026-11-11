@@ -26,7 +26,7 @@ declare global {
   /**
    * True only in the Capacitor stream-heavy build (MOBILE=1, ADR-078).
    * App + SW code branch on this to fetch pruned asset buckets (images,
-   * audio, non-default-locale overlays) from chipi.github.io. `false` in
+   * audio, non-default-locale overlays) from the STREAM_ORIGIN host. `false` in
    * every browser build.
    */
   const __MOBILE__: boolean;
@@ -39,14 +39,6 @@ declare global {
    * IP/domain for release. Empty-string `base` in browser builds ignore it.
    */
   const __STREAM_ORIGIN__: string;
-
-  /**
-   * True only in an INTERNAL mobile build (`MOBILE_INTERNAL=1`, ADR-083) —
-   * simulator / TestFlight. Gates the runtime staging↔prod target switcher
-   * (`src/lib/target-env.ts`); `false` in web + App Store release builds, where
-   * the switcher + all-tier config tree-shake out.
-   */
-  const __MOBILE_INTERNAL__: boolean;
 
   /**
    * Live-state windows used by /fly for chrome-devtools-mcp verification

@@ -53,29 +53,23 @@ export default defineConfig(({ mode, command }) => {
   // MOBILE=1 selects the Capacitor stream-heavy profile (RFC-018 §4 /
   // ADR-078): heavy asset buckets (images, audio, non-default-locale
   // overlays) are pruned from build/ after the build and streamed from
-  // chipi.github.io at runtime instead. This flag only trims the SW
+  // www.orrerylearn.com at runtime instead. This flag only trims the SW
   // precache manifest so it doesn't reference the pruned locale bundles;
   // the physical prune + the streaming SW rules live in
   // scripts/mobile/prune-streamed-assets.mjs (S2) and the runtimeCaching
   // block (S3). The browser build (MOBILE unset) is byte-unaffected.
   const MOBILE = env.MOBILE === '1';
-  // ADR-083: `MOBILE_INTERNAL=1` marks an INTERNAL mobile build (simulator /
-  // TestFlight) — it ships the all-tier config + the runtime staging↔prod
-  // switcher (src/lib/target-env.ts). Unset (web + App Store release) → the
-  // switcher tree-shakes out and the app uses its single baked tier. Never set
-  // it on a release build.
-  const MOBILE_INTERNAL = env.MOBILE_INTERNAL === '1';
   // Origin the Capacitor build streams pruned buckets (images / audio /
   // non-default-locale bundles) from. NOT hardcoded — set per build so a dev
   // build points at a local server and a release build points at the current
-  // host (GitHub Pages today, a VPS IP next, a domain later), changed by one
+  // host (the VPS, www.orrerylearn.com), changed by one
   // env var, never a code edit. Web builds ignore it entirely: `assetOrigin`
   // stays `base`, so the browser app streams origin-relative from whatever
   // host serves it. Defaults to the current prod origin when unset so release
   // builds and CI are unaffected.
   // Trailing slash stripped so `${STREAM_ORIGIN}${'/images/…'}` never yields a
-  // `//` path (GitHub Pages 404s those with no redirect).
-  const STREAM_ORIGIN = (env.STREAM_ORIGIN || 'https://chipi.github.io/orrery').replace(/\/+$/, '');
+  // `//` path (static hosts 404 those with no redirect).
+  const STREAM_ORIGIN = (env.STREAM_ORIGIN || 'https://www.orrerylearn.com').replace(/\/+$/, '');
   // Current git branch, injected as a build-time global. Used ONLY by the dev telemetry
   // rung (sentry.ts) to tag dev events by worktree — each parallel worktree has its own
   // branch, so a dev error can be traced to the session it came from. Empty on a detached
@@ -109,16 +103,13 @@ export default defineConfig(({ mode, command }) => {
         process.env.BUILD_TAG || new Date().toISOString().slice(5, 16).replace('T', ' '),
       ),
       // True only in the Capacitor stream-heavy build. App + SW code branch
-      // on this to route pruned buckets at chipi.github.io (S3).
+      // on this to route pruned buckets at the stream origin (S3).
       __MOBILE__: JSON.stringify(MOBILE),
       // Per-build stream origin for the Capacitor bundle (see STREAM_ORIGIN
       // above). Injected here so asset-url.ts carries no hardcoded host.
       __STREAM_ORIGIN__: JSON.stringify(STREAM_ORIGIN),
       // Git branch → dev-telemetry worktree tag (see devWorktree above).
       __DEV_WORKTREE__: JSON.stringify(devWorktree),
-      // ADR-083: gates the mobile runtime env switcher. false → switcher +
-      // all-tier config tree-shake out (web + App Store release).
-      __MOBILE_INTERNAL__: JSON.stringify(MOBILE_INTERNAL),
     },
     // Dev / preview port: VITE_DEV_PORT from the shell or .env* (loadEnv,
     // covers the gitignored .env.local), else the checkout's .env.workspace

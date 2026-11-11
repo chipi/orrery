@@ -726,7 +726,7 @@ font-display:   'Bebas Neue'    titles, names
 font-mono:      'Space Mono'    data, labels, HUD
 font-editorial: 'Crimson Pro'   real quotes + photo captions only (italic, >= 14px)
 
-Type scale (src/lib/styles/tokens.css, UX A1 / Q2): floor 11px for all DOM and
+Type scale (src/lib/styles/tokens.css, UX A1 / Q2, docs/uxs/decisions/UXD-002-type-scale-and-the-11px-floor.md): floor 11px for all DOM and
 SVG UI text and for the 2D UI canvases —
   --size-label 11px (60% white, --color-text-label) · --size-meta 12px ·
   --size-body 14px · --size-lead 16px (15px under 600px width; panel overview,
@@ -742,7 +742,7 @@ SVG UI text and for the 2D UI canvases —
       FigureRenderer SVG), station-blueprint.ts texture, static/ diagrams, and
       dev tools (DebugPanel, AscentCameraDebug, FlybyDebugViewer, src/routes/dev/).
   Canvases that ARE UI and meet the floor: plan/+page.svelte, SurfaceFlatPatch,
-    surface-2d-map.ts, SizesCanvas, ConstellationFinder.
+    surface-2d-map.ts, SizesCanvas, ConstellationFinder, InstrumentTiles.
 
 Nav bar:        height 52px, z-index 20
 Panel (mobile): bottom sheet, full width

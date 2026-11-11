@@ -459,3 +459,19 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 
 - Science diagrams and Lab art keep their own colours **for now** — review whether they should also
   move to the new palette once the UI blue (D) is in place.
+
+## Definition of done — every slice (operator, 2026-11-11: no partial updates, quality over speed)
+
+A slice is reported done only when the lead has checked all of these, with the command and its output:
+
+1. **Whole project.** The decision is applied in every route and component — proven by a repo-wide
+   search for the old pattern that returns nothing outside a documented allow-list.
+2. **Docs.** Every doc that states the rule says the new rule (AGENTS.md design rules, style guides,
+   TA.md, READMEs of touched folders).
+3. **Tests move with the work.** Tests whose expectations changed are adjusted, new tests guard the
+   rule (site-wide where possible), obsolete ones removed; the affected suites are green on
+   desktop-chromium, mobile-chromium and mobile-landscape-chromium — nothing skipped or left red.
+4. **Locales.** Any new or changed text exists in all 14 locales through the glossary and the
+   standard i18n tools; `validate-data` green.
+
+Then the operator gets a short status and small before/after screenshots (13" laptop + phone).

@@ -25,17 +25,25 @@ const rel = (p: string) => `src/${p}`;
 const code = (l: string) => !/^\s*(\/\/|\*|\/\*)/.test(l);
 
 describe('colour pipeline rule', () => {
-  it('A: every file that builds an EffectComposer also builds an OutputPass (6 sites)', () => {
-    const composerSites: string[] = [];
-    const missing: string[] = [];
+  it('A: every EffectComposer chain has exactly one OutputPass, added last (6 sites)', () => {
+    const sites: string[] = [];
+    const bad: string[] = [];
     for (const f of files) {
-      const n = f.lines.filter((l) => code(l) && /new EffectComposer\(/.test(l)).length;
-      if (!n) continue;
-      composerSites.push(...Array(n).fill(f.path));
-      if (!f.lines.some((l) => code(l) && /new OutputPass\(/.test(l))) missing.push(rel(f.path));
+      f.lines.forEach((l) => {
+        const name = code(l) ? /(\w+)\s*=\s*new EffectComposer\(/.exec(l)?.[1] : undefined;
+        if (!name) return;
+        sites.push(f.path);
+        const passes = f.lines.filter(
+          (p) => code(p) && new RegExp(`\\b${name}\\.(?:addPass|insertPass)\\(`).test(p),
+        );
+        const outputs = passes.filter((p) => /new OutputPass\(/.test(p));
+        const lastIsOutput =
+          passes.length > 0 && /new OutputPass\(/.test(passes[passes.length - 1]);
+        if (outputs.length !== 1 || !lastIsOutput) bad.push(`${rel(f.path)} (${name})`);
+      });
     }
-    expect(missing).toEqual([]);
-    expect(composerSites).toHaveLength(6);
+    expect(bad).toEqual([]);
+    expect(sites).toHaveLength(6);
   });
 
   it('B: both createOutlinePassSetup users pass outputPass: true', () => {
@@ -57,22 +65,24 @@ describe('colour pipeline rule', () => {
     expect(users).toBe(2);
   });
 
-  it('C: every texture creation sets a colorSpace within 14 lines', () => {
-    const create = /new (?:THREE\.)?(?:CanvasTexture|Texture|DataTexture)\(|\b\w*[Ll]oader\.load\(/;
+  it('C: every texture creation tags the texture it creates, within 14 lines', () => {
+    // Any `.load(` (TextureLoader instance or chained `new THREE.TextureLoader().load(`) too.
+    const create =
+      /new (?:THREE\.)?(?:CanvasTexture|Texture|DataTexture)\(|(?:[Ll]oader|TextureLoader\(\)|\btl)\.load\(/;
     const bad: string[] = [];
     for (const f of files) {
       f.lines.forEach((l, i) => {
         if (!code(l) || !create.test(l)) return;
-        // A plain `const x = new ...` must tag that same variable; a loader call that takes a
-        // callback (the line ends in `(`) tags the texture it receives, whatever it is called.
-        const name = /^\s*(?:const|let)\s+(\w+)\s*=/.exec(l)?.[1];
-        const tag =
-          name && !/\(\s*$/.test(l)
-            ? new RegExp(`\\b${name}\\.colorSpace\\s*=`)
-            : /\.colorSpace\s*=/;
-        if (!f.lines.slice(i, i + 15).some((w) => tag.test(w))) {
-          bad.push(`${rel(f.path)}:${i + 1}`);
+        const win = f.lines.slice(i, i + 15);
+        // `const x = new ...` / `const x = loader.load(url)` must tag x itself; a loader call with a
+        // callback tags the parameter the callback receives.
+        const name = /^\s*(?:const|let)?\s*(\w+)\s*=/.exec(l)?.[1];
+        let target = name;
+        if (!name || /\(\s*$/.test(l)) {
+          target = /\(?\b(\w+)(?::[^)]*)?\)?\s*=>/.exec(win.join('\n'))?.[1] ?? name;
         }
+        const tag = target ? new RegExp(`\\b${target}\\.colorSpace\\s*=`) : /^$/;
+        if (!win.some((w) => tag.test(w))) bad.push(`${rel(f.path)}:${i + 1}`);
       });
     }
     expect(bad).toEqual([]);

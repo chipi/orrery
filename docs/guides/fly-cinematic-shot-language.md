@@ -127,8 +127,8 @@ Use `EffectComposer` with this order:
    max blur 0.005. **Subtle.** Stars just slightly defocused.
 4. `FilmPass` (or custom grain) — noise 0.05–0.10. Below conscious
    perception but above zero. **More impact than any other post effect.**
-5. `VignettePass` — offset 1.0, darkness 0.6.
-6. `THREE.ACESFilmicToneMapping` on renderer; `toneMappingExposure 1.0–1.2`.
+5. `VignettePass` — offset 0.95, darkness 1.0 (the shader mixes towards `1 - darkness` in linear light, so below 1.0 it lifts blacks to grey after the OutputPass; code: `fly-helio-scene.ts`, `ascent-renderer.ts`).
+6. `THREE.ACESFilmicToneMapping` on renderer; `toneMappingExposure` 1.1 on helio, 0.8 on launch/coast/descent (`ascent-renderer.ts`).
    **Single most important line for cinematic feel** — HDR Sun → SDR display.
 
 **Composer note (2026-11-11):** the composer renders into linear targets, so the renderer's tone

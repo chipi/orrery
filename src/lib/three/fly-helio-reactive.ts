@@ -216,6 +216,7 @@ export function buildHelioReactiveOverlays(deps: HelioReactiveDeps): HelioReacti
 
   // ─── Moon mesh (Moon-mission mode) ───────────────────────────────
   const moonTex = new THREE.TextureLoader().load(`${deps.base}/textures/2k_moon.jpg`);
+  moonTex.colorSpace = THREE.SRGBColorSpace;
   const moonMesh = new THREE.Mesh(
     new THREE.SphereGeometry(2.0, 32, 32),
     new THREE.MeshPhongMaterial({ map: moonTex, color: 0xffffff, shininess: 4 }),

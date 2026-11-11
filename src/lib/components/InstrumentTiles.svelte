@@ -60,7 +60,7 @@
     const sizeToParent = () => {
       const dpr = window.devicePixelRatio || 1;
       const w = el.clientWidth || 300;
-      const h = el.clientHeight || 58;
+      const h = el.clientHeight || 84;
       el.width = Math.round(w * dpr);
       el.height = Math.round(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -69,7 +69,7 @@
     const ro = new ResizeObserver(sizeToParent);
     ro.observe(el);
 
-    const label = (text: string, cx: number, y: number, color: string, size = 7) => {
+    const label = (text: string, cx: number, y: number, color: string, size = 11) => {
       ctx.fillStyle = color;
       ctx.font = `${size}px "Space Mono", monospace`;
       ctx.textAlign = 'center';
@@ -81,7 +81,7 @@
       const cx = x0 + cw / 2;
       const cy = h * 0.46;
       const r = Math.min(cw, h) * 0.26;
-      label('SPIN', cx, 9, glow(0.65), 6);
+      label('SPIN', cx, 11, glow(0.65));
       ctx.strokeStyle = glow(0.35);
       ctx.lineWidth = 1;
       ctx.beginPath();
@@ -109,15 +109,15 @@
       ctx.beginPath();
       ctx.arc(cx, cy, 1.6, 0, Math.PI * 2);
       ctx.fill();
-      label(rotLabel, cx, h - 3, 'rgba(255,255,255,0.7)', 7);
+      label(rotLabel, cx, h - 4, 'rgba(255,255,255,0.7)');
     };
 
     // ── Cell C: gravity drop-test ────────────────────────────────
     const cellGravity = (x0: number, cw: number, h: number, t: number) => {
       const cx = x0 + cw / 2;
       const floor = h * 0.78;
-      const top = 15;
-      label('GRAV', cx, 9, glow(0.65), 6);
+      const top = 22;
+      label('GRAV', cx, 11, glow(0.65));
       ctx.strokeStyle = glow(0.25);
       ctx.lineWidth = 1;
       ctx.beginPath();
@@ -137,7 +137,7 @@
       ctx.arc(cx, y, 2.6, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
-      label(`${s.surfaceGravityG.toFixed(2)} g`, cx, h - 3, 'rgba(255,255,255,0.7)', 7);
+      label(`${s.surfaceGravityG.toFixed(2)} g`, cx, h - 4, 'rgba(255,255,255,0.7)');
     };
 
     // ── Cell D: air & heat ───────────────────────────────────────
@@ -145,7 +145,7 @@
       const cx = x0 + cw / 2;
       const bx = x0 + cw * 0.16;
       const bw = cw * 0.68;
-      label('AIR', cx, 9, glow(0.65), 6);
+      label('AIR', cx, 11, glow(0.65));
       // temperature gradient bar
       const ty = h * 0.36;
       const grad = ctx.createLinearGradient(bx, 0, bx + bw, 0);
@@ -176,12 +176,13 @@
       ctx.moveTo(bx, py);
       ctx.lineTo(bx + Math.max(2, pBar * bw), py);
       ctx.stroke();
-      label(`${s.surfaceTempK} K · ${pLabel}`, cx, h - 3, 'rgba(255,255,255,0.7)', 7);
+      label(`${s.surfaceTempK} K`, cx, h - 17, 'rgba(255,255,255,0.7)');
+      label(pLabel, cx, h - 4, 'rgba(255,255,255,0.7)');
     };
 
     const draw = (t: number) => {
       const w = el.clientWidth || 300;
-      const h = el.clientHeight || 58;
+      const h = el.clientHeight || 84;
       ctx.clearRect(0, 0, w, h);
       const cw = w / 3;
       // separators
@@ -189,8 +190,8 @@
       ctx.lineWidth = 1;
       for (const gx of [cw, cw * 2]) {
         ctx.beginPath();
-        ctx.moveTo(gx, 6);
-        ctx.lineTo(gx, h - 12);
+        ctx.moveTo(gx, 8);
+        ctx.lineTo(gx, h - 8);
         ctx.stroke();
       }
       cellRotation(0, cw, h, t);
@@ -237,6 +238,6 @@
   .tiles-canvas {
     display: block;
     width: 100%;
-    height: 58px;
+    height: 84px;
   }
 </style>

@@ -28,6 +28,57 @@ async function tinyText(page: Page): Promise<Offender[]> {
     const out: { sel: string; why: string; text: string }[] = [];
     const seen = new Set<Element>();
     const skip = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TITLE', 'HEAD', 'CANVAS']);
+
+    // Alpha of any computed colour: rgba(a, b, c, x), rgb(a b c / x), color(srgb a b c / x),
+    // oklch(l c h / x) ... A colour with no alpha part is opaque.
+    const alphaOf = (c: string) => {
+      const slash = c.match(/\/\s*([0-9.]+)(%?)\s*\)$/);
+      if (slash) return Number(slash[1]) / (slash[2] ? 100 : 1);
+      const legacy = c.match(/^rgba\(\s*[0-9.]+\s*,\s*[0-9.]+\s*,\s*[0-9.]+\s*,\s*([0-9.]+)\s*\)$/);
+      return legacy ? Number(legacy[1]) : 1;
+    };
+    // Resting opacity of the ancestor chain: skip only ancestors in a FINITE fade (an entrance
+    // transition or animation that will end); an infinite pulse is part of the resting look.
+    const chainOpacity = (el: Element) => {
+      let o = 1;
+      for (let a: Element | null = el; a; a = a.parentElement) {
+        const fading = a.getAnimations().some((an) => {
+          const it = an.effect?.getComputedTiming().iterations;
+          return it !== Infinity;
+        });
+        if (!fading) o *= Number(getComputedStyle(a).opacity);
+      }
+      return o;
+    };
+    const judge = (
+      el: Element,
+      cs: CSSStyleDeclaration,
+      text: string,
+      label: string,
+      scale: number,
+    ) => {
+      const size = parseFloat(cs.fontSize) * scale;
+      const alpha = alphaOf(cs.color) * chainOpacity(el);
+      const why =
+        size < floor - 0.01
+          ? `${Math.round(size * 100) / 100}px`
+          : cs.fontStyle === 'italic' && size < 14 - 0.01
+            ? `italic ${size}px`
+            : size < 12 && alpha < 0.58 && /[\p{L}\p{N}]/u.test(text)
+              ? `${size}px at alpha ${Math.round(alpha * 1000) / 1000}`
+              : '';
+      if (why) out.push({ sel: label, why, text: text.slice(0, 30) });
+    };
+    const labelOf = (el: Element, pseudo = '') => {
+      const cls = typeof el.className === 'string' ? el.className.trim().split(/\s+/)[0] : '';
+      return el.tagName.toLowerCase() + (cls ? '.' + cls : '') + pseudo;
+    };
+    const shown = (el: Element) => {
+      if (!el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) return false;
+      const rect = el.getBoundingClientRect();
+      return rect.width > 1 && rect.height > 1;
+    };
+
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       const text = (n.textContent ?? '').replace(/[\u200b-\u200d\ufeff]/g, '').trim();
@@ -36,37 +87,40 @@ async function tinyText(page: Page): Promise<Offender[]> {
       seen.add(el);
       // Lab science figures are viewBox-scaled charts with their own sizes (allow-listed in A1).
       if (el.closest('svg.figure-root')) continue;
-      if (!el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) continue;
-      const rect = el.getBoundingClientRect();
-      if (rect.width <= 1 || rect.height <= 1) continue;
-      let size = parseFloat(getComputedStyle(el).fontSize);
+      if (!shown(el)) continue;
+      let scale = 1;
       if (el instanceof SVGGraphicsElement) {
         const m = el.getScreenCTM();
-        if (m) size *= Math.hypot(m.a, m.b);
+        if (m) scale = Math.hypot(m.a, m.b);
       }
-      const cs = getComputedStyle(el);
-      const col = cs.color.match(/^rgba?\([0-9.]+, [0-9.]+, [0-9.]+(?:, ([0-9.]+))?\)$/);
-      let alpha = col ? Number(col[1] ?? 1) : 1;
-      // An ancestor mid fade-in/out (running animation or transition) is not a resting opacity.
-      for (let a: Element | null = el; a; a = a.parentElement) {
-        if (a.getAnimations().length) continue;
-        alpha *= Number(getComputedStyle(a).opacity);
+      judge(el, getComputedStyle(el), text, labelOf(el), scale);
+    }
+
+    // Pseudo-elements: ::placeholder of inputs, and generated ::before / ::after text.
+    for (const el of document.body.querySelectorAll('*')) {
+      if (skip.has(el.tagName) || el.closest('svg.figure-root') || el instanceof SVGElement)
+        continue;
+      if (!shown(el)) continue;
+      if (
+        (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) &&
+        el.placeholder.trim()
+      ) {
+        judge(
+          el,
+          getComputedStyle(el, '::placeholder'),
+          el.placeholder,
+          labelOf(el, '::placeholder'),
+          1,
+        );
       }
-      const why =
-        size < floor - 0.01
-          ? `${Math.round(size * 100) / 100}px`
-          : cs.fontStyle === 'italic' && size < 14 - 0.01
-            ? `italic ${size}px`
-            : size < 12 && alpha < 0.58 && /[\p{L}\p{N}]/u.test(text)
-              ? `${size}px at alpha ${alpha}`
-              : '';
-      if (why) {
-        const cls = typeof el.className === 'string' ? el.className.trim().split(/\s+/)[0] : '';
-        out.push({
-          sel: el.tagName.toLowerCase() + (cls ? '.' + cls : ''),
-          why,
-          text: text.slice(0, 30),
-        });
+      for (const p of ['::before', '::after']) {
+        const pcs = getComputedStyle(el, p);
+        const content = pcs.content;
+        if (!content || content === 'none' || content === 'normal') continue;
+        const text = content.replace(/^"|"$/g, '').trim();
+        if (!text || /^(counter|attr)\(/.test(text)) continue;
+        if (pcs.display === 'none' || pcs.visibility === 'hidden') continue;
+        judge(el, pcs, text, labelOf(el, p), 1);
       }
     }
     return out;
@@ -248,4 +302,56 @@ test.describe('bigger labels do not push card grids off screen (UX A1 layout)', 
       expect(stray.slice(0, 5)).toEqual([]);
     });
   }
+});
+
+test.describe('type-floor detector catches each broken rule (self-check)', () => {
+  const fixture = (body: string) => `<!doctype html><html><head><style>
+    body { background:#000; color:#fff; font:14px 'Space Mono', monospace; }
+    @keyframes pulse { 0%,100% { opacity:.3 } 50% { opacity:.3 } }
+    @keyframes fadein { from { opacity:0 } to { opacity:1 } }
+    .small9 { font-size:9px }
+    .dim11 { font-size:11px; color:rgba(255,255,255,.4) }
+    .dim11-srgb { font-size:11px; color:color(srgb 1 1 1 / .4) }
+    .dim11-slash { font-size:11px; color:rgb(255 255 255 / 40%) }
+    .dim11-oklch { font-size:11px; color:oklch(0.9 0.02 250 / .4) }
+    .ph::placeholder { font-size:9px }
+    .bef::before { content:'tiny'; font-size:9px }
+    .aft::after { content:'dim'; font-size:11px; color:rgba(255,255,255,.3) }
+    .pulse { font-size:11px; animation:pulse 1s infinite }
+    .fade { font-size:11px; animation:fadein 60s ease-in 1 both }
+    .italic12 { font-size:12px; font-style:italic }
+  </style></head><body>${body}</body></html>`;
+
+  test('flags what is broken, ignores a finite fade and a healthy label', async ({ page }) => {
+    await page.setContent(
+      fixture(`
+      <p class="small9">floor</p>
+      <p class="dim11">dim rgba</p>
+      <p class="dim11-srgb">dim srgb</p>
+      <p class="dim11-slash">dim slash</p>
+      <p class="dim11-oklch">dim oklch</p>
+      <input class="ph" placeholder="placeholder">
+      <p class="bef">x</p>
+      <p class="aft">y</p>
+      <p class="pulse">pulse</p>
+      <p class="italic12">italic</p>
+      <div class="fade"><p style="font-size:11px">fading in, healthy</p></div>
+      <p style="font-size:11px;color:rgba(255,255,255,.6)">healthy label</p>`),
+    );
+    const found = (await tinyText(page)).map((o) => o.sel).sort();
+    expect(found).toEqual(
+      [
+        'p.small9',
+        'p.dim11',
+        'p.dim11-srgb',
+        'p.dim11-slash',
+        'p.dim11-oklch',
+        'input.ph::placeholder',
+        'p.bef::before',
+        'p.aft::after',
+        'p.pulse',
+        'p.italic12',
+      ].sort(),
+    );
+  });
 });

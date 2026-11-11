@@ -152,7 +152,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 8px 0 0;
   }
   @media (max-width: 768px) {

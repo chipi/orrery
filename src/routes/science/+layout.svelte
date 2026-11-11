@@ -241,7 +241,7 @@
     font-family: var(--font-display);
     font-size: 12px;
     letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 0 0 12px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);

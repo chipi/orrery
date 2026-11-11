@@ -964,7 +964,7 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-flown {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.03);
   }
@@ -974,7 +974,7 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-cancelled {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.15);
     text-decoration: line-through;
   }
@@ -1382,7 +1382,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(180, 200, 255, 0.55);
+    color: rgba(180, 200, 255, 0.6);
     align-self: center;
   }
   .flight-rows dd {
@@ -1400,7 +1400,7 @@
   }
   .flight-source {
     font-size: var(--size-label);
-    color: rgba(180, 200, 255, 0.5);
+    color: rgba(180, 200, 255, 0.6);
     margin: 6px 0 0;
     line-height: 1.4;
   }

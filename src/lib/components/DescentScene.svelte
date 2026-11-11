@@ -728,7 +728,7 @@
   .beat .lbl {
     font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(240, 220, 200, 0.5);
+    color: rgba(240, 220, 200, 0.6);
     white-space: nowrap;
     display: inline-block;
   }

@@ -720,7 +720,7 @@
     margin: 2px 0 0 22px;
     font-size: var(--size-meta);
     line-height: 1.3;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .row-learn {
     display: inline-block;

@@ -47,8 +47,11 @@ async function tinyText(page: Page): Promise<Offender[]> {
       const cs = getComputedStyle(el);
       const col = cs.color.match(/^rgba?\([0-9.]+, [0-9.]+, [0-9.]+(?:, ([0-9.]+))?\)$/);
       let alpha = col ? Number(col[1] ?? 1) : 1;
-      for (let a: Element | null = el; a; a = a.parentElement)
+      // An ancestor mid fade-in/out (running animation or transition) is not a resting opacity.
+      for (let a: Element | null = el; a; a = a.parentElement) {
+        if (a.getAnimations().length) continue;
         alpha *= Number(getComputedStyle(a).opacity);
+      }
       const why =
         size < floor - 0.01
           ? `${Math.round(size * 100) / 100}px`

@@ -112,7 +112,7 @@
     font-size: 14px;
   }
   .city {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-size: 12px;
   }
   .item {

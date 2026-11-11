@@ -286,7 +286,7 @@
     margin: 0;
   }
   .credit {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin-left: 4px;
   }
 </style>

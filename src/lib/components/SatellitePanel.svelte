@@ -366,7 +366,7 @@
     outline: none;
   }
   .editorial.empty {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .composition {
     margin-top: 14px;

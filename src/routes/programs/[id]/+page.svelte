@@ -545,7 +545,7 @@
     font-size: 15px;
   }
   .timeline .t-name.t-ctx {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-weight: 400;
   }
   .timeline .t-note {

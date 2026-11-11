@@ -771,7 +771,7 @@
     filter: none;
   }
   .paths-legend-row .year {
-    color: rgba(221, 228, 255, 0.55);
+    color: rgba(221, 228, 255, 0.6);
     font-size: 11px;
     letter-spacing: 0.02em;
     margin-left: 8px;

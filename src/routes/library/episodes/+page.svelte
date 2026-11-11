@@ -311,7 +311,7 @@
   .ep-meta {
     margin: 0 0 10px;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     line-height: 1.4;
     display: flex;
     flex-wrap: wrap;
@@ -340,7 +340,7 @@
     font-variant-numeric: tabular-nums;
   }
   .ep-author {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 
   .ep-read {
@@ -406,12 +406,12 @@
     outline: none;
   }
   .ep-sources-pending {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 
   .ep-empty {
     text-align: center;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-top: 40px;
   }
 

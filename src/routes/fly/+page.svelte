@@ -4843,7 +4843,7 @@
     z-index: 12;
   }
   .milestone-marker-label.past {
-    color: rgba(45, 212, 168, 0.5);
+    color: rgba(45, 212, 168, 0.6);
   }
   .milestone-marker-label.future {
     color: rgba(45, 212, 168, 0.7);
@@ -5771,7 +5771,7 @@
     outline: none;
   }
   .phase-pre-launch {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.2);
   }
   .phase-outbound {
@@ -5820,7 +5820,7 @@
     overflow-wrap: anywhere;
   }
   .hud-val.dim {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: 400;
   }
   .hud-val.teal {
@@ -5828,7 +5828,7 @@
   }
   /* Dim continuation inside a value cell (e.g. light-minute alongside Mkm). */
   .hud-val-sub {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: 400;
   }
 
@@ -6616,7 +6616,7 @@
   /* Dimmed appearance when a panel toggle is OFF — the button still
      reads as clickable, but its panel is hidden. */
   .toggle[aria-pressed='false'] {
-    color: rgba(221, 228, 255, 0.5);
+    color: rgba(221, 228, 255, 0.6);
     border-color: rgba(68, 102, 255, 0.2);
   }
   /* Gold-themed variant for the lens-gated cluster on the left. Reuses
@@ -6632,7 +6632,7 @@
     background: rgba(48, 38, 16, 0.95);
   }
   .toggle.toggle-lens[aria-pressed='false'] {
-    color: rgba(255, 200, 80, 0.5);
+    color: rgba(255, 200, 80, 0.6);
     border-color: rgba(255, 200, 80, 0.22);
   }
   /* User-dismissed panels use display:none so they release their
@@ -6809,6 +6809,6 @@
   }
   .empty {
     font-size: var(--size-meta);
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
 </style>

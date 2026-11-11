@@ -368,7 +368,7 @@
     border-color: rgba(184, 164, 112, 0.7);
   }
   .editorial.empty {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .composition {
     margin: 0 0 10px;

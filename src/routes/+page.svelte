@@ -1460,7 +1460,7 @@
     font-family: var(--font-mono), 'Space Mono', monospace;
     font-size: 12px;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 
   .footer-block {

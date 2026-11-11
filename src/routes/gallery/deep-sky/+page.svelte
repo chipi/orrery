@@ -353,7 +353,7 @@
   }
   .chip .n {
     margin-left: 7px;
-    opacity: 0.8;
+    opacity: 1;
     font-size: var(--size-label);
   }
   .chip.active .n {
@@ -457,7 +457,7 @@
     content: '·';
     margin-right: 2px;
     letter-spacing: 0;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   /* Specificity must beat `.tile img` (which forces width:100%/height:auto). */
   .t-scope .t-logo {
@@ -476,7 +476,7 @@
   .t-desig::before {
     content: '·';
     margin-right: 5px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
   }
 
   .gallery-footer {
@@ -575,7 +575,7 @@
   }
   .lb-desig-sep {
     margin: 0 8px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .lb-logo {
     height: 20px;

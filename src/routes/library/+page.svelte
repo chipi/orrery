@@ -564,7 +564,7 @@
   .ln-row .lbl {
     /* Was 0.35 — bumped to 0.55 (F3). Still clearly secondary against
        the 0.65 body text. */
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-right: 4px;
   }
   .ln-target {
@@ -601,7 +601,7 @@
   .ln-kind,
   .ln-lang,
   .ln-verified {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .ln-verified time {
     color: rgba(78, 205, 196, 0.75);

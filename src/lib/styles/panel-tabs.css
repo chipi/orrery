@@ -111,7 +111,7 @@
 
 .empty-tab {
   font-size: var(--size-meta);
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-label);
   margin: 0;
 }
 

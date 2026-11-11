@@ -188,7 +188,7 @@
   }
 
   .separator {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--color-text-label);
     margin: 0 4px;
   }
 
@@ -249,7 +249,7 @@
 
   .tier-routine {
     background: rgba(255, 255, 255, 0.04);
-    color: rgba(230, 232, 238, 0.5);
+    color: rgba(230, 232, 238, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 

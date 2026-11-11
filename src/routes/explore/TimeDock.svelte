@@ -352,7 +352,7 @@
     border: none;
     border-right: 1px solid rgba(75, 156, 211, 0.18);
     background: rgba(15, 18, 35, 0.4);
-    color: rgba(207, 224, 255, 0.55);
+    color: rgba(207, 224, 255, 0.6);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.04em;

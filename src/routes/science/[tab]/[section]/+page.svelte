@@ -425,7 +425,7 @@
     text-decoration: underline;
   }
   .ctx {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-left: 8px;
   }
   .tier {

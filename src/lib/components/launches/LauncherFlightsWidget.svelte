@@ -151,7 +151,7 @@
   }
 
   .pad {
-    color: rgba(230, 232, 238, 0.5);
+    color: rgba(230, 232, 238, 0.6);
     font-size: 11px;
   }
 

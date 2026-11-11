@@ -177,7 +177,7 @@
   }
   .used li:not(:last-child)::after {
     content: ' · ';
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .k {
     font-family: var(--font-mono, 'Space Mono', monospace);

@@ -362,7 +362,7 @@
     transform: translateX(-50%);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
-    color: rgba(180, 200, 255, 0.55);
+    color: rgba(180, 200, 255, 0.6);
     letter-spacing: 1px;
   }
   .strip {

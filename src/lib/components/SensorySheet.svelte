@@ -429,7 +429,7 @@
   }
   .row-desc {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     line-height: 1.3;
   }
 

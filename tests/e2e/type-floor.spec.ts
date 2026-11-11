@@ -106,8 +106,12 @@ const SCREENS: Screen[] = [
     open: async (page) => {
       await page.goto('/missions');
       const toggle = page.locator('button.filters-toggle');
+      await expect(page.locator('[data-testid^="mission-card-"]').first()).toBeVisible({
+        timeout: 20_000,
+      });
       await expect(toggle).toBeVisible({ timeout: 15_000 });
       if ((await toggle.getAttribute('aria-expanded')) !== 'true') await toggle.click();
+      await expect(toggle).toHaveAttribute('aria-expanded', 'true');
       await page.waitForTimeout(400);
     },
   },

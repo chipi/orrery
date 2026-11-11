@@ -58,7 +58,7 @@
     }
 
     // Header at top.
-    ctx.font = "bold 9px 'Space Mono', monospace";
+    ctx.font = "bold 11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.textAlign = 'left';
     ctx.fillText(m.sizes_header(), 12, 14);
@@ -110,7 +110,7 @@
       labelW: number;
       altRow: boolean;
     };
-    ctx.font = "9px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     const layouts: Layout[] = [];
     let cursorX = startX;
     for (const s of SIZES) {
@@ -207,12 +207,12 @@
         ctx.lineTo(cx, labelTopY - 8);
         ctx.stroke();
       }
-      ctx.font = `${isThis ? 'bold ' : ''}9px 'Space Mono', monospace`;
+      ctx.font = `${isThis ? 'bold ' : ''}11px 'Space Mono', monospace`;
       ctx.fillStyle = isThis ? '#fff' : 'rgba(255,255,255,0.85)';
       ctx.fillText(lay.nameLabel, cx, labelTopY);
-      ctx.font = "8px 'Space Mono', monospace";
-      ctx.fillStyle = isThis ? s.col : 'rgba(255,255,255,0.5)';
-      ctx.fillText(lay.kmLabel, cx, labelTopY + 12);
+      ctx.font = "11px 'Space Mono', monospace";
+      ctx.fillStyle = isThis ? s.col : 'rgba(255,255,255,0.6)';
+      ctx.fillText(lay.kmLabel, cx, labelTopY + 13);
     }
 
     // Baseline tick (subtle horizontal line under all planets).
@@ -224,8 +224,8 @@
     ctx.stroke();
 
     // Source / scale note at the bottom.
-    ctx.font = "7px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+    ctx.font = "11px 'Space Mono', monospace";
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.textAlign = 'left';
     ctx.fillText(m.sizes_source(), 12, cssH - 8);
   }

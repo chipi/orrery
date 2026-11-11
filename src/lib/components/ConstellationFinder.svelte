@@ -73,8 +73,8 @@
     }
 
     if (label) {
-      ctx.font = '10px "Space Mono", monospace';
-      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.font = '11px "Space Mono", monospace';
+      ctx.fillStyle = 'rgba(255,255,255,0.6)';
       ctx.fillText(label.toUpperCase(), m, H - 10);
     }
   }

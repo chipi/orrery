@@ -7790,7 +7790,7 @@ sample      ${debugInfo.projectedPxSample}`}
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .cell-value {

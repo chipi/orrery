@@ -108,12 +108,12 @@
 
 <style>
   /* Aligned to the shared detail-panel family (StarPanel / DeepSkyPanel /
-     MilkyWayPanel): rem units, var(--muted)/var(--text) tokens, teal #4ecdc4
+     MilkyWayPanel): rem units, var(--color-text-label)/var(--text) tokens, teal #4ecdc4
      accent — NOT bespoke px / colours. */
   .sub {
     font-size: 0.7rem;
     letter-spacing: 0.06em;
-    color: var(--muted, #9aa4bf);
+    color: var(--color-text-label);
     margin: 0 0 0.75rem;
   }
   .status {
@@ -154,7 +154,7 @@
     font-size: var(--size-label);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--muted, #9aa4bf);
+    color: var(--color-text-label);
     margin: 0 0 0.4rem;
   }
   .heading {
@@ -174,7 +174,7 @@
     color: var(--text, #e9eefc);
   }
   .muted {
-    color: var(--muted, #9aa4bf);
+    color: var(--color-text-label);
   }
   .mission-link {
     display: inline-block;

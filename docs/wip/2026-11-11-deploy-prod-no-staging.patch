@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/deploy-prod.yml b/.github/workflows/deploy-prod.yml
+index 08d40ff..f5df23c 100644
+--- a/.github/workflows/deploy-prod.yml
++++ b/.github/workflows/deploy-prod.yml
+@@ -143,8 +143,8 @@ jobs:
+           # `short` output preserved for the Sentry release labelling
+           # downstream — Sentry wants HEAD's actual commit SHA on the
+           # release, not the image tag (the deployed code is HEAD; the
+-          # pipeline-runner image is independent). A fixed 8 hex, the same as
+-          # staging.yml, so one commit has one release name in every tier;
++          # pipeline-runner image is independent). A fixed 8 hex, so one commit
++          # has one release name wherever it is reported;
+           # `git rev-parse --short` varies its length with the clone.
+           echo "short=$(git rev-parse HEAD | cut -c1-8)" >> "$GITHUB_OUTPUT"
+           echo "::notice::Deploying with ORRERY_PIPELINE_IMAGE_TAG=$TAG"
+@@ -200,7 +200,7 @@ jobs:
+           # keep the repo clean. Browser-only; never point at the tailnet
+           # homelab:8090 (unreachable for public users).
+           PUBLIC_SENTRY_DSN: ${{ secrets.PUBLIC_SENTRY_DSN }}
+-          # env label aligned with the o11y estate (dev / staging / prod).
++          # env label aligned with the o11y estate (dev / prod).
+           PUBLIC_SENTRY_ENVIRONMENT: prod
+           PUBLIC_SENTRY_RELEASE: gha-${{ steps.sha.outputs.short }}
+           # Self-hosted Umami — mirrors the Sentry wiring above exactly: the

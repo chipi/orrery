@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "impact-smudge",
+      "label": "Impacto da Beresheet",
+      "label_short": "Impacto",
+      "explain": "A mancha escura onde o módulo israelense Beresheet caiu em 11 de abril de 2019 no Mare Serenitatis. Ele bateu em ângulo baixo, vindo do norte, cerca de 1000 m/s mais rápido que o planejado; a mancha tem cerca de 10 m e reduz o brilho da superfície em cerca de 10%."
+    }
+  ]
 }

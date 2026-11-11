@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
@@ -29,6 +30,8 @@
     exploded_art: Diagram[];
     landing_art?: (Diagram & { route: string })[];
     blueprint_art?: (Diagram & { route: string })[];
+    site_illustrations?: (Diagram & { route: string })[];
+    mission_trajectories?: (Diagram & { route: string })[];
     diagrams_science: Diagram[];
     posters: Poster[];
     lab_illustrations: Diagram[];
@@ -109,6 +112,7 @@
 
 <svelte:head>
   <title>{m.colophon_title()} — Orrery</title>
+  <meta name="description" content={metaDescription(m.colophon_intro())} />
 </svelte:head>
 
 {#snippet showAll(key: string, count: number)}
@@ -161,6 +165,18 @@
           <li>
             <a href="#sec-blueprints">{m.colophon_section_blueprints()}</a>
             <span class="counts">· {data.blueprint_art.length}</span>
+          </li>
+        {/if}
+        {#if data.mission_trajectories && data.mission_trajectories.length > 0}
+          <li>
+            <a href="#sec-mission-trajectories">{m.colophon_section_mission_trajectories()}</a>
+            <span class="counts">· {data.mission_trajectories.length}</span>
+          </li>
+        {/if}
+        {#if data.site_illustrations && data.site_illustrations.length > 0}
+          <li>
+            <a href="#sec-site-illustrations">{m.colophon_section_site_illustrations()}</a>
+            <span class="counts">· {data.site_illustrations.length}</span>
           </li>
         {/if}
         <li>
@@ -346,6 +362,70 @@
       </ul>
       {@render showAll('posters', data.posters.length)}
     </section>
+
+    <!-- Mission trajectory plots: drawn in code from /fly's trajectory model (scripts/render-mission-thumbnails.ts), one per mission. -->
+    {#if data.mission_trajectories && data.mission_trajectories.length > 0}
+      <section class="block" aria-labelledby="sec-mission-trajectories">
+        <h2 id="sec-mission-trajectories">
+          {m.colophon_section_mission_trajectories()}<span class="count"
+            >{data.mission_trajectories.length}</span
+          >
+        </h2>
+        <p class="block-note">{m.colophon_mission_trajectories_note()}</p>
+        <ul class="thumb-grid wide">
+          {#each shown('mission-trajectories', data.mission_trajectories) as d (d.file)}
+            <li class="thumb-card">
+              <button
+                type="button"
+                class="thumb-open"
+                onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: d.route })}
+              >
+                <img
+                  {...responsive(srcOf(d.file), IMAGE_SIZES.colophonWide)}
+                  alt={d.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <span class="thumb-title">{d.title}</span>
+            </li>
+          {/each}
+        </ul>
+        {@render showAll('mission-trajectories', data.mission_trajectories.length)}
+      </section>
+    {/if}
+
+    <!-- Illustrated site maps: AI-generated block dioramas (site panel STORY tab, /moon/<id>, /mars/<id>). -->
+    {#if data.site_illustrations && data.site_illustrations.length > 0}
+      <section class="block" aria-labelledby="sec-site-illustrations">
+        <h2 id="sec-site-illustrations">
+          {m.colophon_section_site_illustrations()}<span class="count"
+            >{data.site_illustrations.length}</span
+          >
+        </h2>
+        <p class="block-note">{m.colophon_site_illustrations_note()}</p>
+        <ul class="thumb-grid wide">
+          {#each shown('site-illustrations', data.site_illustrations) as d (d.file)}
+            <li class="thumb-card">
+              <button
+                type="button"
+                class="thumb-open"
+                onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: d.route })}
+              >
+                <img
+                  {...responsive(srcOf(d.file), IMAGE_SIZES.colophonWide)}
+                  alt={d.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <span class="thumb-title">{d.title}</span>
+            </li>
+          {/each}
+        </ul>
+        {@render showAll('site-illustrations', data.site_illustrations.length)}
+      </section>
+    {/if}
 
     <!-- Physics Lab illustrations: ORRERY originals, AI-generated (/lab).
          Renders only once an approved batch lands (empty at v0.9 ship). -->

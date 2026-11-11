@@ -1,4 +1,17 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de aterrizaje de Spirit",
+      "label_short": "Módulo",
+      "explain": "La plataforma de aterrizaje que llevó al rover Spirit al cráter Gusev el 4 de enero de 2004 y se quedó allí. El pequeño cráter justo al noroeste es el que el equipo del rover bautizó Sleepy Hollow."
+    },
+    {
+      "id": "sleepy-hollow",
+      "label": "Cráter Sleepy Hollow",
+      "label_short": "Sleepy Hollow",
+      "explain": "Un pequeño cráter de menos de 20 m de ancho, justo al noroeste del módulo de aterrizaje, al que el equipo del rover Spirit bautizó Sleepy Hollow. El anillo marca su centro."
+    }
+  ],
   "panorama_caption": "El panorama McMurdo de Spirit, tomado desde Low Ridge, junto a Home Plate, mientras el rover pasaba el invierno marciano de 2006 (soles 814–932). En el horizonte, Husband Hill, con las dunas onduladas de El Dorado a sus pies."
 }

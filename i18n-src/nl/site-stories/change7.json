@@ -1,0 +1,38 @@
+{
+  "intro": "Chang'e 7 is China's robotverkenner voor de zuidpool van de Maan, vooruitlopend op de geplande bemande landing van China. Eén lancering brengt een orbiter en een lander omhoog, en op de lander een rover en een kleine springsonde die ontworpen is om in een permanent beschaduwde krater te springen, waar nooit zonlicht komt en waar waterijs mogelijk miljarden jaren heeft standgehouden. Het gemelde doel is een rug naast de krater Shackleton, vlak bij de pool. De lancering, gepland voor eind augustus 2026, werd op 23 augustus afgeblazen: de missie „voldoet niet aan de lanceervoorwaarden”, aldus China, dat geen specifieke reden en geen nieuwe datum gaf.",
+  "chapters": [
+    {
+      "id": "plan",
+      "title": "Het plan",
+      "subtitle": "Een orbiter, een lander, een rover en een springsonde",
+      "images": [
+        {
+          "src": "/images/moon-sites/change7/01.webp",
+          "caption": "Impressie van Chang'e 7 op de zuidpool: de rover (links), de lander met zijn hoge zonnepaneel en de kleine springsonde (rechts). De orbiter blijft erboven, brengt het poolgebied in kaart en ondersteunt de voertuigen op de grond; China's satelliet Queqiao-2 geeft hun signalen door aan de Aarde. CNSA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "De lancering",
+      "subtitle": "Een Long March 5 vanaf Wenchang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/long-march-5/03.webp",
+          "caption": "Een Long March 5 in zijn assemblagehal in Wenchang, op het eiland Hainan. Chang'e 7 vliegt op deze zware raket vanaf lanceerplatform 101 — hetzelfde rakettype en hetzelfde platform waarmee Chang'e 5 en Chang'e 6 werden gelanceerd."
+        }
+      ]
+    },
+    {
+      "id": "lineage",
+      "title": "Wat eraan voorafging",
+      "subtitle": "Van de achterkant naar de pool",
+      "images": [
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Yutu-2, de rover die Chang'e 4 in januari 2019 op de achterkant van de Maan neerzette — de eerste zachte landing daar. Chang'e 7 is de volgende stap: naar de pool en de beschaduwde kraters waar het ijs kan liggen. Daarna moet Chang'e 8 testen hoe je kunt bouwen met materiaal van de Maan zelf, voor het Internationale Maanonderzoeksstation dat China bij de pool leidt, met een basisstation gepland rond 2035."
+        }
+      ]
+    }
+  ]
+}

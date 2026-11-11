@@ -62,6 +62,10 @@ export interface CropInput {
    *  POST_CROP_BLACK_FRAC, 0.4). Route tiles pass a stricter value so a
    *  frame edge cutting through the tile sends the picker to the next scene. */
   maxBlackFrac?: number;
+  /** Window height in pixels when it differs from `cropSize` (the width).
+   *  Only for rasters that are not warped north-up; the output is
+   *  cropSize x cropHeight. */
+  cropHeight?: number;
 }
 
 export interface CropResult {
@@ -131,6 +135,7 @@ const DOWNLOAD_MAX_ATTEMPTS = 3;
  */
 export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropResult> {
   const cropSize = input.cropSize ?? 2048;
+  const cropHeight = input.cropHeight ?? cropSize;
   const jpegQuality = input.jpegQuality ?? 88;
 
   if (!input.sourceUrl && !input.localRasterPath) {
@@ -194,10 +199,10 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
     // smaller than 2048 (we accept it and pad rather than fail).
     const half = Math.floor(cropSize / 2);
     let left = Math.round(px - half);
-    let top = Math.round(py - half);
+    let top = Math.round(py - Math.floor(cropHeight / 2));
     if (
       input.requireCentered &&
-      (left < 0 || top < 0 || left + cropSize > width || top + cropSize > height)
+      (left < 0 || top < 0 || left + cropSize > width || top + cropHeight > height)
     ) {
       throw new CropError(
         'TARGET_NEAR_EDGE',
@@ -205,9 +210,9 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
       );
     }
     left = Math.max(0, Math.min(width - cropSize, left));
-    top = Math.max(0, Math.min(height - cropSize, top));
+    top = Math.max(0, Math.min(height - cropHeight, top));
     const actualW = Math.min(cropSize, width - left);
-    const actualH = Math.min(cropSize, height - top);
+    const actualH = Math.min(cropHeight, height - top);
 
     // Read the window for each band. LROC NAC + HiRISE single-band
     // greyscale → 1 band. HiRISE RGB → 3 bands. Future colour
@@ -226,7 +231,11 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
       input.bandIndex != null
         ? [input.bandIndex]
         : Array.from({ length: ds.bands.count() }, (_, i) => i + 1);
-    const bandData = await readStretchedBands(ds, bandIndices, left, top, actualW, actualH);
+    const northTiltDeg = trueNorthTiltDeg(transform, llSrs, gt, input, wkt, px, py);
+    const warpNorthUp = Math.abs(northTiltDeg) > NORTH_TILT_WARP_DEG;
+    const bandData = warpNorthUp
+      ? await readNorthUpBands(ds, bandIndices, input, wkt, cropSize, gt)
+      : await readStretchedBands(ds, bandIndices, left, top, actualW, actualH);
     const outBands = bandData.length;
 
     // Create the output JPEG in memory via GDAL's MEM driver, then
@@ -275,6 +284,84 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
   } finally {
     ds.close();
   }
+}
+
+/** A crop whose image-up is more than this many degrees off true north is
+ *  re-projected into the site-local north-up frame (see readNorthUpBands). */
+const NORTH_TILT_WARP_DEG = 0.5;
+
+/**
+ * Angle (degrees, clockwise from image-up) of true north at the target in the
+ * source raster's pixel grid. 0 for equirectangular rasters; large for polar
+ * stereographic ones (Phoenix, 68 N: about 54 degrees).
+ */
+function trueNorthTiltDeg(
+  transform: gdal.CoordinateTransformation,
+  llSrs: gdal.SpatialReference,
+  gt: number[],
+  input: CropInput,
+  wkt: string,
+  px: number,
+  py: number,
+): number {
+  const step = 0.001;
+  const p = llSrs.EPSGTreatsAsLatLong()
+    ? transform.transformPoint(input.targetLat + step, input.targetLon)
+    : transform.transformPoint(input.targetLon, input.targetLat + step);
+  // Same Equirectangular correction as the target pixel, or a lat0 != 0 raster reads as tilted.
+  const c = correctHiriseProjection(wkt, p.x, p.y);
+  const [nx, ny] = projectedToPixel(gt, c.xCorr, c.yCorr);
+  const dx = nx - px;
+  const dy = ny - py;
+  if (Math.hypot(dx, dy) < 1e-9) return 0;
+  // Up in image coordinates is -y; clockwise-from-up = atan2(dx, -dy).
+  return (Math.atan2(dx, -dy) * 180) / Math.PI;
+}
+
+/**
+ * Re-project the window around the target into a Lambert azimuthal
+ * equal-area grid centred on the target, so north is image-up and the pixel
+ * size is the source's. Used for rasters whose grid is not north-up (polar
+ * stereographic). Near the centre (a 512 m patch) the frame is
+ * indistinguishable from a local north-up map.
+ */
+async function readNorthUpBands(
+  ds: gdal.Dataset,
+  bandIndices: number[],
+  input: CropInput,
+  wkt: string,
+  cropSize: number,
+  gt: number[],
+): Promise<Uint8Array[]> {
+  const rMatch = wkt.match(/SPHEROID\["[^"]*",([0-9.]+)/);
+  const R = rMatch ? parseFloat(rMatch[1]) : 3396190;
+  const lon0 = input.targetLon;
+  const dstSrs = gdal.SpatialReference.fromProj4(
+    `+proj=laea +lat_0=${input.targetLat} +lon_0=${lon0} +x_0=0 +y_0=0 +R=${R} +units=m +no_defs`,
+  );
+  const pix = Math.hypot(gt[1], gt[2]);
+  const memDriver = gdal.drivers.get('MEM');
+  if (!memDriver) throw new Error('MEM driver not available');
+  const srcType = ds.bands.get(bandIndices[0]).dataType ?? gdal.GDT_UInt16;
+  const out: Uint8Array[] = [];
+  for (const bi of bandIndices) {
+    const dst = memDriver.create('', cropSize, cropSize, 1, srcType);
+    dst.srs = dstSrs;
+    dst.geoTransform = [(-cropSize / 2) * pix, pix, 0, (cropSize / 2) * pix, 0, -pix];
+    await gdal.reprojectImageAsync({
+      src: ds,
+      dst,
+      s_srs: ds.srs as gdal.SpatialReference,
+      t_srs: dstSrs,
+      resampling: gdal.GRA_Bilinear,
+      srcBands: [bi],
+      dstBands: [1],
+    });
+    const data = await dst.bands.get(1).pixels.readAsync(0, 0, cropSize, cropSize);
+    out.push(stretchToUint8(data));
+    dst.close();
+  }
+  return out;
 }
 
 /**

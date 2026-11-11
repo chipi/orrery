@@ -1,6 +1,7 @@
 {
   "title": "Lecture des contours",
   "intro_sentence": "La forme de la zone bon marché vous indique la géométrie des trajectoires viables — et où se situent les compromis.",
+  "seo_title": "Lire un diagramme porkchop : les courbes de niveau",
   "narrative_101": [
     "Vous connaissez maintenant les axes et l'échelle de couleurs. La compétence suivante consiste à lire la FORME de la zone peu coûteuse. Le lobe turquoise n'est pas une tache quelconque : c'est une véritable carte des trajectoires qui fonctionnent et de celles qui ne fonctionnent pas.",
     "Le diagramme porkchop classique de Mars comporte DEUX lobes bon marché par fenêtre de lancement, côte à côte. On les appelle les trajectoires « de type I » et « de type II » — même fenêtre, deux façons différentes de contourner le Soleil. Le type I prend le chemin court (angle de transfert inférieur à 180 degrés) et il est plus rapide. Le type II prend le chemin long (angle de transfert supérieur à 180 degrés) et il est plus lent, mais parfois moins cher. Les deux sont réels, et les deux ont été utilisés.",

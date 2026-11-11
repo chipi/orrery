@@ -84,6 +84,27 @@ const SURFACES = {
     }
     return [{ rel: 'videos', doc }];
   },
+  // illustrated site maps: the image description by siteId (src/lib/data/site-illustrations.ts)
+  'site-illustrations': () => {
+    const m = JSON.parse(fs.readFileSync('static/data/site-illustrations.json', 'utf8'));
+    const doc = {};
+    for (const e of m.illustrations) if (e.alt) doc[e.siteId] = { alt: e.alt };
+    return [{ rel: 'site-illustrations', doc }];
+  },
+  // /credits data section: description by entry id (src/lib/data/provenance.ts getDataSources)
+  'data-sources': () => {
+    const m = JSON.parse(fs.readFileSync('static/data/data-sources.json', 'utf8'));
+    const doc = {};
+    for (const e of m.entries) if (e.description) doc[e.id] = e.description;
+    return [{ rel: 'data-sources', doc }];
+  },
+  // /credits source logos: license_summary by source id (provenance.ts getSourceLogos)
+  'source-logos': () => {
+    const m = JSON.parse(fs.readFileSync('static/data/source-logos.json', 'utf8'));
+    const doc = {};
+    for (const s of m.sources) if (s.license_summary) doc[s.id] = s.license_summary;
+    return [{ rel: 'source-logos', doc }];
+  },
   // /colophon original-work: per section, entries keyed like src/lib/original-work.ts
   // originalWorkKey (file, else thumbnail, else the English title; dots → _)
   'original-work': () => {

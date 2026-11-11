@@ -197,7 +197,7 @@ describe('buildHotspotSurfacePatch', () => {
     }
   });
 
-  it('adds a dot + accent halo per annotation, converting metres to world units, and drops those outside the patch', () => {
+  it('adds one anchor per annotation, converting metres to world units, and drops those outside the patch', () => {
     const ann = (id: string, lat: number, lon: number) =>
       ({ id, lat_offset_m: lat, lon_offset_m: lon }) as unknown as HotspotAnnotation;
     const g = buildHotspotSurfacePatch({
@@ -207,16 +207,85 @@ describe('buildHotspotSurfacePatch', () => {
       regionalGroundMeters: 15000,
       annotations: [ann('in', 100, 50), ann('out', 0, 100000)],
     });
-    const dots = g.children.filter((c) => c.userData.annotationId === 'in');
-    expect(dots).toHaveLength(2);
+    const anchors = g.children.filter((c) => c.userData.annotationId === 'in');
+    expect(anchors).toHaveLength(1);
+    expect(anchors[0] instanceof THREE.Mesh).toBe(false);
     expect(g.children.some((c) => c.userData.annotationId === 'out')).toBe(false);
-    const detailDiameter = REGIONAL_PATCH_DIAMETER_WORLD_UNITS * (500 / 15000);
-    const mToU = detailDiameter / 500;
-    const dot = dots[0];
-    expect(dot.position.x).toBeCloseTo(50 * mToU, 10); // east = +X
-    expect(dot.position.z).toBeCloseTo(-100 * mToU, 10); // north = -Z
-    const halo = dots[1] as THREE.Mesh;
-    expect((halo.material as THREE.MeshBasicMaterial).color.getHexString()).toBe('ff8800');
+    // square region: the plane is sqrt(pi)/2 of the reference diameter on a side
+    const detail = size(layer(g, 'detail')!);
+    expect(anchors[0].position.x).toBeCloseTo((50 / 500) * detail.x, 6); // east = +X
+    expect(anchors[0].position.z).toBeCloseTo((-100 / 500) * detail.z, 6); // north = -Z
+  });
+
+  it('places an off-centre annotation on the same image fraction on a non-square, rotated patch', () => {
+    // Phoenix: 172.5 m east, 87 m south of the lander on a 512 m crop, aspect ~0.5
+    const rb = { lat_min: 0, lat_max: 1, lon_min: 0, lon_max: 2 };
+    const asp = aspectFromRegion(rb);
+    const input = {
+      siteId: 's',
+      accentColor: '#fff',
+      groundMeters: 512,
+      regionalGroundMeters: 15360,
+      regionBounds: rb,
+      annotations: [
+        { id: 'shield', lat_offset_m: -87, lon_offset_m: 172.5 } as unknown as HotspotAnnotation,
+      ],
+    };
+    const flat = size(layer(buildHotspotSurfacePatch(input), 'detail')!);
+    expect(flat.x / flat.z).toBeCloseTo(asp, 5);
+    for (const deg of [0, 54, -90, 180]) {
+      const g = buildHotspotSurfacePatch({ ...input, orientationDeg: deg });
+      const anchor = g.children.find((c) => c.userData.annotationId === 'shield')!;
+      const dims = flat;
+      // image fraction (east = +u, north = -z in the unrotated frame), compared with the
+      // patch mesh's own corner, spun by the same azimuth
+      const probe = new THREE.Vector3((172.5 / 512) * dims.x, 0, (87 / 512) * dims.z);
+      probe.applyAxisAngle(new THREE.Vector3(0, 1, 0), (deg * Math.PI) / 180);
+      expect(anchor.position.x).toBeCloseTo(probe.x, 6);
+      expect(anchor.position.z).toBeCloseTo(probe.z, 6);
+    }
+  });
+
+  it('turns the anchor with the patch so an area radius is projected along the image east', () => {
+    const g = buildHotspotSurfacePatch({
+      siteId: 's',
+      accentColor: '#fff',
+      groundMeters: 500,
+      regionalGroundMeters: 15000,
+      orientationDeg: 30,
+      annotations: [
+        {
+          id: 'a',
+          lat_offset_m: 0,
+          lon_offset_m: 0,
+          area_radius_m: 50,
+        } as unknown as HotspotAnnotation,
+      ],
+    });
+    const anchor = g.children.find((c) => c.userData.annotationId === 'a')!;
+    expect(anchor.rotation.y).toBeCloseTo((30 * Math.PI) / 180, 10);
+  });
+
+  it('gives an area anchor its true ground radius in patch units and a point anchor none', () => {
+    const g = buildHotspotSurfacePatch({
+      siteId: 's',
+      accentColor: '#fff',
+      groundMeters: 500,
+      regionalGroundMeters: 15000,
+      annotations: [
+        {
+          id: 'blast',
+          lat_offset_m: 0,
+          lon_offset_m: 0,
+          area_radius_m: 87,
+        } as unknown as HotspotAnnotation,
+        { id: 'pt', lat_offset_m: 5, lon_offset_m: 5 } as unknown as HotspotAnnotation,
+      ],
+    });
+    const mToU = size(layer(g, 'detail')!).x / 500;
+    const by = (id: string) => g.children.find((c) => c.userData.annotationId === id)!;
+    expect(by('blast').userData.radiusU).toBeCloseTo(87 * mToU, 6);
+    expect(by('pt').userData.radiusU).toBeUndefined();
   });
 
   it('assumes a 1 km patch for annotations when groundMeters is absent', () => {

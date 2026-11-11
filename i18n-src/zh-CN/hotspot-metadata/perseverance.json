@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "landing",
+      "label": "Perseverance 着陆点",
+      "label_short": "着陆点",
+      "explain": "Perseverance 于 2021 年 2 月 18 日在此着陆。在次日拍摄的这幅 HiRISE 图像中，火星车是中央带阴影的明亮小物体，位于将它降下的火箭吹开的两块明亮地面之间。火星车早已驶离。"
+    }
+  ],
   "panorama_caption": "Perseverance 的第一幅 360° 全景——着陆三天后拍摄。巡视器甲板占据前景；地平线上方可见 Jezero 陨石坑底部和远处的坑缘；上方条带是真实的火星天空。",
   "compass_zero_direction": "巡视器 +X 轴",
   "panorama_annotations": [

@@ -536,86 +536,6 @@
       "scored_at": "2026-05-24T00:26:39.123Z",
       "scoring_cost_usd": 0.007488
     },
-    "/images/earth-objects/lro/01.jpg": {
-      "score": 9,
-      "subject": "Earth rising above the cratered lunar surface as photographed by NASA's Lunar Reconnaissance Orbiter, showing Africa and swirling cloud patterns against the black of space.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/earth-objects/lro/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:26:43.287Z",
-      "scoring_cost_usd": 0.007704
-    },
-    "/images/earth-objects/lro/02.jpg": {
-      "score": 5,
-      "subject": "Close-up of spacecraft hardware wrapped in silver multi-layer insulation (MLI) thermal blankets in a cleanroom facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/earth-objects/lro/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:26:46.363Z",
-      "scoring_cost_usd": 0.007278
-    },
-    "/images/earth-objects/lro/03.jpg": {
-      "score": 7,
-      "subject": "Artist's concept rendering of the Lunar Reconnaissance Orbiter (LRO) spacecraft in orbit above the Moon's surface with Earth visible in the background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/earth-objects/lro/03.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-24T00:26:50.033Z",
-      "scoring_cost_usd": 0.006699
-    },
-    "/images/earth-objects/lro/04.jpg": {
-      "score": 4,
-      "subject": "Artist's concept render of a NASA spacecraft with gold thermal insulation blankets and solar panels orbiting Earth against a starfield background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.58,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/earth-objects/lro/04.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-24T00:26:54.653Z",
-      "scoring_cost_usd": 0.007494
-    },
-    "/images/earth-objects/lro/05.jpg": {
-      "score": 5,
-      "subject": "A spacecraft or satellite component wrapped in gold multi-layer insulation being lifted by crane inside a large aerospace integration facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/earth-objects/lro/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:26:57.641Z",
-      "scoring_cost_usd": 0.0032040000000000003
-    },
     "/images/earth-objects/tiangong/01.jpg": {
       "score": 6,
       "subject": "Artist's render of the Chinese Tiangong space station in orbit above Earth with solar arrays deployed against a starfield backdrop.",
@@ -6232,39 +6152,6 @@
       "scoring_cost_usd": 0.009186,
       "subject_match": true
     },
-    "/images/fleet-galleries/venera-7/04.jpg": {
-      "score": 7,
-      "subject": "A museum display of the Venera 7 spherical descent capsule with attached parachute and hardware fittings, shown on a display stand surrounded by gravel.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/venera-7/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009099,
-      "subject_match": true
-    },
-    "/images/fleet-galleries/venera-7/05.jpg": {
-      "score": 1,
-      "subject": "A text document titled 'Updates on Soviet Lunar Mission Cartography' describing collated Mastodon postings by Phil Stooke.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.25
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/venera-7/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:46:42.468Z",
-      "scoring_cost_usd": 0.007449
-    },
     "/images/fleet-galleries/viking-1/01.jpg": {
       "score": 9,
       "subject": "Full-disk view of Mars against black space, showing surface features including Olympus Mons and Valles Marineris region.",
@@ -6698,22 +6585,6 @@
       "scored_at": "2026-05-24T00:28:11.751Z",
       "scoring_cost_usd": 0.006921
     },
-    "/images/missions/apollo11.jpg": {
-      "score": 2,
-      "subject": "Astronaut Buzz Aldrin in a spacesuit walking on the lunar surface during the Apollo 11 mission, with the lunar module visible at lower right.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/missions/apollo11.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:55.636Z",
-      "scoring_cost_usd": 0.007056
-    },
     "/images/missions/apollo11/01.jpg": {
       "score": 9,
       "subject": "Astronaut Buzz Aldrin walks on the lunar surface during the Apollo 11 moonwalk, with the lunar module and Neil Armstrong reflected in his gold visor.",
@@ -6798,22 +6669,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T20:55:45.477Z",
       "scoring_cost_usd": 0.008844
-    },
-    "/images/missions/apollo12.jpg": {
-      "score": 8,
-      "subject": "Apollo astronaut in full EVA suit descending the lunar module ladder onto the Moon's surface, with the lunar landscape visible in the background and a reflection visible in the gold visor.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/missions/apollo12.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:13.775Z",
-      "scoring_cost_usd": 0.006966
     },
     "/images/missions/apollo12/01.jpg": {
       "score": 9,
@@ -6900,38 +6755,6 @@
       "scored_at": "2026-07-05T20:56:02.482Z",
       "scoring_cost_usd": 0.009294
     },
-    "/images/missions/apollo13.jpg": {
-      "score": 8,
-      "subject": "Apollo 13 improvised CO2 scrubber adapter ('mailbox') constructed from command module lithium hydroxide canisters, duct tape, plastic bags, and hoses, mounted inside the Lunar Module cabin during the emergency return mission.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/missions/apollo13.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:34.277Z",
-      "scoring_cost_usd": 0.006126
-    },
-    "/images/missions/apollo14.jpg": {
-      "score": 9,
-      "subject": "Apollo lunar module resting on the lunar surface with an American flag planted nearby against a black sky.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/apollo14.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:44.553Z",
-      "scoring_cost_usd": 0.006486
-    },
     "/images/missions/apollo14/01.jpg": {
       "score": 9,
       "subject": "An Apollo Lunar Module resting on the lunar surface with an American flag planted nearby against a black sky, photographed on the Moon.",
@@ -7017,22 +6840,6 @@
       "scored_at": "2026-07-05T20:56:36.277Z",
       "scoring_cost_usd": 0.008988
     },
-    "/images/missions/apollo15.jpg": {
-      "score": 9,
-      "subject": "Apollo astronaut saluting the American flag on the lunar surface with the Lunar Module and Lunar Roving Vehicle visible against a mountain backdrop.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/apollo15.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:02.296Z",
-      "scoring_cost_usd": 0.0066359999999999995
-    },
     "/images/missions/apollo15/01.jpg": {
       "score": 9,
       "subject": "An astronaut in a spacesuit salutes the American flag on the lunar surface beside the Apollo Lunar Module and Lunar Roving Vehicle, with a large mountain in the background.",
@@ -7101,22 +6908,6 @@
       "scored_at": "2026-07-05T20:56:53.543Z",
       "scoring_cost_usd": 0.007887
     },
-    "/images/missions/apollo16.jpg": {
-      "score": 8,
-      "subject": "Apollo lunar module and American flag on the Moon's surface in a wide panoramic view showing the barren lunar landscape.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.65
-      },
-      "variants": {
-        "1x1": "/images/missions/apollo16.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:17.819Z",
-      "scoring_cost_usd": 0.003291
-    },
     "/images/missions/apollo16/01.jpg": {
       "score": 7,
       "subject": "Panoramic view of the lunar surface showing the Apollo Lunar Module, American flag, and Lunar Roving Vehicle on the Moon's gray regolith against a black sky.",
@@ -7184,86 +6975,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T20:57:12.531Z",
       "scoring_cost_usd": 0.00519
-    },
-    "/images/missions/apollo17.jpg": {
-      "score": 9,
-      "subject": "An astronaut in a white spacesuit drives the Lunar Roving Vehicle across the grey regolith of the Moon's surface with a steep hill visible in the background, during the Apollo 17 mission.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/apollo17.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:34.717Z",
-      "scoring_cost_usd": 0.006861
-    },
-    "/images/missions/artemis2.jpg": {
-      "score": 7,
-      "subject": "Orion spacecraft crew module and service module interface being assembled inside a spacecraft processing facility, showing wiring harnesses and structural components.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/artemis2.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:52.814Z",
-      "scoring_cost_usd": 0.005121
-    },
-    "/images/missions/artemis3.jpg": {
-      "score": 7,
-      "subject": "A person wearing a white prototype spacesuit kneels in a simulated lunar surface sandbox during hardware testing in an indoor facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/artemis3.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:09.444Z",
-      "scoring_cost_usd": 0.005331
-    },
-    "/images/missions/blue-moon-mk1.jpg": {
-      "score": 8,
-      "subject": "A gold-foil-wrapped spacecraft or satellite undergoing thermal vacuum testing inside a large cylindrical vacuum chamber with the circular door open.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/missions/blue-moon-mk1.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:45.477Z",
-      "scoring_cost_usd": 0.005346
-    },
-    "/images/missions/chandrayaan1.jpg": {
-      "score": 7,
-      "subject": "Technicians in white cleanroom suits inspect a gold-foil-wrapped spacecraft or satellite during assembly in an indoor integration facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/chandrayaan1.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:11.085Z",
-      "scoring_cost_usd": 0.005331
     },
     "/images/missions/chandrayaan1/01.jpg": {
       "score": 7,
@@ -7350,22 +7061,6 @@
       "scored_at": "2026-11-08T07:21:46.908Z",
       "scoring_cost_usd": 0
     },
-    "/images/missions/chandrayaan3.jpg": {
-      "score": 9,
-      "subject": "ISRO's Vikram lander photographed on the lunar surface near the south pole by the Pragyan rover during the Chandrayaan-3 mission.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.35,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/missions/chandrayaan3.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:27.826Z",
-      "scoring_cost_usd": 0.006725999999999999
-    },
     "/images/missions/chandrayaan3/01.jpg": {
       "score": 9,
       "subject": "ISRO's Vikram lander photographed on the lunar surface by the Pragyan rover during the Chandrayaan-3 mission, with the Moon's south polar region regolith in the foreground.",
@@ -7433,22 +7128,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:00:45.939Z",
       "scoring_cost_usd": 0.008061
-    },
-    "/images/missions/change4.jpg": {
-      "score": 8,
-      "subject": "Chang'e-4 lunar lander photographed on the far side of the Moon by the Yutu-2 rover, with rover wheel tracks visible in the foreground regolith and a north directional indicator in the upper right.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/missions/change4.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:46.382Z",
-      "scoring_cost_usd": 0.004758
     },
     "/images/missions/change4/01.jpg": {
       "score": 8,
@@ -7535,22 +7214,6 @@
       "scored_at": "2026-07-05T21:01:39.254Z",
       "scoring_cost_usd": 0.009033
     },
-    "/images/missions/change5.jpg": {
-      "score": 7,
-      "subject": "Full-scale model of China's Chang'e-5 lunar sample-return spacecraft on display at a museum exhibition hall.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/change5.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:58.612Z",
-      "scoring_cost_usd": 0.007383000000000001
-    },
     "/images/missions/change5/01.jpg": {
       "score": 8,
       "subject": "Full-scale model of China's Chang'e-5 lunar sample-return spacecraft displayed in a museum exhibition hall, showing the gold-foil-wrapped lander and ascent vehicle stack.",
@@ -7635,54 +7298,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:01:55.553Z",
       "scoring_cost_usd": 0.006405
-    },
-    "/images/missions/change6.jpg": {
-      "score": 6,
-      "subject": "A detailed scale model of a Chinese spacecraft (likely Chang'e lunar probe or similar) covered in gold and silver multi-layer insulation, displayed on a wheeled stand at an aerospace exhibition.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/change6.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:17.496Z",
-      "scoring_cost_usd": 0.0074789999999999995
-    },
-    "/images/missions/clementine.jpg": {
-      "score": 6,
-      "subject": "Two technicians in white lab coats inspecting a solar-panel-covered satellite in an anechoic test chamber.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/clementine.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:33.667Z",
-      "scoring_cost_usd": 0.007626
-    },
-    "/images/missions/curiosity.jpg": {
-      "score": 9,
-      "subject": "NASA's Curiosity Mars rover self-portrait on the Martian surface at Rocknest, with Mount Sharp visible in the background and rover wheel tracks in the red soil.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/curiosity.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:50.935Z",
-      "scoring_cost_usd": 0.007443
     },
     "/images/missions/curiosity/01.jpg": {
       "score": 9,
@@ -7769,22 +7384,6 @@
       "scored_at": "2026-07-05T21:02:42.852Z",
       "scoring_cost_usd": 0.00876
     },
-    "/images/missions/dawn.jpg": {
-      "score": 7,
-      "subject": "Artist's concept of the Dawn spacecraft with solar panels extended, firing its ion thruster in the asteroid belt with Vesta and Ceres visible in the background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/dawn.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:03:07.470Z",
-      "scoring_cost_usd": 0.005526
-    },
     "/images/missions/dawn/01.jpg": {
       "score": 7,
       "subject": "Artist's concept of the NASA Dawn spacecraft cruising through the asteroid belt with ion drive firing, Vesta and Ceres visible in the background.",
@@ -7869,22 +7468,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T20:22:51.590Z",
       "scoring_cost_usd": 0.005505
-    },
-    "/images/missions/galileo.jpg": {
-      "score": 6,
-      "subject": "Artist's concept rendering of a deep-space spacecraft with a large gold mesh high-gain antenna dish and extended booms against a black background, resembling a Voyager or Pioneer-class probe.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/galileo.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:03:26.544Z",
-      "scoring_cost_usd": 0.007686
     },
     "/images/missions/galileo/01.jpg": {
       "score": 6,
@@ -7971,38 +7554,6 @@
       "scored_at": "2026-07-05T20:23:49.332Z",
       "scoring_cost_usd": 0.005391
     },
-    "/images/missions/hope-probe.jpg": {
-      "score": 6,
-      "subject": "A physical scale model or engineering model of the UAE Emirates Mars Mission Hope spacecraft on display at an exhibition, showing solar panels, high-gain antenna dish, and scientific instruments.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/hope-probe.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:04:08.293Z",
-      "scoring_cost_usd": 0.007404
-    },
-    "/images/missions/insight.jpg": {
-      "score": 8,
-      "subject": "NASA InSight Mars lander with fully deployed circular solar panels being assembled by technicians in white cleanroom suits inside a JPL facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.48,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/missions/insight.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:04:17.932Z",
-      "scoring_cost_usd": 0.0053609999999999994
-    },
     "/images/missions/insight/01.jpg": {
       "score": 8,
       "subject": "NASA InSight Mars lander with fully deployed circular solar arrays being assembled by technicians in white cleanroom suits in a spacecraft assembly facility.",
@@ -8071,22 +7622,6 @@
       "scored_at": "2026-07-05T21:05:52.864Z",
       "scoring_cost_usd": 0.00918
     },
-    "/images/missions/lro.jpg": {
-      "score": 9,
-      "subject": "Earth rising above the cratered lunar surface as photographed by NASA's Lunar Reconnaissance Orbiter, showing Africa and swirling cloud patterns against the black of space.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/missions/lro.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-24T00:26:43.287Z",
-      "scoring_cost_usd": 0.007704
-    },
     "/images/missions/lro/01.jpg": {
       "score": 7,
       "subject": "Artist's concept render of the Lunar Reconnaissance Orbiter spacecraft in orbit above the Moon's surface with Earth visible in the background.",
@@ -8154,22 +7689,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:07:17.307Z",
       "scoring_cost_usd": 0.004818
-    },
-    "/images/missions/luna17.jpg": {
-      "score": 4,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) overhead view of a cratered lunar surface with a small bright speck near center, likely a landed spacecraft or hardware artifact.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/missions/luna17.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:14.871Z",
-      "scoring_cost_usd": 0.003561
     },
     "/images/missions/luna17/01.jpg": {
       "score": 3,
@@ -8256,38 +7775,6 @@
       "scored_at": "2026-07-05T21:08:09.119Z",
       "scoring_cost_usd": 0.008451
     },
-    "/images/missions/luna24.jpg": {
-      "score": 5,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) grayscale image of the Moon's cratered surface with a white arrow annotation pointing to a small feature, scale bar indicating 100 meters.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.47,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/missions/luna24.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:33.996Z",
-      "scoring_cost_usd": 0.0066359999999999995
-    },
-    "/images/missions/luna9.jpg": {
-      "score": 8,
-      "subject": "A Soviet-era spacecraft or lunar probe replica bearing CCCP markings, displayed in a museum setting with detailed instrumentation and engine components visible.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/luna9.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:44.507Z",
-      "scoring_cost_usd": 0.005691
-    },
     "/images/missions/luna9/01.jpg": {
       "score": 7,
       "subject": "A Soviet-era spacecraft or lander model on museum display, marked with 'CCCP' lettering, showing detailed hardware including thruster nozzles, fuel spheres, and instrument packages.",
@@ -8372,22 +7859,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:08:58.403Z",
       "scoring_cost_usd": 0.0066960000000000006
-    },
-    "/images/missions/mangalyaan.jpg": {
-      "score": 7,
-      "subject": "A technician in yellow protective suit works near a nitrogen tank beside a gold-foil-wrapped spacecraft (likely ISRO's Chandrayaan or Mars Orbiter Mission) undergoing pre-launch processing in a cleanroom facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.62,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/mangalyaan.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:06:02.679Z",
-      "scoring_cost_usd": 0.0054659999999999995
     },
     "/images/missions/mangalyaan/01.jpg": {
       "score": 7,
@@ -8474,150 +7945,6 @@
       "scored_at": "2026-07-05T21:09:50.730Z",
       "scoring_cost_usd": 0.007884
     },
-    "/images/missions/mariner4.jpg": {
-      "score": 2,
-      "subject": "A grainy NASA Lewis Research Center technical photograph with fiducial crosshair markers overlaid on an indistinct surface or flow field",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/mariner4.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:06:15.744Z",
-      "scoring_cost_usd": 0.004014
-    },
-    "/images/missions/mars-express.jpg": {
-      "score": 7,
-      "subject": "Artist's render of ESA Mars Express spacecraft in orbit above the Martian surface, showing solar panels and MARSIS radar booms deployed.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.58,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/missions/mars-express.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:06:32.603Z",
-      "scoring_cost_usd": 0.00573
-    },
-    "/images/missions/mars-pathfinder.jpg": {
-      "score": 8,
-      "subject": "Panoramic view of the Martian surface taken from the Mars Pathfinder lander, showing rocky terrain, the Sojourner rover in the mid-ground, and the lander's deflated airbags and solar panels in the foreground.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/mars-pathfinder.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:06:44.802Z",
-      "scoring_cost_usd": 0.003966
-    },
-    "/images/missions/mars2.jpg": {
-      "score": 9,
-      "subject": "Full-disk view of Mars showing reddish-orange surface features, dust regions, and the southern polar ice cap against a black background.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/missions/mars2.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:06:59.340Z",
-      "scoring_cost_usd": 0.003939
-    },
-    "/images/missions/mars3.jpg": {
-      "score": 2,
-      "subject": "Heavily degraded and noisy black-and-white image with indistinguishable subject matter, possibly a corrupted or extremely low-quality scan.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/mars3.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:07:14.970Z",
-      "scoring_cost_usd": 0.00507
-    },
-    "/images/missions/mars6.jpg": {
-      "score": 6,
-      "subject": "A Ranger or early NASA spacecraft engineering model or replica on museum display, featuring a large dish antenna and cylindrical bus with solar panels.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/mars6.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:07:29.582Z",
-      "scoring_cost_usd": 0.003228
-    },
-    "/images/missions/maven.jpg": {
-      "score": 8,
-      "subject": "A cleanroom technician in a white bunny suit inspects a large domed spacecraft hardware assembly with gold and silver metallic components mounted on a test stand in a blue-lit facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.58,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/maven.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:07:38.135Z",
-      "scoring_cost_usd": 0.0078
-    },
-    "/images/missions/mmx.jpg": {
-      "score": 8,
-      "subject": "A Japanese spacecraft bus covered in gold thermal insulation blankets suspended in a clean-room facility during vibration or integration testing.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.47,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/missions/mmx.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:08:14.438Z",
-      "scoring_cost_usd": 0.007509
-    },
-    "/images/missions/new-horizons.jpg": {
-      "score": 6,
-      "subject": "Artist's rendering of NASA's New Horizons spacecraft showing its gold thermal blankets, large dish antenna, and instrument suite against a black background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/new-horizons.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:08:30.625Z",
-      "scoring_cost_usd": 0.00537
-    },
     "/images/missions/new-horizons/01.jpg": {
       "score": 8,
       "subject": "Artist's render of the New Horizons spacecraft showing its gold thermal insulation blankets, large dish antenna, and scientific instruments against a black background.",
@@ -8703,22 +8030,6 @@
       "scored_at": "2026-07-05T21:13:34.693Z",
       "scoring_cost_usd": 0.005703
     },
-    "/images/missions/perseverance.jpg": {
-      "score": 8,
-      "subject": "Wide panoramic view of the Martian surface taken by NASA's Curiosity rover, showing rocky terrain, distant hills, and a hazy horizon inside Gale Crater.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/perseverance.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:08:46.565Z",
-      "scoring_cost_usd": 0.003606
-    },
     "/images/missions/perseverance/01.jpg": {
       "score": 7,
       "subject": "Wide panoramic view of the Martian surface showing rocky terrain, distant hills, and a hazy sky captured by a Mars rover.",
@@ -8786,70 +8097,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:15:55.101Z",
       "scoring_cost_usd": 0.008529
-    },
-    "/images/missions/slim.jpg": {
-      "score": 6,
-      "subject": "1/2 scale physical model of JAXA's SLIM lunar lander on museum display with informational placards and a lunar surface photograph in the background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/missions/slim.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:37.843Z",
-      "scoring_cost_usd": 0.005541
-    },
-    "/images/missions/starship-demo.jpg": {
-      "score": 7,
-      "subject": "Close-up black and white detail shot of a polished metal rocket fin and fuselage, likely a vintage Atlas or Redstone missile on outdoor display.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/starship-demo.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:55.926Z",
-      "scoring_cost_usd": 0.007659
-    },
-    "/images/missions/starship-mars-crew.jpg": {
-      "score": 8,
-      "subject": "SpaceX Starship fully stacked on the Super Heavy booster at the Starbase launch facility, standing beside the mechazilla launch tower under clear blue skies.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.65,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/starship-mars-crew.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:10:13.001Z",
-      "scoring_cost_usd": 0.00609
-    },
-    "/images/missions/tianwen1.jpg": {
-      "score": 6,
-      "subject": "Scale model of China's Zhurong Mars rover displayed at an exhibition booth with informational placards",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/tianwen1.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:10:22.075Z",
-      "scoring_cost_usd": 0.0055709999999999996
     },
     "/images/missions/tianwen1/01.jpg": {
       "score": 5,
@@ -8936,22 +8183,6 @@
       "scored_at": "2026-11-08T07:21:46.974Z",
       "scoring_cost_usd": 0
     },
-    "/images/missions/viking1.jpg": {
-      "score": 8,
-      "subject": "A Viking Mars orbiter/lander spacecraft shown against a black background, displaying its solar panels, parabolic antenna, and aeroshell lander capsule in a pre-launch or studio photograph.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/viking1.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:11:15.798Z",
-      "scoring_cost_usd": 0.005976
-    },
     "/images/missions/viking1/01.jpg": {
       "score": 8,
       "subject": "A NASA spacecraft model or flight unit with a large dome-shaped high-gain antenna, solar panels, and a small dish antenna against a black background, consistent with a Viking or similar 1970s Mars mission orbiter.",
@@ -9036,22 +8267,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:22:24.233Z",
       "scoring_cost_usd": 0.005883
-    },
-    "/images/missions/voyager-2.jpg": {
-      "score": 6,
-      "subject": "Artist's concept rendering of the Voyager spacecraft with its distinctive large parabolic dish antenna and golden instrument boom against a star-field background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.38,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/missions/voyager-2.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:11:48.378Z",
-      "scoring_cost_usd": 0.006036
     },
     "/images/missions/voyager-2/01.jpg": {
       "score": 7,
@@ -9138,263 +8353,7 @@
       "scored_at": "2026-07-05T21:24:51.799Z",
       "scoring_cost_usd": 0.009051
     },
-    "/images/moon-sites/apollo11/01.jpg": {
-      "score": 2,
-      "subject": "Astronaut Buzz Aldrin in a spacesuit walking on the lunar surface during the Apollo 11 mission, with the lunar module visible at lower right.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo11/01.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:55.636Z",
-      "scoring_cost_usd": 0.007056
-    },
-    "/images/moon-sites/apollo11/02.jpg": {
-      "score": 7,
-      "subject": "Apollo Lunar Module landing leg and footpad wrapped in gold thermal foil resting on the lunar surface, with astronaut bootprints and a small piece of equipment visible nearby.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.25,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo11/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:59.157Z",
-      "scoring_cost_usd": 0.007629
-    },
-    "/images/moon-sites/apollo11/03.jpg": {
-      "score": 9,
-      "subject": "Apollo Lunar Module resting on the lunar surface with an astronaut standing at its base retrieving equipment, against a black sky backdrop.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo11/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:02.329Z",
-      "scoring_cost_usd": 0.007164
-    },
-    "/images/moon-sites/apollo11/04.jpg": {
-      "score": 3,
-      "subject": "Stereo pair of close-up images showing a light-colored rock embedded in fine-grained Martian or lunar regolith",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo11/04.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:06.964Z",
-      "scoring_cost_usd": 0.005730000000000001
-    },
-    "/images/moon-sites/apollo11/05.jpg": {
-      "score": 9,
-      "subject": "An Apollo astronaut works near the Apollo Lunar Module on the cratered lunar surface with black space in the background.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo11/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:09.745Z",
-      "scoring_cost_usd": 0.007215
-    },
-    "/images/moon-sites/apollo12/01.jpg": {
-      "score": 8,
-      "subject": "Apollo astronaut in full EVA suit descending the lunar module ladder onto the Moon's surface, with the lunar landscape visible in the background and a reflection visible in the gold visor.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo12/01.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:13.775Z",
-      "scoring_cost_usd": 0.006966
-    },
-    "/images/moon-sites/apollo12/02.jpg": {
-      "score": 4,
-      "subject": "Stereo pair of close-up images showing rocky, granular surface material, likely an asteroid or small body surface.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo12/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:17.892Z",
-      "scoring_cost_usd": 0.005793
-    },
-    "/images/moon-sites/apollo12/03.jpg": {
-      "score": 4,
-      "subject": "Stereo pair of Apollo lunar surface close-up photographs showing rocks and regolith on the Moon.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.6
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo12/03.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:22.152Z",
-      "scoring_cost_usd": 0.005778
-    },
-    "/images/moon-sites/apollo12/04.jpg": {
-      "score": 4,
-      "subject": "Stereo pair of close-up photographs showing lunar or planetary surface soil with diagonal ridges and a disturbed crack or trench, likely from a surface sampling experiment.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo12/04.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:26.618Z",
-      "scoring_cost_usd": 0.006305999999999999
-    },
-    "/images/moon-sites/apollo12/05.jpg": {
-      "score": 8,
-      "subject": "An Apollo astronaut in a white spacesuit walks across the cratered lunar surface with the Lunar Module and scientific equipment visible in the background against a black sky.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.48,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo12/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:30.140Z",
-      "scoring_cost_usd": 0.007701
-    },
-    "/images/moon-sites/apollo14/01.jpg": {
-      "score": 9,
-      "subject": "Apollo lunar module resting on the lunar surface with an American flag planted nearby against a black sky.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo14/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:44.553Z",
-      "scoring_cost_usd": 0.006486
-    },
-    "/images/moon-sites/apollo14/02.jpg": {
-      "score": 8,
-      "subject": "Apollo 14 Antares lunar module descent stage plaque bearing crew signatures of Alan Shepard, Stuart Roosa, and Edgar Mitchell, February 1971.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo14/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:47.999Z",
-      "scoring_cost_usd": 0.007461000000000001
-    },
-    "/images/moon-sites/apollo14/03.jpg": {
-      "score": 8,
-      "subject": "An Apollo astronaut in a white EVA suit holds the American flag on the lunar surface, with the shadow of a second astronaut and equipment visible in the foreground.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.58
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo14/03.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:51.991Z",
-      "scoring_cost_usd": 0.007581
-    },
-    "/images/moon-sites/apollo14/04.jpg": {
-      "score": 7,
-      "subject": "An Apollo astronaut in a white EVA suit stands on the lunar surface beside a planted American flag, with the photographer's shadow visible in the foreground.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo14/04.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:55.828Z",
-      "scoring_cost_usd": 0.007419
-    },
-    "/images/moon-sites/apollo14/05.jpg": {
-      "score": 8,
-      "subject": "An Apollo astronaut in a spacesuit works alongside scientific equipment and instruments on the lunar surface, with a cratered moonscape and black sky in the background.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.38,
-        "y": 0.65
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo14/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:58:58.900Z",
-      "scoring_cost_usd": 0.007569
-    },
-    "/images/moon-sites/apollo15/01.jpg": {
-      "score": 8,
-      "subject": "Apollo astronaut carrying equipment on the lunar surface with the Lunar Roving Vehicle prominently visible in the foreground right, against a stark black sky and crater-pocked regolith.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo15/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:12:16.527Z",
-      "scoring_cost_usd": 0.007791
-    },
-    "/images/moon-sites/apollo16/01.jpg": {
+    "/images/missions/apollo16/06.jpg": {
       "score": 8,
       "subject": "Apollo lunar module and American flag on the Moon's surface in a wide panoramic view showing the barren lunar landscape.",
       "category": "surface",
@@ -9403,48 +8362,40 @@
         "y": 0.65
       },
       "variants": {
-        "1x1": "/images/moon-sites/apollo16/01.1x1.jpg"
+        "1x1": "/images/missions/apollo16/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:59:17.819Z",
       "scoring_cost_usd": 0.003291
     },
-    "/images/moon-sites/apollo16/03.jpg": {
-      "score": 6,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) overhead view of the Apollo 16 landing site on the Moon, with a white arrow indicating the approximate touchdown location amid lunar surface features and ray patterns.",
+    "/images/missions/apollo16/08.jpg": {
+      "score": 8,
+      "subject": "The Apollo 16 Lunar Module Orion and the Lunar Roving Vehicle in the Descartes Highlands, seen during the first moonwalk.",
       "category": "surface",
       "focal_point": {
-        "x": 0.42,
-        "y": 0.44
+        "x": 0.5,
+        "y": 0.5
       },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo16/03.1x1.jpg"
-      },
+      "subject_match": true,
       "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.008154,
-      "subject_match": true
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
     },
-    "/images/moon-sites/apollo16/04.jpg": {
-      "score": 7,
-      "subject": "High-resolution orbital photograph of the Moon's cratered surface showing multiple impact craters and ray systems against black space.",
-      "category": "orbital",
+    "/images/missions/apollo16/09.jpg": {
+      "score": 8,
+      "subject": "Part of the deployed Apollo 16 ALSEP on the Moon: the passive seismometer in the foreground, the central station in the centre background and the nuclear power unit at left.",
+      "category": "surface",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo16/04.1x1.jpg"
-      },
+      "subject_match": true,
       "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.008784,
-      "subject_match": true
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
     },
-    "/images/moon-sites/apollo16/02.jpg": {
+    "/images/missions/apollo16/07.jpg": {
       "score": 7,
       "subject": "Apollo astronaut and lunar roving vehicle on the Moon's surface with rolling hills and black sky in the background.",
       "category": "surface",
@@ -9453,7 +8404,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/moon-sites/apollo16/02.1x1.jpg"
+        "1x1": "/images/missions/apollo16/07.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -9461,263 +8412,7 @@
       "scoring_cost_usd": 0.005112,
       "subject_match": true
     },
-    "/images/moon-sites/apollo17/01.jpg": {
-      "score": 9,
-      "subject": "An astronaut in a white spacesuit drives the Lunar Roving Vehicle across the grey regolith of the Moon's surface with a steep hill visible in the background, during the Apollo 17 mission.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo17/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:34.717Z",
-      "scoring_cost_usd": 0.006861
-    },
-    "/images/moon-sites/apollo17/02.jpg": {
-      "score": 9,
-      "subject": "Apollo Lunar Roving Vehicle parked on the rocky lunar surface with sweeping lunar hills and the Sun creating lens flare in the background.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo17/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:37.944Z",
-      "scoring_cost_usd": 0.007641
-    },
-    "/images/moon-sites/apollo17/03.jpg": {
-      "score": 3,
-      "subject": "A speaker at a podium addresses an audience at an Astronaut Scholarship Foundation event, with an Apollo lunar module replica on a simulated lunar surface display behind them.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo17/03.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:41.465Z",
-      "scoring_cost_usd": 0.006639
-    },
-    "/images/moon-sites/apollo17/04.jpg": {
-      "score": 2,
-      "subject": "A man speaking at a podium for the Astronaut Scholarship Foundation event before an audience in what appears to be a museum setting.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo17/04.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:45.344Z",
-      "scoring_cost_usd": 0.0066240000000000005
-    },
-    "/images/moon-sites/apollo17/05.jpg": {
-      "score": 4,
-      "subject": "Split-screen composite showing an artist render of the Curiosity Mars rover on the left alongside Apollo Lunar Roving Vehicle footage on the right.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/apollo17/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:59:49.457Z",
-      "scoring_cost_usd": 0.004548
-    },
-    "/images/moon-sites/artemis3/01.jpg": {
-      "score": 7,
-      "subject": "A person wearing a white prototype spacesuit kneels in a simulated lunar surface sandbox during hardware testing in an indoor facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/artemis3/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:09.444Z",
-      "scoring_cost_usd": 0.005331
-    },
-    "/images/moon-sites/artemis3/02.jpg": {
-      "score": 8,
-      "subject": "Axiom Space AxEMU spacesuit prototype displayed in full frontal view against a dark studio background, showing white suit with red accents, reflective visor, and knee pads.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/artemis3/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:12.605Z",
-      "scoring_cost_usd": 0.007434
-    },
-    "/images/moon-sites/artemis3/03.jpg": {
-      "score": 8,
-      "subject": "Axiom Space AxEMU spacesuit prototype displayed against a dark studio background, showing the full suit with backpack life-support unit, helmet, and red accent trim.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.48,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/artemis3/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:16.016Z",
-      "scoring_cost_usd": 0.007374
-    },
-    "/images/moon-sites/artemis3/04.jpg": {
-      "score": 8,
-      "subject": "Axiom Space AxEMU spacesuit prototype displayed against a dark grey background, showing white suit with red accents, US flag patch, and reflective dark visor.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/artemis3/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:19.458Z",
-      "scoring_cost_usd": 0.006684000000000001
-    },
-    "/images/moon-sites/artemis3/05.jpg": {
-      "score": 7,
-      "subject": "Two astronauts in white EVA spacesuits training underwater at NASA's Neutral Buoyancy Laboratory, simulating a spacewalk procedure on the pool floor.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/artemis3/05.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:24.344Z",
-      "scoring_cost_usd": 0.007854
-    },
-    "/images/moon-sites/chandrayaan3/01.jpg": {
-      "score": 9,
-      "subject": "ISRO's Vikram lander photographed on the lunar surface near the south pole by the Pragyan rover during the Chandrayaan-3 mission.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.35,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/chandrayaan3/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:27.826Z",
-      "scoring_cost_usd": 0.006725999999999999
-    },
-    "/images/moon-sites/chandrayaan3/02.jpg": {
-      "score": 4,
-      "subject": "A four-panel sequence of black-and-white images showing a lunar lander on the Moon's surface, likely the Chandrayaan-3 Vikram lander as photographed by the Pragyan rover.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.3,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/chandrayaan3/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:32.399Z",
-      "scoring_cost_usd": 0.006111
-    },
-    "/images/moon-sites/chandrayaan3/03.jpg": {
-      "score": 7,
-      "subject": "A rocket lifts off from a launch pad surrounded by service towers, with a large plume of exhaust and flame billowing beneath it, set against a partly cloudy sky over a coastal landscape.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/chandrayaan3/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:36.418Z",
-      "scoring_cost_usd": 0.005226
-    },
-    "/images/moon-sites/chandrayaan3/04.jpg": {
-      "score": 5,
-      "subject": "Grayscale orbital image of the lunar surface showing a cratered, regolith-covered terrain with numerous small impact craters.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/chandrayaan3/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:39.111Z",
-      "scoring_cost_usd": 0.006396
-    },
-    "/images/moon-sites/change3/01.jpg": {
-      "score": 9,
-      "subject": "China's Yutu lunar rover photographed on the Moon's surface, showing its deployed solar panels, dish antenna, and Chinese flag, with rocky regolith in the background.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change3/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:12:20.225Z",
-      "scoring_cost_usd": 0.005046
-    },
-    "/images/moon-sites/change3/02.jpg": {
-      "score": 7,
-      "subject": "Close-up surface image of layered lunar rocks on the Moon's surface captured by a lunar lander or rover, with a scale bar of 0.5 meters and an inset orbital context image showing a crater.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.48,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change3/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:12:23.752Z",
-      "scoring_cost_usd": 0.004671
-    },
-    "/images/moon-sites/change3/03.jpg": {
+    "/images/missions/change3/05.jpg": {
       "score": 7,
       "subject": "Lunar Reconnaissance Orbiter Camera image of the Chang'e 3 lunar landing site showing the bright ejecta halo and disturbed regolith from the 2013 landing in Mare Imbrium.",
       "category": "surface",
@@ -9726,14 +8421,14 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/moon-sites/change3/03.1x1.jpg"
+        "1x1": "/images/missions/change3/05.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T11:12:26.949Z",
       "scoring_cost_usd": 0.004554
     },
-    "/images/moon-sites/change4/01.jpg": {
+    "/images/missions/change4/07.jpg": {
       "score": 8,
       "subject": "Chang'e-4 lunar lander photographed on the far side of the Moon by the Yutu-2 rover, with rover wheel tracks visible in the foreground regolith and a north directional indicator in the upper right.",
       "category": "surface",
@@ -9742,14 +8437,14 @@
         "y": 0.38
       },
       "variants": {
-        "1x1": "/images/moon-sites/change4/01.1x1.jpg"
+        "1x1": "/images/missions/change4/07.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T11:01:46.382Z",
       "scoring_cost_usd": 0.004758
     },
-    "/images/moon-sites/change4/02.jpg": {
+    "/images/missions/change4/08.jpg": {
       "score": 6,
       "subject": "Museum display models of the Chang'e-4 lunar lander and Yutu-2 rover with gold thermal insulation blankets, exhibited behind a railing against a green wall with historical photographs.",
       "category": "hardware",
@@ -9758,7 +8453,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/moon-sites/change4/02.1x1.jpg"
+        "1x1": "/images/missions/change4/08.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -9766,7 +8461,7 @@
       "scoring_cost_usd": 0.009126,
       "subject_match": true
     },
-    "/images/moon-sites/change4/03.jpg": {
+    "/images/missions/change4/09.jpg": {
       "score": 9,
       "subject": "China's Yutu-2 lunar rover traversing the grey, cratered surface of the Moon's far side as imaged during the Chang'e 4 mission.",
       "category": "surface",
@@ -9775,7 +8470,7 @@
         "y": 0.75
       },
       "variants": {
-        "1x1": "/images/moon-sites/change4/03.1x1.jpg"
+        "1x1": "/images/missions/change4/09.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -9783,199 +8478,7 @@
       "scoring_cost_usd": 0.009276,
       "subject_match": true
     },
-    "/images/moon-sites/change4/04.jpg": {
-      "score": 8,
-      "subject": "Chang'e-4 lunar lander photographed on the far side of the Moon by the Yutu-2 rover, with rover wheel tracks visible in the foreground regolith and a north directional indicator in the upper right.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change4/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:46.382Z",
-      "scoring_cost_usd": 0.004758
-    },
-    "/images/moon-sites/change4/05.jpg": {
-      "score": 6,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) image of the Moon's cratered surface with white arrows indicating a small spacecraft or hardware object on the regolith, with a 100-meter scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.47,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change4/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:55.268Z",
-      "scoring_cost_usd": 0.0066809999999999994
-    },
-    "/images/moon-sites/change5/01.jpg": {
-      "score": 7,
-      "subject": "Full-scale model of China's Chang'e-5 lunar sample-return spacecraft on display at a museum exhibition hall.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change5/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:58.612Z",
-      "scoring_cost_usd": 0.007383000000000001
-    },
-    "/images/moon-sites/change5/02.jpg": {
-      "score": 6,
-      "subject": "A lunar sample or space artifact labeled CYFM002 encased in a clear acrylic display cube with a gold-rimmed holder.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change5/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:02.257Z",
-      "scoring_cost_usd": 0.005481
-    },
-    "/images/moon-sites/change5/03.jpg": {
-      "score": 8,
-      "subject": "Two sealed sample vials labeled CE5C0400 and CE5C0100 containing dark lunar regolith returned by China's Chang'e-5 mission, displayed alongside a 1 cm scale cube and measurement card from the Institute of Geology and Geophysics, Chinese Academy of Sciences.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change5/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:06.433Z",
-      "scoring_cost_usd": 0.005706
-    },
-    "/images/moon-sites/change5/04.jpg": {
-      "score": 4,
-      "subject": "Lunar Reconnaissance Orbiter Camera image of the Moon's cratered surface with a white arrow annotation pointing to a small feature of interest, with a 100-metre scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change5/04.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:10.552Z",
-      "scoring_cost_usd": 0.006951
-    },
-    "/images/moon-sites/change5/05.jpg": {
-      "score": 7,
-      "subject": "A gold-foil-wrapped spacecraft being lowered into a circular test chamber by technicians in white cleanroom suits inside a spacecraft assembly facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change5/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:13.851Z",
-      "scoring_cost_usd": 0.004731
-    },
-    "/images/moon-sites/change6/01.jpg": {
-      "score": 6,
-      "subject": "A detailed scale model of a Chinese spacecraft (likely Chang'e lunar probe or similar) covered in gold and silver multi-layer insulation, displayed on a wheeled stand at an aerospace exhibition.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change6/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:17.496Z",
-      "scoring_cost_usd": 0.0074789999999999995
-    },
-    "/images/moon-sites/change6/02.jpg": {
-      "score": 6,
-      "subject": "Display case containing a Chang'e-6 lunar sample collected from the far side of the Moon, returned to Earth on 25 June 2024, shown in a museum exhibit with Chinese and English labeling.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.72,
-        "y": 0.37
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change6/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:21.449Z",
-      "scoring_cost_usd": 0.007554
-    },
-    "/images/moon-sites/change6/03.jpg": {
-      "score": 3,
-      "subject": "Topographic contour map of the lunar far side showing the Chang'e 6 landing site within Apollo Basin, with labeled Chaffee craters and a 20 km scale bar.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.47
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change6/03.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:26.014Z",
-      "scoring_cost_usd": 0.006951
-    },
-    "/images/moon-sites/change6/04.jpg": {
-      "score": 6,
-      "subject": "Display case containing lunar far-side soil samples returned by China's Chang'e-6 mission, exhibited with Japanese-language signage.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change6/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:29.104Z",
-      "scoring_cost_usd": 0.005466
-    },
-    "/images/moon-sites/change6/05.jpg": {
-      "score": 6,
-      "subject": "A detailed scale model of a Chinese spacecraft (likely Chang'e lunar probe or similar) covered in gold and silver multi-layer insulation, displayed on a wheeled stand at an aerospace exhibition.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/change6/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:02:17.496Z",
-      "scoring_cost_usd": 0.0074789999999999995
-    },
-    "/images/moon-sites/luna17/01.jpg": {
+    "/images/missions/luna17/06.jpg": {
       "score": 4,
       "subject": "Lunar Reconnaissance Orbiter Camera (LROC) overhead view of a cratered lunar surface with a small bright speck near center, likely a landed spacecraft or hardware artifact.",
       "category": "surface",
@@ -9984,301 +8487,12 @@
         "y": 0.52
       },
       "variants": {
-        "1x1": "/images/moon-sites/luna17/01.1x1.jpg"
+        "1x1": "/images/missions/luna17/06.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T11:05:14.871Z",
       "scoring_cost_usd": 0.003561
-    },
-    "/images/moon-sites/luna17/02.jpg": {
-      "score": 7,
-      "subject": "Lunar Reconnaissance Orbiter Camera overhead view of the Luna 17 landing site on the Moon, showing the Lunokhod 1 rover tracks and lander with a 100-meter scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.38,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna17/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.0073230000000000005,
-      "subject_match": true
-    },
-    "/images/moon-sites/luna17/03.jpg": {
-      "score": 7,
-      "subject": "A museum display model of the Soviet Lunokhod lunar rover, showing its eight wire-mesh wheels, dish antenna, and solar panel lid in a simulated lunar surface setting.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna17/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:21.351Z",
-      "scoring_cost_usd": 0.005166
-    },
-    "/images/moon-sites/luna17/04.jpg": {
-      "score": 3,
-      "subject": "East German postage stamp commemorating the Lunokhod 1 lunar rover, labeled '1. Mobiles Mondlabor – Lunochod 1'",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna17/04.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:25.983Z",
-      "scoring_cost_usd": 0.004821000000000001
-    },
-    "/images/moon-sites/luna17/05.jpg": {
-      "score": 4,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) overhead image of the Moon's cratered surface with a white arrow indicating a small spacecraft or hardware feature and a 100-meter scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.47,
-        "y": 0.47
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna17/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:30.695Z",
-      "scoring_cost_usd": 0.0073409999999999994
-    },
-    "/images/moon-sites/luna24/01.jpg": {
-      "score": 5,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) grayscale image of the Moon's cratered surface with a white arrow annotation pointing to a small feature, scale bar indicating 100 meters.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.47,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna24/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:33.996Z",
-      "scoring_cost_usd": 0.0066359999999999995
-    },
-    "/images/moon-sites/luna24/02.jpg": {
-      "score": 7,
-      "subject": "Lunar Reconnaissance Orbiter Camera image of the Moon's surface showing the landing sites of Soviet Luna 23 and Luna 24 spacecraft marked with circles, with a 500-meter scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna24/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:37.844Z",
-      "scoring_cost_usd": 0.005781
-    },
-    "/images/moon-sites/luna24/03.jpg": {
-      "score": 5,
-      "subject": "Lunar Reconnaissance Orbiter Camera (LROC) grayscale image of the Moon's cratered surface with a white arrow annotation pointing to a small feature, scale bar indicating 100 meters.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.47,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna24/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:33.996Z",
-      "scoring_cost_usd": 0.0066359999999999995
-    },
-    "/images/moon-sites/luna24/04.jpg": {
-      "score": 7,
-      "subject": "Lunar Reconnaissance Orbiter image of a fresh impact crater on the Moon's surface with a 25-meter scale bar and an inset close-up showing debris or hardware fragments at the impact site.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna24/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:41.295Z",
-      "scoring_cost_usd": 0.006621
-    },
-    "/images/moon-sites/luna9/01.jpg": {
-      "score": 8,
-      "subject": "A Soviet-era spacecraft or lunar probe replica bearing CCCP markings, displayed in a museum setting with detailed instrumentation and engine components visible.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna9/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:44.507Z",
-      "scoring_cost_usd": 0.005691
-    },
-    "/images/moon-sites/luna9/02.jpg": {
-      "score": 4,
-      "subject": "Grainy black-and-white oblique view of a cratered planetary or lunar surface curving toward the horizon against black space.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna9/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:48.081Z",
-      "scoring_cost_usd": 0.004776
-    },
-    "/images/moon-sites/luna9/03.jpg": {
-      "score": 3,
-      "subject": "Soviet USSR postage stamps commemorating the Luna-9 lunar soft landing mission of 1966, showing trajectory diagram, emblem, and surface imagery.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna9/03.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:51.538Z",
-      "scoring_cost_usd": 0.003981
-    },
-    "/images/moon-sites/luna9/04.jpg": {
-      "score": 8,
-      "subject": "Soviet-era CCCP-marked spacecraft or probe on display in a museum, showing detailed instrumentation and landing leg structure.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna9/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:55.469Z",
-      "scoring_cost_usd": 0.0075509999999999996
-    },
-    "/images/moon-sites/luna9/05.jpg": {
-      "score": 6,
-      "subject": "A Soviet-era spacecraft or probe on display in a museum, mounted on a chrome stand with an informational placard visible in the foreground.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/luna9/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:58.788Z",
-      "scoring_cost_usd": 0.005376
-    },
-    "/images/moon-sites/slim/01.jpg": {
-      "score": 6,
-      "subject": "1/2 scale physical model of JAXA's SLIM lunar lander on museum display with informational placards and a lunar surface photograph in the background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/slim/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:37.843Z",
-      "scoring_cost_usd": 0.005541
-    },
-    "/images/moon-sites/slim/02.jpg": {
-      "score": 4,
-      "subject": "Orbital grayscale image of the lunar surface with craters and a small annotated arrow pointing to a barely visible feature or spacecraft.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.46
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/slim/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:41.916Z",
-      "scoring_cost_usd": 0.006876
-    },
-    "/images/moon-sites/slim/03.jpg": {
-      "score": 5,
-      "subject": "A bright reflective feature or possible impact crater with ejecta pattern on a gray planetary or lunar surface, imaged from orbit in black and white.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.47
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/slim/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:45.113Z",
-      "scoring_cost_usd": 0.006441
-    },
-    "/images/moon-sites/slim/04.jpg": {
-      "score": 5,
-      "subject": "Oblique orbital view of the lunar surface showing a large impact crater with a red target reticle annotation and a rover track overlay visible on the left side.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/slim/04.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:49.275Z",
-      "scoring_cost_usd": 0.006156
-    },
-    "/images/moon-sites/slim/05.jpg": {
-      "score": 6,
-      "subject": "Two metallic lattice/mesh spacecraft hardware components displayed on a dark exhibition surface with Japanese text labels visible in the background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/slim/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:52.282Z",
-      "scoring_cost_usd": 0.0056159999999999995
     },
     "/images/planets/earth/01.jpg": {
       "score": 7,
@@ -11420,22 +9634,6 @@
       "scored_at": "2026-06-08T11:16:32.165Z",
       "scoring_cost_usd": 0.00777
     },
-    "/images/rockets/h-iia.jpg": {
-      "score": 8,
-      "subject": "A JAXA H-IIA rocket lifts off from Tanegashima Space Center amid billowing exhaust clouds and bright engine flames, with coastal hills and ocean visible in the foreground.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/rockets/h-iia.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:16:35.998Z",
-      "scoring_cost_usd": 0.007503
-    },
     "/images/rockets/h3.jpg": {
       "score": 8,
       "subject": "A Japanese H-IIA rocket lifts off from Tanegashima Space Center with bright engine flames and billowing exhaust clouds over a coastal landscape.",
@@ -11484,38 +9682,6 @@
       "scored_at": "2026-06-08T11:16:43.429Z",
       "scoring_cost_usd": 0.0059370000000000004
     },
-    "/images/rockets/lvm3.jpg": {
-      "score": 9,
-      "subject": "ISRO LVM3 rocket lifts off from Satish Dhawan Space Centre with dramatic exhaust plume and flame, flanked by launch tower gantries.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/rockets/lvm3.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:16:47.015Z",
-      "scoring_cost_usd": 0.007281
-    },
-    "/images/rockets/proton-m.jpg": {
-      "score": 9,
-      "subject": "A Proton rocket lifts off amid billowing exhaust clouds, with Cyrillic 'ПРОТОН' lettering and NASA markings visible on the white upper stage against a clear blue sky.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/rockets/proton-m.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:16:50.638Z",
-      "scoring_cost_usd": 0.007545
-    },
     "/images/rockets/pslv-xl.jpg": {
       "score": 9,
       "subject": "An ISRO PSLV rocket lifts off from Satish Dhawan Space Centre amid billowing flame and smoke, flanked by two launch tower structures against a dramatic cloudy sky.",
@@ -11547,22 +9713,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T11:16:53.799Z",
       "scoring_cost_usd": 0.005376
-    },
-    "/images/rockets/soyuz-fregat.jpg": {
-      "score": 9,
-      "subject": "A Soyuz rocket lifts off from Baikonur Cosmodrome with brilliant engine plume illuminating the launch pad and retracted service arms.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/rockets/soyuz-fregat.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:16:56.925Z",
-      "scoring_cost_usd": 0.00741
     },
     "/images/rockets/starship.jpg": {
       "score": 9,
@@ -11659,22 +9809,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T11:17:19.855Z",
       "scoring_cost_usd": 0.006849
-    },
-    "/images/science/crew-dynamics-mir.jpg": {
-      "score": 9,
-      "subject": "The Russian Mir space station photographed against the black void of space, showing its full complex modular structure with solar arrays and docked Soyuz spacecraft.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/science/crew-dynamics-mir.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:17:22.863Z",
-      "scoring_cost_usd": 0.006189
     },
     "/images/science/crew-selection-mercury-seven.jpg": {
       "score": 2,
@@ -11835,22 +9969,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T11:18:00.096Z",
       "scoring_cost_usd": 0.005049
-    },
-    "/images/science/free-return-apollo13.jpg": {
-      "score": 8,
-      "subject": "Interior view of Apollo 13 Command Module showing the improvised CO2 scrubber adapter ('mailbox') assembled from lithium hydroxide canisters, duct tape, and plastic bags to save the crew.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/science/free-return-apollo13.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:18:06.580Z",
-      "scoring_cost_usd": 0.007863
     },
     "/images/science/fuels-and-oxidizers-lox-loading.jpg": {
       "score": 8,
@@ -12154,22 +10272,6 @@
       "scored_at": "2026-06-08T11:19:38.181Z",
       "scoring_cost_usd": 0.004287
     },
-    "/images/science/oberth-cassini.jpg": {
-      "score": 4,
-      "subject": "Artist's concept render of the Cassini spacecraft orbiting Saturn with its iconic ring system visible in the foreground.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/science/oberth-cassini.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:19:41.613Z",
-      "scoring_cost_usd": 0.005109
-    },
     "/images/science/orbit-insertion-mro.jpg": {
       "score": 6,
       "subject": "Artist's concept render of the Mars Reconnaissance Orbiter spacecraft with solar panels and high-gain antenna deployed above the Martian surface.",
@@ -12377,22 +10479,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T11:20:34.079Z",
       "scoring_cost_usd": 0.005505
-    },
-    "/images/science/suit-lineage-sokol.jpg": {
-      "score": 7,
-      "subject": "A Russian Sokol KV-2 pressure suit displayed on a mannequin in a museum exhibit case, with a helmet and mission patches visible.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/science/suit-lineage-sokol.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:20:37.467Z",
-      "scoring_cost_usd": 0.005466
     },
     "/images/science/throttling-and-gimbaling-merlin-gimbal.jpg": {
       "score": 8,
@@ -13767,20 +11853,6 @@
       "scored_at": "2026-05-24T02:37:00.514Z",
       "scoring_cost_usd": 0.007224
     },
-    "/images/hotspots/mars/viking2-lander/tier3-pan.jpg": {
-      "score": 3,
-      "subject": "A heavily processed and composited panoramic view of the Martian surface showing spacecraft hardware in the foreground with rocky terrain extending to the horizon, marred by obvious digital artifacts, color banding, and poorly blended composite seams.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-01T15:16:10.553Z",
-      "scoring_cost_usd": 0.008445000000000001
-    },
     "/images/hotspots/mars/opportunity/tier3-pan.jpg": {
       "score": 3,
       "subject": "Full-circle panorama from the rim of Eagle Crater on Mars: the Opportunity lander and airbag marks on the crater floor, rover wheel tracks, flat plains to the horizon, rover deck in the foreground.",
@@ -14180,23 +12252,6 @@
       "scored_at": "2026-06-08T10:15:38.764Z",
       "scoring_cost_usd": 0.004491
     },
-    "/images/fleet-galleries/long-march-3b/05.jpg": {
-      "score": 6,
-      "subject": "3D render of a Long March 3B (CZ-3B) rocket with Chinese flag and CASC markings on a grey background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/long-march-3b/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009165,
-      "subject_match": true
-    },
     "/images/fleet-galleries/new-glenn/02.jpg": {
       "score": 3,
       "subject": "Aerial satellite view of Cape Canaveral Air Force Station Launch Complex 11, showing cleared ground and construction or demolition activity.",
@@ -14518,54 +12573,6 @@
       "scored_at": "2026-06-08T10:35:06.968Z",
       "scoring_cost_usd": 0.007824
     },
-    "/images/fleet-galleries/taiyuan-lc-9/03.jpg": {
-      "score": 1,
-      "subject": "Cover page of a 1994 Naval Postgraduate School thesis titled 'A dollar cost evaluation of mainland China's major weapon systems' from the Calhoun institutional archive.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.4
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/taiyuan-lc-9/03.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:35:15.005Z",
-      "scoring_cost_usd": 0.007629
-    },
-    "/images/fleet-galleries/taiyuan-lc-9/04.jpg": {
-      "score": 7,
-      "subject": "A Chinese Long March rocket lifts off from Taiyuan Satellite Launch Center amid billowing exhaust clouds at dusk.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.65
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/taiyuan-lc-9/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:35:17.964Z",
-      "scoring_cost_usd": 0.005646
-    },
-    "/images/fleet-galleries/taiyuan-lc-9/05.jpg": {
-      "score": 1,
-      "subject": "Wikinews print edition front page dated May 28, 2008, featuring text news stories including NASA Phoenix Mars landing.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/taiyuan-lc-9/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:35:21.787Z",
-      "scoring_cost_usd": 0.0074789999999999995
-    },
     "/images/fleet-galleries/molniya/01.jpg": {
       "score": 5,
       "subject": "Black-and-white overhead photograph of a satellite spacecraft model or engineering unit showing solar panels, antenna dish, and central bus structure",
@@ -14613,54 +12620,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T10:15:30.754Z",
       "scoring_cost_usd": 0.007293
-    },
-    "/images/fleet-galleries/xichang-lc-2/03.jpg": {
-      "score": 1,
-      "subject": "Wikinews Print Edition front page from June 10, 2008 showing various news headlines including a story about NASA's Phoenix spacecraft.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/xichang-lc-2/03.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:42:47.475Z",
-      "scoring_cost_usd": 0.007494
-    },
-    "/images/fleet-galleries/xichang-lc-2/04.jpg": {
-      "score": 1,
-      "subject": "Wikinews print edition front page dated April 26, 2008 featuring news articles about North Korea, Syria, and other world events.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/xichang-lc-2/04.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:42:51.656Z",
-      "scoring_cost_usd": 0.007599
-    },
-    "/images/fleet-galleries/xichang-lc-2/05.jpg": {
-      "score": 1,
-      "subject": "Wikinews print edition front page dated May 28, 2008, featuring text news stories including NASA Phoenix Mars landing.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/xichang-lc-2/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:35:21.787Z",
-      "scoring_cost_usd": 0.0074789999999999995
     },
     "/images/fleet-galleries/xichang-lc-3/01.jpg": {
       "score": 2,
@@ -14710,38 +12669,6 @@
       "scored_at": "2026-06-08T10:42:56.113Z",
       "scoring_cost_usd": 0.007524
     },
-    "/images/fleet-galleries/xichang-lc-3/04.jpg": {
-      "score": 1,
-      "subject": "Wikinews print edition front page dated April 26, 2008 featuring news articles about North Korea, Syria, and other world events.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/xichang-lc-3/04.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:42:51.656Z",
-      "scoring_cost_usd": 0.007599
-    },
-    "/images/fleet-galleries/xichang-lc-3/05.jpg": {
-      "score": 1,
-      "subject": "Wikinews print edition front page dated May 28, 2008, featuring text news stories including NASA Phoenix Mars landing.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/fleet-galleries/xichang-lc-3/05.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:35:21.787Z",
-      "scoring_cost_usd": 0.0074789999999999995
-    },
     "/images/mars-sites/beagle2/01.jpg": {
       "score": 7,
       "subject": "Museum display model of the Beagle 2 Mars lander shown with solar panels deployed, viewed from above on a red circular platform.",
@@ -14774,86 +12701,6 @@
       "scored_at": "2026-06-08T10:52:27.711Z",
       "scoring_cost_usd": 0.005691
     },
-    "/images/mars-sites/curiosity/01.jpg": {
-      "score": 10,
-      "subject": "NASA Curiosity Mars rover self-portrait mosaic on the Martian surface with Gale Crater rim and Mount Sharp visible in the background",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/curiosity/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:30.930Z",
-      "scoring_cost_usd": 0.007338
-    },
-    "/images/mars-sites/curiosity/02.jpg": {
-      "score": 7,
-      "subject": "Close-up of the Mars Science Laboratory Curiosity rover's mast head showing the ChemCam laser and Mastcam stereo cameras during pre-launch hardware assembly.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/curiosity/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:34.348Z",
-      "scoring_cost_usd": 0.004323
-    },
-    "/images/mars-sites/curiosity/03.jpg": {
-      "score": 8,
-      "subject": "Curiosity rover's robotic arm and drill tool positioned over a flat Martian rock surface, captured with a wide-angle onboard camera.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.62,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/curiosity/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:37.052Z",
-      "scoring_cost_usd": 0.003663
-    },
-    "/images/mars-sites/curiosity/04.jpg": {
-      "score": 7,
-      "subject": "NASA engineer in cleanroom suit standing beside the Curiosity Mars rover during assembly in a JPL clean room facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/curiosity/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:40.026Z",
-      "scoring_cost_usd": 0.007251
-    },
-    "/images/mars-sites/curiosity/05.jpg": {
-      "score": 8,
-      "subject": "Close-up view of the Mars Science Laboratory Curiosity rover's mast head assembly, showing the ChemCam laser and Mastcam instruments in a clean-room facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/curiosity/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:43.359Z",
-      "scoring_cost_usd": 0.007044
-    },
     "/images/mars-sites/exomars-rosalind-franklin/01.jpg": {
       "score": 7,
       "subject": "High-resolution orbital view of a cratered Martian surface showing multiple impact craters and surface texture in false-color blue-grey tones.",
@@ -14870,119 +12717,7 @@
       "scored_at": "2026-06-08T10:52:47.063Z",
       "scoring_cost_usd": 0.006647999999999999
     },
-    "/images/mars-sites/hope/01.jpg": {
-      "score": 6,
-      "subject": "A full-scale engineering model or replica of the Emirates Mars Mission Hope Probe spacecraft displayed at an indoor exhibition, showing solar panels, dish antenna, and science instruments.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/hope/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:51.314Z",
-      "scoring_cost_usd": 0.007389
-    },
-    "/images/mars-sites/hope/02.jpg": {
-      "score": 9,
-      "subject": "Oblique orbital view of Mars showing Olympus Mons volcano and surrounding Tharsis plateau against the black of space, captured by the Emirates Mars Mission Hope probe.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.35,
-        "y": 0.62
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/hope/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:54.595Z",
-      "scoring_cost_usd": 0.004956
-    },
-    "/images/mars-sites/hope/03.jpg": {
-      "score": 6,
-      "subject": "A physical scale model or engineering mockup of the UAE Hope Mars probe (Emirates Mars Mission) displayed at an exhibition, showing the spacecraft bus with solar panel array and high-gain antenna dish.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/hope/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:52:59.344Z",
-      "scoring_cost_usd": 0.007464
-    },
-    "/images/mars-sites/insight/01.jpg": {
-      "score": 8,
-      "subject": "NASA InSight Mars lander with solar panels fully deployed being assembled by technicians in white cleanroom suits inside a JPL facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/insight/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:06.275Z",
-      "scoring_cost_usd": 0.005136
-    },
-    "/images/mars-sites/insight/02.jpg": {
-      "score": 3,
-      "subject": "Artist's concept render of NASA's InSight Mars lander on the Martian surface with a cross-section view showing subsurface instruments including the seismometer and heat probe.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.3
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/insight/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:11.178Z",
-      "scoring_cost_usd": 0.00822
-    },
-    "/images/mars-sites/insight/05.jpg": {
-      "score": 6,
-      "subject": "Underside of a spacecraft bus or payload module showing instruments, connectors, thermal blankets, and caution tags in a cleanroom facility, dated 2017-08-09.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/insight/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:22.463Z",
-      "scoring_cost_usd": 0.007578
-    },
-    "/images/mars-sites/mangalyaan/01.jpg": {
-      "score": 7,
-      "subject": "A spacecraft wrapped in gold thermal insulation blankets sits in a cleanroom facility alongside a nitrogen tank, with a technician in yellow protective suit working nearby.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.65,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mangalyaan/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:25.962Z",
-      "scoring_cost_usd": 0.005405999999999999
-    },
-    "/images/mars-sites/mangalyaan/02.jpg": {
+    "/images/missions/mangalyaan/06.jpg": {
       "score": 6,
       "subject": "ISRO technicians in cleanroom suits working on the Mangalyaan (Mars Orbiter Mission) spacecraft covered in gold multi-layer insulation thermal blankets during assembly.",
       "category": "hardware",
@@ -14991,7 +12726,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/mars-sites/mangalyaan/02.1x1.jpg"
+        "1x1": "/images/missions/mangalyaan/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -14999,87 +12734,7 @@
       "scoring_cost_usd": 0.0068520000000000005,
       "subject_match": true
     },
-    "/images/mars-sites/mangalyaan/03.jpg": {
-      "score": 2,
-      "subject": "Labeled diagram of a spacecraft showing solar arrays, propellant tank, and antenna components.",
-      "category": "diagram",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mangalyaan/03.1x1.jpg"
-      },
-      "rejected_by": "category-diagram",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:18:18.726Z",
-      "scoring_cost_usd": 0.005091
-    },
-    "/images/mars-sites/mangalyaan/04.jpg": {
-      "score": 8,
-      "subject": "A spacecraft with gold thermal blanket and silver propulsion module being encapsulated inside a rocket fairing in an integration facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mangalyaan/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:29.835Z",
-      "scoring_cost_usd": 0.004815
-    },
-    "/images/mars-sites/mangalyaan/05.jpg": {
-      "score": 8,
-      "subject": "Orbital view of Earth showing the Indian subcontinent, Arabian Peninsula, and Indian Ocean with swirling storm systems visible",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mangalyaan/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:32.778Z",
-      "scoring_cost_usd": 0.006051000000000001
-    },
-    "/images/mars-sites/mariner9/01.jpg": {
-      "score": 6,
-      "subject": "Mariner 9 orbital image of Nirgal Vallis, a dendritic valley network on Mars, shown in black and white.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mariner9/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:35.887Z",
-      "scoring_cost_usd": 0.004971
-    },
-    "/images/mars-sites/mariner9/02.jpg": {
-      "score": 4,
-      "subject": "Low-resolution grainy black-and-white orbital or flyby scan image showing crater-like surface features on a planetary body, with visible scan-line artifacts and reference dots.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.3,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mariner9/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:39.358Z",
-      "scoring_cost_usd": 0.00771
-    },
-    "/images/mars-sites/mariner9/03.jpg": {
+    "/images/missions/mariner9/06.jpg": {
       "score": 2,
       "subject": "Large group of people posing outdoors in front of a horizontal Atlas launch vehicle display at what appears to be a NASA or aerospace facility, circa 1970s-1980s.",
       "category": "people",
@@ -15088,14 +12743,14 @@
         "y": 0.62
       },
       "variants": {
-        "1x1": "/images/mars-sites/mariner9/03.1x1.jpg"
+        "1x1": "/images/missions/mariner9/06.1x1.jpg"
       },
       "rejected_by": "category-people",
       "fallback": false,
       "scored_at": "2026-06-08T10:53:43.131Z",
       "scoring_cost_usd": 0.007983
     },
-    "/images/mars-sites/mariner9/04.jpg": {
+    "/images/missions/mariner9/07.jpg": {
       "score": 8,
       "subject": "The Mariner 9 spacecraft photographed against black before launch, high-gain dish and four solar panels extended.",
       "category": "spacecraft",
@@ -15104,7 +12759,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/mars-sites/mariner9/04.1x1.jpg"
+        "1x1": "/images/missions/mariner9/07.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15112,7 +12767,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/mars-sites/mariner9/05.jpg": {
+    "/images/missions/mariner9/08.jpg": {
       "score": 5,
       "subject": "Mars Reconnaissance Orbiter grayscale overhead image of the Martian surface feature informally known as 'Inca City', showing geometric ridge patterns with a scale bar of 15 km and north arrow.",
       "category": "surface",
@@ -15121,92 +12776,12 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/mariner9/05.1x1.jpg"
+        "1x1": "/images/missions/mariner9/08.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:53:49.244Z",
       "scoring_cost_usd": 0.0033539999999999998
-    },
-    "/images/mars-sites/mars-express/01.jpg": {
-      "score": 7,
-      "subject": "Artist's concept render of ESA Mars Express spacecraft with solar panels and MARSIS radar antenna deployed in orbit above the Martian surface.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-express/01.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:19:34.577Z",
-      "scoring_cost_usd": 0.00522
-    },
-    "/images/mars-sites/mars-express/02.jpg": {
-      "score": 9,
-      "subject": "Phobos, the larger of Mars's two moons, photographed in high resolution showing its irregular cratered surface, linear grooves, and the bright ejecta rays of Stickney crater against the black void of space.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-express/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:23:23.340Z",
-      "scoring_cost_usd": 0.006396000000000001
-    },
-    "/images/mars-sites/mars-express/03.jpg": {
-      "score": 7,
-      "subject": "Artist's concept rendering of a spacecraft approaching Mars with Phobos visible in the background against a starfield.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.72,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-express/03.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:51.748Z",
-      "scoring_cost_usd": 0.0035310000000000003
-    },
-    "/images/mars-sites/mars-express/04.jpg": {
-      "score": 5,
-      "subject": "Artist's concept of a spacecraft scanning Mars from orbit with Phobos visible in the background against a starfield.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.72,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-express/04.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:57.279Z",
-      "scoring_cost_usd": 0.006111
-    },
-    "/images/mars-sites/mars-express/05.jpg": {
-      "score": 9,
-      "subject": "Overhead orbital view of Olympus Mons, the largest volcano in the solar system on Mars, with its caldera visible at center and surrounded by dust haze.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.47
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-express/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:00.369Z",
-      "scoring_cost_usd": 0.005361
     },
     "/images/mars-sites/mars-odyssey/01.jpg": {
       "score": 6,
@@ -15289,71 +12864,7 @@
       "scored_at": "2026-06-08T10:54:17.760Z",
       "scoring_cost_usd": 0.0072569999999999996
     },
-    "/images/mars-sites/mars-pathfinder/01.jpg": {
-      "score": 9,
-      "subject": "360-degree panoramic view of the Martian surface from NASA's Mars Pathfinder lander, showing the rocky Ares Vallis landing site with the Sojourner rover visible in the distance and lander solar panels in the foreground.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-pathfinder/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:21.000Z",
-      "scoring_cost_usd": 0.003966
-    },
-    "/images/mars-sites/mars-pathfinder/02.jpg": {
-      "score": 8,
-      "subject": "Three generations of NASA Mars rover models displayed outdoors at JPL, showing Sojourner, Mars Exploration Rover, and Curiosity rover to scale.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.62
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-pathfinder/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:29:45.352Z",
-      "scoring_cost_usd": 0.004194
-    },
-    "/images/mars-sites/mars-pathfinder/03.jpg": {
-      "score": 9,
-      "subject": "NASA Mars Pathfinder Sojourner rover on the rocky Martian surface, surrounded by boulders and rocky terrain in a wide-angle black and white photograph.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.3,
-        "y": 0.62
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-pathfinder/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:29:53.511Z",
-      "scoring_cost_usd": 0.004085999999999999
-    },
-    "/images/mars-sites/mars-pathfinder/04.jpg": {
-      "score": 6,
-      "subject": "Black-and-white image of rocky Martian surface terrain with boulders and sandy ground captured by a Mars rover or lander camera.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars-pathfinder/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:29:56.146Z",
-      "scoring_cost_usd": 0.003231
-    },
-    "/images/mars-sites/mars2/01.jpg": {
+    "/images/missions/mars2/04.jpg": {
       "score": 9,
       "subject": "Full-disk view of Mars showing reddish-orange terrain, surface features, and a polar ice cap against a black background.",
       "category": "orbital",
@@ -15362,14 +12873,14 @@
         "y": 0.48
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars2/01.1x1.jpg"
+        "1x1": "/images/missions/mars2/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:54:23.696Z",
       "scoring_cost_usd": 0.003909
     },
-    "/images/mars-sites/mars3/01.jpg": {
+    "/images/missions/mars3/05.jpg": {
       "score": 2,
       "subject": "Extremely low-resolution, heavily degraded black-and-white image showing indistinct grainy texture with no identifiable space-related subject.",
       "category": "other",
@@ -15378,14 +12889,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars3/01.1x1.jpg"
+        "1x1": "/images/missions/mars3/05.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T10:19:28.622Z",
       "scoring_cost_usd": 0.0050100000000000006
     },
-    "/images/mars-sites/mars3/02.jpg": {
+    "/images/missions/mars3/06.jpg": {
       "score": 8,
       "subject": "Front view of the full-size Mars 3 replica with its dish antenna at the Tsiolkovsky State Museum of the History of Cosmonautics, Kaluga.",
       "category": "hardware",
@@ -15394,7 +12905,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars3/02.1x1.jpg"
+        "1x1": "/images/missions/mars3/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15402,23 +12913,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/mars-sites/mars3/03.jpg": {
-      "score": 6,
-      "subject": "HiRISE orbital image of the Martian surface showing a central color strip of layered terrain with flanking grayscale regions and a 500-meter scale bar.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars3/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:43.444Z",
-      "scoring_cost_usd": 0.007779
-    },
-    "/images/mars-sites/mars3/04.jpg": {
+    "/images/missions/mars3/07.jpg": {
       "score": 2,
       "subject": "Annotated diagram showing candidate hardware locations for the Soviet Mars-3 lander on the Martian surface, with labeled insets for parachute, retrorocket, lander, and heat shield candidates.",
       "category": "diagram",
@@ -15427,46 +12922,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/mars3/04.1x1.jpg"
+        "1x1": "/images/missions/mars3/07.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
       "scored_at": "2026-06-08T10:54:47.921Z",
       "scoring_cost_usd": 0.006753
     },
-    "/images/mars-sites/mars6/01.jpg": {
-      "score": 5,
-      "subject": "A Mariner-series spacecraft engineering model or replica on museum display, featuring a large parabolic high-gain antenna and octagonal bus structure.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars6/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:50.886Z",
-      "scoring_cost_usd": 0.003273
-    },
-    "/images/mars-sites/maven/01.jpg": {
-      "score": 7,
-      "subject": "A cleanroom technician in white bunny suit inspects a large dome-shaped spacecraft hardware assembly—likely a crew module or pressure vessel—mounted on a stand in a high-bay facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/maven/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:59.539Z",
-      "scoring_cost_usd": 0.007605
-    },
-    "/images/mars-sites/maven/02.jpg": {
+    "/images/missions/maven/05.jpg": {
       "score": 8,
       "subject": "Artist concept of the MAVEN orbiter over the limb of Mars.",
       "category": "render",
@@ -15475,7 +12938,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/maven/02.1x1.jpg"
+        "1x1": "/images/missions/maven/05.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15483,7 +12946,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/mars-sites/maven/03.jpg": {
+    "/images/missions/maven/06.jpg": {
       "score": 8,
       "subject": "MAVEN with its twin solar arrays test-deployed in the Payload Hazardous Servicing Facility at Kennedy Space Center, September 2013.",
       "category": "hardware",
@@ -15492,7 +12955,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/maven/03.1x1.jpg"
+        "1x1": "/images/missions/maven/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15500,23 +12963,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/mars-sites/maven/04.jpg": {
-      "score": 4,
-      "subject": "Composite image of Mars showing the planet's disk overlaid with a pixelated magenta ultraviolet aurora data overlay, likely from MAVEN spacecraft.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/maven/04.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:55:07.895Z",
-      "scoring_cost_usd": 0.007764
-    },
-    "/images/mars-sites/maven/05.jpg": {
+    "/images/missions/maven/07.jpg": {
       "score": 8,
       "subject": "Engineers working on MAVEN and its high-gain antenna at Kennedy Space Center before launch, November 2013.",
       "category": "hardware",
@@ -15525,7 +12972,7 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/mars-sites/maven/05.1x1.jpg"
+        "1x1": "/images/missions/maven/07.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15613,7 +13060,7 @@
       "scored_at": "2026-06-08T10:55:28.796Z",
       "scoring_cost_usd": 0.003654
     },
-    "/images/mars-sites/opportunity/01.jpg": {
+    "/images/missions/opportunity/06.jpg": {
       "score": 7,
       "subject": "Artist's concept render of NASA's Mars Exploration Rover (Spirit or Opportunity) on the Martian surface with rocky terrain and hills in the background.",
       "category": "render",
@@ -15622,14 +13069,14 @@
         "y": 0.52
       },
       "variants": {
-        "1x1": "/images/mars-sites/opportunity/01.1x1.jpg"
+        "1x1": "/images/missions/opportunity/06.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T10:55:32.812Z",
       "scoring_cost_usd": 0.005991
     },
-    "/images/mars-sites/opportunity/02.jpg": {
+    "/images/missions/opportunity/07.jpg": {
       "score": 7,
       "subject": "Black-and-white orbital image of a Martian or lunar cratered surface showing four prominent impact craters of varying sizes amid ejecta patterns and rough terrain.",
       "category": "surface",
@@ -15638,30 +13085,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/mars-sites/opportunity/02.1x1.jpg"
+        "1x1": "/images/missions/opportunity/07.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:55:36.335Z",
       "scoring_cost_usd": 0.006156
     },
-    "/images/mars-sites/opportunity/03.jpg": {
-      "score": 4,
-      "subject": "Aerial view of the Martian surface showing two impact craters and frost or ice deposits across a reddish-grey terrain, with a visible image-strip boundary dividing two differently processed sections.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.82
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/opportunity/03.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:55:40.813Z",
-      "scoring_cost_usd": 0.0059640000000000006
-    },
-    "/images/mars-sites/opportunity/04.jpg": {
+    "/images/missions/opportunity/08.jpg": {
       "score": 6,
       "subject": "Overhead black-and-white orbital view of a large eroded impact crater on the Martian surface with a shadowed interior and a smaller crater visible at the bottom edge.",
       "category": "surface",
@@ -15670,14 +13101,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/opportunity/04.1x1.jpg"
+        "1x1": "/images/missions/opportunity/08.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:55:45.586Z",
       "scoring_cost_usd": 0.007956000000000001
     },
-    "/images/mars-sites/opportunity/05.jpg": {
+    "/images/missions/opportunity/09.jpg": {
       "score": 8,
       "subject": "360-degree panoramic view from the Mars Exploration Rover Opportunity showing the rover's solar panels in the foreground and the cracked, rocky Martian surface stretching to the horizon.",
       "category": "surface",
@@ -15686,14 +13117,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/mars-sites/opportunity/05.1x1.jpg"
+        "1x1": "/images/missions/opportunity/09.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:55:50.024Z",
       "scoring_cost_usd": 0.004452
     },
-    "/images/mars-sites/perseverance/01.jpg": {
+    "/images/missions/perseverance/05.jpg": {
       "score": 7,
       "subject": "Wide panoramic view of the Martian surface showing rocky terrain, sand dunes, and distant hills under a hazy sky, likely captured by a Mars rover.",
       "category": "surface",
@@ -15702,46 +13133,14 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/perseverance/01.1x1.jpg"
+        "1x1": "/images/missions/perseverance/05.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:55:52.606Z",
       "scoring_cost_usd": 0.003546
     },
-    "/images/mars-sites/perseverance/02.jpg": {
-      "score": 8,
-      "subject": "Close-up of a Mars rover wheel wrapped in thermal foil blanket during assembly in a clean room facility, showing the machined aluminum spoke design and hub detail.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/perseverance/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:55:55.381Z",
-      "scoring_cost_usd": 0.006609
-    },
-    "/images/mars-sites/perseverance/03.jpg": {
-      "score": 8,
-      "subject": "Close-up view of Mars rover wheels and rocker-bogie suspension assembly during integration in a clean room facility, showing detailed metallic wheel spokes and thermal blankets.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/perseverance/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:56:01.972Z",
-      "scoring_cost_usd": 0.007329
-    },
-    "/images/mars-sites/perseverance/04.jpg": {
+    "/images/missions/perseverance/06.jpg": {
       "score": 8,
       "subject": "Perseverance rover selfie beside the rock Rochette in Jezero crater on sol 198, 10 September 2021.",
       "category": "surface",
@@ -15750,7 +13149,7 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/perseverance/04.1x1.jpg"
+        "1x1": "/images/missions/perseverance/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15758,7 +13157,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/mars-sites/phoenix/01.jpg": {
+    "/images/missions/phoenix/06.jpg": {
       "score": 5,
       "subject": "Artist's concept render of NASA's Phoenix lander descending to the Martian surface with retro rockets firing.",
       "category": "render",
@@ -15767,14 +13166,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/mars-sites/phoenix/01.1x1.jpg"
+        "1x1": "/images/missions/phoenix/06.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T10:56:09.842Z",
       "scoring_cost_usd": 0.003858
     },
-    "/images/mars-sites/phoenix/02.jpg": {
+    "/images/missions/phoenix/07.jpg": {
       "score": 3,
       "subject": "Highly magnified or processed astronomical image showing a mottled yellow-green granular texture with faint point sources near center, possibly a solar surface or planetary atmosphere detail.",
       "category": "surface",
@@ -15783,14 +13182,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/phoenix/02.1x1.jpg"
+        "1x1": "/images/missions/phoenix/07.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T10:56:30.328Z",
       "scoring_cost_usd": 0.003861
     },
-    "/images/mars-sites/phoenix/03.jpg": {
+    "/images/missions/phoenix/08.jpg": {
       "score": 3,
       "subject": "Highly degraded, low-contrast orbital or surface image showing a textured terrain with barely visible small bright specks that may indicate a lander or spacecraft on a planetary surface.",
       "category": "surface",
@@ -15799,14 +13198,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/mars-sites/phoenix/03.1x1.jpg"
+        "1x1": "/images/missions/phoenix/08.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T10:56:34.159Z",
       "scoring_cost_usd": 0.004131
     },
-    "/images/mars-sites/phoenix/04.jpg": {
+    "/images/missions/phoenix/09.jpg": {
       "score": 8,
       "subject": "Panoramic view of the Martian surface taken from a lander, showing rocky terrain, scattered stones, and the hazy orange sky with lander hardware visible in the foreground.",
       "category": "surface",
@@ -15815,14 +13214,14 @@
         "y": 0.45
       },
       "variants": {
-        "1x1": "/images/mars-sites/phoenix/04.1x1.jpg"
+        "1x1": "/images/missions/phoenix/09.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:56:37.702Z",
       "scoring_cost_usd": 0.007788
     },
-    "/images/mars-sites/phoenix/05.jpg": {
+    "/images/missions/phoenix/10.jpg": {
       "score": 6,
       "subject": "A multi-lens spacecraft camera or imaging instrument assembly with four lens units mounted on a black chassis, photographed in a clean room environment.",
       "category": "hardware",
@@ -15831,14 +13230,14 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/phoenix/05.1x1.jpg"
+        "1x1": "/images/missions/phoenix/10.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:56:40.714Z",
       "scoring_cost_usd": 0.0039629999999999995
     },
-    "/images/mars-sites/schiaparelli/01.jpg": {
+    "/images/missions/schiaparelli/06.jpg": {
       "score": 6,
       "subject": "A fresh meteorite impact crater on the Martian surface with a dark ejecta blast pattern and elongated debris streak, imaged from orbit.",
       "category": "surface",
@@ -15847,14 +13246,14 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/schiaparelli/01.1x1.jpg"
+        "1x1": "/images/missions/schiaparelli/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:56:43.842Z",
       "scoring_cost_usd": 0.00474
     },
-    "/images/mars-sites/schiaparelli/02.jpg": {
+    "/images/missions/schiaparelli/07.jpg": {
       "score": 5,
       "subject": "Mars Reconnaissance Orbiter HiRISE composite image showing the InSight lander on the Martian surface with scale bar and color/grayscale inset panels.",
       "category": "surface",
@@ -15863,14 +13262,14 @@
         "y": 0.35
       },
       "variants": {
-        "1x1": "/images/mars-sites/schiaparelli/02.1x1.jpg"
+        "1x1": "/images/missions/schiaparelli/07.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:56:46.625Z",
       "scoring_cost_usd": 0.003906
     },
-    "/images/mars-sites/schiaparelli/03.jpg": {
+    "/images/missions/schiaparelli/08.jpg": {
       "score": 4,
       "subject": "Orbital reconnaissance image of a Martian surface area showing multiple annotated inset boxes highlighting small dark impact or landing debris sites with scale bars.",
       "category": "diagram",
@@ -15879,14 +13278,14 @@
         "y": 0.38
       },
       "variants": {
-        "1x1": "/images/mars-sites/schiaparelli/03.1x1.jpg"
+        "1x1": "/images/missions/schiaparelli/08.1x1.jpg"
       },
       "rejected_by": "category-diagram",
       "fallback": false,
       "scored_at": "2026-06-08T10:56:50.987Z",
       "scoring_cost_usd": 0.00801
     },
-    "/images/mars-sites/spirit/01.jpg": {
+    "/images/missions/spirit/06.jpg": {
       "score": 8,
       "subject": "Mars Exploration Rover Spirit alone on the floor of the Payload Hazardous Servicing Facility at Kennedy Space Center, Pancam mast raised, before launch.",
       "category": "hardware",
@@ -15895,7 +13294,7 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/spirit/01.1x1.jpg"
+        "1x1": "/images/missions/spirit/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -15903,7 +13302,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/mars-sites/spirit/02.jpg": {
+    "/images/missions/spirit/07.jpg": {
       "score": 7,
       "subject": "Panoramic view of Martian sand dunes with rippled surface textures under a hazy orange sky, captured by a Mars rover.",
       "category": "surface",
@@ -15912,14 +13311,14 @@
         "y": 0.55
       },
       "variants": {
-        "1x1": "/images/mars-sites/spirit/02.1x1.jpg"
+        "1x1": "/images/missions/spirit/07.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:56:54.330Z",
       "scoring_cost_usd": 0.005169
     },
-    "/images/mars-sites/spirit/03.jpg": {
+    "/images/missions/spirit/08.jpg": {
       "score": 6,
       "subject": "Anaglyph 3D stereoscopic panorama of the Martian surface showing rocky terrain and hills, captured by a Mars rover.",
       "category": "surface",
@@ -15928,14 +13327,14 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/spirit/03.1x1.jpg"
+        "1x1": "/images/missions/spirit/08.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T10:56:56.900Z",
       "scoring_cost_usd": 0.003183
     },
-    "/images/mars-sites/spirit/04.jpg": {
+    "/images/missions/spirit/09.jpg": {
       "score": 4,
       "subject": "Anaglyph 3D panoramic view of the Martian surface showing rocky terrain with rover wheel tracks, captured by a Mars Exploration Rover.",
       "category": "surface",
@@ -15944,7 +13343,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/spirit/04.1x1.jpg"
+        "1x1": "/images/missions/spirit/09.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
@@ -16031,55 +13430,7 @@
       "scored_at": "2026-06-08T10:57:20.528Z",
       "scoring_cost_usd": 0.0067079999999999996
     },
-    "/images/mars-sites/tianwen1-orbiter/01.jpg": {
-      "score": 5,
-      "subject": "Scale model of China's Zhurong Mars rover on display at an exhibition, with product information placards visible in the foreground.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/tianwen1-orbiter/01.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:24.288Z",
-      "scoring_cost_usd": 0.005451
-    },
-    "/images/mars-sites/tianwen1-orbiter/02.jpg": {
-      "score": 8,
-      "subject": "Orbital view of the Martian surface showing China's Zhurong rover and Tianwen-1 lander as small cyan dots within a dark blast shadow on the red plains of Utopia Planitia.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/tianwen1-orbiter/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:44:11.747Z",
-      "scoring_cost_usd": 0.005961
-    },
-    "/images/mars-sites/tianwen1-orbiter/03.jpg": {
-      "score": 7,
-      "subject": "Panoramic view of the Martian surface showing red sandy terrain with wind-sculpted dunes and a portion of a lander's solar panel and communication antenna in the foreground.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.6
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/tianwen1-orbiter/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:27.423Z",
-      "scoring_cost_usd": 0.005196
-    },
-    "/images/mars-sites/tianwen1-orbiter/04.jpg": {
+    "/images/missions/tianwen1/06.jpg": {
       "score": 8,
       "subject": "A Long March 5 rocket lifting off from Wenchang with the Tianwen-1 orbiter and lander, 23 July 2020.",
       "category": "launch",
@@ -16088,7 +13439,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/tianwen1-orbiter/04.1x1.jpg"
+        "1x1": "/images/missions/tianwen1/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -16096,7 +13447,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/mars-sites/viking1-lander/01.jpg": {
+    "/images/missions/viking1/06.jpg": {
       "score": 8,
       "subject": "A Viking lander test article on a simulated Mars surface, with its dish antenna, sampling arm and meteorology boom.",
       "category": "hardware",
@@ -16105,77 +13456,13 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/mars-sites/viking1-lander/01.1x1.jpg"
+        "1x1": "/images/missions/viking1/06.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-11-08T10:35:13.566Z",
       "scoring_cost_usd": 0,
       "subject_match": true
-    },
-    "/images/mars-sites/viking1-lander/02.jpg": {
-      "score": 4,
-      "subject": "Close-up view of a Mars lander or rover body panel decorated with an American flag and colorful stickers, with the Martian surface visible in the background.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/viking1-lander/02.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:35.952Z",
-      "scoring_cost_usd": 0.004002
-    },
-    "/images/mars-sites/viking1-lander/03.jpg": {
-      "score": 6,
-      "subject": "Black-and-white surface image of Mars showing rocky terrain with scattered stones and part of a lander structure visible at the upper left, likely taken by a Viking lander camera.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/viking1-lander/03.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:39.129Z",
-      "scoring_cost_usd": 0.005712
-    },
-    "/images/mars-sites/viking1-lander/04.jpg": {
-      "score": 9,
-      "subject": "A Titan/Centaur rocket lifts off from Complex 41 at Cape Canaveral, surrounded by billowing exhaust clouds and engine flame.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.35
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/viking1-lander/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:42.257Z",
-      "scoring_cost_usd": 0.00621
-    },
-    "/images/mars-sites/viking1-lander/05.jpg": {
-      "score": 5,
-      "subject": "False-color orbital image of a Martian cratered plain featuring a prominent dark impact crater surrounded by smaller craters and subtle surface textures",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/viking1-lander/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:57:45.327Z",
-      "scoring_cost_usd": 0.004203
     },
     "/images/mars-sites/viking1-orbiter/01.jpg": {
       "score": 9,
@@ -16310,38 +13597,6 @@
       "scored_at": "2026-06-08T10:57:48.361Z",
       "scoring_cost_usd": 0.006006
     },
-    "/images/missions/bepicolombo.jpg": {
-      "score": 7,
-      "subject": "Artist's concept render of the BepiColombo Mercury Transfer Module spacecraft with solar panels and cylindrical telescope/instrument housing against a black background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/bepicolombo.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:31.222Z",
-      "scoring_cost_usd": 0.006305999999999999
-    },
-    "/images/missions/cassini.jpg": {
-      "score": 7,
-      "subject": "Artist's concept of the Cassini spacecraft firing its main engine during Saturn orbit insertion, with Saturn's rings and globe prominent in the background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.42,
-        "y": 0.38
-      },
-      "variants": {
-        "1x1": "/images/missions/cassini.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:00:59.838Z",
-      "scoring_cost_usd": 0.005301
-    },
     "/images/missions/cassini/01.jpg": {
       "score": 8,
       "subject": "Artist's concept rendering of the Cassini spacecraft firing its engine during Saturn orbit insertion, with Saturn and its rings visible in the background.",
@@ -16426,86 +13681,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:00:17.943Z",
       "scoring_cost_usd": 0.00891
-    },
-    "/images/missions/giotto.jpg": {
-      "score": 7,
-      "subject": "HMC 68-image composite of Comet Halley's nucleus and coma captured by the Giotto spacecraft on 14 March 1986, showing the dark irregular nucleus with bright jets emanating from its sunlit side.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.52
-      },
-      "variants": {
-        "1x1": "/images/missions/giotto.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:03:44.711Z",
-      "scoring_cost_usd": 0.007701
-    },
-    "/images/missions/hayabusa2.jpg": {
-      "score": 9,
-      "subject": "Asteroid Ryugu photographed by JAXA's Hayabusa2 spacecraft, showing its diamond-shaped rubble-pile body against black space.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/hayabusa2.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:03:54.560Z",
-      "scoring_cost_usd": 0.004011
-    },
-    "/images/missions/juice.jpg": {
-      "score": 7,
-      "subject": "Artist's render of ESA JUICE (Jupiter Icy Moons Explorer) spacecraft with large solar arrays deployed, with Jupiter and its Great Red Spot visible in the background.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/juice.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:04:57.878Z",
-      "scoring_cost_usd": 0.005376000000000001
-    },
-    "/images/missions/juno.jpg": {
-      "score": 7,
-      "subject": "Artist's concept rendering of the Juno spacecraft with solar panels extended orbiting above Jupiter's cloud bands.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.58,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/missions/juno.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:05:00.998Z",
-      "scoring_cost_usd": 0.004971
-    },
-    "/images/missions/messenger.jpg": {
-      "score": 6,
-      "subject": "A cleanroom-suited technician inspects or adjusts multi-layer insulation (MLI) thermal blankets on a spacecraft in a cleanroom facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/messenger.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:07:57.037Z",
-      "scoring_cost_usd": 0.0070739999999999996
     },
     "/images/missions/messenger/01.jpg": {
       "score": 4,
@@ -16592,22 +13767,6 @@
       "scored_at": "2026-07-05T21:13:00.133Z",
       "scoring_cost_usd": 0.00864
     },
-    "/images/missions/pioneer-10.jpg": {
-      "score": 8,
-      "subject": "Engineers and technicians assembling or inspecting a Pioneer spacecraft (likely Pioneer 10 or 11) with its large dish antenna in a clean room facility, with TW-badged personnel on ladders working on the spacecraft bus.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/missions/pioneer-10.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:06.460Z",
-      "scoring_cost_usd": 0.006921
-    },
     "/images/missions/pioneer-10/01.jpg": {
       "score": 7,
       "subject": "Artist's rendering of a Pioneer spacecraft traveling through deep space with the Milky Way visible in the background.",
@@ -16675,22 +13834,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:16:25.080Z",
       "scoring_cost_usd": 0.007062000000000001
-    },
-    "/images/missions/pioneer-11.jpg": {
-      "score": 2,
-      "subject": "Large group of people posing outdoors in front of a horizontal Atlas launch vehicle display at what appears to be a NASA or aerospace facility, circa 1970s-1980s.",
-      "category": "people",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.62
-      },
-      "variants": {
-        "1x1": "/images/missions/pioneer-11.1x1.jpg"
-      },
-      "rejected_by": "category-people",
-      "fallback": false,
-      "scored_at": "2026-06-08T10:53:43.131Z",
-      "scoring_cost_usd": 0.007983
     },
     "/images/missions/pioneer-11/01.jpg": {
       "score": 8,
@@ -16760,86 +13903,6 @@
       "scored_at": "2026-07-05T21:16:39.246Z",
       "scoring_cost_usd": 0.005331000000000001
     },
-    "/images/missions/rosetta.jpg": {
-      "score": 9,
-      "subject": "Comet 67P/Churyumov–Gerasimenko's distinctive bi-lobed nucleus photographed by ESA's Rosetta spacecraft, showing dramatic rocky terrain and active jets against black space.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/rosetta.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:09:23.697Z",
-      "scoring_cost_usd": 0.005826
-    },
-    "/images/missions/ulysses.jpg": {
-      "score": 8,
-      "subject": "A spacecraft wrapped in gold thermal insulation blankets with a large dark dish antenna being handled by technicians in a clean room facility.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.42
-      },
-      "variants": {
-        "1x1": "/images/missions/ulysses.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:10:35.489Z",
-      "scoring_cost_usd": 0.005526
-    },
-    "/images/missions/vega-1.jpg": {
-      "score": 7,
-      "subject": "An artist's render or museum model of a balloon-suspended atmospheric probe descending through the yellowish clouds of Venus, showing instrument package with cone antenna and sensor modules.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.65
-      },
-      "variants": {
-        "1x1": "/images/missions/vega-1.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:10:48.602Z",
-      "scoring_cost_usd": 0.007419
-    },
-    "/images/missions/vega-2.jpg": {
-      "score": 7,
-      "subject": "An artist's render or museum model of a balloon-suspended atmospheric probe descending through the yellowish clouds of Venus, showing instrument package with cone antenna and sensor modules.",
-      "category": "render",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.65
-      },
-      "variants": {
-        "1x1": "/images/missions/vega-2.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:10:48.602Z",
-      "scoring_cost_usd": 0.007419
-    },
-    "/images/missions/venera-13.jpg": {
-      "score": 8,
-      "subject": "Venera 13 panoramic surface photograph showing the rocky Venusian landscape with the spacecraft's instruments and test card visible in the foreground.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/missions/venera-13.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:11:02.213Z",
-      "scoring_cost_usd": 0.0040409999999999995
-    },
     "/images/missions/venera-13/01.jpg": {
       "score": 3,
       "subject": "A 1982 Soviet postage stamp depicting the Venera 13 and Venera 14 spacecraft above the Venusian surface.",
@@ -16890,38 +13953,6 @@
       "fallback": false,
       "scored_at": "2026-07-05T21:22:01.921Z",
       "scoring_cost_usd": 0.005151
-    },
-    "/images/missions/voyager-1.jpg": {
-      "score": 9,
-      "subject": "NASA Voyager spacecraft engineering model or flight unit photographed against a black background, showing the high-gain antenna dish, science instrument boom, RTG power source, and magnetometer boom in full detail.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/voyager-1.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:11:31.174Z",
-      "scoring_cost_usd": 0.005142
-    },
-    "/images/moon-sites/chandrayaan3/05.jpg": {
-      "score": 3,
-      "subject": "ISRO Chandrayaan-3 Propulsion Module seen as a small bright glowing object against a black background in space.",
-      "category": "spacecraft",
-      "focal_point": {
-        "x": 0.4,
-        "y": 0.44
-      },
-      "variants": {
-        "1x1": "/images/moon-sites/chandrayaan3/05.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-08T11:01:42.937Z",
-      "scoring_cost_usd": 0.005406
     },
     "/images/science/andromeda-galaxy-m31.jpg": {
       "score": 8,
@@ -17162,22 +14193,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T11:20:44.796Z",
       "scoring_cost_usd": 0.007626000000000001
-    },
-    "/images/science/surface-mobility-lrv.jpg": {
-      "score": 9,
-      "subject": "Apollo astronaut saluting the American flag on the lunar surface with the Lunar Module and Lunar Roving Vehicle visible against a large lunar hill and black sky.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/science/surface-mobility-lrv.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:20:49.200Z",
-      "scoring_cost_usd": 0.0075840000000000005
     },
     "/textures/2k_callisto.jpg": {
       "score": 6,
@@ -25366,20 +22381,6 @@
       "scored_at": "2026-05-22T08:40:54.511Z",
       "scoring_cost_usd": 0.007209
     },
-    "/images/hotspots/mars/insight/tier3-pan.jpg": {
-      "score": 6,
-      "subject": "Panoramic view of the Martian surface taken by a Mars lander, showing the spacecraft's solar panels in the foreground and the rocky, rust-colored terrain stretching to the horizon under a hazy orange sky.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {},
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-05-22T08:41:38.866Z",
-      "scoring_cost_usd": 0.008475
-    },
     "/images/hotspots/mars/mars-pathfinder/tier2-ctx.jpg": {
       "score": 6,
       "subject": "Black-and-white orbital image of a Martian plain showing a prominent impact crater surrounded by numerous smaller craters and surface texture variations.",
@@ -25678,20 +22679,6 @@
       "scored_at": "2026-05-22T08:40:29.933Z",
       "scoring_cost_usd": 0.0075840000000000005
     },
-    "/images/hotspots/mars/viking1-lander/tier3-pan.jpg": {
-      "score": 4,
-      "subject": "Incomplete panoramic mosaic of the Martian surface showing rocky terrain and rover hardware fragments against an artificial reddish-brown background.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.52
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:41:55.820Z",
-      "scoring_cost_usd": 0.00804
-    },
     "/images/hotspots/mars/viking2-lander/tier2-ctx.jpg": {
       "score": 4,
       "subject": "Grayscale orbital image of a cratered planetary surface, likely Mars, showing subtle topographic relief with small craters and erosional features.",
@@ -25756,36 +22743,6 @@
       "scored_at": "2026-05-22T08:41:03.213Z",
       "scoring_cost_usd": 0.007149000000000001
     },
-    "/images/hotspots/mars/zhurong/tier3-pan.jpg": {
-      "score": 2,
-      "subject": "A small Mars surface panorama thumbnail embedded in the lower-left corner of a largely blank brown-gradient background, showing rover wheel tracks and lander hardware on the Martian surface.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.17,
-        "y": 0.62
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-05-22T08:42:00.466Z",
-      "scoring_cost_usd": 0.008295
-    },
-    "/images/hotspots/moon/apollo11/tier2-lroc.jpg": {
-      "score": 5,
-      "subject": "Grayscale orbital image of a cratered lunar surface showing varying albedo regions and impact craters of multiple sizes.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/hotspots/moon/apollo11/tier2-lroc.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-23T20:29:03.747Z",
-      "scoring_cost_usd": 0.007119
-    },
     "/images/hotspots/moon/apollo11/tier2-regional.jpg": {
       "score": 6,
       "subject": "High-resolution black-and-white orbital image of a cratered lunar surface showing regolith, small impact craters, and ejecta patterns.",
@@ -25815,22 +22772,6 @@
       "fallback": false,
       "scored_at": "2026-06-23T20:29:16.733Z",
       "scoring_cost_usd": 0.008445000000000001
-    },
-    "/images/hotspots/moon/apollo12/tier2-lroc.jpg": {
-      "score": 5,
-      "subject": "High-resolution orbital photograph of a cratered lunar surface showing numerous small impact craters and regolith texture.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/hotspots/moon/apollo12/tier2-lroc.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-23T20:29:20.775Z",
-      "scoring_cost_usd": 0.007209
     },
     "/images/hotspots/moon/apollo12/tier2-regional.jpg": {
       "score": 5,
@@ -25862,22 +22803,6 @@
       "scored_at": "2026-06-23T20:29:33.094Z",
       "scoring_cost_usd": 0.008115
     },
-    "/images/hotspots/moon/apollo14/tier2-lroc.jpg": {
-      "score": 6,
-      "subject": "High-resolution grayscale orbital photograph of the lunar surface showing heavily cratered regolith with varied albedo features and small impact pits.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/hotspots/moon/apollo14/tier2-lroc.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-23T20:29:36.997Z",
-      "scoring_cost_usd": 0.007194000000000001
-    },
     "/images/hotspots/moon/apollo14/tier2-regional.jpg": {
       "score": 6,
       "subject": "High-resolution grayscale orbital photograph of the lunar surface showing a heavily cratered highland terrain with numerous impact craters of varying sizes.",
@@ -25907,22 +22832,6 @@
       "fallback": false,
       "scored_at": "2026-06-23T20:29:47.525Z",
       "scoring_cost_usd": 0.00828
-    },
-    "/images/hotspots/moon/apollo15/tier2-lroc.jpg": {
-      "score": 4,
-      "subject": "A mosaic of lunar surface imagery showing a sinuous rille or ridge feature with misaligned image tiles creating visible seams and brightness discontinuities across the frame.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.25,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/hotspots/moon/apollo15/tier2-lroc.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:29:57.012Z",
-      "scoring_cost_usd": 0.007674
     },
     "/images/hotspots/moon/apollo15/tier2-regional.jpg": {
       "score": 4,
@@ -25954,22 +22863,6 @@
       "scored_at": "2026-06-23T20:30:09.323Z",
       "scoring_cost_usd": 0.00822
     },
-    "/images/hotspots/moon/apollo16/tier2-lroc.jpg": {
-      "score": 5,
-      "subject": "Mosaic of the lunar surface showing a bright impact crater with prominent ray ejecta patterns in the lower left, with visible image seam artifacts from multiple frame compositing.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.28,
-        "y": 0.88
-      },
-      "variants": {
-        "1x1": "/images/hotspots/moon/apollo16/tier2-lroc.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-23T20:30:13.712Z",
-      "scoring_cost_usd": 0.007404000000000001
-    },
     "/images/hotspots/moon/apollo16/tier2-regional.jpg": {
       "score": 8,
       "subject": "High-resolution lunar reconnaissance orbiter image showing two bright impact craters with prominent ejecta ray systems on the Moon's surface.",
@@ -25986,36 +22879,6 @@
       "scored_at": "2026-06-23T20:30:18.319Z",
       "scoring_cost_usd": 0.007479
     },
-    "/images/hotspots/moon/apollo16/tier3-pan.jpg": {
-      "score": 4,
-      "subject": "Panoramic mosaic of the lunar surface showing Apollo-era equipment, astronaut shadow, and scientific instruments deployed on the Moon, with large black and grey unfilled regions above and below the image strip.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.48
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:30:25.059Z",
-      "scoring_cost_usd": 0.008475
-    },
-    "/images/hotspots/moon/apollo17/tier2-lroc.jpg": {
-      "score": 4,
-      "subject": "Grayscale orbital image of the lunar surface showing a transition between dark mare basalt and lighter highland terrain with scattered small craters.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.55
-      },
-      "variants": {
-        "1x1": "/images/hotspots/moon/apollo17/tier2-lroc.1x1.jpg"
-      },
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:30:29.833Z",
-      "scoring_cost_usd": 0.007281
-    },
     "/images/hotspots/moon/apollo17/tier2-regional.jpg": {
       "score": 5,
       "subject": "Grayscale orbital or surface scan of a planetary body showing varied albedo regions, craters, and terrain features",
@@ -26031,20 +22894,6 @@
       "fallback": false,
       "scored_at": "2026-06-23T20:30:33.766Z",
       "scoring_cost_usd": 0.005742000000000001
-    },
-    "/images/hotspots/moon/apollo17/tier3-pan.jpg": {
-      "score": 3,
-      "subject": "A low-resolution black-and-white Apollo lunar surface panorama (labeled 'Panorama 2, taken from ALSEP area near C/S') showing the Moon's terrain, scientific equipment, and an astronaut silhouette.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.26,
-        "y": 0.42
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:30:39.001Z",
-      "scoring_cost_usd": 0.00864
     },
     "/images/hotspots/moon/beresheet/tier2-lroc.jpg": {
       "score": 7,
@@ -26077,20 +22926,6 @@
       "fallback": false,
       "scored_at": "2026-06-23T20:30:51.474Z",
       "scoring_cost_usd": 0.007614
-    },
-    "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg": {
-      "score": 2,
-      "subject": "A tiny thumbnail of the Chandrayaan-3 Vikram lander on the lunar surface, occupying a small corner of an otherwise black and grey blank canvas.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.07,
-        "y": 0.35
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:30:56.305Z",
-      "scoring_cost_usd": 0.00789
     },
     "/images/hotspots/moon/change3/tier2-lroc.jpg": {
       "score": 6,
@@ -26168,20 +23003,6 @@
       "scored_at": "2026-06-23T20:31:15.857Z",
       "scoring_cost_usd": 0.0073290000000000004
     },
-    "/images/hotspots/moon/change5/tier3-pan.jpg": {
-      "score": 5,
-      "subject": "Panoramic mosaic image of the lunar surface taken by a Chinese Chang'e lander, showing the Moon's regolith and spacecraft hardware in the foreground, with CNSA/CLEP logos visible.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.35,
-        "y": 0.45
-      },
-      "variants": {},
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-23T20:31:19.739Z",
-      "scoring_cost_usd": 0.007905
-    },
     "/images/hotspots/moon/change6/tier2-lroc.jpg": {
       "score": 5,
       "subject": "Orbital grayscale image of the lunar surface showing scattered small craters and a bright central ejecta halo, likely an LRO NAC frame of a spacecraft landing or impact site.",
@@ -26197,20 +23018,6 @@
       "fallback": false,
       "scored_at": "2026-06-23T20:31:32.322Z",
       "scoring_cost_usd": 0.007359
-    },
-    "/images/hotspots/moon/change6/tier3-pan.jpg": {
-      "score": 5,
-      "subject": "Fisheye panoramic view from a Chinese lunar lander (CLEP) showing the Moon's surface and gold-foil-wrapped spacecraft hardware in the foreground.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.28,
-        "y": 0.47
-      },
-      "variants": {},
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-23T20:31:36.363Z",
-      "scoring_cost_usd": 0.00777
     },
     "/images/hotspots/moon/luna16/tier2-lroc.jpg": {
       "score": 4,
@@ -26244,20 +23051,6 @@
       "scored_at": "2026-06-23T20:31:50.682Z",
       "scoring_cost_usd": 0.007374
     },
-    "/images/hotspots/moon/luna17/tier3-pan.jpg": {
-      "score": 3,
-      "subject": "A poorly stitched panoramic mosaic of a lunar or planetary surface showing rover wheel tracks and a spacecraft leg component against dark sky, with large black and grey void areas.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.37,
-        "y": 0.42
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:31:55.183Z",
-      "scoring_cost_usd": 0.008265
-    },
     "/images/hotspots/moon/luna21/tier2-lroc.jpg": {
       "score": 6,
       "subject": "Lunar Reconnaissance Orbiter Camera (LROC) overhead image of the lunar surface showing a small spacecraft or hardware object (with inset detail labeled L, B, I) amid craters, with a 50-meter scale bar.",
@@ -26290,20 +23083,6 @@
       "scored_at": "2026-06-23T20:32:04.119Z",
       "scoring_cost_usd": 0.007764
     },
-    "/images/hotspots/moon/luna9/tier3-pan.jpg": {
-      "score": 1,
-      "subject": "A severely corrupted or partially loaded image showing a small fragment of what appears to be a rocky planetary surface in the lower-left corner against large areas of black and grey void.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.09,
-        "y": 0.57
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:32:13.238Z",
-      "scoring_cost_usd": 0.008355
-    },
     "/images/hotspots/moon/slim/tier2-lroc.jpg": {
       "score": 4,
       "subject": "Grayscale orbital image of a cratered lunar surface with a small white annotation arrow pointing to an unmarked feature near the center of the frame.",
@@ -26319,20 +23098,6 @@
       "fallback": false,
       "scored_at": "2026-06-23T20:32:18.083Z",
       "scoring_cost_usd": 0.007824000000000001
-    },
-    "/images/hotspots/moon/slim/tier3-pan.jpg": {
-      "score": 2,
-      "subject": "JAXA SLIM lunar lander imaged on the Moon's surface by a small rover, shown tilted after landing, in a tiny thumbnail occupying only the upper-left corner of an otherwise blank canvas.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.07,
-        "y": 0.42
-      },
-      "variants": {},
-      "rejected_by": "score-below-threshold",
-      "fallback": false,
-      "scored_at": "2026-06-23T20:32:22.608Z",
-      "scoring_cost_usd": 0.008324999999999999
     },
     "/images/missions/akatsuki/01.jpg": {
       "score": 8,
@@ -30538,19 +27303,6 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.008865
     },
-    "/images/fleet-galleries/psyche-spacecraft/05.jpg": {
-      "score": 8,
-      "subject": "NASA's Psyche spacecraft undergoing assembly and testing in a clean room facility, with its thermal blankets, electronics boxes, and structural components visible on a tilt fixture.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009054
-    },
     "/images/fleet-galleries/vostok-5/02.jpg": {
       "score": 8,
       "subject": "Vostok 3KA descent module (spherical reentry capsule) with ejection seat and cosmonaut mannequin on display at a space museum, showing heat shield charring.",
@@ -30589,45 +27341,6 @@
       "rejected_by": null,
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.009342
-    },
-    "/images/fleet-galleries/vostok-6/03.jpg": {
-      "score": 8,
-      "subject": "A museum display model of the Soviet Vostok spacecraft showing the spherical descent module and equipment section, with Cyrillic text referencing Valentina Tereshkova visible in the background.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.45,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009504
-    },
-    "/images/fleet-galleries/vostok-6/04.jpg": {
-      "score": 8,
-      "subject": "A museum display model of the Vostok spacecraft, showing the spherical descent capsule with antennae and instrument module, displayed against a Russian-language exhibition backdrop referencing the first woman in space.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009504
-    },
-    "/images/fleet-galleries/vostok-6/05.jpg": {
-      "score": 8,
-      "subject": "Museum display model of the Vostok spacecraft showing the spherical reentry capsule and instrument module with characteristic green spherical gas tanks, displayed against a Cyrillic text backdrop.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.52,
-        "y": 0.48
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009444
     },
     "/images/missions/apollo-1/05.jpg": {
       "score": 10,
@@ -30732,19 +27445,6 @@
       "rejected_by": null,
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.009324
-    },
-    "/images/missions/europa-clipper/05.jpg": {
-      "score": 8,
-      "subject": "Europa Clipper spacecraft flight hardware being assembled and lowered onto a transport fixture in a cleanroom facility, wrapped in multi-layer insulation blankets.",
-      "category": "hardware",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.45
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009024
     },
     "/images/missions/hayabusa2/05.jpg": {
       "score": 5,
@@ -31006,19 +27706,6 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.009167999999999999
     },
-    "/images/missions/solar-orbiter/05.jpg": {
-      "score": 5,
-      "subject": "EUV image of the Sun's upper hemisphere overlaid with a green coordinate grid, captured by Solar Orbiter's Extreme Ultraviolet Imager (EUI), showing solar corona and prominences.",
-      "category": "other",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.25
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009756
-    },
     "/images/missions/vega-1/04.jpg": {
       "score": 7,
       "subject": "A Vega rocket lifts off at night from the ESA launch facility at Kourou, surrounded by brilliant engine exhaust and billowing smoke clouds.",
@@ -31071,7 +27758,7 @@
       "scored_at": "2026-11-08T07:14:35.226Z",
       "scoring_cost_usd": 0
     },
-    "/images/moon-sites/apollo15/02.jpg": {
+    "/images/missions/apollo15/06.jpg": {
       "score": 9,
       "subject": "An Apollo 15 astronaut seated on the Lunar Roving Vehicle on the lunar surface with the Moon's hills visible in the background and the photographer's shadow in the foreground.",
       "category": "surface",
@@ -31084,7 +27771,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.008901000000000001
     },
-    "/images/moon-sites/apollo15/03.jpg": {
+    "/images/missions/apollo15/07.jpg": {
       "score": 8,
       "subject": "An Apollo astronaut in a spacesuit uses a core tube or drill tool on the lunar surface with a hill visible in the background, consistent with Apollo 15 EVA activities.",
       "category": "surface",
@@ -31097,7 +27784,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.005097
     },
-    "/images/moon-sites/apollo15/04.jpg": {
+    "/images/missions/apollo15/08.jpg": {
       "score": 8,
       "subject": "An Apollo 15 astronaut seated on the Lunar Roving Vehicle parked beside the Lunar Module on the lunar surface, with a steep hill in the background.",
       "category": "surface",
@@ -31110,7 +27797,7 @@
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.007359
     },
-    "/images/moon-sites/apollo15/05.jpg": {
+    "/images/missions/apollo15/09.jpg": {
       "score": 9,
       "subject": "Apollo 15 astronaut saluting the American flag on the lunar surface with the Lunar Module and Lunar Roving Vehicle visible against the Hadley Delta mountain backdrop.",
       "category": "surface",
@@ -31238,22 +27925,6 @@
       "rejected_by": null,
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.008991
-    },
-    "/images/mars-sites/mars2/02.jpg": {
-      "score": 7,
-      "subject": "High-resolution orbital view of the Martian surface showing rocky terrain with dark boulder fields, eroded craters, and reddish-gray regolith captured by HiRISE or similar Mars reconnaissance camera.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/mars-sites/mars2/05.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:35.420Z",
-      "scoring_cost_usd": 0.006992999999999999
     },
     "/images/fleet-galleries/atlas-slv-3d/03.jpg": {
       "score": 8,
@@ -32067,7 +28738,7 @@
       "scored_at": "2026-11-08T09:35:15.616Z",
       "scoring_cost_usd": 0
     },
-    "/images/moon-sites/luna21/02.jpg": {
+    "/images/missions/luna21/07.jpg": {
       "score": 8,
       "subject": "Lunokhod 2 replica in the Tsiolkovsky State Museum of the History of Cosmonautics, Kaluga (Luna 21 payload).",
       "category": "hardware",
@@ -32080,7 +28751,7 @@
       "scored_at": "2026-11-08T09:35:15.800Z",
       "scoring_cost_usd": 0
     },
-    "/images/moon-sites/luna21/04.jpg": {
+    "/images/missions/luna21/09.jpg": {
       "score": 8,
       "subject": "Lunar Reconnaissance Orbiter image of Lunokhod 2 tracks looping around a small crater in Le Monnier bay.",
       "category": "orbital",
@@ -32093,7 +28764,7 @@
       "scored_at": "2026-11-08T09:35:15.869Z",
       "scoring_cost_usd": 0
     },
-    "/images/moon-sites/luna21/05.jpg": {
+    "/images/missions/luna21/10.jpg": {
       "score": 8,
       "subject": "Side view of the Lunokhod 2 replica showing its eight wheels, Kaluga cosmonautics museum.",
       "category": "hardware",
@@ -32403,6 +29074,383 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-08T10:35:13.592Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo11/06.jpg": {
+      "score": 8,
+      "subject": "Apollo 11 science package after deployment on the Moon: the passive seismometer in the foreground, the laser retroreflector beyond it, the flag and the Lunar Module in the distance.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.369Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo12/06.jpg": {
+      "score": 8,
+      "subject": "An Apollo 12 astronaut works at the equipment stowage compartment on the side of the Lunar Module, whose descent stage and landing legs rest on grey lunar soil.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo12/07.jpg": {
+      "score": 8,
+      "subject": "Part of the deployed Apollo 12 ALSEP science station on the Moon: the central station, the largest object, with the passive seismometer in the foreground and an instrument standing on legs.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo15/10.jpg": {
+      "score": 8,
+      "subject": "The central station of the Apollo 15 ALSEP in the foreground, covered in gold foil, with the lunar-surface magnetometer far off on the plain at the end of a cable.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/apollo17/06.jpg": {
+      "score": 8,
+      "subject": "An Apollo 17 astronaut stands near the deployed flag in the Taurus-Littrow Valley, with the Lunar Module in the left background and the Lunar Roving Vehicle at right.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:40:05.370Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/curiosity/06.jpg": {
+      "score": 8,
+      "subject": "Curiosity's panorama of the shallow Yellowknife Bay basin, with the rover's wheels at left",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/curiosity/07.jpg": {
+      "score": 8,
+      "subject": "Curiosity's view of pale layered mudstone meeting darker sandstone near Marias Pass",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/curiosity/08.jpg": {
+      "score": 8,
+      "subject": "Curiosity's panorama among the flat-topped mesas of Murray Buttes on Mount Sharp",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/curiosity/09.jpg": {
+      "score": 8,
+      "subject": "Curiosity's view of the layered face of Vera Rubin Ridge rising above the rover",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/curiosity/10.jpg": {
+      "score": 8,
+      "subject": "Curiosity's wheel and name plate beside pale clay-bearing rock in Glen Torridon",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/curiosity/11.jpg": {
+      "score": 8,
+      "subject": "Curiosity's panorama inside the Gediz Vallis channel on Mount Sharp",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/opportunity/10.jpg": {
+      "score": 8,
+      "subject": "Opportunity's view inside Endurance Crater: pale layered bedrock broken into slabs",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/opportunity/11.jpg": {
+      "score": 8,
+      "subject": "Opportunity's view near Erebus Crater: flat pale rock slabs between dark sand ripples",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/opportunity/12.jpg": {
+      "score": 8,
+      "subject": "Opportunity's wide view from the lip of Victoria Crater, looking down into the crater",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/opportunity/13.jpg": {
+      "score": 8,
+      "subject": "Opportunity's panorama out of Marathon Valley across the floor of Endeavour Crater",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/perseverance/07.jpg": {
+      "score": 8,
+      "subject": "Perseverance's first panorama from its landing site, with the rover's deck in front",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/perseverance/08.jpg": {
+      "score": 8,
+      "subject": "Perseverance's panorama from Van Zyl Overlook, where it watched Ingenuity's first flights",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/perseverance/09.jpg": {
+      "score": 8,
+      "subject": "Perseverance's view of the rocky Séítah region on the floor of Jezero Crater",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/perseverance/10.jpg": {
+      "score": 8,
+      "subject": "Perseverance's panorama of the Jezero delta rising ahead of the rover",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/perseverance/11.jpg": {
+      "score": 8,
+      "subject": "Perseverance's panorama of Bright Angel, where an ancient river flowed into Jezero Crater",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/perseverance/12.jpg": {
+      "score": 8,
+      "subject": "Perseverance's view up the slope toward the rim of Jezero Crater",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/spirit/11.jpg": {
+      "score": 8,
+      "subject": "Spirit's view across the rock-strewn plain of Gusev Crater toward Bonneville Crater",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/spirit/12.jpg": {
+      "score": 8,
+      "subject": "Spirit's panorama from Larry's Lookout on the climb up Husband Hill",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/spirit/13.jpg": {
+      "score": 8,
+      "subject": "Spirit's view beside Home Plate, with the rover's deck and solar panels in front",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/spirit/14.jpg": {
+      "score": 8,
+      "subject": "Spirit's view from Troy, where its wheels sank into soft soil",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/mars-sites/zhurong/06.jpg": {
+      "score": 8,
+      "subject": "Zhurong rover standing beside its lander on an orange Martian plain, in a selfie from a camera released by the rover",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/mars-sites/zhurong/07.jpg": {
+      "score": 8,
+      "subject": "Zhurong's rear camera view of its parachute and backshell lying on Utopia Planitia",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T10:53:55.756Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/opportunity/14.jpg": {
+      "score": 8,
+      "subject": "Orbital view from HiRISE of Eagle Crater on Meridiani Planum, Mars, with the bright Opportunity landing platform inside it at upper right and the backshell and parachute near the lower left corner.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.745,
+        "y": 0.32
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T13:32:45.179Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/insight/08.jpg": {
+      "score": 8,
+      "subject": "Three HiRISE close-ups of the InSight landing site on Mars: the lander, its heat shield and its parachute, with the lander at the centre inside a dark patch blasted by its descent rockets.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-09T13:32:45.179Z",
       "scoring_cost_usd": 0
     }
   }

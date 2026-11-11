@@ -1,3 +1,16 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Luna 24 착륙선",
+      "label_short": "Luna 24 착륙선",
+      "explain": "위난의 바다의 한 분화구 가장자리에 있는 Luna 24 착륙선입니다. 1976년 8월의 임무에서 2 m 넘게 레골리스를 뚫고 약 170그램을 가져왔습니다."
+    },
+    {
+      "id": "crater-60m",
+      "label": "Luna 24의 60 m 분화구",
+      "label_short": "60 m 분화구",
+      "explain": "LROC는 Luna 24가 지름 60 m의 분화구 가장자리에 앉아 있다고 설명한다. 착륙선은 그 분화구의 북서쪽 테두리에 있다."
+    }
+  ]
 }

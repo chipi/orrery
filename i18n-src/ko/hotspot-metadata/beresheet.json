@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "impact-smudge",
+      "label": "Beresheet 충돌 자국",
+      "label_short": "충돌 자국",
+      "explain": "2019년 4월 11일 이스라엘의 Beresheet가 평온의 바다에 추락한 자리의 어두운 얼룩입니다. 북쪽에서 낮은 각도로, 계획보다 약 1000 m/s 빠르게 충돌했으며, 얼룩은 폭 약 10 m로 지표 밝기를 약 10% 낮춥니다."
+    }
+  ]
 }

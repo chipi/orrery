@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { openDrawerTab } from './_helpers/hud-expand';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /earth — unified surface + orbital scene (#290 Slice 7).
@@ -71,6 +72,8 @@ test.describe('/earth', () => {
   /* ── v0.4 — category filter chips (replaced year scrubber) ───────── */
   test('category filter chips render with correct testids', async ({ page, isMobile }) => {
     await page.goto('/earth');
+    // Prerendered chips are visible before their handlers are wired; a tap in that window is dropped.
+    await waitForHydration(page);
     // On mobile the layer chips live in the MobileDrawerGroup Layers tab
     // (dual-rendered with the hidden desktop hud-controls) — open it and
     // scope to `.mdg-body` so the visible chip resolves uniquely.

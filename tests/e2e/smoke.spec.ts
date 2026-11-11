@@ -13,7 +13,7 @@ import { revealDesktopNavLink } from './_helpers/nav';
 const ROUTES = [
   { path: '/', titleHint: 'Orrery' },
   { path: '/explore', titleHint: 'Solar System Explorer' },
-  { path: '/plan', titleHint: 'Mission Configurator' },
+  { path: '/plan', titleHint: 'Launch Window Planner' },
   { path: '/fly', titleHint: 'Mission Arc' },
   { path: '/missions', titleHint: 'Mission Catalog' },
   { path: '/earth', titleHint: 'Earth Orbit' },
@@ -30,6 +30,12 @@ const ROUTES = [
   { path: '/colophon', titleHint: 'Colophon' },
   { path: '/library', titleHint: 'Library' },
   { path: '/posters', titleHint: 'Gallery' },
+  // Indexable entity pages (0.9.8 SEO) — one per kind.
+  { path: '/missions/apollo11', titleHint: 'Apollo 11' },
+  { path: '/fleet/saturn-v', titleHint: 'Saturn V' },
+  { path: '/moon/apollo11', titleHint: 'Apollo 11' },
+  { path: '/explore/mars', titleHint: 'Mars' },
+  { path: '/lab/tsiolkovsky', titleHint: 'Rocket Equation' },
 ];
 
 function attachConsoleAndError(page: Page) {

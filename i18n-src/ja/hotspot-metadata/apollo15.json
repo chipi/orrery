@@ -1,1 +1,52 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Falcon）",
+      "label_short": "LM Falcon",
+      "explain": "Apollo 15 の月着陸船 Falcon の下半分。1971年7月の着陸後、月面に残された。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央ステーション",
+      "label_short": "ALSEP",
+      "explain": "Apollo 15 の月面実験パッケージ（ALSEP）。1971年7月31日に設置された。NASA が挙げる機器は、受動地震計、磁力計、太陽風分光計、超熱イオン検出器、冷陰極イオンゲージ、ダスト検出器、熱流量実験装置。"
+    },
+    {
+      "id": "lrv",
+      "label": "月面走行車（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 15 は月面走行車（LRV）を初めて搭載したミッション。ここは、ミッション後に月面に残されたローバーを、今日 LROC が撮影している場所である。"
+    },
+    {
+      "id": "seismometer",
+      "label": "受動地震計（LROC）",
+      "label_short": "地震計",
+      "explain": "LROC は Apollo 15 の受動地震計を独立した点として載せており、中央ステーションから約3 mの位置にある（リングは ALSEP のリングと重なる）。"
+    },
+    {
+      "id": "flag",
+      "label": "米国旗（LROC の位置）",
+      "label_short": "米国旗",
+      "explain": "LROC の Apollo 15 機材レイヤーが旗の位置として示す点で、LM の北約13 mにある。旗そのものは小さすぎて見えない。"
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "ALSEP へ向かう足跡",
+      "label_short": "ALSEP への足跡",
+      "explain": "画像の暗い足跡が、LM からその北西にある観測機器パッケージへ延びている（破線の輪郭は範囲を示す）。"
+    },
+    {
+      "id": "lrv-track",
+      "label": "LRV へ向かう走行跡",
+      "label_short": "走行跡",
+      "explain": "画像の暗い線が、LM から東へ、LROC が載せている月面走行車の駐車位置まで延びている（破線の輪郭は範囲を示す）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM の噴射域",
+      "label_short": "噴射域",
+      "explain": "LROC によると、降下エンジンはアポロ着陸地点の周囲の地面を明るくした。Apollo 15 では明るい領域が LM の南南東へ延びるローブになっている。"
+    }
+  ]
+}

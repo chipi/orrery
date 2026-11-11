@@ -1,6 +1,7 @@
 {
   "title": "A pegada de pouso — onde o lift de uma cápsula pode levá-la",
   "intro_sentence": "Uma cápsula em reentrada não é mirada como um dardo em um ponto — seu lift lhe dá uma área alcançável no solo, a \"pegada\", e o computador de guiagem escolhe um local de pouso dentro dela.",
+  "seo_title": "Reentrada de cápsulas: a pegada de pouso",
   "narrative_101": [
     "Uma vez que uma cápsula se compromete com a reentrada, ela não pode adicionar energia — sem motores, sem volta. Mas ela não é indefesa quanto a ONDE toca o solo. Rolando para apontar seu lift para cima, ela estende o planeio e voa longe; rolando lift para baixo, ela mergulha e pousa perto; inclinando para a esquerda ou direita, ela se move lateralmente. O conjunto de todos os lugares que ela poderia alcançar, dada sua velocidade e seu lift, é uma área no solo com formato de lágrima alongada — a pegada de pouso.",
     "Alcançar a borda distante dessa pegada custa algo: voar com lift para cima para ir longe significa uma descida mais suave e rasa e um pico-g menor, enquanto mergulhar curto significa uma descida mais íngreme e severa. Então há uma troca inscrita na pegada — os alvos mais distantes são os de baixo-g, os alvos próximos os de alto-g — e a guiagem tem que encontrar um cronograma de inclinação que pouse no ponto escolhido sem nunca quebrar os limites de g ou aquecimento ao longo do caminho.",

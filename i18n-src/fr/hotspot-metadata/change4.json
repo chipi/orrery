@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Atterrisseur Chang'e 4",
+      "label_short": "Chang'e 4",
+      "explain": "L'atterrisseur chinois Chang'e 4, premier alunissage en douceur sur la face cachée de la Lune, le 3 janvier 2019, dans le cratère Von Kármán. Le sol clair autour de lui a été balayé par son moteur de descente."
+    },
+    {
+      "id": "yutu-2",
+      "label": "Rover Yutu-2",
+      "label_short": "Yutu-2",
+      "explain": "Le rover Yutu-2 tel qu'il était le 7 mai 2019, quatre mois après l'alunissage, à environ 120 m à l'ouest de l'atterrisseur, au bout de ses premières traces. Il s'en est beaucoup éloigné depuis."
+    }
+  ],
   "panorama_caption": "Le premier panorama jamais transmis depuis la face cachée de la Lune. Le cratère Von Kármán, dans le bassin Pôle Sud-Aitken. Le rover Yutu-2 à mi-distance ; l'ombre de l'atterrisseur en bas à gauche.",
   "compass_zero_direction": "axe +X de la caméra de l'atterrisseur",
   "panorama_annotations": [

@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "Aqui o Curiosity tocou o solo em 6 de agosto de 2012, um lugar que a equipe chamou de Bradbury Landing. Nesta imagem do HiRISE, de 17 de agosto de 2012, o rover é o par de pontos brilhantes no solo escuro varrido pelos foguetes que o baixaram. Ele já se foi há muito tempo."
+    }
+  ],
   "panorama_caption": "Curiosity no canal de Gediz Vallis — a vista de 360° do rover no sol 4220, depois de perfurar a amostra Mammoth Lakes, a 41ª em Marte. O braço robótico, à esquerda, acabou de perfurar; o deck do rover à direita; o céu marciano real na faixa superior; o canal de Gediz Vallis descendo pelo centro — o primeiro lugar onde cristais de enxofre puro foram encontrados em Marte.",
   "compass_zero_direction": "frente do rover",
   "panorama_annotations": [

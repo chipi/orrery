@@ -7,8 +7,8 @@
   import Panel from './Panel.svelte';
   import { base } from '$app/paths';
   import { getPlanetGallery, getPlanets } from '$lib/data';
-  import { cardForPlanet, planetCardList, type CardSpec } from '$lib/cards/card-spec';
-  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { CardSpec } from '$lib/cards/card-spec';
+  import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
@@ -66,9 +66,18 @@
   // planetCardList (its canonical card is the small-body kind).
   let cardOpen = $state(false);
   let planetList = $state<LocalizedPlanet[]>([]);
+  // The card code loads on demand (lazy-card.ts): fetched when a planet opens.
+  let cards = $state<CardModules | null>(null);
+  $effect(() => {
+    if (planet && !cards)
+      void loadCardModules().then(
+        (c) => (cards = c),
+        () => {},
+      );
+  });
   let cardSpec = $derived<CardSpec | null>(
-    planet && planetCardList([planet]).length > 0
-      ? cardForPlanet(planet, planetList, gallery[0])
+    planet && cards && cards.spec.planetCardList([planet]).length > 0
+      ? cards.spec.cardForPlanet(planet, planetList, gallery[0])
       : null,
   );
 
@@ -375,8 +384,8 @@
   {/if}
 </Panel>
 
-{#if cardSpec}
-  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{#if cardSpec && cards}
+  <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
 <style>

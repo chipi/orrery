@@ -1,5 +1,72 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 下降级（Challenger）",
+      "label_short": "LM Challenger",
+      "explain": "Apollo 17 登月舱 Challenger 的下半部分，1972 年 12 月着陆后留在月球上，这也是迄今最后一次载人登月。"
+    },
+    {
+      "id": "lrv",
+      "label": "月球车（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 17 的月球车（LRV）。图中是 LROC 如今拍到的这辆月球车，任务结束后它被留在了月球上。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央站",
+      "label_short": "ALSEP",
+      "explain": "Apollo 17 月面实验包，位于陶拉斯-利特罗谷中 LM 以西。LROC 的图像显示了这些仪器，以及布设地震检波器时留下的十字形路径。"
+    },
+    {
+      "id": "sep",
+      "label": "SEP 发射机",
+      "label_short": "SEP 发射机",
+      "explain": "月面电特性实验（SEP）的发射机，用于探测土壤的电学性质。LROC 在其 Apollo 17 图像中把它标为 SEP；长 35 m 的天线就是从这里铺开的。"
+    },
+    {
+      "id": "flag",
+      "label": "美国国旗（LROC 位置）",
+      "label_short": "美国国旗",
+      "explain": "LROC 的 Apollo 17 设备图层给出的国旗位置，在 LM 西北偏北约 22 m 处。国旗本身太小，看不见。"
+    },
+    {
+      "id": "rudolph",
+      "label": "Rudolph 环形山",
+      "label_short": "Rudolph",
+      "explain": "LROC 在其 Apollo 17 地图上标为 Rudolph 的环形山，在 LM 西北约 290 m 处。"
+    },
+    {
+      "id": "poppie",
+      "label": "Poppie 环形山",
+      "label_short": "Poppie",
+      "explain": "LM 以南的一座小型环形山，LROC 在其 Apollo 17 地图上标为 Poppie。"
+    },
+    {
+      "id": "barjea",
+      "label": "Barjea 环形山",
+      "label_short": "Barjea",
+      "explain": "LM 东南的一座明亮小型环形山，LROC 在其 Apollo 17 地图上标为 Barjea。"
+    },
+    {
+      "id": "geophone-paths",
+      "label": "地震检波器足迹",
+      "label_short": "检波器足迹",
+      "explain": "LROC 的 Apollo 17 图像显示着陆点以西有一条十字形路径，宇航员在那里布设了地震检波器来监测地震活动（虚线轮廓标出的是一片区域）。"
+    },
+    {
+      "id": "sep-rover-tracks",
+      "label": "通向 SEP 地点的月球车辙",
+      "label_short": "SEP 车辙",
+      "explain": "LROC 指出，塞尔南在铺设长 35 m 的 SEP 天线时向东留下了月球车辙。车辙从 LM 所在区域通向发射机（虚线轮廓标出的是一片区域）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM 喷流区",
+      "label_short": "喷流区",
+      "explain": "LROC 指出，下降发动机使阿波罗着陆点周围的地面变亮；在 Apollo 17，光晕在 LM 周围散开（其中的一个瓣可能标示着下降路径）。"
+    }
+  ],
   "panorama_caption": "陶拉斯-利特罗谷的 ALSEP 布设点，EVA-1（1972 年 12 月 12 日）：实验装置组、月球车和山谷周围的山体，杰克·施密特拍摄的彩色全景图。阿波罗最后一次登月。",
   "panorama_annotations": [
     {

@@ -104,14 +104,9 @@ const FEATURED_IMAGES: FeaturedSpec[] = [
     notes:
       'Luna 24 lander on the northwestern rim of a 64 m diameter impact crater in Mare Crisium. Last Soviet lunar mission (1976, robotic sample return). Clean (un-annotated) LROC NAC frame M137136039R from the featured_sites tree.',
   },
-  {
-    siteId: 'change4',
-    url: 'https://lroc.im-ldi.com/data/support/featured_sites/Change/4/M1370616052.jpg',
-    centerLat: -45.4446,
-    centerLon: 177.6048,
-    notes:
-      "Chang'e 4 lander + Yutu-2 rover in Von Kármán crater, South Pole-Aitken basin (lunar far side). First far-side landing (2019, CNSA). Clean (un-annotated) LROC NAC frame M1370616052 from the featured_sites tree. Only LROC view of any far-side landing — no NASA equivalent.",
-  },
+  // change4 is not here: its patch is the native-resolution crop of the featured_sites GeoTIFF M1311886645
+  // (lander + Yutu-2), made with `images:hotspots -- --site change4 --dest moon --layer lroc` and
+  // hotspot_tier2_force_product_url set to that .tif.
   {
     siteId: 'change5',
     url: 'https://lroc.im-ldi.com/ckeditor_assets/pictures/974/content_CE5_1100p_Image_version2.png',

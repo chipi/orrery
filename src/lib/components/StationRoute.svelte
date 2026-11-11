@@ -58,6 +58,8 @@
   } from '$lib/station-assembly-anim';
   import { createAssemblyRef, syncAssemblyRef } from '$lib/station-assembly-state';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
+  import { metaDescription } from '$lib/seo';
   import { cue } from '$lib/sensory/feedback';
   import { gyro } from '$lib/sensory/device-orientation';
   import { applyGyroOrbit } from '$lib/sensory/gyro-orbit';
@@ -1130,7 +1132,11 @@
   onDestroy(() => stopThree());
 </script>
 
-<svelte:head><title>{config.msg.pageTitle()}</title></svelte:head>
+<svelte:head>
+  <title>{config.msg.pageTitle()}</title>
+  <meta name="description" content={metaDescription(config.msg.metaDescription())} />
+</svelte:head>
+<VisuallyHiddenH1 title={config.msg.pageTitle()} />
 
 {#if liveRenderer && liveQuality}
   <RenderingDebugRegistrar

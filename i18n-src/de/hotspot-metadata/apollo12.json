@@ -1,1 +1,70 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM-Abstiegsstufe (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "Die untere Hälfte der Mondlandefähre Intrepid von Apollo 12. Sie blieb nach der Landung im November 1969 auf dem Mond zurück, nahe der früher gelandeten Sonde Surveyor 3."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-Zentralstation",
+      "label_short": "ALSEP",
+      "explain": "Das Apollo-12-Experimentpaket für die Mondoberfläche (ALSEP), am 19. November 1969 aufgebaut. Zu seinen Instrumenten gehörten ein passives Seismometer, ein Magnetometer und ein Sonnenwind-Spektrometer, alle per Kabel mit der Zentralstation verbunden."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Lander Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Roboterlander der NASA, der am 20. April 1967 an der Innenwand eines kleinen Kraters aufsetzte. Apollo 12 landete im November 1969 etwa 160 m davon entfernt; die Besatzung baute am 20. November rund 10 kg Teile ab, darunter die Fernsehkamera."
+    },
+    {
+      "id": "flag",
+      "label": "US-Flagge (LROC-Position)",
+      "label_short": "US-Flagge",
+      "explain": "Der Punkt, den die Hardware-Ebene von LROC für Apollo 12 für die Flagge angibt, etwa 16 m nördlich der Mondlandefähre. Die Flagge selbst ist bei dieser Auflösung zu klein, um sichtbar zu sein."
+    },
+    {
+      "id": "seismometer",
+      "label": "Passives Seismometer (LROC)",
+      "label_short": "Seismometer",
+      "explain": "LROC führt das passive Seismometer von Apollo 12 als eigenen Punkt auf, etwa 3 m von der Zentralstation entfernt (der Ring überlappt den ALSEP-Ring)."
+    },
+    {
+      "id": "surveyor-crater",
+      "label": "Surveyor-Krater",
+      "label_short": "Surveyor-Krater",
+      "explain": "Der Krater, den LROC auf seiner Apollo-12-Karte als Surveyor beschriftet. Surveyor 3 liegt darin, und die Mondlandefähre landete etwa 160 m entfernt."
+    },
+    {
+      "id": "head",
+      "label": "Head-Krater",
+      "label_short": "Head-Krater",
+      "explain": "Ein großer Krater westlich der Mondlandefähre, den LROC auf seiner Apollo-12-Karte als Head beschriftet."
+    },
+    {
+      "id": "bench",
+      "label": "Bench-Krater",
+      "label_short": "Bench-Krater",
+      "explain": "Ein Krater südwestlich der Mondlandefähre, den LROC auf seiner Apollo-12-Karte als Bench beschriftet."
+    },
+    {
+      "id": "block",
+      "label": "Block-Krater",
+      "label_short": "Block-Krater",
+      "explain": "Ein kleiner Krater östlich der Mondlandefähre, den LROC auf seiner Apollo-12-Karte als Block beschriftet."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Fußpfade zum ALSEP",
+      "label_short": "ALSEP-Pfade",
+      "explain": "Dunkle Spuren im Bild verbinden den Bereich der Mondlandefähre mit dem Instrumentenpaket nordwestlich davon. Die Ebene der ersten Mondspaziergang-Route von LROC folgt diesem Korridor (die gestrichelte Umrandung markiert das Gebiet)."
+    },
+    {
+      "id": "blast",
+      "label": "LM-Abgasbereich",
+      "label_short": "Abgasbereich",
+      "explain": "LROC zufolge hat das Abstiegstriebwerk den Boden um jede Landestelle aufgehellt. Bei Apollo 12 ist die helle Zone zum Surveyor-Krater hin gestreckt, daher ist die Umrandung nur ein grober Anhaltspunkt."
+    }
+  ]
+}

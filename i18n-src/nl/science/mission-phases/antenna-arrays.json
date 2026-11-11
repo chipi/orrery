@@ -1,6 +1,7 @@
 {
   "title": "Arraying — veel kleine antennes in plaats van één gigantische",
   "intro_sentence": "Door signalen van meerdere antennes in real time te combineren ontstaat één virtuele apertuur die groter is dan elke afzonderlijke schotel, zodat zwakkere signalen van ruimtevaartuigen te horen zijn zonder steeds grotere constructies.",
+  "seo_title": "Antenne-arrays: schotels combineren voor de diepe ruimte",
   "body_paragraphs": [
     "Een enkele grote antenne is de voor de hand liggende manier om een zwak signaal van een ruimtevaartuig op miljarden kilometers afstand te horen. De 70 m-schotels van het DSN — bij Goldstone, Madrid en Canberra — zitten bijna aan de praktische limiet voor volledig stuurbare reflectoren op de grond. Iets aanzienlijk groters bouwen zou een vaste constructie vereisen (wat het hemelbereik beperkt) of techniek die nog niet bestaat. Het alternatief is het combineren van veel kleinere antennes: arraying.",
     "Wanneer meerdere antennes tegelijk hetzelfde ruimtevaartuig waarnemen en hun signalen met de juiste fase- en tijdverschuivingen worden gecombineerd, is het resultaat coherente optelling. De ruis van elke antenne telt incoherent op (die schaalt met de wortel uit het aantal antennes), terwijl het signaal coherent optelt (dat schaalt met het aantal antennes). Het effectieve verzamelende oppervlak van een array van N identieke schotels is N keer dat van één schotel. Dit is geen benadering — het is hetzelfde principe als achter radiotelescoopstelsels zoals de Very Large Array en ALMA.",

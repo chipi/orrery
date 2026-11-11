@@ -22,7 +22,7 @@ for (const e of edits) {
       return '';
     }
   })();
-  const ui = { ui: isMessages(e.rel) };
+  const ui = { ui: isMessages(e.rel), length: true };
   const before = new Set(problems(loc, en, e.old, ui));
   const after = problems(loc, en, e.new, ui).filter((p) => !before.has(p));
   if (after.length) {

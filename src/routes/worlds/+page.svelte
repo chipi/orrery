@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import * as m from '$lib/paraglide/messages';
   import SectionHub from '$lib/components/SectionHub.svelte';
 
@@ -37,7 +38,8 @@
 </script>
 
 <svelte:head>
-  <title>{m.nav_group_worlds()} · ORRERY</title>
+  <title>{m.worlds_page_title()}</title>
+  <meta name="description" content={metaDescription(m.worlds_hub_intro())} />
 </svelte:head>
 
 <SectionHub

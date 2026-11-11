@@ -19,6 +19,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
   import { getSourceLogos, type SourceLogosManifest } from '$lib/data';
   import {
@@ -134,6 +135,7 @@
 
 <svelte:head>
   <title>{m.library_page_title()}</title>
+  <meta name="description" content={metaDescription(m.library_intro_body_1())} />
 </svelte:head>
 
 <section class="library" aria-labelledby="library-title" data-route-ready="true">

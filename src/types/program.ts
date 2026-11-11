@@ -68,6 +68,9 @@ export type ProgramBlock = ProgramProseBlock | ProgramFigureBlock;
 export interface ProgramOverlay {
   name: string;
   tagline: string;
+  /** Optional results-page title / description (SEO); fall back to name / tagline. */
+  seo_title?: string;
+  seo_description?: string;
   the_land: ProgramBlock[];
   goals: ProgramBlock[];
   outcome: ProgramBlock[];

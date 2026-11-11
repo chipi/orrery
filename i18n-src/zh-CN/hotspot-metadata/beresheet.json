@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "impact-smudge",
+      "label": "Beresheet 撞击痕",
+      "label_short": "撞击痕",
+      "explain": "以色列 Beresheet 着陆器2019年4月11日坠毁在澄海的位置留下的暗斑。它从北侧以很低的角度撞击，速度比计划高出约1000米/秒；暗斑约10米宽，使地表亮度降低约10%。"
+    }
+  ]
 }

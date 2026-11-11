@@ -1,6 +1,7 @@
 {
   "title": "Departure-Window Axis",
   "intro_sentence": "When you launch — running across the X-axis, typically a four-year span sampled daily.",
+  "seo_title": "Porkchop Plot Departure Axis: Picking a Launch Window",
   "narrative_101": [
     "Read the porkchop like a calendar. The horizontal axis — left to right — is the date you leave Earth. Each pixel column is a different launch day. Orrery samples at one-day resolution across about four years; that's enough to capture two full synodic cycles for Mars (the ~26-month cycle fits roughly twice in four years), which is enough to see the launch-window pattern repeat.",
     "Look across the row of cheap-cost cells (the cool teal lobe) and you can read off, on the calendar, exactly when the launch windows are. For Mars they're roughly every 26 months. For Venus every 19. For Jupiter every 13. Each cheap zone is one window — outside of those zones, the calendar is fighting you.",

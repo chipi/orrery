@@ -15,6 +15,7 @@
     state where `initAnalytics()` never injects the script.
   */
   import { onMount } from 'svelte';
+  import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { readOptOutCookie, writeOptOutCookie, browserPrivacySignal } from '$lib/analytics-optout';
@@ -45,6 +46,7 @@
 
 <svelte:head>
   <title>{m.privacy_page_title()} — Orrery</title>
+  <meta name="description" content={metaDescription(m.privacy_page_intro())} />
 </svelte:head>
 
 <section class="privacy" aria-labelledby="privacy-title" data-route-ready="true">

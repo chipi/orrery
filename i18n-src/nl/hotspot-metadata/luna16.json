@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Luna 16-afdaaltrap",
+      "label_short": "Afdaaltrap",
+      "explain": "De onderste helft van de Sovjet-lander Luna 16, die op Mare Fecunditatis achterbleef nadat de terugkeercapsule op 21 september 1970 met ongeveer 101 gram bodemmateriaal was opgestegen."
+    }
+  ]
 }

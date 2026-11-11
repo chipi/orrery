@@ -5,7 +5,7 @@
  * Two consumers:
  *   1. svelte.config.js — feeds `expandLocalizedRoots` to seed the
  *      per-locale prerender crawl.
- *   2. src/routes/sitemap.xml/+server.ts — emits one <loc> per
+ *   2. src/lib/sitemap.ts (/sitemaps/<locale>.xml) — emits one <loc> per
  *      locale × route for search engines.
  *
  * Keeping the list here (not inline in svelte.config.js) means the
@@ -91,6 +91,60 @@ function essaysRoutes() {
   return routes;
 }
 
+/** One indexable page per mission (/missions/<id>, 0.9.8 SEO). */
+function missionRoutes() {
+  const idxPath = 'static/data/missions/index.json';
+  if (!existsSync(idxPath)) return [];
+  /** @type {{ id: string }[]} */
+  const idx = JSON.parse(readFileSync(idxPath, 'utf8'));
+  return idx.map((m) => `/missions/${m.id}`);
+}
+
+/** One indexable page per fleet entry (/fleet/<id>, 0.9.8 SEO). */
+function fleetRoutes() {
+  const idxPath = 'static/data/fleet/index.json';
+  if (!existsSync(idxPath)) return [];
+  /** @type {{ id: string }[]} */
+  const idx = JSON.parse(readFileSync(idxPath, 'utf8'));
+  return idx.map((f) => `/fleet/${f.id}`);
+}
+
+/** One indexable page per Moon / Mars / Venus site (/<body>/<id>, 0.9.8 SEO). */
+function siteRoutes() {
+  /** @type {string[]} */
+  const routes = [];
+  for (const body of ['moon', 'mars', 'venus']) {
+    const path = `static/data/${body}-sites.json`;
+    if (!existsSync(path)) continue;
+    /** @type {{ id: string }[]} */
+    const sites = JSON.parse(readFileSync(path, 'utf8'));
+    for (const s of sites) routes.push(`/${body}/${s.id}`);
+  }
+  return routes;
+}
+
+/** One indexable page per planet, moon and small body (/explore/<id>, 0.9.8 SEO). */
+function bodyRoutes() {
+  /** @param {string} p */
+  const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null);
+  /** @type {Set<string>} — a Set: Pluto is in planets.json and small-bodies.json */
+  const ids = new Set();
+  for (const p of read('static/data/planets.json')?.planets ?? []) ids.add(p.name.toLowerCase());
+  for (const s of read('static/data/satellites.json')?.satellites ?? []) ids.add(s.id);
+  for (const b of read('static/data/small-bodies.json')?.bodies ?? []) ids.add(b.id);
+  return [...ids].map((id) => `/explore/${id}`);
+}
+
+/** One indexable page per Lab formula (/lab/<id>, 0.9.8 SEO). The id list is
+ *  guarded against the TS registry by lab-formulas-json.test.ts. */
+function labRoutes() {
+  const path = 'static/data/lab-formulas.json';
+  if (!existsSync(path)) return [];
+  /** @type {{ ids: string[] }} */
+  const { ids } = JSON.parse(readFileSync(path, 'utf8'));
+  return ids.map((id) => `/lab/${id}`);
+}
+
 /**
  * All un-localized canonical routes the site ships (no base prefix, no
  * locale prefix). e.g. `['/', '/missions', '/science/physics/kepler', ...]`.
@@ -98,5 +152,15 @@ function essaysRoutes() {
  * @returns {string[]}
  */
 export function collectCanonicalRoutes() {
-  return [...SEED_ROUTES, ...scienceRoutes(), ...programsRoutes(), ...essaysRoutes()];
+  return [
+    ...SEED_ROUTES,
+    ...scienceRoutes(),
+    ...programsRoutes(),
+    ...essaysRoutes(),
+    ...missionRoutes(),
+    ...fleetRoutes(),
+    ...siteRoutes(),
+    ...bodyRoutes(),
+    ...labRoutes(),
+  ];
 }

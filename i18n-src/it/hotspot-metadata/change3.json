@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Lander di Chang'e 3",
+      "label_short": "Lander Chang'e 3",
+      "explain": "Il lander cinese Chang'e 3, atterrato sul Mare Imbrium il 14 dicembre 2013, il primo allunaggio dal 1976. L'anello segna il sito del lander al centro di questa porzione; lì c'è un punto luminoso senza ombra, e LROC non dice quale pixel sia il lander."
+    },
+    {
+      "id": "crater-450m",
+      "label": "Cratere di 450 m a ovest del lander",
+      "label_short": "Cratere 450 m",
+      "explain": "LROC osserva che Chang'e 3 è atterrato a circa 60 m a est dell'orlo di un cratere di 450 m, profondo 40 m, su uno spesso deposito di materiale vulcanico."
+    },
+    {
+      "id": "blast",
+      "label": "Zona del getto di Chang'e 3",
+      "label_short": "Zona del getto",
+      "explain": "LROC ha ripreso il sito prima e dopo l'atterraggio e ha misurato la zona del getto del motore; la zona diffusa si estende per 40-50 m in direzione nord-sud e 10-15 m in direzione est-ovest oltre la zona focalizzata più chiara."
+    }
+  ]
+}

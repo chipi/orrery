@@ -78,7 +78,10 @@ function resample(points: [number, number][], intervalM: number): [number, numbe
     acc += seg;
   }
   const last = points[points.length - 1];
+  // The final sample must be the real last vertex, or the "end" tile (labelled
+  // "Final position") sits on an interval sample up to 0.4 intervals short of it.
   if (metresBetween(out[out.length - 1], last) > intervalM * 0.4) out.push(last);
+  else if (out.length > 1) out[out.length - 1] = last;
   return out;
 }
 
@@ -343,7 +346,9 @@ async function doRover(rover: string): Promise<void> {
       t.id === 'start'
         ? 'Landing / drive start'
         : t.id === 'end'
-          ? 'Final position'
+          ? rover === 'apollo16'
+            ? 'LRV final parking (end of EVA 3)'
+            : 'Final position'
           : 'Along route',
     image: `/${path.relative('static', t.outputPath)}`,
     product_id: t.crop.productId,

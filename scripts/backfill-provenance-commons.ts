@@ -67,7 +67,17 @@ for (let i = 0; i < entries.length; i++) {
     fallbackLicenseUrl: (e.license_url as string | null) ?? null,
     fallbackLicenseRationale: String(e.license_rationale ?? ''),
     fallbackTitle: `File:${filename}`,
-    modifications: (e.modifications as string[]) ?? [],
+    // The row is identified now: drop the placeholder flags (they are what
+    // validate-gallery-credits counts) and record how, as the NASA tool does.
+    modifications: [
+      ...((e.modifications as string[]) ?? []).filter(
+        (m) =>
+          m !== 'curated-no-upstream-record' &&
+          m !== 'walker-fallback' &&
+          m !== 'identified-by-image-match',
+      ),
+      'identified-by-image-match',
+    ],
   });
   if (next.pageid == null) {
     failed.push(`${e.path} → File:${filename}`);
@@ -89,6 +99,6 @@ if (failed.length || unmatched.length) {
   process.exit(1);
 }
 if (!dry) {
-  writeFileSync(FILE, JSON.stringify(manifest, null, 1) + '\n');
+  writeFileSync(FILE, JSON.stringify(manifest, null, 2) + '\n');
   console.log(`wrote ${FILE}`);
 }

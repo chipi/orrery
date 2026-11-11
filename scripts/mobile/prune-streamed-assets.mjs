@@ -48,7 +48,7 @@
  * NO-OP unless MOBILE=1, so it is safe to leave in a shared build chain.
  * Idempotent: missing targets are skipped without error.
  */
-import { rm, stat, readdir } from 'node:fs/promises';
+import { rm, stat, readdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { locales, baseLocale } from '../../src/lib/paraglide/runtime.js';
@@ -133,13 +133,15 @@ async function targets() {
   list.push(path.join(BUILD, 'images'));
   list.push(path.join(BUILD, 'audio'));
 
-  // sitemap.xml is a search-engine artifact — ~6.6 MB now that it carries
-  // per-URL hreflang alternates (270 routes × 14 locales, #519). It is never
-  // used on-device (the Capacitor shell serves no crawlers), so prune it off
-  // the mobile bundle; the web build keeps it. Without this it pushed the
-  // mobile build over the 75 MB OTA budget.
-  const sitemap = path.join(BUILD, 'sitemap.xml');
-  if (existsSync(sitemap)) list.push(sitemap);
+  // The sitemaps are search-engine artifacts — the sitemap.xml index plus
+  // sitemaps/<locale>.xml, ~7 MB together with per-URL hreflang alternates
+  // (#519). Never used on-device (the Capacitor shell serves no crawlers), so
+  // prune them off the mobile bundle; the web build keeps them. Without this
+  // they pushed the mobile build over the 75 MB OTA budget.
+  for (const p of ['sitemap.xml', 'sitemaps']) {
+    const sitemap = path.join(BUILD, p);
+    if (existsSync(sitemap)) list.push(sitemap);
+  }
 
   // /c/* card share stubs (#547) are crawler/unfurl surfaces — 499
   // prerendered pages (~7.5 MB) the Capacitor shell never serves: shares
@@ -147,6 +149,38 @@ async function targets() {
   // so the stub a recipient opens is always the web deploy's copy.
   const cardStubs = path.join(BUILD, 'c');
   if (existsSync(cardStubs)) list.push(cardStubs);
+
+  // Entity pages (0.9.8 SEO: /missions, /fleet, /<body>/<site>, /explore, /lab/<id>, × 14
+  // locales) are search-engine surfaces; in the app an entity opens in its
+  // ?id= / ?site= panel. /missions/launches is not an entity and stays.
+  const json = async (file, empty) =>
+    JSON.parse(await readFile(path.join(BUILD, 'data', file), 'utf8').catch(() => empty));
+  const ids = async (file) => (await json(file, '[]')).map((e) => e.id);
+  // /explore/<id>: planets (id = lowercase name), moons, small bodies.
+  const bodyIds = [
+    ...((await json('planets.json', '{}')).planets?.map((p) => p.name.toLowerCase()) ?? []),
+    ...((await json('satellites.json', '{}')).satellites?.map((s) => s.id) ?? []),
+    ...((await json('small-bodies.json', '{}')).bodies?.map((b) => b.id) ?? []),
+  ];
+  for (const [dir, entityIds] of [
+    ['explore', [...new Set(bodyIds)]],
+    ['lab', (await json('lab-formulas.json', '{}')).ids ?? []],
+    ['missions', await ids('missions/index.json')],
+    ['fleet', await ids('fleet/index.json')],
+    ['moon', await ids('moon-sites.json')],
+    ['mars', await ids('mars-sites.json')],
+    ['venus', await ids('venus-sites.json')],
+  ]) {
+    for (const prefix of ['', ...locales.filter((l) => l !== baseLocale)]) {
+      for (const id of entityIds) {
+        // The page and its <id>/__data.json (server-load data for client navigation).
+        for (const p of [`${id}.html`, id]) {
+          const page = path.join(BUILD, prefix, dir, p);
+          if (existsSync(page)) list.push(page);
+        }
+      }
+    }
+  }
 
   // /credits thumbnails (#482, ~6.9 MB): the page builds their URLs with
   // assetUrl(), so on-device they stream from STREAM_ORIGIN like /images.

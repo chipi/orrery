@@ -35,6 +35,14 @@
     solTickIndices,
     solTickSpacing,
   } from '$lib/surface-scene/surface-traverses';
+  import { detailGroundKm } from '$lib/surface-scene/flat-patch-extent';
+  import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
+  import {
+    areaRadiusPx,
+    groundOffsetToScreen,
+    ringDiameter,
+    type PlacedRing,
+  } from '$lib/surface-scene/annotation-rings';
   import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
 
@@ -55,8 +63,24 @@
     /** Globe colour (0–1) at the site: greyscale imagery is tinted to it,
      *  matching the 3D patches (#641, Mars). */
     tint?: [number, number, number];
+    /** Short imagery label for the DETAIL badge, e.g. "~0.5 m/px · NAIP". */
+    detailBadge: string;
+    /** Full-size view of an annotation's photo (the page's lightbox). */
+    onOpenPhoto?: (src: string) => void;
+    /** The site's own mark was tapped: reopen its panel; true when it opened (false when already open). */
+    onReopen?: () => boolean;
   }
-  let { selected, config, traverses, entryKmPerPx, onClose, tint }: Props = $props();
+  let {
+    selected,
+    config,
+    traverses,
+    entryKmPerPx,
+    onClose,
+    tint,
+    detailBadge,
+    onOpenPhoto,
+    onReopen,
+  }: Props = $props();
   const tinted = (img: HTMLImageElement): HTMLImageElement | HTMLCanvasElement => {
     if (!tint) return img;
     const st = imageStats(img);
@@ -64,6 +88,8 @@
   };
 
   let canvas: HTMLCanvasElement | undefined = $state();
+  let viewW = $state(0);
+  let viewH = $state(0);
 
   // Touch-portrait: the bottom tier-context card overlays roughly the lower
   // third of the screen, so centre the imagery in the visible slot above it
@@ -148,6 +174,8 @@
   // Drag state
   let dragging = $state(false);
   let lmx = 0;
+  let downX = 0;
+  let downY = 0;
   let lmy = 0;
 
   // Compute the deepest-zoom floor for the current site — used both
@@ -216,13 +244,16 @@
     // The entryKmPerPx prop is kept for the exit-camR map but
     // intentionally unused here.
     void entryKmPerPx;
-    const detailKm = config.planet === 'mars' ? 1.5 : config.planet === 'earth' ? 0.5 : 1.0;
+    const detailKm = detailGroundKm(selected, config.planet);
     const vp =
       typeof window !== 'undefined'
         ? Math.max(300, Math.min(window.innerWidth, window.innerHeight))
         : 800;
-    kmPerPx = detailKm / (0.85 * vp);
-    initialKmPerPx = kmPerPx;
+    // Not `initialKmPerPx = kmPerPx`: reading it back made this effect depend on
+    // kmPerPx, so every wheel-in reset the view to the entry zoom.
+    const entryKm = detailKm / (0.85 * vp);
+    kmPerPx = entryKm;
+    initialKmPerPx = entryKm;
     autoExitFired = false;
   });
 
@@ -259,6 +290,20 @@
       y: H * flatCenterFrac - dyKm / kmPerPx, // +lat = up on screen
     };
   }
+
+  // Annotation rings: the ground offsets (metres from the site point = detail
+  // image centre) projected with the same view as the imagery, so each ring
+  // sits on its object at any zoom while its own size stays fixed.
+  const placedRings: PlacedRing[] = $derived.by(() => {
+    const list = selected.hotspot_annotations;
+    if (!list?.length || !layerDetail || selected.lat == null || selected.lon == null) return [];
+    const origin = project(selected.lat, selected.lon, viewW, viewH);
+    return list.map((annotation) => ({
+      annotation,
+      ...groundOffsetToScreen(annotation.lat_offset_m, annotation.lon_offset_m, kmPerPx, origin),
+      radiusPx: areaRadiusPx(annotation, kmPerPx * 1000),
+    }));
+  });
 
   // ─── Drawing ───────────────────────────────────────────────────────
   function draw(): void {
@@ -449,7 +494,7 @@
     // black — the published HiRISE / LROC NAC ROI products cover well
     // past these footprints at their native resolution. Future: derive
     // exactly from the site's published source product.
-    const detailSizeKm = config.planet === 'mars' ? 1.5 : config.planet === 'earth' ? 0.5 : 1.0;
+    const detailSizeKm = detailGroundKm(selected, config.planet);
     const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
     const cosLat = Math.cos((selected.lat * Math.PI) / 180);
     const halfLat = detailSizeKm / 2 / kmPerDegLat;
@@ -476,13 +521,7 @@
       ctx.font = "bold 9px 'Space Mono', monospace";
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
-      const px =
-        config.planet === 'mars'
-          ? '25 cm/px · HiRISE'
-          : config.planet === 'earth'
-            ? '~30 cm/px · commercial sat'
-            : '50 cm/px · LROC NAC';
-      ctx.fillText(`DETAIL · ${px}`, x + 6, y + 6);
+      ctx.fillText(`DETAIL · ${detailBadge}`, x + 6, y + 6);
     }
   }
 
@@ -533,10 +572,16 @@
     const ep = pts[pts.length - 1];
     const startR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
     const endR = scaleAwareRadius(ROVER_FOOTPRINT_KM);
-    ctx.fillStyle = '#22c55e';
-    ctx.beginPath();
-    ctx.arc(sp.x, sp.y, startR, 0, Math.PI * 2);
-    ctx.fill();
+    // An annotation ring on the lander marks the start; the green dot would sit under it.
+    // Mapped tracks can begin a few metres off the lander coordinate (Luna 21: 12 m), which
+    // outgrows the ring's screen size at deep zoom, so a true-distance clearance applies too.
+    const ringClear = Math.max(ringDiameter(viewW), LANDER_RING_CLEAR_KM / kmPerPx);
+    if (!placedRings.some((r) => Math.hypot(r.x - sp.x, r.y - sp.y) < ringClear)) {
+      ctx.fillStyle = '#22c55e';
+      ctx.beginPath();
+      ctx.arc(sp.x, sp.y, startR, 0, Math.PI * 2);
+      ctx.fill();
+    }
     ctx.fillStyle = tr.status === 'ACTIVE' ? '#ef4444' : '#f59e0b';
     ctx.beginPath();
     ctx.arc(ep.x, ep.y, endR, 0, Math.PI * 2);
@@ -655,6 +700,8 @@
     // minimum at wide zoom.
     if (traverses && traverses[selected.id]) return;
     if (selected.lat == null || selected.lon == null) return;
+    // The lander's own ring marks it; a filled disc would cover the hardware in the image.
+    if (layerDetail && selected.hotspot_annotations?.some((x) => x.explain)) return;
     const p = project(selected.lat, selected.lon, W, H);
     const tone = statusTone(selected.status, selected.kind, selected.site_role);
     const trueR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
@@ -700,6 +747,8 @@
       if (!canvas) return;
       canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
+      viewW = canvas.width;
+      viewH = canvas.height;
     };
     resize();
     const onResize = () => resize();
@@ -715,8 +764,8 @@
   // ─── Input handlers (pan + zoom) ───────────────────────────────────
   function onMouseDown(e: MouseEvent) {
     dragging = true;
-    lmx = e.clientX;
-    lmy = e.clientY;
+    lmx = downX = e.clientX;
+    lmy = downY = e.clientY;
   }
   function onMouseMove(e: MouseEvent) {
     if (!dragging) return;
@@ -734,6 +783,20 @@
   }
   function onMouseUp() {
     dragging = false;
+  }
+  /** (x, y) in canvas px is on the site's own spot: the lander dot, disc or ring drawn there. */
+  function nearSiteSpot(x: number, y: number): boolean {
+    if (!canvas || selected.lat == null || selected.lon == null) return false;
+    const p = project(selected.lat, selected.lon, canvas.width, canvas.height);
+    return Math.hypot(x - p.x, y - p.y) <= 24;
+  }
+  // A click (not a drag) on the site's spot reopens the panel when it is closed.
+  function onCanvasUp(e: MouseEvent) {
+    const wasClick = dragging && Math.hypot(e.clientX - downX, e.clientY - downY) < 5;
+    onMouseUp();
+    if (!wasClick || !canvas) return;
+    const r = canvas.getBoundingClientRect();
+    if (nearSiteSpot(e.clientX - r.left, e.clientY - r.top)) onReopen?.();
   }
   function onWheel(e: WheelEvent) {
     e.preventDefault();
@@ -756,6 +819,35 @@
     kmPerPx = Math.max(minKmPerPx, Math.min(10, kmPerPx * factor));
   }
 
+  // Cluster badge click: pan the badge to the view centre while zooming in by
+  // `factor`. False when the zoom floor is already reached (the badge then fans out).
+  let zoomRaf = 0;
+  onMount(() => () => cancelAnimationFrame(zoomRaf));
+  function zoomToPoint(x: number, y: number, factor: number): boolean {
+    const minKmPerPx = Math.max(nativeKmPerPx * 0.5, deepestZoomFloor() * 0.05);
+    const fromKm = kmPerPx;
+    const toKm = Math.max(minKmPerPx, fromKm / factor);
+    if (toKm > fromKm * 0.98) return false;
+    const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
+    const kmPerDegLon = kmPerDegLat * Math.cos((centroidLat * Math.PI) / 180);
+    const toLat = centroidLat + ((viewH * flatCenterFrac - y) * fromKm) / kmPerDegLat;
+    const toLon = centroidLon + ((x - viewW / 2) * fromKm) / kmPerDegLon;
+    const fromLat = centroidLat;
+    const fromLon = centroidLon;
+    const t0 = performance.now();
+    cancelAnimationFrame(zoomRaf);
+    const step = (now: number) => {
+      const t = Math.min(1, (now - t0) / 420);
+      const e = 1 - Math.pow(1 - t, 3);
+      centroidLat = fromLat + (toLat - fromLat) * e;
+      centroidLon = fromLon + (toLon - fromLon) * e;
+      kmPerPx = fromKm * Math.pow(toKm / fromKm, e);
+      if (t < 1) zoomRaf = requestAnimationFrame(step);
+    };
+    zoomRaf = requestAnimationFrame(step);
+    return true;
+  }
+
   // Scale-aware marker sizing per ADR-072 §"scale-aware marker rule".
   // Each marker has a real-world footprint in km. Displayed pixel size
   // is footprintKm / kmPerPx (= true scale), floored at MIN_VISIBLE_PX
@@ -765,6 +857,7 @@
   const MARKER_MAX_PX = 32;
   const ROVER_FOOTPRINT_KM = 0.003; // ~3 m (Curiosity-class, MER, Zhurong)
   const LANDER_FOOTPRINT_KM = 0.005; // ~5 m (Apollo LM, Phoenix, Viking)
+  const LANDER_RING_CLEAR_KM = 0.03; // inside the descent-engine blast zone
   // STOP_FOOTPRINT_KM was used by drawTraverseStops before 2026-06-03;
   // the pin now uses a fixed-pixel head (matching the 3D handoff) so
   // the per-stop footprint no longer drives its radius.
@@ -800,7 +893,8 @@
   // Scale-bar length & label — pick a "round" km value that fits in
   // ~120 px of screen real estate.
   let scaleBar = $derived.by(() => {
-    const targetPx = 120;
+    // Shorter on a phone: the scale shares one line with the lat/lon readout.
+    const targetPx = viewW > 0 && viewW < 600 ? 64 : 120;
     const targetKm = targetPx * kmPerPx;
     const niceValues = [
       0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500,
@@ -814,6 +908,37 @@
     const label = chosen >= 1 ? `${chosen} km` : `${chosen * 1000} m`;
     return { widthPx, label };
   });
+
+  // One pixel-limit chip by the scale bar: the deepest-zoom stop says it more strongly
+  // than the upsample warning, so it wins when both apply.
+  let limitNotice = $derived.by(() => {
+    if (atDeepestZoom) {
+      return m.surface_deepest_zoom({
+        limit:
+          config.planet === 'mars'
+            ? m.surface_zoom_limit_hirise()
+            : config.planet === 'earth'
+              ? m.surface_zoom_limit_commercial()
+              : m.surface_zoom_limit_lroc(),
+      });
+    }
+    if (upsampling) {
+      return config.planet === 'mars'
+        ? m.surface_flat_upsample_warning_mars()
+        : m.surface_flat_upsample_warning_moon();
+    }
+    return '';
+  });
+
+  // The imagery card (SurfaceScene) lifts above the chip on a phone, where the chip stacks on the bar.
+  $effect(() => {
+    const root = document.documentElement;
+    if (limitNotice) root.dataset.flatLimit = '';
+    else delete root.dataset.flatLimit;
+    return () => {
+      delete root.dataset.flatLimit;
+    };
+  });
 </script>
 
 <div class="flat-patch" role="region" aria-label={m.mars_map_aria()}>
@@ -821,10 +946,22 @@
     bind:this={canvas}
     onmousedown={onMouseDown}
     onmousemove={onMouseMove}
-    onmouseup={onMouseUp}
+    onmouseup={onCanvasUp}
     onmouseleave={onMouseUp}
     onwheel={onWheel}
   ></canvas>
+
+  {#if placedRings.length > 0}
+    <AnnotationRings
+      rings={placedRings}
+      width={viewW}
+      height={viewH}
+      {onWheel}
+      {onOpenPhoto}
+      onZoomTo={zoomToPoint}
+      onRingTap={(x, y) => nearSiteSpot(x, y) && !!onReopen?.()}
+    />
+  {/if}
 
   <button
     class="hud-back"
@@ -834,17 +971,6 @@
   >
     {m.surface_flat_back_to_planet()}
   </button>
-
-  <!-- True-scale ground view context banner — tells you exactly what
-       you're looking at when you cross from the (stylized) sphere
-       into the (true-scale) flat-patch. Added back 2026-06-08 after
-       being briefly removed in the seamless-transition attempt. -->
-  <div class="hud-context-banner mono" aria-hidden="true">
-    <span class="ctx-eyebrow">{m.surface_true_scale_eyebrow()}</span>
-    <span class="ctx-subline">
-      {m.surface_true_scale_sub({ name: selected.name ?? selected.id })}
-    </span>
-  </div>
 
   <div class="hud-layers" role="group" aria-label={m.surface_flat_layer_toggles_aria()}>
     <button
@@ -872,47 +998,33 @@
     {/if}
   </div>
 
-  <div class="hud-scale" aria-hidden="true">
-    <span>{m.surface_flat_scale_label()}</span>
-    <span class="bar" style:width="{scaleBar.widthPx}px"></span>
-    <span class="mono">{scaleBar.label}</span>
-  </div>
+  <!-- One bar on a phone (scale + lat/lon on a line); two corner boxes elsewhere.
+       The pixel-limit chip sits by the scale bar: beside it on desktop, on the bar's top edge on a phone. -->
+  <div class="hud-bottom">
+    <div class="hud-scale-row">
+      <div class="hud-scale" aria-hidden="true">
+        <span class="scale-word">{m.surface_flat_scale_label()}</span>
+        <span class="bar" style:width="{scaleBar.widthPx}px"></span>
+        <span class="mono">{scaleBar.label}</span>
+      </div>
+      {#if limitNotice}
+        <div class="hud-limit-chip mono" aria-hidden="true" data-testid="flat-limit-chip">
+          {limitNotice}
+        </div>
+      {/if}
+    </div>
 
-  <div class="hud-latlon mono" aria-hidden="true">
-    {m.surface_flat_lat_lon({
-      lon: centroidLon.toFixed(4),
-      lat: centroidLat.toFixed(4),
-    })}
+    <div class="hud-latlon mono" aria-hidden="true">
+      {m.surface_flat_lat_lon({
+        lon: centroidLon.toFixed(4),
+        lat: centroidLat.toFixed(4),
+      })}
+    </div>
   </div>
 
   {#if upsampling}
-    <div class="upsample-warning mono" aria-hidden="true">
-      {config.planet === 'mars'
-        ? m.surface_flat_upsample_warning_mars()
-        : m.surface_flat_upsample_warning_moon()}
-    </div>
     <div class="upsample-vignette" aria-hidden="true"></div>
   {/if}
-
-  {#if atDeepestZoom}
-    <!-- Deepest-zoom microcopy — surfaces the kmPerPx floor as a
-         deliberate stop rather than a stuck app. Sits opposite the
-         layer chips so it doesn't fight the upsample warning when both
-         are active near the floor. -->
-    <div class="deepest-zoom-chip mono" aria-hidden="true">
-      {m.surface_deepest_zoom({
-        limit:
-          config.planet === 'mars'
-            ? m.surface_zoom_limit_hirise()
-            : config.planet === 'earth'
-              ? m.surface_zoom_limit_commercial()
-              : m.surface_zoom_limit_lroc(),
-      })}
-    </div>
-  {/if}
-  <!-- Earth shares the moon-warning copy in v1 (both read as "approaching
-       pixel limit"); a dedicated earth-warning paraglide key will land in
-       the slice that ships commercial-sat Earth insets. -->
 </div>
 
 <style>
@@ -978,6 +1090,9 @@
     color: #fff;
     border-color: rgba(78, 205, 196, 0.6);
   }
+  .hud-bottom {
+    display: contents;
+  }
   .hud-scale {
     position: absolute;
     bottom: 24px;
@@ -1019,22 +1134,6 @@
   .mono {
     font-family: var(--font-mono, 'Space Mono', monospace);
   }
-  .upsample-warning {
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(255, 200, 80, 0.45);
-    color: #ffc850;
-    padding: 6px 12px;
-    border-radius: 3px;
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    backdrop-filter: blur(4px);
-    pointer-events: none;
-  }
   .upsample-vignette {
     position: absolute;
     inset: 0;
@@ -1042,56 +1141,45 @@
     background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
     z-index: 2;
   }
-  /* True-scale ground view context banner — top-center pill. */
-  .hud-context-banner {
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    background: rgba(5, 5, 20, 0.92);
-    border: 1px solid rgba(78, 205, 196, 0.55);
-    color: #fff;
-    padding: 7px 16px;
-    border-radius: 4px;
-    backdrop-filter: blur(4px);
-    pointer-events: none;
-  }
-  .hud-context-banner .ctx-eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #4ecdc4;
-  }
-  .hud-context-banner .ctx-subline {
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  /* Deepest-zoom chip — bottom-center HUD, paired with the upsample
-     warning at top-center so the two read as a "pixel-limit" status row
-     when both fire near the floor. */
-  .deepest-zoom-chip {
+  /* Pixel-limit notice: one small chip beside the scale bar, only while it applies. */
+  .hud-scale-row {
     position: absolute;
     bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
+    left: 24px;
+    right: 230px;
+    z-index: 5;
+    display: flex;
+    direction: ltr;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .hud-scale-row .hud-scale {
+    position: static;
+    flex: none;
+  }
+  .hud-limit-chip {
+    unicode-bidi: plaintext;
+    min-width: 0;
+    max-width: 380px;
+    padding: 6px 10px;
     background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(78, 205, 196, 0.55);
-    color: #4ecdc4;
-    padding: 6px 12px;
+    border: 1px solid rgba(255, 200, 80, 0.45);
     border-radius: 3px;
     font-size: 10px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.06em;
+    color: #ffc850;
     backdrop-filter: blur(4px);
-    pointer-events: none;
-    text-transform: uppercase;
+  }
+  /* Desktop: "Exit zoom" (SurfaceScene, fixed top-right) owns the corner; the layer chips sit under it. */
+  @media (hover: hover) and (pointer: fine) {
+    .hud-layers {
+      top: 62px;
+    }
+    /* The site footer sits bottom-left in rtl (the panel keeps the right): the bar rides above it. */
+    :global([dir='rtl']) .hud-scale-row {
+      bottom: 44px;
+    }
   }
   @media (hover: none), (pointer: coarse) {
     /* SurfaceScene already renders a prominent "Exit zoom" affordance on
@@ -1099,10 +1187,49 @@
     .hud-back {
       display: none;
     }
-    /* Clear the top-center context banner past the mobile top controls
-       (Exit zoom + layer chips) so it isn't tucked behind them. */
-    .hud-context-banner {
-      top: 56px;
+    /* The scale row dissolves into the bar; the chip stacks on the bar's top edge. */
+    .hud-scale-row {
+      display: contents;
+    }
+    .hud-limit-chip {
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 6px);
+      max-width: 100%;
+      white-space: normal;
+    }
+    /* ONE bar at the bottom edge: scale and lat/lon on a line. */
+    .hud-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+      z-index: 5;
+      padding: 6px 10px;
+      background: rgba(5, 5, 20, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+    .hud-bottom .hud-scale,
+    .hud-bottom .hud-latlon {
+      position: static;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      backdrop-filter: none;
+    }
+    .hud-bottom .hud-scale {
+      gap: 8px;
+    }
+    .hud-bottom .scale-word {
+      display: none;
     }
   }
 </style>

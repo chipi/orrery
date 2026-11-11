@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Atterrisseur Luna 17",
+      "label_short": "Atterrisseur L17",
+      "explain": "L'atterrisseur Luna 17, qui a déposé Lunokhod 1 sur la Mer des Pluies le 17 novembre 1970. Ses moteurs de descente ont éclairci le sol autour de lui, ce qui fait ressortir les traces du rover qui tournent autour de l'atterrisseur."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle de Luna 17",
+      "label_short": "Zone de souffle",
+      "explain": "LROC note que la surface autour de Luna 17 a été éclaircie par l'échappement de ses moteurs de descente, ce qui fait ressortir les traces du rover près de l'atterrisseur."
+    },
+    {
+      "id": "tracks",
+      "label": "Traces de Lunokhod 1",
+      "label_short": "Traces du rover",
+      "explain": "LROC signale les traces de Lunokhod 1 qui partent des rampes du côté est de l'atterrisseur et font le tour de celui-ci. Lunokhod 1 a ensuite parcouru 10,5 km (le contour en pointillés marque la zone)."
+    }
+  ]
+}

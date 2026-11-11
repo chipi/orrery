@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso Chang'e 3",
+      "label_short": "Módulo Chang'e 3",
+      "explain": "O módulo de pouso chinês Chang'e 3, que pousou no Mare Imbrium em 14 de dezembro de 2013, o primeiro pouso lunar desde 1976. O anel marca o local do módulo no centro deste recorte; ali há um ponto brilhante sem sombra, e o LROC não diz qual pixel é o módulo."
+    },
+    {
+      "id": "crater-450m",
+      "label": "Cratera de 450 m a oeste do módulo",
+      "label_short": "Cratera de 450 m",
+      "explain": "O LROC observa que a Chang'e 3 pousou a cerca de 60 m a leste da borda de uma cratera de 450 m, com 40 m de profundidade, sobre um espesso depósito de material vulcânico."
+    },
+    {
+      "id": "blast",
+      "label": "Zona do jato da Chang'e 3",
+      "label_short": "Zona do jato",
+      "explain": "O LROC fotografou o local antes e depois do pouso e mediu a zona do jato do motor; a zona difusa alcança 40 a 50 m no sentido norte-sul e 10 a 15 m no sentido leste-oeste além da zona focalizada mais brilhante."
+    }
+  ]
+}

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chang'e 3 Lander",
+      "label_short": "Chang'e 3 Lander",
+      "explain": "Chinas Lander Chang'e 3, der am 14. Dezember 2013 im Mare Imbrium aufsetzte – die erste Mondlandung seit 1976. Der Ring markiert die Landestelle in der Mitte dieses Ausschnitts; dort liegt ein heller Punkt ohne Schatten, und LROC sagt nicht, welcher Bildpunkt der Lander ist."
+    },
+    {
+      "id": "crater-450m",
+      "label": "450-m-Krater westlich des Landers",
+      "label_short": "450-m-Krater",
+      "explain": "LROC zufolge landete Chang'e 3 etwa 60 m östlich des Randes eines 450 m großen und 40 m tiefen Kraters, auf einer dicken Ablagerung vulkanischen Materials."
+    },
+    {
+      "id": "blast",
+      "label": "Chang'e-3-Abgasbereich",
+      "label_short": "Abgasbereich",
+      "explain": "LROC bildete die Stelle vor und nach der Landung ab und vermaß den Abgasbereich des Triebwerks; die diffuse Zone reicht 40 bis 50 m in Nord-Süd- und 10 bis 15 m in Ost-West-Richtung über die hellere, gebündelte Zone hinaus."
+    }
+  ]
+}

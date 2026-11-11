@@ -1,1 +1,16 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Phoenix 착륙선",
+      "label_short": "Phoenix 착륙선",
+      "explain": "2008년 5월 25일 착륙한 NASA의 Phoenix 착륙선. 하강 엔진이 날려 어두워진 지면 한가운데에 밝은 점으로 보인다. 이 영상은 HiRISE가 착륙 22시간 뒤에 촬영했다."
+    },
+    {
+      "id": "heat-shield",
+      "label": "열차폐막 충돌 지점",
+      "label_short": "열차폐막",
+      "explain": "Phoenix의 열차폐막이 땅에 부딪힌 곳으로, 착륙선에서 동남동쪽으로 약 190 m 떨어져 있다. 부딪혀 튀어 오르며 흐트러진 땅이 어두운 얼룩으로 보인다."
+    }
+  ]
+}

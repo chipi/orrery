@@ -3,7 +3,8 @@
    * /missions/launches — global launches calendar (PRD-020 / RFC-023).
    *
    * Layout consolidated to mirror /missions and /fleet:
-   * - No H1 / subtitle / explainer in the page body (title in svelte:head).
+   * - No visible H1 / subtitle / explainer in the page body (title in svelte:head; a
+   *   screen-reader-only H1 carries it for the heading outline).
    * - Single `.launches` container (max-width 1400 px, matches .library).
    * - Single `.filters-toggle` button (FILTERS ▸ N/total).
    * - When expanded: `.filters` nav with .filter-group × N of .pill buttons.
@@ -11,6 +12,7 @@
    */
 
   import { onMount, untrack } from 'svelte';
+  import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
@@ -26,6 +28,7 @@
   import PillDropdown from '$lib/components/PillDropdown.svelte';
   import { launchAgencyLogo, launchAgencyShortName } from '$lib/launches/agency-logos.js';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
 
   type Mode = 'upcoming' | 'historic';
   type TierFilter = 'ALL' | 'FEATURED';
@@ -214,8 +217,9 @@
 
 <svelte:head>
   <title>{m.launches_page_title()} — Orrery</title>
-  <meta name="description" content={m.launches_meta_description()} />
+  <meta name="description" content={metaDescription(m.launches_meta_description())} />
 </svelte:head>
+<VisuallyHiddenH1 title={m.launches_page_title()} />
 
 <div
   class="launches entity-browse-page"

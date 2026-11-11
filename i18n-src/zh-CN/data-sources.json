@@ -13,11 +13,11 @@
   "models-ref-nssdca": "NASA 空间科学数据协调档案馆（NSSDCA）中关于航天器和运载火箭的页面，提供了为 /fly 和 /fleet 尺寸对比建模的航天器和火箭的质量、长度和直径。",
   "models-ref-nasa": "NASA 关于任务、飞行器和历史的页面（nasa.gov、history.nasa.gov、science.nasa.gov），提供了为 /fly 和 /fleet 尺寸对比建模的载人舱、货运飞船、航天飞机轨道器和运载火箭的尺寸。",
   "models-ref-nps": "美国国家公园管理局关于自由女神像的“Statue Statistics”页面：从地面到火炬尖端 92.99 米，包括基座和雕像本身——即 /fleet 运载火箭尺寸对比中立在火箭旁的比例参照物。",
-  "models-ref-esa": "欧洲航天局页面（ATV、阿丽亚娜、罗塞塔等），提供了为 /fly 和 /fleet 尺寸对比建模的欧洲航天器和运载火箭的尺寸。",
+  "models-ref-esa": "欧洲航天局页面（ATV、阿丽亚娜、Rosetta等），提供了为 /fly 和 /fleet 尺寸对比建模的欧洲航天器和运载火箭的尺寸。",
   "models-ref-jaxa": "JAXA 关于 H-IIA、H3、M-V 以及 HTV / HTV-X 转移飞行器的页面，提供了为 /fly 和 /fleet 尺寸对比建模的日本运载火箭和货运飞船的尺寸。",
-  "models-ref-isro": "ISRO 关于运载火箭和“加根扬”的页面（PSLV、GSLV Mk III / LVM3、乘员舱），提供了为 /fly 和 /fleet 尺寸对比建模的印度飞行器的尺寸。",
-  "models-ref-agencies": "航天机构和制造商的官方页面（俄罗斯航天局、SpaceX、联合发射联盟、波音、诺斯罗普·格鲁曼、萤火虫、阿丽亚娜空间、中国载人航天工程办公室和中国航天科技集团、美国太空军），提供了运载火箭和航天器模型的飞行器尺寸。",
-  "models-ref-independent": "独立的航天参考资料和博物馆页面（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、史密森尼国家航空航天博物馆、施派尔技术博物馆等），提供了苏联、航天飞机和暴风雪号时代飞行器的大小。",
+  "models-ref-isro": "ISRO 关于运载火箭和Gaganyaan的页面（PSLV、GSLV Mk III / LVM3、乘员舱），提供了为 /fly 和 /fleet 尺寸对比建模的印度飞行器的尺寸。",
+  "models-ref-agencies": "航天机构和制造商的官方页面（Roscosmos、SpaceX、联合发射联盟、波音、诺斯罗普·格鲁曼、萤火虫、阿丽亚娜空间、中国载人航天工程办公室和中国航天科技集团、美国太空军），提供了运载火箭和航天器模型的飞行器尺寸。",
+  "models-ref-independent": "独立的航天参考资料和博物馆页面（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、史密森尼国家航空航天博物馆、施派尔技术博物馆等），提供了苏联、航天飞机和Buran 时代飞行器的大小。",
   "nasa-mmgis-rover-traverses": "Curiosity 和 Perseverance 漫游车团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。",
   "pds-mer-traverses": "Spirit 和 Opportunity 科学团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。"
 }

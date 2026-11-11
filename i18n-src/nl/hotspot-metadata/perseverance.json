@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "landing",
+      "label": "Landing van Perseverance",
+      "label_short": "Landingsplaats",
+      "explain": "Hier kwam Perseverance op 18 februari 2021 aan de grond. Op dit HiRISE-beeld van de dag erna is de rover het kleine heldere object met schaduw in het midden, tussen twee heldere stukken grond die zijn schoongeblazen door de raketten die hem neerlieten. Hij is al lang weggereden."
+    }
+  ],
   "panorama_caption": "Het eerste 360°-panorama van Perseverance — drie dagen na de landing. Het roverdek domineert de voorgrond; de bodem en de verre rand van de krater Jezero zijn boven de horizon te zien; bovenin echte Marshemel.",
   "compass_zero_direction": "+X-as van de rover",
   "panorama_annotations": [

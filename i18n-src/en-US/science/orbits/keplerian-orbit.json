@@ -1,6 +1,7 @@
 {
   "title": "Keplerian Orbit",
   "intro_sentence": "An ellipse with the Sun at one focus — the simplest orbit a body can have around another.",
+  "seo_title": "Keplerian Orbits: The Six Elements That Describe an Orbit",
   "narrative_101": [
     "Imagine throwing a ball off a tall tower. It curves down to the ground. Throw it harder, the curve gets longer. Throw it so hard that the ground falls away under it as fast as the ball drops — and the ball never lands. It just keeps falling, forever, in a closed loop. That's an orbit. Every spacecraft, every moon, every planet is doing that one trick.",
     "What makes the loop a Keplerian orbit specifically is that we're treating gravity as a single, clean tug toward one heavy thing — the Sun for planets, the Earth for satellites, Mars for InSight. Two bodies, one force, no complications. The result is always an ellipse, and the heavy body always sits at one of the two focal points, never the middle. That single picture lives behind every number you'll see in this whole encyclopedia.",

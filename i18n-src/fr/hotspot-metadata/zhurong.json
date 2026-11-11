@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Atterrisseur Tianwen-1",
+      "label_short": "Atterrisseur",
+      "explain": "L'atterrisseur Tianwen-1, au centre du motif que ses moteurs de descente ont soufflé dans la poussière. Le rover Zhurong en est descendu après l'atterrissage du 14 mai 2021."
+    }
+  ]
+}

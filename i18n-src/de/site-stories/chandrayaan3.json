@@ -1,5 +1,5 @@
 {
-  "intro": "Chandrayaan-3 landete am 23. August 2023 nahe dem lunaren Südpol – es war Indiens erste weiche Landung auf dem Mond und zugleich die Landung, die dem Südpol von allen Nationen bislang am nächsten kam. Der Lander Vikram setzte den Rover Pragyan aus, der im Verlauf von 14 Tagen rund 100 m zurücklegte und in dauerhaft beschattetem Gelände nach Wassereis suchte. Indien wurde damit nach der UdSSR, den USA und China die vierte Nation, der eine weiche Landung auf dem Mond gelang.",
+  "intro": "Chandrayaan-3 landete am 23. August 2023 nahe dem lunaren Südpol – es war Indiens erste weiche Landung auf dem Mond und zugleich die damals dem Südpol nächstgelegene Landung (bei rund 69° S; IM-2 von Intuitive Machines landete später bei rund 84,8° S). Der Lander Vikram setzte den Rover Pragyan aus, der im Verlauf von 14 Tagen rund 100 m zurücklegte und in dauerhaft beschattetem Gelände nach Wassereis suchte. Indien wurde damit nach der UdSSR, den USA und China die vierte Nation, der eine weiche Landung auf dem Mond gelang.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
       "images": [
         {
           "src": "/images/missions/chandrayaan3/04.webp",
-          "caption": "Lander Vikram auf der Oberfläche der Südpolarregion – Aufsetzen bei 69,37° S, die Mondlandung in der höchsten geografischen Breite, die je erfolgt ist."
+          "caption": "Lander Vikram auf der Oberfläche der Südpolarregion – Aufsetzen bei 69,37° S, die damals am weitesten polwärts gelegene Mondlandung."
         }
       ]
     }

@@ -312,14 +312,17 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   // on its own, and an agency-coloured rim was reading as a third
   // blue ring stacked with the selection halo + pin ring.)
 
-  // Annotation dot sprites (S5 #113). Rendered at each annotation's
-  // lat_offset_m / lon_offset_m in metres from the site centre,
-  // converted to local patch coordinates. lat_offset_m maps to +Z
-  // (north), lon_offset_m maps to +X (east).
+  // Annotation anchors: one empty object per annotation at its ground offset
+  // (lat_offset_m -> north, lon_offset_m -> east, on the patch image). Nothing is
+  // drawn here: the rings are HTML at a fixed screen size, projected from these
+  // anchors each frame (SurfaceScene), because dots fixed in world units merged
+  // into one blob on an ~800 m patch.
   if (input.annotations && input.annotations.length > 0) {
-    addAnnotationDots(g, input.annotations, input.siteId, input.accentColor, {
+    addAnnotationAnchors(g, input.annotations, input.siteId, {
       detailDiameter,
       groundMeters: input.groundMeters,
+      aspect,
+      orientationDeg,
     });
   }
 
@@ -327,60 +330,50 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
 }
 
 /**
- * Render small dot sprites at each annotation's local offset. The
- * dot has a halo (semi-transparent rim) + a solid core. Click hits
- * propagate via userData.annotationId; the route's existing pick
- * handler reads this to surface the annotation in the detail panel.
- *
- * Metre-to-world-unit conversion: the detail patch of diameter
- * `detailDiameter` world-units represents `groundMeters` of ground, so
- * 1 metre = detailDiameter / groundMeters world units. With literal
- * co-scale (#309) this matches the regional layer's scale exactly, so an
- * annotation lands on the same feature in both. Legacy fallback (no
+ * Add an invisible anchor (userData.annotationId) per annotation at its local
+ * offset. The square ground crop (`groundMeters` wide and tall) is drawn on a
+ * plane of the patch's real width and height (area-preserving, region aspect), so
+ * 1 m east = width / groundMeters and 1 m north = height / groundMeters world
+ * units: an annotation lands on the same image feature as in the flat view. The
+ * offset is then spun by the patch's `orientationDeg`, exactly as the geometry
+ * is, so north stays the image's north on the globe. Legacy fallback (no
  * groundMeters) keeps the old 1 km-per-disc assumption.
  */
-function addAnnotationDots(
+function addAnnotationAnchors(
   g: THREE.Group,
   annotations: HotspotAnnotation[],
   siteId: string,
-  accentColor: string,
-  scale: { detailDiameter: number; groundMeters?: number },
+  scale: { detailDiameter: number; groundMeters?: number; aspect: number; orientationDeg: number },
 ): void {
   const PATCH_M = scale.groundMeters ?? 1000;
-  const M_TO_U = scale.detailDiameter / PATCH_M;
-  const radius = scale.detailDiameter / 2;
+  const height = Math.sqrt(
+    ((Math.PI / 4) * scale.detailDiameter * scale.detailDiameter) / scale.aspect,
+  );
+  const width = scale.aspect * height;
+  const M_TO_U_X = (scale.groundMeters ? width : scale.detailDiameter) / PATCH_M;
+  const M_TO_U_Z = (scale.groundMeters ? height : scale.detailDiameter) / PATCH_M;
+  const theta = (scale.orientationDeg * Math.PI) / 180;
+  const cos = Math.cos(theta);
+  const sin = Math.sin(theta);
+  const halfW = (scale.groundMeters ? width : scale.detailDiameter) / 2;
+  const halfH = (scale.groundMeters ? height : scale.detailDiameter) / 2;
   for (const a of annotations) {
-    const x = a.lon_offset_m * M_TO_U;
-    const z = -a.lat_offset_m * M_TO_U; // +lat = -Z (north up on the patch)
+    const x = a.lon_offset_m * M_TO_U_X;
+    const z = -a.lat_offset_m * M_TO_U_Z; // +lat = -Z (north up on the patch)
     // Skip annotations outside the patch boundary.
-    if (Math.sqrt(x * x + z * z) > radius * 1.05) continue;
-    const dot = new THREE.Mesh(
-      new THREE.CircleGeometry(0.012, 16),
-      new THREE.MeshBasicMaterial({
-        color: 0xffffff,
-        transparent: true,
-        opacity: 0.95,
-        depthWrite: false,
-      }),
-    );
-    dot.rotation.x = -Math.PI / 2;
-    dot.position.set(x, Z_FIGHT_OFFSET_Y + 0.003, z);
-    dot.userData = { siteId, annotationId: a.id };
-    g.add(dot);
-    // Halo ring around the dot in the accent colour.
-    const halo = new THREE.Mesh(
-      new THREE.RingGeometry(0.013, 0.018, 16),
-      new THREE.MeshBasicMaterial({
-        color: accentColor,
-        transparent: true,
-        opacity: 0.7,
-        depthWrite: false,
-      }),
-    );
-    halo.rotation.x = -Math.PI / 2;
-    halo.position.set(x, Z_FIGHT_OFFSET_Y + 0.0025, z);
-    halo.userData = { siteId, annotationId: a.id };
-    g.add(halo);
+    if (Math.abs(x) > halfW * 1.05 || Math.abs(z) > halfH * 1.05) continue;
+    const anchor = new THREE.Object3D();
+    // Same rotation as BufferGeometry.rotateY (the patch mesh's own spin).
+    anchor.position.set(x * cos + z * sin, Z_FIGHT_OFFSET_Y + 0.003, -x * sin + z * cos);
+    anchor.rotation.y = theta;
+    anchor.userData = {
+      siteId,
+      annotationId: a.id,
+      kind: 'annotation-anchor',
+      // an area's true ground radius in patch units (AnnotationRings draws the dashed outline)
+      radiusU: a.area_radius_m ? a.area_radius_m * M_TO_U_X : undefined,
+    };
+    g.add(anchor);
   }
 }
 

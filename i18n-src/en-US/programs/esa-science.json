@@ -1,6 +1,8 @@
 {
   "name": "ESA — Space Science",
-  "tagline": "Europe's robotic science fleet — the first spacecraft to land on a comet, the most precise map of the galaxy ever made, and a telescope hunting the dark universe.",
+  "tagline": "Europe's robotic science fleet — the first spacecraft to orbit a comet and make the first comet landing, the most precise map of the galaxy ever made, and a telescope hunting the dark universe.",
+  "seo_title": "ESA Space Science: Rosetta, Gaia and Euclid",
+  "seo_description": "Europe's science fleet: Rosetta, first to orbit a comet (its Philae lander made the first comet landing), Gaia's galaxy map and the Euclid telescope.",
   "the_land": [
     { "type": "prose", "md": "The European Space Agency's human spaceflight is done in partnership — modules on the ISS, astronauts flown on others' rockets, a share of Artemis. But in robotic science, ESA leads in its own right, running some of the most ambitious deep-space missions ever flown. Where NASA's science is vast and broad, ESA's tends to be precise and audacious: a small number of missions attempting things no one had ever done, executed with a patience measured in decades." },
     { "type": "prose", "md": "Three missions capture the character of it. Rosetta chased a comet for ten years and then did something never attempted before — orbited it and landed on it. Gaia has spent a decade making the most accurate three-dimensional map of the Milky Way in history, pinning down the positions of nearly two billion stars. And Euclid is surveying a third of the entire sky to trace the invisible scaffolding of dark matter and the mysterious force pulling the universe apart. Together they are Europe's argument that it belongs at the front of space science." }

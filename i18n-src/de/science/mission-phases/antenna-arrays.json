@@ -1,6 +1,7 @@
 {
   "title": "Arraying — viele kleine Antennen statt einer riesigen",
   "intro_sentence": "Werden Signale mehrerer Antennen in Echtzeit kombiniert, entsteht eine virtuelle Apertur, größer als jede Einzelschüssel — schwächere Signale lassen sich empfangen, ohne immer größere Bauwerke zu errichten.",
+  "seo_title": "Antennen-Arraying: Schüsseln für den Weltraum bündeln",
   "body_paragraphs": [
     "Eine einzelne große Antenne ist der naheliegende Weg, um ein schwaches Raumfahrzeugsignal aus Milliarden Kilometern Entfernung zu empfangen. Die 70-m-Schüsseln des DSN — in Goldstone, Madrid und Canberra — liegen nahe an der praktischen Grenze für vollständig steuerbare, bodengestützte Reflektoren. Etwas deutlich Größeres würde eine feste Struktur (was die Himmelsabdeckung einschränkt) oder noch nicht existierende Technik erfordern. Die Alternative ist die Kombination vieler kleinerer Antennen: Arraying.",
     "Wenn mehrere Antennen gleichzeitig dasselbe Raumfahrzeug beobachten und ihre Signale mit korrekten Phasen- und Zeitversätzen kombiniert werden, ergibt sich eine kohärente Addition. Das Rauschen jeder Antenne addiert sich inkohärent (es skaliert mit der Quadratwurzel der Antennenzahl), während das Signal kohärent addiert wird (es skaliert mit der Antennenzahl). Die effektive Sammelfläche eines Arrays aus N identischen Schüsseln ist N-mal so groß wie die einer einzelnen Schüssel. Dies ist keine Näherung — es ist das gleiche Prinzip wie bei Radioteleskoparrays wie dem Very Large Array und ALMA.",

@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "landing",
+      "label": "Landestelle von Perseverance",
+      "label_short": "Landestelle",
+      "explain": "Hier setzte Perseverance am 18. Februar 2021 auf. Auf diesem HiRISE-Bild vom nächsten Tag ist der Rover das kleine helle Objekt mit Schatten in der Mitte, zwischen zwei hellen Bodenflächen, die von den Raketen freigelegt wurden, die ihn abgesetzt haben. Er ist längst weitergefahren."
+    }
+  ],
   "panorama_caption": "Das erste 360°-Panorama von Perseverance — drei Tage nach der Landung. Das Rover-Deck beherrscht den Vordergrund; Boden und ferner Rand des Jezero-Kraters sind über dem Horizont zu sehen; oben echter Marshimmel.",
   "compass_zero_direction": "+X-Achse des Rovers",
   "panorama_annotations": [

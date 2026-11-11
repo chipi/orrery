@@ -35,12 +35,27 @@
  *       silently shift this mission's rendered trajectory.
  *     - Zero per-frame trajectory regen cost.
  *
+ * Orbit-raising missions (Chandrayaan-1/-3, SLIM): the resampled Tier 1 spiral ignores the flight's
+ * event times and parked these craft at twice the Moon's distance (or at the Earth's centre) for
+ * weeks. When the profile carries `orbit_raising` (published [met_days, perigee_km, apogee_km] per
+ * burn) and/or `lunar_orbits` (published [met_days, perilune_km, apolune_km] per orbit), the
+ * waypoints are built from those tables instead (authoredFromOrbitTables below) and
+ * `cislunar_profile.waypoints_source` records where the figures come from. Orbits are drawn in the
+ * ecliptic plane with schematic phase; every Earth orbit shares one apse line, the coast leaves the
+ * last burn's perigee (or the TLI event, if later) for the Moon's position at lunar arrival, and the
+ * stay at the Moon is Moon-centred offsets around the arrival-day Moon with the angle step capped so
+ * consecutive samples stay inside buildFromWaypoints' 5,000 km hold tolerance.
+ *
  * Idempotent: running twice on the same file produces identical
  * waypoints (subject to JS number serialization). Safe to re-run when
  * the mission's parametric profile is updated.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import {
+  MU_EARTH_KM3_S2,
+  R_EARTH_KM,
+  R_MOON_KM,
+  moonEciPos,
   buildCislunarTrajectory,
   cislunarEventTimes,
   type CislunarProfile,
@@ -76,6 +91,11 @@ const transitDays = json.transit_days;
 if (typeof transitDays !== 'number' || transitDays <= 0) {
   console.error(`${file}: missing or invalid transit_days`);
   process.exit(1);
+}
+
+if (flight.cislunar_profile.orbit_raising || flight.cislunar_profile.lunar_orbits) {
+  authoredFromOrbitTables();
+  process.exit(0);
 }
 
 // Round-trip mission window = 2 × transit_days. The cislunar primitives
@@ -215,3 +235,112 @@ writeFileSync(file, JSON.stringify(json, null, 2) + '\n', 'utf8');
 console.log(
   `${file}: wrote ${waypoints.length} waypoints (MET 0..${missionEndMet}d, ${events.length} event anchors pinned)`,
 );
+
+function authoredFromOrbitTables(): void {
+  const profile = flight!.cislunar_profile!;
+  const raising = profile.orbit_raising ?? [];
+  const lunar = profile.lunar_orbits ?? [];
+  const evs = cislunarEventTimes(flight!.events);
+  const arrival = evs.arrival;
+  if (arrival == null || !lunar.length) {
+    console.error(`${file}: orbit tables need an arrival event and lunar_orbits`);
+    process.exit(1);
+  }
+  const landing = profile.lunar_arrival?.type === 'orbit_and_land';
+  const edl = (flight!.events ?? []).find((e) => e.type === 'edl_or_oi')?.met_days;
+  const end = landing && edl != null ? edl : Math.floor(transitDays! * 1.05 * 10) / 10;
+  const lastBurn = raising.length ? raising[raising.length - 1][0] : 0;
+  const tli = raising.length ? Math.max(evs.tli ?? 0, lastBurn) : 0;
+  const perigeeAlt = raising.length
+    ? raising[raising.length - 1][1]
+    : (profile.parking_orbit?.altitude_km ?? 250);
+
+  const kepler = (e: number, E: number) => E - e * Math.sin(E);
+  const rows: Array<[number, number, number, number]> = [];
+  const push = (met: number, x: number, z: number) =>
+    rows.push([Math.round(met * 10000) / 10000, Math.round(x), 0, Math.round(z)]);
+  const moonArr = moonEciPos(arrival);
+  const phiPerigee = Math.atan2(moonArr.z, moonArr.x) + Math.PI;
+  const at = (r: number, E: number, e: number) => {
+    const nu =
+      2 * Math.atan2(Math.sqrt(1 + e) * Math.sin(E / 2), Math.sqrt(1 - e) * Math.cos(E / 2));
+    return { x: Math.cos(phiPerigee + nu) * r, z: Math.sin(phiPerigee + nu) * r };
+  };
+
+  // Each raising orbit: whole revolutions between burns, 6 samples per revolution.
+  raising.forEach(([t0, rpAlt, raAlt], i) => {
+    const t1 = i + 1 < raising.length ? raising[i + 1][0] : tli;
+    if (t1 <= t0) return;
+    const rp = R_EARTH_KM + rpAlt;
+    const ra = R_EARTH_KM + raAlt;
+    const a = (rp + ra) / 2;
+    const e = (ra - rp) / (ra + rp);
+    const period = (2 * Math.PI * Math.sqrt((a * a * a) / MU_EARTH_KM3_S2)) / 86400;
+    const revs = Math.max(1, Math.round((t1 - t0) / period));
+    const scale = (t1 - t0) / (revs * period);
+    const perRev = 6;
+    for (let k = 0; k < revs * perRev; k++) {
+      const rev = Math.floor(k / perRev);
+      const E = (2 * Math.PI * (k % perRev)) / perRev;
+      const t = t0 + (rev * 2 * Math.PI + kepler(e, E)) * (period / (2 * Math.PI)) * scale;
+      const p = at(a * (1 - e * Math.cos(E)), E, e);
+      push(t, p.x, p.z);
+    }
+  });
+
+  // Coast: the last burn's perigee out to the Moon's distance at arrival (the last sample is left to
+  // the first lunar sample so no two samples share a time).
+  {
+    const rp = R_EARTH_KM + perigeeAlt;
+    const ra = Math.hypot(moonArr.x, moonArr.z);
+    const a = (rp + ra) / 2;
+    const e = (ra - rp) / (ra + rp);
+    const n = 14;
+    for (let k = 0; k < n; k++) {
+      const E = (Math.PI * k) / n;
+      const t = tli + (kepler(e, E) / Math.PI) * (arrival - tli);
+      const p = at(a * (1 - e * Math.cos(E)), E, e);
+      push(t, p.x, p.z);
+    }
+  }
+
+  let theta = 0;
+  lunar.forEach(([t0, rpAlt, raAlt], i) => {
+    const t1 = i + 1 < lunar.length ? lunar[i + 1][0] : end - (landing ? 0.3 : 0);
+    const rp = R_MOON_KM + rpAlt;
+    const ra = R_MOON_KM + raAlt;
+    const p = (2 * rp * ra) / (rp + ra);
+    const e = (ra - rp) / (ra + rp);
+    const count = Math.max(4, Math.round((t1 - t0) / 0.35));
+    for (let k = 0; k < count; k++) {
+      const r = p / (1 + e * Math.cos(theta));
+      push(
+        t0 + ((t1 - t0) * k) / count,
+        moonArr.x + Math.cos(theta) * r,
+        moonArr.z + Math.sin(theta) * r,
+      );
+      theta += Math.min(0.5, 3500 / Math.max(r, 1));
+    }
+  });
+  if (landing) {
+    for (const [t, alt] of [
+      [end - 0.3, 60],
+      [end - 0.15, 25],
+      [end, 0],
+    ] as Array<[number, number]>) {
+      const r = R_MOON_KM + alt;
+      push(t, moonArr.x + Math.cos(theta) * r, moonArr.z + Math.sin(theta) * r);
+      theta += 0.3;
+    }
+  }
+
+  rows.sort((a, b) => a[0] - b[0]);
+  for (let i = 1; i < rows.length; i++)
+    if (rows[i][0] <= rows[i - 1][0]) rows[i][0] = rows[i - 1][0] + 1e-4;
+
+  flight!.cislunar_profile!.waypoints_km = rows;
+  writeFileSync(file, JSON.stringify(json, null, 2) + '\n', 'utf8');
+  console.log(
+    `${file}: wrote ${rows.length} waypoints from orbit tables (MET 0..${rows[rows.length - 1][0]}d)`,
+  );
+}

@@ -101,17 +101,18 @@ async function commonsCategory(article) {
       if (!ii) continue;
       const lic = (ii.extmetadata?.LicenseShortName?.value || '').trim();
       if (!OK.test(lic) || BAD.test(lic)) continue;
+      let artist = ii.extmetadata?.Artist?.value || '';
+      for (let prev = ''; prev !== artist;) {
+        prev = artist;
+        artist = artist.replace(/<[^>]+>/g, '');
+      }
       out.push({
         src: 'commons-cat',
         title: file.replace(/^File:/, ''),
         license: lic,
         url: ii.url,
         descriptionurl: ii.descriptionurl,
-        author: (ii.extmetadata?.Artist?.value || '')
-          .replace(/<[^>]+>/g, '')
-          .replace(/[<>]/g, '')
-          .trim()
-          .slice(0, 50),
+        author: artist.replace(/[<>]/g, '').trim().slice(0, 50),
       });
       await sleep(200);
     } catch {

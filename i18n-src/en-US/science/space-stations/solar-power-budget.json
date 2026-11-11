@@ -1,6 +1,7 @@
 {
   "title": "Solar Power Budget",
   "intro_sentence": "How much electricity the solar arrays generate — the upstream constraint on every system the crew can run.",
+  "seo_title": "Space Station Solar Power Budget Explained",
   "narrative_101": [
     "A space station runs on solar electricity. The solar wings run the length of the ISS's ~109 m truss — bigger than a football field — because everything else depends on the watts they pull from sunlight: life support, communications, scientific instruments, the crew's exercise machine, the toilet's air-flow fan.",
     "The eight original 35 m × 12 m ISS arrays delivered ~160 kW peak sunlit at beginning of life, derated with age; augmented by six iROSA roll-out arrays (covering six of the eight original wings, each adding >20 kW), total installed generation capacity reached ~215 kW. Orbit-average power delivered to loads — accounting for the ~0.6 sunlit fraction and battery/regulation losses — is roughly 84–120 kW. Tiangong runs lighter at about 27 kW peak — fewer crew, fewer experiments, simpler thermal load.",

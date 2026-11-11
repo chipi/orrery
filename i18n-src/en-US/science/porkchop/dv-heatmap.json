@@ -1,6 +1,7 @@
 {
   "title": "∆v Heatmap",
   "intro_sentence": "The colour scale that turns ∆v numbers into a picture you can read at a glance.",
+  "seo_title": "Porkchop Plot Delta-v Heatmap: Reading the Colours",
   "narrative_101": [
     "The whole point of a porkchop plot is the colours. Numbers in a giant grid would tell you the same thing, but you couldn't see the patterns. So we paint each cell — cool teal for cheap trajectories, yellow for borderline, orange and red for hopelessly expensive. Pattern recognition takes over from arithmetic.",
     "Cool teal sits at around 3 km/s of ∆v — the departure burn from LEO for a Hohmann-like transfer to Mars (trans-Mars injection). Blue around 5 km/s — affordable, slightly faster trips. Yellow around 7 km/s — getting expensive, you're paying for speed. Orange and red beyond 9 km/s — you've left the realm of what current rockets can practically deliver. The colour-to-cost mapping is consistent across all the porkchops in /plan.",

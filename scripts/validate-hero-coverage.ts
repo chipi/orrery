@@ -167,7 +167,10 @@ const FALLBACK_LADDER: Record<string, string[]> = {
   missions: ['mars-sites', 'moon-sites', 'fleet-galleries'],
 };
 
-function heroExistsOnAnyFallback(imageDir: string, id: string): boolean {
+function heroExistsOnAnyFallback(imageDir: string, id: string, missionId?: string): boolean {
+  // A site served by its mission's gallery (viking1-lander → missions/viking1), as the loaders do.
+  if (missionId && existsSync(resolve(ROOT, `static/images/missions/${missionId}/01.webp`)))
+    return true;
   const direct = `static/images/${imageDir}/${id}/01.webp`;
   if (existsSync(resolve(ROOT, direct))) return true;
   const ladder = FALLBACK_LADDER[imageDir] ?? [];
@@ -215,10 +218,17 @@ function validateSurface(spec: SurfaceSpec): Gap[] {
   }
   const json: unknown = JSON.parse(readFileSync(fullIndexPath, 'utf-8'));
   const ids = spec.extractIds(json);
+  const missionOf = new Map(
+    Array.isArray(json)
+      ? (json as Array<{ id: string; mission_id?: string }>).map(
+          (e) => [e.id, e.mission_id] as const,
+        )
+      : [],
+  );
   const gaps: Gap[] = [];
   for (const id of ids) {
     if (spec.knownGaps.has(id)) continue;
-    if (!heroExistsOnAnyFallback(spec.imageDir, id)) {
+    if (!heroExistsOnAnyFallback(spec.imageDir, id, missionOf.get(id))) {
       const expectedPath = `static/images/${spec.imageDir}/${id}/01.webp`;
       gaps.push({ surface: spec.label, id, expectedPath: `/${expectedPath}` });
     }

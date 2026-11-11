@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso Chang'e 4",
+      "label_short": "Módulo Chang'e 4",
+      "explain": "O módulo de pouso chinês Chang'e 4, que fez o primeiro pouso suave no lado oculto da Lua, em 3 de janeiro de 2019, na cratera Von Kármán. O solo claro ao redor foi varrido pelo motor de descida."
+    },
+    {
+      "id": "yutu-2",
+      "label": "Rover Yutu-2",
+      "label_short": "Yutu-2",
+      "explain": "O rover Yutu-2 em 7 de maio de 2019, quatro meses após o pouso, cerca de 120 m a oeste do módulo, no fim das suas primeiras trilhas. Desde então ele andou muito longe daqui."
+    }
+  ],
   "panorama_caption": "O primeiro panorama já transmitido do lado oculto da Lua. A cratera Von Kármán, dentro da bacia do Polo Sul-Aitken. O rover Yutu-2 a meia distância; a sombra do módulo de pouso no canto inferior esquerdo.",
   "compass_zero_direction": "eixo +X da câmera do módulo de pouso",
   "panorama_annotations": [

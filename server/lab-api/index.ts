@@ -139,6 +139,7 @@ const ROUTES = new Set([
   '/.well-known/openid-configuration',
   '/jwks',
   '/authorize',
+  '/authorize/consent',
   '/auth/google/callback',
   '/token',
   '/register',
@@ -220,15 +221,30 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         return json(res, 200, auth.metadata());
       case 'GET /jwks':
         return json(res, 200, tokens.jwks());
-      case 'GET /authorize': {
-        const out = auth.authorize(url.searchParams);
+      case 'GET /authorize':
+      case 'POST /authorize/consent': {
+        const out =
+          req.method === 'GET'
+            ? auth.authorize(url.searchParams)
+            : auth.consent(await readForm(req));
         if (out.kind === 'redirect') {
           res.writeHead(302, { location: out.location });
           res.end();
+        } else if (out.kind === 'html') {
+          // The consent page for a self-registered client (#597): never cached, never
+          // framed (a framed Allow button is a clickjacking target).
+          res.writeHead(out.status, {
+            'content-type': 'text/html; charset=utf-8',
+            'cache-control': 'no-store',
+            'content-security-policy':
+              "default-src 'none'; style-src 'unsafe-inline'; frame-ancestors 'none'",
+            'x-frame-options': 'DENY',
+          });
+          res.end(out.body);
         } else {
           // Trace OAuth authorize rejections (bad client/redirect/scope/target)
           // — the connector flow is otherwise invisible in logs (#464 auth trace).
-          console.warn('[lab-api] /authorize rejected:', out.body);
+          console.warn(`[lab-api] ${url.pathname} rejected:`, out.body);
           res.writeHead(out.status, { 'content-type': 'text/plain' });
           res.end(out.body);
         }

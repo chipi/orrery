@@ -1,0 +1,1032 @@
+{
+  "_note": "NEW rings only (existing ones stay in static/data/surface-hotspots.json). Offsets are metres from the patch centre (= site point), lat_offset_m north+, lon_offset_m east+. px,py are in the 2048x2048 tier2-lroc.jpg (x right, y down). r_m is the suggested ring radius for kind=area. position_source says where the position comes from; objects/features/areas follow the operator split (A objects at LROC coordinates, B features/areas, C robotic).",
+  "sites": {
+    "apollo11": {
+      "m_per_px": 0.4,
+      "hotspot_annotations": [
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "kind": "object",
+          "lat_offset_m": 10.2,
+          "lon_offset_m": -12.9,
+          "px": 992,
+          "py": 999,
+          "position_source": "LROC coordinates",
+          "confidence": "low: LROC hardware-layer point (no uncertainty given, not in the 2016 table); the flag is not resolvable at 0.4 m/px",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_11_hardware.geojson"
+          ],
+          "explain_en": "The point LROC's Apollo 11 hardware layer gives for the flag, about 14 m west-north-west of the Lunar Module. The flag itself is too small to see at this resolution."
+        },
+        {
+          "id": "tv",
+          "label": "TV camera (LROC position)",
+          "label_short": "TV camera",
+          "kind": "object",
+          "lat_offset_m": 22.1,
+          "lon_offset_m": -18.8,
+          "px": 977,
+          "py": 969,
+          "position_source": "LROC coordinates",
+          "confidence": "low: LROC hardware-layer point (no uncertainty given); nothing resolvable at the point",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_11_hardware.geojson"
+          ],
+          "explain_en": "The point LROC's Apollo 11 hardware layer gives for the TV camera, about 26 m north-west of the Lunar Module. Nothing is resolvable in the image at that spot."
+        },
+        {
+          "id": "little-west",
+          "label": "Little West crater",
+          "label_short": "Little West",
+          "kind": "feature",
+          "lat_offset_m": 7,
+          "lon_offset_m": 73.8,
+          "px": 1209,
+          "py": 1007,
+          "position_source": "LROC label (Featured Sites nomenclature layer)",
+          "confidence": "medium: label point sits on the crater (dark shadowed floor, bright rim) in the image",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson",
+            "https://lroc.im-ldi.com/images/65"
+          ],
+          "explain_en": "The crater LROC labels Little West on its Apollo 11 map, about 75 m east of the Lunar Module. A faint footpath in the image runs toward it."
+        },
+        {
+          "id": "double",
+          "label": "Double crater",
+          "label_short": "Double crater",
+          "kind": "feature",
+          "lat_offset_m": -8.1,
+          "lon_offset_m": -14.1,
+          "px": 989,
+          "py": 1044,
+          "position_source": "LROC label (Featured Sites nomenclature layer)",
+          "confidence": "low: label point 17 m south-west of the Lunar Module; a crater is nearby but the ring is not clearly centred on one",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "A small crater LROC labels Double, about 17 m south-west of the Lunar Module, on its Apollo 11 Featured Sites map."
+        },
+        {
+          "id": "footpath-little-west",
+          "label": "Footpath toward Little West",
+          "label_short": "Footpath",
+          "kind": "area",
+          "lat_offset_m": -6,
+          "lon_offset_m": 37,
+          "px": 1117,
+          "py": 1039,
+          "position_source": "LROC Apollo 11 traverse layer + visible line in the image",
+          "confidence": "medium: a faint dark line east of the Lunar Module lies inside the ring; centre point of an area about 45 m across",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_11_traverse.geojson",
+            "https://lroc.im-ldi.com/images/65"
+          ],
+          "explain_en": "LROC says the astronaut paths stand out in its image of the Apollo 11 site. This faint line leads east from the Lunar Module toward Little West crater (ring marks the area, not a point).",
+          "r_m": 22,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "blast",
+          "label": "LM descent-engine blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": 2.8,
+          "lon_offset_m": -0.8,
+          "px": 1022,
+          "py": 1017,
+          "position_source": "LROC halo description + visible bright halo centred on the LM",
+          "confidence": "medium: the bright halo around the Lunar Module is visible; ring radius 60 m is read off the image (an irregular area, not a circle)",
+          "source": [
+            "https://lroc.im-ldi.com/posts/363",
+            "Clegg-Watkins et al. 2017, Icarus (LROC blast-zone photometry; average area of increased reflectance at the Apollo sites 23,800 m2 excluding Apollo 12; seen in a search snippet only, paper not opened)"
+          ],
+          "explain_en": "LROC says the descent engine scoured a bright halo around the landing sites, most likely by blowing the finest particles away from below the engine. At Apollo 11 it shows as a bright zone about 100 m across around the Lunar Module.",
+          "r_m": 60,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [],
+      "dropped": []
+    },
+    "apollo12": {
+      "m_per_px": 0.4,
+      "hotspot_annotations": [
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "kind": "object",
+          "lat_offset_m": 14.7,
+          "lon_offset_m": -5.5,
+          "px": 1010,
+          "py": 987,
+          "position_source": "LROC coordinates",
+          "confidence": "low: LROC hardware-layer point (no uncertainty given); the flag is not resolvable",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_12_hardware.geojson"
+          ],
+          "explain_en": "The point LROC's Apollo 12 hardware layer gives for the flag, about 16 m north of the Lunar Module. The flag itself is too small to see at this resolution."
+        },
+        {
+          "id": "seismometer",
+          "label": "Passive seismometer (LROC)",
+          "label_short": "Seismometer",
+          "kind": "object",
+          "lat_offset_m": 88.4,
+          "lon_offset_m": -87.8,
+          "px": 805,
+          "py": 803,
+          "position_source": "LROC coordinates (PSE, 2016 table +/-2.6 m)",
+          "confidence": "medium: 3 m from the ALSEP ring (rings overlap); the central-station cluster and its trails are visible",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_12_hardware.geojson"
+          ],
+          "explain_en": "LROC lists the Apollo 12 passive seismometer as its own point, about 3 m from the central station (ring overlaps the ALSEP ring)."
+        },
+        {
+          "id": "surveyor-crater",
+          "label": "Surveyor crater",
+          "label_short": "Surveyor crater",
+          "kind": "feature",
+          "lat_offset_m": -97.7,
+          "lon_offset_m": 58.1,
+          "px": 1169,
+          "py": 1268,
+          "position_source": "LROC label (Featured Sites nomenclature layer)",
+          "confidence": "medium: label point is inside the ~100 m crater south-east of the LM; Surveyor 3 lies on its east side",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson",
+            "https://lroc.im-ldi.com/posts/141"
+          ],
+          "explain_en": "The crater LROC labels Surveyor on its Apollo 12 map. Surveyor 3 lies inside it, and the Lunar Module landed about 160 m away."
+        },
+        {
+          "id": "head",
+          "label": "Head crater",
+          "label_short": "Head crater",
+          "kind": "feature",
+          "lat_offset_m": -32,
+          "lon_offset_m": -123,
+          "px": 717,
+          "py": 1104,
+          "position_source": "LROC label, moved by eye",
+          "confidence": "low: label point (148 m west of the LM) sits on the edge of the large shadowed crater at the left of the frame; ring moved 24 m to the visible crater centre",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "A large crater west of the Lunar Module that LROC labels Head on its Apollo 12 map.",
+          "lroc_label_offset_m": {
+            "lon": -147.8,
+            "lat": -37.1
+          }
+        },
+        {
+          "id": "bench",
+          "label": "Bench crater",
+          "label_short": "Bench crater",
+          "kind": "feature",
+          "lat_offset_m": -212,
+          "lon_offset_m": -258,
+          "px": 379,
+          "py": 1554,
+          "position_source": "LROC label, moved by eye",
+          "confidence": "low: label point 320 m south-west of the LM; the crater is at the lower-left corner of the frame, ring moved 20 m to its visible centre",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "A crater south-west of the Lunar Module that LROC labels Bench on its Apollo 12 map.",
+          "lroc_label_offset_m": {
+            "lon": -238.6,
+            "lat": -213
+          }
+        },
+        {
+          "id": "block",
+          "label": "Block crater",
+          "label_short": "Block crater",
+          "kind": "feature",
+          "lat_offset_m": -18.9,
+          "lon_offset_m": 112.6,
+          "px": 1306,
+          "py": 1071,
+          "position_source": "LROC label (Featured Sites nomenclature layer)",
+          "confidence": "medium: ring sits on a small bright-rimmed crater with a boulder, 113 m east of the LM",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "A small crater east of the Lunar Module that LROC labels Block on its Apollo 12 map."
+        },
+        {
+          "id": "footpath-alsep",
+          "label": "Footpaths to the ALSEP",
+          "label_short": "ALSEP footpaths",
+          "kind": "area",
+          "lat_offset_m": 53,
+          "lon_offset_m": -59,
+          "px": 877,
+          "py": 892,
+          "position_source": "LROC EVA 1 traverse layer (luna_apollo_12_eva1) + visible dark trails",
+          "confidence": "medium: dark trails run from the LM area to the ALSEP cluster inside the ring (area about 90 m across)",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_12_eva1.geojson"
+          ],
+          "explain_en": "Dark trails in the image link the Lunar Module area to the instrument package north-west of it. LROC's first moonwalk traverse layer follows this corridor (ring marks the area).",
+          "r_m": 45,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": -0.4,
+          "lon_offset_m": 0,
+          "px": 1024,
+          "py": 1025,
+          "position_source": "LROC halo description; centred on the LM",
+          "confidence": "low: the bright zone around the LM is big and lopsided because Surveyor crater brightens it; centre and 80 m radius are approximate",
+          "source": [
+            "https://lroc.im-ldi.com/posts/363",
+            "Clegg-Watkins et al. 2017, Icarus (LROC blast-zone photometry; average area of increased reflectance at the Apollo sites 23,800 m2 excluding Apollo 12; seen in a search snippet only, paper not opened)"
+          ],
+          "explain_en": "LROC says the descent engine brightened the ground around every landing site. At Apollo 12 the bright zone is stretched toward Surveyor crater, so the ring is only a rough guide.",
+          "r_m": 80,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [
+        {
+          "id": "eva-stops-1-17",
+          "why": "LROC EVA stop points (23 inside the patch) carry no names in the layer; not drawn"
+        }
+      ],
+      "dropped": [
+        {
+          "id": "snowman",
+          "why": "LROC label point lies on the Surveyor crater slope; no crater visible there"
+        },
+        {
+          "id": "tri-pt/dos/small/halo/bright-crater/middle-crescent/left-foot/right-foot/sharp-apollo",
+          "why": "other nomenclature labels inside the patch; not checked one by one against the image (named-crater list limited to ones verified by eye)"
+        }
+      ]
+    },
+    "apollo14": {
+      "m_per_px": 0.45,
+      "hotspot_annotations": [
+        {
+          "id": "alsep",
+          "label": "ALSEP central station",
+          "label_short": "ALSEP",
+          "kind": "object",
+          "lat_offset_m": 48.4,
+          "lon_offset_m": -175.5,
+          "px": 634,
+          "py": 916,
+          "position_source": "LROC coordinates (ALSEP, 2016 table +/-0.4 m)",
+          "confidence": "high: dark equipment spot with trails east of it lies under the ring",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_14_hardware.geojson",
+            "https://phys.org/news/2011-02-lro-apollo-crew-majestic-view.html"
+          ],
+          "explain_en": "The Apollo 14 Lunar Surface Experiments Package, set up west of the Lunar Module on the first moonwalk in February 1971. LROC's image shows it with footpaths leading away from it."
+        },
+        {
+          "id": "seismometer",
+          "label": "Passive seismometer (LROC)",
+          "label_short": "Seismometer",
+          "kind": "object",
+          "lat_offset_m": 51.8,
+          "lon_offset_m": -175.2,
+          "px": 635,
+          "py": 909,
+          "position_source": "LROC coordinates (PSE, 2016 table +/-0.4 m)",
+          "confidence": "medium: 3.4 m from the ALSEP ring (rings overlap)",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_14_hardware.geojson"
+          ],
+          "explain_en": "LROC lists the Apollo 14 passive seismometer as its own point, about 3 m from the central station (ring overlaps the ALSEP ring)."
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "kind": "object",
+          "lat_offset_m": 3.1,
+          "lon_offset_m": -9.3,
+          "px": 1003,
+          "py": 1017,
+          "position_source": "LROC coordinates",
+          "confidence": "low: LROC hardware-layer point (no uncertainty given); not resolvable",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_14_hardware.geojson"
+          ],
+          "explain_en": "The point LROC's Apollo 14 hardware layer gives for the flag, about 10 m north-west of the Lunar Module. The flag itself is too small to see."
+        },
+        {
+          "id": "triplet-craters",
+          "label": "Triplet craters",
+          "label_short": "Triplet craters",
+          "kind": "feature",
+          "lat_offset_m": -138,
+          "lon_offset_m": 127,
+          "px": 1306,
+          "py": 1331,
+          "position_source": "LROC label (Triplet / Center Crater), moved by eye 14 m",
+          "confidence": "medium: ring sits on the middle crater of the bright three-crater group south-east of the LM",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "The group of craters LROC labels Triplet and Center Crater on its Apollo 14 map, about 210 m south-east of the Lunar Module.",
+          "lroc_label_offset_m": {
+            "lon": 141.6,
+            "lat": -139.9
+          }
+        },
+        {
+          "id": "footpaths",
+          "label": "Footpaths around the ALSEP",
+          "label_short": "ALSEP footpaths",
+          "kind": "area",
+          "lat_offset_m": 34,
+          "lon_offset_m": -117,
+          "px": 764,
+          "py": 948,
+          "position_source": "LROC EVA 1 traverse layer (luna_apollo_14_eva1) + visible dark trails",
+          "confidence": "high: trails east of the ALSEP lie under the ring (area about 120 m across)",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_14_eva1.geojson",
+            "https://phys.org/news/2011-02-lro-apollo-crew-majestic-view.html"
+          ],
+          "explain_en": "LROC's Apollo 14 image shows the astronaut footpaths as lines of disturbed soil; they converge on the ALSEP and run east toward the Lunar Module (ring marks the area).",
+          "r_m": 60,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": -3.1,
+          "lon_offset_m": -1.8,
+          "px": 1020,
+          "py": 1031,
+          "position_source": "LROC halo description + visible halo centred on the LM",
+          "confidence": "medium: a faint bright halo around the LM matches the 87 m radius",
+          "source": [
+            "https://lroc.im-ldi.com/posts/363",
+            "Clegg-Watkins et al. 2017, Icarus (LROC blast-zone photometry; average area of increased reflectance at the Apollo sites 23,800 m2 excluding Apollo 12; seen in a search snippet only, paper not opened)"
+          ],
+          "explain_en": "LROC says the descent engine scoured a bright halo around the Apollo landing sites, including Apollo 14. Here it is a faint bright zone around the Lunar Module.",
+          "r_m": 87,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [
+        {
+          "id": "eva2-stations-a-b-f-g-g1-h",
+          "why": "named EVA 2 stations inside the patch (LROC layer luna_apollo_14_eva2stops); not requested as rings"
+        }
+      ],
+      "dropped": [
+        {
+          "id": "magnetometer",
+          "why": "LROC layer point 1.3 km east of the LM, outside the 920 m patch"
+        },
+        {
+          "id": "north-crater",
+          "why": "label point on bright ejecta, no crater visible at it"
+        },
+        {
+          "id": "doublet",
+          "why": "label point at the left edge of the patch, crater only partly in frame and ring would be 20 m off its visible centre"
+        },
+        {
+          "id": "weird / weird-rock / south-apollo-crater",
+          "why": "not checked against the image (weird-rock is a boulder label); left out"
+        }
+      ]
+    },
+    "apollo15": {
+      "m_per_px": 0.4,
+      "hotspot_annotations": [
+        {
+          "id": "seismometer",
+          "label": "Passive seismometer (LROC)",
+          "label_short": "Seismometer",
+          "kind": "object",
+          "lat_offset_m": 48.6,
+          "lon_offset_m": -96.9,
+          "px": 782,
+          "py": 903,
+          "position_source": "LROC coordinates (PSE, 2016 table +/-0.3 m)",
+          "confidence": "medium: 3.4 m from the ALSEP ring (rings overlap); dark cluster with trails is visible",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson"
+          ],
+          "explain_en": "LROC lists the Apollo 15 passive seismometer as its own point, about 3 m from the central station (ring overlaps the ALSEP ring)."
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "kind": "object",
+          "lat_offset_m": 8.9,
+          "lon_offset_m": 0.5,
+          "px": 1025,
+          "py": 1002,
+          "position_source": "LROC coordinates",
+          "confidence": "low: LROC hardware-layer point (no uncertainty given); not resolvable",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson"
+          ],
+          "explain_en": "The point LROC's Apollo 15 hardware layer gives for the flag, about 13 m north of the Lunar Module. The flag itself is too small to see."
+        },
+        {
+          "id": "footpath-alsep",
+          "label": "Footpaths to the ALSEP",
+          "label_short": "ALSEP footpaths",
+          "kind": "area",
+          "lat_offset_m": 15,
+          "lon_offset_m": -41,
+          "px": 922,
+          "py": 987,
+          "position_source": "Visible dark trails + LROC EVA traverse layers",
+          "confidence": "medium: dense dark trails between the LM and the ALSEP cluster lie under the ring (area about 70 m across)",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_15_eva1.geojson"
+          ],
+          "explain_en": "Dark footpaths in the image run from the Lunar Module to the instrument package north-west of it (ring marks the area).",
+          "r_m": 35,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "lrv-track",
+          "label": "Rover track to the LRV",
+          "label_short": "Rover track",
+          "kind": "area",
+          "lat_offset_m": -20,
+          "lon_offset_m": 64,
+          "px": 1184,
+          "py": 1074,
+          "position_source": "Visible track + LROC LRV point",
+          "confidence": "medium: a single dark line runs from the LM east to the LRV; ring centred on its middle (area about 110 m long)",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_15_hardware.geojson"
+          ],
+          "explain_en": "A dark line in the image runs east from the Lunar Module to the Lunar Roving Vehicle parking spot LROC lists (ring marks the area).",
+          "r_m": 55,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": -42,
+          "lon_offset_m": 11,
+          "px": 1052,
+          "py": 1129,
+          "position_source": "LROC halo description + visible lobe south-south-east of the LM",
+          "confidence": "medium: the bright lobe is off-centre (centre about 40 m south-south-east of the LM, radius 75 m by eye)",
+          "source": [
+            "https://lroc.im-ldi.com/posts/363",
+            "Clegg-Watkins et al. 2017, Icarus (LROC blast-zone photometry; average area of increased reflectance at the Apollo sites 23,800 m2 excluding Apollo 12; seen in a search snippet only, paper not opened)"
+          ],
+          "explain_en": "LROC says the descent engine brightened the ground around the Apollo landing sites. At Apollo 15 the bright zone is a lobe extending south-south-east of the Lunar Module.",
+          "r_m": 75,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [
+        {
+          "id": "station-8-vip-site",
+          "why": "LROC eva3stops labels; VIP Site coincides with the existing LRV ring"
+        }
+      ],
+      "dropped": [
+        {
+          "id": "last-crater",
+          "why": "label point 40 m from the nearest visible crater, no crater under the ring"
+        }
+      ]
+    },
+    "apollo16": {
+      "m_per_px": 0.4,
+      "hotspot_annotations": [
+        {
+          "id": "seismometer",
+          "label": "Passive seismometer (LROC)",
+          "label_short": "Seismometer",
+          "kind": "object",
+          "lat_offset_m": -73.7,
+          "lon_offset_m": -70.7,
+          "px": 847,
+          "py": 1208,
+          "position_source": "LROC coordinates (PSE, 2016 table +/-2.5 m)",
+          "confidence": "medium: 1.8 m from the ALSEP ring (rings nearly coincide)",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson"
+          ],
+          "explain_en": "LROC lists the Apollo 16 passive seismometer as its own point, about 2 m from the central station (ring coincides with the ALSEP ring)."
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "kind": "object",
+          "lat_offset_m": 17.1,
+          "lon_offset_m": -7.8,
+          "px": 1005,
+          "py": 981,
+          "position_source": "LROC coordinates",
+          "confidence": "low: LROC hardware-layer point (no uncertainty given); not resolvable",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson"
+          ],
+          "explain_en": "The point LROC's Apollo 16 hardware layer gives for the flag, about 19 m north-north-west of the Lunar Module. The flag itself is too small to see."
+        },
+        {
+          "id": "spot-crater",
+          "label": "Spot crater",
+          "label_short": "Spot crater",
+          "kind": "feature",
+          "lat_offset_m": -300.4,
+          "lon_offset_m": 39.2,
+          "px": 1122,
+          "py": 1775,
+          "position_source": "LROC label (Featured Sites nomenclature layer)",
+          "confidence": "low: label point 300 m south of the LM sits on the east side of a shallow eroded crater with a bright west half",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "A shallow crater south of the Lunar Module that LROC labels Spot on its Apollo 16 map."
+        },
+        {
+          "id": "footpath-alsep",
+          "label": "Footpaths to the ALSEP",
+          "label_short": "ALSEP footpaths",
+          "kind": "area",
+          "lat_offset_m": -26,
+          "lon_offset_m": -40,
+          "px": 924,
+          "py": 1089,
+          "position_source": "Visible dark trails + LROC EVA traverse layers",
+          "confidence": "medium: dark trails between the LM and the ALSEP lie under the ring (area about 90 m across)",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_16_eva1.geojson"
+          ],
+          "explain_en": "Dark footpaths and rover tracks in the image run from the Lunar Module area south-west to the instrument package (ring marks the area).",
+          "r_m": 45,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "lrv-track",
+          "label": "Rover track to the LRV",
+          "label_short": "Rover track",
+          "kind": "area",
+          "lat_offset_m": 15,
+          "lon_offset_m": 42,
+          "px": 1129,
+          "py": 987,
+          "position_source": "Visible tracks + LROC LRV point",
+          "confidence": "medium: dark tracks run from the LM east to the LRV; ring centred on them (area about 80 m long)",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_16_hardware.geojson"
+          ],
+          "explain_en": "Dark tracks in the image run east from the Lunar Module to the Lunar Roving Vehicle parking spot LROC lists (ring marks the area).",
+          "r_m": 40,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": 2.4,
+          "px": 1030,
+          "py": 1021,
+          "position_source": "LROC halo description + visible bright halo centred on the LM",
+          "confidence": "high: the bright halo around the LM matches the 87 m radius",
+          "source": [
+            "https://lroc.im-ldi.com/posts/363",
+            "Clegg-Watkins et al. 2017, Icarus (LROC blast-zone photometry; average area of increased reflectance at the Apollo sites 23,800 m2 excluding Apollo 12; seen in a search snippet only, paper not opened)"
+          ],
+          "explain_en": "LROC says the descent engine brightened the ground around the Apollo landing sites. At Apollo 16 the bright halo around the Lunar Module is about 170 m across.",
+          "r_m": 87,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "id": "eva1stops station 2",
+          "why": "outside the patch (795 m west)"
+        }
+      ]
+    },
+    "apollo17": {
+      "m_per_px": 0.5,
+      "hotspot_annotations": [
+        {
+          "id": "alsep",
+          "label": "ALSEP central station",
+          "label_short": "ALSEP",
+          "kind": "object",
+          "lat_offset_m": 24.9,
+          "lon_offset_m": -189.5,
+          "px": 645,
+          "py": 974,
+          "position_source": "LROC coordinates (ALSEP, 2016 table +/-3.5 m)",
+          "confidence": "high: dark equipment spot with a cross of trails lies under the ring",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson",
+            "https://lroc.im-ldi.com/posts/72"
+          ],
+          "explain_en": "The Apollo 17 Lunar Surface Experiments Package, west of the Lunar Module in the Taurus-Littrow valley. LROC's image shows the instruments and the cross-shaped path where the geophones were laid out."
+        },
+        {
+          "id": "sep",
+          "label": "SEP transmitter",
+          "label_short": "SEP transmitter",
+          "kind": "object",
+          "lat_offset_m": 15.8,
+          "lon_offset_m": 131.5,
+          "px": 1287,
+          "py": 992,
+          "position_source": "LROC coordinates (SEP, 2016 table +/-3.7 m)",
+          "confidence": "high: ring sits on the dark spot at the end of the tracks east of the LM",
+          "source": [
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf",
+            "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson",
+            "https://lroc.im-ldi.com/posts/72"
+          ],
+          "explain_en": "The transmitter of the Surface Electrical Properties experiment, which probed the electrical properties of the soil. LROC labels it SEP in its Apollo 17 image; its 35 m antennas were laid out here."
+        },
+        {
+          "id": "flag",
+          "label": "US flag (LROC position)",
+          "label_short": "US flag",
+          "kind": "object",
+          "lat_offset_m": 9.3,
+          "lon_offset_m": -2.9,
+          "px": 1018,
+          "py": 1005,
+          "position_source": "LROC coordinates",
+          "confidence": "low: LROC hardware-layer point (no uncertainty given); not resolvable at 0.5 m/px",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_apollo_17_hardware.geojson"
+          ],
+          "explain_en": "The point LROC's Apollo 17 hardware layer gives for the flag, about 22 m north-north-west of the Lunar Module. The flag itself is too small to see."
+        },
+        {
+          "id": "rudolph",
+          "label": "Rudolph crater",
+          "label_short": "Rudolph crater",
+          "kind": "feature",
+          "lat_offset_m": 132.2,
+          "lon_offset_m": -248.7,
+          "px": 527,
+          "py": 760,
+          "position_source": "LROC label (Featured Sites nomenclature layer)",
+          "confidence": "medium: ring sits on the bright-rimmed crater with a dark floor north-west of the LM",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "The crater LROC labels Rudolph on its Apollo 17 map, about 290 m north-west of the Lunar Module."
+        },
+        {
+          "id": "poppie",
+          "label": "Poppie crater",
+          "label_short": "Poppie crater",
+          "kind": "feature",
+          "lat_offset_m": -113.4,
+          "lon_offset_m": -4,
+          "px": 1016,
+          "py": 1251,
+          "position_source": "LROC label (Featured Sites nomenclature layer)",
+          "confidence": "medium: ring sits on a small dark crater 100 m south of the LM",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "A small crater south of the Lunar Module that LROC labels Poppie on its Apollo 17 map."
+        },
+        {
+          "id": "barjea",
+          "label": "Barjea crater",
+          "label_short": "Barjea crater",
+          "kind": "feature",
+          "lat_offset_m": -189.2,
+          "lon_offset_m": 124.1,
+          "px": 1272,
+          "py": 1402,
+          "position_source": "LROC label (Featured Sites nomenclature layer)",
+          "confidence": "high: ring sits on a small bright-rimmed crater",
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_nomenclature.geojson"
+          ],
+          "explain_en": "A small bright crater south-east of the Lunar Module that LROC labels Barjea on its Apollo 17 map."
+        },
+        {
+          "id": "geophone-paths",
+          "label": "Geophone footpaths",
+          "label_short": "Geophone paths",
+          "kind": "area",
+          "lat_offset_m": -8,
+          "lon_offset_m": -132,
+          "px": 760,
+          "py": 1040,
+          "position_source": "LROC image text + visible cross of trails",
+          "confidence": "high: the cross-shaped trail LROC describes west of the landing site lies under the ring",
+          "source": [
+            "https://lroc.im-ldi.com/posts/72"
+          ],
+          "explain_en": "LROC's Apollo 17 image shows a cross-shaped path west of the landing site where the astronauts set up the geophones to monitor seismic activity (ring marks the area).",
+          "r_m": 45,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "sep-rover-tracks",
+          "label": "Rover tracks to the SEP site",
+          "label_short": "SEP tracks",
+          "kind": "area",
+          "lat_offset_m": 2,
+          "lon_offset_m": 68,
+          "px": 1160,
+          "py": 1020,
+          "position_source": "LROC image text + visible tracks",
+          "confidence": "high: dark tracks run from the LM area east to the SEP spot inside the ring",
+          "source": [
+            "https://lroc.im-ldi.com/posts/72"
+          ],
+          "explain_en": "LROC says Cernan made rover tracks to the east when he laid out the 35 m SEP antennas. They run from the Lunar Module area toward the transmitter (ring marks the area).",
+          "r_m": 35,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "blast",
+          "label": "LM blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": -11.5,
+          "lon_offset_m": 4,
+          "px": 1032,
+          "py": 1047,
+          "position_source": "LROC halo description + visible bright halo centred on the LM",
+          "confidence": "high: bright halo around the LM matches the 87 m radius; LROC notes a lobe that may mark the descent path",
+          "source": [
+            "https://lroc.im-ldi.com/posts/363",
+            "Clegg-Watkins et al. 2017, Icarus (LROC blast-zone photometry; average area of increased reflectance at the Apollo sites 23,800 m2 excluding Apollo 12; seen in a search snippet only, paper not opened)",
+            "https://lroc.im-ldi.com/posts/363"
+          ],
+          "explain_en": "LROC says the descent engine brightened the ground around the Apollo landing sites; at Apollo 17 the halo spreads around the Lunar Module (a lobe may mark the descent path).",
+          "r_m": 87,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [],
+      "dropped": []
+    },
+    "luna17": {
+      "m_per_px": 0.1372,
+      "hotspot_annotations": [
+        {
+          "id": "blast",
+          "label": "Luna 17 blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": 6,
+          "lon_offset_m": 4,
+          "px": 1053,
+          "py": 980,
+          "position_source": "LROC post 402 text + visible bright halo",
+          "confidence": "high: bright halo around the lander lies under the ring (radius 25 m by eye)",
+          "source": [
+            "https://lroc.im-ldi.com/images/402",
+            "https://lroc.im-ldi.com/images/11"
+          ],
+          "explain_en": "LROC says the surface around Luna 17 was brightened by the exhaust of its descent engines, which makes the rover tracks stand out near the lander.",
+          "r_m": 25,
+          "note": "area feature: the point is a centre, not an object"
+        },
+        {
+          "id": "tracks",
+          "label": "Lunokhod 1 tracks",
+          "label_short": "Rover tracks",
+          "kind": "area",
+          "lat_offset_m": -5,
+          "lon_offset_m": 10,
+          "px": 1097,
+          "py": 1060,
+          "position_source": "LROC posts 402 / 11 text + visible tracks",
+          "confidence": "high: dark loops and tracks around the lander lie under the ring (area about 40 m across)",
+          "source": [
+            "https://lroc.im-ldi.com/images/402",
+            "https://lroc.im-ldi.com/images/11"
+          ],
+          "explain_en": "LROC points out the Lunokhod 1 tracks starting at the ramps on the east side of the lander and circling it. Lunokhod 1 later drove 10.5 km (ring marks the area).",
+          "r_m": 20,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "id": "lunokhod1 traverse stops 1 and 3",
+          "why": "inside the patch (LROC layer luna_lunokhod1_traverse_stops: 118 m S / 98 E and 52 N / 10 E of the lander) but what a \"stop\" marks is not stated in the layer; not drawn"
+        },
+        {
+          "id": "Lunokhod 1 final parking spot",
+          "why": "8.6 km from the lander, outside the patch"
+        }
+      ]
+    },
+    "luna21": {
+      "m_per_px": 0.1372,
+      "hotspot_annotations": [
+        {
+          "id": "blast",
+          "label": "Luna 21 blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": 6,
+          "lon_offset_m": -7,
+          "px": 973,
+          "py": 980,
+          "position_source": "LROC post 15 text + visible bright zone",
+          "confidence": "high: the bright zone west of the lander lies under the ring (radius 16 m by eye)",
+          "source": [
+            "https://lroc.im-ldi.com/images/15"
+          ],
+          "explain_en": "LROC says the descent engine made a bright zone extending out some 10 to 20 m around the Luna 21 lander.",
+          "r_m": 16,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "id": "Lunokhod 2 tracks and the International Women's Day circles",
+          "why": "tracks not distinguishable in the patch; LROC post 15 gives no position for the circles"
+        },
+        {
+          "id": "Lunokhod 2 final / traverse stops",
+          "why": "0.8 km or more from the lander, outside the patch"
+        }
+      ]
+    },
+    "luna24": {
+      "m_per_px": 0.1372,
+      "hotspot_annotations": [
+        {
+          "id": "crater-60m",
+          "label": "60 m crater at Luna 24",
+          "label_short": "60 m crater",
+          "kind": "feature",
+          "lat_offset_m": -35,
+          "lon_offset_m": 20,
+          "px": 1170,
+          "py": 1279,
+          "position_source": "LROC post 9 text + crater centre by eye (no coordinate)",
+          "confidence": "medium: the lander is at the north-west rim of a crater about 55-60 m across; ring at the visible crater centre",
+          "source": [
+            "https://lroc.im-ldi.com/images/9"
+          ],
+          "explain_en": "LROC describes Luna 24 sitting on the edge of a crater 60 m across. The lander is on its north-west rim."
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "id": "bright specks",
+          "why": "LROC post 9 says they \"may be\" debris from the ascent stage; not an identified object"
+        }
+      ]
+    },
+    "change3": {
+      "m_per_px": 0.4278,
+      "hotspot_annotations": [
+        {
+          "id": "crater-450m",
+          "label": "450 m crater west of lander",
+          "label_short": "450 m crater",
+          "kind": "feature",
+          "lat_offset_m": 48,
+          "lon_offset_m": -283,
+          "px": 363,
+          "py": 912,
+          "position_source": "LROC post 637 text (rim 60 m west of the lander, diameter 450 m) + crater centre by eye",
+          "confidence": "medium: bright inner east wall and dark floor visible at the position; centre derived, not an LROC coordinate",
+          "source": [
+            "https://lroc.im-ldi.com/images/637",
+            "https://lroc.im-ldi.com/images/929"
+          ],
+          "explain_en": "LROC says Chang'e 3 landed about 60 m east of the rim of a 450 m crater, 40 m deep, on a thick deposit of volcanic material."
+        },
+        {
+          "id": "blast",
+          "label": "Chang'e 3 blast zone",
+          "label_short": "Blast zone",
+          "kind": "area",
+          "lat_offset_m": 48.3,
+          "lon_offset_m": 3,
+          "px": 1031,
+          "py": 911,
+          "position_source": "LROC post 929 text; centred on the lander ring (not visible at this Sun angle)",
+          "confidence": "low: elongated roughly north-south; not distinguishable at 78 deg incidence, so the ring cannot be checked against the image",
+          "source": [
+            "https://lroc.im-ldi.com/images/929"
+          ],
+          "explain_en": "LROC imaged the site before and after landing and measured the engine blast zone; the diffuse zone reaches 40 to 50 m north-south and 10 to 15 m east-west beyond the brighter focused zone.",
+          "r_m": 30,
+          "note": "area feature: the point is a centre, not an object"
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "id": "Yutu",
+          "why": "LROC 2016 table: Yutu 21 m SW (about 11 m W, 18 m S) of the lander, +/-13 m. The only other bright pixel in the patch is 46 m south of the lander ring with no long shadow: 25 m off the table position and outside its uncertainty. Not placed."
+        }
+      ]
+    },
+    "luna16": {
+      "m_per_px": 0.1509,
+      "hotspot_annotations": [],
+      "held": [],
+      "dropped": [
+        {
+          "id": "(nothing new)",
+          "why": "LROC post 10 and the 2016 table give only the descent stage; no blast zone size or other feature stated"
+        }
+      ]
+    },
+    "change4": {
+      "m_per_px": 0.74,
+      "hotspot_annotations": [],
+      "held": [],
+      "dropped": [
+        {
+          "id": "(nothing new)",
+          "why": "lander (LROC nomenclature \"Statio Tianhe\", same point as the existing lander ring) and Yutu-2 rings already exist; no Yutu-2 track visible; Zhinyu, Hegu, Tianjin and Von Karman craters are 1 km or more away"
+        }
+      ]
+    },
+    "change5": {
+      "m_per_px": 0.5908,
+      "hotspot_annotations": [],
+      "held": [],
+      "dropped": [
+        {
+          "id": "blast zone",
+          "why": "LROC posts 1172/1186 give no blast zone extent and none is visible at 47 deg incidence; baked-in LROC box and label already mark the lander"
+        }
+      ]
+    },
+    "change6": {
+      "m_per_px": 0.2695,
+      "hotspot_annotations": [],
+      "held": [],
+      "dropped": [
+        {
+          "id": "(nothing new)",
+          "why": "LROC post 1374 names only the lander"
+        }
+      ]
+    },
+    "chandrayaan3": {
+      "m_per_px": 0.8486,
+      "hotspot_annotations": [],
+      "held": [],
+      "dropped": [
+        {
+          "id": "Pragyan",
+          "why": "LROC post 1314 does not mention the rover; ISRO route reports (about 100 m of driving, 39 m west of the lander at one point) are not tied to this frame date (2023-08-27) and the rover would be about 1 px at 0.85 m/px"
+        }
+      ]
+    },
+    "slim": {
+      "m_per_px": 0.4297,
+      "hotspot_annotations": [],
+      "held": [],
+      "dropped": [
+        {
+          "id": "LEV-1 / LEV-2",
+          "why": "LROC post 1358 does not mention them; no JAXA or LROC source found that places them in this frame (JAXA press PDF could not be read)"
+        }
+      ]
+    }
+  }
+}

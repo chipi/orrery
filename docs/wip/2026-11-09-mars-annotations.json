@@ -1,0 +1,139 @@
+{
+  "_note": "DRAFT for wiring. Offsets are metres from the patch centre = site point (north +, east +) in the 2048x2048 tier2-hirise.jpg (0.25 m/px, native pixels of the cropped HiRISE RDR; px/py: x right, y down, centre 1024,1024; E = (px-1024)*0.25, N = (1024-py)*0.25). Only 4 of 13 Mars patches yield an annotation; the rest are in 'dropped'.",
+  "sites": {
+    "schiaparelli": {
+      "product": "ESP_048120_1780 (2016-11-01)",
+      "m_per_px": 0.25,
+      "hotspot_annotations": [
+        {
+          "id": "backshell-parachute",
+          "label": "Backshell and parachute",
+          "label_short": "Backshell+chute",
+          "lat_offset_m": 141.5,
+          "lon_offset_m": 160.8,
+          "px": 1667,
+          "py": 458,
+          "source": [
+            "https://www.uahirise.org/ESP_048120_1780 (caption of THIS product: 'At lower left is the backshell and parachute ... The smaller circular feature just south of the bright parachute is the backshell (2.4 meter-diameter)'; cutout static.uahirise.org/images/2016/details/cut/ESP_048120_1780-1.jpg shows the same crescent + round pair)",
+            "https://images.nasa.gov/details/PIA21132 (same observation, 'the parachute and back shell at lower left')"
+          ],
+          "confidence": "high: same product as the patch; the parachute crescent with the round backshell just south of it matches the released cutout shape for shape",
+          "explain_en": "The parachute and, just south of it, the 2.4 m backshell of ESA's Schiaparelli lander, which separated as planned before the lander crashed on 19 October 2016. The parachute is far brighter than the ground around it.",
+          "gallery": {
+            "slot": "/images/missions/schiaparelli/07.webp",
+            "status": "existing, shows the object",
+            "id": "PIA21132",
+            "caption": "Schiaparelli Impact Site on Mars, in Color: cutouts of the lander module (upper), parachute and back shell (lower left) and heat shield (lower right); HiRISE 1 Nov 2016"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {"what": "Schiaparelli EDM impact site and heat shield", "why": "~1 km from the parachute per the cutouts (10 m scale bar); not inside the 512 m patch. The dark crater-like spot at px 1230,1480 has no source label."}
+      ]
+    },
+    "opportunity": {
+      "product": "ESP_050177_1780 (2017-04-10)",
+      "m_per_px": 0.25,
+      "hotspot_annotations": [
+        {
+          "id": "lander-eagle-crater",
+          "label": "Lander in Eagle Crater",
+          "label_short": "Lander",
+          "lat_offset_m": -41.5,
+          "lon_offset_m": 8.3,
+          "px": 1057,
+          "py": 1190,
+          "source": [
+            "https://www.uahirise.org/ESP_050177_1780 (caption of THIS product: 'The lander is visible as a darker center amid the reddish airbags, resting at the center of the bowl of Eagle Crater')",
+            "https://static.uahirise.org/images/2017/details/cut/ESP_050177_1780-1.jpg (same product, colour cutout: Eagle crater with the lander at its centre; same crater, dark halo and dark streaks as in the patch)"
+          ],
+          "confidence": "medium-high: the caption names the lander in Eagle Crater; the ring sits on the dark centre of the one bright-rimmed ~20 m crater with the dark streak pattern shown in the cutout. The patch is grayscale, so the airbag colour is not visible",
+          "explain_en": "The Opportunity landing platform, still resting at the centre of Eagle Crater where the rover left it in 2004. HiRISE sees it as a darker centre among the airbags that cushioned the landing.",
+          "gallery": {
+            "slot": null,
+            "status": "no existing slot shows it (missions/opportunity 01-13 are launch, drives, craters)",
+            "candidate": "PIA21494 'Rover Landing Hardware at Eagle Crater, Mars' (NASA/JPL-Caltech/Univ. of Arizona; HiRISE 8 Apr 2017). Caption read only from the NASA API first sentence; candidate, not added."
+          }
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {"what": "Backshell and parachute, heat shield impact site", "why": "On the 2004 MOC annotated frame (opp_3 of the HiRISE release) they are about 360 m W / 280 m S and 740 m E / 420 m S of the lander (scale bar 200 m); outside the 512 m patch (lander is 42 m S of the centre)."}
+      ]
+    },
+    "zhurong": {
+      "product": "ESP_075625_2055 (2022-09-14)",
+      "m_per_px": 0.25,
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Tianwen-1 lander",
+          "label_short": "Lander",
+          "lat_offset_m": -96.0,
+          "lon_offset_m": 84.1,
+          "px": 1360,
+          "py": 1408,
+          "source": [
+            "https://www.uahirise.org/ESP_069665_2055 (HiRISE, 6 Jun 2021, same site: 'what we interpret as the lander surrounded by a blast pattern, and the rover itself a bit to the south'); cutouts static.uahirise.org/images/2021/details/cut/ESP_069665_2055-1.jpg and -2.jpg"
+          ],
+          "confidence": "medium-high: a DIFFERENT product (same lander, static object): the patch shows the same bow-tie of two bright blast streaks (N and S) with a tiny bright dot at the waist and the same rimmed crater SE of it. Not a same-product label",
+          "explain_en": "The Tianwen-1 lander, at the centre of the bow-tie pattern its descent engines blasted into the dust. The Zhurong rover drove off it after the 14 May 2021 landing.",
+          "gallery": {
+            "slot": "/images/mars-sites/zhurong/05.webp (also /images/missions/tianwen1/02.webp)",
+            "status": "existing, shows the object",
+            "id": "Commons copy of HiRISE ESP_069665_2055 (nasa_id null in provenance)",
+            "caption": "Zhurong rover and Tianwen-1 lander as seen by MRO in Southern Utopia Planitia (HiRISE 6 Jun 2021)"
+          }
+        }
+      ],
+      "held": [
+        {"what": "Zhurong rover", "why": "It had driven off by 14 Sep 2022 (this product); no source places it in this product. Not located."}
+      ],
+      "dropped": [
+        {"what": "Backshell/parachute, heat shield", "why": "Far lower left of the lander on ESP_069665 (about 1 km+); outside the patch. The odd bright pit/ridge at px ~520,920 has no source label."}
+      ]
+    },
+    "insight": {
+      "product": "ESP_087004_1845 (2025-02-16)",
+      "m_per_px": 0.25,
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "InSight lander",
+          "label_short": "InSight lander",
+          "lat_offset_m": -31.3,
+          "lon_offset_m": 31.5,
+          "px": 1150,
+          "py": 1149,
+          "source": [
+            "https://www.uahirise.org/ESP_058005_1845 (HiRISE 11 Dec 2018: 'The lander ... disturbed dust over a fair distance and has darkened the surface ... the lander is about 6 meters wide when the solar arrays are fully deployed'); labelled cutout static.uahirise.org/images/2018/details/cut/ESP_058005_1845-labels.jpg",
+            "https://images.nasa.gov/details/PIA22875 (same observation)"
+          ],
+          "confidence": "medium: a DIFFERENT product (same lander, static); identified by the dark dust-cleared halo with a bright pair and shadow at its centre, the only such feature in the patch. NCC registration against the labelled image failed (the labelled lander lies off the compared area), so the position is by eye, not matched against neighbouring craters",
+          "explain_en": "NASA's InSight lander, about 6 m wide with its solar arrays out. Its descent rockets blew away the bright dust, leaving the dark patch around it.",
+          "gallery": {
+            "slot": null,
+            "status": "no existing slot shows it from orbit (missions/insight 01-07 are assembly, artwork, deck, selfie)",
+            "candidate": "PIA22875 'InSight on Mars, As Seen by HiRISE' (NASA/JPL-Caltech/Univ. of Arizona; labelled lander, heat shield, parachute). Candidate, not added."
+          }
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {"what": "Heat shield, backshell and parachute", "why": "On the labelled cutout (100 m = 178 px) they are about 470 m E / 180 m N (heat shield) and 130 m E / 350 m S (backshell) of the lander: outside the 512 m patch."}
+      ]
+    },
+    "dropped_sites": {
+      "viking1-lander": "Patch centre 22.4856N 312.0228E is the (HiRISE ESP_018887 'Terrain near Viking 1 Lander') frame; the Viking 1 lander is by published coordinates (22.48N 312.05E, from memory of the usual listing, not fetched) ~1.5 km E of the centre, outside the patch. The HiRISE page for this product has no hardware caption. Not located.",
+      "viking2-lander": "Same product PSP_001501_2280 as the patch has a labelled cutout (lander / backshell / 'Heatshield?'), but the patch centre (47.673N 134.300E) is the product centre, ~2 km from the lander (47.64N 134.26E, from memory). The cutout (5039 px wide, unknown scale) could not be registered to the patch (NCC ~0.05).",
+      "mars-pathfinder": "PSP_001890_1995 labelled cutout (MPF_parts_2.jpg: MPF, backshell/parachute, 'Heatshield debris?') could not be registered to the patch (NCC <= 0.1 at 12 scales/rotations); no recognisable lander at the patch centre (site point 19.0949N 326.7773E).",
+      "spirit": "PSP_001513_1655 cutout boxes a-d are unlabelled in the image file; patch centre (-14.57, 175.47) is ~490 m W and ~110 m N of the usual lander coordinate (14.5718S 175.4785E, from memory), outside the 256 m half-width. No Bonneville crater in the patch. Not located.",
+      "phoenix": "Verified miss: HiRISE PSP_008591_2485 (lander image) is centred 68.208N 234.256E; patch is 68.22N 234.300E (-125.7), about 1.1 km east of the lander. No hardware in the patch.",
+      "curiosity": "ESP_078499_1755 (2023-04-25) shows the landing site, but per NASA/HiRISE the heat shield is 1220 m, backshell+parachute 610 m and sky crane 620 m from the rover (Universe Today summary of the HiRISE release): all outside the patch. The rover moved on.",
+      "perseverance": "ESP_046060_1985 was acquired 24 May 2016, five years before the landing. No hardware by construction.",
+      "mars3": "ESP_031036_1345: the HiRISE release lists only crowd-sourced CANDIDATES (parachute, retrorocket, lander, heat shield; title 'Could This Be the Soviet Mars 3 Lander?'), spread along the strip and not tied to the patch centre (site uncertainty 10 km). Not annotated.",
+      "beagle2": "ESP_040363_1915 page carries no hardware caption or labelled cutout; no source places Beagle 2 in this patch. Not located."
+    }
+  }
+}

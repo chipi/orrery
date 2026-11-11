@@ -1,1 +1,16 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Luna 21 着陆器",
+      "label_short": "Luna 21 着陆器",
+      "explain": "1973年1月15日把 Lunokhod 2 送到勒莫尼耶环形山的 Luna 21 着陆器。下降发动机在周围扫出一片宽10至20米的明亮区域，漫游车的辙迹从这里延伸出去。"
+    },
+    {
+      "id": "blast",
+      "label": "Luna 21 喷流区",
+      "label_short": "喷流区",
+      "explain": "LROC 指出，下降发动机在 Luna 21 着陆器周围造成了一片向外延伸约 10 至 20 m 的明亮区域。"
+    }
+  ]
+}

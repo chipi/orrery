@@ -10,9 +10,12 @@
  *
  * Per-route `<html lang>` + `<html dir>` injection: %paraglide.lang%
  * and %paraglide.textDirection% in src/app.html are filled by the
- * `transformPageChunk` step below.
+ * `transformPageChunk` step below. The same step adds the Open Graph +
+ * Twitter card tags (src/lib/social-meta.ts).
  */
 import { paraglideMiddleware } from '$lib/paraglide/server';
+import { og_default_image_alt } from '$lib/paraglide/messages';
+import { addSocialMeta } from '$lib/social-meta';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = ({ event, resolve }) =>
@@ -20,8 +23,11 @@ export const handle: Handle = ({ event, resolve }) =>
     event.request = request;
     return resolve(event, {
       transformPageChunk: ({ html }) =>
-        html
-          .replace('%paraglide.lang%', locale)
-          .replace('%paraglide.textDirection%', locale === 'ar' ? 'rtl' : 'ltr'),
+        addSocialMeta(
+          html
+            .replace('%paraglide.lang%', locale)
+            .replace('%paraglide.textDirection%', locale === 'ar' ? 'rtl' : 'ltr'),
+          og_default_image_alt({}, { locale }),
+        ),
     });
   });

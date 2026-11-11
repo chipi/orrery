@@ -1,1 +1,46 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 하강단 (Antares)",
+      "label_short": "LM Antares",
+      "explain": "Apollo 14 달 착륙선 Antares의 아래쪽 절반. 1971년 2월 착륙 뒤 달에 남겨졌다."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 중앙 관측소",
+      "label_short": "ALSEP",
+      "explain": "1971년 2월 첫 번째 월면 보행에서 달 착륙선 서쪽에 설치된 Apollo 14 달 표면 실험 패키지. LROC 영상에는 그곳에서 뻗어 나가는 발자국 길과 함께 보인다."
+    },
+    {
+      "id": "seismometer",
+      "label": "수동 지진계 (LROC)",
+      "label_short": "지진계",
+      "explain": "LROC는 Apollo 14 수동 지진계를 별도의 지점으로 올려 두었으며, 중앙 관측소에서 약 3 m 떨어져 있다(고리가 ALSEP 고리와 겹친다)."
+    },
+    {
+      "id": "flag",
+      "label": "미국 국기 (LROC 위치)",
+      "label_short": "미국 국기",
+      "explain": "LROC의 Apollo 14 장비 레이어가 국기의 위치로 제시하는 지점으로, 달 착륙선에서 북서쪽으로 약 10 m 떨어져 있다. 국기 자체는 보기엔 너무 작다."
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Triplet 분화구",
+      "label_short": "Triplet 분화구",
+      "explain": "LROC가 Apollo 14 지도에서 Triplet과 Center Crater라고 부르는 분화구 무리로, 달 착륙선에서 남동쪽으로 약 210 m 떨어져 있다."
+    },
+    {
+      "id": "footpaths",
+      "label": "ALSEP 주변 발자국 길",
+      "label_short": "ALSEP 발자국 길",
+      "explain": "LROC의 Apollo 14 영상에서 우주비행사의 발자국 길은 흐트러진 흙의 선으로 보이며, ALSEP에서 모였다가 동쪽의 달 착륙선으로 이어진다(점선 윤곽은 영역을 나타낸다)."
+    },
+    {
+      "id": "blast",
+      "label": "LM 플룸 영향 영역",
+      "label_short": "플룸 영향 영역",
+      "explain": "LROC에 따르면 하강 엔진이 Apollo 14를 포함한 Apollo 착륙 지점 둘레의 지면을 깎아 밝은 후광을 만들었다. 여기서는 달 착륙선 둘레의 희미한 밝은 영역으로 나타난다."
+    }
+  ]
+}

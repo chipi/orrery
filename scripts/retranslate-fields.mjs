@@ -204,7 +204,7 @@ async function main() {
             : t,
         );
 
-        lastProblems = problems(u.loc, u.src, unq, { ui: u.file === 'messages' });
+        lastProblems = problems(u.loc, u.src, unq, { ui: u.file === 'messages', length: true });
         const lim = limitFor(u.at);
         if (lim && typeof unq === 'string' && unq.length > lim)
           lastProblems.push(`${unq.length} characters, over the ${lim} limit — shorten it`);
@@ -314,7 +314,7 @@ async function main() {
             ? t.trim().slice(1, -1)
             : t,
         );
-        const p = problems(u.loc, u.src, unq, { ui: u.file === 'messages' });
+        const p = problems(u.loc, u.src, unq, { ui: u.file === 'messages', length: true });
         const lim = limitFor(u.at);
         if (lim && typeof unq === 'string' && unq.length > lim) p.push('over the limit');
         if (!p.length) u.preset = unq;

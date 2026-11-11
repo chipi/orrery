@@ -1,6 +1,17 @@
 # Museum research for PRD-027 / #617 — state on 2026-10-22
 
-**Status 2026-11-04:** the museum data went live (static/data/museums.json, 38 museums, 38 overlays in all 14 locales; 22 are US, 0 India; commits 2267de51099, 0ebbac5587c, b4ddf1e1d96) and the observatories shipped (34, in all 14 locales; f2acb642ed2). OPEN: "What is left" item 2, pass 4 geography (no raw/out4_*.json exists; research table lists 79 museums, only 38 are in the data) — translation-relevant because every added museum needs 13 locale overlays. Item 1 operator ticks were applied in 0ebbac5587c; not verified that every ticked row landed.
+**Status 2026-11-09 — pass 4 ran** (`briefs/BRIEF4.md`; 5 sonnet agents, 117 of 200
+WebSearch calls): `raw/out4_{china,india,jako,world}.json` checked 59 museums and added 12 rows
+(China 7, Australia 2, Japan 2, India 1) and 11 museums; `raw/out4_verify.json` re-checked the
+109 uncertain rows (35 really checked: 14 confirmed, 3 dropped — new status `dropped` —, the
+rest still uncertain with a note). `merged.json` now 210 rows (105 confirmed, 100 uncertain,
+3 dropped, 2 opens), 90 museums. The three K11 MUSEA Hong Kong rows are a temporary show
+ending 2026-11-22. Row ids are unchanged, so earlier ticks still apply. NOT done: the review
+page was rebuilt but not republished — the artifact URL below answered "artifact not found"
+on 2026-11-09. Open conflict: the Soyuz-30 module is claimed by Arkhipo-Osipovka and Warsaw
+(the Warsaw unit moved to the Polish Army Museum main site).
+
+**Status 2026-11-08 (counts re-checked, unchanged):** `static/data/museums.json` still has 38 museums (22 US, 2 JP, 2 GB, 2 CN, 1 each in UA, RU, RO, NL, KZ, FR, DK, DE, BG, AU; 0 India), `merged.json` 79 museums in 19 countries (12 in Russia, 1 in India), no `raw/out4_*.json`. **Status 2026-11-04:** the museum data went live (static/data/museums.json, 38 museums, 38 overlays in all 14 locales; 22 are US, 0 India; commits 2267de51099, 0ebbac5587c, b4ddf1e1d96) and the observatories shipped (34, in all 14 locales; f2acb642ed2). OPEN: "What is left" item 2, pass 4 geography (no raw/out4_*.json exists; research table lists 79 museums, only 38 are in the data) — translation-relevant because every added museum needs 13 locale overlays. Item 1 operator ticks were applied in 0ebbac5587c; not verified that every ticked row landed.
 
 Where the "See it in a museum" research stands, so the next session can pick it up cold.
 The plan and rules are in [PRD-027](../../prd/PRD-027.md) (accepted 2026-10-22, option A:
@@ -9,7 +20,7 @@ museums become a fleet category `museum`).
 ## Where things are
 
 - **Review page (operator ticks Yes/No per row):**
-  <https://claude.ai/artifact/VxPpzuU4gvv9tVvwMWibs6> (private to the operator, version 2).
+  <https://claude.ai/artifact/EJ8Wwi2Nt9x5uVueEvTcMw> (private to the operator; republished 2026-11-09 after the old page, VxPpzuU4gvv9tVvwMWibs6, answered "artifact not found" — ticks start empty).
   Decisions are stored in that artifact's database, collection `decisions`, one document per
   row: id = the row's `id` (below), body `{ d: "yes" | "no", at: ISO time }`. Read them with
   the `ArtifactData` tool, `action: "list"`, `collection: "decisions"`.
@@ -32,12 +43,12 @@ museums become a fleet category `museum`).
 
 ## What was done
 
-| Pass | How | Result |
-| --- | --- | --- |
-| 1 | 6 Sonnet agents, WebSearch, by object category | 129 rows; used the session's whole search budget |
-| 2 | 16 agents | failed: WebSearch budget exhausted; stopped |
-| 3 | 10 agents, museum-first by region, WebFetch only (Wikipedia/Commons search APIs, museum sites) | 73 new rows; 85 pass-1 rows verified (49 kept, 33 fixed, 3 dropped) |
-| fix | operator, 2026-10-22 | Endeavour: Samuel Oschin Air and Space Center, California Science Center, Los Angeles; grand opening 13 Nov 2026 (status `opens 2026-11-13`) |
+| Pass | How                                                                                            | Result                                                                                                                                       |
+| ---- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | 6 Sonnet agents, WebSearch, by object category                                                 | 129 rows; used the session's whole search budget                                                                                             |
+| 2    | 16 agents                                                                                      | failed: WebSearch budget exhausted; stopped                                                                                                  |
+| 3    | 10 agents, museum-first by region, WebFetch only (Wikipedia/Commons search APIs, museum sites) | 73 new rows; 85 pass-1 rows verified (49 kept, 33 fixed, 3 dropped)                                                                          |
+| fix  | operator, 2026-10-22                                                                           | Endeavour: Samuel Oschin Air and Space Center, California Science Center, Los Angeles; grand opening 13 Nov 2026 (status `opens 2026-11-13`) |
 
 Kinds: flown, backup, flown-part, test-article, sister-unit. Status: 87 confirmed, 109
 uncertain (mostly Wikipedia or a photo only, because the museum's own site blocked the

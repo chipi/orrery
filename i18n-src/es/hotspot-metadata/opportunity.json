@@ -1,4 +1,17 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander-eagle-crater",
+      "label": "Módulo de aterrizaje en el cráter Eagle",
+      "label_short": "Módulo",
+      "explain": "La plataforma de aterrizaje de Opportunity, dejada en el cráter Eagle (unos 22 m de ancho) tras el aterrizaje amortiguado por airbags de enero de 2004. En HiRISE es el punto brillante en el cuenco oscuro del cráter."
+    },
+    {
+      "id": "eagle-crater",
+      "label": "Cráter Eagle",
+      "label_short": "Cráter Eagle",
+      "explain": "El pequeño cráter de unos 22 m de ancho en el que Opportunity quedó detenido tras su aterrizaje con airbags en enero de 2004. El contorno discontinuo lo muestra a tamaño real; el módulo de aterrizaje es el punto brillante en su centro."
+    }
+  ],
   "panorama_caption": "El panorama «Lion King» de Opportunity desde el borde del cráter Eagle, soles 58 y 60: el módulo de aterrizaje y las marcas de sus airbags en el fondo del cráter, las huellas del rover al salir de él y, más allá, las llanuras de Meridiani Planum."
 }

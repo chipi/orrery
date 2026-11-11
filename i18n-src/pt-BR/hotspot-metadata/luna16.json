@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Estágio de descida Luna 16",
+      "label_short": "Estágio descida",
+      "explain": "A metade inferior do módulo de pouso soviético Luna 16, que ficou no Mare Fecunditatis depois que a cápsula de retorno decolou, em 21 de setembro de 1970, com cerca de 101 gramas de solo."
+    }
+  ]
 }

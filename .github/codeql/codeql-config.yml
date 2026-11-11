@@ -9,7 +9,9 @@ paths-ignore:
 query-filters:
   # Orrery's scripts and launch sources are data pipelines: they fetch from public APIs and cache to
   # disk, and the provenance tools send local file content to those APIs by design. Every hit of
-  # these two rules was that intended flow (39 alerts), so they are noise here.
+  # these two rules was that intended flow (39 alerts), so they are noise here. A query filter cannot be
+  # scoped to paths, so codeql-leak-flows.yml (job analyze-leak-flows) runs both rules on src/ and server/
+  # outside the pipeline files.
   - exclude:
       id: js/file-access-to-http
   - exclude:

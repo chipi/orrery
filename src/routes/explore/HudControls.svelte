@@ -862,6 +862,17 @@
     }
   }
 
+  /* Short window: the 244 px chip rail would run down onto the PLANET SCALES card
+     and the time dock (both pinned bottom-left, 62 px tall), so it stops 70 px
+     above the bottom edge and scrolls. */
+  @media (max-height: 440px) {
+    .ctrl-row.chips {
+      max-height: calc(100vh - 124px - 70px);
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+  }
+
   /* FB2 — mobile-only top cluster: 2D/3D toggle + Reset View, mirroring the
      desktop .hud-controls top-left corner (.hud-controls itself is desktop-only). */
   .hud-top-mobile {

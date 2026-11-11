@@ -1,6 +1,7 @@
 {
   "title": "Habitable Volume",
   "intro_sentence": "The total habitable interior of a station — how much room the crew actually has to live and work.",
+  "seo_title": "Space Station Habitable Volume: How Much Room Crew Get",
   "narrative_101": [
     "Every station spec sheet leads with one key number: habitable volume in cubic meters — the inside of the modules that crew can breathe and move around in, summed across the whole station. The ISS habitable volume is roughly 388 m³ (about the size of a large 3-bedroom house). Tiangong comes in at about 122 m³ — comfortable for three crew, tight for six.",
     "Pressurized volume is bounded by two ceilings: launch-vehicle fairing diameter (you can only ship a module as fat as the rocket can lift) and pressure-shell mass (the thicker the wall, the heavier the launch). Modern composite-aluminum hulls hit a sweet spot at 2-4 mm thick. Anything beyond and you're paying mass for safety margin you don't use; anything thinner and a micrometeoroid might puncture you.",

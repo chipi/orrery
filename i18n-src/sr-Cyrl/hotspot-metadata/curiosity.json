@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "Овде је 6. августа 2012. слетео Curiosity, на место које је тим назвао Bradbury Landing. На овом снимку HiRISE-а од 17. августа 2012. ровер је пар светлих тачака на тамном тлу које су очистиле ракете које су га спустиле. Ровер је одавно отишао."
+    }
+  ],
   "panorama_caption": "Curiosity у каналу Gediz Vallis — поглед ровера од 360° на солу 4220, после бушења узорка Mammoth Lakes, његовог 41. на Марсу. Роботска рука, лево, управо је завршила бушење; палуба ровера десно; право марсовско небо у горњем појасу; канал Gediz Vallis спушта се кроз средину — прво место на којем су на Марсу пронађени кристали чистог сумпора.",
   "compass_zero_direction": "предњи део ровера",
   "panorama_annotations": [

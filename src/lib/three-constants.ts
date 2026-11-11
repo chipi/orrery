@@ -20,8 +20,8 @@
  * - `edgeGlow` 0.4: medium falloff. Higher → softer; lower → razor-sharp.
  * - `edgeThickness` 1.5: 1.5 px outline reads at desktop + mobile zoom
  *   without becoming a "fat halo" effect.
- * - `visibleEdgeColor` (`#4ecdc4`): teal accent (matches design tokens).
- * - `hiddenEdgeColor` (`#224a48`): dimmed teal for parts of the outline
+ * - `visibleEdgeColor` (`#889fe7`): muted blue (derived from --color-tier-core).
+ * - `hiddenEdgeColor` (`#333c58`): dimmed blue for parts of the outline
  *   that are occluded by other geometry — keeps the silhouette readable
  *   when the user is looking at the back side of a module.
  */
@@ -29,8 +29,8 @@ export const OUTLINE_PASS = {
   edgeStrength: 4,
   edgeGlow: 0.4,
   edgeThickness: 1.5,
-  visibleEdgeColor: 0x4ecdc4,
-  hiddenEdgeColor: 0x224a48,
+  visibleEdgeColor: 0x889fe7,
+  hiddenEdgeColor: 0x333c58,
 } as const;
 
 /**

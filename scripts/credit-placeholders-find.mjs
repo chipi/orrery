@@ -16,22 +16,39 @@
  *
  * Usage: node scripts/credit-placeholders-find.mjs --surface missions,mars-sites --out <file.json>
  *        [--parallel 2] [--max 8]
+ *
+ * `--all-crops` (local files only, no network): re-crop the base image of every `.1x1.jpg` of the
+ * chosen surfaces (default fleet-galleries) and compare with the shipped crop (dHash ≤ 6). A crop that
+ * reproduces gets its base's source: its row is kept (or created when --apply) with the modification
+ * `crop-verified-from-base`. One that does not is listed under "not reproducing" and its row is left
+ * as it is (never given a source). Without --apply it only prints; --apply writes image-provenance.json.
+ *
+ * `--find-inside` (implies --all-crops): for a crop the recipe does not reproduce, look for it inside
+ * the base at any position and any scale (square window, 100% … 20% of the short side, normalised
+ * cross-correlation of 32x32 grayscale; --inside-min, default 0.8: true crops read 0.83-1.0, other pictures 0.73 and below). Found → verified like the others
+ * (`crop-verified-from-base`). Not found → "NOT FROM BASE" with the best score; when the crop's row
+ * claims the base's source it is flagged ROW CLAIMS BASE SOURCE (reported, never deleted).
+ *   node scripts/credit-placeholders-find.mjs --all-crops [--surface fleet-galleries] [--apply]
  */
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import sharp from 'sharp';
 import { dhash, distance } from './lib/dhash.mjs';
-import { findSources } from './lib/image-source.mjs';
 
 const args = process.argv.slice(2);
 const opt = (name, dflt) => {
   const i = args.indexOf(`--${name}`);
   return i === -1 ? dflt : args[i + 1];
 };
-const surfaces = String(opt('surface', '')).split(',').filter(Boolean);
+const allCrops = args.includes('--all-crops') || args.includes('--find-inside');
+const surfaces = String(opt('surface', allCrops ? 'fleet-galleries' : ''))
+  .split(',')
+  .filter(Boolean);
+const findInside = args.includes('--find-inside');
 const out = opt('out');
 const parallel = Number(opt('parallel', 2));
 const max = Number(opt('max', 8));
-if (!surfaces.length || !out) {
+if (!surfaces.length || (!out && !allCrops)) {
   console.error(
     'usage: node scripts/credit-placeholders-find.mjs --surface <a,b> --out <file.json>',
   );
@@ -86,6 +103,149 @@ async function cropMatches(stem, crop) {
     .toBuffer();
   return distance(await dhash(mine), await dhash(readFileSync(`static${crop}`))) <= 6;
 }
+
+const T = 32;
+const INSIDE_MIN = Number(opt('inside-min', 0.8));
+function ncc(a, b) {
+  const n = a.length;
+  let ma = 0;
+  let mb = 0;
+  for (let i = 0; i < n; i++) {
+    ma += a[i];
+    mb += b[i];
+  }
+  ma /= n;
+  mb /= n;
+  let ab = 0;
+  let aa = 0;
+  let bb = 0;
+  for (let i = 0; i < n; i++) {
+    const x = a[i] - ma;
+    const y = b[i] - mb;
+    ab += x * y;
+    aa += x * x;
+    bb += y * y;
+  }
+  return aa && bb ? ab / Math.sqrt(aa * bb) : 0;
+}
+const gray = async (input, w, h, fit) => {
+  const { data, info } = await sharp(input)
+    .flatten({ background: '#ffffff' })
+    .grayscale()
+    .resize(w, h, { fit, kernel: 'lanczos3' })
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  return { data, w: info.width, h: info.height };
+};
+/** Best normalised cross-correlation of the crop (square, as a TxT template) against a square
+ * window of the base at any position and any scale (window = 100% … 20% of the short side). */
+async function findCropInside(base, crop) {
+  const tpl = Float32Array.from((await gray(`static${crop}`, T, T, 'fill')).data);
+  const meta = await sharp(`static${base}`).metadata();
+  const win = new Float32Array(T * T);
+  let best = { score: -1 };
+  for (let s = 1; s >= 0.2; s *= 0.93) {
+    const k = T / (s * Math.min(meta.width, meta.height));
+    const g = await gray(
+      `static${base}`,
+      Math.max(T, Math.round(meta.width * k)),
+      Math.max(T, Math.round(meta.height * k)),
+      'fill',
+    );
+    for (let y = 0; y + T <= g.h; y++)
+      for (let x = 0; x + T <= g.w; x++) {
+        for (let j = 0; j < T; j++)
+          for (let i = 0; i < T; i++) win[j * T + i] = g.data[(y + j) * g.w + x + i];
+        const score = ncc(win, tpl);
+        if (score > best.score)
+          best = { score, scale: s, x: x / g.w, y: y / g.h, w: T / g.w, h: T / g.h };
+      }
+  }
+  return best;
+}
+
+if (allCrops) {
+  const doc = JSON.parse(readFileSync('static/data/image-provenance.json', 'utf8'));
+  const row = new Map(doc.entries.map((e) => [e.path, e]));
+  const verified = [];
+  const notReproducing = [];
+  const noBase = [];
+  const notFromBase = [];
+  const foundInside = [];
+  const created = [];
+  for (const surface of surfaces) {
+    for (const entity of readdirSync(`static/images/${surface}`)) {
+      for (const f of readdirSync(`static/images/${surface}/${entity}`)) {
+        if (!f.endsWith('.1x1.jpg')) continue;
+        const crop = `/images/${surface}/${entity}/${f}`;
+        const base = crop.replace(/\.1x1\.jpg$/, '.webp');
+        const baseRow = row.get(base);
+        if (!existsSync(`static${base}`) || !baseRow) {
+          noBase.push(crop);
+          continue;
+        }
+        if (!(await cropMatches(base, crop))) {
+          if (!findInside) {
+            notReproducing.push(crop);
+            continue;
+          }
+          const f = await findCropInside(base, crop);
+          if (f.score < INSIDE_MIN) {
+            notFromBase.push({ crop, ...f });
+            continue;
+          }
+          const how = `found at ${f.scale.toFixed(2)} of short side, x ${f.x.toFixed(2)} y ${f.y.toFixed(2)}, ncc ${f.score.toFixed(3)}`;
+          foundInside.push({ crop, how });
+        }
+        verified.push(crop);
+        const mod = 'crop-verified-from-base';
+        const cur = row.get(crop);
+        if (cur) {
+          if (!cur.modifications.includes(mod)) cur.modifications.push(mod);
+        } else {
+          const e = {
+            ...baseRow,
+            id: createHash('sha256').update(crop).digest('hex').slice(0, 16),
+            path: crop,
+            modifications: ['cropped-1x1', mod],
+          };
+          doc.entries.push(e);
+          row.set(crop, e);
+          created.push(crop);
+        }
+      }
+    }
+  }
+  console.log(
+    `crops: ${verified.length} reproduce from their base (${created.length} rows to create), ` +
+      `${notReproducing.length} do not, ${noBase.length} without a base row/file`,
+  );
+  for (const p of notReproducing) console.log(`NOT REPRODUCING ${p}`);
+  if (findInside) {
+    console.log(
+      `find-inside: ${foundInside.length} found in their base (ncc >= ${INSIDE_MIN}), ${notFromBase.length} NOT FROM BASE`,
+    );
+    for (const { crop, how } of foundInside) console.log(`FOUND ${crop} ${how}`);
+    let claimed = 0;
+    for (const n of notFromBase.sort((a, b) => b.score - a.score)) {
+      const cur = row.get(n.crop);
+      const base = row.get(n.crop.replace(/\.1x1\.jpg$/, '.webp'));
+      const claims = cur && cur.source_url === base.source_url;
+      if (claims) claimed++;
+      console.log(
+        `NOT FROM BASE ${n.crop} best ncc ${n.score.toFixed(3)}${claims ? ' ROW CLAIMS BASE SOURCE' : cur ? ' (row has another source)' : ' (no row)'}`,
+      );
+    }
+    console.log(`not from base with a row claiming the base's source: ${claimed}`);
+  }
+  for (const p of noBase) console.log(`NO BASE ${p}`);
+  if (args.includes('--apply')) {
+    writeFileSync('static/data/image-provenance.json', JSON.stringify(doc, null, 2) + '\n');
+    console.log('image-provenance.json written');
+  }
+  process.exit(0);
+}
+const { findSources } = await import('./lib/image-source.mjs');
 
 const todo = [...groups.entries()].filter(([key]) => !state.done.includes(key));
 console.log(

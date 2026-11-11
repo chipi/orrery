@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chandrayaan-3 Vikram 착륙선",
+      "label_short": "Vikram 착륙선",
+      "explain": "2023년 8월 23일 남극에서 약 600 km 떨어진 곳에 착륙한 인도 Chandrayaan-3의 Vikram 착륙선입니다. 나흘 뒤 LRO가 촬영했으며, 밝은 후광은 로켓 분사로 흐트러진 레골리스입니다."
+    }
+  ],
   "panorama_caption": "시브샥티 지점 — 달 남극에서 찍은 첫 파노라마. 전경에 Vikram 착륙선의 그림자가 보이며, 이 사진 직후 Pragyan 로버가 레골리스 위로 내려갔다.",
   "compass_zero_direction": "착륙선 이미저 +X 축",
   "panorama_annotations": [

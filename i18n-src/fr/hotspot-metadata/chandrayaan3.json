@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Vikram (Chandrayaan-3)",
+      "label_short": "Vikram",
+      "explain": "L'atterrisseur Vikram de Chandrayaan-3, posé le 23 août 2023 à environ 600 km du pôle Sud. LRO l'a photographié quatre jours plus tard ; le halo clair est du régolithe perturbé par le jet des moteurs."
+    }
+  ],
   "panorama_caption": "Statio Shiv Shakti — le premier panorama depuis le pôle Sud lunaire. L'ombre de l'atterrisseur Vikram au premier plan ; le rover Pragyan a été déposé sur le régolithe peu après cette image.",
   "compass_zero_direction": "axe +X de l'imageur de l'atterrisseur",
   "panorama_annotations": [

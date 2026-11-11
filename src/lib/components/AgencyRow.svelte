@@ -64,4 +64,8 @@
     border-width: 1px;
     border-style: solid;
   }
+  /* PLANNED shares ACTIVE's blue; the dashed outline tells them apart. */
+  .agency-row :global(.status-planned) {
+    border-style: dashed;
+  }
 </style>

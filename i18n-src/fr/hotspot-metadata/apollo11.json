@@ -3,32 +3,56 @@
     {
       "id": "lm-descent-stage",
       "label": "Étage de descente du LM (Eagle)",
-      "lat_offset_m": 0,
-      "lon_offset_m": 0
+      "label_short": "LM Eagle",
+      "explain": "La moitié inférieure du module lunaire Eagle d'Apollo 11. Elle est restée sur la Lune quand l'étage de remontée a emporté l'équipage après l'alunissage de juillet 1969."
     },
     {
-      "id": "us-flag",
-      "label": "Drapeau américain (planté à ~8 m à l'ouest du LM)",
-      "lat_offset_m": 2,
-      "lon_offset_m": -8
+      "id": "pse",
+      "label": "Sismomètre passif (PSEP)",
+      "label_short": "PSEP",
+      "explain": "L'expérience sismique passive (PSEP) du paquet EASEP, installée au sud du module lunaire le 21 juillet 1969 pour enregistrer les séismes lunaires et les impacts."
     },
     {
       "id": "lrrr",
       "label": "Rétroréflecteur laser (LRRR)",
-      "lat_offset_m": -10,
-      "lon_offset_m": 14
+      "label_short": "Rétroréflecteur",
+      "explain": "Le réseau de rétroréflecteurs laser (LRRR) laissé par Apollo 11 : un réflecteur qui permet aux observatoires terrestres de chronométrer les impulsions laser renvoyées par la Lune. Il se trouve à environ 5 m au nord-nord-ouest du paquet du sismomètre."
     },
     {
-      "id": "easep",
-      "label": "EASEP (paquet ALSEP simplifié)",
-      "lat_offset_m": -15,
-      "lon_offset_m": 18
+      "id": "flag",
+      "label": "Drapeau américain (position LROC)",
+      "label_short": "Drapeau US",
+      "explain": "Le point que la couche matériel d'Apollo 11 de LROC donne pour le drapeau, à environ 14 m à l'ouest-nord-ouest du module lunaire. Le drapeau lui-même est trop petit pour être vu à cette résolution."
     },
     {
-      "id": "plaque",
-      "label": "Plaque : « Nous sommes venus en paix pour toute l'humanité »",
-      "lat_offset_m": 0,
-      "lon_offset_m": 0
+      "id": "tv",
+      "label": "Caméra TV (position LROC)",
+      "label_short": "Caméra TV",
+      "explain": "Le point que la couche matériel d'Apollo 11 de LROC donne pour la caméra de télévision, à environ 26 m au nord-ouest du module lunaire. Rien n'est discernable sur l'image à cet endroit."
+    },
+    {
+      "id": "little-west",
+      "label": "Cratère Little West",
+      "label_short": "Little West",
+      "explain": "Le cratère que LROC nomme Little West sur sa carte d'Apollo 11, à environ 75 m à l'est du module lunaire. Un sentier ténu sur l'image y mène."
+    },
+    {
+      "id": "double",
+      "label": "Cratère Double",
+      "label_short": "Cratère Double",
+      "explain": "Un petit cratère que LROC nomme Double, à environ 17 m au sud-ouest du module lunaire, sur sa carte des sites phares d'Apollo 11."
+    },
+    {
+      "id": "footpath-little-west",
+      "label": "Sentier vers Little West",
+      "label_short": "Sentier",
+      "explain": "LROC note que les chemins des astronautes ressortent sur son image du site d'Apollo 11. Cette ligne ténue part vers l'est depuis le module lunaire en direction du cratère Little West (le contour en pointillés marque la zone, pas un point)."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle du moteur de descente du LM",
+      "label_short": "Zone de souffle",
+      "explain": "LROC note que le moteur de descente a balayé un halo clair autour des sites d'alunissage, très probablement en chassant les particules les plus fines de sous le moteur. À Apollo 11, il apparaît comme une zone claire d'environ 100 m de large autour du module lunaire."
     }
   ],
   "panorama_caption": "Base de la Tranquillité, EVA-1. Buzz Aldrin a photographié le LM Eagle et le drapeau américain peu après l'alunissage. Les coutures Hasselblad visibles et les raccords colorés autour du LM font partie de la mosaïque publiée.",

@@ -1,6 +1,7 @@
 {
   "title": "Was ist ein Porkchop-Plot?",
   "intro_sentence": "Eine 2D-Wärmekarte der Flugbahnkosten für jedes Paar aus (Abflugdatum, Flugzeit) – das Standardwerkzeug für Startfenster. (Übliche Porkchops zeigen C3 und Ankunfts-V∞; Orrery nutzt eine vereinfachte ∆v-Farbskala in km/s.)",
+  "seo_description": "Ein Porkchop-Plot zeigt die Flugbahnkosten für jedes Startdatum und jede Flugzeit: das Standardwerkzeug für Startfenster. Live im Orrery-Planer öffnen.",
   "narrative_101": [
     "Wenn Missionsplaner überprüfen wollen, ob eine Marsmission machbar ist, berechnen sie nicht nur eine einzelne Flugbahn. Sie berechnen MILLIONEN — jedes mögliche Abflugdatum, jede mögliche Flugdauer, in einem riesigen Gitter — und erstellen eine Wärmekarte. Günstige Flugbahnen erscheinen als kühle blaue Zonen, teure als rote. Das Ergebnis sieht merkwürdigerweise aus wie ein Schweinekotelett. Die günstige Zone ist das Fleisch des Koteletts; der teure Grat ist der Knochen.",
     "Warum sich mit einer ganzen Wärmekarte abgeben statt nur eine einzige optimale Lösung zu berechnen? Weil echte Missionen Einschränkungen haben. Vielleicht ist eine bestimmte Startrampe nur 2026 verfügbar. Vielleicht musst du vor Ende einer Staubsturmsaison landen. Vielleicht ist eine bestimmte Rakete erst ab einem gewissen Monat einsatzbereit. Der Porkchop-Plot zeigt dir ALLE Kompromisse auf einmal — wähle eine ausreichend günstige Flugbahn, die in deinen realen Kalender passt.",

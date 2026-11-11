@@ -1,6 +1,7 @@
 {
   "title": "Machbarkeit ablesen",
   "intro_sentence": "Eine Zelle ist machbar, wenn das ∆v-Vermögen Ihrer Rakete ≥ den ∆v-Kosten der Zelle ist — und der Porkchop-Plot macht aus diesem Vergleich eine Ja/Nein-Karte.",
+  "seo_title": "Porkchop-Plot, Machbarkeit: Schafft Ihre Rakete die Reise?",
   "narrative_101": [
     "Diese Frage macht aus einem Porkchop-Plot mehr als eine hübsche Wärmekarte, nämlich eine echte Missionsentscheidung: Kann meine Rakete das wirklich fliegen? Jede Rakete – Falcon Heavy, SLS, Atlas V, was Sie wollen – hat eine veröffentlichte ∆v-Leistung für eine bestimmte Nutzlastmasse. Vergleichen Sie diese Obergrenze mit den Kosten je Zelle des Porkchop-Plots und Sie erhalten eine Ja/Nein-Karte.",
     "Zellen, in denen die Leistung der Rakete die Kosten übersteigt, sind durchführbar, mit Reserve. Zellen, in denen die Leistung den Kosten genau entspricht, sind durchführbar, aber knapp — riskant, kein Spielraum für Fehler. Zellen, in denen die Kosten die Leistung übersteigen? Diese Flugbahn ist mit dieser Rakete schlicht nicht fliegbar. Sie können es sich noch so sehr wünschen; die Physik sagt nein.",

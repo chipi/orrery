@@ -1,1 +1,70 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "La metà inferiore del modulo lunare Intrepid dell'Apollo 12, rimasta sulla Luna dopo l'allunaggio del novembre 1969, vicino alla sonda Surveyor 3 arrivata prima."
+    },
+    {
+      "id": "alsep",
+      "label": "Stazione centrale ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Il pacchetto di esperimenti sulla superficie lunare dell'Apollo 12 (ALSEP), dispiegato il 19 novembre 1969. Tra i suoi strumenti c'erano un sismometro passivo, un magnetometro e uno spettrometro del vento solare, tutti collegati via cavo alla stazione centrale."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Lander Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Lander robotico della NASA, posatosi il 20 aprile 1967 sul pendio interno di un piccolo cratere. L'Apollo 12 allunò a circa 160 m da esso nel novembre 1969 e il suo equipaggio asportò circa 10 kg di parti, tra cui la telecamera, il 20 novembre."
+    },
+    {
+      "id": "flag",
+      "label": "Bandiera USA (posizione LROC)",
+      "label_short": "Bandiera USA",
+      "explain": "Il punto che il livello hardware dell'Apollo 12 di LROC indica per la bandiera, a circa 16 m a nord del modulo lunare. La bandiera in sé è troppo piccola per essere vista a questa risoluzione."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismometro passivo (LROC)",
+      "label_short": "Sismometro",
+      "explain": "LROC elenca il sismometro passivo dell'Apollo 12 come punto a sé, a circa 3 m dalla stazione centrale (l'anello si sovrappone a quello dell'ALSEP)."
+    },
+    {
+      "id": "surveyor-crater",
+      "label": "Cratere Surveyor",
+      "label_short": "Cratere Surveyor",
+      "explain": "Il cratere che LROC chiama Surveyor sulla sua mappa dell'Apollo 12. Al suo interno si trova il Surveyor 3, e il modulo lunare allunò a circa 160 m di distanza."
+    },
+    {
+      "id": "head",
+      "label": "Cratere Head",
+      "label_short": "Cratere Head",
+      "explain": "Un grande cratere a ovest del modulo lunare che LROC chiama Head sulla sua mappa dell'Apollo 12."
+    },
+    {
+      "id": "bench",
+      "label": "Cratere Bench",
+      "label_short": "Cratere Bench",
+      "explain": "Un cratere a sud-ovest del modulo lunare che LROC chiama Bench sulla sua mappa dell'Apollo 12."
+    },
+    {
+      "id": "block",
+      "label": "Cratere Block",
+      "label_short": "Cratere Block",
+      "explain": "Un piccolo cratere a est del modulo lunare che LROC chiama Block sulla sua mappa dell'Apollo 12."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Sentieri verso l'ALSEP",
+      "label_short": "Sentieri ALSEP",
+      "explain": "Scie scure nell'immagine collegano l'area del modulo lunare al pacchetto di strumenti a nord-ovest di esso. Il livello di LROC del percorso della prima passeggiata lunare segue questo corridoio (il contorno tratteggiato indica l'area)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona del getto del LM",
+      "label_short": "Zona del getto",
+      "explain": "LROC osserva che il motore di discesa ha schiarito il suolo attorno a ogni sito di allunaggio. All'Apollo 12 la zona chiara è allungata verso il cratere Surveyor, quindi il contorno è solo una guida approssimativa."
+    }
+  ]
+}

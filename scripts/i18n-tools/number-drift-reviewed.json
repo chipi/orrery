@@ -1,0 +1,222 @@
+{
+  "ar|science/life-in-space/eva-physiology.json|body_paragraphs.0": {
+    "why": "\"100% O2\" is written \"كله أكسجين\" (all oxygen), right after \"pure oxygen\"; 100% adds nothing",
+    "en": "ff4ed85d71",
+    "tr": "db06d70b74"
+  },
+  "ar|science/life-in-space/mars-habitat-design.json|body_paragraphs.1": {
+    "why": "\"1-2 m\" is \"متر إلى مترين\" (a metre to two metres): the one is the word \"متر\"",
+    "en": "1163f88803",
+    "tr": "443378292f"
+  },
+  "ar|science/observation/magellanic-clouds.json|intro_sentence": {
+    "why": "\"~50 and ~62 kpc\" is \"نحو 50 ونحو 62 كيلوبارسك\": the unit is written once, after the second number",
+    "en": "b32ce1d17a",
+    "tr": "622e00fe36"
+  },
+  "ar|science/planets/kuiper-belt.json|body_paragraphs.1": {
+    "why": "\"Hartley 2\" is comet 103P/Hartley; the Arabic gives the designation \"103بي/هارتلي\", the same comet",
+    "en": "ac9c5b8ad5",
+    "tr": "795f6e1c56"
+  },
+  "ar|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "48b129496a"
+  },
+  "de|missions/moon/blue-moon-mk1.json|vehicle": {
+    "why": "\"2nd stage expendable\" is \"Einweg-Oberstufe\" (the upper stage); the first stage is \"erste Stufe\"",
+    "en": "472062b96c",
+    "tr": "843361da4b"
+  },
+  "de|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "12d137799a"
+  },
+  "es|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "be84bf76ac"
+  },
+  "es|trajectories/dawn.json|current_distance_label": {
+    "why": "\"EOM 2018-10-31\" is \"fin de octubre de 2018\" (end of October)",
+    "en": "61ad270a1b",
+    "tr": "db63bb1ef8"
+  },
+  "fr|earth-objects/o3b.json|description": {
+    "why": "\"the other 3 billion\" is « 3 autres milliards »: same figure, word order of the French",
+    "en": "ca99358ee6",
+    "tr": "4abfdf2c8e"
+  },
+  "fr|fleet/constellation/o3b-mpower.json|description": {
+    "why": "\"the other 3 billion\" is « 3 autres milliards »: same figure, word order of the French",
+    "en": "905db83811",
+    "tr": "c16d87ad7d"
+  },
+  "fr|science/life-in-space/crew-selection.json|intro_sentence": {
+    "why": "\"~10 selectees\" is \"une dizaine de sélectionnés\" (about ten)",
+    "en": "1c860fdc4b",
+    "tr": "0478c5e53c"
+  },
+  "fr|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "35137cacb6"
+  },
+  "hi|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "5838cd3ac4"
+  },
+  "it|science/life-in-space/eva-operations.json|body_paragraphs.1": {
+    "why": "\"the riskiest 15 minutes\" is \"il quarto d'ora più rischioso\" (the riskiest quarter of an hour)",
+    "en": "7cdfaee8d5",
+    "tr": "376e73b5ed"
+  },
+  "it|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "13a5125dbe"
+  },
+  "ja|mars-traverses/perseverance.json|stops.0.label": {
+    "why": "\"Ingenuity Flight 1\" is \"Ingenuity 初飛行\" (first flight)",
+    "en": "466a7466c1",
+    "tr": "7aceb8d0ea"
+  },
+  "ja|missions/mars/mmx.json|description": {
+    "why": "Japan-time date: 19 October 2026 UTC is 20 October JST; the Japanese text says 20 October (日本時間)",
+    "en": "6c803b1cfa",
+    "tr": "c502f9e7e7"
+  },
+  "ja|missions/mars/mmx.json|events.0.note": {
+    "why": "Japan-time date: 19 October 2026 UTC is 20 October JST; the Japanese text says 20 October (日本時間)",
+    "en": "e3de9ddd9f",
+    "tr": "befb076c0f"
+  },
+  "ja|science/mission-phases/eva.json|narrative_101.1": {
+    "why": "\"100% oxygen\" is \"純酸素\" (pure oxygen)",
+    "en": "9870b1bba1",
+    "tr": "0a3fb8d0f4"
+  },
+  "ja|science/orbits/hill-sphere.json|narrative_101.0": {
+    "why": "\"~333,000x\" is \"約33万分の1\" (the English is also approximate)",
+    "en": "460d15abb6",
+    "tr": "542b78372b"
+  },
+  "ja|site-illustrations.json|perseverance.alt": {
+    "why": "\"Flight 1\" is the first flight (初飛行 / 첫 비행 / 首飞): the 1 is the ordinal word",
+    "en": "26ad5f3796",
+    "tr": "45c22da8f3"
+  },
+  "ja|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "bb82199989"
+  },
+  "ko|fleet/launch-site/naro-space-center.json|best_known_for": {
+    "why": "\"Naro-1\" is the rocket's Korean name \"나로호\"",
+    "en": "f9d84140ed",
+    "tr": "d2dc59ce72"
+  },
+  "ko|fleet/launch-site/naro-space-center.json|tagline": {
+    "why": "\"Naro-1\" is the rocket's Korean name \"나로호\"",
+    "en": "f9d84140ed",
+    "tr": "d2dc59ce72"
+  },
+  "ko|science/mission-phases/dead-reckoning.json|body_paragraphs.1": {
+    "why": "\"over 1 day\" is \"하루 만에\" (the native word for one day)",
+    "en": "73d1d74980",
+    "tr": "cbaa3492e3"
+  },
+  "ko|science/mission-phases/eva.json|narrative_101.2": {
+    "why": "\"the #1 problem\" is \"가장 큰 문제\" (the biggest problem)",
+    "en": "9c75a8ef9c",
+    "tr": "e3df9bdd21"
+  },
+  "ko|science/orbits/hill-sphere.json|narrative_101.0": {
+    "why": "\"~333,000x\" is \"약 33만 배\" (the English is also approximate)",
+    "en": "460d15abb6",
+    "tr": "e557922dcf"
+  },
+  "ko|site-illustrations.json|perseverance.alt": {
+    "why": "\"Flight 1\" is the first flight (初飛行 / 첫 비행 / 首飞): the 1 is the ordinal word",
+    "en": "26ad5f3796",
+    "tr": "200038669e"
+  },
+  "ko|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "9e3c3042ba"
+  },
+  "ko|source-logos.json|roscosmos": {
+    "why": "\"제1259조\" is Article 1259; the tool reads 조 as the Korean scale word (10^12)",
+    "en": "45a320259b",
+    "tr": "ba24505e0f"
+  },
+  "nl|science/life-in-space/sleep-nutrition-circadian.json|body_paragraphs.0": {
+    "why": "\"per 24-hour day\" is \"per etmaal\", the Dutch word for a 24-hour day",
+    "en": "00196c8be4",
+    "tr": "9571e32127"
+  },
+  "nl|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "605b924dbd"
+  },
+  "pt-BR|science/life-in-space/lunar-surface-ops.json|body_paragraphs.1": {
+    "why": "\"at #1\" is \"no topo da lista\" (at the top of the list)",
+    "en": "6782db4938",
+    "tr": "a2a06f1a27"
+  },
+  "pt-BR|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "b5a9a74121"
+  },
+  "ru|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "a0d93e1987"
+  },
+  "sr-Cyrl|essays/seven-minutes.json|body.6.md": {
+    "why": "\"July 4\" is \"Четвртог јула\": the day is written as an ordinal word",
+    "en": "889e695fb0",
+    "tr": "21bcacfb8f"
+  },
+  "sr-Cyrl|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "b932e5161f"
+  },
+  "zh-CN|mars-traverses/perseverance.json|stops.0.label": {
+    "why": "\"Ingenuity Flight 1\" is \"Ingenuity 首飞\" (first flight)",
+    "en": "466a7466c1",
+    "tr": "591d6e1d0a"
+  },
+  "zh-CN|science/mission-phases/eva.json|narrative_101.1": {
+    "why": "\"100% oxygen\" is \"纯氧\" (pure oxygen)",
+    "en": "9870b1bba1",
+    "tr": "a45c2bc0e5"
+  },
+  "zh-CN|science/mission-phases/eva.json|narrative_101.2": {
+    "why": "\"the #1 problem\" is \"首要问题\" (the primary problem)",
+    "en": "9c75a8ef9c",
+    "tr": "7661d74145"
+  },
+  "zh-CN|science/orbits/hill-sphere.json|narrative_101.0": {
+    "why": "\"~333,000x\" is \"约33万倍\" (the English is also approximate)",
+    "en": "460d15abb6",
+    "tr": "81310e966d"
+  },
+  "zh-CN|site-illustrations.json|perseverance.alt": {
+    "why": "\"Flight 1\" is the first flight (初飛行 / 첫 비행 / 首飞): the 1 is the ordinal word",
+    "en": "26ad5f3796",
+    "tr": "185e960e69"
+  },
+  "zh-CN|source-logos.json|nasa-ctx": {
+    "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
+    "en": "15282e3d0f",
+    "tr": "fd0ffb33d5"
+  }
+}

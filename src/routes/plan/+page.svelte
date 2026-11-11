@@ -2,6 +2,7 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
+  import { metaDescription } from '$lib/seo';
   import { dvToRGB, dvToCss, dayToDate, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { geoTransferDv } from '$lib/physics/transfer/lambert-geocentric';
   import { interplanetaryMoonDv } from '$lib/moon-transfer';
@@ -927,7 +928,10 @@
   });
 </script>
 
-<svelte:head><title>{m.plan_page_title()}</title></svelte:head>
+<svelte:head>
+  <title>{m.plan_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_plan_desc())} />
+</svelte:head>
 <VisuallyHiddenH1 title={m.plan_page_title()} />
 
 <div class="plan">

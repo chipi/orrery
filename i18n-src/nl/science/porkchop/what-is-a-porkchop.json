@@ -1,6 +1,7 @@
 {
   "title": "Wat is een porkchop-diagram?",
   "intro_sentence": "Een 2D-heatmap van de trajectkosten voor elke combinatie van (vertrekdatum, reistijd) — het standaardgereedschap voor lanceervensters. (Standaard tonen ze C3 en aankomst-V∞; Orrery gebruikt een vereenvoudigde ∆v-kleurschaal in km/s.)",
+  "seo_description": "Een porkchop-diagram toont de baankosten voor elke lanceerdatum en reistijd: het standaardgereedschap voor lanceervensters. Open er een live in de planner.",
   "narrative_101": [
     "Wanneer missieplanners willen weten of een reis naar Mars haalbaar is, berekenen ze niet één traject. Ze berekenen er MILJOENEN — elke mogelijke vertrekdatum, elke mogelijke reistijd, in een gigantisch raster — en kleuren dat in als heatmap. Goedkope trajecten verschijnen als koele blauwe zones, dure als rood. Het resultaat ziet er, vreemd genoeg, uit als een varkenskotelet. De goedkope zone is het vlees van de kotelet; de dure rug is het bot.",
     "Waarom een hele heatmap in plaats van één optimaal antwoord? Omdat echte missies beperkingen hebben. Misschien is een bepaald lanceerplatform alleen in 2026 beschikbaar. Misschien moet je landen voordat het stofstormseizoen voorbij is. Misschien is een bepaalde raket pas in een bepaalde maand klaar. Het porkchop-diagram laat je ALLE afwegingen tegelijk zien — kies het traject dat goedkoop genoeg is en in je werkelijke kalender past.",

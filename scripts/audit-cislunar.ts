@@ -40,7 +40,7 @@ for (const f of readdirSync(DIR).filter((x) => x.endsWith('.json') && x !== 'ind
   const wps: Wp[] | undefined = m.flight?.cislunar_profile?.waypoints_km;
   const events: { type: string; met_days: number; label?: string }[] = m.flight?.events ?? [];
   if (!wps || wps.length < 2) continue;
-  const parked = moonEciPos(cislunarEventTimes(m.flight?.events)?.arrival ?? m.transit_days ?? 0);
+  const parked = moonEciPos(cislunarEventTimes(m.flight?.events).arrival ?? m.transit_days ?? 0);
   const moonDist = (p: number[], met: number): number => {
     const mo = moonEciPos(met);
     return Math.min(

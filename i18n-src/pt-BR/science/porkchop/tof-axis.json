@@ -1,6 +1,7 @@
 {
   "title": "Eixo de Tempo de Voo",
   "intro_sentence": "Quanto tempo a viagem leva — subindo pelo eixo Y, em dias para planetas internos e anos para os externos.",
+  "seo_title": "Eixo de tempo de voo do porkchop plot: duração da viagem",
   "narrative_101": [
     "Se o eixo X diz QUANDO você parte, o eixo Y diz QUANTO TEMPO a viagem leva. Base do gráfico: viagens rápidas e curtas. Topo do gráfico: viagens lentas e longas. Para destinos classe-Marte o eixo abrange aproximadamente 100 a 500 dias. Para Júpiter são anos.",
     "Agora você pode ler todo o trade-off em uma olhada. Suba verticalmente em uma coluna no porkchop — essa é a MESMA data de lançamento mas com tempos de trânsito diferentes. Perto da base (viagem rápida) as células ficam vermelhas — viagens rápidas são caras porque você está forçando uma elipse de transferência íngreme. Mais acima (viagem mais lenta) as células ficam azuis — essa é a faixa Hohmann natural onde a matemática quer que a viagem aconteça.",

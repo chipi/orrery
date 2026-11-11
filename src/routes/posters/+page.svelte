@@ -6,6 +6,7 @@
   // links to the full-resolution JPG for download. Subjects + taglines
   // are baked into the artwork; `sub` here mirrors them for a11y/SEO.
   import { base } from '$app/paths';
+  import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
@@ -52,6 +53,7 @@
 
 <svelte:head>
   <title>{m.gallery_posters_title()} · {m.layout_footer_gallery()} · Orrery</title>
+  <meta name="description" content={metaDescription(m.posters_lede())} />
 </svelte:head>
 
 <article class="gallery" data-route-ready="true">

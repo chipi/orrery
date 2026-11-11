@@ -1,10 +1,10 @@
 {
-  "$comment": "KB brotli. shell = root layout + client entry; each route = what it adds beyond the shell. Set 2026-10-30 at measured size +10% +5 KB (rounded up to 5). See scripts/check-route-budget.mjs.",
+  "$comment": "KB brotli. shell = root layout + client entry; each route = what it adds beyond the shell. Set 2026-10-30 at measured size +10% +5 KB (rounded up to 5). /lab/callback lowered 695 → 10 on 2026-11-09: it no longer imports the Lab message map (measured 4 KB with prod debug ids). See scripts/check-route-budget.mjs. /lab lowered 795 → 120 on 2026-11-09: the Lab message tables load per locale (measured 102 KB).",
   "shell": 200,
   "defaultRoute": 30,
   "routes": {
-    "/lab": 795,
-    "/lab/callback": 695,
+    "/lab": 120,
+    "/lab/callback": 10,
     "/explore": 555,
     "/moon": 440,
     "/mars": 435,
@@ -44,19 +44,20 @@
     "shell": 20
   },
   "lazy": {
-    "$comment": "KB brotli, what dynamic imports load beyond the shell and the route's static closure (JS + CSS). Set 2026-11-02, same rule. /missions and /fleet raised 2026-11-08: the collectible card (resolvers, CollectibleCard, CardOverlay, card messages) moved from their first load to on demand (lazy-card.ts), /missions JS 133 → 112, /fleet 104 → 89 with prod debug ids.",
+    "$comment": "KB brotli, what dynamic imports load beyond the shell and the route's static closure (JS + CSS). Set 2026-11-02, same rule. /missions and /fleet raised 2026-11-08: the collectible card (resolvers, CollectibleCard, CardOverlay, card messages) moved from their first load to on demand (lazy-card.ts), /missions JS 133 → 112, /fleet 104 → 89 with prod debug ids. /explore /moon /mars /earth /venus raised 2026-11-09 for the same move on their panels (measured 89 / 59 / 65 / 63 / 65, budget measured + 5 rounded to 5). /lab 60 (2026-11-09): one locale's message table, 50 KB measured; check-route-budget counts a per-locale import set once, at its largest member.",
     "defaultRoute": 10,
     "routes": {
-      "/explore": 75,
-      "/moon": 50,
-      "/mars": 55,
-      "/earth": 55,
-      "/venus": 55,
+      "/explore": 95,
+      "/moon": 65,
+      "/mars": 70,
+      "/earth": 70,
+      "/venus": 70,
       "/iss": 45,
       "/tiangong": 50,
       "/fly": 40,
       "/fleet": 45,
-      "/missions": 35
+      "/missions": 35,
+      "/lab": 60
     }
   }
 }

@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chandrayaan-3 Vikram लैंडर",
+      "label_short": "Vikram लैंडर",
+      "explain": "भारत का Chandrayaan-3 Vikram लैंडर, जो 23 अगस्त 2023 को दक्षिणी ध्रुव से लगभग 600 किमी दूर उतरा। LRO ने इसे चार दिन बाद देखा; चमकीला आभामंडल रॉकेट की लपट से उधड़ा रेगोलिथ है।"
+    }
+  ],
   "panorama_caption": "शिव शक्ति बिंदु — चंद्र दक्षिणी ध्रुव से पहला पैनोरमा। अग्रभूमि में विक्रम लैंडर की परछाईं; इस तस्वीर के कुछ ही देर बाद प्रज्ञान रोवर रेगोलिथ पर उतारा गया।",
   "compass_zero_direction": "लैंडर इमेजर का +X अक्ष",
   "panorama_annotations": [

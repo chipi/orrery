@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Lander di Chang'e 4",
+      "label_short": "Lander Chang'e 4",
+      "explain": "Il lander cinese Chang'e 4, protagonista del primo allunaggio morbido sul lato nascosto della Luna, il 3 gennaio 2019, nel cratere Von Kármán. Il suolo chiaro intorno a lui è stato spazzato dal suo motore di discesa."
+    },
+    {
+      "id": "yutu-2",
+      "label": "Rover Yutu-2",
+      "label_short": "Yutu-2",
+      "explain": "Il rover Yutu-2 il 7 maggio 2019, quattro mesi dopo l'allunaggio, a circa 120 m a ovest del lander, al termine delle sue prime tracce. Da allora ha percorso molta strada."
+    }
+  ],
   "panorama_caption": "Il primo panorama mai trasmesso dalla faccia nascosta della Luna. Il cratere Von Kármán, nel bacino Polo Sud-Aitken. Il rover Yutu-2 a media distanza; l'ombra del lander in basso a sinistra.",
   "compass_zero_direction": "asse +X della fotocamera del lander",
   "panorama_annotations": [

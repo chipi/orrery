@@ -56,7 +56,6 @@
   $effect(() => {
     if (src && !altOf) void import('$lib/image-alt').then((mod) => (altOf = mod.getImageAlt));
   });
-
   // The viewer covers the page; 3D scenes behind it stop rendering while open.
   $effect(() => {
     if (!src) return;
@@ -65,6 +64,13 @@
 
   const current = $derived(src ? (list[index] ?? src) : null);
   const many = $derived(list.length > 1);
+  // The image's description in the reader's language (#257): its alt text, also shown
+  // as the visible caption — the credit line below keeps the original work's title.
+  const caption = $derived(
+    current
+      ? (altOf?.(current.slice(Math.max(0, current.indexOf('/images/'))), getLocale()) ?? '')
+      : '',
+  );
 
   function step(delta: number) {
     if (!many) return;
@@ -266,7 +272,7 @@
           data-testid="lightbox-img"
           {...responsive(current, IMAGE_SIZES.full)}
           sizes={zoomSizes ?? responsive(current, IMAGE_SIZES.full).sizes}
-          alt={altOf?.(current.slice(Math.max(0, current.indexOf('/images/'))), getLocale()) ?? ''}
+          alt={caption}
           decoding="async"
           draggable="false"
           style:transform={zoomed ? `translate(${tx}px, ${ty}px) scale(${scale})` : undefined}
@@ -355,6 +361,8 @@
           {/each}
         </div>
       {/if}
+      <!-- Same text as the image's alt: hidden from screen readers so it is not read twice. -->
+      {#if caption}<p class="lightbox-caption" aria-hidden="true">{caption}</p>{/if}
       <ImageCredit src={current} />
     </div>
   </div>
@@ -515,6 +523,15 @@
   /* Thumbnails on desktop only; phones step with the arrows and swipe. Width
      alone let a landscape phone (851 px wide) show them, so a fine pointer is
      required too. */
+  .lightbox-caption {
+    max-width: 60ch;
+    margin: 8px auto 0;
+    padding: 0 16px;
+    font-size: 13px;
+    line-height: 1.45;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.82);
+  }
   .lightbox-thumbs {
     display: none;
   }

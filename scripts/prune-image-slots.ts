@@ -1,7 +1,14 @@
 /**
- * Top-5-per-ID image pruning + renumbering.
+ * Top-5-per-ID image pruning + renumbering (a one-off convention, NOT a gate).
  *
- * Enforces a hard "max 5 base image slots per gallery ID" cap across
+ * Rule since 2026-11-09: one image library per place. A gallery may hold more than 5 slots
+ * wherever real photos exist, and supporting surfaces (annotation ring photos, site stories)
+ * reference gallery slots instead of keeping separate pools. Nothing validates a 5-slot cap.
+ * Do NOT run the default mode on a gallery that has grown past 5: it would drop real photos
+ * (use `--from-review` / `--id` to remove exact slots, or drop-gallery-slots.mjs).
+ *
+ * The default mode, kept for a one-off prune: enforces a "max 5 base image slots per gallery ID"
+ * cap across
  * every `static/images/<surface>/<id>/` directory. When an ID has > 5
  * base slot files (named `NN.{jpg,png}` with optional resampled
  * derivatives `NN.16x9.jpg`, `NN.4x3.jpg`, `NN.1x1.jpg`), the script:
@@ -147,7 +154,7 @@ async function main(): Promise<void> {
   }
 
   if (plans.length === 0) {
-    console.log('Nothing to do — every gallery is within the 5-slot cap.');
+    console.log('Nothing to do — every gallery has at most 5 slots.');
     await writeReport([]);
     return;
   }

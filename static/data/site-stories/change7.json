@@ -1,0 +1,40 @@
+{
+  "site": "change7",
+  "intro": "Chang'e 7 is China's robotic scout for the Moon's south pole, ahead of China's planned crewed landing. One launch carries an orbiter and a lander, and on the lander a rover and a small hopping probe designed to jump into a permanently shadowed crater, where sunlight never reaches and water ice may have lasted for billions of years. Its reported target is a ridge beside Shackleton crater, almost at the pole. The launch, due in late August 2026, was called off on 23 August: the mission \"does not meet launch conditions\", China said, giving no specific reason and no new date.",
+  "essay": "going-to-the-moon",
+  "chapters": [
+    {
+      "id": "plan",
+      "title": "The plan",
+      "subtitle": "An orbiter, a lander, a rover and a hopper",
+      "images": [
+        {
+          "src": "/images/moon-sites/change7/01.webp",
+          "caption": "Artist's view of Chang'e 7 at the south pole: the rover (left), the lander with its tall solar panel, and the small hopping probe (right). The orbiter stays above, mapping the polar region and supporting the craft on the ground; China's Queqiao-2 satellite relays their signals to Earth. CNSA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "The launch",
+      "subtitle": "A Long March 5 from Wenchang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/long-march-5/03.webp",
+          "caption": "A Long March 5 in its assembly building at Wenchang, on Hainan island. Chang'e 7 is to fly on this heavy rocket from pad 101 — the same type of rocket and the same pad that launched Chang'e 5 and Chang'e 6."
+        }
+      ]
+    },
+    {
+      "id": "lineage",
+      "title": "What came before",
+      "subtitle": "From the far side to the pole",
+      "images": [
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Yutu-2, the rover that Chang'e 4 put down on the far side of the Moon in January 2019 — the first soft landing there. Chang'e 7 is the next step: to the pole, and into the shadowed craters where the ice may be. After it, Chang'e 8 is planned to test building with the Moon's own materials, for the International Lunar Research Station that China is leading near the pole, with a basic station planned by about 2035."
+        }
+      ]
+    }
+  ]
+}

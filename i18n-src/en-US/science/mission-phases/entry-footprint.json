@@ -1,6 +1,7 @@
 {
   "title": "The landing footprint — where a capsule’s lift can take it",
   "intro_sentence": "A re-entering capsule is not aimed like a dart at one point — its lift gives it a whole reachable area on the ground, the \"footprint\", and the guidance computer picks a landing site inside it by deciding how to spend that lift.",
+  "seo_title": "Capsule Re-entry: The Landing Footprint",
   "narrative_101": [
     "Once a capsule commits to re-entry it cannot add energy — no engines, no go-around. But it is not helpless about WHERE it comes down. By rolling to point its lift up it stretches the glide and flies far; by rolling lift-down it dives and lands short; by banking left or right it moves sideways. The set of all the places it could reach, given its speed and its lift, is a patch on the ground shaped like a stretched teardrop — the landing footprint.",
     "Reaching the far edge of that footprint costs something: flying lift-up to go long means a shallower, gentler descent and a lower peak-g, while diving short means a steeper, harsher one. So there is a trade written into the footprint — the farther targets are the low-g ones, the near targets the high-g ones — and the guidance has to find a bank schedule that lands on the chosen spot without ever breaking the g or heating limits along the way.",

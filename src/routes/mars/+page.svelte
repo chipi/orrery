@@ -1,4 +1,7 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
+  import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   // /mars is now a thin shell over the shared SurfaceScene component
   // (ADR-072 / #283 Slice 2). Planet-specific config (texture URL,
@@ -33,6 +36,7 @@
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import type { Traverse } from '$types/surface-site';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
 
   // Hidden tour anchors emit data-audio-stage="mars-select-{audio}".
   // The audio-tour test (src/lib/audio-tour.test.ts) scans this file
@@ -234,7 +238,9 @@
 
 <svelte:head>
   <title>{m.mars_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_mars_desc())} />
 </svelte:head>
+<VisuallyHiddenH1 title={m.mars_page_title()} />
 
 <SurfacePreloadLinks planet="mars" />
 <DebugPanelRegistrar label="MARS" />
@@ -251,6 +257,8 @@
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
 />
+
+<EntityIndex hub="mars" title={m.entity_index_mars()} links={data.entityIndex} floating />
 
 <TourAnchors route="mars" anchors={MARS_TOUR_ANCHORS} />
 

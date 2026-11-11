@@ -16,6 +16,8 @@ type Msg = () => string;
 /** One Paraglide message per slot — each route binds its own `m.<id>_*` keys. */
 export interface StationRouteMessages {
   pageTitle: Msg;
+  /** Meta description (the landing-card line). */
+  metaDescription: Msg;
   loadFailed: Msg;
   a11yModulesList: Msg;
   canvasAria: Msg;

@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "impact-smudge",
+      "label": "Beresheet 衝突痕",
+      "label_short": "衝突痕",
+      "explain": "2019年4月11日、イスラエルの Beresheet が晴れの海に墜落した場所の暗い染み。北から浅い角度で、計画より約1000 m/s速く衝突した。染みの大きさは約10 mで、地表の明るさを約10%下げている。"
+    }
+  ]
 }

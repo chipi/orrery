@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Tianwen-1 लैंडर",
+      "label_short": "लैंडर",
+      "explain": "Tianwen-1 लैंडर, जो उसके अवतरण इंजनों द्वारा धूल में बनाए गए पैटर्न के केंद्र में है। Zhurong रोवर 14 मई 2021 को उतरने के बाद इससे उतरकर चला गया।"
+    }
+  ]
+}

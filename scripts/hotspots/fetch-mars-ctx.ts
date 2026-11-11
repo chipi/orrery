@@ -1,8 +1,14 @@
 import { existsSync, readFileSync, promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
+import gdal from 'gdal-async';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
-import { ensureCtxMosaicTile, tileNameForLatLon, tileUrlForName } from './ctx-mosaic.ts';
+import {
+  ensureCtxMosaicTile,
+  tileCentresForWindow,
+  tileNameForLatLon,
+  tileUrlForName,
+} from './ctx-mosaic.ts';
 
 /**
  * Mars Tier 2a (regional CTX layer) fetch orchestrator.
@@ -41,6 +47,7 @@ interface SurfaceHotspotsSidecar {
     {
       hotspot_tier_max?: number;
       hotspot_tier2_regional_source?: string;
+      hotspot_tier2_ctx_shift_m?: { north: number; east: number };
       location_uncertainty_m?: number;
     }
   >;
@@ -71,7 +78,11 @@ function gcMetres(a: [number, number], b: [number, number]): number {
  * of just the landing zone at one end. Falls back to the landing coordinate
  * when the rover has no traverse file.
  */
-function cropCentre(roverId: string, lat: number, lon: number): { lat: number; lon: number } {
+export function cropCentre(
+  roverId: string,
+  lat: number,
+  lon: number,
+): { lat: number; lon: number } {
   const p = path.join(TRAVERSE_DIR, `${roverId}.json`);
   if (!existsSync(p)) return { lat, lon };
   const tr = JSON.parse(readFileSync(p, 'utf8')) as { points?: [number, number][] };
@@ -104,7 +115,11 @@ const MAX_OUTPUT_PX = 4096;
  * drive spans ~26 km, past the 15.4 km default. Never smaller than the
  * default; rounded up to 1 024 m. Non-rovers keep the default.
  */
-function cropPxFor(roverId: string, centre: { lat: number; lon: number }, mPerPx = 5): number {
+export function cropPxFor(
+  roverId: string,
+  centre: { lat: number; lon: number },
+  mPerPx = 5,
+): number {
   const p = path.join(TRAVERSE_DIR, `${roverId}.json`);
   if (!existsSync(p)) return BASE_CROP_PX;
   const pts = (JSON.parse(readFileSync(p, 'utf8')) as { points?: [number, number][] }).points;
@@ -119,6 +134,36 @@ function cropPxFor(roverId: string, centre: { lat: number; lon: number }, mPerPx
   }
   const groundM = Math.ceil((2 * half * 1.15) / 1024) * 1024;
   return Math.max(BASE_CROP_PX, Math.ceil(groundM / mPerPx));
+}
+
+/**
+ * The Murray Lab tiles are Equirectangular with the standard parallel at 0:
+ * a pixel is 5 m north-south everywhere but only 5 x cos(lat) m east-west, so
+ * a square crop of the raster is stretched wide by 1 / cos(lat) (5 % at
+ * Jezero, 9 % at Zhurong, 49 % at Viking 2) while the scene draws the patch
+ * as a square at 5 m/px. To get square ground pixels, cut a window
+ * 1 / cos(lat) times wider than the output and squeeze it back to cropPx.
+ */
+export function eastWestSourcePx(cropPx: number, latDeg: number): number {
+  return Math.ceil(cropPx / Math.cos((latDeg * Math.PI) / 180));
+}
+
+/**
+ * Where to cut the CTX so it lines up with the HiRISE detail patch drawn at the
+ * site. The detail patch's ground sits `hotspot_tier2_ctx_shift_m` metres
+ * north / east of the site point in the CTX mosaic's own georeference (feature
+ * matched), so the window is cut that much north / east of the nominal centre:
+ * the CTX is then drawn shifted onto the patch and the site point stays the
+ * published or measured coordinate.
+ */
+export function ctxShiftedCentre(
+  centre: { lat: number; lon: number },
+  shift?: { north: number; east: number },
+): { lat: number; lon: number } {
+  if (!shift) return centre;
+  const mPerDeg = (Math.PI / 180) * MARS_RADIUS_M;
+  const lat = centre.lat + shift.north / mPerDeg;
+  return { lat, lon: centre.lon + shift.east / (mPerDeg * Math.cos((lat * Math.PI) / 180)) };
 }
 
 export interface MarsCtxFetchResult {
@@ -212,13 +257,20 @@ export async function fetchMarsCtxHotspots(
 }
 
 async function fetchOneCtx(
-  hotspot: { id: string; hotspot_tier2_regional_source?: string },
+  hotspot: {
+    id: string;
+    hotspot_tier2_regional_source?: string;
+    hotspot_tier2_ctx_shift_m?: { north: number; east: number };
+  },
   site: Required<MarsSite>,
   input: FetchMarsCtxHotspotsInput,
 ): Promise<MarsCtxFetchResult | null> {
   // #360: centre the regional CTX on the rover's traverse midpoint (not the
   // landing site) so the whole drive fits in the 15.4 km context patch.
-  const centre = cropCentre(hotspot.id, site.lat, site.lon);
+  const centre = ctxShiftedCentre(
+    cropCentre(hotspot.id, site.lat, site.lon),
+    hotspot.hotspot_tier2_ctx_shift_m,
+  );
   const tileName = tileNameForLatLon(centre.lat, centre.lon);
   const sourceUrl = tileUrlForName(tileName);
   const outputPath = `static${hotspot.hotspot_tier2_regional_source}`;
@@ -226,18 +278,58 @@ async function fetchOneCtx(
     console.log(`  · ${hotspot.id} dry-run → tile ${tileName} → ${outputPath}`);
     return null;
   }
-  const localTilePath = await ensureCtxMosaicTile(centre.lat, centre.lon);
   const cropPx = cropPxFor(hotspot.id, centre);
+  const srcPx = eastWestSourcePx(cropPx, centre.lat);
+  // Tile grid is 4 degrees; the tile raster is 5 m per pixel of arc at the equator.
+  const mPerDeg = (Math.PI / 180) * 3396190;
+  const tiles = tileCentresForWindow(
+    centre.lat,
+    centre.lon,
+    (cropPx * 5) / 2 / mPerDeg,
+    (srcPx * 5) / 2 / mPerDeg,
+  );
+  const tilePaths: string[] = [];
+  for (const t of tiles) tilePaths.push(await ensureCtxMosaicTile(t.lat, t.lon));
+  let localTilePath = tilePaths[0];
+  if (tilePaths.length > 1) {
+    // Same global grid and CRS, so a VRT needs no reprojection.
+    localTilePath = `/vsimem/ctx-${hotspot.id}.vrt`;
+    const vrt = await gdal.buildVRTAsync(localTilePath, tilePaths, [
+      '-srcnodata',
+      '0',
+      '-vrtnodata',
+      '0',
+    ]);
+    vrt.close();
+  }
   try {
+    const widePath = `${outputPath}.wide.tmp.jpg`;
     const crop = await cropRemoteRasterToLatLon({
       localRasterPath: localTilePath,
       targetLat: centre.lat,
       targetLon: centre.lon,
-      outputPath,
-      cropSize: cropPx,
-      jpegQuality: 88,
-      requireCentered: cropPx > BASE_CROP_PX,
+      outputPath: widePath,
+      cropSize: srcPx,
+      cropHeight: cropPx,
+      jpegQuality: 95,
+      requireCentered: true,
     });
+    const wide = await fs.readFile(widePath);
+    await fs.rm(widePath);
+    const wideMeta = await sharp(wide).metadata();
+    await fs.writeFile(
+      outputPath,
+      await sharp(wide)
+        .extract({
+          left: 0,
+          top: 0,
+          width: wideMeta.width ?? srcPx,
+          height: cropPx,
+        })
+        .resize(cropPx, cropPx, { fit: 'fill', kernel: 'lanczos3' })
+        .jpeg({ quality: 88 })
+        .toBuffer(),
+    );
     // Full-resolution crop → masters/ (Git LFS), like the route tiles.
     const full = await fs.readFile(outputPath);
     const masterPath = path.join(

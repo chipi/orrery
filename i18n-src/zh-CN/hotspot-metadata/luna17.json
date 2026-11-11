@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Luna 17 着陆器",
+      "label_short": "Luna 17 着陆器",
+      "explain": "1970年11月17日把 Lunokhod 1 送到雨海的 Luna 17 着陆器。下降发动机使周围地面变亮，因此环绕着陆器的漫游车辙迹格外醒目。"
+    },
+    {
+      "id": "blast",
+      "label": "Luna 17 喷流区",
+      "label_short": "喷流区",
+      "explain": "LROC 指出，Luna 17 周围的地表被其下降发动机的尾焰照亮，因此着陆器附近的漫游车辙迹格外醒目。"
+    },
+    {
+      "id": "tracks",
+      "label": "Lunokhod 1 辙迹",
+      "label_short": "漫游车辙迹",
+      "explain": "LROC 指出，Lunokhod 1 的辙迹始于着陆器东侧的坡道，并环绕着陆器一周。Lunokhod 1 后来行驶了 10.5 km（虚线轮廓标出的是一片区域）。"
+    }
+  ]
+}

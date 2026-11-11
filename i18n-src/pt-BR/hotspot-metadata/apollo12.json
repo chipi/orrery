@@ -1,1 +1,70 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Estágio de descida do LM (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "A metade inferior do módulo lunar Intrepid da Apollo 12, deixada na Lua após o pouso de novembro de 1969, perto da sonda Surveyor 3, que chegara antes."
+    },
+    {
+      "id": "alsep",
+      "label": "Estação central do ALSEP",
+      "label_short": "ALSEP",
+      "explain": "O pacote de experimentos da superfície lunar da Apollo 12 (ALSEP), instalado em 19 de novembro de 1969. Seus instrumentos incluíam um sismômetro passivo, um magnetômetro e um espectrômetro de vento solar, todos ligados por cabo à estação central."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Módulo de pouso Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Módulo de pouso robótico da NASA que pousou em 20 de abril de 1967 na encosta interna de uma pequena cratera. A Apollo 12 pousou a cerca de 160 m dele em novembro de 1969, e sua tripulação retirou cerca de 10 kg de peças, incluindo a câmera de TV, em 20 de novembro."
+    },
+    {
+      "id": "flag",
+      "label": "Bandeira dos EUA (posição LROC)",
+      "label_short": "Bandeira EUA",
+      "explain": "O ponto que a camada de equipamentos da Apollo 12 do LROC indica para a bandeira, a cerca de 16 m ao norte do módulo lunar. A bandeira em si é pequena demais para ser vista nesta resolução."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismômetro passivo (LROC)",
+      "label_short": "Sismômetro",
+      "explain": "O LROC lista o sismômetro passivo da Apollo 12 como um ponto próprio, a cerca de 3 m da estação central (o anel se sobrepõe ao anel do ALSEP)."
+    },
+    {
+      "id": "surveyor-crater",
+      "label": "Cratera Surveyor",
+      "label_short": "Cratera Surveyor",
+      "explain": "A cratera que o LROC chama de Surveyor em seu mapa da Apollo 12. O Surveyor 3 está dentro dela, e o módulo lunar pousou a cerca de 160 m de distância."
+    },
+    {
+      "id": "head",
+      "label": "Cratera Head",
+      "label_short": "Cratera Head",
+      "explain": "Uma grande cratera a oeste do módulo lunar que o LROC chama de Head em seu mapa da Apollo 12."
+    },
+    {
+      "id": "bench",
+      "label": "Cratera Bench",
+      "label_short": "Cratera Bench",
+      "explain": "Uma cratera a sudoeste do módulo lunar que o LROC chama de Bench em seu mapa da Apollo 12."
+    },
+    {
+      "id": "block",
+      "label": "Cratera Block",
+      "label_short": "Cratera Block",
+      "explain": "Uma pequena cratera a leste do módulo lunar que o LROC chama de Block em seu mapa da Apollo 12."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Trilhas até o ALSEP",
+      "label_short": "Trilhas ALSEP",
+      "explain": "Trilhas escuras na imagem ligam a área do módulo lunar ao pacote de instrumentos a noroeste dele. A camada de percurso da primeira caminhada lunar do LROC segue este corredor (o contorno tracejado marca a área)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona do jato do LM",
+      "label_short": "Zona do jato",
+      "explain": "O LROC observa que o motor de descida clareou o solo ao redor de todos os locais de pouso. Na Apollo 12 a zona brilhante se estende em direção à cratera Surveyor, então o contorno é apenas uma referência aproximada."
+    }
+  ]
+}

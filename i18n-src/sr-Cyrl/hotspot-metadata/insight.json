@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Лендер InSight",
+      "label_short": "InSight",
+      "explain": "Лендер InSight агенције NASA, широк око 6 m са раширеним соларним панелима. Његови ракетни мотори за спуштање разнели су тло око њега и оставили тамну мрљу."
+    }
+  ]
+}

@@ -194,6 +194,19 @@ export interface SurfaceSite {
    */
   hotspot_tier2_force_product_id?: string;
   /**
+   * Mars HiRISE detail patch: how far north / east (metres) of its nominal
+   * georeference the patch's ground really is in the Murray CTX frame the
+   * scene draws beneath it (feature-matched). The site point is the shifted
+   * position; fetch-mars.ts cuts the crop at site minus this shift.
+   */
+  hotspot_tier2_frame_shift_m?: { north: number; east: number };
+  /**
+   * Mars: the HiRISE detail patch's ground sits this far north / east of the
+   * site point in the CTX mosaic's georeference; fetch-mars-ctx.ts cuts the CTX
+   * that far off-centre so it registers with the patch (site point unchanged).
+   */
+  hotspot_tier2_ctx_shift_m?: { north: number; east: number };
+  /**
    * Path to the equirectangular Tier 3 ground-view panorama for
    * this site (V2 / #118). PD-NASA: Apollo Lunar Surface Journal
    * panoramas for Moon, NASA/JPL-Caltech/MSSS Mastcam-Z for Mars.
@@ -244,15 +257,19 @@ export interface PanoramaMetadata {
    */
   real_extent_pct_vertical?: number;
   /**
-   * Declared synthetic-region pitch ranges. When the camera's pitch
-   * falls inside one of these, the renderer overlays a
+   * Declared synthetic regions. When the camera's pitch (and, if the region
+   * declares one, its yaw) falls inside one of these, the renderer overlays a
    * "this region was not photographed" microcopy. Pitch in degrees,
-   * +90 = zenith, -90 = nadir, 0 = horizon.
+   * +90 = zenith, -90 = nadir, 0 = horizon. Yaw in the `?yaw=` convention
+   * (0–360); a range with min > max wraps through 0 (#289: the wedge a
+   * partial panorama never photographed is yaw 270 → 270 − coverage).
    */
   synthetic_regions?: Array<{
     pitch_min_deg: number;
     pitch_max_deg: number;
-    kind: 'synthetic_sky' | 'synthetic_nadir' | 'no_data';
+    azimuth_min_deg?: number;
+    azimuth_max_deg?: number;
+    kind: 'synthetic_sky' | 'synthetic_nadir' | 'no_data' | 'unphotographed';
   }>;
   /**
    * The panorama's 0° yaw direction in real-world terms (e.g.
@@ -312,9 +329,47 @@ export interface PanoramaSetEntry {
 export interface HotspotAnnotation {
   id: string;
   label: string;
+  /** Shorter name for narrow screens ("PSEP"); the full label stays in the sheet and list.
+   *  Translated through the hotspot-metadata overlay like `label`. */
+  label_short?: string;
   lat_offset_m: number;
   lon_offset_m: number;
   gallery_image?: string;
+  /** One or two sentences shown in the tap-to-explain popover and the
+   *  "What you're seeing" list. Translated through the hotspot-metadata overlay. */
+  explain?: string;
+  /** Authoritative pages that place the object in this image (LROC, NASA NSSDCA …).
+   *  Required whenever `explain` is set; labels are proper names, not translated. */
+  source?: HotspotAnnotationSource[];
+  /** How the position was established, for reviewers (not shown to readers). */
+  confidence?: string;
+  /** Month a time-sensitive claim in `explain` was last checked (YYYY-MM). */
+  as_of?: string;
+  /** Photo shown in the popover; joined from moon-annotation-photos.json at load. */
+  photo?: HotspotAnnotationPhoto;
+  /** An area (blast zone, footpaths, a crater interior), not a point: drawn as a dashed
+   *  circle of this ground radius in metres at true size, centred on the offsets. */
+  area_radius_m?: number;
+  /** 'small' draws a smaller ring (craters), so it does not read as hardware. */
+  ring_size?: 'small';
+  /** The object is not visible in the image: the position comes from LROC's coordinates
+   *  only, and the popover says so. */
+  position_lroc_only?: boolean;
+}
+
+export interface HotspotAnnotationPhoto {
+  /** Full image (opens in the lightbox). */
+  image: string;
+  /** 320 px rung for the popover. */
+  thumb: string;
+  nasa_id?: string;
+  /** Alt text in the reader's language; the annotation label stands in when absent. */
+  alt?: string;
+}
+
+export interface HotspotAnnotationSource {
+  label: string;
+  url: string;
 }
 
 /**

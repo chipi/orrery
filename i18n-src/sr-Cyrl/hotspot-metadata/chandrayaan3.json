@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Лендер Vikram",
+      "label_short": "Vikram",
+      "explain": "Лендер Vikram мисије Chandrayaan-3, који је слетео 23. августа 2023. око 600 km од јужног пола. LRO га је снимио четири дана касније; светли ореол је реголит који је узбуркао млаз мотора."
+    }
+  ],
   "panorama_caption": "тачка Шив Шакти — прва панорама са јужног пола Месеца. Сенка лендера Vikram у првом плану; ровер Pragyan спуштен је на реголит убрзо после овог снимка.",
   "compass_zero_direction": "оса +X камере лендера",
   "panorama_annotations": [

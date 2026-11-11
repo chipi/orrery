@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "Здесь 6 августа 2012 года совершил посадку Curiosity, а команда назвала это место Bradbury Landing. На этом снимке HiRISE от 17 августа 2012 года марсоход — пара ярких точек на тёмном грунте, расчищенном ракетами, которые его опускали. Марсоход давно уехал отсюда."
+    }
+  ],
   "panorama_caption": "Curiosity в канале Gediz Vallis — круговая панорама ровера на 4220-й сол, после бурения образца Mammoth Lakes, его 41-го на Марсе. Слева манипулятор, только что закончивший бурение; справа палуба ровера; вверху настоящее марсианское небо; в центре спускается канал Gediz Vallis — первое место, где на Марсе нашли кристаллы чистой серы.",
   "compass_zero_direction": "перед ровера",
   "panorama_annotations": [

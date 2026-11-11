@@ -19,53 +19,95 @@
     scaleNote?: string;
     /** /science page that explains the imagery layers (Moon / Mars only). */
     howItWorksHref?: string;
+    /** Flat true-scale ground view only: one line under the header, kept visible when collapsed. */
+    groundNote?: string;
   }
-  let { tierContext, scaleNote, howItWorksHref }: Props = $props();
+  let { tierContext, scaleNote, howItWorksHref, groundNote }: Props = $props();
+
+  // Phone starts collapsed, desktop open; only a choice the viewer made is remembered.
+  const STORE_KEY = 'orrery.surface.tierCardExpanded';
+  function initialExpanded(): boolean {
+    try {
+      const saved = localStorage.getItem(STORE_KEY);
+      if (saved === '1') return true;
+      if (saved === '0') return false;
+    } catch {
+      /* storage blocked: fall through to the default */
+    }
+    const phone =
+      typeof window !== 'undefined' &&
+      !!window.matchMedia?.('(hover: none), (pointer: coarse)').matches;
+    return !phone;
+  }
+  let expanded = $state(initialExpanded());
+  function toggle() {
+    expanded = !expanded;
+    try {
+      localStorage.setItem(STORE_KEY, expanded ? '1' : '0');
+    } catch {
+      /* storage blocked: state lives for this view only */
+    }
+  }
 </script>
 
-<div class="tier-context-card" aria-live="polite">
+<div class="tier-context-card" class:tcc-collapsed={!expanded} aria-live="polite">
   <div class="tcc-head">
     <span class="tcc-site">{tierContext.siteName}</span>
     <span class="tcc-chip" style="color: {tierContext.nationColor};">{tierContext.nation}</span>
+    <button
+      type="button"
+      class="tcc-toggle"
+      aria-expanded={expanded}
+      aria-controls="tcc-body"
+      aria-label={expanded ? m.surface_card_collapse_aria() : m.surface_card_expand_aria()}
+      onclick={toggle}
+    >
+      <span aria-hidden="true">{expanded ? '▾' : '▸'}</span>
+    </button>
   </div>
-  {#if tierContext.missionContext}
-    <div class="tcc-mission">{tierContext.missionContext}</div>
+  {#if groundNote}
+    <div class="tcc-ground" data-testid="tcc-ground-note">{groundNote}</div>
   {/if}
-  {#each tierContext.layers as layer, i (layer.layerLabel)}
-    <div class="tcc-layer-block" class:tcc-layer-block-next={i > 0}>
-      <div class="tcc-layer">{layer.layerLabel} · {layer.resolutionText}</div>
-      <div class="tcc-source">{layer.sourceTitle}</div>
-      <div class="tcc-author">{layer.sourceAuthor}</div>
-      <div class="tcc-footer">
-        <span class="tcc-license">{layer.licenseShort}</span>
-        {#if layer.uncertaintyM != null}
-          <span class="tcc-uncertainty">±{m.unit_m_value({ value: layer.uncertaintyM })}</span>
-        {:else if i === tierContext.layers.length - 1 && tierContext.uncertaintyM != null}
-          <span class="tcc-uncertainty">±{tierContext.uncertaintyM} m</span>
-        {/if}
-        {#if layer.sourceUrl}
-          <a
-            class="tcc-link"
-            href={layer.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer external"
-            title={m.source_open_new_tab_title()}>{m.link_source()}</a
-          >
-        {/if}
+  <div id="tcc-body" hidden={!expanded}>
+    {#if tierContext.missionContext}
+      <div class="tcc-mission">{tierContext.missionContext}</div>
+    {/if}
+    {#each tierContext.layers as layer, i (layer.layerLabel)}
+      <div class="tcc-layer-block" class:tcc-layer-block-next={i > 0}>
+        <div class="tcc-layer">{layer.layerLabel} · {layer.resolutionText}</div>
+        <div class="tcc-source">{layer.sourceTitle}</div>
+        <div class="tcc-author">{layer.sourceAuthor}</div>
+        <div class="tcc-footer">
+          <span class="tcc-license">{layer.licenseShort}</span>
+          {#if layer.uncertaintyM != null}
+            <span class="tcc-uncertainty">±{m.unit_m_value({ value: layer.uncertaintyM })}</span>
+          {:else if i === tierContext.layers.length - 1 && tierContext.uncertaintyM != null}
+            <span class="tcc-uncertainty">±{tierContext.uncertaintyM} m</span>
+          {/if}
+          {#if layer.sourceUrl}
+            <a
+              class="tcc-link"
+              href={layer.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer external"
+              title={m.source_open_new_tab_title()}>{m.link_source()}</a
+            >
+          {/if}
+        </div>
       </div>
-    </div>
-  {/each}
-  {#if tierContext.locationUnconfirmed}
-    <div class="tcc-scale-note" data-testid="tcc-location-unconfirmed">
-      {m.surface_location_unconfirmed()}
-    </div>
-  {/if}
-  {#if scaleNote}
-    <div class="tcc-scale-note">{scaleNote}</div>
-  {/if}
-  {#if howItWorksHref}
-    <a class="tcc-how" href={howItWorksHref}>{m.surface_how_this_works()}</a>
-  {/if}
+    {/each}
+    {#if tierContext.locationUnconfirmed}
+      <div class="tcc-scale-note" data-testid="tcc-location-unconfirmed">
+        {m.surface_location_unconfirmed()}
+      </div>
+    {/if}
+    {#if scaleNote}
+      <div class="tcc-scale-note">{scaleNote}</div>
+    {/if}
+    {#if howItWorksHref}
+      <a class="tcc-how" href={howItWorksHref}>{m.surface_how_this_works()}</a>
+    {/if}
+  </div>
 </div>
 
 <style>
@@ -96,6 +138,45 @@
     align-items: baseline;
     gap: 12px;
     margin-bottom: 4px;
+  }
+  .tcc-collapsed .tcc-head {
+    margin-bottom: 0;
+  }
+  .tcc-ground {
+    margin-bottom: 4px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .tcc-collapsed .tcc-ground {
+    margin-bottom: 0;
+  }
+  .tcc-toggle {
+    flex: none;
+    min-width: 44px;
+    min-height: 44px;
+    margin: -14px -10px -14px 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .tcc-toggle:hover {
+    color: #889fe7;
+    background: rgba(136, 159, 231, 0.1);
+  }
+  .tcc-toggle:focus-visible {
+    color: #889fe7;
+    background: rgba(136, 159, 231, 0.1);
+    outline: 2px solid #889fe7;
+    outline-offset: -2px;
+  }
+  .tcc-head > .tcc-chip {
+    margin-left: auto;
   }
   .tcc-site {
     font-size: 13px;
@@ -184,6 +265,20 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  /* Phone: the bottom bar (above the tab row) sits under the card; in the flat
+     ground view the bar is lower and has no tab row. */
+  @media (hover: none), (pointer: coarse) {
+    .tier-context-card {
+      bottom: var(--card-bottom, calc(104px + env(safe-area-inset-bottom, 0px)));
+    }
+    :global(html[data-surface-flat]) .tier-context-card {
+      bottom: calc(54px + env(safe-area-inset-bottom, 0px));
+    }
+    /* the pixel-limit chip stacks on the flat view's bottom bar; the card rides above it */
+    :global(html[data-surface-flat][data-flat-limit]) .tier-context-card {
+      bottom: calc(100px + env(safe-area-inset-bottom, 0px));
     }
   }
   /* Narrow window with a mouse: the detail panel (z 30) spans the window,

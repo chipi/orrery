@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # deploy_stack.sh — bring up the orrery stack on the VPS (run as deploy@ from
-# /srv/orrery AFTER the workflow's `git fetch + reset --hard origin/main`, so
-# this file is the fresh checkout). Extracted from deploy-prod.yml's inline ssh
+# /srv/orrery AFTER the workflow's `git fetch + reset --hard` (origin/main, or the
+# release_tag commit on a rollback), so this file is the fresh checkout). Extracted
+# from deploy-prod.yml's inline ssh
 # (Fable-5: the gated whole-stack bring-up + state bootstrap outgrew a safely
 # escaped one-liner). Idempotent; safe to re-run.
 #

@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "مركبة الهبوط Tianwen-1",
+      "label_short": "مركبة الهبوط",
+      "explain": "مركبة الهبوط Tianwen-1 في مركز النمط الذي نفخته محركات هبوطها في الغبار. غادرتها المركبة الجوّالة Zhurong بعد هبوطها في 14 مايو 2021."
+    }
+  ]
+}

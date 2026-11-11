@@ -84,6 +84,49 @@ describe('pickSiteAt', () => {
     padsOn = true;
     expect(picking.pickSiteAt(CX, CY)).toBe('apollo-11');
   });
+
+  it('a marker whose visible stand-in has faded out catches no clicks', () => {
+    let fade = 0;
+    const { ctx } = makeCtx({
+      markers: [{ group: target({ siteId: 'perseverance' }), siteId: 'perseverance' }],
+      getSiteFade: () => fade,
+    });
+    const picking = createSurfacePicking(ctx);
+    expect(picking.pickSiteAt(CX, CY)).toBeNull();
+    fade = 1;
+    expect(picking.pickSiteAt(CX, CY)).toBe('perseverance');
+  });
+
+  it('hidden or fully transparent parts of a marker are no target (raycasting ignores both)', () => {
+    const group = target({ siteId: 'a' });
+    const mesh = group.children[0] as THREE.Mesh;
+    const { ctx } = makeCtx({ markers: [{ group, siteId: 'a' }] });
+    const picking = createSurfacePicking(ctx);
+    mesh.visible = false;
+    expect(picking.pickSiteAt(CX, CY)).toBeNull();
+    mesh.visible = true;
+    const mat = mesh.material as THREE.MeshBasicMaterial;
+    mat.transparent = true;
+    mat.opacity = 0;
+    expect(picking.pickSiteAt(CX, CY)).toBeNull();
+    mat.opacity = 1;
+    expect(picking.pickSiteAt(CX, CY)).toBe('a');
+  });
+
+  it("a marker's invisible hit sphere reaches a touch-sized spot, not the whole disc it covers", () => {
+    const group = new THREE.Group();
+    const sphere = new THREE.Mesh(
+      new THREE.SphereGeometry(3, 8, 8),
+      new THREE.MeshBasicMaterial({ visible: false }),
+    );
+    sphere.userData = { siteId: 'a' };
+    group.add(sphere);
+    group.updateMatrixWorld(true);
+    const { ctx } = makeCtx({ markers: [{ group, siteId: 'a' }] });
+    const picking = createSurfacePicking(ctx);
+    expect(picking.pickSiteAt(CX + 10, CY)).toBe('a');
+    expect(picking.pickSiteAt(CX + 45, CY)).toBeNull();
+  });
 });
 
 describe('pickMuseumAt / pickObservatoryAt', () => {

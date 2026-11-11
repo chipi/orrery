@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "Hier kwam Curiosity op 6 augustus 2012 aan de grond, een plek die het team Bradbury Landing noemde. Op dit HiRISE-beeld van 17 augustus 2012 is de rover het paar heldere stippen in de donkere grond die is schoongeblazen door de raketten die hem neerlieten. Hij is al lang weggereden."
+    }
+  ],
   "panorama_caption": "Curiosity in de geul van Gediz Vallis — het 360°-beeld van de rover op sol 4220, na het boren van het monster Mammoth Lakes, zijn 41e op Mars. Links de robotarm, net klaar met boren; rechts het roverdek; bovenin echte Marshemel; in het midden de afdalende geul van Gediz Vallis — de eerste plek waar ooit zuivere zwavelkristallen op Mars zijn gevonden.",
   "compass_zero_direction": "voorkant van de rover",
   "panorama_annotations": [

@@ -1,1 +1,70 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Daaltrap van de LM (Intrepid)",
+      "label_short": "LM Intrepid",
+      "explain": "De onderste helft van de maanlander Intrepid van Apollo 12, die na de landing van november 1969 op de Maan achterbleef, vlak bij de eerder geland sonde Surveyor 3."
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP-centraalstation",
+      "label_short": "ALSEP",
+      "explain": "Het wetenschappelijke instrumentenpakket voor het maanoppervlak van Apollo 12 (ALSEP), uitgezet op 19 november 1969. Tot de instrumenten behoorden een passieve seismometer, een magnetometer en een zonnewindspectrometer, allemaal met kabels verbonden met het centraalstation."
+    },
+    {
+      "id": "surveyor-3",
+      "label": "Lander Surveyor 3",
+      "label_short": "Surveyor 3",
+      "explain": "Robotische lander van NASA die op 20 april 1967 neerkwam op de binnenhelling van een kleine krater. Apollo 12 landde in november 1969 op ongeveer 160 m ervandaan, en de bemanning haalde op 20 november zo'n 10 kg aan onderdelen weg, waaronder de televisiecamera."
+    },
+    {
+      "id": "flag",
+      "label": "Amerikaanse vlag (LROC-positie)",
+      "label_short": "Amerikaanse vlag",
+      "explain": "Het punt dat de hardwarelaag van LROC voor Apollo 12 aan de vlag geeft, ongeveer 16 m ten noorden van de maanlander. De vlag zelf is te klein om op deze resolutie te zien."
+    },
+    {
+      "id": "seismometer",
+      "label": "Passieve seismometer (LROC)",
+      "label_short": "Seismometer",
+      "explain": "LROC vermeldt de passieve seismometer van Apollo 12 als een eigen punt, ongeveer 3 m van het centraalstation (de ring overlapt de ALSEP-ring)."
+    },
+    {
+      "id": "surveyor-crater",
+      "label": "Surveyor-krater",
+      "label_short": "Surveyor-krater",
+      "explain": "De krater die LROC op zijn Apollo 12-kaart Surveyor noemt. Surveyor 3 ligt erin, en de maanlander landde ongeveer 160 m verderop."
+    },
+    {
+      "id": "head",
+      "label": "Krater Head",
+      "label_short": "Krater Head",
+      "explain": "Een grote krater ten westen van de maanlander die LROC op zijn Apollo 12-kaart Head noemt."
+    },
+    {
+      "id": "bench",
+      "label": "Krater Bench",
+      "label_short": "Krater Bench",
+      "explain": "Een krater ten zuidwesten van de maanlander die LROC op zijn Apollo 12-kaart Bench noemt."
+    },
+    {
+      "id": "block",
+      "label": "Krater Block",
+      "label_short": "Krater Block",
+      "explain": "Een kleine krater ten oosten van de maanlander die LROC op zijn Apollo 12-kaart Block noemt."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Voetpaden naar het ALSEP",
+      "label_short": "ALSEP-voetpaden",
+      "explain": "Donkere sporen in het beeld verbinden de omgeving van de maanlander met het instrumentenpakket ten noordwesten ervan. LROC's laag met het traject van de eerste maanwandeling volgt deze corridor (de gestippelde omtrek markeert het gebied)."
+    },
+    {
+      "id": "blast",
+      "label": "Uitblaaszone van de LM",
+      "label_short": "Uitblaaszone",
+      "explain": "LROC zegt dat de daalmotor de grond rond elke landingsplaats heeft opgehelderd. Bij Apollo 12 is de lichte zone uitgerekt in de richting van de Surveyor-krater, dus de omtrek is slechts een ruwe richtlijn."
+    }
+  ]
+}

@@ -9,6 +9,7 @@ Companion to [ADR-058](../adr/ADR-058.md). Covers how to add a new mission's tra
 | Mission destination | Schema field | Generator script | Coordinate system |
 |---|---|---|---|
 | Moon | `flight.cislunar_profile.waypoints_km` | `scripts/cislunar/generate-hybrid-waypoints.ts` | ECI km |
+| Moon, Earth-orbit-raising missions (Chandrayaan-1/-3, SLIM) | `flight.cislunar_profile.waypoints_km`, built from `orbit_raising` / `lunar_orbits` / `waypoints_source` in the same block | `scripts/cislunar/generate-hybrid-waypoints.ts` (uses the tables when present) | ECI km |
 | Mars + outer-system | `flight.interplanetary_profile.waypoints_helio_au` | `scripts/cislunar/generate-helio-hybrid-waypoints.ts` | Heliocentric AU |
 
 Both ship at **`source_tier: tier_1_5_hybrid`** by default — analytic curve resampled to 100 waypoints with event-MET anchors pinned to slot indices. `tier_2_published` is reserved for direct NASA TND / ESA SPICE ingest (future slice).

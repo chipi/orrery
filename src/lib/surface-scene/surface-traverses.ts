@@ -94,9 +94,9 @@ export function daysBetween(startIso: string, endIso: string): number {
 }
 
 // ─── Sol colour ramp + sol ticks (#641) ─────────────────────────
-// Whole-mission ramp, sol 1 → last sol: teal → white → amber (sRGB).
+// Whole-mission ramp, sol 1 → last sol: blue → white → amber (sRGB).
 const SOL_RAMP: ReadonlyArray<readonly [number, number, number]> = [
-  [45, 212, 191],
+  [136, 159, 231],
   [226, 240, 236],
   [251, 191, 36],
 ];

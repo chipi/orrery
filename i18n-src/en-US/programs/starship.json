@@ -1,6 +1,8 @@
 {
   "name": "Starship",
   "tagline": "The biggest rocket ever built, designed to be fully and rapidly reusable — the vehicle SpaceX means to carry people to Mars.",
+  "seo_title": "SpaceX Starship: The Biggest Rocket Ever Built",
+  "seo_description": "Starship and Super Heavy: a rocket over 120 m tall, designed to be fully reusable and meant to carry people to the Moon and Mars. Specs, flights, Saturn V.",
   "the_land": [
     { "type": "prose", "md": "Every rocket that has ever launched people has thrown most of itself away. Even Falcon 9, which recovers its first stage, discards the upper stage on every flight. Starship is an attempt to end that entirely — a launch system where both stages fly back, land, and are refuelled and reflown, like an aircraft rather than an artillery shell. It is also simply enormous: taller than the Saturn V, with more thrust than any rocket in history, built not to fly a mission or two but to fly constantly, cheaply, for decades." },
     { "type": "prose", "md": "The reason for the size and the reuse is a single destination. SpaceX's stated purpose since its founding has been to make humanity multiplanetary, and the arithmetic of Mars is brutal: sending enough people and cargo to build a settlement there requires lifting more mass, more often, and far more cheaply than any expendable rocket could ever manage. Starship is the answer worked backwards from that goal — the vehicle you would need if you were serious about not just visiting Mars but living there." }

@@ -10,12 +10,14 @@
 -->
 <script lang="ts">
   import 'katex/dist/katex.min.css';
+  import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
   import { untrack } from 'svelte';
   import { browser } from '$app/environment';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { t } from '$lib/lab/t';
+  import { landing_card_lab_desc } from '$lib/paraglide/messages';
   import { GOALS } from '$lib/physics/registry/goals';
   import Notebook from '$lib/lab/Notebook.svelte';
   import Canvas from '$lib/lab/Canvas.svelte';
@@ -92,6 +94,7 @@
 
 <svelte:head>
   <title>{t('lab.ui.doc-title')}</title>
+  <meta name="description" content={metaDescription(landing_card_lab_desc())} />
 </svelte:head>
 
 <div class="lab">

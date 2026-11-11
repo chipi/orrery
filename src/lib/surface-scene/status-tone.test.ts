@@ -12,6 +12,13 @@ describe('statusTone', () => {
     expect(statusTone('FLOWN').label).toBe('FLOWN');
   });
 
+  it('PLANNED is drawn dashed, every other status solid', () => {
+    expect(statusTone('PLANNED').outline).toBe('dashed');
+    for (const s of ['ACTIVE', 'CRASHED', 'LOST', 'ENDED', 'FLOWN']) {
+      expect(statusTone(s).outline).toBe('solid');
+    }
+  });
+
   it('a launch pad that ended service reads RETIRED', () => {
     expect(statusTone('ENDED', 'surface', 'launch-pad').label).toBe('RETIRED');
     expect(statusTone('ACTIVE', 'surface', 'launch-pad').label).toBe('ACTIVE');

@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "InSight 着陸機",
+      "label_short": "InSight 着陸機",
+      "explain": "NASA の InSight 着陸機。太陽電池パネルを広げた幅は約6 m。降下用ロケットが周囲の地面を吹き飛ばし、暗い領域ができた。"
+    }
+  ]
+}

@@ -1,1 +1,46 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Antares)",
+      "label_short": "LM Antares",
+      "explain": "La metà inferiore del modulo lunare Antares dell'Apollo 14, rimasta sulla Luna dopo l'allunaggio del febbraio 1971."
+    },
+    {
+      "id": "alsep",
+      "label": "Stazione centrale ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Il pacchetto di esperimenti sulla superficie lunare dell'Apollo 14, installato a ovest del modulo lunare durante la prima passeggiata lunare nel febbraio 1971. L'immagine di LROC lo mostra con dei sentieri che si allontanano da esso."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismometro passivo (LROC)",
+      "label_short": "Sismometro",
+      "explain": "LROC elenca il sismometro passivo dell'Apollo 14 come punto a sé, a circa 3 m dalla stazione centrale (l'anello si sovrappone a quello dell'ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Bandiera USA (posizione LROC)",
+      "label_short": "Bandiera USA",
+      "explain": "Il punto che il livello hardware dell'Apollo 14 di LROC indica per la bandiera, a circa 10 m a nord-ovest del modulo lunare. La bandiera in sé è troppo piccola per essere vista."
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Crateri Triplet",
+      "label_short": "Crateri Triplet",
+      "explain": "Il gruppo di crateri che LROC chiama Triplet e Center Crater sulla sua mappa dell'Apollo 14, a circa 210 m a sud-est del modulo lunare."
+    },
+    {
+      "id": "footpaths",
+      "label": "Sentieri attorno all'ALSEP",
+      "label_short": "Sentieri ALSEP",
+      "explain": "L'immagine dell'Apollo 14 di LROC mostra i sentieri degli astronauti come linee di suolo rimosso; convergono sull'ALSEP e corrono a est verso il modulo lunare (il contorno tratteggiato indica l'area)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona del getto del LM",
+      "label_short": "Zona del getto",
+      "explain": "LROC osserva che il motore di discesa ha scavato un alone chiaro attorno ai siti di allunaggio dell'Apollo, compreso l'Apollo 14. Qui è una debole zona chiara attorno al modulo lunare."
+    }
+  ]
+}

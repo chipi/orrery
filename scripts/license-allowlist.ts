@@ -242,6 +242,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'LROC-EDU',
+    display: 'LROC website images (copyrighted; educational use permitted with credit)',
+    url: 'https://lroc.im-ldi.com/about/terms',
+    rationale:
+      'The LROC PDS archive is public domain, but images on the LROC website (Featured Images, Featured Sites, curated products, downloads, non-PDS interfaces) are copyrighted. The LROC terms encourage and permit educational use by schools, museums and other organisations without prior permission when cited “NASA/GSFC/Arizona State University”; commercial use needs permission. Orrery is a non-commercial open-source educational site. Terms verified 2026-11-09.',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'JAXA-OPEN',
     display: 'JAXA imagery (open distribution)',
     url: 'https://global.jaxa.jp/policy.html',
@@ -366,12 +375,12 @@ export function isAllowedLicense(licenseShort: string): boolean {
  * to fail closed or look up a waiver.
  */
 export function normaliseLicenseShortName(raw: string): string {
-  const cleaned = raw
-    .replace(/<[^>]*>/g, '')
-    .replace(/[<>]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .toUpperCase();
+  let untagged = raw;
+  for (let prev = ''; prev !== untagged;) {
+    prev = untagged;
+    untagged = untagged.replace(/<[^>]*>/g, '');
+  }
+  const cleaned = untagged.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim().toUpperCase();
   if (!cleaned) return raw;
   switch (cleaned) {
     case 'PUBLIC DOMAIN':

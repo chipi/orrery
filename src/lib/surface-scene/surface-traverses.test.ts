@@ -14,10 +14,10 @@ import {
 
 describe('sol ramp + ticks (#641)', () => {
   it('ramps teal → white → amber and clamps outside [0, 1]', () => {
-    expect(solRampColor(0).getHexString(THREE.SRGBColorSpace)).toBe('2dd4bf');
+    expect(solRampColor(0).getHexString(THREE.SRGBColorSpace)).toBe('889fe7');
     expect(solRampColor(1).getHexString(THREE.SRGBColorSpace)).toBe('fbbf24');
     expect(solRampColor(0.5).getHexString(THREE.SRGBColorSpace)).toBe('e2f0ec');
-    expect(solRampColor(-3).getHexString(THREE.SRGBColorSpace)).toBe('2dd4bf');
+    expect(solRampColor(-3).getHexString(THREE.SRGBColorSpace)).toBe('889fe7');
     expect(solRampColor(7).getHexString(THREE.SRGBColorSpace)).toBe('fbbf24');
   });
 

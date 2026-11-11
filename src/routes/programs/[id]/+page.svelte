@@ -11,7 +11,12 @@
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
+  import JsonLd from '$lib/components/JsonLd.svelte';
+  import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
+  import { canonicalUrl, pageTitle, seoDescription, seoPageTitle } from '$lib/seo';
+  import { getLocale } from '$lib/paraglide/runtime';
   import { countryLabel } from '$lib/country-label';
   import { programStatusLabel } from '$lib/status-label';
   import type { ProgramRosterItem } from '$types/program';
@@ -114,6 +119,23 @@
       .sort((a, b) => (a.year ?? 0) - (b.year ?? 0)),
   );
   let heroSrc = $derived(p.hero ? imgSrc({ reuse: p.hero }) : '');
+  let jsonLd = $derived.by(() => {
+    const loc = getLocale();
+    const url = canonicalUrl(`/programs/${p.id}`, loc);
+    return [
+      article({
+        headline: p.name,
+        description: p.tagline,
+        url,
+        inLanguage: loc,
+        image: heroSrc ? absoluteUrl(heroSrc, base) : undefined,
+      }),
+      breadcrumbList([
+        { name: m.programs_index_title(), url: canonicalUrl('/programs', loc) },
+        { name: p.name, url },
+      ]),
+    ];
+  });
 
   // Master-detail: selecting a timeline mission shows its summary in the
   // pane beside the timeline (no navigation). Defaults to the first flagship.
@@ -124,9 +146,10 @@
 </script>
 
 <svelte:head>
-  <title>{p.name} · {m.programs_index_title()} · Orrery</title>
-  <meta name="description" content={p.tagline} />
+  <title>{seoPageTitle(p.seo_title, pageTitle(p.name, m.programs_index_title()))}</title>
+  <meta name="description" content={seoDescription(p.seo_description, p.tagline)} />
 </svelte:head>
+<JsonLd data={jsonLd} />
 
 <article class="program">
   <nav class="crumb">

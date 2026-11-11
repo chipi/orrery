@@ -204,6 +204,36 @@ npm run validate-image-integrity
 #    masters/ addition + the static/images webp + every touched static/data JSON.
 ```
 
+### One gallery per place — `move-image-to-gallery.ts`, `merge-place-galleries.ts`
+
+A place has one gallery that its site panel and its mission panel both load: the loaders
+(`getMoonSiteGallery`, `getMarsSiteGallery`) serve `moon-sites/<id>` / `mars-sites/<id>` only while its
+count is above 0, else `missions/<mission_id|id>`. So the place's photos live in `missions/<id>` and
+the site folder is empty.
+
+```bash
+# a photo that lives outside the gallery (a bare ladder, or a slot of another gallery) -> next free slot
+npx tsx scripts/move-image-to-gallery.ts mars-sites/curiosity/route/gediz-vallis=missions/curiosity/12   # dry run
+npx tsx scripts/move-image-to-gallery.ts --apply mars-sites/curiosity/route/gediz-vallis=missions/curiosity/12
+# a site that still has its own gallery next to the mission's: fold it in
+npx tsx scripts/merge-place-galleries.ts apollo15            # dry run: dupes, moves, hero
+npx tsx scripts/merge-place-galleries.ts --apply apollo15
+npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/vision/build-credit-thumbs.mjs \
+  && node scripts/build-i18n-bundles.mjs && node scripts/mobile/build-offline-manifest.mjs \
+  && npm run validate-image-integrity
+```
+
+The move needs the master (not an LFS pointer: `git lfs pull -I masters/<path>`) and the target to be
+the next free number. A bare image gets its 1x1 crop, provenance row, alt text under the 1x1 key,
+a hand-set vision row and approved entries; a slot moving from another gallery already has all of
+that and only its files and references follow. The merge drops site photos that are pHash
+near-dupes (d <= 14) of a mission photo and re-points their references to the mission slot, appends
+the rest, keeps the site panel's hero as the merged gallery's hero (`missions-hero-overrides.json`)
+and retires the site folder (`drop-gallery-slots.mjs --whole`). A mission with several sites folds
+only its primary one (the site whose id is the mission id, else a named one: viking1-lander, tianwen1-orbiter);
+the orbiter / second lander keeps its own gallery. Rover route photos
+(`fetch-route-photos.ts`) are slots of the rover's gallery too.
+
 ### Removing a gallery image — `drop-gallery-slots.mjs`
 
 Logos, mission patches, charts, press-event shots and near-duplicates do not belong in a gallery.
@@ -336,6 +366,8 @@ Image-related scripts split by role. The WebP-ladder + vision scripts live in `s
 | `flag-image.ts` | Marks a slot for re-sourcing (via `image-curation.json` deny-list). | Review |
 | `score-images.ts` | Generates the audit HTML for human review. | Review |
 | `prune-image-slots.ts` | Removes a flagged slot + cascades manifest update. | After flagging |
+| `move-image-to-gallery.ts` | Moves a built image ladder + master into a gallery as the next numbered slot (1x1, provenance, alt, vision, approved, phash, ladder) — one library per place. | Adding a photo that lives outside the gallery |
+| `merge-place-galleries.ts` | Folds a moon/mars site gallery into its mission gallery (pHash dedupe, hero kept, references re-pointed, site folder retired). | A site and its mission show different photo sets |
 | `prune-orphan-images.ts` | Removes disk files not referenced by any sidecar. | Cleanup |
 | `fill-gallery-gaps.ts` | Re-fetches into pruned slots. | After pruning |
 
@@ -357,7 +389,7 @@ with `Cannot find module …/node-v141…/gdal.node`. Each fetcher **self-credit
 
 **To regenerate panoramas after a `panorama-padder.ts` change:** `node --import tsx scripts/hotspots/fetch-moon-panoramas.ts` (+ `fetch-mars-panoramas.ts`) — offline from cache. **To populate along-route patches:** `… fetch-moon-traverse.ts --rover <id>` (omit `--rover` for all five). The skybox opens centred on yaw 0 / horizon (`enterPanorama` in `SurfaceScene.svelte`).
 
-**Verifying provenance/attribution for a change set — do NOT full-rebuild.** `build-image-provenance.ts` re-hashes all ~9,600 images and rewrites the whole manifest; only run it after a broad sourcing pass. For a handful of changes the fetchers already upserted their entries — confirm coverage with the **read-only** `npm run validate-data` (licenses, attribution, on-disk, dupes, gallery counts; 0-write). Generated/AI art (mission trajectory thumbnails, `/posters`, anatomy webp) lives in `static/data/original-work.json`, not `image-provenance.json`.
+**Verifying provenance/attribution for a change set — do NOT full-rebuild.** `build-image-provenance.ts` re-hashes all ~9,600 images and rewrites the whole manifest; only run it after a broad sourcing pass. For a handful of changes the fetchers already upserted their entries — confirm coverage with the **read-only** `npm run validate-data` (licenses, attribution, on-disk, dupes, gallery counts; 0-write). Generated/AI art and art drawn in code (mission trajectory thumbnails — `scripts/render-mission-thumbnails.ts`, runbook `docs/guides/mission-thumbnail-runbook.md` —, `/posters`, anatomy webp) lives in `static/data/original-work.json`, not `image-provenance.json`.
 
 ---
 

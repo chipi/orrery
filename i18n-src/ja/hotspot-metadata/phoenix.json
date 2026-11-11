@@ -1,1 +1,16 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Phoenix 着陸機",
+      "label_short": "Phoenix 着陸機",
+      "explain": "2008年5月25日に着陸した NASA の Phoenix 着陸機。降下エンジンが吹き飛ばした暗い地面の中央に明るい点として写っている。この画像は着陸の22時間後に HiRISE が撮影した。"
+    },
+    {
+      "id": "heat-shield",
+      "label": "熱シールドの衝突地点",
+      "label_short": "熱シールド",
+      "explain": "Phoenix の熱シールドが地面に当たった場所で、着陸機の東南東およそ190 m。ぶつかって跳ねた跡が、乱れた地面の暗い部分として見える。"
+    }
+  ]
+}

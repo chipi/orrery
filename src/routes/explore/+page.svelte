@@ -1,4 +1,7 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
+  import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   import { onMount, onDestroy } from 'svelte';
   import { exploreContext } from '$lib/explore-context';
@@ -1701,7 +1704,10 @@
   }
 </script>
 
-<svelte:head><title>{m.explore_page_title()}</title></svelte:head>
+<svelte:head>
+  <title>{m.explore_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_explore_desc())} />
+</svelte:head>
 <VisuallyHiddenH1 title={m.explore_page_title()} />
 
 {#if liveRenderer && liveQuality}
@@ -1944,6 +1950,8 @@
     <HoverTooltip {hoverData} expanded={tooltipExpanded} {container} />
   {/if}
 </div>
+
+<EntityIndex hub="explore" title={m.entity_index_explore()} links={data.entityIndex} floating />
 
 <PlanetPanel
   planet={selectedPlanet}
@@ -2291,6 +2299,25 @@
   /* Desktop ruler wrapper — hidden on mobile (drawer replaces it). */
   .ruler-desktop-only {
     display: contents;
+  }
+  /* The left rail (PLANETS…ICONIC MISSIONS chips, 124-368 px from the top) and
+     the ruler must not share pixels. Tall windows: the ruler sits below the
+     chips (--ruler-top-clear caps its height). Short ones: it moves right,
+     beside the chips. Up to 600 px wide the time dock is 96 px tall, so the
+     ruler clears it (--ruler-clear). */
+  .ruler-desktop-only {
+    --ruler-top-clear: 376px;
+  }
+  @media (max-height: 759px) {
+    .ruler-desktop-only {
+      --ruler-top-clear: 0px;
+      --ruler-left: 159px;
+    }
+  }
+  @media (max-width: 600px) {
+    .ruler-desktop-only {
+      --ruler-clear: 104px;
+    }
   }
   @media (hover: none), (pointer: coarse) {
     .ruler-desktop-only {

@@ -67,13 +67,31 @@ function closure(key, acc = new Set()) {
 const kb = (keys) => [...keys].reduce((s, k) => s + brBytes(manifest[k].file), 0) / 1024;
 const cssFiles = (keys) => new Set([...keys].flatMap((k) => manifest[k].css ?? []));
 const cssKb = (files) => [...files].reduce((s, f) => s + brBytes(f), 0) / 1024;
+// A dynamic import of `<dir>/<locale>.ts` (e.g. the Lab's per-locale message tables) is one
+// of a set of alternatives: a visit loads the reader's locale only. Such a set counts once,
+// at its largest member, instead of the sum of all 14.
+const LOCALES = JSON.parse(readFileSync('project.inlang/settings.json', 'utf8')).locales;
+const LOCALE_MODULE = new RegExp(`^(.*/)(${LOCALES.join('|')})\\.[jt]s$`);
+
 /** Everything the closure's dynamic imports load that `have` doesn't: JS + its CSS. */
 function lazyKb(keys, have, haveCss) {
+  const size = (set) => {
+    const js = [...set].filter((k) => !have.has(k));
+    const css = [...cssFiles(js)].filter((f) => !haveCss.has(f));
+    return kb(js) + cssKb(css);
+  };
   const lazy = new Set();
-  for (const k of keys) for (const d of manifest[k].dynamicImports ?? []) closure(d, lazy);
-  const js = [...lazy].filter((k) => !have.has(k));
-  const css = [...cssFiles(js)].filter((f) => !haveCss.has(f));
-  return kb(js) + cssKb(css);
+  const localeSets = new Map();
+  for (const k of keys)
+    for (const d of manifest[k].dynamicImports ?? []) {
+      const dir = LOCALE_MODULE.exec(manifest[d]?.src ?? d)?.[1];
+      if (dir) localeSets.set(dir, [...(localeSets.get(dir) ?? []), d]);
+      else closure(d, lazy);
+    }
+  let total = size(lazy);
+  for (const members of localeSets.values())
+    total += Math.max(...members.map((m) => size([...closure(m)].filter((c) => !lazy.has(c)))));
+  return total;
 }
 const budgetOf = (table, route) => table?.routes?.[route] ?? table?.defaultRoute ?? Infinity;
 

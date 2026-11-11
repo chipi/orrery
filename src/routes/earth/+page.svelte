@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   /*
    * /earth — unified surface + orbital route (#290).
@@ -35,6 +36,7 @@
   import { viewerLatLon } from '$lib/viewer-location';
   import { getObserverLocation } from '$lib/geolocation';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
 
   const earthSurfaceConfig = makeEarthLaunchSitesConfig(base);
 
@@ -165,7 +167,11 @@
   ] as const;
 </script>
 
-<svelte:head><title>{m.earth_page_title()}</title></svelte:head>
+<svelte:head>
+  <title>{m.earth_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_earth_desc())} />
+</svelte:head>
+<VisuallyHiddenH1 title={m.earth_page_title()} />
 
 <DebugPanelRegistrar label="EARTH" />
 
@@ -183,22 +189,26 @@
   {regimes}
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
-/>
+>
+  {#snippet barStart()}
+    <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
+         bottom bar (the label stays for assistive tech and tests). -->
+    <button
+      type="button"
+      class="locate-me"
+      onclick={centerOnMe}
+      disabled={locating}
+      data-testid="earth-locate-me"
+      title={m.earth_locate_me()}
+    >
+      <span class="locate-icon" aria-hidden="true">◎</span>
+      <span class="locate-label">{locating ? m.earth_locate_working() : m.earth_locate_me()}</span>
+    </button>
+  {/snippet}
+</SurfaceScene>
 
 <!-- #48 — opt-in precise centering. Coarse timezone orient still happens on
      load; this flies to the GPS fix on demand (no auto-prompt). -->
-<button
-  type="button"
-  class="locate-me"
-  onclick={centerOnMe}
-  disabled={locating}
-  data-testid="earth-locate-me"
-  title={m.earth_locate_me()}
->
-  <span class="locate-icon" aria-hidden="true">◎</span>
-  {locating ? m.earth_locate_working() : m.earth_locate_me()}
-</button>
-
 <TourAnchors route="earth" anchors={EARTH_TOUR_ANCHORS} />
 
 <!-- Desktop-only ruler — on mobile the SurfaceScene accordion Ruler tab
@@ -262,6 +272,30 @@
   /* A globe control: the panorama's compass sits in this corner. */
   :global(html[data-surface-panorama]) .locate-me {
     display: none;
+  }
+  /* Phone: an icon button in the scene's bottom bar; the words stay for screen readers. */
+  @media (hover: none), (pointer: coarse) {
+    .locate-me {
+      position: static;
+      width: 40px;
+      min-height: 40px;
+      padding: 0;
+      justify-content: center;
+      background: none;
+      border: none;
+      backdrop-filter: none;
+    }
+    .locate-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .locate-me .locate-icon {
+      font-size: 20px;
+    }
   }
   .locate-icon {
     color: #4ecdc4;

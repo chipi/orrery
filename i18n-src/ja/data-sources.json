@@ -13,11 +13,11 @@
   "models-ref-nssdca": "NASA宇宙科学データ調整アーカイブ（NSSDCA）の宇宙機・ロケットのページ。/flyと/fleetの実寸比較用にモデル化した機体とロケットの質量・全長・直径の出典です。",
   "models-ref-nasa": "NASAのミッション・機体・歴史のページ（nasa.gov、history.nasa.gov、science.nasa.gov）。/flyと/fleetの実寸比較用にモデル化した有人カプセル、貨物船、スペースシャトルのオービター、ロケットの寸法の出典です。",
   "models-ref-nps": "国立公園局の自由の女神像に関するページ「Statue Statistics」。地面からトーチの先までの92.99 m、台座と像本体の寸法の出典で、/fleetのロケット実寸比較でロケットの横に立つスケール図形です。",
-  "models-ref-esa": "欧州宇宙機関（ESA）のページ（ATV、アリアン、ロゼッタなど）。/flyと/fleetの実寸比較用にモデル化した欧州の機体とロケットの寸法の出典です。",
+  "models-ref-esa": "欧州宇宙機関（ESA）のページ（ATV、アリアン、Rosettaなど）。/flyと/fleetの実寸比較用にモデル化した欧州の機体とロケットの寸法の出典です。",
   "models-ref-jaxa": "JAXAのH-IIA、H3、M-V、および補給機HTV／HTV-Xのページ。/flyと/fleetの実寸比較用にモデル化した日本のロケットと貨物船の寸法の出典です。",
-  "models-ref-isro": "ISROのロケットとガガンヤーンのページ（PSLV、GSLV Mk III／LVM3、有人モジュール）。/flyと/fleetの実寸比較用にモデル化したインドの機体の寸法の出典です。",
-  "models-ref-agencies": "宇宙機関とメーカーの公式ページ（ロスコスモス、スペースX、ユナイテッド・ローンチ・アライアンス、ボーイング、ノースロップ・グラマン、ファイアフライ、アリアンスペース、中国有人宇宙事業弁公室とCASC、米国宇宙軍）。ロケットと宇宙船モデルの機体寸法の出典です。",
-  "models-ref-independent": "独立した宇宙飛行の資料と博物館のページ（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、スミソニアン国立航空宇宙博物館、シュパイヤー技術博物館など）。ソ連、スペースシャトル、ブラン時代の機体の大きさの出典です。",
+  "models-ref-isro": "ISROのロケットとGaganyaanのページ（PSLV、GSLV Mk III／LVM3、有人モジュール）。/flyと/fleetの実寸比較用にモデル化したインドの機体の寸法の出典です。",
+  "models-ref-agencies": "宇宙機関とメーカーの公式ページ（Roscosmos、SpaceX、ユナイテッド・ローンチ・アライアンス、ボーイング、ノースロップ・グラマン、ファイアフライ、アリアンスペース、中国有人宇宙事業弁公室とCASC、米国宇宙軍）。ロケットと宇宙船モデルの機体寸法の出典です。",
+  "models-ref-independent": "独立した宇宙飛行の資料と博物館のページ（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、スミソニアン国立航空宇宙博物館、シュパイヤー技術博物館など）。ソ連、スペースシャトル、Buran時代の機体の大きさの出典です。",
   "nasa-mmgis-rover-traverses": "Curiosity と Perseverance のローバーチームが公開した走行経路。火星表面ビューにソルと走行距離とともに描画します。",
   "pds-mer-traverses": "Spirit と Opportunity の科学チームが公開した走行経路。火星表面ビューにソルと走行距離とともに描画します。"
 }

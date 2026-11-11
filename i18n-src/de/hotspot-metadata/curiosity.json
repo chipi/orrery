@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "Hier setzte Curiosity am 6. August 2012 auf, ein Ort, den das Team Bradbury Landing nannte. Auf diesem HiRISE-Bild vom 17. August 2012 ist der Rover das Paar heller Punkte im dunklen Boden, den die Raketen, die ihn abgesetzt haben, freigefegt haben. Er ist längst weitergefahren."
+    }
+  ],
   "panorama_caption": "Curiosity im Gediz-Vallis-Kanal — die 360°-Aufnahme des Rovers von Sol 4220 nach dem Bohren der Probe Mammoth Lakes, seiner 41. auf dem Mars. Links der Roboterarm direkt nach dem Bohren; rechts das Rover-Deck; oben echter Marshimmel; in der Mitte der abfallende Gediz-Vallis-Kanal — der erste Ort, an dem je reine Schwefelkristalle auf dem Mars gefunden wurden.",
   "compass_zero_direction": "Rover-Vorderseite",
   "panorama_annotations": [

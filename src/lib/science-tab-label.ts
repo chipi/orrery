@@ -27,3 +27,29 @@ export function scienceTabLabel(tab: string): string {
   const fn = TAB_MSG[tab as ScienceTabId];
   return fn ? fn() : tab.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
+
+// The tab labels are set in capitals for the tab bar; a page <title> needs the
+// normal-case form, which no casing rule can derive (de "Leben im All").
+const TAB_TITLE_MSG: Partial<Record<ScienceTabId, () => string>> = {
+  cosmology: m.science_tab_cosmology_title,
+  exoplanets: m.science_tab_exoplanets_title,
+  history: m.science_tab_history_title,
+  'life-in-space': m.science_tab_life_in_space_title,
+  'mission-phases': m.science_tab_mission_phases_title,
+  observation: m.science_tab_observation_title,
+  orbits: m.science_tab_orbits_title,
+  planets: m.science_tab_planets_title,
+  porkchop: m.science_tab_porkchop_title,
+  propulsion: m.science_tab_propulsion_title,
+  'reading-list': m.reading_list_title,
+  'watch-list': m.watch_list_title,
+  'scales-time': m.science_tab_scales_time_title,
+  'space-stations': m.science_tab_space_stations_title,
+  transfers: m.science_tab_transfers_title,
+};
+
+/** Normal-case tab name for a page title; falls back to the tab label. */
+export function scienceTabTitle(tab: string): string {
+  const fn = TAB_TITLE_MSG[tab as ScienceTabId];
+  return fn ? fn() : scienceTabLabel(tab);
+}

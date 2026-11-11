@@ -1,0 +1,38 @@
+{
+  "intro": "Chang'e 7 es el explorador robótico de China para el polo sur de la Luna, antes del alunizaje tripulado que China tiene previsto. Un solo lanzamiento lleva un orbitador y un módulo de aterrizaje, y sobre el módulo un rover y una pequeña sonda saltadora diseñada para saltar a un cráter en sombra permanente, adonde la luz del Sol nunca llega y donde el hielo de agua puede haberse conservado durante miles de millones de años. Su objetivo según informes es una cresta junto al cráter Shackleton, casi en el polo. El lanzamiento, previsto para finales de agosto de 2026, se suspendió el 23 de agosto: la misión «no cumple las condiciones de lanzamiento», dijo China, sin dar un motivo concreto ni una nueva fecha.",
+  "chapters": [
+    {
+      "id": "plan",
+      "title": "El plan",
+      "subtitle": "Un orbitador, un módulo de aterrizaje, un rover y una sonda saltadora",
+      "images": [
+        {
+          "src": "/images/moon-sites/change7/01.webp",
+          "caption": "Recreación artística de Chang'e 7 en el polo sur: el rover (izquierda), el módulo de aterrizaje con su alto panel solar y la pequeña sonda saltadora (derecha). El orbitador permanece arriba, cartografiando la región polar y apoyando a los vehículos en tierra; el satélite chino Queqiao-2 retransmite sus señales a la Tierra. CNSA."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "El lanzamiento",
+      "subtitle": "Un Long March 5 desde Wenchang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/long-march-5/03.webp",
+          "caption": "Un Long March 5 en su edificio de montaje en Wenchang, en la isla de Hainan. Chang'e 7 volará en este cohete pesado desde la plataforma 101: el mismo tipo de cohete y la misma plataforma desde los que se lanzaron Chang'e 5 y Chang'e 6."
+        }
+      ]
+    },
+    {
+      "id": "lineage",
+      "title": "Lo que vino antes",
+      "subtitle": "De la cara oculta al polo",
+      "images": [
+        {
+          "src": "/images/missions/change4/02.webp",
+          "caption": "Yutu-2, el rover que Chang'e 4 posó en la cara oculta de la Luna en enero de 2019: el primer aterrizaje suave allí. Chang'e 7 es el siguiente paso: ir al polo y a los cráteres en sombra donde puede estar el hielo. Después, Chang'e 8 probará a construir con los propios materiales de la Luna, para la Estación Internacional de Investigación Lunar que China lidera cerca del polo y de la que se prevé una estación básica hacia 2035."
+        }
+      ]
+    }
+  ]
+}

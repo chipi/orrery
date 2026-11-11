@@ -4,12 +4,14 @@
   each essay; the essays deep-link back into missions / fleet / science.
 -->
 <script lang="ts">
+  import { metaDescription, seoPageTitle } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetUrl } from '$lib/asset-url';
   import LongViewHero from '$lib/components/LongViewHero.svelte';
+  import { essayPlainText } from '$lib/essay-md';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
@@ -49,8 +51,13 @@
 </script>
 
 <svelte:head>
-  <title>{m.essays_title()} · {m.essays_label()} · Orrery</title>
-  <meta name="description" content={m.essays_meta_description()} />
+  <title
+    >{seoPageTitle(
+      m.essays_seo_title(),
+      `${m.essays_title()} · ${m.essays_label()} · Orrery`,
+    )}</title
+  >
+  <meta name="description" content={metaDescription(m.essays_seo_description())} />
 </svelte:head>
 
 <section class="longview" data-route-ready="true">
@@ -76,7 +83,7 @@
               />
             {/if}
             <h3>{e.title}</h3>
-            <p class="card-dek">{e.dek}</p>
+            <p class="card-dek">{essayPlainText(e.dek ?? '')}</p>
             <span class="go">{m.essays_read()}</span>
           </a>
         {/each}

@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Tianwen-1-Lander",
+      "label_short": "Lander",
+      "explain": "Der Tianwen-1-Lander im Zentrum des Musters, das seine Landetriebwerke in den Staub geblasen haben. Der Rover Zhurong fuhr nach der Landung am 14. Mai 2021 von ihm herunter."
+    }
+  ]
+}

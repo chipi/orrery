@@ -85,5 +85,5 @@ if (missing.length) {
   console.error(`no provenance row for: ${missing.join(', ')}`);
   process.exit(1);
 }
-if (!dry) writeFileSync(FILE, JSON.stringify(manifest, null, 1) + '\n');
+if (!dry) writeFileSync(FILE, JSON.stringify(manifest, null, 2) + '\n');
 console.log(`${dry ? 'would rebuild' : 'rebuilt'} ${n} rows`);

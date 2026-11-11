@@ -1,1 +1,16 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Atterrisseur Luna 21",
+      "label_short": "Atterrisseur L21",
+      "explain": "L'atterrisseur Luna 21, qui a déposé Lunokhod 2 dans le cratère Le Monnier le 15 janvier 1973. Ses moteurs de descente ont dégagé autour de lui une zone claire de 10 à 20 m de large, et les traces du rover s'en éloignent."
+    },
+    {
+      "id": "blast",
+      "label": "Zone de souffle de Luna 21",
+      "label_short": "Zone de souffle",
+      "explain": "LROC note que le moteur de descente a créé une zone claire qui s'étend sur 10 à 20 m environ autour de l'atterrisseur Luna 21."
+    }
+  ]
+}

@@ -11,13 +11,17 @@
   import { localHref } from '$lib/locale';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
-  import { scienceTabLabel } from '$lib/science-tab-label';
+  import { scienceTabLabel, scienceTabTitle } from '$lib/science-tab-label';
+  import { seoDescription, seoPageTitle } from '$lib/seo';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
   let { data }: Props = $props();
 
   const tabLabel = scienceTabLabel;
+  let pageTitleText = $derived(
+    seoPageTitle(data.intro?.seo_title, `${scienceTabTitle(data.tab)} · ${m.science_page_title()}`),
+  );
 
   // Tabs whose covers were re-done in the flat-family style ship as raster
   // webp under /images/science-covers-v2/; the rest keep their original
@@ -38,7 +42,16 @@
 </script>
 
 <svelte:head>
-  <title>{tabLabel(data.tab)} · {m.science_page_title()}</title>
+  <title>{pageTitleText}</title>
+  {#if data.intro}
+    <meta
+      name="description"
+      content={seoDescription(
+        data.intro.seo_description,
+        `${data.intro.headline} ${data.intro.paragraphs[0] ?? ''}`,
+      )}
+    />
+  {/if}
 </svelte:head>
 
 <nav class="crumb">

@@ -1,4 +1,7 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
+  import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount, untrack } from 'svelte';
@@ -439,8 +442,8 @@
 </script>
 
 <svelte:head>
-  <title>{m.fleet_page_title()}</title>
-  <meta name="description" content={m.fleet_meta_description()} />
+  <title>{m.fleet_page_title()} · Orrery</title>
+  <meta name="description" content={metaDescription(m.fleet_meta_description())} />
 </svelte:head>
 <VisuallyHiddenH1 title={m.fleet_page_title()} />
 
@@ -756,6 +759,7 @@
       </ul>
     {/if}
   {/if}
+  <EntityIndex hub="fleet" title={m.entity_index_fleet()} links={data.entityIndex} />
 </div>
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
@@ -819,8 +823,8 @@
      so chrome can't visually drift. */
 
   .status-pill.status-active.active {
-    background: rgba(78, 205, 196, 0.25);
-    border-color: rgba(78, 205, 196, 0.55);
+    background: rgba(136, 159, 231, 0.25);
+    border-color: rgba(136, 159, 231, 0.55);
   }
   .status-pill.status-flown.active {
     background: rgba(75, 156, 211, 0.25);
@@ -947,8 +951,8 @@
     text-align: center;
   }
   .list-status.status-active {
-    background: rgba(78, 205, 196, 0.18);
-    color: #4ecdc4;
+    background: rgba(136, 159, 231, 0.18);
+    color: #889fe7;
   }
   .list-status.status-flown {
     background: rgba(75, 156, 211, 0.18);

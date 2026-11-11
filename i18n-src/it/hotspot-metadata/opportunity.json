@@ -1,4 +1,17 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander-eagle-crater",
+      "label": "Lander nel cratere Eagle",
+      "label_short": "Lander",
+      "explain": "La piattaforma di atterraggio di Opportunity, lasciata nel cratere Eagle (circa 22 m di diametro) dopo l'atterraggio attutito dagli airbag del gennaio 2004. In HiRISE è il punto luminoso nella conca scura del cratere."
+    },
+    {
+      "id": "eagle-crater",
+      "label": "Cratere Eagle",
+      "label_short": "Cratere Eagle",
+      "explain": "Il piccolo cratere di circa 22 m di diametro in cui Opportunity si fermò dopo l'atterraggio con gli airbag del gennaio 2004. Il contorno tratteggiato lo mostra a grandezza reale; il lander è il punto luminoso al centro."
+    }
+  ],
   "panorama_caption": "Il panorama «Lion King» di Opportunity dal bordo del cratere Eagle, sol 58 e 60 — il lander e i segni dei suoi airbag sul fondo del cratere, le tracce del rover che ne esce e, oltre, le pianure di Meridiani Planum."
 }

@@ -1,0 +1,21 @@
+# Second CodeQL pass (codeql.yml job `analyze-leak-flows`): the two file<->HTTP rules, on the code that
+# is not a data pipeline. query-filters and paths-ignore are repository-wide in a CodeQL config, so the
+# main pass (codeql-config.yml) keeps both rules off and this pass turns them on for the app and
+# server code only. A new flow in src/ (outside the paths below) or server/ is reported here.
+name: leak-flows
+disable-default-queries: true
+# Pack queries go under `packs:` (`queries: - uses:` takes a local path or an owner/repo@ref).
+packs:
+  - codeql/javascript-queries:Security/CWE-200/FileAccessToHttp.ql
+  - codeql/javascript-queries:Security/CWE-912/HttpToFileAccess.ql
+paths:
+  - src
+  - server
+paths-ignore:
+  # Data pipeline: fetches public feeds and caches them to disk (run from scripts/fetch-launches.ts).
+  - src/lib/launches/sources/**
+  # Writes the paid-run cost ledger (a local file) from the translate/fetch scripts.
+  - src/lib/cost-ledger.ts
+  # Dev-only review tools, not served in the static production build; they write reviewer input to local JSON.
+  - src/routes/dev/**
+  - '**/*.test.ts'

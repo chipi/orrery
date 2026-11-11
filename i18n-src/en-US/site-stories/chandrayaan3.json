@@ -1,5 +1,5 @@
 {
-  "intro": "Chandrayaan-3 landed near the lunar south pole on August 23, 2023 — India's first soft landing on the Moon and the closest landing to the south pole by any nation. The Vikram lander deployed the Pragyan rover, which drove ~100 m across 14 days searching for water ice in permanently shadowed terrain. India became the fourth nation to soft-land on the Moon, after USSR, USA, and China.",
+  "intro": "Chandrayaan-3 landed near the lunar south pole on August 23, 2023 — India's first soft landing on the Moon and the closest landing to the south pole at the time (about 69°S; Intuitive Machines' IM-2 later landed at about 84.8°S). The Vikram lander deployed the Pragyan rover, which drove ~100 m across 14 days searching for water ice in permanently shadowed terrain. India became the fourth nation to soft-land on the Moon, after USSR, USA, and China.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
       "images": [
         {
           "src": "/images/missions/chandrayaan3/04.webp",
-          "caption": "Vikram lander on the south-polar surface — touchdown 69.37°S, the highest-latitude lunar landing ever performed."
+          "caption": "Vikram lander on the south-polar surface — touchdown 69.37°S, the highest-latitude lunar landing at the time."
         }
       ]
     }

@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chandrayaan-3 Vikram 着陆器",
+      "label_short": "Vikram 着陆器",
+      "explain": "印度 Chandrayaan-3 的 Vikram 着陆器，2023年8月23日降落在距南极约600公里处。四天后 LRO 拍下了它；明亮的光晕是被火箭羽流扰动的月壤。"
+    }
+  ],
   "panorama_caption": "湿婆-沙克提点——首幅来自月球南极的全景图。前景是 Vikram 着陆器的影子；拍摄后不久，Pragyan 月球车就被释放到月壤上。",
   "compass_zero_direction": "着陆器成像仪 +X 轴",
   "panorama_annotations": [

@@ -1,1 +1,16 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Phoenix 着陆器",
+      "label_short": "Phoenix 着陆器",
+      "explain": "2008 年 5 月 25 日着陆的 NASA Phoenix 着陆器。它在下降发动机吹出的暗色地面中央表现为一个亮点；这幅图像由 HiRISE 在着陆 22 小时后拍摄。"
+    },
+    {
+      "id": "heat-shield",
+      "label": "隔热罩撞击点",
+      "label_short": "隔热罩",
+      "explain": "Phoenix 的隔热罩撞击地面之处，在着陆器东南偏东约 190 米：一块被撞击并弹起而翻动的暗色地面。"
+    }
+  ]
+}

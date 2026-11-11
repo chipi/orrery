@@ -1,6 +1,8 @@
 {
   "title": "Le terrain d'entraînement",
   "dek": "Nous sommes allés une fois sur la Lune, à un coût extraordinaire, puis nous nous sommes arrêtés pendant un demi-siècle en laissant mourir la mémoire institutionnelle. Aujourd'hui, nous la réapprenons — et cette fois, les raisons de notre départ ont changé.",
+  "seo_title": "Pourquoi retourner sur la Lune ? Le retour d'Artemis",
+  "seo_description": "Nous y sommes allés une fois, puis cinquante ans de pause et un savoir-faire perdu. Pourquoi Artemis et ses rivaux y retournent, et ce qui change.",
   "body": [
     {
       "type": "prose",
@@ -121,7 +123,7 @@
     },
     {
       "type": "prose",
-      "md": "Tous deux visent le même endroit. L'éclaireur robotique chinois, [Chang'e 7](/moon?site=change7), doit se poser près du pôle Sud bien avant tout équipage — son lancement, prévu fin août 2026, a été annulé la veille de la fenêtre de tir — et la Chine prévoit d'y installer une station internationale de recherche vers 2035. La première fois, la course s'est terminée par le retour du vainqueur à la maison. Cette fois, les deux camps disent vouloir rester, si bien que la question est moins de savoir qui arrivera le premier que qui construira quelque chose qui dure."
+      "md": "Tous deux visent le même endroit. L'éclaireur robotique chinois, [Chang'e 7](/moon?site=change7), doit se poser près du pôle Sud bien avant tout équipage — son lancement, prévu fin août 2026, a été annulé le 23 août — et la Chine prévoit d'y installer une station internationale de recherche vers 2035. La première fois, la course s'est terminée par le retour du vainqueur à la maison. Cette fois, les deux camps disent vouloir rester, si bien que la question est moins de savoir qui arrivera le premier que qui construira quelque chose qui dure."
     },
     {
       "type": "heading",

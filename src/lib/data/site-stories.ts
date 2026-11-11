@@ -1,4 +1,4 @@
-import { get } from './core';
+import { get, type FetchLike } from './core';
 
 /**
  * #PE path-B (rich multi-agency narrative gallery).
@@ -104,21 +104,22 @@ function mergeStoryOverlay(base: SiteStory, overlay: SiteStoryOverlay): SiteStor
  * fetch. Now we probe a tiny build-time manifest of available IDs
  * first and skip the request entirely when the ID isn't present.
  */
-async function getSiteStoryIndex(): Promise<Set<string>> {
-  const idx = await get<{ ids: string[] }>('site-stories/index.json').catch(() => null);
+async function getSiteStoryIndex(fetchFn: FetchLike = fetch): Promise<Set<string>> {
+  const idx = await get<{ ids: string[] }>('site-stories/index.json', fetchFn).catch(() => null);
   return new Set(idx?.ids ?? []);
 }
 
 export async function getSiteStory(
   siteId: string,
   locale: string = 'en-US',
+  fetchFn: FetchLike = fetch,
 ): Promise<SiteStory | null> {
-  const available = await getSiteStoryIndex();
+  const available = await getSiteStoryIndex(fetchFn);
   if (!available.has(siteId)) return null;
-  const base = await get<SiteStory>(`site-stories/${siteId}.json`).catch(() => null);
+  const base = await get<SiteStory>(`site-stories/${siteId}.json`, fetchFn).catch(() => null);
   if (!base) return null;
   if (locale === 'en-US') return base;
-  const overlay = await get<SiteStoryOverlay>(`i18n/${locale}/site-stories/${siteId}.json`).catch(
+  const overlay = await get<SiteStoryOverlay>(`i18n/${locale}/site-stories/${siteId}.json`, fetchFn).catch(
     () => null,
   );
   if (overlay) return mergeStoryOverlay(base, overlay);

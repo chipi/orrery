@@ -1,0 +1,29 @@
+{
+  "museums": {
+    "nehru-planetarium-delhi": { "name": "Nehru Planetarium (Teen Murti, Nehru Memorial Museum & Library campus)", "city": "New Delhi", "country": "IN", "website": "https://nehruplanetarium.org/" },
+    "vssc-space-museum-thumba": { "name": "VSSC Space Museum (St Mary Magdalene Church, Thumba)", "city": "Thiruvananthapuram", "country": "IN", "website": "https://www.vssc.gov.in/" },
+    "vikram-sarabhai-space-exhibition-ahmedabad": { "name": "Vikram Sarabhai Space Exhibition (ISRO SAC)", "city": "Ahmedabad", "country": "IN", "website": "https://www.sac.gov.in/" },
+    "visvesvaraya-industrial-technological-museum-bengaluru": { "name": "Visvesvaraya Industrial and Technological Museum", "city": "Bengaluru", "country": "IN", "website": "https://www.vismuseum.gov.in/" },
+    "bm-birla-science-centre-hyderabad": { "name": "B M Birla Science Centre (Space Museum)", "city": "Hyderabad", "country": "IN", "website": "https://www.birlasciencecentre.org/" },
+    "museum-of-astronomy-and-space-science-kolkata": { "name": "Museum of Astronomy and Space Science (Indian Centre for Space Physics)", "city": "Kolkata", "country": "IN", "website": "https://www.indiancentreforspacephysics.org/" }
+  },
+  "rows": [
+    { "ref": "sokol-kv-2", "museum": "nehru-planetarium-delhi", "item": "Sokol space suit of Ravish Malhotra (backup to Rakesh Sharma, Soyuz T-11 Indo-Soviet mission), shown beside the Soyuz T-10 descent module", "kind": "backup", "evidence": "https://en.wikipedia.org/wiki/Nehru_Planetarium", "status": "uncertain", "notes": "Wikipedia names the Soyuz T-10 'along with his space suit' and captions a gallery image 'Space Suit used by Ravish Malhotra'; secondary search summaries say the original Malhotra suit is displayed. Museum page not readable; whose suit and exact model (Sokol KV-2) unconfirmed." }
+  ],
+  "museums_checked": [
+    { "id": "nehru-planetarium-delhi", "name": "Nehru Planetarium", "city": "New Delhi", "country": "IN", "result": "rows added 1" },
+    { "id": "vssc-space-museum-thumba", "name": "VSSC Space Museum (Thumba)", "city": "Thiruvananthapuram", "country": "IN", "result": "no real Orrery hardware (museumsofindia: full-scale/scaled models of PSLV, GSLV, GSLV Mk-III; no engine/stage described)" },
+    { "id": "vikram-sarabhai-space-exhibition-ahmedabad", "name": "Vikram Sarabhai Space Exhibition", "city": "Ahmedabad", "country": "IN", "result": "no real Orrery hardware found (city heritage page: models and prototypes; an unverifiable secondary claim of a real Vikas engine here could not be confirmed)" },
+    { "id": "visvesvaraya-industrial-technological-museum-bengaluru", "name": "Visvesvaraya Industrial and Technological Museum", "city": "Bengaluru", "country": "IN", "result": "no real Orrery hardware (Space Technology gallery: models; full-scale Chandrayaan-3 model)" },
+    { "id": "bm-birla-science-centre-hyderabad", "name": "B M Birla Science Centre Space Museum", "city": "Hyderabad", "country": "IN", "result": "no real Orrery hardware (about 65 ISRO-donated models)" },
+    { "id": "museum-of-astronomy-and-space-science-kolkata", "name": "Museum of Astronomy and Space Science (ICSP)", "city": "Kolkata", "country": "IN", "result": "no real Orrery hardware (moon/Mars rocks, meteorites, Apollo 11 model)" },
+    { "id": "sdsc-shar-space-museum-sriharikota", "name": "SDSC SHAR Space Museum and Rocket Garden", "city": "Sriharikota", "country": "IN", "result": "no real Orrery hardware (rocket models)" },
+    { "id": "ursc-space-exhibition-bengaluru", "name": "URSC Space Exhibition", "city": "Bengaluru", "country": "IN", "result": "no real Orrery hardware (satellite scale models, subsystems)" },
+    { "id": "goa-science-centre-miramar", "name": "Goa Science Centre and Planetarium", "city": "Panaji", "country": "IN", "result": "no real Orrery hardware (1:10 LVM3-M4 replica)" },
+    { "id": "nehru-science-centre-mumbai", "name": "Nehru Science Centre", "city": "Mumbai", "country": "IN", "result": "no real Orrery hardware found (space exhibition; no hardware described)" },
+    { "id": "national-science-centre-delhi", "name": "National Science Centre", "city": "New Delhi", "country": "IN", "result": "could not read site / nothing found" },
+    { "id": "gujarat-science-city-ahmedabad", "name": "Gujarat Science City", "city": "Ahmedabad", "country": "IN", "result": "could not read site (Hall of Science page failed to load)" },
+    { "id": "pakistan-museum-of-natural-history-islamabad", "name": "Pakistan Museum of Natural History space gallery", "city": "Islamabad", "country": "PK", "result": "no real Orrery hardware found (gallery opened July 2026; Pakistani hardware is not an Orrery object)" }
+  ],
+  "none": []
+}

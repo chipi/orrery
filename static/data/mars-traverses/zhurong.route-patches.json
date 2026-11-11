@@ -3,8 +3,8 @@
   "patches": [
     {
       "id": "sol-60",
-      "lat": 25.056471,
-      "lon": 109.924625,
+      "lat": 25.056841,
+      "lon": 109.924907,
       "kind": "feature",
       "label": "450 m due south",
       "image": "/images/hotspots/mars/zhurong/traverse/sol-60.webp",
@@ -14,8 +14,8 @@
     },
     {
       "id": "sol-97",
-      "lat": 25.048274,
-      "lon": 109.925138,
+      "lat": 25.048644,
+      "lon": 109.92542,
       "kind": "panorama",
       "label": "100 days on Mars",
       "image": "/images/hotspots/mars/zhurong/traverse/sol-97.webp",
@@ -25,8 +25,8 @@
     },
     {
       "id": "sol-347",
-      "lat": 25.04116,
-      "lon": 109.93026,
+      "lat": 25.04153,
+      "lon": 109.930542,
       "kind": "feature",
       "label": "Final position · winter dormancy",
       "image": "/images/hotspots/mars/zhurong/traverse/sol-347.webp",
@@ -36,8 +36,8 @@
     },
     {
       "id": "km-01",
-      "lat": 25.064,
-      "lon": 109.926298,
+      "lat": 25.06437,
+      "lon": 109.92658,
       "kind": "route",
       "image": "/images/hotspots/mars/zhurong/traverse/km-01.webp",
       "product_id": "ESP_073225_2055",

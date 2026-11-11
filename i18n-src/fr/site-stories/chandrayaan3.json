@@ -1,5 +1,5 @@
 {
-  "intro": "Chandrayaan-3 s'est posée près du pôle Sud lunaire le 23 août 2023 — premier alunissage en douceur de l'Inde et atterrissage le plus proche du pôle Sud réalisé par une nation. L'atterrisseur Vikram a déployé le rover Pragyan, qui a parcouru environ 100 m en 14 jours à la recherche de glace d'eau dans un terrain en ombre permanente. L'Inde est devenue la quatrième nation à réussir un alunissage en douceur sur la Lune, après l'URSS, les États-Unis et la Chine.",
+  "intro": "Chandrayaan-3 s'est posée près du pôle Sud lunaire le 23 août 2023 — premier alunissage en douceur de l'Inde et atterrissage le plus proche du pôle Sud à l'époque (environ 69° S ; IM-2 d'Intuitive Machines s'est posé plus tard à environ 84,8° S). L'atterrisseur Vikram a déployé le rover Pragyan, qui a parcouru environ 100 m en 14 jours à la recherche de glace d'eau dans un terrain en ombre permanente. L'Inde est devenue la quatrième nation à réussir un alunissage en douceur sur la Lune, après l'URSS, les États-Unis et la Chine.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
       "images": [
         {
           "src": "/images/missions/chandrayaan3/04.webp",
-          "caption": "L'atterrisseur Vikram sur la surface polaire sud — toucher du sol à 69,37° S, l'alunissage à la latitude la plus élevée jamais réalisé sur la Lune."
+          "caption": "L'atterrisseur Vikram sur la surface polaire sud — toucher du sol à 69,37° S, l'alunissage à la latitude la plus élevée de l'époque."
         }
       ]
     }

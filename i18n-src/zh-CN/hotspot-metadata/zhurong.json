@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "天问一号着陆器",
+      "label_short": "着陆器",
+      "explain": "天问一号着陆器，位于其下降发动机在尘埃中吹出的图案中心。祝融号火星车在 2021 年 5 月 14 日着陆后从它上面驶下。"
+    }
+  ]
+}

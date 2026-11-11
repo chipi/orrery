@@ -1,5 +1,7 @@
 {
   "intro_heading": "So you want to fly a rocket to Mars.",
+  "seo_title": "Space Science Encyclopedia: Orbits, Rockets, Planets",
+  "seo_description": "175 plain-language articles on orbital mechanics, transfers, propulsion, mission phases, exoplanets and life in space, with interactive diagrams.",
   "intro_paragraphs": [
     "Welcome. This is the part of Orrery where the buttons stop being magic. Every label in the HUD, every coloured contour in the porkchop, every burn marker on the trajectory — this section explains where it comes from. Read it like a comic book: the diagrams do most of the work, and every italicised term is a link you can chase as deep as you want.",
     "We're going to build a rocket together. Not a literal one — Orrery is a simulator — but the same chain of decisions a real flight team makes, in the order they'd make them. By the end you'll know why launch windows happen every 26 months for Mars and every month for the Moon, why a free-return trajectory exists, and why thrust is the cheapest part of a mission and fuel is the entire fight."

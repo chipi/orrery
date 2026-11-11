@@ -53,7 +53,8 @@ export interface CardSpec {
   /** The figure slot — a computed visual (trajectory thumbnail, orbit
    *  glyph…). Rendered monochrome by the template. */
   figureUrl?: string;
-  figureCaption?: string;
+  /** Anatomy drawings are black-on-white sheets; the template inverts them. */
+  figureKind?: 'trajectory' | 'anatomy';
   creditLine: string;
   /** Human-readable share slug shown on the card. */
   slug: string;
@@ -158,10 +159,9 @@ export function cardForMission(
     fact: mission.first,
     factLabel: mission.first ? m.card_fact_first() : undefined,
     heroUrl,
-    // fetch-assets renders a trajectory PNG for every mission with flight data
-    // (mission-thumbnails.test.ts); the rest have none, so no figure is asked for.
-    figureUrl: mission.flight ? `/images/missions/thumbnails/${mission.id}.png` : undefined,
-    figureCaption: m.card_caption_trajectory(),
+    // render-mission-thumbnails draws a label-free card crop for every mission (mission-thumbnails.test.ts).
+    figureUrl: `/images/missions/thumbnails/card/${mission.id}.webp`,
+    figureKind: 'trajectory',
     creditLine: mission.credit ? `${m.card_label_sources()}: ${chip(mission.credit, 60)}` : '',
     slug: `${SLUG_HOST}/c/mission/${mission.id}`,
     imagePath: `/images/cards/mission/${mission.id}.jpg`,
@@ -235,7 +235,7 @@ export function cardForFleet(
     factLabel: entry.best_known_for ? m.card_fact_known_for() : undefined,
     heroUrl,
     figureUrl,
-    figureCaption: figureUrl ? m.card_caption_anatomy() : undefined,
+    figureKind: figureUrl ? 'anatomy' : undefined,
     creditLine: `${m.card_label_sources()}: ${chip(entry.agency, 60)}`,
     slug: `${SLUG_HOST}/c/fleet/${entry.id}`,
     imagePath: `/images/cards/fleet/${entry.id}.jpg`,

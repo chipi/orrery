@@ -1,5 +1,72 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Challenger)",
+      "label_short": "LM Challenger",
+      "explain": "La metà inferiore del modulo lunare Challenger dell'Apollo 17, rimasta sulla Luna dopo l'allunaggio del dicembre 1972, l'ultimo allunaggio con equipaggio finora."
+    },
+    {
+      "id": "lrv",
+      "label": "Rover lunare (LRV)",
+      "label_short": "LRV",
+      "explain": "Il rover lunare (LRV) dell'Apollo 17. Qui si vede il rover come lo fotografa oggi LROC, lasciato sulla Luna dopo la missione."
+    },
+    {
+      "id": "alsep",
+      "label": "Stazione centrale ALSEP",
+      "label_short": "ALSEP",
+      "explain": "Il pacchetto di esperimenti sulla superficie lunare dell'Apollo 17, a ovest del modulo lunare nella valle Taurus-Littrow. L'immagine di LROC mostra gli strumenti e il percorso a croce dove furono disposti i geofoni."
+    },
+    {
+      "id": "sep",
+      "label": "Trasmettitore SEP",
+      "label_short": "Trasmett. SEP",
+      "explain": "Il trasmettitore dell'esperimento sulle proprietà elettriche della superficie (SEP), che sondava le proprietà elettriche del suolo. LROC lo chiama SEP nella sua immagine dell'Apollo 17; qui furono stese le sue antenne da 35 m."
+    },
+    {
+      "id": "flag",
+      "label": "Bandiera USA (posizione LROC)",
+      "label_short": "Bandiera USA",
+      "explain": "Il punto che il livello hardware dell'Apollo 17 di LROC indica per la bandiera, a circa 22 m a nord-nord-ovest del modulo lunare. La bandiera in sé è troppo piccola per essere vista."
+    },
+    {
+      "id": "rudolph",
+      "label": "Cratere Rudolph",
+      "label_short": "Cratere Rudolph",
+      "explain": "Il cratere che LROC chiama Rudolph sulla sua mappa dell'Apollo 17, a circa 290 m a nord-ovest del modulo lunare."
+    },
+    {
+      "id": "poppie",
+      "label": "Cratere Poppie",
+      "label_short": "Cratere Poppie",
+      "explain": "Un piccolo cratere a sud del modulo lunare che LROC chiama Poppie sulla sua mappa dell'Apollo 17."
+    },
+    {
+      "id": "barjea",
+      "label": "Cratere Barjea",
+      "label_short": "Cratere Barjea",
+      "explain": "Un piccolo cratere chiaro a sud-est del modulo lunare che LROC chiama Barjea sulla sua mappa dell'Apollo 17."
+    },
+    {
+      "id": "geophone-paths",
+      "label": "Sentieri dei geofoni",
+      "label_short": "Sentieri geofoni",
+      "explain": "L'immagine dell'Apollo 17 di LROC mostra un percorso a croce a ovest del sito di allunaggio dove gli astronauti installarono i geofoni per monitorare l'attività sismica (il contorno tratteggiato indica l'area)."
+    },
+    {
+      "id": "sep-rover-tracks",
+      "label": "Tracce del rover verso il sito SEP",
+      "label_short": "Tracce SEP",
+      "explain": "LROC osserva che Cernan lasciò tracce del rover a est quando stese le antenne SEP da 35 m. Vanno dall'area del modulo lunare verso il trasmettitore (il contorno tratteggiato indica l'area)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona del getto del LM",
+      "label_short": "Zona del getto",
+      "explain": "LROC osserva che il motore di discesa ha schiarito il suolo attorno ai siti di allunaggio dell'Apollo; all'Apollo 17 l'alone si estende attorno al modulo lunare (un lobo potrebbe segnare la traiettoria di discesa)."
+    }
+  ],
   "panorama_caption": "Il sito ALSEP nella valle Taurus-Littrow, EVA-1 (12 dicembre 1972): il pacchetto di esperimenti, il Lunar Roving Vehicle e i massicci della valle, nel panorama a colori di Jack Schmitt. L'ultimo allunaggio Apollo.",
   "panorama_annotations": [
     {

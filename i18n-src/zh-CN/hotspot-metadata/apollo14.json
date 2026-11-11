@@ -1,1 +1,46 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 下降级（Antares）",
+      "label_short": "LM Antares",
+      "explain": "Apollo 14 登月舱 Antares 的下半部分，1971 年 2 月着陆后留在月球上。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央站",
+      "label_short": "ALSEP",
+      "explain": "Apollo 14 月面实验包，1971 年 2 月第一次月面行走时布设在 LM 以西。LROC 的图像显示了它，以及从它向外延伸的足迹。"
+    },
+    {
+      "id": "seismometer",
+      "label": "被动地震仪（LROC）",
+      "label_short": "地震仪",
+      "explain": "LROC 把 Apollo 14 的被动地震仪单独列为一个点，距中央站约 3 m（圆环与 ALSEP 的圆环重叠）。"
+    },
+    {
+      "id": "flag",
+      "label": "美国国旗（LROC 位置）",
+      "label_short": "美国国旗",
+      "explain": "LROC 的 Apollo 14 设备图层给出的国旗位置，在 LM 西北约 10 m 处。国旗本身太小，看不见。"
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Triplet 三联环形山",
+      "label_short": "Triplet 三联环形山",
+      "explain": "LROC 在其 Apollo 14 地图上标为 Triplet 和 Center Crater 的一组环形山，在 LM 东南约 210 m 处。"
+    },
+    {
+      "id": "footpaths",
+      "label": "ALSEP 周围的足迹",
+      "label_short": "ALSEP 周围足迹",
+      "explain": "LROC 的 Apollo 14 图像把宇航员的足迹显示为一道道被扰动的土壤线；它们汇聚到 ALSEP，并向东通向 LM（虚线轮廓标出的是一片区域）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM 喷流区",
+      "label_short": "喷流区",
+      "explain": "LROC 指出，下降发动机在包括 Apollo 14 在内的阿波罗着陆点周围刮出一圈明亮的光晕。这里是 LM 周围一片淡淡的明亮区域。"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ The orbital mechanics tools NASA uses to reach Mars, rebuilt for anyone who's cu
 
 [![CI](https://github.com/chipi/orrery/actions/workflows/ci.yml/badge.svg)](https://github.com/chipi/orrery/actions/workflows/ci.yml)
 [![docker-e2e](https://github.com/chipi/orrery/actions/workflows/docker-e2e.yml/badge.svg)](https://github.com/chipi/orrery/actions/workflows/docker-e2e.yml)
-[![Live Preview](https://img.shields.io/badge/live-chipi.github.io%2Forrery-4ecdc4?style=flat)](https://chipi.github.io/orrery/)
+[![Live](https://img.shields.io/badge/live-orrerylearn.com-4ecdc4?style=flat)](https://www.orrerylearn.com/)
 [![Latest tag](https://img.shields.io/github/v/tag/chipi/orrery?label=release&color=4ecdc4)](https://github.com/chipi/orrery/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 [![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?logo=svelte&logoColor=white)](https://kit.svelte.dev/)
@@ -25,9 +25,11 @@ The name comes from a mechanical model of the solar system. That is exactly what
 
 ## Live
 
-**<https://chipi.github.io/orrery/>** — every screen, fully offline-capable after first load.
+**<https://www.orrerylearn.com/>** — every screen, fully offline-capable after first load. (The GitHub Pages copy at `chipi.github.io/orrery` is the staging mirror; it is noindex.)
 
 First-time visitors land on a 30-second orientation page (`/`) — what Orrery is, how to use it, and a 11-card grid linking to every primary route. Returning users skip past in one click via the nav.
+
+Every mission, spacecraft and launcher, landing site, planet, moon and small body, and Lab calculator also has its own page — `/missions/apollo11`, `/fleet/saturn-v`, `/moon/apollo11`, `/explore/europa`, `/lab/tsiolkovsky` — in all 14 languages, so search engines and shared links reach it directly ([ADR-096](docs/adr/ADR-096.md)).
 
 ![](docs/screenshots/00-landing.png)
 
@@ -42,7 +44,7 @@ The full nav (left to right): `/explore` · `/plan` · `/fly` · `/missions` · 
 | **Solar System Explorer** (`/explore`) | Real-time 3D / 2D orrery — 8 planets + 5 dwarf planets + 2 comets + ʻOumuamua, with togglable visibility layers and clickable bodies. Detail panels: OVERVIEW · GALLERY · TECHNICAL · SCIENCE. Live physics overlays behind the Science Lens (gravity, velocity, centripetal, apsides + true anomaly, sphere-of-influence rings, hover info cards). |
 | **Mission Configurator** (`/plan`) | 11,200-cell Lambert porkchop plot per destination — Earth → 9 destinations (Mercury · Venus · Mars · Jupiter · Saturn · Uranus · Neptune · Pluto · Ceres) with LANDING / FLYBY toggle. **Mission Sandbox**: pin one cell, click another → ΔDEP / ΔTOF / Δ∆v compare. 13 rockets to choose from, real ∆v budget. |
 | **Mission Arc** (`/fly`) | Fly a mission — live telemetry, transfer arc as a true Keplerian two-point ellipse with Sun at focus, fuel model, timeline scrubber. Heliocentric missions auto-zoom across DEPARTURE → CRUISE → APPROACH, with the camera close to Earth at launch, pulled back across cruise, then pulled in toward the destination as it arrives. At each flyby and arrival the camera cuts into a **multi-camera cinematic montage** (#371) — wide establish → chase → hero → pulled-back "catapult" — with the close passage in slow motion so the gravity-assist swing reads. Moon missions auto-switch into a dedicated **cislunar view** (ADR-058) anchored at Earth — every mission's per-profile trajectory geometry (Apollo free-return figure-8, Artemis II hybrid free-return at 9,200 km periselene, Chandrayaan-3 multi-burn spiral, Chang'e 5 LOR, etc.), with the camera zooming in as Orion / the lander / the orbiter reaches the Moon. **Phase markers** mark every mission event (launch, TLI, LOI, descent, EDL, arrival, ...) — click any dot to jump the sim to that moment, with a science chip linking to the matching `/science` chapter. The same overlay works on Mars + outer-system missions (Mariner 4 → Voyager 2 Grand Tour → New Horizons → Hope Probe) via `flight.interplanetary_profile` waypoints. **Flight Director banner** narrates 5 physics phases. CAPCOM panel with mission events. **Conic-section side panel** detects ellipse / parabola / hyperbola live. |
-| **Mission Catalog** (`/missions`) | **113** historical, planned, and concept missions across Mars + Moon + inner-planet + outer-system probes — every agency, every outcome, replayable. Timeline navigator (1957 → 2035) above the card grid. Per-mission flight params with caveat banners (RECONSTRUCTED / SPARSE / UNKNOWN). Sub-page **[`/missions/launches`](https://chipi.github.io/orrery/missions/launches)** — a live upcoming-launch calendar (PRD-020) sourced from Launch Library 2 + GCAT with per-row provenance. |
+| **Mission Catalog** (`/missions`) | **113** historical, planned, and concept missions across Mars + Moon + inner-planet + outer-system probes — every agency, every outcome, replayable. Timeline navigator (1957 → 2035) above the card grid. Per-mission flight params with caveat banners (RECONSTRUCTED / SPARSE / UNKNOWN). Sub-page **[`/missions/launches`](https://www.orrerylearn.com/missions/launches)** — a live upcoming-launch calendar (PRD-020) sourced from Launch Library 2 + GCAT with per-row provenance. |
 | **Earth Orbit** (`/earth`) | ISS, Tiangong, Hubble, JWST, Gaia, Chandra, XMM, LRO + the four GNSS constellations on a logarithmic scale. Real inclinations, real altitudes. Atmosphere shell layer (Kármán line, 100 km) and **ozone-hole layer** (polar depletion zones) lens-gated. |
 | **Moon Map** (`/moon`) | Landing sites across 5 nations — Apollo through Chandrayaan-3, the capability ladder that made Mars possible. **4-tier zoom-aware surface hotspots** (PRD-014): Tier 0 silhouettes at overview → Tier 1 3D models at mid-zoom → Tier 2 LROC-NAC patches at close-zoom → Tier 3 equirectangular panoramas via **"Stand at site"**. Orbital-regime ruler + tidal-lock indicator lens-gated. |
 | **Mars Surface Map** (`/mars`) | Equirectangular 2D map + 3D globe — surface sites (rovers, landers, sample-return) + orbital probes, with rover traverse paths overlaid as cross-linked routes. The same **4-tier hotspot stack** (silhouette → 3D model → HiRISE patch → "Stand at site" panorama) runs across all 49 Moon + Mars sites. Atmosphere shell (~120 km) + orbital-regime ruler lens-gated. |
@@ -105,8 +107,8 @@ Orrery makes a few claims a screen reader can verify:
 
 - **Real physics.** Keplerian two-body orbital mechanics. Lagrange-Gauss short-way Lambert solver. Vis-viva for heliocentric velocity. Tsiolkovsky for fuel. KaTeX-rendered formulas in the encyclopedia. All constants from IAU + JPL + agency mission reports — every number cited.
 - **Real missions.** 113 base mission JSON files with editorial overlays in 14 locales. ∆v ledgers from NASA mission reports, JPL trajectory reconstructions, agency press kits. Moon missions carry a `flight.cislunar_profile` block (parking orbit, TLI ∆v + C3, translunar geometry type, lunar arrival altitude / periselene, return ∆v); Mars + outer-system missions carry a parallel `flight.interplanetary_profile` block (heliocentric waypoints, transfer type). Both are parsed by the trajectory builders to render each mission's actual flight architecture (ADR-058). Every entry has a `data_quality` honesty flag (MEASURED / RECONSTRUCTED / SPARSE / UNKNOWN).
-- **Real images.** Agency-first build-time imagery sourcing per [ADR-046](docs/adr/ADR-046.md): NASA / ESA / ISRO / CNSA / JAXA / KARI / Roscosmos before Wikimedia fallback. Per-image provenance manifest. Public [`/credits`](https://chipi.github.io/orrery/credits) page. Lightbox attribution on every gallery thumbnail.
-- **Real outbound links.** Per-link provenance per [ADR-051](docs/adr/ADR-051.md): every external LEARN link is sourced, validated, and freshness-gated. Native-language priority for non-US entities (Roscosmos before NASA's mirror, ISRO before press releases). Public [`/library`](https://chipi.github.io/orrery/library) bill-of-links.
+- **Real images.** Agency-first build-time imagery sourcing per [ADR-046](docs/adr/ADR-046.md): NASA / ESA / ISRO / CNSA / JAXA / KARI / Roscosmos before Wikimedia fallback. Per-image provenance manifest. Public [`/credits`](https://www.orrerylearn.com/credits) page. Lightbox attribution on every gallery thumbnail.
+- **Real outbound links.** Per-link provenance per [ADR-051](docs/adr/ADR-051.md): every external LEARN link is sourced, validated, and freshness-gated. Native-language priority for non-US entities (Roscosmos before NASA's mirror, ISRO before press releases). Public [`/library`](https://www.orrerylearn.com/library) bill-of-links.
 - **Real translation.** Each language follows its own space-agency glossary (ESA Spanish, JAXA Japanese, CNSA Mandarin, etc.) — not literal machine translation. See [`docs/guides/i18n-style-guide.md`](docs/guides/i18n-style-guide.md).
 - **Real accessibility.** Axe-core CI gate across 11 routes at zero critical violations. Screen-reader-only parallel navigation on the 6 canvas routes (every clickable marker reachable as a `<button>`). `prefers-reduced-motion` honoured everywhere; full RTL for Arabic. Locale-aware alt-text auto-generated from the image-provenance manifest.
 
@@ -118,7 +120,7 @@ Open the audio overlay via the waveform icon in the nav (between the menu hambur
 
 - **For-this-screen inventory** — episodes anchored to the current route, persona-tagged.
 - **All-episodes inventory** — the full 33 with route + duration + heard-state tags.
-- **Take a tour** — two auto-advancing playlists: the **Curator Tour** (21 episodes, ~66 min) and the longer **Curator Extended Tour** (31 episodes, ~87 min, interleaving 10 enthusiast deep-dives). Route-by-route auto-navigation, prev / stop / next controls, timed directive banners, and resume-where-you-left-off (the `orrery_tour` cookie, ADR-075). The complete episode inventory is on [`/colophon`](https://chipi.github.io/orrery/colophon).
+- **Take a tour** — two auto-advancing playlists: the **Curator Tour** (21 episodes, ~66 min) and the longer **Curator Extended Tour** (31 episodes, ~87 min, interleaving 10 enthusiast deep-dives). Route-by-route auto-navigation, prev / stop / next controls, timed directive banners, and resume-where-you-left-off (the `orrery_tour` cookie, ADR-075). The complete episode inventory is on [`/colophon`](https://www.orrerylearn.com/colophon).
 - **Provider A/B switcher** — flip between Google and ElevenLabs mid-playback; position preserved.
 - **Captions** (CC button) — VTT track with auto-on triggers for `prefers-reduced-motion`, muted-at-start, and slow `effectiveType`. Transcript `.txt` download per episode.
 - **Deep-link share** — `?audio={episode-id}` opens the overlay + auto-loads the matching episode.
@@ -160,7 +162,7 @@ npm run preflight        # full CI mirror: typecheck + lint + test + validate-da
 ### Build
 
 ```bash
-npm run build            # production SPA in ./build (adapter-static)
+npm run build            # production SPA in ./build (adapter-static); ends with the link and SEO gates
 npm run preview          # serve ./build at http://localhost:5273
 npm run docs:build       # VitePress docs site at docs/.vitepress/dist
 ```
@@ -232,9 +234,9 @@ All constants documented in [03 Data Catalog](docs/concept/03_Data_Catalog.md) w
 
 Mission data lives in plain JSON files — one per mission — served statically. No database, no backend. Adding a mission is editing a JSON file. Adding a language is adding a folder under `static/data/i18n/<code>/`.
 
-Image sourcing per [ADR-046](docs/adr/ADR-046.md): **agency-first** — NASA Images API + ESA + ISRO + CNSA + JAXA + KARI + Roscosmos before Wikimedia Commons fallback. Per-image provenance manifest at `static/data/image-provenance.json` (auto-generated, AJV-validated). Every credit is accurate. Public [`/credits`](https://chipi.github.io/orrery/credits) page lists every image, every text source, every logo.
+Image sourcing per [ADR-046](docs/adr/ADR-046.md): **agency-first** — NASA Images API + ESA + ISRO + CNSA + JAXA + KARI + Roscosmos before Wikimedia Commons fallback. Per-image provenance manifest at `static/data/image-provenance.json` (auto-generated, AJV-validated). Every credit is accurate. Public [`/credits`](https://www.orrerylearn.com/credits) page lists every image, every text source, every logo.
 
-Outbound LEARN links per [ADR-051](docs/adr/ADR-051.md): per-link provenance manifest at `static/data/link-provenance.json` (AJV-validated), agency-portal native-language priority, freshness-checked by `scripts/check-learn-links.ts`. Public [`/library`](https://chipi.github.io/orrery/library) page lists every outbound link.
+Outbound LEARN links per [ADR-051](docs/adr/ADR-051.md): per-link provenance manifest at `static/data/link-provenance.json` (AJV-validated), agency-portal native-language priority, freshness-checked by `scripts/check-learn-links.ts`. Public [`/library`](https://www.orrerylearn.com/library) page lists every outbound link.
 
 ## Stack (production)
 
@@ -272,12 +274,12 @@ Orrery is open source. Contributions welcome in three areas:
 
 MIT — see [LICENSE](LICENSE).
 
-All agency logos, mission imagery, scientific data, and outbound links used in Orrery remain the property of their respective owners. They are used here for educational identification and attribution only, in a non-commercial context. See the [`/credits`](https://chipi.github.io/orrery/credits) page in the live app and [03 Data Catalog](docs/concept/03_Data_Catalog.md) for full credit format and licensing details per source.
+All agency logos, mission imagery, scientific data, and outbound links used in Orrery remain the property of their respective owners. They are used here for educational identification and attribution only, in a non-commercial context. See the [`/credits`](https://www.orrerylearn.com/credits) page in the live app and [03 Data Catalog](docs/concept/03_Data_Catalog.md) for full credit format and licensing details per source.
 
 ### Bill of materials
 
 Three complete inventories of "what is in this app and where it came from", each maintained as code so they cannot drift from reality:
 
 - **[Tech BOM](docs/TECH-BOM.md)** — every npm package shipped or used at build time, with version + license. Auto-generated from `node_modules` by `npm run build-tech-bom`; license-audited fail-closed in CI ([`scripts/build-tech-bom.ts`](scripts/build-tech-bom.ts)).
-- **[Image BOM](static/data/image-provenance.json)** — every image, with source URL, license, attribution. Generated by `npm run build-image-provenance` (ADR-047). Browse the human-readable view at [`/credits`](https://chipi.github.io/orrery/credits).
-- **[Link BOM](static/data/link-provenance.json)** — every outbound LEARN link, with source agency + locale. Generated by `npm run build-link-provenance` (ADR-051). Browse at [`/library`](https://chipi.github.io/orrery/library).
+- **[Image BOM](static/data/image-provenance.json)** — every image, with source URL, license, attribution. Generated by `npm run build-image-provenance` (ADR-047). Browse the human-readable view at [`/credits`](https://www.orrerylearn.com/credits).
+- **[Link BOM](static/data/link-provenance.json)** — every outbound LEARN link, with source agency + locale. Generated by `npm run build-link-provenance` (ADR-051). Browse at [`/library`](https://www.orrerylearn.com/library).

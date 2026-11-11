@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chang'e 4 着陸機",
+      "label_short": "Chang'e 4 着陸機",
+      "explain": "2019年1月3日、フォン・カルマン・クレーターで月の裏側への初の軟着陸を果たした中国の Chang'e 4 着陸機。周囲の明るい地面は着陸エンジンが掃き清めた跡。"
+    },
+    {
+      "id": "yutu-2",
+      "label": "Yutu-2 ローバー",
+      "label_short": "Yutu-2",
+      "explain": "着陸から4か月後の2019年5月7日の Yutu-2 ローバー。着陸機の西約120 m、最初の轍の先にいる。その後はここから遠く離れた。"
+    }
+  ],
   "panorama_caption": "月の裏側から初めて送られてきたパノラマ。南極エイトケン盆地の中にある Von Kármán クレーター。中ほどに Yutu-2 ローバー、左下に着陸機の影。",
   "compass_zero_direction": "着陸機カメラの +X 軸",
   "panorama_annotations": [

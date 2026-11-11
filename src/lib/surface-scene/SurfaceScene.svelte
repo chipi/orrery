@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy, untrack } from 'svelte';
+  import { onMount, onDestroy, untrack, type Snippet } from 'svelte';
   import { page } from '$app/state';
   import { afterNavigate, replaceState } from '$app/navigation';
   import { currentUrl } from '$lib/safe-replace-state';
@@ -63,6 +63,14 @@
     type TraverseLine,
   } from '$lib/surface-scene/surface-traverses';
   import { formatNumber } from '$lib/format';
+  import {
+    KAGUYA_REGIONAL_MOON_SITES,
+    KAGUYA_DETAIL_MOON_SITES,
+    GSI_DETAIL_EARTH_PADS,
+    LINZ_DETAIL_EARTH_PADS,
+    detailBadgeLabel,
+    regionalCropSpec,
+  } from '$lib/surface-scene/tier-layer-spec';
   import { getImageAlt } from '$lib/image-alt';
   import { getLocale } from '$lib/paraglide/runtime';
   import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
@@ -88,14 +96,8 @@
   import type { EarthObject } from '$types/earth-object';
   import type { Mission, MissionIndex } from '$types/mission';
   import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
-  import {
-    cardForFleet,
-    cardForMission,
-    cardForSite,
-    siteAliasMissionId,
-    type CardSpec,
-  } from '$lib/cards/card-spec';
-  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { CardSpec } from '$lib/cards/card-spec';
+  import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import {
     createSceneRenderer,
     disposeSceneRenderer,
@@ -180,6 +182,17 @@
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
   import SurfaceFlatPatch from '$lib/surface-scene/SurfaceFlatPatch.svelte';
+  import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
+  import { annotationUi } from '$lib/surface-scene/annotation-ui.svelte';
+  import SiteAnnotationList from '$lib/surface-scene/SiteAnnotationList.svelte';
+  import type { PlacedRing, Rect as RingRect } from '$lib/surface-scene/annotation-rings';
+  import { routePatchFlatTarget } from '$lib/surface-scene/flat-patch-extent';
+  import {
+    DETAIL_FLY_TARGET_R,
+    mobileDrawerHidden,
+    nationFilterAway,
+    shouldFlyToDetail,
+  } from '$lib/surface-scene/surface-view-state';
   import {
     createSkybox,
     teardownPanoramaSkybox,
@@ -199,6 +212,7 @@
     observatoryTagSpec,
     focusFade,
     planetFill,
+    centroidLatLon,
     siteTagSpec,
     tagStage,
     type Rect,
@@ -213,6 +227,7 @@
   import type { SurfaceSite, Traverse } from '$types/surface-site';
   import Panel from '$lib/components/Panel.svelte';
   import SiteStoryPanel from '$lib/components/SiteStoryPanel.svelte';
+  import { getSiteIllustration, type SiteIllustration } from '$lib/data/site-illustrations';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
@@ -302,6 +317,9 @@
     /** Height the host route's bottom-left button ("Center on my location")
      *  needs above the nation legend; the imagery card stacks above it. */
     locateReservePx?: number;
+    /** The host route's globe button ("View from my location"): on a phone it
+     *  becomes the first icon of the single bottom bar. */
+    barStart?: Snippet;
   }
   let {
     config,
@@ -319,6 +337,7 @@
     onRegimeOpen,
     onOrbitsInViewChange,
     locateReservePx = 0,
+    barStart,
   }: Props = $props();
 
   // AR (#150): earth/moon/mars have tabletop AR scenes. `body` matches
@@ -785,6 +804,12 @@
   // so CSS opacity transitions can run; only 'hidden' unmounts.
   type FlatPatchPhase = 'hidden' | 'entering' | 'visible' | 'leaving';
   let flatPatchPhase: FlatPatchPhase = $state('hidden');
+  // Annotation rings over the 3D detail patch (projected per frame in animate).
+  let rings3d: PlacedRing[] = $state([]);
+  let ringsHost: HTMLDivElement | undefined = $state();
+  let ringsW = $state(0);
+  let ringBlocked: RingRect[] = $state([]);
+  let ringsH = $state(0);
   let flatPatchActive = $derived(flatPatchPhase !== 'hidden');
   // #360: when "zoom all the way" lands on an along-route HiRISE patch under
   // the view centre, the flat-patch opens THAT patch instead of the landing.
@@ -796,33 +821,6 @@
   // while still fading in).
   let flatPatchTransitionTimer: ReturnType<typeof setTimeout> | null = null;
   const FLAT_PATCH_FADE_MS = 220;
-  // #361: /moon landers whose regional context layer comes from JAXA's
-  // SELENE (Kaguya) Terrain Camera rather than LROC NAC ROI — drives the
-  // on-canvas "Regional view" credit so the imagery is honestly attributed
-  // (these are the only Moon sites fetch-moon-kaguya-regional.ts wired).
-  // Apollo + any future LROC-sourced regional keep the LROC credit.
-  const KAGUYA_REGIONAL_MOON_SITES = new Set([
-    'luna9',
-    'luna16',
-    'luna17',
-    'luna21',
-    'luna24',
-    'change3',
-    'change4',
-    'change5',
-    'change6',
-    'chandrayaan3',
-    'slim',
-    'beresheet',
-  ]);
-  // #361: /moon landers whose DETAIL layer is the Kaguya regional (failover) —
-  // no LROC Featured Image exists, so fetch-moon-featured-images.ts copied the
-  // Kaguya crop in. Keep KAGUYA_DETAIL_MOON_SITES in sync with that script's
-  // failover set. Drives the on-canvas "Detail view" credit honestly.
-  const KAGUYA_DETAIL_MOON_SITES = new Set(['luna9']);
-  const GSI_DETAIL_EARTH_PADS = new Set(['tanegashima-yoshinobu', 'uchinoura']);
-  /** LINZ 0.1 m aerial survey, read to 0.25 m/px (fetch-earth-pads.ts LINZ_SURVEY). */
-  const LINZ_DETAIL_EARTH_PADS = new Set(['rocket-lab-lc-1']);
   const EOX_CLOUDLESS_TITLE = 'EOxCloudless Sentinel-2 cloudless 2025';
   const EOX_CLOUDLESS_AUTHOR =
     'EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2025)';
@@ -854,6 +852,8 @@
   // back up past the trigger threshold (otherwise the patch would
   // immediately re-open on the next frame).
   let closeFlatPatch: (exitKmPerPx?: number) => void = $state(() => {});
+  // Cluster badge click on the 3D detail patch: dolly in by `factor`; false at the floor.
+  let zoomPatchBy: (factor: number) => boolean = () => false;
 
   // Surface Hotspots mode (PRD-014 / RFC-017 §S7). 'auto' = LOD
   // dispatcher picks tier from screen-projected size; 'low' = all
@@ -889,6 +889,8 @@
   // detail tiles + regional context) pulled back past the normal detail-reveal
   // band. Toggled from the panel; mutually exclusive with panorama/flat-patch.
   let routeViewActive = $state(false);
+  // True for the whole Zoom-in fly (camera flying to DETAIL_FLY_TARGET_R), before the flat patch opens.
+  let detailFlying = $state(false);
 
   // Mobile: the detail panel is full-screen, so entering panorama / flat-patch
   // from it would hide the very view you just asked for. Auto-dismiss the panel
@@ -1104,11 +1106,26 @@
     else delete root.dataset.surfacePanorama;
     return () => delete root.dataset.surfacePanorama;
   });
+  // The flat ground view owns the bottom edge with its own bar: the host route's
+  // floating A–Z tab and the imagery card key their phone position off this.
+  $effect(() => {
+    const root = document.documentElement;
+    if (flatPatchActive) root.dataset.surfaceFlat = '';
+    else delete root.dataset.surfaceFlat;
+    return () => delete root.dataset.surfaceFlat;
+  });
   // The imagery card sits in the lower-left corner; the INDEX pull tab
   // (left edge, centred) moves up while the card is there so the two never
   // touch.
   let sceneRoot = $state<HTMLDivElement | undefined>();
   let indexHandleTop = $state<number | null>(null);
+  // On <html> too: the host route's A–Z tab sits just above the INDEX tab.
+  $effect(() => {
+    const root = document.documentElement;
+    if (indexHandleTop != null) root.style.setProperty('--index-handle-top', `${indexHandleTop}px`);
+    else root.style.removeProperty('--index-handle-top');
+    return () => root.style.removeProperty('--index-handle-top');
+  });
   const tierLayerCount = $derived(tierContext?.layers.length ?? 0);
   $effect(() => {
     void tierCardShown;
@@ -1156,30 +1173,44 @@
       const r = el?.getBoundingClientRect();
       return r && r.width && r.height ? r : null;
     };
+    const clearProps = () => {
+      html.style.removeProperty('--ruler-left');
+      html.style.removeProperty('--ruler-clear');
+    };
     const check = () => {
       const ruler = [...document.querySelectorAll('.ruler')].map(visible).find(Boolean);
-      const chips = root.querySelector('.hud-controls');
-      if (!ruler || !chips || !visible(chips)) {
-        html.style.removeProperty('--ruler-left');
+      if (!ruler) {
+        clearProps();
         return;
       }
       let right = 0;
-      let bottom = 0;
-      for (const el of chips.querySelectorAll('*')) {
-        const r = visible(el);
-        if (!r) continue;
-        right = Math.max(right, r.right);
-        bottom = Math.max(bottom, r.bottom);
+      const chips = root.querySelector('.hud-controls');
+      if (chips && visible(chips)) {
+        let bottom = 0;
+        for (const el of chips.querySelectorAll('*')) {
+          const r = visible(el);
+          if (!r) continue;
+          right = Math.max(right, r.right);
+          bottom = Math.max(bottom, r.bottom);
+        }
+        if (ruler.top >= bottom + 8) right = 0;
       }
-      if (ruler.top >= bottom + 8) {
-        html.style.removeProperty('--ruler-left');
-        return;
-      }
+      // The locate chip sits at the ruler's default spot on /earth and /moon, so
+      // wherever they share rows the ruler steps right of it (not only on short windows).
       const locate = visible(document.querySelector('.locate-me'));
       if (locate && locate.top < ruler.bottom && locate.bottom > ruler.top) {
         right = Math.max(right, locate.right);
       }
-      html.style.setProperty('--ruler-left', `${Math.round(right + 12)}px`);
+      const left = right ? Math.round(right + 12) : 12;
+      if (right) html.style.setProperty('--ruler-left', `${left}px`);
+      else html.style.removeProperty('--ruler-left');
+      // On narrow windows the ruler's column runs under the centred footer: lift it clear.
+      const foot = visible(document.querySelector('.site-footer'));
+      if (foot && left < foot.right && left + ruler.width > foot.left) {
+        html.style.setProperty('--ruler-clear', `${Math.round(innerHeight - foot.top + 8)}px`);
+      } else {
+        html.style.removeProperty('--ruler-clear');
+      }
     };
     const schedule = () => {
       cancelAnimationFrame(raf);
@@ -1194,13 +1225,19 @@
       cancelAnimationFrame(raf);
       ro.disconnect();
       mo.disconnect();
-      html.style.removeProperty('--ruler-left');
+      clearProps();
     };
   });
   // .by(): a closure, so TS sees `selected` as SurfaceSite | null, not the
   // `null` it narrows the top-level initialiser to.
+  // A phone's annotation sheet takes the card's place so the rings stay visible.
   const tierCardShown = $derived.by(
-    () => view === '3d' && !!tierContext && !panoramaActive && selected?.kind !== 'orbiter',
+    () =>
+      view === '3d' &&
+      !!tierContext &&
+      !panoramaActive &&
+      selected?.kind !== 'orbiter' &&
+      !(viewport.isCoarsePointer && annotationUi.openId),
   );
   // Mobile: true while any accordion tab is open — hides the altitude pill so
   // the open drawer has room (2026-07 user direction).
@@ -1251,6 +1288,8 @@
    *  and not overlap it". Initialised to 0 (wide zoom → lander
    *  visible, crosshair hidden). */
   let regionalOpacityForUi = $state(0);
+  /** The selected site's tag-icon opacity (1 = its icon is the mark; the crosshair takes over as it goes). */
+  let selectedIconUi = $state(1);
 
   /**
    * Nation chip label + colour for the info card's site header.
@@ -1311,6 +1350,18 @@
   // Loaded from static/data/site-stories/<id>.json. Null when no
   // story file exists for this site → tab is hidden.
   let panelStory: SiteStory | null = $state(null);
+  // The illustrated site map: first card of the STORY tab (static/data/site-illustrations.json).
+  let panelIllustration: SiteIllustration | null = $state(null);
+  $effect(() => {
+    const id = selected?.id ?? null;
+    panelIllustration = null;
+    if (!id) return;
+    void getSiteIllustration(id, getLocale())
+      .then((i) => {
+        if (selected?.id === id) panelIllustration = i;
+      })
+      .catch(dataLoadFailed);
+  });
   // #547 S5 — the collectible card. One wiring serves every body this
   // scene hosts: earth pads resolve their FLEET card (the site IS the
   // fleet launch-site entry), moon/mars/venus sites that alias a mission
@@ -1328,16 +1379,20 @@
   let cardAliasPending = $state(false);
   let cardFleetEntry = $state<FleetEntry | null>(null);
   let cardFleetIndex = $state<FleetIndexEntry[]>([]);
+  // The card code loads on demand (lazy-card.ts), in the alias loader below.
+  let cards = $state<CardModules | null>(null);
   let cardSpec = $derived.by<CardSpec | null>(() => {
     const site = selected as SurfaceSite | null;
-    if (!site) return null;
+    if (!site || !cards) return null;
     if (body === 'earth')
       return cardFleetEntry && cardFleetEntry.id === site.id
-        ? cardForFleet(cardFleetEntry, cardFleetIndex, panelGallery[0])
+        ? cards.spec.cardForFleet(cardFleetEntry, cardFleetIndex, panelGallery[0])
         : null;
     if (cardAliasPending) return null;
-    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
-    if (body === 'moon' || body === 'mars') return cardForSite(site, sites, body, panelGallery[0]);
+    if (cardAliasMission)
+      return cards.spec.cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
+    if (body === 'moon' || body === 'mars')
+      return cards.spec.cardForSite(site, sites, body, panelGallery[0]);
     return null; // venus non-aliased sites (none today) — no card
   });
   $effect(() => {
@@ -1378,6 +1433,7 @@
         const stillCurrent = () =>
           selected != null && selected.id === lastSelectedId && sid === lastSelectedId;
         try {
+          cards ??= await loadCardModules();
           if (body === 'earth') {
             if (cardFleetIndex.length === 0) cardFleetIndex = await getFleetIndex();
             const entry = await getFleet(sid, 'launch-site', localeFromPage(page));
@@ -1385,7 +1441,7 @@
             return;
           }
           if (cardMissionIndex.length === 0) cardMissionIndex = await getMissionIndex();
-          const aliasId = siteAliasMissionId(site, cardMissionIndex);
+          const aliasId = cards.spec.siteAliasMissionId(site, cardMissionIndex);
           if (!aliasId) {
             if (stillCurrent()) cardAliasPending = false;
             return;
@@ -1509,6 +1565,20 @@
       }
     }
   }
+  /** The crosshair marks the selected site's spot once its tag icon has gone. With the
+   *  panel closed, a tap within reach of it (on the ground, or on a ring or badge sitting
+   *  there) reopens the panel, as does the landing ring (`ringId`) wherever it sits. `x`, `y`: container px. */
+  function reopenPanelAt(x: number, y: number, ringId?: string): boolean {
+    if (!selected || panelOpen || flatPatchActive || panoramaActive) return false;
+    if (ringId !== 'landing') {
+      const ch = siteCrosshairScreen;
+      if (!ch?.onScreen || regionalOpacityForUi <= 0.35 || Math.hypot(x - ch.x, y - ch.y) > 24)
+        return false;
+    }
+    cue('select');
+    panelOpen = true;
+    return true;
+  }
   /** Open a museum's card (PRD-027); `face` flies the camera to it. */
   function selectMuseum(id: string, options: { face?: boolean } = {}) {
     const mu = museumsCache.find((x) => x.id === id);
@@ -1611,6 +1681,30 @@
         if (s) enterRouteView(s);
       };
       window.__surfaceSceneExitRouteView = () => exitRouteView();
+      window.__surfaceSceneFaceLatLon = (lat, lon, r) => faceLatLonImpl?.(lat, lon, r);
+      window.__surfaceSceneFaceSite = (id, r) => {
+        const s = sites.find((x) => x.id === id);
+        if (s) faceCameraAtSite?.(s, r);
+      };
+      // Test hook: where a site's own spot is drawn now, client px — through the route's
+      // magnified frame (toDrawn) when it has one. Null when behind the globe.
+      window.__surfaceSceneDrawnSiteXY = (id) => {
+        const s = sites.find((x) => x.id === id);
+        if (!s || s.lat == null || s.lon == null) return null;
+        const d = traverseLines.find((t) => t.roverId === id)?.toDrawn?.(s.lat, s.lon) ?? [
+          s.lat,
+          s.lon,
+        ];
+        const u = latLonToUnitSphere(d[0], d[1]);
+        planetMesh.updateMatrixWorld(true);
+        const wp = new THREE.Vector3(u.x, u.y, u.z)
+          .multiplyScalar(planetRadius)
+          .applyMatrix4(planetMesh.matrixWorld);
+        const ndc = wp.project(camera);
+        if (ndc.z >= 1) return null;
+        const r = renderer.domElement.getBoundingClientRect();
+        return { x: r.left + ((ndc.x + 1) / 2) * r.width, y: r.top + ((1 - ndc.y) / 2) * r.height };
+      };
     }
 
     loadSites(localeFromPage(page))
@@ -1700,12 +1794,15 @@
     });
     lifecycle.add(() => siteTags.dispose());
     const siteTagFade = new Map<string, number>();
+    const siteCardFade = new Map<string, number>();
     const siteTagPos = new THREE.Vector3();
     let siteTagSources: unknown[] = [];
     // HUD panels over the canvas (detail panel, chips, legend, rulers): cards
     // keep clear of them. Re-read twice a second, not every frame.
     const SITE_TAG_HUD =
-      'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler';
+      'aside.panel, .hud-controls, .hud-top-mobile, .legend-3d, .tier-context-card, .surface-index-handle, .sidx, .ruler, .surface-bottom-bar';
+    const ringScratch = new THREE.Vector3();
+    const ringEdgeScratch = new THREE.Vector3();
     let siteTagBlocked: Rect[] = [];
     let siteTagBlockedAt = -Infinity;
     // Traverse end caption: the scale-bar / altitude boxes it must dodge, re-measured at most
@@ -2309,7 +2406,7 @@
     // already at deep zoom so the button doesn't bounce on click.
     flyToDetail = (site: SurfaceSite) => {
       if (site.lat == null || site.lon == null) return;
-      if (camR < 32) return;
+      if (!shouldFlyToDetail(camR)) return;
       const v = latLonToUnitSphere(site.lat, site.lon);
       planetMesh.updateMatrixWorld(true);
       const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld);
@@ -2326,8 +2423,8 @@
       // 30.1) so the crosshair appears as soon as the fly-in completes —
       // the button is the shortcut straight to full detail, distinct from
       // the manual 3D zoom band (30.32 → 30.1) that wheel/pinch now expose.
-      flyToR = 30.08;
-      camRTarget = 30.08;
+      flyToR = DETAIL_FLY_TARGET_R;
+      camRTarget = DETAIL_FLY_TARGET_R;
       flyFromOffset.copy(focusOffset);
       flyToOffset.set(0, 0, 0);
       flyStart = performance.now();
@@ -2591,6 +2688,7 @@
       orbitalMarkers,
       hotspots,
       originalMaxTier,
+      composerActive: composer !== null,
     });
 
     // Camera + controls.
@@ -2671,6 +2769,13 @@
     // animates the camera back out and the trigger doesn't re-fire
     // on the next frame. Drive the 'leaving' phase (sphere fading
     // back in, flat patch fading out over 600 ms) before unmounting.
+    zoomPatchBy = (factor) => {
+      const next = Math.max(zoomFloor(), 30 + (camRTarget - 30) / factor);
+      if (next > camRTarget - 0.01) return false;
+      camRTarget = next;
+      flyActive = false;
+      return true;
+    };
     closeFlatPatch = (exitKmPerPx?: number) => {
       if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
       flatPatchPhase = 'leaving';
@@ -3000,6 +3105,7 @@
       el3d,
       camera,
       markers,
+      getSiteFade: (id) => siteTagFade.get(id) ?? 1,
       orbitalMarkers,
       traverseLines,
       hotspots,
@@ -3037,6 +3143,11 @@
       onSitePicked: (id) => {
         cue('select');
         selectedSat = null;
+        if (selected?.id === id && camR < 60) {
+          // Already close on it: reopen the panel without a camera move.
+          panelOpen = true;
+          return;
+        }
         // CORE-2 — a plain site click zooms + centres on every surface
         // route (earth / moon / mars), matching the ?site= deep-link and
         // the orbital-object focus. Uniform across planets — no per-body
@@ -3044,6 +3155,80 @@
         selectSite(id, { face: true });
       },
     });
+
+    // Site tags are the visible markers, and their frames are small at the first zoom
+    // stage: hover and click go through the tag layer (44 px touch target) before the
+    // 3D raycast. A group zooms to the distance where its members get a frame each.
+    const tagPointer = (clientX: number, clientY: number) => {
+      const r = container!.getBoundingClientRect();
+      return siteTags.hitTest(clientX - r.left, clientY - r.top);
+    };
+    const tagPlace = (key: string): { lat: number; lon: number } | null => {
+      const id = key.slice(key.indexOf(':') + 1);
+      const p = key.startsWith('museum:')
+        ? museumsCache.find((x) => x.id === id)
+        : key.startsWith('scope:')
+          ? observatoriesCache.find((x) => x.id === id)
+          : sites.find((x) => x.id === id);
+      return p && p.lat != null && p.lon != null ? { lat: p.lat, lon: p.lon } : null;
+    };
+    // Camera distance a fan was opened at (null while the camera is still flying), so
+    // zooming away from it collapses it.
+    let fanCamR: number | null = null;
+    const pickTagAt = (clientX: number, clientY: number): boolean => {
+      if (pickSatAt(clientX, clientY)) return false;
+      const hit = tagPointer(clientX, clientY);
+      if (!hit) {
+        siteTags.setFan(null);
+        return false;
+      }
+      if (hit.keys.length > 1) {
+        // A group fans out around its point; a modest zoom toward it helps but stays
+        // above the imagery tiers (camR 38), where the pictures are still sharp.
+        const pts = hit.keys.map(tagPlace).filter((p): p is { lat: number; lon: number } => !!p);
+        cue('select');
+        siteTags.setFan(hit.keys);
+        if (pts.length > 1 && camR > 46) {
+          const c = centroidLatLon(pts);
+          faceLatLonImpl?.(c.lat, c.lon, Math.max(38, 30 + (camR - 30) * 0.55));
+        }
+        return true;
+      }
+      siteTags.setFan(null);
+      cue('select');
+      const id = hit.lead.slice(hit.lead.indexOf(':') + 1);
+      if (hit.lead.startsWith('museum:')) selectMuseum(id, { face: true });
+      else if (hit.lead.startsWith('scope:')) selectObservatory(id, { face: true });
+      else if (selected?.id === id && camR < 60) {
+        // Zoomed in on the selected site (its icon is all that is left of the
+        // tag): the tap reopens the panel where the camera already is.
+        selectedSat = null;
+        panelOpen = true;
+      } else {
+        selectedSat = null;
+        selectSite(id, { face: true });
+      }
+      return true;
+    };
+    // A photo pin opens its photo (#641); the selected site's landing ring, once its
+    // icon has handed over to it, reopens the panel; anything else picks as before.
+    const pickAt = (clientX: number, clientY: number) => {
+      const stop = pickStopAt(clientX, clientY);
+      if (stop?.image) {
+        panelLightbox = stop.image;
+        return;
+      }
+      if (stop?.landingOf && stop.landingOf === selected?.id && !panelOpen) {
+        cue('select');
+        panelOpen = true;
+        return;
+      }
+      // Close in, the camera sits inside the marker's hit sphere (no raycast hit): the
+      // crosshair that marks the selected site's spot takes the tap.
+      const r = container!.getBoundingClientRect();
+      if (reopenPanelAt(clientX - r.left, clientY - r.top)) return;
+      if (!pickTagAt(clientX, clientY)) tryPick3d(clientX, clientY);
+    };
 
     let hoveredSiteId: string | null = null;
     // /earth Earth-satellites use a separate raycast list (pickSatAt
@@ -3069,6 +3254,9 @@
       const satId = pickSatAt(e.clientX, e.clientY);
       hoveredSatId = satId;
       hoveredSiteId = satId ? null : pickSiteAt(e.clientX, e.clientY);
+      const tagHit = satId ? null : tagPointer(e.clientX, e.clientY);
+      siteTags.setHover(tagHit?.lead ?? null);
+      el3d.style.cursor = tagHit ? 'pointer' : 'grab';
       const stopHit = pickStopAt(e.clientX, e.clientY);
       hoveredStopInfo = stopHit ? { ...stopHit, clientX: e.clientX, clientY: e.clientY } : null;
     };
@@ -3082,6 +3270,8 @@
       hoverRaf = 0;
       hoverEvent = null;
       hoveredSiteId = null;
+      siteTags.setHover(null);
+      el3d.style.cursor = 'grab';
       hoveredSatId = null;
       hoveredStopInfo = null;
     };
@@ -3180,9 +3370,7 @@
       // hotspot instead of doing nothing.
       if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') {
         // A photo pin opens its photo (#641); anything else picks as before.
-        const photo = pickStopAt(e.clientX, e.clientY)?.image;
-        if (photo) panelLightbox = photo;
-        else tryPick3d(e.clientX, e.clientY);
+        pickAt(e.clientX, e.clientY);
       }
     };
     // Suppress the browser context menu on right-click so right-drag
@@ -3324,9 +3512,7 @@
         e.touches.length === 0
       ) {
         const t = e.changedTouches[0];
-        const photo = pickStopAt(t.clientX, t.clientY)?.image;
-        if (photo) panelLightbox = photo;
-        else tryPick3d(t.clientX, t.clientY);
+        pickAt(t.clientX, t.clientY);
       }
     };
 
@@ -3344,6 +3530,9 @@
       onHoverLeave,
       onContextMenu,
     });
+
+    // A ring's tap target sits over the canvas: scrolling there still zooms.
+    if (ringsHost) lifecycle.on(ringsHost, 'wheel', onWheel, { passive: false });
 
     const c2 = canvas2d;
     const { draw2d, on2dClick } = createSurface2dMap({
@@ -3490,6 +3679,8 @@
           if (st >= 1) flySunFrom = flySunTo = null;
         }
         let cameraChanged = false;
+        const detailFlyNow = flyActive && flyToR === DETAIL_FLY_TARGET_R;
+        if (detailFlyNow !== detailFlying) detailFlying = detailFlyNow;
         if (flyActive) {
           const t = (now - flyStart) / FLY_DURATION_MS;
           if (t >= 1) {
@@ -3810,8 +4001,8 @@
             sy >= 0 &&
             sy <= ch;
           siteCrosshairScreen = { x: sx, y: sy, onScreen };
-        } else if (siteCrosshairScreen !== null) {
-          siteCrosshairScreen = null;
+        } else {
+          if (siteCrosshairScreen !== null) siteCrosshairScreen = null;
         }
 
         // Surface Hotspots LOD (PRD-014 / RFC-017 S1).
@@ -3900,6 +4091,26 @@
           }
           const labelFade = Math.max(0, 1 - regionalOpacityTop * 4);
 
+          // Tier-2 detail opacity ramp. Patch is eager-built at site
+          // creation so tier2Group exists even when curTier < 2; we
+          // override the dispatcher's "tier2 hidden when tier<2"
+          // decision and control visibility 100% via camR. ADR-072
+          // §Drift 7: range consolidated to 33→30.5 (was 50→33 on
+          // Moon — Mars's tighter window matches actual Tier-2 patch
+          // dimensions). Traverse polylines + end-dots + captions
+          // share this ramp via tier2DelayedReveal.
+          const detailFadeStart = 33;
+          // 30.5 → 30.32 (2026-06-01): hold detail fully visible right
+          // up to the new SPHERE_TO_FLAT_CAM_R floor, instead of
+          // peaking and then having a dead band before flat-patch.
+          const detailFadeEnd = 30.32;
+          const detailOpacity =
+            camR >= detailFadeStart
+              ? 0
+              : camR <= detailFadeEnd
+                ? 1
+                : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
+
           const selectedSiteId = selected?.id;
           // A neighbour whose marker sits under the selected site's magnified
           // imagery is drawn at its true place on a ~20× map, so its tag lands
@@ -3914,12 +4125,19 @@
             : null;
           const footUnit = footCtr ? latLonToUnitSphere(footCtr.lat, footCtr.lon) : null;
           const footR = (REGIONAL_PATCH_DIAMETER_WORLD_UNITS * 0.75) / planetRadius;
-          // The selected site's tag leaves first (camR 60 → 50): seen from
-          // straight above, its leader points at the camera; the panel title
-          // and crosshair carry it (#641). A site's own imagery tier no longer
-          // hides its tag — with nothing selected the LOD promotes and evicts
-          // sites as you zoom, and the tags blinked with it.
+          // The selected site's card and leader leave first (camR 60 → 50): seen
+          // from straight above, the leader points at the camera; the panel title
+          // and crosshair carry it (#641). Its icon stays, so there is always
+          // something to click when the panel is closed, until the site's own
+          // route / landing ring shows (the detail ramp) and takes over; a site
+          // with no such imagery keeps the icon down to the zoom floor. The 3D
+          // models still leave with the regional photo (2026-06). A site's own
+          // imagery tier no longer hides its tag — with nothing selected the LOD
+          // promotes and evicts sites as you zoom, and the tags blinked with it.
           const selectedFade = Math.max(0, Math.min(1, (camR - 50) / 10));
+          const ownDetail =
+            !!selected && (!!selected.hotspot_tier2_source || routeViewCenters.has(selected.id));
+          const selectedIconFade = ownDetail ? 1 - detailOpacity : 1;
           for (const mk of markers) {
             let underFootprint = false;
             if (footUnit && mk.siteId !== selectedSiteId) {
@@ -3927,13 +4145,10 @@
               underFootprint =
                 Math.hypot(u.x - footUnit.x, u.y - footUnit.y, u.z - footUnit.z) < footR;
             }
-            const fade =
-              mk.siteId === selectedSiteId
-                ? Math.min(labelFade, selectedFade)
-                : underFootprint
-                  ? labelFade
-                  : 1;
+            const isSel = mk.siteId === selectedSiteId;
+            const fade = isSel ? selectedIconFade : underFootprint ? labelFade : 1;
             siteTagFade.set(mk.siteId, mk.group.visible ? fade : 0);
+            siteCardFade.set(mk.siteId, isSel ? Math.min(labelFade, selectedFade) : 1);
           }
 
           // Site tags: content when the lists change (load, locale), then
@@ -3957,7 +4172,13 @@
             const cw = renderer.domElement.clientWidth;
             const ch = renderer.domElement.clientHeight;
             const centre = planetMesh.getWorldPosition(legendScratchB);
-            const tagAt = (key: string, obj: THREE.Object3D, opacity: number, boost = 0) => {
+            const tagAt = (
+              key: string,
+              obj: THREE.Object3D,
+              opacity: number,
+              boost = 0,
+              card = 1,
+            ) => {
               if (opacity <= 0.01) return;
               const wp = obj.getWorldPosition(siteTagPos);
               const facing =
@@ -3986,6 +4207,7 @@
                 y: ((1 - ndc.y) / 2) * ch,
                 opacity: focused,
                 boost,
+                card,
               });
             };
             for (const mk of markers)
@@ -3994,6 +4216,7 @@
                 mk.group,
                 siteTagFade.get(mk.siteId) ?? 0,
                 mk.siteId === selected?.id ? 10 : 0,
+                siteCardFade.get(mk.siteId) ?? 1,
               );
             // A place under the selected site's magnified imagery would sit on
             // the wrong ground: it fades with the reveal band, the rest stay.
@@ -4028,32 +4251,23 @@
           const fillNow = planetFill(camR, planetRadius, camera.fov, tagCw, tagCh);
           const fillFirst = planetFill(autoCamR, planetRadius, camera.fov, tagCw, tagCh);
           const stage = tagStage(fillNow / fillFirst);
+          if (!siteTags.fanned()) fanCamR = null;
+          else if (flyActive) fanCamR = null;
+          else if (fanCamR == null) fanCamR = camR;
+          else if (Math.abs(camR - fanCamR) > 0.04 * (fanCamR - 30) + 0.02) siteTags.setFan(null);
           siteTags.sync(tagFrames, siteTagBlocked, stage);
+          // The crosshair takes over wherever the icon is not drawn (off the view, say).
+          const iconUi = tagFrames.some((f) => f.key === `site:${selectedSiteId}`)
+            ? selectedIconFade
+            : 0;
+          if (Math.abs(selectedIconUi - iconUi) > 0.01) selectedIconUi = iconUi;
           // The nation legend arrives with the first icons (#641) — by zoom
           // stage, not by tags shown, so switching every nation off keeps
           // the switches.
           const tagsOn = stage.icon > 0.01;
           if (tagsOn !== tagStageOn) tagStageOn = tagsOn;
 
-          // Tier-2 detail opacity ramp. Patch is eager-built at site
-          // creation so tier2Group exists even when curTier < 2; we
-          // override the dispatcher's "tier2 hidden when tier<2"
-          // decision and control visibility 100% via camR. ADR-072
-          // §Drift 7: range consolidated to 33→30.5 (was 50→33 on
-          // Moon — Mars's tighter window matches actual Tier-2 patch
-          // dimensions). Traverse polylines + end-dots + captions
-          // share this ramp via tier2DelayedReveal.
-          const detailFadeStart = 33;
-          // 30.5 → 30.32 (2026-06-01): hold detail fully visible right
-          // up to the new SPHERE_TO_FLAT_CAM_R floor, instead of
-          // peaking and then having a dead band before flat-patch.
-          const detailFadeEnd = 30.32;
-          const detailOpacity =
-            camR >= detailFadeStart
-              ? 0
-              : camR <= detailFadeEnd
-                ? 1
-                : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
+          // (detailOpacity, the tier-2 detail ramp, is computed above with the tag fades.)
           // Regional CTX patch reveals EARLIER than the HiRISE detail
           // patch — the user wants to see the wider CTX context first
           // (~30km bbox) and only commit to the inner HiRISE area
@@ -4131,13 +4345,6 @@
             h.tier2Group.visible = regionalOpacity > 0.01 || detailOpacity > 0.01;
             h.tier2Group.traverse((obj) => {
               if (!(obj instanceof THREE.Mesh)) return;
-              // Annotation pins (Apollo 11 flag, LRRR, EASEP …) hold their
-              // on-screen size: at a fixed world size the five, metres apart,
-              // stacked into one ring filling the view near the floor (#641).
-              if (obj.userData?.annotationId) {
-                obj.scale.setScalar(Math.min(1, Math.max(0.02, camR - 30)));
-                return;
-              }
               const layer = obj.userData?.layer;
               if (layer !== 'detail' && layer !== 'regional') return;
               // #360: for traverse rovers the landing regional CTX is replaced
@@ -4156,6 +4363,71 @@
               // fade to draw.
               mat.transparent = mat.opacity < 0.99 || !!(mat as THREE.MeshPhongMaterial).alphaMap;
             });
+          }
+
+          // Annotation rings: project the selected site's anchors (invisible
+          // objects on its detail patch) to screen; AnnotationRings draws them
+          // at a fixed size, so metres-apart objects stay separate rings.
+          {
+            const sel = selected;
+            const patch = sel ? hotspots.find((x) => x.siteId === sel.id)?.tier2Group : undefined;
+            const next: PlacedRing[] = [];
+            if (
+              patch?.visible &&
+              detailOpacity > 0.5 &&
+              !flatPatchActive &&
+              sel?.hotspot_annotations
+            ) {
+              const byId = new Map(sel.hotspot_annotations.map((a) => [a.id, a]));
+              const rw = renderer.domElement.clientWidth;
+              const rh = renderer.domElement.clientHeight;
+              for (const obj of patch.children) {
+                const annotation = byId.get(obj.userData?.annotationId);
+                if (!annotation) continue;
+                const ndc = obj.getWorldPosition(ringScratch).project(camera);
+                if (ndc.z >= 1) continue;
+                const x = ((ndc.x + 1) / 2) * rw;
+                const y = ((1 - ndc.y) / 2) * rh;
+                // An area: its ground radius (anchor userData.radiusU, patch-local units) projected
+                // one radius along the patch's east axis, so the dashed outline keeps its true size.
+                const radiusU = obj.userData?.radiusU as number | undefined;
+                let radiusPx: number | undefined;
+                if (radiusU) {
+                  const edge = obj.localToWorld(ringEdgeScratch.set(radiusU, 0, 0)).project(camera);
+                  radiusPx = Math.hypot(((edge.x - ndc.x) / 2) * rw, ((edge.y - ndc.y) / 2) * rh);
+                }
+                next.push({ annotation, x, y, radiusPx });
+              }
+              if (rw !== ringsW) ringsW = rw;
+              if (rh !== ringsH) ringsH = rh;
+            }
+            const moved =
+              next.length !== rings3d.length ||
+              next.some(
+                (r, i) =>
+                  r.annotation.id !== rings3d[i].annotation.id ||
+                  Math.abs(r.x - rings3d[i].x) > 0.25 ||
+                  Math.abs(r.y - rings3d[i].y) > 0.25 ||
+                  Math.abs((r.radiusPx ?? 0) - (rings3d[i].radiusPx ?? 0)) > 0.5,
+              );
+            if (moved) rings3d = next;
+            // Traverse stop pills are WebGL sprites: tell the HTML ring labels where they sit.
+            const pills: RingRect[] = [];
+            if (next.length > 0) {
+              for (const tl of traverseLines) {
+                for (const lb of tl.stopLabels ?? []) {
+                  const q = lb.visible ? (lb.userData.rectPx as number[] | null | undefined) : null;
+                  if (q)
+                    pills.push({
+                      x: Math.round(q[0]),
+                      y: Math.round(q[1]),
+                      w: Math.round(q[2] - q[0]),
+                      h: Math.round(q[3] - q[1]),
+                    });
+                }
+              }
+            }
+            if (JSON.stringify(pills) !== JSON.stringify(ringBlocked)) ringBlocked = pills;
           }
 
           // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
@@ -4395,7 +4667,9 @@
                       host: renderer.domElement.getBoundingClientRect(),
                       huds: sceneRoot
                         ? [
-                            ...sceneRoot.querySelectorAll('.distance-scale, .altitude-indicator'),
+                            ...sceneRoot.querySelectorAll(
+                              '.distance-scale, .altitude-indicator, .surface-bottom-bar',
+                            ),
                           ].map((e) => e.getBoundingClientRect())
                         : [],
                     };
@@ -4563,6 +4837,7 @@
                   else pillRects.push(r);
                 }
                 lb.visible = pillShow;
+                lb.userData.rectPx = pillShow ? pillRects[pillRects.length - 1] : null;
                 // Near edge 16 px from the ring centre, whatever the width.
                 lb.center.x = flip ? 1 + 16 / wPx : -16 / wPx;
                 lb.scale.set(stopLabelH * (lb.userData.aspect ?? 4), stopLabelH, 1);
@@ -4734,14 +5009,15 @@
                   // cloudless 2025 mosaic for every pad (fetch-earth-pads.ts);
                   // the detail branch below dispatches per-pad source. Same
                   // false-provenance trap as the 2026-06 Mars fix.
+                  const eoxCrop = regionalCropSpec(site, 'earth');
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
                     sourceTitle: EOX_CLOUDLESS_TITLE,
                     sourceAuthor: EOX_CLOUDLESS_AUTHOR,
                     resolutionText: m.surface_res_crop({
-                      res: m.unit_mpx_value({ value: '10' }),
-                      crop: '1600',
-                      km: m.mp_flight_unit_km({ value: '16' }),
+                      res: m.unit_mpx_value({ value: formatNumber(eoxCrop.mPerPx, locale, 0) }),
+                      crop: String(eoxCrop.cropPx),
+                      km: m.mp_flight_unit_km({ value: formatNumber(eoxCrop.groundKm, locale, 0) }),
                     }),
                     sourceUrl: 'https://cloudless.eox.at/',
                     licenseShort: 'CC-BY-NC-SA-4.0',
@@ -4776,14 +5052,15 @@
                   // Camera (#361) — the CTX-equivalent context for the 12
                   // landers with no LROC NAC ROI regional. ~6 m/px TC COG,
                   // window-cropped via USGS Astrogeology ARD.
+                  const kagCrop = regionalCropSpec(site, 'moon');
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'Kaguya (SELENE) TC',
                     sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
                     resolutionText: m.surface_res_crop({
-                      res: m.unit_mpx_value({ value: '6' }),
-                      crop: '2560',
-                      km: m.mp_flight_unit_km({ value: '16' }),
+                      res: m.unit_mpx_value({ value: formatNumber(kagCrop.mPerPx, locale, 0) }),
+                      crop: String(kagCrop.cropPx),
+                      km: m.mp_flight_unit_km({ value: formatNumber(kagCrop.groundKm, locale, 0) }),
                     }),
                     sourceUrl: 'https://www.kaguya.jaxa.jp/',
                     licenseShort: 'JAXA-OPEN',
@@ -4791,14 +5068,17 @@
                 } else {
                   // Moon regional layer — LROC NAC ROI mosaic (Apollo set),
                   // cropped at a wider 3072² window (~15 km).
+                  const lrocCrop = regionalCropSpec(site, 'moon');
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'LROC NAC ROI',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
                     resolutionText: m.surface_res_crop({
-                      res: m.unit_mpx_value({ value: '5' }),
-                      crop: '3072',
-                      km: m.mp_flight_unit_km({ value: '15' }),
+                      res: m.unit_mpx_value({ value: formatNumber(lrocCrop.mPerPx, locale, 0) }),
+                      crop: String(lrocCrop.cropPx),
+                      km: m.mp_flight_unit_km({
+                        value: formatNumber(lrocCrop.groundKm, locale, 0),
+                      }),
                     }),
                     sourceUrl: 'https://pds.lroc.im-ldi.com/',
                     licenseShort: 'PD-NASA',
@@ -4893,20 +5173,22 @@
                     layerLabel: m.surface_layer_detail(),
                     sourceTitle: 'Kaguya (SELENE) TC',
                     sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
-                    resolutionText: `~${m.unit_mpx_value({ value: '6' })}`,
+                    resolutionText: `~${m.unit_mpx_value({ value: formatNumber(regionalCropSpec(site, 'moon').mPerPx, locale, 0) })}`,
                     sourceUrl: 'https://www.kaguya.jaxa.jp/',
                     licenseShort: 'JAXA-OPEN',
                   });
                 } else {
                   // LROC NAC Featured Image (#361) — pre-cropped orbital view
-                  // published by the LROC team, ~0.5–2 m/px native.
+                  // published by the LROC team, ~0.5–2 m/px native. Website
+                  // products are copyrighted, educational use with credit
+                  // (lroc.im-ldi.com/about/terms); only PDS data is public domain.
                   layers.push({
                     layerLabel: m.surface_layer_detail(),
                     sourceTitle: 'LROC NAC Featured Image',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
                     resolutionText: `~${m.unit_mpx_value({ value: '0.5–2' })}`,
-                    sourceUrl: 'https://www.lroc.asu.edu/',
-                    licenseShort: 'PD-NASA',
+                    sourceUrl: 'https://lroc.im-ldi.com/about/terms',
+                    licenseShort: 'LROC-EDU',
                   });
                 }
               }
@@ -4979,16 +5261,16 @@
                   }
                 }
                 const rp = best?.userData?.routePatch as
-                  { lat: number; lon: number; image: string; id: string } | undefined;
-                if (rp) {
-                  target = {
-                    ...selected,
-                    lat: rp.lat,
-                    lon: rp.lon,
-                    hotspot_tier2_source: rp.image,
-                    name: `${selected.name ?? selected.id} · ${rp.id}`,
-                  };
-                }
+                  | {
+                      lat: number;
+                      lon: number;
+                      image: string;
+                      id: string;
+                      ground_m: number;
+                      resolution_m_per_px: number;
+                    }
+                  | undefined;
+                if (rp) target = routePatchFlatTarget(selected, rp, config.radiusKm);
               }
             }
             flatPatchTarget = target;
@@ -5120,32 +5402,6 @@
   style:--index-handle-top={indexHandleTop != null ? `${indexHandleTop}px` : undefined}
   style:--card-bottom={legendH ? `${48 + legendH + 8 + locateReservePx}px` : undefined}
 >
-  <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
-       Screen-reader-only mirror of the 3D-canvas site markers. Each
-       button fires the same selectSite handler that a canvas click
-       does, so a screen-reader user can navigate to any landing
-       site without sighted help. Visually hidden via .sr-only;
-       always present in the DOM + tab order. -->
-  <ul class="sr-only sr-site-list" aria-label={m.a11y_moon_sites_list_aria()}>
-    {#each sites as site (site.id)}
-      <li>
-        <button
-          type="button"
-          onclick={() => {
-            cue('select');
-            selectSite(site.id, { face: true });
-          }}
-          aria-current={selected?.id === site.id ? 'true' : undefined}
-        >
-          {m.a11y_select_site_template({
-            name: site.name ?? site.site_name ?? site.id,
-            agency: site.agency ?? '',
-          })}
-        </button>
-      </li>
-    {/each}
-  </ul>
-
   <div
     class="layer"
     bind:this={container}
@@ -5153,6 +5409,19 @@
     class:flat-patch-fading={flatPatchPhase !== 'hidden'}
     data-audio-stage="surface-scene"
   ></div>
+  <div class="rings-host" bind:this={ringsHost}>
+    {#if view === '3d' && !flatPatchActive && rings3d.length > 0}
+      <AnnotationRings
+        rings={rings3d}
+        width={ringsW}
+        height={ringsH}
+        blocked={ringBlocked}
+        onOpenPhoto={(src) => (panelLightbox = src)}
+        onZoomTo={(_x, _y, factor) => zoomPatchBy(factor)}
+        onRingTap={reopenPanelAt}
+      />
+    {/if}
+  </div>
   <!-- 2D fallback canvas — equirectangular for /mars, lunar-polar-discs
        for /moon. On /earth (config.disable2D) the toggle button + view
        state are suppressed so the canvas stays permanently hidden;
@@ -5494,7 +5763,7 @@
         <EnterSkyButton onEnter={() => void launchSkyScene()} />
       {/if}
     </div>
-    {#if !flatPatchActive}
+    {#if !mobileDrawerHidden({ routeViewActive, flatPatchActive, detailFlying })}
       <!-- Hide the orbital controls in flat-patch detail (same as panorama);
            they otherwise overlap the true-scale provenance card. -->
       <MobileDrawerGroup
@@ -5585,18 +5854,39 @@ sample      ${debugInfo.projectedPxSample}`}
        any planet"). -->
   <!-- …and not when almost landed (operator, #641): below ~4 % of the radius
        (≈ 150 km on Mars) the detail imagery is in and the scale bar says it. -->
-  {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen && altitudeKm >= config.radiusKm * 0.044}
-    <div class="altitude-indicator" class:beside-panel={panelOpen} aria-hidden="true">
-      {m.surface_altitude({
-        value:
-          altitudeKm >= 1000
-            ? m.unit_mm_value({ value: (altitudeKm / 1000).toFixed(1) })
-            : altitudeKm >= 1
-              ? m.mp_flight_unit_km({ value: altitudeKm.toFixed(0) })
-              : m.unit_m_value({ value: (altitudeKm * 1000).toFixed(0) }),
-      })}
-    </div>
-  {/if}
+  <!-- Phone: ONE compact bottom bar — the route's globe button, the scale bar and the
+       altitude readout in a single row above the tab row. Everywhere else the bar is
+       `display: contents`, so each child keeps its own corner. -->
+  <div
+    class="surface-bottom-bar"
+    class:drawer-open={mobileDrawerOpen}
+    class:flat={flatPatchActive}
+    class:beside-panel={panelOpen}
+  >
+    {@render barStart?.()}
+    <!-- Distance scale bar — appears whenever a tier-2 layer is fading in. Width +
+         label reflect the on-screen km scale at the current camera zoom (image 21
+         ask, 2026-06-03). Hidden during panorama: ground distance is meaningless
+         inside the inverted skybox. -->
+    {#if scaleBar && view === '3d' && !panoramaActive && !flatPatchActive}
+      <div class="distance-scale" class:beside-panel={panelOpen} data-testid="distance-scale">
+        <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
+        <div class="distance-scale-label mono">{scaleBar.label}</div>
+      </div>
+    {/if}
+    {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen && altitudeKm >= config.radiusKm * 0.044}
+      <div class="altitude-indicator" class:beside-panel={panelOpen} aria-hidden="true">
+        {m.surface_altitude({
+          value:
+            altitudeKm >= 1000
+              ? m.unit_mm_value({ value: (altitudeKm / 1000).toFixed(1) })
+              : altitudeKm >= 1
+                ? m.mp_flight_unit_km({ value: altitudeKm.toFixed(0) })
+                : m.unit_m_value({ value: (altitudeKm * 1000).toFixed(0) }),
+        })}
+      </div>
+    {/if}
+  </div>
 
   <!-- Persistent landing-site crosshair — same gold + cross-hair design
        as the flat-patch view (SurfaceFlatPatch drawMarkers). Pinned to
@@ -5610,7 +5900,7 @@ sample      ${debugInfo.projectedPxSample}`}
       class="site-crosshair"
       style="left: {siteCrosshairScreen.x}px; top: {siteCrosshairScreen.y}px; opacity: {Math.min(
         1,
-        (regionalOpacityForUi - 0.25) * 4,
+        (regionalOpacityForUi - 0.25) * 4 * (1 - selectedIconUi),
       )}"
       aria-hidden="true"
       data-testid="site-crosshair"
@@ -5640,6 +5930,14 @@ sample      ${debugInfo.projectedPxSample}`}
         {traverses}
         entryKmPerPx={sphereKmPerPxAtSurface}
         tint={flatPatchTint}
+        detailBadge={detailBadgeLabel(flatPatchTarget ?? selected, config.planet)}
+        onOpenPhoto={(src) => (panelLightbox = src)}
+        onReopen={() => {
+          if (panelOpen) return false;
+          cue('select');
+          panelOpen = true;
+          return true;
+        }}
         onClose={(exitKmPerPx) => closeFlatPatch(exitKmPerPx)}
       />
     </div>
@@ -5658,6 +5956,7 @@ sample      ${debugInfo.projectedPxSample}`}
     <TierContextCard
       {tierContext}
       scaleNote={m.surface_tier_scale_note()}
+      groundNote={flatPatchActive ? m.surface_true_scale_short() : undefined}
       howItWorksHref={HOW_IMAGERY_WORKS[config.planet]
         ? localHref(HOW_IMAGERY_WORKS[config.planet]!)
         : undefined}
@@ -5697,18 +5996,6 @@ sample      ${debugInfo.projectedPxSample}`}
     </div>
   {/if}
 
-  <!-- Distance scale bar — appears in the bottom-right corner of the
-       3D canvas whenever a tier-2 layer is fading in. Width + label
-       reflect the on-screen km scale at the current camera zoom
-       (image 21 ask, 2026-06-03). Hidden during panorama since
-       ground distance is meaningless inside the inverted skybox. -->
-  {#if scaleBar && view === '3d' && !panoramaActive && !flatPatchActive}
-    <div class="distance-scale" class:beside-panel={panelOpen} data-testid="distance-scale">
-      <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
-      <div class="distance-scale-label mono">{scaleBar.label}</div>
-    </div>
-  {/if}
-
   <!-- Panorama mode overlay (Phase 6 / #118). The "Return to orbit"
        button is the visible exit; ESC also exits. Hidden-text desc
        is read by screen readers for vision-impaired users. -->
@@ -5741,6 +6028,7 @@ sample      ${debugInfo.projectedPxSample}`}
   <PanoramaSyntheticRegionMicrocopy
     active={panoramaActive}
     pitchDeg={panoramaPitchDeg}
+    yawDeg={panoramaYawDeg}
     syntheticRegions={activePanoramaMetadata?.synthetic_regions ?? null}
   />
 
@@ -5871,10 +6159,15 @@ sample      ${debugInfo.projectedPxSample}`}
   {#if !panoramaActive}
     <div
       class="legend-3d"
-      class:legend-3d--away={!(
-        view === '2d' ||
-        (tagStageOn && altitudeKm >= config.radiusKm * 0.044)
-      )}
+      class:legend-3d--away={nationFilterAway({
+        view,
+        tagStageOn,
+        altitudeKm,
+        radiusKm: config.radiusKm,
+        routeViewActive,
+        flatPatchActive,
+        detailFlying,
+      })}
       class:beside-panel={panelOpen}
       bind:this={legendEl}
       role="group"
@@ -5896,6 +6189,33 @@ sample      ${debugInfo.projectedPxSample}`}
     </div>
   {/if}
 
+  <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
+       Screen-reader-only mirror of the 3D-canvas site markers. Each
+       button fires the same selectSite handler that a canvas click
+       does, so a screen-reader user can navigate to any landing
+       site without sighted help. Visually hidden via .sr-only;
+       always present in the DOM + tab order, after the scene controls and the
+       imagery card so a keyboard user reaches those before ~50 site buttons. -->
+  <ul class="sr-only sr-site-list" aria-label={m.a11y_moon_sites_list_aria()}>
+    {#each sites as site (site.id)}
+      <li>
+        <button
+          type="button"
+          onclick={() => {
+            cue('select');
+            selectSite(site.id, { face: true });
+          }}
+          aria-current={selected?.id === site.id ? 'true' : undefined}
+        >
+          {m.a11y_select_site_template({
+            name: site.name ?? site.site_name ?? site.id,
+            agency: site.agency ?? '',
+          })}
+        </button>
+      </li>
+    {/each}
+  </ul>
+
   <Panel
     open={panelOpen}
     title={selected?.name ?? selected?.id ?? ''}
@@ -5908,7 +6228,10 @@ sample      ${debugInfo.projectedPxSample}`}
           {#if inlineRegime && onRegimeOpen}
             <RegimeChip regime={inlineRegime} onClick={() => onRegimeOpen?.(inlineRegime.id)} />
           {/if}
-          <span class="status" style="color: {tone.color}; border-color: {tone.color}">
+          <span
+            class="status"
+            style="color: {tone.color}; border-color: {tone.color}; border-style: {tone.outline}"
+          >
             {tone.label}
           </span>
         </AgencyRow>
@@ -6212,6 +6535,19 @@ sample      ${debugInfo.projectedPxSample}`}
           {/if}
         </div>
 
+        <!-- Loaded with the first site map: its 14-locale alt texts kept the surface routes over their JS budget. -->
+        {#if panelIllustration}
+          {#await import('$lib/components/SiteIllustrationFigure.svelte') then { default: SiteIllustrationFigure }}
+            <SiteIllustrationFigure
+              illustration={panelIllustration}
+              onOpen={(src) => {
+                panelLightbox = src;
+                if (selected) trackGalleryImageOpen('site', selected.id);
+              }}
+            />
+          {/await}
+        {/if}
+
         {#if selected.left}
           <section class="left-block" style:--accent={colorFor(selected)}>
             <h3>{m.moon_panel_left_title()}</h3>
@@ -6221,6 +6557,10 @@ sample      ${debugInfo.projectedPxSample}`}
 
         {#if selected.fact}
           <p class="editorial">{selected.fact}</p>
+        {/if}
+
+        {#if selected.hotspot_annotations?.length}
+          <SiteAnnotationList annotations={selected.hotspot_annotations} />
         {/if}
 
         {#if selected.capability}
@@ -6306,14 +6646,26 @@ sample      ${debugInfo.projectedPxSample}`}
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
       {:else if panelTab === 'story' && (panelStory || panelAnatomy.length > 0 || panelSequence)}
-        {#if panelAnatomy.length > 0 || panelSequence}
-          <SiteLandingPanel
-            anatomy={panelAnatomy}
-            sequence={panelSequence}
-            locale={localeFromPage(page)}
-            onOpen={(src) => (panelLightbox = src)}
-          />
-        {/if}
+        {#snippet landingGraphics()}
+          {#if panelAnatomy.length > 0 || panelSequence}
+            <SiteLandingPanel
+              anatomy={panelAnatomy}
+              sequence={panelSequence}
+              locale={localeFromPage(page)}
+              onOpen={(src) => (panelLightbox = src)}
+            />
+          {/if}
+        {/snippet}
+        {#snippet cutawayGraphics()}
+          {#if panelAnatomy.some((a) => a.exploded)}
+            <SiteLandingPanel
+              part="exploded"
+              anatomy={panelAnatomy}
+              locale={localeFromPage(page)}
+              onOpen={(src) => (panelLightbox = src)}
+            />
+          {/if}
+        {/snippet}
         {#if panelStory}
           <SiteStoryPanel
             story={panelStory}
@@ -6321,7 +6673,12 @@ sample      ${debugInfo.projectedPxSample}`}
               panelLightbox = src;
               if (selected) trackGalleryImageOpen('site', selected.id);
             }}
+            afterIntro={landingGraphics}
+            afterSurface={cutawayGraphics}
           />
+        {:else}
+          {@render landingGraphics()}
+          {@render cutawayGraphics()}
         {/if}
       {:else if panelTab === 'journey'}
         {#if replayRange}
@@ -6451,8 +6808,8 @@ sample      ${debugInfo.projectedPxSample}`}
     {/if}
   </Panel>
 
-  {#if cardSpec}
-    <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+  {#if cardSpec && cards}
+    <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
   {/if}
 
   <PanelLightbox
@@ -6646,6 +7003,12 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .layer.hidden {
     display: none;
+  }
+  .rings-host {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
   }
   :global(.moon canvas) {
     display: block;
@@ -7625,6 +7988,63 @@ sample      ${debugInfo.projectedPxSample}`}
     font-size: 11px;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.92);
+  }
+  /* Phone: one bar above the tab row holds the route's globe button, the scale
+     and the altitude. Elsewhere it is transparent to layout. */
+  .surface-bottom-bar {
+    display: contents;
+  }
+  @media (hover: none), (pointer: coarse) {
+    .surface-bottom-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: fixed;
+      left: 8px;
+      right: 8px;
+      bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+      /* Under the detail panel (z 30), like the rest of the scene HUD. */
+      z-index: 28;
+      min-height: 40px;
+      padding: 0 10px;
+      background: rgba(8, 10, 22, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+    }
+    .surface-bottom-bar:not(:has(> *)),
+    .surface-bottom-bar.drawer-open,
+    .surface-bottom-bar.flat {
+      display: none;
+    }
+    .surface-bottom-bar .distance-scale,
+    .surface-bottom-bar .altitude-indicator {
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      backdrop-filter: none;
+      z-index: auto;
+    }
+    .surface-bottom-bar .distance-scale-bar {
+      max-width: 40vw;
+    }
+    .surface-bottom-bar .altitude-indicator {
+      margin-inline-start: auto;
+      white-space: nowrap;
+    }
+    /* The scale says how far in you are; with it shown the altitude would not fit. */
+    .surface-bottom-bar .distance-scale ~ .altitude-indicator {
+      display: none;
+    }
+    /* Landscape: the detail panel is a side drawer, so the bar ends at its edge. */
+    :global(html[data-touch][data-orientation='landscape']) .surface-bottom-bar.beside-panel {
+      right: calc(var(--panel-width) + 12px);
+    }
   }
   /* ─── ≥ 768 px — distance scale lifts back to bottom: 90 ───────── */
   @media (hover: hover) and (pointer: fine) {

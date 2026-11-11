@@ -1,6 +1,6 @@
 {
   "title": "Effetto Oberth",
-  "intro_sentence": "Accendi in fondo a un pozzo gravitazionale: lo stesso motore dà più energia orbitale.",
+  "intro_sentence": "Accendi in profondità in un pozzo gravitazionale e il propellente compie più lavoro: fisicamente lo stesso motore dà più energia orbitale quando si muove veloce.",
   "narrative_101": [
     "Ecco un trucco magico gratuito dalla fisica. Immagina di avere una quantità specifica di carburante da bruciare. Puoi accenderlo quando vuoi. Dove dovresti farlo? Il buon senso dice che non dovrebbe importare — stesso carburante, stesso motore, stessa spinta. Il buon senso è sbagliato.",
     "Accendilo quando vai VELOCE e lo stesso carburante ti dà molta più energia utile della stessa accensione a bassa velocità. Il motivo sta nel fatto che l'energia cinetica cresce come v² — quando ti stai già muovendo, un piccolo ∆v in più aggiunge proporzionalmente più energia rispetto a quando sei fermo. Quindi un'accensione di 1 km/s al perigeo (a 11 km/s) ti dà un aumento orbitale maggiore della stessa accensione di 1 km/s all'apogeo (a 1 km/s).",

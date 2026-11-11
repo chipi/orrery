@@ -187,6 +187,7 @@ export const issRouteConfig: StationRouteConfig = {
   stationName: 'ISS',
   msg: {
     pageTitle: m.iss_page_title,
+    metaDescription: m.landing_card_iss_desc,
     loadFailed: m.iss_load_failed,
     a11yModulesList: m.a11y_iss_modules_list_aria,
     canvasAria: m.iss_canvas_aria,

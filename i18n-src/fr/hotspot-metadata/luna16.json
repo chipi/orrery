@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Étage de descente de Luna 16",
+      "label_short": "Étage descente",
+      "explain": "La moitié inférieure de l'atterrisseur soviétique Luna 16, restée sur la Mare Fecunditatis après le décollage de la capsule de retour, le 21 septembre 1970, avec environ 101 grammes de sol."
+    }
+  ]
 }

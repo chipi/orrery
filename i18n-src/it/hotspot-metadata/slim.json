@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Lander SLIM",
+      "label_short": "Lander SLIM",
+      "explain": "Il lander SLIM della JAXA, atterrato il 19 gennaio 2024 vicino al cratere Shioli. LRO lo ha ripreso cinque giorni dopo; una lieve variazione di luminosità intorno a lui segna dove il getto dei motori ha spazzato la superficie."
+    }
+  ]
+}

@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "SLIM Lander",
+      "label_short": "SLIM Lander",
+      "explain": "Der SLIM-Lander der JAXA, der am 19. Januar 2024 nahe dem Shioli-Krater landete. LRO nahm ihn fünf Tage später auf; eine schwache Helligkeitsänderung um ihn zeigt, wo der Triebwerksstrahl die Oberfläche überstrichen hat."
+    }
+  ]
+}

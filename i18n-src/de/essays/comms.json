@@ -1,6 +1,8 @@
 {
   "title": "Das Sonnensystem im Flüsterton betreiben",
-  "dek": "Drei Antennenkomplexe auf der Erde führen jedes Gespräch, das die Menschheit je mit irgendetwas jenseits des Mondes geführt hat. Ein Funksignal von 22 Watt, eine Lichtstunde Geduld und das am stärksten überbuchte Netzwerk im Sonnensystem – so hält das gesamte Unternehmen zusammen.",
+  "dek": "Drei Antennenkomplexe auf der Erde führen die meisten Gespräche der Menschheit mit Raumfahrzeugen jenseits des Mondes. Ein Funksignal von 22 Watt, eine Lichtstunde Geduld und das am stärksten überbuchte Netzwerk im Sonnensystem – so hält das gesamte Unternehmen zusammen.",
+  "seo_title": "Wie Raumsonden mit der Erde sprechen: Deep Space Network",
+  "seo_description": "Die drei Antennenanlagen des NASA-Deep-Space-Network tragen die meisten Verbindungen im tiefen All. Wie ein 22-Watt-Signal das Sonnensystem zusammenhält.",
   "body": [
     {
       "type": "prose",
@@ -36,11 +38,11 @@
     },
     {
       "type": "prose",
-      "md": "Dass sie das überhaupt vermag, ist eine technische Meisterleistung in drei Teilen. Erstens die Geometrie: Eine 70-Meter-Antenne besitzt rund 3.600 Quadratmeter Sammelfläche, und jeder Quadratmeter zählt. Zweitens die Kälte: Die Empfänger werden bis auf wenige Grad über dem absoluten Nullpunkt gekühlt, denn das thermische Rauschen eines Verstärkers bei Raumtemperatur würde das Signal vollständig übertönen – der Empfänger muss kälter sein als der interstellare Raum, um etwas wahrzunehmen, das schwächer ist als Sternenlicht. Drittens die Codierung: Die Ingenieure von Voyager wussten, wie später jedes Missionsteam, dass einzelne Bits über solche Entfernungen vom Rauschen verfälscht werden. Deshalb codierten sie die Daten mit weit mehr mathematischer Redundanz, als die Information selbst erfordert. Ein einziges echtes Bit Wissenschaft reist in einer Schutzhülle aus Prüfbits; der Computer auf der Bodenseite streift die Hülle ab und stellt das Original wieder her, selbst aus einem Datenstrom, in dem ein beträchtlicher Teil der empfangenen Symbole falsch ist. [New Horizons](/missions?id=new-horizons) nutzte dasselbe Prinzip, um das Antlitz des Pluto zur Erde zu senden: Jedes Bild kam beschädigt an und wurde rekonstruiert, so wie eine Bibliothekarin ein verbranntes Manuskript aus einer Reihe redundanter Kopien wieder zusammensetzen könnte."
+      "md": "Dass sie das überhaupt vermag, ist eine technische Meisterleistung in drei Teilen. Erstens die Geometrie: Eine 70-Meter-Antenne besitzt rund 3.600 Quadratmeter Sammelfläche, und jeder Quadratmeter zählt. Zweitens die Kälte: Die Empfänger werden bis auf wenige Grad über dem absoluten Nullpunkt gekühlt, denn das thermische Rauschen eines Verstärkers bei Raumtemperatur würde das Signal vollständig übertönen – der Empfänger muss auf wenige Kelvin gekühlt sein, um etwas wahrzunehmen, das schwächer ist als Sternenlicht. Drittens die Codierung: Die Ingenieure von Voyager wussten, wie später jedes Missionsteam, dass einzelne Bits über solche Entfernungen vom Rauschen verfälscht werden. Deshalb codierten sie die Daten mit weit mehr mathematischer Redundanz, als die Information selbst erfordert. Ein einziges echtes Bit Wissenschaft reist in einer Schutzhülle aus Prüfbits; der Computer auf der Bodenseite streift die Hülle ab und stellt das Original wieder her, selbst aus einem Datenstrom, in dem ein beträchtlicher Teil der empfangenen Symbole falsch ist. [New Horizons](/missions?id=new-horizons) nutzte dasselbe Prinzip, um das Antlitz des Pluto zur Erde zu senden: Jedes Bild kam beschädigt an und wurde rekonstruiert, so wie eine Bibliothekarin ein verbranntes Manuskript aus einer Reihe redundanter Kopien wieder zusammensetzen könnte."
     },
     {
       "type": "prose",
-      "md": "Die praktische Obergrenze der Datenraten ist real. Voyager 1 erreichte bei seinen Planetenbegegnungen, als die Entfernungen kürzer waren und sich die Antennen schärfer ausrichten ließen, Spitzenwerte von 115.200 Bit pro Sekunde. In seiner heutigen Entfernung schafft es für die technische Telemetrie noch einige wenige Dutzend Bit pro Sekunde – ein Rinnsal, das selbst an einem Modem der 1970er-Jahre peinlich langsam gewesen wäre. Alles, was wir über das Jenseits der Heliosphäre wissen – die Plasmadichte, das Magnetfeld, den Teilchenfluss im interstellaren Raum, jene Daten, die kein anderes Instrument der Welt je erfassen könnte –, trifft mit einer Rate beim DSN ein, die unter der eines Faxgeräts liegt. Wir sind für jedes einzelne Bit dankbar."
+      "md": "Die praktische Obergrenze der Datenraten ist real. Voyager 1 erreichte bei seinen Planetenbegegnungen, als die Entfernungen kürzer waren und sich die Antennen schärfer ausrichten ließen, Spitzenwerte von 115.200 Bit pro Sekunde. In seiner heutigen Entfernung schafft es für die technische Telemetrie noch etwa 160 Bit pro Sekunde – ein Rinnsal, das selbst an einem Modem der 1970er-Jahre peinlich langsam gewesen wäre. Alles, was wir über das Jenseits der Heliosphäre wissen – die Plasmadichte, das Magnetfeld, den Teilchenfluss im interstellaren Raum, jene Daten, die kein anderes Instrument der Welt je erfassen könnte –, trifft mit einer Rate beim DSN ein, die unter der eines Faxgeräts liegt. Wir sind für jedes einzelne Bit dankbar."
     },
     {
       "type": "figure",
@@ -98,7 +100,7 @@
     },
     {
       "type": "prose",
-      "md": "Funk hat seit sechzig Jahren jedes Gespräch getragen, das wir mit dem Sonnensystem geführt haben. Er ist ausgereift, bestens verstanden und arbeitet an der Grenze des physikalisch Möglichen – die Antennen des DSN liegen dicht an der Grenze des thermischen Rauschens; die Codierverfahren nähern sich für die jeweiligen Signal-Rausch-Verhältnisse dem Shannon-Limit. Beim Funk lässt sich kein Faktor zehn mehr herausholen. In der Optik dagegen schon."
+      "md": "Funk hat seit sechzig Jahren die meisten unserer Gespräche mit dem übrigen Sonnensystem getragen. Er ist ausgereift, bestens verstanden und arbeitet an der Grenze des physikalisch Möglichen – die Antennen des DSN liegen dicht an der Grenze des thermischen Rauschens; die Codierverfahren nähern sich für die jeweiligen Signal-Rausch-Verhältnisse dem Shannon-Limit. Beim Funk lässt sich kein Faktor zehn mehr herausholen. In der Optik dagegen schon."
     },
     {
       "type": "prose",

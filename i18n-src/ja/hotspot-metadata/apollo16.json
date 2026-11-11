@@ -1,1 +1,58 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Orion）",
+      "label_short": "LM Orion",
+      "explain": "Apollo 16 の月着陸船 Orion の下半分。1972年4月の着陸後、月面に残された。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央ステーション",
+      "label_short": "ALSEP",
+      "explain": "Apollo 16 の月面実験パッケージ（ALSEP）。1972年4月21日に起動した。受動地震計、能動地震計、磁力計、熱流量実験装置を搭載していたが、熱流量実験装置は最初の月面歩行でケーブルが切れて失われた。"
+    },
+    {
+      "id": "lrv",
+      "label": "月面走行車（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 16 の月面走行車（LRV）。ここは、ミッション後に月面に残されたローバーを、今日 LROC が撮影している場所である。"
+    },
+    {
+      "id": "seismometer",
+      "label": "受動地震計（LROC）",
+      "label_short": "地震計",
+      "explain": "LROC は Apollo 16 の受動地震計を独立した点として載せており、中央ステーションから約2 mの位置にある（リングは ALSEP のリングと一致する）。"
+    },
+    {
+      "id": "flag",
+      "label": "米国旗（LROC の位置）",
+      "label_short": "米国旗",
+      "explain": "LROC の Apollo 16 機材レイヤーが旗の位置として示す点で、LM の北北西約19 mにある。旗そのものは小さすぎて見えない。"
+    },
+    {
+      "id": "spot-crater",
+      "label": "Spot クレーター",
+      "label_short": "Spot",
+      "explain": "LM の南にある浅いクレーターで、LROC が Apollo 16 の地図で Spot と呼ぶ。"
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "ALSEP へ向かう足跡",
+      "label_short": "ALSEP への足跡",
+      "explain": "画像の暗い足跡とローバーの轍が、LM 付近から南西の観測機器パッケージへ延びている（破線の輪郭は範囲を示す）。"
+    },
+    {
+      "id": "lrv-track",
+      "label": "LRV へ向かう走行跡",
+      "label_short": "走行跡",
+      "explain": "画像の暗い轍が、LM から東へ、LROC が載せている月面走行車の駐車位置まで延びている（破線の輪郭は範囲を示す）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM の噴射域",
+      "label_short": "噴射域",
+      "explain": "LROC によると、降下エンジンはアポロ着陸地点の周囲の地面を明るくした。Apollo 16 では LM の周りの明るい暈は幅約170 mある。"
+    }
+  ]
+}

@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chang'e 4-lander",
+      "label_short": "Chang'e 4-lander",
+      "explain": "De Chinese lander Chang'e 4, die op 3 januari 2019 de eerste zachte landing op de achterkant van de maan maakte, in de krater Von Kármán. De lichte grond eromheen is schoongeblazen door de landingsmotor."
+    },
+    {
+      "id": "yutu-2",
+      "label": "Yutu-2-rover",
+      "label_short": "Yutu-2",
+      "explain": "De rover Yutu-2 op 7 mei 2019, vier maanden na de landing, ongeveer 120 m ten westen van de lander aan het einde van zijn eerste sporen. Sindsdien is hij ver van hier weggereden."
+    }
+  ],
   "panorama_caption": "Het eerste panorama dat ooit vanaf de achterkant van de Maan is verzonden. De krater Von Kármán in het Zuidpool-Aitken-bekken. De rover Yutu-2 op middelafstand; de schaduw van de lander linksonder.",
   "compass_zero_direction": "+X-as van de landercamera",
   "panorama_annotations": [

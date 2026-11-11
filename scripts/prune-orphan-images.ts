@@ -18,8 +18,9 @@
  *      1x1 variants — those are live.
  *
  *   3. **Dead-base variants** — `*.1x1.jpg` etc whose corresponding
- *      base file no longer exists. Leftovers from `prune-image-slots`
- *      runs or older fetchers.
+ *      base file no longer exists in ANY image extension (bases are
+ *      `.webp` since #383; the crops stayed `.jpg`). Leftovers from
+ *      `prune-image-slots` runs or older fetchers.
  *
  * Side effects on JSON manifests (executed in apply mode):
  *
@@ -29,6 +30,12 @@
  *     stays.
  *   - `static/data/image-alt-text/<locale>.json` — drops any key
  *     whose path was just deleted.
+ *   - Dangling rows (key points at no served file, no `.webp` twin and
+ *     no LFS master) are dropped from `image-vision.json`,
+ *     `image-phashes.json`, `image-curation.json`, every
+ *     `image-alt-text/<locale>.json` and
+ *     `scripts/i18n-tools/maps/alt-text-sources.json`; counted in
+ *     `--dry`.
  *
  * Anything else is left alone. Specifically the `.1x1.jpg` variants
  * and the base files (`NN.jpg`) stay, even if their base isn't in the
@@ -43,13 +50,19 @@
  *
  * Writes a per-run report to `docs/provenance/prune-orphan-images-report.md`.
  */
+import { existsSync } from 'node:fs';
 import { readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { hasLiveBase, manifestKeyLive } from './lib/orphan-images.ts';
+import { STAGING_SEGMENT } from './lib/staging.ts';
 
 const STATIC_IMAGES_ROOT = 'static/images';
 const REPORT_PATH = 'docs/provenance/prune-orphan-images-report.md';
 const VISION_PATH = 'static/data/image-vision.json';
 const ALT_TEXT_DIR = 'static/data/image-alt-text';
+const PHASH_PATH = 'static/data/image-phashes.json';
+const CURATION_PATH = 'static/data/image-curation.json';
+const ALT_SOURCES_PATH = 'scripts/i18n-tools/maps/alt-text-sources.json';
 
 const DASH_VARIANT_RE = /-(16x9|4x3|1x1)\.(jpe?g|png|webp)$/i;
 const DOT_VARIANT_RE = /\.(16x9|4x3|1x1)\.(jpe?g|png|webp)$/i;
@@ -70,6 +83,7 @@ async function main(): Promise<void> {
   if (drops.length === 0) {
     console.log('Nothing to drop — tree is already clean.');
     await writeReport([]);
+    await pruneDanglingRows();
     return;
   }
   const byReason = drops.reduce<Record<string, number>>((acc, d) => {
@@ -81,6 +95,7 @@ async function main(): Promise<void> {
   if (dryRun) {
     console.log('(dry run — no files changed)');
     await writeReport(drops);
+    await pruneDanglingRows();
     return;
   }
   for (const d of drops) await rm(d.path).catch(() => {});
@@ -89,6 +104,7 @@ async function main(): Promise<void> {
   const droppedServed = new Set<string>(drops.map((d) => '/' + d.path.replace(/^static\//, '')));
   await cleanVisionManifest(droppedServed);
   await cleanAltTextManifests(droppedServed);
+  await pruneDanglingRows();
   await writeReport(drops);
   console.log(`Done — report: ${REPORT_PATH}`);
 }
@@ -111,15 +127,12 @@ async function* walkImages(dir: string): AsyncGenerator<string> {
   for (const e of entries) {
     const p = join(dir, e.name);
     if (e.isDirectory()) {
+      if (e.name === STAGING_SEGMENT) continue;
       yield* walkImages(p);
     } else if (/\.(jpe?g|png|webp)$/i.test(e.name)) {
       yield p;
     }
   }
-}
-
-function deriveBasePath(variantPath: string): string {
-  return variantPath.replace(/\.(16x9|4x3|1x1)(?=\.(jpe?g|png|webp)$)/i, '');
 }
 
 async function scan(): Promise<DropEntry[]> {
@@ -142,10 +155,7 @@ async function scan(): Promise<DropEntry[]> {
       continue;
     }
     if (DOT_VARIANT_RE.test(fname)) {
-      const base = deriveBasePath(p);
-      if (!onDisk.has(base)) {
-        drops.push({ path: p, reason: 'dead-base-variant' });
-      }
+      if (!hasLiveBase(p, onDisk)) drops.push({ path: p, reason: 'dead-base-variant' });
     }
   }
   return drops;
@@ -215,6 +225,61 @@ async function cleanAltTextManifests(droppedServed: Set<string>): Promise<void> 
     }
   }
   if (total > 0) console.log(`  total alt-text keys pruned: ${total}`);
+}
+
+/**
+ * Drops manifest rows whose key no longer points at anything. Reads and
+ * rewrites each file with the same 2-space JSON the generators emit, so the
+ * diff is only the removed rows. Dry mode counts and writes nothing.
+ */
+async function pruneDanglingRows(): Promise<void> {
+  const live = (key: string) => manifestKeyLive(key, existsSync);
+  const edit = async <T>(
+    path: string,
+    keysOf: (j: T) => string[],
+    drop: (j: T, dead: Set<string>) => void,
+  ): Promise<void> => {
+    let j: T;
+    try {
+      j = JSON.parse(await readFile(path, 'utf8')) as T;
+    } catch {
+      return;
+    }
+    const dead = new Set(keysOf(j).filter((k) => !live(k)));
+    console.log(`  dangling rows in ${path}: ${dead.size}`);
+    if (dead.size === 0 || dryRun) return;
+    drop(j, dead);
+    await writeFile(path, JSON.stringify(j, null, 2) + '\n');
+  };
+  const dropKeys = (obj: Record<string, unknown>, dead: Set<string>) => {
+    for (const k of dead) delete obj[k];
+  };
+  type Rows = Record<string, unknown>;
+  await edit<{ entries: Rows }>(
+    VISION_PATH,
+    (j) => Object.keys(j.entries),
+    (j, d) => dropKeys(j.entries, d),
+  );
+  await edit<{ phashes: Rows }>(
+    PHASH_PATH,
+    (j) => Object.keys(j.phashes),
+    (j, d) => dropKeys(j.phashes, d),
+  );
+  await edit<{ entries: { path: string }[] }>(
+    CURATION_PATH,
+    (j) => j.entries.map((e) => e.path),
+    (j, d) => {
+      j.entries = j.entries.filter((e) => !d.has(e.path));
+    },
+  );
+  await edit<Rows>(ALT_SOURCES_PATH, (j) => Object.keys(j), dropKeys);
+  let locales: string[] = [];
+  try {
+    locales = (await readdir(ALT_TEXT_DIR)).filter((f) => f.endsWith('.json'));
+  } catch {
+    // no alt-text dir
+  }
+  for (const f of locales) await edit<Rows>(join(ALT_TEXT_DIR, f), (j) => Object.keys(j), dropKeys);
 }
 
 async function writeReport(drops: DropEntry[]): Promise<void> {

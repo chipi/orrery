@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "InSight 착륙선",
+      "label_short": "InSight 착륙선",
+      "explain": "NASA의 InSight 착륙선으로, 태양전지판을 펼치면 폭이 약 6 m이다. 하강 로켓이 주변 지면을 날려 어두운 영역이 생겼다."
+    }
+  ]
+}

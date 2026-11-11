@@ -17,11 +17,14 @@
     sequence = null,
     locale,
     onOpen,
+    part = 'main',
   }: {
     anatomy: SiteAnatomy[];
     sequence?: string | null;
     locale: string;
     onOpen: (src: string) => void;
+    /** main = landing sheet + surface drawings; exploded = the cutaways alone. */
+    part?: 'main' | 'exploded';
   } = $props();
 
   let ladderReady = $state(false);
@@ -52,55 +55,16 @@
   });
 </script>
 
-<section class="landing" data-testid="site-landing">
-  {#if sequence}
-    {@const ladder = ladderReady ? ladderSources(sequence) : null}
-    <h3 class="landing-heading">{m.site_landing_sequence_heading()}</h3>
-    <figure class="anatomy" data-testid="site-landing-sequence">
-      <button
-        type="button"
-        class="anatomy-open"
-        onclick={() => onOpen(sequence)}
-        aria-label={m.site_landing_sequence_heading()}
-      >
-        <img
-          src={ladder?.src ?? sequence}
-          srcset={ladder?.srcset}
-          sizes="(max-width: 640px) 100vw, 480px"
-          alt={m.site_landing_sequence_heading()}
-          loading="lazy"
-          decoding="async"
-        />
-      </button>
-    </figure>
-    <p class="anatomy-caption">{m.site_landing_sequence_caption()}</p>
-  {/if}
-  {#if anatomy.length > 0}
-    <h3 class="landing-heading">{m.programs_on_surface()}</h3>
+{#if part === 'exploded'}
+  <section class="landing" data-testid="site-landing-cutaways">
     {#each anatomy as a (a.fleetId)}
-      {@const name = names[a.fleetId] ?? a.fleetId}
-      {@const ladder = ladderReady ? ladderSources(a.src) : null}
-      <figure class="anatomy">
-        <button
-          type="button"
-          class="anatomy-open"
-          onclick={() => onOpen(a.src)}
-          aria-label={m.fleet_anatomy_open_aria({ name })}
-        >
-          <img
-            src={ladder?.src ?? a.src}
-            srcset={ladder?.srcset}
-            sizes="(max-width: 640px) 100vw, 480px"
-            alt={m.fleet_anatomy_alt({ name })}
-            loading="lazy"
-            decoding="async"
-          />
-        </button>
-        {#if a.exploded}
-          {@const xl = ladderReady ? ladderSources(a.exploded) : null}
+      {#if a.exploded}
+        {@const name = names[a.fleetId] ?? a.fleetId}
+        {@const xl = ladderReady ? ladderSources(a.exploded) : null}
+        <figure class="anatomy">
           <button
             type="button"
-            class="anatomy-open exploded"
+            class="anatomy-open"
             onclick={() => onOpen(a.exploded!)}
             aria-label={m.fleet_anatomy_open_aria({ name })}
             data-testid="site-landing-exploded"
@@ -114,17 +78,66 @@
               decoding="async"
             />
           </button>
-        {/if}
-        <figcaption>
-          <a class="fleet-link" href={localHref(`/fleet?id=${a.fleetId}`)}
-            >{m.plan_view_in_fleet({ label: name })} →</a
-          >
-        </figcaption>
-      </figure>
+        </figure>
+      {/if}
     {/each}
-    <p class="anatomy-caption">{m.fleet_anatomy_caption()}</p>
-  {/if}
-</section>
+  </section>
+{:else}
+  <section class="landing" data-testid="site-landing">
+    {#if sequence}
+      {@const ladder = ladderReady ? ladderSources(sequence) : null}
+      <h3 class="landing-heading">{m.site_landing_sequence_heading()}</h3>
+      <figure class="anatomy" data-testid="site-landing-sequence">
+        <button
+          type="button"
+          class="anatomy-open"
+          onclick={() => onOpen(sequence)}
+          aria-label={m.site_landing_sequence_heading()}
+        >
+          <img
+            src={ladder?.src ?? sequence}
+            srcset={ladder?.srcset}
+            sizes="(max-width: 640px) 100vw, 480px"
+            alt={m.site_landing_sequence_heading()}
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+      </figure>
+      <p class="anatomy-caption">{m.site_landing_sequence_caption()}</p>
+    {/if}
+    {#if anatomy.length > 0}
+      <h3 class="landing-heading">{m.programs_on_surface()}</h3>
+      {#each anatomy as a (a.fleetId)}
+        {@const name = names[a.fleetId] ?? a.fleetId}
+        {@const ladder = ladderReady ? ladderSources(a.src) : null}
+        <figure class="anatomy">
+          <button
+            type="button"
+            class="anatomy-open"
+            onclick={() => onOpen(a.src)}
+            aria-label={m.fleet_anatomy_open_aria({ name })}
+          >
+            <img
+              src={ladder?.src ?? a.src}
+              srcset={ladder?.srcset}
+              sizes="(max-width: 640px) 100vw, 480px"
+              alt={m.fleet_anatomy_alt({ name })}
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+          <figcaption>
+            <a class="fleet-link" href={localHref(`/fleet?id=${a.fleetId}`)}
+              >{m.plan_view_in_fleet({ label: name })} →</a
+            >
+          </figcaption>
+        </figure>
+      {/each}
+      <p class="anatomy-caption">{m.fleet_anatomy_caption()}</p>
+    {/if}
+  </section>
+{/if}
 
 <style>
   .landing {

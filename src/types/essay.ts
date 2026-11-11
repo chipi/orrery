@@ -48,6 +48,9 @@ export type EssayBlock =
 export interface EssayOverlay {
   title: string;
   dek: string;
+  /** Optional results-page title / description (SEO); the page <title> and meta description fall back to title / dek. */
+  seo_title?: string;
+  seo_description?: string;
   body: EssayBlock[];
 }
 

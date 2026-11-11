@@ -3,32 +3,56 @@
     {
       "id": "lm-descent-stage",
       "label": "LM-Abstiegsstufe (Eagle)",
-      "lat_offset_m": 0,
-      "lon_offset_m": 0
+      "label_short": "LM Eagle",
+      "explain": "Die untere Hälfte der Mondlandefähre Eagle von Apollo 11. Sie blieb auf dem Mond zurück, als die Aufstiegsstufe die Besatzung nach der Landung im Juli 1969 wieder abhob."
     },
     {
-      "id": "us-flag",
-      "label": "US-Flagge (~8 m westlich des LM aufgestellt)",
-      "lat_offset_m": 2,
-      "lon_offset_m": -8
+      "id": "pse",
+      "label": "Passives Seismometer (PSEP)",
+      "label_short": "PSEP",
+      "explain": "Das Passive Seismische Experiment (PSEP) des EASEP-Pakets, am 21. Juli 1969 südlich der Mondlandefähre aufgestellt, um Mondbeben und Einschläge aufzuzeichnen."
     },
     {
       "id": "lrrr",
       "label": "Laser-Retroreflektor (LRRR)",
-      "lat_offset_m": -10,
-      "lon_offset_m": 14
+      "label_short": "Retroreflektor",
+      "explain": "Der von Apollo 11 zurückgelassene Laser-Retroreflektor (LRRR): ein Reflektor, mit dem Observatorien auf der Erde die Laufzeit von Laserpulsen messen, die vom Mond zurückgeworfen werden. Er steht etwa 5 m nordnordwestlich des Seismometer-Pakets."
     },
     {
-      "id": "easep",
-      "label": "EASEP (vereinfachtes ALSEP-Paket)",
-      "lat_offset_m": -15,
-      "lon_offset_m": 18
+      "id": "flag",
+      "label": "US-Flagge (LROC-Position)",
+      "label_short": "US-Flagge",
+      "explain": "Der Punkt, den die Hardware-Ebene von LROC für Apollo 11 für die Flagge angibt, etwa 14 m west-nordwestlich der Mondlandefähre. Die Flagge selbst ist bei dieser Auflösung zu klein, um sichtbar zu sein."
     },
     {
-      "id": "plaque",
-      "label": "Plakette: „Wir kamen in Frieden für die gesamte Menschheit\"",
-      "lat_offset_m": 0,
-      "lon_offset_m": 0
+      "id": "tv",
+      "label": "TV-Kamera (LROC-Position)",
+      "label_short": "TV-Kamera",
+      "explain": "Der Punkt, den die Hardware-Ebene von LROC für Apollo 11 für die TV-Kamera angibt, etwa 26 m nordwestlich der Mondlandefähre. An dieser Stelle ist im Bild nichts aufgelöst."
+    },
+    {
+      "id": "little-west",
+      "label": "Little-West-Krater",
+      "label_short": "Little West",
+      "explain": "Der Krater, den LROC auf seiner Apollo-11-Karte als Little West beschriftet, etwa 75 m östlich der Mondlandefähre. Ein schwacher Fußpfad im Bild führt darauf zu."
+    },
+    {
+      "id": "double",
+      "label": "Double-Krater",
+      "label_short": "Double-Krater",
+      "explain": "Ein kleiner Krater, den LROC auf seiner Apollo-11-Karte der Featured Sites als Double beschriftet, etwa 17 m südwestlich der Mondlandefähre."
+    },
+    {
+      "id": "footpath-little-west",
+      "label": "Fußpfad zum Little-West-Krater",
+      "label_short": "Fußpfad",
+      "explain": "LROC zufolge heben sich die Pfade der Astronauten in seinem Bild der Apollo-11-Landestelle ab. Diese schwache Linie führt von der Mondlandefähre nach Osten zum Little-West-Krater (die gestrichelte Umrandung markiert das Gebiet, keinen Punkt)."
+    },
+    {
+      "id": "blast",
+      "label": "Abgasbereich des LM-Abstiegstriebwerks",
+      "label_short": "Abgasbereich",
+      "explain": "LROC zufolge hat das Abstiegstriebwerk um die Landestellen einen hellen Hof freigeblasen, höchstwahrscheinlich indem es die feinsten Partikel unter dem Triebwerk wegblies. Bei Apollo 11 zeigt er sich als helle Zone von etwa 100 m Durchmesser um die Mondlandefähre."
     }
   ],
   "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin fotografierte die LM Eagle und die US-Flagge kurz nach der Landung. Sichtbare Hasselblad-Nähte und farbige Stitching-Ränder an der LM gehören zum veröffentlichten Mosaik.",

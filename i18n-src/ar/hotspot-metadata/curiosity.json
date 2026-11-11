@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "bradbury-landing",
+      "label": "Bradbury Landing",
+      "label_short": "Bradbury Landing",
+      "explain": "الموضع الذي هبطت فيه Curiosity في 6 أغسطس 2012، وقد أطلق عليه الفريق اسم Bradbury Landing. في صورة HiRISE هذه، الملتقطة في 17 أغسطس 2012، المركبة الجوّالة هي النقطتان الساطعتان في الأرض الداكنة التي كشطتها الصواريخ التي أنزلتها. وقد غادرت المكان منذ زمن بعيد."
+    }
+  ],
   "panorama_caption": "Curiosity في قناة Gediz Vallis — منظر المركبة بزاوية 360° في اليوم المريخي 4220 بعد حفر عينة Mammoth Lakes، العينة الحادية والأربعين على المريخ. الذراع الآلية ظاهرة يسارًا وقد أنهت الحفر للتو؛ وسطح المركبة يمينًا؛ والسماء المريخية الحقيقية في الشريط العلوي؛ وقناة Gediz Vallis تنحدر في الوسط — أول مكان وُجدت فيه بلورات كبريت نقي على المريخ.",
   "compass_zero_direction": "مقدّمة المركبة",
   "panorama_annotations": [

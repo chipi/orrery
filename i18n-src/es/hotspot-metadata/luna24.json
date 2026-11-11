@@ -1,3 +1,16 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de Luna 24",
+      "label_short": "Módulo Luna 24",
+      "explain": "El módulo de aterrizaje de Luna 24, en el borde de un cráter del Mare Crisium. La misión de agosto de 1976 perforó más de 2 m en el regolito y trajo a la Tierra unos 170 gramos."
+    },
+    {
+      "id": "crater-60m",
+      "label": "Cráter de 60 m en Luna 24",
+      "label_short": "Cráter de 60 m",
+      "explain": "El LROC describe a Luna 24 posada en el borde de un cráter de 60 m de ancho. El módulo está en su borde noroeste."
+    }
+  ]
 }

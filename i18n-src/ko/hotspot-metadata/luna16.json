@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Luna 16 하강단",
+      "label_short": "하강단",
+      "explain": "소련 착륙선 Luna 16의 아래쪽 절반입니다. 1970년 9월 21일 약 101그램의 토양을 실은 귀환 캡슐이 이륙한 뒤 풍요의 바다에 남았습니다."
+    }
+  ]
 }

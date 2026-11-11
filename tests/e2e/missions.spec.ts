@@ -49,25 +49,29 @@ test.describe('/missions — catalog', () => {
     await expect(page).toHaveURL(/status=CANCELLED/);
   });
 
-  test('MARS filter shows 20 cards', async ({ page }) => {
+  test('MARS filter shows every MARS mission', async ({ page }) => {
     await page.goto('/missions');
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(MISSION_COUNT, {
       timeout: 10_000,
     });
     await expandFilters(page);
     await page.getByRole('radio', { name: /^MARS$/i }).click();
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(20);
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(
+      missionCountWhere((m) => m.dest === 'MARS'),
+    );
     await expect(page).toHaveURL(/dest=MARS/);
   });
 
-  test('MOON filter shows 32 cards', async ({ page }) => {
+  test('MOON filter shows every MOON mission', async ({ page }) => {
     await page.goto('/missions');
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(MISSION_COUNT, {
       timeout: 10_000,
     });
     await expandFilters(page);
     await page.getByRole('radio', { name: /^MOON$/i }).click();
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(32);
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(
+      missionCountWhere((m) => m.dest === 'MOON'),
+    );
     await expect(page).toHaveURL(/dest=MOON/);
   });
 
@@ -93,7 +97,9 @@ test.describe('/missions — catalog', () => {
     await expandFilters(page);
     await page.getByRole('radio', { name: /^JUPITER$/i }).click();
     // Pioneer 10 (1972), Galileo (1989), Juno (2011), JUICE (2023), Europa Clipper (2024).
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(5);
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(
+      missionCountWhere((m) => m.dest === 'JUPITER'),
+    );
     await expect(page.locator('[data-testid="mission-card-galileo"]')).toBeVisible();
     await expect(page).toHaveURL(/dest=JUPITER/);
   });

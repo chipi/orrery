@@ -1,4 +1,7 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
+  import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount } from 'svelte';
@@ -401,7 +404,10 @@
   });
 </script>
 
-<svelte:head><title>{m.missions_page_title()}</title></svelte:head>
+<svelte:head>
+  <title>{m.missions_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_missions_desc())} />
+</svelte:head>
 <VisuallyHiddenH1 title={m.missions_page_title()} />
 
 <LaunchesBanner />
@@ -814,6 +820,7 @@
       {/each}
     </ul>
   {/if}
+  <EntityIndex hub="missions" title={m.entity_index_missions()} links={data.entityIndex} />
 </div>
 
 <MissionPanel mission={selectedMission} open={panelOpen} onClose={closePanel} onFly={flyMission} />

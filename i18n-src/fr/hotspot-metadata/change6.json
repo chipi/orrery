@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Atterrisseur Chang'e 6",
+      "label_short": "Chang'e 6",
+      "explain": "L'atterrisseur chinois Chang'e 6 sur la face cachée, dans le bassin Apollo, photographié par LRO environ une semaine après son alunissage du 1er juin 2024. Le sol plus clair autour de lui a été perturbé par le moteur de descente."
+    }
+  ]
+}

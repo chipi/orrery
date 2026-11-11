@@ -1,3 +1,16 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso Luna 24",
+      "label_short": "Módulo Luna 24",
+      "explain": "O módulo de pouso da Luna 24, na borda de uma cratera do Mare Crisium. A missão de agosto de 1976 perfurou mais de 2 m no regolito e trouxe cerca de 170 gramas dele."
+    },
+    {
+      "id": "crater-60m",
+      "label": "Cratera de 60 m na Luna 24",
+      "label_short": "Cratera de 60 m",
+      "explain": "O LROC descreve a Luna 24 pousada na borda de uma cratera de 60 m de largura. O módulo de pouso está em sua borda noroeste."
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 {
   "title": "Hohmann Transfer",
   "intro_sentence": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
+  "seo_description": "The cheapest two-burn trip between two circular coplanar orbits, worked out by Walter Hohmann in 1925. See the ellipse and compute delta-v and flight time.",
   "narrative_101": [
     "You're in Earth's orbit. You want to be in Mars's orbit. Both orbits are roughly circles around the Sun. How do you get from one to the other with as little fuel as possible?",
     "The answer, worked out by Walter Hohmann in 1925, is shockingly elegant. Find an ellipse that just barely touches Earth's orbit on one side and just barely touches Mars's orbit on the other. Burn your engine briefly to leave Earth and join that ellipse. Coast for about 8.5 months without firing the engine at all — gravity does the work. When you arrive at the far end, burn again to settle into Mars's orbit. Two burns, total. Done.",

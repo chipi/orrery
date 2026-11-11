@@ -1,12 +1,10 @@
 /**
  * SEO URL helpers — canonical + hreflang.
  *
- * Every deployment (prod VPS, GH Pages staging, Docker, localhost) points
- * its canonical + hreflang tags at the PRODUCTION origin. That makes prod
- * the authoritative copy and stops the staging mirror from competing for
- * Google's index — a staging page canonicalises to its prod twin rather
- * than self-referencing. Absolute prod URLs also mean the sitemap and the
- * on-page tags agree byte-for-byte.
+ * Canonical + hreflang tags always point at the PRODUCTION origin, so prod
+ * is the authoritative copy and the sitemap and the on-page tags agree
+ * byte-for-byte. The GH Pages staging mirror emits noindex instead (see
+ * `isMirrorBuild`).
  *
  * URL shape mirrors scripts/gh-pages-compat.mjs#expandLocalizedRoots and
  * the Paraglide URL-segment strategy: en-US at the bare path, every other
@@ -16,6 +14,17 @@ import { SUPPORTED_LOCALES, DEFAULT_LOCALE, isSupportedLocale, type LocaleCode }
 
 /** Canonical public origin — production host, no trailing slash. */
 export const SITE_ORIGIN = 'https://www.orrerylearn.com';
+
+/**
+ * True for a build served under a base path — the GH Pages staging mirror
+ * (`VITE_BASE=/orrery/`, staging.yml). Prod, Docker and the native apps build
+ * with no base. Google indexed the mirror (it outranked prod) even though its
+ * canonical pointed at prod — a canonical is only a hint — so the mirror says
+ * noindex and leaves out canonical + hreflang, which would contradict it.
+ */
+export function isMirrorBuild(base: string): boolean {
+  return base !== '';
+}
 
 /**
  * Reduce a live pathname to its un-localized canonical route.
@@ -44,6 +53,60 @@ export function canonicalRoute(pathname: string, base = ''): string {
 export function localizedPath(route: string, locale: LocaleCode): string {
   if (locale === DEFAULT_LOCALE) return route;
   return route === '/' ? `/${locale}/` : `/${locale}${route}`;
+}
+
+/**
+ * A meta description of at most `max` characters: whole sentences when they
+ * carry enough of the text (a Latin `.!?` counts only before a space, so "1.5"
+ * and "e.g." are not ends; CJK `。！？` always count), otherwise cut at a word
+ * boundary (or anywhere, for scripts without spaces) with an ellipsis. In
+ * spaced scripts a sentence cut must keep 60% of `max` — a lone short first
+ * sentence says less than a longer cut; a CJK sentence is dense enough at 40.
+ */
+export function metaDescription(text: string, max = 160): string {
+  const s = text.replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  const head = s.slice(0, max + 1);
+  let end = -1;
+  for (const m of head.matchAll(/[.!?](?= )|[。！？]/g)) if (m.index < max) end = m.index + 1;
+  const spaced = (s.match(/ /g)?.length ?? 0) > s.length / 20;
+  if (end >= (spaced ? max * 0.6 : 40)) return s.slice(0, end);
+  const room = s.slice(0, max - 1);
+  const space = room.lastIndexOf(' ');
+  return `${(space >= 40 ? room.slice(0, space) : room).replace(/[\s,;:—–-]+$/u, '')}…`;
+}
+
+/**
+ * `Main · Section · Orrery`, kept within `max` characters for the results page:
+ * a long "Topic — subtitle" (or "Topic: subtitle") main title keeps only its
+ * topic, and if that is still too long the section name goes. The H1 and
+ * description keep the full text.
+ */
+export function pageTitle(main: string, section?: string, max = 60): string {
+  const join = (...parts: (string | undefined)[]) => parts.filter(Boolean).join(' · ');
+  const full = join(main, section, 'Orrery');
+  if (full.length <= max) return full;
+  const topic = main.split(/\s[—–]\s|——|: |：/)[0].trim();
+  const short = join(topic, section, 'Orrery');
+  return short.length <= max ? short : join(topic, 'Orrery');
+}
+
+/**
+ * The `<title>` of a page that carries an editorial `seo_title` (written for the
+ * results page): kept whole — pageTitle() would cut it at a colon — with the
+ * " · Orrery" brand added only while the result stays within `max`. Without a
+ * `seo_title` the page keeps its existing `fallback` title.
+ */
+export function seoPageTitle(seoTitle: string | undefined, fallback: string, max = 60): string {
+  const t = seoTitle?.trim();
+  if (!t) return fallback;
+  const branded = `${t} · Orrery`;
+  return branded.length <= max ? branded : t;
+}
+
+/** The meta description: an editorial `seo_description` as written, else `fallback` (both capped by metaDescription). */
+export function seoDescription(seoDescription: string | undefined, fallback: string): string {
+  return metaDescription(seoDescription?.trim() || fallback);
 }
 
 /** Absolute production URL for a canonical route in a given locale. */

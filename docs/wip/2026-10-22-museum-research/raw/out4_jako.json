@@ -1,0 +1,26 @@
+{
+ "museums": {
+  "jaxa-tsukuba-space-center": {"name":"JAXA Tsukuba Space Center (Space Dome)","city":"Tsukuba","country":"JP","website":"https://visit-tsukuba.jaxa.jp/"},
+  "miraikan-tokyo": {"name":"Miraikan (National Museum of Emerging Science and Innovation)","city":"Tokyo","country":"JP","website":"https://www.miraikan.jst.go.jp/"}
+ },
+ "rows": [
+  {"ref":"le-7a","museum":"jaxa-tsukuba-space-center","item":"LE-7A rocket engine on the Space Dome floor plan (type of unit - flight, test - not stated)","kind":"test-article","evidence":"https://visit-tsukuba.jaxa.jp/assets/img/download/spacedome.pdf","status":"uncertain","notes":"JAXA Space Dome guide map labels 'LE-7A エンジン' and 'LE-5 エンジン' and the site says 本物のロケットエンジン; the guide does not say whether the unit is real flight/test hardware or a cutaway, and ja.wikipedia (pass 3) names an LE-7, not a 7A. LE-5 is not the LE-5B, so no le-5b row."},
+  {"ref":"soyuz-ms","museum":"miraikan-tokyo","item":"Descent module of Soyuz MS-20 (Maezawa / Hirano / Misurkin, Dec 2021), with its flown parachute","kind":"flown","evidence":"https://www.museum.or.jp/news/121900","status":"uncertain","notes":"Temporary: special exhibition 深宇宙展 12 Jul-28 Sep 2025 at Miraikan; the series travels (Miyagi 18 Jul-30 Aug 2026 per a timeout.jp listing). Not confirmed on display on 2026-11-09; check the touring schedule."}
+ ],
+ "museums_checked": [
+  {"id":"jaxa-tsukuba-space-center","name":"JAXA Tsukuba Space Center (Space Dome)","city":"Tsukuba","country":"JP","result":"rows added 1 (uncertain; Hayabusa2, Kibo, HTV exhibits are models; H-II test vehicle is not an Orrery object)"},
+  {"id":"jaxa-tanegashima-space-science-technology-museum","name":"Tanegashima Space Science and Technology Museum","city":"Minamitane","country":"JP","result":"no real Orrery hardware (real H-II F7 and LE-3/LE-7 only; H-IIA exhibit is a full-scale model; no source names an LE-7A unit)"},
+  {"id":"jaxa-sagamihara-communication-hall","name":"JAXA/ISAS Sagamihara Communication Hall","city":"Sagamihara","country":"JP","result":"no new rows (real Hayabusa2 capsule since June 2023 is already in merged)"},
+  {"id":"jaxa-kakuda-space-center","name":"JAXA Kakuda Space Center","city":"Kakuda","country":"JP","result":"no new rows (2 already in merged)"},
+  {"id":"jaxa-uchinoura","name":"JAXA Uchinoura Space Center exhibition","city":"Kimotsuki","country":"JP","result":"no real Orrery hardware (pass 3)"},
+  {"id":"national-museum-of-nature-and-science-tokyo","name":"National Museum of Nature and Science","city":"Tokyo","country":"JP","result":"no new rows (Hayabusa already in merged)"},
+  {"id":"miraikan-tokyo","name":"Miraikan","city":"Tokyo","country":"JP","result":"rows added 1 (uncertain, temporary Soyuz MS-20 descent module, ended Sep 2025)"},
+  {"id":"gifu-kakamigahara-air-space-museum","name":"Gifu-Kakamigahara Air and Space Museum","city":"Kakamigahara","country":"JP","result":"no new rows (LE-7 already in merged)"},
+  {"id":"nagoya-city-science-museum","name":"Nagoya City Science Museum","city":"Nagoya","country":"JP","result":"no new rows (H-IIB test vehicle with LE-7A already in merged; exhibit sheet X103 confirms engine section, tanks, fairing are real parts)"},
+  {"id":"naro-space-center-museum","name":"Naro Space Center space science museum (KARI)","city":"Goheung","country":"KR","result":"no real Orrery hardware (KSR rockets, Nuri engineering models, Nuri 75 t engine; Orrery lists no Korean objects)"},
+  {"id":"gwacheon-national-science-museum","name":"National Science Museum Gwacheon","city":"Gwacheon","country":"KR","result":"could not read site"},
+  {"id":"mitsubishi-ihi-corporate-museums","name":"Mitsubishi Heavy Industries / IHI corporate museums","city":"-","country":"JP","result":"could not read site (no page found naming a displayed H-II/H-IIA engine)"},
+  {"id":"kari-daejeon-visitor-hall","name":"KARI visitor hall Daejeon","city":"Daejeon","country":"KR","result":"could not read site (kari.re.kr 404 on the tried page; not searched further)"}
+ ],
+ "none": []
+}

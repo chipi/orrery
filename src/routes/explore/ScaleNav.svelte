@@ -89,6 +89,13 @@
     left: auto;
     right: 8px;
   }
+  /* Landscape phone: the floating A–Z tab (EntityIndex) sits on the left edge, ~45–100 px
+     down a short screen, right where the back button is; the row starts past the tab. */
+  @media ((hover: none) or (pointer: coarse)) and (max-height: 520px) {
+    .scale-nav:not(.at-solar) {
+      left: 40px;
+    }
+  }
   /* Shared square affordances flanking the chip (back ‹ / reset ⟲). Slate glass
      to match the chip; generous tap target. */
   .scale-back,

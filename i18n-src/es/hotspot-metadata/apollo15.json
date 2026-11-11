@@ -1,1 +1,52 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Etapa de descenso del LM (Falcon)",
+      "label_short": "LM Falcon",
+      "explain": "La mitad inferior del módulo lunar Falcon del Apollo 15, que quedó en la Luna tras el alunizaje de julio de 1971."
+    },
+    {
+      "id": "alsep",
+      "label": "Estación central del ALSEP",
+      "label_short": "ALSEP",
+      "explain": "El paquete de experimentos de la superficie lunar del Apollo 15 (ALSEP), desplegado el 31 de julio de 1971. Instrumentos que enumera la NASA: sismómetro pasivo, magnetómetro, espectrómetro de viento solar, detector de iones supratérmicos, medidor de iones de cátodo frío, detector de polvo y un experimento de flujo de calor."
+    },
+    {
+      "id": "lrv",
+      "label": "Vehículo lunar (LRV)",
+      "label_short": "LRV",
+      "explain": "El Apollo 15 fue la primera misión que llevó un vehículo lunar (LRV). Aquí se ve el róver tal como lo fotografía hoy el LROC, abandonado en la Luna al terminar la misión."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismómetro pasivo (LROC)",
+      "label_short": "Sismómetro",
+      "explain": "El LROC enumera el sismómetro pasivo del Apollo 15 como un punto propio, a unos 3 m de la estación central (el anillo se superpone al anillo del ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Bandera de EE. UU. (posición LROC)",
+      "label_short": "Bandera EE. UU.",
+      "explain": "El punto que la capa de equipamiento del Apollo 15 del LROC asigna a la bandera, a unos 13 m al norte del módulo lunar. La bandera en sí es demasiado pequeña para verse."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Senderos hacia el ALSEP",
+      "label_short": "Senderos ALSEP",
+      "explain": "Unos senderos oscuros en la imagen van del módulo lunar al paquete de instrumentos situado al noroeste (el contorno discontinuo marca la zona)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Huellas del róver hasta el LRV",
+      "label_short": "Huellas róver",
+      "explain": "Una línea oscura en la imagen va hacia el este desde el módulo lunar hasta el lugar de estacionamiento del vehículo lunar que enumera el LROC (el contorno discontinuo marca la zona)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona de chorro del LM",
+      "label_short": "Zona de chorro",
+      "explain": "El LROC señala que el motor de descenso aclaró el suelo alrededor de los sitios de alunizaje del Apollo. En el Apollo 15 la zona brillante es un lóbulo que se extiende al sur-sureste del módulo lunar."
+    }
+  ]
+}

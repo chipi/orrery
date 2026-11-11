@@ -1,3 +1,16 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Luna 24 着陆器",
+      "label_short": "Luna 24 着陆器",
+      "explain": "位于危海一个撞击坑边缘的 Luna 24 着陆器。1976年8月的任务钻入月壤2米多深，带回约170克样品。"
+    },
+    {
+      "id": "crater-60m",
+      "label": "Luna 24 旁的 60 m 环形山",
+      "label_short": "60 m 环形山",
+      "explain": "LROC 描述 Luna 24 位于一座直径 60 m 的环形山边缘。着陆器在其西北缘上。"
+    }
+  ]
 }

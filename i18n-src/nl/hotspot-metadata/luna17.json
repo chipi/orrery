@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Luna 17-lander",
+      "label_short": "Luna 17-lander",
+      "explain": "De lander van Luna 17, die Lunokhod 1 op 17 november 1970 op Mare Imbrium afzette. De landingsmotoren maakten de grond eromheen lichter, waardoor de sporen van de rover rond de lander goed opvallen."
+    },
+    {
+      "id": "blast",
+      "label": "Uitblaaszone van Luna 17",
+      "label_short": "Uitblaaszone",
+      "explain": "LROC zegt dat de grond rond Luna 17 is opgehelderd door de uitlaat van de landingsmotoren, waardoor de sporen van de rover bij de lander goed opvallen."
+    },
+    {
+      "id": "tracks",
+      "label": "Sporen van Lunokhod 1",
+      "label_short": "Roversporen",
+      "explain": "LROC wijst op de sporen van Lunokhod 1 die beginnen bij de hellingen aan de oostkant van de lander en er een cirkel omheen vormen. Lunokhod 1 reed later 10,5 km (de gestippelde omtrek markeert het gebied)."
+    }
+  ]
+}

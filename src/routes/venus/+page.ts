@@ -2,7 +2,8 @@ import type { PageLoad } from './$types';
 
 export const prerender = true;
 
-export const load: PageLoad = () => ({
+export const load: PageLoad = ({ data }) => ({
+  ...data,
   meta: {
     title: 'Venus — Orrery',
     description:

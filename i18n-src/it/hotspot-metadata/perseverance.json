@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "landing",
+      "label": "Atterraggio di Perseverance",
+      "label_short": "Atterraggio",
+      "explain": "Qui Perseverance toccò il suolo il 18 febbraio 2021. In questa immagine HiRISE, scattata il giorno dopo, il rover è il piccolo oggetto luminoso con l'ombra al centro, tra due zone luminose di terreno ripulite dai razzi che lo hanno calato. Da tempo si è allontanato."
+    }
+  ],
   "panorama_caption": "Il primo panorama a 360° di Perseverance — tre giorni dopo l'atterraggio. Il ponte del rover domina il primo piano; il fondo del cratere Jezero e il bordo lontano si vedono sopra l'orizzonte; il vero cielo marziano nelle fasce superiori.",
   "compass_zero_direction": "asse +X del rover",
   "panorama_annotations": [

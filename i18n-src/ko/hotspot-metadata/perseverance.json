@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "landing",
+      "label": "Perseverance 착륙 지점",
+      "label_short": "착륙 지점",
+      "explain": "Perseverance가 2021년 2월 18일 내려앉은 곳. 다음 날 찍은 이 HiRISE 영상에서 로버는 중앙의 그림자가 달린 작은 밝은 물체로, 로버를 내려놓은 로켓이 드러낸 두 밝은 땅 사이에 있다. 로버는 오래전에 떠났다."
+    }
+  ],
   "panorama_caption": "Perseverance의 첫 360° 파노라마 — 착륙 사흘 뒤. 전경은 로버 갑판이 차지하고, 지평선 위로 Jezero 크레이터 바닥과 먼 가장자리가 보이며, 위쪽 띠에는 진짜 화성 하늘이 담겼다.",
   "compass_zero_direction": "로버 +X 축",
   "panorama_annotations": [

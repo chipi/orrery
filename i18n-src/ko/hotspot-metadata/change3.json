@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Chang'e 3 착륙선",
+      "label_short": "Chang'e 3 착륙선",
+      "explain": "2013년 12월 14일 비의 바다에 착륙한 중국의 Chang'e 3 착륙선으로, 1976년 이후 첫 달 착륙입니다. 고리는 이 패치 중앙의 착륙선 위치를 표시합니다. 그곳에는 그림자 없는 밝은 점이 있으며, LROC는 어느 화소가 착륙선인지 밝히지 않았습니다."
+    },
+    {
+      "id": "crater-450m",
+      "label": "착륙선 서쪽의 450 m 분화구",
+      "label_short": "450 m 분화구",
+      "explain": "LROC에 따르면 Chang'e 3은 화산 물질이 두껍게 쌓인 곳에서, 지름 450 m에 깊이 40 m인 분화구의 테두리에서 동쪽으로 약 60 m 떨어진 곳에 착륙했다."
+    },
+    {
+      "id": "blast",
+      "label": "Chang'e 3 플룸 영향 영역",
+      "label_short": "플룸 영향 영역",
+      "explain": "LROC는 착륙 전후의 지점을 촬영해 엔진 플룸 영향 영역을 측정했다. 퍼진 영역은 더 밝은 집중 영역 바깥으로 남북 40~50 m, 동서 10~15 m까지 이른다."
+    }
+  ]
+}

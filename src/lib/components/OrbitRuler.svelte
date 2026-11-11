@@ -181,7 +181,7 @@
        prop). /explore keeps 80 px to clear its bottom-left PLANET SCALES
        card; /earth /moon /mars pass a small inset so the ruler is flush
        with the screen bottom (2026-06-28 user direction). */
-    bottom: var(--ruler-bottom, 80px);
+    bottom: max(var(--ruler-bottom, 80px), var(--ruler-clear, 0px));
     z-index: 1;
     pointer-events: none;
     color: rgba(255, 255, 255, 0.92);
@@ -199,7 +199,13 @@
        "make sure pulldowns stack on top of this new control. less
        space for it, but no overflow"). Internal scroll if the band
        count would otherwise exceed the budget. */
-    max-height: calc(100vh - var(--nav-height, 60px) - 140px);
+    max-height: min(
+      calc(100vh - var(--nav-height, 60px) - 140px),
+      calc(
+        100vh - var(--ruler-top-clear, 0px) -
+          max(var(--ruler-bottom, 80px), var(--ruler-clear, 0px))
+      )
+    );
     overflow-y: auto;
     overscroll-behavior: contain;
   }

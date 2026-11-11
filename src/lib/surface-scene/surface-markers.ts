@@ -34,7 +34,7 @@ import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
 import type { SurfaceSite, Traverse } from '$types/surface-site';
 
 // Hover-halo factory — bolder + glowing variant of the selection
-// halo, in OutlinePass teal. Lays flat against the surface with a
+// halo, in the site's muted blue (#889fe7). Lays flat against the surface with a
 // small Y offset to avoid z-fighting. Two variants:
 //   - circular: outer soft disc (radius 2.4, opacity 0.16) + crisp
 //     teal ring (1.7–2.4, opacity 0.95). Reads at heliocentric
@@ -42,8 +42,22 @@ import type { SurfaceSite, Traverse } from '$types/surface-site';
 //   - rectangular: 4 corner brackets + soft fill, sized via aspect.
 //     Brighter / thicker than the selection-style brackets so the
 //     "I'm hovering this" cue beats the LROC patch underneath.
-const HOVER_TEAL = 0x4ecdc4;
-function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Object3D {
+// With the surface EffectComposer (no OutputPass) linear values reach the screen unencoded, so
+// the colour must be given as its display bytes (Linear space) or #889fe7 shows as (63,88,204).
+// Without the composer (minimal / low tiers) the renderer sRGB-encodes the output itself, so the
+// colour is plain sRGB.
+function hoverBlue(composerActive: boolean): THREE.Color {
+  return new THREE.Color().setHex(
+    0x889fe7,
+    composerActive ? THREE.LinearSRGBColorSpace : THREE.SRGBColorSpace,
+  );
+}
+function buildHoverHalo(
+  aspect: number | undefined,
+  diameter = 4.4,
+  composerActive = true,
+): THREE.Object3D {
+  const HOVER_BLUE = hoverBlue(composerActive);
   const group = new THREE.Group();
   // Corner-bracket hover affordance for every region-bounds site, incl.
   // near-square ones — matches the selection halo (no leftover circles).
@@ -58,7 +72,7 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
     // feeling vs the dim selection halo fill (0.04).
     const fillGeo = new THREE.PlaneGeometry(width, height);
     const fillMat = new THREE.MeshBasicMaterial({
-      color: HOVER_TEAL,
+      color: HOVER_BLUE,
       transparent: true,
       opacity: 0.1,
       side: THREE.DoubleSide,
@@ -82,7 +96,7 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
     const bracketGeo = new THREE.BufferGeometry();
     bracketGeo.setAttribute('position', new THREE.Float32BufferAttribute(bracketVerts, 3));
     const bracketMat = new THREE.LineBasicMaterial({
-      color: HOVER_TEAL,
+      color: HOVER_BLUE,
       transparent: true,
       opacity: 1.0,
     });
@@ -91,7 +105,7 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
     // Outer glow disc — translucent teal fill, soft radial feel.
     const glowGeo = new THREE.CircleGeometry(2.4, 48);
     const glowMat = new THREE.MeshBasicMaterial({
-      color: HOVER_TEAL,
+      color: HOVER_BLUE,
       transparent: true,
       opacity: 0.16,
       side: THREE.DoubleSide,
@@ -101,7 +115,7 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
     // Crisp ring — bright teal outline at the disc edge.
     const ringGeo = new THREE.RingGeometry(1.7, 2.4, 48);
     const ringMat = new THREE.MeshBasicMaterial({
-      color: HOVER_TEAL,
+      color: HOVER_BLUE,
       transparent: true,
       opacity: 0.95,
       side: THREE.DoubleSide,
@@ -216,6 +230,8 @@ export interface SurfaceMarkersContext {
   orbitalMarkers: OrbiterMarker[];
   hotspots: HotspotEntry[];
   originalMaxTier: Map<string, 0 | 1 | 2 | 3>;
+  /** False on the tiers that render without the EffectComposer (it changes how colours reach the screen). Default true. */
+  composerActive?: boolean;
 }
 
 export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
@@ -388,7 +404,11 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       // patch below.
       // Hover bracket keeps its historical 4.4/3.0 ratio over the
       // selection bracket, scaled to the same outer patch.
-      const hoverHalo = buildHoverHalo(haloAspect, haloOuterDiam * (4.4 / 3.0));
+      const hoverHalo = buildHoverHalo(
+        haloAspect,
+        haloOuterDiam * (4.4 / 3.0),
+        ctx.composerActive ?? true,
+      );
       group.add(northSpun(hoverHalo));
 
       // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).

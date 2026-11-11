@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "impact-smudge",
+      "label": "Beresheet-Einschlagfleck",
+      "label_short": "Einschlagfleck",
+      "explain": "Der dunkle Fleck, an dem der israelische Lander Beresheet am 11. April 2019 im Mare Serenitatis abstürzte. Er schlug flach aus Norden auf, etwa 1000 m/s schneller als geplant; der Fleck misst rund 10 m und senkt die Oberflächenhelligkeit um etwa 10 %."
+    }
+  ]
 }

@@ -1,0 +1,235 @@
+{
+ "museums": {
+  "cpc-history-exhibition-hall-beijing": {
+   "name": "Exhibition Hall of the CPC History (中国共产党历史展览馆)",
+   "city": "Beijing",
+   "country": "CN",
+   "website": "https://www.cpchistory.com"
+  },
+  "k11-musea-hong-kong": {
+   "name": "K11 MUSEA (temporary exhibition 'Run to the Moon')",
+   "city": "Hong Kong",
+   "country": "CN",
+   "website": "https://www.k11musea.com"
+  },
+  "china-aerospace-museum-beijing": {
+   "name": "China Aerospace Museum (中国航天博物馆)",
+   "city": "Beijing",
+   "country": "CN",
+   "website": "https://www.chinaaerospacemuseum.cn"
+  },
+  "hit-space-museum-harbin": {
+   "name": "Harbin Institute of Technology Space Museum (哈工大航天馆)",
+   "city": "Harbin",
+   "country": "CN",
+   "website": "https://www.hit.edu.cn"
+  }
+ },
+ "rows": [
+  {
+   "ref": "shenzhou",
+   "museum": "cpc-history-exhibition-hall-beijing",
+   "item": "Shenzhou-17 return capsule (神舟十七号返回舱), heat-scorched flown capsule",
+   "kind": "flown",
+   "evidence": "https://news.bjd.com.cn/2026/08/05/11902559.shtml",
+   "status": "confirmed",
+   "notes": "Open to the public since 2026-08-04, announced as long-term display; page read 2026-11-09. Museum page itself not found."
+  },
+  {
+   "ref": "change6",
+   "museum": "k11-musea-hong-kong",
+   "item": "Chang'e-6 return capsule and parachute (嫦娥六号返回舱及降落伞)",
+   "kind": "flown",
+   "evidence": "https://www.news.cn/gangao/20261009/22f662960e054bd9bbb3b8b6a34e345f/c.html",
+   "status": "confirmed",
+   "notes": "TEMPORARY: exhibition 2026-10-02 to 2026-11-22 (Xinhua). hk01 article says the parachute is real and the lander is a 1:2 model; capsule itself named only in Xinhua."
+  },
+  {
+   "ref": "feitian",
+   "museum": "k11-musea-hong-kong",
+   "item": "Feitian extravehicular spacesuit (飞天舱外航天服)",
+   "kind": "flown",
+   "evidence": "https://www.news.cn/gangao/20261009/22f662960e054bd9bbb3b8b6a34e345f/c.html",
+   "status": "uncertain",
+   "notes": "TEMPORARY to 2026-11-22. Listed as 实物 but source does not say whether flown, backup or training unit."
+  },
+  {
+   "ref": "long-march-3b",
+   "museum": "k11-musea-hong-kong",
+   "item": "Long March 3B booster engine wreckage (长征三号乙运载火箭发动机残骸)",
+   "kind": "flown-part",
+   "evidence": "https://www.news.cn/gangao/20261009/22f662960e054bd9bbb3b8b6a34e345f/c.html",
+   "status": "confirmed",
+   "notes": "TEMPORARY to 2026-11-22. Recovered debris of a flown rocket."
+  },
+  {
+   "ref": "shenzhou-iva",
+   "museum": "china-aerospace-museum-beijing",
+   "item": "Intravehicular spacesuit (舱内航天服)",
+   "kind": "test-article",
+   "evidence": "https://news.bjd.com.cn/2022/11/16/10226536.shtml",
+   "status": "uncertain",
+   "notes": "Source lists 舱内航天服 on display at the new museum (opened 2022-11-16) without saying flown, backup or training; matched to Shenzhou IVA by role."
+  },
+  {
+   "ref": "long-march-2f",
+   "museum": "china-aerospace-museum-beijing",
+   "item": "Long March 2F launch escape tower, about 8 m (长征二号F运载火箭逃逸塔实物)",
+   "kind": "test-article",
+   "evidence": "https://news.bjd.com.cn/2022/11/16/10226536.shtml",
+   "status": "uncertain",
+   "notes": "Real tower per source; not stated whether flown or ground-test unit. A component, not the whole rocket."
+  },
+  {
+   "ref": "change6",
+   "museum": "hit-space-museum-harbin",
+   "item": "Chang'e-6 sampling/drilling subsystem (嫦娥六号探测器钻采子系统实物)",
+   "kind": "test-article",
+   "evidence": "https://www.toutiao.com/zixun/7534149630783768627",
+   "status": "uncertain",
+   "notes": "Listed as 实物 among new exhibits (Dec 2024); HIT built the subsystem; whether flight spare or engineering unit is not stated. Secondary source, museum page not read."
+  }
+ ],
+ "museums_checked": [
+  {
+   "id": "china-aerospace-museum-beijing",
+   "name": "China Aerospace Museum",
+   "city": "Beijing",
+   "country": "CN",
+   "result": "rows added 2 (Shenzhou 4 capsule already in merged)"
+  },
+  {
+   "id": "cpc-history-exhibition-hall-beijing",
+   "name": "Exhibition Hall of the CPC History",
+   "city": "Beijing",
+   "country": "CN",
+   "result": "rows added 1"
+  },
+  {
+   "id": "k11-musea-hong-kong",
+   "name": "K11 MUSEA 'Run to the Moon' exhibition",
+   "city": "Hong Kong",
+   "country": "CN",
+   "result": "rows added 3 (temporary, ends 2026-11-22)"
+  },
+  {
+   "id": "hit-space-museum-harbin",
+   "name": "HIT Space Museum",
+   "city": "Harbin",
+   "country": "CN",
+   "result": "rows added 1 (Long March 1 and Dongfeng-2 are real but match no Orrery ref)"
+  },
+  {
+   "id": "hong-kong-science-museum",
+   "name": "Hong Kong Science Museum",
+   "city": "Hong Kong",
+   "country": "CN",
+   "result": "no current hardware (Shenzhou-13 capsule exhibition ended 2024-02-18)"
+  },
+  {
+   "id": "hong-kong-space-museum",
+   "name": "Hong Kong Space Museum",
+   "city": "Hong Kong",
+   "country": "CN",
+   "result": "no real Orrery hardware found (past Shenzhou-7/13 loans, Mercury Aurora 7 loan at 1980 opening)"
+  },
+  {
+   "id": "macao-science-center",
+   "name": "Macao Science Center",
+   "city": "Macao",
+   "country": "CN",
+   "result": "no current hardware (Chang'e-6 capsule exhibition ended 2025-10-12)"
+  },
+  {
+   "id": "shenzhen-space-museum",
+   "name": "Shenzhen Space Museum (深圳太空馆)",
+   "city": "Shenzhen",
+   "country": "CN",
+   "result": "no real Orrery hardware (Chang'e-5 capsule is a replica; unnamed rocket debris)"
+  },
+  {
+   "id": "shenzhen-science-technology-museum",
+   "name": "Shenzhen Science & Technology Museum",
+   "city": "Shenzhen",
+   "country": "CN",
+   "result": "no current hardware (Long March 2F Y11 and lunar-soil exhibition ended 2026-03-04)"
+  },
+  {
+   "id": "tian-gongque-space-park-shenzhen",
+   "name": "Tian Gongque space park (天·宫阙)",
+   "city": "Shenzhen",
+   "country": "CN",
+   "result": "no real Orrery hardware (rocket wreckage unidentified)"
+  },
+  {
+   "id": "beijing-space-exploration-center",
+   "name": "Beijing Space Exploration Center (Shougang)",
+   "city": "Beijing",
+   "country": "CN",
+   "result": "no real Orrery hardware (rocket debris and Mars parachute not identified)"
+  },
+  {
+   "id": "national-museum-of-china",
+   "name": "National Museum of China",
+   "city": "Beijing",
+   "country": "CN",
+   "result": "Shenzhou 5 already in merged; Chang'e-3/5/6 shows were temporary, hardware not itemised"
+  },
+  {
+   "id": "guangdong-science-center",
+   "name": "Guangdong Science Center",
+   "city": "Guangzhou",
+   "country": "CN",
+   "result": "no current hardware (Shenzhou-4 capsule was a 2021 tour stop)"
+  },
+  {
+   "id": "jiuquan-launch-center-history-hall",
+   "name": "Jiuquan Satellite Launch Center History Hall",
+   "city": "Jiuquan",
+   "country": "CN",
+   "result": "could not confirm any real Orrery hardware"
+  },
+  {
+   "id": "wenchang-space-science-center",
+   "name": "Wenchang Aerospace Science Popularisation Center",
+   "city": "Wenchang",
+   "country": "CN",
+   "result": "no real Orrery hardware found"
+  },
+  {
+   "id": "chengdu-shenzhou-science-space",
+   "name": "Chengdu Shenzhou Science Space",
+   "city": "Chengdu",
+   "country": "CN",
+   "result": "no real Orrery hardware (rocket wreckage unidentified)"
+  },
+  {
+   "id": "aerospace-tt-and-c-equipment-museum-weinan",
+   "name": "Aerospace TT&C Equipment Museum",
+   "city": "Weinan",
+   "country": "CN",
+   "result": "no new pair; a search says a Shenzhou-3 capsule is here too (not read first-hand)"
+  },
+  {
+   "id": "china-science-and-technology-museum",
+   "name": "China Science and Technology Museum",
+   "city": "Beijing",
+   "country": "CN",
+   "result": "no new pair (already in merged)"
+  },
+  {
+   "id": "beihang-air-and-space-museum",
+   "name": "Beihang Aerospace Museum",
+   "city": "Beijing",
+   "country": "CN",
+   "result": "could not read content"
+  },
+  {
+   "id": "taipei-astronomical-museum",
+   "name": "Taipei Astronomical Museum / Kaohsiung NSTM / NMNS Taichung",
+   "city": "Taiwan",
+   "country": "TW",
+   "result": "no real Orrery hardware found"
+  }
+ ]
+}

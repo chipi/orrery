@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeAll, beforeEach, afterAll } from 'vitest';
 import { readFileSync } from 'node:fs';
+import type { HotspotAnnotation } from '$types/surface-site';
 import { join } from 'node:path';
 import {
   getMissionIndex,
@@ -96,6 +97,7 @@ import {
   moonSites,
   SCIENCE_TABS,
   applyHotspotOverlay,
+  attachAnnotationPhotos,
   __resetCache,
 } from './data';
 import { getEarthLaunchSites } from './earth-launch-site-adapter';
@@ -912,6 +914,29 @@ describe('getMarsSites (PRD-009)', () => {
   });
 });
 
+describe('annotation photos (moon-annotation-photos.json)', () => {
+  const photo = { image: '/images/a.webp', thumb: '/images/a-320.webp', nasa_id: 'as11-40-5927' };
+  const site: { id: string; hotspot_annotations: HotspotAnnotation[] } = {
+    id: 'apollo11',
+    hotspot_annotations: [
+      { id: 'lm', label: 'LM', lat_offset_m: 0, lon_offset_m: 0 },
+      { id: 'pse', label: 'PSE', lat_offset_m: 1, lon_offset_m: 1 },
+    ],
+  };
+
+  it('joins a photo by site id + annotation id and leaves the rest alone', () => {
+    const out = attachAnnotationPhotos(site, { apollo11: { lm: photo } });
+    expect(out.hotspot_annotations[0].photo).toEqual(photo);
+    expect(out.hotspot_annotations[1]).toBe(site.hotspot_annotations[1]);
+  });
+
+  it('returns the site untouched when the sidecar has nothing for it (or is missing)', () => {
+    expect(attachAnnotationPhotos(site, {})).toBe(site);
+    expect(attachAnnotationPhotos(site, { apollo12: { lm: photo } })).toBe(site);
+    expect(attachAnnotationPhotos({ id: 'x' }, { x: { lm: photo } })).toEqual({ id: 'x' });
+  });
+});
+
 describe('hotspot-metadata overlay (ADR-074 §i18n)', () => {
   const site = {
     hotspot_annotations: [{ id: 'a', label: 'A', lat_offset_m: 1, lon_offset_m: 2 }],
@@ -982,7 +1007,9 @@ describe('hotspot-metadata overlay (ADR-074 §i18n)', () => {
     expect(a11de.panorama_annotations?.map((a) => a.yaw_deg)).toEqual(
       a11en.panorama_annotations?.map((a) => a.yaw_deg),
     );
-    expect(a11de.hotspot_annotations?.find((a) => a.id === 'us-flag')?.label).toMatch(/^US-Flagge/);
+    expect(a11de.hotspot_annotations?.find((a) => a.id === 'lrrr')?.label).toMatch(
+      /^Laser-Retroreflektor/,
+    );
     const curiosity = marsDe.find((s) => s.id === 'curiosity')!;
     expect(curiosity.panorama_metadata?.compass_zero_direction).toBe('Rover-Vorderseite');
     const pad = padsDe.find((s) => s.id === 'vandenberg-slc-4e')!;

@@ -5,7 +5,12 @@ import {
   localizedPath,
   canonicalUrl,
   hreflangAlternates,
+  isMirrorBuild,
+  metaDescription,
   ogLocale,
+  pageTitle,
+  seoDescription,
+  seoPageTitle,
   ogLocaleAlternates,
 } from './seo';
 import { SUPPORTED_LOCALES } from './locale';
@@ -47,6 +52,121 @@ describe('localizedPath', () => {
   it('prefixes non-default locales, keeping the root trailing slash', () => {
     expect(localizedPath('/missions', 'de')).toBe('/de/missions');
     expect(localizedPath('/', 'de')).toBe('/de/');
+  });
+});
+
+describe('metaDescription', () => {
+  it('keeps text that fits, collapsing whitespace', () => {
+    expect(metaDescription('  Short   and sweet. ')).toBe('Short and sweet.');
+  });
+
+  it('cuts at the last sentence end that fits', () => {
+    const s = `${'word '.repeat(22)}first sentence ends here. ${'more '.repeat(30)}second.`;
+    expect(metaDescription(s)).toBe(`${'word '.repeat(22)}first sentence ends here.`);
+  });
+
+  it('prefers a word cut over a lone short first sentence', () => {
+    const s =
+      'Keine Methode misst alle kosmischen Entfernungen. Astronomen bauen eine Leiter: Jede Technik reicht etwas weiter und wird von der Sprosse darunter geeicht – vom Radar im Sonnensystem bis zum Rand des beobachtbaren Universums.';
+    const out = metaDescription(s);
+    expect(out.length).toBeGreaterThan(100);
+    expect(out.length).toBeLessThanOrEqual(160);
+    expect(out.endsWith('…')).toBe(true);
+  });
+
+  it('does not treat a decimal point as a sentence end', () => {
+    const s = `The orbit is 1.5 million km from Earth, ${'and more words '.repeat(12)}end.`;
+    const out = metaDescription(s);
+    expect(out.endsWith('…')).toBe(true);
+    expect(out.length).toBeLessThanOrEqual(160);
+    expect(out).toContain('1.5 million');
+  });
+
+  it('cuts CJK text at 。 and long unspaced text anywhere with an ellipsis', () => {
+    const ja = `${'あ'.repeat(70)}。${'い'.repeat(120)}。`;
+    expect(metaDescription(ja)).toBe(`${'あ'.repeat(70)}。`);
+    const zh = '字'.repeat(200);
+    expect(metaDescription(zh)).toBe(`${'字'.repeat(159)}…`);
+  });
+});
+
+describe('pageTitle', () => {
+  it('joins main, section and brand when it fits', () => {
+    expect(pageTitle('Lagrange points', 'Science')).toBe('Lagrange points · Science · Orrery');
+    expect(pageTitle('Apollo')).toBe('Apollo · Orrery');
+  });
+
+  it('keeps only the topic of a long "Topic — subtitle" title', () => {
+    expect(
+      pageTitle(
+        'End-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule',
+        'Science',
+      ),
+    ).toBe('End-of-life disposal · Science · Orrery');
+    expect(pageTitle('寿命末期处置——墓地轨道、受控离轨、25年规则', '科学'.repeat(30))).toBe(
+      '寿命末期处置 · Orrery',
+    );
+  });
+
+  it('also treats a colon as the topic separator', () => {
+    expect(
+      pageTitle(
+        'Проектирование марсианского жилища: заранее развёрнутое, снабжаемое за счёт ISRU',
+        'Наука',
+      ),
+    ).toBe('Проектирование марсианского жилища · Наука · Orrery');
+  });
+
+  it('drops the section when the topic alone still does not fit with it', () => {
+    const topic = 'A'.repeat(45);
+    expect(pageTitle(`${topic} — more`, 'Wissenschaft')).toBe(`${topic} · Orrery`);
+  });
+});
+
+describe('seoPageTitle', () => {
+  const fallback = 'The Wall · Essays · Orrery';
+
+  it('falls back to the existing title when there is no seo_title', () => {
+    expect(seoPageTitle(undefined, fallback)).toBe(fallback);
+    expect(seoPageTitle('', fallback)).toBe(fallback);
+    expect(seoPageTitle('   ', fallback)).toBe(fallback);
+  });
+
+  it('uses the seo_title with the brand when it fits', () => {
+    expect(seoPageTitle('Artemis Program: NASA’s Return to the Moon', fallback)).toBe(
+      'Artemis Program: NASA’s Return to the Moon · Orrery',
+    );
+  });
+
+  it('keeps a colon title whole and drops the brand instead of cutting at the colon', () => {
+    const t = 'Why Going to Mars Is So Hard: Time, Mass and the Body';
+    expect(seoPageTitle(t, fallback)).toBe(t);
+    expect(seoPageTitle(t, fallback, 70)).toBe(`${t} · Orrery`);
+  });
+});
+
+describe('seoDescription', () => {
+  const fallback = 'A poetic dek that stays the description when no seo_description exists.';
+
+  it('falls back to the existing text when there is no seo_description', () => {
+    expect(seoDescription(undefined, fallback)).toBe(fallback);
+    expect(seoDescription(' ', fallback)).toBe(fallback);
+  });
+
+  it('uses the seo_description as written', () => {
+    const d = 'Delta-v is the velocity budget every spacecraft spends.';
+    expect(seoDescription(d, fallback)).toBe(d);
+  });
+
+  it('still caps either source at the meta-description length', () => {
+    expect(seoDescription('word '.repeat(80), fallback).length).toBeLessThanOrEqual(160);
+  });
+});
+
+describe('isMirrorBuild', () => {
+  it('is true only for a build under a base path (GH Pages staging)', () => {
+    expect(isMirrorBuild('/orrery')).toBe(true);
+    expect(isMirrorBuild('')).toBe(false);
   });
 });
 

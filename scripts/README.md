@@ -23,6 +23,14 @@ before you open the file:
 Conventions: tsx or .mjs, colocated `*.test.ts` where logic warrants it;
 script headers cite the ADR/PRD/RFC that governs them — keep that up.
 
+## Mission thumbnails — which tool, when
+
+| Question | Run |
+|---|---|
+| draw / refresh the 736×414 trajectory thumbnail of a mission and its label-free 420×312 card crop in `thumbnails/card/` (all 126 on a full run; deterministic) | `npx tsx scripts/render-mission-thumbnails.ts [--only=<id>,…] [--out=<dir> --png=<dir>]` — runbook `docs/guides/mission-thumbnail-runbook.md` (skill `orrery-mission-thumbnails`) |
+| rebuild the cislunar waypoints of Earth-orbit-raising Moon missions (Chandrayaan-1/-3, SLIM) from the published orbit tables in the mission JSON (`cislunar_profile.orbit_raising`, `lunar_orbits`, `waypoints_source`) | `npx tsx scripts/cislunar/generate-hybrid-waypoints.ts static/data/missions/moon/<id>.json` — then re-render the thumbnail, `node scripts/mobile/build-offline-manifest.mjs`, `npm run validate-data` |
+| the font its labels use | `scripts/assets/fonts/SpaceMono-Regular.ttf` + `OFL.txt` (SIL OFL 1.1; build-time only, node-canvas cannot read the site's woff2) |
+
 ## Translations — which tool, when
 
 Every locale but en-US is a translation of `i18n-src/en-US/**` (content
@@ -98,6 +106,7 @@ tables); keep it.
 | replace reviewed dead links everywhere they are written (all locales, labels too) | `apply-link-fixes.mjs <map.json>` (probes every replacement first; maps under `link-fixes/`) | by hand |
 | where a shipped image really comes from (placeholder credit, invented title, no row): NASA Images + Commons search, 64-bit dHash per candidate, look at every match | `image-find-source.mjs --q "<subject>" [--cat "<category>"] --out <map.json> <image>…` (one candidate: `image-match.mjs`) | by hand |
 | the same for every placeholder credit in some surfaces at once (grouped by entity, crops follow their image when the re-crop matches, resumable) | `credit-placeholders-find.mjs --surface <a,b> --out <file.json>` | by hand; look at every match with d > 4 before applying |
+| every fleet-gallery 1x1 crop against its base image (local re-crop, dHash ≤ 6): a crop that reproduces gets its base's source and `crop-verified-from-base` (row created if missing); with `--find-inside` a crop the recipe does not reproduce is searched for inside its base at any position and scale (32x32 grayscale NCC, ≥ 0.8) and verified the same way; one that is not in its base is listed NOT FROM BASE with its best score (a row claiming the base's source is flagged, never deleted); the others are listed and left alone | `credit-placeholders-find.mjs --all-crops [--find-inside] [--surface fleet-galleries] [--apply]` | by hand; no network |
 | credit rows to the real Commons file, once the match is known (creates a missing row) | `backfill-provenance-commons.ts <map.json>` | by hand |
 | credit rows to the real NASA Images item, once the match is known (creates a missing row) | `apply-provenance-nasa.mjs <map.json>` | by hand |
 | credit rows to an image on an agency's own website (direct-agency; licence from the allowlist) | `apply-provenance-agency.mjs <map.json>` | by hand |
@@ -105,10 +114,23 @@ tables); keep it.
 | replace gallery slots with another Commons/NASA picture, end to end (master, ladder, card rungs, 1x1, credit, alt text in 14 locales + its translation-source hash, vision row, pHash, curation, /credits thumb) | `npx tsx replace-gallery-slots.ts <map.json> [--dry-run]` (maps under `link-fixes/`; masters of the galleries smudged first) | by hand, after looking at each new picture |
 | hero crops: each hero with its card (2.5:1, faded) and 16:9 cover crops at its reviewed `position`, as contact sheets; `--try` previews a candidate position | `node vision/hero-crop-sheet.mjs --out <dir> [--surface …] [--only …] [--try "<surface>/<id>=<x>% <y>%"]` (read-only) | by hand, after hero swaps |
 | drop gallery slots (logos, patches, near-duplicates, no better picture) and renumber the gallery everywhere it is referenced (files, masters, credits, alt text, hero overrides, program figures; round records under `i18n-tools/maps/` are left as written) | `node drop-gallery-slots.mjs <surface>/<id>/<NN> … [--apply]` (dry run by default; header lists the rebuilds to run after) | by hand, after looking at each slot |
+| move an already-built image (a served ladder + master, or a slot of another gallery) into a gallery as its next numbered slot, with 1x1 crop, provenance, alt text in 14 locales, vision, approved, pHash, ladder, credit thumb; every JSON reference follows it | `npx tsx move-image-to-gallery.ts <from>=<to>[@x,y] … [--apply]` (dry run by default; header lists the rebuilds to run after) | by hand |
+| fold a moon/mars site's own gallery into its mission's gallery so the site panel and the mission panel show one list (pHash dedupe, site hero kept as the hero, references re-pointed, the site gallery retired) | `npx tsx merge-place-galleries.ts [<site id> …] [--apply]` (dry run by default; uses the two tools above) | by hand |
 | an audio tour against the screen: a screenshot after each stage beside the narration words of its VTT window, as contact sheets | `npx tsx audio/stage-review.ts --url http://localhost:4193 --out <dir> [episode-id …]` (read-only; against `vite preview` of a build) | by hand, after re-timing a tour (AGENTS.md tour re-listen rule) |
 
 Runbook: the `orrery-link-health` skill. The two outbound checkers share
 `lib/link-probe.mjs` (polite User-Agent, 2 requests per host, HEAD then GET).
+
+## SEO — which tool, when
+
+| Question | Run | Where it runs |
+| --- | --- | --- |
+| does every indexable page have one title (not the bare brand, ≤90 chars), one description (≤160), a self-referencing canonical, the full hreflang set with built targets, og:title / og:url / og:image and a Twitter card, JSON-LD that parses and one H1, with no noindex leak, and (entity pages) at least the locale's character floor (`THIN_MIN_CHARS`, ADR-096 decision 12) of text in `<main>` — and do the sitemaps list exactly those pages; on the GH Pages mirror (`VITE_BASE`), is every page noindex with no canonical | `check-seo.mjs` | every `npm run build` |
+
+The SEO code it checks: `src/lib/seo.ts` (canonical, hreflang, `metaDescription`,
+`pageTitle`, `isMirrorBuild`), `src/lib/social-meta.ts` (Open Graph + Twitter,
+applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
+`src/lib/sitemap.ts` (the `/sitemap.xml` index and `/sitemaps/<locale>.xml`).
 
 **Manual tools no npm script or workflow runs** (read the header first):
 

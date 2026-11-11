@@ -1,5 +1,12 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Vikram (Chandrayaan-3)",
+      "label_short": "Módulo Vikram",
+      "explain": "El módulo de aterrizaje Vikram de Chandrayaan-3, que se posó el 23 de agosto de 2023 a unos 600 km del polo sur. LRO lo fotografió cuatro días después; el halo brillante es regolito removido por el chorro de los motores."
+    }
+  ],
   "panorama_caption": "Shiv Shakti Point: el primer panorama desde el polo sur lunar. La sombra del módulo Vikram en primer plano; el rover Pragyan se desplegó sobre el regolito poco después de esta imagen.",
   "compass_zero_direction": "eje +X del generador de imágenes del módulo",
   "panorama_annotations": [

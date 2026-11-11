@@ -33,6 +33,8 @@ import {
   findLaunchesOrphanLauncherRefs,
   findLaunchesOrphanRocketMappingTargets,
   scienceReviewHash,
+  findHotspotAnnotationProblems,
+  type HotspotEntryForAnnotations,
   type FleetRef,
   type LicenseWaiver,
   type SiteType,
@@ -240,6 +242,7 @@ const validateLabIllustrationProvenance = ajv.compile(
   loadSchema('lab-illustration-provenance.schema.json'),
 );
 const validateOriginalWork = ajv.compile(loadSchema('original-work.schema.json'));
+const validateSiteIllustrations = ajv.compile(loadSchema('site-illustrations.schema.json'));
 const validateAgencyArchives = ajv.compile(loadSchema('agency-archives.schema.json'));
 const validateSourceFetchProvenance = ajv.compile(
   loadSchema('source-fetch-provenance.schema.json'),
@@ -250,6 +253,7 @@ const validateCislunarPhaseScienceMap = ajv.compile(
 const validateTraverse = ajv.compile(loadSchema('traverse.schema.json'));
 const validateTraverseRoutePatches = ajv.compile(loadSchema('traverse-route-patches.schema.json'));
 const validateTraverseRoutePhotos = ajv.compile(loadSchema('traverse-route-photos.schema.json'));
+const validateMoonAnnotationPhotos = ajv.compile(loadSchema('moon-annotation-photos.schema.json'));
 const validateSiteStory = ajv.compile(loadSchema('site-story.schema.json'));
 const validateSiteStoriesIndex = ajv.compile(loadSchema('site-stories-index.schema.json'));
 
@@ -717,6 +721,43 @@ validateFile(
   validateLabIllustrationProvenance,
 );
 validateFile(join(DATA_ROOT, 'original-work.json'), validateOriginalWork);
+validateFile(join(DATA_ROOT, 'site-illustrations.json'), validateSiteIllustrations);
+// Every illustrated site map must ship its base file, its ladder entry, the rungs the
+// ladder names and a caption message (the alt is a schema-required field + a locale overlay).
+{
+  const p = join(DATA_ROOT, 'site-illustrations.json');
+  if (existsSync(p)) {
+    const rows = (
+      readJson(p) as { illustrations: { siteId: string; body: string; file: string }[] }
+    ).illustrations;
+    const ladder = readJson(join(DATA_ROOT, 'image-ladder.json')) as Record<string, number[]>;
+    const en = readJson('messages/en-US.json') as Record<string, string>;
+    for (const r of rows) {
+      const stem = '/' + r.file.replace(/\.webp$/, '');
+      const widths = ladder[stem] ?? [];
+      const need = [
+        r.file,
+        ...widths.slice(0, -1).map((w) => r.file.replace(/\.webp$/, `-${w}.webp`)),
+      ];
+      const missing = need.filter((f) => !existsSync(join('static', f)));
+      const keys = [`site_illustration_caption_${r.body}`];
+      const noMsg = keys.filter((k) => !en[k]);
+      if (!widths.length || missing.length || noMsg.length) {
+        failed++;
+        console.error(
+          `\n  ✗ site-illustrations.json: ${r.siteId}: ` +
+            [
+              widths.length ? '' : `no ladder entry for ${stem}`,
+              missing.length ? `missing ${missing.join(', ')}` : '',
+              noMsg.length ? `missing messages ${noMsg.join(', ')}` : '',
+            ]
+              .filter(Boolean)
+              .join('; '),
+        );
+      } else passed++;
+    }
+  }
+}
 validateFile(join(DATA_ROOT, 'agency-archives.json'), validateAgencyArchives);
 validateFile(join(DATA_ROOT, 'source-fetch-provenance.json'), validateSourceFetchProvenance);
 validateFile(join(DATA_ROOT, 'cislunar-phase-science-map.json'), validateCislunarPhaseScienceMap);
@@ -731,6 +772,30 @@ for (const dir of ['mars-traverses', 'moon-traverses']) {
           ? validateTraverseRoutePhotos
           : validateTraverse,
     );
+  }
+}
+// Apollo ring photos: site → annotation id → served image + card thumb, all on disk.
+{
+  const annPath = join(DATA_ROOT, 'moon-annotation-photos.json');
+  validateFile(annPath, validateMoonAnnotationPhotos);
+  if (existsSync(annPath)) {
+    const sites = readJson(annPath) as Record<
+      string,
+      Record<string, { image: string; thumb: string }>
+    >;
+    for (const [site, rings] of Object.entries(sites)) {
+      for (const [ring, p] of Object.entries(rings)) {
+        for (const rel of [p.image, p.thumb]) {
+          if (existsSync(join(DATA_ROOT, '..', rel))) {
+            passed++;
+          } else {
+            failed++;
+            console.error('\n  ✗ moon-annotation-photos.json');
+            console.error(`      ${site}/${ring}: file missing on disk: ${rel}`);
+          }
+        }
+      }
+    }
   }
 }
 // launches-historic/<decade>.json share the launches.json manifest shape.
@@ -1487,35 +1552,28 @@ if (missionDriftFailed === 0) {
 }
 
 // ─── Mission trajectory-thumbnail coverage (#390) ─────────────────
-// "Trajectory thumbnail should not be optional." Every mission with a
-// flight block is now renderable by scripts/fetch-assets.ts (MOON →
-// cislunar; waypoints → Sun-centric path; planetary porkchop body →
-// transfer arc; SUN/COMET/ASTEROID → per-mission analytic distance), so
-// each must ship its thumbnail PNG. Fail-closed, parity with the hero
-// zero-gap + i18n gates. Fix: `npx tsx scripts/fetch-assets.ts --thumbnails-only`.
+// "Trajectory thumbnail should not be optional." Every mission has one: scripts/render-mission-thumbnails.ts draws /fly's own trajectory (heliocentric,
+// cislunar, Earth orbit) and a labelled placeholder where there is no orbit data. Fail-closed,
+// parity with the hero zero-gap + i18n gates. Fix: `npx tsx scripts/render-mission-thumbnails.ts`.
 let missionThumbFailed = 0;
 console.log('\nValidating mission trajectory-thumbnail coverage (#390)...');
 for (const dest of missionDataDirs) {
   const dir = join(DATA_ROOT, 'missions', dest);
   if (!existsSync(dir)) continue;
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
-    const m = JSON.parse(readFileSync(join(dir, file), 'utf8')) as {
-      id: string;
-      flight?: unknown;
-    };
-    if (!m.flight) continue;
-    const png = join('static/images/missions/thumbnails', `${m.id}.png`);
-    if (!existsSync(png)) {
+    const m = JSON.parse(readFileSync(join(dir, file), 'utf8')) as { id: string };
+    const thumb = join('static/images/missions/thumbnails', `${m.id}.webp`);
+    if (!existsSync(thumb)) {
       console.error(
-        `  ✗ ${dest}/${file}: has flight data but no trajectory thumbnail ` +
-          `(images/missions/thumbnails/${m.id}.png) — run fetch-assets --thumbnails-only`,
+        `  ✗ ${dest}/${file}: no trajectory thumbnail ` +
+          `(images/missions/thumbnails/${m.id}.webp) — run scripts/render-mission-thumbnails.ts`,
       );
       missionThumbFailed++;
     }
   }
 }
 if (missionThumbFailed === 0) {
-  console.log('  ✓ Every flight-block mission has a trajectory thumbnail');
+  console.log('  ✓ Every mission has a trajectory thumbnail');
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -2231,6 +2289,9 @@ let surfaceHotspotVariantFailed = 0;
       return v && v.length > 0 ? v : source;
     };
     const entries = sidecar.entries ?? {};
+    problems.push(
+      ...findHotspotAnnotationProblems(entries as Record<string, HotspotEntryForAnnotations>),
+    );
     for (const [siteId, e] of Object.entries(entries)) {
       for (const field of ['hotspot_tier2_source', 'hotspot_tier2_regional_source'] as const) {
         const source = e[field];
@@ -2248,7 +2309,9 @@ let surfaceHotspotVariantFailed = 0;
     problems.push(`surface-hotspot variant check error: ${(err as Error).message}`);
   }
   if (problems.length === 0) {
-    console.log('  ✓ every surface-hotspot Tier-2 detail + regional source resolves on disk');
+    console.log(
+      '  ✓ every surface-hotspot Tier-2 source resolves on disk; annotations have ids, in-image offsets and sources',
+    );
   } else {
     for (const p of problems) console.log(`  ✗ ${p}`);
     surfaceHotspotVariantFailed = problems.length;

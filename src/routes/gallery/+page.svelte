@@ -5,6 +5,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { metaDescription } from '$lib/seo';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import { localizeHref } from '$lib/paraglide/runtime';
@@ -46,7 +47,7 @@
 
 <svelte:head>
   <title>{m.layout_footer_gallery()} · Orrery</title>
-  <meta name="description" content={m.gallery_meta_description()} />
+  <meta name="description" content={metaDescription(m.gallery_meta_description())} />
 </svelte:head>
 
 <article class="gallery-hub" data-route-ready="true">

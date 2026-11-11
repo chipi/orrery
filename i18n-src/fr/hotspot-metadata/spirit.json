@@ -1,4 +1,17 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Atterrisseur de Spirit",
+      "label_short": "Atterrisseur",
+      "explain": "La plateforme d'atterrissage qui a amené le rover Spirit dans le cratère Goussev le 4 janvier 2004 et y est restée. Le petit cratère juste au nord-ouest est celui que l'équipe du rover a nommé Sleepy Hollow."
+    },
+    {
+      "id": "sleepy-hollow",
+      "label": "Cratère Sleepy Hollow",
+      "label_short": "Sleepy Hollow",
+      "explain": "Un petit cratère de moins de 20 m de large, juste au nord-ouest de l'atterrisseur, que l'équipe du rover Spirit a nommé Sleepy Hollow. L'anneau marque son centre."
+    }
+  ],
   "panorama_caption": "Le panorama McMurdo de Spirit, pris depuis Low Ridge, à côté de Home Plate, pendant que le rover traversait l'hiver martien de 2006 (sols 814–932). À l'horizon, Husband Hill, avec à son pied les dunes ondulées d'El Dorado."
 }

@@ -2,23 +2,57 @@
   "hotspot_annotations": [
     {
       "id": "lm-descent-stage",
-      "label": "LM 下降级（Eagle）"
+      "label": "LM 下降级（Eagle）",
+      "label_short": "LM Eagle",
+      "explain": "Apollo 11 登月舱 Eagle 的下半部分。1969 年 7 月着陆后，上升级载着乘组离开，下降级留在了月球上。"
     },
     {
-      "id": "us-flag",
-      "label": "美国国旗（插在 LM 以西约 8 米处）"
+      "id": "pse",
+      "label": "被动地震仪（PSEP）",
+      "label_short": "PSEP",
+      "explain": "早期 Apollo 科学实验包（EASEP）中的被动地震实验装置（PSEP），1969 年 7 月 21 日安放在登月舱以南，用来记录月震和撞击。"
     },
     {
       "id": "lrrr",
-      "label": "激光测距反射器（LRRR）"
+      "label": "激光测距反射器（LRRR）",
+      "label_short": "激光反射器",
+      "explain": "Apollo 11 留下的激光测距反射器阵列（LRRR）：地球上的天文台可以测量被它从月球反射回来的激光脉冲的往返时间。它位于地震仪装置西北偏北约 5 m 处。"
     },
     {
-      "id": "easep",
-      "label": "EASEP（简化版 ALSEP 仪器包）"
+      "id": "flag",
+      "label": "美国国旗（LROC 位置）",
+      "label_short": "美国国旗",
+      "explain": "LROC 的 Apollo 11 设备图层给出的国旗位置，在 LM 西北偏西约 14 m 处。国旗本身太小，在此分辨率下看不见。"
     },
     {
-      "id": "plaque",
-      "label": "「我们为全人类和平而来」纪念牌"
+      "id": "tv",
+      "label": "电视摄像机（LROC 位置）",
+      "label_short": "电视摄像机",
+      "explain": "LROC 的 Apollo 11 设备图层给出的电视摄像机位置，在 LM 西北约 26 m 处。图像中该处没有可辨认的物体。"
+    },
+    {
+      "id": "little-west",
+      "label": "Little West 环形山",
+      "label_short": "Little West",
+      "explain": "LROC 在其 Apollo 11 地图上标为 Little West 的环形山，在 LM 以东约 75 m 处。图像中一条淡淡的足迹通向它。"
+    },
+    {
+      "id": "double",
+      "label": "Double 环形山",
+      "label_short": "Double",
+      "explain": "LROC 在其 Apollo 11 Featured Sites 地图上标为 Double 的小型环形山，在 LM 西南约 17 m 处。"
+    },
+    {
+      "id": "footpath-little-west",
+      "label": "通向 Little West 的足迹",
+      "label_short": "足迹",
+      "explain": "LROC 指出，在其 Apollo 11 着陆点图像中，宇航员走过的路径非常醒目。这条淡淡的线从 LM 向东通向 Little West 环形山（虚线轮廓标出的是一片区域，而非一个点）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM 下降发动机喷流区",
+      "label_short": "喷流区",
+      "explain": "LROC 指出，下降发动机在着陆点周围刮出一圈明亮的光晕，很可能是把发动机下方最细的颗粒吹走所致。在 Apollo 11，它表现为 LM 周围宽约 100 m 的明亮区域。"
     }
   ],
   "panorama_caption": "静海基地，EVA-1。巴兹·奥尔德林在着陆后不久拍下了 LM Eagle 和美国国旗。LM 附近可见的 Hasselblad 拼接缝和色差是已发布拼接图的一部分。",

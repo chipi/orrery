@@ -5,8 +5,10 @@
  *   REGIONAL — Copernicus Sentinel-2 L2A true-colour (10 m/px), discovered via
  *     the Earth Search STAC API and window-cropped straight from the public
  *     AWS COG bucket via gdal `/vsicurl` (no full-file downloads — the exact
- *     Kaguya flow, fetch-moon-kaguya-regional.ts). 1600 px @ 10 m = 16 km,
- *     matching the Moon/Mars regional extent.
+ *     Kaguya flow, fetch-moon-kaguya-regional.ts). 3200 px @ 10 m = 32 km,
+ *     so multi-pad complexes (Kourou pads spread 10 km) stay inside sharp
+ *     imagery around the pad (widened from 16 km 2026-11-09). The default
+ *     path is the EOX cloudless mosaic of the same Sentinel-2 data.
  *   DETAIL — USGS NAIP aerial (~0.6 m/px native) via the National Map
  *     ImageServer exportImage endpoint: the server crops + reprojects the
  *     requested bbox itself, so no raster plumbing is needed. 1024 px over a
@@ -130,7 +132,7 @@ const NAIP_EXPORT =
 const IGN_WMS = 'https://data.geopf.fr/wms-r/wms';
 const GSI_TILES = 'https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto';
 
-const REGIONAL_CROP_PX = 1600; // 1600 px @ 10 m/px = 16 km — Moon/Mars regional extent
+const REGIONAL_CROP_PX = 3200; // 3200 px @ 10 m/px = 32 km, pad-centred (matches hotspot_tier2_regional_ground_m)
 const DETAIL_WINDOW_M = 512; // half-km window around the pad
 // 2048 → ~0.25 m/px requested; NAIP (down to ~0.3 m/px) and IGN BD ORTHO
 // (0.2 m/px) genuinely carry it. Was 1024 (~0.5 m/px) — at deep zoom the
@@ -789,13 +791,18 @@ async function main(): Promise<void> {
   // would silently swap operator-APPROVED imagery. Not valid for s2-fallback
   // pads (their detail reuses the regional's winning scene).
   const detailOnly = argv.includes('--detail-only');
+  // --regional-only: re-fetch only the regional (the 2026-11-09 16 km → 32 km
+  // widening) and leave the approved detail layers untouched.
+  const regionalOnly = argv.includes('--regional-only');
   // Regional source: the EOX cloudless mosaic by default (no clouds, one
   // consistent look); --regional s2 re-picks a single Sentinel-2 scene.
   const regionalS2 = argv.includes('--regional') && argv[argv.indexOf('--regional') + 1] === 's2';
   const only = argv.filter((a, i) => !a.startsWith('--') && argv[i - 1] !== '--regional');
   const ids = only.length ? only.filter((id) => ALL_PAD_IDS.includes(id)) : ALL_PAD_IDS;
   const pads = loadPads(ids);
-  console.log(`fetch-earth-pads: ${pads.length} pad(s)${detailOnly ? ' [detail-only]' : ''}`);
+  console.log(
+    `fetch-earth-pads: ${pads.length} pad(s)${detailOnly ? ' [detail-only]' : ''}${regionalOnly ? ' [regional-only]' : ''}`,
+  );
   let ok = 0;
   for (const site of pads) {
     const strategy = PAD_STRATEGY[site.id];
@@ -812,8 +819,10 @@ async function main(): Promise<void> {
         regionalOk = scene != null;
       } else regionalOk = await fetchEox(site, 'regional', REGIONAL_CROP_PX * 10, REGIONAL_CROP_PX);
     }
-    let d = false;
-    if (strategy === 'naip') d = await fetchDetailNaip(site);
+    let d = regionalOnly;
+    if (regionalOnly) {
+      // detail left as is
+    } else if (strategy === 'naip') d = await fetchDetailNaip(site);
     else if (strategy === 'ign-wms') d = await fetchDetailIgn(site);
     else if (strategy === 'gsi-tiles') d = await fetchDetailGsi(site);
     else if (strategy === 'linz') d = await fetchDetailLinz(site);

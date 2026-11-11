@@ -1,6 +1,7 @@
 {
   "title": "Coronagraphes",
   "intro_sentence": "Un disque occultant à l'intérieur du télescope bloque l'étoile hôte de sorte que la planète à côté — un milliard de fois plus faible — devient visible.",
+  "seo_title": "Coronographes : masquer l'étoile pour voir les planètes",
   "body_paragraphs": [
     "Une étoile semblable au Soleil éclipse ses planètes d'un facteur d'environ 10⁹ aux longueurs d'onde visibles et 10⁶ dans l'infrarouge. Les photons de la planète ne manquent pas, ils se noient dans les ailes de diffraction de la fonction d'étalement du point (PSF) de l'étoile. L'imagerie directe d'une exoplanète n'est possible que si l'on parvient à supprimer cette PSF de plusieurs ordres de grandeur. Un coronographe fait exactement cela.",
     "Le coronographe classique de Lyot (1930, inventé par Bernard Lyot pour la photographie solaire) place un disque opaque au plan focal du télescope pour bloquer l'étoile, puis un second masque plus loin pour bloquer la lumière diffractée par le bord du premier. Les coronographes modernes à pupille apodisée et les coronographes à vortex utilisent des motifs de phase complexes pour pousser la suppression à 10⁻⁹ ou mieux dans des régions étroites de l'image.",

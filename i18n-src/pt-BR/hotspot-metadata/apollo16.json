@@ -1,1 +1,58 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Estágio de descida do LM (Orion)",
+      "label_short": "LM Orion",
+      "explain": "A metade inferior do módulo lunar Orion da Apollo 16, deixada na Lua após o pouso de abril de 1972."
+    },
+    {
+      "id": "alsep",
+      "label": "Estação central do ALSEP",
+      "label_short": "ALSEP",
+      "explain": "O pacote de experimentos da superfície lunar da Apollo 16 (ALSEP), ligado em 21 de abril de 1972. Levava um sismômetro passivo, um sismômetro ativo, um magnetômetro e um experimento de fluxo de calor; este último foi perdido na primeira caminhada lunar, quando seu cabo se rompeu."
+    },
+    {
+      "id": "lrv",
+      "label": "Veículo lunar (LRV)",
+      "label_short": "LRV",
+      "explain": "O veículo lunar (LRV) da Apollo 16. Aqui está o rover como o LROC o fotografa hoje, deixado na Lua após a missão."
+    },
+    {
+      "id": "seismometer",
+      "label": "Sismômetro passivo (LROC)",
+      "label_short": "Sismômetro",
+      "explain": "O LROC lista o sismômetro passivo da Apollo 16 como um ponto próprio, a cerca de 2 m da estação central (o anel coincide com o anel do ALSEP)."
+    },
+    {
+      "id": "flag",
+      "label": "Bandeira dos EUA (posição LROC)",
+      "label_short": "Bandeira EUA",
+      "explain": "O ponto que a camada de equipamentos da Apollo 16 do LROC indica para a bandeira, a cerca de 19 m a nor-noroeste do módulo lunar. A bandeira em si é pequena demais para ser vista."
+    },
+    {
+      "id": "spot-crater",
+      "label": "Cratera Spot",
+      "label_short": "Cratera Spot",
+      "explain": "Uma cratera rasa ao sul do módulo lunar que o LROC chama de Spot em seu mapa da Apollo 16."
+    },
+    {
+      "id": "footpath-alsep",
+      "label": "Trilhas até o ALSEP",
+      "label_short": "Trilhas ALSEP",
+      "explain": "Trilhas escuras e marcas do rover na imagem vão da área do módulo lunar para sudoeste até o pacote de instrumentos (o contorno tracejado marca a área)."
+    },
+    {
+      "id": "lrv-track",
+      "label": "Trilha do rover até o LRV",
+      "label_short": "Trilha do rover",
+      "explain": "Marcas escuras na imagem seguem para leste a partir do módulo lunar até o ponto de estacionamento do veículo lunar (LRV) listado pelo LROC (o contorno tracejado marca a área)."
+    },
+    {
+      "id": "blast",
+      "label": "Zona do jato do LM",
+      "label_short": "Zona do jato",
+      "explain": "O LROC observa que o motor de descida clareou o solo ao redor dos locais de pouso da Apollo. Na Apollo 16 o halo brilhante ao redor do módulo lunar tem cerca de 170 m de largura."
+    }
+  ]
+}

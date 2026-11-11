@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "descent-stage",
+      "label": "Etapa de descenso de Luna 16",
+      "label_short": "Etapa descenso",
+      "explain": "La mitad inferior del módulo de aterrizaje soviético Luna 16, que quedó en el Mare Fecunditatis después de que la cápsula de retorno despegara el 21 de septiembre de 1970 con unos 101 gramos de suelo."
+    }
+  ]
 }

@@ -1,0 +1,381 @@
+{
+  "_note": "DRAFT for wiring, robotic Moon landers. Same shape as the Apollo pilot json. Offsets are metres from the patch centre (= site point per the hotspot convention): lat_offset_m north+, lon_offset_m east+. px,py are in the 2048x2048 tier2-lroc.jpg (x right, y down, centre 1024,1024). Patch scale: m_per_px per site (see scale_basis). Hardware positions are by eye on the patch, checked against LROC captions/coordinates; no absolute coordinate was used to place a ring.",
+  "sites": {
+    "luna16": {
+      "frame": "M141899500L",
+      "frame_date": "2010-10-16",
+      "m_per_px": 0.1509,
+      "scale_basis": "LROC Featured Sites page: pixel scale 0.55 m/pix; patch = centre 562x562 px of the 1000x562 featured_sites jpg, resized to 2048 (x3.644)",
+      "hotspot_annotations": [
+        {
+          "id": "descent-stage",
+          "label": "Luna 16 descent stage",
+          "label_short": "Descent stage",
+          "lat_offset_m": 0.3,
+          "lon_offset_m": 0.8,
+          "px": 1029,
+          "py": 1022,
+          "source": [
+            "https://lroc.im-ldi.com/images/10 (LROC \"Luna 16\": \"Soviet Luna 16 descent stage\")",
+            "https://lroc.im-ldi.com/featured_sites/luna-16/site_images/m141899500l (frame, 0.55 m/pix, feature pixel line 9298 sample 6715)"
+          ],
+          "confidence": "one source (LROC Luna 16 featured image text + LROC Featured Site frame M141899500L whose feature pixel is the crop centre); object unmistakable: bright body with dark shadow in a blast halo",
+          "explain_en": "The lower half of the Soviet Luna 16 lander, left on Mare Fecunditatis after the sample-return capsule lifted off on 21 September 1970 with about 101 grams of soil.",
+          "gallery": {
+            "slot": "missions/luna16/03",
+            "state": "existing",
+            "note": "File:Luna 16 descent stage.png, NASA/GSFC/ASU, PD-NASA row; the LROC image with the descent stage inset"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": []
+    },
+    "luna17": {
+      "frame": "M173144480R",
+      "frame_date": "2011-10-13",
+      "m_per_px": 0.1372,
+      "scale_basis": "LROC Featured Sites page: pixel scale 0.50 m/pix; centre 562x562 of the 1000x562 jpg to 2048",
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 17 lander",
+          "label_short": "Luna 17 lander",
+          "lat_offset_m": 0.8,
+          "lon_offset_m": 1,
+          "px": 1031,
+          "py": 1018,
+          "source": [
+            "https://lroc.im-ldi.com/geojson/luna_lunokhod_lms.geojson (Luna 17 38.23764 N, -35.00179 E)",
+            "https://lroc.im-ldi.com/images/402 (LROC \"Lunokhod 1 Revisited\": rover tracks around the lander, ramps on the east side)",
+            "https://lroc.im-ldi.com/images/11 (\"Enlargement of Luna 17 lander, note the Lunokhod 1 tracks starting at the ramp and circling the lander\")"
+          ],
+          "confidence": "two sources (LROC lander coordinate layer + LROC \"Lunokhod 1 Revisited\" text describing the lander with tracks circling it); LROC does not annotate this frame, identification by eye from the matching tracks-around-lander pattern",
+          "explain_en": "The Luna 17 lander that delivered Lunokhod 1 to Mare Imbrium on 17 November 1970. Its descent engines brightened the surface around it, which makes the rover tracks circling the lander stand out.",
+          "gallery": {
+            "slot": "missions/luna17/01",
+            "state": "existing",
+            "note": "File:M127159138LC Luna 17 lander.jpg (LROC frame showing the lander; row credited PD-Russia/Roscosmos, the image is an LROC NAC frame, credit to be checked)"
+          }
+        }
+      ],
+      "not_in_frame": "Lunokhod 1 final parking place 38.31517 N, -35.00798 E (LROC layer luna_lunokhod_rvrs) is 8.6 km north of the lander, outside this 0.28 km frame.",
+      "held": [],
+      "dropped": [
+        {
+          "object": "Lunokhod 1 rover",
+          "reason": "Final parking place is 8.6 km north of the lander, outside the frame."
+        },
+        {
+          "object": "Lunokhod 1 tracks",
+          "reason": "Visible around the lander (LROC text) but a track is not an object; no ring."
+        }
+      ]
+    },
+    "luna21": {
+      "frame": "M122007650L",
+      "frame_date": "2010-02-28",
+      "m_per_px": 0.1372,
+      "scale_basis": "LROC Featured Sites page: pixel scale 0.50 m/pix; centre 562x562 of the 1000x562 jpg to 2048",
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 21 lander",
+          "label_short": "Luna 21 lander",
+          "lat_offset_m": 0.7,
+          "lon_offset_m": 0.5,
+          "px": 1028,
+          "py": 1019,
+          "source": [
+            "https://lroc.im-ldi.com/images/15 (LROC \"Luna 21 Lander\", NAC M122007650LE: lander, bright zone 10-20 m, rover tracks)",
+            "https://lroc.im-ldi.com/geojson/luna_lunokhod_lms.geojson (Luna 21 26.005 N, 30.406 E)"
+          ],
+          "confidence": "two sources (LROC \"Luna 21 Lander\" featured image of this very frame M122007650L + LROC lander coordinate layer); bright body with dark shadow inside the blast zone",
+          "explain_en": "The Luna 21 lander that delivered Lunokhod 2 to Le Monnier crater on 15 January 1973. Its descent engines scoured a bright zone 10 to 20 m wide around it, and the rover tracks lead away from it.",
+          "gallery": {
+            "slot": "missions/luna21/01",
+            "state": "existing",
+            "note": "File:Luna 21 Lander (LROC15 - M122007650LE L21 ano).png, PD-NASA; shows the lander with an arrow"
+          }
+        }
+      ],
+      "not_in_frame": "Lunokhod 2 final position 25.83232 N, 30.92215 E (LROC layer luna_lunokhod_rvrs) is about 15 km from the lander, outside this frame. The hotspot site point (25.83, 30.914) is the rover, not the object the patch shows.",
+      "held": [],
+      "dropped": [
+        {
+          "object": "Lunokhod 2 rover",
+          "reason": "About 15 km from the lander, outside the frame."
+        }
+      ]
+    },
+    "luna24": {
+      "frame": "M137136039R",
+      "frame_date": "2010-08-22",
+      "m_per_px": 0.1372,
+      "scale_basis": "LROC Featured Sites page: pixel scale 0.50 m/pix; centre 562x562 of the 1000x562 jpg to 2048",
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Luna 24 lander",
+          "label_short": "Luna 24 lander",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": -0.7,
+          "px": 1019,
+          "py": 1015,
+          "source": [
+            "https://lroc.im-ldi.com/images/9 (LROC \"Soviet Union Lunar Sample Return Missions\": Luna 24 imaged in NAC frames; bright pixels near it may be material blown off by the ascent stage)",
+            "https://lroc.im-ldi.com/featured_sites/luna-24/site_images/m137136039r (frame, 0.50 m/pix, feature pixel line 19851 sample 6904)"
+          ],
+          "confidence": "one source (LROC Soviet sample-return post, Luna 24 NAC frames; no coordinate or arrow for this frame); bright specks and dark shadow at the crop centre on the rim of a 64 m crater",
+          "explain_en": "The Luna 24 lander on the rim of a crater in Mare Crisium. The August 1976 mission drilled over 2 m into the regolith and returned about 170 grams of it.",
+          "gallery": {
+            "slot": "missions/luna24/01",
+            "state": "existing",
+            "note": "LROC frame with arrow at the lander (File:...LROCM119449091RE L24 ano.png; row credited PD-Russia/Roscosmos, image is LROC)"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "object": "Bright specks south-west of the lander",
+          "reason": "LROC says only that they 'may be' material blown off by the ascent stage; not identified."
+        }
+      ]
+    },
+    "change3": {
+      "frame": "M1142596997R",
+      "frame_date": "2013-12-25 07:48 UTC",
+      "m_per_px": 0.4278,
+      "scale_basis": "LROC Featured Sites page: pixel scale 1.559 m/pix, incidence 78.17 deg, slew -18.42 deg; centre 562x562 of the 1000x562 jpg to 2048",
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 3 lander",
+          "label_short": "Chang'e 3 lander",
+          "lat_offset_m": 48.3,
+          "lon_offset_m": 3,
+          "px": 1031,
+          "py": 911,
+          "source": [
+            "https://lroc.im-ldi.com/images/637 (LROC: lander (44.1214 N, 340.4884 E) and rover from above, frame M1142582775R, image width 576 m)",
+            "https://lroc.im-ldi.com/images/929 (\"What a Blast!\": lander, rover tracks and blast zone, frame M1147290066R)"
+          ],
+          "confidence": "one source with a caveat (LROC 'Chang'e 3 Lander and Rover From Above', sibling frame M1142582775R taken the same pass 4 h earlier, lander = bright dot with dark streaks to its east); matched by that pattern. The dot is 50 m north of the patch centre although the patch centre is LROC's lander coordinate, so the registration or my match is off by that much. Medium confidence",
+          "explain_en": "China's Chang'e 3 lander, which touched down in Mare Imbrium on 14 December 2013, the first lunar landing since 1976. At this low Sun it shows as one bright pixel with a long shadow.",
+          "gallery": {
+            "slot": "missions/change3/04",
+            "state": "existing",
+            "note": "'What a Blast! Revisiting the Chang'e 3 Landing Site' (LROC929), PD-NASA; lander with blast zone. Also missions/change3/05 (lander and rover arrows, LROC637)"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "object": "Yutu rover",
+          "reason": "LROC places the rover about 44 m SE of the lander in sibling frame M1142582775R; in this frame the only candidate is a single bright pixel 50 m due south of the lander, which does not match that offset (about 20 m east missing). Frame is 1.56 m/px against a 1.5 m wide rover. Not annotated."
+        },
+        {
+          "object": "Blast zone / rover tracks",
+          "reason": "LROC (Clegg-Watkins 2016, post 929) shows them in frame M1147290066R; at incidence 78 deg in this frame nothing is resolved."
+        }
+      ]
+    },
+    "change5": {
+      "frame": "M1361560086R",
+      "frame_date": "2020-12-02",
+      "m_per_px": 0.5908,
+      "scale_basis": "LROC post: image 1210 m wide (the 1100 px blog PNG used as patch source, no crop); the baked-in 100 m scale bar measures about 164 patch px (0.61 m/px), consistent",
+      "baked_in_annotations": "The patch carries LROC baked-in annotations (white box around the lander, label \"Chang'e 5 lander\", scale bar, frame id). A ring would sit inside the box.",
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 5 lander",
+          "label_short": "Chang'e 5 lander",
+          "lat_offset_m": 1.2,
+          "lon_offset_m": 0.6,
+          "px": 1025,
+          "py": 1022,
+          "source": [
+            "https://lroc.im-ldi.com/images/1172 (LROC \"First Look: Chang'e 5\", frame M1361560086R)"
+          ],
+          "confidence": "two sources (LROC 'First Look: Chang'e 5': 'The lander is the bright spot in the center of the outline' + the label drawn on this image; LROC-computed coordinates 43.0576 N, 308.0839 E +/-20 m)",
+          "explain_en": "China's Chang'e 5 lander in Oceanus Procellarum, imaged by LRO the day after its 1 December 2020 touchdown. The sample-return mission brought back about 1.7 kg of lunar soil.",
+          "gallery": {
+            "slot": "missions/change5/04",
+            "state": "existing (partial)",
+            "note": "File:Chang'e 5 - After Blast Off (LROC1186), lander marked by an arrow, the ascender already gone; row credited CNSA/CC-BY-SA-4.0, image is an LROC product, credit to be checked"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": []
+    },
+    "change6": {
+      "frame": "M1472410644L",
+      "frame_date": "2024-06-07",
+      "m_per_px": 0.228,
+      "scale_basis": "file name content_CE6_FI_Header_425mmpp.png: 0.425 m/px on the 1100 px PNG, so about 467 m across (0.228 m per patch px). LROC's post says 552 m for a related 2x-enlarged crop, so the scale could be 0.27 m/px; only affects the metre offsets, not the ring",
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chang'e 6 lander",
+          "label_short": "Chang'e 6 lander",
+          "lat_offset_m": 0.7,
+          "lon_offset_m": 0.5,
+          "px": 1026,
+          "py": 1021,
+          "source": [
+            "https://lroc.im-ldi.com/images/1374 (LROC \"First Look: Chang'e 6\", frame M1472410644L, 7 June 2024)"
+          ],
+          "confidence": "one source (LROC 'First Look: Chang'e 6': 'The lander is seen as the small cluster of bright pixels in the center of the image', on the rim of an eroded ~50 m crater; coordinates 41.6385 S, 206.0148 E +/-30 m)",
+          "explain_en": "China's Chang'e 6 lander on the far side, in the Apollo basin, imaged by LRO about a week after its 1 June 2024 landing. The brighter ground around it was disturbed by the landing engine.",
+          "gallery": {
+            "slot": null,
+            "state": "candidate",
+            "note": "no gallery slot shows the lander on the ground (change6/01-04 are a mockup, samples, rover model, launch). Candidate: the LROC image on https://lroc.im-ldi.com/images/1374 (LROC-EDU, same source family as the tier-2 patch). CNSA-EDU is allowlisted for a CNSA landing photo; none identified in this pass"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": []
+    },
+    "chandrayaan3": {
+      "frame": "M1447750764LR",
+      "frame_date": "2023-08-27",
+      "m_per_px": 0.8486,
+      "scale_basis": "LROC post: image 1738 m wide (1100 px warped oblique mosaic, no crop), 42 deg slew, so scale varies across the frame",
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "Chandrayaan-3 Vikram lander",
+          "label_short": "Vikram lander",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0.8,
+          "px": 1025,
+          "py": 1024,
+          "source": [
+            "https://lroc.im-ldi.com/images/1314 (LROC \"Chandrayaan-3 Landing Site\", frame M1447750764LR)"
+          ],
+          "confidence": "two sources (LROC post: 'Chandrayaan-3 lander is in the center of the image, its dark shadow is visible against the bright halo'; LROC coordinates 69.3741 S, 32.32 E)",
+          "explain_en": "India's Chandrayaan-3 Vikram lander, which touched down on 23 August 2023 about 600 km from the south pole. LRO imaged it four days later; the bright halo is regolith disturbed by the rocket plume.",
+          "gallery": {
+            "slot": "missions/chandrayaan3/02",
+            "state": "existing",
+            "note": "File:Chandrayaan 3 Vikram lander stereo (ISRO, PD-self row): the lander seen by the rover cameras. Also missions/chandrayaan3/04 (LRO view of the site, no arrow)"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "object": "Pragyan rover",
+          "reason": "No source places the rover in this frame (the LROC post names only the lander); not resolved at 0.85 m/px by eye."
+        },
+        {
+          "object": "Blast halo",
+          "reason": "A halo, not hardware; LROC text only."
+        }
+      ]
+    },
+    "slim": {
+      "frame": "M1460739214L",
+      "frame_date": "2024-01-24",
+      "m_per_px": 0.4297,
+      "scale_basis": "LROC post: image 880 m wide (1100 px, no crop)",
+      "baked_in_annotations": "The patch carries an LROC baked-in white arrow pointing at the lander; the ring sits on the dot the arrow points to.",
+      "hotspot_annotations": [
+        {
+          "id": "lander",
+          "label": "SLIM lander",
+          "label_short": "SLIM lander",
+          "lat_offset_m": -1.3,
+          "lon_offset_m": 0.9,
+          "px": 1026,
+          "py": 1027,
+          "source": [
+            "https://lroc.im-ldi.com/images/1358 (LROC \"JAXA SLIM Landing\", frame M1460739214L)"
+          ],
+          "confidence": "two sources (LROC post: 'The SLIM lander on the lunar surface (13.3160 S, 25.2510 E)' + the arrow drawn on this image)",
+          "explain_en": "JAXA's SLIM lander, which landed on 19 January 2024 near Shioli crater. LRO imaged it five days later; a faint change in brightness around it marks where the engine exhaust swept the surface.",
+          "gallery": {
+            "slot": "missions/slim/02",
+            "state": "existing",
+            "note": "File:M1460739214L JAXA SLIM landing site imaged by LROC.png (arrow at the lander), CC-BY-4.0 row"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": [
+        {
+          "object": "Engine-exhaust reflectance change",
+          "reason": "Visible only in the before/after ratio, not in this frame."
+        }
+      ]
+    },
+    "beresheet": {
+      "frame": "M1310536929R",
+      "frame_date": "2019-04-22",
+      "m_per_px": 0.2393,
+      "scale_basis": "LROC post: panels 490 m wide; the baked-in 100 m scale bar measures about 202 px of 1000 (0.2417 m per patch px), consistent",
+      "baked_in_annotations": "The patch carries LROC baked-in annotations (white box around the impact site, date label \"Beresheet Impact Site - After\", scale bar). The ring sits inside the box.",
+      "hotspot_annotations": [
+        {
+          "id": "impact-smudge",
+          "label": "Beresheet impact smudge",
+          "label_short": "Impact smudge",
+          "lat_offset_m": -4.3,
+          "lon_offset_m": 0.2,
+          "px": 1025,
+          "py": 1042,
+          "ring_radius_px": 26,
+          "source": [
+            "https://lroc.im-ldi.com/images/1101 (LROC \"Beresheet Crash Site Spotted!\", frame M1310536929R, 22 April 2019)"
+          ],
+          "confidence": "two sources (LROC post: dark elongated 'smudge' about 10 m across at 32.5956 N, 19.3496 E, 95% interval 20 m x 8 m + the box drawn on this image)",
+          "explain_en": "The dark smudge where the Israeli Beresheet lander crashed on 11 April 2019 in Mare Serenitatis. It hit at a low angle, from the north, about 1000 m/s faster than planned; the smudge is about 10 m across and lowers the surface brightness by about 10%.",
+          "gallery": {
+            "slot": "missions/beresheet/02",
+            "state": "existing",
+            "note": "File:Beresheet Crash Site Spotted LRO 01.png (PD-NASA; the same box and smudge). Also missions/beresheet/06 (after/ratio pair)"
+          }
+        }
+      ],
+      "held": [],
+      "dropped": []
+    },
+    "change4": {
+      "frame": "M1370616052",
+      "frame_date": "2021-03-17",
+      "m_per_px": 0.84,
+      "scale_basis": "LROC Featured Sites page: 0.840 m/pix",
+      "hotspot_annotations": [],
+      "held": [],
+      "dropped": [
+        {
+          "object": "Chang'e 4 lander",
+          "reason": "The patch shows no identifiable hardware. LROC layer luna_change_4_lms puts the lander at -45.4561, 177.5885, which is about 350 m south and 350 m west of the site point (-45.4446, 177.6048) the patch is centred on, outside the 472 m wide patch."
+        },
+        {
+          "object": "Yutu-2 rover",
+          "reason": "LROC layer luna_change_4_rover_points places Yutu-2 for this frame's date (2021-03-17) at -45.45085, 177.56916, about 780 m from the patch centre, outside the patch."
+        }
+      ]
+    },
+    "luna9": {
+      "hotspot_annotations": [],
+      "held": [],
+      "dropped": [
+        {
+          "object": "all",
+          "reason": "tier2-lroc.jpg for luna9 is a Kaguya TC failover crop (no LROC NAC frame); no authoritative source places hardware in it (LROC \"has never precisely located\" Luna 9)."
+        }
+      ]
+    }
+  },
+  "dropped_global": [
+    "Surveyor, IM-1/IM-2, Blue Ghost, Luna 20/23, Hakuto-R: no tier-2 patch (no tier2-lroc.jpg in static/images/hotspots/moon).",
+    "Chang'e 4 and Luna 9 patches contain no annotatable hardware (see their dropped lists)."
+  ]
+}

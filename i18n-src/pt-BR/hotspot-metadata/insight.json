@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso InSight",
+      "label_short": "InSight",
+      "explain": "O módulo de pouso InSight da NASA, com cerca de 6 m de largura com os painéis solares abertos. Seus foguetes de descida varreram o solo ao redor e deixaram uma mancha escura."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "title": "Imagens da superfície de Marte — como as camadas funcionam",
   "intro_sentence": "Ao dar zoom do planeta inteiro até as marcas de roda de um rover, você está olhando seis camadas de imagens de orbitadores e rovers, empilhadas umas sobre as outras e trocadas conforme você se aproxima.",
+  "seo_title": "Imagens de Marte: como funcionam as camadas do mapa",
   "narrative_101": [
     "Nenhuma câmera consegue mostrar ao mesmo tempo todo Marte e um rover. Uma vista do globo inteiro resolve vários quilômetros por pixel; a câmera mais nítida em órbita resolve um quarto de metro, mas enxerga apenas uma faixa de poucos quilômetros de largura. Por isso o mapa mantém várias camadas, cada uma mais nítida e menor que a de baixo, e mostra a que combina com a vista, a mesma ideia dos mapas on-line na Terra.",
     "Pense nisso como uma pilha de fatias flutuando uma sobre a outra. A fatia de baixo é uma única imagem do planeta inteiro. Cada fatia acima cobre menos terreno com mais detalhe. No topo, você está de pé na superfície, olhando pelas câmeras do próprio rover.",

@@ -1,4 +1,7 @@
 <script lang="ts">
+  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  let { data } = $props();
+  import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
   // /moon is now a thin shell over the shared SurfaceScene component
   // (ADR-072 / #283 Slice 2). Planet-specific config (texture URL,
@@ -30,6 +33,7 @@
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { getObserverLocation } from '$lib/geolocation';
   import {
     moonObserverView,
@@ -251,7 +255,9 @@
 
 <svelte:head>
   <title>{m.moon_page_title()}</title>
+  <meta name="description" content={metaDescription(m.landing_card_moon_desc())} />
 </svelte:head>
+<VisuallyHiddenH1 title={m.moon_page_title()} />
 
 <SurfacePreloadLinks planet="moon" />
 <DebugPanelRegistrar label="MOON" />
@@ -269,22 +275,26 @@
   {regimes}
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
-/>
+>
+  {#snippet barStart()}
+    <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
+         bottom bar (the label stays for assistive tech and tests). -->
+    <button
+      type="button"
+      class="locate-me"
+      onclick={viewFromMyLocation}
+      disabled={locating}
+      data-testid="moon-locate-me"
+      title={m.moon_locate_me()}
+    >
+      <span class="locate-icon" aria-hidden="true">☾</span>
+      <span class="locate-label">{locating ? m.moon_locate_working() : m.moon_locate_me()}</span>
+    </button>
+  {/snippet}
+</SurfaceScene>
 
 <!-- #48 — observer view. Opt-in (no prompt on load): resolves the observer's
      location, orients to tonight's sub-Earth point + surfaces phase/visibility. -->
-<button
-  type="button"
-  class="locate-me"
-  onclick={viewFromMyLocation}
-  disabled={locating}
-  data-testid="moon-locate-me"
-  title={m.moon_locate_me()}
->
-  <span class="locate-icon" aria-hidden="true">☾</span>
-  {locating ? m.moon_locate_working() : m.moon_locate_me()}
-</button>
-
 {#if observerView}
   <div class="moon-observer" data-testid="moon-observer-readout">
     <div class="mo-eyebrow">{m.moon_view_eyebrow()}</div>
@@ -307,6 +317,8 @@
     </div>
   </div>
 {/if}
+
+<EntityIndex hub="moon" title={m.entity_index_moon()} links={data.entityIndex} floating />
 
 <TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
 
@@ -363,6 +375,30 @@
   :global(html[data-surface-panorama]) .locate-me,
   :global(html[data-surface-panorama]) .moon-observer {
     display: none;
+  }
+  /* Phone: an icon button in the scene's bottom bar; the words stay for screen readers. */
+  @media (hover: none), (pointer: coarse) {
+    .locate-me {
+      position: static;
+      width: 40px;
+      min-height: 40px;
+      padding: 0;
+      justify-content: center;
+      background: none;
+      border: none;
+      backdrop-filter: none;
+    }
+    .locate-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .locate-me .locate-icon {
+      font-size: 20px;
+    }
   }
   .locate-icon {
     color: #4ecdc4;

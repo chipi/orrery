@@ -1,3 +1,16 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Luna 24 着陸機",
+      "label_short": "Luna 24 着陸機",
+      "explain": "危難の海のクレーターの縁に立つ Luna 24 の着陸機。1976年8月の探査では2 m以上レゴリスを掘り進み、約170グラムを持ち帰った。"
+    },
+    {
+      "id": "crater-60m",
+      "label": "Luna 24 の直径60 mのクレーター",
+      "label_short": "60 mのクレーター",
+      "explain": "LROC は、Luna 24 が直径60 mのクレーターの縁にあると説明している。着陸機はその北西の縁にある。"
+    }
+  ]
 }

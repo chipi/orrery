@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "嫦娥五号着陆器",
+      "label_short": "嫦娥五号着陆器",
+      "explain": "位于风暴洋的嫦娥五号着陆器，在2020年12月1日着陆后的第二天被 LRO 拍下。这次采样返回任务带回约1.7千克月壤。"
+    }
+  ]
+}

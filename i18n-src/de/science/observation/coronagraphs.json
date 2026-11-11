@@ -1,6 +1,7 @@
 {
   "title": "Coronagraphen",
   "intro_sentence": "Eine abdeckende Scheibe im Teleskop blockiert den Stern, sodass der Planet neben ihm — eine Milliarde Mal lichtschwächer — sichtbar wird.",
+  "seo_title": "Koronografen: Sternenlicht abblocken, Planeten sehen",
   "body_paragraphs": [
     "Ein sonnenähnlicher Stern überstrahlt seine Planeten bei sichtbaren Wellenlängen um etwa den Faktor 10⁹, im Infraroten um 10⁶. Die Photonen des Planeten fehlen nicht — sie gehen in den Beugungsflügeln der Punktbildfunktion (PSF) des Sterns unter. Eine direkte Abbildung eines Exoplaneten ist nur möglich, wenn man diese PSF um viele Größenordnungen unterdrücken kann. Genau das leistet ein Koronograf.",
     "Der klassische Lyot-Koronograf (1930, von Bernard Lyot für die Sonnenfotografie erfunden) setzt eine undurchsichtige Scheibe in die Brennebene des Teleskops, um den Stern zu blockieren, und weiter hinten eine zweite Maske, die das am Rand der ersten Maske gebeugte Licht abfängt. Moderne apodisierte Pupillenkoronografen und Vortex-Koronografen nutzen ausgeklügelte Phasenmuster, um die Unterdrückung in schmalen Bereichen des Bildes auf 10⁻⁹ oder besser zu treiben.",

@@ -40,13 +40,8 @@
   import type { EarthObject } from '$types/earth-object';
   import type { Mission, MissionIndex } from '$types/mission';
   import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
-  import {
-    cardForFleet,
-    cardForMission,
-    earthObjectCardAlias,
-    type CardSpec,
-  } from '$lib/cards/card-spec';
-  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { CardSpec } from '$lib/cards/card-spec';
+  import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import type { OrbitRegime } from '$types/orbit-regime';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
@@ -93,11 +88,14 @@
   // The canonical entity's OWN blessed hero — aliased cards must show the
   // same picture as the canonical card everywhere.
   let cardAliasHero = $state<string | undefined>(undefined);
+  // The card code loads on demand (lazy-card.ts), in the alias loader below.
+  let cards = $state<CardModules | null>(null);
   let cardSpec = $derived.by<CardSpec | null>(() => {
-    if (!selected) return null;
-    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
+    if (!selected || !cards) return null;
+    if (cardAliasMission)
+      return cards.spec.cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
     if (cardAliasFleet)
-      return cardForFleet(
+      return cards.spec.cardForFleet(
         cardAliasFleet,
         cardFleetIndex,
         cardAliasHero,
@@ -132,7 +130,8 @@
         try {
           if (cardMissionIndex.length === 0) cardMissionIndex = await getMissionIndex();
           if (cardFleetIndex.length === 0) cardFleetIndex = await getFleetIndex();
-          const alias = earthObjectCardAlias(eo, cardMissionIndex, cardFleetIndex);
+          cards ??= await loadCardModules();
+          const alias = cards.spec.earthObjectCardAlias(eo, cardMissionIndex, cardFleetIndex);
           if (!alias) return;
           if (alias.kind === 'mission') {
             const row = cardMissionIndex.find((mi) => mi.id === alias.id)!;
@@ -394,8 +393,8 @@
   {/if}
 </Panel>
 
-{#if cardSpec}
-  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{#if cardSpec && cards}
+  <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
 <PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
@@ -459,9 +458,9 @@
     border: 1px solid;
   }
   .status-active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.08);
+    color: #889fe7;
+    border-color: rgba(136, 159, 231, 0.4);
+    background: rgba(136, 159, 231, 0.08);
   }
   .status-retired {
     color: rgba(255, 255, 255, 0.5);
@@ -469,9 +468,9 @@
     background: rgba(255, 255, 255, 0.03);
   }
   .status-planned {
-    color: var(--color-accent-text, #5070ff);
-    border-color: rgba(68, 102, 255, 0.4);
-    background: rgba(68, 102, 255, 0.08);
+    color: #889fe7;
+    border-color: rgba(136, 159, 231, 0.4);
+    background: rgba(136, 159, 231, 0.08);
   }
   .name {
     font-family: 'Bebas Neue', sans-serif;

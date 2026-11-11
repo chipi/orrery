@@ -109,7 +109,7 @@
         {/each}
       </dl>
       {#if spec.figureUrl && !figFailed}
-        <figure class="fig">
+        <figure class="fig" class:anatomy={spec.figureKind === 'anatomy'}>
           <img
             src={assetUrl(spec.figureUrl)}
             alt=""
@@ -117,7 +117,6 @@
             decoding="async"
             onerror={() => (figFailed = true)}
           />
-          {#if spec.figureCaption}<figcaption>{spec.figureCaption}</figcaption>{/if}
         </figure>
       {/if}
     </div>
@@ -245,10 +244,17 @@
   }
   .stats {
     margin: 0;
-    flex: 1;
+    flex: 0 1 auto;
+    min-width: 0;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Columns as wide as their values up to 96 px (longer values end in an ellipsis), so the
+       figure gets the rest of the row. */
+    grid-template-columns: repeat(2, fit-content(96px));
     gap: 7px 12px;
+  }
+  .stat {
+    min-width: 0;
+    overflow: hidden;
   }
   .stat dt {
     text-transform: uppercase;
@@ -272,13 +278,19 @@
   }
   .fig {
     margin: 0;
-    flex: none;
-    width: 96px;
+    flex: 1 1 0;
+    min-width: 96px;
+    min-height: 96px;
+    align-self: stretch;
+    display: flex;
     text-align: center;
   }
+  /* The figure takes the full height of the stats block beside it. */
   .fig img {
-    width: 96px;
-    height: 72px;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
     object-fit: contain;
     /* Monochrome register — the figure is drafted, not decorative.
        screen-blend sinks the thumbnail's dark background into the card
@@ -286,13 +298,26 @@
     mix-blend-mode: screen;
     filter: grayscale(1) brightness(1.9) contrast(1.15);
   }
-  .fig figcaption {
-    text-transform: uppercase;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    letter-spacing: 1.5px;
-    color: var(--card-faint);
-    margin-top: 2px;
+  /* Anatomy drawings are black linework on a white sheet: inverted, the sheet becomes the card's
+     black and the drawing reads white. */
+  /* The img box is the drawing itself (no letterbox), so the edge fade lands on the sheet's
+     edge and hides its grey border. */
+  .fig.anatomy {
+    align-items: center;
+    justify-content: center;
+  }
+  .fig.anatomy img {
+    flex: none;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    /* About the stats block's height: a tall drawing (a launcher) must not grow the card. */
+    max-height: 112px;
+    filter: invert(1) grayscale(1) contrast(1.15);
+    mask-image:
+      linear-gradient(to right, transparent, #000 10%, #000 90%, transparent),
+      linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+    mask-composite: intersect;
   }
 
   .fact {

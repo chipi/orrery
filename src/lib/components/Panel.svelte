@@ -271,7 +271,7 @@
   .panel-close {
     position: absolute;
     top: calc(var(--panel-dock-h) + 14px);
-    right: 14px;
+    inset-inline-end: 14px;
     width: 44px;
     height: 44px;
     background: transparent;
@@ -300,7 +300,7 @@
   .panel-back {
     position: absolute;
     top: calc(var(--panel-dock-h) + 14px);
-    left: 14px;
+    inset-inline-start: 14px;
     width: 44px;
     height: 44px;
     background: transparent;

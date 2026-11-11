@@ -50,13 +50,7 @@ npx tsx scripts/cislunar/generate-helio-hybrid-waypoints.ts static/data/missions
 
 **Flight-internal consistency (validate-data fails-closed).** The flight block must be self-consistent — most notably **`cruise.tcm_count` must equal the number of `events[]` with `type: "tcm"`** (caught in the Hera dogfood: `✗ tcm_count=2 but events.tcm.length=0`). Add the matching `tcm` events, or set the count to match. Event `met_days` must be ordered + within the transit; `events[].type` must be in the schema enum. Re-run the waypoint generator after editing events (it re-pins event anchors). The generator does a **parametric Lambert transfer** — a mission with a real gravity assist (Hera's 2025 Mars flyby) is approximated, hence `flight_data_quality: sparse` + `source_tier: tier_1_5_hybrid`.
 
-**Trajectory thumbnail — REQUIRED once flight data exists (#390, validate-data fails-closed).** `static/images/missions/thumbnails/<id>.png` — a 240×120 node-canvas render of the flight path, shown in the mission panel. Rendered by the thumbnail step in `scripts/fetch-assets.ts` (NOT part of `npm run build`), so run it explicitly after adding/editing flight data:
-
-```bash
-npx tsx scripts/fetch-assets.ts --thumbnails-only   # renders all mission thumbnails; commit only <id>.png
-```
-
-Every flight-block mission is renderable — MOON → cislunar; a mission with generated waypoints → Sun-centric path; a planetary porkchop body → transfer arc; and generic SUN/COMET/ASTEROID destinations → a per-mission analytic heliocentric distance (`ANALYTIC_HELIO_AU` in `fetch-assets.ts`, real astronomical figures — add an entry for a new analytic destination or the gate lists it). The `validate-data` gate fails closed if a `flight` mission has no `thumbnails/<id>.png` — parity with the hero zero-gap + i18n gates. *(Re-rendering is byte-noisy — `git checkout --` the churn and commit only your mission's new PNG.)*
+**Trajectory thumbnail — REQUIRED for every mission (validate-data fails-closed).** `static/images/missions/thumbnails/<id>.webp` — a 736×414 plot of the path, drawn from /fly's own trajectory code, shown on the mission panel's FLIGHT tab and the collectible card. Run `npx tsx scripts/render-mission-thumbnails.ts` (NOT part of `npm run build`) after adding a mission or editing its flight data, then `node scripts/build-original-work.mjs` for the colophon list. A mission with no flight block and no Earth-orbit descriptor gets a labelled placeholder ("NO TRAJECTORY DATA"). Full procedure, style rules, checks and credit: [mission-thumbnail-runbook.md](mission-thumbnail-runbook.md) (skill `orrery-mission-thumbnails`).
 
 **Optional `/fly` polish (not gated):**
 

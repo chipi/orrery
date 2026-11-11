@@ -1,6 +1,7 @@
 {
   "title": "Mappa di calore del ∆v",
   "intro_sentence": "La scala di colori che trasforma i numeri di ∆v in un'immagine leggibile a colpo d'occhio.",
+  "seo_title": "Mappa di calore del delta-v (porkchop): leggere i colori",
   "narrative_101": [
     "Il vero scopo di un diagramma porkchop è il colore. I numeri in una griglia gigante ti direbbero la stessa cosa, ma non potresti vederne gli schemi. Così dipingiamo ogni cella — turchese freddo per traiettorie economiche, giallo per i casi limite, arancione e rosso per quelli disperatamente costosi. Al calcolo subentra il riconoscimento di schemi.",
     "Il turchese freddo si attesta intorno ai 3 km/s di ∆v — la manovra di partenza dalla LEO per un trasferimento di tipo Hohmann verso Marte (iniezione trans-marziana). Blu intorno ai 5 km/s — viaggi convenienti e leggermente più veloci. Giallo intorno ai 7 km/s — sta diventando costoso, stai pagando per la velocità. Arancione e rosso oltre i 9 km/s — sei oltre ciò che i razzi attuali possono concretamente fornire. La mappatura colore-costo è coerente su tutti i porkchop in /plan.",

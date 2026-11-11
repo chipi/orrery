@@ -84,7 +84,8 @@ test.describe('collectible cards (#547)', () => {
     await expect(card).toContainText('FLEET');
     await expect(card).toContainText('Saturn V');
     await expect(card).toContainText('FIRST FLIGHT');
-    await expect(card).toContainText('ANATOMY');
+    // The anatomy figure carries no caption; it is the inverted drawing.
+    await expect(card.locator('figure.fig.anatomy img')).toBeVisible();
     expect(errors).toEqual([]);
   });
 
@@ -103,6 +104,44 @@ test.describe('collectible cards (#547)', () => {
     await page.goto('/explore?id=mars');
     await openCard(page);
     await expect(page.locator('.backdrop .card')).toContainText('PLANETS');
+    expect(errors).toEqual([]);
+  });
+
+  // The panels below load the card code on demand (lazy-card.ts): the CTA
+  // appears only once that chunk has arrived, so each one is checked here.
+  test('explore moon panel gets a MOONS card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/explore?id=jupiter:europa');
+    await openCard(page);
+    const card = page.locator('.backdrop .card');
+    await expect(card).toContainText('MOONS');
+    await expect(card).toContainText('Europa');
+    expect(errors).toEqual([]);
+  });
+
+  test('explore small-body panel gets a SMALL BODIES card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/explore?id=ceres');
+    await openCard(page);
+    const card = page.locator('.backdrop .card');
+    await expect(card).toContainText('SMALL BODIES');
+    await expect(card).toContainText('Ceres');
+    expect(errors).toEqual([]);
+  });
+
+  test('earth launch pad gets its FLEET card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/earth?site=lc-39a');
+    await openCard(page);
+    await expect(page.locator('.backdrop .card')).toContainText('FLEET');
+    expect(errors).toEqual([]);
+  });
+
+  test('earth object opens its canonical card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/earth?object=hubble');
+    await openCard(page);
+    await expect(page.locator('.backdrop .card')).toContainText('Hubble');
     expect(errors).toEqual([]);
   });
 
@@ -154,10 +193,11 @@ test.describe('collectible cards (#547)', () => {
     }
     // Unknown kind/id: adapter-static serves the SPA fallback for
     // never-prerendered paths — assert they carry NO og card tags rather
-    // than pinning the host's status code.
+    // than pinning the host's status code. Every page now carries the site's
+    // default og:image (social-meta.ts), so check for a card image, not any.
     for (const path of ['/c/unknown-kind/foo', '/c/mission/not-a-mission']) {
       const res = await request.get(path);
-      expect((await res.text()).includes('og:image'), path).toBe(false);
+      expect((await res.text()).includes('/images/cards/'), path).toBe(false);
     }
   });
 

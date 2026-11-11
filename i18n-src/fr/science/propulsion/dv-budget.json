@@ -1,6 +1,8 @@
 {
   "title": "∆v comme budget de mission",
   "intro_sentence": "Le chiffre unique qui dit si une mission est possible — le changement de vitesse total à dépenser, cumulé sur chaque allumage.",
+  "seo_title": "Budget de delta-v : la vitesse totale à dépenser en mission",
+  "seo_description": "Le premier chiffre qui décide si une mission est possible : le delta-v total à dépenser, additionné sur chaque poussée, du lancement à l'atterrissage.",
   "narrative_101": [
     "L'argent pour les vols spatiaux, ce n'est pas des dollars. C'est le ∆v — prononcé « delta-v » — et il se mesure en kilomètres par seconde. Chaque allumage de votre fusée coûte du ∆v. Chaque mouvement que vous faites sur une trajectoire a un prix en km/s. Le budget ∆v de la mission n'est que le total cumulatif : lancement + injection + corrections de trajectoire + approche + atterrissage. Additionnez tout, voilà votre facture.",
     "Voici maintenant le piège redoutable. Votre fusée n'a pas un ∆v illimité. Elle a un plafond infranchissable, fixé par l'équation de Tsiolkovski et dicté entièrement par la part de carburant dans votre fusée et par la qualité de vos moteurs. Si votre facture dépasse le plafond, la mission est impossible. Y jeter plus d'argent n'y change rien. Ce sont les mathématiques qui gagnent.",

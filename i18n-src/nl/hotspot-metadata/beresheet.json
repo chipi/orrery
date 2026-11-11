@@ -1,3 +1,10 @@
 {
-  "hotspot_annotations": []
+  "hotspot_annotations": [
+    {
+      "id": "impact-smudge",
+      "label": "Inslagvlek van Beresheet",
+      "label_short": "Inslagvlek",
+      "explain": "De donkere vlek waar de Israëlische lander Beresheet op 11 april 2019 neerstortte op Mare Serenitatis. Hij sloeg onder een lage hoek in, vanuit het noorden, ongeveer 1000 m/s sneller dan gepland; de vlek is ongeveer 10 m breed en verlaagt de helderheid van het oppervlak met ongeveer 10%."
+    }
+  ]
 }

@@ -1,6 +1,7 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Locator, type Page } from '@playwright/test';
 import { clickViaEvaluate } from './_helpers/click-via-evaluate';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { explainedAnnotationCount } from './_helpers/source-counts';
 
 /**
  * SurfaceFlatPatch — sphere → flat ground-patch transition view
@@ -128,6 +129,85 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)',
     await clickViaEvaluate(page.getByRole('button', { name: /back to planet/i }));
     await page.waitForTimeout(800); // give the cross-fade + camera-back lerp time
     expect(errors).toEqual([]);
+  });
+
+  // Where the zoom is still easing in the three nearby rings read as one count badge; a tap there
+  // zooms instead of opening a ring (a slow runner reaches the tap before the zoom has finished).
+  async function ringsSettled(page: Page, ring: Locator): Promise<void> {
+    await expect(page.getByTestId('annotation-cluster')).toHaveCount(0, { timeout: 30000 });
+    let last = '';
+    await expect
+      .poll(
+        async () => {
+          const now = JSON.stringify(await ring.boundingBox());
+          const still = now === last;
+          last = now;
+          return still;
+        },
+        { intervals: [400] },
+      )
+      .toBe(true);
+    await expect(page.getByTestId('annotation-cluster')).toHaveCount(0, { timeout: 30000 });
+  }
+  // "What you're seeing" (0.9.8 pilot): yellow rings at the true ground position of
+  // human hardware, a list in the site panel, and a tap-to-explain popover.
+  test('moon / apollo15 — annotation rings, list and popover', async ({ page }) => {
+    await page.goto('/moon?site=apollo15');
+    await zoomIntoSurface(page);
+    await expect(page.locator('.flat-patch')).toBeVisible({ timeout: 8000 });
+    const rings = page.locator('.flat-patch [data-testid="annotation-ring"]');
+    await expect.poll(() => rings.count()).toBeGreaterThanOrEqual(3);
+    // Rings are buttons with an accessible name and a tap target of at least 44 px.
+    const lm = page.locator('.flat-patch').getByRole('button', { name: /falcon descent stage/i });
+    await ringsSettled(page, lm);
+    const box = await lm.boundingBox();
+    expect(box!.width).toBeGreaterThanOrEqual(44);
+    expect(box!.height).toBeGreaterThanOrEqual(44);
+    // The site panel lists the same objects.
+    const list = page.getByTestId('site-annotation-list');
+    await expect(list.getByRole('button')).toHaveCount(explainedAnnotationCount('apollo15'));
+    // Tap a ring: popover with the explanation and a source link; Escape closes
+    // the popover and leaves the ground view open.
+    await lm.click({ force: true });
+    const pop = page.getByTestId('annotation-popover');
+    await expect(pop).toContainText(/Falcon/);
+    await expect(pop.getByRole('link', { name: /LROC/ })).toHaveAttribute('href', /^https:\/\//);
+    await page.keyboard.press('Escape');
+    await expect(pop).toBeHidden();
+    await expect(page.locator('.flat-patch')).toBeVisible();
+  });
+
+  // The GPU-less CI runner renders a frame every few hundred ms. The 3D view's ring overlay must
+  // already be gone when the flat view shows (a second overlay opened a second popover and its
+  // teardown closed the first).
+  test('moon / apollo15 — one ring overlay and a stable popover on slow frames', async ({
+    page,
+  }) => {
+    const cdp = await page.context().newCDPSession(page);
+    await page.goto('/moon?site=apollo15');
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 12 });
+    await zoomIntoSurface(page);
+    await expect(page.locator('.flat-patch')).toBeVisible({ timeout: 40000 });
+    await expect(page.getByTestId('annotation-rings')).toHaveCount(1);
+    const lm = page.locator('.flat-patch').getByRole('button', { name: /falcon descent stage/i });
+    // Zoom on (slow frames end the wheel burst before the flat view has eased in) until the nearby rings part.
+    await expect
+      .poll(
+        async () => {
+          await page.mouse.wheel(0, -100);
+          await page.waitForTimeout(200);
+          return page.getByTestId('annotation-cluster').count();
+        },
+        { timeout: 60000 },
+      )
+      .toBe(0);
+    await ringsSettled(page, lm);
+    await lm.click({ force: true });
+    const pop = page.getByTestId('annotation-popover');
+    await expect(pop).toHaveCount(1);
+    await page.waitForTimeout(2500);
+    await expect(pop).toContainText(/Falcon/);
+    await expect(page.getByTestId('annotation-rings')).toHaveCount(1);
   });
 });
 

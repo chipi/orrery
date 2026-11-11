@@ -1,5 +1,18 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "嫦娥四号着陆器",
+      "label_short": "嫦娥四号着陆器",
+      "explain": "嫦娥四号着陆器于2019年1月3日在冯·卡门环形山实现人类首次月球背面软着陆。周围明亮的地面是被它的着陆发动机吹扫出来的。"
+    },
+    {
+      "id": "yutu-2",
+      "label": "玉兔二号漫游车",
+      "label_short": "玉兔二号",
+      "explain": "2019年5月7日，即着陆四个月后的玉兔二号漫游车，位于着陆器以西约120米、最初辙迹的尽头。此后它已远离此处。"
+    }
+  ],
   "panorama_caption": "首幅从月球背面传回的全景图。位于南极-艾特肯盆地内的 Von Kármán 撞击坑。中距离处是玉兔二号月球车；左下方是着陆器的影子。",
   "compass_zero_direction": "着陆器相机 +X 轴",
   "panorama_annotations": [

@@ -168,6 +168,32 @@ const blueprintArt = JSON.parse(readFileSync('src/lib/blueprint-ids.json', 'utf8
     cover: false,
   }));
 
+// Mission trajectory thumbnails — one per mission, drawn in code by scripts/render-mission-thumbnails.ts
+// from /fly's own trajectory code (static/images/missions/thumbnails/{id}.webp); ids from the mission
+// index so a new mission shows up on the next run; the route opens that mission's panel. The label-free card
+// crops in thumbnails/card/ are the same drawings, not listed separately.
+const missionTrajectories = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8'))
+  .map((m) => m.id)
+  .sort()
+  .filter((id) => existsSync(`static/images/missions/thumbnails/${id}.webp`))
+  .map((id) => ({
+    title: missionName(id) ?? humanize(id),
+    file: `/images/missions/thumbnails/${id}.webp`,
+    route: `/missions?id=${id}`,
+    cover: false,
+  }));
+
+// Illustrated site maps — sidecar static/data/site-illustrations.json; the route is the site's
+// own page (/moon/<id>, /mars/<id>).
+const siteIllustrations = JSON.parse(
+  readFileSync('static/data/site-illustrations.json', 'utf8'),
+).illustrations.map((i) => ({
+  title: i.title,
+  file: `/${i.file}`,
+  route: `/${i.body}/${i.siteId}`,
+  cover: false,
+}));
+
 // Curated 3D-model catalogue. Every distinct hand-built mesh in the
 // project gets its own entry + thumbnail; the thumbnails are captured
 // from the /dev/models gallery by scripts/capture-colophon-thumbs.ts
@@ -1202,6 +1228,8 @@ const manifest = {
   exploded_art: explodedArt,
   landing_art: landingArt,
   blueprint_art: blueprintArt,
+  mission_trajectories: missionTrajectories,
+  site_illustrations: siteIllustrations,
   lab_illustrations: labIllustrations,
   diagrams_science: science,
   posters,
@@ -1215,6 +1243,8 @@ const manifest = {
     exploded_art: explodedArt.length,
     landing_art: landingArt.length,
     blueprint_art: blueprintArt.length,
+    mission_trajectories: missionTrajectories.length,
+    site_illustrations: siteIllustrations.length,
     lab_illustrations: labIllustrations.length,
     diagrams_science: science.length,
     posters: posters.length,

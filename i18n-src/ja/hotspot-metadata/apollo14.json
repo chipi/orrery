@@ -1,1 +1,46 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Antares）",
+      "label_short": "LM Antares",
+      "explain": "Apollo 14 の月着陸船 Antares の下半分。1971年2月の着陸後、月面に残された。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央ステーション",
+      "label_short": "ALSEP",
+      "explain": "Apollo 14 の月面実験パッケージで、1971年2月の最初の月面歩行で LM の西に設置された。LROC の画像には、そこから延びる足跡とともに写っている。"
+    },
+    {
+      "id": "seismometer",
+      "label": "受動地震計（LROC）",
+      "label_short": "地震計",
+      "explain": "LROC は Apollo 14 の受動地震計を独立した点として載せており、中央ステーションから約3 mの位置にある（リングは ALSEP のリングと重なる）。"
+    },
+    {
+      "id": "flag",
+      "label": "米国旗（LROC の位置）",
+      "label_short": "米国旗",
+      "explain": "LROC の Apollo 14 機材レイヤーが旗の位置として示す点で、LM の北西約10 mにある。旗そのものは小さすぎて見えない。"
+    },
+    {
+      "id": "triplet-craters",
+      "label": "Triplet クレーター群",
+      "label_short": "Triplet",
+      "explain": "LROC が Apollo 14 の地図で Triplet と Center Crater と呼ぶクレーター群で、LM の南東約210 mにある。"
+    },
+    {
+      "id": "footpaths",
+      "label": "ALSEP 周辺の足跡",
+      "label_short": "ALSEP 周辺の足跡",
+      "explain": "LROC の Apollo 14 画像では、宇宙飛行士の足跡が乱れた土の線として写り、ALSEP に集まって東の LM へ延びている（破線の輪郭は範囲を示す）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM の噴射域",
+      "label_short": "噴射域",
+      "explain": "LROC によると、降下エンジンは Apollo 14 を含むアポロ着陸地点の周囲を削り取って明るい暈を作った。ここでは LM の周囲にかすかに明るい領域として見える。"
+    }
+  ]
+}

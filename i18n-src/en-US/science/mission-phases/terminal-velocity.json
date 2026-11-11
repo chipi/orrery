@@ -1,6 +1,7 @@
 {
   "title": "Terminal Velocity",
   "intro_sentence": "Why a falling lander stops speeding up — the balance between drag and weight that sets how fast a parachute, or a planet's air, lets a spacecraft descend.",
+  "seo_title": "Terminal Velocity for Spacecraft Landing",
   "narrative_101": [
     "Drop something and it accelerates — but not forever. The faster it falls, the harder the air pushes back, until the upward drag exactly balances the downward weight. From that moment the object stops speeding up and falls at a steady terminal velocity. A parachute works by making the drag side of that balance huge, so the balance is struck at a gentle speed.",
     "How gentle depends on the air. Mars has an atmosphere about 1% as thick as Earth's, so even an enormous supersonic parachute — Curiosity's was over 20 metres across — only slows the vehicle to a few hundred kilometres per hour. That is far too fast to land, which is why Mars landers always need a second act: retro-rockets, airbags, or a sky-crane to finish the job.",

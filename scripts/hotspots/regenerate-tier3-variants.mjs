@@ -30,10 +30,33 @@ import { generateVariants } from './../vision/crop-variants.ts';
 // thumbnail load cost doesn't balloon with marquee 8K masters.
 const MAX_VARIANT_LONG_SIDE = 1920;
 
-const args = process.argv.slice(2);
+const SLOTS = process.argv.includes('--slots');
+const args = process.argv.slice(2).filter((a) => a !== '--slots');
 if (args.length === 0) {
-  console.error('Usage: node scripts/hotspots/regenerate-tier3-variants.mjs <master.jpg> [...]');
+  console.error(
+    'Usage: node scripts/hotspots/regenerate-tier3-variants.mjs [--slots] <master.jpg> [...]',
+  );
   process.exit(1);
+}
+
+// --slots: gallery slot masters (masters/<rel>.jpg). The 1x1 is cut as replace-gallery-slots step 3
+// does it (the slot's focal point from image-vision.json, default quality, 512 px cap) and written to
+// static/images/<rel>.1x1.jpg.
+if (SLOTS) {
+  const vision = JSON.parse(await readFile('static/data/image-vision.json', 'utf8')).entries;
+  for (const arg of args) {
+    const rel = arg.replace(/^masters\//, '').replace(/\.jpe?g$/, '');
+    const focal = vision[`/images/${rel}.jpg`]?.focal_point ?? { x: 0.5, y: 0.5 };
+    const [r] = await generateVariants({
+      sourcePath: arg,
+      sourceBytes: await readFile(arg),
+      focalPoint: focal,
+      outputBase: `static/images/${rel}`,
+      forceRefresh: true,
+    });
+    console.log(`${r.outputPath} ${r.width}x${r.height} focal ${focal.x}/${focal.y}`);
+  }
+  process.exit(0);
 }
 
 for (const arg of args) {

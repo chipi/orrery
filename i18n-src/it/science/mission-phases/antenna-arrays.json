@@ -1,6 +1,7 @@
 {
   "title": "Arraying — molte piccole antenne invece di una gigante",
   "intro_sentence": "Combinare in tempo reale i segnali di più antenne crea un'unica apertura virtuale più grande di qualsiasi singolo piatto, catturando segnali più deboli dai veicoli spaziali senza costruire strutture sempre più grandi.",
+  "seo_title": "Array di antenne: unire le parabole per lo spazio profondo",
   "body_paragraphs": [
     "Una sola grande antenna è il modo ovvio per ascoltare il debole segnale di un veicolo spaziale a miliardi di chilometri di distanza. I piatti da 70 m della DSN — a Goldstone, Madrid e Canberra — sono vicini al limite pratico per riflettori a terra completamente orientabili. Costruire qualcosa di sensibilmente più grande richiederebbe una struttura fissa (con una copertura del cielo limitata) o un'ingegneria che ancora non esiste. L'alternativa è combinare molte antenne più piccole: l'arraying.",
     "Quando più antenne osservano contemporaneamente lo stesso veicolo spaziale e i loro segnali vengono combinati con gli sfasamenti e i ritardi temporali corretti, il risultato è una somma coerente. Il rumore di ciascuna antenna si somma in modo incoerente (cresce con la radice quadrata del numero di antenne) mentre il segnale si somma in modo coerente (cresce con il numero di antenne). L'area di raccolta effettiva di un array di N piatti identici è N volte quella di un singolo piatto. Non è un'approssimazione — è lo stesso principio su cui si basano array di radiotelescopi come il Very Large Array e ALMA.",

@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "InSight 着陆器",
+      "label_short": "InSight 着陆器",
+      "explain": "NASA 的 InSight 着陆器，展开太阳能电池板后宽约 6 米。它的下降火箭吹扫了周围的地面，留下一片暗色区域。"
+    }
+  ]
+}

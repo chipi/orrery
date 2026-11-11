@@ -1,6 +1,7 @@
 {
   "title": "¿Qué es una gráfica porkchop?",
   "intro_sentence": "Mapa 2D del coste de la trayectoria para cada par (fecha de salida, tiempo de tránsito), herramienta estándar para hallar ventanas de lanzamiento. (Los porkchops estándar trazan C3 y V∞ de llegada; Orrery usa una escala de ∆v en km/s.)",
+  "seo_description": "Una gráfica porkchop muestra el coste de la trayectoria para cada fecha y duración: la herramienta estándar de ventanas. Abre una en vivo en el planificador.",
   "narrative_101": [
     "Cuando los planificadores de misiones quieren saber si un viaje a Marte es viable, no calculan una sola trayectoria. Calculan MILLONES — cada fecha de salida posible, cada tiempo de tránsito posible, en una cuadrícula gigante — y pintan un mapa de calor. Las trayectorias baratas aparecen como zonas azules frías, las caras como zonas rojas. El resultado, curiosamente, se parece a una chuleta de cerdo. La zona barata es la carne de la chuleta; la cresta cara es el hueso.",
     "¿Por qué molestarse con un mapa de calor entero en lugar de solo una respuesta óptima? Porque las misiones reales tienen restricciones. Quizá una plataforma de lanzamiento concreta solo está disponible en 2026. Quizá necesites aterrizar antes de que termine una temporada de tormentas de polvo. Quizá un cohete concreto solo esté listo a partir de cierto mes. El porkchop te permite ver TODOS los compromisos a la vez — elige la trayectoria lo bastante barata que se ajuste a tu calendario real.",

@@ -3,32 +3,8 @@
   "agency": "CNSA",
   "status": "ENDED",
   "snapshot_date": "2026-11-04",
-  "credit": "NASA / GSFC / Arizona State University (LROC) — Yutu-2 rover traverse (Chang'e 4, Von Kármán crater, lunar far side, from Jan 2019): the track mapped by the LRO Camera team from NAC images (https://www.lroc.asu.edu/geojson/luna_change_4_traverse.geojson), 2.3 km, simplified to 485 points (Douglas–Peucker, 0.5 m). LROC data, educational use with credit.",
+  "credit": "NASA / GSFC / Arizona State University (LROC) — Yutu-2 rover traverse (Chang'e 4, Von Kármán crater, lunar far side, from Jan 2019): the track mapped by the LRO Camera team from NAC images (https://www.lroc.asu.edu/geojson/luna_change_4_traverse.geojson), 1.8 km, simplified to 474 points (Douglas–Peucker, 0.5 m). LROC data, educational use with credit. Drawn: the connected route from the lander westward; two short pieces (13 m and 2 m) mapped about 185 m from the lander, and a 3 m spur, have no mapped link to it and are left out.",
   "points": [
-    [
-      -45.454842,
-      177.579875
-    ],
-    [
-      -45.454772,
-      177.57988
-    ],
-    [
-      -45.454665,
-      177.579481
-    ],
-    [
-      -45.454803,
-      177.579655
-    ],
-    [
-      -45.454842,
-      177.579875
-    ],
-    [
-      -45.454901,
-      177.579979
-    ],
     [
       -45.45643,
       177.588411
@@ -1706,10 +1682,6 @@
       177.555483
     ],
     [
-      -45.438141,
-      177.555368
-    ],
-    [
       -45.438091,
       177.555334
     ],
@@ -1766,10 +1738,6 @@
       177.554879
     ],
     [
-      -45.436887,
-      177.554882
-    ],
-    [
       -45.436857,
       177.554854
     ],
@@ -1810,8 +1778,8 @@
       177.554419
     ],
     [
-      -45.436929,
-      177.554353
+      -45.436955,
+      177.554355
     ],
     [
       -45.43683,
@@ -1820,6 +1788,10 @@
     [
       -45.436755,
       177.554422
+    ],
+    [
+      -45.43673,
+      177.554387
     ],
     [
       -45.436704,
@@ -1854,10 +1826,6 @@
       177.553859
     ],
     [
-      -45.436704,
-      177.553715
-    ],
-    [
       -45.436683,
       177.553683
     ],
@@ -1870,8 +1838,8 @@
       177.553585
     ],
     [
-      -45.436513,
-      177.553705
+      -45.436518,
+      177.553708
     ],
     [
       -45.436486,
@@ -1932,18 +1900,6 @@
     [
       -45.43551,
       177.551758
-    ],
-    [
-      -45.441031,
-      177.560058
-    ],
-    [
-      -45.441038,
-      177.560024
-    ],
-    [
-      -45.441109,
-      177.559997
     ]
   ]
 }

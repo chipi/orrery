@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de pouso SLIM",
+      "label_short": "Módulo SLIM",
+      "explain": "O módulo de pouso SLIM da JAXA, que pousou em 19 de janeiro de 2024 perto da cratera Shioli. A LRO o fotografou cinco dias depois; uma leve mudança de brilho ao redor marca onde o jato dos motores varreu a superfície."
+    }
+  ]
+}

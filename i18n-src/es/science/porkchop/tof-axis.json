@@ -1,6 +1,7 @@
 {
   "title": "Eje Tiempo de Vuelo",
   "intro_sentence": "Cuánto dura el viaje — a lo largo del eje Y, hacia arriba, en días para los planetas interiores y en años para los exteriores.",
+  "seo_title": "Eje del tiempo de vuelo en la gráfica porkchop: duración",
   "narrative_101": [
     "Si el eje X te dice CUÁNDO sales, el eje Y te dice CUÁNTO tarda el viaje. Parte inferior del gráfico: viajes rápidos y cortos. Parte superior: viajes lentos y largos. Para destinos de la clase de Marte el eje cubre aproximadamente de 100 a 500 días. Para Júpiter son años.",
     "Ahora puedes leer todo el compromiso de un vistazo. Sube en línea recta por una columna del porkchop — esa es la MISMA fecha de lanzamiento pero con distintos tiempos de tránsito. Cerca del fondo (viaje rápido) las celdas se vuelven rojas — los viajes rápidos son caros porque estás forzando una elipse de transferencia muy inclinada. Más arriba (viaje más lento) las celdas se vuelven azul frío — esa es la banda natural de Hohmann, donde las cuentas indican que debería durar el viaje.",

@@ -1,6 +1,8 @@
 {
   "name": "Artemis",
   "tagline": "The return to the Moon — this time to stay, and this time with the world, not to beat it.",
+  "seo_title": "Artemis Program: NASA's Return to the Moon",
+  "seo_description": "Artemis returns people to the Moon with SLS, Orion and commercial landers, with international partners. Missions, hardware and timeline.",
   "the_land": [
     { "type": "prose", "md": "Twelve people walked on the Moon between 1969 and 1972, and then no one did for more than fifty years. Apollo went, planted its flags, gathered its rocks, and stopped — because it had been built to win a race, and once the race was won there was no reason to keep paying for it. Artemis is NASA's attempt to go back and, this time, not stop. Named for Apollo's twin sister, it is designed around a different premise: not a sprint to arrive, but the slow construction of a permanent human foothold at the Moon." },
     { "type": "prose", "md": "The other difference is who goes. Apollo was a national project, a demonstration of American superiority over the Soviet Union, flown entirely by American astronauts on American hardware. Artemis is deliberately international and deliberately commercial — Europe builds the service module that powers Orion, Japan, Canada and Europe signed on to build the Gateway station in lunar orbit (paused in 2026), SpaceX and Blue Origin build the landers, and the crews include astronauts from partner nations — Canada's Jeremy Hansen flew around the Moon on Artemis II, and ESA's Luca Parmitano is named to Artemis III. Where Apollo was a race, Artemis is a coalition." }

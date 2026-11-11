@@ -1,1 +1,16 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Lander Phoenix",
+      "label_short": "Phoenix",
+      "explain": "Il lander Phoenix della NASA, atterrato il 25 maggio 2008. Appare come un punto luminoso in mezzo al suolo scuro soffiato via dai suoi motori di discesa; HiRISE ha ripreso questa immagine 22 ore dopo l'atterraggio."
+    },
+    {
+      "id": "heat-shield",
+      "label": "Impatto dello scudo termico",
+      "label_short": "Scudo termico",
+      "explain": "Qui lo scudo termico di Phoenix colpì il suolo, circa 190 m a est-sud-est del lander: una macchia scura di terreno sconvolto dove urtò e rimbalzò."
+    }
+  ]
+}

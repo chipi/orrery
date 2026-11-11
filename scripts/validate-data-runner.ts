@@ -78,6 +78,45 @@ const TASKS: Task[] = [
     cmd: 'node',
     args: ['scripts/i18n-tools/name-drift-scan.mjs'],
   },
+  // A number in the English that the translation lost or changed (the hill-sphere "80×" for
+  // 333,000×), over every tree and locale. A finding is fixed in i18n-src or recorded, with a
+  // reason and a hash of both texts, in number-drift-reviewed.json (2026-11-09; zero unreviewed).
+  {
+    name: 'check-i18n-number-drift',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/number-drift.mjs', 'tree=all', '--gate'],
+  },
+  // A translation shorter than the English by a sentence (dropped sentences / clauses), every tree
+  // and locale; reviewed ones live in dropped-sentences-reviewed.json.
+  {
+    name: 'check-i18n-dropped-sentences',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/dropped-sentences.mjs', 'tree=all', '--gate'],
+  },
+  // A translation far shorter or longer than the English for its locale (a dropped clause, English left
+  // in and the translation appended); bounds per locale and kind in length-ratio-bounds.json, reviewed
+  // ones in length-ratio-reviewed.json.
+  {
+    name: 'check-i18n-length-ratio',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/length-ratio.mjs', '--gate'],
+  },
+  // An English string edited (or added) after the translations were last checked against it. CI has
+  // no git history, so the English each translation was made from is a committed manifest of hashes;
+  // after re-checking the translations of what this lists, refresh it (stale-overlays.mjs --manifest=write).
+  {
+    name: 'check-i18n-en-source',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/stale-overlays.mjs', '--manifest=check'],
+  },
+  // Translation coverage: a missing file or key, an empty string, placeholder text, a type or length
+  // mismatch, or a string left identical to the English — overlays and UI messages, every locale.
+  // A string that is right as it is (a name kept in English) is in coverage-reviewed.json.
+  {
+    name: 'check-i18n-coverage',
+    cmd: 'node',
+    args: ['scripts/i18n-coverage-scan.mjs', '--gate'],
+  },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-universe-stars', cmd: 'tsx', args: ['scripts/validate-universe-stars.ts'] },
   {

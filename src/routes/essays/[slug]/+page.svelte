@@ -10,13 +10,34 @@
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
-  import { localizeHref } from '$lib/paraglide/runtime';
-  import { essayInlineHtml } from '$lib/essay-md';
+  import { localizeHref, getLocale } from '$lib/paraglide/runtime';
+  import JsonLd from '$lib/components/JsonLd.svelte';
+  import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
+  import { canonicalUrl, pageTitle, seoDescription, seoPageTitle } from '$lib/seo';
+  import { essayInlineHtml, essayPlainText } from '$lib/essay-md';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
   let essay = $derived(data.essay);
+  let dekText = $derived(essayPlainText(essay.dek));
+  let jsonLd = $derived.by(() => {
+    const loc = getLocale();
+    const url = canonicalUrl(`/essays/${essay.slug}`, loc);
+    return [
+      article({
+        headline: essay.title,
+        description: dekText,
+        url,
+        inLanguage: loc,
+        image: essay.hero ? absoluteUrl(imgSrc(essay.hero), base) : undefined,
+      }),
+      breadcrumbList([
+        { name: m.essays_title(), url: canonicalUrl('/essays', loc) },
+        { name: essay.title, url },
+      ]),
+    ];
+  });
 
   // Section openers: a running number per heading, and an accent per movement so the
   // five movements of the series read apart (light enough for AA on the page background).
@@ -49,9 +70,10 @@
 </script>
 
 <svelte:head>
-  <title>{essay.title} · {m.essays_title()} · Orrery</title>
-  <meta name="description" content={essay.dek} />
+  <title>{seoPageTitle(essay.seo_title, pageTitle(essay.title, m.essays_title()))}</title>
+  <meta name="description" content={seoDescription(essay.seo_description, dekText)} />
 </svelte:head>
+<JsonLd data={jsonLd} />
 
 <article class="essay" data-route-ready="true">
   <nav class="crumb">
@@ -62,12 +84,13 @@
 
   <header class="head">
     <h1>{essay.title}</h1>
-    <p class="dek">{essay.dek}</p>
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -- author-controlled overlay, escaped by essayInlineHtml -->
+    <p class="dek">{@html essayInlineHtml(essay.dek)}</p>
   </header>
 
   {#if essay.hero}
     <figure class="hero">
-      <img {...responsive(imgSrc(essay.hero), IMAGE_SIZES.full)} alt={essay.dek} decoding="async" />
+      <img {...responsive(imgSrc(essay.hero), IMAGE_SIZES.full)} alt={dekText} decoding="async" />
     </figure>
   {/if}
 

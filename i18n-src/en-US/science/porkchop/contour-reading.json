@@ -1,6 +1,7 @@
 {
   "title": "Reading the Contours",
   "intro_sentence": "The shape of the cheap zone tells you the geometry of viable trajectories — and where the trade-offs live.",
+  "seo_title": "How to Read a Porkchop Plot: the Contours",
   "narrative_101": [
     "Now you know the axes and the colour scale. The next skill is reading the SHAPE of the cheap zone. The lobe of teal isn't just a generic blob — it's a literal map of which trajectories work and which don't.",
     "The classic Mars porkchop has TWO cheap lobes per launch window, side by side. They're called the \"Type I\" and \"Type II\" trajectories — same window, two different ways around the Sun. Type I goes the short way (transfer angle below 180 degrees) and is faster. Type II goes the long way (transfer angle above 180 degrees) and is slower but sometimes cheaper. Both are real, both are flown.",

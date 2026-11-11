@@ -1,5 +1,72 @@
 {
-  "hotspot_annotations": [],
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Challenger）",
+      "label_short": "LM Challenger",
+      "explain": "Apollo 17 の月着陸船 Challenger の下半分。1972年12月の着陸後、月面に残された。これは現在までのところ最後の有人月面着陸である。"
+    },
+    {
+      "id": "lrv",
+      "label": "月面走行車（LRV）",
+      "label_short": "LRV",
+      "explain": "Apollo 17 の月面走行車（LRV）。ここは、ミッション後に月面に残されたローバーを、今日 LROC が撮影している場所である。"
+    },
+    {
+      "id": "alsep",
+      "label": "ALSEP 中央ステーション",
+      "label_short": "ALSEP",
+      "explain": "Apollo 17 の月面実験パッケージで、タウルス・リットロウ渓谷の LM の西にある。LROC の画像には、観測機器と、ジオフォンを展開した十字形の足跡が写っている。"
+    },
+    {
+      "id": "sep",
+      "label": "SEP 送信機",
+      "label_short": "SEP 送信機",
+      "explain": "月面電気特性実験（SEP）の送信機で、土壌の電気的性質を調べた。LROC は Apollo 17 の画像でこれを SEP と呼んでおり、長さ35 mのアンテナがここから展開された。"
+    },
+    {
+      "id": "flag",
+      "label": "米国旗（LROC の位置）",
+      "label_short": "米国旗",
+      "explain": "LROC の Apollo 17 機材レイヤーが旗の位置として示す点で、LM の北北西約22 mにある。旗そのものは小さすぎて見えない。"
+    },
+    {
+      "id": "rudolph",
+      "label": "Rudolph クレーター",
+      "label_short": "Rudolph",
+      "explain": "LROC が Apollo 17 の地図で Rudolph と呼ぶクレーターで、LM の北西約290 mにある。"
+    },
+    {
+      "id": "poppie",
+      "label": "Poppie クレーター",
+      "label_short": "Poppie",
+      "explain": "LM の南にある小さなクレーターで、LROC が Apollo 17 の地図で Poppie と呼ぶ。"
+    },
+    {
+      "id": "barjea",
+      "label": "Barjea クレーター",
+      "label_short": "Barjea",
+      "explain": "LM の南東にある小さく明るいクレーターで、LROC が Apollo 17 の地図で Barjea と呼ぶ。"
+    },
+    {
+      "id": "geophone-paths",
+      "label": "ジオフォンの足跡",
+      "label_short": "ジオフォンの足跡",
+      "explain": "LROC の Apollo 17 画像には、着陸地点の西に十字形の足跡が写っている。宇宙飛行士が地震活動を監視するためにジオフォンを設置した場所である（破線の輪郭は範囲を示す）。"
+    },
+    {
+      "id": "sep-rover-tracks",
+      "label": "SEP 地点へのローバーの轍",
+      "label_short": "SEP への轍",
+      "explain": "LROC によると、サーナンは長さ35 mの SEP アンテナを展開する際に東へローバーの轍を残した。轍は LM 付近から送信機へ向かっている（破線の輪郭は範囲を示す）。"
+    },
+    {
+      "id": "blast",
+      "label": "LM の噴射域",
+      "label_short": "噴射域",
+      "explain": "LROC によると、降下エンジンはアポロ着陸地点の周囲の地面を明るくした。Apollo 17 では暈が LM の周囲に広がっている（ローブは降下経路を示している可能性がある）。"
+    }
+  ],
   "panorama_caption": "タウルス・リットロウ渓谷のALSEP設置地点、EVA-1（1972年12月12日）。観測装置一式、月面車、谷を囲む山塊を写したジャック・シュミットのカラーパノラマ。アポロ最後の着陸。",
   "panorama_annotations": [
     {

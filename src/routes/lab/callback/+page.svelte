@@ -9,7 +9,15 @@
   import { goto } from '$app/navigation';
   import { localHref } from '$lib/locale';
   import { browser } from '$app/environment';
-  import { t } from '$lib/lab/t';
+  // Direct message imports, not $lib/lab/t: that resolver pulls every Lab string in
+  // every locale (~640 KB br) into this one-line page.
+  import {
+    lab_signin_title,
+    lab_ask_callback_denied,
+    lab_ask_callback_back,
+    lab_ask_callback_error,
+    lab_ask_callback_working,
+  } from '$lib/paraglide/messages';
   import { AskAuth, browserDeps } from '$lib/lab/ask/auth';
   import { redirectUri } from '$lib/lab/ask/config';
 
@@ -25,17 +33,21 @@
   });
 </script>
 
-<svelte:head><title>Orrery — {t('lab.signin.title')}</title></svelte:head>
+<svelte:head>
+  <title>Orrery — {lab_signin_title()}</title>
+  <!-- An OAuth handshake page, not content. -->
+  <meta name="robots" content="noindex" />
+</svelte:head>
 
 <main class="callback">
   {#if failed === 'denied'}
-    <p class="callback__denied">{t('lab.ask.callback-denied')}</p>
-    <a href={localHref(`/lab`)}>{t('lab.ask.callback-back')}</a>
+    <p class="callback__denied">{lab_ask_callback_denied()}</p>
+    <a href={localHref(`/lab`)}>{lab_ask_callback_back()}</a>
   {:else if failed === 'error'}
-    <p>{t('lab.ask.callback-error')}</p>
-    <a href={localHref(`/lab`)}>{t('lab.ask.callback-back')}</a>
+    <p>{lab_ask_callback_error()}</p>
+    <a href={localHref(`/lab`)}>{lab_ask_callback_back()}</a>
   {:else}
-    <p>{t('lab.ask.callback-working')}</p>
+    <p>{lab_ask_callback_working()}</p>
   {/if}
 </main>
 

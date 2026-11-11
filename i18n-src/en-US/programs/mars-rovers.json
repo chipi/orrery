@@ -1,6 +1,8 @@
 {
   "name": "Mars Rovers",
   "tagline": "A quarter-century of American robots driving across Mars — from a microwave-sized cart that managed about a hundred metres to a nuclear astrobiologist caching rock for the trip home.",
+  "seo_title": "Mars Rovers: Sojourner, Curiosity, Perseverance",
+  "seo_description": "Every NASA Mars rover from Sojourner to Perseverance and the Ingenuity helicopter: landing sites, discoveries and how each one got down.",
   "the_land": [
     { "type": "prose", "md": "The Viking landers of 1976 had proved a spacecraft could reach the surface of Mars and work — but they were stuck where they touched down, able to study only what lay within reach of a single arm. Mars is a whole planet, its history written across terrain that stretches for thousands of kilometres, and a lander sees one spot of it. To read the record — to find where water once flowed, to sample rocks laid down billions of years ago — a robot would have to move." },
     { "type": "prose", "md": "The Mars rovers are NASA's twenty-five-year answer to that problem: a lineage of wheeled robots, each larger and more capable than the last, sent to drive across the planet and do field geology in person. They begin with a proof of concept the size of a microwave and arrive, a quarter of a century later, at a nuclear-powered laboratory hunting for the chemical fingerprints of ancient life." }

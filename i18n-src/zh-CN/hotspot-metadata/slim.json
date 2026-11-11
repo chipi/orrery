@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "SLIM 着陆器",
+      "label_short": "SLIM 着陆器",
+      "explain": "JAXA 的 SLIM 着陆器，2024年1月19日降落在希奥利撞击坑附近。五天后 LRO 拍下了它；周围亮度的细微变化标出了发动机尾焰扫过地表的位置。"
+    }
+  ]
+}

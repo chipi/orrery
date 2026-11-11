@@ -564,14 +564,47 @@ export function rtlArrowWrong(locale, out) {
   return false;
 }
 
+/** Per locale and kind, [lo, hi] for translation length / English length (scripts/i18n-tools/length-ratio.mjs). */
+export const BOUNDS_FILE = path.join(import.meta.dirname, '../i18n-tools/length-ratio-bounds.json');
+let boundsCache;
+export const loadBounds = () =>
+  (boundsCache ??= fs.existsSync(BOUNDS_FILE)
+    ? JSON.parse(fs.readFileSync(BOUNDS_FILE, 'utf8'))
+    : {});
+
+/** The length kind of an English string, or null when it is too short to judge. */
+export const lengthKind = (src, { ui = false } = {}) =>
+  ui
+    ? src.length >= 30
+      ? 'ui'
+      : null
+    : src.length >= 120
+      ? 'long'
+      : src.length >= 40
+        ? 'short'
+        : null;
+
+/** A message when `out` is far shorter or longer than the English `src` for the locale, else ''. */
+export function lengthRatioProblem(locale, src, out, { ui = false } = {}) {
+  const kind = lengthKind(src, { ui });
+  const bounds = kind && loadBounds()[locale]?.[kind];
+  if (!bounds || out.trim() === src.trim()) return '';
+  const ratio = out.length / src.length;
+  if (ratio >= bounds[0] && ratio <= bounds[1]) return '';
+  return `length implausible against the English: ${ratio.toFixed(2)}x, expected ${bounds[0]}-${bounds[1]}x (${ratio < bounds[0] ? 'something dropped?' : 'English left in, or something added?'})`;
+}
+
 /**
  * Problems with a translation `out` of English `src` into `locale` (empty list
  * = acceptable). `src` may be '' when the caller doesn't have it (the client
  * wrapper); the source-dependent checks are then skipped. `ui: true` marks a
  * messages/<loc>.json string and turns on the short-label checks (English words
- * left in, science names left in English).
+ * left in, science names left in English). `length: true` adds the length-ratio check, which
+ * judges a NEW translation (apply-edits.mjs, retranslate-fields.mjs); the audits that re-run
+ * problems() over the whole corpus leave it off, because the fields reviewed in
+ * length-ratio-reviewed.json are outside the bounds on purpose.
  */
-export function problems(locale, src, out, { ui = false } = {}) {
+export function problems(locale, src, out, { ui = false, length = false } = {}) {
   const p = [];
   if (typeof out !== 'string' || !out.trim()) return ['empty'];
   src = src || '';
@@ -692,6 +725,8 @@ export function problems(locale, src, out, { ui = false } = {}) {
           .join(', ')} (use the glossary form)`,
       );
   }
+  const longOrShort = length && lengthRatioProblem(locale, src, out, { ui });
+  if (longOrShort) p.push(longOrShort);
   if (/\bOrrery\b/.test(src) && !out.includes('Orrery'))
     p.push('the site name "Orrery" changed or missing — keep it exactly, in Latin script');
   if (RTL.has(locale) && rtlArrowWrong(locale, out))

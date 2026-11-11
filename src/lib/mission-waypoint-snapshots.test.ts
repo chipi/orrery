@@ -61,21 +61,24 @@ const MOON_SNAPSHOTS: CislunarSnapshot[] = [
     lastMetMax: 4.4,
     count: 100,
   },
+  // Chandrayaan-1, Chandrayaan-3 and SLIM are built from their published orbit-raising and
+  // lunar-orbit tables (0.9.8, generate-hybrid-waypoints orbit-table mode): one sample run per
+  // orbit, so the count follows the tables, and landers end at their landing event.
   {
     slug: 'chandrayaan1',
     dest: 'moon',
     firstMet: 0,
-    lastMetMin: 17.7,
-    lastMetMax: 17.9,
-    count: 100,
+    lastMetMin: 17.5,
+    lastMetMax: 17.7,
+    count: 84,
   },
   {
     slug: 'chandrayaan3',
     dest: 'moon',
     firstMet: 0,
-    lastMetMin: 41.9,
-    lastMetMax: 42.1,
-    count: 100,
+    lastMetMin: 39.9,
+    lastMetMax: 40.1,
+    count: 180,
   },
   { slug: 'change3', dest: 'moon', firstMet: 0, lastMetMin: 14.6, lastMetMax: 14.8, count: 100 },
   { slug: 'change4', dest: 'moon', firstMet: 0, lastMetMin: 28.2, lastMetMax: 28.5, count: 100 },
@@ -88,7 +91,7 @@ const MOON_SNAPSHOTS: CislunarSnapshot[] = [
   { slug: 'luna21', dest: 'moon', firstMet: 0, lastMetMin: 8.3, lastMetMax: 8.5, count: 100 },
   { slug: 'luna24', dest: 'moon', firstMet: 0, lastMetMin: 12.9, lastMetMax: 13.1, count: 100 },
   { slug: 'luna9', dest: 'moon', firstMet: 0, lastMetMin: 3.1, lastMetMax: 3.2, count: 100 },
-  { slug: 'slim', dest: 'moon', firstMet: 0, lastMetMin: 141.7, lastMetMax: 141.8, count: 100 },
+  { slug: 'slim', dest: 'moon', firstMet: 0, lastMetMin: 134.9, lastMetMax: 135.1, count: 88 },
 ];
 
 const HELIO_SNAPSHOTS: HelioSnapshot[] = [

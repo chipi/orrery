@@ -193,7 +193,8 @@ already in the text.
    prompt carries `NAME_POLICY` but not the glossary: run `glossary-apply.mjs` on the output.
 5. Translate UI messages, then the gallery and entity pages (their names become the
    canonical forms, §3.3), then the editorial and article text, using those forms.
-6. Gate: `validate-data`, guard replay (no new rejections), coverage scan
+6. Gate: `validate-data` (it runs the coverage scan, the English source-hash manifest and the
+   number-drift, dropped-sentence and length-ratio finders), guard replay (no new rejections), coverage scan
    (`sameAsEnglish`, `nativeNameMissing` both 0), `npm run test:coverage`, and look
    at the routes in a browser. A new locale has no entry in
    `scripts/i18n-tools/ui-label-baseline.json`, so `ui-label-audit.test.ts` holds it to

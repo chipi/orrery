@@ -317,7 +317,7 @@ git add 'static/images/hotspots/mars/*/tier2-hirise.{1x1,4x3,16x9}.jpg' \
 The `/mars` site detail-panel surfaces curated imagery through **two distinct tabs** with different shapes:
 
 ### Path A — the GALLERY tab (existing thumbnail strip)
-A 5-image grid + lightbox. Pulled at runtime via `getMarsSiteGallery(siteId, missionId)` in `src/lib/data.ts`. The loader walks a 5-step fallback chain across three manifests so coverage holds even when the per-site override is absent:
+A photo grid + lightbox (one slot per real photo, no 5-slot cap). Pulled at runtime via `getMarsSiteGallery(siteId, missionId)` in `src/lib/data.ts`. The loader walks a 5-step fallback chain across three manifests so coverage holds even when the per-site override is absent:
 1. `static/data/mars-site-galleries.json` (per-site override — currently empty)
 2. `static/data/mission-galleries.json` by `mission_id`
 3. `static/data/mission-galleries.json` by site id

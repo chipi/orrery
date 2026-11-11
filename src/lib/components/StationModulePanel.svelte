@@ -306,9 +306,9 @@
   }
   /* .agency-row / .agency-badge / .status base now come from AgencyRow.svelte. */
   .status-active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.08);
+    color: #889fe7;
+    border-color: rgba(136, 159, 231, 0.4);
+    background: rgba(136, 159, 231, 0.08);
   }
   .status-retired {
     color: rgba(255, 255, 255, 0.5);

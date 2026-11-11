@@ -1,1 +1,10 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lander",
+      "label": "Módulo de aterrizaje Tianwen-1",
+      "label_short": "Módulo",
+      "explain": "El módulo de aterrizaje Tianwen-1, en el centro del dibujo que sus motores de descenso soplaron en el polvo. El rover Zhurong bajó de él tras el aterrizaje del 14 de mayo de 2021."
+    }
+  ]
+}

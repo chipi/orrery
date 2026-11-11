@@ -1,0 +1,168 @@
+diff --git a/.github/workflows/deploy-prod.yml b/.github/workflows/deploy-prod.yml
+index 08d40ff..5118916 100644
+--- a/.github/workflows/deploy-prod.yml
++++ b/.github/workflows/deploy-prod.yml
+@@ -47,6 +47,10 @@ on:
+         description: "Image :sha-<7> tag to deploy (blank = current main HEAD short SHA)"
+         required: false
+         default: ""
++      release_tag:
++        description: "Release tag to (re)deploy, e.g. v0.9.7 — rollback (blank = current main HEAD). Must be an ancestor of main; bundle, server files and images all come from that tag's commit. Do not combine with override_image_sha."
++        required: false
++        default: ""
+ 
+ permissions:
+   actions: read
+@@ -79,9 +83,13 @@ jobs:
+     # Main only (#593 H2): a dispatch from another ref would rsync a branch-built bundle
+     # on top of main's server code (the VPS resets to origin/main). This line stops the
+     # accidental case; the `prod` environment's deployment-branch policy is what stops
+-    # a branch that edits this file.
++    # a branch that edits this file. A rollback is still dispatched from main:
++    # `release_tag` selects which main-ancestor commit is built and deployed.
+     if: github.ref == 'refs/heads/main'
+     outputs:
++      # Commit of `release_tag` (empty = deploy main HEAD); the validate job checks out
++      # the same commit so the validator matches the release it is judging.
++      release_sha: ${{ steps.release.outputs.sha }}
+       # Surfaced so the post-deploy `validate` job can skip when the deploy
+       # itself no-op'd (missing prereqs → nothing new was published).
+       skipped: ${{ steps.preflight.outputs.skip }}
+@@ -108,9 +116,61 @@ jobs:
+             echo "skip=false" >> "$GITHUB_OUTPUT"
+           fi
+ 
++      - name: Resolve release tag (rollback)
++        # Blank `release_tag` = today's behaviour: empty `sha` output, every later step
++        # uses main HEAD. Set: the tag must exist and its commit must be an ancestor of
++        # main (compare main...<sha> is `identical` or `behind`), else refuse before
++        # anything is built or touched. Resolved through the API so no history is fetched.
++        # The input goes in via env, never interpolated into the script (#600).
++        id: release
++        if: steps.preflight.outputs.skip != 'true'
++        env:
++          RELEASE_TAG: ${{ github.event.inputs.release_tag }}
++          OVERRIDE: ${{ github.event.inputs.override_image_sha }}
++          GH_TOKEN: ${{ github.token }}
++          REPO: ${{ github.repository }}
++        run: |
++          set -euo pipefail
++          if [ -z "$RELEASE_TAG" ]; then
++            echo "sha=" >> "$GITHUB_OUTPUT"
++            exit 0
++          fi
++          if ! [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
++            echo "::error::release_tag must look like v0.9.7"
++            exit 1
++          fi
++          if [ -n "$OVERRIDE" ]; then
++            echo "::error::release_tag and override_image_sha are exclusive — a release deploys its own commit's images"
++            exit 1
++          fi
++          if ! ref=$(gh api "repos/${REPO}/git/ref/tags/${RELEASE_TAG}" --jq '.object.type + " " + .object.sha'); then
++            echo "::error::tag ${RELEASE_TAG} does not exist in ${REPO}"
++            exit 1
++          fi
++          type="${ref%% *}"; sha="${ref##* }"
++          if [ "$type" = tag ]; then
++            # annotated tag: one hop to the commit it points at
++            ref=$(gh api "repos/${REPO}/git/tags/${sha}" --jq '.object.type + " " + .object.sha')
++            type="${ref%% *}"; sha="${ref##* }"
++          fi
++          if [ "$type" != commit ] || ! [[ "$sha" =~ ^[0-9a-f]{40}$ ]]; then
++            echo "::error::tag ${RELEASE_TAG} does not resolve to a commit (got: ${ref})"
++            exit 1
++          fi
++          status=$(gh api "repos/${REPO}/compare/main...${sha}" --jq .status)
++          echo "${RELEASE_TAG} -> ${sha}; compare main...${sha}: ${status}"
++          if [ "$status" != identical ] && [ "$status" != behind ]; then
++            echo "::error::${RELEASE_TAG} (${sha}) is not an ancestor of main (compare status: ${status}) — refusing"
++            exit 1
++          fi
++          echo "sha=${sha}" >> "$GITHUB_OUTPUT"
++          echo "::notice::ROLLBACK: deploying ${RELEASE_TAG} (${sha:0:7}), not main HEAD"
++
+       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
+         if: steps.preflight.outputs.skip != 'true'
+         with:
++          # Empty (blank release_tag) = the dispatched ref, i.e. main HEAD; else the tag's commit.
++          ref: ${{ steps.release.outputs.sha }}
+           fetch-depth: 1
+ 
+       - name: Resolve target image tag
+@@ -120,13 +180,15 @@ jobs:
+         # commit or one whose e2e failed. ci.yml (mcp/lab-api, after green unit) and
+         # docker-e2e.yml (pipeline-runner, after green e2e) publish `sha-<7>` on every main
+         # push; the next step refuses the deploy when any of the three is missing.
+-        # `override_image_sha` deploys an earlier commit's images (rollback).
++        # `override_image_sha` deploys an earlier commit's images (backend-only rollback);
++        # `release_tag` deploys that release's own commit's images (full rollback).
+         id: sha
+         if: steps.preflight.outputs.skip != 'true'
+         # Dispatch input via env, never interpolated into the script (#600); it also
+         # lands in .env as the image tag, so only a hex sha is accepted.
+         env:
+           OVERRIDE: ${{ github.event.inputs.override_image_sha }}
++          RELEASE_SHA: ${{ steps.release.outputs.sha }}
+         run: |
+           set -euo pipefail
+           if [ -n "$OVERRIDE" ] && ! [[ "$OVERRIDE" =~ ^[0-9a-f]{7,40}$ ]]; then
+@@ -136,6 +198,8 @@ jobs:
+           # Published tags carry 7 hex chars; a longer override is cut to match.
+           if [ -n "$OVERRIDE" ]; then
+             TAG="sha-${OVERRIDE:0:7}"
++          elif [ -n "$RELEASE_SHA" ]; then
++            TAG="sha-${RELEASE_SHA:0:7}"
+           else
+             TAG="sha-${GITHUB_SHA:0:7}"
+           fi
+@@ -347,6 +411,8 @@ jobs:
+         env:
+           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+           IMAGE_TAG: ${{ steps.sha.outputs.tag }}
++          # The commit being deployed: the release tag's, else the dispatched main HEAD.
++          RELEASE_SHA: ${{ steps.release.outputs.sha || github.sha }}
+           # Backend auth secrets (D/E · #464). Empty when unset → deploy_stack.sh
+           # brings up web-only + a warning (lab-api crash-loops without them).
+           LAB_GOOGLE_CLIENT_ID: ${{ secrets.ORRERY_LAB_GOOGLE_CLIENT_ID }}
+@@ -391,7 +457,7 @@ jobs:
+             printf '%s=%s\n' ORRERY_LAB_WEB_REDIRECT_URIS 'https://orrerylearn.com/lab/callback,https://www.orrerylearn.com/lab/callback,https://chipi.github.io/orrery/lab/callback'
+             # Server observability (ADR-094). Release follows homelab ADR-0010
+             # (`sha-<7>`, the same value as traces' service.version).
+-            printf '%s=%s\n' ORRERY_RELEASE            "sha-${GITHUB_SHA::7}"
++            printf '%s=%s\n' ORRERY_RELEASE            "sha-${RELEASE_SHA::7}"
+             printf '%s=%s\n' ORRERY_LAB_API_SENTRY_DSN "$LAB_API_SENTRY_DSN"
+             printf '%s=%s\n' ORRERY_MCP_SENTRY_DSN     "$MCP_SENTRY_DSN"
+             # VictoriaTraces on the homelab, over the tailnet (the endpoint podcast's
+@@ -422,12 +488,19 @@ jobs:
+         if: steps.preflight.outputs.skip != 'true'
+         env:
+           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
++          # Set only for a release_tag rollback (a validated 40-hex sha); blank = main.
++          RELEASE_SHA: ${{ steps.release.outputs.sha }}
+         run: |
++          if [ -n "$RELEASE_SHA" ]; then
++            # The release may be deeper than 50 commits behind main: fetch it by sha.
++            SYNC="git fetch --depth=1 origin ${RELEASE_SHA}; git reset --hard ${RELEASE_SHA}"
++          else
++            SYNC="git fetch --depth=50 origin '+refs/heads/main:refs/remotes/origin/main'; git reset --hard origin/main"
++          fi
+           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+             -o StrictHostKeyChecking=yes -o BatchMode=yes "$SSH_TARGET" \
+             "set -euo pipefail; cd /srv/orrery; \
+-             git fetch --depth=50 origin '+refs/heads/main:refs/remotes/origin/main'; \
+-             git reset --hard origin/main; \
++             ${SYNC}; \
+              bash ops/deploy_stack.sh"
+ 
+       - name: Deploy orrery Caddy routing (own the vhosts — ADR-114 tenant ownership)
+@@ -563,6 +636,9 @@ jobs:
+     steps:
+       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
+         with:
++          # A rollback validates the release it deployed with that release's own
++          # validator (main's may assert routes/headers the old release lacks).
++          ref: ${{ needs.deploy.outputs.release_sha }}
+           fetch-depth: 1
+       - uses: ./.github/actions/setup-node
+       # --ignore-scripts: no dependency install script runs in a job that holds deploy / bot secrets.

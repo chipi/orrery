@@ -611,3 +611,7 @@ Desktop 1440 × 900 and phone 390 × 844 (plus phone landscape 844 × 390 for th
 - NV12 UXS-001/003/004/013 text about panels was read for the lines cited in §9 only; a fresh grep of every doc for "close", "cta", "hero" was not made.
 - NV13 `b1-check.py` ran at baseline (HEAD and working tree both 147); the 147 were not each read, only the kinds and the first block of lines; `OLD-CTA-MARKUP` is line-based, a `class` split from its tag over two lines is missed (the 37 found are single-line `class=` attributes).
 - NV14 A6's version of `Nav.svelte` (More menu, Share row) is a brief, not code; the "Share this view" relation is from that brief and `Nav.svelte:439`.
+
+## Amendment 2026-11-12 (operator, after seeing B1 on screen)
+
+The separate header bar row goes. **One header:** the eyebrow line carries the actions — back (when present), Share and × — right-aligned on the same line as the eyebrow; the entity title is on the next line at full panel width, so a long title runs under the actions instead of being squeezed beside them. The header stays fixed while the content scrolls (the name is always visible, so the scroll-reveal of the name in the bar goes). Chip sizes stay A4 (30 px fine / 44 px touch). Applies to every panel (planets, moons, small bodies, Sun, belts, missions, fleet, sites, stars, black holes, deep sky, outer scales, regime, phase, exoplanet, museum, observatory, message). Build it as B1.1, right after C3 and before B2; record it in UXD-018 (amended) and the Design System §5.3.

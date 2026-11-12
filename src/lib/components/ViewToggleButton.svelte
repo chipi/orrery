@@ -6,6 +6,8 @@
   passed in via prop.
 -->
 <script lang="ts">
+  import Chip from './Chip.svelte';
+
   interface Props {
     is2d: boolean;
     label: string;
@@ -14,12 +16,6 @@
   let { is2d, label, onToggle }: Props = $props();
 </script>
 
-<button
-  type="button"
-  class="toggle"
-  onclick={onToggle}
-  aria-pressed={is2d}
-  data-testid="mode-toggle"
->
+<Chip kind="toggle" active={is2d} onclick={onToggle} data-testid="mode-toggle">
   {label}
-</button>
+</Chip>

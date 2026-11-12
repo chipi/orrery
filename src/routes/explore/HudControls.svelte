@@ -4,6 +4,8 @@
   import { launchArScene, launchSkyScene } from '$lib/ar/launch-ar';
   import EnterArButton from '$lib/components/EnterArButton.svelte';
   import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
@@ -67,95 +69,68 @@
     focusedLightTime: LightTime | null;
     focusedOnPlanet: boolean;
   } = $props();
+
+  const LAYER_CHIPS: {
+    key: 'planets' | 'dwarfs' | 'comets' | 'interstellar';
+    label: () => string;
+    tip: () => string;
+  }[] = [
+    { key: 'planets', label: m.ui_layer_planets, tip: m.explore_layer_tip_planets },
+    { key: 'dwarfs', label: m.ui_layer_dwarfs, tip: m.explore_layer_tip_dwarfs },
+    { key: 'comets', label: m.ui_layer_comets, tip: m.explore_layer_tip_comets },
+    {
+      key: 'interstellar',
+      label: m.ui_layer_interstellar_short,
+      tip: m.explore_layer_tip_interstellar,
+    },
+  ];
 </script>
 
-<!-- Secondary HUD controls: 2D/3D toggle + layer chips + paths-legend.
+<!-- Secondary HUD controls: 2D/3D chip + layer chips + paths-legend.
      Defined once as a snippet; rendered inline on desktop, inside
      MobileDrawerGroup accordion on mobile (≤767 px). -->
 {#snippet exploreControls()}
   <div class="ctrl-row">
-    <button
-      class="toggle"
-      type="button"
+    <Chip
+      kind="toggle"
+      active={view === '2d'}
       onclick={toggleView}
-      aria-pressed={view === '2d'}
       data-testid="explore-view-toggle"
     >
       {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
-    </button>
+    </Chip>
     {#if hasSelection}
-      <button
-        class="toggle"
-        type="button"
+      <ResetViewButton
         onclick={onResetView}
         data-testid="explore-reset-view"
         data-audio-stage="explore-reset-view"
-      >
-        {m.ui_reset_view()}
-      </button>
+      />
     {/if}
     <EnterArButton onEnter={() => void launchArScene('explore')} />
     <EnterSkyButton onEnter={() => void launchSkyScene()} />
   </div>
-  <!-- Inline chips rather than LayerChipRow: the PATHS chip carries
-       data-audio-stage which LayerChipRow's interface doesn't expose. -->
   <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.planets}
-      aria-pressed={layers.planets}
-      onclick={() => onToggleLayer('planets')}
-      data-testid="layer-planets"
-      title={m.explore_layer_tip_planets()}
-    >
-      {m.ui_layer_planets()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.dwarfs}
-      aria-pressed={layers.dwarfs}
-      onclick={() => onToggleLayer('dwarfs')}
-      data-testid="layer-dwarfs"
-      title={m.explore_layer_tip_dwarfs()}
-    >
-      {m.ui_layer_dwarfs()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.comets}
-      aria-pressed={layers.comets}
-      onclick={() => onToggleLayer('comets')}
-      data-testid="layer-comets"
-      title={m.explore_layer_tip_comets()}
-    >
-      {m.ui_layer_comets()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.interstellar}
-      aria-pressed={layers.interstellar}
-      onclick={() => onToggleLayer('interstellar')}
-      data-testid="layer-interstellar"
-      title={m.explore_layer_tip_interstellar()}
-    >
-      {m.ui_layer_interstellar_short()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.paths}
-      aria-pressed={layers.paths}
+    {#each LAYER_CHIPS as chip (chip.key)}
+      <Chip
+        kind="toggle"
+        active={layers[chip.key]}
+        onclick={() => onToggleLayer(chip.key)}
+        data-testid="layer-{chip.key}"
+        title={chip.tip()}
+      >
+        {chip.label()}
+      </Chip>
+    {/each}
+    <Chip
+      kind="toggle"
+      active={layers.paths}
       onclick={() => onToggleLayer('paths')}
       data-audio-stage="explore-layer-paths"
       data-testid="layer-paths"
       title={m.explore_layer_tip_paths()}
     >
       {m.ui_layer_paths()}
-    </button>
+    </Chip>
   </div>
   {#if layers.paths}
     <div
@@ -244,25 +219,20 @@
   role="group"
   aria-label={m.ui_view_controls()}
 >
-  <button
-    class="toggle"
-    type="button"
+  <Chip
+    kind="toggle"
+    active={view === '2d'}
     onclick={toggleView}
-    aria-pressed={view === '2d'}
     data-testid="explore-view-toggle-mobile"
   >
     {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
-  </button>
+  </Chip>
   {#if hasSelection}
-    <button
-      class="toggle"
-      type="button"
+    <ResetViewButton
       onclick={onResetView}
       data-testid="explore-reset-view-mobile"
       data-audio-stage="explore-reset-view"
-    >
-      {m.ui_reset_view()}
-    </button>
+    />
   {/if}
   <EnterArButton onEnter={() => void launchArScene('explore')} />
   <EnterSkyButton onEnter={() => void launchSkyScene()} />
@@ -284,80 +254,38 @@
 {/snippet}
 {#snippet mobileControlsContent(close: () => void)}
   <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.planets}
-      aria-pressed={layers.planets}
-      onclick={() => {
-        onToggleLayer('planets');
-        close();
-      }}
-      data-testid="layer-planets"
-      title={m.explore_layer_tip_planets()}
-    >
-      {m.ui_layer_planets()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.dwarfs}
-      aria-pressed={layers.dwarfs}
-      onclick={() => {
-        onToggleLayer('dwarfs');
-        close();
-      }}
-      data-testid="layer-dwarfs"
-      title={m.explore_layer_tip_dwarfs()}
-    >
-      {m.ui_layer_dwarfs()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.comets}
-      aria-pressed={layers.comets}
-      onclick={() => {
-        onToggleLayer('comets');
-        close();
-      }}
-      data-testid="layer-comets"
-      title={m.explore_layer_tip_comets()}
-    >
-      {m.ui_layer_comets()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.interstellar}
-      aria-pressed={layers.interstellar}
-      onclick={() => {
-        onToggleLayer('interstellar');
-        close();
-      }}
-      data-testid="layer-interstellar"
-      title={m.explore_layer_tip_interstellar()}
-    >
-      {m.ui_layer_interstellar_short()}
-    </button>
+    {#each LAYER_CHIPS as chip (chip.key)}
+      <Chip
+        kind="toggle"
+        active={layers[chip.key]}
+        onclick={() => {
+          onToggleLayer(chip.key);
+          close();
+        }}
+        data-testid="layer-{chip.key}"
+        title={chip.tip()}
+      >
+        {chip.label()}
+      </Chip>
+    {/each}
   </div>
 {/snippet}
 {#snippet mobileIconicContent(close: () => void)}
   <!-- Compact trajectory on/off — a much smaller stand-in for the desktop
        chip. onOpen enables the layer when the drawer opens; this toggle lets
        you switch the arcs off without closing the drawer. -->
-  <button
-    type="button"
-    class="iconic-toggle"
-    class:active={layers.paths}
-    aria-pressed={layers.paths}
-    onclick={() => onToggleLayer('paths')}
-    data-testid="layer-paths"
-    title={m.explore_layer_tip_paths()}
-  >
-    <span class="iconic-toggle-dot" class:on={layers.paths} aria-hidden="true"></span>
-    {m.ui_layer_paths()}
-  </button>
+  <div class="iconic-row">
+    <Chip
+      kind="toggle"
+      dot
+      active={layers.paths}
+      onclick={() => onToggleLayer('paths')}
+      data-testid="layer-paths"
+      title={m.explore_layer_tip_paths()}
+    >
+      {m.ui_layer_paths()}
+    </Chip>
+  </div>
   <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
     <a
       class="paths-legend-why"
@@ -522,108 +450,11 @@
   .ctrl-row.chips::-webkit-scrollbar {
     display: none;
   }
-  .toggle {
-    min-width: 44px;
-    min-height: 44px;
-    /* Mobile: 12 px font, 0/10 padding. Desktop bumps to 13 / 0 14. */
-    padding: 0 10px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid var(--color-accent-edge);
-    color: #dde4ff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms;
+  .ctrl-row.chips :global(.ui-chip) {
+    flex: none;
   }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: var(--color-accent);
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
-  }
-
-  /* Layer chips — always-visible visibility toggles. Inactive chips
-     are dim outlines; active chips are filled with the accent blue
-     so the on-state is obvious. 44 px tall preserves the ADR-018
-     touch-target floor.
-     #342 Phase 30 — mobile-first: phone values default; desktop
-     bumps padding/font/letter-spacing at @min-width: 501 and
-     width:100% + chip-stretch column at @min-width: 769. */
-  .chip {
-    min-height: 44px;
-    /* Mobile: chips flow side-by-side, natural width. width: 100%
-       (chip-stretch column) reinstated at @min-width: 769. */
-    width: auto;
-    min-width: 110px;
-    padding: 0 8px;
-    background: rgba(8, 10, 22, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: var(--color-text-label);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1.2px;
-    text-align: center;
-    border-radius: 999px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .chip:hover,
-  .chip:focus-visible {
-    color: #fff;
-    border-color: var(--color-accent-strong);
-    outline: none;
-  }
-  .chip.active {
-    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-    border-color: var(--color-accent-strong);
-    color: var(--color-state);
-  }
-  .chip.active:hover,
-  .chip.active:focus-visible {
-    color: #fff;
-    background: var(--color-accent-edge);
-    border-color: var(--color-accent);
-  }
-
-  /* Compact trajectory on/off inside the Iconic Missions drawer (mobile). */
-  .iconic-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  .iconic-row {
     margin-bottom: 8px;
-    padding: 4px 10px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 0.08em;
-    color: rgba(207, 224, 255, 0.6);
-    background: rgba(15, 18, 35, 0.55);
-    border: 1px solid var(--color-accent-edge);
-    border-radius: 12px;
-    cursor: pointer;
-  }
-  .iconic-toggle.active {
-    color: var(--color-state);
-    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
-  }
-  .iconic-toggle-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(207, 224, 255, 0.25);
-    flex-shrink: 0;
-  }
-  .iconic-toggle-dot.on {
-    background: var(--color-accent);
-    box-shadow: 0 0 6px var(--color-accent-strong);
   }
   .paths-legend {
     pointer-events: auto;
@@ -789,15 +620,6 @@
       top: calc(var(--nav-height) + 12px);
       gap: 8px;
     }
-    .toggle {
-      padding: 0 14px;
-      font-size: 13px;
-    }
-    .chip {
-      padding: 0 10px;
-      font-size: var(--size-label);
-      letter-spacing: 1.5px;
-    }
   }
 
   /* ─── ≥ 769 px — chip-stretch column + always-on paths legend ──── */
@@ -839,9 +661,6 @@
       display: flex;
       align-items: stretch;
     }
-    .chip {
-      width: 100%;
-    }
   }
 
   /* FB5 — controls drawer: chips wrap two-per-row inside the full-width
@@ -854,9 +673,8 @@
       flex-wrap: wrap;
       gap: 6px;
     }
-    :global(.mdg-body) .ctrl-row.chips .chip {
+    :global(.mdg-body) .ctrl-row.chips :global(.ui-chip) {
       flex: 1 1 calc(50% - 3px);
-      text-align: center;
     }
   }
 

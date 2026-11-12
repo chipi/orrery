@@ -8,6 +8,8 @@
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
+  import Chip from './Chip.svelte';
+  import ResetViewButton from './ResetViewButton.svelte';
 
   interface Props {
     onReset: () => void;
@@ -17,16 +19,13 @@
   let { onReset, autoSpin, onToggleSpin }: Props = $props();
 </script>
 
-<button type="button" class="toggle" data-testid="reset-camera" onclick={onReset}>
-  {m.ui_reset_view()}
-</button>
-<button
-  type="button"
-  class="toggle"
+<ResetViewButton data-testid="reset-camera" onclick={onReset} />
+<Chip
+  kind="toggle"
+  active={!autoSpin}
   data-testid="spin-toggle"
-  aria-pressed={!autoSpin}
   title={m.iss_btn_spin_title()}
   onclick={onToggleSpin}
 >
   {m.iss_btn_spin()}
-</button>
+</Chip>

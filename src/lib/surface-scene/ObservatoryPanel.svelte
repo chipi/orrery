@@ -60,14 +60,21 @@
 </script>
 
 <Panel {open} title={observatory?.name ?? ''} {onClose}>
-  {#if observatory}
-    <div class="obs" data-testid="observatory-panel" data-observatory-id={observatory.id}>
-      <PlaceHero src="/images/observatories/{observatory.id}/01.webp" {locale} />
+  {#snippet eyebrow()}
+    {#if observatory}
       <div class="tags">
         <span class="tag kind">{KIND[observatory.kind]()}</span>
         <span class="tag status status-{observatory.status}">{STATUS[observatory.status]()}</span>
       </div>
-      <h1 class="name">{observatory.name}</h1>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if observatory}<h1 class="name">{observatory.name}</h1>{/if}
+  {/snippet}
+
+  {#if observatory}
+    <div class="obs" data-testid="observatory-panel" data-observatory-id={observatory.id}>
+      <PlaceHero src="/images/observatories/{observatory.id}/01.webp" {locale} />
       <p class="place">
         {observatory.place}{#if observatory.since}
           · {m.observatory_since({ year: observatory.since.slice(0, 4) })}{/if}

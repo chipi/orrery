@@ -66,12 +66,14 @@
 </script>
 
 <Panel {open} {onClose} {title} mobileSheet="partial">
-  {#if object}
-    <div class="head">
-      <div class="kind">{categoryLabel} · {object.designation}</div>
-      <div class="name">{title}</div>
-    </div>
+  {#snippet eyebrow()}
+    {#if object}<div class="kind">{categoryLabel} · {object.designation}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if object}<div class="name">{title}</div>{/if}
+  {/snippet}
 
+  {#if object}
     {#if overlay?.fact}<p class="editorial">{overlay.fact}</p>{/if}
     {#if overlay?.bio}<p class="prose">{overlay.bio}</p>{/if}
     {#if image?.caption}<p class="prose">{image.caption}</p>{/if}
@@ -137,9 +139,6 @@
 </Panel>
 
 <style>
-  .head {
-    margin-bottom: 0.5rem;
-  }
   .kind {
     font-size: 0.7rem;
     letter-spacing: 0.08em;

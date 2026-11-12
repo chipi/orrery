@@ -99,12 +99,19 @@
   satellite panel reveals the regime panel underneath.
 -->
 <Panel {open} {onClose} title={regime?.name ?? ''} zIndex={28}>
-  {#if regime}
-    <div class="head" style:--regime-color={regime.color}>
-      <div class="kind-row">
+  {#snippet eyebrow()}
+    {#if regime}<div style:--regime-color={regime.color} class="kind-row">
         <span class="kind">{regime.short ?? regime.id}</span>
-      </div>
-      <div class="name">{regime.name ?? regime.id}</div>
+      </div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if regime}<div style:--regime-color={regime.color} class="name">
+        {regime.name ?? regime.id}
+      </div>{/if}
+  {/snippet}
+
+  {#if regime}
+    <div class="head">
       <div class="stat-row">
         <div>
           <div class="stat-label">{m.earth_regime_altitude_label()}</div>

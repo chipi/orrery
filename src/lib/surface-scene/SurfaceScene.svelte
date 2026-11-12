@@ -6167,9 +6167,9 @@ sample      ${debugInfo.projectedPxSample}`}
     onClose={() => (panelOpen = false)}
     onShare={cardSpec ? () => (cardOpen = true) : undefined}
   >
-    {#if selected}
-      {@const tone = statusTone(selected.status, selected.kind, selected.site_role)}
-      <div class="head" style:--accent={colorFor(selected)}>
+    {#snippet eyebrow()}
+      {#if selected}
+        {@const tone = statusTone(selected.status, selected.kind, selected.site_role)}
         <AgencyRow agency={selected.agency} color={colorFor(selected)}>
           {#if inlineRegime && onRegimeOpen}
             <RegimeChip regime={inlineRegime} onClick={() => onRegimeOpen?.(inlineRegime.id)} />
@@ -6181,7 +6181,16 @@ sample      ${debugInfo.projectedPxSample}`}
             {tone.label}
           </span>
         </AgencyRow>
+      {/if}
+    {/snippet}
+    {#snippet heading()}
+      {#if selected}
         <h1 class="name">{selected.name ?? selected.id}</h1>
+      {/if}
+    {/snippet}
+
+    {#if selected}
+      <div class="head" style:--accent={colorFor(selected)}>
         {#if selected.mission_type || selected.site_name}
           <p class="type">
             {selected.mission_type ?? ''}

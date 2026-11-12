@@ -177,8 +177,8 @@
   {onClose}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
 >
-  {#if selected}
-    <div class="head">
+  {#snippet eyebrow()}
+    {#if selected}
       <div class="agency-row">
         <span
           class="agency-badge"
@@ -195,9 +195,15 @@
           >{surfaceStatusLabel(selected.status)}</span
         >
       </div>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if selected}
       <h1 class="name">{selected.name ?? selected.id}</h1>
-    </div>
+    {/if}
+  {/snippet}
 
+  {#if selected}
     <!-- No PanelActions row: an Earth object has no entity action. Share is in the Panel bar. -->
 
     {#if panelGallery.length > 0}
@@ -393,11 +399,6 @@
 <PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
 
 <style>
-  .head {
-    padding: 0 0 12px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 12px;
-  }
   .agency-row {
     display: flex;
     flex-wrap: wrap;

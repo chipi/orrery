@@ -54,12 +54,14 @@
 </script>
 
 <Panel {open} {onClose} {covered} {title} mobileSheet="partial">
-  {#if object}
-    <div class="head">
-      <div class="kind">{kindLabel}</div>
-      <div class="name">{object.name}</div>
-    </div>
+  {#snippet eyebrow()}
+    {#if object}<div class="kind">{kindLabel}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if object}<div class="name">{object.name}</div>{/if}
+  {/snippet}
 
+  {#if object}
     <p class="prose">{blurb}</p>
 
     <div class="grid">
@@ -103,9 +105,6 @@
 </Panel>
 
 <style>
-  .head {
-    margin-bottom: 0.5rem;
-  }
   .kind {
     font-size: 0.7rem;
     letter-spacing: 0.08em;

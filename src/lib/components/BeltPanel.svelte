@@ -167,12 +167,17 @@
 </script>
 
 <Panel {open} {onClose} {covered} title={entry?.name ?? ''}>
+  {#snippet eyebrow()}
+    {#if entry}<div class="kind-row">
+        <span class="kind">{entry.kind}</span>
+      </div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if entry}<div class="name">{entry.name}</div>{/if}
+  {/snippet}
+
   {#if entry}
     <div class="head">
-      <div class="kind-row">
-        <span class="kind">{entry.kind}</span>
-      </div>
-      <div class="name">{entry.name}</div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.belt_label_location()}</div>

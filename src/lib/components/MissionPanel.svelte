@@ -349,8 +349,8 @@
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
   {onBack}
 >
-  {#if mission}
-    <div class="head">
+  {#snippet eyebrow()}
+    {#if mission}
       <AgencyRow agency={mission.agency} color={mission.color}>
         <span class="status status-{mission.status.toLowerCase()}"
           >{missionStatusLabel(mission.status)}</span
@@ -361,6 +361,10 @@
           <span class="quality">{m.mp_data_quality_reconstructed()}</span>
         {/if}
       </AgencyRow>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if mission}
       <div class="name-row">
         <h1 class="name">{mission.name ?? mission.id}</h1>
         {#if badges[`mission:${mission.id}`]}
@@ -372,6 +376,11 @@
           />
         {/if}
       </div>
+    {/if}
+  {/snippet}
+
+  {#if mission}
+    <div class="head">
       {#if mission.type}
         <p class="type">{mission.type}</p>
       {/if}

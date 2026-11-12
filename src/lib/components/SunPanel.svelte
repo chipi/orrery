@@ -80,10 +80,15 @@
 </script>
 
 <Panel {open} {onClose} {covered} title={sun?.name ?? ''}>
+  {#snippet eyebrow()}
+    {#if sun}<div class="type">{sun.type.toUpperCase()}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if sun}<div class="name">{sun.name}</div>{/if}
+  {/snippet}
+
   {#if sun}
     <div class="head">
-      <div class="type">{sun.type.toUpperCase()}</div>
-      <div class="name">{sun.name}</div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.sun_label_spectral_class()}</div>

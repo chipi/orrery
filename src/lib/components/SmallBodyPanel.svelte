@@ -200,14 +200,16 @@
   title={body?.name ?? ''}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
 >
-  {#if body}
-    <div class="head" style:--accent={body.color}>
-      <div class="kind-row">
+  {#snippet eyebrow()}
+    {#if body}<div style:--accent={body.color} class="kind-row">
         <span class="kind">{typeLabel}</span>
-      </div>
-      <div class="name">{body.name}</div>
-    </div>
+      </div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if body}<div style:--accent={body.color} class="name">{body.name}</div>{/if}
+  {/snippet}
 
+  {#if body}
     <!-- The one entity action: Plan mission, for the bodies /plan lists (Pluto lost the planet
          panel's chip when it moved here). Known at first paint, so the row never shifts the hero.
          Share is in the Panel bar. -->
@@ -423,11 +425,6 @@
 {/if}
 
 <style>
-  .head {
-    padding: 0 0 12px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 12px;
-  }
   .kind-row {
     display: flex;
     align-items: center;

@@ -320,14 +320,18 @@
   title={entry?.name ?? entry?.id ?? ''}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
 >
-  {#if entry}
-    <div class="head">
+  {#snippet eyebrow()}
+    {#if entry}
       <AgencyRow agency={entry.agency}>
         <span class="status status-{entry.status.toLowerCase()}">
           {fleetStatusLabel(entry.status)}
         </span>
         <span class="category-chip">{entry.category}</span>
       </AgencyRow>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if entry}
       <div class="name-row">
         <h1 class="name">{entry.name}</h1>
         {#if badges[`fleet:${entry.id}`]}
@@ -339,6 +343,11 @@
           />
         {/if}
       </div>
+    {/if}
+  {/snippet}
+
+  {#if entry}
+    <div class="head">
       {#if entry.tagline ?? entry.best_known_for}
         <p class="tagline">{entry.tagline ?? entry.best_known_for}</p>
       {/if}

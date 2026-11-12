@@ -148,12 +148,17 @@
   title={entry?.name ?? ''}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
 >
+  {#snippet eyebrow()}
+    {#if entry}<div class="kind-row">
+        <span class="kind">{m.panel_satellite_kind({ planet: entry.parent_planet_name })}</span>
+      </div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if entry}<div class="name">{entry.name}</div>{/if}
+  {/snippet}
+
   {#if entry}
     <div class="head">
-      <div class="kind-row">
-        <span class="kind">{m.panel_satellite_kind({ planet: entry.parent_planet_name })}</span>
-      </div>
-      <div class="name">{entry.name}</div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.panel_label_orbital_period()}</div>

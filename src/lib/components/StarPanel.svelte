@@ -137,17 +137,21 @@
 </script>
 
 <Panel {open} {onClose} {title}>
-  {#if star}
-    <div class="head" style:--accent={swatch}>
-      <div class="kind-row">
+  {#snippet eyebrow()}
+    {#if star}
+      <div class="kind-row" style:--accent={swatch}>
         <span class="swatch" style:background={swatch} aria-hidden="true"></span>
         <span class="kind">
           {star.spect ?? ''}{star.spect && star.con ? ' · ' : ''}{constellationName(star.con)}
         </span>
       </div>
-      <div class="name">{star.name ?? star.proper}</div>
-    </div>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if star}<div class="name" style:--accent={swatch}>{star.name ?? star.proper}</div>{/if}
+  {/snippet}
 
+  {#if star}
     {#if hasSystem}
       <button type="button" class="enter-system" onclick={() => onEnterSystem?.()}>
         {m.star_enter_system()}
@@ -364,11 +368,6 @@
 </Panel>
 
 <style>
-  .head {
-    padding: 0 0 12px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 12px;
-  }
   .enter-system {
     display: block;
     width: 100%;

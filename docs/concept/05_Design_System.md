@@ -282,8 +282,8 @@ animation: slideIn / fadeIn 0.22s ease;
 ```
 
 The panel always contains, top to bottom:
-0. Header bar (`.panel-bar`, fixed above the scroll container, solid `--color-panel-bg`): back `←` (only after a card link), the entity name in `--size-meta` once the hero has scrolled out, Share (only when the entity has a collectible card; opens the card overlay), close `×`. All four are `<Chip>`s (30px on a fine pointer, 44px on touch), so the bar is 38px / 44px; nothing scrolls under it.
-1. Identity block (name, type, agency, key stat)
+0. Header (`.panel-head`, fixed above the scroll container, solid `--color-panel-bg`, UXD-018 as amended by B1.1): one block, no separate bar row. Line 1 is the eyebrow (the kind line: agency badge and status, the type, a category and designation) with the actions at the inline end on the same line: back `←` (only after a card link), Share (only when the entity has a collectible card; opens the card overlay), close `×`. They are `<Chip>`s (30px on a fine pointer, 44px on touch), so line 1 is as tall as the chip, and the actions sit on the left in RTL. Line 2 is the entity name at the full panel width: a long name wraps under the actions, never beside them. A panel with no eyebrow (a place with only a name) leaves line 1 to the actions. The header does not scroll with the content, so the name is always visible and nothing scrolls under the actions. `Panel` takes the two parts as the `eyebrow` and `heading` snippets and owns the layout.
+1. Identity details below the header (key stats, type line, tagline)
 1a. Action row (`PanelActions`): at most three chips, in-scene, then view, then simulate, then plan; above the hero, on every tab; absent when the entity has no action. Nothing is stacked at the foot of a panel.
 2. Hero image (no hover glow; keyboard focus draws an inset 2px `--color-focus` ring), then the tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
 3. Stats grid (2-column)

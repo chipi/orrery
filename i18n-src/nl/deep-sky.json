@@ -28,7 +28,7 @@
     "caption": "Torens van koude gas en stof in de Adelaarsnevel (M16), van binnenuit verlicht door pasgeboren sterren.",
     "subject": "Nevel",
     "type": "Emissiesnevel / stervormerdegebied (M16)",
-    "distance": "~6.500 lichtjaren",
+    "distance": "~5.540 lichtjaar",
     "taken": "Vrijgegeven 19 okt 2022"
   },
   "jwst-tarantula": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302 — vleugels van gas verwarmd tot meer dan 20.000°C, uitgeslingerd door een stervende ster.",
     "subject": "Nevel",
     "type": "Planetaire nevel (NGC 6302)",
-    "distance": "~3.400 lichtjaar",
+    "distance": "~2.430 lichtjaar",
     "taken": "2009"
   },
   "hst-antennae": {
@@ -84,7 +84,7 @@
     "caption": "Twee sterrenstelsels (NGC 4038/4039) die met elkaar botsen en miljarden nieuwe sterren doen ontstaan.",
     "subject": "Sterrenstelsels",
     "type": "Botsende sterrenstelsels",
-    "distance": "~45–65 miljoen lichtjaar",
+    "distance": "~69 miljoen lichtjaar",
     "taken": "2006"
   },
   "hst-bubble": {
@@ -92,7 +92,7 @@
     "caption": "NGC 7635 — een bel van zeven lichtjaar groot, weggeblazen door de heftige wind van een massieve ster.",
     "subject": "Nevel",
     "type": "Emissiesnevel (NGC 7635)",
-    "distance": "~7.100 lichtjaar",
+    "distance": "~9.130 lichtjaar",
     "taken": "2016 · Hubble 26ste"
   },
   "hst-westerlund2": {
@@ -108,7 +108,7 @@
     "caption": "NGC 6543 — een van de ingewikkeldste planetaire nevels ooit waargenomen.",
     "subject": "Nevel",
     "type": "Planetaire nevel (NGC 6543)",
-    "distance": "~3.300 lichtjaar",
+    "distance": "~4.460 lichtjaar",
     "taken": "2004"
   },
   "hst-whirlpool": {
@@ -116,7 +116,7 @@
     "caption": "M51 — een leerboekvoorbeeld van een spiraalsterrenstelsel, de armen gloeiend roze van pasgeboren sterren.",
     "subject": "Sterrenstelsels",
     "type": "Spiraalsterrenstelsel (M51)",
-    "distance": "~31 miljoen lichtjaar",
+    "distance": "~27 miljoen lichtjaar",
     "taken": "2005"
   },
   "hst-crab": {
@@ -129,7 +129,7 @@
   },
   "hst-veil": {
     "title": "Sluiternevel",
-    "caption": "Een vaag gedeelte van de Cygnus-lus — een supernovablasgolf die na 10.000 jaar nog steeds uitdijt.",
+    "caption": "Een vaag gedeelte van de Cygnus-lus — een supernovablasgolf die na ongeveer 20.000 jaar nog steeds uitdijt.",
     "subject": "Nevel",
     "type": "Supernovarestant · Cygnus-lus",
     "distance": "~2.400 lichtjaar",
@@ -148,7 +148,7 @@
     "caption": "NGC 2392 — een Zon-achtige ster omgeven door schelpen van gas die zij 10.000 jaar geleden heeft afgestoten.",
     "subject": "Nevel",
     "type": "Planetaire nevel (NGC 2392)",
-    "distance": "~3.000 lichtjaar",
+    "distance": "~5.980 lichtjaar",
     "taken": "2000"
   },
   "chandra-crab": {
@@ -263,7 +263,7 @@
   },
   "jwst-casa": {
     "title": "Cassiopeia A",
-    "caption": "Webbs infrarode blik op de jongste bekende supernovaresta in de Melkweg.",
+    "caption": "Webbs infrarode blik op een van de jongste bekende supernovaresten in de Melkweg.",
     "subject": "Supernova",
     "type": "Supernovarest",
     "distance": "~11.000 lichtjaar",
@@ -274,7 +274,7 @@
     "caption": "Een zeven lichtjaar hoge toren van koud gas in een verre sterrencrèche.",
     "subject": "Nevel",
     "type": "Emissiennes",
-    "distance": "~2.700 lichtjaar",
+    "distance": "~2.280 lichtjaar",
     "taken": "2002 · eerste licht van ACS"
   },
   "hst-omega-centauri": {
@@ -314,7 +314,7 @@
     "caption": "Een zeldzame, massieve ster die zijn buitenlagen afwerpt in de momenten voordat deze supernova wordt.",
     "subject": "Ster",
     "type": "Wolf–Rayet-ster",
-    "distance": "~15.000 lichtjaar",
+    "distance": "~21.000 lichtjaar",
     "taken": "Gepubliceerd 14 mrt 2023"
   },
   "hst-cosmic-reef": {
@@ -330,7 +330,7 @@
     "caption": "Geneste zandlopers van gas afgestoten door een stervende ster en haar begeleider.",
     "subject": "Nevel",
     "type": "Planetaire nevel",
-    "distance": "~7.000 lichtjaar",
+    "distance": "~15.000 lichtjaar",
     "taken": "2019 · Hubble 29e"
   },
   "hst-monkey-head": {
@@ -362,7 +362,7 @@
     "caption": "Een schoolboek-gestreepte spiraal, waarvan de armen rond een staaf van 200.000 lichtjaren winden.",
     "subject": "Sterrenstelsel",
     "type": "Gestreepte spiraalsterrenstelsel",
-    "distance": "~61 miljoen lichtjaren",
+    "distance": "~45 miljoen lichtjaar",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342 — een spiraalsterrenstelsel verborgen achter het stof van de Melkweg, onthuld door Euclid.",
     "subject": "Sterrenstelsel",
     "type": "Spiraalsterrenstelsel",
-    "distance": "~11 miljoen lichtjaar",
+    "distance": "~7,3 miljoen lichtjaar",
     "taken": "Gepubliceerd 2024"
   },
   "hst-v838": {

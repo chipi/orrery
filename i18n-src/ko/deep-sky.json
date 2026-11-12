@@ -28,7 +28,7 @@
     "caption": "독수리 성운(M16)의 차가운 가스와 먼지로 이루어진 탑으로, 새롭게 태어난 별들로부터 내부를 밝히고 있다.",
     "subject": "성운",
     "type": "방출 성운 / 별 생성 지역 (M16)",
-    "distance": "약 6,500광년",
+    "distance": "약 5,540광년",
     "taken": "2022년 10월 19일 공개"
   },
   "jwst-tarantula": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302 — 죽어가는 별이 내뿜은 20,000°C 이상으로 가열된 가스의 날개.",
     "subject": "성운",
     "type": "행성 성운(NGC 6302)",
-    "distance": "~3,400 광년",
+    "distance": "약 2,430광년",
     "taken": "2009년"
   },
   "hst-antennae": {
@@ -84,7 +84,7 @@
     "caption": "두 개의 은하(NGC 4038/4039)가 충돌하여 수십억 개의 새로운 별을 탄생시키고 있습니다.",
     "subject": "은하",
     "type": "충돌하는 은하",
-    "distance": "~4,500~6,500만 광년",
+    "distance": "약 6,900만 광년",
     "taken": "2006년"
   },
   "hst-bubble": {
@@ -92,7 +92,7 @@
     "caption": "NGC 7635 — 거대한 별의 맹렬한 바람에 의해 불어낸 7광년 크기의 버블.",
     "subject": "성운",
     "type": "방출 성운(NGC 7635)",
-    "distance": "~7,100 광년",
+    "distance": "약 9,130광년",
     "taken": "2016 · Hubble 26주년"
   },
   "hst-westerlund2": {
@@ -108,7 +108,7 @@
     "caption": "NGC 6543 — 지금까지 관측된 가장 복잡한 행성상 성운 중 하나입니다.",
     "subject": "성운",
     "type": "행성상 성운 (NGC 6543)",
-    "distance": "~3,300 광년",
+    "distance": "약 4,460광년",
     "taken": "2004년"
   },
   "hst-whirlpool": {
@@ -116,7 +116,7 @@
     "caption": "M51 — 전형적인 나선 은하로, 팔은 새로 태어난 별들로 인해 분홍색으로 빛나고 있습니다.",
     "subject": "은하",
     "type": "나선 은하 (M51)",
-    "distance": "약 3,100만 광년",
+    "distance": "약 2,700만 광년",
     "taken": "2005"
   },
   "hst-crab": {
@@ -129,7 +129,7 @@
   },
   "hst-veil": {
     "title": "베일 성운",
-    "caption": "Cygnus Loop의 한 가닥 — 10,000년이 지난 지금도 계속 확장하고 있는 초신성 폭발 충격파.",
+    "caption": "Cygnus Loop의 한 가닥 — 약 2만 년이 지난 지금도 계속 확장하고 있는 초신성 폭발 충격파.",
     "subject": "성운",
     "type": "초신성 잔해 · Cygnus Loop",
     "distance": "약 2,400광년",
@@ -148,7 +148,7 @@
     "caption": "NGC 2392 — 10,000년 전에 방출한 가스 껍질로 감싼 태양 같은 별.",
     "subject": "성운",
     "type": "행성상 성운(NGC 2392)",
-    "distance": "약 3,000광년",
+    "distance": "약 5,980광년",
     "taken": "2000"
   },
   "chandra-crab": {
@@ -263,7 +263,7 @@
   },
   "jwst-casa": {
     "title": "카시오페이아 A",
-    "caption": "은하에서 알려진 가장 젊은 초신성 잔해를 포착한 웹의 적외선 시야",
+    "caption": "은하에서 알려진 가장 젊은 초신성 잔해 가운데 하나를 포착한 웹의 적외선 시야",
     "subject": "초신성",
     "type": "초신성 잔해",
     "distance": "약 11,000광년",
@@ -274,7 +274,7 @@
     "caption": "먼 항성 생성 영역에 있는 7광년 높이의 차가운 기체 기둥.",
     "subject": "성운",
     "type": "방출 성운",
-    "distance": "약 2,700광년",
+    "distance": "약 2,280광년",
     "taken": "2002년 · ACS 최초 관측"
   },
   "hst-omega-centauri": {
@@ -314,7 +314,7 @@
     "caption": "초신성이 되기 직전 외부 층을 방출하는 희귀한 거대 별입니다.",
     "subject": "별",
     "type": "Wolf–Rayet 별",
-    "distance": "약 15,000광년",
+    "distance": "약 21,000광년",
     "taken": "2023년 3월 14일 공개"
   },
   "hst-cosmic-reef": {
@@ -330,7 +330,7 @@
     "caption": "죽어가는 별과 그 동반별이 방출한 모래시계 모양의 가스층입니다.",
     "subject": "성운",
     "type": "행성 성운",
-    "distance": "약 7,000광년",
+    "distance": "약 15,000광년",
     "taken": "2019 · Hubble 29주년"
   },
   "hst-monkey-head": {
@@ -362,7 +362,7 @@
     "caption": "교과서적인 막대 나선으로, 그 팔은 길이 20만 광년의 막대 주위에 감겨 있다.",
     "subject": "은하",
     "type": "막대 나선 은하",
-    "distance": "약 6,100만 광년",
+    "distance": "약 4,500만 광년",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342 — 은하수의 먼지 뒤에 숨은 나선은하를 Euclid가 드러냈다.",
     "subject": "은하",
     "type": "나선은하",
-    "distance": "약 1,100만 광년",
+    "distance": "약 730만 광년",
     "taken": "2024년 공개"
   },
   "hst-v838": {

@@ -36,6 +36,11 @@
             "enum": ["star-catalogue", "launch-catalogue", "exoplanet-catalogue", "deep-sky-catalogue", "constellation-figures", "model-reference", "other"]
           },
           "description": { "type": "string", "minLength": 1 },
+          "acknowledgement": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The wording the catalogue asks to be shown, verbatim and in English by convention (shown under the entry on /credits; not translated)."
+          },
           "source_url": { "type": "string", "format": "uri" },
           "license_short": { "type": "string", "minLength": 2 },
           "license_url": { "type": "string", "format": "uri" },

@@ -644,6 +644,7 @@
               {#if !d.references}<span class="d-catalog">{d.catalog}</span>{/if}
             </p>
             <p class="d-desc">{d.description}</p>
+            {#if d.acknowledgement}<p class="d-ack">{d.acknowledgement}</p>{/if}
             {#if d.references}
               <details class="d-refs">
                 <summary class="ui-hit"
@@ -871,6 +872,14 @@
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.78);
     margin: 0 0 6px;
+  }
+  .d-ack {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-text-label);
+    margin: 0 0 6px;
+    padding-left: 10px;
+    border-left: 2px solid var(--color-border);
   }
   .d-row {
     font-family: var(--font-mono, 'Space Mono', monospace);

@@ -19,5 +19,12 @@
   "models-ref-agencies": "宇宙機関とメーカーの公式ページ（Roscosmos、SpaceX、ユナイテッド・ローンチ・アライアンス、ボーイング、ノースロップ・グラマン、ファイアフライ、アリアンスペース、中国有人宇宙事業弁公室とCASC、米国宇宙軍）。ロケットと宇宙船モデルの機体寸法の出典です。",
   "models-ref-independent": "独立した宇宙飛行の資料と博物館のページ（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、スミソニアン国立航空宇宙博物館、シュパイヤー技術博物館など）。ソ連、スペースシャトル、Buran時代の機体の大きさの出典です。",
   "nasa-mmgis-rover-traverses": "Curiosity と Perseverance のローバーチームが公開した走行経路。火星表面ビューにソルと走行距離とともに描画します。",
-  "pds-mer-traverses": "Spirit と Opportunity の科学チームが公開した走行経路。火星表面ビューにソルと走行距離とともに描画します。"
+  "pds-mer-traverses": "Spirit と Opportunity の科学チームが公開した走行経路。火星表面ビューにソルと走行距離とともに描画します。",
+  "cds-simbad-vizier": "出典付きの各値のリンク先となる天体ページと、距離とV等級の根拠となるSIMBADおよびVizieRの表。",
+  "ned": "銀河の距離のリンク先となる銀河ページと、銀河の照合に使う名称と位置。",
+  "gaia-dpac": "星団と球状星団の距離の根拠となるGaiaの測定（Hunt & Reffert 2023、Baumgardt & Vasiliev 2021）。",
+  "open-cluster-catalogues": "Gaiaに基づくメシエ星団と星団星雲の距離。Hunt & Reffert 2023を優先し、Cantat-Gaudin et al. 2020は代替値として、また注記の別案として使用。",
+  "globular-cluster-catalogues": "球状星団の距離はBaumgardt & Vasiliev 2021、総合V等級はハリスのカタログによる（ハリス自身の距離は注記に残す）。",
+  "cosmicflows-4": "メシエ銀河とギャラリー銀河の距離はCosmicflows-4による。",
+  "mcconnachie-2012": "局所銀河群の銀河、およびマゼラン雲とM33内の星団・星雲の距離は、McConnachie 2012による。"
 }

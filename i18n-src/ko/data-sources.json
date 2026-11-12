@@ -19,5 +19,12 @@
   "models-ref-agencies": "우주 기관과 제작사의 공식 페이지(Roscosmos, SpaceX, 유나이티드 론치 얼라이언스, 보잉, 노스럽 그러먼, 파이어플라이, 아리안스페이스, 중국유인우주국과 CASC, 미국 우주군)로, 발사체와 우주선 모델의 기체 치수를 확인한 출처입니다.",
   "models-ref-independent": "독립적인 우주 비행 자료와 박물관 페이지(군터의 우주 페이지, Encyclopedia Astronautica, RussianSpaceWeb, 스미스소니언 국립항공우주박물관, 슈파이어 기술박물관 등)로, 소련·우주왕복선·Buran 시대 기체의 크기를 확인한 출처입니다.",
   "nasa-mmgis-rover-traverses": "Curiosity와 Perseverance 로버 팀이 공개한 주행 경로로, 화성 표면 보기에 솔과 주행 거리와 함께 그려집니다.",
-  "pds-mer-traverses": "Spirit와 Opportunity 과학 팀이 공개한 주행 경로로, 화성 표면 보기에 솔과 주행 거리와 함께 그려집니다."
+  "pds-mer-traverses": "Spirit와 Opportunity 과학 팀이 공개한 주행 경로로, 화성 표면 보기에 솔과 주행 거리와 함께 그려집니다.",
+  "cds-simbad-vizier": "출처가 있는 각 값이 연결되는 천체 페이지와, 거리와 V 등급의 바탕이 되는 SIMBAD 및 VizieR 표.",
+  "ned": "은하 거리가 연결되는 은하 페이지와, 은하를 대조하는 데 쓴 이름과 위치.",
+  "gaia-dpac": "성단과 구상 성단 거리의 바탕이 되는 가이아(Gaia) 측정값(Hunt & Reffert 2023, Baumgardt & Vasiliev 2021).",
+  "open-cluster-catalogues": "Gaia 자료에 따른 메시에 성단과 성단 성운의 거리: Hunt & Reffert 2023을 우선하고, Cantat-Gaudin et al. 2020은 대체값이자 주석의 대안으로 둡니다.",
+  "globular-cluster-catalogues": "구상 성단의 거리는 Baumgardt & Vasiliev 2021, 총 V 등급은 해리스 카탈로그에서 가져왔습니다(해리스 자신의 거리는 주석에 남겨 둡니다).",
+  "cosmicflows-4": "메시에 은하와 갤러리 은하의 거리는 Cosmicflows-4에서 가져왔습니다.",
+  "mcconnachie-2012": "국부 은하군 은하와 대소 마젤란 은하 및 M33 안의 성단·성운의 거리는 McConnachie 2012에서 가져왔습니다."
 }

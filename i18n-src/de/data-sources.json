@@ -19,5 +19,12 @@
   "models-ref-agencies": "Offizielle Seiten von Raumfahrtagenturen und Herstellern (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, die chinesische Agentur für bemannte Raumfahrt und CASC, die US Space Force), aus denen die Fahrzeugabmessungen für die Trägerraketen- und Raumfahrzeugmodelle stammen.",
   "models-ref-independent": "Unabhängige Raumfahrt-Nachschlagewerke und Museumsseiten (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, das Smithsonian National Air and Space Museum, das Technik Museum Speyer und andere), aus denen die Größen der sowjetischen, Shuttle- und Buran-Fahrzeuge stammen.",
   "nasa-mmgis-rover-traverses": "Die lokalisierten Fahrwege der Rover-Teams für Curiosity und Perseverance, auf der Mars-Oberflächenansicht mit Sols und Entfernungen gezeichnet.",
-  "pds-mer-traverses": "Die lokalisierten Fahrwege der Wissenschaftsteams für Spirit und Opportunity, auf der Mars-Oberflächenansicht mit Sols und Entfernungen gezeichnet."
+  "pds-mer-traverses": "Die lokalisierten Fahrwege der Wissenschaftsteams für Spirit und Opportunity, auf der Mars-Oberflächenansicht mit Sols und Entfernungen gezeichnet.",
+  "cds-simbad-vizier": "Die Objektseiten, auf die jeder belegte Wert verweist, und die SIMBAD- und VizieR-Tabellen hinter den Entfernungen und den V-Helligkeiten.",
+  "ned": "Die Galaxienseiten, auf die die Galaxienentfernungen verweisen, und die Namen und Positionen, mit denen Galaxien zugeordnet werden.",
+  "gaia-dpac": "Die Gaia-Messungen hinter den Entfernungen der Sternhaufen und Kugelsternhaufen (Hunt & Reffert 2023, Baumgardt & Vasiliev 2021).",
+  "open-cluster-catalogues": "Entfernungen der Messier-Sternhaufen und Haufennebel aus Gaia-Daten: Hunt & Reffert 2023, mit Cantat-Gaudin et al. 2020 als Ersatz und als Alternative in der Anmerkung.",
+  "globular-cluster-catalogues": "Entfernungen der Kugelsternhaufen nach Baumgardt & Vasiliev 2021 und ihre Gesamthelligkeiten in V aus Harris’ Katalog (seine eigene Entfernung steht in der Anmerkung).",
+  "cosmicflows-4": "Entfernungen der Messier- und Galerie-Galaxien nach Cosmicflows-4.",
+  "mcconnachie-2012": "Entfernungen der Galaxien der Lokalen Gruppe sowie der Haufen und Nebel in den Magellanschen Wolken und in M33 nach McConnachie 2012."
 }

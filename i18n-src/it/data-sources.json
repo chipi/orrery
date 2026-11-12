@@ -19,5 +19,12 @@
   "models-ref-agencies": "Pagine ufficiali di agenzie spaziali e costruttori (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, l’Agenzia cinese per i voli con equipaggio e CASC, la U.S. Space Force) che hanno fornito le dimensioni dei veicoli per i modelli di lanciatori e veicoli spaziali.",
   "models-ref-independent": "Riferimenti indipendenti sul volo spaziale e pagine di musei (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, lo Smithsonian National Air and Space Museum, il Technik Museum Speyer e altri) che hanno fornito le dimensioni dei veicoli sovietici, dello Shuttle e dell’era Buran.",
   "nasa-mmgis-rover-traverses": "I percorsi localizzati dei team dei rover Curiosity e Perseverance, disegnati sulla vista della superficie di Marte con i sol e le distanze.",
-  "pds-mer-traverses": "I percorsi localizzati dei team scientifici di Spirit e Opportunity, disegnati sulla vista della superficie di Marte con i sol e le distanze."
+  "pds-mer-traverses": "I percorsi localizzati dei team scientifici di Spirit e Opportunity, disegnati sulla vista della superficie di Marte con i sol e le distanze.",
+  "cds-simbad-vizier": "Le pagine degli oggetti a cui rimanda ogni valore con fonte, e le tabelle di SIMBAD e VizieR da cui vengono le distanze e le magnitudini V.",
+  "ned": "Le pagine delle galassie a cui rimandano le distanze delle galassie, e i nomi e le posizioni usati per riconoscerle.",
+  "gaia-dpac": "Le misure di Gaia alla base delle distanze degli ammassi stellari e degli ammassi globulari (Hunt & Reffert 2023, Baumgardt & Vasiliev 2021).",
+  "open-cluster-catalogues": "Distanze degli ammassi stellari e delle nebulose con ammasso di Messier da Gaia: Hunt & Reffert 2023, con Cantat-Gaudin et al. 2020 come riserva e come alternativa nella nota.",
+  "globular-cluster-catalogues": "Distanze degli ammassi globulari da Baumgardt & Vasiliev 2021 e magnitudini V totali dal catalogo di Harris (la sua distanza è conservata nella nota).",
+  "cosmicflows-4": "Distanze delle galassie di Messier e della galleria da Cosmicflows-4.",
+  "mcconnachie-2012": "Distanze delle galassie del Gruppo Locale, e degli ammassi e delle nebulose nelle Nubi di Magellano e in M33, da McConnachie 2012."
 }

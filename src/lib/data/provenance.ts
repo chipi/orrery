@@ -246,6 +246,8 @@ export interface DataSourceEntry {
   version?: string;
   category: string;
   description: string;
+  /** The catalogue's required acknowledgement, verbatim (English by convention). */
+  acknowledgement?: string;
   source_url: string;
   license_short: string;
   license_url: string;

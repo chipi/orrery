@@ -4,7 +4,7 @@
     "caption": "卡里娜星云（NGC 3324）边缘的恒星托儿所，被年轻恒星雕刻而成。",
     "subject": "星云",
     "type": "恒星形成区",
-    "distance": "约7,600光年",
+    "distance": "约7,900光年",
     "taken": "发布于2022年7月12日"
   },
   "jwst-southern-ring": {
@@ -36,7 +36,7 @@
     "caption": "30 Doradus — 我们银河系邻域中已知最活跃的星暴区。",
     "subject": "星云",
     "type": "恒星形成区（30 Dor）",
-    "distance": "约161,000光年",
+    "distance": "约162,000光年",
     "taken": "发布于2022年9月6日"
   },
   "jwst-cartwheel": {
@@ -68,7 +68,7 @@
     "caption": "卡里娜星云中的一根三光年高的柱状结构，摄自Hubble的20周年纪念影像。",
     "subject": "星云",
     "type": "恒星形成柱",
-    "distance": "约7,500光年",
+    "distance": "约7,700光年",
     "taken": "2010年·Hubble 20周年"
   },
   "hst-butterfly": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302——由濒死恒星抛出的气体翅膀，温度高达20,000°C以上。",
     "subject": "星云",
     "type": "行星状星云（NGC 6302）",
-    "distance": "约2,430光年",
+    "distance": "约3,800光年",
     "taken": "2009年"
   },
   "hst-antennae": {
@@ -163,7 +163,7 @@
     "caption": "第谷·布拉赫在1572年亲眼观测到爆炸的恒星的X射线壳层。",
     "subject": "超新星",
     "type": "超新星遗迹·X射线（SN 1572）",
-    "distance": "~10,000光年"
+    "distance": "~9,000光年"
   },
   "spitzer-helix": {
     "title": "螺旋星云（红外）",
@@ -258,7 +258,7 @@
     "caption": "50光年宽的全景图，展示银河系最大的恒星工厂之一。",
     "subject": "星云",
     "type": "恒星形成区",
-    "distance": "约7,500光年",
+    "distance": "约7,700光年",
     "taken": "2007年·Hubble 17周年"
   },
   "jwst-casa": {
@@ -282,7 +282,7 @@
     "caption": "天空中最明亮的球状星团——数百万颗恒星被重力束缚在一起。",
     "subject": "星团",
     "type": "球状星团",
-    "distance": "~17,000 光年",
+    "distance": "~18,000 光年",
     "taken": "2008 年"
   },
   "jwst-ngc1365": {
@@ -290,7 +290,7 @@
     "caption": "一个巨大的棒旋星系，其棒将气体导向一个贪婪的黑洞。",
     "subject": "星系",
     "type": "棒旋星系",
-    "distance": "~5,600 万光年",
+    "distance": "~6,100 万光年",
     "taken": "2023 年"
   },
   "hst-ngc602": {
@@ -306,7 +306,7 @@
     "caption": "距地球最近的恒星形成区，在众多年轻太阳的照耀下熠熠生辉——韦伯太空望远镜周年纪念图像。",
     "subject": "星云",
     "type": "恒星形成区",
-    "distance": "~430 光年",
+    "distance": "~450 光年",
     "taken": "发布于 2023 年 7 月 12 日"
   },
   "jwst-wr124": {
@@ -322,7 +322,7 @@
     "caption": "NGC 2014 和 NGC 2020——一片发光的氢气礁，摄自Hubble的30周年纪念影像。",
     "subject": "星云",
     "type": "发射星云",
-    "distance": "~163,000 光年",
+    "distance": "~162,000 光年",
     "taken": "2020年·Hubble 30周年"
   },
   "hst-hen2104": {
@@ -330,7 +330,7 @@
     "caption": "垂死恒星及其伴星抛出的嵌套沙漏形气体结构。",
     "subject": "星云",
     "type": "行星状星云",
-    "distance": "约15,000光年",
+    "distance": "约11,000光年",
     "taken": "2019年·Hubble 29周年"
   },
   "hst-monkey-head": {
@@ -359,10 +359,10 @@
   },
   "hst-ngc1300": {
     "title": "NGC 1300",
-    "caption": "一个教科书般的棒旋星系，其旋臂围绕着一个20万光年长的棒缠绕。",
+    "caption": "一个教科书般的棒旋星系，其旋臂连接着一条笔直恒星棒的两端。",
     "subject": "星系",
     "type": "棒旋星系",
-    "distance": "约4,500万光年",
+    "distance": "约6,200万光年",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342——一个隐藏在银河系尘埃后面的螺旋星系，由Euclid揭示。",
     "subject": "星系",
     "type": "螺旋星系",
-    "distance": "约730万光年",
+    "distance": "约1,100万光年",
     "taken": "发布于2024年"
   },
   "hst-v838": {

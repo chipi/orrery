@@ -4,7 +4,7 @@
     "caption": "A borda de um berço estelar na Nebulosa Carina (NGC 3324), esculpida por estrelas jovens.",
     "subject": "Nebulosa",
     "type": "Região de formação estelar",
-    "distance": "~7.600 anos-luz",
+    "distance": "~7.900 anos-luz",
     "taken": "Divulgada em 12 de julho de 2022"
   },
   "jwst-southern-ring": {
@@ -36,7 +36,7 @@
     "caption": "30 Doradus — a região de explosão estelar mais ativa conhecida em nossa vizinhança galáctica.",
     "subject": "Nebulosa",
     "type": "Região de formação estelar (30 Dor)",
-    "distance": "~161 mil anos-luz",
+    "distance": "~162 mil anos-luz",
     "taken": "Divulgado em 6 de setembro de 2022"
   },
   "jwst-cartwheel": {
@@ -68,7 +68,7 @@
     "caption": "Um pilar de três anos-luz na Nebulosa de Carina, do 20º aniversário do Hubble.",
     "subject": "Nebulosa",
     "type": "Coluna formadora de estrelas",
-    "distance": "~7.500 anos-luz",
+    "distance": "~7.700 anos-luz",
     "taken": "2010 · 20º aniversário do Hubble"
   },
   "hst-butterfly": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302 — asas de gás aquecido acima de 20.000°C, lançadas para fora por uma estrela em morte.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetária (NGC 6302)",
-    "distance": "~2.430 anos-luz",
+    "distance": "~3.800 anos-luz",
     "taken": "2009"
   },
   "hst-antennae": {
@@ -163,7 +163,7 @@
     "caption": "O invólucro de raio X de uma estrela que Tycho Brahe viu explodir em 1572.",
     "subject": "Supernova",
     "type": "Remanescente de supernova · raio X (SN 1572)",
-    "distance": "~10 mil anos-luz"
+    "distance": "~9 mil anos-luz"
   },
   "spitzer-helix": {
     "title": "Nebulosa Hélix (infravermelho)",
@@ -258,7 +258,7 @@
     "caption": "Um panorama de 50 anos-luz de largura de uma das maiores fábricas de estrelas da galáxia.",
     "subject": "Nebulosa",
     "type": "Região de formação estelar",
-    "distance": "~7.500 anos-luz",
+    "distance": "~7.700 anos-luz",
     "taken": "2007 · 17º aniversário do Hubble"
   },
   "jwst-casa": {
@@ -282,7 +282,7 @@
     "caption": "O aglomerado globular mais brilhante do céu — milhões de estrelas ligadas pela gravidade.",
     "subject": "Aglomerado",
     "type": "Aglomerado globular",
-    "distance": "~17 mil anos-luz",
+    "distance": "~18 mil anos-luz",
     "taken": "2008"
   },
   "jwst-ngc1365": {
@@ -290,7 +290,7 @@
     "caption": "Uma galáxia espiral barrada colossal, sua barra canalizando gás em direção a um buraco negro voraz.",
     "subject": "Galáxia",
     "type": "Galáxia espiral barrada",
-    "distance": "~56 milhões de anos-luz",
+    "distance": "~61 milhões de anos-luz",
     "taken": "2023"
   },
   "hst-ngc602": {
@@ -306,7 +306,7 @@
     "caption": "A região formadora de estrelas mais próxima da Terra, resplandecente com sóis jovens — imagem do primeiro aniversário do Webb.",
     "subject": "Nebulosa",
     "type": "Região formadora de estrelas",
-    "distance": "~430 anos-luz",
+    "distance": "~450 anos-luz",
     "taken": "Divulgada 12 jul 2023"
   },
   "jwst-wr124": {
@@ -322,7 +322,7 @@
     "caption": "NGC 2014 e NGC 2020 — um recife de hidrogênio brilhante, do 30º aniversário do Hubble.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emissão",
-    "distance": "~163.000 anos-luz",
+    "distance": "~162.000 anos-luz",
     "taken": "2020 · Hubble 30º"
   },
   "hst-hen2104": {
@@ -330,7 +330,7 @@
     "caption": "Ampulhetas aninhadas de gás lançado por uma estrela moribunda e sua companheira.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetária",
-    "distance": "~15.000 anos-luz",
+    "distance": "~11.000 anos-luz",
     "taken": "2019 · Hubble 29º"
   },
   "hst-monkey-head": {
@@ -359,10 +359,10 @@
   },
   "hst-ngc1300": {
     "title": "NGC 1300",
-    "caption": "Uma espiral com barra clássica, seus braços enrolados em torno de uma barra de 200 mil anos-luz.",
+    "caption": "Uma espiral com barra clássica, seus braços unidos às pontas de uma barra reta de estrelas.",
     "subject": "Galáxia",
     "type": "Galáxia espiral com barra",
-    "distance": "~45 milhões de anos-luz",
+    "distance": "~62 milhões de anos-luz",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342 — uma espiral oculta atrás da poeira da Via Láctea, revelada pelo Euclid.",
     "subject": "Galáxia",
     "type": "Galáxia espiral",
-    "distance": "~7,3 milhões de anos-luz",
+    "distance": "~11 milhões de anos-luz",
     "taken": "Divulgado em 2024"
   },
   "hst-v838": {

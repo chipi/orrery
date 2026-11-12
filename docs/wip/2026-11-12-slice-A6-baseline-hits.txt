@@ -1,0 +1,39 @@
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:872  .contrast-toggle -> min-width: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:873  .contrast-toggle -> min-height: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:905  .lens-toggle -> min-width: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:906  .lens-toggle -> min-height: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:983  .debug-toggle -> min-width: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:984  .debug-toggle -> min-height: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:1077  .audio-toggle -> min-width: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:1078  .audio-toggle -> min-height: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:1157  .menu-toggle -> min-width: 44px;
+N1-UNCONDITIONAL-44 src/lib/components/Nav.svelte:1158  .menu-toggle -> min-height: 44px;
+N2-RARE-TOGGLE-OUTSIDE-MENU src/lib/components/Nav.svelte:410  class="contrast-toggle"
+N2-RARE-TOGGLE-OUTSIDE-MENU src/lib/components/Nav.svelte:439  class="share-toggle"
+N2-RARE-TOGGLE-OUTSIDE-MENU src/lib/components/Nav.svelte:451  class="debug-toggle"
+N2-RARE-TOGGLE-OUTSIDE-MENU src/lib/components/Nav.svelte:563  class="contrast-toggle"
+N3-ENGLISH-ON-OFF src/lib/components/Nav.svelte:649  {debugMode.enabled ? 'On' : 'Off'}
+N4-RETIRED-BLUE src/lib/components/Nav.svelte:1099  color: rgba(150, 175, 255, 0.95);
+N4-RETIRED-BLUE src/lib/components/Nav.svelte:1105  color: #96afff;
+N4-RETIRED-BLUE src/lib/components/Nav.svelte:1112  border-color: rgba(150, 175, 255, 0.6);
+N5-TOKEN-VALUE src/lib/styles/tokens.css:72  --nav-bar-height: 60px; != 52px
+N5-TOKEN-LITERAL src/lib/styles/tokens.css:75  --nav-height: calc(60px + var(--safe-area-inset-top, env(safe-area-inset-top)));
+N6-LITERAL-NAV-HEIGHT src/lib/lab/Notebook.svelte:860  top: 60px;
+N6-LITERAL-NAV-HEIGHT src/lib/surface-scene/SurfaceScene.svelte:7082  top: 60px;
+N6-LITERAL-NAV-HEIGHT src/lib/components/launches/Timeline.svelte:56  top: 52px;
+N6-LITERAL-NAV-HEIGHT src/routes/science/glossary/+page.svelte:120  scroll-margin-top: 60px;
+N6-FALLBACK src/routes/explore/HudControls.svelte:645  max-height: calc(100vh - var(--nav-height, 60px) - 180px);
+N6-FALLBACK src/routes/explore/HudControls.svelte:825  max-height: calc(100vh - var(--nav-height, 60px) - 220px);
+N6-FALLBACK src/routes/programs/[id]/+page.svelte:577  top: calc(var(--nav-height, 64px) + 20px);
+N6-FALLBACK src/lib/components/EntityIndex.svelte:225  top: calc(var(--nav-height, 56px) + 56px);
+N6-FALLBACK src/lib/components/DebugPanel.svelte:551  top: calc(var(--nav-height, 64px) + 10px);
+N6-FALLBACK src/lib/components/DebugPanel.svelte:554  max-height: calc(100vh - var(--nav-height, 64px) - 24px);
+N6-FALLBACK src/lib/components/OrbitRuler.svelte:203  calc(100vh - var(--nav-height, 60px) - 140px),
+N6-FALLBACK src/lib/components/LaunchesBanner.svelte:163  scroll-margin-top: calc(var(--nav-height, 64px) + 12px);
+N6-FALLBACK src/lib/surface-scene/SurfaceScene.svelte:8116  top: calc(var(--nav-height, 64px) + 18px);
+N6-FALLBACK src/lib/surface-scene/SurfaceScene.svelte:8158  top: calc(var(--nav-height, 64px) + 8px);
+N7-DOC-ZINDEX AGENTS.md:765  Nav bar:        height 52px, z-index 20
+N7-DOC-ZINDEX docs/uxs/IA.md:179  **Nav bar** — `height: 52px`, `top: 0`, `left: 0`, `right: 0`. Present on all screens. Z-index 20. Contains wordmark, sc
+N8-MISSING-FILE tests/e2e/nav-controls.spec.ts  not created
+N8-MISSING-FILE docs/uxs/decisions/UXD-016-compact-nav-and-more-menu.md  not created
+A6-CHECK violations: 38

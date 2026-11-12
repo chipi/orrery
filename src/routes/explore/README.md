@@ -31,11 +31,15 @@ exoplanet host (server load `+page.server.ts` → `$lib/data/star-entity`; the h
 section of the page; back-links `/explore?goto=` or `?system=`; ids from `starPageIds()` in
 `scripts/site-routes.mjs`, ADR-096 items 13–14). `black-holes/[id]/` is one black hole (ADR-096
 item 16; server load → `$lib/data/black-hole-entity`; Gargantua carries a fiction badge and no
-figures; back-link `/explore?bh=`; ids from `blackHolePageIds()`). There is no list page: the
+figures; back-link `/explore?bh=`; ids from `blackHolePageIds()`). `deep-sky/[id]/` is one deep-sky
+object with reviewed text (ADR-096 item 17; server load → `$lib/data/deep-sky-entity`; ids from
+`deepSkyPageIds()`, the overlay files; the title is `deepSkyTitle`, the values the `format.ts`
+formatters the panel uses; back-link `/explore?deepsky=<id>`). One real object has one page: the
+Milky Way globular and Local Group rows of the same object link it (`DEEP_SKY_ALIAS`). There is no list page: the
 INDEX does that job. `+page.svelte` mounts one `ScaleIndex` per scale (`CTX_ORDER`), all hidden
 unless on screen, with one left-edge handle and one `indexOpen`; their rows are the server load's
 `scaleIndex` (`getScaleIndexRows` in `$lib/server/entity-index`, built by
-`$lib/explore/scale-index.ts`), so the prerendered HTML links every body, star and black-hole page
+`$lib/explore/scale-index.ts`), so the prerendered HTML links every body, star, black-hole and deep-sky page
 and a row with no page joins on hydration. A row's select is the scene host's select function for
 that scale (`selectLgFn` … `selectCosmicWebFn`, `indexSelectStarFn`, `selectDeepSkyFn`,
 `mwDeepLinkFn`, `bhDeepLinkFn`) or the page's `selectPlanet` / `selectSun` / `selectSmallBody` /

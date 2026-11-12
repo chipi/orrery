@@ -5781,17 +5781,18 @@
            Mobile uses the Index drawer tab above; both are gated by CSS so
            only one shows per device. Selecting keeps the list open on desktop
            (master → detail on the right) but closes the drawer on mobile. -->
-      <button
-        type="button"
-        class="surface-index-handle"
-        data-testid="surface-index-toggle"
-        aria-pressed={indexOpen}
-        aria-label={m.surface_index_open()}
-        title={m.surface_index_open()}
-        onclick={() => (indexOpen = !indexOpen)}
-      >
-        <span class="sih-label">{m.surface_index_open()}</span>
-      </button>
+      <div class="surface-index-handle">
+        <Chip
+          kind="toggle"
+          active={indexOpen}
+          data-testid="surface-index-toggle"
+          aria-label={m.surface_index_open()}
+          title={m.surface_index_open()}
+          onclick={() => (indexOpen = !indexOpen)}
+        >
+          {m.surface_index_open()}
+        </Chip>
+      </div>
       {#if indexOpen}
         <aside class="surface-index-desktop" aria-label={m.surface_index_aria()}>
           <SurfaceIndexPanel
@@ -7027,23 +7028,6 @@ sample      ${debugInfo.projectedPxSample}`}
     z-index: 44;
     writing-mode: vertical-rl;
     transform: translateY(-50%) rotate(180deg);
-    padding: 12px 6px;
-    background: rgba(8, 10, 22, 0.85);
-    border: 1px solid var(--color-border);
-    border-left: none;
-    border-radius: 0 6px 6px 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .surface-index-handle:hover,
-  .surface-index-handle[aria-pressed='true'] {
-    color: var(--color-state);
-    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .surface-index-desktop {
     display: block;

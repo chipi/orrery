@@ -30,12 +30,16 @@ if (vp) test.use({ viewport: { width: Number(vp[1]), height: Number(vp[2]) } });
 // Data colours, not chrome (operator decision 2026-11-12, palette review at the end): the /plan
 // heat-map scale, the microgravity axes legend, era bands and orbit-regime / agency / nation
 // identity dots whose colour comes from data.
+// Data colours reach the page as inline style bindings from data (a regime's --regime-color, a
+// fleet category's --accent, an era's --band-color, an agency badge's inline background-color);
+// UI colours come from the CSS tokens. So an element under an inline colour binding is data.
 const DATA_COLOUR = [
   '.color-bar',
   '.swatch-zenith',
   '[style*="--band-color"]',
-  '[data-agency-colour]',
-  '.regime-dot',
+  '[style*="--regime-color"]',
+  '[style*="--accent"]',
+  '[style*="background-color"]',
   '[data-art]',
   '.figure-art',
   'svg.figure-root',
@@ -346,7 +350,8 @@ test.describe('accent-colour detector self-check', () => {
       <p class="t">teal border</p><p class="ok">accent</p>
       <div class="lift"><a href="#">small accent link</a></div>
       <span class="swatch-zenith"></span></body></html>`);
-    const teal = (await tealColours(page)).map((o) => o.sel);
+    // One element per offender (a border reports once per side).
+    const teal = [...new Set((await tealColours(page)).map((o) => o.sel))];
     expect(teal).toEqual(['p.t']);
     const low = (await accentContrast(page)).map((o) => o.sel);
     expect(low).toContain('a');

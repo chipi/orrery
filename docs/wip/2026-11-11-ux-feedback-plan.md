@@ -538,3 +538,6 @@ Every item we deferred, with where it lands. Add to it whenever something is def
 | L26 | Layout risks from taller chips (30/44): Explore left column vs Orbit Ruler and time dock, time dock at 390 px, ScaleNav at 390 px in de/ar, 13-chip nation legend wrap, vertical pull tabs, agency logo chips, RTL arrow keys — check in the A4 sheets | A4 implementer NOT VERIFIED | during A4 |
 | L27 | ~~Visual baselines for A4~~ — done: 14 PNGs regenerated in Docker (`fc4a246d856`) | A4 | during A4 |
 | L28 | ~~Porkchop legend vs plot~~ — done: legend drawn from the plot ramp, prose + both Science Lens texts in 14 locales (`21aeec48817`) | A4 sheets | done |
+| L29 | Vehicle / Payload / Mission card blues in MissionPanel (private, pre-token) — move to tokens or keep | B1 brief O7 | L4 palette review |
+| L30 | /plan still carries the retired private blues `#1a33bb` / `#2244dd` (`routes/plan/+page.svelte` ~1879, ~1905) | B1 brief | with B1 (it drops `#1a33bb` from panel CTAs) |
+| L31 | Standalone-page `.cta` links (outside panels) are not on the A4 chip or the B1 action model | B1 brief | after B1 |

@@ -11,7 +11,8 @@ vi.mock('$lib/data/core', () => ({
 }));
 
 import { collectCanonicalRoutes } from '../../../scripts/site-routes.mjs';
-import { getEntityIndex, type EntityHub } from './entity-index';
+import { getEntityIndex, getScaleIndexRows, type EntityHub } from './entity-index';
+import { CTX_ORDER } from '$lib/explore/scale-shell-controller';
 
 const HUBS: EntityHub[] = ['missions', 'fleet', 'moon', 'mars', 'venus', 'explore'];
 
@@ -42,5 +43,31 @@ describe('getEntityIndex', () => {
     expect(ids).not.toContain('gargantua');
     expect(ids).not.toContain('sirius');
     expect(ids).not.toContain('trappist-1');
+  });
+});
+
+describe('getScaleIndexRows', () => {
+  it.each(['en-US', 'de'])(
+    '%s: rows for all eight scales, the pages linked once each',
+    async (locale) => {
+      const rows = await getScaleIndexRows(locale, fetch);
+      expect(Object.keys(rows)).toEqual([...CTX_ORDER]);
+      const linked = CTX_ORDER.flatMap((s) => rows[s].flatMap((r) => (r.href ? [r.href] : [])));
+      const pages = collectCanonicalRoutes().filter(
+        (r) => r.startsWith('/explore/') && r !== '/explore/hub',
+      );
+      expect([...linked].sort()).toEqual([...pages].sort());
+      expect(CTX_ORDER.reduce((n, s) => n + rows[s].length, 0)).toBe(344);
+    },
+  );
+
+  it('names a linked row as its entity page does', async () => {
+    const rows = await getScaleIndexRows('de', fetch);
+    const bodies = await getEntityIndex('explore', 'de', fetch);
+    for (const l of bodies)
+      expect(rows['solar-system'].find((r) => r.id === l.id)?.name, l.id).toBe(l.name);
+    expect(rows['solar-system'].find((r) => r.id === 'io')?.meta).toBe(
+      bodies.find((l) => l.id === 'jupiter')?.name,
+    );
   });
 });

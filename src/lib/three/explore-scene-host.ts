@@ -188,7 +188,6 @@ export interface ExploreSceneHostBridge {
   cosmicWebMembers: CosmicWebMember[];
   cosmicWebPanelOpen: boolean;
   crossingFlashId: number;
-  cultureObjectIds: Set<string>;
   deepSkyCultureDoors: LocalizedCultureDoor[];
   deepSkyGallery: DeepSkyImage[];
   deepSkyImmersed: boolean;
@@ -874,17 +873,14 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     nbLoading = true;
     try {
       const mod = await import('$lib/universe/neighborhood-scene');
-      const [shells, stars, constellations, exoSystems, deepSky, dsGallery, cultureIds] =
-        await Promise.all([
-          mod.loadNeighborhoodShells(fetch, base),
-          getNamedStars(fetch),
-          mod.loadConstellationLines(fetch, base),
-          getExoplanetSystems(fetch),
-          getDeepSkyObjects(fetch),
-          getDeepSkyGallery(fetch, getLocale()),
-          getCultureObjectIds(fetch),
-        ]);
-      bridge.cultureObjectIds = cultureIds;
+      const [shells, stars, constellations, exoSystems, deepSky, dsGallery] = await Promise.all([
+        mod.loadNeighborhoodShells(fetch, base),
+        getNamedStars(fetch),
+        mod.loadConstellationLines(fetch, base),
+        getExoplanetSystems(fetch),
+        getDeepSkyObjects(fetch),
+        getDeepSkyGallery(fetch, getLocale()),
+      ]);
       // Exoplanet hosts that aren't in the curated named-star catalog (dim /
       // telescope-only stars like TRAPPIST-1, TOI-700, Kepler-16, 51 Pegasi)
       // still carry a name + 3D position in the systems file — synthesize marker
@@ -4289,14 +4285,19 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     contextDeepLinkFn,
     exitLocalGroupFn,
     closeLgFn,
+    selectLgFn: selectLocalGroup,
     exitLocalSheetFn,
     closeLsFn,
+    selectLsFn: selectLocalSheet,
     exitVirgoFn,
     closeVirgoFn,
+    selectVirgoFn: selectVirgo,
     exitLaniakeaFn,
     closeLaniakeaFn,
+    selectLaniakeaFn: selectLaniakea,
     exitCosmicWebFn,
     closeCosmicWebFn,
+    selectCosmicWebFn: selectCosmicWeb,
     exitBlackHoleFn,
     bhDeepLinkFn,
     setBhCurvatureFn,

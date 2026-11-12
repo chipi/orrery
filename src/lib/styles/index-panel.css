@@ -1,0 +1,242 @@
+/* The INDEX of an /explore scale (UXD-017): the left-edge handle, the side panel, its search,
+   filter chips, count and rows. One look for all eight scales; ScaleIndex.svelte is the markup
+   and src/routes/explore/+page.svelte mounts the handle. The filter chips are <Chip>s
+   (chip.css). Rows are buttons (select) with a trailing ↗ link when the object has a page. */
+
+/* A pull-out tab on the left edge at every viewport, vertically centred away from the
+   top-left controls (the /iss and /tiangong module handles sit there too). */
+.scale-index-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 44;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Starts under the HUD chip row, which wraps on narrow windows: ScaleIndex publishes the
+   measured bottom as --index-top; nothing on touch, where the HUD is hidden. */
+.scale-index {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 12px;
+  top: var(--index-top, 152px);
+  bottom: 12px;
+  z-index: 45;
+  width: min(320px, calc(100vw - 24px));
+  min-height: 0;
+  padding: 12px;
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  color: var(--color-text);
+}
+.scale-index[hidden] {
+  display: none;
+}
+
+.si-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.si-input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 12px;
+}
+.si-input:focus-visible {
+  outline: none;
+  border-color: var(--color-accent-strong);
+}
+.si-close {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-dim);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.si-top ~ .si-filter-row {
+  margin-bottom: 8px;
+}
+.si-count {
+  margin-bottom: 4px;
+  font-size: var(--size-label);
+  letter-spacing: 0.5px;
+  color: var(--color-text-dim);
+}
+.si-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* A short window (a phone held sideways): from 152 px down there is no room left for rows once
+   the search and the 44 px filter chips are in, so the panel starts under the nav, keeps at least
+   three rows and scrolls as a whole. */
+@media (max-height: 500px) {
+  .scale-index {
+    top: calc(var(--nav-height) + 8px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .si-list {
+    flex: none;
+    min-height: 132px;
+    overflow-y: visible;
+  }
+}
+
+.si-item {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
+.si-item .si-row {
+  flex: 1;
+  min-width: 0;
+}
+.si-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 10px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.si-row:hover,
+.si-row:focus-visible {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  outline: none;
+}
+.si-row.selected {
+  background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+/* Fiction is not an object of the universe: dashed and muted, as on its page. */
+.si-row--fiction {
+  border-style: dashed;
+  border-color: var(--color-chip-edge);
+  color: var(--color-text-dim);
+}
+
+/* The trailing ↗ to the object's page: 44 px on touch, 30 px on a fine pointer. */
+.si-page {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--color-text-dim);
+  text-decoration: none;
+  font-size: 14px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .si-page {
+    min-width: 30px;
+    min-height: 0;
+  }
+}
+.si-page:hover,
+.si-page:focus-visible {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  color: var(--color-text);
+  outline: none;
+}
+
+/* The lead slot: a body's colour dot or the row's badges, one width so names line up. */
+.si-lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex: none;
+  width: 26px;
+  font-size: 11px;
+}
+.si-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b0b0bd;
+}
+.si-badge--system {
+  color: var(--color-state);
+}
+.si-badge--culture {
+  color: #d3a4ff;
+}
+.si-badge--headliner {
+  color: var(--color-gold);
+}
+.si-badge--black-hole {
+  color: #f0a35e;
+}
+.si-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+.si-meta {
+  flex: 0 1 auto;
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--size-label);
+  color: var(--color-state);
+}
+.si-section {
+  margin-top: 6px;
+  padding: 10px 10px 4px;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+.si-section:first-child {
+  margin-top: 0;
+  border-top: 0;
+}
+.si-empty {
+  padding: 16px 8px;
+  list-style: none;
+  color: var(--color-text-dim);
+  font-size: 11px;
+  text-align: center;
+}

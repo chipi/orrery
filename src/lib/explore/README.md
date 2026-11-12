@@ -6,6 +6,8 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
 
 - `scale-shell-controller.ts` — shell ladder + the `?id=` body resolver.
 - `small-bodies.ts` — the solar-system small-body catalogue + orbit sampling.
+- `scale-index.ts` — the INDEX of the eight scales: the row model, `buildScaleIndexRows` (server-side),
+  the chips of each scale and the search / section helpers (UXD-017).
 - `paths-legend.ts` — PATHS layer rows, iconic taglines, interstellar craft.
 - `format.ts` — HUD formatters (scale numbers, light units, context names,
   star colours, satellite sizes, time dilation).

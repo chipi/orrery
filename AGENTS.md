@@ -720,7 +720,7 @@ Accent blue:   #5070ff   --color-accent, the one UI accent: links, active states
                          HUD values, glyphs (UX A3, docs/uxs/decisions/UXD-001-ui-accent-blue-replaces-teal.md)
 Muted blue:    #889fe7   --color-state: annotation rings, hover, status; also the colour for
                          small text (< 14px bold / < 18px) on a lifted card (D is 4.37:1 there)
-Success green: #2dd4a8   --color-ok (a state, not an accent)
+Success green: #4ade80   --color-ok (a state, not an accent; hue 142, never teal)
 No teal or cyan in the UI. Lab art, science diagrams and data colours (orbit regimes, agency /
 nation identity, era bands, star colours, axes, the /plan heat map) keep their own and carry
 `a3-keep: <why>`. No page or component writes its own accent colour: use the tokens

@@ -30,12 +30,12 @@ describe('accent tokens (UX A3)', () => {
     for (const name of ['teal', 'tier-intro']) expect(css).not.toContain(`--color-${name}`);
   });
 
-  it('keeps the UI blues outside the teal hue band and defines --color-ok', () => {
-    for (const name of ['color-accent', 'color-accent-hover', 'color-state', 'color-focus']) {
+  it('keeps the UI blues and the ok green outside the teal hue band', () => {
+    for (const name of ['color-accent', 'color-accent-hover', 'color-state', 'color-focus', 'color-ok']) {
       const h = hue(token(name)!);
       expect(h < 155 || h > 200, `${name} hue ${h}`).toBe(true);
     }
-    expect(token('color-ok')).toBe('#2dd4a8');
+    expect(token('color-ok')).toBe('#4ade80');
   });
 
   it('tints derive from the accent (80,112,255)', () => {

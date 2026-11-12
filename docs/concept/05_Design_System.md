@@ -46,7 +46,7 @@ Every pattern here was arrived at through iteration, not specification upfront. 
 | `border-active` | `rgba(255, 255, 255, 0.18)` | Hover state borders |
 | `accent` (`--color-accent`) | `#5070ff` / `rgba(80, 112, 255)` | The one UI accent (UX A3, UXD-001). Links, selection, active states, chips, HUD values, mission arc. Tints: `--color-accent-soft/-edge/-strong` (0.12 / 0.35 / 0.7); hover and focus `#8aa0ff` |
 | `state` (`--color-state`) | `#889fe7` | Annotation rings, hover, status; the colour for small text on a lifted card |
-| `ok` (`--color-ok`) | `#2dd4a8` | Success and confirmation states (a green, not an accent) |
+| `ok` (`--color-ok`) | `#4ade80` | Success and confirmation states (a green, not an accent) |
 | `text-primary` | `#ffffff` | Primary text, selected labels |
 | `text-secondary` | `rgba(255, 255, 255, 0.55–0.65)` | Body text, descriptions |
 | `text-dim` | `rgba(255, 255, 255, 0.25–0.35)` | Labels, metadata |

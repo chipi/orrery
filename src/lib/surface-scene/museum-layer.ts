@@ -14,7 +14,7 @@ import { buildMuseumModel } from '$lib/earth-place-models';
 import { hideFromCamera } from '$lib/surface-scene/surface-markers';
 
 export const MUSEUM_PIN_COLOR = '#ffc850';
-export const OBSERVATORY_PIN_COLOR = '#7fe0ff';
+export const OBSERVATORY_PIN_COLOR = '#8aa0ff';
 /** Markers sit at the visual weight of the lander and launchpad markers. */
 const PLACE_MARKER_SCALE = 0.55;
 

@@ -57,7 +57,7 @@ export interface AtmosphereConfig {
  * Lens layer mechanism (ADR-055).
  */
 export interface TidalLockOverlayConfig {
-  /** Hex color, e.g. `0x4ecdc4` (teal) */
+  /** Hex color, e.g. `0x5070ff` (accent blue) */
   color: number;
   /** Opacity (0..1), typically 0.18 */
   opacity: number;

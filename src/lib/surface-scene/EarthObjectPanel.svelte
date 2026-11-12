@@ -508,7 +508,7 @@
   .scale-fact {
     margin: 0 0 14px;
     padding: 10px 12px;
-    border-left: 3px solid var(--accent, #4466ff);
+    border-left: 3px solid var(--accent, var(--color-accent));
     background: rgba(255, 255, 255, 0.02);
     border-radius: 2px;
     font-size: var(--size-meta);
@@ -520,8 +520,8 @@
     display: inline-block;
     margin: 4px 0 10px;
     padding: 8px 12px;
-    background: rgba(68, 102, 255, 0.18);
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: #fff;
     text-decoration: none;
     border-radius: 3px;
@@ -533,8 +533,8 @@
   }
   .mission-link:hover,
   .mission-link:focus-visible {
-    background: rgba(68, 102, 255, 0.32);
-    border-color: #4466ff;
+    background: var(--color-accent-edge);
+    border-color: var(--color-accent);
     outline: none;
   }
   .credit {
@@ -568,7 +568,7 @@
   }
   .related-orbital-concepts a:hover,
   .related-orbital-concepts a:focus-visible {
-    color: rgba(120, 220, 200, 0.95);
+    color: var(--color-accent);
     outline: none;
   }
   /* Detail-panel tabs / gallery / learn / lightbox CSS in src/lib/styles/panel-tabs.css (v0.1.10) */

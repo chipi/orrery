@@ -3299,7 +3299,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       const isSel = bridge.selectedId === p.id;
       ctx2.beginPath();
       ctx2.arc(0, 0, p.orbitR, 0, Math.PI * 2);
-      ctx2.strokeStyle = isSel ? 'rgba(68,102,255,0.55)' : 'rgba(255,255,255,0.18)';
+      ctx2.strokeStyle = isSel ? 'rgba(80,112,255,0.55)' : 'rgba(255,255,255,0.18)';
       ctx2.lineWidth = isSel ? 1.5 : 1;
       ctx2.stroke();
     });
@@ -3307,7 +3307,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // Mission overlay arc (Theme A.A1) — drawn after orbit rings
     // but before planets so the arc sits behind the planet dots.
     if (bridge.overlayArcPx.length > 1 && bridge.overlayMission) {
-      const accent = bridge.overlayMission.color || '#4ecdc4';
+      const accent = bridge.overlayMission.color || '#5070ff';
       ctx2.save();
       ctx2.beginPath();
       ctx2.moveTo(bridge.overlayArcPx[0].x, bridge.overlayArcPx[0].z);
@@ -3319,9 +3319,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ctx2.shadowColor = accent;
       ctx2.shadowBlur = 6;
       ctx2.stroke();
-      // Departure node (teal) + arrival node (gold) per UXS-001 §Extension.
+      // Departure node (accent blue) + arrival node (gold) per UXS-001 §Extension.
       ctx2.shadowBlur = 4;
-      ctx2.fillStyle = '#4ecdc4';
+      ctx2.fillStyle = '#5070ff';
       ctx2.beginPath();
       ctx2.arc(bridge.overlayArcPx[0].x, bridge.overlayArcPx[0].z, 4, 0, Math.PI * 2);
       ctx2.fill();
@@ -3353,7 +3353,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         ctx2.strokeStyle = 'rgba(255,136,102,0.45)';
         ctx2.lineWidth = 0.8;
       } else {
-        ctx2.strokeStyle = b.type === 'comet' ? 'rgba(136,221,255,0.18)' : 'rgba(200,180,140,0.14)';
+        ctx2.strokeStyle = b.type === 'comet' ? 'rgba(136,221,255,0.18)' : 'rgba(200,180,140,0.14)'; // a3-keep: comet tail tint (science), palette review at the end
         ctx2.lineWidth = 0.6;
         ctx2.setLineDash([3, 6]);
         ctx2.closePath();
@@ -3440,7 +3440,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
           const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
           ctx2.beginPath();
           ctx2.arc(px, py, pr + 10 + pulse * 3, 0, Math.PI * 2);
-          ctx2.strokeStyle = `rgba(68,102,255,${0.55 + pulse * 0.3})`;
+          ctx2.strokeStyle = `rgba(80,112,255,${0.55 + pulse * 0.3})`;
           ctx2.lineWidth = 1.5;
           ctx2.stroke();
         }
@@ -3487,8 +3487,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
           sg.addColorStop(0, '#f0e0a0');
           sg.addColorStop(1, '#9a7820');
         } else if (p.id === 'uranus') {
-          sg.addColorStop(0, '#a8f0f0');
-          sg.addColorStop(1, '#207878');
+          sg.addColorStop(0, '#a8f0f0'); // a3-keep: Uranus colour, palette review at the end
+          sg.addColorStop(1, '#207878'); // a3-keep: Uranus colour, palette review at the end
         } else if (p.id === 'neptune') {
           sg.addColorStop(0, '#6080d8');
           sg.addColorStop(1, '#101858');

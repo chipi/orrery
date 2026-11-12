@@ -47,7 +47,7 @@ interface SurfaceSceneConfig {
 
   // Tidal-lock overlay — Moon only (tidally locked to Earth)
   tidalLockOverlay?: {
-    color: number;                // 0x4ecdc4 (teal)
+    color: number;                // 0x5070ff (accent blue)
     opacity: number;              // 0.18
   };
 

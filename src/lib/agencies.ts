@@ -219,7 +219,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'Intuitive Machines',
     full: 'Intuitive Machines',
     logo: 'intuitive-machines.svg',
-    color: '#00A3E0',
+    color: '#00A3E0', // a3-keep: agency identity colour, palette review at the end
     aliases: ['intuitive machines', 'intuitive-machines'],
   },
   {
@@ -285,7 +285,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'Planet Labs',
     full: 'Planet Labs PBC',
     logo: 'planet-labs.svg',
-    color: '#1B9E77',
+    color: '#1B9E77', // a3-keep: agency identity colour, palette review at the end
     aliases: ['planet labs', 'planet-labs', 'planet labs pbc'],
   },
 

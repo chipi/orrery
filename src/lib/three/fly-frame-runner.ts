@@ -642,7 +642,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       return;
     }
 
-    drawSplit(bridge.outPts, Math.min(1, sc.progress / 0.5), '#4466ff', 'rgba(68,102,255,0.2)');
+    drawSplit(bridge.outPts, Math.min(1, sc.progress / 0.5), '#5070ff', 'rgba(80,112,255,0.2)');
     drawSplit(
       bridge.retPts,
       Math.max(0, (sc.progress - 0.5) / 0.5),

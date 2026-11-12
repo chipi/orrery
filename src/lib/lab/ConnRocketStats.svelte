@@ -94,21 +94,21 @@
     gap: 0.5rem;
     text-decoration: none;
     padding: 0.3rem 0.45rem;
-    border: 1px solid rgba(78, 205, 196, 0.16);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 16%, transparent);
     border-radius: 6px;
     background: rgba(4, 4, 12, 0.35);
   }
   .crs__link:hover {
-    border-color: rgba(78, 205, 196, 0.45);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
   }
   /* Link affordance (UX review: the rows read as an inert table — no one taps). */
   .crs__name {
     text-decoration: underline;
-    text-decoration-color: rgba(78, 205, 196, 0.5);
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     text-underline-offset: 3px;
   }
   .crs__go {
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     font-size: 0.8rem;
     flex: 0 0 auto;
     margin-left: 0.35rem;

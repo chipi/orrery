@@ -44,6 +44,17 @@
      * panels that carry a card; the bar shows the chip only when it is set.
      */
     onShare?: () => void;
+    /**
+     * A card stacked on this one (a mission opened in place over a body panel). The bar then
+     * shows the back chip, and it returns to the card underneath. Without it the back chip
+     * follows the ?id= card chain.
+     */
+    onBack?: () => void;
+    /**
+     * Another panel is open over this one and covers it. It stays mounted (its tab and scroll
+     * come back with it) but is not painted, not focusable and not read out, and Escape leaves it.
+     */
+    covered?: boolean;
     children?: Snippet;
   };
   let {
@@ -54,6 +65,8 @@
     zIndex = 30,
     mobileSheet = 'full',
     onShare,
+    onBack,
+    covered = false,
     children,
   }: Props = $props();
 
@@ -72,7 +85,7 @@
 
     // Escape-to-close is always wired, independent of focus management.
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape' && !covered) onClose();
     };
     window.addEventListener('keydown', handler);
 
@@ -180,6 +193,8 @@
     class="panel"
     class:partial-sheet={mobileSheet === 'partial'}
     class:tour-docked={tourDocked}
+    class:covered
+    inert={covered}
     bind:this={panelEl}
     tabindex="-1"
     aria-label={title ?? m.panel_default_label()}
@@ -203,11 +218,11 @@
          consumer gets the same controls without re-implementing them. Share shows when the
          host passes onShare (the entity has a collectible card). -->
     <div class="panel-bar" bind:this={barEl}>
-      {#if canGoBack}
+      {#if onBack || canGoBack}
         <Chip
           kind="action"
           class="panel-back"
-          onclick={goBackCard}
+          onclick={onBack ?? goBackCard}
           aria-label={m.panel_back()}
           data-audio-stage="panel-back">←</Chip
         >
@@ -246,6 +261,9 @@
   }
   .panel.tour-docked {
     --panel-dock-h: 64px;
+  }
+  .panel.covered {
+    visibility: hidden;
   }
 
   /* Right side drawer — pointer/desktop AND touch-landscape. A wide landscape

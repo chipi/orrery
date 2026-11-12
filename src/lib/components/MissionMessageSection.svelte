@@ -11,7 +11,12 @@
   import * as m from '$lib/paraglide/messages';
   import type { InterstellarCraft } from '$lib/data/interstellar';
 
-  let { craft }: { craft: InterstellarCraft } = $props();
+  // `craft` is null while its trajectory and culture doors load: the section then holds its place
+  // with the parts that are static (the heading, the signal text, the label and the no-message
+  // line) and blocks for the rest, so the overview below it does not jump when the data lands.
+  let { craft = null, craftId = '' }: { craft?: InterstellarCraft | null; craftId?: string } =
+    $props();
+  const id = $derived(craft?.id ?? craftId);
 
   // Per-craft heading prose lives in message keys (translatable), not the
   // trajectory JSON. Resolve by id; the 3D direction label uses heading.star.
@@ -22,21 +27,34 @@
     'pioneer-11': m.explore_heading_pioneer_11,
     'new-horizons': m.explore_heading_new_horizons,
   };
-  let headingText = $derived(HEADING_KEY[craft.id]?.() ?? '');
-  let signalHours = $derived(craft.signalLightHours.toFixed(1));
+  // The five craft's trajectory files all carry a distance and an interstellar-since line, and
+  // only Voyager and Pioneer carry a message (New Horizons says it has none).
+  const CARRIES_MESSAGE = new Set(['voyager-1', 'voyager-2', 'pioneer-10', 'pioneer-11']);
+  let headingText = $derived(HEADING_KEY[id]?.() ?? '');
+  let signalHours = $derived(craft ? craft.signalLightHours.toFixed(1) : '0.0');
 </script>
 
-<div class="message" data-testid="mission-message-section" data-craft={craft.id}>
+<div
+  class="message"
+  data-testid={craft ? 'mission-message-section' : 'mission-message-placeholder'}
+  data-craft={id}
+  aria-busy={craft ? undefined : 'true'}
+>
   <ul class="status">
-    <li>
-      <span class="dot d-dist" aria-hidden="true"></span>
-      <span>{craft.currentDistanceLabel}</span>
-    </li>
-    {#if craft.interstellarSinceLabel}
+    {#if craft}
       <li>
-        <span class="dot d-inter" aria-hidden="true"></span>
-        <span>{craft.interstellarSinceLabel}</span>
+        <span class="dot d-dist" aria-hidden="true"></span>
+        <span>{craft.currentDistanceLabel}</span>
       </li>
+      {#if craft.interstellarSinceLabel}
+        <li>
+          <span class="dot d-inter" aria-hidden="true"></span>
+          <span>{craft.interstellarSinceLabel}</span>
+        </li>
+      {/if}
+    {:else}
+      <li class="ph-line"></li>
+      <li class="ph-line"></li>
     {/if}
   </ul>
 
@@ -54,10 +72,12 @@
 
   <section class="block">
     <h3 class="block-h">{m.explore_msg_carries_label()}</h3>
-    {#if craft.doors.length > 0}
+    {#if craft && craft.doors.length > 0}
       {#each craft.doors as door (door.id)}
         <CultureDoorCard {door} />
       {/each}
+    {:else if !craft && CARRIES_MESSAGE.has(id)}
+      <div class="ph-door"></div>
     {:else}
       <p class="body muted">{m.explore_msg_no_message()}</p>
     {/if}
@@ -129,5 +149,14 @@
   }
   .muted {
     color: var(--color-text-label);
+  }
+  /* The place of what is still loading: one status line (the line height of .status li) and a
+     culture-door card (padding, head, meta, a four-line blurb, two links). */
+  .ph-line {
+    min-block-size: calc(0.82rem * 1.45);
+  }
+  .ph-door {
+    min-block-size: 13.5rem;
+    margin: 0 0 10px;
   }
 </style>

@@ -57,8 +57,10 @@
     open: boolean;
     onClose: () => void;
     onFly?: (id: string) => void;
+    /** Set when the mission was opened over a body panel: the bar's back chip returns to it. */
+    onBack?: () => void;
   };
-  let { mission, open, onClose, onFly }: Props = $props();
+  let { mission, open, onClose, onFly, onBack }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -103,6 +105,9 @@
   // The message an outbound craft carries (Voyagers, Pioneers, New Horizons), a section of the
   // overview.
   let craft = $state<InterstellarCraft | null>(null);
+  // True from the open of one of the five craft until its message is read: the section holds its
+  // place (MissionMessageSection with no craft) instead of being inserted late.
+  let craftPending = $state(false);
 
   // Cross-links to fleet entries. Wired from mission.fleet_refs (Phase
   // 3 backfill). When present, the vehicle / payload spec cells render
@@ -133,6 +138,7 @@
       crossSite = null;
       crossSitePending = false;
       craft = null;
+      craftPending = INTERSTELLAR_CRAFT.has(mission.id);
       // Popularity signal: a mission detail was opened. `open` gates it so
       // a prefetched/derived mission that never shows isn't counted.
       if (open) trackMissionView(mission.id, page.url.pathname);
@@ -193,7 +199,10 @@
           .then((c) => {
             if (mission && mission.id === forId && lastId === forId) craft = c;
           })
-          .catch(dataLoadFailed);
+          .catch(dataLoadFailed)
+          .finally(() => {
+            if (lastId === forId) craftPending = false;
+          });
       }
     }
   });
@@ -338,6 +347,7 @@
   grabFocus={false}
   title={mission?.name ?? mission?.id ?? ''}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
+  {onBack}
 >
   {#if mission}
     <div class="head">
@@ -372,7 +382,11 @@
            stay PLANNED / CANCELLED, and a host route wired onFly. (2026-06-17 user correction:
            iconic missions without flight-params data skip it instead of linking into a broken
            /fly sim.) While the surface site is still being read the row only holds its place. -->
-      <div class="action-slot" class:reserved={crossSitePending}>
+      <div
+        class="action-slot"
+        class:reserved={crossSitePending}
+        class:withhold={crossSitePending && !canFly}
+      >
         {#if !crossSitePending}
           <PanelActions>
             {#if crossSite}
@@ -586,6 +600,8 @@
 
         {#if craft}
           <MissionMessageSection {craft} />
+        {:else if craftPending}
+          <MissionMessageSection craftId={mission.id} />
         {/if}
 
         {#if hasTrajectory(mission.id)}
@@ -1099,6 +1115,12 @@
      30 px on a fine pointer) plus the row's 12 px margin. */
   .action-slot.reserved {
     min-block-size: calc(44px + 12px);
+  }
+  /* A mission that cannot fly has no chip to show if its site list turns up nothing, so the row
+     then leaves and everything below it moves up. Until the list is read, that part is laid out
+     but not painted: the move happens while it cannot be seen. */
+  .action-slot.withhold ~ :global(*) {
+    visibility: hidden;
   }
   @media (hover: hover) and (pointer: fine) {
     .action-slot.reserved {

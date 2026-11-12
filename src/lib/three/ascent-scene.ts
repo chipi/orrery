@@ -124,7 +124,7 @@ export const FORCE_COLORS = {
   thrust: 0x54e08a,
   weight: 0xff5a5a,
   drag: 0x5aa0ff,
-  velocity: 0x7fe0ff,
+  velocity: 0x8aa0ff,
 } as const;
 
 /** Generic payload for the ~110 missions without a dedicated model — a small
@@ -914,7 +914,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   arrThrust.setLabel('THRUST', '#8fe8b0');
   arrWeight.setLabel('WEIGHT', '#ffb3b3');
   arrDrag.setLabel('DRAG', '#a8c8ff');
-  arrVel.setLabel('VELOCITY', '#bfeaff');
+  arrVel.setLabel('VELOCITY', '#c4d0ff');
   forces.add(arrThrust, arrWeight, arrDrag, arrVel);
   scene.add(forces);
   let showForces = false;

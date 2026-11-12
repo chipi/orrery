@@ -106,7 +106,7 @@ export function buildHelioReactiveOverlays(deps: HelioReactiveDeps): HelioReacti
     new THREE.Vector3(1, 0, 0),
     new THREE.Vector3(0, 0, 0),
     8,
-    0x4ecdc4,
+    0x8aa0ff,
     1.4,
     0.8,
   );
@@ -118,7 +118,7 @@ export function buildHelioReactiveOverlays(deps: HelioReactiveDeps): HelioReacti
     1.4,
     0.8,
   );
-  velocityArrow.setLabel('VELOCITY', '#bfeaff');
+  velocityArrow.setLabel('VELOCITY', '#c4d0ff');
   centripetalArrow.setLabel('CENTRIPETAL', '#ffb3b3');
   velocityArrow.userData.layerKey = 'velocity';
   centripetalArrow.userData.layerKey = 'centripetal';

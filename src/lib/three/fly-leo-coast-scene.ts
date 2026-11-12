@@ -184,7 +184,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   // gravity + inward centripetal arrows sit alongside each other to show they
   // coincide. Colors match the ascent/descent force legend (weight=red,
   // velocity=cyan) with a distinct gold centripetal.
-  const COAST_FORCE_COLORS = { weight: 0xff5a5a, velocity: 0x7fe0ff, centripetal: 0xffc850 };
+  const COAST_FORCE_COLORS = { weight: 0xff5a5a, velocity: 0x8aa0ff, centripetal: 0xffc850 };
   // Length is set per-frame from the camera distance so the arrows hold a
   // constant on-screen size (~11% of the view) instead of a fixed world size
   // that balloons on the close TRACK shots — construct at a placeholder.
@@ -194,7 +194,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   const arrVel = mkArrow(COAST_FORCE_COLORS.velocity);
   const arrCentripetal = mkArrow(COAST_FORCE_COLORS.centripetal);
   arrWeight.setLabel('GRAVITY', '#ffb3b3');
-  arrVel.setLabel('VELOCITY', '#bfeaff');
+  arrVel.setLabel('VELOCITY', '#c4d0ff');
   arrCentripetal.setLabel('CENTRIPETAL', '#ffdf9a');
   arrWeight.visible = false;
   arrVel.visible = false;
@@ -212,7 +212,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   // reads as a crisp trail on the rotating Earth.
   const track = new THREE.Line(
     trackGeo,
-    new THREE.LineBasicMaterial({ color: 0x9fe0ff, transparent: true, opacity: 1 }),
+    new THREE.LineBasicMaterial({ color: 0x8aa0ff, transparent: true, opacity: 1 }),
   );
   trackGeo.setDrawRange(0, 0);
   scene.add(track);

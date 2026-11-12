@@ -299,11 +299,11 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     new THREE.Vector3(1, 0, 0),
     new THREE.Vector3(0, 0, 0),
     ARROW_LEN,
-    0x4ecdc4,
+    0x8aa0ff,
     ARROW_HEAD_LEN,
     ARROW_HEAD_W,
   );
-  velocity.setLabel('VELOCITY', '#bfeaff');
+  velocity.setLabel('VELOCITY', '#c4d0ff');
   velocity.visible = false;
   scene.add(velocity);
 

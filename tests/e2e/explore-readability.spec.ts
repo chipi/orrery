@@ -172,7 +172,12 @@ test.describe('/explore readability (C2, UXD-020)', () => {
 
   test('a selected pin keeps its ring and label while another pin is hovered (m1)', async ({
     page,
+    hasTouch,
   }) => {
+    test.skip(
+      hasTouch,
+      'hover is a fine-pointer state; a touch screen has none to keep the selection through',
+    );
     await open(page, 'milky-way');
     const o = await canvasOrigin(page);
     const ringOf = async (id: string) => (await readSnap(page))!.rings.find((r) => r.id === id)!;

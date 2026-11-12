@@ -227,6 +227,7 @@
 <div
   class="hud-top-mobile"
   class:context-hidden={hidden}
+  style:--hud-clear-right="{clearRightPx}px"
   role="group"
   aria-label={m.ui_view_controls()}
 >
@@ -650,6 +651,10 @@
       left: 8px;
       gap: 6px;
       z-index: 45;
+      /* Stops before the navigator, as the desktop row does; a long Reset label (fr at 360 px)
+         wraps onto a second line instead of running under the picker. */
+      flex-wrap: wrap;
+      max-width: calc(100vw - 8px - var(--hud-clear-right, 16px));
     }
   }
 </style>

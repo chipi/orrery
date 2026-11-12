@@ -39,7 +39,7 @@
 
   /* Link tier colours (intro uses --color-state) */
   --color-tier-core: var(--color-accent);
-  --color-tier-deep: #ff9966;
+  --color-tier-deep: var(--color-gold);
 
   /* Typography */
   --font-display: 'Bebas Neue', sans-serif;

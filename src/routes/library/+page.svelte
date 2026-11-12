@@ -560,16 +560,16 @@
     text-transform: uppercase;
   }
   .ln-tier-intro {
-    background: rgba(255, 200, 80, 0.15);
-    color: #ffc850;
+    background: color-mix(in srgb, var(--color-state) 15%, transparent);
+    color: var(--color-state);
   }
   .ln-tier-core {
     background: var(--color-accent-soft);
-    color: var(--color-state);
+    color: var(--color-accent);
   }
   .ln-tier-deep {
-    background: rgba(150, 180, 255, 0.15);
-    color: #8aa9ff;
+    background: rgba(255, 200, 80, 0.15);
+    color: #ffc850;
   }
   .ln-kind,
   .ln-lang,

@@ -510,8 +510,8 @@
     color: var(--color-state);
   }
   .tier-core {
-    background: rgba(184, 164, 112, 0.18);
-    color: rgba(212, 188, 130, 0.95);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
   }
   .tier-extra {
     background: rgba(160, 160, 200, 0.14);

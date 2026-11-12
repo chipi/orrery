@@ -6,7 +6,8 @@
   ("A4/A5 follow-up", "A3–A6 answers", "A5 last two"), then ONE ORBITERS chip on Earth and OBSERVATORIES
   for the ground telescopes ("A4–A6 open items": "1 sync all orbiters to listen 1 chip, 2a, 3a, 4a,
   5a"), and "basically we absorb A–Z into index" ("L20 / L25 / L28 and the A–Z";
-  `docs/wip/2026-11-11-ux-feedback-plan.md`). Inputs: C2, W7, plan Q5
+  `docs/wip/2026-11-11-ux-feedback-plan.md`); then one HUD row with a fixed RESET VIEW slot ("One HUD
+  row", same file, 2026-11-12). Inputs: C2, W7, plan Q5
 - **Answers**: C2, W7; slice A5
 - **Changes**: `src/lib/components/LayerChipRow.svelte`, `src/lib/surface-scene/SurfaceScene.svelte`,
   `SurfaceIndexPanel.svelte`, `src/lib/components/ExploreBodyIndex.svelte`, `EntityIndex.svelte`,
@@ -48,6 +49,18 @@ page from the route's server load, so the prerendered HTML links every page of t
 ([ADR-096](../../adr/ADR-096.md) item 11 still holds). `/missions` and `/fleet` have no INDEX panel
 and keep the A–Z at the page foot.
 
+One HUD row (fine pointer, Explore and every world). The view actions (2D, RESET VIEW, SPIN, AR, SKY
+where present) and the layer chips are one row: the actions group first, a 12 px gap (no line, no
+caption), then the layer group. Two inline groups: when the row does not fit it wraps between the
+groups (the layer group moves to the next line as a block and wraps inside itself only if it alone is
+too wide), never leaving one action chip alone on a line. With a detail panel open the whole row stops
+before it (`hud-beside-panel`; any open panel counts: site, orbiter, museum, observatory). Touch is
+unchanged: the layers live in the LAYERS drawer and the top cluster is actions only.
+RESET VIEW is always rendered in its slot, and so is SPIN on the worlds: disabled (the A4 disabled look)
+when there is nothing to reset or the view is 2D, never unmounted, so no chip shifts as the view
+changes. AR and SKY mount once their availability resolves on mount and are absent where the device
+cannot run them (every fine pointer), so they never appear or vanish after first paint.
+
 ## Consequences
 
 The layer block drops from about 420 px of column to 30–66 px of row; the chip-driven ruler shift and
@@ -58,10 +71,14 @@ worlds' HUD baselines regenerate once with A4. Explore's chip row is `LayerChipR
 chip carries `data-audio-stage` through the config `attrs`. The footer stays compact below 1450 px on
 the four scene routes (it was set for the A–Z tab; whether /moon /mars /venus still need it is not
 measured). Stars in the /explore neighbourhood index have no entity pages, so they carry no links.
+The worlds' INDEX pull tab moves up out of the way of the imagery card, the locate chip and the orbit
+ruler (it measures them); on /explore the ruler sits right of the tab (`--ruler-left` 44 px).
 
 ## Verification
 
-`tests/e2e/chip-row.spec.ts` (membership, order, no group or disabled chip, no column, one band),
+`tests/e2e/chip-row.spec.ts` (membership, order, no group or disabled layer chip, no column, actions
+and layers in one band with a 12 px gap, the row stops before every kind of open panel, no chip shifts on
+select / reset on /explore /mars /moon),
 `tests/e2e/index-links.spec.ts` (prerendered links to every entity page of each hub in en and de,
 rows carry links, no floating A–Z) and `tests/e2e/footer-dock.spec.ts` (no two world HUD parts
 intersect, INDEX panel closed and open) on three projects; `a5-check.py` prints

@@ -103,6 +103,9 @@ Then the operator gets a short status and small before/after screenshots (13-inc
 | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | `tests/e2e/type-floor.spec.ts`                                           | no visible text below 11 px on any route in `scripts/site-routes.mjs` or in one open panel per panel type (see UXD-002)           |
 | `src/lib/three/output-step-rule.test.ts`                                 | every `EffectComposer` ends in an OutputPass and colour textures carry a colour space (see UXD-004)                              |
+| `tests/e2e/scale-index.spec.ts`                                          | the INDEX on all eight scales: hidden but in the DOM, one Tab stop, search, 30 / 44 px targets, black holes by scale, scale jump (see UXD-017) |
+| `tests/e2e/select-focus.spec.ts`                                         | select = focus from every entry point, the ring rule, chip-off clears a selection (see UXD-019)                                  |
+| `tests/e2e/explore-readability.spec.ts`, `src/lib/universe/scene-pins.test.ts` | the 12 px label, the 44 px ring, the placement pass, the steady label offset (see UXD-020)                                 |
 | `tests/e2e/visual.spec.ts` snapshots                                     | the rendered baseline of the routes it covers; regenerated on the Linux runner when a decided rule changes them                  |
 | `npm run docs:build`                                                     | every page under `docs/` builds with VitePress; no unresolved link                                                               |
 | `npm run preflight` (pre-push hook)                                      | typecheck, lint, tests, `validate-data` and build. Does not run e2e and is not a byte-for-byte mirror of CI (see `CLAUDE.md`)    |

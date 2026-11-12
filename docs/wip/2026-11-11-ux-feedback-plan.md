@@ -500,3 +500,29 @@ Then the operator gets a short status and small before/after screenshots (13" la
    suites on all three Playwright projects, and reviews the diff against the brief. Findings go back to
    the implementer; the slice loops until the checker reports clean.
 4. **Lead:** reads the checker's evidence, looks at the screenshots, then reports to the operator.
+
+## Deferred — to do later (running list, operator 2026-11-12: "keep list of what to do later")
+
+Every item we deferred, with where it lands. Add to it whenever something is deferred; strike it when done.
+
+| # | Item | Deferred because / source | Lands |
+|---|---|---|---|
+| L1 | /fly HUD colour: fresh assessment from scratch (cyan `#7fd4ff`, `#8fbfe0`, `#6ea6cc` held in 6 fly files), candidates cyan / blue D / neutral white / cockpit convention, contrast on launch sky, black space, Mars, Earth limb, sheets + recommendation | operator 2026-11-12, A3 round 2 | before A4 build |
+| L2 | Nav hamburger break (1219 px): measure all 14 locales, then lower | A6 answer 5a | after A6 |
+| L3 | Home hero image `app-landing-hero.webp` still has a teal trajectory arc (raster) — redraw with the home slice | A3 review | home slice (H1–H8) |
+| L4 | Palette review at the end: every `a3-keep` data colour (orbit regimes, agencies, nations, era bands, star / universe colours, axes, /plan heat map, comet / Uranus / Neptune tints, Lab figure art, science diagrams) — move to the new palette or keep | A3 Q3, "To check at the end" | end of 0.9.9 UX work |
+| L5 | Second crawl pass for the inventory: nav, footer, plain links, phone Worlds drawers, Moon/Earth/Venus index states, missions and launches filter pills, open popovers | A4 inventory gaps | during A4 |
+| L6 | 888 "select mercury…"-style browser-default buttons on 22 routes: confirm they are hidden canvas proxies, fix if any is visible | A4 crawl | during A4 |
+| L7 | GlitchTip noise after 0.9.8: find which build reports into project 6 (`/orrery` test/preview builds), stop test/preview builds reporting, triage WebGLUnavailable, resolve noise | operator: "after A items" | after slice A |
+| L8 | Safari / iOS check: `var()` / `color-mix()` in SVG presentation attributes (home, RouteCardGrid, LongViewHero) | A3 check NOT VERIFIED | before 0.9.9 push |
+| L9 | Full Playwright suite (3 projects) + preflight:coverage once before the 0.9.9 push | process | before push |
+| L10 | Links from AGENTS.md / TA.md / IA / UXS specs to the UXDs (UXS-000 §Next) for every slice that landed | UXD records | after each slice |
+| L11 | A2 before-shots for sourcing, glossary and the Apollo 11 page were not valid (that checkout lacked generated data) — re-shoot if wanted | A2 sheets | optional |
+| L12 | Release order fix: validate-prod checks footer version == package.json; AGENTS.md release table (bump in PR → merge → deploy → verify → tag) | 0.9.8 footer showed v0.9.7 | 0.9.9 deploy work |
+| L13 | IndexNow: first real submission after the 0.9.9 deploy (operator go); route-lastmod regenerated in the release PR | SEO | after 0.9.9 deploy |
+| L14 | Google Search Console request-indexing days 2 and 3; Baidu allow or not (operator) | SEO | operator |
+| L15 | CodeQL js/file-system-race in `scripts/audio/generate.ts:284` | 0.9.8 after-release | 0.9.9 |
+| L16 | Deploy rollback by release tag (operator applies the patch) | plan order | last 0.9.9 item |
+| L17 | After the 0.9.9 deploy: homelab removes staging leftovers (GlitchTip staging project, Umami staging site, `staging` environment, `STAGING_URL`); operator applies `docs/wip/2026-11-11-deploy-prod-no-staging.patch` | staging removal | after 0.9.9 deploy |
+| L18 | 0.9.10: last 71 placeholder credits; observability outage drill; museum rows (end of 0.9.9 or 0.9.10) | operator 2026-11-11 | 0.9.10 |
+| L19 | Delete the session scratchpad after the A1/A2/A3 screenshots are approved | operator go 2026-11-12 | after sheets approved |

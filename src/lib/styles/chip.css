@@ -1,0 +1,121 @@
+/* The one chip (UXD-014, slice A4). Every toggle, filter, choice and HUD action is a
+   <Chip> (src/lib/components/Chip.svelte) drawn by these rules; a page or component never
+   defines its own chip, pill or toggle rules. Shape: 30 px on fine pointers, 44 px on coarse
+   ones, 4 px corners, 11 px uppercase, outline at rest, soft accent fill + accent edge + white
+   text when on. The Worlds pages set --chip-tint (their world colour) on the HUD; data colours
+   (fleet status, mission colour, nation) arrive per chip as --chip-tone. */
+
+.ui-chip {
+  --chip-rest-edge: rgba(255, 255, 255, 0.18);
+  --chip-rest-text: rgba(255, 255, 255, 0.72);
+  --chip-glass: rgba(8, 10, 22, 0.65);
+  --chip-on: var(--chip-tone, var(--chip-tint, var(--color-accent)));
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 12px;
+  background: var(--chip-glass);
+  border: 1px solid var(--chip-rest-edge);
+  border-radius: 4px;
+  color: var(--chip-rest-text);
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ui-chip {
+    min-height: 30px;
+  }
+}
+
+.ui-chip:hover:not(:disabled) {
+  border-color: var(--chip-tint, var(--color-state));
+  color: #fff;
+}
+.ui-chip:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* On: the same look for a toggle (aria-pressed) and a choice (aria-checked). */
+.ui-chip[aria-pressed='true'],
+.ui-chip[aria-checked='true'] {
+  background: color-mix(in srgb, var(--chip-on) 22%, var(--chip-glass));
+  border-color: var(--chip-on);
+  color: #fff;
+}
+
+.ui-chip:disabled,
+.ui-chip[aria-disabled='true'] {
+  opacity: 0.42;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Clear filters: a chip without an edge at rest. */
+.ui-chip--quiet:not(:hover) {
+  background: transparent;
+  border-color: transparent;
+}
+
+.ui-chip__count {
+  color: var(--chip-rest-text);
+  font-variant-numeric: tabular-nums;
+}
+.ui-chip[aria-pressed='true'] .ui-chip__count,
+.ui-chip[aria-checked='true'] .ui-chip__count {
+  color: var(--color-state);
+}
+.ui-chip__dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--chip-tone, var(--color-state));
+}
+.ui-chip__icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  line-height: 1;
+}
+.ui-chip__x {
+  margin-inline-start: 2px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* Chips in a row or column; wraps inside a drawer. */
+.ui-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Small controls that are not chips (a Why? trigger, a provenance mark, an inline cross-reference):
+   a 24 px minimum hit area (WCAG 2.5.8) with no visual change. */
+.ui-hit {
+  position: relative;
+}
+.ui-hit::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, 24px);
+  height: max(100%, 24px);
+  transform: translate(-50%, -50%);
+}

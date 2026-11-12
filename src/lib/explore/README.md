@@ -5,6 +5,9 @@ The page keeps the `$state`, the fn pointers the scene host fills, and thin
 wrappers; markup pieces live next to it in `src/routes/explore/`.
 
 - `scale-shell-controller.ts` — shell ladder + the `?id=` body resolver.
+- `body-ref.ts` — select = focus, solar system (UXD-019): `BodyRef`, the `?id=` ladder as a ref,
+  the chip table (`chipOf`; asteroids and Arrokoth ride DWARFS), `isBodyInScene` (no object, no link),
+  focus frames. The page's `selectBody` and the host's `focusBody` take it from there.
 - `small-bodies.ts` — the solar-system small-body catalogue + orbit sampling.
 - `scale-index.ts` — the INDEX of the eight scales: the row model, `buildScaleIndexRows` (server-side),
   the chips of each scale and the search / section helpers (UXD-017).

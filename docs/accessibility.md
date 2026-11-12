@@ -14,7 +14,7 @@ We target **WCAG 2.1 Level AA**. The app is built to be operated with **keyboard
 - Every interactive control is keyboard-operable (WCAG 2.1.1) with no keyboard traps (2.1.2).
 - The top navigation is a **roving toolbar** — one Tab stop, ← → / D-pad move across it.
 - Long lists and grids (missions, fleet, posters, station modules, surface sites) use **roving tabindex** so arrows / the D-pad move *within* the group instead of tabbing through every item (2.4.3 Focus order).
-- **Canvas objects are reachable by keyboard** — the part ADR-025 originally deferred. Each 3D/2D scene has a DOM index of its selectable objects: the `/explore` **body index** (Sun, planets, small bodies), the surface **site index** (`/moon` `/mars` `/earth`), and the `/iss` · `/tiangong` module lists. Selecting a row does exactly what a canvas click does — no pointer required.
+- **Canvas objects are reachable by keyboard** — the part ADR-025 originally deferred. Each 3D/2D scene has a DOM index of its selectable objects: the `/explore` **body index** (Sun, planets, small bodies), the surface **site index** (`/moon` `/mars` `/earth`), and the `/iss` · `/tiangong` module lists. Selecting a row does exactly what a canvas click does, camera included (select = focus, UXD-019) — no pointer required. A link to a body (the ruler's residents, the belt's members) exists only when the scene has an object to select.
 - **Visible focus** on every control (2.4.7), thickened further under the TV 10-foot layer.
 
 **Screen readers.**

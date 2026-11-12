@@ -784,6 +784,13 @@ Layer chips (src/lib/components/LayerChipRow.svelte, UXD-015): one flat horizont
   /missions and /fleet keep EntityIndex at the page foot. Enforced by tests/e2e/chip-row.spec.ts
   and tests/e2e/index-links.spec.ts.
 
+Select = focus (src/lib/explore/body-ref.ts, UXD-019): selecting an object on /explore, by canvas
+  click, INDEX row, resident, belt member, link or ?id=, opens its panel, rings it (a belt brightens)
+  and takes the camera; a chip turned off clears a selection of its kind and a select turns its chip
+  on; an id with no scene object is plain text, never a link; mission links open in place, newest
+  first; the five outbound craft open the mission panel (their message is a section of it).
+  Enforced by tests/e2e/select-focus.spec.ts.
+
 Nav bar:        height 52px (--nav-bar-height), z-index 40; right-hand controls 32px on fine
                 pointers, 44px on touch (--nav-btn-fine / --nav-btn-touch); High contrast,
                 Share and Debug live in the More menu, drawer rows on phones (UXD-016)

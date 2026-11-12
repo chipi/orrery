@@ -8,8 +8,9 @@
 
   Every named star has an entity page (/explore/stars/<id>) and so does every black hole
   (/explore/black-holes/<id>), so each row also carries a real link to it (ADR-096 items 11, 13
-  and 16). The panel stays in the DOM, hidden, while
-  closed, like ExploreBodyIndex, so the links exist without a click.
+  and 16). /explore mounts the panel at every scale, hidden outside the neighbourhood, and fills
+  it from the server-loaded page links until the stars arrive: the prerendered HTML links every
+  star and black-hole page (the crawl path; there is no separate list page).
 -->
 <script lang="ts">
   import { roving } from '$lib/a11y/roving';
@@ -31,6 +32,9 @@
     /** Black holes reachable from the index (2026-09-11 — before this the
      *  lensing takeovers had no in-app entry beyond the Sgr A* pin). */
     blackHoles?: BlackHoleRow[];
+    /** Every star page (server load): the rows until `stars` arrives, so the prerendered
+     *  /explore HTML links each star page before the neighbourhood scene loads. */
+    pageLinks?: BlackHoleRow[];
     onSelect: (id: string) => void;
     onSelectBlackHole?: (id: string) => void;
     onClose: () => void;
@@ -42,6 +46,7 @@
     hostIds = new Set(),
     cultureIds = new Set(),
     blackHoles = [],
+    pageLinks = [],
     onSelect,
     onSelectBlackHole,
     onClose,
@@ -108,7 +113,7 @@
     use:roving={{
       orientation: 'vertical',
       wrap: true,
-      itemSelector: 'button.si-row, a.si-page',
+      itemSelector: 'button.si-row, a.si-row, a.si-page',
       active: open,
     }}
   >
@@ -144,7 +149,18 @@
         >
       </li>
     {/each}
-    {#if filtered.length === 0 && filteredBlackHoles.length === 0}
+    {#if stars.length === 0}
+      {#each pageLinks as l (l.id)}
+        <li class="si-item">
+          <a
+            class="si-row"
+            href={localHref(`/explore/stars/${l.id}`)}
+            data-testid="star-index-page-link"
+            data-index-id={l.id}><span class="si-name">{l.name}</span></a
+          >
+        </li>
+      {/each}
+    {:else if filtered.length === 0 && filteredBlackHoles.length === 0}
       <li class="si-empty">{m.star_index_no_match({ query })}</li>
     {/if}
     {#if filteredBlackHoles.length > 0}

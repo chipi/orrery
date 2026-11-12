@@ -2,10 +2,16 @@ import { readFileSync } from 'node:fs';
 import { getFleet, getMission } from '$lib/data';
 import { getBodyEntity } from '$lib/data/body-entity';
 import { getSiteEntity, type SiteBody } from '$lib/data/site-entity';
+import { getStarEntity } from '$lib/data/star-entity';
+import { getBlackHoleEntity } from '$lib/data/black-hole-entity';
 import type { FleetCategory } from '$types/fleet';
 import missionIndex from '$data/missions/index.json';
 import fleetIndex from '$data/fleet/index.json';
-import { collectCanonicalRoutes } from '../../../scripts/site-routes.mjs';
+import {
+  blackHolePageIds,
+  collectCanonicalRoutes,
+  starPageIds,
+} from '../../../scripts/site-routes.mjs';
 
 export type EntityHub = 'missions' | 'fleet' | 'moon' | 'mars' | 'venus' | 'explore';
 
@@ -29,9 +35,7 @@ function hubIds(hub: EntityHub): string[] {
     .filter((r) => r.startsWith(prefix) && !r.slice(prefix.length).includes('/'))
     .map((r) => r.slice(prefix.length))
     .filter(
-      (id) =>
-        !(hub === 'explore' && (id === 'hub' || id === 'stars' || id === 'black-holes')) &&
-        !(hub === 'missions' && id === 'launches'),
+      (id) => !(hub === 'explore' && id === 'hub') && !(hub === 'missions' && id === 'launches'),
     );
 }
 
@@ -80,4 +84,34 @@ export async function getEntityIndex(
   ).filter((l): l is EntityLink => l !== null);
   const collator = new Intl.Collator(locale);
   return links.sort((a, b) => collator.compare(a.name, b.name));
+}
+
+async function sortedLinks(
+  ids: string[],
+  name: (id: string) => Promise<string | null>,
+  locale: string,
+): Promise<EntityLink[]> {
+  const links = (await Promise.all(ids.map(async (id) => ({ id, name: await name(id) })))).filter(
+    (l): l is EntityLink => l.name !== null,
+  );
+  const collator = new Intl.Collator(locale);
+  return links.sort((a, b) => collator.compare(a.name, b.name));
+}
+
+/** Every /explore/stars/<id> page (named stars + exoplanet hosts), for the neighbourhood INDEX. */
+export function getStarLinks(locale: string, fetchFn: FetchFn): Promise<EntityLink[]> {
+  return sortedLinks(
+    starPageIds() as string[],
+    async (id) => (await getStarEntity(id, locale, fetchFn))?.name ?? null,
+    locale,
+  );
+}
+
+/** Every /explore/black-holes/<id> page, for the black-hole section of the neighbourhood INDEX. */
+export function getBlackHoleLinks(locale: string, fetchFn: FetchFn): Promise<EntityLink[]> {
+  return sortedLinks(
+    blackHolePageIds() as string[],
+    async (id) => (await getBlackHoleEntity(id, locale, fetchFn))?.name ?? null,
+    locale,
+  );
 }

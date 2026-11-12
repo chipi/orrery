@@ -10,6 +10,7 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
+  import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import type { LocalizedCultureDoor } from '$lib/data/universe';
@@ -17,7 +18,7 @@
 
   let { data }: { data: PageData } = $props();
   let star = $derived(data.star);
-  let section = $derived(m.stars_hub_title());
+  let section = $derived(ogTitle(m.explore_page_title()));
   // The star's own text; a host-only star has none, so its first planet's, else the facts the page lists.
   let summary = $derived(
     metaDescription(
@@ -36,8 +37,7 @@
     return [
       article({ headline: star.name, description: summary, url, inLanguage: loc }),
       breadcrumbList([
-        { name: m.nav_group_explore(), url: canonicalUrl('/explore/hub', loc) },
-        { name: section, url: canonicalUrl('/explore/stars', loc) },
+        { name: section, url: canonicalUrl('/explore', loc) },
         { name: star.name, url },
       ]),
     ];
@@ -60,9 +60,7 @@
 
 <article class="entity page-shell page-shell--reading">
   <nav class="crumb page-crumb">
-    <a href={localHref('/explore/hub')}>{m.nav_group_explore()}</a>
-    <span class="sep">›</span>
-    <a href={localHref('/explore/stars')}>{section}</a>
+    <a href={localHref('/explore')}>{section}</a>
     <span class="sep">›</span>
     <span>{star.name}</span>
   </nav>

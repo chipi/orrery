@@ -24,8 +24,8 @@ The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mis
 |---|---|---|---|
 | Moon Map | `/moon` | `src/routes/moon/+page.svelte` | Three.js sphere + Canvas 2D flat map |
 | Solar System Explorer | `/explore` | `src/routes/explore/+page.svelte` | Three.js 3D + Canvas 2D toggle |
-| Black holes | `/explore/black-holes`, `/explore/black-holes/<id>` | `src/routes/explore/black-holes/` | Static A–Z hub + one page per black hole (three real, Gargantua badged as fiction); linked from `/explore/hub` and the black-hole rows of the neighbourhood star INDEX (`↗`) |
-| Stars and their planets | `/explore/stars`, `/explore/stars/<id>` | `src/routes/explore/stars/` | Static A–Z hub + one page per named star and exoplanet host (the host's system as a section); linked from `/explore/hub`, the neighbourhood star INDEX rows (`↗`) and the footer-reachable hub |
+| Black holes | `/explore/black-holes/<id>` | `src/routes/explore/black-holes/` | One page per black hole (three real, Gargantua badged as fiction); linked from the black-hole rows of the neighbourhood star INDEX (`↗`), which `/explore` prerenders at every scale |
+| Stars and their planets | `/explore/stars/<id>` | `src/routes/explore/stars/` | One page per named star and exoplanet host (the host's system as a section); linked from the neighbourhood star INDEX rows (`↗`), which `/explore` prerenders at every scale |
 | Mission Configurator | `/plan` | `src/routes/plan/+page.svelte` | Canvas 2D porkchop plot |
 | Mission Arc | `/fly` | `src/routes/fly/+page.svelte` | Three.js 3D + Canvas 2D toggle |
 | Mission Catalog | `/missions` | `src/routes/missions/+page.svelte` | CSS grid card layout |

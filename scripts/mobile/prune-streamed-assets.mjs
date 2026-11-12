@@ -157,9 +157,8 @@ async function targets() {
     JSON.parse(await readFile(path.join(BUILD, 'data', file), 'utf8').catch(() => empty));
   const ids = async (file) => (await json(file, '[]')).map((e) => e.id);
   // /explore/<id>: planets (id = lowercase name), moons, small bodies. 'stars' is the
-  // /explore/stars hub: its folder holds every /explore/stars/<id> page and their __data.json
-  // (~66 stars × 14 locales ≈ 924 pages), and the hub page and its own __data.json go with it;
-  // 'black-holes' is the same for /explore/black-holes (4 pages × 14 locales).
+  // /explore/stars folder: every /explore/stars/<id> page and their __data.json (~66 stars ×
+  // 14 locales ≈ 924 pages); 'black-holes' is the same for /explore/black-holes (4 × 14).
   const bodyIds = [
     'stars',
     'black-holes',

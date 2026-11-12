@@ -68,3 +68,12 @@ repo.
 `ResetViewButton` is an outlined action chip, not `quiet` as the brief (§4, Replacement map)
 proposed. Consistency: the Reset view chip sits beside SPIN and the 2D toggle, which are outlined at
 rest, and a borderless Reset would be the odd one in that row.
+
+## Controls that stay as they are (lead, 2026-11-12)
+
+Besides the brief's §6 allow-list, these keep their own look, because each is furniture of a panel,
+dialog or scene rather than a filter, toggle or HUD action: the Flight Director / Station Orbit banner
+collapse carets (`.collapse-btn`), the launch scene's skip CTA (`.continue`, a scene CTA like the
+opening ones), the gallery wave tiles (`.wave-tile`, cards), the lightbox zoom buttons, toast
+dismiss buttons and the panorama caption reopen. `tests/e2e/chip.spec.ts` names each one in its
+sweep allow-list; anything new outside the list fails the sweep.

@@ -40,6 +40,9 @@
   }
 
   function onKeydown(e: KeyboardEvent) {
+    // The listener is on the window for every page; outside exhibit mode an Escape must not
+    // navigate (goto blurs the focus every other Escape handler just returned to its opener).
+    if (!exhibit.active) return;
     if (e.key === 'Escape') {
       e.preventDefault();
       exit();

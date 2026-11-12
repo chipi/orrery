@@ -190,13 +190,15 @@ const objects = snap.objects.map((o) => {
     ((o.common || '').split(',')[0].trim() || o.name || o.designation);
   const cat = o.catalogue ?? {};
   const catDist = cat.dist_ly && typeof cat.dist_ly.value === 'number' ? cat.dist_ly : null;
+  const catLy = typeof catDist?.value === 'number' ? catDist.value : null;
   const catalogue: Record<string, CatalogueEntry> = { ...cat };
   const galleryLy = parseDistLy(photo?.distance);
   if (
     catDist &&
+    catLy &&
     photo?.distance &&
     galleryLy &&
-    Math.abs(galleryLy - catDist.value) / catDist.value > 0.15
+    Math.abs(galleryLy - catLy) / catLy > 0.15
   ) {
     catalogue.dist_ly = {
       ...catDist,

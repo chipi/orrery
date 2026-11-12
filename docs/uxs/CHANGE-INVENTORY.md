@@ -30,7 +30,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| B1 | Hero, close and actions: no hover glow, close per Q6, "Share", one compact action row near the top | P3, P4, P5, EP4, MI4 | none yet | planned | planet, mission, fleet and surface-site panels | `05_Design_System.md` panel anatomy, UXS-001 | Q3, Q6 |
+| B1 | Hero, close and actions: no hover glow on the hero (inset focus ring only); one fixed header bar on every panel (back, name after the hero, Share, close, A4 chips); "Collector card" becomes "Share" in the bar and still opens the card; one action row of at most three chips under the identity block, no foot stack | P3, P4, P5, EP4, MI4 | UXD-018, UXD-014 | in review | planet, satellite, small body, mission, fleet, earth-object and surface-site panels | `Panel.svelte`, `PanelActions.svelte`, IA §controls, Design System §5.3, UXS-001, TA.md, PRD-036 | — (Q3, Q6, D1–D4, O1–O8 answered) |
 | B2 | Science links: a shared cap of five per panel, ranked picks, every ruler regime its own card | S1, S2, O6 | UXD-010 | planned | every panel, the orbit ruler | UXS-001, UXS-014 | — |
 | B3 | Outer panels and stars: one hero, a Gallery tab, the constellation finder in "In the sky"; deep-sky heroes; the EHT image for Sagittarius A\* | SN2, MW3, MW5 | UXD-008 | planned | star, Milky Way, Local Group, Laniakea panels | UXS-001, UXS-014, UXS-016 | — (MW3 has no recorded go) |
 

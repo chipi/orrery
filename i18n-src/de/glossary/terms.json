@@ -122,5 +122,20 @@
   "ionisation front": "Die Grenze, an der ultraviolettes Licht heißer Sterne neutrales Gas in ionisiertes Gas verwandelt und sich durch die umgebende Wolke nach außen bewegt.",
   "protostellar outflow": "Gas, das ein junger Stern, der noch Material sammelt, in zwei entgegengesetzten Jets oder Winden ausstößt; die Jets bewegen sich mit bis zu mehreren Hundert km/s und drängen das langsamere Gas der Wolke um sie herum beiseite.",
   "super star cluster": "Ein junger, sehr massereicher Sternhaufen mit mindestens etwa 10 000 Sonnenmassen an Sternen, zu finden dort, wo die Sternentstehung intensiv ist, etwa bei Galaxienverschmelzungen und Starbursts; die größten erreichen 100 000 Sonnenmassen oder mehr.",
-  "tidal tail": "Ein langer, dünner Strom aus Sternen und Gas, den die Schwerkraft einer nahe vorbeiziehenden Galaxie aus einer Galaxie herauszieht."
+  "tidal tail": "Ein langer, dünner Strom aus Sternen und Gas, den die Schwerkraft einer nahe vorbeiziehenden Galaxie aus einer Galaxie herauszieht.",
+  "supercluster": "Eine riesige, lockere Ansammlung von Galaxiengruppen und Galaxienhaufen, meist einige Dutzend Megaparsec groß.",
+  "void": "Ein riesiger, fast leerer Raumbereich zwischen den Filamenten der Galaxien, meist 10 bis 100 Megaparsec groß.",
+  "galaxy wall": "Eine dünne, plattenförmige Galaxienmauer, die sich über Hunderte Millionen Lichtjahre erstreckt, etwa die Große Mauer CfA2.",
+  "filament": "Ein langes Filament aus Galaxien und Gas, oft einige Dutzend Megaparsec lang, das im kosmischen Netz Galaxienhaufen verbindet.",
+  "galaxy cloud": "Eine lockere Ansammlung von Galaxiengruppen innerhalb eines Superhaufens; der Virgo-Superhaufen enthält etwa ein Dutzend davon.",
+  "redshift": "Die Dehnung von Licht zu längeren, röteren Wellenlängen, wenn sich seine Quelle von uns entfernt oder der Raum expandiert.",
+  "peculiar velocity": "Der Teil der Geschwindigkeit einer Galaxie, der übrig bleibt, wenn man die gleichmäßige Expansion des Universums abzieht; er entsteht durch die Schwerkraft der Umgebung.",
+  "basin of attraction": "Das Raumgebiet, dessen Galaxien alle auf ein gemeinsames Gravitationszentrum zuströmen, ähnlich wie Wasser in einem Einzugsgebiet.",
+  "zone of avoidance": "Der Himmelsstreifen hinter Staub und Sternen der Milchstraßenscheibe, in dem ferne Galaxien schwer zu sehen sind.",
+  "cosmic web": "Das größte Muster im Universum: Galaxien und Gas, aufgereiht entlang von Filamenten und Flächen um fast leere Voids.",
+  "comoving distance": "Eine Entfernung, gemessen auf einer Skala, die mit dem Universum mitwächst und daher unverändert bleibt; heute entspricht sie der eigentlichen Entfernung.",
+  "megaparsec": "Eine Entfernungseinheit von einer Million Parsec, rund 3,26 Millionen Lichtjahre, für Abstände zwischen Galaxien.",
+  "tip of the red giant branch": "Die Helligkeit, ab der Rote Riesen nicht mehr heller werden – ein nahezu konstanter Wert, mit dem Astronomen die Entfernung von Galaxien messen.",
+  "surface brightness fluctuations": "Ein Entfernungsverfahren, das die Körnigkeit des Galaxienlichts nutzt: Eine doppelt so ferne Galaxie wirkt doppelt so glatt.",
+  "Local Void": "Ein riesiger, fast leerer Raumbereich neben der Lokalen Gruppe, von dem sich die Milchstraße entfernt."
 }

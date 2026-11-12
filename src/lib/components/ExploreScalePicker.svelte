@@ -18,6 +18,7 @@
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
+  import Chip from './Chip.svelte';
   import { CTX_ORDER, type ShellId } from '$lib/explore/scale-shell-controller';
 
   let {
@@ -79,16 +80,17 @@
     }
   }
 
-  let rungButtons: HTMLButtonElement[] = $state([]);
-  let toggleButton = $state<HTMLButtonElement | null>(null);
+  let rungButtons: HTMLElement[] = $state([]);
+  let toggleButton = $state<HTMLElement | undefined>();
 </script>
 
 <div class="scale-picker" class:open data-testid="explore-scale-picker">
   <!-- Mobile-only trigger: shows the current shell + a caret; opens the ladder. -->
-  <button
-    bind:this={toggleButton}
-    type="button"
-    class="toggle"
+  <Chip
+    bind:ref={toggleButton}
+    kind="action"
+    dot
+    active={open}
     data-testid="explore-scale-toggle"
     aria-haspopup="true"
     aria-expanded={open}
@@ -98,24 +100,22 @@
   >
     <span class="toggle-label">{labelFor(activeShell)}</span>
     <span class="caret" aria-hidden="true">{open ? '▴' : '▾'}</span>
-  </button>
+  </Chip>
 
   <nav class="rail" aria-label={m.explore_scale_jump_aria()}>
     {#each rungs as shell, i (shell)}
-      <button
-        bind:this={rungButtons[i]}
-        type="button"
-        class="rung"
+      <Chip
+        bind:ref={rungButtons[i]}
+        kind="action"
+        active={shell === activeShell}
         data-testid="explore-scale-rung-{shell}"
-        class:active={shell === activeShell}
         aria-current={shell === activeShell ? 'true' : undefined}
         {disabled}
         onclick={() => pick(shell)}
-        onkeydown={(e) => onRungKeydown(e, i)}
+        onkeydown={(e: KeyboardEvent) => onRungKeydown(e, i)}
       >
-        <span class="dot" aria-hidden="true"></span>
         <span class="rung-label">{labelFor(shell)}</span>
-      </button>
+      </Chip>
     {/each}
   </nav>
 </div>
@@ -123,8 +123,7 @@
 <style>
   /* #45 — one chip on every viewport; the parent (the top scale-navigator)
      positions it, so this stays layout-neutral. `position: relative` anchors the
-     popover ladder, which drops DOWNWARD from the chip. Slate glass tokens mirror
-     the surrounding nav chrome so it reads as native, not a new widget. */
+     popover ladder, which drops DOWNWARD from the chip. */
   .scale-picker {
     position: relative;
     display: inline-flex;
@@ -132,54 +131,8 @@
     align-items: stretch;
     font-family: var(--font-mono, 'Space Mono', monospace);
   }
-
-  /* The trigger chip: current shell + a caret. Shown on all viewports now. */
-  .toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 34px;
-    padding: 6px 12px;
-    background: rgba(10, 14, 24, 0.62);
-    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-    color: var(--color-state);
-    font: inherit;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .toggle::before {
-    /* The ◉ "you are here" dot from the mockup. */
-    content: '';
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    box-shadow: 0 0 8px var(--color-accent-strong);
-    flex: none;
-  }
-  .toggle:hover:not(:disabled),
-  .toggle:focus-visible:not(:disabled) {
-    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-    border-color: var(--color-accent-strong);
-    color: #eaffff;
-    outline: none;
-  }
-  .toggle:disabled {
-    opacity: 0.4;
-    cursor: default;
-  }
   .caret {
     opacity: 0.7;
-    font-size: var(--size-label);
   }
 
   /* Popover ladder: hidden until open, then drops down below the chip. */
@@ -200,74 +153,7 @@
   .scale-picker.open .rail {
     display: flex;
   }
-
-  .rung {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 40px;
-    padding: 6px 12px;
-    background: rgba(10, 14, 24, 0.62);
-    border: 1px solid rgba(154, 166, 189, 0.34);
-    border-radius: 5px;
-    color: rgba(200, 210, 228, 0.82);
-    font: inherit;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .rung:hover:not(:disabled),
-  .rung:focus-visible:not(:disabled) {
-    background: rgba(154, 166, 189, 0.18);
-    border-color: rgba(154, 166, 189, 0.55);
-    color: #eaf1ff;
-    outline: none;
-  }
-  .rung.active {
-    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
-    border-color: var(--color-accent-strong);
-    color: var(--color-state);
-    cursor: default;
-  }
-  .rung:disabled {
-    opacity: 0.4;
-    cursor: default;
-  }
-
-  .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.6;
-    flex: none;
-  }
-  .rung.active .dot {
-    opacity: 1;
-    box-shadow: 0 0 8px var(--color-accent-strong);
-  }
-
-  /* Touch: bigger tap targets. */
-  @media (max-width: 640px) {
-    .toggle {
-      min-height: 44px;
-      padding: 8px 12px;
-    }
-    .rung {
-      min-height: 44px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .rung,
-    .toggle {
-      transition: none;
-    }
+  .rail :global(.ui-chip) {
+    justify-content: flex-start;
   }
 </style>

@@ -1,5 +1,7 @@
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import ExploreScalePicker from '$lib/components/ExploreScalePicker.svelte';
+  import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import type { ShellId } from '$lib/explore/scale-shell-controller';
   import * as m from '$lib/paraglide/messages';
   import { cue } from '$lib/sensory/feedback';
@@ -27,9 +29,8 @@
 
 <nav class="scale-nav" class:at-solar={atSolar} aria-label={m.explore_location_aria()}>
   {#if back}
-    <button
-      type="button"
-      class="scale-back"
+    <Chip
+      kind="action"
       onclick={() => {
         cue('select');
         back.run();
@@ -38,8 +39,8 @@
       title={back.label}
       data-testid="explore-scale-back"
     >
-      ‹
-    </button>
+      {#snippet icon()}‹{/snippet}
+    </Chip>
   {/if}
 
   {#if showPicker}
@@ -52,16 +53,7 @@
       }}
     />
     {#if showReset}
-      <button
-        type="button"
-        class="scale-reset"
-        onclick={onReset}
-        aria-label={m.ui_reset_view()}
-        title={m.ui_reset_view()}
-        data-testid="explore-scale-reset"
-      >
-        ⟲
-      </button>
+      <ResetViewButton onclick={onReset} data-testid="explore-scale-reset" />
     {/if}
   {/if}
 </nav>
@@ -96,45 +88,16 @@
       left: 40px;
     }
   }
-  /* Shared square affordances flanking the chip (back ‹ / reset ⟲). Slate glass
-     to match the chip; generous tap target. */
-  .scale-back,
-  .scale-reset {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 34px;
-    min-height: 34px;
-    padding: 0 8px;
-    background: rgba(10, 14, 24, 0.62);
-    border: 1px solid rgba(154, 166, 189, 0.34);
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-    color: #c8d2e6;
-    font-family: inherit;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .scale-back:hover,
-  .scale-back:focus-visible,
-  .scale-reset:hover,
-  .scale-reset:focus-visible {
-    background: rgba(154, 166, 189, 0.22);
-    border-color: rgba(154, 166, 189, 0.6);
-    color: #eaf1ff;
-    outline: none;
-  }
-
+  /* Phone: the reset chip keeps its glyph and name, the label drops out so the
+     row (back · scale · reset) fits 390 px. */
   @media (max-width: 767px) {
-    .scale-back,
-    .scale-reset {
-      min-width: 44px;
-      min-height: 44px;
+    .scale-nav :global(.ui-reset-label) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
     }
   }
 </style>

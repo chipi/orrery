@@ -62,6 +62,22 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     }
   });
 
+  test('the Astrophysics data block lists the catalogues behind the star, deep-sky and black-hole values (#658)', async ({
+    request,
+  }) => {
+    const html = await (await request.get('/library')).text();
+    const block = html.match(/data-testid="library-astro-sources"[\s\S]*?<\/aside>/)?.[0] ?? '';
+    expect(block).toContain('href="/credits#src-data-catalogues"');
+    const links = [...block.matchAll(/<a href="(https:[^"]+)"([^>]*)>/g)];
+    expect(links.length).toBe(12);
+    for (const [, , attrs] of links) {
+      expect(attrs).toContain('target="_blank"');
+      expect(attrs).toContain('rel="noopener noreferrer external"');
+    }
+    expect(block).toContain('Cosmicflows-4');
+    expect(block).toContain('NASA Exoplanet Archive');
+  });
+
   test('linked from the site footer', async ({ page, isMobile }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
     // Desktop: the floating bottom-right footer strip. Touch: the strip is

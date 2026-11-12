@@ -210,7 +210,11 @@
       </p>
       <ul class="astro-sources">
         {#each data.astroSources as s (s.id)}
-          <li><a href={s.url} rel="noopener noreferrer external" hreflang="en">{s.name}</a></li>
+          <li>
+            <a href={s.url} target="_blank" rel="noopener noreferrer external" hreflang="en"
+              >{s.name}</a
+            >
+          </li>
         {/each}
       </ul>
     </aside>

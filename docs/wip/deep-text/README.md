@@ -25,7 +25,8 @@ English text for deep-level entity pages that are under the thin-page floor (ope
 6. **Translate** (by hand, few agents, several locales each; glossary forms from
    `scripts/i18n-tools/native-terms.json`), then the 14-locale checks.
 
-At most 2 agents run at once across all work (operator 2026-11-12).
+At most 2 agents run at once on this stream (writers, reviewers, translators, page builders), plus
+at most 1 on the UX A / B slices (operator 2026-11-12).
 
 ## Writer rules learnt from the batch 1 review
 

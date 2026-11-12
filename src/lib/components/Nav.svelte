@@ -283,6 +283,17 @@
     moreOpen = false;
     if (returnFocus) moreTrigger?.focus();
   }
+  // At <= 600 px the trigger and menu are display:none (the drawer rows take over), so a menu
+  // left open across the breakpoint (window resize, tablet rotation) would hold focus in a
+  // hidden element and reopen when widened again.
+  $effect(() => {
+    const phone = matchMedia('(max-width: 600px)');
+    const onChange = () => {
+      if (phone.matches) moreOpen = false;
+    };
+    phone.addEventListener('change', onChange);
+    return () => phone.removeEventListener('change', onChange);
+  });
   function activateMore(item: MoreItem) {
     item.run();
     if (!item.checked) closeMore(true);
@@ -606,6 +617,7 @@
   <button
     type="button"
     class="nav-more-backdrop"
+    data-exhibit-hide
     tabindex="-1"
     aria-hidden="true"
     onclick={() => closeMore()}
@@ -613,6 +625,7 @@
   <div
     id="nav-more-menu"
     class="nav-more-menu"
+    data-exhibit-hide
     role="menu"
     tabindex="-1"
     aria-label={m.layout_footer_more()}
@@ -1109,11 +1122,12 @@
 
   /* The More menu (UXD-016): High contrast, Share and Debug behind one menu button. Rendered
      outside <nav> (like the drawer) so the nav's roving arrows never reach its rows; same
-     chrome as .group-menu so the bar has one dropdown look. */
+     chrome as .group-menu so the bar has one dropdown look. Above the DebugPanel and the
+     settings sheet (z 90), which open from the same top-right corner. */
   .nav-more-backdrop {
     position: fixed;
     inset: var(--nav-height) 0 0 0;
-    z-index: 88;
+    z-index: 91;
     background: transparent;
     border: none;
     cursor: default;
@@ -1122,7 +1136,7 @@
     position: fixed;
     top: calc(var(--nav-height) + 6px);
     inset-inline-end: 24px;
-    z-index: 89;
+    z-index: 92;
     box-sizing: border-box;
     min-inline-size: 220px;
     max-inline-size: min(320px, calc(100vw - 16px));

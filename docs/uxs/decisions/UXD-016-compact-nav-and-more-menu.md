@@ -59,8 +59,10 @@ Umami events; Share behaviour unchanged (no "link copied" notice); no new locale
 The cluster is about 192 px instead of 392 px on a fine pointer; contrast, share and debug are two clicks
 and have visible labels and states (a check mark and `aria-checked`, no English On / Off); every
 `--nav-height` consumer sits 8 px higher; the sticky launches month header, which already assumed 52 px, is
-now flush with the bar. Every nav class kept its name, so no spec selector changed; the Share button, the
-Aa button and the debug toggle are gone from the bar.
+now flush with the bar. The Share button, the Aa button and the debug toggle are gone from the bar, and
+with them `.contrast-toggle`, `.share-toggle` and the nav `.debug-toggle`; `mobile-layout`, `chip` and
+`pwa` specs changed with them. The More menu sits above the DebugPanel and the settings sheet (z 92 / 91
+against 90), closes when the window crosses 600 px, and hides in exhibit mode.
 
 ## Verification
 

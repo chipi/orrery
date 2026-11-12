@@ -108,9 +108,15 @@ test.describe('nav controls — fine pointer (desktop)', () => {
 });
 
 test.describe('nav controls — coarse pointer', () => {
-  // A touch window at laptop size gets the same 44 px targets as a phone (hamburger and More).
+  // A touch window at laptop size (links inline, More trigger) gets the same 44 px targets as a phone.
   test.describe('touch at 1280 x 720', () => {
-    test.use({ viewport: { width: 1280, height: 720 }, hasTouch: true, isMobile: true });
+    // DPR 2: at DPR 1 a coarse 1280-wide window matches the TV query (links inline, no hamburger).
+    test.use({
+      viewport: { width: 1280, height: 720 },
+      hasTouch: true,
+      isMobile: true,
+      deviceScaleFactor: 2,
+    });
     test.beforeEach(() => {
       test.skip(project() !== 'desktop-chromium', 'one emulated-touch pass is enough');
     });

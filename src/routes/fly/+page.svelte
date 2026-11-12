@@ -3487,16 +3487,16 @@
   <!-- Mobile HUD-collapse toggle. Always rendered, hidden on desktop
        via CSS @media. Tapping it hides hud-stack + capcom-panel so the
        canvas is visible; tap again to restore. -->
-  <button
-    type="button"
+  <Chip
+    kind="toggle"
     class="hud-collapse"
+    active={hudHidden}
     onclick={toggleHud}
     aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
-    aria-pressed={hudHidden}
     title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
   >
     {hudHidden ? '◐' : '◑'}
-  </button>
+  </Chip>
   <!-- Mobile top-left: 2D/3D view toggle. The remaining toggles fold into
        the bottom tab accordion, so the canonical view switch lives here. -->
   <div class="fly-top-mobile">
@@ -5869,32 +5869,11 @@
      #342 Phase 30 — mobile-first: visible by default (mobile is the
      base), hidden at @min-width: 768 (desktop never sees the
      button). */
-  .hud-collapse {
+  .fly :global(.hud-collapse) {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
     left: 16px;
     z-index: 36;
-    width: 36px;
-    height: 36px;
-    min-width: 44px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid var(--color-accent-edge);
-    color: rgba(220, 230, 245, 0.95);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .hud-collapse:hover,
-  .hud-collapse:focus-visible {
-    border-color: var(--color-accent);
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
   }
 
   /* ─── ≥ 768 px — restore the desktop HUD layout ────────────────── */
@@ -5907,7 +5886,7 @@
     .hud-stack {
       bottom: 80px;
     }
-    .hud-collapse {
+    .fly :global(.hud-collapse) {
       display: none;
     }
     /* Wider rail on desktop so long button labels (PROBE TRAJECTORY,
@@ -6395,7 +6374,7 @@
     }
     /* The single "Show HUD" pile-reveal + the toggle drawer are replaced by
        the bottom tab accordion (MISSION / EVENTS / PHASE). */
-    .hud-collapse,
+    .fly :global(.hud-collapse),
     .fly-mobile-view-drawer {
       display: none;
     }

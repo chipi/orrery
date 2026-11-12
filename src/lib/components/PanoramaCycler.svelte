@@ -13,6 +13,7 @@
 <script lang="ts">
   import type { PanoramaSetEntry } from '$types/surface-site';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
 
   interface Props {
     active: boolean;
@@ -58,22 +59,16 @@
 </script>
 
 {#if active && totalCount >= 2 && currentEntry}
-  <button
-    type="button"
-    class="arrow arrow-left"
-    aria-label={m.panorama_cycler_prev_aria()}
-    onclick={() => step(-1)}
-  >
-    ‹
-  </button>
-  <button
-    type="button"
-    class="arrow arrow-right"
-    aria-label={m.panorama_cycler_next_aria()}
-    onclick={() => step(1)}
-  >
-    ›
-  </button>
+  <div class="arrow-slot arrow-left">
+    <Chip kind="action" aria-label={m.panorama_cycler_prev_aria()} onclick={() => step(-1)}>
+      {#snippet icon()}‹{/snippet}
+    </Chip>
+  </div>
+  <div class="arrow-slot arrow-right">
+    <Chip kind="action" aria-label={m.panorama_cycler_next_aria()} onclick={() => step(1)}>
+      {#snippet icon()}›{/snippet}
+    </Chip>
+  </div>
   <div class="counter mono" role="status" aria-live="polite" data-testid="panorama-cycler-counter">
     {m.panorama_cycler_counter_template({
       label:
@@ -86,26 +81,11 @@
 {/if}
 
 <style>
-  .arrow {
+  .arrow-slot {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--color-text-on-dark, #ffffff);
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
     z-index: 60;
-  }
-  .arrow:hover,
-  .arrow:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 1);
   }
   .arrow-left {
     left: 24px;

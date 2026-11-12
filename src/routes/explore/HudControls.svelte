@@ -162,6 +162,7 @@
         <button
           type="button"
           class="paths-legend-row"
+          data-a4-keep="legend row, not a chip"
           bind:this={legendRowEls[i]}
           class:is-selected={iconic.state.selectedId === entry.mission_id}
           class:is-hovered={iconic.state.hoveredId === entry.mission_id}
@@ -307,6 +308,7 @@
       <button
         type="button"
         class="paths-legend-row"
+        data-a4-keep="legend row, not a chip"
         class:is-selected={iconic.state.selectedId === entry.mission_id}
         class:is-hovered={iconic.state.hoveredId === entry.mission_id}
         aria-pressed={iconic.state.selectedId === entry.mission_id}
@@ -436,6 +438,7 @@
     pointer-events: auto;
   }
   .ctrl-row.chips {
+    /* a4-keep: chip row layout (scroll line / column / drawer wrap / short-window cap); A5 rewrites it */
     /* Mobile: chip row is a single horizontally-scrollable line (A3) so it
        never wraps to a second row and crowds the top edge — even when the
        science lens adds its HR/Light-cone chips. At @min-width: 769 the rail
@@ -648,6 +651,7 @@
       z-index: 36;
     }
     .ctrl-row.chips {
+      /* a4-keep: chip row layout (scroll line / column / drawer wrap / short-window cap); A5 rewrites it */
       /* Layer chips stack vertically so their on/off state reads as a
          compact left-edge column rather than a wide horizontal strip.
          Individual chips set width: 100% so they stretch to match the
@@ -669,6 +673,7 @@
      four Controls chips settle into a tidy 2x2 grid. Scoped to .mdg-body. */
   @media (hover: none), (pointer: coarse) {
     :global(.mdg-body) .ctrl-row.chips {
+      /* a4-keep: chip row layout (scroll line / column / drawer wrap / short-window cap); A5 rewrites it */
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
@@ -683,6 +688,7 @@
      above the bottom edge and scrolls. */
   @media (max-height: 440px) {
     .ctrl-row.chips {
+      /* a4-keep: chip row layout (scroll line / column / drawer wrap / short-window cap); A5 rewrites it */
       max-height: calc(100vh - 124px - 70px);
       overflow-y: auto;
       scrollbar-width: none;

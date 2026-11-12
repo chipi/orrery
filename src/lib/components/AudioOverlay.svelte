@@ -23,6 +23,7 @@
   import { exhibit } from '$lib/exhibit.svelte';
   import { trackStageFire } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
 
   let audioEl: HTMLAudioElement | null = $state(null);
   let overlayRoot: HTMLDivElement | null = $state(null);
@@ -1144,19 +1145,18 @@
               <option value={1.5}>1.5×</option>
             </select>
           </label>
-          <button
-            type="button"
+          <Chip
+            kind="toggle"
             class="cc-toggle"
-            class:active={audio.captionsOn}
+            active={audio.captionsOn}
             aria-label={audio.captionsOn
               ? m.audio_captions_hide_aria()
               : m.audio_captions_show_aria()}
-            aria-pressed={audio.captionsOn}
             title={m.audio_captions_title()}
             onclick={toggleCaptions}
           >
             CC
-          </button>
+          </Chip>
         </div>
 
         <input
@@ -1741,35 +1741,6 @@
   }
   .origin-detail {
     color: var(--color-text-label);
-  }
-
-  .cc-toggle {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.65);
-    width: auto;
-    padding: 4px 8px;
-    min-height: 32px;
-    font-size: 11px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .cc-toggle:hover,
-  .cc-toggle:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 0.95);
-    outline: none;
-  }
-  .cc-toggle.active {
-    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
-    border-color: var(--color-accent-strong);
-    color: var(--color-state);
   }
 
   .caption-banner {

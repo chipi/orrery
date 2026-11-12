@@ -49,6 +49,7 @@
   } from '$lib/physics/transfer/injection-burn';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
   import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
   import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
@@ -460,15 +461,16 @@
 
   <!-- HUD collapse — the shared toggle (same one that manages the sim HUD). -->
   {#if !warping}
-    <button
+    <Chip
+      kind="toggle"
       class="hud-collapse"
+      active={hudHidden}
       onclick={() => onToggleHud?.()}
       aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
-      aria-pressed={hudHidden}
       title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
     >
       {hudHidden ? '◐' : '◑'}
-    </button>
+    </Chip>
   {/if}
 
   <div class="header">
@@ -611,7 +613,7 @@
   .launch.external .timeline,
   .launch.external .readouts,
   .launch.external .continue,
-  .launch.external .hud-collapse {
+  .launch.external :global(.hud-collapse) {
     display: none;
   }
   .stage {
@@ -835,24 +837,11 @@
     color: #ffbe7a;
     margin-top: 3px;
   }
-  .hud-collapse {
+  .launch :global(.hud-collapse) {
     position: absolute;
     left: 22px;
     bottom: 26px;
     z-index: 6;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: rgba(10, 20, 34, 0.82);
-    border: 1px solid var(--color-accent-edge);
-    color: #cfeaff;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-  }
-  .hud-collapse:hover {
-    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
-    color: #fff;
   }
   .warp {
     position: absolute;

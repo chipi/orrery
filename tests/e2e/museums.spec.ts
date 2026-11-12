@@ -92,7 +92,7 @@ test.describe('observatories', () => {
     await expect(page.getByTestId('observatory-panel')).toBeVisible({ timeout: 20_000 });
   });
 
-  test('/earth has a TELESCOPES layer chip', async ({ page }) => {
+  test('/earth has an OBSERVATORIES layer chip', async ({ page }) => {
     await page.goto('/earth');
     await expect(page.getByTestId('layer-telescopes').first()).toBeAttached({ timeout: 15_000 });
   });

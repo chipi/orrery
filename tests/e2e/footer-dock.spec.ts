@@ -122,8 +122,8 @@ for (const size of SIZES) {
 }
 
 /**
- * /explore HUD: the left chip rail, the orbit ruler, the bottom-left card, the
- * time dock, the A-Z index tab, the footer and the scale panel own separate
+ * /explore HUD: the flat chip row, the orbit ruler, the bottom-left card, the
+ * time dock, the INDEX tab, the footer and the scale panel own separate
  * pixels on a non-touch window.
  */
 const HUD_SIZES = [
@@ -141,7 +141,7 @@ const HUD_PARTS: Array<[string, string]> = [
   ['ruler', '.ruler'],
   ['earth-compare', '.scales-dock'],
   ['dock', '.time-controls'],
-  ['index tab', '.entity-index summary'],
+  ['index tab', '.body-index-handle'],
   ['footer', '.footer-menu'],
   ['scale panel', '.scale-strip'],
 ];
@@ -175,56 +175,70 @@ for (const size of HUD_SIZES) {
 }
 
 /**
- * The floating A-Z tab exists on every full-screen scene (/explore, /mars, /moon,
- * /venus). On a non-touch window it must own pixels of its own: clear of the
- * footer (strip or More button), the time dock, the scale panel, the HUD chips
- * and the surface HUD (distance scale, index handle, controls), and topmost at
- * its own centre (nothing painted over it, no ghost text behind a footer link).
+ * The worlds' HUD (/earth /moon /mars /venus): the view-control row, the one flat chip
+ * row, the INDEX pull tab (and its panel, opened), the orbit ruler, the distance scale,
+ * the nation legend, the locate chip and the footer own separate pixels on a non-touch
+ * window. The A–Z tab is gone: the INDEX panel carries the entity-page links (ADR-096 #11).
  */
-const TAB_ROUTES = ['/explore', '/mars', '/moon', '/venus'];
-const TAB_NEIGHBOURS: Array<[string, string]> = [
-  ['footer', '.footer-menu'],
-  ['dock', '.time-controls'],
-  ['scale panel', '.scale-strip'],
+const WORLD_ROUTES = ['/earth', '/moon', '/mars', '/venus'];
+const WORLD_SIZES = [
+  { width: 1440, height: 900 },
+  { width: 1366, height: 768 },
+  { width: 1280, height: 720 },
+  { width: 1100, height: 700 },
+  { width: 800, height: 375 },
+];
+const WORLD_HUD_PARTS: Array<[string, string]> = [
+  ['view row', '.hud-controls > .ctrl-row:not(.chips)'],
   ['chips', '.ctrl-row.chips'],
-  ['surface hud', '.hud-controls'],
+  ['ruler', '.ruler'],
+  ['index tab', '.surface-index-handle'],
   ['distance scale', '.distance-scale'],
-  ['surface index', '.surface-index-desktop'],
-  ['side panel', '.detail-panel'],
+  ['nation legend', '.legend-3d'],
+  ['locate', '.locate-slot'],
+  ['footer', '.footer-menu'],
 ];
 
-for (const route of TAB_ROUTES) {
-  for (const size of HUD_SIZES) {
+for (const route of WORLD_ROUTES) {
+  for (const size of WORLD_SIZES) {
     const key = `${size.width}x${size.height}`;
-    test.describe(`A-Z tab ${route} — ${key} non-touch`, () => {
+    test.describe(`world HUD ${route} — ${key} non-touch`, () => {
       test.use({ viewport: size, hasTouch: false, isMobile: false });
 
-      test('the tab clears the footer and the HUD, and nothing paints over it', async ({
-        page,
-      }) => {
-        test.slow(route === '/explore');
+      test('no two HUD parts intersect, with the INDEX panel closed and open', async ({ page }) => {
+        test.slow();
         await page.goto(route, { waitUntil: 'networkidle' });
+        await expect(page.locator('.ctrl-row.chips')).toBeVisible();
         await page.waitForTimeout(500);
-        const tab = page.locator('.entity-index.floating summary');
-        await expect(tab).toBeVisible();
-        const t = await box(tab);
-        const clashes: string[] = [];
-        for (const [name, sel] of TAB_NEIGHBOURS) {
-          const l = page.locator(sel).first();
-          if (!(await l.isVisible())) continue;
-          const o = await box(l);
-          if (intersects(t, o)) clashes.push(`${name} ${JSON.stringify(o)}`);
-        }
-        expect(clashes, `tab ${JSON.stringify(t)} overlaps: ${clashes.join('; ')}`).toEqual([]);
-        const covered = await tab.evaluate((el) => {
-          const r = el.getBoundingClientRect();
-          const hits = document.elementsFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-          return hits
-            .slice(0, hits.indexOf(el) < 0 ? hits.length : hits.indexOf(el))
-            .filter((h) => !el.contains(h))
-            .map((h) => `${h.tagName.toLowerCase()}.${h.className}`);
-        });
-        expect(covered, `painted over the tab: ${covered.join(', ')}`).toEqual([]);
+        const measure = async (parts: Array<[string, string]>) => {
+          const boxes: Array<[string, Box]> = [];
+          for (const [name, sel] of parts) {
+            const l = page.locator(sel).first();
+            if (!(await l.isVisible())) continue;
+            boxes.push([name, await box(l)]);
+          }
+          const clashes: string[] = [];
+          for (let i = 0; i < boxes.length; i++)
+            for (let j = i + 1; j < boxes.length; j++)
+              if (intersects(boxes[i][1], boxes[j][1]))
+                clashes.push(`${boxes[i][0]}|${boxes[j][0]}`);
+          return { boxes, clashes };
+        };
+        const closed = await measure(WORLD_HUD_PARTS);
+        expect(closed.boxes.length).toBeGreaterThanOrEqual(4);
+        expect(closed.clashes, `overlapping HUD parts: ${closed.clashes.join(', ')}`).toEqual([]);
+
+        await page.getByTestId('surface-index-toggle').click();
+        await expect(page.locator('.surface-index-desktop')).toBeVisible();
+        const open = await measure([
+          ['view row', '.hud-controls > .ctrl-row:not(.chips)'],
+          ['chips', '.ctrl-row.chips'],
+          ['index panel', '.surface-index-desktop'],
+        ]);
+        expect(
+          open.clashes,
+          `overlapping with the INDEX panel: ${open.clashes.join(', ')}`,
+        ).toEqual([]);
       });
     });
   }

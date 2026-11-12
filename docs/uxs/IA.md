@@ -60,7 +60,7 @@ One topbar pattern: the persistent 52px nav bar.
 
 Left region: ORRERY wordmark (Bebas Neue 26px, letter-spacing 4px) + "MISSION SIMULATOR" subtitle (Space Mono 11px, rgba(255,255,255,0.6)).
 
-Centre region: six screen links. Active screen: white text, `rgba(68,102,255,0.28)` background, `rgba(68,102,255,0.55)` border. Inactive: `rgba(255,255,255,0.28)`, transparent border, hover to `rgba(255,255,255,0.85)`.
+Centre region: six screen links. Active screen: white text, `rgba(80,112,255,0.28)` background, `rgba(80,112,255,0.55)` border. Inactive: `rgba(255,255,255,0.28)`, transparent border, hover to `rgba(255,255,255,0.85)`.
 
 Right region: screen-specific controls (3D/2D toggle on explore and fly, CAPCOM toggle on fly, status indicator on fly).
 

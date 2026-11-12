@@ -92,6 +92,8 @@ declare global {
       ringAt: number[];
       viewShiftPx: number;
     };
+    /** The direction pills (ʻOumuamua's and the heading craft's): drawn (whole chain visible) and text, by owner id. */
+    __exploreDirectionLabels?: () => Record<string, { drawn: boolean; text: string }>;
     /** Pin scenes (neighbourhood to cosmic web): every label and ring as drawn, client px; null elsewhere. */
     __scenePins?: () => import('$lib/universe/scene-pins').PinsSnapshot | null;
     /** Screen points (canvas-box px) on a kind of solar line or the neighbourhood's light-year rings, for the readability probe. */

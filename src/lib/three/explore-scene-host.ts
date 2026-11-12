@@ -98,7 +98,7 @@ import type { LightShell } from '$lib/universe/causality';
 import type { ScaleReadout } from '$lib/universe/scale-readout';
 import type { LocalizedPlanet } from '$types/planet';
 import type { Mission } from '$types/mission';
-import type { IconicTrajectoryHandle } from '$lib/three/iconic-trajectory';
+import { setDirectionLabelText, type IconicTrajectoryHandle } from '$lib/three/iconic-trajectory';
 import type { attachFrameMonitor } from '$lib/quality/frame-monitor';
 import type { resolveQualitySync } from '$lib/quality/quality-tier';
 import type { createRouteLifecycle } from '$lib/three/route-lifecycle';
@@ -2008,6 +2008,19 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ringAt: selHalo.position.toArray(),
       viewShiftPx: framingShift,
     });
+    // Read-only probe of the direction pills (HUD e2e): drawn (the whole chain visible) and text.
+    window.__exploreDirectionLabels = () => {
+      const out: Record<string, { drawn: boolean; text: string }> = {};
+      const read = (key: string, sprite: THREE.Sprite) => {
+        const state = sprite.userData.directionLabel as { text: string } | undefined;
+        out[key] = { drawn: isDrawn(sprite), text: state?.text ?? '' };
+      };
+      for (const o of smallBodyObjs) if (o.directionLabel) read(o.body.id, o.directionLabel);
+      for (const h of iconicTrajectoryHandles) {
+        if (h.directionLabel) read(h.missionId, h.directionLabel);
+      }
+      return out;
+    };
     // Read-only probe of the pin scenes (readability e2e): every label and ring as drawn, client px.
     window.__scenePins = () => {
       const sc = inNeighborhood()
@@ -2264,6 +2277,25 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // record on /missions when picked. The roster is TRAJECTORY_IDS
   // ($lib/data/interstellar), shared with /fly.
   const ICONIC_TRAJECTORY_IDS = TRAJECTORY_IDS;
+  // The direction pills ("← Vega", "→ Aldebaran") carry the data's star name; a named star
+  // takes its name from the same overlay the star panel reads, so the pill speaks the
+  // reader's language. Catalogue-only stars (Gliese 445) keep their data name.
+  const localizeDirectionLabel = (sprite: THREE.Sprite, arrow: string, star: string): void => {
+    void getNamedStars(fetch)
+      .then(async (stars) => {
+        const id = stars.find((s) => s.proper === star)?.id;
+        const overlay = id ? await getNamedStarI18n(getLocale(), id, fetch) : null;
+        if (overlay?.name && overlay.name !== star) {
+          setDirectionLabelText(sprite, `${arrow} ${overlay.name}`);
+        }
+      })
+      .catch(dataLoadFailed);
+  };
+  for (const o of smallBodyObjs) {
+    if (o.directionLabel && o.body.inbound_radiant) {
+      localizeDirectionLabel(o.directionLabel, '←', o.body.inbound_radiant);
+    }
+  }
   // Trajectory build is the worst init long task on /explore — each
   // call creates ~5-20 sprites + CanvasTextures, and the 18-trajectory
   // roster (vetted via perf-explore-iconic-clicks.spec.ts on 2026-06-19,
@@ -2289,6 +2321,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       });
       scene.add(handle.group);
       iconicTrajectoryHandles.push(handle);
+      if (handle.directionLabel && handle.headingStar) {
+        localizeDirectionLabel(handle.directionLabel, '→', handle.headingStar);
+      }
       pickables.push(handle.clickTarget, ...handle.pickTargets);
       // Yield to the event loop — separates each build into its own
       // macrotask so the browser can render + process input between
@@ -4637,6 +4672,13 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         ) {
           hoverR = planetOrSmallRing(ht.planetId, ht.smallBodyId, tmpHoverPos);
         }
+        // ʻOumuamua's "← Vega" pill: only while the body is hovered or selected (UXD-021).
+        for (const o of smallBodyObjs) {
+          if (o.directionLabel) {
+            o.directionLabel.visible =
+              ht?.smallBodyId === o.body.id || bridge.selectedSmallBodyId === o.body.id;
+          }
+        }
         if (hoverR > 0) {
           hoverHalo.scale.set(hoverR, hoverR, hoverR);
           hoverHalo.position.copy(tmpHoverPos);
@@ -4814,6 +4856,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   lifecycle.add(() => el3d.remove());
   lifecycle.add(() => {
     delete window.__exploreCameraState;
+    delete window.__exploreDirectionLabels;
     delete window.__exploreBodyPosition;
     delete window.__exploreBodyScreen;
     delete window.__exploreLinePoints;

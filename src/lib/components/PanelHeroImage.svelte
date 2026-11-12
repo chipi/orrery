@@ -22,9 +22,11 @@
     ariaLabel?: string;
     /** Extra wrapper class, for a panel that styles its hero differently. */
     heroClass?: string;
+    /** Crop position for an image the override files do not key (a deep-sky thumb). */
+    position?: string;
   }
-  let { src, name, onOpen, ariaLabel, heroClass = '' }: Props = $props();
-  const position = $derived(heroPositionFor(src));
+  let { src, name, onOpen, ariaLabel, heroClass = '', position: given }: Props = $props();
+  const position = $derived(given ?? heroPositionFor(src));
 </script>
 
 <div class="panel-hero {heroClass}" class:plain={!onOpen}>

@@ -183,6 +183,8 @@ export interface ExploreSceneHostBridge {
   bhCultureDoors: LocalizedCultureDoor[];
   bhCurvatureLens: boolean;
   bhPanelOpen: boolean;
+  /** The hole whose panel is open in place (no lensing takeover); activeBlackHole is the takeover. */
+  bhPanelHole: BlackHole | null;
   bhTimeLens: boolean;
   bodyHostName: string;
   readonly cameraState: { focusedOnPlanet: boolean };
@@ -447,6 +449,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   let closeLaniakeaFn: (() => void) | null = null;
   let closeCosmicWebFn: (() => void) | null = null;
   let exitBlackHoleFn: (() => void) | null = null;
+  let seeBlackHoleLensingFn: (() => void) | null = null;
   let bhDeepLinkFn: ((id: string) => void) | null = null;
   let setBhCurvatureFn: ((on: boolean) => void) | null = null;
   let selectStarFn: ((id: string) => Promise<void>) | null = null;
@@ -582,6 +585,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       bhScene.setCurvature(bridge.bhCurvatureLens ? 1 : 0);
       bhLastFrame = performance.now();
       bridge.activeBlackHole = hole;
+      bridge.bhPanelHole = hole;
       bridge.bhPanelOpen = true;
       bridge.bhCultureDoors = [];
       if (hole.culture_door) {
@@ -603,14 +607,48 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     }
   }
   function exitBlackHole(): void {
-    if (!bridge.activeBlackHole) return;
-    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
-    bhScene?.dispose();
-    bhScene = null;
-    bridge.activeBlackHole = null;
+    if (bridge.activeBlackHole) {
+      if (!deps.getReducedMotion()) bridge.crossingFlashId++;
+      bhScene?.dispose();
+      bhScene = null;
+      bridge.activeBlackHole = null;
+      bridge.bhCurvatureLens = false;
+      bridge.bhTimeLens = false;
+    }
     bridge.bhPanelOpen = false;
-    bridge.bhCurvatureLens = false;
-    bridge.bhTimeLens = false;
+    bridge.bhPanelHole = null;
+  }
+  // B3 (UXD-023): a hole is picked at its own scale and opens its panel in place; the main area
+  // does not change. The lensing takeover is an action on that panel (seeBlackHoleLensing).
+  async function openBlackHolePanel(id: string): Promise<void> {
+    const hole = await getBlackHoleI18n(id, getLocale(), fetch);
+    if (!hole || bridge.activeBlackHole) return;
+    bridge.bhPanelHole = hole;
+    bridge.bhPanelOpen = true;
+    bridge.bhCultureDoors = [];
+    if (hole.culture_door) {
+      void getCultureDoors(hole.id, getLocale(), fetch)
+        .then((d) => {
+          if (bridge.bhPanelHole?.id === hole.id) bridge.bhCultureDoors = d;
+        })
+        .catch(dataLoadFailed);
+    }
+    closeStarPanel();
+    bridge.anonStar = null;
+    cue('select');
+    trackItemClick('marker', id, '/explore');
+  }
+  // Leaving the scale or resetting its view drops an in-place hole panel, as it drops the others;
+  // a takeover is left through its own Back.
+  function closeBlackHolePanel(): void {
+    if (bridge.activeBlackHole || !bridge.bhPanelOpen) return;
+    bridge.bhPanelOpen = false;
+    bridge.bhPanelHole = null;
+    if (inMilkyWay()) mwScene?.highlight(null);
+  }
+  function seeBlackHoleLensing(): void {
+    const id = bridge.bhPanelHole?.id;
+    if (id) void enterBlackHole(id);
   }
 
   let mwDiskKpc = 16;
@@ -1113,6 +1151,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     camP = MW_ENTRY_CAM_P;
     camR = Math.max(camRMin, Math.min(camRMax, mwEntryR()));
     closeMwPanel();
+    closeBlackHolePanel();
     updateCam();
   }
   resetMilkyWayFn = resetMilkyWayView;
@@ -1152,6 +1191,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (f.entryP !== undefined) camP = f.entryP;
     camR = Math.max(camRMin, Math.min(camRMax, f.entryR));
     close();
+    closeBlackHolePanel();
     updateCam();
   }
   function resetLocalSheetView(): void {
@@ -1340,6 +1380,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     const scene = await out.ensure();
     if (!scene) return; // load failed — stay on the rung below
     LEVELS[i - 1].clearPanel?.();
+    closeBlackHolePanel();
     cancelFocus();
     focusOrigin.set(0, 0, 0);
     contextGraph.setActive(level.id);
@@ -1373,6 +1414,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     dollyActive = false;
     if (!deps.getReducedMotion()) bridge.crossingFlashId++;
     level.clearPanel?.();
+    closeBlackHolePanel();
     cancelFocus();
     focusOrigin.set(0, 0, 0);
     const target = LEVELS[i - 1];
@@ -2804,11 +2846,13 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   }
   function selectMilkyWay(id: string): void {
     if (!bridge.mwObjects.some((o) => o.id === id)) return;
-    // Slice 6 — Sagittarius A* upgrades from a flat pin to the lensed black-hole
-    // render when you select it (the S5 pin becomes an S6 destination).
+    // A black-hole pin opens the hole's panel in place (B3); the lensing render is its action.
     if (id === 'sagittarius-a-star' || id === 'cygnus-x-1') {
+      bridge.mwPanelOpen = false;
+      bridge.selectedMwId = null;
+      mwScene?.highlight(id, id);
       focusMember(mwMemberPosition(id));
-      void enterBlackHole(id);
+      void openBlackHolePanel(id);
       return;
     }
     cue('select');
@@ -2983,16 +3027,20 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   closeMwFn = closeMwPanel;
   mwDeepLinkFn = resolveGalaxyDeepLink;
   exitBlackHoleFn = exitBlackHole;
-  // A black hole row (Q9): the camera takes the hole's pin first, then the lensing takeover opens
-  // from there, so leaving it lands on the pin. M87* has no pin of its own: it sits at the centre
-  // of the Virgo Cluster, so it selects that pin (camera, highlight, panel). Cygnus X-1 and
-  // Sagittarius A* have Milky Way pins. Gargantua has none: panel only. B3 turns the takeover
-  // into a button on the hole's panel; until then this chain is how a row gets there.
+  // A black hole row (Q9): the camera takes the hole's pin, then its panel opens in place (B3).
+  // M87* has no pin of its own: it sits at the centre of the Virgo Cluster, so it selects that
+  // pin (camera, highlight; its panel is covered by the hole's). Cygnus X-1 and Sagittarius A*
+  // have Milky Way pins. Gargantua has none: panel only. The lensing takeover is the panel's
+  // action, so leaving it lands on the pin.
   bhDeepLinkFn = (id: string) => {
     if (id === 'm87-star' && inVirgo()) selectVirgo('virgo-cluster');
-    else if (inMilkyWay()) focusMember(mwMemberPosition(id));
-    void enterBlackHole(id);
+    else if (inMilkyWay()) {
+      mwScene?.highlight(id, id);
+      focusMember(mwMemberPosition(id));
+    }
+    void openBlackHolePanel(id);
   };
+  seeBlackHoleLensingFn = seeBlackHoleLensing;
   setBhCurvatureFn = (on: boolean) => bhScene?.setCurvature(on ? 1 : 0);
 
   // Nav shortcuts jump straight to a scale-shell. Climb OUT (cross-out) or back
@@ -4908,6 +4956,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     closeCosmicWebFn,
     selectCosmicWebFn: selectCosmicWeb,
     exitBlackHoleFn,
+    seeBlackHoleLensingFn,
     bhDeepLinkFn,
     setBhCurvatureFn,
     selectStarFn,

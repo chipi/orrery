@@ -76,7 +76,7 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
         'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="proxima-centauri"]',
       )
       .click();
-    await page.locator('.enter-system').first().click({ timeout: 15_000 });
+    await page.getByTestId('enter-system').first().click({ timeout: 15_000 });
     await expect(page.getByTestId('explore-scale-back')).toHaveAttribute(
       'aria-label',
       'Stellar Neighborhood',
@@ -98,7 +98,7 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
         'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="proxima-centauri"]',
       )
       .click();
-    await page.locator('.enter-system').first().click({ timeout: 15_000 });
+    await page.getByTestId('enter-system').first().click({ timeout: 15_000 });
     await expect.poll(() => params(page).system, { timeout: 15_000 }).toBe('proxima-centauri');
     await expect(page.getByTestId('explore-scale-back')).toHaveAttribute(
       'aria-label',

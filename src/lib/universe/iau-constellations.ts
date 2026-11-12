@@ -98,3 +98,25 @@ export function constellationName(code: string | null | undefined): string {
   if (!code) return '';
   return IAU_CONSTELLATIONS[code] ?? code;
 }
+
+/** The constellations the Sun's yearly path (the ecliptic) crosses: the twelve of the zodiac
+ *  and Ophiuchus, which the ecliptic also runs through (IAU boundaries, 1930). */
+export const ZODIAC_CONSTELLATIONS: ReadonlySet<string> = new Set([
+  'Ari',
+  'Tau',
+  'Gem',
+  'Cnc',
+  'Leo',
+  'Vir',
+  'Lib',
+  'Sco',
+  'Oph',
+  'Sgr',
+  'Cap',
+  'Aqr',
+  'Psc',
+]);
+
+export function isZodiacConstellation(code: string | null | undefined): boolean {
+  return !!code && ZODIAC_CONSTELLATIONS.has(code);
+}

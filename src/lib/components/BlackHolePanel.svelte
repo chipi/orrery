@@ -1,13 +1,15 @@
 <!--
   BlackHolePanel — detail panel for the /explore v2 black-hole lensing render
-  (Slice 6). Mirrors the MilkyWayPanel / DeepSkyPanel family: mass / distance /
-  spin / Schwarzschild radius + a link into the /science black-holes article.
+  (Slice 6). On the shared UniversePanelBody (B3): mass / distance / spin /
+  Schwarzschild radius + a link into the /science black-holes article, the hole's own picture as
+  hero where one exists, and the action that enters the lensing takeover.
   Gargantua carries the Interstellar culture door (Slice 6 Part 5) via the
   optional children slot. Real holes cite EHT/GRAVITY; Gargantua is badged fiction.
 -->
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import Panel from './Panel.svelte';
+  import UniversePanelBody from './UniversePanelBody.svelte';
+  import Chip from './Chip.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import type { BlackHole, BlackHoleKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
@@ -19,10 +21,14 @@
     learnHref: string;
     open: boolean;
     onClose: () => void;
+    /** Another panel is stacked on this one. */
+    covered?: boolean;
+    /** Enters the lensing takeover; absent while the takeover is already on screen. */
+    onSeeLensing?: () => void;
     /** Optional extra content (e.g. Gargantua's culture door). */
     children?: Snippet;
   };
-  let { hole, learnHref, open, onClose, children }: Props = $props();
+  let { hole, learnHref, open, onClose, covered = false, onSeeLensing, children }: Props = $props();
 
   const KIND: Record<BlackHoleKind, () => string> = {
     supermassive: m.explore_bh_kind_supermassive,
@@ -59,6 +65,34 @@
       return `${(ly / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })}M ly`;
     return `${ly.toLocaleString(undefined, { maximumSignificantDigits: 3 })} ly`;
   }
+  let facts = $derived(
+    hole
+      ? [
+          {
+            label: m.explore_bh_label_mass(),
+            value: bigNum(hole.mass_solar),
+            unit: m.explore_bh_solar_masses(),
+            accent: true,
+            source: massSrc ?? undefined,
+          },
+          {
+            label: m.explore_bh_label_distance(),
+            value: dist(hole.dist_ly),
+            source: distSrc ?? undefined,
+          },
+          ...(!real
+            ? [
+                {
+                  label: m.explore_bh_label_spin(),
+                  value: hole.spin.toLocaleString(undefined, { maximumFractionDigits: 2 }),
+                },
+              ]
+            : []),
+          { label: m.explore_bh_label_rs(), value: rs(hole.rs_km) },
+        ]
+      : [],
+  );
+
   function rs(km: number): string {
     if (km >= 1e9)
       return `~${(km / 1e9).toLocaleString(undefined, { maximumFractionDigits: 1 })}B km`;
@@ -68,127 +102,36 @@
   }
 </script>
 
-<Panel {open} {onClose} {title} mobileSheet="partial">
-  {#snippet eyebrow()}
-    {#if hole}<div class="kind">{kindLabel}</div>{/if}
+<UniversePanelBody
+  {open}
+  {onClose}
+  {covered}
+  {title}
+  entityId={hole?.id ?? ''}
+  heroOf={hole ? { level: 'black-holes', id: hole.id } : undefined}
+  kind={hole ? kindLabel : undefined}
+  name={hole?.name}
+  lead={hole ? [hole.discovery] : []}
+  {facts}
+  learn={hole ? { href: learnHref, label: m.explore_bh_learn_more() } : undefined}
+>
+  {#snippet actions()}
+    {#if onSeeLensing}
+      <Chip kind="action" onclick={onSeeLensing}>{m.explore_bh_see_lensing()}</Chip>
+    {/if}
   {/snippet}
-  {#snippet heading()}
-    {#if hole}<div class="name">{hole.name}</div>{/if}
+  {#snippet extra()}
+    {#if hole}
+      {#if real}<DataSources
+          variant="panel"
+          items={sources}
+          links={recordLinks(hole.records)}
+        />{/if}
+      {@render children?.()}
+    {/if}
   {/snippet}
-
-  {#if hole}
-    <p class="prose">{hole.discovery}</p>
-
-    <div class="grid">
-      <div class="cell">
-        <div class="cell-label">{m.explore_bh_label_mass()}</div>
-        <div class="cell-value accent">
-          {bigNum(hole.mass_solar)}
-          <span class="unit">{m.explore_bh_solar_masses()}</span>
-        </div>
-        {#if massSrc}
-          <a class="src" href={massSrc.url} target="_blank" rel="noopener noreferrer external"
-            >{massSrc.label}</a
-          >
-        {/if}
-      </div>
-      <div class="cell">
-        <div class="cell-label">{m.explore_bh_label_distance()}</div>
-        <div class="cell-value">{dist(hole.dist_ly)}</div>
-        {#if distSrc}
-          <a class="src" href={distSrc.url} target="_blank" rel="noopener noreferrer external"
-            >{distSrc.label}</a
-          >
-        {/if}
-      </div>
-      {#if !real}
-        <div class="cell">
-          <div class="cell-label">{m.explore_bh_label_spin()}</div>
-          <div class="cell-value">
-            {hole.spin.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-          </div>
-        </div>
-      {/if}
-      <div class="cell">
-        <div class="cell-label">{m.explore_bh_label_rs()}</div>
-        <div class="cell-value">{rs(hole.rs_km)}</div>
-      </div>
-    </div>
-
-    {#if real}<DataSources variant="panel" items={sources} links={recordLinks(hole.records)} />{/if}
-
-    {@render children?.()}
-
-    <a class="learn-link" href={learnHref}>{m.explore_bh_learn_more()} →</a>
+  {#snippet science()}
     <!-- Where black-hole geometry leads next in the encyclopedia. -->
     <ScienceCard tab="observation" section="wormholes" />
-  {/if}
-</Panel>
-
-<style>
-  .kind {
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-label);
-  }
-  .name {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  .prose {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--text, #e9eefc);
-    margin: 0.5rem 0 0.75rem;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-  .cell {
-    min-width: 0;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 6px;
-    padding: 0.4rem 0.55rem;
-  }
-  .cell-label {
-    font-size: var(--size-label);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-text-label);
-  }
-  .cell-value {
-    font-size: 0.82rem;
-    font-weight: 600;
-  }
-  .cell-value.accent {
-    color: var(--color-state);
-  }
-  .src {
-    display: block;
-    margin-top: 2px;
-    font-size: var(--size-label);
-    font-weight: 400;
-    color: var(--color-text-label);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .unit {
-    font-size: var(--size-label);
-    font-weight: 400;
-    color: var(--color-text-label);
-  }
-  .learn-link {
-    display: inline-block;
-    font-size: 0.8rem;
-    color: var(--color-state);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .learn-link:hover {
-    text-decoration: underline;
-  }
-</style>
+  {/snippet}
+</UniversePanelBody>

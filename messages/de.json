@@ -192,8 +192,6 @@
   "panel_orbit_shape_meta": "BAHNFORM · e={e} · Perihel vs. Aphel ×{ratio}",
   "panel_dist_row": "{mkm} M km von der Sonne · Rotation {rot} Tage",
   "panel_source_iau": "Quelle: IAU · JPL Planetary Fact Sheets · Epoche J2000",
-  "panel_plan_mission_cta": "▶ MISSION NACH {name} PLANEN",
-  "panel_explore_surface_cta": "▷ {name}-OBERFLÄCHE ERKUNDEN",
   "sun_label_spectral_class": "SPEKTRALKLASSE",
   "sun_label_system_mass": "SYSTEMMASSE",
   "sun_label_radius": "RADIUS",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "Schwarze Löcher",
   "nav_locale_suggest_label": "Diese Seite in deiner Sprache ansehen",
   "landing_footer_privacy_link": "Datenschutz",
-  "card_open_button": "Sammelkarte",
   "card_share_link": "Link teilen",
   "card_link_copied": "Link kopiert",
   "card_close": "Schließen",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "Spiralarme",
   "explore_index_section_fiction": "Fiktion",
   "explore_index_filter_headliner": "Bekannte Objekte",
-  "explore_index_filter_dwarf_galaxies": "Zwerggalaxien"
+  "explore_index_filter_dwarf_galaxies": "Zwerggalaxien",
+  "panel_share": "Teilen",
+  "panel_action_plan": "Mission planen",
+  "panel_action_surface": "Oberfläche erkunden",
+  "mp_surface_mars_orbit": "Im Marsorbit",
+  "mp_surface_lunar_orbit": "Im Mondorbit",
+  "mp_surface_mars_surface": "Auf der Marsoberfläche",
+  "mp_surface_lunar_surface": "Auf der Mondoberfläche"
 }

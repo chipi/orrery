@@ -192,8 +192,6 @@
   "panel_orbit_shape_meta": "FORMA DE ÓRBITA · e={e} · perihelio frente a afelio ×{ratio}",
   "panel_dist_row": "{mkm} M km del Sol · rotación {rot} días",
   "panel_source_iau": "Fuente: IAU · JPL Planetary Fact Sheets · época J2000",
-  "panel_plan_mission_cta": "▶ PLANEAR UNA MISIÓN A {name}",
-  "panel_explore_surface_cta": "▷ EXPLORAR LA SUPERFICIE DE {name}",
   "sun_label_spectral_class": "CLASE ESPECTRAL",
   "sun_label_system_mass": "MASA DEL SISTEMA",
   "sun_label_radius": "RADIO",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "Agujeros negros",
   "nav_locale_suggest_label": "Ver esta página en tu idioma",
   "landing_footer_privacy_link": "privacidad",
-  "card_open_button": "Tarjeta de colección",
   "card_share_link": "Compartir enlace",
   "card_link_copied": "Enlace copiado",
   "card_close": "Cerrar",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "Brazos espirales",
   "explore_index_section_fiction": "Ficción",
   "explore_index_filter_headliner": "Objetos destacados",
-  "explore_index_filter_dwarf_galaxies": "Galaxias enanas"
+  "explore_index_filter_dwarf_galaxies": "Galaxias enanas",
+  "panel_share": "Compartir",
+  "panel_action_plan": "Planear misión",
+  "panel_action_surface": "Explorar superficie",
+  "mp_surface_mars_orbit": "En órbita de Marte",
+  "mp_surface_lunar_orbit": "En órbita lunar",
+  "mp_surface_mars_surface": "En la superficie de Marte",
+  "mp_surface_lunar_surface": "En la superficie lunar"
 }

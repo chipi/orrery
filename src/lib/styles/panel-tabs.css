@@ -91,15 +91,12 @@
   overflow: hidden;
   background: rgba(0, 0, 0, 0.45);
   cursor: zoom-in;
-  transition:
-    border-color 120ms,
-    box-shadow 120ms;
 }
-.panel-hero-btn:hover,
+/* The pointer is the hover cue; the ring is for the keyboard. Inset so .fleet-hero's
+   overflow: hidden does not clip it. */
 .panel-hero-btn:focus-visible {
-  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 25%, transparent);
-  outline: none;
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
 }
 .panel-hero-btn img {
   width: 100%;

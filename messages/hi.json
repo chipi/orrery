@@ -304,8 +304,6 @@
   "panel_orbit_shape_meta": "कक्षा आकार · e={e} · उपसौर बनाम अपसौर ×{ratio}",
   "panel_dist_row": "सूर्य से {mkm} मिलियन किमी · घूर्णन {rot} दिन",
   "panel_source_iau": "स्रोत: IAU · JPL Planetary Fact Sheets · J2000 संदर्भ-काल",
-  "panel_plan_mission_cta": "▶ {name} के लिए मिशन की योजना बनाएं",
-  "panel_explore_surface_cta": "▷ {name} की सतह का अन्वेषण करें",
   "sun_label_spectral_class": "वर्णक्रम वर्ग",
   "sun_label_system_mass": "तंत्र द्रव्यमान",
   "sun_label_radius": "त्रिज्या",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "ब्लैक होल",
   "nav_locale_suggest_label": "इस पृष्ठ को अपनी भाषा में देखें",
   "landing_footer_privacy_link": "गोपनीयता",
-  "card_open_button": "कलेक्टर कार्ड",
   "card_share_link": "लिंक साझा करें",
   "card_link_copied": "लिंक कॉपी हो गया",
   "card_close": "बंद करें",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "सर्पिल बाहु",
   "explore_index_section_fiction": "कल्पना",
   "explore_index_filter_headliner": "प्रमुख पिंड",
-  "explore_index_filter_dwarf_galaxies": "बौनी गैलेक्सियाँ"
+  "explore_index_filter_dwarf_galaxies": "बौनी गैलेक्सियाँ",
+  "panel_share": "साझा करें",
+  "panel_action_plan": "मिशन की योजना बनाएं",
+  "panel_action_surface": "सतह का अन्वेषण करें",
+  "mp_surface_mars_orbit": "मंगल की कक्षा में",
+  "mp_surface_lunar_orbit": "चंद्रमा की कक्षा में",
+  "mp_surface_mars_surface": "मंगल की सतह पर",
+  "mp_surface_lunar_surface": "चंद्रमा की सतह पर"
 }

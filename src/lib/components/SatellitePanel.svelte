@@ -16,6 +16,8 @@
   import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import { page } from '$app/state';
   import { formatKm } from '$lib/format';
   import { localeFromPage, localHref } from '$lib/locale';
@@ -130,7 +132,12 @@
   });
 </script>
 
-<Panel {open} {onClose} title={entry?.name ?? ''}>
+<Panel
+  {open}
+  {onClose}
+  title={entry?.name ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
   {#if entry}
     <div class="head">
       <div class="kind-row">
@@ -150,6 +157,12 @@
         </div>
       </div>
     </div>
+
+    {#if entry.id === 'moon'}
+      <PanelActions>
+        <Chip kind="link" href={localHref(`/moon`)}>{m.panel_action_surface()}</Chip>
+      </PanelActions>
+    {/if}
 
     {#if gallery.length > 0}
       <PanelHeroImage
@@ -257,27 +270,6 @@
         {/if}
       {/if}
     </div>
-    {#if entry?.id === 'moon'}
-      <div class="cta-bar">
-        <a class="cta cta-secondary" href={localHref(`/moon`)}>
-          {m.panel_explore_surface_cta({ name: entry.name.toUpperCase() })}
-        </a>
-      </div>
-    {/if}
-
-    <!-- #547 S5b — every natural satellite carries its collectible card. -->
-    {#if cardSpec}
-      <div class="cta-bar">
-        <button
-          type="button"
-          class="cta cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          {m.card_open_button()}
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -417,51 +409,5 @@
   .learn-list a:focus-visible {
     background: var(--color-accent-soft);
     outline: none;
-  }
-  .cta-bar {
-    padding: 12px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    flex-shrink: 0;
-    margin-top: 12px;
-  }
-  .cta {
-    width: 100%;
-    min-height: 44px;
-    padding: 12px;
-    border-radius: 4px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 3px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-secondary {
-    background: transparent;
-    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
-    color: #dde4ff;
-    text-decoration: none;
-  }
-  .cta-secondary:hover,
-  .cta-secondary:focus-visible {
-    background: var(--color-accent-soft);
-    border-color: var(--color-accent);
-    color: #fff;
-    outline: none;
-  }
-  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
-  .cta.cta-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.22);
-    cursor: pointer;
-  }
-  .cta.cta-card:hover,
-  .cta.cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
   }
 </style>

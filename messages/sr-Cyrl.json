@@ -192,8 +192,6 @@
   "panel_orbit_shape_meta": "ОБЛИК ОРБИТЕ · е={e} · перихел према афелу ×{ratio}",
   "panel_dist_row": "{mkm} М km од Сунца · ротација {rot} дана",
   "panel_source_iau": "Извор: IAU · JPL Planetary Fact Sheets · епоха J2000",
-  "panel_plan_mission_cta": "▶ ПЛАНИРАЈ МИСИЈУ ДО {name}",
-  "panel_explore_surface_cta": "▷ ИСТРАЖИ ПОВРШИНУ {name}",
   "sun_label_spectral_class": "СПЕКТРАЛНИ ТИП",
   "sun_label_system_mass": "МАСА СИСТЕМА",
   "sun_label_radius": "ПОЛУПРЕЧНИК",
@@ -3033,7 +3031,6 @@
   "star_index_black_holes": "Црне рупе",
   "nav_locale_suggest_label": "Погледајте ову страницу на вашем језику",
   "landing_footer_privacy_link": "приватност",
-  "card_open_button": "Картица колекције",
   "card_share_link": "Подели везу",
   "card_link_copied": "Веза копирана",
   "card_close": "Затвори",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "Спирални кракови",
   "explore_index_section_fiction": "Фикција",
   "explore_index_filter_headliner": "Познати објекти",
-  "explore_index_filter_dwarf_galaxies": "Патуљасте галаксије"
+  "explore_index_filter_dwarf_galaxies": "Патуљасте галаксије",
+  "panel_share": "Подели",
+  "panel_action_plan": "Планирај мисију",
+  "panel_action_surface": "Истражи површину",
+  "mp_surface_mars_orbit": "У орбити Марса",
+  "mp_surface_lunar_orbit": "У орбити Месеца",
+  "mp_surface_mars_surface": "На површини Марса",
+  "mp_surface_lunar_surface": "На површини Месеца"
 }

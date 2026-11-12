@@ -192,8 +192,6 @@
   "panel_orbit_shape_meta": "FORME D'ORBITE · e={e} · périhélie vs aphélie ×{ratio}",
   "panel_dist_row": "{mkm} M km du Soleil · rotation {rot} jours",
   "panel_source_iau": "Source : IAU · JPL Planetary Fact Sheets · époque J2000",
-  "panel_plan_mission_cta": "▶ PLANIFIER UNE MISSION VERS {name}",
-  "panel_explore_surface_cta": "▷ EXPLORER LA SURFACE DE {name}",
   "sun_label_spectral_class": "CLASSE SPECTRALE",
   "sun_label_system_mass": "MASSE DU SYSTÈME",
   "sun_label_radius": "RAYON",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "Trous noirs",
   "nav_locale_suggest_label": "Voir cette page dans votre langue",
   "landing_footer_privacy_link": "confidentialité",
-  "card_open_button": "Carte de collection",
   "card_share_link": "Partager le lien",
   "card_link_copied": "Lien copié",
   "card_close": "Fermer",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "Bras spiraux",
   "explore_index_section_fiction": "Fiction",
   "explore_index_filter_headliner": "Objets remarquables",
-  "explore_index_filter_dwarf_galaxies": "Galaxies naines"
+  "explore_index_filter_dwarf_galaxies": "Galaxies naines",
+  "panel_share": "Partager",
+  "panel_action_plan": "Planifier une mission",
+  "panel_action_surface": "Explorer la surface",
+  "mp_surface_mars_orbit": "En orbite martienne",
+  "mp_surface_lunar_orbit": "En orbite lunaire",
+  "mp_surface_mars_surface": "À la surface de Mars",
+  "mp_surface_lunar_surface": "À la surface de la Lune"
 }

@@ -5,7 +5,7 @@ import { test, expect, type ConsoleMessage, type Page } from '@playwright/test';
  * one-card-per-real-thing alias rule, and the OG share-stub pages.
  *
  * Covers the invariants TA.md §"Collectible cards" locks:
- *   - every wired panel carries the "Collector card" CTA
+ *   - every wired panel carries the "Share" chip in its bar (opens the card)
  *   - aliased surfaces open the CANONICAL card (fleet perseverance →
  *     the MISSION card with the mission's own hero)
  *   - /c/<kind>/<id> stubs serve crawler-visible OG tags and forward

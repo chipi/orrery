@@ -304,8 +304,6 @@
   "panel_orbit_shape_meta": "轨道形状 · e={e} · 近日点与远日点 ×{ratio}",
   "panel_dist_row": "距太阳 {mkm} 百万公里 · 自转周期 {rot} 天",
   "panel_source_iau": "资料来源：IAU · JPL 行星概况表 · J2000 历元",
-  "panel_plan_mission_cta": "▶ 规划前往{name}的任务",
-  "panel_explore_surface_cta": "▷ 探索{name}表面",
   "sun_label_spectral_class": "光谱类型",
   "sun_label_system_mass": "太阳系质量",
   "sun_label_radius": "半径",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "黑洞",
   "nav_locale_suggest_label": "用您的语言查看此页面",
   "landing_footer_privacy_link": "隐私",
-  "card_open_button": "收集卡",
   "card_share_link": "分享链接",
   "card_link_copied": "链接已复制",
   "card_close": "关闭",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "旋臂",
   "explore_index_section_fiction": "虚构作品",
   "explore_index_filter_headliner": "著名天体",
-  "explore_index_filter_dwarf_galaxies": "矮星系"
+  "explore_index_filter_dwarf_galaxies": "矮星系",
+  "panel_share": "分享",
+  "panel_action_plan": "规划任务",
+  "panel_action_surface": "探索表面",
+  "mp_surface_mars_orbit": "在火星轨道",
+  "mp_surface_lunar_orbit": "在月球轨道",
+  "mp_surface_mars_surface": "在火星表面",
+  "mp_surface_lunar_surface": "在月球表面"
 }

@@ -1573,7 +1573,6 @@
   "panel_close": "Close panel",
   "panel_default_label": "Detail panel",
   "panel_dist_row": "{mkm} M km from Sun · rotation {rot} days",
-  "panel_explore_surface_cta": "▷ EXPLORE {name} SURFACE",
   "panel_gallery_aria": "{name} photo gallery",
   "panel_gallery_credit": "Imagery via Wikimedia Commons and the NASA Images API. Originals © the operating agency (NASA, ESA, JAXA, CSA, Roscosmos, CNSA, ISRO, MBRSC, etc.) and reused under public-domain or Creative Commons (CC BY / CC BY-SA) terms — see each Commons file page for full attribution.",
   "panel_gallery_credit_agency": "Imagery © {agency_name}, sourced via Wikimedia Commons and the NASA Images API. Reused under public-domain or Creative Commons (CC BY / CC BY-SA) terms — see each Commons file page for full attribution.",
@@ -1612,7 +1611,6 @@
   "panel_orbit_shape_meta": "ORBIT SHAPE · e={e} · perihelion vs aphelion ×{ratio}",
   "panel_orbit_shape_notably": "Notably elliptical",
   "panel_orbit_shape_slightly": "Slightly elliptical",
-  "panel_plan_mission_cta": "▶ PLAN A MISSION TO {name}",
   "panel_planet_no_missions": "No missions recorded.",
   "panel_related_science_heading": "EXPLORE FURTHER",
   "panel_satellite_composition_label": "Composition",
@@ -3064,7 +3062,6 @@
   "science_layer_bh_time_desc": "How much slower clocks tick at the photon sphere, the innermost stable orbit, and farther out — gravitational time dilation, quantified.",
   "star_index_black_holes": "Black holes",
   "landing_footer_privacy_link": "privacy",
-  "card_open_button": "Collector card",
   "card_share_link": "Share link",
   "card_link_copied": "Link copied",
   "card_close": "Close",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "Spiral arms",
   "explore_index_section_fiction": "Fiction",
   "explore_index_filter_headliner": "Notable objects",
-  "explore_index_filter_dwarf_galaxies": "Dwarf galaxies"
+  "explore_index_filter_dwarf_galaxies": "Dwarf galaxies",
+  "panel_share": "Share",
+  "panel_action_plan": "Plan mission",
+  "panel_action_surface": "Explore surface",
+  "mp_surface_mars_orbit": "In Mars orbit",
+  "mp_surface_lunar_orbit": "In lunar orbit",
+  "mp_surface_mars_surface": "On the Mars surface",
+  "mp_surface_lunar_surface": "On the lunar surface"
 }

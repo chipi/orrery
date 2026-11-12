@@ -171,7 +171,12 @@
   });
 </script>
 
-<Panel {open} title={selected?.name ?? selected?.short ?? selected?.id ?? ''} {onClose}>
+<Panel
+  {open}
+  title={selected?.name ?? selected?.short ?? selected?.id ?? ''}
+  {onClose}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
   {#if selected}
     <div class="head">
       <div class="agency-row">
@@ -192,6 +197,8 @@
       </div>
       <h1 class="name">{selected.name ?? selected.id}</h1>
     </div>
+
+    <!-- No PanelActions row: an Earth object has no entity action. Share is in the Panel bar. -->
 
     {#if panelGallery.length > 0}
       <PanelHeroImage
@@ -376,20 +383,6 @@
         <PanelLinkTiers links={selected.links} entityId={selected.id} />
       {/if}
     {/if}
-
-    <!-- #547 S5c — canonical collectible card (mission or fleet alias). -->
-    {#if cardSpec}
-      <div class="card-cta-bar">
-        <button
-          type="button"
-          class="cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          {m.card_open_button()}
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -400,35 +393,6 @@
 <PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
 
 <style>
-  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
-  .card-cta-bar {
-    padding: 12px 0 4px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 12px;
-  }
-  .cta-card {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-card:hover,
-  .cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-    outline: none;
-  }
   .head {
     padding: 0 0 12px;
     border-bottom: 1px solid var(--color-border);

@@ -314,9 +314,7 @@ const SWEEP_ALLOW_SELF = [
   '.drawer-search',
   '.drawer-backdrop',
   '.footer-more-btn',
-  // Panel and pull-tab furniture: × close buttons, back, backdrops, drawer handles
-  '.panel-close',
-  '.panel-back',
+  // Panel and pull-tab furniture: backdrops, drawer handles (the panel's close, back and Share are chips)
   '.panel-backdrop',
   '.mdg-close',
   '.mdg-dim',
@@ -385,7 +383,6 @@ const SWEEP_ALLOW_SELF = [
   '.panel-hero-btn',
   // CTAs and links drawn as buttons
   '.cta',
-  '.cta-card',
   '.spec-cta',
   '.cta-tour',
   '.anatomy-open',

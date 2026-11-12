@@ -5,7 +5,9 @@
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import { getPlanetGallery, getPlanets } from '$lib/data';
   import type { CardSpec } from '$lib/cards/card-spec';
   import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
@@ -148,7 +150,12 @@
   );
 </script>
 
-<Panel {open} {onClose} title={planet?.name ?? ''}>
+<Panel
+  {open}
+  {onClose}
+  title={planet?.name ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
   {#if planet}
     <div class="head">
       <div class="type">{planet.type.toUpperCase()}</div>
@@ -164,6 +171,17 @@
         </div>
       </div>
     </div>
+
+    {#if planet.id === 'earth' || planet.id === 'mars' || (planet.missionable && onPlanMission)}
+      <PanelActions>
+        {#if planet.id === 'earth' || planet.id === 'mars'}
+          <Chip kind="link" href={localHref(`/${planet.id}`)}>{m.panel_action_surface()}</Chip>
+        {/if}
+        {#if planet.missionable && onPlanMission}
+          <Chip kind="action" onclick={onPlanMission}>{m.panel_action_plan()}</Chip>
+        {/if}
+      </PanelActions>
+    {/if}
 
     {#if gallery.length > 0}
       <PanelHeroImage
@@ -351,36 +369,6 @@
     </div>
 
     <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
-
-    {#if planet.missionable && onPlanMission}
-      <div class="cta-bar">
-        <button type="button" class="cta" onclick={onPlanMission}>
-          {m.panel_plan_mission_cta({ name: planet.name.toUpperCase() })}
-        </button>
-      </div>
-    {/if}
-
-    {#if planet.id === 'earth' || planet.id === 'mars'}
-      <div class="cta-bar">
-        <a class="cta cta-secondary" href="{base}/{planet.id}">
-          {m.panel_explore_surface_cta({ name: planet.name.toUpperCase() })}
-        </a>
-      </div>
-    {/if}
-
-    <!-- #547 S5b — every planet carries its collectible card. -->
-    {#if cardSpec}
-      <div class="cta-bar">
-        <button
-          type="button"
-          class="cta cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          {m.card_open_button()}
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -499,65 +487,6 @@
     font-size: var(--size-label);
     color: var(--color-text-label);
     line-height: 1.8;
-  }
-
-  .cta-bar {
-    padding: 12px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    flex-shrink: 0;
-    margin-top: 12px;
-  }
-  .cta {
-    width: 100%;
-    min-height: 44px;
-    padding: 12px;
-    background: #1a33bb;
-    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
-    border-radius: 4px;
-    cursor: pointer;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 3px;
-    font-weight: 700;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta:hover,
-  .cta:focus-visible {
-    background: #2244dd;
-    border-color: var(--color-accent);
-    outline: none;
-  }
-  /* Secondary CTA — anchor styled like the primary button, but with
-     a subdued surface so it reads as the second option below the
-     primary mission-planning CTA (or as a standalone link when the
-     primary isn't shown). */
-  .cta-secondary {
-    background: transparent;
-    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
-    color: #dde4ff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .cta-secondary:hover,
-  .cta-secondary:focus-visible {
-    background: var(--color-accent-soft);
-    border-color: var(--color-accent);
-    color: #fff;
-  }
-  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
-  .cta.cta-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.22);
-  }
-  .cta.cta-card:hover,
-  .cta.cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
   }
 
   /* GALLERY + LEARN tab CSS moved to src/lib/styles/panel-tabs.css (v0.1.10) */

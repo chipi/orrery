@@ -179,7 +179,12 @@
   );
 </script>
 
-<Panel {open} {onClose} title={body?.name ?? ''}>
+<Panel
+  {open}
+  {onClose}
+  title={body?.name ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
   {#if body}
     <div class="head" style:--accent={body.color}>
       <div class="kind-row">
@@ -187,6 +192,8 @@
       </div>
       <div class="name">{body.name}</div>
     </div>
+
+    <!-- No PanelActions row: a small body has no entity action. Share is in the Panel bar. -->
 
     {#if gallery.length > 0}
       <PanelHeroImage
@@ -380,20 +387,6 @@
     </div>
 
     <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
-
-    <!-- #547 S5c — every small body carries its collectible card. -->
-    {#if cardSpec}
-      <div class="card-cta-bar">
-        <button
-          type="button"
-          class="cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          {m.card_open_button()}
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -402,35 +395,6 @@
 {/if}
 
 <style>
-  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
-  .card-cta-bar {
-    padding: 12px 0 4px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 12px;
-  }
-  .cta-card {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-card:hover,
-  .cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-    outline: none;
-  }
   .head {
     padding: 0 0 12px;
     border-bottom: 1px solid var(--color-border);

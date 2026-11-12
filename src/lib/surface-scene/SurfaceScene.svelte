@@ -108,6 +108,7 @@
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import Chip from '$lib/components/Chip.svelte';
+  import PanelActions from '$lib/components/PanelActions.svelte';
   import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { canonicalId } from '$lib/data/retired-ids';
@@ -6149,6 +6150,7 @@ sample      ${debugInfo.projectedPxSample}`}
     open={panelOpen}
     title={selected?.name ?? selected?.id ?? ''}
     onClose={() => (panelOpen = false)}
+    onShare={cardSpec ? () => (cardOpen = true) : undefined}
   >
     {#if selected}
       {@const tone = statusTone(selected.status, selected.kind, selected.site_role)}
@@ -6178,7 +6180,9 @@ sample      ${debugInfo.projectedPxSample}`}
             {/if}
           </p>
         {/if}
-        <!-- Site CTA row — Approach · Stand at site · Zoom to detail.
+      </div>
+
+      <!-- Site CTA row — Approach · Stand at site · Zoom to detail.
              (2026-06-17 user direction: "can we on all landing sites
              [add] approach, stand at site and zoom to details buttons
              as we did on missions, color them and put them next to
@@ -6205,73 +6209,72 @@ sample      ${debugInfo.projectedPxSample}`}
                Flips to "Exit zoom view" while flatPatchActive. When
                clicked from inside a panorama it first exits the pano
                (which restores camR) then flies to the detail patch. -->
-        <div class="site-cta-bar">
-          <!-- Approach button removed (user direction): selecting a site now
+      <PanelActions>
+        <!-- Approach button removed (user direction): selecting a site now
                auto-frames it via faceCameraAtSite (the focus-on-select
                behaviour), same as orbiters — so a manual "Approach" was
                redundant, and pulled the camera BACK to R≈85 after the
                select had already flown in to R≈50. Zoom-to-detail + Stand
                at site stay (distinct actions). -->
 
-          <PanoramaToggleButton
-            panoramaUrl={selected.hotspot_tier3_panorama}
-            siteId={selected.id}
-            {panoramaActive}
-            onEnter={(url, id) => {
-              routeViewActive = false; // switching route-view → panorama
-              enterPanorama(url, id);
-            }}
-            onExit={exitPanorama}
-          />
-          <!-- #380 — frame the whole rover route (line + tiles + regional). -->
-          {#if (traverses[selected.id]?.points?.length ?? 0) >= 2}
-            {#if routeViewActive}
-              <Chip
-                kind="action"
-                data-testid="exit-route-view"
-                onclick={() => exitRouteView()}
-                title={m.surface_exit_route_title()}
-              >
-                {m.surface_exit_route()}
-              </Chip>
-            {:else}
-              <Chip
-                kind="action"
-                data-testid="view-route"
-                onclick={() => selected && enterRouteView(selected)}
-              >
-                {m.surface_view_route()}
-              </Chip>
-            {/if}
+        <PanoramaToggleButton
+          panoramaUrl={selected.hotspot_tier3_panorama}
+          siteId={selected.id}
+          {panoramaActive}
+          onEnter={(url, id) => {
+            routeViewActive = false; // switching route-view → panorama
+            enterPanorama(url, id);
+          }}
+          onExit={exitPanorama}
+        />
+        <!-- #380 — frame the whole rover route (line + tiles + regional). -->
+        {#if (traverses[selected.id]?.points?.length ?? 0) >= 2}
+          {#if routeViewActive}
+            <Chip
+              kind="action"
+              data-testid="exit-route-view"
+              onclick={() => exitRouteView()}
+              title={m.surface_exit_route_title()}
+            >
+              {m.surface_exit_route()}
+            </Chip>
+          {:else}
+            <Chip
+              kind="action"
+              data-testid="view-route"
+              onclick={() => selected && enterRouteView(selected)}
+            >
+              {m.surface_view_route()}
+            </Chip>
           {/if}
-          {#if selected.hotspot_tier2_source}
-            {#if flatPatchActive}
-              <Chip
-                kind="action"
-                data-testid="exit-zoom"
-                onclick={() => closeFlatPatch()}
-                title={m.surface_exit_zoom_title()}
-              >
-                {m.surface_exit_zoom_view()}
-              </Chip>
-            {:else}
-              <Chip
-                kind="action"
-                data-testid="zoom-to-detail"
-                onclick={() => {
-                  // Switching pano → zoom: exit pano first so camR is
-                  // restored above flyToDetail's camR<32 guard.
-                  if (panoramaActive) exitPanorama();
-                  routeViewActive = false; // switching route-view → zoom
-                  if (selected) flyToDetail?.(selected);
-                }}
-              >
-                {m.surface_zoom_detail()}
-              </Chip>
-            {/if}
+        {/if}
+        {#if selected.hotspot_tier2_source}
+          {#if flatPatchActive}
+            <Chip
+              kind="action"
+              data-testid="exit-zoom"
+              onclick={() => closeFlatPatch()}
+              title={m.surface_exit_zoom_title()}
+            >
+              {m.surface_exit_zoom_view()}
+            </Chip>
+          {:else}
+            <Chip
+              kind="action"
+              data-testid="zoom-to-detail"
+              onclick={() => {
+                // Switching pano → zoom: exit pano first so camR is
+                // restored above flyToDetail's camR<32 guard.
+                if (panoramaActive) exitPanorama();
+                routeViewActive = false; // switching route-view → zoom
+                if (selected) flyToDetail?.(selected);
+              }}
+            >
+              {m.surface_zoom_detail()}
+            </Chip>
           {/if}
-        </div>
-      </div>
+        {/if}
+      </PanelActions>
 
       {#if panelGallery.length > 0}
         <PanelHeroImage
@@ -6714,21 +6717,6 @@ sample      ${debugInfo.projectedPxSample}`}
           <PanelLinkTiers links={(selected as SurfaceSite).links} entityId={selected.id} />
         {/if}
       {/if}
-
-      <!-- #547 S5 — every site carries its collectible card (mission card
-           when the site aliases one, fleet card for earth pads). -->
-      {#if cardSpec}
-        <div class="card-cta-bar">
-          <button
-            type="button"
-            class="cta-card"
-            onclick={() => (cardOpen = true)}
-            data-testid="open-card-btn"
-          >
-            {m.card_open_button()}
-          </button>
-        </div>
-      {/if}
     {/if}
   </Panel>
 
@@ -7020,13 +7008,6 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 6px;
     pointer-events: auto;
   }
-  /* Site CTA row — Approach · Stand at site · Zoom to detail
-     (2026-06-17). Horizontal flex container that overrides the
-     three child buttons' prior full-width stacked styling so they
-     sit side-by-side, each tinted with the site's nation accent
-     colour (--accent set on `.head`). Mirrors the MissionPanel
-     `.cta-bar` pattern (coloured, prominent) but uses the site's
-     own palette instead of MissionPanel's fixed blue. */
   /* Panel-tab active underline tinted to --body-tint inside the
      surface-scene scope. The default in panel-tabs.css is a fixed
      var(--color-accent) blue — fine across MissionPanel / PlanetPanel / etc., but
@@ -7039,23 +7020,6 @@ sample      ${debugInfo.projectedPxSample}`}
      the panel's primary active-state indicator.) */
   :global(.surface-scene .tabs button.active) {
     border-bottom-color: var(--body-tint, var(--color-accent));
-  }
-
-  .head .site-cta-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
-  }
-  /* The CTA chips (Stand here, Zoom to detail, View route) share the row: equal
-     flex, with min-width 0 so they wrap to a second row instead of squishing
-     illegibly on narrow viewports. Look is chip.css; the world tint arrives
-     as --chip-tint (hover / on). */
-  .head .site-cta-bar :global(.ui-chip) {
-    flex: 1 1 0;
-    min-width: 0;
-    white-space: normal;
-    text-align: center;
   }
 
   /* #641 — Journey tab: the traverse as a timeline. A thin rule down the
@@ -7317,35 +7281,6 @@ sample      ${debugInfo.projectedPxSample}`}
        the buttons re-enable them (#363). */
     pointer-events: none;
     z-index: 5;
-  }
-  /* #547 S5 — card CTA, mirroring the missions/fleet panels' quiet register. */
-  .card-cta-bar {
-    padding: 12px 0 4px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 12px;
-  }
-  .cta-card {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-card:hover,
-  .cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-    outline: none;
   }
   .head {
     padding: 0 0 12px;

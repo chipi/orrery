@@ -5,6 +5,8 @@
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/state';
   import { assetOrigin, assetUrl } from '$lib/asset-url';
@@ -167,6 +169,16 @@
     mission != null && (mission.flight != null || mission.flight_data_quality != null),
   );
 
+  // The Fly chip needs flight data backing the /fly sim, a mission that flew (not PLANNED or
+  // CANCELLED) and a host route that wired onFly (/explore iconic missions, /missions).
+  let canFly = $derived(
+    mission != null &&
+      mission.status !== 'PLANNED' &&
+      mission.status !== 'CANCELLED' &&
+      hasFlightData &&
+      !!onFly,
+  );
+
   // Curated /science cross-section list for the SCIENCE tab. Driven by what
   // flight fields the mission actually has — only show sections relevant to
   // this mission's actual phases. ∆v + Hohmann + mission-types always show
@@ -283,7 +295,13 @@
 
 <!-- grabFocus={false}: keep focus on the triggering iconic-legend row so
      arrow-key legend nav works immediately after the first click. -->
-<Panel {open} {onClose} grabFocus={false} title={mission?.name ?? mission?.id ?? ''}>
+<Panel
+  {open}
+  {onClose}
+  grabFocus={false}
+  title={mission?.name ?? mission?.id ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
   {#if mission}
     <div class="head">
       <AgencyRow agency={mission.agency} color={mission.color}>
@@ -311,6 +329,37 @@
         <p class="type">{mission.type}</p>
       {/if}
     </div>
+
+    {#if canFly || crossSite}
+      <!-- Fly-mission chip: only when the mission has flight data backing the /fly sim, did not
+           stay PLANNED / CANCELLED, and a host route wired onFly. (2026-06-17 user correction:
+           iconic missions without flight-params data skip it instead of linking into a broken
+           /fly sim.) -->
+      <PanelActions>
+        {#if crossSite}
+          {@const surfaceLabel =
+            crossSite.kind === 'orbiter'
+              ? mission.dest === 'MARS'
+                ? m.mp_surface_mars_orbit()
+                : m.mp_surface_lunar_orbit()
+              : mission.dest === 'MARS'
+                ? m.mp_surface_mars_surface()
+                : m.mp_surface_lunar_surface()}
+          <Chip
+            kind="link"
+            href={localHref(`/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`)}
+            data-testid="surface-link"
+            data-audio-stage="mission-surface-link">{surfaceLabel}</Chip
+          >
+        {/if}
+        {#if canFly}
+          <Chip kind="action" onclick={flyMission} data-testid="fly-mission-btn">
+            {#snippet icon()}<TrajectoryArrowIcon />{/snippet}
+            {m.mp_fly_button()}
+          </Chip>
+        {/if}
+      </PanelActions>
+    {/if}
 
     {#if gallery.length > 0}
       <PanelHeroImage
@@ -404,9 +453,8 @@
              rendered as cramped grid cells with thin underlined links
              which the user found "not seen well and links not clear"
              (2026-06-15). Promoted to button-style anchors matching the
-             "Fly this mission" .cta template but with a distinct accent blue
-             tint (so the secondary navigation CTAs don't compete with
-             the primary blue Fly action). Each carries a small inline
+             the action chips but with a distinct blue tint (they are
+             navigation cards, not actions). Each carries a small inline
              SVG glyph — rocket for the launch vehicle, satellite-with-
              antenna for the payload spacecraft — so the buttons read
              at a glance even before the text resolves. When the
@@ -415,10 +463,12 @@
              falls back to a non-clickable static frame in the same
              colour so the spec stays visible but doesn't suggest a
              dead link. -->
+        <!-- b1-keep: navigation cards (label + value), not actions -->
         <div class="spec-cta-bar">
           {#if mission.vehicle}
             {#if launcherRef}
               <a
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--vehicle"
                 href={localHref(`/fleet?id=${launcherRef}`)}
                 data-testid="mission-vehicle-fleet-link"
@@ -434,6 +484,7 @@
               </a>
             {:else}
               <div
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--vehicle is-static"
                 data-testid="mission-vehicle-static"
               >
@@ -450,6 +501,7 @@
           {#if mission.payload}
             {#if spacecraftRef}
               <a
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--payload"
                 href={localHref(`/fleet?id=${spacecraftRef}`)}
                 data-testid="mission-payload-fleet-link"
@@ -465,6 +517,7 @@
               </a>
             {:else}
               <div
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--payload is-static"
                 data-testid="mission-payload-static"
               >
@@ -820,66 +873,6 @@
         {/if}
       {/if}
     </div>
-
-    <!-- Fly-mission CTA — only render when the mission has actual
-         flight data backing the /fly sim (hasFlightData), is not still
-         in the PLANNED or CANCELLED bucket (neither flew), AND a host route wired the onFly
-         callback. (2026-06-17 user correction: "I didn't ask to add
-         fly this mission to all cards, you added them where it makes
-         no sense. I asked to make it visible on iconic mission on
-         explore page where it was not visible." → restore onFly on
-         /explore AND gate the button at the MissionPanel level on
-         hasFlightData so iconic missions without flight-params data
-         silently skip the CTA instead of linking into a broken /fly
-         sim.) -->
-    <div class="cta-bar">
-      <!-- #547 S1 — every mission carries its collectible card. -->
-      {#if cardSpec}
-        <button
-          type="button"
-          class="cta cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          <span class="cta-text">{m.card_open_button()}</span>
-        </button>
-      {/if}
-      {#if (mission.status !== 'PLANNED' && mission.status !== 'CANCELLED' && hasFlightData && onFly) || crossSite}
-        {#if mission.status !== 'PLANNED' && mission.status !== 'CANCELLED' && hasFlightData && onFly}
-          <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
-            <!-- Trajectory-arc glyph — curved path with arrowhead.
-                 Replaces the prior "▶" play-character (2026-06-15
-                 user note: "invent small logo instead of play
-                 character"). Reads as "fly this path" — visually
-                 matches what /fly actually does: animate a curved
-                 mission trajectory. Inline SVG so it ships in the
-                 same bundle as the button + tints with currentColor. -->
-            <span class="cta-icon" aria-hidden="true">
-              <TrajectoryArrowIcon />
-            </span>
-            <span class="cta-text">{m.mp_fly_button()}</span>
-          </button>
-        {/if}
-        {#if crossSite}
-          {@const surfaceLabel =
-            crossSite.kind === 'orbiter'
-              ? mission.dest === 'MARS'
-                ? 'IN MARS ORBIT ↗'
-                : 'IN LUNAR ORBIT ↗'
-              : mission.dest === 'MARS'
-                ? 'ON THE SURFACE ↗'
-                : 'ON THE LUNAR SURFACE ↗'}
-          <a
-            class="surface-link"
-            href={localHref(`/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`)}
-            data-testid="surface-link"
-            data-audio-stage="mission-surface-link"
-          >
-            {surfaceLabel}
-          </a>
-        {/if}
-      {/if}
-    </div>
   {/if}
 </Panel>
 
@@ -1110,91 +1103,9 @@
 
   /* .link-tier / .tier-* / .empty-tab moved to panel-tabs.css */
 
-  .cta-bar {
-    padding: 12px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    flex-shrink: 0;
-    margin-top: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .surface-link {
-    align-self: stretch;
-    text-align: center;
-    padding: 10px 12px;
-    background: rgba(193, 68, 14, 0.14);
-    border: 1px solid rgba(193, 68, 14, 0.55);
-    border-radius: 4px;
-    color: #ffd2c0;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 2px;
-    font-weight: 700;
-    text-decoration: none;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .surface-link:hover,
-  .surface-link:focus-visible {
-    background: rgba(193, 68, 14, 0.28);
-    border-color: #c1440e;
-    color: #fff;
-    outline: none;
-  }
-  .cta {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: #1a33bb;
-    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-    /* Icon + text alignment for the trajectory-arc glyph. */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .cta:hover,
-  .cta:focus-visible {
-    background: #2244dd;
-    border-color: var(--color-accent);
-    outline: none;
-  }
-  /* #547 — the card CTA sits in the quieter register (the fly CTA keeps
-     the loud blue; two loud buttons stacked read as noise). */
-  .cta.cta-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.22);
-  }
-  .cta.cta-card:hover,
-  .cta.cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-  }
-  .cta .cta-icon {
-    flex: 0 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(200, 215, 255, 0.95);
-  }
-
-  /* Spec-CTA buttons — vehicle + payload navigation chips at the top
-     of the overview tab. Match .cta's general shape (uppercase mono
-     label, 4px radius, prominent) but a ACCENT-BLUE tint so they don't read
-     as a second primary action competing with the blue Fly button.
+  /* Spec-CTA buttons — vehicle + payload navigation cards in the
+     overview tab (uppercase mono label, 4px radius) in a blue tint so
+     they don't read as an action chip.
      Layout: side-by-side flex row on desktop; wraps to stacked column
      on narrow viewports via the bar's flex-wrap. Static fallback
      (when no fleet ref exists) keeps the same chrome but loses the
@@ -1222,18 +1133,15 @@
       background 120ms,
       border-color 120ms;
   }
-  /* Per-CTA hue split — kept in the SAME blue family as the
-     primary .cta (#1a33bb) so all three buttons read as one cohesive
-     style (2026-06-15 user note: "harmonize those 2 new buttons more
-     with color of fly button — let them all be in same style, fly
-     stays as it, we just need to adjust 2 new ones"). Vehicle leans
+  /* Per-CTA hue split — the two cards share a blue family (2026-06-15
+     user note: "let them all be in same style"). Vehicle leans
      darker/cooler (deep navy); payload leans lighter/warmer (cobalt
      with slight violet push). Same hue axis; just value + slight hue
      shift so they stay sibling-to-fly but distinguishable from each
      other at a glance. */
   /* Vehicle = deep indigo / navy (darkest end of the blue axis);
      Payload = bright sky-blue with blue push (lightest end). Both
-     stay in the blue family that anchors Fly (#1a33bb), but with a
+     stay in one blue family, but with a
      dramatic value + hue spread so the two read as obviously
      different at a glance (2026-06-15 user note: "they look almost
      the same, make more difference"). */

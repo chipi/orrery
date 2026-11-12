@@ -304,8 +304,6 @@
   "panel_orbit_shape_meta": "軌道形状 · e={e} · 近日点 vs 遠日点 ×{ratio}",
   "panel_dist_row": "太陽から{mkm} M km · 自転周期{rot}日",
   "panel_source_iau": "出典:IAU・JPL惑星事実シート・J2000エポック",
-  "panel_plan_mission_cta": "▶ {name}へのミッションを計画",
-  "panel_explore_surface_cta": "▷ {name}の表面を探索",
   "sun_label_spectral_class": "スペクトル型",
   "sun_label_system_mass": "太陽系の質量",
   "sun_label_radius": "半径",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "ブラックホール",
   "nav_locale_suggest_label": "このページを あなたの言語で表示",
   "landing_footer_privacy_link": "プライバシー",
-  "card_open_button": "コレクターカード",
   "card_share_link": "リンクを共有",
   "card_link_copied": "リンクをコピーしました",
   "card_close": "閉じる",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "渦状腕",
   "explore_index_section_fiction": "フィクション",
   "explore_index_filter_headliner": "注目天体",
-  "explore_index_filter_dwarf_galaxies": "矮小銀河"
+  "explore_index_filter_dwarf_galaxies": "矮小銀河",
+  "panel_share": "共有",
+  "panel_action_plan": "ミッションを計画",
+  "panel_action_surface": "表面を探索",
+  "mp_surface_mars_orbit": "火星周回軌道",
+  "mp_surface_lunar_orbit": "月周回軌道",
+  "mp_surface_mars_surface": "火星の表面",
+  "mp_surface_lunar_surface": "月の表面"
 }

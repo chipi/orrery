@@ -601,6 +601,10 @@ export default defineConfig(({ mode, command }) => {
           // galaxy-placement + label math lives in local-group.json (data) and
           // the LocalGroupPanel component, neither of which runs WebGL.
           'src/lib/universe/local-group-scene.ts',
+          // The shared label / ring / glow sprite builders of the pin scenes (UXD-020): canvas
+          // textures, same WebGL policy. Their sizing, placement and ring-state rules are the
+          // pure scene-pins.ts, unit-tested in scene-pins.test.ts.
+          'src/lib/universe/scene-pin-sprites.ts',
           // /fly launch/ascent WebGL builders (RFC-034 · epic #412) — the Scene 0
           // render (ascent-scene), its ACES+film+vignette composer
           // (ascent-renderer), the per-vehicle procedural rocket models

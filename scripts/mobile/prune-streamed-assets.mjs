@@ -150,14 +150,17 @@ async function targets() {
   const cardStubs = path.join(BUILD, 'c');
   if (existsSync(cardStubs)) list.push(cardStubs);
 
-  // Entity pages (0.9.8 SEO: /missions, /fleet, /<body>/<site>, /explore, /lab/<id>, × 14
-  // locales) are search-engine surfaces; in the app an entity opens in its
+  // Entity pages (0.9.8 SEO: /missions, /fleet, /<body>/<site>, /explore, /explore/stars/<id>,
+  // /lab/<id>, × 14 locales) are search-engine surfaces; in the app an entity opens in its
   // ?id= / ?site= panel. /missions/launches is not an entity and stays.
   const json = async (file, empty) =>
     JSON.parse(await readFile(path.join(BUILD, 'data', file), 'utf8').catch(() => empty));
   const ids = async (file) => (await json(file, '[]')).map((e) => e.id);
-  // /explore/<id>: planets (id = lowercase name), moons, small bodies.
+  // /explore/<id>: planets (id = lowercase name), moons, small bodies. 'stars' is the
+  // /explore/stars hub: its folder holds every /explore/stars/<id> page and their __data.json
+  // (~66 stars × 14 locales ≈ 924 pages), and the hub page and its own __data.json go with it.
   const bodyIds = [
+    'stars',
     ...((await json('planets.json', '{}')).planets?.map((p) => p.name.toLowerCase()) ?? []),
     ...((await json('satellites.json', '{}')).satellites?.map((s) => s.id) ?? []),
     ...((await json('small-bodies.json', '{}')).bodies?.map((b) => b.id) ?? []),

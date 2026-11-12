@@ -200,7 +200,7 @@
        space for it, but no overflow"). Internal scroll if the band
        count would otherwise exceed the budget. */
     max-height: min(
-      calc(100vh - var(--nav-height, 60px) - 140px),
+      calc(100vh - var(--nav-height) - 140px),
       calc(
         100vh - var(--ruler-top-clear, 0px) -
           max(var(--ruler-bottom, 80px), var(--ruler-clear, 0px))

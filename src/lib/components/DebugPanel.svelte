@@ -548,10 +548,10 @@
   .debug-panel {
     position: fixed;
     /* Start just below the nav (so it never covers it) — then drag anywhere. */
-    top: calc(var(--nav-height, 64px) + 10px);
+    top: calc(var(--nav-height) + 10px);
     right: 12px;
     width: min(360px, calc(100vw - 24px));
-    max-height: calc(100vh - var(--nav-height, 64px) - 24px);
+    max-height: calc(100vh - var(--nav-height) - 24px);
     z-index: 90;
     background: rgba(8, 10, 22, 0.92);
     border: 1px solid rgba(94, 234, 212, 0.4);

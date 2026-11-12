@@ -53,7 +53,7 @@
     justify-content: space-between;
     padding: 16px 12px 8px;
     position: sticky;
-    top: 52px;
+    top: var(--nav-height);
     background: rgba(4, 4, 12, 0.92);
     backdrop-filter: blur(8px);
     z-index: 5;

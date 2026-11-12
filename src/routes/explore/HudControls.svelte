@@ -456,7 +456,7 @@
        available chrome-budget instead of clipping invisibly past the
        footer. The viewport units leave room for nav + the chips
        cluster + a 24 px breathing tail at the bottom. */
-    max-height: calc(100vh - var(--nav-height, 60px) - 180px);
+    max-height: calc(100vh - var(--nav-height) - 180px);
     overflow-y: auto;
     overscroll-behavior: contain;
   }
@@ -621,7 +621,7 @@
       margin-top: 8px;
       width: 280px;
       box-sizing: border-box;
-      max-height: calc(100vh - var(--nav-height, 60px) - 220px);
+      max-height: calc(100vh - var(--nav-height) - 220px);
       z-index: 36;
     }
     /* One HUD row (operator 2026-11-12), the same as on the worlds: the view actions, a 12 px

@@ -117,7 +117,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 16px 0 14px;
     /* clear the sticky A–Z bar */
-    scroll-margin-top: 60px;
+    scroll-margin-top: calc(var(--nav-height) + 8px);
   }
   dt {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;

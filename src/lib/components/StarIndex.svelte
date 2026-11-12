@@ -251,7 +251,7 @@
      three rows and scrolls as a whole. */
   @media (max-height: 500px) {
     .star-index {
-      top: calc(var(--nav-height, 56px) + 8px);
+      top: calc(var(--nav-height) + 8px);
       overflow-y: auto;
       overscroll-behavior: contain;
     }

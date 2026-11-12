@@ -526,6 +526,31 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     match: /(^|\.)spacenews\.com$/i,
     rule: { source_id: 'spacenews', defaultKind: 'community', defaultLanguage: 'en' },
   },
+  // News sources linked from fleet / mission / site data (0.9.5–0.9.7).
+  {
+    match: /(^|\.)cnn\.com$/i,
+    rule: { source_id: 'cnn', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)cgtn\.com$/i,
+    rule: { source_id: 'cgtn', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)universetoday\.com$/i,
+    rule: { source_id: 'universetoday', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)theregister\.com$/i,
+    rule: { source_id: 'theregister', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)space\.com$/i,
+    rule: { source_id: 'space-com', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)irishnews\.com$/i,
+    rule: { source_id: 'irishnews', defaultKind: 'community', defaultLanguage: 'en' },
+  },
   {
     match: /(^|\.)nasaspaceflight\.com$/i,
     rule: { source_id: 'nasaspaceflight', defaultKind: 'community', defaultLanguage: 'en' },

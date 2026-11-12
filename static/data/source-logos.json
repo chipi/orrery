@@ -693,6 +693,48 @@
       "license_summary": "SpaceNews — independent space-industry news. © SpaceNews; outbound reference links only."
     },
     {
+      "id": "cnn",
+      "name": "CNN",
+      "kind": "media-platform",
+      "url": "https://www.cnn.com/",
+      "license_summary": "CNN — international news network. © CNN; outbound reference links only."
+    },
+    {
+      "id": "cgtn",
+      "name": "CGTN",
+      "kind": "media-platform",
+      "url": "https://news.cgtn.com/",
+      "license_summary": "CGTN — China Global Television Network, the Chinese state broadcaster’s international service. © CGTN; outbound reference links only."
+    },
+    {
+      "id": "universetoday",
+      "name": "Universe Today",
+      "kind": "media-platform",
+      "url": "https://www.universetoday.com/",
+      "license_summary": "Universe Today — independent space and astronomy news. © Universe Today; outbound reference links only."
+    },
+    {
+      "id": "theregister",
+      "name": "The Register",
+      "kind": "media-platform",
+      "url": "https://www.theregister.com/",
+      "license_summary": "The Register — independent technology news. © Situation Publishing; outbound reference links only."
+    },
+    {
+      "id": "space-com",
+      "name": "Space.com",
+      "kind": "media-platform",
+      "url": "https://www.space.com/",
+      "license_summary": "Space.com — space and astronomy news. © Future US; outbound reference links only."
+    },
+    {
+      "id": "irishnews",
+      "name": "The Irish News",
+      "kind": "media-platform",
+      "url": "https://www.irishnews.com/",
+      "license_summary": "The Irish News — daily newspaper from Belfast. © The Irish News; outbound reference links only."
+    },
+    {
       "id": "nasaspaceflight",
       "name": "NASASpaceflight",
       "kind": "media-platform",

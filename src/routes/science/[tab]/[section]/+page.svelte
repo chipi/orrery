@@ -245,6 +245,7 @@
 </article>
 
 <style>
+  /* a2-keep: the reading measure inside the science host column */
   .reading {
     max-width: 720px;
   }

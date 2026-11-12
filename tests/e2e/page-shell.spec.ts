@@ -13,6 +13,8 @@ type Shell = {
   hostRoot?: boolean;
   noLead?: boolean;
   noTitle?: boolean;
+  /** Container width (default 1080: the standard shell). */
+  width?: 760 | 1400;
 };
 
 const PAGES: Shell[] = [
@@ -21,33 +23,33 @@ const PAGES: Shell[] = [
   { path: '/library' },
   { path: '/library/episodes' },
   { path: '/gallery' },
-  { path: '/gallery/deep-sky' },
-  { path: '/posters' },
+  { path: '/gallery/deep-sky', width: 1400 },
+  { path: '/posters', width: 1400 },
   { path: '/patches' },
-  { path: '/sourcing' },
+  { path: '/sourcing', width: 760 },
   { path: '/programs' },
-  { path: '/programs/apollo' },
-  { path: '/privacy' },
+  { path: '/programs/apollo', width: 760 },
+  { path: '/privacy', width: 760 },
   { path: '/live' },
   // The essays index title is drawn over the banner illustration (allow-listed).
   { path: '/essays', noTitle: true },
-  { path: '/essays/delta-v' },
+  { path: '/essays/delta-v', width: 760 },
   { path: '/science', inset: true, hostRoot: true },
   { path: '/science/orbits', inset: true, hostRoot: true, noLead: true },
   { path: '/science/orbits/apsides', inset: true, hostRoot: true },
-  { path: '/science/glossary', inset: true },
-  { path: '/science/reading-list', inset: true },
-  { path: '/science/watch-list', inset: true },
+  { path: '/science/glossary', inset: true, width: 760 },
+  { path: '/science/reading-list', inset: true, width: 760 },
+  { path: '/science/watch-list', inset: true, width: 760 },
   { path: '/catalog' },
   { path: '/learn' },
   { path: '/worlds' },
   { path: '/explore/hub' },
-  { path: '/missions/apollo11' },
-  { path: '/fleet/saturn-v' },
+  { path: '/missions/apollo11', width: 760 },
+  { path: '/fleet/saturn-v', width: 760 },
   // A body with a fact sentence: the lead only renders when the body has one.
-  { path: '/explore/mars' },
-  { path: '/lab/tsiolkovsky', noLead: true },
-  { path: '/moon/apollo11' },
+  { path: '/explore/mars', width: 760 },
+  { path: '/lab/tsiolkovsky', noLead: true, width: 760 },
+  { path: '/moon/apollo11', width: 760 },
 ];
 
 async function metrics(page: Page) {
@@ -61,6 +63,18 @@ async function metrics(page: Page) {
     const hcs = h1 ? getComputedStyle(h1) : null;
     const lcs = lead ? getComputedStyle(lead) : null;
     const rootBox = root?.getBoundingClientRect();
+    // Every visible section label must carry the shell values (operator A2 answer 1).
+    const labels = [...document.querySelectorAll<HTMLElement>('.page-section-label')]
+      .filter((el) => el.getBoundingClientRect().width > 0)
+      .map((el) => {
+        const cs = getComputedStyle(el);
+        return {
+          size: px(cs.fontSize),
+          weight: cs.fontWeight,
+          transform: cs.textTransform,
+          color: cs.color,
+        };
+      });
     return {
       vw: window.innerWidth,
       root: root
@@ -69,8 +83,10 @@ async function metrics(page: Page) {
             contentLeft: rootBox!.left + px(rcs!.paddingLeft),
             paddingTop: px(rcs!.paddingTop),
             maxWidth: rcs!.maxWidth,
+            family: rcs!.fontFamily,
           }
         : null,
+      labels,
       h1: h1
         ? {
             left: h1.getBoundingClientRect().left,
@@ -81,7 +97,12 @@ async function metrics(page: Page) {
           }
         : null,
       lead: lead
-        ? { family: lcs!.fontFamily, size: px(lcs!.fontSize), italic: lcs!.fontStyle }
+        ? {
+            family: lcs!.fontFamily,
+            size: px(lcs!.fontSize),
+            italic: lcs!.fontStyle,
+            color: lcs!.color,
+          }
         : null,
     };
   });
@@ -97,12 +118,24 @@ test.describe('one page shell (UXD-012)', () => {
         .waitFor();
       const m = await metrics(page);
 
-      if (!p.hostRoot) expect(m.root, 'page root carries .page-shell').not.toBeNull();
+      if (!p.hostRoot) {
+        expect(m.root, 'page root carries .page-shell').not.toBeNull();
+        // Body text is Space Mono (operator A2 answer 3: program pages left Crimson).
+        expect(m.root!.family).toMatch(/Space Mono/);
+        expect(m.root!.maxWidth, 'container width').toBe(`${p.width ?? 1080}px`);
+      }
       if (!p.inset) {
         // The root starts right under the sticky nav (no second --nav-height) with 24 px air.
         expect(Math.abs(m.root!.top), 'root starts at the nav bottom').toBeLessThanOrEqual(1);
         expect(m.root!.paddingTop).toBe(24);
-        expect(['1080px', '760px', '1400px']).toContain(m.root!.maxWidth);
+      }
+      for (const l of m.labels) {
+        expect(l, 'section label = 11 px, 700, uppercase, 60 % white').toEqual({
+          size: 11,
+          weight: '700',
+          transform: 'uppercase',
+          color: 'rgba(255, 255, 255, 0.6)',
+        });
       }
 
       if (!p.noTitle) {
@@ -125,7 +158,18 @@ test.describe('one page shell (UXD-012)', () => {
         expect(m.lead!.family).toMatch(/Space Mono/);
         expect(m.lead!.italic).toBe('normal');
         expect(m.lead!.size).toBe(m.vw <= 600 ? 15 : 16);
+        // Standard text white at 78 % (operator A2 answer 5: no bluish page text).
+        expect(m.lead!.color).toBe('rgba(255, 255, 255, 0.78)');
       }
+    });
+  }
+
+  // Operator A2 answer 4: the browse tools stay tools, with no visible page title.
+  for (const path of ['/missions', '/missions/launches', '/fleet']) {
+    test(`${path} keeps no visible page title`, async ({ page }) => {
+      await page.goto(path);
+      await page.locator('main').waitFor();
+      expect(await page.locator('h1.page-title:visible').count()).toBe(0);
     });
   }
 

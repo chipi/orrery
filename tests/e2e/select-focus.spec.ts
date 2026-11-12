@@ -26,6 +26,29 @@ const bodyAt = (page: Page, key: string): Promise<number[] | null> =>
   page.evaluate((k) => window.__exploreBodyPosition!(k), key);
 const dist = (a: number[], b: number[]) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
 const panels = (page: Page) => page.locator('aside.panel');
+const screenOf = (page: Page, key: string): Promise<{ x: number; y: number } | null> =>
+  page.evaluate((k) => window.__exploreBodyScreen!(k), key);
+
+/** A point a click can use: on the 3D canvas itself, not under the HUD, a panel or the edge. */
+async function clickablePoint(page: Page, key: string): Promise<{ x: number; y: number }> {
+  let found: { x: number; y: number } | null = null;
+  await expect
+    .poll(
+      async () => {
+        const p = await screenOf(page, key);
+        if (!p) return false;
+        const onCanvas = await page.evaluate(
+          ({ x, y }) => document.elementFromPoint(x, y)?.tagName === 'CANVAS',
+          p,
+        );
+        if (onCanvas) found = p;
+        return onCanvas;
+      },
+      { timeout: 30_000, message: `${key} has a point on the canvas to click` },
+    )
+    .toBe(true);
+  return found!;
+}
 
 async function openExplore(page: Page, query = '') {
   await page.goto(`/explore${query}`);
@@ -254,6 +277,147 @@ test.describe('/explore select = focus', () => {
     await (await chip(page, isMobile, 'paths')).click();
     await expect(panels(page)).toHaveCount(0);
   });
+
+  test('a 3D canvas click on a body selects it: panel, ring and camera, like a row', async ({
+    page,
+  }) => {
+    await openExplore(page);
+    const at = await clickablePoint(page, 'planet:jupiter');
+    await page.mouse.click(at.x, at.y);
+    await expect(
+      panels(page)
+        .filter({ hasText: /Jupiter/i })
+        .first(),
+    ).toBeVisible({
+      timeout: 20_000,
+    });
+    await settled(page);
+    const c = await cam(page);
+    expect(c.ringVisible).toBe(true);
+    expect(dist(c.origin, (await bodyAt(page, 'planet:jupiter'))!)).toBeLessThan(1);
+  });
+
+  test('a milestone marker on a path opens its mission (IM5)', async ({ page }) => {
+    await openExplore(page, '?paths=1');
+    const at = await clickablePoint(page, 'marker:voyager-2');
+    await page.mouse.click(at.x, at.y);
+    await expect(
+      panels(page)
+        .filter({ hasText: /Voyager 2/i })
+        .first(),
+    ).toBeVisible({ timeout: 15_000 });
+  });
+
+  test('a side panel moves the look-at point into the space it leaves; closing it gives it back', async ({
+    page,
+  }) => {
+    await openExplore(page, '?id=mars');
+    const panel = panels(page).filter({ hasText: /Mars/i }).first();
+    await expect(panel).toBeVisible({ timeout: 20_000 });
+    // A side drawer covers the right edge and shifts the view by half its width; a bottom sheet
+    // (touch portrait) covers the scene and shifts nothing.
+    const cover = await panel.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      const docked = r.right >= window.innerWidth - 1;
+      const width = window.innerWidth - r.left;
+      return docked && width <= window.innerWidth * 0.7 ? width : 0;
+    });
+    await expect
+      .poll(async () => (await cam(page)).viewShiftPx, { timeout: 5_000 })
+      .toBeCloseTo(cover / 2, 0);
+    if (test.info().project.name === 'desktop-chromium')
+      expect((await cam(page)).viewShiftPx, 'a desktop drawer shifts the view').toBeGreaterThan(
+        100,
+      );
+    await panel.locator('.panel-close').click();
+    await expect(panels(page)).toHaveCount(0);
+    await expect.poll(async () => (await cam(page)).viewShiftPx, { timeout: 5_000 }).toBe(0);
+  });
+
+  test('a focused moon keeps its planet zoom ceiling: zooming out from Io stays in the solar system', async ({
+    page,
+  }) => {
+    await openExplore(page, '?id=jupiter:io');
+    await settled(page);
+    const solar = page.getByTestId('scale-index-toggle');
+    await expect(solar).toHaveAttribute('aria-label', /^Body index/);
+    const vp = page.viewportSize()!;
+    await page.mouse.move(vp.width * 0.3, vp.height * 0.5);
+    // Io's own 50 radii (1.3 x 50 = 65 units) used to be the ceiling, where the next scroll
+    // leaves the solar system. The ceiling is Jupiter's 50 radii now: scroll past 65 and stay.
+    let r = (await cam(page)).camR;
+    for (let i = 0; i < 120 && r <= 70; i++) {
+      await page.mouse.wheel(0, 100);
+      r = (await cam(page)).camR;
+    }
+    expect(r, 'zoomed out beyond the moon ceiling').toBeGreaterThan(70);
+    await expect(solar).toHaveAttribute('aria-label', /^Body index/);
+  });
+
+  test('Reset View from the stellar neighbourhood leaves it and flies home', async ({
+    page,
+    isMobile,
+  }) => {
+    test.slow();
+    await openExplore(page, '?id=mars');
+    await expect(panels(page).filter({ hasText: /Mars/i }).first()).toBeVisible({
+      timeout: 20_000,
+    });
+    await settled(page);
+    await page.getByTestId('explore-scale-toggle').click();
+    await page.getByTestId('explore-scale-rung-neighborhood').click();
+    const toggle = page.getByTestId('scale-index-toggle');
+    await expect(toggle).toHaveAttribute('aria-label', /^Stellar Neighborhood index/, {
+      timeout: 45_000,
+    });
+    // The solar HUD is not drawn out here, but its Reset is what clears the selection and goes
+    // home: the call, not the pixel, is what is under test.
+    await page
+      .getByTestId(isMobile ? 'explore-reset-view-mobile' : 'explore-reset-view')
+      .dispatchEvent('click');
+    await expect(toggle).toHaveAttribute('aria-label', /^Body index/, { timeout: 45_000 });
+    await settled(page);
+    const c = await cam(page);
+    expect(c.ringVisible).toBe(false);
+    expect(dist(c.origin, [0, 0, 0]), 'the camera is on the heliocentric view').toBeLessThan(1);
+    await expect(panels(page)).toHaveCount(0);
+  });
+
+  test('Pluto and the other /plan small bodies offer Plan mission, deep-linked; a comet does not', async ({
+    page,
+  }) => {
+    await openExplore(page, '?id=pluto');
+    const pluto = panels(page).filter({ hasText: /Pluto/ }).first();
+    await expect(pluto).toBeVisible({ timeout: 20_000 });
+    await expect(pluto.getByTestId('plan-mission-chip')).toHaveAttribute(
+      'href',
+      /\/plan\?dest=pluto$/,
+    );
+    await openExplore(page, '?id=ceres');
+    await expect(
+      panels(page).filter({ hasText: /Ceres/ }).first().getByTestId('plan-mission-chip'),
+    ).toHaveAttribute('href', /\/plan\?dest=ceres$/);
+    await openExplore(page, '?id=halley');
+    const halley = panels(page)
+      .filter({ hasText: /Halley/ })
+      .first();
+    await expect(halley).toBeVisible({ timeout: 20_000 });
+    await expect(halley.getByTestId('plan-mission-chip')).toHaveCount(0);
+  });
+
+  test('the ring follows the selection, not the panel: x closes the panel, the body stays ringed', async ({
+    page,
+  }) => {
+    for (const id of ['sun', 'mars', 'ceres', 'jupiter:io']) {
+      await openExplore(page, `?id=${id}`);
+      await expect(panels(page).first()).toBeVisible({ timeout: 20_000 });
+      await settled(page);
+      expect((await cam(page)).ringVisible, `${id} ringed`).toBe(true);
+      await panels(page).first().locator('.panel-close').click();
+      await expect(panels(page)).toHaveCount(0);
+      expect((await cam(page)).ringVisible, `${id} still ringed after x`).toBe(true);
+    }
+  });
 });
 
 test.describe('/explore mission links and iconic rows', () => {
@@ -281,6 +445,25 @@ test.describe('/explore mission links and iconic rows', () => {
     });
     expect(page.url().split('?')[0], 'no navigation away from /explore').toBe(before);
     await expect(panels(page)).toHaveCount(2);
+    expect((await cam(page)).ringVisible, 'Mars stays selected').toBe(true);
+  });
+
+  test('the mission opened over a body panel covers it and has a back chip that returns to it', async ({
+    page,
+  }) => {
+    await openExplore(page, '?id=mars');
+    const planet = panels(page).filter({ hasText: /Mars/ }).first();
+    await expect(planet).toBeVisible({ timeout: 20_000 });
+    await planet.getByRole('tab', { name: /missions/i }).click();
+    await planet.locator('a.mission-link[href*="/missions?id="]').first().click();
+    const mission = panels(page).last();
+    await expect(mission.locator('.panel-back')).toBeVisible({ timeout: 20_000 });
+    await expect(planet, 'only the mission is painted').toBeHidden();
+    // One panel is visible, so framing counts that one: the side drawer's width, not two.
+    await expect(page.locator('aside.panel:visible')).toHaveCount(1);
+    await mission.locator('.panel-back').click();
+    await expect(panels(page)).toHaveCount(1);
+    await expect(planet).toBeVisible();
     expect((await cam(page)).ringVisible, 'Mars stays selected').toBe(true);
   });
 
@@ -312,13 +495,9 @@ const OUTER = [
 ];
 
 test.describe('/explore outer scales: a member takes the camera, Reset gives it back', () => {
-  test.beforeEach(() => {
-    test.skip(
-      test.info().project.name === 'mobile-landscape-chromium',
-      'heavy sequential multi-scene cold-load starves the 2-CPU landscape shard',
-    );
-  });
-
+  // Nothing is skipped on any project. A cold load of an outer scale is heavy on the 2-CPU
+  // landscape shard (the scene chunks, the data and the cross-out dolly run in sequence), so
+  // every test here is test.slow(): its 90 s budget triples instead of the test being dropped.
   for (const s of OUTER) {
     test(`${s.scale}: the ${s.row} row moves the camera; the scale's Reset restores it`, async ({
       page,
@@ -344,6 +523,36 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
       expect(back.camR).toBeCloseTo(entry.camR, 0);
     });
   }
+
+  test('M87* takes the Virgo Cluster pin first, then opens the lensing view; leaving it lands on the pin', async ({
+    page,
+  }) => {
+    test.slow();
+    await openExplore(page, '?context=virgo');
+    await expect(page.getByTestId('scale-index-toggle')).toHaveAttribute('aria-label', /index/i, {
+      timeout: 45_000,
+    });
+    await expect.poll(async () => (await cam(page)).flying, { timeout: 45_000 }).toBe(false);
+    await page.waitForTimeout(2_500); // the cross-out dolly
+    const panel = await openIndex(page, 'virgo');
+    await indexRow(panel, 'm87-star').click();
+    await expect(panels(page).filter({ hasText: /M87/ }).first()).toBeVisible({ timeout: 45_000 });
+    await settled(page);
+    expect(dist((await cam(page)).origin, [0, 0, 0]), 'the camera took the pin').toBeGreaterThan(1);
+    await page
+      .locator('aside.panel:visible')
+      .filter({ hasText: /M87/ })
+      .locator('.panel-close')
+      .click();
+    await expect(
+      panels(page)
+        .filter({ hasText: /Virgo Cluster/i })
+        .first(),
+    ).toBeVisible({
+      timeout: 20_000,
+    });
+    expect(dist((await cam(page)).origin, [0, 0, 0]), 'and still has it').toBeGreaterThan(1);
+  });
 
   test('the member is a link: ?context=<scale>&pick=<id> selects it, and selecting writes the pair', async ({
     page,

@@ -358,6 +358,27 @@ test.describe('/explore INDEX — across a scale jump', () => {
     if (await finePointer(page)) await expect(panelOf(page, 'milky-way')).toBeVisible();
     else await expect(panelOf(page, 'milky-way')).toBeHidden();
   });
+
+  test('the scale ladder opens above an open INDEX: its rung is the hit target', async ({
+    page,
+  }) => {
+    test.slow();
+    await openScale(page, SCALES[1]);
+    await toggle(page).click();
+    await expect(panelOf(page, 'neighborhood')).toBeVisible();
+    await page.getByTestId('explore-scale-toggle').click();
+    const rung = page.getByTestId('explore-scale-rung-milky-way');
+    await expect(rung).toBeVisible();
+    // The INDEX rail (z 45) used to cover the open ladder and swallow the click.
+    const hitIsRung = await rung.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return !!hit && el.contains(hit);
+    });
+    expect(hitIsRung, 'the Milky Way rung is what a click at its centre reaches').toBe(true);
+    await rung.click();
+    await expect(toggle(page)).toHaveAttribute('aria-label', SCALES[2].aria, { timeout: 45_000 });
+  });
 });
 
 test.describe('/explore INDEX — axe with the INDEX open', () => {

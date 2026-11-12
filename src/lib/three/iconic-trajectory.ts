@@ -44,8 +44,8 @@ export interface IconicTrajectoryData {
    *  (e.g. 'voyager' → Golden Record, 'pioneer' → Pioneer Plaque). Absent
    *  when the craft carries no formal message (e.g. New Horizons). */
   culture_object_id?: string;
-  /** #410 — the star/constellation this craft is heading toward, for the
-   *  message-panel + direction indicator. `star` is null when there is no
+  /** #410 — the star/constellation this craft is heading toward, for
+   *  the mission panel's message section + direction indicator. `star` is null when there is no
    *  close stellar encounter (New Horizons → Sagittarius, no target star). */
   heading?: {
     star: string | null;

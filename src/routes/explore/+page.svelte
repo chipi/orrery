@@ -278,7 +278,17 @@
   // A mission link in a body panel opens the MissionPanel in place, over the body panel: the
   // body stays selected and closing the mission returns to it. A path mission opened from the
   // legend or a trajectory is the other kind; selecting another body closes only the first.
-  let missionFromBodyId: string | null = null;
+  let missionFromBodyId = $state<string | null>(null);
+  // The mission panel is stacked on a body panel: that one is covered, and the mission's back chip
+  // returns to it.
+  const missionOverBody = $derived(
+    missionFromBodyId !== null &&
+      iconic.state.panelOpen &&
+      iconic.state.selectedId === missionFromBodyId,
+  );
+  $effect(() => {
+    if (!iconic.state.panelOpen) missionFromBodyId = null;
+  });
   function openMissionInPlace(missionId: string): void {
     missionFromBodyId = missionId;
     void iconic.openMission(missionId, localeFromPage(page));
@@ -373,6 +383,8 @@
   // 'asteroid' | 'kuiper'; opens the BeltPanel via the same pickAid
   // raycast path the planets / small bodies use.
   let selectedBeltId: string | null = $state(null);
+  // The Sun's selection: its panel has no id of its own to hold.
+  let selectedSun = $state(false);
 
   // ─── Layers (issue #32) ──────────────────────────────────────────
   // Four toggleable visibility layers — Sun is always on (centre of
@@ -700,12 +712,12 @@
     return auLightTime(planet.a, earth?.a ?? 1);
   });
 
-  // Plumbed into the 3D scene's RAF tween from inside onMount once
-  // the planetObjs array is built. Top-level selectPlanet / selectSun
-  // wrappers call through so the camera flies to the target body when
+  // Plumbed into the 3D scene's RAF tween (the host's `focusBody`) once
+  // the scene objects are built. Every select* below calls through so
+  // the camera flies to the selected body (a planet, moon, small body, belt or the Sun) when
   // the user picks one — without this the camera was stuck looking at
   // the Sun, and per-planet 4K LOD swaps (#287) never fired for
-  // anything past Mercury. See `focusOnBody` inside onMount.
+  // anything past Mercury.
   let focusBodyFn: ((ref: BodyRef | null) => void) | null = null;
   // Set in onMount; called by Reset View so resetting while out in the stellar
   // neighborhood first crosses back to the solar system (no-op when already there).
@@ -849,8 +861,13 @@
   };
   const smallBodyTypeOf = (id: string) => smallBodyById.get(id)?.type;
 
-  /** The one selection: exactly one of the four ids (or the Sun's panel) is set. */
+  /**
+   * The one selection: exactly one of the five (planet, small body, moon, belt, Sun) is set. It
+   * is the body's ring, not its panel: × closes the panel and leaves the body selected and
+   * ringed, for every kind. Another selection, Reset View or its chip turned off clears it.
+   */
   function holdSelection(ref: BodyRef | null): void {
+    selectedSun = ref?.kind === 'sun';
     selectedId = ref?.kind === 'planet' ? ref.id : null;
     selectedSmallBodyId = ref?.kind === 'small-body' ? ref.id : null;
     selectedSatelliteKey = ref?.kind === 'moon' ? `${ref.parent}:${ref.id}` : null;
@@ -879,7 +896,7 @@
     if (selectedId) return { kind: 'planet', id: selectedId };
     if (selectedSmallBodyId) return { kind: 'small-body', id: selectedSmallBodyId };
     if (selectedBeltId) return { kind: 'belt', id: selectedBeltId };
-    if (panelState.sun) return { kind: 'sun', id: 'sun' };
+    if (selectedSun) return { kind: 'sun', id: 'sun' };
     return null;
   }
 
@@ -966,7 +983,7 @@
 
   function selectSun() {
     cue('select');
-    holdSelection(null);
+    holdSelection({ kind: 'sun', id: 'sun' });
     showPanel('sun');
     exitNeighborhoodFn?.();
     focusBodyFn?.({ kind: 'sun', id: 'sun' });
@@ -1726,6 +1743,9 @@
       get selectedBeltId() {
         return selectedBeltId;
       },
+      get selectedSun() {
+        return selectedSun;
+      },
       get panelState() {
         return panelState;
       },
@@ -2084,7 +2104,7 @@
       selectedSmallBodyId ||
       selectedSatelliteKey ||
       selectedBeltId ||
-      panelState.sun ||
+      selectedSun ||
       iconic.state.panelOpen
     )}
     onResetView={() => {
@@ -2126,6 +2146,7 @@
   open={panelState.planet}
   onClose={closePanel}
   onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
   onPlanMission={selectedPlanet?.missionable ? onPlanMission : undefined}
 />
 
@@ -2134,6 +2155,7 @@
   open={panelState.sun}
   onClose={closeSunPanel}
   onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
 />
 
 <!-- v2 named-star detail (Slice 1). closeStarFn set in onMount. -->
@@ -2207,6 +2229,7 @@
   open={panelState.smallBody}
   onClose={() => (panelState.smallBody = false)}
   onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
 />
 
 <SatellitePanel
@@ -2214,6 +2237,7 @@
   open={panelState.satellite}
   onClose={() => (panelState.satellite = false)}
   onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
 />
 
 <BeltPanel
@@ -2221,6 +2245,7 @@
   open={panelState.belt}
   onClose={() => (panelState.belt = false)}
   onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
   bodyInScene={hasSceneObject}
   onSelectBody={openBodyById}
 />
@@ -2230,6 +2255,7 @@
   open={iconic.state.panelOpen}
   onClose={() => iconic.reset()}
   onFly={(id) => goto(localHref(`/fly?mission=${id}`))}
+  onBack={missionOverBody ? () => iconic.reset() : undefined}
 />
 
 <!-- Heliocentric scale ruler + zone panel (#357). Lower-left, always

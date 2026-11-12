@@ -59,7 +59,7 @@ export interface InterstellarCraft {
 }
 
 /**
- * Load the message-panel record for one interstellar craft by its trajectory id
+ * Load the message record for one interstellar craft by its trajectory id
  * (voyager-1/-2, pioneer-10/-11, new-horizons). Returns null if the trajectory
  * is missing or isn't an interstellar-bound craft.
  */

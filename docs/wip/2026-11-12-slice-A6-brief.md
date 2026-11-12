@@ -26,6 +26,14 @@ Recorded in `docs/wip/2026-11-11-ux-feedback-plan.md` ("A3–A6 answers"). They 
 | D3 | **Toggles 32 px on fine pointers, 44 px on touch** | §3.2 |
 | D4 | A3 final tokens (landed): `--color-accent` `#5070ff`, `--color-state` `#889fe7`, `--color-focus` `#8aa0ff`, contrast rule, the core tier uses the chip active look | §1 cascade |
 | D5 | A4 chip option A (30 / 44 px, 4 px, outline at rest, soft blue fill + blue edge + white text when on) and A5 flat chip row | §1 cascade |
+| D6 | **The hamburger break stays at 1219 px in A6** (operator 2026-11-12, "5a"); after A6 the full bar is measured in all 14 locales and the break is lowered in a later step (deferred list L2). This closes O1 below | §3.5, §10 |
+
+**Cascade update 2026-11-12 (HEAD `27f2d5754eb`, after A4 landed and while A5 is being built).** The rows below that call A4 "decided" and A5 "written" are superseded by this paragraph:
+- **A4 is built** (UXD-014, `src/lib/styles/chip.css`, `Chip.svelte`, `ChipGroup.svelte`, `chip-nav.ts`). The chip is 30 px on fine pointers and **44 × 44 minimum on touch in both axes** (`min-inline-size` too — an icon-only chip was under 44 px wide, the A4 checker's blocker 3); rest colours are tokens `--color-chip-glass` / `-edge` / `-text`; hover lifts a chip at rest only, never an on chip. A6's nav toggles copy these exact values (32 / 44 both axes, the same tokens, the same hover rule), not the A4 brief's draft numbers. The A4 sweep in `tests/e2e/chip.spec.ts` allow-lists the nav controls by class (`.menu-toggle`, `.audio-toggle`, `.lens-toggle`, `.contrast-toggle`, `.settings-toggle`, `.share-toggle`, `.debug-toggle`, `.group-trigger`, `.drawer-link`, …, `.locale-picker`): every nav class A6 renames or adds (the More trigger, the menu items) must be added there, or the sweep fails.
+- **A5 is being built with a corrected Earth row**: SURFACE · AUTO, LAUNCHPADS, MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip switches every orbiter; no SPACE TELESCOPES chip, no masters). A5 also **absorbs the floating A–Z tab into the INDEX** on /moon /mars /venus /explore (operator 2026-11-12), so the bottom-edge A–Z tab that A4 moved to 604 px is gone from those routes. A5 edits `SurfaceScene.svelte` heavily: **A6 starts after A5 has landed** and rebases its `SurfaceScene.svelte:7082` `60px` edit onto A5's version of that block.
+- **The /fly HUD is on tokens** (L1 → blue D, `1505ef3e627`); A6's `--nav-height` change moves the /fly HUD tops with the token, no literal to fix there.
+- **Lesson from A4 for A6's check.** A4's worst bugs were features that find controls **by class** elsewhere (the exhibit-mode hide list in `src/lib/styles/app.css`, the ruler query in `SurfaceScene.svelte`) and broke silently when the class was renamed. Before renaming any nav class, A6 greps the whole repo for it: 35 references to nav classes outside `Nav.svelte` today, in `tests/e2e/chip.spec.ts` (9), `tests/e2e/_helpers/nav.ts` (8), `mobile-layout.spec.ts` (7), `smoke.spec.ts` (3), `fleet.spec.ts` (2) and one each in `tour-resume-cookie`, `pwa`, `library`, `credits`, `audio-tour-stages`, `audio` specs; also `app.css` exhibit / high-contrast rules and any `querySelector('.…')` in `src/`. Each is updated in the same commit as the rename, and §11's check gains that grep.
+- **Port hygiene for A6's e2e** (A4 cost one wasted run): stop any preview on the e2e port before a build; the run refuses to start when the port is busy.
 
 ## 1. Cascade — what the earlier slices change in A6, and what in the plan row is outdated
 
@@ -310,7 +318,7 @@ Operator sees them before the final slice commit (`ux-baseline-review` flow).
 **Answered (2026-11-12, §0a):** shape = compact bar + More menu (old Q1), height = 52 px in one token (old Q2), fine-pointer size = 32 px, touch 44 px (old Q3).
 
 **Genuinely open (one item; recommendation first):**
-- **O1 Hamburger break.** The 1219 px break was forced by the old 392 px cluster; with about 192 px the full link row fits narrower windows. (a) **Keep 1219 in this slice; the per-locale measuring spec (§3.3 / §6 test 7) is added and its measured values are reported, lowering the break is a follow-up the operator approves** (recommended: lowering it changes what 1024–1219 px windows show, which the operator did not ask for). (b) Measure 14 locales and lower the break to the measured value in this slice (the first brief's recommendation).
+- **O1 Hamburger break — answered (a), D6: keep 1219 in A6, measure after, lower later (L2).** The 1219 px break was forced by the old 392 px cluster; with about 192 px the full link row fits narrower windows. (a) **Keep 1219 in this slice; the per-locale measuring spec (§3.3 / §6 test 7) is added and its measured values are reported, lowering the break is a follow-up the operator approves** (recommended: lowering it changes what 1024–1219 px windows show, which the operator did not ask for). (b) Measure 14 locales and lower the break to the measured value in this slice (the first brief's recommendation).
 
 **Defaults taken without asking** (each is an implementation detail, reversible in review; the first version listed them as Q4–Q11):
 - Menu panel sits inside `<nav>` with the roving `itemSelector` excluding it, or outside `<nav>` if `a11y-keyboard.spec.ts:28` forces it (old Q5: decided by that test).
@@ -423,7 +431,7 @@ sys.exit(1 if v else 0)
 
 - **Status**: proposed
 - **Date**: 2026-11-12
-- **Decider**: the operator, 2026-11-12 (compact bar + More menu, 52 px, 32 / 44 px); the hamburger break (O1 of docs/wip/2026-11-12-slice-A6-brief.md) is open
+- **Decider**: the operator, 2026-11-12 (compact bar + More menu, 52 px, 32 / 44 px); the hamburger break stays at 1219 px in A6 (D6), lowered later after a 14-locale measurement
 - **Answers**: N1; slice A6; closes UXS-000 SC-1 (nav height) and the nav z-index mismatch
 - **Changes**: `src/lib/components/Nav.svelte`, `src/lib/components/LocalePicker.svelte` (trigger sizing),
   `tokens.css` (`--nav-bar-height`, `--nav-height`, `--nav-btn-fine`, `--nav-btn-touch`), IA §shell-regions,

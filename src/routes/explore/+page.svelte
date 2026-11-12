@@ -2088,9 +2088,10 @@
       iconic.state.panelOpen
     )}
     onResetView={() => {
-      clearBodySelection();
       resetExplorePanelState();
+      // Out of the neighbourhood first: the fly home starts from the solar camera, not from it.
       exitNeighborhoodFn?.();
+      clearBodySelection();
     }}
     {layers}
     onToggleLayer={(key) => {

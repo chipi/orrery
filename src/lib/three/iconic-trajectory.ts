@@ -82,6 +82,10 @@ export interface IconicTrajectoryHandle {
   dispose: () => void;
   /** Show / hide the entire trajectory (e.g. PATHS layer toggle). */
   setVisible: (visible: boolean) => void;
+  /** The "→ <star>" pill of a craft heading for a named star, null for the others. Shown with the highlight. */
+  directionLabel: THREE.Sprite | null;
+  /** The star's catalogue name as the data has it (the pill's text before it is localised). */
+  headingStar: string | null;
   /** Brighten (true) or dim (false) the line + markers. Default: dim. */
   setHighlight: (highlighted: boolean) => void;
   /** Per-frame screen-space declutter for the encounter labels. When
@@ -365,9 +369,9 @@ function buildLabelSprite(
 }
 
 // #410 — one-line "→ <star>" heading label for the direction indicator at a
-// craft's Today endpoint. Smaller + lighter than the encounter labels; always
-// visible (dim) with the trajectory rather than highlight-gated, so the eye
-// reads "this one is leaving for the stars" without a hover.
+// craft's Today endpoint. Smaller + lighter than the encounter labels. Hidden until its
+// owner is hovered or selected (UXD-021): the heading craft's pill with its highlight,
+// ʻOumuamua's with the body, so no unexplained pill sits on the scene at load.
 const DIR_LABEL_TEXTURE_W = 224;
 const DIR_LABEL_TEXTURE_H = 56;
 const DIR_LABEL_SCALE_X = 60;
@@ -377,28 +381,32 @@ const DIR_LABEL_SCALE_Y = 15;
 // collide with neighbouring trajectories in the outer scene.
 const DIR_ARROW_LEN = 62;
 
+function drawDirectionLabel(canvas: HTMLCanvasElement, text: string, color: string): void {
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'rgba(15, 18, 35, 0.7)';
+  const padX = 8;
+  const padY = 6;
+  ctx.beginPath();
+  ctx.roundRect(padX, padY, canvas.width - padX * 2, canvas.height - padY * 2, 8);
+  ctx.fill();
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.textBaseline = 'middle';
+  ctx.textAlign = 'left';
+  ctx.fillStyle = color;
+  ctx.font = 'bold 20px "Space Mono", monospace';
+  ctx.fillText(text, padX + 12, canvas.height / 2 + 1);
+}
+
+/** A direction pill. Both callers hide it; its owner shows it (hover, selection). */
 export function buildDirectionLabelSprite(text: string, color: string): THREE.Sprite {
   const canvas = document.createElement('canvas');
   canvas.width = DIR_LABEL_TEXTURE_W;
   canvas.height = DIR_LABEL_TEXTURE_H;
-  const ctx = canvas.getContext('2d');
-  if (ctx) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(15, 18, 35, 0.7)';
-    const padX = 8;
-    const padY = 6;
-    ctx.beginPath();
-    ctx.roundRect(padX, padY, canvas.width - padX * 2, canvas.height - padY * 2, 8);
-    ctx.fill();
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-    ctx.textBaseline = 'middle';
-    ctx.textAlign = 'left';
-    ctx.fillStyle = color;
-    ctx.font = 'bold 20px "Space Mono", monospace';
-    ctx.fillText(text, padX + 12, canvas.height / 2 + 1);
-  }
+  drawDirectionLabel(canvas, text, color);
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
@@ -412,7 +420,18 @@ export function buildDirectionLabelSprite(text: string, color: string): THREE.Sp
   );
   sprite.scale.set(DIR_LABEL_SCALE_X, DIR_LABEL_SCALE_Y, 1);
   sprite.renderOrder = 10;
+  sprite.userData = { directionLabel: { text, color } };
   return sprite;
+}
+
+/** Redraw a direction pill with new text (the star name once its localised form has loaded). */
+export function setDirectionLabelText(sprite: THREE.Sprite, text: string): void {
+  const state = sprite.userData.directionLabel as { text: string; color: string } | undefined;
+  const map = sprite.material.map;
+  if (!state || !(map instanceof THREE.CanvasTexture)) return;
+  state.text = text;
+  drawDirectionLabel(map.image as HTMLCanvasElement, text, state.color);
+  map.needsUpdate = true;
 }
 
 export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTrajectoryHandle {
@@ -579,6 +598,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     dirLine.userData = { kind: 'iconic-trajectory-heading', id: data.id };
     group.add(dirLine);
     dirLabel = buildDirectionLabelSprite(`→ ${data.heading.star}`, data.color);
+    dirLabel.visible = false;
     dirLabel.position.copy(tip);
     group.add(dirLabel);
   }
@@ -589,6 +609,8 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     hoverTargets,
     pickTargets,
     missionId: data.mission_id,
+    directionLabel: dirLabel,
+    headingStar: data.heading?.star ?? null,
     onResize: (w: number, h: number) => {
       lineMaterial.resolution.set(w, h);
     },
@@ -604,6 +626,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
         : CLICK_TARGET_OPACITY_DIM;
       ringMaterial.opacity = highlighted ? RING_OPACITY_BRIGHT : RING_OPACITY_DIM;
       labelGroup.visible = highlighted;
+      if (dirLabel) dirLabel.visible = highlighted;
       // When the label group goes invisible, reset all sprite positions
       // back to their base so the next hover starts from a clean state
       // (otherwise a stale stacking would briefly flash on re-show).

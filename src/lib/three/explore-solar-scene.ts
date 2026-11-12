@@ -1170,6 +1170,8 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     tail?: THREE.Line;
     orbit: THREE.Object3D;
     body: ExploreSmallBody;
+    /** "← <star>" pill at the inbound end of an interstellar body's path; hidden until hover or selection. */
+    directionLabel: THREE.Sprite | null;
   };
   // #287 Slice E — Pluto promoted to PLANETS so the planet-relative
   // camera + Charon satellite pick it up. Filter from the small-body
@@ -1203,6 +1205,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     // short "← Vega" arrow + label. Added as a CHILD of the orbit line so it
     // inherits the interstellar layer's visibility toggle. Schematic like the
     // arc itself — a direction cue, not a to-scale line to Vega (25 ly away).
+    let directionLabel: THREE.Sprite | null = null;
     if (b.type === 'interstellar' && b.inbound_radiant && orbitPts.length >= 2) {
       const inEnd = orbitPts[0];
       const inDir = new THREE.Vector3().subVectors(orbitPts[0], orbitPts[1]).normalize();
@@ -1213,8 +1216,10 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       );
       orbit.add(vec);
       const label = buildDirectionLabelSprite(`← ${b.inbound_radiant}`, `#${b.color.slice(1)}`);
+      label.visible = false; // shown while the body is hovered or selected (UXD-021)
       label.position.copy(tip);
       orbit.add(label);
+      directionLabel = label;
     }
     scene.add(orbit);
 
@@ -1258,7 +1263,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       scene.add(tail);
     }
 
-    return { mesh, pickAid, tail, orbit, body: b };
+    return { mesh, pickAid, tail, orbit, body: b, directionLabel };
   });
 
   // Selection ring (3D) — single torus reused for whichever planet is

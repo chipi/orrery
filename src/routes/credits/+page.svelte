@@ -211,6 +211,8 @@
         return m.science_tab_exoplanets_title();
       case 'black-hole':
         return m.star_index_black_holes();
+      case 'deep-sky':
+        return m.deepsky_name();
       default:
         return c;
     }

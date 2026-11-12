@@ -15,6 +15,7 @@
   import * as m from '$lib/paraglide/messages';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import Chip from '$lib/components/Chip.svelte';
   import {
     createLeoCoastScene,
     type LeoCoastScene,
@@ -284,21 +285,23 @@
 
     {#if !externalClock}
       <div class="controls">
-        <button
-          class="ctl"
+        <Chip
+          kind="action"
           onclick={() => (playing = !playing)}
           aria-label={playing ? m.fly_pause() : m.fly_play()}
         >
           {playing ? '❚❚' : '▶'}
-        </button>
+        </Chip>
         {#if onToggleHud}
-          <button class="ctl" onclick={onToggleHud} aria-label={m.coast_hide_hud()}>HUD</button>
+          <Chip kind="action" onclick={onToggleHud} aria-label={m.coast_hide_hud()}>HUD</Chip>
         {/if}
-        <button class="ctl skip" onclick={finish}>{m.coast_skip()}</button>
+        <Chip kind="action" onclick={finish}>{m.coast_skip()}</Chip>
       </div>
     {/if}
   {:else if onToggleHud}
-    <button class="ctl show-hud" onclick={onToggleHud} aria-label={m.coast_show_hud()}>HUD</button>
+    <div class="show-hud-slot">
+      <Chip kind="action" onclick={onToggleHud} aria-label={m.coast_show_hud()}>HUD</Chip>
+    </div>
   {/if}
 </div>
 
@@ -526,36 +529,10 @@
     display: flex;
     gap: 0.6rem;
   }
-  .ctl {
-    pointer-events: auto;
-    background: rgba(20, 32, 50, 0.72);
-    color: #cfe4ff;
-    border: 1px solid rgba(111, 183, 255, 0.35);
-    border-radius: 4px;
-    padding: 0.4rem 0.7rem;
-    font-family: inherit;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-  }
-  .ctl:hover {
-    border-color: rgba(111, 183, 255, 0.7);
-  }
-  .ctl.skip {
-    color: #ffd9a3;
-    border-color: rgba(255, 217, 163, 0.4);
-  }
-  .show-hud {
+  .show-hud-slot {
     position: absolute;
     bottom: 1rem;
     right: 1.2rem;
-    pointer-events: auto;
-    background: rgba(20, 32, 50, 0.72);
-    color: #cfe4ff;
-    border: 1px solid rgba(111, 183, 255, 0.35);
-    border-radius: 4px;
-    padding: 0.4rem 0.7rem;
-    font-size: 0.72rem;
   }
   /* Portrait phones: the title + top-right readouts collide at ~393px. Drop the
      mission name/agency (the phase chip carries the context) + shrink the

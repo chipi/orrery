@@ -18,6 +18,7 @@
   import { prefersReducedMotion, onReducedMotionChange } from '$lib/reduced-motion';
   import * as m from '$lib/paraglide/messages';
   import { onDestroy } from 'svelte';
+  import Chip from '$lib/components/Chip.svelte';
 
   type Props = {
     missions: Mission[];
@@ -233,7 +234,9 @@
         aria-label={m.lib_timeline_to()}
       />
     </label>
-    <button type="button" class="rm-reset" onclick={resetRange}>{m.lib_timeline_reset()}</button>
+    <div class="rm-reset-slot">
+      <Chip kind="action" onclick={resetRange}>{m.lib_timeline_reset()}</Chip>
+    </div>
   </div>
 {:else}
   <div class="timeline" role="group" aria-label={m.lib_timeline_label()}>
@@ -333,7 +336,9 @@
       </button>
     </div>
     {#if fromYear !== MIN_YEAR || toYear !== MAX_YEAR}
-      <button type="button" class="reset" onclick={resetRange}>{m.lib_timeline_reset()}</button>
+      <div class="reset-slot">
+        <Chip kind="action" onclick={resetRange}>{m.lib_timeline_reset()}</Chip>
+      </div>
     {/if}
   </div>
 {/if}
@@ -468,28 +473,11 @@
     border-radius: 2px;
     white-space: nowrap;
   }
-  .reset {
+  .reset-slot {
     position: absolute;
     top: 4px;
     right: 6px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.7);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    padding: 4px 8px;
-    cursor: pointer;
     z-index: 6;
-    min-width: 44px;
-    min-height: 24px;
-  }
-  .reset:hover,
-  .reset:focus-visible {
-    border-color: rgba(255, 255, 255, 0.6);
-    color: #fff;
-    outline: none;
   }
   .desktop-only {
     display: none;
@@ -541,17 +529,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
-  .rm-reset {
+  .rm-reset-slot {
     margin-left: auto;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.7);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    padding: 6px 10px;
-    cursor: pointer;
-    min-height: 36px;
   }
 </style>

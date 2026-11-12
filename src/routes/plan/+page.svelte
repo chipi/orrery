@@ -1150,9 +1150,7 @@
                 count: pinnedReadout.tof.toFixed(0),
               })} · {m.mp_flight_unit_kms({ value: pinnedReadout.dv.toFixed(2) })}
             </span>
-            <button type="button" class="sandbox-clear" onclick={clearPin}>
-              {m.plan_sandbox_clear()}
-            </button>
+            <Chip kind="action" quiet onclick={clearPin}>{m.plan_sandbox_clear()}</Chip>
           </div>
           {#if compareDelta}
             <dl class="sandbox-compare" data-testid="plan-sandbox-compare">
@@ -1180,14 +1178,9 @@
             </dl>
           {/if}
         {:else}
-          <button
-            type="button"
-            class="sandbox-pin"
-            data-testid="plan-sandbox-pin"
-            onclick={pinSelectedCell}
-          >
+          <Chip kind="action" data-testid="plan-sandbox-pin" onclick={pinSelectedCell}>
             {m.plan_sandbox_pin_button()}
-          </button>
+          </Chip>
           <p class="sandbox-hint">{m.plan_sandbox_pin_hint()}</p>
         {/if}
       </div>
@@ -1745,31 +1738,6 @@
     border: 1px solid rgba(255, 200, 80, 0.18);
     border-radius: 4px;
   }
-  .sandbox-pin {
-    display: block;
-    width: 100%;
-    min-height: 26px;
-    padding: 4px 10px;
-    background: transparent;
-    border: 1px dashed rgba(255, 200, 80, 0.5);
-    border-radius: 4px;
-    color: rgba(255, 200, 80, 0.85);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .sandbox-pin:hover,
-  .sandbox-pin:focus-visible {
-    background: rgba(255, 200, 80, 0.08);
-    border-color: rgba(255, 200, 80, 0.85);
-    color: #ffc850;
-    outline: none;
-  }
   .sandbox-hint {
     margin: 3px 0 0;
     font-size: var(--size-label);
@@ -1794,21 +1762,6 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.78);
-  }
-  .sandbox-clear {
-    background: transparent;
-    border: none;
-    color: rgba(255, 200, 80, 0.7);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1px;
-    cursor: pointer;
-    padding: 2px 4px;
-  }
-  .sandbox-clear:hover,
-  .sandbox-clear:focus-visible {
-    color: #ffc850;
-    outline: none;
   }
   .sandbox-compare {
     margin: 0;

@@ -64,6 +64,17 @@
       title: m.explore_lens_story_cosmic_web_title(),
       desc: m.explore_hub_desc_cosmicweb(),
     },
+    // The star pages are search-engine surfaces the mobile build prunes (prune-streamed-assets).
+    ...(__MOBILE__
+      ? []
+      : [
+          {
+            route: '/explore/stars',
+            name: m.star_index_aria(),
+            title: m.stars_hub_title(),
+            desc: m.stars_hub_intro(),
+          },
+        ]),
   ]);
 </script>
 

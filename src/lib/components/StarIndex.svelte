@@ -5,9 +5,14 @@
   field: every named star is selectable without the canvas, and rows are badged +
   filterable by what you can do with them — ⊕ has a planetary system you can enter,
   ◈ has a culture door. Selecting frames + opens the star.
+
+  Every named star has an entity page (/explore/stars/<id>), so each row also carries a real
+  link to it (ADR-096 items 11 and 13). The panel stays in the DOM, hidden, while
+  closed, like ExploreBodyIndex, so the links exist without a click.
 -->
 <script lang="ts">
   import { roving } from '$lib/a11y/roving';
+  import { localHref } from '$lib/locale';
   import Chip from './Chip.svelte';
   import ChipGroup from './ChipGroup.svelte';
   import { constellationName } from '$lib/universe/iau-constellations';
@@ -66,82 +71,96 @@
   });
 </script>
 
-{#if open}
-  <aside class="star-index" aria-label={m.star_index_aria()}>
-    <div class="si-top">
-      <input
-        bind:value={query}
-        type="search"
-        class="si-input"
-        placeholder={m.star_index_search_placeholder()}
-        aria-label={m.star_index_search_aria()}
-      />
-      <button type="button" class="si-close" aria-label={m.star_index_close()} onclick={onClose}
-        >×</button
-      >
-    </div>
-    <ChipGroup class="si-filter-row" role="radiogroup" label={m.star_index_filter_aria()}>
-      <Chip kind="choice" active={filter === 'all'} onclick={() => (filter = 'all')}
-        >{m.star_index_filter_all()}</Chip
-      >
-      <Chip
-        kind="choice"
-        active={filter === 'planets'}
-        onclick={() => (filter = 'planets')}
-        title={m.star_index_filter_planets()}>⊕ {m.star_index_filter_planets()}</Chip
-      >
-      <Chip
-        kind="choice"
-        active={filter === 'culture'}
-        onclick={() => (filter = 'culture')}
-        title={m.star_index_filter_culture()}>◈ {m.star_index_filter_culture()}</Chip
-      >
-    </ChipGroup>
-    <div class="si-count">{filtered.length} / {stars.length}</div>
-    <ul class="si-list" use:roving={{ orientation: 'vertical', wrap: true }}>
-      {#each filtered as s (s.id)}
+<aside class="star-index" hidden={!open} aria-label={m.star_index_aria()}>
+  <div class="si-top">
+    <input
+      bind:value={query}
+      type="search"
+      class="si-input"
+      placeholder={m.star_index_search_placeholder()}
+      aria-label={m.star_index_search_aria()}
+    />
+    <button type="button" class="si-close" aria-label={m.star_index_close()} onclick={onClose}
+      >×</button
+    >
+  </div>
+  <ChipGroup class="si-filter-row" role="radiogroup" label={m.star_index_filter_aria()}>
+    <Chip kind="choice" active={filter === 'all'} onclick={() => (filter = 'all')}
+      >{m.star_index_filter_all()}</Chip
+    >
+    <Chip
+      kind="choice"
+      active={filter === 'planets'}
+      onclick={() => (filter = 'planets')}
+      title={m.star_index_filter_planets()}>⊕ {m.star_index_filter_planets()}</Chip
+    >
+    <Chip
+      kind="choice"
+      active={filter === 'culture'}
+      onclick={() => (filter = 'culture')}
+      title={m.star_index_filter_culture()}>◈ {m.star_index_filter_culture()}</Chip
+    >
+  </ChipGroup>
+  <div class="si-count">{filtered.length} / {stars.length}</div>
+  <ul
+    class="si-list"
+    use:roving={{
+      orientation: 'vertical',
+      wrap: true,
+      itemSelector: 'button.si-row, a.si-page',
+      active: open,
+    }}
+  >
+    {#each filtered as s (s.id)}
+      <li class="si-item">
+        <button
+          type="button"
+          class="si-row"
+          class:selected={s.id === selectedId}
+          data-index-id={s.id}
+          aria-current={s.id === selectedId ? 'true' : undefined}
+          onclick={() => onSelect(s.id)}
+        >
+          <span class="si-badges" aria-hidden="true">
+            {#if hostIds.has(s.id)}<span
+                class="si-badge planets"
+                title={m.star_index_planetary_system()}>⊕</span
+              >{/if}{#if cultureIds.has(s.id)}<span
+                class="si-badge culture"
+                title={m.star_index_culture_door()}>◈</span
+              >{/if}
+          </span>
+          <span class="si-name">{s.proper}</span>
+          <span class="si-con">{s.con ? constellationName(s.con) : ''}</span>
+        </button>
+        <a
+          class="si-page"
+          href={localHref(`/explore/stars/${s.id}`)}
+          title={m.surface_index_open_page()}
+          aria-label="{m.surface_index_open_page()}: {s.proper}"
+          data-testid="star-index-page-link"
+          data-index-id={s.id}>↗</a
+        >
+      </li>
+    {/each}
+    {#if filtered.length === 0 && filteredBlackHoles.length === 0}
+      <li class="si-empty">{m.star_index_no_match({ query })}</li>
+    {/if}
+    {#if filteredBlackHoles.length > 0}
+      <li class="si-section" aria-hidden="true">{m.star_index_black_holes()}</li>
+      {#each filteredBlackHoles as b (b.id)}
         <li>
-          <button
-            type="button"
-            class="si-row"
-            class:selected={s.id === selectedId}
-            data-index-id={s.id}
-            aria-current={s.id === selectedId ? 'true' : undefined}
-            onclick={() => onSelect(s.id)}
-          >
-            <span class="si-badges" aria-hidden="true">
-              {#if hostIds.has(s.id)}<span
-                  class="si-badge planets"
-                  title={m.star_index_planetary_system()}>⊕</span
-                >{/if}{#if cultureIds.has(s.id)}<span
-                  class="si-badge culture"
-                  title={m.star_index_culture_door()}>◈</span
-                >{/if}
-            </span>
-            <span class="si-name">{s.proper}</span>
-            <span class="si-con">{s.con ? constellationName(s.con) : ''}</span>
+          <button type="button" class="si-row" onclick={() => onSelectBlackHole?.(b.id)}>
+            <span class="si-badges" aria-hidden="true"
+              ><span class="si-badge bh" title={m.star_index_black_holes()}>●</span></span
+            >
+            <span class="si-name">{b.name}</span>
           </button>
         </li>
       {/each}
-      {#if filtered.length === 0 && filteredBlackHoles.length === 0}
-        <li class="si-empty">{m.star_index_no_match({ query })}</li>
-      {/if}
-      {#if filteredBlackHoles.length > 0}
-        <li class="si-section" aria-hidden="true">{m.star_index_black_holes()}</li>
-        {#each filteredBlackHoles as b (b.id)}
-          <li>
-            <button type="button" class="si-row" onclick={() => onSelectBlackHole?.(b.id)}>
-              <span class="si-badges" aria-hidden="true"
-                ><span class="si-badge bh" title={m.star_index_black_holes()}>●</span></span
-              >
-              <span class="si-name">{b.name}</span>
-            </button>
-          </li>
-        {/each}
-      {/if}
-    </ul>
-  </aside>
-{/if}
+    {/if}
+  </ul>
+</aside>
 
 <style>
   /* Matches ExploreBodyIndex (.body-index) so the index reads the same at every
@@ -163,6 +182,9 @@
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
     color: var(--text-base, #e8e8ed);
+  }
+  .star-index[hidden] {
+    display: none;
   }
   .si-top {
     display: flex;
@@ -229,6 +251,41 @@
       min-height: 132px;
       overflow-y: visible;
     }
+  }
+  .si-item {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .si-item .si-row {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+  .si-page {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--text-dim, #9a9aa7);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .si-page {
+      min-width: 30px;
+      min-height: 0;
+    }
+  }
+  .si-page:hover,
+  .si-page:focus-visible {
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: var(--text-base, #e8e8ed);
+    outline: none;
   }
   .si-row {
     display: flex;

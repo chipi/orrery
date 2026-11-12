@@ -362,6 +362,8 @@ const SWEEP_ALLOW_SELF = [
   '.play-pause',
   '.link-btn',
   '.wave-tile',
+  // The illustrated site map in a site panel: an image that opens the lightbox (like a gallery thumb)
+  '.site-illustration .open',
   // Cards, list and index rows, thumbnails: the whole row or picture is the target
   'button.card',
   '.list-row',

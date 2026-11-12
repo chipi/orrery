@@ -231,7 +231,7 @@ The layers that meet on `/explore` and the other scene routes, bottom to top. A 
 | 40 | Nav bar; the Phase panel (`zIndex={40}`) | `Nav.svelte`, `PhasePanel.svelte` |
 | 44 | INDEX handle (§5.13) | `index-panel.css` (`.scale-index-handle`) |
 | 45 | INDEX rail (§5.13) | `index-panel.css` (`.scale-index`) |
-| 46 | The scale navigator while its ladder is open, so the rungs are not covered by the rail | `ScaleNav.svelte` |
+| 46 | The scale navigator while its ladder is open, so the rungs are not covered by the rail. Beside a docked drawer the row moves left of it (§5.15) instead of rising above it: the drawer's bar carries Share and ×, which a higher layer would cover | `ScaleNav.svelte` |
 | 79 / 80 | Touch portrait only: the panel's backdrop and the panel as a bottom sheet (`--panel-z` + 49 and + 50) | `Panel.svelte` |
 | 88 / 89 | Settings backdrop and the mobile nav drawer's backdrop (88); the mobile nav drawer (89) | `SensorySheet.svelte`, `Nav.svelte` |
 | 90 | DebugPanel; the settings sheet (`SensorySheet`) | `DebugPanel.svelte`, `SensorySheet.svelte` |
@@ -468,6 +468,20 @@ Scene code cannot read CSS variables, so the blue is a literal (`RING_BLUE`, `0x
 **Label placement pass.** Each frame the candidate labels are placed in priority order (`placeLabels`); a label that overlaps one already placed is hidden and returns when space frees. Order: hovered or selected (always shown, placed first), the anchor, headliners, the rest. The Milky Way's order is the Sun, Sagittarius A\*, the headliner globulars, the Magellanic Clouds, the arms; the light-year ring labels come last. A hidden arm label's sprite is not a pick target; the arm's ring is, hidden label or not, and hovering it shows the label. Equal ranks resolve by creation order.
 
 **Steady label offset.** A label sits above its pin by the steady glow size and the ring, never the hover-grown one (`labelOffset`), so hovering does not move it. The lift runs along the camera's screen-up (`liftOnScreen`), not world Y, so it is the same on screen when the camera looks straight down.
+
+### 5.15 /explore HUD: scale bar, level picker, direction pills, REFERENCES grid, Reset slot (UXD-021)
+
+The HUD parts of `/explore` that carry a number, a choice or a name ([UXD-021](../uxs/decisions/UXD-021-explore-hud-scale-bar-picker-pills-references.md)).
+
+| Element | Rule |
+|---|---|
+| Scale bar | One component (`ScaleBar.svelte`) and one module (`scale-bar.ts`) for the Explore strip and both Worlds bars. The bar is 120px wide (64px under 600px wide), 3px high with end ticks, at every zoom; the label to its right (`--size-label`, 70% white) is the value it spans to three significant digits in the page locale (`1.37`, `13,7`, `137`), in the unit of the existing ladders (km, AU, ly, pc; km and m on the Worlds, through `distanceWithUnit`). The value follows the zoom; the width does not. No bar is drawn at the six schematic scales (Milky Way to Cosmic web: not to scale) |
+| Scale strip | A fixed 232px box (190px under 768px wide): it does not resize with its text. Bottom right, z 6 |
+| Level picker | One `Chip` toggle that opens the ladder as a popover downward. Flush right (the solar system) the ladder lines up with the chip's right edge and opens leftward (`align="right"`); flush left (the other seven scales) it lines up with the left edge. Physical offsets, not logical ones (the navigator's `right: 8px` is physical in every direction). Never wider than `100vw - 16px` |
+| Scale navigator row | Back, picker, Reset. Flush right at the solar system, flush left elsewhere. With a drawer docked at the right edge (desktop, touch landscape) the flush-right row sits left of it by the drawer's width plus 8px (`panelCoverPx`, the measurement the camera framing of §7.5 takes); a bottom sheet moves nothing. z 8, 46 while the ladder is open (§4.7) |
+| Reset slot | Always drawn in the navigator, at all eight scales, disabled while there is nothing to reset (a selection; at the neighbourhood also the Sun out of frame), so the row never shifts. The same reset the HUD's RESET VIEW runs at the solar system |
+| Direction pills | ʻOumuamua's "← Vega" and a heading craft's "→ star" (Voyager 1 and 2, Pioneer 10 and 11): hidden at rest, shown while the owner is hovered or selected (a craft's with its path highlight). The arrow lines stay. A named star's name is the star panel's (`getNamedStarI18n`); a catalogue-only star keeps its data name |
+| REFERENCES overlay | The canvas (`SizesCanvas`) draws the eight bodies only: true relative size, a common baseline, size order. The names are a DOM grid under it (`SizesOverlay`): eight columns in the same left-to-right order on the 640px card, 4 x 2 under 560px; a cell holds a swatch in the planet's colour, the name in the viewer's language (`planetName`, `lab_body_*`) and the diameter (2 x the IAU mean radius) in the page locale and unit form. The open planet's cell is marked; hover, focus or a tap on a cell rings its body. Heading above the canvas, source line under the grid |
 
 ---
 

@@ -71,7 +71,8 @@ residents of the ruler were buttons that did nothing. Evidence: the brief's §2 
 9. **Outer scales.** A member from the canvas or an INDEX row pans the camera to it and eases the zoom
    to 0.6 x the scale's entry distance (never below the floor, never out from a closer view the user
    chose). All eight scales have a Reset; the four that lacked one (Local Sheet, Virgo, Laniakea, Cosmic
-   web) gain it. A member is a link: `?context=<scale>&pick=<id>` for the five scales without a URL
+   web) gain it. (It appeared once something was selected; [UXD-021](UXD-021-explore-hud-scale-bar-picker-pills-references.md)
+   draws it always, disabled while there is nothing to reset, so the row does not shift.) A member is a link: `?context=<scale>&pick=<id>` for the five scales without a URL
    parameter of their own, mirrored both ways. Cygnus X-1 gets a Milky Way pin placed from its ra, dec and
    distance. A black hole row, or a canvas pick of such a pin, takes the camera to the hole's pin first
    and opens the lensing view from there, so leaving it lands on the pin. M87\* has no pin of its own: M87

@@ -755,7 +755,22 @@ SVG UI text and for the 2D UI canvases —
       FigureRenderer SVG), station-blueprint.ts texture, static/ diagrams, and
       dev tools (DebugPanel, AscentCameraDebug, FlybyDebugViewer, src/routes/dev/).
   Canvases that ARE UI and meet the floor: plan/+page.svelte, SurfaceFlatPatch,
-    surface-2d-map.ts, SizesCanvas, ConstellationFinder, InstrumentTiles.
+    surface-2d-map.ts, ConstellationFinder, InstrumentTiles (SizesCanvas draws bodies only
+    since UXD-021; its names are DOM).
+
+Scale bar and HUD (src/lib/universe/scale-bar.ts, src/lib/components/ScaleBar.svelte, UX C3,
+docs/uxs/decisions/UXD-021-explore-hud-scale-bar-picker-pills-references.md):
+  one scale bar for the whole app: a fixed width (120 px, 64 px under 600 px) at every zoom and
+  the value beside it follows the zoom, to three significant digits in the page locale; the
+  Explore strip (a fixed 232 px box, 190 px under 768 px), the Worlds 3D bar and the flat-patch
+  bar all draw through scale-bar.ts and ScaleBar.svelte, never their own rounding; the six
+  schematic scales draw no bar. The scale picker's ladder opens leftward when the navigator is
+  flush right (align="right", physical offsets) and the flush-right row sits left of a docked
+  side panel (bridge.panelCoverPx); Reset is always drawn in the navigator, disabled when inert,
+  at all eight scales. The direction pills ("← Vega", "→ star") show only while their owner is
+  hovered or selected. The REFERENCES overlay draws bodies only; names and diameters are a DOM
+  grid in the reader's language (planetName, $lib/explore/planet-sizes.ts). Guarded by
+  tests/e2e/explore-hud.spec.ts.
 
 Pins, rings and labels (src/lib/universe/scene-pins.ts, UX C2, docs/uxs/decisions/UXD-020-explore-readability-pins-rings-labels.md):
   one 12 px label in CSS px at every /explore scale; one 44 px screen-constant ring on every

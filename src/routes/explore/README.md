@@ -10,12 +10,12 @@ plain `legendRowEls` array (legend keyboard nav) and `iconic.state`.
 - `HudControls` — solar-system HUD: one row on a fine pointer, the view actions (2D/3D, reset, always rendered and disabled when nothing is selected, AR/Sky) then the layer chips (`LayerChipRow`, UXD-015; the PATHS chip carries `data-audio-stage` through the config `attrs`), the
   PATHS legend, the mobile top row and the mobile drawers (incl. Scan).
 - `TimeDock` — PLANET SCALES chip + time controls (play, speed radiogroup, reset; coupled positions).
-- `ScaleNav` — top row: back chip, scale picker, `ResetViewButton` (a Reset at all eight scales, UXD-019).
+- `ScaleNav` — top row: back chip, scale picker, `ResetViewButton` (always drawn at all eight scales, disabled when inert; flush right at the solar system and then left of a docked panel, UXD-021).
 - `SunCompass` — off-screen Sun needle (neighborhood).
-- `ScaleStrip` — bottom-right ruler / schematic honesty note.
+- `ScaleStrip` — bottom-right scale strip: a fixed 232 px box with the unit ladder and the fixed-width `ScaleBar` (solar system, neighbourhood), or the schematic honesty note (UXD-021).
 - `BlackHoleNotes`, `AnonStarTag`, `DeepSkyImmersion`, `WarpOverlays` —
   read-only scene overlays.
-- `SizesOverlay` — size-comparison modal; `HoverTooltip` — cursor tooltip.
+- `SizesOverlay` — REFERENCES modal: the bodies-only `SizesCanvas` and the aligned DOM legend grid (UXD-021); `HoverTooltip` — cursor tooltip.
 
 Logic lives in `src/lib/explore/` (see its README). Source-reading tests:
 `audio-tour.test.ts` lists every file carrying a `data-audio-stage` anchor

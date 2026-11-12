@@ -527,12 +527,12 @@ Every item we deferred, with where it lands. Add to it whenever something is def
 | L17 | After the 0.9.9 deploy: homelab removes staging leftovers (GlitchTip staging project, Umami staging site, `staging` environment, `STAGING_URL`); operator applies `docs/wip/2026-11-11-deploy-prod-no-staging.patch` | staging removal | after 0.9.9 deploy |
 | L18 | 0.9.10: last 71 placeholder credits; observability outage drill; museum rows (end of 0.9.9 or 0.9.10) | operator 2026-11-11 | 0.9.10 |
 | L19 | Delete the session scratchpad after the A1/A2/A3 screenshots are approved | operator go 2026-11-12 | after sheets approved |
-| L20 | L1 sheets sent 2026-11-12 (cyan / blue D / neutral / cockpit; recommendation blue D, weak spot: labels over the bright launch sky) — waiting for the operator's pick, then apply it in the 6 fly files + the scrubber | L1 | operator pick |
+| L20 | ~~/fly HUD colour~~ — blue D on tokens (`1505ef3e627`) | L1 | done |
 | L21 | ~~A4 core-tier chips still private CSS (NV13)~~ — done: one `.ui-chip-label` (`1dd6fba57e0`) | A4 implementer NOT DONE | during A4 |
 | L22 | ~~/fly ◐/◑ hud-collapse not a chip~~ — done (`f0cf0e3f498`, plus panorama, assembly, CC; `5e0b98402c1` /plan sandbox, floating exits, timeline resets, Coast controls); the mini-HUD summary card stays a card | A4 implementer NOT DONE | during A4 |
 | L23 | ~~Radiogroup with nothing checked has no Tab stop~~ — done in ChipGroup (`2ddfb6e2d55`) | A4 implementer NOT DONE | during A4 |
 | L24 | ~~Orphaned message keys~~ — done: `launches_filters_label` (A4) and `hotspots_lod_title` (`d44fb2c0481`) removed from 14 locales | A4 implementer NOT DONE | during A4 |
-| L25 | White text on the 22 % world-tint fill (Mars, Venus, Moon): measure contrast (NV15) | A4 brief NV15 | during A4 (with the sheets) |
+| L25 | ~~White text on the world-tint fill~~ — passes: Mars chip fill srgb(60,35,37) sampled from the Docker baseline = 14.4:1; modelled Venus ~14:1, Moon ~14:1, Mars over bright ground ~10:1 (AA needs 4.5) | A4 brief NV15 | during A4 (with the sheets) |
 | L26 | Layout risks from taller chips (30/44): Explore left column vs Orbit Ruler and time dock, time dock at 390 px, ScaleNav at 390 px in de/ar, 13-chip nation legend wrap, vertical pull tabs, agency logo chips, RTL arrow keys — check in the A4 sheets | A4 implementer NOT VERIFIED | during A4 |
 | L27 | ~~Visual baselines for A4~~ — done: 14 PNGs regenerated in Docker (`fc4a246d856`) | A4 | during A4 |
-| L28 | /plan porkchop legend copy says "Cool teal = cheap" while the panel below says "Cool blue zones are cheap" (heat-map colours are data, L4) — make the copy match the palette decision, 14 locales | A4 sheets | with L4 palette review |
+| L28 | ~~Porkchop legend vs plot~~ — done: legend drawn from the plot ramp, prose + both Science Lens texts in 14 locales (`21aeec48817`) | A4 sheets | done |

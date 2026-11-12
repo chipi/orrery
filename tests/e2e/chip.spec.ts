@@ -328,6 +328,8 @@ const SWEEP_ALLOW_SELF = [
   '.anon-close',
   '.sizes-close',
   '.sizes-backdrop',
+  // REFERENCES legend: a planet's cell (swatch, name, diameter) is the whole target, like a list row
+  '.sizes-cell',
   '.recovery-close',
   '.pop-close',
   '.dismiss',

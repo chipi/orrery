@@ -54,6 +54,13 @@ export interface IconicTrajectoryData {
   waypoints: IconicTrajectoryWaypoint[];
 }
 
+/** `userData.kind` of the milestone sprites a click opens a mission from (IM5). */
+export const PICK_KINDS = {
+  marker: 'iconic-trajectory-marker',
+  launch: 'iconic-trajectory-launch',
+  label: 'iconic-trajectory-label',
+} as const;
+
 export interface IconicTrajectoryHandle {
   /** Root group holding the line + markers. Add to scene. */
   group: THREE.Group;
@@ -63,6 +70,10 @@ export interface IconicTrajectoryHandle {
    *  marker plus every encounter sprite — each tagged with missionId
    *  so the page's raycaster can resolve mission identity in one pass. */
   hoverTargets: THREE.Object3D[];
+  /** The milestone markers and boxes a click opens the mission from (IM5). The pick contract,
+   *  kept by every skin of these sprites: `userData.kind` is one of `PICK_KINDS` and
+   *  `userData.missionId` is the mission to open. */
+  pickTargets: THREE.Object3D[];
   /** Mission ID this trajectory belongs to — used for hover-highlight pairing. */
   missionId: string;
   /** Update line material resolution on canvas resize. */
@@ -450,6 +461,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   const markerTextures: THREE.CanvasTexture[] = [];
   const markerMaterials: THREE.SpriteMaterial[] = [];
   const hoverTargets: THREE.Object3D[] = [];
+  const pickTargets: THREE.Object3D[] = [];
   const labelGroup = new THREE.Group();
   labelGroup.visible = false;
   labelGroup.userData = { kind: 'iconic-trajectory-labels', id: data.id };
@@ -470,7 +482,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     const { sprite: markerSprite, texture, material } = builder(data.color);
     markerSprite.position.copy(pos);
     markerSprite.userData = {
-      kind: isLaunch ? 'iconic-trajectory-launch' : 'iconic-trajectory-marker',
+      kind: isLaunch ? PICK_KINDS.launch : PICK_KINDS.marker,
       id: data.id,
       missionId: data.mission_id,
       label: wp.display_label ?? wp.label,
@@ -480,9 +492,18 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     markerTextures.push(texture);
     markerMaterials.push(material);
     hoverTargets.push(markerSprite);
+    pickTargets.push(markerSprite);
 
     if (wp.label) {
       const sprite = buildLabelSprite(data.name, wp.display_label ?? wp.label, wp.date, data.color);
+      sprite.userData = {
+        kind: PICK_KINDS.label,
+        id: data.id,
+        missionId: data.mission_id,
+        label: wp.display_label ?? wp.label,
+        date: wp.date,
+      };
+      pickTargets.push(sprite);
       // Offset the sprite slightly off the line so it doesn't sit on
       // top of the marker. Use the ecliptic-up direction (+Y) so the
       // label floats above the line at typical viewing angles.
@@ -566,6 +587,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     group,
     clickTarget,
     hoverTargets,
+    pickTargets,
     missionId: data.mission_id,
     onResize: (w: number, h: number) => {
       lineMaterial.resolution.set(w, h);

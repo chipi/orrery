@@ -66,7 +66,8 @@ async function ensureLoaded(): Promise<void> {
 // Localized mission / fleet names -> route, per locale. Body panels show the
 // locale's own name ("«Луна-16»", "嫦娥四号", "चंद्रयान-3" under the
 // origin-language rule), which the id candidates below can't match.
-const nameIndex = new Map<string, Map<string, string>>();
+type MissionRoute = { kind: 'mission' | 'fleet'; id: string };
+const nameIndex = new Map<string, Map<string, MissionRoute>>();
 const namesInflight = new Map<string, Promise<void>>();
 
 function normName(name: string): string {
@@ -87,7 +88,7 @@ function ensureNames(locale: string): Promise<void> {
   ])
     .then(([fleet, missions]) => {
       const bundle = { ...fleet, ...missions };
-      const idx = new Map<string, string>();
+      const idx = new Map<string, MissionRoute>();
       // Fleet first so a mission with the same name wins (missions open the
       // mission panel, the more specific target).
       for (const kind of ['fleet', 'missions'] as const) {
@@ -95,7 +96,7 @@ function ensureNames(locale: string): Promise<void> {
           const m = new RegExp(`^${kind}/[^/]+/([^/]+)\\.json$`).exec(key);
           const name = (val as { name?: unknown } | null)?.name;
           if (!m || typeof name !== 'string') continue;
-          const route = `/${kind}?id=${m[1]}`;
+          const route: MissionRoute = { kind: kind === 'missions' ? 'mission' : 'fleet', id: m[1] };
           for (const part of [name, ...name.split(/\s*\/\s*/)]) {
             if (part.trim()) idx.set(normName(part), route);
           }
@@ -140,33 +141,91 @@ function normaliseCandidates(name: string): string[] {
   return [...new Set([kebab, flat, noTrailingNum, firstWord].filter(Boolean))];
 }
 
-/** Resolve a single mission name to an href, or null if neither /missions
+/** Where a mission name leads: a mission (the body panel can open it in place) or a fleet
+ *  entry (a navigation), with the href that reaches the same record without script. */
+export interface MissionTarget {
+  kind: 'mission' | 'fleet';
+  id: string;
+  href: string;
+}
+
+const targetOf = (kind: 'mission' | 'fleet', id: string): MissionTarget => ({
+  kind,
+  id,
+  // Detail views open as a modal on the index page via ?id= (there is no
+  // /missions/[id] or /fleet/[id] route) — matches every other deep-link.
+  href: localHref(`/${kind === 'mission' ? 'missions' : 'fleet'}?id=${id}`),
+});
+
+/** Resolve a single mission name to its target, or null if neither /missions
  *  nor /fleet has a matching id. */
-function resolveHref(name: string): string | null {
+function resolveTarget(name: string): MissionTarget | null {
   if (!missionIdCache || !fleetIdCache) return null;
   for (const id of normaliseCandidates(name)) {
-    // Detail views open as a modal on the index page via ?id= (there is no
-    // /missions/[id] or /fleet/[id] route) — matches every other deep-link.
-    if (missionIdCache.has(id)) return localHref(`/missions?id=${id}`);
-    if (fleetIdCache.has(id)) return localHref(`/fleet?id=${id}`);
+    if (missionIdCache.has(id)) return targetOf('mission', id);
+    if (fleetIdCache.has(id)) return targetOf('fleet', id);
   }
   const route = nameIndex.get(getLocale())?.get(normName(name));
-  return route ? localHref(route) : null;
+  return route ? targetOf(route.kind, route.id) : null;
 }
 
 /** Resolve a mission name to a link target. Returns null if neither
  *  /missions nor /fleet has a matching id. */
 export function linkifyMission(
   entry: string,
-): { href: string; label: string; rest: string } | null {
+): (MissionTarget & { label: string; rest: string }) | null {
   const label = leadingMissionName(entry);
-  const href = resolveHref(label);
-  return href ? { href, label, rest: entry.slice(label.length) } : null;
+  const target = resolveTarget(label);
+  return target ? { ...target, label, rest: entry.slice(label.length) } : null;
 }
 
 export interface MissionSegment {
   text: string;
   href?: string;
+  kind?: 'mission' | 'fleet';
+  id?: string;
+}
+
+/**
+ * A click on a mission link in a body panel: a mission opens in place (the body stays selected,
+ * the mission panel opens over it), a fleet entry navigates. Without a handler, or with a
+ * modifier key (open in a new tab), the anchor does what an anchor does.
+ */
+export function onMissionLinkClick(
+  event: MouseEvent,
+  target: { kind?: 'mission' | 'fleet'; id?: string },
+  open: ((missionId: string) => void) | undefined,
+): void {
+  if (!open || target.kind !== 'mission' || !target.id) return;
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0)
+    return;
+  event.preventDefault();
+  open(target.id);
+}
+
+const FIRST_YEAR = /(1[89]\d\d|20\d\d)/;
+
+/** The first four-digit year in a mission entry ("Voyager 2 — NASA, 1989 (…)"), or null. */
+export function entryYear(entry: string): number | null {
+  const m = FIRST_YEAR.exec(entry);
+  return m ? Number(m[1]) : null;
+}
+
+/**
+ * A body's mission list, newest first. The key is each entry's first year, read from
+ * `baseEntries` when the caller has the en-US list (a locale overlay keeps the base order and
+ * length, so one permutation serves every locale), else from the entries themselves. Entries
+ * without a year go last; equal years keep their order.
+ */
+export function sortNewestFirst(
+  entries: readonly string[],
+  baseEntries: readonly string[] = entries,
+): string[] {
+  const keys = baseEntries.length === entries.length ? baseEntries : entries;
+  return entries
+    .map((entry, i) => ({ entry, i, year: entryYear(keys[i]) ?? entryYear(entry) ?? -Infinity }))
+    .sort((a, b) => b.year - a.year || a.i - b.i)
+    .map((x) => x.entry);
 }
 
 /**
@@ -204,11 +263,15 @@ export function linkifyMissionEntry(entry: string): MissionSegment[] {
       const m = token.match(/^([A-Za-z][A-Za-z .'-]*?)(?:\s+\d.*)?$/);
       basePrefix = (m ? m[1] : token).trim();
     }
-    const href = resolveHref(resolveName);
+    const target = resolveTarget(resolveName);
     const leadWs = part.match(/^\s*/)?.[0] ?? '';
     const trailWs = part.match(/\s*$/)?.[0] ?? '';
     if (leadWs) segs.push({ text: leadWs });
-    segs.push(href ? { text: token, href } : { text: token });
+    segs.push(
+      target
+        ? { text: token, href: target.href, kind: target.kind, id: target.id }
+        : { text: token },
+    );
     if (trailWs) segs.push({ text: trailWs });
   }
   segs.push({ text: rest });

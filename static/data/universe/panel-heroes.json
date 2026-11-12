@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "heroes": {
+    "milky-way/omega-centauri": { "photoKey": "hst-omega-centauri" },
+    "milky-way/sun": { "photoKey": "sun-sdo" },
+    "milky-way/lmc": { "photoKey": "jwst-tarantula", "pictured": true },
+    "milky-way/smc": { "photoKey": "jwst-ngc346", "pictured": true },
+    "local-group/andromeda": { "photoKey": "hst-andromeda" },
+    "local-group/lmc": { "photoKey": "jwst-tarantula", "pictured": true },
+    "local-group/smc": { "photoKey": "jwst-ngc346", "pictured": true },
+    "local-sheet/ic-342-group": { "photoKey": "euclid-ic342", "pictured": true },
+    "local-sheet/m101-group": { "photoKey": "hst-pinwheel", "pictured": true },
+    "cosmic-web/perseus-pisces": { "photoKey": "euclid-perseus", "pictured": true },
+    "black-holes/sagittarius-a-star": { "src": "/images/black-holes/sagittarius-a-star/01.webp" },
+    "black-holes/m87-star": { "src": "/images/science/black-holes-m87.webp" }
+  }
+}

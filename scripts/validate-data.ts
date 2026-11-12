@@ -237,6 +237,8 @@ const validateBadgeProvenance = ajv.compile(loadSchema('badge-provenance.schema.
 const validateOrbitRegimes = ajv.compile(loadSchema('orbit-regimes.schema.json'));
 const validateOrbitRegimesExplore = ajv.compile(loadSchema('orbit-regimes-explore.schema.json'));
 const validateLocalGroupGalaxies = ajv.compile(loadSchema('local-group-galaxies.schema.json'));
+const validatePanelHeroes = ajv.compile(loadSchema('panel-heroes.schema.json'));
+const validateStarGallery = ajv.compile(loadSchema('star-gallery.schema.json'));
 const validateExploreOrbiters = ajv.compile(loadSchema('explore-orbiters.schema.json'));
 const validateStationTles = ajv.compile(loadSchema('station-tles.schema.json'));
 const validateLabIllustrations = ajv.compile(loadSchema('lab-illustrations.schema.json'));
@@ -789,6 +791,8 @@ for (const f of [
   'planets',
   'satellites',
   'small-bodies',
+  'stars',
+  'black-holes',
   'tiangong-modules',
 ]) {
   validateFile(join(DATA_ROOT, `${f}-hero-overrides.json`), validateHeroOverrides);
@@ -826,6 +830,68 @@ validateFile(join(DATA_ROOT, 'local-group-galaxies.json'), validateLocalGroupGal
       { dist_mly: (r) => r.dist_mly },
       (r) => (r.id === 'milky-way' ? [] : ['dist_mly']),
     );
+  }
+}
+// B3 (UXD-023): the heroes of the outer-scale and black-hole panels and the stars' extra images.
+// Every key names a file that exists and a provenance row, so /credits lists what a panel shows.
+{
+  const heroes = join(DATA_ROOT, 'universe', 'panel-heroes.json');
+  const gallery = join(DATA_ROOT, 'universe', 'star-gallery.json');
+  validateFile(heroes, validatePanelHeroes);
+  validateFile(gallery, validateStarGallery);
+  const provPaths = new Set(
+    (
+      readJson(join(DATA_ROOT, 'image-provenance.json')) as { entries: { path: string }[] }
+    ).entries.map((e) => e.path),
+  );
+  const need = (where: string, served: string, credited: string) => {
+    const problems: string[] = [];
+    if (!existsSync(join('static', served))) problems.push(`${served} is not on disk`);
+    if (!provPaths.has(credited)) problems.push(`no provenance row for ${credited}`);
+    if (problems.length) {
+      failed++;
+      console.error(`\n  ✗ ${where}`);
+      for (const pr of problems) console.error(`      ${pr}`);
+    }
+  };
+  if (existsSync(heroes)) {
+    const doc = readJson(heroes) as {
+      heroes: Record<string, { photoKey?: string; src?: string }>;
+    };
+    const keys = new Set(
+      (readJson(join(DATA_ROOT, 'deep-sky.json')) as { key: string }[]).map((i) => i.key),
+    );
+    for (const [k, h] of Object.entries(doc.heroes)) {
+      if (h.photoKey) {
+        if (!keys.has(h.photoKey)) {
+          failed++;
+          console.error(
+            `\n  ✗ universe/panel-heroes.json ${k}: ${h.photoKey} is not a deep-sky.json key`,
+          );
+          continue;
+        }
+        need(
+          `universe/panel-heroes.json ${k}`,
+          `images/deep-sky/${h.photoKey}.thumb.jpg`,
+          `/images/deep-sky/${h.photoKey}.jpg`,
+        );
+      } else if (h.src) need(`universe/panel-heroes.json ${k}`, h.src.slice(1), h.src);
+    }
+  }
+  if (existsSync(gallery)) {
+    const doc = readJson(gallery) as { stars: Record<string, { src: string }[]> };
+    const ids = new Set(
+      (
+        readJson(join(DATA_ROOT, 'universe', 'named-stars.json')) as { stars: { id: string }[] }
+      ).stars.map((s) => s.id),
+    );
+    for (const [id, imgs] of Object.entries(doc.stars)) {
+      if (!ids.has(id)) {
+        failed++;
+        console.error(`\n  ✗ universe/star-gallery.json: ${id} is not a named star`);
+      }
+      for (const im of imgs) need(`universe/star-gallery.json ${id}`, im.src.slice(1), im.src);
+    }
   }
 }
 validateFile(join(DATA_ROOT, 'explore-orbiters.json'), validateExploreOrbiters);

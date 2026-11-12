@@ -59,6 +59,8 @@ const OVERRIDE_SURFACE = {
   belts: 'belts',
   'iss-modules': 'iss-modules',
   'tiangong-modules': 'tiangong-modules',
+  stars: 'stars',
+  'black-holes': 'black-holes',
 };
 const FILE_ROOTS = ['static/images', 'static/credit-thumbs/images', 'masters'];
 const JSON_ROOTS = ['static/data', 'scripts/i18n-tools', 'i18n-src'];

@@ -332,6 +332,24 @@
       "fetched_at": "2026-11-08T09:37:13.151Z"
     },
     {
+      "id": "bh-sagittarius-a-star-01",
+      "path": "/images/black-holes/sagittarius-a-star/01.webp",
+      "source_type": "direct-agency",
+      "title": "First image of Sagittarius A*, the supermassive black hole at the centre of our galaxy (eso2208-eht-mwa)",
+      "author": "EHT Collaboration",
+      "agency": "ESO",
+      "source_url": "https://www.eso.org/public/images/eso2208-eht-mwa/",
+      "image_url": "https://cdn.eso.org/images/publicationjpg/eso2208-eht-mwa.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "ESO releases its imagery under Creative Commons Attribution 4.0 International (eso.org/public/outreach/copyright/); credit line \"EHT Collaboration\".",
+      "modifications": [
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-11-12T23:35:03.696Z"
+    },
+    {
       "id": "8f16ca65300757be",
       "path": "/images/deep-sky/chandra-crab.jpg",
       "source_type": "wikimedia-commons",

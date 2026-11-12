@@ -1,0 +1,18 @@
+{
+ "version": "1.0",
+ "source_audit": "(manual curation — B3 hero crop review, scripts/vision/hero-crop-sheet.mjs --surface stars)",
+ "overrides": {
+  "sirius": {
+   "slot": "01.jpg",
+   "reason": "tall plate with a caption strip at its foot: the 16:9 crop sits on the star, above the caption (B3 crop review)",
+   "approved_at": "2026-11-13",
+   "position": "50% 35%"
+  },
+  "vega": {
+   "slot": "01.jpg",
+   "reason": "diagram with the disk in its upper half and scale bars below: the 16:9 crop sits on the disk (B3 crop review)",
+   "approved_at": "2026-11-13",
+   "position": "50% 30%"
+  }
+ }
+}

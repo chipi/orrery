@@ -762,6 +762,17 @@ Page shell (src/lib/styles/page-shell.css, UX A2, docs/uxs/decisions/UXD-012-one
   exceptions carry `a2-keep: <why>`. Not on the shell: home (home slice), scenes, Lab,
   missions/launches/fleet browse tools. Enforced by tests/e2e/page-shell.spec.ts.
 
+Chip (src/lib/styles/chip.css, UX A4, docs/uxs/decisions/UXD-014-one-chip-and-filter.md):
+  every toggle, filter, choice and HUD action is a <Chip> (kind toggle | choice | action
+  | link); 30px on a fine pointer, 44px on a coarse one; 4px radius; 11px uppercase; outline at
+  rest; one active look (soft accent fill, accent edge, white text; the Worlds set --chip-tint
+  for their world colour, Earth keeps the accent); --chip-tone is a per-chip data colour. Filter
+  and choice groups are <ChipGroup role="radiogroup"> (arrow keys). Reset view is
+  ResetViewButton. The FILTERS strip is a compact chip with the count right after the label
+  (key filters_eyebrow). No page or component defines its own chip, pill or toggle rules; kept
+  exceptions carry `a4-keep: <why>`. Small non-chip controls take .ui-hit (24px hit area).
+  Enforced by tests/e2e/chip.spec.ts.
+
 Nav bar:        height 52px, z-index 20
 Panel (mobile): bottom sheet, full width
 Panel (desktop): right drawer, 314px wide

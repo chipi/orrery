@@ -190,6 +190,12 @@ Text pages (everything that is not a scene, the home page, the Lab or a browse t
 
 ---
 
+## §controls
+
+Every toggle, filter, choice and HUD action is a `<Chip>` (`src/lib/components/Chip.svelte`, look in `src/lib/styles/chip.css`, [UXD-014](decisions/UXD-014-one-chip-and-filter.md)): 30px on a fine pointer, 44px on a coarse one, 4px corners, 11px uppercase, outline at rest, one active look (soft accent fill, accent edge, white text; the world tint on `/moon`, `/mars` and `/venus`). Four kinds: toggle (`aria-pressed`), choice (`role="radio"` inside `ChipGroup role="radiogroup"`, arrow keys), action, link. Reset view is `ResetViewButton`. Filter groups on missions, fleet, launches, deep-sky, programs, the star and surface indexes and `/plan` are radiogroups. The FILTERS strip is a compact chip with the count after the label. Kept outside the chip: tabs (`PanelTabRow`), nav toggles, cards, CTAs, status and label pills, the Lab. Design System §5.7 and §5.7a hold the values.
+
+---
+
 ## §shared-tokens
 
 Tokens that apply across all surfaces. UXSes inherit these by name and do not redefine them locally.
@@ -316,3 +322,4 @@ SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+l
 | v1.1 | April 2026 | §overview, §surfaces, §navigation, §url-structure, §entry-points updated to reflect History API routing (ADR-013) and SvelteKit routes/components (ADR-012). Hash-routing examples replaced with clean URLs. |
 | v1.2 | August 2026 | Added §lab (Physics Lab surface — one card model, three views; UXS-015 / RFC-037 / PRD-033), §surfaces + §url-structure rows for `/lab`, and the §state-persistence exception for Lab worksheet persistence. |
 | v1.3 | August 2026 | Added §nav-groups (EXPLORE / WORLDS / PLAN & FLY / CATALOG / LEARN top-level split; the 4 surface bodies moved out of EXPLORE into a new WORLDS group + `/worlds` TV hub) and §home-cards (the landing rebuilt as the whole nav tree, sectioned; every leaf a rich hand-drawn card). RFC-038. Known Universe epic renumbered to PRD-034 / RFC-039 / UXS-016 to clear the Physics Lab numbers. |
+| v1.4 | November 2026 | Added §controls (the one chip, UXD-014). |

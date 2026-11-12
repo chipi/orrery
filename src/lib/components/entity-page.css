@@ -57,6 +57,7 @@
 }
 .entity a.inline,
 .entity .facts a,
+.entity .src-line a,
 .entity .linklist a,
 .entity .learn a {
   color: var(--color-state);
@@ -131,4 +132,23 @@
 }
 .entity .site-map {
   margin: 24px 0;
+}
+
+/* The catalogue a value comes from, under the value (#658): a quiet link to the object's record. */
+.entity .facts .src {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  color: var(--color-text-label);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.entity .src-line {
+  font-size: 12px;
+  color: var(--color-text-label);
+}
+.entity .data-sources .ds-list a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

@@ -1,4 +1,5 @@
 import { get, type FetchLike } from './core';
+import type { CatalogueMap } from '$lib/catalogue';
 import {
   getCultureDoors,
   type BlackHole,
@@ -18,6 +19,10 @@ export interface BlackHoleEntity {
   massSolar: number | null;
   distLy: number | null;
   rsKm: number | null;
+  /** The paper behind the mass and distance (real holes only; fiction has none). */
+  catalogue: CatalogueMap;
+  /** SIMBAD page of a real hole. */
+  records: { simbad?: string };
   fact?: string;
   bio?: string;
   discovery: string;
@@ -62,6 +67,8 @@ export async function getBlackHoleEntity(
     massSolar: real ? hole.mass_solar : null,
     distLy: real ? hole.dist_ly : null,
     rsKm: real ? hole.rs_km : null,
+    catalogue: real ? (hole.catalogue ?? {}) : {},
+    records: real ? (hole.records ?? {}) : {},
     fact: o?.fact,
     bio: o?.bio,
     discovery: o?.discovery ?? hole.discovery,

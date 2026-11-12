@@ -78,6 +78,25 @@ test.describe('/explore — Arecibo message at M13 (#410)', () => {
       timeout: 12_000,
     });
     await expect(page.getByText('The Arecibo Message', { exact: false }).first()).toBeVisible();
-    await expect(page.getByText('25,000 light-years', { exact: false }).first()).toBeVisible();
+    // #658: the distance is Baumgardt & Vasiliev 2021 (24.2 kly), the magnitude Harris V_t, each
+    // naming its catalogue with a link to the record, and the Data sources block lists the papers.
+    await expect(page.getByText('24,000 light-years', { exact: false }).first()).toBeVisible();
+    const baumgardt = page.getByRole('link', { name: 'Baumgardt & Vasiliev 2021' }).first();
+    await expect(baumgardt).toHaveAttribute(
+      'href',
+      /HolgerBaumgardt\/globular\/fits\/ngc5272\.html$/,
+    );
+    const harris = page.getByRole('link', { name: 'Harris 1996 (2010 edition)' }).first();
+    await expect(harris).toHaveAttribute('href', /mcmaster\.ca\/~harris\/mwgc\.dat$/);
+    const sources = page.getByTestId('data-sources');
+    await sources.locator('summary').click(); // the panel's block is folded
+    await expect(sources.getByRole('link', { name: '2021MNRAS.505.5957B' })).toHaveAttribute(
+      'href',
+      /ui\.adsabs\.harvard\.edu\/abs\/2021MNRAS\.505\.5957B\/abstract$/,
+    );
+    await expect(sources.getByRole('link', { name: 'SIMBAD' })).toHaveAttribute(
+      'href',
+      /simbad\.cds\.unistra\.fr\/simbad\/sim-id\?Ident=M%2013$/,
+    );
   });
 });

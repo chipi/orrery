@@ -8,6 +8,7 @@
   import Panel from './Panel.svelte';
   import type { LocalGroupMember, LocalGroupKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { sourceLink } from '$lib/catalogue';
 
   type Props = {
     member: LocalGroupMember | null;
@@ -43,7 +44,9 @@
         ? m.explore_lg_blurb_irregular()
         : m.explore_lg_blurb_dwarf();
 
-  const fmt = (n: number): string => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+  // Three significant figures: the catalogue distance is whole kiloparsecs.
+  const fmt = (n: number): string => n.toLocaleString(undefined, { maximumSignificantDigits: 3 });
+  let distSrc = $derived(sourceLink(member?.catalogue?.dist_mly));
 </script>
 
 <Panel {open} {onClose} title={member?.name ?? ''} mobileSheet="partial">
@@ -64,6 +67,11 @@
         <div class="cell">
           <div class="cell-label">{m.explore_lg_label_distance()}</div>
           <div class="cell-value">{fmt(member.dist_mly * 1e6)} ly</div>
+          {#if distSrc}
+            <a class="src" href={distSrc.url} target="_blank" rel="noopener noreferrer external"
+              >{distSrc.label}</a
+            >
+          {/if}
         </div>
       {/if}
       {#if member.diam_kly > 0}
@@ -120,5 +128,14 @@
   }
   .cell-value.accent {
     color: var(--color-state);
+  }
+  .src {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--size-label);
+    font-weight: 400;
+    color: var(--color-text-label);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 </style>

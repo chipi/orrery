@@ -11,6 +11,8 @@
   import ScienceCard from './ScienceCard.svelte';
   import type { BlackHole, BlackHoleKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { dataSourceItems, recordLinks, sourceLink } from '$lib/catalogue';
+  import DataSources from './DataSources.svelte';
 
   type Props = {
     hole: BlackHole | null;
@@ -29,6 +31,20 @@
   };
   let kindLabel = $derived(hole ? KIND[hole.kind]() : '');
   let title = $derived(hole?.name ?? '');
+  // Fiction has no catalogue; a real hole's spin is a render parameter with no published value
+  // behind it here, so it is not shown as a measurement.
+  let real = $derived(hole !== null && hole.kind !== 'fictional');
+  let massSrc = $derived(sourceLink(hole?.catalogue?.mass_solar));
+  let distSrc = $derived(sourceLink(hole?.catalogue?.dist_ly));
+  let sources = $derived(
+    dataSourceItems(hole?.catalogue, (k) =>
+      k === 'mass_solar'
+        ? m.explore_bh_label_mass()
+        : k === 'dist_ly'
+          ? m.explore_bh_label_distance()
+          : null,
+    ),
+  );
 
   // Human-friendly big-number formatting for mass + radius.
   function bigNum(n: number): string {
@@ -41,7 +57,7 @@
   function dist(ly: number): string {
     if (ly >= 1e6)
       return `${(ly / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })}M ly`;
-    return `${ly.toLocaleString(undefined, { maximumFractionDigits: 0 })} ly`;
+    return `${ly.toLocaleString(undefined, { maximumSignificantDigits: 3 })} ly`;
   }
   function rs(km: number): string {
     if (km >= 1e9)
@@ -68,22 +84,36 @@
           {bigNum(hole.mass_solar)}
           <span class="unit">{m.explore_bh_solar_masses()}</span>
         </div>
+        {#if massSrc}
+          <a class="src" href={massSrc.url} target="_blank" rel="noopener noreferrer external"
+            >{massSrc.label}</a
+          >
+        {/if}
       </div>
       <div class="cell">
         <div class="cell-label">{m.explore_bh_label_distance()}</div>
         <div class="cell-value">{dist(hole.dist_ly)}</div>
+        {#if distSrc}
+          <a class="src" href={distSrc.url} target="_blank" rel="noopener noreferrer external"
+            >{distSrc.label}</a
+          >
+        {/if}
       </div>
-      <div class="cell">
-        <div class="cell-label">{m.explore_bh_label_spin()}</div>
-        <div class="cell-value">
-          {hole.spin.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+      {#if !real}
+        <div class="cell">
+          <div class="cell-label">{m.explore_bh_label_spin()}</div>
+          <div class="cell-value">
+            {hole.spin.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+          </div>
         </div>
-      </div>
+      {/if}
       <div class="cell">
         <div class="cell-label">{m.explore_bh_label_rs()}</div>
         <div class="cell-value">{rs(hole.rs_km)}</div>
       </div>
     </div>
+
+    {#if real}<DataSources variant="panel" items={sources} links={recordLinks(hole.records)} />{/if}
 
     {@render children?.()}
 
@@ -137,6 +167,15 @@
   }
   .cell-value.accent {
     color: var(--color-state);
+  }
+  .src {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--size-label);
+    font-weight: 400;
+    color: var(--color-text-label);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
   .unit {
     font-size: var(--size-label);

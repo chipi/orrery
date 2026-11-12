@@ -3,6 +3,13 @@ import { getLocale } from '$lib/paraglide/runtime';
 import { getStarEntity, type StarPlanet } from '$lib/data/star-entity';
 import * as m from '$lib/paraglide/messages';
 import { planetCountLabel } from '$lib/plural';
+import {
+  ARCHIVE_LABEL,
+  dataSourceItems,
+  recordLinks,
+  sourceLink,
+  type CatalogueMap,
+} from '$lib/catalogue';
 import { constellationName } from '$lib/universe/iau-constellations';
 import { bvToKelvin } from '$lib/universe/bv-to-rgb';
 import { colorNameForKelvin } from '$lib/universe/anonymous-star';
@@ -25,7 +32,8 @@ const PC_TO_LY = 3.2615638;
 const num = (locale: string, v: number, maxFraction: number) =>
   new Intl.NumberFormat(locale, { maximumFractionDigits: maxFraction }).format(v);
 
-type Row = { label: string; value: string };
+/** `src` is the catalogue the value comes from, linked to its record (#658). */
+type Row = { label: string; value: string; src?: { label: string; url: string } | null };
 
 function colourLabel(bv: number): { label: string; kelvin: number } {
   const kelvin = Math.round(bvToKelvin(bv));
@@ -53,6 +61,7 @@ function starRows(
     hip: number | null;
   },
   locale: string,
+  catalogue: CatalogueMap,
 ): Row[] {
   const rows: Row[] = [];
   if (s.bv !== null) {
@@ -60,16 +69,30 @@ function starRows(
     rows.push({
       label: m.star_label_colour(),
       value: `${c.label} · ~${c.kelvin.toLocaleString(locale)} K`,
+      src: sourceLink(catalogue.bv),
     });
   }
+  const dist = sourceLink(catalogue.dist_pc);
   rows.push(
-    { label: m.star_label_distance(), value: `${num(locale, s.distPc * PC_TO_LY, 2)} ly` },
-    { label: m.star_label_distance_pc(), value: `${num(locale, s.distPc, 2)} pc` },
+    {
+      label: m.star_label_distance(),
+      value: `${num(locale, s.distPc * PC_TO_LY, 2)} ly`,
+      src: dist,
+    },
+    { label: m.star_label_distance_pc(), value: `${num(locale, s.distPc, 2)} pc`, src: dist },
   );
   if (s.mag !== undefined)
-    rows.push({ label: m.star_label_apparent_mag(), value: num(locale, s.mag, 2) });
+    rows.push({
+      label: m.star_label_apparent_mag(),
+      value: num(locale, s.mag, 2),
+      src: sourceLink(catalogue.mag),
+    });
   if (s.absmag !== undefined)
-    rows.push({ label: m.star_label_absolute_mag(), value: num(locale, s.absmag, 2) });
+    rows.push({
+      label: m.star_label_absolute_mag(),
+      value: num(locale, s.absmag, 2),
+      src: sourceLink(catalogue.absmag),
+    });
   if (s.spect) rows.push({ label: m.sun_label_spectral_class(), value: s.spect });
   if (s.con) rows.push({ label: m.star_label_constellation(), value: constellationName(s.con) });
   if (s.hip) rows.push({ label: m.star_label_catalogue(), value: `HIP ${s.hip}` });
@@ -98,6 +121,14 @@ function planetRows(p: StarPlanet, locale: string): Row[] {
   return rows;
 }
 
+/** The label the page shows for each catalogue-derived value, for the Data sources block. */
+const FIELD_LABEL: Record<string, () => string> = {
+  dist_pc: m.star_label_distance,
+  mag: m.star_label_apparent_mag,
+  absmag: m.star_label_absolute_mag,
+  bv: m.star_label_colour,
+};
+
 export const load: PageServerLoad = async ({ params, fetch }) => {
   const locale = getLocale();
   const star = await getStarEntity(params.id, locale, fetch);
@@ -105,7 +136,10 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
   return {
     star,
     kind: [star.spect, star.con ? constellationName(star.con) : null].filter(Boolean).join(' · '),
-    rows: starRows(star, locale),
+    rows: starRows(star, locale, star.catalogue),
+    sources: dataSourceItems(star.catalogue, (k) => FIELD_LABEL[k]?.() ?? null),
+    recordLinks: recordLinks(star.records),
+    archiveLabel: ARCHIVE_LABEL,
     planetCount: star.planets.length ? planetCountLabel(star.planets.length, locale) : null,
     planetRows: Object.fromEntries(star.planets.map((p) => [p.id, planetRows(p, locale)])),
   };

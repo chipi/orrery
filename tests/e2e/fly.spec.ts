@@ -113,16 +113,16 @@ test.describe('/fly — default mission', () => {
       await expect(trigger).toBeVisible();
       await trigger.click();
       await page
-        .locator('.speed-popover button.speed-pill')
+        .locator('.speed-popover [role="radio"]')
         .filter({ hasText: /^30×$/ })
         .first()
         .click();
       await expect(trigger).toHaveText(/^30×$/);
     } else {
-      const speed30 = page.getByRole('button', { name: /^30×$/ });
+      const speed30 = page.getByRole('radio', { name: /^30×$/ });
       await expect(speed30).toBeVisible();
       await speed30.click();
-      await expect(speed30).toHaveClass(/active/);
+      await expect(speed30).toHaveAttribute('aria-checked', 'true');
     }
   });
 });

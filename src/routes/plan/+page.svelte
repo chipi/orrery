@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { onMount, onDestroy, untrack } from 'svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
@@ -952,33 +954,25 @@
           {/each}
         </select>
       </label>
-      <div class="mission-type-group" role="radiogroup" aria-label={m.plan_label_mission_type()}>
-        <button
-          type="button"
-          class="mission-type-pill"
-          class:active={missionType === 'LANDING' && isLandingAvailable}
-          role="radio"
-          aria-checked={missionType === 'LANDING'}
-          aria-disabled={!isLandingAvailable}
+      <ChipGroup role="radiogroup" label={m.plan_label_mission_type()}>
+        <Chip
+          kind="choice"
+          active={missionType === 'LANDING' && isLandingAvailable}
           disabled={!isLandingAvailable}
           title={!isLandingAvailable ? m.plan_mission_type_disabled_flyby_only() : ''}
           onclick={() => setMissionType('LANDING')}
         >
           {m.plan_mission_type_landing()}
-        </button>
-        <button
-          type="button"
-          class="mission-type-pill"
-          class:active={missionType === 'FLYBY' && isFlybyAvailable}
-          role="radio"
-          aria-checked={missionType === 'FLYBY'}
-          aria-disabled={!isFlybyAvailable}
+        </Chip>
+        <Chip
+          kind="choice"
+          active={missionType === 'FLYBY' && isFlybyAvailable}
           disabled={!isFlybyAvailable}
           onclick={() => setMissionType('FLYBY')}
         >
           {m.plan_mission_type_flyby()}
-        </button>
-      </div>
+        </Chip>
+      </ChipGroup>
     </div>
     <canvas
       class="porkchop"
@@ -1374,40 +1368,6 @@
   .dest-select:focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 1px;
-  }
-  .mission-type-group {
-    display: inline-flex;
-    gap: 6px;
-  }
-  .mission-type-pill {
-    min-width: 64px;
-    min-height: 44px;
-    padding: 0 14px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.7);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 2px;
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.12s;
-  }
-  .mission-type-pill:hover:not(:disabled),
-  .mission-type-pill:focus-visible:not(:disabled) {
-    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
-    color: var(--color-text);
-    outline: none;
-  }
-  .mission-type-pill.active {
-    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-    border-color: var(--color-accent);
-    color: #fff;
-  }
-  .mission-type-pill:disabled {
-    cursor: not-allowed;
-    opacity: 0.4;
   }
   @media (max-width: 767px) {
     .selector-bar {

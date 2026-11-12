@@ -4544,7 +4544,7 @@
        which all pass title + body + tab + section. LYR toggle hides it. -->
   <ScienceLayersPanel
     title={m.fly_mission_arc_title()}
-    body="Every interplanetary trajectory is a slice of an ellipse with the Sun at one focus. Two endpoints (Earth at launch, the target at arrival) plus a time of flight pin a unique Lambert solution; the porkchop plot is the surface of all such solutions."
+    body={m.fly_mission_arc_body()}
     tab="transfers"
     section="transfer-ellipse"
     available={availableLayers}

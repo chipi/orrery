@@ -55,6 +55,27 @@ export function dvToCss(dv: number, min: number = DV_MIN_KMS, max: number = DV_M
 }
 
 /**
+ * The heat map's legend, drawn from the same colour stops as the plot so the two never disagree:
+ * a CSS gradient across `[min, max]` and `tickCount` evenly spaced Δv ticks (km/s). Ticks carry one
+ * decimal when the window is narrow (the Earth→Moon grid spans ~0.4 km/s), none otherwise.
+ */
+export function dvLegend(
+  min: number = DV_MIN_KMS,
+  max: number = DV_MAX_KMS,
+  tickCount = 5,
+): { gradient: string; ticks: string[] } {
+  const stops = STOPS.map(([t]) => {
+    const dv = min + t * (max - min);
+    return `${dvToCss(dv, min, max)} ${Math.round(t * 1000) / 10}%`;
+  });
+  const decimals = max - min < 4 ? 1 : 0;
+  const ticks = Array.from({ length: tickCount }, (_, i) =>
+    (min + (i / (tickCount - 1)) * (max - min)).toFixed(decimals),
+  );
+  return { gradient: `linear-gradient(90deg, ${stops.join(', ')})`, ticks };
+}
+
+/**
  * Convert "days since epoch start" to a Date object. Epoch defaults to
  * Jan 1, 2026 — matching the Lambert worker's heliocentric model.
  */

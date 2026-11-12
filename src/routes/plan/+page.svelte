@@ -5,7 +5,14 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { metaDescription } from '$lib/seo';
-  import { dvToRGB, dvToCss, dayToDate, dayToLongDate, dayToShortDate } from '$lib/porkchop';
+  import {
+    dvToRGB,
+    dvToCss,
+    dvLegend,
+    dayToDate,
+    dayToLongDate,
+    dayToShortDate,
+  } from '$lib/porkchop';
   import { geoTransferDv } from '$lib/physics/transfer/lambert-geocentric';
   import { interplanetaryMoonDv } from '$lib/moon-transfer';
   import { MOONS } from '$lib/moon-transfer.constants';
@@ -158,6 +165,8 @@
   /** Optional per-grid heatmap colour window (geo Moon has a narrow range,
    *  ADR-085). `null` → dvToRGB/dvToCss use their heliocentric defaults. */
   let DV_COLOR_RANGE = $derived(activeGrid?.dv_color_range ?? null);
+  // The legend reads the plot's own colour stops over the same window, so they never disagree.
+  let dvKey = $derived(dvLegend(DV_COLOR_RANGE?.[0], DV_COLOR_RANGE?.[1]));
   /** True for a geocentric destination (the Moon): different ∆v semantics
    *  (TLI+LOI from LEO), narrow colour range, cislunar /fly handoff. ADR-085. */
   let isGeoDestination = $derived(destinationId === 'moon');
@@ -1066,18 +1075,14 @@
         </dt>
         <dd>
           {m.plan_explainer_color_desc()}
-          <div class="color-bar" aria-hidden="true">
-            <!-- a3-keep: data colour (porkchop heat map scale), palette review at the end -->
-            <span class="cb-stop teal"></span>
-            <span class="cb-stop blue"></span>
-            <span class="cb-stop yellow"></span>
-            <span class="cb-stop orange"></span>
-            <span class="cb-stop red"></span>
-          </div>
+          <!-- a3-keep: data colour (the porkchop heat map's own ramp, src/lib/porkchop.ts) -->
+          <div class="color-bar" aria-hidden="true" style="background: {dvKey.gradient}"></div>
           <div class="color-bar-labels" aria-hidden="true">
-            <span>3</span><span>5</span><span>7</span><span>9</span><span
-              >{m.mp_flight_unit_kms({ value: '11+' })}</span
-            >
+            {#each dvKey.ticks as tick, i (i)}
+              <span
+                >{i === dvKey.ticks.length - 1 ? m.mp_flight_unit_kms({ value: tick }) : tick}</span
+              >
+            {/each}
           </div>
         </dd>
         <dt>
@@ -1290,9 +1295,8 @@
 
 <!-- Unified Science Lens panel — lens story only on /plan (no layer
      toggles meaningful for the porkchop view). -->
-<!-- a3-keep: data colour (porkchop heat map scale), palette review at the end -->
 <ScienceLayersPanel
-  body="Each pixel solves a Lambert problem. The cheap teal lobe marks the natural Hohmann window — physics decides when interplanetary travel is affordable, not the calendar."
+  body={m.plan_lens_body()}
   title={m.plan_porkchop_title()}
   tab="porkchop"
   section="what-is-a-porkchop"
@@ -1581,32 +1585,11 @@
     color: rgba(255, 255, 255, 0.7);
   }
 
+  /* The gradient comes from dvLegend() (the plot's own colour stops), set inline. */
   .color-bar {
-    display: flex;
     height: 8px;
     margin: 6px 0 2px;
     border-radius: 2px;
-    overflow: hidden;
-  }
-  .color-bar .cb-stop {
-    flex: 1;
-    height: 100%;
-  }
-  /* a3-keep: data colour (porkchop heat map scale), palette review at the end */
-  .color-bar .teal {
-    background: #4ecdc4;
-  }
-  .color-bar .blue {
-    background: var(--color-accent);
-  }
-  .color-bar .yellow {
-    background: #ffc850;
-  }
-  .color-bar .orange {
-    background: #ff8c3c;
-  }
-  .color-bar .red {
-    background: #c1440e;
   }
   .color-bar-labels {
     display: flex;

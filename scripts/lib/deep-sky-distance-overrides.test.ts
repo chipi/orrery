@@ -11,6 +11,13 @@ describe('applyDistanceOverride', () => {
     expect(out.value).toBe(Math.round(1170 * 3.26156));
     expect(out.source).toMatch(/Meaburn/);
   });
+  it('puts both SMC clusters at the Graczyk 2020 distance of 62.44 kpc', () => {
+    for (const d of ['NGC 346', 'NGC 602']) {
+      const out = applyDistanceOverride(d, cat(208740)).dist_ly;
+      expect(out.value).toBe(Math.round(62440 * 3.26156));
+      expect(out.source).toMatch(/Graczyk/);
+    }
+  });
   it('a note-only override keeps the value', () => {
     const out = applyDistanceOverride('NGC 2392', cat(5983)).dist_ly;
     expect(out.value).toBe(5983);

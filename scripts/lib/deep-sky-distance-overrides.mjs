@@ -17,6 +17,15 @@ const LMC = {
   note: 'distance of the host galaxy (LMC); replaces the McConnachie 2012 value of 51 kpc',
 };
 
+const SMC = {
+  pc: 62440,
+  source:
+    'Graczyk et al. 2020, eclipsing-binary distance to the SMC, 62.44 ± 0.47 (stat.) ± 0.81 (syst.) kpc',
+  bibcode: null,
+  record_url: ARXIV('2010.08754'),
+  note: 'distance of the host galaxy (SMC); ADS bibcode not confirmed (ApJ 904, 13); replaces the McConnachie 2012 value of 64 kpc',
+};
+
 /** designation (as in the snapshot) → { pc, source, bibcode, record_url, note } or { note } only. */
 export const DISTANCE_OVERRIDES = {
   'NGC 1300': {
@@ -27,6 +36,8 @@ export const DISTANCE_OVERRIDES = {
     note: '18.99 ± 2.85 Mpc, method NAM; replaces the Cosmicflows-4 value of 13.9 Mpc',
   },
   '30 Doradus': LMC,
+  'NGC 346': SMC,
+  'NGC 602': SMC,
   'NGC 2014 / 2020': LMC,
   'NGC 3372': {
     pc: 2350,

@@ -235,7 +235,7 @@
       <ul>
         {#each section.links as link (link.u)}
           <li>
-            <span class="tier tier-{link.t}">{link.t}</span>
+            <span class="tier tier-{link.t}" class:ui-chip-label={link.t === 'core'}>{link.t}</span>
             <a href={link.u} target="_blank" rel="noopener noreferrer external">{link.l}</a>
           </li>
         {/each}
@@ -426,6 +426,8 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center;
+  }
+  .tier:not(.ui-chip-label) {
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 2px;
     color: rgba(255, 255, 255, 0.6);
@@ -433,11 +435,6 @@
   .tier-intro {
     border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     color: var(--color-state);
-  }
-  .tier-core {
-    border-color: var(--color-accent);
-    background: var(--color-accent-soft);
-    color: #fff; /* chip active look: consistent and AA (operator 2026-11-12, A3 Q12) */
   }
   .tier-deep {
     border-color: rgba(255, 200, 80, 0.5);

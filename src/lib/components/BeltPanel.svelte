@@ -240,7 +240,10 @@
               {#each entry.library as link (link.id)}
                 <li>
                   <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
-                  <span class="tier-pill tier-{link.tier}">{link.tier}</span>
+                  <span
+                    class={link.tier === 'core' ? 'ui-chip-label' : `tier-pill tier-${link.tier}`}
+                    >{link.tier}</span
+                  >
                 </li>
               {/each}
             </ul>
@@ -508,11 +511,6 @@
   .tier-intro {
     background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     color: var(--color-state);
-  }
-  .tier-core {
-    background: var(--color-accent-soft);
-    border: 1px solid var(--color-accent);
-    color: #fff; /* chip active look: consistent and AA (operator 2026-11-12, A3 Q12) */
   }
   .tier-extra {
     background: rgba(160, 160, 200, 0.14);

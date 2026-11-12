@@ -269,7 +269,11 @@
                       </a>
                     </p>
                     <p class="ln-row meta">
-                      <span class="ln-tier ln-tier-{link.tier}">{tierLabel(link.tier)}</span>
+                      <span
+                        class={link.tier === 'core'
+                          ? 'ui-chip-label'
+                          : `ln-tier ln-tier-${link.tier}`}>{tierLabel(link.tier)}</span
+                      >
                       <span class="sep">·</span>
                       <span class="ln-kind">{kindLabel(link.kind)}</span>
                       <span class="sep">·</span>
@@ -562,11 +566,6 @@
   .ln-tier-intro {
     background: color-mix(in srgb, var(--color-state) 15%, transparent);
     color: var(--color-state);
-  }
-  .ln-tier-core {
-    background: var(--color-accent-soft);
-    border: 1px solid var(--color-accent);
-    color: #fff; /* chip active look: consistent and AA (operator 2026-11-12, A3 Q12) */
   }
   .ln-tier-deep {
     background: rgba(255, 200, 80, 0.15);

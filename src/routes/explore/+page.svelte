@@ -2429,14 +2429,8 @@
   .ruler-desktop-only {
     --ruler-top-clear: 150px;
   }
-  /* Right of the left-edge INDEX tab (~30 px wide, vertically centred) only where the bottom-
-     anchored ruler (~270 px tall) reaches up to the tab's band: windows under ~780 px high. On a
-     tall narrow window the shift would push the ruler into the scale panel instead. */
-  @media (max-height: 780px) {
-    .ruler-desktop-only {
-      --ruler-left: 44px;
-    }
-  }
+  /* The ruler keeps its left edge; on short windows the left-edge INDEX tab (z 44) simply lies
+     over it (the ruler is z 1). Operator 2026-11-12: the tab must not push the ruler inward. */
   @media (max-width: 600px) {
     .ruler-desktop-only {
       --ruler-clear: 104px;

@@ -36,7 +36,7 @@ const SCALES: Scale[] = [
   {
     id: 'neighborhood',
     context: 'neighborhood',
-    aria: 'Named stars',
+    aria: 'Stellar Neighborhood index — jump to a named star or a deep-sky object',
     pick: 'canopus',
     links: true,
   },

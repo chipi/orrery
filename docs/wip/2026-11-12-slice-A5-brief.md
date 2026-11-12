@@ -1,6 +1,6 @@
 # Slice A5 brief — one flat row of layer chips on every world and on Explore (C2, W7)
 
-Read-only brief. First version written at HEAD `81e0d43c0dd` with two proposals (groups ON GROUND / IN SPACE on every world, or a flat Earth). **Rewritten 2026-11-12 at HEAD
+Brief, now BUILT (2026-11-12 pm: corrections in §0b, built-state notes inline; the original text is kept where it still holds). First version written at HEAD `81e0d43c0dd` with two proposals (groups ON GROUND / IN SPACE on every world, or a flat Earth). **Rewritten 2026-11-12 at HEAD
 `50b3e962a8d` after the operator's decisions (§0a): the group proposal is superseded and removed.** Baseline for the new check: `a5-check.py` in the session scratchpad
 (`/tmp/claude-1000/-work-orrery-worktrees-0-9-5/6fc6157c-346c-4f06-8e2d-3b7060eafb22/scratchpad/a4proto/`, output `a5-out.txt`), **75 violations**; the older baseline file
 `2026-11-12-slice-A5-baseline-hits.txt` (30 hits against the group proposal) is obsolete. Method: `git grep`, a Python scan from the repo root and `json` reads of `messages/*.json`
@@ -22,20 +22,33 @@ Recorded in `docs/wip/2026-11-11-ux-feedback-plan.md` ("A4/A5 follow-up", "A3–
 | # | Decision | Consequence in this brief |
 |---|---|---|
 | D1 | **Every world (Earth, Moon, Mars, Venus) and Explore: ONE FLAT horizontal row of layer chips.** No group captions, no "ON GROUND / IN SPACE" text, no separators | §3: the whole group design (caption, hairline, `ChipGroup` captions, per-group wrap) is deleted from the proposal |
-| D2 | **Earth's two master switches (ON EARTH, IN SPACE) are dropped** | §3.2: the `layerGround` state, the Earth `ORBITERS` master and the greying of 7 sub-chips go; behaviour consequence in §3.3 and §10 |
-| D3 | **Earth's two TELESCOPES chips become OBSERVATORIES (ground) and SPACE TELESCOPES.** Both terms go into `scripts/i18n-tools/native-terms.json` first (13 locales, the site's existing forms), then **two new message keys in all 14 locales with a per-locale check** | §9 |
+| D2 | **Earth's two master switches (ON EARTH, IN SPACE) are dropped** | §3.2: the `layerGround` state, the master-ORBITERS-with-sub-chips design and the greying go; the Earth ORBITERS chip stays as one plain chip (§0b) |
+| D3 | **Superseded 2026-11-12 pm (§0b): Earth has ONE ORBITERS chip; the ground telescopes chip is OBSERVATORIES; there is no SPACE TELESCOPES chip.** `observatory` goes into `scripts/i18n-tools/native-terms.json` first (13 locales, the site's existing forms), then ONE new message key in all 14 locales with a per-locale check | §9 |
 | D4 | The chip itself is A4's option A (30 / 44 px, 4 px, 11 px uppercase, outline at rest, soft blue fill + blue edge + white text when on; per-world tint on the Worlds only) | A5 defines no chip look |
 | D5 | A3 final tokens are in `tokens.css:9–20` | §0a cascade below |
 
 **Cascade.**
 - **A3 (landed):** `--color-accent` `#5070ff`, `-soft`, `-edge`, `-strong`, `--color-state` `#889fe7`, `--color-focus`, white text on a soft fill, dark text only on a solid fill. The Earth group master's dot and
   its 1 px focus ring (`LayerChipRow.svelte:112–131`, `border: 1px solid var(--body-tint, var(--color-accent))`) are deleted with the master, so no pre-A3 leftover needs a separate fix.
-- **A4 (option A, briefed, not built):** the chip is `Chip kind="toggle"` in `.ui-chip` (`src/lib/styles/chip.css`); the Worlds set `--chip-tint` from their `--body-tint` (Moon grey, Mars red, Venus amber), Earth and Explore use the accent
-  (A4 §3.6). A5 only decides which chips are in the row, their order, the row's layout and how it clears neighbours. **`ChipGroup` is not needed by A5** (no captions, no groups); it stays an A4 component for `choice`
-  radiogroups. A4's `a4-keep` markers on the `.ctrl-row.chips` column / drawer / short-window rules (A4 §5) are rewritten here, not kept.
+- **A4 (built; see §0b.2):** the chip is `Chip kind="toggle"` in `.ui-chip` (`src/lib/styles/chip.css`, `--color-chip-*` tokens); the Worlds set `--chip-tint` from their `--body-tint` (Moon grey, Mars red, Venus amber), Earth and Explore use the accent. A5 only decides which chips are in the row, their order, the row's layout and how it clears neighbours. `ChipGroup` is not used by the layer row (no captions, no groups); it stays for `choice` radiogroups. A4's `a4-keep` markers on the `.ctrl-row.chips` rules were rewritten by A5, not kept.
 - **A6 (briefed):** the nav height decision (52 px, `--nav-height`) moves every HUD top by −8 px. A5's row anchors on `calc(var(--nav-height) + Npx)` only (no literal 60 / 64 fallbacks): `SurfaceScene.svelte:8116, 8158` and `HudControls.svelte:645, 825` carry
   `var(--nav-height, 60px/64px)` fallbacks that A6 deletes (A6 check N6); A5 must not re-add one.
 - **Explore (D1):** the five Explore chips and the four Worlds rows are the same component in the same place; Explore never had groups.
+
+
+## 0b. Corrections and what was built (operator 2026-11-12, after this brief; this section wins over any older text below)
+
+Source: `docs/wip/2026-11-11-ux-feedback-plan.md`, "A4–A6 open items" and "L20 / L25 / L28 and the A–Z".
+
+1. **Earth's row is SURFACE · AUTO, LAUNCHPADS, MUSEUMS, OBSERVATORIES, ORBITERS (5 chips).** ONE ORBITERS chip (like Moon, Mars, Venus) switches every orbiter at once: stations, space telescopes, constellations, comsats and the Moon orbiters. The four Earth category chips (STATIONS, space TELESCOPES, CONSTELLATIONS, COMSATS) and both masters are gone, with `layerStations/Observatories/Constellations/Comsats`, `satellites.categoryDefaultVisible` (type and config) and the per-category branch of the satellite visibility loop. There is NO "SPACE TELESCOPES" chip and NO `observatory_layer_chip_space` key. O1 (§10) is closed by this: the Moon orbiters ride the one ORBITERS chip.
+2. **A4 is built**, not briefed: `Chip` (`kind` toggle | choice | action | link), `ChipGroup`, `src/lib/styles/chip.css` with the `--color-chip-*` tokens, `--chip-tint` set on `.surface-scene` for every world except Earth, 30 px fine / 44 px coarse on both axes, [UXD-014](../uxs/decisions/UXD-014-one-chip-and-filter.md). A5 rewrote the `a4-keep` markers on the `.ctrl-row.chips` column / drawer / short-window rules in `HudControls.svelte` (and the `LayerChipRow` group machinery) instead of keeping them.
+3. **The INDEX absorbs the A–Z** (operator: "basically we absorb A–Z into index"). On `/moon /mars /venus /explore` each INDEX row whose object has an entity page carries a real `<a href>` (`localHref`, the links come from the existing `getEntityIndex` server load, passed as `entityLinks`); the floating A–Z tab (`EntityIndex floating`) is removed and the `floating` variant deleted from `EntityIndex.svelte`; `/missions` and `/fleet` keep the A–Z at the page foot. ADR-096 item 11 is amended.
+   - **Approach taken and why.** `SurfaceIndexPanel` / `ExploreBodyIndex` are always rendered when the route has entity links, with `hidden` while the INDEX is closed (`.surface-index-desktop[hidden]`, `.body-index[hidden]` beat the panels' `display` rules). Before the sites load (the prerender, and the first client frames) the panel's list IS the plain list of every entity page from the server load; after the sites load, each row carries its link and the pages with no row (Explore's moons) follow as link rows. One visible index, real links, nothing duplicated, and the prerendered HTML still links every page of the hub (crawlers do not click). Rejected: a hidden `EntityIndex` list inside the panel element (a second list that drifts from the rows), and rendering the links only on click (breaks ADR-096 item 11).
+   - Stars in `/explore`'s neighbourhood index (`StarIndex`) have no entity pages (`bodyRoutes()` in `scripts/site-routes.mjs` is planets, satellites and small bodies), so they carry no links.
+   - Row links are a trailing `↗` anchor (new key `surface_index_open_page`, 14 locales), in the roving list (`itemSelector` covers row buttons and links).
+4. **Ruler and index clearances (built):** the chip-driven ruler shift is deleted (the locate branch and footer lift stay); Explore's `--ruler-top-clear` is 150 px and the short-window `--ruler-left: 196px` clause is gone; the object-index panel starts at `var(--index-top, 152px)`, where `--index-top` is the measured bottom of `.hud-controls` + 8 px (a ResizeObserver in `SurfaceScene`); the row's `max-width` stops before an open detail panel through `.hud-controls.beside-panel` (the `--surface-panel-open` variable of §3.4 was not needed: `panelOpen` already drives `.beside-panel`).
+5. **Glossary:** `observatory` is a `term` entry with `_en` limited to `ground / ground-based / radio / optical observatory` (case-sensitive), because the corpus uses "observatory" for space observatories in prose and the plain pattern flagged 148 fields that are right as they are; its one-sentence definition is in `i18n-src/<loc>/glossary/terms.json` (14 locales). The baseline `ui-label-baseline.json` lost the `stations` / `constellations` variant notes of the removed labels.
+6. **Message keys:** added `earth_layer_chip_observatories`, `surface_index_open_page`; renamed `earth_layer_group_space_tip` → `earth_layer_tip_orbiters` (same text, now the Earth ORBITERS tooltip); removed `observatory_layer_chip`, `earth_layer_group_ground`, `_space`, `_ground_tip`, `ui_layer_stations`, `ui_layer_constellations`, `ui_layer_comsats`, `earth_layer_tip_habitats`, `_nav`, `_geo`, `_telescopes`, `entity_index_moon`, `_mars`, `_venus`, `_explore` (14 locales each). `observatory_layer_tip` stays (the OBSERVATORIES tooltip).
 
 ### Adjacent items that serve the same idea (fold in, or leave)
 | Item | Where | Decision | Reason |
@@ -73,7 +86,7 @@ Recorded in `docs/wip/2026-11-11-ux-feedback-plan.md` ("A4/A5 follow-up", "A3–
 | `/moon` | SURFACE · AUTO, ORBITERS, ORBITS, TRAVERSES | unchanged |
 | `/mars` | SURFACE · AUTO, ORBITERS, ORBITS, TRAVERSES | unchanged |
 | `/venus` | SURFACE · AUTO, ORBITERS, ORBITS | unchanged |
-| `/earth` | SURFACE · AUTO, **[ON EARTH]**, LAUNCHPADS, MUSEUMS, TELESCOPES, **[IN SPACE]**, STATIONS, TELESCOPES, CONSTELLATIONS, COMSATS (ORBITS hidden on Earth, `:5510`) | SURFACE · AUTO, LAUNCHPADS, MUSEUMS, **OBSERVATORIES**, STATIONS, **SPACE TELESCOPES**, CONSTELLATIONS, COMSATS (8 chips; the two bracketed headers are gone) |
+| `/earth` | SURFACE · AUTO, **[ON EARTH]**, LAUNCHPADS, MUSEUMS, TELESCOPES, **[IN SPACE]**, STATIONS, TELESCOPES, CONSTELLATIONS, COMSATS (ORBITS hidden on Earth) | **Built (§0b.1): SURFACE · AUTO, LAUNCHPADS, MUSEUMS, OBSERVATORIES, ORBITERS** (5 chips; the two bracketed headers, the four category chips and the second TELESCOPES are gone) |
 
 Facts that shape the proposal:
 1. **Earth's masters are real state, not decoration.** `layerGround` (`:742`) gates `padsOn`, `museumsOn`, `telescopesOn` (`:744–746`) and the launchpad tier groups (`:4476`, `:4487`); `layerOrbiters` (`:437`) gates every orbiter and every Earth satellite
@@ -98,15 +111,12 @@ Facts that shape the proposal:
 - Explore renders `LayerChipRow` (fold-in), so there is exactly one place that draws layer chips.
 - No `ChipGroup` captions, no hairlines, no master dots, no frame.
 
-### 3.2 Earth's row
-`SURFACE · AUTO · LAUNCHPADS · MUSEUMS · OBSERVATORIES · STATIONS · SPACE TELESCOPES · CONSTELLATIONS · COMSATS`. Ground chips first, then space chips, in today's relative order (a reading order only; there is no caption). Testids unchanged
-(`layer-surface`, `layer-launchpads`, `layer-museums`, `layer-telescopes` for OBSERVATORIES, `layer-stations`, `layer-observatories` for SPACE TELESCOPES, `layer-constellations`, `layer-comsats`) so `museums.spec.ts` and the other specs do not move; the two names that now disagree
-with their labels are noted in the code comment (renaming the testids would touch every spec for no visible gain). Deleted: the `layer-group-earth` chip, the Earth branch of the `layer-orbiters` chip (the chip itself stays for Moon / Mars / Venus), `earthGroups`, `layerGround`, the seven `disabled:` gates, the `header` flags and the four `m.earth_layer_group_*` calls
-(`:5452, 5453, 5475, 5476`). `padsOn`, `museumsOn`, `telescopesOn` lose their `layerGround &&` (`:744–746`) and the launchpad tier groups lose it too (`:4476, :4487`). The tooltips stay as they are (`observatory_layer_tip` for OBSERVATORIES, `earth_layer_tip_telescopes` for SPACE TELESCOPES).
+### 3.2 Earth's row (built, §0b.1)
+`SURFACE · AUTO · LAUNCHPADS · MUSEUMS · OBSERVATORIES · ORBITERS`. Ground chips first, then the one orbiter chip. Testids unchanged where the chip stays (`layer-surface`, `layer-launchpads`, `layer-museums`, `layer-telescopes` for OBSERVATORIES, `layer-orbiters`) so `museums.spec.ts` and the other specs do not move; `layer-telescopes` now disagrees with its label and the code comment says so. Deleted: the `layer-group-earth`, `layer-stations`, `layer-observatories`, `layer-constellations`, `layer-comsats` chips, `earthGroups`, `layerGround`, the seven `disabled:` gates, the `header` flags, the `m.earth_layer_group_*` calls, `layerStations/Observatories/Constellations/Comsats` and `satellites.categoryDefaultVisible`. `padsOn`, `museumsOn`, `telescopesOn` lose their `layerGround &&`, and so do the launchpad tier groups. The OBSERVATORIES tooltip stays `observatory_layer_tip`; the Earth ORBITERS tooltip is `earth_layer_tip_orbiters` (the old IN SPACE tooltip text: everything in orbit, Moon orbiters included).
 
 ### 3.3 Behaviour consequences of D2 (stated, so nothing is a surprise)
 - Each Earth sub-chip is an independent toggle. Turning LAUNCHPADS off no longer interacts with MUSEUMS; no chip is greyed.
-- **Moon orbiters on Earth:** the scene's "moon-orbiters (+ uncategorised) ride the master ORBITERS toggle" (`SurfaceScene.svelte:3846`). With no Earth master they are always shown while the orbit view is on (`layerOrbiters` stays `true` on Earth). §10 O1 asks whether that is acceptable or whether Earth keeps a plain ORBITERS chip.
+- **Moon orbiters on Earth:** they ride the one ORBITERS chip with every other orbiter (§0b.1); O1 is closed.
 - Selection clearing that the ground master did (`selectedMuseum = null; selectedObservatory = null`, `:5480–5483`) is already done by each chip's own toggle (`:5522`, `:5539`); LAUNCHPADS keeps `dropHiddenPadSelection()`.
 
 ### 3.4 Where it sits (unchanged anchor)
@@ -123,9 +133,9 @@ SPACE TELESCOPES 16 → 148, CONSTELLATIONS 14 → 132, COMSATS 7 → 79, ORBITE
 | `/explore` | 79 + 72 + 72 + 49 + 132 + 24 = **428** | one line at every width ≥ 600 px |
 | `/moon`, `/mars` | 132 + 87 + 72 + 94 + 18 = **403** | one line |
 | `/venus` | 132 + 87 + 72 + 12 = **303** | one line |
-| `/earth` (en-US) | 132 + 102 + 79 + 125 + 87 + 148 + 132 + 79 + 42 = **926** | one line with the panel closed; with the 400 px panel open the budget is 1440 − 36 − 16 − 412 = 976 at 1440 (fits), 1366 → 902 (24 px short: two lines), 1280 → 816 (two lines: 6 chips, then CONSTELLATIONS + COMSATS) |
-Compared with the group proposal (about 1038 px on Earth) the flat row is 112 px narrower; compared with the old column (≈ 534 px tall) it is about 400 px shorter. Touch: Earth 8 chips at 44 px in the 358 px drawer: about 4 lines = 4 × 44 + 3 × 6 = 194 px (the 46 vh cap is 388 px at 844 high; landscape cap `min(46vh, 240px)` = 180 px at 393 high: the drawer scrolls by about 14 px, accepted today for taller blocks); Moon / Mars 2 lines (94 px), Venus 1 line.
-Wider locales: ru (SPACE TELESCOPES = КОСМИЧЕСКИЕ ТЕЛЕСКОПЫ 21 characters = 186 px) and es (22 = 193 px) add about 45 px to Earth; de WELTRAUMTELESKOPE 17 = 155 px; ar and the CJK forms are shorter. NOT measured (NV1, NV9).
+| `/earth` (en-US) | 132 + 102 + 79 + 125 + 87 + 24 = **549** | one line with the panel open as well: the budget with the 400 px panel is 1440 − 36 − 16 − 412 = 976 at 1440, 902 at 1366, 816 at 1280, 652 at 1100 |
+Compared with the old column (≈ 534 px tall) the row is about 400 px shorter. Touch: Earth 5 chips at 44 px in the 358 px drawer: 2 lines = 2 × 44 + 6 = 94 px; Moon / Mars 2 lines, Venus 1 line (the 46 vh cap is 388 px at 844 high; landscape cap `min(46vh, 240px)` = 180 px at 393 high).
+Wider locales: ru ОБСЕРВАТОРИИ (11) and es OBSERVATORIOS (13) are about the width of OBSERVATORIES; ar and the CJK forms are shorter. NOT measured (NV1, NV9).
 Neighbours (unchanged geometry): INDEX pull tab at x 0–28 (row starts at 36, clear), nation legend and `locate-me` (bottom-left), time dock and planet scales (Explore bottom-left), footer menu (bottom-right), ruler at the left edge (its top at 720 px high is about y 436 ≫ 176, so the chip-driven shift never triggers and is deleted).
 
 ## 5. Hit list (baseline **75 violations** from `a5-check.py`, run at `50b3e962a8d`; output `a5-out.txt`)
@@ -162,7 +172,7 @@ Expected `a5-keep: <why>` markers at the end: none planned. The `.locate-me` and
 | Home, Lab, dev routes | out of the A-series scope |
 
 ## 7. Tests
-- **New `tests/e2e/chip-row.spec.ts`** on `desktop-chromium`, `mobile-chromium`, `mobile-landscape-chromium`; routes `/earth`, `/moon`, `/mars`, `/venus`, `/explore` and the states `/earth?site=ksc`, `/moon?site=apollo11`, `/mars?site=perseverance` (panel open). Per route: **no `.chip-group` element, no chip with `disabled` or `aria-disabled`, no group caption text**; chip order and count per §1.2 (Earth: 8, the labels from the new keys, OBSERVATORIES ≠ SPACE TELESCOPES); all chips of the row share a y band (|Δy| < 8 px) with the panel closed on fine pointer; no `flex-direction: column` on `.ctrl-row.chips` at any pointer; Earth sub-chips are independent (click LAUNCHPADS: STATIONS keeps its `aria-pressed`).
+- **Built:** `chip-row.spec.ts`, `index-links.spec.ts` (new), `earth.spec.ts`, `mobile-layout.spec.ts`, `footer-dock.spec.ts` (world HUD), `museums.spec.ts`, `audio-tour.test.ts` updated; not run by the author (the lead runs Playwright). Planned scope, kept as written: **New `tests/e2e/chip-row.spec.ts`** on `desktop-chromium`, `mobile-chromium`, `mobile-landscape-chromium`; routes `/earth`, `/moon`, `/mars`, `/venus`, `/explore` and the states `/earth?site=ksc`, `/moon?site=apollo11`, `/mars?site=perseverance` (panel open). Per route: **no `.chip-group` element, no chip with `disabled` or `aria-disabled`, no group caption text**; chip order and count per §1.2 (Earth: 5, OBSERVATORIES, no TELESCOPES chip); all chips of the row share a y band (|Δy| < 8 px) with the panel closed on fine pointer; no `flex-direction: column` on `.ctrl-row.chips` at any pointer; Earth sub-chips are independent (click LAUNCHPADS: STATIONS keeps its `aria-pressed`).
 - **No-overlap spec** (fine pointer, `test.use({ viewport, hasTouch: false, isMobile: false })`) at 1440×900, 1366×768, 1280×720, 1100×700, 800×375: no two of `.ctrl-row.chips`, `.ruler`, `.surface-index-desktop` (opened), `.detail-panel` (a site selected), `.distance-scale`, the view-control row, the nation legend intersect. Explore: the row joins the `HUD_PARTS` loop (`footer-dock.spec.ts:134–168`) and the same loop runs for `/earth /moon /mars /venus` (new `WORLD_HUD_PARTS`). Phone and landscape: the LAYERS drawer shows the chips in a wrap run with no header bands, no horizontal scroll, chips ≥ 44 px (A4), the drawer body scrolls instead of growing past its cap.
 - **Rewrite:** `earth.spec.ts:96–123` becomes "chips are independent toggles in one row" (no `layer-group-earth`, no `toBeDisabled`); `earth.spec.ts:83` and the neighbouring assertions keep their testids; `mobile-layout.spec.ts:64–110` loses its `.chip-group` branch (the first two chips of the row share a y band on touch); `mars.spec.ts:62–64` unchanged (Mars keeps ORBITERS); `museums.spec.ts:95–97` unchanged.
 - **Update:** `moon.spec.ts`, `hotspots.spec.ts`, the audio-tour `data-audio-stage` scan (`audio-tour.test.ts:296–297` lists the components it scans: Explore moving to `LayerChipRow` changes its file list), `footer-dock.spec.ts`, `explore.spec.ts` / `explore-paths-layer.spec.ts` (`layer-paths`, `data-audio-stage` kept), `visual.spec.ts` surface-HUD and Explore baselines.
@@ -177,163 +187,48 @@ Expected `a5-keep: <why>` markers at the end: none planned. The `.locate-me` and
 - `src/lib/components/README.md` (Surface HUD line 10: `LayerChipRow` loses `header` / `disabled`), `src/lib/surface-scene/README.md:21`, `docs/adr/TA.md` (HUD paragraph; one line), ADR-062 and ADR-074 mention `LayerChipRow` (`git grep` at HEAD): check each for column or group wording.
 - Comments to rewrite (rot): `SurfaceScene.svelte:1163–1166`, `:5446–5448`, `:5558–5575`, `:7018–7022`, `:7427–7430`, `:7533`, `:7555–7557`, `explore/+page.svelte:2300–2308`, `HudControls.svelte:100–101`, `:480–499`, `:510–514`, `:828–832`, `:863–865`, `LayerChipRow.svelte` header.
 
-## 9. Locales — exactly what changes, in order
+## 9. Locales — exactly what changes, in order (built, §0b.5–6)
 Order is the operator's (D3) and the glossary rule: terms first, then keys.
-1. **Glossary first.** `scripts/i18n-tools/native-terms.json` has the section `term` (entry shape: `_sense`, `_match`, one form per locale, `_confidence`, as for `trajectory`) and no entry for either word (checked: `observatory`, `space telescope` absent from every section at `50b3e962a8d`).
-   Add two entries to `term`: `observatory` (sense "a building or site for astronomical observation on the ground") and `space telescope` (sense "a telescope in orbit"). The forms below are the site's **existing** wording (the `observatory_layer_tip` and `earth_layer_group_space_tip` strings in each `messages/*.json`), not new translations; sources recorded in `sources`.
-2. **Two new message keys** in all 14 locales, written by hand inline, applied with the `scripts/i18n-tools/` kit, then `npm run validate-data`: `observatory_layer_chip_ground` (OBSERVATORIES) and `observatory_layer_chip_space` (SPACE TELESCOPES). The old `observatory_layer_chip` ("TELESCOPES", 14 locales) is removed (its only two consumers are `SurfaceScene.svelte:5534, :5587`). The four dead `earth_layer_group_*` keys are removed too (14 locales; no consumer after D1 / D2; `earth_layer_group_ground_tip` / `_space_tip` go with them, the chip tooltips are the two existing tips). `scripts/i18n-tools/en-source-hashes.json` entries for the removed and added keys are updated. No paid translation run (operator rule 2026-10-18).
-3. **Per-locale check.** The forms, with the verification that was run (`forms.py` in the scratchpad: casefolded substring of each form in the same locale's existing tip string, all 14 true after the Arabic form was set to the site's `مراصد`):
+1. **Glossary first.** `scripts/i18n-tools/native-terms.json` `term.observatory` (sense "a site or building on the ground for astronomical observation", `_match` stems, `_confidence`, 13 locale forms = the site's existing wording from `observatory_layer_tip`, `sources` recorded) and a one-sentence definition in `i18n-src/<loc>/glossary/terms.json` (14 locales; `build-glossary` needs it). `_en` is limited to ground / radio / optical observatory (§0b.5).
+2. **One new chip key** `earth_layer_chip_observatories` in all 14 locales, written by hand inline (plus `surface_index_open_page` for the INDEX row link), then `stale-overlays.mjs --manifest=write`, `npm run i18n:compile`, `npm run validate-data`. No paid translation run (operator rule 2026-10-18). The keys removed and renamed are in §0b.6.
+3. **Per-locale check** (the value of `earth_layer_chip_observatories` must equal the glossary form and be contained in the same locale's `observatory_layer_tip`; the check script verifies it for all 14):
 
-| Locale | OBSERVATORIES (ground) | SPACE TELESCOPES | found in tip |
-|---|---|---|---|
-| en-US | OBSERVATORIES | SPACE TELESCOPES | both |
-| ar | مراصد | التلسكوبات الفضائية | both |
-| de | OBSERVATORIEN | WELTRAUMTELESKOPE | both |
-| es | OBSERVATORIOS | TELESCOPIOS ESPACIALES | both |
-| fr | OBSERVATOIRES | TÉLESCOPES SPATIAUX | both |
-| hi | वेधशालाएँ | अंतरिक्ष दूरबीनें | both |
-| it | OSSERVATORI | TELESCOPI SPAZIALI | both |
-| ja | 天文台 | 宇宙望遠鏡 | both |
-| ko | 천문대 | 우주 망원경 | both |
-| nl | STERRENWACHTEN | RUIMTETELESCOPEN | both |
-| pt-BR | OBSERVATÓRIOS | TELESCÓPIOS ESPACIAIS | both |
-| ru | ОБСЕРВАТОРИИ | КОСМИЧЕСКИЕ ТЕЛЕСКОПЫ | both |
-| sr-Cyrl | ОПСЕРВАТОРИЈЕ | СВЕМИРСКИ ТЕЛЕСКОПИ | both |
-| zh-CN | 天文台 | 空间望远镜 | both |
-   The operator already named three of them (de "Observatorien", ja "天文台", sr-Cyrl "Опсерваторије"); all three match the table. After the change `a5-check.py` re-verifies per locale that the two values differ and equal the glossary form, and `git diff --stat -- messages src/lib/paraglide scripts/i18n-tools` is shown (14 `messages/*.json` + `native-terms.json` + `en-source-hashes.json` + the generated paraglide files, nothing else).
-   Layout risk to shoot: ru and es (the longest SPACE TELESCOPES, §4), de, and ar in RTL (the row follows `dir`, logical properties `margin-inline`; the roving arrow keys of A4 swap).
-4. The **tooltips stay as they are** (`observatory_layer_tip`, `earth_layer_tip_telescopes`): both are accurate for the new labels.
+| Locale | OBSERVATORIES (ground) |
+| --- | --- |
+| en-US | OBSERVATORIES |
+| ar | مراصد |
+| de | OBSERVATORIEN |
+| es | OBSERVATORIOS |
+| fr | OBSERVATOIRES |
+| hi | वेधशालाएँ |
+| it | OSSERVATORI |
+| ja | 天文台 |
+| ko | 천문대 |
+| nl | STERRENWACHTEN |
+| pt-BR | OBSERVATÓRIOS |
+| ru | ОБСЕРВАТОРИИ |
+| sr-Cyrl | ОПСЕРВАТОРИЈЕ |
+| zh-CN | 天文台 |
+
+   The operator already named three of them (de "Observatorien", ja "天文台", sr-Cyrl "Опсерваторије"); all three match. Layout risk to shoot: de, ru, es and ar in RTL (the row follows `dir`).
+4. The **tooltips**: `observatory_layer_tip` stays; `earth_layer_tip_orbiters` is the renamed `earth_layer_group_space_tip` (same text in 14 locales).
 
 ## 10. Decisions and open questions (operator)
-Decided: everything in §0a. **One thing is genuinely open** and it is a consequence the operator did not state:
-- **O1 Moon orbiters on Earth after the masters are gone.** Today the IN SPACE master also switches the Moon orbiters drawn in the Earth view (`SurfaceScene.svelte:3846`); there is no other chip for them. (a) **No chip: they are always shown with the orbit view (the reading of "Earth's master switches are dropped")** (recommended: smallest change, matches D2 literally). (b) Earth keeps a plain ORBITERS chip that switches only Moon orbiters (adds a ninth chip and a label that means something different from ORBITERS on the Moon page).
-Small defaults taken in this brief without asking (change them on the sheets if wrong): Earth row order = ground chips then space chips in today's relative order; testids unchanged; the four dead `earth_layer_group_*` keys removed with the rest of the locale pass.
+Decided: everything in §0a and §0b. **O1 (Moon orbiters on Earth) is closed**: the one ORBITERS chip on Earth switches them with every other orbiter (§0b.1). Small defaults taken: Earth row order = ground chips, then ORBITERS; testids unchanged; footer compaction on the four scene routes is unchanged (§0b / UXD-015 Consequences).
 
-## 11. Check (re-run by the independent checker; must print `A5-CHECK violations: 0`)
-Baseline at `50b3e962a8d`: **75 violations**, kinds as in §5. The script is `a5-check.py` (below), saved in the session scratchpad and not added to the repo; run from the repo root as `python3 a5-check.py`. Allow marker: `a5-keep: <why>` on the line or the line above.
-```python
-import re, os, json
-from collections import Counter
-viol = []
-def lines(f): return open(f).read().splitlines()
-def keep(ls, i): return 'a5-keep' in ls[i] or (i > 0 and 'a5-keep' in ls[i-1])
-SS = 'src/lib/surface-scene/SurfaceScene.svelte'
-LCR = 'src/lib/components/LayerChipRow.svelte'
-HUD = 'src/routes/explore/HudControls.svelte'
-EXP = 'src/routes/explore/+page.svelte'
-LOCALES = ['ar', 'de', 'en-US', 'es', 'fr', 'hi', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN']
-NEW_KEYS = ('observatory_layer_chip_ground', 'observatory_layer_chip_space')
-OLD_KEYS = ('earth_layer_group_ground', 'earth_layer_group_space', 'earth_layer_group_ground_tip',
-            'earth_layer_group_space_tip', 'observatory_layer_chip')
-
-# 1. vertical column rules (Explore and Worlds)
-for f in (SS, HUD):
-    src = open(f).read(); m = re.search(r'<style[^>]*>(.*?)</style>', src, re.S)
-    css = m.group(1); base = src[:m.start(1)].count('\n') + 1
-    for rm in re.finditer(r'([^{}]+)\{([^{}]*)\}', css):
-        sel = ' '.join(re.sub(r'/\*.*?\*/', '', rm.group(1), flags=re.S).split())
-        if '.ctrl-row.chips' in sel and re.search(r'flex-direction:\s*column', rm.group(2)) and 'a5-keep' not in rm.group(0):
-            viol.append(('COLUMN', f, base + css[:rm.start(2)].count('\n'), sel))
-
-# 2. group header / master machinery in LayerChipRow (decided: no groups, no masters)
-ls = lines(LCR)
-for i, l in enumerate(ls):
-    if re.search(r'chip\.header|header\?:|class="chip-group"|\.chip-group|flex-basis:\s*100%|group-label|class="dot"|\.dot\b|disabled\?:|chip\.disabled|isDisabled', l) and not keep(ls, i):
-        viol.append(('GROUP-HEADER-OR-GATE', LCR, i + 1, l.strip()[:70]))
-
-# 3. SurfaceScene: group keys, master state, sub-chip gating, header flags, old telescope label key
-ls = lines(SS)
-for i, l in enumerate(ls):
-    if re.search(r'm\.earth_layer_group_', l) and not keep(ls, i): viol.append(('GROUP-KEY', SS, i + 1, l.strip()[:70]))
-    if re.search(r'\blayerGround\b', l) and not keep(ls, i): viol.append(('GROUND-MASTER-STATE', SS, i + 1, l.strip()[:70]))
-    if re.search(r'disabled:\s*\(\)\s*=>\s*!layer(Ground|Orbiters)', l) and not keep(ls, i): viol.append(('SUBCHIP-GATE', SS, i + 1, l.strip()[:70]))
-    if re.search(r'^\s*header(:|,)', l) and not keep(ls, i): viol.append(('HEADER-FLAG', SS, i + 1, l.strip()[:70]))
-    if re.search(r'earthGroups', l) and not keep(ls, i): viol.append(('EARTH-GROUPS-BRANCH', SS, i + 1, l.strip()[:70]))
-    if re.search(r'm\.observatory_layer_chip\(\)', l) and not keep(ls, i): viol.append(('TELESCOPES-LABEL', SS, i + 1, l.strip()[:70]))
-
-# 4. Explore uses the same row component
-if not any('LayerChipRow' in l and 'import' in l for l in lines(HUD)):
-    viol.append(('EXPLORE-NOT-SHARED', HUD, 1, 'HudControls does not use LayerChipRow'))
-
-# 5. constants that only existed because of the tall column
-for i, l in enumerate(ls):
-    if 'top: 152px' in l and not keep(ls, i): viol.append(('HARD-TOP-OFFSET', SS, i + 1, l.strip()))
-    if "querySelector('.hud-controls')" in l and not keep(ls, i): viol.append(('CHIP-DRIVEN-RULER-SHIFT', SS, i + 1, l.strip()))
-    if re.search(r'saves ~94 px of column|vertical column|chip column|chip rail returns', l) and not keep(ls, i): viol.append(('STALE-COMMENT', SS, i + 1, l.strip()[:70]))
-es = lines(EXP)
-for i, l in enumerate(es):
-    if re.search(r'--ruler-top-clear:\s*376px|--ruler-left:\s*196px', l) and not keep(es, i): viol.append(('HARD-RULER-OFFSET', EXP, i + 1, l.strip()))
-
-# 6. locales: new keys everywhere, old keys gone, the two chips differ, ground form = the site's existing observatory form
-for key in OLD_KEYS:
-    have = [lc for lc in LOCALES if key in json.load(open(f'messages/{lc}.json'))]
-    if have: viol.append(('LOCALE-OLD-KEY-STILL-PRESENT', f'messages/*.json', 0, f'{key} in {len(have)} locales'))
-for key in NEW_KEYS:
-    missing = [lc for lc in LOCALES if not json.load(open(f'messages/{lc}.json')).get(key)]
-    if missing: viol.append(('LOCALE-NEW-KEY-MISSING', 'messages/*.json', 0, f'{key} missing in {len(missing)} locales'))
-if all(os.path.exists(f'messages/{lc}.json') for lc in LOCALES):
-    for lc in LOCALES:
-        d = json.load(open(f'messages/{lc}.json'))
-        g, s = d.get(NEW_KEYS[0], ''), d.get(NEW_KEYS[1], '')
-        if g and s:
-            if g.casefold() == s.casefold(): viol.append(('LOCALE-CHIPS-IDENTICAL', f'messages/{lc}.json', 0, g))
-            if g.casefold() not in d.get('observatory_layer_tip', '').casefold(): viol.append(('LOCALE-GROUND-FORM-DRIFT', f'messages/{lc}.json', 0, g))
-            gl = json.load(open('scripts/i18n-tools/native-terms.json')).get('term', {})
-            for term, val, kind in (('observatory', g, 'GROUND'), ('space telescope', s, 'SPACE')):
-                form = gl.get(term, {}).get(lc)
-                if form and val.casefold() != form.casefold(): viol.append((f'LOCALE-{kind}-NOT-GLOSSARY-FORM', f'messages/{lc}.json', 0, val))
-
-# 7. glossary first: both terms exist under "term" with 13 locale forms
-nt = json.load(open('scripts/i18n-tools/native-terms.json')).get('term', {})
-for t in ('observatory', 'space telescope'):
-    e = nt.get(t)
-    if not e: viol.append(('GLOSSARY-TERM-MISSING', 'scripts/i18n-tools/native-terms.json', 0, t))
-    elif sum(1 for lc in LOCALES if lc != 'en-US' and e.get(lc)) < 13: viol.append(('GLOSSARY-TERM-INCOMPLETE', 'scripts/i18n-tools/native-terms.json', 0, t))
-
-# 8. deliverables
-for p, k in (('tests/e2e/chip-row.spec.ts', 'NO-E2E'), ('docs/uxs/decisions/UXD-015-flat-chip-row.md', 'NO-UXD')):
-    if not os.path.exists(p): viol.append((k, p, 1, 'file missing'))
-
-for k, f, l, t in viol: print(f'{k:30} {f}:{l}  {t}')
-print('by kind:', dict(Counter(k for k, *_ in viol)))
-print(f'A5-CHECK violations: {len(viol)}')
-```
-Known limits: it checks names, constants and locale values, not layout. It does not measure overlap, wrapping or the rendered caption absence; `chip-row.spec.ts` does. `GROUP-HEADER-OR-GATE` and `GROUND-MASTER-STATE` count lines (one construct can span several). The `STALE-COMMENT` regex also matches the words "chip column" and "vertical column" in any new comment, so new comments must not use them. The glossary form comparison assumes the glossary stores one string per locale (not a list); if the real entries use `_match` lists only, the comparison reads the plain locale key.
+## 11. Check (must print `A5-CHECK violations: 0`)
+The script is `a5-check.py` in the session scratchpad, corrected for §0b (one OBSERVATORIES key, the removed keys, no category-chip state, the INDEX-absorbs-A–Z checks; the original 75-violation baseline was at `50b3e962a8d`). Run from the repo root as `python3 a5-check.py`. Allow marker: `a5-keep: <why>` on the line or the line above. It checks, in order: no `flex-direction: column` on `.ctrl-row.chips` in `SurfaceScene` / `HudControls`; no group / master machinery in `LayerChipRow`; no `layerGround`, `earthGroups`, `header:`, `disabled: () => !layer…`, `m.earth_layer_group_*`, `m.observatory_layer_chip()`, category-chip state or removed-chip testids in `SurfaceScene`; `HudControls` imports `LayerChipRow`; no `top: 152px`, no chip-driven ruler shift, no stale column wording, no 376 / 196 px ruler constants; removed message keys absent and new keys present in 14 locales; the ground form is inside `observatory_layer_tip` and equals the glossary form; the glossary entry has 13 forms; `chip-row.spec.ts` and `UXD-015` exist; `/moon /mars /venus /explore` pages no longer use `EntityIndex` and pass `entityLinks`; `EntityIndex` has no `floating` variant. Known limits: it checks names, constants and locale values, not layout; `chip-row.spec.ts`, `index-links.spec.ts` and `footer-dock.spec.ts` measure the rest.
 
 ## 12. Acceptance (definition of done)
 1. `python3 a5-check.py` prints `A5-CHECK violations: 0`.
-2. On `/earth`, `/moon`, `/mars`, `/venus`, `/explore` the layer chips are one horizontal flat row in the membership and order of §1.2, from one component, with no caption, no group, no greyed chip; no vertical column at any pointer.
+2. On `/earth`, `/moon`, `/mars`, `/venus`, `/explore` the layer chips are one horizontal flat row in the membership and order of §1.2 (Earth: §0b.1), from one component, with no caption, no group, no greyed chip; no vertical column at any pointer.
 3. `chip-row.spec.ts` plus the extended `footer-dock.spec.ts` green on desktop-chromium, mobile-chromium, mobile-landscape-chromium at 1440×900, 1366×768, 1280×720, 1100×700, 800×375 and in the three site-selected states: no intersection between the chip row and the ruler, index panel, detail panel, distance scale, nation legend and the view-control row; nothing skipped.
-4. Glossary entries added first; the two new keys in all 14 locales with the per-locale check of §9 shown; old keys removed; `validate-data` green.
+4. Glossary entry added first; the new key in all 14 locales with the per-locale check of §9 shown; old keys removed; `validate-data` green.
 5. Docs of §8 written; UXD-015 `accepted`; CHANGE-INVENTORY row A5 updated.
-6. The operator receives the sheets of §13 and answers O1.
+6. The operator receives the sheets of §13 (O1 is closed, §0b.1). The INDEX links (§0b.3) are checked by `index-links.spec.ts`.
 
-### Appendix — draft `docs/uxs/decisions/UXD-015-flat-chip-row.md` (proposed; written when the go comes)
-```markdown
-# UXD-015 — Layer chips are one flat horizontal row on Explore and every world
-
-- **Status**: proposed
-- **Date**: 2026-11-12 (proposed)
-- **Decider**: the operator, 2026-11-12 (flat row on every world; Earth's master switches dropped; OBSERVATORIES / SPACE TELESCOPES). Inputs: C2, W7, plan Q5
-- **Answers**: C2, W7; slice A5
-- **Changes**: `LayerChipRow.svelte`, `SurfaceScene.svelte`, `explore/HudControls.svelte`, `explore/+page.svelte` (ruler constants); messages (two new keys, five removed);
-  `scripts/i18n-tools/native-terms.json`; IA §controls; Design System §5.7; AGENTS.md; `src/lib/components/README.md`
-
-## Context
-At `81e0d43c0dd` Earth showed its layers as a column of 10 items with two full-row headers (ON EARTH / IN SPACE) that were master switches, reaching about 534 px down and into the orbit ruler on short windows; Moon, Mars and Venus showed flat lists; Explore had five inline chips; two Earth chips were both labelled TELESCOPES.
-
-## Options
-1. Group every world (ON GROUND / IN SPACE). 2. Flatten Earth and every world. 3. Two stacked rows.
-
-## Decision
-Option 2: one flat horizontal row of chips on Explore and every world, no captions, no groups, no master switches; Earth's two telescope chips are OBSERVATORIES and SPACE TELESCOPES (both terms in the glossary first). The chip look is UXD-014.
-
-## Consequences
-The layer block drops from about 420 px of column to 30–66 px of row; the chip-driven ruler shift is deleted; Earth sub-chips are independent toggles; Moon orbiters on Earth have no switch (O1); two keys added and five removed in 14 locales; the worlds' HUD baselines regenerate once with A4.
-
-## Verification
-`tests/e2e/chip-row.spec.ts` and `footer-dock.spec.ts` on three projects; `a5-check.py` prints `A5-CHECK violations: 0`.
-```
+### Appendix — UXD-015
+Written and `accepted`: [`docs/uxs/decisions/UXD-015-flat-chip-row.md`](../uxs/decisions/UXD-015-flat-chip-row.md) (the draft that stood here was superseded by §0b).
 
 ## 13. Screenshots for the operator (via dev server, per AGENTS "Iterating on UI"; not Docker)
 Prototype by injected CSS on the running dev server (a throwaway script in the scratchpad: sets `.ctrl-row.chips { flex-direction: row; flex-wrap: wrap }`, removes the `chip-group` buttons, relabels the two Earth chips): before (HEAD) and after, desktop 1440×900 and 1280×720 and phone 390×844:

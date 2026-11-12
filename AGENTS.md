@@ -773,6 +773,15 @@ Chip (src/lib/styles/chip.css, UX A4, docs/uxs/decisions/UXD-014-one-chip-and-fi
   exceptions carry `a4-keep: <why>`. Small non-chip controls take .ui-hit (24px hit area).
   Enforced by tests/e2e/chip.spec.ts.
 
+Layer chips (src/lib/components/LayerChipRow.svelte, UXD-015): one flat horizontal row on
+  /explore and every world, from LayerChipRow; a route does not draw its own chip column and the
+  row has no group captions, no master switches, no greyed chip. /earth = SURFACE, LAUNCHPADS,
+  MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip switches every orbiter, as on the other
+  worlds). The scene routes (/moon /mars /venus /explore) have no separate A-Z tab: their INDEX
+  panel carries a real link to each entity page (prerendered while closed, ADR-096 item 11);
+  /missions and /fleet keep EntityIndex at the page foot. Enforced by tests/e2e/chip-row.spec.ts
+  and tests/e2e/index-links.spec.ts.
+
 Nav bar:        height 52px, z-index 20
 Panel (mobile): bottom sheet, full width
 Panel (desktop): right drawer, 314px wide

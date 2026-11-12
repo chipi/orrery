@@ -147,12 +147,12 @@
     color: rgba(255, 255, 255, 0.7);
   }
   .chapter a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .chapter a:hover {
-    border-bottom-color: #4ecdc4;
+    border-bottom-color: var(--color-accent);
   }
   .story-fig {
     margin: 18px 0 22px;
@@ -179,7 +179,7 @@
   ul.tools li {
     margin: 0 0 10px;
     padding-left: 12px;
-    border-left: 2px solid rgba(78, 205, 196, 0.3);
+    border-left: 2px solid var(--color-accent-edge);
   }
   .closing {
     color: rgba(255, 255, 255, 0.7);

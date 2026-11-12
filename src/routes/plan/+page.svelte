@@ -854,7 +854,7 @@
     ctx.restore();
 
     // Outer ring
-    ctx.strokeStyle = 'rgba(68,102,255,0.7)';
+    ctx.strokeStyle = 'rgba(80,112,255,0.7)';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(MAG_RADIUS, MAG_RADIUS, MAG_RADIUS - 1, 0, Math.PI * 2);
@@ -1073,6 +1073,7 @@
         <dd>
           {m.plan_explainer_color_desc()}
           <div class="color-bar" aria-hidden="true">
+            <!-- a3-keep: data colour (porkchop heat map scale), palette review at the end -->
             <span class="cb-stop teal"></span>
             <span class="cb-stop blue"></span>
             <span class="cb-stop yellow"></span>
@@ -1302,9 +1303,10 @@
 
 <!-- Unified Science Lens panel — lens story only on /plan (no layer
      toggles meaningful for the porkchop view). -->
+<!-- a3-keep: data colour (porkchop heat map scale), palette review at the end -->
 <ScienceLayersPanel
-  title={m.plan_porkchop_title()}
   body="Each pixel solves a Lambert problem. The cheap teal lobe marks the natural Hohmann window — physics decides when interplanetary travel is affordable, not the calendar."
+  title={m.plan_porkchop_title()}
   tab="porkchop"
   section="what-is-a-porkchop"
 />
@@ -1370,7 +1372,7 @@
     cursor: pointer;
   }
   .dest-select:focus-visible {
-    outline: 2px solid #4466ff;
+    outline: 2px solid var(--color-focus);
     outline-offset: 1px;
   }
   .mission-type-group {
@@ -1394,13 +1396,13 @@
   }
   .mission-type-pill:hover:not(:disabled),
   .mission-type-pill:focus-visible:not(:disabled) {
-    border-color: rgba(68, 102, 255, 0.55);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: var(--color-text);
     outline: none;
   }
   .mission-type-pill.active {
-    background: rgba(68, 102, 255, 0.2);
-    border-color: #4466ff;
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border-color: var(--color-accent);
     color: #fff;
   }
   .mission-type-pill:disabled {
@@ -1451,7 +1453,7 @@
 
   /* Phase 36 (#342) — touch affordance hint for the magnifier gesture.
      Visible only on (hover: none) so desktop users don't see it. Sits
-     at the top-right of the porkchop canvas; muted teal so it reads
+     at the top-right of the porkchop canvas; muted accent blue so it reads
      as guidance rather than UI chrome. */
   .touch-hint {
     display: none;
@@ -1466,9 +1468,9 @@
     margin: 0;
     padding: 6px 10px;
     background: rgba(15, 18, 35, 0.7);
-    border: 1px solid rgba(78, 205, 196, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.5px;
@@ -1524,7 +1526,7 @@
   }
   .loading-fill {
     height: 100%;
-    background: #4466ff;
+    background: var(--color-accent);
     border-radius: 2px;
     transition: width 0.1s;
   }
@@ -1557,8 +1559,8 @@
 
   .explainer {
     padding: 10px 14px 12px;
-    background: rgba(68, 102, 255, 0.04);
-    border: 1px solid rgba(68, 102, 255, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 4%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 4px;
     margin-bottom: 8px;
   }
@@ -1580,7 +1582,7 @@
   .explainer > summary::before {
     content: '▸';
     font-size: var(--size-label);
-    color: rgba(68, 102, 255, 0.85);
+    color: var(--color-state);
     transition: transform 150ms ease;
     display: inline-block;
   }
@@ -1591,7 +1593,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: var(--color-accent-text, #5070ff);
+    color: var(--color-accent);
     font-weight: 700;
   }
   .explainer[open] > .explainer-intro,
@@ -1614,7 +1616,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     font-weight: 700;
     margin-bottom: 1px;
   }
@@ -1637,11 +1639,12 @@
     flex: 1;
     height: 100%;
   }
+  /* a3-keep: data colour (porkchop heat map scale), palette review at the end */
   .color-bar .teal {
     background: #4ecdc4;
   }
   .color-bar .blue {
-    background: #4466ff;
+    background: var(--color-accent);
   }
   .color-bar .yellow {
     background: #ffc850;
@@ -1702,9 +1705,9 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: var(--color-tier-intro);
+    color: var(--color-state);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
     padding: 1px 0;
     align-self: flex-start;
     transition:
@@ -1714,7 +1717,7 @@
   .rocket-link:hover,
   .rocket-link:focus-visible {
     color: #fff;
-    border-bottom-color: #4ecdc4;
+    border-bottom-color: var(--color-accent);
     outline: none;
   }
   /* .row.strong .value rule removed — selector flagged as unused after
@@ -1750,7 +1753,7 @@
     white-space: nowrap;
   }
   .readout-grid .cell.strong .value {
-    color: #4ecdc4;
+    color: var(--color-state);
     font-weight: 700;
     font-size: 12px;
   }
@@ -1879,7 +1882,7 @@
     font-weight: 700;
   }
   .sandbox-row.strong.cheaper dd {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .sandbox-tag {
     font-size: var(--size-label);
@@ -1906,7 +1909,7 @@
     cursor: pointer;
   }
   .vehicle select:focus-visible {
-    outline: 1px solid #4466ff;
+    outline: 1px solid var(--color-focus);
     outline-offset: 2px;
   }
 
@@ -1939,7 +1942,11 @@
   .budget-fill {
     position: absolute;
     inset: 0 auto 0 0;
-    background: linear-gradient(to right, #4ecdc4, #4ecdc488);
+    background: linear-gradient(
+      to right,
+      var(--color-accent),
+      color-mix(in srgb, var(--color-accent) 53%, transparent)
+    );
     transition: width 200ms;
   }
   .budget.deficit .budget-fill {
@@ -1974,7 +1981,7 @@
     min-height: 48px;
     padding: 12px;
     background: #1a33bb;
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     border-radius: 4px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -2000,7 +2007,7 @@
   .fly:hover:not(:disabled),
   .fly:focus-visible:not(:disabled) {
     background: #2244dd;
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     outline: none;
   }
   .fly:disabled {

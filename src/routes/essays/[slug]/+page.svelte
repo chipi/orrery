@@ -42,13 +42,13 @@
   // Section openers: a running number per heading, and an accent per movement so the
   // five movements of the series read apart (light enough for AA on the page background).
   const MOVEMENT_ACCENT: Record<string, string> = {
-    'into-the-dark': '#7fb0e0',
+    'into-the-dark': '#889fe7',
     'the-machines': '#e0a96d',
     'the-destinations': '#e08a72',
     'arrival-and-the-body': '#8fd1a6',
     'the-far-horizon': '#b49ce6',
   };
-  let accent = $derived(MOVEMENT_ACCENT[essay.movement] ?? '#7fb0e0');
+  let accent = $derived(MOVEMENT_ACCENT[essay.movement] ?? '#889fe7');
   let sectionNo = $derived.by(() => {
     let n = 0;
     return essay.body.map((b) => (b.type === 'heading' ? String(++n).padStart(2, '0') : ''));
@@ -250,7 +250,7 @@
     border-bottom: 1px solid rgba(127, 176, 224, 0.4);
   }
   .body :global(a:hover) {
-    border-bottom-color: #7fb0e0;
+    border-bottom-color: var(--color-state);
   }
   .body :global(em) {
     font-style: italic; /* a1-keep: inline emphasis */

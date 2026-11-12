@@ -221,7 +221,7 @@
     rover: '#a05a2c', // mars surface
     lander: '#9c8c4e', // dust-tan
     orbiter: '#7a4ecd', // violet — outer space
-    observatory: '#4ecdc4', // teal — scientific
+    observatory: '#4ecdc4', // a3-keep: category identity colour, palette review at the end
     'space-suit': '#cbd5e1', // ice-white — pressure shell
     constellation: '#9bdbff', // pale sky-blue — Earth-orbiting collectives
     'launch-site': '#6b8e6b', // moss-green — Earth-surface launch sites (#285)

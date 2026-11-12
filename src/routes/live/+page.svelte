@@ -175,7 +175,11 @@
     width: 100%;
     height: 100%;
     background:
-      radial-gradient(circle at 50% 40%, rgba(68, 102, 255, 0.28), transparent 60%),
+      radial-gradient(
+        circle at 50% 40%,
+        color-mix(in srgb, var(--color-accent) 28%, transparent),
+        transparent 60%
+      ),
       linear-gradient(160deg, #12213f, #0a0f1e);
   }
   .pin-play {

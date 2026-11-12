@@ -321,8 +321,8 @@
   }
   .chip.active {
     color: #06121f;
-    background: #7fb0e0;
-    border-color: #7fb0e0;
+    background: var(--color-state);
+    border-color: var(--color-state);
   }
   .chip .n {
     margin-left: 7px;
@@ -469,7 +469,7 @@
     margin-bottom: 0;
   }
   .gallery-footer strong {
-    color: #7fb0e0;
+    color: var(--color-state);
     font-weight: normal;
     letter-spacing: 1px;
   }
@@ -616,7 +616,7 @@
     margin-top: 0.6rem;
     padding: 0.45rem 0.85rem;
     border-radius: 6px;
-    background: linear-gradient(135deg, #4ecdc4, #7ff0e0);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
     color: #06231f;
     font-weight: 700;
     font-size: 0.85rem;

@@ -256,14 +256,14 @@
     letter-spacing: 0.04em;
     color: var(--text-base, #e8e8ed);
     background: rgba(8, 10, 22, 0.62);
-    border: 1px solid rgba(78, 205, 196, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     backdrop-filter: blur(5px);
     cursor: pointer;
     min-height: 34px;
   }
   .locate-me:hover:not(:disabled) {
-    border-color: rgba(78, 205, 196, 0.7);
+    border-color: var(--color-accent-strong);
   }
   .locate-me:disabled {
     opacity: 0.6;
@@ -298,7 +298,7 @@
     }
   }
   .locate-icon {
-    color: #4ecdc4;
+    color: var(--color-state);
     font-size: 14px;
     line-height: 1;
   }

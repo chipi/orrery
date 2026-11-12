@@ -134,7 +134,7 @@
       transform 0.2s;
   }
   .poster:hover {
-    border-color: rgba(78, 205, 196, 0.4);
+    border-color: var(--color-accent-edge);
     transform: translateY(-2px);
   }
   .poster a {
@@ -164,12 +164,12 @@
     margin-bottom: 0;
   }
   .gallery-footer strong {
-    color: #4ecdc4;
+    color: var(--color-state);
     font-weight: normal;
     letter-spacing: 1px;
   }
   .gallery-footer :global(a) {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: underline;
   }
   .gallery-footer :global(a:hover) {

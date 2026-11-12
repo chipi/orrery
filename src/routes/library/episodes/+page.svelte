@@ -266,7 +266,7 @@
     background: #c9aa6f;
   }
   .persona-dot.persona-guide {
-    background: #6fb6c9;
+    background: var(--color-accent);
   }
   .persona-dot.persona-enthusiast {
     background: #c96fa0;

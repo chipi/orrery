@@ -157,6 +157,6 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: #7fb0e0;
+    color: var(--color-state);
   }
 </style>

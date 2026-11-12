@@ -198,10 +198,8 @@ Cards use CSS Grid with `auto-fill` and `minmax(280–290px, 1fr)`. Gap is 12–
 | Cards | 8px |
 | Panels | 0 (flush to screen edge) |
 | Stats cells | 4px |
-| Buttons (filter) | 3px |
+| Chip (§5.7) | 4px |
 | Pills (status badges) | 3px |
-| Toggle pill container | 20px |
-| Toggle pill buttons | 16px |
 | Close button | 50% (circle) |
 | Agency logo container | 6–8px |
 
@@ -238,13 +236,7 @@ The wordmark is always `font-family: 'Bebas Neue'; font-size: 26px; letter-spaci
 
 ### 5.2 3D / 2D view toggle
 
-A pill-shaped container holding two buttons. The active button has a blue tint background and glow. The inactive button is transparent. Transitions on both buttons are 0.2s.
-
-```css
-container: border-radius: 20px; padding: 3px; gap: 2px;
-active:    background: rgba(68,102,255,0.35); box-shadow: 0 0 12px rgba(68,102,255,0.3);
-inactive:  background: transparent;
-```
+A single toggle chip (`<Chip kind="toggle">`, §5.7), whose label the page supplies, with `aria-pressed` true while 2D is showing. It has no container: the chip is outline at rest and takes the on look (soft accent fill, accent edge, white text; the world tint on `/moon`, `/mars`, `/venus`) in 2D.
 
 The toggle controls `opacity` and `pointer-events` on two sibling elements — the canvas (2D) and the renderer div (3D). Transition is 0.4–0.5s ease on opacity.
 
@@ -317,16 +309,19 @@ One control for every toggle, filter, choice and HUD action, drawn by `src/lib/s
 min-height: 30px;               /* fine pointer; 44px on (pointer: coarse) */
 padding: 0 12px;
 font: 700 11px Space Mono; letter-spacing: 1px; text-transform: uppercase;
-border: 1px solid rgba(255,255,255,0.18);   /* outline at rest */
+border: 1px solid var(--color-chip-edge);     /* outline at rest, rgba(255,255,255,0.18) */
 border-radius: 4px;
-color: rgba(255,255,255,0.72);
+color: var(--color-chip-text);              /* rgba(255,255,255,0.72) */
+background: var(--color-chip-glass);         /* rgba(8,10,22,0.65) */
 ```
 
-Hover: `border-color: var(--color-state)`, white text. Focus-visible: `2px solid var(--color-focus)`, offset 2px. On (`aria-pressed="true"`, `aria-checked="true"`): fill `color-mix(in srgb, var(--color-accent) 22%, glass)`, edge `var(--color-accent)`, white text. The Worlds (`/moon`, `/mars`, `/venus`) set `--chip-tint` to their world colour, used for the edge and fill of an on chip and the hover edge of every chip; Earth keeps the accent. `--chip-tone` is a per-chip data colour (fleet status, epoch band, nation, live): the leading dot and the on edge. Disabled: 42 % opacity. Kinds: `toggle` (`aria-pressed`), `choice` (`role="radio"` in a `ChipGroup` radiogroup with arrow keys), `action`, `link`. A count badge follows the label. Small controls that are not chips (Why?, provenance, timeline names) get a 24 px hit area with the `.ui-hit` class.
+The rest values are the tokens `--color-chip-glass`, `--color-chip-edge` and `--color-chip-text` (`src/lib/styles/tokens.css`); a literal never replaces them.
+
+Hover: `border-color: var(--color-state)`, white text. Focus-visible: `2px solid var(--color-focus)`, offset 2px. On (`aria-pressed="true"`, `aria-checked="true"`): fill `color-mix(in srgb, var(--color-accent) 22%, glass)`, edge `var(--color-accent)`, white text. The Worlds (`/moon`, `/mars`, `/venus`) set `--chip-tint` to their world colour, used for the edge and fill of an on chip and the hover edge of every chip; Earth keeps the accent. `--chip-tone` is a per-chip data colour (fleet status, epoch band, nation, live): the leading dot and the on edge. Disabled: 42 % opacity. Kinds: `toggle` (`aria-pressed`), `choice` (`role="radio"` in a `ChipGroup` radiogroup with arrow keys), `action`, `link`. A count badge follows the label. Small controls that are not chips (Why?, provenance, timeline names) get a 24 px hit area with the `.ui-hit` class. A non-interactive label with the on look (the core tier of a link list) is `.ui-chip-label`, a span, never a control.
 
 ### 5.7a FILTERS strip
 
-A compact chip on the left above the grid: `FILTERS  12 / 150  ▾`. The count sits right after the label (accent state colour when a filter is on, 60 % white for the total alone), the chevron last. One label key (`filters_eyebrow`), uppercase by CSS. CLEAR FILTERS is a quiet chip with a `×` beside it while a filter is on. Used by `/missions`, `/fleet` and `/missions/launches`.
+A compact chip on the left above the grid: `FILTERS  12 / 150  ▾`. The count sits right after the label (accent state colour when a filter is on, 60 % white for the total alone), the chevron last. One label key (`filters_eyebrow`), uppercase by CSS. The visible count is `aria-hidden`; a visually hidden sibling reads "12 of 150" (`filters_count_of`, word order per language). CLEAR FILTERS is a quiet chip with a `×` beside it while a filter is on. Used by `/missions`, `/fleet` and `/missions/launches`.
 
 ### 5.8 Section label (grid divider)
 

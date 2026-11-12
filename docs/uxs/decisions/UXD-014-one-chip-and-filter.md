@@ -8,7 +8,7 @@
   E8, ISS1
 - **Answers**: C1, C3, G3, PG1, MI1, FL1, E8, ISS1; slice A4
 - **Changes**: `src/lib/styles/chip.css` (new, loaded by `app.css`), `src/lib/components/Chip.svelte`,
-  `ChipGroup.svelte`, `ResetViewButton.svelte`; [IA §controls](../IA.md); Design System §5.7 and §5.7a
+  `ChipGroup.svelte`, `ResetViewButton.svelte`, `.ui-chip-label` in chip.css; [IA §controls](../IA.md); Design System §5.7 and §5.7a
   (`docs/concept/05_Design_System.md`); AGENTS.md "Design system" block; `docs/adr/TA.md`;
   `src/lib/components/README.md`; `src/lib/surface-scene/README.md`
 
@@ -56,5 +56,15 @@ overridden.
 
 ## Verification
 
-`tests/e2e/chip.spec.ts` on three projects; `src/lib/components/Chip.test.ts`; the A4 check prints
-`A4-CHECK violations: 0`.
+`tests/e2e/chip.spec.ts` on three projects is the gate: size, corners, active look, FILTERS count,
+hit areas, and a sweep in which every visible button on the crawled routes is a `.ui-chip` or a
+control the sweep names by class. `src/lib/components/Chip.test.ts` covers the component. The A4
+check (the slice check kept in the brief, `docs/wip/2026-11-12-slice-A4-brief.md` §10, which
+prints `A4-CHECK violations: 0`) is re-run by the independent checker; it is not a script in the
+repo.
+
+## Deviation from the brief
+
+`ResetViewButton` is an outlined action chip, not `quiet` as the brief (§4, Replacement map)
+proposed. Consistency: the Reset view chip sits beside SPIN and the 2D toggle, which are outlined at
+rest, and a borderless Reset would be the odd one in that row.

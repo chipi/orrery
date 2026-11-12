@@ -155,6 +155,7 @@
   import * as m from '$lib/paraglide/messages';
   import Chip from '$lib/components/Chip.svelte';
   import ChipGroup from '$lib/components/ChipGroup.svelte';
+  import { closesPopover } from '$lib/components/chip-nav';
   import { hudLabel } from '$lib/orbital/hud-labels';
   import { destinationLabel } from '$lib/destination-label';
   import { qualityTierLabel } from '$lib/quality/quality-tier-label';
@@ -4322,9 +4323,11 @@
               <Chip
                 kind="choice"
                 active={activeSpeed === sp}
-                onclick={() => {
+                onclick={(e: MouseEvent) => {
                   masterSetSpeed(sp);
-                  speedPopoverOpen = false;
+                  const slot = (e.currentTarget as HTMLElement).closest('.speed-slot');
+                  if (closesPopover(e, () => slot?.querySelector<HTMLElement>(':scope > .ui-chip')))
+                    speedPopoverOpen = false;
                 }}>{sp}×</Chip
               >
             {/each}

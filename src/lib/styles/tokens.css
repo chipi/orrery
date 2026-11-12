@@ -37,6 +37,11 @@
   --color-hud-bg: rgba(5, 5, 20, 0.88);
   --color-nav-bg: rgba(4, 4, 12, 0.88); /* prototype value (IA says 0.92 — drift) */
 
+  /* The one chip at rest (UXD-014): glass fill, 18 % edge, 72 % text */
+  --color-chip-glass: rgba(8, 10, 22, 0.65);
+  --color-chip-edge: rgba(255, 255, 255, 0.18);
+  --color-chip-text: rgba(255, 255, 255, 0.72);
+
   /* Link tier colours (intro uses --color-state) */
   --color-tier-core: var(--color-accent);
   --color-tier-deep: var(--color-gold);

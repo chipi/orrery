@@ -132,7 +132,7 @@
   }
 
   /* A window with a mouse that is narrower than the bottom row (PLANET SCALES card,
-     time dock to 542 px, footer More button): the centred tab would sit under the
+     time dock to ~590 px since the A4 chips, footer More button): the centred tab would sit under the
      dock, so it parks left of the footer's More button instead. */
   @media (max-width: 1450px) and (hover: hover) and (pointer: fine) {
     .entity-index.floating {
@@ -148,10 +148,10 @@
     }
   }
   /* Wide window with a mouse: the footer strip is ~720 px wide at the right, so the
-     centred tab would run into it; it sits just right of the time dock (542 px). */
+     centred tab would run into it; it sits just right of the time dock (~590 px since the A4 chips). */
   @media (min-width: 1451px) and (hover: hover) and (pointer: fine) {
     .entity-index.floating {
-      inset-inline-start: 556px;
+      inset-inline-start: 604px;
       transform: none;
     }
   }

@@ -3,6 +3,7 @@
   import * as m from '$lib/paraglide/messages';
   import Chip from '$lib/components/Chip.svelte';
   import ChipGroup from '$lib/components/ChipGroup.svelte';
+  import { closesPopover } from '$lib/components/chip-nav';
 
   const SIM_SPEEDS = [1, 10, 100] as const; // days per second
 
@@ -143,10 +144,12 @@
             tabstop={simPaused && i === 0}
             aria-label={speedTip}
             title={speedTip}
-            onclick={() => {
+            onclick={(e: MouseEvent) => {
               simSpeed = sp;
               simPaused = false;
-              speedPopoverOpen = false;
+              const slot = (e.currentTarget as HTMLElement).closest('.speed-slot');
+              if (closesPopover(e, () => slot?.querySelector<HTMLElement>(':scope > .ui-chip')))
+                speedPopoverOpen = false;
             }}
             data-testid="explore-speed-{sp}"
             data-audio-stage="explore-speed-{sp}">{sp}×</Chip

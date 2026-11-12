@@ -13,13 +13,11 @@ import { test, expect, type Page } from '@playwright/test';
 
 const ROW = '[data-testid^="paths-legend-row-"]';
 
-// #410 seats the 5 interstellar craft (voyager/pioneer/new-horizons) at the head
-// of the legend; a craft row opens the MessagePanel — its own model (grabFocus
-// stays on the row, but there is no `.is-selected` mission commit). These tests
-// exercise the MISSION selection contract (is-selected / MissionPanel / Esc-clear),
-// so they target a stable *mission* row — venera-13 is the first non-interstellar
-// legend entry — instead of rows.first(), which is now a craft. (The craft
-// focus-preservation is guarded separately by the "no focus steal" test below.)
+// #410 seats the 5 interstellar craft (voyager/pioneer/new-horizons) at the head of the legend.
+// Since UXD-019 every row, a craft's too, commits and opens the MissionPanel (a craft's message
+// is a section of it). These tests exercise that selection contract (is-selected / MissionPanel /
+// Esc-clear) on venera-13, the first non-interstellar legend entry, and the "no focus steal"
+// test below runs it on rows.first(), a craft.
 const missionRow = (page: Page) => page.getByTestId('paths-legend-row-venera-13');
 
 const focusedRowTestId = (page: Page) =>

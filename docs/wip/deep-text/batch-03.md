@@ -22,7 +22,7 @@ Target: `universe/deep-sky/m81.json`
 ### m82 (starburst galaxy, Ursa Major)
 Target: `universe/deep-sky/m82.json`
 - fact: The Cigar Galaxy, a starburst galaxy in Ursa Major about 12 million light-years away, next to M81.
-- bio: Bode found it in 1774 together with M81. Stars are forming in its centre about ten times faster than in the whole Milky Way, a burst NASA links to encounters with M81. Radiation and supernova explosions from the young stars drive a flow of gas out of the disc, a galactic wind. NASA expects the burst to fade within a few tens of millions of years, once the gas is used up. Chandra has seen a variable X-ray source that may be an intermediate-mass black hole.
+- bio: Bode found it in 1774 together with M81. Stars are forming in its centre about ten times faster than in the whole Milky Way, a burst NASA links to encounters with M81. Radiation and supernova explosions from the young stars drive a flow of gas out of the disc, a galactic wind. NASA expects the burst to fade, probably within a few tens of millions of years. Chandra has seen a variable X-ray source that may be an intermediate-mass black hole.
 - Sources: S-NASA-M82 (all but the last sentence); S-WP-M82 (Karachentsev 2006 distance 11.4-12.4 Mly; Barker 2008 wind; Patruno 2006: 200 to 5,000 solar masses, a candidate). Papers not fetched.
 
 ### m83 (barred spiral galaxy, Hydra)
@@ -34,50 +34,50 @@ Target: `universe/deep-sky/m83.json`
 ### m84 (elliptical galaxy, Virgo)
 Target: `universe/deep-sky/m84.json`
 - fact: An elliptical galaxy in the Virgo Cluster, about 55 million light-years away, with a supermassive black hole at its centre.
-- bio: Charles Messier found it in 1781, one of nine objects (M84 to M92) he added to his catalogue in one night. Hubble spectra show gas circling the centre at about 1.4 million kilometres an hour, which points to a black hole; Bower and colleagues put it near 1.5 billion solar masses in 1998. Radio jets run out of the core. Dust lanes cross the nucleus, and supernovae seen there include ones in 1957 and 1991.
-- Sources: S-NASA-M84 (Messier 1781, 880,000 mph gas, warped dust lanes, supernovae 1957 and 1991; night of nine objects from S-NASA-M91); S-WP-M84 (Bower et al. 1998, 1.5 billion solar masses; jets). Paper not fetched.
+- bio: Charles Messier found it in 1781, one of nine objects (M84 to M92) he added to his catalogue in one night. Hubble spectra show gas circling the centre at about 1.4 million kilometres an hour, which points to a black hole; estimates of its mass range from about 0.9 to 1.5 billion Suns. Radio jets run out of the core. Dust lanes cross the nucleus, and supernovae seen there include ones in 1957 and 1991.
+- Sources: S-NASA-M84 (Messier 1781, 880,000 mph gas, warped dust lanes, supernovae 1957 and 1991; night of nine objects from S-NASA-M91); S-WP-M84 (jets); Walsh et al. 2010 (https://arxiv.org/pdf/1008.0005); Maciejewski & Binney 2001.
 
 ### m85 (lenticular galaxy, Coma Berenices)
 Target: `universe/deep-sky/m85.json`
-- fact: A lenticular galaxy in Coma Berenices, on the edge of the Virgo Cluster, about 60 million light-years away.
+- fact: A lenticular galaxy in Coma Berenices, on the edge of the Virgo Cluster, about 55 million light-years away.
 - bio: Pierre Méchain discovered it in 1781. Astronomers class it as lenticular, a type between spiral and elliptical, though some authors call it elliptical. Shells and ripples in its outer parts are attributed to a merger four to seven billion years ago, and its centre holds younger stars than the rest. It is interacting with the spiral NGC 4394 and the small elliptical MCG 3-32-38. Hubble's image combines infrared, visible and ultraviolet light.
 - Sources: S-NASA-M85 (Méchain 1781, 60 Mly, interaction, merger 4-7 Gyr ago, young centre, Hubble bands); S-WP-M85 (shells and ripples, "outskirts of the Virgo Cluster"). NASA's 2006 supernova line left out (not confirmed in S-WP-M85).
 
 ### m86 (lenticular galaxy, Virgo)
 Target: `universe/deep-sky/m86.json`
-- fact: A lenticular or elliptical galaxy in the Virgo Cluster, about 52 million light-years away, moving toward us.
-- bio: Charles Messier found it in 1781. Its light is blueshifted: it approaches the Milky Way at about 244 kilometres a second, a rarity among galaxies, because both are falling toward the centre of the Virgo Cluster. As it moves through the cluster's hot gas, Chandra sees a long trail of X-ray emitting gas stripped from it. Filaments of ionised gas link it to the spiral NGC 4438, which suggests a past encounter. It has about 3,800 globular clusters.
-- Sources: S-NASA-M86 (Messier 1781, 52 Mly, 3,800 clusters); S-WP-M86 (52 +/- 3 Mly; -244 +/- 5 km/s; ram-pressure stripping; filaments to NGC 4438, "may have stripped"). Papers not fetched. NASA's "moving the fastest in our direction" left out (superlative, one source).
+- fact: A lenticular or elliptical galaxy in the Virgo Cluster, about 55 million light-years away, moving toward us.
+- bio: Charles Messier found it in 1781. Its light is blueshifted: it approaches the Milky Way at about 244 kilometres a second, a rarity among galaxies, because both are falling toward the centre of the Virgo Cluster; part of the blueshift is the Milky Way's own motion toward Virgo. As it moves through the cluster's hot gas, Chandra sees a long trail of X-ray emitting gas stripped from it. Filaments of ionised gas link it to the spiral NGC 4438, which suggests a past encounter. It has about 3,800 globular clusters.
+- Sources: S-NASA-M86 (Messier 1781, 3,800 clusters); S-WP-M86 (52 +/- 3 Mly; -244 +/- 5 km/s; ram-pressure stripping; filaments to NGC 4438, "may have stripped"). Papers not fetched.
 
 ### m87 (elliptical galaxy, Virgo)
 Target: `universe/deep-sky/m87.json`
 - fact: A giant elliptical galaxy in the Virgo Cluster, about 54 million light-years away, whose black hole was imaged in 2019.
-- bio: Charles Messier listed it in 1781 as a nebula. In 1918 Heber Curtis noticed a straight ray reaching out from its core, the jet of a black hole. In 2019 the Event Horizon Telescope produced the first image of a black hole's shadow and measured its mass at about 6.5 billion Suns. Surveys estimate roughly 12,000 globular clusters around M87, against 150 to 200 for the Milky Way.
+- bio: Charles Messier listed it in 1781 as a nebula. In 1918 Heber Curtis noticed a straight ray reaching out from its core, the jet of a black hole. In 2019 the Event Horizon Telescope produced the first image of a black hole's shadow and measured its mass at about 6.5 billion Suns. An estimated 12,000 globular clusters surround M87, against 150 to 200 for the Milky Way.
 - Sources: S-NASA-M87 (Messier 1781, 54 Mly, jet); S-WP-M87 (16.4 +/- 0.5 Mpc, 53.5 Mly; EHT 6.5 +/- 0.2 +/- 0.7 billion, April 2019; Curtis 1918; 2006 survey 12,000 +/- 800 clusters). Papers not fetched. "First image" is the EHT collaboration's own description.
 
 ### m88 (spiral galaxy, Coma Berenices)
 Target: `universe/deep-sky/m88.json`
-- fact: A spiral galaxy in Coma Berenices, in the Virgo Cluster, about 50 to 60 million light-years away.
-- bio: Charles Messier found it in 1781, on the same night as M84 to M92. Its spiral arms are regular and tightly wound, and the arms can be followed all the way down to the core. The nucleus is active, with a supermassive black hole at its centre. M88 is on a course toward the centre of the Virgo Cluster and, according to NASA, will pass closest to it in about 200 to 300 million years. It is tilted about 64 degrees to our line of sight.
-- Sources: S-NASA-M88 (Messier 1781, night of nine, 63 Mly, active nucleus, approach in 200-300 Myr); S-WP-M88 ("50 to 60 million", Seyfert 2, arms followed to the core, tilt 64 degrees). NASA's 100 million and Wikipedia's 80 million solar masses disagree, so no mass is given.
+- fact: A spiral galaxy in Coma Berenices, in the Virgo Cluster, about 55 million light-years away.
+- bio: Charles Messier found it in 1781, on the same night as M84 to M92. Its spiral arms are regular and tightly wound, and the arms can be followed all the way down to the core. The nucleus is active, with a supermassive black hole at its centre. M88 will make its closest approach to M87 in about 200 to 300 million years. It is tilted about 64 degrees to our line of sight.
+- Sources: S-NASA-M88 (Messier 1781, night of nine, 63 Mly, active nucleus); S-WP-M88 ("50 to 60 million", Seyfert 2, arms followed to the core, tilt 64 degrees). NASA's 100 million and Wikipedia's 80 million solar masses disagree, so no mass is given.
 
 ### m89 (elliptical galaxy, Virgo)
 Target: `universe/deep-sky/m89.json`
-- fact: An almost round elliptical galaxy in the Virgo Cluster, about 50 million light-years away, with faint shells and plumes.
+- fact: An almost round elliptical galaxy in the Virgo Cluster, about 55 million light-years away, with faint shells and plumes.
 - bio: Charles Messier found it in 1781. Its outer parts show shells and plumes of stars, traces of past mergers. Chandra images show two ring-like structures of hot gas in its nucleus, which suggest an outburst there one to two million years ago. A supermassive black hole sits at the centre, and a 2006 survey estimated around 2,000 globular clusters. In Hubble's image a separate edge-on spiral galaxy appears below M89's core.
 - Sources: S-NASA-M89 (Messier 1781, 50 Mly, "almost exactly circular", black hole, edge-on spiral in the image); S-WP-M89 (shells and plumes; Chandra rings; 2,000 +/- 700 clusters). NASA's "first galaxy with an extended envelope" and the black-hole masses (NASA 1 billion, Wikipedia 480 million) left out.
 
 ### m90 (spiral galaxy, Virgo)
 Target: `universe/deep-sky/m90.json`
-- fact: A spiral galaxy in the Virgo Cluster, about 59 million light-years away, moving toward us.
+- fact: A spiral galaxy in the Virgo Cluster, about 55 million light-years away, moving toward us.
 - bio: Charles Messier found it in 1781. Its light is blueshifted by about 235 kilometres a second, so M90 is approaching us, one of a handful of Virgo Cluster galaxies that do. As it moves through the cluster's gas, much of its own interstellar gas has been stripped away, so star formation is cut back: it is called an anemic spiral, with smooth arms that lack the knots of active star formation. NASA's Hubble image shows its bright core and dusty disc.
 - Sources: S-NASA-M90 (Messier 1781, 59 Mly, blueshift, gas stripping about 300 Myr ago, core and dusty disc); S-WP-M90 (-235 +/- 4 km/s, "anemic", ram-pressure stripping, blueshifts mostly near the Virgo Cluster). Papers not fetched.
 
 ### m91 (barred spiral galaxy, Coma Berenices)
 Target: `universe/deep-sky/m91.json`
-- fact: A barred spiral galaxy in the Virgo Cluster, about 60 million light-years away, that was lost for nearly two centuries.
-- bio: Charles Messier listed it in 1781 as the last of nine objects (M84 to M92) from one night, but gave its position relative to the wrong object, so astronomers could not find it again. In 1969 the amateur William C. Williams matched it with NGC 4548. It has a conspicuous bar and little star formation for a spiral, which makes it an anemic galaxy. NASA lists it among the fainter objects of Messier's catalogue.
-- Sources: S-NASA-M91 (Messier 1781, last of nine, 60 Mly, anemic, faint); S-WP-M91 (position error, Williams 1969, 63 Mly). Wikipedia says the error was made "from M58 when it should have referenced M89"; NASA does not mention it.
+- fact: A barred spiral galaxy in the Virgo Cluster, about 55 million light-years away, that was lost for nearly two centuries.
+- bio: Charles Messier listed it in 1781, one of nine objects (M84 to M92) from one night, but gave its position relative to the wrong object, so astronomers could not find it again. In 1969 the amateur William C. Williams matched it with NGC 4548. It has a conspicuous bar and little star formation for a spiral, which makes it an anemic galaxy. NASA lists it among the fainter objects of Messier's catalogue.
+- Sources: S-NASA-M91 (Messier 1781, one of nine from one night, 60 Mly, anemic, faint); S-WP-M91 (position error, Williams 1969, 63 Mly).
 
 ### m92 (globular cluster, Hercules)
 Target: `universe/deep-sky/m92.json`
@@ -88,14 +88,14 @@ Target: `universe/deep-sky/m92.json`
 ### m93 (open cluster, Puppis)
 Target: `universe/deep-sky/m93.json`
 - fact: An open cluster in Puppis, about 3,300 light-years away and roughly 400 to 600 million years old.
-- bio: Charles Messier discovered it in 1781, and Caroline Herschel found it again independently in 1783. The cluster is about 20 light-years across. Some observers have likened its outline to a starfish, others to an arrowhead. Astronomers have found dozens of variable stars in it, including delta Scuti and gamma Doradus stars, whose pulsations reveal their interiors. It is easy to see in binoculars from southern and tropical latitudes.
-- Sources: S-CG20 (NGC 2447: 1018 pc, 3,320 ly; logt 8.76, 575 Myr); S-WP-M93 (Messier 1781, Herschel 1783, radius 10 ly, age 387 Myr, shapes, 54 variables). Binoculars sentence is a general statement (Wikipedia magnitude 6.0); reviewer to confirm or drop.
+- bio: Charles Messier discovered it in 1781, and Caroline Herschel found it again independently in 1783. The cluster is about 20 light-years across. Some observers have likened its outline to a starfish, others to an arrowhead. Astronomers have found dozens of variable stars in it, including delta Scuti and gamma Doradus stars, whose pulsations reveal their interiors. It is easy to see in binoculars.
+- Sources: S-CG20 (NGC 2447: 1018 pc, 3,320 ly; logt 8.76, 575 Myr); S-WP-M93 (Messier 1781, Herschel 1783, radius 10 ly, age 387 Myr, shapes, 54 variables).
 
 ### m94 (spiral galaxy, Canes Venatici)
 Target: `universe/deep-sky/m94.json`
 - fact: A spiral galaxy in Canes Venatici, about 16 million light-years away, with a bright ring of star formation around its centre.
-- bio: Pierre Méchain discovered it in 1781, and Charles Messier catalogued it two days later. A ring about 5,400 light-years across around its core forms stars at a high rate. Beyond it, faint outer arms stretch far out, and NASA says they have tripled the galaxy's known diameter. A 2008 study argued that M94 has little or no dark matter; that result is unusual and has not been confirmed by other groups.
-- Sources: S-NASA-M94 (Méchain 1781, 16 Mly, starburst ring, faint arms, dark-matter remark); S-WP-M94 (Messier two days later; ring 5,400 ly; 2008 study "somewhat controversial"). Outer-ring structure, 2009 study: Wikipedia only.
+- bio: Pierre Méchain discovered it in 1781, and Charles Messier catalogued it two days later. A ring about 5,400 light-years across around its core forms stars at a high rate. Beyond it, faint outer arms stretch far out, and NASA says they have tripled the galaxy's known diameter. A 2008 study argued that M94 has little or no dark matter, a result that remains debated.
+- Sources: S-NASA-M94 (Méchain 1781, 16 Mly, starburst ring, faint arms); S-WP-M94 (Messier two days later; ring 5,400 ly; 2008 study "somewhat controversial"). Outer-ring structure, 2009 study: Wikipedia only.
 
 ### m95 (barred spiral galaxy, Leo)
 Target: `universe/deep-sky/m95.json`
@@ -105,9 +105,9 @@ Target: `universe/deep-sky/m95.json`
 
 ### m96 (spiral galaxy, Leo)
 Target: `universe/deep-sky/m96.json`
-- fact: A spiral galaxy in Leo, about 31 to 35 million light-years away, the brightest member of the M96 Group.
-- bio: Pierre Méchain discovered it in 1781, and Charles Messier confirmed it four days later. M96 is about as large and massive as the Milky Way, but lopsided: its dust and gas are spread unevenly, and its core sits off the midpoint. NASA and Wikipedia both attribute this to the pull of its neighbours in the group. A ring of pink hydrogen gas surrounds young massive stars in its outer parts. A supernova, SN 1998bu, exploded in it in 1998.
-- Sources: S-NASA-M96 (Méchain 1781, Messier four days later, 35 Mly, offset core, ring of pink hydrogen, group); S-WP-M96 (31 Mly, 78,000 ly, SN 1998bu). Distance range from the two sources.
+- fact: A spiral galaxy in Leo, about 31 to 35 million light-years away, one of the brightest members of the M96 Group.
+- bio: Pierre Méchain discovered it in 1781, and Charles Messier confirmed it four days later. M96 is about as large and massive as the Milky Way, but lopsided: its dust and gas are spread unevenly, and its core sits off the midpoint. NASA says the pull of its neighbours in the group is thought to have shaped it. A ring of pink hydrogen gas surrounds young massive stars in its outer parts. A supernova, SN 1998bu, exploded in it in 1998.
+- Sources: S-NASA-M96 (Méchain 1781, Messier four days later, 35 Mly, offset core, ring of pink hydrogen, group); S-WP-M96 (31 Mly, 78,000 ly, SN 1998bu).
 
 ### m97 (planetary nebula, Ursa Major)
 Target: `universe/deep-sky/m97.json`
@@ -124,14 +124,14 @@ Target: `universe/deep-sky/m98.json`
 ### m99 (spiral galaxy, Coma Berenices)
 Target: `universe/deep-sky/m99.json`
 - fact: The Coma Pinwheel, a grand-design spiral in the Virgo Cluster, about 50 to 55 million light-years away.
-- bio: Pierre Méchain discovered it in 1781, and Charles Messier catalogued it soon after. Its arms are long and clearly defined, much like the Milky Way's in a face-on view. In 2010 a transient called PTF 10fqs flared there, brighter than a nova but fainter than a supernova; it is classed as a luminous red nova, a kind of eruption linked to stellar mergers. A hydrogen bridge to VIRGOHI21 was once read as a dark galaxy, but it may be debris from an encounter with NGC 4262.
-- Sources: S-NASA-M99 (Méchain 1781, 55 Mly, grand-design, PTF 10fqs in 2010, "defied classification"); S-WP-M99 (49 Mly; luminous red nova; VIRGOHI21 may be tidal debris from NGC 4262 280 Myr ago). The "linked to stellar mergers" clause is the writer's knowledge of Kasliwal et al. 2011 and was NOT fetched: reviewer to check or drop. NASA's planet-collision idea left out.
+- bio: Pierre Méchain discovered it in 1781, and Charles Messier catalogued it soon after. In 2010 a transient called PTF 10fqs flared there, brighter than a nova but fainter than a supernova; it is classed as a luminous red nova, a kind of eruption whose origin is debated; a stellar merger is a leading explanation. Its arms are lopsided: one is more extended and less tightly wound. A hydrogen bridge to VIRGOHI21 was once read as a dark galaxy, but it may be debris from an encounter with NGC 4262.
+- Sources: S-NASA-M99 (Méchain 1781, 55 Mly, grand-design, PTF 10fqs in 2010); S-WP-M99 (49 Mly; luminous red nova; VIRGOHI21 may be tidal debris from NGC 4262 280 Myr ago; lopsided arms).
 
 ### m100 (spiral galaxy, Coma Berenices)
 Target: `universe/deep-sky/m100.json`
-- fact: A grand-design spiral in the Virgo Cluster, about 55 million light-years away, whose Cepheid stars helped calibrate distances.
-- bio: Pierre Méchain discovered it in 1781. Hubble's Key Project resolved Cepheid variables in its arms; their pulsation periods reveal their true brightness, so they act as distance markers, and M100 put the Virgo Cluster on the cosmic distance ladder. Its centre is a starburst inside a small bar, where stars have been forming for at least 500 million years. Seven supernovae have been recorded in M100 since 1901.
-- Sources: S-NASA-M100 (Méchain 1781, 56 Mly, Cepheids as "reliable cosmic distance mileposts"); S-WP-M100 (55 Mly from Hubble Key Project Cepheids; starburst for at least 500 Myr; seven supernovae, SN 1901B to SN 2020oi). NASA's "youngest black hole ever observed" left out.
+- fact: A grand-design spiral in the Virgo Cluster, about 55 million light-years away, whose Cepheid stars gave Hubble a distance to the Virgo Cluster.
+- bio: Pierre Méchain discovered it in 1781. Hubble's Key Project resolved Cepheid variables in its arms; their pulsation periods reveal their true brightness, so they act as distance markers, and the result gave a distance of about 55 million light-years to a galaxy in the Virgo Cluster. Its centre is a starburst inside a small bar, where stars have been forming for at least 500 million years. Seven supernovae have been recorded in M100 since 1901.
+- Sources: S-NASA-M100 (Méchain 1781, 56 Mly); S-WP-M100 (55 Mly from Hubble Key Project Cepheids; starburst for at least 500 Myr; seven supernovae, SN 1901B to SN 2020oi).
 
 ### m103 (open cluster, Cassiopeia)
 Target: `universe/deep-sky/m103.json`
@@ -154,20 +154,20 @@ Target: `universe/deep-sky/m106.json`
 ### m107 (globular cluster, Ophiuchus)
 Target: `universe/deep-sky/m107.json`
 - fact: A loosely packed globular cluster in Ophiuchus, about 18,000 light-years away.
-- bio: Pierre Méchain found it in 1782, and William Herschel independently in 1793. Charles Messier never listed it; Helen Sawyer Hogg added it to the catalogue in 1947. Baumgardt's catalogue gives it about 60,000 solar masses, well below the big globulars, and a loose structure that lets its stars show up one by one. At least 22 RR Lyrae variable stars are known in it, which astronomers use as distance markers.
-- Sources: S-BAU (5.63 +/- 0.08 kpc, 18,400 ly; mass 6.12 x 10^4); S-NASA-M107 (Méchain 1782, Herschel 1783 [S-WP: 1793], Hogg 1947, not dense); S-WP-M107 (Herschel 1793, 22 RR Lyrae). NASA says 1783 for Herschel; Wikipedia 1793; text uses Wikipedia. Both "last object" claims (NASA, Wikipedia) left out: M108 to M110 were added later.
+- bio: Pierre Méchain found it in 1782, and William Herschel independently found it later. Charles Messier never listed it; Helen Sawyer Hogg added it to the catalogue in 1947. Baumgardt's catalogue gives it about 60,000 solar masses, well below the big globulars, and a loose structure that lets its stars show up one by one. At least 22 RR Lyrae variable stars are known in it, which astronomers use as distance markers.
+- Sources: S-BAU (5.63 +/- 0.08 kpc, 18,400 ly; mass 6.12 x 10^4); S-NASA-M107 (Méchain 1782, Hogg 1947, not dense); S-WP-M107 (Herschel 1793, 22 RR Lyrae). Both "last object" claims (NASA, Wikipedia) left out: M108 to M110 were added later.
 
 ### m108 (barred spiral galaxy, Ursa Major)
 Target: `universe/deep-sky/m108.json`
 - fact: The Surfboard Galaxy, a barred spiral in Ursa Major seen almost edge-on, about 46 million light-years away.
-- bio: Pierre Méchain found it in 1781. Charles Messier never catalogued it; Owen Gingerich added it to the list in 1953. Young star clusters and gas shells driven by star formation and supernovae appear in Hubble's view. Spitzer data suggest a central black hole of about 24 million Suns, and Chandra found 83 X-ray sources, the brightest suspected to be an intermediate-mass black hole feeding on gas.
-- Sources: S-NASA-M108 (Méchain 1781, Gingerich 1953, 46 Mly, supershells, Chandra source, 24 million); S-WP-M108 (83 X-ray sources; Spitzer 24 million; "Surfboard"). Papers not fetched.
+- bio: Pierre Méchain found it in 1781. Charles Messier never catalogued it; Owen Gingerich added it to the list in the 20th century. Young star clusters and gas shells driven by star formation and supernovae appear in Hubble's view. A supermassive black hole is thought to sit at its centre, and Chandra found 83 X-ray sources, one of them suspected to be an intermediate-mass black hole feeding on gas.
+- Sources: S-NASA-M108 (Méchain 1781 or 1782, 46 Mly, supershells, Chandra source); S-WP-M108 (83 X-ray sources; "Surfboard"). Papers not fetched.
 
 ### m109 (barred spiral galaxy, Ursa Major)
 Target: `universe/deep-sky/m109.json`
-- fact: A barred spiral galaxy in Ursa Major, about 60 million light-years away, the brightest member of its group.
-- bio: Pierre Méchain discovered it in 1781, and it was added to the Messier list in 1953. It has a bright core with a bar and a faint halo, and is dim enough that light-polluted skies hide it. Three small satellite galaxies, UGC 6923, UGC 6940 and UGC 6969, may shape its structure. A Type Ia supernova, SN 1956A, was seen in it in 1956. It leads a group of 50 or more galaxies, the M109 Group.
-- Sources: S-NASA-M109 (Méchain/Messier 1781, 1953, 60 Mly, bar, faint, group of about 80, three satellites); S-WP-M109 (67 +/- 23 Mly; satellites by name; SN 1956A; group "may number over 50"). Distances disagree (NASA 60, Wikipedia 67 +/- 23): text rounds to 60. NASA calls the group "about 80 galaxies", Wikipedia "over 50"; text says "50 or more". Catalogue addition: NASA 1953; Wikipedia words it differently; text follows NASA.
+- fact: A barred spiral galaxy in Ursa Major, roughly 60 to 80 million light-years away, the brightest member of its group.
+- bio: Pierre Méchain discovered it in 1781, and it was added to the Messier list only in the 20th century. It has a bright core with a bar and a faint halo, and is dim enough that light-polluted skies hide it. Three small satellite galaxies, UGC 6923, UGC 6940 and UGC 6969, may shape its structure. A Type Ia supernova, SN 1956A, was seen in it in 1956. It leads a group of 50 or more galaxies, the M109 Group.
+- Sources: S-NASA-M109 (Méchain 1781, 60 Mly, bar, faint, group of about 80, three satellites); S-WP-M109 (67 +/- 23 Mly; satellites by name; SN 1956A; group "may number over 50").
 
 ### m110 (dwarf elliptical galaxy, Andromeda)
 Target: `universe/deep-sky/m110.json`
@@ -178,7 +178,7 @@ Target: `universe/deep-sky/m110.json`
 ### 30-doradus (star-forming region, Dorado)
 Target: `universe/deep-sky/30-doradus.json`
 - fact: The Tarantula Nebula, a vast star-forming region in the Large Magellanic Cloud, about 160,000 light-years away.
-- bio: Nicolas-Louis de Lacaille recorded it from the Cape of Good Hope in the early 1750s as a nebulous patch. Estimates of its width run from about 650 to 1,860 light-years, depending on how its edge is drawn. At its heart lies the star cluster R136, put at about 450,000 solar masses and possibly the seed of a future globular cluster. In 1987 supernova 1987A exploded near its edge, the nearest supernova seen since the telescope was invented.
+- bio: Nicolas-Louis de Lacaille recorded it from the Cape of Good Hope in the early 1750s as a nebulous patch. Estimates of its width run from about 650 to 1,860 light-years, depending on how its edge is drawn. At its heart lies the star cluster R136, put at about 450,000 solar masses and possibly the seed of a future globular cluster. In 1987 supernova 1987A exploded near its edge, the closest seen since Kepler's supernova of 1604.
 - Sources: S-WP-Tarantula (all numbers: 160,000 ly, 200 to 570 pc, 450,000 solar masses "likely", SN 1987A). Papers not fetched. The caption's "most active starburst region known in the neighbourhood" was not repeated (Wikipedia states it, one source). Data: dist_ly 161,000, Wikipedia about 160,000.
 
 ### barnard-33 (dark nebula, Orion)
@@ -189,9 +189,9 @@ Target: `universe/deep-sky/barnard-33.json`
 
 ### carina-nebula (star-forming region, Carina)
 Target: `universe/deep-sky/carina-nebula.json`
-- fact: A vast star-forming nebula in the southern sky, about 7,500 to 8,500 light-years away, home of Eta Carinae.
-- bio: Nicolas-Louis de Lacaille found it in 1752 from the Cape of Good Hope. Its most famous star, Eta Carinae, is estimated at 100 to 150 solar masses and about four million times the Sun's luminosity. The clusters Trumpler 14 and Trumpler 16 power the nebula, and Trumpler 14 is only about half a million years old. At the tip of the Mystic Mountain pillar, young stars fire jets of gas out of the dust.
-- Sources: S-WP-Carina (Lacaille 1752, 8,500 ly, Eta Carinae figures, Trumpler 14 and 16, pillar jets). Distance conflict: Wikipedia 8,500, repo 7,500, a Gaia-era value of about 7,700 (2.35 kpc, Goeppl and Preibisch 2022) is from memory, not fetched. The repo has a second entry for the same nebula, `ngc-3372`.
+- fact: A vast star-forming nebula in the southern sky, about 7,500 light-years away, home of Eta Carinae.
+- bio: Nicolas-Louis de Lacaille found it in 1752 from the Cape of Good Hope. Its most famous star, Eta Carinae, is a pair of massive stars; the larger is about 100 times the Sun's mass and about five million times its luminosity. The clusters Trumpler 14 and Trumpler 16 power the nebula, and Trumpler 14 is only about half a million years old. At the tip of the Mystic Mountain pillar, young stars fire jets of gas out of the dust.
+- Sources: S-WP-Carina (Lacaille 1752, 8,500 ly, Eta Carinae, Trumpler 14 and 16, pillar jets). The repo has a second entry for the same nebula, `ngc-3372`.
 
 ### cas-a (supernova remnant, Cassiopeia)
 Target: `universe/deep-sky/cas-a.json`
@@ -202,20 +202,20 @@ Target: `universe/deep-sky/cas-a.json`
 ### cygnus-loop (supernova remnant, Cygnus)
 Target: `universe/deep-sky/cygnus-loop.json`
 - fact: A huge ring of gas from an ancient supernova in Cygnus, about 2,400 light-years away; the Veil Nebula is its brightest part.
-- bio: The ring spans about 3 degrees of sky, six Full Moons across, and about 120 light-years. Age estimates run from about 10,000 to 20,000 years. The star that exploded had perhaps 12 to 15 times the Sun's mass. Its arcs have their own names: NGC 6960 is the Witch's Broom, and Williamina Fleming found Pickering's Triangle on a photograph in 1904. Only some arcs shine in visible light; radio, infrared and X-ray images show the whole loop.
-- Sources: S-WP-CygnusLoop (Gaia 725 +/- 15 pc; 120 ly; 20,000 years; 12-15 solar masses; names; Fleming 1904; wavelengths). The caption says 10,000 years; Wikipedia 20,000. Text gives the range.
+- bio: The ring spans about 3 degrees of sky, six Full Moons across, and about 120 light-years. A recent Gaia-based study puts its age at about 20,000 years. The star that exploded had perhaps 12 to 15 times the Sun's mass. Its arcs have their own names: NGC 6960 is the Witch's Broom, and Williamina Fleming found Pickering's Triangle on a photograph in 1904. Only some arcs shine in visible light; radio, infrared and X-ray images show the whole loop.
+- Sources: S-WP-CygnusLoop (Gaia 725 +/- 15 pc; 120 ly; 20,000 years; 12-15 solar masses; names; Fleming 1904; wavelengths).
 
 ### eso-350-40 (ring galaxy, Sculptor)
 Target: `universe/deep-sky/eso-350-40.json`
-- fact: The Cartwheel Galaxy, a ring galaxy in Sculptor about 500 million light-years away and some 190,000 light-years across.
+- fact: The Cartwheel Galaxy, a ring galaxy in Sculptor about 500 million light-years away and roughly 150,000 light-years across.
 - bio: Fritz Zwicky identified it in 1941 and called it one of the most complicated structures awaiting an explanation. The Cartwheel was probably an ordinary spiral until a smaller galaxy plunged through its disc roughly 200 to 300 million years ago. A trail of neutral hydrogen gas points to the companion known as G3 as the likely intruder, rather than G1 or G2. The collision compressed gas and set off intense star formation in the outer ring.
 - Sources: S-WP-Cartwheel (500 Mly; 188,200 ly; Zwicky 1941 and quote; 200-300 Myr; G3 "likely" intruder; starburst). Paper not fetched.
 
 ### gum-29 (star-forming region, Carina)
 Target: `universe/deep-sky/gum-29.json`
 - fact: Westerlund 2, a young star cluster in the nebula RCW 49, whose distance has been debated.
-- bio: Bengt Westerlund discovered the cluster in the 1960s. Published distances run from roughly 6,500 to 26,000 light-years; NASA uses about 20,000. The cluster is no more than a couple of million years old. It contains at least a dozen hot early O-type stars, three of them eclipsing binaries, and WR 20a, a pair of Wolf-Rayet stars that orbit each other. The dust-shrouded stellar nursery around it is seen best in infrared light.
-- Sources: S-WP-Westerlund2 (Westerlund 1960s, 1-2 Myr, 20,000 ly, a dozen O stars, WR 20a); S-SRCH (distance range 2 to 8 kpc, about 6,500 to 26,000 ly; Vargas Alvarez et al. 2013: 2.85 +/- 0.43 kpc; arXiv 1302.0863, 1506.08887; not fetched). Data: dist_ly 20,000. No firm Gaia-era distance fetched.
+- bio: Bengt Westerlund discovered the cluster in the 1960s. Published distances run from roughly 9,000 to 26,000 light-years; NASA uses about 20,000, while a spectroscopic and Hubble study found about 13,500. The cluster is no more than a couple of million years old. It contains at least a dozen hot early O-type stars, three of them eclipsing binaries, and WR 20a, a pair of Wolf-Rayet stars that orbit each other. The dust-shrouded stellar nursery around it is seen best in infrared light.
+- Sources: S-WP-Westerlund2 (Westerlund 1960s, 1-2 Myr, 20,000 ly, a dozen O stars, WR 20a); S-SRCH (distance range estimates; not fetched). Data: dist_ly 20,000. No firm Gaia-era distance fetched.
 
 ### hcg-92 (compact galaxy group, Pegasus)
 Target: `universe/deep-sky/hcg-92.json`
@@ -226,20 +226,20 @@ Target: `universe/deep-sky/hcg-92.json`
 ### hen-2-104 (planetary nebula, Centaurus)
 Target: `universe/deep-sky/hen-2-104.json`
 - fact: The Southern Crab Nebula in Centaurus, a bipolar nebula around a pair of stars, about 7,000 light-years away.
-- bio: Karl Henize listed it in his 1967 survey of southern planetary nebulae, which catalogued 459 objects. Despite that label, Wikipedia describes it as a symbiotic system: a red giant and a white dwarf orbiting each other, with gas shed by the red giant and shaped by the companion. The name comes from a likeness to the Crab Nebula in the north. Hubble imaged it in 1999 and again in 2019, when its stair-step structure was clearer.
-- Sources: S-WP-SouthernCrab (7,000 ly; Henize 1967, 459 objects; symbiotic red giant and white dwarf; Hubble 1999 and 2019). Classification is ambiguous in sources (planetary vs symbiotic): flagged. The "gas shed by the red giant and shaped by the companion" clause is the writer's gloss of "symbiotic": reviewer to check or drop.
+- bio: Karl Henize listed it in his 1967 survey of southern planetary nebulae, which catalogued 459 objects. Despite that label, Wikipedia describes it as a symbiotic system: a red giant and a white dwarf orbiting each other, whose gas is thought to be shed by the red giant and shaped by the white dwarf. The name comes from a likeness to the Crab Nebula in the north. Hubble imaged it in 1999 and again in 2019, when its stair-step structure was clearer.
+- Sources: S-WP-SouthernCrab (7,000 ly; Henize 1967, 459 objects; symbiotic red giant and white dwarf; Hubble 1999 and 2019). Classification is ambiguous in sources (planetary vs symbiotic): flagged.
 
 ### ic-342 (spiral galaxy, Camelopardalis)
 Target: `universe/deep-sky/ic-342.json`
 - fact: A large spiral galaxy in Camelopardalis, about 10 to 11 million light-years away, partly hidden by the dust of our own.
-- bio: William Frederick Denning discovered it in 1892. It lies close to the plane of the Milky Way, so dust in our galaxy dims it, which gives it the name Hidden Galaxy. Edwin Hubble first thought it belonged to the Local Group, a view later disproved. It leads the IC 342 / Maffei Group, one of the groups nearest to us, and in 2020 astronomers identified KKH 32 as its first known satellite dwarf galaxy.
-- Sources: S-WP-IC342 (10.7 +/- 0.9 Mly, estimates 7 to 11 Mly; Denning 1892; dust; Hubble's mistaken Local Group idea; group; KKH 32 in 2020). "Leads the group" is a gloss: Wikipedia names it as the group's namesake; reviewer to check.
+- bio: William Frederick Denning discovered it in 1892. It lies close to the plane of the Milky Way, so dust in our galaxy dims it, which gives it the name Hidden Galaxy. Edwin Hubble first thought it belonged to the Local Group, a view later disproved. It is one of the brightest members of the IC 342 / Maffei Group, one of the nearest galaxy groups, and in 2020 the dwarf galaxy KKH 32 was identified as its first known dwarf spheroidal satellite.
+- Sources: S-WP-IC342 (10.7 +/- 0.9 Mly, estimates 7 to 11 Mly; Denning 1892; dust; Hubble's mistaken Local Group idea; group; KKH 32 in 2020).
 
 ### m1 (supernova remnant, Taurus)
 Target: `universe/deep-sky/m1.json`
 - fact: The Crab Nebula, a supernova remnant in Taurus, about 6,500 light-years away, with a pulsar at its heart.
-- bio: John Bevis found it in 1731. Charles Messier saw it later and mistook it for a comet, an episode that, in NASA's telling, led him to begin his catalogue. The nebula is the debris of the star seen by Chinese astronomers in 1054, bright enough to be seen in daylight. It is about six light-years across, and the pulsar at its centre spins about 30 times a second, sweeping twin beams like a lighthouse.
-- Sources: S-NASA-M1 (Bevis 1731, Messier and Halley's Comet, 6,500 ly, 1054, six light-years, 30 times per second). Messier's mistake is NASA's account; the usual retelling says he took it for Halley's Comet, which was due back in 1758.
+- bio: John Bevis found it in 1731. Charles Messier saw it later and mistook it for a comet, an episode that, in NASA's telling, led him to begin his catalogue. The nebula is the debris of the star seen by Chinese astronomers in 1054, bright enough to be seen in daylight. It is about 11 light-years across, and the pulsar at its centre spins about 30 times a second, sweeping twin beams like a lighthouse.
+- Sources: S-NASA-M1 (Bevis 1731, Messier and Halley's Comet, 6,500 ly, 1054, 30 times per second); Wikipedia Crab Nebula (3.4 pc).
 
 ### m8 (emission nebula, Sagittarius)
 Target: `universe/deep-sky/m8.json`
@@ -249,7 +249,7 @@ Target: `universe/deep-sky/m8.json`
 
 ### m16 (emission nebula and open cluster, Serpens)
 Target: `universe/deep-sky/m16.json`
-- fact: The Eagle Nebula, a star-forming region in Serpens, about 5,700 to 7,000 light-years away.
+- fact: The Eagle Nebula, a star-forming region in Serpens, about 5,600 to 5,700 light-years away.
 - bio: Jean-Philippe Loys de Chéseaux discovered it in 1745. M16 is really two objects: the nebula IC 4703 and the open cluster NGC 6611 inside it. The cluster is about two million years old, and Gaia puts it near 5,700 light-years. The nebula spans about 70 by 55 light-years, and NASA notes that the pillars, 4 to 5 light-years tall, are a small part of it. Ultraviolet light from the cluster's stars erodes them.
 - Sources: S-NASA-M16 (Chéseaux 1745, two objects, 7,000 ly, 70 x 55 ly, pillars 4-5 ly, erosion); S-SRCH (Kuhn et al. 2019, Gaia DR2: 1,740 +/- 130 pc, 5,700 ly; cluster about 2 Myr). Papers not fetched. Data: dist_ly 6,500.
 
@@ -261,38 +261,38 @@ Target: `universe/deep-sky/m31.json`
 
 ### m42 (emission nebula, Orion)
 Target: `universe/deep-sky/m42.json`
-- fact: The Orion Nebula, the closest large star-forming region, about 1,350 light-years away.
+- fact: The Orion Nebula, the nearest region of massive-star formation, about 1,350 light-years away.
 - bio: Many cultures have known it; Charles Messier catalogued it in the 18th century. Four massive young stars in a trapezoid, the Trapezium, light the nebula, and their ultraviolet radiation carves a cavity and disrupts the growth of hundreds of smaller stars. Hubble images show dark discs around newborn stars, seeds of possible planetary systems, and brown dwarfs. Its largest Hubble mosaic used 520 exposures and more than a billion pixels.
-- Sources: S-NASA-M42 (all; "the closest large star-forming region" is NASA's wording). Data: dist_ly 1,350 (Gaia-era); NASA 1,500. Distance in text follows the repo, which matches batch 2's M43 and M78 note.
+- Sources: S-NASA-M42. Data: dist_ly 1,350 (Gaia-era); NASA 1,500. Distance in text follows the repo, which matches batch 2's M43 and M78 note.
 
 ### m51 (spiral galaxy, Canes Venatici)
 Target: `universe/deep-sky/m51.json`
-- fact: The Whirlpool Galaxy, a face-on spiral in Canes Venatici, about 28 to 31 million light-years away.
+- fact: The Whirlpool Galaxy, the first nebula seen to have a spiral form, about 28 to 31 million light-years away.
 - bio: Charles Messier found it in 1773. In 1845 William Parsons, Earl of Rosse, saw its spiral form through his large telescope in Ireland and sketched it, the first galaxy shown to be a spiral. A smaller companion, NGC 5195, sits at the end of one arm. NASA says its tidal pull has acted for hundreds of millions of years and may trigger star formation. Tip-of-the-red-giant-branch work puts M51 near 28 million light-years.
 - Sources: S-NASA-M51 (Messier 1773, 31 Mly, NGC 5195, tidal forces); S-SRCH (McQuinn et al. 2016: 8.58 +/- 0.10 Mpc, about 28 Mly; Rosse 1845, "first object identified as a spiral"; arXiv 1606.04120; Frontiers, Armagh pages; not fetched).
 
 ### m57 (planetary nebula, Lyra)
 Target: `universe/deep-sky/m57.json`
 - fact: The Ring Nebula, a planetary nebula in Lyra, about 2,600 light-years away.
-- bio: Antoine Darquier de Pellepoix discovered it in 1779, and Charles Messier followed. The Gaia parallax of the white dwarf at its centre gives about 790 parsecs. Hubble showed that the blue gas in the middle is a football-shaped structure seen end-on, piercing the red doughnut of material around it. In the ring itself, dark knots of dense gas that stellar winds have not yet blown away look like bicycle spokes.
+- bio: Antoine Darquier de Pellepoix and Charles Messier found it independently in 1779. The Gaia parallax of the white dwarf at its centre gives about 790 parsecs. Hubble showed that the blue gas in the middle is a football-shaped structure seen end-on, piercing the red doughnut of material around it. In the ring itself, dark knots of dense gas that stellar winds have not yet blown away look like bicycle spokes.
 - Sources: S-NASA-M57 (Darquier 1779, football-shaped structure, knots; NASA distance 2,000 ly); S-SRCH (Gaia parallax 1.2696 +/- 0.0438 mas, 790 +/- 30 pc, about 2,570 ly; from the Wikipedia Ring Nebula page via a search summary). Data: dist_ly 2,600 matches Gaia.
 
 ### m74 (spiral galaxy, Pisces)
 Target: `universe/deep-sky/m74.json`
 - fact: The Phantom Galaxy, a face-on spiral in Pisces about 32 million light-years away.
-- bio: Pierre Méchain discovered it in 1780. M74 is a grand-design spiral: symmetrical arms reach out from its nucleus, traced by winding dust lanes. Seen face-on, its whole pattern can be followed, with young blue star clusters strung along the arms and pink glowing hydrogen where stars are being born. Its light is spread so thinly across the sky that NASA counts it among the harder Messier objects to find, despite its size.
-- Sources: S-NASA-M74 (Méchain 1780, 32 Mly, grand-design, clusters and H II regions, "among the most difficult Messier objects"). Only NASA read; no second source for the distance (not checked against a TRGB or Cepheid paper). "Despite its size" is a gloss: reviewer to check or drop.
+- bio: Pierre Méchain discovered it in 1780. M74 is a grand-design spiral: symmetrical arms reach out from its nucleus, traced by winding dust lanes. Seen face-on, its whole pattern can be followed, with young blue star clusters strung along the arms and pink glowing hydrogen where stars are being born. Its light is spread so thinly across the sky that NASA counts it among the harder Messier objects to find.
+- Sources: S-NASA-M74 (Méchain 1780, 32 Mly, grand-design, clusters and H II regions, "among the most difficult Messier objects"). Only NASA read; no second source for the distance (not checked against a TRGB or Cepheid paper).
 
 ### m101 (spiral galaxy, Ursa Major)
 Target: `universe/deep-sky/m101.json`
 - fact: The Pinwheel Galaxy, a large face-on spiral in Ursa Major, about 21 million light-years away.
-- bio: Pierre Méchain discovered it in 1781. NASA gives its disc as 170,000 light-years across, nearly twice the width of the Milky Way, and estimates at least a trillion stars. Distance measurements from Cepheid stars and the tip of the red giant branch converge near 21 million light-years, not NASA's 25 million. Supernova SN 2011fe, a Type Ia, went off in it in 2011 and is among the nearest of its kind. Hubble's 2006 view used 51 exposures.
-- Sources: S-NASA-M101 (Méchain 1781, 170,000 ly, trillion stars, 51 exposures, 25 Mly); S-SRCH (6.4 Mpc, 21 Mly; TRGB and Cepheid distances; SN 2011fe, "one of the nearest among known Type Ia hosts"; arXiv 1210.6040, 1908.06120, 1112.0439; not fetched). NASA's disc size and star count are NASA-only, attributed.
+- bio: Pierre Méchain discovered it in 1781. NASA gives its bright disc as about 170,000 light-years across, wider than the Milky Way's. Distance measurements from Cepheid stars and the tip of the red giant branch converge near 21 million light-years, not NASA's 25 million. Supernova SN 2011fe, a Type Ia, went off in it in 2011 and is among the nearest of its kind. Hubble's 2006 view used 51 exposures.
+- Sources: S-NASA-M101 (Méchain 1781, 170,000 ly, 51 exposures); S-SRCH (6.4 Mpc, 21 Mly; TRGB and Cepheid distances; SN 2011fe, "one of the nearest among known Type Ia hosts"; arXiv 1210.6040, 1908.06120, 1112.0439; not fetched).
 
 ### m104 (spiral galaxy, Virgo)
 Target: `universe/deep-sky/m104.json`
 - fact: The Sombrero Galaxy, a spiral galaxy in Virgo seen almost edge-on, about 28 to 31 million light-years away.
-- bio: Pierre Méchain discovered it in 1781. NASA counts about 2,000 globular clusters around it, roughly ten times as many as the Milky Way has, with ages of 10 to 13 billion years. A black hole is thought to sit in its bright white core, where X-rays show material falling in. NASA puts its mass at about 800 billion Suns. A thick dust ring around the core is where stars form, and a wide halo of stars surrounds it.
+- bio: Pierre Méchain discovered it in 1781. NASA counts about 2,000 globular clusters around it, roughly ten times as many as the Milky Way has, with ages of 10 to 13 billion years. A black hole is thought to sit in its bright white core, where X-rays show material falling in. NASA gives the whole galaxy a mass of about 800 billion Suns. A thick dust ring around the core is where stars form, and a wide halo of stars surrounds it.
 - Sources: S-NASA-M104 (Méchain 1781, 28 Mly, 2,000 clusters, black hole "thought to", 800 billion, halo); S-SRCH (McQuinn et al. 2016 "The Distance to M104", arXiv 1610.03857, title seen in search results; value about 9.55 Mpc, 31 Mly, is from memory, NOT fetched: reviewer to check).
 
 ### ngc-346 (star cluster, Tucana)
@@ -304,8 +304,8 @@ Target: `universe/deep-sky/ngc-346.json`
 ### ngc-602 (star cluster, Hydrus)
 Target: `universe/deep-sky/ngc-602.json`
 - fact: A young star cluster in the Small Magellanic Cloud, about 200,000 light-years away, set in a nebula of its own.
-- bio: James Dunlop discovered it in 1826. The cluster is about five million years old and 90 light-years in radius. Radiation from its stars pushes gas and dust outward into elephant-trunk ridges, where new stars are forming. A hot O-type star, Sk 183, dominates the light that ionises the nebula N90. Hubble found many hot young stars and Spitzer found dust-wrapped younger ones. A 2024 study reported brown dwarfs there.
-- Sources: S-WP-NGC602 (Dunlop 1826; 196,000 ly; radius 90 ly; about 5 Myr; ridges; Sk 183; Hubble 2007, Spitzer; brown dwarfs 2024). Papers not fetched. The "first brown dwarfs outside the Milky Way" superlative is left out.
+- bio: James Dunlop discovered it in 1826. The cluster is about five million years old and 90 light-years in radius. Radiation from its stars pushes gas and dust outward into elephant-trunk ridges, where new stars are forming. A hot O-type star, Sk 183, dominates the light that ionises the nebula N90. Hubble found many hot young stars and Spitzer found dust-wrapped younger ones. A 2024 study reported candidate brown dwarfs there.
+- Sources: S-WP-NGC602 (Dunlop 1826; 196,000 ly; radius 90 ly; about 5 Myr; ridges; Sk 183; Hubble 2007, Spitzer; brown dwarfs 2024). Papers not fetched.
 
 ### ngc-604 (star-forming region, Triangulum)
 Target: `universe/deep-sky/ngc-604.json`
@@ -337,4 +337,31 @@ Target: `universe/deep-sky/ngc-604.json`
 - m31: the Milky Way collision beyond the single hedged sentence; any size (NASA's 61,000 light-years disc conflicts with other measurements).
 - Not checked against a primary paper: every NASA and Wikipedia number above, apart from the three VizieR / Baumgardt values (m92, m93, m103, m107) and what the three search summaries gave (Gaia distances for m8, m16, m57; McQuinn for m51; the 2025 Andromeda study; M101 distances).
 - Not fetched at all: Hunt and Reffert 2023, Gaia-era distances for the Virgo Cluster galaxies, TRGB distances for M81 to M110 galaxies other than those named, the maser paper for M106, Kasliwal et al. 2011 for M99, Krause et al. 2008 for Cas A.
+
+## Science review (2026-11-12) — fixes applied
+
+1. **m84** — black hole mass estimate: replaced "Bower and colleagues put it near 1.5 billion solar masses in 1998" with "estimates of its mass range from about 0.9 to 1.5 billion Suns" (Walsh et al. 2010, Maciejewski & Binney 2001).
+2. **ic-342** — added dwarf satellite: "KKH 32 was identified as its first known dwarf spheroidal satellite" in 2020; revised group membership text to "one of the brightest members".
+3. **m1** — size correction: "about 11 light-years across" (3.4 pc, Wikipedia Crab Nebula).
+4. **m104** — mass phrasing: "NASA gives the whole galaxy a mass of about 800 billion Suns".
+5. **m99** — luminous red nova origin and arms: "a kind of eruption whose origin is debated; a stellar merger is a leading explanation"; arms are lopsided.
+6. **m100** — Cepheid calibration: fact line and distance sentence revised; "the result gave a distance of about 55 million light-years to a galaxy in the Virgo Cluster".
+7. **m94** — dark matter: added "A 2008 study argued that M94 has little or no dark matter, a result that remains debated".
+8. **m108** — black hole and discoverer: "A supermassive black hole is thought to sit at its centre, and Chandra found 83 X-ray sources, one of them suspected to be an intermediate-mass black hole feeding on gas"; "Owen Gingerich added it to the list in the 20th century".
+9. **m109** — catalogue addition and distance: "added to the Messier list only in the 20th century"; fact line distance "roughly 60 to 80 million light-years away".
+10. **m91** — position error and distance: "listed it in 1781, one of nine objects (M84 to M92) from one night, but gave its position relative to the wrong object"; distance set to "about 55 million" (Virgo standard).
+11. **Virgo Cluster distances** (m85, m86, m88, m89, m90, m91) — all set to "about 55 million light-years away".
+12. **m96** — group membership: "one of the brightest members of the M96 Group"; "NASA says the pull of its neighbours in the group is thought to have shaped it".
+13. **hen-2-104** — symbiotic system: "Its central pair is not one dying star but a symbiotic system: a red giant and a white dwarf orbiting each other, whose gas is thought to be shed by the red giant and shaped by the white dwarf".
+14. **ngc-602** — brown dwarfs: "A 2024 study reported candidate brown dwarfs there".
+15. **gum-29** — distance range: "Published distances run from roughly 9,000 to 26,000 light-years; NASA uses about 20,000, while a spectroscopic and Hubble study found about 13,500".
+16. **carina-nebula** — Eta Carinae description and distance: fact line "about 7,500 light-years away"; "Eta Carinae, is a pair of massive stars; the larger is about 100 times the Sun's mass and about five million times its luminosity".
+17. **cygnus-loop** — age: "A recent Gaia-based study puts its age at about 20,000 years".
+18. **eso-350-40** — diameter: "roughly 150,000 light-years across".
+19. **m101** — diameter and star count: "NASA gives its bright disc as about 170,000 light-years across, wider than the Milky Way's"; dropped "trillion stars".
+20. **m42** — fact line: "The Orion Nebula, the nearest region of massive-star formation, about 1,350 light-years away".
+21. **m107** — Herschel: "and William Herschel independently found it later" (omitting date conflict).
+22–31. **MINOR/NIT fixes**: m57 "found it independently in 1779"; m74 dropped "despite its size"; m82 "NASA expects the burst to fade, probably within a few tens of millions of years"; m86 added "part of the blueshift is the Milky Way's own motion toward Virgo"; m88 "will make its closest approach to M87"; m93 dropped "from southern and tropical latitudes"; m87 "an estimated 12,000 globular clusters"; m51 fact line "the first nebula seen to have a spiral form"; 30-doradus "the closest seen since Kepler's supernova of 1604"; m16 distance "about 5,600 to 5,700 light-years".
+
+**Not applied:** "Existing captions to fix at integration" and "Data-file corrections" sections in `batch-03-review.md` — those are for a later integration step.
 - Wikipedia fetches were summarised by the fetch tool, not read line by line; NASA pages for M93, M97, M103 returned 404.

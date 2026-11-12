@@ -428,6 +428,32 @@ for (const locale of ['ru', 'fr', 'ar']) {
   });
 }
 
+for (const locale of ['fr', 'de', 'ru']) {
+  test(`at 360 px (${locale}) the top-left chips stop before the navigator (a long Reset wraps)`, async ({
+    page,
+  }) => {
+    test.slow();
+    await page.setViewportSize({ width: 360, height: 780 });
+    await openExplore(page, '', `/${locale}/explore`);
+    await expect(page.getByTestId('explore-scale-toggle')).toBeVisible({ timeout: 45_000 });
+    await page.waitForTimeout(400);
+    const clashes = await page.evaluate(() => {
+      const visible = (sel: string) =>
+        [...document.querySelectorAll<HTMLElement>(sel)]
+          .filter((el) => el.offsetParent !== null)
+          .map((el) => el.getBoundingClientRect());
+      const left = [...visible('.hud-top-mobile .ui-chip'), ...visible('.hud-controls .ui-chip')];
+      const nav = visible('.scale-nav .ui-chip, .scale-nav [data-testid="explore-scale-toggle"]');
+      let n = 0;
+      for (const a of left)
+        for (const b of nav)
+          if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) n++;
+      return n;
+    });
+    expect(clashes, `${locale}: top-left chips meeting a navigator chip`).toBe(0);
+  });
+}
+
 test.describe('/explore with a panel docked: the HUD row and the navigator never meet', () => {
   for (const width of [1100, 1280]) {
     test(`at ${width} px the picker is the hit target at its centre and no HUD chip meets a navigator chip`, async ({
@@ -626,17 +652,46 @@ test.describe('/explore direction pills: only for their owner', () => {
     for (const id of craft) {
       expect((await labels(page))[id].drawn, `${id} hidden at load`).toBe(false);
     }
-    const at = await clickablePoint(page, 'marker:voyager-2');
-    await page.mouse.click(at.x, at.y);
+    // Whichever craft's marker lies on open canvas. A phone's default zoom (about 70 AU across)
+    // leaves all four beyond the edge, so each miss zooms out one step over the Sun.
+    const found: Array<{ id: string; x: number; y: number }> = [];
+    const vp = page.viewportSize()!;
+    await expect
+      .poll(
+        async () => {
+          for (const id of craft) {
+            const p = await page.evaluate((k) => window.__exploreBodyScreen!(k), `marker:${id}`);
+            if (!p) continue;
+            const onCanvas = await page.evaluate(
+              ({ x, y }) => document.elementFromPoint(x, y)?.tagName === 'CANVAS',
+              p,
+            );
+            if (onCanvas) {
+              found[0] = { id, ...p };
+              return true;
+            }
+          }
+          await page.mouse.move(vp.width / 2, vp.height / 2);
+          await page.mouse.wheel(0, 240);
+          await page.waitForTimeout(400);
+          return false;
+        },
+        { timeout: 30_000, message: 'one craft marker has a point on the canvas to click' },
+      )
+      .toBe(true);
+    const { id: picked, x, y } = found[0];
+    const name = picked.replace(/-(\d+)$/, ' $1').replace(/^\w/, (c) => c.toUpperCase());
+    await page.mouse.click(x, y);
     await expect(
       panels(page)
-        .filter({ hasText: /Voyager 2/i })
+        .filter({ hasText: new RegExp(name, 'i') })
         .first(),
     ).toBeVisible({
       timeout: 15_000,
     });
-    await expect.poll(async () => (await labels(page))['voyager-2'].drawn).toBe(true);
-    expect((await labels(page))['voyager-1'].drawn, 'the other craft stays hidden').toBe(false);
+    await expect.poll(async () => (await labels(page))[picked].drawn).toBe(true);
+    for (const other of craft.filter((c) => c !== picked))
+      expect((await labels(page))[other].drawn, `${other} stays hidden`).toBe(false);
   });
 });
 

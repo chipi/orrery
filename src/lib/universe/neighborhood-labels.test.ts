@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { overlaps } from './neighborhood-scene';
+import { overlaps } from './scene-pins';
 
 // Label declutter in the stellar neighborhood (2026-11-04: "Proxima Centauri", "Rigil
 // Kentaurus" and "Sol" printed over each other at 375 px).

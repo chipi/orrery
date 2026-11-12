@@ -222,6 +222,7 @@
   "credits_relationship_quoted": "Quoted",
   "credits_relationship_translated": "Translated",
   "credits_section_data": "Data & catalogues",
+  "catalogue_data_sources": "Data sources",
   "credits_section_photos": "Photos",
   "credits_section_text": "Text",
   "credits_storage_fine": "{localStorage} holds only device-side settings (graphics quality, debug mode, offline downloads) and your Lab notebook; {sessionStorage} holds a reload marker after an update. No IndexedDB, no third-party trackers. Everything else — heard episodes, mission filters, Science Lens — is held in memory only and resets on reload.",

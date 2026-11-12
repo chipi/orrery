@@ -1521,6 +1521,7 @@
   "live_iss_watch": "观看国际空间站直播 →",
   "live_iss_unavailable": "国际空间站直播目前无法使用。",
   "credits_section_data": "数据与目录",
+  "catalogue_data_sources": "数据来源",
   "credits_data_intro": "Orrery 摄取的结构化公共数据目录，用于在 3D 空间中定位真实天体并生成发射日历。每个数据集均按其声明的许可证使用，并在此注明出处。",
   "credits_data_references": "查阅了 {count} 个页面",
   "credits_data_models_note": "Orrery 中的飞行器、地标和角色 3D 模型均为原创作品。其尺寸和形状取自下列公开页面，按发布方分组。只采用了尺寸数据，未复制任何文字、图片或图纸。",

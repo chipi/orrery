@@ -1521,6 +1521,7 @@
   "live_iss_watch": "ISS live beobachten →",
   "live_iss_unavailable": "Der Live-Stream der ISS ist derzeit nicht verfügbar.",
   "credits_section_data": "Daten & Kataloge",
+  "catalogue_data_sources": "Datenquellen",
   "credits_data_intro": "Die strukturierten öffentlichen Kataloge, die Orrery einliest, um reale Objekte im 3D-Raum zu platzieren und den Startkalender zu erstellen. Jeder Datensatz wird unter der jeweils angegebenen Lizenz verwendet und hier genannt.",
   "credits_data_references": "{count} Seiten herangezogen",
   "credits_data_models_note": "Die 3D-Modelle von Fahrzeugen, Wahrzeichen und Figuren in Orrery sind eigene Arbeit. Ihre Größen und Formen stammen von den unten aufgeführten öffentlichen Seiten, nach Herausgebern gruppiert. Übernommen wurden nur Maße; kein Text, kein Bild und keine Zeichnung wurde kopiert.",

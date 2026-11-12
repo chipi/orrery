@@ -190,7 +190,10 @@ export interface TextSourceEntry {
     | 'iss-module'
     | 'rocket'
     | 'ui'
-    | 'credits';
+    | 'credits'
+    | 'star'
+    | 'exoplanet'
+    | 'black-hole';
   relationship:
     'original' | 'paraphrased-from' | 'quoted-from' | 'translated-from' | 'adapted-from';
   snippet?: string;

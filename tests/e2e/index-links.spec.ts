@@ -171,7 +171,7 @@ test('/explore: INDEX rows with an entity page link to it; moons follow as link 
   for (const id of rowLinks) expect(ids.has(id!), `${id} has no entity page`).toBe(true);
 });
 
-test('/explore neighbourhood: every named star INDEX row links its star page; closed, the links are still in the DOM', async ({
+test('/explore neighbourhood: every star INDEX row links its star page; closed, the links are still in the DOM', async ({
   page,
 }) => {
   test.slow();
@@ -180,7 +180,8 @@ test('/explore neighbourhood: every named star INDEX row links its star page; cl
   const index = page.locator('.star-index');
   await expect(index).toBeHidden();
   const links = index.locator('a.si-page');
-  await expect(links).toHaveCount(62);
+  // 62 named stars + the planet hosts that are not named stars (trappist-1, 51-pegasi, toi-700, kepler-16).
+  await expect(links).toHaveCount(starPageIds().length);
   const hrefs = await links.evaluateAll((els) => els.map((e) => e.getAttribute('href')));
   const rowIds = await links.evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
   expect(hrefs).toEqual(rowIds.map((id) => `/explore/stars/${id}`));

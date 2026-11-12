@@ -140,6 +140,17 @@ test.describe('/explore scale bar: fixed width, the value follows the zoom', () 
     const vw = page.viewportSize()!.width;
     const layer = page.locator('canvas.layer, div.layer').first();
     await expect(layer).toBeVisible({ timeout: 15_000 });
+    // On a phone the site panel is a full-height sheet over the map: close it (the site stays
+    // selected) so the wheel reaches the map, not the panel's scroll.
+    const sheet = page.locator('aside.panel .panel-close').first();
+    if (await sheet.isVisible()) {
+      const lbNow = (await layer.boundingBox())!;
+      const onMap = await page.evaluate(
+        ({ x, y }) => !!document.elementFromPoint(x, y)?.closest('canvas.layer, div.layer'),
+        { x: lbNow.x + lbNow.width / 2, y: lbNow.y + lbNow.height / 2 },
+      );
+      if (!onMap) await sheet.click();
+    }
     const lb = (await layer.boundingBox())!;
     await page.mouse.move(lb.x + lb.width / 2, lb.y + lb.height / 2);
 

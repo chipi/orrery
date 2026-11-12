@@ -400,7 +400,7 @@
     padding: 2px 10px 4px;
   }
   .active-tier {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-transform: uppercase;
   }
 
@@ -459,15 +459,15 @@
     transition: transform 140ms ease;
   }
   .switch[aria-checked='true'] {
-    background: rgba(78, 205, 196, 0.28);
-    border-color: rgba(78, 205, 196, 0.7);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-color: var(--color-accent-strong);
   }
   .switch[aria-checked='true'] .knob {
     transform: translateX(18px);
-    background: #4ecdc4;
+    background: var(--color-accent);
   }
   .switch:focus-visible {
-    outline: 2px solid var(--color-accent, #4466ff);
+    outline: 2px solid var(--color-accent, var(--color-focus));
     outline-offset: 2px;
   }
 
@@ -482,7 +482,7 @@
     color: var(--color-text);
   }
   .radio input {
-    accent-color: #4ecdc4;
+    accent-color: var(--color-accent);
     cursor: pointer;
   }
   .reload-hint {
@@ -497,9 +497,9 @@
   .reload-btn {
     display: inline-block;
     margin-top: 6px;
-    background: rgba(78, 205, 196, 0.2);
-    border: 1px solid #4ecdc4;
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border: 1px solid var(--color-accent);
+    color: var(--color-state);
     padding: 4px 8px;
     border-radius: 3px;
     cursor: pointer;
@@ -507,7 +507,7 @@
     font-size: 11px;
   }
   .reload-btn:hover {
-    background: rgba(78, 205, 196, 0.35);
+    background: var(--color-accent-edge);
   }
 
   .sheet-note {

@@ -1398,8 +1398,8 @@
   }
 
   .play-pause {
-    background: rgba(68, 102, 255, 0.2);
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     border-radius: 4px;
     color: var(--color-text);
     width: 44px;
@@ -1409,7 +1409,7 @@
   }
   .play-pause:hover,
   .play-pause:focus-visible {
-    background: rgba(68, 102, 255, 0.3);
+    background: var(--color-accent-edge);
     outline: none;
   }
 
@@ -1432,7 +1432,7 @@
 
   .scrubber {
     width: 100%;
-    accent-color: #4466ff;
+    accent-color: var(--color-accent);
   }
 
   .sr-only {
@@ -1479,8 +1479,8 @@
     cursor: not-allowed;
   }
   .scope-tab.active {
-    background: rgba(68, 102, 255, 0.18);
-    border-color: rgba(68, 102, 255, 0.5);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     color: rgba(150, 175, 255, 0.95);
   }
   .episode-list {
@@ -1515,8 +1515,8 @@
     outline: none;
   }
   .episode-row.current {
-    background: rgba(68, 102, 255, 0.16);
-    border-color: rgba(68, 102, 255, 0.45);
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
     color: var(--color-text);
   }
   .episode-row.heard:not(.current) .ep-title {
@@ -1549,9 +1549,9 @@
     background: rgba(201, 170, 111, 0.08);
   }
   .persona-tag.persona-guide {
-    color: #6fb3c9;
-    border-color: rgba(111, 179, 201, 0.4);
-    background: rgba(111, 179, 201, 0.08);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .persona-tag.persona-enthusiast {
     color: #6fc99f;
@@ -1660,14 +1660,14 @@
     }
   }
   .tour-start-extended {
-    background: rgba(78, 205, 196, 0.06);
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.35);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
   }
   .tour-start-extended:hover,
   .tour-start-extended:focus-visible {
-    background: rgba(78, 205, 196, 0.12);
-    border-color: rgba(78, 205, 196, 0.6);
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent-strong);
   }
   .tour-start {
     width: 100%;
@@ -1767,8 +1767,8 @@
     outline: none;
   }
   .cc-toggle.active {
-    background: rgba(68, 102, 255, 0.22);
-    border-color: rgba(68, 102, 255, 0.6);
+    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+    border-color: var(--color-accent-strong);
     color: #96afff;
   }
 
@@ -1943,7 +1943,7 @@
     background: #c9aa6f;
   }
   .compact-bar .persona-dot.persona-guide {
-    background: #6fb6c9;
+    background: var(--color-accent);
   }
   .compact-bar .persona-dot.persona-enthusiast {
     background: #c96fa0;
@@ -2026,10 +2026,10 @@
      rather than "the narrator just said X". */
   :global(.tour-banners .manual-action) {
     padding: 6px 12px;
-    background: rgba(78, 205, 196, 0.12);
-    border: 1px solid rgba(78, 205, 196, 0.45);
+    background: var(--color-accent-soft);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
     border-radius: 4px;
-    color: rgba(78, 205, 196, 0.95);
+    color: var(--color-state);
     font-family: var(--font-mono, monospace);
     font-size: 11px;
     letter-spacing: 1px;

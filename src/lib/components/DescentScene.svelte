@@ -288,7 +288,7 @@
   <div class="stage" bind:this={container}></div>
 
   {#if !flashing && !hudHidden}
-    <!-- 2026 HUD frame — thin cyan corner brackets, no panel. -->
+    <!-- 2026 HUD frame — thin blue corner brackets, no panel. -->
     <span class="frame tl"></span>
     <span class="frame tr"></span>
     <span class="frame bl"></span>
@@ -610,7 +610,7 @@
       opacity: 0.55;
     }
   }
-  /* 2026 corner-bracket frame — thin cyan L's, no fill. */
+  /* 2026 corner-bracket frame — thin blue L's, no fill. */
   .frame {
     position: absolute;
     width: 16px;
@@ -781,10 +781,10 @@
     letter-spacing: 1px;
     color: #7d99b5;
   }
-  /* Guided-entry cells tint cyan; a target the computer can't reach flags amber. */
+  /* Guided-entry cells tint blue; a target the computer can't reach flags amber. */
   .ro[data-testid='descent-guidance'] .rl,
   .ro[data-testid='descent-downrange'] .rl {
-    color: #6fd8cf;
+    color: var(--color-state);
   }
   .ro.guidance-miss .rl,
   .ro.guidance-miss .rv {

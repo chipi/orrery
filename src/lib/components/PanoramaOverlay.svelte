@@ -108,7 +108,7 @@
   .po-sr-btn:focus-visible {
     /* When tabbed to, render an outline so sighted-keyboard users see
        focus position even though the button is otherwise sr-only. */
-    outline: 2px solid #4466ff;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 </style>

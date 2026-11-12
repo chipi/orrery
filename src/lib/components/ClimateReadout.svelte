@@ -41,7 +41,7 @@
           ? m.climate_retain_thin()
           : m.climate_retain_none(),
   );
-  const accent = $derived(BODY_PALETTE[bodyKey]?.bright ?? '#7fe0ff');
+  const accent = $derived(BODY_PALETTE[bodyKey]?.bright ?? '#889fe7');
 </script>
 
 {#if (inline || on) && stats && kin}

@@ -43,7 +43,7 @@
     <ul class="rows">
       <li class="row">
         <div class="row-head">
-          <span class="swatch swatch-teal" aria-hidden="true"></span>
+          <span class="swatch swatch-zenith" aria-hidden="true"></span>
           <span class="label">{m.microgravity_legend_zenith_nadir()}</span>
         </div>
         <span class="desc">{m.microgravity_legend_zenith_nadir_desc()}</span>
@@ -137,7 +137,8 @@
     border-radius: 2px;
     flex-shrink: 0;
   }
-  .swatch-teal {
+  /* a3-keep: data colour, matches the zenith/nadir axes (microgravity-axes.ts), palette review at the end */
+  .swatch-zenith {
     background: #4ecdc4;
   }
   .swatch-red {

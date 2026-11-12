@@ -92,16 +92,16 @@
   }
   .image-credit a.source,
   .image-credit a.license {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .image-credit a.source:hover,
   .image-credit a.license:hover,
   .image-credit a.source:focus-visible,
   .image-credit a.license:focus-visible {
-    color: #7ddfd8;
-    border-bottom-color: rgba(78, 205, 196, 0.8);
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent-strong);
     outline: none;
   }
   .image-credit .modifications,

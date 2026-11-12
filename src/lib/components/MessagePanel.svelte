@@ -108,7 +108,7 @@
 
 <style>
   /* Aligned to the shared detail-panel family (StarPanel / DeepSkyPanel /
-     MilkyWayPanel): rem units, var(--color-text-label)/var(--text) tokens, teal #4ecdc4
+     MilkyWayPanel): rem units, var(--color-text-label)/var(--text) tokens, accent blue
      accent — NOT bespoke px / colours. */
   .sub {
     font-size: 0.7rem;
@@ -140,7 +140,7 @@
     flex: none;
   }
   .d-dist {
-    background: #4ecdc4;
+    background: var(--color-accent);
   }
   .d-inter {
     background: #ffc850;
@@ -164,7 +164,7 @@
     color: var(--text, #e9eefc);
   }
   .arrow {
-    color: #4ecdc4;
+    color: var(--color-state);
     font-weight: 700;
   }
   .body {
@@ -182,7 +182,7 @@
     padding: 0;
     background: none;
     border: none;
-    color: #4ecdc4;
+    color: var(--color-state);
     font: inherit;
     font-size: 0.8rem;
     font-weight: 600;

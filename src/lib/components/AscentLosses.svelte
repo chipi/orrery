@@ -70,7 +70,7 @@
     width: 208px;
     padding: 11px 13px;
     background: linear-gradient(180deg, rgba(6, 12, 24, 0.82), rgba(4, 9, 18, 0.72));
-    border: 1px solid rgba(127, 223, 255, 0.22);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 22%, transparent);
     border-radius: 7px;
     backdrop-filter: blur(7px);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
@@ -87,7 +87,7 @@
     color: #eafaff;
     padding-bottom: 8px;
     margin-bottom: 8px;
-    border-bottom: 1px solid rgba(127, 223, 255, 0.15);
+    border-bottom: 1px solid var(--color-accent-soft);
   }
   .row {
     display: flex;
@@ -116,7 +116,7 @@
   .total {
     margin-top: 4px;
     padding-top: 6px;
-    border-top: 1px solid rgba(127, 223, 255, 0.15);
+    border-top: 1px solid var(--color-accent-soft);
   }
   .total .lbl {
     color: #eafaff;

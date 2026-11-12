@@ -61,12 +61,12 @@
 
 <style>
   a {
-    color: var(--color-accent-text, #5070ff);
+    color: var(--color-accent);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
   a:hover,
   a:focus-visible {
-    color: var(--color-teal, #4ecdc4);
+    color: var(--color-accent);
   }
 </style>

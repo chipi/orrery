@@ -280,7 +280,7 @@
     }
 
     /* Each tab is a rounded pill matching the time-scrubber below it (same
-       border / blur / teal-active), icon inline beside a short label. */
+       border / blur / accent-active), icon inline beside a short label. */
     .mdg-tab {
       flex: 1;
       display: flex;
@@ -304,8 +304,8 @@
       white-space: nowrap;
     }
     .mdg-tab.active {
-      color: #4ecdc4;
-      border-color: rgba(78, 205, 196, 0.6);
+      color: var(--color-state);
+      border-color: var(--color-accent-strong);
       background: rgba(20, 26, 50, 0.85);
     }
     .mdg-icon {
@@ -314,10 +314,10 @@
       color: #cfe0ff;
     }
     .mdg-tab.active .mdg-icon {
-      color: #4ecdc4;
+      color: var(--color-state);
     }
     .mdg-tab:focus-visible {
-      outline: 2px solid var(--color-accent, #4ecdc4);
+      outline: 2px solid var(--color-accent, var(--color-focus));
       outline-offset: -2px;
       border-radius: 2px;
     }

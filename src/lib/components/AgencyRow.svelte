@@ -20,7 +20,7 @@
   }
 
   let { agency, color = null, children }: Props = $props();
-  const bg = $derived(color ?? agencyColor(agency) ?? 'rgba(78, 205, 196, 0.16)');
+  const bg = $derived(color ?? agencyColor(agency) ?? 'rgba(80, 112, 255, 0.16)');
 </script>
 
 <div class="agency-row">

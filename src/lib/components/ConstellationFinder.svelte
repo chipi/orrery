@@ -55,13 +55,13 @@
       }
     }
 
-    // The star — a bright teal marker with a glow.
+    // The star — a bright accent-blue marker with a glow.
     if (star) {
       const sx = px(star[0]);
       const sy = py(star[1]);
       const glow = ctx.createRadialGradient(sx, sy, 0, sx, sy, 12);
-      glow.addColorStop(0, 'rgba(120, 240, 230, 0.9)');
-      glow.addColorStop(1, 'rgba(120, 240, 230, 0)');
+      glow.addColorStop(0, 'rgba(138, 160, 255, 0.9)');
+      glow.addColorStop(1, 'rgba(138, 160, 255, 0)');
       ctx.fillStyle = glow;
       ctx.beginPath();
       ctx.arc(sx, sy, 12, 0, Math.PI * 2);

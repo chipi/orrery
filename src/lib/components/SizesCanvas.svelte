@@ -17,7 +17,7 @@
   const SIZES: SizeEntry[] = [
     { id: 'jupiter', name: 'Jupiter', r: 69911, col: '#c88b3a', km: '69,911 km' },
     { id: 'saturn', name: 'Saturn', r: 58232, col: '#e4d191', km: '58,232 km' },
-    { id: 'uranus', name: 'Uranus', r: 25362, col: '#7de8e8', km: '25,362 km' },
+    { id: 'uranus', name: 'Uranus', r: 25362, col: '#7de8e8', km: '25,362 km' }, // a3-keep: planet identity colour (Uranus), palette review at the end
     { id: 'neptune', name: 'Neptune', r: 24622, col: '#4466bb', km: '24,622 km' },
     { id: 'earth', name: 'Earth', r: 6371, col: '#4b9cd3', km: '6,371 km' },
     { id: 'venus', name: 'Venus', r: 6052, col: '#e8cda0', km: '6,052 km' },

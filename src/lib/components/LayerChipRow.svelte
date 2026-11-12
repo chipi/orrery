@@ -114,10 +114,10 @@
     height: 8px;
     flex: none;
     border-radius: 50%;
-    border: 1px solid var(--body-tint, #4ecdc4);
+    border: 1px solid var(--body-tint, var(--color-accent));
   }
   .chip-group.active .dot {
-    background: var(--body-tint, #4ecdc4);
+    background: var(--body-tint, var(--color-accent));
   }
   .chip-group:not(.active) {
     color: var(--color-text-label);
@@ -127,7 +127,7 @@
     color: #fff;
   }
   .chip-group:focus-visible {
-    outline: 1px solid var(--body-tint, #4ecdc4);
+    outline: 1px solid var(--body-tint, var(--color-focus));
     outline-offset: 2px;
   }
   /* Sub-chip dimming when its master is off. The native :disabled

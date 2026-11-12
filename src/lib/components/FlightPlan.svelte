@@ -90,7 +90,7 @@
   .title {
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: #5ac8ff;
+    color: var(--color-state);
     margin: 0 0 6px;
     text-align: right;
   }
@@ -121,15 +121,15 @@
     color: #6f8399;
   }
   li.done .mark {
-    color: #3fc59a;
+    color: var(--color-state);
   }
   li.active {
-    background: rgba(90, 200, 255, 0.12);
-    border-color: rgba(90, 200, 255, 0.45);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
     color: #fff;
   }
   li.active .mark {
-    color: #5ac8ff;
+    color: var(--color-state);
     animation: pulse 1.6s ease-in-out infinite;
   }
   li.next .mark {

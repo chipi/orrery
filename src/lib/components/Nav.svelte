@@ -709,7 +709,7 @@
     opacity: 0.85;
   }
   .brand:focus-visible {
-    outline: 2px solid var(--color-accent, #4466ff);
+    outline: 2px solid var(--color-accent, var(--color-focus));
     outline-offset: 2px;
   }
   .brand.active {
@@ -777,8 +777,8 @@
 
   .link.active {
     color: var(--color-text);
-    background: rgba(68, 102, 255, 0.28);
-    border-color: rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
 
   /* ── Grouped-nav dropdowns (2026-07 IA restructure) ───────────────── */
@@ -846,8 +846,8 @@
   }
   .group-menu-link.active {
     color: var(--color-text);
-    background: rgba(68, 102, 255, 0.28);
-    border-color: rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
   /* Transparent full-page click-catcher behind an open dropdown. */
   .group-backdrop {
@@ -892,9 +892,9 @@
     outline: none;
   }
   .contrast-toggle.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.6);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent-strong);
+    color: var(--color-state);
   }
 
   /* Science Lens toggle — same shape as the contrast toggle for visual
@@ -1005,8 +1005,8 @@
   .share-toggle:focus-visible,
   .debug-toggle:hover,
   .debug-toggle:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    color: rgba(78, 205, 196, 0.95);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    color: var(--color-state);
     outline: none;
   }
   /* Debug toggle lit when debug mode is on. */
@@ -1050,18 +1050,18 @@
     font-weight: 600;
   }
   /* Hover + focus glow only when the route surfaces settings (i.e. the
-     button isn't [disabled]). Teal accent — matches the popup panel's
+     button isn't [disabled]). Accent blue — matches the popup panel's
      border so opening it reads as a continuation of the same control. */
   .settings-toggle:not(:disabled):hover,
   .settings-toggle:not(:disabled):focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    color: rgba(78, 205, 196, 0.95);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    color: var(--color-state);
     outline: none;
   }
   .settings-toggle.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.7);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent-strong);
+    color: var(--color-state);
   }
   .settings-toggle:disabled {
     cursor: not-allowed;
@@ -1095,13 +1095,13 @@
   }
   .audio-toggle:hover,
   .audio-toggle:focus-visible {
-    border-color: rgba(68, 102, 255, 0.5);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     color: rgba(150, 175, 255, 0.95);
     outline: none;
   }
   .audio-toggle.active {
-    background: rgba(68, 102, 255, 0.18);
-    border-color: rgba(68, 102, 255, 0.65);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent-strong);
     color: #96afff;
   }
   /* Discreet pulse while audio.playing — bounded opacity wave on the
@@ -1140,7 +1140,7 @@
     max-width: min(360px, calc(100vw - 24px));
     padding: 10px 16px;
     background: rgba(20, 22, 34, 0.95);
-    border: 1px solid rgba(78, 205, 196, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 999px;
     color: var(--color-text);
     font-size: 13px;
@@ -1285,8 +1285,8 @@
   }
   .drawer-link.active {
     color: var(--color-text);
-    background: rgba(68, 102, 255, 0.18);
-    border-left-color: rgba(68, 102, 255, 0.85);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-left-color: color-mix(in srgb, var(--color-accent) 85%, transparent);
   }
   .drawer-backdrop {
     position: fixed;

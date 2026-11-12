@@ -92,8 +92,8 @@
   }
   .card:hover,
   .card:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    background: rgba(78, 205, 196, 0.06);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
     outline: none;
   }
   .why {
@@ -148,7 +148,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     text-transform: uppercase;
   }
   .more {

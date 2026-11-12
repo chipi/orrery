@@ -189,7 +189,7 @@
     max-width: 420px;
     padding: 8px 14px;
     background: rgba(8, 10, 22, 0.7);
-    border: 1px solid rgba(78, 205, 196, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 6px;
     backdrop-filter: blur(4px);
     pointer-events: none;
@@ -204,10 +204,10 @@
   .scan-eyebrow {
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     margin-bottom: 6px;
     padding-bottom: 4px;
-    border-bottom: 1px solid rgba(78, 205, 196, 0.15);
+    border-bottom: 1px solid var(--color-accent-soft);
   }
   .scan-row {
     display: flex;

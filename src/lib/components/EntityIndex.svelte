@@ -56,7 +56,7 @@
   }
   summary:hover,
   summary:focus-visible {
-    color: #4ecdc4;
+    color: var(--color-state);
     outline: none;
   }
   ul {
@@ -77,7 +77,7 @@
   }
   a:hover,
   a:focus-visible {
-    color: #4ecdc4;
+    color: var(--color-accent);
     outline: none;
   }
   @media (min-width: 640px) {

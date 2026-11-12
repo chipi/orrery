@@ -116,7 +116,7 @@
   }
   .chip:hover,
   .chip[aria-expanded='true'] {
-    border-color: rgba(78, 205, 196, 0.7);
+    border-color: var(--color-accent-strong);
   }
   .menu {
     position: absolute;
@@ -126,7 +126,7 @@
     padding: 4px;
     list-style: none;
     background: rgba(15, 18, 35, 0.97);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -161,10 +161,10 @@
     text-align: left;
   }
   .option:hover {
-    background: rgba(78, 205, 196, 0.12);
+    background: var(--color-accent-soft);
   }
   .option.active {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .option .native {
     /* Inherits display font from .option. No italic — UI label, not
@@ -179,6 +179,6 @@
     color: var(--color-text-label);
   }
   .option.active .tag {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
 </style>

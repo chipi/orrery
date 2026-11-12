@@ -370,7 +370,7 @@
   // the whole run wraps round at the very ends. Home/End jump to the
   // first module / last visitor.
   //
-  // Arrows move DOM FOCUS ONLY — the committed selection (teal
+  // Arrows move DOM FOCUS ONLY — the committed selection (accent blue
   // aria-current) and the open panel stay put while you traverse. Each
   // focused row's onfocus lights the canvas-hover outline so you preview
   // where you are without committing. Enter/Space open the focused row
@@ -1858,8 +1858,8 @@
   }
   .index-close:hover,
   .index-close:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    color: #4ecdc4;
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    color: var(--color-state);
     outline: none;
   }
   .list-heading {
@@ -1871,7 +1871,7 @@
   }
   .list-heading-visitors {
     margin-top: 28px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
   }
   /* Touch devices: no hover, suppress the label entirely.
      Component-side .hover-label lives in $lib/components/HoverLabel.svelte. */
@@ -1906,22 +1906,22 @@
   .module-row:hover,
   .module-row:focus-visible,
   .module-row.canvas-hovered {
-    border-color: rgba(68, 102, 255, 0.55);
-    background: rgba(68, 102, 255, 0.12);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    background: var(--color-accent-soft);
     outline: none;
   }
   /* Selection (current open module) — stronger accent than hover so
      it persists visually after the user clicks and the panel opens. */
   .module-row[aria-current='true'] {
-    border-color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.16);
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
     color: #fff;
   }
   .module-row[aria-current='true']:hover,
   .module-row[aria-current='true']:focus-visible,
   .module-row[aria-current='true'].canvas-hovered {
-    border-color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.24);
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 24%, transparent);
   }
   .mod-name-row {
     display: flex;
@@ -2109,7 +2109,7 @@
     min-height: 44px;
     padding: 0 8px;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     color: #dde4ff;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
@@ -2122,16 +2122,16 @@
   }
   .toggle:hover,
   .toggle:focus-visible {
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     outline: none;
   }
   .toggle:disabled {
     opacity: 0.4;
     cursor: not-allowed;
-    border-color: rgba(68, 102, 255, 0.18);
+    border-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
   }
   .toggle:disabled:hover {
-    border-color: rgba(68, 102, 255, 0.18);
+    border-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
   }
   .banner {
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -2147,9 +2147,9 @@
     pointer-events: none;
   }
   .banner.mem {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.45);
-    background: rgba(78, 205, 196, 0.1);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+    background: var(--color-accent-soft);
   }
   .load-banner {
     padding: 24px;

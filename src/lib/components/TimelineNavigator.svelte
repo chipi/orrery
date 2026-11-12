@@ -376,9 +376,9 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    background: rgba(78, 205, 196, 0.18);
-    border-left: 1px solid rgba(78, 205, 196, 0.3);
-    border-right: 1px solid rgba(78, 205, 196, 0.3);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-left: 1px solid var(--color-accent-edge);
+    border-right: 1px solid var(--color-accent-edge);
     pointer-events: none;
   }
 
@@ -441,11 +441,11 @@
     width: 14px;
     height: 44px;
     padding: 0;
-    background: #4ecdc4;
+    background: var(--color-accent);
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 3px;
     cursor: ew-resize;
-    box-shadow: 0 0 8px rgba(78, 205, 196, 0.5);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-accent) 50%, transparent);
     z-index: 10;
   }
   .handle:hover,
@@ -461,7 +461,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     font-weight: 700;
-    color: #4ecdc4;
+    color: var(--color-state);
     letter-spacing: 1px;
     background: rgba(8, 10, 22, 0.85);
     padding: 1px 4px;

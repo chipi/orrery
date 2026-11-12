@@ -184,7 +184,7 @@
   }
 
   .mission {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
 
   .separator {
@@ -202,10 +202,10 @@
     display: inline-block;
     margin-top: 6px;
     padding: 3px 8px;
-    background: rgba(78, 205, 196, 0.12);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 2px;
-    color: #4ecdc4;
+    color: var(--color-state);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     text-transform: uppercase;
@@ -214,7 +214,7 @@
     transition: background-color 120ms;
   }
   .catalog-link:hover {
-    background: rgba(78, 205, 196, 0.22);
+    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
   }
 
   .meta {
@@ -260,7 +260,7 @@
   }
 
   .status-success {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .status-failure {
     color: #ff5252;

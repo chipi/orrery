@@ -56,12 +56,12 @@
     transform: translate(-50%, calc(-100% - 12px));
     padding: 4px 8px;
     background: rgba(8, 10, 22, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: #4ecdc4;
+    color: var(--color-state);
     white-space: nowrap;
     text-transform: uppercase;
     backdrop-filter: blur(4px);

@@ -13,11 +13,31 @@ const PANELS: { label: string; path: string }[] = [
   { label: 'site', path: '/mars?site=perseverance' },
 ];
 
+const roundBox = (b: { x: number; y: number; width: number; height: number } | null) =>
+  b && {
+    x: Math.round(b.x),
+    y: Math.round(b.y),
+    width: Math.round(b.width),
+    height: Math.round(b.height),
+  };
+
 async function openPanel(page: Page, path: string) {
   await page.goto(path);
   const panel = page.locator('aside.panel');
   await expect(panel).toBeVisible({ timeout: 15_000 });
   await expect(panel.locator('.panel-bar')).toBeVisible();
+  // The panel opens with a transition; measure geometry only once it has stopped moving.
+  await expect
+    .poll(
+      async () => {
+        const a = await panel.boundingBox();
+        await page.waitForTimeout(120);
+        const b = await panel.boundingBox();
+        return JSON.stringify(roundBox(a)) === JSON.stringify(roundBox(b));
+      },
+      { timeout: 5_000 },
+    )
+    .toBe(true);
   return panel;
 }
 
@@ -41,7 +61,7 @@ test.describe('panel shell (B1)', () => {
       expect(overflow, 'panel content must be taller than the panel to scroll').toBeGreaterThan(0);
       await content.evaluate((el) => (el.scrollTop = 600));
       const after = await bar.boundingBox();
-      expect(after).toEqual(before);
+      expect(roundBox(after)).toEqual(roundBox(before));
       const contentBox = await content.boundingBox();
       expect(Math.round(contentBox!.y)).toBe(Math.round(before!.y + before!.height));
       const hitsClose = await panel.locator('button.panel-close').evaluate((el) => {

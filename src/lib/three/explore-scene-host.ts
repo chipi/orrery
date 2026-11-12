@@ -2019,6 +2019,40 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       );
     };
     window.__exploreBodyPosition = (key) => bodyWorldPosition(key)?.toArray() ?? null;
+    // Read-only probe for the readability script: where a kind of line or particle cloud is on screen
+    // (canvas-box px), so a screenshot can be sampled on the pixels the element really covers.
+    window.__exploreLinePoints = (kind) => {
+      camera.updateMatrixWorld();
+      const rect = el3d.getBoundingClientRect();
+      const out: Array<{ x: number; y: number }> = [];
+      const v = new THREE.Vector3();
+      const push = (world: THREE.Vector3) => {
+        const ndc = world.project(camera);
+        if (ndc.z > 1 || Math.abs(ndc.x) > 1 || Math.abs(ndc.y) > 1) return;
+        out.push({ x: ((ndc.x + 1) / 2) * rect.width, y: ((1 - ndc.y) / 2) * rect.height });
+      };
+      const fromObject = (obj: THREE.Object3D, perObject: number) => {
+        if (!obj.visible) return;
+        const pos = (obj as THREE.Line | THREE.Points).geometry?.getAttribute('position');
+        if (!pos) return;
+        obj.updateWorldMatrix(true, false);
+        const step = Math.max(1, Math.floor(pos.count / perObject));
+        for (let i = 0; i < pos.count; i += step) {
+          push(v.fromBufferAttribute(pos, i).applyMatrix4(obj.matrixWorld));
+        }
+      };
+      if (kind === 'planet-orbits') for (const l of planetOrbitLines) fromObject(l, 96);
+      else if (kind === 'moon-orbits')
+        for (const po of planetObjs) for (const sat of po.satellites) fromObject(sat.orbitLine, 96);
+      else if (kind === 'small-orbits') for (const so of smallBodyObjs) fromObject(so.orbit, 96);
+      else if (kind === 'belts') {
+        fromObject(asteroidBelt, 300);
+        fromObject(kuiperBelt, 300);
+      } else if (kind === 'ly-rings') {
+        for (const p of nbScene?.referenceRingPoints() ?? []) push(v.copy(p));
+      }
+      return out;
+    };
     window.__exploreBodyScreen = (key) => {
       const at = bodyWorldPosition(key);
       if (!at) return null;
@@ -4742,6 +4776,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     delete window.__exploreCameraState;
     delete window.__exploreBodyPosition;
     delete window.__exploreBodyScreen;
+    delete window.__exploreLinePoints;
+    delete window.__scenePins;
+    delete window.__explore2dLabels;
   });
 
   return {

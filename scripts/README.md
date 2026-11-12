@@ -110,6 +110,13 @@ column order of a hand-written table, so do not swap those lists for
 the provenance store that `native-terms.json` cites (the `wikidata-*.tsv`
 tables); keep it.
 
+## Explore readability — which tool, when
+
+| Question | Run |
+|---|---|
+| how dark and how readable is each /explore level in a real browser: frame luma percentiles, the WCAG contrast of orbit lines, belts, light-year rings and anchor rings on the rendered pixels (target 3:1) and after a 12 % white veil (target 2:1), the label text and ring sizes the scenes drew | start a dev server or a preview build, then `node scripts/readability-probe.mjs --base=http://127.0.0.1:5173 [--viewport=1440x900] [--contexts=solar-system,neighborhood] [--out=file.json] [--shots=dir]` — run it on HEAD before a lift and after, same flags (UXD-020; reads `window.__exploreLinePoints` and `window.__scenePins`) |
+| the contrast maths behind it (pure, browser-free) | `lib/readability-contrast.mjs` (with `lib/readability-contrast.test.ts`) |
+
 ## Links and 404s — which tool, when
 
 | Question | Run | Where it runs |

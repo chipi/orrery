@@ -42,8 +42,10 @@
     onClose: () => void;
     /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
     onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
   };
-  let { sun, open, onClose, onMissionOpen }: Props = $props();
+  let { sun, open, onClose, onMissionOpen, covered }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -77,7 +79,7 @@
   let hasLinks = $derived((sun?.links?.length ?? 0) > 0);
 </script>
 
-<Panel {open} {onClose} title={sun?.name ?? ''}>
+<Panel {open} {onClose} {covered} title={sun?.name ?? ''}>
   {#if sun}
     <div class="head">
       <div class="type">{sun.type.toUpperCase()}</div>

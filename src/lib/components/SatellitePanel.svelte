@@ -55,8 +55,10 @@
     onClose: () => void;
     /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
     onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
   };
-  let { satelliteKey, open, onClose, onMissionOpen }: Props = $props();
+  let { satelliteKey, open, onClose, onMissionOpen, covered }: Props = $props();
 
   let satellites: SatelliteEntry[] = $state([]);
   let loaded = $state(false);
@@ -142,6 +144,7 @@
 <Panel
   {open}
   {onClose}
+  {covered}
   title={entry?.name ?? ''}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
 >

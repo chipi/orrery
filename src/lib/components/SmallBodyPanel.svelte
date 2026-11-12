@@ -17,7 +17,10 @@
   } from '$lib/missions-linkify';
   import { formatKm } from '$lib/format';
   import type { ScienceSectionRef } from '$types/planet';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
+  import { isPlanDestination } from '$lib/plan/destinations';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import * as m from '$lib/paraglide/messages';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
@@ -87,8 +90,10 @@
     onClose: () => void;
     /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
     onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
   };
-  let { body, open, onClose, onMissionOpen }: Props = $props();
+  let { body, open, onClose, onMissionOpen, covered }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -191,6 +196,7 @@
 <Panel
   {open}
   {onClose}
+  {covered}
   title={body?.name ?? ''}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
 >
@@ -202,7 +208,16 @@
       <div class="name">{body.name}</div>
     </div>
 
-    <!-- No PanelActions row: a small body has no entity action. Share is in the Panel bar. -->
+    <!-- The one entity action: Plan mission, for the bodies /plan lists (Pluto lost the planet
+         panel's chip when it moved here). Known at first paint, so the row never shifts the hero.
+         Share is in the Panel bar. -->
+    {#if isPlanDestination(body.id)}
+      <PanelActions>
+        <Chip kind="link" href={localHref(`/plan?dest=${body.id}`)} data-testid="plan-mission-chip"
+          >{m.panel_action_plan()}</Chip
+        >
+      </PanelActions>
+    {/if}
 
     {#if gallery.length > 0}
       <PanelHeroImage

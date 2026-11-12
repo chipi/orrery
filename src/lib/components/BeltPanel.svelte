@@ -47,12 +47,15 @@
     onClose: () => void;
     /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
     onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
     /** Whether the scene has an object for a body id: only those members are links. */
     bodyInScene?: (id: string) => boolean;
     /** A member link selects the body in place (panel, ring, camera); absent: navigate. */
     onSelectBody?: (id: string) => void;
   };
-  let { beltId, open, onClose, onMissionOpen, bodyInScene, onSelectBody }: Props = $props();
+  let { beltId, open, onClose, onMissionOpen, covered, bodyInScene, onSelectBody }: Props =
+    $props();
 
   let belts: BeltEntry[] = $state([]);
   let loaded = $state(false);
@@ -163,7 +166,7 @@
   );
 </script>
 
-<Panel {open} {onClose} title={entry?.name ?? ''}>
+<Panel {open} {onClose} {covered} title={entry?.name ?? ''}>
   {#if entry}
     <div class="head">
       <div class="kind-row">

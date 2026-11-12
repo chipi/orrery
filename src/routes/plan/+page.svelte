@@ -47,6 +47,7 @@
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
   import { createBitmapSlot } from '$lib/plan/bitmap-slot';
+  import { PLAN_DESTINATION_IDS } from '$lib/plan/destinations';
 
   // v0.8 (#312 / ADR-076 / RFC-026): /plan ships the full twelve-destination
   // set. Every destination now has a committed porkchop grid at
@@ -55,31 +56,8 @@
   // + Pluto. FLYBY_ONLY marks destinations with no LANDING at this fidelity (no
   // LOI ∆v term); GRAVITY_ASSIST_CAVEAT_DESTINATIONS flags those whose realistic
   // trajectory needs a gravity assist.
-  // Ordered as an outward tour — each planet's moons follow it (ADR-086).
-  const DESTINATION_IDS: PlanDestinationId[] = [
-    'moon',
-    'mercury',
-    'venus',
-    'mars',
-    'phobos',
-    'deimos',
-    'vesta',
-    'ceres',
-    'psyche',
-    'jupiter',
-    'io',
-    'europa',
-    'ganymede',
-    'callisto',
-    'saturn',
-    'titan',
-    'enceladus',
-    'uranus',
-    'neptune',
-    'triton',
-    'pluto',
-    'bennu',
-  ];
+  // The list itself is shared with the body panels' "Plan mission" chip.
+  const DESTINATION_IDS = PLAN_DESTINATION_IDS;
   /** FLYBY-only: gas / ice giants + Pluto (no LANDING at this fidelity). ADR-026 + ADR-028. */
   const FLYBY_ONLY: DestinationId[] = ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
   const GRAVITY_ASSIST_CAVEAT_DESTINATIONS: DestinationId[] = [

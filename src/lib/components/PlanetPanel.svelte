@@ -58,8 +58,10 @@
     onPlanMission?: () => void;
     /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
     onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
   };
-  let { planet, open, onClose, onPlanMission, onMissionOpen }: Props = $props();
+  let { planet, open, onClose, onPlanMission, onMissionOpen, covered }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -160,6 +162,7 @@
 <Panel
   {open}
   {onClose}
+  {covered}
   title={planet?.name ?? ''}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
 >

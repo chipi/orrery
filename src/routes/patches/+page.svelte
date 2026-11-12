@@ -147,7 +147,7 @@
   .crumb .sep {
     margin: 0 8px;
   }
-  /* a2-keep: link colour inside the lead and footer; colour is slice A3's */
+  /* Link colour inside the lead and footer; slice A3 owns colour. */
   .lede :global(a),
   .patches-footer :global(a) {
     color: #cfe3fb;

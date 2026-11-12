@@ -113,6 +113,7 @@
     max-height: 260px;
     opacity: 0.95;
   }
+  /* a2-keep: the boxed 101 intro card with its own tiers, not the page lead */
   .tab-intro {
     margin: 0 0 24px;
     padding: 18px 20px;

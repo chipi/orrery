@@ -1,5 +1,4 @@
 <script lang="ts">
-  import EntityIndex from '$lib/components/EntityIndex.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
@@ -264,6 +263,7 @@
 <DebugPanelRegistrar label="MOON" />
 
 <SurfaceScene
+  entityLinks={data.entityIndex}
   locateReservePx={44}
   bind:this={surfaceScene}
   config={MOON_CONFIG}
@@ -319,8 +319,6 @@
     </div>
   </div>
 {/if}
-
-<EntityIndex hub="moon" title={m.entity_index_moon()} links={data.entityIndex} floating />
 
 <TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
 

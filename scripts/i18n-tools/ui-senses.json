@@ -1,7 +1,6 @@
 {
   "_comment": "What an ambiguous English UI string means here. Sent with the key to the model by translate-v07-ui.mjs and retranslate-fields.mjs (file \"messages\"). Every entry is a key that was mistranslated in two or more locales (audit 2026-10-30: ar, hi, ja read in full; the other ten spot-checked). Add a key when an audit finds a wrong sense; keep the note to what the word means, not how to translate it.",
   "card_cat_constellation": "a satellite constellation: a fleet of satellites working together (Starlink, GPS) — not a star constellation",
-  "ui_layer_constellations": "map layer showing satellite constellations (navigation fleets such as GPS) — not star constellations",
   "lab_f_coverage_title": "ground coverage of a satellite constellation (a fleet of satellites) — not star constellations",
   "coast_scrub_aria": "drag the timeline slider through the unpowered (engine-off) part of the flight; 'coast' is never a shore, 'scrub' is never cleaning",
   "science_layer_coast_label": "preview of the unpowered, engine-off flight path; 'coast' is never a shore",

@@ -81,8 +81,8 @@
     left: auto;
     right: 8px;
   }
-  /* Landscape phone: the floating A–Z tab (EntityIndex) sits on the left edge, ~45–100 px
-     down a short screen, right where the back button is; the row starts past the tab. */
+  /* Landscape phone: the left-edge pull tabs sit near the back button;
+     the row starts past them. */
   @media ((hover: none) or (pointer: coarse)) and (max-height: 520px) {
     .scale-nav:not(.at-solar) {
       left: 40px;

@@ -174,8 +174,8 @@
      background if something shows up in the same place"). */
   .ruler {
     position: absolute;
-    /* --ruler-left: set by SurfaceScene when the layer-chip column reaches
-       down into the ruler (short windows). */
+    /* --ruler-left: set by SurfaceScene when the locate chip shares the ruler's
+       row. */
     left: var(--ruler-left, 12px);
     /* Pin distance is route-supplied via --ruler-bottom (anchorBottomPx
        prop). /explore keeps 80 px to clear its bottom-left PLANET SCALES

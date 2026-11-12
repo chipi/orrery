@@ -313,7 +313,7 @@
      *  the globe gets museum pins, a MUSEUMS chip, the museum card and the
      *  ?museum=<id> deep link. /earth only. */
     loadMuseums?: (locale: string) => Promise<Museum[]>;
-    /** Observatories on Earth (PRD-028): pins, a TELESCOPES chip, the
+    /** Observatories on Earth (PRD-028): pins, an OBSERVATORIES chip, the
      *  observatory card and the ?observatory=<id> deep link. /earth only. */
     loadObservatories?: (locale: string) => Promise<Observatory[]>;
     /** Height the host route's bottom-left button ("Center on my location")
@@ -322,6 +322,10 @@
     /** The host route's globe button ("View from my location"): on a phone it
      *  becomes the first icon of the single bottom bar. */
     barStart?: Snippet;
+    /** Every entity page of this hub (`/<body>/<id>`), from the route's server load. The
+     *  object index links the rows that have a page and prerenders this list while
+     *  closed, so crawlers reach every page from the hub (ADR-096 item 11). */
+    entityLinks?: { id: string; name: string }[];
   }
   let {
     config,
@@ -340,6 +344,7 @@
     onOrbitsInViewChange,
     locateReservePx = 0,
     barStart,
+    entityLinks = [],
   }: Props = $props();
 
   // AR (#150): earth/moon/mars have tabletop AR scenes. `body` matches
@@ -442,14 +447,6 @@
   // (rover-path data exists for this body). Defaults on.
   let layerTraverses = $state(true);
 
-  // Earth satellite-category chips (#290 Slice 6). Only surfaced when
-  // config.earthOrbitalLayers.satellites is configured. Sub-gating on
-  // top of the master layerOrbiters toggle — each category can be hid
-  // independently. Defaults come from the route config.
-  let layerStations = $state(true);
-  let layerObservatories = $state(true);
-  let layerConstellations = $state(true);
-  let layerComsats = $state(true);
   let autoSpin = $state(true);
   let resetCamera: () => void = () => {};
 
@@ -739,13 +736,10 @@
   let observatoryPins: MuseumPin[] = [];
   let selectedObservatory = $state<Observatory | null>(null);
   let layerTelescopes = $state(true);
-  // /earth chip groups: ON EARTH is a master over launchpads, museums and
-  // ground telescopes (IN SPACE is the existing ORBITERS master).
-  let layerGround = $state(true);
   let layerLaunchpads = $state(true);
-  const padsOn = $derived(layerSurface && layerGround && layerLaunchpads);
-  const museumsOn = $derived(layerGround && layerMuseums);
-  const telescopesOn = $derived(layerGround && layerTelescopes);
+  const padsOn = $derived(layerSurface && layerLaunchpads);
+  const museumsOn = $derived(layerMuseums);
+  const telescopesOn = $derived(layerTelescopes);
   /** Close an open launchpad card when the pads are hidden. */
   function dropHiddenPadSelection() {
     if (padsOn || !selected) return;
@@ -1108,8 +1102,8 @@
     else delete root.dataset.surfacePanorama;
     return () => delete root.dataset.surfacePanorama;
   });
-  // The flat ground view owns the bottom edge with its own bar: the host route's
-  // floating A–Z tab and the imagery card key their phone position off this.
+  // The flat ground view owns the bottom edge with its own bar: the imagery card keys
+  // its phone position off this.
   $effect(() => {
     const root = document.documentElement;
     if (flatPatchActive) root.dataset.surfaceFlat = '';
@@ -1121,12 +1115,28 @@
   // touch.
   let sceneRoot = $state<HTMLDivElement | undefined>();
   let indexHandleTop = $state<number | null>(null);
-  // On <html> too: the host route's A–Z tab sits just above the INDEX tab.
+  // The object-index panel starts just under the HUD, whose chip row wraps to a
+  // second line on narrow windows and long labels (nothing on touch: HUD hidden).
+  let indexTopPx = $state<number | null>(null);
   $effect(() => {
-    const root = document.documentElement;
-    if (indexHandleTop != null) root.style.setProperty('--index-handle-top', `${indexHandleTop}px`);
-    else root.style.removeProperty('--index-handle-top');
-    return () => root.style.removeProperty('--index-handle-top');
+    void panoramaActive;
+    const hud = sceneRoot?.querySelector('.hud-controls');
+    if (!hud) {
+      indexTopPx = null;
+      return;
+    }
+    const measure = () => {
+      const r = hud.getBoundingClientRect();
+      indexTopPx = r.width && r.height ? Math.round(r.bottom + 8) : null;
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(hud);
+    window.addEventListener('resize', measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', measure);
+    };
   });
   const tierLayerCount = $derived(tierContext?.layers.length ?? 0);
   $effect(() => {
@@ -1162,10 +1172,9 @@
       ro.disconnect();
     };
   });
-  // The route's Orbit Ruler (bottom-left, behind everything) moves right of
-  // the layer chips — and of the locate button where they share rows — when
-  // the chip column reaches down into it (short windows, e.g. 1280x720 on
-  // /earth). Published on <html>: the ruler lives in the route, not here.
+  // The route's Orbit Ruler (bottom-left, behind everything) moves right of the
+  // locate button where they share rows. Published on <html>: the ruler lives in the
+  // route, not here.
   $effect(() => {
     const root = sceneRoot;
     if (!root) return;
@@ -1186,17 +1195,6 @@
         return;
       }
       let right = 0;
-      const chips = root.querySelector('.hud-controls');
-      if (chips && visible(chips)) {
-        let bottom = 0;
-        for (const el of chips.querySelectorAll('*')) {
-          const r = visible(el);
-          if (!r) continue;
-          right = Math.max(right, r.right);
-          bottom = Math.max(bottom, r.bottom);
-        }
-        if (ruler.top >= bottom + 8) right = 0;
-      }
       // The locate chip sits at the ruler's default spot on /earth and /moon, so
       // wherever they share rows the ruler steps right of it (not only on short windows).
       const locate = visible(document.querySelector('.locate-slot .ui-chip'));
@@ -2151,14 +2149,6 @@
           .loadObjects(localeFromPage(page))
           .then((raw) => {
             const objects = raw as EarthObject[];
-
-            // Apply route-provided per-category defaults before the
-            // animate loop's first sub-gating pass.
-            const defaults = satCfg.categoryDefaultVisible;
-            layerStations = defaults.station;
-            layerObservatories = defaults.observatory;
-            layerConstellations = defaults.constellation;
-            layerComsats = defaults.comsat;
 
             const satLayer = buildSatelliteLayer({
               scene,
@@ -3831,25 +3821,14 @@
           if (om.halo) om.halo.visible = false;
         }
 
-        // Earth satellites — gated by master layerOrbiters + per-category
-        // chips. Per-spacecraft orbit rings track the master toggle.
-        // Empty loop on /moon and /mars (earthSats stays []).
+        // Earth satellites — every category rides the one ORBITERS chip. Per-spacecraft
+        // orbit rings track the same toggle. Empty loop on /moon and /mars (earthSats
+        // stays []).
         if (earthSats.length > 0) {
           for (const s of earthSats) {
-            const catVisible =
-              s.category === 'station'
-                ? layerStations
-                : s.category === 'telescope'
-                  ? layerObservatories
-                  : s.category === 'constellation'
-                    ? layerConstellations
-                    : s.category === 'comsat'
-                      ? layerComsats
-                      : true; // moon-orbiters (+ uncategorised) ride the master ORBITERS toggle
             // Nation filter (#363) — earth orbiters bucketed by primary agency.
             // Body-focus gate (#zoom) — drop sats + rings on deep zoom too.
-            const on =
-              orbitsInView && layerOrbiters && catVisible && nationEnabled(nationBySatId.get(s.id));
+            const on = orbitsInView && layerOrbiters && nationEnabled(nationBySatId.get(s.id));
             s.group.visible = on;
             if (s.ringMesh) s.ringMesh.visible = on;
           }
@@ -4475,7 +4454,7 @@
           const lander3dFade = Math.max(0, 1 - regionalOpacity * 4);
           for (const h of lander3dFade < 0.999 ? hotspots : []) {
             if (h.tier1Group) {
-              h.tier1Group.visible = layerGround && layerLaunchpads && lander3dFade > 0.01;
+              h.tier1Group.visible = layerLaunchpads && lander3dFade > 0.01;
               h.tier1Group.traverse((obj) => {
                 if (!(obj instanceof THREE.Mesh)) return;
                 const mat = obj.material as THREE.Material & { opacity: number };
@@ -4486,7 +4465,7 @@
               });
             }
             if (h.tier0Group) {
-              h.tier0Group.visible = layerGround && layerLaunchpads && lander3dFade > 0.01;
+              h.tier0Group.visible = layerLaunchpads && lander3dFade > 0.01;
               h.tier0Group.traverse((obj) => {
                 if (!(obj instanceof THREE.Mesh)) return;
                 const mat = obj.material as THREE.Material & { opacity: number };
@@ -5405,6 +5384,7 @@
   style:--chip-tint={config.planet === 'earth' ? undefined : config.bodyTintCss}
   style:--mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
   style:--index-handle-top={indexHandleTop != null ? `${indexHandleTop}px` : undefined}
+  style:--index-top={indexTopPx != null ? `${indexTopPx}px` : undefined}
   style:--card-bottom={legendH ? `${48 + legendH + 8 + locateReservePx}px` : undefined}
 >
   <div
@@ -5446,18 +5426,9 @@
        ground-view skybox, and their stack visually buried the
        Exit-panorama floating button (image 21 feedback, 2026-06-03). -->
   {#snippet layerChips()}
-    <!-- /earth groups its chips under ON EARTH and IN SPACE; each header is
-         the master switch for its group (IN SPACE is the ORBITERS master,
-         keeping its testid). /moon and /mars keep the flat row. -->
-    {@const earthGroups = config.earthOrbitalLayers?.satellites != null}
-    {@const orbitersChip = {
-      testid: 'layer-orbiters',
-      label: earthGroups ? m.earth_layer_group_space() : m.ui_layer_orbiters(),
-      title: earthGroups ? m.earth_layer_group_space_tip() : m.moon_layer_tip_orbiters(),
-      active: () => layerOrbiters,
-      toggle: () => (layerOrbiters = !layerOrbiters),
-      header: earthGroups,
-    }}
+    <!-- One flat row on every world (UXD-015): no groups, no master switches.
+         The ORBITERS chip switches every orbiter at once; on /earth that is
+         stations, space telescopes, constellations, comsats and Moon orbiters. -->
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <LayerChipRow
         chips={[
@@ -5470,24 +5441,9 @@
             active: () => !surfaceOff,
             toggle: cycleSurfaceMode,
           },
-          ...(earthGroups ? [] : [orbitersChip]),
-          ...(earthGroups
+          // LAUNCHPADS — /earth only (the route passes the launch-site config).
+          ...(config.earthOrbitalLayers?.satellites != null
             ? [
-                {
-                  testid: 'layer-group-earth',
-                  label: m.earth_layer_group_ground(),
-                  title: m.earth_layer_group_ground_tip(),
-                  active: () => layerGround,
-                  toggle: () => {
-                    layerGround = !layerGround;
-                    if (!layerGround) {
-                      selectedMuseum = null;
-                      selectedObservatory = null;
-                    }
-                    dropHiddenPadSelection();
-                  },
-                  header: true,
-                },
                 {
                   testid: 'layer-launchpads',
                   label: m.launchpad_layer_chip(),
@@ -5497,21 +5453,9 @@
                     layerLaunchpads = !layerLaunchpads;
                     dropHiddenPadSelection();
                   },
-                  disabled: () => !layerGround,
                 },
               ]
             : []),
-          {
-            testid: 'layer-orbits',
-            label: m.ui_layer_orbits(),
-            title: m.moon_layer_tip_orbit_rings(),
-            active: () => layerOrbits,
-            toggle: () => (layerOrbits = !layerOrbits),
-            // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
-            // /earth had no such rings under this chip — it only drove the
-            // regime bands, now removed (#363) — so the chip is hidden there.
-            visible: config.earthOrbitalLayers == null,
-          },
           // MUSEUMS (PRD-027) — /earth only, when the route passes loadMuseums.
           ...(loadMuseums != null
             ? [
@@ -5524,27 +5468,46 @@
                     layerMuseums = !layerMuseums;
                     if (!layerMuseums) selectedMuseum = null;
                   },
-                  disabled: () => !layerGround,
                 },
               ]
             : []),
-          // TELESCOPES (PRD-028) — observatories on the ground; the existing
-          // OBSERVATORIES chip is the space telescopes in orbit.
+          // OBSERVATORIES (PRD-028) — telescopes on the ground. The testid
+          // keeps its old name (layer-telescopes) so the specs do not move.
           ...(loadObservatories != null
             ? [
                 {
                   testid: 'layer-telescopes',
-                  label: m.observatory_layer_chip(),
+                  label: m.earth_layer_chip_observatories(),
                   title: m.observatory_layer_tip(),
                   active: () => layerTelescopes,
                   toggle: () => {
                     layerTelescopes = !layerTelescopes;
                     if (!layerTelescopes) selectedObservatory = null;
                   },
-                  disabled: () => !layerGround,
                 },
               ]
             : []),
+          {
+            testid: 'layer-orbiters',
+            label: m.ui_layer_orbiters(),
+            title:
+              config.earthOrbitalLayers?.satellites != null
+                ? m.earth_layer_tip_orbiters()
+                : m.moon_layer_tip_orbiters(),
+            active: () => layerOrbiters,
+            toggle: () => (layerOrbiters = !layerOrbiters),
+          },
+          {
+            testid: 'layer-orbits',
+            label: m.ui_layer_orbits(),
+            title: m.moon_layer_tip_orbit_rings(),
+            active: () => layerOrbits,
+            toggle: () => (layerOrbits = !layerOrbits),
+            // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
+            // /earth had no such rings under this chip — it only drove the
+            // regime bands, now removed (#363) — so the chip is hidden there.
+            visible: config.earthOrbitalLayers == null,
+          },
           // TRAVERSES chip shows only when this body has vendored
           // rover paths (Mars today; Moon EVA / Lunokhod future).
           ...(loadTraverses != null
@@ -5556,63 +5519,6 @@
                   active: () => layerTraverses,
                   toggle: () => (layerTraverses = !layerTraverses),
                 },
-              ]
-            : []),
-          // Earth-only satellite-category chips (#290 Slice 6), under the
-          // IN SPACE header (the ORBITERS master) — visible only when
-          // earthOrbitalLayers.satellites is configured.
-          ...(config.earthOrbitalLayers?.satellites != null
-            ? [
-                orbitersChip,
-                // The 5 Earth-only sub-chips are gated on the master
-                // ORBITERS toggle (per-frame visibility = layerOrbiters
-                // && catVisible). When the master is off, clicking a
-                // sub-chip silently flips state but the scene doesn't
-                // change — the user reads this as "chip is broken"
-                // (2026-06-15 user note: "tuned off orbiters [and the
-                // sub-chips appeared dead] -- grayed out solution
-                // please and disable in UI"). Each sub-chip now reads
-                // disabled when ORBITERS is off, which dims it via
-                // .chip:disabled CSS in LayerChipRow + blocks clicks
-                // natively. Turning ORBITERS back on makes the chips
-                // live again at whatever individual state they held.
-                {
-                  testid: 'layer-stations',
-                  label: m.ui_layer_stations(),
-                  title: m.earth_layer_tip_habitats(),
-                  active: () => layerStations,
-                  toggle: () => (layerStations = !layerStations),
-                  disabled: () => !layerOrbiters,
-                },
-                {
-                  testid: 'layer-observatories',
-                  // Space telescopes; the IN SPACE header says where they are.
-                  label: m.observatory_layer_chip(),
-                  title: m.earth_layer_tip_telescopes(),
-                  active: () => layerObservatories,
-                  toggle: () => (layerObservatories = !layerObservatories),
-                  disabled: () => !layerOrbiters,
-                },
-                {
-                  testid: 'layer-constellations',
-                  label: m.ui_layer_constellations(),
-                  title: m.earth_layer_tip_nav(),
-                  active: () => layerConstellations,
-                  toggle: () => (layerConstellations = !layerConstellations),
-                  disabled: () => !layerOrbiters,
-                },
-                {
-                  testid: 'layer-comsats',
-                  label: m.ui_layer_comsats(),
-                  title: m.earth_layer_tip_geo(),
-                  active: () => layerComsats,
-                  toggle: () => (layerComsats = !layerComsats),
-                  disabled: () => !layerOrbiters,
-                },
-                // MOON ORBITERS chip removed (2026-06-29 user direction):
-                // the master ORBITERS toggle already covers lunar orbiters,
-                // so a separate sub-chip was redundant. Moon-orbiters now
-                // ride the ORBITERS master like any other orbiter.
               ]
             : []),
         ]}
@@ -5719,6 +5625,7 @@
   {#if !panoramaActive}
     <div
       class="hud-controls"
+      class:beside-panel={panelOpen}
       class:flat-hidden={flatPatchActive}
       data-audio-stage="surface-hud"
       role="group"
@@ -5777,10 +5684,8 @@
         ]}
         onOpen={(id) => (mobileDrawerOpen = id !== null)}
       />
-      <!-- Desktop object index: an edge-handle toggles a left side panel.
-           Mobile uses the Index drawer tab above; both are gated by CSS so
-           only one shows per device. Selecting keeps the list open on desktop
-           (master → detail on the right) but closes the drawer on mobile. -->
+      <!-- Object index: an edge-handle toggles a left side panel on every viewport.
+           Selecting keeps the list open (master → detail on the right). -->
       <div class="surface-index-handle">
         <Chip
           kind="toggle"
@@ -5793,10 +5698,19 @@
           {m.surface_index_open()}
         </Chip>
       </div>
-      {#if indexOpen}
-        <aside class="surface-index-desktop" aria-label={m.surface_index_aria()}>
+      <!-- On a hub body (moon / mars / venus) the panel is always in the DOM, hidden while
+           closed: its list carries the real links to every entity page, so the prerendered
+           HTML links them all (ADR-096 item 11; the A–Z tab it replaced is gone). -->
+      {#if indexOpen || entityLinks.length > 0}
+        <aside
+          class="surface-index-desktop"
+          hidden={!indexOpen}
+          aria-label={m.surface_index_aria()}
+        >
           <SurfaceIndexPanel
             items={indexItems}
+            {entityLinks}
+            hub={body}
             selectedId={indexSelectedId}
             onSelect={(id) => {
               cue('select');
@@ -7036,9 +6950,9 @@ sample      ${debugInfo.projectedPxSample}`}
     display: block;
     position: fixed;
     left: 12px;
-    /* Start below the top-left view controls (matches the ISS modules drawer
-       top:152) so the panel sits UNDER the buttons rather than over them. */
-    top: 152px;
+    /* Starts just under the top-left HUD (published as --index-top from its measured
+       bottom, so a wrapped chip row pushes it down); touch has no HUD and keeps 152. */
+    top: var(--index-top, 152px);
     bottom: 12px;
     width: min(320px, calc(100vw - 24px));
     z-index: 45;
@@ -7049,13 +6963,20 @@ sample      ${debugInfo.projectedPxSample}`}
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
   }
-  /* Landscape phones are very short: the tall top:152 offset leaves too little
+  .surface-index-desktop[hidden] {
+    display: none;
+  }
+  /* Landscape phones are very short: the tall top offset leaves too little
      height and the search + wrapped filter chips squeeze the flex:1 list to 0.
      Tighten the top/bottom on short viewports so the list keeps its scroll area. */
   @media (max-height: 500px) {
     .surface-index-desktop {
-      top: 60px;
       bottom: 8px;
+    }
+  }
+  @media (max-height: 500px) and (hover: none), (max-height: 500px) and (pointer: coarse) {
+    .surface-index-desktop {
+      top: 60px;
     }
   }
   .hud-controls {
@@ -7254,9 +7175,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 0;
   }
   .ctrl-row.chips {
-    /* Mobile: wrapped chip row that fits inside the viewport without
-       horizontal scroll. Desktop returns to a vertical column at
-       @min-width: 768. */
+    /* One flat row (UXD-015): wraps between chips where the width runs out. */
     flex-direction: row;
     flex-wrap: wrap;
     width: auto;
@@ -7272,7 +7191,7 @@ sample      ${debugInfo.projectedPxSample}`}
     }
   }
 
-  /* ─── ≥ 768 px — chip rail returns to vertical column + z-index ── */
+  /* ─── fine pointer — HUD shown, above the canvas ─────────────────── */
   @media (hover: hover) and (pointer: fine) {
     .hud-controls {
       display: flex;
@@ -7281,19 +7200,17 @@ sample      ${debugInfo.projectedPxSample}`}
       left: 36px;
     }
     .ctrl-row.chips {
-      flex-direction: column;
-      /* Chips share one width that's NOT inherited from the toggle row
-         above: 140 px, or the longest label when a locale needs more
-         (de KOMMUNIKATIONSSATELLITEN). */
       width: max-content;
-      min-width: 140px;
-      max-width: none;
-      align-items: stretch;
+      max-width: calc(100vw - 36px - 16px);
+    }
+    /* With a detail panel open the row stops before it. */
+    .hud-controls.beside-panel .ctrl-row.chips {
+      max-width: calc(100vw - 36px - var(--panel-width) - 28px);
     }
   }
 
-  /* Narrow window with a mouse: the 400 px detail panel reaches the chip
-     column and the right-edge scale bar + altitude readout, so they sit
+  /* Narrow window with a mouse: the 400 px detail panel reaches the chip row
+     and the right-edge scale bar + altitude readout, so they sit
      under the panel (z 30) instead of on top of its text. */
   @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
     .hud-controls,

@@ -9,12 +9,17 @@
 
   Filter logic lives in the pure `surface-index` module (unit-tested); this file
   is presentation + local filter state only. Mirrors /fleet's filter model.
+
+  A row whose object has an entity page (`/<hub>/<id>`, from the route's server load) also
+  carries a real link to it. Before the sites load (the prerender), the list is the plain
+  link list of every page, so the hub links all its pages in the static HTML (ADR-096 item 11).
 -->
 <script lang="ts">
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import Chip from '$lib/components/Chip.svelte';
   import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { roving } from '$lib/a11y/roving';
+  import { localHref } from '$lib/locale';
   import {
     filterIndexItems,
     indexAgencies,
@@ -26,12 +31,18 @@
 
   interface Props {
     items: IndexItem[];
+    /** Entity pages of this hub; rows with a page get a link, and they are the list until `items` load. */
+    entityLinks?: { id: string; name: string }[];
+    /** Hub path segment of those pages (`moon`, `mars`, `venus`). */
+    hub?: string;
     selectedId?: string | null;
     onSelect: (id: string) => void;
     /** Desktop passes a close; mobile omits it (the drawer's own × handles it). */
     onClose?: () => void;
   }
-  let { items, selectedId = null, onSelect, onClose }: Props = $props();
+  let { items, entityLinks = [], hub = '', selectedId = null, onSelect, onClose }: Props = $props();
+  const pageIds = $derived(new Set(entityLinks.map((l) => l.id)));
+  const pageHref = (id: string) => localHref(`/${hub}/${id}`);
 
   let query = $state('');
   let domainFilter = $state<'ALL' | 'orbit' | 'land'>('ALL');
@@ -151,10 +162,14 @@
   <ul
     class="sidx-list"
     data-testid="surface-index-list"
-    use:roving={{ orientation: 'vertical', wrap: true }}
+    use:roving={{
+      orientation: 'vertical',
+      wrap: true,
+      itemSelector: 'button.sidx-row, a.sidx-page',
+    }}
   >
     {#each filtered as item (item.id)}
-      <li>
+      <li class="sidx-item">
         <button
           type="button"
           class="sidx-row"
@@ -168,9 +183,26 @@
           <AgencyBadge agency={item.agencies.join(' / ')} />
           <span class="row-meta">{item.year} · {surfaceStatusLabel(item.status)}</span>
         </button>
+        {#if pageIds.has(item.id)}
+          <a
+            class="sidx-page"
+            href={pageHref(item.id)}
+            title={m.surface_index_open_page()}
+            aria-label="{m.surface_index_open_page()}: {item.name}"
+            data-testid="surface-index-page-link"
+            data-index-id={item.id}>↗</a
+          >
+        {/if}
       </li>
     {/each}
-    {#if filtered.length === 0}
+    {#if items.length === 0}
+      {#each entityLinks as link (link.id)}
+        <li class="sidx-item">
+          <a class="sidx-page sidx-page--name" href={pageHref(link.id)}>{link.name}</a>
+        </li>
+      {/each}
+    {/if}
+    {#if (items.length > 0 || entityLinks.length === 0) && filtered.length === 0}
       <li class="sidx-empty">{m.surface_index_empty()}</li>
     {/if}
   </ul>
@@ -255,11 +287,45 @@
       min-height: 96px;
     }
   }
+  .sidx-item {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .sidx-page {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--color-text-dim);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .sidx-page:hover,
+  .sidx-page:focus-visible {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--color-text);
+    outline: none;
+  }
+  .sidx-page--name {
+    flex: 1;
+    justify-content: flex-start;
+    padding: 8px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--color-text);
+  }
   .sidx-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     padding: 8px 8px;
     background: transparent;
     border: 1px solid transparent;

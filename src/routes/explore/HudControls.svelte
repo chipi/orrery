@@ -5,6 +5,7 @@
   import EnterArButton from '$lib/components/EnterArButton.svelte';
   import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
   import Chip from '$lib/components/Chip.svelte';
+  import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
@@ -84,6 +85,35 @@
       tip: m.explore_layer_tip_interstellar,
     },
   ];
+
+  /** The layer chips for LayerChipRow. The phone controls drawer closes after a toggle and
+   *  leaves PATHS to its own Iconic Missions tab. */
+  function layerChips(after?: () => void, withPaths = true) {
+    return [
+      ...LAYER_CHIPS.map((chip) => ({
+        testid: `layer-${chip.key}`,
+        label: chip.label,
+        title: chip.tip(),
+        active: () => layers[chip.key],
+        toggle: () => {
+          onToggleLayer(chip.key);
+          after?.();
+        },
+      })),
+      ...(withPaths
+        ? [
+            {
+              testid: 'layer-paths',
+              label: m.ui_layer_paths,
+              title: m.explore_layer_tip_paths(),
+              active: () => layers.paths,
+              toggle: () => onToggleLayer('paths'),
+              attrs: { 'data-audio-stage': 'explore-layer-paths' },
+            },
+          ]
+        : []),
+    ];
+  }
 </script>
 
 <!-- Secondary HUD controls: 2D/3D chip + layer chips + paths-legend.
@@ -110,27 +140,7 @@
     <EnterSkyButton onEnter={() => void launchSkyScene()} />
   </div>
   <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-    {#each LAYER_CHIPS as chip (chip.key)}
-      <Chip
-        kind="toggle"
-        active={layers[chip.key]}
-        onclick={() => onToggleLayer(chip.key)}
-        data-testid="layer-{chip.key}"
-        title={chip.tip()}
-      >
-        {chip.label()}
-      </Chip>
-    {/each}
-    <Chip
-      kind="toggle"
-      active={layers.paths}
-      onclick={() => onToggleLayer('paths')}
-      data-audio-stage="explore-layer-paths"
-      data-testid="layer-paths"
-      title={m.explore_layer_tip_paths()}
-    >
-      {m.ui_layer_paths()}
-    </Chip>
+    <LayerChipRow chips={layerChips()} />
   </div>
   {#if layers.paths}
     <div
@@ -255,20 +265,7 @@
 {/snippet}
 {#snippet mobileControlsContent(close: () => void)}
   <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-    {#each LAYER_CHIPS as chip (chip.key)}
-      <Chip
-        kind="toggle"
-        active={layers[chip.key]}
-        onclick={() => {
-          onToggleLayer(chip.key);
-          close();
-        }}
-        data-testid="layer-{chip.key}"
-        title={chip.tip()}
-      >
-        {chip.label()}
-      </Chip>
-    {/each}
+    <LayerChipRow chips={layerChips(close, false)} />
   </div>
 {/snippet}
 {#snippet mobileIconicContent(close: () => void)}
@@ -407,8 +404,7 @@
      but always above the canvas. Pinned to the left so it never
      collides with the right-drawer detail panel on desktop.
      Phone (≤767 px): hidden — MobileDrawerGroup replaces it.
-     @min-width: 501 + @min-width: 769 layer desktop spacing + chip
-     stretch column back. */
+     @min-width: 501 relaxes the spacing; a fine pointer shows it. */
   .hud-controls {
     position: fixed;
     /* Mobile: tucked at left:8 / top:nav+8 / gap:6 to fit a 375 px
@@ -421,12 +417,7 @@
     z-index: 45;
     display: none;
     flex-direction: column;
-    /* Mobile: flex-start so each row takes its natural width (the chip
-       row wraps; the toggle row hugs left). align-items: stretch is
-       restored at @min-width: 769 so the chip column inherits the
-       top-row's computed width — 2026-06-06 user direction: "resize
-       those 4 filter chips to fit new width of remaining 2 buttons
-       on top". */
+    /* Each row takes its natural width: the view row hugs left, the chip row wraps. */
     align-items: flex-start;
     gap: 6px;
     pointer-events: none; /* children re-enable */
@@ -438,20 +429,12 @@
     pointer-events: auto;
   }
   .ctrl-row.chips {
-    /* a4-keep: chip row layout (scroll line / column / drawer wrap / short-window cap); A5 rewrites it */
-    /* Mobile: chip row is a single horizontally-scrollable line (A3) so it
-       never wraps to a second row and crowds the top edge — even when the
-       science lens adds its HR/Light-cone chips. At @min-width: 769 the rail
-       returns to a vertical column matching the toggle row's stretch width. */
+    /* One flat row (UXD-015), the same as on the worlds: wraps between chips where the
+       width runs out. */
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     max-width: calc(100vw - 24px);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .ctrl-row.chips::-webkit-scrollbar {
-    display: none;
   }
   .ctrl-row.chips :global(.ui-chip) {
     flex: none;
@@ -625,20 +608,14 @@
     }
   }
 
-  /* ─── ≥ 769 px — chip-stretch column + always-on paths legend ──── */
+  /* ─── fine pointer — HUD shown + always-on paths legend ─────────── */
   @media (hover: hover) and (pointer: fine) {
     .paths-legend {
       display: flex;
-      /* position: absolute, anchored to the fixed-positioned
-         .hud-controls parent. Removed from the flex-column flow so
-         its intrinsic content width can no longer drive the chip
-         column wider via the parent's align-items: stretch.
-         top:100% places it just below the in-flow children (toggle
-         row + chip column). (2026-06-17 iteration 2: align-self
-         + width was insufficient — the legend still expanded the
-         flex container's natural width because flex items
-         participate in max-content sizing. Absolute positioning
-         fully decouples.) */
+      /* position: absolute, anchored to the fixed-positioned .hud-controls parent, so its
+         content width cannot widen the chip row (flex items take part in max-content
+         sizing, so align-self + width was not enough — 2026-06-17). top:100% places it just
+         below the in-flow children (view row + chip row). */
       position: absolute;
       top: 100%;
       left: 0;
@@ -650,48 +627,9 @@
       max-height: calc(100vh - var(--nav-height, 60px) - 220px);
       z-index: 36;
     }
-    .ctrl-row.chips {
-      /* a4-keep: chip row layout (scroll line / column / drawer wrap / short-window cap); A5 rewrites it */
-      /* Layer chips stack vertically so their on/off state reads as a
-         compact left-edge column rather than a wide horizontal strip.
-         Individual chips set width: 100% so they stretch to match the
-         top toggle row via .hud-controls align-items: stretch. */
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      max-width: none;
-    }
     .hud-controls {
       display: flex;
-      align-items: stretch;
-    }
-  }
-
-  /* FB5 — controls drawer: chips wrap two-per-row inside the full-width
-     accordion panel. flex-grow lets a lone chip (the Iconic-Missions PATHS
-     toggle, which lives in its own drawer) stretch to full width, while the
-     four Controls chips settle into a tidy 2x2 grid. Scoped to .mdg-body. */
-  @media (hover: none), (pointer: coarse) {
-    :global(.mdg-body) .ctrl-row.chips {
-      /* a4-keep: chip row layout (scroll line / column / drawer wrap / short-window cap); A5 rewrites it */
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    :global(.mdg-body) .ctrl-row.chips :global(.ui-chip) {
-      flex: 1 1 calc(50% - 3px);
-    }
-  }
-
-  /* Short window: the 244 px chip rail would run down onto the PLANET SCALES card
-     and the time dock (both pinned bottom-left, 62 px tall), so it stops 70 px
-     above the bottom edge and scrolls. */
-  @media (max-height: 440px) {
-    .ctrl-row.chips {
-      /* a4-keep: chip row layout (scroll line / column / drawer wrap / short-window cap); A5 rewrites it */
-      max-height: calc(100vh - 124px - 70px);
-      overflow-y: auto;
-      scrollbar-width: none;
+      align-items: flex-start;
     }
   }
 

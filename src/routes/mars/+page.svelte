@@ -1,5 +1,4 @@
 <script lang="ts">
-  import EntityIndex from '$lib/components/EntityIndex.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
@@ -246,6 +245,7 @@
 <DebugPanelRegistrar label="MARS" />
 
 <SurfaceScene
+  entityLinks={data.entityIndex}
   config={MARS_CONFIG}
   body="mars"
   initialFacing={MARS_SITES_SIDE}
@@ -257,8 +257,6 @@
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
 />
-
-<EntityIndex hub="mars" title={m.entity_index_mars()} links={data.entityIndex} floating />
 
 <TourAnchors route="mars" anchors={MARS_TOUR_ANCHORS} />
 

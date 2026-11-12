@@ -19,7 +19,7 @@ Don't reinvent this on the route — extend it here:
 - Picker / raycaster, hit testing for both 3D + 2D
 - Panel state machinery — `selected`, `panelOpen`, `panelTab`, `panelGallery`, `panelStory`, `lastSelectedId`, the reset effect that fires on site change, `loadPanelData` orchestration
 - HUD: ViewToggleButton, View3dControls, LayerChipRow (all `Chip`s; the Worlds set `--chip-tint` on the scene root), altitude indicator, TierContextCard, debug overlay (`?debug=1`)
-- Phone bottom bar: `.surface-bottom-bar` (scale, altitude, plus the route's globe button passed as the `barStart` snippet) is ONE row above the tab row on coarse pointers and `display: contents` elsewhere; the flat ground view has its own `.hud-bottom` bar. Routes' floating `EntityIndex` A–Z tab moves to the left edge above INDEX on phones (links stay in the prerendered DOM, SEO ADR-096 #11).
+- Phone bottom bar: `.surface-bottom-bar` (scale, altitude, plus the route's globe button passed as the `barStart` snippet) is ONE row above the tab row on coarse pointers and `display: contents` elsewhere; the flat ground view has its own `.hud-bottom` bar. The object-index panel (`SurfaceIndexPanel`) is always in the DOM on moon / mars / venus, hidden while closed, with a real link to each entity page (SEO ADR-096 #11); the separate A–Z tab is gone.
 - Panorama enter/exit (`hotspot_tier3_panorama` → skybox)
 - E2E contract signals: `data-sites-count`, `data-hotspot-tier` on the canvas
 - Reduced-motion handling (gates auto-spin + dot pulse + fly-in)

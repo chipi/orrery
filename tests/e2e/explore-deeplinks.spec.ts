@@ -11,6 +11,7 @@ import { waitForHydration } from './_helpers/hydration';
 
 const params = (page: Page) => Object.fromEntries(new URL(page.url()).searchParams);
 const panel = (page: Page, name: string) => page.locator(`aside.panel[aria-label="${name}"]`);
+const NEIGHBORHOOD_INDEX = 'Stellar Neighborhood index — jump to a named star or a deep-sky object';
 
 /** Open the INDEX once the scale on screen is the one named by `ariaLabel` (the handle is in the SSR HTML at the solar system). */
 async function openIndex(page: Page, ariaLabel: string) {
@@ -44,7 +45,7 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
 
   test('selecting a star from the index mirrors it into ?goto', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
-    await openIndex(page, 'Named stars');
+    await openIndex(page, NEIGHBORHOOD_INDEX);
     await page
       .locator(
         'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="canopus"]',
@@ -57,7 +58,7 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
   test('a cleared cold ?context is not written back by a later URL mirror', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
     await expect.poll(() => params(page).context ?? null, { timeout: 20_000 }).toBeNull();
-    await openIndex(page, 'Named stars');
+    await openIndex(page, NEIGHBORHOOD_INDEX);
     await page
       .locator(
         'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="canopus"]',
@@ -69,7 +70,7 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
 
   test('leaving a system entered from its star panel clears ?system', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
-    await openIndex(page, 'Named stars');
+    await openIndex(page, NEIGHBORHOOD_INDEX);
     await page
       .locator(
         'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="proxima-centauri"]',
@@ -91,7 +92,7 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
 
   test('entering a system from its star panel mirrors it into ?system', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
-    await openIndex(page, 'Named stars');
+    await openIndex(page, NEIGHBORHOOD_INDEX);
     await page
       .locator(
         'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="proxima-centauri"]',

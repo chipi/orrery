@@ -33,6 +33,7 @@
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { getObserverLocation } from '$lib/geolocation';
   import {
@@ -279,17 +280,18 @@
   {#snippet barStart()}
     <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
          bottom bar (the label stays for assistive tech and tests). -->
-    <button
-      type="button"
-      class="locate-me"
-      onclick={viewFromMyLocation}
-      disabled={locating}
-      data-testid="moon-locate-me"
-      title={m.moon_locate_me()}
-    >
-      <span class="locate-icon" aria-hidden="true">☾</span>
-      <span class="locate-label">{locating ? m.moon_locate_working() : m.moon_locate_me()}</span>
-    </button>
+    <div class="locate-slot">
+      <Chip
+        kind="action"
+        onclick={viewFromMyLocation}
+        disabled={locating}
+        data-testid="moon-locate-me"
+        title={m.moon_locate_me()}
+      >
+        {#snippet icon()}☾{/snippet}
+        <span class="locate-label">{locating ? m.moon_locate_working() : m.moon_locate_me()}</span>
+      </Chip>
+    </div>
   {/snippet}
 </SurfaceScene>
 
@@ -343,50 +345,22 @@
 <style>
   /* #48 — observer button + readout, bottom-left. Same treatment as /earth;
      the readout stacks above the button when a location has been resolved. */
-  .locate-me {
+  .locate-slot {
     position: absolute;
     /* On the nation legend's top edge when the scene publishes it. */
     bottom: var(--legend-top, calc(60px + env(safe-area-inset-bottom, 0px)));
     left: 12px;
     z-index: 7;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 12px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    color: var(--text-base, #e8e8ed);
-    background: rgba(8, 10, 22, 0.62);
-    border: 1px solid var(--color-accent-edge);
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    cursor: pointer;
-    min-height: 34px;
   }
-  .locate-me:hover:not(:disabled) {
-    border-color: var(--color-accent-strong);
-  }
-  .locate-me:disabled {
-    opacity: 0.6;
-    cursor: default;
-  }
-  /* Globe controls: the panorama's compass sits in this corner. */
-  :global(html[data-surface-panorama]) .locate-me,
+  /* A globe control: the panorama's compass sits in this corner. */
+  :global(html[data-surface-panorama]) .locate-slot,
   :global(html[data-surface-panorama]) .moon-observer {
     display: none;
   }
-  /* Phone: an icon button in the scene's bottom bar; the words stay for screen readers. */
+  /* Phone: a chip in the scene's bottom bar; the words stay for screen readers. */
   @media (hover: none), (pointer: coarse) {
-    .locate-me {
+    .locate-slot {
       position: static;
-      width: 40px;
-      min-height: 40px;
-      padding: 0;
-      justify-content: center;
-      background: none;
-      border: none;
-      backdrop-filter: none;
     }
     .locate-label {
       position: absolute;
@@ -396,14 +370,6 @@
       clip-path: inset(50%);
       white-space: nowrap;
     }
-    .locate-me .locate-icon {
-      font-size: 20px;
-    }
-  }
-  .locate-icon {
-    color: var(--color-state);
-    font-size: 14px;
-    line-height: 1;
   }
   .moon-observer {
     position: absolute;

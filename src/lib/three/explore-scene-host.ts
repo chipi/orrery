@@ -260,6 +260,8 @@ export interface ExploreSceneHostBridge {
   readonly planetById: Map<string, LocalizedPlanet>;
   scaleBarLabel: string;
   scaleBarPx: number;
+  /** Pixels of the right edge a docked side panel covers (0: none, or a bottom sheet); the HUD clears it. */
+  panelCoverPx: number;
   scaleReadout: ScaleReadout | null;
   selectedCosmicWebMember: CosmicWebMember | null;
   selectedDeepSkyId: string | null;
@@ -2112,7 +2114,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       const rects = wanted
         ? Array.from(document.querySelectorAll('aside.panel'), (el) => el.getBoundingClientRect())
         : [];
-      framingTarget = framingShiftPx(panelCoverPx(rects, window.innerWidth));
+      const cover = panelCoverPx(rects, window.innerWidth);
+      framingTarget = framingShiftPx(cover);
+      if (bridge.panelCoverPx !== cover) bridge.panelCoverPx = cover;
     }
     framingShift = deps.getReducedMotion()
       ? framingTarget

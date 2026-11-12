@@ -568,6 +568,8 @@
   let scaleReadout = $state<ScaleReadout | null>(null);
   let scaleBarPx = $state(0);
   let scaleBarLabel = $state('');
+  // How far a docked side panel reaches in from the right edge (measured by the host).
+  let panelCoverPx = $state(0);
   let contextId = $state<ExploreContextId>('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
   // active scale-shell menu item (the URL ?context is cleared after the jump, so
@@ -658,9 +660,28 @@
   // persistent "you are here / home" indicator in the neighborhood (item: never
   // get lost). Updated (throttled) from the render loop.
   let sunCompass = $state<{ ang: number; on: boolean; ly: number } | null>(null);
-  // Reset-view lives in the breadcrumb row now; visible once the current scale's
-  // view is "dirty" (a selection, or the Sun panned out of frame).
-  let scaleResetVisible = $derived.by(() => {
+  // The solar system's "dirty" view: a selection of any kind. The HUD's RESET VIEW and the scale
+  // navigator's Reset both read it and both run `resetSolarView`.
+  let solarHasSelection = $derived(
+    !!(
+      selectedId ||
+      selectedSmallBodyId ||
+      selectedSatelliteKey ||
+      selectedBeltId ||
+      selectedSun ||
+      iconic.state.panelOpen
+    ),
+  );
+  function resetSolarView(): void {
+    resetExplorePanelState();
+    // Out of the neighbourhood first: the fly home starts from the solar camera, not from it.
+    exitNeighborhoodFn?.();
+    clearBodySelection();
+  }
+  // Reset lives in the scale navigator at all eight scales (always drawn, UXD-021); it is enabled
+  // once the current scale's view is "dirty" (a selection, or the Sun panned out of frame).
+  let scaleResetEnabled = $derived.by(() => {
+    if (contextId === 'solar-system') return solarHasSelection;
     if (contextId === 'neighborhood') return !!(selectedStarId || (sunCompass && !sunCompass.on));
     if (contextId === 'milky-way') return !!selectedMwId;
     if (contextId === 'local-group') return !!selectedLgMember;
@@ -671,7 +692,8 @@
     return false;
   });
   function resetCurrentScale(): void {
-    if (contextId === 'neighborhood') resetNeighborhoodFn?.();
+    if (contextId === 'solar-system') resetSolarView();
+    else if (contextId === 'neighborhood') resetNeighborhoodFn?.();
     else if (contextId === 'milky-way') resetMilkyWayFn?.();
     else if (contextId === 'local-group') resetLocalGroupFn?.();
     else if (contextId === 'local-sheet') resetLocalSheetFn?.();
@@ -1404,6 +1426,12 @@
       set scaleBarLabel(v) {
         scaleBarLabel = v;
       },
+      get panelCoverPx() {
+        return panelCoverPx;
+      },
+      set panelCoverPx(v) {
+        panelCoverPx = v;
+      },
       get contextId() {
         return contextId;
       },
@@ -1968,7 +1996,8 @@
       activeShell={contextId as ShellId}
       pickerDisabled={!contextDeepLinkFn}
       onJump={(shell) => void contextDeepLinkFn?.(shell)}
-      showReset={scaleResetVisible}
+      resetEnabled={scaleResetEnabled}
+      {panelCoverPx}
       onReset={resetCurrentScale}
     />
   {/if}
@@ -2110,20 +2139,8 @@
     hidden={contextId !== 'solar-system' || !!activeBlackHole}
     {view}
     {toggleView}
-    hasSelection={!!(
-      selectedId ||
-      selectedSmallBodyId ||
-      selectedSatelliteKey ||
-      selectedBeltId ||
-      selectedSun ||
-      iconic.state.panelOpen
-    )}
-    onResetView={() => {
-      resetExplorePanelState();
-      // Out of the neighbourhood first: the fly home starts from the solar camera, not from it.
-      exitNeighborhoodFn?.();
-      clearBodySelection();
-    }}
+    hasSelection={solarHasSelection}
+    onResetView={resetSolarView}
     {layers}
     onToggleLayer={(key) => {
       layers[key] = !layers[key];

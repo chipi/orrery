@@ -96,6 +96,8 @@ Not covered: the lens overlay labels of the Milky Way (world-sized teaching text
 (C7), the Worlds' site tags, `fly-frame-runner.ts` and `three-label.ts` (not measured against the floor), the
 ruler (C4), the solar scene's own sprite labels in `explore-scene-host.ts`.
 
+Follow-up (2026-11-12, operator's device screenshots): the Milky Way opened with two of the four arm names off screen on a 16:9 laptop and every arm name and the Sun off screen on a phone. The arm label anchors (`milky-way-schematic.json`, schematic like every position there) moved from the disc edge to 4–9 kpc, placed so no arm name collides with a pin label at 1280, 1470, 2560 and on a phone (portrait, landscape), and a portrait window enters farther out (`MW_ENTRY_CAM_R_PORTRAIT`, 2.0× against 1.12×), as the Local Group already did. Labels beside the INDEX pull tab flip inward as at the screen edge (`setLabelLeftInset`).
+
 ## Verification
 
 Unit: `src/lib/universe/scene-pins.test.ts` (placement and its tie-break, offset, ring state, px-to-world, ramp,

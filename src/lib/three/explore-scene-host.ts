@@ -36,7 +36,7 @@ import {
 } from '$lib/universe/milky-way-visual';
 import { describeDistanceAu, AU_PER_PC } from '$lib/universe/scale-readout';
 import { fixedScaleBar, formatBarValue, scaleBarWidth } from '$lib/universe/scale-bar';
-import { placeLabels, type PlaceSlot } from '$lib/universe/scene-pins';
+import { placeLabels, setLabelLeftInset, type PlaceSlot } from '$lib/universe/scene-pins';
 import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
 import { PLANETS, realStartAngle } from '$lib/explore-scene';
@@ -540,6 +540,13 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // halo, so 1.7× left the disk small + islanded in dead space). 1.12× brings the
   // spiral up to fill the screen like the solar system does on default /explore.
   const MW_ENTRY_CAM_R = MW_SCENE_RADIUS * 1.12;
+  // A portrait window sees a narrow slice of the disk at 1.12×: the Sun and every arm name fell
+  // outside it. Like the Local Group, portrait enters farther out.
+  const MW_ENTRY_CAM_R_PORTRAIT = MW_SCENE_RADIUS * 2.0;
+  const mwEntryR = () =>
+    (bridge.container?.clientHeight ?? 0) > (bridge.container?.clientWidth ?? 1)
+      ? MW_ENTRY_CAM_R_PORTRAIT
+      : MW_ENTRY_CAM_R;
   // Zoom-in floor → cross back to the neighborhood. Raised from 0.35 toward the
   // 1.7 entry so the return is much easier: you drop back after a modest zoom-in
   // rather than diving almost to the galactic centre. Tunable (trades away some
@@ -1104,7 +1111,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     cancelFocus();
     focusOrigin.set(0, 0, 0);
     camP = MW_ENTRY_CAM_P;
-    camR = Math.max(camRMin, Math.min(camRMax, MW_ENTRY_CAM_R));
+    camR = Math.max(camRMin, Math.min(camRMax, mwEntryR()));
     closeMwPanel();
     updateCam();
   }
@@ -1211,7 +1218,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         far: MW_FAR,
         near: 1,
         entryP: MW_ENTRY_CAM_P,
-        entryR: MW_ENTRY_CAM_R,
+        entryR: mwEntryR(),
         dollyFromR: MW_SCENE_RADIUS * 1.8,
       }),
       clearPanel: () => {
@@ -4170,8 +4177,19 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // Resize
   // ──────────────────────────────────────────────────────────────
 
+  // The INDEX pull tab covers the left edge on every scale; labels beside it flip inward.
+  let insetFrame = 0;
+  const measureLabelInset = () => {
+    const c = bridge.container;
+    if (!c) return;
+    const tab = document.querySelector('.scale-index-handle');
+    const cover = tab ? tab.getBoundingClientRect().right - c.getBoundingClientRect().left + 4 : 0;
+    setLabelLeftInset(cover, c.clientWidth);
+  };
+
   const onResize = () => {
     if (!bridge.container) return;
+    measureLabelInset();
     camera.aspect = bridge.container.clientWidth / bridge.container.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(bridge.container.clientWidth, bridge.container.clientHeight);
@@ -4254,6 +4272,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   const loop = createAnimateLoop({
     onFrame: () => {
       frameMonitor.tick();
+      if (insetFrame++ % 30 === 0) measureLabelInset();
       const now = performance.now();
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;

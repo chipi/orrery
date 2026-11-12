@@ -34,32 +34,32 @@
     {
       "id": "perseus",
       "name": "Perseus Arm",
-      "label_x": -12.5,
-      "label_z": -3.5,
+      "label_x": -8.7,
+      "label_z": -2.4,
       "minor": false,
       "science_section": "our-galaxy"
     },
     {
       "id": "scutum-centaurus",
       "name": "Scutum–Centaurus Arm",
-      "label_x": 8.5,
-      "label_z": 10.5,
+      "label_x": 4.6,
+      "label_z": 5.6,
       "minor": false,
       "science_section": "our-galaxy"
     },
     {
       "id": "sagittarius",
       "name": "Sagittarius Arm",
-      "label_x": 7.5,
-      "label_z": -11.5,
+      "label_x": 1.5,
+      "label_z": -7.8,
       "minor": false,
       "science_section": "our-galaxy"
     },
     {
       "id": "norma",
       "name": "Norma Arm",
-      "label_x": -9.5,
-      "label_z": 11.5,
+      "label_x": -3.4,
+      "label_z": -1.2,
       "minor": false,
       "science_section": "our-galaxy"
     },

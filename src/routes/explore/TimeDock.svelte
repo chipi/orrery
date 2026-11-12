@@ -275,6 +275,13 @@
   :global(html[data-touch]) .time-controls {
     bottom: max(8px, env(safe-area-inset-bottom, 0px));
   }
+  /* The desktop offset (left 209 px, beside the REFERENCES card) does not apply on touch, where
+     that card is hidden: in landscape it pushed the dock over the drawer's tab row. */
+  @media (min-width: 601px) {
+    :global(html[data-touch]) .time-controls {
+      left: max(8px, env(safe-area-inset-left, 0px));
+    }
+  }
   .time-controls :global(.speed-group) {
     flex-wrap: nowrap;
   }

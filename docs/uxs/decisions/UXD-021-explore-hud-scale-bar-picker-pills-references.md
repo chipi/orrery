@@ -104,6 +104,8 @@ fly-in plays, so the cleared items follow the drawer's edge frame by frame durin
 transition of their own (not a single move after the measure settles; a CSS transition on top of a per-frame
 value would lag it). Wherever the HUD row's `max-width` shrinks, the layer chips wrap onto another line sooner than before.
 
+Follow-up (operator, 2026-11-12, iPhone): the strip's lifts are for the time dock, so they apply only at the solar system; at the other scales the strip sits at the bottom (12 px on touch, 46 px above the footer otherwise). The fixed 232 px box overlapped the dock's right end at 800 px wide, so the 104 px lift now starts under 900 px. On touch the time dock starts at the left edge: the desktop offset beside the REFERENCES card (hidden on touch) pushed it over the drawer's tab row in landscape; under 720 px the tabs are tighter so the dock and the three tabs share one line on a 667 px phone.
+
 Not covered: the touch top-left cluster (`hud-top-mobile`) with a docked drawer on a touch landscape device (it
 has no width limit, so it is not guaranteed clear of the navigator there); the orbit ruler (C4); the REFERENCES chip in the time
 dock (A4); the breadcrumb and picker redesign (C8); the encounter labels of the iconic paths (C7).

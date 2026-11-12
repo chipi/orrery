@@ -35,6 +35,8 @@ const SURFACES = {
   belts: 'belts',
   'iss-modules': 'iss-modules',
   'tiangong-modules': 'tiangong-modules',
+  stars: 'stars',
+  'black-holes': 'black-holes',
 };
 const FRAMES = [
   { label: 'CARD', aspect: 2.5, color: '#ff4040', fade: true },

@@ -82,7 +82,7 @@
   transform: translateY(-2px);
 }
 .entity-card-grid .card:focus-visible {
-  outline: 2px solid var(--accent, #4466ff);
+  outline: 2px solid var(--accent, var(--color-focus));
   outline-offset: 2px;
 }
 .entity-card-grid .card.selected {
@@ -109,7 +109,11 @@
    broken-image icon. .cover-missing class added by the <img> onerror
    handler. */
 .entity-card-grid .card-photo.cover-missing {
-  background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent) 5%, transparent),
+    rgba(255, 255, 255, 0.02)
+  );
 }
 .entity-card-grid .card-photo img {
   width: 100%;
@@ -232,9 +236,9 @@
   border: 1px solid;
 }
 .entity-card-grid .card-quality.quality-measured {
-  color: #4ecdc4;
-  border-color: rgba(78, 205, 196, 0.35);
-  background: rgba(78, 205, 196, 0.06);
+  color: var(--color-state);
+  border-color: var(--color-accent-edge);
+  background: color-mix(in srgb, var(--color-accent) 6%, transparent);
 }
 .entity-card-grid .card-quality.quality-sparse {
   color: #ffc850;

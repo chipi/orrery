@@ -61,7 +61,7 @@
 }
 .entity-browse-page .search-input:focus {
   outline: none;
-  border-color: #4ecdc4;
+  border-color: var(--color-accent);
 }
 
 /* ─── Filters toggle strip ──────────────────────────────────────── */
@@ -98,7 +98,7 @@
 }
 
 /* Inline count chip on the right end of the filters toggle bar.
-   Fraction (filtered / total) is teal when active; total-only is
+   Fraction (filtered / total) is accent blue when active; total-only is
    muted. */
 .entity-browse-page .filters-right {
   display: inline-flex;
@@ -111,7 +111,7 @@
   letter-spacing: 2px;
 }
 .entity-browse-page .count-fraction {
-  color: #4ecdc4;
+  color: var(--color-state);
 }
 .entity-browse-page .count-total-only {
   color: var(--color-text-label);
@@ -189,12 +189,12 @@
   color: rgba(255, 255, 255, 0.75);
 }
 .entity-browse-page .pill.active {
-  background: rgba(68, 102, 255, 0.25);
-  border-color: rgba(68, 102, 255, 0.5);
+  background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   color: #fff;
 }
 .entity-browse-page .pill:focus-visible {
-  outline: 2px solid #4466ff;
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -222,6 +222,6 @@
   opacity: 1;
 }
 .entity-browse-page .pill.logo-pill.active {
-  background: rgba(68, 102, 255, 0.18);
-  border-color: rgba(68, 102, 255, 0.55);
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
 }

@@ -59,7 +59,7 @@
 .entity .facts a,
 .entity .linklist a,
 .entity .learn a {
-  color: #7fb0e0;
+  color: var(--color-state);
 }
 .entity .page-section-label {
   margin: 28px 0 8px;

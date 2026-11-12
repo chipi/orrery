@@ -77,6 +77,12 @@
     max-width: calc(100vw - 16px);
     font-family: var(--font-mono, 'Space Mono', monospace);
   }
+  /* While the scale ladder is open it sits above the INDEX rail (z 45), which otherwise covers
+     it and swallows the clicks; closed, the row stays under the panels (z 30) so it never
+     covers a panel's bar at the solar scale. */
+  .scale-nav:has(:global([aria-expanded='true'])) {
+    z-index: 46;
+  }
   .scale-nav.at-solar {
     left: auto;
     right: 8px;

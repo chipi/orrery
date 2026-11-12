@@ -606,6 +606,27 @@ validateFile(join(DATA_ROOT, 'universe', 'milky-way-schematic.json'), validateMi
 validateFile(join(DATA_ROOT, 'universe', 'black-holes.json'), validateBlackHoles);
 {
   const bhPath = join(DATA_ROOT, 'universe', 'black-holes.json');
+  if (existsSync(bhPath)) {
+    const bh = readJson(bhPath) as { objects: Array<CatalogueRow & { kind: string }> };
+    // The three real holes' mass and distance are published values; fiction carries none.
+    checkCatalogue(
+      'universe/black-holes.json',
+      bh.objects,
+      { mass_solar: (r) => r.mass_solar, dist_ly: (r) => r.dist_ly },
+      (r) => (r.kind === 'fictional' ? [] : ['mass_solar', 'dist_ly']),
+    );
+    for (const o of bh.objects) {
+      if (o.kind === 'fictional' && Object.keys(o.catalogue ?? {}).length > 0) {
+        failed++;
+        console.error(
+          `\n  ✗ universe/black-holes.json\n      ${o.id}: fiction must carry no catalogue entries`,
+        );
+      }
+    }
+  }
+}
+{
+  const bhPath = join(DATA_ROOT, 'universe', 'black-holes.json');
   const obsIndexPath = join(DATA_ROOT, 'science', 'observation', '_index.json');
   const doorsPath = join(DATA_ROOT, 'culture-doors.json');
   if (existsSync(bhPath) && existsSync(obsIndexPath)) {
@@ -750,6 +771,30 @@ for (const f of ['orbit-regimes', 'orbit-regimes-mars', 'orbit-regimes-moon']) {
 }
 validateFile(join(DATA_ROOT, 'orbit-regimes-explore.json'), validateOrbitRegimesExplore);
 validateFile(join(DATA_ROOT, 'local-group-galaxies.json'), validateLocalGroupGalaxies);
+{
+  // #658: Local Group distances are McConnachie 2012; a member without a catalogue entry is a
+  // distance with no source.
+  const sprites = join(DATA_ROOT, 'local-group-galaxies.json');
+  if (existsSync(sprites)) {
+    const doc = readJson(sprites) as { entries: CatalogueRow[] };
+    checkCatalogue(
+      'local-group-galaxies.json',
+      doc.entries,
+      { distance_kpc: (r) => r.distance_kpc },
+      () => ['distance_kpc'],
+    );
+  }
+  const schematic = join(DATA_ROOT, 'universe', 'local-group.json');
+  if (existsSync(schematic)) {
+    const doc = readJson(schematic) as { members: CatalogueRow[] };
+    checkCatalogue(
+      'universe/local-group.json',
+      doc.members,
+      { dist_mly: (r) => r.dist_mly },
+      (r) => (r.id === 'milky-way' ? [] : ['dist_mly']),
+    );
+  }
+}
 validateFile(join(DATA_ROOT, 'explore-orbiters.json'), validateExploreOrbiters);
 validateFile(join(DATA_ROOT, 'station-tles.json'), validateStationTles);
 validateFile(join(DATA_ROOT, 'lab-illustrations.json'), validateLabIllustrations);

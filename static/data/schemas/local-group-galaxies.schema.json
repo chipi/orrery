@@ -83,6 +83,46 @@
           "wikidata": {
             "type": "string",
             "pattern": "^Q[0-9]+$"
+          },
+          "catalogue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "distance_kpc": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "source",
+                  "bibcode",
+                  "record_url"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "source": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "bibcode": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^[0-9]{4}[A-Za-z0-9&.+]{14}[A-Za-z.]$"
+                  },
+                  "record_url": {
+                    "type": "string",
+                    "pattern": "^https://"
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
           }
         }
       }

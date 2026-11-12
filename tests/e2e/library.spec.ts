@@ -67,9 +67,10 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
   }) => {
     const html = await (await request.get('/library')).text();
     const block = html.match(/data-testid="library-astro-sources"[\s\S]*?<\/aside>/)?.[0] ?? '';
-    expect(block).toContain('href="/credits#src-data-catalogues"');
+    expect(block).toContain('href="/credits"');
+    expect(block).toContain('ssd.jpl.nasa.gov');
     const links = [...block.matchAll(/<a href="(https:[^"]+)"([^>]*)>/g)];
-    expect(links.length).toBe(12);
+    expect(links.length).toBe(13); // 12 catalogues + JPL
     for (const [, , attrs] of links) {
       expect(attrs).toContain('target="_blank"');
       expect(attrs).toContain('rel="noopener noreferrer external"');

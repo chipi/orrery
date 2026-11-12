@@ -1315,6 +1315,7 @@
   "library_astro_data": "Astrophysikalische Daten",
   "library_astro_sources_aria": "Datenquellen für Sterne, Deep-Sky-Objekte, Schwarze Löcher und Galaxien",
   "library_astro_intro": "Positionen, Entfernungen, Helligkeiten und Massen auf den Seiten und Panels zu Sternen, Deep-Sky-Objekten, Schwarzen Löchern und der Lokalen Gruppe stammen aus diesen Katalogen und Fachartikeln. Jeder Wert nennt seine Quelle und verlinkt auf den Eintrag des Objekts; Lizenzen und Danksagungen stehen unter {link}.",
+  "library_astro_planets": "Planetenpositionen: {link}. Das Physik-Labor rechnet mit diesen Bahnelementen, und ein Test sichert, dass das Planetenmodell hinter den Missionsbahnen höchstens 0,6° davon abweichen.",
   "plan_porkchop_title": "Porkchop-Diagramm · der Kalender günstiger Starts",
   "science_focused_101_aria": "Ein kompaktes Einmaleins",
   "science_focused_101_tab_aria": "Ein fokussiertes Einmaleins für diesen Tab",

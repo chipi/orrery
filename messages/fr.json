@@ -1315,6 +1315,7 @@
   "library_astro_data": "Données astrophysiques",
   "library_astro_sources_aria": "Sources des données sur les étoiles, les objets du ciel profond, les trous noirs et les galaxies",
   "library_astro_intro": "Les positions, distances, magnitudes et masses des pages et panneaux consacrés aux étoiles, aux objets du ciel profond, aux trous noirs et au Groupe local proviennent de ces catalogues et articles. Chaque valeur cite sa source et renvoie à la fiche de l’objet ; licences et remerciements : {link}.",
+  "library_astro_planets": "Positions des planètes : {link}. Le laboratoire de physique calcule à partir de ces éléments, et un test garantit que le modèle planétaire des trajectoires de mission s’en écarte de 0,6° au plus.",
   "plan_porkchop_title": "Graphique porkchop · le calendrier des lancements économiques",
   "science_focused_101_aria": "Une introduction ciblée",
   "science_focused_101_tab_aria": "Une introduction ciblée pour cet onglet",

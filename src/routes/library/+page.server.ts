@@ -20,11 +20,14 @@ const ASTRO_SOURCE_IDS = [
 
 export const load: PageServerLoad = () => {
   const byId = new Map(dataSources.entries.map((e) => [e.id, e]));
+  const source = (id: string) => {
+    const e = byId.get(id);
+    if (!e) throw new Error(`data-sources.json has no entry ${id}`);
+    return { id, name: e.name, url: e.source_url };
+  };
   return {
-    astroSources: ASTRO_SOURCE_IDS.map((id) => {
-      const e = byId.get(id);
-      if (!e) throw new Error(`data-sources.json has no entry ${id}`);
-      return { id, name: e.name, url: e.source_url };
-    }),
+    astroSources: ASTRO_SOURCE_IDS.map(source),
+    // JPL's approximate Keplerian elements: the planet positions (ADR-095, the Lab ephemeris).
+    jpl: source('jpl-iau-constants'),
   };
 };

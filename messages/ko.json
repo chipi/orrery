@@ -1315,6 +1315,7 @@
   "library_astro_data": "천체물리 데이터",
   "library_astro_sources_aria": "별, 심원천체, 블랙홀, 은하의 데이터 출처",
   "library_astro_intro": "별, 심원천체, 블랙홀, 국부 은하군 페이지와 패널의 위치·거리·밝기·질량은 이 목록과 논문에서 가져왔습니다. 각 값에는 출처가 표시되고 천체의 기록으로 연결됩니다. 라이선스와 감사의 글은 {link}에 있습니다.",
+  "library_astro_planets": "행성 위치: {link}. 물리 실험실은 이 궤도 요소로 계산하며, 임무 경로에 쓰이는 행성 모델이 여기서 0.6° 이내에 있음을 테스트로 확인합니다.",
   "plan_porkchop_title": "포크찹 플롯 · 저비용 발사 캘린더",
   "science_focused_101_aria": "핵심만 짚는 입문",
   "science_focused_101_tab_aria": "이 탭의 집중 입문",

@@ -1362,6 +1362,7 @@
   "library_astro_data": "Astrophysics data",
   "library_astro_sources_aria": "Data sources for stars, deep-sky objects, black holes and galaxies",
   "library_astro_intro": "Positions, distances, brightness and masses on the pages and panels of stars, deep-sky objects, black holes and the Local Group come from these catalogues and papers. Each value names its source and links to the object’s record; licences and acknowledgements are in {link}.",
+  "library_astro_planets": "Planet positions: {link}. The Physics Lab computes from these elements, and the planet model behind the mission paths is tested to stay within 0.6° of them.",
   "library_loading": "Loading library inventory…",
   "library_newest_verified": "Newest verification: {date}",
   "library_page_title": "Library · Orrery",

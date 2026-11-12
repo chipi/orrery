@@ -23,6 +23,23 @@ before you open the file:
 Conventions: tsx or .mjs, colocated `*.test.ts` where logic warrants it;
 script headers cite the ADR/PRD/RFC that governs them — keep that up.
 
+## Catalogue values — which tool, when
+
+Every catalogue-derived number on a panel or entity page carries `{ value, source, bibcode, record_url }`
+(GitHub #658; method and service notes: `docs/wip/2026-11-12-catalogue-layer-brief.md`). All of these
+fetch over the network, are run by hand and commit their output; CDS Strasbourg answers 404 from the dev
+box, so SIMBAD and VizieR are read from the CfA mirrors (`lib/catalogue-sources.mjs`). Downloaded tables are
+cached under `~/.cache/orrery` (`CATALOGUE_REFRESH=1` refetches).
+
+| Question | Run |
+|---|---|
+| refresh the deep-sky snapshot (OpenNGC + Harris, Baumgardt & Vasiliev, Hunt & Reffert, Cantat-Gaudin, Cosmicflows-4, McConnachie, SIMBAD, NED), then the served file | `node scripts/refresh-messier-catalog.mjs && npx tsx scripts/build-universe-deep-sky.ts` |
+| write the black holes' published mass and distance (cross-checked against SIMBAD) | `node scripts/refresh-black-hole-catalogue.mjs` |
+| refresh the Local Group distances (McConnachie 2012) in both Local Group files | `node scripts/refresh-local-group-catalogue.mjs` |
+| add the SIMBAD / Exoplanet Archive record links to the named stars (HYG values unchanged) / the exoplanet systems | `npx tsx scripts/build-named-stars.ts` / `npx tsx scripts/build-exoplanet-systems.ts` (the snapshot's `disc_year` of Proxima Cen d is 2025, the committed file's hand correction 2022: merge the record links, do not overwrite) |
+| which catalogue answers which value; the pure transforms | `lib/deep-sky-catalogues.mjs`, `lib/black-hole-catalogue.mjs`, `lib/local-group-catalogue.mjs`, `lib/catalogue-sources.mjs` (each with a `.test.ts`) |
+| the gate | `npm run validate-data` (`findCatalogueProblems` in `validate-data-helpers.ts`) |
+
 ## Mission thumbnails — which tool, when
 
 | Question | Run |

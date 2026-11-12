@@ -66,7 +66,7 @@ How the rule is checked (the guard), or what is not checked yet.
 
 | UXD                                                          | Decision                                                                                          | Status   | Date       |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | -------- | ---------- |
-| [UXD-001](UXD-001-ui-accent-blue-replaces-teal.md)           | The UI accent is blue D `#5070ff`; it replaces every UI teal, and cyan is out                      | accepted | 2026-11-11 |
+| [UXD-001](UXD-001-ui-accent-blue-replaces-teal.md)           | The UI accent is blue D `#5070ff`; it replaces every UI teal, and cyan is out                      | accepted, implemented in A3 | 2026-11-11 |
 | [UXD-002](UXD-002-type-scale-and-the-11px-floor.md)          | Type scale: 11 px floor, labels at 60 %, upright Space Mono leads, italic only for quotes and captions | accepted | 2026-11-11 |
 | [UXD-003](UXD-003-home-route-card-titles-upright.md)         | Home route-card titles are upright Space Mono; the 4.5 px icon text stays deleted                 | accepted | 2026-11-11 |
 | [UXD-004](UXD-004-one-outputpass-per-composer.md)            | One OutputPass per composer; colour textures sRGB, data maps linear                               | accepted | 2026-11-11 |

@@ -28,7 +28,7 @@ The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mis
 | Mission Arc | `/fly` | `src/routes/fly/+page.svelte` | Three.js 3D + Canvas 2D toggle |
 | Mission Catalog | `/missions` | `src/routes/missions/+page.svelte` | CSS grid card layout |
 | Earth Orbit | `/earth` | `src/routes/earth/+page.svelte` | Canvas 2D logarithmic scale |
-| Physics Lab | `/lab` | `src/routes/lab/+page.svelte` | SVG figures on the `station-blueprint` teal grid (Notebook / Focus; Canvas at T2) |
+| Physics Lab | `/lab` | `src/routes/lab/+page.svelte` | SVG figures on the `station-blueprint` grid (Notebook / Focus; Canvas at T2) |
 
 *(This table predates several later surfaces — `/missions`, `/science`, `/iss`, `/programs`, etc. — and is maintained additively; the "six screens" framing in §overview is historical.)*
 
@@ -43,7 +43,7 @@ The Physics Lab (`/lab`) is a subsystem, not a single screen — **one card mode
 - **Focus** (v1 detail) — one card full-screen: big figure stage + control rail + `/science` derivation. Uses the `Panel` bottom-sheet on mobile.
 - **Canvas** (T2, second workspace) — a spatial graph with output→input wiring; desktop-first, read-only fallback on mobile.
 
-Cards **promote** from Canvas into a Notebook. The Lab reuses the shared tokens (§shared-tokens) and components (`Panel`, `ScienceChip`, `WhyPopover`, `.readout-grid`, `ImageCredit`) wholesale; the teal figure grid is `station-blueprint.ts`. Colour discipline: teal = figure/selection, **gold = explanation**, mars-red = fail-honest. The Lab is the first surface to persist state (see §state-persistence).
+Cards **promote** from Canvas into a Notebook. The Lab reuses the shared tokens (§shared-tokens) and components (`Panel`, `ScienceChip`, `WhyPopover`, `.readout-grid`, `ImageCredit`) wholesale; the figure grid is `station-blueprint.ts`. Colour discipline: accent blue = selection/navigation (the figures themselves keep their own strokes, UXD-001), **gold = explanation**, mars-red = fail-honest. The Lab is the first surface to persist state (see §state-persistence).
 
 ---
 
@@ -198,8 +198,13 @@ Tokens that apply across all surfaces. UXSes inherit these by name and do not re
 
 ```
 color-bg:         #04040c    Background — near-black with blue undertone
-color-accent:     #4466ff    Primary accent — blue
-color-teal:       #4ecdc4    Secondary accent — teal (CAPCOM, active states)
+color-accent:     #5070ff    The one UI accent — blue D (links, active states, chips, HUD values, CAPCOM; UXD-001, A3)
+color-accent-text: var(--color-accent)   alias, removed after 0.9.9
+color-accent-hover: #8aa0ff  Hover and active text
+color-accent-soft/-edge/-strong: rgba(80,112,255, 0.12 / 0.35 / 0.7)   Tinted fill, border, strong border
+color-state:      #889fe7    Annotation rings, hover, status; small text on a lifted card (D is 4.37:1 there)
+color-focus:      #8aa0ff    Focus ring
+color-ok:         #2dd4a8    Success / "ok" state (green, not an accent)
 color-mars:       #c1440e    Mars red — danger, Mars-specific
 color-earth:      #4b9cd3    Earth blue — information, Earth-specific
 color-gold:       #ffc850    Gold — Sun, perihelion, caution
@@ -214,7 +219,7 @@ color-hud-bg:     rgba(5,5,20,0.88)        HUD panel background
 ### Link tier colours
 
 ```
-color-tier-intro: #4ecdc4    Introductory links (Wikipedia, agency pages)
+intro links use color-state #889fe7 (Wikipedia, agency pages); there is no color-tier-intro token
 color-tier-core:  #7b9cff    Core links (MIT OCW, technical overviews)
 color-tier-deep:  #ff9966    Deep links (peer-reviewed papers)
 ```

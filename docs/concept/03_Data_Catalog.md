@@ -394,7 +394,7 @@ Orrery uses a three-tier educational link system, colour-coded consistently acro
 
 | Tier | Colour | Purpose | Examples |
 |---|---|---|---|
-| **INTRO** | Teal `#4ecdc4` | Wikipedia, NASA fact pages, agency mission pages | Wikipedia articles, nasa.gov/mission/ |
+| **INTRO** | Muted blue `#889fe7` | Wikipedia, NASA fact pages, agency mission pages | Wikipedia articles, nasa.gov/mission/ |
 | **CORE** | Blue `#7b9cff` | Technical explainers, MIT OCW, deeper mission science | MIT OpenCourseWare, JPL education pages |
 | **DEEP** | Red `#ff9090` | Peer-reviewed papers, JPL technical reports, primary sources | Science, Nature, AJ, NTRS |
 

@@ -44,21 +44,24 @@ Every pattern here was arrived at through iteration, not specification upfront. 
 | `bg-panel` | `rgba(4, 4, 12, 0.96–0.98)` | Detail panels, preview panels |
 | `border-subtle` | `rgba(255, 255, 255, 0.07)` | Default borders |
 | `border-active` | `rgba(255, 255, 255, 0.18)` | Hover state borders |
-| `accent-blue` | `#4466ff` / `rgba(68, 102, 255)` | Primary interactive accent. Selection rings, active states, mission arc |
-| `accent-teal` | `#4ecdc4` | Secondary accent. Active mission status, Earth orbit regime, confirmation states |
+| `accent` (`--color-accent`) | `#5070ff` / `rgba(80, 112, 255)` | The one UI accent (UX A3, UXD-001). Links, selection, active states, chips, HUD values, mission arc. Tints: `--color-accent-soft/-edge/-strong` (0.12 / 0.35 / 0.7); hover and focus `#8aa0ff` |
+| `state` (`--color-state`) | `#889fe7` | Annotation rings, hover, status; the colour for small text on a lifted card |
+| `ok` (`--color-ok`) | `#2dd4a8` | Success and confirmation states (a green, not an accent) |
 | `text-primary` | `#ffffff` | Primary text, selected labels |
 | `text-secondary` | `rgba(255, 255, 255, 0.55–0.65)` | Body text, descriptions |
 | `text-dim` | `rgba(255, 255, 255, 0.25–0.35)` | Labels, metadata |
 | `text-faint` | `rgba(255, 255, 255, 0.12–0.18)` | Decorative text, watermarks |
 
+**Contrast rule (UX A3).** The accent `#5070ff` is 4.96:1 on the page and the HUD, 4.37 on a 7 % lifted card and 3.84 on a 12 % lift. Text at or above 14 px bold / 18 px, borders, fills, glyphs and rings use the accent; smaller text on a lifted surface uses `--color-state` (6.1:1 or better). A solid accent fill takes dark text (`#04040c`, 4.96:1), not white (4.12:1). UAE/MBRSC (agency) and LEO (orbit regime) below are identity / data colours: they keep `#4ecdc4` (palette review at the end of the redesign), they are not UI accents.
+
 ### 2.2 Status colours
 
 | Status | Colour | Background |
 |---|---|---|
-| ACTIVE | `#4ecdc4` | `rgba(78, 205, 196, 0.15)` |
+| ACTIVE | `#889fe7` | `rgba(80, 112, 255, 0.15)` |
 | FLOWN | `rgba(255,255,255,0.45)` | `rgba(255,255,255,0.06)` |
 | PLANNED | `#7b9cff` | `rgba(123,156,255,0.12)` |
-| MINE / personal | `#4ecdc4` | `rgba(78,205,196,0.12)` |
+| MINE / personal | `#889fe7` | `rgba(80,112,255,0.12)` |
 | PRIVATE sector | `#ff9940` | `rgba(255,153,0,0.12)` |
 | RECONSTRUCTED | `#ff8060` | `rgba(240,80,40,0.10)` |
 | PARTIAL DATA | `#f0b428` | `rgba(240,180,40,0.10)` |
@@ -69,8 +72,8 @@ The three-tier educational link system uses a consistent colour language across 
 
 | Tier | Label colour | Background | Dot |
 |---|---|---|---|
-| INTRO | `#4ecdc4` | `#0d2e2b` | `#4ecdc4` |
-| CORE | `#7b9cff` | `#0d1535` | `#4466ff` |
+| INTRO | `#889fe7` | `#0d1535` | `#889fe7` |
+| CORE | `#7b9cff` | `#0d1535` | `#5070ff` |
 | DEEP | `#ff9090` | `#2e0d0d` | `#ff4444` |
 
 ### 2.4 Agency colours
@@ -87,7 +90,7 @@ Used for card accent borders (3px top), pin markers, label text, and logo backgr
 | UAE/MBRSC | `#4ecdc4` | `#ffffff` |
 | JAXA | `#5588ff` | `#0062AC` |
 | SpaceX | `#ffcc66` | `#000000` |
-| Personal mission | `#4ecdc4` | `rgba(78,205,196,0.08)` |
+| Personal mission | `#889fe7` | `rgba(80,112,255,0.08)` |
 | Planned (generic) | `#7b9cff` | `rgba(68,102,255,0.15)` |
 
 ### 2.5 Orbital regime colours (Earth Orbit)
@@ -448,7 +451,7 @@ On hover:
 
 ### 7.3 Speed controls
 
-Consistent bottom-bar pattern: `0.25× | 1× | 5× | 20–25×` buttons. Active button has blue border and teal text. Inactive has subtle border and dim text. Speed multiplier applies to `simT` advance per frame.
+Consistent bottom-bar pattern: `0.25× | 1× | 5× | 20–25×` buttons. Active button has blue border and accent-blue text. Inactive has subtle border and dim text. Speed multiplier applies to `simT` advance per frame.
 
 ### 7.4 Animation conventions
 

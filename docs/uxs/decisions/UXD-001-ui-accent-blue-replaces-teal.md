@@ -63,7 +63,33 @@ end-of-work check (plan lines 462–465).
 - The status tones ACTIVE `#889fe7` and PLANNED `#7b9cff` are near-identical; the redesign note says
   to "revisit with the new palette" (lines 23–25). Open.
 
+## Implementation (slice A3, 2026-11-12)
+
+Operator answers on the A3 brief (plan line "- A3 accent colour (operator 2026-11-12"):
+
+1. `--color-accent` is `#5070ff`, the one UI accent; `#4466ff` is retired (51 hex and 92 rgba uses
+   became tokens); `--color-accent-text` stays as an alias for one release; `--color-teal` is removed.
+2. Link tiers: intro `#889fe7` (`--color-state`), core blue D, deep gold. The green "ok" `#2dd4a8`
+   is its own `--color-ok` token. There is no `--color-tier-intro`.
+3. Data colours stay and carry `a3-keep: <why>`: orbit regimes, agency and nation identity, era
+   bands, universe star colours, microgravity and magnetic axes, the /plan heat map (and its three
+   locale prose keys, unchanged). They go to the end-of-work palette review.
+4. Lab chrome (Notebook, Card, `routes/lab`) moves to D; Lab canvases and figures keep theirs.
+
+Final token names (`src/lib/styles/tokens.css`): `--color-accent`, `--color-accent-text` (alias),
+`--color-accent-hover` `#8aa0ff`, `--color-accent-soft` / `-edge` / `-strong`
+(`rgba(80, 112, 255, 0.12 / 0.35 / 0.7)`), `--color-state` `#889fe7`, `--color-focus` `#8aa0ff`,
+`--color-ok` `#2dd4a8`. Other alphas are `color-mix(in srgb, var(--color-accent) N%, transparent)`.
+`#7fb0e0` (page-section `.k` field labels, entity pages, gallery and programs chips) folded into
+`--color-state`.
+
+Contrast rule: D is 4.96:1 on the page and the HUD, 4.37 on a 7 % lifted card, 3.84 on a 12 % lift.
+Text under 14 px bold / 18 px on a lifted surface uses `--color-state` (6.1:1 or better); a solid D
+fill takes dark text `#04040c` (4.96:1), not white (4.12:1).
+
 ## Verification
 
-Not guarded yet. The slice's check is a repo-wide search for `#4ecdc4` and `rgba(78,205,196` with a
-documented allow-list (plan line 486). No test asserts it today.
+- A3 check script (brief section 10): `A3-CHECK violations: 0`, retired token references 0.
+- `src/lib/styles/tokens.test.ts` asserts the token values and that no teal token exists.
+- `tests/e2e/accent-colour.spec.ts` reads computed colours on every named screen and every route
+  family (no teal hue) and checks accent text contrast against its backdrop.

@@ -134,7 +134,7 @@ export interface FlightTimelineEvent {
   dv_km_s?: number;
   /** Optional human-readable milestone label (e.g. "Venus #1 — gravity assist",
    *  "Jupiter — closest approach", "Saturn orbit insertion"). When set, /fly
-   *  renders a teal milestone chip at the event's arc position alongside the
+   *  renders a accent blue milestone chip at the event's arc position alongside the
    *  gold FD stage markers — distinct visual treatment because milestones are
    *  per-mission historical narrative beats, not the 7-stage cinematic cadence.
    *  Backfilled from /explore's labeled trajectory waypoints. Optional so

@@ -8,7 +8,7 @@
   monochrome, and a footer with collection number · credit · slug.
 
   Style rules from the consultation: strictly monochrome chrome (the only
-  colour on the card is the photograph itself) — no teal accents, no gold,
+  colour on the card is the photograph itself) — no accent blues, no gold,
   no ornamental frames. Luxury = weight, hierarchy, precision.
 
   Templates are the restyle surface: edit here (or add template variants)

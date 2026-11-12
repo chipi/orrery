@@ -108,10 +108,10 @@ test.describe(`mobile invariants — ${VIEWPORT_HINT}`, () => {
     test(`${path} .filters wraps instead of horizontal-scrolling`, async ({ page }) => {
       await page.goto(path, { waitUntil: 'networkidle' });
       // Catalog routes start the filter strip collapsed behind a
-      // `.filters-toggle` on mobile. Open it FIRST — otherwise the
+      // `.filters-strip` on mobile. Open it FIRST — otherwise the
       // `.filters` element isn't in the DOM (or is display:none) and
       // the wrap check has nothing to measure.
-      const toggle = page.locator('.filters-toggle');
+      const toggle = page.locator('.filters-strip');
       if (await toggle.count()) {
         await toggle
           .first()

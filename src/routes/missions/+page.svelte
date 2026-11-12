@@ -1,5 +1,7 @@
 <script lang="ts">
   import EntityIndex from '$lib/components/EntityIndex.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
@@ -293,6 +295,33 @@
     pushFiltersToUrl();
   }
 
+  const destOptions: [Destination | 'ALL', () => string][] = [
+    ['ALL', m.lib_filter_dest_all],
+    ['MARS', m.lib_filter_dest_mars],
+    ['MOON', m.lib_filter_dest_moon],
+    ['EARTH', m.lib_filter_dest_earth],
+    ['JUPITER', m.lib_filter_dest_jupiter],
+    ['NEPTUNE', m.lib_filter_dest_neptune],
+    ['PLUTO', m.lib_filter_dest_pluto],
+    ['CERES', m.lib_filter_dest_ceres],
+    ['COMET', m.lib_filter_dest_comet],
+    ['ASTEROID', m.lib_filter_dest_asteroid],
+    ['SUN', m.lib_filter_dest_sun],
+  ];
+  const statusOptions: [MissionStatus | 'FAILED' | 'ALL', () => string][] = [
+    ['ALL', m.lib_filter_status_all],
+    ['ACTIVE', m.lib_filter_status_active],
+    ['FLOWN', m.lib_filter_status_flown],
+    ['PLANNED', m.lib_filter_status_planned],
+    ['CANCELLED', m.lib_filter_status_cancelled],
+    ['FAILED', m.lib_filter_status_failed],
+  ];
+  const crewOptions: ['ALL' | 'CREWED' | 'UNCREWED', () => string][] = [
+    ['ALL', m.lib_filter_crew_all],
+    ['CREWED', m.lib_filter_crew_crewed],
+    ['UNCREWED', m.lib_filter_crew_uncrewed],
+  ];
+
   // RFC-027 search input handler. We push immediately on every input
   // event — SvelteKit's `replaceState: true` keeps the back-button
   // clean and the visible card grid updates synchronously via the
@@ -429,35 +458,34 @@
       oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
     />
   </div>
-  <!-- Filters + timeline collapsed by default. The count lives at the
-       right end of the toggle bar so the screen stays clean above the
-       grid — fraction (filtered / total) when active, total-only when
-       not, identical to /fleet for visual consistency. -->
-  <button
-    type="button"
-    class="filters-toggle"
-    aria-expanded={filterState.expanded}
-    aria-controls={filterState.expanded ? 'missions-filters' : undefined}
-    onclick={() => (filterState.expanded = !filterState.expanded)}
-    data-audio-stage="missions-filters-toggle"
-  >
-    <span class="filters-eyebrow">{m.filters_eyebrow()}</span>
-    <span class="filters-right">
+  <!-- Filters + timeline collapsed by default. The count sits right after the
+       FILTERS label — fraction (filtered / total) when active, total-only when
+       not, identical to /fleet and /missions/launches. -->
+  <div class="filters-bar">
+    <Chip
+      kind="action"
+      class="filters-strip"
+      aria-expanded={filterState.expanded}
+      aria-controls={filterState.expanded ? 'missions-filters' : undefined}
+      onclick={() => (filterState.expanded = !filterState.expanded)}
+      data-audio-stage="missions-filters-toggle"
+    >
+      {m.filters_eyebrow()}
       {#if filtered.length !== missions.length}
         <span class="filters-count count-fraction">{filtered.length} / {missions.length}</span>
       {:else}
         <span class="filters-count count-total-only">{missions.length}</span>
       {/if}
       <span class="filters-chevron" aria-hidden="true">{filterState.expanded ? '▾' : '▸'}</span>
-    </span>
-  </button>
+    </Chip>
+    {#if filterState.expanded && anyFilterActive}
+      <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearAllFilters}>
+        {m.missions_clear_filters()}
+      </Chip>
+    {/if}
+  </div>
 
   {#if filterState.expanded}
-    {#if anyFilterActive}
-      <button type="button" class="clear-filters" onclick={clearAllFilters}>
-        {m.missions_clear_filters()}
-      </button>
-    {/if}
     <div data-audio-stage="missions-epoch-timeline">
       <EpochTimelineStrip
         {countByEpoch}
@@ -471,199 +499,50 @@
       data-audio-stage="missions-filters"
       aria-label={m.missions_filters_aria()}
     >
-      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_dest_label()}>
+      <ChipGroup role="radiogroup" label={m.lib_filter_dest_label()} class="filter-group">
         <span class="filter-label">{m.lib_filter_dest_label()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'ALL'}
-          role="radio"
-          aria-checked={filterState.dest === 'ALL'}
-          onclick={() => setDest('ALL')}>{m.lib_filter_dest_all()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'MARS'}
-          role="radio"
-          aria-checked={filterState.dest === 'MARS'}
-          onclick={() => setDest('MARS')}>{m.lib_filter_dest_mars()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'MOON'}
-          role="radio"
-          aria-checked={filterState.dest === 'MOON'}
-          onclick={() => setDest('MOON')}>{m.lib_filter_dest_moon()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'EARTH'}
-          role="radio"
-          aria-checked={filterState.dest === 'EARTH'}
-          onclick={() => setDest('EARTH')}>{m.lib_filter_dest_earth()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'JUPITER'}
-          role="radio"
-          aria-checked={filterState.dest === 'JUPITER'}
-          onclick={() => setDest('JUPITER')}>{m.lib_filter_dest_jupiter()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'NEPTUNE'}
-          role="radio"
-          aria-checked={filterState.dest === 'NEPTUNE'}
-          onclick={() => setDest('NEPTUNE')}>{m.lib_filter_dest_neptune()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'PLUTO'}
-          role="radio"
-          aria-checked={filterState.dest === 'PLUTO'}
-          onclick={() => setDest('PLUTO')}>{m.lib_filter_dest_pluto()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'CERES'}
-          role="radio"
-          aria-checked={filterState.dest === 'CERES'}
-          onclick={() => setDest('CERES')}>{m.lib_filter_dest_ceres()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'COMET'}
-          role="radio"
-          aria-checked={filterState.dest === 'COMET'}
-          onclick={() => setDest('COMET')}>{m.lib_filter_dest_comet()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'ASTEROID'}
-          role="radio"
-          aria-checked={filterState.dest === 'ASTEROID'}
-          onclick={() => setDest('ASTEROID')}>{m.lib_filter_dest_asteroid()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'SUN'}
-          role="radio"
-          aria-checked={filterState.dest === 'SUN'}
-          onclick={() => setDest('SUN')}>{m.lib_filter_dest_sun()}</button
-        >
-      </div>
+        {#each destOptions as [value, label] (value)}
+          <Chip kind="choice" active={filterState.dest === value} onclick={() => setDest(value)}>
+            {label()}
+          </Chip>
+        {/each}
+      </ChipGroup>
 
-      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_status_label()}>
+      <ChipGroup role="radiogroup" label={m.lib_filter_status_label()} class="filter-group">
         <span class="filter-label">{m.lib_filter_status_label()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'ALL'}
-          role="radio"
-          aria-checked={filterState.status === 'ALL'}
-          onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'ACTIVE'}
-          role="radio"
-          aria-checked={filterState.status === 'ACTIVE'}
-          onclick={() => setStatus('ACTIVE')}>{m.lib_filter_status_active()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'FLOWN'}
-          role="radio"
-          aria-checked={filterState.status === 'FLOWN'}
-          onclick={() => setStatus('FLOWN')}>{m.lib_filter_status_flown()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'PLANNED'}
-          role="radio"
-          aria-checked={filterState.status === 'PLANNED'}
-          onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'CANCELLED'}
-          role="radio"
-          aria-checked={filterState.status === 'CANCELLED'}
-          onclick={() => setStatus('CANCELLED')}>{m.lib_filter_status_cancelled()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'FAILED'}
-          role="radio"
-          aria-checked={filterState.status === 'FAILED'}
-          onclick={() => setStatus('FAILED')}>{m.lib_filter_status_failed()}</button
-        >
-      </div>
+        {#each statusOptions as [value, label] (value)}
+          <Chip
+            kind="choice"
+            active={filterState.status === value}
+            onclick={() => setStatus(value)}
+          >
+            {label()}
+          </Chip>
+        {/each}
+      </ChipGroup>
 
-      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_crew_label()}>
+      <ChipGroup role="radiogroup" label={m.lib_filter_crew_label()} class="filter-group">
         <span class="filter-label">{m.lib_filter_crew_label()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.crew === 'ALL'}
-          role="radio"
-          aria-checked={filterState.crew === 'ALL'}
-          onclick={() => setCrew('ALL')}>{m.lib_filter_crew_all()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.crew === 'CREWED'}
-          role="radio"
-          aria-checked={filterState.crew === 'CREWED'}
-          onclick={() => setCrew('CREWED')}>{m.lib_filter_crew_crewed()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.crew === 'UNCREWED'}
-          role="radio"
-          aria-checked={filterState.crew === 'UNCREWED'}
-          onclick={() => setCrew('UNCREWED')}>{m.lib_filter_crew_uncrewed()}</button
-        >
-      </div>
+        {#each crewOptions as [value, label] (value)}
+          <Chip kind="choice" active={filterState.crew === value} onclick={() => setCrew(value)}>
+            {label()}
+          </Chip>
+        {/each}
+      </ChipGroup>
 
       {#if agencies.length > 0}
-        <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_agency_label()}>
+        <ChipGroup role="radiogroup" label={m.lib_filter_agency_label()} class="filter-group">
           <span class="filter-label">{m.lib_filter_agency_label()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.agency === 'ALL'}
-            role="radio"
-            aria-checked={filterState.agency === 'ALL'}
-            onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
+          <Chip kind="choice" active={filterState.agency === 'ALL'} onclick={() => setAgency('ALL')}
+            >{m.lib_filter_agency_all()}</Chip
           >
           {#each agencies as agency (agency)}
             {@const logo = logoFor(agency)}
             {@const fullName = fullNameFor(agency)}
-            <button
-              type="button"
-              class="pill agency-pill"
-              class:active={filterState.agency === agency}
-              class:logo-pill={logo != null}
-              role="radio"
-              aria-checked={filterState.agency === agency}
+            <Chip
+              kind="choice"
+              class="agency-chip"
+              active={filterState.agency === agency}
               aria-label={fullName}
               title={fullName}
               onclick={() => setAgency(agency)}
@@ -674,7 +553,7 @@
                   alt={fullName}
                   class="agency-pill-logo"
                   onerror={(e) => {
-                    // Logo missing → fall back to text label so the pill
+                    // Logo missing → fall back to text label so the chip
                     // never renders blank.
                     const img = e.currentTarget as HTMLImageElement;
                     img.style.display = 'none';
@@ -688,9 +567,9 @@
               {:else}
                 {agency}
               {/if}
-            </button>
+            </Chip>
           {/each}
-        </div>
+        </ChipGroup>
       {/if}
     </nav>
   {/if}
@@ -875,15 +754,12 @@
     border: 0;
   }
 
-  /* RFC-027 search input — sits above the FILTERS toggle. Same visual
-     family as the .filters-toggle border + Space-Mono type so it reads
-     as part of the same control strip. */
-  /* Page chrome (.search-row, .search-input, .filters-toggle,
-     .filters-right, .filters-count, .filters-eyebrow, .filters-chevron,
-     .filters, .filter-group, .filter-label, .pill + variants,
-     .clear-filters) lives in src/lib/styles/entity-browse-page.css —
-     opted into by the `entity-browse-page` class on the page root.
-     Shared with /fleet so chrome can't visually drift. */
+  /* Page chrome (.search-row, .search-input, .filters-bar, .filters-count,
+     .filters-chevron, .filters, .filter-group, .filter-label) lives in
+     src/lib/styles/entity-browse-page.css — opted into by the
+     `entity-browse-page` class on the page root. The chips are <Chip>
+     (src/lib/styles/chip.css). Shared with /fleet and /missions/launches
+     so chrome can't visually drift. */
 
   /* Grid layout itself (display, columns, gap, breakpoints) lives in
      src/lib/styles/entity-card-grid.css — shared with /fleet so the

@@ -14,7 +14,7 @@ test.describe('/missions/launches — de locale', () => {
     await page.waitForSelector('div.launches[data-route-ready="true"]', { timeout: 30_000 });
     await expect(page.locator('html')).toHaveAttribute('lang', 'de');
     // Filters toggle still mounts + has a visible label.
-    const toggle = page.locator('.filters-toggle');
+    const toggle = page.locator('.filters-strip');
     await expect(toggle).toBeVisible();
     const text = await toggle.textContent();
     // Either German "FILTER" (post-wave23) or English "FILTERS" (en-US fallback).

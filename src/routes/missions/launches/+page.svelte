@@ -26,6 +26,8 @@
   } from '$lib/launches/manifest.js';
   import Timeline from '$lib/components/launches/Timeline.svelte';
   import PillDropdown from '$lib/components/PillDropdown.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { launchAgencyLogo, launchAgencyShortName } from '$lib/launches/agency-logos.js';
   import * as m from '$lib/paraglide/messages';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
@@ -232,109 +234,76 @@
     <span class="back-label">{m.launches_back_to_missions()}</span>
   </a>
 
-  <button
-    type="button"
-    class="filters-toggle"
-    aria-expanded={filterState.expanded}
-    aria-controls="launches-filters"
-    onclick={() => (filterState.expanded = !filterState.expanded)}
-  >
-    <span class="filters-eyebrow">{m.launches_filters_label().toUpperCase()}</span>
-    <span class="filters-right">
+  <div class="filters-bar">
+    <Chip
+      kind="action"
+      class="filters-strip"
+      aria-expanded={filterState.expanded}
+      aria-controls="launches-filters"
+      onclick={() => (filterState.expanded = !filterState.expanded)}
+    >
+      {m.filters_eyebrow()}
       {#if filtered.length !== allEntries.length}
         <span class="filters-count count-fraction">{filtered.length} / {allEntries.length}</span>
       {:else}
         <span class="filters-count count-total-only">{allEntries.length}</span>
       {/if}
       <span class="filters-chevron" aria-hidden="true">{filterState.expanded ? '▾' : '▸'}</span>
-    </span>
-  </button>
+    </Chip>
+  </div>
 
   {#if filterState.expanded}
-    <nav id="launches-filters" class="filters" aria-label={m.launches_filters_label()}>
-      <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_view()}>
+    <nav id="launches-filters" class="filters" aria-label={m.filters_eyebrow()}>
+      <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_view()}>
         <span class="filter-label">{m.launches_filter_view()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={mode === 'upcoming'}
-          role="radio"
-          aria-checked={mode === 'upcoming'}
-          onclick={() => setMode('upcoming')}>{m.launches_tab_upcoming().toUpperCase()}</button
+        <Chip kind="choice" active={mode === 'upcoming'} onclick={() => setMode('upcoming')}
+          >{m.launches_tab_upcoming().toUpperCase()}</Chip
         >
-        <button
-          type="button"
-          class="pill"
-          class:active={mode === 'historic'}
-          role="radio"
-          aria-checked={mode === 'historic'}
-          onclick={() => setMode('historic')}>{m.launches_tab_historic().toUpperCase()}</button
+        <Chip kind="choice" active={mode === 'historic'} onclick={() => setMode('historic')}
+          >{m.launches_tab_historic().toUpperCase()}</Chip
         >
-      </div>
+      </ChipGroup>
 
-      <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_tier()}>
+      <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_tier()}>
         <span class="filter-label">{m.launches_filter_tier()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.tier === 'ALL'}
-          role="radio"
-          aria-checked={filterState.tier === 'ALL'}
-          onclick={() => setTier('ALL')}>{m.launches_filter_all()}</button
+        <Chip kind="choice" active={filterState.tier === 'ALL'} onclick={() => setTier('ALL')}
+          >{m.launches_filter_all()}</Chip
         >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.tier === 'FEATURED'}
-          role="radio"
-          aria-checked={filterState.tier === 'FEATURED'}
-          onclick={() => setTier('FEATURED')}>{m.launches_tier_featured()}</button
+        <Chip
+          kind="choice"
+          active={filterState.tier === 'FEATURED'}
+          onclick={() => setTier('FEATURED')}>{m.launches_tier_featured()}</Chip
         >
-      </div>
+      </ChipGroup>
 
       {#if mode === 'historic'}
-        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_decade()}>
+        <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_decade()}>
           <span class="filter-label">{m.launches_filter_decade()}</span>
           {#each ALL_DECADES as d (d)}
-            <button
-              type="button"
-              class="pill"
-              class:active={d === activeDecade}
-              role="radio"
-              aria-checked={d === activeDecade}
-              onclick={() => setDecade(d)}
-              >{d === '1957-1969' ? '1957-69' : d.replace('-', '–')}</button
+            <Chip kind="choice" active={d === activeDecade} onclick={() => setDecade(d)}
+              >{d === '1957-1969' ? '1957-69' : d.replace('-', '–')}</Chip
             >
           {/each}
-        </div>
+        </ChipGroup>
 
-        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_outcome()}>
+        <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_outcome()}>
           <span class="filter-label">{m.launches_filter_outcome()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.outcome === 'ALL'}
-            role="radio"
-            aria-checked={filterState.outcome === 'ALL'}
-            onclick={() => setOutcome('ALL')}>{m.launches_outcome_all()}</button
+          <Chip
+            kind="choice"
+            active={filterState.outcome === 'ALL'}
+            onclick={() => setOutcome('ALL')}>{m.launches_outcome_all()}</Chip
           >
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.outcome === 'SUCCESS'}
-            role="radio"
-            aria-checked={filterState.outcome === 'SUCCESS'}
-            onclick={() => setOutcome('SUCCESS')}>{m.launches_outcome_success()}</button
+          <Chip
+            kind="choice"
+            active={filterState.outcome === 'SUCCESS'}
+            onclick={() => setOutcome('SUCCESS')}>{m.launches_outcome_success()}</Chip
           >
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.outcome === 'FAILURE'}
-            role="radio"
-            aria-checked={filterState.outcome === 'FAILURE'}
-            onclick={() => setOutcome('FAILURE')}>{m.launches_outcome_failure()}</button
+          <Chip
+            kind="choice"
+            active={filterState.outcome === 'FAILURE'}
+            onclick={() => setOutcome('FAILURE')}>{m.launches_outcome_failure()}</Chip
           >
-        </div>
+        </ChipGroup>
       {/if}
 
       <div class="filter-group">
@@ -352,31 +321,22 @@
       </div>
 
       {#if years.length > 1}
-        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_year()}>
+        <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_year()}>
           <span class="filter-label">{m.launches_filter_year()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.year === 'ALL'}
-            role="radio"
-            aria-checked={filterState.year === 'ALL'}
-            onclick={() => setYear('ALL')}>{m.launches_filter_all()}</button
+          <Chip kind="choice" active={filterState.year === 'ALL'} onclick={() => setYear('ALL')}
+            >{m.launches_filter_all()}</Chip
           >
           {#each years as y (y)}
-            <button
-              type="button"
-              class="pill"
-              class:active={y === filterState.year}
-              role="radio"
-              aria-checked={y === filterState.year}
-              onclick={() => setYear(y)}>{y}</button
+            <Chip kind="choice" active={y === filterState.year} onclick={() => setYear(y)}>{y}</Chip
             >
           {/each}
-        </div>
+        </ChipGroup>
       {/if}
 
       {#if filterState.tier !== 'ALL' || filterState.agency !== 'ALL' || filterState.outcome !== 'ALL' || filterState.year !== 'ALL'}
-        <button type="button" class="clear-btn" onclick={clearFilters}>{m.launches_clear()}</button>
+        <Chip kind="action" quiet class="filters-clear" onclick={clearFilters}
+          >{m.launches_clear()}</Chip
+        >
       {/if}
     </nav>
   {/if}
@@ -412,7 +372,7 @@
   }
 
   /* Back link sits above the filters strip. Matches the visual weight
-     of .filters-toggle so the two read as a vertical stack. */
+     of the FILTERS strip so the two read as a vertical stack. */
   .back-link {
     display: inline-flex;
     align-items: center;
@@ -440,38 +400,17 @@
     line-height: 1;
   }
 
-  /* Page chrome (.filters-toggle, .filters-right, .filters-count,
-     .filters-eyebrow, .filters-chevron, .filters, .filter-group,
-     .filter-label, .pill + variants) lives in
+  /* Page chrome (.filters-bar, .filters-count, .filters-chevron, .filters,
+     .filter-group, .filter-label) lives in
      src/lib/styles/entity-browse-page.css — opted into by the
-     `entity-browse-page` class on the page root. Shared with /missions
-     and /fleet so chrome can't visually drift across the three
-     browse-and-filter routes. */
+     `entity-browse-page` class on the page root. The chips are <Chip>
+     (src/lib/styles/chip.css). Shared with /missions and /fleet so chrome
+     can't visually drift across the three browse-and-filter routes. */
 
-  /* Launches-specific: keep `.filters { align-items: center }` so the
-     inline `.clear-btn` (margin-left:auto, sits at the row's end)
-     stays vertically centred with the filter groups. /missions and
-     /fleet put their clear-action above the strip, so the shared
-     rule omits this and they don't need it. */
+  /* Launches-specific: the CLEAR chip sits at the row's end, vertically
+     centred with the filter groups. */
   .filters {
     align-items: center;
-  }
-
-  .clear-btn {
-    margin-left: auto;
-    padding: 6px 10px;
-    background: transparent;
-    border: 1px solid rgba(255, 82, 82, 0.4);
-    border-radius: 3px;
-    color: #ff5252;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 2px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .clear-btn:hover {
-    background: rgba(255, 82, 82, 0.12);
   }
 
   .loading,

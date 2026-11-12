@@ -19,7 +19,7 @@ function attachConsoleAndError(page: Page) {
  * J.1). Click the eyebrow toggle so the radios + epoch strip enter the DOM.
  */
 async function expandFilters(page: Page) {
-  const toggle = page.locator('.filters-toggle');
+  const toggle = page.locator('.filters-strip');
   await toggle.click();
   // Wait for at least one radio inside the filters region to confirm expand.
   await expect(page.locator('#fleet-filters [role="radio"]').first()).toBeVisible({
@@ -34,7 +34,7 @@ async function expandFilters(page: Page) {
  * window.
  */
 async function waitForFleetReady(page: Page) {
-  await expect(page.locator('.filters-toggle .filters-count').first()).toBeVisible({
+  await expect(page.locator('.filters-strip .filters-count').first()).toBeVisible({
     timeout: 10_000,
   });
 }
@@ -60,7 +60,7 @@ test.describe('/fleet', () => {
   test('filter-bar count reflects filter state', async ({ page }) => {
     await page.goto('/fleet');
     await waitForFleetReady(page);
-    const count = page.locator('.filters-toggle .filters-count').first();
+    const count = page.locator('.filters-strip .filters-count').first();
     const totalText = (await count.textContent())?.trim() ?? '';
     // Unfiltered total — total-only chip shows just the number.
     const total = parseInt(totalText, 10);

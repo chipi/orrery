@@ -239,7 +239,7 @@ const SCREENS: Screen[] = [
     name: 'missions-filters-open',
     open: async (page) => {
       await page.goto(LOC + '/missions');
-      const toggle = page.locator('button.filters-toggle');
+      const toggle = page.locator('button.filters-strip');
       await expect(page.locator('[data-testid^="mission-card-"]').first()).toBeVisible({
         timeout: 20_000,
       });

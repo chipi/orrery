@@ -2272,6 +2272,9 @@
      Up to 600 px wide the time dock is 96 px tall, so the ruler clears it (--ruler-clear). */
   .ruler-desktop-only {
     --ruler-top-clear: 150px;
+    /* Right of the left-edge INDEX tab (~30 px wide, vertically centred): on a short window the
+       ruler spans that height. */
+    --ruler-left: 44px;
   }
   @media (max-width: 600px) {
     .ruler-desktop-only {

@@ -76,7 +76,7 @@ for (const [route, ids] of Object.entries(ROWS)) {
         expect(text, `group caption ${caption}`).not.toContain(caption);
     });
 
-    test('never a vertical column; on a fine pointer every chip shares one band', async ({
+    test('never a vertical column; on a fine pointer the view actions and the layer chips share one band', async ({
       page,
       isMobile,
     }) => {
@@ -87,11 +87,27 @@ for (const [route, ids] of Object.entries(ROWS)) {
       await expect(row).toBeVisible();
       expect(await row.evaluate((el) => getComputedStyle(el).flexDirection)).toBe('row');
       if (isMobile) return;
-      const tops = await row
-        .locator('.ui-chip')
-        .evaluateAll((els) => els.map((e) => e.getBoundingClientRect().top));
-      expect(tops.length).toBe(ids.length);
+      // One HUD row (operator 2026-11-12): the view actions first, a 12 px gap, then the layers.
+      const hud = page.locator('.hud-controls');
+      const boxes = await hud.locator('.ctrl-row .ui-chip').evaluateAll((els) =>
+        els.map((e) => {
+          const r = e.getBoundingClientRect();
+          return { top: r.top, left: r.left, right: r.right, layer: !!e.closest('.chips') };
+        }),
+      );
+      const actions = boxes.filter((b) => !b.layer);
+      const layers = boxes.filter((b) => b.layer);
+      expect(layers.length).toBe(ids.length);
+      expect(actions.length, 'view action chips in the row').toBeGreaterThan(0);
+      const tops = boxes.map((b) => b.top);
       expect(Math.max(...tops) - Math.min(...tops)).toBeLessThan(8);
+      const lastAction = Math.max(...actions.map((b) => b.right));
+      const firstLayer = Math.min(...layers.map((b) => b.left));
+      expect(
+        firstLayer - lastAction,
+        'gap between the actions and the layers',
+      ).toBeGreaterThanOrEqual(11);
+      expect(firstLayer - lastAction).toBeLessThanOrEqual(13);
     });
   });
 }
@@ -178,6 +194,71 @@ test.describe('touch: the Layers drawer shows the row without bands', () => {
       for (const h of heights) expect(h).toBeGreaterThanOrEqual(44);
       const body = page.locator('.mdg-body').first();
       expect(await body.evaluate((el) => el.scrollWidth <= el.clientWidth + 1)).toBe(true);
+    });
+  }
+});
+
+/** Left edge of every HUD chip, keyed by test id (or label), so a shift is visible by name. */
+async function hudChipLefts(page: Page) {
+  return page
+    .locator('.hud-controls .ui-chip')
+    .evaluateAll((els) =>
+      Object.fromEntries(
+        els.map((e, i) => [
+          e.getAttribute('data-testid') ?? `${i}:${(e.textContent ?? '').trim()}`,
+          Math.round(e.getBoundingClientRect().left),
+        ]),
+      ),
+    );
+}
+
+test.describe('no HUD chip shifts as the view changes (fine pointer)', () => {
+  test('/explore: selecting a body and resetting leave every chip where it was; RESET VIEW is always there', async ({
+    page,
+    isMobile,
+  }) => {
+    test.skip(isMobile, 'fine pointer: touch has no HUD row');
+    test.slow();
+    await page.goto('/explore', { waitUntil: 'networkidle' });
+    await waitForHydration(page);
+    const reset = page.getByTestId('explore-reset-view');
+    await expect(reset).toBeVisible();
+    await expect(reset).toBeDisabled();
+    const before = await hudChipLefts(page);
+
+    await page.getByTestId('explore-body-index-toggle').click();
+    await page.locator('.body-index button.bidx-row').first().click();
+    await expect(reset).toBeEnabled({ timeout: 20_000 });
+    expect(await hudChipLefts(page), 'after selecting a body').toEqual(before);
+
+    await reset.click();
+    await expect(reset).toBeDisabled({ timeout: 20_000 });
+    expect(await hudChipLefts(page), 'after reset').toEqual(before);
+  });
+
+  for (const route of ['/mars', '/moon']) {
+    test(`${route}: selecting a site and resetting leave every chip where it was`, async ({
+      page,
+      isMobile,
+    }) => {
+      test.skip(isMobile, 'fine pointer: touch has no HUD row');
+      test.slow();
+      await page.goto(route, { waitUntil: 'networkidle' });
+      await waitForHydration(page);
+      const reset = page.getByTestId('reset-camera');
+      await expect(reset).toBeVisible();
+      await expect(reset).toBeEnabled();
+      const before = await hudChipLefts(page);
+
+      await page.getByTestId('surface-index-toggle').click();
+      await page.locator('.sidx-row').first().click();
+      await expect(page.locator('aside.panel, .detail-panel').first()).toBeVisible({
+        timeout: 25_000,
+      });
+      expect(await hudChipLefts(page), 'after selecting a site').toEqual(before);
+
+      await reset.click();
+      expect(await hudChipLefts(page), 'after reset').toEqual(before);
     });
   }
 });

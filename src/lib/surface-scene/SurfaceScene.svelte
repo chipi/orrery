@@ -1151,15 +1151,23 @@
     if (!root) return;
     let raf = 0;
     const check = () => {
-      const card = root.querySelector('.tier-context-card');
       const handle = root.querySelector('.surface-index-handle');
-      if (!card || !handle) {
+      if (!handle) {
         indexHandleTop = null;
         return;
       }
-      const cardTop = card.getBoundingClientRect().top;
-      const half = handle.getBoundingClientRect().height / 2;
-      const centre = Math.min(window.innerHeight / 2, cardTop - half - 12);
+      const hr = handle.getBoundingClientRect();
+      // Whatever sits in the lower-left under the tab (imagery card, locate chip, orbit
+      // ruler) pushes it up; a ruler that stepped right of the locate chip is out of its way.
+      const lowest = [
+        root.querySelector('.tier-context-card'),
+        document.querySelector('.locate-slot'),
+        document.querySelector('.ruler'),
+      ]
+        .map((el) => el?.getBoundingClientRect())
+        .filter((r) => r && r.width && r.height && r.left < hr.right)
+        .reduce((top, r) => Math.min(top, r!.top), Infinity);
+      const centre = Math.min(window.innerHeight / 2, lowest - hr.height / 2 - 12);
       indexHandleTop = centre < window.innerHeight / 2 ? Math.round(centre) : null;
     };
     const schedule = () => {
@@ -1169,11 +1177,12 @@
     schedule();
     const ro = new ResizeObserver(schedule);
     ro.observe(root);
-    const card = root.querySelector('.tier-context-card');
-    if (card) ro.observe(card);
+    const mo = new MutationObserver(schedule);
+    mo.observe(document.body, { childList: true, subtree: true });
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
+      mo.disconnect();
     };
   });
   // The route's Orbit Ruler (bottom-left, behind everything) moves right of the
@@ -5543,13 +5552,12 @@
           onToggle={toggleView}
         />
       {/if}
-      {#if view === '3d'}
-        <View3dControls
-          onReset={() => resetCamera()}
-          {autoSpin}
-          onToggleSpin={() => (autoSpin = !autoSpin)}
-        />
-      {/if}
+      <View3dControls
+        onReset={() => resetCamera()}
+        {autoSpin}
+        onToggleSpin={() => (autoSpin = !autoSpin)}
+        disabled={view !== '3d'}
+      />
       {#if arType}
         <EnterArButton onEnter={() => void launchArScene(arType)} />
         <EnterSkyButton onEnter={() => void launchSkyScene()} />
@@ -5653,18 +5661,21 @@
           onToggle={toggleView}
         />
       {/if}
-      {#if view === '3d'}
-        <ResetViewButton data-testid="surface-reset-view-mobile" onclick={() => resetCamera()} />
-        <Chip
-          kind="toggle"
-          active={!autoSpin}
-          data-testid="surface-spin-toggle-mobile"
-          title={m.iss_btn_spin_title()}
-          onclick={() => (autoSpin = !autoSpin)}
-        >
-          {m.iss_btn_spin()}
-        </Chip>
-      {/if}
+      <ResetViewButton
+        data-testid="surface-reset-view-mobile"
+        onclick={() => resetCamera()}
+        disabled={view !== '3d'}
+      />
+      <Chip
+        kind="toggle"
+        active={!autoSpin}
+        data-testid="surface-spin-toggle-mobile"
+        title={m.iss_btn_spin_title()}
+        onclick={() => (autoSpin = !autoSpin)}
+        disabled={view !== '3d'}
+      >
+        {m.iss_btn_spin()}
+      </Chip>
       {#if arType}
         <EnterArButton onEnter={() => void launchArScene(arType)} />
         <EnterSkyButton onEnter={() => void launchSkyScene()} />
@@ -7198,18 +7209,26 @@ sample      ${debugInfo.projectedPxSample}`}
 
   /* ─── fine pointer — HUD shown, above the canvas ─────────────────── */
   @media (hover: hover) and (pointer: fine) {
+    /* One HUD row (operator 2026-11-12): the view actions, a 12 px gap, then the layer
+       chips; it wraps where the width runs out. Touch keeps the actions up top and the
+       layers in the drawer. */
     .hud-controls {
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 12px;
       z-index: 35;
       /* Clear of the INDEX pull tab (~28 px) on the left edge. */
       left: 36px;
+      max-width: calc(100vw - 36px - 16px);
     }
     .ctrl-row.chips {
       width: max-content;
-      max-width: calc(100vw - 36px - 16px);
+      max-width: 100%;
     }
     /* With a detail panel open the row stops before it. */
-    .hud-controls.hud-beside-panel .ctrl-row.chips {
+    .hud-controls.hud-beside-panel {
       max-width: calc(100vw - 36px - var(--panel-width) - 28px);
     }
   }

@@ -80,6 +80,7 @@ How the rule is checked (the guard), or what is not checked yet.
 | [UXD-012](UXD-012-one-page-shell.md)                          | One page shell: container, title, lead and section label for every text page                     | accepted | 2026-11-11 |
 | [UXD-014](UXD-014-one-chip-and-filter.md)                      | One chip and one filter for every toggle, filter, choice and HUD action                         | accepted | 2026-11-12 |
 | [UXD-015](UXD-015-flat-chip-row.md)                           | Layer chips are one flat row on Explore and every world; the INDEX absorbs the A–Z                | accepted | 2026-11-12 |
+| [UXD-016](UXD-016-compact-nav-and-more-menu.md)               | Compact nav controls (32 px fine / 44 px touch), one More menu for High contrast, Share and Debug, one 52 px bar | accepted | 2026-11-12 |
 
 Open questions (D1 to D7, Q3 to Q10) are not records; they are listed in
 [UXS-000 §Open](../UXS-000-orrery-ux-architecture.md#open).

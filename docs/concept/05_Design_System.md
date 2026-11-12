@@ -224,7 +224,7 @@ Not on the shell: the home page (home slice, H8), the scene routes, the Lab, the
 
 ### 5.1 Navigation bar
 
-Consistent across all six screens. Height 52px. Translucent dark background with `backdrop-filter: blur(14px)`. Three zones: left (wordmark + subtitle), centre (nav links), right (view toggle + status).
+Consistent across all six screens. Height 52px (`--nav-bar-height`, one token). Translucent dark background with `backdrop-filter: blur(14px)`. Three zones: left (wordmark), centre (nav links), right (audio tour, locale, science lens, settings, More). Right-hand controls share one box, `.nav-btn`: 32px on a fine pointer, 44px on touch (`--nav-btn-fine`, `--nav-btn-touch`), 4px corners, outline at rest and the chip active look when on ([UXD-014](../uxs/decisions/UXD-014-one-chip-and-filter.md)). High contrast, Share and Debug sit in the More menu, a menu button whose panel uses the group-menu chrome; on phones they are drawer rows ([UXD-016](../uxs/decisions/UXD-016-compact-nav-and-more-menu.md)).
 
 ```
 [ORRERY  mission simulator]  [EXPLORE | PLAN | FLY | MISSIONS]  [3D | 2D]  [● LIVE]

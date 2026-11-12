@@ -155,7 +155,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   └── library/+page.svelte        ← v0.5.0 (ADR-051) — outbound link inventory
 │   ├── lib/
 │   │   ├── components/
-│   │   │   ├── Nav.svelte                     ← shared 52px nav bar + locale picker
+│   │   │   ├── Nav.svelte                     ← shared 52px nav bar + compact controls + More menu
 │   │   │   ├── AudioOverlay.svelte            ← v0.7 audio narration overlay (PRD-016 / RFC-019)
 │   │   │   ├── ScienceLensBanner.svelte       ← collapsible banner (ADR-055)
 │   │   │   ├── ScienceLayersPanel.svelte      ← per-layer sub-toggles (12 layers)
@@ -784,7 +784,9 @@ Layer chips (src/lib/components/LayerChipRow.svelte, UXD-015): one flat horizont
   /missions and /fleet keep EntityIndex at the page foot. Enforced by tests/e2e/chip-row.spec.ts
   and tests/e2e/index-links.spec.ts.
 
-Nav bar:        height 52px, z-index 20
+Nav bar:        height 52px (--nav-bar-height), z-index 40; right-hand controls 32px on fine
+                pointers, 44px on touch (--nav-btn-fine / --nav-btn-touch); High contrast,
+                Share and Debug live in the More menu, drawer rows on phones (UXD-016)
 Panel (mobile): bottom sheet, full width
 Panel (desktop): right drawer, 314px wide
 Touch targets:  min 44×44px

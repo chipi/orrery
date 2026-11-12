@@ -27,7 +27,7 @@ The subsystems of the production application, grouped by concern.
 
 **Router** — SvelteKit's built-in router using the History API. File-based routing in `src/routes/`. Clean URLs: `/explore`, `/fly?mission=curiosity`, `/missions?dest=MARS`. GitHub Pages deploy uses a `404.html` SPA-redirect workaround per ADR-014. See ADR-012, ADR-013.
 
-**Nav bar** (`src/lib/components/Nav.svelte`) — shared across every route. Hamburger collapse on mobile (≤500 px) per the v0.6 mobile pass; locale switcher (ADR-057), share button, and route chips on desktop.
+**Nav bar** (`src/lib/components/Nav.svelte`) — shared across every route, one 52 px bar (`--nav-bar-height`). The hamburger replaces the link row at ≤ 1219 px or on any touch device (the TV layout keeps the links). Right-hand cluster: audio tour, locale switcher (ADR-057), science lens, settings, and a More menu (High contrast, Share, Debug; drawer rows at ≤ 600 px) — 32 px on a fine pointer, 44 px on touch, one `.nav-btn` base ([UXD-016](../uxs/decisions/UXD-016-compact-nav-and-more-menu.md)).
 
 **Footer** (`src/routes/+layout.svelte`) — version chip linking to GitHub README, `/credits` link, `/library` link (ADR-051). Stays clear of bottom-of-page CTAs on mobile.
 

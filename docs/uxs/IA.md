@@ -178,7 +178,7 @@ Routes resolve client-side via SvelteKit's router. Every route is prerendered, s
 
 Regions that persist across or within a screen.
 
-**Nav bar** — `height: 52px`, `top: 0`, `left: 0`, `right: 0`. Present on all screens. Z-index 20. Contains wordmark, screen links, screen-specific controls.
+**Nav bar** — `height: 52px` (`--nav-bar-height`, one token; `--nav-height` adds the safe-area inset), `top: 0`, `left: 0`, `right: 0`, z-index 40. Present on all screens. Contains wordmark, screen links, and the right-hand cluster: audio tour, locale, science lens, settings, and a More menu holding High contrast, Share and Debug (drawer rows on phones). Cluster controls are 32px on a fine pointer, 44px on touch, in both axes (`--nav-btn-fine`, `--nav-btn-touch`; [UXD-016](decisions/UXD-016-compact-nav-and-more-menu.md)). The hamburger replaces the links at ≤ 1219px or on any touch device.
 
 **Right detail panel** — `width: 314px`, `top: 52px`, `right: 0`, `bottom: 68px` (68px on fly screen) or `bottom: 0`. Slides in on click. Present on: explore (planet/body panels), missions (mission detail), moon (site panels). Absent on: plan, fly, earth (these have dedicated HUD layouts).
 

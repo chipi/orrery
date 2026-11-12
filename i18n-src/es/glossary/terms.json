@@ -54,5 +54,15 @@
   "asteroid belt": "El amplio anillo de cuerpos rocosos y metálicos entre las órbitas de Marte y Júpiter, tan disperso que las naves lo cruzan sin dificultad.",
   "solar wind": "El flujo de partículas cargadas que sale del Sol en todas direcciones a cientos de kilómetros por segundo.",
   "magnetosphere": "La región alrededor de un planeta dominada por su campo magnético, que desvía el viento solar y atrapa partículas cargadas en cinturones de radiación.",
-  "observatory": "Un lugar en tierra donde telescopios y antenas observan el cielo: cúpulas ópticas, radiotelescopios y antenas de espacio profundo."
+  "observatory": "Un lugar en tierra donde telescopios y antenas observan el cielo: cúpulas ópticas, radiotelescopios y antenas de espacio profundo.",
+  "black hole": "Una región del espacio donde la gravedad es tan intensa que nada, ni siquiera la luz, puede escapar una vez cruzado el horizonte de sucesos.",
+  "supermassive black hole": "Un agujero negro de millones a miles de millones de masas solares, situado en el centro de casi todas las galaxias grandes, la Vía Láctea incluida.",
+  "stellar-mass black hole": "Un agujero negro de unas pocas a unas decenas de masas solares, formado cuando una estrella masiva colapsa al final de su vida.",
+  "event horizon": "La frontera alrededor de un agujero negro más allá de la cual nada puede volver, ni siquiera la luz.",
+  "accretion disk": "El remolino plano de gas que cae en espiral hacia un objeto compacto, como un agujero negro, y se calienta y brilla mientras cae.",
+  "black hole shadow": "La mancha oscura en el centro del gas luminoso que rodea a un agujero negro: lo más parecido a una imagen del propio agujero negro, y mayor que su horizonte de sucesos porque la gravedad curva la luz a su alrededor.",
+  "gravitational lensing": "La desviación de la luz por la gravedad: un objeto masivo situado entre nosotros y una fuente lejana curva el camino de su luz y distorsiona, amplía o multiplica su imagen.",
+  "supernova": "La explosión de una estrella al final de su vida, tan brillante que durante un tiempo rivaliza con una galaxia entera; el núcleo puede quedar como estrella de neutrones o agujero negro.",
+  "general relativity": "La teoría de la gravedad de Einstein: la masa y la energía curvan el espacio y el tiempo, y esa curvatura es lo que percibimos como gravedad.",
+  "Doppler effect": "El cambio de frecuencia de la luz o del sonido cuando su fuente se acerca o se aleja del observador: más alta al acercarse, más baja al alejarse."
 }

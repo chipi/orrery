@@ -3451,12 +3451,16 @@
   },
   "glossary/terms.json": {
     "C3": "63cd536e54",
+    "Doppler effect": "59caf337ad",
     "Hohmann transfer": "07e6d4e2e8",
     "Lagrange point": "e145b2d020",
+    "accretion disk": "ce0f677b17",
     "airlock": "c1c9032951",
     "aphelion": "eb1a0f6859",
     "apogee": "67778d2916",
     "asteroid belt": "74e9534446",
+    "black hole": "244073ff69",
+    "black hole shadow": "cb9807ed5b",
     "booster": "39d1e1b205",
     "burn": "69b0da5e16",
     "capsule": "4cb0119883",
@@ -3466,10 +3470,13 @@
     "eccentricity": "c2ffb2b066",
     "entry": "854982ab40",
     "escape velocity": "af51a809ce",
+    "event horizon": "678e6c14db",
     "exoplanet": "512bf218f7",
     "flyby": "3b880a1320",
     "free-return": "89358c11c9",
+    "general relativity": "3e47be5478",
     "geostationary": "0b260a571e",
+    "gravitational lensing": "69019db9ef",
     "gravity assist": "fc175bee12",
     "habitable zone": "7da38434c7",
     "halo orbit": "5e956a93d2",
@@ -3502,7 +3509,10 @@
     "specific impulse": "1deccd0d5d",
     "splashdown": "150daabdfd",
     "stage": "366fbe76e9",
+    "stellar-mass black hole": "2cee17ea77",
     "sun-synchronous": "6217cea0da",
+    "supermassive black hole": "18d5d78c2b",
+    "supernova": "7b36c02845",
     "thrust": "466e181c54",
     "trajectory": "2b69686eb4",
     "upper stage": "a72956c050"
@@ -3988,6 +3998,9 @@
     "belt_member_open": "f3d789e06a",
     "belt_members_intro": "ec30872d28",
     "belt_science_cta": "5f89be3dab",
+    "bh_fiction_badge": "77d0760359",
+    "black_holes_hub_intro": "d757a443c9",
+    "black_holes_hub_title": "2a2d62fefb",
     "card_cat_cargo_spacecraft": "d297aae090",
     "card_cat_constellation": "4d8a233b7f",
     "card_cat_crewed_spacecraft": "d369491abc",
@@ -18496,6 +18509,7 @@
     "agu": "1110cdad6f",
     "amazon": "3c05e11128",
     "annual-reviews": "a78a329cb8",
+    "aps": "39894d7814",
     "arianespace": "5fc15ca349",
     "asi": "07aefd569c",
     "astronautix": "b470282bad",
@@ -18522,6 +18536,7 @@
     "engineers-australia": "b77ee267d4",
     "eox": "9265d810e5",
     "esa": "8e3e67fc42",
+    "eso": "5e4d1f9b51",
     "euspa": "b065ae7e16",
     "eutelsat-oneweb": "c5ce9b2304",
     "firefly": "16239d9f8c",
@@ -18906,6 +18921,26 @@
     "waypoints.24.label": "24345a1437",
     "waypoints.3.label": "88d1577dcc",
     "waypoints.6.label": "7c14ab20f3"
+  },
+  "universe/black-holes/cygnus-x-1.json": {
+    "bio": "494b13512e",
+    "discovery": "b801ce0609",
+    "fact": "5c99d69453"
+  },
+  "universe/black-holes/gargantua.json": {
+    "bio": "3b8c775bf5",
+    "discovery": "5f5adbad8f",
+    "fact": "98e9943e7c"
+  },
+  "universe/black-holes/m87-star.json": {
+    "bio": "0fc926bd24",
+    "discovery": "577b0c1edd",
+    "fact": "0fdd73377e"
+  },
+  "universe/black-holes/sagittarius-a-star.json": {
+    "bio": "6f7e36b890",
+    "discovery": "0c66f93abd",
+    "fact": "14554ea197"
   },
   "universe/exoplanets/51-peg-b.json": {
     "bio": "2e2b143d5c",

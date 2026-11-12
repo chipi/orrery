@@ -54,5 +54,15 @@
   "asteroid belt": "Le large anneau de corps rocheux et métalliques entre les orbites de Mars et de Jupiter, si clairsemé que les sondes le traversent sans difficulté.",
   "solar wind": "Le flux de particules chargées qui s'échappe du Soleil dans toutes les directions à des centaines de kilomètres par seconde.",
   "magnetosphere": "La région autour d'une planète dominée par son champ magnétique, qui dévie le vent solaire et piège les particules chargées dans des ceintures de rayonnement.",
-  "observatory": "Un lieu au sol où des télescopes et des antennes observent le ciel : coupoles optiques, radiotélescopes, antennes de l’espace lointain."
+  "observatory": "Un lieu au sol où des télescopes et des antennes observent le ciel : coupoles optiques, radiotélescopes, antennes de l’espace lointain.",
+  "black hole": "Une région de l'espace où la gravité est si forte que rien, pas même la lumière, ne peut s'en échapper une fois l'horizon des événements franchi.",
+  "supermassive black hole": "Un trou noir de plusieurs millions à plusieurs milliards de masses solaires, présent au centre de presque toutes les grandes galaxies, la Voie lactée comprise.",
+  "stellar-mass black hole": "Un trou noir de quelques à quelques dizaines de masses solaires, né de l'effondrement d'une étoile massive en fin de vie.",
+  "event horizon": "La frontière autour d'un trou noir au-delà de laquelle plus rien ne peut revenir, lumière comprise.",
+  "accretion disk": "Le disque plat de gaz qui tombe en spirale vers un objet compact comme un trou noir, en s'échauffant et en brillant pendant sa chute.",
+  "black hole shadow": "La tache sombre au centre du gaz lumineux autour d'un trou noir : ce qui se rapproche le plus d'une image du trou noir lui-même, et plus grande que son horizon des événements, car la gravité courbe la lumière qui l'entoure.",
+  "gravitational lensing": "La courbure de la lumière par la gravité : un objet massif placé entre nous et une source lointaine dévie le trajet de sa lumière et déforme, agrandit ou multiplie son image.",
+  "supernova": "L'explosion d'une étoile en fin de vie, assez brillante pour rivaliser brièvement avec toute une galaxie ; le cœur peut subsister sous forme d'étoile à neutrons ou de trou noir.",
+  "general relativity": "La théorie de la gravitation d'Einstein : la masse et l'énergie courbent l'espace et le temps, et c'est cette courbure que nous ressentons comme la gravité.",
+  "Doppler effect": "La variation de fréquence de la lumière ou du son quand sa source s'approche ou s'éloigne de l'observateur : plus élevée à l'approche, plus basse à l'éloignement."
 }

@@ -7,6 +7,7 @@
   import '$lib/components/entity-page.css';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import { planetCountLabel } from '$lib/plural';
   import { getLocale } from '$lib/paraglide/runtime';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { breadcrumbList } from '$lib/json-ld';
@@ -45,8 +46,7 @@
     {#each data.stars as s (s.id)}
       <li>
         <a href={localHref(`/explore/stars/${s.id}`)}>{s.name}</a>
-        {#if s.planets}<span class="year">⊕ {m.star_system_planet_count({ count: s.planets })}</span
-          >{/if}
+        {#if s.planets}<span class="year">⊕ {planetCountLabel(s.planets)}</span>{/if}
         {#if s.fact}<span class="note">{s.fact}</span>{/if}
       </li>
     {/each}

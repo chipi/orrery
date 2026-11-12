@@ -2,6 +2,7 @@ import { error } from '@sveltejs/kit';
 import { getLocale } from '$lib/paraglide/runtime';
 import { getStarEntity, type StarPlanet } from '$lib/data/star-entity';
 import * as m from '$lib/paraglide/messages';
+import { planetCountLabel } from '$lib/plural';
 import { constellationName } from '$lib/universe/iau-constellations';
 import { bvToKelvin } from '$lib/universe/bv-to-rgb';
 import { colorNameForKelvin } from '$lib/universe/anonymous-star';
@@ -105,9 +106,7 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     star,
     kind: [star.spect, star.con ? constellationName(star.con) : null].filter(Boolean).join(' · '),
     rows: starRows(star, locale),
-    planetCount: star.planets.length
-      ? m.star_system_planet_count({ count: star.planets.length })
-      : null,
+    planetCount: star.planets.length ? planetCountLabel(star.planets.length, locale) : null,
     planetRows: Object.fromEntries(star.planets.map((p) => [p.id, planetRows(p, locale)])),
   };
 };

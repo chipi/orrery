@@ -52,13 +52,9 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { licenseLabel } from '$lib/license-label';
+  import { plural } from '$lib/plural';
 
   // Counts in the locale's plural form (1 photo; sr 2–4 фотографије; ar dual …); the plain key is "other".
-  type CountMsg = (p: { n: number }) => string;
-  const plural =
-    (other: CountMsg, forms: Partial<Record<Intl.LDMLPluralRule, CountMsg>>) =>
-    (n: number): string =>
-      (forms[new Intl.PluralRules(getLocale()).select(n)] ?? other)({ n });
   const photosLabel = plural(m.credits_count_photos, {
     one: m.credits_count_photos_one,
     two: m.credits_count_photos_two,

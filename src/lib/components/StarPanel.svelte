@@ -22,6 +22,7 @@
   import { colorNameForKelvin } from '$lib/universe/anonymous-star';
   import { getConstellationLines, type LocalizedNamedStar, type ExoplanetSystem } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { planetCountLabel } from '$lib/plural';
   import { dataLoadFailed } from '$lib/data/core';
 
   type Tab = 'overview' | 'technical' | 'system';
@@ -271,7 +272,7 @@
             {/each}
           </svg>
         </div>
-        <p class="editorial">{m.star_system_planet_count({ count: system.planets.length })}</p>
+        <p class="editorial">{planetCountLabel(system.planets.length)}</p>
         <ul class="planet-list">
           {#each system.planets as p (p.id)}
             <li class="planet-row">

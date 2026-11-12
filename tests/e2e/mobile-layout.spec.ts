@@ -76,12 +76,9 @@ test.describe('mobile layer-filter chip horizontal flow (v0.6 fix)', () => {
       // MobileDrawerGroup Controls/Layers tab on touch devices. Open that
       // tab so the chip flow is visible and measurable.
       await openControlsDrawer(page);
-      // /earth groups its chips under full-row headers (ON EARTH / IN SPACE),
-      // so compare the first two chips of one group, not across a header.
-      const grouped = (await page.locator('.mdg-body .chip-group').count()) > 0;
-      const chips = grouped
-        ? page.locator('.mdg-body .chip-group').first().locator('~ .ui-chip')
-        : page.locator('.mdg-body .ui-chip');
+      // One flat row on every route (UXD-015): no group headers, no master chips.
+      await expect(page.locator('.mdg-body .chip-group')).toHaveCount(0);
+      const chips = page.locator('.mdg-body .ui-chip');
       const count = await chips.count();
       expect(count).toBeGreaterThanOrEqual(2);
       const first = await chips.first().boundingBox();

@@ -69,8 +69,8 @@ test.describe('/earth', () => {
     await expect(panel.locator('.link-tier a').first()).toBeVisible();
   });
 
-  /* ── v0.4 — category filter chips (replaced year scrubber) ───────── */
-  test('category filter chips render with correct testids', async ({ page, isMobile }) => {
+  /* ── layer chips: one flat row (UXD-015) ─────────────────────────── */
+  test('layer chips render with correct testids', async ({ page, isMobile }) => {
     await page.goto('/earth');
     // Prerendered chips are visible before their handlers are wired; a tap in that window is dropped.
     await waitForHydration(page);
@@ -79,43 +79,51 @@ test.describe('/earth', () => {
     // scope to `.mdg-body` so the visible chip resolves uniquely.
     if (isMobile) await openDrawerTab(page, /layers/i);
     const root = isMobile ? page.locator('.mdg-body') : page;
-    await expect(root.getByTestId('layer-stations')).toBeVisible();
-    await expect(root.getByTestId('layer-observatories')).toBeVisible();
-    await expect(root.getByTestId('layer-constellations')).toBeVisible();
-    await expect(root.getByTestId('layer-comsats')).toBeVisible();
-    // MOON ORBITERS sub-chip was removed (644c6afd4) — the master ORBITERS
-    // chip already covers both Earth and Moon orbiters, so it was redundant.
-    await expect(page.getByTestId('layer-moon-orbiters')).toHaveCount(0);
+    for (const id of [
+      'layer-surface',
+      'layer-launchpads',
+      'layer-museums',
+      'layer-telescopes',
+      'layer-orbiters',
+    ])
+      await expect(root.getByTestId(id)).toBeVisible();
+    // The four category chips and both masters are gone: ORBITERS switches every orbiter.
+    for (const id of [
+      'layer-stations',
+      'layer-observatories',
+      'layer-constellations',
+      'layer-comsats',
+      'layer-group-earth',
+      'layer-moon-orbiters',
+    ])
+      await expect(page.getByTestId(id)).toHaveCount(0);
     // ORBITS chip was removed on /earth (#363) — it only toggled the
     // regime-band overlay, which is gone; it stays on /moon + /mars where
     // it controls real per-orbiter rings.
     await expect(page.getByTestId('layer-orbits')).toHaveCount(0);
   });
 
-  test('chips are grouped ON EARTH / IN SPACE; each header is a master switch', async ({
+  test('chips are independent toggles in one row: no group, no master, nothing greyed', async ({
     page,
     isMobile,
   }) => {
     await page.goto('/earth');
-    await page.waitForLoadState('networkidle');
+    await waitForHydration(page);
     if (isMobile) await openDrawerTab(page, /layers/i);
     const root = isMobile ? page.locator('.mdg-body') : page;
-    const ground = root.getByTestId('layer-group-earth');
-    const space = root.getByTestId('layer-orbiters');
-    await expect(ground).toBeVisible();
-    await expect(space).toBeVisible();
+    await expect(root.locator('.chip-group')).toHaveCount(0);
     const pads = root.getByTestId('layer-launchpads');
+    const museums = root.getByTestId('layer-museums');
+    const orbiters = root.getByTestId('layer-orbiters');
     await expect(pads).toHaveAttribute('aria-pressed', 'true');
     await pads.click();
     await expect(pads).toHaveAttribute('aria-pressed', 'false');
-    await pads.click();
-    await ground.click();
-    await expect(ground).toHaveAttribute('aria-pressed', 'false');
-    for (const id of ['layer-launchpads', 'layer-museums', 'layer-telescopes'])
-      await expect(root.getByTestId(id)).toBeDisabled();
-    await expect(root.getByTestId('layer-stations')).toBeEnabled();
-    await ground.click();
-    await expect(root.getByTestId('layer-museums')).toBeEnabled();
+    await expect(museums).toHaveAttribute('aria-pressed', 'true');
+    await orbiters.click();
+    await expect(orbiters).toHaveAttribute('aria-pressed', 'false');
+    for (const id of ['layer-surface', 'layer-launchpads', 'layer-museums', 'layer-telescopes'])
+      await expect(root.getByTestId(id)).toBeEnabled();
+    await expect(museums).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('chip toggle flips aria-pressed', async ({ page, isMobile }) => {
@@ -128,17 +136,17 @@ test.describe('/earth', () => {
     // Mobile: the chip is in the Layers tab of the MobileDrawerGroup.
     if (isMobile) await openDrawerTab(page, /layers/i);
     const root = isMobile ? page.locator('.mdg-body') : page;
-    const stations = root.getByTestId('layer-stations');
-    await expect(stations).toBeVisible();
-    await expect(stations).toHaveAttribute('aria-pressed', 'true');
+    const orbiters = root.getByTestId('layer-orbiters');
+    await expect(orbiters).toBeVisible();
+    await expect(orbiters).toHaveAttribute('aria-pressed', 'true');
     // On mobile-chromium, prefer tap() (touch event) over click() (mouse)
     // — matches how the user actually interacts with the chip on a phone
     // and avoids the synthetic-click-event timing race that #253 captured.
     if (isMobile) {
-      await stations.tap();
+      await orbiters.tap();
     } else {
-      await stations.click();
+      await orbiters.click();
     }
-    await expect(stations).toHaveAttribute('aria-pressed', 'false');
+    await expect(orbiters).toHaveAttribute('aria-pressed', 'false');
   });
 });

@@ -23,7 +23,7 @@ body {
 }
 
 a {
-  color: var(--color-accent-text, #5070ff);
+  color: var(--color-accent);
 }
 
 /* Native <select> option lists render in the OS picker, which on Android
@@ -64,7 +64,7 @@ html {
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(78, 205, 196, 0.55);
+  background: color-mix(in srgb, var(--color-accent) 55%, transparent);
 }
 
 .scroll-thin {
@@ -215,7 +215,7 @@ html.ar-active
 }
 
 /* Sky-mode layer toggles (RFC-041 redesign) — ONE dark-glass strip of text
-   buttons (no emoji, no per-chip borders). On = teal text + a teal dot; off =
+   buttons (no emoji, no per-chip borders). On = accent blue text + a accent blue dot; off =
    dim. Editorial, matches the /fly HUD idiom rather than a debug chip pile. */
 .ar-layers {
   position: fixed;
@@ -241,7 +241,7 @@ html.ar-active
   background: none;
   border: none;
   border-radius: 4px;
-  color: var(--color-teal, #4ecdc4);
+  color: var(--color-state);
   font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: var(--size-label);
   letter-spacing: 1.5px;
@@ -252,13 +252,13 @@ html.ar-active
     color 0.2s ease,
     opacity 0.2s ease;
 }
-/* Teal status dot before each on-label. */
+/* Accent blue status dot before each on-label. */
 .ar-layer-btn::before {
   content: '';
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--color-teal, #4ecdc4);
+  background: var(--color-accent);
   transition:
     background 0.2s ease,
     transform 0.2s ease;
@@ -278,9 +278,9 @@ html.ar-active
   min-height: 44px;
   padding: 0 16px;
   background: rgba(8, 10, 22, 0.75);
-  border: 1px solid rgba(78, 205, 196, 0.6);
+  border: 1px solid var(--color-accent-strong);
   border-radius: 8px;
-  color: #4ecdc4;
+  color: var(--color-state);
   font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 13px;
   letter-spacing: 1px;

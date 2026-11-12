@@ -16,7 +16,7 @@
  * because they're scoped by usage (only the 5 detail-panel surfaces
  * carry these classes; verified with a repo-wide grep). Components
  * may add scoped overrides in their own <style> block — e.g. SunPanel
- * uses #ffc850 active-tab borders instead of #4466ff to match its
+ * uses #ffc850 active-tab borders instead of var(--color-accent) to match its
  * gold theme.
  */
 
@@ -55,7 +55,7 @@
 }
 .tabs button.active {
   color: var(--color-text, #fff);
-  border-bottom-color: #4466ff;
+  border-bottom-color: var(--color-accent);
 }
 .tabs button:hover:not(.active) {
   color: rgba(255, 255, 255, 0.65);
@@ -97,8 +97,8 @@
 }
 .panel-hero-btn:hover,
 .panel-hero-btn:focus-visible {
-  border-color: rgba(68, 102, 255, 0.55);
-  box-shadow: 0 0 0 1px rgba(68, 102, 255, 0.25);
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 25%, transparent);
   outline: none;
 }
 .panel-hero-btn img {
@@ -167,7 +167,7 @@
 }
 .gallery-thumb:hover,
 .gallery-thumb:focus-visible {
-  border-color: rgba(68, 102, 255, 0.6);
+  border-color: var(--color-accent-strong);
   transform: scale(1.02);
   outline: none;
 }
@@ -189,7 +189,11 @@
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(circle at 50% 40%, rgba(68, 102, 255, 0.28), transparent 60%),
+    radial-gradient(
+      circle at 50% 40%,
+      color-mix(in srgb, var(--color-accent) 28%, transparent),
+      transparent 60%
+    ),
     linear-gradient(160deg, #12213f, #0a0f1e);
 }
 .video-play {
@@ -212,7 +216,7 @@
 }
 .video-thumb:hover .video-play,
 .video-thumb:focus-visible .video-play {
-  background: rgba(68, 102, 255, 0.85);
+  background: color-mix(in srgb, var(--color-accent) 85%, transparent);
 }
 .video-duration {
   position: absolute;
@@ -314,13 +318,15 @@
   letter-spacing: 2px;
   margin: 0 0 6px;
 }
+/* a3-keep: tier name, colour is --color-state (UXD-001) */
 .link-tier.tier-intro h3,
+/* a3-keep: tier name, colour is --color-state (UXD-001) */
 .tier-intro h3 {
-  color: #4ecdc4;
+  color: var(--color-state);
 }
 .link-tier.tier-core h3,
 .tier-core h3 {
-  color: var(--color-accent-text, #5070ff);
+  color: var(--color-accent);
 }
 .link-tier.tier-deep h3,
 .tier-deep h3 {

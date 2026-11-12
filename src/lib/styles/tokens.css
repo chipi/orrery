@@ -6,12 +6,20 @@
   --color-bg: #04040c;
 
   /* Accents */
-  --color-accent: #4466ff;
-  /* The accent as TEXT on the dark background: 4.96:1 on --color-bg, 4.65 on
-     panels (WCAG AA needs 4.5). The brand #4466ff (4.47) stays for borders,
-     outlines and fills, where 3:1 is enough. */
-  --color-accent-text: #5070ff;
-  --color-teal: #4ecdc4;
+  --color-accent: #5070ff;
+  /* The one UI accent (UX A3, UXD-001 blue D): links, active states, chips, HUD values,
+     glyphs. 4.96:1 on --color-bg, 4.37 on a 7 % lifted card, 3.84 on 12 %: small text on a
+     lifted card uses --color-state; solid fills take dark text (#04040c, 4.96), not white. */
+  --color-accent-text: var(--color-accent); /* alias, removed after 0.9.9 */
+  --color-accent-hover: #8aa0ff;
+  --color-accent-soft: rgba(80, 112, 255, 0.12);
+  --color-accent-edge: rgba(80, 112, 255, 0.35);
+  --color-accent-strong: rgba(80, 112, 255, 0.7);
+  /* UXD-001: annotation rings, hover and status states; the safe blue for small text. */
+  --color-state: #889fe7;
+  --color-focus: #8aa0ff;
+  /* a3-keep: success "ok" state, a green (hue 163), not an accent */
+  --color-ok: #2dd4a8;
   --color-mars: #c1440e;
   --color-earth: #4b9cd3;
   --color-gold: #ffc850;
@@ -29,8 +37,7 @@
   --color-hud-bg: rgba(5, 5, 20, 0.88);
   --color-nav-bg: rgba(4, 4, 12, 0.88); /* prototype value (IA says 0.92 — drift) */
 
-  /* Link tier colours */
-  --color-tier-intro: #4ecdc4;
+  /* Link tier colours (intro uses --color-state) */
   --color-tier-core: #7b9cff;
   --color-tier-deep: #ff9966;
 

@@ -19,7 +19,7 @@
   --color-state: #889fe7;
   --color-focus: #8aa0ff;
   /* a3-keep: success "ok" state, a green (hue 163), not an accent */
-  --color-ok: #2dd4a8;
+  --color-ok: #4ade80; /* a clear green (hue 142), never mistaken for teal (A3) */
   --color-mars: #c1440e;
   --color-earth: #4b9cd3; /* a3-keep: body / agency identity colour token, palette review at the end */
   --color-gold: #ffc850;

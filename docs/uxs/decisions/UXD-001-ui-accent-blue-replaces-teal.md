@@ -79,7 +79,7 @@ Operator answers on the A3 brief (plan line "- A3 accent colour (operator 2026-1
 Final token names (`src/lib/styles/tokens.css`): `--color-accent`, `--color-accent-text` (alias),
 `--color-accent-hover` `#8aa0ff`, `--color-accent-soft` / `-edge` / `-strong`
 (`rgba(80, 112, 255, 0.12 / 0.35 / 0.7)`), `--color-state` `#889fe7`, `--color-focus` `#8aa0ff`,
-`--color-ok` `#2dd4a8`. Other alphas are `color-mix(in srgb, var(--color-accent) N%, transparent)`.
+`--color-ok` `#4ade80` (was `#2dd4a8`, hue 163, moved to a clear green 2026-11-12 so it is never read as teal). Other alphas are `color-mix(in srgb, var(--color-accent) N%, transparent)`.
 `#7fb0e0` (page-section `.k` field labels, entity pages, gallery and programs chips) folded into
 `--color-state`.
 

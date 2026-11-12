@@ -204,7 +204,7 @@ color-accent-hover: #8aa0ff  Hover and active text
 color-accent-soft/-edge/-strong: rgba(80,112,255, 0.12 / 0.35 / 0.7)   Tinted fill, border, strong border
 color-state:      #889fe7    Annotation rings, hover, status; small text on a lifted card (D is 4.37:1 there)
 color-focus:      #8aa0ff    Focus ring
-color-ok:         #2dd4a8    Success / "ok" state (green, not an accent)
+color-ok:         #4ade80    Success / "ok" state (green, not an accent)
 color-mars:       #c1440e    Mars red — danger, Mars-specific
 color-earth:      #4b9cd3    Earth blue — information, Earth-specific
 color-gold:       #ffc850    Gold — Sun, perihelion, caution

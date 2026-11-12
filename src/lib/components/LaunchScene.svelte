@@ -882,7 +882,7 @@
   .sub {
     font-size: 11px;
     letter-spacing: 2px;
-    color: var(--color-state);
+    color: #8fbfe0;
     margin-top: 3px;
   }
   .clock {
@@ -946,7 +946,7 @@
     right: 22px;
     width: 250px;
     padding: 2px 14px 2px 0;
-    border-right: 1px solid var(--color-accent-edge);
+    border-right: 1px solid rgba(127, 212, 255, 0.35);
     text-align: right;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
     opacity: 0;

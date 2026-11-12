@@ -1,1 +1,0 @@
-import"./D8tTpFtA.js";import{t as e}from"./D9F_03YM.js";var t=`${e}/images/og-default.jpg`;function n(e){return e.replace(/\s*[·|—–-]\s*Orrery\s*$/u,``)}export{n,t};

@@ -526,3 +526,11 @@ Every item we deferred, with where it lands. Add to it whenever something is def
 | L17 | After the 0.9.9 deploy: homelab removes staging leftovers (GlitchTip staging project, Umami staging site, `staging` environment, `STAGING_URL`); operator applies `docs/wip/2026-11-11-deploy-prod-no-staging.patch` | staging removal | after 0.9.9 deploy |
 | L18 | 0.9.10: last 71 placeholder credits; observability outage drill; museum rows (end of 0.9.9 or 0.9.10) | operator 2026-11-11 | 0.9.10 |
 | L19 | Delete the session scratchpad after the A1/A2/A3 screenshots are approved | operator go 2026-11-12 | after sheets approved |
+| L20 | L1 sheets sent 2026-11-12 (cyan / blue D / neutral / cockpit; recommendation blue D, weak spot: labels over the bright launch sky) — waiting for the operator's pick, then apply it in the 6 fly files + the scrubber | L1 | operator pick |
+| L21 | A4 core-tier chips (BeltPanel, library, science sections; A3 `50b3e962a8d`) still private CSS — move onto `.ui-chip` or prove identical (NV13) | A4 implementer NOT DONE | during A4 |
+| L22 | /fly mini-HUD button and the hudHidden ◐/◑ button not converted — O1 says every /fly button takes the chip | A4 implementer NOT DONE | during A4 |
+| L23 | Roving tabindex: missions agency group has no Tab stop when the URL agency is not in the list | A4 implementer NOT DONE | during A4 |
+| L24 | Message keys orphaned by the A4 CSS/markup removals (`.toggle`-era `ui_*` etc.) — find and delete in 14 locales | A4 implementer NOT DONE | during A4 |
+| L25 | White text on the 22 % world-tint fill (Mars, Venus, Moon): measure contrast (NV15) | A4 brief NV15 | during A4 (with the sheets) |
+| L26 | Layout risks from taller chips (30/44): Explore left column vs Orbit Ruler and time dock, time dock at 390 px, ScaleNav at 390 px in de/ar, 13-chip nation legend wrap, vertical pull tabs, agency logo chips, RTL arrow keys — check in the A4 sheets | A4 implementer NOT VERIFIED | during A4 |
+| L27 | Visual baselines (about 16 PNGs) for A4 — regenerate in Docker after the e2e is green | A4 | during A4 |

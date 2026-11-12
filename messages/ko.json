@@ -1560,7 +1560,6 @@
   "star_label_absolute_mag": "절대 등급",
   "star_label_constellation": "별자리",
   "star_label_catalogue": "카탈로그",
-  "star_index_aria": "명명된 별",
   "star_index_close": "목록 닫기",
   "star_enter_system": "항성계 진입 →",
   "exo_kind": "외계행성",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "임무 궤적 도표",
   "colophon_mission_trajectories_note": "임무마다 한 장의 개략도로, /fly 시뮬레이터가 비행하는 것과 같은 궤적 모델을 바탕으로 코드로 그렸으며 AI가 생성한 것이 아닙니다. 외행성계를 도는 임무는 1.6 AU를 넘는 구간을 반지름 방향으로 압축했고, 지구 궤도는 읽기 쉽도록 과장했으며, 도표 설명에 그 사실을 적었습니다. 궤도 데이터가 없는 임무에는 궤적을 지어내지 않고 이름표가 붙은 자리표시 이미지를 보여 줍니다. 그림 속 표기는 영어입니다.",
   "layout_footer_more": "더보기",
+  "explore_index_aria_neighborhood": "항성 근방 색인 — 이름 있는 별이나 심원천체로 이동",
   "explore_index_aria_milky_way": "우리 은하 색인 — 태양, 구상 성단, 위성 은하, 나선팔 또는 블랙홀로 이동",
   "explore_index_aria_local_group": "국부 은하군 색인 — 소속 은하로 이동",
   "explore_index_aria_local_sheet": "국부 시트 색인 — 소속 은하군으로 이동",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "위성 은하",
   "explore_index_section_arms": "나선팔",
   "explore_index_section_fiction": "픽션",
-  "explore_index_filter_headliner": "주요 성과",
+  "explore_index_filter_headliner": "주요 천체",
   "explore_index_filter_dwarf_galaxies": "왜소은하"
 }

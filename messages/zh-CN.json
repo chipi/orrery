@@ -1560,7 +1560,6 @@
   "star_label_absolute_mag": "绝对星等",
   "star_label_constellation": "星座",
   "star_label_catalogue": "星表",
-  "star_index_aria": "命名恒星",
   "star_index_close": "关闭索引",
   "star_enter_system": "进入行星系 →",
   "exo_kind": "系外行星",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "任务轨道图",
   "colophon_mission_trajectories_note": "每项任务一张示意图，由代码根据 /fly 模拟器所飞行的同一轨道模型绘制，并非 AI 生成。外太阳系任务超过 1.6 AU 的部分按径向压缩，地球轨道为便于辨认而被夸大，图中说明文字已注明。没有轨道数据的任务显示带标签的占位图，绝不虚构轨道。图中的标注为英文。",
   "layout_footer_more": "更多",
+  "explore_index_aria_neighborhood": "恒星邻域索引 — 跳转至有名称的恒星或深空天体",
   "explore_index_aria_milky_way": "银河系索引 — 跳转至太阳、球状星团、卫星星系、旋臂或黑洞",
   "explore_index_aria_local_group": "本星系群索引 — 跳转至成员星系",
   "explore_index_aria_local_sheet": "本星系板索引 — 跳转至成员星系群",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "卫星星系",
   "explore_index_section_arms": "旋臂",
   "explore_index_section_fiction": "虚构作品",
-  "explore_index_filter_headliner": "亮点",
+  "explore_index_filter_headliner": "著名天体",
   "explore_index_filter_dwarf_galaxies": "矮星系"
 }

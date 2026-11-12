@@ -1553,7 +1553,6 @@
   "star_label_absolute_mag": "АБСОЛЮТНАЯ ВЕЛИЧИНА",
   "star_label_constellation": "СОЗВЕЗДИЕ",
   "star_label_catalogue": "КАТАЛОГ",
-  "star_index_aria": "Звёзды с собственными именами",
   "star_index_close": "Закрыть список",
   "explore_constellations_toggle": "Созвездия",
   "explore_anon_unnamed": "Безымянная звезда",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "Графики траекторий миссий",
   "colophon_mission_trajectories_note": "По одной схеме на миссию, нарисованной кодом по той же модели траектории, по которой летает симулятор /fly; не создано ИИ. Туры по внешней Солнечной системе радиально сжаты за пределом 1,6 а. е., а земные орбиты нарисованы преувеличенно крупными, чтобы читались; подпись на схеме об этом говорит. Для миссии без данных об орбите показан подписанный заполнитель, а не выдуманная траектория. Надписи на рисунках английские.",
   "layout_footer_more": "Ещё",
+  "explore_index_aria_neighborhood": "Индекс звёздных окрестностей — перейти к звезде с собственным именем или объекту дальнего космоса",
   "explore_index_aria_milky_way": "Индекс Млечного Пути — перейти к Солнцу, шаровому скоплению, галактике-спутнику, спиральному рукаву или чёрной дыре",
   "explore_index_aria_local_group": "Индекс Местной группы — перейти к галактике-члену",
   "explore_index_aria_local_sheet": "Индекс Местного листа — перейти к группе-члену",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "Галактики-спутники",
   "explore_index_section_arms": "Спиральные рукава",
   "explore_index_section_fiction": "Фантастика",
-  "explore_index_filter_headliner": "Главное",
+  "explore_index_filter_headliner": "Известные объекты",
   "explore_index_filter_dwarf_galaxies": "Карликовые галактики"
 }

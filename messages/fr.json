@@ -1551,7 +1551,6 @@
   "star_label_absolute_mag": "MAGNITUDE ABSOLUE",
   "star_label_constellation": "CONSTELLATION",
   "star_label_catalogue": "CATALOGUE",
-  "star_index_aria": "Étoiles nommées",
   "star_index_close": "Fermer l'index",
   "explore_constellations_toggle": "Constellations",
   "explore_anon_unnamed": "Étoile sans nom",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "Tracés de trajectoire des missions",
   "colophon_mission_trajectories_note": "Un schéma par mission, tracé par code à partir du même modèle de trajectoire que celui que vole le simulateur /fly — pas généré par IA. Les tournées du système externe sont comprimées radialement au-delà de 1,6 UA et les orbites terrestres sont exagérées pour rester lisibles ; la légende le précise. Une mission sans données d’orbite reçoit un espace réservé étiqueté, jamais une trajectoire inventée. Les étiquettes des images sont en anglais.",
   "layout_footer_more": "Plus",
+  "explore_index_aria_neighborhood": "Index du voisinage stellaire — accéder à une étoile nommée ou à un objet du ciel profond",
   "explore_index_aria_milky_way": "Index de la Voie lactée — accéder au Soleil, à un amas globulaire, à une galaxie satellite, à un bras spiral ou à un trou noir",
   "explore_index_aria_local_group": "Index du Groupe local — accéder à une galaxie membre",
   "explore_index_aria_local_sheet": "Index de la Feuille locale — accéder à un groupe membre",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "Galaxies satellites",
   "explore_index_section_arms": "Bras spiraux",
   "explore_index_section_fiction": "Fiction",
-  "explore_index_filter_headliner": "Faits marquants",
+  "explore_index_filter_headliner": "Objets remarquables",
   "explore_index_filter_dwarf_galaxies": "Galaxies naines"
 }

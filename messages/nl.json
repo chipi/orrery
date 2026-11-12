@@ -1560,7 +1560,6 @@
   "star_label_absolute_mag": "ABSOLUTE MAGNITUDE",
   "star_label_constellation": "STERRENBEELD",
   "star_label_catalogue": "CATALOGUS",
-  "star_index_aria": "Benoemde sterren",
   "star_index_close": "Index sluiten",
   "star_enter_system": "Systeem betreden →",
   "exo_kind": "Exoplaneet",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "Trajectgrafieken van de missies",
   "colophon_mission_trajectories_note": "Eén schema per missie, in code getekend met hetzelfde trajectmodel dat de /fly-simulator vliegt; niet door AI gegenereerd. Tochten door het buitenste zonnestelsel zijn voorbij 1,6 AE radiaal samengedrukt en banen om de aarde zijn overdreven groot getekend om leesbaar te blijven; het onderschrift vermeldt dat. Een missie zonder baangegevens krijgt een benoemde plaatshouder, nooit een verzonnen traject. De labels in de beelden zijn Engels.",
   "layout_footer_more": "Meer",
+  "explore_index_aria_neighborhood": "Index van de stellaire omgeving — spring naar een ster met een naam of een deep-sky-object",
   "explore_index_aria_milky_way": "Index van de Melkweg — spring naar de Zon, een bolhoop, een satellietstelsel, een spiraalarm of een zwart gat",
   "explore_index_aria_local_group": "Index van de Lokale Groep — spring naar een lid-sterrenstelsel",
   "explore_index_aria_local_sheet": "Index van de Lokale Plaat — spring naar een lidgroep",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "Satellietstelsels",
   "explore_index_section_arms": "Spiraalarmen",
   "explore_index_section_fiction": "Fictie",
-  "explore_index_filter_headliner": "Hoogtepunten",
+  "explore_index_filter_headliner": "Bekende objecten",
   "explore_index_filter_dwarf_galaxies": "Dwergstelsels"
 }

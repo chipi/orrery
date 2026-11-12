@@ -1564,7 +1564,6 @@
   "star_label_absolute_mag": "MAGNITUDE ABSOLUTA",
   "star_label_constellation": "CONSTELAÇÃO",
   "star_label_catalogue": "CATÁLOGO",
-  "star_index_aria": "Estrelas nomeadas",
   "star_index_close": "Fechar índice",
   "star_enter_system": "Entrar no sistema →",
   "exo_kind": "Exoplaneta",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "Gráficos de trajetória das missões",
   "colophon_mission_trajectories_note": "Um esquema por missão, desenhado em código com o mesmo modelo de trajetória que o simulador /fly voa; não é gerado por IA. Os roteiros pelo sistema solar externo são comprimidos radialmente além de 1,6 UA e as órbitas terrestres são exageradas para ficarem legíveis; a legenda informa isso. Uma missão sem dados de órbita recebe um marcador rotulado, nunca uma trajetória inventada. Os rótulos nas imagens estão em inglês.",
   "layout_footer_more": "Mais",
+  "explore_index_aria_neighborhood": "Índice da vizinhança estelar — ir para uma estrela com nome ou um objeto de céu profundo",
   "explore_index_aria_milky_way": "Índice da Via Láctea — ir para o Sol, um aglomerado globular, uma galáxia satélite, um braço espiral ou um buraco negro",
   "explore_index_aria_local_group": "Índice do Grupo Local — ir para uma galáxia membro",
   "explore_index_aria_local_sheet": "Índice da Folha Local — ir para um grupo membro",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "Galáxias satélite",
   "explore_index_section_arms": "Braços espirais",
   "explore_index_section_fiction": "Ficção",
-  "explore_index_filter_headliner": "Destaques",
+  "explore_index_filter_headliner": "Objetos de destaque",
   "explore_index_filter_dwarf_galaxies": "Galáxias anãs"
 }

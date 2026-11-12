@@ -1551,7 +1551,6 @@
   "star_label_absolute_mag": "القدر المطلق",
   "star_label_constellation": "الكوكبة",
   "star_label_catalogue": "الفهرس",
-  "star_index_aria": "النجوم المسماة",
   "star_index_close": "إغلاق الفهرس",
   "explore_constellations_toggle": "الكوكبات",
   "explore_anon_unnamed": "نجم غير مسمى",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "مخططات مسارات المهمات",
   "colophon_mission_trajectories_note": "مخطط تخطيطي واحد لكل مهمة، رُسم بالشيفرة من نموذج المسار نفسه الذي تحلّق به محاكاة /fly، وليس مولَّدًا بالذكاء الاصطناعي. جولات المجموعة الشمسية الخارجية مضغوطة شعاعيًا بعد 1.6 وحدة فلكية، ومدارات الأرض مبالغ في حجمها لتكون مقروءة، وتذكر الكتابة تحت المخطط ذلك. أما المهمة التي لا تتوافر لها بيانات مدارية فتحصل على عنصر نائب مسمّى، لا على مسار مختلق. التسميات داخل الصور بالإنجليزية.",
   "layout_footer_more": "المزيد",
+  "explore_index_aria_neighborhood": "فهرس الجوار النجمي — الانتقال إلى نجم مسمّى أو جرم من أجرام السماء العميقة",
   "explore_index_aria_milky_way": "فهرس درب التبانة — الانتقال إلى الشمس أو عنقود كروي أو مجرة تابعة أو ذراع حلزونية أو ثقب أسود",
   "explore_index_aria_local_group": "فهرس المجموعة المحلية — الانتقال إلى مجرة عضو",
   "explore_index_aria_local_sheet": "فهرس الصفيحة المحلية — الانتقال إلى مجموعة عضو",
@@ -3692,7 +3692,7 @@
   "explore_index_aria_laniakea": "فهرس لانياكيا — الانتقال إلى عضو",
   "explore_index_aria_cosmic_web": "فهرس الشبكة الكونية — الانتقال إلى بنية",
   "explore_index_filter_aria": "تصفية الفهرس",
-  "explore_index_no_match": "لا شيء يطابق \"{query}\".",
+  "explore_index_no_match": "لا شيء يطابق «{query}».",
   "explore_index_section_stars": "النجوم",
   "explore_index_section_deep_sky": "السماء العميقة",
   "explore_index_section_planets": "الكواكب",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "المجرات التابعة",
   "explore_index_section_arms": "الأذرع الحلزونية",
   "explore_index_section_fiction": "خيال",
-  "explore_index_filter_headliner": "أبرز الإنجازات",
+  "explore_index_filter_headliner": "أبرز الأجرام",
   "explore_index_filter_dwarf_galaxies": "المجرات القزمة"
 }

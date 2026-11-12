@@ -197,7 +197,7 @@ export interface ScaleIndexSource {
   blackHoles: { id: string; name: string; kind: string }[];
 }
 
-type Member = { id: string; name: string; kind: string; headliner: boolean } & (
+type Member = { id: string; name: string; kind: string; headliner: boolean; parent?: string } & (
   { dist_mly: number } | { dist_mpc: number }
 );
 
@@ -211,6 +211,7 @@ function memberRows(members: Member[]): ScaleIndexRow[] {
       id: m.id,
       name: m.name,
       kind: m.kind,
+      parent: m.parent,
       badges: m.headliner ? ['headliner'] : undefined,
       selectable: true,
     }));

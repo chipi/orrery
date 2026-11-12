@@ -31,6 +31,13 @@
       "license_summary": "Outbound reference links only; no Annual Reviews copy is redistributed in-app."
     },
     {
+      "id": "aps",
+      "name": "American Physical Society (APS News)",
+      "kind": "publisher",
+      "url": "https://www.aps.org/",
+      "license_summary": "Cited as a source of facts; no APS copy is redistributed in-app."
+    },
+    {
       "id": "arianespace",
       "name": "Arianespace",
       "kind": "private-operator",
@@ -198,6 +205,13 @@
       "url": "https://www.esa.int/",
       "logo_path": "/logos/esa.svg",
       "license_summary": "Creative Commons CC BY-SA 3.0 IGO for most imagery; some material under CC BY 4.0 IGO. Logos under permissive ESA emblem terms."
+    },
+    {
+      "id": "eso",
+      "name": "European Southern Observatory (ESO)",
+      "kind": "research-institute",
+      "url": "https://www.eso.org/",
+      "license_summary": "ESO press releases and images are released under Creative Commons CC BY 4.0; credit ESO."
     },
     {
       "id": "euspa",

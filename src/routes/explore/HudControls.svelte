@@ -129,13 +129,12 @@
     >
       {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
     </Chip>
-    {#if hasSelection}
-      <ResetViewButton
-        onclick={onResetView}
-        data-testid="explore-reset-view"
-        data-audio-stage="explore-reset-view"
-      />
-    {/if}
+    <ResetViewButton
+      onclick={onResetView}
+      data-testid="explore-reset-view"
+      data-audio-stage="explore-reset-view"
+      disabled={!hasSelection}
+    />
     <EnterArButton onEnter={() => void launchArScene('explore')} />
     <EnterSkyButton onEnter={() => void launchSkyScene()} />
   </div>
@@ -238,13 +237,12 @@
   >
     {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
   </Chip>
-  {#if hasSelection}
-    <ResetViewButton
-      onclick={onResetView}
-      data-testid="explore-reset-view-mobile"
-      data-audio-stage="explore-reset-view"
-    />
-  {/if}
+  <ResetViewButton
+    onclick={onResetView}
+    data-testid="explore-reset-view-mobile"
+    data-audio-stage="explore-reset-view"
+    disabled={!hasSelection}
+  />
   <EnterArButton onEnter={() => void launchArScene('explore')} />
   <EnterSkyButton onEnter={() => void launchSkyScene()} />
 </div>
@@ -400,7 +398,7 @@
   }
 
   /* HUD controls cluster — top-left, opposite the detail panel.
-     Two rows (mode toggles + visibility chips). Stays under the nav
+     One row on a fine pointer (view actions + visibility chips). Stays under the nav
      but always above the canvas. Pinned to the left so it never
      collides with the right-drawer detail panel on desktop.
      Phone (≤767 px): hidden — MobileDrawerGroup replaces it.
@@ -417,7 +415,6 @@
     z-index: 45;
     display: none;
     flex-direction: column;
-    /* Each row takes its natural width: the view row hugs left, the chip row wraps. */
     align-items: flex-start;
     gap: 6px;
     pointer-events: none; /* children re-enable */
@@ -627,9 +624,18 @@
       max-height: calc(100vh - var(--nav-height, 60px) - 220px);
       z-index: 36;
     }
+    /* One HUD row (operator 2026-11-12), the same as on the worlds: the view actions, a 12 px
+       gap, then the layer chips; it wraps where the width runs out. */
     .hud-controls {
       display: flex;
-      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 12px;
+      max-width: calc(100vw - 32px);
+    }
+    .ctrl-row.chips {
+      max-width: 100%;
     }
   }
 

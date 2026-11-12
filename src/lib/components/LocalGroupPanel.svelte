@@ -14,8 +14,10 @@
     member: LocalGroupMember | null;
     open: boolean;
     onClose: () => void;
+    /** Another panel is stacked on this one (a black hole opened from its pin). */
+    covered?: boolean;
   };
-  let { member, open, onClose }: Props = $props();
+  let { member, open, onClose, covered = false }: Props = $props();
 
   const kindLabel = (k: LocalGroupKind): string =>
     k === 'spiral'
@@ -49,7 +51,7 @@
   let distSrc = $derived(sourceLink(member?.catalogue?.dist_mly));
 </script>
 
-<Panel {open} {onClose} title={member?.name ?? ''} mobileSheet="partial">
+<Panel {open} {onClose} {covered} title={member?.name ?? ''} mobileSheet="partial">
   {#if member}
     <div class="head">
       <div class="kind">{kindLabel(member.kind)}</div>

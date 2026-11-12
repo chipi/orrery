@@ -13,8 +13,10 @@
     member: CosmicWebMember | null;
     open: boolean;
     onClose: () => void;
+    /** Another panel is stacked on this one (a black hole opened from its pin). */
+    covered?: boolean;
   };
-  let { member, open, onClose }: Props = $props();
+  let { member, open, onClose, covered = false }: Props = $props();
 
   const kindLabel = (k: CosmicWebKind): string =>
     k === 'void'
@@ -35,7 +37,7 @@
   const fmt = (n: number): string => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
 </script>
 
-<Panel {open} {onClose} title={member?.name ?? ''} mobileSheet="partial">
+<Panel {open} {onClose} {covered} title={member?.name ?? ''} mobileSheet="partial">
   {#if member}
     <div class="head">
       <div class="kind">{kindLabel(member.kind)}</div>

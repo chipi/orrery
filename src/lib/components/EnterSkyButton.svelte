@@ -15,6 +15,7 @@
     type ArAvailability,
   } from '$lib/ar';
   import * as m from '$lib/paraglide/messages';
+  import Chip from './Chip.svelte';
 
   let { onEnter }: { onEnter?: () => void } = $props();
 
@@ -25,38 +26,5 @@
 </script>
 
 {#if state === 'enabled'}
-  <button type="button" class="enter-sky" aria-label={m.sky_enter_aria()} onclick={onEnter}>
-    {m.sky_enter()}
-  </button>
+  <Chip kind="action" aria-label={m.sky_enter_aria()} onclick={onEnter}>{m.sky_enter()}</Chip>
 {/if}
-
-<style>
-  /* Matches the 2D/AR chips (44px, dark glass, Space Mono 12px, radius 4) with a
-     sky-blue accent so it reads as the "look up" affordance. */
-  .enter-sky {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0 10px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(122, 162, 255, 0.6);
-    border-radius: 4px;
-    color: #9fc0ff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms;
-  }
-  .enter-sky:hover,
-  .enter-sky:focus-visible {
-    background: rgba(122, 162, 255, 0.16);
-    outline: none;
-  }
-</style>

@@ -34,6 +34,8 @@ import {
   findLaunchesOrphanRocketMappingTargets,
   scienceReviewHash,
   findHotspotAnnotationProblems,
+  findCatalogueProblems,
+  type CatalogueRow,
   type HotspotEntryForAnnotations,
   type FleetRef,
   type LicenseWaiver,
@@ -495,6 +497,41 @@ validateFile(join(DATA_ROOT, 'culture-doors.json'), validateCultureDoors);
 validateFile(join(DATA_ROOT, 'museums.json'), validateMuseums);
 validateFile(join(DATA_ROOT, 'observatories.json'), validateObservatories);
 validateFile(join(DATA_ROOT, 'universe', 'deep-sky-objects.json'), validateDeepSkyObjects);
+// Catalogue layer (#658): every catalogue-derived value carries source + record_url, the sourced
+// number equals the displayed one, and magnitudes are single-band V. Shared by the deep-sky,
+// black-hole and Local Group files below.
+function checkCatalogue(
+  file: string,
+  rows: CatalogueRow[],
+  scalarOf: Record<string, (row: CatalogueRow) => unknown>,
+  required: (row: CatalogueRow) => string[],
+) {
+  const problems = findCatalogueProblems(rows, scalarOf, required);
+  if (problems.length === 0) {
+    passed++;
+    return;
+  }
+  failed += problems.length;
+  console.error(`\n  ✗ ${file}`);
+  for (const p of problems) console.error(`      ${p}`);
+}
+{
+  const dsoPath = join(DATA_ROOT, 'universe', 'deep-sky-objects.json');
+  if (existsSync(dsoPath)) {
+    const dso = readJson(dsoPath) as { objects: CatalogueRow[] };
+    checkCatalogue(
+      'universe/deep-sky-objects.json',
+      dso.objects,
+      {
+        mag: (r) => r.mag,
+        dist_ly: (r) => r.dist_ly,
+        size_arcmin: (r) => r.size_arcmin,
+        position: (r) => [r.ra, r.dec],
+      },
+      (r) => (r.mag != null ? ['mag'] : []),
+    );
+  }
+}
 // /explore v2 Slice 4 — every deep-sky photoKey must resolve to a real curated
 // gallery entry (the sky↔gallery join is load-bearing for the immersion panel).
 {

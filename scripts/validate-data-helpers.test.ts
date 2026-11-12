@@ -5,6 +5,9 @@ import {
   findBidirectionalFleetSiteDrift,
   findProvenanceFailures,
   findHotspotAnnotationProblems,
+  findCatalogueProblems,
+  isSingleBandV,
+  type CatalogueRow,
   type LicenseWaiver,
   type FleetEntryMinimal,
   type FleetRef,
@@ -555,5 +558,94 @@ describe('findHotspotAnnotationProblems', () => {
       site([{ ...good, source: [{ label: 'LROC', url: 'http://x' }] }]),
     );
     expect(p).toEqual([expect.stringContaining('https url')]);
+  });
+});
+
+describe('findCatalogueProblems (#658)', () => {
+  const ok = {
+    value: 6.6,
+    source: 'Harris, integrated V',
+    bibcode: '1996AJ....112.1487H',
+    record_url: 'https://physics.mcmaster.ca/~harris/mwgc.dat',
+  };
+  const scalarOf = { mag: (r: CatalogueRow) => r.mag };
+  const noneRequired = () => [] as string[];
+
+  it('passes a sourced V magnitude whose value matches the scalar', () => {
+    const rows: CatalogueRow[] = [{ id: 'm10', mag: 6.6, catalogue: { mag: ok } }];
+    expect(findCatalogueProblems(rows, scalarOf, (r) => (r.mag != null ? ['mag'] : []))).toEqual(
+      [],
+    );
+  });
+
+  it('flags a non-null scalar with no catalogue entry', () => {
+    const rows: CatalogueRow[] = [{ id: 'm10', mag: 6.6 }];
+    expect(findCatalogueProblems(rows, scalarOf, () => ['mag'])).toEqual([
+      'm10: mag has no catalogue entry (source + record_url)',
+    ]);
+  });
+
+  it('flags a missing source, a missing or off-catalogue record_url, and a bad bibcode', () => {
+    const rows: CatalogueRow[] = [
+      {
+        id: 'a',
+        mag: 6.6,
+        catalogue: {
+          mag: { ...ok, source: '', record_url: 'http://example.com/x', bibcode: 'nope' },
+        },
+      },
+      { id: 'b', mag: 6.6, catalogue: { mag: { ...ok, record_url: 'https://example.com/x' } } },
+      { id: 'c', mag: 6.6, catalogue: { mag: { ...ok, record_url: undefined } } },
+    ];
+    const p = findCatalogueProblems(rows, scalarOf, noneRequired).join('\n');
+    expect(p).toContain('a.catalogue.mag: missing source');
+    expect(p).toContain("bibcode 'nope' is not an ADS bibcode");
+    expect(p).toContain('a.catalogue.mag: record_url must be an https URL');
+    expect(p).toContain(
+      "b.catalogue.mag: record_url host 'example.com' is not a catalogue record host",
+    );
+    expect(p).toContain('c.catalogue.mag: record_url must be an https URL');
+  });
+
+  it('flags a value that drifted from the displayed scalar, arrays included', () => {
+    const rows: CatalogueRow[] = [
+      {
+        id: 'a',
+        mag: 7,
+        ra: 1,
+        dec: 2,
+        catalogue: { mag: ok, position: { ...ok, value: [1, 3] } },
+      },
+    ];
+    const p = findCatalogueProblems(
+      rows,
+      { ...scalarOf, position: (r) => [r.ra, r.dec] },
+      noneRequired,
+    ).join('\n');
+    expect(p).toContain('a.catalogue.mag: value 6.6 differs from the displayed 7');
+    expect(p).toContain('a.catalogue.position: value [1,3] differs from the displayed [1,2]');
+  });
+
+  it('flags a magnitude that is not single-band V, and an unknown field', () => {
+    const rows: CatalogueRow[] = [
+      {
+        id: 'a',
+        mag: 6.6,
+        catalogue: { mag: { ...ok, source: 'OpenNGC, V-Mag or B-Mag' }, extra: ok },
+      },
+    ];
+    const p = findCatalogueProblems(rows, scalarOf, noneRequired).join('\n');
+    expect(p).toContain(
+      "a.catalogue.mag: magnitude source 'OpenNGC, V-Mag or B-Mag' is not a single V band",
+    );
+    expect(p).toContain('a.catalogue.extra: unknown catalogue field');
+  });
+
+  it('knows single-band V sources', () => {
+    expect(isSingleBandV('OpenNGC, V-Mag (compiled from LEDA, SIMBAD and HEASARC)')).toBe(true);
+    expect(isSingleBandV('SIMBAD, V-band flux')).toBe(true);
+    expect(isSingleBandV('Harris, integrated V')).toBe(true);
+    expect(isSingleBandV('OpenNGC, B-Mag')).toBe(false);
+    expect(isSingleBandV('OpenNGC magnitude')).toBe(false);
   });
 });

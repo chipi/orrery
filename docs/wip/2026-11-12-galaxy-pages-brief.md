@@ -206,3 +206,7 @@ Phases 2 and 3 can swap or run side by side within the 2-agent limit. Pages in p
 - Not checked: images for any of the 59 (B3 hero loader state), `og:image` rules, schema.org types for galaxies and structures, RTL rendering of the new pages, whether `tests/e2e/visual.spec.ts` snapshots cover entity pages, `scripts/route-budget.json` for two new server-only routes.
 - Not run: any build, dev server, `check-seo`, `check-internal-links`, `route-lastmod`, unit or e2e test, or browser. The only code run is the seven `gal-*.mjs` measuring files, which read data and message files and print.
 - Counts of the INDEX lists (six, not eight, in the prerendered HTML) are read from `scale-index.spec.ts:117–124` and `ScaleIndex.svelte:177, 221`, not observed in a built `/explore`.
+
+## Decisions (operator, 2026-11-13)
+
+All 8 recommendations of §5 approved as written: two typed paths (`/explore/galaxies/<id>`, `/explore/structures/<id>`); all 30 structures get pages; no arm or Sun pages, 47 Tucanae and NGC 6752 become deep-sky objects with text; a Related list on every page; glossary first for the names; sourced catalogue entries for the 30 structure distances; 400–600 characters for every entity; two batches, 05 (29 galaxies) then 06 (30 structures).

@@ -166,10 +166,15 @@
   title={planet?.name ?? ''}
   onShare={cardSpec ? () => (cardOpen = true) : undefined}
 >
+  {#snippet eyebrow()}
+    {#if planet}<div class="type">{planet.type.toUpperCase()}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if planet}<div class="name">{planet.name}</div>{/if}
+  {/snippet}
+
   {#if planet}
     <div class="head">
-      <div class="type">{planet.type.toUpperCase()}</div>
-      <div class="name">{planet.name}</div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.panel_label_from_sun()}</div>

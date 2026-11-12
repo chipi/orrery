@@ -34,12 +34,14 @@
 </script>
 
 <Panel {open} {onClose} {title}>
-  {#if planet}
-    <div class="head">
-      <div class="kind">{m.exo_kind()} · {hostName}</div>
-      <div class="name">{planet.name}</div>
-    </div>
+  {#snippet eyebrow()}
+    {#if planet}<div class="kind">{m.exo_kind()} · {hostName}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if planet}<div class="name">{planet.name}</div>{/if}
+  {/snippet}
 
+  {#if planet}
     {#if overlay?.fact}<p class="editorial">{overlay.fact}</p>{/if}
     {#if overlay?.bio}<p class="prose">{overlay.bio}</p>{/if}
 
@@ -101,11 +103,6 @@
 </Panel>
 
 <style>
-  .head {
-    padding: 0 0 12px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 12px;
-  }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);

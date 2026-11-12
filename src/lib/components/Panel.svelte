@@ -55,6 +55,14 @@
      * come back with it) but is not painted, not focusable and not read out, and Escape leaves it.
      */
     covered?: boolean;
+    /**
+     * The kind line above the name (agency badge and status, "PLANET", a category and designation).
+     * It shares the header's first line with the actions, right-aligned. Omit it and that line
+     * carries the actions alone.
+     */
+    eyebrow?: Snippet;
+    /** The entity name, full panel width on the line below the actions (UXD-018). */
+    heading?: Snippet;
     children?: Snippet;
   };
   let {
@@ -67,6 +75,8 @@
     onShare,
     onBack,
     covered = false,
+    eyebrow,
+    heading,
     children,
   }: Props = $props();
 
@@ -113,49 +123,19 @@
     };
   });
 
-  let barEl: HTMLElement | undefined = $state();
+  let headEl: HTMLElement | undefined = $state();
   let contentEl: HTMLElement | undefined = $state();
-
-  // The name joins the bar once the hero (else the first block) has scrolled out of view.
-  let nameShown = $state(false);
-  let nameRaf = 0;
-
-  function updateName() {
-    nameRaf = 0;
-    if (!contentEl) return;
-    // The hero, else the identity block: Message, Museum and Observatory wrap their whole body
-    // in one div whose bottom never scrolls past the top, so the first child is not enough.
-    const anchor =
-      contentEl.querySelector('.panel-hero') ??
-      contentEl.querySelector('.head, .phase-head, h1, h2, h3') ??
-      contentEl.firstElementChild;
-    nameShown = anchor
-      ? anchor.getBoundingClientRect().bottom <= contentEl.getBoundingClientRect().top
-      : false;
-  }
-
-  function onContentScroll() {
-    if (!nameRaf) nameRaf = requestAnimationFrame(updateName);
-  }
-
-  $effect(() => {
-    // New open or new entity: decide again from where the list sits.
-    void open;
-    void title;
-    nameShown = false;
-    if (contentEl) requestAnimationFrame(updateName);
-  });
 
   let touchStartY = $state(0);
   let touchDeltaY = $state(0);
-  // Swipe-down closes from the bar, or from the content only while it sits at the top:
+  // Swipe-down closes from the header, or from the content only while it sits at the top:
   // a finger pulling a scrolled list back up must not close the panel.
   let swipeAllowed = false;
 
   function onTouchStart(e: TouchEvent) {
     const target = e.target as Node;
     swipeAllowed =
-      !!barEl?.contains(target) || (!!contentEl?.contains(target) && contentEl.scrollTop === 0);
+      !!headEl?.contains(target) || (!!contentEl?.contains(target) && contentEl.scrollTop === 0);
     touchStartY = e.touches[0].clientY;
     touchDeltaY = 0;
   }
@@ -213,35 +193,40 @@
          docked affordances (HUD chips, breadcrumb, etc.) can land here
          in future without re-plumbing every consumer panel. -->
     <div class="panel-dock" aria-hidden="true"></div>
-    <!-- The panel's header bar (UXD-018). A flex row above the scroll container, so the
-         close never overlaps scrolling text: back and close live on Panel itself, so every
-         consumer gets the same controls without re-implementing them. Share shows when the
-         host passes onShare (the entity has a collectible card). -->
-    <div class="panel-bar" bind:this={barEl}>
-      {#if onBack || canGoBack}
+    <!-- The panel's header (UXD-018, B1.1): one fixed block above the scroll container, so
+         nothing scrolls under the actions. Row 1 is the eyebrow with back, Share and close
+         right-aligned on the same line; the name is row 2 at full width. The actions come first
+         in the DOM so the keyboard reaches them before the eyebrow's own chips and the content.
+         Back and close live on Panel itself, so every consumer gets the same controls; Share
+         shows when the host passes onShare (the entity has a collectible card). -->
+    <div class="panel-head" bind:this={headEl}>
+      <div class="panel-actions-line">
+        {#if onBack || canGoBack}
+          <Chip
+            kind="action"
+            class="panel-back"
+            onclick={onBack ?? goBackCard}
+            aria-label={m.panel_back()}
+            data-audio-stage="panel-back">←</Chip
+          >
+        {/if}
+        {#if onShare}
+          <Chip kind="action" onclick={onShare} aria-haspopup="dialog" data-testid="open-card-btn"
+            >{m.panel_share()}</Chip
+          >
+        {/if}
         <Chip
           kind="action"
-          class="panel-back"
-          onclick={onBack ?? goBackCard}
-          aria-label={m.panel_back()}
-          data-audio-stage="panel-back">←</Chip
+          class="panel-close"
+          onclick={onClose}
+          aria-label={m.panel_close()}
+          data-audio-stage="panel-close">×</Chip
         >
-      {/if}
-      <span class="panel-bar-name" class:shown={nameShown} aria-hidden="true">{title ?? ''}</span>
-      {#if onShare}
-        <Chip kind="action" onclick={onShare} aria-haspopup="dialog" data-testid="open-card-btn"
-          >{m.panel_share()}</Chip
-        >
-      {/if}
-      <Chip
-        kind="action"
-        class="panel-close"
-        onclick={onClose}
-        aria-label={m.panel_close()}
-        data-audio-stage="panel-close">×</Chip
-      >
+      </div>
+      {#if eyebrow}<div class="panel-eyebrow">{@render eyebrow()}</div>{/if}
+      <div class="panel-heading">{@render heading?.()}</div>
     </div>
-    <div class="content" bind:this={contentEl} onscroll={onContentScroll}>
+    <div class="content" bind:this={contentEl}>
       {@render children?.()}
     </div>
   </aside>
@@ -341,47 +326,51 @@
     height: 0;
   }
 
-  /* Header bar: back, name, Share, close. A flex row between the dock and the scroll
-     container, so nothing scrolls under it. The chips are 30 px on a fine pointer (bar
-     38 px) and 44 px on touch (the chip is the bar). */
-  .panel-bar {
+  /* Header: eyebrow and actions on one line, the name below at full width. A grid, so the
+     eyebrow takes whatever the actions leave and wraps inside it, and the actions stay at the
+     inline end (the left in RTL). The chips are 30 px on a fine pointer and 44 px on touch;
+     the first line is as tall as the chip. */
+  .panel-head {
     flex: none;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 8px;
     align-items: center;
-    gap: 6px;
-    padding: 0 14px;
+    padding: 0 18px 10px;
     background: var(--color-panel-bg);
-    /* Inset rule, not a border: a border would add 1 px to the 38 / 44 px bar. */
+    /* Inset rule, not a border: it must not change the header's height. */
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.06);
   }
   @media (hover: hover) and (pointer: fine) {
-    .panel-bar {
-      padding-block: 4px;
+    .panel-head {
+      padding-top: 4px;
     }
   }
-  /* On touch the bar is flush with the panel's top edge (overflow hidden), so the chip's
-     outside focus ring would be clipped; draw it inside. */
-  .panel-bar :global(.ui-chip:focus-visible) {
-    outline-offset: -3px;
+  .panel-actions-line {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
-  .panel-bar-name {
-    flex: 1;
+  .panel-eyebrow {
+    grid-column: 1;
+    grid-row: 1;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: var(--size-meta);
-    color: rgba(255, 255, 255, 0.85);
-    opacity: 0;
-    transition: opacity 120ms;
   }
-  .panel-bar-name.shown {
-    opacity: 1;
+  /* The eyebrow's own bottom margins would pull it off the actions' centre line. */
+  .panel-eyebrow > :global(*) {
+    margin-bottom: 0;
   }
-  @media (prefers-reduced-motion: reduce) {
-    .panel-bar-name {
-      transition: none;
-    }
+  .panel-heading {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+  }
+  /* On touch the header is flush with the panel's top edge (overflow hidden), so a chip's
+     outside focus ring would be clipped; draw it inside. */
+  .panel-head :global(.ui-chip:focus-visible) {
+    outline-offset: -3px;
   }
 
   .content {

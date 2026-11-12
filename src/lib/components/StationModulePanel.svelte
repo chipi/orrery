@@ -79,8 +79,8 @@
 <!-- grabFocus={false}: keep focus on the triggering module-list row so
      arrow-key list nav works immediately after the first click. -->
 <Panel {open} {onClose} grabFocus={false} title={mod?.name ?? mod?.id ?? ''}>
-  {#if mod}
-    <div class="head">
+  {#snippet eyebrow()}
+    {#if mod}
       <AgencyRow agency={mod.agency}>
         <span
           class="status"
@@ -88,9 +88,15 @@
           class:status-retired={mod.status === 'RETIRED'}>{statusLabel}</span
         >
       </AgencyRow>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if mod}
       <h1 class="name">{mod.name}</h1>
-    </div>
+    {/if}
+  {/snippet}
 
+  {#if mod}
     {#if gallery.length > 0}
       <PanelHeroImage src={gallery[0]} name={mod.name} onOpen={() => (lightboxSrc = gallery[0]!)} />
     {/if}
@@ -300,10 +306,6 @@
 <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
 <style>
-  .head {
-    flex-shrink: 0;
-    margin-bottom: 12px;
-  }
   /* .agency-row / .agency-badge / .status base now come from AgencyRow.svelte. */
   .status-active {
     color: #889fe7;

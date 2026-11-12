@@ -69,11 +69,16 @@
 </script>
 
 <Panel {open} title={museum?.name ?? ''} {onClose}>
+  {#snippet eyebrow()}
+    {#if museum}<p class="city">{museum.city}</p>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if museum}<h1 class="name">{museum.name}</h1>{/if}
+  {/snippet}
+
   {#if museum}
     <div class="museum" data-testid="museum-panel" data-museum-id={museum.id}>
       <PlaceHero src="/images/museums/{museum.id}/01.webp" {locale} />
-      <h1 class="name">{museum.name}</h1>
-      <p class="city">{museum.city}</p>
       <p class="description">{museum.description}</p>
       <a
         class="site"

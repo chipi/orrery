@@ -52,12 +52,14 @@
 </script>
 
 <Panel {open} {onClose} {covered} title={member?.name ?? ''} mobileSheet="partial">
-  {#if member}
-    <div class="head">
-      <div class="kind">{kindLabel(member.kind)}</div>
-      <div class="name">{member.name}</div>
-    </div>
+  {#snippet eyebrow()}
+    {#if member}<div class="kind">{kindLabel(member.kind)}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if member}<div class="name">{member.name}</div>{/if}
+  {/snippet}
 
+  {#if member}
     <p class="prose">{blurb(member.kind)}</p>
 
     <div class="grid">
@@ -87,9 +89,6 @@
 </Panel>
 
 <style>
-  .head {
-    margin-bottom: 0.5rem;
-  }
   .kind {
     font-size: 0.7rem;
     letter-spacing: 0.08em;

@@ -69,12 +69,14 @@
 </script>
 
 <Panel {open} {onClose} {title} mobileSheet="partial">
-  {#if hole}
-    <div class="head">
-      <div class="kind">{kindLabel}</div>
-      <div class="name">{hole.name}</div>
-    </div>
+  {#snippet eyebrow()}
+    {#if hole}<div class="kind">{kindLabel}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if hole}<div class="name">{hole.name}</div>{/if}
+  {/snippet}
 
+  {#if hole}
     <p class="prose">{hole.discovery}</p>
 
     <div class="grid">
@@ -124,9 +126,6 @@
 </Panel>
 
 <style>
-  .head {
-    margin-bottom: 0.5rem;
-  }
   .kind {
     font-size: 0.7rem;
     letter-spacing: 0.08em;

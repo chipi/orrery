@@ -1,4 +1,4 @@
-# UXD-018 — Panel shell: header bar, Share, and one action row
+# UXD-018 — Panel shell: header, Share, and one action row
 
 - **Status**: accepted
 - **Date**: 2026-11-12 (proposed and decided)
@@ -33,7 +33,7 @@ image drew an accent border and a ring on hover (P3). Evidence: the brief's §2.
 
 ## Decision
 
-1. **A fixed bar** between the dock and the scroll container on every panel: back (only after a card
+1. **A fixed bar** (replaced by the B1.1 amendment below: one header, no separate bar row) between the dock and the scroll container on every panel: back (only after a card
    link), the entity name once the hero has scrolled out, **Share** (only when the entity has a
    collectible card), close. All chips (30 px on a fine pointer, 44 px on touch), so the bar is 38 px
    or 44 px. Nothing scrolls under it. Swipe-down closes only from the bar or while the list is at
@@ -58,6 +58,16 @@ with an action row also gains the row's height above the hero. The chip sweep in
 longer allow-lists `.panel-close`, `.panel-back` or `.cta-card`. The solid blues of Plan and Fly go. The
 Vehicle / Payload / Mission cards keep their private navy blues (palette review). A hero's hover look is
 gone on touch too.
+
+## Amendment 2026-11-12 — B1.1, one-row header
+
+- **Decider**: the operator, after seeing B1 on screen. Slice B1.1 (after C3, before B2).
+- **Why**: the 38 / 44 px bar cost a row on top of the identity block, and the name appeared in the bar only after the hero scrolled out.
+- **Decision**: decision 1 above is replaced. There is **no separate bar row**. One fixed header holds the eyebrow line (the kind line) with the actions, back (only after a card link), Share (only with a card) and close, right-aligned on the **same line** (left in RTL); the entity name is on the **next line at full panel width**, so a long name wraps under the actions instead of being squeezed beside them. The header stays fixed while the content scrolls, so the name is always visible and the scroll-reveal of the name in the bar is removed. Chip sizes stay A4 (30 px fine pointer, 44 px touch), so the first line is as tall as the chip. Swipe-down still closes from the header or at the top of the list. Everything else (action row, hero, Share) is unchanged.
+- **Mechanism**: `Panel.svelte` takes `eyebrow` and `heading` snippets and lays them out in a two-column grid (eyebrow and actions on row 1, the heading across both columns on row 2); the 24 panels on the shell pass their kind line and name through them and keep key stats in the scrolling content. The actions come first in the DOM, so the keyboard reaches back, Share and close before the eyebrow's own chips; Escape and `covered` behave as before.
+- **No eyebrow**: a panel without a kind line (none of the 24 today; a place panel passes its city) leaves row 1 to the actions, the name still on row 2.
+- **Consequences**: a long name makes the fixed header taller (not capped); stats stay in the scrolling content. Design System §5.3, UXS-001, IA and the module READMEs describe the one header.
+- **Verification**: `tests/e2e/panel-shell.spec.ts` ("one-row header (B1.1)": a planet, a mission and a deep-sky panel; actions on the eyebrow's line, name below, long name wraps under, header does not scroll).
 
 ## Verification
 

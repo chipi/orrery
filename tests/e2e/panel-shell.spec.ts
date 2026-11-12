@@ -1,9 +1,10 @@
 import { expect, test, type Page } from '@playwright/test';
 
 /**
- * UX slice B1 (UXD-018): the panel shell. A fixed header bar (back, name, Share, close) above
- * the scroll container, one action row under the identity block, no foot stack, a hero without
- * a hover glow, and swipe-to-close only from the bar or at the top of the list.
+ * UX slices B1 and B1.1 (UXD-018): the panel shell. One fixed header above the scroll container:
+ * the eyebrow line carries back, Share and close on its right, the name sits on the line below at
+ * full width. One action row under the identity block, no foot stack, a hero without a hover glow,
+ * and swipe-to-close only from the header or at the top of the list.
  */
 
 const PANELS: { label: string; path: string }[] = [
@@ -25,7 +26,7 @@ async function openPanel(page: Page, path: string) {
   await page.goto(path);
   const panel = page.locator('aside.panel');
   await expect(panel).toBeVisible({ timeout: 15_000 });
-  await expect(panel.locator('.panel-bar')).toBeVisible();
+  await expect(panel.locator('.panel-head')).toBeVisible();
   // The panel opens with a transition; measure geometry only once it has stopped moving.
   await expect
     .poll(
@@ -43,18 +44,18 @@ async function openPanel(page: Page, path: string) {
 
 test.describe('panel shell (B1)', () => {
   for (const { label, path } of PANELS) {
-    test(`${label} panel: bar present, close closes`, async ({ page }) => {
+    test(`${label} panel: header present, close closes`, async ({ page }) => {
       const panel = await openPanel(page, path);
-      await expect(panel.locator('.panel-bar button.panel-close')).toBeVisible();
+      await expect(panel.locator('.panel-head button.panel-close')).toBeVisible();
       await panel.locator('button.panel-close').click();
       await expect(panel).toBeHidden({ timeout: 4_000 });
     });
 
-    test(`${label} panel: the bar stays put and the content never goes under the close`, async ({
+    test(`${label} panel: the header stays put and the content never goes under the close`, async ({
       page,
     }) => {
       const panel = await openPanel(page, path);
-      const bar = panel.locator('.panel-bar');
+      const bar = panel.locator('.panel-head');
       const content = panel.locator('.content');
       const before = await bar.boundingBox();
       const overflow = await content.evaluate((el) => el.scrollHeight - el.clientHeight);
@@ -90,29 +91,28 @@ test.describe('panel shell (B1)', () => {
     });
   }
 
-  test('back appears after following a card link, in the bar', async ({ page }) => {
+  test('back appears after following a card link, in the header', async ({ page }) => {
     const panel = await openPanel(page, '/missions?id=apollo11');
     await expect(panel.locator('.panel-back')).toHaveCount(0);
     await page.locator('[data-testid="mission-vehicle-fleet-link"]').click();
     await expect(page).toHaveURL(/\/fleet\?id=saturn-v/);
-    const back = panel.locator('.panel-bar .panel-back');
+    const back = panel.locator('.panel-head .panel-back');
     await expect(back).toBeVisible();
     await back.click();
     await expect(page).toHaveURL(/\/missions\?id=apollo11/);
   });
 
-  test('the name joins the bar once the hero has scrolled out', async ({ page }) => {
+  test('the name is always in the header: no bar name, nothing reveals on scroll', async ({
+    page,
+  }) => {
     const panel = await openPanel(page, '/explore?id=mars');
-    const name = panel.locator('.panel-bar-name');
-    await expect(name).toHaveCSS('opacity', '0');
-    await panel.locator('.content').evaluate((el) => {
-      const hero = el.querySelector('.panel-hero') as HTMLElement | null;
-      el.scrollTop = hero ? hero.offsetTop + hero.offsetHeight + 40 : 600;
-    });
-    await expect(name).toHaveCSS('opacity', '1');
+    await expect(panel.locator('.panel-bar, .panel-bar-name')).toHaveCount(0);
+    const name = panel.locator('.panel-head .name');
+    await expect(name).toBeVisible();
     await expect(name).toHaveText(/Mars/i);
-    await panel.locator('.content').evaluate((el) => (el.scrollTop = 0));
-    await expect(name).toHaveCSS('opacity', '0');
+    await panel.locator('.content').evaluate((el) => (el.scrollTop = 600));
+    await expect(name).toBeVisible();
+    expect(await name.evaluate((el) => getComputedStyle(el).opacity)).toBe('1');
   });
 
   test('hero: no hover glow, a focus ring for the keyboard only', async ({ page, isMobile }) => {
@@ -146,7 +146,7 @@ test.describe('panel shell (B1)', () => {
     expect(ring.color).toBe(ring.focus);
   });
 
-  test('bar and row chips are 30 px on a fine pointer and 44 px on touch', async ({
+  test('header and row chips are 30 px on a fine pointer and 44 px on touch', async ({
     page,
     isMobile,
   }) => {
@@ -154,20 +154,95 @@ test.describe('panel shell (B1)', () => {
     const want = isMobile ? 44 : 30;
     const heightOf = async (sel: string) =>
       Math.round((await panel.locator(sel).first().boundingBox())!.height);
-    expect(await heightOf('.panel-bar .panel-close')).toBe(want);
-    expect(await heightOf('.panel-bar [data-testid="open-card-btn"]')).toBe(want);
+    expect(await heightOf('.panel-head .panel-close')).toBe(want);
+    expect(await heightOf('.panel-head [data-testid="open-card-btn"]')).toBe(want);
     expect(await heightOf('.panel-actions .ui-chip')).toBeGreaterThanOrEqual(want);
-    expect(await heightOf('.panel-bar')).toBe(isMobile ? 44 : 38);
+    expect(await heightOf('.panel-head .panel-actions-line')).toBe(want);
   });
 
   test('Share opens the card overlay; Escape closes only the overlay', async ({ page }) => {
     const panel = await openPanel(page, '/missions?id=apollo11');
-    await panel.locator('.panel-bar').getByTestId('open-card-btn').click();
+    await panel.locator('.panel-head').getByTestId('open-card-btn').click();
     const card = page.locator('.backdrop .card');
     await expect(card).toBeVisible({ timeout: 10_000 });
     await page.keyboard.press('Escape');
     await expect(card).toBeHidden();
     await expect(panel).toBeVisible();
+  });
+
+  test.describe('one-row header (B1.1)', () => {
+    const KINDS: { label: string; path: string }[] = [
+      { label: 'planet', path: '/explore?id=mars' },
+      { label: 'mission', path: '/missions?id=apollo11' },
+      { label: 'deep sky', path: '/explore?deepsky=M13' },
+    ];
+    type Box = { x: number; y: number; width: number; height: number };
+    const boxOf = (panel: ReturnType<Page['locator']>, sel: string) =>
+      panel.locator(sel).first().boundingBox() as Promise<Box>;
+    const bottom = (b: Box) => b.y + b.height;
+
+    for (const { label, path } of KINDS) {
+      test(`${label}: actions share the eyebrow's line, the name starts below, the header stays`, async ({
+        page,
+      }) => {
+        const panel = await openPanel(page, path);
+        const eyebrow = await boxOf(panel, '.panel-eyebrow');
+        const close = await boxOf(panel, '.panel-head button.panel-close');
+        const name = await boxOf(panel, '.panel-heading');
+        const head = await boxOf(panel, '.panel-head');
+
+        // Same line: the eyebrow's vertical span and the actions' overlap, and both sit above the name.
+        expect(eyebrow.y).toBeLessThan(bottom(close));
+        expect(close.y).toBeLessThan(bottom(eyebrow));
+        expect(name.y).toBeGreaterThanOrEqual(Math.max(bottom(eyebrow), bottom(close)) - 1);
+        // The actions are at the inline end, the eyebrow before them, no overlap.
+        const rtl = await panel.evaluate((el) => getComputedStyle(el).direction === 'rtl');
+        const actions = await boxOf(panel, '.panel-actions-line');
+        if (rtl) expect(actions.x + actions.width).toBeLessThanOrEqual(eyebrow.x + 1);
+        else expect(eyebrow.x + eyebrow.width).toBeLessThanOrEqual(actions.x + 1);
+        // The name has the full panel width, not the width beside the actions.
+        expect(name.width).toBeGreaterThan(eyebrow.width + actions.width - 1);
+        expect(name.x).toBeLessThanOrEqual(Math.min(eyebrow.x, actions.x) + 1);
+
+        const content = panel.locator('.content');
+        if ((await content.evaluate((el) => el.scrollHeight - el.clientHeight)) > 0) {
+          await content.evaluate((el) => (el.scrollTop = 400));
+          expect(roundBox(await boxOf(panel, '.panel-head'))).toEqual(roundBox(head));
+          await expect(panel.locator('.panel-heading')).toBeInViewport();
+        }
+      });
+
+      test(`${label}: a long name wraps under the actions without touching them`, async ({
+        page,
+      }) => {
+        const panel = await openPanel(page, path);
+        const heading = panel.locator('.panel-heading');
+        const before = await heading.boundingBox();
+        await heading.evaluate((el) => {
+          const target = el.querySelector('.name, h1, h2') as HTMLElement;
+          target.textContent =
+            'An exceedingly long entity name that has to wrap onto several lines '.repeat(3);
+        });
+        const after = (await heading.boundingBox())!;
+        expect(after.height).toBeGreaterThan(before!.height * 1.5);
+        const chips = await panel.locator('.panel-head .panel-actions-line .ui-chip').all();
+        for (const chip of chips) {
+          const c = (await chip.boundingBox())!;
+          expect(after.y).toBeGreaterThanOrEqual(bottom(c) - 1);
+        }
+        // Every line of the name uses the full width: the text's widest line is wider than the
+        // space the eyebrow leaves beside the actions.
+        const eyebrow = await boxOf(panel, '.panel-eyebrow');
+        const lineWidth = await heading.evaluate((el) => {
+          const range = document.createRange();
+          range.selectNodeContents(el);
+          return Math.max(...[...range.getClientRects()].map((r) => r.width));
+        });
+        expect(lineWidth).toBeGreaterThan(eyebrow.width);
+        const panelBox = (await panel.boundingBox())!;
+        expect(after.x + after.width).toBeLessThanOrEqual(panelBox.x + panelBox.width + 1);
+      });
+    }
   });
 
   test.describe('swipe down (touch)', () => {
@@ -186,7 +261,7 @@ test.describe('panel shell (B1)', () => {
       await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
     }
 
-    test('a scrolled list is not closed by a drag; the bar and the top of the list are', async ({
+    test('a scrolled list is not closed by a drag; the header and the top of the list are', async ({
       page,
       isMobile,
     }) => {
@@ -201,7 +276,7 @@ test.describe('panel shell (B1)', () => {
       await expect(panel).toBeVisible();
 
       await content.evaluate((el) => (el.scrollTop = 0));
-      const bb = (await panel.locator('.panel-bar').boundingBox())!;
+      const bb = (await panel.locator('.panel-head').boundingBox())!;
       await swipe(page, x, bb.y + bb.height / 2, 140);
       await expect(panel).toBeHidden({ timeout: 4_000 });
 

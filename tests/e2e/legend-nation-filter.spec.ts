@@ -71,16 +71,19 @@ test.describe('nation legend filter', () => {
     // Default: every nation button is pressed (shown).
     await expect(usa).toHaveAttribute('aria-pressed', 'true', { timeout: 15_000 });
     if (!isMobile) await zoomUntilLegend(page);
+    // A nation chip shows its state by the on look (UXD-014): soft fill when on, glass at rest.
+    const bg = () => usa.evaluate((el) => getComputedStyle(el).backgroundColor);
+    const onBg = await bg();
 
     // Toggle off → un-pressed + dimmed.
     await toggleUsa();
     await expect(usa).toHaveAttribute('aria-pressed', 'false');
-    await expect(usa).toHaveClass(/legend-item--off/);
+    expect(await bg(), 'off chip drops the on fill').not.toBe(onBg);
 
     // Toggle back on → restored.
     await toggleUsa();
     await expect(usa).toHaveAttribute('aria-pressed', 'true');
-    await expect(usa).not.toHaveClass(/legend-item--off/);
+    expect(await bg(), 'on fill restored').toBe(onBg);
   });
 
   test('/mars — filter state persists across the 2D ↔ 3D view switch', async ({

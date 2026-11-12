@@ -34,7 +34,8 @@ import {
   galacticPlanePin,
   galacticToScene,
 } from '$lib/universe/milky-way-visual';
-import { describeDistanceAu, niceScaleBar, AU_PER_PC } from '$lib/universe/scale-readout';
+import { describeDistanceAu, AU_PER_PC } from '$lib/universe/scale-readout';
+import { fixedScaleBar, formatBarValue, scaleBarWidth } from '$lib/universe/scale-bar';
 import { placeLabels, type PlaceSlot } from '$lib/universe/scene-pins';
 import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
@@ -343,7 +344,6 @@ export interface ExploreSceneHostDeps extends Pick<
   smallBodyById: Map<string, ExploreSmallBody>;
   smallBodyPosition: (b: ExploreSmallBody, simT: number) => { x: number; y: number; z: number };
   DAYS_PER_YEAR: number;
-  fmtScale: (value: number) => string;
   /** A distance in the locale's unit form (format.ts distanceWithUnit). */
   distanceWithUnit: (value: string, unit: string) => string;
   iconic: {
@@ -385,7 +385,6 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     smallBodyById,
     smallBodyPosition,
     DAYS_PER_YEAR,
-    fmtScale,
     distanceWithUnit,
     iconic,
     sizePathsLegend,
@@ -1847,11 +1846,14 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     const vh = bridge.container?.clientHeight ?? 1;
     const worldPerPx = (2 * Math.tan((camera.fov * Math.PI) / 180 / 2) * camR) / vh;
     const unitToAu = inNeighborhood() ? AU_PER_PC : 1;
-    const bar = niceScaleBar(worldPerPx * unitToAu);
+    const bar = fixedScaleBar(
+      worldPerPx * unitToAu,
+      scaleBarWidth(bridge.container?.clientWidth ?? 0),
+    );
     if (bar) {
-      bridge.scaleBarPx = bar.px;
-      const desc = describeDistanceAu(bar.au).primary;
-      bridge.scaleBarLabel = distanceWithUnit(fmtScale(desc.value), desc.unit);
+      bridge.scaleBarPx = bar.widthPx;
+      const desc = describeDistanceAu(bar.units).primary;
+      bridge.scaleBarLabel = distanceWithUnit(formatBarValue(desc.value, getLocale()), desc.unit);
     }
   };
 

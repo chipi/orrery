@@ -37,6 +37,8 @@ export const distanceWithUnit = (value: string, unit: string): string => {
       return m.unit_pc_value({ value });
     case 'km':
       return m.mp_flight_unit_km({ value });
+    case 'm':
+      return m.unit_m_value({ value });
     default:
       return `${value} ${unit}`;
   }

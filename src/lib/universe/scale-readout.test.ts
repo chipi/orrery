@@ -1,11 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import {
-  describeDistanceAu,
-  lightTravel,
-  niceScaleBar,
-  AU_PER_LY,
-  AU_PER_PC,
-} from './scale-readout';
+import { describeDistanceAu, lightTravel, AU_PER_LY, AU_PER_PC } from './scale-readout';
 
 describe('lightTravel', () => {
   it('reads 1 AU as about 8.3 light-minutes', () => {
@@ -53,28 +47,5 @@ describe('describeDistanceAu', () => {
     const r = describeDistanceAu(AU_PER_PC * 2); // 2 pc
     expect(r.companion?.value).toBeCloseTo(2, 1);
     expect(r.primary.value).toBeCloseTo(2 * 3.2615638, 1);
-  });
-});
-
-describe('niceScaleBar', () => {
-  it('picks a 1/2/5 × 10ⁿ round length near the target width', () => {
-    const bar = niceScaleBar(1, 130)!; // 1 AU per pixel, target 130 px
-    expect(
-      [1, 2, 5, 10, 20, 50, 100].includes((bar.au / 10 ** Math.floor(Math.log10(bar.au))) * 1),
-    ).toBeTruthy();
-    expect(bar.au).toBeLessThanOrEqual(130);
-    expect(bar.px).toBeCloseTo(bar.au / 1, 6);
-  });
-
-  it('keeps the bar near the requested pixel width', () => {
-    const bar = niceScaleBar(0.037, 130)!;
-    expect(bar.px).toBeGreaterThan(40);
-    expect(bar.px).toBeLessThanOrEqual(130);
-  });
-
-  it('rejects non-positive or non-finite input', () => {
-    expect(niceScaleBar(0)).toBeNull();
-    expect(niceScaleBar(-1)).toBeNull();
-    expect(niceScaleBar(Number.NaN)).toBeNull();
   });
 });

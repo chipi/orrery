@@ -27,6 +27,14 @@
   import { statusTone } from '$lib/surface-scene/status-tone';
   import { getLocale } from '$lib/paraglide/runtime';
   import { formatNumber } from '$lib/format';
+  import { distanceWithUnit } from '$lib/explore/format';
+  import {
+    fixedScaleBar,
+    formatBarValue,
+    scaleBarWidth,
+    worldsBarQuantity,
+  } from '$lib/universe/scale-bar';
+  import ScaleBar from '$lib/components/ScaleBar.svelte';
   import { imageStats, tintFromMean, tintedCopy } from '$lib/surface-scene/globe-tint';
   import type { LocaleCode } from '$lib/locale';
   import {
@@ -890,23 +898,14 @@
     return kmPerPx <= floor * 1.05;
   });
 
-  // Scale-bar length & label — pick a "round" km value that fits in
-  // ~120 px of screen real estate.
+  // Scale bar (UXD-021): constant width (shorter on a phone, where the scale shares one
+  // line with the lat/lon readout); the km or m value beside it follows the zoom.
   let scaleBar = $derived.by(() => {
-    // Shorter on a phone: the scale shares one line with the lat/lon readout.
-    const targetPx = viewW > 0 && viewW < 600 ? 64 : 120;
-    const targetKm = targetPx * kmPerPx;
-    const niceValues = [
-      0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500,
-    ];
-    let chosen = niceValues[0];
-    for (const v of niceValues) {
-      if (v <= targetKm) chosen = v;
-      else break;
-    }
-    const widthPx = chosen / kmPerPx;
-    const label = chosen >= 1 ? `${chosen} km` : `${chosen * 1000} m`;
-    return { widthPx, label };
+    const widthPx = scaleBarWidth(viewW);
+    const bar = fixedScaleBar(kmPerPx, widthPx);
+    if (!bar) return { widthPx, label: '' };
+    const q = worldsBarQuantity(bar.units);
+    return { widthPx, label: distanceWithUnit(formatBarValue(q.value, getLocale()), q.unit) };
   });
 
   // One pixel-limit chip by the scale bar: the deepest-zoom stop says it more strongly
@@ -1004,8 +1003,7 @@
     <div class="hud-scale-row">
       <div class="hud-scale" aria-hidden="true">
         <span class="scale-word">{m.surface_flat_scale_label()}</span>
-        <span class="bar" style:width="{scaleBar.widthPx}px"></span>
-        <span class="mono">{scaleBar.label}</span>
+        <ScaleBar widthPx={scaleBar.widthPx} label={scaleBar.label} />
       </div>
       {#if limitNotice}
         <div class="hud-limit-chip mono" aria-hidden="true" data-testid="flat-limit-chip">
@@ -1110,11 +1108,6 @@
     align-items: center;
     gap: 10px;
     backdrop-filter: blur(4px);
-  }
-  .hud-scale .bar {
-    display: inline-block;
-    height: 3px;
-    background: #fff;
   }
   .hud-latlon {
     position: absolute;

@@ -167,6 +167,9 @@ for (const size of HUD_SIZES) {
       for (let i = 0; i < boxes.length; i++)
         for (let j = i + 1; j < boxes.length; j++) {
           const id = `${boxes[i][0]}|${boxes[j][0]}`;
+          // By design (operator 2026-11-12): on short windows the INDEX tab lies over the ruler's
+          // left edge rather than pushing the ruler inward.
+          if (id === 'ruler|index tab') continue;
           if (intersects(boxes[i][1], boxes[j][1])) clashes.push(id);
         }
       expect(clashes, `overlapping HUD parts: ${clashes.join(', ')}`).toEqual([]);

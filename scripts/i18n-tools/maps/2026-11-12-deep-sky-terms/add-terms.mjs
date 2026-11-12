@@ -2717,7 +2717,7 @@ const C = {
     'Serpens',
     'Serpente',
     'Slang',
-    'Serpente',
+    'Serpens',
   ],
   Pegasus: [
     'Пегас',

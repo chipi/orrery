@@ -499,7 +499,7 @@
                 {#if knownIds?.has(v.launcherId) && onNavigate}
                   <button
                     type="button"
-                    class="xref-link"
+                    class="xref-link ui-hit"
                     onclick={() => onNavigate?.(v.launcherId)}
                   >
                     {v.launcherName}
@@ -516,7 +516,7 @@
             {#each engineScience as s (s.slug)}
               <li>
                 <a
-                  class="xref-link"
+                  class="xref-link ui-hit"
                   href={localHref(`/science/${s.slug}`)}
                   data-sveltekit-preload-data="hover">{s.label} →</a
                 >
@@ -531,7 +531,7 @@
             {#each launcherEngines as e (e.id)}
               <li>
                 {#if onNavigate}
-                  <button type="button" class="xref-link" onclick={() => onNavigate?.(e.id)}>
+                  <button type="button" class="xref-link ui-hit" onclick={() => onNavigate?.(e.id)}>
                     {e.name}
                   </button>
                 {:else}

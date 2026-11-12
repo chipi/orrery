@@ -26,7 +26,7 @@
 
 <button
   type="button"
-  class="provenance-chip"
+  class="provenance-chip ui-hit"
   onclick={() => (open = !open)}
   aria-expanded={open}
   aria-label={m.launches_meta_view_provenance()}

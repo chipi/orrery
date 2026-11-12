@@ -78,7 +78,7 @@
 <span class="wrap">
   <button
     type="button"
-    class="trigger"
+    class="trigger ui-hit"
     class:open
     bind:this={trigger}
     aria-expanded={open}

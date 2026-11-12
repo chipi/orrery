@@ -878,7 +878,8 @@
     "Curtin University (2026-11-12)": "Each language Wikipedia title of \"Curtin University\" (en.wikipedia langlinks API, fetched 2026-11-12; zh 科廷大學 converted to simplified). de and nl write Curtin University; ru, hi, it and sr-Cyrl have no article in the langlinks and keep the English name. es.wikipedia still titles the page Universidad John Curtin, used as is.",
     "deep-sky terms (2026-11-12)": "Binding forms of the 120 deep-sky texts (deep-text batches 1-3): the site's existing gallery type labels (i18n-src/<loc>/deep-sky.json: planetary nebula, emission nebula, dark nebula, star-forming region, ring galaxy, light echo, Wolf–Rayet star, barred spiral galaxy, supernova remnant, globular cluster, galaxy cluster) where they are sound, with the site's defective variants fixed (de Kugelcluster -> Kugelsternhaufen, nl Emissiennes/Emissienebulaira -> emissienevel, nl Stervormerdegebied -> stervormingsgebied, fr/it Reste/Residuo -> rémanent/resto); the rest the language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-12; zh converted to zh-CN, sr to Cyrillic). Not in Wikipedia and set by the translator from what that language's universities and observatories use: ru голубой страгглер (ru.wikipedia plural Голубые страгглеры), hi forms for blue straggler, nova, asterism, protostar, dark matter, spectral type, blueshift, intermediate-mass black hole, maser, microlensing (hi.wikipedia has no article), sr блу страглер, ar blueshift, sr/ja/ko/hi galaxy-type compounds that Wikipedia lacks (sr Сејфертова галаксија from the Serbian spelling of Seyfert). Confidence is `medium` for every Hindi form and for the forms listed above. Stems accept every variant the site already writes in an unreviewed tree plus the binding form's own inflections.",
     "deep-sky names (2026-11-12)": "Object nicknames: each language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-12; zh converted to zh-CN, sr to Cyrillic) where one exists and names the object (ru Скопление Дикая Утка, zh 野鸭星团, ko 야생오리 성단, de Wildentenhaufen, fr amas du Canard sauvage, es Cúmulo del Pato Salvaje, ar عنقود البط البري, ru Туманность Гантель, de Hantelnebel, fr nébuleuse de l'Haltère, it Nebulosa Manubrio, nl Halternevel). Where the Wikipedia title is only the catalogue number (ja M11 (天体), sr Месје 11, most hi, nl and pt titles) the form follows the same language's existing names of the same kind (Pinwheel Galaxy: ru Вертушка, zh 风车, ko 바람개비, it Girandola, nl Windmolen, pt Cata-vento; the Eagle, Orion and Lagoon Nebula patterns). Nicknames with no article in any language (Checkmark Nebula, Coma Pinwheel, Black Swan Cluster, the M-numbered groups, Surfboard Galaxy in most languages) are literal translations of the English name by the translator and the lowest confidence. Constellations: the language Wikipedia titles (en.wikipedia langlinks, fetched 2026-11-12) without the (constellation) qualifier; ko follows the Korea Astronomy and Space Science Institute forms (헤르쿨레스자리, not Wikipedia's 허큘리스자리); ar Sagittarius is القوس as in the site's Sagittarius A* label; where a pt Wikipedia title is the Latin name (Sagittarius, Aquarius, Perseus, Taurus, Lyra, Virgo, Leo, Capricornus, Lepus, Centaurus) the pt-BR column writes the Portuguese name, as the site already does for Escorpião and Escudo. Hindi constellation names follow the existing '<name> तारामंडल' pattern and hi.wikipedia (पहलवान, ययाति, वृष, कुम्भ, ब्रह्मा).",
-    "deep-sky people (2026-11-12)": "People named in the 120 deep-sky texts. ru, ja, zh-CN, ko, hi, ar, sr-Cyrl: the language Wikipedia title of the person (en.wikipedia langlinks API, fetched 2026-11-12; zh converted to zh-CN, sr to Cyrillic; ru 'Surname, Name' reordered to Name Surname) where one exists (ru Шарль Мессье, Эдмунд Галлей, Каролина Гершель; ja シャルル・メシエ, ウィリアム・ハーシェル; zh 夏尔·梅西耶, 威廉·赫歇尔, 弗里茨·兹威基; ko 샤를 메시에, 윌리엄 허셜, 프리츠 츠비키; ar شارل مسييه, إدموند هالي, هارلو شابلي; sr Шарл Месје), else the translator's own transliteration of the name in that language's usual rules (ru Practical Transcription, ja katakana, zh Xinhua name table, ko national orthography, hi Devanagari transliteration, ar, sr), which has no source and is the lowest confidence: Kenneth Glyn Jones, Walter Scott Houston, Michael Merrifield, Holger Baumgardt, Abraham Ihle, Bengt Westerlund, Karl Henize (all but ru zh), Barnaba Oriani, Edward Pigott (hi ar sr ko), James Dunlop, Owen Gingerich, Antoine Darquier de Pellepoix, Jean-Jacques d'Ortous de Mairan and the hi/ko/ar/sr columns generally. Latin-script locales: the English name unless that locale writes it differently (en.wikipedia langlinks: de Wilhelm Herschel, es Edmund Halley / Carolina Herschel / Giovanni Battista Odierna, fr Jean-Dominique Cassini, de/fr/it/pt Giovanni Domenico Maraldi, de/fr/it Johann Abraham Ihle, de/pt Johann Gottfried Köhler, Ptolemy: de Ptolemäus, fr Ptolémée, es Ptolomeo, it Tolomeo, nl Ptolemaeus, pt Ptolomeu; al-Sufi: de as-Sufi, fr al-Soufi, nl al-Soefi, pt Azofi; Earl of Rosse: the titles of nobility each language uses). Bare surnames carry _bare."
+    "deep-sky people (2026-11-12)": "People named in the 120 deep-sky texts. ru, ja, zh-CN, ko, hi, ar, sr-Cyrl: the language Wikipedia title of the person (en.wikipedia langlinks API, fetched 2026-11-12; zh converted to zh-CN, sr to Cyrillic; ru 'Surname, Name' reordered to Name Surname) where one exists (ru Шарль Мессье, Эдмунд Галлей, Каролина Гершель; ja シャルル・メシエ, ウィリアム・ハーシェル; zh 夏尔·梅西耶, 威廉·赫歇尔, 弗里茨·兹威基; ko 샤를 메시에, 윌리엄 허셜, 프리츠 츠비키; ar شارل مسييه, إدموند هالي, هارلو شابلي; sr Шарл Месје), else the translator's own transliteration of the name in that language's usual rules (ru Practical Transcription, ja katakana, zh Xinhua name table, ko national orthography, hi Devanagari transliteration, ar, sr), which has no source and is the lowest confidence: Kenneth Glyn Jones, Walter Scott Houston, Michael Merrifield, Holger Baumgardt, Abraham Ihle, Bengt Westerlund, Karl Henize (all but ru zh), Barnaba Oriani, Edward Pigott (hi ar sr ko), James Dunlop, Owen Gingerich, Antoine Darquier de Pellepoix, Jean-Jacques d'Ortous de Mairan and the hi/ko/ar/sr columns generally. Latin-script locales: the English name unless that locale writes it differently (en.wikipedia langlinks: de Wilhelm Herschel, es Edmund Halley / Carolina Herschel / Giovanni Battista Odierna, fr Jean-Dominique Cassini, de/fr/it/pt Giovanni Domenico Maraldi, de/fr/it Johann Abraham Ihle, de/pt Johann Gottfried Köhler, Ptolemy: de Ptolemäus, fr Ptolémée, es Ptolomeo, it Tolomeo, nl Ptolemaeus, pt Ptolomeu; al-Sufi: de as-Sufi, fr al-Soufi, nl al-Soefi, pt Azofi; Earl of Rosse: the titles of nobility each language uses). Bare surnames carry _bare.",
+    "deep-text batch 4 glossary (2026-11-12)": "Names and terms added for docs/wip/deep-text/batch-04.md. Where the site already translated a word (captions in deep-sky.json, earlier deep-sky overlays: luminous red nova, Type Ia, grand-design spiral, the nickname titles) the existing site form was taken. Not checked on native pages (no search run; first-agent forms): the person names in ru ja zh-CN ko hi ar sr-Cyrl (Huggins, Harding, Muñoz, Pontoppidan, Fabian, Atkinson, Szyszka, Häberle, Krause), the Hindi constellation forms for Draco, Fornax, Sagitta, Corvus, the es/pt constellation gaps, Gabriela Mistral Nebula, Christmas Tree Cluster, Fornax Cluster, and the terms white dwarf cooling track, cometary knot, intracluster light, protostellar outflow, super star cluster, tidal tail, polarimetry, ionisation front in all locales (calques of the English sense; confidence marked). nl Bellennevel replaces the site caption's 'Bellnevel' (not Dutch)."
   },
   "body": {
     "Earth": {
@@ -8024,6 +8025,116 @@
       "ar": "هرشل",
       "sr-Cyrl": "Хершел",
       "_bare": true
+    },
+    "John Herschel": {
+      "ru": "Джон Гершель",
+      "ja": "ジョン・ハーシェル",
+      "zh-CN": "约翰·赫歇尔",
+      "ko": "존 허셜",
+      "hi": "जॉन हर्शल",
+      "ar": "جون هرشل",
+      "sr-Cyrl": "Џон Хершел"
+    },
+    "William Huggins": {
+      "ru": "Уильям Хаггинс",
+      "ja": "ウィリアム・ハギンズ",
+      "zh-CN": "威廉·哈金斯",
+      "ko": "윌리엄 허긴스",
+      "hi": "विलियम हगिन्स",
+      "ar": "ويليام هوغينز",
+      "sr-Cyrl": "Вилијам Хагинс"
+    },
+    "Karl Ludwig Harding": {
+      "ru": "Карл Людвиг Хардинг",
+      "ja": "カール・ルートヴィヒ・ハーディング",
+      "zh-CN": "卡尔·路德维希·哈丁",
+      "ko": "카를 루트비히 하르딩",
+      "hi": "कार्ल लुडविग हार्डिंग",
+      "ar": "كارل لودفيغ هاردينغ",
+      "sr-Cyrl": "Карл Лудвиг Хардинг"
+    },
+    "Jerónimo Muñoz": {
+      "ru": "Херонимо Муньос",
+      "ja": "ヘロニモ・ムニョス",
+      "zh-CN": "赫罗尼莫·穆尼奥斯",
+      "ko": "헤로니모 무뇨스",
+      "hi": "जेरोनिमो मुनोज़",
+      "ar": "خيرونيمو مونيوث",
+      "sr-Cyrl": "Херонимо Муњоз"
+    },
+    "Klaus Pontoppidan": {
+      "ru": "Клаус Понтоппидан",
+      "ja": "クラウス・ポントッピダン",
+      "zh-CN": "克劳斯·蓬托皮丹",
+      "ko": "클라우스 폰토피단",
+      "hi": "क्लॉस पोंटोपिडन",
+      "ar": "كلاوس بونتوبيدان",
+      "sr-Cyrl": "Клаус Понтопидан"
+    },
+    "Andrew Fabian": {
+      "ru": "Эндрю Фабиан",
+      "ja": "アンドルー・ファビアン",
+      "zh-CN": "安德鲁·法比安",
+      "ko": "앤드루 파비안",
+      "hi": "एंड्रयू फ़ैबियन",
+      "ar": "أندرو فابيان",
+      "sr-Cyrl": "Ендру Фабијан"
+    },
+    "Atkinson": {
+      "ru": "Аткинсон",
+      "ja": "アトキンソン",
+      "zh-CN": "阿特金森",
+      "ko": "앳킨슨",
+      "hi": "एटकिंसन",
+      "ar": "أتكينسون",
+      "sr-Cyrl": "Аткинсон",
+      "_bare": true
+    },
+    "Szyszka": {
+      "ru": "Шишка",
+      "ja": "シシュカ",
+      "zh-CN": "希什卡",
+      "ko": "쉬시카",
+      "hi": "शिशका",
+      "ar": "شيشكا",
+      "sr-Cyrl": "Шишка",
+      "_bare": true
+    },
+    "Häberle": {
+      "ru": "Хеберле",
+      "ja": "ヘーベルレ",
+      "zh-CN": "黑伯勒",
+      "ko": "헤베를레",
+      "hi": "हेबरले",
+      "ar": "هيبرله",
+      "sr-Cyrl": "Хеберле",
+      "_bare": true
+    },
+    "Krause": {
+      "ru": "Краузе",
+      "ja": "クラウゼ",
+      "zh-CN": "克劳泽",
+      "ko": "크라우제",
+      "hi": "क्राउज़े",
+      "ar": "كراوزه",
+      "sr-Cyrl": "Краузе",
+      "_bare": true
+    },
+    "Ptolemy": {
+      "ru": "Птолемей",
+      "ja": "プトレマイオス",
+      "zh-CN": "托勒密",
+      "ko": "프톨레마이오스",
+      "hi": "टॉलमी",
+      "ar": "بطليموس",
+      "sr-Cyrl": "Птолемеј",
+      "de": "Ptolemäus",
+      "fr": "Ptolémée",
+      "es": "Ptolomeo",
+      "it": "Tolomeo",
+      "nl": "Ptolemaeus",
+      "pt-BR": "Ptolomeu",
+      "_bare": true
     }
   },
   "star": {
@@ -8081,7 +8192,9 @@
       "fr": "Licorne",
       "it": "Unicorno",
       "nl": "Eenhoorn",
-      "_qid": "Q10428"
+      "_qid": "Q10428",
+      "es": "Unicornio",
+      "pt-BR": "Unicórnio"
     },
     "Eridanus": {
       "ru": "Эридан",
@@ -8135,7 +8248,10 @@
       "de": "Kassiopeia",
       "fr": "Cassiopée",
       "it": "Cassiopea",
-      "_qid": "Q10464"
+      "_qid": "Q10464",
+      "es": "Casiopea",
+      "nl": "Cassiopeia",
+      "pt-BR": "Cassiopeia"
     },
     "Ursa Minor": {
       "ru": "Малая Медведица",
@@ -8176,7 +8292,9 @@
       "es": "Sagita",
       "it": "Freccia",
       "nl": "Pijl",
-      "_qid": "Q10513"
+      "_qid": "Q10513",
+      "hi": "बाण तारामंडल",
+      "pt-BR": "Flecha"
     },
     "Pavo": {
       "ru": "Павлин",
@@ -8203,7 +8321,10 @@
       "fr": "Corbeau",
       "it": "Corvo",
       "nl": "Raaf",
-      "_qid": "Q10517"
+      "_qid": "Q10517",
+      "hi": "कौआ तारामंडल",
+      "es": "Cuervo",
+      "pt-BR": "Corvo"
     },
     "Vela": {
       "ru": "Паруса",
@@ -8217,7 +8338,9 @@
       "fr": "Voiles",
       "it": "Vele",
       "nl": "Zeilen",
-      "_qid": "Q10521"
+      "_qid": "Q10521",
+      "es": "Vela",
+      "pt-BR": "Vela"
     },
     "Sextans": {
       "ru": "Секстант",
@@ -8501,7 +8624,11 @@
       "fr": "Amas de Persée",
       "es": "Cúmulo de Perseo",
       "it": "Ammasso di Perseo",
-      "_qid": "Q1200684"
+      "_qid": "Q1200684",
+      "hi": "पर्सियस गुच्छ",
+      "sr-Cyrl": "Персејево јато",
+      "nl": "Perseuscluster",
+      "pt-BR": "Aglomerado de Perseu"
     },
     "Cartwheel Galaxy": {
       "ru": "Колесо телеги",
@@ -9565,7 +9692,16 @@
       "ja": "ケンタウルス座オメガ星",
       "zh-CN": "半人马座ω",
       "ko": "센타우루스자리 오메가",
-      "_qid": "Q14275"
+      "_qid": "Q14275",
+      "hi": "ओमेगा सेंटाउरी",
+      "ar": "أوميغا قنطورس",
+      "sr-Cyrl": "Омега Центаури",
+      "de": "Omega Centauri",
+      "fr": "Omega Centauri",
+      "es": "Omega Centauri",
+      "it": "Omega Centauri",
+      "nl": "Omega Centauri",
+      "pt-BR": "Ômega Centauri"
     },
     "Pinwheel Galaxy": {
       "ru": "Галактика Вертушка",
@@ -9618,7 +9754,8 @@
       "it": "nebulosa Occhio di Gatto",
       "nl": "Kattenoognevel",
       "pt-BR": "Nebulosa Olho de gato",
-      "_qid": "Q15829"
+      "_qid": "Q15829",
+      "sr-Cyrl": "Маглина Мачје око"
     },
     "WR 124": {
       "ar": "نجم WR 124",
@@ -9633,7 +9770,12 @@
       "fr": "Nébuleuse du Cône",
       "es": "Nebulosa del Cono",
       "pt-BR": "Nebulosa do Cone",
-      "_qid": "Q1709076"
+      "_qid": "Q1709076",
+      "ko": "콘 성운",
+      "hi": "कोन नेबुला",
+      "sr-Cyrl": "Маглина Конус",
+      "it": "Nebulosa Cono",
+      "nl": "Conenevel"
     },
     "Virgo Supercluster": {
       "ru": "Местное сверхскопление галактик",
@@ -9671,7 +9813,9 @@
       "it": "Nebulosa Eschimese",
       "nl": "Eskimo-nevel",
       "pt-BR": "Nebulosa do Esquimó",
-      "_qid": "Q215543"
+      "_qid": "Q215543",
+      "hi": "एस्किमो नेबुला",
+      "sr-Cyrl": "Маглина Eskimo"
     },
     "Reticulum II": {
       "ru": "Сетка 2",
@@ -10276,7 +10420,13 @@
       "de": "Südlicher Ringnebel",
       "fr": "Caldwell 74",
       "es": "Nebulosa Anillo del Sur",
-      "_qid": "Q725489"
+      "_qid": "Q725489",
+      "ru": "Туманность Южное кольцо",
+      "hi": "दक्षिणी वलय नीहारिका",
+      "sr-Cyrl": "Јужна прстенаста маглина",
+      "it": "Nebulosa dell'Anello Meridionale",
+      "nl": "Zuidelijke Ringnevel",
+      "pt-BR": "Nebulosa do Anel Austral"
     },
     "Antennae Galaxies": {
       "ru": "галактики Antennae",
@@ -10289,7 +10439,10 @@
       "es": "Galaxias Antennae",
       "it": "Galassie Antenne",
       "nl": "Antennestelsel",
-      "_qid": "Q725595"
+      "_qid": "Q725595",
+      "hi": "एंटीना आकाशगंगाएँ",
+      "sr-Cyrl": "Галаксије Антене",
+      "pt-BR": "Galáxias Antena"
     },
     "Hidden Galaxy": {
       "ar": "IC ٣٤٢",
@@ -10454,7 +10607,10 @@
       "de": "Schwertfisch",
       "fr": "Dorade",
       "nl": "Goudvis",
-      "_qid": "Q8837"
+      "_qid": "Q8837",
+      "es": "Dorado",
+      "it": "Dorado",
+      "pt-BR": "Dorado"
     },
     "Cetus": {
       "ru": "Кит",
@@ -10518,7 +10674,8 @@
       "it": "Ofiuco",
       "nl": "Slangendrager",
       "pt-BR": "Serpentário",
-      "_qid": "Q8906"
+      "_qid": "Q8906",
+      "fr": "Ophiuchus"
     },
     "Ursa Major": {
       "ru": "Большая Медведица",
@@ -10576,7 +10733,9 @@
       "it": "Nebulosa Elica",
       "nl": "Helixnevel",
       "pt-BR": "Nebulosa de Hélix",
-      "_qid": "Q97017154"
+      "_qid": "Q97017154",
+      "fr": "Nébuleuse de l'Hélice",
+      "sr-Cyrl": "Маглина Helix"
     },
     "Orion": {
       "ru": "Орион",
@@ -10589,7 +10748,10 @@
       "es": "Orión",
       "it": "Orione",
       "pt-BR": "Órion",
-      "_qid": "Q8860"
+      "_qid": "Q8860",
+      "de": "Orion",
+      "fr": "Orion",
+      "nl": "Orion"
     },
     "Gemini": {
       "ru": "Близнецы",
@@ -10604,7 +10766,8 @@
       "es": "Géminis",
       "it": "Gemelli",
       "nl": "Tweelingen",
-      "_qid": "Q8923"
+      "_qid": "Q8923",
+      "pt-BR": "Gêmeos"
     },
     "Cygnus": {
       "ru": "Лебедь",
@@ -11225,7 +11388,9 @@
       "fr": "Persée",
       "es": "Perseo",
       "it": "Perseo",
-      "pt-BR": "Perseu"
+      "pt-BR": "Perseu",
+      "de": "Perseus",
+      "nl": "Perseus"
     },
     "Taurus": {
       "ru": "Телец",
@@ -11283,7 +11448,9 @@
       "de": "Schlange",
       "fr": "Serpent",
       "it": "Serpente",
-      "nl": "Slang"
+      "nl": "Slang",
+      "es": "Serpiente",
+      "pt-BR": "Serpente"
     },
     "Pegasus": {
       "ru": "Пегас",
@@ -11438,7 +11605,8 @@
       "fr": "Carène",
       "es": "Quilla",
       "it": "Carena",
-      "nl": "Kiel"
+      "nl": "Kiel",
+      "pt-BR": "Carena"
     },
     "Sculptor": {
       "ru": "Скульптор",
@@ -11468,6 +11636,180 @@
       "it": "Idra",
       "nl": "Waterslang",
       "pt-BR": "Hidra"
+    },
+    "Cosmic Reef": {
+      "ru": "Космический риф",
+      "ja": "宇宙礁",
+      "zh-CN": "宇宙礁",
+      "ko": "우주 산호초",
+      "hi": "ब्रह्मांडीय प्रवाल भित्ति",
+      "ar": "الشعاب المرجانية الكونية",
+      "sr-Cyrl": "Космички гребен",
+      "de": "Kosmisches Riff",
+      "fr": "Récif cosmique",
+      "es": "Arrecife Cósmico",
+      "it": "Barriera Cosmica",
+      "nl": "Kosmisch Rif",
+      "pt-BR": "Recife Cósmico"
+    },
+    "Monkey Head Nebula": {
+      "ru": "Туманность Голова обезьяны",
+      "ja": "モンキーヘッド星雲",
+      "zh-CN": "猴头星云",
+      "ko": "원숭이 머리 성운",
+      "hi": "मंकी हेड नेबुला",
+      "ar": "سديم رأس القرد",
+      "sr-Cyrl": "Маглина Мајмунска глава",
+      "de": "Affenkopf-Nebel",
+      "fr": "Nébuleuse de la Tête de Singe",
+      "es": "Nebulosa Cabeza de Mono",
+      "it": "Nebulosa Testa di Scimmia",
+      "nl": "Nevel van de Aapenkop",
+      "pt-BR": "Nebulosa Cabeça de Macaco"
+    },
+    "Christmas Tree Cluster": {
+      "ru": "Скопление Рождественская ёлка",
+      "ja": "クリスマスツリー星団",
+      "zh-CN": "圣诞树星团",
+      "ko": "크리스마스트리 성단",
+      "hi": "क्रिसमस ट्री तारागुच्छ",
+      "ar": "عنقود شجرة الميلاد",
+      "sr-Cyrl": "Јато Божићно дрво",
+      "de": "Weihnachtsbaum-Haufen",
+      "fr": "Amas de l'Arbre de Noël",
+      "es": "Cúmulo del Árbol de Navidad",
+      "it": "Ammasso Albero di Natale",
+      "nl": "Kerstboomcluster",
+      "pt-BR": "Aglomerado Árvore de Natal"
+    },
+    "Gabriela Mistral Nebula": {
+      "ru": "Туманность Габриэла Мистраль",
+      "ja": "ガブリエラ・ミストラル星雲",
+      "zh-CN": "加夫列拉·米斯特拉尔星云",
+      "ko": "가브리엘라 미스트랄 성운",
+      "hi": "गैब्रिएला मिस्ट्रल नीहारिका",
+      "ar": "سديم غابرييلا ميسترال",
+      "sr-Cyrl": "Маглина Габријела Мистрал",
+      "de": "Gabriela-Mistral-Nebel",
+      "fr": "Nébuleuse Gabriela Mistral",
+      "es": "Nebulosa Gabriela Mistral",
+      "it": "Nebulosa Gabriela Mistral",
+      "nl": "Gabriela Mistral-nevel",
+      "pt-BR": "Nebulosa Gabriela Mistral"
+    },
+    "Cosmic Cliffs": {
+      "ru": "Космические скалы",
+      "ja": "コズミック・クリフス",
+      "zh-CN": "宇宙悬崖",
+      "ko": "우주의 절벽",
+      "hi": "ब्रह्मांडीय चट्टानें",
+      "ar": "منحدرات كونية",
+      "sr-Cyrl": "Космичке литице",
+      "de": "Kosmische Klippen",
+      "fr": "Falaises cosmiques",
+      "es": "Acantilados Cósmicos",
+      "it": "Scogliere cosmiche",
+      "nl": "Kosmische Kliffen",
+      "pt-BR": "Penhascos Cósmicos"
+    },
+    "Bubble Nebula": {
+      "ru": "Туманность «Пузырь»",
+      "ja": "バブル星雲",
+      "zh-CN": "气泡星云",
+      "ko": "버블 성운",
+      "hi": "बुलबुला नीहारिका",
+      "ar": "سديم الفقاعة",
+      "sr-Cyrl": "Маглина Мехур",
+      "de": "Bubble-Nebel",
+      "fr": "Nébuleuse de la Bulle",
+      "es": "Nebulosa Burbuja",
+      "it": "Nebulosa Bolla",
+      "nl": "Bellennevel",
+      "pt-BR": "Nebulosa Bolha"
+    },
+    "Butterfly Nebula": {
+      "ru": "Туманность «Бабочка»",
+      "ja": "バタフライ星雲",
+      "zh-CN": "蝴蝶星云",
+      "ko": "나비 성운",
+      "hi": "तितली नीहारिका",
+      "ar": "سديم الفراشة",
+      "sr-Cyrl": "Маглина Лептир",
+      "de": "Schmetterlings-Nebel",
+      "fr": "Nébuleuse du Papillon",
+      "es": "Nebulosa Mariposa",
+      "it": "Nebulosa Farfalla",
+      "nl": "Vlindernevel",
+      "pt-BR": "Nebulosa Borboleta"
+    },
+    "Tycho's Supernova Remnant": {
+      "ru": "Остаток сверхновой Тихо Браге",
+      "ja": "ティコの超新星残骸",
+      "zh-CN": "第谷超新星遗迹",
+      "ko": "티코의 초신성 잔해",
+      "hi": "टैको का सुपरनोवा अवशेष",
+      "ar": "بقايا مستعر تايكو",
+      "sr-Cyrl": "Остатак Тихове супернове",
+      "de": "Tychos Supernova-Überrest",
+      "fr": "Rémanent de la supernova de Tycho",
+      "es": "Remanente de la supernova de Tycho",
+      "it": "Resto della supernova di Tycho",
+      "nl": "Supernovarest van Tycho",
+      "pt-BR": "Remanescente da supernova de Tycho"
+    },
+    "S Monocerotis": {
+      "ru": "S Единорога",
+      "ja": "いっかくじゅう座S星",
+      "zh-CN": "麒麟座S",
+      "ko": "외뿔소자리 S",
+      "hi": "S मोनोसेरोस",
+      "ar": "S وحيد القرن",
+      "sr-Cyrl": "S Једнорога"
+    },
+    "Fornax": {
+      "ru": "Печь",
+      "ja": "ろ座",
+      "zh-CN": "天炉座",
+      "ko": "화로자리",
+      "hi": "फ़ोर्नैक्स तारामंडल",
+      "ar": "الكير",
+      "sr-Cyrl": "Пећ",
+      "de": "Chemischer Ofen",
+      "fr": "Fourneau",
+      "es": "Horno",
+      "it": "Fornace",
+      "nl": "Oven",
+      "pt-BR": "Fornalha"
+    },
+    "Fornax Cluster": {
+      "ru": "Скопление Печи",
+      "ja": "ろ座銀河団",
+      "zh-CN": "天炉座星系团",
+      "ko": "화로자리 은하단",
+      "hi": "फ़ोर्नैक्स आकाशगंगा क्लस्टर",
+      "ar": "عنقود الكير",
+      "sr-Cyrl": "Јато Пећи",
+      "de": "Fornax-Galaxienhaufen",
+      "fr": "Amas du Fourneau",
+      "es": "Cúmulo de Fornax",
+      "it": "Ammasso della Fornace",
+      "nl": "Fornaxcluster",
+      "pt-BR": "Aglomerado da Fornalha"
+    },
+    "Draco": {
+      "ru": "Дракон",
+      "ja": "りゅう座",
+      "zh-CN": "天龙座",
+      "ko": "용자리",
+      "hi": "ड्रैको तारामंडल",
+      "ar": "التنين",
+      "sr-Cyrl": "Змај",
+      "de": "Drache",
+      "fr": "Dragon",
+      "es": "Dragón",
+      "it": "Dragone",
+      "nl": "Draak",
+      "pt-BR": "Dragão"
     }
   },
   "agency": {
@@ -18976,6 +19318,638 @@
       "it": "ammasso stellare",
       "nl": "sterrenhoop",
       "pt-BR": "aglomerado estelar"
+    },
+    "grand-design spiral": {
+      "_sense": "a spiral galaxy with two long, well-defined arms running all the way round (a pattern, not a size)",
+      "_en": "grand-design spirals?",
+      "_match": {
+        "ru": [
+          "спиральн\\p{L}* галактик\\p{L}* с (?:чёткими|четкими) рукавами",
+          "(?:чёткими|четкими|чёткий|четкий|чётк\\p{L}*|четк\\p{L}*) рукав\\p{L}*"
+        ],
+        "ja": ["グランドデザイン", "グランド・デザイン"],
+        "zh-CN": ["宏象"],
+        "ko": ["그랜드 ?디자인"],
+        "hi": ["स्पष्ट भुजाओं", "स्पष्ट[\\p{L}\\p{M}]* भुजा[\\p{L}\\p{M}]*"],
+        "ar": ["ذات أذرع واضحة", "أذرع واضحة"],
+        "sr-Cyrl": [
+          "јасно изражен\\p{L}* крак\\p{L}*",
+          "изразит\\p{L}* структур\\p{L}*",
+          "јасн\\p{L}* крак\\p{L}*"
+        ],
+        "de": ["klar ausgeprägte\\p{L}* Arm\\p{L}*", "Grand[- ]Design"],
+        "fr": ["spirales? de grand dessin", "grand dessin"],
+        "es": ["espirales? de gran diseño", "gran diseño"],
+        "it": ["spirali? a grande disegno", "grande disegno"],
+        "nl": ["spiraalstel\\p{L}* met groot ontwerp", "groot ontwerp"],
+        "pt-BR": ["espirais? de grande desenho", "grande desenho"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "medium",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "low",
+        "de": "low",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "low",
+        "pt-BR": "medium"
+      },
+      "ru": "спиральная галактика с чёткими рукавами",
+      "ja": "グランドデザイン型の渦巻銀河",
+      "zh-CN": "宏象旋涡星系",
+      "ko": "그랜드 디자인 나선 은하",
+      "hi": "स्पष्ट भुजाओं वाली सर्पिल आकाशगंगा",
+      "ar": "مجرة حلزونية ذات أذرع واضحة",
+      "sr-Cyrl": "спирална галаксија с јасно израженим краковима",
+      "de": "Spiralgalaxie mit klar ausgeprägten Armen",
+      "fr": "spirale de grand dessin",
+      "es": "espiral de gran diseño",
+      "it": "spirale a grande disegno",
+      "nl": "spiraalstelsel met groot ontwerp",
+      "pt-BR": "espiral de grande desenho"
+    },
+    "white dwarf cooling track": {
+      "_sense": "the path in the colour-luminosity diagram that a white dwarf follows as it cools",
+      "_en": "cooling tracks?",
+      "_match": {
+        "ru": [
+          "трек\\p{L}* остыван\\p{L}*",
+          "остыван\\p{L}* белых карликов",
+          "последовательност\\p{L}* остыван\\p{L}*"
+        ],
+        "ja": ["冷却系列", "冷却トラック", "冷却曲線", "冷却シーケンス"],
+        "zh-CN": ["冷却序列", "冷却曲线", "冷却轨迹", "冷却轨道"],
+        "ko": ["냉각 ?(?:경로|계열|궤적|선)"],
+        "hi": ["शीतलन[- ]?(?:पथ|क्रम|अनुक्रम)"],
+        "ar": ["مسار (?:ال)?تبريد"],
+        "sr-Cyrl": [
+          "траг\\p{L}* хлађењ\\p{L}*",
+          "секвенц\\p{L}* хлађењ\\p{L}*",
+          "хлађењ\\p{L}* белих патуљак\\p{L}*"
+        ],
+        "de": ["Abkühlungs(?:sequenz|pfad|spur|weg)\\p{L}*"],
+        "fr": [
+          "séquence de refroidissement",
+          "trace de refroidissement",
+          "trajectoire de refroidissement"
+        ],
+        "es": ["secuencia de enfriamiento", "trayectoria de enfriamiento", "curva de enfriamiento"],
+        "it": [
+          "sequenza di raffreddamento",
+          "traccia di raffreddamento",
+          "percorso di raffreddamento"
+        ],
+        "nl": ["afkoelings\\p{L}*"],
+        "pt-BR": [
+          "sequência de resfriamento",
+          "trilha de resfriamento",
+          "trajetória de resfriamento"
+        ]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "low",
+        "zh-CN": "medium",
+        "ko": "low",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "low",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "трек остывания белых карликов",
+      "ja": "白色矮星の冷却系列",
+      "zh-CN": "白矮星冷却序列",
+      "ko": "백색 왜성 냉각 경로",
+      "hi": "श्वेत वामन शीतलन पथ",
+      "ar": "مسار تبريد القزم الأبيض",
+      "sr-Cyrl": "траг хлађења белих патуљака",
+      "de": "Abkühlungssequenz Weißer Zwerge",
+      "fr": "séquence de refroidissement des naines blanches",
+      "es": "secuencia de enfriamiento de las enanas blancas",
+      "it": "sequenza di raffreddamento delle nane bianche",
+      "nl": "afkoelingssequentie van witte dwergen",
+      "pt-BR": "sequência de resfriamento das anãs brancas"
+    },
+    "luminous red nova": {
+      "_sense": "an eruption of a star, brighter than a nova and fainter than a supernova, thought to follow the merger of two stars",
+      "_en": "luminous red novae?|luminous red nova",
+      "_match": {
+        "ru": ["светящ\\p{L}* красн\\p{L}* нов\\p{L}*", "светящ\\p{L}* красн\\p{L}* звезд\\p{L}*"],
+        "ja": ["明るい赤色新星", "光度の高い赤色新星", "赤色新星"],
+        "zh-CN": ["明亮红新星", "亮红新星", "红新星", "明亮的红新星"],
+        "ko": ["밝은 ?적색 ?신성", "적색 ?신성"],
+        "hi": ["दीप्तिमान[\\p{L}\\p{M}]* लाल[\\p{L}\\p{M}]* नोवा", "लाल नोवा"],
+        "ar": ["مستعر(?:ا)? أحمر ساطع", "مستعر(?:ا)? أحمر"],
+        "sr-Cyrl": ["светл\\p{L}* црвен\\p{L}* нов\\p{L}*", "црвен\\p{L}* нов\\p{L}*"],
+        "de": ["leuchtstark\\p{L}* rot\\p{L}* Nova", "rot\\p{L}* Nova"],
+        "fr": ["novas? rouges? lumineuses?"],
+        "es": ["novas? rojas? luminosas?"],
+        "it": ["nov[ae] ross[ae] luminos[ae]", "novae? rosse? luminose?"],
+        "nl": ["lichtsterk\\p{L}* rod\\p{L}* nova\\p{L}*", "rode nova"],
+        "pt-BR": ["novas? vermelhas? luminosas?"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "medium",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "светящаяся красная новая",
+      "ja": "明るい赤色新星",
+      "zh-CN": "明亮红新星",
+      "ko": "밝은 적색 신성",
+      "hi": "दीप्तिमान लाल नोवा",
+      "ar": "مستعر أحمر ساطع",
+      "sr-Cyrl": "светла црвена нова",
+      "de": "leuchtstarke rote Nova",
+      "fr": "nova rouge lumineuse",
+      "es": "nova roja luminosa",
+      "it": "nova rossa luminosa",
+      "nl": "lichtsterke rode nova",
+      "pt-BR": "nova vermelha luminosa"
+    },
+    "polarimetry": {
+      "_sense": "measuring the polarisation of light",
+      "_en": "polarimetry",
+      "_match": {
+        "ru": ["поляриметр\\p{L}*"],
+        "ja": ["偏光測定", "偏光観測", "偏光"],
+        "zh-CN": ["偏振测量", "偏振观测", "偏振"],
+        "ko": ["편광"],
+        "hi": ["ध्रुवणमिति", "ध्रुवण[\\p{L}\\p{M}]*"],
+        "ar": ["قياس (?:ال)?استقطاب", "استقطاب"],
+        "sr-Cyrl": ["поларизацион\\p{L}*", "поларимет\\p{L}*"],
+        "de": ["Polarimetri\\p{L}*"],
+        "fr": ["polarimétri\\p{L}*"],
+        "es": ["polarimetr\\p{L}*"],
+        "it": ["polarimetri\\p{L}*"],
+        "nl": ["polarimetri\\p{L}*"],
+        "pt-BR": ["polarimetri\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "medium",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "low",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "поляриметрия",
+      "ja": "偏光測定",
+      "zh-CN": "偏振测量",
+      "ko": "편광 측정",
+      "hi": "ध्रुवणमिति",
+      "ar": "قياس الاستقطاب",
+      "sr-Cyrl": "поларизациона мерења",
+      "de": "Polarimetrie",
+      "fr": "polarimétrie",
+      "es": "polarimetría",
+      "it": "polarimetria",
+      "nl": "polarimetrie",
+      "pt-BR": "polarimetria"
+    },
+    "Type Ia supernova": {
+      "_sense": "a supernova from the thermonuclear explosion of a white dwarf, used as a distance marker",
+      "_en": "Type Ia\\b",
+      "_match": {
+        "ru": ["сверхновы\\p{L}* типа Ia", "типа Ia"],
+        "ja": ["Ia ?型"],
+        "zh-CN": ["Ia ?型"],
+        "ko": ["Ia ?형"],
+        "hi": ["Ia[- ]?प्रकार", "प्रकार Ia", "टाइप ?Ia"],
+        "ar": ["(?:من )?(?:ال)?نوع Ia"],
+        "sr-Cyrl": ["типа Ia", "тип Ia"],
+        "de": ["Typ Ia"],
+        "fr": ["type Ia"],
+        "es": ["tipo Ia"],
+        "it": ["tipo Ia"],
+        "nl": ["type Ia"],
+        "pt-BR": ["tipo Ia"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "сверхновая типа Ia",
+      "ja": "Ia型超新星",
+      "zh-CN": "Ia型超新星",
+      "ko": "Ia형 초신성",
+      "hi": "Ia प्रकार का सुपरनोवा",
+      "ar": "مستعر أعظم من النوع Ia",
+      "sr-Cyrl": "супернова типа Ia",
+      "de": "Supernova vom Typ Ia",
+      "fr": "supernova de type Ia",
+      "es": "supernova de tipo Ia",
+      "it": "supernova di tipo Ia",
+      "nl": "supernova van type Ia",
+      "pt-BR": "supernova do tipo Ia"
+    },
+    "cometary knot": {
+      "_sense": "a small dense comet-shaped blob of gas with a tail, inside a planetary nebula",
+      "_en": "cometary knots?",
+      "_match": {
+        "ru": [
+          "комет\\p{L}* узл\\p{L}*",
+          "комет\\p{L}* узелк\\p{L}*",
+          "кометообразн\\p{L}* узл\\p{L}*"
+        ],
+        "ja": ["彗星状", "彗星のような"],
+        "zh-CN": ["彗星状", "彗状", "彗星形"],
+        "ko": ["혜성 ?(?:모양|형|상)", "혜성상"],
+        "hi": ["धूमकेतु[\\p{L}\\p{M}]* (?:जैसी|जैसे|जैसा|के समान)", "धूमकेतु[- ]?(?:जैसी|नुमा)"],
+        "ar": ["عقد(?:ة)? مذنب\\p{L}*", "مذنبي\\p{L}*"],
+        "sr-Cyrl": ["комет\\p{L}* чвор\\p{L}*", "комет\\p{L}* грудв\\p{L}*"],
+        "de": ["kometenartig\\p{L}* Knoten", "kometenförmig\\p{L}*", "Kometenknoten"],
+        "fr": ["nœuds? cométaires?", "noeuds? cométaires?", "cométaires"],
+        "es": ["nudos? cometarios?", "cometari\\p{L}*"],
+        "it": ["nod[io] cometar\\p{L}*", "cometar\\p{L}*"],
+        "nl": ["komeetachtig\\p{L}*", "komeetvormig\\p{L}*"],
+        "pt-BR": ["nós cometários", "nó cometário", "cometári\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "low",
+        "zh-CN": "low",
+        "ko": "low",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "low",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "кометные узлы",
+      "ja": "彗星状の塊",
+      "zh-CN": "彗星状结节",
+      "ko": "혜성 모양 매듭",
+      "hi": "धूमकेतु जैसी गाँठें",
+      "ar": "عقد مذنبية",
+      "sr-Cyrl": "кометни чворови",
+      "de": "kometenartige Knoten",
+      "fr": "nœuds cométaires",
+      "es": "nudos cometarios",
+      "it": "nodi cometari",
+      "nl": "komeetachtige knopen",
+      "pt-BR": "nós cometários"
+    },
+    "intracluster light": {
+      "_sense": "faint light from stars that belong to no single galaxy, spread through a whole galaxy cluster",
+      "_en": "intracluster light",
+      "_match": {
+        "ru": ["внутрикластерн\\p{L}* свет", "внутрископлен\\p{L}* свет", "свет между галактикам"],
+        "ja": ["銀河団内(?:の)?光", "銀河団内"],
+        "zh-CN": ["团内光", "星系团内的光", "团内"],
+        "ko": ["은하단 ?내 ?(?:의 )?빛", "은하단 ?내"],
+        "hi": ["क्लस्टर के भीतर", "क्लस्टर[- ]?अंतर्गत"],
+        "ar": ["(?:ال)?ضوء داخل (?:ال)?عنقود"],
+        "sr-Cyrl": ["светлост\\p{L}* унутар јата", "унутар јата"],
+        "de": ["Intrahaufenlicht", "Licht (?:zwischen|innerhalb)"],
+        "fr": ["lumière intra-?amas", "lumière intra"],
+        "es": ["luz intracumular", "luz intra-?cúmulo"],
+        "it": ["luce intra-?ammasso", "luce intra"],
+        "nl": ["intracluster-?licht", "intra-?cluster"],
+        "pt-BR": ["luz intra-?aglomerado", "luz intra"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "low",
+        "zh-CN": "medium",
+        "ko": "low",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "low",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "внутрикластерный свет",
+      "ja": "銀河団内光",
+      "zh-CN": "团内光",
+      "ko": "은하단 내 빛",
+      "hi": "क्लस्टर के भीतर का प्रकाश",
+      "ar": "الضوء داخل العنقود",
+      "sr-Cyrl": "светлост унутар јата",
+      "de": "Intrahaufenlicht",
+      "fr": "lumière intra-amas",
+      "es": "luz intracumular",
+      "it": "luce intra-ammasso",
+      "nl": "intraclusterlicht",
+      "pt-BR": "luz intra-aglomerado"
+    },
+    "H II region": {
+      "_sense": "a cloud of hydrogen gas ionised by the ultraviolet light of hot young stars",
+      "_en": "H II regions?|HII regions?",
+      "_match": {
+        "ru": ["област\\p{L}* H ?II", "зон\\p{L}* H ?II", "H ?II"],
+        "ja": ["H ?II ?領域", "H ?II"],
+        "zh-CN": ["H ?II ?区", "电离氢区", "H ?II"],
+        "ko": ["H ?II ?영역", "H ?II"],
+        "hi": ["H ?II ?क्षेत्र", "H ?II"],
+        "ar": ["منطقة H ?II", "مناطق H ?II", "H ?II"],
+        "sr-Cyrl": ["област\\p{L}* H ?II", "H ?II"],
+        "de": ["H[- ]?II[- ]?Gebiet\\p{L}*", "H ?II"],
+        "fr": ["région\\p{L}* H ?II", "H ?II"],
+        "es": ["región\\p{L}* H ?II", "regiones H ?II", "H ?II"],
+        "it": ["regione H ?II", "region\\p{L}* H ?II", "H ?II"],
+        "nl": ["H ?II[- ]?gebied\\p{L}*", "H ?II"],
+        "pt-BR": ["região H ?II", "regiões H ?II", "H ?II"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "область H II",
+      "ja": "HII領域",
+      "zh-CN": "H II区",
+      "ko": "H II 영역",
+      "hi": "H II क्षेत्र",
+      "ar": "منطقة H II",
+      "sr-Cyrl": "област H II",
+      "de": "H-II-Gebiet",
+      "fr": "région H II",
+      "es": "región H II",
+      "it": "regione H II",
+      "nl": "H II-gebied",
+      "pt-BR": "região H II"
+    },
+    "ionisation front": {
+      "_sense": "the advancing edge where ultraviolet light turns neutral gas into ionised gas",
+      "_en": "ionisation fronts?|ionization fronts?",
+      "_match": {
+        "ru": ["фронт\\p{L}* ионизац\\p{L}*", "ионизационн\\p{L}* фронт\\p{L}*"],
+        "ja": ["電離前線", "電離フロント"],
+        "zh-CN": ["电离前沿", "电离锋面", "电离前锋", "电离波前", "电离阵面"],
+        "ko": ["이온화 ?전선", "전리 ?전선", "전리 ?면"],
+        "hi": ["आयनीकरण[- ]?(?:अग्रभाग|अग्र|मोर्चा|सीमा)[\\p{L}\\p{M}]*"],
+        "ar": ["جبهة (?:ال)?تأين", "جبهة (?:ال)?تأيّن"],
+        "sr-Cyrl": ["фронт\\p{L}* јонизациј\\p{L}*"],
+        "de": ["Ionisationsfront\\p{L}*", "Ionisierungsfront\\p{L}*"],
+        "fr": ["fronts? d.ionisation"],
+        "es": ["frentes? de ionización"],
+        "it": ["front[ei] di ionizzazione"],
+        "nl": ["ionisatiefront\\p{L}*"],
+        "pt-BR": ["frentes? de ionização"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "medium",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "фронт ионизации",
+      "ja": "電離前線",
+      "zh-CN": "电离前沿",
+      "ko": "이온화 전선",
+      "hi": "आयनीकरण अग्रभाग",
+      "ar": "جبهة التأين",
+      "sr-Cyrl": "фронт јонизације",
+      "de": "Ionisationsfront",
+      "fr": "front d'ionisation",
+      "es": "frente de ionización",
+      "it": "fronte di ionizzazione",
+      "nl": "ionisatiefront",
+      "pt-BR": "frente de ionização"
+    },
+    "protostellar outflow": {
+      "_sense": "gas and jets streaming out of a newborn star still gathering mass",
+      "_en": "protostellar outflows?",
+      "_match": {
+        "ru": [
+          "протозвёзд\\p{L}* истечен\\p{L}*",
+          "протозвезд\\p{L}* истечен\\p{L}*",
+          "истечен\\p{L}* (?:из|от) протозв\\p{L}*"
+        ],
+        "ja": ["原始星(?:からの|の)?(?:アウトフロー|噴出|流出)\\p{L}*", "アウトフロー"],
+        "zh-CN": ["原恒星外流", "原恒星喷流", "原恒星的外流", "外流"],
+        "ko": ["원시별 ?(?:분출|유출|외향)\\p{L}*", "분출류"],
+        "hi": ["प्रोटोस्टार[\\p{L}\\p{M}]* (?:बहिर्वाह|बहिर्प्रवाह)", "बहिर्वाह"],
+        "ar": [
+          "تدفق\\p{L}* (?:من|خارج\\p{L}*) (?:ال)?نجوم (?:ال)?أولية",
+          "تدفق(?:ات)? (?:ال)?نجوم (?:ال)?أولية"
+        ],
+        "sr-Cyrl": [
+          "истицањ\\p{L}* из протозвезд\\p{L}*",
+          "протозвезд\\p{L}* истицањ\\p{L}*",
+          "истицањ\\p{L}* протозвезд\\p{L}*"
+        ],
+        "de": ["protostellar\\p{L}* (?:Ausfl\\p{L}*|Outflow\\p{L}*|Jet\\p{L}*)"],
+        "fr": [
+          "écoulements? protostellaires?",
+          "jets? protostellaires?",
+          "éjections? protostellaires?"
+        ],
+        "es": [
+          "flujos? de salida protoestelar(?:es)?",
+          "flujos? protoestelar(?:es)?",
+          "chorros? protoestelar(?:es)?",
+          "salidas? protoestelar(?:es)?"
+        ],
+        "it": [
+          "outflow protostellar\\p{L}*",
+          "flussi? protostellar\\p{L}*",
+          "getti protostellar\\p{L}*"
+        ],
+        "nl": ["protostellaire (?:uitstroom|uitstromen|uitstromingen|jets?)", "uitstroom"],
+        "pt-BR": [
+          "fluxos? de saída protoestelar(?:es)?",
+          "fluxos? protoestelar(?:es)?",
+          "jatos? protoestelar(?:es)?",
+          "saídas? protoestelar(?:es)?"
+        ]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "low",
+        "zh-CN": "medium",
+        "ko": "low",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "low",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "протозвёздное истечение",
+      "ja": "原始星アウトフロー",
+      "zh-CN": "原恒星外流",
+      "ko": "원시별 분출류",
+      "hi": "प्रोटोस्टार बहिर्वाह",
+      "ar": "تدفق من النجوم الأولية",
+      "sr-Cyrl": "истицање из протозвезда",
+      "de": "protostellarer Ausfluss",
+      "fr": "écoulement protostellaire",
+      "es": "flujo de salida protoestelar",
+      "it": "outflow protostellare",
+      "nl": "protostellaire uitstroom",
+      "pt-BR": "fluxo de saída protoestelar"
+    },
+    "super star cluster": {
+      "_sense": "a very massive young star cluster, far denser than an ordinary open cluster",
+      "_en": "super star clusters?",
+      "_match": {
+        "ru": [
+          "сверхмассивн\\p{L}* звёздн\\p{L}* скоплен\\p{L}*",
+          "сверхмассивн\\p{L}* звездн\\p{L}* скоплен\\p{L}*",
+          "сверхскоплен\\p{L}*"
+        ],
+        "ja": ["スーパースタークラスター", "超星団", "超大質量星団"],
+        "zh-CN": ["超级星团", "超星团"],
+        "ko": ["초대형 ?성단", "초거대 ?성단", "슈퍼 ?(?:스타 ?)?(?:클러스터|성단)"],
+        "hi": ["सुपर[- ]?(?:तारा[- ]?)?(?:समूह|गुच्छ|क्लस्टर)[\\p{L}\\p{M}]*"],
+        "ar": ["عنقود(?:ا|ان)? نجمي(?:ا|ة)? فائق\\p{L}*", "عناقيد نجمية فائقة", "عنقود فائق"],
+        "sr-Cyrl": ["супер ?звездан\\p{L}* јат\\p{L}*", "супер ?јат\\p{L}*"],
+        "de": ["Super-?Sternhaufen", "Super ?Star ?Cluster\\p{L}*"],
+        "fr": ["super[- ]amas stellaires?", "super amas"],
+        "es": ["supercúmulos? estelares?", "super ?cúmulos?"],
+        "it": ["super ?ammass\\p{L}* stellar\\p{L}*", "superammass\\p{L}*", "super ammass\\p{L}*"],
+        "nl": ["super ?sterrenho\\p{L}*"],
+        "pt-BR": ["super ?aglomerados? estelares?", "superaglomerad\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "medium",
+        "zh-CN": "high",
+        "ko": "low",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "low",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "сверхмассивное звёздное скопление",
+      "ja": "スーパースタークラスター",
+      "zh-CN": "超级星团",
+      "ko": "초대형 성단",
+      "hi": "सुपर तारा समूह",
+      "ar": "عنقود نجمي فائق",
+      "sr-Cyrl": "суперзвездано јато",
+      "de": "Super-Sternhaufen",
+      "fr": "super amas stellaire",
+      "es": "supercúmulo estelar",
+      "it": "super ammasso stellare",
+      "nl": "supersterrenhoop",
+      "pt-BR": "superaglomerado estelar"
+    },
+    "tidal tail": {
+      "_sense": "a long stream of stars and gas pulled out of a galaxy by the gravity of another in a close encounter",
+      "_en": "tidal tails?",
+      "_match": {
+        "ru": ["приливн\\p{L}* хвост\\p{L}*"],
+        "ja": ["潮汐尾", "潮汐の尾"],
+        "zh-CN": ["潮汐尾"],
+        "ko": ["조석 ?꼬리", "조력 ?꼬리"],
+        "hi": [
+          "ज्वारीय[\\p{L}\\p{M}]* पूँछ[\\p{L}\\p{M}]*",
+          "ज्वारीय पूंछ",
+          "ज्वार[\\p{L}\\p{M}]* पूँ?छ"
+        ],
+        "ar": ["ذيل(?:ان|ين)? مد\\p{L}*", "ذيول مد\\p{L}*", "أذيال مد\\p{L}*"],
+        "sr-Cyrl": ["плимн\\p{L}* реп\\p{L}*", "плимски\\p{L}* реп\\p{L}*"],
+        "de": ["Gezeitenschweif\\p{L}*", "Gezeitenschweife", "Gezeitenarm\\p{L}*"],
+        "fr": ["queues? de marée"],
+        "es": ["colas? de marea", "colas? mareales?"],
+        "it": ["cod[ae] mareal[ei]", "cod[ae] di marea"],
+        "nl": ["getijden?staart\\p{L}*", "getijdenstaarten"],
+        "pt-BR": ["caudas? de maré", "caudas? de marés", "caudas? de marea"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "medium",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "приливный хвост",
+      "ja": "潮汐尾",
+      "zh-CN": "潮汐尾",
+      "ko": "조석 꼬리",
+      "hi": "ज्वारीय पूँछ",
+      "ar": "ذيل مدّي",
+      "sr-Cyrl": "плимни реп",
+      "de": "Gezeitenschweif",
+      "fr": "queue de marée",
+      "es": "cola de marea",
+      "it": "coda mareale",
+      "nl": "getijdenstaart",
+      "pt-BR": "cauda de maré"
     }
   }
 }

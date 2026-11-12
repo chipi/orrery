@@ -570,6 +570,12 @@
   let scaleBarLabel = $state('');
   // How far a docked side panel reaches in from the right edge (measured by the host).
   let panelCoverPx = $state(0);
+  // The solar system's navigator is flush right (right = panel cover + 8); the HUD row stops
+  // 12 px before its left edge, so the two rows never overlap.
+  let scaleNavWidth = $state(0);
+  let hudClearRightPx = $derived(
+    view === '3d' && scaleNavWidth > 0 ? panelCoverPx + 8 + scaleNavWidth + 12 : panelCoverPx + 16,
+  );
   let contextId = $state<ExploreContextId>('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
   // active scale-shell menu item (the URL ?context is cleared after the jump, so
@@ -660,8 +666,8 @@
   // persistent "you are here / home" indicator in the neighborhood (item: never
   // get lost). Updated (throttled) from the render loop.
   let sunCompass = $state<{ ang: number; on: boolean; ly: number } | null>(null);
-  // The solar system's "dirty" view: a selection of any kind. The HUD's RESET VIEW and the scale
-  // navigator's Reset both read it and both run `resetSolarView`.
+  // The solar system's "dirty" view: a selection of any kind. The HUD's RESET VIEW (the solar
+  // scale's one Reset, UXD-021) reads it and runs `resetSolarView`.
   let solarHasSelection = $derived(
     !!(
       selectedId ||
@@ -678,10 +684,10 @@
     exitNeighborhoodFn?.();
     clearBodySelection();
   }
-  // Reset lives in the scale navigator at all eight scales (always drawn, UXD-021); it is enabled
-  // once the current scale's view is "dirty" (a selection, or the Sun panned out of frame).
+  // The navigator's Reset at the seven outer scales (always drawn, UXD-021); it is enabled once
+  // the current scale's view is "dirty" (a selection, or the Sun panned out of frame). The solar
+  // system has none here: its Reset is the HUD row's.
   let scaleResetEnabled = $derived.by(() => {
-    if (contextId === 'solar-system') return solarHasSelection;
     if (contextId === 'neighborhood') return !!(selectedStarId || (sunCompass && !sunCompass.on));
     if (contextId === 'milky-way') return !!selectedMwId;
     if (contextId === 'local-group') return !!selectedLgMember;
@@ -692,8 +698,7 @@
     return false;
   });
   function resetCurrentScale(): void {
-    if (contextId === 'solar-system') resetSolarView();
-    else if (contextId === 'neighborhood') resetNeighborhoodFn?.();
+    if (contextId === 'neighborhood') resetNeighborhoodFn?.();
     else if (contextId === 'milky-way') resetMilkyWayFn?.();
     else if (contextId === 'local-group') resetLocalGroupFn?.();
     else if (contextId === 'local-sheet') resetLocalSheetFn?.();
@@ -1998,6 +2003,7 @@
       onJump={(shell) => void contextDeepLinkFn?.(shell)}
       resetEnabled={scaleResetEnabled}
       {panelCoverPx}
+      bind:width={scaleNavWidth}
       onReset={resetCurrentScale}
     />
   {/if}
@@ -2047,6 +2053,7 @@
       barPx={scaleBarPx}
       barLabel={scaleBarLabel}
       {bodyHostName}
+      {panelCoverPx}
     />
   {/if}
 
@@ -2141,6 +2148,7 @@
     {toggleView}
     hasSelection={solarHasSelection}
     onResetView={resetSolarView}
+    clearRightPx={hudClearRightPx}
     {layers}
     onToggleLayer={(key) => {
       layers[key] = !layers[key];

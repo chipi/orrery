@@ -129,7 +129,7 @@
     padding: 0;
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: 4px;
+    gap: 2px;
   }
   .sizes-cell-item {
     display: flex;
@@ -141,7 +141,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 3px;
-    padding: 6px 5px;
+    padding: 6px 2px;
     background: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -155,7 +155,10 @@
   .sizes-cell:focus-visible,
   .sizes-cell[aria-pressed='true'] {
     background: rgba(255, 255, 255, 0.06);
-    outline: none;
+  }
+  .sizes-cell:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 1px;
   }
   .sizes-cell.current {
     border-color: rgba(255, 255, 255, 0.5);
@@ -166,11 +169,22 @@
     height: 9px;
     border-radius: 50%;
   }
+  /* A name never breaks mid-word where it fits. Measure: Space Mono advances 0.612 em, so the
+     longest name in the 14 locales (nl MERCURIUS, 9 letters) is 9 x 6.73 = 60.6 px at 11 px;
+     -0.02 em tracking takes it to 58.6 px. The cell text box is 61 px at 360 px wide (4 columns)
+     and 65 px at the 620 px breakpoint (8 columns). Under 360 px the word may break, so the
+     cell never overflows. */
   .sizes-name {
     max-width: 100%;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
     font-weight: 700;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
+  }
+  @media (min-width: 360px) {
+    .sizes-name {
+      overflow-wrap: normal;
+    }
   }
   .sizes-km {
     color: rgba(255, 255, 255, 0.6);
@@ -181,7 +195,7 @@
     font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.6);
   }
-  @media (max-width: 559px) {
+  @media (max-width: 619px) {
     .sizes-legend {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }

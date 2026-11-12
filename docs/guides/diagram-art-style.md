@@ -28,6 +28,8 @@ Reference implementations: the [Navigation essay](../../static/data/essays/navig
 
 ## The palette
 
+> UXD-001 (A3): these diagram colours stay as they are. They are art, not UI. The UI accent is `#5070ff`; `#7fb0e0` below is not a UI colour.
+
 Deep midnight-navy ground `#0a0e18` · luminous cyan linework `#7fb0e0` · warm-cream
 highlights `#cfe3fb`/white · a single warm-amber glow `#ffd27f` for a Sun/star/key
 accent. Faint blueprint grid + printed-paper grain ghosted behind. Monospace/hand

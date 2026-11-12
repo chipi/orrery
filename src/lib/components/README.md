@@ -11,6 +11,7 @@ Svelte components shared across routes, by family. Scene-specific ones live with
 - **Look-alikes** — `EpochTimelineStrip` (/missions, /fleet) vs `TimelineNavigator` (/missions year window); `MediaPlayer` (modal) vs `VideoThumb` (resting tile).
 - **Debug** — `DebugPanel` (`?debug=1`) shows page tabs registered via `DebugPanelRegistrar` / `debug-panel-context.ts`; also `RenderingDebugRegistrar`, `FlybyDebugViewer`, `AscentCameraDebug`.
 - **Attribution/links** — `ImageCredit`, `LinkCredit`, `LearnLink` (ADR-051 rules).
+- **Accent colour** — the accent tokens (`--color-accent`, `-hover`, `-soft`, `-edge`, `-strong`, `--color-state`, `--color-focus`, `--color-ok`) live in `src/lib/styles/tokens.css`; no component writes its own accent colour (UXD-001, A3).
 - **SEO** — `JsonLd` (schema.org data block in the head; build the data with `$lib/json-ld`), `SiteEntityPage` (the /moon|mars|venus/[id] entity page) and `entity-page.css` (the content layout of every entity page: missions, fleet, sites, bodies, Lab formulas; ADR-096; container, title, lead and labels come from the page shell). **Page shell** — `src/lib/styles/page-shell.css` (loaded by `app.css`): `.page-shell`, `.page-crumb`, `.page-title`, `.page-lead`, `.page-section-label`, `.page-section-title` for every text page ([UXD-012](../../../docs/uxs/decisions/UXD-012-one-page-shell.md)).
 
 Pointers: TA.md §components · AGENTS.md (i18n, mobile-first). No doc states why panels share one shell; the `Panel.svelte` prop comments are the only record.

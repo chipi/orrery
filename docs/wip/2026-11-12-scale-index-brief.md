@@ -2,6 +2,10 @@
 
 Brief, 2026-11-12, written at HEAD of `tech-debt/0.9.9` at `54d5a46c17c` plus the uncommitted working tree (20 modified files and 3 untracked, the catalogue-layer work: `DataSources.svelte`, `catalogue.ts`, panels, data-sources; none of them touches an INDEX file). Read-only investigation: nothing in `src/`, `scripts/`, `static/`, `messages/` or `tests/` was changed; this file is the only write. Operator decision (2026-11-12): "add same index on all other scales and that is the way to close the gap in a systematic way". Method: `git grep` / `sed` reads of every file cited with the line numbers shown; counts from five Python scripts run as files over `static/data/**` (session scratchpad `…/6fc6157c-346c-4f06-8e2d-3b7060eafb22/scratchpad/{count,detail,solar,ent,dist}.py`, not in the repo); the two reference briefs (`2026-11-12-slice-A5-brief.md`, `2026-11-12-deep-entity-pages-brief.md`) read in full. No build, no dev server, no browser, no test run: every width, height and byte figure below is arithmetic from code, not a measurement (§6).
 
+## Decisions (operator, 2026-11-12)
+
+Plan approved; all 13 questions of §5 answered as recommended: black holes to Milky Way (Sagittarius A*, Cygnus X-1), Virgo (M87*) and a Fiction section at the foot of Cosmic web (Gargantua); rows for objects without a page; stars + deep sky in one neighbourhood list with a Deep sky chip; kind chips + Highlights, at most five per scale; page rows server-rendered as links, page-less rows client-rendered; one row per scale for shared objects; INDEX stays open across scale jumps on a fine pointer, closes on a coarse one; select = canvas click, no camera move or new URL params in this slice; exoplanet BodyScene list later; worlds share the CSS now, move to `ScaleIndex` next slice; solar system gains moons, belts, meta line, planet colour dots; `StarIndex` and `ExploreBodyIndex` deleted; stale docs fixed in the slice.
+
 ## 0. Answer first
 
 | # | Question | Answer |

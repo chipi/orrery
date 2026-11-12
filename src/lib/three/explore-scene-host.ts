@@ -4,7 +4,7 @@ import { goto } from '$app/navigation';
 import { safeReplaceState } from '$lib/safe-replace-state';
 import { createAnimateLoop } from '$lib/three/animate-loop';
 import { disposeScene } from '$lib/three/dispose-object3d';
-import { buildIconicTrajectory } from '$lib/three/iconic-trajectory';
+import { buildIconicTrajectory, PICK_KINDS } from '$lib/three/iconic-trajectory';
 import {
   ContextGraph,
   SOLAR_SYSTEM_CONTEXT,
@@ -266,6 +266,7 @@ export interface ExploreSceneHostBridge {
   readonly selectedId: string | null;
   readonly selectedSmallBodyId: string | null;
   readonly selectedBeltId: string | null;
+  readonly selectedSun: boolean;
   selectedLaniakeaMember: LaniakeaMember | null;
   selectedLgMember: LocalGroupMember | null;
   selectedLsMember: LocalSheetMember | null;
@@ -1917,8 +1918,15 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         follow = (out) => void sat.mesh.getWorldPosition(out);
         // A moon is tiny: its own 50 radii would put the zoom ceiling, where one more scroll
         // leaves the solar system, a few units out. It keeps its planet's ceiling.
+        // Its floor must also keep the near side of the moon beyond the camera's near plane
+        // (0.5 here): at 1.5 radii a 0.32-unit moon's surface is 0.16 away and is clipped.
         const f = focusFrameFor('moon', sat.def.sizeUnits);
-        frame = { ...f, maxR: Math.max(f.maxR, parent.planet.size3 * 50) };
+        const radius = (sat.mesh.geometry as THREE.SphereGeometry).parameters.radius;
+        frame = {
+          ...f,
+          minR: Math.max(f.minR, radius + camera.near * 1.2),
+          maxR: Math.max(f.maxR, parent.planet.size3 * 50),
+        };
       }
     } else if (ref?.kind === 'small-body') {
       const obj = smallBodyObjs.find((o) => o.body.id === ref.id);
@@ -1949,7 +1957,29 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
 
   // Read-only hooks for the select-focus e2e spec (no shipped behaviour, like
   // __explore2dBodyOffset): where the camera looks, whether the selection ring is up, and where a
-  // body is. Keys: planet:<id>, small:<id>, moon:<parent>:<id>, belt:<id>.
+  // body is, and where it is on screen (a canvas click lands there). Keys: planet:<id>,
+  // small:<id>, moon:<parent>:<id>, belt:<id>, marker:<missionId> (the first milestone marker of
+  // that path).
+  const bodyWorldPosition = (key: string): THREE.Vector3 | null => {
+    const [kind, a, b] = key.split(':');
+    const out = new THREE.Vector3();
+    if (kind === 'planet') planetObjs.find((o) => o.planet.id === a)?.mesh.getWorldPosition(out);
+    else if (kind === 'small')
+      smallBodyObjs.find((o) => o.body.id === a)?.mesh.getWorldPosition(out);
+    else if (kind === 'moon')
+      planetObjs
+        .find((o) => o.planet.id === a)
+        ?.satellites.find((s) => s.def.id === b)
+        ?.mesh.getWorldPosition(out);
+    else if (kind === 'marker') {
+      const marker = iconicTrajectoryHandles
+        .find((h) => h.missionId === a)
+        ?.pickTargets.find((t) => t.userData.kind === PICK_KINDS.marker);
+      if (!marker) return null;
+      marker.getWorldPosition(out);
+    } else if (kind !== 'belt') return null;
+    return out;
+  };
   if (typeof window !== 'undefined') {
     window.__exploreCameraState = () => ({
       origin: focusOrigin.toArray(),
@@ -1959,33 +1989,50 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ringAt: selHalo.position.toArray(),
       viewShiftPx: framingShift,
     });
-    window.__exploreBodyPosition = (key) => {
-      const [kind, a, b] = key.split(':');
-      const out = new THREE.Vector3();
-      if (kind === 'planet') planetObjs.find((o) => o.planet.id === a)?.mesh.getWorldPosition(out);
-      else if (kind === 'small')
-        smallBodyObjs.find((o) => o.body.id === a)?.mesh.getWorldPosition(out);
-      else if (kind === 'moon')
-        planetObjs
-          .find((o) => o.planet.id === a)
-          ?.satellites.find((s) => s.def.id === b)
-          ?.mesh.getWorldPosition(out);
-      else if (kind !== 'belt') return null;
-      return out.toArray();
+    window.__exploreBodyPosition = (key) => bodyWorldPosition(key)?.toArray() ?? null;
+    window.__exploreBodyScreen = (key) => {
+      const at = bodyWorldPosition(key);
+      if (!at) return null;
+      camera.updateMatrixWorld();
+      const ndc = at.project(camera);
+      if (ndc.z > 1) return null;
+      const rect = el3d.getBoundingClientRect();
+      return {
+        x: rect.left + ((ndc.x + 1) / 2) * rect.width,
+        y: rect.top + ((1 - ndc.y) / 2) * rect.height,
+      };
     };
   }
 
   // Panel-aware framing (UXD-019): the focus point sits in the middle of the space the open
   // side panel leaves, not under its edge. The projection shifts by half the panel's cover
   // (camera.setViewOffset), so the look-at point, picking and every scale keep one camera. A
-  // bottom sheet (touch portrait) covers the scene and shifts nothing. Measured every 8th frame,
-  // eased every frame (instant under reduced motion).
+  // bottom sheet (touch portrait) covers the scene and shifts nothing. The panels are measured
+  // only in the 400 ms after one opened or closed (the 220 ms fly-in moves its rect), the window
+  // resized or the view changed; the shift is eased every frame (instant under reduced motion).
+  const FRAMING_SETTLE_MS = 400;
   let framingShift = 0;
   let framingTarget = 0;
-  let framingTick = 0;
+  let framingMeasureUntil = performance.now() + FRAMING_SETTLE_MS;
+  let framingWanted = false;
+  const markFramingDirty = (): void => {
+    framingMeasureUntil = performance.now() + FRAMING_SETTLE_MS;
+  };
+  const isPanelNode = (n: Node): boolean => n instanceof Element && n.matches('aside.panel');
+  const panelWatch = new MutationObserver((records) => {
+    if (records.some((r) => [...r.addedNodes, ...r.removedNodes].some(isPanelNode)))
+      markFramingDirty();
+  });
+  panelWatch.observe(document.body, { childList: true, subtree: true });
+  lifecycle.add(() => panelWatch.disconnect());
+  lifecycle.on(window, 'resize', markFramingDirty);
   function applyPanelFraming(dt: number): void {
     const wanted = bridge.view === '3d' && !bridge.activeBlackHole && !bridge.deepSkyImmersed;
-    if ((framingTick++ & 7) === 0) {
+    if (wanted !== framingWanted) {
+      framingWanted = wanted;
+      markFramingDirty();
+    }
+    if (performance.now() < framingMeasureUntil) {
       const rects = wanted
         ? Array.from(document.querySelectorAll('aside.panel'), (el) => el.getBoundingClientRect())
         : [];
@@ -2628,6 +2675,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // Slice 6 — Sagittarius A* upgrades from a flat pin to the lensed black-hole
     // render when you select it (the S5 pin becomes an S6 destination).
     if (id === 'sagittarius-a-star' || id === 'cygnus-x-1') {
+      focusMember(mwMemberPosition(id));
       void enterBlackHole(id);
       return;
     }
@@ -2803,7 +2851,16 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   closeMwFn = closeMwPanel;
   mwDeepLinkFn = resolveGalaxyDeepLink;
   exitBlackHoleFn = exitBlackHole;
-  bhDeepLinkFn = (id: string) => void enterBlackHole(id);
+  // A black hole row (Q9): the camera takes the hole's pin first, then the lensing takeover opens
+  // from there, so leaving it lands on the pin. M87* has no pin of its own: it sits at the centre
+  // of the Virgo Cluster, so it selects that pin (camera, highlight, panel). Cygnus X-1 and
+  // Sagittarius A* have Milky Way pins. Gargantua has none: panel only. B3 turns the takeover
+  // into a button on the hole's panel; until then this chain is how a row gets there.
+  bhDeepLinkFn = (id: string) => {
+    if (id === 'm87-star' && inVirgo()) selectVirgo('virgo-cluster');
+    else if (inMilkyWay()) focusMember(mwMemberPosition(id));
+    void enterBlackHole(id);
+  };
   setBhCurvatureFn = (on: boolean) => bhScene?.setCurvature(on ? 1 : 0);
 
   // Nav shortcuts jump straight to a scale-shell. Climb OUT (cross-out) or back
@@ -4322,7 +4379,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
             smallObj.mesh.getWorldPosition(tmpWorldPos);
             ringR = (smallObj.mesh.geometry as THREE.SphereGeometry).parameters.radius * 3;
           }
-        } else if (bridge.panelState.sun) {
+        } else if (bridge.selectedSun) {
           tmpWorldPos.set(0, 0, 0);
           ringR =
             (sunMesh.geometry as THREE.SphereGeometry).parameters.radius * sunMesh.scale.x * 1.25;
@@ -4506,6 +4563,11 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // across navigations. Mirrors disposeSceneRenderer.
   lifecycle.add(() => renderer.forceContextLoss());
   lifecycle.add(() => el3d.remove());
+  lifecycle.add(() => {
+    delete window.__exploreCameraState;
+    delete window.__exploreBodyPosition;
+    delete window.__exploreBodyScreen;
+  });
 
   return {
     closeExoplanetFn,

@@ -94,6 +94,8 @@ declare global {
     };
     /** A solar-system body's world position: planet:<id>, small:<id>, moon:<parent>:<id>, belt:<id>. */
     __exploreBodyPosition?: (key: string) => number[] | null;
+    /** Where a body (or marker:<missionId>) is on screen, client pixels, or null when behind the camera. */
+    __exploreBodyScreen?: (key: string) => { x: number; y: number } | null;
     /** /earth, /moon, /mars surface scene (SurfaceScene, TourAnchors). */
     __surfaceSceneSelectSite?: (id: string) => void;
     __surfaceSceneFrameRoute?: (id: string) => void;

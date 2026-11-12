@@ -7,6 +7,7 @@
   camera sits inside the shells, where 3-D wireframe spheres read as an inside-out web.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { bvToRgb } from '$lib/universe/bv-to-rgb';
   import type { LightShell } from '$lib/universe/causality';
   import * as m from '$lib/paraglide/messages';
@@ -186,8 +187,11 @@
       <div class="cz-title">{m.explore_causality_title()}</div>
       <div class="cz-note">{m.explore_causality_note()}</div>
     </div>
-    <button type="button" class="cz-close" aria-label={m.explore_anon_dismiss()} onclick={onClose}
-      >×</button
+    <Chip
+      kind="action"
+      class="cz-close ui-chip--close"
+      aria-label={m.explore_anon_dismiss()}
+      onclick={onClose}>×</Chip
     >
   </div>
 {/if}
@@ -224,24 +228,12 @@
     max-width: min(90vw, 460px);
     text-align: center;
   }
-  .cz-close {
+  :global(.cz-close) {
     position: absolute;
     top: 74px;
     right: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(10, 14, 22, 0.6);
-    color: #eaf6ff;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    pointer-events: auto;
   }
-  .cz-close:hover {
-    background: rgba(30, 40, 55, 0.8);
-  }
+
   .cz-title {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;

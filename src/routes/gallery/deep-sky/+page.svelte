@@ -220,7 +220,12 @@
   <div class="lightbox" role="dialog" aria-modal="true" aria-label={current.title} tabindex="-1">
     <!-- Full-area backdrop; a real <button> so click-to-close is keyboard-accessible. -->
     <button class="lb-backdrop" onclick={close} aria-label={m.deepsky_close()}></button>
-    <button class="lb-close" onclick={close} aria-label={m.deepsky_close()}>×</button>
+    <Chip
+      kind="action"
+      class="lb-close ui-chip--close"
+      onclick={close}
+      aria-label={m.deepsky_close()}>×</Chip
+    >
     <button class="lb-nav lb-prev" onclick={() => step(-1)} aria-label={m.deepsky_prev()}>‹</button>
     <figure class="lb-figure">
       <img src="{assetOrigin}/images/deep-sky/{current.key}.jpg" alt={current.title} />
@@ -596,17 +601,11 @@
   .lb-sky:hover {
     filter: brightness(1.08);
   }
-  .lb-close {
+  :global(.lb-close) {
     position: fixed;
     top: 18px;
     right: 22px;
     z-index: 2;
-    font-size: 32px;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.8);
-    background: none;
-    border: none;
-    cursor: pointer;
   }
   .lb-nav {
     position: fixed;

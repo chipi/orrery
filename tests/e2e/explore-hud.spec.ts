@@ -754,28 +754,35 @@ test.describe('/explore REFERENCES overlay: bodies in the canvas, an aligned gri
       await openSizes(page);
       for (const width of [360, 393, 700, 1280]) {
         await page.setViewportSize({ width, height: 800 });
-        await page.waitForTimeout(300);
-        const bad = await page.evaluate(() =>
-          [...document.querySelectorAll<HTMLElement>('.sizes-name')]
-            .map((el) => {
-              const lines = new Set(
-                [
-                  ...(() => {
-                    const range = document.createRange();
-                    range.selectNodeContents(el);
-                    return range.getClientRects();
-                  })(),
-                ].map((r) => Math.round(r.top)),
-              );
-              return {
-                text: el.textContent,
-                lines: lines.size,
-                over: el.scrollWidth > el.clientWidth,
-              };
-            })
-            .filter((n) => n.lines > 1 || n.over),
-        );
-        expect(bad, `${loc} ${width}px: names on more than one line or overflowing`).toEqual([]);
+        // The grid re-lays out after a resize (4 columns below 620 px, 8 above): measure until it
+        // settles, and fail if a name still breaks or overflows after 5 s.
+        const measure = () =>
+          page.evaluate(() =>
+            [...document.querySelectorAll<HTMLElement>('.sizes-name')]
+              .map((el) => {
+                const lines = new Set(
+                  [
+                    ...(() => {
+                      const range = document.createRange();
+                      range.selectNodeContents(el);
+                      return range.getClientRects();
+                    })(),
+                  ].map((r) => Math.round(r.top)),
+                );
+                return {
+                  text: el.textContent,
+                  lines: lines.size,
+                  over: el.scrollWidth > el.clientWidth,
+                };
+              })
+              .filter((n) => n.lines > 1 || n.over),
+          );
+        await expect
+          .poll(measure, {
+            timeout: 5_000,
+            message: `${loc} ${width}px: names on more than one line or overflowing`,
+          })
+          .toEqual([]);
       }
     });
   }

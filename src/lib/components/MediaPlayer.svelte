@@ -17,6 +17,7 @@
     NOT also close the Panel (RFC-033 V-I; mirrors panorama-keys.ts).
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import * as m from '$lib/paraglide/messages';
   import { embedUrlFor, type VideoProvenanceEntry } from '$lib/video-provenance';
 
@@ -63,7 +64,7 @@
   });
 
   // Move focus into the dialog on open.
-  let closeBtn = $state<HTMLButtonElement | null>(null);
+  let closeBtn = $state<HTMLElement | undefined>();
   $effect(() => {
     if (video && closeBtn) closeBtn.focus();
   });
@@ -75,12 +76,12 @@
     ></button>
 
     <div class="vp-frame">
-      <button
-        bind:this={closeBtn}
-        type="button"
-        class="vp-close"
+      <Chip
+        kind="action"
+        bind:ref={closeBtn}
+        class="vp-close ui-chip--close"
         aria-label={m.video_close()}
-        onclick={onClose}>×</button
+        onclick={onClose}>×</Chip
       >
 
       {#if needsGate}
@@ -161,29 +162,13 @@
     flex-direction: column;
     gap: 10px;
   }
-  .vp-close {
+  :global(.vp-close) {
     position: absolute;
     top: -6px;
     right: -6px;
     z-index: 2;
-    width: 44px;
-    height: 44px;
-    background: rgba(20, 24, 36, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #fff;
-    font-size: 24px;
-    line-height: 1;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  .vp-close:hover,
-  .vp-close:focus-visible {
-    border-color: rgba(255, 255, 255, 0.5);
-    outline: none;
-  }
+
   .vp-media {
     position: relative;
     width: 100%;

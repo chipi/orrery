@@ -15,6 +15,7 @@
   panel, and are dropped where they would collide; the rings never are.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { onMount } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
@@ -454,11 +455,11 @@
           ? undefined
           : `${height - open.y + HIT_PX / 2}px`}
     >
-      <button
-        type="button"
-        class="pop-close"
+      <Chip
+        kind="action"
+        class="pop-close ui-chip--close"
         aria-label={m.drawer_close_panel_aria()}
-        onclick={() => (annotationUi.openId = null)}>×</button
+        onclick={() => (annotationUi.openId = null)}>×</Chip
       >
       {#if open.annotation.photo}
         {@const photo = open.annotation.photo}
@@ -814,16 +815,9 @@
   .pop a {
     color: var(--hl);
   }
-  .pop-close {
+  :global(.pop-close) {
     position: absolute;
     top: 0;
     right: 0;
-    width: 44px;
-    height: 44px;
-    border: 0;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 20px;
-    cursor: pointer;
   }
 </style>

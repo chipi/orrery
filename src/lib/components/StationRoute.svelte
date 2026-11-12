@@ -1230,25 +1230,25 @@
       aria-label={config.msg.listHeading()}
     >
       {#if viewMode === 'list'}
-        <button
-          type="button"
-          class="index-close"
+        <Chip
+          kind="action"
+          class="index-close ui-chip--close"
           onclick={toggleViewMode}
           aria-label={config.msg.indexClose()}
           data-testid="{config.id}-list-close"
         >
           ×
-        </button>
+        </Chip>
       {:else}
-        <button
-          type="button"
-          class="index-close"
+        <Chip
+          kind="action"
+          class="index-close ui-chip--close"
           onclick={() => (indexOpen = false)}
           aria-label={config.msg.indexClose()}
           data-testid="{config.id}-index-close"
         >
           ×
-        </button>
+        </Chip>
       {/if}
       <h2 class="list-heading">{config.msg.listHeading()}</h2>
       <ul class="module-list">
@@ -1344,15 +1344,15 @@
 
     {#if timelineOpen}
       <div class="timeline-overlay" data-testid="{config.id}-timeline">
-        <button
-          type="button"
-          class="timeline-close"
+        <Chip
+          kind="action"
+          class="timeline-close ui-chip--close"
           aria-label={m.timeline_close()}
           title={m.timeline_close()}
           onclick={() => (timelineOpen = false)}
         >
           ×
-        </button>
+        </Chip>
         <StationTimelineStrip
           modules={sortedModules}
           visitors={sortedVisitors}
@@ -1834,27 +1834,13 @@
       padding-top: 24px;
     }
   }
-  .index-close {
+  :global(.index-close) {
     position: absolute;
     top: 6px;
     right: 6px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 20px;
-    line-height: 1;
-    cursor: pointer;
     z-index: 1;
   }
-  .index-close:hover,
-  .index-close:focus-visible {
-    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
-    color: var(--color-state);
-    outline: none;
-  }
+
   .list-heading {
     font-family: var(--font-display);
     font-size: 18px;
@@ -1960,35 +1946,13 @@
   /* Close-button on the timeline overlay (mirrors the module-panel
      close affordance). Sits in the top-right of the strip so users
      can dismiss without hunting for the TIMELINE toggle. */
-  .timeline-close {
+  :global(.timeline-close) {
     position: absolute;
     top: 4px;
     right: 8px;
     z-index: 6;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 50%;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
   }
-  .timeline-close:hover,
-  .timeline-close:focus-visible {
-    background: rgba(0, 0, 0, 0.75);
-    border-color: rgba(255, 255, 255, 0.4);
-    color: #fff;
-    outline: none;
-  }
+
   .ctrl-row {
     display: flex;
     flex-wrap: wrap;

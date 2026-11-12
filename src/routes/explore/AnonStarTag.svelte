@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { anonColorLabel } from '$lib/explore/format';
   import * as m from '$lib/paraglide/messages';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
@@ -14,8 +15,11 @@
     })} · {m.explore_mag_value({ value: star.mag.toFixed(1) })} · {anonColorLabel(star.colorName)} (~{star.kelvin.toLocaleString()}
     K)
   </span>
-  <button type="button" class="anon-close" aria-label={m.explore_anon_dismiss()} onclick={onDismiss}
-    >×</button
+  <Chip
+    kind="action"
+    class="anon-close ui-chip--close"
+    aria-label={m.explore_anon_dismiss()}
+    onclick={onDismiss}>×</Chip
   >
 </div>
 
@@ -51,18 +55,7 @@
     color: #eaf6ff;
     min-width: 0;
   }
-  .anon-close {
+  :global(.anon-close) {
     flex: 0 0 auto;
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    padding: 2px 4px;
-    min-height: 28px;
-  }
-  .anon-close:hover {
-    color: #fff;
   }
 </style>

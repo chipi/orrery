@@ -78,3 +78,5 @@ collapse carets (`.collapse-btn`) and the tier card caret (`.tcc-toggle`), a sit
 opening ones), the gallery wave tiles (`.wave-tile`, cards), the illustrated site map image button (`.site-illustration .open`), the lightbox zoom buttons, toast
 dismiss buttons and the panorama caption reopen. `tests/e2e/chip.spec.ts` names each one in its
 sweep allow-list; anything new outside the list fails the sweep.
+
+**Closes are not furniture (operator, 2026-11-12).** Every control that closes or dismisses something is the one close chip (`<Chip class="ui-chip--close">`, UXD-018 "header sizes"): the panel, the INDEX, the surface index, the station index and timeline, the lightbox, the video player, the settings sheet, the REFERENCES overlay, the why popover, the phone drawer, the anonymous-star tag, the deep-sky gallery viewer, the language suggestion, the site annotation pop-up, the mass–period, HR and causality overlays, and the audio tour's resume dismiss and stop. They left the allow-list. Not closes, so unchanged: the lab's remove-cell ×, the debug panel's close (a developer tool), /fly's recovery "Close" (a text CTA in the scene).

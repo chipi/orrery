@@ -14,6 +14,7 @@
   MobileControlsDrawer). Position above the route's primary bar via --mcd-bottom.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { viewport } from '$lib/viewport.svelte';
@@ -159,14 +160,14 @@
     <!-- --panel-left (landscape only) centres this above the open tab; portrait
          leaves it unset and the panel stays a full-width flex child. -->
     <div class="mdg-panel" style:--panel-left={panelLeft != null ? `${panelLeft}px` : null}>
-      <button
-        type="button"
-        class="mdg-close"
+      <Chip
+        kind="action"
+        class="mdg-close ui-chip--close"
         aria-label={m.panel_close()}
         onclick={() => (openId = null)}
       >
         ×
-      </button>
+      </Chip>
       <!-- swipe-down-to-close is a supplementary gesture; Esc + tap-dim are the
            accessible closes, so the body needs no interactive role. -->
       <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -232,25 +233,11 @@
       width: 100%;
     }
     /* Discoverable close on the expanded panel (tap-away + Esc still work). */
-    .mdg-close {
+    :global(.mdg-close) {
       position: absolute;
       top: 6px;
       right: 6px;
       z-index: 2;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(15, 18, 35, 0.85);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 20px;
-      line-height: 1;
-      cursor: pointer;
     }
 
     .mdg-body {

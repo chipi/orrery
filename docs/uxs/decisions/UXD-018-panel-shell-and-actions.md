@@ -72,7 +72,7 @@ gone on touch too.
 ## Amendment 2026-11-12 — header sizes (operator, from lander screenshots)
 
 - **Why**: the × read tiny beside SHARE, the status chip (FLOWN, ACTIVE) was 2 px bigger than the agency badge, and the eyebrow sat 4 px above the actions' centre line.
-- **Decision**: the agency badge and the status chip have the same outer size (the badge takes the status chip's 1 px border, in its own colour); the close chip is a square as tall as Share (30 px fine pointer, 44 px touch) with the × drawn at 18 / 22 px; badges, status, Share and × sit on one centre line. The close chip is one style everywhere a small chip closes something: the panel, the INDEX and the surface index (`.ui-chip--close` in `chip.css`). Dialog and scene closes (lightbox, video player, settings sheet, sizes overlay, why popover, drawer) keep their own look per UXD-014 unless the operator decides otherwise.
+- **Decision**: the agency badge and the status chip have the same outer size (the badge takes the status chip's 1 px border, in its own colour); the close chip is a square as tall as Share (30 px fine pointer, 44 px touch) with the × drawn at 18 / 22 px; badges, status, Share and × sit on one centre line. The close chip is one style everywhere a small chip closes something: the panel, the INDEX and the surface index (`.ui-chip--close` in `chip.css`). The operator then extended it to every close (2026-11-12): dialogs, overlays, drawers and banners use the same chip (list in UXD-014); each keeps only its own placement.
 - **Verification**: `tests/e2e/panel-shell.spec.ts` ("header sizes"): badge and status the same height, × square and as tall as Share, all on one centre line (±1 px), on a mission and a lander panel.
 
 ## Verification

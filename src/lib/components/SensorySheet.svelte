@@ -9,6 +9,7 @@
   Dismiss on Escape, backdrop, or the close button — focus restored to the opener.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { tick } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { sensory } from '$lib/sensory/state.svelte';
@@ -133,11 +134,11 @@
   >
     <header class="sheet-head">
       <h2 id="sensory-sheet-title">{m.settings_title()}</h2>
-      <button
-        type="button"
-        class="sheet-close"
+      <Chip
+        kind="action"
+        class="sheet-close ui-chip--close"
         aria-label={m.sensory_sheet_close_aria()}
-        onclick={onClose}>×</button
+        onclick={onClose}>×</Chip
       >
     </header>
 
@@ -354,25 +355,6 @@
     font-size: 15px;
     letter-spacing: 1px;
     color: var(--color-text);
-  }
-  .sheet-close {
-    width: 44px;
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    border-radius: 6px;
-  }
-  .sheet-close:hover,
-  .sheet-close:focus-visible {
-    color: rgba(255, 255, 255, 0.95);
-    outline: none;
   }
 
   /* Section grouping — a labelled subsection (Sound / Haptics / Tilt / Graphics). */

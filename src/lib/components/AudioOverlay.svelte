@@ -949,14 +949,14 @@
           <button type="button" class="resume-btn resume-accept" onclick={acceptResume}>
             {m.audio_resume_button()}
           </button>
-          <button
-            type="button"
-            class="resume-btn resume-dismiss"
+          <Chip
+            kind="action"
+            class="resume-btn resume-dismiss ui-chip--close"
             aria-label={m.audio_resume_dismiss_aria()}
             onclick={dismissResume}
           >
             ×
-          </button>
+          </Chip>
         </span>
       </section>
     {/if}
@@ -995,14 +995,14 @@
           ↑
         </button>
         {#if audio.tourActive}
-          <button
-            type="button"
-            class="compact-btn compact-stop"
+          <Chip
+            kind="action"
+            class="compact-btn compact-stop ui-chip--close"
             aria-label={m.audio_compact_stop_aria()}
             onclick={() => audio.stopTour()}
           >
             ×
-          </button>
+          </Chip>
         {/if}
       </section>
     {/if}
@@ -1965,9 +1965,6 @@
     color: #c9aa6f;
     outline: none;
   }
-  .compact-btn.compact-stop {
-    border-color: rgba(255, 255, 255, 0.25);
-  }
 
   /* Floating banner stack — bottom-center of the viewport. Always
      above other UI so the tour overlays stay legible in expanded /
@@ -2050,13 +2047,7 @@
     padding: 4px 10px;
     cursor: pointer;
   }
-  .resume-btn.resume-dismiss {
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.6);
-    padding: 4px 8px;
-    font-size: 14px;
-    line-height: 1;
-  }
+
   .resume-btn:hover,
   .resume-btn:focus-visible {
     border-color: rgba(201, 170, 111, 0.8);

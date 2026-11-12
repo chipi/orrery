@@ -6085,43 +6085,46 @@ sample      ${debugInfo.projectedPxSample}`}
        buttons sometimes hide them. Put them in upper right corner
        instead"). Esc remains the keyboard shortcut for both modes. -->
   {#if panoramaActive && !panelOpen}
-    <button
-      type="button"
-      class="surface-floating-exit"
-      onclick={() => exitPanorama()}
-      data-testid="panorama-floating-exit"
-      title={m.surface_exit_panorama_title()}
-    >
-      <span class="x mono" aria-hidden="true">✕</span>
-      <span>{m.surface_exit_panorama()}</span>
-    </button>
+    <div class="surface-floating-exit">
+      <Chip
+        kind="action"
+        onclick={() => exitPanorama()}
+        data-testid="panorama-floating-exit"
+        title={m.surface_exit_panorama_title()}
+      >
+        {#snippet icon()}✕{/snippet}
+        {m.surface_exit_panorama()}
+      </Chip>
+    </div>
   {/if}
   {#if flatPatchActive && !panoramaActive && !panelOpen}
-    <button
-      type="button"
-      class="surface-floating-exit"
-      onclick={() => closeFlatPatch()}
-      data-testid="zoom-floating-exit"
-      title={m.surface_exit_zoom_title()}
-    >
-      <span class="x mono" aria-hidden="true">✕</span>
-      <span>{m.surface_exit_zoom()}</span>
-    </button>
+    <div class="surface-floating-exit">
+      <Chip
+        kind="action"
+        onclick={() => closeFlatPatch()}
+        data-testid="zoom-floating-exit"
+        title={m.surface_exit_zoom_title()}
+      >
+        {#snippet icon()}✕{/snippet}
+        {m.surface_exit_zoom()}
+      </Chip>
+    </div>
   {/if}
   <!-- #380 — route-view auto-closes the panel on mobile (so the whole route is
        visible), so surface an exit control outside the panel too. Esc works on
        desktop; the in-panel toggle covers the panel-open case. -->
   {#if routeViewActive && !panoramaActive && !flatPatchActive && !panelOpen}
-    <button
-      type="button"
-      class="surface-floating-exit"
-      onclick={() => exitRouteView()}
-      data-testid="route-floating-exit"
-      title={m.surface_exit_route_title()}
-    >
-      <span class="x mono" aria-hidden="true">✕</span>
-      <span>{m.surface_exit_route()}</span>
-    </button>
+    <div class="surface-floating-exit">
+      <Chip
+        kind="action"
+        onclick={() => exitRouteView()}
+        data-testid="route-floating-exit"
+        title={m.surface_exit_route_title()}
+      >
+        {#snippet icon()}✕{/snippet}
+        {m.surface_exit_route()}
+      </Chip>
+    </div>
   {/if}
 
   <!-- Auto-tour guided mode (PRD-022 / ADR-074, #286 Phase 3C).
@@ -7752,28 +7755,7 @@ sample      ${debugInfo.projectedPxSample}`}
     position: fixed;
     top: calc(var(--nav-height, 64px) + 18px);
     right: 24px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--color-text-on-dark, #ffffff);
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 12px;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
     z-index: 60;
-  }
-  .surface-floating-exit:hover,
-  .surface-floating-exit:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    outline: none;
-  }
-  .surface-floating-exit .x {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 11px;
   }
 
   /* Mobile accordion: nations tab content layout. */

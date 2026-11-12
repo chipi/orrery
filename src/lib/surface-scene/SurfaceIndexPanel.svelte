@@ -39,8 +39,18 @@
     onSelect: (id: string) => void;
     /** Desktop passes a close; mobile omits it (the drawer's own × handles it). */
     onClose?: () => void;
+    /** False while the host hides the panel; re-runs roving when it opens. */
+    open?: boolean;
   }
-  let { items, entityLinks = [], hub = '', selectedId = null, onSelect, onClose }: Props = $props();
+  let {
+    items,
+    entityLinks = [],
+    hub = '',
+    selectedId = null,
+    onSelect,
+    onClose,
+    open = true,
+  }: Props = $props();
   const pageIds = $derived(new Set(entityLinks.map((l) => l.id)));
   const pageHref = (id: string) => localHref(`/${hub}/${id}`);
 
@@ -166,6 +176,7 @@
       orientation: 'vertical',
       wrap: true,
       itemSelector: 'button.sidx-row, a.sidx-page',
+      active: open,
     }}
   >
     {#each filtered as item (item.id)}
@@ -297,12 +308,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 30px;
+    min-width: 44px;
+    min-height: 44px;
     border: 1px solid transparent;
     border-radius: 6px;
     color: var(--color-text-dim);
     text-decoration: none;
     font-size: 14px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .sidx-page {
+      min-width: 30px;
+      min-height: 0;
+    }
   }
   .sidx-page:hover,
   .sidx-page:focus-visible {

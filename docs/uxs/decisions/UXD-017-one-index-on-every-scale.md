@@ -7,6 +7,8 @@
   (`docs/wip/2026-11-12-scale-index-brief.md`, "Decisions (operator, 2026-11-12)")
 - **Answers**: the brief's §5 questions 1 to 13; carries C6 of the UX feedback plan (kind filters, meta
   line, planet colour dots) for the solar system
+- **Superseded in part by**: [UXD-019](UXD-019-select-equals-focus.md) — a row now also takes the camera, and
+  a member of an outer scale is a link (`?context=&pick=`); the rest of this decision stands
 - **Changes**: `src/lib/components/ScaleIndex.svelte` (new; replaces `StarIndex.svelte` and
   `ExploreBodyIndex.svelte`), `src/lib/styles/index-panel.css` (new), `src/lib/explore/scale-index.ts`
   (new, with its test), `src/lib/server/entity-index.ts` (`getScaleIndexRows`),
@@ -31,8 +33,9 @@ One component, `ScaleIndex`, on all eight scales: one handle (`scale-index-toggl
 and a `↗` link where the object has an entity page.
 
 - **Rows** are every selectable object of the scene, whether or not it has a page (344 rows, 118 with a
-  page). A row without a page is a button that does what a canvas click does: no camera move and no new
-  URL parameter. When a page ships (deep sky, Local Group headliners, Milky Way pins) it is one `href` on
+  page). A row without a page is a button that does what a canvas click does (first written "no camera
+  move and no new URL parameter"; both were reversed by [UXD-019](UXD-019-select-equals-focus.md): a
+  click and a row both take the camera, and an outer-scale member has `?context=&pick=`). When a page ships (deep sky, Local Group headliners, Milky Way pins) it is one `href` on
   the row.
 - **Black holes** sit in the INDEX of the scale they belong to by distance: Sagittarius A* and Cygnus X-1
   in the Milky Way, M87* in Virgo, Gargantua (fiction, dashed and muted, `bh_fiction_badge`) in a
@@ -57,5 +60,5 @@ and a `↗` link where the object has an entity page.
 
 The next page type is a one-line addition per row. Each scale's list is the keyboard way into its scene.
 The same object has one row per scale it appears in (`lmc`, `smc`, `m31`/`andromeda`, seven globulars);
-its future page needs one canonical id. Not covered here: member deep links (`?lg=` and the like), a
-camera move on select, the BodyScene list.
+its future page needs one canonical id. Not covered here: the BodyScene list. Member deep links and the camera move on select
+were deferred here and decided in [UXD-019](UXD-019-select-equals-focus.md).

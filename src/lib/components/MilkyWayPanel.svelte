@@ -16,8 +16,10 @@
     learnHref: string;
     open: boolean;
     onClose: () => void;
+    /** Another panel is stacked on this one (a black hole opened from its pin). */
+    covered?: boolean;
   };
-  let { object, learnHref, open, onClose }: Props = $props();
+  let { object, learnHref, open, onClose, covered = false }: Props = $props();
 
   let kindLabel = $derived.by(() => {
     switch (object?.kind) {
@@ -51,7 +53,7 @@
   const fmt = (n: number): string => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
 </script>
 
-<Panel {open} {onClose} {title} mobileSheet="partial">
+<Panel {open} {onClose} {covered} {title} mobileSheet="partial">
   {#if object}
     <div class="head">
       <div class="kind">{kindLabel}</div>

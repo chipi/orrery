@@ -2225,21 +2225,39 @@
   learnHref={mwLearnHref}
   open={mwPanelOpen}
   onClose={() => closeMwFn?.()}
+  covered={!!activeBlackHole}
 />
 
-<LocalGroupPanel member={selectedLgMember} open={lgPanelOpen} onClose={() => closeLgFn?.()} />
+<LocalGroupPanel
+  member={selectedLgMember}
+  open={lgPanelOpen}
+  onClose={() => closeLgFn?.()}
+  covered={!!activeBlackHole}
+/>
 
-<LocalSheetPanel member={selectedLsMember} open={lsPanelOpen} onClose={() => closeLsFn?.()} />
-<VirgoPanel member={selectedVirgoMember} open={virgoPanelOpen} onClose={() => closeVirgoFn?.()} />
+<LocalSheetPanel
+  member={selectedLsMember}
+  open={lsPanelOpen}
+  onClose={() => closeLsFn?.()}
+  covered={!!activeBlackHole}
+/>
+<VirgoPanel
+  member={selectedVirgoMember}
+  open={virgoPanelOpen}
+  onClose={() => closeVirgoFn?.()}
+  covered={!!activeBlackHole}
+/>
 <CosmicWebPanel
   member={selectedCosmicWebMember}
   open={cosmicWebPanelOpen}
   onClose={() => closeCosmicWebFn?.()}
+  covered={!!activeBlackHole}
 />
 <LaniakeaPanel
   member={selectedLaniakeaMember}
   open={laniakeaPanelOpen}
   onClose={() => closeLaniakeaFn?.()}
+  covered={!!activeBlackHole}
 />
 
 <BlackHolePanel

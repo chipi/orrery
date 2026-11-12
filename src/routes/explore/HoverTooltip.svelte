@@ -72,7 +72,7 @@
     min-width: 170px;
     pointer-events: none;
     background: rgba(8, 10, 22, 0.92);
-    border: 1px solid rgba(68, 102, 255, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 4px;
     padding: 8px 12px;
     font-family: var(--font-mono, 'Space Mono', monospace);

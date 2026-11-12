@@ -119,7 +119,7 @@
     max-width: 260px;
   }
   .scale-strip.neighborhood {
-    border-color: rgba(78, 205, 196, 0.35);
+    border-color: var(--color-accent-edge);
   }
   /* Schematic shells (Milky Way … Cosmic Web): the honesty note + optional
      Learn-more link, in the same box. Slate-accented to read as "not to scale". */
@@ -159,7 +159,7 @@
   }
   .scale-ladder .rung.active {
     color: #04121a;
-    background: #4ecdc4;
+    background: var(--color-accent);
     font-weight: 700;
   }
   .scale-readout {
@@ -174,7 +174,7 @@
   }
   .scale-readout .companion {
     font-size: 11px;
-    color: #9fe8e2;
+    color: var(--color-state);
   }
   .scale-light {
     font-size: var(--size-label);
@@ -213,7 +213,7 @@
     margin-left: 10px;
     padding-left: 10px;
     border-left: 1px solid rgba(255, 255, 255, 0.22);
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     pointer-events: auto;
     white-space: nowrap;

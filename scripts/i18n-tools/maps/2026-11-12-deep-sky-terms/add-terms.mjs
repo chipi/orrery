@@ -2714,7 +2714,7 @@ const C = {
     'Змија',
     'Schlange',
     'Serpent',
-    'Serpiente',
+    'Serpens',
     'Serpente',
     'Slang',
     'Serpente',

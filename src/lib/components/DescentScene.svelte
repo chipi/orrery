@@ -532,7 +532,7 @@
   .sub {
     font-size: 11px;
     letter-spacing: 2px;
-    color: #7fd4ff;
+    color: var(--color-state);
     margin-top: 3px;
     display: inline-flex;
     align-items: center;
@@ -542,8 +542,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #7fd4ff;
-    box-shadow: 0 0 8px rgba(127, 212, 255, 0.9);
+    background: var(--color-state);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-state) 90%, transparent);
     animation: live-pulse 1.6s ease-in-out infinite;
   }
   @keyframes live-pulse {
@@ -571,7 +571,7 @@
   .status {
     font-size: 11px;
     letter-spacing: 3px;
-    color: #7fd4ff;
+    color: var(--color-state);
   }
   .status.hot {
     color: #ffcf6a;
@@ -596,9 +596,9 @@
     padding: 2px 8px;
   }
   .lamp.on {
-    color: #7fd4ff;
-    border-color: rgba(127, 212, 255, 0.7);
-    box-shadow: 0 0 12px rgba(127, 212, 255, 0.3);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-state) 70%, transparent);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-state) 30%, transparent);
   }
   /* Plasma comms-blackout — hotter, pulsing amber-red. */
   .lamp.blackout.on {
@@ -617,7 +617,7 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    border: 1px solid rgba(127, 212, 255, 0.4);
+    border: 1px solid color-mix(in srgb, var(--color-state) 40%, transparent);
     pointer-events: none;
     z-index: 5;
   }
@@ -652,13 +652,13 @@
     right: 22px;
     width: 250px;
     padding: 2px 14px 2px 0;
-    border-right: 1px solid rgba(127, 212, 255, 0.35);
+    border-right: 1px solid color-mix(in srgb, var(--color-state) 35%, transparent);
     text-align: right;
   }
   .dossier-title {
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: #7fd4ff;
+    color: var(--color-state);
     margin: 0 0 8px;
     display: flex;
     justify-content: space-between;
@@ -667,8 +667,8 @@
   .rep {
     font-size: var(--size-label);
     letter-spacing: 1px;
-    color: #7fd4ff;
-    border: 1px solid rgba(127, 212, 255, 0.4);
+    color: var(--color-state);
+    border: 1px solid color-mix(in srgb, var(--color-state) 40%, transparent);
     border-radius: 3px;
     padding: 1px 4px;
   }

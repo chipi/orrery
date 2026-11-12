@@ -6,6 +6,7 @@
   THIS system sits among all the others — and next to Earth, Jupiter, Saturn.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import {
     mpX,
     mpY,
@@ -182,8 +183,11 @@
       <div class="mp-title">{m.explore_mp_title()}</div>
       <div class="mp-note">{m.explore_mp_note()}</div>
     </div>
-    <button type="button" class="mp-close" aria-label={m.explore_anon_dismiss()} onclick={onClose}
-      >×</button
+    <Chip
+      kind="action"
+      class="mp-close ui-chip--close"
+      aria-label={m.explore_anon_dismiss()}
+      onclick={onClose}>×</Chip
     >
   </div>
 {/if}
@@ -212,24 +216,12 @@
     height: 100%;
     display: block;
   }
-  .mp-close {
+  :global(.mp-close) {
     position: absolute;
     top: 74px;
     right: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(10, 14, 22, 0.6);
-    color: #eaf6ff;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    pointer-events: auto;
   }
-  .mp-close:hover {
-    background: rgba(30, 40, 55, 0.8);
-  }
+
   .mp-head {
     position: absolute;
     top: 74px;

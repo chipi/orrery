@@ -25,6 +25,7 @@
       into /science for users who want the full chapter.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { onDestroy, onMount } from 'svelte';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages.js';
@@ -98,8 +99,11 @@
     >
       <div class="header">
         <span class="eyebrow">{m.why_popover_eyebrow()}</span>
-        <button type="button" class="close" aria-label={m.why_popover_aria_close()} onclick={close}
-          >×</button
+        <Chip
+          kind="action"
+          class="close ui-chip--close"
+          aria-label={m.why_popover_aria_close()}
+          onclick={close}>×</Chip
         >
       </div>
       <p class="title">{title}</p>
@@ -176,20 +180,7 @@
     letter-spacing: 2px;
     color: #ffc850;
   }
-  .close {
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
-    line-height: 1;
-    padding: 0 4px;
-    cursor: pointer;
-  }
-  .close:hover,
-  .close:focus-visible {
-    color: #fff;
-    outline: none;
-  }
+
   .title {
     font-family: var(--font-display);
     font-size: 13px;

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import { distanceWithUnit, planetName } from '$lib/explore/format';
   import { PLANET_SIZES, planetDiameterKm } from '$lib/explore/planet-sizes';
@@ -22,8 +23,11 @@
 <button type="button" class="sizes-backdrop" aria-label={m.explore_sizes_close()} onclick={onClose}
 ></button>
 <div class="sizes-card" role="dialog" aria-modal="true" aria-label={m.explore_sizes_toggle()}>
-  <button type="button" class="sizes-close" aria-label={m.explore_sizes_close()} onclick={onClose}
-    >×</button
+  <Chip
+    kind="action"
+    class="sizes-close ui-chip--close"
+    aria-label={m.explore_sizes_close()}
+    onclick={onClose}>×</Chip
   >
   <h2 class="sizes-heading">{m.sizes_header()}</h2>
   <div class="sizes-canvas-wrap">
@@ -83,26 +87,12 @@
     overflow-y: auto;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
   }
-  .sizes-close {
+  :global(.sizes-close) {
     position: absolute;
     top: 8px;
     right: 10px;
-    background: transparent;
-    border: 0;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
   }
-  .sizes-close:hover,
-  .sizes-close:focus-visible {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.06);
-    outline: none;
-  }
+
   .sizes-heading {
     margin: 0 36px 10px 0;
     font-family: var(--font-mono, 'Space Mono', monospace);

@@ -433,7 +433,7 @@ The searchable, keyboard-reachable list of every selectable object of the scale 
 | Part | Look |
 |---|---|
 | Search | `type="search"`, 12px, 6px radius; focus draws the `--color-accent-strong` edge |
-| Close chip | `<Chip kind="action" class="ui-chip--close">` with `×` beside the search: a 30px / 44px square, the same close chip as the panel header of §5.3, in the header outside the scrolling list, the same close control as the panel bar of §5.3 (B1 brief O6, [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.md)) |
+| Close chip | `<Chip kind="action" class="ui-chip--close">` with `×` beside the search: a 30px / 44px square, the same close chip as the panel header of §5.3 and every dialog, overlay, drawer and banner close (UXD-014), in the header outside the scrolling list, the same close control as the panel bar of §5.3 (B1 brief O6, [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.md)) |
 | Kind chips | `ChipGroup` radiogroup of `<Chip kind="choice">`: All, then the scale's kinds, plus Notable objects where the data has headliners; at most five besides All; no distance or size filter. A chip that filters on a badge carries its glyph (⊕ ★ ◈ ●). A chip with no matching row is not shown |
 | Count | `shown / total`, `--size-label`, `--color-text-dim` |
 | Section label | Space Mono `--size-label`, uppercase, 1.5px spacing, `--color-text-dim`, top rule; absent at the head of an unsectioned list |

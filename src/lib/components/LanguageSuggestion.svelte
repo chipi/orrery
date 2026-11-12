@@ -8,6 +8,7 @@
 </script>
 
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import { page } from '$app/state';
@@ -104,11 +105,11 @@
     >
       <span class="native">{suggested.nativeName}</span>
     </button>
-    <button
-      type="button"
-      class="corner dismiss"
+    <Chip
+      kind="action"
+      class="corner dismiss ui-chip--close"
       aria-label={m.explore_anon_dismiss()}
-      onclick={dismiss}>✕</button
+      onclick={dismiss}>×</Chip
     >
   </div>
 {/if}
@@ -198,13 +199,11 @@
     opacity: 0.8;
     pointer-events: none;
   }
-  .dismiss {
+  /* The close chip (UXD-018 header sizes), in the globe's mirrored corner. */
+  .lang-suggest :global(.dismiss) {
+    position: absolute;
+    top: 50%;
     right: 4px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.55);
-    transition: color 0.15s ease;
-  }
-  .dismiss:hover {
-    color: var(--color-text);
+    transform: translateY(-50%);
   }
 </style>

@@ -84,7 +84,7 @@ test.describe('/explore — Arecibo message at M13 (#410)', () => {
     const baumgardt = page.getByRole('link', { name: 'Baumgardt & Vasiliev 2021' }).first();
     await expect(baumgardt).toHaveAttribute(
       'href',
-      /HolgerBaumgardt\/globular\/fits\/ngc5272\.html$/,
+      /HolgerBaumgardt\/globular\/fits\/ngc6205\.html$/, // M13 = NGC 6205
     );
     const harris = page.getByRole('link', { name: 'Harris 1996 (2010 edition)' }).first();
     await expect(harris).toHaveAttribute('href', /mcmaster\.ca\/~harris\/mwgc\.dat$/);

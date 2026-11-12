@@ -29,6 +29,7 @@
   import type { PanoramaAnnotation } from '$types/surface-site';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import * as m from '$lib/paraglide/messages';
+  import Chip from './Chip.svelte';
 
   interface Props {
     active: boolean;
@@ -141,50 +142,38 @@
 {#if active && annotations.length >= 2}
   <div class="auto-tour" data-testid="panorama-auto-tour">
     {#if !playing}
-      <button
-        type="button"
-        class="play-btn"
+      <Chip
+        kind="action"
         data-audio-stage="surface-panorama-tour-play"
         aria-label={reducedMotion ? m.panorama_tour_step_aria() : m.panorama_tour_play_aria()}
         onclick={start}
       >
-        <span aria-hidden="true">▶</span>
+        {#snippet icon()}▶{/snippet}
         {reducedMotion ? m.panorama_tour_step_label() : m.panorama_tour_play_label()}
-      </button>
+      </Chip>
     {:else}
       <div class="tour-controls" role="group" aria-label={m.panorama_tour_controls_aria()}>
         {#if reducedMotion}
-          <button
-            type="button"
-            class="ctl-btn"
+          <Chip
+            kind="action"
             aria-label={m.panorama_tour_prev_aria()}
             disabled={cursor === 0}
             onclick={manualPrev}
           >
-            ‹
-          </button>
+            {#snippet icon()}‹{/snippet}
+          </Chip>
         {/if}
         <span class="counter mono" aria-live="polite">
           {cursor + 1} / {annotations.length} — {annotations[cursor]?.label ?? ''}
         </span>
         {#if reducedMotion}
-          <button
-            type="button"
-            class="ctl-btn"
-            aria-label={m.panorama_tour_next_aria()}
-            onclick={manualNext}
-          >
-            ›
-          </button>
+          <Chip kind="action" aria-label={m.panorama_tour_next_aria()} onclick={manualNext}>
+            {#snippet icon()}›{/snippet}
+          </Chip>
         {/if}
-        <button
-          type="button"
-          class="ctl-btn"
-          aria-label={m.panorama_tour_stop_aria()}
-          onclick={stop}
-        >
-          <span aria-hidden="true">■</span>
-        </button>
+        <Chip kind="action" aria-label={m.panorama_tour_stop_aria()} onclick={stop}>
+          {#snippet icon()}■{/snippet}
+        </Chip>
       </div>
     {/if}
   </div>
@@ -201,35 +190,6 @@
        the auto-tour an offset so they don't overlap. (Cycler counter
        is centered; we sit ~52 px below it.) */
     margin-top: 36px;
-  }
-
-  .play-btn,
-  .ctl-btn {
-    background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--color-text-on-dark, #ffffff);
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    font-size: 12px;
-    padding: 6px 12px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .play-btn:hover,
-  .play-btn:focus-visible,
-  .ctl-btn:hover:not(:disabled),
-  .ctl-btn:focus-visible:not(:disabled) {
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-  .ctl-btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-  .ctl-btn {
-    padding: 6px 10px;
-    font-size: 14px;
-    line-height: 1;
   }
 
   .tour-controls {

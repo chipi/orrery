@@ -107,6 +107,8 @@
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { canonicalId } from '$lib/data/retired-ids';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
@@ -5400,6 +5402,7 @@
   bind:this={sceneRoot}
   class="surface-scene"
   style:--body-tint={config.bodyTintCss}
+  style:--chip-tint={config.planet === 'earth' ? undefined : config.bodyTintCss}
   style:--mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
   style:--index-handle-top={indexHandleTop != null ? `${indexHandleTop}px` : undefined}
   style:--card-bottom={legendH ? `${48 + legendH + 8 + locateReservePx}px` : undefined}
@@ -5696,20 +5699,19 @@
   {#snippet mobileNationsContent(close: () => void)}
     <div class="nations-drawer" role="group" aria-label={m.moon_legend_nation_aria()}>
       {#each Object.entries(legendPalette) as [nation, color] (nation)}
-        <button
-          type="button"
-          class="legend-item"
-          class:legend-item--off={!nationEnabled(nation)}
-          aria-pressed={nationEnabled(nation)}
+        <Chip
+          kind="toggle"
+          dot
+          tone={color}
+          active={nationEnabled(nation)}
           data-testid="legend-nation-{nation}"
           onclick={() => {
             toggleNation(nation);
             close();
           }}
         >
-          <span class="legend-dot" style:background={color}></span>
           {countryLabel(nation)}
-        </button>
+        </Chip>
       {/each}
     </div>
   {/snippet}
@@ -5741,24 +5743,16 @@
         />
       {/if}
       {#if view === '3d'}
-        <button
-          type="button"
-          class="toggle"
-          data-testid="surface-reset-view-mobile"
-          onclick={() => resetCamera()}
-        >
-          {m.ui_reset_view()}
-        </button>
-        <button
-          type="button"
-          class="toggle"
+        <ResetViewButton data-testid="surface-reset-view-mobile" onclick={() => resetCamera()} />
+        <Chip
+          kind="toggle"
+          active={!autoSpin}
           data-testid="surface-spin-toggle-mobile"
-          aria-pressed={!autoSpin}
           title={m.iss_btn_spin_title()}
           onclick={() => (autoSpin = !autoSpin)}
         >
           {m.iss_btn_spin()}
-        </button>
+        </Chip>
       {/if}
       {#if arType}
         <EnterArButton onEnter={() => void launchArScene(arType)} />
@@ -6176,17 +6170,16 @@ sample      ${debugInfo.projectedPxSample}`}
       aria-label={m.moon_legend_nation_aria()}
     >
       {#each Object.entries(legendPalette) as [nation, color] (nation)}
-        <button
-          type="button"
-          class="legend-item"
-          class:legend-item--off={!nationEnabled(nation)}
-          aria-pressed={nationEnabled(nation)}
+        <Chip
+          kind="toggle"
+          dot
+          tone={color}
+          active={nationEnabled(nation)}
           data-testid="legend-nation-{nation}"
           onclick={() => toggleNation(nation)}
         >
-          <span class="legend-dot" style:background={color}></span>
           {countryLabel(nation)}
-        </button>
+        </Chip>
       {/each}
     </div>
   {/if}
@@ -6299,41 +6292,37 @@ sample      ${debugInfo.projectedPxSample}`}
           <!-- #380 — frame the whole rover route (line + tiles + regional). -->
           {#if (traverses[selected.id]?.points?.length ?? 0) >= 2}
             {#if routeViewActive}
-              <button
-                type="button"
-                class="zoom-to-detail-button zoom-to-detail-button--exit"
+              <Chip
+                kind="action"
                 data-testid="exit-route-view"
                 onclick={() => exitRouteView()}
                 title={m.surface_exit_route_title()}
               >
-                <span>{m.surface_exit_route()}</span>
-              </button>
+                {m.surface_exit_route()}
+              </Chip>
             {:else}
-              <button
-                type="button"
-                class="zoom-to-detail-button"
+              <Chip
+                kind="action"
                 data-testid="view-route"
                 onclick={() => selected && enterRouteView(selected)}
               >
-                <span>{m.surface_view_route()}</span>
-              </button>
+                {m.surface_view_route()}
+              </Chip>
             {/if}
           {/if}
           {#if selected.hotspot_tier2_source}
             {#if flatPatchActive}
-              <button
-                type="button"
-                class="zoom-to-detail-button zoom-to-detail-button--exit"
+              <Chip
+                kind="action"
                 data-testid="exit-zoom"
                 onclick={() => closeFlatPatch()}
                 title={m.surface_exit_zoom_title()}
               >
-                <span>{m.surface_exit_zoom_view()}</span>
-              </button>
+                {m.surface_exit_zoom_view()}
+              </Chip>
             {:else}
-              <button
-                type="button"
-                class="zoom-to-detail-button"
+              <Chip
+                kind="action"
                 data-testid="zoom-to-detail"
                 onclick={() => {
                   // Switching pano → zoom: exit pano first so camR is
@@ -6343,8 +6332,8 @@ sample      ${debugInfo.projectedPxSample}`}
                   if (selected) flyToDetail?.(selected);
                 }}
               >
-                <span>{m.surface_zoom_detail()}</span>
-              </button>
+                {m.surface_zoom_detail()}
+              </Chip>
             {/if}
           {/if}
         </div>
@@ -6601,13 +6590,13 @@ sample      ${debugInfo.projectedPxSample}`}
             <ul class="launches-from-here-chips">
               {#each selected.linked_missions as missionId (missionId)}
                 <li>
-                  <a
-                    class="launches-chip"
+                  <Chip
+                    kind="link"
                     href={localHref(`/missions?id=${missionId}`)}
                     data-testid="launches-from-here-chip"
                   >
                     {missionId.replace(/([a-z])(\d)/g, '$1 $2').toUpperCase()}
-                  </a>
+                  </Chip>
                 </li>
               {/each}
             </ul>
@@ -6685,15 +6674,14 @@ sample      ${debugInfo.projectedPxSample}`}
       {:else if panelTab === 'journey'}
         {#if replayRange}
           <div class="replay" data-testid="journey-replay">
-            <button
-              type="button"
-              class="replay-play"
+            <Chip
+              kind="toggle"
+              active={replayPlaying}
               data-testid="journey-replay-play"
-              aria-pressed={replayPlaying}
               onclick={toggleReplay}
             >
               {replayPlaying ? m.journey_replay_pause() : m.journey_replay_play()}
-            </button>
+            </Chip>
             <input
               id="journey-replay-scrub"
               class="replay-scrub"
@@ -7109,84 +7097,6 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 6px;
     pointer-events: auto;
   }
-  /* Port of /mars's stand-at-site button — same slot in the detail
-     panel handles both enter + exit states. Glyph + transparent
-     dark-glass styling match Mars; enter glyph "◐" (planet at
-     night), exit glyph "✕". */
-  .head :global(.stand-at-site) {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 10px 14px;
-    margin-top: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 2px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition:
-      background 0.15s ease,
-      border-color 0.15s ease,
-      color 0.15s ease;
-  }
-  .head :global(.stand-at-site::before) {
-    content: '◐';
-    font-size: 13px;
-    line-height: 1;
-    color: var(--accent, var(--color-state));
-  }
-  .head :global(.stand-at-site--exit::before) {
-    content: '✕';
-    color: var(--accent, var(--color-state));
-  }
-  .head :global(.stand-at-site:hover),
-  .head :global(.stand-at-site:focus-visible) {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--accent, var(--color-accent));
-    color: #fff;
-    outline: none;
-  }
-  /* "Zoom to detail" button — sibling of stand-at-site, same dark-
-     glass chrome but with a downward-arrow glyph instead of the
-     panorama half-moon. Stacks below stand-at-site when both render. */
-  .head .zoom-to-detail-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 10px 14px;
-    margin-top: 8px;
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 2px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition:
-      background 0.15s ease,
-      border-color 0.15s ease,
-      color 0.15s ease;
-  }
-  .head .zoom-to-detail-button:hover,
-  .head .zoom-to-detail-button:focus-visible {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--accent, var(--color-accent));
-    color: #fff;
-    outline: none;
-  }
-
   /* Site CTA row — Approach · Stand at site · Zoom to detail
      (2026-06-17). Horizontal flex container that overrides the
      three child buttons' prior full-width stacked styling so they
@@ -7214,63 +7124,15 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 6px;
     margin-top: 14px;
   }
-  /* Shared chrome — applies to the global `.stand-at-site` rendered by
-     PanoramaToggleButton, and `.zoom-to-detail-button` (Approach removed:
-     selection now auto-frames the site). Equal-flex
-     so each button takes a fair share of the row, with min-width
-     so they wrap to a second row instead of squishing illegibly
-     on narrow viewports. */
-  .head .site-cta-bar :global(.stand-at-site),
-  .head .site-cta-bar .zoom-to-detail-button {
+  /* The CTA chips (Stand here, Zoom to detail, View route) share the row: equal
+     flex, with min-width 0 so they wrap to a second row instead of squishing
+     illegibly on narrow viewports. Look is chip.css; the world tint arrives
+     as --chip-tint (hover / on). */
+  .head .site-cta-bar :global(.ui-chip) {
     flex: 1 1 0;
     min-width: 0;
-    min-height: 30px;
-    width: auto;
-    margin-top: 0;
-    padding: 5px 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    white-space: normal;
     text-align: center;
-    line-height: 1.25;
-    /* Tinted with the body's --body-tint (Mars rust, Moon rocky grey,
-       Earth deep blue) so the CTA row reads as belonging to the
-       current world, not the selected site's nation. The agency badge
-       above still carries the per-site nation accent for identity. */
-    background: color-mix(in srgb, var(--body-tint, var(--color-accent)) 8%, rgba(8, 10, 22, 0.6));
-    color: rgba(255, 255, 255, 0.88);
-    border: 1px solid color-mix(in srgb, var(--body-tint, var(--color-accent)) 50%, transparent);
-    border-radius: 3px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition:
-      background 0.15s ease,
-      border-color 0.15s ease,
-      color 0.15s ease,
-      transform 0.15s ease;
-  }
-  .head .site-cta-bar :global(.stand-at-site:hover),
-  .head .site-cta-bar :global(.stand-at-site:focus-visible),
-  .head .site-cta-bar .zoom-to-detail-button:hover,
-  .head .site-cta-bar .zoom-to-detail-button:focus-visible {
-    background: color-mix(
-      in srgb,
-      var(--body-tint, var(--color-accent)) 38%,
-      rgba(8, 10, 22, 0.85)
-    );
-    border-color: var(--body-tint, var(--color-accent));
-    color: #fff;
-    outline: none;
-    transform: translateY(-1px);
-  }
-  /* Text-only in the CTA row: the PanoramaToggleButton's ::before glyph
-     (◐ / ✕) is hidden here; elsewhere it keeps it. */
-  .head .site-cta-bar :global(.stand-at-site::before) {
-    display: none;
   }
 
   /* #641 — Journey tab: the traverse as a timeline. A thin rule down the
@@ -7281,26 +7143,6 @@ sample      ${debugInfo.projectedPxSample}`}
     align-items: center;
     gap: 8px 10px;
     margin-top: 12px;
-  }
-  .replay-play {
-    padding: 5px 10px;
-    background: color-mix(
-      in srgb,
-      var(--body-tint, var(--color-accent)) 18%,
-      rgba(8, 10, 22, 0.85)
-    );
-    border: 1px solid color-mix(in srgb, var(--body-tint, var(--color-accent)) 70%, transparent);
-    border-radius: 3px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-  .replay-play:focus-visible {
-    outline: 2px solid var(--body-tint, var(--color-focus));
-    outline-offset: 2px;
   }
   .replay-scrub {
     flex: 1 1 160px;
@@ -7434,99 +7276,12 @@ sample      ${debugInfo.projectedPxSample}`}
     max-width: calc(100vw - 24px);
     align-items: center;
   }
-  .hud-controls :global(.chip),
-  .ctrl-row.chips :global(.chip) {
-    min-height: 44px;
-    /* Mobile (≤ 500): tight 6 px horizontal padding, 8.5 px font,
-       78 px min-width — fits two chips per row on a 375 px viewport.
-       Relaxed back at @min-width: 501. */
-    min-width: 78px;
-    padding: 0 6px;
-    background: rgba(8, 10, 22, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: rgba(255, 255, 255, 0.78);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 999px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  /* Hover + active states tint with --body-tint (set per route on the
-     `.surface-scene` root). Falls back to the prior cool-grey if no
-     tint is provided. (2026-06-17 user direction: "chips on mars used
-     to be red colored, want that back. chips and all buttons on
-     details panel should be red tinted. on moon grey (moon rock)
-     tinted. and on earth blue tinted".) */
-  .hud-controls :global(.chip:hover),
-  .hud-controls :global(.chip:focus-visible),
-  .ctrl-row.chips :global(.chip:hover),
-  .ctrl-row.chips :global(.chip:focus-visible) {
-    color: #fff;
-    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 55%, transparent);
-    outline: none;
-  }
-  /* Active: tinted over a DARK base (was tint-on-transparent — rust text on
-     a rust wash over orange terrain read at ~1.5:1, #641). */
-  .hud-controls :global(.chip.active),
-  .ctrl-row.chips :global(.chip.active) {
-    background: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 22%, rgba(8, 10, 22, 0.82));
-    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 75%, transparent);
-    color: color-mix(in srgb, var(--body-tint, #c8cdda) 45%, #ffffff);
-  }
-  .hud-controls :global(.toggle) {
-    min-width: 44px;
-    min-height: 44px;
-    /* Mobile (≤ 500): 3×5 padding, 9 px font, 54 px max-width — keeps
-       the toggle row compact enough that two toggles + the chip rail
-       all fit on a phone. Relaxed at @min-width: 501. */
-    max-width: 54px;
-    padding: 3px 5px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(190, 195, 210, 0.4);
-    color: #d6d9e2;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    line-height: 1.15;
-    letter-spacing: 0.04em;
-    text-align: center;
-    white-space: normal;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms;
-  }
-  .hud-controls :global(.toggle:hover),
-  .hud-controls :global(.toggle:focus-visible) {
-    border-color: rgba(220, 225, 240, 0.7);
-    background: rgba(34, 38, 56, 0.95);
-    outline: none;
-  }
 
-  /* ─── ≥ 501 px — relax phone-tight chip / toggle dimensions ───── */
+  /* ─── ≥ 501 px — relax phone-tight HUD spacing ───────────────── */
   @media (min-width: 501px) {
     .hud-controls {
       left: 16px;
       gap: 8px;
-    }
-    .hud-controls :global(.chip),
-    .ctrl-row.chips :global(.chip) {
-      padding: 0 10px;
-      font-size: var(--size-label);
-      min-width: 110px;
-    }
-    .hud-controls :global(.toggle) {
-      padding: 4px 8px;
-      font-size: 11px;
-      max-width: 70px;
     }
   }
 
@@ -7547,18 +7302,6 @@ sample      ${debugInfo.projectedPxSample}`}
       min-width: 140px;
       max-width: none;
       align-items: stretch;
-    }
-    /* Wrap at spaces, never clip a word (de ANSICHT ZURÜCKSETZEN). */
-    .hud-controls :global(.toggle) {
-      max-width: none;
-    }
-    /* 44 px is the touch-target size; with a mouse 34 px is plenty (WCAG
-       2.2 minimum is 24) and saves ~94 px of column on /earth, which
-       otherwise runs into the Orbit Ruler on 768 px-high windows. */
-    .hud-controls :global(.chip),
-    .ctrl-row.chips :global(.chip),
-    .hud-controls :global(.toggle) {
-      min-height: 34px;
     }
   }
 
@@ -7598,33 +7341,6 @@ sample      ${debugInfo.projectedPxSample}`}
     display: none;
   }
 
-  /* The top-cluster controls (view / reset / spin) sit OUTSIDE .hud-controls,
-     so they missed the scoped .toggle chrome above and fell back to the UA
-     default white button. Re-apply the standard surface toggle look here;
-     white-space:nowrap keeps the wider RESET VIEW / PAUSE SPIN labels on one
-     line, and :global crosses into ViewToggleButton. */
-  .hud-top-mobile :global(.toggle) {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0 8px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(190, 195, 210, 0.4);
-    color: #d6d9e2;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 0.04em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    white-space: nowrap;
-  }
-  .hud-top-mobile :global(.toggle:hover),
-  .hud-top-mobile :global(.toggle:focus-visible) {
-    border-color: rgba(220, 225, 240, 0.7);
-    background: rgba(34, 38, 56, 0.95);
-    outline: none;
-  }
-
   .load-banner {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
@@ -7661,7 +7377,7 @@ sample      ${debugInfo.projectedPxSample}`}
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 2px 10px;
+    gap: 6px;
     padding: 3px 10px;
     background: rgba(4, 5, 14, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -7675,48 +7391,6 @@ sample      ${debugInfo.projectedPxSample}`}
     pointer-events: none;
     z-index: 5;
   }
-  /* Interactive toggle button — reset native chrome back to the old
-     span look, then layer on hover / focus / pressed-off states (#363). */
-  .legend-item {
-    pointer-events: auto;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin: 0;
-    padding: 2px 4px;
-    background: transparent;
-    border: 0;
-    border-radius: 3px;
-    color: inherit;
-    font: inherit;
-    letter-spacing: inherit;
-    cursor: pointer;
-    transition:
-      opacity 120ms ease,
-      background 120ms ease;
-  }
-  .legend-item:hover,
-  .legend-item:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    outline: none;
-  }
-  .legend-item:focus-visible {
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
-  }
-  /* Toggled off — dim + strike, but keep the colour dot legible so the
-     key still reads. */
-  .legend-item--off {
-    opacity: 0.4;
-    text-decoration: line-through;
-  }
-  .legend-dot {
-    width: 6px;
-    height: 6px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    box-shadow: 0 0 3px currentColor;
-  }
-
   /* #547 S5 — card CTA, mirroring the missions/fleet panels' quiet register. */
   .card-cta-bar {
     padding: 12px 0 4px;
@@ -7912,27 +7586,6 @@ sample      ${debugInfo.projectedPxSample}`}
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-  }
-  .launches-chip {
-    display: inline-block;
-    padding: 5px 10px;
-    background: var(--color-accent-soft);
-    border: 1px solid var(--color-accent-edge);
-    color: var(--color-state);
-    text-decoration: none;
-    border-radius: 999px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    transition: all 0.15s;
-  }
-  .launches-chip:hover,
-  .launches-chip:focus-visible {
-    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
-    border-color: var(--color-accent-strong);
-    color: #fff;
-    outline: none;
   }
 
   .credit {

@@ -42,6 +42,7 @@ import {
   ongcToDesignation,
 } from './lib/catalogue-sources.mjs';
 import { enrichObject } from './lib/deep-sky-catalogues.mjs';
+import { applyDistanceOverride } from './lib/deep-sky-distance-overrides.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const OUT = path.join(ROOT, 'scripts', 'data-snapshots', 'messier-catalog.json');
@@ -524,7 +525,7 @@ async function main() {
       dec: e.dec,
       mag: e.mag,
       records: e.records,
-      catalogue: e.catalogue,
+      catalogue: applyDistanceOverride(o.designation, e.catalogue),
     };
   });
   enriched.sort((a, b) => a.designation.localeCompare(b.designation, 'en', { numeric: true }));

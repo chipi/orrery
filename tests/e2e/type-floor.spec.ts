@@ -59,12 +59,15 @@ async function tinyText(page: Page): Promise<Offender[]> {
     ) => {
       const size = parseFloat(cs.fontSize) * scale;
       const alpha = alphaOf(cs.color) * chainOpacity(el);
+      // A disabled control is faded on purpose and WCAG 1.4.3 exempts inactive components from
+      // the contrast rule (RESET VIEW stays in its slot, disabled — UXD-015); the size floor holds.
+      const inactive = !!el.closest(':disabled, [aria-disabled="true"]');
       const why =
         size < floor - 0.01
           ? `${Math.round(size * 100) / 100}px`
           : cs.fontStyle === 'italic' && size < 14 - 0.01
             ? `italic ${size}px`
-            : size < 12 && alpha < 0.58 && /[\p{L}\p{N}]/u.test(text)
+            : !inactive && size < 12 && alpha < 0.58 && /[\p{L}\p{N}]/u.test(text)
               ? `${size}px at alpha ${Math.round(alpha * 1000) / 1000}`
               : '';
       if (why) out.push({ sel: label, why, text: text.slice(0, 30) });

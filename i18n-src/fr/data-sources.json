@@ -19,5 +19,12 @@
   "models-ref-agencies": "Pages officielles d’agences spatiales et de constructeurs (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, l’Agence chinoise des vols habités et la CASC, la Force spatiale américaine) qui ont fourni les dimensions des modèles de lanceurs et de vaisseaux.",
   "models-ref-independent": "Références indépendantes sur l’astronautique et pages de musées (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, le Smithsonian National Air and Space Museum, le Technik Museum Speyer et d’autres) qui ont fourni les tailles des véhicules soviétiques, de la navette et de l’ère Buran.",
   "nasa-mmgis-rover-traverses": "Les trajets localisés des équipes des rovers Curiosity et Perseverance, tracés sur la vue de la surface de Mars avec leurs sols et leurs distances.",
-  "pds-mer-traverses": "Les trajets localisés des équipes scientifiques de Spirit et Opportunity, tracés sur la vue de la surface de Mars avec leurs sols et leurs distances."
+  "pds-mer-traverses": "Les trajets localisés des équipes scientifiques de Spirit et Opportunity, tracés sur la vue de la surface de Mars avec leurs sols et leurs distances.",
+  "cds-simbad-vizier": "Les pages d’objets vers lesquelles renvoie chaque valeur sourcée, et les tables SIMBAD et VizieR dont viennent les distances et les magnitudes V.",
+  "ned": "Les pages de galaxies vers lesquelles renvoient les distances de galaxies, et les noms et positions servant à identifier les galaxies.",
+  "gaia-dpac": "Les mesures de Gaia à l’origine des distances des amas d’étoiles et des amas globulaires (Hunt & Reffert 2023, Baumgardt & Vasiliev 2021).",
+  "open-cluster-catalogues": "Distances des amas d’étoiles et des nébuleuses à amas de Messier d’après Gaia : Hunt & Reffert 2023, avec Cantat-Gaudin et al. 2020 en secours et comme alternative dans la note.",
+  "globular-cluster-catalogues": "Distances des amas globulaires d’après Baumgardt & Vasiliev 2021 et leurs magnitudes V totales d’après le catalogue de Harris (sa propre distance figure dans la note).",
+  "cosmicflows-4": "Distances des galaxies de Messier et de la galerie d’après Cosmicflows-4.",
+  "mcconnachie-2012": "Distances des galaxies du Groupe local, ainsi que des amas et nébuleuses des Nuages de Magellan et de M33, d’après McConnachie 2012."
 }

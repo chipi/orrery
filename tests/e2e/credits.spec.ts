@@ -53,6 +53,39 @@ test.describe('/credits — image provenance disclosure', () => {
     await expect(licenseLines).toHaveCount(count);
   });
 
+  // #658: every catalogue the data comes from is listed with the acknowledgement it asks for.
+  test('the data section lists the catalogues with their acknowledgement and papers', async ({
+    page,
+  }) => {
+    await page.goto('/credits', { waitUntil: 'networkidle' });
+    const block = page.locator('#src-data-catalogues');
+    await expect(block).toBeVisible({ timeout: 10_000 });
+    for (const name of [
+      'SIMBAD and VizieR',
+      'NASA/IPAC Extragalactic Database',
+      'Gaia',
+      'Hunt & Reffert 2023',
+      'Baumgardt & Vasiliev 2021',
+      'Cosmicflows-4',
+      'McConnachie 2012',
+    ]) {
+      await expect(block.getByRole('link', { name: new RegExp(name) }).first()).toBeVisible();
+    }
+    await expect(
+      block.getByText('operated at CDS, Strasbourg, France', { exact: false }),
+    ).toBeVisible();
+    await expect(
+      block.getByText('NASA/IPAC Extragalactic Database (NED), which is operated by', {
+        exact: false,
+      }),
+    ).toBeVisible();
+    await expect(
+      block.getByText('processed by the Gaia Data Processing and Analysis Consortium', {
+        exact: false,
+      }),
+    ).toBeVisible();
+  });
+
   test('bundles surface aspect-ratio crops as chips on at least one row', async ({ page }) => {
     // The bundler (src/lib/credits-grouping.ts) collapses
     // `<slot>.16x9.jpg / .1x1.jpg / .4x3.jpg / .jpg` variants of one

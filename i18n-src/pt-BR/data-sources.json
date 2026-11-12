@@ -19,5 +19,12 @@
   "models-ref-agencies": "Páginas oficiais de agências espaciais e fabricantes (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, a Agência Chinesa de Voos Tripulados e a CASC, a Força Espacial dos EUA) que forneceram as dimensões dos modelos de lançadores e naves.",
   "models-ref-independent": "Referências independentes sobre voos espaciais e páginas de museus (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, o Smithsonian National Air and Space Museum, o Technik Museum Speyer e outros) que forneceram os tamanhos dos veículos soviéticos, do ônibus espacial e da era Buran.",
   "nasa-mmgis-rover-traverses": "Os trajetos localizados das equipes dos rovers Curiosity e Perseverance, desenhados na vista da superfície de Marte com seus sóis e distâncias.",
-  "pds-mer-traverses": "Os trajetos localizados das equipes científicas de Spirit e Opportunity, desenhados na vista da superfície de Marte com seus sóis e distâncias."
+  "pds-mer-traverses": "Os trajetos localizados das equipes científicas de Spirit e Opportunity, desenhados na vista da superfície de Marte com seus sóis e distâncias.",
+  "cds-simbad-vizier": "As páginas de objetos para as quais cada valor com fonte aponta, e as tabelas do SIMBAD e do VizieR de onde vêm as distâncias e as magnitudes V.",
+  "ned": "As páginas de galáxias para as quais apontam as distâncias de galáxias, e os nomes e posições usados para identificá-las.",
+  "gaia-dpac": "As medições do Gaia por trás das distâncias dos aglomerados estelares e dos aglomerados globulares (Hunt & Reffert 2023, Baumgardt & Vasiliev 2021).",
+  "open-cluster-catalogues": "Distâncias dos aglomerados estelares e nebulosas com aglomerado de Messier a partir do Gaia: Hunt & Reffert 2023, com Cantat-Gaudin et al. 2020 como reserva e como alternativa na nota.",
+  "globular-cluster-catalogues": "Distâncias dos aglomerados globulares segundo Baumgardt & Vasiliev 2021 e suas magnitudes V totais segundo o catálogo de Harris (a distância dele fica na nota).",
+  "cosmicflows-4": "Distâncias das galáxias de Messier e da galeria segundo o Cosmicflows-4.",
+  "mcconnachie-2012": "Distâncias das galáxias do Grupo Local, e dos aglomerados e nebulosas dentro das Nuvens de Magalhães e de M33, segundo McConnachie 2012."
 }

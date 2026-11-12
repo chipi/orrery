@@ -19,5 +19,12 @@
   "models-ref-agencies": "航天机构和制造商的官方页面（Roscosmos、SpaceX、联合发射联盟、波音、诺斯罗普·格鲁曼、萤火虫、阿丽亚娜空间、中国载人航天工程办公室和中国航天科技集团、美国太空军），提供了运载火箭和航天器模型的飞行器尺寸。",
   "models-ref-independent": "独立的航天参考资料和博物馆页面（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、史密森尼国家航空航天博物馆、施派尔技术博物馆等），提供了苏联、航天飞机和Buran 时代飞行器的大小。",
   "nasa-mmgis-rover-traverses": "Curiosity 和 Perseverance 漫游车团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。",
-  "pds-mer-traverses": "Spirit 和 Opportunity 科学团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。"
+  "pds-mer-traverses": "Spirit 和 Opportunity 科学团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。",
+  "cds-simbad-vizier": "每个带出处的数值所链接的天体页面，以及距离和V星等所依据的SIMBAD与VizieR表格。",
+  "ned": "星系距离所链接的星系页面，以及用于匹配星系的名称和位置。",
+  "gaia-dpac": "星团和球状星团距离所依据的盖亚（Gaia）测量（Hunt & Reffert 2023、Baumgardt & Vasiliev 2021）。",
+  "open-cluster-catalogues": "梅西耶星团和星团星云的距离，基于 Gaia 数据：以 Hunt & Reffert 2023 为主，Cantat-Gaudin et al. 2020 作为后备，并在注释中列为替代值。",
+  "globular-cluster-catalogues": "球状星团的距离取自 Baumgardt & Vasiliev 2021，总V星等取自哈里斯星表（其自身的距离保留在注释中）。",
+  "cosmicflows-4": "梅西耶星系和图库星系的距离取自 Cosmicflows-4。",
+  "mcconnachie-2012": "本星系群星系的距离，以及麦哲伦云和M33内星团与星云的距离，取自 McConnachie 2012。"
 }

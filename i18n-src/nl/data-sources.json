@@ -19,5 +19,12 @@
   "models-ref-agencies": "Officiële pagina’s van ruimtevaartorganisaties en fabrikanten (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, het Chinese bureau voor bemande ruimtevaart en CASC, de Amerikaanse Space Force) waaruit de voertuigafmetingen komen voor de draagraket- en ruimtevaartuigmodellen.",
   "models-ref-independent": "Onafhankelijke ruimtevaartbronnen en museumpagina’s (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, het Smithsonian National Air and Space Museum, het Technik Museum Speyer en andere) waaruit de afmetingen komen van de Sovjet-, shuttle- en Buran-voertuigen.",
   "nasa-mmgis-rover-traverses": "De gelokaliseerde rijroutes van de roverteams van Curiosity en Perseverance, getekend op het Mars-oppervlakteaanzicht met hun sols en afstanden.",
-  "pds-mer-traverses": "De gelokaliseerde rijroutes van de wetenschapsteams van Spirit en Opportunity, getekend op het Mars-oppervlakteaanzicht met hun sols en afstanden."
+  "pds-mer-traverses": "De gelokaliseerde rijroutes van de wetenschapsteams van Spirit en Opportunity, getekend op het Mars-oppervlakteaanzicht met hun sols en afstanden.",
+  "cds-simbad-vizier": "De objectpagina’s waarnaar elke bronwaarde verwijst, en de SIMBAD- en VizieR-tabellen achter de afstanden en de V-magnitudes.",
+  "ned": "De sterrenstelselpagina’s waarnaar de afstanden van sterrenstelsels verwijzen, en de namen en posities waarmee sterrenstelsels worden gekoppeld.",
+  "gaia-dpac": "De Gaia-metingen achter de afstanden van sterrenclusters en bolhopen (Hunt & Reffert 2023, Baumgardt & Vasiliev 2021).",
+  "open-cluster-catalogues": "Afstanden van de Messier-sterrenclusters en clusternevels uit Gaia: Hunt & Reffert 2023, met Cantat-Gaudin et al. 2020 als terugval en als alternatief in de noot.",
+  "globular-cluster-catalogues": "Afstanden van de bolhopen volgens Baumgardt & Vasiliev 2021 en hun totale V-magnitudes uit Harris’ catalogus (zijn eigen afstand staat in de noot).",
+  "cosmicflows-4": "Afstanden van de Messier- en galerijsterrenstelsels volgens Cosmicflows-4.",
+  "mcconnachie-2012": "Afstanden van de sterrenstelsels van de Lokale Groep, en van de clusters en nevels in de Magelhaense wolken en in M33, volgens McConnachie 2012."
 }

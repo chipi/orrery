@@ -19,5 +19,12 @@
   "models-ref-agencies": "Official pages of space agencies and manufacturers (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, the China Manned Space Agency and CASC, the U.S. Space Force) that gave vehicle dimensions for the launcher and spacecraft models.",
   "models-ref-independent": "Independent spaceflight references and museum pages (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, the Smithsonian National Air and Space Museum, the Technik Museum Speyer and others) that gave the sizes of the Soviet, Shuttle and Buran-era vehicles.",
   "nasa-mmgis-rover-traverses": "The rover teams' localized drive paths for Curiosity and Perseverance, drawn on the Mars surface view with their sols and distances.",
-  "pds-mer-traverses": "The science teams' localized drive paths for Spirit and Opportunity, drawn on the Mars surface view with their sols and distances."
+  "pds-mer-traverses": "The science teams' localized drive paths for Spirit and Opportunity, drawn on the Mars surface view with their sols and distances.",
+  "cds-simbad-vizier": "The object pages every sourced value links to, and the SIMBAD and VizieR tables behind the distances and the V magnitudes.",
+  "ned": "The galaxy pages that galaxy distances link to, and the names and positions used to match galaxies.",
+  "gaia-dpac": "The Gaia measurements behind the star-cluster and globular-cluster distances (Hunt & Reffert 2023, Baumgardt & Vasiliev 2021).",
+  "open-cluster-catalogues": "Distances of the Messier star clusters and cluster nebulae, from Gaia: Hunt & Reffert 2023, with Cantat-Gaudin et al. 2020 as the fallback and the alternative in the note.",
+  "globular-cluster-catalogues": "Distances of the globular clusters from Baumgardt & Vasiliev 2021, and their total V magnitudes from Harris’s catalogue (his own distance is kept in the note).",
+  "cosmicflows-4": "Distances of the Messier and gallery galaxies from Cosmicflows-4.",
+  "mcconnachie-2012": "Distances of the Local Group galaxies, and of the clusters and nebulae inside the Magellanic Clouds and M33, from McConnachie 2012."
 }

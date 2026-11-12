@@ -176,9 +176,12 @@ test.describe('/explore scale bar: fixed width, the value follows the zoom', () 
     const wf: number[] = [];
     const tf = new Set<string>();
     for (let i = 0; i < 4; i++) {
+      await expect(hud.getByTestId('scale-bar')).toBeVisible({ timeout: 10_000 });
       wf.push((await hud.getByTestId('scale-bar').boundingBox())!.width);
       tf.add((await hud.getByTestId('scale-bar-label').textContent()) ?? '');
-      await page.mouse.wheel(0, i % 2 === 0 ? -150 : 300);
+      // Wheel-in only: any wheel-out in the flat patch exits to the sphere (SurfaceFlatPatch.onWheel),
+      // which unmounts the patch and its bar.
+      await page.mouse.wheel(0, -150);
       await page.waitForTimeout(500);
     }
     for (const w of wf) expect(Math.abs(w - barWidthFor(vw))).toBeLessThanOrEqual(1);

@@ -5462,5 +5462,61 @@
   "upper stage|sr-Cyrl|science/propulsion/engine-clustering.json :: body_paragraphs.3": {
     "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
     "tr": "674c774f8e"
+  },
+  "star-forming region|ru|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "1d31511514"
+  },
+  "star-forming region|ja|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "f816c38746"
+  },
+  "star-forming region|zh-CN|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "0ec03b25b0"
+  },
+  "star-forming region|ko|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "2af5cab557"
+  },
+  "star-forming region|ar|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "b56b1b1378"
+  },
+  "star-forming region|sr-Cyrl|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "f56c22ef3e"
+  },
+  "star-forming region|fr|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "e21265400b"
+  },
+  "star-forming region|es|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "ba526a265d"
+  },
+  "star-forming region|it|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "abe65b9329"
+  },
+  "star-forming region|nl|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "4a4b395327"
+  },
+  "star-forming region|pt-BR|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "3f73abf7aa"
+  },
+  "apparent magnitude|ru|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "0ca10d5a8c"
+  },
+  "apparent magnitude|zh-CN|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "5cc05061c3"
+  },
+  "apparent magnitude|de|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "1408ce2bd8"
   }
 }

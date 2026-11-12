@@ -18,7 +18,7 @@
                      compute-error). Surface `blockedMessage`, do NOT fake a result.
     blockedMessage — the honest reason the cell is blocked
 
-  States (plan §2): ok (teal) · fail-honest (mars-red + reasonKey) · blocked (mars-red +
+  States (plan §2): ok (accent blue) · fail-honest (mars-red + reasonKey) · blocked (mars-red +
   reason). Momentum (no figure) → FigureRenderer omitted. KaTeX is NOT imported here.
 -->
 <script lang="ts">
@@ -342,7 +342,7 @@
   /* Design tokens from UXS-015 + notebook.html prototype */
   .card {
     background: #04040c;
-    border: 1px solid rgba(78, 205, 196, 0.22);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 22%, transparent);
     border-radius: 4px;
     padding: 1.25rem 1.25rem 1rem;
     display: flex;
@@ -390,7 +390,7 @@
     flex: 1;
   }
   .card__title-variant {
-    color: #4ecdc4;
+    color: var(--color-state);
     margin-left: 0.45rem;
   }
 
@@ -415,7 +415,7 @@
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.5rem 0.9rem;
-    border-top: 1px solid rgba(78, 205, 196, 0.12);
+    border-top: 1px solid var(--color-accent-soft);
     padding-top: 0.7rem;
     margin-top: 0.2rem;
   }
@@ -431,9 +431,9 @@
   .card__learn-link {
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
-    border-bottom: 1px solid rgba(78, 205, 196, 0.35);
+    border-bottom: 1px solid var(--color-accent-edge);
     padding-bottom: 1px;
     transition: color 0.15s;
   }
@@ -446,7 +446,7 @@
   .card__learn-link:hover,
   .card__learn-link:focus-visible {
     color: #fff;
-    outline: 2px solid rgba(78, 205, 196, 0.5);
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 
@@ -468,7 +468,7 @@
     font-size: 0.82rem;
     line-height: 1.55;
     color: rgba(232, 232, 232, 0.72);
-    border-left: 2px solid rgba(78, 205, 196, 0.3);
+    border-left: 2px solid var(--color-accent-edge);
     padding-left: 0.7rem;
   }
 
@@ -498,7 +498,7 @@
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: rgba(78, 205, 196, 0.75);
+    color: var(--color-state);
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -543,8 +543,8 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
     width: 100%;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.2);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
     border-radius: 2px;
     color: #e8e8e8;
     padding: 0.3rem 0.4rem;
@@ -553,7 +553,7 @@
   }
 
   .card__number:focus-visible {
-    outline: 2px solid #4ecdc4;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 
@@ -561,8 +561,8 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
     width: 100%;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.2);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
     border-radius: 2px;
     color: #e8e8e8;
     padding: 0.3rem 0.4rem;
@@ -571,7 +571,7 @@
   }
 
   .card__select:focus-visible {
-    outline: 2px solid #4ecdc4;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 
@@ -579,8 +579,8 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
     width: 100%;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.2);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
     border-radius: 2px;
     color: #e8e8e8;
     padding: 0.3rem 0.4rem;
@@ -588,7 +588,7 @@
   }
 
   .card__date:focus-visible {
-    outline: 2px solid #4ecdc4;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 
@@ -619,7 +619,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    border-top: 1px solid rgba(78, 205, 196, 0.12);
+    border-top: 1px solid var(--color-accent-soft);
     padding-top: 0.75rem;
   }
 
@@ -646,13 +646,13 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.95rem;
     font-weight: bold;
-    color: #4ecdc4; /* teal strong cell — UXS-015 */
+    color: var(--color-accent); /* accent blue strong cell — UXS-015 */
   }
 
   .card__readout-unit {
     font-size: var(--size-label);
     margin-left: 0.2rem;
-    color: rgba(78, 205, 196, 0.8);
+    color: var(--color-state);
     font-weight: normal;
   }
 

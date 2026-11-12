@@ -53,10 +53,24 @@ const DEFAULT_LOCALE = 'en-US';
 
 /** Pages built from a shared data file / list that is not an entity of its own. */
 const SEED_DATA = {
+  // The INDEX of all eight scales (UXD-017) is in the page: its rows and the pages they link
+  // come from every one of these files.
   '/explore': [
     'static/data/planets.json',
     'static/data/satellites.json',
     'static/data/small-bodies.json',
+    'static/data/belts.json',
+    'static/data/culture-doors.json',
+    'static/data/universe/named-stars.json',
+    'static/data/universe/exoplanet-systems.json',
+    'static/data/universe/deep-sky-objects.json',
+    'static/data/universe/milky-way-schematic.json',
+    'static/data/universe/local-group.json',
+    'static/data/universe/local-sheet.json',
+    'static/data/universe/virgo-cluster.json',
+    'static/data/universe/laniakea.json',
+    'static/data/universe/cosmic-web.json',
+    'static/data/universe/black-holes.json',
   ],
   '/explore/hub': [
     'static/data/planets.json',

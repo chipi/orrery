@@ -5,7 +5,15 @@
  */
 import { expect, test, type Page } from '@playwright/test';
 
-type Shell = { path: string; inset?: boolean; noLead?: boolean; noTitle?: boolean };
+type Shell = {
+  path: string;
+  /** Inside the science host layout: the host owns the container and its spacing. */
+  inset?: boolean;
+  /** The host layout IS the container (science index, tab, section): no .page-shell root. */
+  hostRoot?: boolean;
+  noLead?: boolean;
+  noTitle?: boolean;
+};
 
 const PAGES: Shell[] = [
   { path: '/credits' },
@@ -24,9 +32,9 @@ const PAGES: Shell[] = [
   // The essays index title is drawn over the banner illustration (allow-listed).
   { path: '/essays', noTitle: true },
   { path: '/essays/delta-v' },
-  { path: '/science', inset: true },
-  { path: '/science/orbits', inset: true, noLead: true },
-  { path: '/science/orbits/apsides', inset: true },
+  { path: '/science', inset: true, hostRoot: true },
+  { path: '/science/orbits', inset: true, hostRoot: true, noLead: true },
+  { path: '/science/orbits/apsides', inset: true, hostRoot: true },
   { path: '/science/glossary', inset: true },
   { path: '/science/reading-list', inset: true },
   { path: '/science/watch-list', inset: true },
@@ -36,7 +44,8 @@ const PAGES: Shell[] = [
   { path: '/explore/hub' },
   { path: '/missions/apollo11' },
   { path: '/fleet/saturn-v' },
-  { path: '/explore/europa' },
+  // A body with a fact sentence: the lead only renders when the body has one.
+  { path: '/explore/mars' },
   { path: '/lab/tsiolkovsky', noLead: true },
   { path: '/moon/apollo11' },
 ];
@@ -82,10 +91,13 @@ test.describe('one page shell (UXD-012)', () => {
   for (const p of PAGES) {
     test(`${p.path} uses the shell`, async ({ page }) => {
       await page.goto(p.path);
-      await page.locator('.page-shell').first().waitFor();
+      await page
+        .locator(p.noTitle ? '.page-shell' : 'h1.page-title')
+        .first()
+        .waitFor();
       const m = await metrics(page);
 
-      expect(m.root, 'page root carries .page-shell').not.toBeNull();
+      if (!p.hostRoot) expect(m.root, 'page root carries .page-shell').not.toBeNull();
       if (!p.inset) {
         // The root starts right under the sticky nav (no second --nav-height) with 24 px air.
         expect(Math.abs(m.root!.top), 'root starts at the nav bottom').toBeLessThanOrEqual(1);

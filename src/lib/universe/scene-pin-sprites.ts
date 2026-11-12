@@ -6,13 +6,7 @@
  * WebGL / DOM builder — coverage-excluded (see vite.config.ts).
  */
 import * as THREE from 'three';
-import {
-  RING_PX,
-  RING_SPRITE_PX,
-  RING_STROKE_PX,
-  ringOpacity,
-  ringTint,
-} from './scene-pins';
+import { RING_PX, RING_SPRITE_PX, RING_STROKE_PX, ringOpacity, ringTint } from './scene-pins';
 
 export function radialTexture(stops: Array<[number, string]>, size = 128): THREE.CanvasTexture {
   const cvs = document.createElement('canvas');

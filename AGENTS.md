@@ -760,8 +760,10 @@ SVG UI text and for the 2D UI canvases —
 Pins, rings and labels (src/lib/universe/scene-pins.ts, UX C2, docs/uxs/decisions/UXD-020-explore-readability-pins-rings-labels.md):
   one 12 px label in CSS px at every /explore scale; one 44 px screen-constant ring on every
   pin and arm label point (hover and selection #889fe7, the "you are here" anchor gold #ffcf8f
-  at opacity 0.55 at all eight levels); one placement pass (hovered/selected first, ring labels
-  last); the label offset uses the steady glow, never the hover size. A scene writes none of
+  at opacity 0.55 at the seven levels that have one, not the solar system); one placement pass
+  (hovered and selected first, ring labels last); sizes come from the pin's view-space depth
+  (`viewDepth`), never the Euclidean distance; the label offset uses the steady glow, never the
+  hover size, and lifts along the camera's screen-up (`liftOnScreen`). A scene writes none of
   these itself: it takes the constants and helpers from scene-pins.ts. No teal or cyan in a
   ring, anchor glow or label.
 

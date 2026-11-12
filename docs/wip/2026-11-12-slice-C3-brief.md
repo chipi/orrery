@@ -13,6 +13,8 @@ Read-only brief, written at HEAD `481b5fa2a44` on `tech-debt/0.9.9` (A1 to A6 la
 
 Slice row (plan line 350): fixed-width scale bar with the value changing; Vega pill only on hover/selection; level picker opens leftward at the right edge; planet-scales overlay redrawn readable. Done when: shots at three zooms; picker fully on screen at 1280 px.
 
+**Operator, 2026-11-12: every open question of this brief approved as recommended.**
+
 ## 0a. Decisions that bind C3, and what is open
 
 | # | Source | Text |

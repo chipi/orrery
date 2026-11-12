@@ -16,6 +16,8 @@ Read-only brief, written at HEAD `481b5fa2a44` on `tech-debt/0.9.9` (A1 to A6 la
 
 Slice row (plan line 348): one `focusBody` for planets, moons, small bodies, belts; every entry point (scene click, index, who-lives-here, panel links, iconic milestone boxes) selects and focuses; turning a chip off clears a selection of that kind; links only for bodies in the scene (Pallas, Hygiea, Quaoar, Sedna become plain text or get data); New Horizons opens the mission panel; mission links per Q4, newest first. Done when: e2e, every entry point leaves the body selected and centred; chip-off clears it.
 
+**Operator, 2026-11-12: every open question of this brief approved as recommended.**
+
 ## 0a. Decisions that bind C1, and what is open
 
 | # | Source | Text |

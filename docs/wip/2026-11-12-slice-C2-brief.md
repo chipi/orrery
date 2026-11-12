@@ -15,6 +15,8 @@ Read-only brief, written at HEAD `481b5fa2a44` on `tech-debt/0.9.9` (A1 to A6 la
 
 Slice row (plan line 349): per-level exposure/ambient lift; light-year rings as fat lines with readable labels; one shared label declutter + steady label offset for the outer levels; hover/selection ring on every pickable; the Sun/Milky Way anchor ring becomes the neighbourhood-style small dot + ring on hover. Done when: shots per level at default zoom, daylight-brightness check.
 
+**Operator, 2026-11-12: every open question of this brief approved as recommended.**
+
 ## 0a. Decisions that bind C2, and what is open
 
 | # | Source | Text |

@@ -493,6 +493,9 @@ A slice is reported done only when the lead has checked all of these, with the c
 1. **Whole project.** The decision is applied in every route and component — proven by a repo-wide
    search for the old pattern that returns nothing outside a documented allow-list.
 2. **Docs.** Every doc that states the rule says the new rule (AGENTS.md design rules, style guides,
+   and always, by name (operator 2026-11-12): the UXD record, `docs/concept/05_Design_System.md`
+   (component section, tokens, z-index scale), the UXS pattern doc of every touched surface, `docs/uxs/IA.md`,
+   a `docs/uxs/CHANGE-INVENTORY.md` row, the UXD index in `docs/uxs/decisions/README.md`;
    TA.md, READMEs of touched folders).
 3. **Tests move with the work.** Tests whose expectations changed are adjusted, new tests guard the
    rule (site-wide where possible), obsolete ones removed; the affected suites are green on

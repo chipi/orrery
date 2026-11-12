@@ -1521,6 +1521,7 @@
   "live_iss_watch": "ISSをライブで視聴 →",
   "live_iss_unavailable": "ISSのライブストリームは現在利用できません。",
   "credits_section_data": "データ・カタログ",
+  "catalogue_data_sources": "データソース",
   "credits_data_intro": "Orreryが実際の天体を3D空間に配置し、打ち上げカレンダーを構築するために取り込んでいる構造化された公開カタログ。各データセットはその利用規約に従って使用され、ここに引用されています。",
   "credits_data_references": "参照したページ {count} 件",
   "credits_data_models_note": "Orreryの機体・名所・キャラクターの3Dモデルはすべてオリジナル制作です。大きさと形状は、下に発行元ごとにまとめた公開ページから読み取りました。取り入れたのは寸法のみで、文章・画像・図面は一切複製していません。",

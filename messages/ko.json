@@ -1521,6 +1521,7 @@
   "live_iss_watch": "ISS 실시간 보기 →",
   "live_iss_unavailable": "ISS 라이브 스트림은 현재 이용할 수 없습니다.",
   "credits_section_data": "데이터 및 카탈로그",
+  "catalogue_data_sources": "데이터 출처",
   "credits_data_intro": "Orrery가 실제 천체를 3D로 배치하고 발사 일정을 구성하기 위해 수집하는 구조화된 공개 카탈로그입니다. 모든 데이터셋은 명시된 라이선스에 따라 사용되며 여기에 인용됩니다.",
   "credits_data_references": "참고한 페이지 {count}개",
   "credits_data_models_note": "Orrery의 기체·명소·등장 인물 3D 모델은 모두 자체 제작물입니다. 크기와 형태는 아래에 발행처별로 묶은 공개 페이지에서 확인했습니다. 치수만 참고했으며 텍스트, 이미지, 도면은 복제하지 않았습니다.",

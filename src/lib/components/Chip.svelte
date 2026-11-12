@@ -80,6 +80,7 @@
     role="radio"
     aria-checked={active}
     tabindex={active || tabstop ? 0 : -1}
+    aria-disabled={disabled || undefined}
     {disabled}
   >
     {@render inner()}

@@ -109,11 +109,15 @@ describe('deep-sky page routes (/explore/deep-sky/<id>)', () => {
       .filter((f) => f.endsWith('.json'))
       .map((f) => f.slice(0, -5));
 
-  it('are the ids of the overlay files, once each: the files decide', () => {
+  it('are the ids of the overlay files but the aliases, once each: the files decide', () => {
     const ids: string[] = deepSkyPageIds();
     expect(new Set(ids).size).toBe(ids.length);
-    expect([...ids].sort()).toEqual(overlayIds('en-US').sort());
-    expect(ids).toHaveLength(120);
+    expect([...ids].sort()).toEqual(
+      overlayIds('en-US')
+        .filter((id) => !Object.hasOwn(DEEP_SKY_ALIAS, id))
+        .sort(),
+    );
+    expect(ids).toHaveLength(140);
   });
 
   it('are objects of deep-sky-objects.json, and have the overlay in all 14 locales or none', () => {
@@ -155,18 +159,20 @@ describe('deep-sky page routes (/explore/deep-sky/<id>)', () => {
     }
   });
 
-  it('the alias map names ids that are not pages themselves and objects that exist', () => {
+  it('the alias map names ids that are not pages themselves and objects that exist (carina-nebula is the one alias that is also an object)', () => {
     const known = new Set(objects.map((o) => o.id));
     const pages = new Set<string>(deepSkyPageIds());
     expect(DEEP_SKY_ALIAS).toEqual({
       andromeda: 'm31',
       triangulum: 'm33',
       'omega-centauri': 'ngc-5139',
+      'carina-nebula': 'ngc-3372',
     });
     for (const [alias, target] of Object.entries(DEEP_SKY_ALIAS) as [string, string][]) {
       expect(known.has(target), `${alias} -> ${target}`).toBe(true);
-      expect(known.has(alias), `${alias} is itself an object`).toBe(false);
+      expect(pages.has(alias), `${alias} is a page of its own`).toBe(false);
+      expect(pages.has(target), `${alias}'s target ${target} has no page`).toBe(true);
+      expect(known.has(alias), `${alias} is itself an object`).toBe(alias === 'carina-nebula');
     }
-    expect(pages.has('m31') && pages.has('m33')).toBe(true);
   });
 });

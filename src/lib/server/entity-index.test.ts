@@ -48,7 +48,7 @@ describe('getEntityIndex', () => {
 
 describe('getScaleIndexRows', () => {
   it.each(['en-US', 'de'])(
-    '%s: rows for all eight scales, every page linked (a deep-sky page also by its 11 twins)',
+    '%s: rows for all eight scales, every page linked (a deep-sky page also by its 13 twins)',
     async (locale) => {
       const rows = await getScaleIndexRows(locale, fetch);
       expect(Object.keys(rows)).toEqual([...CTX_ORDER]);
@@ -58,7 +58,7 @@ describe('getScaleIndexRows', () => {
       );
       // A Milky Way globular or Local Group twin links the deep-sky page of its object too.
       expect([...new Set(linked)].sort()).toEqual([...pages].sort());
-      expect(linked.length - new Set(linked).size).toBe(7 + 4);
+      expect(linked.length - new Set(linked).size).toBe(7 + 4 + 1 + 1);
       expect(CTX_ORDER.reduce((n, s) => n + rows[s].length, 0)).toBe(344);
     },
   );

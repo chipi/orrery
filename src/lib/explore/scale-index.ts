@@ -361,6 +361,7 @@ function neighborhoodRows(src: ScaleIndexSource): ScaleIndexRow[] {
       selectable: true,
     }))
     .sort(byName);
+  const deepSkyPage = deepSkyPageOf(src);
   const deepRows: ScaleIndexRow[] = src.deepSky
     .map((o) => ({
       id: o.id,
@@ -368,7 +369,7 @@ function neighborhoodRows(src: ScaleIndexSource): ScaleIndexRow[] {
       kind: o.category,
       section: 'deep-sky' as const,
       badges: badgesOf(o.id),
-      href: src.pages.deepSky.has(o.id) ? `/explore/deep-sky/${o.id}` : undefined,
+      href: deepSkyPage(o.id)?.href,
       selectable: true,
     }))
     .sort(byName);

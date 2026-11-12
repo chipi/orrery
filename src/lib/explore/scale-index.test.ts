@@ -150,7 +150,7 @@ describe('entity-page links (C11)', () => {
     return out;
   };
 
-  it('every body, star, black-hole and deep-sky page has a row with that href: 48 + 66 + 4 + 120', () => {
+  it('every body, star, black-hole and deep-sky page has a row with that href: 48 + 66 + 4 + 140', () => {
     const bodyPages = routes.filter(
       (r) => /^\/explore\/[^/]+$/.test(r) && !['/explore/hub'].includes(r) && !r.includes('/stars'),
     );
@@ -171,7 +171,7 @@ describe('entity-page links (C11)', () => {
 
     const dsPages = routes.filter((r) => r.startsWith('/explore/deep-sky/'));
     expect([...linked('/explore/deep-sky/').keys()].sort()).toEqual([...dsPages].sort());
-    expect(dsPages).toHaveLength(120);
+    expect(dsPages).toHaveLength(140);
   });
 
   it('one real object, one page: the Milky Way globulars and Local Group twins link the deep-sky page', () => {
@@ -184,9 +184,13 @@ describe('entity-page links (C11)', () => {
     expect(href('local-group', 'andromeda')).toBe('/explore/deep-sky/m31');
     expect(href('local-group', 'triangulum')).toBe('/explore/deep-sky/m33');
     expect(href('neighborhood', 'm31')).toBe('/explore/deep-sky/m31');
-    // No second page: the other members have none, and omega-centauri waits for ngc-5139's text.
+    expect(href('milky-way', 'omega-centauri')).toBe('/explore/deep-sky/ngc-5139');
+    // carina-nebula is a second scene object of the nebula ngc-3372 holds: no page of its own.
+    expect(href('neighborhood', 'carina-nebula')).toBe('/explore/deep-sky/ngc-3372');
+    expect(href('neighborhood', 'ngc-3372')).toBe('/explore/deep-sky/ngc-3372');
+    expect(routes).not.toContain('/explore/deep-sky/carina-nebula');
+    // No second page: the other members have none.
     expect(href('milky-way', '47-tucanae')).toBeUndefined();
-    expect(href('milky-way', 'omega-centauri')).toBeUndefined();
     expect(href('local-group', 'lmc')).toBeUndefined();
   });
 
@@ -218,9 +222,9 @@ describe('entity-page links (C11)', () => {
       for (const r of rows[scale]) if (r.href) expect(all.has(r.href)).toBe(true);
   });
 
-  it('every other row is a button without a link: 95 of 344', () => {
+  it('every other row is a button without a link: 73 of 344', () => {
     const n = CTX_ORDER.reduce((s, c) => s + rows[c].filter((r) => !r.href).length, 0);
-    expect(n).toBe(344 - (118 + 120 + 7 + 4));
+    expect(n).toBe(344 - (118 + 140 + 7 + 4 + 1 + 1));
   });
 });
 

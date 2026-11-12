@@ -1,133 +1,47 @@
 # Last link-provenance build
 
-> Generated: 2026-11-12T16:28:35.345Z
+> Generated: 2026-11-12T20:09:31.662Z
 
-- Total entries: 1758 (was 1477)
-- Added: 281
+- Total entries: 1794 (was 1758)
+- Added: 36
 - Removed: 0
-- Changed: 19
+- Changed: 0
 
-## Added (281)
-- `30-doradus` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tarantula_Nebula>
-- `apollo-csm-block-ii` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059A>
-- `apollo10` · deep · internet-archive · en · <https://web.archive.org/web/2023/https://history.nasa.gov/alsj/a410/A10_MissionReport.pdf>
-- `apollo12` · deep · nasa · en · <https://ntrs.nasa.gov/citations/19760072997>
-- `apollo14` · deep · internet-archive · en · <https://web.archive.org/web/2023/https://history.nasa.gov/afj/ap14fj/index.html>
-- `apollo14` · deep · internet-archive · en · <https://web.archive.org/web/2023/https://history.nasa.gov/alsj/a14/A14_MissionReport.pdf>
-- `apollo15` · deep · nasa · en · <https://ntrs.nasa.gov/citations/19720021182>
-- `apollo16` · deep · nasa · en · <https://ntrs.nasa.gov/citations/19720026127>
-- `apollo8` · deep · nasa · en · <https://ntrs.nasa.gov/citations/19700033031>
-- `ariane-1` · deep · esa · en · <https://www.esa.int/Enabling_Support/Space_Transportation/Ariane_1_2_32>
-- `ariane-5` · deep · esa · en · <https://esamultimedia.esa.int/docs/space_transportation/ariane-5_media-kit.pdf>
-- `atlantis` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Space_Shuttle_orbiter>
-- `atlas-slv-3d` · deep · astronautix · en · <https://www.astronautix.com/a/atlasslv-3dcentaur.html>
-- `barnard-33` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Horsehead_Nebula>
-- `buran` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Buran_(spacecraft)>
-- `buran-ok-gli` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Buran_(spacecraft)>
-- `cargo-dragon-2` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Dragon_2>
-- `cargo-dragon-v1` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/SpaceX_Dragon_1>
-- `carina-nebula` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Carina_Nebula>
-- `cas-a` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cassiopeia_A>
-- `challenger` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Space_Shuttle_orbiter>
-- `change1` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-051A>
-- `change7` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Chang%27e_7>
-- `change7` · deep · irishnews · en · <https://www.irishnews.com/news/world/china-abruptly-postpones-ambitious-change-7-lunar-mission-launch-JLQUEK3BENJYJEYRMWTGDCFXNE/>
-- `columbia` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Space_Shuttle_orbiter>
-- `crew-dragon` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Dragon_2>
-- `cygnus-loop` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cygnus_Loop>
-- `discovery` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Space_Shuttle_orbiter>
-- `endeavour` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Space_Shuttle_orbiter>
-- `enterprise` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Space_Shuttle_orbiter>
-- `eros` · core · wikipedia · en · <https://en.wikipedia.org/wiki/433_Eros>
-- `eso-350-40` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cartwheel_Galaxy>
-- `europa-clipper` · core · nasa · en · <https://science.nasa.gov/mission/europa-clipper/mission-overview/>
-- `falcon-9` · deep · nasa · en · <https://www.nasa.gov/commercial-crew-program-press-kit/>
-- `gemini` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-024A>
-- `gum-29` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Westerlund_2>
-- `hcg-92` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Stephan%27s_Quintet>
-- `hen-2-104` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Southern_Crab_Nebula>
-- `ic-342` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/IC_342>
-- `lanyue` · intro · cgtn · en · <https://news.cgtn.com/news/2026-04-24/China-Space-Day-How-far-have-we-come-toward-a-manned-lunar-landing--1MBhqOD8nQs/p.html>
-- `lanyue` · core · universetoday · en · <https://www.universetoday.com/articles/china-unveils-their-plan-for-a-crewed-moon-landing>
-- `lanyue` · deep · theregister · en · <https://www.theregister.com/2025/08/11/china_lunar_lander_test_success/>
-- `long-march-10` · intro · cgtn · en · <https://news.cgtn.com/news/2026-04-24/China-Space-Day-How-far-have-we-come-toward-a-manned-lunar-landing--1MBhqOD8nQs/p.html>
-- `long-march-10` · core · universetoday · en · <https://www.universetoday.com/articles/china-unveils-their-plan-for-a-crewed-moon-landing>
-- `long-march-10` · deep · cgtn · en · <https://news.cgtn.com/news/2026-02-11/China-conducts-low-altitude-flight-test-for-Long-March-10-rocket-1KFK9b0VBiU/p.html>
-- `lucy` · core · nasa · en · <https://science.nasa.gov/mission/lucy/spacecraft/>
-- `lunar-prospector` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A>
-- `lunar-prospector` · deep · nasa · en · <https://ntrs.nasa.gov/citations/19980203799>
-- `lunar-prospector` · deep · nasa · en · <https://ntrs.nasa.gov/citations/19980237251>
-- `m1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_1>
-- `m1` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-1/>
-- `m10` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_10>
-- `m10` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-10/>
-- `m100` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_100>
-- `m100` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-100/>
-- `m101` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_101>
-- `m101` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-101/>
-- `m103` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_103>
-- `m104` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_104>
-- `m104` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-104/>
-- `m105` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_105>
-- `m105` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-105/>
-- `m106` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_106>
-- `m106` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-106/>
-- `m107` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_107>
-- `m107` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-107/>
-- `m108` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_108>
-- `m108` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-108/>
-- `m109` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_109>
-- `m109` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-109/>
-- `m11` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_11>
-- `m11` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-11/>
-- `m110` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_110>
-- `m110` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-110/>
-- `m12` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_12>
-- `m12` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-12/>
-- `m13` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_13>
-- `m13` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-13/>
-- `m14` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_14>
-- `m14` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-14/>
-- `m15` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_15>
-- `m15` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-15/>
-- `m16` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_16>
-- `m16` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-16/>
-- `m17` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_17>
-- `m17` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-17/>
-- `m18` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_18>
-- `m19` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_19>
-- `m19` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-19/>
-- `m2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_2>
-- `m2` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-2/>
-- `m20` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_20>
-- `m20` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-20/>
-- `m21` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_21>
-- `m22` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_22>
-- `m22` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-22/>
-- `m23` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_23>
-- `m24` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_24>
-- `m24` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-24/>
-- `m25` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Messier_25>
-- … 181 more
-
-## Changed (19)
-- `artemis4` · source_id: "science-aaas" → "doi"
-- `baikonur-1-5` · source_id: "roscosmos" → "russianspaceweb"; language: "ru" → "en"; kind: "agency-official" → "encyclopedic"
-- `baikonur-31-6` · source_id: "roscosmos" → "russianspaceweb"; language: "ru" → "en"; kind: "agency-official" → "encyclopedic"
-- `cassini` · source_id: "ciclops" → "internet-archive"; kind: "mission-microsite" → "encyclopedic"
-- `dawn` · source_id: "elsevier" → "doi"
-- `insight` · source_id: "ipgp" → "doi"; kind: "mission-microsite" → "science-publisher"
-- `jiuquan-slc-43` · source_id: "cnsa" → "wikipedia"; language: "*" → "en"; kind: "agency-official" → "encyclopedic"
-- `juice` · label: "Grasset et al. (2013) — JUICE mission profile + science goals (Planetary and Space Science 78)" → "Grasset et al. (2013) — JUICE mission science rationale (Planet. Space Sci.)"
-- `kourou-ela-2` · source_id: "cnes" → "internet-archive"; language: "fr" → "en"; kind: "agency-official" → "encyclopedic"
-- `long-march-3b` · source_id: "cnsa" → "wikipedia"; language: "*" → "en"; kind: "agency-official" → "encyclopedic"
-- `mmx` · source_id: "elsevier" → "doi"
-- `near-shoemaker` · source_id: "science-aaas" → "doi"
-- `neptune` · source_id: "elsevier" → "doi"
-- `patroclus` · source_id: "elsevier" → "doi"
-- `plesetsk-43` · source_id: "roscosmos" → "russianspaceweb"; language: "ru" → "en"; kind: "agency-official" → "encyclopedic"
-- `sbirs-heo` · source_id: "northrop-grumman" → "internet-archive"; kind: "vendor-official" → "encyclopedic"
-- `sun` · source_id: "annual-reviews" → "doi"
-- `tianwen-1` · language: "*" → "en"
-- `ulysses` · source_id: "elsevier" → "doi"
+## Added (36)
+- `ngc-1300` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_1300>
+- `ngc-1300` · core · esa · en · <https://esahubble.org/images/opo0501a/>
+- `ngc-1365` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_1365>
+- `ngc-1365` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Speedy_black_hole_holds_galaxy_s_history>
+- `ngc-2014-2020` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_2014>
+- `ngc-2014-2020` · core · stsci · en · <https://www.stsci.edu/contents/news-releases/2020/news-2020-16>
+- `ngc-2174` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_2174>
+- `ngc-2174` · core · esa · en · <https://esahubble.org/news/heic1406/>
+- `ngc-2264` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_2264>
+- `ngc-2264` · core · esa · en · <https://esahubble.org/images/heic0206c/>
+- `ngc-2392` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/photo_gallery/caption/hst_eskimo_ngc2392_0007.txt>
+- `ngc-3132` · core · eurekalert · en · <https://www.eurekalert.org/news-releases/973668>
+- `ngc-3324` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_3324>
+- `ngc-3324` · core · esa · en · <https://esa.int/Science_Exploration/Space_Science/Webb/Webb_reveals_Cosmic_Cliffs_a_glittering_landscape_of_star_birth>
+- `ngc-3372` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Carina_Nebula>
+- `ngc-3372` · core · esa · en · <https://esahubble.org/images/heic0707a/>
+- `ngc-4038-4039` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Antennae_Galaxies>
+- `ngc-4038-4039` · core · esa · en · <https://esahubble.org/news/heic0615/>
+- `ngc-5139` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Omega_Centauri>
+- `ngc-5139` · core · baumgardt-uq · en · <https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc5139.html>
+- `ngc-6302` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_6302>
+- `ngc-6302` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-69/>
+- `ngc-6543` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cat%27s_Eye_Nebula>
+- `ngc-6543` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Cat_s_Eye_Nebula_NGC_65432>
+- `ngc-7293` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Helix_Nebula>
+- `ngc-7293` · core · spitzer · en · <https://www.spitzer.caltech.edu/image/ssc2007-03a-comets-kick-up-dust-in-helix-nebula>
+- `ngc-7635` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Bubble_Nebula>
+- `ngc-7635` · core · esa · en · <https://esahubble.org/news/heic1608/>
+- `perseus-cluster` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Perseus_Cluster>
+- `perseus-cluster` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Euclid/Euclid_s_view_of_the_Perseus_cluster_of_galaxies>
+- `rho-ophiuchi` · core · nasa · en · <https://www.jpl.nasa.gov/news/webb-celebrates-first-year-of-science-with-close-up-on-birth-of-sun-like-stars/>
+- `serpens-nebula` · core · esa · en · <https://esawebb.org/images/weic2415a/>
+- `sn-1572` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/SN_1572>
+- `sn-1572` · core · arxiv · en · <https://arxiv.org/abs/0810.5106>
+- `v838-mon` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/V838_Monocerotis>
+- `wr-124` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_captures_rarely_seen_prelude_to_a_supernova>
 

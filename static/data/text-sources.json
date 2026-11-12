@@ -421,7 +421,7 @@
       },
       "category": "deep-sky",
       "relationship": "paraphrased-from",
-      "snippet": "The masses of globular clusters (M54, M72, M92, M107) named in the texts, from the Baumgardt and Vasiliev catalogue of Galactic globular cluster parameters.",
+      "snippet": "The masses of globular clusters (M54, M72, M92, M107, NGC 5139) named in the texts, from the Baumgardt and Vasiliev catalogue of Galactic globular cluster parameters.",
       "source_url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/parameter.html",
       "source_publisher": "University of Queensland (Baumgardt and Vasiliev globular cluster catalogue)",
       "source_author": "Holger Baumgardt, Eugene Vasiliev",
@@ -576,6 +576,90 @@
       "source_author": "G. Shields",
       "license_short": "Facts-only",
       "license_rationale": "Only facts were read from the credited source (the NED review, which cites the 1985 paper); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.overlays.esa-hubble-webb",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "Structure, ages, masses and imaging details of NGC 1300, 1365, 2174, 2264, 3324, 3372, 4038/4039, 6543, 7635, the Perseus Cluster, the Serpens Nebula and WR 124, paraphrased from ESA/Hubble, ESA/Webb and ESA Space Science release pages, each linked from its object page. Distances come from the data file; where a release gives another figure the text says so.",
+      "source_url": "https://esahubble.org/",
+      "source_publisher": "ESA/Hubble and ESA/Webb (European Space Agency)",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited release pages; no sentence of them is reproduced."
+    },
+    {
+      "id": "deep-sky.overlays.nasa-hubble-webb-spitzer",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "Structure, ages and imaging details of NGC 2392, 6302, 7293 and Rho Ophiuchi, paraphrased from the NASA Hubble caption and Caldwell page, the Spitzer release ssc2007-03a and the NASA JPL Webb anniversary release. Distances come from the data file.",
+      "source_url": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/",
+      "source_publisher": "NASA Science, NASA/JPL-Caltech (Hubble, Spitzer, Webb)",
+      "license_short": "PD-NASA",
+      "license_rationale": "NASA Science, NSSDC and JPL pages are U.S. Government works in the public domain (17 U.S.C. § 105); the Orrery text is a paraphrase, and where it carries a NASA estimate it says so."
+    },
+    {
+      "id": "deep-sky.overlays.stsci-eurekalert",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The Cosmic Reef (NGC 2014 and 2020) from the STScI release 2020-16, and the Southern Ring Nebula (NGC 3132) follow-up study from the EurekAlert news release of the Nature Astronomy paper (8 December 2022).",
+      "source_url": "https://www.stsci.edu/contents/news-releases/2020/news-2020-16",
+      "source_publisher": "Space Telescope Science Institute; EurekAlert! (AAAS)",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited release pages; no sentence of them is reproduced."
+    },
+    {
+      "id": "deep-sky.ngc-5139.haeberle-2024",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/ngc-5139.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The 2024 report of fast-moving stars near the centre of Omega Centauri that imply a black hole of at least 8,200 solar masses, from Häberle et al., arXiv 2405.06015 (Nature, 2024).",
+      "source_url": "https://arxiv.org/abs/2405.06015",
+      "source_publisher": "Nature (arXiv preprint)",
+      "source_author": "Maximilian Häberle et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.sn-1572.krause-2008",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/sn-1572.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "That the light-echo spectrum of Tycho's supernova shows a normal Type Ia explosion, from Krause et al., \"Tycho Brahe's 1572 supernova as a standard type Ia as revealed by its light-echo spectrum\" (Nature, 2008).",
+      "source_url": "https://arxiv.org/abs/0810.5106",
+      "source_publisher": "Nature (arXiv preprint)",
+      "source_author": "Oliver Krause et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.perseus-cluster.fabian-2003",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/perseus-cluster.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The ripples and weak shock in the hot gas of the Perseus Cluster seen in a deep Chandra observation and read as sound waves that offset cooling, from Fabian et al. (2003).",
+      "source_url": "https://arxiv.org/abs/astro-ph/0306036",
+      "source_publisher": "Monthly Notices of the Royal Astronomical Society (arXiv preprint)",
+      "source_author": "Andrew C. Fabian et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
     }
   ]
 }

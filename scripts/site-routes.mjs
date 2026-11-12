@@ -179,8 +179,10 @@ function blackHoleRoutes() {
 
 /**
  * Every id with a deep-sky page (/explore/deep-sky/<id>): the objects in deep-sky-objects.json
- * that have reviewed text, i.e. an overlay under i18n-src/en-US/universe/deep-sky/. The files
- * decide, so a batch of new overlays adds its pages with no code change. The one id list that
+ * that have reviewed text, i.e. an overlay under i18n-src/en-US/universe/deep-sky/, except an id
+ * in DEEP_SKY_ALIAS (one real object, one page: the alias keeps its overlay for its panel, the
+ * page is its target's). The files decide, so a batch of new overlays adds its pages with no code
+ * change. The one id list that
  * the page's `entries` generator, the INDEX, the mobile prune and the tests share.
  *
  * @returns {string[]}
@@ -190,8 +192,10 @@ export function deepSkyPageIds() {
   if (!existsSync(p)) return [];
   return JSON.parse(readFileSync(p, 'utf8'))
     .objects.map((/** @type {{ id: string }} */ o) => o.id)
-    .filter((/** @type {string} */ id) =>
-      existsSync(`i18n-src/en-US/universe/deep-sky/${id}.json`),
+    .filter(
+      (/** @type {string} */ id) =>
+        !Object.hasOwn(DEEP_SKY_ALIAS, id) &&
+        existsSync(`i18n-src/en-US/universe/deep-sky/${id}.json`),
     );
 }
 
@@ -200,12 +204,16 @@ export function deepSkyPageIds() {
  * holds under another id, and their INDEX rows link that object's page instead of getting a
  * second one. The Milky Way globulars m3 m4 m5 m13 m15 m22 m92 and the Local Group members
  * m32 m110 carry the deep-sky id already, so they need no entry; omega-centauri is
- * ngc-5139's alias, and links a page only once ngc-5139 has text.
+ * ngc-5139's alias, and links a page only once ngc-5139 has text. carina-nebula is the one alias
+ * that is also an object of deep-sky-objects.json (a second scene object and photo, Mystic
+ * Mountain, of the nebula ngc-3372 holds): it keeps its overlay for its panel, has no page of its
+ * own, and its INDEX row links ngc-3372's.
  */
 export const DEEP_SKY_ALIAS = {
   andromeda: 'm31',
   triangulum: 'm33',
   'omega-centauri': 'ngc-5139',
+  'carina-nebula': 'ngc-3372',
 };
 
 /** One indexable page per deep-sky object with text (/explore/deep-sky/<id>). */

@@ -735,6 +735,34 @@
       "license_summary": "The Irish News — daily newspaper from Belfast. © The Irish News; outbound reference links only."
     },
     {
+      "id": "eurekalert",
+      "name": "EurekAlert!",
+      "kind": "media-platform",
+      "url": "https://www.eurekalert.org/",
+      "license_summary": "EurekAlert! — AAAS news-release service for research institutions. © AAAS and the releasing institutions; outbound reference links only."
+    },
+    {
+      "id": "arxiv",
+      "name": "arXiv",
+      "kind": "publisher",
+      "url": "https://arxiv.org/",
+      "license_summary": "arXiv — Cornell University’s open preprint server for physics and astronomy. Papers © their authors; outbound reference links only."
+    },
+    {
+      "id": "spitzer",
+      "name": "Spitzer Space Telescope (Caltech/IPAC)",
+      "kind": "research-institute",
+      "url": "https://www.spitzer.caltech.edu/",
+      "license_summary": "Spitzer Space Telescope — NASA mission pages run by Caltech/IPAC. Outbound reference links only."
+    },
+    {
+      "id": "baumgardt-uq",
+      "name": "University of Queensland (Baumgardt globular cluster catalogue)",
+      "kind": "research-institute",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/",
+      "license_summary": "Baumgardt and Vasiliev globular cluster catalogue, University of Queensland. Outbound reference links only."
+    },
+    {
       "id": "nasaspaceflight",
       "name": "NASASpaceflight",
       "kind": "media-platform",

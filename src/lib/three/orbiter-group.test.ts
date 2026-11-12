@@ -11,7 +11,7 @@ import {
 function build(over: Partial<Parameters<typeof buildOrbiterGroup>[0]> = {}): OrbiterMarker {
   return buildOrbiterGroup({
     site: { id: 'lro', name: 'LRO' },
-    color: '#4ecdc4',
+    color: '#5070ff',
     ringRadius: 40,
     inclinationRad: 0.5,
     dimmed: false,

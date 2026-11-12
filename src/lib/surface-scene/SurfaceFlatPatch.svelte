@@ -510,14 +510,14 @@
     if (detailReady && detailImage) {
       ctx.drawImage(detailImage, x, y, w, h);
     } else {
-      ctx.fillStyle = 'rgba(78, 205, 196, 0.10)';
+      ctx.fillStyle = 'rgba(80, 112, 255, 0.10)';
       ctx.fillRect(x, y, w, h);
     }
-    ctx.strokeStyle = 'rgba(78, 205, 196, 0.85)';
+    ctx.strokeStyle = 'rgba(80, 112, 255, 0.85)';
     ctx.lineWidth = 1.5;
     ctx.strokeRect(x, y, w, h);
     if (w > 80) {
-      ctx.fillStyle = '#4ecdc4';
+      ctx.fillStyle = '#5070ff';
       ctx.font = "bold 11px 'Space Mono', monospace";
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
@@ -644,7 +644,7 @@
   /**
    * Stops as a white ring with a kind-coloured core + a "name · Sol N"
    * pill (#641), same as the 3D route. Kind colours:
-   *   sample orange · drill red-orange · panorama cyan · helicopter
+   *   sample orange · drill red-orange · panorama blue · helicopter
    *   magenta · feature yellow.
    */
   function drawTraverseStops(
@@ -656,7 +656,7 @@
     const KIND_COLOR: Record<string, string> = {
       sample: '#fb923c',
       drill: '#f97316',
-      panorama: '#22d3ee',
+      panorama: '#22d3ee', // a3-keep: marker kind identity colour, palette review at the end
       helicopter: '#e879f9',
       feature: '#fde047',
     };
@@ -1088,7 +1088,7 @@
   }
   .chip.on {
     color: #fff;
-    border-color: rgba(78, 205, 196, 0.6);
+    border-color: var(--color-accent-strong);
   }
   .hud-bottom {
     display: contents;

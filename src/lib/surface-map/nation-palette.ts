@@ -22,7 +22,7 @@ export const NATION_COLORS: Record<string, string> = {
   UAE: '#00732F',
   Israel: '#0038B8',
   // /earth launch sites beyond the big programmes.
-  'New Zealand': '#00A6A6',
+  'New Zealand': '#00A6A6', // a3-keep: nation identity colour, palette review at the end
   'South Korea': '#5B8DEF',
   'North Korea': '#9B59B6',
   Iran: '#6BBF59',
@@ -55,7 +55,7 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
   if (agency === 'CNES') return { label: `${countryLabel('France')} · CNES`, color: '#1d4ed8' };
   if (agency === 'ASI') return { label: `${countryLabel('Italy')} · ASI`, color: '#1d4ed8' };
   if (agency === 'Rocket Lab')
-    return { label: `${countryLabel('New Zealand')} · Rocket Lab`, color: '#00A6A6' };
+    return { label: `${countryLabel('New Zealand')} · Rocket Lab`, color: '#00A6A6' }; // a3-keep: nation identity colour, palette review at the end
   if (agency === 'KARI')
     return { label: `${countryLabel('South Korea')} · KARI`, color: '#5B8DEF' };
   if (agency === 'NADA')

@@ -37,7 +37,7 @@ import type { SurfaceSite, Traverse } from '$types/surface-site';
 // halo, in the site's muted blue (#889fe7). Lays flat against the surface with a
 // small Y offset to avoid z-fighting. Two variants:
 //   - circular: outer soft disc (radius 2.4, opacity 0.16) + crisp
-//     teal ring (1.7–2.4, opacity 0.95). Reads at heliocentric
+//     accent blue ring (1.7–2.4, opacity 0.95). Reads at heliocentric
 //     framing where the lander cone is sub-pixel.
 //   - rectangular: 4 corner brackets + soft fill, sized via aspect.
 //     Brighter / thicker than the selection-style brackets so the
@@ -54,7 +54,7 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
     const width = aspect * height;
     const w2 = width / 2;
     const h2 = height / 2;
-    // Soft fill — teal at 0.10 opacity. Subtle but adds the "lit"
+    // Soft fill — accent blue at 0.10 opacity. Subtle but adds the "lit"
     // feeling vs the dim selection halo fill (0.04).
     const fillGeo = new THREE.PlaneGeometry(width, height);
     const fillMat = new THREE.MeshBasicMaterial({
@@ -66,7 +66,7 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
     });
     group.add(new THREE.Mesh(fillGeo, fillMat));
     // Corner brackets — same L-shape pattern as the selection halo
-    // but in teal at full opacity for the hover cue.
+    // but in accent blue at full opacity for the hover cue.
     const armLen = Math.min(width, height) * 0.18;
     // prettier-ignore
     const bracketVerts = new Float32Array([
@@ -88,7 +88,7 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
     });
     group.add(new THREE.LineSegments(bracketGeo, bracketMat));
   } else {
-    // Outer glow disc — translucent teal fill, soft radial feel.
+    // Outer glow disc — translucent accent blue fill, soft radial feel.
     const glowGeo = new THREE.CircleGeometry(2.4, 48);
     const glowMat = new THREE.MeshBasicMaterial({
       color: HOVER_BLUE,
@@ -98,7 +98,7 @@ function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Objec
       depthWrite: false,
     });
     group.add(new THREE.Mesh(glowGeo, glowMat));
-    // Crisp ring — bright teal outline at the disc edge.
+    // Crisp ring — bright accent blue outline at the disc edge.
     const ringGeo = new THREE.RingGeometry(1.7, 2.4, 48);
     const ringMat = new THREE.MeshBasicMaterial({
       color: HOVER_BLUE,
@@ -379,10 +379,10 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       // but built with a much thicker stroke + soft inner fill so the
       // "I'm hovering this" cue actually reads at default zoom
       // (2026-06-15 user note: first pass was "almost invisible — make
-      // them a bit stronger"). For point sites: an outer teal disc
+      // them a bit stronger"). For point sites: an outer accent blue disc
       // (radius 2.4) at 0.16 opacity for a soft glow, plus a bright
-      // teal ring (1.7–2.4) at 0.95 opacity for the crisp outline.
-      // For region-bounds sites: same teal corner brackets the
+      // accent blue ring (1.7–2.4) at 0.95 opacity for the crisp outline.
+      // For region-bounds sites: same accent blue corner brackets the
       // selection halo uses, just at full opacity + a slightly
       // wider rectangle so the affordance reads against the LROC
       // patch below.

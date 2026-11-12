@@ -5,7 +5,7 @@
   frame, so the same overlay serves the flat ground view and the 3D detail
   patch.
 
-  Hover (or keyboard focus) turns a ring cyan, brings it to the front,
+  Hover (or keyboard focus) turns a ring blue, brings it to the front,
   highlights its label chip and shows a small preview card (name + thumbnail,
   same look as the traverse route-photo card). A click / tap opens the full
   popover; on a coarse pointer that is a bottom sheet, kept clear of the HUD.
@@ -514,7 +514,7 @@
     overflow: hidden;
   }
   /* --hl (set inline, #889fe7): the site's --color-tier-core #7b9cff blended 65/35 toward
-     a neutral grey, so it reads as a calm blue against the ring yellow, not cyan. */
+     a neutral grey, so it reads as a calm blue against the ring yellow, not blue. */
   .ring {
     position: absolute;
     width: var(--hit-px);
@@ -578,7 +578,7 @@
       animation: none;
     }
   }
-  /* hover / focus / list highlight: cyan accent, thicker stroke, brighter glow, in front */
+  /* hover / focus / list highlight: blue accent, thicker stroke, brighter glow, in front */
   .ring.active .dot,
   .ring:hover .dot,
   .ring:focus-visible .dot {

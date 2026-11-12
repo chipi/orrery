@@ -144,13 +144,13 @@ export function hitTest(modules: ProjectedModule[], px: number, py: number): str
 }
 
 const BLUEPRINT_BG = '#04080f';
-const BLUEPRINT_GRID = 'rgba(78, 205, 196, 0.08)';
-const BLUEPRINT_OUTLINE = 'rgba(78, 205, 196, 0.7)';
-const BLUEPRINT_FILL = 'rgba(78, 205, 196, 0.06)';
+const BLUEPRINT_GRID = 'rgba(80, 112, 255, 0.08)';
+const BLUEPRINT_OUTLINE = 'rgba(80, 112, 255, 0.7)';
+const BLUEPRINT_FILL = 'rgba(80, 112, 255, 0.06)';
 const BLUEPRINT_VISITOR_OUTLINE = 'rgba(255, 200, 80, 0.75)';
 const BLUEPRINT_VISITOR_FILL = 'rgba(255, 200, 80, 0.08)';
-const BLUEPRINT_SELECTED = '#4ecdc4';
-const BLUEPRINT_HOVER = 'rgba(78, 205, 196, 0.95)';
+const BLUEPRINT_SELECTED = '#8aa0ff';
+const BLUEPRINT_HOVER = 'rgba(138, 160, 255, 0.95)';
 const BLUEPRINT_LABEL = 'rgba(220, 230, 235, 0.8)';
 
 export function drawBlueprint(
@@ -310,7 +310,7 @@ export function drawBlueprint(
   }
 
   // Draw leader lines first (under labels)
-  ctx.strokeStyle = 'rgba(78, 205, 196, 0.3)';
+  ctx.strokeStyle = 'rgba(80, 112, 255, 0.3)';
   ctx.lineWidth = 1;
   for (const dc of drawCalls) {
     if (dc.leader) {

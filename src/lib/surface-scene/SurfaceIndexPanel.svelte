@@ -229,7 +229,7 @@
   }
   .sidx-input:focus-visible {
     outline: none;
-    border-color: rgba(78, 205, 196, 0.6);
+    border-color: var(--color-accent-strong);
   }
   .sidx-close {
     flex-shrink: 0;
@@ -271,12 +271,12 @@
     white-space: nowrap;
   }
   .sidx-chip.active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.6);
+    color: var(--color-state);
+    border-color: var(--color-accent-strong);
     background: rgba(20, 26, 50, 0.85);
   }
   .sidx-chip:focus-visible {
-    outline: 2px solid var(--color-accent, #4ecdc4);
+    outline: 2px solid var(--color-accent, var(--color-focus));
     outline-offset: -2px;
   }
   .sidx-chip-agency :global(.badge) {
@@ -330,8 +330,8 @@
     outline: none;
   }
   .sidx-row.selected {
-    background: rgba(78, 205, 196, 0.12);
-    border-color: rgba(78, 205, 196, 0.55);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
   .row-dot {
     flex-shrink: 0;

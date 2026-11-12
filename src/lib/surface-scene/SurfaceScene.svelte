@@ -2437,7 +2437,7 @@
 
     // J.4 — Tidal-lock indicator. The Moon is in 1:1 synchronous
     // rotation with Earth, so one hemisphere (the "near side") always
-    // faces Earth. We mark that hemisphere with a faint teal tint that
+    // faces Earth. We mark that hemisphere with a faint accent blue tint that
     // PARENTS to planetMesh — so when the user rotates the Moon (autoSpin
     // or drag), the marker rotates with the body, demonstrating that
     // a fixed lunar hemisphere is what stays Earth-facing in real life
@@ -3794,7 +3794,7 @@
             if (mk.halo.visible) fadeHalo(mk.halo, routeHaloFade);
           }
           if (mk.hoverHalo) {
-            // Teal hover ring — only when the mouse is over this
+            // Accent blue hover ring — only when the mouse is over this
             // marker AND it isn't already selected (selection halo
             // wins, avoids double-ring). Hover stays on the marker for ALL
             // sites incl. traverse rovers (same as InSight) — only the
@@ -7054,8 +7054,8 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .surface-index-handle:hover,
   .surface-index-handle[aria-pressed='true'] {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .surface-index-desktop {
     display: block;
@@ -7140,16 +7140,16 @@ sample      ${debugInfo.projectedPxSample}`}
     content: '◐';
     font-size: 13px;
     line-height: 1;
-    color: var(--accent, #4ecdc4);
+    color: var(--accent, var(--color-state));
   }
   .head :global(.stand-at-site--exit::before) {
     content: '✕';
-    color: var(--accent, #4ecdc4);
+    color: var(--accent, var(--color-state));
   }
   .head :global(.stand-at-site:hover),
   .head :global(.stand-at-site:focus-visible) {
     background: rgba(255, 255, 255, 0.08);
-    border-color: var(--accent, #4ecdc4);
+    border-color: var(--accent, var(--color-accent));
     color: #fff;
     outline: none;
   }
@@ -7182,7 +7182,7 @@ sample      ${debugInfo.projectedPxSample}`}
   .head .zoom-to-detail-button:hover,
   .head .zoom-to-detail-button:focus-visible {
     background: rgba(255, 255, 255, 0.08);
-    border-color: var(--accent, #4ecdc4);
+    border-color: var(--accent, var(--color-accent));
     color: #fff;
     outline: none;
   }
@@ -7196,7 +7196,7 @@ sample      ${debugInfo.projectedPxSample}`}
      own palette instead of MissionPanel's fixed blue. */
   /* Panel-tab active underline tinted to --body-tint inside the
      surface-scene scope. The default in panel-tabs.css is a fixed
-     #4466ff blue — fine across MissionPanel / PlanetPanel / etc., but
+     var(--color-accent) blue — fine across MissionPanel / PlanetPanel / etc., but
      on /moon /mars /earth detail panels the user wants the underline
      to read as part of the current world's palette. Scoped to
      `.surface-scene` so the global default still wins on every other
@@ -7205,7 +7205,7 @@ sample      ${debugInfo.projectedPxSample}`}
      blue [on earth]" — also catches the tab underline since that's
      the panel's primary active-state indicator.) */
   :global(.surface-scene .tabs button.active) {
-    border-bottom-color: var(--body-tint, #4466ff);
+    border-bottom-color: var(--body-tint, var(--color-accent));
   }
 
   .head .site-cta-bar {
@@ -7237,9 +7237,9 @@ sample      ${debugInfo.projectedPxSample}`}
        Earth deep blue) so the CTA row reads as belonging to the
        current world, not the selected site's nation. The agency badge
        above still carries the per-site nation accent for identity. */
-    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 8%, rgba(8, 10, 22, 0.6));
+    background: color-mix(in srgb, var(--body-tint, var(--color-accent)) 8%, rgba(8, 10, 22, 0.6));
     color: rgba(255, 255, 255, 0.88);
-    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 50%, transparent);
+    border: 1px solid color-mix(in srgb, var(--body-tint, var(--color-accent)) 50%, transparent);
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
@@ -7257,8 +7257,12 @@ sample      ${debugInfo.projectedPxSample}`}
   .head .site-cta-bar :global(.stand-at-site:focus-visible),
   .head .site-cta-bar .zoom-to-detail-button:hover,
   .head .site-cta-bar .zoom-to-detail-button:focus-visible {
-    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 38%, rgba(8, 10, 22, 0.85));
-    border-color: var(--body-tint, #4ecdc4);
+    background: color-mix(
+      in srgb,
+      var(--body-tint, var(--color-accent)) 38%,
+      rgba(8, 10, 22, 0.85)
+    );
+    border-color: var(--body-tint, var(--color-accent));
     color: #fff;
     outline: none;
     transform: translateY(-1px);
@@ -7280,8 +7284,12 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .replay-play {
     padding: 5px 10px;
-    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
-    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 70%, transparent);
+    background: color-mix(
+      in srgb,
+      var(--body-tint, var(--color-accent)) 18%,
+      rgba(8, 10, 22, 0.85)
+    );
+    border: 1px solid color-mix(in srgb, var(--body-tint, var(--color-accent)) 70%, transparent);
     border-radius: 3px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -7291,13 +7299,13 @@ sample      ${debugInfo.projectedPxSample}`}
     cursor: pointer;
   }
   .replay-play:focus-visible {
-    outline: 2px solid var(--body-tint, #4ecdc4);
+    outline: 2px solid var(--body-tint, var(--color-focus));
     outline-offset: 2px;
   }
   .replay-scrub {
     flex: 1 1 160px;
     min-width: 0;
-    accent-color: var(--body-tint, #4ecdc4);
+    accent-color: var(--body-tint, var(--color-accent));
   }
   .replay-at {
     flex: 1 1 100%;
@@ -7335,11 +7343,11 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 3px;
   }
   .profile-area {
-    fill: color-mix(in srgb, var(--body-tint, #4ecdc4) 22%, transparent);
+    fill: color-mix(in srgb, var(--body-tint, var(--color-accent)) 22%, transparent);
   }
   .profile-line {
     fill: none;
-    stroke: color-mix(in srgb, var(--body-tint, #4ecdc4) 60%, #ffffff);
+    stroke: color-mix(in srgb, var(--body-tint, var(--color-accent)) 60%, #ffffff);
     stroke-width: 1.5;
   }
   .profile-cursor {
@@ -7369,7 +7377,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .journey-row:hover,
   .journey-row:focus-visible {
-    border-color: var(--body-tint, #4ecdc4);
+    border-color: var(--body-tint, var(--color-accent));
     background: rgba(255, 255, 255, 0.07);
     outline: none;
   }
@@ -7393,7 +7401,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .journey-sol {
     font-size: 11px;
-    color: var(--body-tint, #4ecdc4);
+    color: var(--body-tint, var(--color-state));
     letter-spacing: 0.6px;
   }
   .journey-label {
@@ -7808,8 +7816,8 @@ sample      ${debugInfo.projectedPxSample}`}
   .left-block {
     margin-bottom: 14px;
     padding: 12px 14px;
-    border-left: 4px solid var(--accent, #4466ff);
-    background: rgb(from var(--accent, #4466ff) r g b / 0.08);
+    border-left: 4px solid var(--accent, var(--color-accent));
+    background: rgb(from var(--accent, var(--color-accent)) r g b / 0.08);
     border-radius: 0 4px 4px 0;
   }
   .left-block h3 {
@@ -7817,7 +7825,7 @@ sample      ${debugInfo.projectedPxSample}`}
     font-size: var(--size-label);
     letter-spacing: 2px;
     margin: 0 0 6px;
-    color: var(--accent, #4466ff);
+    color: var(--accent, var(--color-state));
   }
   .left-block p {
     font-size: var(--size-meta);
@@ -7841,8 +7849,8 @@ sample      ${debugInfo.projectedPxSample}`}
 
   .capability-block {
     padding: 10px 12px;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 4px;
     margin-bottom: 14px;
   }
@@ -7850,7 +7858,7 @@ sample      ${debugInfo.projectedPxSample}`}
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: #4ecdc4;
+    color: var(--color-state);
     margin: 0 0 4px;
   }
   .capability-block p {
@@ -7866,8 +7874,8 @@ sample      ${debugInfo.projectedPxSample}`}
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
-    background: rgba(68, 102, 255, 0.18);
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: #fff;
     text-decoration: none;
     border-radius: 3px;
@@ -7879,8 +7887,8 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .mission-link:hover,
   .mission-link:focus-visible {
-    background: rgba(68, 102, 255, 0.32);
-    border-color: #4466ff;
+    background: var(--color-accent-edge);
+    border-color: var(--color-accent);
     outline: none;
   }
 
@@ -7908,9 +7916,9 @@ sample      ${debugInfo.projectedPxSample}`}
   .launches-chip {
     display: inline-block;
     padding: 5px 10px;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
+    color: var(--color-state);
     text-decoration: none;
     border-radius: 999px;
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -7921,8 +7929,8 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .launches-chip:hover,
   .launches-chip:focus-visible {
-    background: rgba(78, 205, 196, 0.22);
-    border-color: rgba(78, 205, 196, 0.75);
+    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+    border-color: var(--color-accent-strong);
     color: #fff;
     outline: none;
   }

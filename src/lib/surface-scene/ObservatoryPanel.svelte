@@ -128,8 +128,8 @@
     letter-spacing: 0.06em;
     padding: 3px 7px;
     border-radius: 3px;
-    border: 1px solid rgba(127, 224, 255, 0.45);
-    color: #7fe0ff;
+    border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+    color: var(--color-state);
   }
   .status-historic {
     border-color: rgba(255, 255, 255, 0.3);
@@ -162,9 +162,9 @@
   }
   .site {
     align-self: flex-start;
-    color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: var(--color-state);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     padding: 8px 12px;
     min-height: 36px;
@@ -176,8 +176,8 @@
   }
   .site:hover,
   .site:focus-visible {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent);
   }
   h3 {
     margin: 8px 0 0;
@@ -201,7 +201,7 @@
     font-size: 13px;
     line-height: 1.45;
     padding-left: 12px;
-    border-left: 2px solid rgba(127, 224, 255, 0.35);
+    border-left: 2px solid var(--color-accent-edge);
   }
   .articles a {
     color: var(--color-earth);

@@ -16,7 +16,13 @@ English text for deep-level entity pages that are under the thin-page floor (ope
    `static/data/text-sources.json` entries (publisher, source_url, licence, relationship), outbound
    links in the overlays' `links` with hosts in `static/data/source-logos.json`, then
    `scripts/build-link-provenance.ts`; check /credits and /library.
-5. **Translate** (by hand, few agents, several locales each; glossary forms from
+5. **Glossary first** (operator 2026-11-12): list every astronomy / astrophysics term in the batch
+   (e.g. globular cluster, open cluster, planetary nebula, event horizon, accretion disk,
+   microlensing, blue straggler, spectral type) that is not in
+   `scripts/i18n-tools/native-terms.json`; add each with the 13 locales' forms — the site's
+   existing form where one exists, else the form that country's universities use (search native
+   pages when unsure) — then translate with those forms.
+6. **Translate** (by hand, few agents, several locales each; glossary forms from
    `scripts/i18n-tools/native-terms.json`), then the 14-locale checks.
 
 At most 2 agents run at once across all work (operator 2026-11-12).

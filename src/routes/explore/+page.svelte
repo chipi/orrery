@@ -1,5 +1,4 @@
 <script lang="ts">
-  import EntityIndex from '$lib/components/EntityIndex.svelte';
   import Chip from '$lib/components/Chip.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
@@ -1952,8 +1951,6 @@
   {/if}
 </div>
 
-<EntityIndex hub="explore" title={m.entity_index_explore()} links={data.entityIndex} floating />
-
 <PlanetPanel
   planet={selectedPlanet}
   open={panelState.planet}
@@ -2117,6 +2114,7 @@
   </div>
   <ExploreBodyIndex
     bodies={bodyIndexList}
+    entityLinks={data.entityIndex}
     {selectedId}
     open={bodyIndexOpen}
     onClose={() => (bodyIndexOpen = false)}
@@ -2269,19 +2267,11 @@
   .ruler-desktop-only {
     display: contents;
   }
-  /* The left rail (PLANETS…ICONIC MISSIONS chips, 124-368 px from the top) and
-     the ruler must not share pixels. Tall windows: the ruler sits below the
-     chips (--ruler-top-clear caps its height). Short ones: it moves right,
-     beside the chips. Up to 600 px wide the time dock is 96 px tall, so the
-     ruler clears it (--ruler-clear). */
+  /* The layer chip row (PLANETS…PATHS, one line, to about 140 px from the top) and the
+     ruler must not share pixels: --ruler-top-clear caps the ruler's height below it.
+     Up to 600 px wide the time dock is 96 px tall, so the ruler clears it (--ruler-clear). */
   .ruler-desktop-only {
-    --ruler-top-clear: 376px;
-  }
-  @media (max-height: 759px) {
-    .ruler-desktop-only {
-      --ruler-top-clear: 0px;
-      --ruler-left: 196px;
-    }
+    --ruler-top-clear: 150px;
   }
   @media (max-width: 600px) {
     .ruler-desktop-only {

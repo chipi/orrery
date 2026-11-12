@@ -7,17 +7,25 @@
   accessible "another way to select things"). Roving list: one Tab stop, ↑↓ /
   D-pad move, Enter selects.
 
+  A row whose body has an entity page (`/explore/<id>`, from the route's server load) also
+  carries a real link to it, and the pages with no row here (moons) follow as plain link rows.
+  The panel stays in the DOM, hidden, while closed, so the prerendered HTML links every page
+  (ADR-096 item 11; the A–Z tab it replaced is gone).
+
   Same treatment as the surface SurfaceIndexPanel (search + side panel on desktop,
   drawer body on mobile) — bodies just carry no agency/orbit-land/era filters.
 -->
 <script lang="ts">
   import { roving } from '$lib/a11y/roving';
+  import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
 
   export type IndexBody = { kind: 'sun' | 'planet' | 'small'; id: string; name: string };
 
   type Props = {
     bodies: IndexBody[];
+    /** Every /explore/<id> entity page, from the server load. */
+    entityLinks?: { id: string; name: string }[];
     selectedId: string | null;
     open: boolean;
     onSelect: (body: IndexBody) => void;
@@ -26,12 +34,25 @@
      *  mobile drawer's Index tab. Reuses the same search + rows + roving nav. */
     inline?: boolean;
   };
-  let { bodies, selectedId, open, onSelect, onClose, inline = false }: Props = $props();
+  let {
+    bodies,
+    entityLinks = [],
+    selectedId,
+    open,
+    onSelect,
+    onClose,
+    inline = false,
+  }: Props = $props();
 
   let query = $state('');
-  const filtered = $derived(
-    bodies.filter((b) => b.name.toLowerCase().includes(query.trim().toLowerCase())),
+  const pageIds = $derived(new Set(entityLinks.map((l) => l.id)));
+  const pageHref = (id: string) => localHref(`/explore/${id}`);
+  const bodyIds = $derived(new Set(bodies.map((b) => b.id)));
+  const q = $derived(query.trim().toLowerCase());
+  const extraLinks = $derived(
+    entityLinks.filter((l) => !bodyIds.has(l.id) && l.name.toLowerCase().includes(q)),
   );
+  const filtered = $derived(bodies.filter((b) => b.name.toLowerCase().includes(q)));
 </script>
 
 {#snippet panelBody(withClose: boolean)}
@@ -51,9 +72,16 @@
     {/if}
   </div>
   <div class="bidx-count">{filtered.length} / {bodies.length}</div>
-  <ul class="bidx-list" use:roving={{ orientation: 'vertical', wrap: true }}>
+  <ul
+    class="bidx-list"
+    use:roving={{
+      orientation: 'vertical',
+      wrap: true,
+      itemSelector: 'button.bidx-row, a.bidx-page',
+    }}
+  >
     {#each filtered as b (b.kind + ':' + b.id)}
-      <li>
+      <li class="bidx-item">
         <button
           type="button"
           class="bidx-row"
@@ -65,9 +93,24 @@
           <span class="bidx-dot bidx-dot--{b.kind}" aria-hidden="true"></span>
           <span class="bidx-name">{b.name}</span>
         </button>
+        {#if pageIds.has(b.id)}
+          <a
+            class="bidx-page"
+            href={pageHref(b.id)}
+            title={m.surface_index_open_page()}
+            aria-label="{m.surface_index_open_page()}: {b.name}"
+            data-testid="explore-body-index-page-link"
+            data-index-id={b.id}>↗</a
+          >
+        {/if}
       </li>
     {/each}
-    {#if filtered.length === 0}
+    {#each extraLinks as link (link.id)}
+      <li class="bidx-item">
+        <a class="bidx-page bidx-page--name" href={pageHref(link.id)}>{link.name}</a>
+      </li>
+    {/each}
+    {#if filtered.length === 0 && extraLinks.length === 0}
       <li class="bidx-empty">{m.surface_index_empty()}</li>
     {/if}
   </ul>
@@ -75,8 +118,8 @@
 
 {#if inline}
   <div class="bidx bidx-inline">{@render panelBody(false)}</div>
-{:else if open}
-  <aside class="body-index bidx" aria-label={m.explore_body_index_aria()}>
+{:else if open || entityLinks.length > 0}
+  <aside class="body-index bidx" hidden={!open} aria-label={m.explore_body_index_aria()}>
     {@render panelBody(true)}
   </aside>
 {/if}
@@ -102,6 +145,9 @@
     border-radius: 10px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
+  }
+  .body-index[hidden] {
+    display: none;
   }
   .bidx {
     display: flex;
@@ -162,11 +208,42 @@
   .bidx-inline .bidx-list {
     max-height: 42dvh;
   }
+  .bidx-item {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .bidx-page {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--text-dim, #9a9aa7);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .bidx-page:hover,
+  .bidx-page:focus-visible {
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: var(--text-base, #e8e8ed);
+    outline: none;
+  }
+  .bidx-page--name {
+    flex: 1;
+    justify-content: flex-start;
+    padding: 8px 10px;
+    font-size: inherit;
+    color: var(--text-base, #e8e8ed);
+  }
   .bidx-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     padding: 8px 10px;
     background: none;
     border: 1px solid transparent;

@@ -167,19 +167,9 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
       // around the globe, especially once every object was filtered off.
       // The altitude/regime an orbiter sits in is surfaced in its detail
       // panel instead (relating it to the orbit ruler).
-      // Loaded async on mount; categories drive chip-row sub-toggles.
-      // Defaults match EarthOrbitalScene's default-on state for every
-      // category — users can hide via the new STATIONS / OBSERVATORIES
-      // / CONSTELLATIONS / COMSATS / MOON ORBITERS chips.
+      // Loaded async on mount; the one ORBITERS chip shows or hides them all.
       satellites: {
         loadObjects: getEarthObjects,
-        categoryDefaultVisible: {
-          station: true,
-          observatory: true,
-          constellation: true,
-          comsat: true,
-          moonOrbiter: true,
-        },
       },
     },
   };

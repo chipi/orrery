@@ -153,20 +153,11 @@ export interface EarthOrbitalLayersConfig {
   };
 
   /**
-   * Per-category satellite rendering. Each category gets its own
-   * visibility toggle chip + default state. Loader function returns
-   * the EarthObject array; categorisation drives chip + visibility.
-   * Slice 3.
+   * Satellite rendering. One ORBITERS chip shows or hides every category;
+   * the loader returns the EarthObject array. Slice 3.
    */
   satellites?: {
     loadObjects: (locale: string) => Promise<unknown[]>;
-    categoryDefaultVisible: {
-      station: boolean;
-      observatory: boolean;
-      constellation: boolean;
-      comsat: boolean;
-      moonOrbiter: boolean;
-    };
   };
 
   /**

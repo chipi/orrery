@@ -293,16 +293,17 @@ const SWEEP_ALLOW_SELF = [
   '.mdg-tab',
   '.fly-mtab',
   '.debug-tab',
-  // Switches (Nav debug switch, SensorySheet): form controls, not chips
+  // Switches (SensorySheet): form controls, not chips
   '[role="switch"]',
-  // Nav (A6 owns it): the toggles, the group triggers, the drawer
+  // Nav (A6, UXD-016): the toggles, the More trigger and its menu rows, the group triggers, the drawer
   '.menu-toggle',
   '.audio-toggle',
   '.lens-toggle',
-  '.contrast-toggle',
   '.settings-toggle',
-  '.share-toggle',
   '.debug-toggle',
+  '.nav-more-trigger',
+  '.nav-more-item',
+  '.nav-more-backdrop',
   '.group-trigger',
   '.group-backdrop',
   '.drawer-link',

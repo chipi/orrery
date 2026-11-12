@@ -29,5 +29,8 @@ names from the glossary `body` section), linking back to `/explore?id=`
 (ADR-096). `stars/` holds the indexable star pages: `stars/[id]/` is one named star or
 exoplanet host (server load `+page.server.ts` → `$lib/data/star-entity`; the host's system is a
 section of the page; back-links `/explore?goto=` or `?system=`), `stars/` itself is the static A–Z
-hub (ADR-096 items 13–14; ids from `starPageIds()` in `scripts/site-routes.mjs`). `hub/` is the
+hub (ADR-096 items 13–14; ids from `starPageIds()` in `scripts/site-routes.mjs`). `black-holes/`
+is the same for black holes (ADR-096 item 16): `black-holes/[id]/` is one hole (server load →
+`$lib/data/black-hole-entity`; Gargantua carries a fiction badge and no figures; back-link
+`/explore?bh=`), `black-holes/` the static hub (ids from `blackHolePageIds()`). `hub/` is the
 nav-group hub.

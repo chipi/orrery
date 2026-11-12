@@ -253,11 +253,11 @@
   }
   .si-row:hover,
   .si-row:focus-visible {
-    background: color-mix(in srgb, var(--brand, #4a7dff) 18%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     outline: none;
   }
   .si-row.selected {
-    background: color-mix(in srgb, var(--brand, #4a7dff) 28%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
     border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
   .si-badges {

@@ -120,7 +120,7 @@ export async function composeReportCard(input: ReportCardInput): Promise<Blob | 
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.font = '400 24px system-ui, sans-serif';
     ctx.fillText(l.label, 60, ly);
-    ctx.fillStyle = '#8fd4ff';
+    ctx.fillStyle = '#8aa0ff';
     ctx.font = '600 32px ui-monospace, monospace';
     ctx.fillText(l.value, 60, ly + 38);
     ly += 92;

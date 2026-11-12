@@ -849,9 +849,9 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-flown {
-    color: #4b9cd3;
-    border-color: rgba(75, 156, 211, 0.4);
-    background: rgba(75, 156, 211, 0.08);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .status-retired {
     color: #ffc850;
@@ -951,7 +951,7 @@
 
   /* Fleet -> Mission back-link CTA. Mirrors the .spec-cta system on
      /missions MissionPanel.svelte. Third blue in the same family:
-     vehicle = #0c1660 (darkest), payload = #1788d4 (lightest),
+     vehicle = #0c1660 (darkest), payload = var(--color-accent) (lightest),
      mission = #1f4ca8 (mid). Lives on a different panel so the three
      never appear together; the modifier color exists for sibling
      identity, not for in-panel disambiguation. Both <a> (single

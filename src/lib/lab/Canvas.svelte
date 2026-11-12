@@ -647,10 +647,18 @@
     border-radius: 6px;
     touch-action: none;
     background:
-      linear-gradient(rgba(78, 205, 196, 0.09) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(78, 205, 196, 0.09) 1px, transparent 1px),
-      linear-gradient(rgba(78, 205, 196, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(78, 205, 196, 0.045) 1px, transparent 1px);
+      linear-gradient(color-mix(in srgb, var(--color-accent) 9%, transparent) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-accent) 9%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(color-mix(in srgb, var(--color-accent) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-accent) 4%, transparent) 1px,
+        transparent 1px
+      );
     background-size:
       128px 128px,
       128px 128px,
@@ -672,7 +680,7 @@
   }
   .canvas__edge {
     fill: none;
-    stroke: #4ecdc4;
+    stroke: var(--color-accent);
     stroke-width: 1.5;
     opacity: 0.8;
   }
@@ -691,7 +699,7 @@
     width: 320px;
   }
   .canvas__card--selected {
-    outline: 2px solid #4ecdc4;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
     border-radius: 6px;
   }
@@ -725,7 +733,7 @@
     height: 11px;
     border-radius: 50%;
     background: #04040c;
-    border: 2px solid #4ecdc4;
+    border: 2px solid var(--color-accent);
     cursor: crosshair;
     padding: 0;
   }
@@ -733,9 +741,9 @@
     width: auto;
     border-radius: 8px;
     padding: 2px 8px;
-    color: #4ecdc4;
+    color: var(--color-state);
     font-size: var(--size-label);
-    background: rgba(78, 205, 196, 0.12);
+    background: var(--color-accent-soft);
   }
   .canvas__inputs {
     display: flex;
@@ -793,9 +801,9 @@
     cursor: pointer;
   }
   .canvas__bar-btn--primary {
-    border-color: #4ecdc4;
+    border-color: var(--color-accent);
     color: #04040c;
-    background: #4ecdc4;
+    background: var(--color-accent);
     font-weight: 700;
   }
   .canvas__bar-btn:disabled {
@@ -849,10 +857,10 @@
     border-radius: 4px;
   }
   .canvas__palette-item:hover {
-    background: rgba(78, 205, 196, 0.1);
+    background: var(--color-accent-soft);
   }
   .canvas__palette-domain {
-    color: rgba(78, 205, 196, 0.8);
+    color: var(--color-state);
     font-size: var(--size-label);
     width: 64px;
   }
@@ -895,7 +903,7 @@
     margin-top: 10px;
   }
   .canvas__select {
-    accent-color: #4ecdc4;
+    accent-color: var(--color-accent);
   }
   .canvas--readonly .canvas__handle {
     cursor: pointer;

@@ -1096,20 +1096,20 @@
   .audio-toggle:hover,
   .audio-toggle:focus-visible {
     border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
-    color: rgba(150, 175, 255, 0.95);
+    color: var(--color-state);
     outline: none;
   }
   .audio-toggle.active {
     background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     border-color: var(--color-accent-strong);
-    color: #96afff;
+    color: var(--color-state);
   }
   /* Discreet pulse while audio.playing — bounded opacity wave on the
      icon stroke (PRD-016 S3 / RFC-019 §7.2). Animation suspended under
      prefers-reduced-motion so motion-sensitive users see only the
      border-color treatment. */
   .audio-toggle.playing {
-    border-color: rgba(150, 175, 255, 0.6);
+    border-color: var(--color-accent-strong);
   }
   .audio-toggle.playing :global(svg) {
     animation: audio-toggle-pulse 1.6s ease-in-out infinite;

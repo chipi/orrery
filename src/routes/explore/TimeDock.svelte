@@ -205,7 +205,7 @@
     gap: 10px;
     padding: 4px 8px 4px 4px;
     background: rgba(8, 10, 22, 0.6);
-    border: 1px solid rgba(75, 156, 211, 0.25);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 6px;
     backdrop-filter: blur(4px);
     pointer-events: auto;
@@ -224,7 +224,7 @@
   }
   .earth-compare:hover,
   .earth-compare:focus-visible {
-    border-color: rgba(75, 156, 211, 0.7);
+    border-color: var(--color-accent-strong);
     background: rgba(12, 16, 32, 0.78);
     outline: none;
   }
@@ -294,7 +294,7 @@
     gap: 5px;
     padding: 5px 6px;
     background: rgba(8, 10, 22, 0.6);
-    border: 1px solid rgba(75, 156, 211, 0.25);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 6px;
     backdrop-filter: blur(4px);
     pointer-events: auto;
@@ -322,7 +322,7 @@
     line-height: 1;
     border-radius: 5px;
     background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(75, 156, 211, 0.3);
+    border: 1px solid var(--color-accent-edge);
     color: #cfe0ff;
   }
   .time-controls .play-btn:hover,
@@ -341,7 +341,7 @@
     display: flex;
     align-items: stretch;
     pointer-events: auto;
-    border: 1px solid rgba(75, 156, 211, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 5px;
     overflow: hidden;
   }
@@ -350,7 +350,7 @@
     min-height: 32px;
     padding: 0 10px;
     border: none;
-    border-right: 1px solid rgba(75, 156, 211, 0.18);
+    border-right: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
     background: rgba(15, 18, 35, 0.4);
     color: rgba(207, 224, 255, 0.6);
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -388,7 +388,7 @@
     min-width: 108px;
     min-height: 32px;
     padding: 0 9px;
-    border: 1px solid rgba(75, 156, 211, 0.25);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 5px;
     background: rgba(15, 18, 35, 0.35);
     color: rgba(207, 224, 255, 0.82);
@@ -440,7 +440,7 @@
     height: 32px;
     padding: 2px 9px 2px 2px;
     background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(75, 156, 211, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 16px;
     cursor: pointer;
     align-items: center;
@@ -464,7 +464,7 @@
   }
   .earth-compact:hover,
   .earth-compact:focus-visible {
-    border-color: rgba(75, 156, 211, 0.7);
+    border-color: var(--color-accent-strong);
     outline: none;
   }
   @media (hover: none), (pointer: coarse) {
@@ -492,7 +492,7 @@
     flex-direction: column;
     gap: 2px;
     background: rgba(8, 10, 22, 0.95);
-    border: 1px solid rgba(75, 156, 211, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 5px;
     padding: 3px;
     min-width: 48px;

@@ -103,7 +103,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 14px;
     text-decoration: none;
-    color: #cfe3fb;
+    color: var(--color-accent);
   }
   .az a:hover,
   .az a:focus-visible {
@@ -164,6 +164,6 @@
     margin-inline-end: 8px;
   }
   a {
-    color: #cfe3fb;
+    color: var(--color-accent);
   }
 </style>

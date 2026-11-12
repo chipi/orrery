@@ -144,7 +144,7 @@
     border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 5px;
     backdrop-filter: blur(5px);
-    color: #d7f6f6;
+    color: var(--color-state);
     font: inherit;
     font-size: 11px;
     letter-spacing: 0.5px;
@@ -232,7 +232,7 @@
   .rung.active {
     background: color-mix(in srgb, var(--color-accent) 16%, transparent);
     border-color: var(--color-accent-strong);
-    color: #d7f6f6;
+    color: var(--color-state);
     cursor: default;
   }
   .rung:disabled {

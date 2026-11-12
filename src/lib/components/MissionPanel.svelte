@@ -1252,18 +1252,18 @@
     color: rgba(160, 185, 245, 0.82);
   }
   .spec-cta--payload {
-    background: #1788d4;
-    border: 1px solid rgba(120, 200, 250, 0.7);
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent-strong);
   }
   .spec-cta--payload:hover,
   .spec-cta--payload:focus-visible {
-    background: #2aa0ec;
-    border-color: #80c8ff;
+    background: var(--color-accent);
+    border-color: var(--color-accent-hover);
     outline: none;
   }
   .spec-cta--payload .spec-icon,
   .spec-cta--payload .spec-label {
-    color: rgba(220, 240, 255, 0.95);
+    color: #04040c;
   }
   .spec-cta.is-static {
     cursor: default;
@@ -1274,8 +1274,8 @@
     border-color: rgba(60, 80, 180, 0.6);
   }
   .spec-cta--payload.is-static:hover {
-    background: #1788d4;
-    border-color: rgba(120, 200, 250, 0.7);
+    background: var(--color-accent);
+    border-color: var(--color-accent-strong);
   }
   .spec-cta .spec-icon {
     flex: 0 0 20px;

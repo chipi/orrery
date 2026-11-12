@@ -827,8 +827,8 @@
     border-color: rgba(136, 159, 231, 0.55);
   }
   .status-pill.status-flown.active {
-    background: rgba(75, 156, 211, 0.25);
-    border-color: rgba(75, 156, 211, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
   .status-pill.status-retired.active {
     background: rgba(255, 200, 80, 0.22);
@@ -955,8 +955,8 @@
     color: #889fe7;
   }
   .list-status.status-flown {
-    background: rgba(75, 156, 211, 0.18);
-    color: #4b9cd3;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: var(--color-state);
   }
   .list-status.status-retired {
     background: rgba(255, 200, 80, 0.18);

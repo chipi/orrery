@@ -69,7 +69,7 @@
 
   function domainColor(item: IndexItem): string {
     if (item.color) return item.color;
-    return item.domain === 'orbit' ? '#7b9cff' : '#c1440e';
+    return item.domain === 'orbit' ? '#5070ff' : '#c1440e';
   }
 </script>
 

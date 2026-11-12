@@ -401,7 +401,7 @@
     color: rgba(255, 255, 255, 0.75);
   }
   .status-completed {
-    border-color: rgba(120, 200, 160, 0.5);
+    border-color: color-mix(in srgb, var(--color-ok) 50%, transparent);
     color: #9fe6c2;
   }
   .status-active {
@@ -499,7 +499,7 @@
     margin-right: 10px;
   }
   .timeline .t-name {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
@@ -531,7 +531,7 @@
     font-size: 14px;
   }
   .assembly-foot a {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
   }
@@ -608,7 +608,7 @@
     margin: 0 16px 14px;
   }
   .d-open {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -690,7 +690,7 @@
     flex: 0 0 auto;
   }
   .see-also a {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-size: 15px;
   }
@@ -715,7 +715,7 @@
     gap: 8px;
   }
   .hardware li a {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -729,7 +729,7 @@
     color: var(--color-text-label);
   }
   .rel {
-    color: #cfe3fb;
+    color: var(--color-state);
     text-decoration: none;
     margin-right: 14px;
     font-weight: 600;

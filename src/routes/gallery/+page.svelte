@@ -200,7 +200,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1.5px;
-    color: #cfe3fb;
+    color: var(--color-state);
     transition: color 0.15s;
   }
   .strip:hover .go {
@@ -244,7 +244,7 @@
     padding-top: 18px;
   }
   .aside :global(a) {
-    color: #cfe3fb;
+    color: var(--color-state);
   }
 
   @media (max-width: 560px) {

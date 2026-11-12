@@ -138,10 +138,10 @@
     display: flex;
     gap: 0.6rem;
     padding: 0.7rem 0.8rem;
-    border: 1px solid rgba(78, 205, 196, 0.18);
-    border-left: 2px solid rgba(78, 205, 196, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-left: 2px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 0 4px 4px 0;
-    background: rgba(78, 205, 196, 0.03);
+    background: color-mix(in srgb, var(--color-accent) 3%, transparent);
   }
   .ask-scenario__cell--fail {
     border-left-color: rgba(193, 68, 14, 0.6);
@@ -150,7 +150,7 @@
   .ask-scenario__step {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    color: rgba(78, 205, 196, 0.7);
+    color: var(--color-state);
     flex: 0 0 auto;
     padding-top: 0.1rem;
   }
@@ -191,7 +191,7 @@
     margin: 0;
   }
   .ask-scenario__io--out dd.ask-scenario__val {
-    color: #4ecdc4;
+    color: var(--color-state);
     font-weight: bold;
   }
   .ask-scenario__wired {

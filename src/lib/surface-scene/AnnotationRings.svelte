@@ -513,7 +513,7 @@
     pointer-events: none;
     overflow: hidden;
   }
-  /* --hl (set inline, #889fe7): the site's --color-tier-core #7b9cff blended 65/35 toward
+  /* --hl (set inline, #889fe7): the former --color-tier-core #7b9cff blended 65/35 toward
      a neutral grey, so it reads as a calm blue against the ring yellow, not blue. */
   .ring {
     position: absolute;

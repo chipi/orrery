@@ -12,7 +12,8 @@ English text for deep-level entity pages that are under the thin-page floor (ope
 2. **Review** (science-reviewer agent): every claim against its source; verdict per object.
 3. **Fix**: the lead applies the review's wording, records it in a "Science review" section.
 4. **Integrate** (with the page phase that consumes it): overlay files under
-   `i18n-src/en-US/universe/<type>/<id>.json`, the data-file corrections the review lists,
+   `i18n-src/en-US/universe/<type>/<id>.json`; distances, sizes and magnitudes in the text follow the
+   catalogue layer (#658) in `static/data/universe/*.json`, not the review's data-file corrections;
    `static/data/text-sources.json` entries (publisher, source_url, licence, relationship), outbound
    links in the overlays' `links` with hosts in `static/data/source-logos.json`, then
    `scripts/build-link-provenance.ts`; check /credits and /library.
@@ -49,4 +50,11 @@ at most 1 on the UX A / B slices (operator 2026-11-12).
 
 | Batch | Objects | Writer cost | Review | Status |
 |---|---|---|---|---|
-| 01 | m2–m23 (20 deep-sky, no photo) + 4 black holes | 152,725 tokens, 58 calls | 160,457 tokens; fix then ship (3 B, 9 M) | fixes applied, awaiting integration |
+| 01 | m2–m23 (20 deep-sky, no photo) + 4 black holes | 152,725 tokens, 58 calls | 160,457 tokens; fix then ship (3 B, 9 M) | black holes: integrated in 14 locales; deep-sky: integrated (en) |
+| 02 | m24–m80 (50 deep-sky, no photo) | not recorded | fix then ship (6 B, 14 M, ~25 minor) | integrated (en) |
+| 03 | m81–m110 (27, no photo) + 23 with a photo (30-doradus … ngc-604) | not recorded | fix then ship (2 B, 19 M, ~13 minor) | integrated (en) |
+
+Integrated (en) overlays have no translation yet: until steps 5 and 6 are done for them, the four
+translation-parity gates of `npm run validate-data` (overlay-completeness, `check-i18n-coverage`,
+`check-i18n-en-source`, `check-i18n-number-drift`) are red for these files by design. Do not run
+`stale-overlays.mjs --manifest=write` before the translations exist.

@@ -83,6 +83,13 @@ Final token names (`src/lib/styles/tokens.css`): `--color-accent`, `--color-acce
 `#7fb0e0` (page-section `.k` field labels, entity pages, gallery and programs chips) folded into
 `--color-state`.
 
+/fly HUD (held in A3, decided 2026-11-12 after the four-candidate sheets: cyan, blue D, neutral
+white, cockpit green): blue D, for consistency with the rest of the site. The six fly files
+(`routes/fly/+page.svelte`, `CoastScene`, `DescentScene`, `LaunchTelemetry`, `LaunchScene`,
+`AscentLosses`) carry no colour literals for the HUD: cyan `#7fd4ff` became `--color-state`,
+`#8fbfe0` / `#6ea6cc` `--color-accent-hover`, the coast scrubber `#6fb7ff` `--color-accent`, their
+alphas `color-mix`. Known trade: labels over the bright launch sky read lower than cyan did.
+
 Contrast rule: D is 4.96:1 on the page and the HUD, 4.37 on a 7 % lifted card, 3.84 on a 12 % lift.
 Text under 14 px bold / 18 px on a lifted surface uses `--color-state` (6.1:1 or better); a solid D
 fill takes dark text `#04040c` (4.96:1), not white (4.12:1).

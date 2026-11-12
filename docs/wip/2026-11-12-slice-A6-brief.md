@@ -1,8 +1,9 @@
 # Slice A6 brief — Nav bar (N1)
 
-Read-only brief, written at HEAD `12a98d06faa` on `tech-debt/0.9.9` (A1, A3 landed; A2 brief and A4 brief written; **A5 brief did not exist when this was
-written**, see §1). Baseline hit list: `2026-11-12-slice-A6-baseline-hits.txt` (38 lines, from the check script in §11). Every `file:line` below was read at
-that commit. Nothing was built, run in a browser, or queried in Umami.
+Read-only brief, first written at HEAD `12a98d06faa` on `tech-debt/0.9.9`, **updated 2026-11-12 at HEAD `50b3e962a8d`** with the operator's decisions (§0a), the A3 final tokens, the decided A4 chip and the
+now-written A5 brief. Baseline hit list: the file `2026-11-12-slice-A6-baseline-hits.txt` has 38 lines from the first run; **the check script of §11 re-run at `50b3e962a8d` prints 35** (the three pre-A3 blues, N4, are
+gone: `git grep` finds no `#96afff` / `rgba(150,175,255` in `Nav.svelte`; A3 commit `5e1cab53936` widened its check). Every `file:line` below was read at `12a98d06faa`; the ones that matter for the decisions were re-read at
+`50b3e962a8d`. Nothing was built, run in a browser, or queried in Umami.
 
 ## 0. The point
 
@@ -14,15 +15,27 @@ No other nav-bar point exists in the list. `grep -n -i "nav\|menu"` over the pla
 not A6**), "Idea: second-level nav goes horizontal under the main nav" inside N1 (answered by D4/E7: not A6, see §1), the footer-dock mentions (none), and the
 phase-0 row text. Spec↔code mismatch that A6 must settle: nav height **52 px** (IA, AGENTS, Design System, UXS-002/013) vs `--nav-bar-height: 60px` (UXS-000 SC-1).
 
+## 0a. Decisions (operator 2026-11-12)
+
+Recorded in `docs/wip/2026-11-11-ux-feedback-plan.md` ("A3–A6 answers"). They settle Q1–Q3 of the first version of this brief and replace its "recommended" labels.
+
+| # | Decision | Where it lands |
+|---|---|---|
+| D1 | **Compact bar plus a "More" menu** holding High contrast, Share and Debug (the first brief's Option A); Options B and C are dropped | §3.1, §3.4 |
+| D2 | **Nav height 52 px, one token everywhere**: fix the literal `60px` in `tokens.css:75` and the disagreeing `var(--nav-height, NNpx)` fallbacks | §4 |
+| D3 | **Toggles 32 px on fine pointers, 44 px on touch** | §3.2 |
+| D4 | A3 final tokens (landed): `--color-accent` `#5070ff`, `--color-state` `#889fe7`, `--color-focus` `#8aa0ff`, contrast rule, the core tier uses the chip active look | §1 cascade |
+| D5 | A4 chip option A (30 / 44 px, 4 px, outline at rest, soft blue fill + blue edge + white text when on) and A5 flat chip row | §1 cascade |
+
 ## 1. Cascade — what the earlier slices change in A6, and what in the plan row is outdated
 
 | Earlier slice | What it changes in A6's tactics | Outdated in the plan row / N1? |
 |---|---|---|
 | **A1 type scale (UXD-002)** | Floor is 11 px for all text, `--size-label` 11 px at 60 % white. The nav link text is `--size-link: 12px` (tokens.css:51, not in the A1 scale; A1 left it), the locale chip is a literal 11 px (`LocalePicker.svelte:108`), the Aa glyph a literal 13 px (`Nav.svelte:880`), the drawer a literal 11 px (`:1029`, `:1360`, `:1387`). A6 reuses A1: menu row text = `--size-meta` 12 px (same as `--size-link`), group label = `--size-label`; **no new font size is introduced**. | Nothing outdated. The plan says nothing on text size; A6 does not shrink any text (compact = box sizes and gaps only, text stays at or above the floor). |
 | **A2 page shell (UXD-012)** | The shell starts the page root **directly at the nav's bottom edge** (24 px padding, no second `--nav-height`; `page-shell.spec.ts:128` asserts `root.top <= 1` px). So changing `--nav-bar-height` moves every shell page by exactly the delta with **no per-page edit** — the value is now a single token with one consumer chain. It also means the height decision (§4) has no page-level knock-on for shell pages, only for scenes/HUDs that position off `--nav-height` (§4.3). | The plan row says "nav bar height ... match the main links" without a number: **now outdated as a question**, because A2's shell makes 52 vs 60 a one-line token choice; §4 settles it. |
-| **A3 accent tokens (UXD-001)** | Gives the colours the toggles use: active = `--color-state` text + 18 % `--color-accent` fill + `--color-accent-strong` border; hover border = 55 % accent; focus ring = `--color-focus` (`#8aa0ff`). The share / settings / contrast toggles already use these. **Three pre-A3 values are still in `Nav.svelte`**: the audio toggle's `#96afff` / `rgba(150,175,255,…)` (`:1099, :1105, :1112`) — the A3 brief's grep did not list them, so they survived A3 (A6 replaces them with `--color-state` / `--color-accent-strong`; check item N4). The lens toggle gold (`#ffc850`, `rgba(255,200,80,…)`) and debug orange (`#f6ad55`) are semantic state colours (not the accent) and stay, marked `a6-keep`. | Nothing outdated. The menu panel chrome uses A3 tokens, no new colour. |
-| **A4 one chip (`2026-11-12-slice-A4-brief.md`)** | The nav toggles are **not chips** (A4 §1.2: "Nav toggles, `LocalePicker` — A6 owns the nav"; A4 §6 allow-list). A4 proposes `.ui-chip` at **30 px on fine pointers / 44 px on coarse** (A4 §3.2, Q1 recommendation a). A6 shares the **step, not the component**: fine pointer 32 px square icon buttons (plan text "~32 px"), coarse 44 px, same 4 px radius and the same border/active recipe as `.ui-chip` quiet variant, so a chip row and the nav cluster read as one family. If the operator picks A4 Q1 (b) 28 or (c) 32 px, A6 stays at 32 — nav chrome is a separate surface; stated as Q3. A6 does **not** use `Chip.svelte` for the toggles (they are icon-only, `aria-pressed` / `aria-expanded` buttons with no label). The `LocalePicker` trigger (`.chip`, `LocalePicker.svelte:99`, 44 × 44 min, 11 px mono) stays a nav control: A6 gives it the same 32 / 44 sizing as its neighbours. A4's `a4-check.sh` must keep `Nav.svelte` / `LocalePicker.svelte` on its allow-list; A6's check (§11) covers them. | Plan row says "toggles drop to ~32 px" — still right. The plan does **not** know that the global `:global(.chip)` rule at `Nav.svelte:1230` styles the drawer's locale chip; A4 NV4/NV12 flagged it; A6 rewrites that block with its own `.nav-` class names. |
-| **A5 chip groups** (`2026-11-12-slice-A5-brief.md`) | **Not present at the time of writing — cascade for A5 is NOT VERIFIED.** From the operator's description (Explore/Worlds layer chips move to a horizontal row near the top of the scene): such a row sits at `top: calc(var(--nav-height) + Npx)` like every HUD (§4.3 list), so it follows the nav height automatically; the interaction is only that a **shorter bar (52 vs 60) gives that row 8 px more room, and a taller one takes it back**. A6 therefore asks A5 to anchor on `var(--nav-height)` only (no literal 60/64 fallbacks; `SurfaceScene.svelte:8116, 8158` and `HudControls.svelte:645, 825` carry `var(--nav-height, 60px/64px)` fallbacks that disagree with the token, check item N6). A6 also must not add a second bar under the nav (the plan's "second-level nav goes horizontal under the main nav" idea) because that is exactly the strip the layer-chip row wants. | **"Idea: second-level nav goes horizontal under the main nav" (N1) is outdated**: D4 / E7 / C8 own the Explore second-level nav (drop it, breadcrumb as the way through); a horizontal second bar under the nav would take the space A5 gives to the chip row and duplicate C8's breadcrumb. A6 does **not** implement it. |
+| **A3 accent tokens (UXD-001), landed, final** | Tokens in `tokens.css:9–20`: `--color-accent` `#5070ff`, `--color-accent-soft` (.12), `-edge` (.35), `-strong` (.7), `--color-state` `#889fe7`, `--color-focus` `#8aa0ff`; white text on a soft fill, dark text `#04040c` only on a solid fill. **A6 uses the chip active look for an active nav toggle**: soft accent fill, accent edge, white glyph (today: `--color-state` text + 18 % fill + `-strong` border; the operator's "consistency above all" applies to the nav toggles too); hover border 55 % accent; focus ring `--color-focus`. **The three pre-A3 values the first brief flagged in `Nav.svelte` (`#96afff`, `rgba(150,175,255,…)`, N4) are already gone** at `50b3e962a8d` (A3 commit `5e1cab53936`): N4 stays in the check as a regression guard and counts 0. The lens toggle gold (`#ffc850`, `rgba(255,200,80,…)`) and debug orange (`#f6ad55`) are semantic state colours (not the accent) and stay, marked `a6-keep`. | Nothing outdated. The menu panel chrome uses A3 tokens, no new colour. |
+| **A4 one chip (`2026-11-12-slice-A4-brief.md`), option A decided** | The nav toggles are **not chips** (A4 §1.2 and §6: "Nav toggles, `LocalePicker` — A6 owns the nav"); that stays. Decided chip: 30 px fine / 44 px touch, 4 px radius, outline at rest, soft blue fill + blue edge + white text when on. A6 shares the **family, not the component**: nav toggles are 32 px fine / 44 px touch (D3), 4 px radius, the same outline-at-rest and the same active look (A6 §3.2), so a chip row and the nav cluster read as one family; 32 vs 30 is deliberate (nav chrome is a separate surface, the plan says "~32"). A6 does **not** use `Chip.svelte` (icon-only buttons with `aria-pressed` / `aria-expanded`, no label). The `LocalePicker` trigger (`.chip` at `LocalePicker.svelte:99`, 44 × 44 min, 11 px mono) stays a nav control and takes the same 32 / 44 sizing. **A4 now also covers `locate-me`, the time-dock pills and the science-rail neighbours in its crawl; the crawl excluded the nav**, so nothing in A4 touches `Nav.svelte`; A4's `a4-check.sh` keeps `Nav.svelte` / `LocalePicker.svelte` out of scope and A6's check (§11) covers them. A6 rewrites the global `:global(.chip)` rule at `Nav.svelte:1230` (the drawer locale chip) with its own `.nav-` class names (A4 NV12). | Plan row says "toggles drop to ~32 px": still right; D3 confirms. |
+| **A5 flat chip row (`2026-11-12-slice-A5-brief.md`, rewritten after the operator's decision)** | A5 exists now and says: every world and Explore get **one flat horizontal row** of layer chips (no group captions, Earth's master switches dropped, OBSERVATORIES / SPACE TELESCOPES). The row sits at `top: calc(var(--nav-height) + 12px)` (Worlds) / `+ 8px → + 12px` (Explore) under the view-control row, so it **follows the nav height automatically**: at 52 px the row's top moves from 72 px to 64 px (row 2 from 110 to 102 px), 8 px more room for the open detail panel and the object-index panel. A5 deletes the chip-driven ruler shift and the `top: 152px` / `376px` / `196px` constants; **A6 owns the other literals** (`SurfaceScene.svelte:7082 top: 60px`, the ten fallbacks, `Notebook`, `Timeline`, `glossary`), so the two slices do not edit the same line except `SurfaceScene.svelte:7066–7082` (A5 rewrites the 152 px rule, A6 rewrites the `60px` one two lines below: do both in one pass or sequence A6 first). A6 adds **no second bar under the nav** (the plan's "second-level nav goes horizontal under the main nav" idea) because that strip is where A5's row sits. | **"Idea: second-level nav goes horizontal under the main nav" (N1) is outdated**: D4 / E7 / C8 own the Explore second-level nav; the strip is taken by A5's row. A6 does **not** implement it. |
 
 ### 1.1 Adjacent items that serve the same idea
 
@@ -90,7 +103,7 @@ The bar is 60 px (`--nav-bar-height: 60px`, `tokens.css:72`; **`--nav-height` re
 `EVENT_NAMES` (`analytics.ts:109`) — the only nav-reachable events: **`science-lens-toggle`** (`trackScienceLensToggle(on, 'nav')`, `Nav.svelte:243`) and
 **`locale-switch`** (`LocalePicker.svelte:44`, `{from, to}`). `card-share` exists but `shareCurrent` does not fire it. **No event** for contrast, share, debug,
 settings, audio toggle (the audio overlay fires `audio-stage-fire` / `tour-complete`), hamburger or the group menus. So "rarely used" for contrast / share / debug is
-the operator's judgement; the code cannot confirm it (NOT VERIFIED, and A6 does not add events: "do exactly what was asked"; Q4 offers it).
+the operator's judgement; the code cannot confirm it (NOT VERIFIED, and A6 does not add events: "do exactly what was asked").
 
 ### 2.5 Everything that depends on the bar's size
 
@@ -108,7 +121,7 @@ with the token. `app.css:318` sets `--nav-height: 0px` in exhibit mode (nav hidd
 
 | Spec | What it asserts | Affected by A6 |
 |---|---|---|
-| `_helpers/nav.ts:29–139` | `button.menu-toggle`, `nav .center button.group-trigger`, `[data-locale-picker] button.chip`, `.mobile-drawer [data-locale-picker]` | Selectors stay (locale picker keeps `data-locale-picker` + `.chip`; the global `.chip` rule at `Nav.svelte:1230` is rewritten but the DOM class stays unless Q5 renames). |
+| `_helpers/nav.ts:29–139` | `button.menu-toggle`, `nav .center button.group-trigger`, `[data-locale-picker] button.chip`, `.mobile-drawer [data-locale-picker]` | Selectors stay (locale picker keeps `data-locale-picker` + `.chip`; the global `.chip` rule at `Nav.svelte:1230` is rewritten but the DOM class stays (the class is not renamed)). |
 | `mobile-layout.spec.ts:20–60` | hamburger visible on mobile, `.center .link` hidden, drawer, hamburger ≥ 44 × 44 | stays valid |
 | `mobile-layout.spec.ts:127–152` | lens, **contrast**, menu-toggle, locale chip ≥ 28 × 28 ("conservative floor") | `button.contrast-toggle` moves into the menu / drawer: selector list updated; and the floor is too low to guard the 44 px promise (new spec) |
 | `a11y-keyboard.spec.ts:28–52` | `nav[aria-label]` roving toolbar: arrow moves focus, **exactly one tabbable** descendant | the menu panel is inside `<nav>`: while closed it must add no tab stops; while open it is outside the roving set (§3.4) — **this spec must keep passing** |
@@ -121,9 +134,9 @@ with the token. `app.css:318` sets `--nav-height: 0px` in exhibit mode (nav hidd
 
 ## 3. Proposal
 
-### 3.1 Options (recommendation first)
+### 3.1 Options (A decided, D1)
 
-**Option A (recommended) — compact bar plus one "More" menu.**
+**Option A (DECIDED, D1) — compact bar plus one "More" menu.**
 Bar right cluster, left to right: audio tour · locale · science lens · settings · **More (⋯)**; hamburger unchanged on its breakpoints. The More menu holds three rows:
 **High contrast** (`menuitemcheckbox`), **Share this view** (`menuitem`), **Debug overlays** (`menuitemcheckbox`). Fine pointer: 32 × 32 buttons, 6 px gap. Coarse:
 44 × 44, 4 px gap. Bar 52 px (§4). No text added to the bar, no second bar. Cluster width on a fine pointer: 4 × 32 + locale chip (~40) + 4 × 6 = **~192 px**
@@ -131,18 +144,18 @@ Bar right cluster, left to right: audio tour · locale · science lens · settin
 - Fits the plan row and N1 literally; contrast gets a visible text label in the menu (more discoverable than the cryptic `Aa` square); zero new locale keys (§8).
 - Cost: one new small menu pattern in the bar (keyboard rules §3.4), and the three rare actions are two clicks instead of one.
 
-**Option B — compact bar, contrast and debug move *into* the Settings sheet, share into the sheet too.**
+**Option B (not chosen) — compact bar, contrast and debug move *into* the Settings sheet, share into the sheet too.**
 No new menu: `SensorySheet` gains a "Display" row (High contrast) and a "Developer" row (Debug) and a "Share this view" action. Bar: audio · locale · lens · settings
 (4 controls, ~160 px).
 - Fewer controls and no new pattern; contrast really is a display setting. Cost: the sheet is a non-modal dialog titled SETTINGS that already carries Sound /
   Haptics / Tilt / Graphics / Offline (long, with its own scroll); Share is not a setting; the sheet is gated by `sensory.settingsOpen` state shared with the tour
   and tests; adds 3 section strings (new keys × 14 locales, or reuse of the same three existing keys in new places: contrast, share, debug all reusable).
 
-**Option C — compact only, no menu.** Same 32 / 6 / 44 sizing, keep all seven controls. Cluster ~ 7 × 32 + 6 × 6 = **260 px**. Smallest diff, no new
+**Option C (not chosen) — compact only, no menu.** Same 32 / 6 / 44 sizing, keep all seven controls. Cluster ~ 7 × 32 + 6 × 6 = **260 px**. Smallest diff, no new
 pattern, but ignores "rarely used ones move into one menu" (the plan row), keeps a cryptic `Aa` and a bug glyph in the primary chrome for every visitor.
 
-Recommendation: **A**. It is the plan's stated design, keeps Settings focused on persistent preferences, and the menu's switch rows give contrast and debug a
-visible label and state. B is the fallback if the operator would rather not add a menu.
+Decided: **A**. It is the plan's stated design, keeps Settings focused on persistent preferences, and the menu's switch rows give contrast and debug a
+visible label and state. B and C stay in this brief only as the record of what was not chosen.
 
 ### 3.2 Sizes and gaps (Option A)
 
@@ -155,21 +168,21 @@ visible label and state. B is the fallback if the operator would rather not add 
 | Bar height | **52 px** | 52 px | 60 px |
 | Brand | `min-height: 44` → 32 on fine pointers (36 px wordmark, `line-height: 1`) | 44 | 44 |
 
-One rule block replaces the five duplicated recipes (`.contrast-toggle`, `.lens-toggle`, `.settings-toggle|.share-toggle|.debug-toggle`, `.audio-toggle`,
+Active toggle = the A4 chip active look (soft accent fill, accent edge, white glyph). One rule block replaces the five duplicated recipes (`.contrast-toggle`, `.lens-toggle`, `.settings-toggle|.share-toggle|.debug-toggle`, `.audio-toggle`,
 `.menu-toggle`): a shared `.nav-btn` base (size via `--nav-btn: 32px` / `44px` custom property set in the two media rules; border `rgba(255,255,255,.18)`,
 radius 4, 120 ms transition; hover border 55 % accent; focus ring `--color-focus`), with the per-toggle rules reduced to **state colours only** (lens gold,
 debug orange kept, audio and settings use `--color-state`). The tokens go in `tokens.css` next to `--nav-height`: `--nav-btn-fine: 32px; --nav-btn-touch: 44px`.
 WCAG 2.5.8 (24 px minimum) passes at 32; the repo's 44 px rule (ADR-018, "minimum touch target") is a touch rule, kept on `(pointer: coarse)`.
 Which query decides "fine": the TV query is coarse, so TV keeps 44 px; a hybrid laptop with a touch screen reports `pointer: fine` (primary) and gets 32 px — the
-`any-pointer` question is Q6, the recommendation is primary pointer only (the A4 chip uses the same query).
+`any-pointer` question is a default taken without asking (§10): primary pointer only, the same query the A4 chip uses.
 
 ### 3.3 Where the narrower cluster lets the bar breathe (knock-on, needs a measurement, not guessed)
 
 The hamburger breakpoint 1219 px exists because the cluster was 392 px. With ~192 px the full bar needs roughly 200 px less (ru ≈ 1010, fr / es ≈ 965, en ≈ 840 —
 **arithmetic only, not measured**). Recommendation: keep 1219 in the first commit, add a measuring spec over all 14 locales (scrollWidth ≤ innerWidth and
-last control right edge ≤ viewport − padding at 1024 / 1100 / 1219), then lower the break to the measured value in the same slice, so 1024–1219 px desktop
-windows show the links instead of the hamburger. Lowering it changes what a 1280 × 720 laptop sees only above 1219, so the default screenshot sizes do not
-change; the visible change is for 1024–1219 windows (Q4).
+last control right edge ≤ viewport − padding at 1024 / 1100 / 1219), and report the measured values; lowering the break (so 1024–1219 px desktop
+windows show the links instead of the hamburger) is O1 in §10. Lowering it changes what a 1280 × 720 laptop sees only above 1219, so the default screenshot sizes do not
+change; the visible change is for 1024–1219 windows.
 
 ### 3.4 The More menu (menu-button pattern, WAI-ARIA APG)
 
@@ -180,20 +193,20 @@ change; the visible change is for 1024–1219 windows (Q4).
   a 12 px (`--size-meta`) label with a leading 16 px icon and a trailing check mark when on; row height 32 fine / 44 coarse.
 - Keyboard: Enter / Space / ArrowDown on the trigger opens and focuses the first row; ArrowUp / ArrowDown move with wrap, Home / End jump; Enter / Space activates;
   **Escape closes and returns focus to the trigger**; Tab closes (focus moves on naturally); a click outside closes (reuse the existing backdrop button idiom,
-  `Nav.svelte:480`). Activating Share closes the menu; contrast and debug rows **stay open** (so the state flip is visible; Escape / outside click close) — Q7.
+  `Nav.svelte:480`). Activating Share closes the menu; contrast and debug rows **stay open** (so the state flip is visible; Escape / outside click close): a default taken without asking (§10).
 - **Roving conflict (must be handled, not assumed):** the panel is inside `<nav use:roving>`. `roving` collects `button:not([disabled])` descendants whose
   `offsetParent !== null` (`roving.ts:27–31`), so an open menu's buttons would join the horizontal sweep and ← → would jump into them. Fix: pass
   `itemSelector` that excludes `[role="menu"] *`, or render the panel outside the `<nav>` (as the mobile drawer is, `:501`) — decided at implementation, guarded by the
   existing `a11y-keyboard.spec.ts:28` (exactly one tabbable) plus the new menu spec. The existing group menus (`:340`) already live inside the nav; they have no arrow
   handling, so the conflict is invisible there today. A6 does **not** change them (leave for C8 / out of scope; noted, §10 NV3).
-- Feedback: Share currently shows nothing after copying a link (`shareCurrent` returns `'copied'`, ignored). A6 leaves behaviour as is (no invented scope); Q8.
+- Feedback: Share currently shows nothing after copying a link (`shareCurrent` returns `'copied'`, ignored). A6 leaves behaviour as is (no invented scope; §10).
 
 ### 3.5 Phone and touch layout
 
 ≤ 600 px: bar = brand · audio · lens · settings · hamburger (4 controls, was 5: **share leaves the bar**) = 4 × 44 + 3 × 2 = 182 px (was 228). The More trigger is
 **not** shown ≤ 600 px; its three items live in the drawer's `.drawer-controls` row next to the locale picker (contrast and debug already do; share is added as a
 row; debug's `On` / `Off` text button becomes a check state). 601 px – 1219 px touch / narrow: More shown, hamburger shown, links in the drawer. Both lists render from
-**one** array so bar menu and drawer can never disagree. TV: unchanged (inline links, 44 px, the full old cluster, no More menu; Q9).
+**one** array so bar menu and drawer can never disagree. TV: unchanged (inline links, 44 px, the full old cluster, no More menu; §10).
 
 ### 3.6 Dead code removed in passing (same file, same rule block)
 
@@ -205,7 +218,7 @@ The `right` snippet prop and `{@render right?.()}` (no caller) and the four `wid
 
 | | Bar | Pros | Cons |
 |---|---|---|---|
-| **1 (recommended) 52 px, one height** | 52 px on every pointer (touch 44 px targets fit: 4 px margins; wordmark 36 px fits) | spec already says 52 in IA, AGENTS, Design System, UXS-002, UXS-013, BACKFILL B-001 — closes SC-1 by changing **one token**, no doc says 60; matches "compact"; gives HUD rows and A5's chip row 8 px | 36 px wordmark on a 52 px bar is tighter than today; every `--nav-height` consumer moves up 8 px (that is the intent) |
+| **1 (DECIDED, D2) 52 px, one height** | 52 px on every pointer (touch 44 px targets fit: 4 px margins; wordmark 36 px fits) | spec already says 52 in IA, AGENTS, Design System, UXS-002, UXS-013, BACKFILL B-001 — closes SC-1 by changing **one token**, no doc says 60; matches "compact"; gives HUD rows and A5's chip row 8 px | 36 px wordmark on a 52 px bar is tighter than today; every `--nav-height` consumer moves up 8 px (that is the intent) |
 | 2: 48 fine / 56 coarse | two token values behind a media query | touch bar roomier | `--nav-height` becomes pointer-dependent; two screenshot sets; no doc says it; hybrid devices flip |
 | 3: keep 60 px, fix the docs | no layout change | zero risk to layouts | contradicts "nav bar height ... match the main links" and "compact"; the cluster shrinks but the bar stays tall; edits ~11 doc lines the other way |
 
@@ -222,14 +235,14 @@ Literal 60 / 52 / fallbacks to fix: `Notebook.svelte:860` → `calc(var(--nav-he
 canvas. Tests asserting positions in absolute px were **not** all read (NOT VERIFIED, §12): `grep -rn "nav-height" tests` finds only a comment; visual baselines are the
 risk.
 
-## 5. Hit list (baseline: **38** violations, `2026-11-12-slice-A6-baseline-hits.txt`)
+## 5. Hit list (baseline: **35** violations at `50b3e962a8d`; the first run at `12a98d06faa` counted 38, file `2026-11-12-slice-A6-baseline-hits.txt`)
 
 | Check | Count | What |
 |---|---|---|
 | N1 unconditional 44 px on a nav toggle rule | 10 | `Nav.svelte:872, 873, 905, 906, 983, 984, 1077, 1078, 1157, 1158` (the settings / share rules share the `.debug-toggle` line in the script, so five rule blocks give ten lines) |
 | N2 rare toggle rendered as its own button outside the menu | 4 | `Nav.svelte:410, 439, 451, 563` |
 | N3 hard-coded English `On` / `Off` | 1 | `Nav.svelte:649` |
-| N4 retired pre-A3 blue | 3 | `Nav.svelte:1099, 1105, 1112` |
+| N4 retired pre-A3 blue | 0 (was 3) | gone at `50b3e962a8d` (A3 `5e1cab53936`); kept in the script as a regression guard |
 | N5 token not from one source / not the decided value | 2 | `tokens.css:72, 75` |
 | N6 literal nav height or disagreeing fallback | 14 | 4 literals + 10 fallbacks (§2.5) |
 | N7 doc nav z-index 20 (code: 40); height mismatches against the decided value | 2 now | `AGENTS.md:765`, `IA.md:179` (heights read as 52, correct for option 1) |
@@ -282,7 +295,7 @@ e2e on all three Playwright projects before any release (AGENTS rule). Unit: non
 **Zero new keys with Option A.** Reuse, all verified present in all 14 `messages/*.json`: `layout_footer_more` ("More", trigger label), `nav_high_contrast_aria`
 (row label), `nav_share` ("Share this view", row label), `nav_debug_aria` / `nav_debug_label` (row label; title `nav_debug_title`), `nav_audio_tour_aria`, `nav_science_lens_aria`,
 `settings_title`, `nav_mobile_menu_open_aria`. The check state is a check mark + `aria-checked`, not the English `On` / `Off` text. If the operator prefers a dedicated key
-(`nav_more_aria`, "More options") it is one key × 14 locales by hand, inline, no paid run (memory: no paid translation runs); Q10. Option B would add no new keys either (the same three).
+(`nav_more_aria`, "More options") it is one key × 14 locales by hand, inline, no paid run (memory: no paid translation runs); not planned (§10). Option B would add no new keys either (the same three).
 RTL (`ar`): menu anchors to the inline-end edge (`inset-inline-end: 0`), the cluster mirrors with the bar; checked in the screenshots for `ar`.
 
 ## 9. Screenshots (dev server per AGENTS "Iterating on UI", not Docker; before = current HEAD, after = the slice)
@@ -292,24 +305,27 @@ For each size, before / after: (1) bar closed; (2) More menu open (desktop sizes
 (longest locale; shows the §3.3 break) and `ar` at 1280 (RTL). Plus one 1440 × 900 strip of the bar crop at 3 × to compare heights of links vs the cluster.
 Operator sees them before the final slice commit (`ux-baseline-review` flow).
 
-## 10. Decisions and open questions (operator; recommendation first)
+## 10. Decisions and open questions (operator)
 
-- **Q1 Shape.** (a) **Option A: compact bar + one More menu** (recommended; the plan's design). (b) Option B: contrast, debug, share into the Settings sheet. (c) Option C: compact only.
-- **Q2 Bar height (SC-1).** (a) **52 px, one height** (recommended; the spec value, one token edit, closes SC-1). (b) 48 fine / 56 coarse. (c) keep 60, fix the docs.
-- **Q3 Fine-pointer size.** (a) **32 px square buttons** (plan: "~32"; chip is 30 per A4, nav stays 32 as chrome) (recommended). (b) 30 px to match the chip exactly. (c) 28 px.
-- **Q4 Hamburger break.** (a) **Measure 14 locales and lower 1219 to the measured value in this slice** (recommended; the 392 px cluster that forced 1219 is gone). (b) Keep 1219 now, revisit in C8 with the Explore nav.
-- **Q5 The menu panel position.** (a) **Inside `<nav>` with the roving itemSelector excluding it** (recommended; the same DOM as the group menus). (b) Outside `<nav>` like the drawer. Pure implementation choice unless it breaks `a11y-keyboard.spec.ts`; decided by that test.
-- **Q6 Which pointer is "fine".** (a) **Primary pointer only: `(hover: hover) and (pointer: fine)`** (recommended; the A4 chip query). (b) `any-pointer: fine` (a touch laptop with a mouse gets 32; a touch tablet with a stylus gets 32).
-- **Q7 Menu stays open after contrast / debug.** (a) **Stays open for the two switches, closes for Share** (recommended). (b) Always closes.
-- **Q8 Share feedback.** (a) **Leave as is** (recommended; not in N1). (b) a one-line "Link copied" toast.
-- **Q9 TV.** (a) **TV keeps the full old cluster at 44 px** (recommended; D-pad users reach every control in one row; the roving toolbar already handles it). (b) TV gets the More menu too.
-- **Q10 Trigger label.** (a) **Reuse `layout_footer_more`** (recommended; zero locale work). (b) New key `nav_more_aria`.
-- **Q11 Usage data.** The code has Umami events only for lens and locale. (a) **No new events** (recommended). (b) Add `nav-more-open` / per-row events so "rarely used" can be confirmed later.
+**Answered (2026-11-12, §0a):** shape = compact bar + More menu (old Q1), height = 52 px in one token (old Q2), fine-pointer size = 32 px, touch 44 px (old Q3).
+
+**Genuinely open (one item; recommendation first):**
+- **O1 Hamburger break.** The 1219 px break was forced by the old 392 px cluster; with about 192 px the full link row fits narrower windows. (a) **Keep 1219 in this slice; the per-locale measuring spec (§3.3 / §6 test 7) is added and its measured values are reported, lowering the break is a follow-up the operator approves** (recommended: lowering it changes what 1024–1219 px windows show, which the operator did not ask for). (b) Measure 14 locales and lower the break to the measured value in this slice (the first brief's recommendation).
+
+**Defaults taken without asking** (each is an implementation detail, reversible in review; the first version listed them as Q4–Q11):
+- Menu panel sits inside `<nav>` with the roving `itemSelector` excluding it, or outside `<nav>` if `a11y-keyboard.spec.ts:28` forces it (old Q5: decided by that test).
+- "Fine" means the primary pointer, `(hover: hover) and (pointer: fine)`, the query the A4 chip uses (old Q6: consistency).
+- The contrast and debug rows keep the menu open, Share closes it (old Q7).
+- Share behaviour is unchanged, no "link copied" toast (old Q8: not in N1).
+- TV keeps the full old cluster at 44 px and no More menu (old Q9: no change).
+- Trigger label reuses `layout_footer_more`, zero locale work (old Q10).
+- No new Umami events (old Q11: "do exactly what was asked").
+- The science-rail Search button (`search-button`, 38 px desktop / 44 px phone, 54 `/science/*` routes in the crawl) is **not** a nav control and is left alone; noted because it is 6 px taller than the nav's decided 32 px.
 
 ## 11. Check (re-run by the independent checker; must print `A6-CHECK violations: 0`)
 
 Run from the repo root: `DECIDED=52 python3 docs/wip/2026-11-12-slice-A6-check.py --list` (the script is below; it is saved at that path when the go comes, not now).
-`DECIDED` is the operator's Q2 value. Baseline at HEAD `12a98d06faa`: **A6-CHECK violations: 38**. The script is read-only, stdlib only.
+`DECIDED` is the operator's decided height (D2: 52). Baseline at HEAD `12a98d06faa`: 38; **re-run at `50b3e962a8d` with `DECIDED=52`: `A6-CHECK violations: 35`** (10 N1-UNCONDITIONAL-44, 4 N2-RARE-TOGGLE-OUTSIDE-MENU, 1 N3-ENGLISH-ON-OFF, 1 N5-TOKEN-LITERAL, 1 N5-TOKEN-VALUE, 10 N6-FALLBACK, 4 N6-LITERAL-NAV-HEIGHT, 2 N7-DOC-ZINDEX, 2 N8-MISSING-FILE; ran once, output `a6-out.txt` in the scratchpad). The script is read-only, stdlib only.
 
 ```python
 #!/usr/bin/env python3
@@ -396,7 +412,7 @@ sys.exit(1 if v else 0)
 2. Fine pointer: every right-hand control is 32 px, gap 6 px; coarse: 44 px; bar = decided height; the right cluster is shorter than and centred with the link row (spec 1, 2).
 3. Contrast, share, debug reachable only through the More menu (bar and drawer), with labels, state and keyboard flow (spec 3), axe clean (spec 5).
 4. SC-1 closed: tokens, IA, AGENTS, Design System, TA say one height and the true z-index; UXS-000 mismatch list updated; CHANGE-INVENTORY A6 row in review.
-5. UXD-016 written and linked from the docs it changes; no new locale key (or the one from Q10 in all 14).
+5. UXD-016 written and linked from the docs it changes; no new locale key.
 6. Before / after screenshots at 1440 × 900, 1280 × 720, 390 × 844 shown to the operator and approved.
 7. The e2e list of §6 passes on all three Playwright projects; coverage gate (`npm run preflight:coverage`) once before push.
 
@@ -407,7 +423,7 @@ sys.exit(1 if v else 0)
 
 - **Status**: proposed
 - **Date**: 2026-11-12
-- **Decider**: the operator (pending Q1–Q11 of docs/wip/2026-11-12-slice-A6-brief.md)
+- **Decider**: the operator, 2026-11-12 (compact bar + More menu, 52 px, 32 / 44 px); the hamburger break (O1 of docs/wip/2026-11-12-slice-A6-brief.md) is open
 - **Answers**: N1; slice A6; closes UXS-000 SC-1 (nav height) and the nav z-index mismatch
 - **Changes**: `src/lib/components/Nav.svelte`, `src/lib/components/LocalePicker.svelte` (trigger sizing),
   `tokens.css` (`--nav-bar-height`, `--nav-height`, `--nav-btn-fine`, `--nav-btn-touch`), IA §shell-regions,
@@ -421,7 +437,7 @@ in a 60 px bar the docs said was 52 px. Contrast, share and debug sit in the pri
 A compact bar + one More menu. B contrast / debug / share inside the Settings sheet. C compact only.
 
 ## Decision
-(to be filled) Recommended: A; 52 px single height; 32 px fine / 44 px coarse; gap 6 / 4; menu = APG menu button with menuitemcheckbox rows.
+A; 52 px single height; 32 px fine / 44 px coarse; gap 6 / 4; active look = the chip active look; menu = APG menu button with menuitemcheckbox rows.
 
 ## Consequences
 Cluster ~192 px instead of 392 px; the hamburger break can move down from 1219 px after measurement; three actions are two clicks; one `.nav-btn` base replaces five rule copies.
@@ -433,7 +449,7 @@ Cluster ~192 px instead of 392 px; the hamburger break can move down from 1219 p
 ## 13. NOT VERIFIED (what this brief did not check)
 
 - NV1 No browser, no build, no test run: every size, gap and height above comes from CSS text, not from measurement. The 392 px / ~192 px cluster widths and the lowered break points (ru ≈ 1010, fr / es ≈ 965, en ≈ 840) are arithmetic on the CSS values and the 2026-11-04 comment, not measured.
-- NV2 `docs/wip/2026-11-12-slice-A5-brief.md` did not exist, so the A5 cascade row is the operator's one-line description plus the CSS anchors; read it when it lands and re-check §1.
+- NV2 The A5 cascade row (§1) is from the rewritten A5 brief and the CSS anchors (row top at `calc(var(--nav-height) + 12px)`), not from a rendered page; whether the 8 px the 52 px bar gives back is what A5's row needs was not measured. The A5 and A6 edits to `SurfaceScene.svelte:7066–7082` were not sequenced in code.
 - NV3 Roving versus an open menu (§3.4) is reasoned from `roving.ts:27–45` (selector and `offsetParent` filter); `roving.ts` was read to line 80 only (the Arrow handler beyond it, `stopPropagation` behaviour, MutationObserver re-normalisation) and never run. The existing group dropdowns' lack of arrow-key handling is read from markup, not exercised.
 - NV4 Position-dependent tests: only `mobile-layout.spec.ts`, `a11y-keyboard.spec.ts`, `page-shell.spec.ts`, `footer-dock.spec.ts:60–126`, `smoke.spec.ts:70–100` were read. Visual-baseline / pixel-position assertions that bake in 60 px (a bar-height change moves everything 8 px) were searched only with `grep nav-height`, which finds one comment; absolute-pixel assertions in explore / fly / surface specs may exist.
 - NV5 The ten fallback literals and four literal tops (§2.5) were located by script; only `Notebook.svelte:860`, `SurfaceScene.svelte:7078–7090`, `Timeline.svelte:50–58`, `plan:1432–1438` were read for context. `SurfaceScene:7082` is classified nav-related from the property name and the 60 = nav coincidence; confirm before editing.
@@ -442,3 +458,7 @@ Cluster ~192 px instead of 392 px; the hamburger break can move down from 1219 p
 - NV8 Touch-laptop / hybrid behaviour of `(pointer: fine)` and the TV query's interplay with the new fine-pointer rules is reasoned, not tried; `max-resolution` TV detection also feeds `isTv` in script.
 - NV9 Other `Nav`-adjacent UI: `site-footer` positions, the `AudioOverlay` / `SensorySheet` anchors at `var(--nav-height)` (they follow the token) were not visually checked; the A2/A4 slices' state on disk (A2 landed? A4 brief only) was inferred from commits and briefs, not from running the check scripts.
 - NV10 The check script was run once at HEAD (38 hits); its N1 reads the last selector line before a rule, so a combined selector `.settings-toggle, .share-toggle, .debug-toggle` reports under `.debug-toggle`; N6 pins five literals by file; N7 is a regex over four docs and misses other spellings ("52 pixels").
+- NV11 The 2026-11-12 runtime crawl (A4 brief §1.3) **excluded the nav** (`nav[aria-label]`, footer, debug panel), so the claim "every right-hand control is 44 × 44 on every pointer, the 32 is dead code" (§2.2) is still read from CSS, not from a computed style. One crawl pass over the bar at 1440 × 900 and at 390 × 844 would settle it before the build.
+- NV12 The crawl lists two controls near the nav family that A6 did not read in source: the science-rail `search-button` (38 / 44 px) and the phone drawer tabs `mdg-tab` (40 px, r8). Neither is a nav-bar control; they are mentioned so that the 32 / 44 step is not applied to them by accident.
+- NV13 `a6-check.py` was re-run at `50b3e962a8d` (35) by extracting the script block from this brief; it has no tests of its own and the N6 fallback regex reads `src/**/*.svelte` only (not `.css` or `.ts`).
+- NV14 Whether A3's active look for nav toggles (white glyph on a soft fill) passes contrast for the 16 px glyphs on the dark bar was not computed; the A3 figures cover small text on a lifted card, not glyph contrast.

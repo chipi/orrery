@@ -320,8 +320,6 @@ const SWEEP_ALLOW_SELF = [
   '.mdg-dim',
   '.mcd-handle',
   '.mcd-dim',
-  '.si-close',
-  '.sidx-close',
   '.index-close',
   '.timeline-close',
   '.cz-close',

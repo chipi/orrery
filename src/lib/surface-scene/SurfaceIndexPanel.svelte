@@ -107,9 +107,7 @@
       bind:value={query}
     />
     {#if onClose}
-      <button type="button" class="sidx-close" aria-label={m.panel_close()} onclick={onClose}
-        >×</button
-      >
+      <Chip kind="action" class="sidx-close" aria-label={m.panel_close()} onclick={onClose}>×</Chip>
     {/if}
   </div>
 
@@ -248,18 +246,6 @@
   .sidx-input:focus-visible {
     outline: none;
     border-color: var(--color-accent-strong);
-  }
-  .sidx-close {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 20px;
-    line-height: 1;
-    cursor: pointer;
   }
   .sidx-filters {
     display: flex;

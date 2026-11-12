@@ -73,8 +73,8 @@
       <stop offset="100%" stop-color="#4a3520" />
     </radialGradient>
     <radialGradient id="ic-craft" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0%" stop-color="#a0fff0" />
-      <stop offset="60%" stop-color="#4ecdc4" />
+      <stop offset="0%" stop-color="var(--color-accent-hover)" />
+      <stop offset="60%" stop-color="var(--color-accent)" />
       <stop offset="100%" stop-color="#1c5a55" />
     </radialGradient>
     <radialGradient id="ic-glow-blue" cx="0.5" cy="0.5" r="0.5">
@@ -85,22 +85,22 @@
       <stop offset="40%" stop-color="#c1440e" stop-opacity="0.45" />
       <stop offset="100%" stop-color="#c1440e" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="ic-glow-teal" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="40%" stop-color="#4ecdc4" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#4ecdc4" stop-opacity="0" />
+    <radialGradient id="ic-glow-accent" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="40%" stop-color="var(--color-accent)" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-glow-magenta" cx="0.5" cy="0.5" r="0.5">
       <stop offset="40%" stop-color="#c14ad8" stop-opacity="0.5" />
       <stop offset="100%" stop-color="#c14ad8" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="ic-traj" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#4ecdc4" stop-opacity="0.2" />
-      <stop offset="60%" stop-color="#4ecdc4" stop-opacity="1" />
+      <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.2" />
+      <stop offset="60%" stop-color="var(--color-accent)" stop-opacity="1" />
       <stop offset="100%" stop-color="#c14ad8" stop-opacity="0.7" />
     </linearGradient>
     <linearGradient id="ic-panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#7defe5" />
-      <stop offset="100%" stop-color="#1f7872" />
+      <stop offset="0%" stop-color="var(--color-accent-hover)" />
+      <stop offset="100%" stop-color="var(--color-accent)" />
     </linearGradient>
     <linearGradient id="ic-panel-gold" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ffd87a" />
@@ -154,8 +154,8 @@
                 stroke-width="0.7"
                 stroke-dasharray="1.5 2.5"
               />
-              <circle cx="24" cy="24" r="5" fill="url(#ic-glow-teal)" />
-              <circle cx="24" cy="24" r="2" fill="#a0fff0" />
+              <circle cx="24" cy="24" r="5" fill="url(#ic-glow-accent)" />
+              <circle cx="24" cy="24" r="2" fill="var(--color-accent-hover)" />
             {:else if card.route === '/explore'}
               <!-- Mini solar system: gradient Sun + corona, three orbital ellipses
                    (slight perspective tilt), Earth + Mars with halos. -->
@@ -209,11 +209,11 @@
                 stroke-width="1.6"
                 stroke-dasharray="3 2"
               />
-              <circle cx="24" cy="16" r="5" fill="url(#ic-glow-teal)" />
+              <circle cx="24" cy="16" r="5" fill="url(#ic-glow-accent)" />
               <ellipse cx="24" cy="16" rx="2" ry="3" fill="url(#ic-craft)" />
               <ellipse cx="24" cy="22" rx="1.6" ry="1.6" fill="#ffc850" opacity="0.85" />
             {:else if card.route === '/fleet'}
-              <!-- Three spacecraft silhouettes, layered with depth (back row dim, front bright teal) -->
+              <!-- Three spacecraft silhouettes, layered with depth (back row dim, front bright accent blue) -->
               <g opacity="0.55">
                 <rect
                   x="6"
@@ -235,13 +235,13 @@
                   width="20"
                   height="9"
                   rx="1.2"
-                  fill="rgba(78,205,196,0.18)"
-                  stroke="#4ecdc4"
+                  fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
+                  stroke="var(--color-accent)"
                   stroke-width="1.2"
                 />
                 <rect x="15" y="22" width="5" height="5" fill="url(#ic-panel)" />
                 <rect x="40" y="22" width="5" height="5" fill="url(#ic-panel)" />
-                <circle cx="30" cy="24.5" r="1.2" fill="#a0fff0" />
+                <circle cx="30" cy="24.5" r="1.2" fill="var(--color-accent-hover)" />
               </g>
               <g opacity="0.7">
                 <rect
@@ -268,7 +268,7 @@
                 stroke="rgba(255,255,255,0.18)"
                 stroke-width="0.6"
               />
-              <!-- Row 1 (bottom = cheapest, brightest teal lobe in middle) -->
+              <!-- Row 1 (bottom = cheapest, brightest accent blue lobe in middle) -->
               <rect x="7" y="7" width="6.8" height="6.8" fill="rgba(193,68,14,0.6)" />
               <rect x="14" y="7" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
               <rect x="21" y="7" width="6.8" height="6.8" fill="rgba(240,160,60,0.8)" />
@@ -281,7 +281,7 @@
               <rect x="35" y="14" width="6.8" height="6.8" fill="rgba(220,108,40,0.6)" />
               <rect x="7" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
               <rect x="14" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
-              <rect x="21" y="21" width="6.8" height="6.8" fill="#4ecdc4" />
+              <rect x="21" y="21" width="6.8" height="6.8" fill="var(--color-accent)" />
               <rect x="28" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
               <rect x="35" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
               <rect x="7" y="28" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
@@ -310,7 +310,7 @@
                 stroke-width="1.8"
                 stroke-dasharray="3 2"
               />
-              <circle cx="24" cy="14" r="4" fill="url(#ic-glow-teal)" />
+              <circle cx="24" cy="14" r="4" fill="url(#ic-glow-accent)" />
               <polygon points="20,14 28,18 20,22 22,18" fill="url(#ic-craft)" />
             {:else if card.route === '/earth'}
               <!-- Earth: blue gradient + atmosphere halo + ISS orbit + GPS dot -->
@@ -343,12 +343,12 @@
                 rx="18"
                 ry="6"
                 fill="none"
-                stroke="#4ecdc4"
+                stroke="var(--color-accent)"
                 stroke-width="1"
                 stroke-dasharray="2 2"
               />
-              <circle cx="42" cy="24" r="2" fill="url(#ic-glow-teal)" />
-              <circle cx="42" cy="24" r="1.2" fill="#4ecdc4" />
+              <circle cx="42" cy="24" r="2" fill="url(#ic-glow-accent)" />
+              <circle cx="42" cy="24" r="1.2" fill="var(--color-accent)" />
             {:else if card.route === '/moon'}
               <!-- Moon: gradient grey disc + craters with shading + Earth-glow on horizon -->
               <circle cx="22" cy="24" r="16" fill="rgba(75,156,211,0.18)" />
@@ -392,7 +392,7 @@
                 stroke-width="0.5"
               />
             {:else if card.route === '/iss'}
-              <!-- ISS: glowing solar panels (gradient teal) + truss with depth + Earth glow at bottom -->
+              <!-- ISS: glowing solar panels (gradient accent blue) + truss with depth + Earth glow at bottom -->
               <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(75,156,211,0.18)" />
               <line
                 x1="6"
@@ -417,7 +417,7 @@
                 width="6"
                 height="12"
                 fill="url(#ic-panel)"
-                stroke="rgba(160,255,240,0.6)"
+                stroke="var(--color-accent-strong)"
                 stroke-width="0.5"
               />
               <rect
@@ -426,7 +426,7 @@
                 width="6"
                 height="12"
                 fill="url(#ic-panel)"
-                stroke="rgba(160,255,240,0.6)"
+                stroke="var(--color-accent-strong)"
                 stroke-width="0.5"
               />
               <line x1="2" y1="22" x2="8" y2="22" stroke="rgba(15,40,38,0.6)" stroke-width="0.4" />
@@ -476,7 +476,7 @@
                 stroke-width="0.8"
               />
               <!-- Cupola dot -->
-              <circle cx="24" cy="36" r="1.4" fill="#4ecdc4" />
+              <circle cx="24" cy="36" r="1.4" fill="var(--color-accent)" />
             {:else if card.route === '/tiangong'}
               <!-- Tiangong: T-shape with multi-color modules + glowing solar panels -->
               <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(193,68,14,0.18)" />
@@ -522,14 +522,14 @@
                 stroke="rgba(255,216,160,0.5)"
                 stroke-width="0.4"
               />
-              <!-- Wentian + Mengtian (horizontal labs in teal) -->
+              <!-- Wentian + Mengtian (horizontal labs in accent blue) -->
               <rect
                 x="6"
                 y="20"
                 width="36"
                 height="8"
-                fill="rgba(78,205,196,0.18)"
-                stroke="#4ecdc4"
+                fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
+                stroke="var(--color-accent)"
                 stroke-width="0.9"
               />
               <line
@@ -537,7 +537,7 @@
                 y1="20"
                 x2="14"
                 y2="28"
-                stroke="rgba(78,205,196,0.4)"
+                stroke="var(--color-accent-edge)"
                 stroke-width="0.4"
               />
               <line
@@ -545,15 +545,15 @@
                 y1="20"
                 x2="34"
                 y2="28"
-                stroke="rgba(78,205,196,0.4)"
+                stroke="var(--color-accent-edge)"
                 stroke-width="0.4"
               />
               <!-- Solar panel wings (gold) -->
               <rect x="0" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
               <rect x="42" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
               <!-- Center docking port glow -->
-              <circle cx="24" cy="24" r="2.5" fill="url(#ic-glow-teal)" />
-              <circle cx="24" cy="24" r="1.2" fill="#4ecdc4" />
+              <circle cx="24" cy="24" r="2.5" fill="url(#ic-glow-accent)" />
+              <circle cx="24" cy="24" r="1.2" fill="var(--color-accent)" />
             {:else if card.route === '/programs'}
               <!-- Programs: a mission-patch badge — gold ring, navy field, a
                    rising trajectory to a star, small agency-star markers. -->
@@ -585,8 +585,8 @@
               <!-- Agency stars -->
               <circle cx="16" cy="16" r="1.2" fill="#ffc850" />
               <circle cx="30" cy="31" r="1.2" fill="#c14ad8" />
-              <circle cx="24" cy="12.5" r="1.4" fill="url(#ic-glow-teal)" />
-              <circle cx="24" cy="12.5" r="0.7" fill="#a0fff0" />
+              <circle cx="24" cy="12.5" r="1.4" fill="url(#ic-glow-accent)" />
+              <circle cx="24" cy="12.5" r="0.7" fill="var(--color-accent-hover)" />
             {:else if card.route === '/essays'}
               <!-- Essays (The Long View): an open book with a star rising off
                    the page — long-form reading about the far future. -->
@@ -598,8 +598,8 @@
               />
               <path
                 d="M 24 15 C 30 12 37 12 42 14 L 42 34 C 37 32 30 32 24 35 Z"
-                fill="rgba(78,205,196,0.08)"
-                stroke="#4ecdc4"
+                fill="color-mix(in srgb, var(--color-accent) 8%, transparent)"
+                stroke="var(--color-accent)"
                 stroke-width="1"
               />
               <line
@@ -636,7 +636,7 @@
                 stroke-width="0.6"
               />
               <!-- The long view: a star above the right page -->
-              <circle cx="35" cy="11" r="3" fill="url(#ic-glow-teal)" />
+              <circle cx="35" cy="11" r="3" fill="url(#ic-glow-accent)" />
               <circle cx="35" cy="11" r="1.3" fill="#ffc850" />
             {:else if card.route === '/science'}
               <!-- Atomic / orbital science glyph: nucleus + 3 multi-colored electron orbits + ∆v formula -->
@@ -646,7 +646,7 @@
                 rx="20"
                 ry="7"
                 fill="none"
-                stroke="#4ecdc4"
+                stroke="var(--color-accent)"
                 stroke-width="1.2"
               />
               <ellipse
@@ -670,7 +670,7 @@
                 transform="rotate(-60 24 24)"
               />
               <!-- Electron / planet markers on each orbit -->
-              <circle cx="44" cy="24" r="1.6" fill="#4ecdc4" />
+              <circle cx="44" cy="24" r="1.6" fill="var(--color-accent)" />
               <circle cx="14" cy="14" r="1.6" fill="#c14ad8" />
               <circle cx="34" cy="36" r="1.6" fill="#ffc850" />
               <!-- Nucleus glow -->
@@ -756,13 +756,13 @@
   }
   .card:hover,
   .card:focus-visible {
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.04);
+    border-color: var(--color-accent-edge);
+    background: color-mix(in srgb, var(--color-accent) 4%, transparent);
     transform: translateY(-4px);
     outline: none;
   }
   .card:focus-visible {
-    outline: 2px solid var(--color-accent, #4466ff);
+    outline: 2px solid var(--color-accent, var(--color-focus));
     outline-offset: 2px;
   }
   .card-name {

@@ -1911,12 +1911,14 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         frame = focusFrameFor('planet', obj.planet.size3);
       }
     } else if (ref?.kind === 'moon') {
-      const sat = planetObjs
-        .find((o) => o.planet.id === ref.parent)
-        ?.satellites.find((s) => s.def.id === ref.id);
-      if (sat) {
+      const parent = planetObjs.find((o) => o.planet.id === ref.parent);
+      const sat = parent?.satellites.find((s) => s.def.id === ref.id);
+      if (parent && sat) {
         follow = (out) => void sat.mesh.getWorldPosition(out);
-        frame = focusFrameFor('moon', sat.def.sizeUnits);
+        // A moon is tiny: its own 50 radii would put the zoom ceiling, where one more scroll
+        // leaves the solar system, a few units out. It keeps its planet's ceiling.
+        const f = focusFrameFor('moon', sat.def.sizeUnits);
+        frame = { ...f, maxR: Math.max(f.maxR, parent.planet.size3 * 50) };
       }
     } else if (ref?.kind === 'small-body') {
       const obj = smallBodyObjs.find((o) => o.body.id === ref.id);

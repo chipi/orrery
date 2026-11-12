@@ -1199,7 +1199,7 @@
       }
       // The locate chip sits at the ruler's default spot on /earth and /moon, so
       // wherever they share rows the ruler steps right of it (not only on short windows).
-      const locate = visible(document.querySelector('.locate-me'));
+      const locate = visible(document.querySelector('.locate-slot .ui-chip'));
       if (locate && locate.top < ruler.bottom && locate.bottom > ruler.top) {
         right = Math.max(right, locate.right);
       }

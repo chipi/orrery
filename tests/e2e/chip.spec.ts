@@ -356,3 +356,40 @@ test.describe('sweep: every visible control is a chip or on the allow-list', () 
     });
   }
 });
+
+// A4 renamed the controls these two features find by class; both broke silently.
+test.describe('features that find chips by class', () => {
+  test('exhibit mode still hides the INDEX tab and the REFERENCES chip on /explore', async ({
+    page,
+  }) => {
+    await page.goto('/explore?mode=exhibit');
+    await waitForHydration(page);
+    await expect(page.locator('body.exhibit-mode')).toHaveCount(1);
+    for (const sel of ['.body-index-handle', '.scales-dock', '[data-testid="sizes-toggle"]']) {
+      for (const el of await page.locator(sel).all()) await expect(el).toBeHidden();
+    }
+  });
+
+  test('the orbit ruler never sits on top of the locate chip on /earth', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 720 });
+    await page.goto('/earth');
+    await waitForHydration(page);
+    const locate = page.getByTestId('earth-locate-me');
+    await expect(locate).toBeVisible();
+    await page.waitForTimeout(1500);
+    const overlap = await page.evaluate(() => {
+      const a = document.querySelector('[data-testid="earth-locate-me"]')?.getBoundingClientRect();
+      const ruler = [...document.querySelectorAll('.ruler')]
+        .map((el) => el.getBoundingClientRect())
+        .find((r) => r.width && r.height);
+      if (!a || !ruler) return null;
+      return !(
+        a.right <= ruler.left ||
+        ruler.right <= a.left ||
+        a.bottom <= ruler.top ||
+        ruler.bottom <= a.top
+      );
+    });
+    expect(overlap, 'locate chip and ruler boxes intersect').not.toBe(true);
+  });
+});

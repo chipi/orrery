@@ -6,16 +6,18 @@
    (fleet status, mission colour, nation) arrive per chip as --chip-tone. */
 
 .ui-chip {
-  --chip-rest-edge: rgba(255, 255, 255, 0.18);
-  --chip-rest-text: rgba(255, 255, 255, 0.72);
-  --chip-glass: rgba(8, 10, 22, 0.65);
+  --chip-rest-edge: var(--color-chip-edge);
+  --chip-rest-text: var(--color-chip-text);
+  --chip-glass: var(--color-chip-glass);
   --chip-on: var(--chip-tone, var(--chip-tint, var(--color-accent)));
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
+  /* Both axes: an icon-only chip (play, ⟲, ‹, 1×) is a 44 px target on touch too. */
   min-block-size: 44px;
+  min-inline-size: 44px;
   padding-block: 0;
   padding-inline: 12px;
   background: var(--chip-glass);
@@ -37,12 +39,14 @@
 @media (hover: hover) and (pointer: fine) {
   .ui-chip {
     min-block-size: 30px;
+    min-inline-size: 30px;
   }
 }
 
-.ui-chip:hover:not(:disabled) {
+/* Hover lifts a chip at rest only: an on chip keeps its data / world / accent edge. */
+.ui-chip:hover:not(:disabled):not(.is-on, [aria-pressed='true'], [aria-checked='true']) {
   border-color: var(--chip-tint, var(--color-state));
-  color: #fff;
+  color: var(--color-text);
 }
 .ui-chip:focus-visible {
   outline: 2px solid var(--color-focus);
@@ -56,7 +60,7 @@
 .ui-chip[aria-checked='true'] {
   background: color-mix(in srgb, var(--chip-on) 22%, var(--chip-glass));
   border-color: var(--chip-on);
-  color: #fff;
+  color: var(--color-text);
 }
 
 .ui-chip:disabled,

@@ -1560,7 +1560,6 @@
   "star_label_absolute_mag": "MAGNITUDINE ASSOLUTA",
   "star_label_constellation": "COSTELLAZIONE",
   "star_label_catalogue": "CATALOGO",
-  "star_index_aria": "Stelle con nome",
   "star_index_close": "Chiudi indice",
   "star_enter_system": "Entra nel sistema →",
   "exo_kind": "Esopianeta",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "Grafici delle traiettorie delle missioni",
   "colophon_mission_trajectories_note": "Uno schema per missione, disegnato dal codice con lo stesso modello di traiettoria che vola il simulatore /fly; non è generato con IA. I tour del sistema esterno sono compressi radialmente oltre 1,6 UA e le orbite terrestri sono esagerate per renderle leggibili; la didascalia lo dice. Una missione senza dati orbitali riceve un segnaposto etichettato, mai una traiettoria inventata. Le etichette nelle immagini sono in inglese.",
   "layout_footer_more": "Altro",
+  "explore_index_aria_neighborhood": "Indice del vicinato stellare — vai a una stella con nome o a un oggetto del cielo profondo",
   "explore_index_aria_milky_way": "Indice della Via Lattea — vai al Sole, a un ammasso globulare, a una galassia satellite, a un braccio a spirale o a un buco nero",
   "explore_index_aria_local_group": "Indice del Gruppo Locale — vai a una galassia membro",
   "explore_index_aria_local_sheet": "Indice del Foglio Locale — vai a un gruppo membro",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "Galassie satellite",
   "explore_index_section_arms": "Bracci a spirale",
   "explore_index_section_fiction": "Finzione",
-  "explore_index_filter_headliner": "In evidenza",
+  "explore_index_filter_headliner": "Oggetti notevoli",
   "explore_index_filter_dwarf_galaxies": "Galassie nane"
 }

@@ -19,7 +19,7 @@
 
   const ARIA: Record<ShellId, () => string> = {
     'solar-system': m.explore_body_index_aria,
-    neighborhood: m.star_index_aria,
+    neighborhood: m.explore_index_aria_neighborhood,
     'milky-way': m.explore_index_aria_milky_way,
     'local-group': m.explore_index_aria_local_group,
     'local-sheet': m.explore_index_aria_local_sheet,
@@ -179,7 +179,16 @@
     r.badges?.includes('black-hole')
       ? (KIND_LABELS[`bh:${r.kind}`]?.() ?? '')
       : (KIND_LABELS[`${KIND_SCOPE[scale]}:${r.kind}`]?.() ?? '');
-  const metaOf = (r: ScaleIndexRow): string => r.meta ?? kindLabel(r);
+  // Local Group members say which galaxy they belong to, as LocalGroupPanel's group line does.
+  const lgGroup = (r: ScaleIndexRow): string => {
+    if (r.id === 'milky-way') return m.explore_lg_group_self();
+    if (r.id === r.parent) return m.explore_lg_group_anchor();
+    if (r.parent === 'milky-way') return m.explore_lg_group_mw();
+    if (r.parent === 'andromeda') return m.explore_lg_group_andromeda();
+    return m.explore_lg_group_independent();
+  };
+  const metaOf = (r: ScaleIndexRow): string =>
+    r.meta ?? (scale === 'local-group' ? lgGroup(r) : kindLabel(r));
   const filtered = $derived(filterRows(shown, filter, query, metaOf));
   const groups = $derived(groupBySection(filtered));
   const filterIds = $derived(SCALE_FILTERS[scale].filter((id) => shown.some(FILTER_TESTS[id])));
@@ -254,7 +263,7 @@
     >
       {#each groups as group (group.section ?? '')}
         {#if group.section}
-          <li class="si-section" aria-hidden="true">{SECTION_LABELS[group.section]()}</li>
+          <li class="si-section">{SECTION_LABELS[group.section]()}</li>
         {/if}
         {#each group.rows as row (row.id)}
           <li class="si-item">

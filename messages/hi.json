@@ -1560,7 +1560,6 @@
   "star_label_absolute_mag": "निरपेक्ष कांतिमान",
   "star_label_constellation": "तारामंडल",
   "star_label_catalogue": "सूची",
-  "star_index_aria": "नामित तारे",
   "star_index_close": "अनुक्रमणिका बंद करें",
   "star_enter_system": "तंत्र में प्रवेश करें →",
   "exo_kind": "बहिर्ग्रह",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "मिशनों के प्रक्षेपवक्र आरेख",
   "colophon_mission_trajectories_note": "हर मिशन के लिए एक रेखाचित्र, कोड से उसी प्रक्षेपवक्र मॉडल के आधार पर बनाया गया जिस पर /fly सिम्युलेटर उड़ता है; यह AI से नहीं बना। बाहरी सौरमंडल के अभियानों में 1.6 AU से आगे की दूरी को त्रिज्या की दिशा में संपीड़ित किया गया है और पृथ्वी की कक्षाएँ पढ़ने योग्य बनाने के लिए बढ़ा-चढ़ाकर दिखाई गई हैं; आरेख का कैप्शन यह बताता है। जिस मिशन के कक्षा-आँकड़े नहीं हैं, उसके लिए लेबल वाला प्लेसहोल्डर दिखता है, गढ़ा हुआ प्रक्षेपवक्र नहीं। चित्रों के लेबल अंग्रेज़ी में हैं।",
   "layout_footer_more": "अधिक",
+  "explore_index_aria_neighborhood": "तारकीय पड़ोस सूची — किसी नामित तारे या गहन आकाश पिंड पर जाएं",
   "explore_index_aria_milky_way": "आकाशगंगा सूची — सूर्य, गोलाकार समूह, उपग्रह गैलेक्सी, सर्पिल बाहु या ब्लैक होल पर जाएं",
   "explore_index_aria_local_group": "स्थानीय समूह सूची — किसी सदस्य गैलेक्सी पर जाएं",
   "explore_index_aria_local_sheet": "स्थानीय शीट सूची — किसी सदस्य समूह पर जाएं",
@@ -3692,7 +3692,7 @@
   "explore_index_aria_laniakea": "लनियाकिया सूची — किसी सदस्य पर जाएं",
   "explore_index_aria_cosmic_web": "ब्रह्मांडीय जाल सूची — किसी संरचना पर जाएं",
   "explore_index_filter_aria": "सूची फ़िल्टर करें",
-  "explore_index_no_match": "\"{query}\" से कुछ भी मेल नहीं खाता।",
+  "explore_index_no_match": "“{query}” से कुछ भी मेल नहीं खाता।",
   "explore_index_section_stars": "तारे",
   "explore_index_section_deep_sky": "गहन आकाश",
   "explore_index_section_planets": "ग्रह",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "उपग्रह गैलेक्सियाँ",
   "explore_index_section_arms": "सर्पिल बाहु",
   "explore_index_section_fiction": "कल्पना",
-  "explore_index_filter_headliner": "मुख्य बातें",
+  "explore_index_filter_headliner": "प्रमुख पिंड",
   "explore_index_filter_dwarf_galaxies": "बौनी गैलेक्सियाँ"
 }

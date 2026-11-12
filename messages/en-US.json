@@ -2024,7 +2024,6 @@
   "star_enter_system": "Enter system →",
   "star_finder_caption": "Finder · {con} from the Sun's sky",
   "star_hr_article_link": "Stars & the H–R diagram",
-  "star_index_aria": "Named stars",
   "star_index_close": "Close index",
   "star_index_culture_door": "Culture door",
   "star_index_filter_all": "All",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "Mission trajectory plots",
   "colophon_mission_trajectories_note": "One schematic per mission, drawn in code from the same trajectory model the /fly simulator flies — not AI-generated. Outer-system tours are radially compressed beyond 1.6 AU and Earth-orbit rings are exaggerated so they read; the plot’s caption says so. A mission with no orbit data gets a labelled placeholder, never an invented path. Labels in the pictures are in English.",
   "layout_footer_more": "More",
+  "explore_index_aria_neighborhood": "Stellar Neighborhood index — jump to a named star or a deep-sky object",
   "explore_index_aria_milky_way": "Milky Way index — jump to the Sun, a globular cluster, a satellite galaxy, a spiral arm or a black hole",
   "explore_index_aria_local_group": "Local Group index — jump to a member galaxy",
   "explore_index_aria_local_sheet": "Local Sheet index — jump to a member group",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "Satellite galaxies",
   "explore_index_section_arms": "Spiral arms",
   "explore_index_section_fiction": "Fiction",
-  "explore_index_filter_headliner": "Highlights",
+  "explore_index_filter_headliner": "Notable objects",
   "explore_index_filter_dwarf_galaxies": "Dwarf galaxies"
 }

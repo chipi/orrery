@@ -1551,7 +1551,6 @@
   "star_label_absolute_mag": "絶対等級",
   "star_label_constellation": "星座",
   "star_label_catalogue": "カタログ",
-  "star_index_aria": "固有名のある恒星",
   "star_index_close": "索引を閉じる",
   "explore_constellations_toggle": "星座",
   "explore_anon_unnamed": "無名の恒星",
@@ -3685,6 +3684,7 @@
   "colophon_section_mission_trajectories": "ミッションの軌道図",
   "colophon_mission_trajectories_note": "ミッションごとに1枚の概略図を、/fly シミュレーターが飛ばすのと同じ軌道モデルからコードで描いています。AI生成ではありません。太陽系の外側を巡るミッションは 1.6 AU を超える部分を半径方向に圧縮し、地球周回軌道は読みやすいよう誇張して描いており、図のキャプションにその旨を記しています。軌道データのないミッションには、軌道を創作せず、ラベル付きのプレースホルダーを表示します。図中のラベルは英語です。",
   "layout_footer_more": "その他",
+  "explore_index_aria_neighborhood": "恒星近傍索引 — 固有名のある恒星やディープスカイ天体へジャンプ",
   "explore_index_aria_milky_way": "銀河系索引 — 太陽、球状星団、衛星銀河、渦状腕、ブラックホールへジャンプ",
   "explore_index_aria_local_group": "局所銀河群索引 — 所属銀河へジャンプ",
   "explore_index_aria_local_sheet": "ローカルシート索引 — 所属銀河群へジャンプ",
@@ -3704,6 +3704,6 @@
   "explore_index_section_satellites": "衛星銀河",
   "explore_index_section_arms": "渦状腕",
   "explore_index_section_fiction": "フィクション",
-  "explore_index_filter_headliner": "主な成果",
+  "explore_index_filter_headliner": "注目天体",
   "explore_index_filter_dwarf_galaxies": "矮小銀河"
 }

@@ -24,6 +24,11 @@ export interface RovingActionOptions {
   wrap?: boolean;
   /** CSS selector for the focusable items. Defaults to enabled buttons/links/[tabindex]. */
   itemSelector?: string;
+  /**
+   * Pass the open/shown state of a container that is hidden at mount. Items inside a hidden
+   * ancestor have no layout box, so the mount-time pass sees none; a change here re-runs it.
+   */
+  active?: boolean;
 }
 
 const DEFAULT_SELECTOR =
@@ -136,6 +141,8 @@ export function roving(node: HTMLElement, options: RovingActionOptions = {}) {
     update(next: RovingActionOptions) {
       opts = { mode: 'list', orientation: 'vertical', wrap: false, ...next };
       setRoving(currentEl());
+      // The container's own `hidden` flips in the same flush as this update.
+      queueMicrotask(() => setRoving(currentEl()));
     },
     destroy() {
       observer.disconnect();

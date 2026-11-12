@@ -53,6 +53,27 @@
     entityLinks.filter((l) => !bodyIds.has(l.id) && l.name.toLowerCase().includes(q)),
   );
   const filtered = $derived(bodies.filter((b) => b.name.toLowerCase().includes(q)));
+
+  // Starts just under the HUD chip row, which wraps on narrow windows (nothing on touch: HUD hidden).
+  let indexTopPx = $state<number | null>(null);
+  $effect(() => {
+    void open;
+    if (inline) return;
+    const hud = document.querySelector('.hud-controls');
+    if (!hud) return;
+    const measure = () => {
+      const r = hud.getBoundingClientRect();
+      indexTopPx = r.width && r.height ? Math.round(r.bottom + 8) : null;
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(hud);
+    window.addEventListener('resize', measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  });
 </script>
 
 {#snippet panelBody(withClose: boolean)}
@@ -78,6 +99,7 @@
       orientation: 'vertical',
       wrap: true,
       itemSelector: 'button.bidx-row, a.bidx-page',
+      active: open,
     }}
   >
     {#each filtered as b (b.kind + ':' + b.id)}
@@ -119,14 +141,19 @@
 {#if inline}
   <div class="bidx bidx-inline">{@render panelBody(false)}</div>
 {:else if open || entityLinks.length > 0}
-  <aside class="body-index bidx" hidden={!open} aria-label={m.explore_body_index_aria()}>
+  <aside
+    class="body-index bidx"
+    hidden={!open}
+    style:--index-top={indexTopPx != null ? `${indexTopPx}px` : undefined}
+    aria-label={m.explore_body_index_aria()}
+  >
     {@render panelBody(true)}
   </aside>
 {/if}
 
 <style>
   /* Left side panel — matches the surface index panel (left, top:152→bottom,
-     master → detail on the right). Shown on ALL viewports: the body-index handle
+     master → detail on the right; top = the measured HUD bottom). Shown on ALL viewports: the body-index handle
      is a left-edge pullout tab on every viewport (A1), so the panel it toggles
      must render on touch too — a prior desktop-only `@media (hover) and (pointer:
      fine)` gate here left the mobile handle opening nothing (dead button). The
@@ -135,7 +162,7 @@
     display: flex;
     position: fixed;
     left: 12px;
-    top: 152px;
+    top: var(--index-top, 152px);
     bottom: 12px;
     z-index: 45;
     width: min(320px, calc(100vw - 24px));
@@ -218,12 +245,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 30px;
+    min-width: 44px;
+    min-height: 44px;
     border: 1px solid transparent;
     border-radius: 6px;
     color: var(--text-dim, #9a9aa7);
     text-decoration: none;
     font-size: 14px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .bidx-page {
+      min-width: 30px;
+      min-height: 0;
+    }
   }
   .bidx-page:hover,
   .bidx-page:focus-visible {

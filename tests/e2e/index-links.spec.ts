@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Locator } from '@playwright/test';
 import { collectCanonicalRoutes } from '../../scripts/site-routes.mjs';
 import { waitForHydration } from './_helpers/hydration';
 
@@ -11,6 +11,30 @@ import { waitForHydration } from './_helpers/hydration';
  */
 
 const SCENE_HUBS = ['moon', 'mars', 'venus', 'explore'] as const;
+
+/** The ↗ page links are a 30 px target on a fine pointer, 44 px on a coarse one (A4). */
+async function expectLinkTargets(links: Locator) {
+  const fine = await links
+    .page()
+    .evaluate(() => matchMedia('(hover: hover) and (pointer: fine)').matches);
+  const sizes = await links.evaluateAll((els) =>
+    els.slice(0, 5).map((e) => [e.getBoundingClientRect().width, e.getBoundingClientRect().height]),
+  );
+  expect(sizes.length).toBeGreaterThan(0);
+  for (const [w, h] of sizes) {
+    expect(w).toBeGreaterThanOrEqual(fine ? 29 : 43);
+    if (!fine) expect(h).toBeGreaterThanOrEqual(43);
+  }
+}
+
+/** An opened INDEX is one roving Tab stop, not one per row. */
+async function expectOneTabStop(items: Locator) {
+  await expect
+    .poll(() =>
+      items.evaluateAll((els) => els.filter((e) => (e as HTMLElement).tabIndex === 0).length),
+    )
+    .toBe(1);
+}
 
 function entityIds(hub: string): string[] {
   const prefix = `/${hub}/`;
@@ -76,6 +100,14 @@ for (const hub of ['moon', 'mars', 'venus']) {
     const withPage = rows.filter((id) => id && ids.has(id));
     expect(withPage.length).toBeGreaterThan(0);
     expect(linked.map(([id]) => id).sort()).toEqual([...withPage].sort());
+    // Every entity page of the hub is linked from inside the INDEX panel, not just somewhere on the page.
+    for (const id of ids)
+      expect(
+        linked.map(([lid]) => lid),
+        `${id} has no INDEX link`,
+      ).toContain(id);
+    await expectOneTabStop(list.locator('button.sidx-row, a.sidx-page'));
+    await expectLinkTargets(list.locator('a.sidx-page'));
     for (const [id, href] of linked) expect(href).toMatch(new RegExp(`/${hub}/${id}$`));
   });
 }
@@ -99,5 +131,15 @@ test('/explore: INDEX rows with an entity page link to it; moons follow as link 
     .locator('.body-index a.bidx-page[data-index-id]')
     .evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
   expect(rowLinks.length).toBeGreaterThan(5);
+  const panelHrefs = await page
+    .locator('.body-index a.bidx-page')
+    .evaluateAll((els) => els.map((e) => e.getAttribute('href')));
+  for (const id of ids)
+    expect(
+      panelHrefs.some((h) => h?.endsWith(`/explore/${id}`)),
+      `${id} has no INDEX link`,
+    ).toBe(true);
+  await expectOneTabStop(page.locator('.body-index button.bidx-row, .body-index a.bidx-page'));
+  await expectLinkTargets(page.locator('.body-index a.bidx-page[data-index-id]'));
   for (const id of rowLinks) expect(ids.has(id!), `${id} has no entity page`).toBe(true);
 });

@@ -21,7 +21,9 @@ function entityIds(hub: string): string[] {
 }
 
 test.describe('the prerendered hub HTML links every entity page', () => {
-  test.beforeEach((_fixtures, testInfo) => {
+  // Playwright requires a destructuring pattern as the first argument (see mobile-invariants.spec.ts).
+  // eslint-disable-next-line no-empty-pattern
+  test.beforeEach(({}, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop-chromium', 'static HTML: one project is enough');
   });
 

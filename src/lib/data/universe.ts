@@ -259,6 +259,7 @@ export interface MilkyWayObject {
   name: string;
   kind:
     | 'supermassive-black-hole'
+    | 'stellar-black-hole'
     | 'star'
     | 'globular-cluster'
     | 'satellite-galaxy'

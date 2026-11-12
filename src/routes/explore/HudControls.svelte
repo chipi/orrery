@@ -10,7 +10,7 @@
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
-  import { INTERSTELLAR_CRAFT, PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
+  import { PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
   import { localeFromPage, localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { LightTime, PlanetStats } from '$lib/physics/util/planet-stats';
@@ -37,7 +37,6 @@
     pathsLegendEl = $bindable(),
     legendRowEls,
     iconic,
-    openMessageCraft,
     onLegendKeydown,
     exploreRegimes,
     openExploreRegime,
@@ -60,7 +59,6 @@
     /** The page's array; the desktop legend rows fill it (keyboard nav). */
     legendRowEls: HTMLButtonElement[];
     iconic: IconicSelectionService;
-    openMessageCraft: (craftId: string, locale: string) => Promise<void>;
     onLegendKeydown: (e: KeyboardEvent, i: number) => void;
     exploreRegimes: OrbitRegime[];
     openExploreRegime: (id: string) => void;
@@ -176,10 +174,7 @@
           class:is-selected={iconic.state.selectedId === entry.mission_id}
           class:is-hovered={iconic.state.hoveredId === entry.mission_id}
           aria-pressed={iconic.state.selectedId === entry.mission_id}
-          onclick={() =>
-            INTERSTELLAR_CRAFT.has(entry.mission_id)
-              ? openMessageCraft(entry.mission_id, localeFromPage(page))
-              : iconic.selectMission(entry.mission_id, localeFromPage(page))}
+          onclick={() => iconic.selectMission(entry.mission_id, localeFromPage(page))}
           onkeydown={(e) => onLegendKeydown(e, i)}
           onmouseenter={() => {
             iconic.state.hoveredId = entry.mission_id;
@@ -308,11 +303,7 @@
         class:is-hovered={iconic.state.hoveredId === entry.mission_id}
         aria-pressed={iconic.state.selectedId === entry.mission_id}
         onclick={() => {
-          if (INTERSTELLAR_CRAFT.has(entry.mission_id)) {
-            void openMessageCraft(entry.mission_id, localeFromPage(page));
-          } else {
-            iconic.selectMission(entry.mission_id, localeFromPage(page));
-          }
+          iconic.selectMission(entry.mission_id, localeFromPage(page));
           close();
         }}
         onkeydown={(e) => onLegendKeydown(e, i)}

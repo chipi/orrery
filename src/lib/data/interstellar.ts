@@ -1,5 +1,5 @@
 /**
- * #410 — interstellar-craft message data for the /explore MessagePanel.
+ * #410 — interstellar-craft message data for the MissionPanel's message section.
  *
  * Composes the existing iconic-trajectory JSON (status: current distance,
  * interstellar-since, heading) with the culture-door catalogue (the message

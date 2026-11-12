@@ -22,9 +22,13 @@
   import ScienceCard from './ScienceCard.svelte';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
-  import { goto } from '$app/navigation';
   import { localeFromPage, localHref } from '$lib/locale';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMission,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import type { ScienceTabId } from '$types/science';
   import { getBelts, getBeltGallery, getBeltI18n, type BeltEntry, type BeltI18n } from '$lib/data';
   import { dataLoadFailed } from '$lib/data/core';
@@ -41,8 +45,14 @@
     beltId: string | null;
     open: boolean;
     onClose: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
+    /** Whether the scene has an object for a body id: only those members are links. */
+    bodyInScene?: (id: string) => boolean;
+    /** A member link selects the body in place (panel, ring, camera); absent: navigate. */
+    onSelectBody?: (id: string) => void;
   };
-  let { beltId, open, onClose }: Props = $props();
+  let { beltId, open, onClose, onMissionOpen, bodyInScene, onSelectBody }: Props = $props();
 
   let belts: BeltEntry[] = $state([]);
   let loaded = $state(false);
@@ -115,29 +125,16 @@
     }
   });
 
-  // Cross-link table — the largest_members strings begin with a body
-  // name then a dash. If the leading word matches a small-body id we
-  // ship today (Ceres / Pluto / Eris / Haumea / Makemake), make the
-  // list item clickable; it deep-links into /explore?id=<small-body>
-  // which the existing $effect resolves to a SmallBodyPanel open.
-  // Quaoar etc. that aren't in our small-bodies.json render as plain
-  // text — fall back, not error.
-  const SMALL_BODY_IDS: Record<string, string> = {
-    ceres: 'ceres',
-    pluto: 'pluto',
-    eris: 'eris',
-    haumea: 'haumea',
-    makemake: 'makemake',
-  };
-  function memberLink(member: string): string | null {
+  // The largest_members strings begin with a body name then a dash. When the scene has an
+  // object for that name (UXD-019: Ceres, Vesta, Pluto, Eris, Haumea, Makemake, Arrokoth) the
+  // item is a link that selects the body in place; Pallas, Hygiea, Quaoar and the rest render as
+  // plain text until they have data.
+  function memberId(member: string): string | null {
     const firstWord = member
       .split(/[\s—–-]/)[0]
       ?.toLowerCase()
       .trim();
-    if (!firstWord) return null;
-    const sbId = SMALL_BODY_IDS[firstWord];
-    if (!sbId) return null;
-    return localHref(`/explore?id=${sbId}`);
+    return firstWord && bodyInScene?.(firstWord) ? firstWord : null;
   }
   // Member strings come from the locale overlay ("Церера — …"); the link is
   // keyed on the English name, so read it from the base list at the same
@@ -146,9 +143,10 @@
     const baseList = baseEntry?.largest_members;
     return baseList && baseList.length === entry?.largest_members.length ? baseList[i] : undefined;
   }
-  function openMember(href: string, event: Event) {
+  function openMember(id: string, event: Event) {
+    if (!onSelectBody) return;
     event.preventDefault();
-    void goto(href);
+    onSelectBody(id);
   }
 
   // Cross-link to the matching /science/planets/<id>-belt article. Both
@@ -264,10 +262,14 @@
         <p class="editorial">{m.belt_members_intro({ name: entry.name })}</p>
         <ul class="member-list">
           {#each entry.largest_members as member, i (member)}
-            {@const href = memberLink(baseMember(i) ?? member)}
+            {@const id = memberId(baseMember(i) ?? member)}
             <li>
-              {#if href}
-                <a {href} onclick={(e) => openMember(href, e)} class="member-link">
+              {#if id}
+                <a
+                  href={localHref(`/explore?id=${id}`)}
+                  onclick={(e) => openMember(id, e)}
+                  class="member-link"
+                >
                   {member}
                   <span class="member-cta" aria-hidden="true">{m.belt_member_open()}</span>
                 </a>
@@ -282,11 +284,15 @@
           <p class="editorial empty">{m.panel_belt_no_spacecraft()}</p>
         {:else}
           <ul class="mission-list">
-            {#each entry.mission_visits as mission (mission)}
+            {#each sortNewestFirst(entry.mission_visits) as mission (mission)}
               {@const link = linkifyMission(mission)}
               <li>
                 {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                  <a
+                    href={link.href}
+                    class="mission-link"
+                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                  ><span>{link.rest}</span>
                 {:else}
                   {mission}
                 {/if}

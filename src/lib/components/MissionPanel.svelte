@@ -32,7 +32,13 @@
   import { VehicleIcon, SpacecraftIcon, TrajectoryArrowIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
-  import { hasTrajectory } from '$lib/data/interstellar';
+  import {
+    getInterstellarCraft,
+    hasTrajectory,
+    type InterstellarCraft,
+  } from '$lib/data/interstellar';
+  import { INTERSTELLAR_CRAFT } from '$lib/explore/paths-legend';
+  import MissionMessageSection from './MissionMessageSection.svelte';
   import { missionBlueprint } from '$lib/blueprints';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
@@ -41,6 +47,10 @@
   // on top, the tiered learn-link list below — one tab destination, less
   // crowding in the strip.
   type Tab = 'overview' | 'gallery' | 'flight' | 'science';
+
+  // Surface-site lists by destination and locale, kept while the panel lives so a second Mars or
+  // Moon mission reads its cross-link before the first paint.
+  const siteListCache = new Map<string, SurfaceSite[]>();
 
   type Props = {
     mission: Mission | null;
@@ -86,6 +96,13 @@
   // there. Resolved from the body's surface-site catalogue —
   // matches by either mission_id field (preferred) or id parity.
   let crossSite: SurfaceSite | null = $state(null);
+  // True from the open of a Mars or Moon mission until its site list has been read (L35): the
+  // action row holds its place, and its chips appear together, instead of the surface chip
+  // arriving late, shifting Fly to the right and pushing the hero down.
+  let crossSitePending = $state(false);
+  // The message an outbound craft carries (Voyagers, Pioneers, New Horizons), a section of the
+  // overview.
+  let craft = $state<InterstellarCraft | null>(null);
 
   // Cross-links to fleet entries. Wired from mission.fleet_refs (Phase
   // 3 backfill). When present, the vehicle / payload spec cells render
@@ -114,6 +131,8 @@
       videos = [];
       playerVideo = null;
       crossSite = null;
+      crossSitePending = false;
+      craft = null;
       // Popularity signal: a mission detail was opened. `open` gates it so
       // a prefetched/derived mission that never shows isn't counted.
       if (open) trackMissionView(mission.id, page.url.pathname);
@@ -145,16 +164,34 @@
         sites.find((s) => s.id === mission!.id) ??
         null;
       const loc = localeFromPage(page);
-      if (mission.dest === 'MARS') {
-        void getMarsSites(loc)
+      const forId = mission.id;
+      const settle = (list: SurfaceSite[]) => {
+        if (mission && mission.id === forId && lastId === forId) {
+          crossSite = findSite(list);
+          crossSitePending = false;
+        }
+      };
+      const siteKey = `${mission.dest}:${loc}`;
+      const cachedSites = siteListCache.get(siteKey);
+      if (cachedSites) {
+        // Read before first paint: a list already fetched this session settles at once.
+        crossSite = findSite(cachedSites);
+      } else if (mission.dest === 'MARS' || mission.dest === 'MOON') {
+        crossSitePending = true;
+        void (mission.dest === 'MARS' ? getMarsSites(loc) : getMoonSites(loc))
           .then((list) => {
-            if (mission && mission.id === lastId) crossSite = findSite(list);
+            siteListCache.set(siteKey, list);
+            settle(list);
           })
-          .catch(dataLoadFailed);
-      } else if (mission.dest === 'MOON') {
-        void getMoonSites(loc)
-          .then((list) => {
-            if (mission && mission.id === lastId) crossSite = findSite(list);
+          .catch((err) => {
+            if (mission && mission.id === forId) crossSitePending = false;
+            dataLoadFailed(err);
+          });
+      }
+      if (INTERSTELLAR_CRAFT.has(forId)) {
+        void getInterstellarCraft(forId, loc)
+          .then((c) => {
+            if (mission && mission.id === forId && lastId === forId) craft = c;
           })
           .catch(dataLoadFailed);
       }
@@ -330,35 +367,41 @@
       {/if}
     </div>
 
-    {#if canFly || crossSite}
+    {#if canFly || crossSite || crossSitePending}
       <!-- Fly-mission chip: only when the mission has flight data backing the /fly sim, did not
            stay PLANNED / CANCELLED, and a host route wired onFly. (2026-06-17 user correction:
            iconic missions without flight-params data skip it instead of linking into a broken
-           /fly sim.) -->
-      <PanelActions>
-        {#if crossSite}
-          {@const surfaceLabel =
-            crossSite.kind === 'orbiter'
-              ? mission.dest === 'MARS'
-                ? m.mp_surface_mars_orbit()
-                : m.mp_surface_lunar_orbit()
-              : mission.dest === 'MARS'
-                ? m.mp_surface_mars_surface()
-                : m.mp_surface_lunar_surface()}
-          <Chip
-            kind="link"
-            href={localHref(`/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`)}
-            data-testid="surface-link"
-            data-audio-stage="mission-surface-link">{surfaceLabel}</Chip
-          >
+           /fly sim.) While the surface site is still being read the row only holds its place. -->
+      <div class="action-slot" class:reserved={crossSitePending}>
+        {#if !crossSitePending}
+          <PanelActions>
+            {#if crossSite}
+              {@const surfaceLabel =
+                crossSite.kind === 'orbiter'
+                  ? mission.dest === 'MARS'
+                    ? m.mp_surface_mars_orbit()
+                    : m.mp_surface_lunar_orbit()
+                  : mission.dest === 'MARS'
+                    ? m.mp_surface_mars_surface()
+                    : m.mp_surface_lunar_surface()}
+              <Chip
+                kind="link"
+                href={localHref(
+                  `/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`,
+                )}
+                data-testid="surface-link"
+                data-audio-stage="mission-surface-link">{surfaceLabel}</Chip
+              >
+            {/if}
+            {#if canFly}
+              <Chip kind="action" onclick={flyMission} data-testid="fly-mission-btn">
+                {#snippet icon()}<TrajectoryArrowIcon />{/snippet}
+                {m.mp_fly_button()}
+              </Chip>
+            {/if}
+          </PanelActions>
         {/if}
-        {#if canFly}
-          <Chip kind="action" onclick={flyMission} data-testid="fly-mission-btn">
-            {#snippet icon()}<TrajectoryArrowIcon />{/snippet}
-            {m.mp_fly_button()}
-          </Chip>
-        {/if}
-      </PanelActions>
+      </div>
     {/if}
 
     {#if gallery.length > 0}
@@ -539,6 +582,10 @@
 
         {#if mission.description}
           <p class="editorial">{mission.description}</p>
+        {/if}
+
+        {#if craft}
+          <MissionMessageSection {craft} />
         {/if}
 
         {#if hasTrajectory(mission.id)}
@@ -1048,6 +1095,16 @@
   /* Editorial lead paragraph (PRD-029 dispatch). Reads as a magazine
      standfirst — prominent roman serif, brighter than the italic
      .editorial below, set apart by a hairline. */
+  /* L35: the action row's place while the surface site is read — one chip tall (44 px on touch,
+     30 px on a fine pointer) plus the row's 12 px margin. */
+  .action-slot.reserved {
+    min-block-size: calc(44px + 12px);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .action-slot.reserved {
+      min-block-size: calc(30px + 12px);
+    }
+  }
   .dispatch {
     font-size: var(--size-lead);
     line-height: 1.65;

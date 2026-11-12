@@ -753,6 +753,23 @@
       panelOpen = false;
     }
   }
+  /** Close an open orbiter card (a satellite on /earth, an orbiter site on /moon and /mars) when
+   *  the orbiters are hidden (UXD-019: a chip turned off clears a selection of its kind). */
+  function dropHiddenOrbiterSelection() {
+    if (layerOrbiters) return;
+    selectedSat = null;
+    const sel = selected as SurfaceSite | null;
+    if (sel?.kind === 'orbiter') {
+      selected = null;
+      panelOpen = false;
+    }
+  }
+  /** The traverse has no selection of its own (its trail draws for the selected rover, which the
+   *  chip does not hide), so turning TRAVERSES off drops only the stop tooltip it was showing. */
+  function dropHiddenTraverseSelection() {
+    if (layerTraverses) return;
+    hoveredStopInfo = null;
+  }
 
   // ─── Object index (searchable orbit/land list) ───────────────────
   // `indexEarthObjects` is a reactive mirror of the non-reactive
@@ -1540,6 +1557,7 @@
       // launch sites). No-op on /moon, /mars (earthObjectsCache === []).
       const o = earthObjectsCache.find((x) => x.id === id);
       if (o) {
+        layerOrbiters = true;
         selectedSat = o;
         selected = null;
         selectedMuseum = null;
@@ -1551,6 +1569,7 @@
       return;
     }
     if (s) {
+      if (s.kind === 'orbiter') layerOrbiters = true;
       selected = s;
       selectedSat = null;
       selectedMuseum = null;
@@ -5509,7 +5528,10 @@
                 ? m.earth_layer_tip_orbiters()
                 : m.moon_layer_tip_orbiters(),
             active: () => layerOrbiters,
-            toggle: () => (layerOrbiters = !layerOrbiters),
+            toggle: () => {
+              layerOrbiters = !layerOrbiters;
+              dropHiddenOrbiterSelection();
+            },
           },
           {
             testid: 'layer-orbits',
@@ -5531,7 +5553,10 @@
                   label: m.ui_layer_traverses(),
                   title: m.mars_layer_tip_traverses(),
                   active: () => layerTraverses,
-                  toggle: () => (layerTraverses = !layerTraverses),
+                  toggle: () => {
+                    layerTraverses = !layerTraverses;
+                    dropHiddenTraverseSelection();
+                  },
                 },
               ]
             : []),

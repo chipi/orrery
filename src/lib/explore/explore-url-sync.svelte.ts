@@ -2,7 +2,7 @@ import { untrack } from 'svelte';
 import { page } from '$app/state';
 import { afterNavigate } from '$app/navigation';
 import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
-import { resolveSolarBodyTarget } from '$lib/explore/scale-shell-controller';
+import { resolveBodyRef, type BodyRef } from '$lib/explore/body-ref';
 import { currentUrl, safeReplaceState } from '$lib/safe-replace-state';
 
 /**
@@ -40,11 +40,9 @@ export interface ExploreUrlSyncDeps {
   /** Read for its dependency only: the ?id= resolver re-runs when it fills. */
   planetById(): ReadonlyMap<string, unknown>;
   smallBodyById(): ReadonlyMap<string, unknown>;
-  selectSun(): void;
+  /** Select a body the way a list row does: chip on, panel, ring, camera. */
+  openBody(ref: BodyRef): void;
   selectPlanet(id: string): void;
-  selectSmallBody(id: string): void;
-  selectBelt(id: string): void;
-  selectSatellite(parentPlanetId: string, satelliteId: string): void;
   /** The body whose panel is open, as its ?id= value. */
   openBodyUrlId(): string | null;
   openStarUrlId(): string | null;
@@ -52,6 +50,10 @@ export interface ExploreUrlSyncDeps {
   deepSkyUrlDesignation(): string | null;
   galaxyUrlId(): string | null;
   bhUrlId(): string | null;
+  /** The selected member of an outer scale with no URL of its own: its scale and id. */
+  pickUrl(): { scale: string; id: string } | null;
+  /** Select an outer-scale member once the scale is on screen. */
+  pickDeepLink(): ((scale: string, id: string) => void) | null;
   gotoStar(): ((id: string) => void) | null;
   enterSystem(): ((hostId: string, planetId?: string) => void) | null;
   deepSkyDeepLink(): ((designation: string) => void) | null;
@@ -80,32 +82,16 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
     const planetById = d.planetById();
     const smallBodyById = d.smallBodyById();
     const id = page.url.searchParams.get('id');
-    // The ?id= routing ladder — incl. the Pluto-in-two-catalogues nuance (it lives in
-    // both planets.json + small-bodies.json; the small-body surface's curated
-    // science_sections win for deep-link landings) — lives in scale-shell-controller,
-    // pure + unit-tested (RFC-036 WS-C/C1). Unknown id → null → no-op, never crash.
-    const target = resolveSolarBodyTarget(id, {
+    // The ?id= routing ladder — incl. the Pluto-in-two-catalogues nuance (it lives in both
+    // planets.json + small-bodies.json; the small-body surface's curated science_sections win
+    // for every entry, UXD-019) — lives in scale-shell-controller / body-ref, pure +
+    // unit-tested. Unknown id → null → no-op, never crash.
+    const ref = resolveBodyRef(id, {
       isPlanet: (x) => planetById.has(x),
       isSmallBody: (x) => smallBodyById.has(x),
     });
-    if (!target) return;
-    switch (target.kind) {
-      case 'sun':
-        d.selectSun();
-        break;
-      case 'planet':
-        d.selectPlanet(target.id);
-        break;
-      case 'smallBody':
-        d.selectSmallBody(target.id);
-        break;
-      case 'belt':
-        d.selectBelt(target.belt);
-        break;
-      case 'satellite':
-        d.selectSatellite(target.parentId, target.satelliteId);
-        break;
-    }
+    if (!ref) return;
+    untrack(() => d.openBody(ref));
   });
 
   // #29 back-chain — mirror the open body panel into ?id= so mission
@@ -276,14 +262,23 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
   // Nav shortcut — ?context=<solar-system|neighborhood|milky-way|local-group>
   // jumps straight to that scale-shell, then clears the param (pure trigger, no
   // staleness once you zoom onward).
+  //
+  // ?context=<scale>&pick=<memberId> (UXD-019) jumps to the scale and selects the member of
+  // the five outer scales that have no URL parameter of their own. The pair stays in the URL
+  // while the member is selected (mirrored below), so the link is shareable.
   $effect(() => {
     const c = page.url.searchParams.get('context');
+    const pick = page.url.searchParams.get('pick');
     if (c && c !== guards.lastContextJump && d.contextDeepLink()) {
       guards.lastContextJump = c;
       untrack(() => {
         void d
           .contextDeepLink()?.(c)
           .then(() => {
+            if (pick) {
+              d.pickDeepLink()?.(c, pick);
+              return;
+            }
             const url = currentUrl();
             if (url.searchParams.get('context') === c) {
               url.searchParams.delete('context');
@@ -292,6 +287,28 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
           });
       });
     }
+  });
+  // Mirror the selected outer-scale member into ?context + ?pick (shallow, no history).
+  let everPicked = false;
+  $effect(() => {
+    const p = d.pickUrl();
+    if (p) everPicked = true;
+    untrack(() => {
+      const url = currentUrl();
+      const cur = url.searchParams.get('pick') ?? null;
+      if (cur !== (p?.id ?? null) && (p || everPicked)) {
+        if (p) {
+          url.searchParams.set('context', p.scale);
+          url.searchParams.set('pick', p.id);
+          guards.lastContextJump = p.scale; // don't re-fire the jump on our own write
+        } else {
+          url.searchParams.delete('pick');
+          url.searchParams.delete('context');
+          guards.lastContextJump = null;
+        }
+        safeReplaceState(url, page.state);
+      }
+    });
   });
 
   // #306 deep-link from MissionPanel "See path on /explore" — `?paths=1`

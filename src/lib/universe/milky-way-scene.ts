@@ -426,7 +426,7 @@ export function createMilkyWayScene(
   for (const obj of data.objects) {
     const [x, , z] = galacticToScene(obj.x, obj.z, diskR);
     const position = new THREE.Vector3(x, 0, z);
-    const isBH = obj.kind === 'supermassive-black-hole';
+    const isBH = obj.kind === 'supermassive-black-hole' || obj.kind === 'stellar-black-hole';
 
     const glowTex = track(
       isBH

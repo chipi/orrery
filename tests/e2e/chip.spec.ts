@@ -27,7 +27,7 @@ const ROUTES: Route[] = [
   { path: '/venus' },
   { path: '/moon?site=apollo11' },
   { path: '/mars?site=perseverance' },
-  { path: '/earth?site=ksc' },
+  { path: '/earth?site=lc-39a' },
   { path: '/missions', open: 'filters' },
   { path: '/fleet', open: 'filters' },
   { path: '/missions/launches', open: 'filters' },

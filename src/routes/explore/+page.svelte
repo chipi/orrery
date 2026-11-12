@@ -2054,6 +2054,7 @@
       barLabel={scaleBarLabel}
       {bodyHostName}
       {panelCoverPx}
+      dockBelow={contextId === 'solar-system' && !activeBlackHole}
     />
   {/if}
 

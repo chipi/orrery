@@ -197,11 +197,20 @@ export function placeLabels(slots: PlaceSlot[]): void {
   }
 }
 
+/** Left edge for labels in NDC: the INDEX pull tab covers the screen's left edge, so a label
+ *  next to it flips inward as it does at the screen edge. Set by the scene host. */
+let leftEdgeNdc = -1;
+
+/** `px`: how far the left edge's cover reaches into the canvas; `canvasW`: canvas width, px. */
+export function setLabelLeftInset(px: number, canvasW: number): void {
+  leftEdgeNdc = canvasW > 0 ? -1 + (2 * Math.max(0, px)) / canvasW : -1;
+}
+
 /**
  * Writes the label's rectangle on screen to `out` and returns true when its anchor is in
  * front of the camera and inside the viewport. A label centred on a pin near the screen edge
- * would run off it; it is then anchored on its other side so the text extends inward (it
- * stays attached to its pin, only the side changes).
+ * (or the INDEX tab, `setLabelLeftInset`) would run off it or under it; it is then anchored on
+ * its other side so the text extends inward (it stays attached to its pin, only the side changes).
  */
 export function labelRect(
   lbl: THREE.Sprite,
@@ -220,7 +229,7 @@ export function labelRect(
   const w = lbl.scale.x / (dist * tanHalf * cam.aspect);
   const h = lbl.scale.y / (dist * tanHalf);
   if (tmp.x + w / 2 > 1) lbl.center.set(1, 0.5);
-  else if (tmp.x - w / 2 < -1) lbl.center.set(0, 0.5);
+  else if (tmp.x - w / 2 < leftEdgeNdc) lbl.center.set(0, 0.5);
   const left = tmp.x - lbl.center.x * w;
   out.l = left;
   out.r = left + w;

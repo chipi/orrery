@@ -19,6 +19,7 @@ import {
   ringOpacity,
   ringTint,
   screenPxToWorld,
+  setLabelLeftInset,
   snapshotPins,
   viewDepth,
   worldPerPx,
@@ -232,6 +233,27 @@ describe('labelRect and snapshotPins', () => {
     expect(labelRect(s, cam, out, new THREE.Vector3())).toBe(true);
     expect(s.center.x).toBe(1);
     expect(out.r).toBeLessThanOrEqual(1);
+  });
+  it('a label beside the INDEX tab (left inset) is anchored on its left side, clear of the tab', () => {
+    const s = new THREE.Sprite();
+    const lh = screenPxToWorld(LABEL_SPRITE_PX, 100, FOV, 900);
+    s.scale.set(lh * 8, lh, 1);
+    const half = 100 * Math.tan((FOV * Math.PI) / 360) * cam.aspect;
+    // 1600 x 900 px canvas, a 160 px label, the tab reaching 48 px in, the pin at 100 px: centred,
+    // the label would start at 20 px, under the tab.
+    s.position.set(half * (-1 + (2 * 100) / 1600), 0, 0);
+    const out = { l: 0, r: 0, b: 0, t: 0 };
+    setLabelLeftInset(48, 1600);
+    try {
+      expect(labelRect(s, cam, out, new THREE.Vector3())).toBe(true);
+      expect(s.center.x).toBe(0);
+      expect(out.l).toBeGreaterThanOrEqual(-1 + (2 * 48) / 1600);
+    } finally {
+      setLabelLeftInset(0, 1600);
+    }
+    // No inset: the same pin keeps its centred label.
+    expect(labelRect(s, cam, out, new THREE.Vector3())).toBe(true);
+    expect(s.center.x).toBe(0.5);
   });
   it('the snapshot reports 12 px text and a 44 px ring at two distances', () => {
     for (const dist of [100, 400]) {

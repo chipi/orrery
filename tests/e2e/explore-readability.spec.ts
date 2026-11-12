@@ -180,9 +180,29 @@ test.describe('/explore readability (C2, UXD-020)', () => {
     await page.mouse.click(o.x + sel.cx, o.y + sel.cy);
     await expect.poll(async () => (await ringOf('perseus')).opacity, { timeout: 5_000 }).toBe(1);
     await page.waitForTimeout(2_000); // the focus move settles
-    const other = await ringOf('norma');
+    // Selecting flies the camera to the arm, so hover whichever other pin is now on the canvas
+    // (its centre is the hit target, not the panel or a HUD control).
+    const otherId = await page.evaluate(() => {
+      const c = [...document.querySelectorAll('canvas')].sort(
+        (a, b) => b.clientWidth * b.clientHeight - a.clientWidth * a.clientHeight,
+      )[0];
+      const r = c.getBoundingClientRect();
+      return (
+        window.__scenePins!()!.rings.find(
+          (g) =>
+            g.id !== 'perseus' &&
+            g.cx > 0 &&
+            g.cx < r.width &&
+            g.cy > 0 &&
+            g.cy < r.height &&
+            document.elementFromPoint(r.left + g.cx, r.top + g.cy) === c,
+        )?.id ?? null
+      );
+    });
+    expect(otherId, 'another pin is on the canvas after the focus move').not.toBeNull();
+    const other = await ringOf(otherId!);
     await page.mouse.move(o.x + other.cx, o.y + other.cy);
-    await expect.poll(async () => (await ringOf('norma')).opacity, { timeout: 5_000 }).toBe(1);
+    await expect.poll(async () => (await ringOf(otherId!)).opacity, { timeout: 5_000 }).toBe(1);
     expect((await ringOf('perseus')).opacity).toBe(1);
     const label = (await readSnap(page))!.labels.find((l) => l.id === 'perseus')!;
     expect(label.shown).toBe(true);

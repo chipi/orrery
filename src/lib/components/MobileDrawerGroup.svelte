@@ -360,6 +360,16 @@
   :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-panel {
     pointer-events: auto;
   }
+  /* A 667 px landscape phone (iPhone SE) fits the route's 385 px strip and the three tabs on one
+     line only with tighter tabs. */
+  @media (max-width: 719px) {
+    :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-tabs {
+      gap: 4px;
+    }
+    :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-tab {
+      padding: 6px 7px;
+    }
+  }
   /* All landscape drawers (inline or not): the opened panel is a constrained
      floating card CENTRED ABOVE the tab that opened it, not a full-width sheet.
      --panel-left is measured + clamped in JS so a left tab reads left, centre

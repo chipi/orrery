@@ -193,7 +193,8 @@ export interface TextSourceEntry {
     | 'credits'
     | 'star'
     | 'exoplanet'
-    | 'black-hole';
+    | 'black-hole'
+    | 'deep-sky';
   relationship:
     'original' | 'paraphrased-from' | 'quoted-from' | 'translated-from' | 'adapted-from';
   snippet?: string;

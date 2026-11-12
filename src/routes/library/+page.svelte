@@ -120,6 +120,8 @@
         return m.library_category_fleet();
       case 'star':
         return m.library_category_star();
+      case 'deep-sky':
+        return m.deepsky_name();
       default:
         return c;
     }

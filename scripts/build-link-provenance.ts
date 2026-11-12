@@ -75,6 +75,7 @@ type Category =
   | 'scenario'
   | 'fleet'
   | 'star'
+  | 'deep-sky'
   | 'lab-formula';
 
 interface LinkEntry {
@@ -1227,6 +1228,10 @@ async function main(): Promise<void> {
     {
       label: 'i18n/en-US/universe/named-stars/*.json',
       run: () => collectFromI18nPerIdDir('universe/named-stars', 'star', '/explore'),
+    },
+    {
+      label: 'i18n/en-US/universe/deep-sky/*.json',
+      run: () => collectFromI18nPerIdDir('universe/deep-sky', 'deep-sky', '/explore'),
     },
   ];
   const raw: RawLink[] = [];

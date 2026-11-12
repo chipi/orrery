@@ -385,6 +385,197 @@
       "snippet": "The one-line facts and short essays of the 25 exoplanets are editorial text carried as Orrery's own, fact-checked in batches when they were added (July 2026). The repository does not record the source of each sentence; the orbital figures beside them are the NASA Exoplanet Archive's, credited under data-sources.",
       "license_short": "Orrery-Original",
       "license_rationale": "No third-party source is recorded for these sentences, so they are carried as original prose by the Orrery maintainers, MIT-licensed alongside the source code. If a source is found the entry is updated."
+    },
+    {
+      "id": "deep-sky.overlays.nasa-hubble-messier",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "Discoverers, dates, star counts, ages, structure and Hubble results of the Messier objects, paraphrased from NASA's Hubble Messier Catalog pages. Distances and magnitudes come from the data file's catalogue values.",
+      "source_url": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/",
+      "source_publisher": "NASA Science (Hubble Space Telescope)",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/multimedia/guidelines/index.html",
+      "license_rationale": "NASA Science pages are U.S. Government works in the public domain (17 U.S.C. § 105); the Orrery text is a paraphrase, and where it carries a NASA superlative or estimate it says so."
+    },
+    {
+      "id": "deep-sky.overlays.wikipedia",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "History, structure and survey results of Messier and gallery objects, read from the English Wikipedia article of each object as a pointer to the papers it cites. A number keeps the attribution the text gives (a study, a survey, NASA).",
+      "source_url": "https://en.wikipedia.org/wiki/Messier_object",
+      "source_publisher": "Wikipedia contributors",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Wikipedia text is licensed under Creative Commons CC BY-SA 4.0; the Orrery text is a short paraphrase of facts, and each object links its article from the page."
+    },
+    {
+      "id": "deep-sky.overlays.baumgardt-vasiliev",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The masses of globular clusters (M54, M72, M92, M107) named in the texts, from the Baumgardt and Vasiliev catalogue of Galactic globular cluster parameters.",
+      "source_url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/parameter.html",
+      "source_publisher": "University of Queensland (Baumgardt and Vasiliev globular cluster catalogue)",
+      "source_author": "Holger Baumgardt, Eugene Vasiliev",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the cluster masses); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m84.walsh-2010",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m84.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The range of mass estimates for the black hole in M84 (about 0.9 to 1.5 billion Suns) and the gas that points to it, from Walsh, Barth and Sarzi, 'The Supermassive Black Hole in M84 Revisited' (2010).",
+      "source_url": "https://arxiv.org/abs/1008.0005",
+      "source_publisher": "arXiv (Astrophysical Journal preprint)",
+      "source_author": "Jonelle L. Walsh, Aaron J. Barth, Marc Sarzi",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m46.kiss-2008",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m46.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "That the planetary nebula NGC 2438 is not a member of the open cluster M46, from radial velocities measured with AAOmega (Kiss et al. 2008).",
+      "source_url": "https://arxiv.org/abs/0809.0327",
+      "source_publisher": "arXiv (preprint)",
+      "source_author": "L. L. Kiss, Gy. M. Szabo, Z. Balog et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m73.odenkirchen-soubiran-2002",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m73.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "That the stars of M73 (NGC 6994) are not a physical group, from Odenkirchen and Soubiran, 'NGC 6994 - clearly not a physical stellar ensemble' (Astronomy & Astrophysics, 2002).",
+      "source_url": "https://arxiv.org/abs/astro-ph/0111601",
+      "source_publisher": "arXiv (Astronomy & Astrophysics preprint)",
+      "source_author": "M. Odenkirchen, C. Soubiran",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m15.kirsten-vlemmings-2012",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m15.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "That a radio search put an upper limit near 500 Suns on a central black hole in M15, from Kirsten and Vlemmings, 'No evidence for a central IMBH in M15' (2012).",
+      "source_url": "https://arxiv.org/abs/1204.4457",
+      "source_publisher": "arXiv (preprint)",
+      "source_author": "F. Kirsten, W. H. T. Vlemmings",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m22.sahu-2001",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m22.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The 2001 Hubble microlensing hint of planet-mass objects drifting free in M22, from the ESA/Hubble release 'Hint of planet-sized drifters bewilders Hubble scientists' (heic0107).",
+      "source_url": "https://sci.esa.int/web/hubble/-/27593-hint-of-planet-sized-drifters-bewilders-hubble-scientists-heic0107",
+      "source_publisher": "ESA/Hubble",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the press release); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m8.damiani-2019",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m8.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "That the cloud behind the Lagoon Nebula's cluster NGC 6530 collided with the plane of the Galaxy about 4 million years ago, suggested as the trigger of most of its star formation (Damiani et al. 2019, A&A 623, A25).",
+      "source_url": "https://arxiv.org/abs/1812.11402",
+      "source_publisher": "Astronomy & Astrophysics (arXiv preprint)",
+      "source_author": "F. Damiani, L. Prisinzano, G. Micela et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m31.sawala-2025",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m31.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "That the chance of no Milky Way and Andromeda merger in the next 10 billion years is close to 50%, from Sawala et al., 'Apocalypse When? No Certainty of a Milky Way - Andromeda Collision' (Nature Astronomy, 2025).",
+      "source_url": "https://arxiv.org/abs/2408.00064",
+      "source_publisher": "Nature Astronomy (arXiv preprint)",
+      "source_author": "Till Sawala et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m101.beaton-2019",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m101.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The distance to M101 from the tip of the red giant branch, 6.52 megaparsecs, consistent with Cepheid distances (Beaton et al. 2019, Carnegie-Chicago Hubble Program VII).",
+      "source_url": "https://arxiv.org/abs/1908.06120",
+      "source_publisher": "arXiv (preprint)",
+      "source_author": "Rachael L. Beaton, Mark Seibert, Dylan Hatt et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m104.mcquinn-2016",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m104.json",
+        "json_path": "$.fact"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The distance to M104 from the tip of the red giant branch, 9.55 megaparsecs (about 31 million light-years), from McQuinn et al., 'The Distance to M104' (2016).",
+      "source_url": "https://arxiv.org/abs/1610.03857",
+      "source_publisher": "arXiv (preprint)",
+      "source_author": "Kristen B. W. McQuinn, Evan D. Skillman, Andrew E. Dolphin et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.m77.antonucci-miller-1985",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/m77.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The 1985 spectropolarimetry of NGC 1068 by Antonucci and Miller (ApJ 297, 621) that revealed hidden broad emission lines and supported the unified model of active galaxies, as told in G. Shields' history of AGN at NED.",
+      "source_url": "https://ned.ipac.caltech.edu/level5/Sept04/Shields/Shields4_7.html",
+      "source_publisher": "NASA/IPAC Extragalactic Database (NED), A Brief History of AGN",
+      "source_author": "G. Shields",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the NED review, which cites the 1985 paper); no sentence of it is reproduced."
     }
   ]
 }

@@ -7,7 +7,9 @@ import { waitForHydration } from './_helpers/hydration';
  * routes (/moon /mars /venus /explore) there is no separate A–Z tab; each INDEX row whose
  * object has an entity page also carries a real link to it, and the prerendered HTML links
  * every entity page of the hub even while the INDEX panel is closed (crawlers do not click).
- * /missions and /fleet keep the A–Z at the page foot.
+ * /missions and /fleet keep the A–Z at the page foot. The stars (ADR-096 item 13) are typed apart
+ * under /explore/stars/<id>: the static /explore/stars hub links every one in its HTML, and the
+ * neighbourhood's star INDEX carries a link per row.
  */
 
 const SCENE_HUBS = ['moon', 'mars', 'venus', 'explore'] as const;
@@ -41,7 +43,14 @@ function entityIds(hub: string): string[] {
   return (collectCanonicalRoutes() as string[])
     .filter((r) => r.startsWith(prefix) && !r.slice(prefix.length).includes('/'))
     .map((r) => r.slice(prefix.length))
-    .filter((id) => !(hub === 'explore' && id === 'hub'));
+    .filter((id) => !(hub === 'explore' && (id === 'hub' || id === 'stars')));
+}
+
+/** Every /explore/stars/<id> page (named stars + exoplanet hosts). */
+function starPageIds(): string[] {
+  return (collectCanonicalRoutes() as string[])
+    .filter((r) => r.startsWith('/explore/stars/'))
+    .map((r) => r.slice('/explore/stars/'.length));
 }
 
 test.describe('the prerendered hub HTML links every entity page', () => {
@@ -66,6 +75,24 @@ test.describe('the prerendered hub HTML links every entity page', () => {
       });
     }
   }
+
+  for (const locale of ['', '/de']) {
+    test(`${locale}/explore/stars: the static hub links every star page`, async ({ request }) => {
+      const res = await request.get(`${locale}/explore/stars`);
+      expect(res.ok()).toBe(true);
+      const html = await res.text();
+      const hrefs = [...html.matchAll(/href="([^"#?]+)"/g)].map((m) => m[1]);
+      const ids = starPageIds();
+      expect(ids.length).toBe(66);
+      const missing = ids.filter((id) => !hrefs.includes(`${locale}/explore/stars/${id}`));
+      expect(missing, `star pages not linked from ${locale}/explore/stars`).toEqual([]);
+    });
+  }
+
+  test('the Explore hub card links the stars hub', async ({ request }) => {
+    const html = await (await request.get('/explore/hub')).text();
+    expect(html).toContain('href="/explore/stars"');
+  });
 
   for (const hub of ['missions', 'fleet']) {
     test(`/${hub} keeps the A–Z at the page foot`, async ({ request }) => {
@@ -142,4 +169,26 @@ test('/explore: INDEX rows with an entity page link to it; moons follow as link 
   await expectOneTabStop(page.locator('.body-index button.bidx-row, .body-index a.bidx-page'));
   await expectLinkTargets(page.locator('.body-index a.bidx-page[data-index-id]'));
   for (const id of rowLinks) expect(ids.has(id!), `${id} has no entity page`).toBe(true);
+});
+
+test('/explore neighbourhood: every named star INDEX row links its star page; closed, the links are still in the DOM', async ({
+  page,
+}) => {
+  test.slow();
+  await page.goto('/explore?context=neighborhood', { waitUntil: 'networkidle' });
+  await waitForHydration(page);
+  const index = page.locator('.star-index');
+  await expect(index).toBeHidden();
+  const links = index.locator('a.si-page');
+  await expect(links).toHaveCount(62);
+  const hrefs = await links.evaluateAll((els) => els.map((e) => e.getAttribute('href')));
+  const rowIds = await links.evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
+  expect(hrefs).toEqual(rowIds.map((id) => `/explore/stars/${id}`));
+  for (const id of rowIds) expect(starPageIds()).toContain(id);
+
+  await page.locator('.star-index-handle').click();
+  await expect(index).toBeVisible();
+  await expect(index.locator('button.si-row').first()).toBeVisible();
+  await expectOneTabStop(index.locator('button.si-row, a.si-page'));
+  await expectLinkTargets(index.locator('a.si-page'));
 });

@@ -83,6 +83,25 @@ describe('prune-streamed-assets (MOBILE=1) star pages', () => {
   });
 });
 
+describe('prune-streamed-assets (MOBILE=1) black-hole pages', () => {
+  it('drops the /explore/black-holes hub, every /explore/black-holes/<id> page and their __data.json; keeps the scene route', () => {
+    const b = seed(dir);
+    for (const prefix of ['', 'de/']) {
+      mkdirSync(path.join(b, prefix, 'explore/black-holes/gargantua'), { recursive: true });
+      writeFileSync(path.join(b, prefix, 'explore/black-holes.html'), 'x');
+      writeFileSync(path.join(b, prefix, 'explore/black-holes/__data.json'), '{}');
+      writeFileSync(path.join(b, prefix, 'explore/black-holes/gargantua.html'), 'x');
+      writeFileSync(path.join(b, prefix, 'explore/black-holes/gargantua/__data.json'), '{}');
+    }
+    writeFileSync(path.join(b, 'explore.html'), 'x'); // the scene route — must survive
+    run(dir, true);
+    expect(existsSync(path.join(b, 'explore/black-holes'))).toBe(false);
+    expect(existsSync(path.join(b, 'explore/black-holes.html'))).toBe(false);
+    expect(existsSync(path.join(b, 'de'))).toBe(false);
+    expect(existsSync(path.join(b, 'explore.html'))).toBe(true);
+  });
+});
+
 describe('prune-streamed-assets (MOBILE unset)', () => {
   it('is a no-op — the browser build is untouched', () => {
     const b = seed(dir);

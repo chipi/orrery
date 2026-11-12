@@ -67,6 +67,7 @@ const SEED_DATA = {
     'static/data/universe/named-stars.json',
     'static/data/universe/exoplanet-systems.json',
   ],
+  '/explore/black-holes': ['static/data/universe/black-holes.json'],
   '/worlds': [
     'static/data/planets.json',
     'static/data/satellites.json',
@@ -96,6 +97,7 @@ const ENTRY_FILES = {
   'static/data/small-bodies.json': (j) => (j.bodies ?? []).map((e) => [e.id, e]),
   'static/data/universe/named-stars.json': (j) => (j.stars ?? []).map((e) => [e.id, e]),
   'static/data/universe/exoplanet-systems.json': (j) => (j.systems ?? []).map((e) => [e.hostId, e]),
+  'static/data/universe/black-holes.json': (j) => (j.objects ?? []).map((e) => [e.id, e]),
 };
 
 const isoDay = (ts) => new Date(ts * 1000).toISOString().slice(0, 10);
@@ -288,7 +290,22 @@ export function inputsFor(route, ctx, data) {
       overlays.push(`culture-doors/${door.id}.json`);
     }
     addDir('explore/stars/[id]');
-  } else if (seg[0] === 'explore' && seg.length === 2 && seg[1] !== 'hub' && seg[1] !== 'stars') {
+  } else if (seg[0] === 'explore' && seg[1] === 'black-holes' && seg.length === 3) {
+    // A black-hole page: its record in the shared list, its overlay, and its culture door (+ blurb).
+    entry('static/data/universe/black-holes.json', seg[2]);
+    overlays.push(`universe/black-holes/${seg[2]}.json`);
+    for (const door of data.doors.filter((d) => d.objectId === seg[2])) {
+      files.push('static/data/culture-doors.json');
+      overlays.push(`culture-doors/${door.id}.json`);
+    }
+    addDir('explore/black-holes/[id]');
+  } else if (
+    seg[0] === 'explore' &&
+    seg.length === 2 &&
+    seg[1] !== 'hub' &&
+    seg[1] !== 'stars' &&
+    seg[1] !== 'black-holes'
+  ) {
     for (const f of Object.keys(ENTRY_FILES)) {
       if (/(planets|satellites|small-bodies)\.json$/.test(f)) entry(f, seg[1]);
     }

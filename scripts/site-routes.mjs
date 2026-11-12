@@ -26,6 +26,7 @@ const SEED_ROUTES = [
   '/explore',
   '/explore/hub',
   '/explore/stars',
+  '/explore/black-holes',
   '/worlds',
   '/catalog',
   '/learn',
@@ -159,6 +160,25 @@ function starRoutes() {
   return starPageIds().map((id) => `/explore/stars/${id}`);
 }
 
+/**
+ * Every id with a black-hole page (/explore/black-holes/<id>): the three real holes and
+ * Gargantua (fiction, badged on its page). The one id list that the page's `entries`
+ * generator, the mobile prune and the route-list test share.
+ *
+ * @returns {string[]}
+ */
+export function blackHolePageIds() {
+  const p = 'static/data/universe/black-holes.json';
+  return existsSync(p)
+    ? JSON.parse(readFileSync(p, 'utf8')).objects.map((/** @type {{ id: string }} */ o) => o.id)
+    : [];
+}
+
+/** One indexable page per black hole (/explore/black-holes/<id>). */
+function blackHoleRoutes() {
+  return blackHolePageIds().map((id) => `/explore/black-holes/${id}`);
+}
+
 /** One indexable page per Lab formula (/lab/<id>, 0.9.8 SEO). The id list is
  *  guarded against the TS registry by lab-formulas-json.test.ts. */
 function labRoutes() {
@@ -186,6 +206,7 @@ export function collectCanonicalRoutes() {
     ...siteRoutes(),
     ...bodyRoutes(),
     ...starRoutes(),
+    ...blackHoleRoutes(),
     ...labRoutes(),
   ];
 }

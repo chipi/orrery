@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 // @ts-expect-error plain .mjs without types
-import { collectCanonicalRoutes, starPageIds } from './site-routes.mjs';
+import { blackHolePageIds, collectCanonicalRoutes, starPageIds } from './site-routes.mjs';
 
 const read = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
 const named: string[] = read('static/data/universe/named-stars.json').stars.map(
@@ -51,6 +51,48 @@ describe('star page routes (/explore/stars/<id>)', () => {
     ]);
     for (const id of starPageIds()) {
       expect(bodies.has(id), `${id} is also a body id`).toBe(false);
+      expect(id).toMatch(/^[a-z0-9-]+$/);
+    }
+  });
+});
+
+describe('black-hole page routes (/explore/black-holes/<id>)', () => {
+  const holes: string[] = read('static/data/universe/black-holes.json').objects.map(
+    (o: { id: string }) => o.id,
+  );
+
+  it('are the four black holes, once each', () => {
+    expect([...blackHolePageIds()].sort()).toEqual([...holes].sort());
+    expect([...blackHolePageIds()].sort()).toEqual([
+      'cygnus-x-1',
+      'gargantua',
+      'm87-star',
+      'sagittarius-a-star',
+    ]);
+  });
+
+  it('are in the canonical route list with the hub, each exactly once', () => {
+    const routes: string[] = collectCanonicalRoutes();
+    expect(routes.filter((r) => r === '/explore/black-holes')).toHaveLength(1);
+    expect(routes.filter((r) => r.startsWith('/explore/black-holes/')).sort()).toEqual(
+      blackHolePageIds()
+        .map((id: string) => `/explore/black-holes/${id}`)
+        .sort(),
+    );
+    expect(new Set(routes).size).toBe(routes.length);
+  });
+
+  it('never share an id with a planet, moon, small body or star page, and are one path segment', () => {
+    const taken = new Set<string>([
+      ...read('static/data/planets.json').planets.map((p: { name: string }) =>
+        p.name.toLowerCase(),
+      ),
+      ...read('static/data/satellites.json').satellites.map((s: { id: string }) => s.id),
+      ...read('static/data/small-bodies.json').bodies.map((b: { id: string }) => b.id),
+      ...starPageIds(),
+    ]);
+    for (const id of blackHolePageIds()) {
+      expect(taken.has(id), `${id} is also a body or star id`).toBe(false);
       expect(id).toMatch(/^[a-z0-9-]+$/);
     }
   });

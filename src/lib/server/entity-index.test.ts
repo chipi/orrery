@@ -24,6 +24,7 @@ describe('getEntityIndex', () => {
           r !== '/missions/launches' &&
           r !== '/explore/hub' &&
           r !== '/explore/stars' &&
+          r !== '/explore/black-holes' &&
           !r.slice(hub.length + 2).includes('/'),
       );
       const links = await getEntityIndex(hub, 'de', fetch);
@@ -39,6 +40,8 @@ describe('getEntityIndex', () => {
     const ids = (await getEntityIndex('explore', 'en-US', fetch)).map((l) => l.id);
     expect(ids).toContain('mars');
     expect(ids).not.toContain('stars');
+    expect(ids).not.toContain('black-holes');
+    expect(ids).not.toContain('gargantua');
     expect(ids).not.toContain('sirius');
     expect(ids).not.toContain('trappist-1');
   });

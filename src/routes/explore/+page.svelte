@@ -142,7 +142,7 @@
   import { computeLensPanel, scaleNavBackTarget, type ScaleNavExit } from '$lib/explore/lens-panel';
   import { watchExploreLayers } from '$lib/explore/layer-watchers';
   import { createUrlGuards, setupExploreUrlSync } from '$lib/explore/explore-url-sync.svelte';
-  import { distanceWithUnit, fmtScale, SATELLITE_STATS } from '$lib/explore/format';
+  import { distanceWithUnit, SATELLITE_STATS } from '$lib/explore/format';
 
   // Planet visual config (PlanetVisual / SatelliteDef / PLANETS) now lives in
   // $lib/explore-scene as the single source of truth, shared with the AR
@@ -1818,7 +1818,6 @@
       smallBodyById,
       smallBodyPosition,
       DAYS_PER_YEAR,
-      fmtScale,
       distanceWithUnit,
       iconic,
       sizePathsLegend,

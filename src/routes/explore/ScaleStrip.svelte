@@ -6,6 +6,7 @@
     fmtScale,
     lightUnitLabel,
   } from '$lib/explore/format';
+  import ScaleBar from '$lib/components/ScaleBar.svelte';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { ExploreContextId } from '$lib/three/explore-scene-host';
@@ -61,8 +62,7 @@
     {/if}
     {#if barPx > 0}
       <div class="scale-bar-wrap">
-        <span class="scale-bar" style="width:{Math.round(Math.min(barPx, 220))}px"></span>
-        <span class="scale-bar-label">{barLabel}</span>
+        <ScaleBar widthPx={barPx} label={barLabel} />
       </div>
     {/if}
     <div class="scale-context">{contextLabel(contextId, bodyHostName)}</div>
@@ -116,7 +116,9 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     color: #dde4ff;
     pointer-events: none;
-    max-width: 260px;
+    /* Fixed box: the strip never resizes with its text (UXD-021). */
+    box-sizing: border-box;
+    inline-size: 232px;
   }
   .scale-strip.neighborhood {
     border-color: var(--color-accent-edge);
@@ -182,23 +184,7 @@
     margin-top: 2px;
   }
   .scale-bar-wrap {
-    display: flex;
-    align-items: center;
-    gap: 7px;
     margin-top: 7px;
-  }
-  .scale-bar {
-    display: inline-block;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.8);
-    border-left: 1px solid rgba(255, 255, 255, 0.8);
-    border-right: 1px solid rgba(255, 255, 255, 0.8);
-    box-sizing: border-box;
-    min-width: 12px;
-  }
-  .scale-bar-label {
-    font-size: var(--size-label);
-    color: rgba(255, 255, 255, 0.7);
   }
   .scale-context {
     font-size: var(--size-label);
@@ -231,7 +217,7 @@
     .scale-strip {
       bottom: 104px;
       padding: 7px 9px;
-      max-width: 190px;
+      inline-size: 190px;
     }
     .scale-readout .primary {
       font-size: 13px;

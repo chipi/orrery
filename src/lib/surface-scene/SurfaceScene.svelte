@@ -73,6 +73,14 @@
   } from '$lib/surface-scene/tier-layer-spec';
   import { getImageAlt } from '$lib/image-alt';
   import { getLocale } from '$lib/paraglide/runtime';
+  import {
+    fixedScaleBar,
+    formatBarValue,
+    scaleBarWidth,
+    worldsBarQuantity,
+  } from '$lib/universe/scale-bar';
+  import { distanceWithUnit } from '$lib/explore/format';
+  import ScaleBar from '$lib/components/ScaleBar.svelte';
   import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
   import { ladderRungUrl, loadLadder, type LadderManifest } from '$lib/image-srcset';
   import { createSurfaceMarkers, type MarkerObj } from '$lib/surface-scene/surface-markers';
@@ -4896,11 +4904,8 @@
             }
           }
 
-          // Distance scale bar — visible whenever either tier-2 layer
-          // is fading in (regional CTX or detail HiRISE). Picks a
-          // "nice" 1 / 2 / 5 × 10ⁿ round-number km value whose pixel
-          // width is closest to TARGET_BAR_PX (≈ 110 px); the bar
-          // overlay below the canvas renders at the resolved width.
+          // Distance scale bar — visible whenever either tier-2 layer is fading in.
+          // Constant pixel width (UXD-021); the km or m value beside it follows the zoom.
           if (regionalOpacity > 0.01 || detailOpacity > 0.01) {
             const surfaceDistanceForBar = Math.max(0.05, camR - 30);
             const viewportHForBar = renderer.domElement.clientHeight || window.innerHeight;
@@ -4908,32 +4913,18 @@
               (2 * surfaceDistanceForBar * Math.tan((camera.fov * Math.PI) / 360)) /
               viewportHForBar;
             const kmPerWorldUnit = config.radiusKm / planetRadius;
-            const kmPerPx = worldPerPxForBar * kmPerWorldUnit;
-            const TARGET_BAR_PX = 110;
-            const targetKm = kmPerPx * TARGET_BAR_PX;
-            const exp = Math.floor(Math.log10(targetKm));
-            const base = targetKm / Math.pow(10, exp);
-            let mantissa: number;
-            if (base < 1.5) mantissa = 1;
-            else if (base < 3.5) mantissa = 2;
-            else if (base < 7.5) mantissa = 5;
-            else mantissa = 10;
-            const niceKm = mantissa * Math.pow(10, exp);
-            const widthPx = niceKm / kmPerPx;
-            const label =
-              niceKm >= 1
-                ? `${niceKm} km`
-                : niceKm >= 0.001
-                  ? `${Math.round(niceKm * 1000)} m`
-                  : `${(niceKm * 1000).toFixed(1)} m`;
-            // Skip the assignment if values are unchanged — keeps
-            // Svelte from re-rendering the overlay every frame.
-            if (
-              !scaleBar ||
-              Math.abs(scaleBar.widthPx - widthPx) > 0.5 ||
-              scaleBar.label !== label
-            ) {
-              scaleBar = { widthPx, label };
+            const barPx = scaleBarWidth(renderer.domElement.clientWidth || window.innerWidth);
+            const bar = fixedScaleBar(worldPerPxForBar * kmPerWorldUnit, barPx);
+            if (bar) {
+              const q = worldsBarQuantity(bar.units);
+              const label = distanceWithUnit(formatBarValue(q.value, getLocale()), q.unit);
+              // Skip the assignment if values are unchanged — keeps
+              // Svelte from re-rendering the overlay every frame.
+              if (!scaleBar || scaleBar.widthPx !== bar.widthPx || scaleBar.label !== label) {
+                scaleBar = { widthPx: bar.widthPx, label };
+              }
+            } else if (scaleBar !== null) {
+              scaleBar = null;
             }
           } else if (scaleBar !== null) {
             scaleBar = null;
@@ -5823,8 +5814,7 @@ sample      ${debugInfo.projectedPxSample}`}
          inside the inverted skybox. -->
     {#if scaleBar && view === '3d' && !panoramaActive && !flatPatchActive}
       <div class="distance-scale" class:beside-panel={panelOpen} data-testid="distance-scale">
-        <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
-        <div class="distance-scale-label mono">{scaleBar.label}</div>
+        <ScaleBar widthPx={scaleBar.widthPx} label={scaleBar.label} />
       </div>
     {/if}
     {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen && altitudeKm >= config.radiusKm * 0.044}
@@ -7514,19 +7504,6 @@ sample      ${debugInfo.projectedPxSample}`}
     backdrop-filter: blur(6px);
     z-index: 60;
   }
-  .distance-scale-bar {
-    height: 4px;
-    background: rgba(255, 255, 255, 0.85);
-    border-left: 2px solid rgba(255, 255, 255, 0.95);
-    border-right: 2px solid rgba(255, 255, 255, 0.95);
-    box-sizing: content-box;
-  }
-  .distance-scale-label {
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.92);
-  }
   /* Phone: one bar above the tab row holds the route's globe button, the scale
      and the altitude. Elsewhere it is transparent to layout. */
   .surface-bottom-bar {
@@ -7567,9 +7544,6 @@ sample      ${debugInfo.projectedPxSample}`}
       border-radius: 0;
       backdrop-filter: none;
       z-index: auto;
-    }
-    .surface-bottom-bar .distance-scale-bar {
-      max-width: 40vw;
     }
     .surface-bottom-bar .altitude-indicator {
       margin-inline-start: auto;

@@ -93,7 +93,7 @@
     text-decoration: none;
   }
   .crumb a:hover {
-    color: #4ecdc4;
+    color: var(--color-accent);
   }
   .sep {
     margin: 0 8px;
@@ -117,8 +117,8 @@
   .tab-intro {
     margin: 0 0 24px;
     padding: 18px 20px;
-    background: rgba(78, 205, 196, 0.05);
-    border-left: 3px solid rgba(78, 205, 196, 0.6);
+    background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    border-left: 3px solid var(--color-accent-strong);
     border-radius: 4px;
   }
   .tab-intro .badge {
@@ -126,7 +126,7 @@
     font-size: var(--size-label);
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #4ecdc4;
+    color: var(--color-accent);
     margin: 0 0 10px;
   }
   .tab-intro .headline {

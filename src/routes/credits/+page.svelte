@@ -882,9 +882,9 @@
     color: var(--color-text-label);
   }
   .d-row a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
 
   .storage-card {
@@ -984,13 +984,13 @@
     line-height: 1.5;
   }
   .toc a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .toc a:hover,
   .toc a:focus-visible {
-    color: #7ddfd8;
+    color: var(--color-accent);
     outline: none;
   }
   .counts {
@@ -1126,9 +1126,9 @@
   }
   .ph-row a,
   .t-row a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .sep {
     color: rgba(255, 255, 255, 0.2);
@@ -1165,8 +1165,8 @@
     align-items: baseline;
   }
   .variant-chip {
-    background: rgba(78, 205, 196, 0.12);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    color: var(--color-state);
     padding: 1px 5px;
     border-radius: 2px;
     font-size: var(--size-label);
@@ -1190,8 +1190,8 @@
     border-radius: 4px;
   }
   .t-cat {
-    background: rgba(78, 205, 196, 0.12);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    color: var(--color-state);
     padding: 1px 6px;
     border-radius: 2px;
     font-size: var(--size-label);

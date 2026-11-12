@@ -484,7 +484,7 @@
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: #7fb0e0;
+    background: var(--color-state);
     box-shadow: 0 0 0 3px rgba(8, 10, 22, 1);
   }
   .timeline li.context .t-dot {
@@ -686,7 +686,7 @@
     font-size: 14px;
   }
   .surface-list .s-go {
-    color: #7fb0e0;
+    color: var(--color-state);
     flex: 0 0 auto;
   }
   .see-also a {

@@ -312,7 +312,7 @@
     margin: 8px 0 0;
   }
   .newest {
-    color: rgba(78, 205, 196, 0.8);
+    color: var(--color-state);
   }
   .disclaimer {
     margin-top: 4px;
@@ -386,13 +386,13 @@
     line-height: 1.5;
   }
   .toc a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .toc a:hover,
   .toc a:focus-visible {
-    color: #7ddfd8;
+    color: var(--color-accent);
     outline: none;
   }
   .counts {
@@ -475,8 +475,8 @@
     margin: 0 0 8px;
   }
   .ent-cat {
-    background: rgba(78, 205, 196, 0.12);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    color: var(--color-state);
     padding: 1px 6px;
     border-radius: 2px;
     font-size: var(--size-label);
@@ -490,9 +490,9 @@
     color: rgba(255, 255, 255, 0.6);
   }
   .ent-route {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .sep {
     color: rgba(255, 255, 255, 0.2);
@@ -505,7 +505,7 @@
   .link {
     padding: 8px 10px;
     background: rgba(255, 255, 255, 0.02);
-    border-left: 2px solid rgba(78, 205, 196, 0.3);
+    border-left: 2px solid var(--color-accent-edge);
     border-radius: 0 3px 3px 0;
   }
   .ln-row {
@@ -548,8 +548,8 @@
   }
   .ln-target:hover,
   .ln-target:focus-visible {
-    color: #4ecdc4;
-    border-bottom-color: rgba(78, 205, 196, 0.5);
+    color: var(--color-state);
+    border-bottom-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     outline: none;
   }
   .ln-tier {
@@ -559,13 +559,14 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
+  /* a3-keep: tier name, colour is --color-state (UXD-001) */
   .ln-tier-intro {
     background: rgba(255, 200, 80, 0.15);
     color: #ffc850;
   }
   .ln-tier-core {
-    background: rgba(78, 205, 196, 0.15);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    color: var(--color-state);
   }
   .ln-tier-deep {
     background: rgba(150, 180, 255, 0.15);
@@ -577,7 +578,7 @@
     color: var(--color-text-label);
   }
   .ln-verified time {
-    color: rgba(78, 205, 196, 0.75);
+    color: var(--color-state);
   }
 
   @media (min-width: 768px) {

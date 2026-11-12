@@ -3,14 +3,14 @@
 
   Left rail: sticky 200px column with the six encyclopedia tabs,
   vertically stacked, persistent across the landing, the tab pages,
-  and every section page. Active tab gets a teal accent.
+  and every section page. Active tab gets a accent blue.
 
   Centre: route content (the editorial story on /science, the 101
   on /science/[tab], the reading view on /science/[tab]/[section]).
 
   Right rail: when on a tab or section page, lists every section in
   the active tab so the reader can jump between them without leaving
-  the article. Active section gets a teal accent. Falls away on the
+  the article. Active section gets a accent blue. Falls away on the
   /science landing where there's no active tab.
 
   Mobile (<768px): collapses to single column; both rails fold above
@@ -274,8 +274,8 @@
   }
   .search-button:hover,
   .search-button:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    background: rgba(78, 205, 196, 0.08);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
     color: #fff;
     outline: none;
   }
@@ -319,13 +319,13 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: rgba(78, 205, 196, 0.3) transparent;
+    scrollbar-color: var(--color-accent-edge) transparent;
   }
   .tab-list::-webkit-scrollbar {
     height: 2px;
   }
   .tab-list::-webkit-scrollbar-thumb {
-    background: rgba(78, 205, 196, 0.3);
+    background: var(--color-accent-edge);
     border-radius: 1px;
   }
   .tab-list::-webkit-scrollbar-track {
@@ -345,13 +345,13 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: rgba(78, 205, 196, 0.3) transparent;
+    scrollbar-color: var(--color-accent-edge) transparent;
   }
   .section-list::-webkit-scrollbar {
     height: 2px;
   }
   .section-list::-webkit-scrollbar-thumb {
-    background: rgba(78, 205, 196, 0.3);
+    background: var(--color-accent-edge);
     border-radius: 1px;
   }
   .section-list::-webkit-scrollbar-track {
@@ -378,18 +378,18 @@
   .tab-card:focus-visible,
   .section-row:hover,
   .section-row:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    background: rgba(78, 205, 196, 0.08);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
     outline: none;
   }
   .tab-card.active,
   .section-row.active {
-    border-color: rgba(78, 205, 196, 0.6);
-    background: rgba(78, 205, 196, 0.12);
+    border-color: var(--color-accent-strong);
+    background: var(--color-accent-soft);
   }
   .tab-card.active .tab-name,
   .section-row.active .section-name {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .tab-name {
     font-family: var(--font-display);

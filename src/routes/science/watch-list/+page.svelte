@@ -26,14 +26,14 @@
   // Tiny deterministic title→gradient mapping so placeholders look
   // intentional + varied. Same palette as /science/reading-list.
   const PALETTE: Array<[string, string]> = [
-    ['#4466ff', '#7f55ff'],
-    ['#4ecdc4', '#2196a0'],
+    ['#5070ff', '#7f55ff'],
+    ['#4ecdc4', '#2196a0'], // a3-keep: decorative cover palette, palette review at the end
     ['#ffc850', '#ff8a3d'],
     ['#c1440e', '#fa7268'],
     ['#7f55ff', '#ff4e8b'],
-    ['#2196a0', '#4466ff'],
+    ['#2196a0', '#5070ff'], // a3-keep: decorative cover palette (sea → indigo)
     ['#a0844c', '#6f5530'],
-    ['#3d8b8b', '#0e6b7a'],
+    ['#3d8b8b', '#0e6b7a'], // a3-keep: decorative cover palette
   ];
   function gradientFor(title: string): string {
     let h = 0;

@@ -261,13 +261,13 @@
   .term {
     color: inherit;
     text-decoration: underline dotted;
-    text-decoration-color: rgba(78, 205, 196, 0.75);
+    text-decoration-color: var(--color-accent-strong);
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
   .term:hover,
   .term:focus-visible {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration-style: solid;
   }
   .crumb a {
@@ -275,7 +275,7 @@
     text-decoration: underline;
   }
   .crumb a:hover {
-    color: #4ecdc4;
+    color: var(--color-accent);
   }
   .sep {
     margin: 0 8px;
@@ -333,8 +333,8 @@
   .narrative-101 {
     margin: 24px 0;
     padding: 18px 20px;
-    background: rgba(78, 205, 196, 0.05);
-    border-left: 3px solid rgba(78, 205, 196, 0.6);
+    background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    border-left: 3px solid var(--color-accent-strong);
     border-radius: 4px;
   }
   .narrative-101 .badge {
@@ -342,7 +342,7 @@
     font-size: var(--size-label);
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #4ecdc4;
+    color: var(--color-accent);
     margin: 0 0 10px;
   }
   .narrative-101 p:not(.badge) {
@@ -358,8 +358,8 @@
   .formula {
     margin: 24px 0;
     padding: 16px;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.2);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
     border-radius: 6px;
     text-align: center;
     overflow-x: auto;
@@ -406,7 +406,7 @@
   }
   .see-in-app a,
   .learn-more a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: underline;
   }
   .see-in-app a:hover,
@@ -430,9 +430,10 @@
     border-radius: 2px;
     color: rgba(255, 255, 255, 0.6);
   }
+  /* a3-keep: tier name, colour is --color-state (UXD-001) */
   .tier-intro {
-    border-color: rgba(78, 205, 196, 0.5);
-    color: #4ecdc4;
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+    color: var(--color-state);
   }
   .tier-core {
     border-color: rgba(123, 156, 255, 0.5);

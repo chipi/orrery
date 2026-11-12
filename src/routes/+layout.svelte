@@ -671,7 +671,7 @@
     padding: 10px 16px;
     background: var(--color-nav-bg, #04040c);
     color: var(--color-text, #fff);
-    border: 2px solid var(--color-accent, #4466ff);
+    border: 2px solid var(--color-accent);
     border-radius: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 14px;
@@ -756,7 +756,7 @@
   }
   .footer-link:hover,
   .footer-link:focus-visible {
-    color: #4ecdc4;
+    color: var(--color-state);
     outline: none;
   }
   .footer-sep {
@@ -908,7 +908,7 @@
   .footer-menu.compact .footer-more-btn:hover,
   .footer-menu.compact .footer-more-btn:focus-visible,
   .footer-menu.compact.more-open .footer-more-btn {
-    color: #4ecdc4;
+    color: var(--color-state);
     outline: none;
   }
   .footer-menu.compact .footer-more-btn:focus-visible {

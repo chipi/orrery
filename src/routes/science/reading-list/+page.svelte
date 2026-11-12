@@ -37,17 +37,17 @@
 
   // Tiny deterministic title→hue mapping so placeholders are colourful
   // but stable (the same book always gets the same gradient on every
-  // render + every machine). Orrery palette: gold, teal, indigo, mars
+  // render + every machine). Orrery palette: gold, accent blue, indigo, mars
   // red, neptune blue, mercury bronze.
   const PALETTE: Array<[string, string]> = [
-    ['#4466ff', '#7f55ff'], // indigo → purple
-    ['#4ecdc4', '#2196a0'], // teal
+    ['#5070ff', '#7f55ff'], // indigo → purple
+    ['#4ecdc4', '#2196a0'], // a3-keep: decorative cover palette, palette review at the end
     ['#ffc850', '#ff8a3d'], // gold → orange
     ['#c1440e', '#fa7268'], // mars red → coral
     ['#7f55ff', '#ff4e8b'], // purple → magenta
-    ['#2196a0', '#4466ff'], // sea → indigo
+    ['#2196a0', '#5070ff'], // a3-keep: decorative cover palette (sea → indigo)
     ['#a0844c', '#6f5530'], // bronze
-    ['#3d8b8b', '#0e6b7a'], // deep teal
+    ['#3d8b8b', '#0e6b7a'], // a3-keep: decorative cover palette
   ];
   function gradientFor(title: string): string {
     let h = 0;
@@ -427,8 +427,8 @@
     font-size: var(--size-label);
   }
   .audience-beginner {
-    background: rgba(78, 205, 196, 0.18);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: var(--color-state);
   }
   .audience-intermediate {
     background: rgba(255, 200, 80, 0.18);

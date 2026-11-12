@@ -661,13 +661,13 @@
     line-height: 1.5;
   }
   .toc a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .toc a:hover,
   .toc a:focus-visible {
-    color: #7ddfd8;
+    color: var(--color-accent);
     outline: none;
   }
   .toc .counts {
@@ -717,7 +717,7 @@
     margin: 0 0 16px;
   }
   .block-note :global(a) {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: underline;
   }
   .block-note :global(a:hover) {
@@ -870,8 +870,8 @@
     gap: 16px;
     padding: 22px 16px;
     min-height: 78px;
-    color: #5eead4;
-    background: radial-gradient(circle at 50% 36%, rgba(94, 234, 212, 0.1), transparent 70%);
+    color: var(--color-state);
+    background: radial-gradient(circle at 50% 36%, var(--color-accent-soft), transparent 70%);
   }
   .icon-variant {
     display: inline-flex;
@@ -947,7 +947,7 @@
     white-space: nowrap;
     text-align: center;
   }
-  /* Two contributions, two accents: script = gold, audio = teal. */
+  /* Two contributions, two accents: script = gold, audio = accent blue. */
   .ep-action.script {
     color: rgba(201, 170, 111, 0.95);
     border-color: rgba(201, 170, 111, 0.35);
@@ -957,12 +957,12 @@
     background: rgba(201, 170, 111, 0.16);
   }
   .ep-action.audio {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.35);
-    background: rgba(78, 205, 196, 0.08);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .ep-action.audio:hover {
-    background: rgba(78, 205, 196, 0.16);
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
   }
 
   /* Full-size lightbox (#367). */
@@ -1008,8 +1008,8 @@
   .lb-route {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.5);
+    border-bottom: 1px dotted color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
 </style>

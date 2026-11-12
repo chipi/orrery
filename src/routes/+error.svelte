@@ -70,14 +70,20 @@
     display: grid;
     place-items: center;
     padding: 32px 20px;
-    background: radial-gradient(ellipse at top, rgba(94, 234, 212, 0.06), transparent 60%), #04040c;
+    background:
+      radial-gradient(
+        ellipse at top,
+        color-mix(in srgb, var(--color-accent) 6%, transparent),
+        transparent 60%
+      ),
+      #04040c;
     color: rgba(220, 230, 245, 0.95);
   }
   .error-card {
     max-width: 560px;
     width: 100%;
     background: rgba(8, 10, 22, 0.7);
-    border: 1px solid rgba(94, 234, 212, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     padding: 28px;
     backdrop-filter: blur(8px);
@@ -87,7 +93,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 14px;
     letter-spacing: 3px;
-    color: #4ecdc4;
+    color: var(--color-state);
     margin: 0 0 8px;
   }
   .error-title {
@@ -103,7 +109,7 @@
   }
   .error-path code {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    background: rgba(94, 234, 212, 0.1);
+    background: var(--color-accent-soft);
     padding: 2px 6px;
     border-radius: 3px;
     word-break: break-all;
@@ -111,8 +117,8 @@
   .error-suggestion {
     margin: 0 0 20px;
     padding: 14px 16px;
-    background: rgba(94, 234, 212, 0.08);
-    border-left: 3px solid #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    border-left: 3px solid var(--color-accent);
     border-radius: 4px;
   }
   .error-hint {
@@ -129,7 +135,7 @@
   .error-cta {
     display: inline-block;
     padding: 8px 14px;
-    background: #4ecdc4;
+    background: var(--color-accent);
     color: #04040c;
     border-radius: 4px;
     text-decoration: none;
@@ -139,7 +145,7 @@
     transition: background 100ms ease;
   }
   .error-cta:hover {
-    background: #6cd9d2;
+    background: var(--color-accent);
   }
   .error-cta-primary {
     width: 100%;
@@ -157,16 +163,16 @@
   .error-cta-ghost {
     background: transparent;
     color: rgba(220, 230, 245, 0.85);
-    border: 1px solid rgba(94, 234, 212, 0.4);
+    border: 1px solid var(--color-accent-edge);
   }
   .error-cta-ghost:hover {
-    background: rgba(94, 234, 212, 0.1);
+    background: var(--color-accent-soft);
     color: rgba(220, 230, 245, 0.95);
   }
   .error-tip {
     margin: 0;
     padding-top: 16px;
-    border-top: 1px solid rgba(94, 234, 212, 0.15);
+    border-top: 1px solid var(--color-accent-soft);
     font-size: 11px;
     color: rgba(220, 230, 245, 0.6);
   }

@@ -160,7 +160,7 @@
     font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #7fb0e0;
+    color: var(--color-state);
     margin-inline-end: 8px;
   }
   a {

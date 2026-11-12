@@ -171,6 +171,8 @@ Read at commit `9fdf4cc4a6b`. Logged, not resolved here (another change set is e
 ## Next — lines that must link to a UXD
 
 Owner: the change set that edits these files (not this one). Each line states the current rule and
+
+History note: the line numbers and "teal" wording in this table describe the files as they were before slice A3 (2026-11-12); those lines now say blue.
 gains a link to the UXD, in the same change as the rule.
 
 | File and lines                                                                        | Must link to                                                         |

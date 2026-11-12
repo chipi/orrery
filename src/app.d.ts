@@ -92,6 +92,10 @@ declare global {
       ringAt: number[];
       viewShiftPx: number;
     };
+    /** Pin scenes (neighbourhood to cosmic web): every label and ring as drawn, client px; null elsewhere. */
+    __scenePins?: () => import('$lib/universe/scene-pins').PinsSnapshot | null;
+    /** The 2D view's labels of the last frame: text, font size in CSS px, whether it was drawn. */
+    __explore2dLabels?: () => Array<{ text: string; fontPx: number; shown: boolean }>;
     /** A solar-system body's world position: planet:<id>, small:<id>, moon:<parent>:<id>, belt:<id>. */
     __exploreBodyPosition?: (key: string) => number[] | null;
     /** Where a body (or marker:<missionId>) is on screen, client pixels, or null when behind the camera. */

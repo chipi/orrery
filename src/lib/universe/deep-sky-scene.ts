@@ -19,6 +19,15 @@ import {
   DEEP_SKY_RADIUS,
 } from './deep-sky-visual';
 import { deepSkyGlintBloom } from './deep-sky-lod';
+import { labelSprite, ringTexture, createRing } from './scene-pin-sprites';
+import {
+  LABEL_SPRITE_PX,
+  RING_PX,
+  applyRing,
+  cameraFov,
+  labelOffset,
+  worldPerPx,
+} from './scene-pins';
 
 export interface DeepSkyLayerHandle {
   group: THREE.Group;
@@ -35,7 +44,7 @@ export interface DeepSkyLayerHandle {
   objectPosition(id: string): THREE.Vector3 | null;
   objectById(id: string): DeepSkyObject | null;
   /** Per-frame reveal + screen-constant sizing. */
-  update(camDistPc: number, camera: THREE.Camera): void;
+  update(camDistPc: number, camera: THREE.Camera, viewportH: number): void;
   dispose(): void;
 }
 
@@ -69,46 +78,6 @@ function makeGlintTexture(color: string): THREE.CanvasTexture {
   tex.minFilter = THREE.LinearFilter;
   tex.magFilter = THREE.LinearFilter;
   return tex;
-}
-
-/** Camera-facing text label (canvas). Caller sizes + toggles it. */
-function makeLabelSprite(text: string): {
-  sprite: THREE.Sprite;
-  texture: THREE.CanvasTexture;
-  aspect: number;
-} {
-  const upper = text.toUpperCase();
-  const font = 'bold 22px "Space Mono", monospace';
-  const measure = document.createElement('canvas').getContext('2d')!;
-  measure.font = font;
-  const pad = 8;
-  const w = Math.ceil(measure.measureText(upper).width) + pad * 2;
-  const h = 34;
-  const cvs = document.createElement('canvas');
-  cvs.width = w;
-  cvs.height = h;
-  const ctx = cvs.getContext('2d')!;
-  ctx.font = font;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0,0,0,0.95)';
-  ctx.shadowBlur = 4;
-  ctx.fillStyle = 'rgba(233,238,252,0.96)';
-  ctx.fillText(upper, w / 2, h / 2);
-  const tex = new THREE.CanvasTexture(cvs);
-  tex.colorSpace = THREE.SRGBColorSpace;
-  tex.needsUpdate = true;
-  tex.minFilter = THREE.LinearFilter;
-  tex.magFilter = THREE.LinearFilter;
-  const mat = new THREE.SpriteMaterial({
-    map: tex,
-    transparent: true,
-    depthTest: false,
-    depthWrite: false,
-  });
-  const sprite = new THREE.Sprite(mat);
-  sprite.visible = false;
-  return { sprite, texture: tex, aspect: w / h };
 }
 
 interface Entry {
@@ -161,9 +130,16 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
     glint.userData.deepSkyId = obj.id;
     glint.renderOrder = 91;
 
-    const { sprite: label, texture: labelTex, aspect } = makeLabelSprite(obj.name);
+    const {
+      sprite: label,
+      texture: labelTex,
+      aspect,
+    } = labelSprite(obj.name, { color: 'rgba(233,238,252,0.96)', weight: 'bold' });
     labelTextures.push(labelTex);
-    glint.add(label);
+    label.visible = false;
+    label.renderOrder = 92;
+    // Not a child of the glint: a child would inherit the glint's hover-grown scale.
+    group.add(label);
 
     const entry: Entry = {
       obj,
@@ -178,6 +154,12 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
     pickables.push(glint);
     group.add(glint);
   }
+
+  // One hover ring, moved onto the highlighted glint (a glint is a pickable like any pin).
+  const hoverRingTex = ringTexture();
+  const hoverRing = createRing(hoverRingTex, false);
+  hoverRing.renderOrder = 92;
+  group.add(hoverRing);
 
   let highlightId: string | null = null;
   let focusId: string | null = null;
@@ -207,8 +189,10 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
     objectById(id: string) {
       return byId.get(id)?.obj ?? null;
     },
-    update(camDistPc: number, camera: THREE.Camera) {
+    update(camDistPc: number, camera: THREE.Camera, viewportH: number) {
       if (!group.visible) return;
+      const fov = cameraFov(camera);
+      let ringed = false;
       camera.getWorldPosition(_camPos);
       const reveal = revealFactor(camDistPc);
       for (const e of entries) {
@@ -223,19 +207,31 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
         (e.glint.material as THREE.SpriteMaterial).opacity = focused
           ? Math.min(1, reveal + approach)
           : reveal * (hi ? 0.98 : GLINT_BASE_OPACITY);
-        // Label: hover/selection only, placed just above the glint.
+        // Label: hover/selection only, 12 px, placed just above the glint by its STEADY size
+        // (the bloom grows the glint, never the label offset).
         e.label.visible = hi;
         if (hi) {
-          const lh = base * 0.9;
+          const wpp = worldPerPx(distToCam, fov, viewportH);
+          const lh = wpp * LABEL_SPRITE_PX;
           e.label.scale.set(lh * e.labelAspect, lh, 1);
-          e.label.position.set(0, scale * 0.65 + lh * 0.6, 0);
+          e.label.position.set(
+            e.position.x,
+            e.position.y + labelOffset(base, lh, wpp * (RING_PX / 2), 0.65),
+            e.position.z,
+          );
+          hoverRing.position.copy(e.position);
+          applyRing(hoverRing, false, true, wpp);
+          ringed = true;
         }
       }
+      hoverRing.visible = ringed;
     },
     dispose() {
       for (const m of materials) m.dispose();
       for (const t of glintTextures.values()) t.dispose();
       for (const t of labelTextures) t.dispose();
+      hoverRingTex.dispose();
+      (hoverRing.material as THREE.SpriteMaterial).dispose();
       for (const e of entries) (e.label.material as THREE.SpriteMaterial).dispose();
     },
   };

@@ -7,7 +7,7 @@
  * + ~30 real dwarf galaxies as glowing glints clustered around their parents. Unlike
  * the Milky Way scene's screen-constant pins, galaxy glows are sized in WORLD units
  * (∝ real diameter, schematic) so Andromeda looms larger than a dwarf and grows as
- * you approach — only the labels stay screen-constant so they stay readable.
+ * you approach — only the labels and rings stay screen-constant so they stay readable.
  *
  * WebGL builder — coverage-excluded (see vite.config.ts). Shares the Milky-Way
  * scene's bloom-composer idiom; reuses logSpiralPoint / makeRng (unit-tested).
@@ -19,13 +19,30 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import { logSpiralPoint, makeRng } from './milky-way-visual';
 import type { LocalGroupData, LocalGroupMember, LocalGroupKind } from '$lib/data';
+import { labelSprite, radialTexture, ringTexture, createRing } from './scene-pin-sprites';
+import {
+  LABEL_SPRITE_PX,
+  RING_PX,
+  applyRing,
+  cameraFov,
+  labelOffset,
+  labelRect,
+  newLabelSlot,
+  placeLabels,
+  snapshotPins,
+  worldPerPx,
+  type LabelSlot,
+  type PinsSnapshot,
+} from './scene-pins';
 
 export interface LocalGroupScene {
   scene: THREE.Scene;
   pickables: THREE.Object3D[];
   objectPosition(id: string): THREE.Vector3 | null;
   highlight(id: string | null): void;
-  update(camera: THREE.Camera): void;
+  update(camera: THREE.Camera, viewportH: number): void;
+  /** Probe for the e2e specs: every label and ring as it is on screen (client px). */
+  pinsSnapshot(camera: THREE.Camera, w: number, h: number): PinsSnapshot;
   render(renderer: THREE.WebGLRenderer, camera: THREE.Camera): void;
   setSize(w: number, h: number): void;
   dispose(): void;
@@ -50,63 +67,6 @@ const DEFAULT_BLOOM: LocalGroupBloomOptions = {
 const LG_SCALE = 42;
 /** The radius the whole layout occupies — the page frames the entry camera by this. */
 export const LG_SCENE_RADIUS = 150;
-
-function radialTexture(stops: Array<[number, string]>, size = 128): THREE.CanvasTexture {
-  const cvs = document.createElement('canvas');
-  cvs.width = cvs.height = size;
-  const ctx = cvs.getContext('2d')!;
-  const c = size / 2;
-  const g = ctx.createRadialGradient(c, c, 0, c, c, c);
-  for (const [stop, color] of stops) g.addColorStop(stop, color);
-  ctx.fillStyle = g;
-  ctx.fillRect(0, 0, size, size);
-  const t = new THREE.CanvasTexture(cvs);
-  t.colorSpace = THREE.SRGBColorSpace;
-  t.needsUpdate = true;
-  return t;
-}
-
-function labelSprite(
-  text: string,
-  color: string,
-  weight: 'bold' | 'normal',
-): { sprite: THREE.Sprite; texture: THREE.CanvasTexture; aspect: number } {
-  const upper = text.toUpperCase();
-  // Lighter weight + wide tracking (matches the neighborhood + Milky Way labels).
-  const font = `${weight === 'bold' ? '500' : '400'} 24px "Space Mono", monospace`;
-  const tracking = '2px';
-  const measure = document.createElement('canvas').getContext('2d')!;
-  measure.font = font;
-  measure.letterSpacing = tracking;
-  const pad = 12;
-  const w = Math.ceil(measure.measureText(upper).width) + pad * 2;
-  const h = 40;
-  const cvs = document.createElement('canvas');
-  cvs.width = w;
-  cvs.height = h;
-  const ctx = cvs.getContext('2d')!;
-  ctx.font = font;
-  ctx.letterSpacing = tracking;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0,0,0,0.9)';
-  ctx.shadowBlur = 5;
-  ctx.fillStyle = color;
-  ctx.fillText(upper, w / 2, h / 2);
-  const texture = new THREE.CanvasTexture(cvs);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  texture.minFilter = THREE.LinearFilter;
-  texture.magFilter = THREE.LinearFilter;
-  const sprite = new THREE.Sprite(
-    new THREE.SpriteMaterial({
-      map: texture,
-      transparent: true,
-      depthTest: false,
-      depthWrite: false,
-    }),
-  );
-  return { sprite, texture, aspect: w / h };
-}
 
 // Glow gradient per galaxy kind — spirals cool+bright, dwarfs faint (old stars warm,
 // irregulars a touch blue). Never pure white; the core reads as glow not blowout.
@@ -146,12 +106,12 @@ interface Pin {
   id: string;
   glow: THREE.Sprite;
   disk?: THREE.Points;
-  ring?: THREE.Sprite;
-  label: THREE.Sprite;
-  labelAspect: number;
+  /** Every pin has one; it shows on hover or selection (the Milky Way: always, gold). */
+  ring: THREE.Sprite;
+  anchor: boolean;
+  slot: LabelSlot;
   position: THREE.Vector3;
   glowSize: number;
-  headliner: boolean;
   alwaysLabel: boolean;
 }
 
@@ -201,6 +161,8 @@ export function createLocalGroupScene(
   const pins: Pin[] = [];
   const byId = new Map<string, Pin>();
   const pickables: THREE.Object3D[] = [];
+  const slots: LabelSlot[] = [];
+  const ringTex = track(ringTexture());
 
   // Build a small procedural spiral-galaxy particle disk (2 arms + warm core),
   // tilted for a 3-D read. Radius in scene units.
@@ -288,57 +250,47 @@ export function createLocalGroupScene(
       scene.add(disk);
     }
 
-    // "You are here" teal ring on the Milky Way.
-    let ring: THREE.Sprite | undefined;
-    if (m.id === 'milky-way') {
-      ring = new THREE.Sprite(
-        track(
-          new THREE.SpriteMaterial({
-            map: track(
-              radialTexture([
-                [0, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                [0.74, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                [0.84, 'rgba(78,205,196,0.9)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                [0.94, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                [1, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-              ]),
-            ),
-            transparent: true,
-            depthTest: false,
-            depthWrite: false,
-          }),
-        ),
-      );
-      ring.position.copy(position);
-      ring.scale.setScalar(glowSize * 2.1);
-      ring.renderOrder = 9;
-      scene.add(ring);
-    }
+    // Every pin has a ring (hover / selection); the Milky Way's is the gold "you are here"
+    // anchor and stays up. Screen-constant, like the labels.
+    const anchor = m.id === 'milky-way';
+    const ring = createRing(ringTex, anchor);
+    track(ring.material as THREE.SpriteMaterial);
+    ring.position.copy(position);
+    ring.renderOrder = 9;
+    scene.add(ring);
 
-    const labelColor = m.headliner ? 'rgba(120,214,255,0.96)' : 'rgba(180,196,224,0.72)'; // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    const labelColor = m.headliner ? 'rgba(223,236,247,0.96)' : 'rgba(180,196,224,0.72)';
     const {
       sprite: label,
       texture: labelTex,
       aspect,
-    } = labelSprite(m.name, labelColor, m.headliner ? 'bold' : 'normal');
+    } = labelSprite(m.name, { color: labelColor, weight: m.headliner ? 'bold' : 'normal' });
     disposables.push(labelTex, label.material as THREE.SpriteMaterial);
     label.position.copy(position);
     label.renderOrder = 11;
     scene.add(label);
 
+    const alwaysLabel = m.headliner && (m.kind === 'spiral' || m.parent === 'independent');
+    // Label priority when two collide (lower wins): the anchor, the other spirals, the
+    // independent headliner, then the hover-only dwarfs.
+    const slot = newLabelSlot(
+      label,
+      aspect,
+      anchor ? 0 : m.kind === 'spiral' ? 1 : alwaysLabel ? 2 : 10,
+    );
+    slots.push(slot);
     const pin: Pin = {
       id: m.id,
       glow,
       disk,
       ring,
-      label,
-      labelAspect: aspect,
+      anchor,
+      slot,
       position,
       glowSize,
-      headliner: m.headliner,
       // Keep the always-on label set small (the spirals + the lone independent
       // headliner) so the overview reads; the famous dwarfs (LMC/SMC) reveal on hover.
-      alwaysLabel: m.headliner && (m.kind === 'spiral' || m.parent === 'independent'),
+      alwaysLabel,
     };
     pins.push(pin);
     byId.set(m.id, pin);
@@ -346,6 +298,7 @@ export function createLocalGroupScene(
 
   let highlightId: string | null = null;
   const _cam = new THREE.Vector3();
+  const _tmp = new THREE.Vector3();
 
   let composer: EffectComposer | null = null;
   let bloomPass: UnrealBloomPass | null = null;
@@ -375,27 +328,36 @@ export function createLocalGroupScene(
     highlight(id) {
       highlightId = id;
     },
-    update(camera) {
+    update(camera, viewportH) {
       camera.getWorldPosition(_cam);
+      const fov = cameraFov(camera);
       for (const pin of pins) {
         const dist = Math.max(1, _cam.distanceTo(pin.position));
+        const wpp = worldPerPx(dist, fov, viewportH);
         const hi = pin.id === highlightId;
-        if (pin.ring) pin.ring.scale.setScalar(pin.glowSize * 2.1 * (hi ? 1.15 : 1));
+        applyRing(pin.ring, pin.anchor, hi, wpp);
         // Only headliners carry an always-on label; the ~30 dwarfs stay glints and
         // reveal their name on hover/selection, so the census reads without clutter.
-        pin.label.visible = pin.alwaysLabel || hi;
-        if (pin.label.visible) {
-          const lh = dist * (pin.headliner ? 0.038 : 0.032);
-          pin.label.scale.set(lh * pin.labelAspect, lh, 1);
-          pin.label.position.set(
+        const slot = pin.slot;
+        slot.force = hi;
+        slot.visible = false;
+        if (pin.alwaysLabel || hi) {
+          const lh = wpp * LABEL_SPRITE_PX;
+          slot.sprite.scale.set(lh * slot.aspect, lh, 1);
+          slot.sprite.position.set(
             pin.position.x,
-            pin.position.y + pin.glowSize * 0.62 + lh * 0.7,
+            pin.position.y + labelOffset(pin.glowSize, lh, wpp * (RING_PX / 2), 0.62),
             pin.position.z,
           );
-          (pin.label.material as THREE.SpriteMaterial).opacity = hi ? 1 : 0.94;
+          (slot.sprite.material as THREE.SpriteMaterial).opacity = hi ? 1 : 0.94;
+          slot.visible = labelRect(slot.sprite, camera, _cam, slot.rect, _tmp);
         }
         if (pin.disk) pin.disk.rotation.y = (pin.disk.rotation.y + 0.0006) % (Math.PI * 2);
       }
+      placeLabels(slots);
+    },
+    pinsSnapshot(camera, w, h) {
+      return snapshotPins('local-group', pins, camera, w, h);
     },
     render(renderer, camera) {
       if (!bloom.enabled) {

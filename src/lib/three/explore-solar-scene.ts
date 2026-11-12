@@ -123,7 +123,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       size: 1.0,
       sizeAttenuation: true,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.65,
     }),
   );
   scene.add(asteroidBelt);
@@ -146,7 +146,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       size: 1.1,
       sizeAttenuation: true,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.55,
     }),
   );
   scene.add(kuiperBelt);
@@ -189,10 +189,11 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     // 2026-06-03 user direction: "Make planet orbits look more
     // like moon orbits (more visible)." Bumped opacity 0.06 → 0.25
     // and tinted the line pale-blue to match the moon-orbit style.
+    // C2 (E2, daylight readability): 0.25 → 0.4, an element lift; exposure is UXD-004's.
     const mat = new THREE.LineBasicMaterial({
       color: 0xc0d0ff,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.4,
       depthWrite: false,
     });
     const line = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), mat);
@@ -1193,7 +1194,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       new THREE.LineBasicMaterial({
         color: trajColor,
         transparent: true,
-        opacity: b.type === 'interstellar' ? 0.4 : 0.22,
+        opacity: b.type === 'interstellar' ? 0.4 : 0.35,
         depthWrite: false,
       }),
     );
@@ -1289,7 +1290,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   const selRingGeo = new LineGeometry();
   selRingGeo.setPositions(selRingPositions);
   const selRingMat = new LineMaterial({
-    color: 0xa8c8ff, // pale-blue, same family as orbit lines
+    color: 0x889fe7, // --color-state, one ring colour with the universe scenes (UXD-020); scene code cannot read the CSS variable
     linewidth: 1.2, // screen pixels — Line2 holds this regardless of zoom
     transparent: true,
     opacity: 0.45,
@@ -1306,6 +1307,23 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   selHalo.renderOrder = 999;
   scene.add(selHalo);
 
+  // Hover ring: the same outline in the same colour, dimmer and steady (no pulse), on the
+  // planet or small body under the cursor. Shares the selection ring's geometry.
+  const hoverRingMat = new LineMaterial({
+    color: 0x889fe7, // --color-state (UXD-020)
+    linewidth: 1.2,
+    transparent: true,
+    opacity: 0.35,
+    depthTest: false,
+    dashed: false,
+  });
+  hoverRingMat.resolution.set(window.innerWidth, window.innerHeight);
+  const hoverHalo = new Line2(selRingGeo, hoverRingMat);
+  hoverHalo.computeLineDistances();
+  hoverHalo.visible = false;
+  hoverHalo.renderOrder = 998;
+  scene.add(hoverHalo);
+
   return {
     asteroidBelt,
     kuiperBelt,
@@ -1317,6 +1335,8 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     planetOrbitLines,
     selHalo,
     selRingMat,
+    hoverHalo,
+    hoverRingMat,
     smallBodyObjs,
     stopExploreCentripetalLayer,
     stopExploreGalaxiesLayer,

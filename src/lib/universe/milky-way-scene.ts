@@ -27,6 +27,21 @@ import {
   MW_ARMS,
   MW_ARM_GROWTH,
 } from './milky-way-visual';
+import { labelSprite, radialTexture, ringTexture, createRing } from './scene-pin-sprites';
+import {
+  LABEL_SPRITE_PX,
+  RING_PX,
+  applyRing,
+  cameraFov,
+  labelOffset,
+  labelRect,
+  newLabelSlot,
+  placeLabels,
+  snapshotPins,
+  worldPerPx,
+  type LabelSlot,
+  type PinsSnapshot,
+} from './scene-pins';
 
 export interface MilkyWayScene {
   scene: THREE.Scene;
@@ -38,8 +53,10 @@ export interface MilkyWayScene {
   /** #451 (WS-2) — toggle a science-lens overlay:
    *  'dark-matter-halo' | 'rotation-curve' | 'stellar-populations'. */
   setLens(key: string, on: boolean): void;
-  /** Per-frame: keep pins screen-constant + pulse the highlight. */
-  update(camera: THREE.Camera): void;
+  /** Per-frame: keep pins screen-constant, show the hover / selection ring, place the labels. */
+  update(camera: THREE.Camera, viewportH: number): void;
+  /** Probe for the e2e specs: every label and ring as it is on screen (client px). */
+  pinsSnapshot(camera: THREE.Camera, w: number, h: number): PinsSnapshot;
   /** Render with the cinematic bloom composer (call instead of renderer.render).
    *  Falls back to a plain render if bloom is disabled for the device tier. */
   render(renderer: THREE.WebGLRenderer, camera: THREE.Camera): void;
@@ -67,76 +84,15 @@ const DEFAULT_BLOOM: MilkyWayBloomOptions = {
 const COOL = [0.82, 0.93, 0.96]; // arm star colour — teal-white (brand), not pure blue
 const WARM = [1.0, 0.86, 0.6]; // bulge / inner colour (warm gold)
 
-function radialTexture(stops: Array<[number, string]>, size = 128): THREE.CanvasTexture {
-  const cvs = document.createElement('canvas');
-  cvs.width = cvs.height = size;
-  const ctx = cvs.getContext('2d')!;
-  const c = size / 2;
-  const g = ctx.createRadialGradient(c, c, 0, c, c, c);
-  for (const [o, col] of stops) g.addColorStop(o, col);
-  ctx.fillStyle = g;
-  ctx.beginPath();
-  ctx.arc(c, c, c, 0, Math.PI * 2);
-  ctx.fill();
-  const t = new THREE.CanvasTexture(cvs);
-  t.colorSpace = THREE.SRGBColorSpace;
-  t.needsUpdate = true;
-  t.minFilter = THREE.LinearFilter;
-  t.magFilter = THREE.LinearFilter;
-  return t;
-}
-
-function labelSprite(
-  text: string,
-  color: string,
-  weight: 'bold' | 'normal',
-): { sprite: THREE.Sprite; texture: THREE.CanvasTexture; aspect: number } {
-  const upper = text.toUpperCase();
-  // Lighter weight + wide tracking to match the neighborhood labels (modern/editorial
-  // rather than the old bold mono-HUD look). On-screen size trimmed at the call sites.
-  const font = `${weight === 'bold' ? '500' : '400'} 24px "Space Mono", monospace`;
-  const tracking = '2px';
-  const measure = document.createElement('canvas').getContext('2d')!;
-  measure.font = font;
-  measure.letterSpacing = tracking;
-  const pad = 12;
-  const w = Math.ceil(measure.measureText(upper).width) + pad * 2;
-  const h = 40;
-  const cvs = document.createElement('canvas');
-  cvs.width = w;
-  cvs.height = h;
-  const ctx = cvs.getContext('2d')!;
-  ctx.font = font;
-  ctx.letterSpacing = tracking;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0,0,0,0.9)';
-  ctx.shadowBlur = 5;
-  ctx.fillStyle = color;
-  ctx.fillText(upper, w / 2, h / 2);
-  const texture = new THREE.CanvasTexture(cvs);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  texture.needsUpdate = true;
-  texture.minFilter = THREE.LinearFilter;
-  texture.magFilter = THREE.LinearFilter;
-  const sprite = new THREE.Sprite(
-    new THREE.SpriteMaterial({
-      map: texture,
-      transparent: true,
-      depthTest: false,
-      depthWrite: false,
-    }),
-  );
-  return { sprite, texture, aspect: w / h };
-}
-
 interface Pin {
   id: string;
-  glow: THREE.Sprite;
-  ring?: THREE.Sprite;
-  /** Optional — non-headliner globulars are label-less until hovered/picked. */
-  label?: THREE.Sprite;
-  labelAspect: number;
+  /** Absent on an arm: its label point has a ring and a label, no glow. */
+  glow?: THREE.Sprite;
+  /** Every pin has one; it shows on hover or selection (the anchor: always, gold). */
+  ring: THREE.Sprite;
+  anchor: boolean;
+  /** Optional — non-headliner globulars have no label. */
+  slot?: LabelSlot;
   position: THREE.Vector3;
   baseScale: number;
 }
@@ -402,27 +358,47 @@ export function createMilkyWayScene(
   dustPlane.renderOrder = 4;
   scene.add(dustPlane);
 
-  // ── Arm labels (always on, faint) — #451 (WS-2) now clickable ────────────
-  const armPickables: THREE.Sprite[] = [];
+  const pins: Pin[] = [];
+  const byId = new Map<string, Pin>();
+  const slots: LabelSlot[] = [];
+  const pickables: THREE.Object3D[] = [];
+  // One ring texture for every pin; the material colour tints it (gold anchor, state blue).
+  const ringTex = track(ringTexture());
+  const addRing = (position: THREE.Vector3, anchor: boolean): THREE.Sprite => {
+    const ring = createRing(ringTex, anchor);
+    track(ring.material as THREE.SpriteMaterial);
+    ring.position.copy(position);
+    scene.add(ring);
+    return ring;
+  };
+  // Label priority when two collide (lower wins): Sun, Sagittarius A*, the rest of the
+  // objects, headliner globulars, Magellanic Clouds, arms.
+  const RANK_GLOBULAR = 2;
+  const RANK_MAGELLANIC = 3;
+  const RANK_ARM = 4;
+
+  // ── Arm labels (always on) — #451 (WS-2) clickable. The label point carries a ring
+  //    (hover / selection) like every pin; the label sits above it. ──────────────────────
   for (const arm of data.arms) {
     if (arm.id === 'orion-spur') continue; // labelled at the Sun pin instead
     const [lx, , lz] = galacticToScene(arm.label_x, arm.label_z, diskR);
-    const { sprite, texture, aspect } = labelSprite(arm.name, 'rgba(190,210,255,0.62)', 'normal');
+    const position = new THREE.Vector3(lx, 0, lz);
+    const { sprite, texture, aspect } = labelSprite(arm.name, { color: 'rgba(190,210,255,0.62)' });
     disposables.push(texture, sprite.material as THREE.SpriteMaterial);
-    const h = MW_DISK_RADIUS_SCENE * 0.036;
-    sprite.scale.set(h * aspect, h, 1);
-    sprite.position.set(lx, 0, lz);
+    sprite.position.copy(position);
     sprite.renderOrder = 5;
     sprite.userData.mwObjectId = arm.id;
     scene.add(sprite);
-    armPickables.push(sprite);
+    const ring = addRing(position, false);
+    ring.renderOrder = 5;
+    ring.userData.mwObjectId = arm.id;
+    const slot = newLabelSlot(sprite, aspect, RANK_ARM);
+    slots.push(slot);
+    pickables.push(sprite, ring);
+    pins.push({ id: arm.id, ring, anchor: false, slot, position, baseScale: 0 });
   }
 
   // ── Pins: Sagittarius A* (centre) + the Sun (Orion Spur) ────────────────
-  const pins: Pin[] = [];
-  const byId = new Map<string, Pin>();
-  const pickables: THREE.Object3D[] = [...armPickables];
-
   for (const obj of data.objects) {
     const [x, , z] = galacticToScene(obj.x, obj.z, diskR);
     const position = new THREE.Vector3(x, 0, z);
@@ -458,49 +434,35 @@ export function createMilkyWayScene(
     scene.add(glow);
     pickables.push(glow);
 
-    // Sun gets a discoverable selection ring (teal), like the named-star markers.
-    let ring: THREE.Sprite | undefined;
-    if (!isBH) {
-      const ringTex = track(
-        radialTexture([
-          [0, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-          [0.72, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-          [0.82, 'rgba(78,205,196,0.9)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-          [0.92, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-          [1, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-        ]),
-      );
-      ring = new THREE.Sprite(
-        track(
-          new THREE.SpriteMaterial({
-            map: ringTex,
-            transparent: true,
-            depthTest: false,
-            depthWrite: false,
-          }),
-        ),
-      );
-      ring.position.copy(position);
-      ring.renderOrder = 9;
-      scene.add(ring);
-    }
+    // The Sun is the "you are here" anchor: a gold ring that stays up at every scale.
+    const ring = addRing(position, obj.id === 'sun');
+    ring.renderOrder = 9;
 
     const {
       sprite: label,
       texture: labelTex,
       aspect,
-    } = labelSprite(obj.name, isBH ? 'rgba(255,214,122,0.95)' : 'rgba(78,205,196,0.95)', 'bold'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    } = labelSprite(obj.name, {
+      color: isBH ? 'rgba(255,214,122,0.95)' : 'rgba(223,236,247,0.95)',
+      weight: 'bold',
+    });
     disposables.push(labelTex, label.material as THREE.SpriteMaterial);
     label.position.copy(position);
     label.renderOrder = 11;
     scene.add(label);
+    const slot = newLabelSlot(
+      label,
+      aspect,
+      obj.id === 'sun' ? 0 : obj.id === 'sagittarius-a-star' ? 1 : 1.5,
+    );
+    slots.push(slot);
 
     const pin: Pin = {
       id: obj.id,
       glow,
       ring,
-      label,
-      labelAspect: aspect,
+      anchor: obj.id === 'sun',
+      slot,
       position,
       baseScale: isBH ? 0.07 : 0.08,
     };
@@ -571,22 +533,23 @@ export function createMilkyWayScene(
     glow.renderOrder = 10;
     scene.add(glow);
     pickables.push(glow);
-    let label: THREE.Sprite | undefined;
-    let labelAspect = 1;
+    let slot: LabelSlot | undefined;
     if (g.headliner) {
       const {
         sprite,
         texture: labelTex,
         aspect,
-      } = labelSprite(g.name, 'rgba(200,214,255,0.85)', 'normal');
+      } = labelSprite(g.name, { color: 'rgba(200,214,255,0.85)' });
       disposables.push(labelTex, sprite.material as THREE.SpriteMaterial);
       sprite.position.copy(position);
       sprite.renderOrder = 11;
       scene.add(sprite);
-      label = sprite;
-      labelAspect = aspect;
+      slot = newLabelSlot(sprite, aspect, RANK_GLOBULAR);
+      slots.push(slot);
     }
-    const pin: Pin = { id: g.id, glow, label, labelAspect, position, baseScale: 0.05 };
+    const ring = addRing(position, false);
+    ring.renderOrder = 9;
+    const pin: Pin = { id: g.id, glow, ring, anchor: false, slot, position, baseScale: 0.05 };
     pins.push(pin);
     byId.set(g.id, pin);
   }
@@ -622,16 +585,21 @@ export function createMilkyWayScene(
       sprite,
       texture: labelTex,
       aspect,
-    } = labelSprite(mc.name, 'rgba(200,214,255,0.8)', 'normal');
+    } = labelSprite(mc.name, { color: 'rgba(200,214,255,0.8)' });
     disposables.push(labelTex, sprite.material as THREE.SpriteMaterial);
     sprite.position.copy(position);
     sprite.renderOrder = 11;
     scene.add(sprite);
+    const slot = newLabelSlot(sprite, aspect, RANK_MAGELLANIC);
+    slots.push(slot);
+    const ring = addRing(position, false);
+    ring.renderOrder = 9;
     const pin: Pin = {
       id: mc.id,
       glow,
-      label: sprite,
-      labelAspect: aspect,
+      ring,
+      anchor: false,
+      slot,
       position,
       baseScale: 0.11,
     };
@@ -641,7 +609,7 @@ export function createMilkyWayScene(
 
   // ── #451 (WS-2) science-lens overlays — hidden until the lens toggles them ──
   const mkOverlayLabel = (text: string, color: string, wFrac: number): THREE.Sprite => {
-    const { sprite, texture, aspect } = labelSprite(text, color, 'normal');
+    const { sprite, texture, aspect } = labelSprite(text, { color });
     disposables.push(texture, sprite.material as THREE.SpriteMaterial);
     const h = R * wFrac;
     sprite.scale.set(h * aspect, h, 1);
@@ -690,15 +658,15 @@ export function createMilkyWayScene(
     }
     const ring = new THREE.LineLoop(
       track(new THREE.BufferGeometry().setFromPoints(pts)),
-      track(new THREE.LineBasicMaterial({ color: 0x66ccff, transparent: true, opacity: 0.38 })), // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+      track(new THREE.LineBasicMaterial({ color: 0x889fe7, transparent: true, opacity: 0.38 })), // --color-state: a ring is not a data colour (UXD-020)
     );
     ring.renderOrder = 6;
     rcGroup.add(ring);
-    const tag = mkOverlayLabel(m.explore_mw_lens_rc_speed(), 'rgba(120,205,255,0.9)', 0.03); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    const tag = mkOverlayLabel(m.explore_mw_lens_rc_speed(), 'rgba(160,185,255,0.9)', 0.03);
     tag.position.set(0, 0, -rr);
     rcGroup.add(tag);
   }
-  const rcLabel = mkOverlayLabel(m.explore_mw_lens_rc_label(), 'rgba(120,205,255,0.92)', 0.045); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+  const rcLabel = mkOverlayLabel(m.explore_mw_lens_rc_label(), 'rgba(160,185,255,0.92)', 0.045);
   rcLabel.position.set(0, 0, R * 1.45);
   rcGroup.add(rcLabel);
   scene.add(rcGroup);
@@ -722,6 +690,7 @@ export function createMilkyWayScene(
 
   let highlightId: string | null = null;
   const _cam = new THREE.Vector3();
+  const _tmp = new THREE.Vector3();
 
   // ── Cinematic bloom composer (self-contained; only this scene blooms) ────
   // Built lazily on first render so it binds to the live renderer. The core +
@@ -763,24 +732,33 @@ export function createMilkyWayScene(
       const g = lensGroups[key];
       if (g) g.visible = on;
     },
-    update(camera) {
+    update(camera, viewportH) {
       camera.getWorldPosition(_cam);
+      const fov = cameraFov(camera);
       for (const pin of pins) {
         const dist = Math.max(1, _cam.distanceTo(pin.position));
+        const wpp = worldPerPx(dist, fov, viewportH);
         const hi = pin.id === highlightId;
-        const g = dist * pin.baseScale * (hi ? 1.5 : 1);
-        pin.glow.scale.setScalar(g);
-        if (pin.ring) pin.ring.scale.setScalar(g * 1.6);
-        if (pin.label) {
-          const lh = dist * 0.038;
-          pin.label.scale.set(lh * pin.labelAspect, lh, 1);
-          pin.label.position.set(
-            pin.position.x,
-            pin.position.y + g * 0.9 + lh * 0.7,
-            pin.position.z,
-          );
-        }
+        // g0 is the STEADY glow: the hover grows the glow and the ring, never the label offset.
+        const g0 = pin.glow ? dist * pin.baseScale : 0;
+        pin.glow?.scale.setScalar(g0 * (hi ? 1.5 : 1));
+        applyRing(pin.ring, pin.anchor, hi, wpp);
+        const slot = pin.slot;
+        if (!slot) continue;
+        const lh = wpp * LABEL_SPRITE_PX;
+        slot.sprite.scale.set(lh * slot.aspect, lh, 1);
+        slot.sprite.position.set(
+          pin.position.x,
+          pin.position.y + labelOffset(g0, lh, wpp * (RING_PX / 2)),
+          pin.position.z,
+        );
+        slot.force = hi;
+        slot.visible = labelRect(slot.sprite, camera, _cam, slot.rect, _tmp);
       }
+      placeLabels(slots);
+    },
+    pinsSnapshot(camera, w, h) {
+      return snapshotPins('milky-way', pins, camera, w, h);
     },
     render(renderer, camera) {
       if (!bloom.enabled) {

@@ -534,3 +534,4 @@ Every item we deferred, with where it lands. Add to it whenever something is def
 | L25 | White text on the 22 % world-tint fill (Mars, Venus, Moon): measure contrast (NV15) | A4 brief NV15 | during A4 (with the sheets) |
 | L26 | Layout risks from taller chips (30/44): Explore left column vs Orbit Ruler and time dock, time dock at 390 px, ScaleNav at 390 px in de/ar, 13-chip nation legend wrap, vertical pull tabs, agency logo chips, RTL arrow keys — check in the A4 sheets | A4 implementer NOT VERIFIED | during A4 |
 | L27 | ~~Visual baselines for A4~~ — done: 14 PNGs regenerated in Docker (`fc4a246d856`) | A4 | during A4 |
+| L28 | /plan porkchop legend copy says "Cool teal = cheap" while the panel below says "Cool blue zones are cheap" (heat-map colours are data, L4) — make the copy match the palette decision, 14 locales | A4 sheets | with L4 palette review |

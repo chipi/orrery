@@ -74,7 +74,10 @@ test.describe('/explore — Arecibo message at M13 (#410)', () => {
   test('M13 opens a panel carrying the Arecibo Message culture door', async ({ page }) => {
     await page.goto('/explore?deepsky=M13');
     await waitForHydration(page);
-    await expect(page.getByText('Hercules Globular Cluster', { exact: false })).toBeVisible({
+    // Scoped to the panel: the neighbourhood INDEX (in the DOM, hidden) also lists M13 by name.
+    await expect(
+      page.getByRole('complementary', { name: 'Hercules Globular Cluster' }),
+    ).toBeVisible({
       timeout: 12_000,
     });
     await expect(page.getByText('The Arecibo Message', { exact: false }).first()).toBeVisible();

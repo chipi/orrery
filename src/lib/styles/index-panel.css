@@ -62,18 +62,6 @@
   outline: none;
   border-color: var(--color-accent-strong);
 }
-.si-close {
-  flex-shrink: 0;
-  width: 30px;
-  height: 30px;
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  color: var(--color-text-dim);
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-}
 .si-top ~ .si-filter-row {
   margin-bottom: 8px;
 }

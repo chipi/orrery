@@ -235,8 +235,8 @@
         aria-label={m.surface_index_search()}
         data-testid="scale-index-search"
       />
-      <button type="button" class="si-close" aria-label={m.star_index_close()} onclick={onClose}
-        >×</button
+      <Chip kind="action" class="si-close" aria-label={m.star_index_close()} onclick={onClose}
+        >×</Chip
       >
     </div>
     {#if filterIds.length > 0}

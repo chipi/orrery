@@ -4,6 +4,8 @@
   import PanelLightbox from './PanelLightbox.svelte';
   import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import Panel from './Panel.svelte';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
@@ -311,7 +313,13 @@
 
 <!-- grabFocus={false}: keep focus on the triggering fleet card so the
      grid's arrow-key nav keeps working immediately after the first open. -->
-<Panel {open} {onClose} grabFocus={false} title={entry?.name ?? entry?.id ?? ''}>
+<Panel
+  {open}
+  {onClose}
+  grabFocus={false}
+  title={entry?.name ?? entry?.id ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
   {#if entry}
     <div class="head">
       <AgencyRow agency={entry.agency}>
@@ -335,6 +343,16 @@
         <p class="tagline">{entry.tagline ?? entry.best_known_for}</p>
       {/if}
     </div>
+
+    {#if entry.explorer_route}
+      <PanelActions>
+        <Chip
+          kind="link"
+          href={localHref(`${entry.explorer_route}?id=${entry.id}`)}
+          data-sveltekit-preload-data="hover">{m.fleet_open_explorer({ name: entry.name })}</Chip
+        >
+      </PanelActions>
+    {/if}
 
     {#if hasGallery}
       <PanelHeroImage
@@ -383,16 +401,6 @@
         {#if entry.dispatch}
           <p class="dispatch">{entry.dispatch}</p>
         {/if}
-        {#if entry.explorer_route}
-          <a
-            class="explorer-cta"
-            href={localHref(`${entry.explorer_route}?id=${entry.id}`)}
-            data-sveltekit-preload-data="hover"
-          >
-            {m.fleet_open_explorer({ name: entry.name })}
-          </a>
-        {/if}
-
         <MuseumsForObject objectRef={entry.id} />
 
         <!-- Fleet -> Mission back-link CTA. Mirrors the Vehicle +
@@ -407,8 +415,10 @@
         {#if hasAnyMission}
           {@const missionIds = entry.linked_missions ?? []}
           {#if missionIds.length === 1}
+            <!-- b1-keep: navigation cards (label + value), not actions -->
             <div class="mission-cta-bar">
               <a
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--mission"
                 href={localHref(`/missions?id=${missionIds[0]}`)}
                 data-testid="fleet-mission-cta-single"
@@ -424,9 +434,11 @@
               </a>
             </div>
           {:else}
+            <!-- b1-keep: navigation cards (label + value), not actions -->
             <div class="mission-cta-bar">
               <button
                 type="button"
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--mission"
                 onclick={() => (tab = 'missions')}
                 data-testid="fleet-mission-cta-multi"
@@ -776,21 +788,6 @@
         {/if}
       {/if}
     </div>
-
-    <!-- #547 S4 — every fleet entry carries its collectible card. Same
-         quiet register as the missions panel's card CTA. -->
-    {#if cardSpec}
-      <div class="card-cta-bar">
-        <button
-          type="button"
-          class="cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          <span class="cta-text">{m.card_open_button()}</span>
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -810,36 +807,6 @@
 <style>
   .head {
     padding: 12px 16px 4px;
-  }
-  /* #547 S4 — card CTA, mirroring MissionPanel's quiet .cta-card register. */
-  .card-cta-bar {
-    padding: 12px 16px 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 12px;
-    flex-shrink: 0;
-  }
-  .cta-card {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-card:hover,
-  .cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-    outline: none;
   }
   /* .agency-row / .agency-badge / .status base now from AgencyRow.svelte;
      status chips converted from filled to the shared bordered treatment. */
@@ -924,29 +891,6 @@
 
   .tab-body {
     padding: 14px 16px 20px;
-  }
-
-  .explorer-cta {
-    display: block;
-    text-align: center;
-    background: var(--color-accent-soft);
-    border: 1px solid var(--color-accent-edge);
-    color: var(--color-state);
-    padding: 10px 14px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    transition:
-      background 0.15s,
-      border-color 0.15s;
-  }
-  .explorer-cta:hover {
-    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-    border-color: var(--color-accent);
   }
 
   /* Fleet -> Mission back-link CTA. Mirrors the .spec-cta system on

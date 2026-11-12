@@ -6,6 +6,7 @@
   import { page } from '$app/state';
   import { cardChain, goBackCard, isCardUrl } from '$lib/card-chain.svelte';
   import { audio } from '$lib/audio-state.svelte';
+  import Chip from './Chip.svelte';
 
   type Props = {
     open: boolean;
@@ -38,6 +39,11 @@
      * content and must stay visible above the info card.
      */
     mobileSheet?: 'full' | 'partial';
+    /**
+     * The entity's Share action (opens its collectible card). Passed by the
+     * panels that carry a card; the bar shows the chip only when it is set.
+     */
+    onShare?: () => void;
     children?: Snippet;
   };
   let {
@@ -47,6 +53,7 @@
     grabFocus = true,
     zIndex = 30,
     mobileSheet = 'full',
+    onShare,
     children,
   }: Props = $props();
 
@@ -93,22 +100,58 @@
     };
   });
 
+  let barEl: HTMLElement | undefined = $state();
+  let contentEl: HTMLElement | undefined = $state();
+
+  // The name joins the bar once the hero (else the first block) has scrolled out of view.
+  let nameShown = $state(false);
+  let nameRaf = 0;
+
+  function updateName() {
+    nameRaf = 0;
+    if (!contentEl) return;
+    const anchor = contentEl.querySelector('.panel-hero') ?? contentEl.firstElementChild;
+    nameShown = anchor
+      ? anchor.getBoundingClientRect().bottom <= contentEl.getBoundingClientRect().top
+      : false;
+  }
+
+  function onContentScroll() {
+    if (!nameRaf) nameRaf = requestAnimationFrame(updateName);
+  }
+
+  $effect(() => {
+    // New open or new entity: decide again from where the list sits.
+    void open;
+    void title;
+    nameShown = false;
+    if (contentEl) requestAnimationFrame(updateName);
+  });
+
   let touchStartY = $state(0);
   let touchDeltaY = $state(0);
+  // Swipe-down closes from the bar, or from the content only while it sits at the top:
+  // a finger pulling a scrolled list back up must not close the panel.
+  let swipeAllowed = false;
 
   function onTouchStart(e: TouchEvent) {
+    const target = e.target as Node;
+    swipeAllowed =
+      !!barEl?.contains(target) || (!!contentEl?.contains(target) && contentEl.scrollTop === 0);
     touchStartY = e.touches[0].clientY;
     touchDeltaY = 0;
   }
 
   function onTouchMove(e: TouchEvent) {
+    if (!swipeAllowed) return;
     const delta = e.touches[0].clientY - touchStartY;
     touchDeltaY = Math.max(0, delta);
   }
 
   function onTouchEnd() {
-    if (touchDeltaY > 80) onClose();
+    if (swipeAllowed && touchDeltaY > 80) onClose();
     touchDeltaY = 0;
+    swipeAllowed = false;
   }
 </script>
 
@@ -150,28 +193,35 @@
          docked affordances (HUD chips, breadcrumb, etc.) can land here
          in future without re-plumbing every consumer panel. -->
     <div class="panel-dock" aria-hidden="true"></div>
-    <!-- Global close affordance — lives on Panel itself so every
-         consumer (Planet/Sun/SmallBody/Mission/Fleet/Station/etc) gets
-         the same control without re-implementing it. Floats on top of
-         the content's first row so consumers don't need to leave room
-         for it in their layout. -->
-    {#if canGoBack}
-      <button
-        type="button"
-        class="panel-back"
-        onclick={goBackCard}
-        aria-label={m.panel_back()}
-        data-audio-stage="panel-back">←</button
+    <!-- The panel's header bar (UXD-018). A flex row above the scroll container, so the
+         close never overlaps scrolling text: back and close live on Panel itself, so every
+         consumer gets the same controls without re-implementing them. Share shows when the
+         host passes onShare (the entity has a collectible card). -->
+    <div class="panel-bar" bind:this={barEl}>
+      {#if canGoBack}
+        <Chip
+          kind="action"
+          class="panel-back"
+          onclick={goBackCard}
+          aria-label={m.panel_back()}
+          data-audio-stage="panel-back">←</Chip
+        >
+      {/if}
+      <span class="panel-bar-name" class:shown={nameShown} aria-hidden="true">{title ?? ''}</span>
+      {#if onShare}
+        <Chip kind="action" onclick={onShare} aria-haspopup="dialog" data-testid="open-card-btn"
+          >{m.panel_share()}</Chip
+        >
+      {/if}
+      <Chip
+        kind="action"
+        class="panel-close"
+        onclick={onClose}
+        aria-label={m.panel_close()}
+        data-audio-stage="panel-close">×</Chip
       >
-    {/if}
-    <button
-      type="button"
-      class="panel-close"
-      onclick={onClose}
-      aria-label={m.panel_close()}
-      data-audio-stage="panel-close">×</button
-    >
-    <div class="content" class:has-back={canGoBack}>
+    </div>
+    <div class="content" bind:this={contentEl} onscroll={onContentScroll}>
       {@render children?.()}
     </div>
   </aside>
@@ -268,74 +318,49 @@
     height: 0;
   }
 
-  .panel-close {
-    position: absolute;
-    top: calc(var(--panel-dock-h) + 14px);
-    inset-inline-end: 14px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    display: inline-flex;
+  /* Header bar: back, name, Share, close. A flex row between the dock and the scroll
+     container, so nothing scrolls under it. The chips are 30 px on a fine pointer (bar
+     38 px) and 44 px on touch (the chip is the bar). */
+  .panel-bar {
+    flex: none;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 1;
+    gap: 6px;
+    padding: 0 14px;
+    background: var(--color-panel-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
-  .panel-close:hover,
-  .panel-close:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: var(--color-text);
-    outline: none;
+  @media (hover: hover) and (pointer: fine) {
+    .panel-bar {
+      padding-block: 4px;
+    }
   }
-  :global(html[data-touch][data-orientation='portrait']) .panel-close {
-    top: 14px;
+  .panel-bar-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: var(--size-meta);
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 0;
+    transition: opacity 120ms;
   }
-
-  /* Back affordance (#29) — mirrors .panel-close on the top-LEFT. */
-  .panel-back {
-    position: absolute;
-    top: calc(var(--panel-dock-h) + 14px);
-    inset-inline-start: 14px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 20px;
-    line-height: 1;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  .panel-bar-name.shown {
+    opacity: 1;
   }
-  .panel-back:hover,
-  .panel-back:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: var(--color-text);
-    outline: none;
-  }
-  :global(html[data-touch][data-orientation='portrait']) .panel-back {
-    top: 14px;
-  }
-  /* When the back button is present it shares the top-left with the content's
-     first row (agency badges); push the content down so nothing overlaps. */
-  .content.has-back {
-    padding-top: 58px;
+  @media (prefers-reduced-motion: reduce) {
+    .panel-bar-name {
+      transition: none;
+    }
   }
 
   .content {
     overflow-y: auto;
     padding: 14px 18px;
     /* Bottom safe-area inset + room for the fixed footer pill so the
-       last CTA inside the panel (Plan / Fly mission) doesn't slip
-       under the version chip in the bottom-right corner. */
+       last line of the panel doesn't slip under the version chip in the
+       bottom-right corner. */
     padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
     flex: 1;
   }

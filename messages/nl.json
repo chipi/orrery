@@ -294,8 +294,6 @@
   "panel_orbit_shape_meta": "BAANVORM · e={e} · perihelium vs aphelium ×{ratio}",
   "panel_dist_row": "{mkm} M km vanaf de Zon · rotatie {rot} dagen",
   "panel_source_iau": "Bron: IAU · JPL Planetary Fact Sheets · J2000-epoche",
-  "panel_plan_mission_cta": "▶ PLAN EEN MISSIE NAAR {name}",
-  "panel_explore_surface_cta": "▷ VERKEN HET OPPERVLAK VAN {name}",
   "sun_label_spectral_class": "SPECTRAALKLASSE",
   "sun_label_system_mass": "SYSTEEMMASSA",
   "sun_label_radius": "STRAAL",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "Zwarte gaten",
   "nav_locale_suggest_label": "Bekijk deze pagina in je eigen taal",
   "landing_footer_privacy_link": "privacy",
-  "card_open_button": "Verzamelkaart",
   "card_share_link": "Link delen",
   "card_link_copied": "Link gekopieerd",
   "card_close": "Sluiten",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "Spiraalarmen",
   "explore_index_section_fiction": "Fictie",
   "explore_index_filter_headliner": "Bekende objecten",
-  "explore_index_filter_dwarf_galaxies": "Dwergstelsels"
+  "explore_index_filter_dwarf_galaxies": "Dwergstelsels",
+  "panel_share": "Delen",
+  "panel_action_plan": "Plan een missie",
+  "panel_action_surface": "Verken het oppervlak",
+  "mp_surface_mars_orbit": "In een baan om Mars",
+  "mp_surface_lunar_orbit": "In een maanbaan",
+  "mp_surface_mars_surface": "Op het oppervlak van Mars",
+  "mp_surface_lunar_surface": "Op het maanoppervlak"
 }

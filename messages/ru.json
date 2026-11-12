@@ -304,8 +304,6 @@
   "panel_orbit_shape_meta": "ФОРМА ОРБИТЫ · e={e} · перигелий к афелию ×{ratio}",
   "panel_dist_row": "{mkm} млн км от Солнца · вращение {rot} сут",
   "panel_source_iau": "Источник: IAU · JPL Planetary Fact Sheets · J2000",
-  "panel_plan_mission_cta": "▶ СПЛАНИРОВАТЬ МИССИЮ К {name}",
-  "panel_explore_surface_cta": "▷ ИССЛЕДОВАТЬ ПОВЕРХНОСТЬ {name}",
   "sun_label_spectral_class": "СПЕКТРАЛЬНЫЙ КЛАСС",
   "sun_label_system_mass": "МАССА СИСТЕМЫ",
   "sun_label_radius": "РАДИУС",
@@ -3031,7 +3029,6 @@
   "star_index_black_holes": "Чёрные дыры",
   "nav_locale_suggest_label": "Просмотреть эту страницу на вашем языке",
   "landing_footer_privacy_link": "конфиденциальности",
-  "card_open_button": "Коллекционная карточка",
   "card_share_link": "Поделиться ссылкой",
   "card_link_copied": "Ссылка скопирована",
   "card_close": "Закрыть",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "Спиральные рукава",
   "explore_index_section_fiction": "Фантастика",
   "explore_index_filter_headliner": "Известные объекты",
-  "explore_index_filter_dwarf_galaxies": "Карликовые галактики"
+  "explore_index_filter_dwarf_galaxies": "Карликовые галактики",
+  "panel_share": "Поделиться",
+  "panel_action_plan": "Спланировать миссию",
+  "panel_action_surface": "Исследовать поверхность",
+  "mp_surface_mars_orbit": "На орбите Марса",
+  "mp_surface_lunar_orbit": "На орбите Луны",
+  "mp_surface_mars_surface": "На поверхности Марса",
+  "mp_surface_lunar_surface": "На поверхности Луны"
 }

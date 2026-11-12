@@ -304,8 +304,6 @@
   "panel_orbit_shape_meta": "궤도 형태 · e={e} · 근일점 대 원일점 ×{ratio}",
   "panel_dist_row": "태양으로부터 {mkm}백만 킬로미터 · 자전 {rot}일",
   "panel_source_iau": "출처: IAU · JPL Planetary Fact Sheets · J2000 기준 시점",
-  "panel_plan_mission_cta": "▶ {name} 임무 계획하기",
-  "panel_explore_surface_cta": "▷ {name} 표면 탐험",
   "sun_label_spectral_class": "분광형",
   "sun_label_system_mass": "태양계 질량",
   "sun_label_radius": "반지름",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "블랙홀",
   "nav_locale_suggest_label": "이 페이지를 당신의 언어로 보기",
   "landing_footer_privacy_link": "개인정보 보호",
-  "card_open_button": "수집 카드",
   "card_share_link": "링크 공유",
   "card_link_copied": "링크 복사됨",
   "card_close": "닫기",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "나선팔",
   "explore_index_section_fiction": "픽션",
   "explore_index_filter_headliner": "주요 천체",
-  "explore_index_filter_dwarf_galaxies": "왜소은하"
+  "explore_index_filter_dwarf_galaxies": "왜소은하",
+  "panel_share": "공유",
+  "panel_action_plan": "임무 계획하기",
+  "panel_action_surface": "표면 탐험",
+  "mp_surface_mars_orbit": "화성 궤도",
+  "mp_surface_lunar_orbit": "달 궤도",
+  "mp_surface_mars_surface": "화성 표면",
+  "mp_surface_lunar_surface": "달 표면"
 }

@@ -304,8 +304,6 @@
   "panel_orbit_shape_meta": "شكل المدار · e={e} · الحضيض مقابل الأوج ×{ratio}",
   "panel_dist_row": "{mkm} مليون كم من الشمس · دوران {rot} يوم",
   "panel_source_iau": "المصدر: IAU · JPL Planetary Fact Sheets · الحقبة J2000",
-  "panel_plan_mission_cta": "▶ خطط لمهمة إلى {name}",
-  "panel_explore_surface_cta": "▷ استكشف سطح {name}",
   "sun_label_spectral_class": "الفئة الطيفية",
   "sun_label_system_mass": "كتلة المنظومة",
   "sun_label_radius": "نصف القطر",
@@ -3029,7 +3027,6 @@
   "star_index_black_holes": "الثقوب السوداء",
   "nav_locale_suggest_label": "عرض هذه الصفحة بلغتك",
   "landing_footer_privacy_link": "الخصوصية",
-  "card_open_button": "بطاقة المجموعة",
   "card_share_link": "مشاركة الرابط",
   "card_link_copied": "تم نسخ الرابط",
   "card_close": "إغلاق",
@@ -3705,5 +3702,12 @@
   "explore_index_section_arms": "الأذرع الحلزونية",
   "explore_index_section_fiction": "خيال",
   "explore_index_filter_headliner": "أبرز الأجرام",
-  "explore_index_filter_dwarf_galaxies": "المجرات القزمة"
+  "explore_index_filter_dwarf_galaxies": "المجرات القزمة",
+  "panel_share": "مشاركة",
+  "panel_action_plan": "خطط لمهمة",
+  "panel_action_surface": "استكشف السطح",
+  "mp_surface_mars_orbit": "في مدار المريخ",
+  "mp_surface_lunar_orbit": "في مدار القمر",
+  "mp_surface_mars_surface": "على سطح المريخ",
+  "mp_surface_lunar_surface": "على سطح القمر"
 }

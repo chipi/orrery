@@ -61,7 +61,7 @@
           target.z + Math.sin(angle) * R,
         );
         camera.lookAt(target);
-        lg.update(camera);
+        lg.update(camera, window.innerHeight);
         lg.render(renderer, camera);
         raf = requestAnimationFrame(loop);
       };

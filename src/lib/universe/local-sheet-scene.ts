@@ -3,19 +3,36 @@
  * one step out from the Local Group. A SCHEMATIC, NOT TO SCALE model (PRD-030
  * principle 2): each neighbouring galaxy group is a soft glowing blob at its
  * schematic position, with the Local Group at the centre as the "you are here"
- * anchor (a teal ring, like the Milky Way ring in the Local Group scene).
+ * anchor (a gold ring, like the Milky Way ring in the Local Group scene).
  *
  * WebGL builder — coverage-excluded (see vite.config.ts).
  */
 import * as THREE from 'three';
 import type { LocalSheetData, LocalSheetMember } from '$lib/data';
+import { labelSprite, radialTexture, ringTexture, createRing } from './scene-pin-sprites';
+import {
+  LABEL_SPRITE_PX,
+  RING_PX,
+  applyRing,
+  cameraFov,
+  labelOffset,
+  labelRect,
+  newLabelSlot,
+  placeLabels,
+  snapshotPins,
+  worldPerPx,
+  type LabelSlot,
+  type PinsSnapshot,
+} from './scene-pins';
 
 export interface LocalSheetScene {
   scene: THREE.Scene;
   pickables: THREE.Object3D[];
   objectPosition(id: string): THREE.Vector3 | null;
   highlight(id: string | null): void;
-  update(camera: THREE.Camera): void;
+  update(camera: THREE.Camera, viewportH: number): void;
+  /** Probe for the e2e specs: every label and ring as it is on screen (client px). */
+  pinsSnapshot(camera: THREE.Camera, w: number, h: number): PinsSnapshot;
   render(renderer: THREE.WebGLRenderer, camera: THREE.Camera): void;
   setSize(w: number, h: number): void;
   dispose(): void;
@@ -23,70 +40,13 @@ export interface LocalSheetScene {
 
 export const LS_SCENE_RADIUS = 150;
 
-function radialTexture(stops: Array<[number, string]>, size = 128): THREE.CanvasTexture {
-  const cvs = document.createElement('canvas');
-  cvs.width = cvs.height = size;
-  const ctx = cvs.getContext('2d')!;
-  const c = size / 2;
-  const g = ctx.createRadialGradient(c, c, 0, c, c, c);
-  for (const [o, col] of stops) g.addColorStop(o, col);
-  ctx.fillStyle = g;
-  ctx.beginPath();
-  ctx.arc(c, c, c, 0, Math.PI * 2);
-  ctx.fill();
-  const t = new THREE.CanvasTexture(cvs);
-  t.colorSpace = THREE.SRGBColorSpace;
-  t.minFilter = THREE.LinearFilter;
-  t.magFilter = THREE.LinearFilter;
-  return t;
-}
-
-function labelSprite(text: string): {
-  sprite: THREE.Sprite;
-  texture: THREE.CanvasTexture;
-  aspect: number;
-} {
-  const upper = text.toUpperCase();
-  const font = '400 24px "Space Mono", monospace';
-  const measure = document.createElement('canvas').getContext('2d')!;
-  measure.font = font;
-  measure.letterSpacing = '2px';
-  const pad = 12;
-  const w = Math.ceil(measure.measureText(upper).width) + pad * 2;
-  const h = 40;
-  const cvs = document.createElement('canvas');
-  cvs.width = w;
-  cvs.height = h;
-  const ctx = cvs.getContext('2d')!;
-  ctx.font = font;
-  ctx.letterSpacing = '2px';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0,0,0,0.9)';
-  ctx.shadowBlur = 5;
-  ctx.fillStyle = 'rgba(200,214,255,0.9)';
-  ctx.fillText(upper, w / 2, h / 2);
-  const texture = new THREE.CanvasTexture(cvs);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  texture.minFilter = THREE.LinearFilter;
-  texture.magFilter = THREE.LinearFilter;
-  const sprite = new THREE.Sprite(
-    new THREE.SpriteMaterial({
-      map: texture,
-      transparent: true,
-      depthTest: false,
-      depthWrite: false,
-    }),
-  );
-  return { sprite, texture, aspect: w / h };
-}
-
 interface Pin {
   id: string;
   glow: THREE.Sprite;
-  ring?: THREE.Sprite;
-  label: THREE.Sprite;
-  labelAspect: number;
+  /** Every pin has one; it shows on hover or selection (the anchor: always, gold). */
+  ring: THREE.Sprite;
+  anchor: boolean;
+  slot: LabelSlot;
   position: THREE.Vector3;
   baseScale: number;
   alwaysLabel: boolean;
@@ -130,6 +90,8 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
   const pins: Pin[] = [];
   const byId = new Map<string, Pin>();
   const pickables: THREE.Object3D[] = [];
+  const slots: LabelSlot[] = [];
+  const ringTex = track(ringTexture());
 
   for (const m of data.members) {
     const position = toScene(m);
@@ -141,9 +103,9 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
             radialTexture(
               isAnchor
                 ? [
-                    [0, 'rgba(120,240,230,0.7)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                    [0.5, 'rgba(90,210,200,0.3)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                    [1, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                    [0, 'rgba(236,242,255,0.7)'],
+                    [0.5, 'rgba(206,222,255,0.3)'],
+                    [1, 'rgba(190,210,255,0)'],
                   ]
                 : [
                     [0, 'rgba(214,226,255,0.65)'],
@@ -165,37 +127,26 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
     scene.add(glow);
     pickables.push(glow);
 
-    // The Local Group anchor gets a "you are here" teal ring.
-    let ring: THREE.Sprite | undefined;
-    if (isAnchor) {
-      ring = new THREE.Sprite(
-        track(
-          new THREE.SpriteMaterial({
-            map: track(
-              radialTexture([
-                [0, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                [0.72, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                [0.82, 'rgba(78,205,196,0.9)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                [0.92, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-                [1, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-              ]),
-            ),
-            transparent: true,
-            depthTest: false,
-            depthWrite: false,
-          }),
-        ),
-      );
-      ring.position.copy(position);
-      ring.renderOrder = 9;
-      scene.add(ring);
-    }
+    // Every pin has a ring (hover / selection); the anchor's is the gold "you are here" ring
+    // and stays up. Screen-constant, like the labels.
+    const ring = createRing(ringTex, isAnchor);
+    track(ring.material as THREE.SpriteMaterial);
+    ring.position.copy(position);
+    ring.renderOrder = 9;
+    scene.add(ring);
 
-    const { sprite: label, texture: labelTex, aspect } = labelSprite(m.name);
+    const {
+      sprite: label,
+      texture: labelTex,
+      aspect,
+    } = labelSprite(m.name, { color: 'rgba(200,214,255,0.9)' });
     disposables.push(labelTex, label.material as THREE.SpriteMaterial);
     label.position.copy(position);
     label.renderOrder = 11;
     scene.add(label);
+    // Label priority when two collide (lower wins): the anchor, the headliners, the rest.
+    const slot = newLabelSlot(label, aspect, isAnchor ? 0 : m.headliner ? 1 : 10);
+    slots.push(slot);
 
     // Blob size scales with the group's diameter, clamped for legibility.
     const baseScale = Math.max(0.05, Math.min(0.16, Math.sqrt(m.diam_mly) * 0.03));
@@ -203,8 +154,8 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
       id: m.id,
       glow,
       ring,
-      label,
-      labelAspect: aspect,
+      anchor: isAnchor,
+      slot,
       position,
       baseScale,
       alwaysLabel: m.headliner || isAnchor,
@@ -215,6 +166,7 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
 
   let highlightId: string | null = null;
   const _cam = new THREE.Vector3();
+  const _tmp = new THREE.Vector3();
 
   return {
     scene,
@@ -223,19 +175,35 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
     highlight(id) {
       highlightId = id;
     },
-    update(camera) {
+    update(camera, viewportH) {
       camera.getWorldPosition(_cam);
+      const fov = cameraFov(camera);
       for (const pin of pins) {
         const dist = Math.max(1, _cam.distanceTo(pin.position));
+        const wpp = worldPerPx(dist, fov, viewportH);
         const hi = pin.id === highlightId;
-        const g = dist * pin.baseScale * (hi ? 1.5 : 1);
-        pin.glow.scale.setScalar(g);
-        if (pin.ring) pin.ring.scale.setScalar(g * 1.6);
-        pin.label.visible = pin.alwaysLabel || hi;
-        const lh = dist * 0.03;
-        pin.label.scale.set(lh * pin.labelAspect, lh, 1);
-        pin.label.position.set(pin.position.x, pin.position.y + g * 0.9 + lh * 0.7, pin.position.z);
+        // g0 is the STEADY glow: the hover grows the glow and the ring, never the label offset.
+        const g0 = dist * pin.baseScale;
+        pin.glow.scale.setScalar(g0 * (hi ? 1.5 : 1));
+        applyRing(pin.ring, pin.anchor, hi, wpp);
+        const slot = pin.slot;
+        slot.force = hi;
+        slot.visible = false;
+        if (pin.alwaysLabel || hi) {
+          const lh = wpp * LABEL_SPRITE_PX;
+          slot.sprite.scale.set(lh * slot.aspect, lh, 1);
+          slot.sprite.position.set(
+            pin.position.x,
+            pin.position.y + labelOffset(g0, lh, wpp * (RING_PX / 2)),
+            pin.position.z,
+          );
+          slot.visible = labelRect(slot.sprite, camera, _cam, slot.rect, _tmp);
+        }
       }
+      placeLabels(slots);
+    },
+    pinsSnapshot(camera, w, h) {
+      return snapshotPins('local-sheet', pins, camera, w, h);
     },
     render(renderer, camera) {
       renderer.render(scene, camera);

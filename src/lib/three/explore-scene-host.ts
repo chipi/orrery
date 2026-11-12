@@ -35,6 +35,7 @@ import {
   galacticToScene,
 } from '$lib/universe/milky-way-visual';
 import { describeDistanceAu, niceScaleBar, AU_PER_PC } from '$lib/universe/scale-readout';
+import { placeLabels, type PlaceSlot } from '$lib/universe/scene-pins';
 import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
 import { PLANETS, realStartAngle } from '$lib/explore-scene';
@@ -302,6 +303,8 @@ export interface ExploreSceneHostDeps extends Pick<
   | 'planetOrbitLines'
   | 'selHalo'
   | 'selRingMat'
+  | 'hoverHalo'
+  | 'hoverRingMat'
   | 'smallBodyObjs'
   | 'tmpWorldPos'
   | 'updatePlanetLods'
@@ -398,6 +401,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     planetOrbitLines,
     selHalo,
     selRingMat,
+    hoverHalo,
+    hoverRingMat,
     smallBodyObjs,
     tmpWorldPos,
     updatePlanetLods,
@@ -1989,6 +1994,30 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ringAt: selHalo.position.toArray(),
       viewShiftPx: framingShift,
     });
+    // Read-only probe of the pin scenes (readability e2e): every label and ring as drawn, client px.
+    window.__scenePins = () => {
+      const sc = inNeighborhood()
+        ? nbScene
+        : inMilkyWay()
+          ? mwScene
+          : inLocalGroup()
+            ? lgScene
+            : inLocalSheet()
+              ? lsScene
+              : inVirgo()
+                ? virgoScene
+                : inLaniakea()
+                  ? laniakeaScene
+                  : inCosmicWeb()
+                    ? cosmicWebScene
+                    : null;
+      if (!sc) return null;
+      return sc.pinsSnapshot(
+        camera,
+        bridge.container?.clientWidth ?? 1,
+        bridge.container?.clientHeight ?? 1,
+      );
+    };
     window.__exploreBodyPosition = (key) => bodyWorldPosition(key)?.toArray() ?? null;
     window.__exploreBodyScreen = (key) => {
       const at = bodyWorldPosition(key);
@@ -2336,7 +2365,33 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ...smallBodyPickAids,
     ...lagrangeMeshes,
   ];
+  // The ring body for a planet or small body, in world units, with its centre written to `out`
+  // (0 when the scene has no object for it). Shared by the selection ring and the hover ring.
+  const planetOrSmallRing = (
+    planetId: string | null,
+    smallId: string | null,
+    out: THREE.Vector3,
+  ): number => {
+    const sceneId =
+      planetId ?? (smallId ? scenePlanetIdOf({ kind: 'small-body', id: smallId }) : null);
+    const selObj = sceneId ? planetObjs.find((o) => o.planet.id === sceneId) : undefined;
+    if (selObj) {
+      out.copy(selObj.group.position);
+      return selObj.planet.size3 * 1.25;
+    }
+    const smallObj =
+      !selObj && smallId ? smallBodyObjs.find((o) => o.body.id === smallId) : undefined;
+    if (smallObj) {
+      smallObj.mesh.getWorldPosition(out);
+      return (smallObj.mesh.geometry as THREE.SphereGeometry).parameters.radius * 3;
+    }
+    return 0;
+  };
+  const tmpHoverPos = new THREE.Vector3();
+  // The planet or small body under the cursor in the solar scene (drawn as the hover ring).
+  let hoverRingTarget: { planetId: string | null; smallBodyId: string | null } | null = null;
   const onHover = (e: MouseEvent) => {
+    hoverRingTarget = null;
     if (bridge.view !== '3d' || isDrag3d) {
       if (bridge.hoverData) bridge.hoverData = null;
       if (iconic.state.hoveredId) iconic.state.hoveredId = null;
@@ -2442,6 +2497,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     const smallBodyId = hits[0].object.userData.smallBodyId as string | undefined;
     const lagrangeKind = hits[0].object.userData.lagrangeKind as 'L1' | 'L2' | undefined;
     const lagrangePlanetId = hits[0].object.userData.lagrangePlanetId as string | undefined;
+    if (planetId || smallBodyId) {
+      hoverRingTarget = { planetId: planetId ?? null, smallBodyId: smallBodyId ?? null };
+    }
     // Mean velocity via vis-viva at r=a; collapses to sqrt(μ/a).
     // μ ≈ 4π² in AU³/yr², 4.7404 km/s per AU/yr (IAU 2012).
     if (lagrangeKind && lagrangePlanetId) {
@@ -2540,6 +2598,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     }
   };
   const onHoverLeave = () => {
+    hoverRingTarget = null;
     bridge.hoverData = null;
     iconic.state.hoveredId = null;
   };
@@ -3555,7 +3614,67 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // Planet Nine ring, selection ring, tooltip (3a-5/3a-6).
   // ──────────────────────────────────────────────────────────────
 
+  // 2D view text: 11 px at every zoom (drawn under the inverse of the view scale), run through
+  // the same placement pass as the 3D labels. Pooled so a frame allocates nothing.
+  interface Label2d extends PlaceSlot {
+    text: string;
+    wx: number;
+    wy: number;
+    dx: number;
+    dy: number;
+    fill: string;
+    blur: number;
+    align: CanvasTextAlign;
+  }
+  const FONT_2D_PX = 11;
+  const labels2d: Label2d[] = [];
+  let labels2dN = 0;
+  const pushLabel2d = (
+    text: string,
+    wx: number,
+    wy: number,
+    dx: number,
+    dy: number,
+    fill: string,
+    blur: number,
+    rank: number,
+    force: boolean,
+    align: CanvasTextAlign = 'left',
+  ) => {
+    const l = (labels2d[labels2dN] ??= {
+      text: '',
+      wx: 0,
+      wy: 0,
+      dx: 0,
+      dy: 0,
+      fill: '',
+      blur: 0,
+      align: 'left',
+      rank: 0,
+      force: false,
+      visible: false,
+      rect: { l: 0, r: 0, b: 0, t: 0 },
+    });
+    labels2dN++;
+    l.text = text;
+    l.wx = wx;
+    l.wy = wy;
+    l.dx = dx;
+    l.dy = dy;
+    l.fill = fill;
+    l.blur = blur;
+    l.align = align;
+    l.rank = rank;
+    l.force = force;
+  };
+  if (typeof window !== 'undefined') {
+    window.__explore2dLabels = () =>
+      labels2d.map((l) => ({ text: l.text, fontPx: FONT_2D_PX, shown: l.visible }));
+  }
+
   const draw2d = () => {
+    for (const l of labels2d) l.visible = false;
+    labels2dN = 0;
     // Defensive sync: the canvas is `display: none` while view='3d',
     // so its clientWidth/clientHeight are 0 at onMount and resize2d()
     // sets c2.width=c2.height=0. When the user toggles to 2D the
@@ -3687,12 +3806,18 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.setLineDash([4, 9]);
     ctx2.stroke();
     ctx2.setLineDash([]);
-    ctx2.save();
-    ctx2.font = "7px 'Space Mono',monospace";
-    ctx2.fillStyle = 'rgba(160,120,220,0.32)';
-    ctx2.textAlign = 'center';
-    ctx2.fillText(m.explore_planet_nine({ dist: m.unit_au_value({ value: 600 }) }), 0, -pnR - 6);
-    ctx2.restore();
+    pushLabel2d(
+      m.explore_planet_nine({ dist: m.unit_au_value({ value: 600 }) }),
+      0,
+      -pnR,
+      0,
+      -6,
+      'rgba(160,120,220,0.6)',
+      0,
+      100,
+      false,
+      'center',
+    );
 
     // Sun glow + core
     for (let r = 90; r > 0; r -= 6) {
@@ -3708,12 +3833,18 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.arc(0, 0, 14, 0, Math.PI * 2);
     ctx2.fillStyle = '#fff8e7';
     ctx2.fill();
-    ctx2.save();
-    ctx2.font = "7px 'Space Mono',monospace";
-    ctx2.fillStyle = 'rgba(255,220,100,0.5)';
-    ctx2.textAlign = 'center';
-    ctx2.fillText(m.explore_sun_caps(), 0, 22);
-    ctx2.restore();
+    pushLabel2d(
+      m.explore_sun_caps(),
+      0,
+      0,
+      0,
+      22,
+      'rgba(255,220,100,0.6)',
+      0,
+      -10,
+      false,
+      'center',
+    );
 
     // Planets — gated by the PLANETS layer (issue #32). When the
     // layer is off we skip drawing AND populating planet2dPos so
@@ -3832,15 +3963,18 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         ctx2.fillStyle = 'rgba(255,255,255,0.18)';
         ctx2.fill();
 
-        // Label
-        ctx2.save();
-        ctx2.font = "8px 'Space Mono',monospace";
-        ctx2.shadowColor = 'rgba(0,0,0,0.9)';
-        ctx2.shadowBlur = 6;
-        ctx2.fillStyle = p.css + 'cc';
-        ctx2.textAlign = 'left';
-        ctx2.fillText(planetName2d(p.id, p.name), px + pr + 5, py + 3);
-        ctx2.restore();
+        // Label: priority is the planet's order from the Sun, the selected one always shows
+        pushLabel2d(
+          planetName2d(p.id, p.name),
+          px + pr,
+          py,
+          5,
+          4,
+          p.css + 'cc',
+          6,
+          PLANETS.indexOf(p),
+          bridge.selectedId === p.id,
+        );
       });
 
     // Small bodies — dots + labels. Closed-orbit bodies advance with
@@ -3887,23 +4021,58 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ctx2.fillStyle = b.color;
       ctx2.fill();
 
-      // Label
-      ctx2.save();
-      ctx2.font = "7px 'Space Mono',monospace";
-      ctx2.shadowColor = 'rgba(0,0,0,0.9)';
-      ctx2.shadowBlur = 5;
-      ctx2.fillStyle = b.color + 'aa';
-      ctx2.textAlign = 'left';
-      ctx2.fillText(smallBodyName2d(b.id, b.name), px + 5, py + 2);
-      ctx2.restore();
+      // Label (after the planets in priority; the selected one always shows)
+      pushLabel2d(
+        smallBodyName2d(b.id, b.name),
+        px,
+        py,
+        5,
+        3,
+        b.color + 'aa',
+        5,
+        20 + SMALL_BODIES.indexOf(b),
+        bridge.selectedSmallBodyId === b.id,
+      );
     });
+
+    // Place the labels in screen pixels, then draw each at its final 11 px: the view scale is
+    // undone around the text so it does not grow or shrink with the zoom.
+    ctx2.font = `${FONT_2D_PX}px 'Space Mono',monospace`;
+    for (let i = 0; i < labels2dN; i++) {
+      const l = labels2d[i];
+      const w = ctx2.measureText(l.text).width;
+      const sx = W / 2 + zx2d + l.wx * zoom2d + l.dx;
+      const sy = H / 2 + zy2d + l.wy * zoom2d + l.dy;
+      const left = l.align === 'center' ? sx - w / 2 : sx;
+      l.rect.l = left;
+      l.rect.r = left + w;
+      l.rect.b = sy - FONT_2D_PX;
+      l.rect.t = sy + 3;
+      l.visible = left < W && left + w > 0 && sy > 0 && sy - FONT_2D_PX < H;
+    }
+    placeLabels(labels2d);
+    for (const l of labels2d) {
+      if (!l.visible) continue;
+      ctx2.save();
+      ctx2.translate(l.wx, l.wy);
+      ctx2.scale(1 / zoom2d, 1 / zoom2d);
+      ctx2.font = "11px 'Space Mono',monospace";
+      if (l.blur) {
+        ctx2.shadowColor = 'rgba(0,0,0,0.9)';
+        ctx2.shadowBlur = l.blur;
+      }
+      ctx2.fillStyle = l.fill;
+      ctx2.textAlign = l.align;
+      ctx2.fillText(l.text, l.dx, l.dy);
+      ctx2.restore();
+    }
 
     ctx2.restore();
 
     // Bottom hint in screen space
     ctx2.save();
-    ctx2.font = "8px 'Space Mono',monospace";
-    ctx2.fillStyle = 'rgba(255,255,255,0.08)';
+    ctx2.font = "11px 'Space Mono',monospace";
+    ctx2.fillStyle = 'rgba(255,255,255,0.58)';
     ctx2.fillText(m.explore_2d_hint(), 22, H - 10);
     ctx2.restore();
   };
@@ -3942,6 +4111,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // push the new resolution so the 1.2px stroke stays exact after
     // a viewport resize / device-rotation.
     selRingMat.resolution.set(bridge.container.clientWidth, bridge.container.clientHeight);
+    hoverRingMat.resolution.set(bridge.container.clientWidth, bridge.container.clientHeight);
     // Re-fit the iconic-mission legend to the new viewport height.
     sizePathsLegend();
   };
@@ -4365,20 +4535,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
             ringR = satObj.def.sizeUnits * 1.25;
           }
         } else if (bridge.selectedId || bridge.selectedSmallBodyId) {
-          const smallId = bridge.selectedSmallBodyId;
-          const planetId =
-            bridge.selectedId ??
-            (smallId ? scenePlanetIdOf({ kind: 'small-body', id: smallId }) : null);
-          const selObj = planetId ? planetObjs.find((o) => o.planet.id === planetId) : undefined;
-          const smallObj =
-            !selObj && smallId ? smallBodyObjs.find((o) => o.body.id === smallId) : undefined;
-          if (selObj) {
-            tmpWorldPos.copy(selObj.group.position);
-            ringR = selObj.planet.size3 * 1.25;
-          } else if (smallObj) {
-            smallObj.mesh.getWorldPosition(tmpWorldPos);
-            ringR = (smallObj.mesh.geometry as THREE.SphereGeometry).parameters.radius * 3;
-          }
+          ringR = planetOrSmallRing(bridge.selectedId, bridge.selectedSmallBodyId, tmpWorldPos);
         } else if (bridge.selectedSun) {
           tmpWorldPos.set(0, 0, 0);
           ringR =
@@ -4395,6 +4552,24 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
           selHalo.visible = true;
         } else {
           selHalo.visible = false;
+        }
+        // Hover ring (UXD-020): the body under the cursor, unless it is the selected one.
+        let hoverR = 0;
+        const ht = hoverRingTarget;
+        if (
+          ht &&
+          !(ht.planetId && ht.planetId === bridge.selectedId && !bridge.selectedSatelliteKey) &&
+          !(ht.smallBodyId && ht.smallBodyId === bridge.selectedSmallBodyId)
+        ) {
+          hoverR = planetOrSmallRing(ht.planetId, ht.smallBodyId, tmpHoverPos);
+        }
+        if (hoverR > 0) {
+          hoverHalo.scale.set(hoverR, hoverR, hoverR);
+          hoverHalo.position.copy(tmpHoverPos);
+          hoverHalo.lookAt(camera.position);
+          hoverHalo.visible = true;
+        } else {
+          hoverHalo.visible = false;
         }
         for (const b of beltBrightness) {
           const on = bridge.selectedBeltId === b.id;
@@ -4447,7 +4622,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         if (inNeighborhood() && nbScene) {
           stepCrossDolly();
           stepDeepSkyApproach();
-          nbScene.update(camR, camera);
+          nbScene.update(camR, camera, bridge.container?.clientHeight ?? 1);
           renderer.render(nbScene.scene, camera);
           // Sun-compass: project the Sun (origin) to screen ~10×/s and steer the
           // "home" needle. On-screen → the gold marker speaks for itself; off-
@@ -4462,37 +4637,37 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         }
         if (inMilkyWay() && mwScene) {
           stepCrossDolly();
-          mwScene.update(camera);
+          mwScene.update(camera, bridge.container?.clientHeight ?? 1);
           mwScene.render(renderer, camera); // cinematic bloom composer
           return;
         }
         if (inLocalGroup() && lgScene) {
           stepCrossDolly();
-          lgScene.update(camera);
+          lgScene.update(camera, bridge.container?.clientHeight ?? 1);
           lgScene.render(renderer, camera); // cinematic bloom composer
           return;
         }
         if (inLocalSheet() && lsScene) {
           stepCrossDolly();
-          lsScene.update(camera);
+          lsScene.update(camera, bridge.container?.clientHeight ?? 1);
           lsScene.render(renderer, camera);
           return;
         }
         if (inVirgo() && virgoScene) {
           stepCrossDolly();
-          virgoScene.update(camera);
+          virgoScene.update(camera, bridge.container?.clientHeight ?? 1);
           virgoScene.render(renderer, camera);
           return;
         }
         if (inLaniakea() && laniakeaScene) {
           stepCrossDolly();
-          laniakeaScene.update(camera);
+          laniakeaScene.update(camera, bridge.container?.clientHeight ?? 1);
           laniakeaScene.render(renderer, camera);
           return;
         }
         if (inCosmicWeb() && cosmicWebScene) {
           stepCrossDolly();
-          cosmicWebScene.update(camera);
+          cosmicWebScene.update(camera, bridge.container?.clientHeight ?? 1);
           cosmicWebScene.render(renderer, camera);
           return;
         }

@@ -14,6 +14,9 @@ import * as THREE from 'three';
 import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2.js';
 import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
+import { Line2 } from 'three/examples/jsm/lines/Line2.js';
+import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
+import * as m from '$lib/paraglide/messages';
 import { selectVisibleStars, type ShellData } from './star-selection';
 import { createPointField, type PointFieldHandle } from './point-field';
 import { tierToStarBudget } from './budget';
@@ -22,6 +25,23 @@ import { buildDeepSkyLayer, type DeepSkyLayerHandle } from './deep-sky-scene';
 import { lightShells, CAUSALITY_EPOCHS, CAUSALITY_NOW, type LightShell } from './causality';
 import type { NamedStar, DeepSkyObject } from '$lib/data';
 import type { QualityTier } from '$lib/quality/quality-tier';
+import { labelSprite, ringTexture, createRing } from './scene-pin-sprites';
+import {
+  LABEL_SPRITE_PX,
+  RING_PX,
+  applyRing,
+  cameraFov,
+  labelOffset,
+  labelRect,
+  lyRampColor,
+  newLabelSlot,
+  placeLabels,
+  snapshotPins,
+  worldPerPx,
+  type LabelSlot,
+  type PinsSnapshot,
+  type ProbePin,
+} from './scene-pins';
 
 export interface NeighborhoodScene {
   scene: THREE.Scene;
@@ -67,7 +87,9 @@ export interface NeighborhoodScene {
   deepSkyObject(id: string): DeepSkyObject | null;
   /** Reveal state + per-frame marker sizing. Pass the camera so markers keep a
    *  constant on-screen size regardless of each star's distance. */
-  update(camDistPc: number, camera?: THREE.Camera): void;
+  update(camDistPc: number, camera?: THREE.Camera, viewportH?: number): void;
+  /** Probe for the e2e specs: every label and ring as it is on screen (client px). */
+  pinsSnapshot(camera: THREE.Camera, w: number, h: number): PinsSnapshot;
   dispose(): void;
 }
 
@@ -154,98 +176,18 @@ function revealOpacity(camDistPc: number): number {
   return Math.min(1, Math.max(0, (camDistPc - 0.04) / (0.5 - 0.04)));
 }
 
-/** Ring texture — a discoverable "selectable" halo around a named star. Drawn as
- *  a crisp teal annulus (the app's accent) so it reads clearly against the white
- *  stars rather than washing out. Normal (not additive) blending keeps the colour
- *  true where it overlaps a bright star. */
-function makeHaloTexture(): THREE.CanvasTexture {
-  const s = 128;
-  const cvs = document.createElement('canvas');
-  cvs.width = cvs.height = s;
-  const ctx = cvs.getContext('2d')!;
-  const c = s / 2;
-  // Outer soft glow.
-  const g = ctx.createRadialGradient(c, c, s * 0.28, c, c, s * 0.5);
-  g.addColorStop(0, 'rgba(78,205,196,0)'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-  g.addColorStop(0.72, 'rgba(78,205,196,0.1)'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-  g.addColorStop(1, 'rgba(78,205,196,0)'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-  ctx.fillStyle = g;
-  ctx.fillRect(0, 0, s, s);
-  // Crisp accent ring — kept dim so the halos don't out-shine the stars inside.
-  ctx.strokeStyle = 'rgba(78,205,196,0.75)'; // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-  ctx.lineWidth = s * 0.045;
-  ctx.beginPath();
-  ctx.arc(c, c, s * 0.36, 0, Math.PI * 2);
-  ctx.stroke();
-  const tex = new THREE.CanvasTexture(cvs);
-  tex.colorSpace = THREE.SRGBColorSpace;
-  return tex;
-}
-
-/** Canvas-backed text sprite for a star name (world-scaled; caller sizes it). */
-function makeLabelSprite(text: string): { sprite: THREE.Sprite; texture: THREE.CanvasTexture } {
-  const upper = text.toUpperCase();
-  const pad = 12;
-  // Lighter weight + wide tracking reads modern/editorial rather than the old bold
-  // mono-HUD look; on-screen size is trimmed via the marker scale (applyMarkerScale).
-  const font = '400 24px "Space Mono", monospace';
-  const tracking = '2px';
-  const measure = document.createElement('canvas').getContext('2d')!;
-  measure.font = font;
-  measure.letterSpacing = tracking;
-  const w = Math.ceil(measure.measureText(upper).width) + pad * 2;
-  const h = 40;
-  const cvs = document.createElement('canvas');
-  cvs.width = w;
-  cvs.height = h;
-  const ctx = cvs.getContext('2d')!;
-  ctx.font = font;
-  ctx.letterSpacing = tracking;
-  ctx.textBaseline = 'middle';
-  ctx.shadowColor = 'rgba(0,0,0,0.85)';
-  ctx.shadowBlur = 5;
-  ctx.fillStyle = 'rgba(223, 236, 247, 0.92)';
-  ctx.fillText(upper, pad, h / 2 + 1);
-  const texture = new THREE.CanvasTexture(cvs);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  const sprite = new THREE.Sprite(
-    new THREE.SpriteMaterial({
-      map: texture,
-      transparent: true,
-      depthWrite: false,
-      depthTest: false,
-    }),
-  );
-  sprite.userData.aspect = w / h;
-  return { sprite, texture };
-}
-
 /** Named stars brighter than this always show their label; the rest label on hover/select. */
 const ALWAYS_LABEL_MAG = 1.6;
-
-/** A label's rectangle on screen, in normalised device coordinates (−1…1). */
-interface ScreenRect {
-  l: number;
-  r: number;
-  b: number;
-  t: number;
-}
-
-/** Two label rectangles overlap (touching edges count as apart). */
-export function overlaps(a: ScreenRect, b: ScreenRect): boolean {
-  return a.l < b.r && b.l < a.r && a.b < b.t && b.b < a.t;
-}
 
 interface StarMarker {
   id: string;
   group: THREE.Group;
   dot: THREE.Sprite;
-  halo: THREE.Sprite;
-  label: THREE.Sprite;
-  labelAspect: number;
-  alwaysLabel: boolean;
+  /** Hover / selection ring; Sol's is the gold anchor and stays up. */
+  ring: THREE.Sprite;
   /** Label priority when labels collide: lower wins (Sol, then the brightest). */
-  rank: number;
+  slot: LabelSlot;
+  alwaysLabel: boolean;
 }
 
 /** A small soft filled dot — the idle marker for a named star (the ring only shows
@@ -367,13 +309,14 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
   field.setOpacity(0);
   scene.add(field.object);
 
-  // ── Named-star markers: a halo + a name label per curated star ──────────────
-  const haloTex = makeHaloTexture();
+  // ── Named-star markers: a ring + a name label per curated star ──────────────
+  const ringTex = ringTexture();
   const markers: StarMarker[] = [];
+  const slots: LabelSlot[] = [];
   const pickables: THREE.Object3D[] = [];
   const markerGroup = new THREE.Group();
   for (const s of namedStars) {
-    // Idle marker: a subtle dot. The ring (halo) only fades in on hover/select.
+    // Idle marker: a subtle dot. The ring only shows on hover/select.
     const dot = new THREE.Sprite(
       new THREE.SpriteMaterial({
         map: dotTex,
@@ -382,17 +325,8 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
         depthTest: false,
       }),
     );
-    const halo = new THREE.Sprite(
-      new THREE.SpriteMaterial({
-        map: haloTex,
-        transparent: true,
-        depthWrite: false,
-        depthTest: false,
-        opacity: 0,
-      }),
-    );
-    const { sprite: label, texture: labelTex } = makeLabelSprite(s.proper);
-    void labelTex;
+    const ring = createRing(ringTex, false);
+    const { sprite: label, aspect } = labelSprite(s.proper, { color: 'rgba(223, 236, 247, 0.92)' });
     // Always-label rule: the enterable systems (exoplanet hosts) + the brightest
     // naked-eye stars. Everything else reveals its name on hover/select.
     const alwaysLabel = s.mag < ALWAYS_LABEL_MAG || hostIds.has(s.id);
@@ -401,42 +335,27 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     const group = new THREE.Group();
     group.position.set(s.x, s.y, s.z);
     group.userData.starId = s.id;
-    halo.userData.starId = s.id;
+    ring.userData.starId = s.id;
     dot.userData.starId = s.id;
-    group.add(halo);
+    group.add(ring);
     group.add(dot);
     group.add(label);
     markerGroup.add(group);
 
-    markers.push({
-      id: s.id,
-      group,
-      dot,
-      halo,
-      label,
-      labelAspect: label.userData.aspect,
-      alwaysLabel,
-      rank: s.mag,
-    });
-    pickables.push(halo);
+    const slot = newLabelSlot(label, aspect, s.mag);
+    slots.push(slot);
+    markers.push({ id: s.id, group, dot, ring, slot, alwaysLabel });
+    pickables.push(ring);
   }
 
   // Our Solar System — a "you are here" label + selectable ring on the Sun at
   // the origin. Clicking it opens the Sun panel in-context (the page keeps you
   // in the neighborhood — see selectSolInContext).
   {
-    const { sprite: solLabel } = makeLabelSprite('Sol');
+    const { sprite: solLabel, aspect } = labelSprite('Sol', { color: 'rgba(223, 236, 247, 0.92)' });
     solLabel.visible = true;
-    const solHalo = new THREE.Sprite(
-      new THREE.SpriteMaterial({
-        map: haloTex,
-        transparent: true,
-        depthWrite: false,
-        depthTest: false,
-        color: new THREE.Color(0xffcf8f), // warm gold — the Sun reads apart from teal stars
-      }),
-    );
-    solHalo.userData.starId = 'sol';
+    const solRing = createRing(ringTex, true);
+    solRing.userData.starId = 'sol';
     const solDot = new THREE.Sprite(
       new THREE.SpriteMaterial({
         map: dotTex,
@@ -449,145 +368,118 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     solDot.userData.starId = 'sol';
     const group = new THREE.Group(); // at the origin (the Sun)
     group.userData.starId = 'sol';
-    group.add(solHalo);
+    group.add(solRing);
     group.add(solDot);
     group.add(solLabel);
     markerGroup.add(group);
-    pickables.push(solHalo);
-    markers.push({
-      id: 'sol',
-      group,
-      dot: solDot,
-      halo: solHalo,
-      label: solLabel,
-      labelAspect: solLabel.userData.aspect,
-      alwaysLabel: true,
-      rank: -100,
-    });
+    pickables.push(solRing);
+    const slot = newLabelSlot(solLabel, aspect, -100);
+    slots.push(slot);
+    markers.push({ id: 'sol', group, dot: solDot, ring: solRing, slot, alwaysLabel: true });
   }
   scene.add(markerGroup);
 
   // ── "You are here": concentric light-year distance rings centred on the Sun.
-  // A persistent orientation + scale reference on the galactic plane (XZ), each
-  // shell a distinct colour so you can read distance at a glance and always find
-  // your way home. Subtle by design — a compass grid, not a foreground element.
+  // A persistent orientation + scale reference on the galactic plane (XZ): four 2 px
+  // lines, one ramp from the state blue towards white, so distance reads at a glance and
+  // you can always find your way home. The labels join the placement pass last.
   const LY_PER_PC = 3.2615638;
-  // On-brand shells: warm gold → brand teal → soft accent-blue → pale white. No
-  // off-palette violet (site is gold/teal/white on navy).
-  const REFERENCE_SHELLS: Array<{ ly: number; color: number }> = [
-    { ly: 5, color: 0xffcf8f }, // warm gold — nearest neighbours
-    { ly: 10, color: 0x6fd8ce }, // brand teal // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-    { ly: 25, color: 0x8fb8ff }, // soft accent-blue
-    { ly: 50, color: 0xcfe0ea }, // pale white — outer shell // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-  ];
+  const REFERENCE_LY = [5, 10, 25, 50];
   const referenceGroup = new THREE.Group();
-  const referenceMats: THREE.Material[] = [];
-  const referenceLabels: THREE.Sprite[] = [];
-  for (const shell of REFERENCE_SHELLS) {
-    const rPc = shell.ly / LY_PER_PC;
+  const referenceMats: LineMaterial[] = [];
+  const referenceSlots: LabelSlot[] = [];
+  REFERENCE_LY.forEach((ly, i) => {
+    const rPc = ly / LY_PER_PC;
     const SEG = 128;
     const pts: number[] = [];
-    for (let i = 0; i <= SEG; i++) {
-      const a = (i / SEG) * Math.PI * 2;
+    for (let k = 0; k <= SEG; k++) {
+      const a = (k / SEG) * Math.PI * 2;
       pts.push(Math.cos(a) * rPc, 0, Math.sin(a) * rPc);
     }
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
-    const mat = new THREE.LineBasicMaterial({
-      color: shell.color,
+    const geo = new LineGeometry();
+    geo.setPositions(pts);
+    const mat = new LineMaterial({
+      color: lyRampColor(i, REFERENCE_LY.length),
+      linewidth: 2, // screen pixels
       transparent: true,
-      opacity: 0.2,
+      opacity: 0.55,
       depthWrite: false,
       depthTest: false,
     });
+    mat.resolution.set(window.innerWidth || 1, window.innerHeight || 1);
     referenceMats.push(mat);
-    referenceGroup.add(new THREE.Line(geo, mat));
-    const { sprite: lbl } = makeLabelSprite(`${shell.ly} ly`);
+    const line = new Line2(geo, mat);
+    line.computeLineDistances();
+    line.frustumCulled = false;
+    referenceGroup.add(line);
+    const { sprite: lbl, aspect } = labelSprite(m.unit_ly_value({ value: String(ly) }), {
+      color: 'rgba(223, 236, 247, 0.92)',
+      halo: true,
+    });
     lbl.position.set(rPc, 0, 0);
-    lbl.userData.refRadius = rPc;
-    referenceLabels.push(lbl);
     referenceGroup.add(lbl);
-  }
+    const slot = newLabelSlot(lbl, aspect, 1000 + i);
+    referenceSlots.push(slot);
+    slots.push(slot);
+  });
   scene.add(referenceGroup);
 
   let highlightId: string | null = null;
 
   const _camPos = new THREE.Vector3();
-  const _lblPos = new THREE.Vector3();
-  function applyMarkerScale(camera?: THREE.Camera) {
+  const _tmp = new THREE.Vector3();
+  function applyMarkerScale(camera: THREE.Camera | undefined, viewportH: number) {
     if (camera) camera.getWorldPosition(_camPos);
-    const shown: Array<{ m: StarMarker; rect: ScreenRect | null; hi: boolean }> = [];
-    for (const m of markers) {
+    const fov = camera ? cameraFov(camera) : 55;
+    for (const mk of markers) {
       // Scale each marker by ITS distance to the camera → constant screen size
       // whatever the star's true distance (they span ~1–150 pc).
-      const distToCam = camera ? Math.max(0.01, _camPos.distanceTo(m.group.position)) : 1;
+      const distToCam = camera ? Math.max(0.01, _camPos.distanceTo(mk.group.position)) : 1;
+      const wpp = worldPerPx(distToCam, fov, viewportH);
       const base = distToCam * 0.04;
-      const hi = m.id === highlightId;
-      const isSol = m.id === 'sol';
-      // Idle marker is a small dot; the ring (halo) only fades in on hover/select
-      // so the field isn't cluttered with always-on teal rings. Sol keeps its ring
-      // as the persistent "you are here" anchor.
+      const hi = mk.id === highlightId;
+      const isSol = mk.id === 'sol';
+      // Idle marker is a small dot; the ring only fades in on hover/select so the field
+      // isn't cluttered with always-on rings. Sol keeps its gold ring as the persistent
+      // "you are here" anchor.
       const dotS = (isSol ? 0.42 : 0.3) * base;
-      m.dot.scale.set(dotS, dotS, 1);
-      (m.dot.material as THREE.SpriteMaterial).opacity = hi ? 1 : isSol ? 0.95 : 0.8;
-      const halo = isSol ? base * 1.35 : base;
-      m.halo.scale.set(halo, halo, 1);
-      m.halo.position.set(0, 0, 0);
-      (m.halo.material as THREE.SpriteMaterial).opacity = isSol ? 0.92 : hi ? 0.9 : 0;
-      const lh = base * 0.55; // smaller, lighter star-name labels (less HUD-heavy)
-      m.label.scale.set(lh * m.labelAspect, lh, 1);
-      m.label.position.set(0, halo * 1.1, 0);
-      m.label.visible = m.alwaysLabel || hi;
-      if (camera && m.label.visible) shown.push({ m, rect: keepInView(m.label, camera), hi });
+      mk.dot.scale.set(dotS, dotS, 1);
+      (mk.dot.material as THREE.SpriteMaterial).opacity = hi ? 1 : isSol ? 0.95 : 0.8;
+      mk.ring.position.set(0, 0, 0);
+      applyRing(mk.ring, isSol, hi, wpp);
+      // One 12 px label size at every scale, clear of the 44 px ring, steady on hover.
+      const lh = wpp * LABEL_SPRITE_PX;
+      const slot = mk.slot;
+      slot.sprite.scale.set(lh * slot.aspect, lh, 1);
+      slot.sprite.position.set(0, labelOffset(0, lh, wpp * (RING_PX / 2)), 0);
+      slot.force = hi;
+      const wanted = mk.alwaysLabel || hi;
+      slot.visible =
+        camera && wanted ? labelRect(slot.sprite, camera, _camPos, slot.rect, _tmp) : wanted;
     }
-    // Declutter: around Sol at the default zoom "Proxima Centauri", "Rigil Kentaurus" and
-    // "Sol" printed over each other. Place labels in priority order (the hovered / selected
-    // star, Sol, then the brightest) and hide one that would overlap a label already placed;
-    // its name still shows on hover / select.
-    shown.sort((a, b) => Number(b.hi) - Number(a.hi) || a.m.rank - b.m.rank);
-    const placed: ScreenRect[] = [];
-    for (const { m, rect, hi } of shown) {
-      if (!rect) continue;
-      if (!hi && placed.some((p) => overlaps(p, rect))) {
-        m.label.visible = false;
+    // Reference-ring labels: constant 12 px, pinned to each shell's +X edge.
+    for (const slot of referenceSlots) {
+      if (!camera) {
+        slot.visible = true;
         continue;
       }
-      placed.push(rect);
+      slot.sprite.getWorldPosition(_tmp);
+      const lh =
+        worldPerPx(Math.max(0.01, _camPos.distanceTo(_tmp)), fov, viewportH) * LABEL_SPRITE_PX;
+      slot.sprite.scale.set(lh * slot.aspect, lh, 1);
+      slot.visible = labelRect(slot.sprite, camera, _camPos, slot.rect, _tmp);
     }
-    // Reference-ring labels: constant screen size, pinned to each shell's +X edge.
-    if (camera) {
-      for (const lbl of referenceLabels) {
-        const s = Math.max(0.01, _camPos.distanceTo(lbl.getWorldPosition(_lblPos))) * 0.03;
-        lbl.scale.set(s * ((lbl.userData.aspect as number) ?? 3), s, 1);
-        keepInView(lbl, camera);
-      }
-    }
+    // Declutter: around Sol at the default zoom "Proxima Centauri", "Rigil Kentaurus" and
+    // "Sol" printed over each other. Labels are placed in priority order (the hovered /
+    // selected star, Sol, the brightest, the light-year rings last); one that would overlap a
+    // label already placed is hidden, and its name still shows on hover / select.
+    placeLabels(slots);
   }
 
-  /**
-   * A label centred on its star runs off the screen edge when the star is near it (at 375 px
-   * "10 LY" read "10 L", Lalande 21185 lost its name under the INDEX tab). When it would, the
-   * label is anchored on its other side so the text extends inward — it stays attached to its
-   * star, only the side changes. Stars that are themselves off-screen are left alone.
-   */
-  const _ndc = new THREE.Vector3();
-  /** Returns the label's rectangle on screen (normalised device coordinates), or null. */
-  function keepInView(lbl: THREE.Sprite, camera: THREE.Camera): ScreenRect | null {
-    lbl.center.set(0.5, 0.5);
-    const cam = camera as THREE.PerspectiveCamera;
-    if (!cam.isPerspectiveCamera) return null;
-    lbl.getWorldPosition(_ndc);
-    const dist = Math.max(0.01, _camPos.distanceTo(_ndc));
-    _ndc.project(cam);
-    if (_ndc.z > 1 || Math.abs(_ndc.x) > 1 || Math.abs(_ndc.y) > 1) return null;
-    const tanHalf = Math.tan((cam.fov * Math.PI) / 360);
-    const w = lbl.scale.x / (dist * tanHalf * cam.aspect);
-    const h = lbl.scale.y / (dist * tanHalf);
-    if (_ndc.x + w / 2 > 1) lbl.center.set(1, 0.5);
-    else if (_ndc.x - w / 2 < -1) lbl.center.set(0, 0.5);
-    const left = _ndc.x - lbl.center.x * w;
-    return { l: left, r: left + w, b: _ndc.y - h / 2, t: _ndc.y + h / 2 };
-  }
+  const probePins: ProbePin[] = [
+    ...markers.map((mk) => ({ id: mk.id, slot: mk.slot, ring: mk.ring })),
+    ...referenceSlots.map((slot, i) => ({ id: `ly-${REFERENCE_LY[i]}`, slot })),
+  ];
 
   return {
     scene,
@@ -595,8 +487,8 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     fieldObject: field.object,
     namedStarPickables: pickables,
     starPosition(id: string) {
-      const m = markers.find((x) => x.id === id);
-      return m ? m.group.position.clone() : null;
+      const mk = markers.find((x) => x.id === id);
+      return mk ? mk.group.position.clone() : null;
     },
     highlightStar(id: string | null) {
       highlightId = id;
@@ -606,6 +498,10 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     },
     setSize(width: number, height: number) {
       for (const mat of constellationMats) mat.resolution.set(width, height);
+      for (const mat of referenceMats) mat.resolution.set(width, height);
+    },
+    pinsSnapshot(camera: THREE.Camera, w: number, h: number) {
+      return snapshotPins('neighborhood', probePins, camera, w, h);
     },
     setDeepSkyVisible(on: boolean) {
       deepSky?.setVisible(on);
@@ -667,10 +563,10 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       }
       return out;
     },
-    update(camDistPc: number, camera?: THREE.Camera) {
+    update(camDistPc: number, camera?: THREE.Camera, viewportH = window.innerHeight) {
       field.setOpacity(revealOpacity(camDistPc));
-      applyMarkerScale(camera);
-      if (camera) deepSky?.update(camDistPc, camera);
+      applyMarkerScale(camera, viewportH);
+      if (camera) deepSky?.update(camDistPc, camera, viewportH);
       if (constellationLines?.visible) {
         // Anchor the figures at a moderate radius that stays just ahead of the
         // camera (instead of frozen at the baked 700 pc), so they visibly scale +
@@ -688,7 +584,7 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       field.dispose();
       sun.material.map?.dispose();
       sun.material.dispose();
-      haloTex.dispose();
+      ringTex.dispose();
       dotTex.dispose();
       if (constellationLines) {
         for (const mat of constellationMats) mat.dispose();
@@ -698,15 +594,15 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
         constellationNodes.geometry.dispose();
         (constellationNodes.material as THREE.PointsMaterial).dispose();
       }
-      for (const m of markers) {
-        (m.dot.material as THREE.SpriteMaterial).dispose();
-        (m.halo.material as THREE.SpriteMaterial).dispose();
-        (m.label.material as THREE.SpriteMaterial).map?.dispose();
-        (m.label.material as THREE.SpriteMaterial).dispose();
+      for (const mk of markers) {
+        (mk.dot.material as THREE.SpriteMaterial).dispose();
+        (mk.ring.material as THREE.SpriteMaterial).dispose();
+        (mk.slot.sprite.material as THREE.SpriteMaterial).map?.dispose();
+        (mk.slot.sprite.material as THREE.SpriteMaterial).dispose();
       }
       for (const mat of referenceMats) mat.dispose();
       for (const child of referenceGroup.children) {
-        if (child instanceof THREE.Line) child.geometry.dispose();
+        if (child instanceof Line2) child.geometry.dispose();
         else if (child instanceof THREE.Sprite) {
           child.material.map?.dispose();
           child.material.dispose();

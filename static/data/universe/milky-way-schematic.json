@@ -158,7 +158,7 @@
     {
       "id": "lmc",
       "name": "Large Magellanic Cloud",
-      "dist_from_sun_ly": 163000,
+      "dist_from_sun_ly": 161741,
       "x": -14,
       "z": -12.5,
       "diam_kly": 32
@@ -166,7 +166,7 @@
     {
       "id": "smc",
       "name": "Small Magellanic Cloud",
-      "dist_from_sun_ly": 200000,
+      "dist_from_sun_ly": 203650,
       "x": -12,
       "z": -14.5,
       "diam_kly": 18.9

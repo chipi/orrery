@@ -63,18 +63,18 @@
       "kind": "irregular",
       "parent": "milky-way",
       "headliner": true,
-      "dist_mly": 0.1663,
+      "dist_mly": 0.1617,
       "diam_kly": 32,
       "x": -0.34,
       "y": -0.12,
       "z": 0.16,
       "catalogue": {
         "dist_mly": {
-          "value": 0.1663,
-          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
-          "bibcode": "2012AJ....144....4M",
-          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=LMC",
-          "note": "LMC: 51 kpc; the catalogue gives whole kpc"
+          "value": 0.1617,
+          "source": "Pietrzyński et al. 2019, eclipsing-binary distance to the LMC, 49.59 ± 0.54 kpc",
+          "bibcode": "2019Natur.567..200P",
+          "record_url": "https://ui.adsabs.harvard.edu/abs/2019Natur.567..200P/abstract",
+          "note": "LMC: 49.59 kpc (arXiv 1903.08096); replaces the McConnachie 2012 value of 51 kpc"
         }
       }
     },
@@ -84,18 +84,18 @@
       "kind": "irregular",
       "parent": "milky-way",
       "headliner": true,
-      "dist_mly": 0.2087,
+      "dist_mly": 0.2037,
       "diam_kly": 19,
       "x": -0.42,
       "y": -0.16,
       "z": 0.08,
       "catalogue": {
         "dist_mly": {
-          "value": 0.2087,
-          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
-          "bibcode": "2012AJ....144....4M",
-          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=SMC",
-          "note": "SMC: 64 kpc; the catalogue gives whole kpc"
+          "value": 0.2037,
+          "source": "Graczyk et al. 2020, eclipsing-binary distance to the SMC, 62.44 ± 0.47 (stat.) ± 0.81 (syst.) kpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/2010.08754",
+          "note": "SMC: 62.44 kpc (arXiv 2010.08754); ADS bibcode not confirmed; replaces the McConnachie 2012 value of 64 kpc"
         }
       }
     },

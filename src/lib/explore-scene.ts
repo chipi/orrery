@@ -94,7 +94,7 @@ export const PLANETS: PlanetVisual[] = [
     size3: 5.2,
     size2: 5.5,
     color3: 0x3a8fcc,
-    css: '#4b9cd3',
+    css: '#4b9cd3', // a3-keep: planet identity colour, palette review at the end
     period: 1.0,
     a0: 0,
     inc: 0.0,
@@ -250,8 +250,8 @@ export const PLANETS: PlanetVisual[] = [
     orbitR: 378,
     size3: 7.5,
     size2: 7.5,
-    color3: 0x7de8e8,
-    css: '#7de8e8',
+    color3: 0x7de8e8, // a3-keep: planet identity colour, palette review at the end
+    css: '#7de8e8', // a3-keep: planet identity colour, palette review at the end
     period: 84.01,
     a0: 5.1,
     inc: 0.77,

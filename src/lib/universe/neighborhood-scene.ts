@@ -166,13 +166,13 @@ function makeHaloTexture(): THREE.CanvasTexture {
   const c = s / 2;
   // Outer soft glow.
   const g = ctx.createRadialGradient(c, c, s * 0.28, c, c, s * 0.5);
-  g.addColorStop(0, 'rgba(78,205,196,0)');
-  g.addColorStop(0.72, 'rgba(78,205,196,0.1)');
-  g.addColorStop(1, 'rgba(78,205,196,0)');
+  g.addColorStop(0, 'rgba(78,205,196,0)'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+  g.addColorStop(0.72, 'rgba(78,205,196,0.1)'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+  g.addColorStop(1, 'rgba(78,205,196,0)'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, s, s);
   // Crisp accent ring — kept dim so the halos don't out-shine the stars inside.
-  ctx.strokeStyle = 'rgba(78,205,196,0.75)';
+  ctx.strokeStyle = 'rgba(78,205,196,0.75)'; // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   ctx.lineWidth = s * 0.045;
   ctx.beginPath();
   ctx.arc(c, c, s * 0.36, 0, Math.PI * 2);
@@ -258,8 +258,8 @@ function makeDotTexture(): THREE.CanvasTexture {
   const c = s / 2;
   const g = ctx.createRadialGradient(c, c, 0, c, c, c);
   g.addColorStop(0, 'rgba(255,255,255,1)');
-  g.addColorStop(0.35, 'rgba(226,244,255,0.9)');
-  g.addColorStop(1, 'rgba(226,244,255,0)');
+  g.addColorStop(0.35, 'rgba(226,244,255,0.9)'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+  g.addColorStop(1, 'rgba(226,244,255,0)'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   ctx.fillStyle = g;
   ctx.beginPath();
   ctx.arc(c, c, c, 0, Math.PI * 2);
@@ -314,11 +314,11 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     geo.setPositions(all);
     const grp = new THREE.Group();
     grp.frustumCulled = false;
-    // Soft blue like the finder (rgba(120,190,230)); a wider dim underlay gives a
+    // Soft blue like the finder lines; a wider dim underlay gives a
     // gentle glow without the old neon heaviness.
     const layers: Array<[number, number, number]> = [
       [CONSTELLATION_BASE_WIDTH[0], 0x6fa8d8, 0.14], // faint glow underlay
-      [CONSTELLATION_BASE_WIDTH[1], 0x9fd0ee, 0.72], // crisp soft-blue line
+      [CONSTELLATION_BASE_WIDTH[1], 0x9fd0ee, 0.72], // crisp soft-blue line // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     ];
     for (const [w, color, op] of layers) {
       const mat = new LineMaterial({
@@ -476,9 +476,9 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
   // off-palette violet (site is gold/teal/white on navy).
   const REFERENCE_SHELLS: Array<{ ly: number; color: number }> = [
     { ly: 5, color: 0xffcf8f }, // warm gold — nearest neighbours
-    { ly: 10, color: 0x6fd8ce }, // brand teal
+    { ly: 10, color: 0x6fd8ce }, // brand teal // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     { ly: 25, color: 0x8fb8ff }, // soft accent-blue
-    { ly: 50, color: 0xcfe0ea }, // pale white — outer shell
+    { ly: 50, color: 0xcfe0ea }, // pale white — outer shell // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   ];
   const referenceGroup = new THREE.Group();
   const referenceMats: THREE.Material[] = [];

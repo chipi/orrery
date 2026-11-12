@@ -39,7 +39,7 @@ export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon' | 'sun', st
   mars: '#c1440e',
   jupiter: '#d4a373',
   saturn: '#e8c890',
-  uranus: '#7de8e8',
+  uranus: '#7de8e8', // a3-keep: planet identity colour (Uranus), palette review at the end
   neptune: '#6b8cff',
   pluto: '#c8a98a',
   ceres: '#7c8b9a',

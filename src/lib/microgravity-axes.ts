@@ -29,15 +29,15 @@ export function buildMicrogravityAxes(length = 4): THREE.Group {
   const ARROW_HEAD_LENGTH = length * 0.18;
   const ARROW_HEAD_WIDTH = length * 0.1;
 
-  const TEAL = 0x4ecdc4; // zenith / nadir
+  const TEAL = 0x4ecdc4; // zenith / nadir // a3-keep: zenith/nadir axes colour coding, palette review at the end
   const RED = 0xff6b6b; // prograde / retrograde
   const BLUE = 0x6aa9ff; // port / starboard
 
   const origin = new THREE.Vector3(0, 0, 0);
 
   const axes: { dir: THREE.Vector3; color: number; label: string; labelColor: string }[] = [
-    { dir: new THREE.Vector3(0, 1, 0), color: TEAL, label: 'ZENITH', labelColor: '#92e8df' },
-    { dir: new THREE.Vector3(0, -1, 0), color: TEAL, label: 'NADIR', labelColor: '#92e8df' },
+    { dir: new THREE.Vector3(0, 1, 0), color: TEAL, label: 'ZENITH', labelColor: '#92e8df' }, // a3-keep: zenith/nadir axes colour coding, palette review at the end
+    { dir: new THREE.Vector3(0, -1, 0), color: TEAL, label: 'NADIR', labelColor: '#92e8df' }, // a3-keep: zenith/nadir axes colour coding, palette review at the end
     { dir: new THREE.Vector3(1, 0, 0), color: RED, label: 'PROGRADE', labelColor: '#ffb1b1' },
     { dir: new THREE.Vector3(-1, 0, 0), color: RED, label: 'RETROGRADE', labelColor: '#ffb1b1' },
     { dir: new THREE.Vector3(0, 0, 1), color: BLUE, label: 'STARBOARD', labelColor: '#aac6ff' },

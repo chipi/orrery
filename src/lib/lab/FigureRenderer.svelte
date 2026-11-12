@@ -36,7 +36,7 @@
     fidelityStyle,
     fidelityLabel,
     FIGURE_BG,
-    TEAL,
+    TEAL, // a3-keep: Lab figure art, palette review at the end
     GOLD,
     GRID,
     GRID_STEP,
@@ -45,6 +45,7 @@
     niceTicks,
     fmtTick,
   } from './figure-style';
+  const AXIS_STROKE = TEAL; // a3-keep: Lab figure art (axis lines), palette review at the end
   // MARS/force-diagram/waterfall/moon-phase rendering moved to the canvas heroes
   // (TransferEllipse/MoonPhase/DvWaterfall/ForceDiagram); this file keeps curve + fallback.
 
@@ -209,6 +210,7 @@
         <stop offset="100%" stop-color="#030307" />
       </radialGradient>
       <radialGradient id="fig-benchglow" cx="42%" cy="40%" r="55%">
+        <!-- a3-keep: Lab figure art, palette review at the end -->
         <stop offset="0%" stop-color="rgba(78,205,196,0.06)" />
         <stop offset="100%" stop-color="rgba(78,205,196,0)" />
       </radialGradient>
@@ -217,6 +219,7 @@
         <stop offset="100%" stop-color="rgba(0,0,0,0.42)" />
       </radialGradient>
       <pattern id="fig-grid-minor" width="8" height="8" patternUnits="userSpaceOnUse">
+        <!-- a3-keep: Lab figure art, palette review at the end -->
         <path d="M8 0H0V8" fill="none" stroke="rgba(78,205,196,0.032)" stroke-width="1" />
       </pattern>
       <pattern
@@ -240,6 +243,7 @@
         </feMerge>
       </filter>
       <linearGradient id="fig-area" x1="0" y1="0" x2="0" y2="1">
+        <!-- a3-keep: Lab figure art, palette review at the end -->
         <stop offset="0%" stop-color="rgba(78,205,196,0.22)" />
         <stop offset="100%" stop-color="rgba(78,205,196,0)" />
       </linearGradient>
@@ -294,22 +298,24 @@
 
       <!-- Axes -->
       <!-- x-axis -->
+      <!-- a3-keep: Lab figure art, palette review at the end -->
       <line
         x1={PAD.left}
         y1={PAD.top + plotH}
         x2={PAD.left + plotW}
         y2={PAD.top + plotH}
-        stroke={TEAL}
+        stroke={AXIS_STROKE}
         stroke-width="1"
         opacity="0.35"
       />
       <!-- y-axis -->
+      <!-- a3-keep: Lab figure art, palette review at the end -->
       <line
         x1={PAD.left}
         y1={PAD.top}
         x2={PAD.left}
         y2={PAD.top + plotH}
-        stroke={TEAL}
+        stroke={AXIS_STROKE}
         stroke-width="1"
         opacity="0.35"
       />
@@ -432,20 +438,20 @@
   .axis-label {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    fill: rgba(78, 205, 196, 0.65);
+    fill: rgba(78, 205, 196, 0.65); /* a3-keep: Lab figure art, palette review at the end */
     letter-spacing: 0.5px;
   }
 
   .series-label {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    fill: rgba(78, 205, 196, 0.8);
+    fill: rgba(78, 205, 196, 0.8); /* a3-keep: Lab figure art, palette review at the end */
   }
 
   .tick-label {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    fill: rgba(78, 205, 196, 0.55);
+    fill: rgba(78, 205, 196, 0.55); /* a3-keep: Lab figure art, palette review at the end */
   }
 
   .mark-label {
@@ -471,7 +477,7 @@
   .honesty-prov {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    fill: rgba(78, 205, 196, 0.5);
+    fill: rgba(78, 205, 196, 0.5); /* a3-keep: Lab figure art, palette review at the end */
     letter-spacing: 0.5px;
   }
 

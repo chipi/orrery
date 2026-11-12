@@ -35,9 +35,9 @@
   // is still geometry; colour now distinguishes WHICH force, not fidelity. Colour is
   // keyed by the force's IDENTITY (labelKey), never its array position — weight is the
   // same hue on every figure; an unknown force hashes into the palette.
-  const FORCE_PALETTE = ['#4ecdc4', '#ffc850', '#ff7a6b', '#8ab4ff', '#9be07a', '#c88bff'];
+  const FORCE_PALETTE = ['#4ecdc4', '#ffc850', '#ff7a6b', '#8ab4ff', '#9be07a', '#c88bff']; // a3-keep: Lab figure art, palette review at the end
   const FORCE_COLORS: Record<string, string> = {
-    'lab.vec.thrust': '#4ecdc4',
+    'lab.vec.thrust': '#4ecdc4', // a3-keep: Lab figure art, palette review at the end
     'lab.vec.weight': '#ffc850',
     'lab.vec.applied-force': '#8ab4ff',
   };

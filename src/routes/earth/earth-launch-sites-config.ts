@@ -118,7 +118,7 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
       // the atmosphere lens. Opacities bumped for #303 visibility on
       // the consolidated /earth framing.
       karmanLineShell: {
-        color: 0x4ecdc4,
+        color: 0x4ecdc4, // a3-keep: Karman limb glow / tides (science), palette review at the end
         altitudeKm: 100,
         meshOpacity: 0.2,
         ringOpacity: 0.85,
@@ -146,7 +146,7 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
       // Geographic vs magnetic north pole markers ('mag-north' lens).
       magNorth: { color: 0x5fa8ff, magneticOffsetDeg: 11 },
       // Earth-Moon tidal bulges along the +X Moon axis ('tides' lens).
-      tides: { color: 0x4ecdc4 },
+      tides: { color: 0x4ecdc4 }, // a3-keep: Karman limb glow / tides (science), palette review at the end
       // Faint ocean-sheen shell — the "water world" read ('hydrosphere').
       hydrosphere: { color: 0x2a6cb0 },
       // Small textured Moon sphere at the real Moon-orbit radius —

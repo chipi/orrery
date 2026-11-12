@@ -318,9 +318,7 @@
   letter-spacing: 2px;
   margin: 0 0 6px;
 }
-/* a3-keep: tier name, colour is --color-state (UXD-001) */
 .link-tier.tier-intro h3,
-/* a3-keep: tier name, colour is --color-state (UXD-001) */
 .tier-intro h3 {
   color: var(--color-state);
 }

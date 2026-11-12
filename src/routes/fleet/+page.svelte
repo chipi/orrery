@@ -217,7 +217,7 @@
     launcher: '#ffc850', // gold — boosters
     'crewed-spacecraft': '#c1440e', // mars-red — humans
     'cargo-spacecraft': '#ff8c42', // orange
-    station: '#4b9cd3', // earth-blue — habitats
+    station: '#4b9cd3', // earth-blue — habitats // a3-keep: category / Earth identity colour, palette review at the end
     rover: '#a05a2c', // mars surface
     lander: '#9c8c4e', // dust-tan
     orbiter: '#7a4ecd', // violet — outer space

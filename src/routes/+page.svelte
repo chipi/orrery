@@ -361,7 +361,7 @@
         <radialGradient id="ic-craft" cx="0.5" cy="0.5" r="0.5">
           <stop offset="0%" stop-color="var(--color-accent-hover)" />
           <stop offset="60%" stop-color="var(--color-accent)" />
-          <stop offset="100%" stop-color="#1c5a55" />
+          <stop offset="100%" stop-color="color-mix(in srgb, var(--color-accent) 45%, #04040c)" />
         </radialGradient>
         <radialGradient id="ic-glow-blue" cx="0.5" cy="0.5" r="0.5">
           <stop offset="40%" stop-color="var(--color-accent)" stop-opacity="0.45" />

@@ -182,9 +182,9 @@ export function createMilkyWayScene(
   softSprite(
     track(
       radialTexture([
-        [0, 'rgba(70,150,165,0.06)'],
-        [0.5, 'rgba(52,120,140,0.03)'],
-        [1, 'rgba(40,95,120,0)'],
+        [0, 'rgba(70,150,165,0.06)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+        [0.5, 'rgba(52,120,140,0.03)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+        [1, 'rgba(40,95,120,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
       ]),
     ),
     R * 2.6,
@@ -326,9 +326,9 @@ export function createMilkyWayScene(
   );
   const blueTex = track(
     radialTexture([
-      [0, 'rgba(170,235,225,0.7)'],
-      [0.45, 'rgba(110,205,195,0.24)'],
-      [1, 'rgba(90,190,180,0)'],
+      [0, 'rgba(170,235,225,0.7)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+      [0.45, 'rgba(110,205,195,0.24)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+      [1, 'rgba(90,190,180,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     ]),
   );
   for (let a = 0; a < MW_ARMS; a++) {
@@ -463,11 +463,11 @@ export function createMilkyWayScene(
     if (!isBH) {
       const ringTex = track(
         radialTexture([
-          [0, 'rgba(78,205,196,0)'],
-          [0.72, 'rgba(78,205,196,0)'],
-          [0.82, 'rgba(78,205,196,0.9)'],
-          [0.92, 'rgba(78,205,196,0)'],
-          [1, 'rgba(78,205,196,0)'],
+          [0, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+          [0.72, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+          [0.82, 'rgba(78,205,196,0.9)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+          [0.92, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+          [1, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
         ]),
       );
       ring = new THREE.Sprite(
@@ -489,7 +489,7 @@ export function createMilkyWayScene(
       sprite: label,
       texture: labelTex,
       aspect,
-    } = labelSprite(obj.name, isBH ? 'rgba(255,214,122,0.95)' : 'rgba(78,205,196,0.95)', 'bold');
+    } = labelSprite(obj.name, isBH ? 'rgba(255,214,122,0.95)' : 'rgba(78,205,196,0.95)', 'bold'); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     disposables.push(labelTex, label.material as THREE.SpriteMaterial);
     label.position.copy(position);
     label.renderOrder = 11;
@@ -690,15 +690,15 @@ export function createMilkyWayScene(
     }
     const ring = new THREE.LineLoop(
       track(new THREE.BufferGeometry().setFromPoints(pts)),
-      track(new THREE.LineBasicMaterial({ color: 0x66ccff, transparent: true, opacity: 0.38 })),
+      track(new THREE.LineBasicMaterial({ color: 0x66ccff, transparent: true, opacity: 0.38 })), // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     );
     ring.renderOrder = 6;
     rcGroup.add(ring);
-    const tag = mkOverlayLabel(m.explore_mw_lens_rc_speed(), 'rgba(120,205,255,0.9)', 0.03);
+    const tag = mkOverlayLabel(m.explore_mw_lens_rc_speed(), 'rgba(120,205,255,0.9)', 0.03); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     tag.position.set(0, 0, -rr);
     rcGroup.add(tag);
   }
-  const rcLabel = mkOverlayLabel(m.explore_mw_lens_rc_label(), 'rgba(120,205,255,0.92)', 0.045);
+  const rcLabel = mkOverlayLabel(m.explore_mw_lens_rc_label(), 'rgba(120,205,255,0.92)', 0.045); // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   rcLabel.position.set(0, 0, R * 1.45);
   rcGroup.add(rcLabel);
   scene.add(rcGroup);

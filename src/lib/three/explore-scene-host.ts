@@ -3472,7 +3472,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         ctx2.arc(px, py, pr, 0, Math.PI * 2);
         const sg = ctx2.createRadialGradient(px - pr * 0.3, py - pr * 0.3, pr * 0.1, px, py, pr);
         if (p.id === 'earth') {
-          sg.addColorStop(0, '#6ab8e8');
+          sg.addColorStop(0, '#6ab8e8'); // a3-keep: planet colour (Neptune), palette review at the end
           sg.addColorStop(1, '#0d3050');
         } else if (p.id === 'mars') {
           sg.addColorStop(0, '#e0704a');

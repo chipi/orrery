@@ -61,13 +61,13 @@
     const yToPx = (alt: number): number => py1 - (alt / maxAlt) * (py1 - py0);
 
     // Ground.
-    ctx.strokeStyle = 'rgba(120,235,225,0.4)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.4)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(px0, py1);
     ctx.lineTo(px1, py1);
     ctx.stroke();
-    ctx.fillStyle = 'rgba(120,235,225,0.5)';
+    ctx.fillStyle = 'rgba(120,235,225,0.5)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.textAlign = 'left';
     ctx.fillText('surface', px0 + 2, py1 - 3);
@@ -126,7 +126,7 @@
     }
 
     // Axes.
-    ctx.fillStyle = 'rgba(78,205,196,0.55)';
+    ctx.fillStyle = 'rgba(78,205,196,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillText(`speed → ${maxSpd.toFixed(0)} m/s`, (px0 + px1) / 2, py1 + 14);
@@ -139,7 +139,7 @@
     // Readouts.
     ctx.textAlign = 'left';
     ctx.font = "8px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(120,235,225,0.85)';
+    ctx.fillStyle = 'rgba(120,235,225,0.85)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(`${t(figure.bodyLabelKey)}`, px0 + 4, py0 + 2);
     ctx.fillText(`peak ${figure.peakDecelG.toFixed(1)} g`, px0 + 4, py0 + 13);
     ctx.fillText(`Δv ${figure.dvUsedMs.toFixed(0)} m/s`, px0 + 4, py0 + 24);

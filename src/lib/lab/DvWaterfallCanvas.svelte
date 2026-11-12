@@ -5,7 +5,7 @@
 -->
 <script lang="ts">
   import type { FigureSpec } from '$lib/physics/spec';
-  import { fidelityLabel, TEAL, MARS } from './figure-style';
+  import { fidelityLabel, TEAL, MARS } from './figure-style'; // a3-keep: Lab figure art, palette review at the end
   import {
     HERO_W as W,
     HERO_H as H,
@@ -51,7 +51,7 @@
     const rowH = BAR_H + gap;
 
     // Baseline the bars grow from.
-    ctx.strokeStyle = 'rgba(78,205,196,0.28)';
+    ctx.strokeStyle = 'rgba(78,205,196,0.28)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(LEFT, TOP - 6);
@@ -64,7 +64,7 @@
       const full = Math.max(2, (seg.dv / maxDv) * availW);
       const barW = full * progress;
       const rgb = seg.kind === 'gain' ? '78,205,196' : '193,68,14';
-      const solid = seg.kind === 'gain' ? TEAL : MARS;
+      const solid = seg.kind === 'gain' ? TEAL : MARS; // a3-keep: Lab figure art, palette review at the end
 
       // glow underlay
       ctx.save();
@@ -83,7 +83,7 @@
       // label (right-aligned in the column)
       ctx.textAlign = 'right';
       ctx.font = "8px 'Space Mono', monospace";
-      ctx.fillStyle = 'rgba(220,235,235,0.82)';
+      ctx.fillStyle = 'rgba(220,235,235,0.82)'; // a3-keep: Lab figure art, palette review at the end
       ctx.fillText(t(seg.labelKey), LEFT - 8, y + BAR_H / 2);
 
       // Δv value at the bar tip

@@ -141,9 +141,9 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
             radialTexture(
               isAnchor
                 ? [
-                    [0, 'rgba(120,240,230,0.7)'],
-                    [0.5, 'rgba(90,210,200,0.3)'],
-                    [1, 'rgba(78,205,196,0)'],
+                    [0, 'rgba(120,240,230,0.7)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                    [0.5, 'rgba(90,210,200,0.3)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                    [1, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
                   ]
                 : [
                     [0, 'rgba(214,226,255,0.65)'],
@@ -173,11 +173,11 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
           new THREE.SpriteMaterial({
             map: track(
               radialTexture([
-                [0, 'rgba(78,205,196,0)'],
-                [0.72, 'rgba(78,205,196,0)'],
-                [0.82, 'rgba(78,205,196,0.9)'],
-                [0.92, 'rgba(78,205,196,0)'],
-                [1, 'rgba(78,205,196,0)'],
+                [0, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                [0.72, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                [0.82, 'rgba(78,205,196,0.9)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                [0.92, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                [1, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
               ]),
             ),
             transparent: true,

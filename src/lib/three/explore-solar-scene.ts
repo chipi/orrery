@@ -650,7 +650,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     ) {
       const magGeo = new THREE.SphereGeometry(p.size3 * 4, 24, 16);
       const magMat = new THREE.MeshBasicMaterial({
-        color: p.id === 'jupiter' ? 0xff66dd : 0x66ddff,
+        color: p.id === 'jupiter' ? 0xff66dd : 0x66ddff, // a3-keep: science colour (magnetic axis, comet tint), palette review at the end
         transparent: true,
         opacity: 0.08,
         side: THREE.BackSide,
@@ -774,7 +774,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       ];
       const magGeo = new THREE.BufferGeometry().setFromPoints(magPts);
       const magMat = new THREE.LineBasicMaterial({
-        color: 0x66ddff,
+        color: 0x66ddff, // a3-keep: science colour (magnetic axis, comet tint), palette review at the end
         transparent: true,
         opacity: 0.65,
         depthWrite: false,
@@ -1031,7 +1031,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     gravity.visible = false;
     group.add(gravity);
 
-    // Velocity arrow — teal, tangent to orbit (perpendicular to
+    // Velocity arrow — accent blue, tangent to orbit (perpendicular to
     // gravity in the planet's orbital plane).
     const velocity = new THREE.ArrowHelper(
       new THREE.Vector3(0, 0, 1),
@@ -1186,7 +1186,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       (p: { x: number; y: number; z: number }) => new THREE.Vector3(p.x, p.y, p.z),
     );
     const trajColor =
-      b.type === 'interstellar' ? 0xff8866 : b.type === 'comet' ? 0x88ddff : 0xc8b48c;
+      b.type === 'interstellar' ? 0xff8866 : b.type === 'comet' ? 0x88ddff : 0xc8b48c; // a3-keep: science colour (magnetic axis, comet tint), palette review at the end
     const TrajCtor = b.type === 'interstellar' ? THREE.Line : THREE.LineLoop;
     const orbit = new TrajCtor(
       new THREE.BufferGeometry().setFromPoints(orbitPts),

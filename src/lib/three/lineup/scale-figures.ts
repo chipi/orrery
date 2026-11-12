@@ -80,7 +80,7 @@ export const SCALE_FIGURE_HEIGHT_M: Record<ScaleFigureId, number> = {
 const LANDMARK_COLOR: Record<ScaleFigureId, number[]> = {
   person: [0x6f809b],
   bus: [0x6f809b],
-  liberty: [0x8c8a82, 0x6fae9a],
+  liberty: [0x8c8a82, 0x6fae9a], // a3-keep: landmark paint colour, palette review at the end
   eiffel: [0x6e5640, 0x7d6248, 0x8a6d50, 0x8a6d50],
   conquerors: [0x7d858f, 0xb3bcc6, 0xd5dce4],
   pagoda: [0xb98e5c],
@@ -91,7 +91,7 @@ const LANDMARK_COLOR: Record<ScaleFigureId, number[]> = {
   tsarbell: [0x8a8578, 0x5f7f68, 0x5f7f68],
   // Eight marble storeys, then the arcade openings in shadow.
   pisa: [0xe6dfcf, 0xe6dfcf, 0xe6dfcf, 0xe6dfcf, 0xe6dfcf, 0xe6dfcf, 0xe6dfcf, 0xe6dfcf, 0x8f8676],
-  brandenburg: [0xcdb48c, 0xcdb48c, 0xcdb48c, 0x4f8a72],
+  brandenburg: [0xcdb48c, 0xcdb48c, 0xcdb48c, 0x4f8a72], // a3-keep: landmark paint colour, palette review at the end
   columbus: [0x9c9384, 0xb6ad9c, 0x5d6a52],
   david: [0xeeeae0],
   osborne: [0x121214],

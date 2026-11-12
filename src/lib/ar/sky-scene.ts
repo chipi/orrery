@@ -63,7 +63,7 @@ const BODY_COLOR: Record<SkyBody, string> = {
   mars: '#c1440e',
   jupiter: '#d8a878',
   saturn: '#d9c07a',
-  uranus: '#9fd4e0',
+  uranus: '#9fd4e0', // a3-keep: sky scene colour coding, palette review at the end
   neptune: '#5b7bd4',
 };
 const BODY_LABEL: Record<SkyBody, string> = {
@@ -342,8 +342,8 @@ const PLANET_STYLE: Partial<Record<SkyBody, PlanetStyle>> = {
     rings: { tilt: -0.42, color: 'rgba(214,196,150,0.75)', bright: 'rgba(244,232,196,0.95)' },
   },
   uranus: {
-    light: '#d6f2f6',
-    base: '#a4d6e0',
+    light: '#d6f2f6', // a3-keep: sky scene colour coding, palette review at the end
+    base: '#a4d6e0', // a3-keep: sky scene colour coding, palette review at the end
     shade: '#6698a6',
   },
   neptune: {
@@ -650,7 +650,7 @@ const LABEL_TIERS: Record<LabelTier, LabelStyle> = {
   // Star names: small caps, brighter than the figures, flush under the dot.
   star: { color: 'rgba(214,228,255,0.92)', worldHeight: 1.15, weight: 400, tracking: 0.14 },
   // Deep-sky: an ice-blue whisper, quietest of the field labels.
-  deepsky: { color: 'rgba(150,206,232,0.7)', worldHeight: 1.0, weight: 400, tracking: 0.2 },
+  deepsky: { color: 'rgba(150,206,232,0.7)', worldHeight: 1.0, weight: 400, tracking: 0.2 }, // a3-keep: sky scene colour coding, palette review at the end
   // The headline tier — planets/Sun/Moon. Bold, bright, the only weight-700 labels.
   display: { color: '#ffffff', worldHeight: 1.85, weight: 700, tracking: 0.16 },
   // Compass ticks: quiet, tracked, sit on the horizon ring.
@@ -881,7 +881,7 @@ function starScale(mag: number): number {
 function deepSkyColor(category: string): number {
   if (/galaxy/.test(category)) return 0x9ab4ff; // cool blue
   if (/globular|cluster/.test(category)) return 0xcfe6ff; // white-cyan
-  if (/planetary/.test(category)) return 0x8af0dc; // teal ring
+  if (/planetary/.test(category)) return 0x8af0dc; // teal ring // a3-keep: sky scene colour coding, palette review at the end
   if (/supernova/.test(category)) return 0xbcd0ff; // pale blue (was pink)
   if (/dark/.test(category)) return 0x9a8aa0; // dusty grey-purple
   return 0xcbb8df; // emission nebula — a lilac whisper, not hot pink

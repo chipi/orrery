@@ -26,7 +26,7 @@ export function categoryColor(category: DeepSkyCategory): string {
     case 'nebula':
       return '#ff9bb0'; // emission pink (generic nebula)
     case 'planetary-nebula':
-      return '#7ff0e0'; // teal-cyan — [OIII] planetary shells
+      return '#7ff0e0'; // teal-cyan — [OIII] planetary shells // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     case 'supernova-remnant':
       return '#9ad0ff'; // ionised blue-white filaments
     case 'dark-nebula':

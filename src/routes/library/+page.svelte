@@ -559,7 +559,6 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
-  /* a3-keep: tier name, colour is --color-state (UXD-001) */
   .ln-tier-intro {
     background: rgba(255, 200, 80, 0.15);
     color: #ffc850;

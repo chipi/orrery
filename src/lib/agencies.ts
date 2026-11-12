@@ -161,7 +161,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'SpaceX',
     full: 'SpaceX',
     logo: 'spacex.svg',
-    color: '#005288',
+    color: '#005288', // a3-keep: agency identity colour, palette review at the end
     aliases: ['spacex'],
   },
   {

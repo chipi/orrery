@@ -235,7 +235,7 @@ export function buildCislunarReactiveOverlays(
         position: teiPhase.points[0],
         line1: 'TEI',
         line2: `${teiDv.toFixed(2)} km/s`,
-        accent: '#06d6a0',
+        accent: '#06d6a0', // a3-keep: trajectory phase colour, palette review at the end
       });
     }
 

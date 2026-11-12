@@ -64,13 +64,13 @@
     for (const d of [90, 45, 0, Math.round(yMin + 5)]) {
       if (d > yMax || d < yMin) continue;
       const y = yToPx(d);
-      ctx.strokeStyle = d === 0 ? 'rgba(230,255,251,0.4)' : 'rgba(78,205,196,0.12)';
+      ctx.strokeStyle = d === 0 ? 'rgba(230,255,251,0.4)' : 'rgba(78,205,196,0.12)'; // a3-keep: Lab figure art, palette review at the end
       ctx.lineWidth = d === 0 ? 1.2 : 1;
       ctx.beginPath();
       ctx.moveTo(px0, y);
       ctx.lineTo(px1, y);
       ctx.stroke();
-      ctx.fillStyle = d === 0 ? 'rgba(230,255,251,0.7)' : 'rgba(78,205,196,0.5)';
+      ctx.fillStyle = d === 0 ? 'rgba(230,255,251,0.7)' : 'rgba(78,205,196,0.5)'; // a3-keep: Lab figure art, palette review at the end
       ctx.fillText(`${d}°`, px0 - 3, y + 3);
     }
     // horizon label
@@ -132,7 +132,7 @@
         ctx.beginPath();
         ctx.arc(ex, ey, 2, 0, Math.PI * 2);
         ctx.fill();
-        ctx.fillStyle = 'rgba(200,215,225,0.7)';
+        ctx.fillStyle = 'rgba(200,215,225,0.7)'; // a3-keep: Lab figure art, palette review at the end
         ctx.textAlign = 'left';
         ctx.fillText(ev.type.replace(/_/g, '-'), ex + 4, ey + 8);
       }
@@ -145,7 +145,7 @@
     ctx.fillText('■ open-loop pitch table', px0, py0 + 2);
     ctx.fillStyle = `rgb(${CLOSED})`;
     ctx.fillText('■ closed-loop PEG', px0 + 118, py0 + 2);
-    ctx.fillStyle = 'rgba(78,205,196,0.55)';
+    ctx.fillStyle = 'rgba(78,205,196,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.textAlign = 'center';
     ctx.fillText(`time → ${maxT.toFixed(0)} s`, (px0 + px1) / 2, py1 + 14);
     ctx.save();

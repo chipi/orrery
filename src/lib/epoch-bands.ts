@@ -47,7 +47,7 @@ export const EPOCH_BANDS: readonly EpochBand[] = [
     id: 'first-stations',
     yearStart: 1973,
     yearEnd: 1986,
-    color: '#5fc4e0',
+    color: '#5fc4e0', // a3-keep: era band colour coding, palette review at the end
   },
   {
     id: 'shuttle-and-mir',
@@ -60,7 +60,7 @@ export const EPOCH_BANDS: readonly EpochBand[] = [
     id: 'commercial-era',
     yearStart: 2011,
     yearEnd: 2024,
-    color: '#4ecdc4',
+    color: '#4ecdc4', // a3-keep: era band colour coding, palette review at the end
   },
   { id: 'lunar-return', yearStart: 2024, yearEnd: 2030, color: '#ffb14e' },
   // Mars Era — starts at the first planned crewed-Mars / sample-return

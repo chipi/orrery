@@ -91,7 +91,7 @@ for (const hub of ['moon', 'mars', 'venus']) {
     const rows = await list
       .locator('.sidx-row')
       .evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
-    expect(rows.length).toBeGreaterThan(3);
+    expect(rows.length).toBeGreaterThanOrEqual(ids.size);
     const linked = await list
       .locator('a.sidx-page')
       .evaluateAll((els) =>

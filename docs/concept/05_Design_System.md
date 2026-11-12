@@ -455,9 +455,9 @@ Text and markers drawn inside the 3D scenes of `/explore`, as opposed to HTML ov
 
 | Element | Rule |
 |---|---|
-| Scene label | 12px (`--size-meta`) in CSS pixels at every scale and viewport. The sprite is sized in pixels from the distance, the field of view and the viewport height, not as a fraction of the distance |
+| Scene label | 12px (`--size-meta`) in CSS pixels at every scale and viewport. The sprite is sized in pixels from the pin's view-space depth (`viewDepth`, what the sprite shader projects with; not the Euclidean distance, which draws a pin 40 degrees off axis 1.3 times too big), the field of view and the viewport height, not as a fraction of the distance |
 | 2D map text | 11px (the floor) at every zoom, alpha 0.58 or more; it does not grow with the zoom |
-| Pin ring | A thin annulus, 44px across, 1.5px stroke, screen-constant. On every pin, on the deep-sky glints and on the label point of every Milky Way arm. Hidden at rest; full opacity on hover and selection, in `#889fe7` (`--color-state`) |
+| Pin ring | A thin annulus, 44px across, 1.5px stroke, screen-constant. On every pin, on the deep-sky glints and on the label point of every Milky Way arm. Hidden at rest; full opacity on hover and selection (both at once: a selected pin keeps its ring while another is hovered), in `#889fe7` (`--color-state`). The ring is the pick target only in the neighbourhood (a 48px sprite) and on the arm label points; elsewhere the glow is |
 | Anchor ring ("you are here") | Gold `#ffcf8f`, 44px, up at opacity 0.55 at rest and full on hover or selection. The same colour and size at all seven levels: the Sun, the Milky Way in the Local Group, the Local Group in the Local Sheet and Virgo, the Virgo Supercluster in Laniakea, Laniakea in the Cosmic web, Sol in the neighbourhood. It is a literal, not `--color-gold` (`#ffc850`) |
 | Solar-scene rings | The selection ring and the hover ring of a planet, moon, small body or the Sun are the same `#889fe7`, but they are outlines sized to the body (a 1.2px line), not the 44px pin ring. The selected one pulses between 0.3 and 0.55 opacity; the hover one is steady at 0.35 |
 | Light-year rings | Four 2px lines at opacity 0.55 on a ramp from `#889fe7` to white; the label is the localised unit (`m.unit_ly_value`) with a dark halo, at the lowest label priority |
@@ -465,9 +465,9 @@ Text and markers drawn inside the 3D scenes of `/explore`, as opposed to HTML ov
 
 Scene code cannot read CSS variables, so the blue is a literal (`RING_BLUE`, `0x889fe7`) that mirrors `--color-state`; change both together.
 
-**Label placement pass.** Each frame the candidate labels are placed in priority order (`placeLabels`); a label that overlaps one already placed is hidden and returns when space frees. Order: hovered or selected (always shown, placed first), the anchor, headliners, the rest. The Milky Way's order is the Sun, Sagittarius A\*, the headliner globulars, the Magellanic Clouds, the arms; the light-year ring labels come last. A hidden arm label is not a pick target.
+**Label placement pass.** Each frame the candidate labels are placed in priority order (`placeLabels`); a label that overlaps one already placed is hidden and returns when space frees. Order: hovered or selected (always shown, placed first), the anchor, headliners, the rest. The Milky Way's order is the Sun, Sagittarius A\*, the headliner globulars, the Magellanic Clouds, the arms; the light-year ring labels come last. A hidden arm label's sprite is not a pick target; the arm's ring is, hidden label or not, and hovering it shows the label. Equal ranks resolve by creation order.
 
-**Steady label offset.** A label sits above its pin by the steady glow size and the ring, never the hover-grown one (`labelOffset`), so hovering does not move it.
+**Steady label offset.** A label sits above its pin by the steady glow size and the ring, never the hover-grown one (`labelOffset`), so hovering does not move it. The lift runs along the camera's screen-up (`liftOnScreen`), not world Y, so it is the same on screen when the camera looks straight down.
 
 ---
 

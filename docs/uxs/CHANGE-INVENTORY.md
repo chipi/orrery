@@ -39,7 +39,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | C1 | Select equals focus: one `focusBody`, chip-off clears a selection, mission links, New Horizons | E3, E5, SS4, I4, EP1, IM5, IM6, L35 | UXD-019 | built (untested in a browser) | explore, the index, the ruler, iconic missions | UXS-014 | — |
-| C2 | Readability: element lifts (not exposure), light-year rings, one label placement pass, one ring look, 12 px labels | E2, SN1, MW1, MW2, MW4, MW6 | UXD-020 | built (untested in a browser; the E2 probe has not been run) | every explore level | UXS-014, UXS-016 | — |
+| C2 | Readability: element lifts (not exposure), light-year rings, one label placement pass, one ring look, 12 px labels | E2, SN1, MW1, MW2, MW4, MW6 | UXD-020 | built, follow-up applied (view-space sizing, 2D caption anchors, arm rings pickable, probe control; untested in a browser; the E2 probe has not been run) | every explore level | UXS-014, UXS-016 | — |
 | C3 | HUD fixes: fixed-width scale bar, Vega pill, level picker, planet-scales overlay | E4, SS1, SS2, SS3 | none yet | planned | explore HUD | UXS-014 | — |
 | C4 | Orbit ruler: one row per regime, hover and click draw the regime, thumbnails, collapsible, one bottom-left stack | O1, O2, O3, O7, W2, W4 | none yet | planned | explore, earth, moon, mars | UXS-005 and a ruler section (none today) | — |
 | C5 | Ruler data: founding missions linked, country codes stripped | O4, O5 | none yet | planned | the ruler | none (data) | — |

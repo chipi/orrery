@@ -22,7 +22,7 @@ import { MISSION_COUNT, missionCountWhere } from './_helpers/mission-index';
  */
 
 async function expandFilters(page: Page) {
-  const toggle = page.locator('button.filters-toggle');
+  const toggle = page.locator('button.filters-strip');
   if ((await toggle.getAttribute('aria-expanded')) !== 'true') {
     await toggle.click();
   }
@@ -237,7 +237,7 @@ test.describe('/missions — epoch timeline strip (2026-06-17)', () => {
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(MISSION_COUNT, {
       timeout: 10_000,
     });
-    const toggle = page.locator('button.filters-toggle');
+    const toggle = page.locator('button.filters-strip');
     if ((await toggle.getAttribute('aria-expanded')) !== 'true') {
       await toggle.click();
     }

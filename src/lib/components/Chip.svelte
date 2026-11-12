@@ -24,6 +24,8 @@
     icon?: Snippet;
     children?: Snippet;
     class?: string;
+    /** The rendered element, for focus management (bind:ref). */
+    ref?: HTMLElement;
     [key: string]: unknown;
   }
 
@@ -40,11 +42,16 @@
     icon,
     children,
     class: extra = '',
+    ref = $bindable(),
     style = '',
     ...rest
   }: Props = $props();
 
-  const classes = $derived(['ui-chip', quiet && 'ui-chip--quiet', extra].filter(Boolean).join(' '));
+  const classes = $derived(
+    ['ui-chip', quiet && 'ui-chip--quiet', kind === 'action' && active && 'is-on', extra]
+      .filter(Boolean)
+      .join(' '),
+  );
   const styled = $derived([tone ? `--chip-tone: ${tone}` : '', style].filter(Boolean).join(';'));
 </script>
 
@@ -57,9 +64,12 @@
 {/snippet}
 
 {#if kind === 'link'}
-  <a {...rest} {href} class={classes} style={styled || undefined}>{@render inner()}</a>
+  <a bind:this={ref} {...rest} {href} class={classes} style={styled || undefined}
+    >{@render inner()}</a
+  >
 {:else if kind === 'choice'}
   <button
+    bind:this={ref}
     type="button"
     {...rest}
     class={classes}
@@ -73,6 +83,7 @@
   </button>
 {:else}
   <button
+    bind:this={ref}
     type="button"
     {...rest}
     class={classes}

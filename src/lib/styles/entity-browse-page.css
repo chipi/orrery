@@ -12,18 +12,16 @@
  * Tokens covered:
  *   .search-row, .search-input, .search-input::placeholder,
  *   .search-input:focus
- *   .filters-toggle, .filters-eyebrow, .filters-right, .filters-count,
+ *   .filters-bar (the FILTERS <Chip> + CLEAR FILTERS), .filters-count,
  *   .count-fraction, .count-total-only, .filters-chevron
- *   .filters (the expanded panel below the toggle)
+ *   .filters (the expanded panel below the strip)
  *   .filter-group, .filter-label
- *   .pill (+ :hover, .active, :focus-visible)
- *   .pill.logo-pill, .agency-pill-logo, hover/active variants
- *   .clear-filters
+ *   .agency-chip, .agency-pill-logo (the chips themselves are chip.css)
  *
  * Scope: rules are wrapped in `.entity-browse-page` so the unprefixed
- * `.pill`, `.filters-toggle`, etc. don't collide with the many other
- * unrelated `.pill` usages elsewhere (e.g. /science chips, /library
- * filter pills). Add `entity-browse-page` as a sibling class on the
+ * `.filters-bar`, `.filter-group`, etc. don't collide with other
+ * unrelated rules elsewhere (e.g. /science, /library
+ * filters). Add `entity-browse-page` as a sibling class on the
  * page-root wrapper to opt in:
  *   `<div class="missions entity-browse-page">`.
  *
@@ -64,51 +62,20 @@
   border-color: var(--color-accent);
 }
 
-/* ─── Filters toggle strip ──────────────────────────────────────── */
-.entity-browse-page .filters-toggle {
+/* ─── FILTERS strip ─────────────────────────────────────────────── */
+/* The strip and CLEAR FILTERS are <Chip>s (chip.css); only their row and
+   the count inside the strip are styled here. The count sits right after
+   the label: fraction (filtered / total) in the state colour when a filter
+   is on, the total alone muted. */
+.entity-browse-page .filters-bar {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  width: 100%;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 4px;
-  padding: 8px 12px;
+  gap: 8px;
   margin-bottom: 12px;
-  color: rgba(255, 255, 255, 0.65);
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  cursor: pointer;
-  transition:
-    border-color 120ms,
-    color 120ms;
-}
-.entity-browse-page .filters-toggle:hover,
-.entity-browse-page .filters-toggle:focus-visible {
-  border-color: rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.92);
-  outline: none;
-}
-.entity-browse-page .filters-eyebrow {
-  font-size: var(--size-label);
-  letter-spacing: 2px;
-}
-.entity-browse-page .filters-chevron {
-  font-size: 12px;
-  color: var(--color-text-label);
-}
-
-/* Inline count chip on the right end of the filters toggle bar.
-   Fraction (filtered / total) is accent blue when active; total-only is
-   muted. */
-.entity-browse-page .filters-right {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
 }
 .entity-browse-page .filters-count {
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: var(--size-label);
-  letter-spacing: 2px;
+  font-variant-numeric: tabular-nums;
 }
 .entity-browse-page .count-fraction {
   color: var(--color-state);
@@ -116,30 +83,9 @@
 .entity-browse-page .count-total-only {
   color: var(--color-text-label);
 }
-
-/* CLEAR FILTERS chip — visible inside the expanded strip only when
-   at least one filter is active. Same chrome family as the toggle
-   but with a muted accent so it reads as a discard action, not a
-   select. /fleet doesn't currently emit the markup, but the rule
-   is here so it can adopt it consistently. */
-.entity-browse-page .clear-filters {
-  align-self: flex-end;
-  padding: 6px 12px;
-  margin-bottom: 8px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 3px;
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: var(--size-label);
-  letter-spacing: 2px;
-  cursor: pointer;
-}
-.entity-browse-page .clear-filters:hover,
-.entity-browse-page .clear-filters:focus-visible {
-  border-color: rgba(255, 255, 255, 0.35);
-  color: rgba(255, 255, 255, 0.95);
-  outline: none;
+.entity-browse-page .filters-chevron {
+  font-size: 12px;
+  color: var(--color-text-label);
 }
 
 /* ─── Expanded filters panel ────────────────────────────────────── */
@@ -151,7 +97,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   margin-bottom: 14px;
   /* No overflow-x:auto — Phase 29 (#342) removed the defensive
-     horizontal-scroll that was hiding pills on mobile when wrap
+     horizontal-scroll that was hiding chips on mobile when wrap
      should have done the job. */
 }
 .entity-browse-page .filter-group {
@@ -168,45 +114,10 @@
   margin-right: 4px;
 }
 
-/* ─── Filter pill ───────────────────────────────────────────────── */
-.entity-browse-page .pill {
-  min-height: 44px;
-  min-width: 44px;
-  padding: 6px 14px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: var(--size-label);
-  letter-spacing: 2px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.entity-browse-page .pill:hover:not(.active) {
-  border-color: rgba(255, 255, 255, 0.25);
-  color: rgba(255, 255, 255, 0.75);
-}
-.entity-browse-page .pill.active {
-  background: color-mix(in srgb, var(--color-accent) 25%, transparent);
-  border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
-  color: #fff;
-}
-.entity-browse-page .pill:focus-visible {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 2px;
-}
-
-/* Logo-mode agency pill: tighter padding (the logo is the label),
-   fixed minimum width so all agency pills line up uniformly, subtle
-   white tint that hover/active darkens. */
-.entity-browse-page .pill.logo-pill {
-  padding: 4px 10px;
+/* Logo-mode agency chip: the logo is the label, so the padding is tighter. */
+.entity-browse-page .agency-chip {
+  padding-inline: 8px;
   min-width: 56px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 .entity-browse-page .agency-pill-logo {
   height: 22px;
@@ -217,11 +128,12 @@
   opacity: 0.6;
   transition: opacity 0.15s;
 }
-.entity-browse-page .pill.logo-pill:hover .agency-pill-logo,
-.entity-browse-page .pill.logo-pill.active .agency-pill-logo {
+.entity-browse-page .agency-chip:hover .agency-pill-logo,
+.entity-browse-page .agency-chip[aria-checked='true'] .agency-pill-logo {
   opacity: 1;
 }
-.entity-browse-page .pill.logo-pill.active {
-  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+
+/* CLEAR inside the open panel (/missions/launches) sits at the row's end. */
+.entity-browse-page .filters > .filters-clear {
+  margin-inline-start: auto;
 }

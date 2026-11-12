@@ -48,7 +48,9 @@
   outline-offset: 2px;
 }
 
-/* On: the same look for a toggle (aria-pressed) and a choice (aria-checked). */
+/* On: the same look for a toggle (aria-pressed), a choice (aria-checked) and an action chip
+   that holds a value (.is-on: a dropdown trigger with a non-default value). */
+.ui-chip.is-on,
 .ui-chip[aria-pressed='true'],
 .ui-chip[aria-checked='true'] {
   background: color-mix(in srgb, var(--chip-on) 22%, var(--chip-glass));
@@ -73,6 +75,7 @@
   color: var(--chip-rest-text);
   font-variant-numeric: tabular-nums;
 }
+.ui-chip.is-on .ui-chip__count,
 .ui-chip[aria-pressed='true'] .ui-chip__count,
 .ui-chip[aria-checked='true'] .ui-chip__count {
   color: var(--color-state);

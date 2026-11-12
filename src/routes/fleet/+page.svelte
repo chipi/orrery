@@ -1,5 +1,7 @@
 <script lang="ts">
   import EntityIndex from '$lib/components/EntityIndex.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
@@ -230,6 +232,15 @@
 
   const STATUSES: Array<FleetStatus> = ['ACTIVE', 'FLOWN', 'RETIRED', 'FAILED', 'PLANNED'];
 
+  // Data colour of each status chip (its dot, and its edge when on).
+  const STATUS_TONE: Record<FleetStatus, string> = {
+    ACTIVE: 'var(--color-state)',
+    FLOWN: 'var(--color-accent)',
+    RETIRED: 'var(--color-gold)',
+    FAILED: 'var(--color-mars)',
+    PLANNED: 'var(--color-text-dim)',
+  };
+
   // ─── URL ↔ filter sync ───────────────────────────────────────────
   function applyUrl(url: URL) {
     const cat = url.searchParams.get('category');
@@ -307,6 +318,19 @@
     syncUrl();
   }
 
+  let anyFilterActive = $derived(
+    categoryFilter !== 'ALL' ||
+      agencyFilter !== 'ALL' ||
+      epochFilter !== 'ALL' ||
+      statusFilter !== 'ALL',
+  );
+  function clearAllFilters() {
+    categoryFilter = 'ALL';
+    agencyFilter = 'ALL';
+    epochFilter = 'ALL';
+    statusFilter = 'ALL';
+    syncUrl();
+  }
   function setCategory(v: FleetCategory | 'ALL') {
     categoryFilter = v;
     syncUrl();
@@ -467,19 +491,18 @@
         oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
       />
     </div>
-    <!-- Filters collapsed by default. Count lives on the right end of
-         the toggle bar (fraction when active, total-only otherwise) —
-         matches /missions for visual consistency. -->
-    <button
-      type="button"
-      class="filters-toggle"
-      data-audio-stage="fleet-filters-toggle"
-      aria-expanded={filtersExpanded}
-      aria-controls={filtersExpanded ? 'fleet-filters' : undefined}
-      onclick={() => (filtersExpanded = !filtersExpanded)}
-    >
-      <span class="filters-eyebrow">{m.filters_eyebrow()}</span>
-      <span class="filters-right">
+    <!-- Filters collapsed by default. The count sits right after the FILTERS
+         label (fraction when active, total-only otherwise) — matches /missions. -->
+    <div class="filters-bar">
+      <Chip
+        kind="action"
+        class="filters-strip"
+        data-audio-stage="fleet-filters-toggle"
+        aria-expanded={filtersExpanded}
+        aria-controls={filtersExpanded ? 'fleet-filters' : undefined}
+        onclick={() => (filtersExpanded = !filtersExpanded)}
+      >
+        {m.filters_eyebrow()}
         {#if filtered.length !== entries.length}
           <span class="filters-count count-fraction count"
             >{filtered.length} / {entries.length}</span
@@ -488,8 +511,13 @@
           <span class="filters-count count-total-only count">{entries.length}</span>
         {/if}
         <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
-      </span>
-    </button>
+      </Chip>
+      {#if filtersExpanded && anyFilterActive}
+        <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearAllFilters}>
+          {m.missions_clear_filters()}
+        </Chip>
+      {/if}
+    </div>
 
     {#if filtersExpanded}
       <div data-audio-stage="fleet-epoch-timeline">
@@ -501,71 +529,47 @@
         data-audio-stage="fleet-filters"
         aria-label={m.fleet_filters_aria()}
       >
-        <div class="filter-group" role="radiogroup" aria-label={m.fleet_category_aria()}>
+        <ChipGroup role="radiogroup" class="filter-group" label={m.fleet_category_aria()}>
           <span class="filter-label">{m.fleet_filter_category()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={categoryFilter === 'ALL'}
-            role="radio"
-            aria-checked={categoryFilter === 'ALL'}
-            onclick={() => setCategory('ALL')}>{m.lib_filter_status_all()}</button
+          <Chip kind="choice" active={categoryFilter === 'ALL'} onclick={() => setCategory('ALL')}
+            >{m.lib_filter_status_all()}</Chip
           >
           {#each CATEGORIES as cat (cat)}
-            <button
-              type="button"
-              class="pill"
-              class:active={categoryFilter === cat}
-              role="radio"
-              aria-checked={categoryFilter === cat}
-              onclick={() => setCategory(cat)}>{categoryLabel(cat)}</button
+            <Chip kind="choice" active={categoryFilter === cat} onclick={() => setCategory(cat)}
+              >{categoryLabel(cat)}</Chip
             >
           {/each}
-        </div>
+        </ChipGroup>
 
-        <div class="filter-group" role="radiogroup" aria-label={m.fleet_status_aria()}>
+        <ChipGroup role="radiogroup" class="filter-group" label={m.fleet_status_aria()}>
           <span class="filter-label">{m.fleet_filter_status()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={statusFilter === 'ALL'}
-            role="radio"
-            aria-checked={statusFilter === 'ALL'}
-            onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
+          <Chip kind="choice" active={statusFilter === 'ALL'} onclick={() => setStatus('ALL')}
+            >{m.lib_filter_status_all()}</Chip
           >
           {#each STATUSES as st (st)}
-            <button
-              type="button"
-              class="pill status-pill status-{st.toLowerCase()}"
-              class:active={statusFilter === st}
-              role="radio"
-              aria-checked={statusFilter === st}
-              onclick={() => setStatus(st)}>{fleetStatusLabel(st)}</button
+            <Chip
+              kind="choice"
+              dot
+              tone={STATUS_TONE[st]}
+              active={statusFilter === st}
+              onclick={() => setStatus(st)}>{fleetStatusLabel(st)}</Chip
             >
           {/each}
-        </div>
+        </ChipGroup>
 
         {#if agencies.length > 0}
-          <div class="filter-group" role="radiogroup" aria-label={m.fleet_agency_aria()}>
+          <ChipGroup role="radiogroup" class="filter-group" label={m.fleet_agency_aria()}>
             <span class="filter-label">{m.fleet_filter_agency()}</span>
-            <button
-              type="button"
-              class="pill"
-              class:active={agencyFilter === 'ALL'}
-              role="radio"
-              aria-checked={agencyFilter === 'ALL'}
-              onclick={() => setAgency('ALL')}>{m.lib_filter_status_all()}</button
+            <Chip kind="choice" active={agencyFilter === 'ALL'} onclick={() => setAgency('ALL')}
+              >{m.lib_filter_status_all()}</Chip
             >
             {#each agencies as agency (agency)}
               {@const logo = logoFor(agency)}
               {@const fullName = fullNameFor(agency)}
-              <button
-                type="button"
-                class="pill agency-pill"
-                class:active={agencyFilter === agency}
-                class:logo-pill={logo != null}
-                role="radio"
-                aria-checked={agencyFilter === agency}
+              <Chip
+                kind="choice"
+                class="agency-chip"
+                active={agencyFilter === agency}
                 aria-label={fullName}
                 title={fullName}
                 onclick={() => setAgency(agency)}
@@ -588,9 +592,9 @@
                 {:else}
                   {agency}
                 {/if}
-              </button>
+              </Chip>
             {/each}
-          </div>
+          </ChipGroup>
         {/if}
 
         <div class="filter-group sort-group">
@@ -609,31 +613,24 @@
         </div>
       </nav>
     {/if}
-
-    <div class="lineup-bar" role="group" aria-label={m.fleet_lineup_toggle_aria()}>
+    <ChipGroup class="lineup-bar" label={m.fleet_lineup_toggle_aria()}>
       <span class="filter-label">{m.fleet_lineup_toggle()}</span>
-      <button
-        type="button"
-        class="pill"
-        class:active={lineupView && lineupKind === 'launchers'}
-        aria-pressed={lineupView && lineupKind === 'launchers'}
-        onclick={() => openLineup('launchers')}>{m.fleet_lineup_launchers()}</button
+      <Chip
+        kind="toggle"
+        active={lineupView && lineupKind === 'launchers'}
+        onclick={() => openLineup('launchers')}>{m.fleet_lineup_launchers()}</Chip
       >
       {#if LINEUP_LIVE.includes('spacecraft')}
-        <button
-          type="button"
-          class="pill"
-          class:active={lineupView && lineupKind === 'spacecraft'}
-          aria-pressed={lineupView && lineupKind === 'spacecraft'}
-          onclick={() => openLineup('spacecraft')}>{m.fleet_lineup_spacecraft()}</button
+        <Chip
+          kind="toggle"
+          active={lineupView && lineupKind === 'spacecraft'}
+          onclick={() => openLineup('spacecraft')}>{m.fleet_lineup_spacecraft()}</Chip
         >
       {/if}
       {#if lineupView}
-        <button type="button" class="pill" onclick={() => openLineup(null)}
-          >{m.fleet_lineup_back()}</button
-        >
+        <Chip kind="action" onclick={() => openLineup(null)}>{m.fleet_lineup_back()}</Chip>
       {/if}
-    </div>
+    </ChipGroup>
 
     {#if lineupView && lineupKind}
       {#key lineupKind + localeFromPage(page)}
@@ -815,33 +812,12 @@
     color: #c1440e;
   }
 
-  /* Page chrome (.search-row, .search-input, .filters-toggle,
-     .filters-right, .filters-count, .filters-eyebrow, .filters-chevron,
-     .filters, .filter-group, .filter-label, .pill + variants) lives in
+  /* Page chrome (.search-row, .search-input, .filters-bar, .filters-count,
+     .filters-chevron, .filters, .filter-group, .filter-label) lives in
      src/lib/styles/entity-browse-page.css — opted into by the
-     `entity-browse-page` class on the page root. Shared with /missions
-     so chrome can't visually drift. */
-
-  .status-pill.status-active.active {
-    background: rgba(136, 159, 231, 0.25);
-    border-color: rgba(136, 159, 231, 0.55);
-  }
-  .status-pill.status-flown.active {
-    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
-    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
-  }
-  .status-pill.status-retired.active {
-    background: rgba(255, 200, 80, 0.22);
-    border-color: rgba(255, 200, 80, 0.55);
-  }
-  .status-pill.status-failed.active {
-    background: rgba(193, 68, 14, 0.28);
-    border-color: rgba(193, 68, 14, 0.7);
-  }
-  .status-pill.status-planned.active {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.5);
-  }
+     `entity-browse-page` class on the page root. The chips are <Chip>
+     (src/lib/styles/chip.css); the status colours are STATUS_TONE.
+     Shared with /missions so chrome can't visually drift. */
 
   .sort-group {
     display: flex;

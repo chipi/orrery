@@ -4,8 +4,8 @@
    * /missions, /fleet, and /missions/launches so the AGENCY (and any
    * future high-cardinality filter) reads the same on every page.
    *
-   * Visual language mirrors the .pill system: the trigger is a pill
-   * (with .active when a non-default value is set), and each option
+   * Visual language is the one chip (chip.css): the trigger is a <Chip>
+   * (on when a non-default value is set), and each option
    * row in the popover uses the same monospace + letter-spacing.
    * When a `logoFor` prop is supplied, each option renders its logo
    * inline (e.g. NASA/ESA/SpaceX SVGs) — same agency-recognition
@@ -13,6 +13,7 @@
    * and /fleet.
    */
   import * as m from '$lib/paraglide/messages';
+  import Chip from './Chip.svelte';
 
   let {
     value,
@@ -41,7 +42,7 @@
 
   let open = $state(false);
   let query = $state('');
-  let triggerEl: HTMLButtonElement | undefined = $state();
+  let triggerEl: HTMLElement | undefined = $state();
   let popoverEl: HTMLDivElement | undefined = $state();
   let searchEl: HTMLInputElement | undefined = $state();
 
@@ -107,17 +108,16 @@
   );
 </script>
 
-<div class="pill-dropdown">
-  <button
-    type="button"
-    class="pill"
-    class:active
-    class:has-logo={triggerLogo != null}
+<div class="chip-dropdown">
+  <Chip
+    kind="action"
+    {active}
+    class={triggerLogo != null ? 'has-logo' : ''}
     aria-haspopup="listbox"
     aria-expanded={open}
     aria-label={label}
     title={triggerLabel}
-    bind:this={triggerEl}
+    bind:ref={triggerEl}
     onclick={() => (open = !open)}
   >
     {#if triggerLogo}
@@ -125,7 +125,7 @@
     {/if}
     <span class="trigger-label">{triggerLabel}</span>
     <span class="caret" aria-hidden="true">▾</span>
-  </button>
+  </Chip>
 
   {#if open}
     <div class="popover" role="listbox" bind:this={popoverEl}>
@@ -181,43 +181,13 @@
 </div>
 
 <style>
-  .pill-dropdown {
+  .chip-dropdown {
     position: relative;
     display: inline-block;
   }
 
-  .pill {
-    min-height: 32px;
-    padding: 6px 10px 6px 12px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    color: var(--color-text-label);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 2px;
-    font-weight: 700;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.15s;
-  }
-  .pill:hover {
-    border-color: rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.75);
-  }
-  .pill.active {
-    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
-    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
-    color: #fff;
-  }
-  .pill:focus-visible {
-    outline: 2px solid var(--color-focus);
-    outline-offset: 2px;
-  }
-  .pill.has-logo {
-    padding-left: 8px;
+  .chip-dropdown :global(.has-logo) {
+    padding-inline-start: 8px;
   }
   .trigger-logo {
     height: 16px;

@@ -16,6 +16,8 @@
   import { EPOCH_BANDS, AXIS_MIN, AXIS_MAX } from '$lib/epoch-bands';
   import * as m from '$lib/paraglide/messages';
   import { epochLabel } from '$lib/epoch-label';
+  import Chip from './Chip.svelte';
+  import ChipGroup from './ChipGroup.svelte';
 
   const AXIS_RANGE = AXIS_MAX - AXIS_MIN;
 
@@ -101,34 +103,25 @@
   </div>
 
   <!-- Mobile: simple chip carousel -->
-  <ul class="chips" role="radiogroup" aria-label={m.epoch_filter_aria()}>
-    <li>
-      <button
-        type="button"
-        class="chip"
-        class:active={selected === 'ALL'}
-        role="radio"
-        aria-checked={selected === 'ALL'}
-        onclick={() => onSelect('ALL')}>{m.epoch_all()}</button
+  <div class="chips">
+    <ChipGroup role="radiogroup" label={m.epoch_filter_aria()}>
+      <Chip kind="choice" active={selected === 'ALL'} onclick={() => onSelect('ALL')}
+        >{m.epoch_all()}</Chip
       >
-    </li>
-    {#each EPOCH_BANDS as ep (ep.id)}
-      <li>
-        <button
-          type="button"
-          class="chip"
-          class:active={selected === ep.id}
-          style:--band-color={ep.color}
-          role="radio"
-          aria-checked={selected === ep.id}
+      {#each EPOCH_BANDS as ep (ep.id)}
+        <Chip
+          kind="choice"
+          dot
+          tone={ep.color}
+          active={selected === ep.id}
+          count={countByEpoch.get(ep.id) ?? 0}
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
         >
           {epochLabel(ep.id)}
-          <span class="chip-count">{countByEpoch.get(ep.id) ?? 0}</span>
-        </button>
-      </li>
-    {/each}
-  </ul>
+        </Chip>
+      {/each}
+    </ChipGroup>
+  </div>
 </section>
 
 <style>
@@ -302,80 +295,17 @@
 
   /* ───── Mobile chip carousel (< 720 px) ───── */
   .chips {
-    list-style: none;
-    margin: 0;
     padding: 4px 0;
-    display: flex;
-    gap: 6px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
-  .chips li {
+  .chips :global(.ui-chip-group) {
+    flex-wrap: nowrap;
+  }
+  .chips :global(.ui-chip) {
     scroll-snap-align: start;
     flex-shrink: 0;
-  }
-  /* Mobile chips — same three-state hierarchy as desktop bands so the
-     palette reads consistently across viewports. At rest the chip
-     carries a faint tint of its band's hue; hover lifts the tint;
-     active matches the desktop active-band's glow. */
-  .chip {
-    background: linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 14%, transparent),
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 4%, transparent)
-    );
-    border: 1px solid color-mix(in srgb, var(--band-color, var(--color-accent)) 30%, transparent);
-    color: color-mix(in srgb, var(--band-color, var(--color-state)) 25%, white);
-    padding: 6px 12px;
-    border-radius: 14px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    cursor: pointer;
-    white-space: nowrap;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    min-height: 32px;
-    transition:
-      background 0.18s,
-      border-color 0.18s,
-      color 0.18s,
-      box-shadow 0.18s;
-  }
-  .chip:hover {
-    background: linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 24%, transparent),
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 8%, transparent)
-    );
-    border-color: color-mix(in srgb, var(--band-color, var(--color-accent)) 55%, transparent);
-    color: #fff;
-  }
-  .chip.active {
-    background: linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 45%, transparent),
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 18%, transparent)
-    );
-    border-color: var(--band-color, var(--color-accent));
-    color: #fff;
-    box-shadow: 0 0 10px color-mix(in srgb, var(--band-color, var(--color-accent)) 35%, transparent);
-  }
-  /* Mobile chip count badge — AA bump from 0.5 → 0.78 alpha. Sits
-     inside the chip's white-tinted pill, which already lifts effective
-     contrast vs the page; the bump makes the count legible at a
-     glance instead of squinting. */
-  .chip-count {
-    font-size: var(--size-label);
-    color: rgba(255, 255, 255, 0.78);
-    background: rgba(255, 255, 255, 0.08);
-    padding: 1px 5px;
-    border-radius: 8px;
-  }
-  .chip.active .chip-count {
-    color: var(--band-color, var(--color-state));
-    background: var(--color-accent-soft);
   }
 
   @media (min-width: 720px) {

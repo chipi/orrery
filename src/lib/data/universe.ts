@@ -228,6 +228,26 @@ export async function getDeepSkyObject(
   const objs = await getDeepSkyObjects(fetchFn);
   return objs.find((o) => o.id === idOrDesignation || o.designation === idOrDesignation) ?? null;
 }
+/** The per-object editorial overlay under i18n-src/<locale>/universe/deep-sky/<id>.json. */
+export interface DeepSkyTextOverlay {
+  /** One-line overview. */
+  fact?: string;
+  /** Longer editorial paragraph. */
+  bio?: string;
+}
+
+/** A deep-sky object's overlay text in the reader's locale, en-US as the fallback; null if neither exists. */
+export async function getDeepSkyI18n(
+  locale: string,
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<DeepSkyTextOverlay | null> {
+  const path = (l: string) => `i18n/${l}/universe/deep-sky/${id}.json`;
+  const overlay = await get<DeepSkyTextOverlay>(path(locale), fetchFn).catch(() => null);
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<DeepSkyTextOverlay>(path('en-US'), fetchFn).catch(() => null);
+}
 const deepSkyGalleryCache = new Map<string, Promise<DeepSkyImage[]>>();
 /** The curated deep-sky gallery images (cached per locale) — the caption/credit/
  *  telescope source joined to deep-sky objects via photoKey. A locale's overlay

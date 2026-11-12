@@ -8,7 +8,7 @@
 -->
 <script lang="ts">
   import Panel from './Panel.svelte';
-  import type { DeepSkyObject, DeepSkyCategory } from '$lib/data';
+  import type { DeepSkyObject, DeepSkyCategory, DeepSkyTextOverlay } from '$lib/data';
   import type { DeepSkyImage } from '$lib/deep-sky';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
@@ -18,6 +18,8 @@
   type Props = {
     object: DeepSkyObject | null;
     image?: DeepSkyImage | undefined;
+    /** The object's reviewed fact + bio in the reader's locale (null until loaded or when none exists). */
+    overlay?: DeepSkyTextOverlay | null;
     galleryHref: string;
     open: boolean;
     onClose: () => void;
@@ -27,7 +29,16 @@
      *  was beamed at M13). */
     children?: Snippet;
   };
-  let { object, image, galleryHref, open, onClose, onGateway, children }: Props = $props();
+  let {
+    object,
+    image,
+    overlay = null,
+    galleryHref,
+    open,
+    onClose,
+    onGateway,
+    children,
+  }: Props = $props();
 
   const CAT_LABEL: Record<DeepSkyCategory, () => string> = {
     galaxy: m.explore_ds_cat_galaxy,
@@ -64,6 +75,8 @@
       <div class="name">{object.name}</div>
     </div>
 
+    {#if overlay?.fact}<p class="editorial">{overlay.fact}</p>{/if}
+    {#if overlay?.bio}<p class="prose">{overlay.bio}</p>{/if}
     {#if image?.caption}<p class="prose">{image.caption}</p>{/if}
 
     <div class="grid">

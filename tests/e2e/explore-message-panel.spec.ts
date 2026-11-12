@@ -85,6 +85,13 @@ test.describe('/explore — Arecibo message at M13 (#410)', () => {
       timeout: 12_000,
     });
     await expect(page.getByText('The Arecibo Message', { exact: false }).first()).toBeVisible();
+    // The reviewed overlay text (fact, then bio) sits above the values, in the reader's locale.
+    await expect(
+      page.getByText('The Hercules Cluster, over 100,000 stars', { exact: false }),
+    ).toBeVisible();
+    await expect(
+      page.getByText('Edmond Halley discovered it in 1714', { exact: false }),
+    ).toBeVisible();
     // #658: the distance is Baumgardt & Vasiliev 2021 (24.2 kly), the magnitude Harris V_t, each
     // naming its catalogue with a link to the record, and the Data sources block lists the papers.
     await expect(page.getByText('24,000 light-years', { exact: false }).first()).toBeVisible();
@@ -105,5 +112,19 @@ test.describe('/explore — Arecibo message at M13 (#410)', () => {
       'href',
       /simbad\.cds\.unistra\.fr\/simbad\/sim-id\?Ident=M%2013$/,
     );
+  });
+
+  test('the panel text follows the page locale (de overlay, not en-US)', async ({ page }) => {
+    await page.goto('/de/explore?deepsky=M13');
+    await waitForHydration(page);
+    await expect(
+      page.getByText('Der Herkuleshaufen, über 100.000 Sterne', { exact: false }),
+    ).toBeVisible({ timeout: 12_000 });
+    await expect(
+      page.getByText('Edmond Halley entdeckte ihn 1714', { exact: false }),
+    ).toBeVisible();
+    await expect(
+      page.getByText('The Hercules Cluster, over 100,000', { exact: false }),
+    ).toHaveCount(0);
   });
 });

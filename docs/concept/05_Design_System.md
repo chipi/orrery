@@ -294,6 +294,8 @@ The panel always contains, top to bottom:
 
 Rule and reasoning: [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.md).
 
+The star and deep-sky panels take their editorial text from the reader's locale overlay (`i18n-src/<locale>/universe/<kind>/<id>.json`, en-US as the fallback): `fact` is the lead (`.editorial`, item 4) and `bio` the body (`.prose`, item 5), above the values grid. The deep-sky panel keeps its gallery caption after the bio and its Data sources block ahead of the credit; an object with no overlay shows none of it, no placeholder.
+
 ### 5.4 Card (mission library)
 
 Cards have a 3px top border in the agency colour. The rest of the border is `rgba(255,255,255,0.07)`, shifting to `rgba(255,255,255,0.18)` on hover with a -2px Y translate.

@@ -84,6 +84,7 @@ How the rule is checked (the guard), or what is not checked yet.
 | [UXD-017](UXD-017-one-index-on-every-scale.md)                | One INDEX on every /explore scale: all selectable objects, black holes in the scale they belong to | accepted | 2026-11-12 |
 | [UXD-018](UXD-018-panel-shell-and-actions.md)                 | Panel shell: a fixed header bar (back, name, Share, close), one action row of at most three chips, no hero hover glow | accepted | 2026-11-12 |
 | [UXD-019](UXD-019-select-equals-focus.md)                     | Select = focus: every pick opens the panel, rings the body and takes the camera; a chip off clears its kind, a select turns it on; mission links open in place | accepted | 2026-11-12 |
+| [UXD-020](UXD-020-explore-readability-pins-rings-labels.md) | /explore readability: one 12 px label, one 44 px ring (gold anchor, blue hover), one placement pass, a steady label offset, 2 px light-year rings | accepted | 2026-11-12 |
 
 Open questions (D1 to D7, Q3 to Q10) are not records; they are listed in
 [UXS-000 §Open](../UXS-000-orrery-ux-architecture.md#open).

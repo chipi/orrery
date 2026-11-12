@@ -107,7 +107,12 @@
       bind:value={query}
     />
     {#if onClose}
-      <Chip kind="action" class="sidx-close" aria-label={m.panel_close()} onclick={onClose}>×</Chip>
+      <Chip
+        kind="action"
+        class="sidx-close ui-chip--close"
+        aria-label={m.panel_close()}
+        onclick={onClose}>×</Chip
+      >
     {/if}
   </div>
 

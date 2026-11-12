@@ -170,6 +170,45 @@ test.describe('panel shell (B1)', () => {
     await expect(panel).toBeVisible();
   });
 
+  // UXD-018 amendment "header sizes": badge and status one size, × a square as tall as Share,
+  // all on one centre line.
+  for (const path of ['/missions?id=apollo11', '/mars?site=perseverance']) {
+    test(`header sizes on ${path}: badge = status, square ×, one centre line`, async ({ page }) => {
+      test.slow();
+      await page.goto(path);
+      const head = page.locator('aside.panel .panel-head').first();
+      await expect(head.locator('.agency-badge').first()).toBeVisible({ timeout: 45_000 });
+      // The panel slides in (a bottom sheet on a phone): measure once the header has stopped moving.
+      await expect
+        .poll(async () => {
+          const a = (await head.boundingBox())!.y;
+          await page.waitForTimeout(150);
+          return Math.abs((await head.boundingBox())!.y - a);
+        })
+        .toBeLessThan(0.5);
+      const box = async (sel: string) => (await head.locator(sel).first().boundingBox())!;
+      const badge = await box('.agency-badge');
+      const status = await box('.status');
+      const share = await box('[data-testid="open-card-btn"]');
+      const close = await box('.panel-close');
+      expect(
+        Math.abs(badge.height - status.height),
+        'badge and status one height',
+      ).toBeLessThanOrEqual(0.5);
+      expect(Math.abs(close.width - close.height), '× is a square').toBeLessThanOrEqual(0.5);
+      expect(Math.abs(close.height - share.height), '× as tall as Share').toBeLessThanOrEqual(0.5);
+      const mid = (b: { y: number; height: number }) => b.y + b.height / 2;
+      for (const [name, b] of [
+        ['badge', badge],
+        ['status', status],
+        ['Share', share],
+      ] as const)
+        expect(Math.abs(mid(b) - mid(close)), `${name} on the × centre line`).toBeLessThanOrEqual(
+          1,
+        );
+    });
+  }
+
   test.describe('one-row header (B1.1)', () => {
     const KINDS: { label: string; path: string }[] = [
       { label: 'planet', path: '/explore?id=mars' },

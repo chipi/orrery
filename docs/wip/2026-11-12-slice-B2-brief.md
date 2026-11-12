@@ -49,6 +49,16 @@ type with the same list (unit test over the data)". Accepted decision: [UXD-010]
 B1 (hero, close, actions; Q6 still open), B3 (star and outer panels), the Science Lens panel (`ScienceLayersPanel`, its per-layer "learn" links), and the card's own look (`ScienceCard` type sizes,
 A1 territory) are not B2. The `ScienceChip` decision is in §1 and §8 (Q2).
 
+## 0c. Cascade update (lead, 2026-11-12 afternoon) — read before §1
+
+| Source | What it changes in B2 |
+|---|---|
+| B1 decisions O1–O8 (approved) | Panel actions are one chip row under the identity block; Share is in the header bar. B2's SCIENCE lists stay in their tab / section (Q7 keep the tab stands); the cap helper must not count the B1 action row. |
+| Catalogue layer #658 (committed) | Panels gained per-value source links and a folded `DataSources` block. These are data provenance, not science links: **not counted** by the cap (same class as the outbound library links in Q1). |
+| Scale INDEX on all eight scales (in build) | No science links in the INDEX; no B2 change. |
+| Deep text batches 1–3 (being integrated) | Deep-sky / Local Group overlays gain prose; if a writer added `links` to `/science`, those lists fall under the cap like any other panel list — the B2 check covers them once integrated. |
+| `/library` Astrophysics data block (`5950bf6a235`, `aa14349d0c9`) | Outbound catalogue links, not science links; not counted. |
+
 ## 1. Cascade — what each landed or decided slice changes for B2
 
 | Source | What it settles | Effect on B2 (tactics changed; outdated plan ideas named) |

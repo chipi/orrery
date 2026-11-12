@@ -74,6 +74,6 @@ rest, and a borderless Reset would be the odd one in that row.
 Besides the brief's §6 allow-list, these keep their own look, because each is furniture of a panel,
 dialog or scene rather than a filter, toggle or HUD action: the Flight Director / Station Orbit banner
 collapse carets (`.collapse-btn`) and the tier card caret (`.tcc-toggle`), a site's annotation rows (`.annotation-row`, name + explanation like the module rows), the launch scene's skip CTA (`.continue`, a scene CTA like the
-opening ones), the gallery wave tiles (`.wave-tile`, cards), the lightbox zoom buttons, toast
+opening ones), the gallery wave tiles (`.wave-tile`, cards), the illustrated site map image button (`.site-illustration .open`), the lightbox zoom buttons, toast
 dismiss buttons and the panorama caption reopen. `tests/e2e/chip.spec.ts` names each one in its
 sweep allow-list; anything new outside the list fails the sweep.

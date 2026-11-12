@@ -22,7 +22,11 @@
     name: string;
     title: string;
     desc: string;
+    /** Explore scale-level glyph id (ScaleGlyph), the same icon the home grid draws for it. */
+    glyph?: string;
   }
+
+  import ScaleGlyph, { SCALE_GLYPHS } from './ScaleGlyph.svelte';
 
   let {
     cards,
@@ -81,6 +85,10 @@
       <stop offset="40%" stop-color="var(--color-accent)" stop-opacity="0.45" />
       <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
     </radialGradient>
+    <radialGradient id="ic-glow-gold" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="40%" stop-color="#e6b84a" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#e6b84a" stop-opacity="0" />
+    </radialGradient>
     <radialGradient id="ic-glow-red" cx="0.5" cy="0.5" r="0.5">
       <stop offset="40%" stop-color="#c1440e" stop-opacity="0.45" />
       <stop offset="100%" stop-color="#c1440e" stop-opacity="0" />
@@ -122,78 +130,8 @@
       >
         <span class="card-head">
           <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-            {#if card.query?.includes('context=')}
-              <!-- Scale-shell shortcut (Neighbourhood / Milky Way / Local Group):
-                   nested dashed ellipses zooming outward + a lit core. -->
-              <ellipse
-                cx="24"
-                cy="24"
-                rx="7"
-                ry="3"
-                fill="none"
-                stroke="rgba(255,255,255,0.5)"
-                stroke-width="0.8"
-              />
-              <ellipse
-                cx="24"
-                cy="24"
-                rx="13"
-                ry="5.5"
-                fill="none"
-                stroke="var(--color-accent-strong)"
-                stroke-width="0.9"
-                stroke-dasharray="2 2"
-              />
-              <ellipse
-                cx="24"
-                cy="24"
-                rx="20"
-                ry="8.5"
-                fill="none"
-                stroke="var(--color-accent-edge)"
-                stroke-width="0.7"
-                stroke-dasharray="1.5 2.5"
-              />
-              <circle cx="24" cy="24" r="5" fill="url(#ic-glow-accent)" />
-              <circle cx="24" cy="24" r="2" fill="var(--color-accent-hover)" />
-            {:else if card.route === '/explore' || card.route.startsWith('/explore/')}
-              <!-- Every Explore hub card (the scale levels and the star / black-hole pages) shares this glyph. -->
-              <!-- Mini solar system: gradient Sun + corona, three orbital ellipses
-                   (slight perspective tilt), Earth + Mars with halos. -->
-              <circle cx="24" cy="26" r="14" fill="url(#ic-sun-corona)" />
-              <ellipse
-                cx="24"
-                cy="26"
-                rx="9"
-                ry="3.5"
-                fill="none"
-                stroke="rgba(255,255,255,0.35)"
-                stroke-width="0.8"
-              />
-              <ellipse
-                cx="24"
-                cy="26"
-                rx="15"
-                ry="6"
-                fill="none"
-                stroke="rgba(255,255,255,0.55)"
-                stroke-width="1"
-              />
-              <ellipse
-                cx="24"
-                cy="26"
-                rx="21"
-                ry="8"
-                fill="none"
-                stroke="rgba(255,255,255,0.25)"
-                stroke-width="0.7"
-                stroke-dasharray="2 2"
-              />
-              <circle cx="24" cy="26" r="3.2" fill="url(#ic-sun)" />
-              <circle cx="33" cy="26" r="3" fill="url(#ic-glow-blue)" />
-              <circle cx="33" cy="26" r="1.8" fill="url(#ic-earth)" />
-              <circle cx="9" cy="26" r="3" fill="url(#ic-glow-red)" />
-              <circle cx="9" cy="26" r="1.6" fill="url(#ic-mars)" />
+            {#if card.glyph && SCALE_GLYPHS.has(card.glyph)}
+              <ScaleGlyph glyph={card.glyph} />
             {:else if card.route === '/missions'}
               <!-- Capsule with engine glow on a rising trajectory + planet horizon -->
               <path d="M 0 44 Q 24 36 48 44 L 48 48 L 0 48 Z" fill="var(--color-accent-edge)" />

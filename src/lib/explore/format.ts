@@ -1,4 +1,5 @@
 import * as m from '$lib/paraglide/messages';
+import type { LocaleCode } from '$lib/locale';
 import type { ExploreContextId } from '$lib/three/explore-scene-host';
 
 // Localised label for an anonymous star's catalogue colour (enum → message).
@@ -98,3 +99,19 @@ export const SATELLITE_STATS: Record<string, { diameterKm: number; diameterRatio
 
 // Time-dilation readout: √(1 − rₛ/r) at r = k·rₛ, as a percentage of a far clock.
 export const dilationPct = (k: number): string => `${Math.round(Math.sqrt(1 - 1 / k) * 100)}%`;
+
+/** A planet's name in the viewer's language (`lab_body_*`); an id without a message keeps `fallback`. */
+export const planetName = (id: string, fallback: string, locale?: LocaleCode): string => {
+  const name = PLANET_NAME[id];
+  return name ? name({}, locale ? { locale } : undefined) : fallback;
+};
+const PLANET_NAME: Record<string, typeof m.lab_body_earth> = {
+  mercury: m.lab_body_mercury,
+  venus: m.lab_body_venus,
+  earth: m.lab_body_earth,
+  mars: m.lab_body_mars,
+  jupiter: m.lab_body_jupiter,
+  saturn: m.lab_body_saturn,
+  uranus: m.lab_body_uranus,
+  neptune: m.lab_body_neptune,
+};

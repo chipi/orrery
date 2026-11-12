@@ -44,6 +44,7 @@ import { auToPx } from '$lib/scale';
 import { gyro } from '$lib/sensory/device-orientation';
 import { cue } from '$lib/sensory/feedback';
 import { getLocale } from '$lib/paraglide/runtime';
+import { planetName as planetName2d } from '$lib/explore/format';
 import * as m from '$lib/paraglide/messages';
 import { localeFromPage, localHref } from '$lib/locale';
 import { assetOrigin } from '$lib/asset-url';
@@ -104,17 +105,6 @@ import type { resolveQualitySync } from '$lib/quality/quality-tier';
 import type { createRouteLifecycle } from '$lib/three/route-lifecycle';
 import type { ExploreSmallBody, createExploreSolarScene } from '$lib/three/explore-solar-scene';
 
-/** 2D-map labels in the viewer's language; bodies without a message keep their data name. */
-const PLANET_NAME_2D: Record<string, () => string> = {
-  mercury: m.lab_body_mercury,
-  venus: m.lab_body_venus,
-  earth: m.lab_body_earth,
-  mars: m.lab_body_mars,
-  jupiter: m.lab_body_jupiter,
-  saturn: m.lab_body_saturn,
-  uranus: m.lab_body_uranus,
-  neptune: m.lab_body_neptune,
-};
 const SMALL_BODY_NAME_2D: Record<string, () => string> = {
   pluto: m.plan_destination_pluto,
   ceres: m.plan_destination_ceres,
@@ -129,7 +119,6 @@ const SMALL_BODY_NAME_2D: Record<string, () => string> = {
   ryugu: m.plan_destination_ryugu,
   eros: m.plan_destination_eros,
 };
-const planetName2d = (id: string, fallback: string): string => PLANET_NAME_2D[id]?.() ?? fallback;
 const smallBodyName2d = (id: string, fallback: string): string =>
   SMALL_BODY_NAME_2D[id]?.() ?? fallback;
 

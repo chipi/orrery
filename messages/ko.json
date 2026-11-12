@@ -319,7 +319,7 @@
   "sun_rot_diff": "극지방 {value}일 (차등 자전)",
   "sun_source_nasa": "출처: NASA · IAU · 절대등급 {mag}",
   "sizes_header": "행성 · 실제 상대 크기",
-  "sizes_source": "km의 직경 · 소스 : IAU · NASA",
+  "sizes_source": "직경(km) · 출처: IAU · NASA",
   "sizes_canvas_label": "행성 크기 비교",
   "lib_filter_dest_label": "목적지",
   "lib_filter_dest_all": "전체",

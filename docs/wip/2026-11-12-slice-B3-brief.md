@@ -23,6 +23,20 @@ below is a rendered measurement (§12).
 | MW3 | Detail panels look different from all others; align the styling. An image loads in the panel, not the main area (Sagittarius A\* / supermassive black hole). | Eight panels (`MilkyWayPanel`, `LocalGroupPanel`, `LocalSheetPanel`, `VirgoPanel`, `LaniakeaPanel`, `CosmicWebPanel`, `BlackHolePanel`, `DeepSkyPanel`) each carry the same private block: `.head/.kind/.name/.prose/.grid/.cell` in rem units (`MilkyWayPanel.svelte:103–163`, identical in the other seven), no tabs, no hero slot. Selecting the Sag A\* pin calls `enterBlackHole` (`explore-scene-host.ts:2411–2416`) which replaces the main area with the lensing render (`:552–588`) and opens `BlackHolePanel` text-only. |
 | MW5 | Deep-sky gallery images as hero images here? | 44 of 141 deep-sky objects have a gallery photo (§2.3). No outer-level panel shows any; `DeepSkyPanel` receives the `image` prop and uses only `caption`, `telescope`, `credit` (`DeepSkyPanel.svelte:70–72,80,105`) and never draws the photo (the photo is the immersive main area, `explore-scene-host.ts:1486–1496`). |
 
+## 0c. Cascade update (lead, 2026-11-12 afternoon) — read before §1
+
+Work that landed or was decided after this brief was written, and what it changes here:
+
+| Source | What it changes in B3 |
+|---|---|
+| Scale INDEX on all eight scales (`docs/wip/2026-11-12-scale-index-brief.md`, approved, in build) | Every Milky Way, Local Group, Local Sheet, Virgo, Laniakea and Cosmic web member gets an INDEX row that selects it like a canvas click. **Q8 is easier:** the e2e reaches those panels through INDEX rows, no new URL needed. Black holes move: Sagittarius A* and Cygnus X-1 to the Milky Way INDEX, M87* to Virgo, Gargantua to a Fiction section under Cosmic web; that raises **Q1**'s weight (a hole is now picked at its own scale, so "opens in place, lensing behind a button" is what the reader meets first). Deep-sky objects get rows in the neighbourhood INDEX. |
+| Catalogue layer #658 (committed) | Star, deep-sky, black-hole and Local Group panels carry a source link next to each sourced value and a folded `DataSources` block. The shared outer-panel body of §4 must keep both (they are part of the panel, not decoration). |
+| Deep text batches 1–3 (English, being integrated) | Deep-sky and Local Group overlays gain `fact` / `bio` text, so the outer panels have a body paragraph to show; the shared body places it like the planet panels' overview text. |
+| Star / black-hole list pages removed (`54d5a46c17c`) | Entity pages are reached from the INDEX; panels link their page as before. Nothing else here. |
+| A6 compact nav (committed, in verification) | `--nav-height` is 52 px; panel tops that follow the token moved 8 px. No B3 tactic change. |
+| B1 decisions O1–O8 (approved) | Share sits in the panel's fixed header bar; actions are one chip row under the identity block, chip look only. B3's outer panels take B1's bar and row; §7 Q7 (B1 before B3) stands. |
+| A4 / A5 Reset view | Text chip, no icon (operator: no new icons in chips). B3 adds no icon to any chip. |
+
 ## 1. Cascade — what the earlier slices change in B3, and what in the plan row is outdated
 
 | Earlier slice | What it changes in B3's tactics | Outdated in the plan row? |

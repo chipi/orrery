@@ -252,12 +252,15 @@ test.describe('Reset view (E8) and Watch live (ISS1)', () => {
     }
   });
 
-  test('the Explore level reset shows its text label on a fine pointer', async ({ page }) => {
+  test('the Explore level reset is a text chip — RESET VIEW, no icon — on every viewport', async ({
+    page,
+  }) => {
     await settle(page, { path: '/explore?goto=antares' });
     const reset = page.getByTestId('explore-scale-reset');
     await expect(reset).toBeVisible({ timeout: 20_000 });
     await expect(reset).toHaveClass(/ui-chip/);
-    if (await isFinePointer(page)) await expect(reset.locator('.ui-reset-label')).toBeVisible();
+    await expect(reset).toHaveText(/\S{3,}/);
+    await expect(reset.locator('.ui-chip__icon')).toHaveCount(0);
   });
 });
 

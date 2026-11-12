@@ -88,16 +88,4 @@
       left: 40px;
     }
   }
-  /* Phone: the reset chip keeps its glyph and name, the label drops out so the
-     row (back · scale · reset) fits 390 px. */
-  @media (max-width: 767px) {
-    .scale-nav :global(.ui-reset-label) {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-    }
-  }
 </style>

@@ -7,6 +7,5 @@
 </script>
 
 <Chip kind="action" {...rest}>
-  {#snippet icon()}⟲{/snippet}
-  <span class="ui-reset-label">{m.ui_reset_view()}</span>
+  {m.ui_reset_view()}
 </Chip>

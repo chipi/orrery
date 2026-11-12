@@ -358,7 +358,7 @@
           "source": "SIMBAD, compiled distance measurements (newest parallax-based where one exists)",
           "bibcode": "2010ApJ...714.1096S",
           "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=WRAY%2016-147",
-          "note": "method not stated; gallery caption said ~7,000 light-years"
+          "note": "method not stated"
         }
       }
     },
@@ -405,7 +405,7 @@
           "source": "Cosmicflows-4, Tully et al. 2023 (distance modulus, all methodologies)",
           "bibcode": "2023ApJ...944...94T",
           "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FApJ%2F944%2F94%2Ftable2&PGC=13826",
-          "note": "PGC 13826, DM 26.75 +/- 0.1 (6973.10 kly to 7645.85 kly); SIMBAD compiled distances disagree: median 10697.93 kly of 7 (8904.07 kly to 13405.03 kly); gallery caption said ~11 million light-years"
+          "note": "PGC 13826, DM 26.75 +/- 0.1 (6973.10 kly to 7645.85 kly); SIMBAD compiled distances disagree: median 10697.93 kly of 7 (8904.07 kly to 13405.03 kly)"
         }
       }
     },
@@ -561,7 +561,7 @@
           "source": "Hunt & Reffert 2023, Improving the open cluster census II (Gaia DR3)",
           "bibcode": "2023A&A...673A.114H",
           "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&Name=NGC_6611",
-          "note": "matched NGC_6611 by name; gallery caption said ~6,500 light-years"
+          "note": "matched NGC_6611 by name"
         }
       }
     },
@@ -1127,7 +1127,7 @@
           "source": "Cosmicflows-4, Tully et al. 2023 (distance modulus, all methodologies)",
           "bibcode": "2023ApJ...944...94T",
           "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FApJ%2F944%2F94%2Ftable2&PGC=12412",
-          "note": "PGC 12412, DM 30.715 +/- 0.46 (36679.71 kly to 56030.68 kly); gallery caption said ~61 million light-years"
+          "note": "PGC 12412, DM 30.715 +/- 0.46 (36679.71 kly to 56030.68 kly)"
         }
       }
     },
@@ -1323,7 +1323,7 @@
           "source": "Hunt & Reffert 2023, Improving the open cluster census II (Gaia DR3)",
           "bibcode": "2023A&A...673A.114H",
           "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&Name=NGC_2264",
-          "note": "matched NGC_2264 by name; Cantat-Gaudin et al. 2020 (NGC_2264): 707 pc; gallery caption said ~2,700 light-years"
+          "note": "matched NGC_2264 by name; Cantat-Gaudin et al. 2020 (NGC_2264): 707 pc"
         }
       }
     },
@@ -1375,7 +1375,7 @@
           "source": "SIMBAD, compiled distance measurements (newest parallax-based where one exists)",
           "bibcode": "2020yCat.1350....0G",
           "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=NGC%202392",
-          "note": "method paral; 3 other SIMBAD distances, 4.11 kly to 6.84 kly; gallery caption said ~3,000 light-years"
+          "note": "method paral; 3 other SIMBAD distances, 4.11 kly to 6.84 kly"
         }
       }
     },
@@ -1578,7 +1578,7 @@
           "source": "Cosmicflows-4, Tully et al. 2023 (distance modulus, all methodologies)",
           "bibcode": "2023ApJ...944...94T",
           "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FApJ%2F944%2F94%2Ftable2&PGC=37967",
-          "note": "PGC 37967, DM 31.614 +/- 0.075 (66256.10 kly to 70994.69 kly); gallery caption said ~45–65 million light-years"
+          "note": "PGC 37967, DM 31.614 +/- 0.075 (66256.10 kly to 70994.69 kly)"
         }
       }
     },
@@ -1682,7 +1682,7 @@
           "source": "SIMBAD, compiled distance measurements (newest parallax-based where one exists)",
           "bibcode": "2010ApJ...714.1096S",
           "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=NGC%206302",
-          "note": "method not stated; 1 other SIMBAD distances, 2.42 kly to 2.43 kly; gallery caption said ~3,400 light-years"
+          "note": "method not stated; 1 other SIMBAD distances, 2.42 kly to 2.43 kly"
         }
       }
     },
@@ -1734,7 +1734,7 @@
           "source": "SIMBAD, compiled distance measurements (newest parallax-based where one exists)",
           "bibcode": "2020yCat.1350....0G",
           "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=NGC%206543",
-          "note": "method paral; 2 other SIMBAD distances, 4.46 kly to 5.29 kly; gallery caption said ~3,300 light-years"
+          "note": "method paral; 2 other SIMBAD distances, 4.46 kly to 5.29 kly"
         }
       }
     },
@@ -1832,7 +1832,7 @@
           "source": "SIMBAD, compiled distance measurements (newest parallax-based where one exists)",
           "bibcode": "2025A&A...696A..67S",
           "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=NGC%207635",
-          "note": "method paral; 2 other SIMBAD distances, 7.86 kly to 9.13 kly; gallery caption said ~7,100 light-years"
+          "note": "method paral; 2 other SIMBAD distances, 7.86 kly to 9.13 kly"
         }
       }
     },
@@ -2049,7 +2049,7 @@
           "source": "SIMBAD, compiled distance measurements (newest parallax-based where one exists)",
           "bibcode": "2020yCat.1350....0G",
           "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Hen%202-427",
-          "note": "method paral; 3 other SIMBAD distances, 2.24 kly to 20.80 kly; gallery caption said ~15,000 light-years"
+          "note": "method paral; 3 other SIMBAD distances, 2.24 kly to 20.80 kly"
         }
       }
     },

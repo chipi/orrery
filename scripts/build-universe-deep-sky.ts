@@ -12,9 +12,15 @@
 // live far beyond the 60 pc neighbourhood, so the scene puts them on a distant
 // celestial sphere by direction; real distance drives the panel, not xyz.
 //
+// Catalogue layer (GitHub #658): the snapshot carries per-field { value, source, bibcode,
+// record_url, note? } entries (scripts/refresh-messier-catalog.mjs). A catalogue distance replaces
+// the gallery caption's; a caption distance is kept only where no catalogue answers, and then
+// carries no `catalogue.dist_ly` entry (so the panel names no source for it).
+//
 // Run: tsx scripts/build-universe-deep-sky.ts
 import fs from 'node:fs';
 import path from 'node:path';
+import { distanceLabel } from './lib/catalogue-sources.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 
@@ -28,6 +34,15 @@ interface SnapObject {
   mag: number | null;
   size: number | null;
   common: string;
+  catalogue?: Record<string, CatalogueEntry>;
+  records?: { simbad?: string; ned?: string };
+}
+interface CatalogueEntry {
+  value: number | number[];
+  source: string;
+  bibcode: string | null;
+  record_url: string;
+  note?: string;
 }
 interface GalleryRow {
   key: string;
@@ -142,13 +157,19 @@ const GATEWAY: Record<string, string> = {
   'Serpens Nebula': 'toi-700',
 };
 
-// Curated real distances for catalogue objects that have no gallery photo (the
-// gallery is the usual distance source, so photo-less objects would otherwise show
-// no distance). Real, sourced values — not guesses. M13: Harris globular-cluster
-// catalogue, ~7.7 kpc.
-const DIST_OVERRIDE: Record<string, string> = {
-  M13: '~25,000 light-years',
+// Corrections the deep-text science reviews settled that the catalogues do not decide: the
+// common name the text uses (one name per entity), and categories the OpenNGC type gets wrong.
+const NAME_OVERRIDE: Record<string, string> = {
+  M11: 'Wild Duck Cluster',
+  M17: 'Omega Nebula',
+  M76: 'Little Dumbbell Nebula',
 };
+const CATEGORY_OVERRIDE: Record<string, Category> = {
+  'Gum 29': 'star-cluster', // Westerlund 2: the text and caption treat it as a cluster
+  M24: 'other', // the Sagittarius Star Cloud is a patch of sky, not a star
+};
+// OpenNGC writes Serpens Caput / Cauda as Se1 / Se2.
+const CON_FIX: Record<string, string> = { Se1: 'Ser', Se2: 'Ser' };
 
 // Index gallery rows by designation (first curated photo wins; the gallery
 // often has multiple photos of the same object — the scene picks one).
@@ -164,12 +185,30 @@ const objects = snap.objects.map((o) => {
   const category = classify(o.type, photo?.type ?? photo?.subject);
   const dir = radecToUnit(o.ra, o.dec);
   // Prefer a clean common name; fall back to designation.
-  const commonName = (o.common || '').split(',')[0].trim() || o.name || o.designation;
+  const commonName =
+    NAME_OVERRIDE[o.designation] ??
+    ((o.common || '').split(',')[0].trim() || o.name || o.designation);
+  const cat = o.catalogue ?? {};
+  const catDist = cat.dist_ly && typeof cat.dist_ly.value === 'number' ? cat.dist_ly : null;
+  const catalogue: Record<string, CatalogueEntry> = { ...cat };
+  const galleryLy = parseDistLy(photo?.distance);
+  if (
+    catDist &&
+    photo?.distance &&
+    galleryLy &&
+    Math.abs(galleryLy - catDist.value) / catDist.value > 0.15
+  ) {
+    catalogue.dist_ly = {
+      ...catDist,
+      note: [catDist.note, `gallery caption said ${photo.distance}`].filter(Boolean).join('; '),
+    };
+  }
+  const distLy = catDist ? (catDist.value as number) : galleryLy;
   return {
     id: slug(o.designation),
     designation: o.designation,
     name: commonName,
-    category,
+    category: CATEGORY_OVERRIDE[o.designation] ?? category,
     ra: o.ra,
     dec: o.dec,
     x: dir.x,
@@ -177,12 +216,14 @@ const objects = snap.objects.map((o) => {
     z: dir.z,
     mag: o.mag,
     size_arcmin: o.size,
-    con: o.con,
-    dist_ly: parseDistLy(photo?.distance ?? DIST_OVERRIDE[o.designation]),
-    dist_label: photo?.distance ?? DIST_OVERRIDE[o.designation] ?? null,
+    con: CON_FIX[o.con] ?? o.con,
+    dist_ly: distLy === null ? null : Math.round(distLy),
+    dist_label: catDist ? distanceLabel(catDist.value as number) : (photo?.distance ?? null),
     photoKey: photo?.key ?? null,
     photoTitle: photo?.title ?? null,
     gatewaySystem: GATEWAY[o.designation] ?? null,
+    records: o.records ?? {},
+    catalogue,
   };
 });
 
@@ -195,7 +236,8 @@ objects.sort((a, b) => {
 const withPhoto = objects.filter((o) => o.photoKey).length;
 const out = {
   _generated: 'scripts/build-universe-deep-sky.ts — do not edit by hand',
-  _source: 'joins scripts/data-snapshots/messier-catalog.json × static/data/deep-sky.json',
+  _source:
+    'joins scripts/data-snapshots/messier-catalog.json (OpenNGC + Harris, Baumgardt & Vasiliev, Hunt & Reffert, Cosmicflows-4, McConnachie, SIMBAD) × static/data/deep-sky.json',
   _count: objects.length,
   _withPhoto: withPhoto,
   objects,

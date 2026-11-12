@@ -544,3 +544,112 @@ export function findHotspotAnnotationProblems(
   }
   return problems;
 }
+
+// ── catalogue layer (GitHub #658) ────────────────────────────────────────────────────────
+// Every value that comes from an authoritative catalogue carries { value, source, bibcode,
+// record_url, note? } in a sibling `catalogue` map. These are the pure checks; the caller
+// loads the files and prints.
+
+/** Hosts a catalogue `record_url` may point at: the catalogues' own record pages. */
+export const CATALOGUE_RECORD_HOSTS = new Set([
+  'simbad.cds.unistra.fr',
+  'vizier.cds.unistra.fr',
+  'ned.ipac.caltech.edu',
+  'exoplanetarchive.ipac.caltech.edu',
+  'people.smp.uq.edu.au',
+  'physics.mcmaster.ca',
+  'github.com',
+  'ui.adsabs.harvard.edu',
+  'iopscience.iop.org',
+  'doi.org',
+  'arxiv.org',
+]);
+
+export interface CatalogueEntryLike {
+  value?: unknown;
+  source?: unknown;
+  bibcode?: unknown;
+  record_url?: unknown;
+  note?: unknown;
+}
+
+/** An ADS bibcode: 19 characters, a four-digit year first. */
+export const BIBCODE_RE = /^\d{4}[A-Za-z0-9&.+]{14}[A-Za-z.]$/;
+
+/** True when a magnitude's source names the V band and no other band. */
+export function isSingleBandV(source: string): boolean {
+  const namesV = /\bV\b|V-Mag|V_t|V-band|integrated V/.test(source);
+  const namesOther = /\bB-Mag\b|\bB band\b|\bB-band\b|\bBJ\b|\bB_?T\b|photographic/i.test(source);
+  return namesV && !namesOther;
+}
+
+/** The hostname of an https URL, or '' for anything else. */
+function httpsHost(url: unknown): string {
+  try {
+    const u = new URL(String(url));
+    return u.protocol === 'https:' ? u.hostname : '';
+  } catch {
+    return '';
+  }
+}
+
+export type CatalogueRow = {
+  id: string;
+  catalogue?: Record<string, CatalogueEntryLike>;
+  [k: string]: unknown;
+};
+
+/**
+ * Problems in the `catalogue` maps of a list of rows. `scalarOf` maps a catalogue key to the
+ * row's scalar it sources (position maps to [ra, dec]); an entry whose value differs from its
+ * scalar is a problem, so the sourced number and the displayed number cannot drift apart.
+ * `required(row)` lists the keys whose scalar is non-null and so must carry an entry.
+ */
+export function findCatalogueProblems(
+  rows: CatalogueRow[],
+  scalarOf: Record<string, (row: CatalogueRow) => unknown>,
+  required: (row: CatalogueRow) => string[],
+): string[] {
+  const problems: string[] = [];
+  for (const row of rows) {
+    const cat = row.catalogue ?? {};
+    for (const key of required(row)) {
+      if (!cat[key])
+        problems.push(`${row.id}: ${key} has no catalogue entry (source + record_url)`);
+    }
+    for (const [key, e] of Object.entries(cat)) {
+      const at = `${row.id}.catalogue.${key}`;
+      if (!scalarOf[key]) {
+        problems.push(`${at}: unknown catalogue field`);
+        continue;
+      }
+      if (typeof e.source !== 'string' || !e.source.trim()) problems.push(`${at}: missing source`);
+      if (e.bibcode !== null && e.bibcode !== undefined && !BIBCODE_RE.test(String(e.bibcode))) {
+        problems.push(`${at}: bibcode '${String(e.bibcode)}' is not an ADS bibcode`);
+      }
+      const host = httpsHost(e.record_url);
+      if (!host) problems.push(`${at}: record_url must be an https URL`);
+      else if (!CATALOGUE_RECORD_HOSTS.has(host)) {
+        problems.push(`${at}: record_url host '${host}' is not a catalogue record host`);
+      }
+      if (e.note !== undefined && (typeof e.note !== 'string' || !e.note.trim())) {
+        problems.push(`${at}: empty note`);
+      }
+      const scalar = scalarOf[key](row);
+      const same = Array.isArray(e.value)
+        ? Array.isArray(scalar) &&
+          e.value.length === scalar.length &&
+          e.value.every((v, i) => v === scalar[i])
+        : e.value === scalar;
+      if (!same) {
+        problems.push(
+          `${at}: value ${JSON.stringify(e.value)} differs from the displayed ${JSON.stringify(scalar)}`,
+        );
+      }
+      if (key === 'mag' && typeof e.source === 'string' && !isSingleBandV(e.source)) {
+        problems.push(`${at}: magnitude source '${e.source}' is not a single V band`);
+      }
+    }
+  }
+  return problems;
+}

@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /explore ?goto= and ?system=&planet= — the two deep-links with no other spec.
@@ -10,6 +11,14 @@ import { test, expect, type Page } from '@playwright/test';
 
 const params = (page: Page) => Object.fromEntries(new URL(page.url()).searchParams);
 const panel = (page: Page, name: string) => page.locator(`aside.panel[aria-label="${name}"]`);
+
+/** Open the INDEX once the scale on screen is the one named by `ariaLabel` (the handle is in the SSR HTML at the solar system). */
+async function openIndex(page: Page, ariaLabel: string) {
+  await waitForHydration(page);
+  const toggle = page.getByTestId('scale-index-toggle');
+  await expect(toggle).toHaveAttribute('aria-label', ariaLabel, { timeout: 30_000 });
+  await toggle.click();
+}
 
 test.describe('/explore — ?goto and ?system deep-links', () => {
   test('cold ?goto opens the star panel; Escape closes it and clears the param', async ({
@@ -35,8 +44,12 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
 
   test('selecting a star from the index mirrors it into ?goto', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
-    await page.locator('.star-index-handle').click({ timeout: 20_000 });
-    await page.locator('.si-row[data-index-id="canopus"]').click();
+    await openIndex(page, 'Named stars');
+    await page
+      .locator(
+        'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="canopus"]',
+      )
+      .click();
     await expect(panel(page, 'Canopus')).toBeVisible({ timeout: 15_000 });
     await expect.poll(() => params(page).goto).toBe('canopus');
   });
@@ -44,16 +57,24 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
   test('a cleared cold ?context is not written back by a later URL mirror', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
     await expect.poll(() => params(page).context ?? null, { timeout: 20_000 }).toBeNull();
-    await page.locator('.star-index-handle').click();
-    await page.locator('.si-row[data-index-id="canopus"]').click();
+    await openIndex(page, 'Named stars');
+    await page
+      .locator(
+        'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="canopus"]',
+      )
+      .click();
     await expect.poll(() => params(page).goto).toBe('canopus');
     expect(params(page).context ?? null).toBeNull();
   });
 
   test('leaving a system entered from its star panel clears ?system', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
-    await page.locator('.star-index-handle').click({ timeout: 20_000 });
-    await page.locator('.si-row[data-index-id="proxima-centauri"]').click();
+    await openIndex(page, 'Named stars');
+    await page
+      .locator(
+        'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="proxima-centauri"]',
+      )
+      .click();
     await page.locator('.enter-system').first().click({ timeout: 15_000 });
     await expect(page.getByTestId('explore-scale-back')).toHaveAttribute(
       'aria-label',
@@ -70,8 +91,12 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
 
   test('entering a system from its star panel mirrors it into ?system', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
-    await page.locator('.star-index-handle').click({ timeout: 20_000 });
-    await page.locator('.si-row[data-index-id="proxima-centauri"]').click();
+    await openIndex(page, 'Named stars');
+    await page
+      .locator(
+        'aside.scale-index[data-scale="neighborhood"] button.si-row[data-index-id="proxima-centauri"]',
+      )
+      .click();
     await page.locator('.enter-system').first().click({ timeout: 15_000 });
     await expect.poll(() => params(page).system, { timeout: 15_000 }).toBe('proxima-centauri');
     await expect(page.getByTestId('explore-scale-back')).toHaveAttribute(

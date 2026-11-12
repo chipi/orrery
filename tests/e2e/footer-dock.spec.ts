@@ -141,7 +141,7 @@ const HUD_PARTS: Array<[string, string]> = [
   ['ruler', '.ruler'],
   ['earth-compare', '.scales-dock'],
   ['dock', '.time-controls'],
-  ['index tab', '.body-index-handle'],
+  ['index tab', '.scale-index-handle'],
   ['footer', '.footer-menu'],
   ['scale panel', '.scale-strip'],
 ];

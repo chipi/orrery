@@ -2,11 +2,12 @@ import { test, expect, type Page } from '@playwright/test';
 import { waitForHydration } from './_helpers/hydration';
 
 /**
- * /explore message-object panel (#410) — the outbound interstellar craft
- * (Voyager 1/2, Pioneer 10/11, New Horizons) surface a "message to the cosmos"
- * panel from their PATHS legend row / trajectory, carrying the culture door for
- * the message they hold (Golden Record, Pioneer Plaque) and their heading. New
- * Horizons carries no formal message, so it shows the honest no-message note.
+ * /explore message section (#410, UXD-019) — the outbound interstellar craft
+ * (Voyager 1/2, Pioneer 10/11, New Horizons) open the MissionPanel from their PATHS
+ * legend row / trajectory like every other iconic mission, and the message they carry is a
+ * section of it: the culture door (Golden Record, Pioneer Plaque), their heading and how far a
+ * signal reaches. New Horizons carries no formal message, so it shows the honest no-message
+ * note. The MessagePanel they used to open is gone.
  *
  * On desktop the PATHS legend sits in the HUD; on mobile it lives inside the
  * "Missions" MobileControlsDrawer, so the legend row is only reachable after the
@@ -14,7 +15,7 @@ import { waitForHydration } from './_helpers/hydration';
  * scoped to the visible instance.
  */
 
-const panel = (p: Page) => p.getByTestId('explore-message-panel');
+const panel = (p: Page) => p.getByTestId('mission-message-section');
 const legendRow = (p: Page, id: string) =>
   p.locator(`[data-testid="paths-legend-row-${id}"]:visible`);
 
@@ -33,7 +34,7 @@ test.describe('/explore — message-object panel (#410)', () => {
     await waitForHydration(page);
   });
 
-  test('a craft that carries a message opens the panel with its culture door', async ({
+  test('a craft that carries a message opens the mission panel with its culture door', async ({
     page,
     isMobile,
   }) => {
@@ -41,6 +42,9 @@ test.describe('/explore — message-object panel (#410)', () => {
     await legendRow(page, 'voyager-1').click();
     await expect(panel(page)).toBeVisible({ timeout: 8_000 });
     await expect(panel(page)).toHaveAttribute('data-craft', 'voyager-1');
+    // One panel kind for all 18 rows: the mission panel itself, its name in the header.
+    await expect(page.locator('aside.panel h1.name').first()).toContainText('Voyager 1');
+    await expect(page.getByTestId('explore-message-panel')).toHaveCount(0);
     // The message it carries — the Golden Record culture door (title + link both
     // contain the phrase, so match the first).
     await expect(panel(page).getByText('Golden Record', { exact: false }).first()).toBeVisible();

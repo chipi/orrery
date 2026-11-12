@@ -221,6 +221,25 @@ for (const s of SCALES) {
       await expect(panel).toBeVisible();
       await expect(row).toHaveAttribute('aria-current', 'true');
 
+      // UXD-019: a row also takes the camera, as a canvas click does (the neighbourhood's
+      // frameStar turns the view instead of moving its origin, and is not read here).
+      if (s.id !== 'neighborhood') {
+        await page.waitForTimeout(900);
+        await expect
+          .poll(() => page.evaluate(() => window.__exploreCameraState!().flying), {
+            timeout: 10_000,
+          })
+          .toBe(false);
+        const { origin } = await page.evaluate(() => window.__exploreCameraState!());
+        const target =
+          s.id === 'solar-system'
+            ? await page.evaluate(() => window.__exploreBodyPosition!('planet:mars')!)
+            : null;
+        const off = Math.hypot(...origin.map((v, i) => (target ? v - target[i] : v)));
+        if (target) expect(off, 'the camera is on Mars').toBeLessThan(2);
+        else expect(off, 'the camera panned to the member').toBeGreaterThan(1);
+      }
+
       const links = panel.locator('a.si-page');
       if (s.links) await expectLinkTargets(links);
       else await expect(links).toHaveCount(0);

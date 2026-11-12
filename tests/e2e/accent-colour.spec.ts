@@ -31,13 +31,15 @@ if (vp) test.use({ viewport: { width: Number(vp[1]), height: Number(vp[2]) } });
 // heat-map scale, the microgravity axes legend, era bands and orbit-regime / agency / nation
 // identity dots whose colour comes from data.
 // Data colours reach the page as inline style bindings from data (a regime's --regime-color, a
-// fleet category's --accent, an era's --band-color, an agency badge's inline background-color);
+// fleet category's --accent, an era's --band-color, a chip's --chip-tone (UXD-014), an agency
+// badge's inline background-color);
 // UI colours come from the CSS tokens. So an element under an inline colour binding is data.
 const DATA_COLOUR = [
   '.color-bar',
   '.swatch-zenith',
   '[style*="--band-color"]',
   '[style*="--regime-color"]',
+  '[style*="--chip-tone"]',
   '[style*="--accent"]',
   '[style*="background-color"]',
   '[data-art]',

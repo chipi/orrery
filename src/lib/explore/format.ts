@@ -1,6 +1,8 @@
 import * as m from '$lib/paraglide/messages';
-import type { LocaleCode } from '$lib/locale';
 import type { ExploreContextId } from '$lib/three/explore-scene-host';
+import type { LocaleCode } from '$lib/locale';
+import type { DeepSkyCategory } from '$lib/data/universe';
+import { constellationName } from '$lib/universe/iau-constellations';
 
 // Localised label for an anonymous star's catalogue colour (enum → message).
 export const anonColorLabel = (c: string): string => {
@@ -99,6 +101,49 @@ export const SATELLITE_STATS: Record<string, { diameterKm: number; diameterRatio
 
 // Time-dilation readout: √(1 − rₛ/r) at r = k·rₛ, as a percentage of a far clock.
 export const dilationPct = (k: number): string => `${Math.round(Math.sqrt(1 - 1 / k) * 100)}%`;
+
+// ── Deep-sky objects: one formatter for the panel, the /explore/deep-sky/<id> page and the INDEX.
+
+const DEEP_SKY_CATEGORY_LABEL: Record<DeepSkyCategory, () => string> = {
+  galaxy: m.explore_ds_cat_galaxy,
+  'galaxy-cluster': m.explore_ds_cat_galaxy_cluster,
+  nebula: m.explore_ds_cat_nebula,
+  'planetary-nebula': m.explore_ds_cat_planetary_nebula,
+  'supernova-remnant': m.explore_ds_cat_supernova_remnant,
+  'star-forming-region': m.explore_ds_cat_star_forming_region,
+  'dark-nebula': m.explore_ds_cat_dark_nebula,
+  'star-cluster': m.explore_ds_cat_star_cluster,
+  'globular-cluster': m.explore_ds_cat_globular_cluster,
+  star: m.explore_ds_cat_star,
+  other: m.explore_ds_cat_other,
+};
+export const deepSkyCategoryLabel = (c: DeepSkyCategory): string => DEEP_SKY_CATEGORY_LABEL[c]();
+
+export { deepSkyTitle } from './deep-sky-title';
+
+const roundSig = (n: number, sig: number): number => {
+  const p = 10 ** (sig - Math.ceil(Math.log10(Math.abs(n))));
+  return Math.round(n * p) / p;
+};
+
+// "~24,000 ly", "~55 million ly" in the reader's number format and unit form, from `dist_ly`. Two
+// significant figures from ten thousand light-years up, three below: the same rounding as the
+// English `dist_label` the data carries, which stays the fallback only where `dist_ly` is null.
+export function deepSkyDistance(distLy: number, locale: string): string {
+  const r = roundSig(distLy, distLy >= 1e4 ? 2 : 3);
+  const value =
+    r >= 1e6
+      ? new Intl.NumberFormat(locale, {
+          notation: 'compact',
+          compactDisplay: 'long',
+          maximumFractionDigits: 1,
+        }).format(r)
+      : new Intl.NumberFormat(locale).format(r);
+  return m.unit_ly_value({ value: `~${value}` });
+}
+
+// The constellation spelled out ("Her" → "Hercules"); the page and the panel both show this.
+export const deepSkyConstellation = (code: string): string => constellationName(code);
 
 /** A planet's name in the viewer's language (`lab_body_*`); an id without a message keeps `fallback`. */
 export const planetName = (id: string, fallback: string, locale?: LocaleCode): string => {

@@ -94,7 +94,7 @@ test.describe('/explore — Arecibo message at M13 (#410)', () => {
     ).toBeVisible();
     // #658: the distance is Baumgardt & Vasiliev 2021 (24.2 kly), the magnitude Harris V_t, each
     // naming its catalogue with a link to the record, and the Data sources block lists the papers.
-    await expect(page.getByText('24,000 light-years', { exact: false }).first()).toBeVisible();
+    await expect(page.getByText('~24,000 ly', { exact: false }).first()).toBeVisible();
     const baumgardt = page.getByRole('link', { name: 'Baumgardt & Vasiliev 2021' }).first();
     await expect(baumgardt).toHaveAttribute(
       'href',

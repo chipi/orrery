@@ -8,10 +8,17 @@
 -->
 <script lang="ts">
   import Panel from './Panel.svelte';
-  import type { DeepSkyObject, DeepSkyCategory, DeepSkyTextOverlay } from '$lib/data';
+  import type { DeepSkyObject, DeepSkyTextOverlay } from '$lib/data';
   import type { DeepSkyImage } from '$lib/deep-sky';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import {
+    deepSkyCategoryLabel,
+    deepSkyConstellation,
+    deepSkyDistance,
+    deepSkyTitle,
+  } from '$lib/explore/format';
   import { dataSourceItems, recordLinks, sourceLink } from '$lib/catalogue';
   import DataSources from './DataSources.svelte';
 
@@ -40,21 +47,11 @@
     children,
   }: Props = $props();
 
-  const CAT_LABEL: Record<DeepSkyCategory, () => string> = {
-    galaxy: m.explore_ds_cat_galaxy,
-    'galaxy-cluster': m.explore_ds_cat_galaxy_cluster,
-    nebula: m.explore_ds_cat_nebula,
-    'planetary-nebula': m.explore_ds_cat_planetary_nebula,
-    'supernova-remnant': m.explore_ds_cat_supernova_remnant,
-    'star-forming-region': m.explore_ds_cat_star_forming_region,
-    'dark-nebula': m.explore_ds_cat_dark_nebula,
-    'star-cluster': m.explore_ds_cat_star_cluster,
-    'globular-cluster': m.explore_ds_cat_globular_cluster,
-    star: m.explore_ds_cat_star,
-    other: m.explore_ds_cat_other,
-  };
-  let categoryLabel = $derived(object ? CAT_LABEL[object.category]() : '');
-  let title = $derived(object?.name ?? '');
+  let categoryLabel = $derived(object ? deepSkyCategoryLabel(object.category) : '');
+  let title = $derived(object ? deepSkyTitle(object) : '');
+  let distance = $derived(
+    object?.dist_ly != null ? deepSkyDistance(object.dist_ly, getLocale()) : object?.dist_label,
+  );
   let distSrc = $derived(sourceLink(object?.catalogue?.dist_ly));
   let magSrc = $derived(sourceLink(object?.catalogue?.mag));
   let sources = $derived(
@@ -72,7 +69,7 @@
   {#if object}
     <div class="head">
       <div class="kind">{categoryLabel} · {object.designation}</div>
-      <div class="name">{object.name}</div>
+      <div class="name">{title}</div>
     </div>
 
     {#if overlay?.fact}<p class="editorial">{overlay.fact}</p>{/if}
@@ -80,10 +77,10 @@
     {#if image?.caption}<p class="prose">{image.caption}</p>{/if}
 
     <div class="grid">
-      {#if object.dist_label}
+      {#if distance}
         <div class="cell">
           <div class="cell-label">{m.explore_ds_distance()}</div>
-          <div class="cell-value accent">{object.dist_label}</div>
+          <div class="cell-value accent">{distance}</div>
           {#if distSrc}
             <a class="src" href={distSrc.url} target="_blank" rel="noopener noreferrer external"
               >{distSrc.label}</a
@@ -111,7 +108,7 @@
       {#if object.con}
         <div class="cell">
           <div class="cell-label">{m.explore_ds_constellation()}</div>
-          <div class="cell-value">{object.con}</div>
+          <div class="cell-value">{deepSkyConstellation(object.con)}</div>
         </div>
       {/if}
     </div>

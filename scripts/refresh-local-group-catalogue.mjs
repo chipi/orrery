@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fetchMcConnachie } from './lib/catalogue-sources.mjs';
 import { applyToSchematic, applyToSprites } from './lib/local-group-catalogue.mjs';
+import { overrideSchematic, overrideSprites } from './lib/local-group-distance-overrides.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SCHEMATIC = path.join(ROOT, 'static', 'data', 'universe', 'local-group.json');
@@ -25,9 +26,9 @@ async function main() {
 
   const schematic = read(SCHEMATIC);
   const a = applyToSchematic(schematic.members, mcc);
-  schematic.members = a.members;
+  schematic.members = overrideSchematic(a.members);
   schematic._provenance =
-    'Distances: McConnachie 2012 (AJ 144, 4) Local Group census via VizieR J/AJ/144/4, one catalogue entry per member (source, bibcode, record link); the catalogue gives whole kpc. Types: NED and McConnachie 2012. Schematic positions are hand-authored for legibility. Refresh: node scripts/refresh-local-group-catalogue.mjs';
+    'Distances: McConnachie 2012 (AJ 144, 4) Local Group census via VizieR J/AJ/144/4, one catalogue entry per member (source, bibcode, record link); the catalogue gives whole kpc. LMC and SMC: Pietrzyński 2019 and Graczyk 2020 (scripts/lib/local-group-distance-overrides.mjs). Types: NED and McConnachie 2012. Schematic positions are hand-authored for legibility. Refresh: node scripts/refresh-local-group-catalogue.mjs';
   write(SCHEMATIC, schematic);
   console.log(
     `✓ ${a.members.length - a.skipped.length - 1} schematic members sourced; skipped: ${a.skipped.join(', ') || 'none'}`,
@@ -35,9 +36,9 @@ async function main() {
 
   const sprites = read(SPRITES);
   const b = applyToSprites(sprites.entries, mcc);
-  sprites.entries = b.entries;
+  sprites.entries = overrideSprites(b.entries);
   sprites.description =
-    'Local Group galaxies plotted as billboard sprites on the /explore celestial sphere. Positions are J2000 ICRS (RA/Dec in decimal degrees). Distances from the Solar System in kiloparsecs from McConnachie (2012), via VizieR J/AJ/144/4, one catalogue entry per galaxy (source, bibcode, record link).';
+    'Local Group galaxies plotted as billboard sprites on the /explore celestial sphere. Positions are J2000 ICRS (RA/Dec in decimal degrees). Distances from the Solar System in kiloparsecs from McConnachie (2012), via VizieR J/AJ/144/4, one catalogue entry per galaxy (source, bibcode, record link); LMC and SMC from Pietrzyński 2019 and Graczyk 2020 (scripts/lib/local-group-distance-overrides.mjs).';
   write(SPRITES, sprites);
   console.log(
     `✓ ${b.entries.length - b.skipped.length} sprite entries sourced; skipped: ${b.skipped.join(', ') || 'none'}`,

@@ -23,7 +23,9 @@ below is a rendered measurement (§12).
 | MW3 | Detail panels look different from all others; align the styling. An image loads in the panel, not the main area (Sagittarius A\* / supermassive black hole). | Eight panels (`MilkyWayPanel`, `LocalGroupPanel`, `LocalSheetPanel`, `VirgoPanel`, `LaniakeaPanel`, `CosmicWebPanel`, `BlackHolePanel`, `DeepSkyPanel`) each carry the same private block: `.head/.kind/.name/.prose/.grid/.cell` in rem units (`MilkyWayPanel.svelte:103–163`, identical in the other seven), no tabs, no hero slot. Selecting the Sag A\* pin calls `enterBlackHole` (`explore-scene-host.ts:2411–2416`) which replaces the main area with the lensing render (`:552–588`) and opens `BlackHolePanel` text-only. |
 | MW5 | Deep-sky gallery images as hero images here? | 44 of 141 deep-sky objects have a gallery photo (§2.3). No outer-level panel shows any; `DeepSkyPanel` receives the `image` prop and uses only `caption`, `telescope`, `credit` (`DeepSkyPanel.svelte:70–72,80,105`) and never draws the photo (the photo is the immersive main area, `explore-scene-host.ts:1486–1496`). |
 
-## 0c. Cascade update (lead, 2026-11-12 afternoon) — read before §1
+**Operator, 2026-11-12: all open questions of §10 (Q1–Q8) approved as recommended.**
+
+& (lead, 2026-11-12 afternoon) — read before §1
 
 Work that landed or was decided after this brief was written, and what it changes here:
 

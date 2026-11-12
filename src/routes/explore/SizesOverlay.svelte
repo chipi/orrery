@@ -38,7 +38,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(8, 10, 22, 0.96);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     padding: 18px 18px 14px;
     width: min(640px, calc(100vw - 48px));

@@ -948,7 +948,7 @@
   let fdPhaseMarkerScreens = $state.raw<FdPhaseMarkerRender[]>([]);
 
   /** Milestone overlay (#306-companion) — labeled `flight.events[]`
-   *  entries surface as teal chips on the trajectory. Distinct from
+   *  entries surface as accent blue chips on the trajectory. Distinct from
    *  the gold FD stage markers above: FD stages are the 7-stage
    *  cinematic cadence (INJECTION → CRUISE → APPROACH → ARRIVAL × 2
    *  legs) shared by every mission, milestones are the per-mission
@@ -1021,7 +1021,7 @@
   // Round-trip return anchor — third torus + label at retPts[last]
   // (Earth on return-arrival day). Visible only when the loaded
   // mission has a non-empty retPts geometry (round-trip / sample
-  // return / free-return). Distinct teal chrome so it doesn't read
+  // return / free-return). Distinct accent blue chrome so it doesn't read
   // as a duplicate of the blue LAUNCH ring at Earth-on-dep.
   let retMarker: THREE.Mesh | undefined;
   let retLabelSprite: THREE.Sprite | undefined;
@@ -3628,7 +3628,7 @@
     </div>
   {/if}
 
-  <!-- Milestone overlay — labeled flight.events render as small teal
+  <!-- Milestone overlay — labeled flight.events render as small accent blue
        chips at the spacecraft's projected position at the event MET.
        Always rendered (not lens-gated): milestones are the
        per-mission historical narrative beats (Cassini's Venus #1,
@@ -4183,7 +4183,7 @@
         </div>
         <div class="hud-row">
           <span class="hud-key">{m.fly_hud_dv_remaining()}</span>
-          <span class="hud-val teal">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
+          <span class="hud-val accent">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
         </div>
         <div class="dv-bar" aria-hidden="true">
           <div
@@ -4761,7 +4761,7 @@
     pointer-events: none;
     z-index: 13;
   }
-  /* Milestone overlay — labeled flight.events. Teal accent
+  /* Milestone overlay — labeled flight.events. Accent blue
      distinguishes per-mission historical beats from the gold FD
      stage cadence. Sits ABOVE FD markers (z 14) so a Cassini Venus
      #1 chip is readable even if a CRUISE diamond projects close. */
@@ -4771,8 +4771,8 @@
     pointer-events: none;
     z-index: 14;
   }
-  /* Milestone diamonds (polish-wave-2). Past = dim teal pinprick;
-     future = mid teal pinprick; active = larger glowing teal pulse
+  /* Milestone diamonds (polish-wave-2). Past = dim accent blue pinprick;
+     future = mid accent blue pinprick; active = larger glowing accent blue pulse
      so the eye can pick out the "we're here now" anchor on the path.
      The label / description live in the HUD ACTIVE row now (see
      `.hud-row-active-event` below). */
@@ -4780,24 +4780,24 @@
     position: absolute;
     width: 6px;
     height: 6px;
-    background: #2dd4a8;
+    background: var(--color-ok);
     transform: translate(-50%, -50%) rotate(45deg);
-    box-shadow: 0 0 3px rgba(45, 212, 168, 0.65);
+    box-shadow: 0 0 3px color-mix(in srgb, var(--color-ok) 65%, transparent);
     z-index: 12;
     pointer-events: none;
     user-select: none;
   }
   .milestone-diamond.past {
-    background: rgba(45, 212, 168, 0.55);
-    box-shadow: 0 0 2px rgba(45, 212, 168, 0.35);
+    background: color-mix(in srgb, var(--color-ok) 55%, transparent);
+    box-shadow: 0 0 2px color-mix(in srgb, var(--color-ok) 35%, transparent);
   }
   .milestone-diamond.future {
-    background: rgba(45, 212, 168, 0.75);
+    background: color-mix(in srgb, var(--color-ok) 75%, transparent);
   }
   .milestone-diamond.active {
     width: 11px;
     height: 11px;
-    background: #5eead4;
+    background: var(--color-accent);
     box-shadow:
       0 0 10px rgba(127, 212, 255, 0.95),
       0 0 4px rgba(255, 255, 255, 0.7);
@@ -4834,7 +4834,7 @@
     font-size: var(--size-label);
     letter-spacing: 1.4px;
     text-transform: uppercase;
-    color: rgba(45, 212, 168, 0.85);
+    color: color-mix(in srgb, var(--color-ok) 85%, transparent);
     text-shadow:
       0 0 4px rgba(8, 10, 22, 0.95),
       0 0 8px rgba(8, 12, 24, 0.42);
@@ -4843,13 +4843,13 @@
     z-index: 12;
   }
   .milestone-marker-label.past {
-    color: rgba(45, 212, 168, 0.6);
+    color: color-mix(in srgb, var(--color-ok) 60%, transparent);
   }
   .milestone-marker-label.future {
-    color: rgba(45, 212, 168, 0.7);
+    color: color-mix(in srgb, var(--color-ok) 70%, transparent);
   }
   .milestone-marker-label.active {
-    color: #5eead4;
+    color: var(--color-state);
     font-weight: 700;
     text-shadow:
       0 0 6px rgba(127, 212, 255, 0.55),
@@ -5710,8 +5710,8 @@
     align-self: stretch;
     padding: 6px 10px;
     margin-bottom: 4px;
-    background: rgba(68, 102, 255, 0.18);
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: #fff;
     text-decoration: none;
     text-align: center;
@@ -5725,18 +5725,18 @@
   }
   .hud-demo-cta:hover,
   .hud-demo-cta:focus-visible {
-    background: rgba(68, 102, 255, 0.32);
-    border-color: #4466ff;
+    background: var(--color-accent-edge);
+    border-color: var(--color-accent);
     outline: none;
   }
   .hud-demo-cta-secondary {
-    background: rgba(78, 205, 196, 0.14);
-    border-color: rgba(78, 205, 196, 0.5);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .hud-demo-cta-secondary:hover,
   .hud-demo-cta-secondary:focus-visible {
-    background: rgba(78, 205, 196, 0.28);
-    border-color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-color: var(--color-accent);
   }
 
   .hud-title {
@@ -5775,16 +5775,16 @@
     border-color: rgba(255, 255, 255, 0.2);
   }
   .phase-outbound {
-    color: var(--color-accent-text, #5070ff);
-    border-color: rgba(68, 102, 255, 0.5);
+    color: var(--color-accent);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .phase-return {
     color: #9966ff;
     border-color: rgba(153, 102, 255, 0.5);
   }
   .phase-arrived {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
 
   /* hud-row gets a long val (e.g. "Sputnik 8K71PS (R-7 Semyorka
@@ -5823,8 +5823,8 @@
     color: var(--color-text-label);
     font-weight: 400;
   }
-  .hud-val.teal {
-    color: #4ecdc4;
+  .hud-val.accent {
+    color: var(--color-state);
   }
   /* Dim continuation inside a value cell (e.g. light-minute alongside Mkm). */
   .hud-val-sub {
@@ -5841,7 +5841,11 @@
   }
   .dv-fill {
     height: 100%;
-    background: linear-gradient(to right, #4466ff, #4466ff88);
+    background: linear-gradient(
+      to right,
+      var(--color-accent),
+      color-mix(in srgb, var(--color-accent) 53%, transparent)
+    );
   }
 
   .scrubber {
@@ -5890,7 +5894,7 @@
     align-items: center;
     justify-content: center;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    border: 1px solid var(--color-accent-edge);
     color: rgba(220, 230, 245, 0.95);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 16px;
@@ -5900,7 +5904,7 @@
   }
   .hud-collapse:hover,
   .hud-collapse:focus-visible {
-    border-color: #4ecdc4;
+    border-color: var(--color-accent);
     background: rgba(20, 26, 50, 0.95);
     outline: none;
   }
@@ -5975,7 +5979,7 @@
   .perf-toast-dismiss {
     flex: 1;
     background: transparent;
-    border: 1px solid rgba(78, 205, 196, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     color: rgba(220, 230, 245, 0.95);
     padding: 5px 8px;
     border-radius: 3px;
@@ -5984,11 +5988,11 @@
     font-size: 11px;
   }
   .perf-toast-apply {
-    background: rgba(78, 205, 196, 0.2);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    color: var(--color-state);
   }
   .perf-toast-apply:hover {
-    background: rgba(78, 205, 196, 0.35);
+    background: var(--color-accent-edge);
   }
   .perf-toast-dismiss:hover {
     border-color: rgba(220, 230, 245, 0.7);
@@ -6029,7 +6033,7 @@
     color: #4b9cd3;
   }
   .accent-vinf {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .accent-dv {
     color: #ffc850;
@@ -6054,7 +6058,7 @@
   }
   .play-btn:hover,
   .play-btn:focus-visible {
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     outline: none;
   }
   .scrub-track-wrap {
@@ -6095,8 +6099,8 @@
     height: 12px;
     border-radius: 50%;
     background: #fff;
-    border: 2px solid #2dd4a8;
-    box-shadow: 0 0 8px rgba(45, 212, 168, 0.85);
+    border: 2px solid var(--color-ok);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-ok) 85%, transparent);
     cursor: pointer;
     margin-top: -3px;
   }
@@ -6105,8 +6109,8 @@
     height: 12px;
     border-radius: 50%;
     background: #fff;
-    border: 2px solid #2dd4a8;
-    box-shadow: 0 0 8px rgba(45, 212, 168, 0.85);
+    border: 2px solid var(--color-ok);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-ok) 85%, transparent);
     cursor: pointer;
   }
   .scrub:focus-visible {
@@ -6129,7 +6133,7 @@
   }
   .scrub-fill {
     height: 100%;
-    background: linear-gradient(to right, #2dd4a8, #5eead4);
+    background: linear-gradient(to right, var(--color-ok), var(--color-accent));
     border-radius: 3px;
     transition: width 90ms linear;
   }
@@ -6153,7 +6157,7 @@
     z-index: 4;
   }
   /* FD stage track — sits ABOVE the milestone track so the gold
-     stage marks read in front of the teal milestone marks when
+     stage marks read in front of the accent blue milestone marks when
      they happen to project at the same x. Same pointer-events
      model: track none, children auto. */
   .fd-stage-track {
@@ -6347,8 +6351,8 @@
     cursor: pointer;
   }
   .speed-pill.active {
-    background: rgba(68, 102, 255, 0.2);
-    border-color: rgba(68, 102, 255, 0.5);
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     color: #fff;
   }
   /* Mobile: single active-speed slot + tap-to-reveal stacked popover (matches
@@ -6365,7 +6369,7 @@
     flex-direction: column;
     gap: 2px;
     background: rgba(8, 10, 22, 0.95);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 5px;
     padding: 3px;
     min-width: 48px;
@@ -6524,8 +6528,8 @@
       backdrop-filter: blur(6px);
     }
     .fly-mtab.active {
-      background: rgba(68, 102, 255, 0.18);
-      border-color: rgba(68, 102, 255, 0.7);
+      background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+      border-color: var(--color-accent-strong);
       color: #dde4ff;
     }
     /* Landscape inline row — parity with explore's bottomInline drawer: the
@@ -6597,7 +6601,7 @@
     min-height: 44px;
     padding: 0 10px;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     color: #dde4ff;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
@@ -6609,7 +6613,7 @@
   }
   .toggle:hover,
   .toggle:focus-visible {
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     background: rgba(20, 26, 50, 0.95);
     outline: none;
   }
@@ -6617,7 +6621,7 @@
      reads as clickable, but its panel is hidden. */
   .toggle[aria-pressed='false'] {
     color: rgba(221, 228, 255, 0.6);
-    border-color: rgba(68, 102, 255, 0.2);
+    border-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
   }
   /* Gold-themed variant for the lens-gated cluster on the left. Reuses
      the same gold accent as ScienceLayersPanel + FlightDirectorBanner
@@ -6642,7 +6646,7 @@
   }
   .toggle:hover,
   .toggle:focus-visible {
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     outline: none;
   }
 
@@ -6657,7 +6661,7 @@
     max-height: 50vh;
     z-index: 32;
     background: rgba(8, 10, 22, 0.96);
-    border: 1px solid rgba(78, 205, 196, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     backdrop-filter: blur(8px);
     padding: 14px 16px;
@@ -6702,7 +6706,7 @@
   .capcom-section h3 {
     font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.6);
+    color: var(--color-state);
     margin: 0 0 6px;
   }
 
@@ -6715,9 +6719,9 @@
     border: 1px solid;
   }
   .anomaly-nominal {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.06);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
   }
   .anomaly-caution {
     color: #ffc850;
@@ -6780,10 +6784,10 @@
     border-radius: 0 3px 3px 0;
   }
   .event-nominal {
-    border-left-color: rgba(78, 205, 196, 0.5);
+    border-left-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .event-info {
-    border-left-color: rgba(68, 102, 255, 0.5);
+    border-left-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .event-warning {
     border-left-color: #ffc850;

@@ -2278,8 +2278,8 @@
   }
   .body-index-handle:hover,
   .body-index-handle[aria-pressed='true'] {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
 
   .tour-anchors {

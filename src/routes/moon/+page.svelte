@@ -105,7 +105,7 @@
     radiusKm: 1737.4,
     // Moon's near-side tidal-lock indicator (Mars rotates freely; no
     // analog). Science Lens 'tidal-lock' layer toggles visibility.
-    tidalLockOverlay: { color: 0x4ecdc4, opacity: 0.18 },
+    tidalLockOverlay: { color: 0x4ecdc4, opacity: 0.18 }, // a3-keep: tidal-lock hemisphere overlay (science), palette review at the end
     // Sub-Earth point + libration envelope ('sub-earth' lens) and the
     // far-side tint ('far-side' lens) — both attach to the lunar surface.
     lunarLayers: {
@@ -358,14 +358,14 @@
     letter-spacing: 0.04em;
     color: var(--text-base, #e8e8ed);
     background: rgba(8, 10, 22, 0.62);
-    border: 1px solid rgba(78, 205, 196, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     backdrop-filter: blur(5px);
     cursor: pointer;
     min-height: 34px;
   }
   .locate-me:hover:not(:disabled) {
-    border-color: rgba(78, 205, 196, 0.7);
+    border-color: var(--color-accent-strong);
   }
   .locate-me:disabled {
     opacity: 0.6;
@@ -401,7 +401,7 @@
     }
   }
   .locate-icon {
-    color: #4ecdc4;
+    color: var(--color-state);
     font-size: 14px;
     line-height: 1;
   }
@@ -416,14 +416,14 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     color: var(--text-base, #e8e8ed);
     background: rgba(8, 10, 22, 0.72);
-    border: 1px solid rgba(78, 205, 196, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     backdrop-filter: blur(6px);
   }
   .mo-eyebrow {
     font-size: var(--size-label);
     letter-spacing: 0.18em;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     margin-bottom: 6px;
   }
   .mo-phase {

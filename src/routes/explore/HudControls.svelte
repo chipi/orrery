@@ -528,7 +528,7 @@
     /* Mobile: 12 px font, 0/10 padding. Desktop bumps to 13 / 0 14. */
     padding: 0 10px;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     color: #dde4ff;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
@@ -542,13 +542,13 @@
   }
   .toggle:hover,
   .toggle:focus-visible {
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     background: rgba(20, 26, 50, 0.95);
     outline: none;
   }
 
   /* Layer chips — always-visible visibility toggles. Inactive chips
-     are dim outlines; active chips are filled with the teal accent
+     are dim outlines; active chips are filled with the accent blue
      so the on-state is obvious. 44 px tall preserves the ADR-018
      touch-target floor.
      #342 Phase 30 — mobile-first: phone values default; desktop
@@ -579,19 +579,19 @@
   .chip:hover,
   .chip:focus-visible {
     color: #fff;
-    border-color: rgba(78, 205, 196, 0.6);
+    border-color: var(--color-accent-strong);
     outline: none;
   }
   .chip.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.7);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent-strong);
+    color: var(--color-state);
   }
   .chip.active:hover,
   .chip.active:focus-visible {
     color: #fff;
-    background: rgba(78, 205, 196, 0.32);
-    border-color: #4ecdc4;
+    background: var(--color-accent-edge);
+    border-color: var(--color-accent);
   }
 
   /* Compact trajectory on/off inside the Iconic Missions drawer (mobile). */
@@ -611,8 +611,8 @@
     cursor: pointer;
   }
   .iconic-toggle.active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .iconic-toggle-dot {
     width: 8px;
@@ -622,8 +622,8 @@
     flex-shrink: 0;
   }
   .iconic-toggle-dot.on {
-    background: #4ecdc4;
-    box-shadow: 0 0 6px rgba(78, 205, 196, 0.7);
+    background: var(--color-accent);
+    box-shadow: 0 0 6px var(--color-accent-strong);
   }
   .paths-legend {
     pointer-events: auto;
@@ -634,7 +634,7 @@
     gap: 2px;
     padding: 8px 10px;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     /* Cap height so the 18-row roster doesn't spill off the bottom on
        short viewports (laptop 13" landscape ≈ 720 px; chips row above
@@ -655,7 +655,7 @@
     width: 6px;
   }
   .paths-legend::-webkit-scrollbar-thumb {
-    background: rgba(68, 102, 255, 0.5);
+    background: color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 3px;
   }
   /* Single-line row — name + logos + year. Slightly more compact
@@ -706,12 +706,12 @@
      hovering a trajectory in the 3D scene highlights its legend row too
      (reverse of row-hover → arc highlight). #306 follow-up. */
   .paths-legend-row.is-hovered {
-    background: rgba(68, 102, 255, 0.15);
+    background: var(--color-accent-soft);
     color: #fff;
     outline: none;
   }
   .paths-legend-row.is-selected {
-    background: rgba(68, 102, 255, 0.28);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
     color: #fff;
     box-shadow: inset 2px 0 0 rgba(140, 170, 255, 0.95);
   }
@@ -736,7 +736,7 @@
   .paths-legend-why:hover,
   .paths-legend-why:focus-visible {
     color: #fff;
-    background: rgba(68, 102, 255, 0.12);
+    background: var(--color-accent-soft);
     outline: none;
   }
   .paths-legend-row .swatch {

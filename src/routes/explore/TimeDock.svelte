@@ -253,7 +253,7 @@
     /* Mobile: 12 px font, 0/10 padding. Desktop bumps to 13 / 0 14. */
     padding: 0 10px;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     color: #dde4ff;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
@@ -267,7 +267,7 @@
   }
   .toggle:hover,
   .toggle:focus-visible {
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     background: rgba(20, 26, 50, 0.95);
     outline: none;
   }
@@ -327,16 +327,16 @@
   }
   .time-controls .play-btn:hover,
   .time-controls .play-btn:focus-visible {
-    border-color: #4ecdc4;
+    border-color: var(--color-accent);
     background: rgba(20, 26, 50, 0.85);
     color: #fff;
   }
   .time-controls .play-btn[aria-pressed='true'] {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   /* Segmented speed control — one rounded track, hairline dividers, the
-     active step glows teal. */
+     active step glows accent blue. */
   .speed-group {
     display: flex;
     align-items: stretch;
@@ -371,12 +371,12 @@
     outline: none;
   }
   .speed-pill.active {
-    background: rgba(78, 205, 196, 0.22);
-    color: #4ecdc4;
-    box-shadow: inset 0 0 8px rgba(78, 205, 196, 0.18);
+    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+    color: var(--color-state);
+    box-shadow: inset 0 0 8px color-mix(in srgb, var(--color-accent) 18%, transparent);
   }
   /* Date readout (#351 Layer 2-B) — non-interactive chip showing the
-     running simulated date, in the panel's mono/teal language. */
+     running simulated date, in the panel's mono/accent blue language. */
   .time-date {
     display: inline-flex;
     align-items: center;
@@ -398,11 +398,11 @@
     white-space: nowrap;
   }
   /* Reset-to-today — same icon-button footprint as play/pause (inherits
-     .time-controls .play-btn), teal tint, slightly larger glyph so the ⟲
+     .time-controls .play-btn), accent blue tint, slightly larger glyph so the ⟲
      reads clearly. Defined after .play-btn so it wins the font-size. */
   .time-controls .reset-btn {
     font-size: 20px;
-    color: #4ecdc4;
+    color: var(--color-accent);
   }
 
   @media (min-width: 501px) {

@@ -62,7 +62,7 @@
     text-align: center;
     color: #cdd4e6;
     background: rgba(10, 14, 26, 0.6);
-    border: 1px solid rgba(78, 205, 196, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     backdrop-filter: blur(5px);
     pointer-events: none;
@@ -96,7 +96,7 @@
     margin-bottom: 4px;
   }
   .time-lens .tl-row b {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .time-lens .tl-foot {
     margin-top: 8px;

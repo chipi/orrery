@@ -1,0 +1,32 @@
+COLUMN                   src/lib/surface-scene/SurfaceScene.svelte:7541  .ctrl-row.chips
+COLUMN                   src/routes/explore/HudControls.svelte:828  .ctrl-row.chips
+OLD-HEADER-MARKUP        src/lib/components/LayerChipRow.svelte:53  class="chip-group"
+FULLROW-HEADER           src/lib/components/LayerChipRow.svelte:88  flex-basis: 100%;
+EARTH-ONLY-GROUP-KEY     src/lib/surface-scene/SurfaceScene.svelte:5452  label: earthGroups ? m.earth_layer_group_space() : m.ui_layer_orbiters(),
+EARTH-ONLY-GROUP-KEY     src/lib/surface-scene/SurfaceScene.svelte:5453  title: earthGroups ? m.earth_layer_group_space_tip() : m.moon_layer_tip_orbiters
+EARTH-ONLY-GROUP-KEY     src/lib/surface-scene/SurfaceScene.svelte:5475  label: m.earth_layer_group_ground(),
+EARTH-ONLY-GROUP-KEY     src/lib/surface-scene/SurfaceScene.svelte:5476  title: m.earth_layer_group_ground_tip(),
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5451  testid: 'layer-orbiters',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5462  testid: 'layer-surface',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5489  testid: 'layer-launchpads',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5502  testid: 'layer-orbits',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5516  testid: 'layer-museums',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5533  testid: 'layer-telescopes',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5550  testid: 'layer-traverses',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5577  testid: 'layer-stations',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5585  testid: 'layer-observatories',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5594  testid: 'layer-constellations',
+NO-GROUP                 src/lib/surface-scene/SurfaceScene.svelte:5602  testid: 'layer-comsats',
+EXPLORE-NOT-SHARED       src/routes/explore/HudControls.svelte:1  HudControls does not use LayerChipRow
+CHIP-DRIVEN-RULER-SHIFT  src/lib/surface-scene/SurfaceScene.svelte:1187  const chips = root.querySelector('.hud-controls');
+HARD-TOP-OFFSET          src/lib/surface-scene/SurfaceScene.svelte:7066  top: 152px;
+HARD-RULER-OFFSET        src/routes/explore/+page.svelte:2309  --ruler-top-clear: 376px;
+HARD-RULER-OFFSET        src/routes/explore/+page.svelte:2314  --ruler-left: 196px;
+STALE-COMMENT            src/lib/surface-scene/SurfaceScene.svelte:1165  // the chip column reaches down into it (short windows, e.g. 1280x720 on
+STALE-COMMENT            src/lib/surface-scene/SurfaceScene.svelte:7429  horizontal scroll. Desktop returns to a vertical column at
+STALE-COMMENT            src/lib/surface-scene/SurfaceScene.svelte:7533  /* ─── ≥ 768 px — chip rail returns to vertical column + z-index ── */
+STALE-COMMENT            src/lib/surface-scene/SurfaceScene.svelte:7556  2.2 minimum is 24) and saves ~94 px of column on /earth, which
+NO-E2E                   tests/e2e/chip-groups.spec.ts:1  file missing
+NO-UXD                   docs/uxs/decisions/UXD-015-chip-groups-and-row-layout.md:1  file missing
+by kind: {'COLUMN': 2, 'OLD-HEADER-MARKUP': 1, 'FULLROW-HEADER': 1, 'EARTH-ONLY-GROUP-KEY': 4, 'NO-GROUP': 11, 'EXPLORE-NOT-SHARED': 1, 'CHIP-DRIVEN-RULER-SHIFT': 1, 'HARD-TOP-OFFSET': 1, 'HARD-RULER-OFFSET': 2, 'STALE-COMMENT': 4, 'NO-E2E': 1, 'NO-UXD': 1}
+A5-CHECK violations: 30

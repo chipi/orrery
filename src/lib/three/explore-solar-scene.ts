@@ -1037,7 +1037,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       new THREE.Vector3(0, 0, 1),
       new THREE.Vector3(0, 0, 0),
       12,
-      0x4ecdc4,
+      0x8aa0ff,
       2.5,
       1.4,
     );
@@ -1068,7 +1068,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     const formatG = (g: number) =>
       g >= 1 ? `${g.toFixed(2)} m/s²` : `${(g * 1000).toFixed(g >= 0.001 ? 1 : 2)} mm/s²`;
     const gravityLabel = buildArrowTipLabel(formatG(aG), '#aac6ff', 14);
-    const velocityLabel = buildArrowTipLabel(`${v.toFixed(1)} km/s`, '#92e8df', 14);
+    const velocityLabel = buildArrowTipLabel(`${v.toFixed(1)} km/s`, '#c4d0ff', 14);
     const centripetalLabel = buildArrowTipLabel(formatG(aG), '#ffb1b1', 14);
     gravityLabel.userData.layerKey = 'gravity';
     velocityLabel.userData.layerKey = 'velocity';

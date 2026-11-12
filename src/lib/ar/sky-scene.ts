@@ -1107,9 +1107,9 @@ export function createSkyScene(
   const constellationLines = new THREE.LineSegments(
     new THREE.BufferGeometry(),
     new THREE.LineBasicMaterial({
-      // Match the /explore ConstellationFinder panel: rgba(120,190,230,0.7) — a
+      // Match the /explore ConstellationFinder panel: rgba(136,159,231,0.7) — a
       // clear blue tinge, stronger than the first pass which read as barely-there.
-      color: 0x78bee6,
+      color: 0x889fe7,
       transparent: true,
       opacity: 0.7,
       depthTest: false,

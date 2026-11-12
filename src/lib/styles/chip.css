@@ -111,7 +111,7 @@
 
 /* Small controls that are not chips (a Why? trigger, a provenance mark, an inline cross-reference):
    a 24 px minimum hit area (WCAG 2.5.8) with no visual change. */
-.ui-hit {
+:where(.ui-hit) {
   position: relative;
 }
 .ui-hit::after {

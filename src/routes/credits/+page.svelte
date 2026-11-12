@@ -643,7 +643,9 @@
             <p class="d-desc">{d.description}</p>
             {#if d.references}
               <details class="d-refs">
-                <summary>{m.credits_data_references({ count: d.references.length })}</summary>
+                <summary class="ui-hit"
+                  >{m.credits_data_references({ count: d.references.length })}</summary
+                >
                 <ul>
                   {#each d.references as r (r.u)}
                     <li><a href={r.u} target="_blank" rel="noopener noreferrer">{r.l}</a></li>

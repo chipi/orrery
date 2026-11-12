@@ -227,7 +227,9 @@
             <span class="t-dot"></span>
             <span class="t-body">
               {#if href(m)}
-                <a class="t-name t-mod" href={href(m)}>{m.name ?? pretty(m.linked_id ?? '')}</a>
+                <a class="t-name t-mod ui-hit" href={href(m)}
+                  >{m.name ?? pretty(m.linked_id ?? '')}</a
+                >
               {:else}
                 <span class="t-name">{m.name ?? pretty(m.linked_id ?? '')}</span>
               {/if}
@@ -257,7 +259,7 @@
                 {/if}
                 <button
                   type="button"
-                  class="t-name"
+                  class="t-name ui-hit"
                   onclick={() => (selected = r.linked_id ?? null)}>{pretty(r.linked_id)}</button
                 >
               {:else}

@@ -10,6 +10,10 @@
  * WCAG 0.05 term makes the ratio of such a veiled pair rise slightly, so the veiled figure is
  * read against its own 2:1 target, not as "raw minus something".
  *
+ * Negative control: every element is also measured at the same points shifted 8 px off it. A
+ * bright starfield or glow raises the contrast of any point, element or not, so the verdict uses
+ * the element median minus the control's excess over 1:1 (`excessOverControl`), not the raw median.
+ *
  * Targets (operator, 2026-11-12): 3:1 on the rendered pixels, 2:1 after the veil.
  */
 
@@ -86,17 +90,18 @@ const RING = [
 ];
 
 /**
- * Contrast of the element at (x, y): the brightest pixel of the 3 x 3 block around the point
- * (the projected point can sit up to a pixel off the drawn line) against the median of the
- * 8 pixels `radius` px around it (a line crosses at most two of them, so the median is the
- * background). Returns null when the point or its ring is off the frame.
+ * Contrast of the element at (x, y): the brightest pixel of the block of half-size `half`
+ * around the point (1 is 3 x 3; the projected point can sit up to one CSS px off the drawn
+ * line, so use `half` = the device pixel ratio) against the median of the 8 pixels `radius`
+ * px around it (a line crosses at most two of them, so the median is the background). Returns
+ * null when the point or its ring is off the frame. `radius` and `half` are device pixels.
  */
-export function pointContrast(rgba, w, h, x, y, radius = 4) {
+export function pointContrast(rgba, w, h, x, y, radius = 4, half = 1) {
   const cx = Math.round(x);
   const cy = Math.round(y);
   let best = -1;
-  for (let dy = -1; dy <= 1; dy++) {
-    for (let dx = -1; dx <= 1; dx++) {
+  for (let dy = -half; dy <= half; dy++) {
+    for (let dx = -half; dx <= half; dx++) {
       const l = lumAt(rgba, w, h, cx + dx, cy + dy);
       if (l === null) return null;
       if (l > best) best = l;
@@ -127,20 +132,68 @@ export function summarise(ratios, target = TARGET) {
   };
 }
 
-/** Contrast of every point, raw and after the veil, with the verdict against the two targets. */
-export function measureElement(rgba, w, h, points, { radius = 4, alpha = VEIL_ALPHA } = {}) {
+/** The negative control's shift off the element, in CSS px. */
+export const CONTROL_SHIFT = 8;
+
+/**
+ * The same sample points moved `shift` device px (Euclidean) off the element, in turn along the
+ * four diagonals: a straight horizontal or vertical line is left by every one, and a circle (an
+ * orbit) is hit only where its tangent happens to run along the shift, which the median ignores.
+ * Measured with the same rule, they show how much "contrast" the background gives anyway (a
+ * bright starfield, glow, the maximum of the 3 x 3 block).
+ */
+export function controlPoints(points, shift = CONTROL_SHIFT) {
+  const d = shift / Math.SQRT2;
+  const dirs = [
+    [d, d],
+    [-d, d],
+    [-d, -d],
+    [d, -d],
+  ];
+  return points.map((p, i) => ({ x: p.x + dirs[i % 4][0], y: p.y + dirs[i % 4][1] }));
+}
+
+/**
+ * The element's contrast minus what the control shows: the element median less the part of the
+ * control median that is above 1:1 (a flat background is 1). A bright field raises both and
+ * cancels; a line that is only as visible as its surroundings scores 1.
+ */
+export function excessOverControl(elementP50, controlP50) {
+  if (!Number.isFinite(elementP50) || !Number.isFinite(controlP50)) return NaN;
+  return elementP50 - Math.max(0, controlP50 - 1);
+}
+
+/**
+ * Contrast of every point, raw and after the veil, and of the control points shifted off the
+ * element; the verdict uses the p50 minus the control (see `excessOverControl`) against the two
+ * targets. Points, `radius`, `half` and `shift` are in the pixels of `rgba`.
+ */
+export function measureElement(
+  rgba,
+  w,
+  h,
+  points,
+  { radius = 4, half = 1, alpha = VEIL_ALPHA, shift = CONTROL_SHIFT } = {},
+) {
   const veiled = veil(rgba, alpha);
-  const raw = summarise(
-    points.map((p) => pointContrast(rgba, w, h, p.x, p.y, radius)),
-    TARGET,
-  );
-  const glare = summarise(
-    points.map((p) => pointContrast(veiled, w, h, p.x, p.y, radius)),
-    TARGET_VEILED,
-  );
+  const ctl = controlPoints(points, shift);
+  const run = (px, pts, target) =>
+    summarise(
+      pts.map((p) => pointContrast(px, w, h, p.x, p.y, radius, half)),
+      target,
+    );
+  const raw = run(rgba, points, TARGET);
+  const glare = run(veiled, points, TARGET_VEILED);
+  const control = { raw: run(rgba, ctl, TARGET), veiled: run(veiled, ctl, TARGET_VEILED) };
+  const excess = {
+    raw: excessOverControl(raw.p50, control.raw.p50),
+    veiled: excessOverControl(glare.p50, control.veiled.p50),
+  };
   return {
     raw,
     veiled: glare,
-    pass: raw.n > 0 && raw.p50 >= TARGET && glare.p50 >= TARGET_VEILED,
+    control,
+    excess,
+    pass: raw.n > 0 && control.raw.n > 0 && excess.raw >= TARGET && excess.veiled >= TARGET_VEILED,
   };
 }

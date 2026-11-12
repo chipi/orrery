@@ -217,7 +217,7 @@
         {/if}
         <Chip
           kind="action"
-          class="panel-close"
+          class="panel-close ui-chip--close"
           onclick={onClose}
           aria-label={m.panel_close()}
           data-audio-stage="panel-close">×</Chip
@@ -359,7 +359,8 @@
     min-width: 0;
   }
   /* The eyebrow's own bottom margins would pull it off the actions' centre line. */
-  .panel-eyebrow > :global(*) {
+  .panel-eyebrow > :global(*),
+  .panel-eyebrow :global(.agency-row) {
     margin-bottom: 0;
   }
   .panel-heading {

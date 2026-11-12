@@ -43,6 +43,22 @@
   }
 }
 
+/* The close chip (× on panels, the INDEX, the surface index): a square as tall as the chips
+   beside it, the × drawn large enough to read (operator 2026-11-12: "X is tiny"). */
+.ui-chip--close {
+  inline-size: 44px;
+  padding-inline: 0;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ui-chip--close {
+    inline-size: 30px;
+    font-size: 18px;
+  }
+}
+
 /* Hover lifts a chip at rest only: an on chip keeps its data / world / accent edge. */
 .ui-chip:hover:not(:disabled):not(.is-on, [aria-pressed='true'], [aria-checked='true']) {
   border-color: var(--chip-tint, var(--color-state));

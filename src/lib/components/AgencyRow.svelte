@@ -55,6 +55,9 @@
     border-radius: 3px;
   }
   .agency-badge {
+    /* The status chip beside it has a 1 px border: the same border here gives both the same
+       outer size (operator 2026-11-12). */
+    border: 1px solid transparent;
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }

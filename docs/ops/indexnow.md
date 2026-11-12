@@ -20,7 +20,7 @@ npm run indexnow -- --base https://www.orrerylearn.com --key <key>
 ## What it does
 
 1. Reads `<base>/sitemap.xml`, follows it to every `/sitemaps/<locale>.xml`, collects each
-   `<loc>` (and `<lastmod>`), dedupes. Today: 14 locales, ~13,100 URLs (the 0.9.9 star pages and hub add 938).
+   `<loc>` (and `<lastmod>`), dedupes. Today: 14 locales, ~13,170 URLs (the 0.9.9 star pages and hub add 938, the black-hole pages and hub 70).
 2. `--since YYYY-MM-DD` keeps URLs whose `<lastmod>` is on or after the date. Every URL in our
    sitemaps carries one (the date git last changed the page's content, from
    `src/lib/generated/route-lastmod.json`, regenerated in the release PR), so `--since` narrows to

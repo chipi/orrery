@@ -9,7 +9,8 @@ import { waitForHydration } from './_helpers/hydration';
  * every entity page of the hub even while the INDEX panel is closed (crawlers do not click).
  * /missions and /fleet keep the A–Z at the page foot. The stars (ADR-096 item 13) are typed apart
  * under /explore/stars/<id>: the static /explore/stars hub links every one in its HTML, and the
- * neighbourhood's star INDEX carries a link per row.
+ * neighbourhood's star INDEX carries a link per row; the black holes (item 16) likewise under
+ * /explore/black-holes/<id>, listed at the foot of that INDEX.
  */
 
 const SCENE_HUBS = ['moon', 'mars', 'venus', 'explore'] as const;
@@ -43,7 +44,9 @@ function entityIds(hub: string): string[] {
   return (collectCanonicalRoutes() as string[])
     .filter((r) => r.startsWith(prefix) && !r.slice(prefix.length).includes('/'))
     .map((r) => r.slice(prefix.length))
-    .filter((id) => !(hub === 'explore' && (id === 'hub' || id === 'stars')));
+    .filter(
+      (id) => !(hub === 'explore' && (id === 'hub' || id === 'stars' || id === 'black-holes')),
+    );
 }
 
 /** Every /explore/stars/<id> page (named stars + exoplanet hosts). */
@@ -51,6 +54,13 @@ function starPageIds(): string[] {
   return (collectCanonicalRoutes() as string[])
     .filter((r) => r.startsWith('/explore/stars/'))
     .map((r) => r.slice('/explore/stars/'.length));
+}
+
+/** Every /explore/black-holes/<id> page (the three real holes and Gargantua). */
+function blackHolePageIds(): string[] {
+  return (collectCanonicalRoutes() as string[])
+    .filter((r) => r.startsWith('/explore/black-holes/'))
+    .map((r) => r.slice('/explore/black-holes/'.length));
 }
 
 test.describe('the prerendered hub HTML links every entity page', () => {
@@ -89,9 +99,25 @@ test.describe('the prerendered hub HTML links every entity page', () => {
     });
   }
 
-  test('the Explore hub card links the stars hub', async ({ request }) => {
+  for (const locale of ['', '/de']) {
+    test(`${locale}/explore/black-holes: the static hub links every black-hole page`, async ({
+      request,
+    }) => {
+      const res = await request.get(`${locale}/explore/black-holes`);
+      expect(res.ok()).toBe(true);
+      const html = await res.text();
+      const hrefs = [...html.matchAll(/href="([^"#?]+)"/g)].map((m) => m[1]);
+      const ids = blackHolePageIds();
+      expect(ids.length).toBe(4);
+      const missing = ids.filter((id) => !hrefs.includes(`${locale}/explore/black-holes/${id}`));
+      expect(missing, `black-hole pages not linked from ${locale}/explore/black-holes`).toEqual([]);
+    });
+  }
+
+  test('the Explore hub card links the stars hub and the black-holes hub', async ({ request }) => {
     const html = await (await request.get('/explore/hub')).text();
     expect(html).toContain('href="/explore/stars"');
+    expect(html).toContain('href="/explore/black-holes"');
   });
 
   for (const hub of ['missions', 'fleet']) {
@@ -179,13 +205,22 @@ test('/explore neighbourhood: every star INDEX row links its star page; closed, 
   await waitForHydration(page);
   const index = page.locator('.star-index');
   await expect(index).toBeHidden();
-  const links = index.locator('a.si-page');
+  const links = index.locator('a.si-page[data-testid="star-index-page-link"]');
   // 62 named stars + the planet hosts that are not named stars (trappist-1, 51-pegasi, toi-700, kepler-16).
   await expect(links).toHaveCount(starPageIds().length);
   const hrefs = await links.evaluateAll((els) => els.map((e) => e.getAttribute('href')));
   const rowIds = await links.evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
   expect(hrefs).toEqual(rowIds.map((id) => `/explore/stars/${id}`));
   for (const id of rowIds) expect(starPageIds()).toContain(id);
+
+  // The four black holes at the foot of the index carry the same link to their page.
+  const bhLinks = index.locator('a.si-page[data-testid="black-hole-index-page-link"]');
+  await expect(bhLinks).toHaveCount(blackHolePageIds().length);
+  const bhIds = await bhLinks.evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
+  expect(await bhLinks.evaluateAll((els) => els.map((e) => e.getAttribute('href')))).toEqual(
+    bhIds.map((id) => `/explore/black-holes/${id}`),
+  );
+  for (const id of bhIds) expect(blackHolePageIds()).toContain(id);
 
   await page.locator('.star-index-handle').click();
   await expect(index).toBeVisible();

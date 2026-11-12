@@ -298,7 +298,8 @@ const SWEEP_ALLOW_SELF = [
   '.debug-tab',
   // Switches (SensorySheet): form controls, not chips
   '[role="switch"]',
-  // Nav (A6, UXD-016): the toggles, the More trigger and its menu rows, the group triggers, the drawer
+  // Nav (A6, UXD-016): the toggles, the More trigger and its menu rows, the group triggers, the drawer;
+  // .debug-toggle is DebugPanel's own switch label now (the nav debug button moved into More)
   '.menu-toggle',
   '.audio-toggle',
   '.lens-toggle',

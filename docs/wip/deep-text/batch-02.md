@@ -15,19 +15,19 @@ Drafts only. Nothing here is in `i18n-src/` or `static/` yet. 2026-11-12, branch
 ### m24 (star cloud, Sagittarius)
 Target: `universe/deep-sky/m24.json`
 - fact: A bright patch of the Milky Way in Sagittarius, a gap in the dust that opens a window toward distant stars.
-- bio: Charles Messier listed it in 1764. It is not a true cluster: it is a clear space between dust clouds that gives a tunnel-like view along the Sagittarius spiral arm. NASA puts the window at about 600 light-years wide and the stars seen through it at roughly 10,000 to 16,000 light-years away. It looks like a hazy patch to the naked eye, and binoculars resolve it into stars, with several clusters and nebulae scattered through it.
+- bio: Charles Messier listed it in 1764. It is not a true cluster: it is a clear space between dust clouds that opens a window through the Great Rift. NASA puts the window at about 600 light-years wide and the stars seen through it at roughly 10,000 to 16,000 light-years away. It looks like a hazy patch to the naked eye, and binoculars resolve it into stars, with several clusters and nebulae scattered through it.
 - Sources: S-NASA-M24 (all of it).
 
 ### m25 (open cluster, Sagittarius) - WEAK sourcing
 Target: `universe/deep-sky/m25.json`
-- fact: A loose open cluster in Sagittarius, about 2,000 light-years away, that contains a Cepheid variable star.
-- bio: Philippe Loys de Chéseaux made the first recorded observation in 1745, and Charles Messier added it to his catalogue in 1764. The cluster is about 13 light-years across and some tens of millions of years old. Among its members is U Sagittarii, a Cepheid, a star that pulsates with a regular period, and a dark lane of dust passes near its centre.
+- fact: A loose open cluster in Sagittarius, about 2,300 light-years away, that contains a Cepheid variable star.
+- bio: Philippe Loys de Chéseaux made the first recorded observation in 1745, and Charles Messier added it to his catalogue in 1764. The cluster is about 13 light-years across and roughly 100 million years old. Among its members is U Sagittarii, a Cepheid, a star that pulsates with a regular period, and a dark lane of dust passes near its centre.
 - Sources: S-WP-M25 (distance and age: Kharchenko et al. 2005; size: Tadross et al. 2002; U Sagittarii). Papers not fetched. NASA page: 404.
 
 ### m26 (open cluster, Scutum) - WEAK sourcing
 Target: `universe/deep-sky/m26.json`
-- fact: A small open cluster in Scutum, about 5,000 light-years away, with an unexplained thin zone near its centre.
-- bio: Charles Messier discovered it in 1764. The cluster spans about 22 light-years and is roughly 85 million years old. In 1940 J. Cuffey showed that the sparse region near its centre is a real shell of low star density, not dust hiding the stars behind it. The astronomer Michael Merrifield noted in 2015 that there is still no clear explanation. About 25 of its stars can be seen in a small telescope.
+- fact: A small open cluster in Scutum, about 6,000 light-years away, with an unexplained thin zone near its centre.
+- bio: Charles Messier discovered it in 1764. The cluster spans about 25 light-years and is roughly 100 to 140 million years old. In 1940 J. Cuffey proposed that the sparse region near its centre is a real shell of low star density, not dust hiding the stars behind it. The astronomer Michael Merrifield noted in 2015 that there is still no clear explanation. About 25 of its stars need a 150–200 mm telescope.
 - Sources: S-WP-M26 (Kharchenko et al. 2005 distance 5,160 ly; Wu et al. 2009 age 85 Myr; Cuffey 1940; Merrifield 2015 remark). Papers not fetched. NASA page: 404.
 
 ### m27 (planetary nebula, Vulpecula)
@@ -39,18 +39,18 @@ Target: `universe/deep-sky/m27.json`
 ### m28 (globular cluster, Sagittarius)
 Target: `universe/deep-sky/m28.json`
 - fact: A globular cluster in Sagittarius, about 17,500 light-years away, that hosts a millisecond pulsar.
-- bio: Charles Messier discovered it in 1764. In the 1980s radio astronomers using the Lovell Telescope in England found PSR B1821-24 in it, a neutron star that spins about once every three milliseconds; NASA describes it as the first millisecond pulsar found in a globular cluster. In binoculars M28 is a faint patch of light, and a larger telescope is needed to resolve individual stars.
+- bio: Charles Messier discovered it in 1764. In the 1980s radio astronomers using the Lovell Telescope in England found PSR B1821-24 in it, a neutron star that spins about once every three milliseconds, the first millisecond pulsar found in a globular cluster. In binoculars M28 is a faint patch of light, and a larger telescope is needed to resolve individual stars.
 - Sources: S-NASA-M28 (discoverer, pulsar, binoculars); S-BAU (5.37 kpc, about 17,500 ly; NASA says 18,000).
 
 ### m29 (open cluster, Cygnus) - WEAK sourcing
 Target: `universe/deep-sky/m29.json`
 - fact: A compact open cluster in Cygnus, about 5,000 light-years away, nicknamed the Cooling Tower.
-- bio: Charles Messier discovered it in 1764. It is a small, young group, about 11 light-years across and roughly 13 million years old, whose brightest stars form a squat quadrilateral. Dust dims it, so its distance was long uncertain, with estimates between about 4,000 and 7,200 light-years; Gaia data put it near 5,200. It belongs to the Cygnus OB1 association of young stars.
+- bio: Charles Messier discovered it in 1764. It is a small, young group, about 11 light-years across and roughly 13 to 20 million years old, whose brightest stars form a squat quadrilateral. Dust dims it, so its distance was long uncertain, with estimates between about 4,000 and 7,200 light-years; Gaia data put it near 5,200. It belongs to the Cygnus OB1 association of young stars.
 - Sources: S-WP-M29 (Gaia EDR3 distance, Poggio et al. 2021; age Kharchenko et al. 2005; association; nickname). Papers not fetched. NASA page: 404.
 
 ### m30 (globular cluster, Capricornus)
 Target: `universe/deep-sky/m30.json`
-- fact: A globular cluster in Capricornus, about 27,500 light-years away and roughly 13 billion years old.
+- fact: A globular cluster in Capricornus, about 27,500 light-years away and about 12 to 13 billion years old.
 - bio: Charles Messier discovered it in 1764. The cluster is about 90 light-years across and holds several hundred thousand stars. Hubble studies found two kinds of blue stragglers in it, stars that look younger than their neighbours: one kind thought to form from direct collisions, the other in binary systems where one star feeds mass to its companion. Binoculars show it.
 - Sources: S-NASA-M30 (all); S-BAU (8.46 kpc, about 27,600 ly, agrees).
 
@@ -68,13 +68,13 @@ Target: `universe/deep-sky/m33.json`
 
 ### m34 (open cluster, Perseus) - WEAK sourcing
 Target: `universe/deep-sky/m34.json`
-- fact: An open cluster in Perseus, about 1,500 light-years away, with around 400 stars.
-- bio: Giovanni Battista Hodierna probably recorded it before 1654, and Charles Messier catalogued it in 1764. Its age is put at 200 to 250 million years, between the Pleiades and the Hyades, and at least 19 white dwarfs have been identified among its members. Under very dark skies it can just be seen with the naked eye, and binoculars show it more easily.
+- fact: An open cluster in Perseus, about 1,700 light-years away, with around 400 stars.
+- bio: Giovanni Battista Hodierna probably recorded it before 1654, and Charles Messier catalogued it in 1764. Its age is put at roughly 130 to 250 million years, depending on the study, and at least 19 white dwarfs have been identified among its members. Under very dark skies it can just be seen with the naked eye, and binoculars show it more easily.
 - Sources: S-WP-M34 (Jones & Prosser 1996, AJ: distance, age, membership; white dwarfs). Paper not fetched. NASA page: 404.
 
 ### m35 (open cluster, Gemini)
 Target: `universe/deep-sky/m35.json`
-- fact: An open cluster in Gemini, about 2,800 light-years away, with around 400 stars.
+- fact: An open cluster in Gemini, about 2,800 to 3,000 light-years away, with around 400 stars.
 - bio: Philippe Loys de Chéseaux discovered it in 1745, and Charles Messier catalogued it in 1764. The cluster is about 30 light-years across and about 150 million years old, a mix of hot blue stars and cooler orange and red giants. On very dark nights it can be seen as a fuzzy patch with the naked eye, binoculars show a haze with some stars, and a telescope shows a group of bright stars. The smaller cluster NGC 2158 lies beside it in the same field.
 - Sources: S-NASA-M35.
 
@@ -93,25 +93,25 @@ Target: `universe/deep-sky/m37.json`
 ### m38 (open cluster, Auriga) - WEAK sourcing
 Target: `universe/deep-sky/m38.json`
 - fact: An open cluster in Auriga, about 3,500 light-years away, with about 100 stars.
-- bio: Giovanni Battista Hodierna recorded it before 1654, and Guillaume Le Gentil found it again in 1749. The cluster is about 290 million years old and spans roughly 13 light-years. The observer Walter Scott Houston noted that photographs show it departing from a circle, and older reports often describe a cross shape. Its brightest member is a yellow giant.
+- bio: Giovanni Battista Hodierna recorded it before 1654, and Guillaume Le Gentil found it again in 1749. The cluster is about 250 to 300 million years old and spans roughly 13 light-years. The observer Walter Scott Houston noted that photographs show it departing from a circle, and older reports often describe a cross shape. Its brightest member is a yellow giant.
 - Sources: S-WP-M38 (WEBDA 2018 data: distance 3,480 ly, age 290 Myr; Houston quote). Not fetched further. NASA page: 404.
 
 ### m39 (open cluster, Cygnus)
 Target: `universe/deep-sky/m39.json`
 - fact: A scattered open cluster in Cygnus, about 1,000 light-years away, as wide on the sky as the full Moon.
-- bio: Guillaume Le Gentil discovered it in 1749, and Charles Messier added it to his catalogue in 1764. Its age is estimated at about 280 million years, and its total mass at about 230 Suns. In a small telescope at low magnification it shows around two dozen stars, though more belong to it. Among its 15 brightest members are six binary systems.
+- bio: Guillaume Le Gentil discovered it in 1749, and Charles Messier added it to his catalogue in 1764. Its age is estimated at roughly 280 to 400 million years, and its total mass at about 230 Suns. In a small telescope at low magnification it shows around two dozen stars, though more belong to it. Among its 15 brightest members are six binary systems.
 - Sources: S-WP-M39 (Kharchenko et al. 2005 distance; Wu et al. 2009 age; Piskunov et al. 2008 mass). Papers not fetched. NASA page: 404. WEAK like the other Wikipedia-only open clusters.
 
 ### m41 (open cluster, Canis Major) - WEAK sourcing
 Target: `universe/deep-sky/m41.json`
 - fact: An open cluster in Canis Major, about 2,300 light-years away and four degrees south of Sirius.
-- bio: Giovanni Battista Hodierna recorded it before 1654. About 100 stars belong to it, including several red giants and white dwarfs, and it is roughly 190 to 200 million years old. It spans about 25 light-years, an area of sky comparable to the full Moon. In binoculars it forms a rough equilateral triangle with Sirius and Nu2 Canis Majoris, and it is sometimes called the Little Beehive Cluster.
+- bio: Giovanni Battista Hodierna recorded it before 1654. About 100 stars belong to it, including several red giants and white dwarfs, and it is roughly 190 to 200 million years old. It spans about 25 light-years, an area of sky comparable to the full Moon. In binoculars it forms a triangle with Sirius and Nu2 Canis Majoris, and it is sometimes called the Little Beehive Cluster.
 - Sources: S-WP-M41 (distance Harris 1993; age Harris 1993 and Stoyan 2008). Papers not fetched. NASA page: 404. A claim that Aristotle may have seen it was left out.
 
 ### m43 (nebula, Orion)
 Target: `universe/deep-sky/m43.json`
 - fact: A small star-forming nebula in Orion, separated from the Orion Nebula by a dark lane of dust.
-- bio: Jean-Jacques d'Ortous de Mairan discovered it in 1731, and the nebula is also called Mairan's Nebula. It is part of the Orion Molecular Cloud Complex, the same cloud as M42. NASA calls it a miniature Orion Nebula: it is small and is shaped by the radiation of a single massive young star, where the Orion Nebula is lit by four. A small telescope shows it.
+- bio: Jean-Jacques d'Ortous de Mairan discovered it in or before 1731, and Charles Messier catalogued it in 1769; the nebula is also called Mairan's Nebula. It is part of the Orion Molecular Cloud Complex, the same cloud as M42. NASA calls it a miniature Orion Nebula: it is small and is shaped by the radiation of a single massive young star, where the Orion Nebula is lit by four. A small telescope shows it.
 - Sources: S-NASA-M43. "Also called Mairan's Nebula" is the repo's `name` field, not checked at a source. NASA's distance (1,600 ly) is left out, see Data conflicts.
 
 ### m44 (open cluster, Cancer)
@@ -122,14 +122,14 @@ Target: `universe/deep-sky/m44.json`
 
 ### m46 (open cluster, Puppis)
 Target: `universe/deep-sky/m46.json`
-- fact: An open cluster in Puppis, more than 5,000 light-years away, with a planetary nebula in front of it.
-- bio: The planetary nebula NGC 2438 appears at the cluster's northern edge, but NASA explains it lies in front of M46, about 2,400 light-years nearer, so the two only line up by chance. William Herschel discovered the nebula in the late 18th century. It formed when a Sun-like star shed its outer layers, and its central white dwarf is what remains of that star. A light-pollution filter on a telescope helps to show it.
+- fact: An open cluster in Puppis, about 5,000 light-years away, with a planetary nebula in front of it.
+- bio: The planetary nebula NGC 2438 appears at the cluster's northern edge, but NASA says it lies in front of M46, and radial velocities show it is not a member, so the two only line up by chance. William Herschel discovered the nebula in the late 18th century. It formed when a Sun-like star shed its outer layers, and its central white dwarf is what remains of that star. A light-pollution filter on a telescope helps to show it.
 - Sources: S-NASA-M46 (re-fetched to check the foreground wording: "located in front of the open star cluster M46 ... roughly 5,400 light-years away, 2,400 light years behind the nebula").
 
 ### m47 (open cluster, Puppis) - WEAK sourcing
 Target: `universe/deep-sky/m47.json`
 - fact: A bright open cluster in Puppis, about 1,600 light-years away, with around 500 members.
-- bio: Giovanni Battista Hodierna found it before 1654. Charles Messier recorded it in 1771 with a position that matched no cluster; in 1959 T. F. Morris showed that swapping the signs of his coordinate offsets gives the right place. M47 is about 78 million years old and is dominated by hot blue stars, with a few red giants adding colour. It lies about a degree from M46, which is much older and much farther away.
+- bio: Giovanni Battista Hodierna found it before 1654. Charles Messier recorded it in 1771 with a position that matched no cluster; in 1959 T. F. Morris showed that swapping the signs of his coordinate offsets gives the right place. M47 is roughly 80 to 110 million years old and is dominated by hot blue stars, with a few red giants adding colour. It lies about a degree from M46, which is much older and much farther away.
 - Sources: S-WP-M47. Paper behind the age not named by the article; not fetched. NASA page: 404.
 
 ### m48 (open cluster, Hydra)
@@ -140,8 +140,8 @@ Target: `universe/deep-sky/m48.json`
 
 ### m49 (elliptical galaxy, Virgo)
 Target: `universe/deep-sky/m49.json`
-- fact: A giant elliptical galaxy in Virgo, about 60 million light-years away, with nearly 6,000 globular clusters.
-- bio: Charles Messier discovered it in 1771, and NASA notes it was the first member of the Virgo Cluster to be found. It holds about 200 billion stars. An X-ray source at its core points to a supermassive black hole, estimated at roughly 565 million times the Sun's mass. Binoculars show it as a faint glow.
+- fact: A giant elliptical galaxy in Virgo, about 55 million light-years away, with nearly 6,000 globular clusters.
+- bio: Charles Messier discovered it in 1771, and NASA notes it was the first member of the Virgo Cluster to be found. It holds about 200 billion stars. An X-ray source at its core points to a supermassive black hole. Binoculars show it as a faint glow.
 - Sources: S-NASA-M49 (black-hole mass, star count and globular-cluster count are NASA figures; the underlying papers were not fetched).
 
 ### m50 (open cluster, Monoceros) - WEAK sourcing
@@ -152,8 +152,8 @@ Target: `universe/deep-sky/m50.json`
 
 ### m52 (open cluster, Cassiopeia) - WEAK sourcing
 Target: `universe/deep-sky/m52.json`
-- fact: A rich open cluster in Cassiopeia, roughly 5,000 light-years away, whose core is short of gas.
-- bio: Charles Messier discovered it in 1774. By one estimate its stars are about 150 million years old, and the cluster has about 1,200 times the Sun's mass. Its core shows a lack of interstellar matter, which Pandey and colleagues suggested in 2001 could have been swept away by early supernova explosions. Its members include slowly pulsating B stars and delta Scuti variables.
+- fact: A rich open cluster in Cassiopeia, about 5,000 to 5,400 light-years away, whose core is short of gas.
+- bio: Charles Messier discovered it in 1774. By one estimate its stars are about 150 million years old, and the cluster has about 1,200 times the Sun's mass. Its core shows a lack of interstellar matter, which Pandey and colleagues suggested in 2001 could have been swept away by early supernova explosions. Its members include candidate slowly pulsating B stars and a delta Scuti variable.
 - Sources: S-WP-M52 (Wu et al. 2009: 4.6 kly, 158.5 Myr; Bonatto & Bica 2006 mass; Pandey et al. 2001; Luo et al. 2012). Papers not fetched. NASA page: 404.
 
 ### m53 (globular cluster, Coma Berenices)
@@ -165,7 +165,7 @@ Target: `universe/deep-sky/m53.json`
 ### m54 (globular cluster, Sagittarius)
 Target: `universe/deep-sky/m54.json`
 - fact: A globular cluster in Sagittarius, about 85,000 light-years away, that belongs to another galaxy.
-- bio: Charles Messier discovered it in 1778. M54 is not a native of the Milky Way: it belongs to the Sagittarius Dwarf Elliptical Galaxy, which the Milky Way is gradually absorbing, and the cluster will eventually merge with it. It holds about 1.6 million times the Sun's mass. Binoculars show only a small patch of light, and larger telescopes are needed to resolve its stars.
+- bio: Charles Messier discovered it in 1778. M54 is the nucleus of the Sagittarius Dwarf Elliptical Galaxy, which the Milky Way is gradually absorbing. It holds about 1.6 million times the Sun's mass. Binoculars show only a small patch of light, and larger telescopes are needed to resolve its stars.
 - Sources: S-NASA-M54; S-BAU (26.28 kpc, about 85,700 ly; mass 1.59 million Suns). NASA says 90,000 ly.
 
 ### m55 (globular cluster, Sagittarius)
@@ -182,26 +182,26 @@ Target: `universe/deep-sky/m56.json`
 
 ### m58 (barred spiral galaxy, Virgo)
 Target: `universe/deep-sky/m58.json`
-- fact: A barred spiral galaxy in Virgo, about 60 million light-years away, with a starburst ring around its core.
-- bio: Charles Messier discovered it in 1779. NASA reports a central supermassive black hole of about 70 million solar masses and a compact nuclear ring with intense star formation, while its arms form few stars because they are short of hydrogen. Two supernovae were seen in it, in 1988 and 1989. It is a member of the Virgo Cluster, and a telescope of 8 inches or more shows it well.
+- fact: A barred spiral galaxy in Virgo, roughly 60 to 70 million light-years away, with a starburst ring around its core.
+- bio: Charles Messier discovered it in 1779. NASA reports a supermassive black hole estimated at about 70 million solar masses and a compact nuclear ring with intense star formation, while its arms form few stars because they are short of hydrogen. Two supernovae were seen in it, in 1988 and 1989. It is a member of the Virgo Cluster, and a telescope of 8 inches or more shows it well.
 - Sources: S-NASA-M58 (62 Mly there; "about 60" used). NASA's line that it is the "most distant Messier object" was left out: it conflicts with other Messier galaxies at larger distances (reviewer to confirm).
 
 ### m59 (elliptical galaxy, Virgo)
 Target: `universe/deep-sky/m59.json`
-- fact: An elliptical galaxy in Virgo, about 60 million light-years away, with around 2,200 globular clusters.
-- bio: Johann Gottfried Koehler discovered it in 1779, and Charles Messier observed and catalogued it too. A supermassive black hole of roughly 270 million Suns sits at its centre, and the inner 200 light-years rotate in the opposite direction to the rest of the galaxy. Small telescopes show an oval shape with a bright centre, but even larger ones reveal little more detail.
+- fact: An elliptical galaxy in Virgo, about 55 million light-years away, with around 2,200 globular clusters.
+- bio: Johann Gottfried Koehler discovered it in 1779, and Charles Messier observed and catalogued it too. A supermassive black hole estimated at roughly 270 million Suns sits at its centre, and the inner 200 light-years rotate in the opposite direction to the rest of the galaxy. Small telescopes show an oval shape with a bright centre, but even larger ones reveal little more detail.
 - Sources: S-NASA-M59. NASA's claim that this is the "smallest region in a galaxy known" to counter-rotate was left out as an unchecked superlative.
 
 ### m60 (elliptical galaxy, Virgo)
 Target: `universe/deep-sky/m60.json`
-- fact: A giant elliptical galaxy in Virgo, about 54 million light-years away, paired with the spiral NGC 4647.
-- bio: Johann Gottfried Koehler discovered it in 1779. Its central black hole, about 4.5 billion times the Sun's mass, is one of the more massive measured. A tiny companion, M60-UCD1, is a dense dwarf galaxy only 300 light-years across that holds about 140 million stars. M60 and NGC 4647 are listed together as the pair Arp 116.
+- fact: A giant elliptical galaxy in Virgo, about 55 million light-years away, overlapping on the sky with the spiral NGC 4647.
+- bio: Johann Gottfried Koehler discovered it in 1779. Its central black hole, estimated at about 4.5 billion times the Sun's mass, is one of the more massive measured. A tiny companion, M60-UCD1, is a dense dwarf galaxy only 300 light-years across that holds about 140 million stars. M60 and NGC 4647 are listed together as the pair Arp 116.
 - Sources: S-NASA-M60 (diameter of 120,000 ly also there, not used).
 
 ### m61 (barred spiral galaxy, Virgo)
 Target: `universe/deep-sky/m61.json`
 - fact: A barred spiral galaxy in Virgo, about 55 million light-years away, with a vigorous burst of star formation.
-- bio: Barnaba Oriani discovered it in 1779. Charles Messier saw it independently and at first took it for a comet. NASA classes it as a starburst galaxy, with a suspected supermassive black hole at its core, signalled by an X-ray source. Seven supernovae have been observed in it. It belongs to the Virgo Cluster, and a moderately sized telescope is needed to see it well.
+- bio: Barnaba Oriani discovered it in 1779. Charles Messier saw it independently and at first took it for a comet. NASA classes it as a starburst galaxy, with a suspected supermassive black hole at its core, signalled by an X-ray source. At least eight supernovae have been observed in it since 1926. It belongs to the Virgo Cluster, and a moderately sized telescope is needed to see it well.
 - Sources: S-NASA-M61 (NASA's "most of any galaxy in the Messier catalog" for the supernovae left out as a superlative).
 
 ### m62 (globular cluster, Ophiuchus)
@@ -212,26 +212,26 @@ Target: `universe/deep-sky/m62.json`
 
 ### m63 (spiral galaxy, Canes Venatici)
 Target: `universe/deep-sky/m63.json`
-- fact: The Sunflower Galaxy, a spiral galaxy in Canes Venatici about 27 million light-years away.
-- bio: Pierre Méchain discovered it in 1779, and it became the 63rd entry in Messier's catalogue in 1781, the first of 24 objects Méchain contributed. Its pattern looks like the centre of a sunflower: two main arms and many short, broken ones, lit by young blue-white giant stars. It is a flocculent spiral and a member of the M51 Group of galaxies. In a small telescope it shows as a faint patch.
+- fact: The Sunflower Galaxy, a spiral galaxy in Canes Venatici about 27 to 29 million light-years away.
+- bio: Pierre Méchain discovered it in 1779, and it became the 63rd entry in Messier's catalogue in 1781, the first of 24 objects Méchain contributed. In near-infrared its pattern looks like the centre of a sunflower with two main arms and many short, broken ones. In visible light its structure is flocculent, lit by young blue-white giant stars. It is a member of the M51 Group of galaxies. In a small telescope it shows as a faint patch.
 - Sources: S-NASA-M63.
 
 ### m64 (spiral galaxy, Coma Berenices)
 Target: `universe/deep-sky/m64.json`
 - fact: The Black Eye Galaxy, a spiral galaxy in Coma Berenices about 17 million light-years away.
-- bio: Edward Pigott found it in 1779, Johann Elert Bode saw it 12 days later, and Charles Messier found it independently in 1780. A broad band of dark dust hides part of its bright core, which gives it its name. The gas in its outer regions rotates in the opposite direction to the gas and stars in its inner regions, which NASA suggests came from a merger with a satellite galaxy more than a billion years ago.
+- bio: Edward Pigott found it in 1779, Johann Elert Bode saw it 12 days later, and Charles Messier found it independently in 1780. A broad band of dark dust hides part of its bright core, which gives it its name. The gas in its outer regions rotates opposite to the gas in its inner regions, which may be the leftover of a merger with a satellite galaxy or of gas falling in from outside.
 - Sources: S-NASA-M64 (the fetch tool printed Pigott's year as 1719; the 12-day and 1780 sequence only fits 1779 - listed under Data conflicts for the reviewer).
 
 ### m65 (spiral galaxy, Leo) - WEAK sourcing
 Target: `universe/deep-sky/m65.json`
 - fact: A spiral galaxy in Leo, roughly 35 million light-years away, one of the three galaxies of the Leo Triplet.
-- bio: Charles Messier discovered it in 1780. It forms the Leo Triplet with M66 and NGC 3628. It shows little star formation, since it is short of dust and gas, and it has a high ratio of old to young stars. Its neighbours appear to have interacted about 800 million years ago, and M65 shows less sign of such an encounter. A Type II supernova, SN 2013am, was found in it in 2013. A small telescope shows it.
+- bio: Charles Messier discovered it in 1780. It forms the Leo Triplet with M66 and NGC 3628. It shows little recent star formation and has a high ratio of old to young stars. Its neighbours appear to have interacted about 800 million years ago, and M65 shows less sign of such an encounter. A Type II supernova, SN 2013am, was found in it in 2013. A small telescope shows it.
 - Sources: S-NASA-M65 (discoverer, 35 Mly, Leo Triplet, small telescopes); S-WP-M65 (star-formation, interaction timing, SN 2013am; Wikipedia gives 35-42 Mly). Papers not fetched.
 
 ### m66 (spiral galaxy, Leo)
 Target: `universe/deep-sky/m66.json`
 - fact: A spiral galaxy in Leo, roughly 31 to 35 million light-years away, with lopsided arms.
-- bio: Charles Messier identified it on 1 March 1780, describing it as "very long and very faint". Its asymmetric arms and off-centre core are thought to come from gravitational encounters with its neighbour NGC 3628 in the Leo Triplet, which also pulled a clump of hydrogen gas from one arm. Five supernovae have been recorded in it since 1973. A small telescope shows it.
+- bio: Charles Messier identified it on 1 March 1780, describing it as "very long and very faint". Its asymmetric arms are thought to come from gravitational encounters with its neighbour NGC 3628 in the Leo Triplet, which also pulled a clump of hydrogen gas from one arm. Five supernovae have been recorded in it since 1973. A small telescope shows it.
 - Sources: S-NASA-M66 (35 Mly, asymmetry); S-WP-M66 (31 Mly, date and quote, clump of H I, five supernovae). Papers not fetched.
 
 ### m67 (open cluster, Cancer)
@@ -248,8 +248,8 @@ Target: `universe/deep-sky/m68.json`
 
 ### m69 (globular cluster, Sagittarius)
 Target: `universe/deep-sky/m69.json`
-- fact: A globular cluster in Sagittarius, about 29,000 light-years away, unusually rich in heavy elements.
-- bio: Charles Messier discovered it in 1780. For a globular cluster M69 is metal-rich: NASA says its stars contain over ten times more iron than stars in other globular clusters of the same age. Astronomers use that composition to understand how stars evolved as the Galaxy's chemistry changed over cosmic history. The Hubble image of it combines visible and infrared light, and binoculars show the cluster.
+- fact: A globular cluster in Sagittarius, about 29,000 light-years away, iron-rich.
+- bio: Charles Messier discovered it in 1780. M69 is unusually rich in iron for a globular cluster, with several times the iron of a typical one. Astronomers use that composition to understand how stars evolved as the Galaxy's chemistry changed over cosmic history. The Hubble image of it combines visible and infrared light, and binoculars show the cluster.
 - Sources: S-NASA-M69 (the "ten times more iron" and the significance are NASA's words); S-BAU (8.90 kpc, about 29,000 ly; NASA says 29,700).
 
 ### m70 (globular cluster, Sagittarius)
@@ -267,7 +267,7 @@ Target: `universe/deep-sky/m71.json`
 ### m72 (globular cluster, Aquarius)
 Target: `universe/deep-sky/m72.json`
 - fact: A globular cluster in Aquarius, about 54,000 light-years away, one of the remoter clusters in Messier's catalogue.
-- bio: Pierre Méchain discovered it in 1780, the first of five star clusters he found while working with Messier. It has about 80,000 times the Sun's mass, a light cluster as globulars go. Hubble's image shows thousands of stars, hot blue ones and cooler red giants. In small telescopes it appears as a faint patch of light.
+- bio: Pierre Méchain discovered it in 1780, one of five star clusters he found while working with Messier. It has roughly 80,000 to 170,000 times the Sun's mass, a light cluster as globulars go. Hubble's image shows thousands of stars, hot blue ones and cooler red giants. In small telescopes it appears as a faint patch of light.
 - Sources: S-NASA-M72 (remote, five clusters, colours); S-BAU (16.66 kpc, about 54,300 ly; mass 8.1e4 Suns). NASA says 50,000 ly.
 
 ### m73 (asterism, Aquarius)
@@ -278,32 +278,32 @@ Target: `universe/deep-sky/m73.json`
 
 ### m75 (globular cluster, Sagittarius)
 Target: `universe/deep-sky/m75.json`
-- fact: A tightly concentrated globular cluster in Sagittarius, about 67,000 light-years away, with some 400,000 stars.
-- bio: Pierre Méchain discovered it in August 1780, and Charles Messier observed it that October and added it to his catalogue. NASA calls it the most centrally concentrated globular cluster in Messier's catalogue, so dense at the middle that in binoculars it looks like a star, and gives its age as about 13 billion years. A telescope of 10 inches or more is needed to resolve its individual stars.
+- fact: One of the most tightly concentrated globular clusters in Sagittarius, about 67,000 light-years away, with some 400,000 stars.
+- bio: Pierre Méchain discovered it in August 1780, and Charles Messier observed it that October and added it to his catalogue. Its centre is so condensed that M75 is easy to spot in binoculars, and it is about 13 billion years old. A telescope of 10 inches or more is needed to resolve its individual stars.
 - Sources: S-NASA-M75; S-BAU (20.52 kpc, about 66,900 ly; NASA says 67,500).
 
 ### m76 (planetary nebula, Perseus)
 Target: `universe/deep-sky/m76.json`
 - fact: The Little Dumbbell Nebula, a planetary nebula in Perseus a few thousand light-years away.
 - bio: Pierre Méchain discovered it in 1780. It is one of only four planetary nebulae in Messier's catalogue. Its two lobes make a shell like a balloon pinched at the waist, with nitrogen glowing red and oxygen blue in Hubble's image. It is faint and one of the harder Messier objects to see: large binoculars at a dark site can show it, but a telescope of 8 inches or more is needed to show the two lobes.
-- Sources: S-NASA-M76 (all). NASA's distance, 3,400 ly, is not stated in the text because Gaia-era values were not checked, see Data conflicts.
+- Sources: S-NASA-M76 (all). NASA's distance, 3,400 ly, is not stated in the text because Gaia-era values were not checked, see Data conflicts. Data file names it "Barbell Nebula"; text uses "Little Dumbbell Nebula" (the common name).
 
 ### m77 (spiral galaxy, Cetus)
 Target: `universe/deep-sky/m77.json`
 - fact: A spiral galaxy in Cetus, about 45 million light-years away, with a brilliant active nucleus.
 - bio: Pierre Méchain discovered it in 1780. M77, also known as NGC 1068, is a Seyfert galaxy: its centre is intensely bright, powered by a supermassive black hole. In 1985 Robert Antonucci and Joseph Miller found broad emission lines hidden in its polarised light and argued that a dusty torus hides the central engine from some viewing angles, a finding that supported the unified model of active galaxies. A small telescope shows it.
-- Sources: S-NASA-M77 (discoverer, 45 Mly, Seyfert, small telescope); Antonucci & Miller 1985 via search summaries (https://arxiv.org/abs/astro-ph/0210262 and the NED review https://ned.ipac.caltech.edu/level5/Sept04/Shields/Shields4_7.html; listed by search, not fetched). First names Robert Antonucci and Joseph Miller are from memory: reviewer to confirm. "some viewing angles" is a hedge on the unified model.
+- Sources: S-NASA-M77 (discoverer, 45 Mly, Seyfert, small telescope); Antonucci & Miller 1985 (ApJ 297, 621; unified model) via search summaries (https://arxiv.org/abs/astro-ph/0210262 and the NED review https://ned.ipac.caltech.edu/level5/Sept04/Shields/Shields4_7.html; listed by search, not fetched). First names Robert Antonucci and Joseph Miller are from memory: reviewer to confirm. "some viewing angles" is a hedge on the unified model.
 
 ### m78 (reflection nebula, Orion)
 Target: `universe/deep-sky/m78.json`
-- fact: A reflection nebula in Orion, about 1,600 light-years away, that looks like a comet.
+- fact: A reflection nebula in Orion, about 1,350 light-years away, that looks like a comet.
 - bio: Pierre Méchain discovered it in 1780. Dust in the nebula scatters the light of nearby young stars, and one side flares away like a comet's tail, a shape that NASA says has fooled comet hunters into thinking they had found a new object. Hubble observed it in infrared light to study protostars, the earliest stages of a star's life. Binoculars and small telescopes show it, and larger ones show more detail.
 - Sources: S-NASA-M78. NASA's 1,600 ly is kept in the text; see Data conflicts (Orion distance).
 
 ### m79 (globular cluster, Lepus)
 Target: `universe/deep-sky/m79.json`
-- fact: A globular cluster in Lepus, about 42,000 light-years away, on the far side of the Galaxy from its centre.
-- bio: Pierre Méchain discovered it in 1780. M79 lies roughly 60,000 light-years from the centre of the Milky Way, in the opposite direction from it as seen from Earth, and holds many aging red giants and blue stragglers. It may have been captured from the Canis Major Dwarf Galaxy, NASA says, one of only two clusters in Messier's catalogue that the Milky Way might have taken from other galaxies. Binoculars show its dense heart as a small fuzzy patch.
+- fact: A globular cluster in Lepus, about 42,000 light-years away, beyond the Sun, in the direction away from the galactic centre.
+- bio: Pierre Méchain discovered it in 1780. M79 lies roughly 60,000 light-years from the centre of the Milky Way, in the opposite direction from it as seen from Earth, and holds many aging red giants and blue stragglers. Some astronomers think it was acquired from a dwarf galaxy that the Milky Way absorbed; its exact origin is still debated. Binoculars show its dense heart as a small fuzzy patch.
 - Sources: S-NASA-M79 ("might have" is NASA's hedge); S-BAU (13.08 kpc, about 42,700 ly; NASA says 41,000). The other of the two clusters is M54 (above).
 
 ### m80 (globular cluster, Scorpius)
@@ -334,3 +334,43 @@ Target: `universe/deep-sky/m80.json`
 - Ages of the globular clusters (except those NASA gives) and the pre-Gaia open-cluster ages: not checked against recent literature.
 - Wikipedia-only pages (m25, m26, m29, m34, m36, m37, m38, m39, m41, m47, m50, m52, m65, m66, m68, m73): papers behind each number were not fetched; every NASA page was read through a summarising fetch tool, not line by line, so the reviewer should re-fetch the weak items.
 - Distances for open clusters were not compared with Gaia-era catalogues (Cantat-Gaudin 2020, Hunt & Reffert 2023) except m29 (Gaia EDR3, as quoted by Wikipedia).
+
+## Science review (2026-11-12) — fixes applied
+
+BLOCKER and MAJOR fixes:
+
+1. **m61** — supernovae: "Seven" → "At least eight have been observed in it since 1926"
+2. **m64** — counter-rotation: dropped "and stars"; changed "came from a merger" to "may be the leftover of a merger with a satellite galaxy or of gas falling in from outside"
+3. **m78** — distance: "about 1,600" → "about 1,350 light-years"
+4. **m26** — distance "about 5,000" → "about 6,000"; age "roughly 85" → "roughly 100 to 140 million years"; size "about 22" → "about 25 light-years"; "Cuffey showed" → "Cuffey proposed"; telescope "a small" → "a 150–200 mm"
+5. **m75** — concentration: "most centrally concentrated globular cluster in Messier's catalogue" → "one of the most tightly concentrated globular clusters"; binoculars: "so dense at the middle that in binoculars it looks like a star" → "its centre is so condensed that M75 is easy to spot in binoculars"
+6. **m79** — origin: expanded to "Some astronomers think it was acquired from a dwarf galaxy that the Milky Way absorbed; its exact origin is still debated"; dropped "one of only two clusters"; fact: "on the far side of the Galaxy" → "beyond the Sun, in the direction away from the galactic centre"
+7. **m34** — distance "about 1,500" → "about 1,700"; age "200 to 250" → "roughly 130 to 250 million years, depending on the study"; dropped Pleiades/Hyades comparison
+8. **m49** — removed black hole mass; distance "about 60" → "about 55 million light-years"
+9. **m58** — black hole: added "estimated at"; distance "about 60" → "roughly 60 to 70 million light-years"
+10. **m59** — black hole: added "estimated at"; distance "about 60" → "about 55 million light-years"
+11. **m60** — black hole: added "estimated at"; distance "about 54" → "about 55 million light-years"; fact: "paired with" → "overlapping on the sky with"
+12. **m69** — iron: "over ten times more" → "unusually rich in iron for a globular cluster, with several times the iron of a typical one"; fact: "unusually rich in heavy elements" → "iron-rich"
+13. **m72** — mass: "about 80,000" → "roughly 80,000 to 170,000 times the Sun's mass"; dropped "first" from "first of five clusters"
+14. **m46** — planetary nebula: integrated radial-velocity information; dropped "2,400 light-years nearer"; cluster distance "more than 5,000" → "about 5,000"
+15. **m24** — bio: "tunnel-like view along the Sagittarius spiral arm" → "window through the Great Rift"
+16. **m43** — discovery: "discovered it in 1731" → "discovered it in or before 1731, and Charles Messier catalogued it in 1769"
+17. **m25** — distance "about 2,000" → "about 2,300"; age "some tens of millions" → "roughly 100 million years"
+18. **m47** — age "about 78 million" → "roughly 80 to 110 million years"
+19. **m52** — distance "roughly 5,000" → "about 5,000 to 5,400"; variables: changed "slowly pulsating B stars and delta Scuti variables" to "candidate slowly pulsating B stars and a delta Scuti variable"
+20. **m39** age "about 280" → "roughly 280 to 400 million years"; **m38** age "about 290" → "about 250 to 300 million years"; **m29** age "roughly 13" → "roughly 13 to 20 million years"
+
+MINOR / NIT fixes:
+
+- **m28** — attribution: dropped "NASA describes it as"; stated "first millisecond pulsar found in a globular cluster" without source
+- **m30** — age: "roughly 13 billion" → "about 12 to 13 billion years"
+- **m35** — distance: "about 2,800" → "about 2,800 to 3,000 light-years"
+- **m41** — triangle: dropped "equilateral" from "rough equilateral triangle"
+- **m54** — origin: "belongs to the Sagittarius Dwarf Elliptical Galaxy... the cluster will eventually merge with it" → "is the nucleus of the Sagittarius Dwarf Elliptical Galaxy, which the Milky Way is gradually absorbing"
+- **m63** — arms and distance: split arms description by wavelength (near-infrared: two main arms; visible: flocculent); distance "about 27" → "about 27 to 29 million light-years"
+- **m65** — star formation: "shows little star formation, since it is short of dust and gas" → "shows little recent star formation"
+- **m66** — dropped "off-centre core" as unsourced
+- **m76** — added data-file note: "Data file names it 'Barbell Nebula'; text uses 'Little Dumbbell Nebula' (the common name)"
+- **m77** — sources unified model: added journal reference "Antonucci & Miller 1985 (ApJ 297, 621)"
+
+Data-file corrections not applied here; see `batch-02-review.md` "Data-file corrections" section.

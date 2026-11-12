@@ -2,9 +2,13 @@
   "description": "51 km großer L4-Trojaner vom D-Typ. Begegnung mit Lucy am 11. November 2028. D-Typen gelten als einige der ursprünglichsten Körper des Sonnensystems und bewahren Informationen über die Zusammensetzung der äußeren protoplanetaren Scheibe.",
   "science_sections": [
     {
+      "tab": "orbits",
+      "section": "lagrange-points",
+      "why": "Orus ist ein D-Typ-L4-Trojaner — Lucy-Vorbeiflug im November 2028. Sein dunkles, kohlenstoffreiches Spektrum ähnelt eher Objekten des Kuipergürtels als Asteroiden des inneren Gürtels."
+    },
+    {
       "tab": "planets",
-      "section": "asteroid-belt",
-      "why": "Orus ist ein C-Typ-L4-Trojaner — Lucy-Vorbeiflug im November 2028. Sein dunkles, kohlenstoffreiches Spektrum ähnelt eher Objekten des Kuipergürtels als Asteroiden des inneren Gürtels."
+      "section": "kuiper-belt"
     }
   ]
 }

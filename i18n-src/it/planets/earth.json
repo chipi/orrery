@@ -42,11 +42,6 @@
       "why": "L'orbita terrestre definisce il piano dell'eclittica. L'inclinazione di ogni altro pianeta è misurata rispetto a questo riferimento."
     },
     {
-      "tab": "planets",
-      "section": "axial-tilt-and-seasons",
-      "why": "L'inclinazione di 23,4° della Terra è il meccanismo classico delle stagioni — gli equinozi e i solstizi derivano direttamente dall'angolo tra l'asse di rotazione e il piano orbitale."
-    },
-    {
       "tab": "transfers",
       "section": "hohmann-transfer",
       "why": "Ogni finestra di lancio verso Marte — ogni 26 mesi — è un trasferimento di Hohmann con partenza dalla Terra. La scala parte da qui."

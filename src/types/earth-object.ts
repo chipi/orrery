@@ -24,6 +24,8 @@ export interface EarthObject {
   crew: number;
   credit: string;
   links: Array<{ l: string; u: string; t: LinkTier }>;
+  /** /science articles (`tab/section`) offered as cards; at most 5. */
+  science?: string[];
   /** Editorial overlay fields merged at fetch time */
   name?: string;
   short?: string;

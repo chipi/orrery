@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "エロスは近地球 Amor 小惑星で、半長軸は1.46 au、軌道全体が地球の軌道の外側にあります。2000年、NEAR Shoemaker はこの軌道に合わせ、小惑星を周回した最初の探査機になりました。"
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

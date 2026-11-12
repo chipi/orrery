@@ -10,6 +10,10 @@
       "tab": "planets",
       "section": "kuiper-belt",
       "why": "Makemake es el cuarto KBO más grande conocido y el único de los planetas enanos reconocidos por la IAU sin un satélite confirmado hasta que Hubble encontró MK2 en 2016."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

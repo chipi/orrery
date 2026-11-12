@@ -15,6 +15,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "Deimos is de buitenste maan van Mars (23.460 km) — zijn omloopperiode (1,26 d) is langer dan de Martiaanse dag, dus getijdenkrachten duwen hem langzaam naar buiten."
+    },
+    {
+      "tab": "planets",
+      "section": "tides"
     }
   ]
 }

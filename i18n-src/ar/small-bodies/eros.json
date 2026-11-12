@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "إروس كويكب من فئة Amor قريب من الأرض — المحور شبه الرئيسي 1.46 و.ف، ومداره كله خارج مدار الأرض. في 2000 دخلت NEAR Shoemaker مداره وصارت أول مركبة تدور حول كويكب."
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

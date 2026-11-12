@@ -14,6 +14,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "Umbriel umkreist den Uranus in 266.000 km Entfernung — seine Umlaufbahn ist mit dem Planeten geneigt, sodass seine Jahreszeiten die extreme Achsengeometrie des Mutterplaneten widerspiegeln."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons"
     }
   ]
 }

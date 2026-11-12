@@ -2,9 +2,13 @@
   "description": "Troyen de L4 de type P de 21 km. Les observations de suivi de Hubble, après la sélection par Lucy, ont révélé un satellite qui n’a pas encore de nom. Rencontre avec Lucy le 15 septembre 2027.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Polymèle est un Troyen L4 — survol Lucy en septembre 2027. Les Troyens sont dynamiquement verrouillés aux points de Lagrange L4/L5 de Jupiter et pourraient être des corps capturés de la ceinture de Kuiper."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

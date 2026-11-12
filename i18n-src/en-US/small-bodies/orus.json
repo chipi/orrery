@@ -1,9 +1,13 @@
 {
   "science_sections": [
     {
+      "tab": "orbits",
+      "section": "lagrange-points",
+      "why": "Orus is a D-type L4 Trojan — Lucy flyby November 2028. Its dark, carbon-rich spectrum is closer to Kuiper-belt objects than to inner-belt asteroids."
+    },
+    {
       "tab": "planets",
-      "section": "asteroid-belt",
-      "why": "Orus is a C-type L4 Trojan — Lucy flyby November 2028. Its dark, carbon-rich spectrum is closer to Kuiper-belt objects than to inner-belt asteroids."
+      "section": "kuiper-belt"
     }
   ]
 }

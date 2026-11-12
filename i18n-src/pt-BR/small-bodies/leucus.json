@@ -2,9 +2,13 @@
   "description": "Asteroide troiano de L4 do tipo D, de 35 km, com um período de rotação incomumente lento de 446 horas, um dos rotores mais lentos conhecidos entre corpos desse tamanho. Encontro com a Lucy em 18 de abril de 2028.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Leuco é um Troiano L4 com rotação incomumente lenta (período de 445 horas) — o sobrevoo de Lucy em abril de 2028 imageará sua forma alongada peculiar de perto."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity"
     }
   ]
 }

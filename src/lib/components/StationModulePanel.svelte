@@ -7,12 +7,15 @@
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { formatNumber } from '$lib/format';
-  import { localeFromPage, localHref } from '$lib/locale';
+  import { localeFromPage } from '$lib/locale';
   import { page } from '$app/state';
   import type { StationModule } from '$types/station';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import WhyPopover from './WhyPopover.svelte';
+  import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks, refsFromSlugs } from '$lib/science-links';
+  import type { ScienceTabId } from '$types/science';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { dataLoadFailed } from '$lib/data/core';
@@ -26,6 +29,7 @@
     galleryFetcher: (id: string) => Promise<string[]>;
   };
   let { module: mod, open, onClose, galleryFetcher }: Props = $props();
+  let scienceLinks = $derived(pickScienceLinks(refsFromSlugs(mod?.science)));
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -233,71 +237,14 @@
         {:else}
           <PanelLinkTiers links={mod.links} entityId={mod.id} />
         {/if}
-        <!--
-          Related crew + life-support topics — issue #303 close-out.
-          Module-agnostic cross-link cluster covering the seven
-          life-in-space + 2 space-stations articles that lacked a
-          natural anchor elsewhere. Always rendered; complements the
-          tier-driven external-link rails above.
-        -->
-        <section class="related-science">
-          <h3>{m.panel_related_science_heading()}</h3>
-          <ul>
-            <li>
-              <a href={localHref(`/science/space-stations/pressurized-volume`)}
-                >{m.chip_label_pressurized_volume()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/space-stations/node-module`)}
-                >{m.chip_label_node_module()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/crewed-station-design`)}
-                >{m.chip_label_crewed_station_design()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/eclss-life-support`)}
-                >{m.chip_label_eclss_life_support()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/crew-selection`)}
-                >{m.chip_label_crew_selection()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/pre-flight-training`)}
-                >{m.chip_label_pre_flight_training()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/crew-dynamics-psychology`)}
-                >{m.chip_label_crew_dynamics_psychology()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/sleep-nutrition-circadian`)}
-                >{m.chip_label_sleep_nutrition_circadian()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/suit-lineage`)}
-                >{m.chip_label_suit_lineage()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/mission-phases/eva`)}>{m.chip_label_eva()}</a>
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/eva-physiology`)}
-                >{m.chip_label_eva_physiology()}</a
-              >
-            </li>
-          </ul>
-        </section>
+        {#if scienceLinks.length > 0}
+          <section class="related-science">
+            <h3>{m.panel_related_science_heading()}</h3>
+            {#each scienceLinks as r (r.tab + r.section)}
+              <ScienceCard tab={r.tab as ScienceTabId} section={r.section} expanded={false} />
+            {/each}
+          </section>
+        {/if}
       {/if}
     </div>
   {/if}
@@ -397,12 +344,7 @@
     width: 100%;
     height: auto;
   }
-  /* Related-science cross-link cluster (life-in-space + space-stations
-     articles, always-on under the link tiers). The bare <h3> + <ul>
-     + <a> renders with browser defaults — huge dark heading, oversize
-     blue underlined links — which clashes with the rest of the panel.
-     Style it to match the .link-tier visual language: small Space
-     Mono header, padded chip-style anchors. */
+  /* The module's science cards (module `science` slugs, at most five), under the link tiers. */
   .related-science {
     margin-top: 16px;
     padding-top: 14px;
@@ -418,38 +360,6 @@
     color: var(--color-text-label);
     margin: 0 0 6px;
     text-transform: uppercase;
-  }
-  .related-science ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .related-science li {
-    margin: 0;
-  }
-  .related-science a {
-    display: block;
-    padding: 8px 10px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.75);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    text-decoration: none;
-    line-height: 1.5;
-    min-height: 44px;
-    transition: all 0.15s;
-  }
-  .related-science a:hover,
-  .related-science a:focus-visible {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    outline: none;
   }
   .anatomy-caption {
     font-family: 'Crimson Pro', serif;

@@ -2,9 +2,13 @@
   "description": "지름 51 km의 D형 L4 트로이 소행성입니다. Lucy는 2028년 11월 11일에 조우합니다. D형은 태양계에서 가장 원시적인 천체 중 하나로 여겨지며, 바깥쪽 원시 행성계 원반의 조성 정보를 간직하고 있습니다.",
   "science_sections": [
     {
+      "tab": "orbits",
+      "section": "lagrange-points",
+      "why": "오루스는 D형 L4 트로이 목마이며 — Lucy 근접 비행 2028년 11월. 어두운 탄소 함유 스펙트럼이 내부 소행성대 소행성보다 카이퍼 대 천체에 더 가깝다."
+    },
+    {
       "tab": "planets",
-      "section": "asteroid-belt",
-      "why": "오루스는 C형 L4 트로이 목마이며 — Lucy 근접 비행 2028년 11월. 어두운 탄소 함유 스펙트럼이 내부 소행성대 소행성보다 카이퍼 대 천체에 더 가깝다."
+      "section": "kuiper-belt"
     }
   ]
 }

@@ -29,7 +29,12 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "proton-k"
+    "launch_vehicle_fleet_id": "proton-k",
+    "science": [
+      "life-in-space/crewed-station-design",
+      "space-stations/solar-power-budget",
+      "space-stations/pressurized-volume"
+    ]
   },
   {
     "id": "unity",
@@ -57,7 +62,12 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "endeavour"
+    "launch_orbiter_fleet_id": "endeavour",
+    "science": [
+      "space-stations/node-module",
+      "space-stations/pressurized-volume",
+      "life-in-space/crewed-station-design"
+    ]
   },
   {
     "id": "zvezda",
@@ -88,7 +98,13 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "proton-k"
+    "launch_vehicle_fleet_id": "proton-k",
+    "science": [
+      "life-in-space/eclss-life-support",
+      "life-in-space/sleep-nutrition-circadian",
+      "life-in-space/crewed-station-design",
+      "life-in-space/crew-dynamics-psychology"
+    ]
   },
   {
     "id": "destiny",
@@ -115,7 +131,12 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "atlantis"
+    "launch_orbiter_fleet_id": "atlantis",
+    "science": [
+      "space-stations/pressurized-volume",
+      "life-in-space/crewed-station-design",
+      "life-in-space/microgravity-physiology"
+    ]
   },
   {
     "id": "quest",
@@ -142,7 +163,12 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "atlantis"
+    "launch_orbiter_fleet_id": "atlantis",
+    "science": [
+      "mission-phases/eva",
+      "life-in-space/eva-physiology",
+      "life-in-space/suit-lineage"
+    ]
   },
   {
     "id": "pirs",
@@ -173,7 +199,12 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "soyuz-u"
+    "launch_vehicle_fleet_id": "soyuz-u",
+    "science": [
+      "mission-phases/eva",
+      "life-in-space/suit-lineage",
+      "life-in-space/eva-operations"
+    ]
   },
   {
     "id": "harmony",
@@ -200,7 +231,12 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "discovery"
+    "launch_orbiter_fleet_id": "discovery",
+    "science": [
+      "space-stations/node-module",
+      "space-stations/pressurized-volume",
+      "life-in-space/eclss-life-support"
+    ]
   },
   {
     "id": "columbus",
@@ -227,7 +263,12 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "atlantis"
+    "launch_orbiter_fleet_id": "atlantis",
+    "science": [
+      "life-in-space/microgravity-physiology",
+      "life-in-space/muscle-atrophy",
+      "life-in-space/crew-selection"
+    ]
   },
   {
     "id": "kibo",
@@ -254,7 +295,12 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "discovery"
+    "launch_orbiter_fleet_id": "discovery",
+    "science": [
+      "space-stations/pressurized-volume",
+      "life-in-space/bone-density-loss",
+      "life-in-space/long-duration-effects"
+    ]
   },
   {
     "id": "tranquility",
@@ -281,7 +327,12 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "endeavour"
+    "launch_orbiter_fleet_id": "endeavour",
+    "science": [
+      "space-stations/node-module",
+      "life-in-space/eclss-life-support",
+      "life-in-space/muscle-atrophy"
+    ]
   },
   {
     "id": "cupola",
@@ -309,7 +360,11 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "endeavour"
+    "launch_orbiter_fleet_id": "endeavour",
+    "science": [
+      "life-in-space/crew-dynamics-psychology",
+      "life-in-space/crewed-station-design"
+    ]
   },
   {
     "id": "rassvet",
@@ -341,7 +396,11 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "atlantis"
+    "launch_orbiter_fleet_id": "atlantis",
+    "science": [
+      "space-stations/node-module",
+      "space-stations/pressurized-volume"
+    ]
   },
   {
     "id": "leonardo",
@@ -368,7 +427,11 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "discovery"
+    "launch_orbiter_fleet_id": "discovery",
+    "science": [
+      "space-stations/pressurized-volume",
+      "life-in-space/crewed-station-design"
+    ]
   },
   {
     "id": "beam",
@@ -395,7 +458,11 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "falcon-9"
+    "launch_vehicle_fleet_id": "falcon-9",
+    "science": [
+      "space-stations/pressurized-volume",
+      "life-in-space/radiation-exposure"
+    ]
   },
   {
     "id": "nauka",
@@ -426,7 +493,12 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "proton-m"
+    "launch_vehicle_fleet_id": "proton-m",
+    "science": [
+      "space-stations/pressurized-volume",
+      "life-in-space/crewed-station-design",
+      "mission-phases/eva"
+    ]
   },
   {
     "id": "prichal",
@@ -457,7 +529,11 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "soyuz-2"
+    "launch_vehicle_fleet_id": "soyuz-2",
+    "science": [
+      "space-stations/node-module",
+      "space-stations/expedition-cadence"
+    ]
   },
   {
     "id": "poisk",
@@ -488,7 +564,12 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "soyuz-u"
+    "launch_vehicle_fleet_id": "soyuz-u",
+    "science": [
+      "mission-phases/eva",
+      "life-in-space/eva-operations",
+      "life-in-space/eva-physiology"
+    ]
   },
   {
     "id": "canadarm2",
@@ -516,6 +597,11 @@
       }
     ],
     "launch_vehicle_fleet_id": "space-shuttle-stack",
-    "launch_orbiter_fleet_id": "endeavour"
+    "launch_orbiter_fleet_id": "endeavour",
+    "science": [
+      "mission-phases/eva",
+      "life-in-space/pre-flight-training",
+      "life-in-space/eva-operations"
+    ]
   }
 ]

@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "Éros est un astéroïde Amor géocroiseur — demi-grand axe 1,46 au, toute son orbite à l'extérieur de celle de la Terre. En 2000, NEAR Shoemaker a rejoint cette orbite et a été la première sonde à tourner autour d'un astéroïde."
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

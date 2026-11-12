@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "Eros è un asteroide Amor vicino alla Terra — semiasse maggiore 1,46 au, con l'intera orbita esterna a quella terrestre. Nel 2000 NEAR Shoemaker ne ha raggiunto l'orbita ed è stata la prima sonda a orbitare intorno a un asteroide."
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

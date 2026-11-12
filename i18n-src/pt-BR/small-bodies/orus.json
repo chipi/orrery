@@ -2,9 +2,13 @@
   "description": "Asteroide troiano de L4 do tipo D, de 51 km. Encontro com a Lucy em 11 de novembro de 2028. Acredita-se que os do tipo D estejam entre os corpos mais primitivos do Sistema Solar, preservando informações sobre a composição do disco protoplanetário externo.",
   "science_sections": [
     {
+      "tab": "orbits",
+      "section": "lagrange-points",
+      "why": "Oro é um Troiano L4 do tipo D — sobrevoo da Lucy em novembro de 2028. Seu espectro escuro e rico em carbono é mais próximo aos objetos do cinturão de Kuiper do que aos asteroides do cinturão interno."
+    },
+    {
       "tab": "planets",
-      "section": "asteroid-belt",
-      "why": "Oro é um Troiano L4 do tipo C — sobrevoo da Lucy em novembro de 2028. Seu espectro escuro e rico em carbono é mais próximo aos objetos do cinturão de Kuiper do que aos asteroides do cinturão interno."
+      "section": "kuiper-belt"
     }
   ]
 }

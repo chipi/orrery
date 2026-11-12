@@ -42,11 +42,6 @@
       "why": "Earth's orbit defines the ecliptic plane. Every other planet's inclination is measured relative to this reference."
     },
     {
-      "tab": "planets",
-      "section": "axial-tilt-and-seasons",
-      "why": "Earth's 23.4° tilt is the textbook seasons-machine — equinoxes and solstices arise directly from the angle between rotation axis and orbital plane."
-    },
-    {
       "tab": "transfers",
       "section": "hohmann-transfer",
       "why": "Every Mars launch window — every 26 months — is an Earth-departure Hohmann transfer. The ladder leaves from here."

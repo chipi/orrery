@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "Ерос је астероид из групе Amor који пролази близу Земље — велика полуоса 1,46 АЈ, цела путања му је изван Земљине. 2000. је NEAR Shoemaker ушла у његову путању и постала прва летелица која је кружила око астероида."
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

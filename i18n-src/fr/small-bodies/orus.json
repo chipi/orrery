@@ -2,9 +2,13 @@
   "description": "Troyen de L4 de type D de 51 km. Rencontre avec Lucy le 11 novembre 2028. Les astéroïdes de type D sont considérés comme parmi les corps les plus primitifs du Système solaire, conservant des informations sur la composition du disque protoplanétaire externe.",
   "science_sections": [
     {
+      "tab": "orbits",
+      "section": "lagrange-points",
+      "why": "Orus est un Troyen de type D L4 — survol Lucy en novembre 2028. Son spectre sombre et riche en carbone est plus proche des objets de la ceinture de Kuiper que des astéroïdes de la ceinture intérieure."
+    },
+    {
       "tab": "planets",
-      "section": "asteroid-belt",
-      "why": "Orus est un Troyen de type C L4 — survol Lucy en novembre 2028. Son spectre sombre et riche en carbone est plus proche des objets de la ceinture de Kuiper que des astéroïdes de la ceinture intérieure."
+      "section": "kuiper-belt"
     }
   ]
 }

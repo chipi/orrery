@@ -2,9 +2,13 @@
   "description": "直径21 kmのP型のL4トロヤ群小惑星。Lucyの目標に選ばれた後のハッブル宇宙望遠鏡による追観測で、まだ名前のない衛星が見つかった。Lucyの接近は2027年9月15日。",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "ポリメレはL4トロヤ群 — Lucy フライバイ2027年9月。トロヤ群は木星のL4/L5ラグランジュ点に力学的に固定されており、カイパーベルト由来の捕捉天体である可能性がある。"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

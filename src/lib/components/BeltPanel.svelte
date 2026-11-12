@@ -20,6 +20,7 @@
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
   import { localeFromPage, localHref } from '$lib/locale';
@@ -105,6 +106,7 @@
     };
   }
   let entry = $derived<BeltEntry | null>(baseEntry ? mergeOverlay(baseEntry, overlay) : null);
+  let scienceLinks = $derived(pickScienceLinks(entry?.science_sections));
 
   $effect(() => {
     if (baseEntry && baseEntry.id !== lastKey) {
@@ -151,19 +153,6 @@
     event.preventDefault();
     onSelectBody(id);
   }
-
-  // Cross-link to the matching /science/planets/<id>-belt article. Both
-  // belts ship as `asteroid-belt` and `kuiper-belt` under the existing
-  // PRD-024 planets tab. The path literals below are deliberately
-  // spelled out so the science-orphan-detector regex resolves them
-  // (`/science/planets/asteroid-belt` + `/science/planets/kuiper-belt`).
-  const SCIENCE_PATHS: Record<string, string> = {
-    asteroid: '/science/planets/asteroid-belt',
-    kuiper: '/science/planets/kuiper-belt',
-  };
-  let scienceHref = $derived(
-    entry && SCIENCE_PATHS[entry.id] ? localHref(SCIENCE_PATHS[entry.id]!) : null,
-  );
 </script>
 
 <Panel {open} {onClose} {covered} title={entry?.name ?? ''}>
@@ -227,14 +216,10 @@
           <div class="cell-label">{m.sbp_label_discovered()}</div>
           <div class="cell-value">{entry.discovered}</div>
         </div>
-        <a class="science-link" href={scienceHref}>
-          <span class="science-cta">{m.belt_science_cta()}</span>
-          <span class="science-label">/science/planets/{entry.id}-belt</span>
-        </a>
-        {#if (entry.science_sections ?? []).length > 0}
+        {#if scienceLinks.length > 0}
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
-            {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
+            {#each scienceLinks as sec (sec.tab + sec.section)}
               <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
           </div>
@@ -417,39 +402,6 @@
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
     margin: 6px 0 0;
-  }
-  .science-link {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin: 16px 0 4px;
-    padding: 10px 12px;
-    border: 1px solid var(--color-accent-edge);
-    border-radius: 4px;
-    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
-    text-decoration: none;
-    transition:
-      border-color 120ms,
-      background 120ms;
-  }
-  .science-link:hover,
-  .science-link:focus-visible {
-    border-color: var(--color-accent-strong);
-    background: var(--color-accent-soft);
-    outline: none;
-  }
-  .science-cta {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1.8px;
-    color: var(--color-state);
-    text-transform: uppercase;
-  }
-  .science-label {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    color: var(--color-text-label);
-    letter-spacing: 1.2px;
   }
   .member-list {
     margin: 0;

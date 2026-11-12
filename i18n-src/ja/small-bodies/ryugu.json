@@ -5,6 +5,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "リュウグウは近地球 Apollo 小惑星で、半長軸は1.19 au です。地球の軌道に近いため、はやぶさ2は到達して17か月滞在し、2020年にサンプルを持ち帰ることができました。"
+    },
+    {
+      "tab": "orbits",
+      "section": "escape-velocity"
     }
   ]
 }

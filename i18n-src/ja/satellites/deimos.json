@@ -15,6 +15,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "デイモスは火星の外側の衛星（23,460 km）であり、その公転周期（1.26 d）は火星の自転周期より長いため、潮汐力により徐々に外側へ押し出されている。"
+    },
+    {
+      "tab": "planets",
+      "section": "tides"
     }
   ]
 }

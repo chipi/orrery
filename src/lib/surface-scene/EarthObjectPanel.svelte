@@ -22,7 +22,9 @@
   import Panel from '$lib/components/Panel.svelte';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
-  import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import ScienceCard from '$lib/components/ScienceCard.svelte';
+  import { pickScienceLinks, refsFromSlugs } from '$lib/science-links';
+  import type { ScienceTabId } from '$types/science';
   import {
     getEarthObjectGallery,
     getFleet,
@@ -66,6 +68,7 @@
     onRegimeOpen?: (regimeId: string) => void;
   }
   let { selected, open, onClose, missionIds, regimes, onRegimeOpen }: Props = $props();
+  let scienceLinks = $derived(pickScienceLinks(refsFromSlugs(selected?.science)));
 
   let matchedRegime = $derived(regimes ? regimeById(selected?.regime, regimes) : null);
 
@@ -313,57 +316,20 @@
            the orbital era. Per-id check keeps the pattern open for
            additional EarthObject → history mappings later. -->
       {#if selected.id === 'iss'}
+        <!-- b2-keep: one contextual milestone link, not a list -->
         <a class="mission-link" href={localHref(`/science/history/sputnik-1957`)}>
           {m.surface_panel_historic_milestone()}
         </a>
       {/if}
 
-      <!--
-        Related orbital concepts — five PRD-024 cross-link chips covering
-        the Earth-orbital topics not already linked from the cell rows
-        (orbit-regimes, keplers-laws, inclination are pinned above).
-        Each row is a label + tiny info chip; the label is the click
-        target (anchor wraps the text). Issue #303 close-out.
-      -->
-      <ul class="related-orbital-concepts">
-        <li>
-          <a href={localHref(`/science/orbits/cislunar-orbits`)}>{m.chip_label_cislunar_orbits()}</a
-          ><ScienceChip
-            tab="orbits"
-            section="cislunar-orbits"
-            label={m.chip_label_cislunar_orbits()}
-          />
-        </li>
-        <li>
-          <a href={localHref(`/science/orbits/sun-synchronous`)}>{m.chip_label_sun_synchronous()}</a
-          ><ScienceChip
-            tab="orbits"
-            section="sun-synchronous"
-            label={m.chip_label_sun_synchronous()}
-          />
-        </li>
-        <li>
-          <a href={localHref(`/science/orbits/special-orbits`)}>{m.chip_label_special_orbits()}</a
-          ><ScienceChip
-            tab="orbits"
-            section="special-orbits"
-            label={m.chip_label_special_orbits()}
-          />
-        </li>
-        <li>
-          <a href={localHref(`/science/orbits/space-debris`)}>{m.chip_label_space_debris()}</a
-          ><ScienceChip tab="orbits" section="space-debris" label={m.chip_label_space_debris()} />
-        </li>
-        <li>
-          <a href={localHref(`/science/orbits/disposal-end-of-life`)}
-            >{m.chip_label_disposal_end_of_life()}</a
-          ><ScienceChip
-            tab="orbits"
-            section="disposal-end-of-life"
-            label={m.chip_label_disposal_end_of_life()}
-          />
-        </li>
-      </ul>
+      {#if scienceLinks.length > 0}
+        <div class="science-section">
+          <h3 class="library-heading">{m.panel_tab_science()}</h3>
+          {#each scienceLinks as r (r.tab + r.section)}
+            <ScienceCard tab={r.tab as ScienceTabId} section={r.section} expanded={false} />
+          {/each}
+        </div>
+      {/if}
 
       {#if selected.credit}
         <div class="credit">{selected.credit}</div>
@@ -509,32 +475,6 @@
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
-  }
-  .related-orbital-concepts {
-    list-style: none;
-    margin: 12px 0 0;
-    padding: 8px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-  }
-  .related-orbital-concepts li {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .related-orbital-concepts a {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    line-height: 1.4;
-  }
-  .related-orbital-concepts a:hover,
-  .related-orbital-concepts a:focus-visible {
-    color: var(--color-accent);
-    outline: none;
   }
   /* Detail-panel tabs / gallery / learn / lightbox CSS in src/lib/styles/panel-tabs.css (v0.1.10) */
 </style>

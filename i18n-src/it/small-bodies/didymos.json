@@ -5,6 +5,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "Didymos è un asteroide binario vicino alla Terra (semiasse maggiore 1,64 au). DART (NASA, 2022) ha colpito il suo piccolo compagno Dimorphos per testare la fisica della deflessione degli asteroidi."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws"
     }
   ]
 }

@@ -2,9 +2,13 @@
   "description": "Astéroïde de type C de 64 km, le plus grand membre de la famille d’Eurybate des troyens de L4, un amas de fragments issu d’une fragmentation par collision. Possède une lune de 1 km (Queta) découverte par Hubble en 2018. Première rencontre de Lucy avec un troyen, le 12 août 2027, à 5,7 km/s.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Eurybate orbite dans le nuage de Troyens de Jupiter L4 — précédant la planète de 60°. Lucy sera le premier engin spatial à visiter un Troyen (août 2027)."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist"
     }
   ]
 }

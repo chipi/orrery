@@ -24,19 +24,10 @@
   import * as m from '$lib/paraglide/messages';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
-
-  /** /science cross-sections relevant to small bodies — eccentric, often
-   * inclined orbits with extreme apsides. */
-  const SMALL_BODY_SCIENCE_SECTIONS: ScienceSectionRef[] = [
-    { tab: 'orbits', section: 'keplerian-orbit' },
-    { tab: 'orbits', section: 'eccentricity' },
-    { tab: 'orbits', section: 'inclination' },
-    { tab: 'orbits', section: 'apsides' },
-    { tab: 'orbits', section: 'semi-major-axis' },
-  ];
 
   // Mirrors the SmallBody type used in /explore. Kept inline because
   // the data file is the only consumer outside this component.
@@ -71,9 +62,8 @@
       tier: 'intro' | 'core' | 'deep';
       kind?: string;
     }>;
-    /** Per-body curated science-card selection. Falls back to the
-     *  panel default SMALL_BODY_SCIENCE_SECTIONS when absent. Overlay
-     *  takes precedence; see scienceSections derived. */
+    /** Per-body curated science-card selection. The overlay takes
+     *  precedence; a body with neither shows no science block. */
     science_sections?: ScienceSectionRef[];
   };
 
@@ -100,11 +90,9 @@
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
   let overlay = $state<SmallBodyI18n | null>(null);
-  // Effective science-section list: overlay overrides body.science_sections
-  // when present; the panel-default for small-bodies is empty (opt-in
-  // per body via overlay or base data).
+  // Effective science-section list: overlay overrides body.science_sections when present.
   let scienceSections = $derived<ScienceSectionRef[]>(
-    overlay?.science_sections ?? body?.science_sections ?? SMALL_BODY_SCIENCE_SECTIONS,
+    pickScienceLinks(overlay?.science_sections ?? body?.science_sections),
   );
   const loc = $derived(localeFromPage(page));
 

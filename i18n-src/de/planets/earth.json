@@ -42,11 +42,6 @@
       "why": "Die Umlaufbahn der Erde definiert die Ekliptikebene. Die Inklination aller anderen Planeten wird relativ zu dieser Referenz gemessen."
     },
     {
-      "tab": "planets",
-      "section": "axial-tilt-and-seasons",
-      "why": "Die Neigung der Erdachse von 23,4° ist die klassische Jahreszeiten-Maschine — Äquinoktium und Sonnenwende entstehen direkt aus dem Winkel zwischen Rotationsachse und Orbitalebene."
-    },
-    {
       "tab": "transfers",
       "section": "hohmann-transfer",
       "why": "Jedes Mars-Startfenster — alle 26 Monate — ist ein Hohmann-Transfer von der Erde aus. Die Leiter startet von hier."

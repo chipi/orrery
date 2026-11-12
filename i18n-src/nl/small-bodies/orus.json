@@ -2,9 +2,13 @@
   "description": "D-type L4-Trojaan van 51 km. Ontmoeting met Lucy op 11 november 2028. D-types worden beschouwd als enkele van de meest primitieve lichamen in het zonnestelsel en bewaren informatie over de samenstelling van de buitenste protoplanetaire schijf.",
   "science_sections": [
     {
+      "tab": "orbits",
+      "section": "lagrange-points",
+      "why": "Orus is een D-type L4-Trojaan — Lucy-flyby in november 2028. Het donkere, koolstofrijke spectrum lijkt meer op dat van objecten in de Kuipergordel dan op dat van asteroïden in de binnenste gordel."
+    },
+    {
       "tab": "planets",
-      "section": "asteroid-belt",
-      "why": "Orus is een C-type L4-Trojaan — Lucy-flyby in november 2028. Het donkere, koolstofrijke spectrum lijkt meer op dat van objecten in de Kuipergordel dan op dat van asteroïden in de binnenste gordel."
+      "section": "kuiper-belt"
     }
   ]
 }

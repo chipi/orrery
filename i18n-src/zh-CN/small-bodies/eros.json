@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "爱神星是一颗近地Amor型小行星——半长轴1.46 AU，整条轨道都在地球轨道之外。2000年，NEAR Shoemaker进入其轨道，成为首个环绕小行星运行的探测器。"
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

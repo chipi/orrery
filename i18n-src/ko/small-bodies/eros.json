@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "에로스는 근지구 Amor 소행성입니다 — 반장축 1.46 AU로 궤도 전체가 지구 궤도 바깥에 있습니다. 2000년 NEAR Shoemaker가 이 궤도에 들어가 소행성을 공전한 최초의 탐사선이 되었습니다."
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

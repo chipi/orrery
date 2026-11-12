@@ -118,6 +118,12 @@ tables); keep it.
 | the same numbers BEFORE a lift (the pre-slice opacities, with the probe's hooks) | `bash scripts/readability-before.sh <new worktree dir>` makes a detached worktree at HEAD with the four pre-slice element opacities put back (asteroid belt 0.5, Kuiper belt 0.4, planet orbit lines 0.25, small-body orbit lines 0.22, all in `src/lib/three/explore-solar-scene.ts`); serve that worktree and run the probe against it with the same flags; only the solar-system rows have a "before" |
 | the contrast maths behind it (pure, browser-free) | `lib/readability-contrast.mjs` (with `lib/readability-contrast.test.ts`) |
 
+## Science links — which tool, when
+
+| Question | Run | Where it runs |
+| --- | --- | --- |
+| does every panel list its /science links through `pickScienceLinks` (at most five), with no per-type default list, no mission push-chain, no hand-written link list in a panel or banner, no section pair that differs between locales, no regime card repeated inside a ruler, no two bodies of one type with the same list (UXD-022) | `check-science-links.mjs` (prints `B2-CHECK violations: 0`; `b2-keep: <why>` marks an allowed single link); the cap over all 289 panels, the family share and the locale drift are `src/lib/science-links.test.ts` | by hand and in `npm run test` (the test file) |
+
 ## Links and 404s — which tool, when
 
 | Question | Run | Where it runs |

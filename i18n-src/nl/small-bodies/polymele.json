@@ -2,9 +2,13 @@
   "description": "P-type L4-Trojaan van 21 km. Vervolgwaarnemingen van Hubble na de selectie door Lucy onthulden een satelliet die nog geen naam heeft. Ontmoeting met Lucy op 15 september 2027.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Polymele is een L4-Trojaan — Lucy-flyby september 2027. De Trojanen zijn dynamisch vastgezet op de Lagrangepunten L4/L5 van Jupiter en kunnen ingevangen objecten uit de Kuipergordel zijn."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

@@ -2,9 +2,13 @@
   "description": "64 km großer C-Typ-Asteroid – das größte Mitglied der Eurybates-Familie im L4-Trojanerschwarm, eines Fragmenthaufens aus einem Zusammenstoß. Hat einen 1 km großen Mond (Queta), der 2018 von Hubble entdeckt wurde. Erste Trojaner-Begegnung von Lucy am 12. August 2027 bei 5,7 km/s.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Eurybates umkreist die L4-Jupiter-Trojanerwolke — führt den Planeten um 60° an. Lucy wird das erste Raumschiff sein, das einen Trojaner besucht (August 2027)."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist"
     }
   ]
 }

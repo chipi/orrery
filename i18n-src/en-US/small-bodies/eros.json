@@ -2,8 +2,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "Eros is a near-Earth Amor asteroid — semi-major axis 1.46 AU, its whole orbit outside Earth's. In 2000 NEAR Shoemaker matched that orbit and became the first spacecraft to orbit an asteroid."
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

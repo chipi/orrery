@@ -186,6 +186,8 @@ Regions that persist across or within a screen.
 
 **Right detail panel** — `width: 314px`, `top: 52px`, `right: 0`, `bottom: 68px` (68px on fly screen) or `bottom: 0`. Slides in on click. Present on: explore (planet/body panels), missions (mission detail), moon (site panels). Absent on: plan, fly, earth (these have dedicated HUD layouts). A fixed one-block header sits above the scrolling content: line 1 is the eyebrow with back (after a card link), Share (when the entity has a collectible card) and close at its end, line 2 is the entity name at full width, so the name is always visible; the entity's actions are one row of at most three chips under the identity block, above the hero, and nothing is stacked at the panel's foot ([UXD-018](decisions/UXD-018-panel-shell-and-actions.md)).
 
+**Science links in panels** — a panel offers at most five `/science` sections as cards, through one helper (`pickScienceLinks`), never a per-type default list ([UXD-022](decisions/UXD-022-science-link-lists.md)); each orbit-ruler pane has its own card, none repeating inside a ruler ([UXD-010](decisions/UXD-010-ruler-regimes-each-get-their-own-science-card.md)).
+
 **Bottom bar** — `height: 68px`, `bottom: 0`, `left: 0`, `right: 0`. Present on: fly (timeline scrubber, play/pause, speed controls). Absent on all other screens.
 
 **HUD panels** — fly screen has four fixed-position panels (left identity, right navigation, right systems, CAPCOM panels). These are screen-specific, not shared shell regions.

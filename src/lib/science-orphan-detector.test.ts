@@ -54,6 +54,19 @@ const REGIME_OVERLAY_DIRS = [
 ];
 // Fleet entries: FleetEntryPanel renders each `science: ['tab/section']` slug as a link or card.
 const FLEET_ROOT = 'static/data/fleet';
+// Station modules and Earth objects: their panels render each `science` slug as a ScienceCard (B2).
+const SLUG_LIST_FILES = [
+  'static/data/iss-modules.json',
+  'static/data/tiangong-modules.json',
+  'static/data/earth-objects.json',
+];
+// Body overlays: the panels render each `science_sections` entry as a ScienceCard (B2).
+const BODY_OVERLAY_DIRS = [
+  'i18n-src/en-US/planets',
+  'i18n-src/en-US/satellites',
+  'i18n-src/en-US/small-bodies',
+  'i18n-src/en-US/belts',
+];
 
 function jsonFiles(dir: string): string[] {
   if (!existsSync(dir)) return [];
@@ -311,6 +324,19 @@ function gatherInboundRefs(): Set<string> {
   for (const file of jsonFiles(FLEET_ROOT)) {
     const sci = (JSON.parse(readFileSync(file, 'utf8')) as { science?: string[] }).science;
     for (const slug of sci ?? []) refs.add(slug);
+  }
+  // Pattern I — module and Earth-object `science` slugs.
+  for (const file of SLUG_LIST_FILES) {
+    const rows = JSON.parse(readFileSync(file, 'utf8')) as { science?: string[] }[];
+    for (const row of rows) for (const slug of row.science ?? []) refs.add(slug);
+  }
+  // Pattern J — body overlay `science_sections` (planets, moons, small bodies, belts, the Sun).
+  const overlays = [...BODY_OVERLAY_DIRS.flatMap((d) => jsonFiles(d)), 'i18n-src/en-US/sun.json'];
+  for (const file of overlays) {
+    const o = JSON.parse(readFileSync(file, 'utf8')) as {
+      science_sections?: { tab: string; section: string }[];
+    };
+    for (const e of o.science_sections ?? []) refs.add(`${e.tab}/${e.section}`);
   }
   return refs;
 }

@@ -2,9 +2,13 @@
   "description": "21 km großer L4-Trojaner vom P-Typ. Hubble-Nachbeobachtungen nach der Auswahl durch Lucy enthüllten einen Satelliten, der noch keinen Namen hat. Begegnung mit Lucy am 15. September 2027.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Polymele ist ein L4-Trojaner — Lucy-Vorbeiflug September 2027. Die Trojaner sind dynamisch an Jupiters L4/L5-Lagrange-Punkten fixiert und könnten eingefangene Kuiper-Gürtel-Objekte sein."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

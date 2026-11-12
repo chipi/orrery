@@ -2,9 +2,13 @@
   "description": "Asteroide troiano de L4 do tipo P, de 21 km. Observações de acompanhamento do Hubble após a seleção pela Lucy revelaram um satélite que ainda não tem nome. Encontro com a Lucy em 15 de setembro de 2027.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Polimele é um Trojan L4 — sobrevoo da Lucy em setembro de 2027. Os Trojans estão dinamicamente travados nos pontos de Lagrange L4/L5 de Júpiter e podem ser corpos capturados do cinturão de Kuiper."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

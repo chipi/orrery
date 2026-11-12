@@ -14,7 +14,8 @@
     .editorial — comparison line + story paragraph (shared, panel-tabs.css)
     Residents — agency-dot list (Space Mono mono labels)
     Firsts    — year + label list
-    ScienceCard — standard /science cross-link card
+    ScienceCard — the regime's own best /science card (one per pane; no card repeats inside a ruler,
+                  UXD-010; the data rule is tested in science-links.test.ts)
 -->
 <script lang="ts">
   import Panel from './Panel.svelte';

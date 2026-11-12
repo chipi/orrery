@@ -2,9 +2,13 @@
   "description": "지름 64 km의 C형 소행성으로, 충돌 붕괴로 생긴 파편 집단인 L4 트로이 소행성 에우뤼바테스 족에서 가장 큰 천체입니다. 2018년 허블 우주 망원경이 발견한 지름 1 km의 위성(케타)이 있습니다. Lucy가 처음 만나는 트로이 소행성으로, 2027년 8월 12일 속도 5.7 km/s로 조우합니다.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "에우뤼바테스는 목성 Trojan 소행성군의 L4 지점에서 공전하며 행성보다 60° 앞서 있습니다. Lucy는 Trojan 소행성을 방문할 첫 번째 우주선이 될 것입니다(2027년 8월)."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist"
     }
   ]
 }

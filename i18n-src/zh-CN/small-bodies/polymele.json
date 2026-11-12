@@ -2,9 +2,13 @@
   "description": "直径21 km的P型L4特洛伊小行星。在其被选为Lucy目标之后，哈勃的后续观测发现了一颗尚未命名的卫星。Lucy将于2027年9月15日飞掠。",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "波吕墨勒是一个 L4 特洛伊小行星——Lucy 飞掠于 2027 年 9 月。特洛伊小行星在动力学上锁定在木星的 L4/L5 拉格朗日点，可能是被捕获的柯伊伯带天体。"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

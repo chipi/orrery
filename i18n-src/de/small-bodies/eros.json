@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "Eros ist ein erdnaher Amor-Asteroid — große Halbachse 1,46 AE, seine ganze Bahn liegt außerhalb der Erdbahn. 2000 glich NEAR Shoemaker seine Bahn an und umkreiste als erste Sonde einen Asteroiden."
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

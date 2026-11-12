@@ -808,6 +808,10 @@
   .head {
     padding: 12px 16px 4px;
   }
+  /* The head ends with 4 px padding; the other panels leave 12 px above the action row. */
+  .head + :global(.panel-actions) {
+    margin-top: 8px;
+  }
   /* .agency-row / .agency-badge / .status base now from AgencyRow.svelte;
      status chips converted from filled to the shared bordered treatment. */
   .status-active {

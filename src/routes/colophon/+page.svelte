@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
@@ -117,14 +118,15 @@
 
 {#snippet showAll(key: string, count: number)}
   {#if count > PREVIEW && !expanded[key]}
-    <button
-      type="button"
-      class="show-all"
-      data-testid="colophon-show-all"
-      onclick={() => (expanded = { ...expanded, [key]: true })}
-    >
-      {m.colophon_show_all({ count })}
-    </button>
+    <div class="show-all-row">
+      <Chip
+        kind="action"
+        data-testid="colophon-show-all"
+        onclick={() => (expanded = { ...expanded, [key]: true })}
+      >
+        {m.colophon_show_all({ count })}
+      </Chip>
+    </div>
   {/if}
 {/snippet}
 
@@ -746,21 +748,8 @@
       gap: 10px;
     }
   }
-  .show-all {
+  .show-all-row {
     margin-top: 14px;
-    min-height: 44px;
-    padding: 10px 18px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 4px;
-    color: inherit;
-    font: inherit;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-  }
-  .show-all:hover,
-  .show-all:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
   }
   .thumb-card {
     background: rgba(255, 255, 255, 0.02);

@@ -8,6 +8,8 @@
 -->
 <script lang="ts">
   import { roving } from '$lib/a11y/roving';
+  import Chip from './Chip.svelte';
+  import ChipGroup from './ChipGroup.svelte';
   import { constellationName } from '$lib/universe/iau-constellations';
   import * as m from '$lib/paraglide/messages';
   import type { NamedStar } from '$lib/data';
@@ -78,23 +80,23 @@
         >×</button
       >
     </div>
-    <div class="si-filters" role="group" aria-label={m.star_index_filter_aria()}>
-      <button type="button" class:active={filter === 'all'} onclick={() => (filter = 'all')}
-        >{m.star_index_filter_all()}</button
+    <ChipGroup class="si-filter-row" role="radiogroup" label={m.star_index_filter_aria()}>
+      <Chip kind="choice" active={filter === 'all'} onclick={() => (filter = 'all')}
+        >{m.star_index_filter_all()}</Chip
       >
-      <button
-        type="button"
-        class:active={filter === 'planets'}
+      <Chip
+        kind="choice"
+        active={filter === 'planets'}
         onclick={() => (filter = 'planets')}
-        title={m.star_index_filter_planets()}>⊕ {m.star_index_filter_planets()}</button
+        title={m.star_index_filter_planets()}>⊕ {m.star_index_filter_planets()}</Chip
       >
-      <button
-        type="button"
-        class:active={filter === 'culture'}
+      <Chip
+        kind="choice"
+        active={filter === 'culture'}
         onclick={() => (filter = 'culture')}
-        title={m.star_index_filter_culture()}>◈ {m.star_index_filter_culture()}</button
+        title={m.star_index_filter_culture()}>◈ {m.star_index_filter_culture()}</Chip
       >
-    </div>
+    </ChipGroup>
     <div class="si-count">{filtered.length} / {stars.length}</div>
     <ul class="si-list" use:roving={{ orientation: 'vertical', wrap: true }}>
       {#each filtered as s (s.id)}
@@ -195,32 +197,8 @@
     line-height: 1;
     cursor: pointer;
   }
-  .si-filters {
-    display: flex;
-    gap: 5px;
+  .si-top ~ :global(.si-filter-row) {
     margin-bottom: 8px;
-  }
-  .si-filters button {
-    flex: 1;
-    padding: 5px 6px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.62);
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 5px;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .si-filters button.active {
-    color: #04121a;
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    font-weight: 700;
-  }
-  .si-filters button:hover:not(.active) {
-    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .si-count {
     font-size: var(--size-label);

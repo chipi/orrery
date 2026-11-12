@@ -215,6 +215,21 @@
     overflow-y: auto;
     overscroll-behavior: contain;
   }
+  /* A short window (a phone held sideways): from 152 px down there is no room left for rows once
+     the search and the 44 px filter chips are in, so the panel starts under the nav, keeps at least
+     three rows and scrolls as a whole. */
+  @media (max-height: 500px) {
+    .star-index {
+      top: calc(var(--nav-height, 56px) + 8px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+    .si-list {
+      flex: none;
+      min-height: 132px;
+      overflow-y: visible;
+    }
+  }
   .si-row {
     display: flex;
     align-items: baseline;

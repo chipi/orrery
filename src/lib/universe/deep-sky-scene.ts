@@ -26,6 +26,8 @@ import {
   applyRing,
   cameraFov,
   labelOffset,
+  liftOnScreen,
+  viewDepth,
   worldPerPx,
 } from './scene-pins';
 
@@ -34,8 +36,8 @@ export interface DeepSkyLayerHandle {
   /** Raycast targets — each glint sprite carries userData.deepSkyId. */
   pickables: THREE.Object3D[];
   setVisible(on: boolean): void;
-  /** Emphasize one object (hover/selection) + reveal its label, or clear. */
-  highlight(id: string | null): void;
+  /** Emphasize the hovered and the selected object (ring + label each), or clear with null. */
+  highlight(id: string | null, selectedId?: string | null): void;
   /** Focus one object for the approach warp — its glint blooms per `approach`. */
   setFocus(id: string | null): void;
   /** Approach ramp 0 → 1 for the focused object (drives its 3D bloom). */
@@ -155,16 +157,18 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
     group.add(glint);
   }
 
-  // One hover ring, moved onto the highlighted glint (a glint is a pickable like any pin).
+  // Two rings (hovered, selected), each moved onto its glint (a glint is a pickable like any pin).
   const hoverRingTex = ringTexture();
-  const hoverRing = createRing(hoverRingTex, false);
-  hoverRing.renderOrder = 92;
-  group.add(hoverRing);
+  const hoverRings = [createRing(hoverRingTex, false), createRing(hoverRingTex, false)];
+  for (const r of hoverRings) {
+    r.renderOrder = 92;
+    group.add(r);
+  }
 
   let highlightId: string | null = null;
+  let selectedId: string | null = null;
   let focusId: string | null = null;
   let approach = 0;
-  const _camPos = new THREE.Vector3();
 
   return {
     group,
@@ -172,8 +176,9 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
     setVisible(on: boolean) {
       group.visible = on;
     },
-    highlight(id: string | null) {
+    highlight(id: string | null, sel: string | null = null) {
       highlightId = id;
+      selectedId = sel;
     },
     setFocus(id: string | null) {
       focusId = id;
@@ -192,13 +197,13 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
     update(camDistPc: number, camera: THREE.Camera, viewportH: number) {
       if (!group.visible) return;
       const fov = cameraFov(camera);
-      let ringed = false;
-      camera.getWorldPosition(_camPos);
+      let ringed = 0;
+      camera.updateMatrixWorld();
       const reveal = revealFactor(camDistPc);
       for (const e of entries) {
-        const hi = e.obj.id === highlightId;
+        const hi = e.obj.id === highlightId || e.obj.id === selectedId;
         const focused = e.obj.id === focusId;
-        const distToCam = Math.max(1, _camPos.distanceTo(e.position));
+        const distToCam = Math.max(1, viewDepth(camera, e.position));
         const base = distToCam * GLINT_SIZE_K * e.sizeFactor;
         // Focused object blooms with the approach ramp; else a small hover pop.
         const bloom = focused ? deepSkyGlintBloom(approach) : hi ? 2.1 : 1;
@@ -214,24 +219,25 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
           const wpp = worldPerPx(distToCam, fov, viewportH);
           const lh = wpp * LABEL_SPRITE_PX;
           e.label.scale.set(lh * e.labelAspect, lh, 1);
-          e.label.position.set(
-            e.position.x,
-            e.position.y + labelOffset(base, lh, wpp * (RING_PX / 2), 0.65),
-            e.position.z,
+          liftOnScreen(
+            e.label.position,
+            e.position,
+            camera,
+            labelOffset(base, lh, wpp * (RING_PX / 2), 0.65),
           );
-          hoverRing.position.copy(e.position);
-          applyRing(hoverRing, false, true, wpp);
-          ringed = true;
+          const ring = hoverRings[ringed++];
+          ring.position.copy(e.position);
+          applyRing(ring, false, true, wpp);
         }
       }
-      hoverRing.visible = ringed;
+      for (let i = 0; i < hoverRings.length; i++) hoverRings[i].visible = i < ringed;
     },
     dispose() {
       for (const m of materials) m.dispose();
       for (const t of glintTextures.values()) t.dispose();
       for (const t of labelTextures) t.dispose();
       hoverRingTex.dispose();
-      (hoverRing.material as THREE.SpriteMaterial).dispose();
+      for (const r of hoverRings) (r.material as THREE.SpriteMaterial).dispose();
       for (const e of entries) (e.label.material as THREE.SpriteMaterial).dispose();
     },
   };

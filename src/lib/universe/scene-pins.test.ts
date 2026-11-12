@@ -12,6 +12,7 @@ import {
   labelOffset,
   labelRect,
   lerpHex,
+  liftOnScreen,
   lyRampColor,
   newLabelSlot,
   placeLabels,
@@ -19,6 +20,7 @@ import {
   ringTint,
   screenPxToWorld,
   snapshotPins,
+  viewDepth,
   worldPerPx,
   type LabelSlot,
 } from './scene-pins';
@@ -202,14 +204,13 @@ describe('labelRect and snapshotPins', () => {
   cam.position.set(0, 0, 100);
   cam.lookAt(0, 0, 0);
   cam.updateMatrixWorld();
-  const camPos = cam.getWorldPosition(new THREE.Vector3());
 
   it('a label in the middle of the screen gets a centred rectangle of its on-screen size', () => {
     const s = new THREE.Sprite();
     const lh = screenPxToWorld(LABEL_SPRITE_PX, 100, FOV, 900);
     s.scale.set(lh * 5, lh, 1);
     const out = { l: 0, r: 0, b: 0, t: 0 };
-    expect(labelRect(s, cam, camPos, out, new THREE.Vector3())).toBe(true);
+    expect(labelRect(s, cam, out, new THREE.Vector3())).toBe(true);
     expect(out.l).toBeCloseTo(-out.r, 9);
     expect(out.b).toBeCloseTo(-out.t, 9);
     // height in NDC * 450 px = sprite height in px
@@ -219,7 +220,7 @@ describe('labelRect and snapshotPins', () => {
     const s = new THREE.Sprite();
     s.position.set(1e6, 0, 0);
     s.scale.set(1, 1, 1);
-    expect(labelRect(s, cam, camPos, { l: 0, r: 0, b: 0, t: 0 }, new THREE.Vector3())).toBe(false);
+    expect(labelRect(s, cam, { l: 0, r: 0, b: 0, t: 0 }, new THREE.Vector3())).toBe(false);
   });
   it('a label near the right edge is anchored on its right side so it stays on screen', () => {
     const s = new THREE.Sprite();
@@ -228,7 +229,7 @@ describe('labelRect and snapshotPins', () => {
     const half = 100 * Math.tan((FOV * Math.PI) / 360) * cam.aspect;
     s.position.set(half * 0.98, 0, 0);
     const out = { l: 0, r: 0, b: 0, t: 0 };
-    expect(labelRect(s, cam, camPos, out, new THREE.Vector3())).toBe(true);
+    expect(labelRect(s, cam, out, new THREE.Vector3())).toBe(true);
     expect(s.center.x).toBe(1);
     expect(out.r).toBeLessThanOrEqual(1);
   });
@@ -259,5 +260,162 @@ describe('labelRect and snapshotPins', () => {
   it('cameraFov reads a perspective camera', () => {
     expect(cameraFov(cam)).toBe(FOV);
     expect(cameraFov(new THREE.OrthographicCamera())).toBe(55);
+  });
+});
+
+describe('view-space depth (M1): sizes hold off the view axis', () => {
+  const H = 900;
+  const cam = new THREE.PerspectiveCamera(FOV, 16 / 9, 0.1, 10000);
+  cam.position.set(0, 0, 100);
+  cam.lookAt(0, 0, 0);
+  cam.updateMatrixWorld();
+  // 40 degrees off the view axis, 80 units from the camera.
+  const OFF = 40;
+  const pin = new THREE.Vector3(
+    80 * Math.sin((OFF * Math.PI) / 180),
+    0,
+    100 - 80 * Math.cos((OFF * Math.PI) / 180),
+  );
+
+  /** On-screen px of a world length at `p`, read off two projected points (no worldPerPx). */
+  function projectedHeightPx(p: THREE.Vector3, worldLen: number): number {
+    const a = p.clone().project(cam);
+    const b = p
+      .clone()
+      .add(new THREE.Vector3(0, worldLen, 0))
+      .project(cam);
+    return (Math.abs(b.y - a.y) * H) / 2;
+  }
+
+  it('viewDepth is the z distance, not the distance', () => {
+    expect(viewDepth(cam, new THREE.Vector3(0, 0, 0))).toBeCloseTo(100, 9);
+    expect(viewDepth(cam, pin)).toBeCloseTo(80 * Math.cos((OFF * Math.PI) / 180), 9);
+    expect(pin.distanceTo(cam.position)).toBeCloseTo(80, 9);
+  });
+  it('a 20 px sprite sized from the view depth projects to 20 px; sized from the distance it does not', () => {
+    const fromDepth = screenPxToWorld(LABEL_SPRITE_PX, viewDepth(cam, pin), FOV, H);
+    expect(projectedHeightPx(pin, fromDepth)).toBeCloseTo(20, 6);
+    const fromDistance = screenPxToWorld(LABEL_SPRITE_PX, pin.distanceTo(cam.position), FOV, H);
+    // the pre-fix formula: 20 / cos(40) = 26.1 px
+    expect(projectedHeightPx(pin, fromDistance)).toBeGreaterThan(25);
+  });
+  it('the label rectangle has the projected size of the sprite, 40 degrees off axis', () => {
+    const s = new THREE.Sprite();
+    s.position.copy(pin);
+    const lh = screenPxToWorld(LABEL_SPRITE_PX, viewDepth(cam, pin), FOV, H);
+    s.scale.set(lh * 5, lh, 1);
+    const out = { l: 0, r: 0, b: 0, t: 0 };
+    expect(labelRect(s, cam, out, new THREE.Vector3())).toBe(true);
+    const rectPx = ((out.t - out.b) / 2) * H;
+    expect(rectPx).toBeCloseTo(projectedHeightPx(pin, lh), 6);
+    expect(rectPx).toBeCloseTo(20, 6);
+    // width: five times the height in px, through the aspect (viewport 16:9)
+    expect(((out.r - out.l) / 2) * H * cam.aspect).toBeCloseTo(100, 6);
+  });
+  it('the snapshot measures 12 px text and a 44 px ring off axis, and reports a wrong size as wrong', () => {
+    const lh = screenPxToWorld(LABEL_SPRITE_PX, viewDepth(cam, pin), FOV, H);
+    const mk = (labelH: number, ringW: number) => {
+      const label = new THREE.Sprite();
+      label.position.copy(pin);
+      label.scale.set(labelH * 4, labelH, 1);
+      const ring = new THREE.Sprite(new THREE.SpriteMaterial());
+      ring.position.copy(pin);
+      ring.scale.setScalar(ringW);
+      return snapshotPins('t', [{ id: 'a', slot: newLabelSlot(label, 4), ring }], cam, 1600, H);
+    };
+    const ok = mk(lh, screenPxToWorld(RING_SPRITE_PX, viewDepth(cam, pin), FOV, H));
+    expect(ok.labels[0].textPx).toBeCloseTo(12, 6);
+    expect(ok.rings[0].d).toBeCloseTo(44, 6);
+    const old = screenPxToWorld(LABEL_SPRITE_PX, pin.distanceTo(cam.position), FOV, H);
+    expect(mk(old, 1).labels[0].textPx).toBeGreaterThan(15);
+  });
+});
+
+describe('liftOnScreen (m5)', () => {
+  it('lifts by the same on-screen amount when the camera looks straight down', () => {
+    const top = new THREE.PerspectiveCamera(FOV, 16 / 9, 0.1, 10000);
+    top.position.set(0, 100, 0);
+    top.up.set(0, 0, -1);
+    top.lookAt(0, 0, 0);
+    top.updateMatrixWorld();
+    const base = new THREE.Vector3();
+    const lifted = liftOnScreen(new THREE.Vector3(), base, top, 10);
+    const expectedPx = (10 / (100 * Math.tan((FOV * Math.PI) / 360))) * 450;
+    const a = base.clone().project(top);
+    const b = lifted.clone().project(top);
+    expect(((b.y - a.y) / 2) * 900).toBeCloseTo(expectedPx, 6);
+    // a world-Y lift is along the view axis here and moves nothing on screen
+    const worldY = base
+      .clone()
+      .add(new THREE.Vector3(0, 10, 0))
+      .project(top);
+    expect(worldY.y - a.y).toBeCloseTo(0, 9);
+  });
+});
+
+describe('placeLabels order (m2)', () => {
+  it('equal ranks resolve by creation order, whatever order the array is in', () => {
+    const mk = () => {
+      const a = slot(0, 0.4, 0, 0.1, 5);
+      const b = slot(0.2, 0.6, 0, 0.1, 5);
+      return { a, b };
+    };
+    const one = mk();
+    placeLabels([one.b, one.a]);
+    const two = mk();
+    placeLabels([two.a, two.b]);
+    // `a` was created first: it wins both times
+    expect([one.a.visible, one.b.visible]).toEqual([true, false]);
+    expect([two.a.visible, two.b.visible]).toEqual([true, false]);
+    expect(one.a.order).toBeLessThan(one.b.order);
+  });
+});
+
+describe('labelRect and snapshotPins: remaining branches', () => {
+  const cam = new THREE.PerspectiveCamera(FOV, 16 / 9, 0.1, 10000);
+  cam.position.set(0, 0, 100);
+  cam.lookAt(0, 0, 0);
+  cam.updateMatrixWorld();
+
+  it('a label near the left edge is anchored on its left side', () => {
+    const s = new THREE.Sprite();
+    const lh = screenPxToWorld(LABEL_SPRITE_PX, 100, FOV, 900);
+    s.scale.set(lh * 8, lh, 1);
+    const half = 100 * Math.tan((FOV * Math.PI) / 360) * cam.aspect;
+    s.position.set(-half * 0.98, 0, 0);
+    const out = { l: 0, r: 0, b: 0, t: 0 };
+    expect(labelRect(s, cam, out, new THREE.Vector3())).toBe(true);
+    expect(s.center.x).toBe(0);
+    expect(out.l).toBeGreaterThanOrEqual(-1);
+  });
+  it('an orthographic camera has no label rectangle', () => {
+    const ortho = new THREE.OrthographicCamera();
+    const s = new THREE.Sprite();
+    expect(labelRect(s, ortho, { l: 0, r: 0, b: 0, t: 0 }, new THREE.Vector3())).toBe(false);
+  });
+  it('a label-only pin and a ring-only pin each report only what they have, and an edge-anchored label reports its drawn left edge', () => {
+    const label = new THREE.Sprite();
+    label.scale.set(40, 10, 1);
+    label.center.set(1, 0.5);
+    const ring = new THREE.Sprite(new THREE.SpriteMaterial({ opacity: 0.4 }));
+    ring.scale.setScalar(10);
+    ring.visible = false;
+    const snap = snapshotPins(
+      't',
+      [
+        { id: 'l', slot: newLabelSlot(label, 4) },
+        { id: 'r', ring },
+      ],
+      cam,
+      1600,
+      900,
+    );
+    expect(snap.labels.map((l) => l.id)).toEqual(['l']);
+    expect(snap.rings.map((r) => r.id)).toEqual(['r']);
+    const l = snap.labels[0];
+    expect(l.x).toBeCloseTo(l.cx - l.w, 9);
+    expect(l.y).toBeCloseTo(l.cy - l.h / 2, 9);
+    expect(snap.rings[0].visible).toBe(false);
+    expect(snap.rings[0].opacity).toBeCloseTo(0.4, 9);
   });
 });

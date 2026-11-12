@@ -78,10 +78,10 @@ test.describe('/explore readability (C2, UXD-020)', () => {
         const s = (await readSnap(page))!;
         const boxes = shown(s).map((l) => ({
           id: l.id,
-          l: l.cx - l.w / 2,
-          r: l.cx + l.w / 2,
-          t: l.cy - l.h / 2,
-          b: l.cy + l.h / 2,
+          l: l.x,
+          r: l.x + l.w,
+          t: l.y,
+          b: l.y + l.h,
         }));
         const tol = 2; // px: the label's own padding is wider than its text
         for (let i = 0; i < boxes.length; i++) {
@@ -133,20 +133,59 @@ test.describe('/explore readability (C2, UXD-020)', () => {
     expect(Math.abs(hot.label.cy - rest.label.cy)).toBeLessThanOrEqual(1);
   });
 
-  test('an arm shows a ring when hovered (MW4)', async ({ page }) => {
+  test('every arm ring is pickable and shows its ring and label on hover, hidden label or not (MW4)', async ({
+    page,
+  }) => {
     await open(page, 'milky-way');
-    const s = (await readSnap(page))!;
-    const arm = s.rings.find((r) => r.id === 'perseus');
-    const label = s.labels.find((l) => l.id === 'perseus' && l.shown);
-    test.skip(!arm || !label, 'the Perseus label is hidden by the placement pass at this size');
-    expect(arm!.opacity).toBe(0);
     const o = await canvasOrigin(page);
-    await page.mouse.move(o.x + label!.cx, o.y + label!.cy);
-    await expect
-      .poll(async () => (await readSnap(page))!.rings.find((r) => r.id === 'perseus')!.opacity, {
-        timeout: 5_000,
-      })
-      .toBe(1);
+    const box = await page.evaluate(() => {
+      const r = [...document.querySelectorAll('canvas')]
+        .map((el) => el.getBoundingClientRect())
+        .sort((a, b) => b.width * b.height - a.width * a.height)[0];
+      return { w: r.width, h: r.height };
+    });
+    for (const id of ['perseus', 'scutum-centaurus', 'sagittarius', 'norma']) {
+      const ring = (await readSnap(page))!.rings.find((r) => r.id === id);
+      expect(ring, `${id}: the arm has a ring`).toBeTruthy();
+      expect(ring!.cx, `${id}: ring centre is on screen (x)`).toBeGreaterThan(0);
+      expect(ring!.cx, `${id}: ring centre is on screen (x)`).toBeLessThan(box.w);
+      expect(ring!.cy, `${id}: ring centre is on screen (y)`).toBeGreaterThan(0);
+      expect(ring!.cy, `${id}: ring centre is on screen (y)`).toBeLessThan(box.h);
+      expect(ring!.opacity, `${id}: idle ring is hidden`).toBe(0);
+      await page.mouse.move(o.x + ring!.cx, o.y + ring!.cy);
+      await expect
+        .poll(async () => (await readSnap(page))!.rings.find((r) => r.id === id)!.opacity, {
+          timeout: 5_000,
+          message: `${id}: hovering the ring shows it`,
+        })
+        .toBe(1);
+      const label = (await readSnap(page))!.labels.find((l) => l.id === id)!;
+      expect(label.shown, `${id}: hovering forces the label`).toBe(true);
+      await page.mouse.move(o.x + 2, o.y + 2);
+      await expect
+        .poll(async () => (await readSnap(page))!.rings.find((r) => r.id === id)!.opacity, {
+          timeout: 5_000,
+        })
+        .toBe(0);
+    }
+  });
+
+  test('a selected pin keeps its ring and label while another pin is hovered (m1)', async ({
+    page,
+  }) => {
+    await open(page, 'milky-way');
+    const o = await canvasOrigin(page);
+    const ringOf = async (id: string) => (await readSnap(page))!.rings.find((r) => r.id === id)!;
+    const sel = await ringOf('perseus');
+    await page.mouse.click(o.x + sel.cx, o.y + sel.cy);
+    await expect.poll(async () => (await ringOf('perseus')).opacity, { timeout: 5_000 }).toBe(1);
+    await page.waitForTimeout(2_000); // the focus move settles
+    const other = await ringOf('norma');
+    await page.mouse.move(o.x + other.cx, o.y + other.cy);
+    await expect.poll(async () => (await ringOf('norma')).opacity, { timeout: 5_000 }).toBe(1);
+    expect((await ringOf('perseus')).opacity).toBe(1);
+    const label = (await readSnap(page))!.labels.find((l) => l.id === 'perseus')!;
+    expect(label.shown).toBe(true);
   });
 
   test('the light-year rings are four, localised, and the 5 ly label never covers a star label', async ({
@@ -160,10 +199,10 @@ test.describe('/explore readability (C2, UXD-020)', () => {
     for (const r of ly.filter((l) => l.shown)) {
       for (const st of stars) {
         const hit =
-          r.cx - r.w / 2 + 2 < st.cx + st.w / 2 &&
-          st.cx - st.w / 2 + 2 < r.cx + r.w / 2 &&
-          r.cy - r.h / 2 + 2 < st.cy + st.h / 2 &&
-          st.cy - st.h / 2 + 2 < r.cy + r.h / 2;
+          r.x + 2 < st.x + st.w &&
+          st.x + 2 < r.x + r.w &&
+          r.y + 2 < st.y + st.h &&
+          st.y + 2 < r.y + r.h;
         expect(hit, `${r.id} covers ${st.id}`).toBe(false);
       }
     }
@@ -188,6 +227,11 @@ test.describe('/explore readability (C2, UXD-020)', () => {
     );
     const labels = await page.evaluate(() => window.__explore2dLabels!());
     expect(labels.length).toBeGreaterThan(0);
-    for (const l of labels) expect(l.fontPx).toBe(11);
+    const drawn = labels.filter((l) => l.shown);
+    expect(drawn.length).toBeGreaterThan(0);
+    for (const l of drawn) {
+      expect(l.fontPx, l.text).toBe(11);
+      expect(l.font, l.text).toContain('11px');
+    }
   });
 });

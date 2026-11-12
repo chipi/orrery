@@ -110,7 +110,7 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
   });
 
   for (const locale of ['', '/de']) {
-    test(`${locale}/explore: 48 body, 66 star, 4 black-hole and 131 deep-sky links, six lists, no button row`, async ({
+    test(`${locale}/explore: 48 body, 66 star, 4 black-hole and 153 deep-sky links, six lists, no button row`, async ({
       request,
     }) => {
       const res = await request.get(`${locale}/explore`);
@@ -133,11 +133,12 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
       const kind = (prefix: string) => listed.filter((h) => h.startsWith(`${locale}${prefix}`));
       expect(kind('/explore/stars/')).toHaveLength(66);
       expect(kind('/explore/black-holes/')).toHaveLength(4);
-      // 120 objects with text, each linked from the neighbourhood; one real object, one page, so the
-      // 7 Milky Way globulars and the 4 Local Group twins (m32, m110, andromeda, triangulum) link the same pages.
-      expect(kind('/explore/deep-sky/')).toHaveLength(120 + 7 + 4);
-      expect(new Set(kind('/explore/deep-sky/')).size).toBe(120);
-      expect(listed).toHaveLength(48 + 66 + 4 + 120 + 7 + 4);
+      // 140 objects with text, each linked from the neighbourhood; one real object, one page, so the
+      // 7 Milky Way globulars, the 4 Local Group twins (m32, m110, andromeda, triangulum), Omega Centauri
+      // (ngc-5139) and the Carina alias (carina-nebula, ngc-3372) link the same pages: 13 twin rows.
+      expect(kind('/explore/deep-sky/')).toHaveLength(140 + 13);
+      expect(new Set(kind('/explore/deep-sky/')).size).toBe(140);
+      expect(listed).toHaveLength(48 + 66 + 4 + 140 + 13);
       // Every body, star, black-hole and deep-sky page of the site is one of those links.
       const pages = routes.filter(
         (r) => /^\/explore\/[^/]+(\/[^/]+)?$/.test(r) && r !== '/explore/hub',

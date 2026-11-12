@@ -98,7 +98,7 @@
   .lbl {
     font-size: var(--size-label);
     letter-spacing: 1px;
-    color: var(--color-state);
+    color: #8fbfe0;
     width: 58px;
   }
   .bar {
@@ -137,7 +137,7 @@
   .unit {
     font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: var(--color-state);
+    color: #6ea6cc;
     margin-top: 6px;
   }
 </style>

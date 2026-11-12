@@ -325,7 +325,7 @@
     letter-spacing: 0.05em;
     color: var(--color-state);
     background: rgba(6, 12, 22, 0.72);
-    border: 1px solid var(--color-accent-edge);
+    border: 1px solid rgba(127, 212, 255, 0.3);
     border-radius: 4px;
     padding: 0.5rem 0.65rem;
     display: grid;
@@ -333,7 +333,7 @@
     min-width: 190px;
   }
   .cd-title {
-    color: var(--color-state);
+    color: #7fd4ff;
     font-weight: 600;
     letter-spacing: 0.14em;
     margin-bottom: 0.15rem;
@@ -358,11 +358,11 @@
   .cd-seg {
     flex: 1;
     height: 4px;
-    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    background: rgba(127, 212, 255, 0.2);
     border-radius: 2px;
   }
   .cd-seg.active {
-    background: var(--color-accent-hover);
+    background: #7fd4ff;
   }
   .hud {
     position: absolute;
@@ -383,7 +383,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    color: var(--color-state);
+    color: #7fd4ff;
     letter-spacing: 0.22em;
     font-weight: 600;
     font-size: 0.72rem;
@@ -393,8 +393,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--color-accent-hover);
-    box-shadow: 0 0 8px color-mix(in srgb, var(--color-accent) 90%, transparent);
+    background: #7fd4ff;
+    box-shadow: 0 0 8px rgba(127, 212, 255, 0.9);
     animation: live-pulse 1.6s ease-in-out infinite;
   }
   @keyframes live-pulse {
@@ -421,7 +421,7 @@
     gap: 0.4rem;
     text-align: right;
     padding-right: 0.7rem;
-    border-right: 1px solid var(--color-accent-edge);
+    border-right: 1px solid rgba(127, 212, 255, 0.35);
   }
   .ro {
     display: flex;
@@ -440,7 +440,7 @@
     font-variant-numeric: tabular-nums;
   }
   .ro.rev .v {
-    color: var(--color-state);
+    color: #7fd4ff;
     font-weight: 600;
   }
   /* 2026 corner-bracket frame — thin blue L's, no fill. */
@@ -448,7 +448,7 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    border: 1px solid var(--color-accent-edge);
+    border: 1px solid rgba(127, 212, 255, 0.4);
     pointer-events: none;
   }
   .frame.tl {

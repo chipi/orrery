@@ -1231,19 +1231,19 @@
       flyUpdaters.helio.refreshLabelSprites(
         m.fly_event_launch(),
         depLabel,
-        '#4b9cd3',
+        '#4b9cd3', // a3-keep: Earth identity colour (trajectory labels), palette review at the end
         m.fly_event_arrival(),
         arrSubLabel,
         arrColor,
         m.hud_return(),
         m.hud_body_arrival({ body: m.lab_body_earth() }),
-        '#4b9cd3',
+        '#4b9cd3', // a3-keep: Earth identity colour (trajectory labels), palette review at the end
       );
     } else {
       flyUpdaters.helio.refreshLabelSprites(
         m.fly_event_launch(),
         depLabel,
-        '#4b9cd3',
+        '#4b9cd3', // a3-keep: Earth identity colour (trajectory labels), palette review at the end
         m.fly_event_arrival(),
         arrSubLabel,
         arrColor,
@@ -4799,7 +4799,7 @@
     height: 11px;
     background: var(--color-accent);
     box-shadow:
-      0 0 10px color-mix(in srgb, var(--color-accent) 95%, transparent),
+      0 0 10px rgba(127, 212, 255, 0.95),
       0 0 4px rgba(255, 255, 255, 0.7);
     animation: milestone-pulse 1.6s ease-in-out infinite;
   }
@@ -4808,13 +4808,13 @@
     100% {
       transform: translate(-50%, -50%) rotate(45deg) scale(1);
       box-shadow:
-        0 0 10px color-mix(in srgb, var(--color-accent) 95%, transparent),
+        0 0 10px rgba(127, 212, 255, 0.95),
         0 0 4px rgba(255, 255, 255, 0.7);
     }
     50% {
       transform: translate(-50%, -50%) rotate(45deg) scale(1.35);
       box-shadow:
-        0 0 18px var(--color-accent),
+        0 0 18px rgba(127, 212, 255, 1),
         0 0 8px rgba(255, 255, 255, 0.85);
     }
   }
@@ -4852,7 +4852,7 @@
     color: var(--color-state);
     font-weight: 700;
     text-shadow:
-      0 0 6px color-mix(in srgb, var(--color-accent) 55%, transparent),
+      0 0 6px rgba(127, 212, 255, 0.55),
       0 0 4px rgba(8, 10, 22, 1),
       0 0 10px rgba(8, 10, 22, 0.9);
   }
@@ -4866,7 +4866,7 @@
     display: inline-flex;
     flex-direction: column;
     gap: 4px;
-    color: var(--color-state);
+    color: rgba(127, 212, 255, 0.98);
   }
   .active-event-label {
     font-weight: 600;
@@ -5044,7 +5044,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 5px;
-    color: var(--color-state);
+    color: rgba(127, 212, 255, 0.85);
     text-transform: uppercase;
   }
   .epilogue-name {
@@ -5163,7 +5163,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 5px;
-    color: var(--color-state);
+    color: rgba(127, 212, 255, 0.85);
     text-transform: uppercase;
   }
   .opening-name {
@@ -5182,7 +5182,7 @@
   }
   .opening-name-link:hover,
   .opening-name-link:focus-visible {
-    color: var(--color-state);
+    color: rgba(127, 212, 255, 0.95);
     outline: none;
   }
   .opening-years {
@@ -5205,7 +5205,7 @@
     gap: 12px;
     text-align: center;
     pointer-events: auto;
-    border-top: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-top: 1px solid rgba(127, 212, 255, 0.18);
     padding-top: 14px;
   }
   .opening-context {
@@ -5244,7 +5244,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2.5px;
-    color: var(--color-state);
+    color: rgba(127, 212, 255, 0.7);
     text-transform: uppercase;
   }
   .opening-stat-val {
@@ -5263,7 +5263,7 @@
     gap: 12px;
     pointer-events: auto;
     transition: opacity 200ms linear;
-    border-top: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-top: 1px solid rgba(127, 212, 255, 0.18);
     padding-top: 14px;
   }
   .opening-fleet-label {
@@ -5306,7 +5306,7 @@
     gap: 3px;
     padding: 8px 16px;
     background: rgba(8, 12, 24, 0.42);
-    border: 1px solid var(--color-accent-edge);
+    border: 1px solid rgba(127, 212, 255, 0.35);
     border-radius: 4px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -5315,7 +5315,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
-    color: var(--color-state);
+    color: rgba(127, 212, 255, 0.8);
     text-transform: uppercase;
   }
   .opening-fleet-id {
@@ -5337,7 +5337,7 @@
     height: 120px;
     object-fit: cover;
     border-radius: 6px;
-    border: 1px solid var(--color-accent-edge);
+    border: 1px solid rgba(127, 212, 255, 0.35);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
   }
 
@@ -5352,7 +5352,7 @@
     gap: 10px;
     padding: 10px 22px;
     background: rgba(8, 10, 22, 0.55);
-    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
+    border: 1px solid rgba(127, 212, 255, 0.5);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.92);
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -5367,14 +5367,14 @@
   }
   .opening-skip:hover,
   .opening-skip:focus-visible {
-    background: var(--color-accent-soft);
-    border-color: color-mix(in srgb, var(--color-accent) 90%, transparent);
+    background: rgba(127, 212, 255, 0.15);
+    border-color: rgba(127, 212, 255, 0.9);
     color: #fff;
     outline: none;
   }
   .opening-skip-arrow {
     font-size: 14px;
-    color: var(--color-state);
+    color: rgba(127, 212, 255, 0.85);
   }
   .opening-actions {
     display: flex;
@@ -5401,7 +5401,7 @@
     display: grid;
     gap: 0.55rem;
     padding: 1.4rem 2.6rem 2rem;
-    border-top: 1px solid var(--color-accent-edge);
+    border-top: 1px solid rgba(127, 212, 255, 0.4);
     max-width: 30rem;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   }
@@ -5409,7 +5409,7 @@
     border-top-color: rgba(255, 120, 96, 0.55);
   }
   .recovery-eyebrow {
-    color: var(--color-state);
+    color: #7fd4ff;
     letter-spacing: 0.24em;
     font-size: 0.7rem;
   }
@@ -5434,8 +5434,8 @@
     margin-top: 0.8rem;
     justify-self: center;
     background: transparent;
-    color: var(--color-state);
-    border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+    color: #7fd4ff;
+    border: 1px solid rgba(127, 212, 255, 0.45);
     border-radius: 4px;
     padding: 0.45rem 1.3rem;
     font-family: inherit;
@@ -5444,7 +5444,7 @@
     cursor: pointer;
   }
   .recovery-close:hover {
-    border-color: var(--color-accent-strong);
+    border-color: rgba(127, 212, 255, 0.8);
   }
   /* START WITH LAUNCH — the launch-act entry point (amber accent). */
   .opening-launch {
@@ -5513,7 +5513,7 @@
     gap: 14px;
     padding: 10px 14px;
     background: rgba(14, 18, 32, 0.55);
-    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+    border: 1px solid rgba(127, 212, 255, 0.25);
     border-radius: 6px;
     max-width: 360px;
     text-decoration: none;
@@ -5525,7 +5525,7 @@
   }
   .opening-fleet-card:hover,
   .opening-fleet-card:focus-visible {
-    border-color: var(--color-accent-strong);
+    border-color: rgba(127, 212, 255, 0.65);
     background: rgba(20, 26, 50, 0.65);
     outline: none;
     transform: translateY(-1px);
@@ -5561,7 +5561,7 @@
   .opening-fleet-card .opening-fleet-role {
     font-size: 11px;
     letter-spacing: 2px;
-    color: var(--color-state);
+    color: rgba(127, 212, 255, 0.75);
   }
   .opening-fleet-card.hero .opening-fleet-role {
     color: rgba(255, 200, 80, 0.85);
@@ -6465,7 +6465,7 @@
       right: 8px;
       z-index: 45;
       padding: 7px 10px;
-      border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+      border: 1px solid rgba(127, 212, 255, 0.25);
       border-radius: 8px;
       background: rgba(8, 10, 22, 0.78);
       backdrop-filter: blur(4px);
@@ -6492,7 +6492,7 @@
     .fly-mini-hud .mh-phase {
       font-size: var(--size-label);
       letter-spacing: 1.5px;
-      color: var(--color-state);
+      color: #7fd4ff;
       white-space: nowrap;
     }
     .fly-mini-hud .mh-row {

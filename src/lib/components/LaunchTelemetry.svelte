@@ -295,7 +295,7 @@
     gap: 11px;
     width: 250px;
     padding: 2px 0 2px 14px;
-    border-left: 1px solid var(--color-accent-edge);
+    border-left: 1px solid rgba(127, 212, 255, 0.35);
     font-family: var(--font-mono, 'Space Mono', monospace);
     color: #eaf3ff;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
@@ -307,16 +307,16 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 15px;
     letter-spacing: 2px;
-    color: var(--color-state);
+    color: #7fd4ff;
     padding-bottom: 8px;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border-bottom: 1px solid rgba(127, 212, 255, 0.2);
   }
   .console-title em {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
     font-size: var(--size-label);
     letter-spacing: 1px;
-    color: var(--color-state);
+    color: #6ea6cc;
   }
   .chart-row header {
     margin-bottom: 3px;
@@ -382,7 +382,7 @@
     align-items: baseline;
     font-size: var(--size-label);
     letter-spacing: 1.5px;
-    color: var(--color-state);
+    color: #8fbfe0;
   }
   .fuel-headline {
     font-size: var(--size-label);

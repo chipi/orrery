@@ -110,7 +110,12 @@
   function updateName() {
     nameRaf = 0;
     if (!contentEl) return;
-    const anchor = contentEl.querySelector('.panel-hero') ?? contentEl.firstElementChild;
+    // The hero, else the identity block: Message, Museum and Observatory wrap their whole body
+    // in one div whose bottom never scrolls past the top, so the first child is not enough.
+    const anchor =
+      contentEl.querySelector('.panel-hero') ??
+      contentEl.querySelector('.head, .phase-head, h1, h2, h3') ??
+      contentEl.firstElementChild;
     nameShown = anchor
       ? anchor.getBoundingClientRect().bottom <= contentEl.getBoundingClientRect().top
       : false;
@@ -328,12 +333,18 @@
     gap: 6px;
     padding: 0 14px;
     background: var(--color-panel-bg);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    /* Inset rule, not a border: a border would add 1 px to the 38 / 44 px bar. */
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.06);
   }
   @media (hover: hover) and (pointer: fine) {
     .panel-bar {
       padding-block: 4px;
     }
+  }
+  /* On touch the bar is flush with the panel's top edge (overflow hidden), so the chip's
+     outside focus ring would be clipped; draw it inside. */
+  .panel-bar :global(.ui-chip:focus-visible) {
+    outline-offset: -3px;
   }
   .panel-bar-name {
     flex: 1;

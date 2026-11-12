@@ -252,9 +252,9 @@ test.describe('/explore — selection and panel', () => {
       : page.getByTestId('sizes-toggle');
     await expect(toggle).toBeVisible();
     if (isMobile) {
-      // The sizes-toggle (REFERENCES button, .earth-compare) sits at
+      // The sizes-toggle (REFERENCES chip, .scales-dock) sits at
       // bottom-left of the canvas. The persistent .site-footer strip
-      // (z-index 35, higher than the 20 on earth-compare) renders as
+      // (z-index 35, higher than the 20 on the scales dock) renders as
       // an inline-flex bar that spans most of a 375 px viewport
       // because of the version label, so its .footer-link children
       // overlap the chip's hit area. tap() trips on Playwright's

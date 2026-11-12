@@ -25,6 +25,7 @@
     const to = nextChoiceIndex(e.key, index, radios.length, rtl);
     if (to === null) return;
     e.preventDefault();
+    e.stopPropagation();
     radios[to].focus();
     radios[to].click();
   }

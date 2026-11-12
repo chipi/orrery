@@ -234,6 +234,8 @@ export interface DeepSkyTextOverlay {
   fact?: string;
   /** Longer editorial paragraph. */
   bio?: string;
+  /** Curated learn-more links: { l: label, u: url, t: tier }, one or two per object. */
+  links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
 }
 
 /** A deep-sky object's overlay text in the reader's locale, en-US as the fallback; null if neither exists. */

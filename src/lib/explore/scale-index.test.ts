@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { collectCanonicalRoutes } from '../../../scripts/site-routes.mjs';
+import { DEEP_SKY_ALIAS, collectCanonicalRoutes } from '../../../scripts/site-routes.mjs';
 import {
   FILTER_TESTS,
   SCALE_FILTERS,
@@ -28,10 +28,17 @@ function source(): ScaleIndexSource {
   body.delete('hub');
   body.delete('stars');
   body.delete('black-holes');
+  body.delete('deep-sky');
   return {
     locale: 'en-US',
     names: { body: {}, star: {}, blackHole: {}, belt: {} },
-    pages: { body, star: pageIds('/explore/stars/'), blackHole: pageIds('/explore/black-holes/') },
+    pages: {
+      body,
+      star: pageIds('/explore/stars/'),
+      blackHole: pageIds('/explore/black-holes/'),
+      deepSky: pageIds('/explore/deep-sky/'),
+    },
+    deepSkyAlias: DEEP_SKY_ALIAS,
     planets: read<{ planets: never[] }>('planets.json').planets,
     smallBodies: read<{ bodies: never[] }>('small-bodies.json').bodies,
     satellites: read<{ satellites: never[] }>('satellites.json').satellites,
@@ -143,7 +150,7 @@ describe('entity-page links (C11)', () => {
     return out;
   };
 
-  it('every body, star and black-hole page has a row with that href: 48 + 66 + 4', () => {
+  it('every body, star, black-hole and deep-sky page has a row with that href: 48 + 66 + 4 + 120', () => {
     const bodyPages = routes.filter(
       (r) => /^\/explore\/[^/]+$/.test(r) && !['/explore/hub'].includes(r) && !r.includes('/stars'),
     );
@@ -152,13 +159,57 @@ describe('entity-page links (C11)', () => {
     expect(bodyRows.size).toBe(48);
 
     const starPages = routes.filter((r) => r.startsWith('/explore/stars/'));
-    const starRows = new Set(rows.neighborhood.flatMap((r) => (r.href ? [r.href] : [])));
+    const starRows = new Set(
+      rows.neighborhood.flatMap((r) => (r.href?.startsWith('/explore/stars/') ? [r.href] : [])),
+    );
     expect([...starRows].sort()).toEqual([...starPages].sort());
     expect(starRows.size).toBe(66);
 
     const holePages = routes.filter((r) => r.startsWith('/explore/black-holes/'));
     expect([...linked('/explore/black-holes/').keys()].sort()).toEqual([...holePages].sort());
     expect(holePages).toHaveLength(4);
+
+    const dsPages = routes.filter((r) => r.startsWith('/explore/deep-sky/'));
+    expect([...linked('/explore/deep-sky/').keys()].sort()).toEqual([...dsPages].sort());
+    expect(dsPages).toHaveLength(120);
+  });
+
+  it('one real object, one page: the Milky Way globulars and Local Group twins link the deep-sky page', () => {
+    const href = (scale: (typeof CTX_ORDER)[number], id: string) =>
+      rows[scale].find((r) => r.id === id)?.href;
+    for (const id of ['m3', 'm4', 'm5', 'm13', 'm15', 'm22', 'm92'])
+      expect(href('milky-way', id), id).toBe(`/explore/deep-sky/${id}`);
+    for (const id of ['m32', 'm110'])
+      expect(href('local-group', id), id).toBe(`/explore/deep-sky/${id}`);
+    expect(href('local-group', 'andromeda')).toBe('/explore/deep-sky/m31');
+    expect(href('local-group', 'triangulum')).toBe('/explore/deep-sky/m33');
+    expect(href('neighborhood', 'm31')).toBe('/explore/deep-sky/m31');
+    // No second page: the other members have none, and omega-centauri waits for ngc-5139's text.
+    expect(href('milky-way', '47-tucanae')).toBeUndefined();
+    expect(href('milky-way', 'omega-centauri')).toBeUndefined();
+    expect(href('local-group', 'lmc')).toBeUndefined();
+  });
+
+  it('a row names its object as its page does: designation, then the common name', () => {
+    const name = (scale: (typeof CTX_ORDER)[number], id: string) =>
+      rows[scale].find((r) => r.id === id)?.name;
+    expect(name('neighborhood', 'm13')).toBe('M13 · Hercules Globular Cluster');
+    expect(name('milky-way', 'm13')).toBe('M13 · Hercules Globular Cluster');
+    expect(name('neighborhood', 'm3')).toBe('M3 · NGC 5272');
+    expect(name('local-group', 'andromeda')).toBe(name('neighborhood', 'm31'));
+  });
+
+  it('only the aliases and the same-id twins share a deep-sky id with the Milky Way or Local Group', () => {
+    const shared = [...rows['milky-way'], ...rows['local-group']]
+      .filter((r) => src.deepSky.some((o) => o.id === r.id))
+      .map((r) => r.id)
+      .sort();
+    expect(shared).toEqual(['m110', 'm13', 'm15', 'm22', 'm3', 'm32', 'm4', 'm5', 'm92']);
+    for (const target of Object.values(DEEP_SKY_ALIAS))
+      expect(
+        src.deepSky.some((o) => o.id === target),
+        target,
+      ).toBe(true);
   });
 
   it('a row links only a page that exists', () => {
@@ -167,9 +218,9 @@ describe('entity-page links (C11)', () => {
       for (const r of rows[scale]) if (r.href) expect(all.has(r.href)).toBe(true);
   });
 
-  it('every other row is a button without a link: 226 of 344', () => {
+  it('every other row is a button without a link: 95 of 344', () => {
     const n = CTX_ORDER.reduce((s, c) => s + rows[c].filter((r) => !r.href).length, 0);
-    expect(n).toBe(344 - 118);
+    expect(n).toBe(344 - (118 + 120 + 7 + 4));
   });
 });
 

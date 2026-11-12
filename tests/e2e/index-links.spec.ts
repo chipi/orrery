@@ -9,7 +9,8 @@ import { waitForHydration } from './_helpers/hydration';
  * object has an entity page also carries a real link to it, and the prerendered HTML links
  * every entity page of the hub even while the INDEX panel is closed (crawlers do not click).
  * /missions and /fleet keep the A–Z at the page foot. The stars (ADR-096 item 13) are typed apart
- * under /explore/stars/<id> and the black holes (item 16) under /explore/black-holes/<id>; both
+ * under /explore/stars/<id>, the black holes (item 16) under /explore/black-holes/<id> and the deep-sky
+ * objects with text (item 17) under /explore/deep-sky/<id>; all three
  * are rows of the INDEX of the scale they belong to (UXD-017), and /explore renders every scale's
  * INDEX, hidden unless it is on screen, so the prerendered /explore HTML links every one of them.
  * The /explore INDEX in the browser (all eight scales) is scale-index.spec.ts.
@@ -39,6 +40,13 @@ function blackHolePageIds(): string[] {
     .map((r) => r.slice('/explore/black-holes/'.length));
 }
 
+/** Every /explore/deep-sky/<id> page (the objects with reviewed text). */
+function deepSkyPageIds(): string[] {
+  return (collectCanonicalRoutes() as string[])
+    .filter((r) => r.startsWith('/explore/deep-sky/'))
+    .map((r) => r.slice('/explore/deep-sky/'.length));
+}
+
 test.describe('the prerendered hub HTML links every entity page', () => {
   // Playwright requires a destructuring pattern as the first argument (see mobile-invariants.spec.ts).
   // eslint-disable-next-line no-empty-pattern
@@ -63,7 +71,7 @@ test.describe('the prerendered hub HTML links every entity page', () => {
   }
 
   for (const locale of ['', '/de']) {
-    test(`${locale}/explore: the INDEX links every star and black-hole page in the HTML`, async ({
+    test(`${locale}/explore: the INDEX links every star, black-hole and deep-sky page in the HTML`, async ({
       request,
     }) => {
       const res = await request.get(`${locale}/explore`);
@@ -73,11 +81,17 @@ test.describe('the prerendered hub HTML links every entity page', () => {
       expect(stars.length).toBe(66);
       const holes = blackHolePageIds();
       expect(holes.length).toBe(4);
+      const objects = deepSkyPageIds();
+      expect(objects.length).toBe(120);
       const missing = [
         ...stars.map((id) => `${locale}/explore/stars/${id}`),
         ...holes.map((id) => `${locale}/explore/black-holes/${id}`),
+        ...objects.map((id) => `${locale}/explore/deep-sky/${id}`),
       ].filter((href) => !hrefs.includes(href));
-      expect(missing, `star / black-hole pages not linked from ${locale}/explore`).toEqual([]);
+      expect(
+        missing,
+        `star / black-hole / deep-sky pages not linked from ${locale}/explore`,
+      ).toEqual([]);
     });
   }
 

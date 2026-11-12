@@ -213,6 +213,68 @@ describe('black-hole page inputs', () => {
   });
 });
 
+describe('deep-sky page inputs', () => {
+  const tracked = new Set([
+    'src/routes/explore/deep-sky/[id]/+page.svelte',
+    'static/data/culture-doors.json',
+    'i18n-src/en-US/universe/deep-sky/m13.json',
+    'i18n-src/de/universe/deep-sky/m13.json',
+    'i18n-src/en-US/culture-doors/arecibo-message.json',
+    'i18n-src/en-US/universe/deep-sky/m42.json',
+    'i18n-src/en-US/deep-sky.json',
+    'i18n-src/de/deep-sky.json',
+  ]);
+  const latest = new Map<string, number>([
+    ['src/routes/explore/deep-sky/[id]/+page.svelte', day('2026-03-01')],
+    ['static/data/culture-doors.json', day('2026-01-01')],
+    ['i18n-src/en-US/universe/deep-sky/m13.json', day('2026-04-01')],
+    ['i18n-src/de/universe/deep-sky/m13.json', day('2026-05-01')],
+    ['i18n-src/en-US/culture-doors/arecibo-message.json', day('2026-08-01')],
+    ['i18n-src/en-US/universe/deep-sky/m42.json', day('2026-04-01')],
+    ['i18n-src/en-US/deep-sky.json', day('2026-04-15')],
+    ['i18n-src/de/deep-sky.json', day('2026-09-01')],
+  ]);
+  const entryDates = new Map([
+    ['static/data/universe/deep-sky-objects.json#m13', day('2026-06-01')],
+    ['static/data/universe/deep-sky-objects.json#m42', day('2026-02-01')],
+    ['static/data/deep-sky.json#jwst-orion', day('2026-07-01')],
+  ]);
+  const ctx = { tracked, latest, entryDates, locales: ['de', 'fr'] };
+  const data = {
+    missions: new Map(),
+    fleet: new Map(),
+    labFiles: [],
+    hostPlanets: new Map(),
+    doors: [{ id: 'arecibo-message', objectId: 'm13' }],
+    deepSkyPhotoKeys: new Map([['m42', 'jwst-orion']]),
+  };
+
+  it('dates an object from its own list entry, its overlay and its culture door', () => {
+    const inputs = inputsFor('/explore/deep-sky/m13', ctx, data);
+    expect(inputs.entries).toEqual(['static/data/universe/deep-sky-objects.json#m13']);
+    expect(inputs.overlays).toContain('universe/deep-sky/m13.json');
+    expect(inputs.overlays).toContain('culture-doors/arecibo-message.json');
+    expect(inputs.overlays).not.toContain('deep-sky.json');
+    expect(newestTs(inputs, 'de', ctx)).toBe(day('2026-08-01'));
+  });
+
+  it('adds the gallery entry and the gallery overlay for a photographed object', () => {
+    const inputs = inputsFor('/explore/deep-sky/m42', ctx, data);
+    expect(inputs.entries).toEqual([
+      'static/data/universe/deep-sky-objects.json#m42',
+      'static/data/deep-sky.json#jwst-orion',
+    ]);
+    expect(inputs.overlays).toContain('deep-sky.json');
+    expect(newestTs(inputs, 'de', ctx)).toBe(day('2026-09-01'));
+    expect(newestTs(inputs, 'fr', ctx)).toBe(day('2026-07-01'));
+  });
+
+  it('is not the body-page branch: /explore/deep-sky is a folder, not an /explore/<id>', () => {
+    const inputs = inputsFor('/explore/deep-sky/m13', ctx, data);
+    expect(inputs.overlays).not.toContain('planets/deep-sky.json');
+  });
+});
+
 describe('/explore page inputs', () => {
   const files = [
     'static/data/universe/named-stars.json',

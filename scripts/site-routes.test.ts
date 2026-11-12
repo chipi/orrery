@@ -1,7 +1,13 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 // @ts-expect-error plain .mjs without types
-import { blackHolePageIds, collectCanonicalRoutes, starPageIds } from './site-routes.mjs';
+import {
+  DEEP_SKY_ALIAS,
+  blackHolePageIds,
+  collectCanonicalRoutes,
+  deepSkyPageIds,
+  starPageIds,
+} from './site-routes.mjs';
 
 const read = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
 const named: string[] = read('static/data/universe/named-stars.json').stars.map(
@@ -93,5 +99,74 @@ describe('black-hole page routes (/explore/black-holes/<id>)', () => {
       expect(taken.has(id), `${id} is also a body or star id`).toBe(false);
       expect(id).toMatch(/^[a-z0-9-]+$/);
     }
+  });
+});
+
+describe('deep-sky page routes (/explore/deep-sky/<id>)', () => {
+  const objects: { id: string }[] = read('static/data/universe/deep-sky-objects.json').objects;
+  const overlayIds = (locale: string): string[] =>
+    readdirSync(`i18n-src/${locale}/universe/deep-sky`)
+      .filter((f) => f.endsWith('.json'))
+      .map((f) => f.slice(0, -5));
+
+  it('are the ids of the overlay files, once each: the files decide', () => {
+    const ids: string[] = deepSkyPageIds();
+    expect(new Set(ids).size).toBe(ids.length);
+    expect([...ids].sort()).toEqual(overlayIds('en-US').sort());
+    expect(ids).toHaveLength(120);
+  });
+
+  it('are objects of deep-sky-objects.json, and have the overlay in all 14 locales or none', () => {
+    const known = new Set(objects.map((o) => o.id));
+    for (const id of deepSkyPageIds()) expect(known.has(id), `${id} is not an object`).toBe(true);
+    const locales = readdirSync('i18n-src').filter((d) => existsSync(`i18n-src/${d}/universe`));
+    expect(locales).toHaveLength(14);
+    for (const o of objects) {
+      const have = locales.filter((l) =>
+        existsSync(`i18n-src/${l}/universe/deep-sky/${o.id}.json`),
+      );
+      expect([0, 14], `${o.id} has an overlay in ${have.length} locales`).toContain(have.length);
+    }
+  });
+
+  it('are in the canonical route list, each exactly once', () => {
+    const routes: string[] = collectCanonicalRoutes();
+    expect(routes.filter((r) => r.startsWith('/explore/deep-sky/')).sort()).toEqual(
+      deepSkyPageIds()
+        .map((id: string) => `/explore/deep-sky/${id}`)
+        .sort(),
+    );
+    expect(new Set(routes).size).toBe(routes.length);
+  });
+
+  it('never share an id with a planet, moon, small body, star or black hole, and are one path segment', () => {
+    const taken = new Set<string>([
+      ...read('static/data/planets.json').planets.map((p: { name: string }) =>
+        p.name.toLowerCase(),
+      ),
+      ...read('static/data/satellites.json').satellites.map((s: { id: string }) => s.id),
+      ...read('static/data/small-bodies.json').bodies.map((b: { id: string }) => b.id),
+      ...starPageIds(),
+      ...blackHolePageIds(),
+    ]);
+    for (const id of deepSkyPageIds()) {
+      expect(taken.has(id), `${id} is also a body, star or hole id`).toBe(false);
+      expect(id).toMatch(/^[a-z0-9-]+$/);
+    }
+  });
+
+  it('the alias map names ids that are not pages themselves and objects that exist', () => {
+    const known = new Set(objects.map((o) => o.id));
+    const pages = new Set<string>(deepSkyPageIds());
+    expect(DEEP_SKY_ALIAS).toEqual({
+      andromeda: 'm31',
+      triangulum: 'm33',
+      'omega-centauri': 'ngc-5139',
+    });
+    for (const [alias, target] of Object.entries(DEEP_SKY_ALIAS) as [string, string][]) {
+      expect(known.has(target), `${alias} -> ${target}`).toBe(true);
+      expect(known.has(alias), `${alias} is itself an object`).toBe(false);
+    }
+    expect(pages.has('m31') && pages.has('m33')).toBe(true);
   });
 });

@@ -177,6 +177,42 @@ function blackHoleRoutes() {
   return blackHolePageIds().map((id) => `/explore/black-holes/${id}`);
 }
 
+/**
+ * Every id with a deep-sky page (/explore/deep-sky/<id>): the objects in deep-sky-objects.json
+ * that have reviewed text, i.e. an overlay under i18n-src/en-US/universe/deep-sky/. The files
+ * decide, so a batch of new overlays adds its pages with no code change. The one id list that
+ * the page's `entries` generator, the INDEX, the mobile prune and the tests share.
+ *
+ * @returns {string[]}
+ */
+export function deepSkyPageIds() {
+  const p = 'static/data/universe/deep-sky-objects.json';
+  if (!existsSync(p)) return [];
+  return JSON.parse(readFileSync(p, 'utf8'))
+    .objects.map((/** @type {{ id: string }} */ o) => o.id)
+    .filter((/** @type {string} */ id) =>
+      existsSync(`i18n-src/en-US/universe/deep-sky/${id}.json`),
+    );
+}
+
+/**
+ * One real object, one page. These scene ids name an object that deep-sky-objects.json
+ * holds under another id, and their INDEX rows link that object's page instead of getting a
+ * second one. The Milky Way globulars m3 m4 m5 m13 m15 m22 m92 and the Local Group members
+ * m32 m110 carry the deep-sky id already, so they need no entry; omega-centauri is
+ * ngc-5139's alias, and links a page only once ngc-5139 has text.
+ */
+export const DEEP_SKY_ALIAS = {
+  andromeda: 'm31',
+  triangulum: 'm33',
+  'omega-centauri': 'ngc-5139',
+};
+
+/** One indexable page per deep-sky object with text (/explore/deep-sky/<id>). */
+function deepSkyRoutes() {
+  return deepSkyPageIds().map((id) => `/explore/deep-sky/${id}`);
+}
+
 /** One indexable page per Lab formula (/lab/<id>, 0.9.8 SEO). The id list is
  *  guarded against the TS registry by lab-formulas-json.test.ts. */
 function labRoutes() {
@@ -205,6 +241,7 @@ export function collectCanonicalRoutes() {
     ...bodyRoutes(),
     ...starRoutes(),
     ...blackHoleRoutes(),
+    ...deepSkyRoutes(),
     ...labRoutes(),
   ];
 }

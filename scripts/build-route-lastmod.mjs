@@ -107,6 +107,8 @@ const ENTRY_FILES = {
   'static/data/universe/named-stars.json': (j) => (j.stars ?? []).map((e) => [e.id, e]),
   'static/data/universe/exoplanet-systems.json': (j) => (j.systems ?? []).map((e) => [e.hostId, e]),
   'static/data/universe/black-holes.json': (j) => (j.objects ?? []).map((e) => [e.id, e]),
+  'static/data/universe/deep-sky-objects.json': (j) => (j.objects ?? []).map((e) => [e.id, e]),
+  'static/data/deep-sky.json': (j) => j.map((e) => [e.key, e]),
 };
 
 const isoDay = (ts) => new Date(ts * 1000).toISOString().slice(0, 10);
@@ -308,12 +310,28 @@ export function inputsFor(route, ctx, data) {
       overlays.push(`culture-doors/${door.id}.json`);
     }
     addDir('explore/black-holes/[id]');
+  } else if (seg[0] === 'explore' && seg[1] === 'deep-sky' && seg.length === 3) {
+    // A deep-sky page: its record in the shared list, its overlay, its culture door (+ blurb), and
+    // for a photographed object its gallery entry and the gallery overlay (caption, telescope).
+    entry('static/data/universe/deep-sky-objects.json', seg[2]);
+    overlays.push(`universe/deep-sky/${seg[2]}.json`);
+    for (const door of data.doors.filter((d) => d.objectId === seg[2])) {
+      files.push('static/data/culture-doors.json');
+      overlays.push(`culture-doors/${door.id}.json`);
+    }
+    const photoKey = data.deepSkyPhotoKeys.get(seg[2]);
+    if (photoKey) {
+      entry('static/data/deep-sky.json', photoKey);
+      overlays.push('deep-sky.json');
+    }
+    addDir('explore/deep-sky/[id]');
   } else if (
     seg[0] === 'explore' &&
     seg.length === 2 &&
     seg[1] !== 'hub' &&
     seg[1] !== 'stars' &&
-    seg[1] !== 'black-holes'
+    seg[1] !== 'black-holes' &&
+    seg[1] !== 'deep-sky'
   ) {
     for (const f of Object.keys(ENTRY_FILES)) {
       if (/(planets|satellites|small-bodies)\.json$/.test(f)) entry(f, seg[1]);
@@ -384,7 +402,12 @@ function dataIndexes() {
     ]),
   );
   const doors = readJson('static/data/culture-doors.json').doors;
-  return { missions: mission, fleet, labFiles, hostPlanets, doors };
+  const deepSkyPhotoKeys = new Map(
+    readJson('static/data/universe/deep-sky-objects.json')
+      .objects.filter((o) => o.photoKey)
+      .map((o) => [o.id, o.photoKey]),
+  );
+  return { missions: mission, fleet, labFiles, hostPlanets, doors, deepSkyPhotoKeys };
 }
 
 /** Collapse a per-locale map to a string (all equal) or { '*': mode, ...exceptions }. */

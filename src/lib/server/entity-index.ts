@@ -24,8 +24,10 @@ import type { FleetCategory } from '$types/fleet';
 import missionIndex from '$data/missions/index.json';
 import fleetIndex from '$data/fleet/index.json';
 import {
+  DEEP_SKY_ALIAS,
   blackHolePageIds,
   collectCanonicalRoutes,
+  deepSkyPageIds,
   starPageIds,
 } from '../../../scripts/site-routes.mjs';
 
@@ -222,14 +224,21 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
       body: new Set(bodyLinks.map((l) => l.id)),
       star: new Set(starLinks.map((l) => l.id)),
       blackHole: new Set(blackHoleLinks.map((l) => l.id)),
+      deepSky: new Set<string>(deepSkyPageIds()),
     },
+    deepSkyAlias: DEEP_SKY_ALIAS,
     planets: planets.planets,
     smallBodies: smallBodies.bodies,
     satellites: satellites.satellites,
     belts: belts.belts,
     namedStars,
     hostSystems: systems,
-    deepSky: deepSky.map((o) => ({ id: o.id, name: o.name, category: o.category })),
+    deepSky: deepSky.map((o) => ({
+      id: o.id,
+      designation: o.designation,
+      name: o.name,
+      category: o.category,
+    })),
     cultureIds,
     milkyWay,
     localGroup: localGroup.members,

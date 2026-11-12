@@ -561,6 +561,39 @@ function checkCatalogue(
         passed++;
       }
     }
+    // An object with reviewed text has a page (/explore/deep-sky/<id>, listed from the en-US overlay
+    // files): the overlay then exists in all 14 locales, each with a fact, a bio and one or two links.
+    // The overlay must belong to an object, or no page and no panel would ever show it.
+    const dsIds = new Set(dso.objects.map((o) => o.id));
+    const overlayDir = (loc: string) => join(I18N_SRC, loc, 'universe', 'deep-sky');
+    const withText = existsSync(overlayDir('en-US'))
+      ? readdirSync(overlayDir('en-US'))
+          .filter((n) => n.endsWith('.json'))
+          .map((n) => n.slice(0, -5))
+      : [];
+    for (const id of withText) {
+      const problems: string[] = [];
+      if (!dsIds.has(id)) problems.push('not an object of deep-sky-objects.json');
+      for (const loc of ['en-US', ...TRANSLATED_LOCALES]) {
+        const p = join(overlayDir(loc), `${id}.json`);
+        if (!existsSync(p)) {
+          problems.push(`${loc}: missing`);
+          continue;
+        }
+        const ov = readJson(p) as { fact?: unknown; bio?: unknown; links?: unknown };
+        for (const k of ['fact', 'bio'] as const)
+          if (typeof ov[k] !== 'string' || !ov[k].trim()) problems.push(`${loc}: empty ${k}`);
+        const n = Array.isArray(ov.links) ? ov.links.length : 0;
+        if (n < 1 || n > 2) problems.push(`${loc}: ${n} links (want 1-2)`);
+      }
+      if (problems.length) {
+        failed++;
+        console.error(`\n  ✗ i18n-src/*/universe/deep-sky/${id}.json`);
+        for (const p of problems) console.error(`      ${p}`);
+      } else {
+        passed++;
+      }
+    }
     // Every gatewaySystem must resolve to a real exoplanet host id.
     const exoPath = join(DATA_ROOT, 'universe', 'exoplanet-systems.json');
     if (existsSync(exoPath)) {

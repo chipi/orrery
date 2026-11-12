@@ -5,6 +5,7 @@
  * object of the scene; `href` is set when that object has an entity page.
  */
 import { constellationName } from '$lib/universe/iau-constellations';
+import { deepSkyTitle } from './deep-sky-title';
 import type { ShellId } from './scale-shell-controller';
 
 export type IndexSection =
@@ -168,8 +169,18 @@ export interface ScaleIndexSource {
     belt: Record<string, string>;
     sun?: string;
   };
-  /** Ids that have an entity page: /explore/<id>, /explore/stars/<id>, /explore/black-holes/<id>. */
-  pages: { body: ReadonlySet<string>; star: ReadonlySet<string>; blackHole: ReadonlySet<string> };
+  /**
+   * Ids that have an entity page: /explore/<id>, /explore/stars/<id>, /explore/black-holes/<id>,
+   * /explore/deep-sky/<id>.
+   */
+  pages: {
+    body: ReadonlySet<string>;
+    star: ReadonlySet<string>;
+    blackHole: ReadonlySet<string>;
+    deepSky: ReadonlySet<string>;
+  };
+  /** Scene ids that name a deep-sky object under another id (andromeda → m31): they link its page. */
+  deepSkyAlias: Readonly<Record<string, string>>;
   planets: { name: string }[];
   smallBodies: { id: string; name: string; type: string }[];
   satellites: {
@@ -181,7 +192,7 @@ export interface ScaleIndexSource {
   belts: { id: string; name: string }[];
   namedStars: { id: string; proper: string; con: string | null }[];
   hostSystems: { hostId: string; star: { name: string; con: string | null } }[];
-  deepSky: { id: string; name: string; category: string }[];
+  deepSky: { id: string; designation: string; name: string; category: string }[];
   cultureIds: ReadonlySet<string>;
   milkyWay: {
     objects: { id: string; name: string; kind: string }[];
@@ -204,17 +215,45 @@ type Member = { id: string; name: string; kind: string; headliner: boolean; pare
 const dist = (m: Member): number => ('dist_mly' in m ? m.dist_mly : m.dist_mpc);
 
 /** Members nearest first; the data files list them in the order they were authored. */
-function memberRows(members: Member[]): ScaleIndexRow[] {
+function memberRows(
+  members: Member[],
+  deepSkyPage?: (id: string) => { href: string; name: string } | null,
+): ScaleIndexRow[] {
   return [...members]
     .sort((a, b) => dist(a) - dist(b))
-    .map((m) => ({
-      id: m.id,
-      name: m.name,
-      kind: m.kind,
-      parent: m.parent,
-      badges: m.headliner ? ['headliner'] : undefined,
-      selectable: true,
-    }));
+    .map((m) => {
+      const page = deepSkyPage?.(m.id);
+      return {
+        id: m.id,
+        name: page?.name ?? m.name,
+        kind: m.kind,
+        parent: m.parent,
+        badges: m.headliner ? ['headliner'] : undefined,
+        href: page?.href,
+        selectable: true,
+      };
+    });
+}
+
+/**
+ * The deep-sky page an INDEX row of another scale links: one real object, one page, so a Milky Way
+ * globular or Local Group member that is the same object as a deep-sky one (DEEP_SKY_ALIAS, or the
+ * same id) shares its page, and is named as the page names it (UXD-017).
+ */
+function deepSkyPageOf(
+  src: ScaleIndexSource,
+): (id: string) => { href: string; name: string } | null {
+  const byId = new Map(src.deepSky.map((o) => [o.id, o]));
+  return (id) => {
+    const alias = src.deepSkyAlias[id];
+    const page = src.pages.deepSky.has(id)
+      ? id
+      : alias && src.pages.deepSky.has(alias)
+        ? alias
+        : null;
+    const o = page ? byId.get(page) : undefined;
+    return page && o ? { href: `/explore/deep-sky/${page}`, name: deepSkyTitle(o) } : null;
+  };
 }
 
 function blackHoleRow(
@@ -325,10 +364,11 @@ function neighborhoodRows(src: ScaleIndexSource): ScaleIndexRow[] {
   const deepRows: ScaleIndexRow[] = src.deepSky
     .map((o) => ({
       id: o.id,
-      name: o.name,
+      name: deepSkyTitle(o),
       kind: o.category,
       section: 'deep-sky' as const,
       badges: badgesOf(o.id),
+      href: src.pages.deepSky.has(o.id) ? `/explore/deep-sky/${o.id}` : undefined,
       selectable: true,
     }))
     .sort(byName);
@@ -346,15 +386,19 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
     );
   }
   rows.push(blackHoleRow(src, 'cygnus-x-1', 'objects'));
-  for (const g of mw.globulars ?? [])
+  const deepSkyPage = deepSkyPageOf(src);
+  for (const g of mw.globulars ?? []) {
+    const page = deepSkyPage(g.id);
     rows.push({
       id: g.id,
-      name: g.name,
+      name: page?.name ?? g.name,
       kind: 'globular-cluster',
       section: 'globulars',
       badges: g.headliner ? ['headliner'] : undefined,
+      href: page?.href,
       selectable: true,
     });
+  }
   for (const s of mw.magellanic ?? [])
     rows.push({
       id: s.id,
@@ -378,7 +422,7 @@ export function buildScaleIndexRows(src: ScaleIndexSource): ScaleIndexRows {
     'solar-system': solarRows(src),
     neighborhood: neighborhoodRows(src),
     'milky-way': milkyWayRows(src),
-    'local-group': memberRows(src.localGroup),
+    'local-group': memberRows(src.localGroup, deepSkyPageOf(src)),
     'local-sheet': memberRows(src.localSheet),
     virgo: [...memberRows(src.virgo), blackHoleRow(src, 'm87-star', 'black-holes')],
     laniakea: memberRows(src.laniakea),

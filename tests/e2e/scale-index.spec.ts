@@ -52,7 +52,7 @@ const SCALES: Scale[] = [
     context: 'local-group',
     aria: 'Local Group index — jump to a member galaxy',
     pick: 'andromeda',
-    links: false,
+    links: true,
   },
   {
     id: 'local-sheet',
@@ -110,7 +110,7 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
   });
 
   for (const locale of ['', '/de']) {
-    test(`${locale}/explore: 48 body, 66 star and 4 black-hole links, five lists, no button row`, async ({
+    test(`${locale}/explore: 48 body, 66 star, 4 black-hole and 131 deep-sky links, six lists, no button row`, async ({
       request,
     }) => {
       const res = await request.get(`${locale}/explore`);
@@ -120,7 +120,7 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
         (m) => /data-scale="([a-z-]+)"/.exec(m[0])?.[1],
       );
       expect(lists.sort()).toEqual(
-        ['cosmic-web', 'milky-way', 'neighborhood', 'solar-system', 'virgo'].sort(),
+        ['cosmic-web', 'local-group', 'milky-way', 'neighborhood', 'solar-system', 'virgo'].sort(),
       );
       expect(html.match(/<button[^>]*class="[^"]*\bsi-row\b/g) ?? []).toHaveLength(0);
 
@@ -133,8 +133,12 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
       const kind = (prefix: string) => listed.filter((h) => h.startsWith(`${locale}${prefix}`));
       expect(kind('/explore/stars/')).toHaveLength(66);
       expect(kind('/explore/black-holes/')).toHaveLength(4);
-      expect(listed).toHaveLength(48 + 66 + 4);
-      // Every body page, star page and black-hole page of the site is one of those links.
+      // 120 objects with text, each linked from the neighbourhood; one real object, one page, so the
+      // 7 Milky Way globulars and the 4 Local Group twins (m32, m110, andromeda, triangulum) link the same pages.
+      expect(kind('/explore/deep-sky/')).toHaveLength(120 + 7 + 4);
+      expect(new Set(kind('/explore/deep-sky/')).size).toBe(120);
+      expect(listed).toHaveLength(48 + 66 + 4 + 120 + 7 + 4);
+      // Every body, star, black-hole and deep-sky page of the site is one of those links.
       const pages = routes.filter(
         (r) => /^\/explore\/[^/]+(\/[^/]+)?$/.test(r) && r !== '/explore/hub',
       );

@@ -146,7 +146,7 @@ html {
     --safe-area-inset-left: 48px;
   }
   :focus-visible {
-    outline: 3px solid var(--brand, #4a7dff) !important;
+    outline: 3px solid var(--color-focus) !important;
     outline-offset: 3px !important;
   }
   /* Let each route's wide page container use the 10-foot width instead of a

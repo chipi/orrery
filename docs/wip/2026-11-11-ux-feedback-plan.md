@@ -468,6 +468,7 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 
 ## Definition of done — every slice (operator, 2026-11-11: no partial updates, quality over speed)
 
+- **Cascade (operator 2026-11-12):** every brief has a "Cascade" section — for each earlier slice, what it changes in this slice's tactics and which ideas in the original plan are now outdated (named, not carried forward); adjacent items that serve the same idea are listed as "fold in" or "leave for slice X" with a reason. After each slice lands, the later briefs are re-checked against what was built before they are implemented. Goals stay per slice; tactics follow what was already decided — no Frankenstein of isolated briefs.
 A slice is reported done only when the lead has checked all of these, with the command and its output:
 
 1. **Whole project.** The decision is applied in every route and component — proven by a repo-wide

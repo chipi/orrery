@@ -762,12 +762,13 @@ Scale bar and HUD (src/lib/universe/scale-bar.ts, src/lib/components/ScaleBar.sv
 docs/uxs/decisions/UXD-021-explore-hud-scale-bar-picker-pills-references.md):
   one scale bar for the whole app: a fixed width (120 px, 64 px under 600 px) at every zoom and
   the value beside it follows the zoom, to three significant digits in the page locale; the
-  Explore strip (a fixed 232 px box, 190 px under 768 px), the Worlds 3D bar and the flat-patch
+  Explore strip (a fixed 232 px box, 190 px under 600 px, the label under the bar), the Worlds 3D bar and the flat-patch
   bar all draw through scale-bar.ts and ScaleBar.svelte, never their own rounding; the six
   schematic scales draw no bar. The scale picker's ladder opens leftward when the navigator is
   flush right (align="right", physical offsets) and the flush-right row sits left of a docked
-  side panel (bridge.panelCoverPx); Reset is always drawn in the navigator, disabled when inert,
-  at all eight scales. The direction pills ("← Vega", "→ star") show only while their owner is
+  side panel (bridge.panelCoverPx), and so do the strip and, by its max-width, the Explore HUD
+  row; the ladder's position is clamped to 8 px from either edge. ONE RESET VIEW per scale, always
+  drawn, disabled when inert: the HUD row's at the solar system, the navigator's at the other seven. The direction pills ("← Vega", "→ star") show only while their owner is
   hovered or selected. The REFERENCES overlay draws bodies only; names and diameters are a DOM
   grid in the reader's language (planetName, $lib/explore/planet-sizes.ts). Guarded by
   tests/e2e/explore-hud.spec.ts.

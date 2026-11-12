@@ -16,6 +16,7 @@
     resetEnabled,
     onReset,
     panelCoverPx = 0,
+    width = $bindable(0),
   }: {
     atSolar: boolean;
     back: { run: () => void; label: string } | null;
@@ -23,17 +24,21 @@
     activeShell: ShellId;
     pickerDisabled: boolean;
     onJump: (shell: ShellId) => void;
-    /** The slot is always drawn; the chip is disabled while the scale has nothing to reset. */
+    /** Drawn at the seven outer scales, disabled while there is nothing to reset. At the solar
+     *  system the HUD row's RESET VIEW is the one Reset, so the navigator draws none. */
     resetEnabled: boolean;
     onReset: () => void;
     /** Width a docked side panel covers at the right edge; the flush-right row sits left of it. */
     panelCoverPx?: number;
+    /** The row's measured width, for the HUD row that must stop before it (solar system). */
+    width?: number;
   } = $props();
 </script>
 
 <nav
   class="scale-nav"
   class:at-solar={atSolar}
+  bind:clientWidth={width}
   style:right={atSolar && panelCoverPx > 0 ? `${panelCoverPx + 8}px` : undefined}
   aria-label={m.explore_location_aria()}
 >
@@ -62,13 +67,20 @@
         onJump(shell);
       }}
     />
-    <ResetViewButton onclick={onReset} disabled={!resetEnabled} data-testid="explore-scale-reset" />
+    {#if !atSolar}
+      <ResetViewButton
+        onclick={onReset}
+        disabled={!resetEnabled}
+        data-testid="explore-scale-reset"
+      />
+    {/if}
   {/if}
 </nav>
 
 <style>
   /* #45 top scale-navigator — one row under the nav: back · scale chip · reset (always
-     drawn, disabled while there is nothing to reset, so the row never shifts).
+     drawn at the seven outer scales, disabled while there is nothing to reset, so the row never
+     shifts; the solar system's Reset is the HUD row's, UXD-021).
      Flush LEFT by default (neighborhood+ hide the solar-system control cluster, so
      the top-left is free and the row sits exactly where the old breadcrumb did).
      `top: 8px` lines it up with the mobile control row (.hud-top-mobile, top nav+8)

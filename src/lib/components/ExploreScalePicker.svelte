@@ -88,9 +88,39 @@
 
   let rungButtons: HTMLElement[] = $state([]);
   let toggleButton = $state<HTMLElement | undefined>();
+
+  // The ladder's position is clamped to [8, viewport - 8], not only its width: its natural edge
+  // (the chip's left, or its right with `align="right"`) can lie within a long label's width of
+  // the screen edge in any language or direction. Offsets are relative to the picker, so the
+  // clamp holds wherever the navigator sits.
+  const EDGE_GAP = 8;
+  let pickerEl = $state<HTMLElement | undefined>();
+  let railEl = $state<HTMLElement | undefined>();
+  let railLeft = $state<number | null>(null);
+  function placeRail() {
+    if (!pickerEl || !railEl) return;
+    const p = pickerEl.getBoundingClientRect();
+    const w = railEl.getBoundingClientRect().width;
+    const vw = document.documentElement.clientWidth;
+    const want = align === 'right' ? p.right - w : p.left;
+    const left = Math.min(Math.max(want, EDGE_GAP), Math.max(EDGE_GAP, vw - EDGE_GAP - w));
+    railLeft = left - p.left;
+  }
+  $effect(() => {
+    if (!open) return;
+    placeRail();
+    window.addEventListener('resize', placeRail);
+    return () => window.removeEventListener('resize', placeRail);
+  });
 </script>
 
-<div class="scale-picker" class:open data-align={align} data-testid="explore-scale-picker">
+<div
+  bind:this={pickerEl}
+  class="scale-picker"
+  class:open
+  data-align={align}
+  data-testid="explore-scale-picker"
+>
   <!-- Mobile-only trigger: shows the current shell + a caret; opens the ladder. -->
   <Chip
     bind:ref={toggleButton}
@@ -108,7 +138,13 @@
     <span class="caret" aria-hidden="true">{open ? '▴' : '▾'}</span>
   </Chip>
 
-  <nav class="rail" aria-label={m.explore_scale_jump_aria()}>
+  <nav
+    bind:this={railEl}
+    class="rail"
+    style:left={railLeft === null ? undefined : `${railLeft}px`}
+    style:right={railLeft === null ? undefined : 'auto'}
+    aria-label={m.explore_scale_jump_aria()}
+  >
     {#each rungs as shell, i (shell)}
       <Chip
         bind:ref={rungButtons[i]}

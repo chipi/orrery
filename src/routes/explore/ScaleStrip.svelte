@@ -19,6 +19,7 @@
     barPx,
     barLabel,
     bodyHostName,
+    panelCoverPx = 0,
   }: {
     readout: ScaleReadout | null;
     contextId: ExploreContextId;
@@ -26,11 +27,20 @@
     barPx: number;
     barLabel: string;
     bodyHostName: string;
+    /** Width a docked side panel covers at the right edge; the strip sits left of it. */
+    panelCoverPx?: number;
   } = $props();
+
+  const rightOffset = $derived(panelCoverPx > 0 ? `${12 + panelCoverPx}px` : undefined);
 </script>
 
 {#if readout && (contextId === 'solar-system' || contextId === 'neighborhood')}
-  <div class="scale-strip" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
+  <div
+    class="scale-strip"
+    class:neighborhood={contextId === 'neighborhood'}
+    style:right={rightOffset}
+    aria-hidden="true"
+  >
     <div class="scale-ladder">
       {#each RUNG_LADDER as rung (rung)}
         <span
@@ -62,13 +72,13 @@
     {/if}
     {#if barPx > 0}
       <div class="scale-bar-wrap">
-        <ScaleBar widthPx={barPx} label={barLabel} />
+        <ScaleBar widthPx={barPx} label={barLabel} stacked />
       </div>
     {/if}
     <div class="scale-context">{contextLabel(contextId, bodyHostName)}</div>
   </div>
 {:else if !blackHole && (contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'cosmic-web')}
-  <div class="scale-strip schematic" role="note">
+  <div class="scale-strip schematic" role="note" style:right={rightOffset}>
     {#if contextId === 'milky-way'}
       <div class="scale-schematic-size">{m.explore_mw_scale_note()}</div>
       <div class="scale-schematic-note">
@@ -116,9 +126,16 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     color: #dde4ff;
     pointer-events: none;
-    /* Fixed box: the strip never resizes with its text (UXD-021). */
     box-sizing: border-box;
+  }
+  /* Fixed box: the strip never resizes with its text (UXD-021). 232 px holds the 120 px bar and
+     the longest label under it; under 600 px (the bar's own breakpoint) 190 px holds the 64 px
+     bar. The schematic note keeps its content width. */
+  .scale-strip:not(.schematic) {
     inline-size: 232px;
+  }
+  .scale-strip.schematic {
+    max-inline-size: 260px;
   }
   .scale-strip.neighborhood {
     border-color: var(--color-accent-edge);
@@ -217,10 +234,17 @@
     .scale-strip {
       bottom: 104px;
       padding: 7px 9px;
-      inline-size: 190px;
+    }
+    .scale-strip.schematic {
+      max-inline-size: 190px;
     }
     .scale-readout .primary {
       font-size: 13px;
+    }
+  }
+  @media (max-width: 599px) {
+    .scale-strip:not(.schematic) {
+      inline-size: 190px;
     }
   }
 </style>

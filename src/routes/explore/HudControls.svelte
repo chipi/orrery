@@ -31,6 +31,7 @@
     toggleView,
     hasSelection,
     onResetView,
+    clearRightPx = 16,
     layers,
     onToggleLayer,
     onShowPaths,
@@ -52,6 +53,10 @@
     toggleView: () => void;
     hasSelection: boolean;
     onResetView: () => void;
+    /** Pixels kept free at the right edge: a docked panel plus the scale navigator (flush right
+     *  at the solar system, beside the panel). The row wraps before it, the worlds' "stop before
+     *  the panel" rule (hud-beside-panel). */
+    clearRightPx?: number;
     layers: ExploreLayers;
     onToggleLayer: (key: keyof ExploreLayers) => void;
     onShowPaths: () => void;
@@ -210,6 +215,7 @@
 <div
   class="hud-controls"
   class:context-hidden={hidden}
+  style:--hud-clear-right="{clearRightPx}px"
   data-audio-stage="explore-hud"
   role="group"
   aria-label={m.ui_view_controls()}
@@ -623,7 +629,8 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 6px 12px;
-      max-width: calc(100vw - 32px);
+      /* left 16 (above) to the navigator's left edge minus its gutter. */
+      max-width: calc(100vw - 16px - var(--hud-clear-right, 16px));
     }
     .ctrl-row.chips {
       max-width: 100%;

@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import * as m from '$lib/paraglide/messages';
+import { overwriteGetLocale } from '$lib/paraglide/runtime';
 import {
   SATELLITE_STATS,
   anonColorLabel,
@@ -10,6 +11,8 @@ import {
   deepSkyDistance,
   deepSkyTitle,
   dilationPct,
+  distanceUnitLabel,
+  distanceWithUnit,
   fmtScale,
   lightUnitLabel,
 } from './format';
@@ -24,6 +27,39 @@ describe('explore formatters', () => {
     expect(fmtScale(123456)).toBe(
       (123456).toLocaleString(undefined, { maximumSignificantDigits: 3 }),
     );
+  });
+
+  it("distanceWithUnit puts the value in the locale's own unit form for every unit", () => {
+    expect(distanceWithUnit('12', 'AU')).toBe(m.unit_au_value({ value: '12' }));
+    expect(distanceWithUnit('12', 'ly')).toBe(m.unit_ly_value({ value: '12' }));
+    expect(distanceWithUnit('12', 'pc')).toBe(m.unit_pc_value({ value: '12' }));
+    expect(distanceWithUnit('12', 'km')).toBe(m.mp_flight_unit_km({ value: '12' }));
+    expect(distanceWithUnit('12', 'm')).toBe(m.unit_m_value({ value: '12' }));
+  });
+
+  it('distanceWithUnit takes metres as its own unit, not the fallback', () => {
+    expect(distanceWithUnit('800', 'm')).toBe(m.unit_m_value({ value: '800' }));
+    expect(distanceWithUnit('800', 'm')).toBe('800 m');
+  });
+
+  it("distanceWithUnit writes metres in the reader's script, which the fallback would not", () => {
+    try {
+      overwriteGetLocale(() => 'ru');
+      expect(distanceWithUnit('800', 'm')).toBe('800 м');
+      overwriteGetLocale(() => 'ar');
+      expect(distanceWithUnit('800', 'm')).toBe('800 م');
+    } finally {
+      overwriteGetLocale(() => 'en-US');
+    }
+  });
+
+  it('distanceWithUnit keeps an unknown unit as "value unit"', () => {
+    expect(distanceWithUnit('5', 'furlong')).toBe('5 furlong');
+  });
+
+  it('distanceUnitLabel is the bare unit with no value', () => {
+    expect(distanceUnitLabel('m')).toBe(m.unit_m_value({ value: '' }).trim());
+    expect(distanceUnitLabel('AU')).toBe(m.unit_au_value({ value: '' }).trim());
   });
 
   it('lightUnitLabel names each unit, light-years by default', () => {

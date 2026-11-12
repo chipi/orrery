@@ -17,7 +17,36 @@ test.use({ reducedMotion: 'reduce' });
 test.describe.configure({ timeout: 90_000 });
 
 const barWidthFor = (viewportW: number) => (viewportW < 600 ? 64 : 120);
-const stripWidthFor = (viewportW: number) => (viewportW < 768 ? 190 : 232);
+// One breakpoint for the bar and the box: both change at 600 px (the label sits under the bar).
+const stripWidthFor = (viewportW: number) => (viewportW < 600 ? 190 : 232);
+
+/** The Reset chips on screen: the HUD row's (solar system) and the navigator's (the other seven). */
+const visibleResets = (page: Page) =>
+  page
+    .locator(
+      '[data-testid="explore-reset-view"], [data-testid="explore-reset-view-mobile"], [data-testid="explore-scale-reset"]',
+    )
+    .filter({ visible: true });
+
+/** Pixels of the right edge a docked side drawer covers (0 for a bottom sheet or no panel). */
+const dockedCover = (page: Page) =>
+  panels(page)
+    .first()
+    .evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      const docked = r.right >= window.innerWidth - 1;
+      const width = window.innerWidth - r.left;
+      return docked && width <= window.innerWidth * 0.7 ? width : 0;
+    });
+
+interface Box {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+const intersects = (a: Box, b: Box) =>
+  a.x < b.x + b.width && b.x < a.x + a.width && a.y < b.y + b.height && b.y < a.y + a.height;
 
 async function openExplore(page: Page, query = '', path = '/explore') {
   await page.goto(`${path}${query}`);
@@ -157,6 +186,91 @@ test.describe('/explore scale bar: fixed width, the value follows the zoom', () 
   });
 });
 
+test.describe('/explore scale strip: the label fits the box, and the strip clears a docked panel', () => {
+  for (const locale of ['en', 'de', 'hi', 'ar']) {
+    test(`the label lies inside the strip at 1280, 700 and 390 px, solar system and neighbourhood (${locale})`, async ({
+      page,
+    }) => {
+      test.slow();
+      const prefix = locale === 'en' ? '' : `/${locale}`;
+      const checkInside = async (where: string) => {
+        for (const width of [1280, 700, 390]) {
+          await page.setViewportSize({ width, height: 800 });
+          await page.waitForTimeout(500);
+          const m = await page.evaluate(() => {
+            const strip = document.querySelector('.scale-strip:not(.schematic)')!;
+            const label = strip.querySelector('[data-testid="scale-bar-label"]')!;
+            const cs = getComputedStyle(strip);
+            const s = strip.getBoundingClientRect();
+            const l = label.getBoundingClientRect();
+            return {
+              stripL: s.left + parseFloat(cs.paddingLeft) + parseFloat(cs.borderLeftWidth),
+              stripR: s.right - parseFloat(cs.paddingRight) - parseFloat(cs.borderRightWidth),
+              labelL: l.left,
+              labelR: l.right,
+              text: label.textContent,
+            };
+          });
+          const tag = `${locale} ${where} ${width}px "${m.text}"`;
+          expect(m.labelR, `${tag}: label.right <= strip content right`).toBeLessThanOrEqual(
+            m.stripR + 0.5,
+          );
+          expect(m.labelL, `${tag}: label.left >= strip content left`).toBeGreaterThanOrEqual(
+            m.stripL - 0.5,
+          );
+        }
+      };
+      await openExplore(page, '', `${prefix}/explore`);
+      await expect(page.locator('.scale-strip').getByTestId('scale-bar-label')).toBeVisible({
+        timeout: 20_000,
+      });
+      await checkInside('solar');
+      await page.goto(`${prefix}/explore?goto=antares`);
+      await waitForHydration(page);
+      await expect(
+        page.locator('.scale-strip.neighborhood').getByTestId('scale-bar-label'),
+      ).toBeVisible({ timeout: 45_000 });
+      await checkInside('neighbourhood');
+    });
+  }
+
+  test('with /explore?id=mars open the strip sits left of a docked panel and is not covered by it', async ({
+    page,
+  }) => {
+    test.slow();
+    await page.setViewportSize({ width: 1280, height: 720 });
+    await openExplore(page, '?id=mars');
+    await expect(panels(page).filter({ hasText: /Mars/i }).first()).toBeVisible({
+      timeout: 20_000,
+    });
+    const strip = page.locator('.scale-strip').first();
+    await expect(strip).toBeVisible({ timeout: 20_000 });
+    await page.waitForTimeout(800); // the drawer's fly-in and the 400 ms measure window
+    const cover = await dockedCover(page);
+    const sb = (await strip.boundingBox())!;
+    const vw = page.viewportSize()!.width;
+    if (cover > 0) {
+      const pb = (await panels(page).first().boundingBox())!;
+      expect(sb.x + sb.width, 'the strip ends left of the panel').toBeLessThanOrEqual(pb.x);
+      expect(
+        vw - (sb.x + sb.width) - cover,
+        'its right offset is the cover plus 12 px',
+      ).toBeCloseTo(12, 0);
+      const covered = await strip.evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        const hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+        return !!hit?.closest('aside.panel');
+      });
+      expect(covered, 'the point at the strip centre is not on the panel').toBe(false);
+    } else {
+      expect(vw - (sb.x + sb.width), 'a bottom sheet moves nothing: right stays 12 px').toBeCloseTo(
+        12,
+        0,
+      );
+    }
+  });
+});
+
 test.describe('/explore scale picker: the ladder stays on screen', () => {
   for (const locale of ['en', 'de', 'ru', 'ar']) {
     test(`at the solar system the ladder lies inside the viewport at 1100, 1280 and 1440 px (${locale})`, async ({
@@ -258,24 +372,17 @@ test.describe('/explore scale picker: the ladder stays on screen', () => {
   }) => {
     test.slow();
     await openExplore(page);
-    const reset = page.getByTestId('explore-scale-reset');
-    await expect(reset).toBeVisible({ timeout: 20_000 });
-    const before = (await reset.boundingBox())!;
+    const row = page.getByTestId('explore-scale-toggle');
+    await expect(row).toBeVisible({ timeout: 20_000 });
+    const before = (await row.boundingBox())!;
     await page.goto('/explore?id=mars');
     await waitForHydration(page);
     await expect(panels(page).filter({ hasText: /Mars/i }).first()).toBeVisible({
       timeout: 20_000,
     });
     await page.waitForTimeout(600);
-    const after = (await reset.boundingBox())!;
-    const cover = await panels(page)
-      .first()
-      .evaluate((el) => {
-        const r = el.getBoundingClientRect();
-        const docked = r.right >= window.innerWidth - 1;
-        const width = window.innerWidth - r.left;
-        return docked && width <= window.innerWidth * 0.7 ? width : 0;
-      });
+    const after = (await row.boundingBox())!;
+    const cover = await dockedCover(page);
     if (cover === 0) {
       expect(Math.abs(after.x - before.x)).toBeLessThanOrEqual(1);
     } else {
@@ -285,6 +392,87 @@ test.describe('/explore scale picker: the ladder stays on screen', () => {
     }
     expect(Math.abs(after.y - before.y)).toBeLessThanOrEqual(1);
   });
+});
+
+for (const locale of ['ru', 'fr', 'ar']) {
+  test(`on a phone (393 and 360 px) the ladder lies inside [8, viewport - 8] at the solar system and the Milky Way (${locale})`, async ({
+    page,
+  }) => {
+    test.slow();
+    const checkLadder = async (where: string) => {
+      const toggle = page.getByTestId('explore-scale-toggle');
+      await expect(toggle).toBeVisible({ timeout: 45_000 });
+      for (const width of [393, 360]) {
+        await page.setViewportSize({ width, height: 780 });
+        await page.waitForTimeout(400);
+        if ((await toggle.getAttribute('aria-expanded')) !== 'true') await toggle.click();
+        const rail = page.locator('[data-testid="explore-scale-picker"] .rail');
+        await expect(rail).toBeVisible();
+        await page.waitForTimeout(100);
+        const b = (await rail.boundingBox())!;
+        expect(b.x, `${locale} ${where} ${width}: left edge`).toBeGreaterThanOrEqual(8 - 1);
+        expect(b.x + b.width, `${locale} ${where} ${width}: right edge`).toBeLessThanOrEqual(
+          width - 8 + 1,
+        );
+        await toggle.click();
+      }
+    };
+    await openExplore(page, '', `/${locale}/explore`);
+    await checkLadder('solar');
+    await page.goto(`/${locale}/explore?context=milky-way`);
+    await waitForHydration(page);
+    await checkLadder('milky-way');
+  });
+}
+
+test.describe('/explore with a panel docked: the HUD row and the navigator never meet', () => {
+  for (const width of [1100, 1280]) {
+    test(`at ${width} px the picker is the hit target at its centre and no HUD chip meets a navigator chip`, async ({
+      page,
+    }) => {
+      test.slow();
+      await page.setViewportSize({ width, height: 720 });
+      await openExplore(page, '?id=mars');
+      await expect(panels(page).filter({ hasText: /Mars/i }).first()).toBeVisible({
+        timeout: 20_000,
+      });
+      await page.waitForTimeout(800); // the drawer's fly-in and the 400 ms measure window
+      const toggle = page.getByTestId('explore-scale-toggle');
+      const hit = await toggle.evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        const h = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+        return !!h?.closest('[data-testid="explore-scale-toggle"]');
+      });
+      expect(hit, 'the scale toggle is the hit target at its centre').toBe(true);
+
+      const rects = await page.evaluate(() => {
+        const box = (el: Element) => {
+          const r = el.getBoundingClientRect();
+          return { x: r.x, y: r.y, width: r.width, height: r.height };
+        };
+        const visible = (el: Element) => {
+          const r = el.getBoundingClientRect();
+          return r.width > 0 && r.height > 0 && getComputedStyle(el).visibility !== 'hidden';
+        };
+        return {
+          hud: [...document.querySelectorAll('.hud-controls .ui-chip, .hud-top-mobile .ui-chip')]
+            .filter(visible)
+            .map(box),
+          nav: [...document.querySelectorAll('.scale-nav .ui-chip')].filter(visible).map(box),
+        };
+      });
+      expect(rects.hud.length, 'the HUD row has chips on screen').toBeGreaterThan(0);
+      expect(rects.nav.length, 'the navigator has chips on screen').toBeGreaterThan(0);
+      for (const h of rects.hud) {
+        for (const n of rects.nav) {
+          expect(
+            intersects(h, n),
+            `HUD chip ${JSON.stringify(h)} meets nav chip ${JSON.stringify(n)}`,
+          ).toBe(false);
+        }
+      }
+    });
+  }
 });
 
 const RESET_SCALES = [
@@ -341,11 +529,24 @@ test.describe('/explore Reset slot: always drawn, at all eight scales', () => {
         );
         await page.waitForTimeout(2_500); // the cross-out dolly
       };
-      const reset = page.getByTestId('explore-scale-reset');
+      // One RESET VIEW per scale: the HUD row's at the solar system (A5), the navigator's at the
+      // other seven.
+      const reset =
+        s.scale === 'solar-system'
+          ? page
+              .locator(
+                '[data-testid="explore-reset-view"], [data-testid="explore-reset-view-mobile"]',
+              )
+              .filter({ visible: true })
+          : page.getByTestId('explore-scale-reset');
 
       await page.goto(s.plain);
       await settle();
       await expect(reset).toBeVisible();
+      await expect(visibleResets(page), 'exactly one Reset on screen').toHaveCount(1);
+      await expect(page.getByTestId('explore-scale-reset')).toHaveCount(
+        s.scale === 'solar-system' ? 0 : 1,
+      );
       // The stellar neighbourhood's Reset is also enabled while the Sun is out of frame.
       if (s.scale !== 'neighborhood') await expect(reset).toBeDisabled();
       const plain = (await reset.boundingBox())!;
@@ -356,10 +557,9 @@ test.describe('/explore Reset slot: always drawn, at all eight scales', () => {
       const picked = (await reset.boundingBox())!;
       expect(Math.abs(picked.y - plain.y), 'same row').toBeLessThanOrEqual(1);
       expect(Math.abs(picked.width - plain.width), 'same size').toBeLessThanOrEqual(1);
-      // At the solar system a docked side panel moves the whole row left of it; elsewhere it is flush left.
-      if (s.scale !== 'solar-system') {
-        expect(Math.abs(picked.x - plain.x), 'same place').toBeLessThanOrEqual(1);
-      }
+      await expect(visibleResets(page), 'still exactly one Reset on screen').toHaveCount(1);
+      // The solar HUD chip is top-left and the outer navigator flush left: neither moves.
+      expect(Math.abs(picked.x - plain.x), 'same place').toBeLessThanOrEqual(1);
     });
   }
 });
@@ -449,7 +649,7 @@ test.describe('/explore REFERENCES overlay: bodies in the canvas, an aligned gri
     await expect(page.getByTestId('sizes-legend')).toBeVisible();
   }
 
-  test('eight cells share one top edge (two rows of four under 560 px), the open planet is marked', async ({
+  test('eight cells share one top edge (two rows of four under 620 px), the open planet is marked', async ({
     page,
   }) => {
     test.slow();
@@ -464,7 +664,7 @@ test.describe('/explore REFERENCES overlay: bodies in the canvas, an aligned gri
     for (let i = 0; i < 8; i++) tops.push((await cells.nth(i).boundingBox())!.y);
     const rows = [...new Set(tops.map((y) => Math.round(y)))];
     expect(rows.length, `distinct top edges: ${rows.join(', ')}`).toBe(
-      page.viewportSize()!.width < 560 ? 2 : 1,
+      page.viewportSize()!.width < 620 ? 2 : 1,
     );
     for (const y of tops) {
       expect(rows.some((r) => Math.abs(r - y) <= 1)).toBe(true);
@@ -475,6 +675,41 @@ test.describe('/explore REFERENCES overlay: bodies in the canvas, an aligned gri
     await page.getByTestId('sizes-cell-earth').evaluate((el) => (el as HTMLElement).click());
     await expect(page.getByTestId('sizes-cell-earth')).toHaveAttribute('aria-pressed', 'true');
   });
+
+  for (const loc of ['nl', 'de', 'ru']) {
+    test(`no planet name breaks mid-word or overflows its cell at 360, 393, 700 and 1280 px (${loc})`, async ({
+      page,
+    }) => {
+      test.slow();
+      await openExplore(page, '', `/${loc}/explore`);
+      await openSizes(page);
+      for (const width of [360, 393, 700, 1280]) {
+        await page.setViewportSize({ width, height: 800 });
+        await page.waitForTimeout(300);
+        const bad = await page.evaluate(() =>
+          [...document.querySelectorAll<HTMLElement>('.sizes-name')]
+            .map((el) => {
+              const lines = new Set(
+                [
+                  ...(() => {
+                    const range = document.createRange();
+                    range.selectNodeContents(el);
+                    return range.getClientRects();
+                  })(),
+                ].map((r) => Math.round(r.top)),
+              );
+              return {
+                text: el.textContent,
+                lines: lines.size,
+                over: el.scrollWidth > el.clientWidth,
+              };
+            })
+            .filter((n) => n.lines > 1 || n.over),
+        );
+        expect(bad, `${loc} ${width}px: names on more than one line or overflowing`).toEqual([]);
+      }
+    });
+  }
 
   const NAMES: Array<{ path: string; earth: string; diameter: string | RegExp }> = [
     { path: '/de/explore', earth: 'Erde', diameter: '12.742' },

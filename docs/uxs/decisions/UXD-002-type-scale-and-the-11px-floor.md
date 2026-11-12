@@ -49,7 +49,7 @@ The slice's e2e asserts overview text at 15 px or more (brief line 37).
 
 Also in the slice, from the A1 brief: dev-only tools are exempt; figure and illustration captions
 keep italic at 14 px or more; inline `<em>` emphasis in essays is kept; the 2D UI canvases (`/plan`,
-`SurfaceFlatPatch`, `surface-2d-map.ts`) are UI text and are in scope; 3D sprite labels are slice C2;
+`SurfaceFlatPatch`, `surface-2d-map.ts`) are UI text and are in scope; 3D sprite labels of the /explore pin scenes are 12 px since slice C2 ([UXD-020](UXD-020-explore-readability-pins-rings-labels.md));
 science charts and Lab canvases keep their own sizes (brief lines 22–28).
 
 ## Consequences

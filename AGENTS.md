@@ -743,15 +743,27 @@ SVG UI text and for the 2D UI canvases —
   No text below 11px; no italic outside real quotes and photo captions
   (mark each kept italic line `a1-keep: <why>`). Text under 12px keeps an
   effective alpha >= 0.58. Enforced by tests/e2e/type-floor.spec.ts.
+  3D sprite labels of the /explore pin scenes (src/lib/universe/*-scene.ts) are one 12 px
+    in CSS px at every scale and the 2D view's canvas text is 11 px (slice C2, UXD-020;
+    scene-pins.ts, guarded by tests/e2e/explore-readability.spec.ts).
   Canvas / WebGL text outside the floor (allow-list):
-    deferred to slice C2 — 3D sprite labels (src/lib/three/explore-scene-host.ts,
-      fly-frame-runner.ts, three-label.ts, src/lib/universe/*-scene.ts);
+    not measured, outside C2 — the solar scene's own sprite labels (explore-scene-host.ts),
+      fly-frame-runner.ts, three-label.ts, iconic-trajectory.ts labels (C7), the Milky Way
+      lens overlay labels;
     keep their own sizes — science charts (CausalityMap, HrDiagram,
       MassPeriodChart), Lab canvases (src/lib/lab/*Canvas.svelte, hero-canvas.ts,
       FigureRenderer SVG), station-blueprint.ts texture, static/ diagrams, and
       dev tools (DebugPanel, AscentCameraDebug, FlybyDebugViewer, src/routes/dev/).
   Canvases that ARE UI and meet the floor: plan/+page.svelte, SurfaceFlatPatch,
     surface-2d-map.ts, SizesCanvas, ConstellationFinder, InstrumentTiles.
+
+Pins, rings and labels (src/lib/universe/scene-pins.ts, UX C2, docs/uxs/decisions/UXD-020-explore-readability-pins-rings-labels.md):
+  one 12 px label in CSS px at every /explore scale; one 44 px screen-constant ring on every
+  pin and arm label point (hover and selection #889fe7, the "you are here" anchor gold #ffcf8f
+  at opacity 0.55 at all eight levels); one placement pass (hovered/selected first, ring labels
+  last); the label offset uses the steady glow, never the hover size. A scene writes none of
+  these itself: it takes the constants and helpers from scene-pins.ts. No teal or cyan in a
+  ring, anchor glow or label.
 
 Page shell (src/lib/styles/page-shell.css, UX A2, docs/uxs/decisions/UXD-012-one-page-shell.md):
   every text page uses .page-shell (1080px; --reading 760, --wide 1400, --inset in the

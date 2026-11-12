@@ -218,6 +218,33 @@ Every text page (credits, colophon, library, gallery and its sub-pages, posters,
 
 Not on the shell: the home page (home slice, H8), the scene routes, the Lab, the missions/launches/fleet browse tools, card stubs and dev pages.
 
+### 4.7 Layering (z-index)
+
+The layers that meet on `/explore` and the other scene routes, bottom to top. A new fixed element takes a slot in this table; it does not pick a number to win a local fight.
+
+| z-index | Layer | Source |
+|---|---|---|
+| 8 | The `/explore` scale navigator while its ladder is closed | `ScaleNav.svelte` |
+| 28 | Regime panel (the Earth-orbit ruler), under a satellite panel opened from it | `RegimePanel.svelte` (`zIndex={28}`) |
+| 30 | Detail panel (default, `--panel-z`) | `Panel.svelte` |
+| 39 | Nav dropdown click-catcher | `Nav.svelte` (`.group-backdrop`) |
+| 40 | Nav bar; the Phase panel (`zIndex={40}`) | `Nav.svelte`, `PhasePanel.svelte` |
+| 44 | INDEX handle (§5.13) | `index-panel.css` (`.scale-index-handle`) |
+| 45 | INDEX rail (§5.13) | `index-panel.css` (`.scale-index`) |
+| 46 | The scale navigator while its ladder is open, so the rungs are not covered by the rail | `ScaleNav.svelte` |
+| 79 / 80 | Touch portrait only: the panel's backdrop and the panel as a bottom sheet (`--panel-z` + 49 and + 50) | `Panel.svelte` |
+| 88 / 89 | Settings backdrop and the mobile nav drawer's backdrop (88); the mobile nav drawer (89) | `SensorySheet.svelte`, `Nav.svelte` |
+| 90 | DebugPanel; the settings sheet (`SensorySheet`) | `DebugPanel.svelte`, `SensorySheet.svelte` |
+| 91 / 92 | More menu backdrop / More menu (above the DebugPanel and the settings sheet, which open from the same corner) | `Nav.svelte` |
+| 95 | First-time sensory hint (toast) | `Nav.svelte` (`.sensory-hint`) |
+
+Rules:
+
+- A panel (30) sits under the nav bar (40). The INDEX rail (45) sits over the panels and the nav bar; the touch portrait bottom sheet (80) sits over the rail.
+- The scale navigator is the one element that changes layer by state: 8 at rest (under panels, so it never covers a panel bar at the solar scale), 46 while its ladder is open (over the INDEX rail, which otherwise covers the rungs and swallows the clicks).
+- The nav's dropdown menu (`.group-menu`, 50) is inside the nav's own stacking context (40); its number orders it among the nav's children only.
+- Panel stacking inside a route is set by `Panel`'s `zIndex` prop, never by a literal in the page.
+
 ---
 
 ## 5. Component library
@@ -379,6 +406,67 @@ The mission arc fly screen uses HTML overlays over the full-screen 3D renderer, 
 
 All HUD panels: `background: rgba(4,4,12,0.82); border: 1px solid rgba(255,255,255,0.07); backdrop-filter: blur(12px); border-radius: 6px`.
 
+### 5.13 INDEX panel (one on every /explore scale)
+
+The searchable, keyboard-reachable list of every selectable object of the scale on screen: the DOM mirror of the canvas ([UXD-017](../uxs/decisions/UXD-017-one-index-on-every-scale.md)). One component, `ScaleIndex.svelte`, one stylesheet, `src/lib/styles/index-panel.css`, one open state, on all eight scales (solar system, neighbourhood, Milky Way, Local Group, Local Sheet, Virgo, Laniakea, Cosmic web). The Worlds (`/moon`, `/mars`, `/venus`, `/earth`) still use `SurfaceIndexPanel`, which shares the look and moves onto `ScaleIndex` in a later slice.
+
+```
+ handle              rail (320px)
+┌──┐   ┌────────────────────────────────┐
+│IN│   │ [ search…            ] [ × ]   │  search + close chip
+│DE│   │ [All] [★ Notable] [Kind] …     │  kind chips (ChipGroup)
+│X │   │ 12 / 150                       │  count
+└──┘   │ SECTION                        │  section label
+       │ ● Name              meta    ↗  │  row + page link
+       └────────────────────────────────┘
+```
+
+**Handle.** A pull-out tab on the left edge at every viewport, vertically centred (`top: 50%`), away from the top-left controls. A `<Chip kind="toggle">` labelled INDEX, set vertically (`writing-mode: vertical-rl`), `aria-pressed` while the rail is open. Its accessible name says which scale's INDEX it opens. `z-index: 44`.
+
+**Rail.** `aside.scale-index`, `position: fixed`, `left: 12px`, `bottom: 12px`, width `min(320px, 100vw − 24px)`, 12px padding, `--color-panel-bg`, 1px `--color-border`, 10px radius, `backdrop-filter: blur(8px)`, `z-index: 45`. The top edge is `--index-top`: the measured bottom of the HUD chip row plus 8px (152px before it is measured; the HUD wraps on narrow windows and is absent on touch). In a window 500px high or less (a phone held sideways) the rail starts at `--nav-height` + 8px, keeps at least three rows and scrolls as a whole.
+
+**Parts, top to bottom.**
+
+| Part | Look |
+|---|---|
+| Search | `type="search"`, 12px, 6px radius; focus draws the `--color-accent-strong` edge |
+| Close chip | `<Chip kind="action">` with `×` beside the search, so it is the 30px / 44px chip of §5.7, in the header outside the scrolling list, the same close control as the panel bar of §5.3 (B1 brief O6, [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.md)) |
+| Kind chips | `ChipGroup` radiogroup of `<Chip kind="choice">`: All, then the scale's kinds, plus Notable objects where the data has headliners; at most five besides All; no distance or size filter. A chip that filters on a badge carries its glyph (⊕ ★ ◈ ●). A chip with no matching row is not shown |
+| Count | `shown / total`, `--size-label`, `--color-text-dim` |
+| Section label | Space Mono `--size-label`, uppercase, 1.5px spacing, `--color-text-dim`, top rule; absent at the head of an unsectioned list |
+| Row | A button, 8px / 10px padding, 6px radius. Lead slot (26px wide, so names line up): an 8px colour dot (a solar-system body's own colour) or the badges ⊕ system, ◈ culture door, ★ headliner, ● black hole. Name 13px, ellipsis. Meta (a moon's planet, a constellation, the kind) in `--size-label`, `--color-state`, at most 45% of the row |
+| Row states | Hover and focus: 18% accent fill. Selected (`aria-current`): 28% accent fill, 55% accent edge. A fiction row (Gargantua): dashed edge, dim text |
+| ↗ page link | Beside the row, only where the object has an entity page. 14px glyph; 44px square on a coarse pointer, 30px wide on a fine one (`(hover: hover) and (pointer: fine)`) |
+| Empty | "No match" line, 11px, dim, centred |
+
+**Keyboard.** One Tab stop for the whole list (`use:roving`, vertical, wraps); ↑ ↓ or D-pad move over the rows and the ↗ links; Enter selects.
+
+**Hidden but in the DOM.** One instance per scale is always mounted; a closed instance, or one whose scale is not on screen, has the `hidden` attribute, so its rows stay in the page. `/explore` is one prerendered HTML file for every `?context=`, so all eight lists are in it. Before hydration only the rows that have a page are written, as plain link rows, so the static page holds every entity link and no dead button; after hydration every row is a button and the ↗ link joins it.
+
+**One open state.** `indexOpen` is one flag for all eight scales. On a scale jump it stays open on a fine pointer and closes on a coarse one, where the 320px rail covers most of the width. The rail is not offered while a takeover owns the screen (black-hole lensing view, deep-sky immersion, an exoplanet's BodyScene), outside the solar system in the 2D view, or in Exhibit Mode. Selecting a black-hole row closes it.
+
+**Selecting.** A row does what a canvas click does, including the camera move (§7.5, [UXD-019](../uxs/decisions/UXD-019-select-equals-focus.md)); the INDEX stays open after a select. Black holes sit in the INDEX of the scale their distance puts them in (Sagittarius A\* and Cygnus X-1 in the Milky Way, M87\* in Virgo, Gargantua under a Fiction section at the foot of the Cosmic web).
+
+### 5.14 Scene pins, rings and labels (UXD-020)
+
+Text and markers drawn inside the 3D scenes of `/explore`, as opposed to HTML overlays ([UXD-020](../uxs/decisions/UXD-020-explore-readability-pins-rings-labels.md)). `src/lib/universe/scene-pins.ts` holds the constants and the maths; `scene-pin-sprites.ts` builds the sprites. The seven pin scenes (neighbourhood through Cosmic web) and the deep-sky scene share them.
+
+| Element | Rule |
+|---|---|
+| Scene label | 12px (`--size-meta`) in CSS pixels at every scale and viewport. The sprite is sized in pixels from the distance, the field of view and the viewport height, not as a fraction of the distance |
+| 2D map text | 11px (the floor) at every zoom, alpha 0.58 or more; it does not grow with the zoom |
+| Pin ring | A thin annulus, 44px across, 1.5px stroke, screen-constant. On every pin, on the deep-sky glints and on the label point of every Milky Way arm. Hidden at rest; full opacity on hover and selection, in `#889fe7` (`--color-state`) |
+| Anchor ring ("you are here") | Gold `#ffcf8f`, 44px, up at opacity 0.55 at rest and full on hover or selection. The same colour and size at all seven levels: the Sun, the Milky Way in the Local Group, the Local Group in the Local Sheet and Virgo, the Virgo Supercluster in Laniakea, Laniakea in the Cosmic web, Sol in the neighbourhood. It is a literal, not `--color-gold` (`#ffc850`) |
+| Solar-scene rings | The selection ring and the hover ring of a planet, moon, small body or the Sun are the same `#889fe7`, but they are outlines sized to the body (a 1.2px line), not the 44px pin ring. The selected one pulses between 0.3 and 0.55 opacity; the hover one is steady at 0.35 |
+| Light-year rings | Four 2px lines at opacity 0.55 on a ramp from `#889fe7` to white; the label is the localised unit (`m.unit_ly_value`) with a dark halo, at the lowest label priority |
+| Colour | No teal or cyan in rings, anchor glows or labels. Galaxy glows by kind keep their data colours |
+
+Scene code cannot read CSS variables, so the blue is a literal (`RING_BLUE`, `0x889fe7`) that mirrors `--color-state`; change both together.
+
+**Label placement pass.** Each frame the candidate labels are placed in priority order (`placeLabels`); a label that overlaps one already placed is hidden and returns when space frees. Order: hovered or selected (always shown, placed first), the anchor, headliners, the rest. The Milky Way's order is the Sun, Sagittarius A\*, the headliner globulars, the Magellanic Clouds, the arms; the light-year ring labels come last. A hidden arm label is not a pick target.
+
+**Steady label offset.** A label sits above its pin by the steady glow size and the ring, never the hover-grown one (`labelOffset`), so hovering does not move it.
+
 ---
 
 ## 6. Screen patterns
@@ -455,6 +543,8 @@ On hover:
 - 2D: cursor changes to `pointer`; object brightens
 - HTML label: opacity increases to 0.9
 
+On `/explore` a hovered pin or body also shows its ring (§5.14) and a hovered or selected label is always shown. Selection is §7.5.
+
 ### 7.3 Speed controls
 
 Consistent bottom-bar pattern: `0.25× | 1× | 5× | 20–25×` buttons. Active button has blue border and accent-blue text. Inactive has subtle border and dim text. Speed multiplier applies to `simT` advance per frame.
@@ -470,6 +560,19 @@ Consistent bottom-bar pattern: `0.25× | 1× | 5× | 20–25×` buttons. Active 
 | HUD bar fill transition | 0.3s | linear |
 | Label opacity | 0.15–0.2s | — |
 | Arrival zoom (mission arc) | 1.2s | ease-out |
+| Select-focus camera flight (`/explore`, §7.5) | 600ms | ease-out |
+
+### 7.5 Selection on /explore: select = focus
+
+Selected means three things at once: the panel is open, the object is ringed, the camera is on it ([UXD-019](../uxs/decisions/UXD-019-select-equals-focus.md)). Every way of choosing an object ends in one funnel, so the result is the same: a canvas click, an INDEX row (§5.13), a resident of the ruler, a belt member, `?id=`, a link in a panel.
+
+- **Ring for every kind that has a body.** Planets, moons, small bodies and the Sun take the ring (look in §5.14). A belt has no ring: its particles brighten (opacity ×1.8, size ×1.3) while it is selected. Pluto is a small body with one panel everywhere, and takes the ring and the focus like the others.
+- **One ring rule: the ring follows the selection, not the panel.** × closes the panel; the body stays selected, ringed and centred until another selection, Reset View, or the chip of its kind turned off clears it.
+- **Camera focus (600ms, ease-out).** A planet or a moon lands at 8 radii (zoom range 1.5 to 50 radii); a small body at 14 radii (4 to 600 units); a belt frames the whole ring from the Sun (570 units for the asteroid belt, 1,430 for the Kuiper belt). The Sun, and an object the scene does not draw, fly to the heliocentric home view. At the outer scales a member pans the camera to it and eases the zoom to 0.6 × the scale's entry distance, never below the floor and never out from a closer view the visitor chose; all eight scales have a Reset that flies back to the entry pose.
+- **Panel-aware framing.** With a side drawer open, the look-at point sits in the middle of the space the drawer leaves (the projection shifts by half the drawer's width). A bottom sheet (touch portrait) moves nothing. One helper, `src/lib/three/panel-framing.ts`.
+- **Chips own kinds.** Turning a layer chip off clears a selection of its kind (panel, ring and focus; the camera flies to the home view). Selecting an object whose chip is off turns the chip on. PATHS off closes a mission opened from a path.
+- **No object, no link.** A resident or a belt member is a button only when the scene has an object for it; otherwise it is plain text.
+- **A mission opens in place.** A mission id in a body panel's Missions tab opens the mission panel over the body panel. The body stays selected and its panel stays mounted but covered (not painted, not focusable, Escape leaves it), so its tab and scroll return. The mission panel's bar carries a back chip (`←`, `panel-back`) that returns to the body panel; × is the same return. Selecting another body closes the mission. The lists run newest first.
 
 ---
 

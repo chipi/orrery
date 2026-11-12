@@ -32,6 +32,7 @@ The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mis
 | Mission Catalog | `/missions` | `src/routes/missions/+page.svelte` | CSS grid card layout |
 | Earth Orbit | `/earth` | `src/routes/earth/+page.svelte` | Canvas 2D logarithmic scale |
 | Physics Lab | `/lab` | `src/routes/lab/+page.svelte` | SVG figures on the `station-blueprint` grid (Notebook / Focus; Canvas at T2) |
+| Library | `/library` | `src/routes/library/+page.svelte`, `+page.server.ts` | A text page on the page shell ([UXD-012](decisions/UXD-012-one-page-shell.md)): the intro and totals, then three data blocks (`aside.data-sources`) at the head, then the sources table of contents and one section per source. **Audio episodes**: a link to `/library/episodes`. **Launches data**: the historic (GCAT) and upcoming (Launch Library 2) launch sources, the agency-direct sources, and a link to the launches calendar. **Astrophysics data**: one sentence saying that star, deep-sky, black-hole and Local Group values name their source and link to the object's record, with licences and acknowledgements on `/credits`; the planet-positions line (JPL's approximate Keplerian elements, which the Physics Lab computes from); then a wrapped link list of the 12 catalogues and papers behind those values, names and URLs read from `data-sources.json` by the server load (`ASTRO_SOURCE_IDS`), each opening in a new tab. |
 
 *(This table predates several later surfaces — `/missions`, `/science`, `/iss`, `/programs`, etc. — and is maintained additively; the "six screens" framing in §overview is historical.)*
 
@@ -326,3 +327,4 @@ SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+l
 | v1.2 | August 2026 | Added §lab (Physics Lab surface — one card model, three views; UXS-015 / RFC-037 / PRD-033), §surfaces + §url-structure rows for `/lab`, and the §state-persistence exception for Lab worksheet persistence. |
 | v1.3 | August 2026 | Added §nav-groups (EXPLORE / WORLDS / PLAN & FLY / CATALOG / LEARN top-level split; the 4 surface bodies moved out of EXPLORE into a new WORLDS group + `/worlds` TV hub) and §home-cards (the landing rebuilt as the whole nav tree, sectioned; every leaf a rich hand-drawn card). RFC-038. Known Universe epic renumbered to PRD-034 / RFC-039 / UXS-016 to clear the Physics Lab numbers. |
 | v1.4 | November 2026 | Added §controls (the one chip, UXD-014). |
+| v1.5 | November 2026 | §surfaces row for `/library` with its three data blocks (Audio episodes, Launches data, Astrophysics data). |

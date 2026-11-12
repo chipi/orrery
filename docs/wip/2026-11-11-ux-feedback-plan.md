@@ -530,7 +530,7 @@ Every item we deferred, with where it lands. Add to it whenever something is def
 | L21 | ~~A4 core-tier chips still private CSS (NV13)~~ — done: one `.ui-chip-label` (`1dd6fba57e0`) | A4 implementer NOT DONE | during A4 |
 | L22 | ~~/fly ◐/◑ hud-collapse not a chip~~ — done (`f0cf0e3f498`, plus panorama, assembly, CC; `5e0b98402c1` /plan sandbox, floating exits, timeline resets, Coast controls); the mini-HUD summary card stays a card | A4 implementer NOT DONE | during A4 |
 | L23 | ~~Radiogroup with nothing checked has no Tab stop~~ — done in ChipGroup (`2ddfb6e2d55`) | A4 implementer NOT DONE | during A4 |
-| L24 | Orphaned message keys: checker found only `launches_filters_label` (removed); `hotspots_lod_title` became unused with HotspotsLodChip — delete from 14 locales | A4 implementer NOT DONE | during A4 |
+| L24 | ~~Orphaned message keys~~ — done: `launches_filters_label` (A4) and `hotspots_lod_title` (`d44fb2c0481`) removed from 14 locales | A4 implementer NOT DONE | during A4 |
 | L25 | White text on the 22 % world-tint fill (Mars, Venus, Moon): measure contrast (NV15) | A4 brief NV15 | during A4 (with the sheets) |
 | L26 | Layout risks from taller chips (30/44): Explore left column vs Orbit Ruler and time dock, time dock at 390 px, ScaleNav at 390 px in de/ar, 13-chip nation legend wrap, vertical pull tabs, agency logo chips, RTL arrow keys — check in the A4 sheets | A4 implementer NOT VERIFIED | during A4 |
-| L27 | Visual baselines (about 16 PNGs) for A4 — regenerate in Docker after the e2e is green | A4 | during A4 |
+| L27 | ~~Visual baselines for A4~~ — done: 14 PNGs regenerated in Docker (`fc4a246d856`) | A4 | during A4 |

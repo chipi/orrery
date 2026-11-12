@@ -132,7 +132,7 @@
   }
   .status-resolved {
     color: #9fe6c2;
-    border-color: rgba(120, 200, 160, 0.5);
+    border-color: color-mix(in srgb, var(--color-ok) 50%, transparent);
   }
   .area {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;
@@ -210,6 +210,6 @@
     color: rgba(255, 255, 255, 0.6);
   }
   .sourcing-footer :global(a) {
-    color: #cfe3fb;
+    color: var(--color-state);
   }
 </style>

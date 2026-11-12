@@ -266,6 +266,6 @@
     color: #ff5252;
   }
   .status-go {
-    color: #4b9cd3;
+    color: var(--color-state);
   }
 </style>

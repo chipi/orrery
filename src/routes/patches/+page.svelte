@@ -150,7 +150,7 @@
   /* a2-keep: link colour inside the lead and footer; slice A3 owns colour */
   .lede :global(a),
   .patches-footer :global(a) {
-    color: #cfe3fb;
+    color: var(--color-state);
   }
   .grid {
     display: grid;

@@ -36,7 +36,7 @@
     const py = (y: number) => oy + (1 - y) * s; // flip Y for screen
 
     // Constellation lines.
-    ctx.strokeStyle = 'rgba(120, 190, 230, 0.7)';
+    ctx.strokeStyle = 'rgba(136, 159, 231, 0.7)';
     ctx.lineWidth = 1.2;
     ctx.beginPath();
     for (const [a, b] of segments) {

@@ -214,7 +214,7 @@
     cursor: pointer;
   }
   .cmdk-row.highlighted {
-    background: color-mix(in srgb, var(--brand, #4a7dff) 24%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 24%, transparent);
   }
   .cmdk-hint {
     color: var(--text-dim, #9a9aa7);

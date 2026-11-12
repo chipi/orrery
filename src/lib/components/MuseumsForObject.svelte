@@ -155,7 +155,7 @@
   }
   .map {
     color: var(--color-earth);
-    border: 1px solid rgba(75, 156, 211, 0.4);
+    border: 1px solid var(--color-accent-edge);
   }
   .map:hover,
   .map:focus-visible {

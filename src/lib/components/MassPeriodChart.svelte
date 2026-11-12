@@ -93,7 +93,7 @@
       ctx.fillText(`${me}`, L - 6, y + 3);
     }
     // axis frame
-    ctx.strokeStyle = 'rgba(120,190,235,0.3)';
+    ctx.strokeStyle = 'rgba(136,159,231,0.3)';
     ctx.beginPath();
     ctx.moveTo(L, T);
     ctx.lineTo(L, B);
@@ -165,11 +165,11 @@
       ctx.fillStyle = gl;
       ctx.fillRect(x - 11, y - 11, 22, 22);
       ctx.globalCompositeOperation = 'source-over';
-      ctx.fillStyle = `rgba(210,245,255,${ease})`;
+      ctx.fillStyle = `rgba(226,232,255,${ease})`;
       ctx.beginPath();
       ctx.arc(x, y, mob ? 2.6 : 3.4, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = `rgba(224,246,255,${ease})`;
+      ctx.fillStyle = `rgba(226,232,255,${ease})`;
       ctx.fillText(pl.name, x + (mob ? 6 : 8), y - (mob ? 6 : 8));
     }
   }

@@ -129,7 +129,7 @@
   .crs__stats {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    color: rgba(200, 222, 235, 0.7);
+    color: var(--color-state);
     margin-left: auto;
     text-align: right;
   }

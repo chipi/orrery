@@ -330,8 +330,8 @@
           <stop offset="100%" stop-color="#ffc850" stop-opacity="0" />
         </radialGradient>
         <radialGradient id="ic-earth" cx="0.35" cy="0.35" r="0.7">
-          <stop offset="0%" stop-color="#a8e0ff" />
-          <stop offset="50%" stop-color="#4b9cd3" />
+          <stop offset="0%" stop-color="var(--color-accent-hover)" />
+          <stop offset="50%" stop-color="var(--color-accent)" />
           <stop offset="100%" stop-color="#0a1b30" />
         </radialGradient>
         <radialGradient id="ic-mars" cx="0.35" cy="0.35" r="0.7">
@@ -364,8 +364,8 @@
           <stop offset="100%" stop-color="#1c5a55" />
         </radialGradient>
         <radialGradient id="ic-glow-blue" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="40%" stop-color="#4b9cd3" stop-opacity="0.45" />
-          <stop offset="100%" stop-color="#4b9cd3" stop-opacity="0" />
+          <stop offset="40%" stop-color="var(--color-accent)" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
         </radialGradient>
         <radialGradient id="ic-glow-red" cx="0.5" cy="0.5" r="0.5">
           <stop offset="40%" stop-color="#c1440e" stop-opacity="0.45" />
@@ -656,7 +656,7 @@
                       cy="24"
                       r="11.5"
                       fill="none"
-                      stroke="rgba(168,224,255,0.45)"
+                      stroke="color-mix(in srgb, var(--color-accent) 45%, transparent)"
                       stroke-width="0.6"
                     />
                     <ellipse
@@ -673,7 +673,12 @@
                     <circle cx="42" cy="24" r="1.2" fill="var(--color-accent)" />
                   {:else if card.glyph === 'moon'}
                     <!-- Moon: grey disc + craters + Apollo flag marker -->
-                    <circle cx="22" cy="24" r="16" fill="rgba(75,156,211,0.18)" />
+                    <circle
+                      cx="22"
+                      cy="24"
+                      r="16"
+                      fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
+                    />
                     <circle cx="22" cy="24" r="13" fill="url(#ic-moon)" />
                     <ellipse cx="18" cy="20" rx="2.4" ry="2.2" fill="rgba(60,55,50,0.7)" />
                     <ellipse cx="18.5" cy="19.5" rx="1.8" ry="1.6" fill="rgba(168,160,156,0.7)" />
@@ -739,11 +744,14 @@
                     />
                   {:else if card.glyph === 'missions'}
                     <!-- Capsule with engine glow on a rising trajectory + planet horizon -->
-                    <path d="M 0 44 Q 24 36 48 44 L 48 48 L 0 48 Z" fill="rgba(75,156,211,0.4)" />
+                    <path
+                      d="M 0 44 Q 24 36 48 44 L 48 48 L 0 48 Z"
+                      fill="var(--color-accent-edge)"
+                    />
                     <path
                       d="M 0 44 Q 24 36 48 44"
                       fill="none"
-                      stroke="rgba(168,224,255,0.7)"
+                      stroke="var(--color-accent-strong)"
                       stroke-width="0.8"
                     />
                     <path
@@ -769,8 +777,8 @@
                         stroke="rgba(255,255,255,0.55)"
                         stroke-width="0.7"
                       />
-                      <rect x="3" y="10" width="3" height="4" fill="rgba(120,180,220,0.6)" />
-                      <rect x="18" y="10" width="3" height="4" fill="rgba(120,180,220,0.6)" />
+                      <rect x="3" y="10" width="3" height="4" fill="var(--color-accent-strong)" />
+                      <rect x="18" y="10" width="3" height="4" fill="var(--color-accent-strong)" />
                     </g>
                     <g>
                       <rect
@@ -858,7 +866,13 @@
                     <polygon points="20,14 28,18 20,22 22,18" fill="url(#ic-craft)" />
                   {:else if card.glyph === 'iss'}
                     <!-- ISS: glowing solar panels (gradient accent blue) + truss with depth + Earth glow at bottom -->
-                    <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(75,156,211,0.18)" />
+                    <ellipse
+                      cx="24"
+                      cy="46"
+                      rx="24"
+                      ry="6"
+                      fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
+                    />
                     <line
                       x1="6"
                       y1="22"

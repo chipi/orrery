@@ -245,7 +245,7 @@
     margin-bottom: 6px;
   }
   .body :global(a) {
-    color: #cfe3fb;
+    color: var(--color-state);
     text-decoration: none;
     border-bottom: 1px solid rgba(127, 176, 224, 0.4);
   }
@@ -285,7 +285,7 @@
   }
   .doors a,
   .sources a {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     border-bottom: 1px solid rgba(127, 176, 224, 0.4);
     font-size: 15px;

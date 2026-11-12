@@ -606,7 +606,7 @@
     letter-spacing: 0.08em;
     color: rgba(207, 224, 255, 0.6);
     background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(75, 156, 211, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 12px;
     cursor: pointer;
   }

@@ -293,7 +293,7 @@
       background: rgba(15, 18, 35, 0.62);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      border: 1px solid rgba(75, 156, 211, 0.3);
+      border: 1px solid var(--color-accent-edge);
       border-radius: 8px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
       font-family: var(--font-mono, 'Space Mono', monospace);

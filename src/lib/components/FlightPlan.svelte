@@ -145,7 +145,7 @@
     font-variant-numeric: tabular-nums;
   }
   li.active .time {
-    color: #bfe6ff;
+    color: var(--color-state);
   }
   @keyframes pulse {
     50% {

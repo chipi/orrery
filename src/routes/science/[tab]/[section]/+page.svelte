@@ -437,7 +437,7 @@
   }
   .tier-core {
     border-color: rgba(123, 156, 255, 0.5);
-    color: #7b9cff;
+    color: var(--color-state);
   }
   .tier-deep {
     border-color: rgba(255, 200, 80, 0.5);

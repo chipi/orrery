@@ -38,7 +38,7 @@
   --color-nav-bg: rgba(4, 4, 12, 0.88); /* prototype value (IA says 0.92 — drift) */
 
   /* Link tier colours (intro uses --color-state) */
-  --color-tier-core: #7b9cff;
+  --color-tier-core: var(--color-accent);
   --color-tier-deep: #ff9966;
 
   /* Typography */

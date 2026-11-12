@@ -221,7 +221,7 @@
   /* a2-keep: inline emphasis inside the lead (A1 decision 3); its colour is slice A3's */
   .intro :global(em) {
     font-style: italic; /* a1-keep: inline emphasis */
-    color: #cfe3fb;
+    color: var(--color-state);
   }
   /* a2-keep: toolbar hint, not the page lead */
   .lede {
@@ -257,7 +257,7 @@
   .toggle button.active {
     background: rgba(127, 176, 224, 0.18);
     border-color: rgba(127, 176, 224, 0.6);
-    color: #cfe3fb;
+    color: var(--color-state);
   }
   .cards {
     display: grid;

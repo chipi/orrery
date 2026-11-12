@@ -1481,7 +1481,7 @@
   .scope-tab.active {
     background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
-    color: rgba(150, 175, 255, 0.95);
+    color: var(--color-state);
   }
   .episode-list {
     list-style: none;
@@ -1554,9 +1554,9 @@
     background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .persona-tag.persona-enthusiast {
-    color: #6fc99f;
-    border-color: rgba(111, 201, 159, 0.4);
-    background: rgba(111, 201, 159, 0.08);
+    color: var(--color-ok);
+    border-color: color-mix(in srgb, var(--color-ok) 40%, transparent);
+    background: color-mix(in srgb, var(--color-ok) 8%, transparent);
   }
   .route-tag {
     font-family: var(--font-mono, monospace);
@@ -1567,7 +1567,7 @@
     color: var(--color-text-label);
   }
   .heard-tag {
-    color: rgba(111, 201, 159, 0.85);
+    color: color-mix(in srgb, var(--color-ok) 85%, transparent);
   }
 
   .tour-bar {
@@ -1735,9 +1735,9 @@
     color: var(--color-text-label);
   }
   .origin-disclosure a {
-    color: rgba(150, 175, 255, 0.8);
+    color: var(--color-accent);
     text-decoration: underline;
-    text-decoration-color: rgba(150, 175, 255, 0.4);
+    text-decoration-color: var(--color-accent-edge);
   }
   .origin-detail {
     color: var(--color-text-label);
@@ -1769,7 +1769,7 @@
   .cc-toggle.active {
     background: color-mix(in srgb, var(--color-accent) 22%, transparent);
     border-color: var(--color-accent-strong);
-    color: #96afff;
+    color: var(--color-state);
   }
 
   .caption-banner {
@@ -1793,7 +1793,7 @@
   .link-btn {
     background: transparent;
     border: none;
-    color: rgba(150, 175, 255, 0.7);
+    color: var(--color-state);
     font-size: 11px;
     letter-spacing: 0.5px;
     cursor: pointer;
@@ -1802,8 +1802,8 @@
   }
   .link-btn:hover,
   .link-btn:focus-visible {
-    color: rgba(150, 175, 255, 1);
-    background: rgba(150, 175, 255, 0.08);
+    color: var(--color-state);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
     outline: none;
   }
 

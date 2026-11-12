@@ -255,15 +255,17 @@ animation: slideIn / fadeIn 0.22s ease;
 ```
 
 The panel always contains, top to bottom:
-1. Header (object identity — name, type, agency, key stat)
-2. Tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
+0. Header bar (`.panel-bar`, fixed above the scroll container, solid `--color-panel-bg`): back `←` (only after a card link), the entity name in `--size-meta` once the hero has scrolled out, Share (only when the entity has a collectible card; opens the card overlay), close `×`. All four are `<Chip>`s (30px on a fine pointer, 44px on touch), so the bar is 38px / 44px; nothing scrolls under it.
+1. Identity block (name, type, agency, key stat)
+1a. Action row (`PanelActions`): at most three chips, in-scene, then view, then simulate, then plan; above the hero, on every tab; absent when the entity has no action. Nothing is stacked at the foot of a panel.
+2. Hero image (no hover glow; keyboard focus draws an inset 2px `--color-focus` ring), then the tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
 3. Stats grid (2-column)
 4. Signature element (the "still on the surface" section for Moon; the "scale fact" for Earth orbit; the editorial fact for planets)
 5. Description (lead text, Space Mono upright)
 6. Educational links
 7. Credit footer
 
-The close button (×) is always top-right within the header, 24px circle, `rgba(255,255,255,0.06)` background.
+Rule and reasoning: [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.md).
 
 ### 5.4 Card (mission library)
 

@@ -37,6 +37,9 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { dataLoadFailed } from '$lib/data/core';
+  import type { PageData } from './$types';
+
+  let { data }: { data: PageData } = $props();
 
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<LinkProvenanceManifest | null>(null);
@@ -192,6 +195,25 @@
         })}
       </p>
     </aside>
+
+    <aside
+      class="data-sources"
+      aria-label={m.library_astro_sources_aria()}
+      data-testid="library-astro-sources"
+    >
+      <h3>{m.library_astro_data()}</h3>
+      <p>
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+        {@html m.library_astro_intro({
+          link: `<a href="${localHref('/credits')}#src-data-catalogues">${m.credits_section_data()}</a>`,
+        })}
+      </p>
+      <ul class="astro-sources">
+        {#each data.astroSources as s (s.id)}
+          <li><a href={s.url} rel="noopener noreferrer external" hreflang="en">{s.name}</a></li>
+        {/each}
+      </ul>
+    </aside>
   </header>
 
   {#if !loaded}
@@ -342,6 +364,16 @@
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 6px;
+  }
+  .astro-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.6;
   }
   .data-sources :global(a) {
     color: rgba(255, 255, 255, 0.95);

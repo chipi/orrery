@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import {
   contrastRatio,
+  controlPoints,
+  excessOverControl,
   lumaPercentiles,
   measureElement,
   pointContrast,
@@ -111,5 +113,67 @@ describe('lumaPercentiles', () => {
     const p = lumaPercentiles(f);
     expect(p.p5).toBe(0);
     expect(p.p95).toBeCloseTo(255, 0);
+  });
+});
+
+describe('negative control', () => {
+  const w = 61;
+  const pts = [10, 15, 20, 25, 30, 35, 40, 45].map((y) => ({ x: 30, y }));
+
+  it('moves the points 8 px (Euclidean) off, in turn along the four diagonals', () => {
+    const c = controlPoints([0, 1, 2, 3, 4].map(() => ({ x: 0, y: 0 })));
+    const dirs = c.map((p) => [Math.sign(p.x), Math.sign(p.y)]);
+    expect(dirs).toEqual([
+      [1, 1],
+      [-1, 1],
+      [-1, -1],
+      [1, -1],
+      [1, 1],
+    ]);
+    for (const p of c) expect(Math.hypot(p.x, p.y)).toBeCloseTo(8, 9);
+  });
+  it('excess is the element median less the control contrast above 1:1', () => {
+    expect(excessOverControl(3.5, 1)).toBeCloseTo(3.5, 9);
+    expect(excessOverControl(3.5, 1.4)).toBeCloseTo(3.1, 9);
+    expect(excessOverControl(3.5, 0.9)).toBeCloseTo(3.5, 9);
+    expect(excessOverControl(NaN, 1)).toBeNaN();
+  });
+  it('a real line on a dark field passes with a control at 1:1', () => {
+    const f = frame(w, w, 3, (x) => (x === 30 ? 200 : null));
+    const m = measureElement(f, w, w, pts);
+    expect(m.control.raw.p50).toBeCloseTo(1, 1);
+    expect(m.pass).toBe(true);
+  });
+  it('a bright speckled field with NO line cannot pass (the starfield control)', () => {
+    // every other pixel is bright: any point reads high contrast, element or not
+    const speckle = frame(w, w, 3, (x, y) => ((x + y) % 2 === 0 ? 220 : null));
+    const m = measureElement(speckle, w, w, pts);
+    expect(m.raw.p50).toBeGreaterThan(3); // the old rule would have called this a pass
+    expect(m.control.raw.p50).toBeGreaterThan(3);
+    expect(m.excess.raw).toBeLessThan(3);
+    expect(m.pass).toBe(false);
+  });
+  it('a point whose control is off the frame is not measured as a pass', () => {
+    const f = frame(w, w, 3, (x) => (x === 57 ? 200 : null));
+    expect(measureElement(f, w, w, [{ x: 57, y: 30 }]).pass).toBe(false);
+  });
+  it('at device pixel ratio 2 the block and ring scale: a 4 px wide line still reads', () => {
+    const f = frame(81, 81, 3, (x) => (x >= 39 && x <= 42 ? 200 : null));
+    const m = measureElement(
+      f,
+      81,
+      81,
+      [
+        { x: 40, y: 40 },
+        { x: 41, y: 41 },
+      ],
+      {
+        radius: 8,
+        half: 2,
+        shift: 16,
+      },
+    );
+    expect(m.raw.n).toBe(2);
+    expect(m.raw.p50).toBeGreaterThan(3);
   });
 });

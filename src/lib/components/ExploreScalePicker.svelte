@@ -25,12 +25,18 @@
     activeShell,
     onJump,
     disabled = false,
+    align = 'left',
   }: {
     activeShell: ShellId;
     /** Jump to a shell; a no-op walk (same shell) is handled upstream. */
     onJump: (shell: ShellId) => void;
     /** True until the host has wired `contextDeepLinkFn` (scene not ready). */
     disabled?: boolean;
+    /** The screen edge the ladder lines up with: `right` opens it leftward from a chip that
+     *  sits flush right (the solar system), so it cannot pass the edge. Physical, not
+     *  logical: the navigator's flush-right is `right: 8px` in every direction, so in RTL a
+     *  logical `end` would put the ladder past the right edge instead of away from it. */
+    align?: 'left' | 'right';
   } = $props();
 
   // Top-to-bottom the rail reads outermost → innermost, so "zoom out" is "up".
@@ -84,7 +90,7 @@
   let toggleButton = $state<HTMLElement | undefined>();
 </script>
 
-<div class="scale-picker" class:open data-testid="explore-scale-picker">
+<div class="scale-picker" class:open data-align={align} data-testid="explore-scale-picker">
   <!-- Mobile-only trigger: shows the current shell + a caret; opens the ladder. -->
   <Chip
     bind:ref={toggleButton}
@@ -141,6 +147,7 @@
     position: absolute;
     top: calc(100% + 6px);
     left: 0;
+    max-inline-size: calc(100vw - 16px);
     flex-direction: column;
     gap: 6px;
     padding: 8px;
@@ -149,6 +156,10 @@
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
     z-index: 2;
+  }
+  .scale-picker[data-align='right'] .rail {
+    left: auto;
+    right: 0;
   }
   .scale-picker.open .rail {
     display: flex;

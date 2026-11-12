@@ -13,8 +13,9 @@
     activeShell,
     pickerDisabled,
     onJump,
-    showReset,
+    resetEnabled,
     onReset,
+    panelCoverPx = 0,
   }: {
     atSolar: boolean;
     back: { run: () => void; label: string } | null;
@@ -22,12 +23,20 @@
     activeShell: ShellId;
     pickerDisabled: boolean;
     onJump: (shell: ShellId) => void;
-    showReset: boolean;
+    /** The slot is always drawn; the chip is disabled while the scale has nothing to reset. */
+    resetEnabled: boolean;
     onReset: () => void;
+    /** Width a docked side panel covers at the right edge; the flush-right row sits left of it. */
+    panelCoverPx?: number;
   } = $props();
 </script>
 
-<nav class="scale-nav" class:at-solar={atSolar} aria-label={m.explore_location_aria()}>
+<nav
+  class="scale-nav"
+  class:at-solar={atSolar}
+  style:right={atSolar && panelCoverPx > 0 ? `${panelCoverPx + 8}px` : undefined}
+  aria-label={m.explore_location_aria()}
+>
   {#if back}
     <Chip
       kind="action"
@@ -47,19 +56,19 @@
     <ExploreScalePicker
       {activeShell}
       disabled={pickerDisabled}
+      align={atSolar ? 'right' : 'left'}
       onJump={(shell) => {
         cue('select');
         onJump(shell);
       }}
     />
-    {#if showReset}
-      <ResetViewButton onclick={onReset} data-testid="explore-scale-reset" />
-    {/if}
+    <ResetViewButton onclick={onReset} disabled={!resetEnabled} data-testid="explore-scale-reset" />
   {/if}
 </nav>
 
 <style>
-  /* #45 top scale-navigator — one row under the nav: back · scale chip · reset.
+  /* #45 top scale-navigator — one row under the nav: back · scale chip · reset (always
+     drawn, disabled while there is nothing to reset, so the row never shifts).
      Flush LEFT by default (neighborhood+ hide the solar-system control cluster, so
      the top-left is free and the row sits exactly where the old breadcrumb did).
      `top: 8px` lines it up with the mobile control row (.hud-top-mobile, top nav+8)

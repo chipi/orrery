@@ -6992,7 +6992,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   @media (max-height: 500px) and (hover: none), (max-height: 500px) and (pointer: coarse) {
     .surface-index-desktop {
-      top: 60px;
+      top: var(--nav-height);
     }
   }
   .hud-controls {
@@ -7694,7 +7694,7 @@ sample      ${debugInfo.projectedPxSample}`}
      above) so it doesn't sit on top of the panel. */
   .surface-floating-exit {
     position: fixed;
-    top: calc(var(--nav-height, 64px) + 18px);
+    top: calc(var(--nav-height) + 18px);
     right: 24px;
     z-index: 60;
   }
@@ -7715,7 +7715,7 @@ sample      ${debugInfo.projectedPxSample}`}
        top-left is free — move the immersive-exit button there and leave the
        top-right clear for the flat-patch layer chips. */
     .surface-floating-exit {
-      top: calc(var(--nav-height, 64px) + 8px);
+      top: calc(var(--nav-height) + 8px);
       left: 8px;
       right: auto;
     }

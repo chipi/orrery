@@ -160,7 +160,7 @@
     /* Keep the link clear of the sticky nav when it's scrolled into view
        (anchor scroll + Playwright's scrollIntoView both align it to the
        viewport top, where the stuck nav would otherwise intercept the click). */
-    scroll-margin-top: calc(var(--nav-height, 64px) + 12px);
+    scroll-margin-top: calc(var(--nav-height) + 12px);
   }
 
   .all-link:hover {

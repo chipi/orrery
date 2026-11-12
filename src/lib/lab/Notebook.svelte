@@ -857,7 +857,7 @@
      (fixed, not sticky: an ancestor overflow container defeats sticky here). */
   .nb__progress {
     position: fixed;
-    top: 60px;
+    top: calc(var(--nav-height) + 8px);
     right: 12px;
     z-index: 15;
     font-family: 'Space Mono', monospace;

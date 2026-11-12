@@ -576,7 +576,7 @@
   }
   .detail {
     position: sticky;
-    top: calc(var(--nav-height, 64px) + 20px);
+    top: calc(var(--nav-height) + 20px);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.02);

@@ -10,6 +10,10 @@
     {
       "hostId": "proxima-centauri",
       "hip": 70890,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/Proxima%20Cen",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2070890"
+      },
       "star": {
         "name": "Proxima Centauri",
         "spect": "M5Ve",
@@ -32,7 +36,8 @@
           "radius_earth": 0.692,
           "mass_earth": 0.26,
           "disc_year": 2022,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Proxima%20Cen%20d"
         },
         {
           "id": "proxima-cen-b",
@@ -44,13 +49,18 @@
           "radius_earth": 1.02,
           "mass_earth": 1.055,
           "disc_year": 2016,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Proxima%20Cen%20b"
         }
       ]
     },
     {
       "hostId": "barnards-star",
       "hip": 87937,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/Barnard's%20star",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2087937"
+      },
       "star": {
         "name": "Barnard's Star",
         "spect": "sdM4",
@@ -73,7 +83,8 @@
           "radius_earth": 0.694,
           "mass_earth": 0.263,
           "disc_year": 2025,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Barnard%20d"
         },
         {
           "id": "barnard-b",
@@ -85,7 +96,8 @@
           "radius_earth": 0.72,
           "mass_earth": 0.299,
           "disc_year": 2024,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Barnard%20b"
         },
         {
           "id": "barnard-c",
@@ -97,7 +109,8 @@
           "radius_earth": 0.743,
           "mass_earth": 0.335,
           "disc_year": 2025,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Barnard%20c"
         },
         {
           "id": "barnard-e",
@@ -109,13 +122,18 @@
           "radius_earth": 0.637,
           "mass_earth": 0.193,
           "disc_year": 2025,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Barnard%20e"
         }
       ]
     },
     {
       "hostId": "lalande-21185",
       "hip": 54035,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/GJ%20411",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2054035"
+      },
       "star": {
         "name": "Lalande 21185",
         "spect": "M2V",
@@ -138,7 +156,8 @@
           "radius_earth": 1.45,
           "mass_earth": 2.69,
           "disc_year": 2019,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/GJ%20411%20b"
         },
         {
           "id": "hd-95735-c",
@@ -150,13 +169,18 @@
           "radius_earth": 3.76,
           "mass_earth": 13.6,
           "disc_year": 2021,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/HD%2095735%20c"
         }
       ]
     },
     {
       "hostId": "luytens-star",
       "hip": 36208,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/GJ%20273",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2036208"
+      },
       "star": {
         "name": "Luyten's Star",
         "spect": "M5",
@@ -179,7 +203,8 @@
           "radius_earth": 1.06,
           "mass_earth": 1.18,
           "disc_year": 2017,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/GJ%20273%20c"
         },
         {
           "id": "gj-273-b",
@@ -191,13 +216,18 @@
           "radius_earth": 1.51,
           "mass_earth": 2.89,
           "disc_year": 2017,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/GJ%20273%20b"
         }
       ]
     },
     {
       "hostId": "pollux",
       "hip": 37826,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/HD%2062509",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2037826"
+      },
       "star": {
         "name": "Pollux",
         "spect": "K0IIIvar",
@@ -220,13 +250,18 @@
           "radius_earth": 13.3,
           "mass_earth": 731,
           "disc_year": 2006,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/HD%2062509%20b"
         }
       ]
     },
     {
       "hostId": "trappist-1",
       "hip": null,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=TRAPPIST-1"
+      },
       "star": {
         "name": "TRAPPIST-1",
         "spect": "M8.0 V",
@@ -249,7 +284,8 @@
           "radius_earth": 1.116,
           "mass_earth": 1.374,
           "disc_year": 2016,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20b"
         },
         {
           "id": "trappist-1-c",
@@ -261,7 +297,8 @@
           "radius_earth": 1.097,
           "mass_earth": 1.308,
           "disc_year": 2016,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20c"
         },
         {
           "id": "trappist-1-d",
@@ -273,7 +310,8 @@
           "radius_earth": 0.788,
           "mass_earth": 0.388,
           "disc_year": 2016,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20d"
         },
         {
           "id": "trappist-1-e",
@@ -285,7 +323,8 @@
           "radius_earth": 0.92,
           "mass_earth": 0.692,
           "disc_year": 2017,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20e"
         },
         {
           "id": "trappist-1-f",
@@ -297,7 +336,8 @@
           "radius_earth": 1.045,
           "mass_earth": 1.039,
           "disc_year": 2017,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20f"
         },
         {
           "id": "trappist-1-g",
@@ -309,7 +349,8 @@
           "radius_earth": 1.129,
           "mass_earth": 1.321,
           "disc_year": 2017,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20g"
         },
         {
           "id": "trappist-1-h",
@@ -321,13 +362,18 @@
           "radius_earth": 0.755,
           "mass_earth": 0.326,
           "disc_year": 2017,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20h"
         }
       ]
     },
     {
       "hostId": "51-pegasi",
       "hip": null,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/51%20Peg",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=51%20Peg"
+      },
       "star": {
         "name": "51 Pegasi",
         "spect": "G5V",
@@ -350,13 +396,18 @@
           "radius_earth": 14.1,
           "mass_earth": 193.87532827,
           "disc_year": 1995,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/51%20Peg%20b"
         }
       ]
     },
     {
       "hostId": "hamal",
       "hip": 9884,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/alf%20Ari",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%209884"
+      },
       "star": {
         "name": "Hamal",
         "spect": "K2III",
@@ -379,13 +430,18 @@
           "radius_earth": 13.4,
           "mass_earth": 572.07,
           "disc_year": 2010,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/alf%20Ari%20b"
         }
       ]
     },
     {
       "hostId": "aldebaran",
       "hip": 21421,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/alf%20Tau",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2021421"
+      },
       "star": {
         "name": "Aldebaran",
         "spect": "K5III",
@@ -408,13 +464,18 @@
           "radius_earth": 12.7,
           "mass_earth": 2056.3601,
           "disc_year": 2015,
-          "disc_method": "Radial Velocity"
+          "disc_method": "Radial Velocity",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/alf%20Tau%20b"
         }
       ]
     },
     {
       "hostId": "toi-700",
       "hip": null,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/TOI-700",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=TOI-700"
+      },
       "star": {
         "name": "TOI-700",
         "spect": "M2.5 V",
@@ -437,7 +498,8 @@
           "radius_earth": 0.914,
           "mass_earth": 0.704,
           "disc_year": 2020,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TOI-700%20b"
         },
         {
           "id": "toi-700-c",
@@ -449,7 +511,8 @@
           "radius_earth": 2.6,
           "mass_earth": 7.27,
           "disc_year": 2020,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TOI-700%20c"
         },
         {
           "id": "toi-700-e",
@@ -461,7 +524,8 @@
           "radius_earth": 0.953,
           "mass_earth": 0.818,
           "disc_year": 2023,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TOI-700%20e"
         },
         {
           "id": "toi-700-d",
@@ -473,13 +537,18 @@
           "radius_earth": 1.073,
           "mass_earth": 1.25,
           "disc_year": 2020,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/TOI-700%20d"
         }
       ]
     },
     {
       "hostId": "kepler-16",
       "hip": null,
+      "records": {
+        "exoplanet_archive": "https://exoplanetarchive.ipac.caltech.edu/overview/Kepler-16",
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Kepler-16"
+      },
       "star": {
         "name": "Kepler-16",
         "spect": "",
@@ -502,7 +571,8 @@
           "radius_earth": 8.4493,
           "mass_earth": 105.833,
           "disc_year": 2011,
-          "disc_method": "Transit"
+          "disc_method": "Transit",
+          "record_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Kepler-16%20b"
         }
       ]
     }

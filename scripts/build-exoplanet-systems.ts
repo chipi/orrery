@@ -10,6 +10,7 @@
 // Run: tsx scripts/build-exoplanet-systems.ts
 import fs from 'node:fs';
 import path from 'node:path';
+import { exoplanetArchiveUrl, simbadRecordUrl } from './lib/catalogue-sources.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const snap = JSON.parse(
@@ -97,6 +98,7 @@ function buildSystem(hostname: string, rows: Array<Record<string, unknown>>) {
       mass_earth: num(r.pl_bmasse),
       disc_year: num(r.disc_year),
       disc_method: (r.discoverymethod as string) || null,
+      record_url: exoplanetArchiveUrl(r.pl_name as string),
     }))
     .filter((p) => p.a_au != null && p.period_days != null)
     .sort((a, b) => a.a_au! - b.a_au!);
@@ -104,6 +106,11 @@ function buildSystem(hostname: string, rows: Array<Record<string, unknown>>) {
   return {
     hostId,
     hip: (star?.hip as number) ?? null,
+    // Record pages (#658): the Archive's host overview and the star's SIMBAD page.
+    records: {
+      exoplanet_archive: exoplanetArchiveUrl(hostname),
+      simbad: simbadRecordUrl(star?.hip ? `HIP ${star.hip}` : hostname),
+    },
     star: {
       name: hostName,
       spect,

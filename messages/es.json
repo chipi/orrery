@@ -1315,6 +1315,7 @@
   "library_astro_data": "Datos astrofísicos",
   "library_astro_sources_aria": "Fuentes de datos de estrellas, objetos de cielo profundo, agujeros negros y galaxias",
   "library_astro_intro": "Las posiciones, distancias, brillos y masas de las páginas y paneles de estrellas, objetos de cielo profundo, agujeros negros y el Grupo Local proceden de estos catálogos y artículos. Cada valor indica su fuente y enlaza con el registro del objeto; las licencias y los agradecimientos están en {link}.",
+  "library_astro_planets": "Posiciones de los planetas: {link}. El Laboratorio de Física calcula con estos elementos, y una prueba garantiza que el modelo planetario de las trayectorias de las misiones no se aparta de ellos más de 0,6°.",
   "plan_porkchop_title": "Gráfico porkchop · el calendario de lanzamientos económicos",
   "science_focused_101_aria": "Un resumen enfocado",
   "science_focused_101_tab_aria": "Un resumen enfocado para esta pestaña",

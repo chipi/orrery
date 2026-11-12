@@ -205,7 +205,13 @@
       <p>
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
         {@html m.library_astro_intro({
-          link: `<a href="${localHref('/credits')}#src-data-catalogues">${m.credits_section_data()}</a>`,
+          link: `<a href="${localHref('/credits')}">${m.credits_section_data()}</a>`,
+        })}
+      </p>
+      <p>
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + data-sources.json URL, no user input -->
+        {@html m.library_astro_planets({
+          link: `<a href="${data.jpl.url}" target="_blank" rel="noopener noreferrer external" hreflang="en">${data.jpl.name}</a>`,
         })}
       </p>
       <ul class="astro-sources">

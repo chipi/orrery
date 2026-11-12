@@ -1315,6 +1315,7 @@
   "library_astro_data": "天体物理数据",
   "library_astro_sources_aria": "恒星、深空天体、黑洞和星系的数据来源",
   "library_astro_intro": "恒星、深空天体、黑洞和本星系群页面与面板上的位置、距离、亮度和质量均来自这些星表和论文。每个数值都注明来源并链接到该天体的记录；许可与致谢见{link}。",
+  "library_astro_planets": "行星位置：{link}。物理实验室依据这些轨道根数计算，并有测试确保任务轨迹所用的行星模型与其偏差不超过 0.6°。",
   "plan_porkchop_title": "猪排图 · 低成本发射日历",
   "science_focused_101_aria": "聚焦入门",
   "science_focused_101_tab_aria": "此标签的聚焦入门",

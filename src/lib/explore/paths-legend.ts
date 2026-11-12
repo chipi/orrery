@@ -1,8 +1,7 @@
 import * as m from '$lib/paraglide/messages';
 
-// The interstellar-bound craft whose legend row / trajectory opens the
-// MessagePanel rather than the MissionPanel (mirrors the host's category
-// detection for the canvas Today-marker click).
+// The interstellar-bound craft: their MissionPanel carries the message they hold (heading,
+// signal, culture door) as a section. Every legend row opens the MissionPanel (UXD-019).
 export const INTERSTELLAR_CRAFT = new Set([
   'voyager-1',
   'voyager-2',

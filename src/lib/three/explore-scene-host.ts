@@ -20,6 +20,20 @@ import {
   AU_PER_PARSEC,
 } from '$lib/universe/context-graph';
 import { contextLevel, isValidShellTarget } from '$lib/explore/scale-shell-controller';
+import {
+  beltFocusFrame,
+  chipForSmallBodyType,
+  focusFrameFor,
+  scenePlanetIdOf,
+  type BodyRef,
+  type FocusFrame,
+} from '$lib/explore/body-ref';
+import { easeShift, framingShiftPx, panelCoverPx } from '$lib/three/panel-framing';
+import {
+  equatorialToGalactic,
+  galacticPlanePin,
+  galacticToScene,
+} from '$lib/universe/milky-way-visual';
 import { describeDistanceAu, niceScaleBar, AU_PER_PC } from '$lib/universe/scale-readout';
 import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
@@ -51,6 +65,7 @@ import {
   getVirgo,
   getLaniakea,
   getCosmicWeb,
+  getBlackHole,
   getMilkyWaySchematic,
   getNamedStarI18n,
   getNamedStars,
@@ -249,6 +264,8 @@ export interface ExploreSceneHostBridge {
     overlay: ExoplanetOverlay | null;
   } | null;
   readonly selectedId: string | null;
+  readonly selectedSmallBodyId: string | null;
+  readonly selectedBeltId: string | null;
   selectedLaniakeaMember: LaniakeaMember | null;
   selectedLgMember: LocalGroupMember | null;
   selectedLsMember: LocalSheetMember | null;
@@ -274,6 +291,8 @@ type ExploreSolarHandle = ReturnType<typeof createExploreSolarScene>;
 /** Scene refs, helpers and live getters /explore passes by reference. */
 export interface ExploreSceneHostDeps extends Pick<
   ExploreSolarHandle,
+  | 'asteroidBelt'
+  | 'kuiperBelt'
   | 'asteroidBeltPick'
   | 'kuiperBeltPick'
   | 'localGroup'
@@ -324,7 +343,6 @@ export interface ExploreSceneHostDeps extends Pick<
     readonly state: { hoveredId: string | null; panelOpen: boolean };
     openMission: (missionId: string, locale: string) => Promise<void>;
   };
-  openMessageCraft?: (craftId: string, locale: string) => Promise<void>;
   sizePathsLegend: () => void;
   selectSun: () => void;
   selectPlanet: (id: string) => void;
@@ -369,6 +387,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     selectSmallBody,
     selectSatellite,
     selectBelt,
+    asteroidBelt,
+    kuiperBelt,
     asteroidBeltPick,
     kuiperBeltPick,
     localGroup,
@@ -393,10 +413,6 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     stopHoverLayerWatch,
   } = deps;
   const iconicTrajectoryHandles: IconicTrajectoryHandle[] = [];
-  // #410 — mission_ids of the interstellar-bound craft (Voyagers, Pioneers,
-  // New Horizons), populated as their trajectories build. Drives the click
-  // routing to the MessagePanel.
-  const interstellarCraftIds = new Set<string>();
   // #410 — object ids that carry a culture door, so a photo-less deep-sky object
   // that IS a message target (M13 ← the Arecibo message) still opens a flat panel
   // to surface it, rather than the highlight-only path.
@@ -416,16 +432,21 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   let exitDeepSkyFn: (() => void) | null = null;
   let deepSkyGatewayFn: ((hostId: string) => void) | null = null;
   let deepSkyDeepLinkFn: ((designation: string) => void) | null = null;
-  let flyToBodyFn: ((bodyId: string | null) => void) | null = null;
+  let focusBodyFn: ((ref: BodyRef | null) => void) | null = null;
   let exitNeighborhoodFn: (() => void) | null = null;
   let resetNeighborhoodFn: (() => void) | null = null;
   let resetMilkyWayFn: (() => void) | null = null;
   let resetLocalGroupFn: (() => void) | null = null;
+  let resetLocalSheetFn: (() => void) | null = null;
+  let resetVirgoFn: (() => void) | null = null;
+  let resetLaniakeaFn: (() => void) | null = null;
+  let resetCosmicWebFn: (() => void) | null = null;
   let exitBodySceneFn: (() => void) | null = null;
   let exitMilkyWayFn: (() => void) | null = null;
   let closeMwFn: (() => void) | null = null;
   let mwDeepLinkFn: ((id: string) => void) | null = null;
   let contextDeepLinkFn: ((ctx: string) => Promise<void>) | null = null;
+  let pickDeepLinkFn: ((scale: string, id: string) => void) | null = null;
   let exitLocalGroupFn: (() => void) | null = null;
   let exitLocalSheetFn: (() => void) | null = null;
   let exitVirgoFn: (() => void) | null = null;
@@ -596,16 +617,52 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.bhTimeLens = false;
   }
 
+  let mwDiskKpc = 16;
+  const LY_PER_KPC = 3261.5636;
+  // A Milky Way member's scene position: its pin, else (spiral arms have a label, not a pin)
+  // the schematic's galactic-plane coordinates.
+  const mwMemberPosition = (id: string): THREE.Vector3 | null => {
+    const pin = mwScene?.objectPosition(id);
+    if (pin) return pin;
+    const o = bridge.mwObjects.find((x) => x.id === id);
+    if (!o) return null;
+    const [x, y, z] = galacticToScene(o.x, o.z, mwDiskKpc);
+    return new THREE.Vector3(x, y, z);
+  };
+
   async function ensureMilkyWay(): Promise<typeof mwScene> {
     if (mwScene) return mwScene;
     if (mwLoading) return null;
     mwLoading = true;
     try {
-      const [mod, data] = await Promise.all([
+      const [mod, schematic, cygnus] = await Promise.all([
         import('$lib/universe/milky-way-scene'),
         getMilkyWaySchematic(fetch),
+        getBlackHole('cygnus-x-1', fetch).catch(() => null),
       ]);
-      if (!data) return null;
+      if (!schematic) return null;
+      mwDiskKpc = schematic.disk_radius_kpc;
+      // Cygnus X-1 gets a pin placed from its ra, dec and distance (UXD-019): the schematic
+      // has no halo object for it, but it is the nearest stellar black hole and an INDEX row.
+      const sunObj = schematic.objects.find((o) => o.id === 'sun');
+      let data = schematic;
+      if (cygnus && cygnus.ra != null && cygnus.dec != null && sunObj) {
+        const { l, b } = equatorialToGalactic(cygnus.ra, cygnus.dec);
+        data = {
+          ...schematic,
+          objects: [
+            ...schematic.objects,
+            {
+              id: cygnus.id,
+              name: cygnus.name,
+              kind: 'stellar-black-hole',
+              ...galacticPlanePin(l, b, cygnus.dist_ly / LY_PER_KPC, sunObj),
+              dist_from_sun_ly: cygnus.dist_ly,
+              science_section: cygnus.science_section,
+            },
+          ],
+        };
+      }
       // #451 (WS-2) — merge the globulars, Magellanic Clouds, and (clickable)
       // arms into the selectable set so the existing selectMilkyWay → MilkyWayPanel
       // flow surfaces them all, not just the Sun + Sag A*.
@@ -1041,6 +1098,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   function resetNeighborhoodView(): void {
     if (!inNeighborhood()) return;
     dollyActive = false;
+    cancelFocus();
     focusOrigin.set(0, 0, 0);
     camP = NB_DEFAULT_CAM_P;
     camT = NB_DEFAULT_CAM_T;
@@ -1054,6 +1112,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   function resetMilkyWayView(): void {
     if (!inMilkyWay()) return;
     dollyActive = false;
+    cancelFocus();
     focusOrigin.set(0, 0, 0);
     camP = MW_ENTRY_CAM_P;
     camR = Math.max(camRMin, Math.min(camRMax, MW_ENTRY_CAM_R));
@@ -1065,6 +1124,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   function resetLocalGroupView(): void {
     if (!inLocalGroup()) return;
     dollyActive = false;
+    cancelFocus();
     focusOrigin.set(0, 0, 0);
     camP = LG_ENTRY_CAM_P;
     camR = Math.max(camRMin, Math.min(camRMax, LG_ENTRY_CAM_R));
@@ -1072,6 +1132,48 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     updateCam();
   }
   resetLocalGroupFn = resetLocalGroupView;
+
+  // Select = focus at the outer scales (UXD-019): a member, from the canvas or an INDEX row,
+  // takes the camera. Pan to it and ease the zoom in to 0.6 x the scale's entry distance (never
+  // below the scale's floor, and never out from a closer view the user already chose), keeping
+  // the pitch and azimuth. The Reset of the scale flies back to the entry pose.
+  function focusMember(pos: THREE.Vector3 | null | undefined): void {
+    if (!pos) return;
+    const entryR = LEVELS.find((l) => l.inside())?.frame().entryR ?? camR;
+    const r = Math.max(camRMin * 1.1, Math.min(camR, entryR * 0.6));
+    flyCameraTo(pos, { r, minR: camRMin, maxR: camRMax }, null, { p: camP, t: camT });
+  }
+
+  // The Reset of the five outer scales that had none: back to the scale's entry pose, panel and
+  // highlight cleared, like the Milky Way and Local Group resets above.
+  function resetOuterView(id: ExploreContextId, close: () => void): void {
+    const level = LEVELS.find((l) => l.id === id);
+    if (!level?.inside()) return;
+    const f = level.frame();
+    cancelFocus();
+    dollyActive = false;
+    focusOrigin.set(0, 0, 0);
+    if (f.entryP !== undefined) camP = f.entryP;
+    camR = Math.max(camRMin, Math.min(camRMax, f.entryR));
+    close();
+    updateCam();
+  }
+  function resetLocalSheetView(): void {
+    resetOuterView('local-sheet', closeLsPanel);
+  }
+  function resetVirgoView(): void {
+    resetOuterView('virgo', closeVirgoPanel);
+  }
+  function resetLaniakeaView(): void {
+    resetOuterView('laniakea', closeLaniakeaPanel);
+  }
+  function resetCosmicWebView(): void {
+    resetOuterView('cosmic-web', closeCosmicWebPanel);
+  }
+  resetLocalSheetFn = resetLocalSheetView;
+  resetVirgoFn = resetVirgoView;
+  resetLaniakeaFn = resetLaniakeaView;
+  resetCosmicWebFn = resetCosmicWebView;
 
   // ── Scale-ladder boundary crossings: Neighborhood ↔ Milky Way ↔ Local Group ↔
   // Local Sheet ↔ Virgo ↔ Laniakea ↔ Cosmic Web. Every crossing is the same
@@ -1242,6 +1344,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     const scene = await out.ensure();
     if (!scene) return; // load failed — stay on the rung below
     LEVELS[i - 1].clearPanel?.();
+    cancelFocus();
+    focusOrigin.set(0, 0, 0);
     contextGraph.setActive(level.id);
     bridge.contextId = level.id; // flip chrome immediately, ahead of the HUD tick
     const f = level.frame();
@@ -1273,6 +1377,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     dollyActive = false;
     if (!deps.getReducedMotion()) bridge.crossingFlashId++;
     level.clearPanel?.();
+    cancelFocus();
+    focusOrigin.set(0, 0, 0);
     const target = LEVELS[i - 1];
     contextGraph.setActive(target.id);
     bridge.contextId = target.id; // flip chrome immediately
@@ -1753,52 +1859,159 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   let flyToMinR = 60;
   let flyToMaxR = 1400;
 
-  let focusedPlanetObj: (typeof planetObjs)[number] | null = null;
+  // What the camera follows while focused: a body whose world position drifts (planet, moon,
+  // small body), a fixed point (a belt's centre, an outer-scale member) or nothing (free camera).
+  let focusFollow: ((out: THREE.Vector3) => void) | null = null;
 
-  function focusOnBody(bodyId: string | null): void {
-    const next = bodyId ? (planetObjs.find((o) => o.planet.id === bodyId) ?? null) : null;
+  const clampPitch = (p: number) => Math.max(0.08, Math.min(Math.PI * 0.48, p));
+
+  function flyCameraTo(
+    origin: THREE.Vector3,
+    frame: FocusFrame,
+    follow: ((out: THREE.Vector3) => void) | null,
+    pose?: { p: number; t: number },
+  ): void {
     flyFromOrigin.copy(focusOrigin);
     flyFromR = camR;
     flyFromP = camP;
     flyFromT = camT;
-    if (next) {
-      const target = new THREE.Vector3();
-      next.mesh.getWorldPosition(target);
-      flyToOrigin.copy(target);
-      // Land at 8× planet radius (was 3, bumped to 6 was still too
-      // close per user feedback). For Earth (size3=5.2) that's
-      // ~41.6 units of camR; Moon at orbitUnits=24 means the
-      // camera-to-Moon distance stays in the 17.6 → 65.6 range
-      // at every orbital phase, with both Earth + Moon comfortably
-      // in frame and headroom to wheel-zoom in further. Still
-      // inside the 15× LOD-in ratio so the 4K texture is in by
-      // tween end.
-      flyToR = next.planet.size3 * 8;
-      flyToMinR = next.planet.size3 * 1.5;
-      flyToMaxR = next.planet.size3 * 50;
-      // Pose: look at the planet from roughly the same angle the user
-      // had before (camP/camT carry over). For very oblique entries
-      // we clamp camP into the legal envelope to avoid flipping.
-      flyToP = Math.max(0.08, Math.min(Math.PI * 0.48, camP));
-      flyToT = camT;
-      focusedPlanetObj = next;
-      bridge.cameraState.focusedOnPlanet = true;
-    } else {
-      flyToOrigin.set(0, 0, 0);
-      flyToR = HELIO_DEFAULT_CAMR;
-      flyToP = HELIO_DEFAULT_CAMP;
-      flyToT = HELIO_DEFAULT_CAMT;
-      flyToMinR = 60;
-      flyToMaxR = 1400;
-      focusedPlanetObj = null;
-      bridge.cameraState.focusedOnPlanet = false;
-    }
+    flyToOrigin.copy(origin);
+    flyToR = frame.r;
+    flyToMinR = frame.minR;
+    flyToMaxR = frame.maxR;
+    // Look at the target from roughly the angle the user had (camP/camT carry over); very
+    // oblique entries are clamped into the legal pitch range so the view never flips.
+    flyToP = pose?.p ?? clampPitch(camP);
+    flyToT = pose?.t ?? camT;
+    focusFollow = follow;
+    dollyActive = false;
     flyStart = performance.now();
     flyActive = true;
   }
 
-  // Exposed to the top-level selectPlanet / selectSun handlers.
-  flyToBodyFn = focusOnBody;
+  /** Stop any focus tween and release the follow (a pan, a scale crossing, a reset). */
+  function cancelFocus(): void {
+    flyActive = false;
+    focusFollow = null;
+  }
+
+  // Select = focus (UXD-019): one camera funnel for every solar-system kind. A planet lands at
+  // 8 radii (so Earth + Moon sit in frame and the 4K texture is in by tween end), a moon the
+  // same around its own radius, a small body at 14, a belt frames the whole ring from the Sun.
+  // Null, the Sun and a ref the scene has no object for fly to the heliocentric home view.
+  function focusBody(ref: BodyRef | null): void {
+    const target = new THREE.Vector3();
+    let follow: ((out: THREE.Vector3) => void) | null = null;
+    let frame: FocusFrame | null = null;
+    const planetId = ref ? scenePlanetIdOf(ref) : null;
+    if (ref && planetId) {
+      const obj = planetObjs.find((o) => o.planet.id === planetId);
+      if (obj) {
+        follow = (out) => void obj.mesh.getWorldPosition(out);
+        frame = focusFrameFor('planet', obj.planet.size3);
+      }
+    } else if (ref?.kind === 'moon') {
+      const sat = planetObjs
+        .find((o) => o.planet.id === ref.parent)
+        ?.satellites.find((s) => s.def.id === ref.id);
+      if (sat) {
+        follow = (out) => void sat.mesh.getWorldPosition(out);
+        frame = focusFrameFor('moon', sat.def.sizeUnits);
+      }
+    } else if (ref?.kind === 'small-body') {
+      const obj = smallBodyObjs.find((o) => o.body.id === ref.id);
+      if (obj) {
+        const radius = (obj.mesh.geometry as THREE.SphereGeometry).parameters.radius;
+        follow = (out) => void obj.mesh.getWorldPosition(out);
+        frame = focusFrameFor('small-body', radius);
+      }
+    } else if (ref?.kind === 'belt' && (ref.id === 'asteroid' || ref.id === 'kuiper')) {
+      follow = (out) => void out.set(0, 0, 0);
+      frame = beltFocusFrame(ref.id);
+    }
+    // focusedOnPlanet gates TacticalScan and the gravity overlays: planets only.
+    bridge.cameraState.focusedOnPlanet = !!follow && ref?.kind === 'planet';
+    if (follow && frame) {
+      follow(target);
+      flyCameraTo(target, frame, follow);
+    } else {
+      flyCameraTo(target.set(0, 0, 0), { r: HELIO_DEFAULT_CAMR, minR: 60, maxR: 1400 }, null, {
+        p: HELIO_DEFAULT_CAMP,
+        t: HELIO_DEFAULT_CAMT,
+      });
+    }
+  }
+
+  // Exposed to the page's select funnel (selectBody) and Reset View.
+  focusBodyFn = focusBody;
+
+  // Read-only hooks for the select-focus e2e spec (no shipped behaviour, like
+  // __explore2dBodyOffset): where the camera looks, whether the selection ring is up, and where a
+  // body is. Keys: planet:<id>, small:<id>, moon:<parent>:<id>, belt:<id>.
+  if (typeof window !== 'undefined') {
+    window.__exploreCameraState = () => ({
+      origin: focusOrigin.toArray(),
+      camR,
+      flying: flyActive,
+      ringVisible: selHalo.visible,
+      ringAt: selHalo.position.toArray(),
+      viewShiftPx: framingShift,
+    });
+    window.__exploreBodyPosition = (key) => {
+      const [kind, a, b] = key.split(':');
+      const out = new THREE.Vector3();
+      if (kind === 'planet') planetObjs.find((o) => o.planet.id === a)?.mesh.getWorldPosition(out);
+      else if (kind === 'small')
+        smallBodyObjs.find((o) => o.body.id === a)?.mesh.getWorldPosition(out);
+      else if (kind === 'moon')
+        planetObjs
+          .find((o) => o.planet.id === a)
+          ?.satellites.find((s) => s.def.id === b)
+          ?.mesh.getWorldPosition(out);
+      else if (kind !== 'belt') return null;
+      return out.toArray();
+    };
+  }
+
+  // Panel-aware framing (UXD-019): the focus point sits in the middle of the space the open
+  // side panel leaves, not under its edge. The projection shifts by half the panel's cover
+  // (camera.setViewOffset), so the look-at point, picking and every scale keep one camera. A
+  // bottom sheet (touch portrait) covers the scene and shifts nothing. Measured every 8th frame,
+  // eased every frame (instant under reduced motion).
+  let framingShift = 0;
+  let framingTarget = 0;
+  let framingTick = 0;
+  function applyPanelFraming(dt: number): void {
+    const wanted = bridge.view === '3d' && !bridge.activeBlackHole && !bridge.deepSkyImmersed;
+    if ((framingTick++ & 7) === 0) {
+      const rects = wanted
+        ? Array.from(document.querySelectorAll('aside.panel'), (el) => el.getBoundingClientRect())
+        : [];
+      framingTarget = framingShiftPx(panelCoverPx(rects, window.innerWidth));
+    }
+    framingShift = deps.getReducedMotion()
+      ? framingTarget
+      : easeShift(framingShift, framingTarget, dt);
+    if (framingShift === 0) {
+      if (camera.view?.enabled) camera.clearViewOffset();
+      return;
+    }
+    const w = bridge.container?.clientWidth ?? window.innerWidth;
+    const h = bridge.container?.clientHeight ?? window.innerHeight;
+    camera.setViewOffset(w, h, framingShift, 0, w, h);
+  }
+
+  // A selected belt has no ring to draw (it is a cloud, not a dot): its particles brighten
+  // (opacity x1.8, size x1.3) and the camera frames the whole ring.
+  const beltBrightness = (
+    [
+      ['asteroid', asteroidBelt],
+      ['kuiper', kuiperBelt],
+    ] as const
+  ).map(([id, points]) => {
+    const material = points.material as THREE.PointsMaterial;
+    return { id, material, opacity: material.opacity, size: material.size };
+  });
 
   // ─── Audio-tour camera demos (PRD-016 §S11 / RFC-019 §12) ─────
   // The audio-tour executor dispatches `audio-stage-drag` and
@@ -1947,13 +2160,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       });
       scene.add(handle.group);
       iconicTrajectoryHandles.push(handle);
-      pickables.push(handle.clickTarget);
-      // #410 — remember which craft are interstellar-bound so a Today-marker
-      // click opens the MessagePanel (the message it carries) instead of the
-      // regular MissionPanel.
-      if (data.category?.includes('interstellar-bound') && data.mission_id) {
-        interstellarCraftIds.add(data.mission_id);
-      }
+      pickables.push(handle.clickTarget, ...handle.pickTargets);
       // Yield to the event loop — separates each build into its own
       // macrotask so the browser can render + process input between
       // builds instead of starving for the whole roster's duration.
@@ -1969,13 +2176,20 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // detail. Keep buildOrbiterTour module around if we want to bring
   // them back behind a separate chip later.
 
+  const isDrawn = (obj: THREE.Object3D): boolean => {
+    for (let o: THREE.Object3D | null = obj; o; o = o.parent) if (!o.visible) return false;
+    return true;
+  };
+
   const tryPick3d = (e: MouseEvent) => {
     const rect = el3d.getBoundingClientRect();
     const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
     ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
-    // First: solar-system pickables (planets / Sun / small bodies)
-    const hits = ray3d.intersectObjects(pickables, false);
+    // First: solar-system pickables (planets / Sun / small bodies). The raycaster ignores
+    // `visible`, so a body whose chip is off, or a milestone box that is not showing, would
+    // still be hit: only what is drawn is selectable.
+    const hits = ray3d.intersectObjects(pickables, false).filter((h) => isDrawn(h.object));
     // Two-pass selection: a planet's wide pick-aid (sized 2.5× the
     // visible body for wide-zoom click forgiveness) can swallow the
     // inner moons of giant planets — Io + Europa orbit inside
@@ -1985,15 +2199,29 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // hits (visible mesh / explicit marker / non-pickAid) over the
     // wide pickAid spheres; fall back to a pickAid hit if nothing
     // specific was hit (preserving wide-zoom forgiveness).
+    // IM5: an encounter marker, a launch marker or a milestone box opens its mission. They rank
+    // below a real body (a box floating over a planet must not take the planet's click) and
+    // above the wide pick-aid spheres. The userData contract is iconic-trajectory.ts PICK_KINDS.
+    const isMilestone = (ud: Record<string, unknown>): boolean =>
+      ud.kind === 'iconic-trajectory-marker' ||
+      ud.kind === 'iconic-trajectory-launch' ||
+      ud.kind === 'iconic-trajectory-label';
     const isSelectable = (ud: Record<string, unknown>): boolean =>
       typeof ud.planetId === 'string' ||
       typeof ud.smallBodyId === 'string' ||
       typeof ud.satelliteId === 'string' ||
       typeof ud.beltId === 'string' ||
       ud.kind === 'iconic-trajectory-today' ||
-      ud.kind === 'orbiter-tour-flyby';
+      ud.kind === 'orbiter-tour-flyby' ||
+      isMilestone(ud);
     const hit =
-      hits.find((h) => isSelectable(h.object.userData) && !h.object.userData.isPickAid) ??
+      hits.find(
+        (h) =>
+          isSelectable(h.object.userData) &&
+          !h.object.userData.isPickAid &&
+          !isMilestone(h.object.userData),
+      ) ??
+      hits.find((h) => isMilestone(h.object.userData)) ??
       hits.find((h) => isSelectable(h.object.userData));
     if (hit) {
       const planetId = hit.object.userData.planetId as string | undefined;
@@ -2009,21 +2237,15 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       else if (beltId) selectBelt(beltId);
       else if (
         (hit.object.userData.kind === 'iconic-trajectory-today' ||
-          hit.object.userData.kind === 'orbiter-tour-flyby') &&
+          hit.object.userData.kind === 'orbiter-tour-flyby' ||
+          isMilestone(hit.object.userData)) &&
         trajectoryMissionId
       ) {
-        // Iconic trajectory Today marker + orbiter-tour flyby marker
-        // both open the mission's detail panel inline on /explore
-        // instead of navigating away to /missions, so the camera +
-        // scene state survives the click. Same MissionPanel surface
-        // used by the PATHS legend rows — except the interstellar-bound
-        // craft (#410), which open the MessagePanel (the message they
-        // carry) with a "Full mission details" hand-off to MissionPanel.
-        if (interstellarCraftIds.has(trajectoryMissionId)) {
-          deps.openMessageCraft?.(trajectoryMissionId, localeFromPage(deps.getPage()));
-        } else {
-          void iconic.openMission(trajectoryMissionId, localeFromPage(deps.getPage()));
-        }
+        // Today marker, milestone marker or box, orbiter-tour flyby marker: all open the
+        // mission's panel inline on /explore instead of navigating away to /missions, so the
+        // camera + scene state survives the click. Same MissionPanel as the PATHS legend rows;
+        // the five outbound craft carry their message as a section of it (UXD-019).
+        void iconic.openMission(trajectoryMissionId, localeFromPage(deps.getPage()));
       }
       return;
     }
@@ -2304,7 +2526,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       // width of mouse motion shifts the scene by ~one finger-width
       // of world distance at every zoom level.
       //
-      // 2026-06-15 bugfix: clear focusedPlanetObj at the start of
+      // 2026-06-15 bugfix: drop the focus follow at the start of
       // any pan. The animate-loop steady-state branch re-glues
       // focusOrigin to the focused planet's world position every
       // frame, which silently overwrote panning while a planet was
@@ -2312,10 +2534,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       // to move, but I am not moving the canvas"). A pan is an
       // explicit "I'm leaving this body" gesture — drop the focus so
       // the new focusOrigin sticks.
-      if (focusedPlanetObj) {
-        focusedPlanetObj = null;
-        flyActive = false;
-      }
+      if (focusFollow || flyActive) cancelFocus();
       const scale = (camR * 2 * Math.tan((camera.fov * Math.PI) / 360)) / window.innerHeight;
       camera.matrixWorld.extractBasis(camRight, camUp, camForward);
       focusOrigin.addScaledVector(camRight, -dx * scale);
@@ -2406,14 +2625,15 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (!bridge.mwObjects.some((o) => o.id === id)) return;
     // Slice 6 — Sagittarius A* upgrades from a flat pin to the lensed black-hole
     // render when you select it (the S5 pin becomes an S6 destination).
-    if (id === 'sagittarius-a-star') {
-      void enterBlackHole('sagittarius-a-star');
+    if (id === 'sagittarius-a-star' || id === 'cygnus-x-1') {
+      void enterBlackHole(id);
       return;
     }
     cue('select');
     bridge.selectedMwId = id;
     bridge.mwPanelOpen = true;
     mwScene?.highlight(id);
+    focusMember(mwMemberPosition(id));
     trackItemClick('marker', id, '/explore');
   }
   function closeMwPanel(): void {
@@ -2442,6 +2662,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.selectedLgMember = member;
     bridge.lgPanelOpen = true;
     lgScene?.highlight(id);
+    focusMember(lgScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
   function closeLgPanel(): void {
@@ -2471,6 +2692,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.selectedLsMember = member;
     bridge.lsPanelOpen = true;
     lsScene?.highlight(id);
+    focusMember(lsScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
   function closeLsPanel(): void {
@@ -2500,6 +2722,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.selectedVirgoMember = member;
     bridge.virgoPanelOpen = true;
     virgoScene?.highlight(id);
+    focusMember(virgoScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
   function closeVirgoPanel(): void {
@@ -2529,6 +2752,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.selectedLaniakeaMember = member;
     bridge.laniakeaPanelOpen = true;
     laniakeaScene?.highlight(id);
+    focusMember(laniakeaScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
   function closeLaniakeaPanel(): void {
@@ -2558,6 +2782,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.selectedCosmicWebMember = member;
     bridge.cosmicWebPanelOpen = true;
     cosmicWebScene?.highlight(id);
+    focusMember(cosmicWebScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
   function closeCosmicWebPanel(): void {
@@ -2636,11 +2861,27 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   contextDeepLinkFn = coalesceLatest(walkToContext);
   // Resolve a cold-load ?context=<...> now that the crossing fns exist (the
   // reactive $effect above only catches later in-session URL changes).
+  // ?context=<scale>&pick=<memberId>: the member of an outer scale, selected once the scale is
+  // on screen (the scale's own select function, so the camera focuses it too).
+  const selectOuterMember = (scale: string, id: string): void => {
+    if (scale === 'local-group') selectLocalGroup(id);
+    else if (scale === 'local-sheet') selectLocalSheet(id);
+    else if (scale === 'virgo') selectVirgo(id);
+    else if (scale === 'laniakea') selectLaniakea(id);
+    else if (scale === 'cosmic-web') selectCosmicWeb(id);
+  };
+  pickDeepLinkFn = selectOuterMember;
   {
-    const ctx0 = new URL(window.location.href).searchParams.get('context');
+    const params = new URL(window.location.href).searchParams;
+    const ctx0 = params.get('context');
+    const pick0 = params.get('pick');
     if (isValidShellTarget(ctx0)) {
       bridge.lastContextJump = ctx0;
       void contextDeepLinkFn(ctx0).then(() => {
+        if (pick0) {
+          selectOuterMember(ctx0, pick0);
+          return;
+        }
         const url = new URL(window.location.href);
         if (url.searchParams.get('context') === ctx0) {
           url.searchParams.delete('context');
@@ -3335,9 +3576,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // sampleOrbitPoints so the math stays consistent with 3D mode.
     // Each type gated by its layer flag (issue #32).
     SMALL_BODIES.forEach((b) => {
-      if (b.type === 'dwarf' && !bridge.layers.dwarfs) return;
-      if (b.type === 'comet' && !bridge.layers.comets) return;
-      if (b.type === 'interstellar' && !bridge.layers.interstellar) return;
+      if (!bridge.layers[chipForSmallBodyType(b.type)]) return;
       const pts = sampleOrbitPoints(b, 96);
       ctx2.save();
       ctx2.beginPath();
@@ -3551,9 +3790,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // the dwarfs/comets/interstellar layer flags (issue #32).
     smallBody2dPos.clear();
     SMALL_BODIES.forEach((b) => {
-      if (b.type === 'dwarf' && !bridge.layers.dwarfs) return;
-      if (b.type === 'comet' && !bridge.layers.comets) return;
-      if (b.type === 'interstellar' && !bridge.layers.interstellar) return;
+      if (!bridge.layers[chipForSmallBodyType(b.type)]) return;
       // #287 Slice E — Pluto rendered as a planet, skip the 2D
       // small-body draw to avoid duplicate dot + orbit ring.
       if (b.id === 'pluto') return;
@@ -3741,9 +3978,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       // motion — re-read it each frame so the tween lands on the
       // planet's current position, not where it was when focus() fired.
       if (flyActive) {
-        if (focusedPlanetObj) {
-          focusedPlanetObj.mesh.getWorldPosition(flyToOrigin);
-        }
+        if (focusFollow) focusFollow(flyToOrigin);
         const t = Math.min(1, (now - flyStart) / FLY_DURATION_MS);
         const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
         focusOrigin.lerpVectors(flyFromOrigin, flyToOrigin, e);
@@ -3756,13 +3991,14 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
           camRMax = flyToMaxR;
         }
         updateCam();
-      } else if (focusedPlanetObj) {
-        // Steady-state planet focus — keep focusOrigin glued to the
-        // planet's drifting world position so wheel-zoom and drag
-        // stay planet-relative across orbital motion.
-        focusedPlanetObj.mesh.getWorldPosition(focusOrigin);
+      } else if (focusFollow) {
+        // Steady-state focus — keep focusOrigin glued to the body's drifting world position so
+        // wheel-zoom and drag stay body-relative across orbital motion.
+        focusFollow(focusOrigin);
         updateCam();
       }
+
+      applyPanelFraming(dt);
 
       // Gyro tilt-to-look (RFC-020 §6). Consume every frame to keep the
       // service synced; apply only when idle (not fly-tweening, not dragging).
@@ -3809,12 +4045,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         for (const line of planetOrbitLines) line.visible = bridge.layers.planets;
         for (const o of planetObjs) o.group.visible = bridge.layers.planets;
         for (const o of smallBodyObjs) {
-          const on =
-            o.body.type === 'dwarf'
-              ? bridge.layers.dwarfs
-              : o.body.type === 'comet'
-                ? bridge.layers.comets
-                : bridge.layers.interstellar;
+          const on = bridge.layers[chipForSmallBodyType(o.body.type)];
           o.mesh.visible = on;
           o.pickAid.visible = on;
           o.orbit.visible = on;
@@ -4061,40 +4292,55 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         // (linewidth is in screen pixels via Line2). Billboarded
         // with lookAt(camera.position) so the ring reads as a clean
         // circle outline regardless of view angle.
+        // Select = focus (UXD-019): every selectable kind with a body carries the ring. A
+        // satellite and a planet keep their own radius, a small body wraps its dot at 3 radii and
+        // the Sun at 1.25. Pluto, a small body drawn as a planet, rings its planet mesh. A belt
+        // has no ring: its particles brighten below.
+        let ringR = 0;
         if (bridge.selectedSatelliteKey) {
           const [parentId, satId] = bridge.selectedSatelliteKey.split(':');
           const parentObj = planetObjs.find((o) => o.planet.id === parentId);
           const satObj = parentObj?.satellites.find((s) => s.def.id === satId);
           if (satObj) {
             satObj.mesh.getWorldPosition(tmpWorldPos);
-            const r = satObj.def.sizeUnits * 1.25;
-            selHalo.scale.set(r, r, r);
-            selHalo.position.copy(tmpWorldPos);
-            selHalo.lookAt(camera.position);
-            // Gentle pulse: 0.30 → 0.55 opacity. "Barely visible"
-            // floor with a soft heartbeat to confirm aliveness; no
-            // strong flash.
-            const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
-            selRingMat.opacity = 0.3 + pulse * 0.25;
-            selHalo.visible = true;
-          } else {
-            selHalo.visible = false;
+            ringR = satObj.def.sizeUnits * 1.25;
           }
-        } else if (bridge.selectedId) {
-          const selObj = planetObjs.find((o) => o.planet.id === bridge.selectedId);
+        } else if (bridge.selectedId || bridge.selectedSmallBodyId) {
+          const smallId = bridge.selectedSmallBodyId;
+          const planetId =
+            bridge.selectedId ??
+            (smallId ? scenePlanetIdOf({ kind: 'small-body', id: smallId }) : null);
+          const selObj = planetId ? planetObjs.find((o) => o.planet.id === planetId) : undefined;
+          const smallObj =
+            !selObj && smallId ? smallBodyObjs.find((o) => o.body.id === smallId) : undefined;
           if (selObj) {
-            const r = selObj.planet.size3 * 1.25;
-            selHalo.scale.set(r, r, r);
-            selHalo.position.copy(selObj.group.position);
-            selHalo.lookAt(camera.position);
-            const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
-            selRingMat.opacity = 0.3 + pulse * 0.25;
-            selHalo.visible = true;
-          } else {
-            selHalo.visible = false;
+            tmpWorldPos.copy(selObj.group.position);
+            ringR = selObj.planet.size3 * 1.25;
+          } else if (smallObj) {
+            smallObj.mesh.getWorldPosition(tmpWorldPos);
+            ringR = (smallObj.mesh.geometry as THREE.SphereGeometry).parameters.radius * 3;
           }
+        } else if (bridge.panelState.sun) {
+          tmpWorldPos.set(0, 0, 0);
+          ringR =
+            (sunMesh.geometry as THREE.SphereGeometry).parameters.radius * sunMesh.scale.x * 1.25;
+        }
+        if (ringR > 0) {
+          selHalo.scale.set(ringR, ringR, ringR);
+          selHalo.position.copy(tmpWorldPos);
+          selHalo.lookAt(camera.position);
+          // Gentle pulse: 0.30 → 0.55 opacity. "Barely visible" floor with a soft heartbeat to
+          // confirm aliveness; no strong flash.
+          const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
+          selRingMat.opacity = 0.3 + pulse * 0.25;
+          selHalo.visible = true;
         } else {
           selHalo.visible = false;
+        }
+        for (const b of beltBrightness) {
+          const on = bridge.selectedBeltId === b.id;
+          b.material.opacity = b.opacity * (on ? 1.8 : 1);
+          b.material.size = b.size * (on ? 1.3 : 1);
         }
 
         // Iconic-trajectory encounter labels — per-frame screen-space
@@ -4270,7 +4516,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     exitDeepSkyFn,
     deepSkyGatewayFn,
     deepSkyDeepLinkFn,
-    flyToBodyFn,
+    focusBodyFn,
     exitNeighborhoodFn,
     resetNeighborhoodFn,
     resetMilkyWayFn,
@@ -4278,11 +4524,16 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // at call time (it's lazily built on first MW crossing).
     setMilkyWayLens: (key: string, on: boolean) => mwScene?.setLens(key, on),
     resetLocalGroupFn,
+    resetLocalSheetFn,
+    resetVirgoFn,
+    resetLaniakeaFn,
+    resetCosmicWebFn,
     exitBodySceneFn,
     exitMilkyWayFn,
     closeMwFn,
     mwDeepLinkFn,
     contextDeepLinkFn,
+    pickDeepLinkFn,
     exitLocalGroupFn,
     closeLgFn,
     selectLgFn: selectLocalGroup,

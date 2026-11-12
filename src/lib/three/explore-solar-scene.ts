@@ -1307,6 +1307,8 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   scene.add(selHalo);
 
   return {
+    asteroidBelt,
+    kuiperBelt,
     asteroidBeltPick,
     kuiperBeltPick,
     localGroup,

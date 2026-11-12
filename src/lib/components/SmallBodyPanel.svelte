@@ -9,7 +9,12 @@
   import smallBodiesData from '$data/small-bodies.json';
   import type { CardSpec, SmallBodyLike } from '$lib/cards/card-spec';
   import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMission,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import { formatKm } from '$lib/format';
   import type { ScienceSectionRef } from '$types/planet';
   import { localeFromPage } from '$lib/locale';
@@ -80,8 +85,10 @@
     body: SmallBody | null;
     open: boolean;
     onClose: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
   };
-  let { body, open, onClose }: Props = $props();
+  let { body, open, onClose, onMissionOpen }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -144,11 +151,13 @@
     }
   });
   let missionEntries = $derived<string[]>(
-    body?.mission_visits && body.mission_visits.length > 0
-      ? body.mission_visits
-      : body?.mission_visited
-        ? [body.mission_visited]
-        : [],
+    sortNewestFirst(
+      body?.mission_visits && body.mission_visits.length > 0
+        ? body.mission_visits
+        : body?.mission_visited
+          ? [body.mission_visited]
+          : [],
+    ),
   );
 
   // Period in years (T is days in the data file).
@@ -363,7 +372,11 @@
               {@const link = linkifyMission(entry)}
               <li>
                 {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                  <a
+                    href={link.href}
+                    class="mission-link"
+                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                  ><span>{link.rest}</span>
                 {:else}
                   {entry}
                 {/if}

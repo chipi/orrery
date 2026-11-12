@@ -6,7 +6,12 @@
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { getSunGallery } from '$lib/data';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMission,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
   import ScienceCard from './ScienceCard.svelte';
@@ -35,8 +40,10 @@
     sun: LocalizedSun | null;
     open: boolean;
     onClose: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
   };
-  let { sun, open, onClose }: Props = $props();
+  let { sun, open, onClose, onMissionOpen }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -193,11 +200,15 @@
           <p class="empty-tab">{m.panel_sun_no_observatory()}</p>
         {:else}
           <ul class="mission-list">
-            {#each sun.mission_visits ?? [] as visit (visit)}
+            {#each sortNewestFirst(sun.mission_visits ?? []) as visit (visit)}
               {@const link = linkifyMission(visit)}
               <li>
                 {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                  <a
+                    href={link.href}
+                    class="mission-link"
+                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                  ><span>{link.rest}</span>
                 {:else}
                   {visit}
                 {/if}

@@ -29,7 +29,12 @@
     type SatelliteEntry,
     type SatelliteI18n,
   } from '$lib/data';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMission,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import { assetUrl } from '$lib/asset-url';
   import type { CardSpec } from '$lib/cards/card-spec';
   import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
@@ -48,8 +53,10 @@
     satelliteKey: string | null;
     open: boolean;
     onClose: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
   };
-  let { satelliteKey, open, onClose }: Props = $props();
+  let { satelliteKey, open, onClose, onMissionOpen }: Props = $props();
 
   let satellites: SatelliteEntry[] = $state([]);
   let loaded = $state(false);
@@ -256,11 +263,15 @@
           <p class="empty-tab">{m.panel_smallbody_no_spacecraft()}</p>
         {:else}
           <ul class="mission-list">
-            {#each entry.mission_visits as visit (visit)}
+            {#each sortNewestFirst(entry.mission_visits) as visit (visit)}
               {@const link = linkifyMission(visit)}
               <li>
                 {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                  <a
+                    href={link.href}
+                    class="mission-link"
+                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                  ><span>{link.rest}</span>
                 {:else}
                   {visit}
                 {/if}

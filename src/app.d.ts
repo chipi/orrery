@@ -83,6 +83,17 @@ declare global {
     __exploreSelectLocalGroup?: (id: string) => void;
     __exploreEnterBlackHole?: (id: string) => Promise<void>;
     __explore2dBodyOffset?: (id: string) => { x: number; y: number } | null;
+    /** Where the /explore camera looks, whether the selection ring is up, the panel-aware view shift. */
+    __exploreCameraState?: () => {
+      origin: number[];
+      camR: number;
+      flying: boolean;
+      ringVisible: boolean;
+      ringAt: number[];
+      viewShiftPx: number;
+    };
+    /** A solar-system body's world position: planet:<id>, small:<id>, moon:<parent>:<id>, belt:<id>. */
+    __exploreBodyPosition?: (key: string) => number[] | null;
     /** /earth, /moon, /mars surface scene (SurfaceScene, TourAnchors). */
     __surfaceSceneSelectSite?: (id: string) => void;
     __surfaceSceneFrameRoute?: (id: string) => void;

@@ -11,7 +11,12 @@
   import { getPlanetGallery, getPlanets } from '$lib/data';
   import type { CardSpec } from '$lib/cards/card-spec';
   import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
-  import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMissionEntry,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
   import ScienceCard from './ScienceCard.svelte';
@@ -51,8 +56,10 @@
     open: boolean;
     onClose: () => void;
     onPlanMission?: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
   };
-  let { planet, open, onClose, onPlanMission }: Props = $props();
+  let { planet, open, onClose, onPlanMission, onMissionOpen }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -343,11 +350,12 @@
           <p class="empty-tab">{m.panel_planet_no_missions()}</p>
         {:else}
           <ul class="mission-list">
-            {#each planet.mission_visits ?? [] as entry (entry)}
+            {#each sortNewestFirst(planet.mission_visits ?? []) as entry (entry)}
               <li>
                 {#each linkifyMissionEntry(entry) as seg, i (i)}{#if seg.href}<a
                       href={seg.href}
-                      class="mission-link">{seg.text}</a
+                      class="mission-link"
+                      onclick={(e) => onMissionLinkClick(e, seg, onMissionOpen)}>{seg.text}</a
                     >{:else}{seg.text}{/if}{/each}
               </li>
             {/each}

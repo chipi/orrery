@@ -63,6 +63,10 @@ const SEED_DATA = {
     'static/data/satellites.json',
     'static/data/small-bodies.json',
   ],
+  '/explore/stars': [
+    'static/data/universe/named-stars.json',
+    'static/data/universe/exoplanet-systems.json',
+  ],
   '/worlds': [
     'static/data/planets.json',
     'static/data/satellites.json',
@@ -90,6 +94,8 @@ const ENTRY_FILES = {
   'static/data/planets.json': (j) => (j.planets ?? []).map((e) => [e.name.toLowerCase(), e]),
   'static/data/satellites.json': (j) => (j.satellites ?? []).map((e) => [e.id, e]),
   'static/data/small-bodies.json': (j) => (j.bodies ?? []).map((e) => [e.id, e]),
+  'static/data/universe/named-stars.json': (j) => (j.stars ?? []).map((e) => [e.id, e]),
+  'static/data/universe/exoplanet-systems.json': (j) => (j.systems ?? []).map((e) => [e.hostId, e]),
 };
 
 const isoDay = (ts) => new Date(ts * 1000).toISOString().slice(0, 10);
@@ -268,7 +274,21 @@ export function inputsFor(route, ctx, data) {
     overlays.push(`${seg[0]}-sites/${seg[1]}.json`, `site-stories/${seg[1]}.json`);
     files.push(`static/data/site-stories/${seg[1]}.json`);
     addDir(`${seg[0]}/[id]`);
-  } else if (seg[0] === 'explore' && seg.length === 2 && seg[1] !== 'hub') {
+  } else if (seg[0] === 'explore' && seg[1] === 'stars' && seg.length === 3) {
+    // A star page: the named-star record or the host's system record, the star's overlay, its
+    // planets' overlays, and the culture doors on the star or its planets (+ their blurbs).
+    entry('static/data/universe/named-stars.json', seg[2]);
+    entry('static/data/universe/exoplanet-systems.json', seg[2]);
+    overlays.push(`universe/named-stars/${seg[2]}.json`);
+    const planets = data.hostPlanets.get(seg[2]) ?? [];
+    for (const planet of planets) overlays.push(`universe/exoplanets/${planet}.json`);
+    const objects = new Set([seg[2], ...planets]);
+    for (const door of data.doors.filter((d) => objects.has(d.objectId))) {
+      files.push('static/data/culture-doors.json');
+      overlays.push(`culture-doors/${door.id}.json`);
+    }
+    addDir('explore/stars/[id]');
+  } else if (seg[0] === 'explore' && seg.length === 2 && seg[1] !== 'hub' && seg[1] !== 'stars') {
     for (const f of Object.keys(ENTRY_FILES)) {
       if (/(planets|satellites|small-bodies)\.json$/.test(f)) entry(f, seg[1]);
     }
@@ -331,7 +351,14 @@ function dataIndexes() {
       );
       return { path, ids };
     });
-  return { missions: mission, fleet, labFiles };
+  const hostPlanets = new Map(
+    readJson('static/data/universe/exoplanet-systems.json').systems.map((sys) => [
+      sys.hostId,
+      sys.planets.map((pl) => pl.id),
+    ]),
+  );
+  const doors = readJson('static/data/culture-doors.json').doors;
+  return { missions: mission, fleet, labFiles, hostPlanets, doors };
 }
 
 /** Collapse a per-locale map to a string (all equal) or { '*': mode, ...exceptions }. */

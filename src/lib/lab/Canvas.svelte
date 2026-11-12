@@ -3,7 +3,7 @@
 
   A projection of the SAME shared lab-state instance the Notebook renders — cards
   dragged freely on the station-blueprint grid, each with input/output sockets;
-  drag an output socket to a compatible input to wire, edges drawn in teal.
+  drag an output socket to a compatible input to wire, edges drawn in the accent blue.
   Recompute propagates through the graph engine (`graph.ts` — cycle-honest,
   units-checked). PROMOTE turns a selected subgraph into a linear Notebook.
 

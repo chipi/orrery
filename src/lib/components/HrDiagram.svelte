@@ -112,7 +112,7 @@
     // chart labels fade in over the second half of the morph
     const labelA = Math.max(0, (ease - 0.4) / 0.6);
     ctx.globalAlpha = labelA;
-    ctx.strokeStyle = 'rgba(78,205,196,0.26)';
+    ctx.strokeStyle = 'rgba(78,205,196,0.26)'; // a3-keep: science chart (HR diagram), palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(L, B);
@@ -149,12 +149,12 @@
     // the Sun
     const sx = px(SUN_BV);
     const sy = py(SUN_ABSMAG);
-    ctx.strokeStyle = '#4ecdc4';
+    ctx.strokeStyle = '#4ecdc4'; // a3-keep: science chart (HR diagram), palette review at the end
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(sx, sy, 7, 0, Math.PI * 2);
     ctx.stroke();
-    ctx.fillStyle = '#4ecdc4';
+    ctx.fillStyle = '#4ecdc4'; // a3-keep: science chart (HR diagram), palette review at the end
     ctx.textAlign = 'left';
     ctx.font = `bold ${mob ? 9 : 11}px 'Space Mono', monospace`;
     ctx.fillText(m.explore_hr_sun(), sx + 11, sy + 3);

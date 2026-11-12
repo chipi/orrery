@@ -62,18 +62,18 @@
     const yOf = (g: number): number => py1 - (g / gMax) * (py1 - py0);
 
     // Reachable band on the baseline (footLo → footHi).
-    ctx.fillStyle = 'rgba(78,205,196,0.10)';
+    ctx.fillStyle = 'rgba(78,205,196,0.10)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillRect(xOf(figure.footLoKm), py0, xOf(figure.footHiKm) - xOf(figure.footLoKm), py1 - py0);
 
     // Range axis + ticks.
-    ctx.strokeStyle = 'rgba(120,235,225,0.35)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.35)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(px0, py1);
     ctx.lineTo(px1, py1);
     ctx.stroke();
     ctx.font = "7px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(78,205,196,0.45)';
+    ctx.fillStyle = 'rgba(78,205,196,0.45)'; // a3-keep: Lab figure art, palette review at the end
     ctx.textAlign = 'center';
     const tickStep = 500;
     for (let r = Math.ceil(rLo / tickStep) * tickStep; r <= rHi; r += tickStep) {
@@ -97,12 +97,12 @@
     ctx.closePath();
     const grad = ctx.createLinearGradient(px0, 0, px1, 0);
     grad.addColorStop(0, 'rgba(210,70,50,0.28)'); // short range = high g (red)
-    grad.addColorStop(1, 'rgba(78,205,196,0.20)'); // long range = low g (cyan)
+    grad.addColorStop(1, 'rgba(78,205,196,0.20)'); // long range = low g (cyan) // a3-keep: Lab figure art, palette review at the end
     ctx.fillStyle = grad;
     ctx.fill();
     ctx.restore();
     // The curve line on top.
-    ctx.strokeStyle = 'rgba(120,235,225,0.9)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.9)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
     ctx.beginPath();
@@ -139,7 +139,7 @@
     // Readouts (top-left): the solved bank + L/D.
     ctx.textAlign = 'left';
     ctx.font = "8px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(120,235,225,0.85)';
+    ctx.fillStyle = 'rgba(120,235,225,0.85)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(`L/D ${figure.liftToDrag.toFixed(2)}`, px0 + 4, py0 + 4);
     ctx.fillText(`bank ${figure.bankDeg.toFixed(0)}°`, px0 + 4, py0 + 15);
 

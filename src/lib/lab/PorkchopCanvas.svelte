@@ -58,7 +58,7 @@
     return { min: Number.isFinite(min) ? min : 0, mi, mj };
   });
 
-  // Δv → colour: teal (cheap) → gold → red (dear); span ~7 km/s above the minimum.
+  // Δv → colour: teal (cheap) → gold → red (dear); span ~7 km/s above the minimum. // a3-keep: Lab figure art, palette review at the end
   function ramp(dv: number, min: number): string {
     if (dv >= INFEASIBLE) return 'rgb(14,18,28)';
     const s = Math.max(0, Math.min(1, (dv - min) / 7));
@@ -95,7 +95,7 @@
     }
 
     // Plot frame.
-    ctx.strokeStyle = 'rgba(120,235,225,0.35)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.35)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.strokeRect(px0, py0, px1 - px0, py1 - py0);
 
@@ -117,7 +117,7 @@
     }
 
     // Axes labels.
-    ctx.fillStyle = 'rgba(78,205,196,0.6)';
+    ctx.fillStyle = 'rgba(78,205,196,0.6)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7.5px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillText('departure day →', (px0 + px1) / 2, py1 + 18);
@@ -141,9 +141,9 @@
       ctx.fillStyle = ramp(min + f * 7, min);
       ctx.fillRect(cbx, py1 - f * (py1 - py0), cbw, (py1 - py0) / 40 + 1);
     }
-    ctx.strokeStyle = 'rgba(120,235,225,0.3)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.3)'; // a3-keep: Lab figure art, palette review at the end
     ctx.strokeRect(cbx, py0, cbw, py1 - py0);
-    ctx.fillStyle = 'rgba(78,205,196,0.7)';
+    ctx.fillStyle = 'rgba(78,205,196,0.7)'; // a3-keep: Lab figure art, palette review at the end
     ctx.textAlign = 'left';
     ctx.font = "7px 'Space Mono', monospace";
     ctx.fillText(`${min.toFixed(1)}`, cbx + cbw + 2, py1);

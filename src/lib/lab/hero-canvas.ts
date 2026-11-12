@@ -75,7 +75,7 @@ export function drawHonestyLine(
   ctx.textAlign = 'left';
   ctx.textBaseline = 'alphabetic';
   ctx.font = "7px 'Space Mono', monospace";
-  ctx.fillStyle = 'rgba(78,205,196,0.6)';
+  ctx.fillStyle = 'rgba(78,205,196,0.6)'; // a3-keep: Lab figure art, palette review at the end
   ctx.fillText(provenanceText, 8, HERO_H - 16);
   if (assumptionsText) {
     ctx.fillStyle = 'rgba(255,255,255,0.4)';

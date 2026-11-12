@@ -21,7 +21,7 @@
   /* a3-keep: success "ok" state, a green (hue 163), not an accent */
   --color-ok: #2dd4a8;
   --color-mars: #c1440e;
-  --color-earth: #4b9cd3;
+  --color-earth: #4b9cd3; /* a3-keep: body / agency identity colour token, palette review at the end */
   --color-gold: #ffc850;
 
   /* Text */
@@ -90,7 +90,7 @@
   --color-isro: #ff9933;
   --color-roscosmos: #8b0000;
   --color-jaxa: #003087;
-  --color-spacex: #005288;
+  --color-spacex: #005288; /* a3-keep: body / agency identity colour token, palette review at the end */
 }
 
 @media (max-width: 600px) {

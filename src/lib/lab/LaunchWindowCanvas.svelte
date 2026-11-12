@@ -39,7 +39,7 @@
   let canvas = $state<HTMLCanvasElement | null>(null);
   let hasAnimated = false;
 
-  const TEAL = '78,205,196';
+  const TEAL = '78,205,196'; // a3-keep: Lab figure art, palette review at the end
   const GOLD = '255,200,80';
   const departR = $derived(figure.departInner ? figure.innerDrawR : figure.outerDrawR);
   const arriveR = $derived(figure.departInner ? figure.outerDrawR : figure.innerDrawR);
@@ -56,7 +56,7 @@
     heroBackground(ctx, W / 2, H / 2);
 
     // orbits
-    ctx.strokeStyle = `rgba(${TEAL},0.25)`;
+    ctx.strokeStyle = `rgba(${TEAL},0.25)`; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     for (const r of [figure.innerDrawR, figure.outerDrawR]) {
       ctx.beginPath();
@@ -77,7 +77,7 @@
     const ecx = cx;
     const ecy = cy + departR - A; // ellipse centre on the vertical axis
     ctx.save();
-    ctx.strokeStyle = `rgba(${TEAL},0.85)`;
+    ctx.strokeStyle = `rgba(${TEAL},0.85)`; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1.6;
     ctx.setLineDash([4, 3]);
     ctx.beginPath();
@@ -104,7 +104,7 @@
 
     // arrival point (faint) at top of arrive orbit
     const [ax, ay] = pos(-Math.PI / 2, arriveR);
-    ctx.strokeStyle = `rgba(${TEAL},0.5)`;
+    ctx.strokeStyle = `rgba(${TEAL},0.5)`; // a3-keep: Lab figure art, palette review at the end
     ctx.beginPath();
     ctx.arc(ax, ay, 3, 0, Math.PI * 2);
     ctx.stroke();
@@ -112,8 +112,8 @@
     // planets
     const [dx, dy] = pos(departAng, departR);
     const [tx, ty] = pos(arriveAng, arriveR);
-    heroGlow(ctx, dx, dy, 10, TEAL, 0.6);
-    ctx.fillStyle = `rgb(${TEAL})`;
+    heroGlow(ctx, dx, dy, 10, TEAL, 0.6); // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = `rgb(${TEAL})`; // a3-keep: Lab figure art, palette review at the end
     ctx.beginPath();
     ctx.arc(dx, dy, 4.5, 0, Math.PI * 2);
     ctx.fill();
@@ -125,7 +125,7 @@
     // labels
     ctx.font = "8px 'Space Mono', monospace";
     ctx.textAlign = 'center';
-    ctx.fillStyle = `rgba(${TEAL},0.9)`;
+    ctx.fillStyle = `rgba(${TEAL},0.9)`; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(t(figure.departLabelKey), dx, dy + 16);
     ctx.fillStyle = `rgba(${GOLD},0.95)`;
     ctx.fillText(t(figure.arriveLabelKey), tx, ty - 9);
@@ -133,11 +133,11 @@
     // readouts (right)
     ctx.textAlign = 'left';
     const rx = 330;
-    ctx.fillStyle = `rgba(${TEAL},0.85)`;
+    ctx.fillStyle = `rgba(${TEAL},0.85)`; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "700 10px 'Space Mono', monospace";
     ctx.fillText('LAUNCH WINDOW', rx, 90);
     ctx.font = "9px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(200,222,235,0.8)';
+    ctx.fillStyle = 'rgba(200,222,235,0.8)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(`phase angle  ${figure.requiredPhaseDeg.toFixed(0)}°`, rx, 112);
     ctx.fillText(`synodic  ${figure.synodicDays.toFixed(0)} d`, rx, 128);
     ctx.fillText(`transfer  ${figure.transferDays.toFixed(0)} d`, rx, 144);

@@ -419,7 +419,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         if (i === 0) ctx2.moveTo(x, y);
         else ctx2.lineTo(x, y);
       }
-      ctx2.strokeStyle = 'rgba(75,156,211,0.35)';
+      ctx2.strokeStyle = 'rgba(75,156,211,0.35)'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.lineWidth = 1;
       ctx2.stroke();
       ctx2.beginPath();
@@ -536,15 +536,15 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.stroke();
 
       const PHASE_COLORS_2D: Record<string, string> = {
-        parking: '#4b9cd3',
+        parking: '#4b9cd3', // a3-keep: trajectory phase / Earth identity colour, palette review at the end
         tli_coast: '#ffd166',
         lunar_orbit: '#c77dff',
         lunar_flyby: '#ff9933',
         descent: '#ef476f',
         ascent: '#ef476f',
-        tei_coast: '#06d6a0',
+        tei_coast: '#06d6a0', // a3-keep: trajectory phase / Earth identity colour, palette review at the end
         reentry: '#ef476f',
-        spiral_earth: '#4b9cd3',
+        spiral_earth: '#4b9cd3', // a3-keep: trajectory phase / Earth identity colour, palette review at the end
         spiral_lunar: '#c77dff',
       };
 
@@ -567,15 +567,15 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
 
       // Earth at origin.
       const eg = ctx2.createRadialGradient(cx, cy, 0, cx, cy, 12);
-      eg.addColorStop(0, 'rgba(75,156,211,0.55)');
-      eg.addColorStop(1, 'rgba(75,156,211,0)');
+      eg.addColorStop(0, 'rgba(75,156,211,0.55)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
+      eg.addColorStop(1, 'rgba(75,156,211,0)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.beginPath();
       ctx2.arc(cx, cy, 12, 0, Math.PI * 2);
       ctx2.fillStyle = eg;
       ctx2.fill();
       ctx2.beginPath();
       ctx2.arc(cx, cy, 5, 0, Math.PI * 2);
-      ctx2.fillStyle = '#4b9cd3';
+      ctx2.fillStyle = '#4b9cd3'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.fill();
       ctx2.font = "bold 9px 'Space Mono', monospace";
       ctx2.fillStyle = 'rgba(255,255,255,0.85)';
@@ -663,7 +663,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // LAUNCH anchor ring (where Earth was at depDay).
       ctx2.beginPath();
       ctx2.arc(ptX(eAnchor.x), ptZ(eAnchor.z), 14, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(75,156,211,0.7)';
+      ctx2.strokeStyle = 'rgba(75,156,211,0.7)'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.lineWidth = 1.2;
       ctx2.stroke();
       ctx2.font = "bold 9px 'Space Mono', monospace";
@@ -682,15 +682,15 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       const ex = ptX(eLive.x);
       const ey = ptZ(eLive.z);
       const eg = ctx2.createRadialGradient(ex, ey, 0, ex, ey, 14);
-      eg.addColorStop(0, 'rgba(75,156,211,0.6)');
-      eg.addColorStop(1, 'rgba(75,156,211,0)');
+      eg.addColorStop(0, 'rgba(75,156,211,0.6)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
+      eg.addColorStop(1, 'rgba(75,156,211,0)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.beginPath();
       ctx2.arc(ex, ey, 14, 0, Math.PI * 2);
       ctx2.fillStyle = eg;
       ctx2.fill();
       ctx2.beginPath();
       ctx2.arc(ex, ey, 6, 0, Math.PI * 2);
-      ctx2.fillStyle = '#4b9cd3';
+      ctx2.fillStyle = '#4b9cd3'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.fill();
       ctx2.fillText(m.nav_earth(), ex + 11, ey + 3);
       // Live Moon — halo + disc.
@@ -729,7 +729,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // LAUNCH anchor ring (where Earth was at depDay).
       ctx2.beginPath();
       ctx2.arc(eAx, eAy, 12, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(75,156,211,0.7)';
+      ctx2.strokeStyle = 'rgba(75,156,211,0.7)'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.lineWidth = 1.2;
       ctx2.stroke();
       ctx2.font = "bold 9px 'Space Mono', monospace";
@@ -746,15 +746,15 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.fillText(m.fly_event_arrival(), mAx + 14, mAy + 3);
       // Live Earth — halo + disc.
       const eg = ctx2.createRadialGradient(ex, ey, 0, ex, ey, 14);
-      eg.addColorStop(0, 'rgba(75,156,211,0.6)');
-      eg.addColorStop(1, 'rgba(75,156,211,0)');
+      eg.addColorStop(0, 'rgba(75,156,211,0.6)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
+      eg.addColorStop(1, 'rgba(75,156,211,0)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.beginPath();
       ctx2.arc(ex, ey, 14, 0, Math.PI * 2);
       ctx2.fillStyle = eg;
       ctx2.fill();
       ctx2.beginPath();
       ctx2.arc(ex, ey, 5, 0, Math.PI * 2);
-      ctx2.fillStyle = '#4b9cd3';
+      ctx2.fillStyle = '#4b9cd3'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.fill();
       ctx2.fillText(m.nav_earth(), ex + 9, ey + 3);
       // Live Mars — halo + disc.

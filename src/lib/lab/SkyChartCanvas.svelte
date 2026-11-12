@@ -77,19 +77,19 @@
     ctx.restore();
 
     // Dome edge + horizon.
-    ctx.strokeStyle = 'rgba(78,205,196,0.25)';
+    ctx.strokeStyle = 'rgba(78,205,196,0.25)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(cx, horizonY, R, Math.PI, Math.PI * 2);
     ctx.stroke();
-    ctx.strokeStyle = 'rgba(120,235,225,0.4)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.4)'; // a3-keep: Lab figure art, palette review at the end
     ctx.beginPath();
     ctx.moveTo(cx - R, horizonY);
     ctx.lineTo(cx + R, horizonY);
     ctx.stroke();
 
     // Compass hints.
-    ctx.fillStyle = 'rgba(120,235,225,0.55)';
+    ctx.fillStyle = 'rgba(120,235,225,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "8px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillText('W', cx - R + 8, horizonY - 5);
@@ -119,7 +119,7 @@
 
     // Elongation arc traced along the dome from Sun to planet — the "this far apart in the sky"
     // separation. domePt(a) sits at canvas angle (180 + a)°.
-    ctx.strokeStyle = 'rgba(120,235,225,0.6)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.6)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 2;
     ctx.beginPath();
     const arcR = R * 0.9;
@@ -146,7 +146,7 @@
 
     // ε label at the planet.
     if (progress > 0.6) {
-      ctx.fillStyle = 'rgba(120,235,225,0.9)';
+      ctx.fillStyle = 'rgba(120,235,225,0.9)'; // a3-keep: Lab figure art, palette review at the end
       ctx.textAlign = eastern ? 'left' : 'right';
       ctx.fillText(`${eps.toFixed(0)}°`, pl.x + (eastern ? 8 : -8), pl.y);
     }

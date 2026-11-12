@@ -113,14 +113,14 @@ function labelSprite(
 const GLOW_STOPS: Record<LocalGroupKind, Array<[number, string]>> = {
   spiral: [
     [0, 'rgba(228,236,232,0.42)'],
-    [0.3, 'rgba(120,206,196,0.22)'],
-    [0.62, 'rgba(92,182,176,0.08)'],
-    [1, 'rgba(70,160,158,0)'],
+    [0.3, 'rgba(120,206,196,0.22)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    [0.62, 'rgba(92,182,176,0.08)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    [1, 'rgba(70,160,158,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   ],
   irregular: [
-    [0, 'rgba(194,234,226,0.4)'],
-    [0.45, 'rgba(120,202,192,0.15)'],
-    [1, 'rgba(96,182,176,0)'],
+    [0, 'rgba(194,234,226,0.4)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    [0.45, 'rgba(120,202,192,0.15)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    [1, 'rgba(96,182,176,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   ],
   'dwarf-elliptical': [
     [0, 'rgba(250,222,172,0.44)'],
@@ -133,9 +133,9 @@ const GLOW_STOPS: Record<LocalGroupKind, Array<[number, string]>> = {
     [1, 'rgba(210,168,124,0)'],
   ],
   'dwarf-irregular': [
-    [0, 'rgba(198,232,226,0.38)'],
-    [0.5, 'rgba(128,200,192,0.12)'],
-    [1, 'rgba(108,182,176,0)'],
+    [0, 'rgba(198,232,226,0.38)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    [0.5, 'rgba(128,200,192,0.12)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+    [1, 'rgba(108,182,176,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   ],
 };
 
@@ -296,11 +296,11 @@ export function createLocalGroupScene(
           new THREE.SpriteMaterial({
             map: track(
               radialTexture([
-                [0, 'rgba(78,205,196,0)'],
-                [0.74, 'rgba(78,205,196,0)'],
-                [0.84, 'rgba(78,205,196,0.9)'],
-                [0.94, 'rgba(78,205,196,0)'],
-                [1, 'rgba(78,205,196,0)'],
+                [0, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                [0.74, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                [0.84, 'rgba(78,205,196,0.9)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                [0.94, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+                [1, 'rgba(78,205,196,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
               ]),
             ),
             transparent: true,
@@ -315,7 +315,7 @@ export function createLocalGroupScene(
       scene.add(ring);
     }
 
-    const labelColor = m.headliner ? 'rgba(120,214,255,0.96)' : 'rgba(180,196,224,0.72)';
+    const labelColor = m.headliner ? 'rgba(120,214,255,0.96)' : 'rgba(180,196,224,0.72)'; // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     const {
       sprite: label,
       texture: labelTex,

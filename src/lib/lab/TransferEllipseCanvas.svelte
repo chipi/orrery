@@ -6,7 +6,7 @@
 -->
 <script lang="ts">
   import type { FigureSpec } from '$lib/physics/spec';
-  import { fidelityStyle, fidelityLabel, GOLD, TEAL } from './figure-style';
+  import { fidelityStyle, fidelityLabel, GOLD, TEAL } from './figure-style'; // a3-keep: Lab figure art, palette review at the end
   import { BODY_PALETTE } from '$lib/body-palette';
   import {
     HERO_W as W,
@@ -48,7 +48,7 @@
     if (figure.frame === 'heliocentric') return { core: '#fff6d8', glow: '255,200,80' };
     const id = figure.bodies[0]?.labelKey.split('.').pop() ?? '';
     const pal = BODY_PALETTE[id];
-    return pal ? { core: pal.core, glow: pal.glowRGB } : { core: '#dffcfa', glow: '78,205,196' };
+    return pal ? { core: pal.core, glow: pal.glowRGB } : { core: '#dffcfa', glow: '78,205,196' }; // a3-keep: Lab figure art, palette review at the end
   });
 
   let canvas = $state<HTMLCanvasElement | null>(null);
@@ -59,7 +59,7 @@
     heroBackground(ctx, cx, cy);
 
     // Start + target circular orbits (radii from the burn marks).
-    ctx.strokeStyle = 'rgba(78,205,196,0.26)';
+    ctx.strokeStyle = 'rgba(78,205,196,0.26)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     for (const mk of figure.marks) {
       ctx.beginPath();
@@ -87,7 +87,7 @@
         for (let i = 1; i <= upto; i += 1) ctx.lineTo(px(arc[i].x), py(arc[i].y));
       };
       const arcGlowRGB =
-        fs.stroke === TEAL ? '78,205,196' : fs.stroke === GOLD ? '255,200,80' : '193,68,14';
+        fs.stroke === TEAL ? '78,205,196' : fs.stroke === GOLD ? '255,200,80' : '193,68,14'; // a3-keep: Lab figure art, palette review at the end
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
       ctx.strokeStyle = `rgba(${arcGlowRGB},0.35)`;
@@ -124,7 +124,7 @@
     ctx.globalAlpha = 1;
 
     if (figure.bodies[0]) {
-      ctx.fillStyle = 'rgba(78,205,196,0.85)';
+      ctx.fillStyle = 'rgba(78,205,196,0.85)'; // a3-keep: Lab figure art, palette review at the end
       ctx.fillText(t(figure.bodies[0].labelKey), bx, by + 18);
     }
 

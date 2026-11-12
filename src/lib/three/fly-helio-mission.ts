@@ -222,7 +222,7 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
   const depMarker = new THREE.Mesh(
     new THREE.TorusGeometry(12, 0.25, 12, 64),
     new THREE.MeshBasicMaterial({
-      color: 0x4b9cd3,
+      color: 0x4b9cd3, // a3-keep: Earth identity colour (launch/return), palette review at the end
       transparent: true,
       opacity: 0.85,
       depthWrite: false,
@@ -244,7 +244,7 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
   const retMarker = new THREE.Mesh(
     new THREE.TorusGeometry(12, 0.25, 12, 64),
     new THREE.MeshBasicMaterial({
-      color: 0x4b9cd3,
+      color: 0x4b9cd3, // a3-keep: Earth identity colour (launch/return), palette review at the end
       transparent: true,
       opacity: 0.85,
       depthWrite: false,
@@ -277,9 +277,9 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
   const depCanvas = dep.canvas;
   const arrCanvas = arr.canvas;
   const retCanvas = ret.canvas;
-  drawLabelTexture(depCanvas, 'LAUNCH', '—', '#4b9cd3');
+  drawLabelTexture(depCanvas, 'LAUNCH', '—', '#4b9cd3'); // a3-keep: Earth identity colour (launch/return), palette review at the end
   drawLabelTexture(arrCanvas, 'ARRIVAL', '—', '#c1440e');
-  drawLabelTexture(retCanvas, 'RETURN', '—', '#4b9cd3');
+  drawLabelTexture(retCanvas, 'RETURN', '—', '#4b9cd3'); // a3-keep: Earth identity colour (launch/return), palette review at the end
   (depLabelSprite.material.map as THREE.Texture).needsUpdate = true;
   (arrLabelSprite.material.map as THREE.Texture).needsUpdate = true;
   (retLabelSprite.material.map as THREE.Texture).needsUpdate = true;

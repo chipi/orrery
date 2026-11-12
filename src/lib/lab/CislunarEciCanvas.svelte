@@ -64,7 +64,7 @@
     };
 
     // Moon's orbit.
-    ctx.strokeStyle = 'rgba(120,235,225,0.18)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.18)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(cx, cy, moonDist * s, 0, Math.PI * 2);
@@ -106,13 +106,13 @@
     };
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    ctx.strokeStyle = 'rgba(78,205,196,0.35)';
+    ctx.strokeStyle = 'rgba(78,205,196,0.35)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 5;
     ctx.lineCap = 'round';
     strokeArc();
     ctx.stroke();
     ctx.restore();
-    ctx.strokeStyle = '#4ecdc4';
+    ctx.strokeStyle = '#4ecdc4'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 2;
     strokeArc();
     ctx.stroke();
@@ -123,7 +123,7 @@
     ctx.beginPath();
     ctx.arc(cx, cy, Math.max(4, figure.earthRadiusKm * s), 0, Math.PI * 2);
     ctx.fill();
-    ctx.strokeStyle = 'rgba(120,235,225,0.55)';
+    ctx.strokeStyle = 'rgba(120,235,225,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(cx, cy, Math.max(7, rLeo * s), 0, Math.PI * 2);
@@ -154,7 +154,7 @@
     // Readouts.
     ctx.textAlign = 'left';
     ctx.font = "8px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(120,235,225,0.85)';
+    ctx.fillStyle = 'rgba(120,235,225,0.85)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(`TLI ${figure.tliKms.toFixed(2)} km/s`, 12, 20);
     ctx.fillText(`LOI ${figure.loiKms.toFixed(2)} km/s`, 12, 32);
     ctx.fillText(`coast ${figure.tofDays.toFixed(1)} d`, 12, 44);

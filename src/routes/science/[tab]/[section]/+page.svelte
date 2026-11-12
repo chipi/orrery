@@ -430,7 +430,6 @@
     border-radius: 2px;
     color: rgba(255, 255, 255, 0.6);
   }
-  /* a3-keep: tier name, colour is --color-state (UXD-001) */
   .tier-intro {
     border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     color: var(--color-state);

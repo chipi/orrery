@@ -30,7 +30,7 @@ describe('accent tokens (UX A3)', () => {
     for (const name of ['teal', 'tier-intro']) expect(css).not.toContain(`--color-${name}`);
   });
 
-  it('keeps the UI blues and the ok green outside the teal hue band', () => {
+  it('keeps the UI blues outside the teal hue band and defines --color-ok', () => {
     for (const name of ['color-accent', 'color-accent-hover', 'color-state', 'color-focus']) {
       const h = hue(token(name)!);
       expect(h < 155 || h > 200, `${name} hue ${h}`).toBe(true);

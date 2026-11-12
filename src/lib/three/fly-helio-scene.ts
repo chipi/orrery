@@ -203,7 +203,7 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
   mars: { size: 1.9, color: 0xc1440e },
   jupiter: { size: 5.5, color: 0xc88b3a },
   saturn: { size: 4.8, color: 0xe4d191 },
-  uranus: { size: 3.4, color: 0x7de8e8 },
+  uranus: { size: 3.4, color: 0x7de8e8 }, // a3-keep: planet / Earth identity colour, palette review at the end
   neptune: { size: 3.4, color: 0x3f54ba },
   pluto: { size: 0.9, color: 0xb9a895 },
   ceres: { size: 0.6, color: 0xa8a499 },
@@ -574,7 +574,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   scene.add(kuiperBelt);
 
   // Earth orbit + initial destination orbit (Mars by default).
-  const earthOrbitLine = buildPathRing(earthOrbitPath(), 0x4b9cd3);
+  const earthOrbitLine = buildPathRing(earthOrbitPath(), 0x4b9cd3); // a3-keep: planet / Earth identity colour, palette review at the end
   let destinationOrbitLine = buildBodyOrbitRing('mars', 0xc1440e);
   scene.add(earthOrbitLine);
   scene.add(destinationOrbitLine);
@@ -965,7 +965,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     if (planetRadius == null) continue;
     const geo = new THREE.SphereGeometry(planetRadius * 4, 24, 16);
     const mat = new THREE.MeshBasicMaterial({
-      color: id === 'jupiter' ? 0xff66dd : 0x66ddff,
+      color: id === 'jupiter' ? 0xff66dd : 0x66ddff, // a3-keep: planet / Earth identity colour, palette review at the end
       transparent: true,
       opacity: 0.08,
       side: THREE.BackSide,

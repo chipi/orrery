@@ -151,7 +151,7 @@ const BLUEPRINT_VISITOR_OUTLINE = 'rgba(255, 200, 80, 0.75)';
 const BLUEPRINT_VISITOR_FILL = 'rgba(255, 200, 80, 0.08)';
 const BLUEPRINT_SELECTED = '#8aa0ff';
 const BLUEPRINT_HOVER = 'rgba(138, 160, 255, 0.95)';
-const BLUEPRINT_LABEL = 'rgba(220, 230, 235, 0.8)';
+const BLUEPRINT_LABEL = 'rgba(226, 232, 255, 0.8)';
 
 export function drawBlueprint(
   ctx: CanvasRenderingContext2D,

@@ -84,7 +84,7 @@ export interface CislunarOverlays {
   gravityEarth: BoldArrow;
   /** Moon-gravity arrow (gray) on the spacecraft → Moon direction. */
   gravityMoon: BoldArrow;
-  /** Velocity tangent arrow (teal). */
+  /** Velocity tangent arrow (accent blue). */
   velocity: BoldArrow;
   /** Centripetal arrow (red), points toward the dominant body. */
   centripetal: BoldArrow;

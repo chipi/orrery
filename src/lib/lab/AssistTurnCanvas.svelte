@@ -33,7 +33,7 @@
   );
   const ariaLabel = $derived(ariaLabelKey ? t(ariaLabelKey) : `Gravity assist · ${provenanceText}`);
 
-  const TEAL = '78,205,196';
+  const TEAL = '78,205,196'; // a3-keep: Lab figure art, palette review at the end
   const GOLD = '255,200,80';
   let canvas = $state<HTMLCanvasElement | null>(null);
   let hasAnimated = false;
@@ -72,10 +72,10 @@
     const turn = (figure.turnDeg * Math.PI) / 180;
 
     // planet at the origin (the deflector)
-    heroGlow(ctx, ox, oy, 16, TEAL, 0.4);
+    heroGlow(ctx, ox, oy, 16, TEAL, 0.4); // a3-keep: Lab figure art, palette review at the end
     const g = ctx.createRadialGradient(ox - 3, oy - 3, 1, ox, oy, 9);
-    g.addColorStop(0, 'rgba(120,215,235,0.95)');
-    g.addColorStop(1, 'rgba(40,90,120,0.7)');
+    g.addColorStop(0, 'rgba(120,215,235,0.95)'); // a3-keep: Lab figure art, palette review at the end
+    g.addColorStop(1, 'rgba(40,90,120,0.7)'); // a3-keep: Lab figure art, palette review at the end
     ctx.fillStyle = g;
     ctx.beginPath();
     ctx.arc(ox, oy, 9, 0, Math.PI * 2);
@@ -84,13 +84,13 @@
     // v_in (along +x) and v_out (deflected up by turn)
     const inTip: [number, number] = [ox + L, oy];
     const outTip: [number, number] = [ox + L * Math.cos(-turn), oy + L * Math.sin(-turn)];
-    arrow(ctx, ox, oy, inTip[0], inTip[1], TEAL, 2);
-    arrow(ctx, ox, oy, outTip[0], outTip[1], TEAL, 2);
+    arrow(ctx, ox, oy, inTip[0], inTip[1], TEAL, 2); // a3-keep: Lab figure art, palette review at the end
+    arrow(ctx, ox, oy, outTip[0], outTip[1], TEAL, 2); // a3-keep: Lab figure art, palette review at the end
     // Δv closing vector (in tip → out tip)
     arrow(ctx, inTip[0], inTip[1], outTip[0], outTip[1], GOLD, 2);
 
     // turn-angle arc
-    ctx.strokeStyle = `rgba(${TEAL},0.5)`;
+    ctx.strokeStyle = `rgba(${TEAL},0.5)`; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(ox, oy, 30, -turn, 0);
@@ -99,7 +99,7 @@
     // labels
     ctx.font = "8px 'Space Mono', monospace";
     ctx.textAlign = 'left';
-    ctx.fillStyle = `rgba(${TEAL},0.9)`;
+    ctx.fillStyle = `rgba(${TEAL},0.9)`; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText('v∞ in', inTip[0] + 4, inTip[1] + 4);
     ctx.fillText('v∞ out', outTip[0] + 4, outTip[1]);
     ctx.fillStyle = `rgba(${GOLD},0.95)`;
@@ -109,16 +109,16 @@
 
     // readouts (top-right)
     const rx = 320;
-    ctx.fillStyle = `rgba(${TEAL},0.85)`;
+    ctx.fillStyle = `rgba(${TEAL},0.85)`; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "700 10px 'Space Mono', monospace";
     ctx.fillText('GRAVITY ASSIST', rx, 54);
     ctx.font = "9px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(200,222,235,0.8)';
+    ctx.fillStyle = 'rgba(200,222,235,0.8)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(`v∞     ${figure.vInfKms.toFixed(1)} km/s`, rx, 76);
     ctx.fillText(`turn   ${figure.turnDeg.toFixed(0)}°`, rx, 92);
     ctx.fillStyle = `rgba(${GOLD},0.9)`;
     ctx.fillText(`max Δv  ${figure.boostKms.toFixed(1)} km/s`, rx, 108);
-    ctx.fillStyle = 'rgba(200,222,235,0.6)';
+    ctx.fillStyle = 'rgba(200,222,235,0.6)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "8px 'Space Mono', monospace";
     ctx.fillText('= 2·v∞ at a 180° turn', rx, 122);
     ctx.fillText('free — no propellant', rx, 136);

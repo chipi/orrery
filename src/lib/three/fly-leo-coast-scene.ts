@@ -183,7 +183,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   // point of orbit is that gravity IS the centripetal force, so the inward
   // gravity + inward centripetal arrows sit alongside each other to show they
   // coincide. Colors match the ascent/descent force legend (weight=red,
-  // velocity=cyan) with a distinct gold centripetal.
+  // velocity=accent blue) with a distinct gold centripetal.
   const COAST_FORCE_COLORS = { weight: 0xff5a5a, velocity: 0x8aa0ff, centripetal: 0xffc850 };
   // Length is set per-frame from the camera distance so the arrows hold a
   // constant on-screen size (~11% of the view) instead of a fixed world size

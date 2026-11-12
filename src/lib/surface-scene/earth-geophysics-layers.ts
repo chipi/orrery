@@ -310,7 +310,7 @@ export function buildHydrosphere(opts: HydrosphereOpts): GeoLayerHandle {
   // distinct envelope rather than a flat overlay.
   const rimGeo = new THREE.SphereGeometry(opts.planetRadius * 1.03, 48, 32);
   const rimMat = new THREE.MeshBasicMaterial({
-    color: 0x6fd3f0,
+    color: 0x6fd3f0, // a3-keep: science layer colour (water sheen), palette review at the end
     transparent: true,
     opacity: 0.5,
     side: THREE.BackSide,

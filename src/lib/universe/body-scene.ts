@@ -60,7 +60,7 @@ function planetSize(radiusEarth: number): number {
 /** Rough procedural body colour by size class (rocky → sub-Neptune → gas). */
 function planetColor(radiusEarth: number): THREE.Color {
   if (radiusEarth < 1.6) return new THREE.Color(0xc2a184); // rocky, warm rock-brown
-  if (radiusEarth < 4) return new THREE.Color(0x7fb8dd); // sub-Neptune, hazy blue
+  if (radiusEarth < 4) return new THREE.Color(0x7fb8dd); // sub-Neptune, hazy blue // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
   return new THREE.Color(0xdcae72); // gas giant, banded tan
 }
 

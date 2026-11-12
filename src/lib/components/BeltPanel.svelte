@@ -505,7 +505,6 @@
     color: rgba(255, 255, 255, 0.7);
     background: rgba(255, 255, 255, 0.08);
   }
-  /* a3-keep: tier name, colour is --color-state (UXD-001) */
   .tier-intro {
     background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     color: var(--color-state);

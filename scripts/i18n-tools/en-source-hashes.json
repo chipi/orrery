@@ -3460,13 +3460,13 @@
     "C3": "63cd536e54",
     "Cepheid variable": "9e2690a9d6",
     "Doppler effect": "59caf337ad",
-    "H II region": "2c634bdd40",
+    "H II region": "a934f97ca9",
     "Hohmann transfer": "07e6d4e2e8",
     "Lagrange point": "e145b2d020",
     "Messier catalogue": "80ca40af58",
     "RR Lyrae variable": "6897cdaf4b",
     "Seyfert galaxy": "8c9a56a191",
-    "Type Ia supernova": "1b1a7b36e1",
+    "Type Ia supernova": "8d6fb3ba2a",
     "Wolf–Rayet star": "1d1df4b55e",
     "accretion disk": "ce0f677b17",
     "active galactic nucleus": "71ff09619f",
@@ -3486,7 +3486,7 @@
     "brown dwarf": "cb6cfd0ca7",
     "burn": "69b0da5e16",
     "capsule": "4cb0119883",
-    "cometary knot": "8b719eba0c",
+    "cometary knot": "da486d6e04",
     "dark matter": "25a99b9350",
     "dark nebula": "7aa0a4921d",
     "delta-v": "c823a45be3",
@@ -3507,7 +3507,7 @@
     "general relativity": "3e47be5478",
     "geostationary": "0b260a571e",
     "globular cluster": "0008113977",
-    "grand-design spiral": "b1618135af",
+    "grand-design spiral": "7a6390abf3",
     "gravitational lensing": "69019db9ef",
     "gravitational microlensing": "6cbc8b778b",
     "gravity assist": "fc175bee12",
@@ -3525,7 +3525,7 @@
     "light echo": "6e8bd6efee",
     "light-year": "fc561ec685",
     "low Earth orbit": "8db733a0af",
-    "luminous red nova": "da45984b2f",
+    "luminous red nova": "68a9d0a388",
     "magnetosphere": "643f280e4b",
     "maser": "c6db0848b5",
     "microgravity": "e682241510",
@@ -3547,7 +3547,7 @@
     "polarimetry": "a5b07a67e1",
     "propellant": "ddf4358926",
     "protostar": "d449756cfd",
-    "protostellar outflow": "03a873cbe6",
+    "protostellar outflow": "92a43c41b4",
     "pulsar": "67c5196f40",
     "red giant": "bd49515ddb",
     "reflection nebula": "ff43eff23d",
@@ -3570,7 +3570,7 @@
     "starburst": "f529e1e53d",
     "stellar-mass black hole": "2cee17ea77",
     "sun-synchronous": "6217cea0da",
-    "super star cluster": "ddac0a7d5c",
+    "super star cluster": "f08bfff863",
     "supermassive black hole": "18d5d78c2b",
     "supernova": "7b36c02845",
     "supernova remnant": "21a2dc2069",
@@ -3580,7 +3580,7 @@
     "upper stage": "a72956c050",
     "variable star": "4856fac0fc",
     "white dwarf": "d15bd6067f",
-    "white dwarf cooling track": "09a5a8cf7f"
+    "white dwarf cooling track": "723093b7fc"
   },
   "iss-modules/beam.json": {
     "description": "4156fec67a",
@@ -4062,7 +4062,6 @@
     "belt_label_total_mass": "32891292e7",
     "belt_member_open": "f3d789e06a",
     "belt_members_intro": "ec30872d28",
-    "belt_science_cta": "5f89be3dab",
     "bh_fiction_badge": "77d0760359",
     "card_cat_cargo_spacecraft": "d297aae090",
     "card_cat_constellation": "4d8a233b7f",
@@ -4146,44 +4145,26 @@
     "chip_label_ballistic_coefficient": "487055930f",
     "chip_label_blackout": "69367f3946",
     "chip_label_c3": "8a8e773eae",
-    "chip_label_cislunar_orbits": "1b7b2ede43",
-    "chip_label_crew_dynamics_psychology": "f8fcbacc72",
-    "chip_label_crew_selection": "06d4c6214c",
-    "chip_label_crewed_station_design": "d44456fc9d",
     "chip_label_deorbit": "7c3664404e",
     "chip_label_departure_axis": "bb1711fd2a",
-    "chip_label_disposal_end_of_life": "dd86cf2085",
     "chip_label_dv_budget": "0c8ff44781",
     "chip_label_dv_heatmap": "f7a0e6b513",
     "chip_label_eccentricity": "0dffd6046f",
-    "chip_label_eclss_life_support": "2acdf9c6a3",
     "chip_label_edl": "c38fe2cb43",
     "chip_label_engine_clustering": "89dd60b625",
     "chip_label_engine_types": "ebf0f60c2b",
     "chip_label_entry_heating": "aee9b849a9",
-    "chip_label_eva": "b15b263d64",
-    "chip_label_eva_physiology": "0ad87c0093",
-    "chip_label_expedition_cadence": "830f24672e",
     "chip_label_inclination": "6af931a82c",
     "chip_label_launch": "3414f28e79",
     "chip_label_light_minute": "e7a3a2c015",
     "chip_label_max_q": "f37cdc9656",
     "chip_label_met": "963f5f16f8",
     "chip_label_mission_types": "eac6f45ee9",
-    "chip_label_node_module": "09b665dc2a",
     "chip_label_orbit_insertion": "9161819122",
     "chip_label_orbit_regimes": "c925006046",
-    "chip_label_pre_flight_training": "f9b11e32e4",
-    "chip_label_pressurized_volume": "d4857e61d7",
     "chip_label_propulsive_landing": "f26b8620b8",
     "chip_label_semi_major_axis": "6e1bc2eb5d",
     "chip_label_skycrane": "8c3865b843",
-    "chip_label_sleep_nutrition_circadian": "5c76a7f131",
-    "chip_label_solar_power_budget": "c02906246f",
-    "chip_label_space_debris": "ada217ee2b",
-    "chip_label_special_orbits": "903b211cec",
-    "chip_label_suit_lineage": "14a8a3c41f",
-    "chip_label_sun_synchronous": "c8879d8fee",
     "chip_label_tcm": "7fc5c642f1",
     "chip_label_terminal_velocity": "af296b3158",
     "chip_label_tof_axis": "9485aecf33",
@@ -6726,7 +6707,7 @@
     "mp_label_vehicle": "0d21ba691f",
     "mp_label_year": "c0f0cadca0",
     "mp_open_in_fleet_title": "99b0c22582",
-    "mp_science_blurb": "5fbb410f22",
+    "mp_science_blurb": "e5666d18a8",
     "mp_see_path_on_explore": "64cfa9c440",
     "mp_see_tour_on_explore": "93498327a8",
     "mp_surface_lunar_orbit": "dc7dd9bf3b",
@@ -7400,7 +7381,6 @@
     "station_assembly_play_aria": "e4b3928f7b",
     "station_banner_alt_label": "a85e90f983",
     "station_banner_alt_unit": "542c1747ff",
-    "station_banner_eva_link": "228a659827",
     "station_banner_eyebrow": "8606a5f5c2",
     "station_banner_incl_label": "c37d752fa9",
     "station_banner_incl_unit": "ab39a735af",
@@ -11545,8 +11525,8 @@
     "residents.3.agency": "7b0c42d6ea",
     "residents.3.id": "1f1ea64baf",
     "residents.3.label": "9fed676413",
-    "science_link.section": "615b224b52",
-    "science_link.tab": "4f656bc891",
+    "science_link.section": "2bd313f7ce",
+    "science_link.tab": "249cec6cc0",
     "short": "880d4f263c",
     "story": "8c577ab70a"
   },
@@ -11570,7 +11550,7 @@
     "residents.3.agency": "7b0c42d6ea",
     "residents.3.id": "de9b8956fa",
     "residents.3.label": "0310b28d12",
-    "science_link.section": "d8f6ab76e7",
+    "science_link.section": "4a541f4666",
     "science_link.tab": "249cec6cc0",
     "short": "dad5c4bd23",
     "story": "2e620c082d"
@@ -11580,8 +11560,8 @@
     "firsts.0.label": "a997c95547",
     "firsts.1.label": "ddc87e7f9d",
     "name": "841a7ba26a",
-    "science_link.section": "6919406d31",
-    "science_link.tab": "4f656bc891",
+    "science_link.section": "f095160c09",
+    "science_link.tab": "9e2695abef",
     "short": "e0fad46d9e",
     "story": "d274bead51"
   },
@@ -11609,8 +11589,8 @@
     "residents.5.agency": "7b0c42d6ea",
     "residents.5.id": "55c312f2fc",
     "residents.5.label": "787e1bb18c",
-    "science_link.section": "615b224b52",
-    "science_link.tab": "4f656bc891",
+    "science_link.section": "3b86bfaa5d",
+    "science_link.tab": "249cec6cc0",
     "short": "e059f7db99",
     "story": "8ef9d3dd77"
   },
@@ -11630,7 +11610,7 @@
     "residents.0.agency": "7b0c42d6ea",
     "residents.0.id": "ebfa2aea89",
     "residents.0.label": "7a8e22a7a3",
-    "science_link.section": "82f7ff650e",
+    "science_link.section": "f373d829ed",
     "science_link.tab": "4f656bc891",
     "short": "f0af5a9d5c",
     "story": "834ac7df8c"
@@ -11686,7 +11666,7 @@
     "residents.0.agency": "04458d028f",
     "residents.0.id": "4955742b2d",
     "residents.0.label": "1362a2ef5f",
-    "science_link.section": "82f7ff650e",
+    "science_link.section": "f373d829ed",
     "science_link.tab": "4f656bc891",
     "short": "93d805ab63",
     "story": "27183b6f6e"
@@ -12863,15 +12843,12 @@
     "science_sections.1.section": "3da329df90",
     "science_sections.1.tab": "9e2695abef",
     "science_sections.1.why": "910139315d",
-    "science_sections.2.section": "4dfb5d3080",
-    "science_sections.2.tab": "249cec6cc0",
-    "science_sections.2.why": "262f98dfbb",
-    "science_sections.3.section": "3356e1d298",
-    "science_sections.3.tab": "f060b62b91",
-    "science_sections.3.why": "5b3e1bb270",
-    "science_sections.4.section": "4a541f4666",
-    "science_sections.4.tab": "249cec6cc0",
-    "science_sections.4.why": "441b97ec92",
+    "science_sections.2.section": "3356e1d298",
+    "science_sections.2.tab": "f060b62b91",
+    "science_sections.2.why": "5b3e1bb270",
+    "science_sections.3.section": "4a541f4666",
+    "science_sections.3.tab": "249cec6cc0",
+    "science_sections.3.why": "441b97ec92",
     "type": "a4a5a1744e"
   },
   "planets/eurybates.json": {
@@ -12932,9 +12909,6 @@
     "science_sections.3.section": "6919406d31",
     "science_sections.3.tab": "4f656bc891",
     "science_sections.3.why": "532aaf3ab2",
-    "science_sections.4.section": "abb26975b6",
-    "science_sections.4.tab": "249cec6cc0",
-    "science_sections.4.why": "057f60c5cc",
     "type": "04ff917876"
   },
   "planets/leucus.json": {
@@ -12974,12 +12948,9 @@
     "science_sections.2.section": "3356e1d298",
     "science_sections.2.tab": "f060b62b91",
     "science_sections.2.why": "d4f31845c5",
-    "science_sections.3.section": "4a541f4666",
+    "science_sections.3.section": "abb26975b6",
     "science_sections.3.tab": "249cec6cc0",
-    "science_sections.3.why": "09e37b3d5d",
-    "science_sections.4.section": "abb26975b6",
-    "science_sections.4.tab": "249cec6cc0",
-    "science_sections.4.why": "025f8f1a84",
+    "science_sections.3.why": "025f8f1a84",
     "type": "82b8c561e5"
   },
   "planets/menoetius.json": {
@@ -13058,9 +13029,6 @@
     "science_sections.2.section": "82f7ff650e",
     "science_sections.2.tab": "4f656bc891",
     "science_sections.2.why": "4714a37d53",
-    "science_sections.3.section": "abb26975b6",
-    "science_sections.3.tab": "249cec6cc0",
-    "science_sections.3.why": "ff3ff0baf4",
     "type": "7b033f060e"
   },
   "planets/orus.json": {
@@ -13127,18 +13095,15 @@
     "links.4.t": "3dde59ff3d",
     "links.4.u": "bc3f22e28d",
     "name": "7c14ab20f3",
-    "science_sections.0.section": "4dfb5d3080",
+    "science_sections.0.section": "4a541f4666",
     "science_sections.0.tab": "249cec6cc0",
-    "science_sections.0.why": "7f2eeceae1",
-    "science_sections.1.section": "4a541f4666",
-    "science_sections.1.tab": "249cec6cc0",
-    "science_sections.1.why": "7312791007",
-    "science_sections.2.section": "615b224b52",
+    "science_sections.0.why": "7312791007",
+    "science_sections.1.section": "615b224b52",
+    "science_sections.1.tab": "4f656bc891",
+    "science_sections.1.why": "e3ffe74f3e",
+    "science_sections.2.section": "82f7ff650e",
     "science_sections.2.tab": "4f656bc891",
-    "science_sections.2.why": "e3ffe74f3e",
-    "science_sections.3.section": "82f7ff650e",
-    "science_sections.3.tab": "4f656bc891",
-    "science_sections.3.why": "1597b22a90",
+    "science_sections.2.why": "1597b22a90",
     "type": "3a652818b0"
   },
   "planets/uranus.json": {
@@ -13163,12 +13128,9 @@
     "science_sections.1.section": "f24c4515f2",
     "science_sections.1.tab": "4f656bc891",
     "science_sections.1.why": "f3db4be030",
-    "science_sections.2.section": "4a541f4666",
+    "science_sections.2.section": "abb26975b6",
     "science_sections.2.tab": "249cec6cc0",
-    "science_sections.2.why": "7d41c4dd9c",
-    "science_sections.3.section": "abb26975b6",
-    "science_sections.3.tab": "249cec6cc0",
-    "science_sections.3.why": "755f0db723",
+    "science_sections.2.why": "755f0db723",
     "type": "7b033f060e"
   },
   "planets/venus.json": {
@@ -15229,6 +15191,8 @@
     "science_sections.0.section": "792a2c6bd7",
     "science_sections.0.tab": "4f656bc891",
     "science_sections.0.why": "2d76628ab8",
+    "science_sections.1.section": "9709d93c2c",
+    "science_sections.1.tab": "249cec6cc0",
     "surface_composition": "f6c2742903"
   },
   "satellites/enceladus.json": {
@@ -15295,6 +15259,8 @@
     "science_sections.1.section": "f373d829ed",
     "science_sections.1.tab": "4f656bc891",
     "science_sections.1.why": "a97d34c691",
+    "science_sections.2.section": "9709d93c2c",
+    "science_sections.2.tab": "249cec6cc0",
     "surface_composition": "79ad40c7dc"
   },
   "satellites/miranda.json": {
@@ -15343,6 +15309,8 @@
     "science_sections.0.section": "4a541f4666",
     "science_sections.0.tab": "249cec6cc0",
     "science_sections.0.why": "7f6ab67c6e",
+    "science_sections.1.section": "792a2c6bd7",
+    "science_sections.1.tab": "4f656bc891",
     "surface_composition": "bc7565cccf"
   },
   "satellites/phobos.json": {
@@ -15389,6 +15357,8 @@
     "science_sections.0.section": "4a541f4666",
     "science_sections.0.tab": "249cec6cc0",
     "science_sections.0.why": "f58c84e2c8",
+    "science_sections.1.section": "4dfb5d3080",
+    "science_sections.1.tab": "249cec6cc0",
     "surface_composition": "acc7a5d721"
   },
   "satellites/triton.json": {
@@ -15415,6 +15385,8 @@
     "science_sections.0.section": "792a2c6bd7",
     "science_sections.0.tab": "4f656bc891",
     "science_sections.0.why": "159727e7f7",
+    "science_sections.1.section": "4dfb5d3080",
+    "science_sections.1.tab": "249cec6cc0",
     "surface_composition": "12231cc96a"
   },
   "scenarios/orrery-1.json": {
@@ -18464,7 +18436,9 @@
   "small-bodies/didymos.json": {
     "science_sections.0.section": "792a2c6bd7",
     "science_sections.0.tab": "4f656bc891",
-    "science_sections.0.why": "bab73a7575"
+    "science_sections.0.why": "bab73a7575",
+    "science_sections.1.section": "615b224b52",
+    "science_sections.1.tab": "4f656bc891"
   },
   "small-bodies/dimorphos.json": {
     "science_sections.0.section": "82f7ff650e",
@@ -18485,14 +18459,17 @@
     "science_sections.1.why": "63e1280781"
   },
   "small-bodies/eros.json": {
-    "science_sections.0.section": "792a2c6bd7",
+    "science_sections.0.section": "f373d829ed",
     "science_sections.0.tab": "4f656bc891",
-    "science_sections.0.why": "7c4a8ecd1f"
+    "science_sections.1.section": "f24c4515f2",
+    "science_sections.1.tab": "4f656bc891"
   },
   "small-bodies/eurybates.json": {
-    "science_sections.0.section": "2bd313f7ce",
-    "science_sections.0.tab": "249cec6cc0",
-    "science_sections.0.why": "afb2da7375"
+    "science_sections.0.section": "7dc96987c1",
+    "science_sections.0.tab": "4f656bc891",
+    "science_sections.0.why": "afb2da7375",
+    "science_sections.1.section": "d43a4defb8",
+    "science_sections.1.tab": "f060b62b91"
   },
   "small-bodies/halley.json": {
     "science_sections.0.section": "f373d829ed",
@@ -18513,12 +18490,16 @@
   "small-bodies/itokawa.json": {
     "science_sections.0.section": "792a2c6bd7",
     "science_sections.0.tab": "4f656bc891",
-    "science_sections.0.why": "40805aa151"
+    "science_sections.0.why": "40805aa151",
+    "science_sections.1.section": "6919406d31",
+    "science_sections.1.tab": "4f656bc891"
   },
   "small-bodies/leucus.json": {
-    "science_sections.0.section": "2bd313f7ce",
-    "science_sections.0.tab": "249cec6cc0",
-    "science_sections.0.why": "8f143d6a13"
+    "science_sections.0.section": "7dc96987c1",
+    "science_sections.0.tab": "4f656bc891",
+    "science_sections.0.why": "8f143d6a13",
+    "science_sections.1.section": "f373d829ed",
+    "science_sections.1.tab": "4f656bc891"
   },
   "small-bodies/makemake.json": {
     "science_sections.0.section": "792a2c6bd7",
@@ -18526,7 +18507,9 @@
     "science_sections.0.why": "8a9fb7d50b",
     "science_sections.1.section": "3b86bfaa5d",
     "science_sections.1.tab": "249cec6cc0",
-    "science_sections.1.why": "77c444ae29"
+    "science_sections.1.why": "77c444ae29",
+    "science_sections.2.section": "f24c4515f2",
+    "science_sections.2.tab": "4f656bc891"
   },
   "small-bodies/menoetius.json": {
     "science_sections.0.section": "7dc96987c1",
@@ -18534,9 +18517,11 @@
     "science_sections.0.why": "41ff12b2dd"
   },
   "small-bodies/orus.json": {
-    "science_sections.0.section": "2bd313f7ce",
-    "science_sections.0.tab": "249cec6cc0",
-    "science_sections.0.why": "8f6c80c61c"
+    "science_sections.0.section": "7dc96987c1",
+    "science_sections.0.tab": "4f656bc891",
+    "science_sections.0.why": "4e1a252292",
+    "science_sections.1.section": "3b86bfaa5d",
+    "science_sections.1.tab": "249cec6cc0"
   },
   "small-bodies/oumuamua.json": {
     "science_sections.0.section": "f373d829ed",
@@ -18549,7 +18534,9 @@
   "small-bodies/patroclus.json": {
     "science_sections.0.section": "7dc96987c1",
     "science_sections.0.tab": "4f656bc891",
-    "science_sections.0.why": "dad84a0d15"
+    "science_sections.0.why": "dad84a0d15",
+    "science_sections.1.section": "615b224b52",
+    "science_sections.1.tab": "4f656bc891"
   },
   "small-bodies/pluto.json": {
     "science_sections.0.section": "f373d829ed",
@@ -18563,19 +18550,25 @@
     "science_sections.2.why": "22dd26eac2"
   },
   "small-bodies/polymele.json": {
-    "science_sections.0.section": "2bd313f7ce",
-    "science_sections.0.tab": "249cec6cc0",
-    "science_sections.0.why": "5b5402a611"
+    "science_sections.0.section": "7dc96987c1",
+    "science_sections.0.tab": "4f656bc891",
+    "science_sections.0.why": "5b5402a611",
+    "science_sections.1.section": "f24c4515f2",
+    "science_sections.1.tab": "4f656bc891"
   },
   "small-bodies/psyche.json": {
     "science_sections.0.section": "2bd313f7ce",
     "science_sections.0.tab": "249cec6cc0",
-    "science_sections.0.why": "1b3317356e"
+    "science_sections.0.why": "1b3317356e",
+    "science_sections.1.section": "815068a567",
+    "science_sections.1.tab": "4678352635"
   },
   "small-bodies/ryugu.json": {
     "science_sections.0.section": "792a2c6bd7",
     "science_sections.0.tab": "4f656bc891",
-    "science_sections.0.why": "4ad4b1aad4"
+    "science_sections.0.why": "4ad4b1aad4",
+    "science_sections.1.section": "cec224a575",
+    "science_sections.1.tab": "4f656bc891"
   },
   "small-bodies/vesta.json": {
     "science_sections.0.section": "2bd313f7ce",
@@ -18583,7 +18576,9 @@
     "science_sections.0.why": "991a4fb75b",
     "science_sections.1.section": "792a2c6bd7",
     "science_sections.1.tab": "4f656bc891",
-    "science_sections.1.why": "4030b6b90d"
+    "science_sections.1.why": "4030b6b90d",
+    "science_sections.2.section": "815068a567",
+    "science_sections.2.tab": "4678352635"
   },
   "source-logos.json": {
     "aanda": "d1e859c338",

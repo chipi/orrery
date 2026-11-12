@@ -5,6 +5,8 @@
   import { base } from '$app/paths';
   import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
@@ -155,20 +157,21 @@
     <p class="lede page-lead">{m.deepsky_lede({ count: data.images.length })}</p>
   </header>
 
-  <div class="filters" role="tablist" aria-label={m.deepsky_filter_observatory()}>
-    {#each CHIP_ORDER as chip (chip)}
-      {#if counts[chip]}
-        <button
-          class="chip"
-          class:active={filter === chip}
-          role="tab"
-          aria-selected={filter === chip}
-          onclick={() => (filter = chip)}
-        >
-          {chip}<span class="n">{counts[chip]}</span>
-        </button>
-      {/if}
-    {/each}
+  <div class="filters">
+    <ChipGroup role="radiogroup" label={m.deepsky_filter_observatory()}>
+      {#each CHIP_ORDER as chip (chip)}
+        {#if counts[chip]}
+          <Chip
+            kind="choice"
+            active={filter === chip}
+            count={counts[chip]}
+            onclick={() => (filter = chip)}
+          >
+            {chip}
+          </Chip>
+        {/if}
+      {/each}
+    </ChipGroup>
   </div>
 
   <div class="masonry">
@@ -299,38 +302,6 @@
     gap: 10px;
     margin: 0 0 30px;
     max-width: 900px;
-  }
-  .chip {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.7);
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 999px;
-    padding: 7px 14px;
-    cursor: pointer;
-    transition:
-      border-color 0.15s,
-      color 0.15s,
-      background 0.15s;
-  }
-  .chip:hover {
-    border-color: rgba(127, 176, 224, 0.5);
-    color: #fff;
-  }
-  .chip.active {
-    color: #06121f;
-    background: var(--color-state);
-    border-color: var(--color-state);
-  }
-  .chip .n {
-    margin-left: 7px;
-    opacity: 1;
-    font-size: var(--size-label);
-  }
-  .chip.active .n {
-    opacity: 0.75;
   }
 
   /* Brick mosaic — a dense spanning grid. Feature tiles (2×2) and panorama /

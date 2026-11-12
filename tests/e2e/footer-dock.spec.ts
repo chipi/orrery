@@ -139,7 +139,7 @@ const HUD_SIZES = [
 const HUD_PARTS: Array<[string, string]> = [
   ['chips', '.ctrl-row.chips'],
   ['ruler', '.ruler'],
-  ['earth-compare', '.earth-compare'],
+  ['earth-compare', '.scales-dock'],
   ['dock', '.time-controls'],
   ['index tab', '.entity-index summary'],
   ['footer', '.footer-menu'],

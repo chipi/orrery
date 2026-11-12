@@ -14,6 +14,8 @@
     kind?: 'toggle' | 'choice' | 'action' | 'link';
     active?: boolean;
     disabled?: boolean;
+    /** Tab stop for a choice group in which no chip is on (paused speed). */
+    tabstop?: boolean;
     count?: number | string;
     /** Data colour: the leading dot and, when on, the edge. */
     tone?: string;
@@ -33,6 +35,7 @@
     kind = 'action',
     active = false,
     disabled = false,
+    tabstop = false,
     count,
     tone,
     dot = false,
@@ -76,7 +79,7 @@
     style={styled || undefined}
     role="radio"
     aria-checked={active}
-    tabindex={active ? 0 : -1}
+    tabindex={active || tabstop ? 0 : -1}
     {disabled}
   >
     {@render inner()}

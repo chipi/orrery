@@ -28,7 +28,7 @@
     "caption": "Türme aus kaltem Gas und Staub im Eagle-Nebel (M16), von neugeborenen Sternen von innen heraus erleuchtet.",
     "subject": "Nebel",
     "type": "Emissionsnebel / Sternentstehungsregion (M16)",
-    "distance": "~6.500 Lichtjahre",
+    "distance": "~5.540 Lichtjahre",
     "taken": "Veröffentlicht am 19. Okt 2022"
   },
   "jwst-tarantula": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302 — Gasflügel, die über 20.000 °C erhitzt und von einem sterbenden Stern hinausgeschleudert wurden.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel (NGC 6302)",
-    "distance": "~3.400 Lichtjahre",
+    "distance": "~2.430 Lichtjahre",
     "taken": "2009"
   },
   "hst-antennae": {
@@ -84,7 +84,7 @@
     "caption": "Zwei Galaxien (NGC 4038/4039) kollidieren miteinander und entzünden Milliarden neuer Sterne.",
     "subject": "Galaxien",
     "type": "Kollidierend Galaxien",
-    "distance": "~45–65 Millionen Lichtjahre",
+    "distance": "~69 Millionen Lichtjahre",
     "taken": "2006"
   },
   "hst-bubble": {
@@ -92,7 +92,7 @@
     "caption": "NGC 7635 — eine sieben Lichtjahre große Blase, die vom heftigen Wind eines massereichen Sterns aufgeblasen wurde.",
     "subject": "Nebel",
     "type": "Emissionsnebel (NGC 7635)",
-    "distance": "~7.100 Lichtjahre",
+    "distance": "~9.130 Lichtjahre",
     "taken": "2016 · Hubble 26."
   },
   "hst-westerlund2": {
@@ -108,7 +108,7 @@
     "caption": "NGC 6543 — einer der kompliziertesten planetarischen Nebel, die je beobachtet wurden.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel (NGC 6543)",
-    "distance": "~3.300 Lichtjahre",
+    "distance": "~4.460 Lichtjahre",
     "taken": "2004"
   },
   "hst-whirlpool": {
@@ -116,7 +116,7 @@
     "caption": "M51 — eine Lehrbuch-Spiralgalaxie, deren Arme rosa vom Licht neugeborener Sterne erglühen.",
     "subject": "Galaxien",
     "type": "Spiralgalaxie (M51)",
-    "distance": "~31 Millionen Lichtjahre",
+    "distance": "~27 Millionen Lichtjahre",
     "taken": "2005"
   },
   "hst-crab": {
@@ -129,7 +129,7 @@
   },
   "hst-veil": {
     "title": "Schleier-Nebel",
-    "caption": "Ein Hauch des Cygnusbogens — eine Supernova-Stoßwelle, die sich noch nach 10.000 Jahren ausdehnt.",
+    "caption": "Ein Hauch des Cygnusbogens — eine Supernova-Stoßwelle, die sich noch nach etwa 20.000 Jahren ausdehnt.",
     "subject": "Nebel",
     "type": "Supernova-Überrest · Cygnusbogen",
     "distance": "~2.400 Lichtjahre",
@@ -148,7 +148,7 @@
     "caption": "NGC 2392 — ein sonnenähnlicher Stern, umhüllt von Gasschalen, die er vor 10.000 Jahren abgestoßen hat.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel (NGC 2392)",
-    "distance": "~3.000 Lichtjahre",
+    "distance": "~5.980 Lichtjahre",
     "taken": "2000"
   },
   "chandra-crab": {
@@ -263,7 +263,7 @@
   },
   "jwst-casa": {
     "title": "Cassiopeia A",
-    "caption": "Webbs Infrarotauge auf dem jüngsten bekannten Supernova-Überrest in der Galaxie.",
+    "caption": "Webbs Infrarotauge auf einem der jüngsten bekannten Supernova-Überreste in der Galaxie.",
     "subject": "Supernova",
     "type": "Supernova-Überrest",
     "distance": "~11.000 Lichtjahre",
@@ -274,7 +274,7 @@
     "caption": "Ein sieben Lichtjahre hohes Gasgebilde aus kaltem Gas in einer fernen Sternkinderstube.",
     "subject": "Nebel",
     "type": "Emissionsnebel",
-    "distance": "~2.700 Lichtjahre",
+    "distance": "~2.280 Lichtjahre",
     "taken": "2002 · ACS Erstes Licht"
   },
   "hst-omega-centauri": {
@@ -314,7 +314,7 @@
     "caption": "Ein seltener, massiver Stern, der seine äußeren Schichten in den Momenten vor seiner Supernova-Explosion abwirft.",
     "subject": "Stern",
     "type": "Wolf–Rayet-Stern",
-    "distance": "~15.000 Lichtjahre",
+    "distance": "~21.000 Lichtjahre",
     "taken": "Veröffentlicht 14. Mär 2023"
   },
   "hst-cosmic-reef": {
@@ -330,7 +330,7 @@
     "caption": "Verschachtelte Sanduhrformen aus Gas, die von einem sterbenden Stern und seinem Begleiter ausgestoßen wurden.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel",
-    "distance": "~7.000 Lichtjahre",
+    "distance": "~15.000 Lichtjahre",
     "taken": "2019 · Hubble 29."
   },
   "hst-monkey-head": {
@@ -362,7 +362,7 @@
     "caption": "Eine klassische Balkenspiralgalaxie, deren Arme sich um einen 200.000-Lichtjahre großen Balken winden.",
     "subject": "Galaxie",
     "type": "Balkenspiralgalaxie",
-    "distance": "~61 Millionen Lichtjahre",
+    "distance": "~45 Millionen Lichtjahre",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342 — eine Spiralgalaxie, verborgen hinter dem Staub der Milchstraße, enthüllt durch Euclid.",
     "subject": "Galaxie",
     "type": "Spiralgalaxie",
-    "distance": "~11 Millionen Lichtjahre",
+    "distance": "~7,3 Millionen Lichtjahre",
     "taken": "Veröffentlicht 2024"
   },
   "hst-v838": {

@@ -1,8 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-14T08:24:52.340Z",
-  "script_version": "build-named-stars@1.0.0",
+  "generated_at": "2026-11-12T15:16:20.530Z",
+  "script_version": "build-named-stars@1.1.0",
   "catalog": "HYG Database v4.1 (astronexus)",
+  "catalogue_source": {
+    "source": "HYG Database v4.1 (merges the Hipparcos, Yale Bright Star and Gliese catalogues)",
+    "bibcode": null,
+    "record_url": "https://github.com/astronexus/HYG-Database"
+  },
   "count": 62,
   "stars": [
     {
@@ -17,7 +22,10 @@
       "bv": 0.009,
       "x": -0.4943,
       "y": 2.4767,
-      "z": -0.7585
+      "z": -0.7585,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2032349"
+      }
     },
     {
       "id": "canopus",
@@ -31,7 +39,10 @@
       "bv": 0.164,
       "x": -5.9927,
       "y": 57.132,
-      "z": -75.3961
+      "z": -75.3961,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2030438"
+      }
     },
     {
       "id": "arcturus",
@@ -45,7 +56,10 @@
       "bv": 1.239,
       "x": -8.8234,
       "y": -5.9325,
-      "z": 3.6989
+      "z": 3.6989,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2069673"
+      }
     },
     {
       "id": "rigil-kentaurus",
@@ -59,7 +73,10 @@
       "bv": 0.71,
       "x": -0.4952,
       "y": -0.4141,
-      "z": -1.1566
+      "z": -1.1566,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2071683"
+      }
     },
     {
       "id": "vega",
@@ -73,7 +90,10 @@
       "bv": -0.001,
       "x": 0.9606,
       "y": -5.908,
-      "z": 4.8097
+      "z": 4.8097,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2091262"
+      }
     },
     {
       "id": "capella",
@@ -87,7 +107,10 @@
       "bv": 0.795,
       "x": 1.7126,
       "y": 8.9544,
-      "z": 9.44
+      "z": 9.44,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2024608"
+      }
     },
     {
       "id": "rigel",
@@ -101,7 +124,10 @@
       "bv": -0.03,
       "x": 51.6011,
       "y": 256.7099,
-      "z": -37.7401
+      "z": -37.7401,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2024436"
+      }
     },
     {
       "id": "procyon",
@@ -115,7 +141,10 @@
       "bv": 0.432,
       "x": -1.4693,
       "y": 3.1762,
-      "z": 0.32
+      "z": 0.32,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2037279"
+      }
     },
     {
       "id": "achernar",
@@ -129,7 +158,10 @@
       "bv": -0.158,
       "x": 21.0656,
       "y": 9.5684,
-      "z": -35.952
+      "z": -35.952,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%207588"
+      }
     },
     {
       "id": "betelgeuse",
@@ -143,7 +175,10 @@
       "bv": 1.5,
       "x": 3.1893,
       "y": 151.3644,
-      "z": 19.6821
+      "z": 19.6821,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2027989"
+      }
     },
     {
       "id": "hadar",
@@ -157,7 +192,10 @@
       "bv": -0.231,
       "x": -50.9541,
       "y": -30.5629,
-      "z": -104.4787
+      "z": -104.4787,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2068702"
+      }
     },
     {
       "id": "altair",
@@ -171,7 +209,10 @@
       "bv": 0.221,
       "x": 2.3555,
       "y": -4.4873,
-      "z": 0.7907
+      "z": 0.7907,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2097649"
+      }
     },
     {
       "id": "acrux",
@@ -185,7 +226,10 @@
       "bv": -0.243,
       "x": -44.3638,
       "y": -5.172,
-      "z": -88.0345
+      "z": -88.0345,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2060718"
+      }
     },
     {
       "id": "aldebaran",
@@ -199,7 +243,10 @@
       "bv": 1.538,
       "x": 7.0272,
       "y": 18.2876,
-      "z": 5.8067
+      "z": 5.8067,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2021421"
+      }
     },
     {
       "id": "spica",
@@ -213,7 +260,10 @@
       "bv": -0.235,
       "x": -69.9909,
       "y": -27.2858,
-      "z": -14.8218
+      "z": -14.8218,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2065474"
+      }
     },
     {
       "id": "antares",
@@ -227,7 +277,10 @@
       "bv": 1.865,
       "x": -58.5426,
       "y": -140.3076,
-      "z": -75.5748
+      "z": -75.5748,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2080763"
+      }
     },
     {
       "id": "pollux",
@@ -241,7 +294,10 @@
       "bv": 0.991,
       "x": -4.0555,
       "y": 8.1952,
-      "z": 4.8672
+      "z": 4.8672,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2037826"
+      }
     },
     {
       "id": "fomalhaut",
@@ -255,7 +311,10 @@
       "bv": 0.145,
       "x": 6.4505,
       "y": -1.7995,
-      "z": -3.8078
+      "z": -3.8078,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%20113368"
+      }
     },
     {
       "id": "deneb",
@@ -269,7 +328,10 @@
       "bv": 0.092,
       "x": 197.2506,
       "y": -232.1134,
-      "z": 307.6008
+      "z": 307.6008,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%20102098"
+      }
     },
     {
       "id": "mimosa",
@@ -283,7 +345,10 @@
       "bv": -0.238,
       "x": -42.1688,
       "y": -8.9096,
-      "z": -73.7231
+      "z": -73.7231,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2062434"
+      }
     },
     {
       "id": "regulus",
@@ -297,7 +362,10 @@
       "bv": -0.087,
       "x": -21.0189,
       "y": 11.1322,
-      "z": 5.0414
+      "z": 5.0414,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2049669"
+      }
     },
     {
       "id": "adhara",
@@ -311,7 +379,10 @@
       "bv": -0.211,
       "x": -27.498,
       "y": 105.1416,
-      "z": -60.172
+      "z": -60.172,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2033579"
+      }
     },
     {
       "id": "castor",
@@ -325,7 +396,10 @@
       "bv": 0.034,
       "x": -5.3119,
       "y": 12.13,
-      "z": 8.2387
+      "z": 8.2387,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2036850"
+      }
     },
     {
       "id": "gacrux",
@@ -339,7 +413,10 @@
       "bv": 1.6,
       "x": -14.6069,
       "y": -1.9987,
-      "z": -22.8007
+      "z": -22.8007,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2061084"
+      }
     },
     {
       "id": "bellatrix",
@@ -353,7 +430,10 @@
       "bv": -0.224,
       "x": 11.6586,
       "y": 76.0361,
-      "z": 8.5601
+      "z": 8.5601,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2025336"
+      }
     },
     {
       "id": "elnath",
@@ -367,7 +447,10 @@
       "bv": -0.13,
       "x": 5.2816,
       "y": 35.6504,
-      "z": 19.6555
+      "z": 19.6555,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2025428"
+      }
     },
     {
       "id": "miaplacidus",
@@ -381,7 +464,10 @@
       "bv": 0.07,
       "x": -8.9807,
       "y": 8.0016,
-      "z": -32.5465
+      "z": -32.5465,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2045238"
+      }
     },
     {
       "id": "alnilam",
@@ -395,7 +481,10 @@
       "bv": -0.184,
       "x": 62.7751,
       "y": 602.6669,
-      "z": -12.7127
+      "z": -12.7127,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2026311"
+      }
     },
     {
       "id": "alnair",
@@ -409,7 +498,10 @@
       "bv": -0.07,
       "x": 18.6725,
       "y": -9.904,
-      "z": -22.6352
+      "z": -22.6352,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%20109268"
+      }
     },
     {
       "id": "alnitak",
@@ -423,7 +515,10 @@
       "bv": -0.199,
       "x": 18.9185,
       "y": 224.8094,
-      "z": -7.6519
+      "z": -7.6519,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2026727"
+      }
     },
     {
       "id": "alioth",
@@ -437,7 +532,10 @@
       "bv": -0.022,
       "x": -13.776,
       "y": -3.3092,
-      "z": 20.9729
+      "z": 20.9729,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2062956"
+      }
     },
     {
       "id": "mirfak",
@@ -451,7 +549,10 @@
       "bv": 0.481,
       "x": 62.8851,
       "y": 77.8807,
-      "z": 118.7088
+      "z": 118.7088,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2015863"
+      }
     },
     {
       "id": "kaus-australis",
@@ -465,7 +566,10 @@
       "bv": -0.031,
       "x": 3.8172,
       "y": -36.0578,
-      "z": -24.813
+      "z": -24.813,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2090185"
+      }
     },
     {
       "id": "dubhe",
@@ -479,7 +583,10 @@
       "bv": 1.061,
       "x": -17.2987,
       "y": 4.3349,
-      "z": 33.1913
+      "z": 33.1913,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2054061"
+      }
     },
     {
       "id": "wezen",
@@ -493,7 +600,10 @@
       "bv": 0.671,
       "x": -129.7335,
       "y": 421.7615,
-      "z": -218.9799
+      "z": -218.9799,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2034444"
+      }
     },
     {
       "id": "alkaid",
@@ -507,7 +617,10 @@
       "bv": -0.099,
       "x": -18.5295,
       "y": -9.3945,
-      "z": 24.1645
+      "z": 24.1645,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2067301"
+      }
     },
     {
       "id": "sargas",
@@ -521,7 +634,10 @@
       "bv": 0.406,
       "x": -6.6541,
       "y": -67.0166,
-      "z": -62.7965
+      "z": -62.7965,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2086228"
+      }
     },
     {
       "id": "avior",
@@ -535,7 +651,10 @@
       "bv": 1.196,
       "x": -54.8371,
       "y": 76.5152,
-      "z": -159.8726
+      "z": -159.8726,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2041037"
+      }
     },
     {
       "id": "menkalinan",
@@ -549,7 +668,10 @@
       "bv": 0.077,
       "x": 0.0362,
       "y": 17.6013,
-      "z": 17.5691
+      "z": 17.5691,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2028360"
+      }
     },
     {
       "id": "atria",
@@ -563,7 +685,10 @@
       "bv": 1.447,
       "x": -13.1274,
       "y": -40.8046,
-      "z": -111.8268
+      "z": -111.8268,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2082273"
+      }
     },
     {
       "id": "alhena",
@@ -577,7 +702,10 @@
       "bv": 0.001,
       "x": -5.2662,
       "y": 31.7144,
-      "z": 9.4614
+      "z": 9.4614,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2031681"
+      }
     },
     {
       "id": "peacock",
@@ -591,7 +719,10 @@
       "bv": -0.118,
       "x": 17.8503,
       "y": -24.201,
-      "z": -45.8412
+      "z": -45.8412,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%20100751"
+      }
     },
     {
       "id": "polaris",
@@ -605,7 +736,10 @@
       "bv": 0.636,
       "x": 1.3431,
       "y": 1.0476,
-      "z": 132.6149
+      "z": 132.6149,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2011767"
+      }
     },
     {
       "id": "alphard",
@@ -619,7 +753,10 @@
       "bv": 1.44,
       "x": -43.0035,
       "y": 33.7228,
-      "z": -8.3221
+      "z": -8.3221,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2046390"
+      }
     },
     {
       "id": "hamal",
@@ -633,7 +770,10 @@
       "bv": 1.151,
       "x": 15.732,
       "y": 9.7517,
-      "z": 8.0336
+      "z": 8.0336,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%209884"
+      }
     },
     {
       "id": "diphda",
@@ -647,7 +787,10 @@
       "bv": 1.019,
       "x": 27.5836,
       "y": 5.3105,
-      "z": -9.1198
+      "z": -9.1198,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%203419"
+      }
     },
     {
       "id": "nunki",
@@ -661,7 +804,10 @@
       "bv": -0.134,
       "x": 14.9509,
       "y": -60.7941,
-      "z": -30.9371
+      "z": -30.9371,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2092855"
+      }
     },
     {
       "id": "menkent",
@@ -675,7 +821,10 @@
       "bv": 1.011,
       "x": -12.3588,
       "y": -7.6242,
-      "z": -10.6943
+      "z": -10.6943,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2068933"
+      }
     },
     {
       "id": "alpheratz",
@@ -689,7 +838,10 @@
       "bv": -0.038,
       "x": 25.9746,
       "y": 0.951,
-      "z": 14.4613
+      "z": 14.4613,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%20677"
+      }
     },
     {
       "id": "saiph",
@@ -703,7 +855,10 @@
       "bv": -0.168,
       "x": 10.4441,
       "y": 195.3149,
-      "z": -33.3267
+      "z": -33.3267,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2027366"
+      }
     },
     {
       "id": "rasalhague",
@@ -717,7 +872,10 @@
       "bv": 0.155,
       "x": -1.5871,
       "y": -14.4532,
-      "z": 3.2395
+      "z": 3.2395,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2086032"
+      }
     },
     {
       "id": "algol",
@@ -731,7 +889,10 @@
       "bv": -0.003,
       "x": 14.1894,
       "y": 15.2388,
-      "z": 18.0721
+      "z": 18.0721,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2014576"
+      }
     },
     {
       "id": "almach",
@@ -745,7 +906,10 @@
       "bv": 1.37,
       "x": 76.3681,
       "y": 45.8409,
-      "z": 81.132
+      "z": 81.132,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%209640"
+      }
     },
     {
       "id": "denebola",
@@ -759,7 +923,10 @@
       "bv": 0.09,
       "x": -10.6339,
       "y": 0.508,
-      "z": 2.7675
+      "z": 2.7675,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2057632"
+      }
     },
     {
       "id": "alphecca",
@@ -773,7 +940,10 @@
       "bv": 0.032,
       "x": -12.1761,
       "y": -16.5587,
-      "z": 10.344
+      "z": 10.344,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2076267"
+      }
     },
     {
       "id": "sadr",
@@ -787,7 +957,10 @@
       "bv": 0.673,
       "x": 249.3182,
       "y": -348.7956,
-      "z": 363.041
+      "z": 363.041,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%20100453"
+      }
     },
     {
       "id": "mintaka",
@@ -801,7 +974,10 @@
       "bv": -0.175,
       "x": 25.8681,
       "y": 210.7297,
-      "z": -1.1083
+      "z": -1.1083,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2025930"
+      }
     },
     {
       "id": "lalande-21185",
@@ -815,7 +991,10 @@
       "bv": 1.502,
       "x": -1.998,
       "y": 0.5043,
-      "z": 1.4955
+      "z": 1.4955,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2054035"
+      }
     },
     {
       "id": "barnards-star",
@@ -829,7 +1008,10 @@
       "bv": 1.57,
       "x": -0.0174,
       "y": -1.8166,
-      "z": 0.1491
+      "z": 0.1491,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2087937"
+      }
     },
     {
       "id": "luytens-star",
@@ -843,7 +1025,10 @@
       "bv": 1.573,
       "x": -1.4095,
       "y": 3.5149,
-      "z": 0.3464
+      "z": 0.3464,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2036208"
+      }
     },
     {
       "id": "proxima-centauri",
@@ -857,7 +1042,10 @@
       "bv": 1.807,
       "x": -0.4723,
       "y": -0.3615,
-      "z": -1.1512
+      "z": -1.1512,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2070890"
+      }
     },
     {
       "id": "van-maanens-star",
@@ -871,7 +1059,10 @@
       "bv": 0.554,
       "x": 4.147,
       "y": 0.9035,
-      "z": 0.4003
+      "z": 0.4003,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%203829"
+      }
     }
   ]
 }

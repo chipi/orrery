@@ -153,6 +153,8 @@
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
   import { destinationLabel } from '$lib/destination-label';
   import { qualityTierLabel } from '$lib/quality/quality-tier-label';
@@ -3497,15 +3499,14 @@
   <!-- Mobile top-left: 2D/3D view toggle. The remaining toggles fold into
        the bottom tab accordion, so the canonical view switch lives here. -->
   <div class="fly-top-mobile">
-    <button
-      type="button"
-      class="toggle"
+    <Chip
+      kind="toggle"
+      active={view === '2d'}
       data-testid="fly-view-toggle-mobile"
       onclick={toggleView}
-      aria-pressed={view === '2d'}
     >
       {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
-    </button>
+    </Chip>
   </div>
   <!-- Phone mini-HUD: touch screens start with the full HUD collapsed, which left the
        cruise view with no numbers at all. One strip keeps the essentials; tapping it
@@ -4216,15 +4217,14 @@
     class:launch-active={showLaunch || showCoast || showDescent}
     aria-label={m.fly_scrub_label()}
   >
-    <button
-      type="button"
-      class="play-btn"
+    <Chip
+      kind="action"
       data-audio-stage="fly-play"
       onclick={masterTogglePlay}
       aria-label={isPlaying ? m.fly_pause() : m.fly_play()}
     >
-      {isPlaying ? '⏸' : '▶'}
-    </button>
+      {#snippet icon()}{isPlaying ? '⏸' : '▶'}{/snippet}
+    </Chip>
     <div class="scrub-track-wrap" data-audio-stage="fly-timeline">
       <!-- Custom-styled track underneath the (transparent) native input.
            The native input still owns drag + click interactions for
@@ -4304,48 +4304,41 @@
         </div>
       {/if}
     </div>
-    <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
+    <div class="speed-group">
       <!-- Mobile: single active-speed slot; tap to reveal all speeds stacked
            above so the scrubber track reclaims the horizontal space. -->
       <div class="speed-slot">
-        <button
-          type="button"
-          class="speed-pill"
-          class:active={isPlaying}
+        <Chip
+          kind="action"
+          active={isPlaying}
           aria-expanded={speedPopoverOpen}
-          aria-haspopup="listbox"
+          aria-haspopup="true"
           aria-label="{activeSpeed}× — {m.fly_speed_label()}"
-          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{activeSpeed}×</button
+          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{activeSpeed}×</Chip
         >
         {#if speedPopoverOpen}
-          <div class="speed-popover" role="listbox" aria-label={m.fly_speed_label()}>
+          <ChipGroup role="radiogroup" class="speed-popover" label={m.fly_speed_label()}>
             {#each speedPills as sp (sp)}
-              <button
-                type="button"
-                class="speed-pill"
-                class:active={activeSpeed === sp}
-                role="option"
-                aria-selected={activeSpeed === sp}
+              <Chip
+                kind="choice"
+                active={activeSpeed === sp}
                 onclick={() => {
                   masterSetSpeed(sp);
                   speedPopoverOpen = false;
-                }}>{sp}×</button
+                }}>{sp}×</Chip
               >
             {/each}
-          </div>
+          </ChipGroup>
         {/if}
       </div>
-      <!-- Desktop: all speed pills visible inline. -->
-      {#each speedPills as sp (sp)}
-        <button
-          type="button"
-          class="speed-pill speed-desktop-pill"
-          class:active={activeSpeed === sp}
-          onclick={() => masterSetSpeed(sp)}
-        >
-          {sp}×
-        </button>
-      {/each}
+      <!-- Desktop: all speed chips visible inline. -->
+      <ChipGroup role="radiogroup" class="speed-desktop-group" label={m.fly_speed_label()}>
+        {#each speedPills as sp (sp)}
+          <Chip kind="choice" active={activeSpeed === sp} onclick={() => masterSetSpeed(sp)}>
+            {sp}×
+          </Chip>
+        {/each}
+      </ChipGroup>
     </div>
   </div>
 
@@ -4363,34 +4356,34 @@
         role="group"
         aria-label={m.fly_science_lens_toggles_aria()}
       >
-        <button
-          type="button"
-          class="toggle toggle-lens"
-          aria-pressed={showFlightDirector}
+        <Chip
+          kind="toggle"
+          tone="var(--color-gold)"
+          active={showFlightDirector}
           title={m.fly_toggle_flight_director_title()}
           onclick={() => (showFlightDirector = !showFlightDirector)}
         >
           FD
-        </button>
-        <button
-          type="button"
-          class="toggle toggle-lens"
-          aria-pressed={showLayersPanel}
+        </Chip>
+        <Chip
+          kind="toggle"
+          tone="var(--color-gold)"
+          active={showLayersPanel}
           title={m.fly_toggle_science_layers_title()}
           onclick={() => (showLayersPanel = !showLayersPanel)}
         >
           LYR
-        </button>
+        </Chip>
         {#if conicsLayerOnState}
-          <button
-            type="button"
-            class="toggle toggle-lens"
-            aria-pressed={showConicPanel}
+          <Chip
+            kind="toggle"
+            tone="var(--color-gold)"
+            active={showConicPanel}
             title={m.fly_toggle_conic_title()}
             onclick={() => (showConicPanel = !showConicPanel)}
           >
             CON
-          </button>
+          </Chip>
         {/if}
       </div>
     {/if}
@@ -4403,33 +4396,25 @@
       role="group"
       aria-label={m.fly_view_toggles_aria()}
     >
-      <button
-        type="button"
-        class="toggle"
-        aria-pressed={showHud}
+      <Chip
+        kind="toggle"
+        active={showHud}
         title={m.fly_toggle_hud_title()}
         onclick={() => (showHud = !showHud)}
       >
         HUD
-      </button>
-      <button
-        type="button"
-        class="toggle"
-        aria-pressed={showCapcom}
+      </Chip>
+      <Chip
+        kind="toggle"
+        active={showCapcom}
         title={m.fly_toggle_capcom_title()}
         onclick={() => (showCapcom = !showCapcom)}
       >
         CAP
-      </button>
-      <button
-        class="toggle"
-        type="button"
-        data-testid="fly-view-toggle"
-        onclick={toggleView}
-        aria-pressed={view === '2d'}
-      >
+      </Chip>
+      <Chip kind="toggle" active={view === '2d'} data-testid="fly-view-toggle" onclick={toggleView}>
         {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
-      </button>
+      </Chip>
     </div>
   {/snippet}
 
@@ -6045,22 +6030,6 @@
       right: 16px;
     }
   }
-  .play-btn {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 6px 10px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  .play-btn:hover,
-  .play-btn:focus-visible {
-    border-color: var(--color-accent);
-    outline: none;
-  }
   .scrub-track-wrap {
     flex: 1;
     position: relative;
@@ -6336,32 +6305,13 @@
     display: flex;
     gap: 4px;
   }
-  .speed-pill {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 6px 10px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    color: var(--color-text-label);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .speed-pill.active {
-    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
-    color: #fff;
-  }
   /* Mobile: single active-speed slot + tap-to-reveal stacked popover (matches
      /explore) so the scrubber track reclaims the horizontal space. */
   .speed-slot {
     display: none;
     position: relative;
   }
-  .speed-popover {
+  .speed-slot :global(.speed-popover) {
     position: absolute;
     bottom: calc(100% + 4px);
     right: 0;
@@ -6380,7 +6330,7 @@
     .speed-slot {
       display: block;
     }
-    .speed-desktop-pill {
+    .speed-group :global(.speed-desktop-group) {
       display: none;
     }
   }
@@ -6596,58 +6546,10 @@
       gap: 8px;
     }
   }
-  .toggle {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0 10px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid var(--color-accent-edge);
-    color: #dde4ff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    white-space: nowrap;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: var(--color-accent);
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
-  }
-  /* Dimmed appearance when a panel toggle is OFF — the button still
-     reads as clickable, but its panel is hidden. */
-  .toggle[aria-pressed='false'] {
-    color: rgba(221, 228, 255, 0.6);
-    border-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
-  }
-  /* Gold-themed variant for the lens-gated cluster on the left. Reuses
-     the same gold accent as ScienceLayersPanel + FlightDirectorBanner
-     so the user reads the cluster as part of the lens chrome. */
-  .toggle.toggle-lens {
-    color: #ffc850;
-    border-color: rgba(255, 200, 80, 0.55);
-  }
-  .toggle.toggle-lens:hover,
-  .toggle.toggle-lens:focus-visible {
-    border-color: #ffc850;
-    background: rgba(48, 38, 16, 0.95);
-  }
-  .toggle.toggle-lens[aria-pressed='false'] {
-    color: rgba(255, 200, 80, 0.6);
-    border-color: rgba(255, 200, 80, 0.22);
-  }
   /* User-dismissed panels use display:none so they release their
      bottom/edge real-estate to the canvas. */
   .hud-stack.hidden {
     display: none;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: var(--color-accent);
-    outline: none;
   }
 
   .capcom-panel {

@@ -2272,9 +2272,14 @@
      Up to 600 px wide the time dock is 96 px tall, so the ruler clears it (--ruler-clear). */
   .ruler-desktop-only {
     --ruler-top-clear: 150px;
-    /* Right of the left-edge INDEX tab (~30 px wide, vertically centred): on a short window the
-       ruler spans that height. */
-    --ruler-left: 44px;
+  }
+  /* Right of the left-edge INDEX tab (~30 px wide, vertically centred) only where the bottom-
+     anchored ruler (~270 px tall) reaches up to the tab's band: windows under ~780 px high. On a
+     tall narrow window the shift would push the ruler into the scale panel instead. */
+  @media (max-height: 780px) {
+    .ruler-desktop-only {
+      --ruler-left: 44px;
+    }
   }
   @media (max-width: 600px) {
     .ruler-desktop-only {

@@ -551,6 +551,23 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     match: /(^|\.)irishnews\.com$/i,
     rule: { source_id: 'irishnews', defaultKind: 'community', defaultLanguage: 'en' },
   },
+  // Sources linked from the deep-sky texts (deep-text batch 4).
+  {
+    match: /(^|\.)eurekalert\.org$/i,
+    rule: { source_id: 'eurekalert', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)arxiv\.org$/i,
+    rule: { source_id: 'arxiv', defaultKind: 'science-publisher', defaultLanguage: 'en' },
+  },
+  {
+    match: /^spitzer\.caltech\.edu$/i,
+    rule: { source_id: 'spitzer', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /^people\.smp\.uq\.edu\.au$/i,
+    rule: { source_id: 'baumgardt-uq', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
   {
     match: /(^|\.)nasaspaceflight\.com$/i,
     rule: { source_id: 'nasaspaceflight', defaultKind: 'community', defaultLanguage: 'en' },

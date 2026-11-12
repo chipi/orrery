@@ -66,8 +66,7 @@ describe('getDeepSkyEntity', () => {
     expect((await getDeepSkyEntity('m42', 'en-US'))?.gatewaySystem).toBe('trappist-1');
   });
 
-  it('is null for an object with no overlay (it has no page), and for an unknown id or designation', async () => {
-    expect(await getDeepSkyEntity('ngc-3372', 'en-US')).toBeNull();
+  it('is null for an unknown id or designation', async () => {
     expect(await getDeepSkyEntity('no-such-object', 'en-US')).toBeNull();
     expect(await getDeepSkyEntity('M13', 'en-US')).toBeNull();
   });

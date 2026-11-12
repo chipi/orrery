@@ -82,7 +82,7 @@ test.describe('the prerendered hub HTML links every entity page', () => {
       const holes = blackHolePageIds();
       expect(holes.length).toBe(4);
       const objects = deepSkyPageIds();
-      expect(objects.length).toBe(120);
+      expect(objects.length).toBe(140);
       const missing = [
         ...stars.map((id) => `${locale}/explore/stars/${id}`),
         ...holes.map((id) => `${locale}/explore/black-holes/${id}`),

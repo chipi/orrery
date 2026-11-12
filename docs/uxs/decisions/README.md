@@ -78,6 +78,7 @@ How the rule is checked (the guard), or what is not checked yet.
 | [UXD-010](UXD-010-ruler-regimes-each-get-their-own-science-card.md) | Each Explore ruler regime gets its own best science card, no repeats within a ruler        | accepted | 2026-11-11 |
 | [UXD-011](UXD-011-decisions-apply-project-wide.md)           | Decisions apply project-wide, no partial updates; screenshots after each slice                    | accepted | 2026-11-11 |
 | [UXD-012](UXD-012-one-page-shell.md)                          | One page shell: container, title, lead and section label for every text page                     | accepted | 2026-11-11 |
+| [UXD-014](UXD-014-one-chip-and-filter.md)                      | One chip and one filter for every toggle, filter, choice and HUD action                         | accepted | 2026-11-12 |
 
 Open questions (D1 to D7, Q3 to Q10) are not records; they are listed in
 [UXS-000 §Open](../UXS-000-orrery-ux-architecture.md#open).

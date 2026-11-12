@@ -7,10 +7,10 @@ z-indexes) is unchanged. Components write page state through callbacks or
 `bind:`; two shared objects are written in place on purpose: the page's
 plain `legendRowEls` array (legend keyboard nav) and `iconic.state`.
 
-- `HudControls` — solar-system HUD: 2D/3D + reset + AR/Sky, layer chips, the
+- `HudControls` — solar-system HUD: 2D/3D + reset + AR/Sky, layer chips (all `Chip`s, UXD-014), the
   PATHS legend, the mobile top row and the mobile drawers (incl. Scan).
-- `TimeDock` — PLANET SCALES button + time controls (coupled positions).
-- `ScaleNav` — top row: back arrow, scale picker, reset.
+- `TimeDock` — PLANET SCALES chip + time controls (play, speed radiogroup, reset; coupled positions).
+- `ScaleNav` — top row: back chip, scale picker, `ResetViewButton`.
 - `SunCompass` — off-screen Sun needle (neighborhood).
 - `ScaleStrip` — bottom-right ruler / schematic honesty note.
 - `BlackHoleNotes`, `AnonStarTag`, `DeepSkyImmersion`, `WarpOverlays` —

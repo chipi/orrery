@@ -309,17 +309,24 @@ The ACTIVE pill includes a pulsing dot (`animation: pulse 1.5s infinite`) in the
 
 The abbreviation is always visible. The real logo loads on top. Never breaks offline. In production: host logos locally from official media kits.
 
-### 5.7 Filter buttons
+### 5.7 Chip (toggle, filter, choice, HUD action)
+
+One control for every toggle, filter, choice and HUD action, drawn by `src/lib/styles/chip.css` and rendered by `<Chip>` ([UXD-014](../uxs/decisions/UXD-014-one-chip-and-filter.md)). A page never defines its own chip, pill or toggle rules.
 
 ```css
-padding: 4-5px 11-12px;
-font-size: 11px; letter-spacing: 2px; font-weight: 700;
-border: 1px solid rgba(255,255,255,0.1);
-border-radius: 3px;
-color: rgba(255,255,255,0.35);
+min-height: 30px;               /* fine pointer; 44px on (pointer: coarse) */
+padding: 0 12px;
+font: 700 11px Space Mono; letter-spacing: 1px; text-transform: uppercase;
+border: 1px solid rgba(255,255,255,0.18);   /* outline at rest */
+border-radius: 4px;
+color: rgba(255,255,255,0.72);
 ```
 
-Active state: `background: rgba(68,102,255,0.25); border-color: rgba(68,102,255,0.5); color: #fff`.
+Hover: `border-color: var(--color-state)`, white text. Focus-visible: `2px solid var(--color-focus)`, offset 2px. On (`aria-pressed="true"`, `aria-checked="true"`): fill `color-mix(in srgb, var(--color-accent) 22%, glass)`, edge `var(--color-accent)`, white text. The Worlds (`/moon`, `/mars`, `/venus`) set `--chip-tint` to their world colour, used for the edge and fill of an on chip and the hover edge of every chip; Earth keeps the accent. `--chip-tone` is a per-chip data colour (fleet status, epoch band, nation, live): the leading dot and the on edge. Disabled: 42 % opacity. Kinds: `toggle` (`aria-pressed`), `choice` (`role="radio"` in a `ChipGroup` radiogroup with arrow keys), `action`, `link`. A count badge follows the label. Small controls that are not chips (Why?, provenance, timeline names) get a 24 px hit area with the `.ui-hit` class.
+
+### 5.7a FILTERS strip
+
+A compact chip on the left above the grid: `FILTERS  12 / 150  ▾`. The count sits right after the label (accent state colour when a filter is on, 60 % white for the total alone), the chevron last. One label key (`filters_eyebrow`), uppercase by CSS. CLEAR FILTERS is a quiet chip with a `×` beside it while a filter is on. Used by `/missions`, `/fleet` and `/missions/launches`.
 
 ### 5.8 Section label (grid divider)
 

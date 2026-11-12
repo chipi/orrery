@@ -7,6 +7,7 @@ concern (`a11y-*`, `audio-*`, `credits.*`).
 - **Route families** own one route's behavior; facets split big routes
   (`fly-cislunar`, `fly-descent`, `fly-mount-perf` for mount performance).
 - **`a11y*`** — accessibility incl. keyboard nav and the RTL probe.
+- **`chip.spec.ts`** — the one chip (UXD-014): size, corners, active look, FILTERS count, hit areas, and a sweep for stray chip-like controls.
 - **`_helpers/`** — shared page utilities (nav, console-error capture,
   keyboard grids, HUD expansion). Extend helpers rather than re-deriving
   selectors in specs.

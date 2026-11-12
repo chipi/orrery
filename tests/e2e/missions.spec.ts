@@ -244,7 +244,7 @@ test.describe('/missions — epoch timeline strip (2026-06-17)', () => {
     // Desktop axis OR mobile chips — 9 bands either way. Mobile adds
     // an "All epochs" chip so the count there is 10; assert ≥ 9.
     const bands = page.locator(
-      '[data-audio-stage="missions-epoch-timeline"] button.band, [data-audio-stage="missions-epoch-timeline"] button.chip',
+      '[data-audio-stage="missions-epoch-timeline"] button.band, [data-audio-stage="missions-epoch-timeline"] .ui-chip',
     );
     expect(await bands.count()).toBeGreaterThanOrEqual(9);
   });

@@ -46,7 +46,7 @@ test.describe('/missions/launches Timeline + filters', () => {
     await expect(page.locator('nav.filters')).toBeVisible();
     const decadeGroup = page.locator('.filter-group').filter({ hasText: /DECADE/i });
     await expect(decadeGroup).toBeVisible();
-    await expect(decadeGroup.locator('button.pill')).toHaveCount(historicDecadeCount()); // one pill per static/data/launches-historic manifest
+    await expect(decadeGroup.getByRole('radio')).toHaveCount(historicDecadeCount()); // one chip per static/data/launches-historic manifest
   });
 
   test('switching decade lazy-loads new manifest + URL syncs', async ({ page }) => {
@@ -56,7 +56,7 @@ test.describe('/missions/launches Timeline + filters', () => {
     });
     // Filters auto-expanded by `?mode=historic` — click the 1957-69 decade pill directly.
     const decadeGroup = page.locator('.filter-group').filter({ hasText: /DECADE/i });
-    await decadeGroup.locator('button.pill').first().click();
+    await decadeGroup.getByRole('radio').first().click();
     // URL updates
     await page.waitForURL(/decade=1957-1969/);
     // Loading -> ready -> rows present from the earlier era

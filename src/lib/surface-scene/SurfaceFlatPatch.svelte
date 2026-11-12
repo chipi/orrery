@@ -656,7 +656,7 @@
     const KIND_COLOR: Record<string, string> = {
       sample: '#fb923c',
       drill: '#f97316',
-      panorama: '#22d3ee', // a3-keep: marker kind identity colour, palette review at the end
+      panorama: '#8aa0ff', // marker kind: blue (operator 2026-11-12, A3 Q14)
       helicopter: '#e879f9',
       feature: '#fde047',
     };

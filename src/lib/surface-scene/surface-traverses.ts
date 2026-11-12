@@ -909,7 +909,7 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         const STOP_KIND_COLOR: Record<string, number> = {
           sample: 0xfb923c,
           drill: 0xf97316,
-          panorama: 0x22d3ee, // a3-keep: marker kind identity colour, palette review at the end
+          panorama: 0x8aa0ff, // marker kind: blue (operator 2026-11-12, A3 Q14)
           helicopter: 0xe879f9,
           feature: 0xfde047,
         };

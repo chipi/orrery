@@ -28,7 +28,7 @@
     "caption": "Torri di gas freddo e polvere nella Nebulosa Aquila (M16), illuminate dall'interno da stelle neonati.",
     "subject": "Nebulosa",
     "type": "Nebulosa a emissione / regione di formazione stellare (M16)",
-    "distance": "~6.500 anni luce",
+    "distance": "~5.540 anni luce",
     "taken": "Pubblicato 19 ott 2022"
   },
   "jwst-tarantula": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302 — ali di gas riscaldato oltre i 20.000 °C, espulse da una stella morente.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria (NGC 6302)",
-    "distance": "~3.400 anni luce",
+    "distance": "~2.430 anni luce",
     "taken": "2009"
   },
   "hst-antennae": {
@@ -84,7 +84,7 @@
     "caption": "Due galassie (NGC 4038/4039) in collisione, che innescano miliardi di nuove stelle.",
     "subject": "Galassie",
     "type": "Galassie in collisione",
-    "distance": "~45–65 milioni di anni luce",
+    "distance": "~69 milioni di anni luce",
     "taken": "2006"
   },
   "hst-bubble": {
@@ -92,7 +92,7 @@
     "caption": "NGC 7635 — una bolla di sette anni luce di diametro soffiata dal violento vento di una stella massiccia.",
     "subject": "Nebulosa",
     "type": "Nebulosa a emissione (NGC 7635)",
-    "distance": "~7.100 anni luce",
+    "distance": "~9.130 anni luce",
     "taken": "2016 · 26º anniversario dell'Hubble"
   },
   "hst-westerlund2": {
@@ -108,7 +108,7 @@
     "caption": "NGC 6543 — una delle nebulose planetarie più intricate mai osservate.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria (NGC 6543)",
-    "distance": "~3.300 anni luce",
+    "distance": "~4.460 anni luce",
     "taken": "2004"
   },
   "hst-whirlpool": {
@@ -116,7 +116,7 @@
     "caption": "M51 — una spirale da manuale, i bracci splendenti di rosa con stelle appena nate.",
     "subject": "Galassie",
     "type": "Galassia a spirale (M51)",
-    "distance": "~31 milioni di anni luce",
+    "distance": "~27 milioni di anni luce",
     "taken": "2005"
   },
   "hst-crab": {
@@ -129,7 +129,7 @@
   },
   "hst-veil": {
     "title": "Nebulosa del Velo",
-    "caption": "Un filamento della Nebulosa Velo (Cygnus Loop) — un'onda d'urto di supernova ancora in espansione dopo 10.000 anni.",
+    "caption": "Un filamento della Nebulosa Velo (Cygnus Loop) — un'onda d'urto di supernova ancora in espansione dopo circa 20.000 anni.",
     "subject": "Nebulosa",
     "type": "Resto di supernova · Cygnus Loop",
     "distance": "~2.400 anni luce",
@@ -148,7 +148,7 @@
     "caption": "NGC 2392 — una stella simile al Sole avvolta in gusci di gas che ha espulso 10.000 anni fa.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria (NGC 2392)",
-    "distance": "~3.000 anni luce",
+    "distance": "~5.980 anni luce",
     "taken": "2000"
   },
   "chandra-crab": {
@@ -263,7 +263,7 @@
   },
   "jwst-casa": {
     "title": "Cassiopea A",
-    "caption": "Lo sguardo infrarosso di Webb sul più giovane residuo di supernova conosciuto nella galassia.",
+    "caption": "Lo sguardo infrarosso di Webb su uno dei più giovani resti di supernova conosciuti nella galassia.",
     "subject": "Supernova",
     "type": "Residuo di supernova",
     "distance": "~11.000 anni luce",
@@ -274,7 +274,7 @@
     "caption": "Una torre di gas freddo alta sette anni luce in una lontana nursery stellare.",
     "subject": "Nebulosa",
     "type": "Nebulosa a emissione",
-    "distance": "~2.700 anni luce",
+    "distance": "~2.280 anni luce",
     "taken": "2002 · First light dell'ACS"
   },
   "hst-omega-centauri": {
@@ -314,7 +314,7 @@
     "caption": "Una stella massiccia e rara che getta i suoi strati esterni nei momenti precedenti la sua esplosione in supernova.",
     "subject": "Stella",
     "type": "Stella Wolf–Rayet",
-    "distance": "~15.000 anni luce",
+    "distance": "~21.000 anni luce",
     "taken": "Pubblicata il 14 mar 2023"
   },
   "hst-cosmic-reef": {
@@ -330,7 +330,7 @@
     "caption": "Clessidre annidate di gas espulso da una stella morente e dalla sua compagna.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria",
-    "distance": "~7.000 anni luce",
+    "distance": "~15.000 anni luce",
     "taken": "2019 · 29º anno di Hubble"
   },
   "hst-monkey-head": {
@@ -362,7 +362,7 @@
     "caption": "Una galassia a spirale barrata da manuale, i suoi bracci avvolti attorno a una barra di 200.000 anni luce.",
     "subject": "Galassia",
     "type": "Galassia a spirale barrata",
-    "distance": "~61 milioni di anni luce",
+    "distance": "~45 milioni di anni luce",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342 — una spirale celata dietro la polvere della Via Lattea, rivelata da Euclid.",
     "subject": "Galassia",
     "type": "Galassia spirale",
-    "distance": "~11 milioni di anni luce",
+    "distance": "~7,3 milioni di anni luce",
     "taken": "Pubblicato 2024"
   },
   "hst-v838": {

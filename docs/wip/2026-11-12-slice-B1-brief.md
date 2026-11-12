@@ -376,7 +376,9 @@ Changed: `chip.spec.ts` allow-list loses `.panel-close`, `.panel-back`, `.cta-ca
 
 **Decided (§0a):** D1 Q3 Share = renamed card overlay; D2 Q6 slim fixed bar; D3 holistic model (this brief proposes it; the operator approves §5).
 
-**Open, recommendation first:**
+**Answered 2026-11-12: the operator approved O1–O8 as recommended** (Share in the bar; short labels; chip only, no primary variant; swipe-to-close only from the bar or at scrollTop 0, in B1; gallery thumb hover stays; index-panel × aligned after the scale INDEX (`ScaleIndex`, which replaces `bidx`/`si` closes) lands; card blues wait for the palette review; 44 px bar in phone landscape).
+
+**Were open, recommendation first:**
 
 - **O1 Where does Share sit?** (a) **In the bar** (recommended): it is an entity utility like Close, reachable at any scroll depth and on every tab, costs no extra height (the bar exists), and keeps the row for actions so SmallBody, EarthObject and Fleet get no lone-chip row (saves 42 px on three panels); text chip "SHARE" at 30 / 44 px. Cost: the bar's content varies by panel (as the back button already does); worst-case width §4.2. (b) In the row, last chip: one place for every button, but a row holding only Share on three panels and Share jumping after the load of the card code.
 - **O2 Short labels?** (a) **Yes** (recommended): `Plan mission`, `Explore surface`, `Share` and four surface-link keys; 6 new strings × 13 locales, 3 keys removed. (b) Keep the long labels with `{name}`: no new translation, but the row wraps to 2–3 lines on Earth and Mars.

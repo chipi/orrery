@@ -226,8 +226,11 @@ test.describe('no HUD chip shifts as the view changes (fine pointer)', () => {
     await expect(reset).toBeDisabled();
     const before = await hudChipLefts(page);
 
-    await page.getByTestId('explore-body-index-toggle').click();
-    await page.locator('.body-index button.bidx-row').first().click();
+    await page.getByTestId('scale-index-toggle').click();
+    await page
+      .locator('aside.scale-index[data-scale="solar-system"] button.si-row')
+      .first()
+      .click();
     await expect(reset).toBeEnabled({ timeout: 20_000 });
     expect(await hudChipLefts(page), 'after selecting a body').toEqual(before);
 

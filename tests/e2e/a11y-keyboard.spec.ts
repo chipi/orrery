@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * Keyboard / TV-remote accessibility regression guards (RFC-031).
@@ -59,16 +60,18 @@ test.describe('keyboard a11y (RFC-031)', () => {
 
   test('/explore body index — keyboard path to a canvas body', async ({ page }) => {
     await page.goto('/explore', { waitUntil: 'networkidle' });
-    await page.getByTestId('explore-body-index-toggle').click();
-    const list = page.locator('.bidx-list');
+    await waitForHydration(page);
+    await page.getByTestId('scale-index-toggle').click();
+    const list = page.locator('aside.scale-index[data-scale="solar-system"] .si-list');
     await expect(list).toBeVisible();
-    const rows = list.locator('button.bidx-row');
+    const rows = list.locator('button.si-row');
+    await expect(rows.first()).toBeVisible();
     expect(await rows.count()).toBeGreaterThan(8); // Sun + planets + small bodies
     await rows.first().focus();
     await page.keyboard.press('ArrowDown');
     const tabStops = await list.evaluate(
       (l) =>
-        [...l.querySelectorAll('button.bidx-row')].filter((b) => (b as HTMLElement).tabIndex === 0)
+        [...l.querySelectorAll('button.si-row')].filter((b) => (b as HTMLElement).tabIndex === 0)
           .length,
     );
     expect(tabStops).toBe(1);

@@ -321,7 +321,6 @@ const SWEEP_ALLOW_SELF = [
   '.mdg-dim',
   '.mcd-handle',
   '.mcd-dim',
-  '.bidx-close',
   '.si-close',
   '.sidx-close',
   '.index-close',
@@ -373,7 +372,6 @@ const SWEEP_ALLOW_SELF = [
   '.list-row',
   '.module-row',
   '.journey-row',
-  '.bidx-row',
   '.si-row',
   '.sidx-row',
   '.cmdk-row',
@@ -487,7 +485,7 @@ test.describe('features that find chips by class', () => {
     await page.goto('/explore?mode=exhibit');
     await waitForHydration(page);
     await expect(page.locator('body.exhibit-mode')).toHaveCount(1);
-    for (const sel of ['.body-index-handle', '.scales-dock', '[data-testid="sizes-toggle"]']) {
+    for (const sel of ['.scale-index-handle', '.scales-dock', '[data-testid="sizes-toggle"]']) {
       for (const el of await page.locator(sel).all()) await expect(el).toBeHidden();
     }
   });

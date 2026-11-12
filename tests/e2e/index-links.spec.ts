@@ -1,5 +1,6 @@
-import { expect, test, type Locator } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { collectCanonicalRoutes } from '../../scripts/site-routes.mjs';
+import { expectLinkTargets, expectOneTabStop } from './_helpers/index-panel';
 import { waitForHydration } from './_helpers/hydration';
 
 /**
@@ -9,35 +10,12 @@ import { waitForHydration } from './_helpers/hydration';
  * every entity page of the hub even while the INDEX panel is closed (crawlers do not click).
  * /missions and /fleet keep the A–Z at the page foot. The stars (ADR-096 item 13) are typed apart
  * under /explore/stars/<id> and the black holes (item 16) under /explore/black-holes/<id>; both
- * are rows of the neighbourhood star INDEX, which /explore renders at every scale (hidden outside
- * the neighbourhood), so the prerendered /explore HTML links every one of them.
+ * are rows of the INDEX of the scale they belong to (UXD-017), and /explore renders every scale's
+ * INDEX, hidden unless it is on screen, so the prerendered /explore HTML links every one of them.
+ * The /explore INDEX in the browser (all eight scales) is scale-index.spec.ts.
  */
 
 const SCENE_HUBS = ['moon', 'mars', 'venus', 'explore'] as const;
-
-/** The ↗ page links are a 30 px target on a fine pointer, 44 px on a coarse one (A4). */
-async function expectLinkTargets(links: Locator) {
-  const fine = await links
-    .page()
-    .evaluate(() => matchMedia('(hover: hover) and (pointer: fine)').matches);
-  const sizes = await links.evaluateAll((els) =>
-    els.slice(0, 5).map((e) => [e.getBoundingClientRect().width, e.getBoundingClientRect().height]),
-  );
-  expect(sizes.length).toBeGreaterThan(0);
-  for (const [w, h] of sizes) {
-    expect(w).toBeGreaterThanOrEqual(fine ? 29 : 43);
-    if (!fine) expect(h).toBeGreaterThanOrEqual(43);
-  }
-}
-
-/** An opened INDEX is one roving Tab stop, not one per row. */
-async function expectOneTabStop(items: Locator) {
-  await expect
-    .poll(() =>
-      items.evaluateAll((els) => els.filter((e) => (e as HTMLElement).tabIndex === 0).length),
-    )
-    .toBe(1);
-}
 
 function entityIds(hub: string): string[] {
   const prefix = `/${hub}/`;
@@ -85,7 +63,7 @@ test.describe('the prerendered hub HTML links every entity page', () => {
   }
 
   for (const locale of ['', '/de']) {
-    test(`${locale}/explore: the star INDEX links every star and black-hole page in the HTML`, async ({
+    test(`${locale}/explore: the INDEX links every star and black-hole page in the HTML`, async ({
       request,
     }) => {
       const res = await request.get(`${locale}/explore`);
@@ -147,67 +125,3 @@ for (const hub of ['moon', 'mars', 'venus']) {
     for (const [id, href] of linked) expect(href).toMatch(new RegExp(`/${hub}/${id}$`));
   });
 }
-
-test('/explore: INDEX rows with an entity page link to it; moons follow as link rows; no floating A–Z', async ({
-  page,
-}) => {
-  test.slow();
-  await page.goto('/explore', { waitUntil: 'networkidle' });
-  await waitForHydration(page);
-  await expect(page.locator('.entity-index')).toHaveCount(0);
-  await expect(page.locator('.body-index')).toBeHidden();
-  await page.getByTestId('explore-body-index-toggle').click();
-  await expect(page.locator('.body-index')).toBeVisible();
-  const ids = new Set(entityIds('explore'));
-  const linked = await page
-    .locator('.body-index a.bidx-page')
-    .evaluateAll((els) => els.map((e) => e.getAttribute('href')));
-  expect(linked.length).toBeGreaterThanOrEqual(ids.size);
-  const rowLinks = await page
-    .locator('.body-index a.bidx-page[data-index-id]')
-    .evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
-  expect(rowLinks.length).toBeGreaterThan(5);
-  const panelHrefs = await page
-    .locator('.body-index a.bidx-page')
-    .evaluateAll((els) => els.map((e) => e.getAttribute('href')));
-  for (const id of ids)
-    expect(
-      panelHrefs.some((h) => h?.endsWith(`/explore/${id}`)),
-      `${id} has no INDEX link`,
-    ).toBe(true);
-  await expectOneTabStop(page.locator('.body-index button.bidx-row, .body-index a.bidx-page'));
-  await expectLinkTargets(page.locator('.body-index a.bidx-page[data-index-id]'));
-  for (const id of rowLinks) expect(ids.has(id!), `${id} has no entity page`).toBe(true);
-});
-
-test('/explore neighbourhood: every star INDEX row links its star page; closed, the links are still in the DOM', async ({
-  page,
-}) => {
-  test.slow();
-  await page.goto('/explore?context=neighborhood', { waitUntil: 'networkidle' });
-  await waitForHydration(page);
-  const index = page.locator('.star-index');
-  await expect(index).toBeHidden();
-  const links = index.locator('a.si-page[data-testid="star-index-page-link"]');
-  // 62 named stars + the planet hosts that are not named stars (trappist-1, 51-pegasi, toi-700, kepler-16).
-  await expect(links).toHaveCount(starPageIds().length);
-  const hrefs = await links.evaluateAll((els) => els.map((e) => e.getAttribute('href')));
-  const rowIds = await links.evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
-  expect(hrefs).toEqual(rowIds.map((id) => `/explore/stars/${id}`));
-  for (const id of rowIds) expect(starPageIds()).toContain(id);
-
-  // The four black holes at the foot of the index carry the same link to their page.
-  const bhLinks = index.locator('a.si-page[data-testid="black-hole-index-page-link"]');
-  await expect(bhLinks).toHaveCount(blackHolePageIds().length);
-  const bhIds = await bhLinks.evaluateAll((els) => els.map((e) => e.getAttribute('data-index-id')));
-  expect(await bhLinks.evaluateAll((els) => els.map((e) => e.getAttribute('href')))).toEqual(
-    bhIds.map((id) => `/explore/black-holes/${id}`),
-  );
-  for (const id of bhIds) expect(blackHolePageIds()).toContain(id);
-
-  await page.locator('.star-index-handle').click();
-  await expect(index).toBeVisible();
-  await expect(index.locator('button.si-row').first()).toBeVisible();
-  await expectOneTabStop(index.locator('button.si-row, a.si-page'));
-  await expectLinkTargets(index.locator('a.si-page'));
-});

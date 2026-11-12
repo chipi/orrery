@@ -10,6 +10,7 @@
   import { base } from '$app/paths';
   import { isSaveDataActive } from '$lib/hotspot-tier3-skybox';
   import * as m from '$lib/paraglide/messages';
+  import Chip from './Chip.svelte';
 
   interface Props {
     panoramaUrl: string | null | undefined;
@@ -23,26 +24,24 @@
 
 {#if panoramaUrl}
   {#if panoramaActive}
-    <button
-      type="button"
-      class="stand-at-site stand-at-site--exit"
+    <Chip
+      kind="action"
       data-testid="exit-panorama"
       data-audio-stage="surface-exit-panorama"
       onclick={onExit}
       title={m.panorama_exit_title()}
     >
       {m.panorama_exit_label()}
-    </button>
+    </Chip>
   {:else}
-    <button
-      type="button"
-      class="stand-at-site"
+    <Chip
+      kind="action"
       data-testid="stand-at-site"
       data-audio-stage="surface-stand-at-site"
       onclick={() => onEnter(`${base}${panoramaUrl}`, siteId)}
       title={isSaveDataActive() ? m.panorama_enter_title_savedata() : m.panorama_enter_title()}
     >
       {m.panorama_enter_label()}{isSaveDataActive() ? ` ${m.panorama_tap_to_load()}` : ''}
-    </button>
+    </Chip>
   {/if}
 {/if}

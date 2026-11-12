@@ -8,9 +8,11 @@
   reads/writes through the bindings.
 
   Caller wires per-chip data-testid + i18n tooltip; the component
-  renders the button row + class:active + aria-pressed wiring.
+  renders the <Chip> row (look: src/lib/styles/chip.css).
 -->
 <script lang="ts">
+  import Chip from './Chip.svelte';
+
   interface LayerChip {
     /** Test-id for Playwright (e.g. 'layer-surface'). */
     testid: string;
@@ -51,6 +53,7 @@
     <button
       type="button"
       class="chip-group"
+      data-a4-keep="A5 removes the Earth group masters"
       class:active={chip.active()}
       aria-pressed={chip.active()}
       onclick={chip.toggle}
@@ -63,20 +66,16 @@
     </button>
   {:else if chip.visible !== false}
     {@const isDisabled = chip.disabled?.() ?? false}
-    <button
-      type="button"
-      class="chip"
-      class:active={chip.active()}
-      class:disabled={isDisabled}
-      aria-pressed={chip.active()}
-      aria-disabled={isDisabled || undefined}
+    <Chip
+      kind="toggle"
+      active={chip.active()}
       disabled={isDisabled}
       onclick={chip.toggle}
       title={chip.title}
       data-testid={chip.testid}
     >
       {typeof chip.label === 'function' ? chip.label() : chip.label}
-    </button>
+    </Chip>
   {/if}
 {/each}
 
@@ -85,6 +84,7 @@
      The dot is filled when the group is on. Full row width so it starts a
      new line in the wrapped mobile row as well as the desktop column. */
   .chip-group {
+    /* a4-keep: the Earth group masters; A5 deletes them */
     flex-basis: 100%;
     display: flex;
     align-items: center;
@@ -110,6 +110,7 @@
     background: rgba(255, 255, 255, 0.16);
   }
   .chip-group .dot {
+    /* a4-keep: the Earth group masters; A5 deletes them */
     width: 8px;
     height: 8px;
     flex: none;
@@ -129,16 +130,5 @@
   .chip-group:focus-visible {
     outline: 1px solid var(--body-tint, var(--color-focus));
     outline-offset: 2px;
-  }
-  /* Sub-chip dimming when its master is off. The native :disabled
-     state on the button drops pointer events automatically; the class
-     hook just adds the visual cue so the user sees "I can't act here
-     yet" rather than "this chip is broken" (2026-06-15 user note:
-     "grayed out solution please and disable in UI"). */
-  .chip:disabled,
-  .chip.disabled {
-    opacity: 0.42;
-    cursor: not-allowed;
-    pointer-events: none;
   }
 </style>

@@ -259,6 +259,132 @@
       "source_publisher": "European Space Agency",
       "license_short": "CC-BY-3.0-IGO",
       "license_rationale": "ESA press content released under CC BY 3.0 IGO; attribution required."
+    },
+    {
+      "id": "black-holes.sagittarius-a-star.eso2208",
+      "location": {
+        "file": "i18n-src/en-US/universe/black-holes/sagittarius-a-star.json",
+        "json_path": "$.bio"
+      },
+      "category": "black-hole",
+      "relationship": "paraphrased-from",
+      "snippet": "The Event Horizon Telescope's first image of the Milky Way's black hole, released 12 May 2022: its distance, mass, shadow and ring, and the agreement with general relativity. Paraphrased from ESO's press release eso2208.",
+      "source_url": "https://www.eso.org/public/news/eso2208-eht-mw/",
+      "source_publisher": "ESO (European Southern Observatory)",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "ESO publishes its press releases and images under Creative Commons Attribution 4.0 (https://www.eso.org/public/outreach/copyright/); the Orrery text is a paraphrase that credits ESO and the Event Horizon Telescope Collaboration."
+    },
+    {
+      "id": "black-holes.m87-star.eso1907",
+      "location": {
+        "file": "i18n-src/en-US/universe/black-holes/m87-star.json",
+        "json_path": "$.bio"
+      },
+      "category": "black-hole",
+      "relationship": "paraphrased-from",
+      "snippet": "The first image of a black hole, released 10 April 2019: its mass, the shadow and the ring around it, and the shadow's size against the event horizon. Paraphrased from ESO's press release eso1907.",
+      "source_url": "https://www.eso.org/public/news/eso1907/",
+      "source_publisher": "ESO (European Southern Observatory)",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "ESO publishes its press releases and images under Creative Commons Attribution 4.0 (https://www.eso.org/public/outreach/copyright/); the Orrery text is a paraphrase that credits ESO and the Event Horizon Telescope Collaboration."
+    },
+    {
+      "id": "black-holes.sagittarius-a-star.gravity-2022",
+      "location": {
+        "file": "i18n-src/en-US/universe/black-holes/sagittarius-a-star.json",
+        "json_path": "$.fact"
+      },
+      "category": "black-hole",
+      "relationship": "paraphrased-from",
+      "snippet": "The mass of Sagittarius A*, about 4.3 million Suns, from the GRAVITY Collaboration's 2022 measurement of stellar orbits at the Galactic Centre.",
+      "source_url": "https://arxiv.org/abs/2112.07478",
+      "source_publisher": "Astronomy & Astrophysics (GRAVITY Collaboration)",
+      "source_author": "GRAVITY Collaboration",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the measured mass); no sentence of it is reproduced."
+    },
+    {
+      "id": "black-holes.supermassive-and-stellar.nasa-types",
+      "location": {
+        "file": "i18n-src/en-US/universe/black-holes/"
+      },
+      "category": "black-hole",
+      "relationship": "paraphrased-from",
+      "snippet": "That supermassive black holes sit at the centres of nearly all large galaxies, and that stellar-mass black holes typically form when massive stars collapse, often in supernova explosions. Paraphrased from NASA Science's page on the types of black holes.",
+      "source_url": "https://science.nasa.gov/universe/black-holes/types/",
+      "source_publisher": "NASA Science",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/multimedia/guidelines/index.html",
+      "license_rationale": "NASA Science pages are U.S. Government works in the public domain (17 U.S.C. § 105)."
+    },
+    {
+      "id": "black-holes.cygnus-x-1.miller-jones-2021",
+      "location": {
+        "file": "i18n-src/en-US/universe/black-holes/cygnus-x-1.json",
+        "json_path": "$.bio"
+      },
+      "category": "black-hole",
+      "relationship": "paraphrased-from",
+      "snippet": "The 2021 refinement of the distance to Cygnus X-1 (about 2.2 kiloparsecs) and its mass (about 21 Suns, against about 15 before), measured with the Very Long Baseline Array. From Miller-Jones et al., Science, 2021.",
+      "source_url": "https://arxiv.org/abs/2102.09091",
+      "source_publisher": "Science (AAAS)",
+      "source_author": "James C. A. Miller-Jones et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "black-holes.gargantua.dngr-2015",
+      "location": {
+        "file": "i18n-src/en-US/universe/black-holes/gargantua.json",
+        "json_path": "$.bio"
+      },
+      "category": "black-hole",
+      "relationship": "paraphrased-from",
+      "snippet": "How Gargantua's images were made: real equations for light near a spinning black hole, turned into images by the DNGR software, published in Classical and Quantum Gravity in 2015 (James, von Tunzelmann, Franklin, Thorne).",
+      "source_url": "https://arxiv.org/abs/1502.03808",
+      "source_publisher": "IOP Publishing (Classical and Quantum Gravity)",
+      "source_author": "Oliver James, Eugénie von Tunzelmann, Paul Franklin, Kip S. Thorne",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "black-holes.gargantua.thorne-aps-2014",
+      "location": {
+        "file": "i18n-src/en-US/universe/black-holes/gargantua.json",
+        "json_path": "$.bio"
+      },
+      "category": "black-hole",
+      "relationship": "paraphrased-from",
+      "snippet": "What the film left out of Gargantua: the lopsided Doppler glow, and a disk made cool where a realistic one would be hot enough to fry the astronauts. The claim is Kip Thorne's, from an APS News interview, and the text attributes it to him.",
+      "source_url": "https://www.aps.org/apsnews/2014/12/black-holes-hollywood-and-interstellar-qa-with-kip-thorne",
+      "source_publisher": "APS News (American Physical Society)",
+      "source_author": "Kip Thorne (interviewed)",
+      "license_short": "Facts-only",
+      "license_rationale": "One claim by Kip Thorne is paraphrased and attributed to him; no sentence of the interview is reproduced."
+    },
+    {
+      "id": "named-stars.overlays.baseline",
+      "location": {
+        "file": "i18n-src/en-US/universe/named-stars/"
+      },
+      "category": "star",
+      "relationship": "original",
+      "snippet": "The one-line facts, short essays and cultural notes of the 62 named stars are editorial text carried as Orrery's own. The repository does not record the source of each sentence (added with the star panels, July 2026); the catalogue figures beside them are credited under data-sources (HYG Database v4.1).",
+      "license_short": "Orrery-Original",
+      "license_rationale": "No third-party source is recorded for these sentences, so they are carried as original prose by the Orrery maintainers, MIT-licensed alongside the source code. If a source is found the entry is updated."
+    },
+    {
+      "id": "exoplanets.overlays.baseline",
+      "location": {
+        "file": "i18n-src/en-US/universe/exoplanets/"
+      },
+      "category": "exoplanet",
+      "relationship": "original",
+      "snippet": "The one-line facts and short essays of the 25 exoplanets are editorial text carried as Orrery's own, fact-checked in batches when they were added (July 2026). The repository does not record the source of each sentence; the orbital figures beside them are the NASA Exoplanet Archive's, credited under data-sources.",
+      "license_short": "Orrery-Original",
+      "license_rationale": "No third-party source is recorded for these sentences, so they are carried as original prose by the Orrery maintainers, MIT-licensed alongside the source code. If a source is found the entry is updated."
     }
   ]
 }

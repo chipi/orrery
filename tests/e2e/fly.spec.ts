@@ -112,12 +112,10 @@ test.describe('/fly — default mission', () => {
       const trigger = page.locator('.speed-slot button[aria-expanded]').first();
       await expect(trigger).toBeVisible();
       await trigger.click();
-      await page
-        .locator('.speed-popover [role="radio"]')
-        .filter({ hasText: /^30×$/ })
-        .first()
-        .click();
-      await expect(trigger).toHaveText(/^30×$/);
+      // By accessible name: the chip's label sits in markup with whitespace around it.
+      await page.locator('.speed-popover').getByRole('radio', { name: /^30×$/ }).click();
+      await expect(page.locator('.speed-popover')).toHaveCount(0);
+      await expect(trigger).toHaveText(/^\s*30×\s*$/);
     } else {
       const speed30 = page.getByRole('radio', { name: /^30×$/ });
       await expect(speed30).toBeVisible();

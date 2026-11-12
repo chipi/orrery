@@ -122,5 +122,20 @@
   "ionisation front": "La limite où la lumière ultraviolette d’étoiles chaudes transforme le gaz neutre en gaz ionisé, et qui avance vers l’extérieur dans le nuage environnant.",
   "protostellar outflow": "Du gaz éjecté en deux jets ou vents opposés par une jeune étoile qui accumule encore de la matière ; les jets vont jusqu’à plusieurs centaines de km/s et repoussent le gaz plus lent du nuage qui les entoure.",
   "super star cluster": "Un amas stellaire jeune et très massif, d’au moins environ 10 000 masses solaires d’étoiles, que l’on trouve là où la formation d’étoiles est intense, comme dans les fusions de galaxies et les flambées de formation d’étoiles ; les plus grands atteignent 100 000 masses solaires ou plus.",
-  "tidal tail": "Un long filet mince d’étoiles et de gaz arraché à une galaxie par la gravité d’une autre galaxie qui passe tout près."
+  "tidal tail": "Un long filet mince d’étoiles et de gaz arraché à une galaxie par la gravité d’une autre galaxie qui passe tout près.",
+  "supercluster": "Une vaste concentration lâche de groupes et d'amas de galaxies, généralement large de plusieurs dizaines de mégaparsecs.",
+  "void": "Une vaste région de l'espace presque vide, entre les filaments de galaxies, généralement large de 10 à 100 mégaparsecs.",
+  "galaxy wall": "Un mur de galaxies mince, en forme de feuillet, qui s'étend sur des centaines de millions d'années-lumière, comme le Grand Mur CfA2.",
+  "filament": "Un long filament de galaxies et de gaz, souvent long de plusieurs dizaines de mégaparsecs, qui relie les amas de galaxies dans la toile cosmique.",
+  "galaxy cloud": "Un rassemblement lâche de groupes de galaxies au sein d'un superamas ; le Superamas de la Vierge en compte une douzaine.",
+  "redshift": "L'étirement de la lumière vers des longueurs d'onde plus longues, plus rouges, causé par l'éloignement de sa source ou par l'expansion de l'espace.",
+  "peculiar velocity": "La part de la vitesse d'une galaxie qui reste une fois retirée l'expansion régulière de l'Univers ; elle vient de la gravité de la matière environnante.",
+  "basin of attraction": "La région de l'espace dont toutes les galaxies s'écoulent vers un même centre gravitationnel, comme l'eau dans un bassin versant.",
+  "zone of avoidance": "La bande de ciel cachée derrière la poussière et les étoiles du disque de la Voie lactée, où les galaxies lointaines sont difficiles à voir.",
+  "cosmic web": "Le plus grand motif de l'Univers : des galaxies et du gaz alignés le long de filaments et de feuillets autour de vastes vides presque déserts.",
+  "comoving distance": "Une distance mesurée sur une échelle qui se dilate avec l'Univers et reste donc fixe ; aujourd'hui, elle égale la distance propre.",
+  "megaparsec": "Une unité de distance égale à un million de parsecs, soit environ 3,26 millions d'années-lumière, utilisée pour les distances entre galaxies.",
+  "tip of the red giant branch": "La luminosité à laquelle les géantes rouges cessent de gagner en éclat, une valeur presque constante dont les astronomes se servent pour mesurer la distance des galaxies.",
+  "surface brightness fluctuations": "Une méthode de mesure des distances fondée sur le grain de la lueur d'une galaxie : une galaxie deux fois plus lointaine paraît deux fois plus lisse.",
+  "Local Void": "Une vaste région de l'espace presque vide, voisine du Groupe local, dont la Voie lactée s'éloigne."
 }

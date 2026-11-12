@@ -57,7 +57,6 @@ import type { NeighborhoodScene } from '$lib/universe/neighborhood-scene';
 import {
   getBlackHoleI18n,
   getCultureDoors,
-  getCultureObjectIds,
   getDeepSkyGallery,
   getDeepSkyI18n,
   getDeepSkyObjects,
@@ -412,15 +411,6 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     stopHoverLayerWatch,
   } = deps;
   const iconicTrajectoryHandles: IconicTrajectoryHandle[] = [];
-  // #410 — object ids that carry a culture door, so a photo-less deep-sky object
-  // that IS a message target (M13 ← the Arecibo message) still opens a flat panel
-  // to surface it, rather than the highlight-only path.
-  const cultureObjectIds = new Set<string>();
-  void getCultureObjectIds(fetch)
-    .then((s) => {
-      for (const id of s) cultureObjectIds.add(id);
-    })
-    .catch(dataLoadFailed);
   let closeExoplanetFn: (() => void) | null = null;
   let resetSimToToday: (() => void) | null = null;
   let enterSystemFn: ((hostId: string, planetId?: string) => void) | null = null;
@@ -1621,17 +1611,18 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         if (bridge.selectedDeepSkyId === id) bridge.deepSkyCultureDoors = d;
       })
       .catch(dataLoadFailed);
-    // Catalogue-only dots (no photo) don't immerse. But a photo-less object that
-    // carries a message door (M13) still opens a flat, non-immersive panel so the
-    // door is reachable; the rest just highlight.
+    // Select = focus (UXD-019): every object opens its panel, takes the ring and turns the
+    // camera to it. A photo-less one (every one has a text overlay) does not immerse: a flat
+    // panel, no hero, no approach warp.
     if (!obj.photoKey) {
       cue('select');
-      if (cultureObjectIds.has(id)) {
-        bridge.activeDeepSky = obj;
-        closeStarPanel();
-        bridge.anonStar = null;
-        bridge.deepSkyPanelOpen = true;
-      }
+      trackItemClick('deep-sky', id, '/explore');
+      bridge.activeDeepSky = obj;
+      nbScene?.focusDeepSky(id);
+      closeStarPanel();
+      bridge.anonStar = null;
+      orientToDeepSky(obj);
+      bridge.deepSkyPanelOpen = true;
       return;
     }
     cue('select');

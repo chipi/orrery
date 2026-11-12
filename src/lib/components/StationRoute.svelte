@@ -58,6 +58,8 @@
   } from '$lib/station-assembly-anim';
   import { createAssemblyRef, syncAssemblyRef } from '$lib/station-assembly-state';
   import * as m from '$lib/paraglide/messages';
+  import Chip from './Chip.svelte';
+  import ResetViewButton from './ResetViewButton.svelte';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { metaDescription } from '$lib/seo';
   import { cue } from '$lib/sensory/feedback';
@@ -1415,37 +1417,38 @@
          (overlay slides up from below). Hidden in list mode where the
          page IS the modules list. -->
     {#if viewMode !== 'list'}
-      <button
-        type="button"
-        class="edge-handle handle-left"
-        data-testid="{config.id}-view-toggle"
-        aria-pressed={indexOpen}
-        aria-label={config.msg.btnModulesTitle()}
-        title={config.msg.btnModulesTitle()}
-        onclick={() => (indexOpen = !indexOpen)}
-      >
-        <span class="handle-label">{m.station_handle_modules()}</span>
-      </button>
-      <button
-        type="button"
-        class="edge-handle handle-bottom"
-        data-testid="{config.id}-timeline-toggle"
-        aria-pressed={timelineOpen}
-        aria-label={config.msg.toggleTimelineAria()}
-        title={config.msg.timelineTitle()}
-        onclick={() => (timelineOpen = !timelineOpen)}
-      >
-        <span class="handle-label">{m.station_handle_timeline()}</span>
-      </button>
+      <div class="edge-handle handle-left">
+        <Chip
+          kind="toggle"
+          active={indexOpen}
+          data-testid="{config.id}-view-toggle"
+          aria-label={config.msg.btnModulesTitle()}
+          title={config.msg.btnModulesTitle()}
+          onclick={() => (indexOpen = !indexOpen)}
+        >
+          {m.station_handle_modules()}
+        </Chip>
+      </div>
+      <div class="edge-handle handle-bottom">
+        <Chip
+          kind="toggle"
+          active={timelineOpen}
+          data-testid="{config.id}-timeline-toggle"
+          aria-label={config.msg.toggleTimelineAria()}
+          title={config.msg.timelineTitle()}
+          onclick={() => (timelineOpen = !timelineOpen)}
+        >
+          {m.station_handle_timeline()}
+        </Chip>
+      </div>
     {/if}
 
     <!-- Mobile-only: view toggle + Reset View + Spin pinned top-left,
          below nav. Edge handles are hidden on mobile by CSS, so this
          cluster + the MobileDrawerGroup tabs below replace them. -->
     <div class="hud-top-mobile" role="group" aria-label={config.msg.hudAria()}>
-      <button
-        type="button"
-        class="toggle"
+      <Chip
+        kind="action"
         data-testid="{config.id}-blueprint-toggle-mobile"
         onclick={cycleBlueprintView}
         title={config.msg.btnBlueprintTitle()}
@@ -1457,27 +1460,22 @@
             : viewMode === '2d-front'
               ? config.msg.blueprintLabelFront()
               : config.msg.blueprintLabel3d()}
-      </button>
+      </Chip>
       {#if viewMode !== 'list'}
-        <button
-          type="button"
-          class="toggle"
+        <ResetViewButton
           data-testid="{config.id}-reset-camera-mobile"
           onclick={() => resetCamera()}
           disabled={viewMode !== '3d'}
-        >
-          {m.ui_reset_view()}
-        </button>
-        <button
-          type="button"
-          class="toggle"
-          aria-pressed={!autoSpin}
+        />
+        <Chip
+          kind="toggle"
+          active={!autoSpin}
           onclick={() => (autoSpin = !autoSpin)}
           disabled={viewMode !== '3d'}
           title={config.msg.btnSpinTitle()}
         >
           {config.msg.btnSpin()}
-        </button>
+        </Chip>
       {/if}
     </div>
 
@@ -1511,9 +1509,8 @@
            doesn't jump between modes. -->
       {#if viewMode !== 'list'}
         <div class="ctrl-row">
-          <button
-            type="button"
-            class="toggle"
+          <Chip
+            kind="action"
             data-testid="{config.id}-blueprint-toggle"
             onclick={cycleBlueprintView}
             title={config.msg.btnBlueprintTitle()}
@@ -1525,34 +1522,28 @@
                 : viewMode === '2d-side'
                   ? config.msg.blueprintLabelSide()
                   : config.msg.blueprintLabelFront()}
-          </button>
-          <button
-            type="button"
-            class="toggle"
+          </Chip>
+          <ResetViewButton
             data-testid="{config.id}-reset-camera"
             onclick={() => resetCamera()}
             disabled={viewMode !== '3d'}
             title={config.msg.btnResetTitle()}
-          >
-            {m.ui_reset_view()}
-          </button>
-          <button
-            type="button"
-            class="toggle"
+          />
+          <Chip
+            kind="toggle"
+            active={!autoSpin}
             data-testid="{config.id}-spin-toggle"
-            aria-pressed={!autoSpin}
             onclick={() => (autoSpin = !autoSpin)}
             disabled={viewMode !== '3d'}
             title={config.msg.btnSpinTitle()}
           >
             {config.msg.btnSpin()}
-          </button>
-          <button
-            type="button"
-            class="toggle"
+          </Chip>
+          <Chip
+            kind="toggle"
+            active={assemblyOpen}
             data-testid="{config.id}-assembly-toggle"
             data-audio-stage="{config.id}-assembly-toggle"
-            aria-pressed={assemblyOpen}
             disabled={viewMode !== '3d'}
             onclick={() => {
               assemblyOpen = !assemblyOpen;
@@ -1566,18 +1557,13 @@
             title={config.msg.watchAssemblyTitle()}
           >
             {m.station_assembly_btn()}
-          </button>
+          </Chip>
         </div>
       {:else}
         <div class="ctrl-row">
-          <button
-            type="button"
-            class="toggle"
-            data-testid="{config.id}-view-toggle"
-            onclick={toggleViewMode}
-          >
+          <Chip kind="action" data-testid="{config.id}-view-toggle" onclick={toggleViewMode}>
             {m.iss_view_3d()}
-          </button>
+          </Chip>
         </div>
       {/if}
     {/snippet}
@@ -1585,9 +1571,16 @@
       {@render issControls()}
       <EnterArButton onEnter={() => void launchArScene(config.id)} />
       {#if config.liveLinkLabel}
-        <a class="hud-live-link" href={localHref(`/live`)} data-testid="{config.id}-watch-live">
-          <span class="live-dot" aria-hidden="true"></span>{config.liveLinkLabel()}
-        </a>
+        <!-- a4-keep: live red is the data colour of "live" (LaunchesBanner uses the same dot) -->
+        <Chip
+          kind="link"
+          dot
+          tone="#c62f2f"
+          href={localHref(`/live`)}
+          data-testid="{config.id}-watch-live"
+        >
+          {config.liveLinkLabel()}
+        </Chip>
       {/if}
     </div>
 
@@ -1996,29 +1989,6 @@
     color: #fff;
     outline: none;
   }
-  .hud-controls :global(button),
-  .hud-controls :global(.toggle) {
-    pointer-events: auto;
-  }
-  .hud-live-link {
-    pointer-events: auto;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
-    color: #ffd0d0;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  .hud-live-link:hover {
-    text-decoration: underline;
-  }
-  .hud-live-link .live-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #c62f2f;
-  }
   .ctrl-row {
     display: flex;
     flex-wrap: wrap;
@@ -2031,59 +2001,18 @@
      so they ride below the global nav and don't overlap unrelated UI. */
   .edge-handle {
     position: absolute;
-    background: rgba(8, 10, 22, 0.82);
-    color: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 2px;
-    padding: 0;
-    cursor: pointer;
     z-index: 10;
-    pointer-events: auto;
-    backdrop-filter: blur(4px);
-  }
-  .edge-handle:hover {
-    background: rgba(40, 50, 80, 0.92);
-    color: #fff;
-  }
-  .edge-handle:focus-visible {
-    outline: 2px solid #6fb3ff;
-    outline-offset: 2px;
-  }
-  .edge-handle[aria-pressed='true'] {
-    background: rgba(60, 110, 200, 0.85);
-    color: #fff;
-    border-color: rgba(120, 180, 255, 0.55);
   }
   .handle-left {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 28px;
-    height: 110px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-left: none;
-  }
-  .handle-left .handle-label {
-    display: inline-block;
     writing-mode: vertical-rl;
   }
   .handle-bottom {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 24px;
-    min-width: 110px;
-    padding: 0 14px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom: none;
-  }
-  .handle-bottom .handle-label {
-    display: inline-block;
-    line-height: 22px;
   }
   .hint {
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -2103,35 +2032,6 @@
   .hint-row {
     min-height: 56px;
     align-content: flex-start;
-  }
-  .toggle {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0 8px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid var(--color-accent-edge);
-    color: #dde4ff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    pointer-events: auto;
-    white-space: nowrap;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: var(--color-accent);
-    outline: none;
-  }
-  .toggle:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    border-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
-  }
-  .toggle:disabled:hover {
-    border-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
   }
   .banner {
     font-family: var(--font-mono, 'Space Mono', monospace);

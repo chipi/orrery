@@ -11,7 +11,10 @@ English text for deep-level entity pages that are under the thin-page floor (ope
    and fields (`fact`, `bio`, as the star overlays), 400–600 characters, and the sources fetched.
 2. **Review** (science-reviewer agent): every claim against its source; verdict per object.
 3. **Fix**: the lead applies the review's wording, records it in a "Science review" section.
-4. **Integrate** (with the page phase that consumes it): overlay files under
+4. **Integrate** (with the page phase that consumes it; for deep-sky objects the pages exist, so
+   adding the 14 overlay files adds a page: `deepSkyPageIds()` lists the en-US overlay files,
+   `validate-data` checks each has a fact, a bio and one or two links in all 14 locales, and
+   `route-lastmod` needs the new routes): overlay files under
    `i18n-src/en-US/universe/<type>/<id>.json`; distances, sizes and magnitudes in the text follow the
    catalogue layer (#658) in `static/data/universe/*.json`, not the review's data-file corrections;
    `static/data/text-sources.json` entries (publisher, source_url, licence, relationship), outbound

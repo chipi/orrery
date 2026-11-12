@@ -64,3 +64,7 @@ Not covered by `_read_more` links: the link lives in `scripts/i18n-tools/native-
 - Clauses with no source text found: dark matter "what it is made of is still unknown"; dwarf galaxy "small, faint"; parallax via Earth's orbit; microlensing "little or no light"; spectral type "by the lines in their light"; AGN black-hole power source.
 - Several sources are arXiv review papers or course notes (university pages) rather than NASA/ESA/IAU: blue straggler, galaxy group, open cluster, molecular cloud, starburst, Wolf-Rayet, RR Lyrae.
 - No term links a /science page: the link field is in native-terms.json (not edited here).
+
+## Science review (2026-11-12)
+
+Verdict fix-then-ship: 0 blocker, 6 fix, 40 OK. Applied: active galactic nucleus (outshines its stars only in the brightest cases, NASA galaxy types), nova (white-dwarf mechanism, weeks-to-months fade; Physics Today), RR Lyrae variable (0.2–1 day cycle, similar true brightness; CfA), Seyfert galaxy (usually a spiral, power source hedged; NASA, NED), open cluster (tens to thousands of stars; NASA, Ohio State), variable star (causes as examples; Chandra). Recommended and applied: apparent magnitude (under dark skies; NED), dark matter (detected only through gravity so far; NASA). Not verified by the reviewer: nova 8–15 magnitude range, RR Lyrae period range, galaxy group "fewer than about 50" (search results only).

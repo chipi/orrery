@@ -156,7 +156,8 @@
               />
               <circle cx="24" cy="24" r="5" fill="url(#ic-glow-accent)" />
               <circle cx="24" cy="24" r="2" fill="var(--color-accent-hover)" />
-            {:else if card.route === '/explore'}
+            {:else if card.route === '/explore' || card.route.startsWith('/explore/')}
+              <!-- Every Explore hub card (the scale levels and the star / black-hole pages) shares this glyph. -->
               <!-- Mini solar system: gradient Sun + corona, three orbital ellipses
                    (slight perspective tilt), Earth + Mars with halos. -->
               <circle cx="24" cy="26" r="14" fill="url(#ic-sun-corona)" />

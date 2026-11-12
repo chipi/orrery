@@ -29,12 +29,15 @@ const ROWS: Record<string, string[]> = {
   ],
 };
 
-/** Open states: the row meets the open detail panel. */
-const PANEL_STATES: Record<string, string> = {
-  '/earth': '/earth?site=lc-39a',
-  '/moon': '/moon?site=apollo11',
-  '/mars': '/mars?site=perseverance',
-};
+/** Open states: the row meets the open detail panel (site, orbiter, museum, observatory). */
+const PANEL_STATES: [string, string][] = [
+  ['/earth site', '/earth?site=lc-39a'],
+  ['/earth orbiter', '/earth?object=iss'],
+  ['/earth museum', '/earth?museum=nasm-washington'],
+  ['/earth observatory', '/earth?observatory=vla'],
+  ['/moon site', '/moon?site=apollo11'],
+  ['/mars site', '/mars?site=perseverance'],
+];
 
 /** Where the layer chips are: the HUD on a fine pointer, the Layers / Controls drawer on touch. */
 async function chipRow(page: Page, isMobile: boolean) {
@@ -133,8 +136,9 @@ test.describe('/earth row content', () => {
   });
 });
 
-for (const [route, url] of Object.entries(PANEL_STATES)) {
-  test.describe(`${route} with a site selected`, () => {
+for (const [route, url] of PANEL_STATES) {
+  test.describe(`${route} with a detail panel open`, () => {
+    test.use({ viewport: { width: 820, height: 700 } });
     test('the row stays a row and stops before the open detail panel', async ({
       page,
       isMobile,

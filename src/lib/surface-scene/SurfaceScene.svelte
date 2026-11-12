@@ -735,6 +735,10 @@
   let observatoriesCache: Observatory[] = [];
   let observatoryPins: MuseumPin[] = [];
   let selectedObservatory = $state<Observatory | null>(null);
+  // Any open detail panel (site, orbiter, museum, observatory) — all wrap the same Panel.
+  const detailPanelOpen = $derived(
+    panelOpen || selectedSat != null || selectedMuseum != null || selectedObservatory != null,
+  );
   let layerTelescopes = $state(true);
   let layerLaunchpads = $state(true);
   const padsOn = $derived(layerSurface && layerLaunchpads);
@@ -5625,7 +5629,7 @@
   {#if !panoramaActive}
     <div
       class="hud-controls"
-      class:beside-panel={panelOpen}
+      class:hud-beside-panel={detailPanelOpen}
       class:flat-hidden={flatPatchActive}
       data-audio-stage="surface-hud"
       role="group"
@@ -5717,6 +5721,7 @@
               selectSite(id, { face: true });
             }}
             onClose={() => (indexOpen = false)}
+            open={indexOpen}
           />
         </aside>
       {/if}
@@ -7204,7 +7209,7 @@ sample      ${debugInfo.projectedPxSample}`}
       max-width: calc(100vw - 36px - 16px);
     }
     /* With a detail panel open the row stops before it. */
-    .hud-controls.beside-panel .ctrl-row.chips {
+    .hud-controls.hud-beside-panel .ctrl-row.chips {
       max-width: calc(100vw - 36px - var(--panel-width) - 28px);
     }
   }

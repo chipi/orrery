@@ -3,7 +3,7 @@
   /missions and /fleet whose links are in the prerendered HTML, so crawlers reach every
   /<hub>/<id> page from the hub. The links come from a server load (`getEntityIndex`),
   never from client JS. The scene routes (/moon /mars /venus /explore) have no page foot:
-  their INDEX panel carries these links instead (SurfaceIndexPanel, ExploreBodyIndex).
+  their INDEX panel carries these links instead (SurfaceIndexPanel, ScaleIndex).
 -->
 <script lang="ts">
   import { localHref } from '$lib/locale';

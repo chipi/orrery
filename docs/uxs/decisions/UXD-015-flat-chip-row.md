@@ -10,7 +10,7 @@
   row", same file, 2026-11-12). Inputs: C2, W7, plan Q5
 - **Answers**: C2, W7; slice A5
 - **Changes**: `src/lib/components/LayerChipRow.svelte`, `src/lib/surface-scene/SurfaceScene.svelte`,
-  `SurfaceIndexPanel.svelte`, `src/lib/components/ExploreBodyIndex.svelte`, `EntityIndex.svelte`,
+  `SurfaceIndexPanel.svelte`, `src/lib/components/ExploreBodyIndex.svelte` (since replaced by `ScaleIndex.svelte`, [UXD-017](UXD-017-one-index-on-every-scale.md)), `EntityIndex.svelte`,
   `src/routes/explore/HudControls.svelte`, `src/routes/explore/+page.svelte` (ruler constants),
   `src/routes/{moon,mars,venus}/+page.svelte`; messages (two keys added, 15 removed, one renamed);
   `scripts/i18n-tools/native-terms.json` (`observatory`); [IA §controls](../IA.md); Design System §5.7
@@ -70,7 +70,7 @@ ORBITERS chip; Earth's per-category visibility state and `categoryDefaultVisible
 worlds' HUD baselines regenerate once with A4. Explore's chip row is `LayerChipRow`, and its PATHS
 chip carries `data-audio-stage` through the config `attrs`. The footer stays compact below 1450 px on
 the four scene routes (it was set for the A–Z tab; whether /moon /mars /venus still need it is not
-measured). Stars in the /explore neighbourhood index have no entity pages, so they carry no links.
+measured). (Corrected 2026-11-12: the stars of the /explore neighbourhood INDEX do have entity pages, `/explore/stars/<id>` since ADR-096 items 13–14, and carry the `↗` link like every other row with a page.)
 The worlds' INDEX pull tab moves up out of the way of the imagery card, the locate chip and the orbit
 ruler (it measures them); on /explore the ruler sits right of the tab (`--ruler-left` 44 px).
 

@@ -186,6 +186,8 @@ per screen, then the change, then e2e on all three Playwright projects.
 | I3 | All planets are blue: colour per planet, best match, in the little circles. |
 | I4 | Not every click focuses the body in Explore (only opens the panel); check both behaviours for each item. |
 
+Built 2026-11-12 with UXD-017 (one `ScaleIndex` on all eight scales, `docs/wip/2026-11-12-scale-index-brief.md`): I1 (meta line: a moon's planet, a star's constellation, the kind), I2 (kind chips at the top of every list), I3 (each body's colour dot) and C6 are carried by the same component. I4 is not changed: a row does what a canvas click does, no camera move (brief §5 Q8, deferred).
+
 ## Iconic missions
 
 | ID | Point |

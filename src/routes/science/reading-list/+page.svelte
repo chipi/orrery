@@ -41,13 +41,13 @@
   // red, neptune blue, mercury bronze.
   const PALETTE: Array<[string, string]> = [
     ['#5070ff', '#7f55ff'], // indigo → purple
-    ['#4ecdc4', '#2196a0'], // a3-keep: decorative cover palette, palette review at the end
+    ['#5070ff', '#2a3fb0'], // cover palette in the blue family (operator 2026-11-12, A3 Q13)
     ['#ffc850', '#ff8a3d'], // gold → orange
     ['#c1440e', '#fa7268'], // mars red → coral
     ['#7f55ff', '#ff4e8b'], // purple → magenta
-    ['#2196a0', '#5070ff'], // a3-keep: decorative cover palette (sea → indigo)
+    ['#2a3fb0', '#889fe7'], // cover palette in the blue family
     ['#a0844c', '#6f5530'], // bronze
-    ['#3d8b8b', '#0e6b7a'], // a3-keep: decorative cover palette
+    ['#3d4f8b', '#1e2a6a'], // cover palette in the blue family
   ];
   function gradientFor(title: string): string {
     let h = 0;

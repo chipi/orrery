@@ -565,7 +565,8 @@
   }
   .ln-tier-core {
     background: var(--color-accent-soft);
-    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    color: #fff; /* chip active look: consistent and AA (operator 2026-11-12, A3 Q12) */
   }
   .ln-tier-deep {
     background: rgba(255, 200, 80, 0.15);

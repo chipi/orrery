@@ -511,7 +511,8 @@
   }
   .tier-core {
     background: var(--color-accent-soft);
-    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    color: #fff; /* chip active look: consistent and AA (operator 2026-11-12, A3 Q12) */
   }
   .tier-extra {
     background: rgba(160, 160, 200, 0.14);

@@ -435,8 +435,9 @@
     color: var(--color-state);
   }
   .tier-core {
-    border-color: var(--color-accent-strong);
-    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
+    color: #fff; /* chip active look: consistent and AA (operator 2026-11-12, A3 Q12) */
   }
   .tier-deep {
     border-color: rgba(255, 200, 80, 0.5);

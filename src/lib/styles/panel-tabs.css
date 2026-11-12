@@ -324,7 +324,7 @@
 }
 .link-tier.tier-core h3,
 .tier-core h3 {
-  color: var(--color-accent);
+  color: #fff; /* core tier: white like the active chip text; intro muted blue, deep gold (A3 Q12) */
 }
 .link-tier.tier-deep h3,
 .tier-deep h3 {

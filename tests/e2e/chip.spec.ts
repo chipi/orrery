@@ -125,6 +125,11 @@ test.describe('active look', () => {
         .trim(),
     );
     expect(marsTint).not.toBe('');
+    // On a phone the layer chips live in the bottom drawer's LAYERS tab.
+    if (!(await isFinePointer(page))) {
+      await page.locator('.mdg-tab', { hasText: /layers/i }).click();
+      await expect(page.locator('.mdg-body')).toBeVisible();
+    }
     const marsOn = (await readChips(page)).filter((c) => c.on);
     expect(marsOn.length).toBeGreaterThan(0);
     for (const chip of marsOn) expect(chip.border, `${chip.name} edge`).not.toBe(ACCENT);

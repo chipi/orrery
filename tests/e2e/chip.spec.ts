@@ -10,7 +10,7 @@ import { waitForHydration } from './_helpers/hydration';
  *
  * Runs on desktop-chromium (fine pointer), mobile-chromium and mobile-landscape-chromium (coarse).
  *
- * Written without a browser run (the slice author had none): the sweep's allow-list (SWEEP_ALLOW)
+ * Written without a browser run (the slice author had none): the sweep's allow-lists (SWEEP_ALLOW_SELF, SWEEP_ALLOW_INSIDE)
  * is the one thing most likely to need a line added when a route shows a legitimate non-chip
  * control; every other assertion is a number from chip.css.
  */
@@ -281,82 +281,188 @@ test.describe('hit areas of controls that are not chips (O3)', () => {
 
 // Anything on screen that behaves like a toggle, filter, choice or HUD action is a chip. This is
 // the runtime version of the class-name check (scripts cannot see a control that was renamed).
-const SWEEP_ALLOW = [
+// The allow-list names the class of each control the brief (§6) leaves alone; it never exempts a
+// whole container (no `aside`, `.panel`, `[class*="-row"]`). A control that is neither a chip nor
+// named here is a finding, not a line to add.
+const SWEEP_ALLOW_SELF = [
   '.ui-chip',
   '[data-a4-keep]',
-  // not chips: tabs, panels, cards, rows, nav, CTAs, close buttons (UXD-014 allow-list)
+  // Tabs: PanelTabRow, MobileDrawerGroup, the /fly bottom tabs, the debug panel
   '[role="tab"]',
   '.mdg-tab',
-  '.mdg-close',
   '.fly-mtab',
-  'nav',
-  'header',
-  'footer',
-  '.site-footer',
-  '.footer-menu',
-  '.mobile-drawer',
-  '.card',
-  '.cta',
-  '[class*="cta"]',
-  '[class*="close"]',
-  '[class*="-row"]',
-  '[class*="opening-"]',
-  '.panel',
-  'aside',
-  '.tabs',
-  '.panel-tabs',
-  'summary',
-  '.tour-anchors',
-  '.sr-only',
-  '.entity-index',
+  '.debug-tab',
+  // Switches (Nav debug switch, SensorySheet): form controls, not chips
+  '[role="switch"]',
+  // Nav (A6 owns it): the toggles, the group triggers, the drawer
+  '.menu-toggle',
+  '.audio-toggle',
+  '.lens-toggle',
+  '.contrast-toggle',
+  '.settings-toggle',
+  '.share-toggle',
+  '.debug-toggle',
+  '.group-trigger',
+  '.group-backdrop',
+  '.drawer-link',
+  '.drawer-search',
+  '.drawer-backdrop',
+  '.footer-more-btn',
+  // Panel and pull-tab furniture: × close buttons, back, backdrops, drawer handles
+  '.panel-close',
+  '.panel-back',
+  '.panel-backdrop',
+  '.mdg-close',
+  '.mdg-dim',
+  '.mcd-handle',
+  '.mcd-dim',
+  '.bidx-close',
+  '.si-close',
+  '.sidx-close',
+  '.index-close',
+  '.timeline-close',
+  '.cz-close',
+  '.hr-close',
+  '.mp-close',
+  '.anon-close',
+  '.sizes-close',
+  '.sizes-backdrop',
+  '.recovery-close',
+  '.pop-close',
+  '.dismiss',
+  '.caption-reopen',
+  '.debug-close',
+  '.sheet-close',
+  '.sensory-backdrop',
+  '.cmdk-scrim',
+  '.vp-backdrop',
+  '.vp-close',
+  '.vp-btn',
+  '.lightbox',
+  '.lightbox-close',
+  '.lightbox-nav',
+  '.lightbox-thumb',
+  '.lightbox-zoom button',
+  '.lb-backdrop',
+  '.lb-close',
+  '.lb-nav',
+  '.collapse-btn',
+  '.exhibit-exit-corner',
+  // Audio overlay (a dialog player): its own transport and resume buttons
+  '.header-btn',
+  '.resume-btn',
+  '.compact-btn',
+  '.tour-btn',
+  '.tour-start',
+  '.play-pause',
+  '.link-btn',
+  '.wave-tile',
+  // Cards, list and index rows, thumbnails: the whole row or picture is the target
+  'button.card',
+  '.list-row',
+  '.module-row',
+  '.journey-row',
+  '.bidx-row',
+  '.si-row',
+  '.sidx-row',
+  '.cmdk-row',
+  '.episode-row',
+  '.tile > button',
+  '.thumb',
+  '.gallery-thumb',
+  '.badge-thumb',
   '.thumb-open',
-  '.tile',
-  '.masonry',
-  '[class*="thumb"]',
-  '[class*="lightbox"]',
-  '[class*="backdrop"]',
-  '[class*="tick"]',
-  '[class*="band"]',
-  '[class*="handle"]',
+  '.panel-hero-btn',
+  // CTAs and links drawn as buttons
+  '.cta',
+  '.cta-card',
+  '.spec-cta',
+  '.cta-tour',
+  '.anatomy-open',
+  '.blueprint-open',
+  '.enter-system',
+  '.mission-link',
+  '.resident-link',
+  '.regime-chip',
+  '.xref-link',
+  // Small controls with the 24 px hit area (WhyPopover trigger, provenance, inline names)
+  '.ui-hit',
+  '.popover button.close',
+  // StationAssemblyControl: the module name in the "launched on" caption is a text button
+  '[data-testid="assembly-chip-name"]',
+  // Timelines: epoch band (desktop), station markers, milestone and flight-director ticks,
+  // phase-marker dots, the range slider handles and mission dots
+  '.band',
+  '.marker',
   '.milestone-tick-button',
   '.fd-stage-tick-button',
-  '[class*="debug"]',
-  '[class*="consent"]',
-  '[class*="language-suggestion"]',
-  '[class*="switch"]',
-  '[class*="scrub"]',
-  '[class*="timeline"]',
-  '[class*="trigger"]',
-  '[class*="popover"]',
-  '[class*="provenance"]',
-  '[class*="xref"]',
-  '[class*="t-name"]',
-  '[class*="hud-collapse"]',
-  '[class*="mini-hud"]',
-  '[class*="tcc-"]',
-  '[class*="open"]',
+  '.dot-btn',
+  '.handle',
+  '.dot',
+  // /fly scene CTAs (opening overlay, skip, mini HUD, perf toast)
+  '.opening-launch',
+  '.opening-descent',
+  '.opening-skip',
+  '.opening-fleet-chip',
+  '.continue',
+  '.fly-mini-hud',
+  '.perf-toast-apply',
+  '.perf-toast-dismiss',
+  // Worlds canvas labels and the flat-patch HUD (revisit with the Worlds panel slices)
+  '.ring',
+  '.pop-photo',
+  '.flat-patch .hud-back',
+  '.flat-patch .hud-layers .chip',
+  // Plan: the primary Fly CTA
+  'button.fly',
+];
+
+// Containers that are not chips by definition: canvas / screen-reader proxies, the locale
+// picker (Nav / A6) and the language suggestion toast.
+const SWEEP_ALLOW_INSIDE = [
+  '.tour-anchors',
+  '.sr-module-list',
+  '.po-sr-btn',
+  '.tour-reset-anchor',
+  '.locale-picker',
+  '.lang-suggest',
+  '[data-a4-keep]',
 ];
 
 test.describe('sweep: every visible control is a chip or on the allow-list', () => {
   for (const route of ROUTES) {
     test(`no stray chip-like controls on ${route.path}`, async ({ page }) => {
       await settle(page, route);
-      const stray = await page.evaluate((allow) => {
-        const sel = 'button, [role="button"], [role="radio"], [aria-pressed]';
-        const out: string[] = [];
-        for (const el of document.querySelectorAll<HTMLElement>(sel)) {
-          if (allow.some((a) => el.matches(a) || el.closest(a))) continue;
-          const r = el.getBoundingClientRect();
-          const cs = getComputedStyle(el);
-          if (r.width < 2 || r.height < 2 || cs.visibility === 'hidden' || cs.display === 'none')
-            continue;
-          // Visually hidden canvas proxies ("select mercury") are clipped to 1 px.
-          out.push(
-            `${el.tagName.toLowerCase()}.${el.className} "${(el.textContent ?? '').trim().slice(0, 30)}"`,
-          );
-        }
-        return out;
-      }, SWEEP_ALLOW);
+      const stray = await page.evaluate(
+        ({ self, inside }) => {
+          const sel = 'button, [role="button"], [role="radio"], [aria-pressed]';
+          // Visually hidden: display / visibility, or clipped to 1 px by the element or by an
+          // ancestor with overflow (canvas proxies, sr-only lists).
+          const hidden = (el: HTMLElement): boolean => {
+            for (let n: HTMLElement | null = el; n && n !== document.body; n = n.parentElement) {
+              const cs = getComputedStyle(n);
+              if (cs.display === 'none' || cs.visibility === 'hidden') return true;
+              if (cs.clip === 'rect(0px, 0px, 0px, 0px)' || cs.clipPath.startsWith('inset(50%'))
+                return true;
+              const r = n.getBoundingClientRect();
+              if (cs.overflow !== 'visible' && r.width <= 2 && r.height <= 2) return true;
+            }
+            return false;
+          };
+          const out: string[] = [];
+          for (const el of document.querySelectorAll<HTMLElement>(sel)) {
+            if (self.some((a) => el.matches(a))) continue;
+            if (inside.some((a) => el.closest(a))) continue;
+            const r = el.getBoundingClientRect();
+            if (r.width < 2 || r.height < 2 || hidden(el)) continue;
+            out.push(
+              `${el.tagName.toLowerCase()}.${el.className} "${(el.textContent ?? '').trim().slice(0, 30)}"`,
+            );
+          }
+          return out;
+        },
+        { self: SWEEP_ALLOW_SELF, inside: SWEEP_ALLOW_INSIDE },
+      );
       expect(stray, 'visible controls that are neither .ui-chip nor allow-listed').toEqual([]);
     });
   }

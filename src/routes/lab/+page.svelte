@@ -98,7 +98,7 @@
 </svelte:head>
 
 <div class="lab">
-  <!-- Teal grid lab background (station-blueprint, UXS-015) -->
+  <!-- Accent blue grid lab background (station-blueprint, UXS-015) -->
   <div class="lab__bg" aria-hidden="true"></div>
 
   <main class="lab__main">
@@ -183,7 +183,7 @@
 </div>
 
 <style>
-  /* Full-viewport lab surface on the station-blueprint teal grid */
+  /* Full-viewport lab surface on the station-blueprint accent blue grid */
   .lab {
     position: relative;
     min-height: 100dvh;
@@ -209,8 +209,8 @@
   }
   .lab__view-btn--on {
     color: #fff;
-    border-color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.08);
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .lab__canvas-note {
     margin-top: 8px;
@@ -223,10 +223,18 @@
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(78, 205, 196, 0.032) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(78, 205, 196, 0.032) 1px, transparent 1px),
-      linear-gradient(rgba(78, 205, 196, 0.09) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(78, 205, 196, 0.09) 1px, transparent 1px);
+      linear-gradient(color-mix(in srgb, var(--color-accent) 3%, transparent) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-accent) 3%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(color-mix(in srgb, var(--color-accent) 9%, transparent) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-accent) 9%, transparent) 1px,
+        transparent 1px
+      );
     background-size:
       8px 8px,
       8px 8px,
@@ -258,7 +266,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5rem;
     letter-spacing: 4px;
-    color: #4ecdc4;
+    color: var(--color-accent);
     margin: 0;
     line-height: 1;
   }
@@ -267,7 +275,7 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 1px;
-    color: rgba(78, 205, 196, 0.6);
+    color: var(--color-state);
     margin: 0;
     text-transform: uppercase;
   }
@@ -283,7 +291,7 @@
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: rgba(78, 205, 196, 0.65);
+    color: var(--color-state);
     text-transform: uppercase;
     white-space: nowrap;
   }
@@ -291,8 +299,8 @@
   .lab__picker-select {
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 2px;
     color: #e8e8e8;
     padding: 0.35rem 0.5rem;
@@ -303,7 +311,7 @@
   }
 
   .lab__picker-select:focus-visible {
-    outline: 2px solid #4ecdc4;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 

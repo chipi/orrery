@@ -17,7 +17,7 @@ import * as THREE from 'three';
  */
 export interface LabelOptions {
   text: string;
-  color: string; // hex string e.g. "#4ecdc4" — line + text color
+  color: string; // hex string e.g. "#5070ff" — line + text color
   offset?: THREE.Vector3; // label position relative to marker origin
   /** Sprite world-size scale. 0.6 ≈ readable at 30u camera distance. */
   size?: number;

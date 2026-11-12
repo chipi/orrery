@@ -356,6 +356,8 @@ not audited.
 | C9 Explore → Worlds | E6 | per D5: "Go to Mars" in the planet panel and "Back to Explore" on the world page, or switch on zoom | link both ways for Earth, Moon, Mars, Venus |
 | C10 Planet heroes | EP2, EP3 | full-disc true-colour heroes for every planet (Mars first); artist concepts and mission shots kept out of the hero slot | shots of all 9 planet panels next to the 3D body |
 
+**Milestone before D (operator 2026-11-12):** the deep-level entity stream runs in parallel with the C slices and is finished by the time C10 is: deep-sky panel text, deep-sky entity pages, galaxy / Local Group entities and pages, batch 4 text for the remaining objects, glossary bindings (L38), the catalogue checks (L33), heroes for deep-sky / star panels where images match. Order agreed: C3 → B2 → B3 → C4–C10 for the A/B/C stream. From D on, D, E and F can run in parallel.
+
 ## D. Worlds
 
 | Slice | Points | Change | Done when |

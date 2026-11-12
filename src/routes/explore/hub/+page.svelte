@@ -64,7 +64,8 @@
       title: m.explore_lens_story_cosmic_web_title(),
       desc: m.explore_hub_desc_cosmicweb(),
     },
-    // The star pages are search-engine surfaces the mobile build prunes (prune-streamed-assets).
+    // The star and black-hole pages are search-engine surfaces the mobile build prunes
+    // (prune-streamed-assets).
     ...(__MOBILE__
       ? []
       : [
@@ -73,6 +74,12 @@
             name: m.star_index_aria(),
             title: m.stars_hub_title(),
             desc: m.stars_hub_intro(),
+          },
+          {
+            route: '/explore/black-holes',
+            name: m.star_index_black_holes(),
+            title: m.black_holes_hub_title(),
+            desc: m.black_holes_hub_intro(),
           },
         ]),
   ]);

@@ -38,7 +38,7 @@ import { getTrajectory, TRAJECTORY_IDS } from '$lib/data/interstellar';
 import type { BodyScene } from '$lib/universe/body-scene';
 import type { NeighborhoodScene } from '$lib/universe/neighborhood-scene';
 import {
-  getBlackHole,
+  getBlackHoleI18n,
   getCultureDoors,
   getCultureObjectIds,
   getDeepSkyGallery,
@@ -553,7 +553,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (bhLoading) return;
     bhLoading = true;
     try {
-      const hole = await getBlackHole(id, fetch);
+      const hole = await getBlackHoleI18n(id, getLocale(), fetch);
       if (!hole) return;
       const mod = await import('$lib/universe/black-hole-scene');
       bhScene?.dispose();

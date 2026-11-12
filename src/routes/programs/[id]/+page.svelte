@@ -174,9 +174,9 @@
         {/if}
       </div>
       <p class="tagline page-lead">{p.tagline}</p>
-      <p class="chips">
-        <span class="chip">{KIND_LABEL[p.kind]?.() ?? p.kind}</span>
-        <span class="chip chip-status status-{p.status.toLowerCase()}"
+      <p class="meta-tags">
+        <span class="meta-tag">{KIND_LABEL[p.kind]?.() ?? p.kind}</span>
+        <span class="meta-tag meta-tag-status status-{p.status.toLowerCase()}"
           >{programStatusLabel(p.status)}</span
         >
       </p>
@@ -388,10 +388,10 @@
     text-transform: uppercase;
     color: var(--color-text-label);
   }
-  .chips {
+  .meta-tags {
     margin-top: 14px;
   }
-  .chip {
+  .meta-tag {
     display: inline-block;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);

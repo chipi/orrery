@@ -775,7 +775,9 @@ Chip (src/lib/styles/chip.css, UX A4, docs/uxs/decisions/UXD-014-one-chip-and-fi
 
 Layer chips (src/lib/components/LayerChipRow.svelte, UXD-015): one flat horizontal row on
   /explore and every world, from LayerChipRow; a route does not draw its own chip column and the
-  row has no group captions, no master switches, no greyed chip. /earth = SURFACE, LAUNCHPADS,
+  row has no group captions, no master switches, no greyed chip. On a fine pointer the view actions
+  (2D, RESET VIEW, SPIN, AR, SKY) are the first group of the same row, then a 12 px gap and the layer
+  group; RESET VIEW is always rendered (disabled when inert) so no chip shifts. /earth = SURFACE, LAUNCHPADS,
   MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip switches every orbiter, as on the other
   worlds). The scene routes (/moon /mars /venus /explore) have no separate A-Z tab: their INDEX
   panel carries a real link to each entity page (prerendered while closed, ADR-096 item 11);

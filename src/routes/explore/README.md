@@ -7,7 +7,7 @@ z-indexes) is unchanged. Components write page state through callbacks or
 `bind:`; two shared objects are written in place on purpose: the page's
 plain `legendRowEls` array (legend keyboard nav) and `iconic.state`.
 
-- `HudControls` — solar-system HUD: 2D/3D + reset + AR/Sky, layer chips (one flat row via `LayerChipRow`, UXD-015; the PATHS chip carries `data-audio-stage` through the config `attrs`), the
+- `HudControls` — solar-system HUD: one row on a fine pointer, the view actions (2D/3D, reset, always rendered and disabled when nothing is selected, AR/Sky) then the layer chips (`LayerChipRow`, UXD-015; the PATHS chip carries `data-audio-stage` through the config `attrs`), the
   PATHS legend, the mobile top row and the mobile drawers (incl. Scan).
 - `TimeDock` — PLANET SCALES chip + time controls (play, speed radiogroup, reset; coupled positions).
 - `ScaleNav` — top row: back chip, scale picker, `ResetViewButton`.

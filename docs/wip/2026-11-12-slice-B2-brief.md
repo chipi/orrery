@@ -49,7 +49,9 @@ type with the same list (unit test over the data)". Accepted decision: [UXD-010]
 B1 (hero, close, actions; Q6 still open), B3 (star and outer panels), the Science Lens panel (`ScienceLayersPanel`, its per-layer "learn" links), and the card's own look (`ScienceCard` type sizes,
 A1 territory) are not B2. The `ScienceChip` decision is in §1 and §8 (Q2).
 
-## 0c. Cascade update (lead, 2026-11-12 afternoon) — read before §1
+**Operator, 2026-11-12: all open questions of §9 (Q1–Q10) approved as recommended.**
+
+& (lead, 2026-11-12 afternoon) — read before §1
 
 | Source | What it changes in B2 |
 |---|---|

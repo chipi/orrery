@@ -56,7 +56,7 @@ at most 1 on the UX A / B slices (operator 2026-11-12).
 | 01 | m2–m23 (20 deep-sky, no photo) + 4 black holes | 152,725 tokens, 58 calls | 160,457 tokens; fix then ship (3 B, 9 M) | black holes: integrated in 14 locales; deep-sky: integrated (en) |
 | 02 | m24–m80 (50 deep-sky, no photo) | not recorded | fix then ship (6 B, 14 M, ~25 minor) | integrated (en) |
 | 03 | m81–m110 (27, no photo) + 23 with a photo (30-doradus … ngc-604) | not recorded | fix then ship (2 B, 19 M, ~13 minor) | integrated (en) |
-| 04 | ngc-1300 … wr-124 (21 with a photo; the deep-sky list is complete) | not recorded (77 web calls) | pending | drafted, awaiting review |
+| 04 | ngc-1300 … wr-124 (21 with a photo; the deep-sky list is complete) | not recorded (77 web calls) | 151,188 tokens, 54 calls; fix then ship (2 B, 11 F); `batch-04-review.md`; distances fixed in the catalogue layer (`add002372ae`) | integrated in 14 locales (`4ab9ca0a4e8`, translations `528784c6b4b`…`d102d11395d`) |
 
 Integrated (en) overlays have no translation yet: until steps 5 and 6 are done for them, the four
 translation-parity gates of `npm run validate-data` (overlay-completeness, `check-i18n-coverage`,

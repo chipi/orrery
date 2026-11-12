@@ -305,6 +305,8 @@ The abbreviation is always visible. The real logo loads on top. Never breaks off
 
 One control for every toggle, filter, choice and HUD action, drawn by `src/lib/styles/chip.css` and rendered by `<Chip>` ([UXD-014](../uxs/decisions/UXD-014-one-chip-and-filter.md)). A page never defines its own chip, pill or toggle rules.
 
+Layer chips sit in one flat horizontal row (`LayerChipRow`, [UXD-015](../uxs/decisions/UXD-015-flat-chip-row.md)): 6px gaps, wrapping between chips where the width runs out, no captions, groups or master chips, and on a touch drawer the same run of 44px chips.
+
 ```css
 min-height: 30px;               /* fine pointer; 44px on (pointer: coarse) */
 padding: 0 12px;

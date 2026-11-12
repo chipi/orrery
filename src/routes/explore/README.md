@@ -7,7 +7,7 @@ z-indexes) is unchanged. Components write page state through callbacks or
 `bind:`; two shared objects are written in place on purpose: the page's
 plain `legendRowEls` array (legend keyboard nav) and `iconic.state`.
 
-- `HudControls` — solar-system HUD: 2D/3D + reset + AR/Sky, layer chips (all `Chip`s, UXD-014), the
+- `HudControls` — solar-system HUD: 2D/3D + reset + AR/Sky, layer chips (one flat row via `LayerChipRow`, UXD-015; the PATHS chip carries `data-audio-stage` through the config `attrs`), the
   PATHS legend, the mobile top row and the mobile drawers (incl. Scan).
 - `TimeDock` — PLANET SCALES chip + time controls (play, speed radiogroup, reset; coupled positions).
 - `ScaleNav` — top row: back chip, scale picker, `ResetViewButton`.
@@ -19,7 +19,7 @@ plain `legendRowEls` array (legend keyboard nav) and `iconic.state`.
 
 Logic lives in `src/lib/explore/` (see its README). Source-reading tests:
 `audio-tour.test.ts` lists every file carrying a `data-audio-stage` anchor
-in `SOURCE_FILES` (page, `TimeDock`, `HudControls`); a component that takes
+in `SOURCE_FILES` (page, `TimeDock`, `HudControls`; it also accepts the `attrs` form `'data-audio-stage': 'name'`); a component that takes
 over an anchor must join it. `tactical-scan-mobile.test.ts` reads
 `HudControls` for the drawer's Scan tab.
 

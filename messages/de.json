@@ -1575,7 +1575,6 @@
   "explore_ds_cat_other": "Deep-Sky-Objekt",
   "explore_ctx_milky_way": "Milchstraße",
   "explore_mw_schematic_badge": "Schematisch · nicht maßstabsgetreu",
-  "explore_mw_kind_black_hole": "Supermassives Schwarzes Loch",
   "explore_mw_kind_star": "Unser Stern",
   "explore_mw_label_mass": "Masse",
   "explore_mw_label_dist_sun": "Entfernung von der Sonne",
@@ -1583,7 +1582,6 @@
   "explore_mw_label_location": "Lage",
   "explore_mw_solar_masses": "Sonnenmassen",
   "explore_mw_learn_more": "Mehr erfahren",
-  "explore_mw_sag_a_blurb": "Das Schwarze Loch mit 4,3 Millionen Sonnenmassen im Zentrum der Milchstraße, abgebildet vom Event Horizon Telescope 2022. Jeder Stern der Galaxis — einschließlich der Sonne — umkreist es.",
   "explore_mw_sun_blurb": "Die Sonne befindet sich etwas mehr als auf halbem Weg vom Zentrum entfernt, auf einem kleineren Ausläufer zwischen dem Sagittarius- und dem Perseus-Arm. Eine Umrundung der Galaxis dauert etwa 230 Millionen Jahre.",
   "explore_ctx_back": "Zurück",
   "explore_bh_lensing_badge": "Gravitationslinseneffekt · geodätische ART",
@@ -3687,5 +3685,10 @@
   "mp_surface_mars_orbit": "Im Marsorbit",
   "mp_surface_lunar_orbit": "Im Mondorbit",
   "mp_surface_mars_surface": "Auf der Marsoberfläche",
-  "mp_surface_lunar_surface": "Auf der Mondoberfläche"
+  "mp_surface_lunar_surface": "Auf der Mondoberfläche",
+  "panel_tab_sky": "AM HIMMEL",
+  "star_show_constellations": "Sternbildlinien zeigen",
+  "star_zodiac_note": "{con} ist ein Tierkreissternbild: Sonne, Mond und Planeten ziehen hindurch.",
+  "explore_bh_see_lensing": "Linsen-Simulation ansehen",
+  "panel_hero_pictured": "Abgebildet: {part}"
 }

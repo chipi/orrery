@@ -1575,7 +1575,6 @@
   "explore_ds_cat_other": "深空天体",
   "explore_ctx_milky_way": "银河系",
   "explore_mw_schematic_badge": "示意图 · 非按比例",
-  "explore_mw_kind_black_hole": "超大质量黑洞",
   "explore_mw_kind_star": "我们的恒星",
   "explore_mw_label_mass": "质量",
   "explore_mw_label_dist_sun": "距太阳的距离",
@@ -1583,7 +1582,6 @@
   "explore_mw_label_location": "位置",
   "explore_mw_solar_masses": "太阳质量",
   "explore_mw_learn_more": "了解更多",
-  "explore_mw_sag_a_blurb": "位于银河系中心的 430 万太阳质量黑洞，由 Event Horizon Telescope 于 2022 年成像。银河系中的每颗恒星——包括太阳——都围绕它运行。",
   "explore_mw_sun_blurb": "太阳位于距银河系中心略过半程处，在人马臂与英仙臂之间的一条次级旋臂上。银河系绕转一周大约需要 2.3 亿年。",
   "explore_ctx_back": "返回",
   "explore_bh_lensing_badge": "引力透镜 · 测地线广义相对论",
@@ -3687,5 +3685,10 @@
   "mp_surface_mars_orbit": "在火星轨道",
   "mp_surface_lunar_orbit": "在月球轨道",
   "mp_surface_mars_surface": "在火星表面",
-  "mp_surface_lunar_surface": "在月球表面"
+  "mp_surface_lunar_surface": "在月球表面",
+  "panel_tab_sky": "天空中",
+  "star_show_constellations": "显示星座连线",
+  "star_zodiac_note": "{con}是黄道星座：太阳、月亮和行星都会经过它。",
+  "explore_bh_see_lensing": "查看引力透镜模拟",
+  "panel_hero_pictured": "图中：{part}"
 }

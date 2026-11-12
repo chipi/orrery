@@ -13,9 +13,6 @@
   "src/lib/components/LaunchTelemetry.svelte": {
     "SRB": "solid rocket booster — flight-dynamics acronym kept in every locale, like MECO/SECO"
   },
-  "src/lib/components/StarPanel.svelte": {
-    "HIP": "Hipparcos catalogue prefix of the star's designation"
-  },
   "src/lib/components/StationRoute.svelte": {
     "select": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen",
     "play assembly": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen"

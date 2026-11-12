@@ -373,7 +373,6 @@ const SWEEP_ALLOW_SELF = [
   '.cta-tour',
   '.anatomy-open',
   '.blueprint-open',
-  '.enter-system',
   '.mission-link',
   '.resident-link',
   '.regime-chip',

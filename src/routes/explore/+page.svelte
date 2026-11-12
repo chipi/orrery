@@ -820,18 +820,19 @@
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
   let bhPanelOpen = $state(false);
+  let bhPanelHole = $state<BlackHole | null>(null);
   let exitBlackHoleFn: (() => void) | null = null;
+  let seeBlackHoleLensingFn: (() => void) | null = null;
   let bhDeepLinkFn: ((id: string) => void) | null = null;
   // Slice 6 physics lenses (curvature grid + time-dilation readout), on the BH view.
   let bhCurvatureLens = $state(false);
   let bhTimeLens = $state(false);
   let setBhCurvatureFn: ((on: boolean) => void) | null = null;
   let bhCultureDoors = $state<LocalizedCultureDoor[]>([]);
-  let bhLearnHref = $derived(
-    activeBlackHole
-      ? localHref(`/science/observation/${activeBlackHole.science_section}`)
-      : localHref('/'),
-  );
+  let bhLearnHref = $derived.by(() => {
+    const hole = activeBlackHole ?? bhPanelHole;
+    return hole ? localHref(`/science/observation/${hole.science_section}`) : localHref('/');
+  });
   // One name per object (UXD-017): a globular or Local Group member that has a deep-sky page is
   // named in its panel as its INDEX row and page name it.
   const twinName = (scale: 'milky-way' | 'local-group', id: string): string | undefined => {
@@ -1716,6 +1717,12 @@
       set bhPanelOpen(v) {
         bhPanelOpen = v;
       },
+      get bhPanelHole() {
+        return bhPanelHole;
+      },
+      set bhPanelHole(v) {
+        bhPanelHole = v;
+      },
       get bhCurvatureLens() {
         return bhCurvatureLens;
       },
@@ -1949,6 +1956,7 @@
     closeCosmicWebFn = exploreHost.closeCosmicWebFn;
     selectCosmicWebFn = exploreHost.selectCosmicWebFn;
     exitBlackHoleFn = exploreHost.exitBlackHoleFn;
+    seeBlackHoleLensingFn = exploreHost.seeBlackHoleLensingFn;
     bhDeepLinkFn = exploreHost.bhDeepLinkFn;
     setBhCurvatureFn = exploreHost.setBhCurvatureFn;
     closeStarFn = exploreHost.closeStarFn;
@@ -2251,46 +2259,47 @@
   learnHref={mwLearnHref}
   open={mwPanelOpen}
   onClose={() => closeMwFn?.()}
-  covered={!!activeBlackHole}
+  covered={bhPanelOpen}
 />
 
 <LocalGroupPanel
   member={lgPanelMember}
   open={lgPanelOpen}
   onClose={() => closeLgFn?.()}
-  covered={!!activeBlackHole}
+  covered={bhPanelOpen}
 />
 
 <LocalSheetPanel
   member={selectedLsMember}
   open={lsPanelOpen}
   onClose={() => closeLsFn?.()}
-  covered={!!activeBlackHole}
+  covered={bhPanelOpen}
 />
 <VirgoPanel
   member={selectedVirgoMember}
   open={virgoPanelOpen}
   onClose={() => closeVirgoFn?.()}
-  covered={!!activeBlackHole}
+  covered={bhPanelOpen}
 />
 <CosmicWebPanel
   member={selectedCosmicWebMember}
   open={cosmicWebPanelOpen}
   onClose={() => closeCosmicWebFn?.()}
-  covered={!!activeBlackHole}
+  covered={bhPanelOpen}
 />
 <LaniakeaPanel
   member={selectedLaniakeaMember}
   open={laniakeaPanelOpen}
   onClose={() => closeLaniakeaFn?.()}
-  covered={!!activeBlackHole}
+  covered={bhPanelOpen}
 />
 
 <BlackHolePanel
-  hole={activeBlackHole}
+  hole={activeBlackHole ?? bhPanelHole}
   learnHref={bhLearnHref}
   open={bhPanelOpen}
   onClose={() => exitBlackHoleFn?.()}
+  onSeeLensing={activeBlackHole ? undefined : () => seeBlackHoleLensingFn?.()}
 >
   {#each bhCultureDoors as door (door.id)}
     <CultureDoorCard {door} />

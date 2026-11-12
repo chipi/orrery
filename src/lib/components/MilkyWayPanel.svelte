@@ -1,12 +1,12 @@
 <!--
-  MilkyWayPanel — detail panel for a pin in the /explore v2 Milky Way schematic
-  (Slice 5). Mirrors the shared Panel + detail-panel family. Sagittarius A* shows
-  its mass + distance and links into the /science black-holes article; the Sun
-  shows its galactic address. The view itself carries the "schematic · not to
-  scale" honesty badge; the panel numbers are real, cited astrometry.
+  MilkyWayPanel — detail panel for a pin in the /explore v2 Milky Way schematic (Slice 5).
+  On the shared UniversePanelBody (B3). The Sun shows its galactic address; the black holes
+  (Sagittarius A*, Cygnus X-1) open the BlackHolePanel in place, not this one. The view itself
+  carries the "schematic · not to scale" honesty badge; the panel numbers are real, cited
+  astrometry.
 -->
 <script lang="ts">
-  import Panel from './Panel.svelte';
+  import UniversePanelBody from './UniversePanelBody.svelte';
   import type { MilkyWayObject } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
 
@@ -23,8 +23,6 @@
 
   let kindLabel = $derived.by(() => {
     switch (object?.kind) {
-      case 'supermassive-black-hole':
-        return m.explore_mw_kind_black_hole();
       case 'globular-cluster':
         return m.explore_mw_kind_globular();
       case 'satellite-galaxy':
@@ -37,8 +35,6 @@
   });
   let blurb = $derived.by(() => {
     switch (object?.kind) {
-      case 'supermassive-black-hole':
-        return m.explore_mw_sag_a_blurb();
       case 'globular-cluster':
         return m.explore_mw_globular_blurb();
       case 'satellite-galaxy':
@@ -49,116 +45,56 @@
         return m.explore_mw_sun_blurb();
     }
   });
-  let title = $derived(object?.name ?? '');
   const fmt = (n: number): string => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+
+  let facts = $derived(
+    object
+      ? [
+          ...(object.mass_solar
+            ? [
+                {
+                  label: m.explore_mw_label_mass(),
+                  value: fmt(object.mass_solar),
+                  unit: m.explore_mw_solar_masses(),
+                  accent: true,
+                },
+              ]
+            : []),
+          ...(object.dist_from_sun_ly
+            ? [
+                {
+                  label: m.explore_mw_label_dist_sun(),
+                  value: `${fmt(object.dist_from_sun_ly)} ly`,
+                },
+              ]
+            : []),
+          ...(object.galactocentric_ly
+            ? [
+                {
+                  label: m.explore_mw_label_dist_centre(),
+                  value: `${fmt(object.galactocentric_ly)} ly`,
+                },
+              ]
+            : []),
+          ...(object.diam_kly
+            ? [{ label: m.explore_mw_label_diam(), value: `${fmt(object.diam_kly * 1000)} ly` }]
+            : []),
+          ...(object.arm ? [{ label: m.explore_mw_label_location(), value: object.arm }] : []),
+        ]
+      : [],
+  );
 </script>
 
-<Panel {open} {onClose} {covered} {title} mobileSheet="partial">
-  {#snippet eyebrow()}
-    {#if object}<div class="kind">{kindLabel}</div>{/if}
-  {/snippet}
-  {#snippet heading()}
-    {#if object}<div class="name">{object.name}</div>{/if}
-  {/snippet}
-
-  {#if object}
-    <p class="prose">{blurb}</p>
-
-    <div class="grid">
-      {#if object.mass_solar}
-        <div class="cell">
-          <div class="cell-label">{m.explore_mw_label_mass()}</div>
-          <div class="cell-value accent">
-            {fmt(object.mass_solar)}
-            <span class="unit">{m.explore_mw_solar_masses()}</span>
-          </div>
-        </div>
-      {/if}
-      {#if object.dist_from_sun_ly}
-        <div class="cell">
-          <div class="cell-label">{m.explore_mw_label_dist_sun()}</div>
-          <div class="cell-value">{fmt(object.dist_from_sun_ly)} ly</div>
-        </div>
-      {/if}
-      {#if object.galactocentric_ly}
-        <div class="cell">
-          <div class="cell-label">{m.explore_mw_label_dist_centre()}</div>
-          <div class="cell-value">{fmt(object.galactocentric_ly)} ly</div>
-        </div>
-      {/if}
-      {#if object.diam_kly}
-        <div class="cell">
-          <div class="cell-label">{m.explore_mw_label_diam()}</div>
-          <div class="cell-value">{fmt(object.diam_kly * 1000)} ly</div>
-        </div>
-      {/if}
-      {#if object.arm}
-        <div class="cell">
-          <div class="cell-label">{m.explore_mw_label_location()}</div>
-          <div class="cell-value">{object.arm}</div>
-        </div>
-      {/if}
-    </div>
-
-    <a class="learn-link" href={learnHref}>{m.explore_mw_learn_more()} →</a>
-  {/if}
-</Panel>
-
-<style>
-  .kind {
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-label);
-  }
-  .name {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  .prose {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--text, #e9eefc);
-    margin: 0.5rem 0 0.75rem;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-  .cell {
-    min-width: 0;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 6px;
-    padding: 0.4rem 0.55rem;
-  }
-  .cell-label {
-    font-size: var(--size-label);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-text-label);
-  }
-  .cell-value {
-    font-size: 0.82rem;
-    font-weight: 600;
-  }
-  .cell-value.accent {
-    color: var(--color-state);
-  }
-  .unit {
-    font-size: var(--size-label);
-    font-weight: 400;
-    color: var(--color-text-label);
-  }
-  .learn-link {
-    display: inline-block;
-    font-size: 0.8rem;
-    color: var(--color-state);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .learn-link:hover {
-    text-decoration: underline;
-  }
-</style>
+<UniversePanelBody
+  {open}
+  {onClose}
+  {covered}
+  title={object?.name ?? ''}
+  entityId={object?.id ?? ''}
+  heroOf={object ? { level: 'milky-way', id: object.id } : undefined}
+  kind={object ? kindLabel : undefined}
+  name={object?.name}
+  lead={object ? [blurb] : []}
+  {facts}
+  learn={object ? { href: learnHref, label: m.explore_mw_learn_more() } : undefined}
+/>

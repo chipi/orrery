@@ -660,3 +660,94 @@ export async function getCultureDoors(
     }),
   );
 }
+
+// ─── Panel heroes (B3, UXD-023) ────────────────────────────────────────────
+// The picture an outer-scale or black-hole panel shows as its hero, from the hand-curated
+// universe/panel-heroes.json. A deep-sky gallery photo is served as its 700 px thumb (the
+// originals are not on the WebP ladder); a part-of photo (Tarantula for the LMC) says so.
+export type UniverseLevel =
+  | 'milky-way'
+  | 'local-group'
+  | 'local-sheet'
+  | 'virgo'
+  | 'laniakea'
+  | 'cosmic-web'
+  | 'black-holes';
+
+interface PanelHeroEntry {
+  photoKey?: string;
+  src?: string;
+  pictured?: boolean;
+  position?: string;
+}
+
+export interface UniverseHero {
+  /** Root-relative path of the image the hero box draws. */
+  src: string;
+  /** Root-relative path of the full image (the lightbox), also its provenance key. */
+  full: string;
+  /** The gallery title of the pictured part, when the photo shows a part of the entity. */
+  pictured?: string;
+  position?: string;
+}
+
+let panelHeroesCache: Promise<Record<string, PanelHeroEntry>> | null = null;
+function panelHeroes(fetchFn: FetchLike): Promise<Record<string, PanelHeroEntry>> {
+  if (!panelHeroesCache) {
+    panelHeroesCache = get<{ heroes: Record<string, PanelHeroEntry> }>(
+      'universe/panel-heroes.json',
+      fetchFn,
+    )
+      .then((doc) => doc.heroes ?? {})
+      .catch(() => ({}));
+  }
+  return panelHeroesCache;
+}
+
+/** The hero of an outer-scale or black-hole panel, or null: no hero, no slot. */
+export async function getUniverseHero(
+  level: UniverseLevel,
+  id: string,
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<UniverseHero | null> {
+  const entry = (await panelHeroes(fetchFn))[`${level}/${id}`];
+  if (!entry) return null;
+  if (entry.src) return { src: entry.src, full: entry.src, position: entry.position };
+  if (!entry.photoKey) return null;
+  const key = entry.photoKey;
+  const hero: UniverseHero = {
+    src: `/images/deep-sky/${key}.thumb.jpg`,
+    full: `/images/deep-sky/${key}.jpg`,
+    position: entry.position,
+  };
+  if (entry.pictured) {
+    const gallery = await getDeepSkyGallery(fetchFn, locale);
+    hero.pictured = gallery.find((i) => i.key === key)?.title;
+  }
+  return hero;
+}
+
+// ─── Named-star gallery (B3, UXD-023) ──────────────────────────────────────
+// Second and further images of a star, language-neutral. The first image stays the overlay's
+// `photo` (the hero); the panel's GALLERY tab shows only when a star has two or more in all.
+export interface NamedStarGalleryImage {
+  src: string;
+  kind: 'real' | 'artist';
+}
+
+let starGalleryCache: Promise<Record<string, NamedStarGalleryImage[]>> | null = null;
+export async function getNamedStarGallery(
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<NamedStarGalleryImage[]> {
+  if (!starGalleryCache) {
+    starGalleryCache = get<{ stars: Record<string, NamedStarGalleryImage[]> }>(
+      'universe/star-gallery.json',
+      fetchFn,
+    )
+      .then((doc) => doc.stars ?? {})
+      .catch(() => ({}));
+  }
+  return (await starGalleryCache)[id] ?? [];
+}

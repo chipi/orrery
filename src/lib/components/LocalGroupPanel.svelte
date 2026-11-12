@@ -1,11 +1,11 @@
 <!--
   LocalGroupPanel — detail panel for a member galaxy in the /explore v2 Local Group
-  schematic (Slice 8). Mirrors the MilkyWayPanel / shared Panel family. The view
-  carries the "schematic · not to scale" honesty badge; the panel numbers (distance,
-  diameter, type) are real catalogue values.
+  schematic (Slice 8). On the shared UniversePanelBody (B3). The view carries the
+  "schematic · not to scale" honesty badge; the panel numbers (distance, diameter, type) are
+  real catalogue values.
 -->
 <script lang="ts">
-  import Panel from './Panel.svelte';
+  import UniversePanelBody from './UniversePanelBody.svelte';
   import type { LocalGroupMember, LocalGroupKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
   import { sourceLink } from '$lib/catalogue';
@@ -49,94 +49,37 @@
   // Three significant figures: the catalogue distance is whole kiloparsecs.
   const fmt = (n: number): string => n.toLocaleString(undefined, { maximumSignificantDigits: 3 });
   let distSrc = $derived(sourceLink(member?.catalogue?.dist_mly));
+
+  let facts = $derived(
+    member
+      ? [
+          { label: m.explore_lg_label_group(), value: groupLabel(member), accent: true },
+          ...(member.dist_mly > 0
+            ? [
+                {
+                  label: m.explore_lg_label_distance(),
+                  value: `${fmt(member.dist_mly * 1e6)} ly`,
+                  source: distSrc ?? undefined,
+                },
+              ]
+            : []),
+          ...(member.diam_kly > 0
+            ? [{ label: m.explore_lg_label_diameter(), value: `${fmt(member.diam_kly * 1e3)} ly` }]
+            : []),
+        ]
+      : [],
+  );
 </script>
 
-<Panel {open} {onClose} {covered} title={member?.name ?? ''} mobileSheet="partial">
-  {#snippet eyebrow()}
-    {#if member}<div class="kind">{kindLabel(member.kind)}</div>{/if}
-  {/snippet}
-  {#snippet heading()}
-    {#if member}<div class="name">{member.name}</div>{/if}
-  {/snippet}
-
-  {#if member}
-    <p class="prose">{blurb(member.kind)}</p>
-
-    <div class="grid">
-      <div class="cell">
-        <div class="cell-label">{m.explore_lg_label_group()}</div>
-        <div class="cell-value accent">{groupLabel(member)}</div>
-      </div>
-      {#if member.dist_mly > 0}
-        <div class="cell">
-          <div class="cell-label">{m.explore_lg_label_distance()}</div>
-          <div class="cell-value">{fmt(member.dist_mly * 1e6)} ly</div>
-          {#if distSrc}
-            <a class="src" href={distSrc.url} target="_blank" rel="noopener noreferrer external"
-              >{distSrc.label}</a
-            >
-          {/if}
-        </div>
-      {/if}
-      {#if member.diam_kly > 0}
-        <div class="cell">
-          <div class="cell-label">{m.explore_lg_label_diameter()}</div>
-          <div class="cell-value">{fmt(member.diam_kly * 1e3)} ly</div>
-        </div>
-      {/if}
-    </div>
-  {/if}
-</Panel>
-
-<style>
-  .kind {
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-label);
-  }
-  .name {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  .prose {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--text, #e9eefc);
-    margin: 0.5rem 0 0.75rem;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    gap: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-  .cell {
-    min-width: 0;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 6px;
-    padding: 0.4rem 0.55rem;
-  }
-  .cell-label {
-    font-size: var(--size-label);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-text-label);
-  }
-  .cell-value {
-    font-size: 0.82rem;
-    font-weight: 600;
-  }
-  .cell-value.accent {
-    color: var(--color-state);
-  }
-  .src {
-    display: block;
-    margin-top: 2px;
-    font-size: var(--size-label);
-    font-weight: 400;
-    color: var(--color-text-label);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-</style>
+<UniversePanelBody
+  {open}
+  {onClose}
+  {covered}
+  title={member?.name ?? ''}
+  entityId={member?.id ?? ''}
+  heroOf={member ? { level: 'local-group', id: member.id } : undefined}
+  kind={member ? kindLabel(member.kind) : undefined}
+  name={member?.name}
+  lead={member ? [blurb(member.kind)] : []}
+  {facts}
+/>

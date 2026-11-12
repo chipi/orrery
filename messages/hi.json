@@ -1575,7 +1575,6 @@
   "explore_ds_cat_other": "गहन-आकाश पिंड",
   "explore_ctx_milky_way": "आकाशगंगा",
   "explore_mw_schematic_badge": "योजनाबद्ध · पैमाने के अनुसार नहीं",
-  "explore_mw_kind_black_hole": "अतिविशाल ब्लैक होल",
   "explore_mw_kind_star": "हमारा तारा",
   "explore_mw_label_mass": "द्रव्यमान",
   "explore_mw_label_dist_sun": "सूर्य से दूरी",
@@ -1583,7 +1582,6 @@
   "explore_mw_label_location": "स्थान",
   "explore_mw_solar_masses": "सौर द्रव्यमान",
   "explore_mw_learn_more": "और पढ़ें",
-  "explore_mw_sag_a_blurb": "आकाशगंगा के केंद्र में स्थित 4.3 मिलियन सौर-द्रव्यमान का कृष्ण विवर, जिसकी तस्वीर Event Horizon Telescope ने 2022 में ली। आकाशगंगा का हर तारा — सूर्य सहित — इसकी परिक्रमा करता है।",
   "explore_mw_sun_blurb": "सूर्य केंद्र से आधे से थोड़ा अधिक बाहर, धनु और ययाति भुजाओं के बीच एक छोटी शाखा पर स्थित है। आकाशगंगा की एक परिक्रमा में लगभग 230 मिलियन वर्ष लगते हैं।",
   "explore_ctx_back": "वापस",
   "explore_bh_lensing_badge": "गुरुत्वीय लेंसिंग · जियोडेसिक GR",
@@ -3687,5 +3685,10 @@
   "mp_surface_mars_orbit": "मंगल की कक्षा में",
   "mp_surface_lunar_orbit": "चंद्रमा की कक्षा में",
   "mp_surface_mars_surface": "मंगल की सतह पर",
-  "mp_surface_lunar_surface": "चंद्रमा की सतह पर"
+  "mp_surface_lunar_surface": "चंद्रमा की सतह पर",
+  "panel_tab_sky": "आकाश में",
+  "star_show_constellations": "तारामंडल की रेखाएँ दिखाएँ",
+  "star_zodiac_note": "{con} एक राशि-तारामंडल है: सूर्य, चंद्रमा और ग्रह इससे होकर गुज़रते हैं।",
+  "explore_bh_see_lensing": "गुरुत्वीय लेंसिंग सिमुलेशन देखें",
+  "panel_hero_pictured": "तस्वीर में: {part}"
 }

@@ -1575,7 +1575,6 @@
   "explore_ds_cat_other": "Objet du ciel profond",
   "explore_ctx_milky_way": "Voie lactée",
   "explore_mw_schematic_badge": "Schématique · hors échelle",
-  "explore_mw_kind_black_hole": "Trou noir supermassif",
   "explore_mw_kind_star": "Notre étoile",
   "explore_mw_label_mass": "Masse",
   "explore_mw_label_dist_sun": "Distance du Soleil",
@@ -1583,7 +1582,6 @@
   "explore_mw_label_location": "Position",
   "explore_mw_solar_masses": "masses solaires",
   "explore_mw_learn_more": "En savoir plus",
-  "explore_mw_sag_a_blurb": "Le trou noir de 4,3 millions de masses solaires au cœur de la Voie lactée, imagé par l'Event Horizon Telescope en 2022. Toutes les étoiles de la Galaxie — y compris le Soleil — orbitent autour de lui.",
   "explore_mw_sun_blurb": "Le Soleil se situe un peu plus qu'à mi-chemin du centre, sur une branche mineure entre les bras du Sagittaire et de Persée. Une orbite complète de la Galaxie prend environ 230 millions d'années.",
   "explore_ctx_back": "Retour",
   "explore_bh_lensing_badge": "Lentille gravitationnelle · géodésiques GR",
@@ -3687,5 +3685,10 @@
   "mp_surface_mars_orbit": "En orbite martienne",
   "mp_surface_lunar_orbit": "En orbite lunaire",
   "mp_surface_mars_surface": "À la surface de Mars",
-  "mp_surface_lunar_surface": "À la surface de la Lune"
+  "mp_surface_lunar_surface": "À la surface de la Lune",
+  "panel_tab_sky": "DANS LE CIEL",
+  "star_show_constellations": "Afficher les lignes des constellations",
+  "star_zodiac_note": "{con} est une constellation zodiacale : le Soleil, la Lune et les planètes la traversent.",
+  "explore_bh_see_lensing": "Voir la simulation de la lentille gravitationnelle",
+  "panel_hero_pictured": "Sur l'image : {part}"
 }

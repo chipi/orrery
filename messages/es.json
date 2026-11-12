@@ -1575,7 +1575,6 @@
   "explore_ds_cat_other": "Objeto de cielo profundo",
   "explore_ctx_milky_way": "Vía Láctea",
   "explore_mw_schematic_badge": "Esquemático · fuera de escala",
-  "explore_mw_kind_black_hole": "Agujero negro supermasivo",
   "explore_mw_kind_star": "Nuestra estrella",
   "explore_mw_label_mass": "Masa",
   "explore_mw_label_dist_sun": "Distancia desde el Sol",
@@ -1583,7 +1582,6 @@
   "explore_mw_label_location": "Ubicación",
   "explore_mw_solar_masses": "masas solares",
   "explore_mw_learn_more": "Leer más",
-  "explore_mw_sag_a_blurb": "El agujero negro de 4,3 millones de masas solares en el corazón de la Vía Láctea, fotografiado por el Event Horizon Telescope en 2022. Todas las estrellas de la Galaxia —incluido el Sol— orbitan a su alrededor.",
   "explore_mw_sun_blurb": "El Sol se encuentra poco más de la mitad hacia afuera desde el centro, en un brazo menor entre los brazos de Sagitario y Perseo. Una órbita alrededor de la Galaxia tarda aproximadamente 230 millones de años.",
   "explore_ctx_back": "Atrás",
   "explore_bh_lensing_badge": "Lente gravitacional · RG geodésica",
@@ -3687,5 +3685,10 @@
   "mp_surface_mars_orbit": "En órbita de Marte",
   "mp_surface_lunar_orbit": "En órbita lunar",
   "mp_surface_mars_surface": "En la superficie de Marte",
-  "mp_surface_lunar_surface": "En la superficie lunar"
+  "mp_surface_lunar_surface": "En la superficie lunar",
+  "panel_tab_sky": "EN EL CIELO",
+  "star_show_constellations": "Mostrar las líneas de las constelaciones",
+  "star_zodiac_note": "{con} es una constelación zodiacal: el Sol, la Luna y los planetas pasan por ella.",
+  "explore_bh_see_lensing": "Ver la simulación de la lente gravitacional",
+  "panel_hero_pictured": "En la imagen: {part}"
 }

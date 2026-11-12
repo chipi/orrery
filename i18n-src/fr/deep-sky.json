@@ -28,7 +28,7 @@
     "caption": "Tours de gaz froid et de poussière dans la Nébuleuse de l'Aigle (M16), éclairées de l'intérieur par des étoiles nouveau-nées.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse d'émission / région de formation stellaire (M16)",
-    "distance": "~6 500 années-lumière",
+    "distance": "~5 540 années-lumière",
     "taken": "Publié le 19 oct 2022"
   },
   "jwst-tarantula": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302 — ailes de gaz chauffé au-delà de 20 000 °C, éjectées par une étoile mourante.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire (NGC 6302)",
-    "distance": "~3 400 années-lumière",
+    "distance": "~2 430 années-lumière",
     "taken": "2009"
   },
   "hst-antennae": {
@@ -84,7 +84,7 @@
     "caption": "Deux galaxies (NGC 4038/4039) en collision, allumant des milliards de nouvelles étoiles.",
     "subject": "Galaxies",
     "type": "Galaxies en collision",
-    "distance": "~45–65 millions d'années-lumière",
+    "distance": "~69 millions d'années-lumière",
     "taken": "2006"
   },
   "hst-bubble": {
@@ -92,7 +92,7 @@
     "caption": "NGC 7635 — une bulle de sept années-lumière soufflée par le vent féroce d'une étoile massive.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse d'émission (NGC 7635)",
-    "distance": "~7 100 années-lumière",
+    "distance": "~9 130 années-lumière",
     "taken": "2016 · 26e anniversaire de Hubble"
   },
   "hst-westerlund2": {
@@ -108,7 +108,7 @@
     "caption": "NGC 6543 — l'une des nébuleuses planétaires les plus complexes jamais observées.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire (NGC 6543)",
-    "distance": "~3 300 années-lumière",
+    "distance": "~4 460 années-lumière",
     "taken": "2004"
   },
   "hst-whirlpool": {
@@ -116,7 +116,7 @@
     "caption": "M51 — une spirale de manuel, les bras rougeoyant de rose avec des étoiles nouvellement nées.",
     "subject": "Galaxies",
     "type": "Galaxie spirale (M51)",
-    "distance": "~31 millions d'années-lumière",
+    "distance": "~27 millions d'années-lumière",
     "taken": "2005"
   },
   "hst-crab": {
@@ -129,7 +129,7 @@
   },
   "hst-veil": {
     "title": "Nébuleuse du Voile",
-    "caption": "Un filament de la Boucle du Cygnus — une onde de choc de supernova encore en expansion après 10 000 ans.",
+    "caption": "Un filament de la Boucle du Cygnus — une onde de choc de supernova encore en expansion après environ 20 000 ans.",
     "subject": "Nébuleuse",
     "type": "Reste de supernova · Boucle du Cygnus",
     "distance": "~2 400 années-lumière",
@@ -148,7 +148,7 @@
     "caption": "NGC 2392 — une étoile semblable au Soleil enveloppée dans les enveloppes de gaz qu'elle a éjectées il y a 10 000 ans.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire (NGC 2392)",
-    "distance": "~3 000 années-lumière",
+    "distance": "~5 980 années-lumière",
     "taken": "2000"
   },
   "chandra-crab": {
@@ -263,7 +263,7 @@
   },
   "jwst-casa": {
     "title": "Cassiopeia A",
-    "caption": "L'œil infrarouge du Webb sur le plus jeune vestige de supernova connu de la galaxie.",
+    "caption": "L'œil infrarouge du Webb sur l'un des plus jeunes rémanents de supernova connus de la galaxie.",
     "subject": "Supernova",
     "type": "Vestige de supernova",
     "distance": "~11 000 années-lumière",
@@ -274,7 +274,7 @@
     "caption": "Une tour de gaz froid de sept années-lumière dans une lointaine pouponnière stellaire.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse par émission",
-    "distance": "~2 700 années-lumière",
+    "distance": "~2 280 années-lumière",
     "taken": "2002 · Premier éclairage de l'ACS"
   },
   "hst-omega-centauri": {
@@ -314,7 +314,7 @@
     "caption": "Une étoile rare et massive expulsant ses couches externes au moment où elle s'apprête à devenir supernova.",
     "subject": "Étoile",
     "type": "Étoile Wolf–Rayet",
-    "distance": "~15 000 années-lumière",
+    "distance": "~21 000 années-lumière",
     "taken": "Diffusée 14 mars 2023"
   },
   "hst-cosmic-reef": {
@@ -330,7 +330,7 @@
     "caption": "Des sabliers imbriqués de gaz éjectés par une étoile mourante et son compagnon.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire",
-    "distance": "~7 000 années-lumière",
+    "distance": "~15 000 années-lumière",
     "taken": "2019 · Hubble 29e"
   },
   "hst-monkey-head": {
@@ -362,7 +362,7 @@
     "caption": "Une spirale barrée exemplaire, ses bras enroulés autour d'une barre de 200 000 années-lumière.",
     "subject": "Galaxie",
     "type": "Galaxie spirale barrée",
-    "distance": "~61 millions d'années-lumière",
+    "distance": "~45 millions d'années-lumière",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342 — une spirale cachée derrière la poussière de la Voie lactée, révélée par Euclid.",
     "subject": "Galaxie",
     "type": "Galaxie spirale",
-    "distance": "~11 millions d'années-lumière",
+    "distance": "~7,3 millions d'années-lumière",
     "taken": "Publié en 2024"
   },
   "hst-v838": {

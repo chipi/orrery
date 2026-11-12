@@ -10,8 +10,9 @@ import { waitForHydration } from './_helpers/hydration';
  *
  * Runs on desktop-chromium (fine pointer), mobile-chromium and mobile-landscape-chromium (coarse).
  *
- * Written without a browser run (the slice author had none): the sweep's allow-lists (SWEEP_ALLOW_SELF, SWEEP_ALLOW_INSIDE)
- * is the one thing most likely to need a line added when a route shows a legitimate non-chip
+ * Written without a browser run (the slice author had none): the sweep's allow-lists
+ * (SWEEP_ALLOW_SELF, SWEEP_ALLOW_INSIDE) are the one thing most likely to need a line added
+ * when a route shows a legitimate non-chip
  * control; every other assertion is a number from chip.css.
  */
 

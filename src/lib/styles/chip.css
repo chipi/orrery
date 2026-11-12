@@ -113,6 +113,24 @@
   gap: 6px;
 }
 
+/* A non-interactive label with the chip's on look: the core tier of a link list (A3 Q12).
+   A span, never a control; the other tiers keep their own pill. */
+.ui-chip-label {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 2px 6px;
+  background: color-mix(in srgb, var(--color-accent) 22%, var(--color-chip-glass));
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 /* Small controls that are not chips (a Why? trigger, a provenance mark, an inline cross-reference):
    a 24 px minimum hit area (WCAG 2.5.8) with no visual change. */
 :where(.ui-hit) {

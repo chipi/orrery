@@ -94,6 +94,10 @@ declare global {
     };
     /** Pin scenes (neighbourhood to cosmic web): every label and ring as drawn, client px; null elsewhere. */
     __scenePins?: () => import('$lib/universe/scene-pins').PinsSnapshot | null;
+    /** Screen points (canvas-box px) on a kind of solar line or the neighbourhood's light-year rings, for the readability probe. */
+    __exploreLinePoints?: (
+      kind: 'planet-orbits' | 'moon-orbits' | 'small-orbits' | 'belts' | 'ly-rings',
+    ) => Array<{ x: number; y: number }>;
     /** The 2D view's labels of the last frame: text, font size in CSS px, whether it was drawn. */
     __explore2dLabels?: () => Array<{ text: string; fontPx: number; shown: boolean }>;
     /** A solar-system body's world position: planet:<id>, small:<id>, moon:<parent>:<id>, belt:<id>. */

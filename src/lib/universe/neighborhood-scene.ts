@@ -90,6 +90,8 @@ export interface NeighborhoodScene {
   update(camDistPc: number, camera?: THREE.Camera, viewportH?: number): void;
   /** Probe for the e2e specs: every label and ring as it is on screen (client px). */
   pinsSnapshot(camera: THREE.Camera, w: number, h: number): PinsSnapshot;
+  /** World points on the four light-year rings, for the readability probe. */
+  referenceRingPoints(): THREE.Vector3[];
   dispose(): void;
 }
 
@@ -499,6 +501,17 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     setSize(width: number, height: number) {
       for (const mat of constellationMats) mat.resolution.set(width, height);
       for (const mat of referenceMats) mat.resolution.set(width, height);
+    },
+    referenceRingPoints() {
+      const pts: THREE.Vector3[] = [];
+      for (const ly of REFERENCE_LY) {
+        const r = ly / LY_PER_PC;
+        for (let k = 0; k < 96; k++) {
+          const a = (k / 96) * Math.PI * 2;
+          pts.push(new THREE.Vector3(Math.cos(a) * r, 0, Math.sin(a) * r));
+        }
+      }
+      return pts;
     },
     pinsSnapshot(camera: THREE.Camera, w: number, h: number) {
       return snapshotPins('neighborhood', probePins, camera, w, h);

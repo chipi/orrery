@@ -290,6 +290,21 @@ test.describe('panel overview is an upright lead in the body font (UX A1 / Q2)',
   });
 });
 
+test.describe('3D sprite labels of the pin scenes keep the floor (UX C2, UXD-020)', () => {
+  test.slow();
+  for (const level of ['neighborhood', 'milky-way', 'local-group']) {
+    test(`${level}: every shown sprite label is at least 11 px of text`, async ({ page }) => {
+      await page.goto(`${LOC}/explore?context=${level}`);
+      await page.waitForFunction(() => window.__scenePins?.() != null, null, { timeout: 60_000 });
+      await page.waitForTimeout(2_000);
+      const snap = await page.evaluate(() => window.__scenePins!());
+      const shown = snap!.labels.filter((l) => l.shown);
+      expect(shown.length).toBeGreaterThan(0);
+      for (const l of shown) expect(l.textPx, `${level}: ${l.id}`).toBeGreaterThanOrEqual(11);
+    });
+  }
+});
+
 test.describe('bigger labels do not push card grids off screen (UX A1 layout)', () => {
   for (const route of ['/fleet', '/missions']) {
     test(`${route}: every card sits inside the viewport`, async ({ page }) => {

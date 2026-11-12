@@ -394,6 +394,14 @@ export function createMilkyWayScene(
     ring.userData.mwObjectId = arm.id;
     const slot = newLabelSlot(sprite, aspect, RANK_ARM);
     slots.push(slot);
+    // A raycaster ignores `visible`: an arm whose label the placement pass hid must not stay
+    // clickable as an invisible target.
+    for (const target of [sprite, ring]) {
+      const hit = target.raycast.bind(target);
+      target.raycast = (rc, hits) => {
+        if (slot.visible) hit(rc, hits);
+      };
+    }
     pickables.push(sprite, ring);
     pins.push({ id: arm.id, ring, anchor: false, slot, position, baseScale: 0 });
   }

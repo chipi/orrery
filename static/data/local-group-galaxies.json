@@ -1,61 +1,106 @@
 {
   "version": "1.0",
-  "description": "Local Group galaxies plotted as billboard sprites on the /explore celestial sphere. Positions are J2000 ICRS (RA/Dec in decimal degrees). Distances from Solar System in kiloparsecs. Source: NASA NED + Karachentsev et al. (2013) updated catalogue + recent Gaia DR3 / HST distance measurements.",
+  "description": "Local Group galaxies plotted as billboard sprites on the /explore celestial sphere. Positions are J2000 ICRS (RA/Dec in decimal degrees). Distances from the Solar System in kiloparsecs from McConnachie (2012), via VizieR J/AJ/144/4, one catalogue entry per galaxy (source, bibcode, record link).",
   "entries": [
     {
       "id": "andromeda",
       "name": "Andromeda Galaxy (M31)",
       "ra": 10.6847,
       "dec": 41.269,
-      "distance_kpc": 778,
+      "distance_kpc": 783,
       "type": "spiral",
       "group": "andromeda-subgroup",
       "science_section": "andromeda-galaxy",
-      "wikidata": "Q2469"
+      "wikidata": "Q2469",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 783,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Andromeda",
+          "note": "Andromeda: 783 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "triangulum",
       "name": "Triangulum Galaxy (M33)",
       "ra": 23.4621,
       "dec": 30.6602,
-      "distance_kpc": 859,
+      "distance_kpc": 809,
       "type": "spiral",
       "group": "andromeda-subgroup",
       "science_section": "local-group",
-      "wikidata": "Q47105"
+      "wikidata": "Q47105",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 809,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Triangulum",
+          "note": "Triangulum: 809 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "lmc",
       "name": "Large Magellanic Cloud",
       "ra": 80.8939,
       "dec": -69.7561,
-      "distance_kpc": 49.97,
+      "distance_kpc": 51,
       "type": "irregular",
       "group": "milky-way-subgroup",
       "science_section": "magellanic-clouds",
-      "wikidata": "Q10861"
+      "wikidata": "Q10861",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 51,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=LMC",
+          "note": "LMC: 51 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "smc",
       "name": "Small Magellanic Cloud",
       "ra": 13.1583,
       "dec": -72.8003,
-      "distance_kpc": 62.1,
+      "distance_kpc": 64,
       "type": "irregular",
       "group": "milky-way-subgroup",
       "science_section": "magellanic-clouds",
-      "wikidata": "Q10876"
+      "wikidata": "Q10876",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 64,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=SMC",
+          "note": "SMC: 64 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "sagittarius-dwarf",
       "name": "Sagittarius Dwarf Spheroidal",
       "ra": 283.83,
       "dec": -30.55,
-      "distance_kpc": 22,
+      "distance_kpc": 26,
       "type": "dwarf-spheroidal",
       "group": "milky-way-subgroup",
       "science_section": "dwarf-spheroidals",
-      "wikidata": "Q220402"
+      "wikidata": "Q220402",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 26,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Sagittarius%20dSph",
+          "note": "Sagittarius dSph: 26 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "sculptor-dwarf",
@@ -66,7 +111,16 @@
       "type": "dwarf-spheroidal",
       "group": "milky-way-subgroup",
       "science_section": "dwarf-spheroidals",
-      "wikidata": "Q857651"
+      "wikidata": "Q857651",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 86,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Sculptor",
+          "note": "Sculptor: 86 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "fornax-dwarf",
@@ -77,7 +131,16 @@
       "type": "dwarf-spheroidal",
       "group": "milky-way-subgroup",
       "science_section": "dwarf-spheroidals",
-      "wikidata": "Q903021"
+      "wikidata": "Q903021",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 147,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Fornax",
+          "note": "Fornax: 147 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "draco-dwarf",
@@ -88,7 +151,16 @@
       "type": "dwarf-spheroidal",
       "group": "milky-way-subgroup",
       "science_section": "dwarf-spheroidals",
-      "wikidata": "Q920225"
+      "wikidata": "Q920225",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 76,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Draco",
+          "note": "Draco: 76 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "ursa-minor-dwarf",
@@ -99,7 +171,16 @@
       "type": "dwarf-spheroidal",
       "group": "milky-way-subgroup",
       "science_section": "dwarf-spheroidals",
-      "wikidata": "Q956030"
+      "wikidata": "Q956030",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 76,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Ursa%20Minor",
+          "note": "Ursa Minor: 76 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "leo-i",
@@ -110,7 +191,16 @@
       "type": "dwarf-spheroidal",
       "group": "milky-way-subgroup",
       "science_section": "dwarf-spheroidals",
-      "wikidata": "Q1361401"
+      "wikidata": "Q1361401",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 254,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Leo%20I",
+          "note": "Leo I: 254 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "leo-ii",
@@ -121,7 +211,16 @@
       "type": "dwarf-spheroidal",
       "group": "milky-way-subgroup",
       "science_section": "dwarf-spheroidals",
-      "wikidata": "Q1361414"
+      "wikidata": "Q1361414",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 233,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Leo%20II",
+          "note": "Leo II: 233 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "sextans-dwarf",
@@ -132,29 +231,56 @@
       "type": "dwarf-spheroidal",
       "group": "milky-way-subgroup",
       "science_section": "dwarf-spheroidals",
-      "wikidata": "Q1419720"
+      "wikidata": "Q1419720",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 86,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=Sextans%20(I)",
+          "note": "Sextans (I): 86 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "ngc-6822",
       "name": "Barnard's Galaxy (NGC 6822)",
       "ra": 296.24,
       "dec": -14.8,
-      "distance_kpc": 500,
+      "distance_kpc": 459,
       "type": "irregular",
       "group": "free",
       "science_section": "galaxy-types",
-      "wikidata": "Q857769"
+      "wikidata": "Q857769",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 459,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=NGC%206822",
+          "note": "NGC 6822: 459 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "ic-1613",
       "name": "IC 1613",
       "ra": 16.2,
       "dec": 2.13,
-      "distance_kpc": 730,
+      "distance_kpc": 755,
       "type": "irregular",
       "group": "free",
       "science_section": "galaxy-types",
-      "wikidata": "Q12521"
+      "wikidata": "Q12521",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 755,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=IC%201613",
+          "note": "IC 1613: 755 kpc; the catalogue gives whole kpc"
+        }
+      }
     },
     {
       "id": "wlm",
@@ -165,7 +291,16 @@
       "type": "irregular",
       "group": "free",
       "science_section": "galaxy-types",
-      "wikidata": "Q1156555"
+      "wikidata": "Q1156555",
+      "catalogue": {
+        "distance_kpc": {
+          "value": 933,
+          "source": "McConnachie 2012, The observed properties of dwarf galaxies in and around the Local Group",
+          "bibcode": "2012AJ....144....4M",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=WLM%20(Wolf-Lundmark-Melotte)",
+          "note": "WLM (Wolf-Lundmark-Melotte): 933 kpc; the catalogue gives whole kpc"
+        }
+      }
     }
   ]
 }

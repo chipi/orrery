@@ -1,0 +1,386 @@
+/**
+ * The INDEX of every /explore scale (UXD-017): one row model and one filter set for all eight
+ * scale shells. Pure and framework-free: the server builds the rows (`getScaleIndexRows` in
+ * `$lib/server/entity-index`) and `ScaleIndex.svelte` renders them. A row is one selectable
+ * object of the scene; `href` is set when that object has an entity page.
+ */
+import { constellationName } from '$lib/universe/iau-constellations';
+import type { ShellId } from './scale-shell-controller';
+
+export type IndexSection =
+  | 'stars'
+  | 'deep-sky'
+  | 'planets'
+  | 'small-bodies'
+  | 'moons'
+  | 'belts'
+  | 'objects'
+  | 'globulars'
+  | 'satellites'
+  | 'arms'
+  | 'black-holes'
+  | 'fiction';
+
+export type IndexBadge = 'system' | 'culture' | 'headliner' | 'black-hole';
+
+export interface ScaleIndexRow {
+  /** The scene id the select function takes (`m13`, `virgo-cluster`, `mercury`). */
+  id: string;
+  name: string;
+  /** The data's own kind (`spiral`, `supercluster`, `globular-cluster`, a deep-sky category …). */
+  kind: string;
+  section?: IndexSection;
+  /** One short line after the name (constellation, parent planet); the kind label when absent. */
+  meta?: string;
+  badges?: IndexBadge[];
+  /** Locale-free path of the object's entity page, absent when it has none. */
+  href?: string;
+  /** A moon's parent planet id (the select function takes both). */
+  parent?: string;
+  /** Dot colour of a solar-system row, set by the page. */
+  color?: string;
+  /** False for a row whose object the scene does not draw. */
+  selectable: boolean;
+}
+
+export type ScaleIndexRows = Record<ShellId, ScaleIndexRow[]>;
+
+/** The solar system also lists in the 2D view; every other scale is a 3D scene. */
+export const INDEX_NEEDS_3D: Record<ShellId, boolean> = {
+  'solar-system': false,
+  neighborhood: true,
+  'milky-way': true,
+  'local-group': true,
+  'local-sheet': true,
+  virgo: true,
+  laniakea: true,
+  'cosmic-web': true,
+};
+
+export type IndexFilterId =
+  | 'system'
+  | 'culture'
+  | 'deep-sky'
+  | 'headliner'
+  | 'planet'
+  | 'dwarf'
+  | 'comet'
+  | 'globular'
+  | 'satellite'
+  | 'arm'
+  | 'black-hole'
+  | 'spiral'
+  | 'irregular'
+  | 'dwarf-galaxy'
+  | 'group'
+  | 'cloud'
+  | 'cluster'
+  | 'supercluster'
+  | 'attractor'
+  | 'wall'
+  | 'void'
+  | 'concentration';
+
+const hasBadge =
+  (b: IndexBadge) =>
+  (r: ScaleIndexRow): boolean =>
+    r.badges?.includes(b) ?? false;
+const isKind =
+  (...kinds: string[]) =>
+  (r: ScaleIndexRow): boolean =>
+    kinds.includes(r.kind);
+
+export const FILTER_TESTS: Record<IndexFilterId, (r: ScaleIndexRow) => boolean> = {
+  system: hasBadge('system'),
+  culture: hasBadge('culture'),
+  'deep-sky': (r) => r.section === 'deep-sky',
+  headliner: hasBadge('headliner'),
+  planet: isKind('planet'),
+  dwarf: isKind('dwarf'),
+  comet: isKind('comet'),
+  globular: isKind('globular-cluster'),
+  satellite: isKind('satellite-galaxy'),
+  arm: isKind('spiral-arm'),
+  'black-hole': hasBadge('black-hole'),
+  spiral: isKind('spiral'),
+  irregular: isKind('irregular'),
+  'dwarf-galaxy': isKind('dwarf-elliptical', 'dwarf-spheroidal', 'dwarf-irregular'),
+  group: isKind('group'),
+  cloud: isKind('cloud'),
+  cluster: isKind('cluster'),
+  supercluster: isKind('supercluster'),
+  attractor: isKind('attractor'),
+  wall: isKind('wall'),
+  void: isKind('void'),
+  concentration: isKind('concentration'),
+};
+
+/** The chips of each scale after All: kind chips, plus Highlights where a row is a headliner. */
+export const SCALE_FILTERS: Record<ShellId, IndexFilterId[]> = {
+  'solar-system': ['planet', 'dwarf', 'comet'],
+  neighborhood: ['system', 'culture', 'deep-sky'],
+  'milky-way': ['headliner', 'globular', 'satellite', 'arm', 'black-hole'],
+  'local-group': ['headliner', 'spiral', 'irregular', 'dwarf-galaxy'],
+  'local-sheet': ['headliner', 'group', 'cloud'],
+  virgo: ['headliner', 'group', 'cluster', 'cloud'],
+  laniakea: ['headliner', 'supercluster', 'attractor', 'cluster'],
+  'cosmic-web': ['headliner', 'supercluster', 'wall', 'void', 'concentration'],
+};
+
+/** The rows a chip (null = All) and the search box leave, in list order. */
+export function filterRows(
+  rows: ScaleIndexRow[],
+  filter: IndexFilterId | null,
+  query: string,
+  metaOf: (r: ScaleIndexRow) => string = (r) => r.meta ?? '',
+): ScaleIndexRow[] {
+  const q = query.trim().toLowerCase();
+  return rows.filter(
+    (r) =>
+      (filter === null || FILTER_TESTS[filter](r)) &&
+      (!q || r.name.toLowerCase().includes(q) || metaOf(r).toLowerCase().includes(q)),
+  );
+}
+
+/** Consecutive rows of one section, in list order (rows without a section lead the list). */
+export function groupBySection(
+  rows: ScaleIndexRow[],
+): { section: IndexSection | undefined; rows: ScaleIndexRow[] }[] {
+  const groups: { section: IndexSection | undefined; rows: ScaleIndexRow[] }[] = [];
+  for (const r of rows) {
+    const last = groups[groups.length - 1];
+    if (last && last.section === r.section) last.rows.push(r);
+    else groups.push({ section: r.section, rows: [r] });
+  }
+  return groups;
+}
+
+// ─── Row builders ─────────────────────────────────────────────────────────────
+
+export interface ScaleIndexSource {
+  /** Sorts the star and deep-sky lists. */
+  locale: string;
+  /** Display names in the reader's language, by id; a missing id falls back to the data's name. */
+  names: {
+    body: Record<string, string>;
+    star: Record<string, string>;
+    blackHole: Record<string, string>;
+    belt: Record<string, string>;
+    sun?: string;
+  };
+  /** Ids that have an entity page: /explore/<id>, /explore/stars/<id>, /explore/black-holes/<id>. */
+  pages: { body: ReadonlySet<string>; star: ReadonlySet<string>; blackHole: ReadonlySet<string> };
+  planets: { name: string }[];
+  smallBodies: { id: string; name: string; type: string }[];
+  satellites: {
+    id: string;
+    name: string;
+    parent_planet_id: string;
+    parent_planet_name: string;
+  }[];
+  belts: { id: string; name: string }[];
+  namedStars: { id: string; proper: string; con: string | null }[];
+  hostSystems: { hostId: string; star: { name: string; con: string | null } }[];
+  deepSky: { id: string; name: string; category: string }[];
+  cultureIds: ReadonlySet<string>;
+  milkyWay: {
+    objects: { id: string; name: string; kind: string }[];
+    globulars?: { id: string; name: string; headliner: boolean }[];
+    magellanic?: { id: string; name: string }[];
+    arms: { id: string; name: string }[];
+  };
+  localGroup: Member[];
+  localSheet: Member[];
+  virgo: Member[];
+  laniakea: Member[];
+  cosmicWeb: Member[];
+  blackHoles: { id: string; name: string; kind: string }[];
+}
+
+type Member = { id: string; name: string; kind: string; headliner: boolean } & (
+  { dist_mly: number } | { dist_mpc: number }
+);
+
+const dist = (m: Member): number => ('dist_mly' in m ? m.dist_mly : m.dist_mpc);
+
+/** Members nearest first; the data files list them in the order they were authored. */
+function memberRows(members: Member[]): ScaleIndexRow[] {
+  return [...members]
+    .sort((a, b) => dist(a) - dist(b))
+    .map((m) => ({
+      id: m.id,
+      name: m.name,
+      kind: m.kind,
+      badges: m.headliner ? ['headliner'] : undefined,
+      selectable: true,
+    }));
+}
+
+function blackHoleRow(
+  src: ScaleIndexSource,
+  id: string,
+  section: IndexSection | undefined,
+): ScaleIndexRow {
+  const hole = src.blackHoles.find((h) => h.id === id);
+  if (!hole) throw new Error(`black hole ${id} is not in black-holes.json`);
+  return {
+    id,
+    name: src.names.blackHole[id] ?? hole.name,
+    kind: hole.kind,
+    section,
+    badges: ['black-hole'],
+    href: src.pages.blackHole.has(id) ? `/explore/black-holes/${id}` : undefined,
+    selectable: true,
+  };
+}
+
+function solarRows(src: ScaleIndexSource): ScaleIndexRow[] {
+  const rows: ScaleIndexRow[] = [];
+  // Pluto is in planets.json and in small-bodies.json: the planet row wins, as in the scene.
+  const seen = new Set<string>();
+  const page = (id: string) => (src.pages.body.has(id) ? `/explore/${id}` : undefined);
+  const bodyName = (id: string, fallback: string) => src.names.body[id] ?? fallback;
+  rows.push({
+    id: 'sun',
+    name: src.names.sun ?? 'Sun',
+    kind: 'sun',
+    selectable: true,
+  });
+  seen.add('sun');
+  for (const p of src.planets) {
+    const id = p.name.toLowerCase();
+    seen.add(id);
+    rows.push({
+      id,
+      name: bodyName(id, p.name),
+      kind: 'planet',
+      section: 'planets',
+      href: page(id),
+      selectable: true,
+    });
+  }
+  for (const b of src.smallBodies) {
+    if (seen.has(b.id)) continue;
+    seen.add(b.id);
+    rows.push({
+      id: b.id,
+      name: bodyName(b.id, b.name),
+      kind: b.type,
+      section: 'small-bodies',
+      href: page(b.id),
+      selectable: true,
+    });
+  }
+  for (const s of src.satellites) {
+    rows.push({
+      id: s.id,
+      name: bodyName(s.id, s.name),
+      kind: 'moon',
+      section: 'moons',
+      meta: bodyName(s.parent_planet_id, s.parent_planet_name),
+      parent: s.parent_planet_id,
+      href: page(s.id),
+      selectable: true,
+    });
+  }
+  for (const b of src.belts) {
+    rows.push({
+      id: b.id,
+      name: src.names.belt[b.id] ?? b.name,
+      kind: 'belt',
+      section: 'belts',
+      selectable: true,
+    });
+  }
+  return rows;
+}
+
+function neighborhoodRows(src: ScaleIndexSource): ScaleIndexRow[] {
+  const hostIds = new Set(src.hostSystems.map((s) => s.hostId));
+  const stars = new Map<string, { name: string; con: string | null }>();
+  for (const s of src.namedStars) stars.set(s.id, { name: s.proper, con: s.con });
+  for (const s of src.hostSystems)
+    if (!stars.has(s.hostId)) stars.set(s.hostId, { name: s.star.name, con: s.star.con });
+  const badgesOf = (id: string): IndexBadge[] | undefined => {
+    const badges: IndexBadge[] = [];
+    if (hostIds.has(id)) badges.push('system');
+    if (src.cultureIds.has(id)) badges.push('culture');
+    return badges.length > 0 ? badges : undefined;
+  };
+  const collator = new Intl.Collator(src.locale);
+  const byName = (a: ScaleIndexRow, b: ScaleIndexRow) => collator.compare(a.name, b.name);
+  const starRows: ScaleIndexRow[] = [...stars.entries()]
+    .map(([id, s]) => ({
+      id,
+      name: src.names.star[id] ?? s.name,
+      kind: 'star',
+      section: 'stars' as const,
+      meta: s.con ? constellationName(s.con) : undefined,
+      badges: badgesOf(id),
+      href: src.pages.star.has(id) ? `/explore/stars/${id}` : undefined,
+      selectable: true,
+    }))
+    .sort(byName);
+  const deepRows: ScaleIndexRow[] = src.deepSky
+    .map((o) => ({
+      id: o.id,
+      name: o.name,
+      kind: o.category,
+      section: 'deep-sky' as const,
+      badges: badgesOf(o.id),
+      selectable: true,
+    }))
+    .sort(byName);
+  return [...starRows, ...deepRows];
+}
+
+function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
+  const mw = src.milkyWay;
+  const rows: ScaleIndexRow[] = [];
+  for (const o of mw.objects) {
+    rows.push(
+      o.id === 'sagittarius-a-star'
+        ? blackHoleRow(src, o.id, 'objects')
+        : { id: o.id, name: o.name, kind: o.kind, section: 'objects', selectable: true },
+    );
+  }
+  rows.push(blackHoleRow(src, 'cygnus-x-1', 'objects'));
+  for (const g of mw.globulars ?? [])
+    rows.push({
+      id: g.id,
+      name: g.name,
+      kind: 'globular-cluster',
+      section: 'globulars',
+      badges: g.headliner ? ['headliner'] : undefined,
+      selectable: true,
+    });
+  for (const s of mw.magellanic ?? [])
+    rows.push({
+      id: s.id,
+      name: s.name,
+      kind: 'satellite-galaxy',
+      section: 'satellites',
+      selectable: true,
+    });
+  for (const a of mw.arms)
+    rows.push({ id: a.id, name: a.name, kind: 'spiral-arm', section: 'arms', selectable: true });
+  return rows;
+}
+
+/**
+ * Every scale's rows from the data files. Where a black hole sits follows its distance
+ * (UXD-017): Sagittarius A* and Cygnus X-1 in the Milky Way, M87* in Virgo, the fictional
+ * Gargantua after everything real, at the foot of the Cosmic web.
+ */
+export function buildScaleIndexRows(src: ScaleIndexSource): ScaleIndexRows {
+  return {
+    'solar-system': solarRows(src),
+    neighborhood: neighborhoodRows(src),
+    'milky-way': milkyWayRows(src),
+    'local-group': memberRows(src.localGroup),
+    'local-sheet': memberRows(src.localSheet),
+    virgo: [...memberRows(src.virgo), blackHoleRow(src, 'm87-star', 'black-holes')],
+    laniakea: memberRows(src.laniakea),
+    'cosmic-web': [...memberRows(src.cosmicWeb), blackHoleRow(src, 'gargantua', 'fiction')],
+  };
+}

@@ -31,7 +31,8 @@
   // /explore v2 "The Known Universe" (PRD-030 / RFC-032). The neighborhood scene
   // is dynamically imported at the boundary so v1's bundle + first paint stay
   // untouched (RFC C-F).
-  import type { ShellId } from '$lib/explore/scale-shell-controller';
+  import { CTX_ORDER, type ShellId } from '$lib/explore/scale-shell-controller';
+  import { INDEX_NEEDS_3D, type ScaleIndexRow } from '$lib/explore/scale-index';
   import { createExploreSolarScene } from '$lib/three/explore-solar-scene';
   import {
     createExploreSceneHost,
@@ -45,7 +46,6 @@
     getSun,
     getMissionIndex,
     getMission,
-    getBlackHoles,
     type MilkyWayObject,
     type LocalGroupMember,
     type LocalSheetMember,
@@ -76,7 +76,7 @@
   import CosmicWebPanel from '$lib/components/CosmicWebPanel.svelte';
   import BlackHolePanel from '$lib/components/BlackHolePanel.svelte';
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
-  import StarIndex from '$lib/components/StarIndex.svelte';
+  import ScaleIndex, { indexAriaLabel } from '$lib/components/ScaleIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
   import { localeFromPage, localHref } from '$lib/locale';
   import { createIconicSelectionService } from './iconic-selection.svelte';
@@ -102,7 +102,6 @@
   import type { Mission } from '$types/mission';
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
-  import ExploreBodyIndex from '$lib/components/ExploreBodyIndex.svelte';
   import MessagePanel from '$lib/components/MessagePanel.svelte';
   import { getInterstellarCraft, type InterstellarCraft } from '$lib/data/interstellar';
   import SizesOverlay from './SizesOverlay.svelte';
@@ -148,24 +147,23 @@
   let localizedSun: LocalizedSun | null = $state(null);
   let selectedId: string | null = $state(null);
 
-  // Keyboard / screen-reader / TV body index (RFC-031 S2): the accessible way
-  // to reach every selectable body without the pointer-only canvas.
-  let bodyIndexOpen = $state(false);
-  let bodyIndexList = $derived.by(() => {
-    const list: { kind: 'sun' | 'planet' | 'small'; id: string; name: string }[] = [];
-    // Dedupe by id: Pluto was promoted SMALL_BODIES → PLANETS (#287) but lingers
-    // in both lists, so it would otherwise appear twice. Planets are pushed first,
-    // so Pluto keeps its (correct) planet kind + selectPlanet handler.
-    const seen = new Set<string>();
-    const add = (item: (typeof list)[number]) => {
-      if (seen.has(item.id)) return;
-      seen.add(item.id);
-      list.push(item);
-    };
-    if (localizedSun) add({ kind: 'sun', id: 'sun', name: localizedSun.name });
-    for (const p of localizedPlanets) add({ kind: 'planet', id: p.id, name: p.name });
-    for (const b of SMALL_BODIES) add({ kind: 'small', id: b.id, name: b.name });
-    return list;
+  // The INDEX of the scale on screen (UXD-017): the keyboard / screen-reader / TV way to every
+  // selectable object without the pointer-only canvas. One open state for all eight scales; it
+  // stays open across a scale jump on a fine pointer and closes on a coarse one.
+  let indexOpen = $state(false);
+  // The Sun and each planet carry their own colour as the dot of their row (the scene's catalogue);
+  // every other solar-system row keeps the default grey dot.
+  const SOLAR_DOT: Record<string, string> = {
+    sun: '#ffcc33',
+    ...Object.fromEntries(PLANETS.map((p) => [p.id, p.css])),
+  };
+  const indexRows = $derived({
+    ...data.scaleIndex,
+    'solar-system': data.scaleIndex['solar-system'].map((r) =>
+      !SOLAR_DOT[r.id] || (r.kind !== 'sun' && r.kind !== 'planet')
+        ? r
+        : { ...r, color: SOLAR_DOT[r.id] },
+    ),
   });
 
   // ─── Consolidated panel / layer / camera state (Action 7, #326) ──
@@ -188,9 +186,6 @@
 
   // /explore v2 Slice 1 — named-star selection + the anonymous-star tap readout.
   let namedStars = $state<NamedStar[]>([]);
-  // 2026-09-11 — black holes in the index rail: before this the lensing
-  // takeovers had no in-app entry beyond the Sgr A* pin (?bh= URLs only).
-  let blackHoleIndex = $state<Array<{ id: string; name: string }>>([]);
   // Slice 2 — the exoplanet selected inside a BodyScene (drives ExoplanetPanel).
   let selectedExoplanet = $state<{
     planet: ExoplanetPlanet;
@@ -614,8 +609,6 @@
   // Host-id → full system, for the StarPanel "System" tab summary (planet count,
   // sizes, periods) without re-fetching. Populated alongside exoplanetHostIds.
   let exoplanetSystemsById = $state<Map<string, ExoplanetSystem>>(new Map());
-  // Object ids carrying a culture door — drives the star-index ◈ badge + filter.
-  let cultureObjectIds = $state<Set<string>>(new Set());
   // A distance caption shown during a Navigator warp into/out of a system.
   let warpCaption = $state('');
   let enterSystemFn: ((hostId: string, planetId?: string) => void) | null = null;
@@ -667,11 +660,11 @@
   let exitDeepSkyFn: (() => void) | null = null;
   let deepSkyGatewayFn: ((hostId: string) => void) | null = null;
   let deepSkyDeepLinkFn: ((designation: string) => void) | null = null;
+  // The INDEX row's select: the same function a canvas click on a glint runs.
+  let selectDeepSkyFn: ((id: string) => void) | null = null;
   let activeDeepSkyImage = $derived(
     activeDeepSky ? findDeepSkyImage(deepSkyGallery, activeDeepSky.photoKey) : undefined,
   );
-  // Named-star index (search + list) open state.
-  let starIndexOpen = $state(false);
   // Sun "compass": the needle angle (deg) toward the Sun's on-screen position,
   // whether it's currently in frame, and camera→Sun distance (ly). Drives the
   // persistent "you are here / home" indicator in the neighborhood (item: never
@@ -767,30 +760,35 @@
   let selectedLgMember = $state<LocalGroupMember | null>(null);
   let lgPanelOpen = $state(false);
   let closeLgFn: (() => void) | null = null;
+  let selectLgFn: ((id: string) => void) | null = null;
   // #454 (WS-1) — the Local Sheet shell.
   let exitLocalSheetFn: (() => void) | null = null;
   let selectedLsMember = $state<LocalSheetMember | null>(null);
   let lsPanelOpen = $state(false);
   let lsMembers = $state<LocalSheetMember[]>([]);
   let closeLsFn: (() => void) | null = null;
+  let selectLsFn: ((id: string) => void) | null = null;
   // #455 (WS-5b) — the Virgo Supercluster shell.
   let exitVirgoFn: (() => void) | null = null;
   let selectedVirgoMember = $state<VirgoMember | null>(null);
   let virgoPanelOpen = $state(false);
   let virgoMembers = $state<VirgoMember[]>([]);
   let closeVirgoFn: (() => void) | null = null;
+  let selectVirgoFn: ((id: string) => void) | null = null;
   // #456 (WS-5c) — the Laniakea Supercluster shell.
   let exitLaniakeaFn: (() => void) | null = null;
   let selectedLaniakeaMember = $state<LaniakeaMember | null>(null);
   let laniakeaPanelOpen = $state(false);
   let laniakeaMembers = $state<LaniakeaMember[]>([]);
   let closeLaniakeaFn: (() => void) | null = null;
+  let selectLaniakeaFn: ((id: string) => void) | null = null;
   // #457 (WS-5d) — the Cosmic Web shell (outermost).
   let exitCosmicWebFn: (() => void) | null = null;
   let selectedCosmicWebMember = $state<CosmicWebMember | null>(null);
   let cosmicWebPanelOpen = $state(false);
   let cosmicWebMembers = $state<CosmicWebMember[]>([]);
   let closeCosmicWebFn: (() => void) | null = null;
+  let selectCosmicWebFn: ((id: string) => void) | null = null;
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
   let bhPanelOpen = $state(false);
@@ -920,6 +918,82 @@
     trackItemClick('belt', id, '/explore');
   }
 
+  // The INDEX rail: shown at every scale but while a takeover owns the screen (black hole, deep-sky
+  // immersion, an exoplanet's BodyScene), and, outside the solar system, only in the 3D view.
+  const indexAvailable = $derived(
+    !activeBlackHole &&
+      !activeDeepSky &&
+      contextId !== 'body-scene' &&
+      (view === '3d' || !INDEX_NEEDS_3D[contextId as ShellId]),
+  );
+  function selectedSolarIndexId(): string | null {
+    if (panelState.planet) return selectedId;
+    if (panelState.sun) return 'sun';
+    if (panelState.smallBody) return selectedSmallBodyId;
+    if (panelState.satellite) return selectedSatelliteKey?.split(':')[1] ?? null;
+    if (panelState.belt) return selectedBeltId;
+    return null;
+  }
+  const selectedIndexIds: Record<ShellId, string | null> = $derived({
+    'solar-system': selectedSolarIndexId(),
+    neighborhood: selectedStarId ?? selectedDeepSkyId,
+    'milky-way': selectedMwId,
+    'local-group': selectedLgMember?.id ?? null,
+    'local-sheet': selectedLsMember?.id ?? null,
+    virgo: selectedVirgoMember?.id ?? null,
+    laniakea: selectedLaniakeaMember?.id ?? null,
+    'cosmic-web': selectedCosmicWebMember?.id ?? null,
+  });
+
+  /** A row does exactly what a click on its object in the canvas does. */
+  function selectIndexRow(scale: ShellId, row: ScaleIndexRow) {
+    if (row.badges?.includes('black-hole')) {
+      indexOpen = false;
+      bhDeepLinkFn?.(row.id);
+      return;
+    }
+    switch (scale) {
+      case 'solar-system':
+        if (row.kind === 'sun') selectSun();
+        else if (row.kind === 'planet') selectPlanet(row.id);
+        else if (row.kind === 'moon' && row.parent) selectSatellite(row.parent, row.id);
+        else if (row.kind === 'belt') selectBelt(row.id);
+        else selectSmallBody(row.id);
+        break;
+      case 'neighborhood':
+        if (row.section === 'deep-sky') selectDeepSkyFn?.(row.id);
+        else indexSelectStarFn?.(row.id);
+        break;
+      case 'milky-way':
+        mwDeepLinkFn?.(row.id);
+        break;
+      case 'local-group':
+        selectLgFn?.(row.id);
+        break;
+      case 'local-sheet':
+        selectLsFn?.(row.id);
+        break;
+      case 'virgo':
+        selectVirgoFn?.(row.id);
+        break;
+      case 'laniakea':
+        selectLaniakeaFn?.(row.id);
+        break;
+      case 'cosmic-web':
+        selectCosmicWebFn?.(row.id);
+        break;
+    }
+  }
+
+  // A scale jump keeps the INDEX open on a fine pointer; on a touch screen the 320 px rail covers
+  // most of the width, so it closes.
+  let indexContext: ExploreContextId = 'solar-system';
+  $effect(() => {
+    if (contextId === indexContext) return;
+    indexContext = contextId;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) indexOpen = false;
+  });
+
   // Deep-link resolvers + shallow URL mirrors (?id ?goto ?system/?planet ?deepsky
   // ?galaxy ?bh ?context ?paths/?focus) live in explore-url-sync; these deriveds
   // are what the mirrors write.
@@ -1039,12 +1113,6 @@
         localizedSun = s;
       })
       .catch((err) => console.error('Failed to load sun:', err));
-    // Black holes for the index rail (2026-09-11) — small manifest, no locale.
-    getBlackHoles()
-      .then((holes) => {
-        blackHoleIndex = holes.map((h) => ({ id: h.id, name: h.name }));
-      })
-      .catch((err) => console.error('Failed to load black holes:', err));
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Three.js scene
@@ -1231,12 +1299,6 @@
       },
       set exoplanetSystemsById(v) {
         exoplanetSystemsById = v;
-      },
-      get cultureObjectIds() {
-        return cultureObjectIds;
-      },
-      set cultureObjectIds(v) {
-        cultureObjectIds = v;
       },
       get warpCaption() {
         return warpCaption;
@@ -1659,6 +1721,7 @@
     exitDeepSkyFn = exploreHost.exitDeepSkyFn;
     deepSkyGatewayFn = exploreHost.deepSkyGatewayFn;
     deepSkyDeepLinkFn = exploreHost.deepSkyDeepLinkFn;
+    selectDeepSkyFn = exploreHost.selectDeepSkyFn;
     flyToBodyFn = exploreHost.flyToBodyFn;
     exitNeighborhoodFn = exploreHost.exitNeighborhoodFn;
     resetNeighborhoodFn = exploreHost.resetNeighborhoodFn;
@@ -1672,14 +1735,19 @@
     contextDeepLinkFn = exploreHost.contextDeepLinkFn;
     exitLocalGroupFn = exploreHost.exitLocalGroupFn;
     closeLgFn = exploreHost.closeLgFn;
+    selectLgFn = exploreHost.selectLgFn;
     exitLocalSheetFn = exploreHost.exitLocalSheetFn;
     closeLsFn = exploreHost.closeLsFn;
+    selectLsFn = exploreHost.selectLsFn;
     exitVirgoFn = exploreHost.exitVirgoFn;
     closeVirgoFn = exploreHost.closeVirgoFn;
+    selectVirgoFn = exploreHost.selectVirgoFn;
     exitLaniakeaFn = exploreHost.exitLaniakeaFn;
     closeLaniakeaFn = exploreHost.closeLaniakeaFn;
+    selectLaniakeaFn = exploreHost.selectLaniakeaFn;
     exitCosmicWebFn = exploreHost.exitCosmicWebFn;
     closeCosmicWebFn = exploreHost.closeCosmicWebFn;
+    selectCosmicWebFn = exploreHost.selectCosmicWebFn;
     exitBlackHoleFn = exploreHost.exitBlackHoleFn;
     bhDeepLinkFn = exploreHost.bhDeepLinkFn;
     setBhCurvatureFn = exploreHost.setBhCurvatureFn;
@@ -1776,27 +1844,10 @@
     <SunCompass ang={sunCompass.ang} ly={sunCompass.ly} />
   {/if}
 
-  <!-- Neighborhood star index — the left INDEX rail. WS-3 (RFC-039 Contract D)
-       retired the bespoke .nb-hud chip row: constellations, deep-sky, the H–R
-       diagram and light-cones are now standard science layers, surfaced uniformly
-       through the ScienceLayersPanel lens (see lensPanel derived + onLayerChange
-       subscriptions). Mounted at every scale and hidden outside the neighbourhood, so the
-       prerendered page links every star and black-hole page (ADR-096 item 11). -->
-  <StarIndex
-    stars={namedStars}
-    open={starIndexOpen && view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
-    selectedId={selectedStarId}
-    hostIds={exoplanetHostIds}
-    cultureIds={cultureObjectIds}
-    blackHoles={blackHoleIndex.length > 0 ? blackHoleIndex : data.blackHoleLinks}
-    pageLinks={data.starLinks}
-    onSelect={(id) => indexSelectStarFn?.(id)}
-    onSelectBlackHole={(id) => {
-      starIndexOpen = false;
-      bhDeepLinkFn?.(id);
-    }}
-    onClose={() => (starIndexOpen = false)}
-  />
+  <!-- WS-3 (RFC-039 Contract D) retired the bespoke .nb-hud chip row: constellations,
+       deep-sky, the H–R diagram and light-cones are standard science layers, surfaced
+       uniformly through the ScienceLayersPanel lens (see lensPanel derived + onLayerChange
+       subscriptions). The INDEX rail of every scale is mounted below, with its handle. -->
 
   <!-- #451 (WS-2) — the Milky Way science lens (rotation curve / dark-matter halo /
        stellar populations) now lives in the unified ScienceLayersPanel, like every
@@ -2087,61 +2138,40 @@
   onResidentClick={onExploreResidentClick}
 />
 
+<!-- The INDEX of each scale (UXD-017, RFC-031 S2): a left-edge pull-out tab toggles the searchable
+     side panel of the scale on screen, master → detail, staying open on select. One instance per
+     scale, hidden unless it is the scale on screen, so the prerendered page links every entity
+     page. The accessible counterpart to canvas picking. -->
+{#if indexAvailable}
+  <div class="scale-index-handle">
+    <Chip
+      kind="toggle"
+      active={indexOpen}
+      data-testid="scale-index-toggle"
+      aria-label={indexAriaLabel(contextId as ShellId)}
+      title={indexAriaLabel(contextId as ShellId)}
+      onclick={() => (indexOpen = !indexOpen)}
+    >
+      {m.explore_body_index_toggle()}
+    </Chip>
+  </div>
+{/if}
+{#each CTX_ORDER as scale (scale)}
+  <ScaleIndex
+    {scale}
+    rows={indexRows[scale]}
+    selectedId={selectedIndexIds[scale]}
+    open={indexOpen && indexAvailable && contextId === scale}
+    onClose={() => (indexOpen = false)}
+    onSelect={(row) => selectIndexRow(scale, row)}
+  />
+{/each}
+
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
      triggers used by the audio executor's `click` action so the tour
      can demonstrate planet-selection on a canvas-driven scene where
      there's no clickable DOM element for a planet. These buttons are
      visually offscreen but click()-able. -->
-<!-- Body index (RFC-031 S2): the desktop edge-handle "little side tab" (mirrors
-     the surface index handle) toggles the searchable side panel — master → detail,
-     stays open on select. Mobile uses the Index drawer tab. The accessible
-     counterpart to canvas picking. -->
-<!-- The body index is the solar-system's INDEX rail. Out in the stellar
-     neighborhood the star index (below) takes over the same left rail + handle,
-     so gate the body index to the solar-system context (no cross-scale bleed). -->
-{#if contextId === 'solar-system'}
-  <div class="body-index-handle">
-    <Chip
-      kind="toggle"
-      active={bodyIndexOpen}
-      data-testid="explore-body-index-toggle"
-      aria-label={m.explore_body_index_aria()}
-      title={m.explore_body_index_aria()}
-      onclick={() => (bodyIndexOpen = !bodyIndexOpen)}
-    >
-      {m.explore_body_index_toggle()}
-    </Chip>
-  </div>
-  <ExploreBodyIndex
-    bodies={bodyIndexList}
-    entityLinks={data.entityIndex}
-    {selectedId}
-    open={bodyIndexOpen}
-    onClose={() => (bodyIndexOpen = false)}
-    onSelect={(b) => {
-      if (b.kind === 'sun') selectSun();
-      else if (b.kind === 'planet') selectPlanet(b.id);
-      else selectSmallBody(b.id);
-      // Desktop master → detail: keep the index open on select (matches surface).
-    }}
-  />
-{/if}
-<!-- Neighborhood INDEX handle — same left-edge tab as the body index, toggles the
-     star index (the neighborhood's primary index). -->
-{#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
-  <div class="star-index-handle">
-    <Chip
-      kind="toggle"
-      active={starIndexOpen}
-      aria-label={m.star_index_aria()}
-      title={m.star_index_aria()}
-      onclick={() => (starIndexOpen = !starIndexOpen)}
-    >
-      {m.explore_body_index_toggle()}
-    </Chip>
-  </div>
-{/if}
-
 <div class="tour-anchors" aria-hidden="true">
   {#each ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'] as planetId (planetId)}
     <button
@@ -2203,20 +2233,6 @@
   /* .nb-hud chip-row styles removed 2026-09-11 — the last bespoke chip
      (mass–period) moved into the science-lens layer panel; WS-3 had
      already retired the rest. */
-  /* The neighborhood star-index handle mirrors the body-index tab but stays
-     available on touch — the body index falls back to a mobile drawer; the star
-     index has no drawer, so its handle must show at every viewport. */
-  .star-index-handle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 50%;
-    z-index: 44;
-    writing-mode: vertical-rl;
-    transform: translateY(-50%) rotate(180deg);
-  }
   /* .nb-controls/.nb-chip removed 2026-09-11 — the black-hole curvature/time
      chips (their last consumer) moved into the science-lens layer panel. */
 
@@ -2229,26 +2245,6 @@
   /* Hidden tour-anchor buttons (PRD-016 §S11 / RFC-019 §12). Visually
      offscreen but click()-able so the audio executor can drive planet
      selection without a DOM hit on the 3D canvas. */
-  /* Desktop object-index edge-handle "little side tab" — mirrors the surface
-     index handle. Hidden on touch (mobile uses the Index drawer tab); a fine
-     pointer gets the left-edge vertical handle that toggles the side panel. */
-  /* A1: solar-system object index is a left-edge pullout tab on ALL viewports
-     (was desktop-only via a hover gate; mobile used a bottom-drawer tab) —
-     matching the stellar-neighborhood .star-index-handle and the body scenes. */
-  .body-index-handle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    /* Vertically centred on the left edge — away from the top-left control
-       chips, matching the /iss + /tiangong module handles (.handle-left). */
-    top: 50%;
-    z-index: 44;
-    writing-mode: vertical-rl;
-    transform: translateY(-50%) rotate(180deg);
-  }
-
   .tour-anchors {
     position: absolute;
     width: 1px;

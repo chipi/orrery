@@ -1,6 +1,6 @@
 # Deep text, batch 4 (drafts)
 
-Drafts only. Nothing here is in `i18n-src/` or `static/` yet. 2026-11-12, branch `tech-debt/0.9.9`.
+Drafts only. Nothing here is in `i18n-src/` or `static/` yet. 2026-11-12, branch `tech-debt/0.9.9`. Science review: `batch-04-review.md` (FIX THEN SHIP); its text fixes are applied below, the Sources lines are the writer's originals.
 
 ## Shape and selection
 
@@ -15,8 +15,8 @@ Drafts only. Nothing here is in `i18n-src/` or `static/` yet. 2026-11-12, branch
 
 ### ngc-1300 (barred spiral galaxy, Eridanus)
 Target: `universe/deep-sky/ngc-1300.json`
-- fact: A barred spiral galaxy in Eridanus, about 45 million light-years away, described by Hubble's team as prototypical of its kind.
-- bio: John Herschel found it in 1835. Its arms do not wind into the centre but join the two ends of a straight bar of stars. Hubble found a second, smaller grand-design spiral at its core, about 3,300 light-years long; models suggest gas funnelled along a bar can spiral inward through it to fuel a central black hole. The nucleus is not active: either no black hole is present or it is quiet. Published distances run from about 45 to 70 million light-years.
+- fact: A barred spiral galaxy in Eridanus, about 62 million light-years away, described by Hubble's team as prototypical of its kind.
+- bio: John Herschel found it in 1835. Its arms do not wind into the centre but join the two ends of a straight bar of stars. Hubble found a second, smaller grand-design spiral at its core, about 3,300 light-years long; STScI suggested gas can funnel along the bar into the centre. The nucleus is quiet, but gas motions in its core point to a black hole of roughly 70 million solar masses (Atkinson, 2005). Published distances run from about 60 to 70 million light-years.
 - links: Wikipedia (https://en.wikipedia.org/wiki/NGC_1300, intro); ESA/Hubble (https://esahubble.org/images/opo0501a/, core)
 - Characters: 578
 - Sources: S-WP-NGC1300 (Herschel 1835, 3,300 ly nuclear spiral, black-hole mass range), ESA/Hubble opo0501a (fetched: prototypical barred spiral, 60 Mly), a search summary of the NASA/STScI 2005 release (funnelling, no active nucleus, 69 Mly). Data conflict: dist_ly 45.3 Mly (Cosmicflows-4); ESA/Hubble 60, Wikipedia 61.3, STScI 69; text states 45 in the fact line and the range in the bio. The caption's "200,000-light-year bar" was not found in any source (Wikipedia gives the whole galaxy about 130,000 ly); fix the caption at integration.
@@ -24,14 +24,14 @@ Target: `universe/deep-sky/ngc-1300.json`
 ### ngc-1365 (barred spiral galaxy, Fornax)
 Target: `universe/deep-sky/ngc-1365.json`
 - fact: A large barred spiral galaxy in the Fornax Cluster, about 61 million light-years away, with a rapidly spinning central black hole.
-- bio: James Dunlop discovered it in 1826. Webb's infrared images, taken for the PHANGS survey of nearby galaxies, trace dust and young stars across the disc. In 2013 simultaneous X-ray observations by XMM-Newton and NuSTAR showed that the black hole at its centre, of about 2 million solar masses, spins almost as fast as general relativity allows. The team read this as a sign of steady growth but cannot rule out an earlier merger.
+- bio: James Dunlop discovered it in 1826. Webb's infrared images, taken for the PHANGS survey of nearby galaxies, trace dust and young stars across the disc. In July 2012 simultaneous X-ray observations by XMM-Newton and NuSTAR (published in 2013) showed that the black hole at its centre spins almost as fast as general relativity allows. The team read this as a sign of steady growth but cannot rule out an earlier merger.
 - links: Wikipedia (https://en.wikipedia.org/wiki/NGC_1365, intro); ESA (https://www.esa.int/Science_Exploration/Space_Science/Speedy_black_hole_holds_galaxy_s_history, core)
 - Characters: 557
 - Sources: S-WP-NGC1365 (Dunlop 1826, 2 million solar masses), esawebb weic2403f (fetched: backward-S dust, PHANGS, NIRCam + MIRI), ESA 'Speedy black hole holds galaxy's history' (fetched: XMM-Newton + NuSTAR 2012 observation, near-maximal spin, steady growth, merger not excluded, Nature 28 Feb 2013). The 'at least 84 per cent of maximum' spin and the 2 million solar masses come from a search summary and Wikipedia; the Risaliti paper was not fetched (the arXiv fetch returned another paper) and neither number is in the text. Data conflict: dist_ly 61.1 Mly (Cosmicflows-4); caption and ESA/Webb 56 Mly. Text follows the data file.
 
 ### ngc-2014-2020 (emission nebulae, Large Magellanic Cloud, Dorado)
 Target: `universe/deep-sky/ngc-2014-2020.json`
-- fact: The Cosmic Reef, two neighbouring nebulae in the Large Magellanic Cloud, about 170,000 light-years away.
+- fact: The Cosmic Reef, two neighbouring nebulae in the Large Magellanic Cloud, about 160,000 light-years away.
 - bio: James Dunlop catalogued NGC 2014 in 1826. The large red nebula, NGC 2014, is gas lit by a group of bright stars, each 10 to 20 times the Sun's mass, whose ultraviolet radiation heats the dense gas around them. The smaller blue nebula, NGC 2020, was shaped by one massive star about 200,000 times as luminous as the Sun, which lost part of its outer envelope in a series of eruptions. Both lie in a larger star-forming region of the Large Magellanic Cloud, a satellite galaxy of the Milky Way.
 - links: STScI release (https://www.stsci.edu/contents/news-releases/2020/news-2020-16, core); Wikipedia (https://en.wikipedia.org/wiki/NGC_2014, intro)
 - Characters: 596
@@ -55,8 +55,8 @@ Target: `universe/deep-sky/ngc-2264.json`
 
 ### ngc-2392 (planetary nebula, Gemini)
 Target: `universe/deep-sky/ngc-2392.json`
-- fact: The Eskimo Nebula, a planetary nebula in Gemini, about 6,000 light-years away.
-- bio: William Herschel found it in 1787. Seen through ground-based telescopes it looks like a face in a fur parka, hence the name. Hubble's image, its first after the December 1999 servicing mission, separates two structures: an inner bubble blown by a fast wind from the central star, and an outer disc of comet-shaped filaments, each about a light-year long, with tails streaming outward. NASA gives the wind as about 1.5 million kilometres an hour and the slower equatorial ring as about 115,000.
+- fact: The Eskimo Nebula, a planetary nebula in Gemini, roughly 6,000 light-years away.
+- bio: William Herschel found it in 1787. Seen through ground-based telescopes it looks like a face in a fur parka, hence the name. Hubble's image, taken after the December 1999 servicing mission, separates two structures: an inner bubble blown by a fast wind from the central star, and an outer ring of comet-shaped objects with tails streaming away from it. NASA gives each bubble as about a light-year long, the wind as about 1.5 million kilometres an hour and the dense equatorial waist as about 115,000.
 - links: NASA caption (https://nssdc.gsfc.nasa.gov/photo_gallery/caption/hst_eskimo_ngc2392_0007.txt, core)
 - Characters: 571
 - Sources: NASA caption hst_eskimo_ngc2392_0007 (fetched: Herschel 1787, parka, inner bubble from fast wind, outer comet-shaped filaments, 900,000 mph wind and 72,000 mph equatorial ring, bubbles about a light-year long; first image after the December 1999 servicing mission, from a search summary). Data conflict: dist_ly 5,983 (SIMBAD, Gaia-based); NASA says about 5,000, the data's own note lists 4.1 to 6.8 kly. The age (10,000 years) is in the caption and left out.
@@ -64,7 +64,7 @@ Target: `universe/deep-sky/ngc-2392.json`
 ### ngc-3132 (planetary nebula, Vela)
 Target: `universe/deep-sky/ngc-3132.json`
 - fact: The Southern Ring Nebula, a planetary nebula in Vela, about 2,500 light-years away.
-- bio: It was one of the first targets Webb released in 2022. A follow-up study by a team of nearly 70 astronomers, in Nature Astronomy, found that the star that cast off the gas about 2,500 years ago, now a white dwarf of about half the Sun's mass, sits in a veil of dust. One companion is thought to have stripped gas from it, and others may have carved its arcs. The team counts four or five stars in the system, one perhaps hidden in the dusty disc.
+- bio: It was one of the first targets Webb released in 2022. A follow-up study by a team of nearly 70 astronomers, in Nature Astronomy, found that the star that cast off the gas about 2,500 years ago, now a white dwarf of about half the Sun's mass, sits in a veil of dust. Companion stars are thought to have shaped how the gas was ejected, giving it its arcs and jets. The team counts four or five stars in the system, one perhaps hidden in the dusty disc.
 - links: NASA/ESA release (https://www.eurekalert.org/news-releases/973668, core)
 - Characters: 529
 - Sources: EurekAlert 973668 (fetched: Nature Astronomy 8 Dec 2022, 2,500 ly, ejected about 2,500 years ago, half-solar-mass white dwarf, four or five stars, dusty disc), a search summary for the 'nearly 70 astronomers' count. The Webb release page itself returned 404. The data names the object Eight-Burst Nebula; the text uses the popular name. No conflict: caption 2,500, data 2,471.
@@ -72,15 +72,15 @@ Target: `universe/deep-sky/ngc-3132.json`
 ### ngc-3324 (open cluster and nebula, Carina)
 Target: `universe/deep-sky/ngc-3324.json`
 - fact: An open cluster and nebula in Carina, near the Carina Nebula, about 7,900 light-years away; its edge is Webb's Cosmic Cliffs.
-- bio: James Dunlop catalogued it in 1826. The cavity is hollowed out by ultraviolet radiation and stellar winds from massive, hot, young stars above the top of the image, and the tallest peaks are about 7 light-years high. As the bright rim advances into the cloud, the pressure it exerts is thought to collapse material into new stars. Webb reveals hundreds of hidden stars there. The nebula IC 2599 around it is nicknamed the Gabriela Mistral Nebula.
+- bio: James Dunlop catalogued it in 1826. The cavity is hollowed out by ultraviolet radiation and stellar winds from massive, hot, young stars above the top of the image, and the tallest peaks are about 7 light-years high. As the bright rim advances into the cloud, the pressure it exerts is thought to collapse material into new stars. Webb reveals hundreds of hidden stars there. NGC 3324 and the nebula IC 2599 around it are together nicknamed the Gabriela Mistral Nebula.
 - links: ESA/Webb (https://esa.int/Science_Exploration/Space_Science/Webb/Webb_reveals_Cosmic_Cliffs_a_glittering_landscape_of_star_birth, core); Wikipedia (https://en.wikipedia.org/wiki/NGC_3324, intro)
 - Characters: 571
 - Sources: ESA Webb 'Cosmic Cliffs' page (fetched: 7,600 ly, 7 ly peaks, UV and winds hollow the cavity, ionisation front triggers collapse, hundreds of hidden stars), S-WP-NGC3324 (Dunlop 1826, IC 2599 / Gum 31, Gabriela Mistral Nebula). Data conflict: dist_ly 7,890 (Hunt and Reffert 2023) vs the note's Cantat-Gaudin value of 2,389 pc = 7,792 ly (so 7,890 is not that value; the H&R figure was not fetched); caption and ESA 7,600; Wikipedia 9,100. Text follows the data. 'IC 2599' as the Gabriela Mistral Nebula is Wikipedia only.
 
 ### ngc-3372 (star-forming region, Carina)
 Target: `universe/deep-sky/ngc-3372.json`
-- fact: The Carina Nebula, a giant star-forming region in the southern sky, about 8,500 light-years away.
-- bio: It covers about two degrees of sky, four full Moons across. Hubble's 2007 panorama is a mosaic of 48 frames from its Advanced Camera for Surveys, showing a landscape sculpted by the winds and ultraviolet radiation of massive stars. In the 1840s the star Eta Carinae erupted and for a time ranked second-brightest in the sky; the dust it threw out now screens part of the nebula from its light. The nebula was one of five targets for Webb's first science images, in 2022.
+- fact: The Carina Nebula, a giant star-forming region in the southern sky, about 7,700 light-years away.
+- bio: It covers about two degrees of sky, four full Moons across. Hubble's 2007 panorama is a mosaic of 48 frames from its Advanced Camera for Surveys, showing a landscape sculpted by the winds and ultraviolet radiation of massive stars. In the 1840s the star Eta Carinae erupted and briefly ranked second-brightest in the sky; the dust it threw out now absorbs much of the star's light and cuts the ultraviolet it feeds the nebula. The nebula was one of five targets for Webb's first science images, in 2022.
 - links: ESA/Hubble (https://esahubble.org/images/heic0707a/, core); Wikipedia (https://en.wikipedia.org/wiki/Carina_Nebula, intro)
 - Characters: 567
 - Sources: ESA/Hubble heic0707a (fetched: 48-frame ACS mosaic, winds and UV of the monster stars; it says 7,500 ly), S-WP-Carina (2 degrees, Eta Carinae 1840s eruption, second-brightest star, dust screening, Webb's five first targets). Data conflict: dist_ly 8,545 (SIMBAD, Kuhn 2019 parallax); caption and ESA 7,500; the carina-nebula overlay says 8,500. Duplicate entity: this is the same nebula as carina-nebula; the text avoids Lacaille, Trumpler and the Mystic Mountain, which that overlay has, but the two pages still describe one object.
@@ -103,16 +103,16 @@ Target: `universe/deep-sky/ngc-5139.json`
 
 ### ngc-6302 (planetary nebula, Scorpius)
 Target: `universe/deep-sky/ngc-6302.json`
-- fact: The Butterfly Nebula, a planetary nebula in Scorpius, about 2,400 light-years away.
-- bio: Hubble's Wide Field Camera 3 imaged it in 2009, soon after the last servicing mission. That year Szyszka and colleagues identified the central star, a white dwarf of about 0.64 solar masses with an estimated temperature of 200,000 to 220,000 kelvin. NASA says the lobes formed about 2,250 years ago, with gas leaving at over a million miles an hour, and the dusty ring at its waist earlier, 5,000 to 2,900 years ago. Estimates of the distance range from about 2,400 to 4,000 light-years.
+- fact: The Butterfly Nebula, a planetary nebula in Scorpius, about 3,800 light-years away.
+- bio: Hubble's Wide Field Camera 3 imaged it in 2009, soon after the last servicing mission. That year Szyszka and colleagues identified the central star, a hot star of about 0.64 solar masses, near the white dwarf cooling track, with a temperature of about 200,000 kelvin. NASA says the lobes formed about 2,250 years ago, with gas leaving at over a million miles an hour, and the dusty ring at its waist earlier, 5,000 to 2,900 years ago. Estimates of the distance range from about 3,400 to 4,000 light-years.
 - links: NASA Hubble (https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-69/, core); Wikipedia (https://en.wikipedia.org/wiki/NGC_6302, intro)
 - Characters: 570
 - Sources: NASA Caldwell 69 page (fetched: lobes 2,250 years ago, over a million mph, torus 5,000 to 2,900 years ago, distance 4,000 ly), S-WP-NGC6302 (Szyszka et al. 2009: 0.64 solar masses), a search summary of arXiv 0909.5143 (T = 200,000 K, a second estimate 220,000 K; paper not fetched). Data conflict: dist_ly 2,433 (SIMBAD, Szyszka 2010 per bibcode); NASA 4,000; Wikipedia 3,400; the bio states the range. NASA gives Herschel 1826 as discoverer while Wikipedia starts in 1888; the text names neither. The caption's 'past 20,000 C' is not repeated.
 
 ### ngc-6543 (planetary nebula, Draco)
 Target: `universe/deep-sky/ngc-6543.json`
-- fact: The Cat's Eye Nebula, a planetary nebula in Draco, about 4,500 light-years away.
-- bio: William Herschel discovered it in 1786. In 1864 William Huggins studied its spectrum and showed that it is glowing gas, not a cluster of stars. Hubble images show eleven or more concentric rings around the core, each holding about as much mass as all the planets of the Solar System. A 2001 analysis found that the shells were shed about every 1,500 years. Why remains unsolved; magnetic cycles, orbiting companions and pulsations have each been proposed.
+- fact: The Cat's Eye Nebula, a planetary nebula in Draco, about 4,500 light-years away (Gaia-era estimates: 4,200 to 5,300).
+- bio: William Herschel discovered it in 1786. In 1864 William Huggins studied its spectrum and showed that it is glowing gas, not a cluster of stars. Hubble images show a series of concentric rings around the core (ESA counts eleven or more), each holding about the mass of all the Solar System's planets. A 2001 analysis found that the shells were shed about every 1,500 years. Why remains unsolved; magnetic cycles, orbiting companions and pulsations have each been proposed.
 - links: ESA (https://www.esa.int/Science_Exploration/Space_Science/Cat_s_Eye_Nebula_NGC_65432, core); Wikipedia (https://en.wikipedia.org/wiki/Cat%27s_Eye_Nebula, intro)
 - Characters: 535
 - Sources: S-WP-CatsEye (Herschel 15 Feb 1786, Huggins 1864), ESA Cat's Eye page (fetched: eleven or more rings, 1,500-year pulses, each ring as massive as all the planets, magnetic cycles / companions / pulsations, unsolved), Balick et al. 2001 abstract at IOP (fetched: nine rings, 1,500 years). Data conflict: dist_ly 4,455 (SIMBAD, Gaia-based); Wikipedia 3,300; ESA/Hubble heic0414a 3,000. Text follows the data. The caption's superlative ('most intricate') is not repeated.
@@ -128,7 +128,7 @@ Target: `universe/deep-sky/ngc-7293.json`
 ### ngc-7635 (emission nebula, Cassiopeia)
 Target: `universe/deep-sky/ngc-7635.json`
 - fact: The Bubble Nebula, an emission nebula in Cassiopeia, about 9,100 light-years away.
-- bio: William Herschel discovered it in 1787. The bubble is blown by the wind of the hot young star BD+60 2522, and it sits inside a giant molecular cloud that glows in the star's ultraviolet light. Sources disagree on its scale: NASA gives the bubble as 7 light-years across and the star as about 45 solar masses; ESA/Hubble gives about 10 light-years and 10 to 20 solar masses. Hubble's 2016 image is a mosaic of four Wide Field Camera 3 pictures that frame the whole object.
+- bio: William Herschel discovered it in 1787. The bubble is blown by the wind of the hot young star BD+60 2522, and it sits inside a giant molecular cloud that glows in the star's ultraviolet light. With Gaia's distance the bubble is about 7 light-years across and the star, an O-type giant, about 45 solar masses; Hubble's 2016 release gave older figures of about 10 light-years and 10 to 20 solar masses. Hubble's 2016 image is a mosaic of four Wide Field Camera 3 pictures that frame the whole object.
 - links: ESA/Hubble (https://esahubble.org/news/heic1608/, core); Wikipedia (https://en.wikipedia.org/wiki/Bubble_Nebula, intro)
 - Characters: 553
 - Sources: ESA/Hubble heic1608 (fetched: 10 to 20 solar masses, about 10 ly, 8,000 ly, molecular cloud, four-image mosaic), S-WP-BubbleNebula (Herschel 1787, BD+60 2522, about 44 solar masses), a search summary of the NASA 2016 release (7 ly, 45 solar masses; the NASA page itself was not fetched). Conflict between ESA and NASA is stated in the text. Data conflict: dist_ly 9,132 (SIMBAD, 2025 paper); ESA 8,000; Wikipedia 7,100 to 11,000.
@@ -136,14 +136,14 @@ Target: `universe/deep-sky/ngc-7635.json`
 ### perseus-cluster (galaxy cluster, Perseus)
 Target: `universe/deep-sky/perseus-cluster.json`
 - fact: A rich cluster of galaxies in Perseus, about 240 million light-years away, bathed in multimillion-degree gas.
-- bio: The gas between its galaxies is hot enough to shine in X-rays. At the centre, NGC 1275 hosts the radio source 3C 84, whose bubbles show up as holes in the X-ray image. A deep Chandra observation in 2003, led by Andrew Fabian, found ripples in the gas and a weak shock; the team argued that these sound waves carry energy that offsets the gas's cooling. Euclid's image also shows faint light between the central galaxies, from stars flung out by past galaxy interactions.
+- bio: The gas between its galaxies is hot enough to shine in X-rays. At the centre, NGC 1275 hosts the radio source 3C 84, whose bubbles show up as holes in the X-ray image. A deep Chandra observation, reported in 2003 by Andrew Fabian and colleagues, found ripples in the gas and a weak shock; the team argued that these sound waves carry energy that offsets the gas's cooling. Euclid's image also shows faint light between the central galaxies, from stars flung out by past galaxy interactions.
 - links: ESA Euclid (https://www.esa.int/Science_Exploration/Space_Science/Euclid/Euclid_s_view_of_the_Perseus_cluster_of_galaxies, core); Wikipedia (https://en.wikipedia.org/wiki/Perseus_Cluster, intro)
 - Characters: 579
 - Sources: ESA Euclid page (fetched: 1,000 galaxies, 100,000 background, 240 Mly, intracluster light from stars flung out), S-WP-Perseus (NGC 1275, 3C 84, holes in X-ray image), Fabian et al. 2003 arXiv astro-ph/0306036 (fetched: ripples, weak shock, sound waves offset cooling). The 9.6-million-year period and '57 octaves' are Wikipedia only and left out. 'Brightest cluster in X-rays' left out (Wikipedia only). The caption's galaxy counts are not repeated. The data has no mag or size_arcmin conflicts.
 
 ### rho-ophiuchi (star-forming region, Ophiuchus)
 Target: `universe/deep-sky/rho-ophiuchi.json`
-- fact: A cloud complex of gas and dust in Ophiuchus where Sun-like stars are forming, about 420 light-years away.
+- fact: A cloud complex of gas and dust in Ophiuchus where Sun-like stars are forming, about 440 light-years away.
 - bio: Webb's first-anniversary image, released in July 2023, shows about 50 young stars, all around the Sun's mass or less except the more massive S1. With no foreground stars in the way, Webb sees it in unusual detail. Jets of molecular hydrogen, shown in red, cross the field. Shadows cast by discs of dust around young stars mark where planets may form, and dust envelopes hide protostars in the darkest patches. Project scientist Klaus Pontoppidan called this a very brief stage in a star's life.
 - links: NASA JPL (https://www.jpl.nasa.gov/news/webb-celebrates-first-year-of-science-with-close-up-on-birth-of-sun-like-stars/, core)
 - Characters: 600
@@ -152,14 +152,14 @@ Target: `universe/deep-sky/rho-ophiuchi.json`
 ### serpens-nebula (star-forming region, Serpens)
 Target: `universe/deep-sky/serpens-nebula.json`
 - fact: A dense nest of newly forming stars in Serpens, about 1,300 light-years away.
-- bio: Webb's 2024 near-infrared image shows a cluster only about 100,000 years old, in which some stars are expected to grow to the Sun's mass. In the top left corner a group of protostellar outflows all point the same way; these jets show as clumpy red streaks, shock waves where they hit gas and dust. Outflows in one region normally point in many directions, so the alignment is unusual. The red colour marks molecular hydrogen and carbon monoxide.
+- bio: Webb's 2024 near-infrared image shows a cluster that ESA dates to only about 100,000 years old. In the top left corner a group of protostellar outflows all point the same way; these jets show as clumpy red streaks, shock waves where they hit gas and dust. Outflows in one region normally point in many directions, so the alignment is unusual. The red colour marks molecular hydrogen and carbon monoxide.
 - links: ESA/Webb (https://esawebb.org/images/weic2415a/, core)
 - Characters: 522
 - Sources: esawebb weic2415a (fetched: 1,300 ly, about 100,000 years, aligned outflows, red streaks as shocks, molecular hydrogen and CO), a search summary for the 'orientations usually vary' sentence (same release). The caption's 'crystalline dust' was not found in the ESA page and is not repeated. No conflict.
 
 ### sn-1572 (supernova remnant, Cassiopeia)
 Target: `universe/deep-sky/sn-1572.json`
-- fact: Tycho's Supernova Remnant, the debris of a star that exploded in Cassiopeia in 1572, about 9,000 light-years away.
+- fact: Tycho's Supernova Remnant, the debris of a star in Cassiopeia whose explosion was seen from Earth in 1572, about 9,000 light-years away.
 - bio: The star appeared in early November 1572, peaked near magnitude -4 and stayed visible into early 1574. Tycho Brahe's measurements, compared with those of Jerónimo Muñoz, showed it lay beyond the Moon. The remnant is about 8 arcminutes across. In 2008 Krause and colleagues took a spectrum of the supernova's light echo, light scattered by dust centuries after the blast, and showed it was a normal Type Ia explosion, the thermonuclear destruction of a white dwarf.
 - links: Wikipedia (https://en.wikipedia.org/wiki/SN_1572, intro); arXiv (https://arxiv.org/abs/0810.5106, core)
 - Characters: 578
@@ -167,8 +167,8 @@ Target: `universe/deep-sky/sn-1572.json`
 
 ### v838-mon (luminous red nova, Monoceros)
 Target: `universe/deep-sky/v838-mon.json`
-- fact: A star in Monoceros that erupted in 2002, about 20,000 light-years away.
-- bio: The outburst began in January 2002, and the star reached a visual peak in early February. It did not shed its outer layers as a nova does; it swelled into a cool supergiant. The ring-like echoes are light from the eruption reaching successive layers of dust, so they show the dust's shape and not matter moving outward. Howard Bond's team used Hubble images to place it about 20,000 light-years away. It is now classed as a luminous red nova, thought to follow a merger of two stars.
+- fact: A star in Monoceros whose eruption was seen in 2002, about 20,000 light-years away.
+- bio: The outburst began in January 2002, and the star reached a visual peak in early February. It did not shed its outer layers as a nova does; it swelled into a cool supergiant. The ring-like echoes are light from the eruption reaching successive layers of dust, so they show the dust's shape and not matter moving outward. Hubble polarimetry of its light echo gives a distance of about 6 kiloparsecs, roughly 20,000 light-years. It is now classed as a luminous red nova, thought to follow a merger of two stars.
 - links: Wikipedia (https://en.wikipedia.org/wiki/V838_Monocerotis, intro)
 - Characters: 555
 - Sources: S-WP-V838Mon (6 Jan 2002, peak 6.75 on 6 Feb, luminous red nova, merger, light echo shows dust geometry), a search summary of the 2003 Hubble release and Physics World (Bond et al. Nature March 2003: 20,000 ly, no ejected shell, cool supergiant). Luminosity (600,000 to about a million Suns) and radius (800 to 1,570 solar radii) differ between sources and are left out. The Bond paper was not fetched.
@@ -176,7 +176,7 @@ Target: `universe/deep-sky/v838-mon.json`
 ### wr-124 (Wolf-Rayet star, Sagitta)
 Target: `universe/deep-sky/wr-124.json`
 - fact: A Wolf-Rayet star in Sagitta, about 21,000 light-years away, surrounded by a nebula of its own ejected gas.
-- bio: The nebula, M1-67, is about 10 light-years across. ESA says it formed from random, asymmetric ejections rather than uniform shells, and Webb's image shows clumps like tadpoles swimming toward the star with tails blown back by its wind. The star has about 30 times the Sun's mass and has shed about 10 solar masses so far. Dust forms as the ejected gas cools; how much is made is a question Webb helps address. ESA/Webb gives the distance as 15,000 light-years.
+- bio: ESA gives the nebula, M1-67, as about 10 light-years across at its assumed distance. ESA says it formed from random, asymmetric ejections rather than uniform shells, and Webb's image shows clumps like tadpoles swimming toward the star with tails blown back by its wind. ESA says the star has about 30 times the Sun's mass and has shed about 10 solar masses so far. Webb measures the dust that forms as the gas cools. ESA/Webb's release used an older distance of 15,000 light-years.
 - links: ESA/Webb (https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_captures_rarely_seen_prelude_to_a_supernova, core)
 - Characters: 567
 - Sources: ESA 'Webb captures rarely seen prelude to a supernova' (fetched: 15,000 ly, 30 solar masses, 10 shed, dust), esawebb weic2307a (fetched: 10 ly, asymmetric ejections, tadpoles). Data conflict: dist_ly 20,801 (SIMBAD, Gaia-based, with a 2.2 to 20.8 kly spread in the note); ESA 15,000; caption 21,000. The fact line follows the data, the bio gives ESA's figure. Mass figures are ESA's, one source. Wikipedia WR 124 not fetched, so not linked.

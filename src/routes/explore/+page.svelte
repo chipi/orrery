@@ -832,7 +832,24 @@
       ? localHref(`/science/observation/${activeBlackHole.science_section}`)
       : localHref('/'),
   );
-  let selectedMwObject = $derived(mwObjects.find((o) => o.id === selectedMwId) ?? null);
+  // One name per object (UXD-017): a globular or Local Group member that has a deep-sky page is
+  // named in its panel as its INDEX row and page name it.
+  const twinName = (scale: 'milky-way' | 'local-group', id: string): string | undefined => {
+    const row = data.scaleIndex[scale].find((r) => r.id === id);
+    return row?.href ? row.name : undefined;
+  };
+  let selectedMwObject = $derived.by(() => {
+    const o = mwObjects.find((x) => x.id === selectedMwId);
+    if (!o) return null;
+    const name = twinName('milky-way', o.id);
+    return name ? { ...o, name } : o;
+  });
+  let lgPanelMember = $derived.by(() => {
+    const mbr = selectedLgMember;
+    if (!mbr) return null;
+    const name = twinName('local-group', mbr.id);
+    return name ? { ...mbr, name } : mbr;
+  });
   let mwLearnHref = $derived(
     selectedMwObject
       ? localHref(`/science/observation/${selectedMwObject.science_section}`)
@@ -2238,7 +2255,7 @@
 />
 
 <LocalGroupPanel
-  member={selectedLgMember}
+  member={lgPanelMember}
   open={lgPanelOpen}
   onClose={() => closeLgFn?.()}
   covered={!!activeBlackHole}

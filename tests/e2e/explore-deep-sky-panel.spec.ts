@@ -56,6 +56,10 @@ test.describe('/explore — a photo-less deep-sky object opens its panel', () =>
     test.slow();
     await page.goto('/explore?context=neighborhood');
     await waitForHydration(page);
+    // The cold load passes through the solar system: wait until the tab names the neighbourhood.
+    await expect(toggle(page)).toHaveAttribute('aria-label', /^Stellar Neighborhood index/, {
+      timeout: 45_000,
+    });
     await toggle(page).click();
     const row = page
       .locator('aside.scale-index[data-scale="neighborhood"]')

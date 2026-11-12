@@ -9,6 +9,16 @@
     "en": "9a76743470",
     "tr": "9a76743470"
   },
+  "ar|messages.json|star_system_planet_count_one": {
+    "why": "Arabic writes the singular and the dual in words without the numeral (كوكب واحد / كوكبان); the {n} placeholder is intentionally absent",
+    "en": "d57e66bd92",
+    "tr": "9683e1ed40"
+  },
+  "ar|messages.json|star_system_planet_count_two": {
+    "why": "Arabic writes the singular and the dual in words without the numeral (كوكب واحد / كوكبان); the {n} placeholder is intentionally absent",
+    "en": "b67c15a0e8",
+    "tr": "4cc121328c"
+  },
   "ar|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "110d3a6004",

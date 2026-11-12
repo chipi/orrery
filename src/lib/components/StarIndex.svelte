@@ -6,8 +6,9 @@
   filterable by what you can do with them — ⊕ has a planetary system you can enter,
   ◈ has a culture door. Selecting frames + opens the star.
 
-  Every named star has an entity page (/explore/stars/<id>), so each row also carries a real
-  link to it (ADR-096 items 11 and 13). The panel stays in the DOM, hidden, while
+  Every named star has an entity page (/explore/stars/<id>) and so does every black hole
+  (/explore/black-holes/<id>), so each row also carries a real link to it (ADR-096 items 11, 13
+  and 16). The panel stays in the DOM, hidden, while
   closed, like ExploreBodyIndex, so the links exist without a click.
 -->
 <script lang="ts">
@@ -149,13 +150,21 @@
     {#if filteredBlackHoles.length > 0}
       <li class="si-section" aria-hidden="true">{m.star_index_black_holes()}</li>
       {#each filteredBlackHoles as b (b.id)}
-        <li>
+        <li class="si-item">
           <button type="button" class="si-row" onclick={() => onSelectBlackHole?.(b.id)}>
             <span class="si-badges" aria-hidden="true"
               ><span class="si-badge bh" title={m.star_index_black_holes()}>●</span></span
             >
             <span class="si-name">{b.name}</span>
           </button>
+          <a
+            class="si-page"
+            href={localHref(`/explore/black-holes/${b.id}`)}
+            title={m.surface_index_open_page()}
+            aria-label="{m.surface_index_open_page()}: {b.name}"
+            data-testid="black-hole-index-page-link"
+            data-index-id={b.id}>↗</a
+          >
         </li>
       {/each}
     {/if}

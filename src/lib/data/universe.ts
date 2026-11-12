@@ -498,6 +498,35 @@ export async function getBlackHole(
   return holes.find((h) => h.id === id) ?? null;
 }
 
+/** The per-black-hole editorial overlay under i18n-src/<locale>/universe/black-holes/<id>.json. */
+export interface BlackHoleOverlay {
+  /** Localized name; falls back to the catalogue name (M87*, Gargantua stay as written). */
+  name?: string;
+  /** One-line overview. */
+  fact?: string;
+  /** Longer editorial paragraph. */
+  bio?: string;
+  /** The discovery / measurement line the panel shows, in the reader's language. */
+  discovery?: string;
+}
+
+/** A black hole with its locale overlay's name and discovery line, en-US as the fallback. */
+export async function getBlackHoleI18n(
+  id: string,
+  locale: string,
+  fetchFn: FetchLike = fetch,
+): Promise<BlackHole | null> {
+  const hole = await getBlackHole(id, fetchFn);
+  if (!hole) return null;
+  const path = (l: string) => `i18n/${l}/universe/black-holes/${id}.json`;
+  const o =
+    (await get<BlackHoleOverlay>(path(locale), fetchFn).catch(() => null)) ??
+    (locale === 'en-US'
+      ? null
+      : await get<BlackHoleOverlay>(path('en-US'), fetchFn).catch(() => null));
+  return { ...hole, name: o?.name ?? hole.name, discovery: o?.discovery ?? hole.discovery };
+}
+
 // Per-planet editorial overlay (Slice 2) — a "why this world matters" note that
 // leans into the planet's science + its sci-fi / news / cultural fame. Keyed by
 // planet id under i18n-src/<locale>/universe/exoplanets/<id>.json.

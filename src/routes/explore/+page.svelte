@@ -69,6 +69,7 @@
     type ExoplanetOverlay,
     type LocalizedCultureDoor,
     type DeepSkyObject,
+    type DeepSkyTextOverlay,
   } from '$lib/data';
   import { findDeepSkyImage, type DeepSkyImage } from '$lib/deep-sky';
   import StarPanel from '$lib/components/StarPanel.svelte';
@@ -640,6 +641,7 @@
   let activeDeepSky = $state<DeepSkyObject | null>(null);
   // #410 — culture door(s) for the selected deep-sky object (M13 ← Arecibo).
   let deepSkyCultureDoors = $state<LocalizedCultureDoor[]>([]);
+  let deepSkyOverlay = $state<DeepSkyTextOverlay | null>(null);
   let deepSkyImmersed = $state(false);
   let deepSkyPhotoUrl = $state('');
   let deepSkyPanelOpen = $state(false);
@@ -1682,6 +1684,12 @@
       set bhCultureDoors(v) {
         bhCultureDoors = v;
       },
+      get deepSkyOverlay() {
+        return deepSkyOverlay;
+      },
+      set deepSkyOverlay(v) {
+        deepSkyOverlay = v;
+      },
       get deepSkyCultureDoors() {
         return deepSkyCultureDoors;
       },
@@ -2185,6 +2193,7 @@
 <DeepSkyPanel
   object={activeDeepSky}
   image={activeDeepSkyImage}
+  overlay={deepSkyOverlay}
   galleryHref={localHref(`/gallery/deep-sky`)}
   open={deepSkyPanelOpen}
   onClose={() => exitDeepSkyFn?.()}

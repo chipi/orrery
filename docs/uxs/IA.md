@@ -23,7 +23,7 @@ The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mis
 | Surface | Route | File | Primary canvas |
 |---|---|---|---|
 | Moon Map | `/moon` | `src/routes/moon/+page.svelte` | Three.js sphere + Canvas 2D flat map |
-| Solar System Explorer | `/explore` | `src/routes/explore/+page.svelte` | Three.js 3D + Canvas 2D toggle |
+| Solar System Explorer | `/explore` | `src/routes/explore/+page.svelte` | Three.js 3D + Canvas 2D toggle; its deep-sky panel shows the object's reviewed fact and bio (loaded by `getDeepSkyI18n`) |
 | Black holes | `/explore/black-holes/<id>` | `src/routes/explore/black-holes/` | One page per black hole (three real, Gargantua badged as fiction); linked from the black-hole rows of the Milky Way, Virgo and Cosmic web INDEX (`↗`; [UXD-017](decisions/UXD-017-one-index-on-every-scale.md)), which `/explore` prerenders for every scale |
 | Stars and their planets | `/explore/stars/<id>` | `src/routes/explore/stars/` | One page per named star and exoplanet host (the host's system as a section); linked from the neighbourhood INDEX rows (`↗`), which `/explore` prerenders for every scale |
 | INDEX on every scale | `/explore` | `src/lib/components/ScaleIndex.svelte` | The same left-edge INDEX panel at all eight scales (solar system … Cosmic web): every selectable object of the scene, search, kind chips, a `↗` link where the object has a page; one handle, one open state ([UXD-017](decisions/UXD-017-one-index-on-every-scale.md)); a row also takes the camera, as a canvas click does ([UXD-019](decisions/UXD-019-select-equals-focus.md), select = focus) |

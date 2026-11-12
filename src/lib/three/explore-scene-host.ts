@@ -57,6 +57,7 @@ import {
   getCultureDoors,
   getCultureObjectIds,
   getDeepSkyGallery,
+  getDeepSkyI18n,
   getDeepSkyObjects,
   getExoplanetI18n,
   getExoplanetSystem,
@@ -73,6 +74,7 @@ import {
   type BlackHole,
   type CosmicWebMember,
   type DeepSkyObject,
+  type DeepSkyTextOverlay,
   type ExoplanetOverlay,
   type ExoplanetPlanet,
   type ExoplanetSystem,
@@ -206,6 +208,7 @@ export interface ExploreSceneHostBridge {
   crossingFlashId: number;
   deepSkyCultureDoors: LocalizedCultureDoor[];
   deepSkyGallery: DeepSkyImage[];
+  deepSkyOverlay: DeepSkyTextOverlay | null;
   deepSkyImmersed: boolean;
   deepSkyObjects: DeepSkyObject[];
   deepSkyPanelOpen: boolean;
@@ -1617,6 +1620,12 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // Load any culture door(s) attached to this object (#410: the Arecibo message
     // was beamed at M13) so the panel can surface them.
     bridge.deepSkyCultureDoors = [];
+    bridge.deepSkyOverlay = null;
+    void getDeepSkyI18n(getLocale(), id, fetch)
+      .then((o) => {
+        if (bridge.selectedDeepSkyId === id) bridge.deepSkyOverlay = o;
+      })
+      .catch(dataLoadFailed);
     void getCultureDoors(id, getLocale(), fetch)
       .then((d) => {
         if (bridge.selectedDeepSkyId === id) bridge.deepSkyCultureDoors = d;
@@ -1668,6 +1677,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.deepSkyPanelOpen = false;
     bridge.activeDeepSky = null;
     bridge.selectedDeepSkyId = null;
+    bridge.deepSkyOverlay = null;
   }
   function deepSkyGateway(hostId: string): void {
     exitDeepSky();

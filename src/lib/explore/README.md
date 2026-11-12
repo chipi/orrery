@@ -13,7 +13,9 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
   the chips of each scale and the search / section helpers (UXD-017).
 - `paths-legend.ts` — PATHS layer rows, iconic taglines, interstellar craft.
 - `format.ts` — HUD formatters (scale numbers, light units, context names,
-  star colours, satellite sizes, time dilation).
+  star colours, satellite sizes, time dilation, `planetName`).
+- `planet-sizes.ts` — the eight planets of the REFERENCES overlay (radius, colour,
+  size order) shared by `SizesCanvas` and the legend grid.
 - `lens-panel.ts` — which science-lens story + layers each shell shows, and
   where the top scale-nav back arrow goes.
 - `layer-watchers.ts` — the teaching-layer subscriptions (`onLayerChange`)

@@ -28,7 +28,7 @@
     "caption": "Torres de gás frio e poeira na Nebulosa da Águia (M16), iluminadas de dentro por estrelas recém-nascidas.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emissão / região de formação estelar (M16)",
-    "distance": "~6.500 anos-luz",
+    "distance": "~5.540 anos-luz",
     "taken": "Divulgada em 19 de outubro de 2022"
   },
   "jwst-tarantula": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302 — asas de gás aquecido acima de 20.000°C, lançadas para fora por uma estrela em morte.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetária (NGC 6302)",
-    "distance": "~3.400 anos-luz",
+    "distance": "~2.430 anos-luz",
     "taken": "2009"
   },
   "hst-antennae": {
@@ -84,7 +84,7 @@
     "caption": "Duas galáxias (NGC 4038/4039) colidindo, acendendo bilhões de novas estrelas.",
     "subject": "Galáxias",
     "type": "Galáxias em colisão",
-    "distance": "~45–65 milhões de anos-luz",
+    "distance": "~69 milhões de anos-luz",
     "taken": "2006"
   },
   "hst-bubble": {
@@ -92,7 +92,7 @@
     "caption": "NGC 7635 — uma bolha de sete anos-luz de diâmetro soprada pelo intenso vento de uma estrela massiva.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emissão (NGC 7635)",
-    "distance": "~7.100 anos-luz",
+    "distance": "~9.130 anos-luz",
     "taken": "2016 · 26º aniversário do Hubble"
   },
   "hst-westerlund2": {
@@ -108,7 +108,7 @@
     "caption": "NGC 6543 — uma das nebulosas planetárias mais intrincadas já observadas.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetária (NGC 6543)",
-    "distance": "~3.300 anos-luz",
+    "distance": "~4.460 anos-luz",
     "taken": "2004"
   },
   "hst-whirlpool": {
@@ -116,7 +116,7 @@
     "caption": "M51 — uma galáxia espiral de livro de texto, os braços brilhando em rosa com estrelas recém-nascidas.",
     "subject": "Galáxias",
     "type": "Galáxia espiral (M51)",
-    "distance": "~31 milhões de anos-luz",
+    "distance": "~27 milhões de anos-luz",
     "taken": "2005"
   },
   "hst-crab": {
@@ -129,7 +129,7 @@
   },
   "hst-veil": {
     "title": "Nebulosa do Véu",
-    "caption": "Uma pluma do Laço do cisne — uma onda de choque de supernova ainda expandindo após 10.000 anos.",
+    "caption": "Uma pluma do Laço do cisne — uma onda de choque de supernova ainda expandindo após cerca de 20.000 anos.",
     "subject": "Nebulosa",
     "type": "Remanescente de supernova · Laço do cisne",
     "distance": "~2.400 anos-luz",
@@ -148,7 +148,7 @@
     "caption": "NGC 2392 — uma estrela semelhante ao Sol envolvida em camadas de gás que expeliu há 10 mil anos.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetária (NGC 2392)",
-    "distance": "~3 mil anos-luz",
+    "distance": "~5.980 anos-luz",
     "taken": "2000"
   },
   "chandra-crab": {
@@ -263,7 +263,7 @@
   },
   "jwst-casa": {
     "title": "Cassiopeia A",
-    "caption": "O olho infravermelho de Webb sobre o remanescente de supernova mais jovem conhecido da galáxia.",
+    "caption": "O olho infravermelho de Webb sobre um dos remanescentes de supernova mais jovens conhecidos da galáxia.",
     "subject": "Supernova",
     "type": "Remanescente de supernova",
     "distance": "~11 mil anos-luz",
@@ -274,7 +274,7 @@
     "caption": "Uma torre de gás frio de sete anos-luz em um viveiro estelar distante.",
     "subject": "Nebulosa",
     "type": "Nebulosa de emissão",
-    "distance": "~2.700 anos-luz",
+    "distance": "~2.280 anos-luz",
     "taken": "2002 · Primeira luz do ACS"
   },
   "hst-omega-centauri": {
@@ -314,7 +314,7 @@
     "caption": "Uma rara estrela massiva lançando suas camadas externas nos momentos antes de explodir como supernova.",
     "subject": "Estrela",
     "type": "Estrela Wolf–Rayet",
-    "distance": "~15.000 anos-luz",
+    "distance": "~21.000 anos-luz",
     "taken": "Divulgada 14 mar 2023"
   },
   "hst-cosmic-reef": {
@@ -330,7 +330,7 @@
     "caption": "Ampulhetas aninhadas de gás lançado por uma estrela moribunda e sua companheira.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetária",
-    "distance": "~7.000 anos-luz",
+    "distance": "~15.000 anos-luz",
     "taken": "2019 · Hubble 29º"
   },
   "hst-monkey-head": {
@@ -362,7 +362,7 @@
     "caption": "Uma espiral com barra clássica, seus braços enrolados em torno de uma barra de 200 mil anos-luz.",
     "subject": "Galáxia",
     "type": "Galáxia espiral com barra",
-    "distance": "~61 milhões de anos-luz",
+    "distance": "~45 milhões de anos-luz",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342 — uma espiral oculta atrás da poeira da Via Láctea, revelada pelo Euclid.",
     "subject": "Galáxia",
     "type": "Galáxia espiral",
-    "distance": "~11 milhões de anos-luz",
+    "distance": "~7,3 milhões de anos-luz",
     "taken": "Divulgado em 2024"
   },
   "hst-v838": {

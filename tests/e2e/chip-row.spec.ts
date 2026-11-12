@@ -31,7 +31,7 @@ const ROWS: Record<string, string[]> = {
 
 /** Open states: the row meets the open detail panel. */
 const PANEL_STATES: Record<string, string> = {
-  '/earth': '/earth?site=ksc',
+  '/earth': '/earth?site=lc-39a',
   '/moon': '/moon?site=apollo11',
   '/mars': '/mars?site=perseverance',
 };

@@ -20,6 +20,7 @@
    */
   import { fmtDate } from '$lib/station-assembly-anim';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
 
   type Props = {
     playing: boolean;
@@ -68,27 +69,25 @@
 
 <div class="assembly-overlay" data-testid="station-assembly">
   <div class="assembly-row">
-    <button
-      type="button"
-      class="ctrl"
+    <Chip
+      kind="action"
       data-testid="assembly-play"
       aria-label={playing ? m.station_assembly_pause_aria() : m.station_assembly_play_aria()}
       title={playing ? m.fly_pause() : m.fly_play()}
       onclick={onTogglePlay}
     >
       {playing ? '⏸' : '▶'}
-    </button>
+    </Chip>
 
-    <button
-      type="button"
-      class="ctrl"
+    <Chip
+      kind="action"
       data-testid="assembly-reset"
       aria-label={m.assembly_reset_aria()}
       title={m.assembly_reset_title()}
       onclick={onReset}
     >
       ⟲
-    </button>
+    </Chip>
 
     <input
       class="scrub"
@@ -104,15 +103,14 @@
 
     <span class="date" data-testid="assembly-date">{nowDate}</span>
 
-    <button
-      type="button"
-      class="assembly-close"
+    <Chip
+      kind="action"
       aria-label={m.assembly_close()}
       title={m.assembly_close()}
       onclick={onClose}
     >
       ×
-    </button>
+    </Chip>
   </div>
 
   {#if latestChip}
@@ -160,32 +158,13 @@
     transform: translateX(-50%);
     width: min(92vw, 640px);
     background: rgba(8, 12, 18, 0.92);
-    border: 1px solid rgba(120, 180, 255, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 12px;
     padding: 0.9rem 1.2rem 0.7rem;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    color: #cfe2ff;
+    color: var(--color-text);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
     z-index: 12;
-  }
-
-  .assembly-close {
-    width: 1.8rem;
-    height: 1.8rem;
-    border: 1px solid rgba(120, 180, 255, 0.35);
-    background: rgba(20, 28, 40, 0.6);
-    color: #cfe2ff;
-    font-size: 1.05rem;
-    line-height: 1;
-    cursor: pointer;
-    border-radius: 50%;
-    flex: none;
-    display: grid;
-    place-items: center;
-  }
-  .assembly-close:hover {
-    background: rgba(120, 180, 255, 0.22);
-    color: #fff;
   }
 
   .assembly-row {
@@ -194,27 +173,9 @@
     gap: 0.6rem;
   }
 
-  .ctrl {
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid rgba(120, 180, 255, 0.45);
-    background: rgba(20, 28, 40, 0.6);
-    color: #cfe2ff;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 0.95rem;
-    line-height: 1;
-    display: grid;
-    place-items: center;
-    flex: none;
-  }
-  .ctrl:hover {
-    background: rgba(120, 180, 255, 0.2);
-  }
-
   .scrub {
     flex: 1;
-    accent-color: #6fb3ff;
+    accent-color: var(--color-accent);
     height: 1.4rem;
   }
 
@@ -243,15 +204,15 @@
     font: inherit;
     font-weight: 700;
     cursor: pointer;
-    text-decoration: underline dotted rgba(120, 180, 255, 0.6);
+    text-decoration: underline dotted var(--color-accent-strong);
     text-underline-offset: 3px;
   }
   .chip-name:hover {
-    color: #cfe2ff;
-    text-decoration: underline solid rgba(160, 200, 255, 0.9);
+    color: var(--color-text);
+    text-decoration: underline solid var(--color-accent-hover);
   }
   .chip-name:focus-visible {
-    outline: 2px solid #6fb3ff;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
     border-radius: 2px;
   }

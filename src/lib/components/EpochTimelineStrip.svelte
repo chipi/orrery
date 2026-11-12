@@ -172,6 +172,7 @@
      prior accent blue, so a band without an explicit colour gracefully
      degrades. */
   .band {
+    /* a4-keep: desktop epoch band is a timeline segment, not a chip (MI2 redesigns it) */
     position: absolute;
     top: 0;
     height: 100%;
@@ -201,6 +202,7 @@
       transform 0.18s;
   }
   .band:hover {
+    /* a4-keep: desktop epoch band is a timeline segment, not a chip (MI2 redesigns it) */
     background: linear-gradient(
       to bottom,
       color-mix(in srgb, var(--band-color, var(--color-accent)) 32%, transparent),
@@ -213,6 +215,7 @@
     transform: translateY(-1px);
   }
   .band.active {
+    /* a4-keep: desktop epoch band is a timeline segment, not a chip (MI2 redesigns it) */
     background: linear-gradient(
       to bottom,
       color-mix(in srgb, var(--band-color, var(--color-accent)) 48%, transparent),

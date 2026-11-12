@@ -13,6 +13,7 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
   import { base } from '$app/paths';
   import {
@@ -300,15 +301,16 @@
   {/if}
 
   {#if !flashing}
-    <button
+    <Chip
+      kind="toggle"
       class="hud-collapse"
+      active={hudHidden}
       onclick={() => onToggleHud?.()}
       aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
-      aria-pressed={hudHidden}
       title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
     >
       {hudHidden ? '◐' : '◑'}
-    </button>
+    </Chip>
   {/if}
 
   <div class="header">
@@ -478,7 +480,7 @@
   .descent.external .timeline,
   .descent.external .readouts,
   .descent.external .continue,
-  .descent.external .hud-collapse {
+  .descent.external :global(.hud-collapse) {
     display: none;
   }
   .stage {
@@ -790,24 +792,11 @@
   .ro.guidance-miss .rv {
     color: #e8a24a;
   }
-  .hud-collapse {
+  .descent :global(.hud-collapse) {
     position: absolute;
     left: 22px;
     bottom: 26px;
     z-index: 6;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: rgba(10, 20, 34, 0.82);
-    border: 1px solid rgba(216, 168, 130, 0.4);
-    color: #f0d8bf;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-  }
-  .hud-collapse:hover {
-    background: rgba(216, 168, 130, 0.25);
-    color: #fff;
   }
   .continue {
     position: absolute;

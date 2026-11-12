@@ -80,8 +80,8 @@ test.describe('mobile layer-filter chip horizontal flow (v0.6 fix)', () => {
       // so compare the first two chips of one group, not across a header.
       const grouped = (await page.locator('.mdg-body .chip-group').count()) > 0;
       const chips = grouped
-        ? page.locator('.mdg-body .chip-group').first().locator('~ .chip')
-        : page.locator('.mdg-body .chip');
+        ? page.locator('.mdg-body .chip-group').first().locator('~ .ui-chip')
+        : page.locator('.mdg-body .ui-chip');
       const count = await chips.count();
       expect(count).toBeGreaterThanOrEqual(2);
       const first = await chips.first().boundingBox();

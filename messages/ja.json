@@ -319,7 +319,7 @@
   "sun_rot_diff": "極域{value}日(差動回転)",
   "sun_source_nasa": "出典:NASA・IAU・絶対等級 {mag}",
   "sizes_header": "惑星・真の相対サイズ",
-  "sizes_source": "距離・出典:IAU・NASA",
+  "sizes_source": "直径（km）・出典：IAU・NASA",
   "sizes_canvas_label": "惑星のサイズの比較",
   "lib_filter_dest_label": "目的地",
   "lib_filter_dest_all": "すべて",

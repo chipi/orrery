@@ -61,7 +61,7 @@ const hubble = {
   launched: 1990,
   status: 'ACTIVE',
   altitude_km: 538,
-  color: '#4ecdc4',
+  color: '#5070ff',
   count: 1,
   crew: 0,
   name: 'Hubble',
@@ -131,7 +131,7 @@ describe('earthObjectToIndexItem', () => {
       year: 1990,
       status: 'ACTIVE',
       regime: 'LEO',
-      color: '#4ecdc4',
+      color: '#5070ff',
       body: 'earth',
     });
     expect(item.agencies).toEqual(['NASA', 'ESA']);

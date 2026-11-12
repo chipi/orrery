@@ -20,6 +20,7 @@
       {#each items as a (a.id)}
         <li>
           <button
+            class="annotation-row"
             type="button"
             class:active={annotationUi.highlightId === a.id}
             data-annotation-id={a.id}

@@ -348,6 +348,10 @@ const SWEEP_ALLOW_SELF = [
   '.lb-close',
   '.lb-nav',
   '.collapse-btn',
+  // TierContextCard collapse caret (panel furniture, like .collapse-btn)
+  '.tcc-toggle',
+  // A site's "what you are seeing" list: rows of name + explanation, like the module rows
+  '.annotation-row',
   '.exhibit-exit-corner',
   // Audio overlay (a dialog player): its own transport and resume buttons
   '.header-btn',

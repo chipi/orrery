@@ -94,7 +94,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | External assets | Resolved at build time | ADR-016 |
 | Imagery sourcing | Agency-first fetch priority; NASA as fallback library | ADR-046 |
 | Outbound LEARN links | Agency-first per-link provenance; native-language priority; `rel="noopener noreferrer external"` + `hreflang` everywhere; public `/library` bill-of-links; link-checker chained into `npm run fetch` | ADR-051 |
-| SEO surface | Indexable entity pages (`/missions/[id]`, `/fleet/[id]`, `/moon\|mars\|venus/[id]`, `/explore/[id]`, `/explore/stars/[id]` + the `/explore/stars` hub, `/explore/black-holes/[id]` + its hub, `/lab/[id]`) in 14 locales from the panels' data; `pageTitle()` / `metaDescription()`; OG + Twitter from `hooks.server.ts`; JSON-LD; split sitemaps from `scripts/site-routes.mjs`; base-path mirror builds noindex; `check-seo.mjs` gate in every build. A change to what a panel shows should reach its entity page | ADR-096 |
+| SEO surface | Indexable entity pages (`/missions/[id]`, `/fleet/[id]`, `/moon\|mars\|venus/[id]`, `/explore/[id]`, `/explore/stars/[id]`, `/explore/black-holes/[id]`, `/lab/[id]`) in 14 locales from the panels' data; `pageTitle()` / `metaDescription()`; OG + Twitter from `hooks.server.ts`; JSON-LD; split sitemaps from `scripts/site-routes.mjs`; base-path mirror builds noindex; `check-seo.mjs` gate in every build. A change to what a panel shows should reach its entity page | ADR-096 |
 | Provenance + license stewardship | Per-image manifest + text manifest + fail-closed validate-data; public `/credits` page | ADR-047 |
 | i18n | Paraglide-js + locale overlay files | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
@@ -780,7 +780,7 @@ Layer chips (src/lib/components/LayerChipRow.svelte, UXD-015): one flat horizont
   group; RESET VIEW is always rendered (disabled when inert) so no chip shifts. /earth = SURFACE, LAUNCHPADS,
   MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip switches every orbiter, as on the other
   worlds). The scene routes (/moon /mars /venus /explore) have no separate A-Z tab: their INDEX
-  panel carries a real link to each entity page (prerendered while closed, ADR-096 item 11; the neighbourhood's star INDEX links `/explore/stars/<id>` and, in its black-hole section, `/explore/black-holes/<id>`; the static `/explore/stars` and `/explore/black-holes` hubs are the crawl path, items 13–14 and 16);
+  panel carries a real link to each entity page (prerendered while closed, ADR-096 item 11; the neighbourhood's star INDEX links `/explore/stars/<id>` and, in its black-hole section, `/explore/black-holes/<id>`; `/explore` renders that INDEX at every scale, hidden outside the neighbourhood, so its prerendered HTML is the crawl path, items 13–14 and 16);
   /missions and /fleet keep EntityIndex at the page foot. Enforced by tests/e2e/chip-row.spec.ts
   and tests/e2e/index-links.spec.ts.
 

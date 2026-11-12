@@ -23,8 +23,6 @@ describe('getEntityIndex', () => {
           r.startsWith(`/${hub}/`) &&
           r !== '/missions/launches' &&
           r !== '/explore/hub' &&
-          r !== '/explore/stars' &&
-          r !== '/explore/black-holes' &&
           !r.slice(hub.length + 2).includes('/'),
       );
       const links = await getEntityIndex(hub, 'de', fetch);
@@ -36,7 +34,7 @@ describe('getEntityIndex', () => {
     });
   }
 
-  it('/explore lists bodies only: no star page and not the /explore/stars hub, and a star id is no body', async () => {
+  it('/explore lists bodies only: no star or black-hole page, and a star id is no body', async () => {
     const ids = (await getEntityIndex('explore', 'en-US', fetch)).map((l) => l.id);
     expect(ids).toContain('mars');
     expect(ids).not.toContain('stars');

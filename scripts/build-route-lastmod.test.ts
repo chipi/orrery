@@ -130,7 +130,6 @@ describe('route inputs', () => {
 
 describe('star page inputs', () => {
   const tracked = new Set([
-    'src/routes/explore/stars/+page.svelte',
     'src/routes/explore/stars/[id]/+page.svelte',
     'static/data/culture-doors.json',
     'i18n-src/en-US/universe/named-stars/vega.json',
@@ -139,7 +138,6 @@ describe('star page inputs', () => {
     'i18n-src/en-US/culture-doors/kepler16b-tatooine.json',
   ]);
   const latest = new Map<string, number>([
-    ['src/routes/explore/stars/+page.svelte', day('2026-02-01')],
     ['src/routes/explore/stars/[id]/+page.svelte', day('2026-03-01')],
     ['static/data/culture-doors.json', day('2026-01-01')],
     ['i18n-src/en-US/universe/named-stars/vega.json', day('2026-04-01')],
@@ -159,7 +157,7 @@ describe('star page inputs', () => {
     doors: [{ id: 'kepler16b-tatooine', objectId: 'kepler-16-b' }],
   };
 
-  it('dates a named star from its own record and overlay, not the hub or the body pages', () => {
+  it('dates a named star from its own record and overlay, not the body pages', () => {
     const inputs = inputsFor('/explore/stars/vega', ctx, data);
     expect(newestTs(inputs, 'de', ctx)).toBe(day('2026-06-01'));
     expect(newestTs(inputs, 'fr', ctx)).toBe(day('2026-06-01'));
@@ -171,18 +169,10 @@ describe('star page inputs', () => {
     expect(inputs.overlays).toContain('culture-doors/kepler16b-tatooine.json');
     expect(newestTs(inputs, 'de', ctx)).toBe(day('2026-08-01'));
   });
-
-  it('treats /explore/stars as the hub (its own files + the star data), not as a body', () => {
-    const inputs = inputsFor('/explore/stars', ctx, data);
-    expect(inputs.files).toContain('src/routes/explore/stars/+page.svelte');
-    expect(inputs.files).toContain('static/data/universe/named-stars.json');
-    expect(inputs.files).not.toContain('src/routes/explore/stars/[id]/+page.svelte');
-  });
 });
 
 describe('black-hole page inputs', () => {
   const tracked = new Set([
-    'src/routes/explore/black-holes/+page.svelte',
     'src/routes/explore/black-holes/[id]/+page.svelte',
     'static/data/culture-doors.json',
     'i18n-src/en-US/universe/black-holes/gargantua.json',
@@ -190,7 +180,6 @@ describe('black-hole page inputs', () => {
     'i18n-src/en-US/culture-doors/gargantua-interstellar.json',
   ]);
   const latest = new Map<string, number>([
-    ['src/routes/explore/black-holes/+page.svelte', day('2026-02-01')],
     ['src/routes/explore/black-holes/[id]/+page.svelte', day('2026-03-01')],
     ['static/data/culture-doors.json', day('2026-01-01')],
     ['i18n-src/en-US/universe/black-holes/gargantua.json', day('2026-04-01')],
@@ -221,13 +210,6 @@ describe('black-hole page inputs', () => {
   it('does not take a neighbour’s edit: a hole with no door and no overlay is dated by its own entry', () => {
     const inputs = inputsFor('/explore/black-holes/cygnus-x-1', ctx, data);
     expect(newestTs(inputs, 'fr', ctx)).toBe(day('2026-03-01'));
-  });
-
-  it('treats /explore/black-holes as the hub (its own files + the data), not as a body', () => {
-    const inputs = inputsFor('/explore/black-holes', ctx, data);
-    expect(inputs.files).toContain('src/routes/explore/black-holes/+page.svelte');
-    expect(inputs.files).toContain('static/data/universe/black-holes.json');
-    expect(inputs.files).not.toContain('src/routes/explore/black-holes/[id]/+page.svelte');
   });
 });
 

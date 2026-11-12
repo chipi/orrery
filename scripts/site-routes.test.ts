@@ -29,9 +29,8 @@ describe('star page routes (/explore/stars/<id>)', () => {
     expect(starPageIds()).toHaveLength(66);
   });
 
-  it('are in the canonical route list with the hub, each exactly once', () => {
+  it('are in the canonical route list, each exactly once', () => {
     const routes: string[] = collectCanonicalRoutes();
-    expect(routes.filter((r) => r === '/explore/stars')).toHaveLength(1);
     const pages = routes.filter((r) => r.startsWith('/explore/stars/'));
     expect(pages.sort()).toEqual(
       starPageIds()
@@ -71,9 +70,8 @@ describe('black-hole page routes (/explore/black-holes/<id>)', () => {
     ]);
   });
 
-  it('are in the canonical route list with the hub, each exactly once', () => {
+  it('are in the canonical route list, each exactly once', () => {
     const routes: string[] = collectCanonicalRoutes();
-    expect(routes.filter((r) => r === '/explore/black-holes')).toHaveLength(1);
     expect(routes.filter((r) => r.startsWith('/explore/black-holes/')).sort()).toEqual(
       blackHolePageIds()
         .map((id: string) => `/explore/black-holes/${id}`)

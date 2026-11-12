@@ -6,7 +6,7 @@ import { expect, test } from '@playwright/test';
  * so `request.get` is enough. M87* (a real hole with the EHT picture and figures) and Gargantua
  * (fiction: a visible badge, no figures) in English and German: one H1 with the hole's name, the
  * self canonical and reciprocal hreflang, the link back into the scene (?bh=<id>) and the crumb to
- * the hub.
+ * /explore.
  */
 
 const ORIGIN = 'https://www.orrerylearn.com';
@@ -72,7 +72,7 @@ test.describe('black-hole pages: static HTML', () => {
         );
 
         expect(html).toContain(`href="${prefix}/explore?bh=${id}"`);
-        expect(html).toContain(`href="${prefix}/explore/black-holes"`); // the crumb to the hub
+        expect(html).toContain(`href="${prefix}/explore"`); // the crumb to the Explore scene, as on a planet page
 
         expect(html.includes('data-testid="bh-fiction-badge"')).toBe(fiction);
         expect(html.includes('<dl class="facts')).toBe(!fiction);

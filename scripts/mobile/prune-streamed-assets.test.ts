@@ -65,38 +65,32 @@ describe('prune-streamed-assets (MOBILE=1)', () => {
 });
 
 describe('prune-streamed-assets (MOBILE=1) star pages', () => {
-  it('drops the /explore/stars hub, every /explore/stars/<id> page and their __data.json; keeps the scene route', () => {
+  it('drops every /explore/stars/<id> page and its __data.json; keeps the scene route', () => {
     const b = seed(dir);
     for (const prefix of ['', 'de/']) {
       mkdirSync(path.join(b, prefix, 'explore/stars/sirius'), { recursive: true });
-      writeFileSync(path.join(b, prefix, 'explore/stars.html'), 'x');
-      writeFileSync(path.join(b, prefix, 'explore/stars/__data.json'), '{}');
       writeFileSync(path.join(b, prefix, 'explore/stars/sirius.html'), 'x');
       writeFileSync(path.join(b, prefix, 'explore/stars/sirius/__data.json'), '{}');
     }
     writeFileSync(path.join(b, 'explore.html'), 'x'); // the scene route — must survive
     run(dir, true);
     expect(existsSync(path.join(b, 'explore/stars'))).toBe(false);
-    expect(existsSync(path.join(b, 'explore/stars.html'))).toBe(false);
     expect(existsSync(path.join(b, 'de'))).toBe(false);
     expect(existsSync(path.join(b, 'explore.html'))).toBe(true);
   });
 });
 
 describe('prune-streamed-assets (MOBILE=1) black-hole pages', () => {
-  it('drops the /explore/black-holes hub, every /explore/black-holes/<id> page and their __data.json; keeps the scene route', () => {
+  it('drops every /explore/black-holes/<id> page and its __data.json; keeps the scene route', () => {
     const b = seed(dir);
     for (const prefix of ['', 'de/']) {
       mkdirSync(path.join(b, prefix, 'explore/black-holes/gargantua'), { recursive: true });
-      writeFileSync(path.join(b, prefix, 'explore/black-holes.html'), 'x');
-      writeFileSync(path.join(b, prefix, 'explore/black-holes/__data.json'), '{}');
       writeFileSync(path.join(b, prefix, 'explore/black-holes/gargantua.html'), 'x');
       writeFileSync(path.join(b, prefix, 'explore/black-holes/gargantua/__data.json'), '{}');
     }
     writeFileSync(path.join(b, 'explore.html'), 'x'); // the scene route — must survive
     run(dir, true);
     expect(existsSync(path.join(b, 'explore/black-holes'))).toBe(false);
-    expect(existsSync(path.join(b, 'explore/black-holes.html'))).toBe(false);
     expect(existsSync(path.join(b, 'de'))).toBe(false);
     expect(existsSync(path.join(b, 'explore.html'))).toBe(true);
   });

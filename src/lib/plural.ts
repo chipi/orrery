@@ -14,7 +14,7 @@ export const plural =
   (n: number): string =>
     (forms[new Intl.PluralRules(locale ?? getLocale()).select(n)] ?? other)({ n });
 
-/** "3 known planets" in the locale's plural form (star panel, star pages, the stars hub). */
+/** "3 known planets" in the locale's plural form (star panel, star pages). */
 export const planetCountLabel = (n: number, locale?: string): string =>
   plural(
     m.star_system_planet_count,

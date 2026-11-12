@@ -71,12 +71,7 @@ const thinnest = new Map();
 const ENTITY_ROUTE =
   /^\/(missions|fleet|moon|mars|venus|explore|lab)\/([^/]+)$|^\/explore\/(?:stars|black-holes)\/[^/]+$/;
 // Index / app pages that sit under an entity prefix.
-const NOT_ENTITY = new Set([
-  '/missions/launches',
-  '/explore/hub',
-  '/explore/stars',
-  '/explore/black-holes',
-]);
+const NOT_ENTITY = new Set(['/missions/launches', '/explore/hub']);
 
 /** Pages that are noindex by design (route without base, no locale prefix). */
 function isNoindexByDesign(route) {

@@ -81,7 +81,7 @@ test.describe('star pages: static HTML', () => {
         );
 
         expect(html).toContain(`href="${prefix}/explore?${scene}"`);
-        expect(html).toContain(`href="${prefix}/explore/stars"`); // the crumb to the hub
+        expect(html).toContain(`href="${prefix}/explore"`); // the crumb to the Explore scene, as on a planet page
 
         const planets = systems.find((s) => s.hostId === id)?.planets ?? [];
         expect(html.includes('id="system"')).toBe(system);

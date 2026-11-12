@@ -64,8 +64,6 @@ beforeAll(() => {
   write('missions.html', page('<p>short</p>'));
   write('missions/launches.html', page('<p>short</p>'));
   write('explore/hub.html', page('<p>short</p>'));
-  write('explore/stars.html', page('<p>short</p>'));
-  write('explore/black-holes.html', page('<p>short</p>'));
 });
 
 afterAll(() => rmSync(dir, { recursive: true, force: true }));
@@ -117,7 +115,5 @@ describe('check-seo thin entity pages', () => {
     expect(out).not.toContain('/missions (');
     expect(out).not.toContain('/missions/launches (');
     expect(out).not.toContain('/explore/hub (');
-    expect(out).not.toContain('/explore/stars (');
-    expect(out).not.toContain('/explore/black-holes (');
   });
 });

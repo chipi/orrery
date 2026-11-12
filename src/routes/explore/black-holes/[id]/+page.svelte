@@ -12,6 +12,7 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
+  import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import type { PageData } from './$types';
@@ -19,7 +20,7 @@
   let { data }: { data: PageData } = $props();
   let hole = $derived(data.hole);
   let fiction = $derived(hole.kind === 'fictional');
-  let section = $derived(m.black_holes_hub_title());
+  let section = $derived(ogTitle(m.explore_page_title()));
   let summary = $derived(
     metaDescription([hole.fact, hole.bio].filter(Boolean).join(' ') || hole.discovery),
   );
@@ -35,8 +36,7 @@
         ...(data.hero ? { image: absoluteUrl(data.hero.src) } : {}),
       }),
       breadcrumbList([
-        { name: m.nav_group_explore(), url: canonicalUrl('/explore/hub', loc) },
-        { name: section, url: canonicalUrl('/explore/black-holes', loc) },
+        { name: section, url: canonicalUrl('/explore', loc) },
         { name: hole.name, url },
       ]),
     ];
@@ -51,9 +51,7 @@
 
 <article class="entity page-shell page-shell--reading" class:fiction>
   <nav class="crumb page-crumb">
-    <a href={localHref('/explore/hub')}>{m.nav_group_explore()}</a>
-    <span class="sep">›</span>
-    <a href={localHref('/explore/black-holes')}>{section}</a>
+    <a href={localHref('/explore')}>{section}</a>
     <span class="sep">›</span>
     <span>{hole.name}</span>
   </nav>

@@ -1780,23 +1780,23 @@
        retired the bespoke .nb-hud chip row: constellations, deep-sky, the H–R
        diagram and light-cones are now standard science layers, surfaced uniformly
        through the ScienceLayersPanel lens (see lensPanel derived + onLayerChange
-       subscriptions). -->
-  {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
-    <StarIndex
-      stars={namedStars}
-      open={starIndexOpen}
-      selectedId={selectedStarId}
-      hostIds={exoplanetHostIds}
-      cultureIds={cultureObjectIds}
-      blackHoles={blackHoleIndex}
-      onSelect={(id) => indexSelectStarFn?.(id)}
-      onSelectBlackHole={(id) => {
-        starIndexOpen = false;
-        bhDeepLinkFn?.(id);
-      }}
-      onClose={() => (starIndexOpen = false)}
-    />
-  {/if}
+       subscriptions). Mounted at every scale and hidden outside the neighbourhood, so the
+       prerendered page links every star and black-hole page (ADR-096 item 11). -->
+  <StarIndex
+    stars={namedStars}
+    open={starIndexOpen && view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
+    selectedId={selectedStarId}
+    hostIds={exoplanetHostIds}
+    cultureIds={cultureObjectIds}
+    blackHoles={blackHoleIndex.length > 0 ? blackHoleIndex : data.blackHoleLinks}
+    pageLinks={data.starLinks}
+    onSelect={(id) => indexSelectStarFn?.(id)}
+    onSelectBlackHole={(id) => {
+      starIndexOpen = false;
+      bhDeepLinkFn?.(id);
+    }}
+    onClose={() => (starIndexOpen = false)}
+  />
 
   <!-- #451 (WS-2) — the Milky Way science lens (rotation curve / dark-matter halo /
        stellar populations) now lives in the unified ScienceLayersPanel, like every

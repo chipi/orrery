@@ -63,11 +63,6 @@ const SEED_DATA = {
     'static/data/satellites.json',
     'static/data/small-bodies.json',
   ],
-  '/explore/stars': [
-    'static/data/universe/named-stars.json',
-    'static/data/universe/exoplanet-systems.json',
-  ],
-  '/explore/black-holes': ['static/data/universe/black-holes.json'],
   '/worlds': [
     'static/data/planets.json',
     'static/data/satellites.json',

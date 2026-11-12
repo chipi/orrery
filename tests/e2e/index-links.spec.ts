@@ -8,9 +8,9 @@ import { waitForHydration } from './_helpers/hydration';
  * object has an entity page also carries a real link to it, and the prerendered HTML links
  * every entity page of the hub even while the INDEX panel is closed (crawlers do not click).
  * /missions and /fleet keep the A–Z at the page foot. The stars (ADR-096 item 13) are typed apart
- * under /explore/stars/<id>: the static /explore/stars hub links every one in its HTML, and the
- * neighbourhood's star INDEX carries a link per row; the black holes (item 16) likewise under
- * /explore/black-holes/<id>, listed at the foot of that INDEX.
+ * under /explore/stars/<id> and the black holes (item 16) under /explore/black-holes/<id>; both
+ * are rows of the neighbourhood star INDEX, which /explore renders at every scale (hidden outside
+ * the neighbourhood), so the prerendered /explore HTML links every one of them.
  */
 
 const SCENE_HUBS = ['moon', 'mars', 'venus', 'explore'] as const;
@@ -44,9 +44,7 @@ function entityIds(hub: string): string[] {
   return (collectCanonicalRoutes() as string[])
     .filter((r) => r.startsWith(prefix) && !r.slice(prefix.length).includes('/'))
     .map((r) => r.slice(prefix.length))
-    .filter(
-      (id) => !(hub === 'explore' && (id === 'hub' || id === 'stars' || id === 'black-holes')),
-    );
+    .filter((id) => !(hub === 'explore' && id === 'hub'));
 }
 
 /** Every /explore/stars/<id> page (named stars + exoplanet hosts). */
@@ -87,38 +85,23 @@ test.describe('the prerendered hub HTML links every entity page', () => {
   }
 
   for (const locale of ['', '/de']) {
-    test(`${locale}/explore/stars: the static hub links every star page`, async ({ request }) => {
-      const res = await request.get(`${locale}/explore/stars`);
-      expect(res.ok()).toBe(true);
-      const html = await res.text();
-      const hrefs = [...html.matchAll(/href="([^"#?]+)"/g)].map((m) => m[1]);
-      const ids = starPageIds();
-      expect(ids.length).toBe(66);
-      const missing = ids.filter((id) => !hrefs.includes(`${locale}/explore/stars/${id}`));
-      expect(missing, `star pages not linked from ${locale}/explore/stars`).toEqual([]);
-    });
-  }
-
-  for (const locale of ['', '/de']) {
-    test(`${locale}/explore/black-holes: the static hub links every black-hole page`, async ({
+    test(`${locale}/explore: the star INDEX links every star and black-hole page in the HTML`, async ({
       request,
     }) => {
-      const res = await request.get(`${locale}/explore/black-holes`);
+      const res = await request.get(`${locale}/explore`);
       expect(res.ok()).toBe(true);
-      const html = await res.text();
-      const hrefs = [...html.matchAll(/href="([^"#?]+)"/g)].map((m) => m[1]);
-      const ids = blackHolePageIds();
-      expect(ids.length).toBe(4);
-      const missing = ids.filter((id) => !hrefs.includes(`${locale}/explore/black-holes/${id}`));
-      expect(missing, `black-hole pages not linked from ${locale}/explore/black-holes`).toEqual([]);
+      const hrefs = [...(await res.text()).matchAll(/href="([^"#?]+)"/g)].map((m) => m[1]);
+      const stars = starPageIds();
+      expect(stars.length).toBe(66);
+      const holes = blackHolePageIds();
+      expect(holes.length).toBe(4);
+      const missing = [
+        ...stars.map((id) => `${locale}/explore/stars/${id}`),
+        ...holes.map((id) => `${locale}/explore/black-holes/${id}`),
+      ].filter((href) => !hrefs.includes(href));
+      expect(missing, `star / black-hole pages not linked from ${locale}/explore`).toEqual([]);
     });
   }
-
-  test('the Explore hub card links the stars hub and the black-holes hub', async ({ request }) => {
-    const html = await (await request.get('/explore/hub')).text();
-    expect(html).toContain('href="/explore/stars"');
-    expect(html).toContain('href="/explore/black-holes"');
-  });
 
   for (const hub of ['missions', 'fleet']) {
     test(`/${hub} keeps the A–Z at the page foot`, async ({ request }) => {

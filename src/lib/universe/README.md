@@ -1,6 +1,6 @@
 # src/lib/universe — module map
 
-The "Known Universe" half of `/explore`: everything outside the solar-system scene. Consumed by `$lib/three/explore-scene-host.ts` (dynamic-imports the heavy scenes), `$lib/explore/scale-shell-controller.ts`, the `StarPanel` / `StarPortrait` / `StarIndex` / `ConstellationFinder` / `HrDiagram` / `MassPeriodChart` / `CausalityMap` components, and `routes/dev/local-group`, `routes/dev/universe-anchor`.
+The "Known Universe" half of `/explore`: everything outside the solar-system scene. Consumed by `$lib/three/explore-scene-host.ts` (dynamic-imports the heavy scenes), `$lib/explore/scale-shell-controller.ts`, the `StarPanel` / `StarPortrait` / `ScaleIndex` / `ConstellationFinder` / `HrDiagram` / `MassPeriodChart` / `CausalityMap` components, and `routes/dev/local-group`, `routes/dev/universe-anchor`.
 
 - **Scale spine** — `context-graph.ts`: the stack of nested contexts (solar-system, neighborhood, milky-way, local-group, local-sheet, virgo, laniakea, cosmic-web), each with its own units and origin; `rebaseDistance` re-bases the camera across a boundary, with a hysteresis band at the seam. `scale-readout.ts` turns a camera distance into km / AU / ly / pc text.
 - **Star field** — `point-field.ts` (WebGL `THREE.Points`), `star-selection.ts` (pure LOD + packing), `budget.ts` (point budget from the quality tier), `star-normalize.ts` (HYG row to record; shared with `scripts/build-universe-stars.ts`), `bv-to-rgb.ts`, `neighborhood-scene.ts` (the pc-unit context scene).

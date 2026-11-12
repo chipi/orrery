@@ -32,6 +32,11 @@ section of the page; back-links `/explore?goto=` or `?system=`; ids from `starPa
 `scripts/site-routes.mjs`, ADR-096 items 13–14). `black-holes/[id]/` is one black hole (ADR-096
 item 16; server load → `$lib/data/black-hole-entity`; Gargantua carries a fiction badge and no
 figures; back-link `/explore?bh=`; ids from `blackHolePageIds()`). There is no list page: the
-star INDEX, which `+page.svelte` renders at every scale from the server load's `starLinks` and
-`blackHoleLinks`, links every star and black-hole page in the prerendered HTML. `hub/` is the
-nav-group hub.
+INDEX does that job. `+page.svelte` mounts one `ScaleIndex` per scale (`CTX_ORDER`), all hidden
+unless on screen, with one left-edge handle and one `indexOpen`; their rows are the server load's
+`scaleIndex` (`getScaleIndexRows` in `$lib/server/entity-index`, built by
+`$lib/explore/scale-index.ts`), so the prerendered HTML links every body, star and black-hole page
+and a row with no page joins on hydration. A row's select is the scene host's select function for
+that scale (`selectLgFn` … `selectCosmicWebFn`, `indexSelectStarFn`, `selectDeepSkyFn`,
+`mwDeepLinkFn`, `bhDeepLinkFn`) or the page's `selectPlanet` / `selectSun` / `selectSmallBody` /
+`selectSatellite` / `selectBelt`. `hub/` is the nav-group hub.

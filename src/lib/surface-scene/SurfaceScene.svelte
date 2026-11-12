@@ -6942,13 +6942,12 @@ sample      ${debugInfo.projectedPxSample}`}
      toggle, distance-scale) have phone-tight base values; the two
      @min-width blocks at the end of this stylesheet layer back the
      desktop sizing. */
-  /* ── Desktop object-index edge-handle + side panel ──────────────────
-     Mirrors the ISS modules handle. Hidden on touch (mobile uses the Index
-     drawer tab); shown only for a fine pointer. The open panel is a left
-     side-drawer — master list, with the detail panel opening on the right. */
-  /* A1: the object index is a left-edge pullout tab on ALL viewports
-     (was desktop-only via a hover gate; mobile used a bottom-drawer tab).
-     The panel width is already responsive, so it fits the 375px viewport. */
+  /* ── Object-index edge-handle + side panel ──────────────────────────
+     Mirrors the ISS modules handle and the /explore INDEX (scale-index-handle,
+     src/lib/styles/index-panel.css). A1: a left-edge pullout tab on ALL viewports
+     (there is no Index drawer tab). The open panel is a left side-drawer — master
+     list, with the detail panel opening on the right. Its width is already
+     responsive, so it fits the 375px viewport. */
   .surface-index-handle {
     display: flex;
     align-items: center;

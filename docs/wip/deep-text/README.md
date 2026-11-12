@@ -25,7 +25,10 @@ English text for deep-level entity pages that are under the thin-page floor (ope
    microlensing, blue straggler, spectral type) that is not in
    `scripts/i18n-tools/native-terms.json`; add each with the 13 locales' forms — the site's
    existing form where one exists, else the form that country's universities use (search native
-   pages when unsure) — then translate with those forms.
+   pages when unsure) — then translate with those forms. A new `term` entry also needs a definition
+   in all 14 `i18n-src/<locale>/glossary/terms.json`, or `build-glossary` fails the build
+   (`validate-data` does not catch it; batch 4 missed 12, 2026-11-12). Check with `npm run build`
+   or the glossary step, not only `validate-data`.
 6. **Translate** (by hand, few agents, several locales each; glossary forms from
    `scripts/i18n-tools/native-terms.json`), then the 14-locale checks.
 

@@ -35,24 +35,30 @@ test.describe('PWA — manifest + service worker (v0.1.12)', () => {
 });
 
 test.describe('High-contrast toggle (v0.1.12 / Theme C.C2)', () => {
-  test('toggle button toggles data-high-contrast on <html>', async ({ page, isMobile }) => {
+  test('toggle switch toggles data-high-contrast on <html>', async ({ page }) => {
     await page.goto('/');
-    // On phones the high-contrast control lives in the hamburger drawer (the
-    // top bar keeps its 44px touch targets within 375px); open it first.
-    if (isMobile) await page.locator('button.menu-toggle').click();
-    const toggle = page.getByRole('button', { name: /high-contrast/i });
+    // The control is a More-menu row (UXD-016): a menuitemcheckbox in the bar menu, or an
+    // aria-pressed button in the hamburger drawer on phones (≤ 600 px, where the bar has no
+    // More button).
+    const phone = (page.viewportSize()?.width ?? 0) <= 600;
+    if (phone) await page.locator('button.menu-toggle').click();
+    else await page.locator('button.nav-more-trigger').click();
+    const toggle = phone
+      ? page.getByRole('button', { name: /high-contrast/i })
+      : page.getByRole('menuitemcheckbox', { name: /high-contrast/i });
+    const state = phone ? 'aria-pressed' : 'aria-checked';
     await expect(toggle).toBeVisible();
-    await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+    await expect(toggle).toHaveAttribute(state, 'false');
 
     // First click — high-contrast on
     await toggle.click();
-    await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+    await expect(toggle).toHaveAttribute(state, 'true');
     const htmlAttr = await page.evaluate(() => document.documentElement.dataset.highContrast);
     expect(htmlAttr).toBe('true');
 
-    // Second click — back off
+    // Second click — back off (the menu and the drawer stay open on a switch row)
     await toggle.click();
-    await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+    await expect(toggle).toHaveAttribute(state, 'false');
     const htmlAttr2 = await page.evaluate(() => document.documentElement.dataset.highContrast);
     expect(htmlAttr2).toBeUndefined();
   });

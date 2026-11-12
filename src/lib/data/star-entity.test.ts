@@ -73,6 +73,31 @@ describe('getStarEntity', () => {
     expect(vega?.cultureDoors.map((d) => d.id).sort()).toEqual(['vega-contact', 'vega-oumuamua']);
   });
 
+  it('sources a named star’s values to HYG and its SIMBAD page', async () => {
+    const sirius = await getStarEntity('sirius', 'en-US');
+    expect(Object.keys(sirius!.catalogue).sort()).toEqual(['absmag', 'bv', 'dist_pc', 'mag']);
+    expect(sirius!.catalogue.dist_pc).toMatchObject({
+      value: 2.637,
+      source: expect.stringContaining('HYG Database v4.1'),
+      record_url: 'https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2032349',
+    });
+    expect(sirius!.records.simbad).toBe(sirius!.catalogue.mag!.record_url);
+    expect(sirius!.records.exoplanet_archive).toBeUndefined();
+  });
+
+  it('sources a host star to the Exoplanet Archive and gives each planet its Archive page', async () => {
+    const t1 = await getStarEntity('trappist-1', 'en-US');
+    expect(t1!.catalogue.dist_pc).toMatchObject({
+      source: 'NASA Exoplanet Archive',
+      record_url: 'https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1',
+    });
+    expect(t1!.records.exoplanet_archive).toBe('https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1');
+    expect(t1!.planets.every((p) => p.record_url?.startsWith('https://exoplanetarchive.ipac.caltech.edu/overview/'))).toBe(true);
+    const prox = await getStarEntity('proxima-centauri', 'en-US');
+    expect(prox!.records.simbad).toContain('HIP%2070890');
+    expect(prox!.records.exoplanet_archive).toContain('Proxima%20Cen');
+  });
+
   it('is keyed by star id only: a planet, moon, black hole or unknown id is null', async () => {
     for (const id of ['mars', 'europa', 'gargantua', 'proxima-cen-b', 'nope'])
       expect(await getStarEntity(id, 'en-US')).toBeNull();

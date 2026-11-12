@@ -12,6 +12,8 @@
   import type { DeepSkyImage } from '$lib/deep-sky';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import { dataSourceItems, recordLinks, sourceLink } from '$lib/catalogue';
+  import DataSources from './DataSources.svelte';
 
   type Props = {
     object: DeepSkyObject | null;
@@ -42,6 +44,17 @@
   };
   let categoryLabel = $derived(object ? CAT_LABEL[object.category]() : '');
   let title = $derived(object?.name ?? '');
+  let distSrc = $derived(sourceLink(object?.catalogue?.dist_ly));
+  let magSrc = $derived(sourceLink(object?.catalogue?.mag));
+  let sources = $derived(
+    dataSourceItems(object?.catalogue, (k) =>
+      k === 'dist_ly'
+        ? m.explore_ds_distance()
+        : k === 'mag'
+          ? `${m.star_label_apparent_mag()} (V)`
+          : null,
+    ),
+  );
 </script>
 
 <Panel {open} {onClose} {title} mobileSheet="partial">
@@ -58,6 +71,22 @@
         <div class="cell">
           <div class="cell-label">{m.explore_ds_distance()}</div>
           <div class="cell-value accent">{object.dist_label}</div>
+          {#if distSrc}
+            <a class="src" href={distSrc.url} target="_blank" rel="noopener noreferrer external"
+              >{distSrc.label}</a
+            >
+          {/if}
+        </div>
+      {/if}
+      {#if object.mag !== null && magSrc}
+        <div class="cell">
+          <div class="cell-label">{m.star_label_apparent_mag()} (V)</div>
+          <div class="cell-value">
+            {object.mag.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+          </div>
+          <a class="src" href={magSrc.url} target="_blank" rel="noopener noreferrer external"
+            >{magSrc.label}</a
+          >
         </div>
       {/if}
       {#if image?.telescope}
@@ -86,6 +115,8 @@
         </button>
       </div>
     {/if}
+
+    <DataSources variant="panel" items={sources} links={recordLinks(object.records)} />
 
     {#if children}<div class="doors">{@render children()}</div>{/if}
 
@@ -139,6 +170,15 @@
   }
   .cell-value.accent {
     color: var(--color-state);
+  }
+  .src {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--size-label);
+    font-weight: 400;
+    color: var(--color-text-label);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
   .gateway {
     border-top: 1px solid rgba(255, 255, 255, 0.08);

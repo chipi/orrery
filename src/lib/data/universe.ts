@@ -8,6 +8,7 @@
  */
 
 import { get, type FetchLike } from './core';
+import type { CatalogueEntry, CatalogueMap } from '$lib/catalogue';
 import { localizeDeepSky, type DeepSkyImage, type DeepSkyOverlay } from '$lib/deep-sky';
 
 // ─── Named stars (PRD-030 / RFC-032 — /explore v2 Slice 1) ─────────────────
@@ -27,7 +28,12 @@ export interface NamedStar {
   x: number;
   y: number;
   z: number;
+  /** The star's SIMBAD page (#658). */
+  records?: { simbad: string };
 }
+
+/** `catalogue_source` of named-stars.json: a catalogue entry without a value. */
+export type CatalogueEntryLike = Omit<CatalogueEntry, 'value'>;
 
 export interface NamedStarOverlay {
   /** Localized proper name (falls back to the base `proper`). */
@@ -49,6 +55,8 @@ export type LocalizedNamedStar = NamedStar & NamedStarOverlay;
 
 interface NamedStarsManifest {
   schema_version: number;
+  /** The catalogue every star's values come from (HYG): one source for the whole file. */
+  catalogue_source?: CatalogueEntryLike;
   count: number;
   stars: NamedStar[];
 }
@@ -109,10 +117,13 @@ export interface ExoplanetPlanet {
   mass_earth: number | null;
   disc_year: number | null;
   disc_method: string | null;
+  /** The planet's NASA Exoplanet Archive overview page. */
+  record_url?: string;
 }
 export interface ExoplanetSystem {
   hostId: string;
   hip: number | null;
+  records?: { exoplanet_archive: string; simbad: string };
   star: {
     name: string;
     spect: string;
@@ -190,6 +201,10 @@ export interface DeepSkyObject {
   photoTitle: string | null;
   /** Curated exoplanet host id this star-forming region gateways to, or null. */
   gatewaySystem: string | null;
+  /** The object's SIMBAD / NED pages (#658). */
+  records?: { simbad?: string; ned?: string };
+  /** Source, bibcode and record link per catalogue-derived value: mag, dist_ly, size_arcmin, position. */
+  catalogue?: CatalogueMap;
 }
 interface DeepSkyObjectsManifest {
   _count: number;
@@ -330,6 +345,8 @@ export interface LocalGroupMember {
   x: number;
   y: number;
   z: number;
+  /** McConnachie 2012 entry for `dist_mly` (#658); the Milky Way has none. */
+  catalogue?: { dist_mly?: CatalogueEntry };
 }
 export interface LocalGroupData {
   extent_mly: number;
@@ -475,6 +492,10 @@ export interface BlackHole {
   science_section: string;
   culture_door: string | null;
   discovery: string;
+  /** SIMBAD page of the real holes (#658). */
+  records?: { simbad?: string };
+  /** The paper behind mass_solar and dist_ly; empty for fiction. */
+  catalogue?: { mass_solar?: CatalogueEntry; dist_ly?: CatalogueEntry };
 }
 interface BlackHolesManifest {
   objects: BlackHole[];

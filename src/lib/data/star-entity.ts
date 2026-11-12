@@ -1,10 +1,12 @@
 import { get, type FetchLike } from './core';
+import type { CatalogueMap } from '$lib/catalogue';
 import {
   getCultureDoors,
   type ExoplanetOverlay,
   type ExoplanetPlanet,
   type ExoplanetSystem,
   type LocalizedCultureDoor,
+  type CatalogueEntryLike,
   type NamedStar,
   type NamedStarOverlay,
 } from './universe';
@@ -41,6 +43,10 @@ export interface StarEntity {
   planets: StarPlanet[];
   /** Named stars open in the scene by ?goto=<id>; host-only stars only by ?system=<id>. */
   named: boolean;
+  /** Source and record link per catalogue-derived value, for the page's source lines and Data sources block. */
+  catalogue: CatalogueMap;
+  /** The star's object pages: SIMBAD, and the Exoplanet Archive for a host. */
+  records: { simbad?: string; exoplanet_archive?: string };
 }
 
 /**
@@ -60,8 +66,11 @@ export async function getStarEntity(
       ? null
       : await get<T>(`i18n/en-US/${dir}/${key}.json`, fetchFn).catch(() => null));
 
-  const [{ stars }, { systems }] = await Promise.all([
-    get<{ stars: NamedStar[] }>('universe/named-stars.json', fetchFn),
+  const [{ stars, catalogue_source: hygSource }, { systems }] = await Promise.all([
+    get<{ stars: NamedStar[]; catalogue_source?: CatalogueEntryLike }>(
+      'universe/named-stars.json',
+      fetchFn,
+    ),
     get<{ systems: ExoplanetSystem[] }>('universe/exoplanet-systems.json', fetchFn),
   ]);
   const star = stars.find((s) => s.id === id);
@@ -83,6 +92,27 @@ export async function getStarEntity(
   ]);
 
   const base = star ?? system!.star;
+  // A named star's distance, magnitudes and colour are HYG's; a host-only star's distance and
+  // colour come from the Exoplanet Archive's own record, so that record is its source.
+  const catalogue: CatalogueMap = {};
+  if (star && hygSource) {
+    const e = (value: number) => ({ ...hygSource, value, record_url: star.records?.simbad ?? hygSource.record_url });
+    catalogue.dist_pc = e(star.dist_pc);
+    catalogue.mag = e(star.mag);
+    catalogue.absmag = e(star.absmag);
+    if (star.bv !== null) catalogue.bv = e(star.bv);
+  } else if (system?.records) {
+    catalogue.dist_pc = {
+      value: system.star.dist_pc,
+      source: 'NASA Exoplanet Archive',
+      bibcode: null,
+      record_url: system.records.exoplanet_archive,
+    };
+  }
+  const records = {
+    simbad: star?.records?.simbad ?? system?.records?.simbad,
+    exoplanet_archive: system?.records?.exoplanet_archive,
+  };
   return {
     id,
     name: o?.name ?? (star ? star.proper : system!.star.name),
@@ -100,5 +130,7 @@ export async function getStarEntity(
     cultureDoors: doors,
     planets,
     named: !!star,
+    catalogue,
+    records,
   };
 }

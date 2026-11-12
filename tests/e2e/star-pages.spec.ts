@@ -103,4 +103,22 @@ test.describe('star pages: static HTML', () => {
     expect(html).toContain(bio.slice(0, 40));
     expect(html).toContain('<dl class="facts');
   });
+
+  // #658: a value names its catalogue with a link to the object's record; the Data sources block
+  // lists the catalogue and the object pages.
+  test('a named star links its values to HYG and its SIMBAD page; a host links the Exoplanet Archive', async ({
+    request,
+  }) => {
+    const sirius = await (await request.get('/explore/stars/sirius')).text();
+    expect(sirius).toContain('data-testid="data-sources"');
+    expect(sirius).toContain('https://simbad.cds.unistra.fr/simbad/sim-id?Ident=HIP%2032349');
+    // distance (ly), distance (pc), apparent and absolute magnitude, colour: five rows, each with the source
+    expect(sirius.match(/class="src[ "]/g)?.length).toBe(5);
+    expect(sirius).toContain('HYG v4.1');
+
+    const trappist = await (await request.get('/explore/stars/trappist-1')).text();
+    expect(trappist).toContain('https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1');
+    expect(trappist).toContain('https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20b');
+    expect(trappist).toContain('NASA Exoplanet Archive');
+  });
 });

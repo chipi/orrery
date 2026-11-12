@@ -21,7 +21,7 @@ describe('getBlackHoleEntity', () => {
       name: 'M87*',
       kind: 'supermassive',
       massSolar: 6_500_000_000,
-      distLy: 55_000_000,
+      distLy: 54_794_271,
       scienceSection: 'black-holes',
       cultureDoors: [],
     });
@@ -48,8 +48,28 @@ describe('getBlackHoleEntity', () => {
     expect(g?.cultureDoors[0].blurb).toBeTruthy();
   });
 
-  it('corrects M87*’s distance to ESO’s 55 million light-years', async () => {
-    expect((await getBlackHoleEntity('m87-star', 'en-US'))?.distLy).toBe(55_000_000);
+  it('takes M87*’s distance from the EHT paper (16.8 Mpc = 54.8 million light-years), cited with its paper and record', async () => {
+    const m87 = await getBlackHoleEntity('m87-star', 'en-US');
+    expect(m87?.distLy).toBe(54_794_271);
+    expect(m87?.catalogue.dist_ly).toMatchObject({
+      value: 54_794_271,
+      bibcode: '2019ApJ...875L...6E',
+      record_url: 'https://ui.adsabs.harvard.edu/abs/2019ApJ...875L...6E/abstract',
+    });
+    expect(m87?.catalogue.dist_ly?.note).toContain('Cosmicflows-4');
+    expect(m87?.records.simbad).toContain('simbad.cds.unistra.fr');
+  });
+
+  it('cites a paper for the mass and distance of each real hole and for fiction nothing', async () => {
+    for (const id of ['sagittarius-a-star', 'm87-star', 'cygnus-x-1']) {
+      const h = await getBlackHoleEntity(id, 'en-US');
+      expect(h?.catalogue.mass_solar?.value).toBe(h?.massSolar);
+      expect(h?.catalogue.dist_ly?.value).toBe(h?.distLy);
+      expect(h?.catalogue.mass_solar?.bibcode).toMatch(/^\d{4}/);
+    }
+    const g = await getBlackHoleEntity('gargantua', 'en-US');
+    expect(g?.catalogue).toEqual({});
+    expect(g?.records).toEqual({});
   });
 
   it('takes the locale overlay (its localized name and discovery line too)', async () => {
@@ -80,7 +100,7 @@ describe('getBlackHoleI18n (the panel’s copy)', () => {
     const h = await getBlackHoleI18n('cygnus-x-1', 'ja');
     expect(h?.name).toBe('はくちょう座X-1');
     expect(h?.discovery).not.toBe('First widely accepted stellar-mass black hole; mass revised upward Miller-Jones et al. 2021');
-    expect(h?.mass_solar).toBe(21);
+    expect(h?.mass_solar).toBe(21.2);
   });
   it('is the catalogue record in en-US and for an unknown locale', async () => {
     expect((await getBlackHoleI18n('m87-star', 'xx'))?.discovery).toBe(

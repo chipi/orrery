@@ -92,12 +92,36 @@ test.describe('black-hole pages: static HTML', () => {
     expect(html).not.toContain('0,9999');
   });
 
-  test('a real hole carries its mass and distance, M87* at ESO’s 55 million light-years', async ({
+  test('a real hole carries its mass and distance, M87* at the EHT’s 16.8 Mpc (54.8 million light-years)', async ({
     request,
   }) => {
     const html = await (await request.get('/explore/black-holes/m87-star')).text();
     expect(html).toContain('6.5 billion');
-    expect(html).toContain('55 million ly');
+    expect(html).toContain('54.8 million ly');
     expect(html).not.toContain('53.5');
+  });
+
+  test('every value names its paper with a link, and the Data sources block lists the papers (#658)', async ({
+    request,
+  }) => {
+    const bibcodes: Record<string, string> = {
+      'sagittarius-a-star': '2022A%26A...657L..12G',
+      'm87-star': '2019ApJ...875L...6E',
+      'cygnus-x-1': '2021Sci...371.1046M',
+    };
+    for (const [id, bib] of Object.entries(bibcodes)) {
+      const html = await (await request.get(`/explore/black-holes/${id}`)).text();
+      expect(html).toContain('data-testid="data-sources"');
+      expect(html).toContain(`https://ui.adsabs.harvard.edu/abs/${bib}/abstract`);
+      expect(html).toContain('https://simbad.cds.unistra.fr/simbad/sim-id?Ident=');
+      // the mass and the distance rows each carry the paper as a link (class src)
+      expect(html.match(/class="src[ "]/g)?.length).toBe(2);
+    }
+  });
+
+  test('Gargantua is fiction: no catalogue, no sources block', async ({ request }) => {
+    const html = await (await request.get('/explore/black-holes/gargantua')).text();
+    expect(html).not.toContain('data-testid="data-sources"');
+    expect(html).not.toContain('ui.adsabs.harvard.edu');
   });
 });

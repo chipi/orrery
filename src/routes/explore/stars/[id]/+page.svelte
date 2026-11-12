@@ -13,6 +13,7 @@
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
+  import DataSources from '$lib/components/DataSources.svelte';
   import type { LocalizedCultureDoor } from '$lib/data/universe';
   import type { PageData } from './$types';
 
@@ -93,7 +94,14 @@
       {#each data.rows as row (row.label)}
         <div>
           <dt>{row.label}</dt>
-          <dd>{row.value}</dd>
+          <dd>
+            {row.value}
+            {#if row.src}
+              <a class="src" href={row.src.url} target="_blank" rel="noopener noreferrer external"
+                >{row.src.label}</a
+              >
+            {/if}
+          </dd>
         </div>
       {/each}
     </dl>
@@ -131,6 +139,13 @@
               {/each}
             </ul>
           {/if}
+          {#if p.record_url}
+            <p class="src-line">
+              <a class="src" href={p.record_url} target="_blank" rel="noopener noreferrer external"
+                >{data.archiveLabel}</a
+              >
+            </p>
+          {/if}
           <p class="actions">
             <a class="cta" href={localHref(`/explore?system=${star.id}&planet=${p.id}`)}>
               {m.launches_open_in_orrery()}
@@ -140,6 +155,8 @@
       {/each}
     </section>
   {/if}
+
+  <DataSources items={data.sources} links={data.recordLinks} />
 
   <section class="science">
     <h2 class="page-section-label">{m.panel_tab_science()}</h2>

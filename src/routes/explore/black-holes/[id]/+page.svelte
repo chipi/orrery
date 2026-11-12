@@ -15,6 +15,7 @@
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
+  import DataSources from '$lib/components/DataSources.svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -77,11 +78,20 @@
       {#each data.rows as row (row.label)}
         <div>
           <dt>{row.label}</dt>
-          <dd>{row.value}</dd>
+          <dd>
+            {row.value}
+            {#if row.src}
+              <a class="src" href={row.src.url} target="_blank" rel="noopener noreferrer external"
+                >{row.src.label}</a
+              >
+            {/if}
+          </dd>
         </div>
       {/each}
     </dl>
   {/if}
+
+  <DataSources items={data.sources} links={data.recordLinks} />
 
   {#if hole.cultureDoors.length}
     <section class="culture">

@@ -227,7 +227,7 @@
     width: 100%;
     max-width: 580px;
     background: rgba(10, 10, 24, 0.96);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
     overflow: hidden;
@@ -267,10 +267,10 @@
   }
   .result.active,
   .result:hover {
-    background: rgba(78, 205, 196, 0.08);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .result.active {
-    border-left: 2px solid #4ecdc4;
+    border-left: 2px solid var(--color-accent);
     padding-left: 16px;
   }
   .result-title {
@@ -285,7 +285,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     text-transform: uppercase;
   }
   .result-intro {

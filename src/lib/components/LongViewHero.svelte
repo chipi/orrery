@@ -82,8 +82,8 @@
         <stop offset="100%" stop-color="#ffcaa0" stop-opacity="0" />
       </linearGradient>
       <linearGradient id="lv-traj" x1="0" y1="1" x2="1" y2="0">
-        <stop offset="0%" stop-color="#4ecdc4" stop-opacity="0" />
-        <stop offset="45%" stop-color="#7fd8e0" stop-opacity="0.65" />
+        <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0" />
+        <stop offset="45%" stop-color="var(--color-accent)" stop-opacity="0.65" />
         <stop offset="100%" stop-color="#fff2d6" stop-opacity="0.9" />
       </linearGradient>
     </defs>

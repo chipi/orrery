@@ -121,7 +121,7 @@
   }
 
   /* Tiny chip-style trigger; matches the size of ScienceChip so the two
-     visually rhyme without overlapping in role. ScienceChip is teal+arrow,
+     visually rhyme without overlapping in role. ScienceChip is accent blue+arrow,
      WhyPopover is gold+text. */
   .trigger {
     display: inline-flex;

@@ -59,7 +59,7 @@
 <style>
   /* Matches the sibling 2D/3D .toggle exactly (44px, dark glass, Space Mono
      12px, radius 4, blur) so it reads as one more button in the row — only the
-     border + label colour carry a teal AR accent. */
+     border + label colour carry a accent blue AR accent. */
   .enter-ar {
     display: inline-flex;
     align-items: center;
@@ -68,9 +68,9 @@
     min-height: 44px;
     padding: 0 10px;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.55);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     border-radius: 4px;
-    color: #4ecdc4;
+    color: var(--color-state);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.06em;
@@ -83,7 +83,7 @@
   }
   .enter-ar:hover,
   .enter-ar:focus-visible {
-    background: rgba(78, 205, 196, 0.14);
+    background: var(--color-accent-soft);
     outline: none;
   }
   /* iOS Safari: greyed, reads as "not here — get the app". */

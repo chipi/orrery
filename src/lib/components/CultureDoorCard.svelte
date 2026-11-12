@@ -50,7 +50,7 @@
     border-left-color: #c792ea;
   }
   .cd-message {
-    border-left-color: #4ecdc4;
+    border-left-color: var(--color-accent);
   }
   .cd-visitor {
     border-left-color: #ffc850;
@@ -76,8 +76,8 @@
     color: #c792ea;
   }
   .cd-message .cd-badge {
-    background: rgba(78, 205, 196, 0.16);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    color: var(--color-state);
   }
   .cd-visitor .cd-badge {
     background: rgba(255, 200, 80, 0.16);
@@ -108,7 +108,7 @@
     margin: 8px 0 0;
   }
   .cd-links :global(a) {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);

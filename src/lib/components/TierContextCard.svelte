@@ -199,7 +199,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .tcc-layer {
-    color: #4ecdc4;
+    color: var(--color-state);
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: var(--size-label);
@@ -232,7 +232,7 @@
   }
   .tcc-link {
     margin-left: auto;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     text-decoration: none;
   }
   .tcc-link:hover {
@@ -242,7 +242,7 @@
     display: inline-block;
     margin-top: 8px;
     font-size: var(--size-label);
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     text-decoration: none;
   }
   .tcc-how:hover {

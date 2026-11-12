@@ -119,8 +119,8 @@
       const ry = rx * 0.4;
       const ang = -0.7 + i * 1.9;
       const r = p.radius_earth ?? 1;
-      // Warm rocky → teal sub-Neptune → blue giant, for a little visual variety.
-      const color = r < 1.6 ? '#ffc39a' : r < 4 ? '#8fe6d8' : '#a9c8ff';
+      // Warm rocky → accent blue sub-Neptune → blue giant, for a little visual variety.
+      const color = r < 1.6 ? '#ffc39a' : r < 4 ? '#8fe6d8' : '#a9c8ff'; // a3-keep: star class colour, palette review at the end
       return {
         rx,
         ry,
@@ -308,7 +308,7 @@
           {/if}
           <div class="cell">
             <div class="cell-label">{m.star_label_distance()}</div>
-            <div class="cell-value teal">{fmt(distLy, 2)} ly</div>
+            <div class="cell-value accent">{fmt(distLy, 2)} ly</div>
           </div>
           <div class="cell">
             <div class="cell-label">{m.star_label_distance_pc()}</div>
@@ -377,9 +377,9 @@
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: var(--color-state);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     cursor: pointer;
     transition:
@@ -388,8 +388,8 @@
   }
   .enter-system:hover,
   .enter-system:focus-visible {
-    background: rgba(78, 205, 196, 0.2);
-    border-color: rgba(78, 205, 196, 0.7);
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border-color: var(--color-accent-strong);
     outline: none;
   }
   .enter-system.mt {
@@ -438,15 +438,15 @@
     align-items: baseline;
     gap: 10px;
     padding: 8px 10px;
-    background: rgba(78, 205, 196, 0.05);
-    border: 1px solid rgba(78, 205, 196, 0.16);
+    background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 16%, transparent);
     border-radius: 4px;
   }
   .pl-letter {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     font-weight: 700;
-    color: #4ecdc4;
+    color: var(--color-state);
     min-width: 14px;
   }
   .pl-body {
@@ -463,7 +463,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: rgba(159, 232, 226, 0.85);
+    color: var(--color-state);
   }
   .star-hero {
     margin-bottom: 12px;
@@ -538,8 +538,8 @@
     font-size: 12px;
     color: rgba(255, 255, 255, 0.92);
   }
-  .cell-value.teal {
-    color: #4ecdc4;
+  .cell-value.accent {
+    color: var(--color-state);
   }
   .c-swatch {
     display: inline-block;
@@ -556,13 +556,13 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.5px;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .hr-article-link:hover,
   .hr-article-link:focus-visible {
-    border-bottom-color: #4ecdc4;
+    border-bottom-color: var(--color-accent);
   }
   .science-library {
     margin-top: 16px;
@@ -576,21 +576,21 @@
     gap: 10px;
   }
   .learn-list :global(a) {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 3px;
     display: block;
   }
   .learn-list :global(a:hover),
   .learn-list :global(a:focus-visible) {
-    background: rgba(78, 205, 196, 0.14);
-    border-color: rgba(78, 205, 196, 0.5);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     outline: none;
   }
 </style>

@@ -326,7 +326,7 @@
   .function-block {
     margin: 0 0 14px;
     padding: 10px 12px;
-    border-left: 3px solid #4ecdc4;
+    border-left: 3px solid var(--color-accent);
     background: rgba(255, 255, 255, 0.02);
     border-radius: 2px;
     font-size: var(--size-meta);
@@ -339,8 +339,8 @@
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     padding: 10px 12px;
-    background: rgba(68, 102, 255, 0.08);
-    border-left: 3px solid #4466ff;
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    border-left: 3px solid var(--color-accent);
     border-radius: 2px;
     margin: 0 0 12px;
   }
@@ -385,7 +385,7 @@
   }
   .anatomy-frame {
     background: rgba(4, 8, 15, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.18);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
     border-radius: 4px;
     padding: 8px;
     margin: 0 0 10px;
@@ -410,7 +410,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 2px;
-    /* Muted accent, distinct from INTRO teal / CORE blue / DEEP gold
+    /* Muted accent, distinct from INTRO accent blue / CORE blue / DEEP gold
        so the related-science cluster reads as a footer cross-link,
        not a fourth link-tier. */
     color: var(--color-text-label);

@@ -243,7 +243,7 @@
                 label={m.chip_label_inclination()}
               />
             </div>
-            <div class="cell-value teal">{planet.incl.toFixed(2)}°</div>
+            <div class="cell-value accent">{planet.incl.toFixed(2)}°</div>
           </div>
           <div class="cell">
             <div class="cell-label">
@@ -435,8 +435,8 @@
     color: var(--color-text);
     font-weight: 700;
   }
-  .cell-value.teal {
-    color: #4ecdc4;
+  .cell-value.accent {
+    color: var(--color-state);
   }
   .cell-value.gold {
     color: #ffc850;
@@ -482,7 +482,7 @@
   .shape-ellipse {
     width: var(--shape-w, 70px);
     height: 26px;
-    border: 1.5px solid #4466ff;
+    border: 1.5px solid var(--color-accent);
     border-radius: 50%;
     flex-shrink: 0;
   }
@@ -512,7 +512,7 @@
     min-height: 44px;
     padding: 12px;
     background: #1a33bb;
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     border-radius: 4px;
     cursor: pointer;
     color: #fff;
@@ -527,7 +527,7 @@
   .cta:hover,
   .cta:focus-visible {
     background: #2244dd;
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     outline: none;
   }
   /* Secondary CTA — anchor styled like the primary button, but with
@@ -536,7 +536,7 @@
      primary isn't shown). */
   .cta-secondary {
     background: transparent;
-    border-color: rgba(68, 102, 255, 0.55);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: #dde4ff;
     text-decoration: none;
     display: flex;
@@ -545,8 +545,8 @@
   }
   .cta-secondary:hover,
   .cta-secondary:focus-visible {
-    background: rgba(68, 102, 255, 0.15);
-    border-color: #4466ff;
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
     color: #fff;
   }
   /* #547 — card CTA in the quiet register (mirrors the missions panel). */

@@ -258,7 +258,7 @@
                 section="inclination"
               />
             </div>
-            <div class="cell-value teal">{body.incl.toFixed(2)}°</div>
+            <div class="cell-value accent">{body.incl.toFixed(2)}°</div>
           </div>
           {#if body.type !== 'interstellar'}
             <div class="cell">
@@ -488,8 +488,8 @@
     font-size: 12px;
     color: rgba(255, 255, 255, 0.92);
   }
-  .cell-value.teal {
-    color: #4ecdc4;
+  .cell-value.accent {
+    color: var(--color-state);
   }
   .dist-row {
     margin-top: 14px;
@@ -511,21 +511,21 @@
      <LearnLink/> component which has its own scoped style; the
      route-level visual is what the panel wants. */
   .learn-list :global(a) {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 3px;
     display: block;
   }
   .learn-list :global(a:hover),
   .learn-list :global(a:focus-visible) {
-    background: rgba(78, 205, 196, 0.14);
-    border-color: rgba(78, 205, 196, 0.5);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     outline: none;
   }
   /* .panel-hero, .gallery-grid, .lightbox → src/lib/styles/panel-tabs.css */

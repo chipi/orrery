@@ -212,14 +212,14 @@
     m.earth_panel_alt(),
     'launch',
     altPts,
-    '#5ac8ff',
+    'var(--color-accent)',
     m.mp_flight_unit_km({ value: state.altKm.toFixed(0) }),
   )}
   {@render chartRow(
     m.hud_velocity(),
     'dv-budget',
     velPts,
-    '#7fe0ff',
+    'var(--color-accent-hover)',
     m.mp_flight_unit_kms({ value: state.speedKms.toFixed(2) }),
   )}
   {@render chartRow(
@@ -288,7 +288,7 @@
 
 <style>
   /* 2026 clean telemetry — no panel; the readout column hangs off a single
-     hairline cyan accent rail, matching the coast/descent/recovery language. */
+     hairline blue accent rail, matching the coast/descent/recovery language. */
   .console {
     display: flex;
     flex-direction: column;

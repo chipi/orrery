@@ -208,12 +208,12 @@
     color: rgba(255, 255, 255, 0.75);
   }
   .pill.active {
-    background: rgba(68, 102, 255, 0.25);
-    border-color: rgba(68, 102, 255, 0.5);
+    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     color: #fff;
   }
   .pill:focus-visible {
-    outline: 2px solid #4466ff;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
   .pill.has-logo {
@@ -271,7 +271,7 @@
   }
   .search:focus {
     outline: none;
-    border-color: rgba(68, 102, 255, 0.6);
+    border-color: var(--color-accent-strong);
   }
   .search::placeholder {
     color: var(--color-text-label);
@@ -314,12 +314,12 @@
   }
   .opt:hover,
   .opt:focus-visible {
-    background: rgba(68, 102, 255, 0.18);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     color: #fff;
     outline: none;
   }
   .opt.active {
-    background: rgba(68, 102, 255, 0.28);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
     color: #fff;
   }
   .opt-logo {

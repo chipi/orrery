@@ -916,10 +916,10 @@
 
   /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
      matches the rest of the detail-panel family. Fleet keeps its
-     teal accent on the active-tab indicator as a category cue. */
+     accent blue on the active-tab indicator as a category cue. */
   :global(.tabs.fleet-tabs button.active) {
-    color: #4ecdc4;
-    border-bottom-color: #4ecdc4;
+    color: var(--color-state);
+    border-bottom-color: var(--color-accent);
   }
 
   .tab-body {
@@ -929,9 +929,9 @@
   .explorer-cta {
     display: block;
     text-align: center;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
+    color: var(--color-state);
     padding: 10px 14px;
     border-radius: 4px;
     text-decoration: none;
@@ -945,8 +945,8 @@
       border-color 0.15s;
   }
   .explorer-cta:hover {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent);
   }
 
   /* Fleet -> Mission back-link CTA. Mirrors the .spec-cta system on
@@ -1139,23 +1139,23 @@
   .site-link,
   .mission-link {
     display: inline-block;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     padding: 4px 8px;
     border-radius: 3px;
-    background: rgba(78, 205, 196, 0.08);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
     transition: background 0.15s;
   }
   .site-link:hover,
   .mission-link:hover {
-    background: rgba(78, 205, 196, 0.18);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     text-decoration: underline;
   }
   .mission-arrow {
     margin-left: 6px;
-    color: rgba(78, 205, 196, 0.7);
+    color: var(--color-state);
   }
 
   .credit {
@@ -1328,7 +1328,7 @@
     gap: 4px;
   }
   .tier ul a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;

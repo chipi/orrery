@@ -144,14 +144,14 @@
     align-items: center;
   }
   .site {
-    color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: var(--color-state);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
   }
   .site:hover,
   .site:focus-visible {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent);
   }
   .map {
     color: var(--color-earth);

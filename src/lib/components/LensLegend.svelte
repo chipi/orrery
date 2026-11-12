@@ -31,7 +31,7 @@
 
   // Mirrors the on-globe colours in surface-climate-layers.ts.
   const CLIMATE_COLORS: Record<string, { trop: string; temp: string; polar: string } | null> = {
-    earth: { trop: '#2e8b57', temp: '#4a90a4', polar: '#dfeeff' },
+    earth: { trop: '#2e8b57', temp: '#4a90a4', polar: '#dfeeff' }, // a3-keep: science layer colour, palette review at the end
     mars: { trop: '#b0673c', temp: '#8390a6', polar: '#e6eefb' },
     moon: null,
   };

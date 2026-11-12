@@ -129,7 +129,7 @@
   }
   .bidx-input:focus-visible {
     outline: none;
-    border-color: rgba(78, 205, 196, 0.6);
+    border-color: var(--color-accent-strong);
   }
   .bidx-close {
     flex-shrink: 0;
@@ -183,7 +183,7 @@
   }
   .bidx-row.selected {
     background: color-mix(in srgb, var(--brand, #4a7dff) 28%, transparent);
-    border-color: rgba(78, 205, 196, 0.55);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
   .bidx-dot {
     width: 8px;

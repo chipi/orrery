@@ -142,7 +142,7 @@
       .filter((pl) => pl.hostId === activeHostId)
       .sort((a, b) => a.periodDays - b.periodDays);
     if (active.length > 1) {
-      ctx.strokeStyle = `rgba(120,230,255,${0.5 * ease})`;
+      ctx.strokeStyle = `rgba(138,160,255,${0.5 * ease})`;
       ctx.lineWidth = 1.25;
       ctx.beginPath();
       active.forEach((pl, i) => {
@@ -160,8 +160,8 @@
       const y = py(pl.massEarth);
       ctx.globalCompositeOperation = 'lighter';
       const gl = ctx.createRadialGradient(x, y, 0, x, y, mob ? 8 : 11);
-      gl.addColorStop(0, `rgba(120,230,255,${0.5 * ease})`);
-      gl.addColorStop(1, 'rgba(120,230,255,0)');
+      gl.addColorStop(0, `rgba(138,160,255,${0.5 * ease})`);
+      gl.addColorStop(1, 'rgba(138,160,255,0)');
       ctx.fillStyle = gl;
       ctx.fillRect(x - 11, y - 11, 22, 22);
       ctx.globalCompositeOperation = 'source-over';
@@ -243,7 +243,7 @@
     font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #a7e6ff;
+    color: var(--color-state);
   }
   .mp-note {
     margin-top: 5px;

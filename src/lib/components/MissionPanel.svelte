@@ -404,7 +404,7 @@
              rendered as cramped grid cells with thin underlined links
              which the user found "not seen well and links not clear"
              (2026-06-15). Promoted to button-style anchors matching the
-             "Fly this mission" .cta template but with a distinct teal
+             "Fly this mission" .cta template but with a distinct accent blue
              tint (so the secondary navigation CTAs don't compete with
              the primary blue Fly action). Each carries a small inline
              SVG glyph — rocket for the launch vehicle, satellite-with-
@@ -1070,8 +1070,8 @@
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     padding: 10px 12px;
-    background: rgba(68, 102, 255, 0.08);
-    border-left: 3px solid #4466ff;
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    border-left: 3px solid var(--color-accent);
     border-radius: 2px;
     margin-bottom: 12px;
   }
@@ -1149,7 +1149,7 @@
     min-height: 48px;
     padding: 12px;
     background: #1a33bb;
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     border-radius: 4px;
     color: #fff;
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -1169,7 +1169,7 @@
   .cta:hover,
   .cta:focus-visible {
     background: #2244dd;
-    border-color: #4466ff;
+    border-color: var(--color-accent);
     outline: none;
   }
   /* #547 — the card CTA sits in the quieter register (the fly CTA keeps
@@ -1193,7 +1193,7 @@
 
   /* Spec-CTA buttons — vehicle + payload navigation chips at the top
      of the overview tab. Match .cta's general shape (uppercase mono
-     label, 4px radius, prominent) but a TEAL tint so they don't read
+     label, 4px radius, prominent) but a ACCENT-BLUE tint so they don't read
      as a second primary action competing with the blue Fly button.
      Layout: side-by-side flex row on desktop; wraps to stacked column
      on narrow viewports via the bar's flex-wrap. Static fallback
@@ -1232,7 +1232,7 @@
      shift so they stay sibling-to-fly but distinguishable from each
      other at a glance. */
   /* Vehicle = deep indigo / navy (darkest end of the blue axis);
-     Payload = bright sky-blue with cyan push (lightest end). Both
+     Payload = bright sky-blue with blue push (lightest end). Both
      stay in the blue family that anchors Fly (#1a33bb), but with a
      dramatic value + hue spread so the two read as obviously
      different at a glance (2026-06-15 user note: "they look almost
@@ -1418,13 +1418,13 @@
     gap: 12px;
     padding: 6px 10px;
     background: rgba(255, 255, 255, 0.025);
-    border-left: 2px solid rgba(78, 205, 196, 0.4);
+    border-left: 2px solid var(--color-accent-edge);
     border-radius: 2px;
   }
   .flight-events .event-met {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: #4ecdc4;
+    color: var(--color-state);
     font-weight: 700;
   }
   .flight-events .event-type {

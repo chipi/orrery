@@ -7,7 +7,7 @@
    *  - position derived from year range
    *  - entry count rendered as caption
    *  - clickable to filter the card grid
-   *  - active band highlighted with teal accent
+   *  - active band highlighted with accent blue
    *
    * Mobile (≤600 px): collapses to a horizontal swipe-friendly chip
    * row that surfaces epoch + count without the time axis.
@@ -175,8 +175,8 @@
           vibe of the rest of Orrery's chrome (planet panels,
           fly HUD, science chips).
 
-     Default `#4ecdc4` fallback inside every color-mix matches the
-     prior teal, so a band without an explicit colour gracefully
+     Default `#5070ff` fallback inside every color-mix matches the
+     prior accent blue, so a band without an explicit colour gracefully
      degrades. */
   .band {
     position: absolute;
@@ -184,14 +184,15 @@
     height: 100%;
     background: linear-gradient(
       to bottom,
-      color-mix(in srgb, var(--band-color, #4ecdc4) 18%, transparent),
-      color-mix(in srgb, var(--band-color, #4ecdc4) 5%, transparent) 70%,
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 18%, transparent),
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 5%, transparent) 70%,
       transparent 100%
     );
-    border: 1px solid color-mix(in srgb, var(--band-color, #4ecdc4) 28%, transparent);
-    border-top: 3px solid color-mix(in srgb, var(--band-color, #4ecdc4) 72%, transparent);
+    border: 1px solid color-mix(in srgb, var(--band-color, var(--color-accent)) 28%, transparent);
+    border-top: 3px solid
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 72%, transparent);
     border-radius: 0;
-    color: color-mix(in srgb, var(--band-color, #4ecdc4) 35%, white);
+    color: color-mix(in srgb, var(--band-color, var(--color-state)) 35%, white);
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -209,28 +210,28 @@
   .band:hover {
     background: linear-gradient(
       to bottom,
-      color-mix(in srgb, var(--band-color, #4ecdc4) 32%, transparent),
-      color-mix(in srgb, var(--band-color, #4ecdc4) 12%, transparent) 70%,
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 32%, transparent),
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 12%, transparent) 70%,
       transparent 100%
     );
-    border-color: color-mix(in srgb, var(--band-color, #4ecdc4) 55%, transparent);
-    border-top: 3px solid var(--band-color, #4ecdc4);
+    border-color: color-mix(in srgb, var(--band-color, var(--color-accent)) 55%, transparent);
+    border-top: 3px solid var(--band-color, var(--color-accent));
     color: #fff;
     transform: translateY(-1px);
   }
   .band.active {
     background: linear-gradient(
       to bottom,
-      color-mix(in srgb, var(--band-color, #4ecdc4) 48%, transparent),
-      color-mix(in srgb, var(--band-color, #4ecdc4) 22%, transparent) 60%,
-      color-mix(in srgb, var(--band-color, #4ecdc4) 8%, transparent) 100%
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 48%, transparent),
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 22%, transparent) 60%,
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 8%, transparent) 100%
     );
-    border-color: var(--band-color, #4ecdc4);
-    border-top: 3px solid var(--band-color, #4ecdc4);
+    border-color: var(--band-color, var(--color-accent));
+    border-top: 3px solid var(--band-color, var(--color-accent));
     color: #fff;
     box-shadow:
-      inset 0 -1px 10px color-mix(in srgb, var(--band-color, #4ecdc4) 28%, transparent),
-      0 0 14px color-mix(in srgb, var(--band-color, #4ecdc4) 36%, transparent);
+      inset 0 -1px 10px color-mix(in srgb, var(--band-color, var(--color-accent)) 28%, transparent),
+      0 0 14px color-mix(in srgb, var(--band-color, var(--color-accent)) 36%, transparent);
     z-index: 2;
   }
   .band-label {
@@ -263,7 +264,7 @@
     max-width: 100%;
   }
   .band.active .band-meta {
-    color: color-mix(in srgb, var(--band-color, #4ecdc4) 30%, white);
+    color: color-mix(in srgb, var(--band-color, var(--color-state)) 30%, white);
   }
 
   /* Today indicator — a slim glowing vertical line. Brought up to a
@@ -321,11 +322,11 @@
   .chip {
     background: linear-gradient(
       to bottom,
-      color-mix(in srgb, var(--band-color, #4ecdc4) 14%, transparent),
-      color-mix(in srgb, var(--band-color, #4ecdc4) 4%, transparent)
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 14%, transparent),
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 4%, transparent)
     );
-    border: 1px solid color-mix(in srgb, var(--band-color, #4ecdc4) 30%, transparent);
-    color: color-mix(in srgb, var(--band-color, #4ecdc4) 25%, white);
+    border: 1px solid color-mix(in srgb, var(--band-color, var(--color-accent)) 30%, transparent);
+    color: color-mix(in srgb, var(--band-color, var(--color-state)) 25%, white);
     padding: 6px 12px;
     border-radius: 14px;
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -345,21 +346,21 @@
   .chip:hover {
     background: linear-gradient(
       to bottom,
-      color-mix(in srgb, var(--band-color, #4ecdc4) 24%, transparent),
-      color-mix(in srgb, var(--band-color, #4ecdc4) 8%, transparent)
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 24%, transparent),
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 8%, transparent)
     );
-    border-color: color-mix(in srgb, var(--band-color, #4ecdc4) 55%, transparent);
+    border-color: color-mix(in srgb, var(--band-color, var(--color-accent)) 55%, transparent);
     color: #fff;
   }
   .chip.active {
     background: linear-gradient(
       to bottom,
-      color-mix(in srgb, var(--band-color, #4ecdc4) 45%, transparent),
-      color-mix(in srgb, var(--band-color, #4ecdc4) 18%, transparent)
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 45%, transparent),
+      color-mix(in srgb, var(--band-color, var(--color-accent)) 18%, transparent)
     );
-    border-color: var(--band-color, #4ecdc4);
+    border-color: var(--band-color, var(--color-accent));
     color: #fff;
-    box-shadow: 0 0 10px color-mix(in srgb, var(--band-color, #4ecdc4) 35%, transparent);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--band-color, var(--color-accent)) 35%, transparent);
   }
   /* Mobile chip count badge — AA bump from 0.5 → 0.78 alpha. Sits
      inside the chip's white-tinted pill, which already lifts effective
@@ -373,8 +374,8 @@
     border-radius: 8px;
   }
   .chip.active .chip-count {
-    color: var(--band-color, #4ecdc4);
-    background: rgba(78, 205, 196, 0.12);
+    color: var(--band-color, var(--color-state));
+    background: var(--color-accent-soft);
   }
 
   @media (min-width: 720px) {

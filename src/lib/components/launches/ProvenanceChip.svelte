@@ -98,7 +98,7 @@
   }
 
   .chain-link a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: underline;
     text-underline-offset: 2px;
   }

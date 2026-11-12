@@ -181,7 +181,7 @@
   }
   .si-input:focus-visible {
     outline: none;
-    border-color: rgba(78, 205, 196, 0.6);
+    border-color: var(--color-accent-strong);
   }
   .si-close {
     flex-shrink: 0;
@@ -215,12 +215,12 @@
   }
   .si-filters button.active {
     color: #04121a;
-    background: #4ecdc4;
-    border-color: #4ecdc4;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
     font-weight: 700;
   }
   .si-filters button:hover:not(.active) {
-    border-color: rgba(78, 205, 196, 0.5);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .si-count {
     font-size: var(--size-label);
@@ -258,7 +258,7 @@
   }
   .si-row.selected {
     background: color-mix(in srgb, var(--brand, #4a7dff) 28%, transparent);
-    border-color: rgba(78, 205, 196, 0.55);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
   .si-badges {
     display: inline-flex;
@@ -268,7 +268,7 @@
     font-size: 11px;
   }
   .si-badge.planets {
-    color: #6ad0ff;
+    color: var(--color-state);
   }
   .si-badge.culture {
     color: #d3a4ff;
@@ -296,7 +296,7 @@
   }
   .si-con {
     font-size: var(--size-label);
-    color: rgba(159, 232, 226, 0.8);
+    color: var(--color-state);
     flex: none;
   }
   .si-empty {

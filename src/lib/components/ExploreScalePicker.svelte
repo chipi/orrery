@@ -141,7 +141,7 @@
     min-height: 34px;
     padding: 6px 12px;
     background: rgba(10, 14, 24, 0.62);
-    border: 1px solid rgba(90, 200, 210, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 5px;
     backdrop-filter: blur(5px);
     color: #d7f6f6;
@@ -162,14 +162,14 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #5ac8d2;
-    box-shadow: 0 0 8px rgba(90, 200, 210, 0.7);
+    background: var(--color-accent);
+    box-shadow: 0 0 8px var(--color-accent-strong);
     flex: none;
   }
   .toggle:hover:not(:disabled),
   .toggle:focus-visible:not(:disabled) {
-    background: rgba(90, 200, 210, 0.18);
-    border-color: rgba(90, 200, 210, 0.7);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent-strong);
     color: #eaffff;
     outline: none;
   }
@@ -192,7 +192,7 @@
     gap: 6px;
     padding: 8px;
     background: rgba(8, 18, 26, 0.95);
-    border: 1px solid rgba(90, 200, 210, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
     z-index: 2;
@@ -230,8 +230,8 @@
     outline: none;
   }
   .rung.active {
-    background: rgba(90, 200, 210, 0.16);
-    border-color: rgba(90, 200, 210, 0.66);
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    border-color: var(--color-accent-strong);
     color: #d7f6f6;
     cursor: default;
   }
@@ -250,7 +250,7 @@
   }
   .rung.active .dot {
     opacity: 1;
-    box-shadow: 0 0 8px rgba(90, 200, 210, 0.7);
+    box-shadow: 0 0 8px var(--color-accent-strong);
   }
 
   /* Touch: bigger tap targets. */

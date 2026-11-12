@@ -58,7 +58,7 @@
     <div class="grid">
       <div class="cell">
         <div class="cell-label">{m.explore_lg_label_group()}</div>
-        <div class="cell-value teal">{groupLabel(member)}</div>
+        <div class="cell-value accent">{groupLabel(member)}</div>
       </div>
       {#if member.dist_mly > 0}
         <div class="cell">
@@ -118,7 +118,7 @@
     font-size: 0.82rem;
     font-weight: 600;
   }
-  .cell-value.teal {
-    color: #4ecdc4;
+  .cell-value.accent {
+    color: var(--color-state);
   }
 </style>

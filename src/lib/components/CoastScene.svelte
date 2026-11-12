@@ -323,7 +323,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 0.05em;
-    color: #9fe0ff;
+    color: var(--color-state);
     background: rgba(6, 12, 22, 0.72);
     border: 1px solid rgba(127, 212, 255, 0.3);
     border-radius: 4px;
@@ -443,7 +443,7 @@
     color: #7fd4ff;
     font-weight: 600;
   }
-  /* 2026 corner-bracket frame — thin cyan L's, no fill. */
+  /* 2026 corner-bracket frame — thin blue L's, no fill. */
   .frame {
     position: absolute;
     width: 16px;

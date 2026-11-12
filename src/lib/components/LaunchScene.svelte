@@ -669,7 +669,7 @@
   .telemetry.tel-scroll {
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(127, 223, 255, 0.35) transparent;
+    scrollbar-color: var(--color-accent-edge) transparent;
   }
   .launch.hud-hidden .telemetry {
     opacity: 0;
@@ -844,14 +844,14 @@
     height: 34px;
     border-radius: 50%;
     background: rgba(10, 20, 34, 0.82);
-    border: 1px solid rgba(127, 223, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     color: #cfeaff;
     font-size: 16px;
     line-height: 1;
     cursor: pointer;
   }
   .hud-collapse:hover {
-    background: rgba(90, 200, 255, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
     color: #fff;
   }
   .warp {
@@ -904,8 +904,8 @@
   .status {
     font-size: 11px;
     letter-spacing: 3px;
-    color: #7fdfff;
-    border: 1px solid rgba(127, 223, 255, 0.4);
+    color: var(--color-state);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 3px;
     padding: 2px 9px;
     background: rgba(3, 8, 18, 0.45);
@@ -923,7 +923,7 @@
     font-size: 140px;
     line-height: 1;
     color: #fff;
-    text-shadow: 0 0 40px rgba(90, 200, 255, 0.6);
+    text-shadow: 0 0 40px var(--color-accent-strong);
     animation: pop 1s ease-out;
   }
   @keyframes pop {
@@ -939,7 +939,7 @@
       opacity: 0.9;
     }
   }
-  /* 2026 clean dossier — no panel; hangs off a hairline cyan accent rail. */
+  /* 2026 clean dossier — no panel; hangs off a hairline blue accent rail. */
   .dossier {
     position: absolute;
     top: 90px;
@@ -962,7 +962,7 @@
   .dossier-title {
     font-size: var(--size-label);
     letter-spacing: 2px;
-    color: #5ac8ff;
+    color: var(--color-state);
     margin: 0 0 8px;
     display: flex;
     justify-content: space-between;
@@ -1014,7 +1014,7 @@
   }
   .fill {
     height: 100%;
-    background: linear-gradient(90deg, #5ac8ff, #eafaff);
+    background: linear-gradient(90deg, var(--color-accent), #eafaff);
   }
   .beat {
     position: absolute;
@@ -1045,10 +1045,10 @@
     height: 20px;
   }
   .beat.done .lbl {
-    color: #7fdfff;
+    color: var(--color-state);
   }
   .beat.done .tick {
-    background: #5ac8ff;
+    background: var(--color-accent);
   }
   .head {
     position: absolute;
@@ -1096,13 +1096,13 @@
     letter-spacing: 2px;
     color: #cfeaff;
     background: rgba(10, 20, 34, 0.85);
-    border: 1px solid rgba(127, 223, 255, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 5px;
     padding: 8px 14px;
     cursor: pointer;
   }
   .continue:hover {
-    background: rgba(90, 200, 255, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
     color: #fff;
   }
 </style>

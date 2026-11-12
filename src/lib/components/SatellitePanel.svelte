@@ -358,7 +358,7 @@
   }
   :global(.tabs.sat-tabs button.active) {
     color: #fff;
-    border-bottom-color: #4466ff;
+    border-bottom-color: var(--color-accent);
   }
   :global(.tabs.sat-tabs button:hover:not(.active)),
   :global(.tabs.sat-tabs button:focus-visible) {
@@ -403,19 +403,19 @@
     gap: 10px;
   }
   .learn-list a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;
-    background: rgba(78, 205, 196, 0.06);
-    border-left: 2px solid rgba(78, 205, 196, 0.5);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border-left: 2px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     display: block;
   }
   .learn-list a:hover,
   .learn-list a:focus-visible {
-    background: rgba(78, 205, 196, 0.12);
+    background: var(--color-accent-soft);
     outline: none;
   }
   .cta-bar {
@@ -442,14 +442,14 @@
   }
   .cta-secondary {
     background: transparent;
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: #dde4ff;
     text-decoration: none;
   }
   .cta-secondary:hover,
   .cta-secondary:focus-visible {
-    background: rgba(68, 102, 255, 0.15);
-    border-color: #4466ff;
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
     color: #fff;
     outline: none;
   }

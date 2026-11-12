@@ -138,7 +138,7 @@
   }
 
   a.row:hover {
-    background: rgba(68, 102, 255, 0.06);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
   }
 
   .when {
@@ -147,7 +147,7 @@
   }
 
   .payload {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
 
   .pad {
@@ -156,7 +156,7 @@
   }
 
   .status-success {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .status-failure {
     color: #ff5252;
@@ -167,7 +167,7 @@
     margin-top: 10px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
   }
 

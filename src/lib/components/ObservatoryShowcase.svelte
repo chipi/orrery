@@ -161,7 +161,7 @@
   }
   .card:hover,
   .card:focus-visible {
-    border-color: rgba(78, 205, 196, 0.5);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     transform: translateY(-2px);
     outline: none;
   }
@@ -198,6 +198,6 @@
     text-transform: uppercase;
   }
   .year {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
 </style>

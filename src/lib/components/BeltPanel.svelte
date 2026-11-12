@@ -407,9 +407,9 @@
     gap: 4px;
     margin: 16px 0 4px;
     padding: 10px 12px;
-    border: 1px solid rgba(78, 205, 196, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
-    background: rgba(78, 205, 196, 0.06);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
     text-decoration: none;
     transition:
       border-color 120ms,
@@ -417,15 +417,15 @@
   }
   .science-link:hover,
   .science-link:focus-visible {
-    border-color: rgba(78, 205, 196, 0.7);
-    background: rgba(78, 205, 196, 0.14);
+    border-color: var(--color-accent-strong);
+    background: var(--color-accent-soft);
     outline: none;
   }
   .science-cta {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 1.8px;
-    color: rgba(78, 205, 196, 0.95);
+    color: var(--color-state);
     text-transform: uppercase;
   }
   .science-label {
@@ -461,13 +461,13 @@
   }
   .member-link:hover,
   .member-link:focus-visible {
-    color: rgba(78, 205, 196, 0.95);
+    color: var(--color-state);
     outline: none;
   }
   .member-cta {
     font-size: var(--size-label);
     letter-spacing: 1.4px;
-    color: rgba(78, 205, 196, 0.7);
+    color: var(--color-state);
     white-space: nowrap;
   }
   .learn-list {
@@ -487,7 +487,7 @@
     border-bottom: none;
   }
   .learn-list a {
-    color: rgba(78, 205, 196, 0.95);
+    color: var(--color-accent);
     font-size: 12px;
     text-decoration: none;
     flex: 1;
@@ -505,9 +505,10 @@
     color: rgba(255, 255, 255, 0.7);
     background: rgba(255, 255, 255, 0.08);
   }
+  /* a3-keep: tier name, colour is --color-state (UXD-001) */
   .tier-intro {
-    background: rgba(78, 205, 196, 0.18);
-    color: rgba(78, 205, 196, 0.95);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: var(--color-state);
   }
   .tier-core {
     background: rgba(184, 164, 112, 0.18);

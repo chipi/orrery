@@ -64,7 +64,7 @@
       {#if object.mass_solar}
         <div class="cell">
           <div class="cell-label">{m.explore_mw_label_mass()}</div>
-          <div class="cell-value teal">
+          <div class="cell-value accent">
             {fmt(object.mass_solar)}
             <span class="unit">{m.explore_mw_solar_masses()}</span>
           </div>
@@ -142,8 +142,8 @@
     font-size: 0.82rem;
     font-weight: 600;
   }
-  .cell-value.teal {
-    color: #4ecdc4;
+  .cell-value.accent {
+    color: var(--color-state);
   }
   .unit {
     font-size: var(--size-label);
@@ -153,7 +153,7 @@
   .learn-link {
     display: inline-block;
     font-size: 0.8rem;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     font-weight: 600;
   }

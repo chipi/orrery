@@ -68,9 +68,10 @@ const THIN_MIN_CHARS = {
   ru: 390,
 };
 const thinnest = new Map();
-const ENTITY_ROUTE = /^\/(missions|fleet|moon|mars|venus|explore|lab)\/([^/]+)$/;
+const ENTITY_ROUTE =
+  /^\/(missions|fleet|moon|mars|venus|explore|lab)\/([^/]+)$|^\/explore\/stars\/[^/]+$/;
 // Index / app pages that sit under an entity prefix.
-const NOT_ENTITY = new Set(['/missions/launches', '/explore/hub']);
+const NOT_ENTITY = new Set(['/missions/launches', '/explore/hub', '/explore/stars']);
 
 /** Pages that are noindex by design (route without base, no locale prefix). */
 function isNoindexByDesign(route) {

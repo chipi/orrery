@@ -25,6 +25,7 @@ const SEED_ROUTES = [
   '/',
   '/explore',
   '/explore/hub',
+  '/explore/stars',
   '/worlds',
   '/catalog',
   '/learn',
@@ -135,6 +136,29 @@ function bodyRoutes() {
   return [...ids].map((id) => `/explore/${id}`);
 }
 
+/**
+ * Every id with a star page (/explore/stars/<id>): the named stars plus the exoplanet
+ * hosts. Seven hosts are named stars; trappist-1, 51-pegasi, toi-700 and kepler-16 are
+ * not, and get a page built from the system record. The one id list that the page's
+ * `entries` generator, the mobile prune and the route-list test share.
+ *
+ * @returns {string[]}
+ */
+export function starPageIds() {
+  /** @param {string} p */
+  const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null);
+  const ids = new Set();
+  for (const s of read('static/data/universe/named-stars.json')?.stars ?? []) ids.add(s.id);
+  for (const s of read('static/data/universe/exoplanet-systems.json')?.systems ?? [])
+    ids.add(s.hostId);
+  return [...ids];
+}
+
+/** One indexable page per named star and exoplanet host (/explore/stars/<id>). */
+function starRoutes() {
+  return starPageIds().map((id) => `/explore/stars/${id}`);
+}
+
 /** One indexable page per Lab formula (/lab/<id>, 0.9.8 SEO). The id list is
  *  guarded against the TS registry by lab-formulas-json.test.ts. */
 function labRoutes() {
@@ -161,6 +185,7 @@ export function collectCanonicalRoutes() {
     ...fleetRoutes(),
     ...siteRoutes(),
     ...bodyRoutes(),
+    ...starRoutes(),
     ...labRoutes(),
   ];
 }

@@ -29,7 +29,9 @@ function hubIds(hub: EntityHub): string[] {
     .filter((r) => r.startsWith(prefix) && !r.slice(prefix.length).includes('/'))
     .map((r) => r.slice(prefix.length))
     .filter(
-      (id) => !(hub === 'explore' && id === 'hub') && !(hub === 'missions' && id === 'launches'),
+      (id) =>
+        !(hub === 'explore' && (id === 'hub' || id === 'stars')) &&
+        !(hub === 'missions' && id === 'launches'),
     );
 }
 

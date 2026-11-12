@@ -23,6 +23,7 @@ describe('getEntityIndex', () => {
           r.startsWith(`/${hub}/`) &&
           r !== '/missions/launches' &&
           r !== '/explore/hub' &&
+          r !== '/explore/stars' &&
           !r.slice(hub.length + 2).includes('/'),
       );
       const links = await getEntityIndex(hub, 'de', fetch);
@@ -33,4 +34,12 @@ describe('getEntityIndex', () => {
         expect(collator.compare(links[i - 1].name, links[i].name)).toBeLessThanOrEqual(0);
     });
   }
+
+  it('/explore lists bodies only: no star page and not the /explore/stars hub, and a star id is no body', async () => {
+    const ids = (await getEntityIndex('explore', 'en-US', fetch)).map((l) => l.id);
+    expect(ids).toContain('mars');
+    expect(ids).not.toContain('stars');
+    expect(ids).not.toContain('sirius');
+    expect(ids).not.toContain('trappist-1');
+  });
 });

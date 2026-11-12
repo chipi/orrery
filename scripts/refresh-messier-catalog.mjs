@@ -27,6 +27,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import * as prettier from 'prettier';
 import {
   BAUMGARDT_TABLE,
   HARRIS_FILE,
@@ -346,14 +347,21 @@ async function loadSimbad(objects) {
 async function loadCf4(galaxies) {
   const out = new Map();
   for (const o of galaxies) {
-    const t = await vizierQuery('J/ApJ/944/94/table2', [
-      ['-c', `${o.ra} ${o.dec >= 0 ? '+' : ''}${o.dec}`],
-      ['-c.rs', '30'],
-      ['-out', 'PGC'],
-      ['-out', 'DM'],
-      ['-out', 'e_DM'],
-      ['-out', '_r'],
-    ]);
+    // The CfA mirror sometimes answers a cone with an empty table (a galaxy Cosmicflows-4 does
+    // list came back empty in one run and found in the next), so an empty answer is asked up to
+    // three times before it counts as "not in the catalogue".
+    let t = { rows: [] };
+    for (let attempt = 0; attempt < 3 && t.rows.length === 0; attempt++) {
+      if (attempt) await new Promise((r) => setTimeout(r, 700));
+      t = await vizierQuery('J/ApJ/944/94/table2', [
+        ['-c', `${o.ra} ${o.dec >= 0 ? '+' : ''}${o.dec}`],
+        ['-c.rs', '30'],
+        ['-out', 'PGC'],
+        ['-out', 'DM'],
+        ['-out', 'e_DM'],
+        ['-out', '_r'],
+      ]);
+    }
     const rows = t.rows
       .map((r) => ({
         pgc: r.PGC,
@@ -530,7 +538,10 @@ async function main() {
     objects: enriched,
   };
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
-  fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n');
+  // The snapshot sits outside .prettierignore's data/, so it is written the way `prettier --check` wants it.
+  const text = JSON.stringify(out, null, 2) + '\n';
+  const config = (await prettier.resolveConfig(OUT)) ?? {};
+  fs.writeFileSync(OUT, await prettier.format(text, { ...config, parser: 'json' }));
   console.log(`✓ wrote ${enriched.length} objects → ${path.relative(ROOT, OUT)}`);
   console.log(`  Messier: ${messier.size}, explicit: ${EXPLICIT.length}`);
   const count = (f) => enriched.filter((o) => o.catalogue[f]).length;

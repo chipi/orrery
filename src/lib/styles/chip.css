@@ -15,8 +15,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  min-height: 44px;
-  padding: 0 12px;
+  min-block-size: 44px;
+  padding-block: 0;
+  padding-inline: 12px;
   background: var(--chip-glass);
   border: 1px solid var(--chip-rest-edge);
   border-radius: 4px;
@@ -35,7 +36,7 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .ui-chip {
-    min-height: 30px;
+    min-block-size: 30px;
   }
 }
 

@@ -1,5 +1,6 @@
 <script lang="ts">
   import EntityIndex from '$lib/components/EntityIndex.svelte';
+  import Chip from '$lib/components/Chip.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
@@ -2102,17 +2103,18 @@
      neighborhood the star index (below) takes over the same left rail + handle,
      so gate the body index to the solar-system context (no cross-scale bleed). -->
 {#if contextId === 'solar-system'}
-  <button
-    type="button"
-    class="body-index-handle body-index-toggle"
-    data-testid="explore-body-index-toggle"
-    aria-pressed={bodyIndexOpen}
-    aria-label={m.explore_body_index_aria()}
-    title={m.explore_body_index_aria()}
-    onclick={() => (bodyIndexOpen = !bodyIndexOpen)}
-  >
-    <span class="bih-label">{m.explore_body_index_toggle()}</span>
-  </button>
+  <div class="body-index-handle">
+    <Chip
+      kind="toggle"
+      active={bodyIndexOpen}
+      data-testid="explore-body-index-toggle"
+      aria-label={m.explore_body_index_aria()}
+      title={m.explore_body_index_aria()}
+      onclick={() => (bodyIndexOpen = !bodyIndexOpen)}
+    >
+      {m.explore_body_index_toggle()}
+    </Chip>
+  </div>
   <ExploreBodyIndex
     bodies={bodyIndexList}
     {selectedId}
@@ -2129,16 +2131,17 @@
 <!-- Neighborhood INDEX handle — same left-edge tab as the body index, toggles the
      star index (the neighborhood's primary index). -->
 {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
-  <button
-    type="button"
-    class="star-index-handle"
-    aria-pressed={starIndexOpen}
-    aria-label={m.star_index_aria()}
-    title={m.star_index_aria()}
-    onclick={() => (starIndexOpen = !starIndexOpen)}
-  >
-    <span class="bih-label">{m.explore_body_index_toggle()}</span>
-  </button>
+  <div class="star-index-handle">
+    <Chip
+      kind="toggle"
+      active={starIndexOpen}
+      aria-label={m.star_index_aria()}
+      title={m.star_index_aria()}
+      onclick={() => (starIndexOpen = !starIndexOpen)}
+    >
+      {m.explore_body_index_toggle()}
+    </Chip>
+  </div>
 {/if}
 
 <div class="tour-anchors" aria-hidden="true">
@@ -2215,23 +2218,6 @@
     z-index: 44;
     writing-mode: vertical-rl;
     transform: translateY(-50%) rotate(180deg);
-    padding: 12px 6px;
-    background: rgba(8, 10, 22, 0.85);
-    border: 1px solid rgba(154, 166, 189, 0.34);
-    border-left: none;
-    border-radius: 0 6px 6px 0;
-    color: rgba(220, 227, 240, 0.82);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .star-index-handle:hover,
-  .star-index-handle[aria-pressed='true'] {
-    color: #aab6cc;
-    border-color: rgba(154, 166, 189, 0.6);
   }
   /* .nb-controls/.nb-chip removed 2026-09-11 — the black-hole curvature/time
      chips (their last consumer) moved into the science-lens layer panel. */
@@ -2263,23 +2249,6 @@
     z-index: 44;
     writing-mode: vertical-rl;
     transform: translateY(-50%) rotate(180deg);
-    padding: 12px 6px;
-    background: rgba(8, 10, 22, 0.85);
-    border: 1px solid var(--border-subtle, #23232e);
-    border-left: none;
-    border-radius: 0 6px 6px 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .body-index-handle:hover,
-  .body-index-handle[aria-pressed='true'] {
-    color: var(--color-state);
-    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
 
   .tour-anchors {

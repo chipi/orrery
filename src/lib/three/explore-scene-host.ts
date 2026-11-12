@@ -1577,7 +1577,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.panelState.satellite = false;
     bridge.panelState.belt = false;
     bridge.anonStar = null;
-    nbScene?.highlightStar(id);
+    nbScene?.highlightStar(id, id);
     trackItemClick('star', id, '/explore');
     const overlay = await getNamedStarI18n(getLocale(), id, fetch);
     // Guard against a race if the user picked another star meanwhile.
@@ -1616,7 +1616,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     const obj = bridge.deepSkyObjects.find((o) => o.id === id);
     if (!obj) return;
     bridge.selectedDeepSkyId = id;
-    nbScene?.highlightDeepSky(id);
+    nbScene?.highlightDeepSky(id, id);
     // Load any culture door(s) attached to this object (#410: the Arecibo message
     // was beamed at M13) so the panel can surface them.
     bridge.deepSkyCultureDoors = [];
@@ -2055,10 +2055,11 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       else if (kind === 'moon-orbits')
         for (const po of planetObjs) for (const sat of po.satellites) fromObject(sat.orbitLine, 96);
       else if (kind === 'small-orbits') for (const so of smallBodyObjs) fromObject(so.orbit, 96);
-      else if (kind === 'belts') {
-        fromObject(asteroidBelt, 300);
-        fromObject(kuiperBelt, 300);
-      } else if (kind === 'ly-rings') {
+      // Belts: every particle on screen, not a stride of the buffer (a stride aliases with the
+      // generator), and one kind per belt so one belt cannot hide the other in a pooled median.
+      else if (kind === 'asteroid-belt') fromObject(asteroidBelt, Infinity);
+      else if (kind === 'kuiper-belt') fromObject(kuiperBelt, Infinity);
+      else if (kind === 'ly-rings') {
         for (const p of nbScene?.referenceRingPoints() ?? []) push(v.copy(p));
       }
       return out;
@@ -2449,7 +2450,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (inMilkyWay()) {
       const mh = mwScene ? ray3dHover.intersectObjects(mwScene.pickables, false) : [];
       const id = (mh[0]?.object.userData.mwObjectId as string | undefined) ?? null;
-      mwScene?.highlight(id ?? bridge.selectedMwId);
+      mwScene?.highlight(id, bridge.selectedMwId);
       el3d.style.cursor = id ? 'pointer' : 'grab';
       if (bridge.hoverData) bridge.hoverData = null;
       return;
@@ -2458,7 +2459,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (inLocalGroup()) {
       const mh = lgScene ? ray3dHover.intersectObjects(lgScene.pickables, false) : [];
       const id = (mh[0]?.object.userData.lgId as string | undefined) ?? null;
-      lgScene?.highlight(id ?? bridge.selectedLgMember?.id ?? null);
+      lgScene?.highlight(id, bridge.selectedLgMember?.id ?? null);
       el3d.style.cursor = id ? 'pointer' : 'grab';
       if (bridge.hoverData) bridge.hoverData = null;
       return;
@@ -2467,7 +2468,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (inLocalSheet()) {
       const mh = lsScene ? ray3dHover.intersectObjects(lsScene.pickables, false) : [];
       const id = (mh[0]?.object.userData.lsId as string | undefined) ?? null;
-      lsScene?.highlight(id ?? bridge.selectedLsMember?.id ?? null);
+      lsScene?.highlight(id, bridge.selectedLsMember?.id ?? null);
       el3d.style.cursor = id ? 'pointer' : 'grab';
       if (bridge.hoverData) bridge.hoverData = null;
       return;
@@ -2476,7 +2477,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (inVirgo()) {
       const mh = virgoScene ? ray3dHover.intersectObjects(virgoScene.pickables, false) : [];
       const id = (mh[0]?.object.userData.virgoId as string | undefined) ?? null;
-      virgoScene?.highlight(id ?? bridge.selectedVirgoMember?.id ?? null);
+      virgoScene?.highlight(id, bridge.selectedVirgoMember?.id ?? null);
       el3d.style.cursor = id ? 'pointer' : 'grab';
       if (bridge.hoverData) bridge.hoverData = null;
       return;
@@ -2485,7 +2486,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (inLaniakea()) {
       const mh = laniakeaScene ? ray3dHover.intersectObjects(laniakeaScene.pickables, false) : [];
       const id = (mh[0]?.object.userData.laniakeaId as string | undefined) ?? null;
-      laniakeaScene?.highlight(id ?? bridge.selectedLaniakeaMember?.id ?? null);
+      laniakeaScene?.highlight(id, bridge.selectedLaniakeaMember?.id ?? null);
       el3d.style.cursor = id ? 'pointer' : 'grab';
       if (bridge.hoverData) bridge.hoverData = null;
       return;
@@ -2494,7 +2495,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (inCosmicWeb()) {
       const mh = cosmicWebScene ? ray3dHover.intersectObjects(cosmicWebScene.pickables, false) : [];
       const id = (mh[0]?.object.userData.cosmicWebId as string | undefined) ?? null;
-      cosmicWebScene?.highlight(id ?? bridge.selectedCosmicWebMember?.id ?? null);
+      cosmicWebScene?.highlight(id, bridge.selectedCosmicWebMember?.id ?? null);
       el3d.style.cursor = id ? 'pointer' : 'grab';
       if (bridge.hoverData) bridge.hoverData = null;
       return;
@@ -2504,14 +2505,14 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (inNeighborhood()) {
       const mh = nbScene ? ray3dHover.intersectObjects(nbScene.namedStarPickables, false) : [];
       const id = (mh[0]?.object.userData.starId as string | undefined) ?? null;
-      nbScene?.highlightStar(id ?? bridge.selectedStarId);
+      nbScene?.highlightStar(id, bridge.selectedStarId);
       // Deep-sky hover (layer on, no star under cursor) reveals the glint's label.
       let dsHoverId: string | null = null;
       if (bridge.showDeepSky && !id && nbScene && nbScene.deepSkyPickables.length) {
         const dh = ray3dHover.intersectObjects(nbScene.deepSkyPickables, false);
         dsHoverId = (dh[0]?.object.userData.deepSkyId as string | undefined) ?? null;
       }
-      nbScene?.highlightDeepSky(dsHoverId ?? bridge.selectedDeepSkyId);
+      nbScene?.highlightDeepSky(dsHoverId, bridge.selectedDeepSkyId);
       el3d.style.cursor = id || dsHoverId ? 'pointer' : 'grab';
       if (bridge.hoverData) bridge.hoverData = null;
       return;
@@ -2724,7 +2725,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         bridge.panelState.satellite = false;
         bridge.panelState.belt = false;
         bridge.anonStar = null;
-        nbScene.highlightStar('sol');
+        nbScene.highlightStar('sol', 'sol');
         trackItemClick('star', 'sol', '/explore');
         return;
       }
@@ -2785,7 +2786,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     cue('select');
     bridge.selectedMwId = id;
     bridge.mwPanelOpen = true;
-    mwScene?.highlight(id);
+    mwScene?.highlight(id, id);
     focusMember(mwMemberPosition(id));
     trackItemClick('marker', id, '/explore');
   }
@@ -2814,7 +2815,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     cue('select');
     bridge.selectedLgMember = member;
     bridge.lgPanelOpen = true;
-    lgScene?.highlight(id);
+    lgScene?.highlight(id, id);
     focusMember(lgScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
@@ -2844,7 +2845,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     cue('select');
     bridge.selectedLsMember = member;
     bridge.lsPanelOpen = true;
-    lsScene?.highlight(id);
+    lsScene?.highlight(id, id);
     focusMember(lsScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
@@ -2874,7 +2875,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     cue('select');
     bridge.selectedVirgoMember = member;
     bridge.virgoPanelOpen = true;
-    virgoScene?.highlight(id);
+    virgoScene?.highlight(id, id);
     focusMember(virgoScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
@@ -2904,7 +2905,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     cue('select');
     bridge.selectedLaniakeaMember = member;
     bridge.laniakeaPanelOpen = true;
-    laniakeaScene?.highlight(id);
+    laniakeaScene?.highlight(id, id);
     focusMember(laniakeaScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
@@ -2934,7 +2935,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     cue('select');
     bridge.selectedCosmicWebMember = member;
     bridge.cosmicWebPanelOpen = true;
-    cosmicWebScene?.highlight(id);
+    cosmicWebScene?.highlight(id, id);
     focusMember(cosmicWebScene?.objectPosition(id));
     trackItemClick('marker', id, '/explore');
   }
@@ -3669,8 +3670,12 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     fill: string;
     blur: number;
     align: CanvasTextAlign;
+    /** The font the canvas actually drew this label with (the e2e probe reads it). */
+    font: string;
+    fontPx: number;
   }
   const FONT_2D_PX = 11;
+  const FONT_2D = `${FONT_2D_PX}px 'Space Mono',monospace`;
   const labels2d: Label2d[] = [];
   let labels2dN = 0;
   const pushLabel2d = (
@@ -3694,7 +3699,10 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       fill: '',
       blur: 0,
       align: 'left',
+      font: '',
+      fontPx: 0,
       rank: 0,
+      order: labels2dN,
       force: false,
       visible: false,
       rect: { l: 0, r: 0, b: 0, t: 0 },
@@ -3713,11 +3721,17 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   };
   if (typeof window !== 'undefined') {
     window.__explore2dLabels = () =>
-      labels2d.map((l) => ({ text: l.text, fontPx: FONT_2D_PX, shown: l.visible }));
+      labels2d
+        .slice(0, labels2dN)
+        .map((l) => ({ text: l.text, font: l.font, fontPx: l.fontPx, shown: l.visible }));
   }
 
   const draw2d = () => {
-    for (const l of labels2d) l.visible = false;
+    for (const l of labels2d) {
+      l.visible = false;
+      l.font = '';
+      l.fontPx = 0;
+    }
     labels2dN = 0;
     // Defensive sync: the canvas is `display: none` while view='3d',
     // so its clientWidth/clientHeight are 0 at onMount and resize2d()
@@ -3877,12 +3891,14 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.arc(0, 0, 14, 0, Math.PI * 2);
     ctx2.fillStyle = '#fff8e7';
     ctx2.fill();
+    // Anchored to the core's edge (world 14, scaled by the zoom); the baseline sits 15 px below
+    // it, so the 11 px text (ascent 11) starts 4 px clear of the disc at every zoom.
     pushLabel2d(
       m.explore_sun_caps(),
       0,
+      14,
       0,
-      0,
-      22,
+      15,
       'rgba(255,220,100,0.6)',
       0,
       -10,
@@ -4007,10 +4023,12 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         ctx2.fillStyle = 'rgba(255,255,255,0.18)';
         ctx2.fill();
 
-        // Label: priority is the planet's order from the Sun, the selected one always shows
+        // Label: priority is the planet's order from the Sun, the selected one always shows.
+        // It starts 5 px past the planet's outermost drawn edge: Saturn's ring (pr + 14) or the
+        // selection ring (up to pr + 13), not inside it.
         pushLabel2d(
           planetName2d(p.id, p.name),
-          px + pr,
+          px + pr + Math.max(p.id === 'saturn' ? 14 : 0, isSel ? 13 : 0),
           py,
           5,
           4,
@@ -4043,6 +4061,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ctx2.fillStyle = gl;
       ctx2.fill();
 
+      // The label starts past the dot (not on it), and past the comet tail when the tail points
+      // right, so the name is never drawn over the body it names.
+      let labelX = px + (b.type === 'comet' ? 1.6 : 2.2);
       // Comet tail — simple line pointing away from Sun.
       if (b.type === 'comet') {
         const distFromSun = Math.hypot(px, py);
@@ -4056,6 +4077,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
           ctx2.strokeStyle = `${b.color}88`;
           ctx2.lineWidth = 1.5;
           ctx2.stroke();
+          if (tx > labelX) labelX = tx;
         }
       }
 
@@ -4068,7 +4090,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       // Label (after the planets in priority; the selected one always shows)
       pushLabel2d(
         smallBodyName2d(b.id, b.name),
-        px,
+        labelX,
         py,
         5,
         3,
@@ -4081,7 +4103,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
 
     // Place the labels in screen pixels, then draw each at its final 11 px: the view scale is
     // undone around the text so it does not grow or shrink with the zoom.
-    ctx2.font = `${FONT_2D_PX}px 'Space Mono',monospace`;
+    ctx2.font = FONT_2D;
     for (let i = 0; i < labels2dN; i++) {
       const l = labels2d[i];
       const w = ctx2.measureText(l.text).width;
@@ -4100,7 +4122,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ctx2.save();
       ctx2.translate(l.wx, l.wy);
       ctx2.scale(1 / zoom2d, 1 / zoom2d);
-      ctx2.font = "11px 'Space Mono',monospace";
+      ctx2.font = FONT_2D;
+      l.font = ctx2.font;
+      l.fontPx = parseFloat(l.font);
       if (l.blur) {
         ctx2.shadowColor = 'rgba(0,0,0,0.9)';
         ctx2.shadowBlur = l.blur;

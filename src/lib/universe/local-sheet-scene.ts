@@ -16,10 +16,12 @@ import {
   applyRing,
   cameraFov,
   labelOffset,
+  liftOnScreen,
   labelRect,
   newLabelSlot,
   placeLabels,
   snapshotPins,
+  viewDepth,
   worldPerPx,
   type LabelSlot,
   type PinsSnapshot,
@@ -29,7 +31,8 @@ export interface LocalSheetScene {
   scene: THREE.Scene;
   pickables: THREE.Object3D[];
   objectPosition(id: string): THREE.Vector3 | null;
-  highlight(id: string | null): void;
+  /** `id` is the hovered pin, `selectedId` the selected one: both show their ring and label. */
+  highlight(id: string | null, selectedId?: string | null): void;
   update(camera: THREE.Camera, viewportH: number): void;
   /** Probe for the e2e specs: every label and ring as it is on screen (client px). */
   pinsSnapshot(camera: THREE.Camera, w: number, h: number): PinsSnapshot;
@@ -165,23 +168,24 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
   }
 
   let highlightId: string | null = null;
-  const _cam = new THREE.Vector3();
+  let selectedId: string | null = null;
   const _tmp = new THREE.Vector3();
 
   return {
     scene,
     pickables,
     objectPosition: (id) => byId.get(id)?.position.clone() ?? null,
-    highlight(id) {
+    highlight(id, sel = null) {
       highlightId = id;
+      selectedId = sel;
     },
     update(camera, viewportH) {
-      camera.getWorldPosition(_cam);
+      camera.updateMatrixWorld();
       const fov = cameraFov(camera);
       for (const pin of pins) {
-        const dist = Math.max(1, _cam.distanceTo(pin.position));
+        const dist = Math.max(1, viewDepth(camera, pin.position));
         const wpp = worldPerPx(dist, fov, viewportH);
-        const hi = pin.id === highlightId;
+        const hi = pin.id === highlightId || pin.id === selectedId;
         // g0 is the STEADY glow: the hover grows the glow and the ring, never the label offset.
         const g0 = dist * pin.baseScale;
         pin.glow.scale.setScalar(g0 * (hi ? 1.5 : 1));
@@ -192,12 +196,13 @@ export function createLocalSheetScene(data: LocalSheetData): LocalSheetScene {
         if (pin.alwaysLabel || hi) {
           const lh = wpp * LABEL_SPRITE_PX;
           slot.sprite.scale.set(lh * slot.aspect, lh, 1);
-          slot.sprite.position.set(
-            pin.position.x,
-            pin.position.y + labelOffset(g0, lh, wpp * (RING_PX / 2)),
-            pin.position.z,
+          liftOnScreen(
+            slot.sprite.position,
+            pin.position,
+            camera,
+            labelOffset(g0, lh, wpp * (RING_PX / 2)),
           );
-          slot.visible = labelRect(slot.sprite, camera, _cam, slot.rect, _tmp);
+          slot.visible = labelRect(slot.sprite, camera, slot.rect, _tmp);
         }
       }
       placeLabels(slots);

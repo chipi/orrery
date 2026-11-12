@@ -44,7 +44,34 @@ export function overlaps(a: ScreenRect, b: ScreenRect): boolean {
   return a.l < b.r && b.l < a.r && a.b < b.t && b.b < a.t;
 }
 
-/** World units one CSS pixel covers at `dist` from a perspective camera. */
+/**
+ * How far in front of the camera's image plane a world point is (view-space depth). Three's
+ * sprite shader projects with this depth, not with the Euclidean distance, so a pin 40 degrees
+ * off the view axis draws 1 / cos(40) = 1.3 times larger when it is sized from the distance.
+ * Pass it to `worldPerPx`. Reads `camera.matrixWorldInverse`: call `camera.updateMatrixWorld()`
+ * first. Negative behind the camera.
+ */
+export function viewDepth(camera: THREE.Camera, p: THREE.Vector3): number {
+  const e = camera.matrixWorldInverse.elements;
+  return -(e[2] * p.x + e[6] * p.y + e[10] * p.z + e[14]);
+}
+
+/**
+ * Writes `base` moved `lift` world units along the camera's screen-up into `out`. A label
+ * lifted along world Y would foreshorten to nothing when the camera looks straight down; this
+ * lift is `lift` on screen in every pose.
+ */
+export function liftOnScreen(
+  out: THREE.Vector3,
+  base: THREE.Vector3,
+  camera: THREE.Camera,
+  lift: number,
+): THREE.Vector3 {
+  const e = camera.matrixWorld.elements;
+  return out.set(base.x + e[4] * lift, base.y + e[5] * lift, base.z + e[6] * lift);
+}
+
+/** World units one CSS pixel covers at view depth `dist` of a perspective camera (see `viewDepth`). */
 export function worldPerPx(dist: number, fovDeg: number, viewportH: number): number {
   return (2 * dist * Math.tan((fovDeg * Math.PI) / 360)) / Math.max(1, viewportH);
 }
@@ -110,6 +137,8 @@ export function lyRampColor(index: number, count: number): number {
 export interface PlaceSlot {
   /** Lower wins when two labels collide. */
   rank: number;
+  /** Fixed creation index: the last tie-break, so equal ranks place in the same order every frame. */
+  order: number;
   /** Hovered or selected: always shown, and placed before everything else. */
   force: boolean;
   /**
@@ -128,19 +157,29 @@ export interface LabelSlot extends PlaceSlot {
   aspect: number;
 }
 
+let nextSlotOrder = 0;
+
 export function newLabelSlot(sprite: THREE.Sprite, aspect: number, rank = 0): LabelSlot {
-  return { sprite, aspect, rank, force: false, visible: false, rect: { l: 0, r: 0, b: 0, t: 0 } };
+  return {
+    sprite,
+    aspect,
+    rank,
+    order: nextSlotOrder++,
+    force: false,
+    visible: false,
+    rect: { l: 0, r: 0, b: 0, t: 0 },
+  };
 }
 
 const byPriority = (a: PlaceSlot, b: PlaceSlot) =>
-  Number(b.force) - Number(a.force) || a.rank - b.rank;
+  Number(b.force) - Number(a.force) || a.rank - b.rank || a.order - b.order;
 
 /**
  * The shared label placement pass. Candidate slots (`visible` true on entry) are placed in
- * priority order (forced first, then ascending `rank`); one that overlaps a label already
- * placed is hidden, except a forced label, which always stays. Sets `visible` and
- * `sprite.visible`. Sorts `slots` in place and allocates nothing else, so it can run every
- * frame (AGENTS Performance rule 4).
+ * priority order (forced first, then ascending `rank`, then creation `order`); one that
+ * overlaps a label already placed is hidden, except a forced label, which always stays. Sets
+ * `visible` and `sprite.visible`. Sorts `slots` in place; it allocates nothing per frame
+ * beyond what the engine's sort itself needs (AGENTS Performance rule 4).
  */
 export function placeLabels(slots: PlaceSlot[]): void {
   slots.sort(byPriority);
@@ -167,7 +206,6 @@ export function placeLabels(slots: PlaceSlot[]): void {
 export function labelRect(
   lbl: THREE.Sprite,
   camera: THREE.Camera,
-  camPos: THREE.Vector3,
   out: ScreenRect,
   tmp: THREE.Vector3,
 ): boolean {
@@ -175,7 +213,7 @@ export function labelRect(
   const cam = camera as THREE.PerspectiveCamera;
   if (!cam.isPerspectiveCamera) return false;
   lbl.getWorldPosition(tmp);
-  const dist = Math.max(0.01, camPos.distanceTo(tmp));
+  const dist = Math.max(0.01, viewDepth(cam, tmp));
   tmp.project(cam);
   if (tmp.z > 1 || Math.abs(tmp.x) > 1 || Math.abs(tmp.y) > 1) return false;
   const tanHalf = Math.tan((cam.fov * Math.PI) / 360);
@@ -204,8 +242,12 @@ export interface PinsSnapshot {
   labels: Array<{
     id: string;
     shown: boolean;
+    /** The sprite's anchor point (its pin), canvas px. */
     cx: number;
     cy: number;
+    /** The label rectangle as drawn, canvas px: left and top edge (an edge-anchored label is not centred on cx). */
+    x: number;
+    y: number;
     w: number;
     h: number;
     textPx: number;
@@ -228,7 +270,27 @@ export interface ProbePin {
 }
 
 const _p = new THREE.Vector3();
-const _c = new THREE.Vector3();
+const _a = new THREE.Vector3();
+const _q = new THREE.Vector3();
+
+/**
+ * Length in CSS px that `len` world units take along the camera's right (axis 0) or up (axis 1)
+ * at `p`, read off the projection of two points. It does not use `worldPerPx` or `viewDepth`, so a
+ * wrong sizing formula cannot also fake the measurement.
+ */
+export function projectedPx(
+  camera: THREE.Camera,
+  p: THREE.Vector3,
+  len: number,
+  axis: 0 | 1,
+  viewportPx: number,
+): number {
+  const e = camera.matrixWorld.elements;
+  const o = axis * 4;
+  _q.set(p.x + e[o] * len, p.y + e[o + 1] * len, p.z + e[o + 2] * len).project(camera);
+  const a = _a.copy(p).project(camera);
+  return (Math.abs(axis ? _q.y - a.y : _q.x - a.x) * viewportPx) / 2;
+}
 
 export function snapshotPins(
   scale: string,
@@ -238,32 +300,32 @@ export function snapshotPins(
   h: number,
 ): PinsSnapshot {
   camera.updateMatrixWorld();
-  camera.getWorldPosition(_c);
-  const fov = cameraFov(camera);
-  const px = (sprite: THREE.Sprite) => {
+  const at = (sprite: THREE.Sprite) => {
     sprite.getWorldPosition(_p);
-    const dist = Math.max(0.01, _c.distanceTo(_p));
-    const wpp = worldPerPx(dist, fov, h);
+    const pw = projectedPx(camera, _p, sprite.scale.x, 0, w);
+    const ph = projectedPx(camera, _p, sprite.scale.y, 1, h);
     _p.project(camera);
-    return { wpp, x: ((_p.x + 1) / 2) * w, y: ((1 - _p.y) / 2) * h };
+    return { pw, ph, x: ((_p.x + 1) / 2) * w, y: ((1 - _p.y) / 2) * h };
   };
   const out: PinsSnapshot = { scale, viewportH: h, labels: [], rings: [] };
   for (const pin of pins) {
     if (pin.slot) {
       const s = pin.slot.sprite;
-      const { wpp, x, y } = px(s);
+      const { pw, ph, x, y } = at(s);
       out.labels.push({
         id: pin.id,
         shown: s.visible,
         cx: x,
         cy: y,
-        w: s.scale.x / wpp,
-        h: s.scale.y / wpp,
-        textPx: (s.scale.y / wpp) * (LABEL_TEXT_PX / LABEL_SPRITE_PX),
+        x: x - s.center.x * pw,
+        y: y - (1 - s.center.y) * ph,
+        w: pw,
+        h: ph,
+        textPx: ph * (LABEL_TEXT_PX / LABEL_SPRITE_PX),
       });
     }
     if (pin.ring) {
-      const { wpp, x, y } = px(pin.ring);
+      const { pw, x, y } = at(pin.ring);
       const opacity = (pin.ring.material as THREE.SpriteMaterial).opacity;
       out.rings.push({
         id: pin.id,
@@ -271,7 +333,7 @@ export function snapshotPins(
         opacity,
         cx: x,
         cy: y,
-        d: (pin.ring.scale.x / wpp) * (RING_PX / RING_SPRITE_PX),
+        d: pw * (RING_PX / RING_SPRITE_PX),
       });
     }
   }

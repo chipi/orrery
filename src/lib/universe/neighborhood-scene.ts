@@ -32,11 +32,13 @@ import {
   applyRing,
   cameraFov,
   labelOffset,
+  liftOnScreen,
   labelRect,
   lyRampColor,
   newLabelSlot,
   placeLabels,
   snapshotPins,
+  viewDepth,
   worldPerPx,
   type LabelSlot,
   type PinsSnapshot,
@@ -53,7 +55,7 @@ export interface NeighborhoodScene {
   /** World position of a named star, or null. */
   starPosition(id: string): THREE.Vector3 | null;
   /** Emphasize one named star (hover/selection), or clear with null. */
-  highlightStar(id: string | null): void;
+  highlightStar(id: string | null, selectedId?: string | null): void;
   /** Lightweight readout for a background point-field star by its vertex index. */
   anonymousStarAt(index: number): AnonymousStar | null;
   /** Sampled (B–V, absolute magnitude) for the Slice-7 HR-diagram overlay —
@@ -76,7 +78,7 @@ export interface NeighborhoodScene {
   /** Raycast targets for deep-sky objects (each carries userData.deepSkyId). */
   deepSkyPickables: THREE.Object3D[];
   /** Emphasize one deep-sky object (hover/selection) + reveal its label. */
-  highlightDeepSky(id: string | null): void;
+  highlightDeepSky(id: string | null, selectedId?: string | null): void;
   /** Focus a deep-sky object for the approach warp (its glint blooms). */
   focusDeepSky(id: string | null): void;
   /** Approach ramp 0 → 1 for the focused deep-sky object. */
@@ -427,19 +429,20 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
   scene.add(referenceGroup);
 
   let highlightId: string | null = null;
+  let selectedId: string | null = null;
 
-  const _camPos = new THREE.Vector3();
   const _tmp = new THREE.Vector3();
+  const _ORIGIN = new THREE.Vector3();
   function applyMarkerScale(camera: THREE.Camera | undefined, viewportH: number) {
-    if (camera) camera.getWorldPosition(_camPos);
+    camera?.updateMatrixWorld();
     const fov = camera ? cameraFov(camera) : 55;
     for (const mk of markers) {
       // Scale each marker by ITS distance to the camera → constant screen size
       // whatever the star's true distance (they span ~1–150 pc).
-      const distToCam = camera ? Math.max(0.01, _camPos.distanceTo(mk.group.position)) : 1;
+      const distToCam = camera ? Math.max(0.01, viewDepth(camera, mk.group.position)) : 1;
       const wpp = worldPerPx(distToCam, fov, viewportH);
       const base = distToCam * 0.04;
-      const hi = mk.id === highlightId;
+      const hi = mk.id === highlightId || mk.id === selectedId;
       const isSol = mk.id === 'sol';
       // Idle marker is a small dot; the ring only fades in on hover/select so the field
       // isn't cluttered with always-on rings. Sol keeps its gold ring as the persistent
@@ -453,11 +456,12 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       const lh = wpp * LABEL_SPRITE_PX;
       const slot = mk.slot;
       slot.sprite.scale.set(lh * slot.aspect, lh, 1);
-      slot.sprite.position.set(0, labelOffset(0, lh, wpp * (RING_PX / 2)), 0);
+      const lift = labelOffset(0, lh, wpp * (RING_PX / 2));
+      if (camera) liftOnScreen(slot.sprite.position, _ORIGIN, camera, lift);
+      else slot.sprite.position.set(0, lift, 0);
       slot.force = hi;
       const wanted = mk.alwaysLabel || hi;
-      slot.visible =
-        camera && wanted ? labelRect(slot.sprite, camera, _camPos, slot.rect, _tmp) : wanted;
+      slot.visible = camera && wanted ? labelRect(slot.sprite, camera, slot.rect, _tmp) : wanted;
     }
     // Reference-ring labels: constant 12 px, pinned to each shell's +X edge.
     for (const slot of referenceSlots) {
@@ -467,9 +471,9 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       }
       slot.sprite.getWorldPosition(_tmp);
       const lh =
-        worldPerPx(Math.max(0.01, _camPos.distanceTo(_tmp)), fov, viewportH) * LABEL_SPRITE_PX;
+        worldPerPx(Math.max(0.01, viewDepth(camera, _tmp)), fov, viewportH) * LABEL_SPRITE_PX;
       slot.sprite.scale.set(lh * slot.aspect, lh, 1);
-      slot.visible = labelRect(slot.sprite, camera, _camPos, slot.rect, _tmp);
+      slot.visible = labelRect(slot.sprite, camera, slot.rect, _tmp);
     }
     // Declutter: around Sol at the default zoom "Proxima Centauri", "Rigil Kentaurus" and
     // "Sol" printed over each other. Labels are placed in priority order (the hovered /
@@ -492,8 +496,9 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       const mk = markers.find((x) => x.id === id);
       return mk ? mk.group.position.clone() : null;
     },
-    highlightStar(id: string | null) {
+    highlightStar(id: string | null, sel: string | null = null) {
       highlightId = id;
+      selectedId = sel;
     },
     setConstellationsVisible(on: boolean) {
       if (constellationLines) constellationLines.visible = on;
@@ -538,8 +543,8 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
       return { shells, field, named };
     },
     deepSkyPickables: deepSky?.pickables ?? [],
-    highlightDeepSky(id: string | null) {
-      deepSky?.highlight(id);
+    highlightDeepSky(id: string | null, sel: string | null = null) {
+      deepSky?.highlight(id, sel);
     },
     focusDeepSky(id: string | null) {
       deepSky?.setFocus(id);

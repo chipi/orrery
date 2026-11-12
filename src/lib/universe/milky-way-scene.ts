@@ -34,10 +34,12 @@ import {
   applyRing,
   cameraFov,
   labelOffset,
+  liftOnScreen,
   labelRect,
   newLabelSlot,
   placeLabels,
   snapshotPins,
+  viewDepth,
   worldPerPx,
   type LabelSlot,
   type PinsSnapshot,
@@ -49,7 +51,8 @@ export interface MilkyWayScene {
   pickables: THREE.Object3D[];
   objectPosition(id: string): THREE.Vector3 | null;
   /** Emphasize one pin (hover/selection), or clear with null. */
-  highlight(id: string | null): void;
+  /** `id` is the hovered pin, `selectedId` the selected one: both show their ring and label. */
+  highlight(id: string | null, selectedId?: string | null): void;
   /** #451 (WS-2) — toggle a science-lens overlay:
    *  'dark-matter-halo' | 'rotation-curve' | 'stellar-populations'. */
   setLens(key: string, on: boolean): void;
@@ -394,14 +397,14 @@ export function createMilkyWayScene(
     ring.userData.mwObjectId = arm.id;
     const slot = newLabelSlot(sprite, aspect, RANK_ARM);
     slots.push(slot);
-    // A raycaster ignores `visible`: an arm whose label the placement pass hid must not stay
-    // clickable as an invisible target.
-    for (const target of [sprite, ring]) {
-      const hit = target.raycast.bind(target);
-      target.raycast = (rc, hits) => {
-        if (slot.visible) hit(rc, hits);
-      };
-    }
+    // A raycaster ignores `visible`, so the hidden label would stay clickable as an invisible
+    // target: it is gated on the placement result. The ring is not: the arm is the object and the
+    // label only decoration, so a hidden label leaves the 44 px ring pickable, and hovering it
+    // forces the label back (`hi` in `update`).
+    const hitLabel = sprite.raycast.bind(sprite);
+    sprite.raycast = (rc, hits) => {
+      if (slot.visible) hitLabel(rc, hits);
+    };
     pickables.push(sprite, ring);
     pins.push({ id: arm.id, ring, anchor: false, slot, position, baseScale: 0 });
   }
@@ -697,7 +700,7 @@ export function createMilkyWayScene(
   };
 
   let highlightId: string | null = null;
-  const _cam = new THREE.Vector3();
+  let selectedId: string | null = null;
   const _tmp = new THREE.Vector3();
 
   // ── Cinematic bloom composer (self-contained; only this scene blooms) ────
@@ -733,20 +736,21 @@ export function createMilkyWayScene(
     objectPosition(id) {
       return byId.get(id)?.position.clone() ?? null;
     },
-    highlight(id) {
+    highlight(id, sel = null) {
       highlightId = id;
+      selectedId = sel;
     },
     setLens(key, on) {
       const g = lensGroups[key];
       if (g) g.visible = on;
     },
     update(camera, viewportH) {
-      camera.getWorldPosition(_cam);
+      camera.updateMatrixWorld();
       const fov = cameraFov(camera);
       for (const pin of pins) {
-        const dist = Math.max(1, _cam.distanceTo(pin.position));
+        const dist = Math.max(1, viewDepth(camera, pin.position));
         const wpp = worldPerPx(dist, fov, viewportH);
-        const hi = pin.id === highlightId;
+        const hi = pin.id === highlightId || pin.id === selectedId;
         // g0 is the STEADY glow: the hover grows the glow and the ring, never the label offset.
         const g0 = pin.glow ? dist * pin.baseScale : 0;
         pin.glow?.scale.setScalar(g0 * (hi ? 1.5 : 1));
@@ -755,13 +759,14 @@ export function createMilkyWayScene(
         if (!slot) continue;
         const lh = wpp * LABEL_SPRITE_PX;
         slot.sprite.scale.set(lh * slot.aspect, lh, 1);
-        slot.sprite.position.set(
-          pin.position.x,
-          pin.position.y + labelOffset(g0, lh, wpp * (RING_PX / 2)),
-          pin.position.z,
+        liftOnScreen(
+          slot.sprite.position,
+          pin.position,
+          camera,
+          labelOffset(g0, lh, wpp * (RING_PX / 2)),
         );
         slot.force = hi;
-        slot.visible = labelRect(slot.sprite, camera, _cam, slot.rect, _tmp);
+        slot.visible = labelRect(slot.sprite, camera, slot.rect, _tmp);
       }
       placeLabels(slots);
     },

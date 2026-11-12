@@ -26,10 +26,12 @@ import {
   applyRing,
   cameraFov,
   labelOffset,
+  liftOnScreen,
   labelRect,
   newLabelSlot,
   placeLabels,
   snapshotPins,
+  viewDepth,
   worldPerPx,
   type LabelSlot,
   type PinsSnapshot,
@@ -39,7 +41,8 @@ export interface LocalGroupScene {
   scene: THREE.Scene;
   pickables: THREE.Object3D[];
   objectPosition(id: string): THREE.Vector3 | null;
-  highlight(id: string | null): void;
+  /** `id` is the hovered pin, `selectedId` the selected one: both show their ring and label. */
+  highlight(id: string | null, selectedId?: string | null): void;
   update(camera: THREE.Camera, viewportH: number): void;
   /** Probe for the e2e specs: every label and ring as it is on screen (client px). */
   pinsSnapshot(camera: THREE.Camera, w: number, h: number): PinsSnapshot;
@@ -297,7 +300,7 @@ export function createLocalGroupScene(
   }
 
   let highlightId: string | null = null;
-  const _cam = new THREE.Vector3();
+  let selectedId: string | null = null;
   const _tmp = new THREE.Vector3();
 
   let composer: EffectComposer | null = null;
@@ -325,16 +328,17 @@ export function createLocalGroupScene(
     objectPosition(id) {
       return byId.get(id)?.position.clone() ?? null;
     },
-    highlight(id) {
+    highlight(id, sel = null) {
       highlightId = id;
+      selectedId = sel;
     },
     update(camera, viewportH) {
-      camera.getWorldPosition(_cam);
+      camera.updateMatrixWorld();
       const fov = cameraFov(camera);
       for (const pin of pins) {
-        const dist = Math.max(1, _cam.distanceTo(pin.position));
+        const dist = Math.max(1, viewDepth(camera, pin.position));
         const wpp = worldPerPx(dist, fov, viewportH);
-        const hi = pin.id === highlightId;
+        const hi = pin.id === highlightId || pin.id === selectedId;
         applyRing(pin.ring, pin.anchor, hi, wpp);
         // Only headliners carry an always-on label; the ~30 dwarfs stay glints and
         // reveal their name on hover/selection, so the census reads without clutter.
@@ -344,13 +348,14 @@ export function createLocalGroupScene(
         if (pin.alwaysLabel || hi) {
           const lh = wpp * LABEL_SPRITE_PX;
           slot.sprite.scale.set(lh * slot.aspect, lh, 1);
-          slot.sprite.position.set(
-            pin.position.x,
-            pin.position.y + labelOffset(pin.glowSize, lh, wpp * (RING_PX / 2), 0.62),
-            pin.position.z,
+          liftOnScreen(
+            slot.sprite.position,
+            pin.position,
+            camera,
+            labelOffset(pin.glowSize, lh, wpp * (RING_PX / 2), 0.62),
           );
           (slot.sprite.material as THREE.SpriteMaterial).opacity = hi ? 1 : 0.94;
-          slot.visible = labelRect(slot.sprite, camera, _cam, slot.rect, _tmp);
+          slot.visible = labelRect(slot.sprite, camera, slot.rect, _tmp);
         }
         if (pin.disk) pin.disk.rotation.y = (pin.disk.rotation.y + 0.0006) % (Math.PI * 2);
       }

@@ -96,10 +96,16 @@ declare global {
     __scenePins?: () => import('$lib/universe/scene-pins').PinsSnapshot | null;
     /** Screen points (canvas-box px) on a kind of solar line or the neighbourhood's light-year rings, for the readability probe. */
     __exploreLinePoints?: (
-      kind: 'planet-orbits' | 'moon-orbits' | 'small-orbits' | 'belts' | 'ly-rings',
+      kind:
+        | 'planet-orbits'
+        | 'moon-orbits'
+        | 'small-orbits'
+        | 'asteroid-belt'
+        | 'kuiper-belt'
+        | 'ly-rings',
     ) => Array<{ x: number; y: number }>;
-    /** The 2D view's labels of the last frame: text, font size in CSS px, whether it was drawn. */
-    __explore2dLabels?: () => Array<{ text: string; fontPx: number; shown: boolean }>;
+    /** The 2D view's labels of the last frame (only the ones pushed that frame): text, the font the canvas drew it with and its size in CSS px (0 when not drawn), whether it was drawn. */
+    __explore2dLabels?: () => Array<{ text: string; font: string; fontPx: number; shown: boolean }>;
     /** A solar-system body's world position: planet:<id>, small:<id>, moon:<parent>:<id>, belt:<id>. */
     __exploreBodyPosition?: (key: string) => number[] | null;
     /** Where a body (or marker:<missionId>) is on screen, client pixels, or null when behind the camera. */

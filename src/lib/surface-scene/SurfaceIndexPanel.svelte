@@ -12,6 +12,8 @@
 -->
 <script lang="ts">
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { roving } from '$lib/a11y/roving';
   import {
     filterIndexItems,
@@ -92,80 +94,53 @@
 
   <div class="sidx-filters">
     {#if hasBoth}
-      <div class="sidx-chiprow" role="group" aria-label={m.surface_index_filter_domain()}>
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={domainFilter === 'ALL'}
-          onclick={() => (domainFilter = 'ALL')}>{m.surface_index_all()}</button
+      <ChipGroup role="radiogroup" label={m.surface_index_filter_domain()}>
+        <Chip kind="choice" active={domainFilter === 'ALL'} onclick={() => (domainFilter = 'ALL')}
+          >{m.surface_index_all()}</Chip
         >
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={domainFilter === 'orbit'}
-          onclick={() => (domainFilter = 'orbit')}>{m.surface_index_orbit()}</button
+        <Chip
+          kind="choice"
+          active={domainFilter === 'orbit'}
+          onclick={() => (domainFilter = 'orbit')}>{m.surface_index_orbit()}</Chip
         >
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={domainFilter === 'land'}
-          onclick={() => (domainFilter = 'land')}>{m.surface_index_land()}</button
+        <Chip kind="choice" active={domainFilter === 'land'} onclick={() => (domainFilter = 'land')}
+          >{m.surface_index_land()}</Chip
         >
-      </div>
+      </ChipGroup>
     {/if}
 
-    <div class="sidx-chiprow" role="group" aria-label={m.surface_index_filter_agency()}>
-      <button
-        type="button"
-        class="sidx-chip"
-        class:active={agencyFilter === 'ALL'}
-        onclick={() => (agencyFilter = 'ALL')}>{m.surface_index_all()}</button
+    <ChipGroup role="radiogroup" label={m.surface_index_filter_agency()}>
+      <Chip kind="choice" active={agencyFilter === 'ALL'} onclick={() => (agencyFilter = 'ALL')}
+        >{m.surface_index_all()}</Chip
       >
       {#each agencies as a (a)}
-        <button
-          type="button"
-          class="sidx-chip sidx-chip-agency"
-          class:active={agencyFilter === a}
-          onclick={() => (agencyFilter = a)}
-        >
+        <Chip kind="choice" active={agencyFilter === a} onclick={() => (agencyFilter = a)}>
           <AgencyBadge agency={a} /><span>{a}</span>
-        </button>
+        </Chip>
       {/each}
-    </div>
+    </ChipGroup>
 
-    <div class="sidx-chiprow" role="group" aria-label={m.surface_index_filter_era()}>
-      <button
-        type="button"
-        class="sidx-chip"
-        class:active={eraFilter === 'ALL'}
-        onclick={() => (eraFilter = 'ALL')}>{m.surface_index_all()}</button
+    <ChipGroup role="radiogroup" label={m.surface_index_filter_era()}>
+      <Chip kind="choice" active={eraFilter === 'ALL'} onclick={() => (eraFilter = 'ALL')}
+        >{m.surface_index_all()}</Chip
       >
       {#each ERAS as e (e.id)}
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={eraFilter === e.id}
-          onclick={() => (eraFilter = e.id)}>{e.label}</button
+        <Chip kind="choice" active={eraFilter === e.id} onclick={() => (eraFilter = e.id)}
+          >{e.label}</Chip
         >
       {/each}
-    </div>
+    </ChipGroup>
 
-    <div class="sidx-chiprow" role="group" aria-label={m.surface_index_filter_status()}>
-      <button
-        type="button"
-        class="sidx-chip"
-        class:active={statusFilter === 'ALL'}
-        onclick={() => (statusFilter = 'ALL')}>{m.surface_index_all()}</button
+    <ChipGroup role="radiogroup" label={m.surface_index_filter_status()}>
+      <Chip kind="choice" active={statusFilter === 'ALL'} onclick={() => (statusFilter = 'ALL')}
+        >{m.surface_index_all()}</Chip
       >
       {#each statuses as s (s)}
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={statusFilter === s}
-          onclick={() => (statusFilter = s)}>{surfaceStatusLabel(s)}</button
+        <Chip kind="choice" active={statusFilter === s} onclick={() => (statusFilter = s)}
+          >{surfaceStatusLabel(s)}</Chip
         >
       {/each}
-    </div>
+    </ChipGroup>
   </div>
 
   <div class="sidx-count">{filtered.length} / {items.length}</div>
@@ -249,37 +224,7 @@
     gap: 5px;
     margin-bottom: 8px;
   }
-  .sidx-chiprow {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .sidx-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 3px 8px;
-    background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    color: rgba(207, 224, 255, 0.75);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .sidx-chip.active {
-    color: var(--color-state);
-    border-color: var(--color-accent-strong);
-    background: rgba(20, 26, 50, 0.85);
-  }
-  .sidx-chip:focus-visible {
-    outline: 2px solid var(--color-accent, var(--color-focus));
-    outline-offset: -2px;
-  }
-  .sidx-chip-agency :global(.badge) {
+  .sidx-filters :global(.badge) {
     height: 13px;
   }
   .sidx-count {

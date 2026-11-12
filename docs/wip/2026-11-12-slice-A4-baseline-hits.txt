@@ -1,0 +1,174 @@
+PRIVATE-CSS      src/routes/explore/HudControls.svelte:525  .toggle
+PRIVATE-CSS      src/routes/explore/HudControls.svelte:557  .chip
+PRIVATE-CSS      src/routes/explore/HudControls.svelte:598  .iconic-toggle
+PRIVATE-CSS      src/routes/explore/HudControls.svelte:792  .toggle
+PRIVATE-CSS      src/routes/explore/HudControls.svelte:796  .chip
+PRIVATE-CSS      src/routes/explore/HudControls.svelte:842  .chip
+PRIVATE-CSS      src/routes/explore/HudControls.svelte:857  :global(.mdg-body) .ctrl-row.chips .chip
+OLD-MARKUP       src/routes/explore/HudControls.svelte:78  class="toggle"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:88  class="toggle"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:105  class="chip"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:116  class="chip"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:127  class="chip"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:138  class="chip"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:149  class="chip"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:248  class="toggle"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:258  class="toggle"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:289  class="chip"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:303  class="chip"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:317  class="chip"
+OLD-MARKUP       src/routes/explore/HudControls.svelte:331  class="chip"
+PRIVATE-CSS      src/routes/explore/ScaleNav.svelte:102  .scale-back, .scale-reset
+PRIVATE-CSS      src/routes/explore/ScaleNav.svelte:135  .scale-back, .scale-reset
+OLD-MARKUP       src/routes/explore/ScaleNav.svelte:57  class="scale-reset"
+PRIVATE-CSS      src/routes/explore/TimeDock.svelte:250  .toggle
+PRIVATE-CSS      src/routes/explore/TimeDock.svelte:348  .speed-pill
+PRIVATE-CSS      src/routes/explore/TimeDock.svelte:409  .toggle
+PRIVATE-CSS      src/routes/explore/TimeDock.svelte:502  .speed-popover .speed-pill
+PRIVATE-CSS      src/routes/explore/TimeDock.svelte:510  .speed-desktop-pill
+OLD-MARKUP       src/routes/explore/TimeDock.svelte:95  class="toggle play-btn"
+OLD-MARKUP       src/routes/explore/TimeDock.svelte:110  class="speed-pill"
+OLD-MARKUP       src/routes/explore/TimeDock.svelte:128  class="speed-pill"
+OLD-MARKUP       src/routes/explore/TimeDock.svelte:156  class="speed-pill speed-desktop-pill"
+PRIVATE-CSS      src/lib/components/ExploreScalePicker.svelte:137  .toggle
+PRIVATE-CSS      src/lib/components/ExploreScalePicker.svelte:258  .toggle
+PRIVATE-CSS      src/lib/components/ExploreScalePicker.svelte:269  .rung, .toggle
+OLD-MARKUP       src/lib/components/ExploreScalePicker.svelte:91  class="toggle"
+PRIVATE-CSS      src/lib/components/LayerChipRow.svelte:87  .chip-group
+PRIVATE-CSS      src/lib/components/LayerChipRow.svelte:112  .chip-group .dot
+OLD-MARKUP       src/lib/components/LayerChipRow.svelte:68  class="chip"
+PRIVATE-CSS      src/lib/components/PillDropdown.svelte:184  .pill-dropdown
+PRIVATE-CSS      src/lib/components/PillDropdown.svelte:189  .pill
+PRIVATE-CSS      src/lib/components/PillDropdown.svelte:219  .pill.has-logo
+OLD-MARKUP       src/lib/components/PillDropdown.svelte:113  class="pill"
+PRIVATE-CSS      src/lib/components/EpochTimelineStrip.svelte:322  .chip
+OLD-MARKUP       src/lib/components/EpochTimelineStrip.svelte:108  class="chip"
+OLD-MARKUP       src/lib/components/EpochTimelineStrip.svelte:119  class="chip"
+OLD-MARKUP       src/lib/components/View3dControls.svelte:20  <button type="button" class="toggle" data-testid="reset-camera" onclic
+OLD-MARKUP       src/lib/components/View3dControls.svelte:25  class="toggle"
+OLD-MARKUP       src/lib/components/ViewToggleButton.svelte:19  class="toggle"
+PRIVATE-CSS      src/lib/components/StationRoute.svelte:2000  .hud-controls :global(button), .hud-controls :global(.toggle)
+PRIVATE-CSS      src/lib/components/StationRoute.svelte:2003  .hud-live-link
+PRIVATE-CSS      src/lib/components/StationRoute.svelte:2016  .hud-live-link .live-dot
+PRIVATE-CSS      src/lib/components/StationRoute.svelte:2107  .toggle
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1448  class="toggle"
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1464  class="toggle"
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1473  class="toggle"
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1516  class="toggle"
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1531  class="toggle"
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1541  class="toggle"
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1552  class="toggle"
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1575  class="toggle"
+OLD-MARKUP       src/lib/components/StationRoute.svelte:1588  <a class="hud-live-link" href={localHref(`/live`)} data-testid="{confi
+PRIVATE-CSS      src/lib/components/StarIndex.svelte:198  .si-filters
+PRIVATE-CSS      src/lib/components/StarIndex.svelte:203  .si-filters button
+PRIVATE-CSS      src/lib/surface-scene/SurfaceScene.svelte:7438  .hud-controls :global(.chip), .ctrl-row.chips :global(.chip)
+PRIVATE-CSS      src/lib/surface-scene/SurfaceScene.svelte:7483  .hud-controls :global(.toggle)
+PRIVATE-CSS      src/lib/surface-scene/SurfaceScene.svelte:7521  .hud-controls :global(.chip), .ctrl-row.chips :global(.chip)
+PRIVATE-CSS      src/lib/surface-scene/SurfaceScene.svelte:7526  .hud-controls :global(.toggle)
+PRIVATE-CSS      src/lib/surface-scene/SurfaceScene.svelte:7552  .hud-controls :global(.toggle)
+PRIVATE-CSS      src/lib/surface-scene/SurfaceScene.svelte:7560  .hud-controls :global(.chip), .ctrl-row.chips :global(.chip), .hud-con
+PRIVATE-CSS      src/lib/surface-scene/SurfaceScene.svelte:7606  .hud-top-mobile :global(.toggle)
+PRIVATE-CSS      src/lib/surface-scene/SurfaceScene.svelte:7916  .launches-chip
+OLD-MARKUP       src/lib/surface-scene/SurfaceScene.svelte:5746  class="toggle"
+OLD-MARKUP       src/lib/surface-scene/SurfaceScene.svelte:5754  class="toggle"
+PRIVATE-CSS      src/lib/surface-scene/SurfaceIndexPanel.svelte:257  .sidx-chip
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:98  class="sidx-chip"
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:104  class="sidx-chip"
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:110  class="sidx-chip"
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:120  class="sidx-chip"
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:127  class="sidx-chip sidx-chip-agency"
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:139  class="sidx-chip"
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:146  class="sidx-chip"
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:156  class="sidx-chip"
+OLD-MARKUP       src/lib/surface-scene/SurfaceIndexPanel.svelte:163  class="sidx-chip"
+PRIVATE-CSS      src/lib/styles/entity-browse-page.css:68  .entity-browse-page .filters-toggle
+PRIVATE-CSS      src/lib/styles/entity-browse-page.css:125  .entity-browse-page .clear-filters
+PRIVATE-CSS      src/lib/styles/entity-browse-page.css:172  .entity-browse-page .pill
+PRIVATE-CSS      src/lib/styles/entity-browse-page.css:204  .entity-browse-page .pill.logo-pill
+OLD-MARKUP       src/routes/missions/+page.svelte:457  <button type="button" class="clear-filters" onclick={clearAllFilters}>
+OLD-MARKUP       src/routes/missions/+page.svelte:478  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:486  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:494  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:502  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:510  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:518  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:526  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:534  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:542  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:550  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:558  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:570  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:578  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:586  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:594  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:602  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:610  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:622  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:630  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:638  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:651  class="pill"
+OLD-MARKUP       src/routes/missions/+page.svelte:662  class="pill agency-pill"
+OLD-MARKUP       src/routes/fleet/+page.svelte:508  class="pill"
+OLD-MARKUP       src/routes/fleet/+page.svelte:517  class="pill"
+OLD-MARKUP       src/routes/fleet/+page.svelte:530  class="pill"
+OLD-MARKUP       src/routes/fleet/+page.svelte:539  class="pill status-pill status-{st.toLowerCase()}"
+OLD-MARKUP       src/routes/fleet/+page.svelte:553  class="pill"
+OLD-MARKUP       src/routes/fleet/+page.svelte:564  class="pill agency-pill"
+OLD-MARKUP       src/routes/fleet/+page.svelte:617  class="pill"
+OLD-MARKUP       src/routes/fleet/+page.svelte:625  class="pill"
+OLD-MARKUP       src/routes/fleet/+page.svelte:632  <button type="button" class="pill" onclick={() => openLineup(null)}
+PRIVATE-CSS      src/routes/missions/launches/+page.svelte:456  ` so the inline `.clear-btn` (margin-left:auto, sits at the row's end)
+PRIVATE-CSS      src/routes/missions/launches/+page.svelte:460  .clear-btn
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:259  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:267  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:279  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:287  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:301  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:315  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:323  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:331  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:359  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:368  class="pill"
+OLD-MARKUP       src/routes/missions/launches/+page.svelte:379  <button type="button" class="clear-btn" onclick={clearFilters}>{m.laun
+PRIVATE-CSS      src/routes/gallery/deep-sky/+page.svelte:303  .chip
+PRIVATE-CSS      src/routes/gallery/deep-sky/+page.svelte:327  .chip .n
+OLD-MARKUP       src/routes/gallery/deep-sky/+page.svelte:162  class="chip"
+PRIVATE-CSS      src/routes/programs/+page.svelte:234  .toggle
+PRIVATE-CSS      src/routes/programs/+page.svelte:237  .toggle button
+OLD-MARKUP       src/routes/programs/+page.svelte:129  <div class="toggle" role="group" aria-label={m.programs_group_aria()}>
+PRIVATE-CSS      src/routes/fly/+page.svelte:6339  .speed-pill
+PRIVATE-CSS      src/routes/fly/+page.svelte:6383  .speed-desktop-pill
+PRIVATE-CSS      src/routes/fly/+page.svelte:6599  .toggle
+PRIVATE-CSS      src/routes/fly/+page.svelte:6629  .toggle.toggle-lens
+OLD-MARKUP       src/routes/fly/+page.svelte:3502  class="toggle"
+OLD-MARKUP       src/routes/fly/+page.svelte:4313  class="speed-pill"
+OLD-MARKUP       src/routes/fly/+page.svelte:4325  class="speed-pill"
+OLD-MARKUP       src/routes/fly/+page.svelte:4342  class="speed-pill speed-desktop-pill"
+OLD-MARKUP       src/routes/fly/+page.svelte:4368  class="toggle toggle-lens"
+OLD-MARKUP       src/routes/fly/+page.svelte:4377  class="toggle toggle-lens"
+OLD-MARKUP       src/routes/fly/+page.svelte:4387  class="toggle toggle-lens"
+OLD-MARKUP       src/routes/fly/+page.svelte:4408  class="toggle"
+OLD-MARKUP       src/routes/fly/+page.svelte:4417  class="toggle"
+OLD-MARKUP       src/routes/fly/+page.svelte:4425  class="toggle"
+RESET-VIEW       src/routes/explore/HudControls.svelte:94  {m.ui_reset_view()}
+RESET-VIEW       src/routes/explore/HudControls.svelte:264  {m.ui_reset_view()}
+RESET-VIEW       src/routes/explore/ScaleNav.svelte:59  aria-label={m.ui_reset_view()}
+RESET-VIEW       src/routes/explore/ScaleNav.svelte:60  title={m.ui_reset_view()}
+RESET-VIEW       src/lib/components/View3dControls.svelte:21  {m.ui_reset_view()}
+RESET-VIEW       src/lib/components/StationRoute.svelte:1469  {m.ui_reset_view()}
+RESET-VIEW       src/lib/components/StationRoute.svelte:1537  {m.ui_reset_view()}
+RESET-VIEW       src/lib/surface-scene/SurfaceScene.svelte:5750  {m.ui_reset_view()}
+COUNT-AT-END     src/routes/missions/+page.svelte:445  <span class="filters-right">
+COUNT-AT-END     src/routes/fleet/+page.svelte:482  <span class="filters-right">
+COUNT-AT-END     src/routes/missions/launches/+page.svelte:243  <span class="filters-right">
+OVAL             src/routes/explore/HudControls.svelte:571  border-radius: 999px;
+OVAL             src/lib/surface-scene/SurfaceScene.svelte:7453  border-radius: 999px;
+OVAL             src/lib/surface-scene/SurfaceScene.svelte:7923  border-radius: 999px;
+OVAL             src/lib/surface-scene/SurfaceIndexPanel.svelte:264  border-radius: 999px;
+FILTER-AS-TAB    src/routes/gallery/deep-sky/+page.svelte:164  role="tab"
+OVAL             src/routes/gallery/deep-sky/+page.svelte:310  border-radius: 999px;
+NO-CHIP-CSS      src/lib/styles/chip.css:1  file missing
+NO-CHIP-COMPONENT src/lib/components/Chip.svelte:1  file missing
+by kind: {'PRIVATE-CSS': 52, 'OLD-MARKUP': 101, 'RESET-VIEW': 8, 'COUNT-AT-END': 3, 'OVAL': 5, 'FILTER-AS-TAB': 1, 'NO-CHIP-CSS': 1, 'NO-CHIP-COMPONENT': 1}
+A4-CHECK violations: 172

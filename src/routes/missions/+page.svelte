@@ -472,7 +472,12 @@
     >
       {m.filters_eyebrow()}
       {#if filtered.length !== missions.length}
-        <span class="filters-count count-fraction">{filtered.length} / {missions.length}</span>
+        <span class="filters-count count-fraction" aria-hidden="true"
+          >{filtered.length} / {missions.length}</span
+        >
+        <span class="filters-count-sr"
+          >{m.filters_count_of({ shown: filtered.length, total: missions.length })}</span
+        >
       {:else}
         <span class="filters-count count-total-only">{missions.length}</span>
       {/if}

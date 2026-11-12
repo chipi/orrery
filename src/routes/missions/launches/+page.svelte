@@ -244,7 +244,12 @@
     >
       {m.filters_eyebrow()}
       {#if filtered.length !== allEntries.length}
-        <span class="filters-count count-fraction">{filtered.length} / {allEntries.length}</span>
+        <span class="filters-count count-fraction" aria-hidden="true"
+          >{filtered.length} / {allEntries.length}</span
+        >
+        <span class="filters-count-sr"
+          >{m.filters_count_of({ shown: filtered.length, total: allEntries.length })}</span
+        >
       {:else}
         <span class="filters-count count-total-only">{allEntries.length}</span>
       {/if}

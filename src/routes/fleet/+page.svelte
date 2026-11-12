@@ -504,8 +504,11 @@
       >
         {m.filters_eyebrow()}
         {#if filtered.length !== entries.length}
-          <span class="filters-count count-fraction count"
+          <span class="filters-count count-fraction count" aria-hidden="true"
             >{filtered.length} / {entries.length}</span
+          >
+          <span class="filters-count-sr"
+            >{m.filters_count_of({ shown: filtered.length, total: entries.length })}</span
           >
         {:else}
           <span class="filters-count count-total-only count">{entries.length}</span>

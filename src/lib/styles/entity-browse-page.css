@@ -77,6 +77,16 @@
 .entity-browse-page .filters-count {
   font-variant-numeric: tabular-nums;
 }
+/* "12 of 150" for a screen reader: the visible "12 / 150" is aria-hidden. */
+.entity-browse-page .filters-count-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .entity-browse-page .count-fraction {
   color: var(--color-state);
 }

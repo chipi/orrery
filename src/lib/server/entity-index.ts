@@ -30,7 +30,7 @@ function hubIds(hub: EntityHub): string[] {
     .map((r) => r.slice(prefix.length))
     .filter(
       (id) =>
-        !(hub === 'explore' && (id === 'hub' || id === 'stars')) &&
+        !(hub === 'explore' && (id === 'hub' || id === 'stars' || id === 'black-holes')) &&
         !(hub === 'missions' && id === 'launches'),
     );
 }

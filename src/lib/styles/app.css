@@ -4,6 +4,7 @@
 @import './entity-card-grid.css';
 @import './entity-browse-page.css';
 @import './page-shell.css';
+@import './chip.css';
 
 * {
   box-sizing: border-box;

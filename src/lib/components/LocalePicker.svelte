@@ -96,27 +96,49 @@
     position: relative;
     display: inline-block;
   }
+  /* The nav's control box (UXD-016): 44 px by default, the compact one on a fine primary
+     pointer; the look is the A4 chip's (chip.css) like the toggles beside it. */
   .chip {
-    min-width: 44px;
-    min-height: 44px;
+    box-sizing: border-box;
+    min-width: var(--nav-btn-touch);
+    min-height: var(--nav-btn-touch);
     padding: 0 10px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    color: var(--color-text);
+    background: var(--color-chip-glass);
+    border: 1px solid var(--color-chip-edge);
+    border-radius: 4px;
+    color: var(--color-chip-text);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 1.5px;
     cursor: pointer;
-    transition: border-color 0.15s ease;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
   }
-  .chip:hover,
+  @media (hover: hover) and (pointer: fine) {
+    .chip {
+      min-width: 40px;
+      min-height: var(--nav-btn-fine);
+    }
+  }
+  .chip:hover:not([aria-expanded='true']) {
+    border-color: var(--color-state);
+    color: var(--color-text);
+  }
+  .chip:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
   .chip[aria-expanded='true'] {
-    border-color: var(--color-accent-strong);
+    background: color-mix(in srgb, var(--color-accent) 22%, var(--color-chip-glass));
+    border-color: var(--color-accent);
+    color: var(--color-text);
   }
   .menu {
     position: absolute;

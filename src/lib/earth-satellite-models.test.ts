@@ -14,7 +14,7 @@ import { buildSatelliteModel, KNOWN_SATELLITE_IDS } from './earth-satellite-mode
 describe('buildSatelliteModel', () => {
   it('returns a Group for every known satellite id', () => {
     for (const id of KNOWN_SATELLITE_IDS) {
-      const g = buildSatelliteModel(id, '#4ecdc4');
+      const g = buildSatelliteModel(id, '#5070ff');
       expect(g).toBeInstanceOf(THREE.Group);
       // Each model has at least one mesh child (sanity check that
       // no builder accidentally returned an empty group).
@@ -58,7 +58,7 @@ describe('buildSatelliteModel', () => {
   });
 
   it('ISS model has the expected silhouette: truss + modules + 8 wing panels', () => {
-    const g = buildSatelliteModel('iss', '#4ecdc4');
+    const g = buildSatelliteModel('iss', '#5070ff');
     let meshCount = 0;
     g.traverse((obj) => {
       if (obj instanceof THREE.Mesh) meshCount++;
@@ -81,7 +81,7 @@ describe('buildSatelliteModel', () => {
   it('constellation builders all produce identical mesh counts (visually equivalent)', () => {
     const counts = new Set<number>();
     for (const id of ['gps', 'galileo', 'glonass', 'beidou']) {
-      const g = buildSatelliteModel(id, '#4466ff');
+      const g = buildSatelliteModel(id, '#5070ff');
       let meshCount = 0;
       g.traverse((obj) => {
         if (obj instanceof THREE.Mesh) meshCount++;

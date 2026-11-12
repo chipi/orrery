@@ -4,7 +4,7 @@
     "caption": "Der Rand einer Sternenkinderstätte im Carina-Nebel (NGC 3324), vom Sternenwind junger Sterne modelliert.",
     "subject": "Nebel",
     "type": "Sternentstehungsregion",
-    "distance": "~7.600 Lichtjahre",
+    "distance": "~7.900 Lichtjahre",
     "taken": "Veröffentlicht am 12. Jul 2022"
   },
   "jwst-southern-ring": {
@@ -36,7 +36,7 @@
     "caption": "30 Doradus — die aktivste bekannte Starburst-Region in unserer galaktischen Nachbarschaft.",
     "subject": "Nebel",
     "type": "Sternentstehungsregion (30 Dor)",
-    "distance": "~161.000 Lichtjahre",
+    "distance": "~162.000 Lichtjahre",
     "taken": "Veröffentlicht am 6. Sep 2022"
   },
   "jwst-cartwheel": {
@@ -68,7 +68,7 @@
     "caption": "Eine drei Lichtjahre hohe Säule im Carina-Nebel aus Hubbles 20. Jahrestag.",
     "subject": "Nebel",
     "type": "Sternentstehungssäule",
-    "distance": "~7.500 Lichtjahre",
+    "distance": "~7.700 Lichtjahre",
     "taken": "2010 · Hubble 20."
   },
   "hst-butterfly": {
@@ -76,7 +76,7 @@
     "caption": "NGC 6302 — Gasflügel, die über 20.000 °C erhitzt und von einem sterbenden Stern hinausgeschleudert wurden.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel (NGC 6302)",
-    "distance": "~2.430 Lichtjahre",
+    "distance": "~3.800 Lichtjahre",
     "taken": "2009"
   },
   "hst-antennae": {
@@ -163,7 +163,7 @@
     "caption": "Die Röntgenschale eines Sterns, dessen Explosion Tycho Brahe 1572 beobachtete.",
     "subject": "Supernova",
     "type": "Supernova-Überrest · Röntgenstrahlung (SN 1572)",
-    "distance": "~10.000 Lichtjahre"
+    "distance": "~9.000 Lichtjahre"
   },
   "spitzer-helix": {
     "title": "Helix-Nebel (Infrarot)",
@@ -258,7 +258,7 @@
     "caption": "Ein 50 Lichtjahre breites Panorama einer der größten Sternfabriken in der Galaxie.",
     "subject": "Nebel",
     "type": "Sternentstehungsgebiet",
-    "distance": "~7.500 Lichtjahre",
+    "distance": "~7.700 Lichtjahre",
     "taken": "2007 · Hubble 17."
   },
   "jwst-casa": {
@@ -282,7 +282,7 @@
     "caption": "Der hellste Kugelsternhaufen am Himmel — Millionen von Sternen durch Gravitation gebunden.",
     "subject": "Sternhaufen",
     "type": "Kugelcluster",
-    "distance": "~17.000 Lichtjahre",
+    "distance": "~18.000 Lichtjahre",
     "taken": "2008"
   },
   "jwst-ngc1365": {
@@ -290,7 +290,7 @@
     "caption": "Eine kolossale Balkenspiralgalaxie, deren Balken Gas auf ein hungriges schwarzes Loch lenkt.",
     "subject": "Galaxie",
     "type": "Balkenspiralgalaxie",
-    "distance": "~56 Millionen Lichtjahre",
+    "distance": "~61 Millionen Lichtjahre",
     "taken": "2023"
   },
   "hst-ngc602": {
@@ -306,7 +306,7 @@
     "caption": "Die dem Erdentfernteste Sternentstehungsgebiet, entflammt von jungen Sonnen — Webbs Jahrestags-Bild.",
     "subject": "Nebel",
     "type": "Sternentstehungsgebiet",
-    "distance": "~430 Lichtjahre",
+    "distance": "~450 Lichtjahre",
     "taken": "Veröffentlicht 12. Jul 2023"
   },
   "jwst-wr124": {
@@ -322,7 +322,7 @@
     "caption": "NGC 2014 und NGC 2020 — ein Riff aus leuchtendem Wasserstoff vom 30. Jahrestag des Hubble.",
     "subject": "Nebel",
     "type": "Emissionsnebel",
-    "distance": "~163.000 Lichtjahre",
+    "distance": "~162.000 Lichtjahre",
     "taken": "2020 · Hubble 30."
   },
   "hst-hen2104": {
@@ -330,7 +330,7 @@
     "caption": "Verschachtelte Sanduhrformen aus Gas, die von einem sterbenden Stern und seinem Begleiter ausgestoßen wurden.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel",
-    "distance": "~15.000 Lichtjahre",
+    "distance": "~11.000 Lichtjahre",
     "taken": "2019 · Hubble 29."
   },
   "hst-monkey-head": {
@@ -359,10 +359,10 @@
   },
   "hst-ngc1300": {
     "title": "NGC 1300",
-    "caption": "Eine klassische Balkenspiralgalaxie, deren Arme sich um einen 200.000-Lichtjahre großen Balken winden.",
+    "caption": "Eine klassische Balkenspiralgalaxie, deren Arme mit den Enden eines geraden Sternbalkens verbunden sind.",
     "subject": "Galaxie",
     "type": "Balkenspiralgalaxie",
-    "distance": "~45 Millionen Lichtjahre",
+    "distance": "~62 Millionen Lichtjahre",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -386,7 +386,7 @@
     "caption": "IC 342 — eine Spiralgalaxie, verborgen hinter dem Staub der Milchstraße, enthüllt durch Euclid.",
     "subject": "Galaxie",
     "type": "Spiralgalaxie",
-    "distance": "~7,3 Millionen Lichtjahre",
+    "distance": "~11 Millionen Lichtjahre",
     "taken": "Veröffentlicht 2024"
   },
   "hst-v838": {

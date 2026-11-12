@@ -7,6 +7,8 @@
   import { metaDescription, seoPageTitle } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
@@ -126,16 +128,18 @@
     </p>
     <!-- a2-keep: toolbar hint under the lead, not an opening paragraph -->
     <p class="lede">{m.programs_index_browse_hint()}</p>
-    <div class="toggle" role="group" aria-label={m.programs_group_aria()}>
-      <button class:active={mode === 'era'} onclick={() => (mode = 'era')}
-        >{m.programs_by_era()}</button
-      >
-      <button class:active={mode === 'kind'} onclick={() => (mode = 'kind')}
-        >{m.programs_by_kind()}</button
-      >
-      <button class:active={mode === 'agency'} onclick={() => (mode = 'agency')}
-        >{m.programs_by_agency()}</button
-      >
+    <div class="group-by">
+      <ChipGroup role="radiogroup" label={m.programs_group_aria()}>
+        <Chip kind="choice" active={mode === 'era'} onclick={() => (mode = 'era')}
+          >{m.programs_by_era()}</Chip
+        >
+        <Chip kind="choice" active={mode === 'kind'} onclick={() => (mode = 'kind')}
+          >{m.programs_by_kind()}</Chip
+        >
+        <Chip kind="choice" active={mode === 'agency'} onclick={() => (mode = 'agency')}
+          >{m.programs_by_agency()}</Chip
+        >
+      </ChipGroup>
     </div>
   </header>
 
@@ -231,33 +235,8 @@
     color: rgba(255, 255, 255, 0.5);
     max-width: 60ch;
   }
-  .toggle {
+  .group-by {
     margin: 16px 0 8px;
-  }
-  .toggle button {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    padding: 7px 14px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.6);
-    cursor: pointer;
-  }
-  .toggle button:not(:first-child) {
-    border-left: none;
-  }
-  .toggle button:first-child {
-    border-radius: 4px 0 0 4px;
-  }
-  .toggle button:last-child {
-    border-radius: 0 4px 4px 0;
-    border-left: none;
-  }
-  .toggle button.active {
-    background: rgba(127, 176, 224, 0.18);
-    border-color: rgba(127, 176, 224, 0.6);
-    color: var(--color-state);
   }
   .cards {
     display: grid;

@@ -42,7 +42,7 @@ and a `↗` link where the object has an entity page.
   "Fiction" section at the foot of the Cosmic web. The neighbourhood has none. Selecting one closes the
   INDEX and opens the lensing view.
 - **Neighbourhood**: stars and deep-sky objects in one list, a Deep sky chip filters.
-- **Chips**: kind chips from the labels the panels already print, plus Highlights where the data has
+- **Chips**: kind chips from the labels the panels already print, plus "Notable objects" (own key since `4a21e77beca`; "Highlights" read as "achievements" in ja, ko, ar) where the data has
   headliners, at most five besides All; no distance or size filter.
 - **Solar system** gains the moons, the two belts, a meta line (a moon's planet) and each body's colour dot.
 - **Open state**: persists across a scale jump on a fine pointer, closes on a coarse one (the 320 px rail

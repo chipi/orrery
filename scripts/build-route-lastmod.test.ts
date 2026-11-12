@@ -213,6 +213,47 @@ describe('black-hole page inputs', () => {
   });
 });
 
+describe('/explore page inputs', () => {
+  const files = [
+    'static/data/universe/named-stars.json',
+    'static/data/universe/exoplanet-systems.json',
+    'static/data/universe/deep-sky-objects.json',
+    'static/data/universe/milky-way-schematic.json',
+    'static/data/universe/local-group.json',
+    'static/data/universe/local-sheet.json',
+    'static/data/universe/virgo-cluster.json',
+    'static/data/universe/laniakea.json',
+    'static/data/universe/cosmic-web.json',
+    'static/data/universe/black-holes.json',
+  ];
+  const data = {
+    missions: new Map(),
+    fleet: new Map(),
+    labFiles: [],
+    hostPlanets: new Map(),
+    doors: [],
+  };
+
+  it('lists the data behind every INDEX row, so a change to any of them moves its date', () => {
+    const inputs = inputsFor(
+      '/explore',
+      { tracked: new Set(), latest: new Map(), entryDates: new Map(), locales: [] },
+      data,
+    );
+    for (const f of files) expect(inputs.files).toContain(f);
+  });
+
+  it.each(files)('%s moves the page date', (f) => {
+    const ctx = {
+      tracked: new Set([f]),
+      latest: new Map([[f, day('2026-11-12')]]),
+      entryDates: new Map(),
+      locales: ['de'],
+    };
+    expect(newestTs(inputsFor('/explore', ctx, data), 'de', ctx)).toBe(day('2026-11-12'));
+  });
+});
+
 describe('locale list', () => {
   it('the generator’s locales (messages/*.json) are the app’s SUPPORTED_LOCALES', () => {
     const codes = readdirSync('messages')

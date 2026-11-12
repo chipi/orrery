@@ -204,6 +204,13 @@
         return m.credits_category_ui();
       case 'credits':
         return m.credits_category_credits();
+      // The deep-level entity pages' text sources (0.9.9); labels shared with the library and Explore.
+      case 'star':
+        return m.library_category_star();
+      case 'exoplanet':
+        return m.science_tab_exoplanets_title();
+      case 'black-hole':
+        return m.star_index_black_holes();
       default:
         return c;
     }

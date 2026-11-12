@@ -1,13 +1,10 @@
 import { get, type FetchLike } from './core';
+import { pickScienceLinks, type ScienceRef } from '$lib/science-links';
 
 export type BodyKind = 'planet' | 'moon' | 'small-body';
 
 /** An /science section a body's record points at, with the body-specific reason (overlay text). */
-export interface BodyScienceRef {
-  tab: string;
-  section: string;
-  why?: string;
-}
+export type BodyScienceRef = ScienceRef;
 
 /** The numbers the panels show, raw: orbit, size, tilt, discovery. */
 export interface BodyStats {
@@ -99,7 +96,7 @@ export async function getBodyEntity(
         periodDays: planet.T,
         axialTiltDeg: planet.axialTilt,
       },
-      science: o.science_sections ?? planet.science_sections ?? [],
+      science: pickScienceLinks(o.science_sections ?? planet.science_sections),
     };
   }
 
@@ -137,7 +134,7 @@ export async function getBodyEntity(
         axialTiltDeg: sat.axial_tilt_deg,
         discovered: sat.discovered,
       },
-      science: o.science_sections ?? sat.science_sections ?? [],
+      science: pickScienceLinks(o.science_sections ?? sat.science_sections),
     };
   }
 
@@ -175,7 +172,7 @@ export async function getBodyEntity(
         radiusKm: body.radius_km,
         discovered: body.discovered,
       },
-      science: o.science_sections ?? body.science_sections ?? [],
+      science: pickScienceLinks(o.science_sections ?? body.science_sections),
     };
   }
   return null;

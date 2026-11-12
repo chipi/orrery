@@ -15,6 +15,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "火卫二是火星外月（23,460 km）——其轨道周期（1.26 d）长于火星日，所以潮汐力正在缓慢将其推离。"
+    },
+    {
+      "tab": "planets",
+      "section": "tides"
     }
   ]
 }

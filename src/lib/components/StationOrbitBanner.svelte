@@ -153,22 +153,15 @@
             body={m.why_station_sunrises_body()}
           /></span
         >
+        <!-- b2-keep: banner, two science links in all (the cap is three; science-links.test.ts counts them) -->
         <a class="banner-link" href={localHref(`/science/orbits/orbit-regimes`)}>
           {m.station_banner_read_more()}
         </a>
       </p>
       <p class="banner-foot banner-foot-secondary">
+        <!-- b2-keep: banner, second and last science link -->
         <a class="banner-link" href={localHref(`/science/scales-time/long-duration`)}>
           {m.station_banner_long_duration_link()}
-        </a>
-        <a class="banner-link" href={localHref(`/science/life-in-space/eva-operations`)}>
-          {m.station_banner_eva_link()}
-        </a>
-        <a class="banner-link" href={localHref(`/science/space-stations/expedition-cadence`)}>
-          {m.chip_label_expedition_cadence()}
-        </a>
-        <a class="banner-link" href={localHref(`/science/space-stations/solar-power-budget`)}>
-          {m.chip_label_solar_power_budget()}
         </a>
       </p>
     {/if}

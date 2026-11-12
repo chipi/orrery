@@ -2,9 +2,13 @@
   "description": "直径64 kmのC型小惑星で、衝突破壊でできた破片群であるL4トロヤ群のエウリュバテス族で最大の天体。2018年にハッブル宇宙望遠鏡が発見した直径1 kmの衛星(クエタ)を持つ。Lucyが最初に出会うトロヤ群小惑星で、2027年8月12日、速度5.7 km/s。",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "エウリュバテスは木星トロヤ群のL4点を軌道周回し、惑星の前方60°に位置します。Lucyは初めてトロヤ群を訪問する宇宙機になります（2027年8月）。"
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist"
     }
   ]
 }

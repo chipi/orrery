@@ -14,6 +14,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "Umbriel orbita Urano a 266.000 km — il suo piano orbitale è inclinato con il pianeta, quindi le sue stagioni rispecchiano la geometria assiale estrema del pianeta madre."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons"
     }
   ]
 }

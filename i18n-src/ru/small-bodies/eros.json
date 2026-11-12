@@ -3,8 +3,11 @@
   "science_sections": [
     {
       "tab": "orbits",
-      "section": "semi-major-axis",
-      "why": "Эрос — околоземный астероид группы Amor с большой полуосью 1,46 а. е.; вся его орбита лежит за орбитой Земли. В 2000 году NEAR Shoemaker вышел на его орбиту и стал первым аппаратом, обращавшимся вокруг астероида."
+      "section": "eccentricity"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

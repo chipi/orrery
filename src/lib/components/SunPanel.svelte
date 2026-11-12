@@ -15,6 +15,7 @@
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
@@ -24,17 +25,6 @@
   // library tiers → technical bottom. Same B2 pattern as PlanetPanel /
   // SmallBodyPanel.
   type Tab = 'overview' | 'gallery' | 'technical' | 'missions';
-
-  /** /science cross-sections relevant to the Sun: it's the central focus of
-   * every heliocentric orbit, so vis-viva and Kepler's laws sit on it. */
-  const SUN_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string; why?: string }[] = [
-    { tab: 'orbits', section: 'keplerian-orbit' },
-    { tab: 'orbits', section: 'vis-viva' },
-    { tab: 'orbits', section: 'keplers-laws' },
-    { tab: 'scales-time', section: 'au' },
-    { tab: 'scales-time', section: 'ecliptic-plane' },
-    { tab: 'scales-time', section: 'frames' },
-  ];
 
   type Props = {
     sun: LocalizedSun | null;
@@ -46,6 +36,8 @@
     covered?: boolean;
   };
   let { sun, open, onClose, onMissionOpen, covered }: Props = $props();
+  // The Sun's `science_sections` (locale overlay) are its curated /science cards; there is no default list.
+  let scienceLinks = $derived(pickScienceLinks(sun?.science_sections));
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -125,10 +117,10 @@
       {#if tab === 'overview'}
         <p class="editorial">{sun.fact}</p>
         <p class="editorial">{sun.bio}</p>
-        {#if (sun.science_sections ?? SUN_SCIENCE_SECTIONS).length > 0}
+        {#if scienceLinks.length > 0}
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
-            {#each sun.science_sections ?? SUN_SCIENCE_SECTIONS as entry (entry.tab + entry.section)}
+            {#each scienceLinks as entry (entry.tab + entry.section)}
               <ScienceCard
                 tab={entry.tab as ScienceTabId}
                 section={entry.section}

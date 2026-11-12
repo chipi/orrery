@@ -42,5 +42,6 @@ Pane links vary per pane.
 
 ## Verification
 
-Planned, not written: "no panel over 5; no two panels of one type with the same list (unit test over
-the data)" (plan line 339). Not checked by this document.
+Written in slice B2 ([UXD-022](UXD-022-science-link-lists.md)): `src/lib/science-links.test.ts` (rulers: every
+pane has a card and none repeats inside its ruler, in the four ruler directories; locale parity) and
+`tests/e2e/science-links-cap.spec.ts` (the eight Explore panes show one card each, all different).

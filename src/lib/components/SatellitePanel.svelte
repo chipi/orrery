@@ -39,6 +39,7 @@
   import type { CardSpec } from '$lib/cards/card-spec';
   import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
 
@@ -100,6 +101,7 @@
     };
   }
   let entry = $derived<SatelliteEntry | null>(baseEntry ? mergeOverlay(baseEntry, overlay) : null);
+  let scienceLinks = $derived(pickScienceLinks(entry?.science_sections));
 
   // #547 S5b — the collectible card (the loaded satellite list doubles
   // as the collection for numbering).
@@ -212,10 +214,10 @@
             <div class="cell-value">{entry.surface_composition}</div>
           </div>
         {/if}
-        {#if (entry.science_sections ?? []).length > 0}
+        {#if scienceLinks.length > 0}
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
-            {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
+            {#each scienceLinks as sec (sec.tab + sec.section)}
               <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
           </div>

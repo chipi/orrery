@@ -2,9 +2,13 @@
   "description": "35 km großer L4-Trojaner vom D-Typ mit einer ungewöhnlich langsamen Rotationsperiode von 446 Stunden – einer der langsamsten Rotatoren unter Körpern dieser Größe. Begegnung mit Lucy am 18. April 2028.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Leucus ist ein ungewöhnlich langsam rotierender L4-Trojaner (445-Stunden-Periode) — Lucy-Vorbeiflug im April 2028 wird seine merkwürdige elongierte Form aus nächster Nähe abbilden."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity"
     }
   ]
 }

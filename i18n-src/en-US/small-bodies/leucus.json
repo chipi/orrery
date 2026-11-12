@@ -1,9 +1,13 @@
 {
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Leucus is an unusually slow-rotating L4 Trojan (445-hour period) — Lucy flyby April 2028 will image its odd elongated shape up close."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity"
     }
   ]
 }

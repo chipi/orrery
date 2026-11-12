@@ -2,9 +2,13 @@
   "description": "Asteroide do tipo C de 64 km, o maior membro da família Euríbates de troianos de L4, um aglomerado de fragmentos de uma ruptura por colisão. Tem uma lua de 1 km (Queta), descoberta pelo Hubble em 2018. Primeiro encontro da Lucy com um troiano, em 12 de agosto de 2027, a 5,7 km/s.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Euríbates orbita na nuvem de Troianos de Júpiter L4 — liderando o planeta em 60°. Lucy será a primeira espaçonave a visitar um Troiano (agosto de 2027)."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist"
     }
   ]
 }

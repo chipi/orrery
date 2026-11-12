@@ -43,7 +43,13 @@
         "role": "station"
       }
     ],
-    "group": "crewed-station"
+    "group": "crewed-station",
+    "science": [
+      "space-stations/expedition-cadence",
+      "space-stations/solar-power-budget",
+      "orbits/space-debris",
+      "life-in-space/microgravity-physiology"
+    ]
   },
   {
     "id": "tiangong",
@@ -90,7 +96,13 @@
         "role": "station"
       }
     ],
-    "group": "crewed-station"
+    "group": "crewed-station",
+    "science": [
+      "space-stations/pressurized-volume",
+      "space-stations/node-module",
+      "orbits/disposal-end-of-life",
+      "orbits/inclination"
+    ]
   },
   {
     "id": "hubble",
@@ -138,7 +150,13 @@
         "role": "spacecraft"
       }
     ],
-    "group": "science"
+    "group": "science",
+    "science": [
+      "observation/space-photography",
+      "observation/spectroscopy",
+      "orbits/disposal-end-of-life",
+      "orbits/orbit-regimes"
+    ]
   },
   {
     "id": "gps",
@@ -187,6 +205,13 @@
         "section": "orbits/orbit-regimes",
         "context": "MEO 20,180 km"
       }
+    ],
+    "science": [
+      "scales-time/frames",
+      "orbits/orbit-regimes",
+      "orbits/semi-major-axis",
+      "orbits/disposal-end-of-life",
+      "scales-time/j2000"
     ]
   },
   {
@@ -231,6 +256,11 @@
         "section": "orbits/orbit-regimes",
         "context": "MEO 23,222 km"
       }
+    ],
+    "science": [
+      "orbits/inclination",
+      "orbits/eccentricity",
+      "scales-time/frames"
     ]
   },
   {
@@ -280,6 +310,11 @@
         "section": "orbits/orbit-regimes",
         "context": "MEO 19,130 km"
       }
+    ],
+    "science": [
+      "orbits/inclination",
+      "orbits/keplers-laws",
+      "orbits/disposal-end-of-life"
     ]
   },
   {
@@ -329,6 +364,11 @@
         "section": "orbits/orbit-regimes",
         "context": "MEO + IGSO + GEO hybrid"
       }
+    ],
+    "science": [
+      "orbits/special-orbits",
+      "orbits/orbit-regimes",
+      "scales-time/frames"
     ]
   },
   {
@@ -367,7 +407,12 @@
         "t": "core"
       }
     ],
-    "group": "comms"
+    "group": "comms",
+    "science": [
+      "orbits/orbit-regimes",
+      "orbits/keplers-laws",
+      "orbits/disposal-end-of-life"
+    ]
   },
   {
     "id": "chandra",
@@ -413,7 +458,12 @@
         "role": "spacecraft"
       }
     ],
-    "group": "science"
+    "group": "science",
+    "science": [
+      "orbits/eccentricity",
+      "orbits/apsides",
+      "observation/spectroscopy"
+    ]
   },
   {
     "id": "xmm",
@@ -454,7 +504,12 @@
         "role": "spacecraft"
       }
     ],
-    "group": "science"
+    "group": "science",
+    "science": [
+      "orbits/eccentricity",
+      "orbits/special-orbits",
+      "observation/space-photography"
+    ]
   },
   {
     "id": "lro",
@@ -489,7 +544,12 @@
         "t": "core"
       }
     ],
-    "group": "moon-orbiter"
+    "group": "moon-orbiter",
+    "science": [
+      "orbits/cislunar-orbits",
+      "planets/lunar-ice",
+      "planets/moon-surface-imagery"
+    ]
   },
   {
     "id": "luna10",
@@ -519,7 +579,12 @@
         "t": "core"
       }
     ],
-    "group": "moon-orbiter"
+    "group": "moon-orbiter",
+    "science": [
+      "orbits/cislunar-orbits",
+      "mission-phases/orbit-insertion",
+      "orbits/hill-sphere"
+    ]
   },
   {
     "id": "clementine",
@@ -550,6 +615,11 @@
         "id": "clementine",
         "role": "spacecraft"
       }
+    ],
+    "science": [
+      "orbits/cislunar-orbits",
+      "planets/regolith",
+      "planets/lunar-ice"
     ]
   },
   {
@@ -580,7 +650,12 @@
         "t": "intro"
       }
     ],
-    "group": "moon-orbiter"
+    "group": "moon-orbiter",
+    "science": [
+      "orbits/cislunar-orbits",
+      "planets/lunar-ice",
+      "planets/magnetic-fields"
+    ]
   },
   {
     "id": "smart-1",
@@ -610,7 +685,12 @@
         "t": "intro"
       }
     ],
-    "group": "moon-orbiter"
+    "group": "moon-orbiter",
+    "science": [
+      "propulsion/ion-drive",
+      "orbits/cislunar-orbits",
+      "propulsion/specific-impulse"
+    ]
   },
   {
     "id": "change1",
@@ -640,7 +720,12 @@
         "t": "intro"
       }
     ],
-    "group": "moon-orbiter"
+    "group": "moon-orbiter",
+    "science": [
+      "orbits/cislunar-orbits",
+      "planets/moon-surface-imagery",
+      "orbits/disposal-end-of-life"
+    ]
   },
   {
     "id": "chandrayaan1",
@@ -670,7 +755,12 @@
         "t": "intro"
       }
     ],
-    "group": "moon-orbiter"
+    "group": "moon-orbiter",
+    "science": [
+      "orbits/cislunar-orbits",
+      "planets/lunar-ice",
+      "mission-phases/orbit-insertion"
+    ]
   },
   {
     "id": "change2",
@@ -706,7 +796,12 @@
         "role": "spacecraft"
       }
     ],
-    "group": "moon-orbiter"
+    "group": "moon-orbiter",
+    "science": [
+      "orbits/cislunar-orbits",
+      "orbits/lagrange-points",
+      "transfers/patched-conics"
+    ]
   },
   {
     "id": "jwst",
@@ -762,7 +857,12 @@
         "role": "spacecraft"
       }
     ],
-    "group": "science"
+    "group": "science",
+    "science": [
+      "orbits/lagrange-points",
+      "orbits/special-orbits",
+      "observation/spectroscopy"
+    ]
   },
   {
     "id": "gaia",
@@ -801,7 +901,12 @@
         "role": "spacecraft"
       }
     ],
-    "group": "science"
+    "group": "science",
+    "science": [
+      "orbits/lagrange-points",
+      "exoplanets/astrometry",
+      "orbits/disposal-end-of-life"
+    ]
   },
   {
     "id": "starlink",
@@ -850,7 +955,13 @@
         "context": "LEO"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/space-debris",
+      "orbits/orbit-regimes",
+      "orbits/disposal-end-of-life",
+      "orbits/inclination"
+    ]
   },
   {
     "id": "oneweb",
@@ -889,7 +1000,12 @@
         "context": "LEO"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/orbit-regimes",
+      "orbits/inclination",
+      "orbits/space-debris"
+    ]
   },
   {
     "id": "iridium-next",
@@ -928,7 +1044,12 @@
         "context": "LEO"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/inclination",
+      "orbits/special-orbits",
+      "orbits/disposal-end-of-life"
+    ]
   },
   {
     "id": "kuiper",
@@ -967,7 +1088,12 @@
         "context": "LEO"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/space-debris",
+      "orbits/disposal-end-of-life",
+      "orbits/orbit-regimes"
+    ]
   },
   {
     "id": "planet-labs",
@@ -1006,7 +1132,12 @@
         "context": "SSO 475 km"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/sun-synchronous",
+      "planets/earth-surface-imagery",
+      "observation/space-photography"
+    ]
   },
   {
     "id": "sentinel-copernicus",
@@ -1046,7 +1177,12 @@
         "context": "SSO"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/sun-synchronous",
+      "planets/earth-surface-imagery",
+      "orbits/special-orbits"
+    ]
   },
   {
     "id": "landsat",
@@ -1086,7 +1222,12 @@
         "context": "SSO 705 km"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/sun-synchronous",
+      "planets/earth-surface-imagery",
+      "orbits/inclination"
+    ]
   },
   {
     "id": "goes",
@@ -1126,7 +1267,12 @@
         "context": "GEO"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/orbit-regimes",
+      "planets/earth-surface-imagery",
+      "orbits/disposal-end-of-life"
+    ]
   },
   {
     "id": "inmarsat",
@@ -1165,7 +1311,12 @@
         "context": "GEO"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/orbit-regimes",
+      "orbits/special-orbits",
+      "orbits/keplers-laws"
+    ]
   },
   {
     "id": "tundra-molniya",
@@ -1220,7 +1371,13 @@
         "context": "Molniya + Tundra at 63.4°"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/special-orbits",
+      "orbits/eccentricity",
+      "orbits/apsides",
+      "orbits/inclination"
+    ]
   },
   {
     "id": "o3b",
@@ -1259,6 +1416,11 @@
         "context": "MEO"
       }
     ],
-    "crew": 0
+    "crew": 0,
+    "science": [
+      "orbits/orbit-regimes",
+      "orbits/inclination",
+      "orbits/semi-major-axis"
+    ]
   }
 ]

@@ -204,7 +204,7 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **Search index** (`scripts/build-science-index.ts`, `static/data/science-index.json`) — walks the science overlay tree, builds the section tree + Cmd-K search index + ?-chip vocabulary. Generated at build time.
 
-**Cross-route ?-chip pattern** (`src/lib/components/ScienceChip.svelte`) — `?name=concept` chips on /missions, /iss, /tiangong, /fleet, /explore, /fly, /plan deep-link to `/science/<tab>/<section>`. Hover tooltip on desktop, click-to-navigate on mobile. See ADR-036.
+**Cross-route ?-chip pattern** (`src/lib/components/ScienceChip.svelte`) — `?name=concept` chips on /missions, /iss, /tiangong, /fleet, /explore, /fly, /plan deep-link to `/science/<tab>/<section>`. Hover tooltip on desktop, click-to-navigate on mobile. See ADR-036. **Science link lists** (the cards in a panel, not the chips): at most five per panel through `pickScienceLinks` in `src/lib/science-links.ts`, curated per body and ranked per mission class, no per-type default ([UXD-022](../uxs/decisions/UXD-022-science-link-lists.md)).
 
 ### Science Lens + multi-layer state
 

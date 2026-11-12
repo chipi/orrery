@@ -2,9 +2,13 @@
   "description": "D-type L4-Trojaan van 35 km met een ongewoon trage rotatieperiode van 446 uur, een van de langzaamste draaiers die bekend zijn onder lichamen van deze grootte. Ontmoeting met Lucy op 18 april 2028.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Leucus is een ongewoon langzaam roterende L4-Trojaan (periode van 445 uur) — de Lucy-flyby in april 2028 brengt zijn vreemde langwerpige vorm van dichtbij in beeld."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity"
     }
   ]
 }

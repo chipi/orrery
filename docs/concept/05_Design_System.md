@@ -289,6 +289,7 @@ The panel always contains, top to bottom:
 3. Stats grid (2-column)
 4. Signature element (the "still on the surface" section for Moon; the "scale fact" for Earth orbit; the editorial fact for planets)
 5. Description (lead text, Space Mono upright)
+5a. Science cards (`ScienceCard`): at most five distinct `/science` sections, through `pickScienceLinks` (`src/lib/science-links.ts`, [UXD-022](../uxs/decisions/UXD-022-science-link-lists.md)); `expanded={false}` (title and intro) for the compact lists of a station module and an Earth object; a body with no curated list shows none, there is no per-type default
 6. Educational links
 7. Credit footer
 

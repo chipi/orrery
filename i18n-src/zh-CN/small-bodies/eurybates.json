@@ -2,9 +2,13 @@
   "description": "直径64 km的C型小行星，是L4特洛伊小行星欧律巴特斯族中最大的成员，该族是碰撞解体产生的碎块群。它有一颗直径1 km的卫星(Queta)，由哈勃空间望远镜于2018年发现。这是Lucy遇到的第一颗特洛伊小行星，时间为2027年8月12日，速度5.7 km/s。",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "欧律巴特斯在木星特洛伊群的 L4 点轨道运行——领先行星 60°。Lucy 将是首个访问特洛伊小行星的航天器（2027 年 8 月）。"
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist"
     }
   ]
 }

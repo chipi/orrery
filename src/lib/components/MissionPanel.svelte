@@ -28,6 +28,7 @@
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks, rankMissionScience } from '$lib/science-links';
   import WhyPopover from './WhyPopover.svelte';
   import { VehicleIcon, SpacecraftIcon, TrajectoryArrowIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
@@ -225,56 +226,18 @@
       !!onFly,
   );
 
-  // Curated /science cross-section list for the SCIENCE tab. Driven by what
-  // flight fields the mission actually has — only show sections relevant to
-  // this mission's actual phases. ∆v + Hohmann + mission-types always show
-  // (every mission touches them); the others gate on flight data presence.
-  let missionScienceSections = $derived.by(() => {
-    const list: { tab: ScienceTabId; section: string }[] = [
-      { tab: 'propulsion', section: 'dv-budget' },
-      { tab: 'transfers', section: 'hohmann-transfer' },
-    ];
-    const f = mission?.flight;
-    if (f?.launch?.c3_km2_s2 != null) list.push({ tab: 'propulsion', section: 'c3' });
-    if (f?.launch != null) {
-      list.push({ tab: 'mission-phases', section: 'trans-x-injection' });
-      // Launch-vehicle context — every mission's launcher draws from
-      // these foundational topics (issue #303 close-out).
-      list.push({ tab: 'propulsion', section: 'thrust-and-twr' });
-      list.push({ tab: 'propulsion', section: 'rocket-stages' });
-      list.push({ tab: 'propulsion', section: 'engine-types' });
-      list.push({ tab: 'propulsion', section: 'engine-clustering' });
-      list.push({ tab: 'propulsion', section: 'fuels-and-oxidizers' });
-      list.push({ tab: 'history', section: 'tsiolkovsky-equation-1903' });
-      // Goddard's 1926 first liquid-fueled rocket — the engineering
-      // companion to Tsiolkovsky's 1903 equation, paired in every
-      // MissionPanel that surfaces a launch vehicle. (#303 close-out.)
-      list.push({ tab: 'history', section: 'goddard-liquid-rocket-1926' });
-    }
-    if (f?.cruise?.tcm_count != null && f.cruise.tcm_count > 0)
-      list.push({ tab: 'mission-phases', section: 'tcm' });
-    // Attitude during the cruise is held by star trackers.
-    if (f?.cruise != null) list.push({ tab: 'mission-phases', section: 'star-trackers' });
-    if (f?.arrival?.v_infinity_km_s != null) {
-      list.push({ tab: 'propulsion', section: 'v-infinity' });
-      // An interplanetary arrival: its launch window repeats with the synodic period.
-      list.push({ tab: 'scales-time', section: 'sidereal-synodic' });
-    }
-    if (f?.arrival?.orbit_insertion_dv_km_s != null) {
-      list.push({ tab: 'mission-phases', section: 'orbit-insertion' });
-      // Insertion burns are placed by true anomaly (periapsis = 0°).
-      list.push({ tab: 'orbits', section: 'true-anomaly' });
-    }
-    // Flight positions and dates are given in the J2000 frame.
-    if (f != null) list.push({ tab: 'scales-time', section: 'j2000' });
-    if (f?.arrival?.entry_velocity_km_s != null) {
-      list.push({ tab: 'mission-phases', section: 'edl' });
-      // EDL phase pairs with throttling-and-gimbaling (powered descent).
-      list.push({ tab: 'propulsion', section: 'throttling-and-gimbaling' });
-    }
-    list.push({ tab: 'mission-phases', section: 'mission-types' });
-    return list;
-  });
+  // Ranked /science picks for the SCIENCE tab: the mission's class and defining phase, from language-neutral
+  // facts (science-links.ts). `crewed` lives in the index only, which this panel already loads.
+  let missionScienceSections = $derived(
+    mission
+      ? pickScienceLinks(
+          rankMissionScience({
+            ...mission,
+            crewed: mission.crewed ?? missionIndex.find((e) => e.id === mission.id)?.crewed,
+          }),
+        )
+      : [],
+  );
 
   // Map of `flight_data_quality !== "measured"` → caveat banner text.
   // null when measured / missing — banner hides entirely.
@@ -897,10 +860,10 @@
       {:else if tab === 'science'}
         <div class="science-tab">
           <p class="science-blurb">
-            {m.mp_science_blurb({ name: mission.name ?? mission.id, tab: m.mp_tab_flight() })}
+            {m.mp_science_blurb({ name: mission.name ?? mission.id })}
           </p>
           {#each missionScienceSections as { tab: t, section } (t + section)}
-            <ScienceCard tab={t} {section} />
+            <ScienceCard tab={t as ScienceTabId} {section} />
           {/each}
           {#if mission.links && mission.links.length > 0}
             <div class="science-library">

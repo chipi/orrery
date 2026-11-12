@@ -126,6 +126,13 @@
           }
         }
       },
+      "science": {
+        "type": "array",
+        "maxItems": 5,
+        "uniqueItems": true,
+        "items": { "type": "string", "pattern": "^[a-z0-9-]+/[a-z0-9-]+$" },
+        "description": "/science articles (tab/section) the panel offers as cards, 1 to 5, picked for this entry; src/lib/science-links.ts caps and dedupes them"
+      },
       "links": {
         "type": "array",
         "items": {

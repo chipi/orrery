@@ -43,13 +43,15 @@ export interface PlanetsData {
 /**
  * Pointer to a /science encyclopedia section, plus an optional
  * one-line "why this matters for THIS body" string rendered as an
- * italic prefix above the ScienceCard title. Shared across overlay
+ * upright line above the ScienceCard title. Shared across overlay
  * types (planets, sun, satellites) so all body panels can carry
  * curated science-section selections per body per locale.
  *
  * `tab` + `section` resolve to /science/<tab>/<section>; the lens
  * article itself is shared across all bodies — only the selection
- * and the `why` prefix are per-body.
+ * and the `why` line are per-body. A panel shows at most five
+ * (`pickScienceLinks` in `$lib/science-links`); `tab` and `section`
+ * are the same in every locale.
  */
 export interface ScienceSectionRef {
   /** Encyclopedia tab id — same union as ScienceTabId, but kept as a
@@ -61,7 +63,7 @@ export interface ScienceSectionRef {
   section: string;
   /** Optional: one short sentence saying why this concept matters for
    *  the specific body the panel is showing. Per-locale, translatable.
-   *  Renders as a small italic prefix above the card title. */
+   *  Renders as a small upright line above the card title. */
   why?: string;
 }
 

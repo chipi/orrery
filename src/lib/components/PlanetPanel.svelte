@@ -20,6 +20,7 @@
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import ScienceChip from './ScienceChip.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { MU_SUN_AU3_YR2, AU_PER_YR_TO_KMS, AU_TO_KM } from '$lib/fly-physics-constants';
@@ -34,23 +35,6 @@
   // full long-form content. 4 tabs fit comfortably without overflow.
   type Tab = 'overview' | 'gallery' | 'technical' | 'missions';
 
-  // Curated /science cross-section list — the Keplerian-mechanics core +
-  // the planets-tab PRD-024 set. Same for every planet; the user's
-  // planet-specific values live on the TECHNICAL tab and the cards
-  // here unpack what those values mean.
-  const PLANET_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string; why?: string }[] = [
-    { tab: 'orbits', section: 'keplerian-orbit' },
-    { tab: 'orbits', section: 'semi-major-axis' },
-    { tab: 'orbits', section: 'eccentricity' },
-    { tab: 'orbits', section: 'inclination' },
-    { tab: 'orbits', section: 'apsides' },
-    { tab: 'orbits', section: 'vis-viva' },
-    { tab: 'orbits', section: 'keplers-laws' },
-    { tab: 'planets', section: 'axial-tilt-and-seasons' },
-    { tab: 'planets', section: 'moons-of-the-system' },
-    { tab: 'planets', section: 'active-spacecraft-survey' },
-  ];
-
   type Props = {
     planet: LocalizedPlanet | null;
     open: boolean;
@@ -62,6 +46,8 @@
     covered?: boolean;
   };
   let { planet, open, onClose, onPlanMission, onMissionOpen, covered }: Props = $props();
+  // Each planet's `science_sections` (locale overlay) are its curated /science cards; there is no default list.
+  let scienceLinks = $derived(pickScienceLinks(planet?.science_sections));
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -228,10 +214,10 @@
       {#if tab === 'overview'}
         <p class="editorial">{planet.fact}</p>
         <p class="editorial">{planet.bio}</p>
-        {#if (planet.science_sections ?? PLANET_SCIENCE_SECTIONS).length > 0}
+        {#if scienceLinks.length > 0}
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
-            {#each planet.science_sections ?? PLANET_SCIENCE_SECTIONS as entry (entry.tab + entry.section)}
+            {#each scienceLinks as entry (entry.tab + entry.section)}
               <ScienceCard
                 tab={entry.tab as ScienceTabId}
                 section={entry.section}

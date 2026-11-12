@@ -27,6 +27,7 @@
   import { track, trackGalleryImageOpen } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
   import type { ScienceTabId } from '$types/science';
+  import { pickScienceLinks, refsFromSlugs } from '$lib/science-links';
   import ScienceCard from './ScienceCard.svelte';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
@@ -260,15 +261,15 @@
     const cycleSlug = entry?.specs?.cycle
       ? scienceSlugForCycle(String(entry.specs.cycle) as EngineCycle)
       : null;
-    const seen = new Set<string>();
-    const out: { slug: string; label: string }[] = [];
-    for (const slug of [...ENGINE_SCIENCE_PRIMERS, cycleSlug, ...(entry?.science ?? [])]) {
-      if (!slug || seen.has(slug)) continue;
-      seen.add(slug);
-      out.push({ slug, label: SCIENCE_LABELS[slug]?.() ?? slug.split('/').pop()! });
-    }
-    return out;
+    const refs = pickScienceLinks(
+      refsFromSlugs([...ENGINE_SCIENCE_PRIMERS, cycleSlug ?? '', ...(entry?.science ?? [])]),
+    );
+    return refs.map((r) => {
+      const slug = `${r.tab}/${r.section}`;
+      return { slug, label: SCIENCE_LABELS[slug]?.() ?? r.section };
+    });
   });
+  const entryScience = $derived(pickScienceLinks(refsFromSlugs(entry?.science)));
 
   function siteRoute(ls: FleetSiteLink): string {
     if (ls.type === 'moon') return localHref(`/moon?site=${encodeURIComponent(ls.site_id)}`);
@@ -585,10 +586,10 @@
              separately — see commit message. -->
         <!-- Science articles named in the entry's data (suits today); engines list
              theirs, with the cycle primers, under DETAIL instead. -->
-        {#if entry.category !== 'engine' && entry.science?.length}
+        {#if entry.category !== 'engine' && entryScience.length}
           <h3 class="section-h">{m.fleet_entry_learn_science()}</h3>
-          {#each entry.science as slug (slug)}
-            <ScienceCard tab={slug.split('/')[0] as ScienceTabId} section={slug.split('/')[1]!} />
+          {#each entryScience as r (r.tab + r.section)}
+            <ScienceCard tab={r.tab as ScienceTabId} section={r.section} />
           {/each}
         {/if}
 

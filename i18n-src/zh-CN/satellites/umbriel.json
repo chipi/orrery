@@ -14,6 +14,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "天卫二绕天王星运行，距离为 266,000 km — 其轨道平面与行星倾斜，因此其季节变化反映了母星的极端轴向几何特征。"
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons"
     }
   ]
 }

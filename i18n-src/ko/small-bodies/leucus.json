@@ -2,9 +2,13 @@
   "description": "지름 35 km의 D형 L4 트로이 소행성으로, 자전 주기가 446시간으로 매우 느려 비슷한 크기의 천체 중 가장 느리게 도는 것 중 하나입니다. Lucy는 2028년 4월 18일에 조우합니다.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "레우쿠스는 비정상적으로 느리게 회전하는 L4 트로이 소행성(445시간 주기)입니다 — Lucy 탐사선이 2028년 4월에 통과하며 그 특이한 길쭉한 모양을 근접 촬영할 것입니다."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity"
     }
   ]
 }

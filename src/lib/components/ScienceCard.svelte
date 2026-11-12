@@ -1,7 +1,9 @@
 <!--
   ScienceCard — compact inline preview of a /science section. Used by the
-  SCIENCE tab on detail panels (mission, planet, earth-object, moon site,
-  mars site, ISS module, Tiangong module).
+  science block on detail panels (mission, planet, small body, moon, belt, Sun,
+  fleet suit, regime, Earth object, ISS and Tiangong module). A panel lists at
+  most five, through pickScienceLinks (`$lib/science-links`); `expanded={false}`
+  is the compact form for lists of three or more.
 
   Renders:
     - section title (clickable into /science/[tab]/[section])
@@ -35,8 +37,8 @@
      * lists where space is tight. */
     expanded?: boolean;
     /** Optional body-specific context — one short sentence about why
-     * this section matters FOR THIS BODY. Renders as a small italic
-     * prefix above the card title. When the body's overlay supplies a
+     * this section matters FOR THIS BODY. Renders as a small upright
+     * line above the card title. When the body's overlay supplies a
      * per-body `why` for this section, the panel passes it through. */
     why?: string;
   };
@@ -97,9 +99,8 @@
     outline: none;
   }
   .why {
-    /* Per-body context — small italic prefix above the title that
-     * answers "why this section, for this body". Italicised serif to
-     * differentiate from the encyclopedia content below. */
+    /* Per-body context — an upright line above the title that answers "why this
+     * section, for this body"; the dashed rule separates it from the article below. */
     font-size: var(--size-meta);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.6);

@@ -3,10 +3,6 @@
   "src/lib/components/AudioOverlay.svelte": {
     "(.txt)": "file extension of the transcript download; the word before it is a message"
   },
-  "src/lib/components/BeltPanel.svelte": {
-    "/science/planets/": "part of the link's URL path, shown as the link target",
-    "-belt": "part of the link's URL path, shown as the link target"
-  },
   "src/lib/components/CommandPalette.svelte": {
     "esc": "keyboard key cap"
   },

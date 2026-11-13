@@ -360,6 +360,8 @@ not audited.
 
 ## D. Worlds
 
+Briefs `docs/wip/2026-11-13-slice-D1-brief.md` … `D4-brief.md` (5263902db08). **Operator 2026-11-13: "Ok with all 12"** — every recommendation in the four briefs' decisions sections is approved (orbiters and the ruler stay in view while an orbiter is selected; the view shifts beside the panel for every selection on all four Worlds; the hover outline marks the selected orbiter; DETAIL tab for orbiters and the 9 Earth objects with a drawing, STORY for landers; hidden orbiter drawings shown; the hero stays below the action row; one shared gallery ladder for Moon, Mars and Venus; the blessed Venus heroes kept; Q8 = line style only; the 9-point routes get an LROC track if one exists, else "approximate route"; the Mars distance ramp for every Moon line).
+
 | Slice | Points | Change | Done when |
 |---|---|---|---|
 | D1 Orbiter selection | W3 | the selected orbiter stays visible after the fly-to (today low orbiters hide when altitude flips `orbitsInView`); the view shifts left of the open panel | shots: LRO, Lunar Prospector, MRO selected with the panel open |
@@ -412,7 +414,7 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 - Q5 Chip groups: group every world, or flatten Earth?
 - Q6 Panel close X: scrolls away with the content, or a slim fixed header bar?
 - Q7 Credits/colophon length: every section collapsed with its count, or "first N + show all"?
-- Q8 Moon traverses: line style only, or the Mars extras (patches, photos, stops)?
+- Q8 Moon traverses: line style only, or the Mars extras (patches, photos, stops)? — **answered 2026-11-13: line style only** (D4 brief decision 10a).
 - Q9 "Launcher sketches": the launchers inside the 198 cutaways, or the exploded launcher art?
 - Q10 Library: which "JPL planetary models", and which landing/rover research items?
 - Need a screenshot or URL: G5/G6 (which gallery page; the bottom line), O6 ("light minute / light year" — the regime data has neither), W5 (brackets — both bodies draw them), SN2 ("the zodiac chart" — none exists), MW3 (the Sag A* image), W6 (which sites show graphics).

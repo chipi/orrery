@@ -16,11 +16,11 @@
   import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
-  import Chip from './Chip.svelte';
+  import WorldLinkChip from './WorldLinkChip.svelte';
   import PanelActions from './PanelActions.svelte';
   import { page } from '$app/state';
   import { formatKm } from '$lib/format';
-  import { localeFromPage, localHref } from '$lib/locale';
+  import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import {
     getSatellites,
@@ -176,9 +176,7 @@
     </div>
 
     <PanelActions>
-      {#if entry.id === 'moon'}
-        <Chip kind="link" href={localHref(`/moon`)}>{m.panel_action_surface()}</Chip>
-      {/if}
+      <WorldLinkChip bodyId={entry.id} />
     </PanelActions>
 
     {#if gallery.length > 0}

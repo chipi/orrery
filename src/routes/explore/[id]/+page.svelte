@@ -6,6 +6,7 @@
 <script lang="ts">
   import '$lib/components/entity-page.css';
   import { localHref } from '$lib/locale';
+  import { worldLinkLabel, worldPathFor } from '$lib/explore/world-links';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
@@ -21,6 +22,7 @@
   let appHref = $derived(
     localHref(`/explore?id=${body.parent ? `${body.parent}:${body.id}` : body.id}`),
   );
+  let worldPath = $derived(worldPathFor(body.id));
   let jsonLd = $derived.by(() => {
     const loc = getLocale();
     const url = canonicalUrl(`/explore/${body.id}`, loc);
@@ -93,5 +95,10 @@
 
   <p class="actions">
     <a class="cta" href={appHref}>{m.launches_open_in_orrery()}</a>
+    {#if worldPath}
+      <a class="cta" href={localHref(worldPath)} data-testid="entity-world-link"
+        >{worldLinkLabel(body.id)}</a
+      >
+    {/if}
   </p>
 </article>

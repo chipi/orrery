@@ -140,6 +140,7 @@
   import { siteAnatomy, siteLandingSequence } from '$lib/surface-scene/site-anatomy';
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
+  import { explorePathFor } from '$lib/explore/world-links';
   import View3dControls from '$lib/components/View3dControls.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import SurfaceIndexPanel from '$lib/surface-scene/SurfaceIndexPanel.svelte';
@@ -370,6 +371,7 @@
   // needed (the component still self-gates on the 'planet-stats' lens).
   const bodyStats = $derived(PLANET_STATS[config.planet] ?? null);
   const bodyKinematics = $derived(SURFACE_BODY_KINEMATICS[config.planet]);
+  const explorePath = $derived(explorePathFor(config.planet));
 
   // Orbit-ruler auto-hide threshold (#363). The literal "below the lowest
   // orbit band" test hid far too late — at LEO (160 km) you're already
@@ -5632,8 +5634,18 @@
     </div>
   {/snippet}
 
+  <!-- The way back to the same body on /explore (UXD-028): the first control of the view row. -->
+  {#snippet backToExplore(testid: string)}
+    {#if explorePath}
+      <Chip kind="link" href={localHref(explorePath)} data-testid={testid}
+        >{m.world_back_to_explore()}</Chip
+      >
+    {/if}
+  {/snippet}
+
   {#snippet surfaceControls()}
     <div class="ctrl-row">
+      {@render backToExplore('surface-back-to-explore')}
       {#if !config.disable2D}
         <ViewToggleButton
           is2d={view === '2d'}
@@ -5744,6 +5756,7 @@
       role="group"
       aria-label={m.ui_view_controls()}
     >
+      {@render backToExplore('surface-back-to-explore-mobile')}
       {#if !config.disable2D}
         <ViewToggleButton
           is2d={view === '2d'}
@@ -7318,6 +7331,10 @@ sample      ${debugInfo.projectedPxSample}`}
       top: calc(var(--nav-height) + 8px);
       left: 8px;
       gap: 6px;
+      /* "Back to Explore" leads the row: where the width runs out (a long label, AR / SKY) the
+         row wraps rather than leaving the screen. */
+      flex-wrap: wrap;
+      max-width: calc(100vw - 16px);
       z-index: 45;
     }
   }

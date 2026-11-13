@@ -126,6 +126,12 @@ group renders as a single link to its **big-box hub** (`/explore/hub`, `/worlds`
 `/catalog`, `/learn`), each a `SectionHub` tile grid of the group's members.
 Desktop + mobile are unchanged (gated on `isTv`).
 
+**The two axes are linked, both ways, never by zooming (E6, D5, [UXD-028](decisions/UXD-028-explore-and-worlds-link-both-ways.md)).**
+The planet panel of Earth, Mars and Venus and the satellite panel of the Moon carry a "Go to Mars" (and so on) chip to the
+world page, and each Worlds page's view row starts with "Back to Explore", a link to `/explore?id=<body>`
+(`earth:moon` for the Moon) that opens the body's panel with the camera on it. One table,
+`src/lib/explore/world-links.ts`, feeds both directions and the `/explore/<id>` page's link; a fifth world is one row.
+
 ## §home-cards (2026-08 — the landing IA)
 
 The landing (`src/routes/+page.svelte`) card grid is a **discovery** surface, and
@@ -171,7 +177,8 @@ features that warrant top-level prominence.
 /missions                                      Mission Catalog (all missions)
 /missions?dest=MARS&status=ACTIVE&agency=NASA  Mission Catalog filtered (ADR-024)
 /earth                                         Earth Orbit
-/moon                                          Moon Map
+/moon                                          Moon Map (/mars and /venus are the other two Worlds; each links back to /explore?id=<body>, UXD-028)
+/explore?id=mars                               A body's panel opens and the camera focuses it (a planet, a small body, `parent:moon` for a satellite); the return deep link of the Worlds' "Back to Explore" chip (UXD-028)
 /lab                                           Physics Lab (empty Notebook)
 /lab?doc=<compact>                             Shared worksheet (URL-encoded card graph; grammar frozen in RFC-037 D-serialize)
 ```
@@ -207,6 +214,8 @@ Text pages (everything that is not a scene, the home page, the Lab or a browse t
 The orbit ruler's header is the one disclosure control that is not a chip: a `<button class="ui-hit">` with `aria-expanded` and `aria-controls` (a Chip's contract is `aria-pressed`), 24 px minimum hit area ([UXD-024](decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)).
 
 Every toggle, filter, choice and HUD action is a `<Chip>` (`src/lib/components/Chip.svelte`, look in `src/lib/styles/chip.css`, [UXD-014](decisions/UXD-014-one-chip-and-filter.md)): 30px on a fine pointer, 44px on a coarse one, 4px corners, 11px uppercase, outline at rest, one active look (soft accent fill, accent edge, white text; the world tint on `/moon`, `/mars` and `/venus`). Four kinds: toggle (`aria-pressed`), choice (`role="radio"` inside `ChipGroup role="radiogroup"`, arrow keys), action, link. Reset view is `ResetViewButton`. Filter groups on missions, fleet, launches, deep-sky, programs, the star and surface indexes and `/plan` are radiogroups. The FILTERS strip is a compact chip with the count after the label. Panels' close, back, Share and action chips are chips too (UXD-018). Kept outside the chip: tabs (`PanelTabRow`), nav toggles, cards, the standalone pages' CTAs, status and label pills, the Lab. Design System §5.7 and §5.7a hold the values. **Layer chips are one flat horizontal row** on Explore and every world (`LayerChipRow`, [UXD-015](decisions/UXD-015-flat-chip-row.md)): no groups, no captions, no master switches, no greyed chip, no vertical column; on a fine pointer the view actions (2D, RESET VIEW, SPIN, AR, SKY) sit first in the same row, 12px apart, RESET VIEW always present (disabled when inert); the row wraps between chips, and `/earth` is SURFACE, LAUNCHPADS, MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip for every orbiter). The INDEX panels on `/moon`, `/mars`, `/venus` and `/explore` carry a real link to each entity page (the neighbourhood INDEX links each star's `/explore/stars/<id>` page, the Milky Way, Virgo and Cosmic web INDEX the black holes'; `/explore` has the same INDEX at all eight scales, UXD-017); there is no separate A–Z tab there (`/missions` and `/fleet` keep it at the page foot).
+
+"Go to Mars" (the Explore panel's view chip, one string per body) and "Back to Explore" (the first chip of a Worlds page's view row, the top-left cluster on touch) are `Chip kind="link"`s: one link, no arrow glyph, the label wraps inside the chip ([UXD-028](decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
 
 ---
 

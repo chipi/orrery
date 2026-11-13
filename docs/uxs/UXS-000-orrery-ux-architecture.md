@@ -120,7 +120,7 @@ opening heading (UXD-007, e2e in slice D2), the deep-sky viewer fit (UXD-009), t
 
 Nothing below is a UXD. Each moves to one when the operator answers.
 
-**Operator decisions (asked once, before the phase that needs them)** — plan lines 24–32:
+**Operator decisions (asked once, before the phase that needs them)** — plan lines 24–32 (D5 is answered: an explicit link both ways, no switch on zoom, [UXD-028](decisions/UXD-028-explore-and-worlds-link-both-ways.md)):
 
 | Id | Question                                                                                                       |
 | -- | -------------------------------------------------------------------------------------------------------------- |
@@ -128,7 +128,6 @@ Nothing below is a UXD. Each moves to one when the operator answers.
 | D2 | Home: video instead of the hero graphic? A Higgsfield test video is a paid run: size and cost estimate first  |
 | D3 | TV home and TV app: scope                                                                                      |
 | D4 | Explore: drop the second-level nav and use the breadcrumb as the way through the levels?                       |
-| D5 | Explore: zooming into Earth, Mars, Moon, Venus switches to the world page, or an explicit link?                |
 | D6 | Launch camera: the operator shares example shots first                                                         |
 | D7 | Missions era filter designed with Higgsfield (paid) or in code                                                 |
 

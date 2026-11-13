@@ -8,6 +8,7 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
 - `body-ref.ts` — select = focus, solar system (UXD-019): `BodyRef`, the `?id=` ladder as a ref,
   the chip table (`chipOf`; asteroids and Arrokoth ride DWARFS), `isBodyInScene` (no object, no link),
   focus frames. The page's `selectBody` and the host's `focusBody` take it from there.
+- `world-links.ts` — the way between /explore and the four world pages (E6, UXD-028; no switch on zoom): `WORLD_LINKS` is the one table (the world page, and the `?id=` of the same body on /explore: the Moon is the satellite key `earth:moon`, a bare `moon` is not an id), `worldPathFor`, `explorePathFor`, `worldLinkLabel` (the "Go to Mars" words, one message per body so each language declines the name). `WorldLinkChip`, the `/explore/<id>` page and `SurfaceScene`'s "Back to Explore" chip read it; a fifth world is one row and one label.
 - `small-bodies.ts` — the solar-system small-body catalogue + orbit sampling.
 - `scale-index.ts` — the INDEX of the eight scales: the row model, `buildScaleIndexRows` (server-side; the solar-system rows carry a meta line of distance, size and moons built per request locale, and every row but the Sun and the two belts is under one of the five chips),
   the chips of each scale and the search / section helpers (UXD-017). `outerPageOf` is the one resolver

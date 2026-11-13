@@ -82,6 +82,10 @@ gone on touch too.
 - **Mechanism**: `Panel` provides its `onShare` through a context (`panel-share.svelte.ts`); every `PanelActions` draws it last; a host with no action still mounts `PanelActions` (its chips conditional inside), and an Earth object, which has no row, gets one from `Panel` holding Share alone. The other closes (dialogs, INDEX, overlays) keep `.ui-chip--close` at the chip size.
 - **Verification**: `tests/e2e/panel-shell.spec.ts` (× 24 × 24 and on the badges' centre line, its 44 px tap area on touch, Share in the action row and never in the header, Share opens the card).
 
+## Amendment 2026-11-13 — the "Explore surface" label becomes "Go to Mars" and so on (C9, UXD-028)
+
+- **Decision**: label 6 above names `Explore surface`; the view chip of Earth, Mars, Venus and the Moon is now "Go to Mars" and so on (one message per body, `WorldLinkChip`), and Venus has it. The row rule is unchanged: at most three host chips, Share last. See [UXD-028](UXD-028-explore-and-worlds-link-both-ways.md).
+
 ## Amendment 2026-11-12 — Overview three per row (operator)
 
 - **Why**: "Overview is too heavy with 4 rows of data at start". Two cells per row put eight values on four rows above the editorial text.

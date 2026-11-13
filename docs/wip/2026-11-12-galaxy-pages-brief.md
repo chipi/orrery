@@ -210,3 +210,7 @@ Phases 2 and 3 can swap or run side by side within the 2-agent limit. Pages in p
 ## Decisions (operator, 2026-11-13)
 
 All 8 recommendations of §5 approved as written: two typed paths (`/explore/galaxies/<id>`, `/explore/structures/<id>`); all 30 structures get pages; no arm or Sun pages, 47 Tucanae and NGC 6752 become deep-sky objects with text; a Related list on every page; glossary first for the names; sourced catalogue entries for the 30 structure distances; 400–600 characters for every entity; two batches, 05 (29 galaxies) then 06 (30 structures).
+
+## Status (2026-11-13)
+
+Phase 4 (heroes) built: the galaxy and structure pages and the deep-sky pages show the picture their panel shows, through the B3 loader (`getPageHero`, `EntityHero`), no new image file. Measured, not the brief's figures: pages with a hero are 2 of 29 galaxies (LMC, SMC), 3 of 30 structures (IC 342 Group, M101 Group, Perseus–Pisces Supercluster), 43 of 142 deep-sky pages plus M33; the only new panel match is Triangulum (NGC 604, a part-of photo). Every other gallery photo is already an object's own or belongs to no entity here. Details: ADR-096 items 17 and 18, CHANGE-INVENTORY row "Entity page heroes".

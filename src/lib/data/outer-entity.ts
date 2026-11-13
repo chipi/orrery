@@ -9,10 +9,13 @@ import {
   getLaniakea,
   getLocalGroup,
   getLocalSheet,
+  getPageHero,
   getStructureI18n,
+  getUniverseHero,
   getVirgo,
   type LocalGroupKind,
   type OuterTextOverlay,
+  type PageHero,
 } from './universe';
 import {
   DEEP_SKY_ALIAS,
@@ -53,6 +56,8 @@ interface OuterText {
   related: RelatedGroup[];
   /** The scale /explore?context=<scale>&pick=<id> opens this entity in. */
   scale: OuterScale;
+  /** The picture its panel shows (panel-heroes.json), or null: no hero, no slot. */
+  hero: PageHero | null;
 }
 
 /** What a /explore/galaxies/<id> page shows. */
@@ -238,6 +243,7 @@ export async function getGalaxyEntity(
     links: overlay.links ?? [],
     related,
     scale: 'local-group',
+    hero: await getPageHero(await getUniverseHero('local-group', id, locale, fetchFn), locale, fetchFn),
   };
 }
 
@@ -301,7 +307,22 @@ export async function getStructureEntity(
     links: overlay.links ?? [],
     related,
     scale: own[0].scale,
+    hero: await getPageHero(await structureHero(own, id, locale, fetchFn), locale, fetchFn),
   };
+}
+
+/** A structure listed on two scales has its hero keyed under whichever scale the panel opens it in. */
+async function structureHero(
+  own: { scale: OuterScale }[],
+  id: string,
+  locale: string,
+  fetchFn: FetchLike,
+) {
+  for (const s of own) {
+    const hero = await getUniverseHero(s.scale, id,locale, fetchFn);
+    if (hero) return hero;
+  }
+  return null;
 }
 
 function nameOf(scales: { members: StructureMember[] }[], id: string): string {

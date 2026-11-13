@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render } from 'svelte/server';
+import type { ComponentProps } from 'svelte';
 
 vi.mock('$app/state', () => ({ page: { url: new URL('http://localhost/explore/galaxies/lmc') } }));
 vi.mock('$app/environment', () => ({ browser: false }));
@@ -37,7 +38,8 @@ const data = {
   ]),
   openPath: openInOrreryPath('local-group', 'lmc'),
 };
-const html = (d = data) => render(OuterEntityPage, { props: { data: d } });
+const html = (d: ComponentProps<typeof OuterEntityPage>['data'] = data) =>
+  render(OuterEntityPage, { props: { data: d } });
 
 describe('OuterEntityPage (ADR-096 item 18)', () => {
   it('shows the fact as the lede, the bio, the rows with their catalogue link and one h1', () => {
@@ -71,6 +73,35 @@ describe('OuterEntityPage (ADR-096 item 18)', () => {
     expect(head).toContain('"@type":"BreadcrumbList"');
     expect(head).toContain('<title>Large Magellanic Cloud');
     expect(head).toContain('name="description"');
+  });
+
+  it('draws the hero between the lede and the bio: srcset pair, alt, the part pictured and the credit', () => {
+    const hero = {
+      src: '/images/deep-sky/jwst-tarantula.thumb.jpg',
+      full: '/images/deep-sky/jwst-tarantula.jpg',
+      fullWidth: 1600,
+      alt: 'The Tarantula Nebula in the Large Magellanic Cloud',
+      pictured: 'Tarantula Nebula',
+      credit: 'NASA, ESA, CSA, STScI',
+    };
+    const { body, head } = html({ ...data, hero });
+    expect(body).toContain('data-testid="entity-hero"');
+    expect(body).toContain('alt="The Tarantula Nebula in the Large Magellanic Cloud"');
+    expect(body).toContain(
+      'srcset="/images/deep-sky/jwst-tarantula.thumb.jpg 700w, /images/deep-sky/jwst-tarantula.jpg 1600w"',
+    );
+    expect(body).toContain('Pictured: Tarantula Nebula · NASA, ESA, CSA, STScI');
+    expect(body.indexOf('page-lead')).toBeLessThan(body.indexOf('entity-hero'));
+    expect(body.indexOf('entity-hero')).toBeLessThan(body.indexOf('It holds the Tarantula'));
+    expect(head).toContain('"image":"https://');
+    expect(head).toContain('/images/deep-sky/jwst-tarantula.jpg');
+  });
+
+  it('draws no hero and no slot without one', () => {
+    const { body, head } = html();
+    expect(body).not.toContain('entity-hero');
+    expect(body).not.toContain('<figure');
+    expect(head).not.toContain('"image"');
   });
 
   it('draws no rows block and no Related section when there are none', () => {

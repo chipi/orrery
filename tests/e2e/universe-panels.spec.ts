@@ -92,6 +92,13 @@ test.describe('outer-scale panels (MW3, MW5)', () => {
     await expect(p.locator('.hero-caption')).toContainText('Pictured: Tarantula Nebula');
   });
 
+  test('Triangulum: NGC 604 is its hero, captioned as the part pictured', async ({ page }) => {
+    await open(page, '/explore?context=local-group&pick=triangulum');
+    const p = panel(page);
+    await expect(p.locator('.panel-hero img')).toHaveAttribute('src', /jwst-ngc604\.thumb\.jpg/);
+    await expect(p.locator('.hero-caption')).toContainText('Pictured: NGC 604');
+  });
+
   test('a spiral arm has no hero: no slot, no empty frame, no tab row', async ({ page }) => {
     await open(page, '/explore?galaxy=perseus');
     const p = panel(page);

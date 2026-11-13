@@ -753,17 +753,66 @@ export async function getUniverseHero(
   if (!entry) return null;
   if (entry.src) return { src: entry.src, full: entry.src, position: entry.position };
   if (!entry.photoKey) return null;
-  const key = entry.photoKey;
-  const hero: UniverseHero = {
-    src: `/images/deep-sky/${key}.thumb.jpg`,
-    full: `/images/deep-sky/${key}.jpg`,
-    position: entry.position,
-  };
+  const hero = deepSkyPhotoHero(entry.photoKey, entry.position);
   if (entry.pictured) {
     const gallery = await getDeepSkyGallery(fetchFn, locale);
-    hero.pictured = gallery.find((i) => i.key === key)?.title;
+    hero.pictured = gallery.find((i) => i.key === entry.photoKey)?.title;
   }
   return hero;
+}
+
+/** A deep-sky gallery photo as a hero: its 700 px thumb, the full image as its provenance key. */
+export function deepSkyPhotoHero(key: string, position?: string): UniverseHero {
+  return {
+    src: `/images/deep-sky/${key}.thumb.jpg`,
+    full: `/images/deep-sky/${key}.jpg`,
+    position,
+  };
+}
+
+/** What an entity page draws as its hero: the panel's picture with what the page also needs. */
+export interface PageHero extends UniverseHero {
+  /** The image's alt text in the reader's language (en-US where a locale has none). */
+  alt: string;
+  /** Pixel width of the full image when `src` is a thumb of it (a srcset pair), else absent. */
+  fullWidth?: number;
+  /** Author or agency from the full image's provenance row. */
+  credit?: string;
+}
+
+const deepSkyKey = (full: string) => /^\/images\/deep-sky\/(.+)\.jpg$/.exec(full)?.[1];
+
+/**
+ * The hero of an entity page: the same picture its panel shows (getUniverseHero, or a deep-sky
+ * object's own photo), with alt text, the srcset width and the credit. Takes the prerender `fetch`.
+ */
+export async function getPageHero(
+  hero: UniverseHero | null,
+  locale: string,
+  fetchFn: FetchLike = fetch,
+): Promise<PageHero | null> {
+  if (!hero) return null;
+  const alts = async (l: string) =>
+    (await get<Record<string, string>>(`image-alt-text/${l}.json`, fetchFn).catch(() => null)) ??
+    {};
+  const key = deepSkyKey(hero.full);
+  const [local, fallback, prov, gallery] = await Promise.all([
+    alts(locale),
+    locale === 'en-US' ? Promise.resolve({}) : alts('en-US'),
+    get<{ entries: { path: string; author?: string | null; agency?: string | null }[] }>(
+      'image-provenance.json',
+      fetchFn,
+    ).catch(() => null),
+    key ? getDeepSkyGallery(fetchFn, locale) : Promise.resolve([] as DeepSkyImage[]),
+  ]);
+  const row = prov?.entries.find((e) => e.path === hero.full);
+  const width = gallery.find((i) => i.key === key)?.w;
+  return {
+    ...hero,
+    alt: local[hero.full] || (fallback as Record<string, string>)[hero.full] || '',
+    ...(key && width ? { fullWidth: width } : {}),
+    ...(row && (row.author ?? row.agency) ? { credit: (row.author ?? row.agency) as string } : {}),
+  };
 }
 
 // ─── Named-star gallery (B3, UXD-023) ──────────────────────────────────────

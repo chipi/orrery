@@ -6,10 +6,16 @@ import {
   getDeepSkyGallery,
   getDeepSkyI18n,
   getDeepSkyObject,
+  getPageHero,
+  getUniverseHero,
+  deepSkyPhotoHero,
   type DeepSkyCategory,
   type DeepSkyTextOverlay,
   type LocalizedCultureDoor,
+  type PageHero,
+  type UniverseHero,
 } from './universe';
+import { DEEP_SKY_ALIAS } from '../../../scripts/site-routes.mjs';
 
 type Link = NonNullable<DeepSkyTextOverlay['links']>[number];
 
@@ -36,6 +42,20 @@ export interface DeepSkyEntity {
   cultureDoors: LocalizedCultureDoor[];
   /** The gallery photograph's telescope, caption and credit; null for an object with no photo. */
   gallery: { telescope: string; caption: string; credit: string } | null;
+  /** The object's photo, else its Local Group / Milky Way twin's panel hero (M33: NGC 604); or null. */
+  hero: PageHero | null;
+}
+
+/** The panel hero of the scene ids that name this object (DEEP_SKY_ALIAS): M33's is its twin `triangulum`'s. */
+async function twinHero(id: string, locale: string, fetchFn: FetchLike): Promise<UniverseHero | null> {
+  for (const [alias, target] of Object.entries(DEEP_SKY_ALIAS)) {
+    if (target !== id) continue;
+    for (const level of ['local-group', 'milky-way'] as const) {
+      const hero = await getUniverseHero(level, alias, locale, fetchFn);
+      if (hero) return hero;
+    }
+  }
+  return null;
 }
 
 /**
@@ -57,6 +77,11 @@ export async function getDeepSkyEntity(
   ]);
   if (!o?.fact || !o.bio) return null;
   const image = findDeepSkyImage(gallery, obj.photoKey);
+  const hero = await getPageHero(
+    image ? deepSkyPhotoHero(image.key) : await twinHero(id, locale, fetchFn),
+    locale,
+    fetchFn,
+  );
   return {
     id,
     designation: obj.designation,
@@ -75,5 +100,6 @@ export async function getDeepSkyEntity(
     gallery: image
       ? { telescope: image.telescope, caption: image.caption, credit: image.credit }
       : null,
+    hero,
   };
 }

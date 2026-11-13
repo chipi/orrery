@@ -62,6 +62,46 @@ describe('getDeepSkyEntity', () => {
     expect(m42de?.gallery?.caption).not.toBe(m42?.gallery?.caption);
   });
 
+  it('a photographed object has its photo as the hero: thumb, full-width pair, alt in the locale, credit', async () => {
+    const m42 = await getDeepSkyEntity('m42', 'en-US');
+    expect(m42?.hero).toMatchObject({
+      src: '/images/deep-sky/jwst-orion.thumb.jpg',
+      full: '/images/deep-sky/jwst-orion.jpg',
+      fullWidth: expect.any(Number),
+    });
+    expect(m42?.hero?.alt.length).toBeGreaterThan(10);
+    expect(m42?.hero?.credit).toBeTruthy();
+    expect(m42?.hero?.pictured).toBeUndefined();
+    const de = await getDeepSkyEntity('m42', 'de');
+    expect(de?.hero?.alt).toBeTruthy();
+    expect(de?.hero?.alt).not.toBe(m42?.hero?.alt);
+  });
+
+  it('M33 has no photo of its own: its page takes the Triangulum panel hero, NGC 604, named as the part pictured', async () => {
+    const m33 = await getDeepSkyEntity('m33', 'en-US');
+    expect(m33?.gallery).toBeNull();
+    expect(m33?.hero).toMatchObject({
+      full: '/images/deep-sky/jwst-ngc604.jpg',
+      pictured: 'NGC 604',
+    });
+    expect(m33?.hero?.credit).toBeTruthy();
+  });
+
+  it('an object with no photo and no twin hero has none: no hero, no slot', async () => {
+    expect((await getDeepSkyEntity('m13', 'en-US'))?.hero).toBeNull();
+  });
+
+  it('every page object with a photo has a hero whose files exist and that carries alt text', async () => {
+    for (const id of deepSkyPageIds() as string[]) {
+      const e = await getDeepSkyEntity(id, 'en-US');
+      if (!e?.gallery) continue;
+      expect(e.hero, id).not.toBeNull();
+      expect(existsSync(`static${e.hero!.src}`), `${id} thumb`).toBe(true);
+      expect(existsSync(`static${e.hero!.full}`), `${id} full`).toBe(true);
+      expect(e.hero!.alt.length, `${id} alt`).toBeGreaterThan(5);
+    }
+  });
+
   it('keeps the Orion Nebula’s gateway into the TRAPPIST-1 system', async () => {
     expect((await getDeepSkyEntity('m42', 'en-US'))?.gatewaySystem).toBe('trappist-1');
   });

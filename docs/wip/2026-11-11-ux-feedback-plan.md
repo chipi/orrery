@@ -372,6 +372,8 @@ Briefs `docs/wip/2026-11-13-slice-D1-brief.md` … `D4-brief.md` (5263902db08). 
 
 ## E. Catalog
 
+Briefs `docs/wip/2026-11-13-slice-E1-brief.md` … `E5-brief.md` (3f9d6edd98a). **Operator 2026-11-13: all 23 recommendations approved ("Yes. 23"), except E-decision 12 (D7, the era strip): "For 12 we should use Higgsfield"** — option (b), Higgsfield mock-ups of the era strip first, then built in code; the run is sized (image count, model, credits) and gets the operator's go before launch (standing rule: size paid runs before launch). E-decision 13 (the strip shape) is then chosen from the mock-ups.
+
 | Slice | Points | Change | Done when |
 |---|---|---|---|
 | E1 Program page | PG2, PG3, PG4, PG5, PG6 | empty sections hidden; one mini-card for related programs (above "Go deeper"), surface sites (after Missions) and compact hardware cards; the mission detail keeps a fixed height | shots of Sputnik, Apollo, Cassini, Mars rovers |

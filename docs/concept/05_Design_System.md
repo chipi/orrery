@@ -81,7 +81,7 @@ The three-tier educational link system uses a consistent colour language across 
 Confirmed by the operator on 2026-11-13 (the swatch page "Orrery agency palette"), teal and cyan
 identity colours included. The code is the source: `src/lib/agencies.ts` (badge fill, card and
 mission accents; a compound agency takes its first partner's colour) and
-`src/lib/surface-map/nation-palette.ts` (surface-site markers, the nation legend and the Earth
+`src/lib/surface-map/nation-palette.ts` (surface-site markers, the nation legend, the Worlds' INDEX dots (§5.13) and the Earth
 regime panel's resident dots, which use a lighter chip colour for some agencies). A badge's text is
 white or dark by contrast.
 
@@ -489,10 +489,10 @@ The searchable, keyboard-reachable list of every selectable object of the scale 
 |---|---|
 | Search | `type="search"`, 12px, 6px radius; focus draws the `--color-accent-strong` edge |
 | Close chip | `<Chip kind="action" class="ui-chip--close">` with `×` beside the search: a 30px / 44px square, the same close chip as the panel header of §5.3 and every dialog, overlay, drawer and banner close (UXD-014), in the header outside the scrolling list, the same close control as the panel bar of §5.3 (B1 brief O6, [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.md)) |
-| Kind chips | `ChipGroup` radiogroup of `<Chip kind="choice">`: All, then the scale's kinds, plus Notable objects where the data has headliners; at most five besides All; no distance or size filter. A chip that filters on a badge carries its glyph (⊕ ★ ◈ ●). A chip with no matching row is not shown |
+| Kind chips | `ChipGroup` radiogroup of `<Chip kind="choice">`: All, then the scale's kinds (the solar system: Planets, Dwarfs, Asteroids with Arrokoth, Moons, Comets with ʻOumuamua; only the Sun and the two belts are under All alone), plus Notable objects where the data has headliners; at most five besides All; no distance or size filter. A chip that filters on a badge carries its glyph (⊕ ★ ◈ ●). A chip with no matching row is not shown |
 | Count | `shown / total`, `--size-label`, `--color-text-dim` |
 | Section label | Space Mono `--size-label`, uppercase, 1.5px spacing, `--color-text-dim`, top rule; absent at the head of an unsectioned list |
-| Row | A button, 8px / 10px padding, 6px radius. Lead slot (26px wide, so names line up): an 8px colour dot (a solar-system body's own colour) or the badges ⊕ system, ◈ culture door, ★ headliner, ● black hole. Name 13px, ellipsis. Meta (a moon's planet, a constellation, the kind) in `--size-label`, `--color-state`, at most 45% of the row |
+| Row | A button, 8px / 10px padding, 6px radius. Lead slot (26px wide, so names line up): an 8px colour dot (a solar-system body's own colour) or the badges ⊕ system, ◈ culture door, ★ headliner, ● black hole. Name 13px, ellipsis. Meta (a constellation, the kind) in `--size-label`, `--color-state`, at most 45% of the row beside the name. **The solar-system rows are two lines** (C6): a grid of the 26px lead slot (spanning both lines) and the name over the meta, which runs the full width, wraps after a " · " (two lines at most, then an ellipsis; no-break spaces keep "139,820 km" whole) and carries a `title` with the whole text; the meta is distance, diameter and, for a planet, its listed moons (`1.52 AU · 6,779 km · 2 major moons`; dwarf, asteroid, Kuiper object `2.77 AU · 940 km`; comet its distance; moon `Jupiter · 3,643 km`; belt `2.2–3.2 AU`; the Sun "Star") in the reader's number and unit forms (`format.ts` `planetIndexMeta` and its siblings). The other seven scales keep one line |
 | Row states | Hover and focus: 18% accent fill. Selected (`aria-current`): 28% accent fill, 55% accent edge. A fiction row (Gargantua): dashed edge, dim text |
 | ↗ page link | Beside the row, only where the object has an entity page. 14px glyph; 44px square on a coarse pointer, 30px wide on a fine one (`(hover: hover) and (pointer: fine)`) |
 | Empty | "No match" line, 11px, dim, centred |
@@ -502,6 +502,8 @@ The searchable, keyboard-reachable list of every selectable object of the scale 
 **Hidden but in the DOM.** One instance per scale is always mounted; a closed instance, or one whose scale is not on screen, has the `hidden` attribute, so its rows stay in the page. `/explore` is one prerendered HTML file for every `?context=`, so all eight lists are in it. Before hydration only the rows that have a page are written, as plain link rows, so the static page holds every entity link and no dead button; after hydration every row is a button and the ↗ link joins it.
 
 **One open state.** `indexOpen` is one flag for all eight scales. On a scale jump it stays open on a fine pointer and closes on a coarse one, where the 320px rail covers most of the width. The rail is not offered while a takeover owns the screen (black-hole lensing view, deep-sky immersion, an exoplanet's BodyScene), outside the solar system in the 2D view, or in Exhibit Mode. Selecting a black-hole row closes it.
+
+**The Worlds' index** (`SurfaceIndexPanel` on `/moon /mars /venus /earth`, still its own component) draws a site's 8px dot in its nation's colour (`colorFor(site)`, the nation legend's swatch colour, §2.4) with a 1px `rgba(255,255,255,0.35)` ring so the dark navy and dark red read on the panel; an Earth object keeps its own object colour. The orbit-or-land cue is in words, the last part of the meta line (`1976 · Active · On land` / `· In orbit`, the words of the Orbit and Land chips).
 
 **Selecting.** A row does what a canvas click does, including the camera move (§7.5, [UXD-019](../uxs/decisions/UXD-019-select-equals-focus.md)); the INDEX stays open after a select. Black holes sit in the INDEX of the scale their distance puts them in (Sagittarius A\* and Cygnus X-1 in the Milky Way, M87\* in Virgo, Gargantua under a Fiction section at the foot of the Cosmic web).
 
@@ -604,6 +606,8 @@ Full-screen 3D/2D. Regime legend strip below nav. Bottom bar with speed controls
 ### 6.6 Moon map (P06)
 
 Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not the Moon rotating. The 2D flat map uses a cylindrical projection (near side centred at 0° longitude). Filter strip replaces the planet pills. Agency filter stacks with status filter.
+
+**Index.** The INDEX rail's dot is the site's nation colour, the legend's (§5.13).
 
 **Notable:** The far side missions (Chang'e 4, Chang'e 6) can only be seen in 3D by rotating the camera — this is intentional design, not a bug. The far side is literally hidden from Earth. The 2D flat map reveals it at the edges.
 

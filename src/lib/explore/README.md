@@ -9,7 +9,7 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
   the chip table (`chipOf`; asteroids and Arrokoth ride DWARFS), `isBodyInScene` (no object, no link),
   focus frames. The page's `selectBody` and the host's `focusBody` take it from there.
 - `small-bodies.ts` — the solar-system small-body catalogue + orbit sampling.
-- `scale-index.ts` — the INDEX of the eight scales: the row model, `buildScaleIndexRows` (server-side),
+- `scale-index.ts` — the INDEX of the eight scales: the row model, `buildScaleIndexRows` (server-side; the solar-system rows carry a meta line of distance, size and moons built per request locale, and every row but the Sun and the two belts is under one of the five chips),
   the chips of each scale and the search / section helpers (UXD-017). `outerPageOf` is the one resolver
   of the page an outer-scale row links (the deep-sky page of a twin, else `/explore/galaxies/<id>` or
   `/explore/structures/<id>`, ADR-096 item 18); the entity loaders reuse it for their Related lists.
@@ -21,7 +21,7 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
   the `?context=<scale>&pick=<id>` link into the scene.
 - `paths-legend.ts` — PATHS layer rows, iconic taglines, interstellar craft.
 - `format.ts` — HUD formatters (scale numbers, light units, context names,
-  star colours, satellite sizes, time dilation, `planetName`). The galaxy and structure values
+  star colours, satellite sizes, time dilation, `planetName`, the solar-system INDEX meta line: `planetIndexMeta`, `smallBodyIndexMeta`, `moonIndexMeta`, `beltIndexMeta`). The galaxy and structure values
   (`galaxyDistance`, `galaxyDiameter`, `structureDistance`, `structureSpan`, the kind and membership
   labels) are shared by the six outer panels and the two entity pages, so they print one string;
   `outerLead` is the panel's lead (overlay fact and bio, else the kind blurb).

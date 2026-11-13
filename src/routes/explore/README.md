@@ -51,4 +51,4 @@ unless on screen, with one left-edge handle and one `indexOpen`; their rows are 
 and a row with no page joins on hydration. A row's select is the scene host's select function for
 that scale (`selectLgFn` … `selectCosmicWebFn`, `indexSelectStarFn`, `selectDeepSkyFn`,
 `mwDeepLinkFn`, `bhDeepLinkFn`) or the page's `selectPlanet` / `selectSun` / `selectSmallBody` /
-`selectSatellite` / `selectBelt`. `hub/` is the nav-group hub.
+`selectSatellite` / `selectBelt`. The Sun and each planet take their own colour as the row dot (`SOLAR_DOT`, from `PLANETS[].css`); every other solar-system row keeps the grey dot. `hub/` is the nav-group hub.

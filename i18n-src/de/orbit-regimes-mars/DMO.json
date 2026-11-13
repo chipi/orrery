@@ -2,7 +2,7 @@
   "name": "Tiefer Mars-Orbit",
   "short": "DMO",
   "story": "Oberhalb des areostatischen Orbits, im elliptischen Band zwischen 20.000 und 43.000 km. Die Hope-Sonde der VAE ist das einzige Raumfahrzeug hier — ihr 55-Stunden-Orbit folgt einer weiten elliptischen Bahn, die für globale Atmosphärenforschung konzipiert ist: Das Verweilen nahe der Apoapsis erlaubt es ihr, ganze Wettersysteme zu beobachten, wie sie sich über den gesamten Tag-Nacht-Terminator des Planeten entwickeln und wieder vergehen. Deimos, der äußere Marsmond, umkreist den Mars ebenfalls innerhalb dieses Bands in 23.460 km Entfernung.",
-  "comparison": "Die Apoapsis von Hope bei 43.000 km entspricht etwa 1/9 der Entfernung von Phobos zum Erdmond. Die Umlaufbahn wurde bewusst so gewählt, dass sie in der Mars-Flotte EINZIGARTIG ist — kein anderes Raumfahrzeug betrachtet den Planeten aus diesem Winkel.",
+  "comparison": "Die Apoapsis von Hope bei 43.000 km entspricht etwa 4% des Weges bis zum Rand der Hill-Sphäre des Mars. Die Umlaufbahn wurde bewusst so gewählt, dass sie in der Mars-Flotte EINZIGARTIG ist — kein anderes Raumfahrzeug betrachtet den Planeten aus diesem Winkel.",
   "residents": [
     {
       "id": "hope",

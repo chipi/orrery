@@ -356,9 +356,9 @@
         "dist_ly": {
           "value": 10763,
           "source": "Santander-García et al. 2008, 3.3 ± 0.9 kpc",
-          "bibcode": null,
+          "bibcode": "2008A&A...485..117S",
           "record_url": "https://arxiv.org/abs/0803.0448",
-          "note": "A&A 485, 117 (doi 10.1051/0004-6361:20079212); ADS bibcode not confirmed; gallery caption said ~15,000 light-years"
+          "note": "A&A 485, 117 (doi 10.1051/0004-6361:20079212); gallery caption said ~15,000 light-years"
         }
       }
     },
@@ -974,9 +974,9 @@
         "dist_ly": {
           "value": 203652,
           "source": "Graczyk et al. 2020, eclipsing-binary distance to the SMC, 62.44 ± 0.47 (stat.) ± 0.81 (syst.) kpc",
-          "bibcode": null,
+          "bibcode": "2020ApJ...904...13G",
           "record_url": "https://arxiv.org/abs/2010.08754",
-          "note": "distance of the host galaxy (SMC); ADS bibcode not confirmed (ApJ 904, 13); replaces the McConnachie 2012 value of 64 kpc"
+          "note": "distance of the host galaxy (SMC); ApJ 904, 13 (doi 10.3847/1538-4357/abbb2b); replaces the McConnachie 2012 value of 64 kpc"
         }
       }
     },
@@ -1026,9 +1026,9 @@
         "dist_ly": {
           "value": 203652,
           "source": "Graczyk et al. 2020, eclipsing-binary distance to the SMC, 62.44 ± 0.47 (stat.) ± 0.81 (syst.) kpc",
-          "bibcode": null,
+          "bibcode": "2020ApJ...904...13G",
           "record_url": "https://arxiv.org/abs/2010.08754",
-          "note": "distance of the host galaxy (SMC); ADS bibcode not confirmed (ApJ 904, 13); replaces the McConnachie 2012 value of 64 kpc"
+          "note": "distance of the host galaxy (SMC); ApJ 904, 13 (doi 10.3847/1538-4357/abbb2b); replaces the McConnachie 2012 value of 64 kpc"
         }
       }
     },
@@ -1680,9 +1680,9 @@
         "dist_ly": {
           "value": 3816,
           "source": "Meaburn et al. 2008, expansion proper motions of the lobes, 1.17 ± 0.14 kpc",
-          "bibcode": null,
+          "bibcode": "2008MNRAS.385..269M",
           "record_url": "https://arxiv.org/abs/0711.4359",
-          "note": "MNRAS 385, 269 (doi 10.1111/j.1365-2966.2007.12782.x); ADS bibcode not confirmed; gallery caption said ~2,430 light-years"
+          "note": "MNRAS 385, 269 (doi 10.1111/j.1365-2966.2007.12782.x); gallery caption said ~2,430 light-years"
         }
       }
     },
@@ -1895,9 +1895,9 @@
         "dist_ly": {
           "value": 448,
           "source": "Ortiz-León et al. 2017 (GOBELINS), VLBA parallax of Lynds 1688, 137.3 ± 1.2 pc",
-          "bibcode": null,
+          "bibcode": "2017ApJ...834..141O",
           "record_url": "https://arxiv.org/abs/1611.06466",
-          "note": "ApJ 834, 141 (doi 10.3847/1538-4357/834/2/141); ADS bibcode not confirmed; Zucker et al. 2020 gives 136 pc"
+          "note": "ApJ 834, 141 (doi 10.3847/1538-4357/834/2/141); Zucker et al. 2020 gives 136 pc"
         }
       }
     },
@@ -2775,9 +2775,9 @@
         "dist_ly": {
           "value": 5463,
           "source": "Stoop et al. 2024, Gaia distance to the cluster NGC 6618 in M17, 1675 pc",
-          "bibcode": null,
+          "bibcode": "2024A&A...681A..21S",
           "record_url": "https://arxiv.org/abs/2311.04174",
-          "note": "A&A, kinematic history of NGC 6618 / M 17; ADS bibcode not confirmed; replaces a wrong Hunt & Reffert 2023 name match (606 pc)"
+          "note": "A&A 681, A21 (doi 10.1051/0004-6361/202347383), kinematic history of NGC 6618 / M 17; replaces a wrong Hunt & Reffert 2023 name match (606 pc)"
         }
       }
     },

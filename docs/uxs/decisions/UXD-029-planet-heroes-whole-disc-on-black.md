@@ -1,6 +1,6 @@
 # UXD-029 — Planet heroes: the whole disc on black, planets only
 
-- **Status**: accepted (frame and Mars hero built; EP3 relocation not yet)
+- **Status**: accepted (built: frame, Mars hero, EP3 relocation)
 - **Date**: 2026-11-13 (proposed and decided)
 - **Decider**: the operator, 2026-11-13 — recommendations of `docs/wip/2026-11-13-slice-C10-brief.md` §12 approved as written ("I am OK on 25 recommendations", commit `ec0ceeb9be2`, for C6 to C10 together), then the side-by-side sheet: "whole disc for the eight unchanged pictures: yes"; Mars: first the 2018 picture (slot 04) with a tighter crop, then, after seeing it, **the SVS true-colour globe** (decision 4).
 - **Answers**: EP2, EP3 of the UX feedback plan; slice C10; BACKFILL B-033
@@ -20,6 +20,8 @@ Pluto is drawn by `SmallBodyPanel`, and its hero is `small-bodies/pluto/01` (New
 3. **The cards and the entity page are unchanged.** The collectible card's hero band is a cover crop under a fade (it shares the file, not the frame); `/explore/<id>` draws no hero picture.
 4. **Mars (built).** The hero is the new slot `planets/mars/06`: NASA Goddard SVS "Mars Rotate (True Color)" ([SVS 659](https://svs.gsfc.nasa.gov/659/), Commons file of the same name, PD-NASA), a **globe rendered in true colour from Mars Global Surveyor MOLA and Viking data, not a single photograph**, 2560 x 1920 with the disc 1635 px across (85 % of the height, like Earth 05 and Jupiter 01). Slots 03 and 04 stay in the gallery. The provenance title and the 14-locale alt text say it is a rendering. Not taken: the 2018 Hubble slot 04 as is (the disc is 51 % of its picture), cropped (a 970 px square: the operator judged it too soft next to Earth and Jupiter), and a 2016 Hubble photograph (candidate A of the sheet, disc 69 %). The operator chose the SVS globe on 2026-11-13; Earth 05 is likewise a rendered composite.
 
+5. **EP3 relocation (built, decision 3a).** Earth 04 (Apollo-Soyuz, a spacecraft in frame) moved to `missions/apollo-soyuz/05` and Venus 03 (Magellan artist concept) to `missions/magellan/06`, with `move-image-to-gallery.ts`; the gap each left was closed with `drop-gallery-slots.mjs --gone` (new flag: the slots are already gone, only renumber). Earth's hero override followed (`05.jpg` to `04.jpg`: same picture). Planet galleries: Earth 4, Venus 4, Mars 6.
+
 ## Consequences
 
 - All nine discs show whole at 400 px and at phone width; discs are 77 to 94 % of the box height (Saturn smaller: its rings fill the width).
@@ -29,7 +31,7 @@ Pluto is drawn by `SmallBodyPanel`, and its hero is `small-bodies/pluto/01` (New
 ## Not done
 
 - The collectible card's hero band is a cover crop, so Mars's card shows a band of the globe, not the whole disc (as for every planet).
-- EP3 relocation (Earth 04, Venus 03 to the mission galleries): not built in this slice's frame commit.
+- EP3 borderline slots (Venus 02 Maat Mons, Earth 01 "Earthrise" visualisation) stay, as recommended; no other slot was audited by eye.
 - Whether every explicit override entry should carry `disc: true` (brief decision 5a): not built; the data test guards the hero slot instead.
 
 ## Verification

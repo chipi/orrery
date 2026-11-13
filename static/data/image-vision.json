@@ -8542,7 +8542,7 @@
       "scored_at": "2026-06-08T11:12:37.740Z",
       "scoring_cost_usd": 0.007209
     },
-    "/images/planets/earth/04.jpg": {
+    "/images/missions/apollo-soyuz/05.jpg": {
       "score": 8,
       "subject": "A circular spacecraft module photographed from orbit with Earth's limb and cloud cover visible in the background below.",
       "category": "orbital",
@@ -8551,14 +8551,14 @@
         "y": 0.47
       },
       "variants": {
-        "1x1": "/images/planets/earth/04.1x1.jpg"
+        "1x1": "/images/missions/apollo-soyuz/05.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T11:12:40.847Z",
       "scoring_cost_usd": 0.007311
     },
-    "/images/planets/earth/05.jpg": {
+    "/images/planets/earth/04.jpg": {
       "score": 7,
       "subject": "A spacecraft module, likely a Space Shuttle payload or ISS component, photographed against the black void of space during an orbital rendezvous or deployment operation.",
       "category": "spacecraft",
@@ -8567,7 +8567,7 @@
         "y": 0.48
       },
       "variants": {
-        "1x1": "/images/planets/earth/05.1x1.jpg"
+        "1x1": "/images/planets/earth/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -9057,7 +9057,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/planets/venus/03.jpg": {
+    "/images/missions/magellan/06.jpg": {
       "score": 6,
       "subject": "Artist's concept rendering of the Magellan spacecraft in multiple orbital positions around Venus, with radar mapping swath visible on the planet surface.",
       "category": "render",
@@ -9066,14 +9066,14 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/planets/venus/03.1x1.jpg"
+        "1x1": "/images/missions/magellan/06.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T11:14:33.830Z",
       "scoring_cost_usd": 0.0050160000000000005
     },
-    "/images/planets/venus/04.jpg": {
+    "/images/planets/venus/03.jpg": {
       "score": 8,
       "subject": "Venus with its cloud swirls seen in ultraviolet by Japan's Akatsuki orbiter on 2 December 2022.",
       "category": "orbital",
@@ -9082,7 +9082,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/planets/venus/04.1x1.jpg"
+        "1x1": "/images/planets/venus/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,

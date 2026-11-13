@@ -883,7 +883,8 @@
     "galaxy-structure terms (2026-11-13)": "Binding forms for deep-text batch 06 (galaxy structures). The site's own form where the site already writes the term (messages explore_cosmic_web_kind_* and explore_hub_desc_*: supercluster, void, galaxy wall, filament; the large-scale-structure and Laniakea essays: cosmic web, basin of attraction, megaparsec, zone of avoidance), else the language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-13: redshift, peculiar velocity, comoving distance, tip of the red giant branch, surface brightness fluctuations, Local Void; zh converted to zh-CN, sr to Cyrillic). Not in Wikipedia and set by the translator from the neighbouring terms (galaxy cloud in all 13 languages; hi peculiar velocity, comoving distance, surface brightness fluctuations, tip of the red giant branch; ar peculiar velocity; sr comoving distance and the Local Void's native form; ja, ko and zh-CN void/Local Void compounds): confidence is medium or low as marked in _confidence. Stems accept every variant the site already writes in an unreviewed tree.",
     "galaxy and structure deep-text batches 05-06 (2026-11-13)": "Binding forms for deep-text batches 05 (29 Local Group galaxies) and 06 (30 structures). Terms: the site's own form where the site already writes it (messages explore_lg_kind_* and explore_mw_*: dwarf spheroidal / dwarf irregular / dwarf elliptical / irregular galaxy, satellite galaxy, dark-matter halo, kpc; metal-poor from deep-sky m92), else compounds built from the site's existing neighbouring terms (dwarf galaxy, galaxy, elliptical galaxy, tip of the red giant branch, redshift) by the translator; Wikipedia langlinks (fetched 2026-11-13) carried no article for these compounds in the target languages, so every non-site form here has no native-page check: medium or low in _confidence as marked, Hindi and the Arabic/Serbian/Korean scientific compounds (period-luminosity relation, velocity dispersion, mass-to-light ratio, eclipsing binary, early/late-type, overdensity, crossing time, potential well, watershed, repeller, Hubble flow) lowest. People: the translator's transliteration under the same rules as the deep-sky people (ru Practical Transcription, ja katakana, zh Xinhua-style names, ko national orthography, hi Devanagari, ar, sr Serbian Cyrillic); en.wikipedia langlinks supplied only a few (Baade, Barnard, Leavitt, Wolf, Swift, Melotte, Shapley, Zwicky, Schuster, West) and the rest has no source. Names whose original-language pronunciation is uncertain (Pietrzyński, Kallivayalil, Antoja, Gullieuszik, Oemler, Huchra, van Zee, Wakamatsu, Lee, Jang, Kim, Sohn, Wu, Mei) are the lowest confidence. Latin-script locales keep the English spelling and carry no entry. Constellations Apus, Antlia, Horologium, Indus, Norma: the language Wikipedia titles where present (ar, hi, ja, ko, ru, sr, de, fr, it, nl, zh for Apus and Antlia), else the established names. Observatories and surveys (class place): the site's own observatory page names (Palomar, Mount Wilson, Very Large Telescope), else Wikipedia titles (Lowell, Sloan Digital Sky Survey) or the translator's forms. Not added (origin-rule vehicles and catalogue designations): Hubble, Gaia, Chandra, Cosmicflows-4, GRAVITY, DDO, Maffei 1/2, CfA2 (kept in Latin).",
     "galaxy and structure gaps (2026-11-13, round 2)": "Constellations: the language Wikipedia title of the English article (wikidata-labels.mjs, 2026-11-13). es and pt-BR constellations are the native names, not Latin (round 3, 2026-11-13): the language Wikipedia titles are the IAU Latin names, but the article ledes and the institutional sources write the native name. es: IGN/Observatorio Astronómico Nacional SkyAtlas2020_spa (ign.es/web/resources/docs/IGNCnig/Astronomia-pdf/SkyAtlas2020_spa_Canarias2.pdf; Tucán, Retículo, Sextante, Horno, Reloj, Regla, Ballena, Erídano, Boyero, Perros de Caza, Ave del Paraíso, Pavo Real, Neumático) and the es.wikipedia ledes (Fornax o el Horno, Norma, la Regla o la Escuadra, Horologium o el Reloj, Cetus o la Ballena, Boötes o el Boyero, Canes Venatici o los Perros de Caza, Antlia o la Bomba Neumática o la Máquina Neumática, Reticulum o el Retículo, Eridanus o el Erídano, Apus o el Ave del Paraíso, Sextans o el Sextante, Tucana o el Tucán, Pavo o el Pavo); Virgo and Leo stay (Spanish writes Virgo, Leo). pt-BR: Fiocruz Museu da Vida Mensageiros das Estrelas vols 3, 8, 9, 12 (Baleia, Pavão, Ave do Paraíso, Boieiro, Cães de Caça, Sextante) and the UFRJ Departamento de Astronomia thesis pantheon.ufrj.br/bitstream/11422/17795/3/GASilva.pdf (a table Latin / Portuguese: Máquina Pneumática, Esquadro, Retículo, Sextante, Tucano, Cães de Caça, Relógio, Fornalha, Boieiro) and the IAU OAE pt-BR Fornax map (astro4edu.org: Baleia, Erídano, Fornalha, Relógio); Erídano, Ursa Maior / Ursa Menor / Peixes follow the shipped pt-BR text. nl and de Pegasus, Hercules, Eridanus and de Netz are the native names (nl.wikipedia Pegasus (sterrenbeeld), Hercules, Eridanus (rivier Eridanos); de.wikipedia Der Pegasus, Eridanus auch Fluss Eridanus). sr-Cyrl Indus is Индус (sr Wikipedia 'Индус (сазвежђе)', and the Pavo–Indus filament entry already reads Пауна–Индуса); Индијанац, which no shipped text uses, is replaced. hi Leo/Sagittarius from hi Wikipedia (सिंह / धनु तारामंडल); hi Reticulum and Sextans transliterated or Latin like the site's hi dwarf-galaxy names. Names: the forms the staged texts used where the glossary was blank (Norma Cluster nl/hi/sr, Centaurus A, Tarantelnebel, Wolf-Lundmark-Melotte hi/sr), Latin for de/fr/es/it/nl/pt-BR survey and telescope names (Wikipedia: de/es/it/nl/pt Very Large Telescope, Sloan Digital Sky Survey), site messages galaxy_name_sagittarius_dwarf for hi and sr-Cyrl. A. G. Wilson = Albert George Wilson (Q499156): initials transliterated by sound (ru Дж., sr Џ.). Terms: tidal stream and comoving coordinates take the forms the translators converged on (they agree with the stellar stream and comoving distance bindings). ko 조기형 / 만기형 은하 confirmed on Korean pages (bizhankook.com/articles/18062, koreascience.kr JAKO201900937422558). Definitions read (round 3): tidal stream, Eyre and Binney 2011 \"The mechanics of tidal streams\", MNRAS, arXiv:1011.3672 (streams formed by the tidal disruption of cold, low-mass clusters in the potential of a massive host galaxy; relics of tidally stripped globular clusters and dwarf galaxies; they appear to delineate the progenitor orbit but are poorly represented by single orbits, so the en definition says \"roughly along the orbit\"); comoving coordinates, Komatsu, UT Austin astronomy course Spring 2005 lecture 23 (as.utexas.edu/astronomy/education/spring05/komatsu/lecture23.pdf: \"Comoving coordinate is the coordinate which expands in the same way as space; galaxies always remain at the same position in comoving coordinates\"), E. L. Wright, UCLA Cosmology Tutorial part 2 (astro.ucla.edu/~wright/cosmo_02.htm: distance to any comoving observer D(t) = a(t) D(now)), and Hogg 1999 \"Distance measures in cosmology\", arXiv:astro-ph/9905116 (comoving distance is the proper distance divided by the ratio of scale factors then to now, constant for objects moving with the Hubble flow). Science review of the 25 definitions of batches 05-06 (2026-11-13) applied to 18 of them; the other 7 stayed.",
-    "deep-text batch 5b (2026-11-13)": "Terms: main sequence, definition read on NASA Science 'Types of stars' (science.nasa.gov/universe/stars/types: a star fusing hydrogen to helium in its core); stellar population, definition read on Milone and Marino 2022, 'Multiple populations in star clusters' (arXiv:2206.10564: groups of stars with different elemental abundances and/or distinct sequences in photometric diagrams), the sodium, nitrogen, oxygen and helium pattern from the Milone et al. 2012 and 2010 abstracts the batch cites. Forms of the two terms: the first agents' forms from standard textbook usage, NOT checked on native pages (the Swinburne cosmos glossary was unreachable); ar main sequence follows the site's shipped science pages (النطاق الرئيس); ja also accepts the shipped メインシーケンス; hi and ar stellar population are the least sure (hi तारकीय जनसंख्या, ar عشيرة نجمية, the Arabic word for Population I/II). Names: Milone (Antonino Milone) transliterated by sound from the Italian, NOT checked on native pages; 47 Tucanae: ja きょしちょう座47 (kotobank / Nipponica), zh 杜鹃座47 (cdstm.cn, bjp.org.cn APOD), ko 큰부리새자리 47 (khan.co.kr, 2017-07-27), ru and sr 47 Тукана and hi, ar by the constellation name entries; Cape of Good Hope: the standard names in each language, not looked up individually. Solar mass and N-body are not glossary terms: the 13 translations reuse the forms of the shipped ngc-5139 text."
+    "deep-text batch 5b (2026-11-13)": "Terms: main sequence, definition read on NASA Science 'Types of stars' (science.nasa.gov/universe/stars/types: a star fusing hydrogen to helium in its core); stellar population, definition read on Milone and Marino 2022, 'Multiple populations in star clusters' (arXiv:2206.10564: groups of stars with different elemental abundances and/or distinct sequences in photometric diagrams), the sodium, nitrogen, oxygen and helium pattern from the Milone et al. 2012 and 2010 abstracts the batch cites. Forms of the two terms: the first agents' forms from standard textbook usage, NOT checked on native pages (the Swinburne cosmos glossary was unreachable); ar main sequence follows the site's shipped science pages (النطاق الرئيس); ja also accepts the shipped メインシーケンス; hi and ar stellar population are the least sure (hi तारकीय जनसंख्या, ar عشيرة نجمية, the Arabic word for Population I/II). Names: Milone (Antonino Milone) transliterated by sound from the Italian, NOT checked on native pages; 47 Tucanae: ja きょしちょう座47 (kotobank / Nipponica), zh 杜鹃座47 (cdstm.cn, bjp.org.cn APOD), ko 큰부리새자리 47 (khan.co.kr, 2017-07-27), ru and sr 47 Тукана and hi, ar by the constellation name entries; Cape of Good Hope: the standard names in each language, not looked up individually. Solar mass and N-body are not glossary terms: the 13 translations reuse the forms of the shipped ngc-5139 text.",
+    "deep-sky gaps (2026-11-13, L38 / L39)": "Terms bound to the forms the deep-sky texts already used where they are a native term, else the language Wikipedia title (wikidata-labels.mjs, 2026-11-13): millisecond pulsar (ru Миллисекундный пульсар, ja ミリ秒パルサー, zh 毫秒脉冲星, ko 밀리초 펄서 as in the pulsar binding, fr Pulsar milliseconde, it Pulsar millisecondo, pt Pulsar de milissegundo, nl Millisecondepulsar), anemic spiral (ru Анемичная галактика, ja 貧血銀河, ko 빈혈 은하, fr/es/it/pt Galaxie anémique and its equivalents), flocculent spiral (ru Флоккулентная спиральная галактика, ja 羊毛状渦巻銀河, zh 絮結螺旋星系, ko 양털 나선 은하, ar مجرة حلزونية صوفية, fr Galaxie spirale cotonneuse, es Galaxia espiral floculenta, it Galassia a spirale flocculenta, pt Galáxia espiral floculante/floculenta), metallicity (ru Металличность, ja 金属量, zh 金屬量, ko 금속함량, hi धातुता, sr Металичност, de Metallizität, fr Métallicité, es Metalicidad, it Metallicità, pt Metalicidade; ar الفلزية follows the root of the site's metal-poor form, the Arabic Wikipedia title is معدنية; nl metalliciteit is the usual Dutch astronomy spelling, nl Wikipedia has no article), OB association (zh OB星协, fr, es, it Wikipedia titles; ru OB-ассоциация, ja, ko 성협, hi, ar, sr, de, nl, pt written as the Latin letters OB plus the language's word for association, not attested on a native page). Not in Wikipedia and set by the translators from the neighbouring terms: core-collapsed cluster (all 13), galactic wind (all 13; the site's galaxy-wind texts), hi/ar/sr forms of the others. Names: caption forms (Hidden Galaxy, Mystic Mountain, euclid-ic342 and hst-mystic-mountain in deep-sky.json) and the forms the translators used in the deep-sky texts (Cooling Tower, Little Beehive, Hourglass region, Great Rift, Small Sagittarius Star Cloud, Witch's Broom, Pickering's Triangle, Biela's Comet) except Great Rift ru Большой Провал, zh 银河大裂缝, fr Grand Rift, nl Grote Rift (Wikipedia titles). ar Hidden Galaxy stays the entity-page name IC ٣٤٢ (the Arabic Wikipedia label); the Arabic text writes the nickname المجرة المخفية. es Scutum is Escudo (as pt-BR). L39: ru Галактики Антенны is the ru Wikipedia title (the glossary had the Latin Antennae); pt-BR Nebulosa Olho de Gato is the pt Wikipedia title."
   },
   "body": {
     "Earth": {
@@ -2003,6 +2004,21 @@
       "zh-CN": "67P/丘留莫夫-格拉西缅科彗星",
       "hi": "67P/चुरयुमोव-गेरासिमेंको",
       "ar": "67P/تشوريوموف-جيراسيمنكو"
+    },
+    "Biela's Comet": {
+      "ru": "Комета Биэлы",
+      "ja": "ビエラ彗星",
+      "zh-CN": "比拉彗星",
+      "ko": "비엘라 혜성",
+      "hi": "बीला धूमकेतु",
+      "ar": "مذنب بيلا",
+      "sr-Cyrl": "Биелина комета",
+      "de": "Bielas Komet",
+      "fr": "Comète de Biela",
+      "es": "Cometa de Biela",
+      "it": "Cometa di Biela",
+      "nl": "Komeet van Biela",
+      "pt-BR": "Cometa de Biela"
     }
   },
   "feature": {
@@ -9485,7 +9501,8 @@
       "it": "Scudo",
       "nl": "Schild",
       "pt-BR": "Escudo",
-      "_qid": "Q10529"
+      "_qid": "Q10529",
+      "es": "Escudo"
     },
     "Canis Major": {
       "ru": "Большой Пёс",
@@ -9601,7 +9618,10 @@
       "it": "Nebulosa Granchio australe",
       "nl": "Zuidelijke Krabnevel",
       "pt-BR": "Nebulosa Caranguejo do Sul",
-      "_qid": "Q1060819"
+      "_qid": "Q1060819",
+      "ko": "남쪽 게 성운",
+      "ar": "سديم السرطان الجنوبي",
+      "sr-Cyrl": "Јужна маглина Рак"
     },
     "Southern Crab Nebula": {
       "ru": "Туманность Южный Краб",
@@ -9614,7 +9634,10 @@
       "it": "Nebulosa Granchio australe",
       "nl": "Zuidelijke Krabnevel",
       "pt-BR": "Nebulosa Caranguejo do Sul",
-      "_qid": "Q1060819"
+      "_qid": "Q1060819",
+      "ko": "남쪽 게 성운",
+      "ar": "سديم السرطان الجنوبي",
+      "sr-Cyrl": "Јужна маглина Рак"
     },
     "Luyten's Star": {
       "ru": "Звезда Лейтена",
@@ -9695,7 +9718,8 @@
       "it": "Nebulosa Laguna",
       "nl": "Lagunenevel",
       "pt-BR": "Nebulosa Laguna",
-      "_qid": "Q11243"
+      "_qid": "Q11243",
+      "hi": "लैगून नेबुला"
     },
     "Eagle Nebula": {
       "ru": "туманность Орёл",
@@ -9771,7 +9795,8 @@
       "fr": "galaxie de la Roue de chariot",
       "es": "Galaxia Rueda de Carro",
       "pt-BR": "Galáxia Cartwheel",
-      "_qid": "Q1208155"
+      "_qid": "Q1208155",
+      "sr-Cyrl": "Галаксија Точак"
     },
     "Betelgeuse": {
       "ru": "Бетельгейзе",
@@ -10893,7 +10918,7 @@
       "es": "Nebulosa Ojo de Gato",
       "it": "nebulosa Occhio di Gatto",
       "nl": "Kattenoognevel",
-      "pt-BR": "Nebulosa Olho de gato",
+      "pt-BR": "Nebulosa Olho de Gato",
       "_qid": "Q15829",
       "sr-Cyrl": "Маглина Мачје око"
     },
@@ -11215,7 +11240,9 @@
       "it": "Galassia Leo I",
       "nl": "Leo I",
       "pt-BR": "Leo I",
-      "_qid": "Q35810"
+      "_qid": "Q35810",
+      "hi": "सिंह I बौनी आकाशगंगा",
+      "sr-Cyrl": "Патуљаста галаксија Лав I"
     },
     "Leo II Dwarf": {
       "ru": "Карликовая галактика II в созвездии Лев",
@@ -11229,7 +11256,9 @@
       "it": "Galassia Leo II",
       "nl": "Leo II",
       "pt-BR": "Leo II",
-      "_qid": "Q35776"
+      "_qid": "Q35776",
+      "hi": "सिंह II बौनी आकाशगंगा",
+      "sr-Cyrl": "Патуљаста галаксија Лав II"
     },
     "Local Sheet": {
       "ru": "Местный лист",
@@ -11432,7 +11461,9 @@
       "it": "Quintetto di Stephan",
       "nl": "Kwintet van Stephan",
       "pt-BR": "Quinteto de Stephan",
-      "_qid": "Q5114"
+      "_qid": "Q5114",
+      "hi": "स्टीफ़न पंचक",
+      "sr-Cyrl": "Стефанов квинтет"
     },
     "NGC 1052-DF2": {
       "pt-BR": "NGC1052-DF2",
@@ -11601,7 +11632,7 @@
       "pt-BR": "Nebulosa do Anel Austral"
     },
     "Antennae Galaxies": {
-      "ru": "галактики Antennae",
+      "ru": "Галактики Антенны",
       "ja": "アンテナ銀河",
       "zh-CN": "触角星系",
       "ko": "더듬이 은하",
@@ -11618,7 +11649,19 @@
     },
     "Hidden Galaxy": {
       "ar": "IC ٣٤٢",
-      "_qid": "Q757396"
+      "_qid": "Q757396",
+      "ru": "Скрытая галактика",
+      "ja": "隠れた銀河",
+      "zh-CN": "隐藏的星系",
+      "ko": "숨은 은하",
+      "hi": "छिपी हुई आकाशगंगा",
+      "sr-Cyrl": "Скривена галаксија",
+      "de": "Verborgene Galaxie",
+      "fr": "Galaxie cachée",
+      "es": "Galaxia Oculta",
+      "it": "Galassia Nascosta",
+      "nl": "Verborgen Sterrenstelsel",
+      "pt-BR": "Galáxia Oculta"
     },
     "Regulus": {
       "ru": "Регул",
@@ -11659,7 +11702,9 @@
       "it": "Nebulosa Velo",
       "nl": "Sluiernevel",
       "pt-BR": "Nebulosa do Véu",
-      "_qid": "Q828325"
+      "_qid": "Q828325",
+      "hi": "घूँघट नेबुला",
+      "sr-Cyrl": "Маглина Вео"
     },
     "Maffei Group": {
       "ja": "マフェイ銀河群",
@@ -11890,7 +11935,8 @@
       "it": "Galassia Sombrero",
       "nl": "Sombrerostelsel",
       "pt-BR": "Galáxia do Sombreiro",
-      "_qid": "Q91461627"
+      "_qid": "Q91461627",
+      "hi": "सोम्ब्रेरो गैलेक्सी"
     },
     "Canis Minor": {
       "ru": "Малый Пёс",
@@ -14056,6 +14102,126 @@
       "it": "47 Tucanae",
       "nl": "47 Tucanae",
       "pt-BR": "47 Tucanae"
+    },
+    "Mystic Mountain": {
+      "ru": "Мистическая гора",
+      "ja": "ミスティック・マウンテン",
+      "zh-CN": "神秘山",
+      "ko": "신비로운 산",
+      "hi": "रहस्यमय पर्वत",
+      "ar": "الجبل الصوفي",
+      "sr-Cyrl": "Мистична планина",
+      "de": "Mystischer Berg",
+      "fr": "Montagne Mystique",
+      "es": "Montaña Mística",
+      "it": "Montagna Mistica",
+      "nl": "Mystieke Berg",
+      "pt-BR": "Montanha Mística"
+    },
+    "Cooling Tower": {
+      "ru": "Градирня",
+      "ja": "冷却塔",
+      "zh-CN": "冷却塔",
+      "ko": "냉각탑",
+      "hi": "शीतलन मीनार",
+      "ar": "برج التبريد",
+      "sr-Cyrl": "Расхладни торањ",
+      "de": "Kühlturm",
+      "fr": "Tour de refroidissement",
+      "es": "Torre de Refrigeración",
+      "it": "Torre di Raffreddamento",
+      "nl": "Koeltoren",
+      "pt-BR": "Torre de Resfriamento"
+    },
+    "Little Beehive Cluster": {
+      "ru": "Малые Ясли",
+      "ja": "小プレセペ星団",
+      "zh-CN": "小鬼宿星团",
+      "ko": "작은 프레세페 성단",
+      "hi": "छोटा प्रेसेपे तारागुच्छ",
+      "ar": "النثرة الصغيرة",
+      "sr-Cyrl": "Мало јато Праесепе",
+      "de": "Kleiner Bienenstockhaufen",
+      "fr": "Petit Amas de la Ruche",
+      "es": "Pequeño Cúmulo de la Colmena",
+      "it": "Piccolo Ammasso dell'Alveare",
+      "nl": "Kleine Bijenkorfhoop",
+      "pt-BR": "Pequeno Aglomerado da Colmeia"
+    },
+    "Hourglass region": {
+      "ru": "Песочные часы",
+      "ja": "砂時計領域",
+      "zh-CN": "沙漏区域",
+      "ko": "모래시계 영역",
+      "hi": "रेतघड़ी क्षेत्र",
+      "ar": "الساعة الرملية",
+      "sr-Cyrl": "Пешчани сат",
+      "de": "Sanduhr-Region",
+      "fr": "Sablier",
+      "es": "Reloj de Arena",
+      "it": "Clessidra",
+      "nl": "Zandloper-gebied",
+      "pt-BR": "Ampulheta"
+    },
+    "Great Rift": {
+      "ru": "Большой Провал",
+      "ja": "グレートリフト",
+      "zh-CN": "银河大裂缝",
+      "ko": "큰 암흑대",
+      "hi": "विशाल दरार (ग्रेट रिफ़्ट)",
+      "ar": "الصدع العظيم",
+      "sr-Cyrl": "Велика пукотина",
+      "de": "Große Dunkelwolke",
+      "fr": "Grand Rift",
+      "es": "Gran Grieta",
+      "it": "Grande Frattura",
+      "nl": "Grote Rift",
+      "pt-BR": "Grande Fenda"
+    },
+    "Small Sagittarius Star Cloud": {
+      "ru": "Малое звёздное облако Стрельца",
+      "ja": "いて座小星雲",
+      "zh-CN": "人马座小星云",
+      "ko": "궁수자리 작은 별 구름",
+      "hi": "धनु के छोटे तारा-बादल",
+      "ar": "سحابة القوس النجمية الصغيرة",
+      "sr-Cyrl": "Мало звездано облак у Стрелцу",
+      "de": "Kleine Sagittarius-Sternwolke",
+      "fr": "Petite Nuée stellaire du Sagittaire",
+      "es": "Pequeña Nube Estelar de Sagitario",
+      "it": "Piccola Nube Stellare del Sagittario",
+      "nl": "Kleine Boogschutter-sterrenwolk",
+      "pt-BR": "Pequena Nuvem Estelar de Sagitário"
+    },
+    "Witch's Broom": {
+      "ru": "Метла ведьмы",
+      "ja": "魔女のほうき",
+      "zh-CN": "女巫扫帚",
+      "ko": "마녀의 빗자루",
+      "hi": "चुड़ैल की झाड़ू",
+      "ar": "مكنسة الساحرة",
+      "sr-Cyrl": "Вештичја метла",
+      "de": "Hexenbesen",
+      "fr": "Balai de sorcière",
+      "es": "Escoba de la Bruja",
+      "it": "Scopa della Strega",
+      "nl": "Heksenbezem",
+      "pt-BR": "Vassoura da Bruxa"
+    },
+    "Pickering's Triangle": {
+      "ru": "Треугольник Пикеринга",
+      "ja": "ピッカリングの三角形",
+      "zh-CN": "皮克林三角",
+      "ko": "피커링의 삼각형",
+      "hi": "पिकरिंग का त्रिभुज",
+      "ar": "مثلث بيكرينغ",
+      "sr-Cyrl": "Пикерингов троугао",
+      "de": "Pickering-Dreieck",
+      "fr": "Triangle de Pickering",
+      "es": "Triángulo de Pickering",
+      "it": "Triangolo di Pickering",
+      "nl": "Driehoek van Pickering",
+      "pt-BR": "Triângulo de Pickering"
     }
   },
   "agency": {
@@ -25479,6 +25645,335 @@
       "it": "popolazione stellare",
       "nl": "stellaire populatie",
       "pt-BR": "população estelar"
+    },
+    "anemic spiral": {
+      "_sense": "a spiral galaxy with unusually little star formation and smooth, low-contrast arms, usually because its gas was stripped away or used up",
+      "_en": "\\banemic\\b",
+      "_match": {
+        "ru": ["анемичн\\p{L}*"],
+        "ja": ["貧血"],
+        "zh-CN": ["贫血"],
+        "ko": ["빈혈"],
+        "hi": ["रक्तहीन", "एनीमिक"],
+        "ar": ["شاحب\\p{L}*"],
+        "sr-Cyrl": ["анемичн\\p{L}*"],
+        "de": ["anämisch\\p{L}*"],
+        "fr": ["anémi\\p{L}*"],
+        "es": ["anémic\\p{L}*"],
+        "it": ["anemic\\p{L}*"],
+        "nl": ["anemisch\\p{L}*"],
+        "pt-BR": ["anêmic\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "medium",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "анемичная спиральная галактика",
+      "ja": "貧血銀河",
+      "zh-CN": "贫血星系",
+      "ko": "빈혈 은하",
+      "hi": "रक्तहीन सर्पिल आकाशगंगा",
+      "ar": "مجرة حلزونية شاحبة",
+      "sr-Cyrl": "анемична спирална галаксија",
+      "de": "anämische Spiralgalaxie",
+      "fr": "galaxie spirale anémique",
+      "es": "galaxia espiral anémica",
+      "it": "galassia spirale anemica",
+      "nl": "anemisch spiraalstelsel",
+      "pt-BR": "galáxia espiral anêmica"
+    },
+    "flocculent spiral": {
+      "_sense": "a spiral galaxy whose arms are patchy, short and broken instead of two long continuous arms",
+      "_en": "\\bflocculent\\b",
+      "_match": {
+        "ru": ["флоккулент\\p{L}*"],
+        "ja": ["羊毛状"],
+        "zh-CN": ["絮结"],
+        "ko": ["양털"],
+        "hi": ["ऊनी", "फ़्लॉक्युलेंट", "फ्लॉक्युलेंट"],
+        "ar": ["صوفي\\p{L}*"],
+        "sr-Cyrl": ["флокулент\\p{L}*"],
+        "de": ["flockulent\\p{L}*", "Flocculent\\p{L}*"],
+        "fr": ["cotonneu\\p{L}*"],
+        "es": ["floculent\\p{L}*"],
+        "it": ["flocculent\\p{L}*"],
+        "nl": ["vlokkig\\p{L}*"],
+        "pt-BR": ["floculent\\p{L}*", "floculant\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "флоккулентная спиральная галактика",
+      "ja": "羊毛状渦巻銀河",
+      "zh-CN": "絮结螺旋星系",
+      "ko": "양털 나선 은하",
+      "hi": "ऊनी (फ़्लॉक्युलेंट) सर्पिल आकाशगंगा",
+      "ar": "مجرة حلزونية صوفية",
+      "sr-Cyrl": "флокулентна спирална галаксија",
+      "de": "flockulente Spiralgalaxie",
+      "fr": "galaxie spirale cotonneuse",
+      "es": "galaxia espiral floculenta",
+      "it": "galassia a spirale flocculenta",
+      "nl": "vlokkig spiraalstelsel",
+      "pt-BR": "galáxia espiral floculenta"
+    },
+    "millisecond pulsar": {
+      "_sense": "a pulsar spun up to a rotation of a few milliseconds by matter falling in from a companion star",
+      "_en": "\\bmillisecond pulsars?\\b",
+      "_match": {
+        "ru": ["миллисекундн\\p{L}* пульсар\\p{L}*"],
+        "ja": ["ミリ秒パルサー"],
+        "zh-CN": ["毫秒脉冲星"],
+        "ko": ["밀리초 ?펄(?:서|사)"],
+        "hi": ["मिलीसेकंड ?पल्सर"],
+        "ar": ["نابض\\p{L}* (?:ب)?(?:ال)?ميلي"],
+        "sr-Cyrl": ["милисекундн\\p{L}* пулсар\\p{L}*"],
+        "de": ["Millisekunden-?[Pp]ulsar\\p{L}*"],
+        "fr": ["pulsars? milliseconde\\p{L}*"],
+        "es": ["púlsar(?:es)? de milisegundo\\p{L}*"],
+        "it": ["pulsar (?:al )?millisecond\\p{L}*"],
+        "nl": ["milliseconde-?pulsar\\p{L}*"],
+        "pt-BR": ["pulsar(?:es)? de milissegundo\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "миллисекундный пульсар",
+      "ja": "ミリ秒パルサー",
+      "zh-CN": "毫秒脉冲星",
+      "ko": "밀리초 펄서",
+      "hi": "मिलीसेकंड पल्सर",
+      "ar": "نجم نابض بالميلي ثانية",
+      "sr-Cyrl": "милисекундни пулсар",
+      "de": "Millisekundenpulsar",
+      "fr": "pulsar milliseconde",
+      "es": "púlsar de milisegundo",
+      "it": "pulsar millisecondo",
+      "nl": "millisecondepulsar",
+      "pt-BR": "pulsar de milissegundo"
+    },
+    "core-collapsed cluster": {
+      "_sense": "a globular cluster whose centre has contracted into an unusually dense knot of stars",
+      "_en": "\\bcore-collapsed\\b|\\bcores? as collapsed\\b",
+      "_match": {
+        "ru": ["коллапс\\p{L}*", "схлопн\\p{L}*"],
+        "ja": ["核が崩壊", "崩壊した核", "核崩壊"],
+        "zh-CN": ["核心已坍缩", "坍缩的核心", "核坍缩", "核心坍缩"],
+        "ko": ["핵이 붕괴", "핵 ?붕괴", "붕괴한 핵", "중심핵 ?붕괴"],
+        "hi": ["ढह[\\p{L}\\p{M}]*"],
+        "ar": ["منهار\\p{L}*", "انهيار"],
+        "sr-Cyrl": ["урушен\\p{L}*"],
+        "de": ["kollabiert\\p{L}*", "kollabier\\p{L}* Kern"],
+        "fr": ["effondr\\p{L}*"],
+        "es": ["colapsad\\p{L}*"],
+        "it": ["collassat\\p{L}*"],
+        "nl": ["ingestort\\p{L}*"],
+        "pt-BR": ["colapsad\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "скопление с коллапсировавшим ядром",
+      "ja": "核崩壊星団",
+      "zh-CN": "核坍缩星团",
+      "ko": "중심핵 붕괴 성단",
+      "hi": "ढहे क्रोड वाला तारागुच्छ",
+      "ar": "عنقود ذو قلب منهار",
+      "sr-Cyrl": "јато са урушеним језгром",
+      "de": "Haufen mit kollabiertem Kern",
+      "fr": "amas à cœur effondré",
+      "es": "cúmulo de núcleo colapsado",
+      "it": "ammasso con nucleo collassato",
+      "nl": "cluster met ingestorte kern",
+      "pt-BR": "aglomerado de núcleo colapsado"
+    },
+    "galactic wind": {
+      "_sense": "a flow of gas blown out of a galaxy by the radiation and supernova explosions of its young stars",
+      "_en": "\\bgalactic winds?\\b",
+      "_match": {
+        "ru": ["галактическ\\p{L}* ветр\\p{L}*", "галактическ\\p{L}* ветер"],
+        "ja": ["銀河風"],
+        "zh-CN": ["星系风"],
+        "ko": ["은하풍"],
+        "hi": ["आकाशगंगीय पवन"],
+        "ar": ["رياح مجرية", "ريح مجرية", "رياح (?:ال)?مجر\\p{L}*"],
+        "sr-Cyrl": ["галактичк\\p{L}* ветр\\p{L}*", "галактичк\\p{L}* ветар"],
+        "de": ["galaktisch\\p{L}* Wind\\p{L}*"],
+        "fr": ["vents? galactiques?"],
+        "es": ["vientos? galácticos?"],
+        "it": ["vent[oi] galattic[oi]"],
+        "nl": ["galactische wind\\p{L}*"],
+        "pt-BR": ["ventos? galácticos?"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "галактический ветер",
+      "ja": "銀河風",
+      "zh-CN": "星系风",
+      "ko": "은하풍",
+      "hi": "आकाशगंगीय पवन",
+      "ar": "رياح مجرية",
+      "sr-Cyrl": "галактички ветар",
+      "de": "galaktischer Wind",
+      "fr": "vent galactique",
+      "es": "viento galáctico",
+      "it": "vento galattico",
+      "nl": "galactische wind",
+      "pt-BR": "vento galáctico"
+    },
+    "OB association": {
+      "_sense": "a loose, gravitationally unbound group of young, massive O and B stars born together in the same cloud",
+      "_en": "\\bOB[- ]associations?\\b",
+      "_match": {
+        "ru": ["(?:OB|ОВ)-ассоциац\\p{L}*"],
+        "ja": ["OB ?アソシエーション"],
+        "zh-CN": ["OB ?星协"],
+        "ko": ["OB ?성협"],
+        "hi": ["OB ?तारा[ -]?संघ"],
+        "ar": ["رابط\\p{L}* (?:ال)?(?:نجمي\\p{L}* )?OB", "رابط\\p{L}* OB"],
+        "sr-Cyrl": ["OB асоцијациј\\p{L}*"],
+        "de": ["OB-Assoziation\\p{L}*"],
+        "fr": ["associations? OB"],
+        "es": ["asociaci\\p{L}* OB"],
+        "it": ["associazion\\p{L}* OB"],
+        "nl": ["OB-associati\\p{L}*"],
+        "pt-BR": ["associaç\\p{L}* OB", "associacoes OB"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "medium",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "OB-ассоциация",
+      "ja": "OBアソシエーション",
+      "zh-CN": "OB星协",
+      "ko": "OB 성협",
+      "hi": "OB तारा-संघ",
+      "ar": "رابطة OB النجمية",
+      "sr-Cyrl": "OB асоцијација",
+      "de": "OB-Assoziation",
+      "fr": "association OB",
+      "es": "asociación OB",
+      "it": "associazione OB",
+      "nl": "OB-associatie",
+      "pt-BR": "associação OB"
+    },
+    "metallicity": {
+      "_sense": "the share of a star's or galaxy's matter made of elements heavier than helium, which astronomers call metals",
+      "_en": "\\bmetallicity\\b",
+      "_match": {
+        "ru": ["металличност\\p{L}*"],
+        "ja": ["金属量"],
+        "zh-CN": ["金属量", "金属丰度"],
+        "ko": ["금속 ?(?:함량|량|도)"],
+        "hi": ["धातुता"],
+        "ar": ["(?:ال)?فلزية", "(?:ال)?معدنية"],
+        "sr-Cyrl": ["металичност\\p{L}*"],
+        "de": ["Metallizit\\p{L}*"],
+        "fr": ["métallicit\\p{L}*"],
+        "es": ["metalicidad\\p{L}*"],
+        "it": ["metallicit\\p{L}*"],
+        "nl": ["metallicit\\p{L}*"],
+        "pt-BR": ["metalicidade\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "металличность",
+      "ja": "金属量",
+      "zh-CN": "金属量",
+      "ko": "금속함량",
+      "hi": "धातुता",
+      "ar": "الفلزية",
+      "sr-Cyrl": "металичност",
+      "de": "Metallizität",
+      "fr": "métallicité",
+      "es": "metalicidad",
+      "it": "metallicità",
+      "nl": "metalliciteit",
+      "pt-BR": "metalicidade"
     }
   }
 }

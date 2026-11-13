@@ -1,0 +1,240 @@
+import { expect, test, type Page } from '@playwright/test';
+import { openDrawerTab } from './_helpers/hud-expand';
+import { waitForHydration } from './_helpers/hydration';
+
+/**
+ * C7 (UXD-026): the Iconic missions legend (a one-line title with an (i), the hovered craft's
+ * tagline in a card beside its row, 28 px rows, ICONIC MISSIONS first in its chip row) and the
+ * boxes in the scene (`n/N · date` over the milestone name, 12 px at every zoom, no mission
+ * name in them, one mission box at Today).
+ */
+
+const ROWS = '[data-testid^="paths-legend-row-"]';
+const desktopOnly = () =>
+  test.skip(test.info().project.name !== 'desktop-chromium', 'a fine-pointer legend');
+
+async function openPaths(page: Page) {
+  await page.goto('/explore?paths=1');
+  await waitForHydration(page);
+  await page.waitForFunction(() => typeof window.__iconicBoxes === 'function', null, {
+    timeout: 45_000,
+  });
+}
+
+const boxes = (page: Page) => page.evaluate(() => window.__iconicBoxes!());
+const shownBoxes = async (page: Page) => (await boxes(page)).filter((b) => b.shown);
+
+/** Hover a legend row until its mission's boxes are drawn: the 18 trajectories build one per
+ *  frame after load, so a hover that lands before its mission exists has nothing to highlight. */
+async function hoverUntilBoxes(page: Page, id: string) {
+  const row = page.getByTestId(`paths-legend-row-${id}`);
+  await expect
+    .poll(
+      async () => {
+        await page.mouse.move(1240, 600);
+        await row.hover();
+        await page.waitForTimeout(400);
+        return (await shownBoxes(page)).length;
+      },
+      { timeout: 20_000 },
+    )
+    .toBeGreaterThan(1);
+}
+
+test.describe('/explore — iconic legend (C7)', () => {
+  test('ICONIC MISSIONS is the first chip of the layer row', async ({ page }) => {
+    desktopOnly();
+    await openPaths(page);
+    const first = page.locator('.hud-controls .ctrl-row.chips [data-testid^="layer-"]').first();
+    await expect(first).toHaveAttribute('data-testid', 'layer-paths');
+  });
+
+  test('1440x900: 18 rows and the title fit without a scrollbar, rows are 28 px', async ({
+    page,
+  }) => {
+    desktopOnly();
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await openPaths(page);
+    const list = page.locator('.paths-legend .paths-legend-list');
+    await expect(page.locator(ROWS)).toHaveCount(18);
+    const m = await list.evaluate((el) => ({
+      scroll: el.scrollHeight,
+      client: el.clientHeight,
+    }));
+    expect(m.scroll, 'the list does not scroll').toBeLessThanOrEqual(m.client + 1);
+    const rowH = await page
+      .locator(ROWS)
+      .first()
+      .evaluate((el) => el.getBoundingClientRect().height);
+    expect(rowH).toBeGreaterThanOrEqual(24);
+    expect(rowH).toBeLessThanOrEqual(30);
+    const bottom = await page
+      .locator('.paths-legend')
+      .evaluate((el) => el.getBoundingClientRect().bottom);
+    expect(bottom).toBeLessThanOrEqual(900);
+  });
+
+  test('a short window: only the list scrolls and the legend stays above the footer', async ({
+    page,
+  }) => {
+    desktopOnly();
+    await page.setViewportSize({ width: 1280, height: 560 });
+    await openPaths(page);
+    const list = page.locator('.paths-legend .paths-legend-list');
+    await expect(page.locator(ROWS)).toHaveCount(18);
+    await expect
+      .poll(() => list.evaluate((el) => el.scrollHeight > el.clientHeight + 1))
+      .toBe(true);
+    const bottom = await page
+      .locator('.paths-legend')
+      .evaluate((el) => el.getBoundingClientRect().bottom);
+    expect(bottom).toBeLessThanOrEqual(560);
+    // the title stays while the list scrolls
+    const titleTop = () =>
+      page.locator('.paths-legend-title').evaluate((el) => el.getBoundingClientRect().top);
+    const before = await titleTop();
+    await list.evaluate((el) => (el.scrollTop = el.scrollHeight));
+    expect(await titleTop()).toBe(before);
+  });
+
+  test('the title reads the placeholder; a hovered row shows its tagline in a card, the list stays put', async ({
+    page,
+  }) => {
+    desktopOnly();
+    await openPaths(page);
+    const title = page.locator('.paths-legend-title');
+    const tip = page.getByTestId('paths-legend-tip');
+    await expect(title).toHaveText(/hover any spacecraft/i);
+    await expect(tip).toHaveCSS('opacity', '0');
+    const row = page.getByTestId('paths-legend-row-voyager-2');
+    const rowTop = async () => (await row.boundingBox())!.y;
+    const before = await rowTop();
+    await row.hover();
+    await expect(tip).toHaveCSS('opacity', '1');
+    await expect(tip).toHaveText(/\S{3}/);
+    expect(await rowTop(), 'no layout shift on hover').toBe(before);
+    await expect(title).toHaveText(/hover any spacecraft/i);
+    const legendBox = (await page.locator('.paths-legend').boundingBox())!;
+    const tipBox = (await tip.boundingBox())!;
+    expect(tipBox.x, 'the card is beside the legend').toBeGreaterThanOrEqual(
+      legendBox.x + legendBox.width,
+    );
+    const rowBox = (await row.boundingBox())!;
+    expect(tipBox.y, 'level with the row').toBeLessThanOrEqual(rowBox.y + rowBox.height);
+    expect(tipBox.y + tipBox.height).toBeGreaterThanOrEqual(rowBox.y);
+    await page.mouse.move(1240, 600);
+    await expect(tip).toHaveCSS('opacity', '0');
+  });
+
+  test('the (i) opens the why-one-plane popover with the science link; Escape closes it', async ({
+    page,
+  }) => {
+    desktopOnly();
+    await openPaths(page);
+    const trigger = page.getByTestId('paths-legend-why').locator('button.trigger');
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    const hit = await trigger.evaluate((el) => {
+      const r = getComputedStyle(el, '::after');
+      return { w: parseFloat(r.width), h: parseFloat(r.height) };
+    });
+    expect(Math.min(hit.w, hit.h), 'a 24 px hit area').toBeGreaterThanOrEqual(24);
+    await trigger.click();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    const pop = page.getByTestId('why-popover');
+    await expect(pop).toBeVisible();
+    await expect(pop.getByRole('link')).toHaveAttribute(
+      'href',
+      /\/science\/transfers\/coplanar-trajectories$/,
+    );
+    const legendBox = (await page.locator('.paths-legend').boundingBox())!;
+    const popBox = (await pop.boundingBox())!;
+    expect(popBox.x, 'the popover is not clipped by the legend').toBeGreaterThanOrEqual(
+      legendBox.x - 1,
+    );
+    expect(popBox.x + popBox.width).toBeLessThanOrEqual(legendBox.x + legendBox.width + 1);
+    await page.keyboard.press('Escape');
+    await expect(pop).toBeHidden();
+    await expect(trigger).toBeFocused();
+  });
+
+  test('the phone drawer has the title and the (i), no hover card', async ({ page }) => {
+    test.skip(!test.info().project.name.startsWith('mobile'), 'touch only');
+    await page.goto('/explore');
+    await waitForHydration(page);
+    await openDrawerTab(page, /missions/i);
+    const body = page.locator('.mdg-body');
+    await expect(body.locator('.paths-legend-title')).toHaveText(/hover any spacecraft/i);
+    await expect(body.getByTestId('paths-legend-why').locator('button.trigger')).toBeVisible();
+    await expect(body.locator(ROWS)).toHaveCount(18);
+    await expect(body.getByTestId('paths-legend-tip')).toHaveCount(0);
+  });
+});
+
+test.describe('/explore — iconic milestone boxes (C7)', () => {
+  test('a highlighted mission shows n/N · date over the name, 12 px, no mission name, one mission box', async ({
+    page,
+  }) => {
+    desktopOnly();
+    await openPaths(page);
+    await hoverUntilBoxes(page, 'voyager-2');
+    const all = await shownBoxes(page);
+    const milestones = all.filter((b) => b.kind === 'milestone');
+    const mission = all.filter((b) => b.kind === 'mission');
+    expect(mission, 'the mission name appears once').toHaveLength(1);
+    expect(mission[0].header).toBe('VOYAGER 2');
+    expect(milestones.length).toBeGreaterThan(0);
+    for (const b of milestones) {
+      expect(b.header).toMatch(/^\d+\/\d+ · \d{4}(-\d{2}){0,2}$/);
+      expect(b.header + b.lines.join(' ')).not.toMatch(/voyager/i);
+      expect(b.n).toBeGreaterThanOrEqual(1);
+      expect(b.n).toBeLessThanOrEqual(b.total);
+    }
+    for (const b of all) expect(b.textPx).toBeCloseTo(12, 0);
+    for (let i = 0; i < all.length; i++) {
+      for (let j = i + 1; j < all.length; j++) {
+        const a = all[i];
+        const b = all[j];
+        const apart =
+          a.x + a.w <= b.x + 0.5 ||
+          b.x + b.w <= a.x + 0.5 ||
+          a.y + a.h <= b.y + 0.5 ||
+          b.y + b.h <= a.y + 0.5;
+        expect(apart, `${a.header} / ${b.header} do not overlap`).toBe(true);
+      }
+    }
+  });
+
+  test('a box keeps its pixel size when the camera zooms in and out (the IM2 regression)', async ({
+    page,
+  }) => {
+    desktopOnly();
+    test.slow();
+    await openPaths(page);
+    const row = page.getByTestId('paths-legend-row-voyager-2');
+    await hoverUntilBoxes(page, 'voyager-2');
+    const sizeByHeader = async () => {
+      // hover is held by the pointer on the row: keep it there while the wheel zooms over the canvas
+      return new Map((await shownBoxes(page)).map((b) => [b.header, { w: b.w, h: b.h }]));
+    };
+    const base = await sizeByHeader();
+    const vp = page.viewportSize()!;
+    for (const dy of [-500, 1400]) {
+      await page.mouse.move(vp.width / 2, vp.height / 2);
+      await page.mouse.wheel(0, dy);
+      await page.waitForTimeout(900);
+      // the pointer left the row: highlight again through the legend
+      await row.hover();
+      await page.waitForTimeout(300);
+      const now = await sizeByHeader();
+      let compared = 0;
+      for (const [header, size] of now) {
+        const was = base.get(header);
+        if (!was) continue;
+        compared++;
+        expect(Math.abs(size.w - was.w), `${header} width`).toBeLessThan(1.5);
+        expect(Math.abs(size.h - was.h), `${header} height`).toBeLessThan(1.5);
+      }
+      expect(compared, `boxes compared after wheel ${dy}`).toBeGreaterThan(0);
+    }
+  });
+});

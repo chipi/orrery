@@ -96,6 +96,8 @@ declare global {
     __exploreDirectionLabels?: () => Record<string, { drawn: boolean; text: string }>;
     /** Pin scenes (neighbourhood to cosmic web): every label and ring as drawn, client px; null elsewhere. */
     __scenePins?: () => import('$lib/universe/scene-pins').PinsSnapshot | null;
+    /** Iconic-mission boxes (milestones and the mission box) of the highlighted missions, as drawn, canvas px. */
+    __iconicBoxes?: () => import('$lib/three/iconic-trajectory').IconicBoxSnapshot[];
     /** Screen points (canvas-box px) on a kind of solar line or the neighbourhood's light-year rings, for the readability probe. */
     __exploreLinePoints?: (
       kind:

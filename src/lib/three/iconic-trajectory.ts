@@ -5,6 +5,9 @@
 // (Jupiter / Saturn / Uranus / Neptune / Heliopause / Today) gets
 // a small marker sphere along the line. The "Today" marker is the
 // click target — clicking it opens the spacecraft's MissionPanel.
+// While a mission is highlighted each labelled waypoint also shows a milestone box (`n/N ·
+// date` over the milestone's name) and the Today marker shows the one mission box. The boxes are
+// screen-sized canvas sprites placed by the shared pass in universe/scene-pins.ts (UXD-026).
 //
 // Trajectory data lives at static/data/trajectories/<id>.json and is
 // decoupled from the /fly Lambert simulator's mission-file trajectories.
@@ -15,6 +18,33 @@ import * as THREE from 'three';
 import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
+import {
+  cameraFov,
+  labelRect,
+  liftOnScreen,
+  newLabelSlot,
+  placeLabels,
+  projectedPx,
+  viewDepth,
+  worldPerPx,
+  type LabelSlot,
+} from '$lib/universe/scene-pins';
+import {
+  BOX_BODY_LINE,
+  BOX_BODY_PX,
+  BOX_GAP_PX,
+  BOX_HEADER_LINE,
+  BOX_HEADER_PX,
+  BOX_PAD_X,
+  BOX_PAD_Y,
+  BOX_ROW_GAP,
+  MISSION_BOX_MAX_LINES,
+  MISSION_BOX_MAX_W,
+  boxHeader,
+  layoutBox,
+  type BoxLayout,
+  type Measure,
+} from './iconic-box';
 
 export interface IconicTrajectoryWaypoint {
   date: string;
@@ -88,17 +118,37 @@ export interface IconicTrajectoryHandle {
   headingStar: string | null;
   /** Brighten (true) or dim (false) the line + markers. Default: dim. */
   setHighlight: (highlighted: boolean) => void;
-  /** Per-frame screen-space declutter for the encounter labels. When
-   *  multiple labeled waypoints project to nearby screen positions
-   *  (e.g. Rosetta's 3 Earth + Mars + 2 asteroid flybys all cluster in
-   *  the inner solar system) the static label sprites stack on top of
-   *  each other and become unreadable. This pushes overlapping labels
-   *  down along the camera-up axis so each one is fully visible while
-   *  keeping the marker → label association legible by color. No-op
-   *  unless the label group is currently visible (i.e. the mission is
-   *  highlighted). Cheap: O(N log N) sort + O(N) projection where
-   *  N ≤ ~10 labels per trajectory. */
+  /** Per-frame size and placement of the milestone boxes and the mission box (UXD-026). Each
+   *  box is `BOX_*` CSS px wherever the camera is (sized from the view depth), lifted a steady
+   *  distance above its marker along screen-up, and run through the shared placement pass
+   *  (scene-pins.ts `placeLabels`): a box that would overlap a higher-priority one is hidden
+   *  and returns when there is room. Launch comes first, the rest by index; the hovered
+   *  milestone's box is always shown. No-op unless the mission is highlighted. */
   relayoutLabels: (camera: THREE.PerspectiveCamera, canvasHeight: number) => void;
+  /** The milestone whose marker (or box) the pointer is over, or null: its box is forced
+   *  visible so a box the placement pass hid can be read from its marker. */
+  setHoveredMilestone: (obj: THREE.Object3D | null) => void;
+  /** Read-only probe for the e2e (`window.__iconicBoxes`): every box as drawn, canvas px. */
+  snapshotBoxes: (camera: THREE.Camera, canvasW: number, canvasH: number) => IconicBoxSnapshot[];
+}
+
+export interface IconicBoxSnapshot {
+  missionId: string;
+  kind: 'milestone' | 'mission';
+  /** Milestone number and the count of labelled milestones; 0 for the mission box. */
+  n: number;
+  total: number;
+  header: string;
+  /** The lines as drawn (a long name wraps to two; the full text stays in `userData.label`). */
+  lines: string[];
+  shown: boolean;
+  /** Rectangle as drawn in canvas px (left, top, size). */
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  /** Body text height in CSS px; 12 at every zoom. */
+  textPx: number;
 }
 
 export interface BuildIconicTrajectoryOpts {
@@ -116,8 +166,6 @@ export interface BuildIconicTrajectoryOpts {
 
 const DEFAULT_LINE_WIDTH = 2.5;
 const CLICK_TARGET_RADIUS_PX = 6;
-const LABEL_TEXTURE_W = 256;
-const LABEL_TEXTURE_H = 104;
 const MARKER_TEXTURE_PX = 64;
 // Marker sprite stays in scene units; small enough not to dominate the
 // inner-system but readable at any zoom. Encounter markers get a slim
@@ -130,13 +178,6 @@ const MARKER_SPRITE_SCALE = 18;
 // where the spacecraft is now".
 const ENDPOINT_TEXTURE_PX = 48;
 const ENDPOINT_SPRITE_SCALE = 12;
-// Sprite scale in scene units. The /explore log-AU scale puts the
-// inner planets at ~50-130 units and the outer giants at ~250-400, so
-// 70 lands a label about the width of a Jupiter-orbit gap — readable
-// without dominating the scene. Sprites always camera-face.
-const LABEL_SPRITE_SCALE_X = 70;
-const LABEL_SPRITE_SCALE_Y = 28;
-const LABEL_PIXEL_OFFSET = 10;
 
 // Dim / bright opacity pairs. The PATHS layer renders every iconic
 // trajectory simultaneously, so the default is *very* dim — paths
@@ -293,79 +334,97 @@ function buildEncounterMarkerSprite(color: string): {
   return { sprite, texture, material };
 }
 
-/**
- * Build a canvas-backed sprite texture for a single waypoint label.
- * Two lines (label / date) with a thin outline so the text reads on
- * any background. The texture is regenerated per waypoint — cheap
- * (~10 labels × ~256×80 px = ~200 KB total) and keeps disposal
- * trivial (one texture per sprite, freed in `dispose()`).
- */
-function buildLabelSprite(
-  missionName: string,
-  label: string,
-  date: string,
-  color: string,
-): THREE.Sprite {
+// ── Milestone and mission boxes (UXD-026) ────────────────────────────
+// A box is a canvas sprite drawn once, at the device pixel ratio, in the size `layoutBox` gives
+// it in CSS px; every frame `relayoutLabels` sizes the sprite so those CSS px stay CSS px at any
+// zoom (a world-sized sprite was the blur and the too-small-far-away of the first skin).
+
+/** Texture scale: 2 at least, so 12 px type is drawn from 24 px glyphs (the pins' rule). */
+function boxDpr(): number {
+  return Math.max(2, Math.min(3, typeof window === 'undefined' ? 2 : window.devicePixelRatio || 1));
+}
+
+const BOX_FONT_HEADER = `bold ${BOX_HEADER_PX}px "Space Mono", monospace`;
+const BOX_FONT_BODY = `bold ${BOX_BODY_PX}px "Space Mono", monospace`;
+
+/** `measureText` of a font; without a canvas (a unit test's jsdom) a monospace estimate. */
+function boxMeasure(font: string, px: number): Measure {
+  const ctx =
+    typeof document === 'undefined' ? null : document.createElement('canvas').getContext('2d');
+  if (!ctx) return (text) => text.length * px * 0.6;
+  ctx.font = font;
+  return (text) => ctx.measureText(text).width;
+}
+
+function drawBox(layout: BoxLayout, color: string, rtl: boolean): THREE.CanvasTexture {
+  const dpr = boxDpr();
   const canvas = document.createElement('canvas');
-  canvas.width = LABEL_TEXTURE_W;
-  canvas.height = LABEL_TEXTURE_H;
+  canvas.width = Math.ceil(layout.w * dpr);
+  canvas.height = Math.ceil(layout.h * dpr);
   const ctx = canvas.getContext('2d');
   if (ctx) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Subtle pill background so labels stay legible over the colored
-    // trajectory line + planet orbit rings.
-    ctx.fillStyle = 'rgba(15, 18, 35, 0.78)';
-    const padX = 8;
-    const padY = 6;
-    const rectW = canvas.width - padX * 2;
-    const rectH = canvas.height - padY * 2;
-    const r = 10;
+    ctx.scale(dpr, dpr);
+    ctx.fillStyle = 'rgba(15, 18, 35, 0.86)';
     ctx.beginPath();
-    ctx.moveTo(padX + r, padY);
-    ctx.lineTo(padX + rectW - r, padY);
-    ctx.quadraticCurveTo(padX + rectW, padY, padX + rectW, padY + r);
-    ctx.lineTo(padX + rectW, padY + rectH - r);
-    ctx.quadraticCurveTo(padX + rectW, padY + rectH, padX + rectW - r, padY + rectH);
-    ctx.lineTo(padX + r, padY + rectH);
-    ctx.quadraticCurveTo(padX, padY + rectH, padX, padY + rectH - r);
-    ctx.lineTo(padX, padY + r);
-    ctx.quadraticCurveTo(padX, padY, padX + r, padY);
-    ctx.closePath();
+    ctx.roundRect(0.75, 0.75, layout.w - 1.5, layout.h - 1.5, 6);
     ctx.fill();
     ctx.strokeStyle = color;
     ctx.lineWidth = 1.5;
     ctx.stroke();
     ctx.textBaseline = 'middle';
+    const x = rtl ? layout.w - BOX_PAD_X : BOX_PAD_X;
+    // The header is digits and an ISO date (or a Latin mission name): always left-to-right,
+    // whatever the page direction; in a right-to-left box it sits at the right edge like the body.
+    ctx.direction = 'ltr';
     ctx.textAlign = 'left';
-    // Mission name (small caps, uppercased) — anchors which path the
-    // waypoint belongs to. Slightly muted so the eye lands on the
-    // encounter label below.
-    ctx.fillStyle = 'rgba(221, 228, 255, 0.7)';
-    ctx.font = 'bold 14px "Space Mono", monospace';
-    ctx.fillText(missionName.toUpperCase(), padX + 12, padY + 14);
-    // Encounter label (primary) — mission color, bold, anchors the
-    // visual link to the trajectory line.
-    ctx.fillStyle = color;
-    ctx.font = 'bold 22px "Space Mono", monospace';
-    ctx.fillText(label, padX + 12, padY + 42);
-    // Date (secondary) — muted, smaller.
     ctx.fillStyle = 'rgba(221, 228, 255, 0.78)';
-    ctx.font = '15px "Space Mono", monospace';
-    ctx.fillText(date, padX + 12, padY + 72);
+    ctx.font = BOX_FONT_HEADER;
+    const headerX = rtl ? x - ctx.measureText(layout.header).width : x;
+    ctx.fillText(layout.header, headerX, BOX_PAD_Y + BOX_HEADER_LINE / 2);
+    ctx.direction = rtl ? 'rtl' : 'ltr';
+    ctx.textAlign = rtl ? 'right' : 'left';
+    ctx.fillStyle = color;
+    ctx.font = BOX_FONT_BODY;
+    layout.lines.forEach((line, i) => {
+      ctx.fillText(
+        line,
+        x,
+        BOX_PAD_Y + BOX_HEADER_LINE + BOX_ROW_GAP + i * BOX_BODY_LINE + BOX_BODY_LINE / 2,
+      );
+    });
   }
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
-  texture.anisotropy = 4;
-  const material = new THREE.SpriteMaterial({
-    map: texture,
-    transparent: true,
-    depthTest: false,
-    depthWrite: false,
-  });
-  const sprite = new THREE.Sprite(material);
-  sprite.scale.set(LABEL_SPRITE_SCALE_X, LABEL_SPRITE_SCALE_Y, 1);
+  texture.generateMipmaps = false;
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  return texture;
+}
+
+/** A box sprite with no texture yet: it is drawn the first time its mission is highlighted. */
+function buildBoxSprite(): THREE.Sprite {
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({ transparent: true, depthTest: false, depthWrite: false }),
+  );
   sprite.renderOrder = 10;
   return sprite;
+}
+
+interface Box {
+  sprite: THREE.Sprite;
+  /** The marker the box hangs from (the Today marker for the mission box). */
+  base: THREE.Vector3;
+  kind: 'milestone' | 'mission';
+  n: number;
+  total: number;
+  header: string;
+  body: string;
+  maxW?: number;
+  maxLines?: number;
+  layout: BoxLayout | null;
+  slot: LabelSlot;
+  /** The milestone's marker: the pointer over it forces this box. */
+  marker: THREE.Object3D | null;
 }
 
 // #410 — one-line "→ <star>" heading label for the direction indicator at a
@@ -470,13 +529,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   // outward chevrons — and a hidden label sprite that fades in on
   // highlight. Sprites always face the camera, so the marker reads
   // the same from every angle the user orbits around.
-  const labelSprites: THREE.Sprite[] = [];
-  // Each label's "base" world position — the un-deconflicted anchor
-  // (slightly above the encounter marker). The per-frame screen-space
-  // declutter pass projects these, sorts top → bottom, and offsets each
-  // sprite along the camera-up axis when its screen bbox would overlap
-  // the previously-placed label.
-  const labelBasePositions: THREE.Vector3[] = [];
+  const boxes: Box[] = [];
   const markerTextures: THREE.CanvasTexture[] = [];
   const markerMaterials: THREE.SpriteMaterial[] = [];
   const hoverTargets: THREE.Object3D[] = [];
@@ -490,7 +543,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     .map((wp, i) => ({ wp, pos: projected[i] }))
     .filter((entry) => entry.wp.label && entry.wp.label !== 'Today');
 
-  for (const { wp, pos } of labeledWaypoints) {
+  labeledWaypoints.forEach(({ wp, pos }, index) => {
     // Launch waypoint gets the square endpoint marker; everything else
     // (gravity assists, encounters, intermediate fixes) gets the chevron
     // encounter marker. We detect Launch by label content rather than
@@ -513,26 +566,33 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     hoverTargets.push(markerSprite);
     pickTargets.push(markerSprite);
 
-    if (wp.label) {
-      const sprite = buildLabelSprite(data.name, wp.display_label ?? wp.label, wp.date, data.color);
-      sprite.userData = {
-        kind: PICK_KINDS.label,
-        id: data.id,
-        missionId: data.mission_id,
-        label: wp.display_label ?? wp.label,
-        date: wp.date,
-      };
-      pickTargets.push(sprite);
-      // Offset the sprite slightly off the line so it doesn't sit on
-      // top of the marker. Use the ecliptic-up direction (+Y) so the
-      // label floats above the line at typical viewing angles.
-      const base = new THREE.Vector3(pos.x, pos.y + LABEL_PIXEL_OFFSET, pos.z);
-      sprite.position.copy(base);
-      labelGroup.add(sprite);
-      labelSprites.push(sprite);
-      labelBasePositions.push(base);
-    }
-  }
+    // The box: `n/N · date` over the milestone's name, no mission name (the arc's colour and
+    // the mission box carry it). Pick contract unchanged: the sprite is a pick target.
+    const label = wp.display_label ?? wp.label ?? '';
+    const sprite = buildBoxSprite();
+    sprite.userData = {
+      kind: PICK_KINDS.label,
+      id: data.id,
+      missionId: data.mission_id,
+      label,
+      date: wp.date,
+    };
+    pickTargets.push(sprite);
+    labelGroup.add(sprite);
+    boxes.push({
+      sprite,
+      base: pos,
+      kind: 'milestone',
+      n: index + 1,
+      total: labeledWaypoints.length,
+      header: boxHeader(index + 1, labeledWaypoints.length, wp.date),
+      body: label,
+      layout: null,
+      // Launch first, then by index: the placement pass hides the later of two that collide.
+      slot: newLabelSlot(sprite, 1, isLaunch ? 0 : index + 1),
+      marker: markerSprite,
+    });
+  });
 
   // ── "Today" click target — small filled sphere + thin halo ring.
   //    Round + glowing visually distinguishes "current position" from
@@ -603,6 +663,56 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     group.add(dirLabel);
   }
 
+  // ── The one mission box (IM3): the name once, with where the craft is now. Drawn with the
+  //    highlight, at the Today marker; first in the placement pass, so it is never the one hidden.
+  //    Not a pick target: Today's own sphere opens the mission.
+  if (data.current_distance_label) {
+    const sprite = buildBoxSprite();
+    labelGroup.add(sprite);
+    boxes.push({
+      sprite,
+      base: todayPos,
+      kind: 'mission',
+      n: 0,
+      total: 0,
+      header: data.name,
+      body: data.current_distance_label,
+      maxW: MISSION_BOX_MAX_W,
+      maxLines: MISSION_BOX_MAX_LINES,
+      layout: null,
+      slot: newLabelSlot(sprite, 1, -1),
+      marker: null,
+    });
+  }
+  const slots = boxes.map((b) => b.slot);
+  const boxTextures: THREE.CanvasTexture[] = [];
+
+  /** Lays out and draws every box, once, when the mission is first highlighted: the 18 builds at
+   *  load stay cheap (perf-explore-iconic-clicks) and the font is loaded by then. */
+  const ensureBoxes = (): void => {
+    if (boxes.length === 0 || boxes[0].layout) return;
+    const measureHeader = boxMeasure(BOX_FONT_HEADER, BOX_HEADER_PX);
+    const measureBody = boxMeasure(BOX_FONT_BODY, BOX_BODY_PX);
+    const rtl = typeof document !== 'undefined' && document.documentElement.dir === 'rtl';
+    for (const b of boxes) {
+      b.layout = layoutBox({
+        header: b.kind === 'mission' ? b.header.toUpperCase() : b.header,
+        body: b.body,
+        measureHeader,
+        measureBody,
+        maxW: b.maxW,
+        maxLines: b.maxLines,
+      });
+      const texture = drawBox(b.layout, data.color, rtl);
+      boxTextures.push(texture);
+      b.sprite.material.map = texture;
+      b.sprite.material.needsUpdate = true;
+    }
+  };
+
+  let forced: Box | null = null;
+  const tmp = new THREE.Vector3();
+
   return {
     group,
     clickTarget,
@@ -625,72 +735,63 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
         ? CLICK_TARGET_OPACITY_BRIGHT
         : CLICK_TARGET_OPACITY_DIM;
       ringMaterial.opacity = highlighted ? RING_OPACITY_BRIGHT : RING_OPACITY_DIM;
+      if (highlighted) ensureBoxes();
+      else forced = null;
       labelGroup.visible = highlighted;
       if (dirLabel) dirLabel.visible = highlighted;
-      // When the label group goes invisible, reset all sprite positions
-      // back to their base so the next hover starts from a clean state
-      // (otherwise a stale stacking would briefly flash on re-show).
-      if (!highlighted) {
-        for (let i = 0; i < labelSprites.length; i++) {
-          labelSprites[i].position.copy(labelBasePositions[i]);
-        }
-      }
+    },
+    setHoveredMilestone: (obj: THREE.Object3D | null) => {
+      forced = obj ? (boxes.find((b) => b.marker === obj || b.sprite === obj) ?? null) : null;
     },
     relayoutLabels: (camera: THREE.PerspectiveCamera, canvasHeight: number) => {
-      if (!labelGroup.visible || labelSprites.length === 0) return;
-      // Camera basis — column 1 of matrixWorld is the local +Y axis,
-      // i.e. the camera-up direction. Displacing a sprite along this
-      // axis moves it vertically on screen.
-      const camRight = new THREE.Vector3();
-      const camUp = new THREE.Vector3();
-      const camForward = new THREE.Vector3();
-      camera.matrixWorld.extractBasis(camRight, camUp, camForward);
-      const halfFovTan = Math.tan((camera.fov * Math.PI) / 360);
-      // Compute screen position + per-pixel scale per label.
-      const items = labelBasePositions.map((basePos, i) => {
-        // distance from camera along the camera's view direction —
-        // not euclidean distance, otherwise off-axis labels get a
-        // pixel scale that's too small and we under-deconflict.
-        const offset = new THREE.Vector3().subVectors(basePos, camera.position);
-        const viewDist = Math.max(0.01, Math.abs(offset.dot(camForward)));
-        const worldPerPixel = (2 * viewDist * halfFovTan) / canvasHeight;
-        const ndc = basePos.clone().project(camera);
-        // Treat labels behind the camera as off-screen; skip them.
-        const onScreen = ndc.z > -1 && ndc.z < 1;
-        const screenY = (1 - ndc.y) * 0.5 * canvasHeight;
-        return {
-          i,
-          basePos,
-          worldPerPixel,
-          screenY,
-          finalScreenY: screenY,
-          // Label sprite is LABEL_SPRITE_SCALE_Y world-units tall;
-          // its screen-half-height shrinks with distance.
-          halfH: LABEL_SPRITE_SCALE_Y / 2 / worldPerPixel,
-          onScreen,
-        };
-      });
-      // Sort top → bottom (smaller screenY = higher on screen).
-      items.sort((a, b) => a.screenY - b.screenY);
-      // Push down any label whose top would overlap the previous
-      // label's bottom. Off-screen labels participate in sorting but
-      // don't constrain on-screen neighbors (the user can't see them).
-      let prevBottom = -Infinity;
-      for (const item of items) {
-        if (!item.onScreen) continue;
-        const top = item.finalScreenY - item.halfH;
-        if (top < prevBottom) {
-          item.finalScreenY = prevBottom + item.halfH;
+      if (!labelGroup.visible) return;
+      camera.updateMatrixWorld();
+      const fov = cameraFov(camera);
+      for (const b of boxes) {
+        const layout = b.layout;
+        if (!layout) continue;
+        const depth = viewDepth(camera, b.base);
+        const slot = b.slot;
+        slot.force = b === forced;
+        if (depth <= 0.01) {
+          slot.visible = false;
+          continue;
         }
-        prevBottom = item.finalScreenY + item.halfH;
+        const wpp = worldPerPx(depth, fov, canvasHeight);
+        liftOnScreen(b.sprite.position, b.base, camera, (layout.h / 2 + BOX_GAP_PX) * wpp);
+        b.sprite.scale.set(layout.w * wpp, layout.h * wpp, 1);
+        slot.visible = labelRect(b.sprite, camera, slot.rect, tmp);
       }
-      // Apply: screen-down (positive screenY delta) corresponds to
-      // moving the sprite along -camUp in world space.
-      for (const item of items) {
-        const screenDy = item.finalScreenY - item.screenY;
-        const worldDy = -screenDy * item.worldPerPixel;
-        labelSprites[item.i].position.copy(item.basePos).addScaledVector(camUp, worldDy);
+      placeLabels(slots);
+    },
+    snapshotBoxes: (camera: THREE.Camera, canvasW: number, canvasH: number) => {
+      camera.updateMatrixWorld();
+      const out: IconicBoxSnapshot[] = [];
+      for (const b of boxes) {
+        if (!b.layout) continue;
+        const s = b.sprite;
+        s.getWorldPosition(tmp);
+        const pw = projectedPx(camera, tmp, s.scale.x, 0, canvasW);
+        const ph = projectedPx(camera, tmp, s.scale.y, 1, canvasH);
+        tmp.project(camera);
+        const cx = ((tmp.x + 1) / 2) * canvasW;
+        const cy = ((1 - tmp.y) / 2) * canvasH;
+        out.push({
+          missionId: data.mission_id,
+          kind: b.kind,
+          n: b.n,
+          total: b.total,
+          header: b.layout.header,
+          lines: b.layout.lines,
+          shown: labelGroup.visible && group.visible && s.visible,
+          x: cx - s.center.x * pw,
+          y: cy - (1 - s.center.y) * ph,
+          w: pw,
+          h: ph,
+          textPx: (BOX_BODY_PX * ph) / b.layout.h,
+        });
       }
+      return out;
     },
     dispose: () => {
       lineGeo.dispose();
@@ -701,10 +802,8 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       clickTargetMaterial.dispose();
       ringGeo.dispose();
       ringMaterial.dispose();
-      for (const sprite of labelSprites) {
-        sprite.material.map?.dispose();
-        sprite.material.dispose();
-      }
+      for (const t of boxTextures) t.dispose();
+      for (const b of boxes) b.sprite.material.dispose();
       dirLineGeo?.dispose();
       dirLineMat?.dispose();
       dirLabel?.material.map?.dispose();

@@ -4,6 +4,8 @@ import { SCALE_GLYPHS } from '$lib/components/ScaleGlyph.svelte';
 import { SCIENCE_LINK_MAX } from '$lib/science-links';
 import { computeLensPanel } from './lens-panel';
 import { CTX_ORDER } from './scale-shell-controller';
+import { SCALE_SHELL_CARD_LIST, SCALE_SHELL_CARDS } from './scale-shell-cards';
+import { SCALE_SHELL_NAV, SCALE_SHELL_NAV_LIST } from './scale-shell-nav';
 import { SCALE_SHELL_LIST, SCALE_SHELLS, shellScienceRefs } from './scale-shells';
 
 const index: { tab: string; section: string }[] = JSON.parse(
@@ -68,6 +70,30 @@ describe('SCALE_SHELLS', () => {
       expect(p.body, s.id).toBe(s.storyBody());
       expect(`${p.tab}/${p.section}`, s.id).toBe(s.science[0]);
     }
+  });
+});
+
+describe('the narrow tables', () => {
+  it('are the same records the full table is built from', () => {
+    for (const s of SCALE_SHELL_LIST) {
+      expect(SCALE_SHELL_NAV[s.id].navName(), s.id).toBe(s.navName());
+      expect(SCALE_SHELL_CARDS[s.id].title(), s.id).toBe(s.title());
+      expect(SCALE_SHELL_CARDS[s.id].desc(), s.id).toBe(s.desc());
+    }
+    expect(SCALE_SHELL_NAV_LIST.map((s) => s.id)).toEqual([...CTX_ORDER]);
+    expect(SCALE_SHELL_CARD_LIST.map((s) => s.id)).toEqual([...CTX_ORDER]);
+  });
+
+  // The route budget (scripts/check-route-budget.mjs) is what keeps the shell small; this keeps the
+  // reason visible where the split is made: the nav module must not reach the story texts.
+  it('keeps the story texts out of the nav and card modules', () => {
+    for (const f of ['scale-shell-nav.ts', 'scale-shell-cards.ts']) {
+      const src = readFileSync(`src/lib/explore/${f}`, 'utf8');
+      expect(src, f).not.toMatch(/explore_lens_\w*body|storyBody|from '\.\/scale-shells'/);
+    }
+    expect(readFileSync('src/lib/explore/scale-shell-nav.ts', 'utf8')).not.toMatch(
+      /explore_hub_|landing_card/,
+    );
   });
 });
 

@@ -9,7 +9,7 @@
   import * as m from '$lib/paraglide/messages';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import ScaleGlyph, { SCALE_GLYPHS } from '$lib/components/ScaleGlyph.svelte';
-  import { SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
+  import { SCALE_SHELL_CARD_LIST } from '$lib/explore/scale-shell-cards';
   import { website } from '$lib/json-ld';
   import { canonicalUrl, metaDescription } from '$lib/seo';
   import { getLocale } from '$lib/paraglide/runtime';
@@ -87,7 +87,7 @@
   const grid: GridItem[] = $derived([
     // EXPLORE — the zoom-out scale shells (all jump into /explore at a scale).
     { heading: m.nav_group_explore() },
-    ...SCALE_SHELL_LIST.map((s) => ({
+    ...SCALE_SHELL_CARD_LIST.map((s) => ({
       route: '/explore',
       query: s.query,
       name: s.name(),

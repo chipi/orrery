@@ -192,8 +192,24 @@ describe('orbit ruler: resident thumbnails (C4)', () => {
 
   it('every mapped file is on disk and is the 1x1 variant', () => {
     for (const [k, p] of Object.entries(thumbs)) {
-      expect(p, k).toMatch(/^\/images\/.+\/01\.1x1\.jpg$/);
+      expect(p, k).toMatch(/^\/images\/.+\/\d\d\.1x1\.jpg$/);
       expect(existsSync(join('static', p)), `${k} -> ${p}`).toBe(true);
+    }
+  });
+
+  // The thumb is the hero the operator's review blessed: slot 01 unless the image tree's
+  // *-hero-overrides.json picked another one.
+  it('every thumb uses the blessed hero slot', () => {
+    const OVERRIDE_FILE: Record<string, string> = { 'fleet-galleries': 'fleet' };
+    for (const [k, p] of Object.entries(thumbs)) {
+      const [, tree, id, slot] =
+        p.match(/^\/images\/([^/]+)\/(?:([^/]+)\/)?(\d\d)\.1x1\.jpg$/) ?? [];
+      const f = join('static/data', `${OVERRIDE_FILE[tree] ?? tree}-hero-overrides.json`);
+      const o =
+        id && existsSync(f)
+          ? rj<{ overrides: Record<string, { slot: string }> }>(f).overrides[id]
+          : undefined;
+      expect(slot, `${k} -> ${p}`).toBe(o ? o.slot.slice(0, 2) : '01');
     }
   });
 

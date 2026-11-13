@@ -36,6 +36,43 @@ async function centreOverCanvas(page: Page): Promise<{ x: number; y: number }> {
 
 test.describe.configure({ timeout: 90_000 });
 
+// The hint never sits under the scale readout, the time dock or the rest of the bottom HUD.
+for (const size of [
+  { width: 1440, height: 900 },
+  { width: 1280, height: 720 },
+  { width: 1024, height: 768 },
+]) {
+  test.describe(`hint clear of the HUD — ${size.width}x${size.height}`, () => {
+    test.use({ viewport: size, hasTouch: false, isMobile: false });
+
+    test('/explore: its box meets no other HUD part', async ({ page }, testInfo) => {
+      test.skip(testInfo.project.name !== 'desktop-chromium', 'a pointer window');
+      await load(page, '/explore', 'explore-hint');
+      const hint = await page.getByTestId('explore-hint').boundingBox();
+      expect(hint).not.toBeNull();
+      const parts = ['.scale-strip', '.time-controls', '.scales-dock', '.ruler', '.footer-menu'];
+      for (const sel of parts) {
+        const el = page.locator(sel).first();
+        const b = (await el.isVisible()) ? await el.boundingBox() : null;
+        if (!b || !hint) continue;
+        const meets =
+          hint.x < b.x + b.width &&
+          hint.x + hint.width > b.x &&
+          hint.y < b.y + b.height &&
+          hint.y + hint.height > b.y;
+        expect(meets, `hint ${JSON.stringify(hint)} meets ${sel} ${JSON.stringify(b)}`).toBe(false);
+      }
+    });
+
+    test('/explore?id=venus: no hint beside the docked panel', async ({ page }, testInfo) => {
+      test.skip(testInfo.project.name !== 'desktop-chromium', 'a pointer window');
+      await page.goto('/explore?id=venus');
+      await expect(page.locator('aside.panel').first()).toBeVisible({ timeout: 40_000 });
+      await expect(page.getByTestId('explore-hint')).toHaveCount(0, { timeout: 10_000 });
+    });
+  });
+}
+
 test.describe('welcome hint', () => {
   for (const r of ROUTES) {
     test(`${r.path}: shows, goes on a wheel turn over the canvas, and returns next visit`, async ({
@@ -89,6 +126,21 @@ test.describe('welcome hint', () => {
     );
     await page.goto('/explore?id=jupiter');
     await expect(page.locator('aside.panel').first()).toBeVisible({ timeout: 40_000 });
+    await expect(page.getByTestId('explore-hint')).toHaveCount(0);
+  });
+
+  test('/explore: the hint does not come back when the docked panel is closed', async ({
+    page,
+  }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-chromium', 'the panel docks at the right');
+    await page.goto('/explore?id=jupiter');
+    const panel = page.locator('aside.panel').first();
+    await expect(panel).toBeVisible({ timeout: 40_000 });
+    await expect(page.getByTestId('explore-hint')).toHaveCount(0);
+    await panel.locator('.panel-close').first().click();
+    await expect(panel).toBeHidden({ timeout: 15_000 });
+    // Once seen (here: shown at load, then covered by the panel), it must not reappear.
+    await page.waitForTimeout(1_500);
     await expect(page.getByTestId('explore-hint')).toHaveCount(0);
   });
 });

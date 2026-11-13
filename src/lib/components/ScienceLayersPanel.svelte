@@ -144,10 +144,6 @@
 
   onMount(() => {
     ensureLayerDefaults();
-    // Advertise to <html data-science-lens-available> so the nav
-    // lens-toggle knows it can do something on this route — gates
-    // the hover-affordance in Nav.svelte.
-    stops.push(markScienceLensAvailable());
     stops.push(
       onScienceLensChange((on) => {
         lensOn = on;
@@ -430,6 +426,14 @@
   let visibleLayers = $derived(available.filter((k) => LAYER_ORDER.includes(k)));
   let hasLensStory = $derived(Boolean(title && body && tab && section));
   let hasLayers = $derived(visibleLayers.length > 0);
+
+  // Advertise to <html data-science-lens-available> so the nav lens-toggle knows it can do
+  // something here: only while the panel has something to draw (a /explore level with no layers
+  // has none, so the toggle reads "unavailable here" instead of doing nothing).
+  $effect(() => {
+    if (!(hasLensStory || hasLayers)) return;
+    return markScienceLensAvailable();
+  });
 </script>
 
 {#if lensOn && (hasLensStory || hasLayers)}

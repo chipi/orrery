@@ -33,6 +33,10 @@ export function loadScienceTitles(
       return new Map<string, string>();
     })();
     cache.set(locale, p);
+    // A failed read is not kept: the next card asks again.
+    void p.then((t) => {
+      if (t.size === 0 && cache.get(locale) === p) cache.delete(locale);
+    });
   }
   return p;
 }

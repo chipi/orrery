@@ -19,13 +19,10 @@
   let {
     shell,
     panelCoverPx = 0,
-    width = $bindable(0),
   }: {
     shell: ShellId;
     /** Width a docked side panel covers at the right edge; the card sits left of it. */
     panelCoverPx?: number;
-    /** The card's measured width, for the HUD row that must stop before it (solar system). */
-    width?: number;
   } = $props();
 
   const STORE_KEY = 'orrery.explore.levelCardExpanded';
@@ -59,12 +56,17 @@
   const links = $derived(pickScienceLinks(refsFromSlugs(s.science)));
   const locale = $derived(localeFromPage(page));
 
-  // Section titles in the reader's language; until the index arrives a link reads as its slug.
+  // Section titles in the reader's language. The links are drawn once the index has answered (no
+  // flash of English slugs); if it cannot be read at all they read as their slugs.
   let titles = $state(new Map<string, string>());
+  let titlesLoaded = $state(false);
   $effect(() => {
     let live = true;
+    titlesLoaded = false;
     void loadScienceTitles(locale).then((t) => {
-      if (live) titles = t;
+      if (!live) return;
+      titles = t;
+      titlesLoaded = true;
     });
     return () => {
       live = false;
@@ -78,7 +80,6 @@
 
 <section
   class="level-card"
-  bind:clientWidth={width}
   class:collapsed={!expanded}
   style:right={`${panelCoverPx + 8}px`}
   aria-label={s.name()}
@@ -96,6 +97,7 @@
         ? m.explore_level_card_collapse_aria()
         : m.explore_level_card_expand_aria()}
       data-testid="explore-level-card-toggle"
+      data-a4-keep="disclosure fold (aria-expanded), not a chip: the orbit ruler header's pattern"
       onclick={toggle}
     >
       <span aria-hidden="true">{expanded ? '▾' : '▸'}</span>
@@ -104,7 +106,7 @@
   <div id="{uid}-body" class="body" hidden={!expanded}>
     <p class="lead" data-testid="explore-level-card-lead">{s.desc()}</p>
     <p class="story">{s.storyBody()}</p>
-    {#if links.length}
+    {#if links.length && titlesLoaded}
       <ul class="links" data-testid="explore-level-card-links">
         {#each links as r (r.tab + '/' + r.section)}
           <li>
@@ -126,7 +128,8 @@
     box-sizing: border-box;
     inline-size: 280px;
     max-inline-size: calc(100vw - 16px);
-    max-block-size: calc(100% - 52px - 56px);
+    /* Ends above the scale strip in the same column (46 px up, up to ~200 px tall); scrolls inside. */
+    max-block-size: max(120px, calc(100% - 250px));
     overflow-y: auto;
     padding: 8px 12px;
     background: rgba(8, 10, 22, 0.86);
@@ -195,11 +198,19 @@
     flex-direction: column;
     gap: 2px;
   }
+  /* A link is a 24 px target (44 px on touch): the small-control rule of AGENTS.md. */
   .links a {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-block-size: 24px;
     padding: 3px 0;
     color: var(--color-state);
     text-decoration: none;
+  }
+  @media (pointer: coarse) {
+    .links a {
+      min-block-size: 44px;
+    }
   }
   .links a:hover,
   .links a:focus-visible {

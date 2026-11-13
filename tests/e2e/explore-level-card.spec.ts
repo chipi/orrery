@@ -51,6 +51,7 @@ test.describe('/explore — level card (C8)', () => {
       await expect(page.getByTestId('explore-level-card-name')).toHaveText(lv.name);
       await expect(page.getByTestId('explore-level-card-lead')).not.toBeEmpty();
       const links = page.getByTestId('explore-level-card-links').locator('a');
+      await expect(links.first()).toBeVisible({ timeout: 15_000 });
       const n = await links.count();
       expect(n).toBeGreaterThan(0);
       expect(n).toBeLessThanOrEqual(5);

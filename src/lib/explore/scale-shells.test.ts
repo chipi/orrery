@@ -78,6 +78,7 @@ describe('the consumers read the table', () => {
     'src/routes/+page.svelte',
     'src/routes/explore/hub/+page.svelte',
     'src/lib/explore/lens-panel.ts',
+    'src/lib/explore/format.ts',
   ];
   it('keeps the level names and card texts out of every copy', () => {
     for (const f of files) {

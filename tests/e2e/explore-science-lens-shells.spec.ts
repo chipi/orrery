@@ -71,4 +71,15 @@ test.describe('/explore — per-shell science lens (WS-3)', () => {
     await expect(page.getByTestId('explore-level-card')).toContainText(/Local Sheet/i);
     await expect(page.locator('[data-testid="science-lens-panel"]')).toHaveCount(0);
   });
+
+  test('the nav Science Lens toggle is disabled on a level with no layers and enabled where there are some', async ({
+    page,
+  }) => {
+    await gotoShell(page, 'local-group');
+    const toggle = page.locator('.lens-toggle').first();
+    await expect(toggle).toBeDisabled();
+    await expect(toggle).toHaveAttribute('aria-disabled', 'true');
+    await gotoShell(page, 'milky-way');
+    await expect(toggle).toBeEnabled();
+  });
 });

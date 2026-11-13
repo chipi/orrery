@@ -8,34 +8,37 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import * as m from '$lib/paraglide/messages';
-  import { dismissesHint, HINT_TIMEOUT_MS, type HintEvent } from '$lib/hint-state';
+  import { dismissesHint, HINT_TIMEOUT_MS, timeoutEvent, type HintEvent } from '$lib/hint-state';
 
   let {
     text,
     testid = 'explore-hint',
     topOnTouch = false,
+    ondismiss,
   }: {
     text: string;
     testid?: string;
     /** Hang under the top row on a touch screen instead of above the bottom edge. */
     topOnTouch?: boolean;
+    /** Called once the hint has faded out: the host keeps it gone for the rest of the visit. */
+    ondismiss?: () => void;
   } = $props();
 
   let leaving = $state(false);
   let gone = $state(false);
+  let fade: ReturnType<typeof setTimeout> | undefined;
 
   function dismiss(e: HintEvent) {
     if (gone || leaving || !dismissesHint(e)) return;
     leaving = true;
-    setTimeout(() => (gone = true), 300);
+    fade = setTimeout(() => {
+      gone = true;
+      ondismiss?.();
+    }, 300);
   }
 
   onMount(() => {
-    const started = performance.now();
-    const timer = setTimeout(
-      () => dismiss({ type: 'timeout', elapsedMs: performance.now() - started }),
-      HINT_TIMEOUT_MS,
-    );
+    const timer = setTimeout(() => dismiss(timeoutEvent()), HINT_TIMEOUT_MS);
     const onCanvas = (e: Event) => e.target instanceof HTMLCanvasElement;
     const pointers = new Map<number, { x: number; y: number }>();
     const onWheel = (e: WheelEvent) => {
@@ -63,6 +66,7 @@
     window.addEventListener('pointercancel', onUp, true);
     return () => {
       clearTimeout(timer);
+      clearTimeout(fade);
       window.removeEventListener('wheel', onWheel, true);
       window.removeEventListener('click', onClick, true);
       window.removeEventListener('pointerdown', onDown, true);

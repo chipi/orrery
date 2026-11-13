@@ -181,17 +181,22 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
     overlayName('sun', locale, fetchFn),
     overlayName('belts/asteroid', locale, fetchFn),
     overlayName('belts/kuiper', locale, fetchFn),
-    json<{ planets: { name: string }[] }>('planets.json'),
-    json<{ bodies: { id: string; name: string; type: string }[] }>('small-bodies.json'),
+    json<{ planets: { name: string; a: number }[] }>('planets.json'),
+    json<{
+      bodies: { id: string; name: string; type: string; a: number; radius_km?: number }[];
+    }>('small-bodies.json'),
     json<{
       satellites: {
         id: string;
         name: string;
         parent_planet_id: string;
         parent_planet_name: string;
+        radius_km: number;
       }[];
     }>('satellites.json'),
-    json<{ belts: { id: string; name: string }[] }>('belts.json'),
+    json<{ belts: { id: string; name: string; inner_au: number; outer_au: number }[] }>(
+      'belts.json',
+    ),
     getNamedStars(fetchFn),
     getExoplanetSystems(fetchFn),
     getDeepSkyObjects(fetchFn),

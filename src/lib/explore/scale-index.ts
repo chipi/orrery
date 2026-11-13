@@ -6,6 +6,15 @@
  */
 import { constellationName } from '$lib/universe/iau-constellations';
 import { deepSkyTitle } from './deep-sky-title';
+import { PLANET_STATS } from '$lib/physics/util/planet-stats';
+import type { LocaleCode } from '$lib/locale';
+import {
+  SATELLITE_STATS,
+  beltIndexMeta,
+  moonIndexMeta,
+  planetIndexMeta,
+  smallBodyIndexMeta,
+} from './format';
 import type { ShellId } from './scale-shell-controller';
 
 export type IndexSection =
@@ -31,7 +40,10 @@ export interface ScaleIndexRow {
   /** The data's own kind (`spiral`, `supercluster`, `globular-cluster`, a deep-sky category …). */
   kind: string;
   section?: IndexSection;
-  /** One short line after the name (constellation, parent planet); the kind label when absent. */
+  /**
+   * One short line after the name (constellation; on the solar system distance, size and moons,
+   * built per request locale); the kind label when absent.
+   */
   meta?: string;
   badges?: IndexBadge[];
   /** Locale-free path of the object's entity page, absent when it has none. */
@@ -65,6 +77,8 @@ export type IndexFilterId =
   | 'headliner'
   | 'planet'
   | 'dwarf'
+  | 'asteroid'
+  | 'moon'
   | 'comet'
   | 'globular'
   | 'satellite'
@@ -98,7 +112,9 @@ export const FILTER_TESTS: Record<IndexFilterId, (r: ScaleIndexRow) => boolean> 
   headliner: hasBadge('headliner'),
   planet: isKind('planet'),
   dwarf: isKind('dwarf'),
-  comet: isKind('comet'),
+  asteroid: isKind('asteroid', 'kbo'),
+  moon: isKind('moon'),
+  comet: isKind('comet', 'interstellar'),
   globular: isKind('globular-cluster'),
   satellite: isKind('satellite-galaxy'),
   arm: isKind('spiral-arm'),
@@ -118,7 +134,7 @@ export const FILTER_TESTS: Record<IndexFilterId, (r: ScaleIndexRow) => boolean> 
 
 /** The chips of each scale after All: kind chips, plus Highlights where a row is a headliner. */
 export const SCALE_FILTERS: Record<ShellId, IndexFilterId[]> = {
-  'solar-system': ['planet', 'dwarf', 'comet'],
+  'solar-system': ['planet', 'dwarf', 'asteroid', 'moon', 'comet'],
   neighborhood: ['system', 'culture', 'deep-sky'],
   'milky-way': ['headliner', 'globular', 'satellite', 'arm', 'black-hole'],
   'local-group': ['headliner', 'spiral', 'irregular', 'dwarf-galaxy'],
@@ -186,15 +202,16 @@ export interface ScaleIndexSource {
   };
   /** Scene ids that name a deep-sky object under another id (andromeda → m31): they link its page. */
   deepSkyAlias: Readonly<Record<string, string>>;
-  planets: { name: string }[];
-  smallBodies: { id: string; name: string; type: string }[];
+  planets: { name: string; a: number }[];
+  smallBodies: { id: string; name: string; type: string; a: number; radius_km?: number }[];
   satellites: {
     id: string;
     name: string;
     parent_planet_id: string;
     parent_planet_name: string;
+    radius_km: number;
   }[];
-  belts: { id: string; name: string }[];
+  belts: { id: string; name: string; inner_au: number; outer_au: number }[];
   namedStars: { id: string; proper: string; con: string | null }[];
   hostSystems: { hostId: string; star: { name: string; con: string | null } }[];
   deepSky: { id: string; designation: string; name: string; category: string }[];
@@ -313,14 +330,25 @@ function solarRows(src: ScaleIndexSource): ScaleIndexRow[] {
     selectable: true,
   });
   seen.add('sun');
+  const locale = src.locale as LocaleCode;
   for (const p of src.planets) {
     const id = p.name.toLowerCase();
     seen.add(id);
+    const stats = PLANET_STATS[id];
+    if (!stats) throw new Error(`planet ${id} has no PLANET_STATS diameter`);
     rows.push({
       id,
       name: bodyName(id, p.name),
       kind: 'planet',
       section: 'planets',
+      meta: planetIndexMeta(
+        {
+          au: p.a,
+          diameterKm: stats.diameterKm,
+          moons: src.satellites.filter((s) => s.parent_planet_id === id).length,
+        },
+        locale,
+      ),
       href: page(id),
       selectable: true,
     });
@@ -333,17 +361,30 @@ function solarRows(src: ScaleIndexSource): ScaleIndexRow[] {
       name: bodyName(b.id, b.name),
       kind: b.type,
       section: 'small-bodies',
+      // A comet prints its distance only (its nucleus is no size anyone sees); ʻOumuamua's orbit is
+      // open (a < 0), so it has no distance and the row shows the kind label.
+      meta:
+        b.type === 'interstellar'
+          ? undefined
+          : smallBodyIndexMeta(
+              {
+                au: b.a,
+                diameterKm: b.type === 'comet' || !b.radius_km ? undefined : b.radius_km * 2,
+              },
+              locale,
+            ),
       href: page(b.id),
       selectable: true,
     });
   }
   for (const s of src.satellites) {
+    const diameterKm = SATELLITE_STATS[s.id]?.diameterKm ?? s.radius_km * 2;
     rows.push({
       id: s.id,
       name: bodyName(s.id, s.name),
       kind: 'moon',
       section: 'moons',
-      meta: bodyName(s.parent_planet_id, s.parent_planet_name),
+      meta: moonIndexMeta(bodyName(s.parent_planet_id, s.parent_planet_name), diameterKm, locale),
       parent: s.parent_planet_id,
       href: page(s.id),
       selectable: true,
@@ -355,6 +396,7 @@ function solarRows(src: ScaleIndexSource): ScaleIndexRow[] {
       name: src.names.belt[b.id] ?? b.name,
       kind: 'belt',
       section: 'belts',
+      meta: beltIndexMeta(b.inner_au, b.outer_au, locale),
       selectable: true,
     });
   }

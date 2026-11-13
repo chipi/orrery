@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { plural, planetCountLabel } from './plural';
+import { majorMoonCount, plural, planetCountLabel } from './plural';
 
 const tag =
   (form: string) =>
@@ -20,5 +20,24 @@ describe('plural', () => {
   it('says "1 known planet", not "1 known planets" (kepler-16)', () => {
     expect(planetCountLabel(1, 'en-US')).toBe('1 known planet');
     expect(planetCountLabel(3, 'en-US')).toBe('3 known planets');
+  });
+
+  it('major moons: the form and the language of the locale asked for (INDEX rows are per request)', () => {
+    expect([1, 2].map((n) => majorMoonCount(n, 'en-US'))).toEqual([
+      '1 major moon',
+      '2 major moons',
+    ]);
+    expect([1, 2, 5].map((n) => majorMoonCount(n, 'ru'))).toEqual([
+      '1 крупный спутник',
+      '2 крупных спутника',
+      '5 крупных спутников',
+    ]);
+    expect([1, 2, 3, 11].map((n) => majorMoonCount(n, 'ar'))).toEqual([
+      '1 قمر رئيسي',
+      '2 قمران رئيسيان',
+      '3 أقمار رئيسية',
+      '11 قمرًا رئيسيًا',
+    ]);
+    expect(majorMoonCount(4, 'ja')).toBe('4個の主要衛星');
   });
 });

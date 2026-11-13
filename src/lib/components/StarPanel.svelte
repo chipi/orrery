@@ -27,6 +27,7 @@
     type ExoplanetSystem,
   } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
   import { planetCountLabel } from '$lib/plural';
   import { dataLoadFailed } from '$lib/data/core';
 
@@ -79,7 +80,7 @@
     }
   });
   const fmt = (n: number, dp = 2): string =>
-    n.toLocaleString(undefined, { maximumFractionDigits: dp });
+    n.toLocaleString(getLocale(), { maximumFractionDigits: dp });
 
   type LinkItem = NonNullable<LocalizedNamedStar['links']>[number];
   let library = $derived.by(() => {

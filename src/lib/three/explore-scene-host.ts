@@ -614,15 +614,20 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       bridge.activeBlackHole = null;
       bridge.bhCurvatureLens = false;
       bridge.bhTimeLens = false;
-    }
+    } else if (inMilkyWay()) mwScene?.highlight(null);
     bridge.bhPanelOpen = false;
     bridge.bhPanelHole = null;
   }
   // B3 (UXD-023): a hole is picked at its own scale and opens its panel in place; the main area
   // does not change. The lensing takeover is an action on that panel (seeBlackHoleLensing).
+  let bhPanelSeq = 0;
   async function openBlackHolePanel(id: string): Promise<void> {
+    const seq = ++bhPanelSeq;
+    const ctx = contextGraph.active.id;
     const hole = await getBlackHoleI18n(id, getLocale(), fetch);
-    if (!hole || bridge.activeBlackHole) return;
+    // Picked something else, or left the scale, while the hole's text loaded: drop it.
+    if (!hole || bridge.activeBlackHole || seq !== bhPanelSeq || contextGraph.active.id !== ctx)
+      return;
     bridge.bhPanelHole = hole;
     bridge.bhPanelOpen = true;
     bridge.bhCultureDoors = [];
@@ -641,6 +646,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // Leaving the scale or resetting its view drops an in-place hole panel, as it drops the others;
   // a takeover is left through its own Back.
   function closeBlackHolePanel(): void {
+    bhPanelSeq++;
     if (bridge.activeBlackHole || !bridge.bhPanelOpen) return;
     bridge.bhPanelOpen = false;
     bridge.bhPanelHole = null;
@@ -1592,6 +1598,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
 
   // ── Named-star selection (Slice 1) ──────────────────────────────────────
   async function selectStar(id: string): Promise<void> {
+    closeBlackHolePanel();
     const base = bridge.namedStarById.get(id);
     if (!base) return;
     cue('select');
@@ -2854,6 +2861,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     }
   }
   function selectMilkyWay(id: string): void {
+    closeBlackHolePanel();
     if (!bridge.mwObjects.some((o) => o.id === id)) return;
     // A black-hole pin opens the hole's panel in place (B3); the lensing render is its action.
     if (id === 'sagittarius-a-star' || id === 'cygnus-x-1') {
@@ -2891,6 +2899,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     }
   }
   function selectLocalGroup(id: string): void {
+    closeBlackHolePanel();
     const member = lgMembers.find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
@@ -2921,6 +2930,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     }
   }
   function selectLocalSheet(id: string): void {
+    closeBlackHolePanel();
     const member = (bridge.lsMembers ?? []).find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
@@ -2951,6 +2961,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     }
   }
   function selectVirgo(id: string): void {
+    closeBlackHolePanel();
     const member = (bridge.virgoMembers ?? []).find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
@@ -2981,6 +2992,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     }
   }
   function selectLaniakea(id: string): void {
+    closeBlackHolePanel();
     const member = (bridge.laniakeaMembers ?? []).find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
@@ -3011,6 +3023,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     }
   }
   function selectCosmicWeb(id: string): void {
+    closeBlackHolePanel();
     const member = (bridge.cosmicWebMembers ?? []).find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
@@ -3044,9 +3057,12 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   bhDeepLinkFn = (id: string) => {
     if (id === 'm87-star' && inVirgo()) selectVirgo('virgo-cluster');
     else if (inMilkyWay()) {
+      closeBlackHolePanel();
+      bridge.mwPanelOpen = false;
+      bridge.selectedMwId = null;
       mwScene?.highlight(id, id);
       focusMember(mwMemberPosition(id));
-    }
+    } else closeBlackHolePanel();
     void openBlackHolePanel(id);
   };
   seeBlackHoleLensingFn = seeBlackHoleLensing;
@@ -4967,6 +4983,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     exitBlackHoleFn,
     seeBlackHoleLensingFn,
     bhDeepLinkFn,
+    // ?bh=<id> enters the lensing takeover directly (UXD-023); an INDEX row uses bhDeepLinkFn.
+    bhTakeoverFn: (id: string) => void enterBlackHole(id),
     setBhCurvatureFn,
     selectStarFn,
     closeStarFn,

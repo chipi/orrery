@@ -13,6 +13,7 @@
   import ScienceCard from './ScienceCard.svelte';
   import type { BlackHole, BlackHoleKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
   import { dataSourceItems, recordLinks, sourceLink } from '$lib/catalogue';
   import DataSources from './DataSources.svelte';
 
@@ -52,18 +53,22 @@
     ),
   );
 
-  // Human-friendly big-number formatting for mass + radius.
+  // Big numbers in the reader's language ("4.3 million", "4,3 миллиона", "430万"), not the
+  // browser's locale with an English word appended.
   function bigNum(n: number): string {
-    if (n >= 1e9)
-      return `${(n / 1e9).toLocaleString(undefined, { maximumFractionDigits: 1 })} billion`;
-    if (n >= 1e6)
-      return `${(n / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })} million`;
-    return n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    return n >= 1e6
+      ? new Intl.NumberFormat(getLocale(), {
+          notation: 'compact',
+          compactDisplay: 'long',
+          maximumFractionDigits: 1,
+        }).format(n)
+      : n.toLocaleString(getLocale(), { maximumFractionDigits: 0 });
   }
   function dist(ly: number): string {
-    if (ly >= 1e6)
-      return `${(ly / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })}M ly`;
-    return `${ly.toLocaleString(undefined, { maximumSignificantDigits: 3 })} ly`;
+    return m.unit_ly_value({
+      value:
+        ly >= 1e6 ? bigNum(ly) : ly.toLocaleString(getLocale(), { maximumSignificantDigits: 3 }),
+    });
   }
   let facts = $derived(
     hole
@@ -84,7 +89,7 @@
             ? [
                 {
                   label: m.explore_bh_label_spin(),
-                  value: hole.spin.toLocaleString(undefined, { maximumFractionDigits: 2 }),
+                  value: hole.spin.toLocaleString(getLocale(), { maximumFractionDigits: 2 }),
                 },
               ]
             : []),
@@ -94,11 +99,7 @@
   );
 
   function rs(km: number): string {
-    if (km >= 1e9)
-      return `~${(km / 1e9).toLocaleString(undefined, { maximumFractionDigits: 1 })}B km`;
-    if (km >= 1e6)
-      return `~${(km / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })}M km`;
-    return `~${km.toLocaleString(undefined, { maximumFractionDigits: 0 })} km`;
+    return `~${bigNum(km)} km`;
   }
 </script>
 

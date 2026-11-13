@@ -117,7 +117,7 @@ If something *can't* be expressed in this contract, that's a signal — file an 
 | `SurfaceScene.svelte` | The shared component — scene assembly, animation loop, HUD, panel state |
 | `types.ts` | `SurfaceSceneConfig` and the config types it composes |
 | `SurfaceFlatPatch.svelte` | Flat ground-patch view at deep zoom (/moon, /mars; ADR-062) |
-| `SurfaceIndexPanel.svelte` | Searchable orbit/land index shared by the routes; a site's dot is its nation colour (`colorFor`, the legend's) with a light ring, the meta line ends with In orbit / On land (UXD-017 amendment) |
+| `SurfaceIndexPanel.svelte` | Searchable orbit/land index shared by the routes; a site's round photo (`IndexItem.thumb`, the image its panel shows, `EntityThumb`, UXD-025) is ringed in its nation colour (`colorFor`, the legend's); a site with no photo keeps the dot in that colour with a light ring, the meta line ends with In orbit / On land (UXD-017 amendment) |
 | `EarthObjectPanel.svelte`, `MuseumPanel.svelte`, `ObservatoryPanel.svelte` | /earth detail panels (the Earth-object panel lists its `science` slugs as compact `ScienceCard`s through `pickScienceLinks`); each passes its kind line and name to `Panel` as the `eyebrow` and `heading` snippets (the site panel inside `SurfaceScene.svelte` does the same) |
 | `earth-*-layer(s).ts`, `museum-layer.ts` | /earth-only layers (atmosphere, magnetosphere, geophysics, orbital rings, satellites, place pins) |
 | `moon-lens-layers.ts`, `mars-lens-layers.ts`, `surface-sun-layers.ts`, `surface-climate-layers.ts` | Science-lens layers, per body or shared |

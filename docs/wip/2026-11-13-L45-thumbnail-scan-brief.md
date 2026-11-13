@@ -1,5 +1,7 @@
 # L45 brief — where else small round photos would make a list less boring (thumbnail scan)
 
+**Status (2026-11-13):** all 8 recommendations of §13 approved (option a each); T1 built (`0d474235b49`, `0baa9029a70`); T2 built (the two INDEXes, UXD-025 "T2", CHANGE-INVENTORY L45-T2): corrections to this brief found by reading the loaders: `/mars` reaches 27 of 27 (`mars2` and `mars6` resolve to their mission folders), an Earth object falls back to the mission folder only (not the fleet folder; the seven Moon-orbit objects have mission folders), and `/earth` has 42 launch pads (73 rows with the 31 objects); T3 and T4 open.
+
 Read-only brief, written at HEAD `48537a8fef6` on `tech-debt/0.9.9`. Method: `git grep` and reading every `{#each}` list in `src/routes` and `src/lib` that draws named things, then five read-only node scripts over `static/images/`, `static/credit-thumbs/`, `static/data/` and `i18n-src/` (scratchpad `l45-*.mjs`, not in the repo; their numbers are quoted below). Coverage means "a file exists on disk"; no image was opened, no browser, build or test was run, nothing was downloaded, no code was changed. C6 is being built beside this scan (operator 2026-11-13), so line numbers for `ScaleIndex.svelte`, `index-panel.css`, `scale-index.ts` and `SurfaceIndexPanel.svelte` are quoted from `HEAD`, not from the working tree, and those four files move under C6.
 
 ## 0. Answer first

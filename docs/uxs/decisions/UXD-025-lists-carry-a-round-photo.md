@@ -1,11 +1,11 @@
 # UXD-025 — Lists carry a round photo of the row's own thing, from one component and one resolver
 
-- **Status**: accepted (T1 built: the component, the resolver, the manifest, the regime panel and its founding missions; T2 to T4 are decided and not built)
+- **Status**: accepted (T1 built: the component, the resolver, the manifest, the regime panel and its founding missions; T2 built: the solar-system and the Worlds' INDEXes; T3 and T4 are decided and not built)
 - **Date**: 2026-11-13 (proposed and decided)
 - **Decider**: the operator, 2026-11-13 — all 8 recommendations of `docs/wip/2026-11-13-L45-thumbnail-scan-brief.md` §13 approved (option a each); slices T1 to T4 approved, built in that order
 - **Answers**: L45 of the UX feedback plan
 - **Builds on**: [UXD-024](UXD-024-orbit-ruler-one-row-draws-its-regime.md) (the 28 px resident photo this generalises), [UXD-001](UXD-001-ui-accent-blue-replaces-teal.md) (no teal or cyan ring), [UXD-017](UXD-017-one-index-on-every-scale.md) (the INDEX rows T2 puts a photo in)
-- **Changes**: `src/lib/components/EntityThumb.svelte`, `src/lib/entity-thumb.ts` (new, each with its test), `RegimePanel.svelte`, `surface-map/nation-palette.ts` (`agencyRingColor`), `scripts/build-entity-thumbs.ts` (new), `scripts/vision/build-credit-thumbs.mjs` (`--paths`), `scripts/validate-data.ts`, `static/data/entity-thumbs.json` (new), `static/data/orbit-regime-thumbs.json`, 352 files in `static/credit-thumbs/images/`, 22 `1x1.jpg` crops in `static/images/`; [UXS-014](../UXS-014.md), Design System §5.16, `docs/adr/TA.md`, `docs/accessibility.md`, the component and scripts READMEs
+- **Changes**: `src/lib/components/EntityThumb.svelte`, `src/lib/entity-thumb.ts` (new, each with its test), `RegimePanel.svelte`, `surface-map/nation-palette.ts` (`agencyRingColor`), `scripts/build-entity-thumbs.ts` (new), `scripts/vision/build-credit-thumbs.mjs` (`--paths`), `scripts/validate-data.ts`, `static/data/entity-thumbs.json` (new; T2 adds `sites`), T2: `ScaleIndex.svelte`, `SurfaceIndexPanel.svelte`, `index-panel.css`, `surface-map/surface-index.ts` (`IndexItem.thumb`), `data/gallery-ids.ts` (extracted from `galleries.ts`), `static/data/orbit-regime-thumbs.json`, 352 files in `static/credit-thumbs/images/`, 22 `1x1.jpg` crops in `static/images/`; [UXS-014](../UXS-014.md), Design System §5.16, `docs/adr/TA.md`, `docs/accessibility.md`, the component and scripts READMEs
 
 ## Context
 
@@ -54,11 +54,46 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
    INDEXes (10 of 84) get no thumbs until a content pass raises coverage: a quarter of the rows with a photo reads
    as a mistake. `/fleet?view=list` (decision 7, option a) stays without thumbs: nothing links to it. Launch rows
    are not proposed (their images are other people's URLs).
-7. **Still to build, decided.** T2 the Worlds' INDEX and the solar-system INDEX, after C6 (decision 5, option a);
-   T3 the station module lists, the PATHS legend (thumb with the path colour as ring, the swatch dot dropped;
+7. **Built after T1, decided.** T2 the Worlds' INDEX and the solar-system INDEX, after C6 (decision 5, option a;
+   see "T2" below). **Still to build, decided.** T3 the station module lists, the PATHS legend (thumb with the path colour as ring, the swatch dot dropped;
    Voyager 2 neutral, decision 8, option a) and optionally the belt members; T4 the fleet panel's lists (the
    MISSIONS tab prints the raw mission id: the name first) and the entity pages' Related and hardware lists
    (decision 6, option a; a patched program row keeps its patch).
+
+## T2 — the solar-system and the Worlds' INDEXes (built 2026-11-13, after C6)
+
+1. **Solar-system INDEX** (`ScaleIndex.svelte`, the scale `solar-system` only): the lead slot of a row holds an
+   `EntityThumb` where the manifest has a thumb (`solarRowThumb({ id, kind })` in `entity-thumb.ts`: the Sun,
+   `planets`, `small-bodies` for dwarf, asteroid, comet, Kuiper object and interstellar, `satellites`, `belts`).
+   40 of 51 rows: the Sun, 9 of 9 planets (Earth and Mars on their override slots), 12 of 23 small
+   bodies, 16 of 16 moons (the 15 crops generated in T1), 2 of 2 belts. The 11 small bodies with no image at all
+   (Psyche, Arrokoth, Didymos, Dimorphos, Donaldjohanson, Eurybates, Polymele, Leucus, Orus, Patroclus,
+   Menoetius) keep the dot. Ring: the body's colour the page already gives the dot (the Sun and the planets);
+   every other row's ring is neutral, as its dot is grey; Uranus (`#7de8e8`) is neutral (decision 4). The lead
+   slot is 28 px on this scale (grid column and `.si-lead`, centring the dot of a row without a photo), so names
+   start at one x with and without a photo; the two-line row is 44 px or more, as before.
+2. **Worlds' INDEX** (`SurfaceIndexPanel.svelte`, `/moon /mars /venus /earth`): the lead slot (28 px, spanning
+   both lines) holds the site's photo, ring `item.color` (the nation colour, `colorFor(site)`; an Earth object's
+   own colour, so the ISS is neutral). 28 of 28 moon, 27 of 27 Mars, 3 of 3 Venus rows; `/earth` 73 of 73 (31
+   objects, 42 launch pads). A site without a thumb keeps the C6 dot (nation colour, light ring), centred.
+3. **Which file.** A site shows the picture of the folder its panel gallery resolves to, not of a folder named
+   like it. The manifest gained `sites` (`moon`, `mars`, `venus`, `earth-objects`): per site id the
+   `<dir>/<folder>/<slot>` of the thumb. `build-entity-thumbs.ts` runs the loaders' ladder (`getMoonSiteGallery`,
+   `getMarsSiteGallery`, `getEarthObjectGallery`: own folder, mission by `mission_id`, mission by id, fleet id
+   variants (`gallery-ids.ts`, extracted from `galleries.ts` so both use one list of variants); a venus site
+   skips the own folder), and the slot is what `applyHeroOverride` makes first: the folder's own hero override
+   (missions, fleet), then the site surface's. So Apollo 16 on `/moon` shows `missions/apollo16/06`. An Earth launch
+   pad is the fleet's `launch-site` entry: `thumbOf('fleet', id)`. `validate-data` checks the `sites` paths on
+   disk. The ladder differs from the brief's reading in three places, both found by reading the loaders: an Earth
+   object falls back to the mission folder only (the panel never looks in the fleet folder), and the seven Moon-orbit objects the brief said reach an image only through the fleet folder (`lro`, `luna10`, `clementine`, `lunar-prospector`, `smart-1`, `change1`, `chandrayaan1`) have a mission folder; `/mars`
+   reaches 27 of 27 (`mars2` and `mars6` resolve to their mission folders) where the brief counted 25.
+4. **No new file.** Every thumb the two lists need was already on disk after T1 (`--missing` reports none for
+   `sites`); no generator was run in T2.
+5. **Lazy loading.** A closed INDEX is `hidden` (display none); Chromium fetches none of its lazy images (a
+   Playwright request log: 0 thumb requests with the panel closed, 40 on `/explore` and 28 on `/moon` after
+   opening). The e2e specs assert it. Firefox and WebKit were not run.
+6. **Held, unchanged.** The neighbourhood and the six outer scales carry no thumb (decision 3); the e2e asserts no
+   `img` in their panels.
 
 ## Consequences
 
@@ -69,7 +104,8 @@ change; `validate-data` says so. The ring of a row that carries no identity colo
 the founding missions in every regime panel: giving them their agency's colour would need the mission's agency
 in a row that only holds a `mission_id`.
 
-Not covered: T2 to T4; the held lists; right-to-left and the long-name locales (the T1 rows are flex and grid
+Not covered: T3 and T4; the held lists; (T2: Firefox and WebKit, whether a production build behaves like the dev
+server, a real device, the Worlds' index with the folded filters of the next slice;) right-to-left and the long-name locales (the T1 rows are flex and grid
 without physical offsets and were screenshot only in English); a phone width under 390 px; whether the
 dev-server panel behaves the same in a production build (a hidden panel not fetching its lazy images was not
 tested).
@@ -85,3 +121,13 @@ their blessed slot), `nation-palette.test.ts` (`agencyRingColor`). `validate-dat
 `orbit-ruler.spec.ts` (desktop-chromium, against the dev server: every linked founding mission has a photo; a
 blocked thumb file turns into the dot). Screenshots of `/mars` LMO and DMO, `/earth` LEO, `/explore` GIANTS and
 BELT at 1440×900 and 390×844 were read.
+
+T2: unit `entity-thumb.test.ts` (`resolveSiteThumb`, `solarRowThumb` per row kind, the real manifest: 40 solar rows,
+the 11 without, every moon, mars, venus site, earth object and launch pad has a thumb on disk, Apollo 16 on slot 06),
+`build-entity-thumbs.test.ts` (the site ladder on a fixture tree: own, `mission_id`, fleet variants, both overrides,
+a missing thumb), `surface-index.test.ts` (`thumb` per body). E2E `scale-index.spec.ts` (photo attributes, ring
+colours incl. Uranus neutral, dot for Psyche, names aligned, blocked file to the dot, closed INDEX fetches
+nothing, no `img` on the other scales) and `surface-index.spec.ts` (photo on every moon row, ring of Apollo 11,
+slot 06 for Apollo 16, blocked file to the dot, names aligned, closed INDEX fetches nothing). Screenshots at
+1440×900, 390×844 and 844×390: `/explore` All and Moons (en, de, ar), `/moon` (en, de, ar), `/mars`, `/earth`,
+`/venus`.

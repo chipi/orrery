@@ -1,4 +1,3 @@
-import { readFileSync } from 'node:fs';
 import {
   getBlackHoles,
   getCosmicWeb,
@@ -17,6 +16,8 @@ import {
 import { get } from '$lib/data/core';
 import { buildScaleIndexRows, type ScaleIndexRows } from '$lib/explore/scale-index';
 import { getBodyEntity } from '$lib/data/body-entity';
+import { getOuterNames } from '$lib/data/outer-entity';
+import { BODY_NAMES } from './glossary';
 import { getSiteEntity, type SiteBody } from '$lib/data/site-entity';
 import { getStarEntity } from '$lib/data/star-entity';
 import { getBlackHoleEntity } from '$lib/data/black-hole-entity';
@@ -41,12 +42,6 @@ export interface EntityLink {
 }
 
 type FetchFn = typeof fetch;
-
-const GLOSSARY = (
-  JSON.parse(readFileSync('scripts/i18n-tools/native-terms.json', 'utf8')) as {
-    body: Record<string, Record<string, string>>;
-  }
-).body;
 
 /** Every id the hub's entity pages prerender — scripts/site-routes.mjs is the one source. */
 function hubIds(hub: EntityHub): string[] {
@@ -78,7 +73,7 @@ async function nameOf(
   if (hub === 'explore') {
     const body = await getBodyEntity(id, locale, fetchFn);
     if (!body) return null;
-    return body.kind === 'planet' ? body.name : (GLOSSARY[body.name]?.[locale] ?? body.name);
+    return body.kind === 'planet' ? body.name : (BODY_NAMES[body.name]?.[locale] ?? body.name);
   }
   const entity = await getSiteEntity(hub as SiteBody, id, locale, fetchFn);
   return entity ? (entity.text.name ?? id) : null;
@@ -178,6 +173,7 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
     laniakea,
     cosmicWeb,
     blackHoles,
+    outerNames,
   ] = await Promise.all([
     getEntityIndex('explore', locale, fetchFn),
     getStarLinks(locale, fetchFn),
@@ -207,6 +203,7 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
     getLaniakea(fetchFn),
     getCosmicWeb(fetchFn),
     getBlackHoles(fetchFn),
+    getOuterNames(locale, fetchFn),
   ]);
   if (!milkyWay || !localGroup || !localSheet || !virgo || !laniakea || !cosmicWeb)
     throw new Error('universe data is missing: the scale INDEX cannot be built');
@@ -220,6 +217,8 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
         ...(asteroidName ? { asteroid: asteroidName } : {}),
         ...(kuiperName ? { kuiper: kuiperName } : {}),
       },
+      galaxy: outerNames.galaxy,
+      structure: outerNames.structure,
       sun: sunName ?? undefined,
     },
     pages: {

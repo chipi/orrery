@@ -23,7 +23,13 @@ vi.mock('./core', () => ({
   }),
 }));
 
-import { getGalaxyEntity, getStructureEntity, type OuterPages } from './outer-entity';
+import {
+  getGalaxyEntity,
+  getOuterNames,
+  getOuterOverlayIds,
+  getStructureEntity,
+  type OuterPages,
+} from './outer-entity';
 
 const ids = (xs: string[]) => new Set(xs);
 const pages = (p: Partial<OuterPages>): OuterPages => ({
@@ -179,5 +185,78 @@ describe('getStructureEntity', () => {
     expect(hrefs(m81, 'part-of')).toBeUndefined();
     expect(hrefs(m81, 'members')).toBeUndefined();
     expect(hrefs(m81, 'same-scale')).toContain('/explore/structures/ic-342-group');
+  });
+
+  it('carries the distance source where a paper states it, none for an anchor or an unsourced value', async () => {
+    for (const id of ['maffei-group', 'local-group', 'm81-group']) OVERLAYS.add(id);
+    const at = (id: string) => getStructureEntity(id, 'en-US', fetch, pages({ structure: ids([id]) }));
+    const maffei = await at('maffei-group');
+    expect(maffei?.catalogue.dist_mpc).toMatchObject({
+      value: maffei?.distMpc,
+      record_url: 'https://arxiv.org/abs/1901.05981',
+    });
+    expect((await at('local-group'))?.catalogue).toEqual({});
+    expect((await at('m81-group'))?.catalogue).toEqual({});
+  });
+});
+
+describe('names in the reader’s language', () => {
+  it('the glossary name on the page, in its Related links and in getOuterNames, the data name in en-US', async () => {
+    for (const id of ['sculptor-dwarf', 'milky-way', 'local-group']) OVERLAYS.add(id);
+    const p = pages({
+      galaxy: ids(['sculptor-dwarf', 'milky-way']),
+      structure: ids(['local-group']),
+    });
+    const de = await getGalaxyEntity('sculptor-dwarf', 'de', fetch, p);
+    expect(de?.name).toBe('Sculptor-Zwerggalaxie');
+    const en = await getGalaxyEntity('sculptor-dwarf', 'en-US', fetch, p);
+    expect(en?.name).toBe('Sculptor Dwarf');
+    expect(de?.related[0].links.map((l) => l.name)).toEqual(['Milchstraße', 'Lokale Gruppe']);
+    const names = await getOuterNames('de', fetch);
+    expect(names.galaxy['sculptor-dwarf']).toBe(de?.name);
+    expect(names.structure['local-group']).toBe('Lokale Gruppe');
+    expect((await getOuterNames('en-US', fetch)).structure['local-group']).toBe('Local Group');
+    // A twin has no glossary name: its data name stands (its page is a deep-sky one).
+    expect(names.galaxy.andromeda).toBe('Andromeda (M31)');
+  });
+
+  it('the glossary holds every one of the 59 names in all 13 locales (a catalogue code may equal English)', async () => {
+    const LOCALES = ['de', 'fr', 'es', 'it', 'nl', 'pt-BR', 'ru', 'ja', 'zh-CN', 'ko', 'hi', 'ar', 'sr-Cyrl'];
+    const star = JSON.parse(readFileSync('scripts/i18n-tools/native-terms.json', 'utf8')).star as Record<
+      string,
+      Record<string, string>
+    >;
+    const twins = new Set(['Andromeda (M31)', 'Triangulum (M33)', 'M32', 'M110 (NGC 205)']);
+    const en = await getOuterNames('en-US', fetch);
+    const data = [...Object.values(en.galaxy), ...Object.values(en.structure)].filter(
+      (n) => !twins.has(n),
+    );
+    expect(new Set(data).size).toBe(59);
+    for (const name of data)
+      for (const loc of LOCALES) expect(star[name]?.[loc], `${name} ${loc}`).toBeTruthy();
+  });
+});
+
+describe('getOuterOverlayIds', () => {
+  it('lists the overlay ids and the Local Group members whose text is a deep-sky object’s', async () => {
+    const out = await getOuterOverlayIds(
+      fetch,
+      pages({
+        galaxy: ids(['lmc']),
+        structure: ids(['virgo-cluster']),
+        deepSky: ids(['m31', 'm32', 'm33']),
+      }),
+    );
+    expect(out.galaxy).toEqual(['lmc']);
+    expect(out.structure).toEqual(['virgo-cluster']);
+    expect(out.deepSky).toEqual({ andromeda: 'm31', triangulum: 'm33', m32: 'm32' });
+  });
+
+  it('is empty with no overlay', async () => {
+    expect(await getOuterOverlayIds(fetch, pages({}))).toEqual({
+      galaxy: [],
+      structure: [],
+      deepSky: {},
+    });
   });
 });

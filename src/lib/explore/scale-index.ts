@@ -167,6 +167,9 @@ export interface ScaleIndexSource {
     star: Record<string, string>;
     blackHole: Record<string, string>;
     belt: Record<string, string>;
+    /** Glossary names of the Local Group members and of the outer structures (the data's name where there is none). */
+    galaxy: Record<string, string>;
+    structure: Record<string, string>;
     sun?: string;
   };
   /**
@@ -219,14 +222,19 @@ const dist = (m: Member): number => ('dist_mly' in m ? m.dist_mly : m.dist_mpc);
 type PageOf = (id: string, name: string) => { href: string; name: string } | null;
 
 /** Members nearest first; the data files list them in the order they were authored. */
-function memberRows(members: Member[], pageOf?: PageOf): ScaleIndexRow[] {
+function memberRows(
+  members: Member[],
+  names: Record<string, string>,
+  pageOf?: PageOf,
+): ScaleIndexRow[] {
   return [...members]
     .sort((a, b) => dist(a) - dist(b))
     .map((m) => {
-      const page = pageOf?.(m.id, m.name);
+      const name = names[m.id] ?? m.name;
+      const page = pageOf?.(m.id, name);
       return {
         id: m.id,
-        name: page?.name ?? m.name,
+        name: page?.name ?? name,
         kind: m.kind,
         parent: m.parent,
         badges: m.headliner ? ['headliner'] : undefined,
@@ -420,10 +428,11 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
   }
   const galaxyPage = outerPageOf(src).galaxy;
   for (const s of mw.magellanic ?? []) {
-    const page = galaxyPage(s.id, s.name);
+    const name = src.names.galaxy[s.id] ?? s.name;
+    const page = galaxyPage(s.id, name);
     rows.push({
       id: s.id,
-      name: page?.name ?? s.name,
+      name: page?.name ?? name,
       kind: 'satellite-galaxy',
       section: 'satellites',
       href: page?.href,
@@ -446,12 +455,15 @@ export function buildScaleIndexRows(src: ScaleIndexSource): ScaleIndexRows {
     'solar-system': solarRows(src),
     neighborhood: neighborhoodRows(src),
     'milky-way': milkyWayRows(src),
-    'local-group': memberRows(src.localGroup, galaxy),
-    'local-sheet': memberRows(src.localSheet, structure),
-    virgo: [...memberRows(src.virgo, structure), blackHoleRow(src, 'm87-star', 'black-holes')],
-    laniakea: memberRows(src.laniakea, structure),
+    'local-group': memberRows(src.localGroup, src.names.galaxy, galaxy),
+    'local-sheet': memberRows(src.localSheet, src.names.structure, structure),
+    virgo: [
+      ...memberRows(src.virgo, src.names.structure, structure),
+      blackHoleRow(src, 'm87-star', 'black-holes'),
+    ],
+    laniakea: memberRows(src.laniakea, src.names.structure, structure),
     'cosmic-web': [
-      ...memberRows(src.cosmicWeb, structure),
+      ...memberRows(src.cosmicWeb, src.names.structure, structure),
       blackHoleRow(src, 'gargantua', 'fiction'),
     ],
   };

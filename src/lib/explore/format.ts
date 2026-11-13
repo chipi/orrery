@@ -1,7 +1,7 @@
 import * as m from '$lib/paraglide/messages';
 import type { ExploreContextId } from '$lib/three/explore-scene-host';
 import type { LocaleCode } from '$lib/locale';
-import type { DeepSkyCategory } from '$lib/data/universe';
+import type { DeepSkyCategory, OuterTextOverlay } from '$lib/data/universe';
 import { constellationName } from '$lib/universe/iau-constellations';
 
 // Localised label for an anonymous star's catalogue colour (enum → message).
@@ -208,3 +208,7 @@ export function galaxyGroupLabel(id: string, parent: string): string {
   if (parent === 'andromeda') return m.explore_lg_group_andromeda();
   return m.explore_lg_group_independent();
 }
+
+/** The panel's lead paragraphs: the entity's reviewed fact and bio, else the kind blurb. */
+export const outerLead = (overlay: OuterTextOverlay | null | undefined, blurb: string): string[] =>
+  overlay?.fact && overlay.bio ? [overlay.fact, overlay.bio] : [blurb];

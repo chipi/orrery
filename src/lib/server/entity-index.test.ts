@@ -10,7 +10,11 @@ vi.mock('$lib/data/core', () => ({
   }),
 }));
 
-import { collectCanonicalRoutes } from '../../../scripts/site-routes.mjs';
+import {
+  collectCanonicalRoutes,
+  galaxyPageIds,
+  structurePageIds,
+} from '../../../scripts/site-routes.mjs';
 import { getEntityIndex, getScaleIndexRows, type EntityHub } from './entity-index';
 import { CTX_ORDER } from '$lib/explore/scale-shell-controller';
 
@@ -58,10 +62,28 @@ describe('getScaleIndexRows', () => {
       );
       // A Milky Way globular or Local Group twin links the deep-sky page of its object too.
       expect([...new Set(linked)].sort()).toEqual([...pages].sort());
-      expect(linked.length - new Set(linked).size).toBe(7 + 4 + 1 + 1);
+      // …and a page linked twice: the Magellanic Clouds (Local Group and Milky Way scale) and the
+      // Local Group (Local Sheet and Virgo), each only once its overlay exists.
+      const twice =
+        ['lmc', 'smc'].filter((id) => (galaxyPageIds() as string[]).includes(id)).length +
+        ((structurePageIds() as string[]).includes('local-group') ? 1 : 0);
+      expect(linked.length - new Set(linked).size).toBe(7 + 4 + 1 + 1 + twice);
       expect(CTX_ORDER.reduce((n, s) => n + rows[s].length, 0)).toBe(344);
     },
   );
+
+  it('names a Local Group member and a structure in the reader’s language, with or without a page', async () => {
+    const de = await getScaleIndexRows('de', fetch);
+    const name = (scale: (typeof CTX_ORDER)[number], id: string) =>
+      de[scale].find((r) => r.id === id)?.name;
+    expect(name('local-group', 'sculptor-dwarf')).toBe('Sculptor-Zwerggalaxie');
+    expect(name('milky-way', 'lmc')).toBe(name('local-group', 'lmc'));
+    expect(name('local-sheet', 'local-group')).toBe('Lokale Gruppe');
+    expect(name('virgo', 'local-group')).toBe('Lokale Gruppe');
+    expect(name('cosmic-web', 'laniakea')).toBe('Laniakea');
+    const en = await getScaleIndexRows('en-US', fetch);
+    expect(en['local-group'].find((r) => r.id === 'sculptor-dwarf')?.name).toBe('Sculptor Dwarf');
+  });
 
   it('names a linked row as its entity page does', async () => {
     const rows = await getScaleIndexRows('de', fetch);

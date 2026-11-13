@@ -5,10 +5,11 @@
 -->
 <script lang="ts">
   import UniversePanelBody from './UniversePanelBody.svelte';
-  import type { VirgoMember, VirgoKind } from '$lib/data';
+  import type { OuterTextOverlay, VirgoMember, VirgoKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
-  import { structureDistance, structureSpan } from '$lib/explore/format';
+  import { outerLead, structureDistance, structureSpan } from '$lib/explore/format';
+  import { sourceLink } from '$lib/catalogue';
 
   type Props = {
     member: VirgoMember | null;
@@ -16,8 +17,13 @@
     onClose: () => void;
     /** Another panel is stacked on this one (a black hole opened from its pin). */
     covered?: boolean;
+    /** The structure's reviewed fact and bio in the reader's language; null until loaded or written. */
+    overlay?: OuterTextOverlay | null;
+    /** The name in the reader's language, as the INDEX row prints it. */
+    name?: string;
   };
-  let { member, open, onClose, covered = false }: Props = $props();
+  let { member, open, onClose, covered = false, overlay = null, name }: Props = $props();
+  let shown = $derived(name ?? member?.name ?? '');
 
   const kindLabel = (k: VirgoKind): string =>
     k === 'cluster'
@@ -35,6 +41,7 @@
                   label: m.explore_lg_label_distance(),
                   value: structureDistance(member.dist_mpc, getLocale()),
                   accent: true,
+                  source: sourceLink(member.catalogue?.dist_mpc) ?? undefined,
                 },
               ]
             : []),
@@ -55,13 +62,16 @@
   {open}
   {onClose}
   {covered}
-  title={member?.name ?? ''}
+  title={shown}
   entityId={member?.id ?? ''}
   heroOf={member ? { level: 'virgo', id: member.id } : undefined}
   kind={member ? kindLabel(member.kind) : undefined}
-  name={member?.name}
+  name={member ? shown : undefined}
   lead={member
-    ? [member.id === 'local-group' ? m.explore_virgo_anchor_blurb() : m.explore_virgo_blurb()]
+    ? outerLead(
+        overlay,
+        member.id === 'local-group' ? m.explore_virgo_anchor_blurb() : m.explore_virgo_blurb(),
+      )
     : []}
   {facts}
 />

@@ -1,0 +1,16 @@
+{
+  "fact": "Der Kugelsternhaufen 47 Tucanae liegt im südlichen Sternbild Tukan und ist etwa 14.700 Lichtjahre entfernt.",
+  "bio": "Nicolas-Louis de Lacaille entdeckte ihn 1751 vom Kap der Guten Hoffnung aus und führte ihn als Nebel auf. N-Körper-Anpassungen ergeben etwa 850.000 Sonnenmassen (Baumgardts Datenbank der Kugelsternhaufen). Mehr als 40 Radiopulsare sind in ihm bekannt. Hubble-Photometrie spaltet seine Hauptreihe in zwei: Etwa 30 % der Sterne haben ursprüngliche Häufigkeiten, der Rest ist an Stickstoff und leicht an Helium angereichert, er enthält also mehr als eine Sternpopulation (Milone und Kollegen, 2012).",
+  "links": [
+    {
+      "l": "arXiv",
+      "u": "https://arxiv.org/abs/1109.0900",
+      "t": "intro"
+    },
+    {
+      "l": "Baumgardt",
+      "u": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc0104.html",
+      "t": "core"
+    }
+  ]
+}

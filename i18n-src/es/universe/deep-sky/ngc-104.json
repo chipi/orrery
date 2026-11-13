@@ -1,0 +1,16 @@
+{
+  "fact": "El cúmulo globular 47 Tucanae se encuentra en la constelación austral del Tucán, a unos 14 700 años luz.",
+  "bio": "Nicolas-Louis de Lacaille lo descubrió desde el cabo de Buena Esperanza en 1751 y lo registró como una nebulosa. Los ajustes de N cuerpos le dan unas 850 000 masas solares (base de datos de cúmulos globulares de Baumgardt). Se conocen en él más de 40 púlsares de radio. La fotometría de Hubble divide su secuencia principal en dos: alrededor del 30% de las estrellas tienen abundancias primigenias y el resto está enriquecido en nitrógeno y ligeramente en helio, así que contiene más de una población estelar (Milone y colegas, 2012).",
+  "links": [
+    {
+      "l": "arXiv",
+      "u": "https://arxiv.org/abs/1109.0900",
+      "t": "intro"
+    },
+    {
+      "l": "Baumgardt",
+      "u": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc0104.html",
+      "t": "core"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "fact": "NGC 6752是南天孔雀座中的一个球状星团，距离约1.34万光年。",
+  "bio": "N体拟合给出约26万太阳质量（鲍姆加特的球状星团数据库）。NASA称其年龄超过100亿年；Hubble拍摄的核心影像显示有蓝离散星，这些恒星对于这样古老的星团来说显得过于年轻和大质量，可能是碰撞与并合形成的。Hubble的测光显示其主序变宽，而它的红巨星的颜色随钠和氧的含量变化，这是存在不止一个星族的迹象（米洛内及同事，2010年）。",
+  "links": [
+    {
+      "l": "NASA APOD",
+      "u": "https://science.nasa.gov/image-article/apod-2012-february-10-at-the-core-of-ngc-6752/",
+      "t": "intro"
+    },
+    {
+      "l": "Baumgardt",
+      "u": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc6752.html",
+      "t": "core"
+    }
+  ]
+}

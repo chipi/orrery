@@ -553,7 +553,16 @@
     }
   }
   @media (min-width: 601px) {
+    /* The popover hangs from the bottom of the head row, not from the (i), so a title of three
+       lines (de) is not covered; the head is its containing block, in LTR and RTL. */
+    .paths-legend-head {
+      position: relative;
+    }
+    .paths-legend-why :global(.wrap) {
+      position: static;
+    }
     .paths-legend-why :global(.popover) {
+      top: calc(100% + 4px);
       left: auto;
       right: auto;
       inset-inline-start: auto;

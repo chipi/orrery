@@ -182,6 +182,83 @@ test.describe('/explore — iconic legend (C7)', () => {
   });
 });
 
+// L45-T3b (UXD-025): the round mission photo leads each row, ringed in the path's own colour,
+// in place of the 3 px swatch line.
+const RINGS: Record<string, string> = {
+  'pioneer-10': 'rgb(249, 117, 131)',
+  'voyager-1': 'rgb(255, 166, 87)',
+  // teal path: the ring is the C4 neutral, the line in the scene keeps its teal
+  'voyager-2': 'rgba(255, 255, 255, 0.5)',
+};
+
+test.describe('/explore — a thumb on every PATHS legend row (L45-T3b)', () => {
+  test('18 rows, 18 mission photos, ringed in the path colour; Voyager 2 neutral; no swatch', async ({
+    page,
+  }) => {
+    desktopOnly();
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await openPaths(page);
+    await expect(page.locator(ROWS)).toHaveCount(18);
+    await expect(page.locator(`${ROWS} img.entity-thumb`)).toHaveCount(18);
+    await expect(page.locator(`${ROWS} .swatch`)).toHaveCount(0);
+    for (const [id, ring] of Object.entries(RINGS)) {
+      const img = page.getByTestId(`paths-legend-row-${id}`).locator('img.entity-thumb');
+      await expect(img).toHaveAttribute('src', new RegExp(`/credit-thumbs/images/missions/${id}/`));
+      const m = await img.evaluate((el) => ({
+        ring: getComputedStyle(el).borderTopColor,
+        w: el.getBoundingClientRect().width,
+        h: el.getBoundingClientRect().height,
+      }));
+      expect(m.ring, `${id} ring`).toBe(ring);
+      expect([m.w, m.h], `${id} size`).toEqual([28, 28]);
+    }
+    const list = page.locator('.paths-legend .paths-legend-list');
+    const s = await list.evaluate((el) => [el.scrollHeight, el.clientHeight]);
+    expect(s[0], `list ${s}: still no scrollbar at 1440x900`).toBeLessThanOrEqual(s[1] + 1);
+  });
+
+  test('a blocked photo shows the dot in the path colour, the row keeps its height', async ({
+    page,
+  }) => {
+    desktopOnly();
+    await page.route('**/credit-thumbs/**', (route) => route.abort());
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await openPaths(page);
+    await expect(page.locator(ROWS)).toHaveCount(18);
+    await expect(page.locator(`${ROWS} .entity-thumb-dot`)).toHaveCount(18);
+    await expect(page.locator(`${ROWS} img.entity-thumb`)).toHaveCount(0);
+    const dot = await page
+      .getByTestId('paths-legend-row-pioneer-10')
+      .locator('.entity-thumb-dot')
+      .evaluate((el) => getComputedStyle(el).backgroundColor);
+    expect(dot).toBe('rgb(249, 117, 131)');
+    const h = await page
+      .getByTestId('paths-legend-row-pioneer-10')
+      .evaluate((el) => el.getBoundingClientRect().height);
+    expect(h).toBeLessThanOrEqual(30);
+  });
+
+  test('the phone drawer rows carry the photo too, rows stay 44 px or less', async ({ page }) => {
+    test.skip(!test.info().project.name.startsWith('mobile'), 'touch only');
+    await page.goto('/explore');
+    await waitForHydration(page);
+    await openDrawerTab(page, /missions/i);
+    const body = page.locator('.mdg-body');
+    await expect(body.locator(ROWS)).toHaveCount(18);
+    await expect(body.locator(`${ROWS} img.entity-thumb`)).toHaveCount(18);
+    const ring = await body
+      .getByTestId('paths-legend-row-voyager-2')
+      .locator('img.entity-thumb')
+      .evaluate((el) => getComputedStyle(el).borderTopColor);
+    expect(ring).toBe(RINGS['voyager-2']);
+    const h = await body
+      .getByTestId('paths-legend-row-pioneer-10')
+      .evaluate((el) => el.getBoundingClientRect().height);
+    expect(h).toBeGreaterThanOrEqual(36);
+    expect(h).toBeLessThanOrEqual(44);
+  });
+});
+
 test.describe('/explore — iconic milestone boxes (C7)', () => {
   test('a highlighted mission shows n/N · date over the name, 12 px, no mission name, one mission box', async ({
     page,

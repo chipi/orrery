@@ -95,9 +95,19 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
  * Colour of an operating agency for a row marker (the regime panel's resident ring and dot, the
  * list thumbnails): the palette of `nationChipFor` keyed by the agency alone, neutral grey when the
  * agency has none. Not `agencies.ts` `agencyColor`, which is the brand colour of a card accent.
+ * A joint mission ("ESA / NASA") takes its lead agency; the mission index spells some agencies
+ * differently from the regime data (`Roscosmos`, `CMSA`) or names a US operator that is not NASA.
  */
+const RING_ALIAS: Record<string, { agency?: string; nation?: string }> = {
+  Roscosmos: { agency: 'ROSCOSMOS' },
+  CMSA: { agency: 'CNSA' },
+  USSF: { nation: 'USA' },
+  'Blue Origin': { nation: 'USA' },
+};
 export function agencyRingColor(agency: string): string {
-  return nationChipFor({ agency } as Parameters<typeof nationChipFor>[0]).color;
+  const lead = agency.split('/')[0].trim();
+  const key = RING_ALIAS[lead] ?? { agency: lead };
+  return nationChipFor(key as Parameters<typeof nationChipFor>[0]).color;
 }
 
 /**

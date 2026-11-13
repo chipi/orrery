@@ -5,6 +5,7 @@ import { overwriteGetLocale } from '$lib/paraglide/runtime';
 import {
   SATELLITE_STATS,
   anonColorLabel,
+  beltIndexMeta,
   contextLabel,
   deepSkyCategoryLabel,
   deepSkyConstellation,
@@ -19,6 +20,9 @@ import {
   galaxyGroupLabel,
   galaxyKindLabel,
   lightUnitLabel,
+  moonIndexMeta,
+  planetIndexMeta,
+  smallBodyIndexMeta,
   structureDistance,
   structureKindLabel,
   structureSpan,
@@ -222,5 +226,38 @@ describe('galaxy and structure formatters (panel and page share them)', () => {
     expect(label('lmc', 'milky-way')).toBe(m.explore_lg_group_mw());
     expect(label('ngc-147', 'andromeda')).toBe(m.explore_lg_group_andromeda());
     expect(label('wlm', 'independent')).toBe(m.explore_lg_group_independent());
+  });
+});
+
+describe('solar-system INDEX meta (C6)', () => {
+  it('a planet: distance, diameter and its listed moons; no moon part for none', () => {
+    expect(planetIndexMeta({ au: 1.5237, diameterKm: 6779, moons: 2 }, 'en-US')).toBe(
+      '1.52 AU · 6,779 km · 2 major moons',
+    );
+    expect(planetIndexMeta({ au: 0.387, diameterKm: 4880, moons: 0 }, 'en-US')).toBe(
+      '0.387 AU · 4,880 km',
+    );
+    expect(planetIndexMeta({ au: 30.07, diameterKm: 49244, moons: 1 }, 'en-US')).toBe(
+      '30.1 AU · 49,244 km · 1 major moon',
+    );
+  });
+
+  it('a small body: three significant figures, no trailing .0, none for a missing size', () => {
+    expect(smallBodyIndexMeta({ au: 2.766, diameterKm: 939.4 }, 'en-US')).toBe('2.77 AU · 939 km');
+    expect(smallBodyIndexMeta({ au: 1.1264, diameterKm: 0.49 }, 'en-US')).toBe('1.13 AU · 0.49 km');
+    expect(smallBodyIndexMeta({ au: 17.834 }, 'en-US')).toBe('17.8 AU');
+  });
+
+  it('a moon names its planet first; a belt is a range with no trailing .0', () => {
+    expect(moonIndexMeta('Jupiter', 3643, 'en-US')).toBe('Jupiter · 3,643 km');
+    expect(beltIndexMeta(2.2, 3.2, 'en-US')).toBe('2.2–3.2 AU');
+    expect(beltIndexMeta(30, 50, 'en-US')).toBe('30–50 AU');
+  });
+
+  it('the unit form and the digits follow the locale (ru а. е., de AE, ar و.ف)', () => {
+    expect(smallBodyIndexMeta({ au: 2.766, diameterKm: 939.4 }, 'ru')).toBe('2,77 а. е. · 939 км');
+    expect(beltIndexMeta(2.2, 3.2, 'de')).toBe('2,2–3,2 AE');
+    expect(moonIndexMeta('المشتري', 3643, 'ar')).toBe('المشتري · 3,643 كم');
+    expect(beltIndexMeta(2.2, 3.2, 'ar')).toBe('2.2–3.2 و.ف');
   });
 });

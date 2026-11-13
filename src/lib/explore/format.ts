@@ -4,6 +4,9 @@ import type { LocaleCode } from '$lib/locale';
 import type { DeepSkyCategory, LocalGroupMember, OuterTextOverlay } from '$lib/data/universe';
 import { sourceLink } from '$lib/catalogue';
 import { constellationName } from '$lib/universe/iau-constellations';
+import { formatNumber } from '$lib/format';
+import { fmtRegimeAU } from '$lib/orbit-regime-format';
+import { majorMoonCount } from '$lib/plural';
 
 // Localised label for an anonymous star's catalogue colour (enum → message).
 export const anonColorLabel = (c: string): string => {
@@ -49,6 +52,52 @@ export const distanceWithUnit = (value: string, unit: string): string => {
 };
 // The bare unit, for a toggle chip with no number next to it.
 export const distanceUnitLabel = (unit: string): string => distanceWithUnit('', unit).trim();
+
+// ── The solar-system INDEX meta line (UXD-017, C6): distance, size and, for a planet, its listed moons.
+// Built on the server per request locale, so every call passes the locale to the messages.
+const META_SEP = ' · ';
+// Three significant figures ("1.52", "30.1", "939"); a diameter from 1,000 km up is written whole
+// ("6,779"), as the planet panel prints it.
+const sig3 = (x: number, locale: LocaleCode): string =>
+  new Intl.NumberFormat(locale, { maximumSignificantDigits: 3 }).format(x);
+const indexAu = (au: number, locale: LocaleCode): string =>
+  m.unit_au_value({ value: sig3(au, locale) }, { locale });
+const indexKm = (km: number, locale: LocaleCode): string =>
+  m.mp_flight_unit_km(
+    { value: km >= 1000 ? formatNumber(Math.round(km), locale) : sig3(km, locale) },
+    { locale },
+  );
+
+/** "1.52 AU · 6,779 km · 2 major moons": a planet row; no moon part where none is listed. */
+export function planetIndexMeta(
+  p: { au: number; diameterKm: number; moons: number },
+  locale: LocaleCode,
+): string {
+  return [
+    indexAu(p.au, locale),
+    indexKm(p.diameterKm, locale),
+    ...(p.moons > 0 ? [majorMoonCount(p.moons, locale)] : []),
+  ].join(META_SEP);
+}
+
+/** "2.77 AU · 940 km": a dwarf, asteroid or Kuiper object; a comet has no size, only its distance. */
+export function smallBodyIndexMeta(
+  b: { au: number; diameterKm?: number },
+  locale: LocaleCode,
+): string {
+  return [indexAu(b.au, locale), ...(b.diameterKm ? [indexKm(b.diameterKm, locale)] : [])].join(
+    META_SEP,
+  );
+}
+
+/** "Jupiter · 3,643 km": a moon row names its planet first. */
+export function moonIndexMeta(planetName: string, diameterKm: number, locale: LocaleCode): string {
+  return [planetName, indexKm(diameterKm, locale)].join(META_SEP);
+}
+
+/** "2.2–3.2 AU": a belt row. */
+export const beltIndexMeta = (innerAu: number, outerAu: number, locale: LocaleCode): string =>
+  fmtRegimeAU([innerAu, outerAu], locale);
 
 // Localize the light-travel unit words emitted by scale-readout.
 export const lightUnitLabel = (unit: string): string => {

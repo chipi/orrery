@@ -273,8 +273,42 @@ describe('row fields', () => {
       kind: 'moon',
       section: 'moons',
       parent: 'jupiter',
-      meta: 'Jupiter',
+      meta: 'Jupiter · 3,643 km',
     });
+  });
+
+  it('every solar-system row has a meta line except the Sun and ʻOumuamua, which show their kind (C6)', () => {
+    const bare = rows['solar-system'].filter((r) => !r.meta).map((r) => r.id);
+    expect(bare).toEqual(['sun', 'oumuamua']);
+  });
+
+  it('solar-system meta: planets, small bodies, moons and belts (en-US)', () => {
+    const meta = (id: string) => rows['solar-system'].find((r) => r.id === id)?.meta;
+    expect(meta('mars')).toBe('1.52 AU · 6,779 km · 2 major moons');
+    expect(meta('mercury')).toBe('0.387 AU · 4,880 km');
+    expect(meta('earth')).toBe('1 AU · 12,742 km · 1 major moon');
+    expect(meta('jupiter')).toBe('5.2 AU · 139,820 km · 4 major moons');
+    expect(meta('pluto')).toBe('39.5 AU · 2,376 km · 1 major moon');
+    expect(meta('ceres')).toBe('2.77 AU · 939 km');
+    expect(meta('arrokoth')).toBe('44.6 AU · 36 km');
+    expect(meta('bennu')).toBe('1.13 AU · 0.49 km');
+    expect(meta('halley')).toBe('17.8 AU');
+    expect(meta('charon')).toBe('Pluto · 1,212 km');
+    expect(meta('moon')).toBe('Earth · 3,474 km');
+    expect(meta('asteroid')).toBe('2.2–3.2 AU');
+    expect(meta('kuiper')).toBe('30–50 AU');
+  });
+
+  it('the meta follows the request locale: digits, unit form, plural form', () => {
+    // Locale grouping uses a no-break space in ru; compare with a plain one.
+    const at = (locale: string) =>
+      buildScaleIndexRows({ ...src, locale })
+        ['solar-system'].find((r) => r.id === 'mars')
+        ?.meta?.replace(/[\u00a0\u202f]/g, ' ');
+    expect(at('de')).toBe('1,52 AE · 6.779 km · 2 große Monde');
+    expect(at('ru')).toBe('1,52 а. е. · 6 779 км · 2 крупных спутника');
+    expect(at('ja')).toBe('1.52 au · 6,779 km · 2個の主要衛星');
+    expect(at('ar')).toBe('1.52 و.ف · 6,779 كم · 2 قمران رئيسيان');
   });
 
   it('localised names replace the data names, and the stars sort by them', () => {
@@ -317,6 +351,23 @@ describe('filters', () => {
         expect(rows[scale].some(FILTER_TESTS[id]), `${scale}: ${id}`).toBe(true);
   });
 
+  it('every solar-system row is under a chip, except the Sun and the two belts (C6)', () => {
+    const chips = SCALE_FILTERS['solar-system'];
+    const unreachable = rows['solar-system']
+      .filter((r) => !chips.some((id) => FILTER_TESTS[id](r)))
+      .map((r) => r.id);
+    expect(unreachable).toEqual(['sun', 'asteroid', 'kuiper']);
+  });
+
+  it('the solar-system chips count: planets 9, dwarfs 4, asteroids 16, moons 16, comets 3', () => {
+    const count = (id: (typeof SCALE_FILTERS)['solar-system'][number]) =>
+      filterRows(rows['solar-system'], id, '').length;
+    expect(SCALE_FILTERS['solar-system']).toEqual(['planet', 'dwarf', 'asteroid', 'moon', 'comet']);
+    expect([9, 4, 16, 16, 3]).toEqual(SCALE_FILTERS['solar-system'].map(count));
+    expect(filterRows(rows['solar-system'], 'asteroid', '').map((r) => r.id)).toContain('arrokoth');
+    expect(filterRows(rows['solar-system'], 'comet', '').map((r) => r.id)).toContain('oumuamua');
+  });
+
   it('at most five chips after All per scale', () => {
     for (const scale of CTX_ORDER) expect(SCALE_FILTERS[scale].length).toBeLessThanOrEqual(5);
   });
@@ -339,10 +390,15 @@ describe('filters', () => {
   });
 
   it('a chip and the search combine', () => {
-    const planets = filterRows(rows['solar-system'], 'planet', 'a');
-    expect(planets.every((r) => r.kind === 'planet' && r.name.toLowerCase().includes('a'))).toBe(
-      true,
-    );
+    // Jupiter's four moons carry "Jupiter" in their meta line, so the search alone finds them too.
+    expect(filterRows(rows['solar-system'], null, 'jup').map((r) => r.id)).toEqual([
+      'jupiter',
+      'io',
+      'europa',
+      'ganymede',
+      'callisto',
+    ]);
+    expect(filterRows(rows['solar-system'], 'planet', 'jup').map((r) => r.id)).toEqual(['jupiter']);
   });
 });
 

@@ -90,8 +90,9 @@ describe('getScaleIndexRows', () => {
     const bodies = await getEntityIndex('explore', 'de', fetch);
     for (const l of bodies)
       expect(rows['solar-system'].find((r) => r.id === l.id)?.name, l.id).toBe(l.name);
+    // A moon's meta names its planet as the planet's own page does, then the size in German form.
     expect(rows['solar-system'].find((r) => r.id === 'io')?.meta).toBe(
-      bodies.find((l) => l.id === 'jupiter')?.name,
+      `${bodies.find((l) => l.id === 'jupiter')?.name} · 3.643 km`,
     );
   });
 });

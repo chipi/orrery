@@ -5,6 +5,7 @@ The page keeps the `$state`, the fn pointers the scene host fills, and thin
 wrappers; markup pieces live next to it in `src/routes/explore/`.
 
 - `scale-shell-controller.ts` — shell ladder + the `?id=` body resolver.
+- `scale-shells.ts` — `SCALE_SHELLS`: the one table of the eight levels (query, glyph, `name`, `navName`, `title`, `desc`, the lens story, up to five `tab/section` science slugs). The nav dropdown, the hub, the home grid, the level picker, the level card and `lens-panel.ts` read it; a level is named nowhere else (UXD-027, test in `scale-shells.test.ts`). `science-titles.ts` — the sections' titles in the page language from `science-index.<locale>.json`, one fetch per locale.
 - `body-ref.ts` — select = focus, solar system (UXD-019): `BodyRef`, the `?id=` ladder as a ref,
   the chip table (`chipOf`; asteroids and Arrokoth ride DWARFS), `isBodyInScene` (no object, no link),
   focus frames. The page's `selectBody` and the host's `focusBody` take it from there.
@@ -30,7 +31,7 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
   `outerLead` is the panel's lead (overlay fact and bio, else the kind blurb).
 - `planet-sizes.ts` — the eight planets of the REFERENCES overlay (radius, colour,
   size order) shared by `SizesCanvas` and the legend grid.
-- `lens-panel.ts` — which science-lens story + layers each shell shows, and
+- `lens-panel.ts` — which science-lens layers each shell shows (its story comes from `SCALE_SHELLS`; the page hands it to the panel only where the level card is not shown), and
   where the top scale-nav back arrow goes.
 - `layer-watchers.ts` — the teaching-layer subscriptions (`onLayerChange`)
   and what each one drives.

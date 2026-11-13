@@ -18,7 +18,7 @@
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import ScaleGlyphIcon from '$lib/components/ScaleGlyphIcon.svelte';
   import type { ShellId } from '$lib/explore/scale-shell-controller';
-  import { SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
+  import { SCALE_SHELL_NAV_LIST } from '$lib/explore/scale-shell-nav';
   import { audio } from '$lib/audio-state.svelte';
   import { sensory } from '$lib/sensory/state.svelte';
   import SensorySheet from '$lib/components/SensorySheet.svelte';
@@ -68,7 +68,7 @@
       // ?context=<id> (the solar system's too) so it jumps back from any scale: a bare /explore is
       // a no-op when you're already on /explore — the URL doesn't change, so nothing fires; the
       // param gives the effect a trigger.
-      children: SCALE_SHELL_LIST.map((s) => ({
+      children: SCALE_SHELL_NAV_LIST.map((s) => ({
         path: '/explore',
         query: s.query,
         label: s.navName,

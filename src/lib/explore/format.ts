@@ -6,7 +6,7 @@ import { sourceLink } from '$lib/catalogue';
 import { constellationName } from '$lib/universe/iau-constellations';
 import { fmtRegimeAU, regimeNum } from '$lib/orbit-regime-format';
 import { majorMoonCount } from '$lib/plural';
-import { SCALE_SHELLS } from './scale-shells';
+import { SCALE_SHELL_NAV } from './scale-shell-nav';
 
 // Localised label for an anonymous star's catalogue colour (enum → message).
 export const anonColorLabel = (c: string): string => {
@@ -115,7 +115,7 @@ export const lightUnitLabel = (unit: string): string => {
   }
 };
 export const contextLabel = (contextId: ExploreContextId, bodyHostName: string): string =>
-  contextId === 'body-scene' ? bodyHostName : SCALE_SHELLS[contextId].name();
+  contextId === 'body-scene' ? bodyHostName : SCALE_SHELL_NAV[contextId].name();
 
 // Satellite stats for the Earth-for-scale widget when a moon is
 // selected. Real diameters in km. Keyed by satellite id (without

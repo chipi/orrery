@@ -22,7 +22,7 @@ import MissionOrbitIcon from './MissionOrbitIcon.svelte';
 import ShareIcon from './ShareIcon.svelte';
 import SensoryIcon from './SensoryIcon.svelte';
 import ScaleGlyphIcon from '../ScaleGlyphIcon.svelte';
-import { SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
+import { SCALE_SHELL_NAV_LIST } from '$lib/explore/scale-shell-nav';
 
 export {
   MenuIcon,
@@ -203,7 +203,7 @@ export const ICON_SHOWCASE: IconShowcaseEntry[] = [
     where: 'Explore · nav · level picker',
     route: '/explore',
     component: ScaleGlyphIcon as Component<Record<string, unknown>>,
-    variants: SCALE_SHELL_LIST.map((s) => ({
+    variants: SCALE_SHELL_NAV_LIST.map((s) => ({
       label: LEVEL_NAMES[s.glyph] ?? s.glyph,
       props: { glyph: s.glyph, size: 32 },
     })),

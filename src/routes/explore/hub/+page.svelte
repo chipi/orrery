@@ -2,13 +2,13 @@
   import { metaDescription } from '$lib/seo';
   import * as m from '$lib/paraglide/messages';
   import SectionHub from '$lib/components/SectionHub.svelte';
-  import { SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
+  import { SCALE_SHELL_CARD_LIST } from '$lib/explore/scale-shell-cards';
 
   // Explore hub — the zoom-out scale ladder, one tile per level from the shared shell table
   // (`SCALE_SHELLS`). The Solar System tile is the bare /explore link. The worlds you can stand
   // on moved to the WORLDS group / /worlds hub (RFC-038 nav split).
   const cards = $derived(
-    SCALE_SHELL_LIST.map((s) => ({
+    SCALE_SHELL_CARD_LIST.map((s) => ({
       route: '/explore',
       query: s.id === 'solar-system' ? undefined : s.query,
       glyph: s.glyph,

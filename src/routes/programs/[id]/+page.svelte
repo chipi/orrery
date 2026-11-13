@@ -11,6 +11,8 @@
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import JsonLd from '$lib/components/JsonLd.svelte';
@@ -256,6 +258,10 @@
               {#if r.linked_id}
                 {#if badges[`mission:${r.linked_id}`]}
                   <img class="t-patch" src={assetUrl(badges[`mission:${r.linked_id}`])} alt="" />
+                {:else}
+                  <span class="t-thumb"
+                    ><EntityThumb src={thumbOf('missions', r.linked_id)} fallback="none" /></span
+                  >
                 {/if}
                 <button
                   type="button"
@@ -300,8 +306,11 @@
     <ul class="hardware">
       {#each fleet as r, i (i)}
         <li>
-          <a href={href(r)}>{pretty(r.linked_id ?? '')}</a>
-          {#if r.role}<span class="role">{r.role}</span>{/if}
+          <EntityThumb src={r.linked_id ? thumbOf('fleet', r.linked_id) : null} fallback="none" />
+          <span class="hw-body">
+            <a href={href(r)}>{pretty(r.linked_id ?? '')}</a>
+            {#if r.role}<span class="role">{r.role}</span>{/if}
+          </span>
         </li>
       {/each}
     </ul>
@@ -632,6 +641,12 @@
     object-fit: contain;
     flex: 0 0 auto;
   }
+  .t-thumb {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    line-height: 0;
+  }
   .t-patch {
     width: 26px;
     height: 26px;
@@ -715,6 +730,14 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 8px;
+  }
+  .hardware li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hardware .hw-body {
+    min-width: 0;
   }
   .hardware li a {
     color: var(--color-accent);

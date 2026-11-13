@@ -38,6 +38,19 @@ test.describe('/tiangong', () => {
     expect(errors).toEqual([]);
   });
 
+  test('every module and visitor row leads with a round photo (L45-T3a)', async ({ page }) => {
+    await page.goto('/tiangong?view=list', { waitUntil: 'networkidle' });
+    const list = page.getByTestId('tiangong-list-view');
+    await expect(list).toBeVisible({ timeout: 8_000 });
+    const rows = list.locator('button.module-row');
+    await expect(rows).toHaveCount(6);
+    const photos = rows.locator('img.entity-thumb');
+    await expect(photos).toHaveCount(6);
+    await expect(photos.first()).toHaveAttribute('alt', '');
+    await expect(photos.first()).toHaveAttribute('loading', 'lazy');
+    await expect(photos.first()).toHaveAttribute('width', '28');
+  });
+
   test('module query in list mode opens detail panel', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/tiangong?view=list&module=tianhe', { waitUntil: 'networkidle' });

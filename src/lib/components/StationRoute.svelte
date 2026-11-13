@@ -44,6 +44,9 @@
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import StationBlueprint from '$lib/components/StationBlueprint.svelte';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
   import StationAssemblyControl from '$lib/components/StationAssemblyControl.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
@@ -1156,6 +1159,16 @@
 <QualitySettingsModal {activeQualityTier} />
 
 <div class="{config.id}-root">
+  {#snippet rowBody(mod: StationModule)}
+    <EntityThumb src={thumbOf(`${config.id}-modules`, mod.id)} ring={agencyRingColor(mod.agency)} />
+    <span class="mod-text">
+      <span class="mod-name-row">
+        <span class="mod-name">{mod.name}</span>
+        <AgencyBadge agency={mod.agency} />
+      </span>
+      <span class="mod-meta">{mod.agency}</span>
+    </span>
+  {/snippet}
   {#if loadFailed}
     <p class="load-banner" role="alert">{config.msg.loadFailed()}</p>
   {:else}
@@ -1285,11 +1298,7 @@
               }}
               aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
             >
-              <span class="mod-name-row">
-                <span class="mod-name">{mod.name}</span>
-                <AgencyBadge agency={mod.agency} />
-              </span>
-              <span class="mod-meta">{mod.agency}</span>
+              {@render rowBody(mod)}
             </button>
           </li>
         {/each}
@@ -1330,11 +1339,7 @@
                 }}
                 aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
               >
-                <span class="mod-name-row">
-                  <span class="mod-name">{ship.name}</span>
-                  <AgencyBadge agency={ship.agency} />
-                </span>
-                <span class="mod-meta">{ship.agency}</span>
+                {@render rowBody(ship)}
               </button>
             </li>
           {/each}
@@ -1617,11 +1622,7 @@
               }}
               aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
             >
-              <span class="mod-name-row">
-                <span class="mod-name">{mod.name}</span>
-                <AgencyBadge agency={mod.agency} />
-              </span>
-              <span class="mod-meta">{mod.agency}</span>
+              {@render rowBody(mod)}
             </button>
           </li>
         {/each}
@@ -1640,11 +1641,7 @@
                 }}
                 aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
               >
-                <span class="mod-name-row">
-                  <span class="mod-name">{ship.name}</span>
-                  <AgencyBadge agency={ship.agency} />
-                </span>
-                <span class="mod-meta">{ship.agency}</span>
+                {@render rowBody(ship)}
               </button>
             </li>
           {/each}
@@ -1869,6 +1866,9 @@
     max-width: 560px;
   }
   .module-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     width: 100%;
     min-height: 48px;
     padding: 12px 14px;
@@ -1901,6 +1901,10 @@
   .module-row[aria-current='true'].canvas-hovered {
     border-color: var(--color-accent);
     background: color-mix(in srgb, var(--color-accent) 24%, transparent);
+  }
+  .mod-text {
+    flex: 1;
+    min-width: 0;
   }
   .mod-name-row {
     display: flex;

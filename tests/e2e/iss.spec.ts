@@ -46,6 +46,42 @@ test.describe('/iss', () => {
     expect(errors).toEqual([]);
   });
 
+  test('every module and visitor row leads with a round photo; Poisk, which has none, keeps the dot (L45-T3a)', async ({
+    page,
+  }) => {
+    await page.goto('/iss?view=list', { waitUntil: 'networkidle' });
+    const list = page.getByTestId('iss-list-view');
+    await expect(list).toBeVisible({ timeout: 8_000 });
+    const rows = list.locator('button.module-row');
+    await expect(rows).toHaveCount(25);
+    const photos = rows.locator('img.entity-thumb');
+    await expect(photos).toHaveCount(24);
+    await expect(rows.locator('.entity-thumb-slot')).toHaveCount(1);
+    await expect(rows.filter({ hasText: 'Poisk' }).locator('.entity-thumb-slot')).toHaveCount(1);
+    const first = photos.first();
+    await expect(first).toHaveAttribute('alt', '');
+    await expect(first).toHaveAttribute('loading', 'lazy');
+    await expect(first).toHaveAttribute('width', '28');
+    const ring = await photos.evaluateAll((els) =>
+      els.map((el) => getComputedStyle(el).borderTopColor),
+    );
+    // no teal or cyan ring (UXD-001): hue 160 to 200 degrees
+    for (const c of ring) {
+      const [r, g, b] = c
+        .match(/\d+(\.\d+)?/g)!
+        .slice(0, 3)
+        .map((v) => Number(v) / 255);
+      const max = Math.max(r, g, b);
+      const d = max - Math.min(r, g, b);
+      const hue =
+        d < 0.1
+          ? 0
+          : 60 *
+            (max === r ? ((g - b) / d + 6) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4);
+      expect(hue >= 160 && hue <= 200, c).toBe(false);
+    }
+  });
+
   test('module query in list mode opens detail panel', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/iss?view=list&module=zarya', { waitUntil: 'networkidle' });

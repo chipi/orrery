@@ -75,6 +75,18 @@ export function solarRowThumb(
   return surface ? resolveThumb(manifest, surface, row.id) : null;
 }
 
+/**
+ * The thumb of a belt's MEMBERS row. A member string starts with the body's name ("Ceres — dwarf
+ * planet, ..."); that word is a small-body id (Pluto and Eris are listed there too).
+ */
+export function beltMemberThumb(member: string): string | null {
+  const id = member
+    .split(/[\s—–-]/)[0]
+    ?.toLowerCase()
+    .trim();
+  return id ? thumbOf('small-bodies', id) : null;
+}
+
 /** `thumbOf` for a `<surface>/<id>` reference, as the regime panel's per-bundle map stores it. */
 export function thumbOfRef(ref: string | undefined | null): string | null {
   const i = ref ? ref.indexOf('/') : -1;

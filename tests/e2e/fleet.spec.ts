@@ -243,7 +243,28 @@ test.describe('/fleet', () => {
     await panel.getByRole('tab', { name: /MISSIONS/i }).click();
     // Saturn V's linked_missions includes apollo11 + apollo17 (Phase E).
     const missionLinks = panel.locator('.missions-list a.mission-link');
+    await expect(missionLinks.nth(1)).toBeVisible();
     expect(await missionLinks.count()).toBeGreaterThanOrEqual(2);
+  });
+
+  // The tab printed the raw mission id ("new-horizons"); /fleet/<id> prints the name. Each row now
+  // also leads with the mission's round photo (L45-T4, UXD-025).
+  test('MISSIONS tab names its missions and leads each row with a round photo', async ({
+    page,
+  }) => {
+    await page.goto('/fleet?id=atlas-v');
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 10_000 });
+    await panel.getByRole('tab', { name: /MISSIONS/i }).click();
+    const rows = panel.locator('.missions-list a.mission-link');
+    await expect(rows).toHaveCount(15);
+    await expect(rows.first()).toContainText('New Horizons');
+    for (const text of await rows.allInnerTexts()) expect(text).not.toMatch(/^[a-z0-9-]+\s*→?$/);
+    const thumb = rows.first().locator('img.entity-thumb');
+    await expect(thumb).toHaveAttribute('alt', '');
+    await expect(thumb).toHaveAttribute('loading', 'lazy');
+    await expect(thumb).toHaveAttribute('width', '28');
+    await expect(thumb).toHaveAttribute('src', /credit-thumbs\/images\/missions\/new-horizons\//);
   });
 
   test('mobile (375 px) renders without horizontal scroll', async ({ page }) => {

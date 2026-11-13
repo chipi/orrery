@@ -24,7 +24,7 @@ export interface SiteMission {
   id: string;
   name: string;
   first: string | null;
-  hardware: { id: string; name: string; tagline: string | null }[];
+  hardware: { id: string; name: string; tagline: string | null; agency: string }[];
 }
 
 export interface SiteEntity {
@@ -81,7 +81,9 @@ async function siteMission(
       [...new Set((mission.fleet_refs ?? []).map((r) => r.id))].map(async (refId) => {
         const row = fleet.find((x) => x.id === refId);
         const e = row && (await getFleet(row.id, row.category, locale, fetchFn));
-        return e ? { id: refId, name: e.name ?? refId, tagline: e.tagline ?? null } : null;
+        return e
+          ? { id: refId, name: e.name ?? refId, tagline: e.tagline ?? null, agency: e.agency }
+          : null;
       }),
     )
   ).filter((h) => h !== null);

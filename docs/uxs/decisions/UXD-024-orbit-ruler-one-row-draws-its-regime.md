@@ -68,10 +68,12 @@ the opposite. Evidence: the brief's §1 to §6.
      ring at 800, OORT a dashed ring at 1,000 (schematic: the Kuiper belt ends at 620, the far camera at 1,400).
      The dashes are the "schematic" mark; no scene text, no new key.
    - **Camera (decision 2, option a).** Nothing moves the camera: a regime is a region, not an object.
-6. **Photos for the residents (O3, decision 6, option a).** A resident with a hero image shows its own `01.1x1.jpg`
-   as a 28 px round photo with a 2 px ring in its agency colour (`agencyColor()` unchanged); one without keeps the
-   dot, centred in the same 28 px slot. The map is `static/data/orbit-regime-thumbs.json`, keyed per bundle
-   (`orbit-regimes-moon/lro`), because an id means different things per bundle: 49 residents mapped, 15 with no
+6. **Photos for the residents (O3, decision 6, option a).** A resident with a hero image shows it as a 28 px round
+   photo with a 2 px ring in its agency colour; one without keeps the dot, centred in the same 28 px slot. As built
+   in C4 the photo was the `01.1x1.jpg`; since L45 ([UXD-025](UXD-025-lists-carry-a-round-photo.md)) it is the
+   192 px thumb of the entity's blessed hero slot (`EntityThumb`, `entity-thumb.ts`), and 12 residents whose hero
+   review had blessed another slot were repaired. The map is `static/data/orbit-regime-thumbs.json`, keyed per
+   bundle (`orbit-regimes-moon/lro`) to a `<surface>/<id>`, because an id means different things per bundle: 49 residents mapped, 15 with no
    image folder keep the dot (Meteosat, Fengyun, Tundra, IBEX, Chandrayaan-2, Queqiao on `/earth` and `/moon`,
    Queqiao-2, CAPSTONE, Gateway, Pallas, Hygiea, Quaoar, Arrokoth, Sedna). Image sourcing stays a content task. The
    data test requires every file on disk and every resident mapped or in its `NO_THUMB` list.
@@ -82,7 +84,8 @@ the opposite. Evidence: the brief's §1 to §6.
    CAPSTONE, Queqiao, Mariner 2) or the entry is not a mission (Oort cloud, Sedna, Pluto and Ceres discovered).
    GPS, GLONASS and Molniya do not link to their fleet entries (decision 9: a programme page behind "Navstar 1"
    misleads). On `/explore` a link opens the mission panel in place over the regime panel, which stays mounted; on
-   the Worlds it is an anchor to `/missions?id=`.
+   the Worlds it is an anchor to `/missions?id=`. Since L45 ([UXD-025](UXD-025-lists-carry-a-round-photo.md)) a
+   linked first also shows the mission's 28 px photo before the year.
 8. **No country tag (O4).** The trailing parenthetical is removed when its whole content is a country or agency
    (34 labels × 14 locales); `(Piazzi, Italy)` keeps the person (`(Piazzi)`), `(Vesta)` and `(Tombaugh)` likewise.
    The four labels without a tag (GLONASS Block I, Herschel + Planck, Mars Express, Hope) keep their "first ESA /

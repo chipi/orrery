@@ -16,7 +16,7 @@
     "taken": "2022년 7월 12일 공개"
   },
   "jwst-stephans": {
-    "title": "스테판의 다섯 쌍성",
+    "title": "스테판의 다섯 은하",
     "caption": "다섯 개의 은하가 우주적 춤을 벌이고 있으며, 그 중 네 개의 은하가 조석력으로 서로 찢어지고 있다.",
     "subject": "은하",
     "type": "컴팩트 은하군",
@@ -40,7 +40,7 @@
     "taken": "2022년 9월 6일 공개"
   },
   "jwst-cartwheel": {
-    "title": "카트휠 은하",
+    "title": "수레바퀴 은하",
     "caption": "자기 중심에서 정면으로 충돌한 지 수억 년 후에도 여전히 울리고 있는 희귀한 환형 은하입니다.",
     "subject": "은하",
     "type": "환형 은하",
@@ -48,7 +48,7 @@
     "taken": "2022년 8월 2일 공개"
   },
   "jwst-phantom": {
-    "title": "팬텀 은하",
+    "title": "유령 은하",
     "caption": "M74 — 대규모 설계형 나선 은하로, 적외선으로 가스와 먼지로 이루어진 뼈대가 명확하게 드러나 있습니다.",
     "subject": "은하",
     "type": "나선 은하 (M74)",
@@ -128,7 +128,7 @@
     "taken": "2005"
   },
   "hst-veil": {
-    "title": "베일 성운",
+    "title": "망상 성운",
     "caption": "Cygnus Loop의 한 가닥 — 약 2만 년이 지난 지금도 계속 확장하고 있는 초신성 폭발 충격파.",
     "subject": "성운",
     "type": "초신성 잔해 · Cygnus Loop",
@@ -159,7 +159,7 @@
     "distance": "약 6,500광년"
   },
   "chandra-tycho": {
-    "title": "Tycho의 초신성 잔해",
+    "title": "티코의 초신성 잔해",
     "caption": "티코 브라헤가 1572년에 폭발하는 것을 목격한 별의 X선 껍질.",
     "subject": "초신성",
     "type": "초신성 잔해 · X선(SN 1572)",
@@ -174,7 +174,7 @@
     "taken": "2007년"
   },
   "euclid-perseus": {
-    "title": "Perseus 성단",
+    "title": "페르세우스자리 은하단",
     "caption": "Euclid이 성단의 1,000개 은하와 그 뒤로 흩어진 100,000개 이상의 은하를 포착했습니다.",
     "subject": "심부 시야",
     "type": "은하 성단",
@@ -182,7 +182,7 @@
     "taken": "2023년 11월 7일 공개"
   },
   "euclid-horsehead": {
-    "title": "Horsehead 성운",
+    "title": "말 머리 성운",
     "caption": "Euclid이 촬영한 오리온자리의 상징적인 암흑운에 대한 파노라마 뷰입니다.",
     "subject": "성운",
     "type": "암흑 성운 (Barnard 33)",
@@ -238,7 +238,7 @@
     "taken": "2024년 공개"
   },
   "hst-lagoon": {
-    "title": "라군 성운",
+    "title": "석호 성운",
     "caption": "M8 — Hubble 28주년을 기념하는 가스와 먼지의 별 탄생지.",
     "subject": "성운",
     "type": "방출 성운(M8)",
@@ -262,7 +262,7 @@
     "taken": "2007 · Hubble 17주년"
   },
   "jwst-casa": {
-    "title": "카시오페이아 A",
+    "title": "카시오페이아자리 A",
     "caption": "은하에서 알려진 가장 젊은 초신성 잔해 가운데 하나를 포착한 웹의 적외선 시야",
     "subject": "초신성",
     "type": "초신성 잔해",
@@ -278,7 +278,7 @@
     "taken": "2002년 · ACS 최초 관측"
   },
   "hst-omega-centauri": {
-    "title": "오메가 센타우리",
+    "title": "센타우루스자리 오메가",
     "caption": "하늘에서 가장 밝은 구상 성단 — 중력으로 결합된 수백만 개의 별.",
     "subject": "성단",
     "type": "구상 성단",
@@ -350,7 +350,7 @@
     "taken": "2015 · PHAT"
   },
   "hst-pinwheel": {
-    "title": "핀휠 은하",
+    "title": "바람개비 은하",
     "caption": "M101 — 정면을 향한 거대한 나선으로, 그 팔은 분홍색 별 형성 영역들로 빼곡하다.",
     "subject": "은하",
     "type": "나선 은하",

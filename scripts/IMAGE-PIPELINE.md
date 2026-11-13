@@ -223,6 +223,14 @@ npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/vision/build-credit
   && npm run validate-image-integrity
 ```
 
+After any change to a gallery's slots, a hero override or a 1x1 crop, the round list thumbnails
+(UXD-025) need their manifest rebuilt, or `validate-data` fails with the commands to run:
+`npx tsx scripts/build-entity-thumbs.ts --missing F` lists the blessed slots with no 192 px thumb
+(`needThumb`) or no 1x1 crop yet (`need1x1`); `node scripts/vision/build-credit-thumbs.mjs --paths F`
+builds the thumbs (credited or not); `npx tsx scripts/hotspots/regenerate-tier3-variants.mjs --slots
+<master> …` makes a missing crop first; then `npx tsx scripts/build-entity-thumbs.ts` writes
+`static/data/entity-thumbs.json`.
+
 The move needs the master (not an LFS pointer: `git lfs pull -I masters/<path>`) and the target to be
 the next free number. A bare image gets its 1x1 crop, provenance row, alt text under the 1x1 key,
 a hand-set vision row and approved entries; a slot moving from another gallery already has all of

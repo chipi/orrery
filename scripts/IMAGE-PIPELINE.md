@@ -257,7 +257,9 @@ npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/build-i18n-bundles.
 It renumbers the kept slots in order and moves their files (served WebP + rungs + 1x1, credit
 thumbs, masters). It rewrites every JSON under `static/data/`, `scripts/i18n-tools/` and `i18n-src/`
 that names the gallery: provenance rows, alt text in 14 locales, ladder, phashes, approved list
-(and its `count`), vision, curation, a story's image list. Hero overrides are renumbered. When a
+(and its `count`), vision, curation, a story's image list. Hero overrides are renumbered. `--gone`
+takes slots that already left the gallery (`move-image-to-gallery.ts` leaves a gap in the source) and
+only closes the gap: `node scripts/drop-gallery-slots.mjs --gone --apply planets/earth/04`. When a
 dropped slot was the hero, the override is removed and the script names the gallery, so you pick a
 new hero. Read the dry run's JSON list before applying. A content file (a story, a program) that
 loses an image deserves a look. Program figures (`"reuse": "fleet/<id>/<NN>"`) are renumbered and

@@ -29,6 +29,16 @@ describe('planet heroes', () => {
     expect(existsSync(`static/images/${heroDir(id)}/${id}/${heroSlot(id)}.webp`)).toBe(true);
   });
 
+  // EP3: a planet gallery holds pictures of the planet; concepts and mission shots live in the
+  // mission galleries (Earth 04 Apollo-Soyuz and Venus 03 Magellan concept moved there, UXD-029).
+  it.each(Object.keys(galleries))('%s: no slot is an artist concept or a spacecraft shot', (id) => {
+    for (let n = 1; n <= galleries[id]!; n++) {
+      const path = `/images/${heroDir(id)}/${id}/${String(n).padStart(2, '0')}.webp`;
+      const row = provenance.find((e) => e.path === path);
+      expect(row?.title ?? '', path).not.toMatch(/artist|concept|seen from .*spacecraft/i);
+    }
+  });
+
   it.each(Object.keys(galleries))('%s: the hero title names no artwork or spacecraft', (id) => {
     const row = provenance.find(
       (e) => e.path === `/images/${heroDir(id)}/${id}/${heroSlot(id)}.webp`,

@@ -21,6 +21,9 @@
  *   stops the run (dry run too) with the list, nothing written: re-point it first. On 2026-11-08 a
  *   drop left `fleet/n1/05` dangling (the build's prerender 404'd) and renumbered others silently.
  *
+ * `--gone` accepts slots that are no longer on disk (moved out with move-image-to-gallery.ts, which
+ * leaves a gap) and only renumbers the rest.
+ *
  * After --apply run `npx tsx scripts/rebuild-gallery-manifests.ts` (counts),
  * `node scripts/build-i18n-bundles.mjs`, `node scripts/mobile/build-offline-manifest.mjs` and
  * `npm run validate-image-integrity`. Refuses a slot that is not on disk, and dropping every
@@ -40,6 +43,8 @@ import { join } from 'node:path';
 
 const APPLY = process.argv.includes('--apply');
 const WHOLE = process.argv.includes('--whole');
+// --gone: the named slots left already (move-image-to-gallery.ts leaves a gap); only close it.
+const GONE = process.argv.includes('--gone');
 const slots = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 if (!slots.length) {
   console.error('usage: node scripts/drop-gallery-slots.mjs [--apply] <dir>/<id>/<NN> …');
@@ -74,7 +79,8 @@ for (const s of slots) {
   const m = s.match(/^([a-z0-9-]+)\/([a-z0-9-]+)\/(\d\d)$/);
   if (!m) throw new Error(`not <dir>/<id>/<NN>: ${s}`);
   const [, dir, id, nn] = m;
-  if (!existsSync(`static/images/${dir}/${id}/${nn}.webp`)) throw new Error(`not on disk: ${s}`);
+  if (!GONE && !existsSync(`static/images/${dir}/${id}/${nn}.webp`))
+    throw new Error(`not on disk: ${s}`);
   const key = `${dir}/${id}`;
   if (!galleries.has(key)) galleries.set(key, { dir, id, drop: new Set(), map: new Map() });
   galleries.get(key).drop.add(nn);

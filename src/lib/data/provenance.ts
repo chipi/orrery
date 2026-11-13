@@ -194,7 +194,9 @@ export interface TextSourceEntry {
     | 'star'
     | 'exoplanet'
     | 'black-hole'
-    | 'deep-sky';
+    | 'deep-sky'
+    | 'galaxy'
+    | 'structure';
   relationship:
     'original' | 'paraphrased-from' | 'quoted-from' | 'translated-from' | 'adapted-from';
   snippet?: string;

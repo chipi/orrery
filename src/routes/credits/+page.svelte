@@ -213,6 +213,10 @@
         return m.star_index_black_holes();
       case 'deep-sky':
         return m.deepsky_name();
+      case 'galaxy':
+        return m.library_category_galaxy();
+      case 'structure':
+        return m.library_category_structure();
       default:
         return c;
     }

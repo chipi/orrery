@@ -79,7 +79,7 @@
     scaleBarWidth,
     worldsBarQuantity,
   } from '$lib/universe/scale-bar';
-  import { distanceWithUnit } from '$lib/explore/format';
+  import { distanceWithUnit } from '$lib/explore/distance-format';
   import ScaleBar from '$lib/components/ScaleBar.svelte';
   import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
   import { ladderRungUrl, loadLadder, type LadderManifest } from '$lib/image-srcset';

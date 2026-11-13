@@ -127,6 +127,21 @@ describe('orbit ruler: founding missions (C5)', () => {
     expect(LOCALES).toHaveLength(14);
   });
 
+  // RegimePanel rings a first by its mission's agency from this map, so it need not ship the
+  // whole missions index.
+  it('orbit-regime-first-agency.json is the agency of exactly the linked missions', () => {
+    const agency = rj<Record<string, string>>('static/data/orbit-regime-first-agency.json');
+    const index = new Map(
+      rj<{ id: string; agency: string }[]>('static/data/missions/index.json').map((m) => [
+        m.id,
+        m.agency,
+      ]),
+    );
+    const linked = [...new Set(EXPECTED_LINKS.map((l) => l.split(' ')[1]))].sort();
+    expect(Object.keys(agency).sort()).toEqual(linked);
+    for (const [id, a] of Object.entries(agency)) expect(a, id).toBe(index.get(id));
+  });
+
   it('en-US links exactly the 23 expected firsts', () => {
     const linked = reference
       .filter((t) => !t.endsWith(' -'))
